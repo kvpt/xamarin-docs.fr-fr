@@ -115,6 +115,7 @@
 #### [Créer une application d’interpréteur de commandes](app-fundamentals/shell/create.md)
 #### [Menu volant](app-fundamentals/shell/flyout.md)
 #### [Onglets](app-fundamentals/shell/tabs.md)
+#### [Configuration de page](app-fundamentals/shell/configuration.md)
 #### [Navigation](app-fundamentals/shell/navigation.md)
 #### [Rechercher](app-fundamentals/shell/search.md)
 #### [Renderers personnalisés](app-fundamentals/shell/customrenderers.md)

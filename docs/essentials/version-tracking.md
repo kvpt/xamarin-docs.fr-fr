@@ -1,18 +1,19 @@
 ---
-title: 'Xamarin.Essentials : suivi des versions'
+title: 'Xamarin.Essentials: Suivi des versions'
 description: La classe VersionTracking de Xamarin.Essentials vous permet de connaître les numéros de version et de build des applications. Elle vous permet également de voir des informations supplémentaires, par exemple le premier lancement de l’application ou, pour la version actuelle, d’obtenir les informations de build précédentes, etc.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7d3877577523ed17c78fd5d2ad02923bd3d821e2
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 05/28/2019
+ms.custom: video
+ms.openlocfilehash: 3728a209c99712fad6b3dbf9bc59a2c1a3c7bcd5
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898828"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354125"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials : suivi des versions
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Suivi des versions
 
 La classe **VersionTracking** vous permet de connaître les numéros de version et de build des applications. Elle vous permet également de voir des informations supplémentaires, par exemple le premier lancement de l’application ou, pour la version actuelle, d’obtenir les informations de build précédentes, etc.
 
@@ -80,3 +81,9 @@ Toutes les informations de version sont stockées à l’aide de l’API de [pr�
 
 - [Code source de la fonctionnalité de suivi des versions](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
 - [Documentation sur l’API de suivi des versions](xref:Xamarin.Essentials.VersionTracking)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Version-Tracking-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

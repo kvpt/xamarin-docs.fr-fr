@@ -1,25 +1,25 @@
 ---
-title: 'Partie 3 : Configuration d’une solution multiplateforme Xamarin'
-description: Ce document décrit comment configurer une solution multiplateforme dans Xamarin. Il étudiez code différents, tels que des stratégies de partage partagé projets et .NET Standard.
+title: 'Partie 3 : configurer une Solution multiplateforme Xamarin'
+description: Ce document décrit comment configurer une solution multiplateforme dans Xamarin. Il aborde des stratégies telles que les projets partagés et .NET Standard de partage de code différents.
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: f802e31d851915d33cb6dbf5866f8cba3ab90303
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d20275bab4e4ce90f902a5e72321701d94b1d416
+ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276621"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66354072"
 ---
-# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Partie 3 : Configuration d’une solution multiplateforme Xamarin
+# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Partie 3 : configurer une Solution multiplateforme Xamarin
 
 Quelle que soit la Quelles plateformes sont utilisées, tous les projets Xamarin utilisent le même format de fichier de solution (Visual Studio **.sln** format de fichier). Les solutions peuvent être partagées entre les environnements de développement, même lorsque des projets individuels ne peut pas être chargés (par exemple, un projet Windows dans Visual Studio pour Mac).
 
 
 
-Lorsque vous créez un nouveau entre l’application de plateforme, la première étape consiste à créer une solution vide. Cette section que se passe-t-il ensuite : configurer les projets pour créer des applications inter-plateformes mobiles.
+Lorsque vous créez une nouvelle application multiplateforme, la première étape consiste à créer une solution vide. Cette section explique ce qui se passe ensuite : configurer les projets pour créer des applications mobiles multiplateforme.
 
  <a name="Sharing_Code" />
 
@@ -33,7 +33,7 @@ Reportez-vous à la [Options de partage de Code](~/cross-platform/app-fundamenta
 
 ### <a name="shared-projects"></a>Projets partagés
 
-L’approche la plus simple pour le partage de fichiers de code est d’utiliser un [projet partagé](~/cross-platform/app-fundamentals/shared-projects.md).
+À l’aide de l’approche la plus simple pour le partage de fichiers de code est un [projet partagé](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Cette méthode vous permet de partager le même code entre les projets de plateforme différents et utiliser des directives de compilateur pour inclure les chemins de code différents, spécifiques à la plateforme.
 
@@ -106,7 +106,7 @@ L’architecture d’application est illustré dans ce diagramme :
 
  [ ![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "L’architecture d’application est illustré dans ce diagramme")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
-Cette capture d’écran montre une configuration de solution avec le projet Core partagé, iOS et de projets d’application Android. Le projet partagé contient un code relatif à chacune des couches architecturales (code d’entreprise, Service, données et accès aux données) :
+Cette capture d’écran montre une configuration de solution avec le projet Core partagé, iOS et les projets d’application Android. Le projet partagé contient un code relatif à chacune des couches architecturales (code d’entreprise, Service, données et accès aux données) :
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Le projet partagé contient un code relatif à chacune des couches architecturales (code d’entreprise, Service, données et accès aux données)")
 

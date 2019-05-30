@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7049cc36f5f661152e027beb53180d793078beff
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 2536e123cb4bdfd194c573802a91cba7a8c1208d
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855027"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178129"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Utilisation des fonctionnalités dans Xamarin.iOS
 
@@ -205,12 +205,12 @@ Une fois que vous avez ajouté une fonctionnalité côté serveur, il vous reste
 
 La liste ci-dessous décrit quelques-uns des problèmes les plus courants susceptibles d’entraver le développement d’une application avec un service d’application activé.
 
--   Vérifiez que l’ID approprié a été créé et inscrit correctement dans la section  **Certificates, IDs & Profiles (Certificats, ID et profils)** du portail des développeurs Apple.
--   Vérifiez que le service a été ajouté à l’ID d’application (ou d’extension) et qu’il est configuré pour utiliser le groupe d’applications/l’identifiant de commerçant/le conteneur créé ci-dessus dans la section  **Certificates, IDs & Profiles (Certificats, ID et profils)** du portail des développeurs Apple.
--   Vérifiez que les profils de provisionnement et les ID d’applications ont été installés, et que le fichier **Info.plist** de l’application (dans le projet Xamarin) utilise l’un des ID d’applications configurés ci-dessus.
--   Vérifiez que le service approprié est activé dans le fichier **Entitlements.plist** de l’application (dans le projet Xamarin).
+-   Assurez-vous que l’ID correct a été créé et enregistré de manière appropriée dans la section **Certificates, Identifiers & Profiles** du portail des développeurs d’Apple.
+-   Assurez-vous que le service a été ajouté à l’ID d’application (ou d’extension) et qu’il est configuré pour utiliser l’identificateur App Group/Merchant ID/Container créé précédemment dans la section **Certificates, Identifiers & Profiles** du portail des développeurs d’Apple.
+-   Assurez-vous que les profils de provisionnement et les ID d’application ont été installés, et que le fichier d’application **Info.plist** (dans le projet Xamarin) utilise l’un des ID d’application configurés plus haut.
+-   Assurez-vous que le service approprié est activé dans le fichier d’application **Entitlements.plist** (dans le projet Xamarin).
 -   Assurez-vous que les clés de confidentialité appropriées sont définies dans le fichier Info.plist
--   Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Il ne s’agit  _pas_ du paramètre par défaut pour les builds Debug et iOS Simulator.
+-   Assurez-vous que, dans la section **Signature du bundle iOS** de l’application, le paramètre **Droits personnalisés** est défini sur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds Debug et iOS Simulator.
 
 <a name="summary" />
 

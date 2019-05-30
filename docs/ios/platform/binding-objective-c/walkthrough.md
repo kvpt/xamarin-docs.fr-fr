@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: c8adc7ec7f717cf0004f79e3b71123d6daeaee86
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 2897129779b698eae60338d44f9af19b6a2761bc
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978445"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252356"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS
 
@@ -138,7 +138,7 @@ La première étape est pour nous permet d’ajouter le code source InfoColorPic
 
     [![](walkthrough-images/image12.png "Copiez tous les fichiers InfColorPicker")](walkthrough-images/image12.png#lightbox)
 
-7. Revenez à Xcode, cliquez avec le bouton droit sur le **InfColorPicker** dossier et sélectionnez **ajouter des fichiers à « InfColorPicker... »**:
+7. Revenez à Xcode, cliquez avec le bouton droit sur le **InfColorPicker** dossier et sélectionnez **ajouter des fichiers à « InfColorPicker... »** :
 
     [![](walkthrough-images/image08.png "Ajout de fichiers")](walkthrough-images/image08.png#lightbox)
 
@@ -172,7 +172,7 @@ La première étape est pour nous permet d’ajouter le code source InfoColorPic
 
 ### <a name="creating-a-fat-binary"></a>Création d’un fichier Fat binaire
 
-Tous les appareils iOS dotés de processeurs alimentées par l’architecture ARM ont développé au fil du temps. Chaque nouvelle architecture ajouté de nouvelles instructions et autres améliorations tout en conservant une compatibilité descendante. Sur les appareils iOS nous avons armv6, armv7, armv7s, jeux d’instructions arm64 : bien que [nous ne plus utiliser armv6](~/ios/deploy-test/compiling-for-different-devices.md). Le simulateur iOS n’est pas alimenté par ARM et est au lieu une x86 et simulateur de x86_64 sous tension. Cela signifie que nous nous est que nous devons fournir des bibliothèques sur chaque instruction définit.
+Tous les appareils iOS dotés de processeurs alimentées par l’architecture ARM ont développé au fil du temps. Chaque nouvelle architecture ajouté de nouvelles instructions et autres améliorations tout en conservant une compatibilité descendante. les appareils iOS ont armv6, armv7, armv7s, jeux d’instructions arm64 – même si [armv6 ne pas utilisé plus](~/ios/deploy-test/compiling-for-different-devices.md). Le simulateur iOS n’est pas alimenté par ARM et est à la place un x86 et simulateur de x86_64 sous tension. Cela signifie que les bibliothèques doivent être fournis pour chaque jeu d’instructions.
 
 Est une bibliothèque Fat `.a` fichier contenant toutes les architectures prises en charge.
 
@@ -182,9 +182,9 @@ Création d’un fat binaire est un processus en trois étapes :
 - Compiler une version x86 et x84_64 de la bibliothèque statique.
 - Utilisez le `lipo` outil en ligne de commande pour combiner les deux bibliothèques statiques en une seule.
 
-Bien que ces trois étapes sont plutôt simples, et il peut être nécessaire de les répéter dans le futur quand la bibliothèque Objective-C reçoit des mises à jour ou si nous exigeons des correctifs de bogues. Si vous décidez d’automatiser ces étapes, il permettra de simplifier la maintenance future et la prise en charge du projet de liaison iOS.
+Bien que ces trois étapes sont plutôt simples, il peut être nécessaire de les répéter à l’avenir lors de la bibliothèque Objective-C reçoit des mises à jour ou si nous avons besoin de correctifs de bogues. Si vous décidez d’automatiser ces étapes, il permettra de simplifier la maintenance future et la prise en charge du projet de liaison iOS.
 
-Il existe de nombreux outils disponibles pour automatiser des tâches - un script shell, [rake](http://rake.rubyforge.org/), [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/), et [rendre](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Lorsque nous avons installé les outils de ligne de commande Xcode, nous avons également installé Assurez-vous, par conséquent, autrement dit le système de génération qui sera utilisé pour cette procédure pas à pas. Voici un **Makefile** que vous pouvez utiliser pour créer une bibliothèque partagée architecture multi qui fonctionne sur un appareil iOS et le simulateur pour toutes les bibliothèques :
+Il existe de nombreux outils disponibles pour automatiser des tâches - un script shell, [rake](http://rake.rubyforge.org/), [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/), et [rendre](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Lorsque les outils de ligne de commande Xcode sont installés, `make` est également installé, c’est le système de génération qui sera utilisé pour cette procédure pas à pas. Voici un **Makefile** que vous pouvez utiliser pour créer une bibliothèque partagée architecture multi qui fonctionne sur un appareil iOS et le simulateur pour n’importe quelle bibliothèque :
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,7 +213,7 @@ clean:
     -rm -f *.a *.dll
 ```
 
-Entrez le **Makefile** commandes dans l’éditeur de texte brut de votre choix et mettre à jour les sections avec **votre nom de projet** par le nom de votre projet. Il est également important de vous assurer que nous vous collez les instructions ci-dessus, que les onglets dans les instructions ont été conservés.
+Entrez le **Makefile** commandes dans l’éditeur de texte brut de votre choix et mettre à jour les sections avec **votre nom de projet** par le nom de votre projet. Il est également important de s’assurer que vous collez les instructions ci-dessus exactement, avec les onglets dans les instructions conservées.
 
 Enregistrez le fichier sous le nom **Makefile** au même emplacement que la bibliothèque statique de InfColorPicker Xcode, nous avons créé ci-dessus :
 
@@ -280,7 +280,7 @@ La solution va être créée et deux fichiers par défaut seront incluses :
 
     ![Démarrez un nouveau projet](walkthrough-images/bind01vs.png "démarrez un nouveau projet")
 
-1. Dans la boîte de dialogue Nouveau projet, sélectionnez **Visual C# > iPhone & iPad > liaisons bibliothèque iOS (Xamarin)**:
+1. Dans la boîte de dialogue Nouveau projet, sélectionnez **Visual C# > iPhone & iPad > liaisons bibliothèque iOS (Xamarin)** :
 
     [![Sélectionnez la bibliothèque de liaisons iOS](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 

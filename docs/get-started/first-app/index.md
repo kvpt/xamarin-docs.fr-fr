@@ -8,13 +8,13 @@ ms.technology: xamarin-forms
 ms.custom: video
 author: conceptdev
 ms.author: crdun
-ms.date: 04/02/2019
-ms.openlocfilehash: 5dc37212facbc5b58b807d3fbcba8650a5b065f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/23/2019
+ms.openlocfilehash: 3b25be2c929e0f072af2ff563d49ceaf07cae058
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61351958"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252341"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>Générer votre première application Xamarin.Forms
 
@@ -22,7 +22,7 @@ _Regardez cette vidéo et suivez la procédure indiquée pour créer votre premi
 
 ::: zone pivot="windows"
 
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Building-Your-First-Android--iOS-App-in-Visual-Studio-2017/player]
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-Android-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ## <a name="step-by-step-instructions-for-windows"></a>Instructions pas à pas pour Windows
 
@@ -73,6 +73,12 @@ Suivez ces étapes, ainsi que la vidéo ci-dessus :
 
     > [!TIP]
     > Il est possible de générer et déboguer l’application iOS à partir de Visual Studio avec un ordinateur Mac en réseau. Pour plus d’informations, consultez les [instructions de configuration](~/ios/get-started/installation/windows/index.md).
+
+## <a name="build-an-ios-app-in-visual-studio-2019"></a>Générer une application iOS dans Visual Studio 2019
+
+Cette vidéo présente le processus de génération et le test d’une application iOS à l’aide de Visual Studio 2019 sur Windows :
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-iOS-App-with-Visual-Studio-2019-and-Xamarin/player]
 
 ::: zone-end
 ::: zone pivot="win-vs2017"
