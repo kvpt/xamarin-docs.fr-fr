@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: f31490a683adfb46c609f14adf08b68de0abc375
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6710abd28a2b0f992296008d12950b95ec29783d
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082986"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394693"
 ---
 # <a name="notifications-in-xamarinios"></a>Notifications dans Xamarin.iOS
 
@@ -47,7 +47,7 @@ Pour planifier une notification locale, créez un `UILocalNotification` de l’o
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
-NSDate.FromTimeIntervalSinceNow(15);
+notification.FireDate = NSDate.FromTimeIntervalSinceNow(15);
 //notification.AlertTitle = "Alert Title"; // required for Apple Watch notifications
 notification.AlertAction = "View Alert";
 notification.AlertBody = "Your 15 second alert has fired!";

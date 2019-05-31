@@ -6,13 +6,13 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 03/01/2018
-ms.openlocfilehash: f2865858552d4445dff95c85767c41849c19cc29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/30/2019
+ms.openlocfilehash: 46e628700771864c6a4b99edea550af694bf3a62
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018270"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394683"
 ---
 # <a name="cpu-architectures"></a>Architectures de processeur
 
@@ -49,6 +49,9 @@ Xamarin.Android prend en charge les architectures suivantes :
 
 -   **armeabi** &ndash; les UC ARM qui prennent en charge au moins le jeu d’instructions ARMv5TE. Notez que `armeabi` n’est pas thread-safe et ne doit pas être utilisé sur les appareils multiprocesseur.
 
+> [!NOTE]
+> En tant que de [Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture), `armeabi` n’est plus pris en charge.
+
 -   **armeabi-v7a** &ndash; les UC ARM avec les opérations à virgule flottante de matériel et de plusieurs appareils multiprocesseur (SMP). Notez que `armeabi-v7a` code machine ne s’exécutera pas sur les appareils ARMv5.
 
 -   **arm64-v8a** &ndash; unités centrales, selon l’architecture de ARMv8 64 bits.
@@ -66,7 +69,7 @@ Pour cibler plusieurs architectures d’UC, vous pouvez sélectionner plusieurs 
 Vous n’êtes pas obligé de sélectionner **arm64-v8a** ou **x86_64** pour cibler des appareils 64 bits ; prise en charge 64 bits n’est pas nécessaire pour exécuter votre application sur un matériel 64 bits. Par exemple, les appareils ARM 64 bits (tels que le [Nexus 9](http://www.google.com/nexus/9/)) peuvent exécuter des applications configurées pour `armeabi-v7a`. Le principal avantage de permettre la prise en charge 64 bits consiste à permettre à votre application d’adresser plus de mémoire.
 
 > [!NOTE]
-> prise en charge 64 bits du runtime est actuellement une fonctionnalité expérimentale. N’oubliez pas que les runtimes 64 bits sont *pas* requis pour exécuter votre application sur des appareils 64 bits. 
+> Depuis août 2018, les nouvelles applications doivent cibler l’API de niveau 26, et à partir d’août 2019, les applications devront [fournir des versions 64 bits](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html) en plus des versions 32 bits.
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
