@@ -35,9 +35,9 @@ Notez que [ `Margin` ](xref:Xamarin.Forms.View.Margin) les valeurs sont additifs
 
 Le [ `Margin` ](xref:Xamarin.Forms.View.Margin) et [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) propriétés sont tous deux de type [ `Thickness` ](xref:Xamarin.Forms.Thickness). Trois options sont possibles lorsque vous créez un `Thickness` structure :
 
-- Créer un [ `Thickness` ](xref:Xamarin.Forms.Thickness) structure définie par une seule valeur uniforme. La valeur unique est appliquée à la gauche, haut, droite et quatre côtés de l’élément.
-- Créer un [ `Thickness` ](xref:Xamarin.Forms.Thickness) structure définie par les valeurs horizontales et verticales. La valeur horizontale est appliquée symétriquement pour les côtés gauche et droit de l’élément, avec la valeur verticale qui est appliquée symétriquement sur les côtés supérieur et inférieur de l’élément.
-- Créer un [ `Thickness` ](xref:Xamarin.Forms.Thickness) structure définie par quatre valeurs distinctes qui sont appliqués à la gauche, haut, droite et quatre côtés de l’élément.
+- Créer une structure [ `Thickness` ](xref:Xamarin.Forms.Thickness) définie par une seule valeur uniforme. La valeur unique est appliquée aux côtés gauche, haut, droite et bas de l’élément.
+- Créer une structure [ `Thickness` ](xref:Xamarin.Forms.Thickness) définie par les valeurs horizontales et verticales. La valeur horizontale est appliquée symétriquement pour les côtés gauche et droit de l’élément, avec la valeur verticale qui est appliquée symétriquement sur les côtés supérieur et inférieur de l’élément.
+- Créer une structure [ `Thickness` ](xref:Xamarin.Forms.Thickness) définie par quatre valeurs distinctes qui sont appliquées aux côtés gauche, haut, droit et bas de l’élément.
 
 L’exemple de code XAML suivant montre toutes les trois possibilités :
 
