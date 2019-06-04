@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 59dba2fed0422db72b0617d9a831e3a9364320bd
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: ecb68d662c64b65346ffd04f0d3d3cd525533151
+ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970787"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66178033"
 ---
 # <a name="xamarinforms-shell-custom-renderers"></a>Renderers Xamarin.Forms Shell personnalisés
 
@@ -42,6 +42,8 @@ La classe `ShellRenderer` expose les méthodes substituables suivantes :
 | iOS | Android |
 | --- | --- |
 | `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` |
+
+Les classes `FlyoutItem` et `TabBar` sont des alias pour la classe `ShellItem`, et la classe `Tab` est un alias pour la classe `ShellSection`. La méthode `CreateShellItemRenderer` doit donc être substituée lors de la création d’un renderer personnalisé pour des objets `FlyoutItem` et la méthode `CreateShellSectionRenderer` doit être substituée lors de la création d’un renderer personnalisé pour des objets `Tab`.
 
 > [!IMPORTANT]
 > Il existe des classes de renderer Shell supplémentaires, telles que `ShellSectionRenderer` et `ShellItemRenderer`, sur iOS et Android. Toutefois, ces classes de renderer supplémentaires sont créées par des remplacements dans la classe `ShellRenderer`. Par conséquent, il est possible de personnaliser le comportement de ces classes de renderer supplémentaires en les sous-classant et en créant une instance de la sous-classe dans la substitution correspondante de la classe `ShellRenderer` sous-classée.

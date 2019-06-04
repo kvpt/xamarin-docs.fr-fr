@@ -6,13 +6,13 @@ ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 40f955d39799598093060f3230629a099885e4a2
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.date: 05/28/2019
+ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970777"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252275"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -20,13 +20,21 @@ ms.locfileid: "65970777"
 
 Xamarin.Forms Shell réduit la complexité du développement d’applications mobiles en fournissant les fonctionnalités fondamentales nécessaires à la plupart des applications mobiles. Cela inclut une expérience utilisateur de navigation commune, un schéma de navigation basée sur des URI et un gestionnaire de recherche intégré.
 
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[Créer une application Shell Xamarin.Forms](create.md)
+
+Le processus de création d’une application Shell Xamarin.Forms consiste à créer un fichier XAML sous-classant la classe `Shell`, à définir la propriété `MainPage` de la classe `App` de l’application sur l’objet `Shell` sous-classé, puis à décrire la hiérarchie visuelle de l’application dans la classe `Shell` sous-classée.
+
 ## <a name="flyoutflyoutmd"></a>[Menu volant](flyout.md)
 
 Le menu volant est le menu racine d’une application Shell, accessible via une icône ou en balayant depuis le côté de l’écran. Le menu volant se compose d’un en-tête facultatif, de différents éléments de menu volant et d’éléments de menu facultatifs.
 
 ## <a name="tabstabsmd"></a>[Onglets](tabs.md)
 
-Après un menu volant, le niveau suivant de la navigation dans une application Shell est la barre d’onglets inférieure. Lorsqu’un onglet contient plusieurs pages, ces pages sont accessibles via des onglets situés en haut de la fenêtre.
+Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
+
+## <a name="page-configurationconfigurationmd"></a>[Configuration de page](configuration.md)
+
+La classe `Shell` définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications Shell Xamarin.Forms. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’affichage des vues dans la barre de navigation.
 
 ## <a name="navigationnavigationmd"></a>[Navigation](navigation.md)
 

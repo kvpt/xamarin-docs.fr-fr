@@ -1,46 +1,50 @@
 ---
 title: Disposition Shell Xamarin.Forms
-description: Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
+description: Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans les deux cas, lorsqu’un onglet contient plusieurs pages, il est possible de passer de l’une à l’autre grâce aux onglets du haut.
 ms.prod: xamarin
 ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: a8da1e96bbdf51899b1780265933402da791a03e
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.date: 05/23/2019
+ms.openlocfilehash: cd3bfd9186c87594fc42702e2d62b33e68973db6
+ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005161"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252296"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Onglets Shell Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 
-Le niveau de navigation suivant le menu volant dans une application Shell est la barre d’onglets du bas. Lorsque le menu volant est fermé, la barre d’onglets du bas est considérée comme le plus haut niveau de navigation.
+Lorsque le modèle de navigation pour une application comprend un menu volant, le niveau de navigation suivant dans l’application se situe dans la barre d’onglets du bas. De plus, lorsque le menu volant est fermé, la barre d’onglets du bas peut être considérée comme le plus haut niveau de navigation.
 
-Chaque objet `FlyoutItem` peut contenir un ou plusieurs objets `Tab`, chaque objet `Tab` représentant un onglet dans la barre d'onglets inférieure. Chaque objet `Tab` peut contenir un ou plusieurs objets `ShellContent`, et chaque objet `ShellContent` affichera un seul [`ContentPage`](xref:Xamarin.Forms.ContentPage). Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, il est possible de naviguer entre les objets `ContentPage` grâce aux onglets du haut.
+Le modèle de navigation pour une application peut également commencer avec des onglets en bas et n’utiliser aucun menu volant. Dans ce scénario, l’enfant de l’objet `Shell` doit être un objet `TabBar` qui représente la barre d’onglet du bas.
 
-Dans chaque objet `ContentPage`, des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
+> [!NOTE]
+> Le type `TabBar` désactive le menu volant.
+
+Chaque objet `FlyoutItem` ou `TabBar` peut contenir un ou plusieurs objets `Tab`, où chaque objet `Tab` représente un onglet dans la barre d’onglets du bas. Chaque objet `Tab` peut contenir un ou plusieurs objets `ShellContent`, et chaque objet `ShellContent` affichera un seul [`ContentPage`](xref:Xamarin.Forms.ContentPage). Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, il est possible de naviguer entre les objets `ContentPage` grâce aux onglets du haut.
+
+Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
 
 ## <a name="single-page-application"></a>Application monopage
 
-L’application Shell la plus simple est une application monopage, créée en ajoutant un seul objet `Tab` à un objet `FlyoutItem`. Dans l’objet `Tab`, un objet `ShellContent` doit être défini sur un objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
+L’application Shell la plus simple est une application monopage, créée en ajoutant un seul objet `Tab` à un objet `TabBar`. Dans l’objet `Tab`, un objet `ShellContent` doit être défini sur un objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab>
             <ShellContent>
                 <views:CatsPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -48,12 +52,10 @@ Cet exemple de code génère l’application monopage suivante :
 
 [![Capture d’écran d’une application Shell monopage sur iOS et Android](tabs-images/single-page-app.png "Application Shell monopage")](tabs-images/single-page-app-large.png#lightbox "Application Shell monopage")
 
-Un menu volant n’est pas nécessaire dans une application monopage ; par conséquent, la propriété `Shell.FlyoutBehavior` est définie sur `Disabled`.
-
 > [!NOTE]
 > Pour masquer la barre de navigation, si nécessaire, définissez la propriété jointe `Shell.NavBarIsVisible` sur `false` sur l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage).
 
-Shell comporte des opérateurs de conversion implicite qui permettent de simplifier la hiérarchie visuelle de Shell sans introduire de vues supplémentaires dans l’arborescence d’éléments visuels. En effet, un objet `Shell` sous-classé ne peut contenir que des objets `FlyoutItem`, qui ne peuvent contenir que des objets `Tab`, qui ne peuvent contenir que des objets `ShellContent`. Ces opérateurs de conversion implicite peuvent permettre de supprimer les objets `FlyoutItem`, `Tab` et `ShellContent` de l’exemple précédent :
+Shell comporte des opérateurs de conversion implicite qui permettent de simplifier la hiérarchie visuelle de Shell sans introduire de vues supplémentaires dans l’arborescence d’éléments visuels. En effet, un objet `Shell` sous-classé ne peut contenir que des objets `FlyoutItem` ou un objet `TabBar`, qui ne peuvent contenir que des objets `Tab`, lesquels ne peuvent contenir que des objets `ShellContent`. Ces opérateurs de conversion implicite peuvent permettre de supprimer les objets `TabBar`, `Tab` et `ShellContent` de l’exemple précédent :
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -65,22 +67,21 @@ Shell comporte des opérateurs de conversion implicite qui permettent de simplif
 </Shell>
 ```
 
-Cette conversion implicite encapsule automatiquement l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans un objet `ShellContent`, qui est encapsulé dans un objet `Tab`, lui-même encapsulé dans un objet `FlyoutItem`.
+Cette conversion implicite encapsule automatiquement l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans un objet `ShellContent`, qui est encapsulé dans un objet `Tab`, lui-même encapsulé dans un objet `FlyoutItem`. Un menu volant n’est pas nécessaire dans une application monopage ; par conséquent, la propriété `Shell.FlyoutBehavior` est définie sur `Disabled`.
 
 > [!IMPORTANT]
-> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
+> Dans une application Shell, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui est un enfant d’un objet `ShellContent` est créé au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
 
 ## <a name="bottom-tabs"></a>Onglets du bas
 
-Les objets `Tab` sont rendus sous forme d'onglets inférieurs, à condition qu'il y ait plusieurs objets `Tab` dans un seul objet `FlyoutItem`:
+Les objets `Tab` sont rendus sous forme d'onglets inférieurs, à condition qu'il y ait plusieurs objets `Tab` dans un seul objet `TabBar`:
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Cats"
              Icon="cat.png">
             <ShellContent>
@@ -93,7 +94,7 @@ Les objets `Tab` sont rendus sous forme d'onglets inférieurs, à condition qu'i
                 <views:DogsPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -107,12 +108,11 @@ Les opérateurs de conversion implicite de Shell peuvent sinon permettre de supp
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <views:CatsPage IconImageSource="cat.png" />
         <views:DogsPage IconImageSource="dog.png" />
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -131,7 +131,9 @@ La classe `Tab` comporte différentes propriétés qui contrôlent l’apparence
 - `Icon`, de type `ImageSource`, définit l’icône à afficher dans les parties du chrome autres que le menu volant.
 - `IsChecked`, de type `boolean`, détermine si l’élément est actuellement en surbrillance dans le menu volant.
 - `IsEnabled`, de type `boolean`, détermine si l’élément est sélectionnable dans le chrome.
-- `Items`, de type `ShellContentCollection`, définit tout le contenu d’un `Tab`.
+- `IsTabStop`, de type `bool`, indique si un `Tab` est inclus dans la navigation par onglets. Sa valeur par défaut est `true`. Lorsqu’il a la valeur`false`, `Tab` est ignoré par l’infrastructure de navigation par onglets, indépendamment de `TabIndex`.
+- `Items`, de type `IList<ShellContent>`, définit tout le contenu d’un `Tab`.
+- `TabIndex`, de type `int`, indique l’ordre dans lequel les objets `Tab` reçoivent le focus lorsque l’utilisateur parcourt des éléments en appuyant sur la touche Tab. La valeur par défaut de la propriété est 0.
 - `Title`, de type `string`, représente le titre à afficher sur l’onglet dans l’interface utilisateur.
 
 ## <a name="shell-content"></a>Contenu de Shell
@@ -142,9 +144,8 @@ L’enfant de chaque objet `Tab` est un objet `ShellContent`, dont la propriét�
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Cats"
              Icon="cat.png">
             <ShellContent>
@@ -157,11 +158,11 @@ L’enfant de chaque objet `Tab` est un objet `ShellContent`, dont la propriét�
                 <views:DogsPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
-Dans chaque objet `ContentPage`, des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
+Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
 
 ### <a name="shellcontent-class"></a>Classe ShellContent
 
@@ -180,15 +181,14 @@ Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xa
 
 ## <a name="bottom-and-top-tabs"></a>Onglets du haut et du bas
 
-Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, une barre d’onglets supérieure est ajoutée à l’onglet du bas, qui permet de naviguer entre les objets `ContentPage` :
+Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, une barre d’onglets supérieure est ajoutée à l’onglet du bas, lequel permet de naviguer entre les objets [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Domestic"
              Icon="domestic.png">
             <ShellContent>
@@ -204,7 +204,7 @@ Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, une 
                 <views:MonkeysPage />
             </ShellContent>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -218,16 +218,15 @@ Les opérateurs de conversion implicite de Shell peuvent sinon permettre de supp
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
-       x:Class="Xaminals.AppShell"
-       FlyoutBehavior="Disabled">
-    <FlyoutItem>
+       x:Class="Xaminals.AppShell">
+    <TabBar>
         <Tab Title="Domestic"
              Icon="domestic.png">
             <views:CatsPage />
             <views:DogsPage />
         </Tab>
         <views:MonkeysPage IconImageSource="monkey.png" />
-    </FlyoutItem>
+    </TabBar>
 </Shell>
 ```
 
@@ -242,8 +241,7 @@ Dans une application Shell, chaque objet [`ContentPage`](xref:Xamarin.Forms.Cont
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Xaminals.Views"
        x:Class="Xaminals.AppShell">    
-    <FlyoutItem Title="Animals"
-                FlyoutDisplayOptions="AsMultipleItems">
+    <TabBar>
         <Tab Title="Domestic"
              Icon="paw.png">
             <ShellContent Title="Cats"
@@ -256,7 +254,7 @@ Dans une application Shell, chaque objet [`ContentPage`](xref:Xamarin.Forms.Cont
         <ShellContent Title="Monkeys"
                       Icon="monkey.png"
                       ContentTemplate="{DataTemplate views:MonkeysPage}" />
-    </FlyoutItem>    
+    </TabBar>    
 </Shell>
 ```
 
@@ -264,17 +262,17 @@ Ce XAML crée et affiche `CatsPage`, car il s’agit du premier élément de con
 
 ## <a name="tab-appearance"></a>Apparence des onglets
 
-La classe `Shell` comporte différentes propriétés qui contrôlent l’apparence des onglets :
+La classe `Shell` définit différentes propriétés jointes qui contrôlent l’apparence des onglets :
 
-- `TabBarBackgroundColor`, de type `Color`, représente une propriété jointe qui définit la couleur d’arrière-plan de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `BackgroundColor` est utilisée.
-- `TabBarDisabledColor`, de type `Color`, représente une propriété jointe qui définit la couleur de la barre d’onglets lorsqu’elle est désactivée. Si la propriété n’est pas définie, la valeur de propriété `DisabledColor` est utilisée.
-- `TabBarForegroundColor`, de type `Color`, représente une propriété jointe qui définit la couleur de premier plan de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `ForegroundColor` est utilisée.
-- `TabBarTitleColor`, de type `Color`, représente une propriété jointe qui définit la couleur de titre de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `TitleColor` est utilisée.
-- `TabBarUnselectedColor`, de type `Color`, représente une propriété jointe qui définit la couleur de la barre d’onglets lorsqu’elle n’est pas sélectionnée. Si la propriété n’est pas définie, la valeur de propriété `UnselectedColor` est utilisée.
+- `TabBarBackgroundColor`, de type `Color` : définit la couleur d’arrière-plan de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `BackgroundColor` est utilisée.
+- `TabBarDisabledColor`, de type `Color` : définit la couleur des éléments désactivés de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `DisabledColor` est utilisée.
+- `TabBarForegroundColor`, de type `Color` : définit la couleur de premier plan de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `ForegroundColor` est utilisée.
+- `TabBarTitleColor`, de type `Color` : définit la couleur des titres de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `TitleColor` est utilisée.
+- `TabBarUnselectedColor`, de type `Color` : définit la couleur des éléments non sélectionnés de la barre d’onglets. Si la propriété n’est pas définie, la valeur de propriété `UnselectedColor` est utilisée.
 
-Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données.
+Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données et que des styles peuvent être appliqués.
 
-Par conséquent, les styles XAML peuvent servir à définir l’apparence des onglets. L’exemple suivant en montre un qui définit différentes propriétés de couleur des onglets :
+L’exemple suivant en montre un qui définit différentes propriétés de couleur des onglets :
 
 ```xaml
 <Style x:Key="BaseStyle"
@@ -294,4 +292,4 @@ Il est également possible de styliser les onglets avec des feuilles de style en
 
 - [Xaminals (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
 - [Navigation Shell Xamarin.Forms](navigation.md)
-- [Propriétés spécifiques Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
+- [Propriétés spécifiques du CSS Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)
