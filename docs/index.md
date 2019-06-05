@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 799cccf65a0dce1210fb841df578104fa7ad50bc
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 333e35a4d015586ed33045c3f91e21fdced496b0
+ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65047984"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687033"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -57,18 +57,18 @@ ms.locfileid: "65047984"
                 </a>
             </li>
              <li>
-                <a href="~/xamarin-forms/app-fundamentals/shell/index.md">
+                <a href="~/whats-new/index.yml">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
                                 <div class="cardImageOuter">
-                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_preview.svg"); background-size: cover;'>
-                                        <img style="display: none;" alt="" src="https://docs.microsoft.com/media/common/i_preview.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_preview.svg">
+                                    <div class="cardImage" style='background-position: 0px 0px; background-image: url("https://docs.microsoft.com/media/common/i_whats-new.svg"); background-size: cover;'>
+                                        <img style="display: none;" alt="What's New?" src="https://docs.microsoft.com/media/media/common/i_whats-new.svg" data-linktype="external" data-hoverimage="https://docs.microsoft.com/media/common/i_whats-new.svg">
                                     </div>
                                 </div>
                                 <div class="cardText">
-                                    <h3 class="x-hidden-focus">Xamarin.Forms 4.0</h3>
-                                    <p>Préversion d’une nouvelle fonctionnalité Shell.</p>
+                                    <h3 class="x-hidden-focus">Nouveautés</h3>
+                                    <p>Découvrez les nouveautés de la documentation Xamarin.</p>
                                 </div>
                             </div>
                         </div>
