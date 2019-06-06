@@ -6,13 +6,13 @@ ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
-ms.date: 02/05/2018
-ms.openlocfilehash: b89f5329430fed0387443bf923c45cd40181b22e
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.date: 05/30/2019
+ms.openlocfilehash: bb1b615bc922b19c50435218dfee51f9e19d1259
+ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668385"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66394726"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Appareils multicœurs et Xamarin.Android
 
@@ -53,7 +53,7 @@ Chaque ABI prise en charge par Android est identifiée par un nom unique.
 
 Il s’agit du nom d’une EABI pour les UC ARM qui prennent en charge au moins le jeu d’instructions ARMv5TE. Android suit l’ABI little-endian ARM GNU/Linux. Cette ABI ne prend pas en charge les calculs en virgule flottante avec accélération matérielle. Toutes les opérations de virgule flottante sont effectuées par les fonctions d’assistance provenant de la bibliothèque statique `libgcc.a` du compilateur. Les appareils SMP ne sont pas pris en charge par `armeabi`.
 
-**Remarque** : Le code `armeabi` de Xamarin.Android n’est pas thread-safe et ne doit pas être utilisé sur des appareils `armeabi-v7a` multiprocesseurs (décrits ci-dessous). L’utilisation de code `aremabi` sur les appareils `armeabi-v7a` à un seul cœur est sûre.
+**Remarque** : Le code `armeabi` de Xamarin.Android n’est pas thread-safe et ne doit pas être utilisé sur des appareils `armeabi-v7a` multiprocesseurs (décrits ci-dessous). L’utilisation de code `armeabi` sur les appareils `armeabi-v7a` à un seul cœur est sûre.
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -64,7 +64,7 @@ Il s’agit d’un autre jeu d’instructions d’UC ARM qui étend l’EABI `ar
 #### <a name="arm64-v8a"></a>arm64-v8a
 
 Il s’agit d’un jeu d’instructions de 64 bits basé sur l’architecture d’UC ARMv8. Cette architecture est utilisée dans le *Nexus 9*.
-Xamarin.Android 5.1 fournit une prise en charge expérimentale pour cette architecture (pour plus d’informations, consultez [Fonctionnalités expérimentales](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)).
+Xamarin.Android 5.1 a inauguré la prise en charge de cette architecture (pour plus d’informations, consultez [Prise en charge du runtime 64 bits](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)).
 
 #### <a name="x86"></a>x86
 
@@ -78,13 +78,7 @@ C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d�
 
 #### <a name="x8664"></a>x86_64
 
-C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d’instructions x86 64 bits couramment nommé *x64* ou *AMD64*. Xamarin.Android 5.1 fournit une prise en charge expérimentale pour cette architecture (pour plus d’informations, consultez [Fonctionnalités expérimentales](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)).
-
-#### <a name="mips"></a>mips
-
-Il s’agit du nom d’une ABI pour les UC MIPS qui prennent en charge au moins le jeu d’instructions `MIPS32r1`. Aucun registre MIPS 16 ni `micromips` ne sont pris en charge par Android.
-
-**Remarque :** Les appareils MIPS ne sont pas pris en charge par Xamarin.Android, mais le seront dans une version ultérieure.
+C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d’instructions x86 64 bits couramment nommé *x64* ou *AMD64*. Xamarin.Android 5.1 a inauguré la prise en charge de cette architecture (pour plus d’informations, consultez [Prise en charge du runtime 64 bits](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)).
 
 #### <a name="apk-file-format"></a>Format de fichier APK
 
@@ -215,19 +209,22 @@ $APP/lib/libtwo.so # from armeabi-v7a
 
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android et les ABI
 
-Xamarin.Android prend en charge les architectures suivantes :
-
-- `armeabi`
-- `armeabi-v7a`
-- `x86`
-
-Xamarin.Android fournit la prise en charge expérimentale des architectures suivantes :
+Xamarin.Android prend en charge les architectures _64 bits_ suivantes :
 
 - `arm64-v8a`
 - `x86_64`
 
 > [!NOTE]
 > Depuis août 2018, les nouvelles applications doivent cibler l’API de niveau 26, et à partir d’août 2019, les applications devront [fournir des versions 64 bits](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html) en plus des versions 32 bits.
+
+Xamarin.Android prend en charge les architectures 32 bits suivantes :
+
+- `armeabi` ^
+- `armeabi-v7a`
+- `x86`
+
+> [!NOTE]
+> **^** Depuis [Xamarin.Android 9.2](https://docs.microsoft.com/xamarin/android/release-notes/9/9.2#removal-of-support-for-armeabi-cpu-architecture), `armeabi` n’est plus pris en charge.
 
 Xamarin.Android ne fournit pas actuellement la prise en charge de `mips`.
 
@@ -236,7 +233,6 @@ Xamarin.Android ne fournit pas actuellement la prise en charge de `mips`.
 Par défaut, Xamarin.Android utilise `armeabi-v7a` pour les versions de **Production**, et `armeabi-v7a` et `x86` pour les versions de **Débogage**. Vous pouvez définir la prise en charge d’ABI différentes via les Options de projet pour un projet Xamarin.Android. Dans Visual Studio, cela peut être défini dans le page **Options Android** des **Propriétés** du projet, sous l’onglet **Avancé**, comme indiqué dans la capture d’écran suivante :
 
 ![Propriétés avancées des options Android](multicore-devices-images/vs-abi-selections.png)
-
 
 Dans Visual Studio pour Mac, les architectures prises en charge peuvent être sélectionnées dans la page **Build Android** des **Options du projet**, sous l’onglet **Avancé**, comme indiqué dans la capture d’écran suivante :
 
@@ -255,7 +251,6 @@ Il expliquait ensuite comment spécifier la prise en charge des ABI dans une app
 
 ## <a name="related-links"></a>Liens associés
 
-- [Architecture MIPS](http://www.mips.com/products/product-materials/processor/mips-architecture)
 - [ABI pour l’architecture ARM (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Kit de développement natif (NDK) Android](https://developer.android.com/tools/sdk/ndk/index.html)
 - [Problème 9089 :Nexus One - AUCUNE bibliothèque native n’est chargée à partir d’armeabi s’il existe au moins une bibliothèque armeabi-v7a](http://code.google.com/p/android/issues/detail?id=9089)
