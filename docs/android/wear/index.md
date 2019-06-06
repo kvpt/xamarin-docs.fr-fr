@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: ca8b554e03c4e8339922ca99619245a45bd08e1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dda00760399572d714300f1487391212c6fa0998
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61286599"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740862"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -46,15 +46,15 @@ Le site de développement Android fournit des informations détaillées sur la c
 
 ## <a name="samples"></a>Exemples
 
-Vous pouvez trouver un nombre de [exemples](https://developer.xamarin.com/samples/android/Android%20Wear/) à l’aide de Android Wear (ou accédez directement à [github](https://github.com/xamarin/monodroid-samples/tree/master/wear)). 
+Vous pouvez trouver un nombre de [exemples](https://developer.xamarin.com/samples/android/Android%20Wear/) à l’aide de Android Wear (ou accédez directement à [github](https://github.com/xamarin/monodroid-samples/tree/master/wear)).
 
 |Exemple|Description|Capture d'écran|
 |--- |--- |--- |
-|[SkeletonWear](https://developer.xamarin.com/samples/SkeletonWear/)|Un exemple simple des principes fondamentaux de projets portable, y compris les GridViewPager et notifications interactives.|![Capture d’écran de Skeletonwear](images/skeleton.png)|
-|[WatchViewStub](https://developer.xamarin.com/samples/WatchViewStub/)|Une démonstration simple du contrôle WatchViewStub qui détecte la forme de l’écran et charge automatiquement la disposition correcte.  Voir comment WatchViewStub fonctionne le **Resources/layout/main_activity.xml** mise en page.|![Capture d’écran de WatchViewStub](images/watchview.png)|
-|[RecipeAssistant](https://developer.xamarin.com/samples/RecipeAssistant/)|Démonstration de pages de notification de l’usure, sous la forme d’étapes de recette. Notifications sont créées dans RecipeService.cs.|![Capture d’écran de RecipeAssistant](images/recipeassist.png)|
-|[ElizaChat](https://developer.xamarin.com/samples/ElizaChat/)|Exemple amusant de l’interaction avec un « assistant » appelé Eliza, à l’aide de notifications interactives usure pour créer une conversation à l’aide de réponses toutes.|![Capture d’écran de ElizaChat](images/eliza.png)|
-|[GridViewPager](https://developer.xamarin.com/samples/GridViewPager/)|GridViewPager implémente le modèle de navigation 2D, où l’utilisateur passe verticalement puis horizontalement pour naviguer dans les options et le contenu.|![Capture d’écran de GridViewPager](images/gridviewpager.png)|
+|[SkeletonWear](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)|Un exemple simple des principes fondamentaux de projets portable, y compris les GridViewPager et notifications interactives.|![Capture d’écran de Skeletonwear](images/skeleton.png)|
+|[WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)|Une démonstration simple du contrôle WatchViewStub qui détecte la forme de l’écran et charge automatiquement la disposition correcte. Voir comment WatchViewStub fonctionne le **Resources/layout/main_activity.xml** mise en page.|![Capture d’écran de WatchViewStub](images/watchview.png)|
+|[RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/)|Démonstration de pages de notification de l’usure, sous la forme d’étapes de recette. Notifications sont créées dans RecipeService.cs.|![Capture d’écran de RecipeAssistant](images/recipeassist.png)|
+|[ElizaChat](https://developer.xamarin.com/samples/monodroid/wear/ElizaChat/)|Exemple amusant de l’interaction avec un « assistant » appelé Eliza, à l’aide de notifications interactives usure pour créer une conversation à l’aide de réponses toutes.|![Capture d’écran de ElizaChat](images/eliza.png)|
+|[GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/)|GridViewPager implémente le modèle de navigation 2D, où l’utilisateur passe verticalement puis horizontalement pour naviguer dans les options et le contenu.|![Capture d’écran de GridViewPager](images/gridviewpager.png)|
 |[WatchFace](https://developer.xamarin.com/samples/monodroid/wear/WatchFace)|WatchFace est un personnalisé cadran de montre avec analogique-style heure, minute et secondes mains. Cet exemple montre comment créer un service de visage espion qui dessine l’heure actuelle et de visibilité et mode ambiante gère les événements de modification. Il inclut un récepteur de diffusion qui écoute les modifications de fuseau horaire et met automatiquement à jour l’heure en conséquence.|![Capture d’écran de WatchFace](images/gridviewpager.png)|
 
 

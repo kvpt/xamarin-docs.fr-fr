@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2018
-ms.openlocfilehash: e88f6e24cbf4c8b2f0c0486c6408e234e87066cc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3d4c29a7d206b826046fd1f79e0513e85ea57898
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228580"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740669"
 ---
 # <a name="android-speech"></a>Reconnaissance vocale Android
 
@@ -39,7 +39,7 @@ Il est important, cependant, à reconnaître que la reconnaissance vocale n’es
 
 Une simple définition de présentation est que vous êtes en mesure de déterminer par ton et le contexte de la vraie signification de ce que dit. Pour interpréter simplement signifie prendre les mots et les sortir dans une autre forme.
 
-Prenons l’exemple simple suivant qui est utilisé dans une conversation de tous les jours : 
+Prenons l’exemple simple suivant qui est utilisé dans une conversation de tous les jours :
 
 <kbd>Bonjour, comment vas-tu ?</kbd>
 
@@ -161,7 +161,8 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
-Ce code appelle [TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/) pour tester si le module linguistique pour les paramètres régionaux donnés est déjà présent sur l’appareil. Cette méthode retourne un [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/), ce qui indique si la langue pour les paramètres régionaux transmis est disponible. Si `LanguageAvailableResult` indique que la langue est `NotSupported`, alors il n’existe aucun package de la voix (même pour le téléchargement) pour cette langue. Si `LanguageAvailableResult` est défini sur `MissingData`, il est possible de télécharger un nouveau package de langage, comme expliqué ci-dessous à l’étape 4.
+Ce code appelle [TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/) pour tester si le module linguistique pour les paramètres régionaux donnés est déjà présent sur l’appareil.
+Cette méthode retourne un [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/), ce qui indique si la langue pour les paramètres régionaux transmis est disponible. Si `LanguageAvailableResult` indique que la langue est `NotSupported`, alors il n’existe aucun package de la voix (même pour le téléchargement) pour cette langue. Si `LanguageAvailableResult` est défini sur `MissingData`, il est possible de télécharger un nouveau package de langage, comme expliqué ci-dessous à l’étape 4.
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Étape 3 : définition de la vitesse et le pas
 
@@ -233,7 +234,7 @@ Dans ce guide, nous avons examiné les principes fondamentaux de conversion de t
 
 ## <a name="related-links"></a>Liens associés
 
-- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [Xamarin.Forms DependencyService](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [Texte par synthèse vocale (exemple)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TextToSpeech)
 - [Reconnaissance vocale (exemple)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SpeechToText)
 - [Espace de noms d’Android.Speech](https://developer.xamarin.com/api/namespace/Android.Speech/)

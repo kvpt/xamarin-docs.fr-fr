@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 3592a3027469cb9997d973db53d636ddea9e679d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 48ff30397b2592dd2c4dbd445987392d78ced6f3
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024271"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740776"
 ---
 # <a name="activity-lifecycle"></a>Cycle de vie des activités
 
@@ -62,7 +62,7 @@ Ces États peuvent être classées en 4 groupes principaux comme suit :
 
 Pour rendre les choses plus compliquées, Android lève une clé plus dans la combinaison de modifications de Configuration. Modifications de configuration sont activité rapide destruction/ré-creation cycles qui se produisent lors de la configuration d’une activité change, par exemple quand l’appareil est [pivoté](~/android/app-fundamentals/handling-rotation.md) (et l’activité doit obtenir régénéré dans paysage ou portrait mode), lorsque le clavier est affiché (et que l’activité est présentée avec possibilité de redimensionner lui-même), ou lorsque l’appareil est placé dans une station d’accueil, entre autres.
 
-Modifications de configuration entraînent toujours les mêmes modifications d’état de l’activité qui se produirait pendant l’arrêt et redémarrage d’une activité. Toutefois, pour vous assurer qu’une application semble réactive et effectue correctement lors des modifications de configuration, il est important qu’elles être gérées aussi rapidement que possible. Pour cette raison, Android a une API spécifique qui peut être utilisée pour conserver l’état pendant les modifications de configuration.
+Modifications de configuration entraînent toujours les mêmes modifications d’état de l’activité qui se produirait pendant l’arrêt et redémarrage d’une activité. Toutefois, pour vous assurer qu’une application semble réactive et effectue correctement lors des modifications de configuration, il est important qu’elles sont gérées aussi rapidement que possible. Pour cette raison, Android a une API spécifique qui peut être utilisée pour conserver l’état pendant les modifications de configuration.
 Nous aborderons cela plus loin dans le [gestion état tout au long le cycle de vie](~/android/app-fundamentals/activity-lifecycle/index.md#Managing_State_Throughout_the_Lifecycle) section.
 
 ### <a name="activity-lifecycle-methods"></a>Méthodes de cycle de vie d’activité
@@ -117,7 +117,7 @@ Une fois `OnCreate` a terminé, Android appellera `OnStart`.
 Les appels système [OnResume](https://developer.xamarin.com/api/member/Android.App.Activity.OnResume/) lorsque l’activité est prête à commencer à interagir avec l’utilisateur.
 Activités doivent substituer cette méthode pour effectuer des tâches telles que :
 
--  Renforcement des fréquences d’images (une tâche courante dans la construction de jeux)
+-  Renforcement des fréquences d’images (une tâche courante dans le développement de jeux)
 -  Animations de départ
 -  À l’écoute des mises à jour GPS
 -  Afficher toutes les alertes pertinentes ou boîtes de dialogue

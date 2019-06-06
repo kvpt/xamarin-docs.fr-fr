@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9d9bef6d1a0817abc12b5a9bd266b1e1e7d38348
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 95ebcc8ef436c90e807045bd009b35ff1c3e9c1f
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60949620"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740794"
 ---
 # <a name="actionbar"></a>ActionBar
 
@@ -51,7 +51,7 @@ class SampleTabFragment: Fragment
         ViewGroup container, Bundle savedInstanceState)
     {
         base.OnCreateView (inflater, container, savedInstanceState);
-       
+
         var view = inflater.Inflate (
             Resource.Layout.Tab, container, false);
 
@@ -123,7 +123,7 @@ Pour le menu de la majoration, nous remplaçons `OnCreateOptionsMenu` dans la so
 public override bool OnCreateOptionsMenu (IMenu menu)
 {
     MenuInflater.Inflate (Resource.Menu.ActionBarMenu, menu);       
-           
+
     var shareMenuItem = menu.FindItem (Resource.Id.shareMenuItem);           
     var shareActionProvider =
        (ShareActionProvider)shareMenuItem.ActionProvider;
@@ -153,7 +153,7 @@ L’image dans l’exemple de code ci-dessus est inclus en tant que ressource av
 
 ## <a name="related-links"></a>Liens associés
 
-- [Hello onglets ICS (exemple)](https://developer.xamarin.com/samples/HelloTabsICS/)
+- [Hello onglets ICS (exemple)](https://developer.xamarin.com/samples/monodroid/HelloTabsICS/)
 - [Démonstration de ShareActionProvider (exemple)](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/)
 - [Présentation d’Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
 - [Plateforme 4.0 Android](https://developer.android.com/sdk/android-4.0.html)

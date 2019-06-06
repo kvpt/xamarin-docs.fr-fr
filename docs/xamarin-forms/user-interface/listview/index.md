@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ec988508aaff1b433008add0bfbf0f2ad5f2dcf3
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: f9a3f6301005210d221f3223607e82adc0971a32
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970937"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66741016"
 ---
 # <a name="xamarinforms-listview"></a>ListView de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/WorkingWithListview)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) est une vue pour la présentation des listes de données, en particulier longues listes qui requièrent un défilement.
 
@@ -62,7 +62,7 @@ Pour en savoir plus sur les fonctionnalités d’interactivité de ListView, con
 
 ## <a name="related-links"></a>Liens associés
 
-- [Utilisation avec ListView (exemple)](https://developer.xamarin.com/samples/WorkingWithListview)
+- [Utilisation avec ListView (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
 - [Liaison bidirectionnelle (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
 - [Intégrées dans les cellules (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
 - [Cellules personnalisés (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
