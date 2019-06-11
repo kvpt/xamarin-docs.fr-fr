@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 51ccf3faa2524035a30b26af6652959699663e24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1eb3ec77dd478744906625dcfcd9fb843e74577c
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61260941"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827475"
 ---
 # <a name="application-icons-in-xamarinios"></a>Icônes d’application dans Xamarin.iOS
 
@@ -210,6 +210,6 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 
 ## <a name="related-links"></a>Liens associés
 
-- [Utilisation d’Images (exemple)](https://developer.xamarin.com/samples/WorkingWithImages/)
+- [Utilisation d’Images (exemple)](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [Icône personnalisée et les instructions de création d’Image](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

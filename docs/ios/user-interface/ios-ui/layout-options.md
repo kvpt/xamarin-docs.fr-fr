@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: b35149028763691c17fe526673d023cc9b707c28
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1bcced2f43328bf5e7d1ebb171b3c92c9ec22493
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61246066"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827762"
 ---
 # <a name="layout-options-in-xamarinios"></a>Options de disposition dans Xamarin.iOS
 
@@ -70,4 +70,4 @@ Notez que l’affichage de texte et un champ de texte à la fois s’étire pour
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://developer.xamarin.com/samples/Controls/)
+- [Contrôles (exemple)](https://developer.xamarin.com/samples/monotouch/Controls/)

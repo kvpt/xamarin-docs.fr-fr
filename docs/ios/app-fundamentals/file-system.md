@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/12/2018
-ms.openlocfilehash: 09e05fcfe10a994e14aa605b203ea67efae80d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 10f4f53e71a47521076538bf9eb12b86c1e478a6
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393613"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827518"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Accès au système de fichiers dans Xamarin.iOS
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 
 Vous pouvez utiliser Xamarin.iOS et `System.IO` classes dans le *bibliothèque de classes de Base (BCL) .NET* pour accéder au système de fichier iOS. La classe `File` permet de créer, supprimer et lire des fichiers, et la classe `Directory` permet de créer, supprimer ou énumérer le contenu des répertoires. Vous pouvez également utiliser `Stream` sous-classes, ce qui peuvent fournir un degré plus élevé de contrôle sur les opérations de fichier (par exemple, la compression ou la position de recherche au sein d’un fichier).
 
@@ -356,6 +356,6 @@ Cet article vous a montré que les opérations de système de fichiers avec Xama
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de code du système de fichiers](https://developer.xamarin.com/samples/FileSystemSampleCode/)
+- [Exemple de code du système de fichiers](https://developer.xamarin.com/samples/monotouch/FileSystemSampleCode/)
 - [Guide de programmation de système de fichiers](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/Introduction/Introduction.html)
 - [Inscrit le fichier de Types de votre application prend en charge](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html#/apple_ref/doc/uid/TP40010411-SW1)

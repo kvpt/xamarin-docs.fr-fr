@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b3981572e4d2629fd88d1e255fc7459bfe8912f1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f957bd5b361d7287353542186916c7f934ee0490
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60950128"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827786"
 ---
 # <a name="kitkat-features"></a>Fonctionnalités de KitKat
 
@@ -564,7 +564,7 @@ class HceService : HostApduService
 }
 ```
 
-Le Service ci-dessus fournit un moyen pour le lecteur NFC interagir avec l’application, mais le lecteur NFC n’a encore aucun moyen de savoir si ce Service émule la carte NFC qu’il doit analyser. Pour identifier le Service au lecteur NFC, nous pouvons affecter le Service unique *ID Application (AID)*. Nous spécifier une aide, ainsi que d’autres métadonnées relatives au Service HCE, dans un fichier de ressources xml enregistré avec le `MetaData` attribut (voir l’exemple de code ci-dessus). Ce fichier de ressource spécifie un ou plusieurs filtres aide - les chaînes d’identificateur unique au format hexadécimal qui correspondent aux outils d’un ou plusieurs appareils de lecteur NFC :
+Le Service ci-dessus fournit un moyen pour le lecteur NFC interagir avec l’application, mais le lecteur NFC n’a encore aucun moyen de savoir si ce Service émule la carte NFC qu’il doit analyser. Pour identifier le Service au lecteur NFC, nous pouvons affecter le Service unique *ID Application (AID)* . Nous spécifier une aide, ainsi que d’autres métadonnées relatives au Service HCE, dans un fichier de ressources xml enregistré avec le `MetaData` attribut (voir l’exemple de code ci-dessus). Ce fichier de ressource spécifie un ou plusieurs filtres aide - les chaînes d’identificateur unique au format hexadécimal qui correspondent aux outils d’un ou plusieurs appareils de lecteur NFC :
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -713,6 +713,6 @@ Cet article introduit certaines des nouvelles API disponibles dans Android 4.4 (
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de KitKat](https://developer.xamarin.com/samples/KitKat/)
+- [Exemple de KitKat](https://developer.xamarin.com/samples/monodroid/KitKat/)
 - [Android 4.4 API](https://developer.android.com/about/versions/android-4.4.html)
 - [KitKat Android](https://developer.android.com/about/versions/kitkat.html)

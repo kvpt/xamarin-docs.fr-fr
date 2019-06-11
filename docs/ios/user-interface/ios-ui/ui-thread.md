@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9bde539286b69569b4928bc28b20faecee0f5209
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: e4485c485b708bdec06f7f1dc22f0bf33e07e982
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557381"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827744"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Travaillez sur le Thread d’interface utilisateur dans Xamarin.iOS
 
@@ -96,5 +96,5 @@ Si une méthode async est appelée à partir d’un thread d’arrière-plan (pa
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://developer.xamarin.com/samples/Controls/)
+- [Contrôles (exemple)](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [Thread](~/ios/app-fundamentals/threading.md)

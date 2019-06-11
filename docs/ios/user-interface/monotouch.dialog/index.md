@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: d5dda3cc22d91248cc31cc526e898a5eabbbefd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 982f19eef7b98a05535298430bdfdbe6e54bac10
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61415387"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827445"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Introduction à MonoTouch.Dialog pour Xamarin.iOS
 
@@ -55,7 +55,7 @@ Par exemple, chaque fois qu’une table est nécessaire, une source de données 
 SERVEUR CIBLE MAÎTRE. D qui simplifie en encapsulant tout ce code dans une API générique pour la création de table. Ensuite, il fournit une abstraction placée sur cette API autorise pour un objet déclaratif de syntaxe qui facilite encore davantage de liaison. Par conséquent, il existe deux API disponibles dans le serveur cible maître. D :
 
 -   **API de bas niveau éléments** : *API Elements* repose sur la création d’une arborescence hiérarchique d’éléments qui représentent des écrans et leurs composants. L’API Elements offre aux développeurs plus de flexibilité et de contrôle dans la création d’interfaces utilisateur. En outre, l’API d’éléments a prise en charge avancée pour la définition déclarative via JSON, ce qui permet à la fois extrêmement rapide déclaration, mais aussi génération dynamique de l’interface utilisateur à partir d’un serveur. 
--   **API de réflexion de haut niveau** : également connu sous le *liaison* *API* , dans les classes sont annotées avec des indications d’interface utilisateur, puis le serveur cible maître. D automatiquement crée des écrans basés sur les objets et fournit une liaison entre ce qui est affichée (et éventuellement modifiée) sur l’écran, et l’objet sous-jacent sauvegarde.   L’exemple ci-dessus illustre l’utilisation de l’API de réflexion. Cette API ne fournit pas le contrôle précis que les API d’éléments, mais il simplifie encore davantage en générant automatiquement à la hiérarchie d’éléments en fonction d’attributs de classe. 
+-   **API de réflexion de haut niveau** : également connu sous le *liaison* *API* , dans les classes sont annotées avec des indications d’interface utilisateur, puis le serveur cible maître. D automatiquement crée des écrans basés sur les objets et fournit une liaison entre ce qui est affichée (et éventuellement modifiée) sur l’écran, et l’objet sous-jacent sauvegarde. L’exemple ci-dessus illustre l’utilisation de l’API de réflexion. Cette API ne fournit pas le contrôle précis que les API d’éléments, mais il simplifie encore davantage en générant automatiquement à la hiérarchie d’éléments en fonction d’attributs de classe. 
 
 
 SERVEUR CIBLE MAÎTRE. Compressé avec un grand nombre de D est fourni intégrées dans les éléments d’interface utilisateur pour la création de l’écran, mais il reconnaît également la nécessité d’éléments personnalisés et les dispositions d’écran avancées. Par conséquent, l’extensibilité est la que première classe proposées conservées sur l’API. Les développeurs peuvent étendre les éléments existants ou créer de nouveaux et ensuite intégrer en toute transparence.
@@ -587,8 +587,6 @@ Cet article a abordé beaucoup d’informations sur MonoTouch.Dialog. Il décrit
 
 ## <a name="related-links"></a>Liens associés
 
-- [Capture vidéo - Miguel de Icaza crée un écran de connexion iOS avec MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Capture vidéo - créer facilement des interfaces utilisateur iOS avec MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [Procédure pas à pas : création d’une application à l’aide de l’API Elements](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Procédure pas à pas : création d’une application à l’aide de l’API Reflection](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Procédure pas à pas : À l’aide d’un élément JSON pour créer une Interface utilisateur](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

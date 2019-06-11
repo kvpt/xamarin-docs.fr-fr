@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: bb57dbdb87555fb0b3ab8941024e5a84e4723099
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25c5595fac2ea2aa7a87d6640cc6b5c399ab5e5e
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425094"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827806"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Affichage des images avec Xamarin.iOS
 
@@ -84,4 +84,4 @@ Fichier de ressources fait référence à jamais nécessaire d’inclure le **re
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Contrôles (exemple)](https://developer.xamarin.com/samples/Controls/)
+- [Contrôles (exemple)](https://developer.xamarin.com/samples/monotouch/Controls/)

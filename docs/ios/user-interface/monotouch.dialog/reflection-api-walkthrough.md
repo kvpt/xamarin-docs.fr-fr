@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ecbda48ac7b175503701aa64f001c0138cfb423a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2ac828c8efca3a1a5c54d4dcdaf175ebfc63fdc2
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61217397"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827302"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin.iOS à l’aide de l’API de réflexion
 
@@ -148,9 +148,7 @@ Cet article a présenté une procédure pas à pas de l’API de réflexion. Nou
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDReflectionWalkthrough (sample)](https://developer.xamarin.com/samples/MTDReflectionWalkthrough/)
-- [Capture vidéo - Miguel de Icaza crée un écran de connexion iOS avec MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Capture vidéo - créer facilement des interfaces utilisateur iOS avec MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
+- [MTDReflectionWalkthrough (sample)](https://developer.xamarin.com/samples/monotouch/MTDReflectionWalkthrough/)
 - [Introduction à la boîte de dialogue MonoTouch](~/ios/user-interface/monotouch.dialog/index.md)
 - [API de procédure pas à pas les éléments](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Procédure pas à pas JSON élément](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

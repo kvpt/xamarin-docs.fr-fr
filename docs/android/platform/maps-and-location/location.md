@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 05a2187a5e8dc010f04e89757b566eaf44cb5fd6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 76f98f1e660f22ec25c48407f2e87cec60ff12ef
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61181273"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827683"
 ---
 # <a name="location-services"></a>Services de localisation
 
@@ -355,8 +355,8 @@ Ce guide a couvert obtenir l’emplacement de l’utilisateur à l’aide du Ser
 
 ## <a name="related-links"></a>Liens associés
 
-- [Emplacement (exemple)](https://developer.xamarin.com/samples/Location/)
-- [FusedLocationProvider (sample)](https://developer.xamarin.com/samples/FusedLocationProvider/)
+- [Emplacement (exemple)](https://developer.xamarin.com/samples/monodroid/Location/)
+- [FusedLocationProvider (sample)](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
 - [Services Google Play](https://developer.android.com/google/play-services/index.html)
 - [Classe de critères](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
 - [Classe de LocationManager](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)

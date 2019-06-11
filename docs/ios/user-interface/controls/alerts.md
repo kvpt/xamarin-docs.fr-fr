@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 6071381daa7eedf4fa4b076ea60f2748865cf002
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 16d3dfaa0169e3a02fcdee0318dc150994c7e59b
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60896223"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827871"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Affichage des alertes dans Xamarin.iOS
 
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://developer.xamarin.com/samples/Controls/)
+- [Contrôles (exemple)](https://developer.xamarin.com/samples/monotouch/Controls/)
 - [Contrôleur d’alerte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

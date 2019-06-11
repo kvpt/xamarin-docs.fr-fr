@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 3b81ba51a0fbdf4c684ca602cb083f8da08c7d6a
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977983"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827486"
 ---
 # <a name="binding-objective-c-libraries"></a>Bibliothèques de liaison Objective-C
 
@@ -44,7 +44,7 @@ Vous pouvez cela à partir de Visual Studio pour Mac, sélectionnez le type de p
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Le moyen le plus simple de créer une liaison consiste à créer un projet de liaison Xamarin.iOS.
-Cela en sélectionnant le type de projet à partir de Visual Studio sur Windows **Visual C# > iOS > bibliothèque de liaisons (iOS)**:
+Cela en sélectionnant le type de projet à partir de Visual Studio sur Windows **Visual C# > iOS > bibliothèque de liaisons (iOS)** :
 
 [![](objective-c-libraries-images/00vs-sml.png "iOS iOS de la bibliothèque de liaisons")](objective-c-libraries-images/00vs.png#lightbox)
 
@@ -1403,4 +1403,4 @@ Nous nécessitaient copie le protocole à chaque implémentation, mais dans ce c
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de liaison](https://developer.xamarin.com/samples/BindingSample/)
+- [Exemple de liaison](https://developer.xamarin.com/samples/monotouch/BindingSample/)

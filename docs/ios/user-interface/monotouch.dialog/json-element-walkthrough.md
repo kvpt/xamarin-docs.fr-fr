@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 07bcbfe046fd689e08eed4e64495b56d083ceeb8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cd80217b39ecca2cc7b49437b9469aaa1107208b
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61304442"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827227"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>L’utilisation de JSON pour créer une interface utilisateur dans Xamarin.iOS
 
@@ -169,9 +169,7 @@ Cet article vous a montré comment créer un à l’aide de l’interface avec l
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDJsonDemo (sample)](https://developer.xamarin.com/samples/MTDJsonDemo/)
-- [Capture vidéo - Miguel de Icaza crée un écran de connexion iOS avec MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Capture vidéo - créer facilement des interfaces utilisateur iOS avec MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
+- [MTDJsonDemo (sample)](https://developer.xamarin.com/samples/monotouch/MTDJsonDemo/)
 - [Introduction à MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
 - [API de procédure pas à pas les éléments](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Procédure pas à pas API de réflexion](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)

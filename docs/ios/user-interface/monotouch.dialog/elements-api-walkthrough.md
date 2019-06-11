@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 14711f9cc2c34d72765e28db158379bc2a26849b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9331c7e6920f94d2ff0dddc50eb8f1ff9817d982
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61201059"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827857"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Création d’une application Xamarin.iOS à l’aide de l’API Elements
 
@@ -146,9 +146,7 @@ Cet article a présenté une procédure pas à pas qui vous a montré comment ut
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDWalkthrough (sample)](https://developer.xamarin.com/samples/MTDWalkthrough/)
-- [Capture vidéo - Miguel de Icaza crée un écran de connexion iOS avec MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Capture vidéo - créer facilement des interfaces utilisateur iOS avec MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
+- [MTDWalkthrough (sample)](https://developer.xamarin.com/samples/monotouch/MTDWalkthrough/)
 - [Introduction à MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
 - [Procédure pas à pas API de réflexion](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Procédure pas à pas JSON élément](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
