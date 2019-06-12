@@ -6,18 +6,22 @@ ms.assetid: F58D2D81-FFAF-43DD-8A9B-3684DFEAA99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/02/2017
-ms.openlocfilehash: 595c7db89bf8804c34657a6119d7c3427fc1d2b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 05/29/2019
+ms.openlocfilehash: 8d26a582e68fb557d20d7bfa690bbf4acfe307c1
+ms.sourcegitcommit: c2bba24233624c2ec0e9ee9827310ca022212a2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61327085"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66835301"
 ---
 # <a name="sending-push-notifications"></a>Envoi de notifications Push
 
 _Une notification push est utilisée pour fournir des informations, par exemple, un message, à partir d’un système principal à une application sur un appareil mobile pour augmenter l’utilisation et l’engagement de l’application. La notification peut être envoyée à tout moment, même lorsque l’utilisateur n’est pas activement à l’aide de l’application cible._
 
-## <a name="sending-push-notifications-from-azure-mobile-appsazuremd"></a>[Envoi de Notifications Push à partir d’Azure Mobile Apps](azure.md)
+## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinformsazure-notification-hubmd"></a>[Envoyer et recevoir des Notifications Push avec Azure Notification Hubs et de Xamarin.Forms](azure-notification-hub.md)
 
-Azure Notification Hubs fournit une infrastructure push évolutif pour l’envoi de notifications push mobiles à partir de n’importe quel backend à n’importe quelle plateforme mobile, tout en éliminant la complexité d’un serveur principal d’avoir à communiquer avec les systèmes de notification de plateforme différente.
+Azure Notification Hubs permettent de centraliser les notifications sur les plateformes pour votre application back-end puisse communiquer avec un concentrateur unique. Azure Notification Hubs s’occuper de la distribution des notifications push à plusieurs fournisseurs de plateforme. Cet article explique comment intégrer Azure Notification Hubs dans une application Xamarin.Forms.
+
+## <a name="send-push-notifications-from-azure-mobile-appsazuremd"></a>[Envoyer des Notifications Push à partir d’Azure Mobile Apps](azure.md)
+
+Azure Mobile Apps s’intègrent avec Azure Notification Hubs pour fournir un serveur principal évolutif capable d’envoyer des notifications push. Azure Notification Hubs élimine la complexité de la communication avec des Services de Notification Push tels que Google et Apple.
