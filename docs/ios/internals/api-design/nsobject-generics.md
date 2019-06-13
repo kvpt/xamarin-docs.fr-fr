@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 512280e9c298cfbcea6f693b0691236fd1cf5a5f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036472"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039634"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Sous-classes génériques NSObject dans Xamarin.iOS
 
@@ -107,7 +107,7 @@ Instanciation des types génériques à partir d’Objective-C n’est pas autor
 
 Examinez cette définition de classe qui expose un constructeur qui accepte un `IntPtr` (la façon de Xamarin.iOS de construction d’un C# objet à partir d’une instance de Objective-C native) :
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}
@@ -121,7 +121,7 @@ Il s’agit en effet, Objective-C n’a aucun concept des types génériques, et
 
 Ce problème peut être contourné en créant une sous-classe spécialisée du type générique.   Exemple :
     
-```
+```csharp
 class Generic<T> : NSObject where T : NSObject
 {
     public Generic () {}

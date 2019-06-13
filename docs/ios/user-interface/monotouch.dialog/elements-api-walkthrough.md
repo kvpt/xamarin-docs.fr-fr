@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 9331c7e6920f94d2ff0dddc50eb8f1ff9817d982
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 1b4263e37e6d95c03e88905319cfe0ee167cb30b
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827857"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039693"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Création d’une application Xamarin.iOS à l’aide de l’API Elements
 
@@ -47,21 +47,20 @@ Pour créer une application multi-écran avec MonoTouch.Dialog, nous devons :
 Pour créer une application de style de navigation, nous devons créer un `UINavigationController`, puis l’ajouter en tant que le `RootViewController` dans le `FinishedLaunching` méthode de la `AppDelegate`. Pour rendre le `UINavigationController` fonctionnent avec MonoTouch.Dialog, nous ajoutons un `DialogViewController` à la `UINavigationController` comme indiqué ci-dessous :
 
 ```csharp
-public override bool FinishedLaunching (UIApplication app, 
-        NSDictionary options)
+public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {
-        _window = new UIWindow (UIScreen.MainScreen.Bounds);
+    _window = new UIWindow (UIScreen.MainScreen.Bounds);
             
-        _rootElement = new RootElement ("To Do List"){new Section ()};
+    _rootElement = new RootElement ("To Do List"){new Section ()};
 
-        // code to create screens with MT.D will go here …
+    // code to create screens with MT.D will go here …
 
-        _rootVC = new DialogViewController (_rootElement);
-        _nav = new UINavigationController (_rootVC);
-        _window.RootViewController = _nav;
-        _window.MakeKeyAndVisible ();
+    _rootVC = new DialogViewController (_rootElement);
+    _nav = new UINavigationController (_rootVC);
+    _window.RootViewController = _nav;
+    _window.MakeKeyAndVisible ();
             
-        return true;
+    return true;
 }
 ```
 
@@ -88,22 +87,20 @@ _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 Lorsque nous avons créé le `RootElement` précédemment, nous lui passé un seul `Section` instance afin que nous pourrions ajouter des éléments en tant que le <span class="ui"> + </span> l’appui sur bouton par l’utilisateur. Nous pouvons utiliser le code suivant pour accomplir ce de l’événement de gestionnaire pour le bouton :
 
 ```csharp
-_addButton.Clicked += (sender, e) => {
+_addButton.Clicked += (sender, e) => {                
+    ++n;
                 
-        ++n;
+    var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
                 
-        var task = new Task{Name = "task " + n, DueDate = DateTime.Now};
-                
-        var taskElement = new RootElement (task.Name){
-                new Section () {
-                        new EntryElement (task.Name, 
-                                "Enter task description", task.Description)
-                },
-                new Section () {
-                        new DateElement ("Due Date", task.DueDate)
-                }
-        };
-        _rootElement [0].Add (taskElement);
+    var taskElement = new RootElement (task.Name) {
+        new Section () {
+            new EntryElement (task.Name, "Enter task description", task.Description)
+        },
+        new Section () {
+            new DateElement ("Due Date", task.DueDate)
+        }
+    };
+    _rootElement [0].Add (taskElement);
 };
 ```
 
@@ -112,15 +109,15 @@ Ce code crée un nouveau `Task` objet chaque fois que l’appui sur le bouton. L
 ```csharp
 public class Task
 {   
-        public Task ()
-        {
-        }
+    public Task ()
+    {
+    }
+      
+    public string Name { get; set; }
         
-        public string Name { get; set; }
-        
-        public string Description { get; set; }
+    public string Description { get; set; }
 
-        public DateTime DueDate { get; set; }
+    public DateTime DueDate { get; set; }
 }
 ```
 
