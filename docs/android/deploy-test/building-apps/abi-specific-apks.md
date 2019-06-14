@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: d5d4274adad64e8555659645533a8e58b845bfa7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: b34ac82cf240b892e60707d76c82da64ff232a20
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667904"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827422"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
@@ -185,6 +185,6 @@ Ce guide contient quelques suggestions pour la création de fichiers APK Android
 
 ## <a name="related-links"></a>Liens associés
 
-- [OneABIPerAPK (exemple)](https://developer.xamarin.com/samples/OneABIPerAPK/)
+- [OneABIPerAPK (exemple)](https://developer.xamarin.com/samples/monodroid/OneABIPerAPK/)
 - [Publication d’une application](~/android/deploy-test/publishing/index.md)
 - [Prise en charge de plusieurs fichiers APK pour Google Play](https://developer.android.com/google/play/publishing/multiple-apks.html)

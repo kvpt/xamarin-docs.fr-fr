@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 08278c2bc380892706320dbd0e69642257b73005
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 2c9fae211e6a88944c94ca265409865b3252a10a
+ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233781"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66740931"
 ---
 # <a name="checking-battery-status"></a>Vérification de l’état de la batterie
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/DependencyService)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
 
 Cet article vous montre comment créer une application qui vérifie l’état de la batterie. Cet article est basé sur le plug-in de batterie conçu par James Montemagno. Pour plus d’informations, consultez le [dépôt GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
@@ -478,6 +478,6 @@ Quand un clic sur ce bouton est enregistré dans cette application exécutée su
 
 ## <a name="related-links"></a>Liens associés
 
-- [DependencyService (exemple)](https://developer.xamarin.com/samples/DependencyService)
-- [Utilisation de DependencyService (exemple)](https://developer.xamarin.com/samples/UsingDependencyService/)
+- [DependencyService (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/)
+- [Utilisation de DependencyService (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
 - [Exemples Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)

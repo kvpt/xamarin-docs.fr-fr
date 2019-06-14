@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 07f1fbae6c4fbfcfad45fc96970339e34b5de040
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
+ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102839"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66827203"
 ---
 # <a name="linking-on-android"></a>Liaison sur Android
 
 Les applications Xamarin.Android utilisent un *éditeur de liens* pour réduire la taille de l’application. L’éditeur de liens effectue une analyse statique de votre application pour déterminer les assemblys réellement utilisés, les types réellement utilisés et les membres réellement utilisés. L’éditeur de liens se comporte ensuite comme un *récupérateur de mémoire*, qui recherche en permanence des assemblys, des types des membres qui sont référencés jusqu'à la fermeture complète des assemblys, types et membres référencés. Tous les autres éléments sont *ignorés*.
 
-Par exemple, [Hello, Android](https://developer.xamarin.com/samples/HelloM4A/) :
+Par exemple, [Hello, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) :
 
 |Configuration|1.2.0 Size|4.0.1 Size|
 |---|---|---|
@@ -90,7 +90,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>Conservation du code
 
-L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Exemple :
+L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Par exemple :
 
 -   Vous pouvez obtenir le code que vous appelez dynamiquement via `System.Reflection.MemberInfo.Invoke`.
 
