@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 0b063619387d9984e24f6987234605b626289e2d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 5fbe711cb8ad4902da047a2027fc05e9956de863
+ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978297"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67039718"
 ---
 # <a name="hello-ios--quickstart"></a>Hello.iOS - Démarrage rapide
 
