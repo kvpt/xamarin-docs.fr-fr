@@ -5,20 +5,23 @@ ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: 5eb0dcead230e0bb2e7d99241e5d8e5a4115f838
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: bf0186b55b14d9797397b98390f4d825d669d0f4
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61175394"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157698"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Résolution des problèmes de Xamarin Live Player
 
 ![Fonctionnalité d’évaluation](~/media/shared/preview.png)
 
-> [!NOTE]
-> Acteur de l’aperçu est uniquement disponible dans Visual Studio 2017.
+> [!WARNING]
+> La version préliminaire Xamarin Live Player est terminée. L’application n’est plus disponible. Les instructions ci-dessous sont fournies pour les clients de continuer à utiliser la version préliminaire avec Visual Studio 2017...
+
+> [!TIP]
+> Vous pouvez utiliser la [Générateur d’aperçu XAML](~/xamarin-forms/xaml/xaml-previewer/index.md) dans Visual Studio 2019 ou Visual Studio pour Mac pour afficher vos conceptions de l’écran lorsque vous les modifiez.
 
 Cet article explique les limitations de Live Player et certains problèmes courants avec les étapes pour les corriger.
 
@@ -163,4 +166,3 @@ Les projets Android de Xamarin.Forms doivent utiliser « Toolbar.axml » et «
 ## <a name="related-links"></a>Liens associés
 
 - [Installation](~/tools/live-player/install.md)
-- [Échantillons à utiliser avec Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)

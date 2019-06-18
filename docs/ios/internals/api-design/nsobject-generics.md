@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: becdd842f46cc7100bd7d9a6fd7347b541685c35
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 4d2ab7a546925e92bb59f626279dcbf9c3c4ab4f
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039634"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157700"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Sous-classes génériques NSObject dans Xamarin.iOS
 
 ## <a name="using-generics-with-nsobjects"></a>L’utilisation de génériques avec NSObjects
 
-Depuis Xamarin.iOS 7.2.1, vous pouvez utiliser des génériques dans les sous-classes de `NSObject` (par exemple [UIView](xref:UIKit.UIView).
-
-Vous pouvez désormais créer des classes génériques, comme celle-ci :
+Il est possible d’utiliser des génériques dans les sous-classes de `NSObject`, par exemple [UIView](xref:UIKit.UIView):
 
 ```csharp
 class Foo<T> : UIView {
@@ -36,7 +34,7 @@ Objets depuis cette sous-classe `NSObject` sont enregistrés avec le runtime Obj
     
 ## <a name="considerations-for-generic-subclasses-of-nsobject"></a>Considérations pour les sous-classes génériques NSObject
 
-Ce document décrit en détail les limitations de la prise en charge limitée pour les sous-classes génériques de `NSObjects` introduite avec Xamarin.iOS 7.2.1.
+Ce document décrit en détail les limitations de la prise en charge limitée pour les sous-classes génériques de `NSObjects`.
     
 ### <a name="generic-type-arguments-in-member-signatures"></a>Arguments de Type générique dans les Signatures de membre
 
@@ -103,7 +101,7 @@ class Generic<T, U> : NSObject where T: NSObject
     
 ### <a name="instantiations-of-generic-types-from-objective-c"></a>Instanciations de Types génériques à partir d’Objective-C
 
-Instanciation des types génériques à partir d’Objective-C n’est pas autorisée. Cela se produit généralement lorsqu’un type managé est utilisé dans un xib.
+Instanciation des types génériques à partir d’Objective-C n’est pas autorisée. Cela se produit généralement lorsqu’un type managé est utilisé dans un xib ou storyboard.
 
 Examinez cette définition de classe qui expose un constructeur qui accepte un `IntPtr` (la façon de Xamarin.iOS de construction d’un C# objet à partir d’une instance de Objective-C native) :
     
@@ -119,7 +117,7 @@ Pendant la construction ci-dessus est parfaite, lors de l’exécution, cela lè
 
 Il s’agit en effet, Objective-C n’a aucun concept des types génériques, et il ne peut pas spécifier le type générique exact à créer.
 
-Ce problème peut être contourné en créant une sous-classe spécialisée du type générique.   Exemple :
+Ce problème peut être contourné en créant une sous-classe spécialisée du type générique. Exemple :
     
 ```csharp
 class Generic<T> : NSObject where T : NSObject
@@ -133,7 +131,7 @@ class GenericUIView : Generic<UIView>
 }
 ```
 
-Maintenant il n’existe aucune ambiguïté de plus, la classe `GenericUIView` peut être utilisé dans des XIB.
+Maintenant il n’existe aucune ambiguïté de plus, la classe `GenericUIView` peut être utilisé dans des XIB ou tables de montage séquentiel.
 
 ## <a name="no-support-for-generic-methods"></a>Aucune prise en charge pour les méthodes génériques
 
@@ -188,11 +186,11 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-**Raison :** Tout comme les méthodes génériques, le runtime Xamarin.iOS doit être en mesure de connaître le type à utiliser pour l’argument de type générique T.
+**Raison :** Tout comme les méthodes génériques, le runtime Xamarin.iOS doit être en mesure de connaître le type à utiliser pour l’argument de type générique `T`.
 
-Par exemple les membres que l’instance elle-même est utilisé (dans la mesure où il y aura jamais d’une instance générique<T>, il sera toujours générique<SomeSpecificClass>), mais pour les membres statiques ne sont pas présents.
+Par exemple les membres que l’instance elle-même est utilisé (dans la mesure où il y aura jamais d’une instance `Generic<T>`, il sera toujours `Generic<SomeSpecificClass>`), mais pour les membres statiques ne sont pas présents.
 
-Notez que cela s’applique même si le membre en question n’utilise pas l’argument de type T en aucune façon.
+Notez que cela s’applique même si le membre en question n’utilise pas l’argument de type `T` en aucune façon.
 
 L’alternative est dans ce cas consiste à créer une sous-classe spécialisée :
 
@@ -206,7 +204,7 @@ class GenericUIView : Generic<UIView>
     }
 
     [Export ("myProperty")]
-    public static UIView MyUIVIewProperty {
+    public static UIView MyUIViewProperty {
         get { return MyProperty; }
         set { MyProperty = value; }
     }
@@ -219,12 +217,6 @@ class Generic<T> : NSObject where T : NSObject
 }
 ```
 
-### <a name="requires-new-static-registrar"></a>Requiert les nouveau bureau d’enregistrement statique
-
-La prise en charge des génériques nécessite la nouvelle [système d’inscription](~/ios/internals/registrar.md).
-
-Si vous essayez d’utiliser l’ancien système d’inscription hérité affichage d’avertissements quand il rencontre des types génériques (en outre ne pas générer de code correct, ce qui entraîne un comportement non défini).
-    
 ## <a name="performance"></a>Performances
 
 Le bureau d’enregistrement statique ne peut pas résoudre un membre exporté dans un type générique au moment de la génération, comme c’est généralement le cas, elles doivent être recherchés lors de l’exécution. Cela signifie que l’appel d’une telle méthode à partir d’Objective-C est légèrement plus lente que l’appel de membres à partir de classes non génériques.

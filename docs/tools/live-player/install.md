@@ -1,41 +1,33 @@
 ---
-title: Programme d’installation de Xamarin Live Player
-description: Ce document décrit comment configurer Xamarin Live Player et utilisez-le pour apporter des modifications en direct à une application en cours d’exécution.
+title: Configuration de Xamarin Live Player Visual Studio
+description: Ce document décrit l’utilisation de Xamarin Live Player pour apporter des modifications en direct à une application en cours d’exécution.
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2018
-ms.openlocfilehash: f9cfc69c2cd711460233e609d63bcbb8eb172ccf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: a29a637526c2829b44ae89d505dac37a648dee77
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61405105"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157741"
 ---
-# <a name="xamarin-live-player-setup"></a>Programme d’installation de Xamarin Live Player
-
-Xamarin Live Player vous permet d’apporter des modifications en direct à votre application et avaient les modifications reflétées en direct sur l’appareil. Votre code s’exécute au sein de l’application Xamarin Live Player – pas nécessaire pour configurer les émulateurs ou utiliser des câbles pour déployer ! Cet article décrit comment configurer Xamarin Live Player.
+# <a name="xamarin-live-player-visual-studio-configuration"></a>Configuration de Xamarin Live Player Visual Studio
 
 ![Fonctionnalité d’évaluation](~/media/shared/preview.png)
 
-> [!NOTE]
-> Acteur de l’aperçu est uniquement disponible dans Visual Studio 2017.
+> [!WARNING]
+> La version préliminaire Xamarin Live Player est terminée. L’application n’est plus disponible. Les instructions ci-dessous sont fournies pour les clients de continuer à utiliser la version préliminaire avec Visual Studio 2017.
 
-## <a name="1-get-the-android-app"></a>1. Obtenir l’application Android
+> [!TIP]
+> Vous pouvez utiliser la [Générateur d’aperçu XAML](~/xamarin-forms/xaml/xaml-previewer/index.md) dans Visual Studio 2019 ou Visual Studio pour Mac pour afficher vos conceptions de l’écran lorsque vous les modifiez.
 
-Xamarin Live Player est disponible pour Android à installer directement à partir de [HockeyApp](https://aka.ms/xlp-hockeyapp).
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+## <a name="using-xamarin-live-player"></a>À l’aide de Xamarin Live Player
 
-## <a name="2-get-visual-studio-2017"></a>2. Obtenir Visual Studio 2017
-
-Xamarin Live Player requiert :
-
-- Visual Studio 2017 15.4 ou ultérieure.
-- Un ordinateur Visual Studio et un appareil sur le même réseau Wi-Fi.
-
-## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. À l’aide de Xamarin Live Player pour la première fois
+Vous devez déjà disposer l’application Xamarin Live Player sur votre appareil. Il n’est plus disponible en téléchargement.
 
 1. Ouvrez **Visual Studio 2017**.
 2. Accédez à **Outils > Options...**  et sélectionnez le **Xamarin > autres** onglet.
@@ -68,15 +60,9 @@ Xamarin Live Player requiert :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac"></a>2. Obtenir Visual Studio pour Mac
+## <a name="using-xamarin-live-player"></a>À l’aide de Xamarin Live Player
 
-Xamarin Live Player requiert :
-
-- OS X 10.11, macOS 10.12 ou supérieure
-- Visual Studio pour Mac
-- Un Mac et un appareil sur le même réseau Wi-Fi
-
-## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. À l’aide de Xamarin Live Player pour la première fois
+Vous devez déjà disposer l’application Xamarin Live Player sur votre appareil. Il n’est plus disponible en téléchargement.
 
 1. Ouvrez **Visual Studio pour Mac**.
 2. Accédez à **Visual Studio > Préférences...**  et sélectionnez le **projets > Xamarin Live Player (version préliminaire)** onglet.
@@ -117,5 +103,4 @@ Si vous rencontrez des problèmes ou que vous ne pouvez pas vous connecter, cons
 
 ## <a name="related-links"></a>Liens associés
 
-- [Échantillons à utiliser avec Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
 - [Résolution des problèmes](~/tools/live-player/troubleshooting.md)

@@ -5,22 +5,23 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
-ms.date: 08/08/2017
-ms.openlocfilehash: 89795e5df00b426c0f11c04a0844993071df1e25
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/13/2019
+ms.openlocfilehash: fce0eeae4ef5776842ea1b45c36163118042dc49
+ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279414"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67157726"
 ---
 # <a name="xamarin-live-player-app"></a>Application Xamarin Live Player
 
 ![Fonctionnalité d’évaluation](~/media/shared/preview.png)
 
-> [!NOTE]
-> Acteur de l’aperçu est uniquement disponible dans Visual Studio 2017.
+> [!WARNING]
+> La version préliminaire Xamarin Live Player est terminée. L’application n’est plus disponible. Les instructions ci-dessous sont fournies pour les clients de continuer à utiliser la version préliminaire avec Visual Studio 2017.
 
-Une fois que vous avez installé l’application sur votre téléphone, suivez le [instructions d’installation](~/tools/live-player/install.md) pour vous connecter à votre ordinateur. Essayez l’une de la [exemples d’applications](~/tools/live-player/samples.md) pour qu’elle fonctionne.
+> [!TIP]
+> Vous pouvez utiliser la [Générateur d’aperçu XAML](~/xamarin-forms/xaml/xaml-previewer/index.md) dans Visual Studio 2019 ou Visual Studio pour Mac pour afficher vos conceptions de l’écran lorsque vous les modifiez.
 
 Au démarrage, l’application Xamarin Live Player ressemble à ceci :
 
@@ -56,7 +57,7 @@ Afficher les journaux pour diagnostiquer les problèmes.
 
 Pour vous connecter à un appareil pour la première fois, suivez les instructions de [exigences et le programme d’installation](~/tools/live-player/install.md). Vous pouvez associer plusieurs appareils et les gérer via l’IDE.
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
 Dans Visual Studio, choisissez **Outils > Xamarin Live Player > Gérer les appareils...**
 
@@ -95,4 +96,4 @@ Si vous rencontrez des problèmes, consultez [résolution des problèmes et limi
 ## <a name="related-links"></a>Liens associés
 
 - [Résolution des problèmes](~/tools/live-player/troubleshooting.md)
-- [Échantillons à utiliser avec Live Player](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+
