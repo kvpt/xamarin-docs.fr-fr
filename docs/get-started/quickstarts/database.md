@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 5c3daf04c08e2109c46b24c198fef8e71fac2f3d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ebf0f21ed57b7d436721018abb2dca329b56baa4
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262961"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194961"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Store les données dans une base de données locale SQLite.NET
 
@@ -177,7 +177,7 @@ Vous devez mener à bien le [démarrage rapide précédent](multi-page.md) avant
                 InitializeComponent();
                 MainPage = new NavigationPage(new NotesPage());
             }
-            ...
+            //...
         }
     }
     ```
