@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f0e2c93c4a6be0e83c9c4f1607b125b8d240ccc1
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
+ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557214"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194935"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -70,13 +70,13 @@ Nous envoyons (push) toutes les validations de la branche principale au site en 
 Voici une courte liste de règles directrices que vous devez garder à l’esprit quand vous contribuez à la documentation .NET.
 
 - **À ne pas faire** : Nous surprendre avec des demandes de tirage démesurées. Soumettez plutôt un problème et démarrez une discussion pour convenir avec nous de la direction à prendre avant d’investir beaucoup de votre temps.
-- **À faire** : Lire le [guide de style](../contributing-guidelines/template.md) et les recommandations sur le [style et le ton](../contributing-guidelines/voice-tone.md).
-- **À faire** : Utiliser le fichier de [modèle](../contributing-guidelines/template.md) comme point de départ de votre travail.
+- **À faire** : Lire le [guide de style](contributing-guidelines/template.md) et les recommandations sur le [style et le ton](contributing-guidelines/voice-tone.md).
+- **À faire** : Utiliser le fichier de [modèle](contributing-guidelines/template.md) comme point de départ de votre travail.
 - **À faire** : Créer une branche distincte dans votre duplication (fork) avant de travailler sur les articles.
 - **À faire** : Suivre le [workflow GitHub Flow](https://guides.github.com/introduction/flow/).
 - **À faire** : Bloguer et tweeter (ou autre) régulièrement à propos de vos contributions.
 
 > [!NOTE]
-> Vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](./contributing-guidelines/template.md). Nous travaillons actuellement à une cohérence globale du site. 
+> Vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](contributing-guidelines/template.md). Nous travaillons actuellement à une cohérence globale du site. 
 
 
