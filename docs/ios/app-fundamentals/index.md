@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/21/2017
-ms.openlocfilehash: a40227454b597578ff1c1c247b326e523c23493b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 120bbfe0d5fa91e632fc56ee05431f5555653360
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61248515"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268591"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Principes de base application Xamarin.iOS
 
@@ -33,6 +33,10 @@ Arrière-plan de traitement ou backgrounding consiste à laisser les application
 ## <a name="creating-ios-applications-in-codeiosapp-fundamentalsios-code-onlymd"></a>[Création d’applications iOS dans le code](~/ios/app-fundamentals/ios-code-only.md)
 
 Cet article examine comment créer des applications iOS entièrement dans le code à l’aide de Visual Studio et Visual Studio pour Mac. Il montre comment démarrer à partir d’un modèle de projet vide pour créer un écran de l’application dans un contrôleur en créant une hiérarchie d’affichages à partir de UIKit. Ensuite, il explique comment créer des vues personnalisées qui peuvent être chargées dans un contrôleur.
+
+## <a name="exception-marshalingiosplatformexception-marshalingmd"></a>[Regroupement d’exceptions](~/ios/platform/exception-marshaling.md)
+
+Décrit comment Objective-C et les exceptions managées sont marshalées entre les frames natifs et managés.
 
 ## <a name="events-protocols-and-delegatesiosapp-fundamentalsdelegates-protocols-and-eventsmd"></a>[Événements, protocoles et délégués](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 
