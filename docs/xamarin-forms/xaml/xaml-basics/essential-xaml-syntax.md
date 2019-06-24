@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 75d3c628a513b81af9dea7308ca49c2b490c4aff
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
+ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407636"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67309508"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Partie 2. Syntaxe XAML essentielle
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-Vous pouvez également faire quelque chose de similaire à l’aide de XAML le `OnPlatform` et `On` classes. Tout d’abord inclure des éléments de propriété pour le `Padding` propriété vers le haut de la page :
+Vous pouvez également faire quelque chose de similaire à l’aide de XAML le [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) et [ `On` ](xref:Xamarin.Forms.On) classes. Tout d’abord inclure des éléments de propriété pour le `Padding` propriété vers le haut de la page :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,11 +523,12 @@ C’est le moyen standard pour définir un dépend de la plateforme `Padding` pr
 </ContentPage>
 ```
 
+> [!NOTE]
+> Le `OnPlatform` extension de balisage peut également servir dans XAML pour personnaliser l’apparence de l’interface utilisateur sur une base par plateforme. Il fournit les mêmes fonctionnalités que le `OnPlatform` et `On` classes, mais avec une représentation plus concise. Pour plus d’informations, consultez [Extension de balisage OnPlatform](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+
 ## <a name="summary"></a>Récapitulatif
 
 Avec les éléments de propriété et les propriétés jointes, une grande partie de la syntaxe XAML de base a été établie. Toutefois, vous devez parfois définir des propriétés aux objets de manière indirecte, par exemple, à partir d’un dictionnaire de ressources. Cette approche est abordée dans la partie suivante, la partie [3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md).
-
-
 
 ## <a name="related-links"></a>Liens associés
 
