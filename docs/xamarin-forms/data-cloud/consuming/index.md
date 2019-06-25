@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 163b82590e95a1587836502883cd5f9f2afbe19c
+ms.sourcegitcommit: 6e04246207aa743820029e8c217a43cfdd24f991
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61328188"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67352111"
 ---
 # <a name="consuming-web-services"></a>Consommation de services web
 
-Ce_t guide montre comment communiquer avec les services web différents pour fournir créer, lire, mettre à jour, fonctionnalités et de suppression (CRUD) pour une application Xamarin.Forms. Les sujets abordés incluent la communication avec les services ASMX, WCF services, services REST et Azure Mobile Apps.
+_Ce guide montre comment communiquer avec les services web différents pour fournir créer, lire, mettre à jour, fonctionnalités et de suppression (CRUD) pour une application Xamarin.Forms. Les sujets abordés incluent la communication avec les services ASMX, WCF services, services REST et Azure Mobile Apps._
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[Utilisation d’un Service Web ASP.NET (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
