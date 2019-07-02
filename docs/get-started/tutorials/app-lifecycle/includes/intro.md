@@ -1,37 +1,23 @@
 ---
-ms.openlocfilehash: 244dfa31045bf71e36577d2ac9e1782a2d506697
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9143b65b2e7cb9b85195e3c20695e3034295b2d2
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187462"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277213"
 ---
+Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
+
+- Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
+- Didacticiel [StackLayout](~/get-started/tutorials/stacklayout/index.yml).
+- Didacticiel [Entry](~/get-started/tutorials/entry/index.yml).
+
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
 > - Répondre au démarrage, à la mise en veille ou à la sortie de veille d’une application.
 > - Conserver les données quelle que soit l’évolution de leur état pendant leur cycle de vie.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment conserver les données à travers les changements d’état du cycle de vie. Les captures d’écran suivantes montrent l’application finale :
 
-### <a name="prerequisites"></a>Prérequis
-
-Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2017 (dernière version) sur lequel est installée la charge de travail **Développement mobile en .NET**. Vous aurez également besoin d’un Mac couplé pour générer l’application du didacticiel sur iOS. Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2017 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-
-Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
-
-- Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
-- Didacticiel [StackLayout](~/get-started/tutorials/stacklayout/index.yml).
-- Didacticiel [Entry](~/get-started/tutorials/entry/index.yml).
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>Prérequis
-
-Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (dernière version) avec une prise en charge des plateformes iOS et Android. Vous aurez également besoin de Xcode (dernière version). Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md).
-
-Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
-
-- Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
-- Didacticiel [StackLayout](~/get-started/tutorials/stacklayout/index.yml).
-- Didacticiel [Entry](~/get-started/tutorials/entry/index.yml).
+[![Capture d’écran d’une entrée dont la propriété de texte est conservée à travers les changements d’état du cycle de vie sur iOS et Android](../images/persist-data.png "Entrée dont la propriété de texte est conservée à travers les changements d’état du cycle de vie")](../images/persist-data-large.png#lightbox "Entrée dont la propriété de texte est conservée à travers les changements d’état du cycle de vie")

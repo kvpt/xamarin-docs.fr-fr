@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: 8bee6d7145cdc9bf22c01c12a4fb34cfb31cd9f4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 247e75435f42a49d5d1ea01a4d0ec3da67866156
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61187482"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277219"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière version) sur lequel est installée la charge de travail **Développement mobile en .NET**. Vous aurez également besoin d’un Mac couplé pour générer l’application du didacticiel sur iOS. Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 1. Lancez Visual Studio et créez une application Xamarin.Forms vide nommée **appLifecycleTutorial**. Assurez-vous que l’application utilise bien .NET Standard comme mécanisme de code partagé.
 
@@ -73,6 +75,8 @@ ms.locfileid: "61187482"
     Pour plus d’informations sur le cycle de vie des applications Xamarin.Forms, consultez la page [Cycle de vie des applications Xamarin.Forms](~/xamarin-forms/app-fundamentals/app-lifecycle.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+
+Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (dernière version) avec une prise en charge des plateformes iOS et Android. Vous aurez également besoin de Xcode (dernière version). Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md).
 
 1. Lancez Visual Studio pour Mac et créez une application Xamarin.Forms vide nommée **appLifecycleTutorial**. Assurez-vous que l’application utilise bien .NET Standard comme mécanisme de code partagé.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 846ff203a26f38fdaabe5a5dd6eff1c6a6b39b08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3130c20d39e0140695eed92ffa4941d6bafe796e
+ms.sourcegitcommit: b4c9c574b771ae0265171ca5e938aed1c5e35028
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343413"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67394543"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -18,7 +18,7 @@ ms.locfileid: "61343413"
 
     Ce code définit l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) sur un gestionnaire d’événements nommé `OnEntryTextChanged` et l’événement [`Completed`](xref:Xamarin.Forms.Entry.Completed) sur un gestionnaire d’événements nommé `OnEntryCompleted`. Les deux gestionnaires d’événements seront créés à l’étape suivante.
 
-1. Dans **l’Explorateur de solutions**, dans le projet **LabelTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Puis, dans **MainPage.xaml.cs**, ajoutez les gestionnaires d’événements `OnEntryTextChanged` et `OnEntryCompleted` à la classe :
+1. Dans **l’Explorateur de solutions**, dans le projet **EntryTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Puis, dans **MainPage.xaml.cs**, ajoutez les gestionnaires d’événements `OnEntryTextChanged` et `OnEntryCompleted` à la classe :
 
     ```csharp
     void OnEntryTextChanged(object sender, TextChangedEventArgs e)
@@ -60,7 +60,7 @@ ms.locfileid: "61343413"
 
     Ce code définit l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) sur un gestionnaire d’événements nommé `OnEntryTextChanged` et l’événement [`Completed`](xref:Xamarin.Forms.Entry.Completed) sur un gestionnaire d’événements nommé `OnEntryCompleted`. Les deux gestionnaires d’événements seront créés à l’étape suivante.
 
-1. Dans **Panneau Solutions**, dans le projet **LabelTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Puis, dans **MainPage.xaml.cs**, ajoutez les gestionnaires d’événements `OnEntryTextChanged` et `OnEntryCompleted` à la classe :
+1. Dans **Panneau Solutions**, dans le projet **EntryTutorial**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir. Puis, dans **MainPage.xaml.cs**, ajoutez les gestionnaires d’événements `OnEntryTextChanged` et `OnEntryCompleted` à la classe :
 
     ```csharp
     void OnEntryTextChanged(object sender, TextChangedEventArgs e)

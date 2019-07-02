@@ -1,11 +1,15 @@
 ---
-ms.openlocfilehash: a677ee16346aac6250c0b8750fcd263470aa0f7c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bb85c69b13fa052f33186a3153be266ef87a7925
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61375381"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277207"
 ---
+Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
+
+- Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
+
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
@@ -13,22 +17,6 @@ Dans ce didacticiel, vous apprendrez à :
 > - Spécifier des colonnes et des lignes pour `Grid`.
 > - Étendre le contenu sur plusieurs colonnes ou plusieurs lignes dans `Grid`.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment positionner les contrôles au sein d’une [`Grid`](xref:Xamarin.Forms.Grid). Les captures d’écran suivantes montrent l’application finale :
 
-### <a name="prerequisites"></a>Prérequis
-
-Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2017 (dernière version) sur lequel est installée la charge de travail **Développement mobile en .NET**. Vous aurez également besoin d’un Mac couplé pour générer l’application du didacticiel sur iOS. Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2017 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-
-Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
-
-- Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
-
-### <a name="prerequisites"></a>Prérequis
-
-Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (dernière version) avec une prise en charge des plateformes iOS et Android. Vous aurez également besoin de Xcode (dernière version). Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md).
-
-Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
-
-- Guide de démarrage rapide [Générer votre première application Xamarin.Forms](~/get-started/first-app/index.md).
+[![Capture d’écran d’une Grid dont le contenu s’étend sur plusieurs colonnes et lignes, sur iOS et Android](../images/span-columns-rows.png "Grid avec du contenu sur plusieurs colonnes et lignes")](../images/span-columns-rows-large.png#lightbox "Grid avec du contenu sur plusieurs colonnes et lignes")

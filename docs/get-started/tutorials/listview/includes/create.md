@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: 31ba5d809c88f7042f7cd178dd152acdc6448e0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037496"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67277217"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière version) sur lequel est installée la charge de travail **Développement mobile en .NET**. Vous aurez également besoin d’un Mac couplé pour générer l’application du didacticiel sur iOS. Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 1. Lancez Visual Studio et créez une nouvelle application Xamarin.Forms vierge nommée **ListViewTutorial**. Assurez-vous que l’application utilise bien .NET Standard comme mécanisme de code partagé.
 
@@ -47,6 +49,8 @@ ms.locfileid: "61037496"
     [![Capture d’écran d’une ListView sur iOS et Android](../images/create-listview.png "ListView affichant des données")](../images/create-listview-large.png#lightbox "ListView affichant des données")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
+
+Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (dernière version) avec une prise en charge des plateformes iOS et Android. Vous aurez également besoin de Xcode (dernière version). Pour plus d’informations sur l’installation de la plateforme Xamarin, consultez [Installation de Xamarin](~/get-started/installation/index.md).
 
 1. Lancez Visual Studio pour Mac et créez une nouvelle application Xamarin.Forms vierge nommée **ListViewTutorial**. Assurez-vous que l’application utilise bien .NET Standard comme mécanisme de code partagé.
 
