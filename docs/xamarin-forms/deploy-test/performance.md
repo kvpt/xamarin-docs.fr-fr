@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 347d0eebf7340bb8dc7234275d0f58acf7ab16c6
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: b445c1f8d3d440ecf609d5f3c1b7cc7147343fe0
+ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061029"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268610"
 ---
 # <a name="xamarinforms-performance"></a>Performances des applications Xamarin.Forms
 
@@ -300,21 +300,23 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 {
   base.OnElementChanged (e);
 
-  if (Control == null) {
-    // Instantiate the native control
-  }
-
   if (e.OldElement != null) {
     // Unsubscribe from event handlers and cleanup any resources
   }
 
   if (e.NewElement != null) {
+    if (Control == null) {
+      // Instantiate the native control
+    }
     // Configure the control and subscribe to event handlers
   }
 }
 ```
 
-Un nouveau contrôle natif doit uniquement être instancié une seule fois, quand la propriété `Control` a la valeur `null`. Vous devez uniquement configurer le contrôle et vous abonner aux gestionnaires d’événements quand le renderer personnalisé est attaché à un nouvel élément Xamarin.Forms. De même, vous devez vous désabonner des gestionnaires d’événements auxquels vous vous êtes abonné uniquement quand l’élément auquel le renderer est attaché change. L’adoption de cette approche permet de créer un renderer personnalisé efficace qui ne connaît pas les fuites de mémoire.
+Un nouveau contrôle natif doit uniquement être instancié une seule fois, quand la propriété `Control` a la valeur `null`. Par ailleurs, vous devez uniquement créer et configurer le contrôle et vous abonner aux gestionnaires d’événements quand le renderer personnalisé est attaché à un nouvel élément Xamarin.Forms. De même, vous devez vous désabonner des gestionnaires d’événements auxquels vous vous êtes abonné uniquement quand l’élément auquel le renderer est attaché change. L’adoption de cette approche permet de créer un renderer personnalisé efficace qui ne connaît pas les fuites de mémoire.
+
+> [!IMPORTANT]
+> La méthode `SetNativeControl` doit uniquement être appelée si `e.NewElement` n’est pas `null`.
 
 Pour plus d’informations sur les renderers personnalisés, consultez [Personnalisation des contrôles sur chaque plateforme](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 

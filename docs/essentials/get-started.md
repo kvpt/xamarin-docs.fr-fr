@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 11/04/2018
-ms.openlocfilehash: d8562cd74b661b5f72f373151b9aa0acc36f8477
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 7aa918a1aa70910cd05b17916e060e65ca5404bd
+ms.sourcegitcommit: 17376f0e54467d826b8928a11965fd0c879704f2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869752"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67131978"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Bien démarrer avec Xamarin.Essentials
 
@@ -35,7 +35,7 @@ Xamarin.Essentials est disponible sous forme de package NuGet qui peut être ajo
 
 2. Ouvrez un projet existant ou créez un projet à l’aide du modèle d’application vide sous **Visual Studio C#**  (Android, iPhone et iPad ou inter-plateformes). **Important** : En cas d’ajout à un projet UWP, vérifiez que la build 16299 ou ultérieure est définie dans les propriétés du projet.
 
-3. Ajouter le package NuGet **Xamarin.Essentials** à chaque projet :
+3. Ajouter le package NuGet [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) à chaque projet :
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -43,7 +43,7 @@ Xamarin.Essentials est disponible sous forme de package NuGet qui peut être ajo
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-    Dans le panneau de l’Explorateur de solutions, cliquez avec le bouton droit sur le nom du projet et sélectionnez **Ajouter > Ajouter des packages NuGet...**. Recherchez **Xamarin.Essentials** et installez le package dans **Tous** les projets, notamment les bibliothèques Android, iOS et .NET Standard.
+    Dans le panneau de l’Explorateur de solutions, cliquez avec le bouton droit sur le nom du projet et sélectionnez **Ajouter > Ajouter des packages NuGet...** . Recherchez **Xamarin.Essentials** et installez le package dans **Tous** les projets, notamment les bibliothèques Android, iOS et .NET Standard.
 
     -----
 
