@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: ddc33d28aad4e00c9259893c0f8e7a1ab40ee429
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9848d2b832990032bc7eb7f2e3a93c896457134c
+ms.sourcegitcommit: e95296f9e516975f5f32d822c323a71fd84007b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61381871"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538694"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Communication entre les composants faiblement couplés
 
@@ -43,7 +43,7 @@ L’application mobile d’eShopOnContainers utilise la [ `MessagingCenter` ](xr
 > [!NOTE]
 > Bien que le [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) classe autorise les communications entre les classes faiblement couplées, elle n’offre pas la solution d’architecture uniquement à ce problème. Par exemple, la communication entre un modèle de vue et une vue est également possible par le moteur de liaison et via les notifications de modification de propriété. En outre, la communication entre les deux modèles de vue également est possible en passant les données lors de la navigation.
 
-Dans l’application mobile eShopOnContainers,[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) est utilisé pour mettre à jour dans l’interface utilisateur en réponse à une action qui se produisent dans une autre classe. Par conséquent, les messages sont publiés sur le thread d’interface utilisateur, avec les abonnés qui reçoivent le message sur le même thread.
+Dans l’application mobile eShopOnContainers, [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) est utilisé pour mettre à jour dans l’interface utilisateur en réponse à une action qui se produisent dans une autre classe. Par conséquent, les messages sont publiés sur le thread d’interface utilisateur, avec les abonnés qui reçoivent le message sur le même thread.
 
 > [!TIP]
 > Marshaler le thread d’interface utilisateur lors de l’exécution de l’interface utilisateur met à jour. Si un message est envoyé à partir d’un thread d’arrière-plan est nécessaire pour mettre à jour de l’interface utilisateur, traiter le message sur le thread d’interface utilisateur dans l’abonné en appelant le [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) (méthode).
