@@ -6,13 +6,13 @@ ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/14/2018
-ms.openlocfilehash: 7c3a26854c65de260aa9b3c8ed00966749eb4d9c
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.date: 06/11/2019
+ms.openlocfilehash: c98e1cd9f4095e8310150ceeebd994af2c9b7f87
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178075"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512927"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Vues de l’Interface utilisateur de Xamarin.Forms
 
@@ -31,6 +31,10 @@ Le `BoxView` est simplement un rectangle coloré simple, mais il peut être util
 ## <a name="buttonbuttonmd"></a>[Button](button.md)
 
 Le `Button` répond à un cliquez ou appuyez sur dirigeant d’une application à exécuter une tâche particulière.
+
+## <a name="checkboxcheckboxmd"></a>[CheckBox](checkbox.md)
+
+Le `CheckBox` est un type de bouton qui peut être activé ou vide. Quand une case à cocher est activée, elle est considérée comme doivent pour se trouver sur. Quand une case à cocher est vide, elle est considérée comme être hors tension.
 
 ## <a name="collectionviewcollectionviewindexmd"></a>[CollectionView](collectionview/index.md)
 
@@ -52,7 +56,7 @@ Pages de données fournissent une API pour rapidement et facilement lier une sou
 
 Le `DatePicker` permet à un utilisateur de sélectionner une date dans une plage spécifiée. Il est implémenté à l’aide de la prise en charge par la plateforme particulière sur laquelle l’application est exécutée sur le sélecteur de dates.
 
-## <a name="display-pop-upspop-upsmd"></a>[Afficher les fenêtres publicitaires](pop-ups.md)
+## <a name="display-pop-upspop-upsmd"></a>[Afficher les fenêtres contextuelles](pop-ups.md)
 
 Xamarin.Forms fournit deux éléments d’interface utilisateur de type fenêtre contextuelle : une alerte et une feuille d’action. Ces éléments d’interface peuvent être utilisés pour afficher des boîtes de dialogue poser des questions simples utilisateurs et aide les utilisateurs via des tâches.
 

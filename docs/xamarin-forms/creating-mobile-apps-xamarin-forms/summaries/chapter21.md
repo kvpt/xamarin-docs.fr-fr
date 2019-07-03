@@ -7,12 +7,12 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 56c4345dffe71f79e9d89c64478a9c6c38fc1d84
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335264"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513020"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Résumé du chapitre 21. Transformations
 
@@ -39,7 +39,7 @@ Transformations sont prises en charge avec huit propriétés de type `double` d�
 - [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 - [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-Toutes ces propriétés sont assorties de propriétés pouvant être liées. Ils peuvent être la cible de liaison de données et un style. [**Chapitre 22. Animation** ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md) montre comment ces propriétés peuvent être animées, mais certains exemples de ce chapitre indiquent comment vous pouvez animer à l’aide de Xamarin.Forms [minuteur](~/xamarin-forms/platform/device.md#Device_StartTimer).
+Toutes ces propriétés sont assorties de propriétés pouvant être liées. Ils peuvent être la cible de liaison de données et un style. [**Chapitre 22. Animation** ](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md) montre comment ces propriétés peuvent être animées, mais certains exemples de ce chapitre indiquent comment vous pouvez animer à l’aide de Xamarin.Forms [minuteur](~/xamarin-forms/platform/device.md#devicestarttimer).
 
 Transformer les propriétés affectent uniquement la façon dont l’élément est rendu et faire *pas* affectent la façon dont l’élément est perçu dans mise en page.
 

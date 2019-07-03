@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 4cb3e13ebbe3d9e8aed153528a35ab16c92e2145
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 443c3cc742ceb919e64a781e18c5a97c342abb44
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153320"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522926"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>Comment résoudre une erreur PathTooLongException ?
 
@@ -28,12 +28,12 @@ Sur Windows (où la longueur maximale pour un chemin d’accès est [260 caract�
 
 ## <a name="fix"></a>Corriger
 
-Xamarin.Android 8.0, à partir de la `UseShortFileNames` propriété MSBuild peut être définie sur contourner cette erreur. Lorsque cette propriété a la valeur `True` (la valeur par défaut est `False`), le processus de génération utilise des noms de chemin d’accès plus courts pour réduire le risque de produire un **PathTooLongException**.
+Le `UseShortFileNames` a la valeur de propriété MSBuild `True` de contourner cette erreur par défaut. Lorsque cette propriété a la valeur `True`, le processus de génération utilise des noms de chemin d’accès plus courts pour réduire le risque de produire un **PathTooLongException**.
 Par exemple, lorsque `UseShortFileNames` est défini sur `True`, le chemin d’accès ci-dessus est abrégé en chemin d’accès qui est similaire à ce qui suit :
 
 **C:\\certains\\Directory\\Solution\\projet\\obj\\déboguer\\lp\\1\\jl\\actifs**
 
-Pour définir cette propriété, ajoutez la propriété MSBuild suivante au projet **.csproj** fichier :
+Pour définir cette propriété manuellement, ajoutez la propriété MSBuild suivante au projet **.csproj** fichier :
 
 ```xml
 <PropertyGroup>
@@ -41,7 +41,7 @@ Pour définir cette propriété, ajoutez la propriété MSBuild suivante au proj
 </PropertyGroup>
 ```
 
-Si la définition de cet indicateur ne résout pas le **PathTooLongException** erreur, une autre approche consiste à spécifier un [racine de sortie intermédiaire commune](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/) pour les projets dans votre solution en définissant `IntermediateOutputPath` dans le projet **.csproj** fichier. Essayez d’utiliser un chemin d’accès relativement courte. Exemple :
+Si la définition de cet indicateur ne résout pas le **PathTooLongException** erreur, une autre approche consiste à spécifier un [racine de sortie intermédiaire commune](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/) pour les projets dans votre solution en définissant `IntermediateOutputPath` dans le projet **.csproj** fichier. Essayez d’utiliser un chemin d’accès relativement courte. Par exemple :
 
 ```xml
 <PropertyGroup>

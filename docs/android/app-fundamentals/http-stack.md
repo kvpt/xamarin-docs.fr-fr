@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: a3704552c8fc147588919ecdde2813e831237d89
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e6d8ccea7331f53d2e7262630689075a8b9a1ff1
+ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019347"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67522969"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>Pile HttpClient et sélecteur d’implémentation de SSL/TLS pour Android
 
@@ -112,7 +112,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> L’appareil Android sous-jacent doit prendre en charge TLS 1.2 (p. ex. Android 4.1 et versions ultérieures)
+> L’appareil Android sous-jacent doit prendre en charge TLS 1.2 (p. ex. Android 4.1 et versions ultérieures). Veuillez noter que la prise en charge officielle de TLS 1.2 est dans Android 5.0 +. Toutefois certains périphériques prennent en charge TLS 1.2 Android 4.1 +.
 
 
 ## <a name="ssltls-implementation-build-option"></a>Option de build de mise en œuvre de SSL/TLS
@@ -155,7 +155,7 @@ La troisième option &ndash; à l’aide de variables d’environnement &ndash; 
 
 Il existe deux variables d’environnement qui sont liés à l’utilisation de TLS dans Xamarin.Android :
 
-- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; Cette variable d’environnement déclare la valeur par défaut `HttpMessageHandler` que l’application doit utiliser. Exemple :
+- `XA_HTTP_CLIENT_HANDLER_TYPE` &ndash; Cette variable d’environnement déclare la valeur par défaut `HttpMessageHandler` que l’application doit utiliser. Par exemple :
 
     ```csharp
     XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler

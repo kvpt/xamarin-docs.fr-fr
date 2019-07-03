@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: cf6ab8266b0798ccbf29078313bbc7454125a1af
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a626532ac507185b6c01abb5327efa7015c787f5
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61026799"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512899"
 ---
 # <a name="xamarinforms-material-visual"></a>Xamarin.Forms matériau Visual
 
@@ -35,6 +35,7 @@ Le processus d’activation Xamarin.Forms matériau Visual dans votre applicatio
 Convertisseurs de matériau figurent actuellement dans le [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) package NuGet pour les vues suivantes :
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- `CheckBox`
 - [`Entry`](xref:Xamarin.Forms.Entry)
 - [`Frame`](xref:Xamarin.Forms.Frame)
 - [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
@@ -111,6 +112,7 @@ Les principales différences visibles entre les convertisseurs de valeur par dé
 Convertisseurs Material peuvent éventuellement être personnalisés, tout comme les convertisseurs de valeur par défaut, via les classes de base suivantes :
 
 - `MaterialButtonRenderer`
+- `MaterialCheckBoxRenderer`
 - `MaterialEntryRenderer`
 - `MaterialFrameRenderer`
 - `MaterialProgressBarRenderer`

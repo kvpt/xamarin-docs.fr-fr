@@ -6,13 +6,13 @@ ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/04/2019
-ms.openlocfilehash: 530fcf638454373ae68391e4e11bca85dd2fff63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.date: 06/28/2019
+ms.openlocfilehash: de77be818abbe1250946ee2ce1599235b79d8c01
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093710"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512977"
 ---
 # <a name="fonts-in-xamarinforms"></a>Polices dans Xamarin.Forms
 
@@ -50,18 +50,7 @@ Le `FontSize` propriété peut être définie sur une valeur double, par exemple
 label.FontSize = 24;
 ```
 
-Vous pouvez également utiliser le `NamedSize` énumération qui possède quatre options intégrées ; Xamarin.Forms choisit la taille optimale pour chaque plateforme.
-
--  **Micro**
--  **Petit**
--  **Moyenne**
--  **Grand**
-
-Le `NamedSize` énumération ne peut être utilisé partout où une `FontSize` peut être spécifié à l’aide de la `Device.GetNamedSize` méthode pour convertir la valeur en un `double`:
-
-```csharp
-label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
-```
+Xamarin.Forms définit également les champs dans le [ `NamedSize` ](xref:Xamarin.Forms.NamedSize) énumération qui représentent les tailles de police spécifique. Pour plus d’informations sur les tailles de police nommées, consultez [tailles de police nommées](#named-font-sizes).
 
 <a name="FontAttributes" />
 
@@ -111,7 +100,7 @@ Il existe un convertisseur intégré pour le `FontSize` propriété qui permet �
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-values) peut également être utilisé dans XAML pour restituer une police différente sur chaque plateforme. L’exemple ci-dessous utilise un type de police personnalisée sur iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-fin</span>) et spécifie uniquement taille/attributs sur d’autres plateformes :
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) peut également être utilisé dans XAML pour restituer une police différente sur chaque plateforme. L’exemple ci-dessous utilise un type de police personnalisée sur iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-fin</span>) et spécifie uniquement taille/attributs sur d’autres plateformes :
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -126,6 +115,32 @@ Il existe un convertisseur intégré pour le `FontSize` propriété qui permet �
 ```
 
 Lorsque vous spécifiez un type de police personnalisée, il est toujours judicieux d’utiliser `OnPlatform`, comme il est difficile de trouver une police qui n’est disponible sur toutes les plateformes.
+
+## <a name="named-font-sizes"></a>Tailles de police nommées
+
+Xamarin.Forms définit les champs dans le [ `NamedSize` ](xref:Xamarin.Forms.NamedSize) énumération qui représentent les tailles de police spécifique. Le tableau suivant présente les `NamedSize` membres et leur taille par défaut sur iOS, Android et la plateforme universelle Windows (UWP) :
+
+| Membre | iOS | Android | UWP |
+| --- | --- | --- | --- |
+| `Default` | 16 | 14 | 14 |
+| `Micro` | 11 | 10 | 15.667 |
+| `Small` | 13 | 14 | 18.667 |
+| `Medium` | 16 | 17 | 22.667 |
+| `Large` | 20 | 22 | 32 |
+| `Body` | 17 | 16 | 14 |
+| `Header` | 17 | 96 | 46 |
+| `Title` | 28 | 24 | 24 |
+| `Subtitle` | 22 | 16 | 20 |
+| `Caption` | 12 | 12 | 12 |
+
+Tailles de police nommée peuvent être définies par l’intermédiaire de XAML et code. En outre, le `Device.GetNamedSize` méthode peut être appelée pour retourner un `double` qui représente la taille de police nommé :
+
+```csharp
+label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
+```
+
+> [!NOTE]
+> Sur iOS et Android, les tailles de police nommé seront mise à l’échelle en fonction des options d’accessibilité de système d’exploitation. Ce comportement peut être désactivé sur iOS avec un spécifique à la plateforme. Pour plus d’informations, consultez [mise à l’échelle de l’accessibilité pour les tailles de police nommé sur iOS](~/xamarin-forms/platform/ios/named-font-size-scaling.md).
 
 <a name="Using_a_Custom_Font" />
 
@@ -185,7 +200,7 @@ Le code commun pour l’application est maintenant complet. Le code du numérote
 
 ### <a name="xaml"></a>XAML
 
-Vous pouvez également utiliser [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#providing-platform-values) dans XAML pour restituer une police personnalisée :
+Vous pouvez également utiliser [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads) dans XAML pour restituer une police personnalisée :
 
 ```xaml
 <Label Text="Hello Forms with XAML">

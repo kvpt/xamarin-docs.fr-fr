@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 3f0156926f8d7a31e2e80318d7b05a909f158653
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cc19e2a4ea85391f585120f85b222b95ef63543f
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61359159"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512853"
 ---
 # <a name="xamarinforms-platform-features"></a>Fonctionnalités de la plateforme de Xamarin.Forms
 
@@ -24,7 +24,7 @@ Ce guide décrit les spécificités de plateforme Android fournies par Xamarin.F
 
 ## <a name="device-classdevicemd"></a>[Classe de périphérique](device.md)
 
-Comment utiliser le `Device` classe pour créer un comportement spécifique à la plateforme dans le code partagé et l’interface utilisateur (y compris à l’aide de XAML). Couvre également `BeginInvokeOnMainThread` ce qui est essentiel lors de la modification des contrôles d’interface utilisateur à partir de threads d’arrière-plan.
+Ce guide explique comment utiliser le `Device` classe pour créer un comportement spécifique à la plateforme dans le code partagé et l’interface utilisateur (y compris à l’aide de XAML) et comment interagir avec les contrôles d’interface utilisateur à partir de threads d’arrière-plan.
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 

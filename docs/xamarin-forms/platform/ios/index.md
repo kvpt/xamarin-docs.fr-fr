@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/22/2019
-ms.openlocfilehash: f77b2346808f78e182edc59f9ea92d0a8a99344f
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7aa9d298c2219dff60ca8ca1f917c72194ad21ca
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971020"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67512673"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>fonctionnalités de la plateforme iOS dans Xamarin.Forms
 
@@ -56,6 +56,7 @@ Les fonctionnalités spécifiques à la plateforme suivantes sont fournies pour 
 
 Les fonctionnalités spécifiques à la plateforme suivantes sont fournies pour Xamarin.Forms [ `Application` ](xref:Xamarin.Forms.Application) classe sur iOS :
 
+- La désactivation d’accessibilité de la mise à l’échelle pour les tailles de police nommée. Pour plus d’informations, consultez [mise à l’échelle de l’accessibilité pour les tailles de police nommé sur iOS](named-font-size-scaling.md).
 - L’activation de la disposition des contrôles et le rendu des mises à jour doivent être effectuées sur le thread principal. Pour plus d’informations, consultez [Main Thread contrôle les mises à jour sur iOS](main-thread-updates-ui.md).
 - L’activation une [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) dans une vue de défilement pour capturer et partager le mouvement panoramique avec la vue de défilement. Pour plus d’informations, consultez [simultanées reconnaissance de mouvement panoramique sur iOS](application-pan-gesture.md).
 
