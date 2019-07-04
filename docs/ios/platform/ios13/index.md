@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: ab50bfb2b3f46a6fac37fced5004e2c530d3343c
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: eaa479f220c9cd0115fd2d4496fbfb1202fb3aa0
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540425"
+ms.locfileid: "67558705"
 ---
 # <a name="introduction-to-ios-13"></a>Introduction à iOS 13
 
@@ -45,3 +45,7 @@ Avec iPadOS, vous pouvez tirer le meilleur parti du crayon Apple à l’aide de 
 ## <a name="privacy-and-security"></a>Sécurité et confidentialité
 
 iOS 13 offrent de nouvelles fonctionnalités pour vous connecter à des applications à l’aide de se connecter avec des appareils d’Apple, ce qui vous permet d’avoir plus de confiance leurs informations personnelles ne sont pas en cours volé ou regroupés en aucune façon en tirant parti de 2FA et un ensemble limité de condition plus d’informations.
+
+## <a name="related-links"></a>Liens connexes
+
+- [Notes de publication de Xamarin.iOS version préliminaire](/xamarin/ios/release-notes/12/12.99)
