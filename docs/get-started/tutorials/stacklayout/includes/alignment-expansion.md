@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382517"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67559994"
 ---
 La taille et la position des affichages enfants dans [`StackLayout`](xref:Xamarin.Forms.StackLayout) varient selon les valeurs des propriétés [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) et [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) des affichages enfants et selon les valeurs des propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
 
@@ -124,3 +124,8 @@ Les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions
     > Lorsque tout l’espace de [`StackLayout`](xref:Xamarin.Forms.StackLayout) est utilisé, les préférences d’extension n’ont aucun effet.
 
     Pour plus d’informations sur l’alignement et l’extension, consultez [Options de mise en page dans Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md).
+
+-----
+
+> [!div class="nextstepaction"]
+> [J’ai rencontré un problème](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+3+Feedback&template=tutorial_template.md)

@@ -231,6 +231,7 @@
 #### [Zoom WebView](platform/android/webview-zoom-controls.md)
 ### [Classe d’appareil](platform/device.md)
 ### [iOS](platform/ios/index.md)
+#### [Mise à l’échelle de l’accessibilité pour les tailles de police nommées](platform/ios/named-font-size-scaling.md)
 #### [Couleur d’arrière-plan des cellules](platform/ios/cell-background-color.md)
 #### [Couleur du curseur d’entrée](platform/ios/entry-cursor-color.md)
 #### [Taille de police d’entrée](platform/ios/entry-font-size.md)
