@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 4ac6344165730bc8c348c16fe8f3a932d4ac3548
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
+ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268617"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67558669"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials: Géolocalisation
 
@@ -79,7 +79,7 @@ using Xamarin.Essentials;
 
 Si nécessaire, l’API de géolocalisation demande également des autorisations à l’utilisateur.
 
-Vous pouvez obtenir la dernière [localisation](xref:Xamarin.Essentials.Location) connue de l’appareil en appelant la méthode `GetLastKnownLocationAsync`. Bien que cela soit souvent plus rapide que d’effectuer une requête complète, cela peut aussi être moins précis.
+Vous pouvez obtenir la dernière [localisation](xref:Xamarin.Essentials.Location) connue de l’appareil en appelant la méthode `GetLastKnownLocationAsync`. Bien que cela soit souvent plus rapide que d’effectuer une requête complète, cela peut aussi être moins précis et retourner `null` si aucun emplacement mis en cache n’existe.
 
 ```csharp
 try

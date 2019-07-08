@@ -1,26 +1,26 @@
 ---
-title: Création d’un ControlTemplate
+title: Créer un ControlTemplate
 description: Les modèles de contrôle peuvent être définis au niveau de l’application ou de la page. Cet article montre comment créer et utiliser des modèles de contrôle.
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 86e10f068af14e65b55885488252af756a90652e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.date: 06/14/2019
+ms.openlocfilehash: 0642f304589d30284bc8d3577c0383099e349033
+ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926962"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513048"
 ---
-# <a name="creating-a-controltemplate"></a>Création d’un ControlTemplate
+# <a name="create-a-controltemplate"></a>Créer un ControlTemplate
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
 
 _Les modèles de contrôle peuvent être définis au niveau de l’application ou au niveau de la page. Cet article montre comment créer et utiliser des modèles de contrôle._
 
-## <a name="creating-a-controltemplate-in-xaml"></a>Création d’un ControlTemplate en XAML
+## <a name="create-a-controltemplate-in-xaml"></a>Créer un ControlTemplate en XAML
 
 Pour définir un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) au niveau de l’application, vous devez ajouter un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) à la classe `App`. Par défaut, toutes les applications Xamarin.Forms créées à partir d’un modèle utilisent la classe **App** pour implémenter la sous-classe [`Application`](xref:Xamarin.Forms.Application). Pour déclarer un `ControlTemplate` au niveau de l’application, dans le `ResourceDictionary` de l’application en XAML, vous devez remplacer la classe **App** par défaut par une classe **App** XAML et par le code-behind associé, comme indiqué dans l’exemple de code suivant :
 
@@ -104,7 +104,7 @@ Cette méthode remplace l’instance active de [`ControlTemplate`](xref:Xamarin.
 > [!NOTE]
 > Sur un `ContentPage`, la propriété `Content` peut être affectée et la propriété `ControlTemplate` peut également être définie. Quand cela se produit, si le `ControlTemplate` contient une instance de `ContentPresenter`, le contenu affecté à la propriété `Content` est présenté par le `ContentPresenter` dans le `ControlTemplate`.
 
-### <a name="setting-a-controltemplate-with-a-style"></a>Définition d’un ControlTemplate avec un Style
+### <a name="set-a-controltemplate-with-a-style"></a>Définir un ControlTemplate avec un style
 
 Un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) peut également être appliqué par le biais d’un [`Style`](xref:Xamarin.Forms.Style) afin d’accroître encore davantage la capacité de thème. Pour cela, vous devez créer un style *implicite* ou *explicite* pour la vue cible dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), et définir la propriété `ControlTemplate` de la vue cible dans l’instance de [`Style`](xref:Xamarin.Forms.Style). L’exemple de code suivant montre un style *implicite* qui a été ajouté au [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de l’application :
 
@@ -126,7 +126,7 @@ L’instance de [`Style`](xref:Xamarin.Forms.Style) étant *implicite*, elle ser
 
 Pour plus d’informations sur les styles, consultez [Styles](~/xamarin-forms/user-interface/styles/index.md).
 
-### <a name="creating-a-controltemplate-at-page-level"></a>Création d’un ControlTemplate au niveau de la page
+### <a name="create-a-controltemplate-at-page-level"></a>Créer un ControlTemplate au niveau de la page
 
 Vous pouvez également créer des instances de [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) au niveau de la page, comme indiqué dans l’exemple de code suivant :
 
@@ -150,7 +150,7 @@ Vous pouvez également créer des instances de [`ControlTemplate`](xref:Xamarin.
 
 Quand vous ajoutez un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) au niveau de la page, un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) est ajouté au [`ContentPage`](xref:Xamarin.Forms.ContentPage), puis les instances de `ControlTemplate` sont incluses dans le `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Création d’un ControlTemplate en C&#35;
+## <a name="create-a-controltemplate-in-c35"></a>Créer un ControlTemplate in C&#35;
 
 Pour définir un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) au niveau de l’application, vous devez créer un `class` qui représente le `ControlTemplate`. La classe doit dériver de la [disposition](~/xamarin-forms/user-interface/layouts/index.md) utilisée pour le modèle, comme illustré dans l’exemple de code suivant :
 
@@ -208,12 +208,45 @@ Les instances de [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) sont cr
 
 La propriété [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) est définie sur un [`StackLayout`](xref:Xamarin.Forms.StackLayout) qui définit le contenu à afficher sur le [`ContentPage`](xref:Xamarin.Forms.ContentPage). Ce contenu sera affiché par le [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) contenu dans le `TealTemplate`. Le même mécanisme que celui décrit précédemment est utilisé pour appliquer le thème `AquaTheme` au moment de l’exécution.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="get-a-named-element-from-a-template"></a>Obtenir un élément nommé à partir d’un modèle
 
-Vous avez vu dans cet article comment créer et utiliser des modèles de contrôle. Les modèles de contrôle peuvent être définis au niveau de l’application ou de la page.
+Les éléments nommés dans un modèle de contrôle peuvent être récupérés après que le modèle a été instancié. Ceci est possible avec la méthode `GetTemplateChild`, qui retourne l’élément nommé dans l’arborescence d’éléments visuels instancié [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate).
 
+Après qu’un modèle de contrôle a été instancié, la méthode du modèle `OnApplyTemplate` est appelée. La méthode `GetTemplateChild` doit donc être appelée à partir du remplacement `OnApplyTemplate` dans une page dérivée [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage), telle que [`ContentPage`](xref:Xamarin.Forms.ContentPage) ou une vue dérivée [`TemplatedView`](xref:Xamarin.Forms.TemplatedView), telle que [`ContentView`](xref:Xamarin.Forms.ContentView).
 
-## <a name="related-links"></a>Liens associés
+> [!IMPORTANT]
+> La méthode `GetTemplateChild` doit uniquement être appelée après que la méthode `OnApplyTemplate` a été appelée.
+
+L’exemple suivant montre le modèle de contrôle pour un contrôle personnalisé :
+
+```xaml
+<controls:MyCustomControl ...>
+    <controls:MyCustomControl.ControlTemplate>
+         <ControlTemplate>
+              <Label x:Name="myLabel" />
+         </ControlTemplate>
+    <controls:MyCustomControl.ControlTemplate>
+</controls:MyCustomControl>
+```
+
+L’élément [`Label`](xref:Xamarin.Forms.Label) est nommé et peut, par conséquent, être récupéré dans le code-behind pour le contrôle personnalisé. Cela s’effectue en appelant la méthode `GetTemplateChild` à partir du remplacement `OnApplyTemplate` pour le contrôle personnalisé :
+
+```csharp
+class MyCustomControl : ContentView
+{
+    Label myLabel;
+
+    protected override OnApplyTemplate()
+    {  
+        myLabel = GetTemplateChild("myLabel");
+    }
+    //...
+}
+```
+
+Dans cet exemple, l’objet [`Label`](xref:Xamarin.Forms.Label) nommé `myLabel` est récupéré. `myLabel` est alors accessible et peut ensuite être manipulé par la classe `MyCustomControl`.
+
+## <a name="related-links"></a>Liens connexes
 
 - [Styles](~/xamarin-forms/user-interface/styles/index.md)
 - [Thème simple (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
