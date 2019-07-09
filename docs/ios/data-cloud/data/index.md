@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 8d2513ba1c2ae2769e81659c98f3897f33d83fbf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 420f52a055dc1c03a017723ab34c2fc3b5363656
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218036"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650229"
 ---
 # <a name="xamarinios-data-access"></a>Accès aux données de Xamarin.iOS
 
@@ -30,7 +30,7 @@ La majorité du code dans ce document est complètement inter-plateformes et s�
 
 Les deux exemples de solutions contiennent des projets iOS et Android exemple application.
 
-Pour les applications Xamarin.Forms, consultez [des bases de données](~/xamarin-forms/app-fundamentals/databases.md) qui explique comment utiliser SQLite dans une bibliothèque PCL avec Xamarin.Forms.
+Pour les applications Xamarin.Forms, consultez [des bases de données](~/xamarin-forms/data-cloud/data/databases.md) qui explique comment utiliser SQLite dans une bibliothèque PCL avec Xamarin.Forms.
 
 ## <a name="sections"></a>Sections
 
@@ -53,4 +53,4 @@ Pour obtenir des exemples supplémentaires d’accès aux données d’inter-pla
 - [DataAccess Basic (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess avancé (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS recettes de données](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Accès aux données de Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Accès aux données de Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md)

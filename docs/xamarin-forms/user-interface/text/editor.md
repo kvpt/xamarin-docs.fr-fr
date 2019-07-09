@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: bf7a1461a26a860c77a913edabb94d76b4ca2a6a
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 97bb5ec954f36e48d8ae115baf8738862e5a8358
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493343"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649548"
 ---
 # <a name="xamarinforms-editor"></a>Éditeur de Xamarin.Forms
 
@@ -264,7 +264,7 @@ Assurez-vous que les couleurs d’arrière-plan et le texte que vous choisissez 
 
 ### <a name="completed"></a>Terminé
 
-Le `Completed` événement est utilisé pour réagir à la fin d’une interaction avec un `Editor`. `Completed` est déclenché lorsque l’utilisateur termine l’entrée avec un champ en entrant la touche Retour sur le clavier. Le gestionnaire pour l’événement est un gestionnaire d’événements générique, en prenant l’expéditeur et `EventArgs`:
+Le `Completed` événement est utilisé pour réagir à la fin d’une interaction avec un `Editor`. `Completed` est déclenché lorsque l’utilisateur termine l’entrée avec un champ en entrant la touche Retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire pour l’événement est un gestionnaire d’événements générique, en prenant l’expéditeur et `EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)

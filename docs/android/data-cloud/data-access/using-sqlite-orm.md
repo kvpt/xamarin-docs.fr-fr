@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6525cb321537a7cefb24feb1e77b532068b098ef
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 27d2d68243c5b25a3ecfc0ce333dca183ba090ec
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019672"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649535"
 ---
 # <a name="using-sqlitenet-with-android"></a>Utilisation de SQLite.NET avec Android
 
@@ -243,4 +243,4 @@ Cette solution de contournement fonctionne également pour les `Mono.Data.Sqlite
 
 - [DataAccess Basic (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess avancé (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Accès aux données de Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Accès aux données de Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md)

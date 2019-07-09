@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: afebe7f491855844e18bf054d665cf8d54e8f353
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b8edc0141807ead60170ec78b3f6348723ab8e18
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61183877"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650138"
 ---
 # <a name="introduction-to-web-services"></a>Introduction aux services web
 
@@ -19,7 +19,7 @@ _Ce guide montre comment utiliser les technologies de service web différent. Le
 
 Pour fonctionner correctement, de nombreuses applications mobiles sont dépendantes sur le cloud, et par conséquent, l’intégration de services web dans les applications mobiles est un scénario courant. La plateforme Xamarin prend en charge l’utilisation des technologies de services web différents et inclut la prise en charge intégrée et par des tiers pour consommer des services Windows Communication Foundation (WCF) RESTful et ASMX.
 
-Pour les clients à l’aide de Xamarin.Forms, il existe des exemples complets d’utilisation de chacune de ces technologies dans le [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.md) documentation.
+Pour les clients à l’aide de Xamarin.Forms, il existe des exemples complets d’utilisation de chacune de ces technologies dans le [Xamarin.Forms Web Services](~/xamarin-forms/data-cloud/index.yml) documentation.
 
 > [!IMPORTANT]
 > Dans iOS 9, App Transport Security (ATS) applique des connexions sécurisées entre les ressources internet (par exemple, le serveur de l’application back-end) et l’application, ce qui empêche la divulgation accidentelle d’informations sensibles.
@@ -47,7 +47,7 @@ La simplicité de REST a permis de rendre la méthode principale pour accéder a
 
 ## <a name="consuming-rest-services"></a>Consommation de Services REST
 
-Il existe un certain nombre de bibliothèques de classes qui peuvent être utilisées pour l’utilisation des services REST, et les sous-sections suivantes décrivent les. Pour plus d’informations sur l’utilisation d’un service REST, consultez [utilisation d’un Service Web RESTful](~/xamarin-forms/data-cloud/consuming/rest.md).
+Il existe un certain nombre de bibliothèques de classes qui peuvent être utilisées pour l’utilisation des services REST, et les sous-sections suivantes décrivent les. Pour plus d’informations sur l’utilisation d’un service REST, consultez [consommer un Service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md).
 
 ### <a name="httpclient"></a>HttpClient
 
@@ -55,7 +55,7 @@ Le [Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Ne
 
 Le `HttpResponseMessage` classe représente un message de réponse HTTP reçu du service web après la réalisation d’une requête HTTP. Il contient des informations sur la réponse, y compris le code d’état, des en-têtes et corps. Le `HttpContent` classe représente le corps HTTP et des en-têtes de contenu, tel que `Content-Type` et `Content-Encoding`. Le contenu peut être lu à l’aide de la `ReadAs` méthodes, telles que `ReadAsStringAsync` et `ReadAsByteArrayAsync`, selon le format des données.
 
-Pour plus d’informations sur la `HttpClient` de classe, consultez [création de l’objet HTTPClient](~/xamarin-forms/data-cloud/consuming/rest.md).
+Pour plus d’informations sur la `HttpClient` de classe, consultez [création de l’objet HTTPClient](~/xamarin-forms/data-cloud/web-services/rest.md).
 
 <a name="Using_HTTPWebRequest" />
 
@@ -329,7 +329,7 @@ La bibliothèque parallèle de tâches (TPL) peut simplifier le processus d’ut
 
 Pour plus d’informations sur l’APM, consultez [modèle de programmation asynchrone](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) et [TPL et Framework programmation asynchrone .NET traditionnelle](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) sur MSDN.
 
-Pour plus d’informations sur l’utilisation d’un service ASMX, consultez [consommer un Service Web de ASP.NET (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md).
+Pour plus d’informations sur l’utilisation d’un service ASMX, consultez [consommer un Service Web de ASP.NET (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md).
 
 <a name="wcf" />
 
@@ -407,7 +407,7 @@ La bibliothèque parallèle de tâches (TPL) peut simplifier le processus d’ut
 
 Pour plus d’informations sur l’APM, consultez [modèle de programmation asynchrone](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) et [TPL et Framework programmation asynchrone .NET traditionnelle](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) sur MSDN.
 
-Pour plus d’informations sur l’utilisation d’un service WCF, consultez [utilisation d’un Service Web de Windows Communication Foundation (WCF)](~/xamarin-forms/data-cloud/consuming/wcf.md).
+Pour plus d’informations sur l’utilisation d’un service WCF, consultez [consommer un Service Web de Windows Communication Foundation (WCF)](~/xamarin-forms/data-cloud/web-services/wcf.md).
 
 <a name="Calling_a_WCF_Service_with_Transport_Security" />
 
@@ -445,6 +445,6 @@ Pour plus d’informations sur l’authentification de base HTTP, bien que dans 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Services Web dans Xamarin.Forms](~/xamarin-forms/data-cloud/index.md)
+- [Services Web dans Xamarin.Forms](~/xamarin-forms/data-cloud/index.yml)
 - [Service Model Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

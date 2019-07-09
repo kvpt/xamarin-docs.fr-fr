@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 658ce23b0aaced8e195461a485f3e846900c2026
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61389076"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649636"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -109,6 +109,9 @@ browser.Source = htmlSource;
 
 Dans le code ci-dessus, `@` est utilisé pour marquer le code HTML en tant que chaîne littérale, ce qui signifie que tous les caractères d’échappement habituels sont ignorés.
 
+> [!NOTE]
+> Il peut être nécessaire de définir le `WidthRequest` et `HeightRequest` propriétés de la [ `WebView` ](xref:Xamarin.Forms.WebView) pour voir le contenu HTML, en fonction de la mise en page le `WebView` est un enfant de. Par exemple, cela est nécessaire dans un [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
+
 ### <a name="local-html-content"></a>Contenu HTML local
 
 WebView peut afficher le contenu à partir de HTML, CSS et Javascript incorporés dans l’application. Exemple :
@@ -140,7 +143,7 @@ body,p,h1 {
 
 Notez que les polices spécifiés dans le code CSS ci-dessus doivent être personnalisés pour chaque plateforme, comme pas chaque plateforme a les mêmes polices.
 
-À l’affichage local contenu à l’aide un `WebView`, vous aurez besoin ouvrir le fichier HTML comme n’importe quel autre, puis charger le contenu sous forme de chaîne dans le `Html` propriété d’un `HtmlWebViewSource`. Pour plus d’informations sur l’ouverture de fichiers, consultez [utilisation des fichiers](~/xamarin-forms/app-fundamentals/files.md).
+À l’affichage local contenu à l’aide un `WebView`, vous aurez besoin ouvrir le fichier HTML comme n’importe quel autre, puis charger le contenu sous forme de chaîne dans le `Html` propriété d’un `HtmlWebViewSource`. Pour plus d’informations sur l’ouverture de fichiers, consultez [utilisation des fichiers](~/xamarin-forms/data-cloud/data/files.md).
 
 Les captures d’écran suivantes montrent le résultat de l’affichage du contenu local sur chaque plateforme :
 
@@ -349,7 +352,7 @@ Le [ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs) objet q
 - `Source` – l’élément qui a effectué le volet de navigation.
 - `Url` – la destination de navigation.
 
-Si vous prévoyez d’utiliser des pages Web qui prennent beaucoup de temps pour charger, envisagez d’utiliser le [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating) et [ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated) événements pour implémenter un indicateur d’état. Exemple :
+Si vous prévoyez d’utiliser des pages Web qui prennent beaucoup de temps pour charger, envisagez d’utiliser le [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating) et [ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated) événements pour implémenter un indicateur d’état. Par exemple :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

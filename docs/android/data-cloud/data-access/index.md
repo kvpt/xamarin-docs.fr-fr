@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08720734de73af12d8a7383fa7d523dc350c4462
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6858e290d93007d6054ba0ef63dce86e6e2e53e3
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61011353"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649623"
 ---
 # <a name="xamarinandroid-data-access"></a>Accès aux données de Xamarin.Android
 
@@ -35,7 +35,7 @@ La majorité du code dans cette section est complètement inter-plateformes et s
 
 Les deux exemples de solutions contiennent des projets iOS et Android exemple application.
 
-Pour les applications Xamarin.Forms, consultez [des bases de données](~/xamarin-forms/app-fundamentals/databases.md) qui explique comment utiliser SQLite dans une bibliothèque PCL avec Xamarin.Forms.
+Pour les applications Xamarin.Forms, consultez [des bases de données](~/xamarin-forms/data-cloud/data/databases.md) qui explique comment utiliser SQLite dans une bibliothèque PCL avec Xamarin.Forms.
 
 Les rubriques de cette section traitent des accès aux données dans Xamarin.Android à l’aide de SQLite en tant que le moteur de base de données. La base de données sont accessibles « directement » à l’aide de syntaxe ADO.NET ou vous pouvez inclure le SQLite.NET ORM et effectuer des opérations de données en c#.
 
@@ -49,4 +49,4 @@ Pour obtenir des exemples supplémentaires d’accès aux données d’inter-pla
 - [DataAccess Basic (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess avancé (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Recettes de données Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Accès aux données de Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md)
+- [Accès aux données de Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md)

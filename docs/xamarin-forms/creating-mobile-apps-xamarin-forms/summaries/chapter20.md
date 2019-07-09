@@ -7,12 +7,12 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 7d9630840983b36204214927136e0c9efe07d840
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333721"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650461"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Résumé du chapitre 20. E/s de fichier et asynchrone
 
@@ -83,7 +83,7 @@ Toutefois, si vous recherchez ces `System.IO` classes dans une bibliothèque de 
 Cela signifie que vous devrez utiliser le [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (abordé en [ **chapitre 9. Appels d’API spécifiques à la plateforme** ](chapter09.md) pour implémenter des e/s de fichier.
 
 > [!NOTE]
-> Les bibliothèques de classes portable ont été remplacés par les bibliothèques .NET Standard 2.0, et prend en charge de .NET Standard 2.0 [ `System.IO` ](xref:System.IO) types pour toutes les plateformes de Xamarin.Forms. Il n’est plus nécessaire d’utiliser un `DependencyService` pour la plupart des tâches d’e/s de fichier. Consultez [gestion des fichiers dans Xamarin.Forms](~/xamarin-forms/app-fundamentals/files.md) pour une approche plus moderne d’e/s de fichier.
+> Les bibliothèques de classes portable ont été remplacés par les bibliothèques .NET Standard 2.0, et prend en charge de .NET Standard 2.0 [ `System.IO` ](xref:System.IO) types pour toutes les plateformes de Xamarin.Forms. Il n’est plus nécessaire d’utiliser un `DependencyService` pour la plupart des tâches d’e/s de fichier. Consultez [gestion des fichiers dans Xamarin.Forms](~/xamarin-forms/data-cloud/data/files.md) pour une approche plus moderne d’e/s de fichier.
 
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>Une première tentative de fichier inter-plateformes d’e/s
 
@@ -173,4 +173,4 @@ Le [ `WebRequest` ](xref:System.Net.WebRequest) classe utilisée dans certains e
 
 - [Chapitre 20 de texte intégral (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)
 - [Chapitre 20 échantillons](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
-- [Utilisation de fichiers](~/xamarin-forms/app-fundamentals/files.md)
+- [Utilisation de fichiers](~/xamarin-forms/data-cloud/data/files.md)
