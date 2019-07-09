@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7fbd2a81c30726bc6c38586186e9334ddd4ea282
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193025"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659798"
 ---
 Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les classes d’accès aux données créées précédemment.
 
@@ -76,7 +76,7 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
 
     [![Capture d’écran montrant la conservation des données dans la base de données SQLite.NET locale, sur iOS et Android](../images/consume-data-access-classes.png "Conservation des données dans la base de données locale")](../images/consume-data-access-classes-large.png#lightbox "Conservation des données dans la base de données locale")
 
-    Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/app-fundamentals/databases.md)
+    Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/data-cloud/data/databases.md)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
@@ -146,4 +146,4 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
 
     [![Capture d’écran montrant la conservation des données dans la base de données SQLite.NET locale, sur iOS et Android](../images/consume-data-access-classes.png "Conservation des données dans la base de données locale")](../images/consume-data-access-classes-large.png#lightbox "Conservation des données dans la base de données locale")
 
-    Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/app-fundamentals/databases.md)
+    Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/data-cloud/data/databases.md)
