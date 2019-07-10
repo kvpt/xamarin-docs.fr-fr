@@ -5,6 +5,8 @@
     - name: 2019
       expanded: true
       items:
+        - name: Juillet
+          href: 2019-07.md
         - name: Juin
           href: 2019-06.md
         - name: Mars

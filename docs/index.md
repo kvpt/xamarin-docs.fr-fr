@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 5a2df045ae0d7cb433060cee27d2546ad5b6e86e
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 5664f1ce6e527301a7bf04f5bbd50d5a4cd5801e
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493389"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650220"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -100,7 +100,7 @@ ms.locfileid: "67493389"
                                                     <li><a class="barLink" href="~/android/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_android.svg" alt="" />Xamarin.Android</a></li>
                                                     <li><a class="barLink" href="~/ios/index.yml"><img  src="https://docs.microsoft.com/media/common/i_web-apps.svg" alt=" icon" />Xamarin.iOS</a></li>
                                                     <li><a class="barLink" href="~/mac/index.yml"><img  src="https://docs.microsoft.com/media/common/i_xplat-code.svg" alt=" icon" />Xamarin.Mac</a></li>
-                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.md"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Azure avec Xamarin</a></li>
+                                                    <li><a class="barLink" href="~/xamarin-forms/data-cloud/index.yml"><img  src="https://docs.microsoft.com/media/logos/logo_azure.svg" alt="" />Azure avec Xamarin</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -409,7 +409,7 @@ Xamarin.Forms est un kit d’outils multiplateforme pour Android, iOS, Mac et Wi
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                <a href="~/xamarin-forms/data-cloud/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -419,8 +419,8 @@ Xamarin.Forms est un kit d’outils multiplateforme pour Android, iOS, Mac et Wi
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Services de données et cloud</h3>
-                                                    <p>Stockage de données et accès aux services de cloud.</p>
+                                                    <h3>Données et Azure Cloud Services</h3>
+                                                    <p>Stockage de données et accès aux services cloud Azure.</p>
                                                 </div>
                                             </div>
                                         </div>
