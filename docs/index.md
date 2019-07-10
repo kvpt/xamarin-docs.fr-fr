@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 5664f1ce6e527301a7bf04f5bbd50d5a4cd5801e
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: d88807a47b141f69d4e4eea6ec55a97fc61e80a1
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650220"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675202"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -472,7 +472,7 @@ Xamarin.Forms est un kit d’outils multiplateforme pour Android, iOS, Mac et Wi
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Samples" src="https://docs.microsoft.com/en-us/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
+                                                        <img alt="Samples" src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
@@ -672,7 +672,7 @@ Xamarin.Forms est un kit d’outils multiplateforme pour Android, iOS, Mac et Wi
                                             <div class="card">
                                                 <div class="cardImageOuter">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
+                                                        <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Continuous Integration" />
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
