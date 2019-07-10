@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 3eaf1fc95cceaa60e4b39839252dfe4c3c1cfe7f
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: f854ac363fe3e5b9dc3df046c9fab592b97bc962
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659246"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675258"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>Reconnaissance vocale à l’aide de l’API reconnaissance vocale de Microsoft
 
@@ -114,7 +114,7 @@ string GenerateRequestUri(string speechEndpoint)
 }
 ```
 
-La configuration principale effectuée par le `GenerateRequestUri` méthode consiste à définir les paramètres régionaux du contenu audio. Pour obtenir la liste des paramètres régionaux pris en charge, consultez [langues prises en charge ](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
+La configuration principale effectuée par le `GenerateRequestUri` méthode consiste à définir les paramètres régionaux du contenu audio. Pour obtenir la liste des paramètres régionaux pris en charge, consultez [langues prises en charge](/azure/cognitive-services/speech/api-reference-rest/supportedlanguages/).
 
 ### <a name="sending-the-request"></a>Envoi de la demande
 

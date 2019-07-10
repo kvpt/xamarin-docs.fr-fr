@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a35cb82f4f6d20e91f45a782c73d3ef811947c3a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 57a521df5fdede2bd92a6b1432f698c822a2b06f
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61284198"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674569"
 ---
 # <a name="introduction-to-android-wear"></a>Introduction à Android Wear
 
@@ -107,7 +107,7 @@ Une fois que vous avez créé votre première application Wear, voulez-vous essa
 
 ## <a name="android-wear-20"></a>Android Wear 2.0
 
-Android 2.0 Wear propose de nouvelles fonctionnalités et fonctions, telles que *complications*, courbe dispositions, les tiroirs de navigation et l’action et les notifications étendues. 2.0 Wear rend également possible de générer des applications autonomes qui fonctionnent indépendamment des applications portables. La nouvelle *mouvements de poignet* fonctionnalité permet une interaction avec votre application. Les sections suivantes mettent en évidence ces fonctionnalités et fournissent des liens pour vous aider à commencer à les utiliser dans votre application.
+Android 2.0 Wear propose de nouvelles fonctionnalités et fonctions, telles que *complications*, courbe dispositions, les tiroirs de navigation et l’action et les notifications étendues. 2\.0 Wear rend également possible de générer des applications autonomes qui fonctionnent indépendamment des applications portables. La nouvelle *mouvements de poignet* fonctionnalité permet une interaction avec votre application. Les sections suivantes mettent en évidence ces fonctionnalités et fournissent des liens pour vous aider à commencer à les utiliser dans votre application.
 
 
 
@@ -198,7 +198,7 @@ Découvrez la documentation d’Android Wear de Google :
 
 * [Sur Android Wear](http://www.android.com/wear/)
 * [Conception de l’application Android Wear](https://developer.android.com/design/wear/index.html)
-* [bibliothèque de Android.support.wearable ](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+* [bibliothèque de Android.support.wearable](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 * [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
 
 

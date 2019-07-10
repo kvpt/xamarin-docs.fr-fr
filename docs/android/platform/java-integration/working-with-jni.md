@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 8ad2dde701814c0977e25e6e58272c0aa01ca4ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: aa2e2ac96b37bc781f2e4a3778ea0aaf970649ec
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085617"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674606"
 ---
 # <a name="working-with-jni"></a>Utilisation de JNI
 
@@ -72,7 +72,7 @@ Les wrappers RCW Android sont générés par le **monodroid.exe** du programme p
 Parfois, lorsque vous devez implémenter une interface Android, (telles que [Android.Content.IComponentCallbacks](https://developer.xamarin.com/api/type/Android.Content.IComponentCallbacks/)).
 
 Toutes les classes Android et interfaces étendent la [Android.Runtime.IJavaObject](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) interface ; par conséquent, tous les types d’Android doivent implémenter `IJavaObject`.
-Xamarin.Android tire parti de ce fait &ndash; il utilise `IJavaObject` pour fournir Android avec un proxy Java (un wrapper CCW Android) pour le type managé donné. Étant donné que **monodroid.exe** recherche uniquement `Java.Lang.Object` sous-classes (qui doit implémenter `IJavaObject`), sous-classement `Java.Lang.Object` nous offre un moyen d’implémenter des interfaces en code managé. Exemple :
+Xamarin.Android tire parti de ce fait &ndash; il utilise `IJavaObject` pour fournir Android avec un proxy Java (un wrapper CCW Android) pour le type managé donné. Étant donné que **monodroid.exe** recherche uniquement `Java.Lang.Object` sous-classes (qui doit implémenter `IJavaObject`), sous-classement `Java.Lang.Object` nous offre un moyen d’implémenter des interfaces en code managé. Par exemple :
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -1443,7 +1443,7 @@ Une référence de type est une référence de type intégré ou une référence
 Références de type sont utilisés avec des références de type tableau et avec des Signatures de JNI.
 
 Une méthode supplémentaire pour obtenir une référence de type est en lisant la sortie de `'javap -s -classpath android.jar fully.qualified.Java.Name'`.
-En fonction du type impliqué, vous pouvez utiliser une déclaration de constructeur ou le type pour déterminer le nom JNI de retour de méthode. Exemple :
+En fonction du type impliqué, vous pouvez utiliser une déclaration de constructeur ou le type pour déterminer le nom JNI de retour de méthode. Par exemple :
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State

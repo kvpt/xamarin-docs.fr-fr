@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 9c564789f704180e9acc9f96dcba5e7d6eb20634
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c42be49aff56453bb1bc3b3c732cad151ccd62e0
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60946736"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674463"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Réglage des paramètres de mémoire Java pour le concepteur Android
 
@@ -35,7 +35,7 @@ Les noms de propriété suivantes correspondent aux java indiqué [option de lig
 
 1.  Ouvrez votre solution dans Visual Studio.
 
-2.  Sélectionnez chaque projet Android, un par un dans l’Explorateur de solutions, cliquez sur [afficher tous les fichiers](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90)) deux fois sur chaque projet. Vous pouvez ignorer les projets qui ne contiennent aucun `.axml` fichiers de disposition. Cette étape garantit que chaque répertoire du projet contient un `.csproj.user` fichier.
+2.  Sélectionnez chaque projet Android, un par un dans l’Explorateur de solutions, cliquez sur [afficher tous les fichiers](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90)) deux fois sur chaque projet. Vous pouvez ignorer les projets qui ne contiennent aucun `.axml` fichiers de disposition. Cette étape garantit que chaque répertoire du projet contient un `.csproj.user` fichier.
 
 3.  Quittez Visual Studio.
 

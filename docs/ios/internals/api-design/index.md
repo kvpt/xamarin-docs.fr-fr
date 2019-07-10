@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 9425b26b5cc8fcd9b8a80df422d932c96d52889b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5417050daa84197dd7dc2a270ae054a3a73fd3bc
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037460"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675080"
 ---
 # <a name="xamarinios-api-design"></a>Conception de l’API Xamarin.iOS
 
@@ -113,7 +113,7 @@ Pour chaque type qui reflète un type non managé, il est possible d’obtenir l
 
 Bien que Mono fournira le garbage collection pour tous vos objets, le `Foundation.NSObject` implémente le [System.IDisposable](xref:System.IDisposable) interface. Cela signifie que vous pouvez libérer explicitement les ressources de n’importe quel NSObject donné sans avoir à attendre le Garbage Collector kick dans. Ceci est important lorsque vous utilisez NSObjects importante, par exemple, les UIImages qui peut contenir des pointeurs de grands blocs de données.
 
-Si votre type doit exécuter la finalisation déterministe, substituez le [NSObject.Dispose(bool) méthode](xref:Foundation.NSObject.Dispose(System.Boolean)) le paramètre à la méthode Dispose est « bool disposing », et si défini sur true elle signifie que votre méthode Dispose est appelée, car l’utilisateur appelés explicitement (suppression) sur l’objet. Si la valeur est false, cela signifie que votre méthode Dispose (bool disposing) est appelée à partir du finaliseur sur le thread finaliseur. []()
+Si votre type doit exécuter la finalisation déterministe, substituez le [NSObject.Dispose(bool) méthode](xref:Foundation.NSObject.Dispose(System.Boolean)) le paramètre à la méthode Dispose est « bool disposing », et si défini sur true elle signifie que votre méthode Dispose est appelée, car l’utilisateur appelés explicitement (suppression) sur l’objet. Si la valeur est false, cela signifie que votre méthode Dispose (bool disposing) est appelée à partir du finaliseur sur le thread finaliseur.
 
 
 ##### <a name="categories"></a>Categories

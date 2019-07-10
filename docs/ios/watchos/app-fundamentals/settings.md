@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 36164e1e9f92b5a5520d10f769f3953cfa2ceb85
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a8fe2c2765676db52c23fd7c475f218f14697caf
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61412847"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675230"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>Utilisation de paramètres dans Xamarin de watchOS
 
@@ -36,7 +36,7 @@ Dans le **application iPhone** dans votre solution (*pas* l’extension ou une a
 
 3. Ajoutez une nouvelle clé `ApplicationGroupContainerIdentifier` à la **Root.plist** avec la valeur définie pour le groupe d’application que vous avez configuré, (par ex. `group.com.xamarin.WatchSettings` dans l’exemple) :
 
-   [ ![](settings-images/settings-appgroup-sml.png "Ajouter une clé ApplicationGroupContainerIdentifier le fichier root.plist")](settings-images/settings-appgroup.png#lightbox)
+   [![](settings-images/settings-appgroup-sml.png "Ajouter une clé ApplicationGroupContainerIdentifier le fichier root.plist")](settings-images/settings-appgroup.png#lightbox)
 
 4. Modifier le **Settings-Watch.bundle/Root.plist** pour contenir les options que vous souhaitez utiliser - le fichier de modèle contient un groupe.
   champ de texte, bouton bascule et curseur par défaut (ce qui vous pouvez supprimer et remplacer par vos propres paramètres) :

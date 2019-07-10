@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: ed2d41ea2d9add658d9f07469568a298cdf8de59
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 22a17f9a916d94a3a0f44a451512de43c943e95a
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649692"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675043"
 ---
 # <a name="xamarinforms-switch"></a>Commutateur de Xamarin.Forms
 
@@ -27,7 +27,7 @@ La capture d’écran suivante montre un `Switch` dans contrôler son **sur** et
 Le `Switch` contrôle définit deux propriétés :
 
 * [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) est un `Color` qui affecte la `Switch` est restitué dans basculé, ou **sur**, l’état.
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) est un `boolean` valeur qui indique si le le `Switch` est **sur**.
+* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) est un `boolean` valeur qui indique si le `Switch` est **sur**.
 
 Ces propriétés sont soutenues par une [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) objet, ce qui signifie que le `Switch` styles peuvent leur être et être la cible des liaisons de données.
 
@@ -41,7 +41,7 @@ Un `Switch` peut être instanciée dans XAML. Son `IsToggled` propriété peut �
 <Switch IsToggled="true"/>
 ```
 
-Un « commutateur peut également être créé dans le code :
+Un `Switch` peut également être créé dans le code :
 
 ```csharp
 Switch switch = new Switch { IsToggled = true };

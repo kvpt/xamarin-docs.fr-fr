@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: 009e061726f655999c08192b5839a5c962d35e24
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30b5d0b3a02223a8808e57f5d0cdc5e7000e156
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091440"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674880"
 ---
 # <a name="using-icloud-with-xamarinios"></a>À l’aide d’iCloud avec Xamarin.iOS
 
@@ -55,7 +55,7 @@ Pour configurer correctement une application à accéder à iCloud :
 
 - **Ajouter l’identificateur du conteneur à Entitlements.plist** -le format d’identificateur de conteneur est `TeamID.BundleID`. Pour plus d’informations, reportez-vous à la [utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md) guide.
 
-- **Configurer les propriétés du projet** : dans le fichier Info.plist fichier garantir la **identificateur de Bundle** correspond à la **ID d’offre groupée** définies lorsque [création d’un ID d’application ](~/ios/deploy-test/provisioning/capabilities/index.md); IOS Bundle Signing utilise un **profil de provisionnement** qui contiennent un ID d’application avec App Service, iCloud et **droits personnalisés** fichier sélectionné. Cela tout est possible dans Visual Studio sous le volet de propriétés de projet.
+- **Configurer les propriétés du projet** : dans le fichier Info.plist fichier garantir la **identificateur de Bundle** correspond à la **ID d’offre groupée** définies lorsque [création d’un ID d’application](~/ios/deploy-test/provisioning/capabilities/index.md); IOS Bundle Signing utilise un **profil de provisionnement** qui contiennent un ID d’application avec App Service, iCloud et **droits personnalisés** fichier sélectionné. Cela tout est possible dans Visual Studio sous le volet de propriétés de projet.
 
 - **Activer iCloud sur votre appareil** - accédez à **Paramètres > iCloud** et assurez-vous que l’appareil est connecté.
 Sélectionnez et activez le **Documents et données** option.

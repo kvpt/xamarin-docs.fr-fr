@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: e762a286069d5ef1db90f3c45808eee0a7a04a7f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c10935f4623fd4455ec5cf8a80c6473c0f69d9b9
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954283"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674689"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Principes de conception de l’API de Xamarin.Android
 
@@ -240,7 +240,7 @@ Les types imbriqués sont « déplacées » pour être frères de l’interfac
 
 Par exemple, considérez le [android.os.Parcelable](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) interface.
 Le *Parcelable* interface contient les méthodes, les types imbriqués et les constantes. Le *Parcelable* méthodes d’interface sont placés dans le [Android.OS.IParcelable](https://developer.xamarin.com/api/type/Android.OS.IParcelable/) interface.
-Le *Parcelable* constantes de l’interface sont placés dans le [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/) type. Imbriqué [android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) et [android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html) types ne sont actuellement pas lié en raison des limitations dans notre prise en charge les génériques ; Si elles ont été prises en charge, ils doivent être présents en tant que le *Android.OS.IParcelableClassLoaderCreator* et *Android.OS.IParcelableCreator* interfaces. Par exemple, l’imbriquée [android.os.IBinder.DeathRecpient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html) interface est liée en tant que le [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/) interface.
+Le *Parcelable* constantes de l’interface sont placés dans le [Android.OS.ParcelableConsts](https://developer.xamarin.com/api/type/Android.OS.ParcelableConsts/) type. Imbriqué [android.os.Parcelable.ClassLoaderCreator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) et [android.os.Parcelable.Creator <t> </t> ](https://developer.android.com/reference/android/os/Parcelable.Creator.html) types ne sont actuellement pas lié en raison des limitations dans notre prise en charge les génériques ; Si elles ont été prises en charge, ils doivent être présents en tant que le *Android.OS.IParcelableClassLoaderCreator* et *Android.OS.IParcelableCreator* interfaces. Par exemple, l’imbriquée [android.os.IBinder.DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html) interface est liée en tant que le [Android.OS.IBinderDeathRecipient](https://developer.xamarin.com/api/type/Android.OS.IBinderDeathRecipient/) interface.
 
 
 > [!NOTE]
@@ -260,7 +260,7 @@ Outre les types ci-dessus, il existe quatre autres modifications :
 Pour le *android.os.Parcelable* interface, cela signifie qu’il y aura désormais un [ *Android.OS.Parcelable* ](https://developer.xamarin.com/api/type/Android.OS.Parcelable/) type pour contenir les constantes. Par exemple, le [Parcelable.CONTENTS_FILE_DESCRIPTOR](https://developer.android.com/reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR) constante va être liée en tant que le [ *Parcelable.ContentsFileDescriptor* ](https://developer.xamarin.com/api/field/Android.OS.Parcelable.ContentsFileDescriptor/) constante, au lieu de comme le  *ParcelableConsts.ContentsFileDescriptor* constante.
 
 Pour les interfaces contenant des constantes qui implémentent des autres interfaces contenant encore plus de constantes, l’union de toutes les constantes est désormais générée. Par exemple, le [android.provider.MediaStore.Video.VideoColumns](https://developer.android.com/reference/android/provider/MediaStore.Video.VideoColumns.html) interface implémente la [android.provider.MediaStore.MediaColumns](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumns/) interface. Toutefois, avant 1.9, les [Android.Provider.MediaStore.Video.VideoColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+Video+VideoColumnsConsts/) type n’a aucun moyen d’accéder à l’une des constantes déclarées sur [Android.Provider.MediaStore.MediaColumnsConsts](https://developer.xamarin.com/api/type/Android.Provider.MediaStore+MediaColumnsConsts/).
-Par conséquent, l’expression Java *MediaStore.Video.VideoColumns.TITLE* doit être lié à l’expression c# *MediaStore.Video.MediaColumnsConsts.Title* qui est difficile à découvrir sans effectuer de lecture grand nombre de documentation Java. Dans 1.9, l’expression c# équivalente sera [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
+Par conséquent, l’expression Java *MediaStore.Video.VideoColumns.TITLE* doit être lié à l’expression c# *MediaStore.Video.MediaColumnsConsts.Title* qui est difficile à découvrir sans effectuer de lecture grand nombre de documentation Java. Dans 1.9, l’équivalent C# expression sera [ *MediaStore.Video.VideoColumns.Title*](https://developer.xamarin.com/api/field/Android.Provider.MediaStore+Video+VideoColumns.Title/).
 
 En outre, envisagez la [android.os.Bundle](https://developer.xamarin.com/api/type/Android.OS.Bundle/) type, qui implémente le Java *Parcelable* interface. Dans la mesure où elle implémente l’interface, toutes les constantes sur cette interface sont accessibles « via » le type de regroupement, par exemple, *Bundle.CONTENTS_FILE_DESCRIPTOR* est une expression Java parfaitement valide.
 Précédemment, porter cette expression à C# vous devez examiner toutes les interfaces qui sont implémentées pour voir à partir de quel type le *CONTENTS_FILE_DESCRIPTOR* provient. À compter de Xamarin.Android 1.9, classes implémentant les interfaces Java qui contiennent des constantes aura imbriquée *InterfaceConsts* type, qui contiendra toutes les constantes de l’interface héritée. Cela permettra de traduire *Bundle.CONTENTS_FILE_DESCRIPTOR* à [ *Bundle.InterfaceConsts.ContentsFileDescriptor*](https://developer.xamarin.com/api/field/Android.OS.Bundle+InterfaceConsts.ContentsFileDescriptor/).

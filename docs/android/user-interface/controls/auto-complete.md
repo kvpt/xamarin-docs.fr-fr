@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: cf2221380e5ddbd8278cc2d387c6eb185d990c1a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bcbab6deddf5e1a4782cd382623f22281a0823e6
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036548"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674850"
 ---
 # <a name="auto-complete"></a>Saisie semi-automatique
 
@@ -203,7 +203,7 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
 -   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par Android Open Source Project et utilisé conformément aux conditions décrites dans le* 
- [ *licence Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le* 
- [ *didacticiel Android semi-automatique*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par Android Open Source Project et utilisé conformément aux conditions décrites dans le*
+[*licence Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le*
+[*didacticiel Android semi-automatique*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
  *.*

@@ -6,12 +6,12 @@ ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 71f46535ffd0a99ad78acb8f0e3bbc5870abf33e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a900d427ad6ac2a0e211ef4f00d2f014b13e5d1c
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61197950"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674416"
 ---
 # <a name="interactive-workbooks"></a>Workbooks interactifs
 
@@ -27,7 +27,7 @@ Les classeurs peuvent être enregistrés et ouvert plus tard dans l’applicatio
 
 La fenêtre d’édition de code fournit la complétion de code, la coloration syntaxique, inline live-diagnostics et prise en charge de l’instruction sur plusieurs lignes.
 
-[ ![](workbook-images/inspector-0.6.0-repl-small.png "La fenêtre d’édition de code fournit la complétion de code, la coloration syntaxique, inline live-diagnostics et prise en charge de l’instruction sur plusieurs lignes")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "La fenêtre d’édition de code fournit la complétion de code, la coloration syntaxique, inline live-diagnostics et prise en charge de l’instruction sur plusieurs lignes")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Xamarin Workbooks sont enregistrés dans un `.workbook` fichier, qui est un fichier CommonMark avec des métadonnées en haut (consultez [les Types de fichiers de classeurs](#workbooks-files-types) pour plus d’informations sur la façon dont les classeurs peuvent être enregistrées).
 

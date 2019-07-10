@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 16d3dfaa0169e3a02fcdee0318dc150994c7e59b
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827871"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674394"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Affichage des alertes dans Xamarin.iOS
 
@@ -60,7 +60,7 @@ okayButton.TouchUpInside += (sender, e) => {
 
 Affiche une alerte avec plusieurs options, s’effectue de manière similaire, mais ajouter deux actions. Par exemple, la capture d’écran suivante montre une alerte avec deux boutons :
 
- ![ Avec deux boutons d’alerte](alerts-images/alert2.png)
+ ![Avec deux boutons d’alerte](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
