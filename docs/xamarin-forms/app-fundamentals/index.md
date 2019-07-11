@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/08/2018
-ms.openlocfilehash: 1e40b0a71317d8c9cb3de391a0b941a5bb081956
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 61d9c5b1c7b81bfc8a20932ce1d188cd0cb0f980
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048148"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650435"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Notions de base des applications Xamarin.Forms
 
@@ -52,10 +52,6 @@ Le `DependencyService` fournit un localisateur simple pour vous permettre de cod
 
 Les effets permettent de personnaliser les contrôles natifs de chaque plateforme et sont généralement utilisés pour les petits changements de style.
 
-## <a name="filesfilesmd"></a>[Fichiers](files.md)
-
-La gestion de fichiers avec Xamarin.Forms est possible à l’aide de code dans une bibliothèque .NET Standard, ou en utilisant des ressources incorporées.
-
 ## <a name="gesturesgesturesindexmd"></a>[Gestes](gestures/index.md)
 
 La classe Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) prend en charge les appuis, les pincements et les mouvements panoramiques sur les contrôles d’interface utilisateur.
@@ -63,10 +59,6 @@ La classe Xamarin.Forms [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecogniz
 ## <a name="localizationlocalizationindexmd"></a>[Localisation](localization/index.md)
 
 Le framework de localisation .NET intégré peut être utilisé pour créer des applications multilingues multiplateformes avec Xamarin.Forms.
-
-## <a name="local-databasesdatabasesmd"></a>[Bases de données locales](databases.md)
-
-Xamarin.Forms prend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, ce qui permet de charger et d’enregistrer des objets dans du code partagé.
 
 ## <a name="messaging-centermessaging-centermd"></a>[Centre de messagerie](messaging-center.md)
 

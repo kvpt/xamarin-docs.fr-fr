@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ca9c71d5bdac1900c4f0e5d07898e65b06cdcf90
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: e7b8ae57f127b4c9397ab4e5f7e097fa330e827a
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925569"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650660"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
@@ -34,7 +34,7 @@ Cet exemple d’application montre une application de liste Todo où les donnée
 
 Chaque instance `TodoItem` créée par l’utilisateur est indexée. La recherche propre à la plateforme peut ensuite servir à localiser les données indexées de l’application. Quand l’utilisateur appuie sur un élément de résultat de recherche de l’application, l’application démarre, la `TodoItemPage` est parcourue et le `TodoItem` référencé à partir du lien ciblé s’affiche.
 
-Pour plus d’informations sur l’utilisation d’une base de données SQLite, consultez [Bases de données locales Xamarin.Forms](~/xamarin-forms/app-fundamentals/databases.md).
+Pour plus d’informations sur l’utilisation d’une base de données SQLite, consultez [Bases de données locales Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md).
 
 > [!NOTE]
 > La fonctionnalité d’indexation d’applications et de liens ciblés de Xamarin.Forms est disponible uniquement sur les plateformes iOS et Android et nécessite respectivement iOS 9 et API 23 au minimum.

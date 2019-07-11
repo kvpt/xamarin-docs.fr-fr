@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/25/2018
-ms.openlocfilehash: a00b157940cfde8021b92004fe27a4d52bac5e0c
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: c81c84b8b32bdde6949918f3a31f171983007f39
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855157"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675219"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publication d’applications Xamarin.iOS sur l’App Store
 
@@ -53,7 +53,7 @@ Chaque application iOS a un ID d’application unique, qui est associé à un en
 Pour créer un ID d’application et sélectionner tous les droits nécessaires, visitez le [portail des développeurs Apple](https://developer.apple.com/account/) et procédez comme suit :
 
 1. Dans la section **Certificates, Identifiers & Profiles** (Certificats, identificateurs et profils), sélectionnez **Identifiers > App IDs** (Identificateurs -> ID d’application).
-2. Cliquez sur le bouton **+**, puis indiquez un **Name (Nom)** et un **Bundle ID (ID de bundle)** pour la nouvelle application.
+2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** et un **Bundle ID (ID de bundle)** pour la nouvelle application.
 3. Faites défiler l’affichage vers le bas de l’écran, puis sélectionnez les **services d’application** nécessaires pour votre application Xamarin.iOS. Les services d’application sont décrits en détail dans le guide [Utilisation des fonctionnalités dans Xamarin.iOS](~/ios/deploy-test/provisioning/capabilities/index.md).
 4. Cliquez sur le bouton **Continue** et suivez les instructions affichées à l’écran pour créer l’ID d’application.
 
@@ -78,7 +78,7 @@ Pour créer et installer un profil de provisionnement App Store, procédez comme
 
 1. Connectez-vous au [portail des développeurs Apple](https://developer.apple.com/account/).
 2. Dans **Certificates, IDs & Profiles**, sélectionnez **Provisioning Profiles > Distribution**.
-3. Cliquez sur le bouton **+**, sélectionnez **App Store** et cliquez sur **Continue**.
+3. Cliquez sur le bouton **+** , sélectionnez **App Store** et cliquez sur **Continue**.
 4. Sélectionnez l’**ID d’application** de votre application dans la liste et cliquez sur **Continue**.
 5. Sélectionnez un certificat de signature et cliquez sur **Continue**.
 6. Entrez un **nom de profil** et cliquez sur **Continue** pour générer le profil.
@@ -111,7 +111,7 @@ Les nouveaux projets Xamarin.iOS configurent automatiquement les **configuration
 
 11. Accédez à l’onglet **Signature du bundle iOS**. Si les options ici ne sont pas modifiables, vérifiez que **Provisionnement manuel** est sélectionné dans le fichier **Info.plist**.
 12. Assurez-vous que **Configuration** est défini sur **Release** et que **Plateforme** est défini sur **iPhone**.
-13. Définissez **Identité de signature** sur **Distribution (automatique)**.
+13. Définissez **Identité de signature** sur **Distribution (automatique)** .
 14. Pour **Profil de provisionnement**, sélectionnez le profil de provisionnement App Store [créé ci-dessus](#create-and-install-an-app-store-provisioning-profile).
 
     Les options de signature du bundle de votre projet doivent maintenant ressembler à ceci :
@@ -140,7 +140,7 @@ Les nouveaux projets Xamarin.iOS configurent automatiquement les **configuration
     Examinez également ce guide sur les [systèmes de build d’iOS](~/ios/deploy-test/ios-build-mechanics.md), qui décrit en détail les paramètres de build.
 
 11. Accédez à l’onglet **Signature du bundle iOS**. Assurez-vous que **Configuration** est défini sur **Release**, que **Plateforme** est défini sur **iPhone** et que **Provisionnement manuel** est sélectionné.
-12. Définissez **Identité de signature** sur **Distribution (automatique)**.
+12. Définissez **Identité de signature** sur **Distribution (automatique)** .
 13. Pour **Profil de provisionnement**, sélectionnez le profil de provisionnement App Store [créé ci-dessus](#create-and-install-an-app-store-provisioning-profile).
 
     Les options de signature du bundle de votre projet doivent maintenant ressembler à ceci :
@@ -149,7 +149,7 @@ Les nouveaux projets Xamarin.iOS configurent automatiquement les **configuration
 
 14. Accédez à l’onglet **Options IPA iOS**.
 15. Assurez-vous que **Configuration** est défini sur **Release** et que **Plateforme** est défini sur **iPhone**.
-16. Cochez la case **Générer une archive IPA (iTunes Package Archive)**. Avec ce paramètre, chaque build **Release** (puisque c’est la configuration sélectionnée) génère un fichier .ipa. Ce fichier peut être soumis à Apple pour publication sur l’App Store.
+16. Cochez la case **Générer une archive IPA (iTunes Package Archive)** . Avec ce paramètre, chaque build **Release** (puisque c’est la configuration sélectionnée) génère un fichier .ipa. Ce fichier peut être soumis à Apple pour publication sur l’App Store.
 
     > [!NOTE]
     > **Métadonnées iTunes** et **iTunesArtwork** ne sont pas nécessaires pour les publications de l’App Store. Pour plus d’informations, consultez [le fichier iTunesMetadata.plist dans les applications Xamarin.iOS](~/ios/deploy-test/app-distribution/itunesmetadata.md) et [Itunes Artwork](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
@@ -208,7 +208,7 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
     > [!NOTE]
     > Pour plus d’informations sur l’outil, consultez la [documentation d’Apple sur Application Loader](https://help.apple.com/itc/apploader/#/apdS673accdb).
 
-10. Sélectionnez **Deliver Your App (Livrer votre application)**, puis cliquez sur le bouton **Choose (Choisir)**  :
+10. Sélectionnez **Deliver Your App (Livrer votre application)** , puis cliquez sur le bouton **Choose (Choisir)**  :
 
     ![Sélectionner Distribuer votre app](publishing-to-the-app-store-images/publishvs01.png "Sélectionner Distribuer votre app")
 
@@ -254,7 +254,7 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
     > Pour plus d’informations sur l’outil, consultez la [documentation d’Apple sur Application Loader](https://help.apple.com/itc/apploader/#/apdS673accdb).
 
 7. Connectez-vous à Application Loader (notez que vous devez [créer un mot de passe spécifique à l’application](https://support.apple.com/ht204397) pour votre identifiant Apple).
-8. Sélectionnez **Deliver Your App (Livrer votre application)**, puis cliquez sur le bouton **Choose (Choisir)**  :
+8. Sélectionnez **Deliver Your App (Livrer votre application)** , puis cliquez sur le bouton **Choose (Choisir)**  :
 
     ![Sélectionner Distribuer votre app](publishing-to-the-app-store-images/publishvs01.png "Sélectionner Distribuer votre app")
 
