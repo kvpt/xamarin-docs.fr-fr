@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 83e28796a2c387927dddd708da3ee6623f800a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61193003"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67841497"
 ---
 Dans cet exercice, vous ajouterez des classes d’accès aux données au projet **LocalDatabaseTutorial** qui sera utilisé pour conserver les données sur les personnes dans la base de données.
 
@@ -69,9 +69,7 @@ Dans cet exercice, vous ajouterez des classes d’accès aux données au projet 
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace LocalDatabaseTutorial
     {
         public partial class App : Application
@@ -117,7 +115,8 @@ Dans cet exercice, vous ajouterez des classes d’accès aux données au projet 
 
     Ce code définit une propriété `Database` qui crée une instance `Database` comme singleton. Un chemin d’accès local et un nom de fichier (correspondant à l’emplacement de stockage de la base de données) sont transmis sous forme d’argument au constructeur de classe `Database`.
 
-    > IMPORTANT : Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
+    > [!IMPORTANT]
+    > Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
 
 1. Générez la solution pour vérifier qu’elle ne contient aucune erreur.
 
@@ -182,9 +181,7 @@ Dans cet exercice, vous ajouterez des classes d’accès aux données au projet 
     using System;
     using System.IO;
     using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
 
-    [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
     namespace LocalDatabaseTutorial
     {
         public partial class App : Application
@@ -230,6 +227,7 @@ Dans cet exercice, vous ajouterez des classes d’accès aux données au projet 
 
     Ce code définit une propriété `Database` qui crée une instance `Database` comme singleton. Un chemin d’accès local et un nom de fichier (correspondant à l’emplacement de stockage de la base de données) sont transmis sous forme d’argument au constructeur de classe `Database`.
 
-    > IMPORTANT : Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
-    
+    > [!IMPORTANT]
+    > Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
+
 1. Générez la solution pour vérifier qu’elle ne contient aucune erreur.
