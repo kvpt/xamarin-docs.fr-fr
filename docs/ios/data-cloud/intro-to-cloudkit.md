@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: daea27472ac7c0578c1cfd79ebd96428212fafb3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ef12c8b0822f3d0486f584878f572a266b0d44e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61165295"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831862"
 ---
 # <a name="cloudkit-in-xamarinios"></a>CloudKit in Xamarin.iOS
 
@@ -64,7 +64,7 @@ Avant d’une application Xamarin peut utiliser le Framework de CloudKit, l’ap
 4.  Cliquez sur le projet iOS dans la solution et sélectionnez **Options**.
 5.  Sélectionnez **signature du Bundle iOS**, sélectionnez le **Developer Identity** et **profil de provisionnement** créé ci-dessus.
 6.  Vérifiez le **Entitlements.plist** inclut **activer iCloud** , **stockage clé-valeur** et **CloudKit** .
-7.  Vérifiez le **omniprésence conteneur** existe pour l’application (créé ci-dessus). Exemple : `iCloud.com.your-company.CloudKitAtlas`
+7.  Vérifiez le **omniprésence conteneur** existe pour l’application (créé ci-dessus). Exemple : `iCloud.com.your-company.CloudKitAtlas`
 8.  Enregistrez les modifications dans le fichier.
 
 
@@ -83,7 +83,7 @@ Avant d’implémenter CloudKit dans une application Xamarin iOS, cet article va
 7.  **Ressources** – autoriser pour le fichier de données volumineuses, non structurées d’être téléchargées sur iCloud et associé à un enregistrement donné.
 
 
-### <a name="containers"></a>Conteneurs
+### <a name="containers"></a>Containers
 
 Une application donnée en cours d’exécution sur un appareil iOS est toujours en cours d’exécution côté ainsi que les autres applications et services sur cet appareil. Sur l’appareil client, l’application va être isolées ou bac à sable d’une certaine façon. Dans certains cas, il s’agit d’un bac à sable littéral, et dans d’autres cas, l’application est simplement en cours d’exécution qu’il contient est propre espace de mémoire.
 
@@ -106,7 +106,7 @@ La mise en conteneur de données d’iCloud permet également de CloudKit encaps
 
 Les conteneurs sont entièrement gérées par le développeur de l’application via le portail WWDR. L’espace de noms du conteneur est global sur tous les développeurs d’Apple, le conteneur doit donc pas uniquement être propre aux applications d’un développeur donné, mais à toutes les applications et les développeurs d’Apple.
 
-Apple suggère à l’aide de la notation DNS inverse lors de la création de l’espace de noms pour les conteneurs d’applications. Exemple :
+Apple suggère à l’aide de la notation DNS inverse lors de la création de l’espace de noms pour les conteneurs d’applications. Exemple :
 
 ```csharp
 iCloud.com.company-name.application-name
@@ -501,7 +501,7 @@ CloudKit prend en charge les types suivants de `NSPredicates` lorsque vous trava
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
     
- 6. Prend en charge de CloudKit composée prédicats joints à l’aide de la `AND` opérateur.
+6. Prend en charge de CloudKit composée prédicats joints à l’aide de la `AND` opérateur.
     
     ```
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
@@ -650,7 +650,7 @@ Cette section a montré comment répondre le Big Data, le problème petit appare
 
 Comme indiqué au début de cet article, CloudKit repose sur l’infrastructure existante d’iCloud. La section suivante couvre, de façon détaillée comment les comptes sont exposés à un développeur à l’aide de l’API de CloudKit.
 
-### <a name="authentication"></a>Authentification
+### <a name="authentication"></a>Authentication
 
 Lorsque vous traitez des comptes d’utilisateur, le premier point important est l’authentification. CloudKit prend en charge l’authentification par le biais de l’utilisateur actuellement connecté dans iCloud sur l’appareil. L’authentification a lieu en arrière-plan et est gérée par iOS. De cette façon, les développeurs ont jamais à vous soucier des détails d’implémentation de l’authentification. Ils testent uniquement pour voir si un utilisateur est connecté.
 

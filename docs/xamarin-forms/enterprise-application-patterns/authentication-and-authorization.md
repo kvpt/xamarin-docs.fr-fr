@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: edab6b7edd5ca95cb5abe5fc2caccb5714efda56
-ms.sourcegitcommit: a6ba6ed086bcde4f52fb05f83c59c68e8aa5e436
+ms.openlocfilehash: efaea24e559aa2f3bdfd87c1c083ce1d777dbb3f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540397"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832166"
 ---
 # <a name="authentication-and-authorization"></a>Authentification et autorisation
 
@@ -20,7 +20,7 @@ L’authentification est le processus d’obtention des informations d’identif
 
 Il existe plusieurs approches pour l’intégration de l’authentification et autorisation dans une application Xamarin.Forms qui communique avec une application web ASP.NET MVC, y compris à l’aide d’ASP.NET Core Identity, fournisseurs d’authentification externes tels que Microsoft, Google, Intergiciel (middleware) Facebook ou Twitter et l’authentification. L’application mobile eShopOnContainers effectue l’authentification et autorisation avec un microservice d’identité en conteneur qui utilise 4 d’IdentityServer. L’application mobile demande des jetons de sécurité à partir d’IdentityServer, pour authentifier un utilisateur ou pour accéder à une ressource. Pour IdentityServer pour émettre des jetons pour le compte d’un utilisateur, l’utilisateur doit connectez-vous à IdentityServer. Toutefois, IdentityServer ne fournit pas une interface utilisateur ou la base de données pour l’authentification. Par conséquent, dans l’application de référence eShopOnContainers, ASP.NET Core Identity est utilisé à cet effet.
 
-## <a name="authentication"></a>Authentification
+## <a name="authentication"></a>Authentication
 
 L’authentification est requise lorsqu’une application doit connaître l’identité de l’utilisateur actuel. Mécanisme principal utilisé d’ASP.NET Core pour identifier les utilisateurs est le système d’appartenance ASP.NET Core Identity, qui stocke les informations utilisateur dans un magasin de données configuré par le développeur. En règle générale, le magasin de données sera un magasin Entity Framework, bien que les magasins personnalisés ou des packages tiers peuvent être utilisés pour stocker les informations d’identité dans le stockage Azure, Azure Cosmos DB ou d’autres emplacements.
 
@@ -97,7 +97,8 @@ Après avoir appelé la `services.AddIdentityServer` (méthode), l’API fluent 
 -   Clients qui seront connectent à demander des jetons.
 -   ASP.NET Core Identity.
 
->💡 **Conseil**: Charger dynamiquement la configuration IdentityServer 4. API d’IdentityServer 4 permettent la configuration IdentityServer à partir d’une liste en mémoire des objets de configuration. Dans l’application de référence eShopOnContainers, ces collections en mémoire sont codées en dur dans l’application. Toutefois, dans les scénarios de production qu’ils peuvent être chargés dynamiquement à partir d’un fichier de configuration ou d’une base de données.
+> [!TIP]
+> Charger dynamiquement la configuration IdentityServer 4. API d’IdentityServer 4 permettent la configuration IdentityServer à partir d’une liste en mémoire des objets de configuration. Dans l’application de référence eShopOnContainers, ces collections en mémoire sont codées en dur dans l’application. Toutefois, dans les scénarios de production qu’ils peuvent être chargés dynamiquement à partir d’un fichier de configuration ou d’une base de données.
 
 Pour plus d’informations sur la configuration IdentityServer pour utiliser ASP.NET Core Identity, consultez [à l’aide de ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html) dans la documentation IdentityServer.
 
@@ -317,7 +318,8 @@ private async Task NavigateAsync(string url)
 
 Cette méthode analyse la réponse d’authentification qui est contenue dans l’URI de retour, et si un code d’autorisation valide est présent, il effectue une demande auprès du IdentityServer [point de terminaison de jeton](https://identityserver4.readthedocs.io/en/latest/endpoints/token.html), en passant le code d’autorisation, le Vérificateur de secret PKCE et d’autres paramètres sont requis. Le point de terminaison de jeton est à `/connect/token` sur le port 5105 du point de terminaison base exposée comme un paramètre utilisateur. Pour plus d’informations sur les paramètres utilisateur, consultez [gestion de la Configuration](~/xamarin-forms/enterprise-application-patterns/configuration-management.md).
 
->💡 **Conseil**: Valider le retour d’URI. Bien que l’application mobile eShopOnContainers ne valide pas l’URI de retour, la meilleure pratique consiste à valider que l’URI de retour fait référence à un emplacement connu, pour empêcher les attaques par redirection d’open.
+> [!TIP]
+> Valider le retour d’URI. Bien que l’application mobile eShopOnContainers ne valide pas l’URI de retour, la meilleure pratique consiste à valider que l’URI de retour fait référence à un emplacement connu, pour empêcher les attaques par redirection d’open.
 
 Si le point de terminaison de jeton reçoit un code d’autorisation valide et le vérificateur de secret de PKCE, il répond avec un jeton d’accès, le jeton d’identité et le jeton d’actualisation. Le jeton d’accès (qui permet d’accéder aux ressources d’API) et un jeton d’identité sont ensuite stockées en tant que paramètres d’application, et la navigation entre les pages est effectuée. Par conséquent, l’effet global dans l’application mobile eShopOnContainers est-ce : condition que les utilisateurs sont en mesure de s’authentifier correctement avec IdentityServer, navigation vers le `MainView` page, qui est un [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) qui affiche le `CatalogView` en tant que son onglet sélectionné.
 
@@ -387,7 +389,7 @@ Pour plus d’informations sur la navigation entre les pages, consultez [Navigat
 
 <a name="authorization" />
 
-## <a name="authorization"></a>Autorisation
+## <a name="authorization"></a>Authorization
 
 Après l’authentification, web ASP.NET Core API doivent souvent pour autoriser l’accès, qui permet à un service rendre les API disponibles pour les utilisateurs authentifiés, mais pas à toutes.
 

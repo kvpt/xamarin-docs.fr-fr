@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: df0b0e8dd57129917f2d8dab07115551ca675acf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8dcb478b303c4c73f7e73dc018ad56b1301389c8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61163321"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830044"
 ---
 # <a name="healthkit-in-xamarinios"></a>HealthKit dans Xamarin.iOS
 
@@ -142,7 +142,7 @@ L’exemple d’application fourni avec cet article inclut un préconfigurée `E
 
 La banque de données d’intégrité Kit est un magasin de données privé, spécifiques à l’utilisateur qui est partagé entre les applications. Étant donné que les informations d’intégrité sont donc sensibles, l’utilisateur des étapes positif pour autoriser l’accès aux données. Cet accès peuvent être partiel (écriture mais pas en lecture, l’accès pour certains types de données, mais pas pour d’autres, etc.) et peuvent être révoqués à tout moment. Applications du Kit d’intégrité doivent être écrit avec précaution, en sachant que le nombre d’utilisateurs sera hésite à stocker leurs informations relatives à l’intégrité.
 
-Données du Kit d’intégrité sont limitées à Apple des types spécifiés. Ces types sont strictement définis : certains, tels que le type de sang, sont limités à des valeurs particulières d’une énumération Apple fourni, tandis que d’autres combinent une magnitude avec une unité de mesure (par exemple, grammes calories et de litres). Même les données qui partagent une unité de mesure de compatible sont distinguent par leurs `HKObjectType`; par exemple, le système de type intercepte une tentative erronée pour stocker un `HKQuantityTypeIdentifier.NumberOfTimesFallen` valeur à un champ attendu un `HKQuantityTypeIdentifier.FlightsClimbed` même si les deux utilisent le` HKUnit.Count` unité de mesure.
+Données du Kit d’intégrité sont limitées à Apple des types spécifiés. Ces types sont strictement définis : certains, tels que le type de sang, sont limités à des valeurs particulières d’une énumération Apple fourni, tandis que d’autres combinent une magnitude avec une unité de mesure (par exemple, grammes calories et de litres). Même les données qui partagent une unité de mesure de compatible sont distinguent par leurs `HKObjectType`; par exemple, le système de type intercepte une tentative erronée pour stocker un `HKQuantityTypeIdentifier.NumberOfTimesFallen` valeur à un champ attendu un `HKQuantityTypeIdentifier.FlightsClimbed` même si les deux utilisent le `HKUnit.Count` unité de mesure.
 
 Les types stockables dans le magasin de données d’intégrité Kit sont toutes les sous-classes de `HKObjectType`. `HKCharacteristicType` les objets stockent biologiques sexe, Type de sang et Date de naissance. Plus courantes sont cependant, `HKSampleType` objets qui représentent les données échantillonnées à un moment spécifique ou sur une période de temps. 
 

@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: asb3993
 ms.author: amburns
 ms.date: 11/25/2015
-ms.openlocfilehash: ec173c0ed7881439ecbe2b5cf83c8f5484c7e5aa
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 93f90d2dad140f021c7e575afed44da1c5351eda
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977625"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830517"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Vue d’ensemble des liaisons Objective-C
 
@@ -24,9 +24,10 @@ Liaison d’une bibliothèque Objective-C pour une utilisation avec Xamarin pren
 2. Une fois que vous avez écrit la « définition API » C#, compilez-le pour produire un assembly de « liaison ». Cela peut être fait sur le [ **ligne de commande** ](#commandline) ou en utilisant un [ **projet de liaison** ](#bindingproject) dans Visual Studio pour Mac ou Visual Studio.
 
 3. Cet assembly « binding » est ensuite ajouté à votre projet d’application Xamarin, donc vous pouvez accéder à la fonctionnalité native à l’aide de l’API que vous avez défini.
-  Le projet de liaison est entièrement distinct de vos projets d’application.
+   Le projet de liaison est entièrement distinct de vos projets d’application.
 
-**REMARQUE :** Étape 1 peut être automatisé avec l’assistance de [ **objectif Sharpie**](#objectivesharpie). Il examine les API Objective-C et génère un proposé C# « Définition API ». Vous pouvez personnaliser les fichiers créés par objectif Sharpie et les utiliser dans un projet de liaison (ou sur la ligne de commande) pour créer votre assembly de liaison. Objectif Sharpie ne crée pas de liaisons par lui-même, il est simplement une partie facultative de processus plus importants.
+   > [!NOTE]
+   > Étape 1 peut être automatisé avec l’assistance de [ **objectif Sharpie**](#objectivesharpie). Il examine les API Objective-C et génère un proposé C# « Définition API ». Vous pouvez personnaliser les fichiers créés par objectif Sharpie et les utiliser dans un projet de liaison (ou sur la ligne de commande) pour créer votre assembly de liaison. Objectif Sharpie ne crée pas de liaisons par lui-même, il est simplement une partie facultative de processus plus importants.
 
 Vous pouvez également lire plus de détails techniques de [son fonctionnement](#howitworks), ce qui vous aideront à écrire vos liaisons.
 

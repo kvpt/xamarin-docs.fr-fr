@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 82f1455ff5e5ac06b50664e1d4d533d4964b7a0e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298864"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831130"
 ---
 # <a name="preface-to-enterprise-app-development"></a>Préface au développement d’applications Enterprise
 
@@ -26,7 +26,7 @@ Le guide est fourni avec le code source pour le [application mobile eShopOnConta
 
 Ce guide est destiné aux lecteurs qui sont déjà familiarisés avec Xamarin.Forms. Pour obtenir une présentation détaillée Xamarin.Forms, consultez le [Xamarin.Forms documentation](~/xamarin-forms/index.yml), et [création d’applications mobiles avec Xamarin.Forms](https://aka.ms/xamebook).
 
-Le guide est complémentaire à [.NET Microservices : Architecture pour les Applications .NET](https://aka.ms/microservicesebook), qui se concentre sur le développement et déploiement de microservices en conteneur. Incluent d’autres guides intéressant de lecture [création d’une architecture et développement d’Applications Web modernes avec ASP.NET Core et Microsoft Azure](http://aka.ms/WebAppEbook), [Containerized Docker Application Lifecycle with Microsoft Platform and Tools](http://aka.ms/dockerlifecycleebook), et [Microsoft Platform and Tools pour le développement d’applications mobiles](http://aka.ms/MobAppDev/StndPDF).
+Le guide est complémentaire à [.NET Microservices : Architecture pour les Applications .NET](https://aka.ms/microservicesebook), qui se concentre sur le développement et déploiement de microservices en conteneur. Incluent d’autres guides intéressant de lecture [création d’une architecture et développement d’Applications Web modernes avec ASP.NET Core et Microsoft Azure](https://aka.ms/WebAppEbook), [Containerized Docker Application Lifecycle with Microsoft Platform and Tools](https://aka.ms/dockerlifecycleebook), et [Microsoft Platform and Tools pour le développement d’applications mobiles](https://aka.ms/MobAppDev/StndPDF).
 
 ## <a name="who-should-use-this-guide"></a>Qui doit utiliser ce Guide
 

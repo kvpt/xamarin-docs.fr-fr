@@ -6,12 +6,12 @@ ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: e7371fa85fd5955e9a0fd285adb32844001821b3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3377602b8d793be8274ed150ebbd124c9d165e82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61285181"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832493"
 ---
 # <a name="urhosharp-android-support"></a>Prise en charge de UrhoSharp Android
 
@@ -25,7 +25,7 @@ Dans les pages ci-dessous, supposons que `MyGame` est une sous-classe de la `App
 
 **Architectures prises en charge**: x86, armeabi, armeabi-v7a
 
-## <a name="create-a-project"></a>Créer un projet
+## <a name="create-a-project"></a>Création d’un projet
 
 Créez un projet Android et ajoutez le package NuGet de UrhoSharp.
 
@@ -121,4 +121,3 @@ public class MainActivity : Activity
     }
 }
 ```
-

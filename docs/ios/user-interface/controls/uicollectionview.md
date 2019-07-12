@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a93de9d60a515b6089b35a64eb8832c456c96557
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 890c11908b11b18d6ca626820f1a835d817870da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827347"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829861"
 ---
 # <a name="collection-views-in-xamarinios"></a>Vues de collection dans Xamarin.iOS
 
@@ -453,7 +453,7 @@ Comme indiqué ci-dessus, une des modifications plus importantes à la vue de co
 
 Dans iOS 9, le moyen le plus rapide pour ajouter la réorganisation à une vue de collection consiste à utiliser un `UICollectionViewController`.
 Le contrôleur d’affichage de collection a maintenant un `InstallsStandardGestureForInteractiveMovement` propriété, qui ajoute une norme *module de reconnaissance du mouvement* qui prend en charge le glisser-déplacer pour réorganiser les éléments dans la collection.
-Étant donné que la valeur par défaut est `true`, vous ne devez implémenter le `MoveItem` méthode de la `UICollectionViewDataSource` classe pour prendre en charge du glisser-réorganiser. Exemple :
+Étant donné que la valeur par défaut est `true`, vous ne devez implémenter le `MoveItem` méthode de la `UICollectionViewDataSource` classe pour prendre en charge du glisser-réorganiser. Par exemple :
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -693,7 +693,7 @@ Modifier le **Main.storyboard** de fichiers à nouveau et sélectionnez la vue d
 
 Enregistrer les modifications apportées à l’interface utilisateur et exécuter l’application.
 Si l’utilisateur sélectionne un élément dans la liste et fait glisser vers un nouvel emplacement, les autres éléments animer automatiquement lorsqu’ils passent de disparaître de l’élément.
-Quand l’utilisateur dépose l’élément dans un nouvel emplacement, ce dernier à cet emplacement. Exemple :
+Quand l’utilisateur dépose l’élément dans un nouvel emplacement, ce dernier à cet emplacement. Par exemple :
 
 [![](uicollectionview-images/intro01.png "Un exemple de faire glisser un élément vers un nouvel emplacement")](uicollectionview-images/intro01.png#lightbox)
 
@@ -701,7 +701,7 @@ Quand l’utilisateur dépose l’élément dans un nouvel emplacement, ce derni
 
 ### <a name="using-a-custom-gesture-recognizer"></a>À l’aide d’un module de reconnaissance de mouvement personnalisée
 
-Dans les cas où vous ne pouvez pas utiliser un `UICollectionViewController` et vous devez utiliser une expression régulière `UIViewController`, ou si vous souhaitez prendre plus de contrôle sur les mouvements de glisser-déplacer, vous pouvez créer votre propre module de reconnaissance de mouvement personnalisé et l’ajouter à la vue de Collection lorsque la vue chargée. Exemple :
+Dans les cas où vous ne pouvez pas utiliser un `UICollectionViewController` et vous devez utiliser une expression régulière `UIViewController`, ou si vous souhaitez prendre plus de contrôle sur les mouvements de glisser-déplacer, vous pouvez créer votre propre module de reconnaissance de mouvement personnalisé et l’ajouter à la vue de Collection lorsque la vue chargée. Par exemple :
 
 ```csharp
 public override void ViewDidLoad ()
@@ -739,10 +739,10 @@ public override void ViewDidLoad ()
 
 Ici, nous utilisons plusieurs nouvelles méthodes ajoutées à la vue de collection à implémenter et à contrôler l’opération glisser :
 
- - `BeginInteractiveMovementForItem` -Marque le début d’une opération de déplacement.
- - `UpdateInteractiveMovementTargetPosition` -Est envoyé comme emplacement de l’élément est mis à jour.
- - `EndInteractiveMovement` -Marque la fin du déplacement d’un élément.
- - `CancelInteractiveMovement` -Marque de l’utilisateur de l’annulation de l’opération de déplacement.
+- `BeginInteractiveMovementForItem` -Marque le début d’une opération de déplacement.
+- `UpdateInteractiveMovementTargetPosition` -Est envoyé comme emplacement de l’élément est mis à jour.
+- `EndInteractiveMovement` -Marque la fin du déplacement d’un élément.
+- `CancelInteractiveMovement` -Marque de l’utilisateur de l’annulation de l’opération de déplacement.
 
 Lorsque l’application est exécutée, l’opération glisser fonctionne exactement comme la valeur par défaut faites glisser le module de reconnaissance de mouvement qui est fourni avec la vue de collection.
 
@@ -1217,78 +1217,78 @@ Dans les sections suivantes, nous allons examine en détail les modifications ap
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionView` classe pour iOS 9 :
 
- - `BeginInteractiveMovementForItem` – Marque le début d’une opération glisser.
- - `CancelInteractiveMovement` – Informe de la collection de vue que l’utilisateur a annulé une opération glisser.
- - `EndInteractiveMovement` – Informe de la collection de vue que l’utilisateur a terminé une opération glisser.
- - `GetIndexPathsForVisibleSupplementaryElements` : Renvoie la `indexPath` d’un en-tête ou un pied de page dans une section de vue de collection.
- - `GetSupplementaryView` – Retourne l’en-tête donné ou le pied de page.
- - `GetVisibleSupplementaryViews` – Retourne une liste de tous les en-tête visible et les pieds de page.
- - `UpdateInteractiveMovementTargetPosition` – Informe de la collection de vue que l’utilisateur a déplacé ou est déplacement, d’un élément pendant une opération glisser.
+- `BeginInteractiveMovementForItem` – Marque le début d’une opération glisser.
+- `CancelInteractiveMovement` – Informe de la collection de vue que l’utilisateur a annulé une opération glisser.
+- `EndInteractiveMovement` – Informe de la collection de vue que l’utilisateur a terminé une opération glisser.
+- `GetIndexPathsForVisibleSupplementaryElements` : Renvoie la `indexPath` d’un en-tête ou un pied de page dans une section de vue de collection.
+- `GetSupplementaryView` – Retourne l’en-tête donné ou le pied de page.
+- `GetVisibleSupplementaryViews` – Retourne une liste de tous les en-tête visible et les pieds de page.
+- `UpdateInteractiveMovementTargetPosition` – Informe de la collection de vue que l’utilisateur a déplacé ou est déplacement, d’un élément pendant une opération glisser.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewController` classe dans iOS 9 :
 
- - `InstallsStandardGestureForInteractiveMovement` – If `true` la nouvelle reconnaissance de mouvement qui prend en charge le glisser pour réorganiser automatiquement sera utilisée.
- - `CanMoveItem` – Informe la vue de collection, si un élément donné peut être glisser réorganisé.
- - `GetTargetContentOffset` – Utilisé pour obtenir le décalage d’un élément d’une collection donnée.
- - `GetTargetIndexPathForMove` : Obtient le `indexPath` d’un élément donné pour une opération glisser.
- - `MoveItem` : Déplace l’ordre d’un élément donné dans la liste.
+- `InstallsStandardGestureForInteractiveMovement` – If `true` la nouvelle reconnaissance de mouvement qui prend en charge le glisser pour réorganiser automatiquement sera utilisée.
+- `CanMoveItem` – Informe la vue de collection, si un élément donné peut être glisser réorganisé.
+- `GetTargetContentOffset` – Utilisé pour obtenir le décalage d’un élément d’une collection donnée.
+- `GetTargetIndexPathForMove` : Obtient le `indexPath` d’un élément donné pour une opération glisser.
+- `MoveItem` : Déplace l’ordre d’un élément donné dans la liste.
 
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewDataSource` classe dans iOS 9 :
 
- - `CanMoveItem` – Informe la vue de collection, si un élément donné peut être glisser réorganisé.
- - `MoveItem` : Déplace l’ordre d’un élément donné dans la liste.
+- `CanMoveItem` – Informe la vue de collection, si un élément donné peut être glisser réorganisé.
+- `MoveItem` : Déplace l’ordre d’un élément donné dans la liste.
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewDelegate` classe dans iOS 9 :
 
- - `GetTargetContentOffset` – Utilisé pour obtenir le décalage d’un élément d’une collection donnée.
- - `GetTargetIndexPathForMove` : Obtient le `indexPath` d’un élément donné pour une opération glisser.
+- `GetTargetContentOffset` – Utilisé pour obtenir le décalage d’un élément d’une collection donnée.
+- `GetTargetIndexPathForMove` : Obtient le `indexPath` d’un élément donné pour une opération glisser.
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewFlowLayout` classe dans iOS 9 :
 
- - `SectionFootersPinToVisibleBounds` – Y colle les pieds de page de section pour les limites de vue de collection visible.
- - `SectionHeadersPinToVisibleBounds` – Y colle les en-têtes de section pour les limites de vue de collection visible.
+- `SectionFootersPinToVisibleBounds` – Y colle les pieds de page de section pour les limites de vue de collection visible.
+- `SectionHeadersPinToVisibleBounds` – Y colle les en-têtes de section pour les limites de vue de collection visible.
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewLayout` classe dans iOS 9 :
 
- - `GetInvalidationContextForEndingInteractiveMovementOfItems` – Retourne le contexte d’invalidation à la fin d’une opération glisser lorsque l’utilisateur termine l’opération glisser ou annule.
- - `GetInvalidationContextForInteractivelyMovingItems` – Retourne le contexte de l’invalidation au début d’une opération glisser.
- - `GetLayoutAttributesForInteractivelyMovingItem` : Obtient les attributs de disposition pour un élément donné tout en faisant glisser un élément.
- - `GetTargetIndexPathForInteractivelyMovingItem` : Renvoie la `indexPath` de l’élément qui correspond à un point précis lorsque vous faites glisser un élément.
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` – Retourne le contexte d’invalidation à la fin d’une opération glisser lorsque l’utilisateur termine l’opération glisser ou annule.
+- `GetInvalidationContextForInteractivelyMovingItems` – Retourne le contexte de l’invalidation au début d’une opération glisser.
+- `GetLayoutAttributesForInteractivelyMovingItem` : Obtient les attributs de disposition pour un élément donné tout en faisant glisser un élément.
+- `GetTargetIndexPathForInteractivelyMovingItem` : Renvoie la `indexPath` de l’élément qui correspond à un point précis lorsque vous faites glisser un élément.
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewLayoutAttributes` classe dans iOS 9 :
 
- - `CollisionBoundingPath` – Retourne le chemin d’accès de collision de deux éléments pendant une opération glisser.
- - `CollisionBoundsType` – Retourne le type de collision (comme un `UIDynamicItemCollisionBoundsType`) qui s’est produite pendant une opération glisser.
+- `CollisionBoundingPath` – Retourne le chemin d’accès de collision de deux éléments pendant une opération glisser.
+- `CollisionBoundsType` – Retourne le type de collision (comme un `UIDynamicItemCollisionBoundsType`) qui s’est produite pendant une opération glisser.
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewLayoutInvalidationContext` classe dans iOS 9 :
 
- - `InteractiveMovementTarget` – Retourne l’élément de la cible d’une opération glisser.
- - `PreviousIndexPathsForInteractivelyMovingItems` : Renvoie la `indexPaths` d’autres éléments impliqués dans une opération de glissement pour réorganiser l’opération.
- - `TargetIndexPathsForInteractivelyMovingItems` : Renvoie la `indexPaths` d’éléments qui sont reclassées suite à une opération glisser pour réorganiser.
+- `InteractiveMovementTarget` – Retourne l’élément de la cible d’une opération glisser.
+- `PreviousIndexPathsForInteractivelyMovingItems` : Renvoie la `indexPaths` d’autres éléments impliqués dans une opération de glissement pour réorganiser l’opération.
+- `TargetIndexPathsForInteractivelyMovingItems` : Renvoie la `indexPaths` d’éléments qui sont reclassées suite à une opération glisser pour réorganiser.
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
 Les modifications suivantes ou les ajouts ont été apportées à la `UICollectionViewSource` classe dans iOS 9 :
 
- - `CanMoveItem` – Informe la vue de collection, si un élément donné peut être glisser réorganisé.
- - `GetTargetContentOffset` -Retourne les décalages des éléments qui seront déplacées via une opération glisser pour réorganiser.
- - `GetTargetIndexPathForMove` : Renvoie la `indexPath` d’un élément qui doit être déplacé pendant une opération glisser pour réorganiser.
- - `MoveItem` : Déplace l’ordre d’un élément donné dans la liste.
+- `CanMoveItem` – Informe la vue de collection, si un élément donné peut être glisser réorganisé.
+- `GetTargetContentOffset` -Retourne les décalages des éléments qui seront déplacées via une opération glisser pour réorganiser.
+- `GetTargetIndexPathForMove` : Renvoie la `indexPath` d’un élément qui doit être déplacé pendant une opération glisser pour réorganiser.
+- `MoveItem` : Déplace l’ordre d’un élément donné dans la liste.
 
 ## <a name="summary"></a>Récapitulatif
 

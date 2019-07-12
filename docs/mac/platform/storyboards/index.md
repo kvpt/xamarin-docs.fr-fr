@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 166a50021c22aa09be3eecdb8b745a70e75c3d51
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a5a2f87c16a5dd040cefb2fbc615b01431ebcf5
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031455"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832289"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Introduction aux Storyboards dans Xamarin.Mac
 
@@ -56,9 +56,9 @@ De cette façon, chaque contrôleur d’affichage est un couplage autonome et r�
 
 Dans une scène donnée, vous pouvez effectuer tous les aspects qui aurait normalement été traitée par individu `.xib` fichiers : 
 
- - Place subviews et des contrôles (par exemple, des boutons et des zones de texte).
- - Définir les positions de l’élément et les contraintes de disposition automatique.
- - AutoEventWireup Actions et Outlets pour exposer les éléments d’interface utilisateur au code.
+- Place subviews et des contrôles (par exemple, des boutons et des zones de texte).
+- Définir les positions de l’élément et les contraintes de disposition automatique.
+- AutoEventWireup Actions et Outlets pour exposer les éléments d’interface utilisateur au code.
 
 <a name="Working-with-Segues" />
 

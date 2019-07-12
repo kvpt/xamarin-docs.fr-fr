@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: cdb75207bff3f15a54d0cdd90fa0833da9c145e6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d145a8a3cd8bc321f0fce76a8831fca681ad29a0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077878"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830577"
 ---
 # <a name="cardview"></a>CardView
 
 _Le widget Cardview est un composant de l’interface utilisateur qui présente le contenu de texte et image dans les vues qui ressemblent à des cartes. Ce guide explique comment utiliser et personnaliser CardView dans les applications Xamarin.Android, tout en conservant la compatibilité descendante avec les versions antérieures d’Android._
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Le `Cardview` widget, introduit dans Android 5.0 (Lollipop), est un composant de l’interface utilisateur qui présente le contenu de texte et image dans les vues qui ressemblent à des cartes. `CardView` est implémenté comme un `FrameLayout` widget avec des angles arrondis et une ombre. En règle générale, un `CardView` est utilisé pour présenter un élément de ligne unique dans un `ListView` ou `GridView` afficher le groupe. Par exemple, la capture d’écran suivante est un exemple d’une application de réservation de voyages implémente `CardView`-en fonction des cartes de destination de voyage dans un défilement `ListView`:
 
@@ -174,8 +174,8 @@ Notez que ces attributs (à l’exception de la couleur d’arrière-plan) accep
 
 
 #### <a name="padding"></a>Padding
-`
-CardView` propose cinq attributs de marge intérieure pour positionner du contenu au sein de la carte. Vous pouvez les définir dans votre disposition XML, ou vous pouvez appeler des méthodes analogues dans votre code :
+
+`CardView` propose cinq attributs de marge intérieure pour positionner du contenu au sein de la carte. Vous pouvez les définir dans votre disposition XML, ou vous pouvez appeler des méthodes analogues dans votre code :
 
 [![Diagramme de CardView attributs de marge intérieure](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 329984d44318b2204f2f5ee253402eb158c85b9f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283156"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832522"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Boîtes de dialogue dans Xamarin.Mac
 
@@ -413,7 +413,7 @@ Si nous pouvons exécuter notre application et que vous ouvrez la feuille, il es
 
 ## <a name="creating-a-preferences-dialog"></a>Création d’une boîte de dialogue Préférences
 
-Avant de nous disposer la vue de préférence dans Interface Builder, nous allons devoir ajouter un type de segue personnalisé pour gérer les préférences de commutation. Ajoutez une nouvelle classe à votre projet et appelez-le `ReplaceViewSeque `. Modifiez la classe et qu’elle ressemble à ce qui suit :
+Avant de nous disposer la vue de préférence dans Interface Builder, nous allons devoir ajouter un type de segue personnalisé pour gérer les préférences de commutation. Ajoutez une nouvelle classe à votre projet et appelez-le `ReplaceViewSeque`. Modifiez la classe et qu’elle ressemble à ce qui suit :
 
 ```csharp
 using System;

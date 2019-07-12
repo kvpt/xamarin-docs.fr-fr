@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e3256787c0bc0852275f663772b8a91a6825a0dd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250678"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832439"
 ---
 # <a name="getting-started-with-datapages"></a>Mise en route avec les pages de données
 
@@ -51,7 +51,8 @@ Dans le **App.xaml** , ajoutez un personnalisé `xmlns:mytheme` pour le thème e
 </Application>
 ```
 
-**IMPORTANT :** Vous devez également suivre les étapes à [charger des assemblys de thème (ci-dessous)](#loadtheme) en ajoutant du code réutilisable à iOS `AppDelegate` et Android `MainActivity`. Cela sera améliorée dans une version de la prochaine version d’évaluation.
+> [!IMPORTANT]
+> Vous devez également suivre les étapes à [charger des assemblys de thème (ci-dessous)](#loadtheme) en ajoutant du code réutilisable à iOS `AppDelegate` et Android `MainActivity`. Cela sera améliorée dans une version de la prochaine version d’évaluation.
 
 
 ## <a name="3-add-a-xaml-page"></a>3. Ajouter une Page XAML
@@ -98,7 +99,8 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 Supprimer le `Content` élément et remplacez-le par un `p:ListDataPage.DataSource` pour remplir la page avec des données. Fichier de données est chargé dans l’exemple ci-dessous Json à distance à partir d’une URL.
 
-**Remarque :** l’aperçu *requiert* un `StyleClass` attribut pour fournir des indications de rendu pour la source de données. Le `StyleClass="Events"` fait référence à une disposition qui est prédéfinie dans la version préliminaire et contient les styles *codée en dur* pour correspondre à la source de données JSON qui est utilisée.
+> [!NOTE]
+> La version préliminaire *requiert* un `StyleClass` attribut pour fournir des indications de rendu pour la source de données. Le `StyleClass="Events"` fait référence à une disposition qui est prédéfinie dans la version préliminaire et contient les styles *codée en dur* pour correspondre à la source de données JSON qui est utilisée.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bf2f63e944e178d80f76fe363ef24410ff052ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61236920"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830673"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing d’une application Xamarin.Mac
 
@@ -226,7 +226,7 @@ Vous activez le bac à sable d’application en sélectionnant une case à coche
 
 ### <a name="debugging-a-sandboxed-app"></a>Débogage d’une application en sandbox
 
-Le débogueur se connecte aux applications Xamarin.Mac via TCP, ce qui signifie que par défaut lorsque vous activez le sandboxing, il est impossible de se connecter à l’application, donc si vous essayez d’exécuter l’application sans les autorisations appropriées activées, vous obtenez une erreur *« Impossible de se connecter à le débogueur »*. 
+Le débogueur se connecte aux applications Xamarin.Mac via TCP, ce qui signifie que par défaut lorsque vous activez le sandboxing, il est impossible de se connecter à l’application, donc si vous essayez d’exécuter l’application sans les autorisations appropriées activées, vous obtenez une erreur *« Impossible de se connecter à le débogueur »* . 
 
 [![Définir les options requises](sandboxing-images/debug01.png "définissant les options requises")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -460,7 +460,7 @@ Pour permettre à la version signée Apple de l’exécution de l’application 
 
 1. Ouvrez l’application Terminal (dans `/Applications/Utilities`).
 2. Ouvrez une fenêtre de recherche pour la version signée Apple de l’application Xamarin.Mac.
-3. Type `asctl container acl add -file ` dans la fenêtre de Terminal.
+3. Type `asctl container acl add -file` dans la fenêtre de Terminal.
 4. Faites glisser l’icône d’application Xamarin.Mac à partir de la fenêtre du Finder et déposez-la sur la fenêtre de Terminal.
 5. Le chemin d’accès complet au fichier sera ajouté à la commande dans le Terminal.
 6. Appuyez sur **entrée** pour exécuter la commande.

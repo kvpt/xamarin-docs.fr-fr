@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: lobrien
 ms.author: laobri
 ms.date: 10/27/2017
-ms.openlocfilehash: f9b4da5b6dfe3f0254340d9175b08198bd52a45a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4a4376291ff56433c8cd9785989af2983a80c1c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160547"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832150"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Profiler Xamarin résolution des problèmes
 
@@ -51,12 +51,12 @@ Le **.mlpd** pour une session en cours peut également être enregistrée en cho
 
 Il est important de noter que **.mlpd** contiennent un grand nombre d’informations, et la taille du fichier sera volumineux.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Résolution de problèmes
 
 La liste ci-dessous affiche courantes pièges, solutions de contournement, des conseils et astuces pour utiliser le Profiler.
 
 > [!NOTE]
-> **REMARQUE** : Vous devez être un Visual Studio **Enterprise** abonné à cette fonctionnalité dans soit Visual Studio Enterprise sur Windows ou de Visual Studio pour Mac.
+> Vous devez être un Visual Studio **Enterprise** abonné à cette fonctionnalité dans soit Visual Studio Enterprise sur Windows ou de Visual Studio pour Mac.
 
 #### <a name="i-cant-see-the-ios-profiler-option-or-it-is-greyed-out-visual-studio-and-visual-studio-for-mac"></a>Je ne vois pas l’option de profileur iOS, ou elle est grisée [Visual Studio et Visual Studio pour Mac]
 

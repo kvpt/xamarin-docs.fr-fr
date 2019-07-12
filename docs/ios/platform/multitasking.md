@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 6a9c66720aeb97c5b894cbea42c6cc0c5285c67d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 888e00fbdbf30b5b2842bc30822a55f57372eb34
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978626"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831811"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitâche pour iPad dans Xamarin.iOS
 
@@ -48,10 +48,10 @@ Cet article décrit les étapes requises pour vous assurer que votre application
 
 Pour prendre en charge **diapositive sur** ou **mode fractionné** votre application doit effectuer les opérations suivantes :
 
- - Généré à partir d’iOS 9 (ou version ultérieure).
- - Utiliser une table de montage séquentiel pour son écran de lancement (et pas les composants image).
- - Utiliser une table de montage séquentiel avec mise en forme automatique et les Classes de taille pour son interface utilisateur.
- - Prend en charge toutes les 4 iOS orientations de l’appareil (Portrait, envers Portrait, paysage gauche et droite du paysage).
+- Généré à partir d’iOS 9 (ou version ultérieure).
+- Utiliser une table de montage séquentiel pour son écran de lancement (et pas les composants image).
+- Utiliser une table de montage séquentiel avec mise en forme automatique et les Classes de taille pour son interface utilisateur.
+- Prend en charge toutes les 4 iOS orientations de l’appareil (Portrait, envers Portrait, paysage gauche et droite du paysage).
 
 <a name="Multitasking" />
 
@@ -242,9 +242,9 @@ Dans la plupart des cas, votre application doit autoriser l’utilisateur à lir
 
 Pour refuser la lecture vidéo PIP, procédez comme suit dans votre application :
 
- - Si vous utilisez un `AVPlayerViewController` pour afficher la vidéo, définissez le `AllowsPictureInPicturePlayback` propriété `false`.
- - Si vous utilisez le `AVPlayerLayer` pour afficher la vidéo, n’instanciez pas un `AVPictureInPictureController`.
- - Si vous utilisez un `WKWebView` pour afficher la vidéo, définissez le `AllowsPictureInPictureMediaPlayback` propriété `false`.
+- Si vous utilisez un `AVPlayerViewController` pour afficher la vidéo, définissez le `AllowsPictureInPicturePlayback` propriété `false`.
+- Si vous utilisez le `AVPlayerLayer` pour afficher la vidéo, n’instanciez pas un `AVPictureInPictureController`.
+- Si vous utilisez un `WKWebView` pour afficher la vidéo, définissez le `AllowsPictureInPictureMediaPlayback` propriété `false`.
 
 <a name="Summary" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d67bc71361e335515cfba8b5a20e157ed6b6b05
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087794"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832304"
 ---
 # <a name="touch-id-in-xamarinios"></a>Touch ID dans Xamarin.iOS
 
@@ -52,8 +52,8 @@ Liste de contrôle d’accès est un nouvel attribut d’élément de trousseau 
 
 |Configuration de l’appareil|Évaluation de la stratégie|Mécanisme de sauvegarde|
 |--- |--- |--- |
-|Appareil sans code secret|Aucun accès|Aucun.|
-|Appareil avec le code secret|Nécessite du code secret|Aucun.|
+|Appareil sans code secret|Aucun accès|Aucun|
+|Appareil avec le code secret|Nécessite du code secret|Aucun|
 |Appareil avec Touch ID|Préfère Touch ID|Autorise le code secret|
 
 Toutes les opérations à l’intérieur de l’Enclave sécurisée peuvent se font confiance. Cela signifie que nous pouvons utiliser le résultat de l’authentification de Touch ID pour autoriser le déchiffrement d’élément de trousseau. L’Enclave sécurisée conserve également un compteur de correspondances infructueuses de Touch ID, auquel cas un utilisateur a revenir à l’utilisation du code secret.
@@ -81,10 +81,10 @@ Pour utiliser les ACL que nous devrions être à l’aide de la `SecAccessContro
 
 Nous devons Gardez à l’esprit lorsque vous utilisez des ACL avec le trousseau de nombreuses choses et certaines d'entre elles sont répertoriées ci-dessous :
 
--   Utiliser uniquement avec l’Application de premier plan, si vous appelez une opération keychain sur un thread d’arrière-plan que l’appel échoue.
--   Ajout et la mise à jour des éléments de trousseau peuvent nécessiter l’authentification.
--   Si une requête retourne plusieurs éléments correspondants dans le trousseau, l’authentification peut être nécessaire.
--   ACL des éléments protégés sont appareil uniquement et par conséquent pas synchronisé ou sauvegardée.
+- Utiliser uniquement avec l’Application de premier plan, si vous appelez une opération keychain sur un thread d’arrière-plan que l’appel échoue.
+- Ajout et la mise à jour des éléments de trousseau peuvent nécessiter l’authentification.
+- Si une requête retourne plusieurs éléments correspondants dans le trousseau, l’authentification peut être nécessaire.
+- ACL des éléments protégés sont appareil uniquement et par conséquent pas synchronisé ou sauvegardée.
 
 ### <a name="using-local-authentication-without-keychain-services"></a>À l’aide de l’authentification locale sans les Services de trousseau
 

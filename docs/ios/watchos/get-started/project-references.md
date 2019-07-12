@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: c900ab714fed2bb1e02367ba39ad3c5a0a76121e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60eaad98e2d5469e9c43e6b4ad889080e1aa63ba
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61408347"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832066"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>watchOS références de projet dans Xamarin
 
@@ -26,16 +26,16 @@ Afficher les références en double-cliquant sur les nœuds de références pour
 
 - **application iPhone** références **application Watch**
 
-![](project-references-images/catalog-reference1.png "application iPhone fait référence à application Watch")
+  ![](project-references-images/catalog-reference1.png "application iPhone fait référence à application Watch")
 
 - **Regardez l’application** références **Extension d’application Watch**
 
-![](project-references-images/catalog-reference2.png "application iPhone fait référence à application Watch")
+  ![](project-references-images/catalog-reference2.png "application iPhone fait référence à application Watch")
 
 
- - Le **Extension d’application Watch** ne fait pas référence à une des autres projets
+- Le **Extension d’application Watch** ne fait pas référence à une des autres projets
 
-![](project-references-images/catalog-reference3.png "Regardez le Qu'extension d’application ne fait pas référence à d’autres projets")
+  ![](project-references-images/catalog-reference3.png "Regardez le Qu'extension d’application ne fait pas référence à d’autres projets")
 
 
 
@@ -44,17 +44,17 @@ Afficher les références en double-cliquant sur les nœuds de références pour
 Vous devez également vous assurer votre **identificateurs de Bundle** sont corrects.
 Les trois projets doivent avoir le *même* préfixe d’identificateur, avec les projets de deux espion fait de prédéfinir les extensions de `watchkitextension` et `watchkitapp`, comme suit (pour le **WatchKitCatalog** exemple) :
 
- - Projet de Unified Xamarin.iOS- `com.xamarin.WatchKitCatalog`
+- Projet de Unified Xamarin.iOS- `com.xamarin.WatchKitCatalog`
 
- - Projet de WatchKit Extension : `com.xamarin.WatchKitCatalog.watchkitextension`
+- Projet de WatchKit Extension : `com.xamarin.WatchKitCatalog.watchkitextension`
 
- - Projet d’application Watch- `com.xamarin.WatchKitCatalog.watchkitapp`
+- Projet d’application Watch- `com.xamarin.WatchKitCatalog.watchkitapp`
 
 Assurez-vous également que ces **Info.plist** paramètres sont corrects :
 
- - Le projet application Watch `WKCompanionAppBundleIdentifier` correspond à Bundle ID l’application conteneur/parent (ie. celui qui s’exécute sur l’iPhone) ;
+- Le projet application Watch `WKCompanionAppBundleIdentifier` correspond à Bundle ID l’application conteneur/parent (ie. celui qui s’exécute sur l’iPhone) ;
 
- - Le projet d’Extension de Kit Watch **ID d’ensemble WKApp** correspond aux ID d’ensemble. du projet d’application Watch
+- Le projet d’Extension de Kit Watch **ID d’ensemble WKApp** correspond aux ID d’ensemble. du projet d’application Watch
 
 Vous pouvez modifier les identificateurs en double-cliquant sur le **Info.plist** fichier dans chaque projet.
 

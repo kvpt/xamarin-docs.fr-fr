@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bd68def0a29d4bb94f8cc66c8cbfa00add1700d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2def0a01bdd28af5eefb76afc19a0e49fd1df355
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60948159"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831554"
 ---
 # <a name="inspecting-live-applications"></a>Inspection des applications Live
 
@@ -44,10 +44,10 @@ Un moyen plus pratique d’obtenir les éléments visuels de votre application e
 
 L’arborescence d’éléments visuels en direct est également très utile. Il représente l’instantané actuel de votre hiérarchie d’affichage. Vous pouvez sélectionner les lignes à définir `selectedView` dans la boucle REPL et pour afficher les valeurs de propriété de la vue. Sur Mac, vous pouvez interagir avec une visualisation éclatée 3D des vues en couches. Sur Windows, vous pouvez modifier les valeurs de propriété de l’affichage visuellement.
 
-## <a name="known-limitations"></a>Limitations connues
+## <a name="known-limitations"></a>Limites connues
 
- - Sélection de la vue est uniquement pris en charge sur votre écran d’affichage principal.
- - Modification de grille de propriété n’est pas disponible pour Mac et sur Windows est limitée à quelques types de données. Utilisez la boucle REPL de modification plus puissant.
- - Tant que la complément/extension Inspector est installée et activée dans votre IDE, nous allons injecter du code dans votre application chaque fois qu’il démarre en mode débogage. Si vous remarquez un comportement étrange dans votre application, veuillez, essayez de désactiver ou désinstaller l’inspecteur addin/extension, le redémarrage de l’IDE et en revérifiant. Et [signaler des bogues](~/tools/inspector/install.md#reporting-bugs) pour nous faire savoir !
- - Si l’inspection d’un élément d’interface utilisateur provoque la quand même modifier, veuillez [faites-nous savoir](~/tools/inspector/install.md#reporting-bugs), comme cela peut indiquer un bogue.
+- Sélection de la vue est uniquement pris en charge sur votre écran d’affichage principal.
+- Modification de grille de propriété n’est pas disponible pour Mac et sur Windows est limitée à quelques types de données. Utilisez la boucle REPL de modification plus puissant.
+- Tant que la complément/extension Inspector est installée et activée dans votre IDE, nous allons injecter du code dans votre application chaque fois qu’il démarre en mode débogage. Si vous remarquez un comportement étrange dans votre application, veuillez, essayez de désactiver ou désinstaller l’inspecteur addin/extension, le redémarrage de l’IDE et en revérifiant. Et [signaler des bogues](~/tools/inspector/install.md#reporting-bugs) pour nous faire savoir !
+- Si l’inspection d’un élément d’interface utilisateur provoque la quand même modifier, veuillez [faites-nous savoir](~/tools/inspector/install.md#reporting-bugs), comme cela peut indiquer un bogue.
 

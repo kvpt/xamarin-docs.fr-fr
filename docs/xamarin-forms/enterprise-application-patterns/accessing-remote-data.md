@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 3a46b939fa87cd6535c9f86c46981c098542e7c9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a4c58139b0ddbaaedf5769eeac6585bac4c013e4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277945"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832108"
 ---
 # <a name="accessing-remote-data"></a>Accès aux données distantes
 
@@ -154,7 +154,7 @@ Cette méthode récupère les données de catalogue à partir de la base de donn
 
 #### <a name="making-a-post-request"></a>Effectue une demande POST
 
-Le `BasketService` classe est utilisée pour gérer la récupération de données et des mises à jour avec le microservice de panier d’achat. Dans le `RegisterDependencies` méthode dans le `ViewModelLocator` (classe), le `BasketService` classe est enregistrée comme un mappage de type par rapport à la `IBasketService` type avec le conteneur d’injection de dépendance Autofac. Ensuite, lorsqu’une instance de la `BasketViewModel` classe est créée, son constructeur accepte un `IBasketService` type, qui résout de Autofac, qui retourne une instance de la `BasketService `classe. Pour plus d’informations sur l’injection de dépendances, consultez [Injection de dépendance](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Le `BasketService` classe est utilisée pour gérer la récupération de données et des mises à jour avec le microservice de panier d’achat. Dans le `RegisterDependencies` méthode dans le `ViewModelLocator` (classe), le `BasketService` classe est enregistrée comme un mappage de type par rapport à la `IBasketService` type avec le conteneur d’injection de dépendance Autofac. Ensuite, lorsqu’une instance de la `BasketViewModel` classe est créée, son constructeur accepte un `IBasketService` type, qui résout de Autofac, qui retourne une instance de la `BasketService` classe. Pour plus d’informations sur l’injection de dépendances, consultez [Injection de dépendance](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
 Figure 10-2 montre l’interaction des classes qui envoient les données du panier d’achat affichées par le `BasketView`, pour le microservice de panier d’achat.
 

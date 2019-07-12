@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: cc5052c8988a27605cf7680a3853f80e7afd38b7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc4ef6eb16893cc1df0d980d27af8589a280e933
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61171010"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832424"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Autres icônes d’applications dans Xamarin.iOS
 
@@ -20,10 +20,10 @@ _Cet article couvre à l’aide d’autres icônes d’applications dans Xamarin
 
 Apple a ajouté plusieurs améliorations à iOS 10.3 qui permettent à une application gérer son icône :
 
- - `ApplicationIconBadgeNumber` -Obtient ou définit le badge de l’icône d’application Springboard.
- - `SupportsAlternateIcons` -If `true` l’application a un autre ensemble d’icônes.
- - `AlternateIconName` -Retourne le nom de l’icône de remplacement actuellement sélectionné ou `null` si vous utilisez l’icône principale.
- - `SetAlternameIconName` -Utilisez cette méthode pour basculer d’icône de l’application vers l’icône de remplacement donné.
+- `ApplicationIconBadgeNumber` -Obtient ou définit le badge de l’icône d’application Springboard.
+- `SupportsAlternateIcons` -If `true` l’application a un autre ensemble d’icônes.
+- `AlternateIconName` -Retourne le nom de l’icône de remplacement actuellement sélectionné ou `null` si vous utilisez l’icône principale.
+- `SetAlternameIconName` -Utilisez cette méthode pour basculer d’icône de l’application vers l’icône de remplacement donné.
 
 ![](alternate-app-icons-images/icons04.png "Un exemple d’alerte lorsqu’une application modifie son icône")
 
@@ -111,7 +111,7 @@ Ou, comme cela si ouvert dans un éditeur de texte :
 
 Avec les images d’icônes inclus dans le projet Xamarin.iOS et **Info.plist** fichier correctement configuré, le développeur peut utiliser une des nombreuses nouvelles fonctionnalités ajoutées à iOS 10.3 pour contrôler l’icône de l’application.
 
-Le `SupportsAlternateIcons` propriété de la `UIApplication` classe permet au développeur de voir si une application prend en charge les autres icônes. Exemple :
+Le `SupportsAlternateIcons` propriété de la `UIApplication` classe permet au développeur de voir si une application prend en charge les autres icônes. Par exemple :
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-Le `ApplicationIconBadgeNumber` propriété de la `UIApplication` classe permet au développeur obtenir ou définir le nombre de badge actuelle de l’icône d’application Springboard. La valeur par défaut est zéro (0). Exemple :
+Le `ApplicationIconBadgeNumber` propriété de la `UIApplication` classe permet au développeur obtenir ou définir le nombre de badge actuelle de l’icône d’application Springboard. La valeur par défaut est zéro (0). Par exemple :
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-Le `AlternateIconName` propriété de la `UIApplication` classe permet au développeur d’obtenir le nom de l’icône d’application autre actuellement sélectionné ou la valeur `null` si l’application est à l’aide de l’icône principale. Exemple :
+Le `AlternateIconName` propriété de la `UIApplication` classe permet au développeur d’obtenir le nom de l’icône d’application autre actuellement sélectionné ou la valeur `null` si l’application est à l’aide de l’icône principale. Par exemple :
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-Le `SetAlternameIconName` propriété de la `UIApplication` classe permet au développeur de modifier l’icône d’application. Passez le nom de l’icône pour sélectionner ou `null` pour revenir à l’icône principale. Exemple :
+Le `SetAlternameIconName` propriété de la `UIApplication` classe permet au développeur de modifier l’icône d’application. Passez le nom de l’icône pour sélectionner ou `null` pour revenir à l’icône principale. Par exemple :
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)

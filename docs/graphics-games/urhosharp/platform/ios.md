@@ -6,14 +6,14 @@ ms.assetid: 7B06567E-E789-4EA1-A2A9-F3B2212EDD23
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: f15ae458c6bd613b59700908ad7c121315e377ab
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3efdbfcfdd670525dbf3198deb17c4631a889c56
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61302646"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832461"
 ---
-# <a name="urhosharp-ios-and-tvos-support"></a>UrhoSharp iOS et tvOS prise en charge
+# <a name="urhosharp-ios-and-tvos-support"></a>Prise en charge iOS et tvOS UrhoSharp
 
 Bien que Urho est une bibliothèque de classes portable, et permet à la même API pour être utilisé sur la plateforme différents pour votre logique de jeu, vous devez toujours initialiser Urho dans votre pilote de plateforme spécifique et dans certains cas, vous pouvez tirer parti des fonctionnalités spécifiques de plateforme .
 
@@ -74,4 +74,3 @@ Il hébergera votre classe Urho, par conséquent, puis vous le feriez :
 ```csharp
 new MyGame().Run ();
 ```
-

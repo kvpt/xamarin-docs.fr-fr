@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 8c8bf3f86091f49633913b37ef5108ddbae6d276
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951589"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832477"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS Guide de démarrage rapide
 
@@ -26,7 +26,7 @@ Si vous êtes familiarisé avec le développement Xamarin.iOS, vous devez recher
 
 Ce guide vous donne une introduction à l’utilisation de tvOS dans une application Xamarin. Pour plus d’informations sur tvOS, veuillez consulter d’Apple [se préparer pour Apple TV 4K](https://developer.apple.com/tvos/) documentation.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Xamarin.tvOS vous permet de développer des applications entièrement natives Apple TV dans C# et .NET à l’aide de contrôles d’interface qui sont utilisés lors du développement dans les mêmes bibliothèques OS X *Swift* (ou *Objective-C*) et  *Xcode*.
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Nous devons utiliser `ViewDidLoad `, au lieu d’une autre méthode comme `Initialize`, car `ViewDidLoad ` est appelée *après* le système d’exploitation a chargé et instancié l’Interface utilisateur à partir de la `.storyboard` fichier. Si nous avons essayé d’accéder au contrôle label avant le `.storyboard` fichier a été entièrement chargé et instancié, nous obtiendrions une `NullReferenceException` erreur car le contrôle d’étiquette ne serait pas encore créé.
+Nous devons utiliser `ViewDidLoad`, au lieu d’une autre méthode comme `Initialize`, car `ViewDidLoad` est appelée *après* le système d’exploitation a chargé et instancié l’Interface utilisateur à partir de la `.storyboard` fichier. Si nous avons essayé d’accéder au contrôle label avant le `.storyboard` fichier a été entièrement chargé et instancié, nous obtiendrions une `NullReferenceException` erreur car le contrôle d’étiquette ne serait pas encore créé.
 
 Ensuite, nous devons ajouter le code pour répondre à l’utilisateur en cliquant sur le bouton. Ajoutez le code suivant sur partial classe pour que nous avons créé :
 

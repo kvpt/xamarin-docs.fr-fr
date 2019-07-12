@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 3d8e69af7f790415343abf464ea2bb22e879e025
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 089ada051b6780a15acfcdd7f9e32ddda1384d05
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61170761"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832050"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Contraintes de mise en page par programmation dans Xamarin.iOS
 
@@ -51,7 +51,7 @@ Disposition ancres fournissent plusieurs méthodes pour créer des contraintes d
 - **ConstraintGreaterThanOrEqualTo** -définit une relation où `first attribute >= second attribute + [constant]` avec éventuellement fourni `constant` valeur de décalage.
 - **ConstraintLessThanOrEqualTo** -définit une relation où `first attribute <= second attribute + [constant]` avec éventuellement fourni `constant` valeur de décalage.
 
-Exemple :
+Par exemple :
 
 ```csharp
 // Get the parent view's layout
@@ -83,7 +83,7 @@ Où les parties de la C# code correspondent aux parties de l’équation donnée
 |---|---|
 |Élément 1|PurpleView|
 |Attribut 1|LeadingAnchor|
-|Relationship|ConstraintEqualTo|
+|Relation|ConstraintEqualTo|
 |Multiplicateur|Valeur par défaut est 1.0 donc ne pas spécifié|
 |Élément 2|OrangeView|
 |Attribut 2|TrailingAnchor|
@@ -95,7 +95,7 @@ En plus de fournir uniquement les paramètres qui sont nécessaires pour résoud
 
 ### <a name="layout-constraints"></a>Contraintes de disposition
 
-Vous pouvez ajouter manuellement des contraintes de disposition automatique en créant directement un `NSLayoutConstraint` dans C# code. Contrairement à l’utilisation des ancres de disposition, vous devez spécifier une valeur pour chaque paramètre, même si elle aura aucun effet sur la contrainte qui est définie. Par conséquent, vous obtiendrez produisant une quantité considérable de difficile à lire, un code réutilisable. Exemple :
+Vous pouvez ajouter manuellement des contraintes de disposition automatique en créant directement un `NSLayoutConstraint` dans C# code. Contrairement à l’utilisation des ancres de disposition, vous devez spécifier une valeur pour chaque paramètre, même si elle aura aucun effet sur la contrainte qui est définie. Par conséquent, vous obtiendrez produisant une quantité considérable de difficile à lire, un code réutilisable. Par exemple :
 
 ```csharp
 //// Pin the leading edge of the view to the margin
@@ -119,10 +119,10 @@ Où les `NSLayoutAttribute` enum définit la valeur pour les marges de la vue et
 La langue de Format Visual vous permet de définir des contraintes à l’aide d’art ASCII telles que des chaînes qui fournissent une représentation visuelle de la contrainte en cours de création. Cela présente les avantages et inconvénients suivants :
 
 - La langue de Format Visual applique la création de contraintes valides uniquement.
- - Disposition automatique génère des contraintes sur la console à l’aide de la langue de Format Visual pour les messages de débogage ressemblera le code utilisé pour créer la contrainte.
- - La langue de Format Visual vous permet de créer plusieurs contraintes en même temps avec une expression très compacte.
- - Dans la mesure où il n’existe aucune validation de compilation côté des chaînes de langue de Format Visual, vous pourrez uniquement détecter les problèmes lors de l’exécution.
- - Étant donné que la langue de Format Visual privilégie la visualisation plutôt que certains types de contrainte ne peut pas être créés avec lui (par exemple, les ratios) souci d’exhaustivité.
+- Disposition automatique génère des contraintes sur la console à l’aide de la langue de Format Visual pour les messages de débogage ressemblera le code utilisé pour créer la contrainte.
+- La langue de Format Visual vous permet de créer plusieurs contraintes en même temps avec une expression très compacte.
+- Dans la mesure où il n’existe aucune validation de compilation côté des chaînes de langue de Format Visual, vous pourrez uniquement détecter les problèmes lors de l’exécution.
+- Étant donné que la langue de Format Visual privilégie la visualisation plutôt que certains types de contrainte ne peut pas être créés avec lui (par exemple, les ratios) souci d’exhaustivité.
 
 Vous procédez comme suit lors de l’utilisation de la langue de Format Visual pour créer une contrainte :
 

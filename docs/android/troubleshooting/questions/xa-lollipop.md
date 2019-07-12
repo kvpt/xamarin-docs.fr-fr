@@ -7,16 +7,17 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7e31f9ad46a04b648a6a1f24c075426f7d98a663
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: db0cb221ee18998fbb98449ae03c442c84bcfcd7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228253"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829712"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Quelle version de Xamarin.Android ajoutait la prise en charge de Lollipop ?
 
-**Remarque :** Ce guide a été écrit à l’origine pour la version préliminaire L Android.
+> [!NOTE]
+> Ce guide a été écrit à l’origine pour la version préliminaire L Android.
 
 -   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/) prise en charge Android L version préliminaire.
 -   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/) prise en charge Android Lollipop.

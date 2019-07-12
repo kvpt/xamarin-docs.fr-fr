@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b2968399279fe3e9d160471bbcae08ae091be93e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 87f7689a082c891bc199f4221e68ed7ab19adf85
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075654"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832709"
 ---
 # <a name="search-apis-in-xamarinios"></a>API de recherche dans Xamarin.iOS
 
@@ -55,9 +55,9 @@ En fournissant les éléments riches et informatives, vous pouvez vous assurer q
 
 Apple propose les suggestions suivantes concernant le contenu et des actions pour fournir des index de recherche pour dans votre application :
 
- - Tout contenu affiché, créé ou organisé par l’utilisateur à partir de votre application.
- - Points de navigation et les fonctionnalités de l’application.
- - Choses comme les nouveaux messages, de contenu ou d’autres types d’éléments affichés par votre application et qui ont récemment été téléchargées vers l’appareil.
+- Tout contenu affiché, créé ou organisé par l’utilisateur à partir de votre application.
+- Points de navigation et les fonctionnalités de l’application.
+- Choses comme les nouveaux messages, de contenu ou d’autres types d’éléments affichés par votre application et qui ont récemment été téléchargées vers l’appareil.
 
 ## <a name="app-search-enhancements"></a>Améliorations de la recherche d’applications
 
@@ -78,7 +78,7 @@ iOS 10 présente les nouvelles façons d’engagement de conduite à une applica
 - Le sélecteur d’application
 - L’écran de verrouillage
 - CarPlay
-- Maps
+- Cartes
 - Interactions de Siri
 - Suggestions de QuickType 
 

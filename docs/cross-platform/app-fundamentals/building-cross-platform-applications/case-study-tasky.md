@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 15b4154ad6e95aabb5e88784660a93bb53c0b252
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 7bea80c22f6931858d0629382f6882203dfd374f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650205"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829939"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Étude de cas d’application multiplateforme : Tasky
 
@@ -29,9 +29,9 @@ Il est recommandé de créer un de la feuille de route pour ce que vous voulez a
 
 La première étape de la conception d’une application consiste à identifier les fonctionnalités souhaitées. Il peut s’agir des objectifs de haut niveau ou détaillés des cas d’usage. Tasky a des exigences fonctionnelles simples :
 
- -  Afficher la liste des tâches
- -  Ajouter, modifier et supprimer des tâches
- -  Définir le statut d’une tâche à « terminé »
+-  Afficher la liste des tâches
+-  Ajouter, modifier et supprimer des tâches
+-  Définir le statut d’une tâche à « terminé »
 
 Vous devez envisager l’utilisation de fonctionnalités spécifiques aux plateformes.  Tasky bénéficient de gardiennage virtuel iOS ou Windows Phone des vignettes dynamiques ? Même si vous n’utilisez pas les fonctionnalités spécifiques à la plateforme dans la première version, vous devez planifier à l’avance pour vous assurer que les couches de données et de votre entreprise peuvent prendre en charge les.
 
@@ -52,9 +52,9 @@ En sachant quelles données doivent être stockées pour déterminer quel mécan
 
 Tasky a besoin de stocker trois propriétés pour chaque « TaskItem » :
 
- -  **Nom** : chaîne
- -  **Notes de publication** : chaîne
- -  **Fait** : booléen
+- **Nom** : chaîne
+- **Notes de publication** : chaîne
+- **Fait** : booléen
 
  <a name="Core_Functionality" />
 
@@ -62,11 +62,11 @@ Tasky a besoin de stocker trois propriétés pour chaque « TaskItem » :
 
 Envisagez de l’API de l’interface utilisateur sera devront l’utiliser pour répondre aux exigences. Une liste de tâches requiert les fonctions suivantes :
 
- -   **Liste de toutes les tâches** : permet d’afficher la liste de l’écran principal de toutes les tâches disponibles
- -  **Obtenir une tâche** – lorsqu’une ligne de tâche est touchée.
- -  **Enregistrer une tâche** – lorsqu’une tâche est modifiée.
- -  **Supprimer une tâche** – lorsqu’une tâche est supprimée.
- -  **Créer une tâche vide** – lorsqu’une tâche est créée.
+- **Liste de toutes les tâches** : permet d’afficher la liste de l’écran principal de toutes les tâches disponibles
+- **Obtenir une tâche** – lorsqu’une ligne de tâche est touchée.
+- **Enregistrer une tâche** – lorsqu’une tâche est modifiée.
+- **Supprimer une tâche** – lorsqu’une tâche est supprimée.
+- **Créer une tâche vide** – lorsqu’une tâche est créée.
 
 Pour obtenir la réutilisation du code, cette API doit être implémentée qu’une seule fois dans le *bibliothèque de classes Portable*.
 
@@ -76,10 +76,10 @@ Pour obtenir la réutilisation du code, cette API doit être implémentée qu’
 
 Une fois que la conception de l’application a été acceptée, pensez comment elle peut être implémentée comme une application multiplateforme. Cela deviendra l’architecture de l’application. Suivre les instructions de la [création d’Applications inter-plateformes](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) document, le code d’application doit être rompu vers le bas dans les sections suivantes :
 
- -   **Code commun** – un projet commun qui contient le code de nouveau utilisable pour stocker les données de tâche ; expose une classe de modèle et une API pour gérer l’enregistrement et chargement des données.
- -   **Code spécifique à la plateforme** – projets spécifiques à la plateforme qui implémentent une interface utilisateur native pour chaque système d’exploitation, utilisant le code commun en tant que serveur principal.
+- **Code commun** – un projet commun qui contient le code de nouveau utilisable pour stocker les données de tâche ; expose une classe de modèle et une API pour gérer l’enregistrement et chargement des données.
+- **Code spécifique à la plateforme** – projets spécifiques à la plateforme qui implémentent une interface utilisateur native pour chaque système d’exploitation, utilisant le code commun en tant que serveur principal.
 
- [![](case-study-tasky-images/taskypro-architecture.png "Projets propres à la plateforme implémentent une interface utilisateur native pour chaque système d’exploitation, utilisant le code commun en tant que le serveur principal")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![](case-study-tasky-images/taskypro-architecture.png "Projets propres à la plateforme implémentent une interface utilisateur native pour chaque système d’exploitation, utilisant le code commun en tant que le serveur principal")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 Ces deux parties sont décrits dans les sections suivantes.
 
@@ -280,8 +280,8 @@ La couche Application et la couche d’Interface utilisateur sont implémentés 
 
 La couche d’Application contient des classes spécifiques à la plateforme requises pour « lier » les objets exposés par la bibliothèque PCL pour l’interface utilisateur. L’application spécifique à iOS a deux classes pour afficher des tâches :
 
- -   **EditingSource** : cette classe est utilisée pour lier des listes de tâches à l’interface utilisateur. Étant donné que `MonoTouch.Dialog` a été utilisé pour la liste des tâches, nous devons implémenter ce programme d’assistance pour activer les fonctionnalités de balayage pour suppression dans le `UITableView` . Balayez-delete est courant sur iOS, mais pas sur Android ou Windows Phone, par conséquent, le projet spécifique iOS est le seul qui l’implémente.
- -   **TaskDialog** : cette classe est utilisée pour lier une seule tâche à l’interface utilisateur. Il utilise le `MonoTouch.Dialog` API de réflexion pour « encapsuler » le `TaskItem` objet avec une classe qui contient les attributs corrects pour autoriser l’écran d’entrée à mettre en forme correctement.
+- **EditingSource** : cette classe est utilisée pour lier des listes de tâches à l’interface utilisateur. Étant donné que `MonoTouch.Dialog` a été utilisé pour la liste des tâches, nous devons implémenter ce programme d’assistance pour activer les fonctionnalités de balayage pour suppression dans le `UITableView` . Balayez-delete est courant sur iOS, mais pas sur Android ou Windows Phone, par conséquent, le projet spécifique iOS est le seul qui l’implémente.
+- **TaskDialog** : cette classe est utilisée pour lier une seule tâche à l’interface utilisateur. Il utilise le `MonoTouch.Dialog` API de réflexion pour « encapsuler » le `TaskItem` objet avec une classe qui contient les attributs corrects pour autoriser l’écran d’entrée à mettre en forme correctement.
 
 Le `TaskDialog` classe utilise `MonoTouch.Dialog` attributs pour créer un écran basé sur les propriétés d’une classe. La classe se présente comme suit :
 
@@ -389,9 +389,9 @@ Similaire à la version iOS que nous avons vu précédemment, la couche Applicat
 
 Couche d’Interface utilisateur de l’application Android est une combinaison de code et le balisage XML.
 
- -   **Ressources/disposition** – conception implémentée en tant que fichiers AXML de cellule de dispositions d’écran et la ligne. Le AXML peut être écrit à la main ou disposé que visuellement à l’aide du Concepteur d’interface utilisateur Xamarin pour Android.
- -   **Ressources/Drawable** – images (icônes) et un bouton personnalisé.
- -   **Écrans** – sous-classes d’activité qui définissent chaque écran et son comportement. Relie l’interface utilisateur avec des classes de couche d’Application et l’API courantes (`TaskItemManager`).
+- **Ressources/disposition** – conception implémentée en tant que fichiers AXML de cellule de dispositions d’écran et la ligne. Le AXML peut être écrit à la main ou disposé que visuellement à l’aide du Concepteur d’interface utilisateur Xamarin pour Android.
+- **Ressources/Drawable** – images (icônes) et un bouton personnalisé.
+- **Écrans** – sous-classes d’activité qui définissent chaque écran et son comportement. Relie l’interface utilisateur avec des classes de couche d’Application et l’API courantes (`TaskItemManager`).
 
  <a name="Home_Screen" />
 

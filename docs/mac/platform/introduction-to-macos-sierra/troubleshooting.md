@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 09/22/2016
-ms.openlocfilehash: 1b379bef98e498df4c58ba7209aa46b0b2542fe1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 322acff3279d0513266c7d9883726cac726334f7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031419"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830552"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - macOS Sierra résolution des problèmes
 
@@ -52,7 +52,7 @@ Si un code sécurité ou de la date d’expiration incorrecte (PA) est entré lo
 Problèmes connus :
 
 - Appel `NSObject.ValueForKey` sera un `null` clé entraîne une exception.
-- Les deux `NSURLSession` et NSURLConnection` no longer RC4 cipher suites during the TLS handshake for `http://' URL.
+- Les deux `NSURLSession` et `NSURLConnection` n’est plus les suites de chiffrement RC4 pendant la négociation TLS pour `http://` URL.
 - Applications peuvent se bloquer lorsqu’ils modifient la géométrie d’un superview dans un le `ViewWillLayoutSubviews` ou `LayoutSubviews` méthodes.
 - Pour toutes les connexions SSL/TLS, le chiffrement symétrique RC4 est désormais désactivé par défaut. En outre, l’API de Transport sécurisé n’est plus prend en charge que les SSLv3 et il est recommandé que l’application s’arrêter à l’aide d’un chiffrement SHA-1 et 3DES dès que possible.
 

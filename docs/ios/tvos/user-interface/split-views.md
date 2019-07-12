@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f1bd48378faa9ae6a4853083c93377268c38f01
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 775fe01122440378f68973549d46e3010400614e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61374470"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830849"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Utilisation de tvOS contrôleurs d’affichage fractionné dans Xamarin
 
@@ -100,7 +100,7 @@ Comme indiqué ci-dessus, un contrôleur d’affichage fractionné est souvent u
 
 ### <a name="accessing-master-and-detail"></a>L’accès aux maître et détail
 
-Si vous avez besoin d’accéder par programme les maîtres et des contrôleurs d’affichage de détails, utilisez le `ViewControllers ` propriété du contrôleur d’affichage fractionné. Exemple :
+Si vous avez besoin d’accéder par programme les maîtres et des contrôleurs d’affichage de détails, utilisez le `ViewControllers` propriété du contrôleur d’affichage fractionné. Par exemple :
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ Pour ce faire, le plus simple consiste à exposer une propriété sur votre clas
 public DetailViewController DetailController { get; set;}
 ```
 
-Dans le contrôleur d’affichage fractionné, substituez le `ViewDidLoad` (méthode) et attache les deux vues d’ensemble. Exemple :
+Dans le contrôleur d’affichage fractionné, substituez le `ViewDidLoad` (méthode) et attache les deux vues d’ensemble. Par exemple :
 
 ```csharp
 public override void ViewDidLoad ()
@@ -146,7 +146,7 @@ Vous pouvez exposer des propriétés et des méthodes sur votre contrôleur d’
 
 ### <a name="showing-and-hiding-master"></a>Affichage et masquage de Master
 
-Si vous le souhaitez, vous pouvez afficher et masquer le contrôleur d’affichage maître à l’aide de la `PreferredDisplayMode` propriété du contrôleur d’affichage fractionné. Exemple :
+Si vous le souhaitez, vous pouvez afficher et masquer le contrôleur d’affichage maître à l’aide de la `PreferredDisplayMode` propriété du contrôleur d’affichage fractionné. Par exemple :
 
 ```csharp
 // Show hide split view

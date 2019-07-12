@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 6a12d157b3de7c3841f5d69d209c01fbc612f79b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abd9fe85be412539fd51d0e6164c79ce346377a7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61279182"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832106"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Introduction à la 3D Touch dans Xamarin.iOS
 
@@ -105,7 +105,7 @@ Cette méthode peut être appelée avant *ou après* `ViewDidLoad()`.
 
 ### <a name="handling-peek-and-pop"></a>POP et gestion d’aperçu
 
-Sur un appareil iOS qui peut gérer 3D Touch, nous pouvons utiliser une instance de la `UIViewControllerPreviewingDelegate` classe pour gérer l’affichage de **aperçu** et **Pop** détails de l’élément. Par exemple, si nous avions un contrôleur d’affichage Table appelée `MasterViewController ` nous pourrions utiliser le code suivant pour prendre en charge **aperçu** et **Pop**:
+Sur un appareil iOS qui peut gérer 3D Touch, nous pouvons utiliser une instance de la `UIViewControllerPreviewingDelegate` classe pour gérer l’affichage de **aperçu** et **Pop** détails de l’élément. Par exemple, si nous avions un contrôleur d’affichage Table appelée `MasterViewController` nous pourrions utiliser le code suivant pour prendre en charge **aperçu** et **Pop**:
 
 ```csharp
 using System;

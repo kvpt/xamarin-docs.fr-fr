@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 99e8f8bf04465d0d61086139ba9889eae141207e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6269a7f2fa097136f492657d0ba7c6a1f056c38c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61160600"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832318"
 ---
 # <a name="programming-urhosharp-with-f"></a>Programmation UrhoSharp avecF#
 
@@ -97,20 +97,13 @@ type AppDelegate () =
         true
 ```
 
-Le `ApplicationOptions.Default` fournit les options par défaut pour une application en mode paysage. Transmettre `ApplicationOptions` au constructeur par défaut pour votre `Application` sous-classe (Notez que lorsque vous avez défini le `HelloWorld` classe, la ligne `inherit Application(o)` appelle le constructeur de classe de base). 
+Le `ApplicationOptions.Default` fournit les options par défaut pour une application en mode paysage. Transmettre `ApplicationOptions` au constructeur par défaut pour votre `Application` sous-classe (Notez que lorsque vous avez défini le `HelloWorld` classe, la ligne `inherit Application(o)` appelle le constructeur de classe de base).
 
-Le `Run` méthode de votre `Application` lance le programme. Il est défini comme retournant un `int`, ce qui peut être transmis à `ignore`. 
+Le `Run` méthode de votre `Application` lance le programme. Il est défini comme retournant un `int`, ce qui peut être transmis à `ignore`.
 
-Le programme résultant doit ressembler à :
+Le programme résultant doit ressembler à cette capture d’écran :
 
-![](fsharp-images/helloworldfsharp.png "Le programme résultant doit ressembler à")
-
-
-
-
-
-
-
+![Capture d’écran du programme qui en résulte](fsharp-images/helloworldfsharp.png)
 
 ## <a name="related-links"></a>Liens associés
 

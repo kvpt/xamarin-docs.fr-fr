@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: c0adee0dae1135bdfd076082e85a471db1cd1ecf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 490331663d94a1e3130fc794a11a52acdacca014
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013296"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829744"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Services limités dans Xamarin.Android
 
@@ -55,8 +55,8 @@ Pour créer un service à l’aide de Xamarin.Android, il est nécessaire de sou
 
 * `OnCreate` &ndash; Cette méthode est appelée par Android comme il consiste à instancier le service. Il est utilisé pour initialiser des variables ou des objets qui sont requis par le service pendant sa durée de vie. Cette méthode est facultative.
 * `OnBind` &ndash; Cette méthode doit être implémentée par tous les services liés. Elle est appelée lorsque le premier client essaie de se connecter au service. Il retourne une instance de `IBinder` afin que le client peut interagir avec le service. Tant que le service est en cours d’exécution, le `IBinder` objet sera utilisé pour répondre à toutes les demandes ultérieures du client pour lier le service.
-* `OnUnbind` &ndash; Cette méthode est appelée lorsque tous les clients liés ont indépendant. En retournant `true` à partir de cette méthode, le service appelle ultérieurement `OnRebind` avec l’intention passée à `OnUnbind` lorsque les clients de nouveau le lier. Pour cela, vous devez utiliser lorsqu’un service poursuit en cours d’exécution après que qu’elle a été détachée. Cela se produit si le service récemment indépendant ont été également un service démarré, et `StopService` ou `StopSelf` n’avaient pas été appelée. Dans ce scénario, `OnRebind` permet à l’intention à récupérer. Retourne la valeur par défaut `false` , qui ne fait rien. Optionnel.
-* `OnDestroy` &ndash; Cette méthode est appelée lors de la Android est destruction du service. Les nettoyages nécessaires, telles que la libération des ressources, doivent être effectuées dans cette méthode. Optionnel.
+* `OnUnbind` &ndash; Cette méthode est appelée lorsque tous les clients liés ont indépendant. En retournant `true` à partir de cette méthode, le service appelle ultérieurement `OnRebind` avec l’intention passée à `OnUnbind` lorsque les clients de nouveau le lier. Pour cela, vous devez utiliser lorsqu’un service poursuit en cours d’exécution après que qu’elle a été détachée. Cela se produit si le service récemment indépendant ont été également un service démarré, et `StopService` ou `StopSelf` n’avaient pas été appelée. Dans ce scénario, `OnRebind` permet à l’intention à récupérer. Retourne la valeur par défaut `false` , qui ne fait rien. facultatif.
+* `OnDestroy` &ndash; Cette méthode est appelée lors de la Android est destruction du service. Les nettoyages nécessaires, telles que la libération des ressources, doivent être effectuées dans cette méthode. facultatif.
 
 Les événements de cycle de vie d’un service lié sont affichés dans ce diagramme :
 
@@ -230,7 +230,7 @@ Le `OnServiceDisconnected` méthode est appelée uniquement lorsque la connexion
 
 ## <a name="starting-and-binding-to-a-service-with-an-explicit-intent"></a>Démarrage et la liaison à un Service avec l’intention explicite
 
-Pour utiliser un service lié, un client (par exemple, une activité) doit instancier un objet qui implémente `Android.Content.IServiceConnection` et appeler le `BindService` (méthode).` BindService` retournera `true` si le service est lié, `false` si elle n’est pas. La méthode `BindService` accepte trois paramètres :
+Pour utiliser un service lié, un client (par exemple, une activité) doit instancier un objet qui implémente `Android.Content.IServiceConnection` et appeler le `BindService` (méthode). `BindService` retournera `true` si le service est lié, `false` si elle n’est pas. La méthode `BindService` accepte trois paramètres :
 
 * **Un `Intent`**  &ndash; l’intention doit identifier de manière explicite quel service pour se connecter à.
 * **Un `IServiceConnection` objet** &ndash; cet objet est un intermédiaire qui fournit des méthodes de rappel pour avertir le client du service lié est démarré et arrêté.

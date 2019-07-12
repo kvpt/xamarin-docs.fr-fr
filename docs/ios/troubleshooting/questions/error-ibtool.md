@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: c2f727b55b21dc3bd976f0b41c71b794841cfca4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b894c245a4391064746a08816dfa63a1148d436d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421994"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831249"
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>Erreur IBTool : Impossible d’effectuer l’opération.
 
@@ -28,27 +28,27 @@ Le `ibtool` commande dans Xcode 6.0 a rencontré un bogue sur OS X 10.10 Yosemit
 
 Vous trouverez plus d’informations sur le bogue par rapport à Xcode sur ce qui suit post Stack Overflow : [https://stackoverflow.com/questions/25754763/cant-open-storyboard](https://stackoverflow.com/questions/25754763/cant-open-storyboard)
 
-### <a name="error-message"></a>Message d'erreur
+### <a name="error-message"></a>Message d’erreur
 
 > Le document « MainStoryboard.storyboard » n’a pas pu être ouvert. Impossible d’effectuer l’opération. (erreur com.apple.InterfaceBuilder -1.)
 
 ## <a name="workarounds-for-xcode-60"></a>Solutions de contournement (Xcode 6.0)
 
-### <a name="option-1-manage-all-uiimageviewimage-properties-in-code"></a>Option 1 : Gérer tous les `UIImageView.Image` propriétés dans le code
+### <a name="option-1-manage-all-uiimageviewimage-properties-in-code"></a>Option 1 : Gérer tous les `UIImageView.Image` propriétés dans le code
 
 Plutôt que de définir la `Image` propriété d’un `UIImageView` dans la table de montage séquentiel ou `.xib` fichier, vous pouvez définir la propriété dans un de la vue de cycle de vie des méthodes de remplacement dans le contrôleur d’affichage (par exemple, dans `ViewDidLoad()`). Voir aussi [utilisation des Images](~/ios/app-fundamentals/images-icons/index.md) pour obtenir des conseils sur l’utilisation de `UIImage.FromBundle()` et `UIImage.FromFile()`.
 
-### <a name="option-2-move-all-of-the-image-resources-to-the-top-level-resources-folder"></a>Option 2 : Déplacer toutes les ressources de l’image vers le niveau supérieur `Resources` dossier
+### <a name="option-2-move-all-of-the-image-resources-to-the-top-level-resources-folder"></a>Option 2 : Déplacer toutes les ressources de l’image vers le niveau supérieur `Resources` dossier
 
 Après avoir déplacé les images vers le niveau supérieur `Resources` dossier, vous devez mettre à jour la table de montage séquentiel et `.xib` fichiers à utiliser les nouveaux chemins d’image.
 
-### <a name="option-3-set-the-logicalname-for-any-problematic-image-assets-so-they-are-copied-to-the-top-level-of-theapp-bundle"></a>Option 3 : Définir le `LogicalName` pour les ressources d’image problématique afin qu’ils sont copiés vers le niveau supérieur de la`.app` bundle
+### <a name="option-3-set-the-logicalname-for-any-problematic-image-assets-so-they-are-copied-to-the-top-level-of-theapp-bundle"></a>Option 3 : Définir le `LogicalName` pour les ressources d’image problématique afin qu’ils sont copiés vers le niveau supérieur de la`.app` bundle
 
 Par exemple, votre original `.csproj` fichier contient l’entrée suivante :
 
 `<BundleResource Include="Resources\Images\image.png" />`
 
-Vous pouvez modifier cet élément et ajouter un `LogicalName` afin que l’image est copié à la place pour le niveau supérieur de la `.app `bundle :
+Vous pouvez modifier cet élément et ajouter un `LogicalName` afin que l’image est copié à la place pour le niveau supérieur de la `.app` bundle :
 
 ```xml
 <BundleResource Include="Resources\Images\image.png">

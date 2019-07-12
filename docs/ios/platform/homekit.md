@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 6793190fa3278455a00d7ea08ab52a643c369a35
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61371540"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831545"
 ---
 # <a name="homekit-in-xamarinios"></a>HomeKit dans Xamarin.iOS
 
@@ -281,11 +281,11 @@ Le `DidFindNewAccessory` événement sera appelé lors de la nouvelle accessoire
 
 Le `DiscoveredAccessories` liste contiendra une collection de `HMAccessory` les objets qui définissent un donnent HomeKit activé appareil de la domotique et ses services disponibles, tels que les voyants ou le contrôle de la porte de garage.
 
-Une fois le nouvel accessoire a été trouvé, il doit être présenté à l’utilisateur et par conséquent, ils peuvent sélectionner et l’ajouter à une maison. Exemple :
+Une fois le nouvel accessoire a été trouvé, il doit être présenté à l’utilisateur et par conséquent, ils peuvent sélectionner et l’ajouter à une maison. Exemple :
 
 [![](homekit-images/accessory01.png "Recherche d’un nouvel accessoire")](homekit-images/accessory01.png#lightbox)
 
-Appelez le `AddAccessory` méthode pour ajouter l’accessoire sélectionné à la collection de la page d’accueil. Exemple :
+Appelez le `AddAccessory` méthode pour ajouter l’accessoire sélectionné à la collection de la page d’accueil. Par exemple :
 
 ```csharp
 // Add the requested accessory to the home
@@ -318,7 +318,7 @@ Le `HMRoom` objet contient toutes les informations concernant une salle donnée 
 
 Cet exemple, nous allons garder des données simples et fonctionnent avec les accessoires d’une maison directement, au lieu d’organisant dans des zones ou des salles de conversation.
 
-Le `HMHome` objet contient une liste d’accessoire attribué qui peut être présentée à l’utilisateur dans son `Accessories` propriété. Exemple :
+Le `HMHome` objet contient une liste d’accessoire attribué qui peut être présentée à l’utilisateur dans son `Accessories` propriété. Par exemple :
 
 [![](homekit-images/accessory04.png "Un accessoire exemple")](homekit-images/accessory04.png#lightbox)
 
@@ -384,77 +384,77 @@ Chaque `HMService` objet peut contenir une collection de `HMCharacteristic` des 
 
 Le `HMCharacteristicType` enum fournit un ensemble de valeurs de métadonnées de la caractéristique qui peut être défini ou modifié comme suit :
 
- - AdminOnlyAccess
- - AirParticulateDensity
- - AirParticulateSize
- - AirQuality
- - AudioFeedback
- - BatteryLevel
- - Luminosité
- - CarbonDioxideDetected
- - CarbonDioxideLevel
- - CarbonDioxidePeakLevel
- - CarbonMonoxideDetected
- - CarbonMonoxideLevel
- - CarbonMonoxidePeakLevel
- - ChargingState
- - ContactState
- - CoolingThreshold
- - CurrentDoorState
- - CurrentHeatingCooling
- - CurrentHorizontalTilt
- - CurrentLightLevel
- - CurrentLockMechanismState
- - CurrentPosition
- - CurrentRelativeHumidity
- - CurrentSecuritySystemState
- - CurrentTemperature
- - CurrentVerticalTilt
- - FirmwareVersion
- - HardwareVersion
- - HeatingCoolingStatus
- - HeatingThreshold
- - HoldPosition
- - Teinte
- - Identifier
- - InputEvent
- - LeakDetected
- - LockManagementAutoSecureTimeout
- - LockManagementControlPoint
- - LockMechanismLastKnownAction
- - Journaux
- - Fabricant
- - Modèle
- - MotionDetected
- - Nom
- - ObstructionDetected
- - OccupancyDetected
- - OutletInUse
- - OutputState
- - PositionState
- - PowerState
- - RotationDirection
- - RotationSpeed
- - Saturation
- - SerialNumber (Numéro_série)
- - SmokeDetected
- - SoftwareVersion
- - StatusActive
- - StatusFault
- - StatusJammed
- - StatusLowBattery
- - StatusTampered
- - TargetDoorState
- - TargetHeatingCooling
- - TargetHorizontalTilt
- - TargetLockMechanismState
- - TargetPosition
- - TargetRelativeHumidity
- - TargetSecuritySystemState
- - TargetTemperature
- - TargetVerticalTilt
- - TemperatureUnits
- - Version
+- AdminOnlyAccess
+- AirParticulateDensity
+- AirParticulateSize
+- AirQuality
+- AudioFeedback
+- BatteryLevel
+- Luminosité
+- CarbonDioxideDetected
+- CarbonDioxideLevel
+- CarbonDioxidePeakLevel
+- CarbonMonoxideDetected
+- CarbonMonoxideLevel
+- CarbonMonoxidePeakLevel
+- ChargingState
+- ContactState
+- CoolingThreshold
+- CurrentDoorState
+- CurrentHeatingCooling
+- CurrentHorizontalTilt
+- CurrentLightLevel
+- CurrentLockMechanismState
+- CurrentPosition
+- CurrentRelativeHumidity
+- CurrentSecuritySystemState
+- CurrentTemperature
+- CurrentVerticalTilt
+- FirmwareVersion
+- HardwareVersion
+- HeatingCoolingStatus
+- HeatingThreshold
+- HoldPosition
+- Teinte
+- Identifier
+- InputEvent
+- LeakDetected
+- LockManagementAutoSecureTimeout
+- LockManagementControlPoint
+- LockMechanismLastKnownAction
+- Journaux d’activité
+- Fabricant
+- Modèle
+- MotionDetected
+- Name
+- ObstructionDetected
+- OccupancyDetected
+- OutletInUse
+- OutputState
+- PositionState
+- PowerState
+- RotationDirection
+- RotationSpeed
+- Saturation
+- SerialNumber (Numéro_série)
+- SmokeDetected
+- SoftwareVersion
+- StatusActive
+- StatusFault
+- StatusJammed
+- StatusLowBattery
+- StatusTampered
+- TargetDoorState
+- TargetHeatingCooling
+- TargetHorizontalTilt
+- TargetLockMechanismState
+- TargetPosition
+- TargetRelativeHumidity
+- TargetSecuritySystemState
+- TargetTemperature
+- TargetVerticalTilt
+- TemperatureUnits
+- Version
 
 ### <a name="working-with-a-characteristics-value"></a>Utilisation de valeur d’une caractéristique
 
@@ -667,7 +667,7 @@ Devez modifier l’état de la lumière dans le simulateur d’accessoires HomeK
 Cet article a présenté les fonctionnalités de base requises pour travailler avec des accessoires HomeKit dans une application Xamarin.iOS. Toutefois, il existe plusieurs fonctionnalités avancées de HomeKit qui ne sont pas traitées dans cette introduction :
 
 - **Salles** -des accessoires HomeKit activé peuvent éventuellement organisés en salles par l’utilisateur final. Ainsi, HomeKit accessoires présents dans un moyen simple pour l’utilisateur à comprendre et utiliser. Pour plus d’informations sur la création et la gestion des salles de conversation, consultez d’Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom) documentation.
-- **Zones** -salles peuvent éventuellement être organisés en zones par l’utilisateur final. Une zone fait référence à une collection de classes que l’utilisateur peut traiter comme une seule unité. Exemple : Attirail Downstairs ou sous-sol. Là encore, cela permet d’HomeKit présenter et utiliser des accessoires d’une manière qui a du sens pour l’utilisateur final. Pour plus d’informations sur la création et la gestion des zones, consultez d’Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) documentation.
+- **Zones** -salles peuvent éventuellement être organisés en zones par l’utilisateur final. Une zone fait référence à une collection de classes que l’utilisateur peut traiter comme une seule unité. Par exemple :  Attirail Downstairs ou sous-sol. Là encore, cela permet d’HomeKit présenter et utiliser des accessoires d’une manière qui a du sens pour l’utilisateur final. Pour plus d’informations sur la création et la gestion des zones, consultez d’Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) documentation.
 - **Actions et jeux d’actions** -Actions modifier les caractéristiques des accessoires de service et peuvent être regroupées en ensembles. Jeux d’actions agisse en tant que scripts permettant de contrôler un groupe d’accessoires et coordonner leurs actions. Par exemple, un script de « Télévision » peut fermer les stores atténue l’éclairage et activer la télévision et son système audio. Pour plus d’informations sur la création et la gestion des Actions et des jeux d’actions, consultez d’Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction) et [HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet) documentation.
 - **Déclencheurs** : un déclencheur peut activer une ou plusieurs Action définie lorsqu’un ensemble donné de conditions ont été remplies. Par exemple, allumer le voyant portch et verrouiller toutes les portes externes lorsqu’il atteint foncé à l’extérieur. Pour plus d’informations sur la création et la gestion des déclencheurs, consultez d’Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger) documentation.
 
@@ -677,9 +677,9 @@ Dans la mesure où ces fonctionnalités utilisent les mêmes techniques présent
 
 Avant de soumettre un HomeKit activée application Xamarin.iOS dans iTunes Connect pour la version de l’iTunes App Store, veillez à suivre les instructions d’Apple pour les applications d’HomeKit activé :
 
- - Objectif principal de l’application _doit_ être domotique si vous utilisez le framework HomeKit.
- - Texte marketing de l’application doit informer les utilisateurs que HomeKit est utilisé et qu’ils doivent fournir une politique de confidentialité.
- - Collecte des informations sur l’utilisateur ou l’utilisation d’HomeKit à des fins publicitaires est strictement interdite.
+- Objectif principal de l’application _doit_ être domotique si vous utilisez le framework HomeKit.
+- Texte marketing de l’application doit informer les utilisateurs que HomeKit est utilisé et qu’ils doivent fournir une politique de confidentialité.
+- Collecte des informations sur l’utilisateur ou l’utilisation d’HomeKit à des fins publicitaires est strictement interdite.
 
 Pour la version complète, consultez les instructions, consultez d’Apple [App Store passez en revue les instructions](https://developer.apple.com/app-store/review/guidelines/).
 

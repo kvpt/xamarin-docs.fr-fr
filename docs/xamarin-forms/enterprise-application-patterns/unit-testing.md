@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 02aeedd5498c47950e2fbc0d218de05bc0bb3204
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d83cdce7076eac5a022863b583ecb01346ae440a
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298988"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831081"
 ---
 # <a name="unit-testing-enterprise-apps"></a>Applications d’entreprise de tests unitaires
 
@@ -170,7 +170,8 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 
 Ce test unitaire lève une exception, car le [ `ListView` ](xref:Xamarin.Forms.ListView) contrôle n’a pas d’un événement nommé `OnItemTapped`. Le `Assert.Throws<T>` méthode est une méthode générique où `T` est le type de l’exception attendue. L’argument passé à la `Assert.Throws<T>` méthode est une expression lambda qui lève l’exception. Par conséquent, le test unitaire passera autant que l’expression lambda lève une `ArgumentException`.
 
->💡 **Conseil**: Évitez d’écrire des tests unitaires qui examinent des chaînes de message d’exception. Chaînes de message d’exception peuvent changer au fil du temps, et par conséquent, les tests unitaires qui s’appuient sur leur présence sont considérés comme fragile.
+> [!TIP]
+> Évitez d’écrire des tests unitaires qui examinent des chaînes de message d’exception. Chaînes de message d’exception peuvent changer au fil du temps, et par conséquent, les tests unitaires qui s’appuient sur leur présence sont considérés comme fragile.
 
 ### <a name="testing-validation"></a>Test de la Validation
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 60b54ffdce5f6bda2324c08bd3159eefeb5bc7f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6830df267aa0b9c4f12fbd53520206ea94fc8a38
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270236"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831896"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Résolution des problèmes d’applications tvOS générées avec Xamarin
 
@@ -34,13 +34,13 @@ La version actuelle de prise en charge de tvOS de Xamarin présente les problèm
 
 Veuillez rapport les bogues que vous trouvez sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Résolution de problèmes
 
 Les sections suivantes répertorient certains problèmes connus qui peuvent se produire lors de l’utilisation de tvOS 9 avec Xamarin.tvOS et la solution à ces problèmes :
 
 ### <a name="invalid-executable---the-executable-does-not-contain-bitcode"></a>Fichier exécutable non valide - le fichier exécutable ne contient-elle pas de bitcode
 
-Lorsque vous tentez de soumettre une application Xamarin.tvOS vers le Store d’application Apple TV, vous pouvez obtenir un message d’erreur sous la forme _« Exécutable non valide - le fichier exécutable ne contient-elle pas bitcode »_.
+Lorsque vous tentez de soumettre une application Xamarin.tvOS vers le Store d’application Apple TV, vous pouvez obtenir un message d’erreur sous la forme _« Exécutable non valide - le fichier exécutable ne contient-elle pas bitcode »_ .
 
 Pour résoudre ce problème, procédez comme suit :
 
@@ -80,7 +80,7 @@ Section
 
 Vous devez vous assurer que tout tiers statique (`.a`) que vous utilisez des bibliothèques ont été développés tvOS bibliothèques (pas les bibliothèques iOS) et qu’il inclut également des informations de bitcode.
 
-Pour les applications ou bibliothèques qui incluent le bitcode valide le `size` sera supérieur à un. Il existe certaines situations où une bibliothèque peut avoir le marqueur bitcode, pas contient déjà bitcode valide. Exemple :
+Pour les applications ou bibliothèques qui incluent le bitcode valide le `size` sera supérieur à un. Il existe certaines situations où une bibliothèque peut avoir le marqueur bitcode, pas contient déjà bitcode valide. Par exemple :
 
 **Bitcode non valide**
 
@@ -138,7 +138,7 @@ Si vous obtenez un message sous la forme « erreur ITMS-90471. Icône de grande
 
 ### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>Bundle non valide : une application qui prend en charge des contrôleurs de jeu doit prennent également en charge l’Apple TV à distance
 
-ou 
+ou Gestionnaire de configuration 
 
 ### <a name="invalid-bundle--apple-tv-apps-with-the-gamecontroller-framework-must-include-the-gcsupportedgamecontrollers-key-in-the-apps-infoplist"></a>Bundle non valide – applications Apple TV avec le framework GameController doit inclure la clé GCSupportedGameControllers dans le fichier Info.plist de l’application
 
@@ -151,7 +151,7 @@ _Nous avons découvert un ou plusieurs problèmes avec votre remise récente pou
 
 _Bundle non valide : une application qui prend en charge des contrôleurs de jeu doit également en charge l’Apple TV à distance._
 
-ou 
+ou Gestionnaire de configuration 
 
 _Bundle non valide – applications Apple TV avec le framework GameController doit inclure la clé GCSupportedGameControllers dans le fichier Info.plist de l’application._
 
@@ -184,7 +184,7 @@ Lorsque vous tentez d’inclure une bibliothèque de classes Portable (PCL) dans
 
 _Framework cible incompatible :. NetPortable, Version = v4.5, profil = Profile78_
 
-Pour résoudre ce problème, ajoutez un fichier XML appelé ` Xamarin.TVOS.xml` avec le contenu suivant :
+Pour résoudre ce problème, ajoutez un fichier XML appelé `Xamarin.TVOS.xml` avec le contenu suivant :
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

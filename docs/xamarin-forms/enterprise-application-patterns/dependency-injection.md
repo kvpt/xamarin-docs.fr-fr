@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: fb225349b9ffb1c950486a817897b3c26c6ffbe4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b95ccb3e756f02c945adc63b9e173a9f9e0226
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61300270"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832687"
 ---
 # <a name="dependency-injection"></a>Injection de dépendances
 
@@ -139,11 +139,12 @@ _container = builder.Build();
 
 Appel de la `Build` méthode sur le `ContainerBuilder` instance génère un nouveau conteneur d’injection de dépendance qui contient les enregistrements qui ont été apportées.
 
->💡 **Conseil**: Envisagez un `IContainer` comme étant immuable. Alors que Autofac fournit un `Update` méthode pour mettre à jour des enregistrements dans un conteneur existant, en appelant cette méthode doit être évitée si possible. Il existe des risques à la modification d’un conteneur une fois qu’il est générée, en particulier si le conteneur a été utilisé. Pour plus d’informations, consultez [envisager un conteneur comme immuable](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) sur readthedocs.io.
+> [!TIP]
+> Envisagez un `IContainer` comme étant immuable. Alors que Autofac fournit un `Update` méthode pour mettre à jour des enregistrements dans un conteneur existant, en appelant cette méthode doit être évitée si possible. Il existe des risques à la modification d’un conteneur une fois qu’il est générée, en particulier si le conteneur a été utilisé. Pour plus d’informations, consultez [envisager un conteneur comme immuable](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) sur readthedocs.io.
 
 <a name="resolution" />
 
-## <a name="resolution"></a>Résolution
+## <a name="resolution"></a>Résolution :
 
 Après l’inscription d’un type, il peut être résolu ou injecté en tant que dépendance. Quand un type est résolu et le conteneur a besoin créer une nouvelle instance, il injecte des dépendances dans l’instance.
 

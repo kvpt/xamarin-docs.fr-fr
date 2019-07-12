@@ -7,18 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: fa53d7253862e696d23289fe3c57f215b29da6c5
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 0fff9b7ce4b78e29409d1cc7a55e7f447baf722c
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649564"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831101"
 ---
 # <a name="xamarinforms-user-interface-views"></a>Vues de l’Interface utilisateur de Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/FormsGallery/)
 
 _Comment utiliser les vues fournies par Xamarin.Forms_
+
+## <a name="activityindicatoractivityindicatormd"></a>[ActivityIndicator](activityindicator.md)
+
+Le `ActivityIndicator` est un contrôle animé qui indique aux utilisateurs que l’application est engagée dans une activité de longue durée, sans perdre aucune indication de progression.
 
 ## <a name="animationanimationindexmd"></a>[Animation](animation/index.md)
 
@@ -87,6 +91,10 @@ Ajout de cartes nécessite un téléchargement de package NuGet supplémentaire 
 ## <a name="pickerpickerindexmd"></a>[Picker](picker/index.md)
 
 Le [ `Picker` ](xref:Xamarin.Forms.Picker) vue est un contrôle pour la sélection d’un élément de texte à partir d’une liste de données.
+
+## <a name="progressbarprogressbarmd"></a>[ProgressBar](progressbar.md)
+
+Le [ `ProgressBar` ](xref:Xamarin.Forms.ProgressBar) est un contrôle qui représente visuellement des cours sous la forme d’une barre horizontale qui est remplie, basée sur une propriété de type float.
 
 ## <a name="sliderslidermd"></a>[Slider](slider.md)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 260d01d6aa8344dd3cf107f1ffc34167c457a491
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6bad05f62fa9168818aa9a2e73cc1e2830af03b3
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61269309"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830037"
 ---
 # <a name="introduction-to-tvos-10"></a>Introduction à tvOS 10
 
@@ -56,10 +56,10 @@ En outre, `UIKit` a été modifié pour fonctionner dans la nouvelle étendue **
 
 Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
- - `UIColor` maintenant utilise le sRVB espace de couleurs et ne seront plus fixer des valeurs pour le `0.0` à `1.0` plage. Si l’application s’appuie sur le comportement de pince précédent, il devront être modifiées pour tvOS 10.
- - Si l’application effectue le rendu personnalisé de `UIImages`, utilisez la nouvelle [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) classe pour spécifier l’utilisation des formats étendus standard-gamme ou.
- - Lorsque vous utilisez une API de bas niveau tels que les graphismes de base ou complète pour fournir le traitement d’image, l’application doit utiliser un format de couleur plage étendue espace et de pixels qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application aura à fixer manuellement les valeurs de composant de couleur.
- - Graphismes de base, Image Core et des nuanceurs de performances de métal fournissent tous des nouvelles méthodes pour la conversion entre les espaces de deux couleurs.
+- `UIColor` maintenant utilise le sRVB espace de couleurs et ne seront plus fixer des valeurs pour le `0.0` à `1.0` plage. Si l’application s’appuie sur le comportement de pince précédent, il devront être modifiées pour tvOS 10.
+- Si l’application effectue le rendu personnalisé de `UIImages`, utilisez la nouvelle [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) classe pour spécifier l’utilisation des formats étendus standard-gamme ou.
+- Lorsque vous utilisez une API de bas niveau tels que les graphismes de base ou complète pour fournir le traitement d’image, l’application doit utiliser un format de couleur plage étendue espace et de pixels qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application aura à fixer manuellement les valeurs de composant de couleur.
+- Graphismes de base, Image Core et des nuanceurs de performances de métal fournissent tous des nouvelles méthodes pour la conversion entre les espaces de deux couleurs.
 
 Pour en savoir plus, consultez notre [Introduction à large couleur](~/ios/platform/wide-color.md) guide.
 
@@ -67,12 +67,12 @@ Pour en savoir plus, consultez notre [Introduction à large couleur](~/ios/platf
 
 Plusieurs infrastructures qui étaient disponibles sur iOS (et pas tvOS), mis à la disposition de tvOS 10 tels que :
 
- - ExternalAccessory
- - HomeKit
- - MultipeerConnectivity
- - Photos
- - ReplayKit
- - UserNotification
+- ExternalAccessory
+- HomeKit
+- MultipeerConnectivity
+- Photos
+- ReplayKit
+- UserNotification
 
 ## <a name="additional-framework-changes"></a>Modifications d’infrastructure supplémentaires
 

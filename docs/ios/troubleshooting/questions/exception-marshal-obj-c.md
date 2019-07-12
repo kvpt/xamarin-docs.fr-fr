@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: dfe1918d271946eb96d1f57d32c533a075f6d0bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3dbb4d9132d5d94e4533704730e95002b5aec0be
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421955"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832272"
 ---
 # <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-object"></a>Pourquoi mon application iOS 9 échoue avec : System.Exception : Impossible de marshaler l’objet Objective-C ?
 
@@ -22,7 +22,7 @@ Vous pouvez rencontrer une erreur de ce formulaire :
 
 Modifications de l’API dans iOS 9 demander un constructeur de rappel à utiliser lors de l’appel de code non managé, comme l’API sous-jacente maintenant il attend. Utilisez la ligne suivante pour ajouter le constructeur de rappel à la classe : 
 
-`public foo (IntPtr handle) : base (handle) ` 
+`public foo (IntPtr handle) : base (handle)` 
 
 ### <a name="next-steps"></a>Étapes suivantes
 

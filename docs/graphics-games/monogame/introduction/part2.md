@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 941b88f9109cf2f3a3485311c52b1250bd08e53f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9e0cf2f29d304f042bc56ee91029adadcaba570
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162170"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832505"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Partie 2 : implémentation du WalkingGame
 
@@ -53,7 +53,7 @@ Ensuite, nous attirerons un sprite unique à l’écran de montrer comment effec
 
 ### <a name="creating-a-texture2d"></a>Création d’une Texture2D
 
-Nous devons créer un `Texture2D` instance à utiliser lors du rendu de notre sprite. Partie du contenu est finalement contenu dans un dossier nommé **contenu,** situé dans le projet spécifique à la plateforme. Projets de MonoGame partagé ne peut pas contenir de contenu, comme le contenu doit utiliser des actions de génération spécifique à la plateforme. Les développeurs de CocosSharp trouveront le dossier de contenu un concept connu : ils se trouvent au même endroit dans les projets CocosSharp et MonoGame. Vous trouverez le dossier de contenu dans le projet iOS et dans le dossier de ressources dans le projet Android.
+Nous devons créer un `Texture2D` instance à utiliser lors du rendu de notre sprite. Partie du contenu est finalement contenu dans un dossier nommé **contenu,** situé dans le projet spécifique à la plateforme. Projets de MonoGame partagé ne peut pas contenir de contenu, comme le contenu doit utiliser des actions de génération spécifique à la plateforme. Vous trouverez le dossier de contenu dans le projet iOS et dans le dossier de ressources dans le projet Android.
 
 Pour ajouter du contenu de notre jeu, cliquez sur le **contenu** dossier et sélectionnez **Ajouter > ajouter des fichiers...** Accédez à l’emplacement où le fichier content.zip a été extrait et sélectionnez le **charactersheet.png** fichier. Si vous êtes invité sur la façon d’ajouter le fichier au dossier, nous devons sélectionner le **copie** option :
 
@@ -380,7 +380,7 @@ Le `frames` membre est ce qui stocke les données pour notre animation. Le code 
 
 Durée retourne la durée totale de la `Animation,` qui est obtenu en ajoutant la durée de tous les `AnimationFrame` instances. Cette valeur peut être mis en cache si `AnimationFrame` étaient un objet immuable, mais étant donné que nous avons implémenté AnimationFrame en tant que classe qui peut être modifiée après avoir été ajouté à l’Animation, nous devons calculer cette valeur chaque fois que la propriété est accessible.
 
-### <a name="update"></a>Mise à jour
+### <a name="update"></a>Mettre à jour
 
 Le `Update` (méthode) doit être appelée pour chaque trame (autrement dit, chaque fois le jeu entier est mis à jour). Son objectif consiste à augmenter la `timeIntoAnimation` membre qui est utilisée pour retourner l’image affichée. La logique de `Update` empêche le `timeIntoAnimation` de jamais être supérieure à la durée de la totalité de l’animation.
 
@@ -548,7 +548,7 @@ Si l’utilisateur touche l’écran, nous déplacerons le caractère vers le pr
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-Ce qui suit est un peu de mathématiques garderont le déplacement de caractère à la même vitesse. Pour expliquer pourquoi c’est important, prenons l’exemple d’une situation où l’utilisateur touche les 500 pixels en loin où se trouve le caractère. La première ligne où `desiredVelocity.X` est ensemble faut attribuer une valeur de 500. Toutefois, si l’utilisateur ont été toucher l’écran à une distance de seulement 100 unités à partir du caractère, puis le `desiredVelocity.X `serait défini sur 100. Le résultat est alors que la vitesse de déplacement du caractère répond à la manière dont éloignés que du point tactile est à partir du caractère. Dans la mesure où nous voulons le caractère pour toujours déplacer à la même vitesse, nous devons modifier la desiredVelocity.
+Ce qui suit est un peu de mathématiques garderont le déplacement de caractère à la même vitesse. Pour expliquer pourquoi c’est important, prenons l’exemple d’une situation où l’utilisateur touche les 500 pixels en loin où se trouve le caractère. La première ligne où `desiredVelocity.X` est ensemble faut attribuer une valeur de 500. Toutefois, si l’utilisateur ont été toucher l’écran à une distance de seulement 100 unités à partir du caractère, puis le `desiredVelocity.X` serait défini sur 100. Le résultat est alors que la vitesse de déplacement du caractère répond à la manière dont éloignés que du point tactile est à partir du caractère. Dans la mesure où nous voulons le caractère pour toujours déplacer à la même vitesse, nous devons modifier la desiredVelocity.
 
 La `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` instruction vérifie si la vitesse est non-zéro-en d’autres termes, il est la vérification pour vous assurer que l’utilisateur n’est pas toucher au même endroit que la position actuelle du caractère. Si pas, puis nous devons définir la vitesse du caractère comme une constante, quel que soit l’éloignement de la pression tactile sont. Pour ce faire, nous normalisation du vecteur de rapidité, ce qui vous permet d’en cours d’une longueur de 1. Un vecteur de rapidité, de 1 signifie que le caractère est déplacés à 1 pixel par seconde. Nous allons accélérer ce processus en multipliant la valeur par la vitesse de votre choix de 200.
 

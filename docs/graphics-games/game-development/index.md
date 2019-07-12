@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 314bedcb6bb2d7ebf9d8f98428b6a7cad059f73b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0fa4dbbf256e005fe17841f06acf1338197784b0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382057"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832283"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Introduction au développement de jeux avec Xamarin
 
@@ -55,9 +55,9 @@ N’oubliez pas que de nombreuses activités répertoriées ci-dessus peuvent mo
 
 Contenu manuellement le chargement et déchargement (ou en cours de suppression) peut-être être nécessaires selon la technologie que vous utilisez dans le développement. Le chargement et déchargement des ressources manuellement peuvent être nécessaires pour plusieurs raisons :
 
- - Ressources peuvent prendre beaucoup de temps à charger par rapport à la longueur d’une seule image. Certaines ressources peuvent même avoir secondes à charger, ce qui risque de perturber sérieusement l’expérience si chargé mid jeu. Si le temps de chargement est particulièrement long (par exemple, plus d’une ou deux secondes), vous souhaiterez afficher un texte animé le chargement d’écran de barre de progression.
- - Ressources peuvent consommer beaucoup de RAM, nécessitant une gestion active de ce qui est chargé à la taille de ce qui est fourni par les plateformes de cible du jeu.
- - Jeux deviez afficher plus de ressources ne tient pas dans la mémoire RAM. Jeux de « Ouvrir le monde » incluent souvent des environnements de grande taille quels lecteurs peuvent naviguer en toute transparence : c’est avec aucun écran de chargement. Dans ce cas, vous devrez peut-être créer un système personnalisé pour le contenu de diffusion en continu dans et l’utilisation de la gestion de la mémoire.
+- Ressources peuvent prendre beaucoup de temps à charger par rapport à la longueur d’une seule image. Certaines ressources peuvent même avoir secondes à charger, ce qui risque de perturber sérieusement l’expérience si chargé mid jeu. Si le temps de chargement est particulièrement long (par exemple, plus d’une ou deux secondes), vous souhaiterez afficher un texte animé le chargement d’écran de barre de progression.
+- Ressources peuvent consommer beaucoup de RAM, nécessitant une gestion active de ce qui est chargé à la taille de ce qui est fourni par les plateformes de cible du jeu.
+- Jeux deviez afficher plus de ressources ne tient pas dans la mémoire RAM. Jeux de « Ouvrir le monde » incluent souvent des environnements de grande taille quels lecteurs peuvent naviguer en toute transparence : c’est avec aucun écran de chargement. Dans ce cas, vous devrez peut-être créer un système personnalisé pour le contenu de diffusion en continu dans et l’utilisation de la gestion de la mémoire.
 
 Formats de fichiers personnalisés peut-être le traitement au moment du chargement, nécessitant le code de chargement personnalisé.
 
@@ -109,25 +109,11 @@ Renouveler les jeux existants est également une expérience de formation, bien 
 
 Les développeurs à l’aide de Xamarin.Android et Xamarin.iOS ont un large éventail de technologies disponibles pour faciliter le développement de jeux. Cette section décrit certaines des solutions inter-plateformes populaires.
 
-### <a name="cocossharp"></a>CocosSharp
-
-CocosSharp est une version open source et multiplateforme du moteur de jeux 2D Cocos. Le moteur fournit l’accès à Android, iOS, Mac OS X, Windows Desktop, Windows RT et Windows Phone.
-
-CocosSharp se concentre sur un programmeur simple API pour le développement de jeux 2D. Le développement de jeux sur les appareils mobiles a permis de reignite la popularité du développement de jeux 2D faire de la technologie viable de CocosSharp pour passe-temps et commerciales projets similaires. Il est fourni en tant que fichiers .dll ou de code source (qui peuvent être obtenus via NuGet), mais elle n’offre pas un éditeur visuel ; Par conséquent, aucune interaction avec le moteur de CocosSharp nécessite des connaissances de programmation.
-
-Pour commencer avec CocosSharp, Découvrez notre [CocosSharp guides](~/graphics-games/cocossharp/index.md).
-
-Le jeu en colère araignées géantes est créé avec CocosSharp, et il peut être un bon point de départ si vous avez besoin d’un jeu en cours d’exécution pour plusieurs plateformes :
-
-![](images/image3.png "Le jeu en colère araignées géantes a été créé avec CocosSharp")
-
-Vous pouvez le télécharger et obtenir plus d’informations sur la [AngryNinjas Github page](https://github.com/xamarin/AngryNinjas).
-
 ### <a name="monogame"></a>MonoGame
 
 MonoGame est un open source, entre les versions de plateforme de l’API de Microsoft XNA. MonoGame peut être utilisé pour créer des jeux pour iOS, Android, Mac OS X, Linux, Windows, Windows RT, PS4, PSVita, Xbox One et commutateur.
 
-Contrairement à CocosSharp, MonoGame est techniquement pas un moteur de jeu, mais plutôt un développement de jeux API. Cela signifie que le travail avec MonoGame nécessite directement la gestion des objets de jeu, manuellement dessiner des objets et l’implémentation des objets communs tels que des caméras et *graphiques de scène* (la hiérarchie parent-enfant entre les objets de jeu). Pour aider à comprendre la distinction, considérez que CocosSharp repose sur MonoGame. MonoGame généralise certains de la technologie spécifique à la plateforme, tels que des graphiques, de rendu et de l’audio, alors que CocosSharp fournit le code permettant d’organiser et d’implémentation de la logique de jeu.
+MonoGame est techniquement pas un moteur de jeu, mais plutôt un développement de jeux API. Cela signifie que le travail avec MonoGame nécessite directement la gestion des objets de jeu, manuellement dessiner des objets et l’implémentation des objets communs tels que des caméras et *graphiques de scène* (la hiérarchie parent-enfant entre les objets de jeu).
 
 MonoGame n’offre pas d’un environnement de développement visual standard afin de travailler avec MonoGame nécessite de connaissances en programmation.
 
@@ -161,6 +147,5 @@ Les technologies de mise en surbrillance ci-dessus n'est qu’un échantillon de
 
 ## <a name="related-links"></a>Liens associés
 
-- [Guides de CocosSharp](~/graphics-games/cocossharp/index.md)
 - [Guides de MonoGame](~/graphics-games/monogame/index.md)
 - [Guides de UrhoSharp](~/graphics-games/urhosharp/index.md)

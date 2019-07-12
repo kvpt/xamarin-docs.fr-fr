@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 26aeaa3d230a5c104014edd899b8d9231ced31e9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c9d98d9d3052f52dc7860ba513756e3a33d1dc58
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61430213"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831919"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Storyboards unifiés dans Xamarin.iOS
 
@@ -114,10 +114,10 @@ Cette section décrit les types classiques de collections de caractéristique qu
 
 Ce qui suit est une Collection de caractéristique classique le développeur peut s’afficher sur un iPhone :
 
-|Propriété|Value|
+|Propriété|`Value`|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
-|`VerticalSizeClass`|Normale|
+|`VerticalSizeClass`|Normal|
 |`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
@@ -125,7 +125,7 @@ L’ensemble ci-dessus représente une Collection de caractéristique entièreme
 
 Il est également possible d’avoir une Collection de caractéristique auquel il manque certaines de ses valeurs (c'est-à-dire, Apple en tant que *Unspecified*) :
 
-|Propriété|Value|
+|Propriété|Valeur|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
 |`VerticalSizeClass`|Non spécifié|
@@ -258,13 +258,13 @@ Ces méthodes fonctionnent en commençant au niveau du contrôleur de vue feuill
 
 Les développeurs peuvent implémenter `ShowViewController` et `ShowDetailViewController` dans leurs propres contrôleurs d’affichage personnalisé pour obtenir les mêmes automatisé des fonctionnalités qui `UINavigationController` et `UISplitViewController` fournit.
 
-### <a name="how-it-works"></a>Son fonctionnement
+### <a name="how-it-works"></a>Fonctionnement
 
 Dans cette section, nous allons examiner comment ces méthodes sont réellement implémentées dans iOS 8. Première jetons un œil à la nouvelle `GetTargetForAction` méthode :
 
  [![](unified-storyboards-images/gettargetforaction.png "La nouvelle méthode GetTargetForAction")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-Cette méthode parcourt la chaîne de la hiérarchie jusqu'à ce que le contrôleur d’affichage conteneur approprié est trouvé. Exemple :
+Cette méthode parcourt la chaîne de la hiérarchie jusqu'à ce que le contrôleur d’affichage conteneur approprié est trouvé. Par exemple :
 
 1.  Si un `ShowViewController` est appelée, le premier contrôleur d’affichage dans la chaîne qui implémente cette méthode est le contrôleur de Navigation, il est utilisé comme parent de la nouvelle vue.
 1.  Si un `ShowDetailViewController` méthode a été appelée au lieu de cela, le contrôleur d’affichage fractionné est le premier contrôleur d’affichage pour l’implémenter, il est utilisé comme parent.
@@ -300,7 +300,7 @@ Lorsque vous exécutez l’application adaptative Photos sur un iPhone, lorsque 
 
  [![](unified-storyboards-images/rotation.png "Le contrôleur d’affichage fractionné affiche à la fois le contrôleur et affichage des détails comme illustré ici")](unified-storyboards-images/rotation.png#lightbox)
 
-Cela est effectué en substituant le `UpdateConstraintsForTraitCollection` méthode de contrôleur d’affichage et en ajustant les contraintes basée sur la valeur de la `VerticalSizeClass`. Exemple :
+Cela est effectué en substituant le `UpdateConstraintsForTraitCollection` méthode de contrôleur d’affichage et en ajustant les contraintes basée sur la valeur de la `VerticalSizeClass`. Par exemple :
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -356,7 +356,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>Ajout d’Animations de Transition
 
-Lorsque le contrôleur d’affichage fractionné dans les Photos Adaptive application passe à partir de réduit à développée, animations sont ajoutées aux animations par défaut en remplaçant le `WillTransitionToTraitCollection` méthode du contrôleur d’affichage. Exemple :
+Lorsque le contrôleur d’affichage fractionné dans les Photos Adaptive application passe à partir de réduit à développée, animations sont ajoutées aux animations par défaut en remplaçant le `WillTransitionToTraitCollection` méthode du contrôleur d’affichage. Par exemple :
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -693,12 +693,12 @@ Nouveau à iOS 8, le développeur peut créer un seul, atomique `.xib` fichier d
 
 Les écrans de lancement dynamique ont les considérations et limitations suivantes :
 
- - Utilisez uniquement `UIKit` classes.
- - Utiliser une vue de racine unique qui est un `UIView` ou `UIViewController` objet.
- - N’effectuez pas toutes les connexions au code de l’application (n’ajoutez pas **Actions** ou **Outlets**).
- - N’ajoutez pas `UIWebView` objets.
- - N’utilisez pas les classes personnalisées.
- - N’utilisez pas les attributs de runtime.
+- Utilisez uniquement `UIKit` classes.
+- Utiliser une vue de racine unique qui est un `UIView` ou `UIViewController` objet.
+- N’effectuez pas toutes les connexions au code de l’application (n’ajoutez pas **Actions** ou **Outlets**).
+- N’ajoutez pas `UIWebView` objets.
+- N’utilisez pas les classes personnalisées.
+- N’utilisez pas les attributs de runtime.
 
 Avec les instructions ci-dessus à l’esprit, nous allons étudier l’ajout d’un écran de lancement dynamique à un projet d’iOS 8 Xamarin existant.
 

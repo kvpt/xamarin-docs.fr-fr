@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 327070f723aabf8d5d07f4f86580b69ffb5917a7
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: d80363cd339d5d3177ae063df2a20d7938f59169
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675284"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832403"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -67,7 +67,7 @@ Actuellement, le Profiler Xamarin peuvent être utilisée pour tester les applic
 
 Prise en charge pour le Xamarin Profiler est disponible sur les plateformes suivantes :
 
- - Visual Studio pour Mac (macOS, avec une licence d’entreprise)
+- Visual Studio pour Mac (macOS, avec une licence d’entreprise)
     - Android
         - Appareil et l’émulateur
     - iOS
@@ -76,7 +76,7 @@ Prise en charge pour le Xamarin Profiler est disponible sur les plateformes suiv
         - Appareil et simulateur
     - Mac
 
- - Visual Studio (uniquement **Enterprise** Version)
+- Visual Studio (uniquement **Enterprise** Version)
     - Android
         - Appareil et l’émulateur
     - iOS [expérimental]
@@ -94,7 +94,7 @@ Cette section présente les différentes parties de la Xamarin Profiler et voyag
 
 Avant que vous pouvez profiler avec succès votre application, vous devez autoriser le profilage dans les Options de projet de l’application.
 
- - iOS :
+- iOS :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -110,7 +110,7 @@ Avant que vous pouvez profiler avec succès votre application, vous devez autori
 
 -----
 
- - Android :
+- Android :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -216,7 +216,7 @@ En haut du profileur est le graphique d’allocations, qui affiche la quantité 
 
 Il existe différentes vues de données dans l’instrument d’Allocations, qui permettent aux développeurs d’analyser la manière dont leur application est à l’aide et la libération de mémoire. Ces vues sont décrits ci-dessous :
 
- -   **Allocations** – Cela affiche une liste de toutes les allocations et les regroupe par nom de la classe. Cela constitue une excellente présentation des classes et méthodes utilisées, la fréquence à laquelle ils sont utilisés et la taille collective des classes utilisées. Double-clic sur une classe affichera la mémoire allouée : 
+- **Allocations** – Cela affiche une liste de toutes les allocations et les regroupe par nom de la classe. Cela constitue une excellente présentation des classes et méthodes utilisées, la fréquence à laquelle ils sont utilisés et la taille collective des classes utilisées. Double-clic sur une classe affichera la mémoire allouée : 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -230,7 +230,7 @@ Il existe différentes vues de données dans l’instrument d’Allocations, qui
 
 La vue de l’inspecteur pour les Allocations fournit les options de filtrage et regroupement d’objets, en fournissant des statistiques sur la mémoire allouée, ainsi que les allocations supérieures, ainsi que les vues pour la Trace de la pile et le chemin d’accès à la racine.
 
- -   **Arborescence des appels** – Cela affiche l’arborescence des appels entière de tous les threads dans l’application et inclut des informations sur la mémoire allouée sur chaque nœud. Lorsqu’un élément est sélectionné dans la liste, tous les nœuds frères apparaîtront gris. Vous pouvez développer l’arborescence ou double-cliquez sur l’élément à descendre dedans. Lors de l’affichage de cette vue de données, l’inspecteur de paramètres d’affichage peut être utilisé pour modifier la façon dont elle est présentée. Il existe actuellement deux options :
+- **Arborescence des appels** – Cela affiche l’arborescence des appels entière de tous les threads dans l’application et inclut des informations sur la mémoire allouée sur chaque nœud. Lorsqu’un élément est sélectionné dans la liste, tous les nœuds frères apparaîtront gris. Vous pouvez développer l’arborescence ou double-cliquez sur l’élément à descendre dedans. Lors de l’affichage de cette vue de données, l’inspecteur de paramètres d’affichage peut être utilisé pour modifier la façon dont elle est présentée. Il existe actuellement deux options :
     1.  **Arborescence des appels d’inversé** – il considère que la trace de pile de haut en bas. C’est une option de vue pratique puisqu’il indique les méthodes plus profonde où le processeur a consacré sa durée.
     2.  **Séparé par thread** – cette option organise l’arborescence des appels par thread.
 
@@ -244,7 +244,7 @@ La vue de l’inspecteur pour les Allocations fournit les options de filtrage et
 
 -----
 
- -   **Captures instantanées** – ce volet affiche des informations sur les instantanés de mémoire. Pour générer ces stratégies lors du profilage d’une application en direct, cliquez sur le _caméra_ bouton dans la barre d’outils à chaque point que vous aimeriez voir quelle mémoire est conservée et publié. Vous pouvez ensuite cliquer sur chaque capture instantanée pour Explorer ce qui se passe sous le capot. Notez que des captures instantanées peuvent être prises en direct de profilage d’une application. 
+- **Captures instantanées** – ce volet affiche des informations sur les instantanés de mémoire. Pour générer ces stratégies lors du profilage d’une application en direct, cliquez sur le _caméra_ bouton dans la barre d’outils à chaque point que vous aimeriez voir quelle mémoire est conservée et publié. Vous pouvez ensuite cliquer sur chaque capture instantanée pour Explorer ce qui se passe sous le capot. Notez que des captures instantanées peuvent être prises en direct de profilage d’une application. 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

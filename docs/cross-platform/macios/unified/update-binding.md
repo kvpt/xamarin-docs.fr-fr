@@ -6,18 +6,18 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d57f27bf0d3aaa2a7ba14f23481a8f2bb2d87f2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f081ccda507fe3fe65af0e2fb50841aecd7b3c23
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261156"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830463"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrer une liaison vers l’API unifiée
 
 _Cet article décrit les étapes nécessaires pour mettre à jour un projet de liaison de Xamarin existant pour prendre en charge les API unifiée pour les applications Xamarin.IOS et Xamarin.Mac._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 À partir du 1er février 2015 Apple nécessite que toutes les soumissions de nouveau à l’iTunes et le Store d’application Mac doivent être des applications 64 bits. Par conséquent, toute nouvelle application Xamarin.iOS ou Xamarin.Mac devez être à l’aide de la nouvelle API unifiée au lieu des MonoMac APIs et MonoTouch classique existant pour prendre en charge 64 bits.
 
@@ -27,8 +27,8 @@ En outre, n’importe quel projet de liaison Xamarin doit également en charge l
 
 Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article :
 
- -  **Visual Studio pour Mac** -la dernière version de Visual Studio pour Mac installé et configuré sur l’ordinateur de développement.
- -  **Apple Mac** - Apple mac est nécessaire pour générer des projets de liaison pour iOS et Mac.
+- **Visual Studio pour Mac** -la dernière version de Visual Studio pour Mac installé et configuré sur l’ordinateur de développement.
+- **Apple Mac** - Apple mac est nécessaire pour générer des projets de liaison pour iOS et Mac.
 
 Projets de liaison ne sont pas pris en charge dans Visual studio sur un ordinateur Windows.
 

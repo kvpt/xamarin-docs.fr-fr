@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 306cce581eb1506e770222ea10e160c4fdbe1b29
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 206379b162c7778663ee2baf64dfeb1d33666ab4
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827486"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831462"
 ---
 # <a name="binding-objective-c-libraries"></a>Bibliothèques de liaison Objective-C
 
@@ -32,7 +32,7 @@ Vous pouvez utiliser la [iOS de liaison, exemple](https://github.com/xamarin/mon
 
 <a name="Getting_Started" />
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -267,7 +267,7 @@ string Text { get; [NullAllowed] set; }
 Les remarques suivantes doivent être considérés lors de la configuration de la liaison pour un contrôle personnalisé :
 
 1. **Propriétés de liaison doivent être statiques** - lors de la définition de la liaison des propriétés, la [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) attribut doit être utilisé.
- 2. **Noms de propriété doivent correspondre exactement à** -le nom utilisé pour lier la propriété doit correspondre au nom de la propriété dans le contrôle personnalisé exactement.
+2. **Noms de propriété doivent correspondre exactement à** -le nom utilisé pour lier la propriété doit correspondre au nom de la propriété dans le contrôle personnalisé exactement.
 3. **Types de propriété doivent correspondre exactement** -le type de variable utilisé pour lier la propriété doit correspondre au type de la propriété dans le contrôle personnalisé exactement.
 4. **Points d’arrêt et la méthode getter/setter** : points d’arrêt sont placés dans l’accesseur Get ou les méthodes d’accesseur Set de la propriété ne seront jamais atteint.
 5. **Observez les rappels** -vous devez utiliser des rappels d’observation pour être averti des modifications dans les valeurs de propriété des contrôles personnalisés.
@@ -288,7 +288,7 @@ attribut.
 Puis, dans la sous-classe mutable, vous utilisez le [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
 attribut sur la propriété pour vous assurer que la propriété est en fait substitution du comportement du parent.
 
-Exemple :
+Exemple :
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>Liaison des listes d’arguments Objective-C
 
-Objective-C prend en charge les arguments de variadiques. Exemple :
+Objective-C prend en charge les arguments de variadiques. Par exemple :
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ Parfois, vous devez accéder à des champs publics qui ont été déclarés dans
 
 Ces champs contiennent généralement des valeurs de chaînes ou des entiers qui doivent être référencées. Ils sont souvent utilisés en tant que chaîne qui représente une notification spécifique et en tant que clés dans les dictionnaires.
 
-Pour lier un champ, ajouter une propriété à votre fichier de définition d’interface et décorer la propriété avec le [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) attribut. Cet attribut prend un seul paramètre : le nom de C du symbole à rechercher. Exemple :
+Pour lier un champ, ajouter une propriété à votre fichier de définition d’interface et décorer la propriété avec le [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) attribut. Cet attribut prend un seul paramètre : le nom de C du symbole à rechercher. Par exemple :
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -580,7 +580,7 @@ interface LonelyClass {
 
 Vous pouvez ajouter `enum` directement dans votre liaison de fichiers à facilite les utiliser à l’intérieur des définitions d’API - sans utiliser un autre fichier source (devant être compilé dans les liaisons et le projet final).
 
-Exemple :
+Exemple :
 
 ```csharp
 [Native] // needed for enums defined as NSInteger in ObjC
@@ -594,7 +594,7 @@ interface MyType {
 
 Il est également possible de créer vos propres enums pour remplacer `NSString` constantes. Dans ce cas le générateur est **automatiquement** créer les méthodes pour convertir les valeurs des énumérations et des constantes de chaîne NSString pour vous.
 
-Exemple :
+Exemple :
 
 ```csharp
 enum NSRunLoopMode {
@@ -632,7 +632,7 @@ Le [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#Bin
 Vous pouvez décorer les méthodes (sur la valeur de retour), les paramètres et les propriétés avec [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute). La seule restriction est que votre membre **ne doit pas** être à l’intérieur d’un [`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 ou [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) interface.
 
-Exemple :
+Par exemple :
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ En interne, nous ferons le `bool?`  <->  `NSNumber` et `CGRect`  <->  `NSValue` 
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) prend également en charge les tableaux de `NSNumber` `NSValue` et `NSString`(énumérations).
 
-Exemple :
+Par exemple :
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ propriété (il peut être public ou privé).
 
 Cet attribut peut être utilisé sans arguments pour les notifications qui ne transmettent aucune charge utile, ou vous pouvez spécifier un `System.Type` qui fait référence à une autre interface dans la définition d’API, généralement avec le nom se terminant par « EventArgs ». Le générateur activera l’interface dans une classe qui sous-classe `EventArgs` et inclut toutes les propriétés qui y figurent. Le [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) attribut doit être utilisé dans la classe EventArgs pour répertorier le nom de la clé utilisée pour rechercher le dictionnaire Objective-C pour extraire la valeur.
 
-Exemple :
+Par exemple :
 
 ```csharp
 interface MyClass {
@@ -882,7 +882,7 @@ Le Générateur de liaison peut transformer une certaine classe de méthodes asy
 Vous pouvez utiliser la [`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
 attribut sur les méthodes qui retournent void et dont le dernier argument est un rappel.  Lorsque vous appliquez ce à une méthode, le Générateur de liaison générera une version de cette méthode avec le suffixe `Async`.  Si le rappel ne prend aucun paramètre, la valeur de retour sera un `Task`, si le rappel prend un paramètre, le résultat sera un `Task<T>`.  Si le rappel prend plusieurs paramètres, vous devez définir le `ResultType` ou `ResultTypeName` pour spécifier le nom de votre choix du type généré qui contiendra toutes les propriétés.
 
-Exemple :
+Exemple :
 
 ```csharp
 [Export ("loadfile:completed:")]
@@ -1337,7 +1337,7 @@ Vous devez informer Xamarin.iOS comment lier vos bibliothèques, cela peut être
 L’exemple ci-dessus sera liée `libMyLibrary.a`, `libSystemLibrary.dylib` et `CFNetwork` bibliothèque framework dans votre fichier exécutable final.
 
 Ou vous pouvez tirer parti de niveau de l’assembly [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), que vous pouvez incorporer dans vos fichiers de contrat (tel que `AssemblyInfo.cs`).
-Lorsque vous utilisez le [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), vous devez avoir votre bibliothèque native disponible au moment que vous prenez votre liaison, lorsque cette action incorpore la bibliothèque native avec votre application. Exemple :
+Lorsque vous utilisez le [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), vous devez avoir votre bibliothèque native disponible au moment que vous prenez votre liaison, lorsque cette action incorpore la bibliothèque native avec votre application. Par exemple :
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:

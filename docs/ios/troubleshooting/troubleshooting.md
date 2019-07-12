@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 1a98cf854ffdd1d4904981f85fd8e33ad486743c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 38c0ece3e8f0361f3c891713e53b033351512f94
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61417372"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829922"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin.iOS 
 
@@ -109,7 +109,7 @@ Pour résoudre ce problème, ajoutez la ligne de code suivante à la classe Foo.
 ```csharp
 public Bar (IntPtr handle) : base (handle) { }
 ```
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Le type {Foo} ne contient pas une définition pour `GetNativeField' and no extension method `GetNativeField' de type {Foo} est introuvable.
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Le type {Foo} ne contient pas une définition pour `GetNativeField` et aucune méthode d’extension `GetNativeField` de type {Foo} est introuvable.
 
 Si vous obtenez cette erreur dans les fichiers générés concepteurs (*. xib.designer.cs), cela signifie deux choses :
 
@@ -389,14 +389,15 @@ Si vous obtenez un incident de runtime (SIGSEGV) dans le simulateur, ainsi que d
 ```
 .. .then que vous avez probablement une (ou plus) assembly obsolète dans le répertoire de votre application de simulateur. Ces assemblys peuvent existe dans la mesure où Apple iOS simulator ajoute et met à jour des fichiers, mais jamais les supprime. Si cela produit, la solution la plus simple consiste à sélectionner « Réinitialiser et de contenu et paramètres... » dans le menu du simulateur.   
 
-**Avertissement :** cela supprimera tous les fichiers, applications et données à partir du simulateur.   Prochaine fois que vous exécutez votre application, Visual Studio pour Mac sera le déployer dans le simulateur et il n’y aura aucun assembly ancien, obsolète pour provoquer le blocage.
+> [!WARNING]
+> Cela supprimera tous les fichiers, applications et données à partir du simulateur.   Prochaine fois que vous exécutez votre application, Visual Studio pour Mac sera le déployer dans le simulateur et il n’y aura aucun assembly ancien, obsolète pour provoquer le blocage.
 
 ## <a name="simulator-hangs-during-application-installation"></a>Simulator se bloque lors de l’installation de l’application
 
 Cela peut se produire lorsque les noms d’application incluent un «. » (point) dans leur nom.
 Cela est interdit en tant que le nom d’exécutable dans CFBundleExecutable - même si elle peut fonctionne dans de nombreux autres cas (par exemple, des appareils).
 
- * « La valeur ne doit pas inclure toute extension du nom de ». - [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* « La valeur ne doit pas inclure toute extension du nom de ». - [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Erreur : « Le type d’attribut personnalisé 0 x 43 n’est pas pris en charge » lors de double-clic sur des fichiers .xib
 

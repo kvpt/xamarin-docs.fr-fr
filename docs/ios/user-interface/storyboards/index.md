@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: f24be635afcba181efcab85d81a984d93dae4bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61429068"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831698"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Introduction aux Storyboards dans Xamarin.iOS
 
@@ -68,7 +68,7 @@ Il existe différents types de transitions, chaque contrôle donné sur la faço
 
 -  **Afficher / Push** – un push de segue ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage le push d’origine fait partie du même contrôleur de navigation en tant que le contrôleur d’affichage qui est ajouté à la pile. Cela fait la même chose que `pushViewController` et est généralement utilisée lorsqu’il existe une relation entre les données sur les écrans. À l’aide de la notification push segue vous donne le luxe d’avoir une barre de navigation avec un bouton Précédent et le titre ajoutés à la vue sur la pile, ce qui permet de descendre dans la navigation dans la hiérarchie d’affichage de la hiérarchie.
 -  **Modale** – un segue modale créer une relation entre les contrôleurs de deux affichage dans votre projet, avec la possibilité d’une transition animée affichée. Le contrôleur d’affichage enfant masquera complètement le contrôleur d’affichage parent lorsque présentée dans l’affichage. Contrairement à une notification push segue, qui ajoute un bouton Précédent pour nous ; Quand à l’aide d’une fenêtre modale segue `DismissViewController` doit être utilisé afin de retourner le contrôleur d’affichage précédente.
--  **Personnalisé** : toute personnalisé segue peut être créés en tant que sous-classe de ` UIStoryboardSegue`.
+-  **Personnalisé** : toute personnalisé segue peut être créés en tant que sous-classe de `UIStoryboardSegue`.
 -  **Déroulement** : déroulement segue peut être utilisé pour naviguer émetteur ou modal segue – par exemple, en fermant le contrôleur d’affichage modal présentées. En outre, vous pouvez dérouler via pas qu’un seul, mais une série de push et modal enchaînements et revenir en arrière plusieurs étapes dans votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un déroulement segue dans iOS, lire la [création de déroulement Enchaînements](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) Recipe (Recette).
 -  **Sans** – un segue sans source indique la scène contenant le contrôleur d’affichage initial, et par conséquent vue dans laquelle l’utilisateur voient en premier. Il est représenté par le segue indiqué ci-dessous :  
 

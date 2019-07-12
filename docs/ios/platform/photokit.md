@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: d59cac9403a244ce553d84e0590b8a9c3d4d2f30
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 78646a0a420820218a8c61ea34ecc5db4438a91d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365842"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832736"
 ---
 # <a name="photokit-in-xamarinios"></a>PhotoKit dans Xamarin.iOS
 
@@ -71,9 +71,9 @@ Voilà comment gérer l’interrogation et la lecture des données. Vous pouvez 
     
 Pour réellement écrire les modifications à partir de votre application, vous créez une demande de modification. Chacune des classes de modèle a une classe de demande de modification associée. Par exemple, pour modifier un PHAsset, vous créez un PHAssetChangeRequest. Les étapes pour effectuer des modifications qui sont mises à jour dans la bibliothèque de photos et envoyées aux observateurs comme celui illustré ci-dessus sont :
 
--   Effectuer l’opération de modification.
--   Enregistrer les données d’image filtré à une instance de PHContentEditingOutput.
--   Effectuer une demande de modification à publier le formulaire de modifications la sortie d’édition.
+- Effectuer l’opération de modification.
+- Enregistrer les données d’image filtré à une instance de PHContentEditingOutput.
+- Effectuer une demande de modification à publier le formulaire de modifications la sortie d’édition.
 
 Voici un exemple qui écrit une modification sur une image qui applique un filtre de noir Image Core :
 

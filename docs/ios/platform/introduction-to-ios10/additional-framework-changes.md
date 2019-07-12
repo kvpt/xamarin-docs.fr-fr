@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: a7b029aad69e65192d48d969dba2b9bb9a0d7a50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ac255baf44951518b29112d2903950039a80ee53
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364292"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831220"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Modifications des infrastructures supplémentaires iOS 10
 
@@ -132,10 +132,10 @@ Pour plus d’informations, consultez le site d’Apple [Guide de programmation 
 
 Les améliorations suivantes ont été apportées à l’infrastructure ModelIO dans iOS 10 :
 
- - Le format de fichier (USD) est maintenant pris en charge.
- - Signé champ Distance prise en charge a été ajouté à la [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray) classe.
- - Utilisez la nouvelle `MDLLightProbeIrradianceDataSource` classe pour faciliter la sélection élective de sondage de la lumière.
- - Utilisez la nouvelle `MDLMaterialPropertyGraph` classe facilement prendre en charge runtime remplace les modèles.
+- Le format de fichier (USD) est maintenant pris en charge.
+- Signé champ Distance prise en charge a été ajouté à la [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray) classe.
+- Utilisez la nouvelle `MDLLightProbeIrradianceDataSource` classe pour faciliter la sélection élective de sondage de la lumière.
+- Utilisez la nouvelle `MDLMaterialPropertyGraph` classe facilement prendre en charge runtime remplace les modèles.
 
 ## <a name="photos-enhancements"></a>Améliorations de photos
 

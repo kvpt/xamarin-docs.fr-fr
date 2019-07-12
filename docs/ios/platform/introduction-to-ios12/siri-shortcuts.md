@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: e37fd88f0d5fcf02ece0ae2f5e3164a507067e29
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62b577393a498587ee2e2e899d20bfeec7988c4e
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034780"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832377"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Raccourcis de Siri dans Xamarin.iOS
 
@@ -218,7 +218,7 @@ Dans le **OrderSoup** définition de la réponse d’intention, notez les points
 - D’une réponse **propriétés** peut être utilisé pour personnaliser le message renvoyé à l’utilisateur. Le **OrderSoup** réponse intent a **soupe** et **waitTime** propriétés.
 - Le **modèles de réponse** spécifier les différents messages de réussite et d’échec qui peuvent être utilisées pour indiquer l’état après la fin tâche d’une intention.
 - Le **réussite** case à cocher doit être sélectionnée pour les réponses qui indiquent la réussite.
- - Le **OrderSoupIntent** réponse positive utilise le **soupe** et **waitTime** propriétés pour fournir un message convivial et utile décrivant lorsque l’ordre de soupe sera prêt.
+- Le **OrderSoupIntent** réponse positive utilise le **soupe** et **waitTime** propriétés pour fournir un message convivial et utile décrivant lorsque l’ordre de soupe sera prêt.
 
 ### <a name="generating-code-for-the-custom-intent"></a>Génération de code dans un but personnalisé
 
@@ -645,7 +645,7 @@ Dans le **Certificates, Identifiers & Profiles** section de la [portail des dév
 
 - Créez un groupe d’application pour partager des données entre l’application soupe Chef et ses extensions. Par exemple : **group.com.yourcompanyname.SoupChef**
 
-- Créer trois ID d’application : un pour l’application elle-même, l’autre pour l’extension Intents et un pour l’extension Intents UI. Exemple :
+- Créer trois ID d’application : un pour l’application elle-même, l’autre pour l’extension Intents et un pour l’extension Intents UI. Par exemple :
 
     - Application : **com.yourcompanyname.SoupChef**
         - Cet ID d’application, affectez la SiriKit et **App Groups** fonctionnalités.

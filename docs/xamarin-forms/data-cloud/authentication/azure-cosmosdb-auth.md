@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 52f4e33e051c99b7002120c055c79036828d60dd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658866"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832360"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifier les utilisateurs avec une base de données de Document Azure Cosmos DB et de Xamarin.Forms
 
@@ -96,9 +96,9 @@ Le processus de création d’une application Facebook pour exécuter l’authen
 1. Créer une application Facebook. Pour plus d’informations, consultez [inscrire et configurer une application](https://developers.facebook.com/docs/apps/register) sur le Centre pour développeurs Facebook.
 1. Ajouter le produit de la connexion Facebook à l’application. Pour plus d’informations, consultez [ajouter un compte de connexion Facebook à votre application ou site Web](https://developers.facebook.com/docs/facebook-login) sur le Centre pour développeurs Facebook.
 1. Configurez une connexion Facebook comme suit :
-  - Activer la connexion de Client OAuth.
-  - Activer la connexion de OAuth Web.
-  - Définir l’URI à l’URI de l’application web app Service, de redirection OAuth valides avec `/.auth/login/facebook/callback` ajouté.
+   - Activer la connexion de Client OAuth.
+   - Activer la connexion de OAuth Web.
+   - Définir l’URI à l’URI de l’application web app Service, de redirection OAuth valides avec `/.auth/login/facebook/callback` ajouté.
 
   La capture d’écran suivante illustre cette configuration :
 
@@ -114,12 +114,12 @@ Le processus de configuration de l’authentification simple d’App Service est
 
 1. Dans le portail Azure, accédez à l’application web app Service.
 1. Dans le portail Azure, ouvrez l’authentification / panneau autorisation et d’effectuer la configuration suivante :
-  - L’authentification App Service doit être activée.
-  - L’action à entreprendre lorsqu’une demande n’est pas authentifiée doit être définie sur **connexion avec Facebook**.
+    - L’authentification App Service doit être activée.
+    - L’action à entreprendre lorsqu’une demande n’est pas authentifiée doit être définie sur **connexion avec Facebook**.
 
-  La capture d’écran suivante illustre cette configuration :
+    La capture d’écran suivante illustre cette configuration :
 
-  [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "Paramètres d’authentification App Service Web application")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "paramètres d’authentification App Service Web App")
+    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "Paramètres d’authentification App Service Web application")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "paramètres d’authentification App Service Web App")
 
 L’application web app Service doit également être configuré pour communiquer avec l’application Facebook pour activer le flux d’authentification. Cela est possible en sélectionnant le fournisseur d’identité Facebook et en entrant le **ID d’application** et **Secret d’application** valeurs à partir des paramètres d’application Facebook sur le Centre pour développeurs Facebook. Pour plus d’informations, consultez [Facebook ajouter des informations à votre application](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 
@@ -131,10 +131,10 @@ Le processus de configuration de l’exemple d’application Xamarin.Forms est c
 
 1. Ouvrez la solution Xamarin.Forms.
 1. Ouvrez `Constants.cs` et mettre à jour les valeurs des constantes suivantes :
-  - `EndpointUri` – la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
-  - `DatabaseName` – la valeur doit être le nom de la base de données de document.
-  - `CollectionName` – la valeur doit être le nom de la collection de base de données de document (dans ce cas, `UserItems`).
-  - `ResourceTokenBrokerUrl` – la valeur doit être l’URL de l’application de web de répartition des jetons de ressource à partir du Panneau de vue d’ensemble du compte de Service de l’application.
+    - `EndpointUri` – la valeur doit être l’URL du compte Cosmos DB à partir du panneau clés du compte Cosmos DB.
+    - `DatabaseName` – la valeur doit être le nom de la base de données de document.
+    - `CollectionName` – la valeur doit être le nom de la collection de base de données de document (dans ce cas, `UserItems`).
+    - `ResourceTokenBrokerUrl` – la valeur doit être l’URL de l’application de web de répartition des jetons de ressource à partir du Panneau de vue d’ensemble du compte de Service de l’application.
 
 ## <a name="initiating-login"></a>Lancement de connexion
 

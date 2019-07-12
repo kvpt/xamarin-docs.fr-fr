@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 232fcd1d369eba1daad170986f2e2c4c913a3649
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 816ec5c861b5889e1735eab6293ed10318c53644
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61307861"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831881"
 ---
 # <a name="debug-on-a-wear-device"></a>Déboguer sur un appareil Wear
 
 _Cet article explique comment déboguer une application Xamarin.Android usure sur un appareil Wear._
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Si vous avez un appareil Android Wear, par exemple un Smartwatch Android Wear, vous pouvez exécuter l’application sur l’appareil au lieu d’utiliser un émulateur. (Si vous n’êtes pas encore familiarisé avec le processus de déploiement et l’exécution d’applications de Android Wear, consultez [Wear Hello,](~/android/wear/get-started/hello-wear.md).)
 
@@ -77,7 +77,8 @@ Utilisez les étapes suivantes pour connecter votre appareil d’usure à votre 
 
     Si le port 4444 n’est pas disponible, vous pouvez utiliser n’importe quel autre port disponible auquel vous avez accès. 
 
-    **Remarque** : Si vous redémarrez Visual Studio ou Visual Studio pour Mac, vous devez exécuter ces commandes pour configurer une connexion à l’appareil de l’usure.
+    > [!NOTE]
+    > Si vous redémarrez Visual Studio ou Visual Studio pour Mac, vous devez exécuter ces commandes pour configurer une connexion à l’appareil de l’usure.
 
 5.  Lorsque l’appareil Wear vous y invite, confirmez que vous autorisez **ADB débogage**. Dans l’application Android Wear, vous devriez voir l’état changer à :
 

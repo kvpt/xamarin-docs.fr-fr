@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0a72dead1b6c001f1514f1a089df9b407eb90644
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cca147f0c5dd1a217f464ffbed2a1ad2618c9b80
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037308"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830197"
 ---
 # <a name="async-support-overview"></a>Présentation de la prise en charge asynchrone
 
@@ -19,11 +19,11 @@ _C#5 a introduit deux mots clés pour simplifier la programmation asynchrone : 
 
 Prise en charge asynchrone de Xamarin repose sur les fondations de Mono 3.0 et le profil d’API est mis à niveau à partir d’une version compatible avec les mobiles de Silverlight pour être une version compatible avec les mobiles de .NET 4.5 en cours.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Ce document présente la nouvelle async et await mots clés, présente quelques exemples simples implémentation des méthodes asynchrones dans Xamarin.iOS et Xamarin.Android.
 
-Pour une description plus complète des nouvelles fonctionnalités asynchrones de C# 5 (y compris un grand nombre d’exemples et de différents scénarios d’utilisation) font référence à la documentation MSDN [programmation asynchrone avec Async et Await](https://msdn.microsoft.com/library/vstudio/hh191443.aspx).
+Pour une description plus complète des nouvelles fonctionnalités asynchrones de C# 5 (y compris un grand nombre d’exemples et de différents scénarios d’utilisation), consultez l’article [programmation asynchrone](https://docs.microsoft.com/dotnet/csharp/async).
 
 L’exemple d’application effectue une requête web asynchrone simple (sans bloquer le thread principal) puis met à jour de l’interface utilisateur avec le html téléchargé et le nombre de caractères.
 
@@ -69,7 +69,7 @@ L’opérateur await peut être appliqué à une tâche à l’intérieur d’un
 
 Lorsque la tâche se termine, la méthode continue de s’exécuter au même point dans le code. Cela inclut le retour à la portée de réessayer d’un bloc try-catch-finally (s’il en existe). await ne peut pas être utilisé dans un bloc catch ou le bloc finally.
 
-En savoir plus sur [await sur MSDN](https://msdn.microsoft.com/library/vstudio/hh156528.aspx).
+En savoir plus sur [await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await) sur Microsoft Docs.
 
 ## <a name="exception-handling"></a>Gestion des exceptions
 
@@ -85,9 +85,9 @@ Les méthodes asynchrones qui prennent beaucoup de temps doivent prendre en char
 
 Ensuite, la tâche s’annule et accuse réception de l’annulation.
 
-Pour plus d’informations sur l’annulation, consultez [comment annuler une tâche asynchrone](https://msdn.microsoft.com/library/vstudio/jj155761.aspx) sur MSDN.
+Pour plus d’informations sur l’annulation, consultez [Réglage de votre application Async (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Téléchargez le [exemple solution Xamarin](https://developer.xamarin.com/samples/mobile/AsyncAwait/) (pour iOS et Android) pour voir un exemple fonctionnel de `async` et `await` dans des applications mobiles. L’exemple de code est abordée plus en détail dans cette section.
 
@@ -201,10 +201,9 @@ Ce document a donné une vue d’ensemble de nouveaux mots clés de langage et d
 - [Données (iOS) (exemple)](https://developer.xamarin.com/samples/monotouch/Data/)
 - [HttpClient (iOS) (sample)](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) (sample)](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
-- [Séminaire Web : C#Async sur iOS et Android (vidéo)](http://xamarin.wistia.com/medias/k27mc627xz)
-- [Programmation asynchrone avec Async et Await (MSDN)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)
-- [Réglage de votre application Async (MSDN)](https://msdn.microsoft.com/library/vstudio/jj155761.aspx)
-- [Await et l’interface utilisateur et les interblocages ! Mon Dieu ! (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
-- [Traitement des tâches terminées (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
+- [Programmation asynchrone](https://docs.microsoft.com/dotnet/csharp/async)
+- [Ajuster une application Async (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)
+- [Await et l’interface utilisateur et les interblocages ! Mon Dieu !](https://devblogs.microsoft.com/pfxteam/await-and-ui-and-deadlocks-oh-my/)
+- [Traitement des tâches terminées)](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)
 - [Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)](https://msdn.microsoft.com/library/hh873175.aspx)
 - [L’asynchronie dans C# 5 (blog de Eric Lippert) – sur l’introduction des mots clés](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

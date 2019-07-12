@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: d9c73dfcee6321ecb314ca229db407c6d0438977
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342539"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832261"
 ---
 # <a name="using-the-model-class"></a>À l’aide de la classe de modèle
 
@@ -44,7 +44,7 @@ Avant de continuer, nous devons vérifier que le projet s’ouvre et déploie co
 
 Le format de fichier .xnb est une extension standard pour le contenu généré (le contenu qui a été créé par le [outil de Pipeline MonoGame](http://www.monogame.net/documentation/?page=Pipeline)). Tout le contenu généré a un fichier source (qui est un fichier .fbx dans le cas de notre modèle) et un fichier de destination (fichier .xnb). Le format .fbx est un format de modèle 3D courants qui peut être créé par les applications telles que [Maya](http://www.autodesk.com/products/maya/overview) et [Blender](http://www.blender.org/). 
 
-Le `Model` classe peut être construite en chargeant un fichier .xnb à partir d’un disque qui contient des données géométriques 3D.   Ce fichier .xnb est créé via un projet de contenu. Modèles de Monogame incluent automatiquement un projet de contenu (avec l’extension .mgcp) dans notre dossier de contenu. Pour obtenir une présentation détaillée sur l’outil de Pipeline de MonoGame, consultez le [guide du Pipeline de contenu](~/graphics-games/cocossharp/content-pipeline/index.md).
+Le `Model` classe peut être construite en chargeant un fichier .xnb à partir d’un disque qui contient des données géométriques 3D.   Ce fichier .xnb est créé via un projet de contenu. Modèles de Monogame incluent automatiquement un projet de contenu (avec l’extension .mgcp) dans notre dossier de contenu. Pour obtenir une présentation détaillée sur l’outil de Pipeline de MonoGame, consultez le [guide du Pipeline de contenu](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md).
 
 Pour ce guide, nous allons sauter sur l’utilisation du MonoGame Pipeline outil et utilisera le. Fichiers XNB inclus ici. Notez que le. Les fichiers XNB diffèrent par la plateforme, par conséquent, veillez à utiliser l’ensemble correct de fichiers XNB pour quelle que soit la plateforme que vous travaillez.
 

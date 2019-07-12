@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: e9c18920386cb58f152d7631c52240b4b5b72ff9
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 88496452595f308c97d26d0f27fae305baef894f
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977840"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830824"
 ---
 # <a name="stack-views-in-xamarinios"></a>Vues de pile dans Xamarin.iOS
 
@@ -197,16 +197,16 @@ Alors que la vue de la pile a un contrôle total sur la disposition de n’impor
 
 En règle générale, cela signifie que l’épinglage au moins deux bords de l’affichage de la pile pour être accrus ou réduits, définissant ainsi sa position. Sans contraintes supplémentaires, la vue de la pile sont automatiquement redimensionnée pour s’ajuster à tous ses sous-vues comme suit :
 
- - La taille le long de son `Axis` sera la somme de toutes les tailles de sous-affichage et n’importe quel espace qui a été défini entre chaque sous-affichage.
- - Si le `LayoutMarginsRelativeArrangement` propriété est `true`, la taille de pile vues inclut également de place pour les marges.
- - La taille perpendiculaire à la `Axis` a la valeur la plus grande sous-affichage dans la collection.
+- La taille le long de son `Axis` sera la somme de toutes les tailles de sous-affichage et n’importe quel espace qui a été défini entre chaque sous-affichage.
+- Si le `LayoutMarginsRelativeArrangement` propriété est `true`, la taille de pile vues inclut également de place pour les marges.
+- La taille perpendiculaire à la `Axis` a la valeur la plus grande sous-affichage dans la collection.
 
 En outre, vous pouvez spécifier des contraintes pour la vue pile **hauteur** et **largeur**. Dans ce cas, les sous-affichages sont disposées (taille) pour remplir l’espace spécifié par la vue pile, comme déterminé par le `Distribution` et `Alignment` propriétés.
 
 Si le `BaselineRelativeArrangement` propriété est `true`, les sous-affichages sont disposées en fonction de la ligne de base du sous-affichage premier ou dernier, au lieu d’utiliser le **haut**, **bas** ou **Center** -  **Y** position. Ceux-ci sont calculées sur le contenu de la vue pile comme suit :
 
- - Une vue de la pile verticale renvoie le premier sous-affichage pour la première ligne de base et le dernier pour la dernière. Si une de ces sous-vues sont eux-mêmes des vues de la pile, puis leur ligne de base du premier ou dernier servira.
- - Un affichage Horizontal de la pile utilisera sa plus grand sous-affichage pour les deux la première et la dernière ligne de base. Si la vue la plus haute est également une vue de la pile, il utilisera sa plus grand sous-affichage en tant que la ligne de base.
+- Une vue de la pile verticale renvoie le premier sous-affichage pour la première ligne de base et le dernier pour la dernière. Si une de ces sous-vues sont eux-mêmes des vues de la pile, puis leur ligne de base du premier ou dernier servira.
+- Un affichage Horizontal de la pile utilisera sa plus grand sous-affichage pour les deux la première et la dernière ligne de base. Si la vue la plus haute est également une vue de la pile, il utilisera sa plus grand sous-affichage en tant que la ligne de base.
 
 > [!IMPORTANT]
 > Alignement de ligne de base ne fonctionne pas sur les tailles de sous-affichage étirée ou compressée que la ligne de base correspond à une position incorrecte. Pour l’alignement de ligne de base, vérifiez que le sous-affichage **hauteur** correspond à la vue contenu intrinsèque **hauteur**.
@@ -216,9 +216,9 @@ Si le `BaselineRelativeArrangement` propriété est `true`, les sous-affichages 
 Il existe plusieurs types de disposition qui fonctionnent correctement avec les contrôles d’affichage de la pile. En fonction d’Apple, voici quelques-unes des utilisations plus courantes :
 
 - **Définir la taille le long de l’axe** – en épinglant les deux bords le long de la vue pile `Axis` et les bords adjacents pour définir la position, la pile vue augmentera le long de l’axe en fonction de l’espace défini par ses sous-vues.
- -  **Définir Position du sous-affichage** – en épinglant à bords adjacents de la vue de la pile à la vue de son parent, la vue pile augmentera dans les deux dimensions en fonction de son conteneur sous-vues.
+- **Définir Position du sous-affichage** – en épinglant à bords adjacents de la vue de la pile à la vue de son parent, la vue pile augmentera dans les deux dimensions en fonction de son conteneur sous-vues.
 - **Définir la taille et la Position de la pile** – en épinglant toutes les quatre bords de la vue de la pile à la vue parent, la vue pile organise les sous-vues en fonction de l’espace défini dans la vue de la pile.
- -  **Définir la taille perpendiculaires l’axe** – en épinglant les deux perpendiculairement bords à la vue pile `Axis` et l’autre des bords sur l’axe pour définir la position, la pile vue augmentera perpendiculaire à l’axe en fonction de l’espace défini par ses sous-vues.
+- **Définir la taille perpendiculaires l’axe** – en épinglant les deux perpendiculairement bords à la vue pile `Axis` et l’autre des bords sur l’axe pour définir la position, la pile vue augmentera perpendiculaire à l’axe en fonction de l’espace défini par ses sous-vues.
 
 ### <a name="managing-the-appearance"></a>La gestion de l’apparence
 
@@ -241,14 +241,14 @@ Vous pouvez affiner l’apparence des interfaces utilisateur en ajoutant des con
 
 La vue de la pile permet de garantir que ses `ArrangedSubviews` propriété est toujours un sous-ensemble de ses `Subviews` propriété utilisant les règles suivantes :
 
- - Si un sous-affichage est ajouté à la `ArrangedSubviews` collection, il est automatiquement ajoutée à la `Subviews` collection (sauf si elle fait déjà partie de cette collection).
- - Si un sous-affichage est supprimé de la `Subviews` collection (supprimés à partir de l’affichage), il est également supprimé de la `ArrangedSubviews` collection.
- - Suppression d’un sous-affichage à partir de la `ArrangedSubviews` collection sans la supprimer à partir de la `Subviews` collection. Par conséquent, il sera n’est plus disposé par la vue de la pile, mais sera toujours visible sur l’écran.
+- Si un sous-affichage est ajouté à la `ArrangedSubviews` collection, il est automatiquement ajoutée à la `Subviews` collection (sauf si elle fait déjà partie de cette collection).
+- Si un sous-affichage est supprimé de la `Subviews` collection (supprimés à partir de l’affichage), il est également supprimé de la `ArrangedSubviews` collection.
+- Suppression d’un sous-affichage à partir de la `ArrangedSubviews` collection sans la supprimer à partir de la `Subviews` collection. Par conséquent, il sera n’est plus disposé par la vue de la pile, mais sera toujours visible sur l’écran.
 
 Le `ArrangedSubviews` collection est toujours un sous-ensemble de la `Subview` collection, toutefois l’ordre des sous-vues individuels au sein de chaque collection est distinct et contrôlée par les éléments suivants :
 
- - L’ordre des sous-vues au sein de la `ArrangedSubviews` ensemble déterminer leur ordre d’affichage dans la pile.
- - L’ordre des sous-vues au sein de la `Subview` collection détermine leur ordre de plan (ou superposition) dans la vue arrière vers l’avant.
+- L’ordre des sous-vues au sein de la `ArrangedSubviews` ensemble déterminer leur ordre d’affichage dans la pile.
+- L’ordre des sous-vues au sein de la `Subview` collection détermine leur ordre de plan (ou superposition) dans la vue arrière vers l’avant.
 
 ### <a name="dynamically-changing-content"></a>Modifier dynamiquement le contenu
 

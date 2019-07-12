@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 4ee07e4b47ed9e1bdca0efc814ad44e513f68e80
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076581"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830141"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Recherche avec le balisage Web dans Xamarin.iOS
 
@@ -63,7 +63,7 @@ Nouveau à iOS 9, des liens universels fournissent une meilleure alternative à 
 
 ## <a name="using-twitter-cards"></a>À l’aide de cartes de Twitter
 
-Vous pouvez fournir des liens ciblés vers le contenu de votre application à l’aide d’une carte de Twitter. Exemple :
+Vous pouvez fournir des liens ciblés vers le contenu de votre application à l’aide d’une carte de Twitter. Par exemple :
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -75,7 +75,7 @@ Pour plus d’informations, consultez le site de Twitter [protocole de carte Twi
 
 ## <a name="using-facebook-app-links"></a>À l’aide de liens d’application Facebook
 
-Vous pouvez fournir des liens ciblés vers le contenu de votre application à l’aide d’un Facebook application Link. Exemple :
+Vous pouvez fournir des liens ciblés vers le contenu de votre application à l’aide d’un Facebook application Link. Par exemple :
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -87,7 +87,7 @@ Pour plus d’informations, consultez le site de Facebook [liens application](ht
 
 ## <a name="opening-deep-links"></a>Ouverture des liens ciblés
 
-Vous devez ajouter la prise en charge pour l’ouverture et l’affichage des liens ciblés dans votre application Xamarin.iOS. Modifier le **AppDelegate.cs** de fichiers et de remplacer le `OpenURL` méthode pour gérer le format d’URL personnalisé. Exemple :
+Vous devez ajouter la prise en charge pour l’ouverture et l’affichage des liens ciblés dans votre application Xamarin.iOS. Modifier le **AppDelegate.cs** de fichiers et de remplacer le `OpenURL` méthode pour gérer le format d’URL personnalisé. Par exemple :
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -121,7 +121,7 @@ En incluant le balisage de données structurées, vous pouvez fournir des résul
 
 Résultats de riches sont plus intéressantes et peuvent aider à améliorer les Index de recherche de base de votre classement dans le Cloud en incitant davantage d’utilisateurs d’interagir avec elles.
 
-Une option permettant de balise structuré de données consiste à l’aide d’Open Graph. Exemple :
+Une option permettant de balise structuré de données consiste à l’aide d’Open Graph. Par exemple :
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -131,7 +131,7 @@ Une option permettant de balise structuré de données consiste à l’aide d’
 
 Pour plus d’informations, consultez le [Open Graph](http://ogp.me) site Web.
 
-Un autre courantes format de balise structuré de données est de schema.org microdonnées. Exemple :
+Un autre courantes format de balise structuré de données est de schema.org microdonnées. Par exemple :
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -158,14 +158,14 @@ Voici un exemple de métadonnées à partir de votre site Web en fournissant des
 
 Apple prend actuellement en charge les types de schéma suivants à partir de schema.org :
 
- - AggregateRating
- - ImageObject
- - InteractionCount
- - Offres
- - Organisation
- - PriceRange
- - Recipe (Recette)
- - SearchAction
+- AggregateRating
+- ImageObject
+- InteractionCount
+- Offres
+- Organisation
+- PriceRange
+- Recipe (Recette)
+- SearchAction
 
 Pour plus d’informations sur ces types de schéma, consultez [schema.org](http://schema.org).
 
@@ -173,9 +173,9 @@ Pour plus d’informations sur ces types de schéma, consultez [schema.org](http
 
 Les types spécifiques de données structurées permettra un résultat de recherche pouvoir être exploitable par l’utilisateur final. Actuellement, les actions suivantes sont prises en charge :
 
- - Composer un numéro de téléphone.
- - Obtention de direction de mappage à une adresse donnée.
- - Lecture d’un fichier audio ou vidéo.
+- Composer un numéro de téléphone.
+- Obtention de direction de mappage à une adresse donnée.
+- Lecture d’un fichier audio ou vidéo.
 
 Par exemple, la définition d’une Action pour composer un numéro de téléphone peut se présenter comme suit :
 

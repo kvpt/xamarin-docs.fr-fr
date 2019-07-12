@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
-ms.openlocfilehash: 45886d787ecc40c9e11ce0c713ffa22819e29db2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e28ba19fdc972b962f0dcd2757f1ba9087ac5c27
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227298"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831778"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS les tâches en arrière-plan dans Xamarin
 
@@ -54,7 +54,7 @@ Comme indiqué ci-dessus, le système watchOS sort de l’application à l’aid
 
 Apple vous suggérons de tirer le meilleur de cette tâche (dans la mesure où il s’agit de ce type d’une ressource limitée à l’application) en maintenant sur celui-ci jusqu'à ce que l’application a terminé le processus de mise à jour lui-même.
 
-Le système propose ces services tâches en appelant la nouvelle `HandleBackgroundTasks` méthode de la `WKExtensionDelegate` déléguer. Exemple :
+Le système propose ces services tâches en appelant la nouvelle `HandleBackgroundTasks` méthode de la `WKExtensionDelegate` déléguer. Par exemple :
 
 ```csharp
 using System;
@@ -141,7 +141,7 @@ Là encore, le système émet un `WKSnapshotRefreshBackgroundTask` afin de pouvo
 Lorsque l’application marque le `WKSnapshotRefreshBackgroundTask` terminé, le système mettra automatiquement un instantané de l’interface utilisateur de l’application.
 
 > [!IMPORTANT]
-> Il est important de toujours planifier un ` WKSnapshotRefreshBackgroundTask` après l’application a reçu de nouvelles données et mis à jour son Interface utilisateur ou l’utilisateur ne voit pas les informations modifiées.
+> Il est important de toujours planifier un `WKSnapshotRefreshBackgroundTask` après l’application a reçu de nouvelles données et mis à jour son Interface utilisateur ou l’utilisateur ne voit pas les informations modifiées.
 
 
 

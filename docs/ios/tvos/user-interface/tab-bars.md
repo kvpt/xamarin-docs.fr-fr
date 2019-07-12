@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a0efc30fd9814e4da858c4e3e4e99990eccf102e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7ac4d0effc1067b065bad114160dc8648e998dad
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61164297"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830793"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Utilisation de tvOS contrôleurs de barre d’onglet dans Xamarin
 
@@ -111,7 +111,7 @@ Pour travailler avec des barres d’onglets dans une application Xamarin.tvOS, l
 -----
 
 > [!IMPORTANT]
-> Bien qu’il soit possible d’attribuer des événements tels que `TouchUpInside` à un élément d’interface utilisateur (comme un `UIButton`) dans le concepteur iOS, il ne sera jamais appelée car Apple TV n’a pas une pression tactile écran ou de prendre en charge les événements tactiles. Vous devez toujours utiliser le `Primary Action ` événement lors de la création des éléments d’interface utilisateur de gestionnaires d’événements pour tvOS.
+> Bien qu’il soit possible d’attribuer des événements tels que `TouchUpInside` à un élément d’interface utilisateur (comme un `UIButton`) dans le concepteur iOS, il ne sera jamais appelée car Apple TV n’a pas une pression tactile écran ou de prendre en charge les événements tactiles. Vous devez toujours utiliser le `Primary Action` événement lors de la création des éléments d’interface utilisateur de gestionnaires d’événements pour tvOS.
 
 Pour plus d’informations sur l’utilisation des tables de montage séquentiel, consultez notre [Hello, tvOS Guide de démarrage rapide](~/ios/tvos/get-started/hello-tvos.md). 
 

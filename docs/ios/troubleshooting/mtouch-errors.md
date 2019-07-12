@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: e6e3a989db922dc2941cca4c888c862ffe159241
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d7684df771f24ecf9126f472e7d799eea4a5431
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61422050"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832702"
 ---
 # <a name="xamarinios-errors"></a>Erreurs de Xamarin.iOS
 
@@ -583,7 +583,7 @@ L’assembly mentionné dans le message d’erreur est spécifié plusieurs fois
 
 Les assemblys mentionnés dans le message d’erreur ont des cibles de génération en conflit.
 
-Exemple :
+Par exemple :
 
     --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
 
@@ -595,7 +595,7 @@ Cet exemple tente de créer une bibliothèque dynamique et une infrastructure av
 
 Les assemblys mentionnés dans le message d’erreur sont compilés à un seul objet statique. Cela n’est pas autorisé, tous les assemblys doivent être compilées dans un autre objet statique.
 
-Exemple :
+Par exemple :
 
     --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
 
@@ -838,7 +838,7 @@ Pour plus d’informations, consultez de bogue[52727](https://bugzilla.xamarin.c
 
 Une défaillance s’est produite lors de la toucher un fichier (ce qui est effectué pour garantir des builds partielles sont effectuées correctement).
 
-Cet avertissement peut probablement être ignoré ; en cas de problème signaler un bogue (https://bugzilla.xamarin.com] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) et il est examiné.
+Cet avertissement peut probablement être ignoré ; en cas de problème signaler un bogue (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) et il est examiné.
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx : Messages d’erreur associés du projet
 
@@ -951,7 +951,7 @@ Supprimer le répertoire `NOTICE` à partir du projet.
 
 ### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019 : Votre application possède les droits non pris en charge par votre profil de provisionnement en cours et n’a pas pu être installée sur l’appareil ' *'. Vérifiez le journal de l’appareil iOS pour des informations détaillées (erreur : 0xe8008016).
 
-Cela peut se produire si :
+Cela peut se produire si :
 
 * Votre application dispose de droits que le profil d’approvisionnement actuel ne prend pas en charge.
   Solutions possibles :
@@ -1578,7 +1578,7 @@ Le dernier chiffre `x` sera :
 
 Une erreur inattendue s’est produite lors de la tentative de suppression de ressources de l’utilisateur. L’assembly qui provoque le problème est nommé dans le message d’erreur. Pour résoudre ce problème à l’assembly sera doivent être fournis dans un [des bogues, rapport](http://bugzilla.xamarin.com) ainsi que d’un journal de génération complète avec le niveau de détail activée (par exemple, `-v -v -v -v` dans le **arguments mtouch supplémentaires**).
 
-Ressources de l’utilisateur sont des fichiers incluses dans les assemblys qui doivent être extraites au moment de la génération, pour créer le bundle d’applications (en tant que ressources). Cela concerne :
+Ressources de l’utilisateur sont des fichiers incluses dans les assemblys qui doivent être extraites au moment de la génération, pour créer le bundle d’applications (en tant que ressources). notamment :
 
 * `__monotouch_content_*` et `__monotouch_pages_*` ressources ; et
 * Bibliothèques natives incorporés à l’intérieur d’un assembly de liaison ;
@@ -1723,7 +1723,7 @@ Désactivez la prise en charge Bitcode ou activer la LLVM.
 
 ## <a name="mt4xxx-code-generation-error-messages"></a>MT4xxx : Messages d’erreur de génération de code
 
-### <a name="mt40xx-main"></a>MT40xx : Main
+### <a name="mt40xx-main"></a>MT40xx : Principal
 
 <!--
  MT4xxx code generation
@@ -1840,7 +1840,7 @@ Il s’agit toujours d’un bogue dans Xamarin.iOS ; Veuillez soumettre un rapp
 
 <a name="MT4117" />
 
-### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117 : Le bureau d’enregistrement trouvé une non-correspondance de signature dans la méthode '*.*»-le sélecteur indique la méthode accepte * paramètres, alors que la méthode managée a * paramètres.
+### <a name="mt4117-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4117 : Le bureau d’enregistrement trouvé une non-correspondance de signature dans la méthode ' *.* »-le sélecteur indique la méthode accepte * paramètres, alors que la méthode managée a * paramètres.
 
 <a name="MT4118" />
 
@@ -1934,7 +1934,7 @@ Cette erreur indique un bogue dans Xamarin.iOS. Veuillez soumettre un rapport de
 
 <a name="MT4140" />
 
-### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140 : Le bureau d’enregistrement trouvé une non-correspondance de signature dans la méthode '*.*»-le sélecteur indique la méthode variadiques prend * paramètres, alors que la méthode managée a * paramètres.
+### <a name="mt4140-the-registrar-found-a-signature-mismatch-in-the-method----the-selector-indicates-the-variadic-method-takes--parameters-while-the-managed-method-has--parameters"></a>MT4140 : Le bureau d’enregistrement trouvé une non-correspondance de signature dans la méthode ' *.* »-le sélecteur indique la méthode variadiques prend * paramètres, alors que la méthode managée a * paramètres.
 
 <a name="MT4141" />
 
@@ -2141,7 +2141,7 @@ Vérifiez que le type dans l’attribut BindAs correspond au type du membre, qu'
 
 Le bureau d’enregistrement ne prend pas en charge la conversion entre les types mentionnés.
 
-Il s’agit un bogue dans Xamarin.iOS si l’API en question est fourni par Xamarin.iOS ; Veuillez soumettre un bogue sur [ http://bugzilla.xamarin.com ] [ 1].
+Il s’agit un bogue dans Xamarin.iOS si l’API en question est fourni par Xamarin.iOS ; Veuillez soumettre un bogue sur [ http://bugzilla.xamarin.com ][1].
 
 Si vous rencontrez ce problème lors du développement d’un projet de liaison pour une bibliothèque native, nous sommes ouverts à l’ajout de prise en charge de nouvelles combinaisons de types. Si c’est le cas, envoyez une demande d’amélioration ([http://bugzilla.xamarin.com][2]) avec un test de cas et nous allons évaluez-le.
 
@@ -2310,7 +2310,7 @@ Cette erreur est signalée uniquement avec [MT5212](#MT5212). Consultez [MT5212]
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214 : Natif liaison ayant échoué, undefined symbole : *. Ce symbole a été référencé le membre géré *. Vérifiez que toutes les infrastructures nécessaires ont été les bibliothèques natives et référencés liés.
 
-Cette erreur est signalée lorsque le code managé contient un P/Invoke vers une méthode native qui n’existe pas. Exemple :
+Cette erreur est signalée lorsque le code managé contient un P/Invoke vers une méthode native qui n’existe pas. Par exemple :
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2322,9 +2322,9 @@ class MyImports {
 
 Il existe quelques solutions possibles :
 
-  -  Supprimer le P/Invoke en question à partir du code source.
-  -  Activer l’éditeur de liens managé pour tous les assemblys (cela en des options Build iOS du projet, en définissant « Comportement de l’éditeur de liens » à « Tous les assemblys »). Cela supprimera efficacement tous le P/Invoke vous n’utilisez pas de l’application (automatiquement, au lieu de manuellement comme le point précédent). L’inconvénient est que cela rendra vos builds du simulateur un peu plus lent, et elle peut endommager votre application si elle utilise la réflexion, vous pouvez trouver plus d’informations sur l’éditeur de liens [ici](~/ios/deploy-test/linker.md) )
-  -  Créer une deuxième bibliothèque native qui contient les symboles natifs manquants. Notez qu’il s’agit simplement d’une solution de contournement (s’il vous arrive d’essaie d’appeler ces fonctions, votre application se bloque).
+- Supprimer le P/Invoke en question à partir du code source.
+- Activer l’éditeur de liens managé pour tous les assemblys (cela en des options Build iOS du projet, en définissant « Comportement de l’éditeur de liens » à « Tous les assemblys »). Cela supprimera efficacement tous le P/Invoke vous n’utilisez pas de l’application (automatiquement, au lieu de manuellement comme le point précédent). L’inconvénient est que cela rendra vos builds du simulateur un peu plus lent, et elle peut endommager votre application si elle utilise la réflexion, vous pouvez trouver plus d’informations sur l’éditeur de liens [ici](~/ios/deploy-test/linker.md) )
+- Créer une deuxième bibliothèque native qui contient les symboles natifs manquants. Notez qu’il s’agit simplement d’une solution de contournement (s’il vous arrive d’essaie d’appeler ces fonctions, votre application se bloque).
 
 <a name="MT5215" />
 
@@ -2739,10 +2739,10 @@ Où * peut être :
 - array
 - dict
 - bool
-- réels
-- entiers
+- real
+- integer
 - date
-- Données
+- data
 
 <a name="MT7046" />
 
@@ -2919,7 +2919,7 @@ Cela indique que quelque chose ne va pas dans le processus de génération. Veui
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009 : Impossible de localiser le bloc pour la méthode de conversion pour la méthode déléguée *.*' s paramètre #*. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009 : Impossible de localiser le bloc pour la méthode de conversion pour la méthode déléguée *.* ' s paramètre #*. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 Cela indique une API n’a pas été correctement liée. S’il s’agit d’une API exposée par Xamarin, veuillez soumettre un bogue dans notre bugzilla ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)), s’il s’agit d’une liaison par des tiers, contactez le fournisseur.
 
@@ -2931,7 +2931,7 @@ Cela indique que quelque chose ne va pas dans le processus de génération. Veui
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011 : Impossible de localiser le délégué pour l’attribut block de conversion ([DelegateProxy]) pour la valeur de retour pour la méthode *.*. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011 : Impossible de localiser le délégué pour l’attribut block de conversion ([DelegateProxy]) pour la valeur de retour pour la méthode *.* . Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 Xamarin.iOS n’a pas pu trouver une méthode requise lors de l’exécution (convertir un délégué à un bloc).
 
@@ -2939,7 +2939,7 @@ Cela indique généralement un bogue dans Xamarin.iOS ; Veuillez soumettre un b
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.*: Type_délégué est null. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.* : Type_délégué est null. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 L’attribut DelegateProxy pour la méthode en question n’est pas valide.
 
@@ -2947,7 +2947,7 @@ Cela indique généralement un bogue dans Xamarin.iOS ; Veuillez soumettre un b
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.*: Type_délégué ({2}) spécifie un type de champ 'Handler'. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.* : Type_délégué ({2}) spécifie un type de champ 'Handler'. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 L’attribut DelegateProxy pour la méthode en question n’est pas valide.
 
@@ -2955,7 +2955,7 @@ Cela indique généralement un bogue dans Xamarin.iOS ; Veuillez soumettre un b
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.*: Le Type_délégué ({2}) le champ 'Handler' est null. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.* : Le Type_délégué ({2}) le champ 'Handler' est null. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 L’attribut DelegateProxy pour la méthode en question n’est pas valide.
 
@@ -2963,7 +2963,7 @@ Cela indique généralement un bogue dans Xamarin.iOS ; Veuillez soumettre un b
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.*: Le Type_délégué ({2}) champ de 'Handler' n’est pas un délégué, il est un *. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015 : DelegateProxyAttribute non valide pour la valeur de retour pour la méthode *.* : Le Type_délégué ({2}) champ de 'Handler' n’est pas un délégué, il est un *. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 L’attribut DelegateProxy pour la méthode en question n’est pas valide.
 
@@ -2971,7 +2971,7 @@ Cela indique généralement un bogue dans Xamarin.iOS ; Veuillez soumettre un b
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016 : Impossible de convertir le délégué pour bloquer pendant la valeur de retour pour la méthode *.*, car l’entrée n’est pas un délégué, il est un *. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016 : Impossible de convertir le délégué pour bloquer pendant la valeur de retour pour la méthode *.* , car l’entrée n’est pas un délégué, il est un *. Veuillez soumettre un bogue sur http://bugzilla.xamarin.com.
 
 L’attribut DelegateProxy pour la méthode en question n’est pas valide.
 

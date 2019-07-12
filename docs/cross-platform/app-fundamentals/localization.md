@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4799d6aaa095127e242c5e0750db686519d0c21d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a1218d836aad827390d9f5e70de189a869b7c6b8
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61226528"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831001"
 ---
 # <a name="localization"></a>Localisation
 
@@ -31,17 +31,17 @@ Si vous souhaitez passer directement aux détails techniques de localisation d�
 
 Il est souvent abrégée en i18n – abréviation de 18 lettres entre « i » et « n » de l’internationalisation. La localisation est réduite de la même façon pour L10n – pour 10 lettres entre « L » et « n ».
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Ce document présente les concepts associés à l’internationalisation et localisation et comment elles s’appliquent au développement d’applications mobiles en général.
 Lorsque conception et la création d’une application, les choses que vous deviez précédemment codée en dur, mais qui doivent paramétrables pour la localisation incluent :
 
--   Dispositions d’écran et du texte,
--   Icônes, les graphiques et les couleurs,
--   Fichiers vidéo et audio,
--   Texte dynamique et la mise en forme texte (par exemple, des nombres, devises et dates),
- - Modifications de mise en page langues de droite-à-gauche (RTL), et
--   Tri des données.
+- Dispositions d’écran et du texte,
+- Icônes, les graphiques et les couleurs,
+- Fichiers vidéo et audio,
+- Texte dynamique et la mise en forme texte (par exemple, des nombres, devises et dates),
+- Modifications de mise en page langues de droite-à-gauche (RTL), et
+- Tri des données.
 
 Quels que soient les plateformes mobiles, votre application cible les conseils suivants vous aideront à créer une application localisée de haute qualité.
 
@@ -81,9 +81,9 @@ Autres tâches apparemment simples telles que la validation d’une adresse de m
 Pas à chaque image doit changer en fonction des choix de la langue d’un utilisateur. Plusieurs icônes ou les photos seront adaptées à tous les utilisateurs, peu importe quelle langue parlée.
 Sens de certaines ressources à localiser, telles que :
 
- - Images représentant des personnes ou des emplacements spécifiques – votre application se sentiront peut-être plus pertinente pour les utilisateurs si elle présente des personnes/emplacements locaux.
- - Icônes – certains iconographie peut être spécifiques à la culture et vous pouvez rendre votre application plus facile à utiliser en localisant l’imagerie afin de refléter la présentation locale.
- - Couleurs – certaines cultures comprennent les couleurs différemment : rouge peut vouloir dire avertissement dans une région, mais bonne chance dans un autre. Vérifiez auprès de leur langue maternelle lors de la conception de votre application pour déterminer si vous êtes nécessaire de créer un mécanisme permettant de localiser des couleurs.
+- Images représentant des personnes ou des emplacements spécifiques – votre application se sentiront peut-être plus pertinente pour les utilisateurs si elle présente des personnes/emplacements locaux.
+- Icônes – certains iconographie peut être spécifiques à la culture et vous pouvez rendre votre application plus facile à utiliser en localisant l’imagerie afin de refléter la présentation locale.
+- Couleurs – certaines cultures comprennent les couleurs différemment : rouge peut vouloir dire avertissement dans une région, mais bonne chance dans un autre. Vérifiez auprès de leur langue maternelle lors de la conception de votre application pour déterminer si vous êtes nécessaire de créer un mécanisme permettant de localiser des couleurs.
 
 
 ### <a name="videos-and-sound"></a>Vidéos et audio
@@ -120,10 +120,10 @@ Consultez le [l’analyse de chaînes numériques](https://msdn.microsoft.com/li
 Certains langages, tels que l’arabe et hébreu Ourdou (par exemple), sont lues de droite à gauche.
 Les applications qui prennent en charge ces langues doivent utiliser des conceptions d’écran qui s’adaptent pour les lecteurs de droite à gauche, par exemple :
 
- - Texte doit être aligné à droite.
- - Étiquettes doivent apparaître à droite des champs d’entrée.
- - Emplacement du bouton par défaut est généralement inversé.
- - Navigation hiérarchique balayant et animation (et autres métaphores basées sur la navigation et animations) qui utilisent la direction pour le contexte doit également être annulée.
+- Texte doit être aligné à droite.
+- Étiquettes doivent apparaître à droite des champs d’entrée.
+- Emplacement du bouton par défaut est généralement inversé.
+- Navigation hiérarchique balayant et animation (et autres métaphores basées sur la navigation et animations) qui utilisent la direction pour le contexte doit également être annulée.
 
 IOS et Android prennent en charge les dispositions de droite à gauche et le rendu des polices, avec des fonctionnalités intégrées qui aident à apporter les modifications ci-dessus. Xamarin.Forms ne prend pas actuellement automatiquement en charge le rendu de droite à gauche.
 
@@ -139,10 +139,10 @@ Il est peu probable que les fonctionnalités de base de données intégrée sur 
 
 Vérifiez que vous écrivez et testez votre algorithme de recherche avec plusieurs langues à l’esprit. Éléments à prendre en considération sont les suivantes :
 
- - Saisie semi-automatique – si vous avez créé une fonction de saisie semi-automatique vous assurer de que sources de suggestions relatives à la langue de l’utilisateur.
- - Requête correspondant aux données – recherche requêtes entrés dans spécifiques à un langage être exécuté sur tout contenu écrit dans ce langage, ou sur tout le contenu dans votre application ?
- - Recherche de radical – si votre recherche a été conçue pour rechercher des mots similaires, les racines de word et les autres optimisations de recherche, est ces optimisations intégrées pour toutes les langues que vous prenez en charge ?
- - Tri – Assurez-vous que les résultats sont triés correctement (voir ci-dessus).
+- Saisie semi-automatique – si vous avez créé une fonction de saisie semi-automatique vous assurer de que sources de suggestions relatives à la langue de l’utilisateur.
+- Requête correspondant aux données – recherche requêtes entrés dans spécifiques à un langage être exécuté sur tout contenu écrit dans ce langage, ou sur tout le contenu dans votre application ?
+- Recherche de radical – si votre recherche a été conçue pour rechercher des mots similaires, les racines de word et les autres optimisations de recherche, est ces optimisations intégrées pour toutes les langues que vous prenez en charge ?
+- Tri – Assurez-vous que les résultats sont triés correctement (voir ci-dessus).
 
 
 ### <a name="data-from-external-sources"></a>Données provenant de sources externes
@@ -151,9 +151,9 @@ De nombreuses applications téléchargement des données provenant de sources ex
 
 Il existe quelques stratégies que vous pouvez utiliser pour essayer et vérifiez que votre application affiche les données pertinentes pour l’utilisateur :
 
- - Sources différentes : votre application peut télécharger les données d’une source différente en fonction des paramètres régionaux ou linguistiques de l’utilisateur. Les prix des actualités, météo et le stock de paramètres régionaux peuvent être plus judicieux que quelque chose téléchargé à partir d’un flux en Amérique du Nord.
- - Affichage localisé – si vous affichez une photo du flux, ou Twitter vous devez afficher les métadonnées (par exemple, le temps nécessaire) dans la langue de son propre, même si le contenu proprement dit reste dans la langue d’origine.
- - Traduction –, vous pourriez créer une option de traduction à votre application pour effectuer une traduction de données entrantes. Cela peut être automatique ou à la discrétion de l’utilisateur – Veillez simplement à informer l’utilisateur si cela a lieu, étant donné que les traductions de la machine ne sont jamais parfaites !
+- Sources différentes : votre application peut télécharger les données d’une source différente en fonction des paramètres régionaux ou linguistiques de l’utilisateur. Les prix des actualités, météo et le stock de paramètres régionaux peuvent être plus judicieux que quelque chose téléchargé à partir d’un flux en Amérique du Nord.
+- Affichage localisé – si vous affichez une photo du flux, ou Twitter vous devez afficher les métadonnées (par exemple, le temps nécessaire) dans la langue de son propre, même si le contenu proprement dit reste dans la langue d’origine.
+- Traduction –, vous pourriez créer une option de traduction à votre application pour effectuer une traduction de données entrantes. Cela peut être automatique ou à la discrétion de l’utilisateur – Veillez simplement à informer l’utilisateur si cela a lieu, étant donné que les traductions de la machine ne sont jamais parfaites !
 
 Cela peut également affecter des liens externes aux pistes audio ou de vidéos – lors de la conception de votre application n’oubliez pas de planifier à l’avance pour l’alimentation des textes traduits ou veiller à ce que les utilisateurs sont correctement informés par l’interface utilisateur lorsque le contenu n’est pas présenté dans leur langage.
 
@@ -162,10 +162,10 @@ Cela peut également affecter des liens externes aux pistes audio ou de vidéos 
 
 Certaines chaînes dans votre application peuvent ne pas nécessitent pas de traduction ou au moins une attention particulière par le traducteur. Exemples peuvent inclure :
 
- - URL – si vous répertoriez une URL, il peut ou n'ayez pas besoin d’être ajustée par langage. Par exemple, il détecte automatiquement la langue sur le site principal de traduction ne nécessite pas facebook.com. Autres sites ont contenu spécifique de paramètres régionaux et vous souhaiteriez offrir une URL différente, telles que yahoo.com quelques yahoo.fr ou yahoo.it.
- - Numéros de téléphone : en particulier ceux avec des numéros pour les appelants qui parlent une certaine langue ou de codes de pays différents.
- - Les détails du contact – adresses et autres informations peuvent varier par paramètres régionaux ou linguistiques.
- - Des marques & noms de produits – certaines chaînes n’avez pas besoin traduire, car ils sont toujours écrits dans la même langue.
+- URL – si vous répertoriez une URL, il peut ou n'ayez pas besoin d’être ajustée par langage. Par exemple, il détecte automatiquement la langue sur le site principal de traduction ne nécessite pas facebook.com. Autres sites ont contenu spécifique de paramètres régionaux et vous souhaiteriez offrir une URL différente, telles que yahoo.com quelques yahoo.fr ou yahoo.it.
+- Numéros de téléphone : en particulier ceux avec des numéros pour les appelants qui parlent une certaine langue ou de codes de pays différents.
+- Les détails du contact – adresses et autres informations peuvent varier par paramètres régionaux ou linguistiques.
+- Des marques & noms de produits – certaines chaînes n’avez pas besoin traduire, car ils sont toujours écrits dans la même langue.
 
 Enfin, veillez à inclure des instructions détaillées pour le traducteur si certaines chaînes nécessitent un traitement spécial.
 
@@ -264,16 +264,16 @@ Ou, plus précisément, ne réutilisez pas chaînes juste, car elles sont simila
 
 Par exemple : imaginez que vous avez un commutateur activé/désactivé dans votre application et le commutateur contrôle a besoin le texte pour 'on' et 'off' à localiser. Vous également affichez la valeur de ce paramètre d’ailleurs dans l’application d’une étiquette de texte. Vous devez utiliser des chaînes différentes pour l’affichage du commutateur par rapport à l’état du commutateur (même si elles sont la même chaîne dans votre langue par défaut) – par exemple :
 
--   « Activé » – affiché sur le commutateur lui-même
--   « Désactivé » – affiché sur le commutateur lui-même
--   « Activé » – affiché dans une étiquette
--   « Désactivé » – affiché dans une étiquette
+- « Activé » – affiché sur le commutateur lui-même
+- « Désactivé » – affiché sur le commutateur lui-même
+- « Activé » – affiché dans une étiquette
+- « Désactivé » – affiché dans une étiquette
 
 Cela fournit une flexibilité maximale pour le traducteur :
 
--   Pour des raisons de conception, par exemple le commutateur lui-même utilise en minuscules « on » et « désactivé », mais l’étiquette de l’affichage utilise la majuscule « On » et « Désactivé ».
--   Certains langages peut-être la valeur du commutateur sera abrégé pour tenir dans le contrôle d’interface utilisateur, tandis que le mot complet (traduit) peut apparaître dans l’étiquette.
--   Vous pouvez également, pour certaines langues le rendu de votre commutateur peut être utiliser « I » et « O » pour plus d’informations culturelles, mais vous pouvez toujours l’étiquette à lire « On » ou « Off ».
+- Pour des raisons de conception, par exemple le commutateur lui-même utilise en minuscules « on » et « désactivé », mais l’étiquette de l’affichage utilise la majuscule « On » et « Désactivé ».
+- Certains langages peut-être la valeur du commutateur sera abrégé pour tenir dans le contrôle d’interface utilisateur, tandis que le mot complet (traduit) peut apparaître dans l’étiquette.
+- Vous pouvez également, pour certaines langues le rendu de votre commutateur peut être utiliser « I » et « O » pour plus d’informations culturelles, mais vous pouvez toujours l’étiquette à lire « On » ou « Off ».
 
 ### <a name="translation-services"></a>Services de traduction
 

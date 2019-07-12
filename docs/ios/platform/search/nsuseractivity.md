@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b853bd3bc55a2d4cb613a9f0079aebae9f57027b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3a8872ae54d7b1efb55ee71286ca5ea479616e0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357040"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830165"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Recherche avec NSUserActivity dans Xamarin.iOS
 
@@ -27,14 +27,14 @@ Si l’utilisateur sélectionne un résultat de recherche qui appartenance à un
 
 Les propriétés suivantes de `NSUserActivity` sont utilisés pour prendre en charge la recherche de l’application :
 
- - `EligibleForHandoff` – If `true`, cette activité peut être utilisée dans une opération de transfert.
- - `EligibleForSearch` – If `true`, cette activité est ajoutée à l’index sur l’appareil et présentée dans les résultats de la recherche.
- - `EligibleForPublicIndexing` – If `true`, cette activité est ajoutée à l’index de basé sur le cloud d’Apple et présentée aux utilisateurs (via la recherche) que vous n’ont pas encore installé votre application sur son appareil iOS. Consultez le [Public l’indexation de recherche](#public-search-indexing) section ci-dessous pour plus d’informations.
- - `Title` – Fournit un titre pour votre activité et s’affiche dans les résultats de recherche. Les utilisateurs peuvent également rechercher le texte du titre lui-même.
- - `Keywords` – Est un tableau de chaînes utilisées pour décrire votre activité qui sera indexée et consultable par l’utilisateur final.
- - `ContentAttributeSet` – Est un `CSSearchableItemAttributeSet` utilisé pour décrire votre activité en détail et fournir un contenu riche dans les résultats de recherche.
- - `ExpirationDate` – Si vous souhaitez une activité uniquement être affichée jusqu'à une date donnée, vous pouvez fournir cette date ici.
- - `WebpageURL` – Si l’activité peut être affichée sur le web ou si votre application prend en charge les liens profonds de Safari, vous pouvez définir le lien à visiter ici.
+- `EligibleForHandoff` – If `true`, cette activité peut être utilisée dans une opération de transfert.
+- `EligibleForSearch` – If `true`, cette activité est ajoutée à l’index sur l’appareil et présentée dans les résultats de la recherche.
+- `EligibleForPublicIndexing` – If `true`, cette activité est ajoutée à l’index de basé sur le cloud d’Apple et présentée aux utilisateurs (via la recherche) que vous n’ont pas encore installé votre application sur son appareil iOS. Consultez le [Public l’indexation de recherche](#public-search-indexing) section ci-dessous pour plus d’informations.
+- `Title` – Fournit un titre pour votre activité et s’affiche dans les résultats de recherche. Les utilisateurs peuvent également rechercher le texte du titre lui-même.
+- `Keywords` – Est un tableau de chaînes utilisées pour décrire votre activité qui sera indexée et consultable par l’utilisateur final.
+- `ContentAttributeSet` – Est un `CSSearchableItemAttributeSet` utilisé pour décrire votre activité en détail et fournir un contenu riche dans les résultats de recherche.
+- `ExpirationDate` – Si vous souhaitez une activité uniquement être affichée jusqu'à une date donnée, vous pouvez fournir cette date ici.
+- `WebpageURL` – Si l’activité peut être affichée sur le web ou si votre application prend en charge les liens profonds de Safari, vous pouvez définir le lien à visiter ici.
 
 ## <a name="nsuseractivity-quickstart"></a>Guide de démarrage rapide NSUserActivity
 
@@ -96,7 +96,7 @@ En utilisant un `ContentAttributeSet` vous pouvez créer des résultats de reche
 
 ## <a name="responding-to-an-activity"></a>Répondre à une activité
 
-Pour répondre à l’utilisateur en appuyant sur un résultat de recherche (`NSUserActivity`) pour notre application, vous devez modifier le **AppDelegate.cs** de fichiers et de remplacer le `ContinueUserActivity` (méthode). Exemple :
+Pour répondre à l’utilisateur en appuyant sur un résultat de recherche (`NSUserActivity`) pour notre application, vous devez modifier le **AppDelegate.cs** de fichiers et de remplacer le `ContinueUserActivity` (méthode). Par exemple :
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

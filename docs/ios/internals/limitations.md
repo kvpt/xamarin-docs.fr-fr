@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: b79d3683c8e4979cbbd13550f3df86c39622ad2b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035878"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830399"
 ---
 # <a name="limitations-of-xamarinios"></a>Limitations de Xamarin.iOS
 
@@ -74,7 +74,8 @@ L’absence de System.Reflection. **Émettre** signifie qu’aucun code qui dép
 -  Remoting TransparentProxy ou tout autre élément qui provoque l’exécution pour générer dynamiquement du code. 
 
 
- **Important :** Ne confondez pas **Reflection.Emit** avec **réflexion**. Reflection.Emit est sur la génération de code dynamique et avoir ce code JITed ainsi que compilées en code natif. En raison des limitations sur iOS (aucune compilation JIT) cela n’est pas possible.
+  > [!IMPORTANT]
+  > Ne confondez pas **Reflection.Emit** avec **réflexion**. Reflection.Emit est sur la génération de code dynamique et avoir ce code JITed ainsi que compilées en code natif. En raison des limitations sur iOS (aucune compilation JIT) cela n’est pas possible.
 
 Cependant, l’API de réflexion entière, y compris Type.GetType (« someClass »), qui répertorie les méthodes, affichage des propriétés, l’extraction des attributs et valeurs fonctionne parfaitement.
 

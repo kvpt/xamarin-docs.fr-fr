@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 7b13ab5a4cc0d8e66e260329b5a53397778cb179
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 83c71962ceb4a30c2e05d44fffe4d64b54e4883d
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61194363"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831932"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une Application Xamarin.Forms de Page unique
 
@@ -38,7 +38,7 @@ Le démarrage rapide vous montre comment créer une application Xamarin.Forms mu
 - Connaissances de C#.
 - (facultatif) Un Mac couplé pour générer l’application sur iOS.
 
-Pour plus d’informations sur ces conditions préalables, consultez [Xamarin installation](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez [appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+Pour plus d’informations sur ces conditions préalables, consultez [Xamarin installation](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="get-started-with-visual-studio-2019"></a>Bien démarrer avec Visual Studio 2019
 
@@ -65,7 +65,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [Xamarin in
 
 5. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
-    ![](single-page-images/vs/open-mainpage-xaml.png "Ouvrir MainPage.xaml")
+    ![](single-page-images/vs/open-mainpage-xaml-2019.png "Ouvrir MainPage.xaml")
 
 6. Dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -102,7 +102,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [Xamarin in
 
 7. Dans l’**Explorateur de solutions**, dans le projet **Notes**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
 
-    ![](single-page-images/vs/open-mainpage-codebehind.png "Ouvrir MainPage.xaml.cs")
+    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "Ouvrir MainPage.xaml.cs")
 
 8. Dans **MainPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -192,7 +192,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [Xamarin in
 - Connaissances de C#.
 - (facultatif) Un Mac couplé pour générer l’application sur iOS.
 
-Pour plus d’informations sur ces conditions préalables, consultez [Xamarin installation](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez [appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+Pour plus d’informations sur ces conditions préalables, consultez [Xamarin installation](~/get-started/installation/index.md). Pour plus d’informations sur la connexion de Visual Studio 2019 à un hôte de build Mac, consultez l’article [Appairer avec un Mac pour le développement Xamarin.iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
 
 ## <a name="get-started-with-visual-studio-2017"></a>Bien démarrer avec Visual Studio 2017
 
@@ -200,7 +200,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [Xamarin in
 
     ![](single-page-images/vs/new-solution.png "Nouveau projet")
 
-2. Dans la boîte de dialogue **Nouveau projet**, cliquez sur **Multiplateforme**, sélectionnez le modèle **Application mobile (Xamarin.Forms)**, définissez le Nom **Notes**, choisissez l’emplacement du projet et cliquez sur le bouton **OK** :
+2. Dans la boîte de dialogue **Nouveau projet**, cliquez sur **Multiplateforme**, sélectionnez le modèle **Application mobile (Xamarin.Forms)** , définissez le Nom **Notes**, choisissez l’emplacement du projet et cliquez sur le bouton **OK** :
 
     ![](single-page-images/vs/new-project.png "Modèles de projet multiplateforme")
 

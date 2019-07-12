@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: 13fd84d8e23c18606696532b1c6e8db301b52f3c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb8aabb3649da3818c1b020508b78a03f513963b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218390"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830686"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>Installation et l’utilisation de watchOS dans Xamarin
 
@@ -144,7 +144,7 @@ Vous pouvez lancer des applications cadran dans le simulateur à l’aide de Vis
 
 Il existe deux modes pour le lancement d’une application WatchKit :
 
- - mode d’application normal (valeur par défaut), et
+- mode d’application normal (valeur par défaut), et
 - [Notifications](~/ios/watchos/platform/notifications.md) (ce qui nécessite une charge utile de notification test au format JSON).
 
 ### <a name="xcode-8-support"></a>Prise en charge de Xcode 8
@@ -178,8 +178,9 @@ Par défaut, une application watch démarre en mode normal **application** mode 
 
 Lorsque vous utilisez Xcode 6, uniquement l’iPhone 5, 5 s iPhone, iPhone 6 et iPhone 6 Plus peut activer l’affichage externe pour soit **Apple Watch - 38mm** ou **Apple Watch - 42mm** où les applications espion sera affiché.
 
-**Remarque :** N’oubliez pas que l’écran de surveillance n’apparaît pas automatiquement dans le simulateur iOS lorsque vous utilisez Xcode 6.
-Utilisez le **matériel > affiche externe** menu pour afficher l’écran de surveillance.
+> [!NOTE]
+> N’oubliez pas que l’écran de surveillance n’apparaît pas automatiquement dans le simulateur iOS lorsque vous utilisez Xcode 6.
+> Utilisez le **matériel > affiche externe** menu pour afficher l’écran de surveillance.
 
 <a name="custommodes" />
 
@@ -212,8 +213,8 @@ N’oubliez pas de fournir un fichier JSON de notification lors du débogage en 
 
 ![](installation-images/debug-sml.png "Cette capture d’écran montre un point d’arrêt de débogage en cours d’accès dans une application watch")
 
-Après avoir suivi les instructions de lancement vous finirez avec votre application watch en cours d’exécution le **iOS Simulator (Watch)**.
-Pour le mode de notification, vous pouvez sélectionner **Déboguer > Ouvrir le journal système** (**CMD + /**) et utiliser `Console.WriteLine` dans votre code.
+Après avoir suivi les instructions de lancement vous finirez avec votre application watch en cours d’exécution le **iOS Simulator (Watch)** .
+Pour le mode de notification, vous pouvez sélectionner **Déboguer > Ouvrir le journal système** (**CMD + /** ) et utiliser `Console.WriteLine` dans votre code.
 
 ### <a name="debugging-lifecycle-event-handlers"></a>Débogage des gestionnaires d’événements de cycle de vie
 
