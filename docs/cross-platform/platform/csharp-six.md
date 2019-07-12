@@ -1,22 +1,25 @@
 ---
 title: C#6 nouvelles fonctionnalités vue d’ensemble
-description: La dernière version de la C# langue – version 6 – continue d’évoluer de la langue pour avoir moins réutilisable, améliorer la clarté et la cohérence plus. Syntaxe d’initialisation plus propre, la possibilité d’utiliser await dans les blocs catch/finally et l’instruction conditionnelle la valeur null ? opérateur sont particulièrement utiles.
+description: La version 6 de la C# langage continue d’évoluer de la langue pour avoir moins de code réutilisable, améliorer la clarté et la cohérence plus. Syntaxe d’initialisation plus propre, la possibilité d’utiliser await dans les blocs catch/finally et l’instruction conditionnelle la valeur null ? opérateur sont particulièrement utiles.
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a261c009f105994ac0b9c84f3d0ac037c4a3517
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 0fd7f4e9972f7bf762a44c9edf30fa13f9d989bc
+ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978497"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850951"
 ---
 # <a name="c-6-new-features-overview"></a>C#6 nouvelles fonctionnalités vue d’ensemble
 
-_La dernière version de la C# langue – version 6 – continue d’évoluer de la langue pour avoir moins réutilisable, améliorer la clarté et la cohérence plus. Syntaxe d’initialisation plus propre, la possibilité d’utiliser await dans les blocs catch/finally et l’instruction conditionnelle la valeur null ? opérateur sont particulièrement utiles._
+_La version 6 de la C# langage continue d’évoluer de la langue pour avoir moins de code réutilisable, améliorer la clarté et la cohérence plus. Syntaxe d’initialisation plus propre, la possibilité d’utiliser await dans les blocs catch/finally et l’instruction conditionnelle la valeur null ? opérateur sont particulièrement utiles._
+
+> [!NOTE]
+> Pour plus d’informations sur la dernière version de la C# langue – version 7 – consultez l’article [Nouveautés C# 7.0](/dotnet/csharp/whats-new/csharp-7)
 
 Ce document présente les nouvelles fonctionnalités de C# 6. Il est entièrement pris en charge par le compilateur mono et les développeurs peuvent démarrer à l’aide des nouvelles fonctionnalités sur toutes les plateformes cibles de Xamarin.
 

@@ -6,12 +6,12 @@ ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4d506232903d4a94ac20a1fb9f93a39884d9099c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e471aaca2a7a5f247b21dd1c1863a01b062a716
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61213678"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855754"
 ---
 # <a name="updating-existing-ios-apps"></a>La mise à jour des applications iOS existantes
 
@@ -31,7 +31,7 @@ Avant de mettre à jour de votre code existant vers l’API unifiée, il est viv
 
 ## <a name="automated-updating"></a>Mise à jour automatisée
 
-Une fois que les avertissements ont été résolus, sélectionnez un projet iOS dans Visual Studio pour Mac ou Visual Studio et choisissez **migrer vers l’API unifiée Xamarin.iOS** à partir de la **projet** menu. Exemple :
+Une fois que les avertissements ont été résolus, sélectionnez un projet iOS dans Visual Studio pour Mac ou Visual Studio et choisissez **migrer vers l’API unifiée Xamarin.iOS** à partir de la **projet** menu. Par exemple :
 
 ![](updating-ios-apps-images/beta-tool1.png "Choisissez de migrer vers API unifiée Xamarin.iOS dans le menu projet")
 
@@ -85,7 +85,7 @@ Certains `UIKit` méthodes ont leur signature modifié pour utiliser le nouveau 
 
 Quelques exemples : remplacer `public override int NumberOfSections (UITableView tableView)` pour retourner `nint` et en modifiant les type de retour et les types de paramètre dans `public override int RowsInSection (UITableView tableView, int section)` à `nint`.
 
-## <a name="considerations"></a>Éléments à prendre en considération
+## <a name="considerations"></a>Considérations
 
 Les considérations suivantes doivent être prises en compte lors de la conversion d’un projet Xamarin.iOS existant à partir de l’API classique à la nouvelle API unifiée si cette application s’appuie sur un ou plusieurs composants ou un NuGet Package.
 
@@ -115,4 +115,3 @@ Si vous choisissez d’utiliser la méthode automatique ou manuelle pour convert
 - [Conseils pour la mise à jour du code vers l’API unifiée](~/cross-platform/macios/unified/updating-tips.md)
 - [Utilisation de types natifs dans des applications multiplateformes](~/cross-platform/macios/native-types-cross-platform.md)
 - [Différences d’API unifiée de vs classiques](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
-- [Migration vers l’API unifiée (vidéo)](http://university.xamarin.com/lightninglectures/migrating-to-the-unified-api)
