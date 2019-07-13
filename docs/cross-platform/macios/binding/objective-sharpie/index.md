@@ -6,12 +6,12 @@ ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: cbe0be19e38892d06a79831d7974fbddcb71a9ac
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: c298d3dc772929a123b6b65b0efe929f023a6563
+ms.sourcegitcommit: 7dbfac5f68c55f40dd726aa1b03cff62082fe711
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978485"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866354"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>Création de liaisons avec Sharpie objectif
 
@@ -25,7 +25,7 @@ _Cette section fournit une introduction à l’objectif Sharpie, outil de ligne 
 - [Procédure pas à pas complète](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Historique des versions](releases.md)
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Objectif Sharpie est un outil de ligne de commande pour aider à démarrer la première passe d’une liaison.
 Il fonctionne en analysant les fichiers d’en-tête d’une bibliothèque native pour mapper l’API publique dans le [définition de liaison](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (un processus qui précédemment a été effectué manuellement).
@@ -43,7 +43,7 @@ Toutefois, objectif Sharpie est un outil très avancé qui nécessite une connai
 
 ## <a name="related-links"></a>Liens associés
 
-- [Téléchargement de Sharpie objectif](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+- [Téléchargement de Sharpie objectif](https://aka.ms/objective-sharpie)
 - [Procédure pas à pas : Liaison d’une bibliothèque Objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Liaison de bibliothèques Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Détails de liaison](~/cross-platform/macios/binding/overview.md)
