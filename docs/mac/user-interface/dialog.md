@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a3bb6674baed293f95eb50fbca5792b288aa9239
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f53c1afd7c3f835bff2aae507b9937067bde4bec
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832522"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865733"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Boîtes de dialogue dans Xamarin.Mac
 
@@ -127,10 +127,10 @@ Pour ajouter une nouvelle fenêtre, procédez comme suit :
 6. Créer un **Segue modale** à partir de la fenêtre principale de votre application sur le nouveau contrôleur d’affichage en faisant glisser le contrôle à partir de l’élément d’interface utilisateur qui ouvre la boîte de dialogue dans la fenêtre de la boîte de dialogue. Affecter le **identificateur** `ModalSegue`: 
 
     [![](dialog-images/new06.png "Un segue modal")](dialog-images/new06.png#lightbox)
-6. AutoEventWireup les **Actions** et **Outlets**: 
+7. AutoEventWireup les **Actions** et **Outlets**: 
 
     [![](dialog-images/new04.png "Configuration d’une Action")](dialog-images/new04.png#lightbox)
-6. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+8. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
 
 Rendre le `CustomDialogController.cs` fichier ressemble ce qui suit :
 
@@ -265,19 +265,19 @@ Pour créer une feuille personnalisée dans Xamarin.Mac, nous allons effectuer l
 2. Faites glisser une nouvelle **contrôleur d’affichage** dans l’aire de conception :
 
     [![](dialog-images/new01.png "Sélection d’un contrôleur d’affichage de la bibliothèque")](dialog-images/new01.png#lightbox)
-2. Concevoir votre interface utilisateur :
+3. Concevoir votre interface utilisateur :
 
     [![](dialog-images/sheet01.png "La conception de l’interface utilisateur")](dialog-images/sheet01.png#lightbox)
-3. Créer un **feuille Segue** à partir de votre fenêtre principale pour le contrôleur d’affichage : 
+4. Créer un **feuille Segue** à partir de votre fenêtre principale pour le contrôleur d’affichage : 
 
     [![](dialog-images/sheet02.png "Sélection du type de segue feuille")](dialog-images/sheet02.png#lightbox)
-4. Dans le **inspecteur d’identité**, nommez le contrôleur d’affichage **classe** `SheetViewController`: 
+5. Dans le **inspecteur d’identité**, nommez le contrôleur d’affichage **classe** `SheetViewController`: 
 
     [![](dialog-images/sheet03.png "Définition du nom de classe")](dialog-images/sheet03.png#lightbox)
-5. Définir les nécessaires **Outlets** et **Actions**: 
+6. Définir les nécessaires **Outlets** et **Actions**: 
 
     [![](dialog-images/sheet04.png "Définition des Outlets et Actions requis")](dialog-images/sheet04.png#lightbox)
-6. Enregistrez vos modifications et revenir à Visual Studio pour Mac pour la synchronisation.
+7. Enregistrez vos modifications et revenir à Visual Studio pour Mac pour la synchronisation.
 
 Ensuite, modifiez le `SheetViewController.cs` de fichier et qu’elle ressemble à ce qui suit :
 

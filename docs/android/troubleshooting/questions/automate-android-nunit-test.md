@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: b785ef171d2cb00d4f8f5a17f37d49de17fd3da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0837deccdb535c178e8b00b052efeb7c9bd49679
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153286"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864130"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Comment automatiser un projet de test Android NUnit ?
 
@@ -58,7 +58,7 @@ Les étapes suivantes expliquent ce processus :
 
 2.  Implémentez le [TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) constructeur et le [AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29) (méthode). Le `AddTests` contrôles méthode quels tests sont réellement exécutées.
 
-3.  Modifier le `.csproj` fichier à ajouter **TestInstrumentation.cs**. Exemple :
+3.  Modifier le `.csproj` fichier à ajouter **TestInstrumentation.cs**. Par exemple :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +74,13 @@ Les étapes suivantes expliquent ce processus :
     </Project>
     ```
 
-3.  Utilisez la commande suivante pour exécuter les tests unitaires. Remplacez `PACKAGE_NAME` avec le nom du package de l’application (vous trouverez le nom du package dans l’application `/manifest/@package` attribut situé dans **AndroidManifest.xml**) :
+4.  Utilisez la commande suivante pour exécuter les tests unitaires. Remplacez `PACKAGE_NAME` avec le nom du package de l’application (vous trouverez le nom du package dans l’application `/manifest/@package` attribut situé dans **AndroidManifest.xml**) :
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-4.  Si vous le souhaitez, vous pouvez modifier le `.csproj` fichier pour ajouter le `RunTests` cible MSBuild. Cela rend possible appeler les tests unitaires avec une commande comme suit :
+5.  Si vous le souhaitez, vous pouvez modifier le `.csproj` fichier pour ajouter le `RunTests` cible MSBuild. Cela rend possible appeler les tests unitaires avec une commande comme suit :
 
     ```shell
     msbuild /t:RunTests Project.csproj

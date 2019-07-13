@@ -6,12 +6,12 @@ ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
 author: asb3993
 ms.author: amburns
 ms.date: 03/30/2017
-ms.openlocfilehash: e81c28f0610a0df2e4fe06349685ef5e0744071a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d9cabdb22425bdc057f6d52de5aa943537dd1ca
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61159120"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864478"
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>Comment collecter les piles d’appels du processus Visual Studio ?
 
@@ -23,20 +23,20 @@ Lors de l’interface graphique utilisateur verrouille se fige (se bloque) dans 
 
 3. Sélectionnez **Déboguer > Attacher au processus**.
 
-  ![](vs-callstack-images/image1.png "Sélectionnez Déboguer > Attacher au processus")
+   ![](vs-callstack-images/image1.png "Sélectionnez Déboguer > Attacher au processus")
 
 4. Sélectionnez l’instance d’origine suspendu `devenv.exe` dans la liste des **processus disponibles**.
 
 5. Sélectionnez **Déboguer > Interrompre tout**.
 
-  ![](vs-callstack-images/image2.png "Sélectionnez Déboguer > Interrompre tout")
+   ![](vs-callstack-images/image2.png "Sélectionnez Déboguer > Interrompre tout")
 
 6. Sélectionnez **Déboguer > Enregistrer le Dump sous**.
 
-  ![](vs-callstack-images/image3.png "Sélectionnez Déboguer > Enregistrer le Dump sous")
+   ![](vs-callstack-images/image3.png "Sélectionnez Déboguer > Enregistrer le Dump sous")
 
-7. Modification **enregistrer en tant que type** à **Minidump (\*.dmp)**. Cela génère un fichier beaucoup plus petit que **Minidump avec segment mémoire**, et le tas ne concerne généralement pas de diagnostic se fige.
+7. Modification **enregistrer en tant que type** à **Minidump (\*.dmp)** . Cela génère un fichier beaucoup plus petit que **Minidump avec segment mémoire**, et le tas ne concerne généralement pas de diagnostic se fige.
 
-  ![](vs-callstack-images/image4.png "Cela génère un fichier beaucoup plus petit que Minidump avec segment mémoire, et le tas est généralement pas pertinent pour le diagnostic se fige")
+   ![](vs-callstack-images/image4.png "Cela génère un fichier beaucoup plus petit que Minidump avec segment mémoire, et le tas est généralement pas pertinent pour le diagnostic se fige")
 
 8. Enregistrez le fichier de vidage. Si l’envoi du fichier en ligne, vous pouvez le zip pour réduire la taille.

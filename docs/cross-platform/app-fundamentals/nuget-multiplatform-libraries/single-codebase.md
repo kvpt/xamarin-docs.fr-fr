@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6d695df9c59a5f95441092d6d7b44d5feda941bd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6371c2af15eab9c5124212eefd9cf70d07b945d4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61267701"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864719"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Création d’une nouvelle bibliothèque multiplateforme pour NuGet
 
@@ -30,25 +30,25 @@ Si vous devez ultérieurement des fonctionnalités spécifiques à la plateforme
 
 2. Choisissez **multiplateforme bibliothèque** à partir de la **multiplateforme > bibliothèque** section :
 
-  [![](single-codebase-images/mulitplatform-library-sml.png "Configurer la bibliothèque de multi-plateforme pour une seule base de code")](single-codebase-images/mulitplatform-library.png#lightbox)
+   [![](single-codebase-images/mulitplatform-library-sml.png "Configurer la bibliothèque de multi-plateforme pour une seule base de code")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. Entrez un **nom** et **Description**, puis choisissez **unique pour toutes les plateformes**:
 
-  [![](single-codebase-images/single-configure-sml.png "Configurer la bibliothèque de multi-plateforme pour une seule base de code")](single-codebase-images/single-configure.png#lightbox)
+   [![](single-codebase-images/single-configure-sml.png "Configurer la bibliothèque de multi-plateforme pour une seule base de code")](single-codebase-images/single-configure.png#lightbox)
 
 4. Effectuez toutes les étapes de l'Assistant. Un projet de bibliothèque unique est créé dans la solution.
 
 5. Avec le bouton droit sur le nouveau projet de bibliothèque, puis sélectionnez **Options**. Le **Générer > Général** section permet la **Framework cible** à définir : choisissez un profil de bibliothèque de classes portable .NET Portable ou une version .NET Standard :
 
-  [![](single-codebase-images/single-choose-type-sml.png "Choisissez bibliothèque de classes portable ou .NET Standard pour le type de bibliothèque")](single-codebase-images/single-choose-type.png#lightbox)
+   [![](single-codebase-images/single-choose-type-sml.png "Choisissez bibliothèque de classes portable ou .NET Standard pour le type de bibliothèque")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. Également dans le **Options du projet** fenêtre, ouvrez le **NuGet Package > métadonnées** section et entrez le [métadonnées requises](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (ainsi que toutes les métadonnées facultative) :
 
-  [![](single-codebase-images/single-metadata-sml.png "Entrez les métadonnées requises")](single-codebase-images/single-metadata.png#lightbox)
+   [![](single-codebase-images/single-metadata-sml.png "Entrez les métadonnées requises")](single-codebase-images/single-metadata.png#lightbox)
 
 7. Avec le bouton droit sur le projet de bibliothèque et choisissez **création d’un NuGet Package** (générer ou déployer la solution) et le **.nupkg** fichier de package NuGet est enregistré dans le **/bin/** dossier (Debug ou Release, en fonction de la configuration) :
 
-  ![](single-codebase-images/create-nuget-package.png "Le fichier de package NuGet est être enregistré dans le dossier bin Debug ou Release, selon la configuration")
+   ![](single-codebase-images/create-nuget-package.png "Le fichier de package NuGet est être enregistré dans le dossier bin Debug ou Release, selon la configuration")
 
 
 ## <a name="verifying-the-output"></a>Vérification de la sortie

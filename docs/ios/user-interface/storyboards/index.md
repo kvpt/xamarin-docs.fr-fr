@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c3c9714cb4d6cd077f898778f4388d63018fa00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831698"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865214"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Introduction aux Storyboards dans Xamarin.iOS
 
@@ -327,7 +327,7 @@ Avant de commencer, suivez les étapes 1 à 8 ci-dessus. Dans ces étapes nous c
         - Couleur : Rouge
         - Alignement : Center
         - Lignes : 2
-        - Case à cocher « Masqué » activée 
+        - Case à cocher « Masqué » activée    
         
     [![](images/passwordvc.png "Centre les lignes")](images/passwordvc.png#lightbox)
     
@@ -424,25 +424,25 @@ Pour ajouter une référence à une scène spécifique un Storyboard externe (et
 
     [![](images/ref08.png "Entrez un ID de Storyboard pour le nouveau contrôleur de vue de scènes")](images/ref08.png#lightbox)
     
-3. Ouvrez la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans le concepteur iOS.
+4. Ouvrez la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans le concepteur iOS.
 
-4. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
+5. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
 
     [![](images/ref03.png "Une référence de table de montage séquentiel")](images/ref03.png#lightbox)
     
-5. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, sélectionnez le nom de la **Storyboard** et le **ID de référence** (ID de Storyboard) de la Scène que vous avez créé ci-dessus : 
+6. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, sélectionnez le nom de la **Storyboard** et le **ID de référence** (ID de Storyboard) de la Scène que vous avez créé ci-dessus : 
 
     [![](images/ref09.png "L’onglet de Widget ")](images/ref09.png#lightbox)
     
-6. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer : 
+7. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer : 
 
     [![](images/ref10.png "Création d’un segue")](images/ref10.png#lightbox) 
     
-7. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
+8. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
 
     [![](images/ref06.png "Sélectionnez Afficher pour terminer le Segue")](images/ref06.png#lightbox) 
     
-8. Enregistrez vos modifications dans la table de montage séquentiel.
+9. Enregistrez vos modifications dans la table de montage séquentiel.
 
 Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur que vous avez créé le Segue à partir de la scène avec la donnée **ID de Storyboard** à partir du Storyboard externe spécifié dans la référence de table de montage séquentiel s’affichera.
 
@@ -462,9 +462,9 @@ Pour ajouter une référence à une scène spécifique de la même table de mont
 
     [![](images/ref12.png "L’onglet de Widget")](images/ref12.png#lightbox)
     
-3. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
+4. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
 
-    [![](images/ref03.png "Une référence de table de montage séquentiel")](images/ref03.png#lightbox)
+   [![](images/ref03.png "Une référence de table de montage séquentiel")](images/ref03.png#lightbox)
     
 5. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, sélectionnez **ID de référence** (ID de Storyboard) de la scène que vous avez créé ci-dessus : 
 

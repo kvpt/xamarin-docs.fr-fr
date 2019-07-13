@@ -6,12 +6,12 @@ ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: a93288829ff99027a4b33e7720a7f849df37e9b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 08fa7f57f3fe44721bc00f0d59ed5df93300cf1e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61423795"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864035"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Résolution des problèmes de classeurs de Xamarin sur Android
 
@@ -24,7 +24,7 @@ Si vous devez disposer de Hyper-V est activé sur votre système, accédez à la
 
 Vous devez disposer d’un émulateur qui exécute Android 5.0 ou version ultérieure. Les émulateurs ARM ne sont pas pris en charge. Utilisez `x86` ou `x86_64` uniquement les appareils.
 
-Veuillez lire [notre documentation sur la configuration des émulateurs Android] [ android-emu] si vous n’êtes pas familiarisé avec le processus.
+Veuillez lire [notre documentation sur la configuration des émulateurs Android][android-emu] si vous n’êtes pas familiarisé avec le processus.
 
 > [!NOTE]
 > Classeurs 1.1 ou antérieures seront essayez (et échouer !) pour utiliser des émulateurs ARM si elles sont disponibles. Pour contourner cet, émulateur le x86 de lancement de votre choix avant d’ouvrir ou de création d’un classeur Android. Classeurs préfère toujours se connecter à un émulateur en cours d’exécution, tant qu’il est compatible.
@@ -39,14 +39,14 @@ Tout d’abord, vérifiez que votre émulateur entièrement-utilisation de l’a
 
 Si votre émulateur n’a pas accès au réseau, vous devrez peut-être suivre ces étapes pour résoudre votre commutateur de réseau Hyper-V. Si vous basculez entre les réseaux Wi-Fi fréquemment, vous devrez peut-être répéter cette opération régulièrement :
 
-0. **Assurez-vous que toutes les opérations réseau critiques sont terminées, comme cela peut déconnecter temporairement de Windows à partir d’internet.**
+1. **Assurez-vous que toutes les opérations réseau critiques sont terminées, comme cela peut déconnecter temporairement de Windows à partir d’internet.**
 1. Fermez les émulateurs.
-2. Ouvrez `Hyper-V Manager`.
-3. Sous `Actions`, ouvrez `Virtual Switch Manager...`.
-4. Supprimer tous les commutateurs virtuels.
-5. Cliquez sur `OK`.
-6. Lancez l’émulateur Android de Visual Studio. Vous devrez probablement recréer le commutateur réseau virtuel.
-7. Test que navigateur de l’émulateur VS Android peut accéder à internet.
+1. Ouvrez `Hyper-V Manager`.
+1. Sous `Actions`, ouvrez `Virtual Switch Manager...`.
+1. Supprimer tous les commutateurs virtuels.
+1. Cliquez sur `OK`.
+1. Lancez l’émulateur Android de Visual Studio. Vous devrez probablement recréer le commutateur réseau virtuel.
+1. Test que navigateur de l’émulateur VS Android peut accéder à internet.
 
 [android-emu]: https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debug-on-emulator/
 

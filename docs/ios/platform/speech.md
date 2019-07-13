@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: c1f488213f9b3be945fd98e09f630c243d0b0d62
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382836"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865708"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Reconnaissance vocale dans Xamarin.iOS
 
@@ -105,21 +105,21 @@ Pour fournir le texte requis `NSSpeechRecognitionUsageDescription` clé dans le 
 2. Basculez vers le **Source** vue : 
 
     [![](speech-images/speech02.png "La vue de Source")](speech-images/speech02.png#lightbox)
-3. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSSpeechRecognitionUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Exemple : 
+3. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSSpeechRecognitionUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Par exemple : 
 
     [![](speech-images/speech03.png "Ajout de NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. Si l’application doit gérer la transcription audio en direct, il nécessitera également une Description de l’utilisation du Microphone. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSMicrophoneUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Exemple : 
+4. Si l’application doit gérer la transcription audio en direct, il nécessitera également une Description de l’utilisation du Microphone. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSMicrophoneUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Par exemple : 
 
     [![](speech-images/speech04.png "Ajout de NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
-4. Enregistrez les modifications dans le fichier.
+5. Enregistrez les modifications dans le fichier.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Double-cliquez sur le `Info.plist` fichier à ouvrir pour modification.
-3. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSSpeechRecognitionUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Exemple : 
+2. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSSpeechRecognitionUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Par exemple : 
 
     [![](speech-images/speech03w.png "Ajout de NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-4. Si l’application doit gérer la transcription audio en direct, il nécessitera également une Description de l’utilisation du Microphone. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSMicrophoneUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Exemple : 
+3. Si l’application doit gérer la transcription audio en direct, il nécessitera également une Description de l’utilisation du Microphone. Cliquez sur **ajouter une nouvelle entrée**, entrez `NSMicrophoneUsageDescription` pour le **propriété**, `String` pour le **Type** et un **Description de l’utilisation** comme le **valeur**. Par exemple : 
 
     [![](speech-images/speech04w.png "Ajout de NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. Enregistrez les modifications dans le fichier.
@@ -243,7 +243,7 @@ Lorsque le rappel est appelé, si le `NSError` n’est pas `null` une erreur s�
 
 ### <a name="recognizing-live-speech"></a>Reconnaissance vocale en direct
 
-Si l’application veut voix en direct, le processus est très similaire à la reconnaissance vocale préenregistré. Exemple :
+Si l’application veut voix en direct, le processus est très similaire à la reconnaissance vocale préenregistré. Par exemple :
 
 ```csharp
 using System;

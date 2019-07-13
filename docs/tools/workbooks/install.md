@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: a1001163d89a9a9cda16a7ee5e644307fcc9875c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb79323c416c107c35c465bc2a8815ab267cc451
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218592"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865942"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Configuration requise et Installation de workbooks
 
@@ -35,7 +35,7 @@ ms.locfileid: "61218592"
 
 ## <a name="requirements"></a>Configuration requise
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
 
 - **Mac** -OS X 10.11 ou supérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou ultérieur et de .NET 4.6.1 ou version ultérieure)
@@ -111,7 +111,7 @@ Si vous rencontrez des problèmes de connexion de votre classeur Android ou iOS 
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
-## <a name="uninstall"></a>Désinstaller
+## <a name="uninstall"></a>Désinstaller l’interface
 
 ### <a name="windows"></a>Windows
 
@@ -149,8 +149,8 @@ Pour les versions antérieures, vous devez supprimer manuellement les éléments
 
 1. Supprimez l’application Workbooks dans`"/Applications/Xamarin Workbooks.app"`
 2. Supprimez l’application Inspector dans`"Applications/Xamarin Inspector.app"`
-2. Supprimez les compléments : `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` et `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. Supprimez Inspector et les fichiers de prise en charge ici : `/Library/Frameworks/Xamarin.Interactive.framework` et `/Library/Frameworks/Xamarin.Inspector.framework`
+3. Supprimez les compléments : `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` et `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. Supprimez Inspector et les fichiers de prise en charge ici : `/Library/Frameworks/Xamarin.Interactive.framework` et `/Library/Frameworks/Xamarin.Inspector.framework`
 
 ## <a name="downgrading"></a>La rétrogradation
 

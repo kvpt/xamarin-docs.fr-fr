@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: db3f9b1c8eaed89046dd10621d5c942b21fae159
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 07dbd86e420c6e643ff80dfbbbc0d5b3f0154fe1
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61276336"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864860"
 ---
 # <a name="deployment-and-testing"></a>Déploiement et tests
 
@@ -27,7 +27,7 @@ Comment déboguer une application Xamarin.Android usure sur l’émulateur du Ki
 
 Comment configurer un appareil Android afin que Xamarin.Android usure applications peuvent être déployées directement à partir de Visual Studio ou Visual Studio pour Mac.
 
-##  <a name="packaging-wear-appsandroidweardeploy-testpackagingmd"></a>[Empaquetage d’applications Wear](~/android/wear/deploy-test/packaging.md)
+## <a name="packaging-wear-appsandroidweardeploy-testpackagingmd"></a>[Empaquetage d’applications Wear](~/android/wear/deploy-test/packaging.md)
 
 Guide pratique pour empaqueter des applications Xamarin.Android usure pour la distribution sur Google Play.
 

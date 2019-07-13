@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 1a5cc9f06fdca5944a9a3201ac15d63ca7f15453
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 084b9924af467459a017413a958ec2e46ff219fc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385510"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865308"
 ---
 # <a name="handoff-in-xamarinios"></a>Procédure de transfert dans Xamarin.iOS
 
@@ -117,20 +117,20 @@ Effectuez ce qui suit :
 
     [![](handoff-images/provision01.png "Activer le service d’iCloud pour l’ID donné")](handoff-images/provision01.png#lightbox)
 5. Enregistrez les modifications apportées.
-4. Cliquez sur **profils de provisionnement** > **développement** et créer un profil de provisionnement pour vous de développement nouvelle application :
+6. Cliquez sur **profils de provisionnement** > **développement** et créer un profil de provisionnement pour vous de développement nouvelle application :
 
     [![](handoff-images/provision02.png "Créer un environnement de développement nouveau profil de configuration pour l’application")](handoff-images/provision02.png#lightbox)
-5. Télécharger et installer le nouveau profil de provisionnement ou utiliser Xcode pour télécharger et installer le profil.
-6. Modifier les options de votre projet Xamarin.iOS et vous assurer que vous utilisez le profil de configuration que vous venez de créer :
+7. Télécharger et installer le nouveau profil de provisionnement ou utiliser Xcode pour télécharger et installer le profil.
+8. Modifier les options de votre projet Xamarin.iOS et vous assurer que vous utilisez le profil de configuration que vous venez de créer :
 
     [![](handoff-images/provision03.png "Sélectionnez le profil de provisionnement venez de créer")](handoff-images/provision03.png#lightbox)
-7. Ensuite, modifiez votre **Info.plist** de fichiers et de vous assurer que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement :
+9. Ensuite, modifiez votre **Info.plist** de fichiers et de vous assurer que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement :
 
     [![](handoff-images/provision04.png "Définir l’ID d’application")](handoff-images/provision04.png#lightbox)
-8. Faites défiler vers le **Modes d’arrière-plan** section et vérifiez les éléments suivants :
+10. Faites défiler vers le **Modes d’arrière-plan** section et vérifiez les éléments suivants :
 
     [![](handoff-images/provision05.png "Activer les modes d’arrière-plan requis")](handoff-images/provision05.png#lightbox)
-9. Enregistrez les modifications à tous les fichiers.
+11. Enregistrez les modifications à tous les fichiers.
 
 Ces paramètres en place, l’application est maintenant prête à accéder aux API de Framework de remise. Pour obtenir des informations détaillées sur l’approvisionnement, consultez notre [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md) et [l’approvisionnement de votre application](~/ios/get-started/installation/device-provisioning/index.md) guides.
 
@@ -297,7 +297,7 @@ public override bool WillContinueUserActivity (UIApplication application, string
 }
 ```
 
-Dans l’exemple ci-dessus, chaque contrôleur d’affichage inscrit avec le `AppDelegate` et a un public `PreparingToHandoff` méthode qui affiche un indicateur d’activité et un message informant l’utilisateur que l’activité est sur le point d’être remis à l’appareil en cours. Exemple :
+Dans l’exemple ci-dessus, chaque contrôleur d’affichage inscrit avec le `AppDelegate` et a un public `PreparingToHandoff` méthode qui affiche un indicateur d’activité et un message informant l’utilisateur que l’activité est sur le point d’être remis à l’appareil en cours. Exemple :
 
 ```csharp
 private void ShowBusy(string reason) {
@@ -366,7 +366,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Le grand public `PerformHandoff` méthode de chaque contrôleur d’affichage réellement effectue la procédure de transfert et restaure l’activité sur l’appareil en cours. Dans le cas de l’exemple, il affiche la même URL dans un onglet donné que l’utilisateur a été la navigation sur un autre appareil. Exemple :
+Le grand public `PerformHandoff` méthode de chaque contrôleur d’affichage réellement effectue la procédure de transfert et restaure l’activité sur l’appareil en cours. Dans le cas de l’exemple, il affiche la même URL dans un onglet donné que l’utilisateur a été la navigation sur un autre appareil. Exemple :
 
 ```csharp
 private void HideBusy() {
@@ -403,13 +403,13 @@ public void PerformHandoff(NSUserActivity activity) {
 }
 ```
 
-Le `ContinueUserActivity` méthode inclut un `UIApplicationRestorationHandler` que vous pouvez appeler pour le document ou le répondeur en fonction de la reprise d’activité. Vous devez passer un `NSArray` ou des objets pouvant être restaurées au Gestionnaire de restauration lorsqu’elle est appelée. Exemple :
+Le `ContinueUserActivity` méthode inclut un `UIApplicationRestorationHandler` que vous pouvez appeler pour le document ou le répondeur en fonction de la reprise d’activité. Vous devez passer un `NSArray` ou des objets pouvant être restaurées au Gestionnaire de restauration lorsqu’elle est appelée. Par exemple :
 
 ```csharp
 completionHandler (new NSObject[]{Tab4});
 ```
 
-Pour chaque objet passé, son `RestoreUserActivityState` méthode sera appelée. Chaque objet peut ensuite utiliser les données dans le `UserInfo` dictionnaire pour restaurer son propre état. Exemple :
+Pour chaque objet passé, son `RestoreUserActivityState` méthode sera appelée. Chaque objet peut ensuite utiliser les données dans le `UserInfo` dictionnaire pour restaurer son propre état. Par exemple :
 
 ```csharp
 public override void RestoreUserActivityState (NSUserActivity activity)
@@ -427,7 +427,7 @@ Pour les applications basés sur document, si vous n’implémentez pas la `Cont
 
 Procédure de transfert s’appuie sur la transmission des informations entre une collection faiblement connecté appareils iOS et OS X, le processus de transfert peut échouer. Vous devez concevoir votre application pour gérer ces échecs correctement et informer l’utilisateur de toute situation qui surviennent.
 
-En cas de défaillance, le `DidFailToContinueUserActivitiy` méthode de la `AppDelegate` sera appelée. Exemple :
+En cas de défaillance, le `DidFailToContinueUserActivitiy` méthode de la `AppDelegate` sera appelée. Par exemple :
 
 ```csharp
 public override void DidFailToContinueUserActivitiy (UIApplication application, string userActivityType, NSError error)
@@ -453,7 +453,7 @@ Pour une application de participer à ce type de transfert, il doit réclamer le
 
 Si le domaine spécifié correspond à un `WebpageURL` valeur de la propriété, procédure de transfert télécharge la liste des ID d’application approuvée depuis le site Web à ce domaine. Le site Web doit fournir une liste d’ID approuvés dans un fichier JSON signé nommé **apple-application-site-association** (par exemple, `https://company.com/apple-app-site-association`).
 
-Ce fichier JSON contient un dictionnaire qui spécifie une liste des ID d’application sous la forme `<team identifier>.<bundle identifier>`. Exemple :
+Ce fichier JSON contient un dictionnaire qui spécifie une liste des ID d’application sous la forme `<team identifier>.<bundle identifier>`. Par exemple :
 
 ```csharp
 {
@@ -464,7 +464,7 @@ Ce fichier JSON contient un dictionnaire qui spécifie une liste des ID d’appl
 }
 ```
 
-Pour signer le fichier JSON (afin qu’il dispose de la bonne `Content-Type` de `application/pkcs7-mime`), utilisez le **Terminal** application et un `openssl` commande avec un certificat et la clé émis par une autorité de certification approuvée par iOS (consultez [ https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012) pour obtenir la liste). Exemple :
+Pour signer le fichier JSON (afin qu’il dispose de la bonne `Content-Type` de `application/pkcs7-mime`), utilisez le **Terminal** application et un `openssl` commande avec un certificat et la clé émis par une autorité de certification approuvée par iOS (consultez [ https://support.apple.com/kb/ht5012 ](https://support.apple.com/kb/ht5012) pour obtenir la liste). Par exemple :
 
 ```csharp
 echo '{"activitycontinuation":{"apps":["YWBN8XTPBJ.com.company.FirstApp",
@@ -477,7 +477,7 @@ cat json.txt | openssl smime -sign -inkey company.com.key
 -outform DER > apple-app-site-association
 ```
 
-Le `openssl` commande génère un fichier JSON signé que vous placez sur votre site Web à la **apple-application-site-association** URL. Exemple :
+Le `openssl` commande génère un fichier JSON signé que vous placez sur votre site Web à la **apple-application-site-association** URL. Par exemple :
 
 ```csharp
 https://example.com/apple-app-site-association.
@@ -487,7 +487,7 @@ L’application ne recevra pas les activités dont `WebpageURL` domaine est dans
 
 ## <a name="supporting-handoff-in-document-based-apps"></a>Prise en charge de la remise dans les applications basées sur le Document
 
-Comme indiqué précédemment, sur iOS et OS X, les applications basées sur le document prendra automatiquement en charge le transfert de documents basée sur iCloud si l’application **Info.plist** fichier contient un `CFBundleDocumentTypes` clé de `NSUbiquitousDocumentUserActivityType`. Exemple :
+Comme indiqué précédemment, sur iOS et OS X, les applications basées sur le document prendra automatiquement en charge le transfert de documents basée sur iCloud si l’application **Info.plist** fichier contient un `CFBundleDocumentTypes` clé de `NSUbiquitousDocumentUserActivityType`. Par exemple :
 
 ```xml
 <key>CFBundleDocumentTypes</key>
@@ -523,7 +523,7 @@ Vous pouvez associer des répondeurs (héritée de `UIResponder` sur iOS ou `NSR
 
 Les situations où la quantité d’informations nécessaires pour continuer une activité ne peut pas être transférée efficacement par la charge utile de transfert initiale. Dans ces situations, l’application réceptrice peut établir un ou plusieurs flux de données entre lui-même et l’application d’origine pour transférer les données.
 
-L’application d’origine définira le `SupportsContinuationStreams` propriété de la `NSUserActivity` l’instance à `true`. Exemple :
+L’application d’origine définira le `SupportsContinuationStreams` propriété de la `NSUserActivity` l’instance à `true`. Par exemple :
 
 ```csharp
 // Create a new user Activity to support this tab
@@ -542,7 +542,7 @@ UserActivity.AddUserInfoEntries (userInfo);
 UserActivity.BecomeCurrent ();
 ```
 
-L’application réceptrice peut ensuite appeler la `GetContinuationStreams` méthode de la `NSUserActivity` dans son `AppDelegate` pour établir le flux de données. Exemple :
+L’application réceptrice peut ensuite appeler la `GetContinuationStreams` méthode de la `NSUserActivity` dans son `AppDelegate` pour établir le flux de données. Par exemple :
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)

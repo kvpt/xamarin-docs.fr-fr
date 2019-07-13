@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: bff4d46ac9d5fe893cbb0a2dfa032e1b9f6daa0e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: abcd89a6c4547680df0b96d235531312d3b21c52
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407764"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864332"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : À l’aide de Touch dans Xamarin.iOS
 
@@ -176,7 +176,7 @@ Dans cet exemple, nous allons illustrer certaines des fonctions tactiles API. Su
 
 <a name="Gesture_Recognizer_Samples" />
 
-##  <a name="gesture-recognizer-samples"></a>Exemples de module de reconnaissance de mouvement
+## <a name="gesture-recognizer-samples"></a>Exemples de module de reconnaissance de mouvement
 
 Le [section précédente](#Touch_Samples) vous a montré comment faire glisser un objet autour de l’écran à l’aide des événements tactiles.
 Dans cette section, nous débarrasser des événements tactiles et montrent comment utiliser les modules de reconnaissance de mouvement suivantes :

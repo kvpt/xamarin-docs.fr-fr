@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 2c3bddc89348b46c9bba277580071cb8ac3d6943
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7fc675b69132ac41ffa9d87f4b3264de431b11bd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61434754"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865677"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implémentation de SiriKit dans Xamarin.iOS
 
@@ -181,12 +181,12 @@ Effectuez ce qui suit :
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Double-cliquez sur le `Entitlements.plist` de fichiers dans le **l’Explorateur de solutions** à ouvrir pour modification.
-3. Ajouter le `com.apple.developer.siri` **propriété**, définissez le **Type** à `Boolean` et **valeur** à `Yes`: 
+2. Ajouter le `com.apple.developer.siri` **propriété**, définissez le **Type** à `Boolean` et **valeur** à `Yes`: 
 
     [![](implementing-sirikit-images/setup01w.png "Ajoutez la propriété com.apple.developer.siri")](implementing-sirikit-images/setup01w.png#lightbox)
-4. Enregistrez les modifications dans le fichier.
-5. Double-cliquez sur le **fichier projet** dans le **l’Explorateur de solutions** à ouvrir pour modification.
-6. Sélectionnez **signature du Bundle iOS** et vérifiez que le `Entitlements.plist` fichier est sélectionné dans le **droits personnalisés** champ.
+3. Enregistrez les modifications dans le fichier.
+4. Double-cliquez sur le **fichier projet** dans le **l’Explorateur de solutions** à ouvrir pour modification.
+5. Sélectionnez **signature du Bundle iOS** et vérifiez que le `Entitlements.plist` fichier est sélectionné dans le **droits personnalisés** champ.
 
 -----
 
@@ -233,15 +233,15 @@ Les opérations suivantes sur votre Mac :
 16. Vérifiez que le **profil de provisionnement** créé ci-dessus a été installé dans Xcode.
 17. Ouvrez le projet pour ajouter la prise en charge de SiriKit à dans Visual Studio pour Mac.
 18. Double-cliquez sur le `Info.plist` de fichiers dans le **l’Explorateur de solutions**.
-18. Vérifiez que le **identificateur de Bundle** correspond à celui créé dans le portail des développeurs d’Apple ci-dessus : 
+19. Vérifiez que le **identificateur de Bundle** correspond à celui créé dans le portail des développeurs d’Apple ci-dessus : 
 
     [![](implementing-sirikit-images/setup06.png "L’identificateur de Bundle")](implementing-sirikit-images/setup06.png#lightbox)
-18. Dans le **l’Explorateur de solutions**, sélectionnez le **projet**.
-19. Cliquez sur le projet et sélectionnez **Options**.
-21. Sélectionnez **signature du Bundle iOS**, sélectionnez le **identité de signature** et **profil de provisionnement** créé ci-dessus : 
+20. Dans le **l’Explorateur de solutions**, sélectionnez le **projet**.
+21. Cliquez sur le projet et sélectionnez **Options**.
+22. Sélectionnez **signature du Bundle iOS**, sélectionnez le **identité de signature** et **profil de provisionnement** créé ci-dessus : 
 
     [![](implementing-sirikit-images/setup07.png "Sélectionnez l’identité de signature et profil de provisionnement")](implementing-sirikit-images/setup07.png#lightbox)
-22. Cliquez sur le bouton **OK** pour enregistrer les changements.
+23. Cliquez sur le bouton **OK** pour enregistrer les changements.
 
 > [!IMPORTANT]
 > Test SiriKit ne fonctionne que sur un véritable iOS 10 périphérique matériel et non dans les 10 iOS Simulator. Si l’application Xamarin.iOS sur du vrai matériel est activée pour avoir des problèmes pour installer un SiriKit, assurez-vous que les droits requis, ID d’application, identificateur de signature et de profil de provisionnement ont été correctement configurés dans du Apple portail des développeurs et dans Visual Studio pour Mac.
@@ -300,7 +300,7 @@ La première fois que cette méthode est appelée, une alerte s’affiche invita
 
 ### <a name="localization-and-siri"></a>Localisation et Siri
 
-Sur un appareil iOS, l’utilisateur est en mesure de sélectionner une langue pour Siri est différent, puis la valeur par défaut du système. Lorsque vous travaillez avec des données localisées, l’application doit utiliser le `SiriLanguageCode` méthode de la `INPreferences` classe pour obtenir le code de langue à partir de Siri. Exemple :
+Sur un appareil iOS, l’utilisateur est en mesure de sélectionner une langue pour Siri est différent, puis la valeur par défaut du système. Lorsque vous travaillez avec des données localisées, l’application doit utiliser le `SiriLanguageCode` méthode de la `INPreferences` classe pour obtenir le code de langue à partir de Siri. Par exemple :
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -324,7 +324,7 @@ Vocabulaire spécifique d’utilisateur doit appartenir à une des catégories s
 
 Lorsque vous sélectionnez la terminologie à inscrire en tant que de vocabulaire personnalisée, uniquement choisir des termes du contrat qui peut être mal comprise par une personne ne connaît pas l’application. Jamais register termes courants tels que « Mes séances d’entraînement » ou « Mon Album ». Par exemple, l’application MonkeyChat inscrira les surnoms associés à chaque contact dans le carnet d’adresses de l’utilisateur.
 
-L’application fournit le vocabulaire spécifique d’utilisateur en appelant le `SetVocabularyStrings` méthode de la `INVocabulary` classe et en passant un `NSOrderedSet` collection à partir de l’application principale. L’application doit toujours appeler la `RemoveAllVocabularyStrings` méthode tout d’abord, pour supprimer les termes du contrat existant avant d’ajouter de nouveaux. Exemple :
+L’application fournit le vocabulaire spécifique d’utilisateur en appelant le `SetVocabularyStrings` méthode de la `INVocabulary` classe et en passant un `NSOrderedSet` collection à partir de l’application principale. L’application doit toujours appeler la `RemoveAllVocabularyStrings` méthode tout d’abord, pour supprimer les termes du contrat existant avant d’ajouter de nouveaux. Par exemple :
 
 ```csharp
 using System;
@@ -629,7 +629,7 @@ Pour ajouter une Extension Intents à la solution, procédez comme suit :
 
     [![](implementing-sirikit-images/intents05.w157-sml.png "Sélectionnez l’Extension Intent")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. Entrez ensuite une **nom** pour l’Extension de l’intention et cliquez sur le **OK** bouton.
-1. Dans le **l’Explorateur de solutions**, avec le bouton droit sur le **références** dossier de l’Extension Intents qui vient d’être créé et choisissez **Ajouter > référence**. Vérifiez le nom du projet de bibliothèque code partagé commun (que l’application créée ci-dessus) et cliquez sur le **OK** bouton :
+4. Dans le **l’Explorateur de solutions**, avec le bouton droit sur le **références** dossier de l’Extension Intents qui vient d’être créé et choisissez **Ajouter > référence**. Vérifiez le nom du projet de bibliothèque code partagé commun (que l’application créée ci-dessus) et cliquez sur le **OK** bouton :
 
     [![](implementing-sirikit-images/intents08w.png "Sélectionnez le nom du projet de bibliothèque de code partagé commun")](implementing-sirikit-images/intents08w.png#lightbox)
     
@@ -689,7 +689,7 @@ Pour obtenir une liste complète des domaines d’intention disponibles, consult
 
 ### <a name="configuring-the-main-class"></a>Configuration de la classe principale
 
-Ensuite, le développeur devra configurer la classe principale qui agit en tant que point d’entrée principal pour l’Extension de l’intention dans Siri. Il doit être une sous-classe de `INExtension` qui est conforme à la `IINIntentHandler` déléguer. Exemple :
+Ensuite, le développeur devra configurer la classe principale qui agit en tant que point d’entrée principal pour l’Extension de l’intention dans Siri. Il doit être une sous-classe de `INExtension` qui est conforme à la `IINIntentHandler` déléguer. Par exemple :
 
 ```csharp
 using System;
@@ -891,7 +891,7 @@ Pour ajouter une Extension d’IU Intents à la solution, procédez comme suit 
 1. Avec le bouton droit sur le **nom de la Solution** dans le **l’Explorateur de solutions** et sélectionnez **ajouter** > **ajouter un nouveau projet...**
 2. Dans la boîte de dialogue Sélectionnez **iOS** > **Extensions** > **Extension d’IU intention** et cliquez sur le **suivant** bouton.
 3. Entrez ensuite une **nom** pour l’Extension de l’intention et cliquez sur le **OK** bouton.
-5. Dans le **l’Explorateur de solutions**, avec le bouton droit sur le **références** dossier de l’Extension d’intention nouvellement créé. Vérifiez le nom du projet de bibliothèque code partagé commun (que l’application créée ci-dessus) et cliquez sur le **OK** bouton.
+4. Dans le **l’Explorateur de solutions**, avec le bouton droit sur le **références** dossier de l’Extension d’intention nouvellement créé. Vérifiez le nom du projet de bibliothèque code partagé commun (que l’application créée ci-dessus) et cliquez sur le **OK** bouton.
     
 -----
 
@@ -935,7 +935,7 @@ Pour obtenir une liste complète des domaines d’intention disponibles, consult
 
 ### <a name="configuring-the-main-class"></a>Configuration de la classe principale
 
-Configurer la classe principale qui agit en tant que point d’entrée principal pour l’Extension de l’interface utilisateur d’intention dans Siri. Il doit être une sous-classe de `UIViewController` qui est conforme à la `IINUIHostedViewController` interface. Exemple :
+Configurer la classe principale qui agit en tant que point d’entrée principal pour l’Extension de l’interface utilisateur d’intention dans Siri. Il doit être une sous-classe de `UIViewController` qui est conforme à la `IINUIHostedViewController` interface. Par exemple :
 
 ```csharp
 using System;
@@ -1053,7 +1053,7 @@ public bool DisplaysMessage {
 }
 ```
 
-### <a name="considerations"></a>Éléments à prendre en considération
+### <a name="considerations"></a>Considérations
 
 Apple suggère que le développeur prendre en compte lorsque vous concevez et les Extensions de l’interface utilisateur d’intention de mise en œuvre les éléments suivants :
 

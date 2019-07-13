@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 96af7fab366c3fd3493cf5adbf183d80b7c1ee26
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418193"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865164"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation de tvOS icônes et des Images dans Xamarin
 
@@ -138,7 +138,7 @@ Chaque application doit fournir une petite et une grande version de son icône d
 
 |Petite icône||Grande icône||
 |---|---|---|---|
-|Taille réelle|400x240px|Size|1280x768px|
+|Taille réelle|400x240px|Taille|1280x768px|
 |Taille de la Zone de safe|370x222px|||
 |Taille sans focus|300x180px|||
 |Taille ayant le focus|370x222px|||
@@ -181,7 +181,7 @@ Pour définir les icônes d’application requis pour votre projet de tvOS, effe
 5. Cliquez sur le **1 x entrée de l’Apple TV** et sélectionnez un fichier image.
 6. Répétez les étapes ci-dessus pour le `Front` et `Middle` actifs.
 7. Puis répétez ces étapes pour définir le `App Icon - Large` actif.
-4. Enregistrez les modifications apportées.
+8. Enregistrez les modifications apportées.
 
 <a name="Top-Shelf-Image" />
 
@@ -218,8 +218,8 @@ Pour définir l’Image d’étagère supérieure requis pour votre projet de tv
 3. Cliquez sur le `Top Shelf Image` actif : 
 
     [![](icons-images-images/asset07.png "La ressource d’Image d’étagère supérieure")](icons-images-images/asset07.png#lightbox)
-5. Cliquez sur le **1 x entrée de l’Apple TV** et sélectionnez un fichier image.
-6. Enregistrez les modifications apportées.
+4. Cliquez sur le **1 x entrée de l’Apple TV** et sélectionnez un fichier image.
+5. Enregistrez les modifications apportées.
 
 <a name="Dynamic-Top-Shelf-Content" />
 

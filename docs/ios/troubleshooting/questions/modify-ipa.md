@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/03/2018
-ms.openlocfilehash: bc9396a8cb667b8170c4b3511b9fe8423741e6b1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 047ee06522d4b2c07937e0e1bd9985248a164f01
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829927"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865015"
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Puis-je ajouter des fichiers à ou supprimer des fichiers à partir d’un fichier IPA après l’avoir généré dans Visual Studio ?
 
@@ -24,55 +24,55 @@ Notez que la modification de la `.ipa` fichier n’est pas nécessaire dans une 
 
 Pour cet exemple, supposez que le nom du projet Xamarin.iOS est `iPhoneApp1` et `generated session id` est `cc530d20d6b19da63f6f1c6f67a0a254`
 
-1.  Générer le `.ipa` fichier comme d’habitude à partir de Visual Studio.
+1. Générer le `.ipa` fichier comme d’habitude à partir de Visual Studio.
 
-2.  Basculer vers l’hôte de build Mac.
+2. Basculer vers l’hôte de build Mac.
 
-3.  Recherchez la build dans le `~/Library/Caches/Xamarin/mtbs/builds` dossier. Vous pouvez coller ce chemin d’accès dans **Finder > Atteindre > accédez au dossier** pour parcourir le dossier dans le Finder. Recherchez le dossier qui correspond au nom de projet. Dans ce dossier, recherchez le dossier qui correspond à la `generated session id` de la build. Il s’agit très probablement le sous-dossier contenant la dernière heure de modification.
+3. Recherchez la build dans le `~/Library/Caches/Xamarin/mtbs/builds` dossier. Vous pouvez coller ce chemin d’accès dans **Finder > Atteindre > accédez au dossier** pour parcourir le dossier dans le Finder. Recherchez le dossier qui correspond au nom de projet. Dans ce dossier, recherchez le dossier qui correspond à la `generated session id` de la build. Il s’agit très probablement le sous-dossier contenant la dernière heure de modification.
 
-4.  Ouvrez une nouvelle `Terminal.app` fenêtre.
+4. Ouvrez une nouvelle `Terminal.app` fenêtre.
 
-5.  Type `cd` dans la fenêtre Terminal.app et puis glisser -déplacer le `generated session id` dossier vers le `Terminal.app` fenêtre :
+5. Type `cd` dans la fenêtre Terminal.app et puis glisser -déplacer le `generated session id` dossier vers le `Terminal.app` fenêtre :
 
     ![](modify-ipa-images/session-id-folder.png "Localiser le dossier d’id de session généré dans le Finder")
 
-6.  Tapez la touche Retour pour modifier le répertoire dans le `generated session id` dossier.
+6. Tapez la touche Retour pour modifier le répertoire dans le `generated session id` dossier.
 
-7.  Décompressez le `.ipa` fichier dans une table temporaire `old/` dossier à l’aide de la commande suivante. Ajuster la `Ad-Hoc` et `iPhoneApp1` nomme en fonction des besoins de votre projet spécifique.
+7. Décompressez le `.ipa` fichier dans une table temporaire `old/` dossier à l’aide de la commande suivante. Ajuster la `Ad-Hoc` et `iPhoneApp1` nomme en fonction des besoins de votre projet spécifique.
 
     > ditto -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa old/
 
-8.  Conserver la `Terminal.app` fenêtre ouverte.
+8. Conserver la `Terminal.app` fenêtre ouverte.
 
-9.  Supprimer les fichiers souhaités à partir de la `.ipa`. Vous pouvez les déplacer vers la Corbeille à l’aide de la recherche, ou supprimez-les sur la ligne de commande à l’aide `Terminal.app`. Pour afficher le contenu de la `Payload/iPhone` dans le Finder, cliquez sur le fichier et sélectionnez **afficher le contenu du Package**.
+9. Supprimer les fichiers souhaités à partir de la `.ipa`. Vous pouvez les déplacer vers la Corbeille à l’aide de la recherche, ou supprimez-les sur la ligne de commande à l’aide `Terminal.app`. Pour afficher le contenu de la `Payload/iPhone` dans le Finder, cliquez sur le fichier et sélectionnez **afficher le contenu du Package**.
 
-10.  À l’aide de la même approche générale comme à l’étape 3, recherchez le fichier journal sous `~/Library/Logs/Xamarin/MonoTouchVS/` qui a le nom du projet et le `generated session id` dans le nom : ![](modify-ipa-images/build-log.png "Recherchez le journal de génération de projet dans le Finder")
+10. À l’aide de la même approche générale comme à l’étape 3, recherchez le fichier journal sous `~/Library/Logs/Xamarin/MonoTouchVS/` qui a le nom du projet et le `generated session id` dans le nom : ![](modify-ipa-images/build-log.png "Recherchez le journal de génération de projet dans le Finder")
 
-11.  Ouvrez le journal de génération de l’étape 10, par exemple en double-cliquant dessus.
+11. Ouvrez le journal de génération de l’étape 10, par exemple en double-cliquant dessus.
 
-12.  Recherchez la ligne qui inclut `tool /usr/bin/codesign execution started with arguments: -v --force --sign`.
+12. Recherchez la ligne qui inclut `tool /usr/bin/codesign execution started with arguments: -v --force --sign`.
 
-13.  Type `/usr/bin/codesign` dans la fenêtre Terminal.app à l’étape 8.
+13. Type `/usr/bin/codesign` dans la fenêtre Terminal.app à l’étape 8.
 
-14.  Copiez tous les arguments en commençant par `-v` à la ligne dans l’étape 12, puis collez-les dans la fenêtre Terminal.app.
+14. Copiez tous les arguments en commençant par `-v` à la ligne dans l’étape 12, puis collez-les dans la fenêtre Terminal.app.
 
-15.  Modifier le dernier argument pour être le `.app` bundle situés au sein de la `old/Payload/` dossier, puis exécutez la commande.
+15. Modifier le dernier argument pour être le `.app` bundle situés au sein de la `old/Payload/` dossier, puis exécutez la commande.
 
-```bash
-/usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
-```
+    ```bash
+    /usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
+    ```
 
-16.  Modifier dans le `old/` répertoire dans un Terminal :
+16. Modifier dans le `old/` répertoire dans un Terminal :
 
-```bash
-cd old
-```
+    ```bash
+    cd old
+    ```
 
-17.  Compresser le contenu du répertoire dans un nouveau `.ipa` de fichiers à l’aide de la `zip` commande. Vous pouvez modifier le `"$HOME/Desktop/iPhoneApp1-1.0.ipa"` l’argument de sortie le `.ipa` fichier chaque fois que vous souhaitez :
+17. Compresser le contenu du répertoire dans un nouveau `.ipa` de fichiers à l’aide de la `zip` commande. Vous pouvez modifier le `"$HOME/Desktop/iPhoneApp1-1.0.ipa"` l’argument de sortie le `.ipa` fichier chaque fois que vous souhaitez :
 
-```bash
-zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
-```
+    ```bash
+    zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
+    ```
 
 ## <a name="common-error-messages"></a>Messages d’erreur courants
 

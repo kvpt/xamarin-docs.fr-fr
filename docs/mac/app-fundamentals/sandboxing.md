@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c51960a24e1277b3faec0905da3b9a5986359681
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e38ca07aeef1cbd8e121421ebcbad2207a1bb823
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830673"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865987"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing d’une application Xamarin.Mac
 
@@ -87,13 +87,13 @@ Nous allons, procédez comme suit pour créer notre exemple de projet :
 8. Ajoutez le code suivant à l’aide d’instruction : `using WebKit;`
 9. Rendre le `ViewDidLoad` méthode ressemble ce qui suit : 
 
-```csharp
-public override void AwakeFromNib ()
-{
-    base.AwakeFromNib ();
-    webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
-}
-```
+    ```csharp
+    public override void AwakeFromNib ()
+    {
+        base.AwakeFromNib ();
+        webView.MainFrame.LoadRequest(new NSUrlRequest(new NSUrl("http://www.apple.com")));
+    }
+    ```
 
 10. Enregistrez les modifications apportées.
 
@@ -164,14 +164,14 @@ Ensuite, nous devons sélectionner le nouvel ID d’application et le même prof
 3. Ensuite, double-cliquez sur le **Entitlements.plist** de fichiers et de vous assurer notre **iCloud clé-valeur Store** et **conteneurs iCloud** correspondent tous notre ID d’application que nous avons créé ci-dessus (exemple : `com.appracatappra.MacSandbox`): 
 
     [![Modification du fichier Entitlements.plist](sandboxing-images/sign17.png "modifiant le fichier Entitlements.plist")](sandboxing-images/sign17-large.png#lightbox)
-3. Enregistrez les modifications apportées.
-4. Dans le **panneau solutions**, double-cliquez sur le fichier projet pour ouvrir ses Options pour la modification :  
+4. Enregistrez les modifications apportées.
+5. Dans le **panneau solutions**, double-cliquez sur le fichier projet pour ouvrir ses Options pour la modification :  
 
     ![Editign les options de la solution](sandboxing-images/sign14.png "Editign les options de la solution")
-5. Sélectionnez **signature Mac**, puis vérifiez **signer le bundle d’application** et **signer le package de programme d’installation**. Sous **profil de provisionnement**, sélectionnez celui que nous avons créé ci-dessus : 
+6. Sélectionnez **signature Mac**, puis vérifiez **signer le bundle d’application** et **signer le package de programme d’installation**. Sous **profil de provisionnement**, sélectionnez celui que nous avons créé ci-dessus : 
 
     ![Définition du profil de provisionnement](sandboxing-images/sign15.png "définissant le profil d’approvisionnement")
-6. Cliquez sur le **fait** bouton.
+7. Cliquez sur le **fait** bouton.
 
 > [!IMPORTANT]
 > Vous devrez peut-être quitter et redémarrer Visual Studio pour Mac pour l’obtenir afin qu’il reconnaisse le nouvel ID d’application et profil de provisionnement qui a été installée par Xcode apparaissent.

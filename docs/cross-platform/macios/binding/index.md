@@ -6,27 +6,27 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: bdf284d66539da3eca35e79d761712012674de0d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 923ec41443feff67d851a0c2f3cba1b948aed580
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978454"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864411"
 ---
 # <a name="binding-objective-c"></a>Liaison Objective-C
 
 Cette section comprend un grand nombre de documents qui couvrent la création de liaisons aux bibliothèques Objective-C, afin qu’ils peuvent être appelées depuis C# applications créées avec Xamarin.iOS ou Xamarin.Mac.
 
-##  <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[Vue d’ensemble](~/cross-platform/macios/binding/overview.md)
+## <a name="overviewcross-platformmaciosbindingoverviewmd"></a>[Vue d’ensemble](~/cross-platform/macios/binding/overview.md)
 
 Ce document contient certains éléments internes de la façon dont une liaison a lieu. Il est un document avec des informations techniques avancées.
 
-##  <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Liaison de bibliothèques Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
+## <a name="binding-objective-c-librariescross-platformmaciosbindingobjective-c-librariesmd"></a>[Liaison de bibliothèques Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 
 Ce document décrit le processus utilisé pour créer C# liaisons de l’API de Objective-C et comment les idiomes en Objective-C sont mappées aux idiomes utilisés dans .NET.
 Si vous liez simplement les API C, vous devez utiliser le mécanisme de .NET standard pour ce faire, l’infrastructure de P/Invoke.
 
-##  <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Guide de référence de définition de liaison](~/cross-platform/macios/binding/binding-types-reference.md)
+## <a name="binding-definition-reference-guidecross-platformmaciosbindingbinding-types-referencemd"></a>[Guide de référence de définition de liaison](~/cross-platform/macios/binding/binding-types-reference.md)
 
 Il s’agit du guide de référence qui décrit tous les attributs disponibles pour les auteurs de liaison pour piloter le processus de génération de liaison.
 

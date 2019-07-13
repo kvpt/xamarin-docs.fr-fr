@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 26ab7880b3c4b6176c806783fec7a499d68511c3
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 696432fb51060a236780eedee0b60661e3a86712
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831905"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865194"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Contrôles standard dans Xamarin.Mac
 
@@ -603,16 +603,16 @@ Pour créer un menu, procédez comme suit :
 2. Faites glisser un **afficher contrôleur** à partir de la **inspecteur de bibliothèque** sur le **Éditeur d’Interface**: 
 
     [![](standard-controls-images/content02.png "Sélection d’un contrôleur d’affichage de la bibliothèque")](standard-controls-images/content02.png#lightbox)
-4. Définir la taille et la disposition de la **vue personnalisée**: 
+3. Définir la taille et la disposition de la **vue personnalisée**: 
 
     [![](standard-controls-images/content04.png "Modification de la disposition")](standard-controls-images/content04.png#lightbox)
-5. Cliquez et faites glisser à partir de la source de la fenêtre contextuelle sur le **contrôleur d’affichage**: 
+4. Cliquez et faites glisser à partir de la source de la fenêtre contextuelle sur le **contrôleur d’affichage**: 
 
     [![](standard-controls-images/content05.png "Glissement pour créer un segue")](standard-controls-images/content05.png#lightbox)
-6. Sélectionnez **menu** dans le menu contextuel : 
+5. Sélectionnez **menu** dans le menu contextuel : 
 
     [![](standard-controls-images/content06.png "Définition du type de segue")](standard-controls-images/content06.png#lightbox)
-7. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+6. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
 
 <a name="Tab_Views" />
 

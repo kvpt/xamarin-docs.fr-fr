@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 1362767bf9a80af1eac37d316bd99a6ab364063f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61414000"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865960"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Utilisation de watchOS localisation dans Xamarin
 
@@ -127,19 +127,19 @@ Les images qui sont remplies par le code peuvent être définies de deux manièr
 
 1. Vous pouvez modifier un `Image` contrôle en lui attribuant la valeur du nom de chaîne d’une image qui déjà existe dans l’application Apple Watch, par exemple,
 
-  ```csharp
-  displayImage.SetImage("gradient"); // image in Watch App (as shown above)
-  ```
+    ```csharp
+    displayImage.SetImage("gradient"); // image in Watch App (as shown above)
+    ```
 
 2. Vous pouvez déplacer une image à partir de l’extension pour le suivi à l’aide `FromBundle` et l’application choisit automatiquement l’image correcte pour la sélection de la langue de l’utilisateur. Dans l’exemple de solution, il existe une image **language@2x.png** dans chaque langue dossier et il est affiché sur `DetailController` utilisant le code suivant :
 
-  ```csharp
-  using (var image = UIImage.FromBundle ("language")) {
-    displayImage.SetImage (image);
-  }
-  ```
+    ```csharp
+    using (var image = UIImage.FromBundle ("language")) {
+        displayImage.SetImage (image);
+    }
+    ```
 
-  Notez que vous n’avez pas besoin de spécifier le **@2x** lorsque vous faites référence au nom de fichier de l’image.
+    Notez que vous n’avez pas besoin de spécifier le **@2x** lorsque vous faites référence au nom de fichier de l’image.
 
 La seconde méthode est également applicable si vous téléchargez une image à partir d’un serveur distant à restituer sur la surveillance ; Toutefois dans ce cas vous devez vous assurer que l’image que vous téléchargez est correctement localisé en fonction des préférences de l’utilisateur.
 

@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 70ca9a73c83bed5233b77a6f7be80a13f04f2bcb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fbef8f60a31511be926ee2adf5e239ad8955b208
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61360801"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864522"
 ---
 # <a name="updating-component-references-to-nuget"></a>La mise à jour des références de composants vers NuGet
 
@@ -180,7 +180,7 @@ Cette opération supprimera le composant et toutes les références. Cela arrêt
 1. Avec le bouton droit sur le **Packages** nœud et choisissez **ajouter des Packages...** .
 2. Recherchez le remplacement de NuGet par nom ou l’auteur :
 
-  ![](component-nuget-images/nuget-search-sml.png)
+    ![](component-nuget-images/nuget-search-sml.png)
 
 3. Appuyez sur **ajouter Package**.
 

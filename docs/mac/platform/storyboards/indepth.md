@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 61d598f90747cf47b613012328f77b4bd8953a41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e24b448bedc60a537bfcd4a5bfbdbe9562163818
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032985"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865935"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Utilisation des Storyboards dans Xamarin.Mac
 
@@ -273,17 +273,17 @@ Pour ajouter une référence à une table de montage séquentiel externe, procé
 
     [![](indepth-images/ref01.png "Ajout d’une table de montage séquentiel")](indepth-images/ref01.png#lightbox)
 2. Dans le **l’Explorateur de solutions**, double-cliquez sur le nouveau nom de table de montage séquentiel pour l’ouvrir pour modification dans Xcode Interface Builder.
-2. Concevoir la disposition de l’arrière-plan de la nouvelle table de montage séquentiel serait normalement et enregistrer vos modifications : 
+3. Concevoir la disposition de l’arrière-plan de la nouvelle table de montage séquentiel serait normalement et enregistrer vos modifications : 
 
     [![](indepth-images/ref02.png "Conception de l’interface")](indepth-images/ref02.png#lightbox)
-3. Basculez vers la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans le Générateur d’Interface.
-4. Faites glisser un **Storyboard référence** à partir de la **objet bibliothèque** sur l’aire de conception : 
+4. Basculez vers la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans le Générateur d’Interface.
+5. Faites glisser un **Storyboard référence** à partir de la **objet bibliothèque** sur l’aire de conception : 
 
     [![](indepth-images/ref03.png "Sélection d’une référence de table de montage séquentiel dans la bibliothèque")](indepth-images/ref03.png#lightbox)
-5. Dans le **inspecteur d’attributs**, sélectionnez le nom de la **Storyboard** que vous avez créé ci-dessus : 
+6. Dans le **inspecteur d’attributs**, sélectionnez le nom de la **Storyboard** que vous avez créé ci-dessus : 
 
     [![](indepth-images/ref04.png "Configuration de la référence")](indepth-images/ref04.png#lightbox)
-6. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer.  Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
+7. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer.  Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
 
     [![](indepth-images/ref06.png "Définition du type de Segue")](indepth-images/ref06.png#lightbox) 
 8. Enregistrez vos modifications dans la table de montage séquentiel.
@@ -304,14 +304,14 @@ Pour ajouter une référence à une scène spécifique un Storyboard externe (et
 3. Dans le **inspecteur d’identité**, entrez un **ID de Storyboard** pour contrôleur de fenêtre de la scène de nouveau : 
 
     [![](indepth-images/ref08.png "Définition de l’ID de Storyboard")](indepth-images/ref08.png#lightbox)
-3. Ouvrez la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans Interface Builder.
-4. Faites glisser un **Storyboard référence** à partir de la **objet bibliothèque** sur l’aire de conception : 
+4. Ouvrez la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans Interface Builder.
+5. Faites glisser un **Storyboard référence** à partir de la **objet bibliothèque** sur l’aire de conception : 
 
     [![](indepth-images/ref03.png "Sélection d’une référence de table de montage séquentiel à partir de la bibliothèque")](indepth-images/ref03.png#lightbox)
-5. Dans le **inspecteur d’identité**, sélectionnez le nom de la **Storyboard** et **ID de référence** (ID de Storyboard) de la scène que vous avez créé ci-dessus : 
+6. Dans le **inspecteur d’identité**, sélectionnez le nom de la **Storyboard** et **ID de référence** (ID de Storyboard) de la scène que vous avez créé ci-dessus : 
 
     [![](indepth-images/ref09.png "Définition de l’ID de référence")](indepth-images/ref09.png#lightbox)
-6. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
+7. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
 
     [![](indepth-images/ref06.png "Définition du Type de Segue")](indepth-images/ref06.png#lightbox) 
 8. Enregistrez vos modifications dans la table de montage séquentiel.
@@ -332,7 +332,7 @@ Pour ajouter une référence à une scène spécifique de la même table de mont
 3. Dans le **inspecteur d’identité**, entrez un **ID de Storyboard** pour contrôleur de fenêtre de la scène de nouveau : 
 
     [![](indepth-images/ref12.png "Définition de l’ID de Storyboard")](indepth-images/ref12.png#lightbox)
-3. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
+4. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
 
     [![](indepth-images/ref03.png "Sélection d’une référence de table de montage séquentiel à partir de la bibliothèque")](indepth-images/ref03.png#lightbox)
 5. Dans **inspecteur d’attributs**, sélectionnez **ID de référence** (ID de Storyboard) de la scène que vous avez créé ci-dessus : 
@@ -341,8 +341,8 @@ Pour ajouter une référence à une scène spécifique de la même table de mont
 6. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
 
     [![](indepth-images/ref06.png "Sélection du Type de Segue")](indepth-images/ref06.png#lightbox) 
-8. Enregistrez vos modifications dans la table de montage séquentiel.
-9. Revenez à Visual Studio pour Mac synchroniser vos modifications.
+7. Enregistrez vos modifications dans la table de montage séquentiel.
+8. Revenez à Visual Studio pour Mac synchroniser vos modifications.
 
 Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur que vous avez créé le Segue à partir de la scène avec la donnée **ID de Storyboard** dans la même table de montage spécifié dans la référence de table de montage séquentiel s’affichera.
 

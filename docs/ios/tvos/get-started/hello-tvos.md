@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 6b404d7c27fba38c53ff07207003849445d51118
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 859bbd22640ba3d09324fcd3853cda26e563a1cd
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832477"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865277"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS Guide de démarrage rapide
 
@@ -298,20 +298,20 @@ Effectuez ce qui suit :
 9. Une fois terminé, vos contraintes doivent ressembler à celles figurant dans l’onglet Disposition du panneau Propriétés :
 
     [![](hello-tvos-images/designer11.png "Contraintes d’exemple")](hello-tvos-images/designer11.png#lightbox)
-8. Faites glisser un **bouton** à partir de la **boîte à outils** et placez-le sous l’étiquette.
-9. Cliquez sur le **titre** propriété dans le **remplissage de la propriété** et modifier le titre du bouton à `Click Me`:
+10. Faites glisser un **bouton** à partir de la **boîte à outils** et placez-le sous l’étiquette.
+11. Cliquez sur le **titre** propriété dans le **remplissage de la propriété** et modifier le titre du bouton à `Click Me`:
 
     [![](hello-tvos-images/designer12.png "Remplacez le titre de boutons par cliquez ici")](hello-tvos-images/designer12.png#lightbox)
-10. Répétez les étapes 5 à 8 ci-dessus pour contraindre le bouton dans la fenêtre de tvOS. Toutefois, au lieu de la poignée de T-vers le haut de la fenêtre (comme à l’étape #7), faites-le glisser vers le bas de l’étiquette :
+12. Répétez les étapes 5 à 8 ci-dessus pour contraindre le bouton dans la fenêtre de tvOS. Toutefois, au lieu de la poignée de T-vers le haut de la fenêtre (comme à l’étape #7), faites-le glisser vers le bas de l’étiquette :
 
     [![](hello-tvos-images/designer14.png "Limiter le bouton")](hello-tvos-images/designer14.png#lightbox)
-11. Faites glisser une autre étiquette sous le bouton, de taille pour qu’il soit la même largeur que le premier contrôle label et son **alignement** à **Center**:
+13. Faites glisser une autre étiquette sous le bouton, de taille pour qu’il soit la même largeur que le premier contrôle label et son **alignement** à **Center**:
 
     [![](hello-tvos-images/designer15.png "Faites glisser une autre étiquette sous le bouton, de taille pour la même largeur que la première étiquette et définissez son alignement au centre")](hello-tvos-images/designer15.png#lightbox)
-12. Comme la première étiquette et bouton, définissez cette étiquette pour l’épingler à l’emplacement et la taille et de centrage :
+14. Comme la première étiquette et bouton, définissez cette étiquette pour l’épingler à l’emplacement et la taille et de centrage :
 
     [![](hello-tvos-images/designer16.png "Épingler l’étiquette dans l’emplacement et la taille")](hello-tvos-images/designer16.png#lightbox)
-13. Enregistrez vos modifications dans l’Interface utilisateur.
+15. Enregistrez vos modifications dans l’Interface utilisateur.
 
 Lorsque vous ont été redimensionnement et le déplacement des contrôles, vous avez devez remarqué que le concepteur vous donne brèves indications utiles qui sont basées sur [Apple TV Human Interface Guidelines pour](https://developer.apple.com/tvos/human-interface-guidelines/). Ces recommandations vous aideront à créer des applications de haute qualité qui auront un aspect familier pour les utilisateurs Apple TV.
 

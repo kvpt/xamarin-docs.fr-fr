@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bf86759832a1aba0ccc1c144981af6ea4eae8670
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61343705"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865975"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement watchOS applications sur l’App Store
 
@@ -89,15 +89,15 @@ Vous pouvez utiliser le simulateur de watch 42mm pour prendre des captures d’�
 
 1. Assurez-vous que l’application iOS est le projet de démarrage. Si ce n’est pas le cas, avec le bouton droit pour la définir :
 
-  ![](appstore-images/xs-startup.png "Définition du projet de démarrage")
+   ![](appstore-images/xs-startup.png "Définition du projet de démarrage")
 
 2. Choisissez le **AppStore** configuration de build :
 
-  ![](appstore-images/xs-appstore.png "La configuration de build App Store")
+   ![](appstore-images/xs-appstore.png "La configuration de build App Store")
 
 3. Choisissez le **Générer > Archiver** élément de menu pour démarrer le processus d’archivage :
 
-  ![](appstore-images/xs-archive.png "Le menu Générer")
+   ![](appstore-images/xs-archive.png "Le menu Générer")
 
 Vous pouvez également choisir le **vue > Archives...**  élément de menu pour afficher les archives qui ont été créés précédemment.
 
@@ -111,26 +111,26 @@ Xcode affiche automatiquement les archives créés dans Visual Studio pour Mac.
 
 1. Démarrez Xcode et choisissez **fenêtre > organisateur**:
 
-  ![](appstore-images/xc-organizer.png "Le menu Fenêtre")
+   ![](appstore-images/xc-organizer.png "Le menu Fenêtre")
 
 2. Basculez vers le **Archives** onglet et sélectionnez l’archive a été créé avec Visual Studio pour Mac :
 
-  ![](appstore-images/xc-archives.png "L’onglet Archives")
+   ![](appstore-images/xc-archives.png "L’onglet Archives")
 
 3. Si vous le souhaitez **valider...**  l’archive, puis choisissez **envoyer...**  pour charger l’application à iTunes Connect.
 
 4. Choisissez l’équipe de développement (si vous appartenez à plusieurs), puis confirmez la soumission :
 
-  ![](appstore-images/xc-submit1.png "La section d’équipe de développement")
+   ![](appstore-images/xc-submit1.png "La section d’équipe de développement")
 
 5. Visitez iTunes Connect à nouveau pour voir le fichier binaire chargé. Accédez à la page de configuration de votre application et choisissez **la version préliminaire** dans le menu supérieur pour afficher le **génère** liste :
 
-  [![](appstore-images/itc-prerelease-sml.png "La page de configuration des applications dans iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "La page de configuration des applications dans iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 Vous pouvez ensuite soumettre l’application de réception sur le **Versions** page. Reportez-vous à la [présentation de la distribution iOS application](~/ios/deploy-test/app-distribution/index.md) pour plus d’informations.
 
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Résolution de problèmes
 
 Voici certaines erreurs que vous pouvez rencontrer lors de l’envoi à l’App Store et les étapes à que suivre pour les corriger.
 

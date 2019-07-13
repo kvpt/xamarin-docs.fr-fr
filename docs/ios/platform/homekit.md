@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a5402bb3b10387644282301075f63644149fcdc6
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 9daedbe9bba5a2923a247104c4e69ae2e1b635aa
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831545"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865771"
 ---
 # <a name="homekit-in-xamarinios"></a>HomeKit dans Xamarin.iOS
 
@@ -59,20 +59,20 @@ Effectuez ce qui suit :
 
     [![](homekit-images/provision01.png "Activer le service d’HomeKit pour l’ID donné")](homekit-images/provision01.png#lightbox)
 5. Enregistrez les modifications apportées.
-4. Cliquez sur **profils de provisionnement** > **développement** et créer un environnement de développement nouveau profil de configuration pour votre application : 
+6. Cliquez sur **profils de provisionnement** > **développement** et créer un environnement de développement nouveau profil de configuration pour votre application : 
 
     [![](homekit-images/provision02.png "Créer un environnement de développement nouveau profil de configuration pour l’application")](homekit-images/provision02.png#lightbox)
-5. Télécharger et installer le nouveau profil de provisionnement ou utiliser Xcode pour télécharger et installer le profil.
-6. Modifier les options de votre projet Xamarin.iOS et vous assurer que vous utilisez le profil de configuration que vous venez de créer : 
+7. Télécharger et installer le nouveau profil de provisionnement ou utiliser Xcode pour télécharger et installer le profil.
+8. Modifier les options de votre projet Xamarin.iOS et vous assurer que vous utilisez le profil de configuration que vous venez de créer : 
 
     [![](homekit-images/provision03.png "Sélectionnez le profil de provisionnement venez de créer")](homekit-images/provision03.png#lightbox)
-7. Ensuite, modifiez votre **Info.plist** de fichiers et de vous assurer que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement : 
+9. Ensuite, modifiez votre **Info.plist** de fichiers et de vous assurer que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement : 
 
     [![](homekit-images/provision04.png "Définir l’ID d’application ")](homekit-images/provision04.png#lightbox)
-8. Enfin, modifiez votre **Entitlements.plist** de fichiers et vérifiez que le **HomeKit** droit a été sélectionné : 
+10. Enfin, modifiez votre **Entitlements.plist** de fichiers et vérifiez que le **HomeKit** droit a été sélectionné : 
 
     [![](homekit-images/provision05.png "Activer le droit d’HomeKit")](homekit-images/provision05.png#lightbox)
-9. Enregistrez les modifications à tous les fichiers.
+11. Enregistrez les modifications à tous les fichiers.
 
 Ces paramètres en place, l’application est maintenant prête à accéder aux API de Framework HomeKit. Pour obtenir des informations détaillées sur l’approvisionnement, consultez notre [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md) et [l’approvisionnement de votre application](~/ios/get-started/installation/device-provisioning/index.md) guides.
 
@@ -426,7 +426,7 @@ Le `HMCharacteristicType` enum fournit un ensemble de valeurs de métadonnées d
 - Fabricant
 - Modèle
 - MotionDetected
-- Name
+- Nom
 - ObstructionDetected
 - OccupancyDetected
 - OutletInUse

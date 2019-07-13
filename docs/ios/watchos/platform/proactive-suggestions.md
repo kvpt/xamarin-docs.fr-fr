@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 979b103db478e3888d3a3c20df6afbd91d0c37d8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c0bf6058b2ec7a8e3ef606bef9f725a476abffe
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386521"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865917"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS Suggestions proactives dans Xamarin
 
@@ -132,7 +132,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>Restauration d’une activité
 
-Pour répondre à l’utilisateur en appuyant sur un résultat de recherche (`NSUserActivity`) pour l’application, vous devez modifier le **AppDelegate.cs** de fichiers et de remplacer le `ContinueUserActivity` (méthode). Exemple :
+Pour répondre à l’utilisateur en appuyant sur un résultat de recherche (`NSUserActivity`) pour l’application, vous devez modifier le **AppDelegate.cs** de fichiers et de remplacer le `ContinueUserActivity` (méthode). Par exemple :
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,9 +169,9 @@ La section suivante sera un œil à activer les deux autres nouvelles fonctionna
 Prenons l’exemple de l’application de recherche de restaurant ci-dessus. Si elle a implémenté `NSUserActivity` et correctement rempli toutes les métadonnées et les attributs, l’utilisateur serait en mesure d’effectuer les opérations suivantes :
 
 1. Trouver un restaurant dans l’application qu’ils souhaiteraient pour répondre à un ami chez.
-4. Si l’utilisateur passe à l’application de cartes, les adresses du restaurant sont suggérés automatiquement en tant que destination.
-5. Cela fonctionne même pour les applications tierces 3e (qui prennent en charge `NSUserActivity`), de sorte que l’utilisateur peut basculer vers une application de partage de course et les adresses du restaurant sont automatiquement suggéré en tant que destination il également.
-6. Elle également fournit un contexte à Siri, l’utilisateur peut appeler Siri au sein de l’application de restaurant et demandez *« Get directions... »* et Siri fournira des instructions au restaurant l’affichage de l’utilisateur.
+2. Si l’utilisateur passe à l’application de cartes, les adresses du restaurant sont suggérés automatiquement en tant que destination.
+3. Cela fonctionne même pour les applications tierces 3e (qui prennent en charge `NSUserActivity`), de sorte que l’utilisateur peut basculer vers une application de partage de course et les adresses du restaurant sont automatiquement suggéré en tant que destination il également.
+4. Elle également fournit un contexte à Siri, l’utilisateur peut appeler Siri au sein de l’application de restaurant et demandez *« Get directions... »* et Siri fournira des instructions au restaurant l’affichage de l’utilisateur.
 
 Toutes les fonctionnalités ci-dessus a une chose en commun, tous les indiquent où la suggestion à l’origine provient. Dans le cas de l’exemple ci-dessus, il est l’application de révision de restaurant fictive.
 
@@ -297,7 +297,7 @@ Cette section sera un œil à la consommation des Suggestions d’emplacement di
 - Pour gérer le lancement de l’application avec un MapKit `MKDirectionsRequest` objet.
 - Permettre à watchOS pour en savoir plus suggérer l’application en fonction de l’intérêt des utilisateurs.
 
-Lorsque l’application est démarrée avec un MapKit `MKDirectionsRequest` de l’objet, il doit automatiquement démarrer en donnant les instructions de l’utilisateur à l’emplacement demandé, ou présenter une interface utilisateur qui facilite l’utilisateur commencer à obtenir des instructions. Exemple :
+Lorsque l’application est démarrée avec un MapKit `MKDirectionsRequest` de l’objet, il doit automatiquement démarrer en donnant les instructions de l’utilisateur à l’emplacement demandé, ou présenter une interface utilisateur qui facilite l’utilisateur commencer à obtenir des instructions. Par exemple :
 
 
 ```csharp

@@ -6,12 +6,12 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 62b8e82a1191f3213453e9a213ea615e476662d5
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 7730d19e4f261a0e414e4946fd0add5312f5d030
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978221"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864361"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>La mise à jour des applications existantes vers l’API unifiée
 
@@ -36,11 +36,11 @@ Des guides sont disponibles pour chaque produit pour vous aider à mettre à jou
 
 Les applications Xamarin.iOS existantes peuvent être mis à jour vers l’API unifiée à l’aide de l’outil de migration automatisés intégré à Visual Studio pour Mac. Certains correctifs supplémentaires peuvent ensuite être requis, comme expliqué dans [ces instructions](~/cross-platform/macios/unified/updating-ios-apps.md) et [conseils](~/cross-platform/macios/unified/updating-tips.md).
 
-###  <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Applications Xamarin.Mac](~/cross-platform/macios/unified/updating-mac-apps.md)
+### <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Applications Xamarin.Mac](~/cross-platform/macios/unified/updating-mac-apps.md)
 
 Les applications Xamarin.Mac existantes peuvent être mis à jour vers l’API unifiée à l’aide de l’outil de migration automatisés intégré à Visual Studio pour Mac. Certains correctifs supplémentaires peuvent ensuite être requis, comme expliqué dans [ces instructions](~/cross-platform/macios/unified/updating-mac-apps.md) et [conseils](~/cross-platform/macios/unified/updating-tips.md).
 
-###  <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Applications Xamarin.Forms](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Applications Xamarin.Forms](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
 Suivez ces instructions pour mettre à jour d’une solution Xamarin.Forms existante avec un projet iOS à utiliser l’API unifiée. Prise en charge des API unifiée est uniquement disponible dans Xamarin.Forms 1.3 et versions ultérieures, donc [les instructions](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md) expliquent également comment mettre à jour votre application Xamarin.Forms vers la version 1.3. Ces [conseils](~/cross-platform/macios/unified/updating-tips.md) peut aider à la mise à jour n’importe quel code iOS natif dans les convertisseurs personnalisés ou des services de dépendance.
 

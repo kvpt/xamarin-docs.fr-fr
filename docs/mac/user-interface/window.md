@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: ec907e71074a97bd5d1714e79dd504013f5c8a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f23a506acda385b53942661244bcd7a8510c8c7f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61240507"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865997"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows dans Xamarin.Mac
 
@@ -221,13 +221,13 @@ Pour plus d’informations sur l’utilisation de **Outlets** et **Actions**, co
 Pour n’importe quelle fenêtre que vous créez et que vous travaillez dans votre application Xamarin.Mac, le processus est essentiellement identique à ce que nous l’avons simplement fait ci-dessus :
 
 1. Pour les nouvelles fenêtres qui ne sont pas la valeur par défaut ajouté automatiquement à votre projet, ajoutez une nouvelle définition de la fenêtre au projet. Ce sujet sera abordé en détail ci-dessous.
-2. Double-cliquez sur le `Main.storyboard` fichier pour ouvrir la fenêtre de conception pour la modification dans Xcode Interface Builder.
-3. Faites glisser une nouvelle fenêtre à la conception de l’Interface utilisateur et raccorder l’à l’aide de la fenêtre principale de la fenêtre _Segues_ (pour plus d’informations, consultez le [Segues](~/mac/platform/storyboards/indepth.md#Segues) section de notre [fonctionne avec des Storyboards](~/mac/platform/storyboards/indepth.md) documentation).
-3. Définissez les propriétés de fenêtre requis le **inspecteur d’attributs** et **inspecteur de taille**.
-4. Faites glisser dans les contrôles nécessaires pour générer votre interface et de les configurer dans le **inspecteur d’attributs**.
-5. Utilisez le **inspecteur de taille** pour gérer le redimensionnement des éléments d’interface.
-6. Exposer les éléments d’interface utilisateur de la fenêtre de code c# via **Outlets** et **Actions**.
-7. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+1. Double-cliquez sur le `Main.storyboard` fichier pour ouvrir la fenêtre de conception pour la modification dans Xcode Interface Builder.
+1. Faites glisser une nouvelle fenêtre à la conception de l’Interface utilisateur et raccorder l’à l’aide de la fenêtre principale de la fenêtre _Segues_ (pour plus d’informations, consultez le [Segues](~/mac/platform/storyboards/indepth.md#Segues) section de notre [fonctionne avec des Storyboards](~/mac/platform/storyboards/indepth.md) documentation).
+1. Définissez les propriétés de fenêtre requis le **inspecteur d’attributs** et **inspecteur de taille**.
+1. Faites glisser dans les contrôles nécessaires pour générer votre interface et de les configurer dans le **inspecteur d’attributs**.
+1. Utilisez le **inspecteur de taille** pour gérer le redimensionnement des éléments d’interface.
+1. Exposer les éléments d’interface utilisateur de la fenêtre de code c# via **Outlets** et **Actions**.
+1. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
 
 Maintenant que nous disposons d’une fenêtre de base créée, nous allons examiner les processus classiques un Xamarin.Mac fait de l’application lorsque vous travaillez avec windows. 
 
@@ -259,7 +259,7 @@ public override void ViewWillAppear ()
     // Set Window Title
     this.View.Window.Title = "untitled";
 }
-``` 
+```    
 
 > [!NOTE]
 > Nous définissons la valeur de la fenêtre `Title` propriété dans le `ViewWillAppear` méthode au lieu du `ViewDidLoad` méthode car, alors que la vue peut être chargée en mémoire, il n’est pas encore entièrement instancié. Si nous avons essayé d’accéder à la `Title` propriété dans le `ViewDidLoad` méthode nous obtiendrions une `null` exception étant donné que la fenêtre n’a pas été construite et câblé à distance à la propriété encore.
@@ -711,14 +711,14 @@ Pour ajouter une nouvelle fenêtre, procédez comme suit :
 3. Dans le **inspecteur d’identité**, entrez `PreferencesWindow` pour le **ID de Storyboard**: 
 
     [![](window-images/new02.png "Définition de l’ID de storyboard")](window-images/new02.png#lightbox)
-5. Concevoir votre interface : 
+4. Concevoir votre interface : 
 
     [![](window-images/new03.png "Conception de l’interface utilisateur")](window-images/new03.png#lightbox)
-6. Ouvrez le Menu de l’application (`MacWindows`), sélectionnez **préférences...** , Cliquez et faites glisser vers la nouvelle fenêtre : 
+5. Ouvrez le Menu de l’application (`MacWindows`), sélectionnez **préférences...** , Cliquez et faites glisser vers la nouvelle fenêtre : 
 
     [![](window-images/new05.png "Création d’un segue")](window-images/new05.png#lightbox)
-7. Sélectionnez **afficher** dans le menu contextuel.
-6. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+6. Sélectionnez **afficher** dans le menu contextuel.
+7. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
 
 Si nous pouvons exécuter le code et que vous sélectionnez le **préférences...**  à partir de la **Menu Application**, la fenêtre s’affichera :
 
@@ -734,7 +734,7 @@ Comme tout autre type de fenêtre que vous créez et que vous travaillez dans vo
 
 1. Ajouter une nouvelle définition de fenêtre pour le projet.
 2. Double-cliquez sur le `.xib` fichier pour ouvrir la fenêtre de conception pour la modification dans Xcode Interface Builder.
-2. Définissez les propriétés de fenêtre requis le **inspecteur d’attributs** et **inspecteur de taille**.
+3. Définissez les propriétés de fenêtre requis le **inspecteur d’attributs** et **inspecteur de taille**.
 4. Faites glisser dans les contrôles nécessaires pour générer votre interface et de les configurer dans le **inspecteur d’attributs**.
 5. Utilisez le **inspecteur de taille** pour gérer le redimensionnement des éléments d’interface.
 6. Exposer les éléments d’interface utilisateur de la fenêtre de code c# via **Outlets** et **Actions**.
@@ -768,11 +768,11 @@ Pour ajouter un nouveau panneau, procédez comme suit :
 7. Basculez vers le **inspecteur d’identité** et la valeur de la classe du panneau par `DocumentPanel`: 
 
     [![](window-images/panels03.png "Définition de la classe du panneau")](window-images/panels03.png#lightbox)
-6. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
-7. Modifier le `DocumentPanel.cs` du fichier et changer la définition de classe à ce qui suit : 
+8. Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+9. Modifier le `DocumentPanel.cs` du fichier et changer la définition de classe à ce qui suit : 
 
     `public partial class DocumentPanel : NSPanel`
-8. Enregistrez les modifications dans le fichier.
+10. Enregistrez les modifications dans le fichier.
 
 Modifier le `AppDelegate.cs` et effectuez le `DidFinishLaunching` méthode ressemble ce qui suit :
 

@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c30d70d8a36c0e5a9b9ff6ddc74710dec4fb86a4
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199765"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864400"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Plateforme Apple (iOS et Mac)
 
@@ -21,7 +21,7 @@ Pour les éléments de votre code qui n’ont à aucun élément d’interface u
 
 Pour le code qui doit effectuer certaines tâches d’interface utilisateur et encore, que vous souhaitez partager, vous devez utiliser [les projets partagés](~/cross-platform/app-fundamentals/shared-projects.md) qui vous permettent de placer du code à partager dans un seul projet et l’avez compilé avec Mac et iOS lorsque référencé.
 
-##  <a name="unified-apiunifiedindexmd"></a>[API unifiée](unified/index.md)
+## <a name="unified-apiunifiedindexmd"></a>[API unifiée](unified/index.md)
 
 L’API unifiée pour les projets iOS et Mac utilise les mêmes espaces de noms pour les infrastructures afin que le même fichier de code peut être utilisé sur les deux plateformes, transparente de partage de code. Il permet également pour les versions 32 et 64 bits. L’API unifiée est la valeur par défaut du modèle depuis début 2015 et est recommandée pour tous les nouveaux projets - *uniquement* projets d’API unifiée peuvent être soumis à l’App Store.
 
@@ -47,11 +47,11 @@ Xamarin vous permet d’importer des bibliothèques natives dans vos application
 
 ## <a name="native-referencesnative-referencesmd"></a>[Références natives](native-references.md)
 
-##  <a name="macios-native-typesnativetypesmd"></a>[Types natifs Mac/iOS](nativetypes.md)
+## <a name="macios-native-typesnativetypesmd"></a>[Types natifs Mac/iOS](nativetypes.md)
 
 Pour prendre en charge le code de bit 32 et 64 en toute transparence à partir de C# et F#, nous avons introduit de nouveaux types de données.   Apprenez-en plus ici.
 
-##  <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[Création d’applications de bit 32 et 64](32-and-64/index.md)
+## <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[Création d’applications de bit 32 et 64](32-and-64/index.md)
 
 Ce que vous devez savoir pour prendre en charge pour les applications 32 et 64 bits.
 
