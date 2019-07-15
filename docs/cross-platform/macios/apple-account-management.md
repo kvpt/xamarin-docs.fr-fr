@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 8617d6e0c0930f581c45dbb461dfcb5d85a2becc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 28a7d299e78a7fa6837ba9285795d380760f13b7
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61206226"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864642"
 ---
 # <a name="apple-account-management"></a>Gestion des comptes Apple
 
@@ -54,17 +54,17 @@ Vous devez disposer d’un compte de développeur Apple pour utiliser cette fonc
 
     ![boîte de dialogue de FastLane.](apple-account-management-images/image2.png)
 
-4. Entrez votre ID Apple et le mot de passe et cliquez sur le **Sign In** bouton. Ceci enregistre vos informations d’identification dans le trousseau de clés sécurisé sur cet ordinateur. [FastLane](~/ios/deploy-test/provisioning/fastlane/index.md) est utilisé pour gérer vos informations d’identification en toute sécurité et de les transmettre au portail des développeurs d’Apple.
+3. Entrez votre ID Apple et le mot de passe et cliquez sur le **Sign In** bouton. Ceci enregistre vos informations d’identification dans le trousseau de clés sécurisé sur cet ordinateur. [FastLane](~/ios/deploy-test/provisioning/fastlane/index.md) est utilisé pour gérer vos informations d’identification en toute sécurité et de les transmettre au portail des développeurs d’Apple.
  
-5. Sélectionnez **toujours autoriser** dans la boîte de dialogue alerte pour autoriser Visual Studio à utiliser vos informations d’identification :
+4. Sélectionnez **toujours autoriser** dans la boîte de dialogue alerte pour autoriser Visual Studio à utiliser vos informations d’identification :
 
     ![Toujours autoriser la boîte de dialogue alerte](apple-account-management-images/image4.png)
 
-6. Une fois que votre compte a été ajouté avec succès, vous verrez votre ID Apple et les équipes faisant partie de votre ID Apple.
+5. Une fois que votre compte a été ajouté avec succès, vous verrez votre ID Apple et les équipes faisant partie de votre ID Apple.
 
     ![Boîte de dialogue compte de développeur Apple avec les comptes ajoutés](apple-account-management-images/image5.png)
 
-7. Sélectionnez une équipe, puis appuyez sur la **afficher les détails...** disproportionnée. Cela affiche une liste de toutes les identités de signature et les profils de provisionnement qui sont installés sur votre ordinateur :
+6. Sélectionnez une équipe, puis appuyez sur la **afficher les détails...** disproportionnée. Cela affiche une liste de toutes les identités de signature et les profils de provisionnement qui sont installés sur votre ordinateur :
 
     ![Vue Détails de l’écran d’illustrant identités de signature et de profils sur votre ordinateur d’approvisionnement](apple-account-management-images/image6.png)
 
@@ -137,7 +137,7 @@ La boîte de dialogue Détails de l’équipe affiche également une liste de to
 
 Pour plus d’informations sur le déploiement de votre application sur un appareil, reportez-vous à la [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) guide.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Résolution de problèmes
 
 ### <a name="view-details-dialog-is-empty"></a>Boîte de dialogue Vue détails est vide
 

@@ -7,28 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 5c4d43723bc23d8a16be8fec0a895a31ab8bcfdc
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
+ms.openlocfilehash: 36601b02bb2984d9350166dedac0d650d9642f91
+ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233963"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67650646"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Sélection d’une photo dans la bibliothèque d’images
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
 
-Cet article vous montre comment créer une application qui permet à l’utilisateur de sélectionner une photo dans la bibliothèque d’images du téléphone. Étant donné que Xamarin.Forms n’inclut pas cette fonctionnalité, vous devez utiliser [`DependencyService`](xref:Xamarin.Forms.DependencyService) pour accéder aux API natives sur chaque plateforme.  Cet article décrit les étapes suivantes nécessaires pour utiliser `DependencyService` :
+Cet article vous montre comment créer une application qui permet à l’utilisateur de sélectionner une photo dans la bibliothèque d’images du téléphone. Étant donné que Xamarin.Forms n’inclut pas cette fonctionnalité, vous devez utiliser [`DependencyService`](xref:Xamarin.Forms.DependencyService) pour accéder aux API natives sur chaque plateforme.
 
-- **[Création de l’interface](#Creating_the_Interface)** &ndash; Découvrez comment créer l’interface dans le code partagé.
-- **[Implémentation iOS ](#iOS_Implementation)** &ndash; Apprenez à implémenter l’interface dans le code natif pour iOS.
-- **[Implémentation Android ](#Android_Implementation)** &ndash; Apprenez à implémenter l’interface dans le code natif pour Android.
-- **[Implémentation UWP](#UWP_Implementation)** &ndash; Apprenez à implémenter l’interface dans le code natif pour la plateforme Windows universelle (UWP).
-- **[Implémentation dans le code partagé](#Implementing_in_Shared_Code)** &ndash; Apprenez à utiliser `DependencyService` pour appeler l’implémentation native à partir du code partagé.
-
-<a name="Creating_the_Interface" />
-
-## <a name="creating-the-interface"></a>Création de l'interface utilisateur
+## <a name="creating-the-interface"></a>Création de l’interface
 
 Tout d’abord, créez une interface dans le code partagé qui expose la fonctionnalité que vous souhaitez implémenter. Dans le cas d’une application de sélection de photo, une seule méthode est requise. Elle est définie dans l’interface [`IPicturePicker`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) dans la bibliothèque .NET Standard de l’exemple de code :
 
@@ -45,8 +37,6 @@ namespace DependencyServiceSample
 La méthode `GetImageStreamAsync` est définie comme asynchrone, car elle doit retourner le résultat rapidement, mais elle ne doit pas retourner d’objet `Stream` pour la photo sélectionnée tant que l’utilisateur n’a pas parcouru la bibliothèque d’images et sélectionné une photo.
 
 Cette interface est implémentée dans chaque plateforme à l’aide de code spécifique.
-
-<a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>Implémentation iOS
 
@@ -153,9 +143,6 @@ Une application iOS doit être autorisée par l’utilisateur à accéder à la 
 <string>Picture Picker uses photo library</string>
 ```
 
-
-<a name="Android_Implementation" />
-
 ## <a name="android-implementation"></a>Implémentation Android
 
 L’implémentation Android utilise la technique décrite dans la recette [**Sélectionner une image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) et l’[exemple de code](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Toutefois, la méthode appelée quand l’utilisateur a sélectionné une image dans la bibliothèque d’images est une substitution de `OnActivityResult` dans une classe dérivée de `Activity`. Pour cette raison, la classe [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) normale dans le projet Android a été complétée par un champ, une propriété et une substitution de la méthode `OnActivityResult` :
@@ -228,8 +215,6 @@ namespace DependencyServiceSample.Droid
 
 Cette méthode accède à la classe `MainActivity` à plusieurs fins : pour la propriété `Instance`, pour le champ `PickImageId`, pour la propriété `TaskCompletionSource` et pour appeler `StartActivityForResult`. Cette méthode est définie par la classe `FormsAppCompatActivity`, qui est la classe de base de `MainActivity`.
 
-<a name="UWP_Implementation" />
-
 ## <a name="uwp-implementation"></a>Implémentation UWP
 
 Contrairement aux implémentations iOS et Android, l’implémentation du sélecteur de photo pour la plateforme Windows universelle n’utilise pas la classe `TaskCompletionSource`. La classe [`PicturePickerImplementation`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) se sert de la classe [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) pour accéder à la photothèque. Étant donné que la méthode `PickSingleFileAsync` de `FileOpenPicker` est elle-même asynchrone, la méthode `GetImageStreamAsync` peut simplement utiliser `await` avec cette méthode (et d’autres méthodes asynchrones) et retourner un objet `Stream` :
@@ -269,8 +254,6 @@ namespace DependencyServiceSample.UWP
     }
 }
 ```
-
-<a name="Implementing_in_Shared_Code" />
 
 ## <a name="implementing-in-shared-code"></a>Implémentation dans le code partagé
 
@@ -323,8 +306,7 @@ pickPictureButton.Clicked += async (sender, e) =>
 
 Quand l’utilisateur appuie sur l’élément `Image`, il revient à la page standard.
 
-
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Choisir une photo dans la galerie (iOS)](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
 - [Sélectionner une image (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)

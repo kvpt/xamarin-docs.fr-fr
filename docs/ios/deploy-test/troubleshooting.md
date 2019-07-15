@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 239f20515e734a6c0b517e07bc2d1e4289cabe65
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e57254ce724c5660e53dcd9deaa0f4a27bf91400
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104789"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67675199"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Test et déploiement de Xamarin.iOS - Résolution des problèmes
 
@@ -28,7 +28,7 @@ La signature de code et le provisionnement avec iOS sont des processus assez dé
 
 * Gérez bien l’accès au trousseau, et supprimez les certificats et profils qui ont expiré. Les certificats d’entreprise ont une durée de validité de trois ans, alors que les autres restent valides pendant un an uniquement. Les certificats ne pouvant pas être renouvelés, il faut créer d’autres certificats juste avant l’expiration des anciens. Assurez-vous de révoquer et de supprimer les anciens certificats, puis de resigner les applications avec les nouveaux certificats.
 
-* Supprimez les anciens profils de provisionnement quand les nouveaux profils sont installés. Ainsi, Visual Studio pour Mac n’a pas à choisir quel profil utiliser. Pour cela, supprimez d’abord le profil dans le centre pour développeurs d’Apple, puis accédez à *Préférences > Votre compte > Afficher les détails...*. Sélectionnez le profil de provisionnement, puis cliquez sur **Afficher dans le Finder**. L’emplacement du profil dans le système de fichiers Mac s’affiche. Vous pouvez ensuite supprimer le profil à l’aide du Finder.
+* Supprimez les anciens profils de provisionnement quand les nouveaux profils sont installés. Ainsi, Visual Studio pour Mac n’a pas à choisir quel profil utiliser. Pour cela, supprimez d’abord le profil dans le centre pour développeurs d’Apple, puis accédez à *Préférences > Votre compte > Afficher les détails...* . Sélectionnez le profil de provisionnement, puis cliquez sur **Afficher dans le Finder**. L’emplacement du profil dans le système de fichiers Mac s’affiche. Vous pouvez ensuite supprimer le profil à l’aide du Finder.
 
 * Assurez-vous que tous les certificats requis et les clés privées correspondantes sont disponibles. Chaque membre de l’équipe doit avoir un certificat de développeur (pour installer des applications sur son propre appareil) et un certificat de distribution (pour installer des applications sur les autres appareils)
 
@@ -52,7 +52,7 @@ Parfois, les tests ne se déroulent pas de la manière prévue.  Les étapes sui
 
 - Les utilisateurs qui ont un compte iTunes Connect, ou qui y sont associés, ne peuvent pas être testeurs internes. Ils peuvent uniquement être ajoutés comme testeurs externes.
 
-- Les utilisateurs internes et externes sont ajoutés, sélectionnés et invités de manière individuelle. Les listes doivent être gérées séparément.
+- Les utilisateurs internes et externes sont ajoutés, sélectionnés et invités de manière individuelle. Chaque liste doit être gérée séparément.
 
 - Apple doit approuver chaque build qui va être distribuée aux testeurs externes. Si la version d’une build change, Apple doit effectuer une nouvelle revue de la bêta. Si le numéro de build change, la revue est facultative.
 

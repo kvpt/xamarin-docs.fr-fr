@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: b34ac82cf240b892e60707d76c82da64ff232a20
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 8c79075c9e01ef5da73255b152b4cbbd676b4f4e
+ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827422"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67674744"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
@@ -139,7 +139,7 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 ## <a name="automating-apk-creation-with-rake"></a>automatisation de la création d’un fichier APK avec Rake
 
-L’exemple de projet [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) est un projet Android simple pour vous montrer comment calculer un numéro de version d’interface ABI spécifique et générer trois fichiers APK séparés pour chacune des interfaces ABI suivantes :
+L’exemple de projet [OneABIPerAPK](https://github.com/xamarin/monodroid-samples/tree/master/OneABIPerAPK) est un projet Android simple qui va montrer comment calculer un numéro de version d’ABI spécifique et générer trois fichiers APK distincts pour chacune des ABI suivants :
 
 -  armeabi
 -  armeabi-v7a
@@ -154,7 +154,7 @@ Le fichier [rakefile](https://github.com/xamarin/monodroid-samples/blob/master/O
 
 1. [Compilez une version de mise en production](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L63) du projet Xamarin.Android qui ciblera uniquement l’interface ABI à l’aide du fichier **AndroidManifest.XML** créé à l’étape précédente.
 
-1. [Signez le fichier APK ](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) avec un magasin de clés de production.
+1. [Signez le fichier APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) avec un magasin de clés de production.
 
 1. Compressez le fichier APK dans un fichier [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67).
 
@@ -174,7 +174,7 @@ une fois la tâche Rake terminée, il y aura trois dossiers `bin` avec le fichie
 
 
 > [!NOTE]
-> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas d’exemple prédéfini, ceci devrait également être possible avec [Powershell](http://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [fictif](http://fsharp.github.io/FAKE/).
+> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas d’exemple prédéfini, ceci devrait également être possible avec [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [fictif](http://fsharp.github.io/FAKE/).
 
 
 ## <a name="summary"></a>Récapitulatif

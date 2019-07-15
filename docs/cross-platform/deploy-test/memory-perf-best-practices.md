@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 7f03df796c338380a776f9af26563af2e60e59a1
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 9377dcca1cd72b68a0e5b6a5ac5ac4d12d25d50c
+ms.sourcegitcommit: 41b44f2e9bde3b174e7c08605bff65aff594dcd6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672649"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67690922"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
@@ -275,7 +275,7 @@ Lorsque SGen démarre une opération de nettoyage de la mémoire, il arrête les
 1. **La fréquence** : C’est-à-dire, le nombre de fois que se produit le nettoyage de la mémoire. La fréquence des nettoyages augmente avec le nombre d’allocations de mémoire qui se produisent entre chaque nettoyage.
 1. **La durée** : C’est-à-dire le temps que prend chaque nettoyage de la mémoire. Elle est à peu près proportionnelle au nombre d’objets actifs nettoyés.
 
-Collectivement, cela signifie que si plusieurs objets sont alloués, mais ne restent pas actifs, plusieurs nettoyages de mémoire de courte durée se produiront. À l’inverse, si de nouveaux objets sont alloués lentement et si les objets restent actifs, les nettoyages de mémoire auront lieu moins fréquemment, mais dureront plus longtemps.
+Collectivement, cela signifie que si plusieurs objets sont alloués, mais ne restent pas actifs, plusieurs garbage collections courts seront effectués. À l’inverse, si de nouveaux objets sont alloués lentement et si les objets restent actifs, les nettoyages de mémoire auront lieu moins fréquemment, mais dureront plus longtemps.
 
 Pour réduire la pression sur le récupérateur de mémoire, suivez ces instructions :
 

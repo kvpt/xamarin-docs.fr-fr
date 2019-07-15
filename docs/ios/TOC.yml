@@ -491,6 +491,8 @@
           href: ~/essentials/index.md?context=xamarin/ios
         - name: Bien démarrer
           href: ~/essentials/get-started.md?context=xamarin/ios
+        - name: Prise en charge des plateformes et des fonctionnalités
+          href: ~/essentials/platform-feature-support.md?context=xamarin/ios
         - name: Accéléromètre
           href: ~/essentials/accelerometer.md?context=xamarin/ios
         - name: Informations de l'application
@@ -912,6 +914,58 @@
               href: watchos/platform/quick-interaction-techniques.md
             - name: Améliorations apportées à l’application Exercice
               href: watchos/platform/workout-apps.md
+        - name: Xamarin.Essentials pour watchOS
+          items:
+            - name: À propos de Xamarin.Essentials
+              href: ~/essentials/index.md?context=xamarin/watchos
+            - name: Bien démarrer
+              href: ~/essentials/get-started.md?context=xamarin/watchos
+            - name: Prise en charge des plateformes et des fonctionnalités
+              href: ~/essentials/platform-feature-support.md?context=xamarin/watchos
+            - name: Accéléromètre
+              href: ~/essentials/accelerometer.md?context=xamarin/watchos
+            - name: Informations de l'application
+              href: ~/essentials/app-information.md?context=xamarin/watchos
+            - name: Baromètre
+              href: ~/essentials/barometer.md?context=xamarin/watchos
+            - name: Batterie
+              href: ~/essentials/battery.md?context=xamarin/watchos
+            - name: Convertisseurs de couleurs
+              href: ~/essentials/color-converters.md?context=xamarin/watchos
+            - name: Connectivité
+              href: ~/essentials/connectivity.md?context=xamarin/watchos
+            - name: Détecter les secousses
+              href: ~/essentials/detect-shake.md?context=xamarin/watchos
+            - name: Informations sur l’appareil
+              href: ~/essentials/device-information.md?context=xamarin/watchos
+            - name: Assistances de système de fichiers
+              href: ~/essentials/file-system-helpers.md?context=xamarin/watchos
+            - name: Géocodage
+              href: ~/essentials/geocoding.md?context=xamarin/watchos
+            - name: Gyroscope
+              href: ~/essentials/gyroscope.md?context=xamarin/watchos
+            - name: Magnétomètre
+              href: ~/essentials/magnetometer.md?context=xamarin/watchos
+            - name: Thread principal
+              href: ~/essentials/main-thread.md?context=xamarin/watchos
+            - name: Maps
+              href: ~/essentials/maps.md?context=xamarin/watchos
+            - name: Capteur d’orientation
+              href: ~/essentials/orientation-sensor.md?context=xamarin/watchos
+            - name: 'Extensions de plateforme (taille, rectangle, point)'
+              href: ~/essentials/platform-extensions.md?context=xamarin/watchos
+            - name: Préférences
+              href: ~/essentials/preferences.md?context=xamarin/watchos
+            - name: Stockage sécurisé
+              href: ~/essentials/secure-storage.md?context=xamarin/watchos
+            - name: Synthèse vocale
+              href: ~/essentials/text-to-speech.md?context=xamarin/watchos
+            - name: Convertisseurs d’unités
+              href: ~/essentials/unit-converters.md?context=xamarin/watchos
+            - name: Suivi des versions
+              href: ~/essentials/version-tracking.md?context=xamarin/watchos
+            - name: Résolution des problèmes
+              href: ~/essentials/troubleshooting.md?context=xamarin/watchos
         - name: Déploiement et test
           href: watchos/deploy-test/index.md
           items:
@@ -963,6 +1017,42 @@
               href: tvos/platform/remote-bluetooth.md
             - name: Styles d’interface utilisateur
               href: tvos/platform/user-interface-styles.md
+        - name: Xamarin.Essentials pour tvOS
+          items:
+            - name: À propos de Xamarin.Essentials
+              href: ~/essentials/index.md?context=xamarin/tvos
+            - name: Bien démarrer
+              href: ~/essentials/get-started.md?context=xamarin/tvos
+            - name: Prise en charge des plateformes et des fonctionnalités
+              href: ~/essentials/platform-feature-support.md?context=xamarin/tvos
+            - name: Informations de l'application
+              href: ~/essentials/app-information.md?context=xamarin/tvos
+            - name: Convertisseurs de couleurs
+              href: ~/essentials/color-converters.md?context=xamarin/tvos
+            - name: Connectivité
+              href: ~/essentials/connectivity.md?context=xamarin/tvos
+            - name: Informations sur l’appareil
+              href: ~/essentials/device-information.md?context=xamarin/tvos
+            - name: Assistances de système de fichiers
+              href: ~/essentials/file-system-helpers.md?context=xamarin/tvos
+            - name: Géocodage
+              href: ~/essentials/geocoding.md?context=xamarin/tvos
+            - name: Thread principal
+              href: ~/essentials/main-thread.md?context=xamarin/tvos
+            - name: 'Extensions de plateforme (taille, rectangle, point)'
+              href: ~/essentials/platform-extensions.md?context=xamarin/tvos
+            - name: Préférences
+              href: ~/essentials/preferences.md?context=xamarin/tvos
+            - name: Stockage sécurisé
+              href: ~/essentials/secure-storage.md?context=xamarin/tvos
+            - name: Synthèse vocale
+              href: ~/essentials/text-to-speech.md?context=xamarin/tvos
+            - name: Convertisseurs d’unités
+              href: ~/essentials/unit-converters.md?context=xamarin/tvos
+            - name: Suivi des versions
+              href: ~/essentials/version-tracking.md?context=xamarin/tvos
+            - name: Résolution des problèmes
+              href: ~/essentials/troubleshooting.md?context=xamarin/tvos
         - name: Interface utilisateur
           href: tvos/user-interface/index.md
           items:

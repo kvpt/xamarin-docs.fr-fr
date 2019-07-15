@@ -380,6 +380,8 @@
       items:
         - name: Prise en main
           href: ~/essentials/get-started.md?context=xamarin/android
+        - name: Prise en charge des plateformes et des fonctionnalités
+          href: ~/essentials/platform-feature-support.md?context=xamarin/android
         - name: Accéléromètre
           href: ~/essentials/accelerometer.md?context=xamarin/android
         - name: Informations de l'application
