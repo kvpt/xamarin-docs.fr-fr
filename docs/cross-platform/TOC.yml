@@ -6,14 +6,14 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: Spécifications
+        - name: Configuration requise
           displayName: System requirements
           href: get-started/requirements.md
-        - name: Introduction au développement mobile
+        - name: "Qu’est-ce que Xamarin\_?"
           href: get-started/introduction-to-mobile-development.md
-        - name: Introduction au service SDLC mobile
+        - name: Cycle de vie du développement de logiciel mobile
           href: get-started/introduction-to-mobile-sdlc.md
-        - name: Création d’applications multiplateformes
+        - name: Procédure pas à pas pour créer une application multiplateforme
           href: app-fundamentals/building-cross-platform-applications/index.md
           items:
             - name: Vue d'ensemble
@@ -75,10 +75,10 @@
               href: platform/fsharp/overview.md
             - name: 'Exemples F#'
               href: platform/fsharp/samples.md
-        - name: Visual Basic.NET
+        - name: Visual Basic
           href: platform/visual-basic/index.md
           items:
-            - name: Xamarin iOS et Android
+            - name: Xamarin Android et iOS
               href: platform/visual-basic/native-apps.md
             - name: Xamarin.Forms
               href: platform/visual-basic/xamarin-forms.md
