@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 5ce778d0e6c2d023362ca5c9c691d77548dd7383
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672597"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865840"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Utilisation des droits dans Xamarin.iOS
 
 _Les droits sont des fonctionnalités et des autorisations de sécurité particulières accordées aux applications qui présentent la configuration requise pour les utiliser._
 
-Dans iOS, les applications s’exécutent dans un _bac à sable (sandbox)_, qui fournit un ensemble de règles visant à limiter l’accès entre l’application et certaines ressources système ou données utilisateur. Utilisez des _droits_ pour demander au système d’augmenter le bac à sable afin d’ajouter des fonctionnalités à votre application.
+Dans iOS, les applications s’exécutent dans un _bac à sable (sandbox)_ , qui fournit un ensemble de règles visant à limiter l’accès entre l’application et certaines ressources système ou données utilisateur. Utilisez des _droits_ pour demander au système d’augmenter le bac à sable afin d’ajouter des fonctionnalités à votre application.
 
 Pour étendre les fonctionnalités de votre application, ajoutez les droits appropriés dans le fichier Entitlements.plist de l’application. Seules certaines fonctionnalités peuvent être étendues. Celles-ci sont répertoriées dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md) et décrites [ci-dessous](#entitlement-key-reference). Les droits sont passés au système sous forme de paires clé-valeur. En règle générale, un seul droit est requis pour chaque fonctionnalité. Les clés et valeurs spécifiques sont décrites dans la section [Informations de référence sur les clés de droits](#entitlement-key-reference), plus loin dans ce guide.
 Visual Studio pour Mac et Visual Studio offrent une interface simple pour l’ajout de droits dans une application Xamarin.iOS à l’aide de l’éditeur Entitlements.plist.
@@ -44,7 +44,7 @@ Pour configurer les droits dans Visual Studio pour Mac, effectuez les étapes su
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Info.plist** pour l’ouvrir et le modifier.
 2. Dans la section **Cible d’application iOS**, entrez le nom de l’application, puis entrez l’**identificateur de bundle** créé quand vous avez défini l’ID d’application :
 
-  ![](entitlements-images/servicexs01.png "Entrer un identificateur de bundle")
+    ![](entitlements-images/servicexs01.png "Entrer un identificateur de bundle")
 
 3. Enregistrez les modifications apportées au fichier **Info.plist**.
 4. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Entitlements.plist** pour l’ouvrir et le modifier :
@@ -61,7 +61,7 @@ Pour configurer les droits dans Visual Studio, effectuez les étapes suivantes 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Info.plist**, puis sélectionnez **Ouvrir avec…** et **Éditeur de liste de propriétés** pour ouvrir le fichier à modifier.
 2. Dans la section **Cible d’application iOS**, entrez le nom de l’application, puis entrez l’**identificateur de bundle** créé quand vous avez défini l’ID d’application :
 
-  ![](entitlements-images/servicevs01.png "Définition de l’identificateur de bundle")
+    ![](entitlements-images/servicevs01.png "Définition de l’identificateur de bundle")
 
 3. Enregistrez les modifications apportées au fichier **Info.plist**.
 4. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Entitlements.plist**, puis sélectionnez **Ouvrir avec…** et **Éditeur de liste de propriétés** pour ouvrir le fichier à modifier :
@@ -81,10 +81,10 @@ Vous ajoutez les droits à une application à l’aide du fichier Entitlements.p
 
 Pour ajouter un fichier Entitlements.plist à votre projet Xamarin.iOS, effectuez les étapes suivantes :
 
-1.  Cliquez avec le bouton droit sur le fichier projet et sélectionnez **Ajouter > Nouveau fichier…**  :
+1. Cliquez avec le bouton droit sur le fichier projet et sélectionnez **Ajouter > Nouveau fichier…**  :
 
     ![Menu contextuel d’ajout de fichiers](entitlements-images/image1.png)
-2.  Dans la boîte de dialogue Nouveau fichier, sélectionnez **iOS > Liste de propriétés** et nommez la liste « Entitlements » :
+2. Dans la boîte de dialogue Nouveau fichier, sélectionnez **iOS > Liste de propriétés** et nommez la liste « Entitlements » :
 
     ![Boîte de dialogue Nouveau fichier](entitlements-images/image2.png)
 

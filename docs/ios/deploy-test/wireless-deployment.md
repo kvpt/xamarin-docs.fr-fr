@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 82bdd2c160572b0d813fb87d81b09c00996cef18
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854832"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865504"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Déploiement sans fil pour les applications Xamarin.iOS et tvOS
 
@@ -21,7 +21,7 @@ Une part importante du workflow du développeur consiste au déploiement sur un 
 
 Ce guide détaille comment coupler et déployer sur un appareil sur le réseau.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 La fonctionnalité de déploiement sans fil est disponible à la fois dans Visual Studio pour Mac et dans Visual Studio.
 
@@ -85,7 +85,7 @@ Pour déployer sur un appareil iOS ou tvOS, procédez comme suit :
 
 2. Sélectionnez votre appareil dans la liste des appareils cibles et exécuter l’application.
 
-2. Si votre appareil est verrouillé, vous êtes invité à déverrouiller votre appareil. Une fois l’appareil déverrouillé, votre application est déployée sur l’appareil.
+3. Si votre appareil est verrouillé, vous êtes invité à déverrouiller votre appareil. Une fois l’appareil déverrouillé, votre application est déployée sur l’appareil.
 
 Le débogage sans fil est automatiquement activé après le déploiement sans fil, afin de pouvoir utiliser les points d’arrêt précédemment définis et continuer le débogage du workflow comme d’habitude.
 

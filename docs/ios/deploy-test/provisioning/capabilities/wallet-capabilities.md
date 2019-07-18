@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 3dc68d0879d3ce4d5dd9b658a3bce7a00c348c09
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 0ae5dd86341912354938a8509668c843d412367b
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121241"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832578"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Fonctionnalités Wallet dans Xamarin.iOS
 
@@ -32,21 +32,21 @@ Les développeurs peuvent utiliser Wallet de diverses façons :
 
 Pour créer un profil de provisionnement pour une utilisation avec Wallet, effectuez les étapes suivantes :
 
-1.  Accédez à la section [Certificates, Identifiers & Profiles](https://developer.apple.com/account/ios/certificate/) dans le portail des développeurs d’Apple.
-2.  Sous **Identifiers**, sélectionnez **App IDs** : 
+1. Accédez à la section [Certificates, Identifiers & Profiles](https://developer.apple.com/account/ios/certificate/) dans le portail des développeurs d’Apple.
+2. Sous **Identifiers**, sélectionnez **App IDs** : 
     
     ![Sélection de l’ID d’application](wallet-capabilities-images/image17.png)
 
-3.  Cliquez sur l’icône **+** dans le coin supérieur droit de la page.
-4.  Inscrivez un nouvel ID d’application en lui attribuant un **nom** et un identificateur de bundle. (Notez que cet identificateur de bundle doit correspondre à l’ID de bundle défini dans votre projet) :
+3. Cliquez sur l’icône **+** dans le coin supérieur droit de la page.
+4. Inscrivez un nouvel ID d’application en lui attribuant un **nom** et un identificateur de bundle. (Notez que cet identificateur de bundle doit correspondre à l’ID de bundle défini dans votre projet) :
    
     ![Ajouter les détails de l’ID d’application](wallet-capabilities-images/image18.png)
 
-5.  Sélectionnez le service d’application **Wallet** dans la liste des services :
+5. Sélectionnez le service d’application **Wallet** dans la liste des services :
     
     ![Écran de sélection du service](wallet-capabilities-images/image19.png)
 
-6.  Appuyez sur **Continue**, puis sur **Register** pour créer l’ID d’application.
+6. Appuyez sur **Continue**, puis sur **Register** pour créer l’ID d’application.
 
 Si nécessaire, vous pouvez modifier des ID d’application existants pour ajouter la fonctionnalité Wallet.
 

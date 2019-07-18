@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 2c05e46309fb2a38b6b3c1542051e7115a58d13c
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 849c60507fe0ff7b8bf1743be5bbf89ca94b9d6f
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668828"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865562"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello.iOS multi-écran - Démarrage rapide
 
@@ -24,7 +24,7 @@ Cette partie de la procédure pas à pas permet d’ajouter un deuxième écran 
 
 La partie [En profondeur](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md) complémentaire reprend l’application générée et aborde l’architecture, la navigation et d’autres nouveaux concepts iOS rencontrés en chemin.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Ce guide reprend là où le document Hello, iOS s’est arrêté et nécessite d’avoir terminé la partie [Hello, iOS - Démarrage rapide](~/ios/get-started/hello-ios/index.md). La version complète de l’application Phoneword peut être téléchargée à partir de l’[exemple Hello, iOS](https://developer.xamarin.com/samples/monotouch/Hello_iOS/).
 
@@ -79,7 +79,7 @@ Déplacez ensuite la scène **Phoneword** à côté du **contrôleur de navigati
 
 11. Créez l’écran **Historique des appels**. À partir de la **boîte à outils**, faites glisser un **contrôleur de vue de tableau** dans l’aire de conception :
 
-   ![](hello-ios-multiscreen-quickstart-images/12new.png "Faire glisser un contrôleur de vue de tableau dans l’aire de conception")
+    ![](hello-ios-multiscreen-quickstart-images/12new.png "Faire glisser un contrôleur de vue de tableau dans l’aire de conception")
 
 12. Sélectionnez ensuite le **contrôleur de vue de tableau** en cliquant sur la barre noire située au bas de la scène. Dans le **Panneau Propriétés**, remplacez la classe du **contrôleur de vue de tableau** par `CallHistoryController`, puis appuyez sur **Entrée** :
 
@@ -262,7 +262,7 @@ Déplacez ensuite la scène **Phoneword** à côté du **contrôleur de navigati
 
     Enregistrez et générez l’application pour vérifier qu’il n’y a pas d’erreurs.
 
-20. Appuyez sur le bouton **Démarrer** pour lancer l’application dans le **simulateur iOS** :
+18. Appuyez sur le bouton **Démarrer** pour lancer l’application dans le **simulateur iOS** :
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "Appuyer sur le bouton Démarrer pour lancer l’application dans le simulateur iOS")
 
@@ -505,7 +505,7 @@ Cette procédure pas à pas permet d’ajouter un écran d’historique des appe
 
     Enregistrez et générez l’application pour vérifier qu’il n’y a pas d’erreurs.
 
-20. Appuyez sur le bouton **Démarrer** pour lancer l’application dans le **simulateur iOS** :
+18. Appuyez sur le bouton **Démarrer** pour lancer l’application dans le **simulateur iOS** :
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "Premier écran de l’exemple d’application")
 

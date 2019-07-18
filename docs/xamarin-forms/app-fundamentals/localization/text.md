@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672714"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831492"
 ---
 # <a name="localization"></a>Localisation
 
@@ -464,7 +464,7 @@ Une fois que vous avez mis en place le service de dépendance et mis à jour le 
 
 > [!NOTE]
 > Notez qu’Apple traite le portugais de manière légèrement différente.
-> D’après [la documentation](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2) : _« Utilisez pt en tant qu’ID de langue pour le portugais utilisé au Brésil, et pt-PT en tant qu’ID de langue pour le portugais utilisé au Portugal »_.
+> D’après [la documentation](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2) : _« Utilisez pt en tant qu’ID de langue pour le portugais utilisé au Brésil, et pt-PT en tant qu’ID de langue pour le portugais utilisé au Portugal »_ .
 > En d’autres termes, quand vous choisissez la langue portugaise dans des paramètres régionaux non standard, la langue de secours est le portugais parlé au Brésil sur iOS, à moins d’écrire du code pour changer ce comportement (par exemple `ToDotnetFallbackLanguage` ci-dessus).
 
 Pour plus d’informations sur la localisation iOS, consultez [Localisation iOS](~/ios/app-fundamentals/localization/index.md).
@@ -561,8 +561,8 @@ namespace UsingResxLocalization.Android
 
 Une fois ce code ajouté au projet d’application Android, il peut afficher automatiquement les chaînes traduites.
 
-> [!NOTE]
->️ **AVERTISSEMENT :** Si les chaînes traduites fonctionnent correctement dans vos builds Android de MISE EN PRODUCTION mais pas pendant le débogage, cliquez avec le bouton droit sur **Projet Android**, sélectionnez **Options > Build > Build Android**, puis vérifiez que l’option **Déploiement d’assembly rapide** n’est PAS cochée. Cette option entraîne des problèmes de chargement de ressources. Vous ne devez pas l’utiliser si vous testez des applications localisées.
+> [!WARNING]
+> Si les chaînes traduites fonctionnent correctement dans vos builds Android de MISE EN PRODUCTION mais pas pendant le débogage, cliquez avec le bouton droit sur **Projet Android**, sélectionnez **Options > Build > Build Android**, puis vérifiez que l’option **Déploiement d’assembly rapide** n’est PAS cochée. Cette option entraîne des problèmes de chargement de ressources. Vous ne devez pas l’utiliser si vous testez des applications localisées.
 
 Pour plus d’informations sur la localisation Android, consultez [Localisation Android](~/android/app-fundamentals/localization.md).
 
@@ -580,7 +580,7 @@ Développez le nœud Propriétés du projet de bibliothèque .NET Standard, puis
 
 Cela permet d’informer le Gestionnaire des ressources de la culture par défaut de l’application. Ainsi, les chaînes définies dans le fichier RESX indépendant de la langue (**AppResources.resx**) sont correctement affichées quand l’application s’exécute avec l’un des paramètres régionaux anglais.
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
 Après la mise à jour des projets spécifiques à la plateforme, comme indiqué ci-dessus, et la recompilation de l’application avec les fichiers RESX traduits, les traductions mises à jour sont disponibles dans chaque application. Voici une capture d’écran de l’exemple de code traduit en chinois simplifié :
 

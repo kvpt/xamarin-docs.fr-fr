@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: f75c4777ce7a47e983683bf3d92ac20ab1b15c1c
-ms.sourcegitcommit: 190808013249005ceffbc798f9f4570e8cdc943a
+ms.openlocfilehash: 0dcc0c9499a1f4085e489fe6d8dcfa3fbf2fa3e0
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54841352"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67832416"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Fonctionnalités App Group dans Xamarin.iOS
 
@@ -32,14 +32,14 @@ Le groupe d’applications a un identificateur, qui correspond généralement à
 
 Pour créer un App Group, effectuez les étapes suivantes :
 
-1.  Accédez au  [iOS Developer Center](https://developer.apple.com/account/) d’Apple et ouvrez une session avec votre **compte**.
-2.  Sélectionnez **Certificates, Identifiers & Profiles**.
-3.  Sous **Identifiers**, sélectionnez **App Groups** et cliquez sur le bouton **+** pour créer un groupe.
-4.  Entrez un **nom** et un **identificateur** pour le nouveau groupe, puis cliquez sur le bouton **Continue** : 
+1. Accédez au  [iOS Developer Center](https://developer.apple.com/account/) d’Apple et ouvrez une session avec votre **compte**.
+2. Sélectionnez **Certificates, Identifiers & Profiles**.
+3. Sous **Identifiers**, sélectionnez **App Groups** et cliquez sur le bouton **+** pour créer un groupe.
+4. Entrez un **nom** et un **identificateur** pour le nouveau groupe, puis cliquez sur le bouton **Continue** : 
    
     ![Détails de l’ajout d’un App Group](app-groups-capabilities-images/image52.png)
 
-5.  Cliquez sur le bouton **Register** pour créer le groupe et sur **Done** pour revenir à la liste des App Groups inscrits.
+5. Cliquez sur le bouton **Register** pour créer le groupe et sur **Done** pour revenir à la liste des App Groups inscrits.
 
 ## <a name="configure-an-app-to-use-app-groups"></a>Configurer une application pour utiliser des App Groups
 
@@ -47,21 +47,21 @@ Une fois que vous avez créé l’App Group, configurez les ID d’application p
 
 Effectuez ce qui suit :
 
-1.  Accédez au  [Centre des développeurs iOS](https://developer.apple.com/account/) d’Apple, puis connectez-vous à l’aide d’un compte de développeur Apple.
-2.  Dans le menu **Program Resources**, sélectionnez **Certificates, Identifiers & Profiles**.
-3.  Sous **Identifiers**, sélectionnez **App IDs** et cliquez sur le bouton **+** pour créer un ID d’application.
-4.  Entrez un nom pour l’ID d’application et attribuez-lui un ID d’application explicite.
-5.  Sous **App Services**, activez **App Groups**, puis cliquez sur le bouton Continue :
+1. Accédez au  [Centre des développeurs iOS](https://developer.apple.com/account/) d’Apple, puis connectez-vous à l’aide d’un compte de développeur Apple.
+2. Dans le menu **Program Resources**, sélectionnez **Certificates, Identifiers & Profiles**.
+3. Sous **Identifiers**, sélectionnez **App IDs** et cliquez sur le bouton **+** pour créer un ID d’application.
+4. Entrez un nom pour l’ID d’application et attribuez-lui un ID d’application explicite.
+5. Sous **App Services**, activez **App Groups**, puis cliquez sur le bouton Continue :
 
     ![Ajouter un App Group (App Services)](app-groups-capabilities-images/image53.png)
 
-6.  Vérifiez les paramètres, puis cliquez sur le bouton **Register** pour créer l’ID d’application.
-7.  Cliquez sur le bouton **Done** pour revenir à la liste des ID d’application inscrits.
-8.  Sélectionnez le nouvel ID d’application dans la liste et cliquez sur le bouton **Edit** :
+6. Vérifiez les paramètres, puis cliquez sur le bouton **Register** pour créer l’ID d’application.
+7. Cliquez sur le bouton **Done** pour revenir à la liste des ID d’application inscrits.
+8. Sélectionnez le nouvel ID d’application dans la liste et cliquez sur le bouton **Edit** :
 
     ![Sélectionner l’ID d’application dans la liste](app-groups-capabilities-images/image54.png)
 
-9.  Sous le service **App Groups**, cliquez sur le bouton **Edit** :
+9. Sous le service **App Groups**, cliquez sur le bouton **Edit** :
 
     ![Sélectionner l’ID d’application dans la liste](app-groups-capabilities-images/image55.png)
 

@@ -8,18 +8,18 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4d4c9980dd4c7be4ed18f1b6ce015d73b3caf836
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855170"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865320"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Provisionnement automatique pour Xamarin.iOS
 
 _Une fois Xamarin.iOS installé avec succès, l’étape suivante du développement iOS consiste à configurer l’appareil iOS. Ce guide décrit l’utilisation de la signature automatique pour demander des certificats et profils de développement._
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -67,7 +67,7 @@ Pour signer automatiquement votre application pour un déploiement sur un appare
 
 4. Sélectionnez votre équipe dans la liste déroulante **Équipe**.
 
-6. Au bout de quelques secondes, un certificat de signature et un profil d’attribution seront créés :
+5. Au bout de quelques secondes, un certificat de signature et un profil d’attribution seront créés :
 
     ![certificat et profil correctement créés](automatic-provisioning-images/image5.png)
 
@@ -87,7 +87,7 @@ Pour signer automatiquement votre application pour un déploiement sur un appare
 
     ![Sélection de l’équipe](automatic-provisioning-images/prov3.png)
 
-4. Le processus de signature automatique démarre. Visual Studio essaie ensuite de générer un ID d’application, un profil de provisionnement et une identité de signature pour utiliser ces artefacts pour la signature. Vous pouvez voir le processus de génération dans la sortie de génération :
+5. Le processus de signature automatique démarre. Visual Studio essaie ensuite de générer un ID d’application, un profil de provisionnement et une identité de signature pour utiliser ces artefacts pour la signature. Vous pouvez voir le processus de génération dans la sortie de génération :
 
     ![Sortie de génération montrant la génération d’artefacts](automatic-provisioning-images/prov5.png)
 

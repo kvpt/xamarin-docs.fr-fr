@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/08/2019
 ms.custom: video
-ms.openlocfilehash: 749eec6d2000e9ffa84b1d3ac04aa575ebeb212f
-ms.sourcegitcommit: 7db5be0bb11e8914e1d1760e5f969ed17731e3a1
+ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54114964"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855757"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivité
 
@@ -101,7 +101,7 @@ public class ConnectivityTest
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
-    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
+    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
     {
         var access = e.NetworkAccess;
         var profiles = e.ConnectionProfiles;

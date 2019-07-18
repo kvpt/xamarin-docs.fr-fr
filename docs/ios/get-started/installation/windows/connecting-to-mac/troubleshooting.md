@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f56f2c58195e51e9294948dad85a475e181f99b2
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978535"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865804"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Résolution des problèmes de connexion pour un hôte de build Xamarin.iOS
 
@@ -35,8 +35,8 @@ L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus
 
 > [!IMPORTANT]
 > Ces étapes de résolution de problèmes s’appliquent principalement aux problèmes qui se produisent pendant la configuration initiale sur un nouveau système.  Si vous avez déjà utilisé la connexion avec succès dans un environnement particulier et que celle-ci ne fonctionne plus soudainement ou par intermittence, vous pouvez, dans la plupart des cas, passer directement à vérifier si l’un des points suivants peut vous aider à résoudre le problème : 
->   * Arrêtez les processus restants comme décrit ci-dessous dans la section [Erreurs dues à des processus hôtes de build existants](#errors). 
->   * Désactivez les agents, comme indiqué dans la section [Désactivation des agents Broker, IDB, de build et Designer](#clearing), puis utilisez une connexion Internet câblée et connectez-vous directement via l’adresse IP, comme indiqué dans la section [Connexion impossible à MacBuildHost.local. Veuillez réessayer.](#tryagain).  
+> * Arrêtez les processus restants comme décrit ci-dessous dans la section [Erreurs dues à des processus hôtes de build existants](#errors). 
+> * Désactivez les agents, comme indiqué dans la section [Désactivation des agents Broker, IDB, de build et Designer](#clearing), puis utilisez une connexion Internet câblée et connectez-vous directement via l’adresse IP, comme indiqué dans la section [Connexion impossible à MacBuildHost.local. Veuillez réessayer.](#tryagain).  
 > Si aucune de ces options ne résout le problème, suivez les instructions de l’[étape 9](#stepnine) pour envoyer un nouveau rapport de bogues.
 
 1. Vérifiez que des versions compatibles de Xamarin.iOS sont installées sur votre Mac. Pour effectuer cette opération avec Visual Studio 2017, vérifiez que vous vous trouvez sur le canal de distribution **Stable** dans Visual Studio pour Mac. Dans Visual Studio 2015 et les versions antérieures, vérifiez que vous vous trouvez sur le même canal de distribution sur les deux IDE.
@@ -103,7 +103,7 @@ L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus
 
     - Les paramètres de pare-feu OS X interdisent la connexion. Vérifier soigneusement l’étape 3.
 
-        Parfois, la configuration par application pour le pare-feu OS X peut également finir dans un état non valide dans lequel les paramètres affichés dans les Préférences Système ne reflètent pas le comportement réel. La suppression du fichier de configuration (**/Library/Preferences/com.apple.alf.plist**) et le redémarrage de l’ordinateur peuvent permettre de restaurer le comportement par défaut. Une façon de supprimer le fichier consiste à entrer **/Library/Preferences** sous **Atteindre &gt;Atteindre le dossier** dans Finder, puis à déplacer le fichier **com.apple.alf.plist** vers la Corbeille.
+        Parfois, la configuration par application pour le pare-feu OS X peut également finir dans un état non valide dans lequel les paramètres affichés dans les Préférences Système ne reflètent pas le comportement réel. La suppression du fichier de configuration ( **/Library/Preferences/com.apple.alf.plist**) et le redémarrage de l’ordinateur peuvent permettre de restaurer le comportement par défaut. Une façon de supprimer le fichier consiste à entrer **/Library/Preferences** sous **Atteindre &gt;Atteindre le dossier** dans Finder, puis à déplacer le fichier **com.apple.alf.plist** vers la Corbeille.
 
     - Les paramètres de pare-feu de l’un des routeurs entre le Mac et l’ordinateur Windows bloquent la connexion.
 
@@ -162,23 +162,23 @@ Causes signalées :
 
         [![](troubleshooting-images/troubleshooting-image18.png "Exécution de « ls /etc/ssh/sshd_config » et de « ls /etc/sshd_config » dans le Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
-    3. Exécutez `cp /etc/ssh/sshd_config "$HOME/Desktop/"` dans Terminal pour copier le fichier sur votre bureau.
+    2. Exécutez `cp /etc/ssh/sshd_config "$HOME/Desktop/"` dans Terminal pour copier le fichier sur votre bureau.
 
-    4. Ouvrez le fichier à partir de votre bureau dans un éditeur de texte. Par exemple, vous pouvez exécuter `open -a TextEdit "$HOME/Desktop/sshd_config"` dans Terminal.
+    3. Ouvrez le fichier à partir de votre bureau dans un éditeur de texte. Par exemple, vous pouvez exécuter `open -a TextEdit "$HOME/Desktop/sshd_config"` dans Terminal.
 
-    5. Ajoutez la ligne suivante au bas du fichier :
+    4. Ajoutez la ligne suivante au bas du fichier :
 
         ```
         UseDNS no
         ```
-        
-    6. Supprimez toutes les lignes qui indiquent `UseDNS yes` pour garantir que le nouveau paramètre prend effet.
 
-    7. Enregistrez le fichier.
+    5. Supprimez toutes les lignes qui indiquent `UseDNS yes` pour garantir que le nouveau paramètre prend effet.
 
-    8. Exécutez `sudo cp "$HOME/Desktop/sshd_config" /etc/ssh/sshd_config` dans Terminal pour copier le fichier modifié à son emplacement d’origine. Entrez votre mot de passe si vous y êtes invité.
+    6. Enregistrez le fichier.
 
-    9. Désactivez et réactivez la **Session à distance** sous **Préférences Système &gt; Partage &gt; Session à distance** pour redémarrer le serveur SSH.
+    7. Exécutez `sudo cp "$HOME/Desktop/sshd_config" /etc/ssh/sshd_config` dans Terminal pour copier le fichier modifié à son emplacement d’origine. Entrez votre mot de passe si vous y êtes invité.
+
+    8. Désactivez et réactivez la **Session à distance** sous **Préférences Système &gt; Partage &gt; Session à distance** pour redémarrer le serveur SSH.
 
 <a name="clearing" />
 

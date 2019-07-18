@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1bd61474daedd8bd330c0370948d6dee6f8ea50e
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194955"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865833"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Vue d’ensemble de la distribution d’applications Xamarin.iOS
 
@@ -27,8 +27,8 @@ Une fois l’application Xamarin.iOS développée, la prochaine étape du cycle 
 Apple propose les méthodes suivantes (prises en charge par Xamarin.iOS) pour distribuer une application iOS :
 
 1. [**App Store**](#App_Store_Distribution)
-2. [**Interne (Entreprise)**](#In-House_Distribution)
-2. [**Ad hoc**](#Ad_Hoc_Distribution)
+2. [**Interne (Entreprise)** ](#In-House_Distribution)
+3. [**Ad hoc**](#Ad_Hoc_Distribution)
 
 Dans tous ces scénarios, les applications doivent être provisionnées à l’aide du *profil de provisionnement* approprié. Les profils de provisionnement sont des fichiers qui contiennent les informations sur le code de signature, ainsi que l’identité de l’application et le mécanisme de distribution prévu. Pour la distribution hors App Store, ils contiennent également des informations relatives aux appareils sur lesquels l’application peut être déployée.
 

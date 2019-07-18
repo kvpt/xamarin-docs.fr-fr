@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 73f652be32c72ef51170f44c28ce1590e6a0e92b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dd42de4dda4b5d5b09156898fd7a8bab331adf88
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106843"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865904"
 ---
 # <a name="xamarinmac-linker-options"></a>Options de l’éditeur de liens Xamarin.Mac
 
@@ -49,7 +49,7 @@ Pour modifier la configuration de l’éditeur de liens pour un projet Xamarin.M
 2. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier projet pour ouvrir la boîte de dialogue **Options du projet**.
 3. Dans l’onglet **Build Mac**, sélectionnez le type de **comportement de l’éditeur de liens** adapté aux besoins de votre application :
 
-  ![Sélection du comportement de l’éditeur de liens à utiliser](linker-images/link-behavior.png "Sélection du comportement de l’éditeur de liens à utiliser")
+    ![Sélection du comportement de l’éditeur de liens à utiliser](linker-images/link-behavior.png "Sélection du comportement de l’éditeur de liens à utiliser")
 
 4. La liaison de plateforme pour les frameworks cibles Complet sera intégrée dans l’IDE dans une prochaine mise à jour. En attendant, ajoutez `--linkplatform` aux **arguments mmp supplémentaires** à la place.
 5. Cliquez sur le bouton **OK** pour enregistrer vos changements.

@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 4c9ab8c14db131427329cef51e7b74e982a1c7b8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103684"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67864209"
 ---
 # <a name="deployment-and-testing"></a>Déploiement et tests
 
 Cette section comporte des guides qui expliquent comment tester une application, optimiser ses performances, la préparer pour la mise en production, la signer avec un certificat et la publier sur un Store d'applications.
 
 
-##  <a name="application-package-sizesapp-package-sizemd"></a>[Tailles de packages d'application](app-package-size.md)
+## <a name="application-package-sizesapp-package-sizemd"></a>[Tailles de packages d'application](app-package-size.md)
 
 Cet article examine les éléments constitutifs des packages d’application Xamarin.Android, ainsi que les stratégies associées permettant de les déployer avec efficacité au cours des phases de débogage et de mise en production.
 
-##  <a name="building-appsbuilding-appsindexmd"></a>[Générer des applications](building-apps/index.md)
+## <a name="building-appsbuilding-appsindexmd"></a>[Générer des applications](building-apps/index.md)
 
 Cette section décrit le fonctionnement du processus de génération et explique comment générer des APK propres à une interface ABI.
 
-##  <a name="command-line-emulatorcommand-line-emulatormd"></a>[Émulateur en ligne de commande](command-line-emulator.md)
+## <a name="command-line-emulatorcommand-line-emulatormd"></a>[Émulateur en ligne de commande](command-line-emulator.md)
 
 Cet article aborde brièvement le démarrage de l’émulateur en ligne de commande.
 
@@ -35,23 +35,23 @@ Cet article aborde brièvement le démarrage de l’émulateur en ligne de comma
 
 Les guides de cette section vous aident à déboguer votre application à l’aide d’émulateurs Android, d’appareils Android réels et du journal de débogage.
 
-##  <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[Définir l’attribut Debuggable](~/android/deploy-test/debuggable-attribute.md)
+## <a name="setting-the-debuggable-attributeandroiddeploy-testdebuggable-attributemd"></a>[Définir l’attribut Debuggable](~/android/deploy-test/debuggable-attribute.md)
 
 Cet article explique comment définir l’attribut Debuggable afin que des outils tels que `adb` puissent communiquer avec la Machine virtuelle Java.
 
-##  <a name="environmentenvironmentmd"></a>[Environnement](environment.md)
+## <a name="environmentenvironmentmd"></a>[Environnement](environment.md)
 
 Cet article décrit l’environnement d’exécution de Xamarin.Android et les propriétés système Android qui influencent l’exécution du programme.
 
-##  <a name="gdbgdbmd"></a>[GDB](gdb.md)
+## <a name="gdbgdbmd"></a>[GDB](gdb.md)
 
 Cet article explique comment utiliser `gdb` pour déboguer une application Xamarin.Android.
 
-##  <a name="installing-a-system-appinstall-system-appmd"></a>[Installer une application système](install-system-app.md)
+## <a name="installing-a-system-appinstall-system-appmd"></a>[Installer une application système](install-system-app.md)
 
 Ce guide explique comment installer une application Xamarin.Android en tant qu’application système sur un appareil Android ou au sein d’une ROM personnalisée.
 
-##  <a name="linking-on-androidlinkermd"></a>[Liaison sur Android](linker.md)
+## <a name="linking-on-androidlinkermd"></a>[Liaison sur Android](linker.md)
 
 Cet article aborde le processus de liaison utilisé par Xamarin.Android pour réduire la taille finale d’une application. Il décrit les différents niveaux de liaison possibles, et aide à résoudre les problèmes et à limiter les erreurs potentiellement causées par l’éditeur de liens.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 87be250bdc425558a8e386a8209596e18f13b3ed
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120515"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865582"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
@@ -23,7 +23,7 @@ Le bêta testing fait partie intégrante du cycle de développement des logiciel
 TestFlight est un service Apple de bêta testing pour les applications iOS. Il est uniquement accessible à partir d’[iTunes Connect](https://itunesconnect.apple.com/), et disponible pour les applications iOS 8.0 et versions ultérieures. TestFlight permet de faire tester les versions bêta d’une application par des utilisateurs internes et externes. De plus, la revue de l’application bêta effectuée par des testeurs externes simplifie nettement le processus de revue finale avant la publication sur l’App Store.
 
 
-Auparavant, le binaire devait être généré dans Visual Studio pour Mac, puis chargé sur le site web TestFlightApp pour être distribué aux testeurs. Ce nouveau processus apporte plusieurs améliorations qui vous permettront de diffuser des applications testées et de grande qualité sur l’App Store. Exemple :
+Auparavant, le binaire devait être généré dans Visual Studio pour Mac, puis chargé sur le site web TestFlightApp pour être distribué aux testeurs. Ce nouveau processus apporte plusieurs améliorations qui vous permettront de diffuser des applications testées et de grande qualité sur l’App Store. Par exemple :
 
 
 - La revue d’application bêta, qui est obligatoire dans le cadre de tests externes, augmente les chances de validation de l’application lors de la revue finale dans l’App Store, car ces deux revues sont soumises au respect des règles d’Apple.
@@ -77,7 +77,7 @@ Pour plus d’informations sur la création d’un enregistrement iTunes Connect
 
 
 
-###  <a name="completing-the-new-ios-app-submission-form"></a>Renseigner le formulaire de soumission de la nouvelle application iOS
+### <a name="completing-the-new-ios-app-submission-form"></a>Renseigner le formulaire de soumission de la nouvelle application iOS
 
 Le formulaire doit comporter exactement les mêmes informations que celles du fichier Info.plist de votre application, comme illustré ci-dessous :
 
@@ -100,7 +100,7 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-###  <a name="create-an-archive"></a>Créer une archive
+### <a name="create-an-archive"></a>Créer une archive
 
  Pour générer un binaire dans Visual Studio pour Mac, utilisez la fonction _Archiver_. Cliquez avec le bouton droit sur le projet, puis sélectionnez **Archiver pour publication**, comme illustré ci-dessous :
 
@@ -109,9 +109,9 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 
  Pour plus d’informations, consultez le guide [Génération du distribuable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md).
 
-###  <a name="sign-and-distribute-your-app"></a>Signer et distribuer votre application
+### <a name="sign-and-distribute-your-app"></a>Signer et distribuer votre application
 
- La création d’une archive ouvre automatiquement la **vue Archives**, dans laquelle sont affichés tous les projets archivés, regroupés par solution. Pour signer votre application et la préparer pour la distribution, sélectionnez **Signer et distribuer...**, comme ci-dessous :
+ La création d’une archive ouvre automatiquement la **vue Archives**, dans laquelle sont affichés tous les projets archivés, regroupés par solution. Pour signer votre application et la préparer pour la distribution, sélectionnez **Signer et distribuer...** , comme ci-dessous :
 
 [![](testflight-images/archive-view.png "La création d’une archive ouvre automatiquement la vue Archives")](testflight-images/archive-view.png#lightbox)
 
@@ -121,14 +121,14 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 
  Pour plus d’informations sur ces étapes, consultez la section [Soumission de votre application à Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md).
 
-###  <a name="submitting-your-build"></a>Soumission de votre build
+### <a name="submitting-your-build"></a>Soumission de votre build
  L’Assistant Publication ouvre le programme Application Loader pour vous permettre de charger votre build dans iTunes Connect. Sélectionnez l’option **Deliver Your App** et chargez le fichier `.ipa` créé plus haut. Application Loader valide votre build, puis la charge dans iTunes Connect.
 
  Pour plus d’informations sur ces étapes, consultez la section [Soumission de votre application à Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md).
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-###  <a name="building-your-final-distributable"></a>Génération de votre distribuable final
+### <a name="building-your-final-distributable"></a>Génération de votre distribuable final
  Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces équivalents sont :
 
 1. Charger un IPA créé avec la commande Générer un paquet ad-hoc (IPA).
@@ -136,7 +136,7 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 
  Le guide [Génération du distribuable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) fournit des instructions pour ces deux options.
 
-###  <a name="submitting-your-build"></a>Soumission de votre build
+### <a name="submitting-your-build"></a>Soumission de votre build
  Pour soumettre votre application à Apple, vous devez utiliser le programme Application Loader, qui est installé sur l’hôte de build avec Xcode. Pour plus d’informations sur l’accès à Application Loader, consultez le guide [Accéder à Application Loader](http://help.apple.com/itc/apploader/#/apdATD1E927-D1E1A1303-D1E927A1126) d’Apple.
 
 Une fois le programme ouvert, sélectionnez l’option **Deliver Your App**, puis chargez le fichier zip ou `.ipa` créé plus haut. Application Loader valide votre build, puis la charge dans iTunes Connect.

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971260"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830346"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Accessibilité du clavier dans Xamarin.Forms
 
@@ -66,10 +66,10 @@ La propriété `VisualElement.TabIndex` sert à indiquer l’ordre dans lequel l
 
 Les règles suivantes s’appliquent lorsque vous utilisez l’ordre des tabulations par défaut ou définissez la propriété `TabIndex` :
 
- - Les instances [`VisualElement`](xref:Xamarin.Forms.VisualElement) avec une propriété `TabIndex` égale à 0 sont ajoutées à l’ordre des tabulations sur la base de leur ordre de déclaration dans le code XAML ou les collections enfants.
- - Les instances [`VisualElement`](xref:Xamarin.Forms.VisualElement) avec une propriété `TabIndex` supérieure à 0 sont ajoutées à l’ordre des tabulations sur la base de leur valeur `TabIndex`.
- - Les instances [`VisualElement`](xref:Xamarin.Forms.VisualElement) avec une propriété `TabIndex` inférieure à 0 sont ajoutées à l’ordre des tabulations et apparaissent avant toute valeur zéro.
- - Les conflits sur une propriété `TabIndex` sont résolus par ordre de déclaration.
+- Les instances [`VisualElement`](xref:Xamarin.Forms.VisualElement) avec une propriété `TabIndex` égale à 0 sont ajoutées à l’ordre des tabulations sur la base de leur ordre de déclaration dans le code XAML ou les collections enfants.
+- Les instances [`VisualElement`](xref:Xamarin.Forms.VisualElement) avec une propriété `TabIndex` supérieure à 0 sont ajoutées à l’ordre des tabulations sur la base de leur valeur `TabIndex`.
+- Les instances [`VisualElement`](xref:Xamarin.Forms.VisualElement) avec une propriété `TabIndex` inférieure à 0 sont ajoutées à l’ordre des tabulations et apparaissent avant toute valeur zéro.
+- Les conflits sur une propriété `TabIndex` sont résolus par ordre de déclaration.
 
 Après avoir défini l’ordre des tabulations, en appuyant sur la touche Tab, vous déplacez le focus d’un contrôle à l’autre, dans l’ordre croissant de `TabIndex`, en revenant au premier contrôle après avoir atteint le contrôle final.
 
