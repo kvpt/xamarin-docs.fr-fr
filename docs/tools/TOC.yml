@@ -44,11 +44,6 @@
           href: workbooks/workbook.md
         - name: Raccourcis clavier de l’éditeur
           href: workbooks/keybindings.md
-        - name: Exemples de workbooks
-          href: workbooks/samples/index.md
-          items:
-            - name: TinyRenderer
-              href: workbooks/samples/tinyrenderer.md
         - name: Résolution des problèmes
           href: workbooks/troubleshooting/index.md
           items:
