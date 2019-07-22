@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 602a530e1c185ffeda2c6ac80a96f7795cec4cae
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dbf8f85192f9052041fc65367eb2f6c57603b440
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50104841"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831425"
 ---
 # <a name="ios-build-mechanics"></a>Mécanismes de génération d’iOS
 
@@ -33,7 +33,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac :
 
 1. Cliquez sur **Visual Studio pour Mac > Préférences...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets > Générer**
-3. Dans le volet droit, définissez la liste déroulante Niveau de détail du journal sur **Diagnostic** : [![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
+3. Dans le volet droit, définissez la liste déroulante Niveau de détail du journal sur **Diagnostic** :  [![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
 4. Cliquez sur **OK**.
 5. Redémarrer Visual Studio pour Mac
 6. Nettoyer et regénérer votre package
@@ -46,7 +46,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio :
 
 1. Cliquez sur **Outils > Options...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets et solutions > Générer et exécuter**
-3. Dans le volet droit, définissez la *liste déroulante Niveau de détail de la sortie de génération MSBuild* sur **Diagnostic** : [![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. Dans le volet droit, définissez la *liste déroulante Niveau de détail de la sortie de génération MSBuild* sur **Diagnostic** :  [![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Cliquez sur **OK**.
 5. Nettoyez et regénérez votre package.
 6. La sortie de diagnostic est visible dans le panneau Sortie.
@@ -111,9 +111,9 @@ Le déploiement sur l’appareil est similaire au déploiement sur le simulateur
 
 Il existe plusieurs configurations de build fournies lors du déploiement d’applications iOS. Il est important de bien comprendre chaque configuration, pour savoir quand et pourquoi vous devez optimiser.
 
- - Débogage
+- Débogage
   - Il s’agit de la configuration principale qui doit être utilisée lorsqu’une application est en cours de développement et elle doit, par conséquent, être aussi rapide que possible.
- - Mise en production
+- Édition
   - Les builds de mise en production sont celles qui sont envoyées à vos utilisateurs et il est donc essentiel de se concentrer sur les performances. Lorsque vous utilisez la configuration Mise en production, vous souhaiterez peut-être utiliser le compilateur d’optimisation LLVM et optimiser les fichiers PNG.
 
  

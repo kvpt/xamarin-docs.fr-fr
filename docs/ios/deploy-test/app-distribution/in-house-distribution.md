@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c1e1b2d7bfb43c256c71abb62e7d85a05b096419
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50103580"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865529"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Distribution interne pour les applications Xamarin.iOS
 
@@ -74,13 +74,13 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 
 1. Sélectionnez votre équipe, puis cliquez sur *Afficher les détails* :
 
-    [![](in-house-distribution-images/selectteam.png "Sélectionner votre équipe")](in-house-distribution-images/selectteam.png#lightbox)
+   [![](in-house-distribution-images/selectteam.png "Sélectionner votre équipe")](in-house-distribution-images/selectteam.png#lightbox)
 
 2. Cliquez ensuite sur le bouton **Créer** à côté de **iOS Distribution Certificate (Certificat de distribution iOS)**  :
 
    [![](in-house-distribution-images/selectcert.png "Créer le certificat de distribution iOS")](in-house-distribution-images/selectcert.png#lightbox)
 
-2.   Cliquez ensuite sur le bouton **plus (+)**, puis sélectionnez **iOS App Store (App Store iOS)**  :
+3. Cliquez ensuite sur le bouton **plus (+)** , puis sélectionnez **iOS App Store (App Store iOS)**  :
 
    [![](in-house-distribution-images/selectcert.png "Sélectionner l’App Store iOS")](in-house-distribution-images/selectcert.png#lightbox)
 
@@ -96,14 +96,14 @@ Comme pour tout profil de provisionnement que vous créez, un ID d’application
 
 
 1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
-2. Cliquez sur le bouton **+**, puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
-3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé : **Explicite** : com.[DomainName].[AppName] **Avec des caractères génériques** : com.[DomainName].*
+2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
+3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé, par exemple : **Explicite** : com.[DomainName].[AppName] **Caractère générique** : com.[DomainName].*
 4. Sélectionnez les [services d’application](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) nécessaires à votre application.
 5. Cliquez sur le bouton **Continue** et suivez les instructions affichées à l’écran pour créer l’ID d’application.
 
 Une fois que vous avez les composants nécessaires pour créer un profil de distribution, suivez les étapes ci-dessous pour le créer :
 
-1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement)** > **Distribution** :
+1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement)**  > **Distribution** :
 
    [![](in-house-distribution-images/distribute01.png "Sélectionner Provisioning (Provisionnement) > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
 
@@ -119,11 +119,11 @@ Une fois que vous avez les composants nécessaires pour créer un profil de dist
 
    [![](in-house-distribution-images/distribute04.png "Sélectionner le certificat de distribution nécessaire pour signer l’application")](in-house-distribution-images/distribute04.png#lightbox)
 
-6. Cliquez sur le bouton **Continue**, puis entrez un **Name (Nom)** pour le nouveau profil de distribution :
+5. Cliquez sur le bouton **Continue**, puis entrez un **Name (Nom)** pour le nouveau profil de distribution :
 
    [![](in-house-distribution-images/distribute06.png "Entrer un nom pour le nouveau profil de distribution")](in-house-distribution-images/distribute06.png#lightbox)
 
-7. Cliquez sur le bouton **Generate** pour créer le profil et finaliser le processus.
+6. Cliquez sur le bouton **Generate** pour créer le profil et finaliser le processus.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

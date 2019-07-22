@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3f74144f85cc045b4ea9807d3d818677e33539f2
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50123464"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865891"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Provisionnement manuel pour Xamarin.iOS
 
@@ -100,36 +100,36 @@ Lorsque vous créez un profil de provisionnement pour le développement, vous de
 
 1. Démarrez Xcode.
 2. Connectez l’appareil à provisionner au Mac à l’aide de son câble USB fourni.
-2. Dans le menu **Fenêtres**, sélectionnez **Appareils** :
+3. Dans le menu **Fenêtres**, sélectionnez **Appareils** :
 
-  [![](manual-provisioning-images/add01.png "Dans le menu Fenêtres, sélectionner Appareils")](manual-provisioning-images/add01.png#lightbox)
+   [![](manual-provisioning-images/add01.png "Dans le menu Fenêtres, sélectionner Appareils")](manual-provisioning-images/add01.png#lightbox)
 
-3. Sélectionnez l’appareil iOS souhaité dans la liste **APPAREILS** située dans la partie gauche de la fenêtre Appareils.
-4. Mettez en surbrillance la chaîne **Identificateur** et copiez-la dans le Presse-papiers :
+4. Sélectionnez l’appareil iOS souhaité dans la liste **APPAREILS** située dans la partie gauche de la fenêtre Appareils.
+5. Mettez en surbrillance la chaîne **Identificateur** et copiez-la dans le Presse-papiers :
 
-  [![](manual-provisioning-images/add02.png "Mettre en surbrillance la chaîne Identificateur")](manual-provisioning-images/add02.png#lightbox)
+   [![](manual-provisioning-images/add02.png "Mettre en surbrillance la chaîne Identificateur")](manual-provisioning-images/add02.png#lightbox)
 
-5. Dans Safari, accédez au [centre des développeurs Apple](https://developer.apple.com/membercenter/index.action) et connectez-vous.
-6. Cliquez sur le lien **Certificats, identificateurs et profils** :
+6. Dans Safari, accédez au [centre des développeurs Apple](https://developer.apple.com/membercenter/index.action) et connectez-vous.
+7. Cliquez sur le lien **Certificats, identificateurs et profils** :
 
-  [![](manual-provisioning-images/add03.png "Cliquer sur le lien Certificats, identificateurs et profils")](manual-provisioning-images/add03.png#lightbox)
+   [![](manual-provisioning-images/add03.png "Cliquer sur le lien Certificats, identificateurs et profils")](manual-provisioning-images/add03.png#lightbox)
 
-7. Cliquez sur le lien **Appareils** :
+8. Cliquez sur le lien **Appareils** :
 
-  [![](manual-provisioning-images/add04.png "Cliquer sur le lien Appareils")](manual-provisioning-images/add04.png#lightbox)
+   [![](manual-provisioning-images/add04.png "Cliquer sur le lien Appareils")](manual-provisioning-images/add04.png#lightbox)
 
-8. Cliquez sur le bouton **+**  :
+9. Cliquez sur le bouton **+**  :
 
-  [![](manual-provisioning-images/add05.png "Cliquer sur le bouton +")](manual-provisioning-images/add05.png#lightbox)
+   [![](manual-provisioning-images/add05.png "Cliquer sur le bouton +")](manual-provisioning-images/add05.png#lightbox)
 
-9. Nommez le nouvel appareil et collez l’**identificateur** que vous avez copié ci-dessus dans le champ **UUID** :
+10. Nommez le nouvel appareil et collez l’**identificateur** que vous avez copié ci-dessus dans le champ **UUID** :
 
-  [![](manual-provisioning-images/add06.png "Fournir un nom pour le nouvel appareil et son identificateur")](manual-provisioning-images/add06.png#lightbox)
+    [![](manual-provisioning-images/add06.png "Fournir un nom pour le nouvel appareil et son identificateur")](manual-provisioning-images/add06.png#lightbox)
 
-10. Cliquez sur le bouton **Continuer**.
-11. Enfin, examinez les informations et cliquez sur le bouton **Inscrire** :
+11. Cliquez sur le bouton **Continuer**.
+12. Enfin, examinez les informations et cliquez sur le bouton **Inscrire** :
 
-  [![](manual-provisioning-images/add07.png "Examiner les informations")](manual-provisioning-images/add07.png#lightbox)
+    [![](manual-provisioning-images/add07.png "Examiner les informations")](manual-provisioning-images/add07.png#lightbox)
 
 Répétez les étapes ci-dessus pour tous les appareils iOS utilisés pour tester ou déboguer une application Xamarin.iOS.
 
@@ -151,9 +151,9 @@ Avant de créer un profil de provisionnement, un *ID d’application* doit être
     [![](manual-provisioning-images/appid05a.png "Fournir un nom")](manual-provisioning-images/appid05a.png#lightbox)
 3. Le préfixe de l’application doit être préréglé. Sélectionnez **ID d’application générique** pour le suffixe de l’application. Entrez un ID de bundle au format `com.[DomainName].*` :
 
-  [![](manual-provisioning-images/appid05b.png "Entrer un ID de bundle")](manual-provisioning-images/appid05b.png#lightbox)
+   [![](manual-provisioning-images/appid05b.png "Entrer un ID de bundle")](manual-provisioning-images/appid05b.png#lightbox)
 
-3. Cliquez sur le bouton **Continue** et suivez les instructions affichées à l’écran pour créer l’ID d’application.
+4. Cliquez sur le bouton **Continue** et suivez les instructions affichées à l’écran pour créer l’ID d’application.
 
 ### <a name="provisioning-profile"></a>Profil de provisionnement
 
@@ -197,7 +197,7 @@ Les certificats et les profils de provisionnement qui ont été créés dans le 
 2.   Démarrez Xcode.
 3.   Choisissez **Menu Xcode > Préférences...**
 4.   Cliquez sur l’onglet **Comptes**.
-5.   Sélectionnez une équipe et cliquez sur le bouton **Télécharger les profils manuels** : [![](manual-provisioning-images/selectteam1.png "Téléchargement des profils manuels")](manual-provisioning-images/selectteam1.png#lightbox)
+5.   Sélectionnez une équipe, puis cliquez sur le bouton **Télécharger les profils manuels** : [![](manual-provisioning-images/selectteam1.png "Téléchargement de profils manuels")](manual-provisioning-images/selectteam1.png#lightbox)
 
 6.   Quittez Xcode.
 7.  Démarrez Visual Studio pour Mac ou Visual Studio.
@@ -238,13 +238,13 @@ Apple propose une sélection de services d’application spéciaux, également a
 1. Connectez l’appareil à un Mac.
 2. Dans le fichier **Info.plist** du projet, vérifiez que l’identificateur de bundle correspond à l’ID d’application (sauf si l’ID d’application est générique) :
 
-  ![](manual-provisioning-images/deploydevice01xs.png "Entrée d’un identificateur")
+   ![](manual-provisioning-images/deploydevice01xs.png "Entrée d’un identificateur")
 
 3. Cliquez avec le bouton droit sur le projet pour afficher la boîte de dialogue Options du projet et accédez à **Générer > Signature du bundle iOS**. Dans la liste déroulante située en regard de **Identité de signature** et **Profil de provisionnement**, vérifiez que Visual Studio pour Mac peut voir les profils appropriés et sélectionnez une identité et un profil spécifiques :
 
-  ![](manual-provisioning-images/deploydevice02xs.png "Sélectionner une identité et un profil spécifiques")
+   ![](manual-provisioning-images/deploydevice02xs.png "Sélectionner une identité et un profil spécifiques")
 
-Si la valeur est **Automatique**, Visual Studio pour Mac sélectionne l’identité et le profil selon l’ID de bundle qui a été défini à l’étape 2.
+   Si la valeur est **Automatique**, Visual Studio pour Mac sélectionne l’identité et le profil selon l’ID de bundle qui a été défini à l’étape 2.
 
 4. Veillez à définir la configuration de build sur **iPhone** / **iPad**, plutôt que sur le simulateur.
 5. Cliquez sur **Exécuter** dans Visual Studio pour Mac et regardez l’application s’exécuter sur l’appareil.
@@ -252,12 +252,12 @@ Si la valeur est **Automatique**, Visual Studio pour Mac sélectionne l’identi
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
-> Avant de commencer, sélectionnez **Provisionnement manuel** dans **Projet > Propriétés de provisionnement...**.
+> Avant de commencer, sélectionnez **Provisionnement manuel** dans **Projet > Propriétés de provisionnement...** .
 
 1. Connectez l’appareil à l’hôte de build Mac.
 2. Dans le fichier **Info.plist** du projet, vérifiez que l’identificateur de bundle correspond à l’ID d’application :
 
-  ![](manual-provisioning-images/servicevs01.png "Entrée d’un identificateur")
+   ![](manual-provisioning-images/servicevs01.png "Entrée d’un identificateur")
 
 3. Cliquez avec le bouton droit sur le projet pour afficher la boîte de dialogue Options du projet et accédez à **Générer > Signature du bundle iOS**. Dans la liste déroulante située en regard de **Identité de signature** et **Profil de provisionnement**, vérifiez que Visual Studio peut voir les profils appropriés et sélectionnez une identité et un profil spécifiques.
 

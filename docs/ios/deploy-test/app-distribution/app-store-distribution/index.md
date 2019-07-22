@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 14cf2910767e9c205e5ddc8f580020505f54ef46
-ms.sourcegitcommit: e7f27ba75cae5099ef053b819b84132a77d4f9e7
+ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "55832026"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831521"
 ---
 # <a name="app-store-distribution"></a>Distribution dans l’App Store
 
@@ -25,7 +25,7 @@ Une fois l’application Xamarin.iOS développée, la prochaine étape du cycle 
 La distribution d’une application, tout comme son développement, nécessite le provisionnement d’applications à l’aide du *profil de provisionnement* approprié. Les profils de provisionnement sont des fichiers qui contiennent les informations sur le code de signature, ainsi que l’identité de l’application et le mécanisme de distribution prévu. Ils contiennent également des informations relatives aux appareils sur lesquels l’application peut être déployée pour la distribution hors App Store.
 
 > [!IMPORTANT]
-> Il est **important** de noter que, pour pouvoir utiliser iTunes Connect et donc publier une application sur l’App Store, vous **devez** faire partie d’un programme pour les développeurs d’Apple, en tant qu’individu ou qu’organisation. Vous ne pouvez pas suivre les étapes de cette page si vous êtes membre d’un programme Developer **Enterprise** d’Apple.
+> Pour pouvoir utiliser iTunes Connect et donc publier une application sur l’App Store, vous **devez** faire partie d’un programme pour les développeurs d’Apple, en tant qu’individu ou qu’organisation. Vous ne pouvez pas suivre les étapes de cette page si vous êtes membre d’un programme Developer **Enterprise** d’Apple.
 
 <a name="provisioning" />
 
@@ -83,7 +83,7 @@ Comme pour tout profil de provisionnement que vous créez, un ID d’application
 
 
 1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
-2. Cliquez sur le bouton **+**, puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
+2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
 3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé, par exemple :
     - **Explicite** : com.[DomainName].[AppName]
     - **Avec des caractères génériques** : com.[DomainName].*
@@ -95,7 +95,7 @@ Comme pour tout profil de provisionnement que vous créez, un ID d’application
 
 Une fois que vous avez les composants nécessaires pour créer un profil de distribution, suivez les étapes ci-dessous pour le créer :
 
-1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement)** > **Distribution** :
+1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement)**  > **Distribution** :
 
     [![](images/distribute01.png "Sélectionner Provisionnement > Distribution")](images/distribute01.png#lightbox)
 

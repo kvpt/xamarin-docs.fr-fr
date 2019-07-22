@@ -1,30 +1,30 @@
 ---
-title: Introduction au cycle de vie de développement des logiciels mobiles
+title: Cycle de vie du développement de logiciel mobile
 description: Ce document décrit le cycle de vie de développement des logiciels mobiles. Il aborde la conception d’expérience utilisateur, la conception d’interface utilisateur, le développement, la stabilisation, la distribution et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 11/22/2016
-ms.openlocfilehash: 74a9fc59b395d68db9b116106cc9fa63d3969c3b
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 99be69abb11640418917d4d2cb9738a0a843d6d0
+ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855235"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290143"
 ---
-# <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Introduction au cycle de vie de développement des logiciels mobiles
+# <a name="mobile-software-development-lifecycle"></a>Cycle de vie du développement de logiciel mobile
 
-La création d’applications mobiles peut être aussi simple qu’ouvrir l’IDE, assembler quelques petites choses, faire quelques tests rapides et soumettre le résultat à un App Store, le tout en une seule après-midi. Cela peut aussi consister en un processus extrêmement complexe impliquant une conception préalable rigoureuse, des tests d’utilisabilité, des tests d’assurance qualité sur des milliers d’appareils, un cycle de vie complet avec des versions bêta, puis un déploiement effectué de plusieurs façons différentes.
+La création d’applications mobiles peut être aussi simple qu’ouvrir Visual Studio, assembler quelques petites choses, faire quelques tests rapides et soumettre le résultat à un App Store, le tout en une seule après-midi. Cela peut aussi consister en un processus extrêmement complexe impliquant une conception préalable rigoureuse, des tests d’utilisabilité, des tests d’assurance qualité sur des milliers d’appareils, un cycle de vie complet avec des versions bêta, puis un déploiement effectué de plusieurs façons différentes.
 
 Dans ce document, nous allons examiner de façon approfondie la création d’applications mobiles, notamment :
 
-1.   **Processus** : le processus de développement de logiciels est appelé « cycle de vie de développement de logiciels ». Nous allons examiner toutes les phases du cycle de vie de développement de logiciels pour le développement d’applications mobiles, notamment : Inspiration, conception, développement, stabilisation, déploiement et maintenance.
+1.   **Processus** : le processus de développement de logiciels est appelé « cycle de vie de développement de logiciels ». Nous allons examiner toutes les phases du cycle de vie de développement de logiciels pour le développement d’applications mobiles, notamment : Lancement, conception, développement, stabilisation, déploiement et maintenance.
 1.   **Considérations** : plusieurs aspects doivent être considérés pour la création d’applications mobiles, en particulier pour ce qui diffère des applications web ou pour poste de travail traditionnelles. Nous allons examiner ces considérations et comment elles affectent le développement d’applications mobiles.
 
 Ce document est destiné à répondre à des questions essentielles sur le développement d’applications mobiles, à la fois pour les développeurs d’application débutants et expérimentés. Il adopte une approche assez complète pour présenter la plupart des concepts que vous allez rencontrer au cours de l’ensemble du cycle de vie de développement de logiciels. Ce document peut cependant ne pas être pour tout le monde : si vous avez hâte de commencer à créer des applications, nous vous recommandons de passer directement au guide [Introduction au développement mobile](~/cross-platform/get-started/introduction-to-mobile-development.md), puis de revenir à ce document plus tard.
 
-## <a name="mobile-development-sdlc"></a>Cycle de vie du développement de logiciels pour le développement mobile
+## <a name="mobile-development-software-lifecycle"></a>Cycle de vie des logiciels de développement mobile
 
 Le cycle de vie du développement mobile n’est globalement pas différent de celui des applications web ou pour poste de travail. Comme pour ces applications, le processus comprend généralement 5 parties principales :
 
@@ -172,7 +172,7 @@ Chaque plateforme gère le multitâche différemment, ce que nous allons détail
 Les appareils mobiles se répartissent généralement en deux catégories, les téléphones et les tablettes, avec quelques appareils hybrides entre les deux. Le développement pour ces facteurs de forme est généralement très similaire ; la conception des applications pour ceux-ci peut cependant être très différente.
 Les téléphones ont un espace très limité sur l’écran et les tablettes, bien que plus grandes, sont néanmoins des appareils mobiles avec moins d’espace sur l’écran que la plupart des ordinateurs portables. Pour cette raison, les contrôles d’interface utilisateur des plateformes mobiles ont été conçus spécifiquement pour fonctionner sur des facteurs de forme plus petits.
 
-#### <a name="device-and-os-fragmentation"></a>Hétérogénéité des appareils et des systèmes d’exploitation
+#### <a name="device-and-operating-system-fragmentation"></a>Fragmentation de l’appareil et du système d’exploitation
 
 Il est important de prendre en compte différents appareils tout au long de la totalité du cycle de vie de développement des logiciels :
 
@@ -235,7 +235,7 @@ Ceci est une étape essentielle dans le modèle de distribution Android en raiso
 
 Le multitâche dans UWP a également deux parties : le cycle de vie pour les pages et les applications, et les processus d’arrière-plan. Chaque écran d’une application est une instance d’une classe Page, qui a des événements associés à un état actif ou inactif (avec des règles spéciales pour gérer l’état inactif ou « désactivé »).
 
-La deuxième partie fournit des agents d’arrière-plan pour le traitement des tâches même quand l’application n’est pas en cours d’exécution au premier plan. 
+La deuxième partie fournit des agents d’arrière-plan pour le traitement des tâches même quand l’application n’est pas en cours d’exécution au premier plan.
 
 #### <a name="device-capabilities"></a>Fonctionnalités de l’appareil
 
@@ -251,6 +251,6 @@ Ce guide est une introduction au cycle de vie de développement de logiciels pou
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- [Introduction au développement mobile](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [Qu’est-ce que Xamarin ?](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Bien démarrer avec Xamarin](~/get-started/index.yml)
 - [Partage de code entre plateformes](~/cross-platform/app-fundamentals/index.md)

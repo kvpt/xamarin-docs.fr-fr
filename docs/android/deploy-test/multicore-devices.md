@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: bb1b615bc922b19c50435218dfee51f9e19d1259
-ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.openlocfilehash: 49370813f50e3b5f1a9193c542b9f5f13d65a8e1
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394726"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829954"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Appareils multicœurs et Xamarin.Android
 
@@ -53,13 +53,15 @@ Chaque ABI prise en charge par Android est identifiée par un nom unique.
 
 Il s’agit du nom d’une EABI pour les UC ARM qui prennent en charge au moins le jeu d’instructions ARMv5TE. Android suit l’ABI little-endian ARM GNU/Linux. Cette ABI ne prend pas en charge les calculs en virgule flottante avec accélération matérielle. Toutes les opérations de virgule flottante sont effectuées par les fonctions d’assistance provenant de la bibliothèque statique `libgcc.a` du compilateur. Les appareils SMP ne sont pas pris en charge par `armeabi`.
 
-**Remarque** : Le code `armeabi` de Xamarin.Android n’est pas thread-safe et ne doit pas être utilisé sur des appareils `armeabi-v7a` multiprocesseurs (décrits ci-dessous). L’utilisation de code `armeabi` sur les appareils `armeabi-v7a` à un seul cœur est sûre.
+> [!IMPORTANT]
+> Le code `armeabi` de Xamarin.Android n’est pas thread-safe et ne doit pas être utilisé sur des appareils `armeabi-v7a` multiprocesseurs (décrits ci-dessous). L’utilisation de code `armeabi` sur les appareils `armeabi-v7a` à un seul cœur est sûre.
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
 Il s’agit d’un autre jeu d’instructions d’UC ARM qui étend l’EABI `armeabi` décrite ci-dessus. L’EABI `armeabi-v7a` prend en charge les opérations à virgule flottante avec accélération matérielle et les appareils multiprocesseur (SMP). Une application qui utilise l’EABI `armeabi-v7a` devrait apporter des améliorations des performances sur une application qui utilise `armeabi`.
 
-**Remarque :** Le code machine `armeabi-v7a` ne fonctionnera pas sur les appareils ARMv5.
+> [!NOTE]
+> Le code machine `armeabi-v7a` ne fonctionnera pas sur les appareils ARMv5.
 
 #### <a name="arm64-v8a"></a>arm64-v8a
 
@@ -74,7 +76,8 @@ C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d�
 - L’extension SSE3 supplémentaire (SSSE3).
 - Toute variante de SSE4.
 
-**Remarque :** Google TV, bien qu’il s’exécute sur x86, n’est pas pris en charge par Android NDK.
+> [!NOTE]
+> Google TV, bien qu’il s’exécute sur x86, n’est pas pris en charge par Android NDK.
 
 #### <a name="x8664"></a>x86_64
 
