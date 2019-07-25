@@ -24,7 +24,7 @@ Récepteur de cuisine illustre les deux ensembles de concepts :
 * Les éléments de la représentation montrent comment utiliser `RepresentationManager` pour améliorer le rendu en utilisant les représentations sous forme intégrés.
 * Le `Person` objet et son convertisseur de JavaScript associé illustrent l’utilisation `ISerializableObject` sans passer par un fournisseur de représentation.
 
-Consultez également [SkiaSharp] [ skiasharp] pour obtenir un exemple réel d’une intégration qui utilise existant [représentations](~/tools/workbooks/sdk/representations.md) fournis par Xamarin Workbooks pour afficher ses types.
+Consultez également [SkiaSharp][skiasharp] pour obtenir un exemple réel d’une intégration qui utilise existant [représentations](~/tools/workbooks/sdk/representations.md) fournis par Xamarin Workbooks pour afficher ses types.
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks
