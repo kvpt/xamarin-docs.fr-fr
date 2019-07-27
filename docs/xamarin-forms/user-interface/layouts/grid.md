@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649595"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511878"
 ---
 # <a name="xamarinforms-grid"></a>Grille de Xamarin.Forms
 
@@ -54,7 +54,7 @@ Les informations de ligne et de colonne sont stockées dans `Grid`de `RowDefinit
 - **Absolu** &ndash; tailles des colonnes et des lignes avec des valeurs de hauteur et largeur fixes, spécifiques. Spécifié comme valeur et `GridUnitType.Absolute` en C# et en tant que `#` dans XAML, avec `#` en cours de la valeur souhaitée.
 
 > [!NOTE]
-> Les valeurs de la largeur pour les colonnes sont définies comme `*` par défaut dans Xamarin.Forms, ce qui garantit que la colonne remplissent l’espace disponible. Les valeurs de la hauteur des lignes sont également définies en tant que `*` par défaut.
+> Les valeurs de largeur pour les colonnes sont `*` définies par défaut dans Xamarin. Forms, ce qui garantit que la colonne remplira l’espace disponible. Les valeurs de hauteur pour les lignes sont également `*` définies par défaut.
 
 Imaginez une application qui a besoin de trois lignes et deux colonnes. La ligne inférieure doit être exactement les 200px en hauteur et la ligne supérieure doit être deux fois la hauteur de la ligne du milieu. La colonne de gauche doit être suffisamment large pour s’ajuster le contenu et la colonne de droite doit remplir l’espace restant.
 
@@ -137,7 +137,7 @@ grid.Children.Add(bottomRight, 1, 1);
 
 Le code ci-dessus crée une grille avec quatre étiquettes, deux colonnes et deux lignes. Notez que chaque étiquette aura la même taille et que les lignes seront développe pour utiliser tout l’espace disponible.
 
-Dans l’exemple ci-dessus, les vues sont ajoutés à la [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) à l’aide de la collection le [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) surcharge qui spécifie les arguments de gauche et supérieure. Lorsque vous utilisez le [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) surcharge qui spécifie de gauche, droite, haut et arguments du bas, tandis que la gauche et supérieurs arguments fait toujours référence à des cellules dans le [ `Grid` ](xref:Xamarin.Forms.Grid), droite et les arguments bas peuvent apparaître pour faire référence aux cellules qui sont en dehors de la `Grid`. Il s’agit, car l’argument de droite doit toujours être supérieure à l’argument de gauche, et l’argument bas doit toujours être supérieur à l’argument supérieur. L’exemple suivant montre le code équivalent à l’aide de deux `Add` surcharges :
+Dans l’exemple ci-dessus, les vues sont ajoutés à la [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) à l’aide de la collection le [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) surcharge qui spécifie les arguments de gauche et supérieure. Lorsque vous utilisez le [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) surcharge qui spécifie de gauche, droite, haut et arguments du bas, tandis que la gauche et supérieurs arguments fait toujours référence à des cellules dans le [ `Grid` ](xref:Xamarin.Forms.Grid), droite et les arguments bas peuvent apparaître pour faire référence aux cellules qui sont en dehors de la `Grid`. Il s’agit, car l’argument de droite doit toujours être supérieure à l’argument de gauche, et l’argument bas doit toujours être supérieur à l’argument supérieur. L’exemple suivant montre le code équivalent à l’aide de deux `Add` surcharges :
 
 ```csharp
 // left, top

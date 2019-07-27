@@ -7,71 +7,71 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: db0cb221ee18998fbb98449ae03c442c84bcfcd7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: fb357f0342aef68cd2e20d8f8d83474686593743
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829712"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510937"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>Quelle version de Xamarin.Android ajoutait la prise en charge de Lollipop ?
 
 > [!NOTE]
-> Ce guide a été écrit à l’origine pour la version préliminaire L Android.
+> Ce guide a été écrit à l’origine pour Android L preview.
 
--   [Xamarin.Android 4.17](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.17/) prise en charge Android L version préliminaire.
--   [Xamarin.Android 4.20](https://developer.xamarin.com/releases/android/xamarin.android_4/xamarin.android_4.20/) prise en charge Android Lollipop.
+-   [Xamarin. android 4,17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md) a ajouté la prise en charge d’Android L preview.
+-   [Xamarin. android 4,20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md) a ajouté la prise en charge des Lollipop Android.
 
-Xamarin prend uniquement activement en charge la version stable actuelle des outils Xamarin. Les informations ci-dessous sont fournies « en tant que-est » pour les versions antérieures des outils. Pour plus d’informations sur les versions de Xamarin, consultez [ici](http://releases.xamarin.com/).
+Xamarin prend uniquement en charge la version stable actuelle des outils Xamarin. Les informations ci-dessous sont fournies «en l’or» pour les versions antérieures des outils. Pour obtenir les informations les plus récentes sur les versions Xamarin, consultez [cette page](http://releases.xamarin.com/).
 
-## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>« Manquant android.jar pour niveau 21 d’API » dans la version préliminaire L Android
+## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>«Android. jar manquant pour le niveau d’API 21» dans Android L preview
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Le message d’erreur suivant (ou similaire) peuvent s’afficher :
+Le message d’erreur suivant (ou similaire) peut s’afficher:
 
 ```cmd
 Error 1 Could not find android.jar for API Level 21.
 ```
 
-Ce message signifie que la plateforme Android SDK pour API niveau 21 n’est pas installée. Installez-la dans le gestionnaire Android SDK (**Outils > Open Android SDK Manager...** ), ou changez votre projet Xamarin.Android pour cibler une version d’API qui est installée.
+Ce message signifie que la plateforme Android SDK pour le niveau d’API 21 n’est pas installée. Vous pouvez l’installer dans le gestionnaire de Android SDK (**outils > ouvrir Android SDK Manager...** ) ou modifier votre projet Xamarin. Android pour cibler une version d’API installée.
 
-Il existe quelques solutions de contournement pour ce problème :
+Il existe quelques solutions de contournement pour ce problème:
 
-1. Modifier votre projet afin qu’il cible API 19 ou inférieure.
+1. Modifiez votre projet pour qu’il cible l’API 19 ou inférieure.
 
-2. Renommez votre dossier android-21 à partir d’android-21 android-L. (Au mieux, cela doit uniquement servir comme un correctif temporaire et peut ne pas fonctionner très bien tout.)
+2. Renommez votre dossier Android-21 d’Android-21 à Android-L. (Au mieux, cela ne doit être utilisé qu’en tant que correctif temporaire et il peut ne pas fonctionner très bien.)
 
-   **%LOCALAPPDATA%\\Android\\android-sdk\\platforms\\android-21**
+   **% LocalAppData%\\Android\\Android-plateformes\\SDK\\Android-21**
 
-3. Rétrograder temporairement vers la version préliminaire de niveau d’API Android 21 « L » [1] :
+3. Revenir temporairement à la version préliminaire du niveau d’API Android 21 «L» (1):
 
-    1.  Supprimer le **% LocalAppData%\\Android\\android-sdk\\plateformes\\android-21** 
-    2.  Extraire [1] dans **C:\\utilisateurs\\&lt;nom d’utilisateur&gt;\\AppData\\Local\\Android\\android-sdk\\plateformes**  pour créer un **android-l** dossier.
+    1.  Supprimer les **plateformes\\\\\\AndroidAndroid-SDK%LocalAppData%Android-21\\** 
+    2.  Extraire [1] dans **C:\\utilisateurs\\&lt;nom_utilisateur&gt;\\AppDatalocalAndroid\\Android-SDK\\plateformes à créer\\\\** un dossier **Android-L** .
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Le message d’erreur suivant (ou similaire) peuvent s’afficher :
+Le message d’erreur suivant (ou similaire) peut s’afficher:
 
 ```bash
 /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets: 
 Error: Could not find android.jar for API Level 21.**
 ```
 
-Cela signifie que la plateforme Android SDK pour API niveau 21 n’est pas installée. Installez-la dans le gestionnaire Android SDK (Outils > Gestionnaire de SDK...), ou changez votre projet Xamarin.Android pour cibler une version d’API qui est installée.
+Cela signifie que la plateforme Android SDK pour le niveau d’API 21 n’est pas installée. Vous pouvez l’installer dans le gestionnaire de Android SDK (outils > Gestionnaire du kit de développement logiciel (SDK)...) ou modifier votre projet Xamarin. Android pour cibler une version d’API installée.
 
-Il existe quelques solutions de contournement pour ce problème :
+Il existe quelques solutions de contournement pour ce problème:
 
-1. Modifier votre projet afin qu’il cible API 19 ou inférieure.
+1. Modifiez votre projet pour qu’il cible l’API 19 ou inférieure.
 
-2. Renommez votre dossier android-21 à partir d’android-21 android-L. (Au mieux, cela doit uniquement servir comme un correctif temporaire et peut ne pas fonctionner très bien tout.)
+2. Renommez votre dossier Android-21 d’Android-21 à Android-L. (Au mieux, cela ne doit être utilisé qu’en tant que correctif temporaire et il peut ne pas fonctionner très bien.)
 
    **~/Library/Developer/Xamarin/android-sdk-macosx/android-21**
 
-3. Rétrograder temporairement vers la version préliminaire de niveau d’API Android 21 « L » [1] :
+3. Revenir temporairement à la version préliminaire du niveau d’API Android 21 «L» (1):
 
-    1.  Supprimer **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/android-21**
-    2.  Extraire [1] dans **/Users/username/Library/Developer/Xamarin/android-sdk-macosx** pour créer un **android-l** dossier.
+    1.  Supprimer **/Users/username/Library/Developer/Xamarin/Android-SDK-MacOSX/Android-21**
+    2.  Extrayez [1] dans **/Users/username/Library/Developer/Xamarin/Android-SDK-MacOSX** pour créer un dossier **Android-L** .
 
 -----
 

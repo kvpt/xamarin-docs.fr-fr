@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
-ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
+ms.openlocfilehash: b2e441a8e1443d1d32d553e9bbf1126fe5e380e7
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65731520"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508844"
 ---
 # <a name="native-views-in-xaml"></a>Vues natives en XAML
 
@@ -38,7 +38,7 @@ Pour incorporer une vue native dans un fichier XAML de Xamarin.Forms :
 1. Créez une instance de la vue native dans le fichier XAML.
 
 > [!IMPORTANT]
-> XAML compilé doit être désactivée pour toutes les pages XAML qui utilisent des vues natives. Cela est possible en décorant la classe code-behind pour votre page XAML avec la `[XamlCompilation(XamlCompilationOptions.Skip)]` attribut. Pour plus d’informations sur la compilation de XAML, consultez [Compilation XAML dans Xamarin.Forms](~/xamarin-forms/xaml/xamlc.md).
+> Le code XAML compilé doit être désactivé pour les pages XAML qui utilisent des vues natives. Pour ce faire, vous pouvez décorer la classe code-behind de votre page XAML avec `[XamlCompilation(XamlCompilationOptions.Skip)]` l’attribut. Pour plus d’informations sur la compilation XAML, consultez [compilation XAML dans Xamarin. Forms](~/xamarin-forms/xaml/xamlc.md).
 
 Pour faire référence à une vue native à partir d’un fichier code-behind, vous devez utiliser un projet de ressource partagé (SAP) et encapsulez le code spécifique à la plateforme avec les directives de compilation conditionnelle. Pour plus d’informations, consultez [faisant référence aux vues natives à partir du Code](#native_view_code).
 
@@ -184,7 +184,7 @@ L’exemple de code suivant illustre ces deux techniques :
 
 Le [ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*) méthode de fabrique est utilisé pour définir le [ `UILabel.Font` ](xref:UIKit.UILabel.Font) à une nouvelle propriété [ `UIFont` ](xref:UIKit.UIFont) sur iOS. Le `UIFont` nom et la taille sont spécifiées par les arguments de méthode qui sont des enfants de le `x:Arguments` attribut.
 
-Le [ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/) méthode de fabrique est utilisé pour définir le [ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/) à une nouvelle propriété [ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/) sur Android. Le `Typeface` nom de famille et de style sont spécifiées par les arguments de méthode qui sont des enfants de le `x:Arguments` attribut.
+Le [ `Typeface.Create` ](xref:Android.Graphics.Typeface.Create*) méthode de fabrique est utilisé pour définir le [ `TextView.Typeface` ](xref:Android.Widget.TextView.Typeface) à une nouvelle propriété [ `Typeface` ](xref:Android.Graphics.Typeface) sur Android. Le `Typeface` nom de famille et de style sont spécifiées par les arguments de méthode qui sont des enfants de le `x:Arguments` attribut.
 
 Le [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily) constructeur est utilisé pour définir le [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily) propriété vers un nouveau `FontFamily` sur la plateforme Windows universelle (UWP). Le `FontFamily` nom est spécifié par l’argument de méthode qui est un enfant de le `x:Arguments` attribut.
 
@@ -325,7 +325,7 @@ La page contient un [ `Label` ](xref:Xamarin.Forms.Label) qui affiche les fruits
 
 La page contient également une vue de sélecteur natif pour chaque plateforme. Chaque vue natif affiche la collection de fruits en liant ses `ItemSource` propriété le `SubclassedNativeControlsPageViewModel.Fruits` collection. Cela permet à l’utilisateur de choisir un fruit, comme indiqué dans les captures d’écran suivante :
 
-![](xaml-images/sub-classed.png "Vues natives sous-classé")
+![](xaml-images/sub-classed.png "Vues natives sous-classées")
 
 Sur iOS et Android les sélecteurs natifs utilisent des méthodes pour configurer les contrôles. Par conséquent, ces sélecteurs doivent être sous-classée pour exposer des propriétés pour les rendre compatibles avec le XAML. Sur la plateforme de Windows universelle (UWP), le `ComboBox` est déjà compatible avec XAML et ne nécessitent donc pas sous-classement.
 
@@ -423,7 +423,7 @@ Le `PickerModel` classe fournit le stockage sous-jacent pour le `MyUIPickerView`
 
 ### <a name="android"></a>Android
 
-Les sous-classes de la mise en œuvre Android le [ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) vue et expose des propriétés et un événement qui peut être facilement utilisé à partir de XAML :
+Les sous-classes de la mise en œuvre Android le [ `Spinner` ](xref:Android.Widget.Spinner) vue et expose des propriétés et un événement qui peut être facilement utilisé à partir de XAML :
 
 ```csharp
 class MySpinner : Spinner
@@ -481,7 +481,7 @@ class MySpinner : Spinner
 }
 ```
 
-Le `MySpinner` classe expose `ItemsSource` et `SelectedObject` propriétés et un `ItemSelected` événement. Les éléments affichés par le `MySpinner` classe sont fournies par le [ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.Adapter/) associé à la vue et les éléments sont renseignées dans la `Adapter` lorsque le `ItemsSource` propriété est d’abord définie. Chaque fois que l’élément sélectionné dans le `MySpinner` classe les modifications, la `OnBindableSpinnerItemSelected` Gestionnaire d’événements met à jour le `SelectedObject` propriété.
+Le `MySpinner` classe expose `ItemsSource` et `SelectedObject` propriétés et un `ItemSelected` événement. Les éléments affichés par le `MySpinner` classe sont fournies par le [ `Adapter` ](xref:Android.Widget.Adapter) associé à la vue et les éléments sont renseignées dans la `Adapter` lorsque le `ItemsSource` propriété est d’abord définie. Chaque fois que l’élément sélectionné dans le `MySpinner` classe les modifications, la `OnBindableSpinnerItemSelected` Gestionnaire d’événements met à jour le `SelectedObject` propriété.
 
 ## <a name="summary"></a>Récapitulatif
 

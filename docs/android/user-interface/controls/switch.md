@@ -1,43 +1,41 @@
 ---
-title: Basculer
-description: Comment utiliser le widget de commutateur dans une application Xamarin.Android
+title: Xamarin. Android (commutateur)
+description: Comment utiliser le widget commutateur dans une application Xamarin. Android
 ms.prod: xamarin
 ms.assetid: 6E1F3324-EC41-454A-AEC0-0208813C7E50
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: ef400aaa31992b577762ad695418b865882e2e2d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7ff10433ffe11965ccfb8c9a46a785b8cb0304e6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61075765"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510169"
 ---
-# <a name="switch"></a>Basculer
+# <a name="xamarinandroid-switch"></a>Xamarin. Android (commutateur)
 
-Le `Switch` widget (voir ci-dessous) permet à un utilisateur de basculer entre deux États, comme sous ou hors tension. Le `Switch` valeur par défaut est OFF. Dans ses États ON et OFF, le widget est indiqué ci-dessous :
+Le `Switch` widget (illustré ci-dessous) permet à un utilisateur de basculer entre deux États, comme on ou OFF. La `Switch` valeur par défaut est OFF. Le widget est affiché ci-dessous dans l’état activé/désactivé:
 
-[![Captures d’écran d’un widget de commutateur et activer des États](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
-
+[![Captures d’écran d’un widget de commutateur en désactivant et sur les États](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
 ## <a name="creating-a-switch"></a>Création d’un commutateur
 
-Pour créer un commutateur, il vous suffit de déclarer un `Switch` élément XML comme suit :
+Pour créer un commutateur, il vous suffit `Switch` de déclarer un élément dans XML comme suit:
 
 ```xml
 <Switch android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 ```
 
-Cette opération crée un commutateur de base comme indiqué ci-dessous :
+Cela crée un commutateur de base comme indiqué ci-dessous:
 
-[![Capture d’écran de l’application de démonstration affichant un commutateur à l’état désactivé](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
-
+[![Capture d’écran de l’application de démonstration affichant un commutateur en état désactivé](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
 ## <a name="changing-default-values"></a>Modification des valeurs par défaut
 
-Le texte qui affiche le contrôle des États le ON et OFF et la valeur par défaut sont configurables. Par exemple, pour rendre le commutateur par défaut la valeur ON et lire des non-Oui au lieu de la valeur OFF/ON, nous pouvons définir le `checked`, `textOn`, et `textOff` attributs dans le code XML suivant.
+Le texte affiché par le contrôle pour les États ACTIVÉs et désactivés et la valeur par défaut est configurable. Par exemple, pour activer le commutateur par défaut et en lecture non/oui au lieu de off/on, nous pouvons définir `checked`les `textOn`attributs, `textOff` et dans le code XML suivant.
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -49,9 +47,9 @@ Le texte qui affiche le contrôle des États le ON et OFF et la valeur par défa
 
 
 
-## <a name="providing-a-title"></a>En fournissant un titre
+## <a name="providing-a-title"></a>Fournir un titre
 
-Le `Switch` widget prend également en charge, y compris une étiquette de texte en définissant le `text` attribut comme suit :
+Le `Switch` widget prend également en charge l’ajout d’une étiquette `text` de texte en définissant l’attribut comme suit:
 
 ```xml
 <Switch android:text="Is Xamarin.Android great?"
@@ -62,12 +60,12 @@ Le `Switch` widget prend également en charge, y compris une étiquette de texte
         android:textOff="NO" />
 ```
 
-Ce balisage génère la capture d’écran suivante lors de l’exécution :
+Ce balisage produit la capture d’écran suivante au moment de l’exécution:
 
-[![Capture d’écran de l’application de démonstration avec le texte horizontalement précédant le widget de commutateur](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
+[![Capture d’écran de l’application de démonstration avec texte horizontalement précédant le widget de commutateur](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
-Quand un `Switch`de valeur change, il déclenche une `CheckedChange` événement.
-Par exemple, nous capturer cet événement dans le code suivant et présenter un `Toast` widget avec un message en fonction de la `isChecked` valeur `Switch`, qui est transmis au gestionnaire d’événements dans le cadre de la `CompoundButton.CheckedChangeEventArg` argument.
+Lorsque la valeur de est modifiée, elle déclenche `CheckedChange` un événement. `Switch`
+Par exemple, dans le code suivant, nous capturons cet événement et `Toast` présentons un widget avec un message `isChecked` basé sur `Switch`la valeur de, qui est transmise au gestionnaire d’événements `CompoundButton.CheckedChangeEventArg` dans le cadre de l’argument.
 
 ```csharp
 Switch s = FindViewById<Switch> (Resource.Id.monitored_switch);
@@ -82,5 +80,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>Liens associés
 
-- [SwitchDemo (sample)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
-- [Didacticiel de mise en page d’onglet](~/android/user-interface/layouts/tab-layout/index.md)
+- [SwitchDemo (exemple)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
+- [Didacticiel sur la disposition des onglets](~/android/user-interface/layouts/tab-layout/index.md)

@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: ea8af3c84bb53434489d230d159a27b6b9d500d8
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 2279282b08c9d97b239de424cf38aa6f1463dc4d
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830258"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510356"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-Dans cette section, vous allez créer deux boutons de case d’option mutuellement exclusives (désactive l’activation de l’un l’autre), en utilisant le [`RadioGroup`](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/)
-Et [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-widgets. Lorsque l’un des boutons radio sont enfoncée, un message toast s’affichera.
+Dans cette section, vous allez créer deux cases d’option mutuellement exclusives (l’activation de l’une d’elles désactive l’autre) à l’aide de l’option[`RadioGroup`](xref:Android.Widget.RadioGroup)
+les[`RadioButton`](xref:Android.Widget.RadioButton)
+widgets. Quand vous appuyez sur une case d’option, un message de Toast s’affiche.
 
 
-Ouvrir le **Resources/layout/Main.axml** fichier, puis ajoutez deux [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s, imbriqué dans un [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) (à l’intérieur de la [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+Ouvrez le fichier Resources **/Layout/main. AXML** et [`RadioButton`](xref:Android.Widget.RadioButton)ajoutez deux s, imbriqués [`RadioGroup`](xref:Android.Widget.RadioGroup) dans un ( [`LinearLayout`](xref:Android.Widget.LinearLayout)à l’intérieur du):
 
 ```xml
 <RadioGroup
@@ -38,10 +38,10 @@ Ouvrir le **Resources/layout/Main.axml** fichier, puis ajoutez deux [ `RadioButt
 </RadioGroup>
 ```
 
-Il est important que le [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s sont regroupés par le [ `RadioGroup` ](https://developer.xamarin.com/api/type/Android.Widget.RadioGroup/) élément afin que ne plusieurs peuvent être sélectionné simultanément. Cette logique est gérée automatiquement par le système Android. Lorsqu’un [`RadioButton`](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)
-au sein d’un groupe est sélectionné, toutes les autres sont automatiquement désélectionnées.
+Il est important que les [`RadioButton`](xref:Android.Widget.RadioButton)s soient regroupées par l' [`RadioGroup`](xref:Android.Widget.RadioGroup) élément afin qu’il ne puisse pas en sélectionner plus d’une à la fois. Cette logique est gérée automatiquement par le système Android. Lorsqu’un[`RadioButton`](xref:Android.Widget.RadioButton)
+dans un groupe est sélectionné, tous les autres sont automatiquement désélectionnés.
 
-Effectuer une action lorsque chaque [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/) est sélectionné, nous devons écrire un gestionnaire d’événements :
+Pour effectuer une opération lorsque [`RadioButton`](xref:Android.Widget.RadioButton) chaque est sélectionné, nous devons écrire un gestionnaire d’événements:
 
 ```csharp
 private void RadioButtonClick (object sender, EventArgs e)
@@ -51,12 +51,12 @@ private void RadioButtonClick (object sender, EventArgs e)
 }
 ```
 
-Tout d’abord, l’expéditeur qui est passé est converti dans un contrôle RadioButton.
-Un [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-message affiche le texte du bouton de case d’option sélectionnée.
+Tout d’abord, l’expéditeur passé est converti en RadioButton.
+Ensuite, un[`Toast`](xref:Android.Widget.Toast)
+message affiche le texte de la case d’option sélectionnée.
 
-Maintenant, au bas de la [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-méthode, ajoutez le code suivant :
+Maintenant, en bas de la[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+, ajoutez ce qui suit:
 
 ```csharp
 RadioButton radio_red = FindViewById<RadioButton>(Resource.Id.radio_red);
@@ -66,14 +66,14 @@ radio_red.Click += RadioButtonClick;
 radio_blue.Click += RadioButtonClick;
 ```
 
-Chaque capture le [ `RadioButton` ](https://developer.xamarin.com/api/type/Android.Widget.RadioButton/)s à partir de la mise en page et ajoute chaque handlerto événement nouvellement créé.
+Cela permet de capturer chacun des [`RadioButton`](xref:Android.Widget.RadioButton)s de la disposition et d’ajouter l’événement handlerto qui vient d’être créé.
 
 Exécutez l'application.
 
 > [!TIP]
-> Si vous avez besoin modifier l’état vous-même (par exemple lors du chargement une enregistré [ `CheckBoxPreference` ](https://developer.xamarin.com/api/type/Android.Preferences.CheckBoxPreference/)), utiliser la [`Checked`](https://developer.xamarin.com/api/property/Android.Widget.CompoundButton.Checked/)
-> accesseur Set de propriété ou [`Toggle()`](https://developer.xamarin.com/api/member/Android.Widget.CompoundButton.Toggle/)
+> Si vous avez besoin de modifier l’état vous-même (par exemple, [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)lors du chargement d’un enregistrement), utilisez l'[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> méthode setter de propriété ou[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > .
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par Android Open Source Project et utilisé conformément aux conditions décrites dans le*
-[*licence Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/). 
+*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la*
+[*licence d’attribution de Creative-2,5*](http://creativecommons.org/licenses/by/2.5/). 

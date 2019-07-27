@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 006e403b50a452265a40a0e95d17769fa0446a1a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 294483e8b831aa085fc338eb05147ced1098c1c5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650416"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508249"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Authentifier les utilisateurs avec un fournisseur d’identité
 
@@ -171,7 +171,7 @@ Le `OpenUrl` méthode convertit l’URL reçu à partir d’un `NSUrl` à .NET `
 
 #### <a name="android"></a>Android
 
-Sur Android, un schéma d’URL personnalisé est inscrit en spécifiant un [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) d’attribut sur le `Activity` qui gérera le schéma. Le fournisseur d’identité issue de la demande d’autorisation, il redirige vers les URL de redirection de l’application. Comme l’URL utilise un schéma personnalisé, il en résulte dans Android lancement de l’application, en passant l’URL comme un paramètre de lancement, où elle est traitée par le `OnCreate` méthode de la `Activity` inscrits pour gérer le schéma d’URL personnalisé. L’exemple de code suivant montre la classe à partir de l’exemple d’application qui gère le schéma d’URL personnalisé :
+Sur Android, un schéma d’URL personnalisé est inscrit en spécifiant un [ `IntentFilter` ](xref:Android.App.IntentFilterAttribute) d’attribut sur le `Activity` qui gérera le schéma. Le fournisseur d’identité issue de la demande d’autorisation, il redirige vers les URL de redirection de l’application. Comme l’URL utilise un schéma personnalisé, il en résulte dans Android lancement de l’application, en passant l’URL comme un paramètre de lancement, où elle est traitée par le `OnCreate` méthode de la `Activity` inscrits pour gérer le schéma d’URL personnalisé. L’exemple de code suivant montre la classe à partir de l’exemple d’application qui gère le schéma d’URL personnalisé :
 
 ```csharp
 [Activity(Label = "CustomUrlSchemeInterceptorActivity", NoHistory = true, LaunchMode = LaunchMode.SingleTop )]
@@ -197,7 +197,7 @@ public class CustomUrlSchemeInterceptorActivity : Activity
 }
 ```
 
-Le `DataSchemes` propriété de la [ `IntentFilter` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/) doit être définie sur l’identificateur de client inversé est obtenue à partir de l’id de client Android pour le projet sur [Console d’API Google](http://console.developers.google.com).
+Le `DataSchemes` propriété de la [ `IntentFilter` ](xref:Android.App.IntentFilterAttribute) doit être définie sur l’identificateur de client inversé est obtenue à partir de l’id de client Android pour le projet sur [Console d’API Google](http://console.developers.google.com).
 
 Le `OnCreate` méthode convertit l’URL reçu à partir d’un `Android.Net.Url` à .NET `Uri`, avant le traitement de l’URL de redirection avec le `OnPageLoading` méthode publique `OAuth2Authenticator` objet. Cela entraîne Xamarin.Auth fermer l’onglet du navigateur web et analyser les données reçues de OAuth.
 

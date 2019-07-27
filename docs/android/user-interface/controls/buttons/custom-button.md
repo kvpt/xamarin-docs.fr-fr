@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: b5ccefa1eb7e659584c1c82481bbd4473a3a8abc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ecb745f2f50b5aa0e22e331a4def0be9d8f86aa5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076249"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510398"
 ---
 # <a name="custom-button"></a>Bouton personnalisé
 
-Dans cette section, vous allez créer un bouton avec une image personnalisée au lieu de texte, à l’aide de la [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) widget et un fichier XML qui définit trois différentes images à utiliser pour les différents États du bouton. Lorsque le bouton est enfoncé, un bref message s’affichera.
+Dans cette section, vous allez créer un bouton avec une image personnalisée au lieu d’un texte, [`Button`](xref:Android.Widget.Button) à l’aide du widget et d’un fichier XML qui définit trois images différentes à utiliser pour les différents États de bouton. Lorsque vous appuyez sur le bouton, un message succinct s’affiche.
 
-Avec le bouton droit et télécharger les trois images ci-dessous, puis copiez-les sur le **ressources/drawable** répertoire de votre projet. Ils seront utilisés pour les différents États du bouton.
+Cliquez avec le bouton droit et téléchargez les trois images ci-dessous, puis copiez-les dans le répertoire Resources **/Drawing** de votre projet. Ils seront utilisés pour les différents États de bouton.
 
- [![Icône Android vert pour un état normal](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [ ![icône Orange Android pour l’état focus](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![une icône jaune Android pour un état enfoncé](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
+ [ ![](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox) [ IcôneAndroidvertepourétatnormalicône![](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) Android orange pour l’État ciblé icône Android jaune pour l’état appuyé
 
-Créer un nouveau fichier dans le **ressources/drawable** répertoire nommé **android_button.xml**. Insérez le code XML suivant :
+Créez un fichier dans le répertoire **Resources/Drawable** nommé **android_button. xml**. Insérez le code XML suivant:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,14 +34,14 @@ Créer un nouveau fichier dans le **ressources/drawable** répertoire nommé **a
 </selector>
 ```
 
-Définit une seule ressource drawable, ce qui modifie son image basée sur l’état actuel du bouton. La première `<item>` définit **android_pressed.png** en tant que l’image lorsque le bouton est enfoncé (avoir activé) ; la seconde `<item>` définit **android_focused.png** en tant que l’image lorsque le bouton est actif (lorsque le bouton est mis en surbrillance à l’aide du trackball ou le pavé directionnel) ; le troisième `<item>` définit **android_normal.png** comme image pour l’état normal (lorsque ni activé ni axé). Ce fichier XML représente maintenant une seule ressource drawable et lorsque référencé par un [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) d’arrière-plan, l’image affichée changent en fonction de ces trois états.
+Cela définit une seule ressource pouvant être dessinée, qui modifie son image en fonction de l’état actuel du bouton. La première `<item>` définit **android_pressed. png** comme image lorsque le bouton est enfoncé (elle a été activée); la seconde `<item>` définit **android_focused. png** comme image lorsque le bouton est activé (lorsque le bouton est mise en surbrillance à l’aide du trackball ou du pavé directionnel); et le troisième `<item>` définit **android_normal. png** comme image pour l’état normal (lorsque vous n’appuyez pas sur le bouton ou n’est pas activé). Ce fichier XML représente maintenant une seule ressource dessinable et, lorsqu’il est référencé [`Button`](xref:Android.Widget.Button) par un pour son arrière-plan, l’image affichée change en fonction de ces trois États.
 
 
 > [!NOTE]
-> L’ordre de la `<item>` éléments est important. Lorsque ce drawable est référencé, le `<item>`s sont parcourus dans l’ordre pour déterminer celle qui convient à l’état actuel du bouton.
-> Étant donné que l’image « normal » est la dernière, elle s’applique uniquement lorsque les conditions `android:state_pressed` et `android:state_focused` évaluées toutes deux false.
+> L’ordre des `<item>` éléments est important. Quand ce dessinable est référencé, les `<item>`s sont parcourues dans l’ordre pour déterminer celui qui convient à l’état du bouton actuel.
+> Étant donné que l’image «normale» est la dernière, elle est appliquée uniquement `android:state_pressed` lorsque `android:state_focused` les conditions et ont toutes deux évaluées la valeur false.
 
-Ouvrez le **Resources/layout/Main.axml** fichier, puis ajoutez le [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) élément :
+Ouvrez le fichier Resources **/Layout/main. AXML** et [`Button`](xref:Android.Widget.Button) ajoutez l’élément:
 
 ```xml
 <Button
@@ -52,10 +52,10 @@ Ouvrez le **Resources/layout/Main.axml** fichier, puis ajoutez le [ `Button` ](h
         android:background="@drawable/android_button" />
 ```
 
-Le `android:background` attribut spécifie la ressource drawable à utiliser pour l’arrière-plan du bouton (qui, lors de l’enregistrement à **Resources/drawable/android.xml**, est référencé en tant que `@drawable/android`). Cela remplace l’image d’arrière-plan normal utilisé pour les boutons dans tout le système. Dans l’ordre pour drawable modifier son image basée sur l’état du bouton, l’image doit être appliqué à l’arrière-plan.
+L' `android:background` attribut spécifie la ressource pouvant être dessinée à utiliser pour l’arrière-plan du bouton (qui, lorsqu’il est enregistré dans **ressources/dessinable/Android. xml**, est référencée sous la forme `@drawable/android`). Cela remplace l’image d’arrière-plan normale utilisée pour les boutons dans le système. Pour permettre au dessinable de modifier son image en fonction de l’état du bouton, l’image doit être appliquée à l’arrière-plan.
 
-Pour faire une opération lorsque vous appuyez sur le bouton, ajoutez le code suivant à la fin de la [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle/)
-méthode :
+Pour faire en sorte que le bouton effectue une opération quand elle est enfoncée, ajoutez le code suivant à la fin de la[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+méthode
 
 ```csharp
 Button button = FindViewById<Button>(Resource.Id.button);
@@ -65,10 +65,10 @@ button.Click += (o, e) => {
 };
 ```
 
-Capture le [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) à partir de la mise en page, puis ajoute un [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) message à afficher lorsque le [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) vous cliquez sur.
+Cela permet de capturer [`Button`](xref:Android.Widget.Button) le à partir de la disposition, [`Toast`](xref:Android.Widget.Toast) puis d’ajouter un message à [`Button`](xref:Android.Widget.Button) afficher lorsque l’utilisateur clique sur.
 
 Exécutez maintenant l’application.
 
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par Android Open Source Project et utilisé conformément aux conditions décrites dans le*
-[*licence Creative Commons 2.5 Attribution* ](http://creativecommons.org/licenses/by/2.5/).
+*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la*
+[*licence d’attribution de Creative-2,5*](http://creativecommons.org/licenses/by/2.5/).

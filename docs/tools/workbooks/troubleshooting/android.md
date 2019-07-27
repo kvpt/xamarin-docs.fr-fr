@@ -1,55 +1,54 @@
 ---
-title: Résolution des problèmes de classeurs de Xamarin sur Android
-description: Ce document fournit des conseils de dépannage pour l’utilisation des classeurs de Xamarin sur Android. Il aborde la prise en charge de l’émulateur, les classeurs qui ne se chargement pas et les autres rubriques.
+title: Résolution des problèmes Xamarin Workbooks sur Android
+description: Ce document fournit des conseils de dépannage pour l’utilisation de Xamarin Workbooks sur Android. Il aborde la prise en charge de l’émulateur, les classeurs qui ne sont pas chargés et d’autres rubriques.
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 08fa7f57f3fe44721bc00f0d59ed5df93300cf1e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 0d04b42a8d9f230c48bb09059296eb3740336dc6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864035"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511835"
 ---
-# <a name="troubleshooting-xamarin-workbooks-on-android"></a>Résolution des problèmes de classeurs de Xamarin sur Android
+# <a name="troubleshooting-xamarin-workbooks-on-android"></a>Résolution des problèmes Xamarin Workbooks sur Android
 
-## <a name="emulator-support"></a>Prise en charge de l’émulateur
+## <a name="emulator-support"></a>Prise en charge des émulateurs
 
-Pour exécuter un classeur Android, un émulateur Android doit être disponible pour utilisation. Appareils Android physiques ne sont pas pris en charge.
+Pour exécuter un classeur Android, un émulateur Android doit être disponible. Les appareils Android physiques ne sont pas pris en charge.
 
-Nous vous recommandons d’émulateur de Google avec HAXM si votre ordinateur prend en charge.
-Si vous devez disposer de Hyper-V est activé sur votre système, accédez à la place avec l’émulateur Android de Visual Studio.
+Nous vous recommandons d’utiliser l’émulateur de Google avec HAXM si votre ordinateur le prend en charge.
+Si Hyper-V doit être activé sur votre système, utilisez plutôt le Émulateur Android Visual Studio.
 
-Vous devez disposer d’un émulateur qui exécute Android 5.0 ou version ultérieure. Les émulateurs ARM ne sont pas pris en charge. Utilisez `x86` ou `x86_64` uniquement les appareils.
+Vous devez disposer d’un émulateur qui exécute Android 5,0 ou une version ultérieure. Les émulateurs ARM ne sont pas pris en charge. Utiliser `x86` des `x86_64` appareils ou uniquement.
 
 Veuillez lire [notre documentation sur la configuration des émulateurs Android][android-emu] si vous n’êtes pas familiarisé avec le processus.
 
 > [!NOTE]
-> Classeurs 1.1 ou antérieures seront essayez (et échouer !) pour utiliser des émulateurs ARM si elles sont disponibles. Pour contourner cet, émulateur le x86 de lancement de votre choix avant d’ouvrir ou de création d’un classeur Android. Classeurs préfère toujours se connecter à un émulateur en cours d’exécution, tant qu’il est compatible.
+> Les classeurs 1,1 et antérieurs essaient (et échouent) d’utiliser les émulateurs ARM s’ils sont disponibles. Pour contourner ce contournement, lancez l’émulateur x86 de votre choix avant d’ouvrir ou de créer un classeur Android. Les classeurs préfèrent toujours se connecter à un émulateur en cours d’exécution, à condition qu’il soit compatible.
 
-## <a name="workbooks-wont-load"></a>Ne chargement pas les classeurs
+## <a name="workbooks-wont-load"></a>Les classeurs ne sont pas chargés
 
-### <a name="workbook-window-spins-forever-never-loads-windows"></a>Fenêtre de classeur ne tourne indéfiniment, jamais charges (Windows)
+### <a name="workbook-window-spins-forever-never-loads-windows"></a>La fenêtre de classeur tourne indéfiniment, ne se charge jamais (Windows)
 
-Tout d’abord, vérifiez que votre émulateur entièrement-utilisation de l’accès réseau en testant un site Web dans le navigateur web de l’émulateur.
+Tout d’abord, vérifiez que votre émulateur dispose d’un accès réseau entièrement opérationnel en testant n’importe quel site Web dans le navigateur Web de l’émulateur.
 
-### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>L’émulateur Android de Visual Studio ne peut pas se connecter à internet
+### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Émulateur Android Visual Studio ne peut pas se connecter à Internet
 
-Si votre émulateur n’a pas accès au réseau, vous devrez peut-être suivre ces étapes pour résoudre votre commutateur de réseau Hyper-V. Si vous basculez entre les réseaux Wi-Fi fréquemment, vous devrez peut-être répéter cette opération régulièrement :
+Si votre émulateur ne dispose pas d’un accès réseau, vous devrez peut-être suivre les étapes ci-dessous pour corriger votre commutateur réseau Hyper-V. Si vous basculez entre les réseaux Wi-Fi fréquemment, vous devrez peut-être répéter cette opération régulièrement:
 
-1. **Assurez-vous que toutes les opérations réseau critiques sont terminées, comme cela peut déconnecter temporairement de Windows à partir d’internet.**
+1. **Assurez-vous que toutes les opérations de réseau critiques sont terminées, car cela peut temporairement déconnecter Windows d’Internet.**
 1. Fermez les émulateurs.
 1. Ouvrez `Hyper-V Manager`.
 1. Sous `Actions`, ouvrez `Virtual Switch Manager...`.
-1. Supprimer tous les commutateurs virtuels.
+1. Supprimez tous les commutateurs virtuels.
 1. Cliquez sur `OK`.
-1. Lancez l’émulateur Android de Visual Studio. Vous devrez probablement recréer le commutateur réseau virtuel.
-1. Test que navigateur de l’émulateur VS Android peut accéder à internet.
+1. Lancez VS Émulateur Android. Vous serez probablement invité à recréer le commutateur réseau virtuel.
+1. Testez que le navigateur de Visual Émulateur Android peut accéder à Internet.
 
-[android-emu]: https://developer.xamarin.com/guides/android/deployment,_testing,_and_metrics/debug-on-emulator/
-
+[android-emu]: ~/android/deploy-test/debugging/debug-on-emulator.md
 
 ## <a name="related-links"></a>Liens associés
 

@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: d1ec628de3481820f320a5a8e6ef88fcbaab75a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 142541dcc35b55e43b54eeb729c486ac9fc88b54
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189727"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510074"
 ---
-# <a name="using-a-contentprovider"></a>Utilisation d’un ContentProvider
+# <a name="using-a-contentprovider-with-xamarinandroid"></a>Utilisation d’un ContentProvider avec Xamarin. Android
 
 CursorAdapters peut également être utilisé pour afficher des données à partir d’un ContentProvider.
-Contentprovider vous permettre d’accéder aux données exposées par d’autres applications (y compris les données système Android comme contacts, les informations de support et de calendrier).
+Les ContentProvider vous permettent d’accéder aux données exposées par d’autres applications (y compris les données système Android telles que les contacts, les médias et les informations de calendrier).
 
-La meilleure façon d’accéder à un ContentProvider est avec un CursorLoader à l’aide de la LoaderManager. LoaderManager a été introduit dans 3.0 Android (API niveau 11, Honeycomb) pour déplacer les tâches de blocage du thread principal, ainsi que d’à l’aide d’un CursorLoader les données à charger dans un thread avant d’être lié à un ListView pour l’affichage.
+Le meilleur moyen d’accéder à un ContentProvider consiste à utiliser un CursorLoader à l’aide de LoaderManager. LoaderManager a été introduit dans Android 3,0 (niveau d’API 11, nids) pour déplacer les tâches bloquantes du thread principal, et l’utilisation d’un CursorLoader permet de charger les données dans un thread avant d’être liées à un ListView pour l’affichage.
 
-Reportez-vous à [Introduction à Contentprovider](~/android/platform/content-providers/index.md) pour plus d’informations.
+Pour plus d’informations, consultez [Intro to ContentProvider](~/android/platform/content-providers/index.md) .
 

@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: cfa96273b6c23d755925b08c9daec22c94627be7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c93441bff02322fb938a67806ba7f5163c8c969e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61088793"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511906"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trois façons de dessiner un arc
 
@@ -38,7 +38,7 @@ public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
 public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean forceMoveTo)
 ```
 
-Ces méthodes sont identiques à Android [ `AddArc` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.AddArc/p/Android.Graphics.RectF/System.Single/System.Single/) et [ `ArcTo` ](https://developer.xamarin.com/api/member/Android.Graphics.Path.ArcTo/p/Android.Graphics.RectF/System.Single/System.Single/System.Boolean/) méthodes. IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) méthode est similaire, mais est limitée aux arcs de cercle sur la circonférence d’un cercle plutôt que généralisé à une ellipse.
+Ces méthodes sont identiques aux méthodes Android [`AddArc`](xref:Android.Graphics.Path.AddArc*) et [`ArcTo`] XREF: Android. Graphics. Path. ArcTo *). IOS [ `AddArc` ](xref:CoreGraphics.CGPath.AddArc(System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.nfloat,System.Boolean)) méthode est similaire, mais est limitée aux arcs de cercle sur la circonférence d’un cercle plutôt que généralisé à une ellipse.
 
 Les deux méthodes commencent par un `SKRect` valeur qui définit l’emplacement et la taille d’une ellipse :
 
@@ -58,7 +58,7 @@ La courbe ajoutée au chemin avec le `AddArc` ou `ArcTo` méthode est simplement
 
 ![](arcs-images/anglearc.png "L’arc angle par lui-même")
 
-Le `startAngle` ou `sweepAngle` arguments peuvent être négatifs : L’arc est dans le sens horaire pour les valeurs positives de `sweepAngle` et pour les valeurs négatives dans le sens inverse des aiguilles.
+Les `startAngle` arguments `sweepAngle` ou peuvent être négatifs: L’arc est dans le sens des aiguilles `sweepAngle` d’une montre pour les valeurs positives de et du compteur dans le sens inverse des aiguilles d’une montre.
 
 Toutefois, `AddArc` est *pas* définir un contour fermé. Si vous appelez `LineTo` après `AddArc`, une ligne est dessinée à partir de la fin de l’arc au point dans le `LineTo` (méthode) et les mêmes vaut `ArcTo`.
 
@@ -521,7 +521,7 @@ Si cette ellipse inclinée est ensuite placée afin qu’il touche les deux poin
 
 ![](arcs-images/ellipticalarcellipse1.png "Le premier ensemble d’arcs elliptiques")
 
-Ces deux arcs peuvent être distingués de deux manières : L’arc supérieur est supérieure à l’arc en bas, et comme l’arc est dessiné de gauche à droite, l’arc supérieur est dessiné dans un sens des aiguilles, tandis que l’arc bas est dessiné dans le sens inverse des aiguilles.
+Ces deux arcs peuvent être distingués de deux façons: L’arc supérieur est plus grand que l’arc inférieur, et à mesure que l’arc est dessiné de gauche à droite, l’arc supérieur est dessiné dans le sens des aiguilles d’une montre, tandis que l’arc inférieur est dessiné dans un sens dans le sens inverse des aiguilles d’une montre.
 
 Il est également possible d’ajuster l’ellipse entre les deux points dans une autre façon :
 
@@ -535,10 +535,10 @@ Ces deux points peuvent par conséquent être connectées par un arc défini par
 
 Ces quatre arcs sont distinguent par les quatre combinaisons de la [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) et [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) arguments de type énumération dans le `ArcTo` méthode :
 
-- rouge : SKPathArcSize.Large et SKPathDirection.Clockwise
-- vert : SKPathArcSize.Small et SKPathDirection.Clockwise
-- bleu : SKPathArcSize.Small et SKPathDirection.CounterClockwise
-- magenta : SKPathArcSize.Large et SKPathDirection.CounterClockwise
+- rouge SKPathArcSize. large et SKPathDirection. dans le sens des aiguilles d’une montre
+- écologie SKPathArcSize. Small et SKPathDirection. dans le sens des aiguilles d’une montre
+- bleu SKPathArcSize. Small et SKPathDirection. dans le sens inverse
+- marron SKPathArcSize. large et SKPathDirection. dans le sens inverse
 
 Si l’ellipse inclinée n’est pas assez grande pour tenir entre les deux points, puis il est uniforme à l’échelle jusqu'à ce qu’elle est suffisante. Seuls deux arcs uniques connectent les deux points dans ce cas. Ceux-ci peuvent être distingués avec le `SKPathDirection` paramètre.
 

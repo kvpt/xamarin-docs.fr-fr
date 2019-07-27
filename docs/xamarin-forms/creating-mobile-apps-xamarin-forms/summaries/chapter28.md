@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 28. Emplacement et mappages
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 28. Emplacement et mappages'
+description: 'Création d’Mobile Apps avec Xamarin. Forms: Résumé du chapitre 28. Emplacement et mappages'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331459"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511700"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Résumé du chapitre 28. Emplacement et mappages
 
@@ -66,7 +66,7 @@ L’implémentation d’iOS de `ILocationTracker` est un [ `LocationTracker` ](h
 
 #### <a name="the-android-location-manager"></a>Le Gestionnaire d’emplacement Android
 
-L’implémentation Android de `ILocationTracker` est un [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) classe qui utilise le Android [ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/) classe.
+L’implémentation Android de `ILocationTracker` est un [ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs) classe qui utilise le Android [ `LocationManager` ](xref:Android.Locations.LocationManager) classe.
 
 #### <a name="the-uwp-geo-locator"></a>Le localisateur de géo UWP
 

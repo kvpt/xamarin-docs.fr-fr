@@ -1,36 +1,36 @@
 ---
-title: Services Intent dans Xamarin.Android
+title: Services d’intention dans Xamarin. Android
 ms.prod: xamarin
 ms.assetid: A5B86FE4-C8E2-4B0A-84CA-EF8F5119E31B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1301f34ad1f7a0069c542ba81bf237a673fd239d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c868623ae08ac1366c1c9ea55c8d635f0a6a061
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013115"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509137"
 ---
-# <a name="intent-services-in-xamarinandroid"></a>Services Intent dans Xamarin.Android
+# <a name="intent-services-in-xamarinandroid"></a>Services d’intention dans Xamarin. Android
 
-## <a name="intent-services-overview"></a>Vue d’ensemble des Services Intent
+## <a name="intent-services-overview"></a>Vue d’ensemble des services d’intention
 
-Les deux démarré et lié les services s’exécutent sur le thread principal, ce qui signifie que pour conserver des performances sans heurts, un service doit effectuer le travail de façon asynchrone. Une des manières plus simples pour résoudre ce problème est avec un _modèle de processeur de file d’attente de travail_, où le travail à faire est placé dans une file d’attente est traitée par un seul thread. 
+Les services démarrés et liés s’exécutent sur le thread principal, ce qui signifie que pour maintenir les performances en douceur, un service doit effectuer le travail de façon asynchrone. L’une des façons les plus simples de résoudre ce problème est d’utiliser un _modèle de processeur de file d’attente de travail_, où le travail à effectuer est placé dans une file d’attente qui est servie par un thread unique.
 
-Le [ `IntentService` ](https://developer.xamarin.com/api/type/Android.App.IntentService/) est une sous-classe de la `Service` classe qui fournit une implémentation Android spécifique de ce modèle. Qu’il va gérer le travail de file d’attente, à partir d’un thread de travail pour traiter la file d’attente, et les demandes d’extraction désactivé de la file d’attente pour être exécutée sur le thread de travail. Un `IntentService` discrètement arrête de lui-même et supprimer le thread de travail lorsqu’il n’existe plus aucun travail dans la file d’attente.
- 
-Le travail est soumis à la file d’attente en créant un `Intent` , puis en passant qui `Intent` à la `StartService` (méthode).
+Est une sous-classe de la `Service` classe qui fournit une implémentation spécifique d’Android de ce modèle. [`IntentService`](xref:Android.App.IntentService) Il gère la mise en file d’attente du travail, le démarrage d’un thread de travail pour la maintenance de la file d’attente et l’extraction des requêtes de la file d’attente à exécuter sur le thread de travail. Un `IntentService` s’arrête de lui-même et supprime le thread de travail lorsqu’il n’y a plus de travail dans la file d’attente.
 
-Il n’est pas possible d’arrêter ou interrompre le `OnHandleIntent` méthode `IntentService` alors qu’il travaille. En raison de cette conception, un `IntentService` doit rester sans état &ndash; il doit s’appuient pas sur une connexion active ou la communication du reste de l’application. Un `IntentService` est destiné à statelessly traiter les demandes de travail.
+Le travail est soumis à la file d’attente `Intent` en créant un et `Intent` en le `StartService` passant à la méthode.
 
-Il existe deux conditions sous-classement `IntentService`:
+Il n’est pas possible d’arrêter ou d' `OnHandleIntent` interrompre `IntentService` la méthode pendant qu’elle fonctionne. En raison de cette conception, `IntentService` un doit être maintenu &ndash; sans État. il ne doit pas s’appuyer sur une connexion active ou une communication à partir du reste de l’application. Un `IntentService` est destiné à statelessly le traitement des demandes de travail.
 
-1. Le nouveau type (créé en sous-classant `IntentService`) remplace uniquement la `OnHandleIntent` (méthode).
-2. Le constructeur pour le nouveau type requiert une chaîne qui est utilisée pour nommer le thread de travail qui gère les demandes. Le nom de ce thread de travail est principalement utilisé lors du débogage de l’application.
+Deux conditions sont requises pour le sous- `IntentService`classing:
 
-Le code suivant montre un `IntentService` implémentation avec substituées `OnHandleIntent` méthode :
+1. Le nouveau type (créé par sous-classe `IntentService`) remplace uniquement la `OnHandleIntent` méthode.
+2. Le constructeur pour le nouveau type requiert une chaîne qui est utilisée pour nommer le thread de travail qui gérera les demandes. Le nom de ce thread de travail est principalement utilisé lors du débogage de l’application.
+
+Le code suivant illustre une `IntentService` implémentation de la méthode substituée: `OnHandleIntent`
 
 ```csharp
 [Service]
@@ -39,7 +39,7 @@ public class DemoIntentService: IntentService
     public DemoIntentService () : base("DemoIntentService")
     {
     }
-    
+
     protected override void OnHandleIntent (Android.Content.Intent intent)
     {
         Console.WriteLine ("perform some long running work");
@@ -49,7 +49,7 @@ public class DemoIntentService: IntentService
 }
 ```
 
-Travail est envoyé à un `IntentService` en instanciant un `Intent` , puis en appelant le [ `StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/) méthode avec cette intention en tant que paramètre. L’objectif sera être passé au service en tant que paramètre dans le `OnHandleIntent` (méthode). Cet extrait de code est un exemple d’envoi d’une demande de travail à une intention : 
+Le travail est envoyé à `IntentService` un en instanciant un `Intent` et en [`StartService`](xref:Android.Content.Context.StartService*) appelant ensuite la méthode en tant que paramètre. L’intention est passée au service en tant que paramètre dans la `OnHandleIntent` méthode. Cet extrait de code est un exemple d’envoi d’une demande de travail à une intention: 
 
 ```csharp
 // This code might be called from within an Activity, for example in an event
@@ -63,19 +63,18 @@ downloadIntent.Put
 StartService(downloadIntent);
 ```
 
-Le `IntentService` peut extraire les valeurs de l’objectif, comme illustré dans cet extrait de code :  
+`IntentService` Peut extraire les valeurs de l’intention, comme illustré dans cet extrait de code:  
 
 ```csharp
 protected override void OnHandleIntent (Android.Content.Intent intent)
 {
     string fileToDownload = intent.GetStringExtra("file_to_download");
-    
+
     Log.Debug("DemoIntentService", $"File to download: {fileToDownload}.");
 }
 ```
 
-
 ## <a name="related-links"></a>Liens associés
 
-- [IntentService](https://developer.xamarin.com/api/type/Android.App.IntentService/)
-- [StartService](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)
+- [IntentService](xref:Android.App.IntentService)
+- [StartService](xref:Android.Content.Context.StartService*)

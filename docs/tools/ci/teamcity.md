@@ -1,211 +1,213 @@
 ---
-title: À l’aide de la ville de l’équipe avec Xamarin
-description: Ce guide explique les étapes nécessaires à l’utilisation de TeamCity pour compiler des applications mobiles et envoyez-les à Xamarin Test Cloud.
+title: Utilisation de City Team avec Xamarin
+description: Ce guide aborde les étapes nécessaires à l’utilisation de TeamCity pour compiler des applications mobiles, puis les envoyer à Xamarin Test Cloud.
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: lobrien
 ms.author: laobri
 ms.date: 03/23/2017
-ms.openlocfilehash: a3cb79f33b64d933aa8ab4d3555479cc16238992
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2880fcbc3366079955945c4780af2be82afe5a4a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218950"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511926"
 ---
-# <a name="using-team-city-with-xamarin"></a>À l’aide de la ville de l’équipe avec Xamarin
+# <a name="using-team-city-with-xamarin"></a>Utilisation de City Team avec Xamarin
 
-_Ce guide explique les étapes nécessaires à l’utilisation de TeamCity pour compiler des applications mobiles et envoyez-les à Xamarin Test Cloud._
+_Ce guide aborde les étapes nécessaires à l’utilisation de TeamCity pour compiler des applications mobiles, puis les envoyer à Xamarin Test Cloud._
 
-Comme indiqué dans le [Introduction à l’intégration continue](~/tools/ci/intro-to-ci.md) guide, l’intégration continue (CI) est une pratique utile lors du développement d’applications mobiles de qualité. Il existe plusieurs options viables pour les logiciels de serveurs d’intégration continue ; Ce guide met l’accent sur [TeamCity](http://www.jetbrains.com/teamcity/) de JetBrains.
+Comme nous l’avons vu dans le guide [d’intégration continue](~/tools/ci/intro-to-ci.md) , l’intégration continue (ci) est une pratique utile lors du développement d’applications mobiles de qualité. Il existe de nombreuses options viables pour le logiciel du serveur d’intégration continue. ce guide se concentre sur [TeamCity](http://www.jetbrains.com/teamcity/) à partir de JetBrains.
 
-Il existe plusieurs permutations différentes d’une installation de TeamCity. Voici une liste de certains d'entre eux :
+Il existe plusieurs permutations différentes d’une installation TeamCity. Voici une liste de certains de ces éléments:
 
-- **Windows Service** : dans ce scénario, TeamCity démarre lorsque Windows démarre comme un Service Windows. Il doit être associé à un hôte de Build Mac pour compiler des applications iOS.
+- **Service Windows** : dans ce scénario, TeamCity démarre lorsque Windows démarre en tant que service Windows. Il doit être associé à un hôte de build Mac pour compiler toutes les applications iOS.
 
-- **Lancer le démon sur OS X** – point de vue conceptuel, ceci est très semblable à l’exécution sous un Service Windows à l’étape précédente. Par défaut les builds seront exécutera sous le compte racine.
+- **Lancer le démon sur OS X** : conceptuellement, cette opération est très similaire à l’exécution en tant que service Windows décrit à l’étape précédente. Par défaut, les builds sont exécutées sous le compte racine.
 
-- **Compte d’utilisateur sur OS X** – il est possible d’exécuter TeamCity sous un compte d’utilisateur qui démarre chaque fois que l’utilisateur se connecte.
+- **Compte d’utilisateur sur OS X** : il est possible d’exécuter TeamCity sous un compte d’utilisateur qui démarre chaque fois que l’utilisateur se connecte.
 
-Les scénarios précédents, en cours d’exécution TeamCity sous un compte d’utilisateur sur OS X est la plus simple et plus facile du programme d’installation.
+Dans les scénarios précédents, l’exécution de TeamCity sous un compte d’utilisateur sur OS X est la plus simple et la plus facile à configurer.
 
-Il existe plusieurs étapes impliquées dans la définition de TeamCity :
+Plusieurs étapes sont nécessaires à la configuration de TeamCity:
 
-- **L’installation de TeamCity** – l’installation de TeamCity n’est pas abordée dans ce guide. Ce guide suppose que TeamCity est installé et en cours d’exécution sous un compte d’utilisateur. Obtenir des instructions sur [installation TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation) se trouve dans le [TeamCity 8 documentation](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) par JetBrains.
+- **Installation de TeamCity** – l’installation de TeamCity n’est pas abordée dans ce guide. Ce guide part du principe que TeamCity est installé et s’exécute sous un compte d’utilisateur. Vous trouverez des instructions sur [l’installation de TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation) dans la [documentation TeamCity 8](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation) de JetBrains.
 
-- **Préparation du serveur de Build** : cette étape consiste à installer le logiciel nécessaire, outils, et les certificats requis pour créer des applications mobiles et les préparer pour la distribution.
+- **Préparation du serveur de builds** : cette étape implique l’installation des logiciels, des outils et des certificats nécessaires à la création d’applications mobiles et leur préparation à la distribution.
 
-- **Création d’un générer le Script** : cette étape n’est pas strictement nécessaire, mais un script de compilation est une aide utile pour la création d’applications sans assistance. À l’aide d’un script de compilation aideront à résoudre les problèmes de build qui peuvent survenir et offre un moyen de cohérent et reproductible pour créer les fichiers binaires pour la distribution, même si l’intégration continue n’est pas utilisée.
+- **Création d’un script de génération** : cette étape n’est pas strictement nécessaire, mais un script de génération est une aide utile pour créer des applications sans assistance. L’utilisation d’un script de génération vous aide à résoudre les problèmes de génération pouvant survenir et fournit un moyen cohérent et reproductible de créer les binaires pour la distribution, même si l’intégration continue n’est pas recommandée.
 
-- **Création d’un projet de TeamCity** – une fois les trois étapes précédentes terminées, nous devons créer un projet de TeamCity qui contiendra toutes les métadonnées nécessaires pour récupérer le code source, compiler les projets et soumettre les tests à Xamarin Test Cloud.
+- **Création d’un projet TeamCity** : une fois les trois étapes précédentes terminées, nous devons créer un projet TeamCity qui contiendra toutes les métadonnées nécessaires pour récupérer le code source, compilez les projets et soumettez les tests à Xamarin test Cloud.
 
 ## <a name="requirements"></a>Configuration requise
 
-Expérience avec [Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud) est requis.
+Une expérience avec [App Center Test](https://docs.microsoft.com/appcenter/test-cloud/) est nécessaire.
 
-Vous êtes familiarisé avec TeamCity 8.1 est requis. L’installation de TeamCity est abordée dans ce document. Il est supposé que TeamCity est installé sur OS X Mavericks et qu’il s’exécute sous un compte d’utilisateur normal et non le compte racine.
+Vous devez vous familiariser avec TeamCity 8,1. L’installation de TeamCity n’est pas traitée dans ce document. Il est supposé que TeamCity est installé sur OS X Mavericks et qu’il s’exécute sous un compte d’utilisateur standard et non pas le compte racine.
 
-Le serveur de build doit être un ordinateur autonome qui exécute OS X, qui est dédié à l’intégration continue. Dans l’idéal, le serveur de builds ne sera pas chargé pour tous les autres rôles, comme un serveur de base de données, un serveur web ou une station de travail de développeur.
+Le serveur de builds doit être un ordinateur autonome, exécutant OS X, qui est dédié à l’intégration continue. Dans l’idéal, le serveur de builds ne sera pas responsable de tout autre rôle, tel qu’un serveur de base de données, un serveur Web ou une station de travail de développeur.
 
 > [!IMPORTANT]
-> Ce guide ne couvre pas une installation « headless » de Xamarin.
+> Ce guide ne couvre pas une installation «headless» de Xamarin.
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
-## <a name="preparing-the-build-server"></a>Préparation du serveur de Build
+## <a name="preparing-the-build-server"></a>Préparation du serveur de builds
 
-Une étape essentielle dans la configuration d’un serveur de builds consiste à installer l’ensemble des outils nécessaires, des logiciels et des certificats pour créer des applications mobiles. Il est important que le serveur de builds pouvoir compiler la solution mobile et exécuter des tests. Pour réduire les problèmes de configuration, les logiciels et les outils doivent être installés dans le même compte d’utilisateur qui héberge TeamCity. Voici une liste de ce qui est nécessaire :
+L’une des étapes importantes de la configuration d’un serveur de builds consiste à installer tous les outils, logiciels et certificats nécessaires pour créer les applications mobiles. Il est important que le serveur de builds puisse compiler la solution mobile et exécuter tous les tests. Pour réduire les problèmes de configuration, vous devez installer les logiciels et les outils dans le même compte d’utilisateur qui héberge TeamCity. Voici une liste des éléments requis:
 
-1. **Visual Studio pour Mac** : Cela inclut Xamarin.iOS et Xamarin.Android.
-2. **Connexion pour le Store du composant Xamarin** – il s’agit d’une étape facultative et est uniquement nécessaire si votre application utilise des composants à partir du magasin du composant Xamarin. Journalisation proactive dans le magasin de composants à ce stade empêchera des problèmes quand une build de TeamCity tente de compiler l’application.
-3. **Xcode** – Xcode est nécessaire pour la compilation et l’authentification des applications iOS.
-4. **Outils de ligne de commande Xcode** : cette opération est décrite à l’étape 1 de la section Installation de le [la mise à jour de Ruby avec rbenv](https://developer.xamarin.com/guides/testcloud/calabash/updating-ruby-using-rbenv/) guide.
-5. **Signature d’identité et profils de provisionnement** : importer les certificats et configuration du profil via XCode. Consultez le guide d’Apple sur [exporter les identités de signature et de profils de provisionnement](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) pour plus d’informations.
-6. **Android Keystores** : copier les keystores Android requis dans un répertoire que l’utilisateur de TeamCity a accès, par exemple, `~/Documents/keystores/MyAndroidApp1`.
-7. **Calabash** – cette étape est facultative si votre application comporte des tests écrits à l’aide de Calabash. Consultez le [Calabash de l’installation sur OS X Mavericks](https://developer.xamarin.com/guides/testcloud/calabash/osx-installation/) guide et le [la mise à jour de Ruby avec rbenv](https://developer.xamarin.com/guides/testcloud/calabash/updating-ruby-using-rbenv/) guide pour plus d’informations.
+1. **Visual Studio pour Mac** : cela comprend Xamarin. iOS et Xamarin. Android.
+2. **Connectez-vous au magasin de composants Xamarin** – il s’agit d’une étape facultative qui est requise uniquement si votre application utilise des composants du magasin de composants Xamarin. La connexion proactive au magasin de composants à ce stade empêchera tout problème quand une build TeamCity essaie de compiler l’application.
+3. **Xcode** – Xcode est requis pour compiler et signer des applications iOS.
+4. **Outils en ligne de commande Xcode** : cela est décrit à l’étape 1 de la section Installation du Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
+5. **Signature de l’identité & profils** de provisionnement: importez les certificats et le profil de provisionnement via Xcode. Pour plus d’informations, consultez le Guide d’Apple sur l’exportation des identités de [signature et des profils](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) de provisionnement.
+6. **Magasins de clés Android** : copiez les magasins de clés Android nécessaires dans un répertoire auquel l’utilisateur TeamCity a accès, c.-à-d. `~/Documents/keystores/MyAndroidApp1`.
+7. **Calabash** : il s’agit d’une étape facultative si votre application a des tests écrits à l’aide de Calabash. Pour plus d’informations, consultez le guide [d’installation de Calabash sur OS X Mavericks](https://github.com/calabash/calabash-ios/wiki) et le Guide de [mise à jour de Ruby avec rbenv](https://github.com/calabash/calabash-ios/wiki) .
 
-Le diagramme suivant illustre tous ces composants :
+Le diagramme suivant illustre tous les composants suivants:
 
-![](teamcity-images/image1.png "Ce diagramme illustre tous ces composants")
+![](teamcity-images/image1.png "Ce diagramme illustre tous ces composants.")
 
-Une fois que tous les logiciels a été installé, connectez-vous au compte d’utilisateur et vérifiez que tous les logiciels a été correctement installé et qu’il fonctionne. Il doit inclure la solution de compilation et de l’envoi de l’application vers Test Cloud. Cela peut être considérablement simplifié en exécutant le script de génération, comme décrit dans la section suivante.
+Une fois que tous les logiciels ont été installés, connectez-vous au compte d’utilisateur et confirmez que l’ensemble du logiciel a été correctement installé et qu’il fonctionne. Cela doit impliquer la compilation de la solution et la soumission de l’application à Test Cloud. Cela peut être considérablement simplifié en exécutant le script de génération, comme décrit dans la section suivante.
 
-## <a name="create-a-build-script"></a>Créer un Script de Build
+## <a name="create-a-build-script"></a>Créer un script de génération
 
-Bien qu’il soit tout à fait possible de TeamCity gérer tous les aspects de la compilation et de soumettre les applications mobiles vers Test Cloud par lui-même, il est fortement recommandé pour créer un script de génération. Un script de génération offre les avantages suivants :
+Bien qu’il soit tout à fait possible pour TeamCity de gérer tous les aspects de la compilation et de soumettre les applications mobiles à Test Cloud seul, il est fortement recommandé de créer un script de génération. Un script de génération offre les avantages suivants:
 
-1. **Documentation** – un script de compilation sert à un formulaire de la documentation sur la façon dont le logiciel est construit. Cette opération supprime certaines des « magiques » qui est associé avec le déploiement de l’application et permet aux développeurs de se concentrer sur les fonctionnalités.
-1. **La répétabilité** – un script de génération garantit que chaque fois que l’application est compilée et déployée, il se produit dans exactement la même façon, quel que soit le qui ou ce que fait le travail. Cette cohérence reproductible supprime tous les problèmes ou erreurs qui peuvent glissent généralement en raison d’une build exécutée de manière incorrecte ou erreur humaine.
-1. **Le contrôle de version** – un script de génération peut être inclus dans le système de contrôle de code source. Cela signifie que les modifications au script de génération peuvent être suivies, surveillées et corrigées si les erreurs ou des imprécisions sont trouvées.
-1. **Préparer l’environnement** – un script de build peut inclure une logique pour installer un obligatoire 3e dépendances tierces. Cela garantit que les applications sont générées avec les composants appropriés.
+1. **Documentation** : un script de génération sert de documentation sur la façon dont le logiciel est créé. Cela supprime une partie du «Magic» associé au déploiement de l’application et permet aux développeurs de se concentrer sur les fonctionnalités.
+1. **Répétabilité** : un script de génération garantit que chaque fois que l’application est compilée et déployée, elle se produit exactement de la même façon, quel que soit l’auteur ou le travail. Cette cohérence reproductible supprime les problèmes ou erreurs susceptibles de se promettre en raison d’une génération incorrecte ou d’une erreur humaine.
+1. Contrôle de **version** : un script de génération peut être inclus dans le système de contrôle de code source. Cela signifie que les modifications apportées au script de génération peuvent être suivies, surveillées et corrigées en cas d’erreurs ou d’inexactitudes.
+1. **Préparer l’environnement** : un script de génération peut inclure une logique pour installer les dépendances tierces requises. Cela permet de s’assurer que les applications sont générées avec les composants appropriés.
 
-Le script de génération peut être aussi simple qu’un fichier Powershell (sur Windows) ou un script bash (sur OS X). Lorsque vous créez le script de génération, il existe plusieurs options pour les langages de script :
+Le script de génération peut être aussi simple qu’un fichier PowerShell (sur Windows) ou un script bash (sur OS X). Lors de la création du script de génération, il existe plusieurs choix pour les langages de script:
 
-- [**RAKE** ](https://github.com/jimweirich/rake) – il s’agit un langage spécifique domaine (DSL) pour la création de projets, basés sur Ruby. RAKE a l’avantage de la popularité et un riche écosystème de bibliothèques.
+- [**Rake**](https://github.com/jimweirich/rake) : il s’agit d’un langage spécifique à un domaine (DSL) pour la génération de projets, en fonction de Ruby. Rake présente l’avantage de la popularité et un écosystème riche de bibliothèques.
 
-- [**psake** ](https://github.com/psake/psake) – il s’agit d’une bibliothèque de Windows Powershell pour la création de logiciels
+- [**psake**](https://github.com/psake/psake) – il s’agit d’une bibliothèque Windows PowerShell pour la création de logiciels
 
-- [**FALSIFIER** ](http://fsharp.github.io/FAKE/) – il s’agit d’un DSL en dans F# ce qui rend possible d’utiliser les bibliothèques .NET existantes si nécessaire.
+- [Factice](http://fsharp.github.io/FAKE/) : il s’agit d’une solution F# DSL dans laquelle il est possible d’utiliser des bibliothèques .NET existantes si nécessaire.
 
-Le langage de script est utilisé dépend de vos exigences et préférences. Le [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) exemple contient un exemple d’utilisation Rake comme un [générer le script](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
+Le langage de script utilisé dépend de vos préférences et de vos exigences. L’exemple [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) contient un exemple d’utilisation de rake comme [script de génération](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
 
 > [!NOTE]
-> Il est possible d’utiliser un système de génération basé sur XML tels que MSBuild ou NAnt, mais ces manque l’expressivité et la facilité de maintenance d’une solution DSL qui est dédiée à la création de logiciels.
+> Il est possible d’utiliser un système de génération basé sur XML, tel que MSBuild ou NAnt, mais ceux-ci ne disposent pas de l’expressivité et de la maintenabilité d’un langage DSL dédié à la création de logiciels.
 
-### <a name="parameterizing-the-build-script"></a>Paramétrer le Script de génération
+### <a name="parameterizing-the-build-script"></a>Paramétrage du script de génération
 
-Le processus de génération et de test de logiciels requiert des informations qui doivent être gardées secrètes. Création d’un APK en particulier peut-être nécessiter un mot de passe pour le magasin de clés et/ou l’alias de clé dans le magasin de clés. De même, Test Cloud nécessite une clé d’API qui est unique à un développeur. Ces types de valeurs doivent être pas durs codé dans le script de génération. Au lieu de cela ils doivent être passés en tant que variables au script de génération.
+Le processus de génération et de test des logiciels nécessite des informations qui doivent être tenues secrètes. En particulier, la création d’un APK peut nécessiter un mot de passe pour le magasin de clés et/ou l’alias de clé dans le magasin de clés. De même, Test Cloud nécessite une clé API propre à un développeur. Ces types de valeurs ne doivent pas être codés en dur dans le script de génération. Au lieu de cela, elles doivent être passées en tant que variables au script de compilation.
 
-Moins sensibles sont des valeurs telles qu’iOS ID d’appareil ou l’ID d’appareil Android qui identifient quel Test Cloud doit utiliser pour les appareils de test s’exécute. Il s’agit pas de valeurs qui doivent être protégés, mais elles peuvent changer à partir d’une build à une autre.
+Moins sensibles sont des valeurs telles que l’ID d’appareil iOS ou l’ID d’appareil Android qui identifient les périphériques que Test Cloud doit utiliser pour les séries de tests. Ce ne sont pas des valeurs qui doivent être protégées, mais elles peuvent changer de build en Build.
 
-Stockage de ces types de variables en dehors du script de compilation rend également plus facile de partager le script de génération d’une organisation, avec les développeurs, par exemple. Les développeurs peuvent utiliser exactement le même script en tant que le serveur de builds, mais peuvent utiliser leur propre keystores et les clés API.
+Le stockage de ces types de variables en dehors du script de génération facilite également le partage du script de compilation au sein d’une organisation, avec les développeurs, par exemple. Les développeurs peuvent utiliser exactement le même script que le serveur de builds, mais ils peuvent utiliser leurs propres clés API et keystore.
 
-Il existe deux options possibles pour le stockage de ces valeurs sensibles :
+Il existe deux options possibles pour stocker ces valeurs sensibles:
 
-- **Un fichier de configuration** : permet de protéger la clé d’API de Cloud de Test cette valeur ne doit pas être vérifiée dans le contrôle de version. Le fichier peut être créé pour chaque ordinateur. Comment les valeurs sont lues à partir de ce fichier varie selon le langage de script utilisé.
+- **Un fichier de configuration** : pour protéger la clé de l’API test Cloud, cette valeur ne doit pas être archivée dans le contrôle de version. Le fichier peut être créé pour chaque ordinateur. La façon dont les valeurs sont lues à partir de ce fichier dépend du langage de script utilisé.
 
-- **Variables d’environnement** : ils peuvent être facilement définis par ordinateur et artagés sur quelle que soit le langage de script sous-jacent.
+- **Variables d’environnement** : elles peuvent être facilement définies sur une base par machine et artagées indépendamment du langage de script sous-jacent.
 
-Il existe des avantages et inconvénients de chacun de ces choix. TeamCity fonctionne bien avec les variables d’environnement, afin que ce guide vous recommande de cette technique lors de la création de scripts de compilation.
+Chacun de ces choix présente des avantages et des inconvénients. TeamCity fonctionne parfaitement avec les variables d’environnement. ce guide vous recommandera donc cette technique lors de la création de scripts de génération.
 
 ### <a name="build-steps"></a>Étapes de génération
 
-Le script de génération doit être en mesure d’effectuer les étapes suivantes :
+Le script de génération doit être en mesure d’effectuer les étapes suivantes:
 
-- **Compilez l’Application** : Cela inclut la signature de l’application avec le profil de provisionnement approprié.
+- **Compilez l’application** : cela comprend la signature de l’application avec le profil de provisionnement approprié.
 
-- **Envoyer l’Application vers Xamarin Test Cloud** : Cela inclut la signature et zip alignement de l’APK avec le magasin de clés appropriée.
+- **Soumettre l’application à Xamarin test Cloud** – cela comprend la signature et l’alignement du fichier zip avec le magasin de clés approprié.
 
 Ces deux étapes sont expliquées plus en détail ci-dessous.
 
-#### <a name="compiling-a-xamarinios-application"></a>Compilation d’une Application Xamarin.iOS
+#### <a name="compiling-a-xamarinios-application"></a>Compilation d’une application Xamarin. iOS
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-#### <a name="compiling-a-xamarinandroid-application"></a>Compilation d’une Application Xamarin.Android
+#### <a name="compiling-a-xamarinandroid-application"></a>Compilation d’une application Xamarin. Android
 
-Pour compiler une application Android, utilisez **xbuild** (ou **msbuild** sur Windows) :
+Pour compiler une application Android, utilisez **xbuild** (ou **MSBuild** sur Windows):
 
 ```bash
 /Library/Frameworks/Mono.framework/Commands/xbuild /t:SignAndroidPackage /p:Configuration=Release /path/to/android.csproj
 ```
 
-Notez que pour compiler l’application Xamarin Android **xbuild** utilise le projet et pour générer l’application iOS **xbuild** exige que la solution.
+Notez que pour compiler l’application Xamarin Android **xbuild** utilise le projet, et que la génération de l’application iOS **xbuild** requiert la solution.
 
-#### <a name="submitting-xamarinuitests-to-test-cloud"></a>Envoi de Xamarin.UITests vers Test Cloud
+#### <a name="submitting-xamarinuitests-to-test-cloud"></a>Envoi de Xamarin. tests UITest à Test Cloud
 
-Tests UITest est soumises à l’aide de la `test-cloud.exe` application, comme indiqué dans l’extrait de code suivant :
+Les tests UITest sont envoyés à `test-cloud.exe` l’aide de l’application, comme illustré dans l’extrait de code suivant:
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
 ```
 
-Lorsque le test est exécuté, les résultats des tests seront affichera sous la forme d’un fichier XML de style NUnit appelé **report.xml**. TeamCity affiche les informations dans le journal de génération.
+Lorsque le test est exécuté, les résultats des tests sont retournés sous la forme d’un fichier XML de style NUnit nommé **Report. xml**. TeamCity affiche les informations dans le journal de génération.
 
-Pour plus d’informations sur la soumission de tests UITest vers Test Cloud, consultez ce guide sur [Xamarin.UITests de préparation pour le chargement](/appcenter/test-cloud/preparing-for-upload/uitest/).
+Pour plus d’informations sur la façon d’envoyer des tests UITest à des Test Cloud, consultez ce guide sur la [préparation de Xamarin. tests UITest pour le téléchargement](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/).
 
-#### <a name="submitting-calabash-tests-to-test-cloud"></a>Envoi de Tests Calabash pour tester le Cloud
+#### <a name="submitting-calabash-tests-to-test-cloud"></a>Envoi de tests Calabash à Test Cloud
 
-Tests de Calabash sont soumises à l’aide de la `test-cloud` gem, comme indiqué dans l’extrait suivant :
+Les tests Calabash sont envoyés à `test-cloud` l’aide de la gemme, comme illustré dans l’extrait de code suivant:
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
 ```
-Pour soumettre une application Android vers Test Cloud, il est nécessaire de reconstruire tout d’abord le serveur de test APK à l’aide de calabash-android :
+
+Pour soumettre une application Android à Test Cloud, vous devez d’abord reconstruire le serveur de test APK à l’aide de Calabash-Android:
 
 ```bash
 $ calabash-android build </path/to/signed/APK>
 $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DEVICE_ID> --profile=android --config=config/cucumber.yml --pretty
 ```
-Pour plus d’informations sur la soumission de tests de Calabash, veuillez consulter les guide de Xamarin sur [soumission de Tests Calabash vers Test Cloud](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
+
+Pour plus d’informations sur l’envoi de tests Calabash, consultez le Guide de Xamarin sur la [soumission des tests Calabash à test Cloud](https://github.com/calabash/calabash-ios/wiki).
 
 ## <a name="creating-a-teamcity-project"></a>Création d’un projet TeamCity
 
-Une fois que TeamCity est installé et Visual Studio pour Mac peut générer votre projet, il est temps de créer un projet dans TeamCity pour générer le projet et l’envoyer vers Test Cloud.
+Une fois TeamCity installé et Visual Studio pour Mac pouvez générer votre projet, il est temps de créer un projet dans TeamCity pour générer le projet et l’envoyer à Test Cloud.
 
-1. Démarré en vous connectant à TeamCity via le navigateur web. Accédez à la racine de projet :
+1. Démarré en se connectant à TeamCity via le navigateur Web. Accédez au projet racine:
 
-    ![Naviguer vers le projet racine](teamcity-images/image2.png "naviguer vers le projet racine") sous le projet racine, créez un nouveau projet secondaire :
+    ![Accéder au projet racine](teamcity-images/image2.png "Accéder au projet racine") Sous le projet racine, créez un sous-projet:
 
-    ![Accédez à la racine de projet en dessous le projet racine, créez un nouveau sous-projet de](teamcity-images/image3.png "Navigate pour le projet en dessous la racine de projet racine, créez un nouveau projet de sous-section")
-2. Une fois que le projet a été créé, ajoutez une nouvelle Configuration de Build :
+    ![Accédez au projet racine sous le projet racine, puis créez un sous-projet] . (teamcity-images/image3.png "Accédez au projet racine sous le projet racine, puis créez un sous-projet") .
+2. Une fois le sous-projet créé, ajoutez une nouvelle configuration de build:
 
-    ![Une fois que le projet a été créé, ajoutez une nouvelle Configuration de Build](teamcity-images/image5.png "une fois que le projet a été créé, ajoutez une nouvelle Configuration de Build")
-3. Attacher un projet VCS à la Configuration de Build. Cette opération est effectuée par le biais de l’écran de paramètre de contrôle de Version :
+    ![Une fois le sous-projet créé, ajoutez une nouvelle configuration de build](teamcity-images/image5.png "Une fois le sous-projet créé, ajoutez une nouvelle configuration de build")
+3. Attachez un projet VCS à la configuration de Build. Cette opération s’effectue via l’écran de paramètre de contrôle de version:
 
-    ![Cette opération est effectuée par le biais de l’écran de paramètre de contrôle de Version](teamcity-images/image6.png "cette opération est effectuée par le biais de l’écran de paramètre de contrôle de Version")
+    ![Cette opération s’effectue à l’aide de l’écran paramètre de contrôle de version](teamcity-images/image6.png "Cette opération s’effectue à l’aide de l’écran paramètre de contrôle de version")
 
-    S’il n’existe aucun projet VCS créé, vous pouvez créer un à partir de la page nouvelle racine VCS indiquée ci-dessous :
+    Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la nouvelle page racine du VCS, comme indiqué ci-dessous:
 
-    ![S’il n’existe aucun projet VCS créé, vous pouvez créer un à partir de la page nouvelle racine VCS](teamcity-images/image7.png "s’il n’existe aucun projet VCS créé, vous pouvez créer un à partir de la page nouvelle racine VCS")
+    ![Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la nouvelle page racine du VCS] . (teamcity-images/image7.png "Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la nouvelle page racine du VCS") .
 
-    Une fois que la racine VCS a été attachée, TeamCity va extraire le projet et réessayez automatiquement détectent des étapes de génération. Si vous êtes familiarisé avec TeamCity, vous pouvez sélectionner une des étapes de génération détectés. Il est possible d’ignorer les étapes de génération détecté pour l’instant.
+    Une fois la racine du VCS attachée, TeamCity extrait le projet et tente de détecter automatiquement les étapes de génération. Si vous êtes familiarisé avec TeamCity, vous pouvez sélectionner l’une des étapes de build détectées. Il est possible d’ignorer en toute sécurité les étapes de génération détectées pour le moment.
 
-4. Ensuite, configurez un déclencheur de Build. Cette file d’attente d’une build lorsque certaines conditions sont remplies, par exemple quand un utilisateur valide le code dans le référentiel. La capture d’écran suivante montre comment ajouter un déclencheur de build :
+4. Ensuite, configurez un déclencheur de Build. Cela met en file d’attente une build lorsque certaines conditions sont remplies, par exemple lorsqu’un utilisateur valide du code dans le référentiel. La capture d’écran suivante montre comment ajouter un déclencheur de build:
 
-    ![Cette capture d’écran montre comment ajouter un déclencheur de build](teamcity-images/image8.png "cette capture d’écran montre comment ajouter un déclencheur de build") un exemple de configuration d’un déclencheur de build peut être consulté dans la capture d’écran suivante :
+    ![Cette capture d’écran montre comment ajouter un déclencheur de build](teamcity-images/image8.png "Cette capture d’écran montre comment ajouter un déclencheur de build") Vous trouverez un exemple de configuration d’un déclencheur de build dans la capture d’écran suivante:
 
-    ![Un exemple de configuration d’un déclencheur de build peut être consulté dans cette capture d’écran](teamcity-images/image9.png "un exemple de configuration d’un déclencheur de build peut être consulté dans cette capture d’écran")
+    Vous ![pouvez voir un exemple de configuration d’un déclencheur de build dans cette capture d’écran] . Vous (teamcity-images/image9.png "pouvez voir un exemple de configuration d’un déclencheur de build dans cette capture d’écran") .
 
-5. La section précédente, en paramétrant la générer le Script, recommandé de stocker certaines valeurs en tant que variables d’environnement. Ces variables peuvent être ajoutées à la configuration de build via l’écran Paramètres. Ajoutez les variables pour la clé d’API de Test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android comme indiqué dans la capture d’écran ci-dessous :
+5. La section précédente, paramétrage du script de génération, suggérant le stockage de certaines valeurs en tant que variables d’environnement. Ces variables peuvent être ajoutées à la configuration de build via l’écran Paramètres. Ajoutez les variables pour la clé API Test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android, comme indiqué dans la capture d’écran ci-dessous:
 
-    ![Ajoutez les variables pour la clé d’API de Test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android](teamcity-images/image11.png "ajouter les variables pour la clé d’API de Test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android")
+    ![Ajoutez les variables pour la clé API test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android] . (teamcity-images/image11.png "Ajoutez les variables pour la clé API test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android") .
 
-6. L’étape finale consiste à ajouter une étape de génération qui appelle le script de build pour compiler l’application et la file d’attente l’application vers Test Cloud. La capture d’écran suivante est un exemple d’une étape de build qui utilise un Rakefile pour générer une application :
+6. La dernière étape consiste à ajouter une étape de génération qui appellera le script de compilation pour compiler l’application et mettre l’application en file d’attente pour Test Cloud. La capture d’écran suivante est un exemple d’une étape de génération qui utilise un Rakefile pour créer une application:
 
-    ![Cette capture d’écran est un exemple d’une étape de build qui utilise un Rakefile pour générer une application](teamcity-images/image12.png "cette capture d’écran est un exemple d’une étape de build qui utilise un Rakefile pour générer une application")
+    ![Cette capture d’écran est un exemple d’une étape de génération qui utilise un Rakefile pour générer une application](teamcity-images/image12.png "Cette capture d’écran est un exemple d’une étape de génération qui utilise un Rakefile pour générer une application")
 
-7. À ce stade, la configuration de build est terminée. Il est judicieux de déclencher une build pour vérifier que le projet est configuré correctement. Un bon moyen de procéder consiste à valider une modification de petite taille, non significatif dans le référentiel. TeamCity doit détecter la validation et démarrer une build.
+7. À ce stade, la configuration de build est terminée. Il est judicieux de déclencher une build pour confirmer que le projet est correctement configuré. Une bonne façon de procéder est de valider une modification minime et non significative dans le référentiel. TeamCity doit détecter la validation et démarrer une build.
 
-8. Une fois la build terminée, examinez le journal de génération et s’il existe des problèmes ou des avertissements à la build qui nécessitent votre attention.
+8. Une fois la génération terminée, examinez le journal de génération et vérifiez s’il existe des problèmes ou des avertissements avec la build qui requièrent votre attention.
 
 ## <a name="summary"></a>Récapitulatif
 
-Ce guide a décrit l’utilisation de TeamCity pour créer des applications Xamarin Mobile puis de les envoyer vers Test Cloud. Nous avons abordé la création d’un script de build pour automatiser le processus de génération. Le script de génération s’occupe de la compilation de l’application, l’envoi vers Test Cloud et attend les résultats
+Ce guide a expliqué comment utiliser TeamCity pour générer des applications mobiles Xamarin, puis les envoyer à Test Cloud. Nous avons abordé la création d’un script de génération pour automatiser le processus de génération. Le script de génération s’occupe de la compilation de l’application, de l’envoi à Test Cloud et de l’attente des résultats
 
-Ensuite, nous avons vu comment créer un projet dans TeamCity file d’attente une build chaque fois qu’un développeur valide le code qui appellera le script de génération.
+Nous avons ensuite abordé la création d’un projet dans TeamCity qui met en file d’attente une build chaque fois qu’un développeur valide le code et appelle le script de compilation.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Préparation Xamarin.UITests pieds téléchargement](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [Préparation de Xamarin. tests UITest par upload](/appcenter/test-cloud/preparing-for-upload/uitest/)
 - [Installation et configuration de TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

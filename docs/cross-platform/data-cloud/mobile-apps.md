@@ -1,26 +1,26 @@
 ---
-title: Applications mobiles de Microsoft Azure
-description: Ce document contient des liens vers des guides qui expliquent comment générer une application Xamarin qui est connectée à Azure. Il traite de l’utilisation avec le composant Xamarin Azure, des utilisateurs et des notifications push.
+title: Microsoft Azure Mobile Apps
+description: Ce document contient des liens vers des guides qui décrivent comment créer une application Xamarin connectée à Azure. Il traite de l’utilisation du composant Azure Xamarin, des utilisateurs et des notifications push.
 ms.prod: xamarin
 ms.assetid: 7B9AA8D9-C181-4C33-8AB0-2F56E4DBFC03
 author: conceptdev
 ms.author: crdun
 ms.date: 04/02/2017
-ms.openlocfilehash: a1a0b078659441f0f45af66728a5f37d578d6274
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 2ac361ae48e353944420482c7beedbec07774be6
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675083"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511377"
 ---
-# <a name="microsoft-azure-mobile-apps"></a>Applications mobiles de Microsoft Azure
+# <a name="microsoft-azure-mobile-apps"></a>Microsoft Azure Mobile Apps
 
-_Téléchargements de code et exemples pour la documentation du portail Azure._
+_Exemples et téléchargements de code pour la documentation Portail Azure._
 
 <!--
 NOTE TO AUTHORS: this page is referenced from
 https://azure.microsoft.com/develop/mobile/xamarin/
-as https://developer.xamarin.com/guides/cross-platform/data-cloud/mobile-services/
+as https://developer xamarin com/guides/cross-platform/data-cloud/mobile-services/
 A redirect has been put in place to /mobile-apps/ HOWEVER the /Resources/ .ZIP files are still located in /mobile-services/ so that the following permalinks don't break
 
 The ZIPs in /Resources/ are also referenced by inbound links
@@ -33,17 +33,17 @@ Validate and modify data    http://go.microsoft.com/fwlink/p/?LinkId=331330
 -->
 
 
-Ces liens sont disponibles sur la documentation de Xamarin le [Azure Mobile Apps](https://docs.microsoft.com/azure/app-service-mobile/) site Web.
-Ajout de fonctionnalités Azure à une application Xamarin en téléchargeant le [Azure Mobile Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/).
+Ces liens concernent la documentation Xamarin disponible sur le site Web [Azure Mobile Apps](https://docs.microsoft.com/azure/app-service-mobile/) .
+Ajout de fonctionnalités Azure à une application Xamarin en téléchargeant le [client Azure mobile](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/).
 
-## <a name="working-with-the-xamarin-azure-component"></a>Utilisation du composant Xamarin Azure
+## <a name="working-with-the-xamarin-azure-component"></a>Utilisation du composant Azure Xamarin
 
-Documentation générale [utilisation de la bibliothèque de Client Xamarin (composant)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library) pour effectuer diverses tâches avec Azure Mobile Apps. Cette page contient un grand nombre d’exemples d’extraits de code, sans les explications détaillées et des exemples disponibles dans chacune des articles de procédure pas à pas répertoriées ci-dessous.
+Documentation générale [utilisation de la bibliothèque cliente Xamarin (composant)](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-dotnet-how-to-use-client-library) pour accomplir diverses tâches avec Azure Mobile Apps. Cette page contient un grand nombre d’exemples d’extraits de code, sans les explications détaillées et les exemples disponibles dans chacun des Articles de procédure pas à pas ci-dessous.
 
 ## <a name="getting-started"></a>Prise en main
 
-Cet article fournit des instructions détaillées pour créer votre première application Azure de Xamarin et en cours d’exécution.
-Il couvre la création d’une application Mobile Azure dans le portail de téléchargement et exécution de l’application préconfigurée.
+Cet article fournit des instructions pas à pas pour mettre en service votre première application Xamarin Azure.
+Il aborde la création d’une nouvelle application mobile Azure dans le portail, puis le téléchargement et l’exécution de l’application préconfigurée.
 
 -  [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started/)
 -  [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started/)
@@ -67,32 +67,32 @@ A quick example of paging large sets of data using Skip() and Take().
 -  [Android](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-how-to-use-client-library/#paging)
 -->
 
-## <a name="get-started-with-users"></a>Bien démarrer avec les utilisateurs
+## <a name="get-started-with-users"></a>Prise en main des utilisateurs
 
-Fournit des instructions complètes pour la configuration et le codage d’un écran de connexion à l’aide d’Azure Mobile Services. Fournisseurs d’authentification pris en charge incluent Microsoft, Google, Facebook et Twitter.
+Fournit des instructions complètes pour la configuration et le codage d’un écran de connexion à l’aide d’Azure Mobile Services. Les fournisseurs d’authentification pris en charge sont Microsoft, Google, Facebook et Twitter.
 
 -  [iOS](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-ios-get-started-users/)
 -  [Android](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
 
 
-## <a name="authorize-users-in-scripts"></a>Autoriser les utilisateurs dans les Scripts
+## <a name="authorize-users-in-scripts"></a>Autoriser des utilisateurs dans des scripts
 
-Un exemple de code pour les principaux de Javascript
+Exemple de code pour les principaux JavaScript
 
 -  [Todo.js](https://github.com/Azure/azure-mobile-apps-node/blob/master/samples/personal-table/tables/TodoItem.js#L38)
 
 
-## <a name="get-started-with-push"></a>Prise en main Push
+## <a name="get-started-with-push"></a>Prise en main de push
 
-Suivez les instructions pour configurer des notifications push sur les sites Web Apple et Google, puis envoyer une notification push à partir d’Azure Mobile Services à un appareil.
+Suivez les instructions pour configurer les notifications push sur les sites Web Apple et Google, puis envoyez une notification push à partir d’Azure Mobile Services à un appareil.
 
 -  [iOS](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-ios-get-started-push)
 -  [Android](https://docs.microsoft.com/azure/app-service-mobile/app-service-mobile-xamarin-android-get-started-push)
 
 
-## <a name="get-started-with-notification-hubs"></a>Prise en main Notification Hubs
+## <a name="get-started-with-notification-hubs"></a>Prise en main de Notification Hubs
 
-Suivez les instructions pour configurer les notifications push sur les sites Web Apple et Google, configurer le concentrateur de Notification Azure et puis générer des notifications push aux appareils.
+Suivez les instructions pour configurer les notifications push sur les sites Web Apple et Google, configurer le concentrateur de notification Azure, puis générer des notifications push sur des appareils.
 
 -  [iOS](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started)
 -  [Android](https://docs.microsoft.com/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm)
@@ -101,13 +101,13 @@ Suivez les instructions pour configurer les notifications push sur les sites Web
 
 ## <a name="related-links"></a>Liens associés
 
-- [GettingStarted (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GettingStarted)
+- [GettingStarted (exemple)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GettingStarted)
 - [GetStartedWithData (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithData)
 - [GetStartedWithUsers (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithUsers)
 - [GetStartedWithPush (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/GetStartedWithPush)
 - [NotificationHubs (exemple)](https://github.com/xamarin/mobile-samples/tree/master/Azure/NotificationHubs)
-- [Client Azure Mobile](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
-- [Parcours d’apprentissage de Azure Mobile Apps](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/)
+- [Client Azure mobile](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)
+- [Parcours d’apprentissage Azure Mobile Apps](https://azure.microsoft.com/documentation/learning-paths/appservice-mobileapps/)
 
 <!--
 - [ValidateModifyData (sample)](https://github.com/xamarin/mobile-samples/tree/master/Azure/ValidateModifyData)

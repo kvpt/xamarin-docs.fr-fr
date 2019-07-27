@@ -1,49 +1,48 @@
 ---
-title: Présentation de l’intégration Java
-description: L’écosystème Java comprend une collection de diverses et considérable de composants. Plusieurs de ces composants peuvent être utilisés pour réduire le temps que nécessaire pour développer une application Android. Ce document présente et fournissent une vue d’ensemble de quelques-unes des méthodes que les développeurs peuvent utiliser ces composants Java existants afin d’améliorer leur expérience de développement d’application Xamarin.Android.
+title: Intégration de Java à Xamarin. Android
+description: L’écosystème Java comprend une collection diversifiée et immense de composants. Un grand nombre de ces composants peuvent être utilisés pour réduire le temps nécessaire au développement d’une application Android. Ce document présente et fournit une vue d’ensemble de la façon dont les développeurs peuvent utiliser ces composants Java existants pour améliorer leur expérience de développement d’applications Xamarin. Android.
 ms.prod: xamarin
 ms.assetid: 7B5B8695-1C49-19BF-AE99-948CDCBD2A20
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 3ab31fb7cac97fbae3315f51daf3dd4b1edbcc1d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085290"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510568"
 ---
-# <a name="java-integration-overview"></a>Présentation de l’intégration Java
+# <a name="java-integration-with-xamarinandroid"></a>Intégration de Java à Xamarin. Android
 
-_L’écosystème Java comprend une collection de diverses et considérable de composants. Plusieurs de ces composants peuvent être utilisés pour réduire le temps que nécessaire pour développer une application Android. Ce document présente et fournissent une vue d’ensemble de quelques-unes des méthodes que les développeurs peuvent utiliser ces composants Java existants afin d’améliorer leur expérience de développement d’application Xamarin.Android._
+_L’écosystème Java comprend une collection diversifiée et immense de composants. Un grand nombre de ces composants peuvent être utilisés pour réduire le temps nécessaire au développement d’une application Android. Ce document présente et fournit une vue d’ensemble de la façon dont les développeurs peuvent utiliser ces composants Java existants pour améliorer leur expérience de développement d’applications Xamarin. Android._
 
+## <a name="overview"></a>Présentation
 
-## <a name="overview"></a>Vue d'ensemble
+Compte tenu de l’étendue de l’écosystème Java, il est très probable que toutes les fonctionnalités requises pour une application Xamarin. Android aient déjà été codées en Java. Pour cette raison, il est attrayant d’essayer et de réutiliser ces bibliothèques existantes lors de la création d’une application Xamarin. Android.
 
-Étant donné l’étendue de l’écosystème Java, il est très probable que toutes les fonctionnalités requises pour une application Xamarin.Android donnée a déjà été codée en Java. Pour cette raison, il est intéressante pour tenter de réutiliser ces bibliothèques existantes lors de la création d’une application Xamarin.Android. 
+Il existe trois façons de réutiliser des bibliothèques Java dans une application Xamarin. Android: 
 
-Il existe trois façons possibles de réutiliser les bibliothèques Java dans une application Xamarin.Android : 
+-   **Créer une bibliothèque de liaisons Java** Avec cette technique, un projet Xamarin. Android est utilisé pour créer C# des wrappers autour des types Java. &ndash; Une application Xamarin. Android peut ensuite référencer C# les wrappers créés par ce projet, puis utiliser le `.jar` fichier. 
 
--   **Créer une bibliothèque de liaisons Java** &ndash; avec cette technique, un projet Xamarin.Android sert à créer C# des wrappers autour des types Java. Une application Xamarin.Android peut ensuite référencer le C# wrappers créé par ce projet, puis utiliser le `.jar` fichier. 
+-   **Interface native Java**  C++ C#  JNI (Java Native Interface) est une infrastructure qui permet à du code non-Java (tel que ou) d’appeler ou d’être appelé par du code Java exécuté dans une machine virtuelle Java. &ndash; 
 
--   **Java Native Interface** &ndash; le *Java Native* *Interface* (JNI) est une infrastructure qui permet au code de non Java (tels que C++ ou C#) pour appeler ou être appelé par du code Java en cours d’exécution à l’intérieur d’une machine virtuelle Java. 
+-   **Portage du code** Cette méthode implique de créer le code source Java, puis de le convertir en C# &ndash; Cette opération peut être effectuée manuellement ou à l’aide d’un outil automatisé tel que la netteté. 
 
--   **Déplacer le Code** &ndash; cette méthode consiste à prendre le code source Java et puis le convertir en C#. Cela est possible, manuellement ou à l’aide d’un outil automatisé tels que NET. 
+L' *interface native Java* (JNI) est au cœur des deux premières techniques. JNI est un Framework qui permet aux applications qui ne sont pas écrites en Java d’interagir avec le code Java s’exécutant dans un Machine virtuelle Java. Xamarin. Android utilise JNI pour créer des *liaisons* pour C# le code. 
 
-Au cœur des deux premières techniques est le *Java Native Interface* (JNI). JNI est une infrastructure qui permet aux applications ne pas écrites en Java interagir avec le code Java en cours d’exécution dans une Machine virtuelle Java. Xamarin.Android utilise JNI pour créer *liaisons* pour C# code. 
+La première technique est une approche plus automatisée et déclarative de la liaison de bibliothèques Java. Il implique l’utilisation de Visual Studio pour Mac ou d’un type de projet Visual Studio fourni par Xamarin. &ndash; Android dans la bibliothèque de liaisons Java. Pour créer correctement ces liaisons, une bibliothèque de liaisons Java peut toujours nécessiter des modifications manuelles, mais pas autant qu’une approche JNI pure. Pour plus d’informations sur les bibliothèques de liaisons Java, consultez [liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md) . 
 
-La première technique est une approche plus automatisée et déclarative pour la liaison de bibliothèques de Java. Il implique l’utilisation de Visual Studio pour Mac ou un type de projet Visual Studio qui est fourni par Xamarin.Android &ndash; la bibliothèque de liaisons Java. Pour créer ces liaisons, une bibliothèque de liaisons Java peuvent toujours nécessiter que certaines modifications manuelles, mais pas autant que serait une approche JNI pure. Consultez [liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md) pour plus d’informations sur les bibliothèques Java de liaison. 
+La deuxième technique, qui utilise JNI, fonctionne à un niveau nettement inférieur, mais peut offrir un contrôle et un accès plus précis aux méthodes Java qui ne seraient normalement pas accessibles par le biais d’une bibliothèque de liaisons Java. 
 
-La deuxième technique, à l’aide de JNI, fonctionne à un niveau bien inférieur, mais peut fournir pour un contrôle plus précis et accéder aux méthodes Java qui ne seraient généralement pas accessibles via une bibliothèque de liaison de Java. 
-
-La troisième technique est radicalement différente provenant des deux précédentes : le portage du code à partir de Java à C#. Portage du code d’une langue à l’autre peut être un processus très fastidieuse, mais il est possible de réduire que les efforts à l’aide d’un outil appelé *netteté*. Aiguiser est un outil open source qui est un Java-à-C# convertisseur. 
+La troisième technique est radicalement différente des deux précédentes: Portage du code de Java vers C#. Le portage du code d’un langage à un autre peut être un processus très fastidieux, mais il est possible de réduire ce travail à l’aide d’un outil appelé *net*. La netteté est un outil open source qui est un Java-C# to-Converter. 
 
 
 
 ## <a name="summary"></a>Récapitulatif
 
-Ce document fourni une vue d’ensemble de certaines des différentes méthodes que les bibliothèques à partir de Java peuvent être réutilisés dans une application Xamarin.Android. Il a introduit les concepts de liaisons et gérées callable wrappers et décrit les options pour le portage de code Java C#. 
+Ce document a fourni une vue d’ensemble des différentes façons dont les bibliothèques de Java peuvent être réutilisées dans une application Xamarin. Android. Il a introduit les concepts des liaisons et des wrappers pouvant être appelés et a abordé les options de Portage du code C#Java vers. 
 
 
 ## <a name="related-links"></a>Liens associés
@@ -52,4 +51,4 @@ Ce document fourni une vue d’ensemble de certaines des différentes méthodes 
 - [Liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md)
 - [Utilisation de JNI](~/android/platform/java-integration/working-with-jni.md)
 - [Améliorer la netteté](https://github.com/slluis/sharpen)
-- [Interface Native Java](http://docs.oracle.com/javase/7/docs/technotes~/jni/index.html)
+- [Interface native Java](http://docs.oracle.com/javase/7/docs/technotes~/jni/index.html)

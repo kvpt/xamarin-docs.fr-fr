@@ -1,39 +1,39 @@
 ---
-title: Barre de navigation
+title: Barre de navigation Xamarin. Android
 ms.prod: xamarin
 ms.assetid: 6023DB7E-9E72-4B90-A96A-11BC297B8A3D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 9455cac81a0f9ea81e08cf63397e45c1698e1c1b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 70e009ed1a017b2336b6acb443a4d9cd87ff3e68
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153643"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510270"
 ---
-# <a name="navigation-bar"></a>Barre de navigation
+# <a name="xamarinandroid-navigation-bar"></a>Barre de navigation Xamarin. Android
 
-Android 4 a introduit une nouvelle fonctionnalité d’interface d’utilisateur système appelée un *barre de Navigation*, qui fournit des contrôles de navigation sur les appareils qui n’incluent pas les boutons matériels pour **accueil**, **précédent** , et **Menu**.
-La capture d’écran suivante montre la barre de Navigation à partir d’un appareil Nexus Prime :
+Android 4 a introduit une nouvelle fonctionnalité de l’interface utilisateur système, appelée *barre de navigation*, qui fournit des contrôles de navigation sur les appareils qui n’incluent pas les boutons matériels pour la **page de démarrage**, l' **arrière-plan**et le **menu**.
+La capture d’écran suivante montre la barre de navigation d’un appareil principal de passerelle:
 
- [![Exemple d’une barre de navigation Android](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
+ [![Exemple de barre de navigation Android](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
-Plusieurs nouveaux indicateurs sont disponibles afin de contrôler la visibilité de la barre de Navigation et de ses contrôles, ainsi que la visibilité de la barre système qui a été introduite dans 3 Android. Les indicateurs sont définis dans le `Android.View.View` classe et sont répertoriées ci-dessous :
+Plusieurs nouveaux indicateurs sont disponibles pour contrôler la visibilité de la barre de navigation et de ses contrôles, ainsi que la visibilité de la barre système qui a été introduite dans Android 3. Les indicateurs sont définis dans la `Android.View.View` classe et sont répertoriés ci-dessous:
 
--   `SystemUiFlagVisible` &ndash; La barre de Navigation rend visible. 
--   `SystemUiFlagLowProfile` &ndash; DIMS contrôles dans la barre de Navigation. 
--   `SystemUiFlagHideNavigation` &ndash; Masque la barre de Navigation. 
+-   `SystemUiFlagVisible`&ndash; Rend la barre de navigation visible. 
+-   `SystemUiFlagLowProfile`&ndash; Estompe les contrôles dans la barre de navigation. 
+-   `SystemUiFlagHideNavigation`&ndash; Masque la barre de navigation. 
 
 
-Ces indicateurs peuvent être appliquées à n’importe quelle vue dans la hiérarchie d’affichage en définissant le `SystemUiVisibility` propriété. Si plusieurs vues possède cette propriété, le système les combine avec une opération OR et les applique en tant que la fenêtre dans laquelle les indicateurs sont définis conserve le focus. Lorsque vous supprimez une vue, des indicateurs qu’elle a définie seront également supprimées.
+Ces indicateurs peuvent être appliqués à n’importe quelle vue de la hiérarchie d’affichage `SystemUiVisibility` en définissant la propriété. Si cette propriété est définie pour plusieurs vues, le système les associe à une opération ou et les applique tant que la fenêtre dans laquelle les indicateurs sont définis conserve le focus. Lorsque vous supprimez une vue, tous les indicateurs qu’elle a définis sont également supprimés.
 
-L’exemple suivant montre une application simple où cliquer sur les boutons de la modification la `SystemUiVisibility`:
+L’exemple suivant montre une application simple où le fait de cliquer sur l’un `SystemUiVisibility`des boutons modifie le:
 
- [![Captures d’écran illustrant Visible, le profil de faible et SystemUiVisibility masqué](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
+ [![Captures d’écran illustrant les SystemUiVisibility visibles, faibles et masqués](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
-Le code pour modifier le `SystemUiVisibility` définit la propriété sur un `TextView` à partir de chaque bouton Cliquez sur Gestionnaire d’événements comme indiqué ci-dessous :
+Le code permettant de modifier `SystemUiVisibility` le définit la propriété sur `TextView` un à partir du gestionnaire d’événements Click de chaque bouton, comme indiqué ci-dessous:
 
 ```csharp
 var tv = FindViewById<TextView> (Resource.Id.systemUiFlagTextView);
@@ -56,7 +56,7 @@ visibleButton.Click += delegate {
 }
 ```
 
-En outre, un `SystemUiVisibility` modifier déclenche un `SystemUiVisibilityChange` événement. Tout comme paramètre le `SystemUiVisibility` propriété, un gestionnaire pour le `SystemUiVisibilityChange` événement peut être inscrits pour n’importe quelle vue de la hiérarchie. Par exemple, le code ci-dessous utilise le `TextView` instance pour vous inscrire à l’événement :
+En outre, `SystemUiVisibility` une modification déclenche `SystemUiVisibilityChange` un événement. Tout comme la définition `SystemUiVisibility` de la propriété, un gestionnaire `SystemUiVisibilityChange` de l’événement peut être enregistré pour n’importe quelle vue de la hiérarchie. Par exemple, le code ci-dessous `TextView` utilise l’instance pour s’inscrire à l’événement:
 
 ```csharp
 tv.SystemUiVisibilityChange +=
@@ -70,5 +70,5 @@ tv.SystemUiVisibilityChange +=
 ## <a name="related-links"></a>Liens associés
 
 - [SystemUIVisibilityDemo (exemple)](https://developer.xamarin.com/samples/monodroid/SystemUIVisibilityDemo/)
-- [Présentation d’Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme 4.0 Android](https://developer.android.com/sdk/android-4.0.html)
+- [Présentation du sandwich glacé](http://www.android.com/about/ice-cream-sandwich/)
+- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

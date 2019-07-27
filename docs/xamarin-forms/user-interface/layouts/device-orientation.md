@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 2c218b030739dee8d3e49fab4e5c2a70ff5e71e0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970990"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511832"
 ---
 # <a name="device-orientation"></a>Orientation de l’appareil
 
@@ -71,7 +71,7 @@ Xamarin.Android prend en charge plusieurs options permettant de spécifier l’o
 - **Paysage** &ndash; force l’orientation de l’application soit paysage, quelles que soient les données de capteur.
 - **Portrait** &ndash; force l’orientation de l’application à être portrait, quelles que soient les données de capteur.
 - **Utilisateur** &ndash; entraîne l’application qui sera présenté à l’aide de la préférence d’orientation de l’utilisateur.
-- **Derrière** &ndash; provoque l’orientation de l’application à être identique à l’orientation de la [activité](https://developer.xamarin.com/api/type/Android.App.Activity/) derrière lui.
+- **Derrière** &ndash; provoque l’orientation de l’application à être identique à l’orientation de la [activité](xref:Android.App.Activity) derrière lui.
 - **CAPTEUR** &ndash; entraîne l’orientation de l’application sera déterminé par le capteur, même si l’utilisateur a désactivé la rotation automatique.
 - **SensorLandscape** &ndash; oblige l’application à utiliser l’orientation paysage lors de l’utilisation des données de capteur pour modifier la direction de l’écran est face (afin que l’écran n’est pas visible en tant que de haut en bas).
 - **SensorPortrait** &ndash; oblige l’application à utiliser une orientation portrait lors de l’utilisation des données de capteur pour modifier la direction de l’écran est face (afin que l’écran n’est pas visible en tant que de haut en bas).
