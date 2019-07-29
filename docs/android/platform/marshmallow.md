@@ -1,290 +1,290 @@
 ---
-title: Fonctionnalités de marshmallow
-description: Cet article vous aide à commencer à utiliser dans l’utilisation de Xamarin.Android pour développer des applications pour Android Marshmallow 6.0.
+title: Fonctionnalités de Marshmallow
+description: Cet article vous aide à utiliser Xamarin. Android pour développer des applications pour Android 6,0 Marshmallow.
 ms.prod: xamarin
 ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a396f4fe59db36b134843d2538bcb470a452a85b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1048d954656152f47509887ed6acf21962a787b2
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158001"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510473"
 ---
-# <a name="marshmallow-features"></a>Fonctionnalités de marshmallow
+# <a name="marshmallow-features"></a>Fonctionnalités de Marshmallow
 
-_Cet article vous aide à commencer à utiliser dans l’utilisation de Xamarin.Android pour développer des applications pour Android Marshmallow 6.0._
+_Cet article vous aide à utiliser Xamarin. Android pour développer des applications pour Android 6,0 Marshmallow._
 
-Cet article fournit une description des nouvelles fonctionnalités dans Android Marshmallow 6.0, explique comment préparer Xamarin.Android pour le développement d’Android Marshmallow et fournit des liens vers des exemples d’applications qui illustrent comment utiliser de nouveau Android Marshmallow fonctionnalités dans les applications Xamarin.Android. 
+Cet article fournit une présentation des nouvelles fonctionnalités d’Android 6,0 Marshmallow, explique comment préparer Xamarin. Android pour le développement Android Marshmallow et fournit des liens vers des exemples d’applications qui illustrent comment utiliser les nouveaux Marshmallow Android fonctionnalités des applications Xamarin. Android. 
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
-[Android Marshmallow 6.0](https://developer.android.com/about/versions/marshmallow/index.html), est la prochaine Android majeure version après Android Lollipop.
-Xamarin.Android prend en charge d’Android Marshmallow, qui inclut :
+[Android 6,0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html), est la prochaine version d’Android suivante après Android Lollipop.
+Xamarin. Android prend en charge Android Marshmallow et comprend les éléments suivants:
 
--   **Liaisons d’API 23/Android 6.0** &ndash; Android 6.0 ajoute plusieurs nouvelles API pour les nouvelles fonctionnalités décrites ci-dessous ; ces API sont disponibles pour les applications Xamarin.Android lorsque vous ciblez le niveau d’API 23. Pour plus d’informations sur les API 6.0 Android, consultez [Android 6.0 API](https://developer.android.com/preview/api-overview.html). 
+-   **Liaisons de l’API 23/Android 6,0** &ndash; Android 6,0 ajoute de nombreuses nouvelles API pour les nouvelles fonctionnalités décrites ci-dessous. ces API sont disponibles pour les applications Xamarin. Android quand vous ciblez le niveau d’API 23. Pour plus d’informations sur les API Android 6,0, consultez [API android 6,0](https://developer.android.com/preview/api-overview.html). 
 
-[![Images de héros de tablettes et téléphones Marshmallow en cours d’exécution](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
+[![Images héros de tablettes et de téléphones exécutant Marshmallow](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
-Bien que la version Marshmallow est principalement sur « polonais et qualité », il fournit également des nombreuses nouvelles fonctionnalités d’intérêt pour les développeurs Xamarin.Android. Ces fonctions incluent : 
+Bien que la version Marshmallow soit principalement axée sur le «polonais et la qualité», elle offre également de nombreuses nouvelles fonctionnalités intéressantes pour les développeurs Xamarin. Android. Ces fonctions incluent : 
 
--   **Autorisations d’exécution** &ndash; cette amélioration rend possible pour les utilisateurs à approuver les autorisations de sécurité sur un cas par cas en cours d’exécution. 
+-   **Autorisations d’exécution** &ndash; Cette amélioration permet aux utilisateurs d’approuver les autorisations de sécurité au cas par cas au moment de l’exécution. 
 
--   **Améliorations de l’authentification** &ndash; à compter d’Android Marshmallow, applications peuvent désormais utiliser capteurs d’empreinte digitale pour authentifier les utilisateurs et un nouveau *confirmer les informations d’identification* fonctionnalité réduit le besoin pour l’entrée mots de passe. 
+-   **Améliorations de l’authentification** À compter d’Android Marshmallow, les applications peuvent désormais utiliser des capteurs d’empreintes digitales pour authentifier les utilisateurs, et une nouvelle fonctionnalité de *confirmation des informations d’identification* réduit la nécessité d’entrer des mots de passe. &ndash; 
 
--   **Liaison de l’application** &ndash; cette fonctionnalité permet d’éliminer la nécessité de disposer la **application sélecteur** contextuelle en associant automatiquement des applications avec des domaines web. 
+-   **Liaison d’applications** Cette fonctionnalité permet d’éviter d’avoir à faire apparaître le **Sélecteur d’application** en associant automatiquement les applications aux domaines Web. &ndash; 
 
--   **Diriger le partage** &ndash; vous pouvez définir *directe des cibles de partage* qui rendent partage rapide et intuitive pour les utilisateurs ; cette fonctionnalité permet de partager du contenu avec d’autres applications de la solution. 
+-   **Partage direct** Vous pouvez définir des *cibles de partage direct* qui rendent le partage rapide et intuitif pour les utilisateurs; cette fonctionnalité permet à utiliseront de partager du contenu avec d’autres applications. &ndash; 
 
--   **Voix Interactions** &ndash; cette nouvelle API permet de générer des fonctionnalités vocales conversationnel dans votre application. 
+-   **Interactions vocales** &ndash; Cette nouvelle API vous permet de créer des fonctionnalités vocales de conversation dans votre application. 
 
--   **Mode d’affichage de 4 K** &ndash; dans Android Marshmallow, votre application peut demander un 4 K résolution d’affichage sur du matériel qui prend en charge. 
+-   **mode d’affichage 4k** &ndash; Dans Android Marshmallow, votre application peut demander une résolution d’affichage 4k sur le matériel qui la prend en charge. 
 
--   **Nouvelles fonctionnalités Audio** &ndash; Marshmallow à compter, Android prend désormais en charge le protocole MIDI. Il fournit également les nouvelles classes pour créer des objets de la lecture et capture audio numérique, et il offre de nouvelles raccordements API permettant d’associer des périphériques audio et d’entrée. 
+-   **Nouvelles fonctionnalités audio** &ndash; À compter de Marshmallow, Android prend désormais en charge le protocole midi. Il fournit également de nouvelles classes pour créer des objets de capture et de lecture audio numériques, et propose de nouveaux hooks d’API pour associer les périphériques audio et d’entrée. 
 
--   **Nouvelles fonctionnalités vidéo** &ndash; Marshmallow fournit une nouvelle classe qui permet aux applications d’effectuer le rendu des flux audio et vidéo synchronisés ; cette classe fournit également la prise en charge pour les taux de lecture dynamique. 
+-   **Nouvelles fonctionnalités vidéo** &ndash; Marshmallow fournit une nouvelle classe qui aide les applications à effectuer le rendu des flux audio et vidéo synchronisés. cette classe fournit également la prise en charge de la vitesse de lecture dynamique. 
 
--   **Android for Work** &ndash; Marshmallow inclut des contrôles améliorés pour les appareils d’entreprise, le mode mono-utilisateur. Il prend en charge l’installation en mode silencieux et désinstaller des applications par le propriétaire de l’appareil, l’acceptation automatique des mises à jour système, la gestion de certificat améliorée, suivi de l’utilisation de données, la gestion des autorisations et notifications d’état de travail. 
+-   **Android for Work** &ndash; Marshmallow inclut des contrôles améliorés pour les appareils d’entreprise et les appareils à utilisateur unique. Il prend en charge l’installation et la désinstallation silencieuses des applications par le propriétaire de l’appareil, l’acceptation automatique des mises à jour du système, la gestion améliorée des certificats, le suivi de l’utilisation des données, la gestion des autorisations et les notifications d’État du travail. 
 
--   **Bibliothèque de prise en charge de conception matériaux** &ndash; le nouveau *bibliothèque de prise en charge de conception* fournit des composants de conception et de modèles qui facilite la générer Material Design apparence dans votre application. 
+-   **Bibliothèque de support** pour la conception de matériaux La nouvelle *bibliothèque de prise en charge* de la conception fournit des composants et des modèles de conception qui facilitent la création de l’apparence de la conception matérielle dans votre application. &ndash; 
 
-En outre, les nombreuses mises à jour de bibliothèque Android core ont été publiés avec Android M, et ces mises à jour fournissent de nouvelles fonctionnalités pour Android M et versions antérieures d’Android.
+En outre, de nombreuses mises à jour de la bibliothèque Android de base ont été publiées avec Android M, et ces mises à jour fournissent de nouvelles fonctionnalités pour Android M et les versions antérieures d’Android.
 
-En outre, les nombreuses mises à jour de bibliothèque Android core ont été publiés avec Android Marshmallow, et ces mises à jour fournissent de nouvelles fonctionnalités pour Android Marshmallow et versions antérieures d’Android. Cet article explique comment créer des applications avec Android Marshmallow, et il fournit qu'une vue d’ensemble de la nouvelle fonctionnalité met en évidence dans Android 6.0. 
+En outre, de nombreuses mises à jour de la bibliothèque Android de base ont été publiées avec Android Marshmallow. ces mises à jour fournissent de nouvelles fonctionnalités pour Android Marshmallow et les versions antérieures d’Android. Cet article explique comment prendre en main la création d’applications avec Android Marshmallow et fournit une vue d’ensemble des nouvelles fonctionnalités de Android 6,0. 
 
 ## <a name="requirements"></a>Configuration requise
 
-Les éléments suivants sont nécessaire pour utiliser les nouvelles fonctionnalités d’Android Marshmallow dans les applications basées sur Xamarin : 
+Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités Android Marshmallow dans les applications basées sur Xamarin: 
 
--   **Xamarin.Android** &ndash; Xamarin.Android 5.1.7.12 ou version ultérieure doit être installé et configuré avec Visual Studio ou Xamarin Studio.
+-   **Xamarin. Android** &ndash; Xamarin. Android 5.1.7.12 ou version ultérieure doit être installé et configuré avec Visual Studio ou Xamarin Studio.
 
--   **Visual Studio pour Mac** ou **Visual Studio** &ndash; si vous utilisez Visual Studio pour Mac version 5.9.7.22 ou ultérieure est requise. Si vous utilisez Visual Studio, version 3.11.1537 ou ultérieure des outils Xamarin pour Visual Studio est nécessaire. 
+-   **Visual Studio pour Mac** ou **Visual Studio** &ndash; si vous utilisez Visual Studio pour Mac, version 5.9.7.22 ou ultérieure est requis. Si vous utilisez Visual Studio, vous devez disposer de la version 3.11.1537 ou d’une version ultérieure des outils Xamarin pour Visual Studio. 
 
--   **Kit de développement logiciel Android** &ndash; Android 6.0 SDK (API 23) ou version ultérieure doit être installé via le gestionnaire Android SDK.
+-   **Android SDK** &ndash; Android SDK 6,0 (API 23) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
--   **Kit de développement Java** &ndash; Xamarin.Android nécessite [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ou version ultérieure si vous développez pour le niveau d’API 24 ou supérieure (JDK 1.8 prend également en charge les niveaux d’API antérieures à 24, y compris Marshmallow). La version 64 bits du JDK 1.8 est requise si vous utilisez des contrôles personnalisés ou le Générateur d’aperçu de formulaires.
+-   **Kit de développement Java** Xamarin. Android nécessite [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ou une version ultérieure si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24, y compris Marshmallow). &ndash; La version 64 bits de JDK 1,8 est requise si vous utilisez des contrôles personnalisés ou le générateur d’aperçu de formulaires.
 
-Vous pouvez continuer à utiliser [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous êtes développement spécifiquement pour le niveau d’API 23 ou une version antérieure. 
+Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur. 
 
 
 ## <a name="getting-started"></a>Prise en main
 
-Pour commencer à l’aide d’Android Marshmallow avec Xamarin.Android, vous devez télécharger et installer les derniers outils et les packages de kit de développement logiciel avant de pouvoir créer un projet Android Marshmallow : 
+Pour commencer à utiliser Android Marshmallow avec Xamarin. Android, vous devez télécharger et installer les derniers outils et packages du kit de développement logiciel (SDK) avant de pouvoir créer un projet Android Marshmallow: 
 
-1.  Installer les dernières mises à jour de Xamarin à partir de la **Stable** canal. 
+1.  Installez les dernières mises à jour Xamarin à partir du canal **stable** . 
 
-2.  Installez les outils et les packages du Kit Android SDK Marshmallow 6.0.
+2.  Installez les outils et packages du kit de développement logiciel (SDK) Android 6,0 Marshmallow.
 
-3.  Créer un nouveau projet Xamarin.Android qui cible Android 6.0 Marshmallow (API niveau 23). 
+3.  Créez un nouveau projet Xamarin. Android qui cible Android 6,0 Marshmallow (niveau d’API 23). 
 
-4.  Configurer un appareil ou un émulateur pour Android Marshmallow.
+4.  Configurez un émulateur ou un appareil pour Android Marshmallow.
 
-Chacune de ces étapes est expliquée dans les sections suivantes :
-
-
-### <a name="install-xamarin-updates"></a>Installer les mises à jour de Xamarin
-
-Pour mettre à jour Xamarin afin qu’il inclue la prise en charge d’Android Marshmallow 6.0, modifiez le canal de mise à jour en **Stable** et installer toutes les mises à jour. Pour plus d’informations sur l’installation des mises à jour à partir du canal de mises à jour, consultez [modifier le canal mises à jour](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel). 
+Chacune de ces étapes est expliquée dans les sections suivantes:
 
 
-### <a name="install-the-android-60-sdk"></a>Installez le SDK Android 6.0
+### <a name="install-xamarin-updates"></a>Installer les mises à jour Xamarin
 
-Pour créer un projet Xamarin.Android pour Android Marshmallow, vous devez tout d’abord utiliser le gestionnaire Android SDK pour installer le Kit de développement logiciel Android 6.0 :
-
--   Démarrer le gestionnaire Android SDK (dans Visual Studio pour Mac, utilisez **Outils > Gestionnaire du kit SDK**; dans Visual Studio, utilisez **Outils > Android > Gestionnaire Android SDK**) et installez la plus récente d’Android SDK Tools :
-
-    [![En sélectionnant Outils Android SDK dans le Gestionnaire de kit de développement logiciel Android.](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
-
--   En outre, installez la dernière version **Android 6.0** packages SDK :
-
-    [![Sélectionner les packages de kit de développement logiciel Android 6.0 dans le Gestionnaire de kit de développement logiciel Android.](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
-
-Vous devez installer la version d’Android SDK Tools 24.3.4 ou version ultérieure.
-Pour plus d’informations sur l’utilisation du gestionnaire Android SDK pour installer le Kit de développement logiciel Android 6.0, consultez [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html).
+Pour mettre à jour Xamarin afin qu’il comprenne la prise en charge d’Android 6,0 Marshmallow, modifiez le canal de mise à jour en **stable** et installez toutes les mises à jour. Pour plus d’informations sur l’installation des mises à jour à partir du canal de mise à jour, consultez [modifier le canal des mises à jour](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel). 
 
 
+### <a name="install-the-android-60-sdk"></a>Installer le kit de développement logiciel (SDK) Android 6,0
 
-### <a name="start-a-xamarinandroid-project"></a>Démarrer un projet Xamarin.Android
+Pour créer un projet Xamarin. Android pour Android Marshmallow, vous devez d’abord utiliser le gestionnaire de Android SDK pour installer le kit de développement logiciel (SDK) Android 6,0:
 
-Créer un nouveau projet Xamarin.Android. Si vous êtes novice en développement Android avec Xamarin, consultez [Hello, Android](~/android/get-started/hello-android/index.md) pour en savoir plus sur la création de projets Android. 
+-   Démarrez le gestionnaire de Android SDK (dans Visual Studio pour Mac, utilisez **outils > gestionnaire du kit de développement logiciel (SDK**); dans Visual Studio, utilisez les **outils > Android > Android SDK Manager**) et installez les Android SDK Tools les plus récents:
 
-Lorsque vous créez un projet Android, vous devez configurer les paramètres de version à la cible Android MarshMallow 6.0. Pour cibler votre projet pour Marshmallow, vous devez configurer votre projet pour **niveau d’API 23 (v6.0 Xamarin.Android prise en charge)**. Pour plus d’informations sur la configuration des niveaux de niveau d’API Android, consultez [présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
+    [![Sélection des outils de Android SDK dans le gestionnaire de Android SDK](marshmallow-images/mnc-preview-tools.png)](marshmallow-images/mnc-preview-tools.png#lightbox)
+
+-   Installez également les derniers packages du kit de développement logiciel (SDK) **Android 6,0** :
+
+    [![Sélection de packages du kit de développement logiciel (SDK) Android 6,0 dans le gestionnaire de Android SDK](marshmallow-images/mnc-preview-packages.png)](marshmallow-images/mnc-preview-packages.png#lightbox)
+
+Vous devez installer Android SDK Tools révision 24.3.4 ou version ultérieure.
+Pour plus d’informations sur l’utilisation du gestionnaire de Android SDK pour installer le kit de développement logiciel (SDK) Android 6,0, consultez [SDK Manager](https://developer.android.com/tools/help/sdk-manager.html).
 
 
 
-### <a name="configure-an-emulator-or-device"></a>Configurer un émulateur ou un périphérique
+### <a name="start-a-xamarinandroid-project"></a>Démarrer un projet Xamarin. Android
 
-Si vous utilisez un émulateur, démarrez le Gestionnaire d’AVD Android et créer un nouvel appareil en utilisant les paramètres suivants :
+Créez un projet Xamarin. Android. Si vous débutez avec le développement Android avec Xamarin, consultez [Hello, Android](~/android/get-started/hello-android/index.md) pour en savoir plus sur la création de projets Android. 
 
--   Périphérique : Nexus 5, 6 ou 9.
--   Cible : Android 6.0 - niveau d’API 23
--   ABI : x86
+Lorsque vous créez un projet Android, vous devez configurer les paramètres de version pour cibler Android 6,0 MarshMallow. Pour cibler votre projet pour Marshmallow, vous devez configurer votre projet pour l' **API de niveau 23 (prise en charge de Xamarin. Android v 6.0)** . Pour plus d’informations sur la configuration des niveaux de niveau de l’API Android, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
 
-Par exemple, cet appareil virtuel est configuré pour émuler un Nexus 5 :
 
-[![Configuration d’un AVD à l’aide de périphérique Nexus 5, Android 6.0 cible et Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
-Si vous utilisez un appareil physique comme un Nexus 5, 6 ou 9, vous pouvez installer une image d’aperçu d’Android Marshmallow. Pour plus d’informations sur la mise à jour de votre appareil vers Android Marshmallow, consultez [Images du système matériel](https://developer.android.com/preview/download.html#images).
+### <a name="configure-an-emulator-or-device"></a>Configurer un émulateur ou un appareil
+
+Si vous utilisez un émulateur, démarrez Android AVD Manager et créez un appareil à l’aide des paramètres suivants:
+
+-   Périphérique : La réversion est 5, 6 ou 9.
+-   Cible : Android 6,0-API de niveau 23
+-   ABI: x86
+
+Par exemple, cet appareil virtuel est configuré pour émuler une passerelle 5:
+
+[![Configuration d’une AVD à l’aide d’un appareil de passerelle 5, d’une cible Android 6,0 et d’Intel Atom (x86)](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
+
+Si vous utilisez un appareil physique tel qu’un type de passerelle 5, 6 ou 9, vous pouvez installer une image d’aperçu d’Android Marshmallow. Pour plus d’informations sur la mise à jour de votre appareil vers Android Marshmallow, consultez [images système matérielles](https://developer.android.com/preview/download.html#images).
 
 
 
 ## <a name="new-features"></a>Nouvelles fonctionnalités
 
-La plupart des modifications introduites dans Android Marshmallow visent à améliorer l’expérience utilisateur Android, l’augmentation des performances et correction des bogues. Toutefois, Marshmallow a également introduit des modifications considérables aux notions de base de la plateforme Android. Les sections suivantes, mettez en surbrillance ces améliorations et fournissent des liens pour vous aider à commencer en utilisant les nouvelles fonctionnalités d’Android Marshmallow dans votre application. 
+La plupart des modifications introduites dans Android Marshmallow sont axées sur l’amélioration de l’expérience utilisateur Android, l’augmentation des performances et la résolution des bogues. Toutefois, Marshmallow a également introduit de nombreuses modifications apportées aux notions de base de la plateforme Android. Les sections suivantes mettent en évidence ces améliorations et fournissent des liens pour vous aider à commencer à utiliser les nouvelles fonctionnalités Android Marshmallow dans votre application. 
 
 
 
 ### <a name="runtime-permissions"></a>Autorisations d’exécution
 
-Le système d’autorisations Android a été considérablement optimisé et simplifié depuis Android Lollipop. Dans Android Marshmallow, les utilisateurs accordent des autorisations sur une base de cas par cas lors de l’exécution plutôt qu’au moment de l’installation. Pour prendre en charge cette fonctionnalité sur Android Marshmallow et versions ultérieures, vous concevez votre application pour inviter l’utilisateur pour les autorisations lors de l’exécution (dans le contexte d’où les autorisations sont nécessaires). Cette modification facilite la démarrer à l’aide de votre application immédiatement, car elle simplifie le processus d’installation et la mise à niveau de votre application. 
+Le système d’autorisations Android a été considérablement optimisé et simplifié depuis Android Lollipop. Dans Android Marshmallow, les utilisateurs accordent des autorisations au cas par cas au moment de l’exécution plutôt qu’au moment de l’installation. Pour prendre en charge cette fonctionnalité sur Android Marshmallow et versions ultérieures, vous concevez votre application pour inviter l’utilisateur à entrer des autorisations au moment de l’exécution (dans le contexte où les autorisations sont nécessaires). Grâce à cette modification, il est plus facile pour les utilisateurs de commencer à utiliser votre application immédiatement, car elle simplifie le processus d’installation et de mise à niveau de votre application. 
 
-Consultez [demande d’autorisations Runtime dans Android Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) pour plus d’informations (y compris les exemples de code) sur l’implémentation des autorisations d’exécution dans les applications Xamarin.Android.
-Xamarin fournit également un exemple d’application qui illustre le fonctionnement des autorisations d’exécution dans Android Marshmallow (et versions ultérieures) : [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
+Pour plus d’informations sur l’implémentation des autorisations d’exécution dans les applications Xamarin. Android, consultez [demande d’autorisations d’exécution dans Android Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) .
+Xamarin fournit également un exemple d’application qui illustre le fonctionnement des autorisations d’exécution dans Android Marshmallow (et versions ultérieures): [RuntimePermissions](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions).
 
-Cet exemple d’application montre les points suivants :
+Cet exemple d’application illustre les éléments suivants:
 
--   Comment vérifier et demander des autorisations en cours d’exécution.
--   Guide pratique pour déclarer des autorisations pour les appareils Android M.
+-   Comment vérifier et demander des autorisations au moment de l’exécution.
+-   Comment déclarer des autorisations pour les appareils Android M.
 
-Pour utiliser cet exemple d’application :
+Pour utiliser cet exemple d’application:
 
-1.  Appuyez sur la **caméra** ou **Contacts** demande de boutons à afficher les autorisations d’un dialogue.
-2.  Accorder l’autorisation de visualiser des fragments de Contacts ou une caméra.
+1.  Appuyez sur les boutons **caméra** ou **contacts** pour afficher une boîte de dialogue de demande d’autorisations.
+2.  Accordez l’autorisation d’afficher les fragments de l’appareil photo ou des contacts.
 
-Pour plus d’informations sur les nouvelles fonctionnalités d’autorisations de runtime dans Android Marshmallow, consultez [fonctionne avec les autorisations système](https://developer.android.com/preview/features/runtime-permissions.html).
+Pour plus d’informations sur les nouvelles fonctionnalités d’autorisations du runtime dans Android Marshmallow, consultez [utilisation des autorisations système](https://developer.android.com/preview/features/runtime-permissions.html).
 
 
 
 ### <a name="authentication-enhancements"></a>Améliorations de l’authentification
 
-Android Marshmallow inclut deux améliorations d’authentification qui aident à éliminer la nécessité pour les mots de passe :
+Android Marshmallow comprend deux améliorations d’authentification qui permettent d’éliminer le besoin de mots de passe:
 
--   **L’authentification de l’empreinte digitale** &ndash; utilise une analyse de l’empreinte digitale pour authentifier les utilisateurs.
+-   **Authentification par empreinte digitale** &ndash; Utilise une analyse d’empreintes digitales pour authentifier les utilisateurs.
 
--   **Confirmer les informations d’identification** &ndash; authentifie les utilisateurs en fonction de la durée pendant laquelle l’appareil a été déverrouillée.
+-   **Confirmer les informations d’identification** &ndash; Authentifie les utilisateurs en fonction de la durée de déverrouillage de l’appareil.
 
 Les liens et les exemples d’applications décrits ci-après peuvent vous aider à vous familiariser avec ces nouvelles fonctionnalités.
 
 
 #### <a name="fingerprint-authentication"></a>Authentification par empreinte digitale
 
-Sur les appareils qui prennent en charge d’analyse matérielle des empreintes digitales, vous pouvez utiliser la nouvelle `FingerPrintManager` classe pour authentifier un utilisateur.
+Sur les appareils qui prennent en charge le matériel de numérisation d’empreintes digitales, vous pouvez utiliser la nouvelle `FingerPrintManager` classe pour authentifier un utilisateur.
 Pour plus d’informations sur la fonctionnalité d’authentification par empreinte digitale dans Android Marshmallow, consultez [authentification par empreinte digitale](https://developer.android.com/preview/api-overview.html#fingerprint-authentication).
 
-Xamarin fournit un exemple d’application qui illustre l’utilisation d’empreintes digitales inscrits pour authentifier un utilisateur dans votre application : [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
+Xamarin fournit un exemple d’application qui illustre l’utilisation d’empreintes digitales inscrites pour authentifier un utilisateur dans votre application: [FingerprintDialog](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog).
 
-Pour utiliser cet exemple d’application :
+Pour utiliser cet exemple d’application:
 
-1.  Touchez la **achat** bouton pour ouvrir une boîte de dialogue de l’authentification par empreinte digitale.
-2.  Analyser dans votre empreinte digitale inscrit pour s’authentifier.
+1.  Appuyez sur le bouton **acheter** pour ouvrir une boîte de dialogue d’authentification par empreinte digitale.
+2.  Analysez dans votre empreinte digitale inscrite pour vous authentifier.
 
 Notez que cet exemple d’application nécessite un appareil avec un lecteur d’empreintes digitales.
-Cette application ne stocke pas vos empreintes digitales (ou votre mot de passe).
+Cette application ne stocke pas votre empreinte digitale (ou votre mot de passe).
 
 
 
 #### <a name="voice-interactions"></a>Interactions vocales
 
-La nouvelle fonctionnalité d’Interactions vocales introduite dans Android Marshmallow permet aux utilisateurs de votre application à utiliser la voix pour confirmer actions et sélectionner parmi une liste d’options. Pour plus d’informations sur les Interactions vocales, consultez [vue d’ensemble de l’API d’Interaction de voix](https://developers.google.com/voice-actions/interaction/). 
+La nouvelle fonctionnalité interactions vocales introduite dans Android Marshmallow permet aux utilisateurs de votre application d’utiliser leur voix pour confirmer des actions et d’effectuer une sélection dans une liste d’options. Pour plus d’informations sur les interactions vocales, consultez [vue d’ensemble de l’API d’interaction vocale](https://developers.google.com/voice-actions/interaction/). 
 
-Consultez [ajouter une Conversation à votre application Android avec des Interactions vocales](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/) pour plus d’informations (y compris les exemples de code) sur l’implémentation des Interactions vocales dans les applications Xamarin.Android.
-Vous trouverez un exemple d’application qui illustre comment utiliser l’API d’Interaction vocale dans une application Xamarin.Android : [Voix Interactions](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
+Pour plus d’informations sur l’implémentation des interactions vocales dans les applications Xamarin. Android, consultez [Ajouter une conversation à votre application Android avec des interactions vocales](https://blog.xamarin.com/add-a-conversation-to-your-android-app-with-voice-interactions/) (y compris des exemples de code).
+Un exemple d’application est disponible qui illustre l’utilisation de l’API d’interaction vocale dans une application Xamarin. Android: [Interactions vocales](https://github.com/jamesmontemagno/MarshmallowSamples/tree/master/VoiceInteractions).
 
 
 
 #### <a name="confirm-credential"></a>Confirmer les informations d’identification
 
-À l’aide de la nouvelle *confirmer les informations d’identification* fonctionnalité d’Android Marshmallow, vous pouvez libérer les utilisateurs d’avoir à mémoriser et entrez les mots de passe spécifiques de l’application en authentifiant les selon la durée pendant laquelle leur appareil a été déverrouillée.
-Pour ce faire, vous utilisez la nouvelle `SetUserAuthenticationValidityDurationSeconds` méthode de la `KeyGenerator`. Utilisez le `KeyGuardManager`de `CreateConfirmDeviceCredentialIntent` (méthode) à se réauthentifier l’utilisateur à partir de votre application. Pour plus d’informations sur cette nouvelle fonctionnalité dans Android Marshmallow, consultez [confirmer les informations d’identification](https://developer.android.com/preview/api-overview.html#confirm-credential).
+À l’aide de la nouvelle fonctionnalité *confirmer les informations d’identification* d’Android Marshmallow, vous pouvez éviter aux utilisateurs de devoir mémoriser et entrer des mots de passe spécifiques à l’application en les authentifiant en fonction de la durée de leur déverrouillage.
+Pour ce faire, vous utilisez la nouvelle `SetUserAuthenticationValidityDurationSeconds` méthode `KeyGenerator`de. Utilisez la `KeyGuardManager`méthode `CreateConfirmDeviceCredentialIntent` de pour authentifier de nouveau l’utilisateur à partir de votre application. Pour plus d’informations sur cette nouvelle fonctionnalité dans Android Marshmallow, consultez [confirmer les informations d’identification](https://developer.android.com/preview/api-overview.html#confirm-credential).
 
-Xamarin fournit un exemple d’application qui illustre l’utilisation des informations d’identification de l’appareil (par exemple, le code confidentiel, le modèle ou le mot de passe) dans votre application : [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
+Xamarin fournit un exemple d’application qui illustre l’utilisation des informations d’identification de l’appareil (par exemple, le code confidentiel, le modèle ou le mot de passe) dans votre application: [ConfirmCredential](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential/)
 
-Pour utiliser cet exemple d’application :
+Pour utiliser cet exemple d’application:
 
-1.  Le programme d’installation d’un écran de verrouillage sécurisé sur votre appareil (**Secure > sécurité > Screenlock**).
-2.  Appuyez sur la **achat** bouton et confirmer les informations d’identification écran de verrouillage sécurisé.
+1.  Configurer un écran de verrouillage sécurisé sur votre appareil (**secure > Security > Screenlock**).
+2.  Appuyez sur le bouton **acheter** et confirmez les informations d’identification de l’écran de verrouillage sécurisé.
 
 
 
-### <a name="chrome-custom-tabs"></a>Chrome des onglets personnalisés
+### <a name="chrome-custom-tabs"></a>Onglets personnalisés chrome
 
-Les développeurs d’applications doivent faire face à un choix lorsqu’un utilisateur appuie sur une URL : l’application peut lancer un navigateur ou utiliser un navigateur dans l’application basé sur un `WebView`. Les deux options présentent des défis &ndash; lancer le navigateur est un changement de contexte importante qui n’est pas personnalisable, tout en `WebView`s ne partagent pas d’état avec le navigateur. En outre, utilisez de `WebView`s peut ajouter des frais de maintenance supplémentaire. 
+Les développeurs d’applications sont en mesure de choisir lorsqu’un utilisateur appuie sur une URL: l’application peut lancer un navigateur ou utiliser un navigateur dans l' `WebView`application basé sur un. Les deux options présentent &ndash; des difficultés à lancer le navigateur. il s’agit d’un changement de `WebView`contexte important qui n’est pas personnalisable, tandis que les ne partagent pas d’État avec le navigateur. En outre, l' `WebView`utilisation de s peut ajouter une surcharge de maintenance supplémentaire. 
 
-*Chrome des onglets personnalisés* rend possible pour vous permettre de manière simple et fiable d’affichage des sites Web grâce à la puissance de Chrome sans avoir à vos utilisateurs de laisser votre application. Cette fonctionnalité offre à votre application davantage de contrôle sur l’expérience web de l’utilisateur ; Il apporte les transitions entre natif et le contenu plus transparente de web sans avoir recours à un `WebView`. Votre application peut également affecter l’apparence et le semble en personnalisant les éléments suivants de Chrome : 
+Les *onglets personnalisés chrome* vous permettent d’afficher facilement et de façon élégante des sites Web avec la puissance du chrome sans que vos utilisateurs quittent votre application. Cette fonctionnalité permet à votre application de mieux contrôler l’expérience Web de l’utilisateur. Il rend les transitions entre le contenu natif et le contenu Web plus fluides sans `WebView`avoir à recourir à un. Votre application peut également avoir une incidence sur l’apparence et le fonctionnement de chrome en personnalisant les éléments suivants: 
 
 -   Couleur de la barre d’outils
 
--   Entrer et sortir des animations
+-   Animations Enter et Exit
 
--   Actions personnalisées dans le menu de barre d’outils et de dépassement de capacité de Chrome
+-   Actions personnalisées dans la barre d’outils chrome et le menu de dépassement de capacité
 
--   Chrome pré-récupération préalable de début et de contenu (pour accélérer le chargement)
+-   Pre-Start chrome et prérécupération de contenu (pour un chargement plus rapide)
 
-Pour tirer parti de cette fonctionnalité dans votre application Xamarin.Android, téléchargez et installez le [Android prise en charge personnalisée onglets bibliothèque](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/).
-Pour plus d’informations sur cette fonctionnalité, consultez [onglets personnalisés de Chrome](https://developer.chrome.com/multidevice/android/customtabs).
-
-
-
-### <a name="material-design-support-library"></a>Bibliothèque de prise en charge de conception matérielle
-
-Android Lollipop introduit [Material Design](http://www.google.com/design/spec/material-design/introduction.html) comme un nouveau langage de conception pour actualiser l’expérience Android (consultez [matériau thème](~/android/user-interface/material-theme.md) pour plus d’informations sur l’utilisation de la conception matérielle dans les applications Xamarin.Android). Avec Android Marshmallow, Google a introduit le *bibliothèque de prise en charge de conception Android* pour faciliter le travail d’application les développeurs à adopter le matériau conçoivent apparence. Cette bibliothèque inclut les composants suivants :
-
--   **CoordinatorLayout** &ndash; le nouveau `CoordinatorLayout` widget est similaire à mais plus puissant qu’un `FrameLayout`. Vous pouvez utiliser `CoordinatorLayout` sous la forme d’un conteneur pour les vues enfants ou une disposition de niveau supérieur et il fournit un `layout_anchor` attribut qui peut être utilisé pour les vues d’ancrage par rapport à d’autres vues.
-
--   **Réduction des barres d’outils** &ndash; le nouveau `CollapsingToolbarLayout` est une barre d’application qui est un wrapper de réduction `Toolbar`. (Notez que le *barre de l’application* est ce qui a été précédemment appelé le *barre d’action*.)
-
--   **Flottante bouton d’Action** &ndash; un bouton rond qui désigne l’action principale sur l’interface de votre application.
-
--   **Flottant des étiquettes pour l’édition de texte** &ndash; utilise un nouveau `TextInputLayout` widget (qui enveloppe `EditText`) pour afficher une étiquette flottante lorsqu’un indicateur est masqué lorsqu’un utilisateur entre le texte.
-
--   **Mode navigation** &ndash; le nouveau `NavigationView` widget vous permet d’utiliser le tiroir de navigation d’une manière qui est plus facile aux utilisateurs de naviguer.
-
--   **Snackbar** &ndash; le nouveau `SnackBar` widget est un mécanisme de commentaires léger (semblable à un toast) affiche un bref message en bas de l’écran, qui apparaissent au-dessus de toutes les autres éléments à l’écran.
-
--   **Onglets Material** &ndash; le nouveau `TabLayout` widget fournit une disposition horizontale pour afficher les onglets comme moyen d’implémenter la navigation de niveau supérieur dans votre application.
-
-Pour tirer parti de la [bibliothèque de prise en charge de conception](https://developer.android.com/tools/support-library/features.html#design) dans votre application Xamarin.Android, téléchargez et installez Xamarin [Design de bibliothèque de prise en charge de Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) package NuGet.
-
-Consultez [magnifiques Material Design avec la bibliothèque de conception de prise en charge Android](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/) pour plus d’informations (y compris les exemples de code) à l’aide de la bibliothèque de prise en charge de conception de documents dans les applications Xamarin.Android.
-Xamarin fournit un exemple d’application qui la démonstration de la nouvelle bibliothèque de conception Android sur Xamarin.Android &ndash; [Cheesesquare](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare).
-Cet exemple illustre les fonctionnalités suivantes de la bibliothèque de conception :
+Pour tirer parti de cette fonctionnalité dans votre application Xamarin. Android, téléchargez et installez la bibliothèque d’onglets personnalisations de la [prise en charge Android](https://www.nuget.org/packages/Xamarin.Android.Support.CustomTabs/).
+Pour plus d’informations sur cette fonctionnalité, consultez les [onglets personnalisés chrome](https://developer.chrome.com/multidevice/android/customtabs).
 
 
--   Réduction de barre d’outils
--   Bouton d’action flottant
--   Vue d’ancrage
+
+### <a name="material-design-support-library"></a>Bibliothèque de support pour la conception de matériaux
+
+Android Lollipop a introduit la [conception matérielle](http://www.google.com/design/spec/material-design/introduction.html) comme un nouveau langage de conception pour actualiser l’expérience Android (pour plus d’informations sur l’utilisation de la conception de matériaux dans les applications Xamarin. Android), consultez le [thème matériel](~/android/user-interface/material-theme.md) . Avec Android Marshmallow, Google a introduit la *bibliothèque de support de conception Android* pour permettre aux développeurs d’applications d’adopter plus facilement l’apparence et la convivialité de la conception matérielle. Cette bibliothèque comprend les composants suivants:
+
+-   **CoordinatorLayout** Le nouveau `CoordinatorLayout` widget est semblable à, mais plus puissant qu' `FrameLayout`un. &ndash; Vous pouvez utiliser `CoordinatorLayout` comme conteneur pour les vues enfants ou comme disposition de niveau supérieur, et il fournit un `layout_anchor` attribut qui peut être utilisé pour ancrer des vues par rapport à d’autres vues.
+
+-   **Réduction des barres d’outils** Le nouveau `CollapsingToolbarLayout` est une barre d’application réduite qui est un wrapper pour `Toolbar`. &ndash; (Notez que la *barre* de l’application est celle qui était précédemment appelée *barre d’action*.)
+
+-   **Bouton d’action flottante** &ndash; Bouton rond qui désigne l’action principale sur l’interface de votre application.
+
+-   **Étiquettes flottantes pour la modification de texte** Utilise un `TextInputLayout` nouveau`EditText`widget (qui encapsule) pour afficher une étiquette flottante lorsqu’un indicateur est masqué quand un utilisateur entre du texte. &ndash;
+
+-   **Mode navigation** &ndash; Le nouveau`NavigationView` widget vous aide à utiliser le tiroir de navigation d’une manière plus facile pour les utilisateurs de naviguer.
+
+-   **Snackbar** &ndash; Le nouveau`SnackBar` widget est un mécanisme de commentaires léger (semblable à un toast) qui affiche un bref message en bas de l’écran, apparaissant au-dessus de tous les autres éléments à l’écran.
+
+-   **Onglets de matériau** &ndash; Le nouveau`TabLayout` widget fournit une disposition horizontale pour l’affichage d’onglets en tant que moyen d’implémenter la navigation de niveau supérieur dans votre application.
+
+Pour tirer parti de la [bibliothèque de support de conception](https://developer.android.com/tools/support-library/features.html#design) dans votre application Xamarin. Android, téléchargez et installez le package NuGet de conception de la [bibliothèque de prise en charge Xamarin Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) .
+
+Pour plus d’informations (y compris des exemples de code) sur l’utilisation de la bibliothèque de prise en charge de la conception de matériaux dans les applications Xamarin. Android, consultez [magnifique design Design Library (en](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/) anglais).
+Xamarin fournit un exemple d’application qui présente la nouvelle bibliothèque de conception Android sur Xamarin. &ndash; Android [Cheesesquare](https://developer.xamarin.com/samples/monodroid/android5.0/Cheesesquare).
+Cet exemple illustre les fonctionnalités suivantes de la bibliothèque de conception:
+
+
+-   Masquage de la barre d’outils
+-   Bouton d’action flottante
+-   Afficher l’ancrage
 -   NavigationView
 -   Snackbar
 
-Pour plus d’informations sur la bibliothèque de conception, consultez [bibliothèque de prise en charge de conception Android](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) dans le blog du développeur Android.
+Pour plus d’informations sur la bibliothèque de conception, consultez la [bibliothèque de prise en charge de la conception Android](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html) dans le blog du développeur Android.
 
 
-### <a name="additional-library-updates"></a>Mises à jour des bibliothèques supplémentaires
+### <a name="additional-library-updates"></a>Mises à jour de bibliothèque supplémentaires
 
-En plus d’Android Marshmallow, Google a annoncé des mises à jour à plusieurs bibliothèques Android core. Xamarin prend en charge de Xamarin.Android pour ces mises à jour via plusieurs packages de NuGet-version préliminaire : 
+En plus des marshmallow Android, Google a annoncé des mises à jour associées à plusieurs bibliothèques Android de base. Xamarin fournit la prise en charge de Xamarin. Android pour ces mises à jour par le biais de plusieurs packages NuGet version préliminaire: 
 
--   [Services Google Play](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; la dernière version des Services Google Play inclut la nouvelle *application invite* fonctionnalité, ce qui permet aux utilisateurs de partager leur application avec vos amis. Pour plus d’informations sur cette fonctionnalité, consultez [Reach de développer votre application avec App invite Google](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/). 
+-   [Google Play services](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) La dernière version de Google Play services comprend la nouvelle fonctionnalité d’invitations d’application, qui permet aux utilisateurs de partager leur application avec des amis.  &ndash; Pour plus d’informations sur cette fonctionnalité, consultez [étendre la portée de votre application avec les invitations de l’application Google](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/). 
 
--   [Les bibliothèques de prise en charge Android](https://www.nuget.org/packages?q=xamarin+support+library) &ndash; ces packages NuGet offrent des fonctionnalités qui sont uniquement disponibles pour la bibliothèque API tout en assurant la compatibilité descendante des versions du framework Android API. 
+-   [Bibliothèques de prise en charge Android](https://www.nuget.org/packages?q=xamarin+support+library) &ndash; Ces packages NuGet offrent des fonctionnalités qui sont disponibles uniquement pour les API de bibliothèque, tout en fournissant des versions à compatibilité descendante des API d’infrastructure Android. 
 
--   [Bibliothèque portable Android](https://www.nuget.org/packages/Xamarin.Android.Wear) &ndash; ce package NuGet inclut des liaisons de Services Google Play. La dernière version de la bibliothèque portable apporte de nouvelles fonctionnalités (notamment une navigation facilitée pour les applications personnalisées) pour la plateforme Android Wear. 
+-   [Bibliothèque Android portable](https://www.nuget.org/packages/Xamarin.Android.Wear) &ndash; ce NuGet comprend des liaisons de Google Play services. La dernière version de la bibliothèque portable offre de nouvelles fonctionnalités (y compris une navigation plus facile pour les applications personnalisées) à la plateforme d’usure Android. 
 
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a introduit Android Marshmallow et expliqué comment installer et configurer les derniers outils et packages pour le développement de Xamarin.Android sur Marshmallow. Elle également fourni une vue d’ensemble des nouvelles fonctionnalités Android Marshmallow plus intéressantes pour le développement de Xamarin.Android.
+Cet article a présenté Android Marshmallow et a expliqué comment installer et configurer les outils et packages les plus récents pour le développement Xamarin. Android sur Marshmallow. Il offre également une vue d’ensemble des nouvelles fonctionnalités Android Marshmallow pour le développement Xamarin. Android.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Android Marshmallow 6.0](https://developer.android.com/about/versions/marshmallow/index.html)
-- [Obtenir le kit SDK Android](https://developer.android.com/sdk/index.html#Other)
-- [Vue d’ensemble de la fonctionnalité](https://developer.android.com/preview/api-overview.html)
-- [Notes de publication](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1.99/)
+- [Android 6,0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)
+- [Obtient le Android SDK](https://developer.android.com/sdk/index.html#Other)
+- [Présentation des fonctionnalités](https://developer.android.com/preview/api-overview.html)
+- [Notes de publication](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1.99/index.md)
 - [RuntimePermissions (exemple)](https://developer.xamarin.com/samples/monodroid/android-m/RuntimePermissions)
 - [ConfirmCredential (exemple)](https://developer.xamarin.com/samples/monodroid/android-m/ConfirmCredential)
 - [FingerprintDialog (exemple)](https://developer.xamarin.com/samples/monodroid/android-m/FingerprintDialog)
