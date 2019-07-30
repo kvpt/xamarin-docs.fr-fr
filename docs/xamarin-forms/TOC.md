@@ -180,6 +180,7 @@
 #### [Définition de la propriété ItemsSource d’un sélecteur](user-interface/picker/populating-itemssource.md)
 #### [Ajout de données à la collection d’éléments d’un sélecteur](user-interface/picker/populating-items.md)
 ### [ProgressBar](user-interface/progressbar.md)
+### [SearchBar](user-interface/searchbar.md)
 ### [Slider](user-interface/slider.md)
 ### [Exécution pas à pas](user-interface/stepper.md)
 ### [Styles](user-interface/styles/index.md)
