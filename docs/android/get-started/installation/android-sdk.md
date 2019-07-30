@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: f4ff43ea51dc690daa716e69021f690511cdcc97
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 3be28815441b65df101ac9722a665e01503e1b5c
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854052"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386213"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
@@ -29,7 +29,7 @@ Xamarin Android SDK Manager (installé avec la charge de travail du**développem
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
@@ -117,7 +117,7 @@ Pour installer uniquement des composants spécifiques, cliquez une fois sur la c
 Notez que le nombre de composants à installer s’affiche en regard du bouton **Appliquer les modifications**. Après avoir cliqué sur le bouton **Appliquer les modifications**, l’écran **Acceptation de la licence** s’affiche, comme montré plus tôt.
 Cliquez sur **Accepter** si vous acceptez les Conditions générales. Cette boîte de dialogue peut s’afficher plusieurs fois si plusieurs composants sont installés. En bas de la fenêtre, une barre de progression indique l’avancement du téléchargement et de l’installation. Lorsque le processus de téléchargement et d’installation est terminé (cela peut prendre plusieurs minutes, selon le nombre de composants qui doivent être téléchargés), les composants ajoutés sont marqués avec une coche et répertoriés comme **Installé**.
 
-### <a name="respository-selection"></a>Sélection de référentiel
+### <a name="repository-selection"></a>Sélection du référentiel
 
 Par défaut, le Gestionnaire Android SDK télécharge les composants et les outils de la plateforme à partir d’un référentiel géré par Microsoft. Si vous avez besoin d’accéder aux plateformes et outils alpha/bêta expérimentaux qui ne sont pas encore disponibles dans le référentiel Microsoft, vous pouvez basculer le Gestionnaire SDK pour que celui-ci utilise le référentiel Google. Pour effectuer ce basculement, cliquez sur l’icône d’engrenage en bas à droite et sélectionnez **Référentiel > Google (non pris en charge)**  :
 
@@ -125,12 +125,12 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
@@ -210,7 +210,7 @@ Pour installer uniquement quelques composants, cliquez une fois sur la case en r
 Notez que le nombre de composants à installer s’affiche en regard du bouton **Appliquer les modifications**. Après avoir cliqué sur le bouton **Appliquer les modifications**, l’écran **Acceptation de la licence** s’affiche, comme montré plus tôt.
 Cliquez sur **Accepter** si vous acceptez les Conditions générales. Cette boîte de dialogue peut s’afficher plusieurs fois si plusieurs composants sont installés. En bas de la fenêtre, une barre de progression indique l’avancement du téléchargement et de l’installation. Lorsque le processus de téléchargement et d’installation est terminé (cela peut prendre plusieurs minutes, selon le nombre de composants qui doivent être téléchargés), les composants ajoutés sont marqués avec une coche et répertoriés comme **Installé**.
 
-### <a name="respository-selection"></a>Sélection de référentiel
+### <a name="repository-selection"></a>Sélection du référentiel
 
 Par défaut, le Gestionnaire Android SDK télécharge les composants et les outils de la plateforme à partir d’un référentiel géré par Microsoft. Si vous avez besoin d’accéder aux plateformes et outils alpha/bêta expérimentaux qui ne sont pas encore disponibles dans le référentiel Microsoft, vous pouvez basculer le Gestionnaire SDK pour que celui-ci utilise le référentiel Google. Pour effectuer ce basculement, cliquez sur l’icône d’engrenage en bas à droite et sélectionnez **Référentiel > Google (non pris en charge)**  :
 
@@ -218,7 +218,7 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 -----
 

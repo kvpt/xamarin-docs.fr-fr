@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/10/2019
-ms.openlocfilehash: 7db848c01879510969f690cb49c5ead32cb3f0eb
-ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
+ms.openlocfilehash: 8bdd5c0d40cfdac0dadbc6bab1c538ab1b27946e
+ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850989"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68386169"
 ---
 # <a name="platform-support"></a>Prise en charge de plateforme
 
@@ -29,6 +29,7 @@ Xamarin.Essentials prend en charge les plateformes et les systèmes d’exploita
 
 * Tizen est officiellement pris en charge par l’équipe de développement Samsung.
 * tvOS et watchOS ont une couverture d’API limitée, consultez le guide des fonctionnalités pour plus d’informations.
+* Tizen, tvOS et watchOS sont actuellement en version préliminaire et disponibles dans Xamarin.Essentials 1.3-pre
 
 ## <a name="feature-support"></a>Prise en charge des fonctionnalités
 
