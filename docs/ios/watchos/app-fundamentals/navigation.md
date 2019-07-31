@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 264bdcc9a7a0d73ebe3385246ee6dfae3d9a850f
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: f49416eddb69e2900eb427f27057cd8f1cb9ceb5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740995"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654688"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>Utilisation de watchOS Navigation dans Xamarin
 
@@ -53,7 +53,7 @@ Présente les scènes comme une pile qui peut être navigué via, similaire à l
 
 Comme avec iOS, un balayage de bord de gauche navigue vers le contrôleur parent dans une pile de navigation hiérarchique.
 
-Les deux le [WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) et [WatchTables](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/) exemples incluent la navigation hiérarchique.
+Les deux le [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) et [WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) exemples incluent la navigation hiérarchique.
 
 ### <a name="pushing-and-popping-in-code"></a>Poussant et en dépilant dans le Code
 
@@ -117,5 +117,5 @@ PresentController (controllerNames, contexts);
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchKitCatalog (exemple)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WatchTables (exemple)](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)

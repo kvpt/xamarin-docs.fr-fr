@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924559"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644799"
 ---
 # <a name="attached-properties"></a>Propriétés jointes
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _Une propriété jointe est un type spécial de propriété pouvant être liée, définie dans une classe mais associé à d’autres objets et reconnaissable dans XAML en tant qu’attribut qui contient une classe et un nom de propriété séparés par un point. Cet article fournit une introduction aux propriétés jointes et montre comment créer et de les consommer._
 
@@ -147,6 +147,6 @@ Cet article propose une introduction à des propriétés jointes et vous a montr
 
 - [Propriétés pouvant être liées](~/xamarin-forms/xaml/bindable-properties.md)
 - [Espaces de noms XAML](~/xamarin-forms/xaml/namespaces.md)
-- [Effet d’ombre portée (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [Effet d’ombre portée (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

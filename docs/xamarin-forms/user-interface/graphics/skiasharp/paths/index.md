@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b266ef96513ac392afa83bc672d41db7cfe3ce16
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 14b92bb576679dee3408c5805c6b698addd9bd8a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61278695"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657444"
 ---
 # <a name="skiasharp-lines-and-paths"></a>Chemins d’accès et des lignes de SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Permet de dessiner des lignes et des graphismes chemins d’accès SkiaSharp_
 
@@ -24,7 +24,7 @@ Le [section précédente](~/xamarin-forms/user-interface/graphics/skiasharp/basi
 
 Le chemin d’accès de graphiques est l’approche la plus généralisée pour dessiner des lignes et des courbes dans SkiaSharp. Cette section traite de l’utilisation un [ `SKPath` ](xref:SkiaSharp.SKPath) objet pour dessiner des lignes droites et d’utiliser une collection de lignes droites minuscules (appelé un *polyligne*) pour dessiner des courbes que vous pouvez définir de façon algorithmique. Une section ultérieure sur [ **SkiaSharp courbes et chemins d’accès** ](../curves/index.md) présente les différentes sortes de courbes pris en charge par `SKPath`.
 
-Tous les exemples de programmes dans cette section apparaissent sous l’en-tête **lignes et chemins d’accès** dans la page d’accueil de la [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programme, puis, dans le [ **Chemins** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) dossier de cette solution.
+Tous les exemples de programmes dans cette section apparaissent sous l’en-tête **lignes et chemins d’accès** dans la page d’accueil de la [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) programme, puis, dans le [ **Chemins** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) dossier de cette solution.
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[Lignes et embouts de trait](lines.md)
 
@@ -54,4 +54,4 @@ Utilisez vos doigts pour peindre sur le canevas.
 ## <a name="related-links"></a>Liens associés
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

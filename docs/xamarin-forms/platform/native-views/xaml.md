@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: b2e441a8e1443d1d32d553e9bbf1126fe5e380e7
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: bf9b630613dcc5c25dac96cad71e54022ead1812
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508844"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649598"
 ---
 # <a name="native-views-in-xaml"></a>Vues natives en XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _Vues natives à partir d’iOS, Android et la plateforme Windows universelle peuvent être référencées directement à partir de fichiers de XAML de Xamarin.Forms. Propriétés et gestionnaires d’événements peuvent être définies sur les vues natives, et ils peuvent interagir avec les vues Xamarin.Forms. Cet article montre comment utiliser les vues natives à partir de fichiers de XAML de Xamarin.Forms._
 
@@ -490,9 +490,9 @@ Cet article a montré comment utiliser des vues natives à partir de fichiers de
 
 ## <a name="related-links"></a>Liens associés
 
-- [NativeSwitch (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
-- [Forms2Native (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Forms2Native/)
-- [NativeViewInsideContentView (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
-- [SubclassedNativeControls (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
+- [NativeSwitch (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+- [Forms2Native (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)
+- [NativeViewInsideContentView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
+- [SubclassedNativeControls (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
 - [Formulaires natifs](~/xamarin-forms/platform/native-forms.md)
 - [Passage des Arguments dans XAML](~/xamarin-forms/xaml/passing-arguments.md)

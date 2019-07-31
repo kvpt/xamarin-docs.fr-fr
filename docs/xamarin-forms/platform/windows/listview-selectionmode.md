@@ -1,26 +1,26 @@
 ---
-title: ListView SelectionMode sur Windows
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le Windows spécifique à la plateforme qui contrôle si les éléments dans un ListView peuvent répondre à appuyez sur les mouvements.
+title: Contrôle SelectionMode de ListView sur Windows
+description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plate-forme Windows qui contrôle si les éléments d’un ListView peuvent répondre aux gestes TAP.
 ms.prod: xamarin
 ms.assetid: 57EF3A7F-1407-4B31-AE21-D149293D4228
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 59b9025b58af4d7080d0506d4994cb72bf4f096d
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f6a90a8a0397db99a245f706450e7dc83097a45e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924750"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656897"
 ---
-# <a name="listview-selectionmode-on-windows"></a>ListView SelectionMode sur Windows
+# <a name="listview-selectionmode-on-windows"></a>Contrôle SelectionMode de ListView sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Sur la plateforme Windows universelle, par défaut Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) utilise natif `ItemClick` événement pour répondre à l’interaction, plutôt que du natif `Tapped` événement. Cela fournit des fonctionnalités d’accessibilité afin que le Narrateur Windows et le clavier peuvent interagir avec le `ListView`. Toutefois, mais affiche également les mouvements tap à l’intérieur de la `ListView` inutilisable.
 
-Ce contrôle spécifique à la plateforme de plateforme Windows universelle si les éléments dans un [ `ListView` ](xref:Xamarin.Forms.ListView) peut répondre pour appuyer sur les mouvements et par conséquent, si natif `ListView` se déclenche le `ItemClick` ou `Tapped` événement. Elle est consommée dans XAML en définissant le [ `ListView.SelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty) propriété attachée à une valeur de la [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) énumération :
+Ce plateforme Windows universelle contrôle spécifique à la plateforme si les éléments [`ListView`](xref:Xamarin.Forms.ListView) d’un peuvent répondre aux gestes TAP, et par conséquent si `ListView` le natif `ItemClick` déclenche `Tapped` l’événement ou. Elle est consommée dans XAML en définissant le [ `ListView.SelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty) propriété attachée à une valeur de la [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) énumération :
 
 ```xaml
 <ContentPage ...
@@ -57,6 +57,6 @@ Le résultat qui est spécifié [ `ListViewSelectionMode` ](xref:Xamarin.Forms.P
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)
+- [API WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

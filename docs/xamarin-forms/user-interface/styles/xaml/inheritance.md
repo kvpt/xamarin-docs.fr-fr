@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: c5fa46a67496123eb105ae12404d5607032f5ac1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971146"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657055"
 ---
 # <a name="style-inheritance-in-xamarinforms"></a>Héritage de style dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _Styles peuvent hériter d’autres styles pour réduire la duplication et permettre la réutilisation._
 
-## <a name="style-inheritance-in-xaml"></a>Héritage de style dans XAML
+## <a name="style-inheritance-in-xaml"></a>Héritage de style en XAML
 
 L’héritage de style est effectuée en affectant la [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) propriété à un existant [ `Style` ](xref:Xamarin.Forms.Style). Dans XAML, cela est accompli en définissant le `BasedOn` propriété à un `StaticResource` extension de balisage qui fait référence à un créé précédemment `Style`. Dans C#, cela est accompli en définissant le `BasedOn` propriété un `Style` instance.
 
@@ -69,7 +69,7 @@ Le `baseStyle` cibles [ `View` ](xref:Xamarin.Forms.View) instances et définit 
 > [!NOTE]
 > Un style implicite peut être dérivé d’un style explicite, mais un style explicite ne peut pas être dérivé d’un style implicite.
 
-### <a name="respecting-the-inheritance-chain"></a>En respectant la chaîne d’héritage
+### <a name="respecting-the-inheritance-chain"></a>Respect de la chaîne d’héritage
 
 Un style peut uniquement hériter de styles au même niveau, ou plus, dans la hiérarchie d’affichage. Cela signifie que :
 
@@ -108,7 +108,7 @@ Cette chaîne d’héritage est illustrée dans l’exemple de code suivant :
 
 Dans cet exemple, `labelStyle` et `buttonStyle` est des ressources de niveau de contrôle alors que `baseStyle` est une ressource de niveau page. Toutefois, même si `labelStyle` et `buttonStyle` héritent `baseStyle`, il n’est pas possible pour `baseStyle` d’hériter de `labelStyle` ou `buttonStyle`en raison de leurs emplacements respectifs dans la hiérarchie d’affichage.
 
-## <a name="style-inheritance-in-c35"></a>Héritage de style c&#35;
+## <a name="style-inheritance-in-c35"></a>Héritage de style en C&#35;
 
 La page C# équivalente, où [ `Style` ](xref:Xamarin.Forms.Style) instances affectées directement au [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) propriétés des contrôles requis, est illustré dans l’exemple de code suivant :
 
@@ -158,8 +158,8 @@ Le `baseStyle` cibles [ `View` ](xref:Xamarin.Forms.View) instances et définit 
 ## <a name="related-links"></a>Liens connexes
 
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Styles de base (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [Utilisation des Styles (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [Styles de base (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [Utilisation des Styles (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

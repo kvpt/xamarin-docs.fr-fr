@@ -1,183 +1,183 @@
 ---
-title: Vues de table dans Xamarin.Mac
-description: Cet article aborde l’utilisation des vues de table dans une application Xamarin.Mac. Il décrit la création de vues de table dans Xcode et Interface Builder et interagir avec elles dans le code.
+title: Vues de table dans Xamarin. Mac
+description: Cet article traite de l’utilisation des vues de table dans une application Xamarin. Mac. Il décrit la création d’affichages de tables dans Xcode et Interface Builder et l’interaction avec eux dans le code.
 ms.prod: xamarin
 ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: c6d7971c8418c8038f5fcbfcf0e8f2acd928edcb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a01369e1adac77e66412fd2aabb4adff49a9ac6f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61042555"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655318"
 ---
-# <a name="table-views-in-xamarinmac"></a>Vues de table dans Xamarin.Mac
+# <a name="table-views-in-xamarinmac"></a>Vues de table dans Xamarin. Mac
 
-_Cet article aborde l’utilisation des vues de table dans une application Xamarin.Mac. Il décrit la création de vues de table dans Xcode et Interface Builder et interagir avec elles dans le code._
+_Cet article traite de l’utilisation des vues de table dans une application Xamarin. Mac. Il décrit la création d’affichages de tables dans Xcode et Interface Builder et l’interaction avec eux dans le code._
 
-Lorsque vous travaillez avec C# et .NET dans une application Xamarin.Mac, que vous avez accès à la même Table qui affiche un développeur travaillant *Objective-C* et *Xcode* est. Comme Xamarin.Mac s’intègre directement à Xcode, vous pouvez utiliser de Xcode _Interface Builder_ pour créer et gérer vos vues de Table (ou éventuellement pour les créer directement en code c#).
+Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes vues de table qu’un développeur qui travaille en *objective-C* et *Xcode* . Comme Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser la _Interface Builder_ de Xcode pour créer et gérer vos vues de table (ou éventuellement les créer directement C# dans le code).
 
-Une vue de Table affiche les données dans un format tabulaire qui contient une ou plusieurs colonnes d’informations dans plusieurs lignes. Selon le type de vue de Table en cours de création, l’utilisateur peut trier par colonne, réorganiser les colonnes, ajouter des colonnes, supprimer des colonnes ou modifier les données contenues dans la table.
+Un affichage de table affiche des données dans un format tabulaire contenant une ou plusieurs colonnes d’informations dans plusieurs lignes. En fonction du type de vue de table en cours de création, l’utilisateur peut Trier par colonne, réorganiser les colonnes, ajouter des colonnes, supprimer des colonnes ou modifier les données contenues dans la table.
 
-[![](table-view-images/intro01.png "Un exemple de table")](table-view-images/intro01.png#lightbox)
+[![](table-view-images/intro01.png "Exemple de table")](table-view-images/intro01.png#lightbox)
 
-Dans cet article, nous traiterons les principes fondamentaux de l’utilisation des vues de Table dans une application Xamarin.Mac. Il est fortement recommandé que vous travaillez via le [Hello, Mac](~/mac/get-started/hello-mac.md) article tout d’abord, en particulier le [Introduction à Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et [Outlets et Actions](~/mac/get-started/hello-mac.md#outlets-and-actions) sections, tel qu’il couvre les principaux concepts et techniques que nous utilisons dans cet article.
+Dans cet article, nous allons aborder les bases de l’utilisation des vues de table dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. Cet article.
 
-Vous pouvez souhaiter de jeter un coup de œil à la [C# exposition de classes / méthodes vers Objective-C](~/mac/internals/how-it-works.md) section de la [éléments internes de Xamarin.Mac](~/mac/internals/how-it-works.md) de document, il explique le `Register` et `Export` commandes utilisé pour AutoEventWireup vos classes c# pour les objets Objective-C et les éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les `Register` commandes `Export` et utilisées pour relier vos C# classes à Objets objective-C et éléments d’interface utilisateur.
 
 <a name="Introduction_to_Table_Views" />
 
-## <a name="introduction-to-table-views"></a>Introduction aux vues de Table
+## <a name="introduction-to-table-views"></a>Présentation des vues de table
 
-Une vue de Table affiche les données dans un format tabulaire qui contient une ou plusieurs colonnes d’informations dans plusieurs lignes. Vues de table sont affichées à l’intérieur des vues à défilement (`NSScrollView`) et à partir de macOS 10.7, vous pouvez utiliser les `NSView` au lieu de cellules (`NSCell`) pour afficher les lignes et colonnes. Ceci dit, vous pouvez toujours utiliser `NSCell` Toutefois, vous allez généralement sous-classe `NSTableCellView` et créer vos lignes personnalisées et les colonnes.
+Un affichage de table affiche des données dans un format tabulaire contenant une ou plusieurs colonnes d’informations dans plusieurs lignes. Les vues de table sont affichées dans les vues`NSScrollView`de défilement () et à partir de MacOS 10,7, `NSView` vous pouvez utiliser n'`NSCell`importe quelle cellule à la place de () pour afficher les lignes et les colonnes. Cela dit, vous pouvez toujours utiliser `NSCell` , mais vous allez généralement sous- `NSTableCellView` classe et créer vos lignes et colonnes personnalisées.
 
-Une vue de Table ne stocke pas ses propres données, au lieu de cela, elle s’appuie sur une Source de données (`NSTableViewDataSource`) pour fournir les lignes et les colonnes requises sur une en fonction des besoins.
+Une vue de table ne stocke pas ses propres données. elle s’appuie plutôt sur une source de`NSTableViewDataSource`données () pour fournir à la fois les lignes et les colonnes requises, en fonction des besoins.
 
-Comportement d’une vue de la Table peut être personnalisé en fournissant une sous-classe du délégué de vue de Table (`NSTableViewDelegate`) pour prendre en charge la gestion de colonne de table, tapez pour sélectionner des fonctionnalités, la sélection de ligne modification, suivi personnalisé et des vues personnalisées pour des colonnes individuelles et lignes.
+Le comportement d’une vue de table peut être personnalisé en fournissant une sous-classe du délégué de`NSTableViewDelegate`vue de table () pour prendre en charge la gestion des colonnes de table, le type pour sélectionner les fonctionnalités, la sélection de lignes et la modification, le suivi personnalisé et les vues personnalisées pour les colonnes individuelles et lignes.
 
-Lorsque vous créez des vues de Table, Apple suggère les éléments suivants :
+Lorsque vous créez des vues de table, Apple suggère ce qui suit:
 
-* Autoriser l’utilisateur de trier la table en cliquant sur les en-têtes de colonne.
-* Créer des en-têtes de colonnes qui sont des noms ou des expressions nominales courte qui décrivent les données affichées dans cette colonne.
+* Autorisez l’utilisateur à trier la table en cliquant sur un en-tête de colonne.
+* Créez des en-têtes de colonnes qui sont des noms ou des expressions nominales courtes qui décrivent les données affichées dans cette colonne.
 
-Pour plus d’informations, consultez le [vues contenu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) section d’Apple [X Human Interface Guidelines pour OS](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/).
+Pour plus d’informations, consultez la section affichages du [contenu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) des [instructions relatives à l’interface humaine OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)d’Apple.
 
 <a name="Creating-and-Maintaining-Table-Views-in-Xcode" />
 
-## <a name="creating-and-maintaining-table-views-in-xcode"></a>Création et la gestion des vues de Table dans Xcode
+## <a name="creating-and-maintaining-table-views-in-xcode"></a>Création et gestion des vues de table dans Xcode
 
-Lorsque vous créez une nouvelle application Xamarin.Mac Cocoa, vous obtenez une fenêtre vide, standard par défaut. Ce paramètre, windows est défini dans un `.storyboard` fichier automatiquement inclus dans le projet. Pour modifier votre conception de windows, dans le **l’Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier :
+Lorsque vous créez une application de cacao Xamarin. Mac, vous recevez une fenêtre vide standard par défaut. Cette fenêtre est définie dans un `.storyboard` fichier inclus automatiquement dans le projet. Pour modifier votre conception Windows, dans le **Explorateur de solutions**, double-cliquez `Main.storyboard` sur le fichier:
 
-[![](table-view-images/edit01.png "En sélectionnant le storyboard principal")](table-view-images/edit01.png#lightbox)
+[![](table-view-images/edit01.png "Sélection de la table de montage séquentiel principale")](table-view-images/edit01.png#lightbox)
 
-La conception de la fenêtre s’ouvre dans Xcode Interface Builder :
+Cette opération ouvre la conception de la fenêtre dans le Interface Builder de Xcode:
 
 [![](table-view-images/edit02.png "Modification de l’interface utilisateur dans Xcode")](table-view-images/edit02.png#lightbox)
 
-Type `table` dans le **l’inspecteur de bibliothèque** zone de recherche pour le rendre plus facile à trouver les contrôles d’affichage de Table :
+Tapez `table` dans la zone **de recherche de l’inspecteur de bibliothèque** pour faciliter la recherche des contrôles d’affichage de table:
 
-[![](table-view-images/edit03.png "Sélectionnez une vue de Table dans la bibliothèque")](table-view-images/edit03.png#lightbox)
+[![](table-view-images/edit03.png "Sélection d’une vue de table à partir de la bibliothèque")](table-view-images/edit03.png#lightbox)
 
-Faites glisser d’une vue de Table sur le contrôleur d’affichage dans le **Éditeur d’Interface**, rendent la remplir la zone de contenu du contrôleur d’affichage et affectez-lui la valeur où il augmente et diminue avec la fenêtre dans le **éditeur de contrainte**:
+Faites glisser un affichage de table sur le contrôleur d’affichage dans l' **éditeur d’interface**, faites-le remplir dans la zone de contenu du contrôleur d’affichage et affectez-le à l’emplacement où il se réduit et s’agrandit avec la fenêtre de l' **éditeur de contrainte**:
 
 [![](table-view-images/edit04.png "Modification des contraintes")](table-view-images/edit04.png#lightbox)
 
-Sélectionnez la vue de Table dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez la vue de table dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l’inspecteur d' **attribut**:
 
-[![](table-view-images/edit05.png "L’inspecteur d’attributs")](table-view-images/edit05.png#lightbox)
+[![](table-view-images/edit05.png "L’inspecteur d’attribut")](table-view-images/edit05.png#lightbox)
 
-- **Mode de contenu** -vous permet d’utiliser deux vues (`NSView`) ou les cellules (`NSCell`) pour afficher les données dans les lignes et colonnes. À compter de macOS 10.7, vous devez utiliser des vues.
-- **Regrouper des lignes de flotte** : si `true`, la vue Table dessinera cellules groupées comme s’ils sont flottants.
+- **Mode de contenu** : vous permet d’utiliser des vues`NSView`() ou des`NSCell`cellules () pour afficher les données dans les lignes et les colonnes. À partir de macOS 10,7, vous devez utiliser des vues.
+- **Flotter les lignes** de groupe `true`: si la vue table dessine des cellules groupées comme si elles étaient flottantes.
 - **Colonnes** -définit le nombre de colonnes affichées.
-- **En-têtes** : si `true`, les colonnes ont des en-têtes.
-- **Réorganisation** : si `true`, l’utilisateur sera en mesure de faire glisser réorganiser les colonnes dans la table.
-- **Redimensionnement** : si `true`, l’utilisateur sera en mesure de faire glisser pour redimensionner des colonnes, les en-têtes de colonne.
-- **Dimensionnement de colonnes** -contrôle la façon dont la table est automatiquement la taille des colonnes.
-- **Mettez en surbrillance** -contrôles le type de mise en surbrillance de la table utilise lorsqu’une cellule est sélectionnée.
-- **Remplacement des lignes** : si `true`, jamais autres ligne aura une couleur d’arrière-plan différente.
-- **Quadrillage horizontal** -sélectionne le type de bordure dessinée entre les cellules horizontalement.
+- **En-têtes** - `true`si, les colonnes auront des en-têtes.
+- **Réorganisation** : si `true`la valeur est, l’utilisateur peut faire glisser les colonnes de la table.
+- Redimensionnement: `true`si la valeur est, l’utilisateur peut faire glisser des en-têtes de colonne pour redimensionner les colonnes.
+- Redimensionnement de **colonne** : contrôle la manière dont la table redimensionne automatiquement les colonnes.
+- **Mettre** en surbrillance: contrôle le type de mise en surbrillance de la table lorsqu’une cellule est sélectionnée.
+- **Lignes de remplacement** : `true`si une autre ligne a une couleur d’arrière-plan différente.
+- **Grille horizontale** -sélectionne le type de bordure dessinée entre les cellules horizontalement.
 - **Quadrillage vertical** -sélectionne le type de bordure dessinée entre les cellules verticalement.
-- **Couleur de la grille** -définit la couleur de bordure de cellule.
-- **Arrière-plan** -définit la couleur d’arrière-plan de cellule.
-- **Sélection** -vous permettent de contrôler la façon dont l’utilisateur peut sélectionner des cellules dans la table en tant que :
-    - **Plusieurs** : si `true`, l’utilisateur peut sélectionner plusieurs lignes et colonnes.
-    - **Colonne** : si `true`, l’utilisateur peut sélectionner des colonnes.
-    - **Tapez sélectionner** : si `true`, l’utilisateur peut taper un caractère pour sélectionner une ligne.
-    - **Vide** : si `true`, l’utilisateur n’est pas obligé de sélectionner une ligne ou une colonne, la table autorise pour aucune sélection du tout.
-- **Enregistrement automatique** -le nom que le format des tables est automatiquement enregistrer sous.
-- **Informations sur les colonnes** : si `true`, l’ordre et la largeur des colonnes sont automatiquement enregistrés.
-- **Sauts de ligne** - sélectionnez la façon dont la cellule gère des sauts de ligne.
-- **Tronque la dernière ligne Visible** : si `true`, la cellule est tronquée dans le données peuvent ne tiennent ne pas dans ses limites.
+- **Couleur** de la grille-définit la couleur de bordure de la cellule.
+- **Background** : définit la couleur d’arrière-plan de la cellule.
+- **Sélection** : vous permet de contrôler la manière dont l’utilisateur peut sélectionner des cellules dans la table en tant que:
+    - **Multiple** -si `true`, l’utilisateur peut sélectionner plusieurs lignes et colonnes.
+    - **Colonne** : si `true`la colonne est, l’utilisateur peut sélectionner des colonnes.
+    - **Tapez Select** -if `true`, l’utilisateur peut taper un caractère pour sélectionner une ligne.
+    - **Empty** : si `true`la valeur est, l’utilisateur n’est pas obligé de sélectionner une ligne ou une colonne, la table n’autorise aucune sélection.
+- **Enregistrement** automatique: nom sous lequel le format des tables est automatiquement enregistré.
+- **Informations sur** la colonne `true`-si, l’ordre et la largeur des colonnes sont automatiquement enregistrés.
+- **Sauts de ligne** : sélectionnez la façon dont la cellule gère les sauts de ligne.
+- **Tronque la dernière ligne visible** : `true`si la cellule est tronquée dans les données ne peut pas être contenue dans ses limites.
 
 > [!IMPORTANT]
-> Sauf si vous mettez à jour une application Xamarin.Mac héritée, `NSView` en affichages de tableau doit être utilisés sur `NSCell` en fonction des vues de Table. `NSCell` est considéré comme hérité et de ne pas être gérée à l’avenir.
+> À moins que vous ne conserviez une application Xamarin `NSView` . Mac héritée, les vues `NSCell` de table basées sur les tables doivent être utilisées sur des vues de table basées sur. `NSCell`est considéré comme hérité et peut ne pas être pris en charge à l’avenir.
 
-Sélectionnez une colonne de Table dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une colonne de table dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l’inspecteur d' **attribut**:
 
-[![](table-view-images/edit06.png "L’inspecteur d’attributs")](table-view-images/edit06.png#lightbox)
+[![](table-view-images/edit06.png "L’inspecteur d’attribut")](table-view-images/edit06.png#lightbox)
 
-- **Titre** -définit le titre de la colonne.
-- **Alignement** -définir l’alignement du texte dans les cellules.
-- **Police du titre** -sélectionne la police pour le texte d’en-tête de la cellule.
-- **Clé de tri** -est la clé utilisée pour trier les données dans la colonne. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
-- **Sélecteur de** -est la **Action** utilisé pour effectuer le tri. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
-- **Commande** -est de l’ordre de tri pour les données de colonnes.
-- **Redimensionnement** -sélectionne le type de redimensionnement pour la colonne.
-- **Modifiable** : si `true`, l’utilisateur peut modifier les cellules dans une table en fonction de cellule.
-- **Masqué** : si `true`, la colonne est masquée.
+- **Titre** : définit le titre de la colonne.
+- **Alignement** : définissez l’alignement du texte dans les cellules.
+- **Police du titre** -sélectionne la police du texte d’en-tête de la cellule.
+- **Clé de tri** : clé utilisée pour trier les données dans la colonne. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
+- **Selector** -est l' **action** utilisée pour effectuer le tri. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
+- **Order** : il s’agit de l’ordre de tri pour les données de colonnes.
+- Redimensionnement-sélectionne le type de redimensionnement de la colonne.
+- **Modifiable** : `true`si, l’utilisateur peut modifier des cellules dans une table basée sur des cellules.
+- **Hidden** : si `true`la colonne est masquée.
 
-Vous pouvez également redimensionner la colonne en faisant glisser sa poignée (centré verticalement sur la droite de la colonne) à gauche ou à droite.
+Vous pouvez également redimensionner la colonne en faisant glisser sa poignée (centrée verticalement sur le côté droit de la colonne) à gauche ou à droite.
 
-Nous allons sélectionner la chaque colonne dans notre vue Table et donnez à la première colonne un **titre** de `Product` et la deuxième `Details`.
+Nous allons sélectionner chaque colonne dans notre vue de table et attribuer à la première colonne un titre `Product` `Details`et la deuxième.
 
-Sélectionnez une vue de cellule de Table (`NSTableViewCell`) dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une vue de cellule de`NSTableViewCell`table () dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](table-view-images/edit07.png "L’inspecteur d’attributs")](table-view-images/edit07.png#lightbox)
+[![](table-view-images/edit07.png "L’inspecteur d’attribut")](table-view-images/edit07.png#lightbox)
 
-Il s’agit de toutes les propriétés d’une vue standard. Vous avez également la possibilité de redimensionner les lignes pour cette colonne ici.
+Il s’agit de toutes les propriétés d’une vue standard. Vous avez également la possibilité de redimensionner les lignes de cette colonne ici.
 
-Sélectionnez une cellule d’affichage Table (par défaut, il s’agit d’un `NSTextField`) dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une cellule d’affichage de table (par défaut, il `NSTextField`s’agit d’un) dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](table-view-images/edit08.png "L’inspecteur d’attributs")](table-view-images/edit08.png#lightbox)
+[![](table-view-images/edit08.png "L’inspecteur d’attribut")](table-view-images/edit08.png#lightbox)
 
-Vous aurez toutes les propriétés d’un champ de texte standard pour définir ici. Par défaut, un champ de texte standard est utilisé pour afficher les données d’une cellule dans une colonne.
+Vous disposez de toutes les propriétés d’un champ de texte standard à définir ici. Par défaut, un champ de texte standard est utilisé pour afficher les données d’une cellule dans une colonne.
 
-Sélectionnez une vue de cellule de Table (`NSTableFieldCell`) dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une vue de cellule de`NSTableFieldCell`table () dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](table-view-images/edit09.png "L’inspecteur d’attributs")](table-view-images/edit09.png#lightbox)
+[![](table-view-images/edit09.png "L’inspecteur d’attribut")](table-view-images/edit09.png#lightbox)
 
-Plus important ici sont les suivantes :
+Les paramètres les plus importants sont les suivants:
 
-- **Disposition** - sélectionnez la façon dont les cellules de cette colonne sont disposés.
-- **Utilise le Mode à ligne unique** : si `true`, la cellule est limitée à une seule ligne.
-- **La largeur de première exécution disposition** : si `true`, la cellule préféreront la largeur définie pour elle (manuellement ou automatiquement) quand il est affiché à la première fois que l’application est exécutée.
-- **Action** -contrôle le moment où la modification **Action** est envoyé pour la cellule.
-- **Comportement** -définit si une cellule est sélectionnable ou modifiable.
-- **Texte riche** : si `true`, la cellule peut afficher du texte mis en forme et de style.
-- **Annuler** : si `true`, la cellule assume la responsabilité pour qu’il est annuler le comportement.
+- **Disposition** : sélectionnez la disposition des cellules de cette colonne.
+- **Utilise le mode à ligne simple** : si `true`la valeur est, la cellule est limitée à une seule ligne.
+- **Largeur de la première disposition** du `true`Runtime: si la valeur est, la cellule préfèrera la largeur définie pour celle-ci (manuellement ou automatiquement) lorsqu’elle sera affichée lors de la première exécution de l’application.
+- **Action** -contrôle quand l' **action** de modification est envoyée pour la cellule.
+- **Comportement** : définit si une cellule est sélectionnable ou modifiable.
+- **Texte enrichi** : si `true`la cellule est affichée, la cellule peut afficher du texte mis en forme et un style.
+- **Undo** -si `true`, la cellule assume la responsabilité de son comportement d’annulation.
 
-Sélectionnez la vue de cellule de Table (`NSTableFieldCell`) en bas d’une colonne de Table dans le **hiérarchie des interfaces**:
+Sélectionnez la vue de cellule de`NSTableFieldCell`table () en bas d’une colonne de table dans la hiérarchie de l' **interface**:
 
-[![](table-view-images/edit10.png "En sélectionnant la vue de cellule de Table")](table-view-images/edit10.png#lightbox)
+[![](table-view-images/edit10.png "Sélection de la vue de cellule de table")](table-view-images/edit10.png#lightbox)
 
-Cela vous permet de modifier la vue de cellule de Table utilisée comme base _modèle_ pour toutes les cellules créés pour la colonne donnée.
+Cela vous permet de modifier la vue de cellule de table utilisée comme _modèle_ de base pour toutes les cellules créées pour la colonne donnée.
 
 <a name="Adding_Actions_and_Outlets" />
 
-### <a name="adding-actions-and-outlets"></a>Ajoute des Actions et Outlets
+### <a name="adding-actions-and-outlets"></a>Ajout d’actions et de prises
 
-Juste comme tout autre contrôle de l’interface utilisateur Cocoa, nous devons exposer notre Table de vue et il est de colonnes et des cellules à c# code à l’aide de **Actions** et **Outlets** (basé sur les fonctionnalités requises).
+Tout comme n’importe quel autre contrôle d’IU de cacao, nous devons exposer notre vue de table et ses colonnes C# et cellules au code à l’aide d' **actions** et de **prises** (selon les fonctionnalités requises).
 
-Le processus est identique pour n’importe quel élément d’affichage de la Table que nous souhaitons exposer :
+Le processus est le même pour tous les éléments d’affichage de table que nous souhaitons exposer:
 
-1. Basculez vers le **éditeur de l’Assistant** et vérifiez que le `ViewController.h` fichier est sélectionné : 
+1. Basculez vers l’éditeur de l' **Assistant** et `ViewController.h` Vérifiez que le fichier est sélectionné: 
 
-    [![](table-view-images/edit11.png "L’éditeur de l’Assistant")](table-view-images/edit11.png#lightbox)
-2. Sélectionnez la vue de Table dans le **hiérarchie des interfaces**, cliquez et faites glisser vers le `ViewController.h` fichier.
-3. Créer un **Outlet** pour la vue de Table appelée `ProductTable`: 
+    [![](table-view-images/edit11.png "Éditeur de l’Assistant")](table-view-images/edit11.png#lightbox)
+2. Sélectionnez la vue de table dans la hiérarchie de l' **interface**, cliquez dessus et faites `ViewController.h` -la glisser vers le fichier.
+3. Créez un **orifice** pour la vue de la `ProductTable`table appelée: 
 
-    [![](table-view-images/edit13.png "Configuration d’un Outlet")](table-view-images/edit13.png#lightbox)
-4. Créer **Outlets** pour les colonnes de tables aussi appelé `ProductColumn` et `DetailsColumn`: 
+    [![](table-view-images/edit13.png "Configuration d’une prise")](table-view-images/edit13.png#lightbox)
+4. Créez des **sorties** pour les colonnes de tables, ainsi `ProductColumn` que `DetailsColumn`les suivantes: 
 
-    [![](table-view-images/edit14.png "Configuration d’un Outlet")](table-view-images/edit14.png#lightbox)
-5. Enregistrer les modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+    [![](table-view-images/edit14.png "Configuration d’une prise")](table-view-images/edit14.png#lightbox)
+5. Enregistrez vos modifications et revenez à Visual Studio pour Mac à synchroniser avec Xcode.
 
-Nous allons ensuite écrire à l’affichage de code des données pour la table lors de l’application est exécutée.
+Nous allons ensuite écrire le code pour afficher des données pour la table lors de l’exécution de l’application.
 
 <a name="Populating_the_Table_View" />
 
-## <a name="populating-the-table-view"></a>Remplissage de l’affichage de la Table
+## <a name="populating-the-table-view"></a>Remplissage de la vue table
 
-Avec notre vue Table conçue dans Interface Builder et exposées via un **Outlet**, nous devons ensuite créer le code c# pour le remplir.
+Avec notre vue de table conçue en Interface Builder et exposée par le biais d’une **prise**, nous C# devons ensuite créer le code pour le remplir.
 
-Tout d’abord, nous allons créer un nouveau `Product` classe pour contenir les informations pour les lignes individuelles. Dans le **l’Explorateur de solutions**, cliquez sur le projet et sélectionnez **ajouter** > **nouveau fichier...** Sélectionnez **général** > **classe vide**, entrez `Product` pour le **nom** et cliquez sur le **New** bouton :
+Tout d’abord, nous allons créer `Product` une nouvelle classe pour stocker les informations relatives aux lignes individuelles. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `Product` pour le **nom** et cliquez sur le bouton **nouveau** :
 
 [![](table-view-images/populate01.png "Création d’une classe vide")](table-view-images/populate01.png#lightbox)
 
-Rendre le `Product.cs` fichier ressemble ce qui suit :
+Faites en `Product.cs` sorte que le fichier ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -207,9 +207,9 @@ namespace MacTables
 
 ```
 
-Ensuite, nous devons créer une sous-classe de `NSTableDataSource` pour fournir les données pour notre table comme il est demandé. Dans le **l’Explorateur de solutions**, cliquez sur le projet et sélectionnez **ajouter** > **nouveau fichier...** Sélectionnez **général** > **classe vide**, entrez `ProductTableDataSource` pour le **nom** et cliquez sur le **New** bouton.
+Ensuite, nous devons créer une sous-classe de `NSTableDataSource` pour fournir les données de notre table au fur et à mesure qu’elles sont demandées. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `ProductTableDataSource` pour le **nom** et cliquez sur le bouton **nouveau** .
 
-Modifier la `ProductTableDataSource.cs` de fichier et qu’elle ressemble à ce qui suit :
+Modifiez le `ProductTableDataSource.cs` fichier et faites en sorte qu’il ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -244,11 +244,11 @@ namespace MacTables
 
 ```
 
-Cette classe dispose d’un stockage pour les éléments de notre vue de la Table et remplace le `GetRowCount` pour retourner le nombre de lignes dans la table.
+Cette classe possède un stockage pour les éléments de la vue de table et remplace `GetRowCount` le pour retourner le nombre de lignes dans la table.
 
-Enfin, nous devons créer une sous-classe de `NSTableDelegate` pour fournir le comportement de notre table. Dans le **l’Explorateur de solutions**, cliquez sur le projet et sélectionnez **ajouter** > **nouveau fichier...** Sélectionnez **général** > **classe vide**, entrez `ProductTableDelegate` pour le **nom** et cliquez sur le **New** bouton.
+Enfin, nous devons créer une sous-classe de `NSTableDelegate` pour fournir le comportement de notre table. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `ProductTableDelegate` pour le **nom** et cliquez sur le bouton **nouveau** .
 
-Modifier la `ProductTableDelegate.cs` de fichier et qu’elle ressemble à ce qui suit :
+Modifiez le `ProductTableDelegate.cs` fichier et faites en sorte qu’il ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -310,9 +310,9 @@ namespace MacTables
 }
 ```
 
-Lorsque nous créons une instance de la `ProductTableDelegate`, nous passons également dans une instance de la `ProductTableDataSource` qui fournit les données pour la table. Le `GetViewForItem` méthode est chargée de retourner une vue (données) pour afficher la cellule pour une colonne donnée et une ligne. Si possible, une vue existante sera réutilisée pour afficher la cellule, si ce n’est pas une nouvelle vue doit être créée.
+Lorsque nous créons une instance `ProductTableDelegate`du, nous transmettons également une instance `ProductTableDataSource` du qui fournit les données pour la table. La `GetViewForItem` méthode est chargée de retourner une vue (données) pour afficher la cellule d’une colonne et d’une ligne. Si possible, une vue existante sera réutilisée pour afficher la cellule, s’il n’est pas nécessaire de créer une nouvelle vue.
 
-Pour remplir la table, nous allons modifier le `ViewController.cs` et effectuez le `AwakeFromNib` méthode ressemble ce qui suit :
+Pour remplir la table, nous allons modifier le `ViewController.cs` fichier et faire en `AwakeFromNib` sorte que la méthode ressemble à ce qui suit:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -331,25 +331,25 @@ public override void AwakeFromNib ()
 }
 ```
 
-Si nous exécutons l’application, ce qui suit s’affiche :
+Si nous exécutons l’application, les éléments suivants s’affichent:
 
-[![](table-view-images/populate02.png "Exécution d’une application exemple")](table-view-images/populate02.png#lightbox)
+[![](table-view-images/populate02.png "Exemple d’exécution d’application")](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
 ## <a name="sorting-by-column"></a>Tri par colonne
 
-Nous allons autoriser l’utilisateur de trier les données dans la table en cliquant sur un en-tête de colonne. Tout d’abord, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez le `Product` colonne, entrez `Title` pour le **clé de tri**, `compare:` pour le **sélecteur** et sélectionnez `Ascending` pour le **ordre**:
+Permettons à l’utilisateur de trier les données de la table en cliquant sur un en-tête de colonne. Tout d’abord, double- `Main.storyboard` cliquez sur le fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez la `Product` colonne, entrez `Title` pour la **clé**de tri `compare:` , pour le **Sélecteur** et `Ascending` sélectionnez pour la **commande**:
 
 [![](table-view-images/sort01.png "Définition de la clé de tri")](table-view-images/sort01.png#lightbox)
 
-Sélectionnez le `Details` colonne, entrez `Description` pour le **clé de tri**, `compare:` pour le **sélecteur** et sélectionnez `Ascending` pour le **ordre**:
+Sélectionnez la `Details` colonne, entrez `Description` pour la **clé**de tri `compare:` , pour le **Sélecteur** et `Ascending` sélectionnez pour la **commande**:
 
 [![](table-view-images/sort02.png "Définition de la clé de tri")](table-view-images/sort02.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Maintenant nous allons modifier le `ProductTableDataSource.cs` fichier, puis ajoutez les méthodes suivantes :
+À présent, modifions `ProductTableDataSource.cs` le fichier et ajoutez les méthodes suivantes:
 
 ```csharp
 public void Sort(string key, bool ascending) {
@@ -391,24 +391,24 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 }
 ```
 
-Le `Sort` méthode nous permettent de trier les données dans la Source de données basée sur une donnée `Product` champ de classe dans l’ordre croissant ou décroissant. Substituées `SortDescriptorsChanged` méthode sera appelée chaque fois que l’utilisation clique sur un en-tête de colonne. Il sera passé le **clé** valeur que nous avons défini dans le Générateur d’Interface et l’ordre de tri pour cette colonne.
+La `Sort` méthode nous permet de trier les données dans la source de données en fonction d' `Product` un champ de classe donné, dans l’ordre croissant ou décroissant. La méthode substituée `SortDescriptorsChanged` sera appelée chaque fois que l’utilisera un clic sur un en-tête de colonne. La valeur de **clé** que nous avons définie dans Interface Builder et l’ordre de tri de cette colonne seront transmis.
 
-Si nous pouvons exécuter l’application et que vous cliquez sur dans les en-têtes de colonnes, les lignes seront triées par cette colonne :
+Si nous exécutons l’application et que vous cliquez dans les en-têtes de colonne, les lignes sont triées selon cette colonne:
 
-[![](table-view-images/sort03.png "Exécution d’une application exemple")](table-view-images/sort03.png#lightbox)
+[![](table-view-images/sort03.png "Exemple d’exécution d’application")](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection" />
 
 ## <a name="row-selection"></a>Sélection de ligne
 
-Si vous souhaitez autoriser l’utilisateur à sélectionner une seule ligne, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez la vue de Table dans le **hiérarchie des interfaces** et désactivez le **plusieurs** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à sélectionner une seule ligne, double-cliquez sur le `Main.storyboard` fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez la vue de table dans la **hiérarchie d’interface** et décochez la case **multiple** dans l’inspecteur d' **attribut**:
 
-[![](table-view-images/select01.png "L’inspecteur d’attributs")](table-view-images/select01.png#lightbox)
+[![](table-view-images/select01.png "L’inspecteur d’attribut")](table-view-images/select01.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
 
-Ensuite, modifiez le `ProductTableDelegate.cs` fichier, puis ajoutez la méthode suivante :
+Modifiez ensuite le `ProductTableDelegate.cs` fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override bool ShouldSelectRow (NSTableView tableView, nint row)
@@ -417,27 +417,27 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 }
 ```
 
-Cela permettra à l’utilisateur de sélectionner une seule ligne dans la vue de Table. Retourner `false` pour le `ShouldSelectRow` pour les lignes que vous voulez l’utilisateur soit en mesure de sélectionner ou `false` pour chaque ligne, si vous ne souhaitez pas l’utilisateur soit en mesure de sélectionner toutes les lignes.
+Cela permettra à l’utilisateur de sélectionner n’importe quelle ligne dans la vue table. Retournez `false` pour le `ShouldSelectRow` pour une ligne que vous ne voulez pas que l’utilisateur puisse sélectionner ou `false` pour chaque ligne si vous ne souhaitez pas que l’utilisateur puisse sélectionner des lignes.
 
-La vue de Table (`NSTableView`) contient les méthodes suivantes pour travailler avec la sélection de ligne :
+La vue table (`NSTableView`) contient les méthodes suivantes pour l’utilisation de la sélection de lignes:
 
-- `DeselectRow(nint)` -Désélectionne la ligne donnée dans la table.
-- `SelectRow(nint,bool)` -Sélectionne la ligne donnée. Passer `false` pour le deuxième paramètre ne sélectionner qu’une seule ligne à la fois.
-- `SelectedRow` -Retourne la ligne actuelle sélectionnée dans la table.
-- `IsRowSelected(nint)` -Retourne `true` si la ligne donnée est sélectionnée.
+- `DeselectRow(nint)`: Désélectionne la ligne donnée dans la table.
+- `SelectRow(nint,bool)`-Sélectionne la ligne donnée. Transmettez `false` le second paramètre pour sélectionner une seule ligne à la fois.
+- `SelectedRow`-Retourne la ligne actuelle sélectionnée dans la table.
+- `IsRowSelected(nint)`-Retourne `true` si la ligne donnée est sélectionnée.
 
 <a name="Multiple_Row_Selection" />
 
 ## <a name="multiple-row-selection"></a>Sélection de plusieurs lignes
 
-Si vous souhaitez autoriser l’utilisateur à sélectionner un plusieurs lignes, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez la vue de Table dans le **hiérarchie des interfaces** et vérifiez le **plusieurs** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à sélectionner plusieurs lignes, double-cliquez sur le fichier `Main.storyboard` pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez la vue de table dans la **hiérarchie d’interface** et cochez la case **multiple** dans l’inspecteur d' **attribut**:
 
-[![](table-view-images/select02.png "L’inspecteur d’attributs")](table-view-images/select02.png#lightbox)
+[![](table-view-images/select02.png "L’inspecteur d’attribut")](table-view-images/select02.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
 
-Ensuite, modifiez le `ProductTableDelegate.cs` fichier, puis ajoutez la méthode suivante :
+Modifiez ensuite le `ProductTableDelegate.cs` fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override bool ShouldSelectRow (NSTableView tableView, nint row)
@@ -446,31 +446,31 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 }
 ```
 
-Cela permettra à l’utilisateur de sélectionner une seule ligne dans la vue de Table. Retourner `false` pour le `ShouldSelectRow` pour les lignes que vous voulez l’utilisateur soit en mesure de sélectionner ou `false` pour chaque ligne, si vous ne souhaitez pas l’utilisateur soit en mesure de sélectionner toutes les lignes.
+Cela permettra à l’utilisateur de sélectionner n’importe quelle ligne dans la vue table. Retournez `false` pour le `ShouldSelectRow` pour une ligne que vous ne voulez pas que l’utilisateur puisse sélectionner ou `false` pour chaque ligne si vous ne souhaitez pas que l’utilisateur puisse sélectionner des lignes.
 
-La vue de Table (`NSTableView`) contient les méthodes suivantes pour travailler avec la sélection de ligne :
+La vue table (`NSTableView`) contient les méthodes suivantes pour l’utilisation de la sélection de lignes:
 
-- `DeselectAll(NSObject)` -Désélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet qui effectue la sélection. 
-- `DeselectRow(nint)` -Désélectionne la ligne donnée dans la table.
-- `SelectAll(NSobject)` : Sélectionne toutes les lignes dans la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet qui effectue la sélection.
-- `SelectRow(nint,bool)` -Sélectionne la ligne donnée. Passer `false` pour le deuxième paramètre effacer la sélection et sélectionnez une seule ligne, transmettre `true` pour étendre la sélection et inclure cette ligne.
-- `SelectRows(NSIndexSet,bool)` -Sélectionne l’ensemble de lignes donné. Passer `false` pour le deuxième paramètre effacer la sélection, puis sélectionnez uniquement ces lignes, passer `true` pour étendre la sélection et inclure ces lignes.
-- `SelectedRow` -Retourne la ligne actuelle sélectionnée dans la table.
-- `SelectedRows` -Retourne un `NSIndexSet` contenant les index des lignes sélectionnées.
-- `SelectedRowCount` -Retourne le nombre de lignes sélectionnées.
-- `IsRowSelected(nint)` -Retourne `true` si la ligne donnée est sélectionnée.
+- `DeselectAll(NSObject)`: Désélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet en cours de sélection. 
+- `DeselectRow(nint)`: Désélectionne la ligne donnée dans la table.
+- `SelectAll(NSobject)`: Sélectionne toutes les lignes de la table. Utilisez `this` pour le premier paramètre à envoyer dans l’objet en cours de sélection.
+- `SelectRow(nint,bool)`-Sélectionne la ligne donnée. Pass `false` pour le deuxième paramètre désactivez la sélection et sélectionnez une seule ligne, `true` Pass pour étendre la sélection et inclure cette ligne.
+- `SelectRows(NSIndexSet,bool)`-Sélectionne l’ensemble de lignes donné. Pass `false` pour le deuxième paramètre désactivez la sélection et sélectionnez uniquement ces lignes, `true` Pass pour étendre la sélection et inclure ces lignes.
+- `SelectedRow`-Retourne la ligne actuelle sélectionnée dans la table.
+- `SelectedRows`-Retourne un `NSIndexSet` contenant les index des lignes sélectionnées.
+- `SelectedRowCount`-Retourne le nombre de lignes sélectionnées.
+- `IsRowSelected(nint)`-Retourne `true` si la ligne donnée est sélectionnée.
 
 <a name="Type_to_Select_Row" />
 
-## <a name="type-to-select-row"></a>Type à sélectionner la ligne
+## <a name="type-to-select-row"></a>Tapez pour sélectionner la ligne
 
-Si vous souhaitez autoriser l’utilisateur à taper un caractère avec la vue de la Table sélectionnée et sélectionnez la première ligne qui a ce caractère, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez la vue de Table dans le **hiérarchie des interfaces** et vérifiez le **Type Sélectionnez** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à taper un caractère avec la vue de table sélectionnée et à sélectionner la première ligne qui contient ce caractère, double-cliquez `Main.storyboard` sur le fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez la vue de table dans la hiérarchie de l' **interface** et cochez la case **type sélectionner** dans l' **inspecteur d’attribut**:
 
 [![](table-view-images/type01.png "Définition du type de sélection")](table-view-images/type01.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Maintenant nous allons modifier le `ProductTableDelegate.cs` fichier, puis ajoutez la méthode suivante :
+À présent, modifions `ProductTableDelegate.cs` le fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRow, nint endRow, string searchString)
@@ -488,25 +488,25 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 }
 ```
 
-Le `GetNextTypeSelectMatch` méthode prend le donné `searchString` et retourne la ligne de la première `Product` qui possède cette chaîne dans son `Title`.
+La `GetNextTypeSelectMatch` méthode prend le donné `searchString` et retourne la ligne de la première `Product` qui contient cette chaîne `Title`.
 
-Si nous pouvons exécuter l’application et que vous tapez un caractère, une ligne est sélectionnée :
+Si nous exécutons l’application et que vous tapez un caractère, une ligne est sélectionnée:
 
-[![](table-view-images/type02.png "Exécution d’une application exemple")](table-view-images/type02.png#lightbox)
+[![](table-view-images/type02.png "Exemple d’exécution d’application")](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns" />
 
 ## <a name="reordering-columns"></a>Réorganisation des colonnes
 
-Si vous souhaitez autoriser l’utilisateur à faire glisser réorganiser les colonnes dans la vue de Table, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez la vue de Table dans le **hiérarchie des interfaces** et vérifiez le **réorganisation** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à faire glisser les colonnes de réorganisation dans la vue table, double- `Main.storyboard` cliquez sur le fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez la vue de table dans la **hiérarchie d’interface** et cochez la case réorganisation dans l’inspecteur d' **attribut**:
 
-[![](table-view-images/reorder01.png "L’inspecteur d’attributs")](table-view-images/reorder01.png#lightbox)
+[![](table-view-images/reorder01.png "L’inspecteur d’attribut")](table-view-images/reorder01.png#lightbox)
 
-Si nous donner une valeur pour le **Autosave** propriété et vérifiez la **les informations de colonne** champ, les modifications que nous apportons à disposition de la table seront automatiquement enregistrées pour nous et restaurée la prochaine fois que l’application est exécuté.
+Si nous attribuons une valeur à la propriété **enregistrement** automatique et que vous vérifiez le champ **informations sur la colonne** , les modifications que nous apportons à la disposition de la table sont automatiquement enregistrées pour nous et restaurées lors de la prochaine exécution de l’application.
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Maintenant nous allons modifier le `ProductTableDelegate.cs` fichier, puis ajoutez la méthode suivante :
+À présent, modifions `ProductTableDelegate.cs` le fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nint newColumnIndex)
@@ -515,17 +515,17 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 }
 ```
 
-Le `ShouldReorder` méthode doit retourner `true` pour n’importe quelle colonne il souhaite autoriser à être glisser réorganisés dans le `newColumnIndex`, sinon retour `false`;
+La `ShouldReorder` méthode doit retourner `true` pour toute colonne qu’il est possible de faire glisser dans le `newColumnIndex`, sinon retourner `false`;
 
-Si nous exécutons l’application, nous pouvons faire glisser les en-têtes de colonnes pour réorganiser les colonnes :
+Si nous exécutons l’application, nous pouvons faire glisser les en-têtes de colonne pour réorganiser les colonnes:
 
-[![](table-view-images/reorder02.png "Un exemple des colonnes permutées")](table-view-images/reorder02.png#lightbox)
+[![](table-view-images/reorder02.png "Exemple des colonnes réorganisées")](table-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
 ## <a name="editing-cells"></a>Modification des cellules
 
-Si vous souhaitez autoriser l’utilisateur à modifier les valeurs pour une cellule donnée, modifier le `ProductTableDelegate.cs` du fichier et changer la `GetViewForItem` méthode comme suit :
+Si vous souhaitez autoriser l’utilisateur à modifier les valeurs d’une cellule donnée, modifiez le `ProductTableDelegate.cs` fichier et modifiez la `GetViewForItem` méthode comme suit:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -573,15 +573,15 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-Maintenant si nous exécutons l’application, l’utilisateur peut modifier les cellules dans la vue de Table :
+Maintenant, si nous exécutons l’application, l’utilisateur peut modifier les cellules de la vue table:
 
-[![](table-view-images/editing01.png "Un exemple de modification d’une cellule")](table-view-images/editing01.png#lightbox)
+[![](table-view-images/editing01.png "Exemple de modification d’une cellule")](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views" />
 
-## <a name="using-images-in-table-views"></a>L’utilisation d’Images dans les vues de Table
+## <a name="using-images-in-table-views"></a>Utilisation d’images dans les vues de table
 
-Pour inclure une image dans le cadre de la cellule dans un `NSTableView`, vous devrez modifier la façon dont les données sont retournées par la vue Table `NSTableViewDelegate's` `GetViewForItem` méthode à utiliser un `NSTableCellView` au lieu du type `NSTextField`. Exemple :
+Pour inclure une image en tant que partie de la cellule `NSTableView`dans un, vous devez modifier la façon dont les données sont retournées par `NSTableViewDelegate's` la méthode de `GetViewForItem` la `NSTableCellView` vue table pour utiliser `NSTextField`un au lieu du type standard. Exemple :
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -640,21 +640,21 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-Pour plus d’informations, consultez le [à l’aide d’Images avec des vues Table](~/mac/app-fundamentals/image.md) section de notre [fonctionne avec Image](~/mac/app-fundamentals/image.md) documentation.
+Pour plus d’informations, consultez la section [utilisation d’images avec des vues tabulaires](~/mac/app-fundamentals/image.md) de notre documentation [sur](~/mac/app-fundamentals/image.md) l’utilisation des images.
 
 <a name="Adding-a-Delete-Button-to-a-Row" />
 
-## <a name="adding-a-delete-button-to-a-row"></a>Ajout d’un bouton Supprimer à une ligne
+## <a name="adding-a-delete-button-to-a-row"></a>Ajout d’un bouton supprimer à une ligne
 
-En fonction des exigences de votre application, il peut arriver dans lequel vous devez fournir un bouton d’action pour chaque ligne dans la table. Un exemple de cela, nous allons développer l’exemple de vue de la Table créée ci-dessus pour inclure un **supprimer** bouton sur chaque ligne.
+Selon les exigences de votre application, il peut arriver que vous deviez fournir un bouton d’action pour chaque ligne de la table. À titre d’exemple, nous allons développer l’exemple de vue de table créé ci-dessus pour inclure un bouton **supprimer** sur chaque ligne.
 
-Tout d’abord, modifiez le `Main.storyboard` dans Xcode Interface Builder, sélectionnez la vue de Table et augmenter le nombre de colonnes à trois (3). Ensuite, modifiez le **titre** de la nouvelle colonne à `Action`:
+Tout d’abord, `Main.storyboard` modifiez le dans le Interface Builder de Xcode, sélectionnez la vue de table et augmentez le nombre de colonnes à trois (3). Ensuite, remplacez le **titre** de la nouvelle colonne par `Action`:
 
-[![](table-view-images/delete01.png "Modification du nom de colonne")](table-view-images/delete01.png#lightbox)
+[![](table-view-images/delete01.png "Modification du nom de la colonne")](table-view-images/delete01.png#lightbox)
 
-Enregistrez les modifications dans la table de montage séquentiel et revenir à Visual Studio pour Mac synchroniser les modifications.
+Enregistrez les modifications apportées à la table de montage séquentiel et revenez à Visual Studio pour Mac pour synchroniser les modifications.
 
-Ensuite, modifiez le `ViewController.cs` fichier, puis ajoutez la méthode publique suivante :
+Modifiez ensuite le `ViewController.cs` fichier et ajoutez la méthode publique suivante:
 
 ```csharp
 public void ReloadTable ()
@@ -663,7 +663,7 @@ public void ReloadTable ()
 }
 ```
 
-Dans le même fichier, modifier la création du nouveau délégué de vue de Table à l’intérieur de `ViewDidLoad` méthode comme suit :
+Dans le même fichier, modifiez la création du délégué de la vue de table à `ViewDidLoad` l’intérieur de la méthode comme suit:
 
 ```csharp
 // Populate the Product Table
@@ -671,7 +671,7 @@ ProductTable.DataSource = DataSource;
 ProductTable.Delegate = new ProductTableDelegate (this, DataSource);
 ```
 
-À présent, modifiez le `ProductTableDelegate.cs` fichier à inclure une connexion privée avec le contrôleur d’affichage et à mettre le contrôleur en tant que paramètre lors de la création d’une nouvelle instance du délégué :
+À présent, modifiez `ProductTableDelegate.cs` le fichier pour inclure une connexion privée au contrôleur d’affichage et prenez le contrôleur en tant que paramètre lors de la création d’une nouvelle instance du délégué:
 
 ```csharp
 #region Private Variables
@@ -688,7 +688,7 @@ public ProductTableDelegate (ViewController controller, ProductTableDataSource d
 #endregion
 ```
 
-Ensuite, ajoutez la nouvelle méthode privée suivante à la classe :
+Ensuite, ajoutez la nouvelle méthode privée suivante à la classe:
 
 ```csharp
 private void ConfigureTextField (NSTableCellView view, nint row)
@@ -722,9 +722,9 @@ private void ConfigureTextField (NSTableCellView view, nint row)
 }
 ```
 
-Cela prend toutes les configurations d’affichage de texte qui ont été précédemment effectuées dans le `GetViewForItem` (méthode) et les place dans un emplacement unique, pouvant être appelé (étant donné que la dernière colonne de la table n’inclut pas un affichage de texte, mais un bouton).
+Cela prend toutes les configurations d’affichage de texte qui ont été effectuées précédemment dans la `GetViewForItem` méthode et les place dans un emplacement unique et pouvant être appelé (puisque la dernière colonne de la table n’inclut pas un affichage de texte mais un bouton).
 
-Enfin, modifiez le `GetViewForItem` (méthode) et qu’elle ressemble à ce qui suit :
+Enfin, modifiez la `GetViewForItem` méthode et faites en sorte qu’elle ressemble à ce qui suit:
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -815,9 +815,9 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-Nous allons examiner plusieurs sections de ce code plus en détail. Premièrement, si un nouveau `NSTableViewCell` est en cours de création action est pris en fonction du nom de la colonne. Pour les deux premières colonnes (**produit** et **détails**), la nouvelle `ConfigureTextField` méthode est appelée.
+Examinons plus en détail plusieurs sections de ce code. Tout d’abord, si `NSTableViewCell` une nouvelle action est créée, l’action est effectuée en fonction du nom de la colonne. Pour les deux premières colonnes (**Product** et **Details**), la `ConfigureTextField` nouvelle méthode est appelée.
 
-Pour le **Action** colonne, un nouveau `NSButton` est créé et ajouté à la cellule en tant que Sub vue :
+Pour la colonne **action** , une nouvelle `NSButton` est créée et ajoutée à la cellule sous la forme d’une sous-vue:
 
 ```csharp
 // Create new button
@@ -831,7 +831,7 @@ button.Tag = row;
 view.AddSubview (button);
 ```
 
-Le bouton `Tag` propriété est utilisée pour contenir le nombre de la ligne qui est en cours de traitement. Ce nombre sera utilisé ultérieurement lorsque l’utilisateur demande une ligne à supprimer dans le bouton `Activated` événement :
+La propriété du `Tag` bouton est utilisée pour stocker le numéro de la ligne en cours de traitement. Ce nombre sera utilisé ultérieurement lorsque l’utilisateur demandera la suppression d’une ligne dans l’événement du `Activated` bouton:
 
 ```csharp
 // Wireup events
@@ -859,7 +859,7 @@ button.Activated += (sender, e) => {
 };
 ```
 
-Lors du démarrage du Gestionnaire d’événements, nous obtenons le bouton et le produit qui se trouve sur la ligne de table donnée. Une alerte est ensuite présentée à l’utilisateur de confirmer la suppression de la ligne. Si l’utilisateur choisit de supprimer la ligne, la ligne donnée est supprimée de la Source de données et la table est rechargée :
+Au début du gestionnaire d’événements, nous obtenons le bouton et le produit qui se trouve sur la ligne de la table donnée. Ensuite, une alerte est présentée à l’utilisateur pour confirmer la suppression de la ligne. Si l’utilisateur choisit de supprimer la ligne, la ligne donnée est supprimée de la source de données et la table est rechargée:
 
 ```csharp
 // Remove the given row from the dataset
@@ -867,7 +867,7 @@ DataSource.Products.RemoveAt((int)btn.Tag);
 Controller.ReloadTable ();
 ```
 
-Enfin, si la cellule d’affichage de tableau est réutilisée au lieu d’en cours de création nouveau, le code suivant configure basé sur la colonne en cours de traitement :
+Enfin, si la cellule d’affichage de table est réutilisée au lieu d’être créée, le code suivant la configure en fonction de la colonne en cours de traitement:
 
 ```csharp
 // Setup view based on the column selected
@@ -893,40 +893,40 @@ case "Action":
 
 ```
 
-Pour le **Action** colonne, toutes les vues de Sub sont analysés jusqu'à ce que le `NSButton` est trouvé, il est `Tag` propriété est mise à jour pour faire pointer vers la ligne actuelle.
+Pour la colonne **action** , toutes les sous-vues sont analysées `NSButton` jusqu’à ce que le soit `Tag` trouvé, puis la propriété est mise à jour pour pointer vers la ligne actuelle.
 
-Avec ces modifications en place, lors de l’application est exécutée chaque ligne aura une **supprimer** bouton :
+Lorsque ces modifications sont en place, lorsque l’application est exécutée, chaque ligne a un bouton **supprimer** :
 
-[![](table-view-images/delete02.png "La vue de table avec des boutons de suppression")](table-view-images/delete02.png#lightbox)
+[![](table-view-images/delete02.png "Vue table avec boutons de suppression")](table-view-images/delete02.png#lightbox)
 
-Lorsque l’utilisateur clique sur un **supprimer** bouton, une alerte s’affiche demandant de supprimer la ligne donnée :
+Quand l’utilisateur clique sur un bouton **supprimer** , une alerte s’affiche pour lui demander de supprimer la ligne spécifiée:
 
-[![](table-view-images/delete03.png "Une alerte de ligne delete")](table-view-images/delete03.png#lightbox)
+[![](table-view-images/delete03.png "Alerte de suppression de ligne")](table-view-images/delete03.png#lightbox)
 
-Si l’utilisateur choisit de suppression, la ligne sera supprimée et la table est redessinée :
+Si l’utilisateur choisit supprimer, la ligne est supprimée et la table est redessinée:
 
-[![](table-view-images/delete04.png "La table une fois que la ligne est supprimée.")](table-view-images/delete04.png#lightbox)
+[![](table-view-images/delete04.png "Table après la suppression de la ligne")](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views" />
 
-## <a name="data-binding-table-views"></a>Vues de Table de liaison de données
+## <a name="data-binding-table-views"></a>Vues de table de liaison de données
 
-À l’aide de techniques de codage de clé-valeur et une liaison de données dans votre application Xamarin.Mac, vous pouvez considérablement réduire la quantité de code que vous devez écrire et maintenir pour remplir et utiliser des éléments d’interface utilisateur. Vous avez également l’avantage de découplage davantage vos données de sauvegarde (_modèle de données_) à partir de votre front end Interface d’utilisateur (_Model-View-Controller_), conduit à la plus facile à gérer, une application plus flexible conception.
+En utilisant le codage clé-valeur et les techniques de liaison de données dans votre application Xamarin. Mac, vous pouvez réduire la quantité de code que vous devez écrire et maintenir pour remplir et utiliser des éléments d’interface utilisateur. Vous avez également l’avantage de dissocier vos données de stockage (modèle de_données_) de votre interface utilisateur frontale (_Model-View-Controller_), ce qui vous permet de gérer plus facilement la conception d’applications plus souple.
 
-Codage de clé-valeur (KVM) est un mécanisme permettant l’accès aux propriétés d’un objet indirectement, à l’aide de clés (spécialement mise en forme des chaînes) pour identifier les propriétés au lieu d’y accéder via des variables d’instance ou des méthodes d’accesseur (`get/set`). En implémentant la clé-valeur de codage des accesseurs conformes dans votre application Xamarin.Mac, vous avez accès à d’autres fonctionnalités macOS comme clé-valeur en observant (KVO), liaison de données, les données principales, Cocoa les liaisons et scriptability.
+Le codage de clé-valeur (KVC) est un mécanisme permettant d’accéder indirectement aux propriétés d’un objet, à l’aide de clés (chaînes spécialement mises en forme) pour identifier les propriétés au lieu d'`get/set`y accéder via des variables d’instance ou des méthodes d’accesseur (). En implémentant des accesseurs conformes de codage de clé-valeur dans votre application Xamarin. Mac, vous accédez à d’autres fonctionnalités macOS telles que l’observation de la valeur clé (KVO), la liaison de données, les données de base, les liaisons de cacao et la scriptabilité.
 
-Pour plus d’informations, consultez le [la liaison de données de vue Table](~/mac/app-fundamentals/databinding.md#Table_View_Data_Binding) section de notre [une liaison de données et le codage de clé-valeur](~/mac/app-fundamentals/databinding.md) documentation.
+Pour plus d’informations, consultez la section [table Data Binding](~/mac/app-fundamentals/databinding.md#Table_View_Data_Binding) de notre documentation sur la [liaison de données et le codage de clé-valeur](~/mac/app-fundamentals/databinding.md) .
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a examiné en détail à l’utilisation des vues de Table dans une application Xamarin.Mac. Nous avons vu les différents types et utilise des vues de Table, comment créer et mettre à jour les vues de Table dans l’Interface Builder de Xcode et comment travailler avec des vues de Table dans le code c#.
+Cet article a décrit en détail l’utilisation des vues de table dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des vues de table, comment créer et gérer des vues de table dans les Interface Builder de Xcode et comment utiliser les C# vues de table dans le code.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacTables (exemple)](https://developer.xamarin.com/samples/mac/MacTables/)
-- [MacImages (exemple)](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacTables (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/mactables)
+- [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Modes Plan](~/mac/user-interface/outline-view.md)
 - [Listes de sources](~/mac/user-interface/source-list.md)

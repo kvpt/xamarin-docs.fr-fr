@@ -1,39 +1,39 @@
 ---
-title: Options de disposition dans Xamarin.iOS
-description: Ce document décrit différentes façons d’organiser des interfaces dans Xamarin.iOS. Il aborde le redimensionnement automatique et la disposition automatique.
+title: Options de disposition dans Xamarin. iOS
+description: Ce document décrit les différentes façons de disposer les interfaces utilisateur dans Xamarin. iOS. Il aborde le dimensionnement automatique et la mise en page automatique.
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1bcced2f43328bf5e7d1ebb171b3c92c9ec22493
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: b825b0d7f9e18350514e3f84e70f901f5fcb6724
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827762"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655931"
 ---
-# <a name="layout-options-in-xamarinios"></a>Options de disposition dans Xamarin.iOS
+# <a name="layout-options-in-xamarinios"></a>Options de disposition dans Xamarin. iOS
 
-Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée :
+Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée:
 
--  **Redimensionnement automatique** – inspecteur le redimensionnement automatique dans le concepteur fournit une façon de définir le `AutoresizingMask` propriétés. Ainsi, un contrôle sera ancré sur les bords de leur conteneur et/ou corriger leur taille. Redimensionnement automatique fonctionne dans toutes les versions d’e/s. Cette opération est décrite plus en détail ci-dessous
--  **Disposition automatique** – une fonctionnalité, introduite dans iOS 6, qui permet un contrôle affiné sur les relations entre les contrôles d’interface utilisateur. Il permettra de contrôle de la position des éléments par rapport aux autres éléments sur l’aire de conception. Cette rubrique est couvert plus en détail dans le [disposition automatique avec le Concepteur de Xamarin iOS](~/ios/user-interface/designer/designer-auto-layout.md) guide.
+-  Redimensionnement automatique: l’inspecteur de redimensionnement automatique dans le concepteur permet `AutoresizingMask` de définir les propriétés. Cela permet à un contrôle d’être ancré sur les bords de son conteneur et/ou de corriger leur taille. Le redimensionnement automatique fonctionne dans toutes les versions d’iOS. Cela est décrit plus en détail ci-dessous.
+-  **Disposition automatique** : fonctionnalité, introduite dans iOS 6, qui permet de contrôler précisément les relations des contrôles de l’interface utilisateur. Il permet de contrôler les positions des éléments par rapport à d’autres éléments sur l’aire de conception. Cette rubrique est traitée plus en détail dans le guide [mise en page automatique avec le concepteur Xamarin iOS](~/ios/user-interface/designer/designer-auto-layout.md) .
 
-## <a name="autosizing"></a>Redimensionner automatiquement
+## <a name="autosizing"></a>Redimensionnement automatique
 
-Lorsqu’un utilisateur redimensionne une fenêtre, comme lorsque l’appareil est pivoté et les changements d’orientation, le système va se redimensionner automatiquement les vues contenues dans cette fenêtre selon leurs règles de redimensionnement automatique. Ces règles peuvent être définies C# à l’aide de la `AutoresizingMask` propriété de la `UIView` ou dans le **panneau Propriétés** d’e/s du concepteur, comme illustré ci-dessous :
+Quand un utilisateur redimensionne une fenêtre, par exemple lorsque l’appareil est pivoté et que l’orientation change, le système redimensionne automatiquement les vues dans cette fenêtre en fonction de leurs règles de redimensionnement automatique. Ces règles peuvent être définies dans C# à l' `AutoresizingMask` aide de la `UIView` propriété de ou de la **panneau Propriétés** du concepteur iOS, comme illustré ci-dessous:
 
- [![](layout-options-images/image41.png "Visual Studio pour Mac Concepteur")](layout-options-images/image41.png#lightbox)
+ [![](layout-options-images/image41.png "Concepteur de Visual Studio pour Mac")](layout-options-images/image41.png#lightbox)
 
-Lorsqu’un contrôle est sélectionné, cela vous permet de spécifier manuellement l’emplacement et les dimensions du contrôle, ainsi que les choix **redimensionnement automatique** comportement. Comme illustré dans la capture d’écran ci-dessous, nous pouvons utiliser le springs et struts dans le contrôle de redimensionnement automatique pour définir les relations de la vue sélectionnée à son parent :
+Lorsqu’un contrôle est sélectionné, cela vous permet de spécifier manuellement l’emplacement et les dimensions du contrôle, et de choisir le comportement de redimensionnement automatique. Comme illustré dans la capture d’écran ci-dessous, nous pouvons utiliser les ressorts et les jambes dans le contrôle de redimensionnement automatique pour définir la relation de la vue sélectionnée avec son parent:
 
- [![](layout-options-images/image42.png "Visual Studio pour Mac Concepteur")](layout-options-images/image42.png#lightbox)
+ [![](layout-options-images/image42.png "Concepteur de Visual Studio pour Mac")](layout-options-images/image42.png#lightbox)
 
-Ajuster une *spring* entraîne l’affichage redimensionner en fonction de la largeur ou hauteur de la vue parent. Ajuster une *jambe* rendra la vue de maintenir une distance constante entre lui-même et sa vue parent, sur ce bord particulier.
+L’ajustement d’un *ressort* entraîne le redimensionnement de la vue en fonction de la largeur ou de la hauteur de sa vue parent. Si vous ajustez une *jambe* , la vue maintient une distance constante entre elle et sa vue parent, sur cette arête particulière.
 
-Ces paramètres peuvent également être définis dans le code :
+Ces paramètres peuvent également être définis dans le code:
 
 ```csharp
 textfield1.Frame = new RectangleF(15, 277, 79, 27);
@@ -41,11 +41,11 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 ```
 
 
-Pour tester les paramètres de redimensionnement automatique, activer différents **Orientations prises en charge de l’appareil** dans les options du projet :
+Pour tester les paramètres de redimensionnement automatique, activez les différentes **orientations d’appareils prises en charge** dans les options du projet:
 
  [![](layout-options-images/image43a.png "Paramètres de redimensionnement automatique")](layout-options-images/image43a.png#lightbox)
 
-Dans le code-behind, nous pouvons utiliser le code suivant, ce qui provoque les contrôles de texte de deux à redimensionner horizontalement :
+Dans le code-behind, nous pouvons utiliser le code suivant, qui entraîne le redimensionnement horizontal des deux contrôles de texte:
 
 ```csharp
 textview1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
@@ -54,15 +54,15 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 ```
 
 
-Nous pouvons également ajuster les contrôles à l’aide du concepteur. En sélectionnant les struts comme présenté ci-dessous entraîne l’image rester aligné à droite sans être détourée la partie inférieure de la vue :
+Nous pouvons également ajuster les contrôles à l’aide du concepteur. Si vous sélectionnez les jambes comme indiqué ci-dessous, l’image reste alignée à droite sans être rognée en bas de la vue:
 
- [![](layout-options-images/autoresize.png "AutoRotation")](layout-options-images/autoresize.png#lightbox)
+ [![](layout-options-images/autoresize.png "Rotation")](layout-options-images/autoresize.png#lightbox)
 
-Ces captures d’écran montrent comment les contrôles de déplacer ou redimensionnement eux-mêmes lors de la rotation de l’écran :
+Ces captures d’écran montrent comment les contrôles sont redimensionnés ou repositionnés lors de la rotation de l’écran:
 
- [![](layout-options-images/image44a.png "AutoRotation")](layout-options-images/image44a.png#lightbox)
+ [![](layout-options-images/image44a.png "Rotation")](layout-options-images/image44a.png#lightbox)
 
-Notez que l’affichage de texte et un champ de texte à la fois s’étire pour conserver la même gauche et droite des marges, en raison du `FlexibleWidth` paramètre. L’image a la supérieure et gauche marge flexible, ce qui signifie qu’il conserve les marges inférieure et droite – en conservant l’image dans la vue lors de la rotation de l’écran. Des dispositions complexes requièrent généralement une combinaison de ces paramètres sur tous les contrôles visibles pour maintenir la cohérence de l’interface utilisateur et pour empêcher que les contrôles qui se chevauchent lorsque les limites de la vue Modifier (en raison d’une rotation ou tout autre événement de redimensionnement).
+Notez que l’affichage de texte et le champ de texte sont étirés pour conserver les mêmes marges de gauche `FlexibleWidth` et de droite, en raison du paramètre. La marge supérieure et gauche de l’image est flexible, ce qui signifie qu’elle conserve les marges inférieure et droite, ce qui permet d’afficher l’image lors de la rotation de l’écran. Les dispositions complexes requièrent généralement une combinaison de ces paramètres sur chaque contrôle visible pour maintenir la cohérence de l’interface utilisateur et empêcher le chevauchement des contrôles lorsque les limites de la vue changent (en raison de la rotation ou d’un autre événement de redimensionnement).
 
 
 
@@ -70,4 +70,4 @@ Notez que l’affichage de texte et un champ de texte à la fois s’étire pour
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

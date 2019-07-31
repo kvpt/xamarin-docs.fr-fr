@@ -7,16 +7,16 @@ ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 577eb19106ffa0ebd19c54aeeb155a9c6c85feac
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e8c909ce7dfd9c8f6dccbf2685ff2658931b6a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091633"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656356"
 ---
 # <a name="skiasharp-transparency"></a>Transparence de SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Comme vous l’avez vu, le [ `SKPaint` ](xref:SkiaSharp.SKPaint) classe inclut un [ `Color` ](xref:SkiaSharp.SKPaint.Color) propriété de type [ `SKColor` ](xref:SkiaSharp.SKColor). `SKColor` inclut un canal alpha, tout ce que vous la couleur avec une `SKColor` valeur peut être partiellement transparent. 
 
@@ -36,7 +36,7 @@ En outre, `SKColor` définit une pratique [ `WithAlpha` ](xref:SkiaSharp.SKColor
 SKColor halfTransparentBlue = SKColors.Blue.WithAlpha(0x80);
 ```
 
-L’utilisation de texte partiellement transparent est illustrée dans le **plus de Code** page dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple. Cette page fondu deux chaînes de texte dans et en incorporant la transparence dans le `SKColor` valeurs :
+L’utilisation de texte partiellement transparent est illustrée dans le **plus de Code** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. Cette page fondu deux chaînes de texte dans et en incorporant la transparence dans le `SKColor` valeurs :
 
 ```csharp
 public class CodeMoreCodePage : ContentPage
@@ -241,4 +241,4 @@ Dans les articles de plusieurs cours, vous avez vu comment utiliser SkiaSharp po
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

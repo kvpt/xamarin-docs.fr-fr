@@ -7,16 +7,16 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 54f6c8b94a1abdfcc3be9a86e179e766c417232b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290202"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655383"
 ---
 # <a name="skiasharp-image-filters"></a>Filtres d’image SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les filtres d’image sont des effets qui fonctionnent sur tous les bits de couleur des pixels qui composent une image. Ils sont plus polyvalents que les filtres de masque, qui fonctionnent uniquement sur le canal alpha comme décrit dans l’article [ **filtres de masque de SkiaSharp**](mask-filters.md). Pour utiliser un filtre d’image, définissez la [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter) propriété du `SKPaint` à un objet de type [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter) que vous avez créé en appelant une des méthodes statiques de la classe.
 
@@ -28,7 +28,7 @@ Cet article montre également à l’aide d’un filtre d’image pour créer un
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>Flou des graphiques vectoriels et des bitmaps
 
-L’effet de flou créé par le [ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*) méthode statique a un avantage significatif sur les méthodes de flou dans le [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) classe : Le filtre d’image peut flou à une image bitmap entière. La méthode a la syntaxe suivante :
+L’effet de flou créé par [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) la méthode statique présente un avantage significatif par rapport aux méthodes de [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) flou de la classe: Le filtre d’image peut rendre floue l’intégralité d’une bitmap. La méthode a la syntaxe suivante :
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -38,7 +38,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 La méthode a deux valeurs sigma &mdash; la première pour l’étendue de flou dans la direction horizontale et le second pour la direction verticale. Vous pouvez en cascade les filtres d’image en spécifiant un autre filtre d’image comme troisième argument facultatif. Un rectangle de rognage peut également être spécifié.
 
-Le **Image flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) inclut deux `Slider` vues qui vous permettent de faire des essais avec différents niveaux de flou de paramètre :
+Le **Image flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) inclut deux `Slider` vues qui vous permettent de faire des essais avec différents niveaux de flou de paramètre :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-Le premier argument de `SKImageFilter.CreateDistantLitDiffuse` est la direction de la lumière. Positif X et Y coordonnées indiquent que la lumière est pointe vers la droite et vers le bas. Point de coordonnées Z positif dans l’écran. Le fichier XAML vous permet de sélectionner des valeurs Z négatif, mais qui est uniquement afin que vous puissiez voir ce qui se passe : Conceptuellement, les coordonnées Z négatif provoquent la lumière pointer hors de l’écran. Pour tout autres puis petites valeurs négatives, l’effet d’éclairage cesse de fonctionner.
+Le premier argument de `SKImageFilter.CreateDistantLitDiffuse` est la direction de la lumière. Positif X et Y coordonnées indiquent que la lumière est pointe vers la droite et vers le bas. Point de coordonnées Z positif dans l’écran. Le fichier XAML vous permet de sélectionner des valeurs Z négatives, mais ce n’est que pour vous permettre de voir ce qui se passe: Conceptuellement, les coordonnées Z négatives provoquent le pointage de la lumière hors de l’écran. Pour tout autres puis petites valeurs négatives, l’effet d’éclairage cesse de fonctionner.
 
 Le `surfaceScale` argument peut varier de -1 à 1. (Les valeurs supérieures ou inférieures n’ont aucun effet.) Il s’agit des valeurs relatives de l’axe Z qui indiquent le déplacement de l’objet de graphique (dans ce cas, il s’agit de la chaîne de texte) à partir de la surface de la zone de dessin. Utilisez les valeurs négatives pour déclencher la chaîne de texte au-dessus de la surface de dessin et les valeurs positives à appuyer sur dans la zone de dessin.
 
@@ -439,9 +439,9 @@ Ces facteurs peuvent être équilibrées pour obtenir un en relief effet lorsque
 
 La capture d’écran Android a une valeur Z égale à 0, ce qui signifie que la lumière pointe uniquement vers le bas et vers la droite. L’arrière-plan n’est pas allumé et la surface de la chaîne de texte n’est pas éclairée soit. La lumière affecte uniquement le bord du texte pour un effet très subtil.
 
-Une autre approche de texte en relief et empreinte présentée dans l’article [le traduire transformer](../transforms/translate.md): La chaîne de texte s’affiche à deux reprises avec différentes couleurs sont décalées légèrement entre eux.
+Une autre approche du texte en relief et d’empreinte a été illustrée dans l’article [transformation de traduction](../transforms/translate.md): La chaîne de texte s’affiche deux fois avec différentes couleurs qui sont légèrement décalées les unes des autres.
 
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

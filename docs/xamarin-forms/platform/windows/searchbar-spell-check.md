@@ -1,24 +1,24 @@
 ---
-title: " SearchBar vérification orthographique sur Windows"
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le Windows spécifique à la plateforme qui permet un SearchBar interagir avec le moteur de vérification orthographique.
+title: " SearchBar Vérification orthographique sur Windows"
+description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plate-forme Windows qui permet à un SearchBar d’interagir avec le moteur de vérification orthographique.
 ms.prod: xamarin
 ms.assetid: 7974C91F-7502-4DB3-B0E9-C45E943DDA26
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 1d57af87f90d386efb8b71ae71f07058d1a4dc94
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 863748a7af057d2ea3e53719c332cd555ff3b698
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924745"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656862"
 ---
-# <a name="searchbar-spell-check-on-windows"></a>SearchBar vérification orthographique sur Windows
+# <a name="searchbar-spell-check-on-windows"></a>SearchBar Vérification orthographique sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Cette plateforme-spécifiques de plateforme Windows universelle permet un [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) pour interagir avec le moteur de vérification orthographique. Elle est consommée dans XAML en définissant le [ `SearchBar.IsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty) propriété jointe un `boolean` valeur :
+Ce plateforme Windows universelle spécifique à la plateforme permet [`SearchBar`](xref:Xamarin.Forms.SearchBar) à un d’interagir avec le moteur de vérification orthographique. Elle est consommée dans XAML en définissant le [ `SearchBar.IsSpellCheckEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.SearchBar.IsSpellCheckEnabledProperty) propriété jointe un `boolean` valeur :
 
 ```xaml
 <ContentPage ...
@@ -55,6 +55,6 @@ Le résultat est que le texte entré dans le [ `SearchBar` ](xref:Xamarin.Forms.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)
+- [API WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)
