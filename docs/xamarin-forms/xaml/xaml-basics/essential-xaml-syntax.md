@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 60add066d581afffeaa200769efcdff9e0644535
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309508"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646569"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Partie 2. Syntaxe XAML essentielle
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML est principalement conçu pour l’instanciation et initialisation d’objets. Mais souvent, propriétés doivent être définies pour des objets complexes qui ne peuvent pas facilement être représentées sous forme de chaînes XML, et parfois, les propriétés définies par une classe doivent être définies sur une classe enfant. Ces deux besoins nécessitent les fonctionnalités de syntaxe XAML essentielles des éléments de propriété et les propriétés jointes._
 
@@ -143,7 +143,7 @@ Toutefois, la syntaxe d’élément de propriété devient essentiel lorsque la 
 </Label>
 ```
 
-Un autre exemple : Le `Grid` a deux propriétés nommées `RowDefinitions` et `ColumnDefinitions`. Ces deux propriétés sont de type `RowDefinitionCollection` et `ColumnDefinitionCollection`, qui sont des collections de `RowDefinition` et `ColumnDefinition` objets. Vous devez utiliser la syntaxe d’élément de propriété pour définir ces collections.
+Autre exemple: A deux propriétés nommées `RowDefinitions` et `ColumnDefinitions`. `Grid` Ces deux propriétés sont de type `RowDefinitionCollection` et `ColumnDefinitionCollection`, qui sont des collections de `RowDefinition` et `ColumnDefinition` objets. Vous devez utiliser la syntaxe d’élément de propriété pour définir ces collections.
 
 Voici le début du fichier XAML pour un `GridDemoPage` (classe), montrant les balises d’élément de propriété pour le `RowDefinitions` et `ColumnDefinitions` collections :
 
@@ -351,7 +351,7 @@ Vous pouvez inclure certainement le `Content` et `Children` propriétés en tant
 </ContentPage>
 ```
 
-La vraie question est : Pourquoi sont ces éléments de propriété *pas* requis dans le fichier XAML ?
+La question réelle est la suivante: Pourquoi ces éléments de propriété *ne* sont-ils pas requis dans le fichier XAML?
 
 Les éléments définis dans Xamarin.Forms pour une utilisation dans XAML peuvent avoir une propriété signalée dans le `ContentProperty` attribut sur la classe. Si vous recherchez la `ContentPage` classe dans la documentation en ligne de Xamarin.Forms, vous verrez cet attribut :
 
@@ -384,7 +384,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-Vous pouvez également faire quelque chose de similaire à l’aide de XAML le [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) et [ `On` ](xref:Xamarin.Forms.On) classes. Tout d’abord inclure des éléments de propriété pour le `Padding` propriété vers le haut de la page :
+Vous pouvez également effectuer une opération similaire en XAML à [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) l' [`On`](xref:Xamarin.Forms.On) aide des classes et. Tout d’abord inclure des éléments de propriété pour le `Padding` propriété vers le haut de la page :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -524,7 +524,7 @@ C’est le moyen standard pour définir un dépend de la plateforme `Padding` pr
 ```
 
 > [!NOTE]
-> Le `OnPlatform` extension de balisage peut également servir dans XAML pour personnaliser l’apparence de l’interface utilisateur sur une base par plateforme. Il fournit les mêmes fonctionnalités que le `OnPlatform` et `On` classes, mais avec une représentation plus concise. Pour plus d’informations, consultez [Extension de balisage OnPlatform](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
+> L' `OnPlatform` extension de balisage peut également être utilisée en XAML pour personnaliser l’apparence de l’interface utilisateur pour chaque plateforme. Il fournit les mêmes fonctionnalités que les `OnPlatform` classes `On` et, mais avec une représentation plus concise. Pour plus d’informations, consultez [Extension de balisage OnPlatform](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform).
 
 ## <a name="summary"></a>Récapitulatif
 
@@ -532,7 +532,7 @@ Avec les éléments de propriété et les propriétés jointes, une grande parti
 
 ## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Bien démarrer avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Partie 4. Notions de base sur la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

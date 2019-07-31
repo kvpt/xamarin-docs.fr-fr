@@ -7,16 +7,16 @@ ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 43a427b4eca174dce4af47bb43cb1a048a6cfe7c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158396"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647688"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>Dégradé linéaire SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Le [ `SKPaint` ](xref:SkiaSharp.SKPaint) classe définit un [ `Color` ](xref:SkiaSharp.SKPaint.Color) propriété qui est utilisée pour tracer des lignes ou de remplir des zones avec une couleur unie. Vous pouvez également tracer des lignes d’ou remplir les zones avec _dégradés_, qui sont progressive dégradés de couleurs :
 
@@ -27,7 +27,7 @@ Le type de dégradé plus simple est un _linéaire_ dégradé. Le mélange de co
 Ces méthodes retournent un objet de type [ `SKShader` ](xref:SkiaSharp.SKShader) que vous définissez pour le [ `Shader` ](xref:SkiaSharp.SKPaint.Shader) propriété du `SKPaint`. Si le `Shader` propriété n’est pas null, ce paramètre remplace le `Color` propriété. N’importe quelle ligne qui est rayé ou toute zone qui est remplie à l’aide de ce `SKPaint` objet est basé sur le dégradé plutôt que la couleur unie.
 
 > [!NOTE]
-> Le `Shader` propriété est ignorée lorsque vous incluez un `SKPaint` de l’objet dans un `DrawBitmap` appeler. Vous pouvez utiliser la `Color` propriété de `SKPaint` pour définir un niveau de transparence pour l’affichage d’une image bitmap (comme décrit dans l’article [SkiaSharp affichage des bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), mais vous ne pouvez pas utiliser le `Shader` propriété d’affichage une image bitmap avec une transparence de dégradé. Autres techniques sont disponibles pour afficher des bitmaps avec dégradé transparents : Ceux-ci sont décrits dans les articles [dégradés circulaires SkiaSharp](circular-gradients.md#radial-gradients-for-masking) et [SkiaSharp composition et modes de fusion](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
+> Le `Shader` propriété est ignorée lorsque vous incluez un `SKPaint` de l’objet dans un `DrawBitmap` appeler. Vous pouvez utiliser la `Color` propriété de `SKPaint` pour définir un niveau de transparence pour l’affichage d’une image bitmap (comme décrit dans l’article [SkiaSharp affichage des bitmaps](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)), mais vous ne pouvez pas utiliser le `Shader` propriété d’affichage une image bitmap avec une transparence de dégradé. D’autres techniques sont disponibles pour afficher les bitmaps avec des transparences dégradées: Celles-ci sont décrites dans les articles [SkiaSharp](circular-gradients.md#radial-gradients-for-masking) dégradés circulaires et [SkiaSharp modes de fusion et de composition](../blend-modes/porter-duff.md#gradient-transparency-and-transitions).
 
 ## <a name="corner-to-corner-gradients"></a>Coin à dégradés
 
@@ -37,7 +37,7 @@ Souvent un dégradé linéaire s’étend à partir d’un coin d’un rectangle
 - horizontalement à l’angle supérieur droit
 - en diagonale vers le bas à droite
 
-Le dégradé linéaire diagonal est illustré dans la première page dans le **SkiaSharp nuanceurs et autres effets** section de la [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple. Le **coin à dégradé** page crée une `SKCanvasView` dans son constructeur. Le `PaintSurface` gestionnaire crée un `SKPaint` de l’objet dans un `using` instruction, puis définit un rectangle carré de 300 pixels centré dans la zone de dessin :
+Le dégradé linéaire diagonal est illustré dans la première page dans le **SkiaSharp nuanceurs et autres effets** section de la [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. Le **coin à dégradé** page crée une `SKCanvasView` dans son constructeur. Le `PaintSurface` gestionnaire crée un `SKPaint` de l’objet dans un `using` instruction, puis définit un rectangle carré de 300 pixels centré dans la zone de dessin :
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 Le `OnTimerTick` méthode calcule un `angle` valeur qui est animée de 0 à 2π de toutes les 3 secondes. 
 
-Voici une façon de calculer les deux points de dégradé. Un `SKPoint` valeur nommée `vector` est calculée pour l’étendre à partir du centre de la zone de dessin à un point sur le rayon du cercle. La direction de ce vecteur est basée sur les valeurs de sinus et le cosinus de l’angle. Les deux points de dégradé opposés sont ensuite calculées : Un point est calculé en soustrayant ce vecteur à partir du point center et autre point est calculée en ajoutant le vecteur vers le point central :
+Voici une façon de calculer les deux points de dégradé. Un `SKPoint` valeur nommée `vector` est calculée pour l’étendre à partir du centre de la zone de dessin à un point sur le rayon du cercle. La direction de ce vecteur est basée sur les valeurs de sinus et le cosinus de l’angle. Les deux points de dégradé opposés sont ensuite calculés: Un point est calculé en soustrayant ce vecteur du point central, et un autre point est calculé en ajoutant le vecteur au point central:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +511,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-Une approche un peu différente nécessite moins de code. Cette approche utilise le [ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) surcharge de méthode avec une transformation de matrice comme dernier argument. Cette approche est la version dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple :
+Une approche un peu différente nécessite moins de code. Cette approche utilise le [ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) surcharge de méthode avec une transformation de matrice comme dernier argument. Cette approche est la version dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple :
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,13 +617,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-Les deux points de dégradé dans le `CreateLinearGradient` méthode reposent sur deux des points qui définissent ce chemin d’accès : Les deux points sont proches l’angle supérieur gauche. La première est sur le bord supérieur de la zone de dessin et la seconde sur le bord gauche de la zone de dessin. Voici le résultat :
+Les deux points de dégradé dans `CreateLinearGradient` la méthode sont basés sur deux des points qui définissent ce chemin d’accès: Les deux points sont proches de l’angle supérieur gauche. La première est sur le bord supérieur de la zone de dessin et la seconde sur le bord gauche de la zone de dessin. Voici le résultat :
 
 [![Dégradé arc-en-ciel défectueux](linear-gradient-images/RainbowGradientFaulty.png "dégradé arc-en-ciel défectueux")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
 Il s’agit d’une image intéressante, mais il n’est pas tout à fait l’intention. Le problème est que lorsque vous créez un dégradé linéaire, les lignes de constante de couleur sont perpendiculaires à la ligne de dégradé. La ligne de dégradé est basée sur les points où la figure touche les côtés supérieure et gauche, et cette ligne est généralement pas perpendiculaire sur les bords de la figure qui étendent vers la bas à droite. Cette approche fonctionnerait uniquement si la zone de dessin ont été carré.
 
-Pour créer un dégradé arc-en-ciel appropriée, la ligne de dégradé doit être perpendiculaire à la périphérie de l’arc-en-ciel. C’est un calcul plus complexe. Un vecteur qui est parallèle au côté long de la figure doit être défini. Le vecteur est pivotée de 90 degrés afin qu’il soit perpendiculaire à ce côté. Il est rallongé puis à la largeur de la figure en multipliant par `rainbowWidth`. Les deux points de dégradé sont calculés sur un point sur le côté de la figure, et qui pointent ainsi que le vecteur. Voici le code qui s’affiche dans le **dégradé arc-en-ciel** page dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple :
+Pour créer un dégradé arc-en-ciel appropriée, la ligne de dégradé doit être perpendiculaire à la périphérie de l’arc-en-ciel. C’est un calcul plus complexe. Un vecteur qui est parallèle au côté long de la figure doit être défini. Le vecteur est pivotée de 90 degrés afin qu’il soit perpendiculaire à ce côté. Il est rallongé puis à la largeur de la figure en multipliant par `rainbowWidth`. Les deux points de dégradé sont calculés sur un point sur le côté de la figure, et qui pointent ainsi que le vecteur. Voici le code qui s’affiche dans le **dégradé arc-en-ciel** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple :
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -917,4 +917,4 @@ Le `CreateLinearGradient` appel définit un dégradé du haut de ce rectangle ve
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 78a84fd8d4f380739a9f080a1a5aad7c5942d0c9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511878"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648535"
 ---
 # <a name="xamarinforms-grid"></a>Grille de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`Grid`](xref:Xamarin.Forms.Grid) prend en charge la réorganisation des vues en lignes et colonnes. Lignes et colonnes peuvent être définis pour avoir des tailles proportionnelles ou tailles absolues. Le `Grid` disposition ne doit pas être confondue avec des tables traditionnelles et n’est pas destinée à présenter les données tabulaires. `Grid` n’a pas le concept de ligne, colonne ou cellule mise en forme. Contrairement aux tables HTML, `Grid` est purement destinés à disposition du contenu.
 
@@ -384,5 +384,5 @@ public CalculatorGridCode ()
 
 - [Création d’applications mobiles avec Xamarin.Forms, chapitre 17](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
 - [Grid](xref:Xamarin.Forms.Grid)
-- [Disposition (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [Exemple BusinessTumble (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Exemple BusinessTumble (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

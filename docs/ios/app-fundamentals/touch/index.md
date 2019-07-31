@@ -1,30 +1,30 @@
 ---
-title: Gestion des entrées tactiles dans les applications Xamarin.iOS
-description: Ce document contient des liens vers des guides qui décrivent comment travailler avec touch, multipoint, mouvements et 3D Touch dans une application Xamarin.iOS.
+title: Gestion des fonctions tactiles dans les applications Xamarin. iOS
+description: Ce document contient des liens vers des guides qui décrivent comment utiliser les fonctions tactiles tactiles, tactiles tactiles, les gestes tactiles et la fonction tactile 3D dans une application Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
-ms.openlocfilehash: 5aabc3a3c2ffbcffc0e12379989f7eb43b03a902
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8ed9ab164f6b14d794b29667ec96afab47e3fcde
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399289"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655171"
 ---
-# <a name="handling-touch-in-xamarinios-apps"></a>Gestion des entrées tactiles dans les applications Xamarin.iOS
+# <a name="handling-touch-in-xamarinios-apps"></a>Gestion des fonctions tactiles dans les applications Xamarin. iOS
 
-Comme les autres plateformes mobiles, iOS a un nombre de façons de gérer tactile. Il peut prendre en charge l’interaction tactile multipoint : nombre de points de contact sur l’écran et des mouvements complexes. Ce guide présente certains des concepts, ainsi que les particularités de l’implémentation de fonctions tactiles et des mouvements sur iOS.
+Comme les autres plateformes mobiles, iOS offre plusieurs moyens de gérer les fonctions tactiles. Il peut prendre en charge la fonctionnalité multipoint (plusieurs points de contact sur l’écran) et des mouvements complexes. Ce guide présente certains des concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et des gestes sur iOS.
 
-iOS encapsule les données de contact dans le `UITouch` (classe), qui est accessible aux applications via une série de `UIResponder` méthodes. Les applications peuvent substituer ces méthodes dans les sous-classes de `UIView` et `UIViewController`, tous deux héritent `UIResponder`.
+iOS encapsule des données tactiles `UITouch` dans la classe, qui sont mises à la disposition des applications `UIResponder` par le biais d’une série de méthodes. Les applications peuvent substituer ces méthodes dans `UIView` `UIResponder`les sous-classes `UIViewController`de et, qui héritent toutes les deux de.
 
-En plus de capturer des données de toucher, iOS fournit des moyens permettant d’interpréter les modèles de contacts dans des gestes. Ces modules de reconnaissance de mouvement peuvent à son tour être utilisés pour interpréter correctement les commandes spécifiques à l’application, comme une rotation d’une image ou un tour d’une page. iOS fournit une vaste collection de classes pour gérer les mouvements communs avec un minimum de code ajouté.
+En plus de capturer des données tactiles, iOS offre des moyens d’interpréter les séquences de touches en gestes. Ces détecteurs de mouvement peuvent à leur tour être utilisés pour interpréter des commandes spécifiques à l’application, telles que la rotation d’une image ou l’activation d’une page. iOS fournit une collection complète de classes pour gérer les gestes courants avec un code ajouté minimal.
 
-Le choix entre les contacts tactiles et les modules de reconnaissance de mouvement peut être une source de confusion. Ce guide recommande qu’en règle générale, préférence doit être émises pour les modules de reconnaissance de mouvement. Modules de reconnaissance de mouvement sont implémentées en tant que classes discrètes, qui fournissent une plus grande séparation des préoccupations et améliorer l’encapsulation. Cela rend faciles à partager la logique entre différentes vues, en réduisant la quantité de code écrit.
+Le choix entre les fonctions tactiles et les détecteurs de mouvement peut être une opération confuse. Ce guide recommande que, en général, la préférence soit donnée aux détecteurs de mouvement. Les module de reconnaissance de mouvement sont implémentés en tant que classes discrètes, ce qui permet une plus grande séparation des préoccupations et une meilleure encapsulation. Cela permet de partager facilement la logique entre différentes vues, ce qui réduit la quantité de code écrite.
 
-Toutefois, voici les heures lorsque vous devez utiliser le traitement tactile de bas niveau et même effectuer le suivi de plusieurs doigts, par exemple, pour créer un programme finger-paint.
+Toutefois, il peut arriver que vous deviez utiliser le traitement tactile de bas niveau et même suivre plusieurs doigts, par exemple pour créer un programme de peinture par doigt.
 
 ## <a name="sections"></a>Sections
 
@@ -32,13 +32,13 @@ Toutefois, voici les heures lorsque vous devez utiliser le traitement tactile de
 -  [Procédure pas à pas : Utilisation de Touch dans iOS](ios-touch-walkthrough.md)
 -  [Suivi tactile multipoint](touch-tracking.md)
 
-Ce guide sert d’introduction aux entrées tactiles dans iOS. Pour plus d’informations sur l’utilisation de 3D Touch et retour haptique dans iOS, qui ont été introduit dans iOS 9 et 10 respectivement, consultez les guides spécifiques ci-dessous :
+Ce guide fait office d’introduction à Touch dans iOS. Pour plus d’informations sur l’utilisation de la fonction tactile 3D et des commentaires haptique dans iOS, qui ont été introduits dans iOS 9 et 10, consultez les guides spécifiques ci-dessous:
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Activation du retour haptique](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 ## <a name="related-links"></a>Liens associés
 
-- [iOS Touch Démarrer (exemple)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start)
-- [iOS Touch finale (exemple)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final)
-- [FingerPaint (sample)](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/FingerPaint)
+- [Démarrage tactile iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
+- [iOS Touch final (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [FingerPaint (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

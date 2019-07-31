@@ -7,16 +7,16 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: a51a441aeacf265093b82ddb65237887b0a30719
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b4fae33f7de8c6022b2298c462ea510ec8ed623f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382456"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657204"
 ---
 # <a name="the-translate-transform"></a>La transformation de traduction
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser la transformation de traduction pour décaler des graphiques de SkiaSharp_
 
@@ -38,7 +38,7 @@ Ces arguments peuvent être négatifs. Une seconde [ `Translate` ](xref:SkiaShar
 public void Translate (SKPoint point)
 ```
 
-Le **accumulées traduire** page de la [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple de programme illustre que plusieurs appels de la `Translate` méthode sont cumulatifs. Le [ `AccumulatedTranslatePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) classe affiche 20 versions du même rectangle, chacun d’eux offset du rectangle précédent juste assez afin qu’ils étirement le long de la diagonale. Voici le `PaintSurface` Gestionnaire d’événements :
+Le **accumulées traduire** page de la [ **SkiaSharpForms** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple de programme illustre que plusieurs appels de la `Translate` méthode sont cumulatifs. Le [ `AccumulatedTranslatePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) classe affiche 20 versions du même rectangle, chacun d’eux offset du rectangle précédent juste assez afin qu’ils étirement le long de la diagonale. Voici le `PaintSurface` Gestionnaire d’événements :
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -136,7 +136,7 @@ Le premier exemple appelle simplement `Translate` là encore, mais avec des vale
 
 Le deuxième exemple appelle [ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix). Par conséquent, toutes les transformations revenir à leur état par défaut.
 
-Le troisième exemple enregistre l’état de la `SKCanvas` objet avec un appel à [ `Save` ](xref:SkiaSharp.SKCanvas.Save) puis restaure l’état avec un appel à [ `Restore` ](xref:SkiaSharp.SKCanvas.Restore). Il s’agit de la façon la plus polyvalente pour manipuler des transformations pour une série d’opérations de dessin. Ces `Save` et `Restore` appelle la fonction comme une pile : Vous pouvez appeler `Save` plusieurs fois, puis appelez `Restore` inverse séquence pour revenir à l’état précédent. Le `Save` méthode retourne un entier, et vous pouvez passer cet entier à [ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*) efficacement appeler `Restore` plusieurs fois. Le [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount) propriété retourne le nombre d’états actuellement enregistrés sur la pile.
+Le troisième exemple enregistre l’état de la `SKCanvas` objet avec un appel à [ `Save` ](xref:SkiaSharp.SKCanvas.Save) puis restaure l’état avec un appel à [ `Restore` ](xref:SkiaSharp.SKCanvas.Restore). Il s’agit de la façon la plus polyvalente pour manipuler des transformations pour une série d’opérations de dessin. Ces `Save` fonctions `Restore` et appellent une fonction comme une pile: Vous pouvez appeler `Save` plusieurs fois, puis appeler `Restore` en séquence inverse pour revenir aux États précédents. Le `Save` méthode retourne un entier, et vous pouvez passer cet entier à [ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*) efficacement appeler `Restore` plusieurs fois. Le [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount) propriété retourne le nombre d’états actuellement enregistrés sur la pile.
 
 Vous pouvez également utiliser le [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore) classe permettant de restaurer l’état de la zone de dessin. Le constructeur de cette classe est destiné à être appelée un `using` instruction ; la zone de dessin état est restauré automatiquement à la fin de la `using` bloc. 
 
@@ -307,4 +307,4 @@ Notez que l’étoile conserve l’orientation même comme il tourne autour du c
 ## <a name="related-links"></a>Liens associés
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

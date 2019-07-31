@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 9a54743ed7dc3ce23c3306589c0bae1e0fd3206c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: ed6992f946512cd88b4b2b8cfcf4c826bdd6b837
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658676"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645346"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Vérification orthographique à l’aide de l’API vérification orthographique Bing
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Vérification orthographique Bing effectue une correction orthographique contextuelle pour le texte, en fournissant des suggestions inline pour les mots mal orthographiés. Cet article explique comment utiliser la vérification orthographique REST Bing pour corriger les fautes d’orthographe dans une application Xamarin.Forms._
 
@@ -156,7 +156,7 @@ Ce code effectue une itération dans le `FlaggedTokens` collection et remplace t
 ![](spell-check-images/after-spell-check.png "Après vérification orthographique")
 
 > [!NOTE]
-> L’exemple ci-dessus utilise `Replace` par souci de simplicité, mais sur une grande quantité de texte, il pourrait remplacer le jeton incorrect. L’API fournit le `offset` valeur qui doit être utilisée dans les applications de production pour identifier l’emplacement approprié dans le texte source pour effectuer une mise à jour.
+> L’exemple ci- `Replace` dessus utilise pour des raisons de simplicité, mais dans une grande quantité de texte, il peut remplacer le mauvais jeton. L’API fournit la `offset` valeur qui doit être utilisée dans les applications de production pour identifier l’emplacement correct dans le texte source pour effectuer une mise à jour.
 
 ## <a name="summary"></a>Récapitulatif
 
@@ -165,6 +165,6 @@ Cet article a expliqué comment utiliser la vérification orthographique REST Bi
 ## <a name="related-links"></a>Liens associés
 
 - [Documentation de vérification orthographique Bing](/azure/cognitive-services/bing-spell-check/)
-- [Utiliser un Service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [TODO Cognitive Services (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [Utilisation d’un service Web RESTful](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [TODO Cognitive Services (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Référence de vérification orthographique Bing v7](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 61f74e54d4760bb3a85084371fa8e2a62dc06dfd
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e16aa1b96749047554b4f8e6887791d8ed4ff63b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510674"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643693"
 ---
 # <a name="creating-a-custom-contentprovider"></a>Création d’un ContentProvider personnalisé
 
@@ -124,7 +124,7 @@ Le reste du Code constitue l’implémentation réelle du fournisseur de contenu
 
 Il existe quatre types de métadonnées différents que nous allons exposer sur la `ContentProvider` classe. Seule l’autorité est requise, les autres sont effectuées par Convention.
 
-- **Autorité de certification** L’attribut doit être ajouté à la classe afin qu’il soit inscrit auprès d’Android lors de l’installation de l’application.  &ndash; `ContentProvider`
+- **Autorité de certification** L’attribut doit être ajouté à la classe afin qu’il soit inscrit auprès d’Android lors de l’installation de l’application. &ndash; `ContentProvider`
 
 - **URI** &ndash; Le`CONTENT_URI` est exposé comme une constante afin qu’il soit facile à utiliser dans le code. Il doit correspondre à l’autorité, mais inclure le schéma et le chemin de base.
 
@@ -319,4 +319,4 @@ protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 ## <a name="related-links"></a>Liens associés
 
-- [SimpleContentProvider (sample)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [SimpleContentProvider (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)

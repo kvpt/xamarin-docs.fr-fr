@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e4d7901e703544d52bb0e4a377875847b9af0c0a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 7d153491802a74ff06b3a5cd63e585b7fd18ff03
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509340"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644315"
 ---
 # <a name="notifications-in-xamarinandroid"></a>Notifications dans Xamarin. Android
 
@@ -36,5 +36,5 @@ Notez que l’utilisateur doit explicitement accorder à votre application l’a
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notifications locales (exemple)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
-- [Notifications distantes (exemple)](https://developer.xamarin.com/samples/monodroid/RemoteNotifications/)
+- [Notifications locales (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
+- [Notifications distantes (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/remotenotifications)

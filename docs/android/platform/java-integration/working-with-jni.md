@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 0b7ad7b8c97a5cd5952afd16b8c0afeff1dafe59
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fc06514be70d64f200a22fa96a7644c7d97be012
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510544"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643519"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>Utilisation de JNI et Xamarin. Android
 
@@ -158,7 +158,7 @@ En règle générale, Xamarin. Android génère automatiquement le code Java qui
 
 -   `ExportFieldAttribute`&ndash; spécifie un nom de champ. Elle réside sur une méthode qui fonctionne comme un initialiseur de champ. Cela peut être utilisé avec `android.os.Parcelable`.
 
-L’exemple de projet [ExportAttribute](https://developer.xamarin.com/samples/monodroid/ExportAttribute/) illustre l’utilisation de ces attributs.
+L’exemple de projet [ExportAttribute](https://docs.microsoft.com/samples/xamarin/monodroid-samples/exportattribute) illustre l’utilisation de ces attributs.
 
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>Résolution des problèmes de ExportAttribute et ExportFieldAttribute

@@ -1,179 +1,179 @@
 ---
-title: Principes fondamentaux des messages Extension d’application dans Xamarin.iOS
-description: Cet article montre comment inclure une Extension d’application de Message dans une solution Xamarin.iOS qui s’intègre à l’application Messages et présente les nouvelles fonctionnalités à l’utilisateur.
+title: Notions de base sur l’extension d’application de message dans Xamarin. iOS
+description: Cet article explique comment inclure une extension d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application messages et présente de nouvelles fonctionnalités à l’utilisateur.
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: cdeaae6cb83062f0d84a3605582b9779c9f36145
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 7004c4692158be2e51eca93dece349da2a735bab
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178048"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654391"
 ---
-# <a name="message-app-extension-basics-in-xamarinios"></a>Principes fondamentaux des messages Extension d’application dans Xamarin.iOS
+# <a name="message-app-extension-basics-in-xamarinios"></a>Notions de base sur l’extension d’application de message dans Xamarin. iOS
 
-_Cet article montre comment inclure une Extension d’application de Message dans une solution Xamarin.iOS qui s’intègre à l’application Messages et présente les nouvelles fonctionnalités à l’utilisateur._
+_Cet article explique comment inclure une extension d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application messages et présente de nouvelles fonctionnalités à l’utilisateur._
 
-Nouveau à iOS 10, une Extension d’application Message intègre le **Messages** application et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer des messages interactifs, texte, autocollants et fichiers multimédias.
+Nouveauté d’iOS 10, une extension d’application de message s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs.
 
-## <a name="about-message-app-extensions"></a>À propos des Extensions d’application Message
+## <a name="about-message-app-extensions"></a>À propos des extensions d’application de message
 
-Comme indiqué ci-dessus, une Extension d’application Message intègre le **Messages** application et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer des messages interactifs, texte, autocollants et fichiers multimédias. Deux types d’Extension d’application de Message sont disponibles :
+Comme indiqué ci-dessus, une extension d’application de message s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs. Deux types d’extension d’application de message sont disponibles:
 
-- **Packs d’autocollant** -contient une collection d’autocollants de l’utilisateur peut ajouter à un message. Packs d’autocollant peuvent être créés sans écrire de code.
-- **iMessage application** -peut présenter une Interface utilisateur personnalisée dans l’application Messages pour la sélection autocollants, saisie de texte, y compris les fichiers de support (avec des conversions de type facultatif) et création, modification et envoi de messages de l’interaction.
+- **Vignettes** -packs: contient une collection d’autocollants que l’utilisateur peut ajouter à un message. Les packs d’autocollants peuvent être créés sans écrire de code.
+- **application IMessage** : peut présenter une interface utilisateur personnalisée dans l’application messages pour sélectionner des autocollants, entrer du texte, y compris des fichiers multimédias (avec conversions de type facultatives) et créer, modifier et envoyer des messages d’interaction.
 
-Extensions des applications Message fournissent trois principaux types de contenu :
+Les extensions de message Apps fournissent trois types de contenu principaux:
 
-- **Des Messages interactifs** -sont un type de contenu de message personnalisé qui génère une application, lorsque l’utilisateur appuie sur le message, l’application est lancée au premier plan.
-- **Autocollants** -sont des images générées par l’application qui peut être incluse dans les messages envoyés entre les utilisateurs.
-- **Autre contenu pris en charge** : l’application peut fournir le contenu tel que des photos, vidéos, du texte ou des liens vers tout autre contenu des types qui ont toujours été pris en charge par l’application de Messages.
+- **Messages** interactifs: type de contenu de message personnalisé généré par une application, lorsque l’utilisateur appuie sur le message, l’application est lancée au premier plan.
+- **Autocollants** : images générées par l’application qui peuvent être incluses dans les messages envoyés entre les utilisateurs.
+- **Autres contenus pris en charge** : l’application peut fournir du contenu tel que des photos, des vidéos, du texte ou des liens vers tout autre type de contenu qui a toujours été pris en charge par l’application messages.
 
-Nouveau à iOS 10, l’application Message inclut désormais son propre Store application dédié, intégrés. Toutes les applications qui incluent des Extensions d’applications de Message seront affiche et promues dans ce magasin. Le tiroir application de nouveaux Messages affiche toutes les applications qui ont été téléchargées à partir du Store application Messages pour fournir un accès rapide aux utilisateurs.
+Nouveauté d’iOS 10, l’application message intègre désormais son propre App Store dédié et intégré. Toutes les applications qui incluent des extensions de message apps sont affichées et promues dans ce magasin. Le tiroir de l’application nouveaux messages affiche toutes les applications qui ont été téléchargées à partir de l’App Store pour fournir un accès rapide aux utilisateurs.
 
-Également nouveau dans iOS 10, Apple a ajouté les Attribution application Inline qui permet à l’utilisateur à découvrir facilement une application. Par exemple, si un utilisateur envoie le contenu vers un autre à partir d’une application qui n’a pas l’utilisateur 2nd installé (par exemple, un autocollant par exemple), le nom de l’application émettrice est répertorié sous le contenu de l’historique des messages. Si l’utilisateur appuie sur l’application nom, le Store application Message nous est ouvert et l’application sélectionnée dans le magasin.
+Également nouveau dans iOS 10, Apple a ajouté l’attribution d’application inline qui permet à l’utilisateur de découvrir facilement une application. Par exemple, si un utilisateur envoie du contenu à un autre à partir d’une application que le 2e utilisateur n’a pas installée (comme un autocollant par exemple), le nom de l’application émettrice est listé sous le contenu de l’historique des messages. Si l’utilisateur appuie sur le nom de l’application, le message Store de l’application s’ouvre et l’application est sélectionnée dans le Store.
 
-Extensions des applications de message sont similaires aux applications iOS existantes que le développeur est familiarisé avec la création et ils ont accès à toutes les infrastructures standards et les fonctionnalités d’une application iOS standard. Exemple :
+Les extensions de message apps sont similaires aux applications iOS existantes que le développeur est familiarisé avec la création et qu’elles ont accès à tous les frameworks et fonctionnalités standard d’une application iOS standard. Par exemple :
 
 - Ils ont accès à l’achat dans l’application.
 - Ils ont accès à Apple Pay.
-- Ils ont accès au matériel tels que l’appareil photo de l’appareil.
+- Ils ont accès au matériel de l’appareil, tel que l’appareil photo.
 
-Extensions des applications de message sont uniquement pris en charge sur iOS 10, toutefois, le contenu qui envoient ces Extensions est visible sur les appareils watchOS et macOS. La nouvelle _récents Page_ ajouté à watchOS 3, affiche les autocollants récents qui ont été envoyés à partir du téléphone, y compris ceux à partir des Extensions d’applications de Message, et l’utilisateur d’envoyer ces autocollants de l’Apple watch.
+Les extensions de message apps sont uniquement prises en charge sur iOS 10. Toutefois, le contenu envoyé par ces extensions est affichable sur les appareils Watchos et macOS. La nouvelle _page récents_ ajoutée à Watchos 3 affiche les autocollants récents qui ont été envoyés à partir du téléphone, y compris ceux des extensions de message Apps, et autorise l’utilisateur à envoyer ces autocollants à partir de la montre.
 
-## <a name="about-the-messages-framework"></a>À propos de l’infrastructure de Messages
+## <a name="about-the-messages-framework"></a>À propos de l’infrastructure de messages
 
-Nouveau dans iOS 10, l’infrastructure de Messages fournit l’interface entre l’Extension d’applications de Message et de l’application Message appareil iOS de l’utilisateur. Lorsque l’utilisateur lance une application à partir à l’intérieur de l’application Messages, cette infrastructure permet à l’application d’être découvert et fournit les données et le contexte nécessaire pour disposer de son interface utilisateur.
+Nouveauté d’iOS 10, l’infrastructure de messages fournit l’interface entre l’extension de message Apps et l’application de message sur l’appareil iOS de l’utilisateur. Lorsque l’utilisateur lance une application à partir de l’application messages, cette infrastructure autorise la découverte de l’application et fournit les données et le contexte requis pour disposer son interface utilisateur.
 
-Une fois que l’application est lancée, l’utilisateur interagit avec lui pour créer du contenu à partager via un message. L’application utilise ensuite l’infrastructure de Messages à transférer le contenu nouvellement créé à l’application Messages pour le traitement.
+Une fois l’application lancée, l’utilisateur interagit avec elle pour créer un nouveau contenu à partager via un message. L’application utilise ensuite l’infrastructure de messages pour transférer le contenu nouvellement créé vers l’application messages pour traitement.
 
-Le framework de Messages et des Extensions d’applications de Message sont appuient sur iOS préexistant technologies des Extensions d’application. Pour plus d’informations sur les Extensions d’application, consultez le site d’Apple [Guide de programmation Extension application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214).
+Les extensions de l’infrastructure des messages et des applications de message sont basées sur les technologies existantes des extensions des applications iOS. Pour plus d’informations sur les extensions d’application, consultez le Guide de programmation de l' [extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)Apple.
 
-Contrairement à d’autres Points d’Extension Apple a fourni dans le système, le développeur ne doive pas fournir une application hôte pour les Extensions de leurs applications de Message dans la mesure où l’application de Message lui-même agit comme conteneur. Toutefois, le développeur a la possibilité d’y compris l’Extension d’applications de Message à l’intérieur d’une application iOS de nouveau ou existant et sa livraison, ainsi que l’offre groupée.
+Contrairement à d’autres points d’extension fournis par Apple dans le système, le développeur n’a pas besoin de fournir une application hôte pour leurs extensions de message Apps puisque l’application de message lui-même fait office de conteneur. Toutefois, le développeur a la possibilité d’inclure l’extension de message apps à l’intérieur d’une application iOS nouvelle ou existante et de l’expédier avec le bundle.
 
-Si les Extensions d’applications de Message est incluses dans l’offre groupée d’une application iOS, icône de l’application sera affiché à la fois sur l’écran d’accueil de l’appareil et dans le tiroir des applications à partir de Message dans l’application Messages. S’il n’est pas inclus dans un lot d’applications, l’Extension d’applications de Message uniquement être affichera dans le tiroir des applications Message.
+Si les extensions message apps sont incluses dans l’offre groupée d’une application iOS, l’icône de l’application s’affiche à la fois sur l’écran d’accueil de l’appareil et dans le tiroir d’application de message à l’intérieur de l’application messages. S’il n’est pas inclus dans un bundle d’applications, l’extension de message Apps s’affiche uniquement dans le tiroir de message de l’application.
 
-Même si les Extensions d’applications de Message n’est pas incluses dans un lot d’applications hôtes, le développeur devra fournir une icône d’application dans l’offre groupée de l’Extension d’applications Message, car il s’agit d’icône qui s’affichera dans d’autres parties du système telles que le tiroir d’application de Message ou les paramètres , pour l’Extension.
+Même si les extensions de message apps ne sont pas incluses dans un bundle d’applications hôtes, le développeur doit fournir une icône d’application dans le bundle de l’extension de message Apps, car il s’agit de l’icône qui s’affiche dans d’autres parties du système, telles que le message d’application ou les paramètres , pour l’extension.
 
-## <a name="about-stickers"></a>Sur les autocollants
+## <a name="about-stickers"></a>À propos des autocollants
 
-Apple conçue autocollants comme nouveau moyen permettant aux utilisateurs d’iMessage de communiquer en autorisant des autocollants à envoyer inline comme tout autre contenu de message, ou ils peuvent être attachés aux bulles de message précédent à l’intérieur de la conversation.
+Les autocollants Apple sont conçus de façon à permettre aux utilisateurs de la communication en autorisant l’envoi des autocollants inline comme tout autre contenu de message ou en les joignant à des bulles de messages précédentes au cours de la conversation.
 
-Quelles sont les autocollants ?
+Que sont les autocollants?
 
-- Ils sont des images fournies par l’Extension d’applications de Message.
-- Ils peuvent être des images animés ou statiques.
-- Ils fournissent une nouvelle façon de partager du contenu à partir de l’image à l’intérieur d’une application.
+- Il s’agit d’images fournies par l’extension de message apps.
+- Il peut s’agir d’images animées ou statiques.
+- Ils offrent un nouveau moyen de partager du contenu d’image depuis l’intérieur d’une application.
 
-Il existe deux façons de créer des autocollants :
+Il existe deux façons de créer des autocollants:
 
-1. Un autocollant Pack Message applications Extensions peuvent être créées à partir d’à l’intérieur de Xcode sans inclure n’importe quel code. Tout ce qui est nécessaire est les ressources pour les autocollants et les icônes d’application.
-2. En créant une Extension d’applications de Message standard qui fournit des autocollants à partir du code par le biais de l’infrastructure de Messages.
+1. Vous pouvez créer des extensions d’applications de message de Pack d’autocollants à l’intérieur de Xcode sans inclure de code. Tout ce qui est nécessaire est les ressources pour les autocollants et les icônes d’application.
+2. En créant une extension de message Apps standard qui fournit des autocollants à partir du code via l’infrastructure des messages.
 
-### <a name="creating-sticker-packs"></a>Création de packs d’autocollant
+### <a name="creating-sticker-packs"></a>Création de packs d’autocollants
 
-Packs d’autocollant sont créés à partir d’un modèle spécial à l’intérieur de Xcode et fournissent simplement un ensemble statique de ressources d’image qui peut être utilisé comme autocollants. Comme indiqué ci-dessus, ils ne nécessitent pas de code, le développeur fait simplement glisser les fichiers image dans le dossier de Pack d’autocollant à l’intérieur du catalogue autocollants.
+Les packs d’autocollants sont créés à partir d’un modèle spécial à l’intérieur de Xcode et fournissent simplement un ensemble statique de ressources d’image qui peuvent être utilisées comme autocollants. Comme indiqué ci-dessus, ils ne nécessitent pas de code, le développeur fait simplement glisser des fichiers image dans le dossier de Pack d’autocollants à l’intérieur du catalogue de ressources autocollant.
 
-Pour une image à inclure dans un Pack d’autocollant, il doit remplir les conditions suivantes :
+Pour qu’une image soit incluse dans un pack d’autocollants, elle doit remplir les conditions suivantes:
 
-- Images doivent être au format PNG, APNG, GIF ou JPEG. Apple suggère à l’aide uniquement les formats PNG et APNG lors de la fourniture de ressources de l’autocollant.
-- Autocollants animées prennent uniquement en charge les formats APNG et GIF.
-- Images de vignette doivent fournir un arrière-plan transparent, car ils peuvent être placés sur les bulles de message dans la conversation par l’utilisateur.
-- Les fichiers image individuelle doivent être inférieure à 500 Ko.
-- Les images ne peut pas être inférieure à 100 x 100 points ou plus qui pointe 206 x 206.
+- Les images doivent être au format PNG, APNG, GIF ou JPEG. Apple suggère d’utiliser uniquement les formats PNG et APNG lorsque vous fournissez des éléments autocollants.
+- Les autocollants animés prennent uniquement en charge les formats APNG et GIF.
+- Les images autocollantes doivent fournir un arrière-plan transparent, car elles peuvent être placées sur les bulles de message de la conversation par l’utilisateur.
+- Les fichiers image individuels doivent être inférieurs à 500 Ko.
+- Les images ne peuvent pas être inférieures à 100x100 points, ou supérieures à 206 x 206 points.
 
 > [!IMPORTANT]
-> Images de vignette doivent toujours être fournis à la `@3x` résolution dans la plage de 300 x 300 à 618 x 618 pixel. Le système génère automatiquement le `@2x` et `@1x` versions lors de l’exécution en fonction des besoins.
+> Les images autocollantes doivent toujours être fournies `@3x` à la résolution de la plage de pixels 300 x 300 à 618 x 618. Le système génère automatiquement les `@2x` versions et `@1x` au moment de l’exécution en fonction des besoins.
 
-Apple suggère les ressources d’Image autocollant sur différents arrière-plans différents (par exemple, blanc, noir, rouge, jaune et multicolores) et les photos de plus, pour vous assurer qu’ils présentent le meilleur dans toutes les situations possibles de test.
+Apple suggère de tester les éléments de l’image de la vignette par rapport à différents arrière-plans de couleur (tels que le blanc, le noir, le rouge, le jaune et le multicolore) et sur des photos, afin de s’assurer qu’ils recherchent le meilleur dans toutes les situations possibles.
 
-Packs d’autocollant peuvent fournir des autocollants dans un des trois tailles disponibles :
+Les autocollants peuvent fournir des autocollants dans l’une des trois tailles disponibles:
 
-- **Petite** - 100 x 100 points.
-- **Support** - 136 x 136 points. Il s’agit de la taille par défaut.
-- **Grandes** - 206 x 206 points.
+- **Petit** -100 x 100 points.
+- **Moyenne** -136 x 136 points. Il s’agit de la taille par défaut.
+- **Grand** -206 x 206 points.
 
-Utilisez l’inspecteur d’attributs de Xcode pour définir la taille pour tout le Pack d’autocollant et fournissez uniquement les ressources d’image qui correspond à la taille demandée, pour de meilleurs résultats dans le navigateur d’autocollant à l’intérieur de l’application Messages.
+Utilisez l’inspecteur d’attributs de Xcode pour définir la taille de la totalité du pack d’autocollants et fournir uniquement des ressources d’image qui correspondent à la taille demandée, pour obtenir les meilleurs résultats dans le navigateur des vignettes à l’intérieur de l’application messages.
 
-Pour plus d’informations, consultez notre [Ice cream Générateur](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/) application et Apple [Messages référence](https://developer.apple.com/reference/messages).
+Pour plus d’informations, consultez notre application [Ice CREME Builder](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder) et la [référence des messages](https://developer.apple.com/reference/messages)d’Apple.
 
-## <a name="creating-a-custom-sticker-experience"></a>Création d’une expérience personnalisée autocollant
+## <a name="creating-a-custom-sticker-experience"></a>Création d’une expérience d’autocollant personnalisée
 
-Si l’application nécessite plus de contrôle ou de flexibilité que celle fournie par un Pack d’autocollant, il peut inclure une Extension d’application Message et fournir les autocollants via l’infrastructure de Messages pour une expérience d’autocollant personnalisé.
+Si l’application nécessite davantage de contrôle ou de flexibilité que celle fournie par un pack d’autocollants, elle peut inclure une extension d’application de message et fournir les autocollants via l’infrastructure de messages pour une expérience d’autocollant personnalisée.
 
-Quels sont les avantages de la création d’une expérience d’autocollant personnalisé ?
+Quels sont les avantages de la création d’une expérience d’autocollant personnalisée?
 
-1. Autorise l’application à personnaliser l’affichent des autocollants aux utilisateurs de l’application. Par exemple, pour les autocollants présents dans un format autre que la mise en page de grille standard ou sur un arrière-plan de couleur différent.
-2. Permet des autocollants à être créées dynamiquement à partir du code au lieu d’être inclus en tant que ressources d’image statique.
-3. Permet à des ressources d’image autocollant à être téléchargée dynamiquement à partir du serveur web pour du développeur sans avoir à lancer une nouvelle version à l’App Store.
-4. Permet pour l’accès de photo l’appareil pour créer des autocollants à la volée.
-5. Permet d’achats dans l’application afin de l’utilisateur peut acheter plusieurs autocollants d’à l’intérieur de l’application.
+1. Permet à l’application de personnaliser le mode d’affichage des autocollants pour les utilisateurs de l’application. Par exemple, pour présenter des autocollants dans un format autre que la disposition grille standard ou sur un arrière-plan de couleur différent.
+2. Permet de créer dynamiquement des autocollants à partir du code au lieu d’être inclus en tant que ressources d’images statiques.
+3. Autorise le téléchargement dynamique des éléments d’image autocollants à partir du serveur Web du développeur sans avoir à publier une nouvelle version dans l’App Store.
+4. Permet d’accéder à l’appareil photo de l’appareil pour créer des autocollants à la volée.
+5. Permet des achats dans l’application afin que l’utilisateur puisse acheter plus d’autocollants à l’intérieur de l’application.
 
-À la création d’une expérience d’autocollant personnalisé, procédez comme suit :
+Pour créer une expérience d’autocollant personnalisée, procédez comme suit:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Démarrez Visual Studio pour Mac.
-2. Ouvrez la solution pour ajouter une Extension d’application de Message. 
-3. Sélectionnez **iOS** > **Extensions** > **Extension iMessage** et cliquez sur le **suivant** bouton : 
+2. Ouvrez la solution pour ajouter une extension d’application de message à. 
+3. Sélectionnez**extension IMessage** des**Extensions** >  **iOS** > et cliquez sur le bouton **suivant** : 
 
-    [![](intro-to-message-app-extensions-images/message01.png "Sélectionnez l’Extension iMessage")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. Entrez un **nom de l’Extension** et cliquez sur le **suivant** bouton : 
+    [![](intro-to-message-app-extensions-images/message01.png "Sélectionner l’extension iMessage")](intro-to-message-app-extensions-images/message01.png#lightbox)
+4. Entrez un **nom d’extension** , puis cliquez sur le bouton **suivant** : 
 
-    [![](intro-to-message-app-extensions-images/message02.png "Entrez un nom d’Extension")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. Cliquez sur le **créer** pour générer l’Extension : 
+    [![](intro-to-message-app-extensions-images/message02.png "Entrer un nom d’extension")](intro-to-message-app-extensions-images/message02.png#lightbox)
+5. Cliquez sur le bouton **créer** pour générer l’extension: 
 
-    [![](intro-to-message-app-extensions-images/message03.png "Cliquez sur le bouton Créer")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message03.png "Cliquez sur le bouton créer")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Démarrez Visual Studio.
-2. Ouvrez la solution pour ajouter une Extension d’application de Message.
-3. Sélectionnez **Extensions iOS > Extension iMessage (iOS)** et cliquez sur le **suivant** bouton :
+2. Ouvrez la solution pour ajouter une extension d’application de message.
+3. Sélectionnez **Extensions ios > extension IMessage (IOS)** , puis cliquez sur le bouton **suivant** :
 
-    [![Sélectionnez l’Extension iMessage (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [![Sélectionner l’extension iMessage (iOS)](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
-4. Entrez un **nom** et cliquez sur le **OK** bouton
+4. Entrez un **nom** et cliquez sur le bouton **OK**
 
 -----
 
-Par défaut, le `MessagesViewController.cs` fichier sera ajouté à la solution. Il s’agit du point d’entrée principal à l’Extension et elle hérite la `MSMessageAppViewController` classe.
+Par défaut, le `MessagesViewController.cs` fichier est ajouté à la solution. Il s’agit du point d’entrée principal dans l’extension et il hérite `MSMessageAppViewController` de la classe.
 
-L’infrastructure de Messages fournit des classes pour la présentation des autocollants disponibles à l’utilisateur :
+L’infrastructure de messages fournit des classes pour la présentation des autocollants disponibles à l’utilisateur:
 
-- `MSStickerBrowserViewController` : Contrôle les autocollants seront afficheront dans la vue. Il est conforme également à la `IMSStickerBrowserViewDataSource` interface à retourner le nombre de vignette et de la vignette pour un index donné de navigateur.
-- `MSStickerBrowserView` -Il s’agit de la vue qui s’affichera dans les autocollants disponibles.
-- `MSStickerSize` -Décide les tailles de cellule pour la grille des autocollants présentées dans la vue du navigateur.
+- `MSStickerBrowserViewController`-Contrôle la vue dans laquelle les autocollants seront présentés. Il est également conforme à l' `IMSStickerBrowserViewDataSource` interface pour retourner le nombre d’autocollants et l’autocollant pour un index de navigateur donné.
+- `MSStickerBrowserView`-Il s’agit de la vue dans laquelle les autocollants disponibles seront affichés.
+- `MSStickerSize`-Détermine les tailles des cellules individuelles pour la grille des autocollants présentée dans la vue du navigateur.
 
-### <a name="creating-a-custom-sticker-browser"></a>Création d’un navigateur personnalisé autocollant
+### <a name="creating-a-custom-sticker-browser"></a>Création d’un navigateur de vignettes personnalisé
 
-Le développeur peut personnaliser davantage l’expérience de la vignette pour l’utilisateur en fournissant un navigateur d’autocollant personnalisé (`MSMessageAppBrowserViewController`) dans l’Extension d’application de Message. Le navigateur d’autocollant personnalisé modifie la façon dont les autocollants sont présentés à l’utilisateur lorsqu’ils sont en sélectionnant un autocollant à inclure dans le flux de message.
+Le développeur peut personnaliser davantage l’utilisation des autocollants pour l’utilisateur en fournissant un navigateur de`MSMessageAppBrowserViewController`vignettes personnalisé () dans l’extension de l’application de message. Le navigateur de vignettes personnalisées change la façon dont les autocollants sont présentés à l’utilisateur lorsqu’ils sélectionnent un autocollant à inclure dans le flux de message.
 
 Effectuez ce qui suit :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Dans le **panneau solutions**, avec le bouton droit sur le nom de l’Extension du projet et sélectionnez **ajouter** > **nouveau fichier...**   >  **iOS | Apple Watch** > **contrôleur d’Interface**.
-2. Entrez `StickerBrowserViewController` pour le **nom** et cliquez sur le **New** bouton : 
+1. Dans le **panneau solutions**, cliquez avec le bouton droit sur le nom du projet de l’extension et sélectionnez **Ajouter** > **un nouveau fichier...**  >  **iOS |**  > **Contrôleur d’interface**Apple Watch.
+2. Entrez `StickerBrowserViewController` pour le **nom** et cliquez sur le bouton **nouveau** : 
 
     [![](intro-to-message-app-extensions-images/browser01.png "Entrez StickerBrowserViewController pour le nom")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. Ouvrez le `StickerBrowserViewController.cs` fichier pour le modifier.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Dans le **l’Explorateur de solutions**, avec le bouton droit sur le nom de l’Extension du projet et sélectionnez **ajouter** > **nouveau fichier...**   >  **iOS | Apple Watch** > **contrôleur d’Interface**.
-2. Entrez `StickerBrowserViewController` pour le **nom** et cliquez sur le **New** bouton : 
+1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet de l’extension et sélectionnez **Ajouter** > **un nouveau fichier...**  >  **iOS |**  > **Contrôleur d’interface**Apple Watch.
+2. Entrez `StickerBrowserViewController` pour le **nom** et cliquez sur le bouton **nouveau** : 
 
     [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Entrez StickerBrowserViewController pour le nom")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. Ouvrez le `StickerBrowserViewController.cs` fichier pour le modifier.
 
 -----
 
-Rendre le `StickerBrowserViewController.cs` ressembler au suivant :
+`StickerBrowserViewController.cs` Procédez comme suit:
 
 ```csharp
 using System;
@@ -262,13 +262,13 @@ namespace MonkeyStickers
 }
 ```
 
-Examinons le code ci-dessus en détail. Il crée le stockage pour les autocollants qui fournit l’Extension :
+Examinez le code ci-dessus en détail. Il crée un stockage pour les autocollants fournis par l’extension:
 
 ```csharp
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-Et remplace deux méthodes de la `MSStickerBrowserViewController` classe pour fournir des données pour le navigateur à partir de ce magasin de données :
+Et substitue deux méthodes de la `MSStickerBrowserViewController` classe pour fournir des données pour le navigateur à partir de ce magasin de données:
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -282,7 +282,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-Le `CreateSticker` méthode obtient le chemin d’accès d’une ressource image à partir de l’offre groupée de l’Extension et l’utilise pour créer une nouvelle instance d’un `MSSticker` à partir de cette ressource, il ajoute à la collection :
+La `CreateSticker` méthode obtient le chemin d’accès d’une ressource d’image à partir de l’offre groupée de l’extension et l' `MSSticker` utilise pour créer une nouvelle instance d’un à partir de cette ressource, qu’elle ajoute à la collection:
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -309,9 +309,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-Le `LoadSticker` méthode est appelée à partir de `ViewDidLoad` pour créer une vignette à partir de la ressource d’image nommée (incluse dans le bundle de l’application) et l’ajouter à la collection des autocollants.
+La `LoadSticker` méthode est appelée à `ViewDidLoad` partir de pour créer un autocollant à partir de la ressource d’image nommée (incluse dans l’offre groupée de l’application) et l’ajouter à la collection d’autocollants.
 
-Pour implémenter le navigateur d’autocollant personnalisé, vous devez modifier le `MessagesViewController.cs` de fichier et qu’elle ressemble à ce qui suit :
+Pour implémenter le navigateur de vignettes personnalisé `MessagesViewController.cs` , modifiez le fichier et faites-le ressembler à ce qui suit:
 
 ```csharp
 using System;
@@ -354,13 +354,13 @@ namespace MonkeyStickers
 }
 ```
 
-Jeter un coup de œil sur ce code en détail, il crée le stockage pour le navigateur personnalisé :
+En examinant ce code en détail, il crée un stockage pour le navigateur personnalisé:
 
 ```csharp
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-Puis, dans le `ViewDidLoad` (méthode), il instancie et configure une nouvelle fenêtre de navigateur :
+Et dans la `ViewDidLoad` méthode, il instancie et configure un nouveau navigateur:
 
 ```csharp
 // Create new browser and configure it
@@ -369,7 +369,7 @@ BrowserViewController.View.Frame = View.Frame;
 BrowserViewController.ChangeBackgroundColor (UIColor.Gray);
 ```
 
-Il ajoute ensuite le navigateur à la vue pour l’afficher :
+Ensuite, il ajoute le navigateur à la vue pour l’afficher:
 
 ```csharp
 // Add to view
@@ -378,21 +378,21 @@ BrowserViewController.DidMoveToParentViewController (this);
 View.AddSubview (BrowserViewController.View);
 ```
 
-### <a name="further-sticker-customization"></a>Personnalisation plus poussée autocollant
+### <a name="further-sticker-customization"></a>Personnalisation des autocollants
 
-Une personnalisation plus poussée autocollant est possible en incluant simplement deux classes dans l’Extension d’application de Message :
+Il est possible de personnaliser davantage les vignettes en incluant uniquement deux classes dans l’extension de l’application de message:
 
 - `MSStickerView`
 - `MSSticker`
 
-À l’aide des méthodes ci-dessus, l’Extension peut prendre en charge sélection autocollant qui ne repose pas sur la méthode du navigateur de l’autocollant standard. En outre, l’affichage de l’autocollant possible de faire basculer entre les deux modes d’affichage différents :
+À l’aide des méthodes ci-dessus, l’extension peut prendre en charge la sélection de vignettes qui ne repose pas sur la méthode de navigateur de vignettes standard. En outre, l’affichage des autocollants peut être basculé entre deux modes d’affichage différents:
 
-- **Compact** -il s’agit du mode par défaut où la vue de la vignette occupe le bas 25 % de la vue de Message.
-- **Développé** -la vue de la vignette remplit toute la vue de Message.
+- **Compact** : il s’agit du mode par défaut dans lequel la vue autocollant occupe les 25% inférieurs de la vue des messages.
+- **Développé** : la vue d’autocollant remplit l’intégralité de l’affichage des messages.
 
-Cette vue de l’autocollant est possible entre ces modes par programme ou manuellement par l’utilisateur.
+Cette vue d’autocollant peut être basculée entre ces modes par l’utilisateur, par programmation ou manuellement.
 
-Examinons l’exemple suivant de gérer le basculement entre les deux modes d’affichage différent. Deux contrôleurs d’affichage différentes seront nécessaires pour chaque état. Le `StickerBrowserViewController` gère la **Compact** vue et se présente comme suit :
+Jetez un coup d’œil à l’exemple suivant pour gérer le basculement entre les deux modes d’affichage. Deux contrôleurs d’affichage différents seront nécessaires pour chaque État. Le `StickerBrowserViewController` gère l’affichage **compact** et ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -493,7 +493,7 @@ namespace MessageExtension
 }
 ```
 
-Le `AddStickerViewController` gérera le **développé** autocollant vue et ressemble à ce qui suit :
+Le `AddStickerViewController` gère l’affichage autocollant **développé** et se présente comme suit:
 
 ```csharp
 using System;
@@ -545,7 +545,7 @@ namespace MessageExtension
 }
 ```
 
-Le `MessageViewController` implémente ces contrôleurs d’affichage pour définir l’état demandé :
+Le `MessageViewController` implémente ces contrôleurs d’affichage pour déterminer l’État demandé:
 
 ```csharp
 using System;
@@ -665,14 +665,14 @@ namespace MessageExtension
 }
 ```
 
-Lorsque l’utilisateur demande à ajouter une nouvelle vignette à leur collection disponible, un nouveau `AddStickerViewController` devient le contrôleur visible et l’affichage de l’autocollant saisit le **développé** vue :
+Quand l’utilisateur demande à ajouter un nouvel autocollant à son regroupement disponible, un nouveau `AddStickerViewController` est rendu visible par le contrôleur et la vue autocollante s’affiche dans la vue **développée** :
 
 ```csharp
 // Switch to expanded view mode
 Request (MSMessagesAppPresentationStyle.Expanded);
 ```
 
-Lorsque l’utilisateur choisit un autocollant à ajouter, il est ajouté à leur collection disponible et la **Compact** vue est demandée :
+Lorsque l’utilisateur choisit un autocollant à ajouter, il est ajouté à sa collection disponible et la vue **compacte** est demandée:
 
 ```csharp
 public void AddStickerToCollection (MSSticker sticker)
@@ -685,7 +685,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-Le `DidTransition` méthode est substituée pour gérer le changement entre les deux modes :
+La `DidTransition` méthode est substituée pour gérer le basculement entre les deux modes:
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -706,12 +706,12 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté inclure une Extension d’application de Message dans une solution Xamarin.iOS qui s’intègre à la **Messages** application et les fonctionnalités de nouveau présente à l’utilisateur. Il couvert à l’aide de l’extension pour envoyer des messages interactifs, texte, autocollants et fichiers multimédias.
+Cet article a été abordé dans le cas d’une extension d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. Elle est traitée à l’aide de l’extension pour envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Générateur de glace (exemple)](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
+- [Générateur de crème glacée (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [Référence des messages](https://developer.apple.com/reference/messages)
-- [Guide de programmation d’Extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
+- [Guide de programmation de l’extension d’application](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

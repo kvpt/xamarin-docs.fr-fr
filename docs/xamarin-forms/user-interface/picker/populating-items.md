@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 3bbea036efef44077ccbd28a16af06c97cd7026b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6363f84cb9c947fe8035b51c9f7aed05be6be9e0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61230301"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649207"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>Ajout de données à la Collection d’éléments d’un sélecteur
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 
 _La vue de sélecteur est un contrôle pour la sélection d’un élément de texte à partir d’une liste de données. Cet article explique comment remplir un sélecteur de données en l’ajoutant à la collection d’éléments et comment répondre à la sélection d’éléments par l’utilisateur._
 
-## <a name="populating-a-picker-with-data"></a>Remplissage d’un sélecteur de données
+## <a name="populating-a-picker-with-data"></a>Remplissage d’un sélecteur avec des données
 
 Avant de Xamarin.Forms 2.3.4, le processus pour remplir un [ `Picker` ](xref:Xamarin.Forms.Picker) avec données consistait à ajouter les données à afficher en lecture seule [ `Items` ](xref:Xamarin.Forms.Picker.Items) collection, ce qui est de type `IList<string>`. Chaque élément dans la collection doit être de type `string`. Éléments peuvent être ajoutés dans XAML en initialisant le `Items` propriété avec une liste de `x:String` éléments :
 
@@ -54,7 +54,7 @@ picker.Items.Add("Japanese Macaque");
 
 Outre l’ajout de données à l’aide du `Items.Add` (méthode), données peuvent également être insérées dans la collection à l’aide de la `Items.Insert` (méthode).
 
-## <a name="responding-to-item-selection"></a>Réponse à la sélection de l’élément
+## <a name="responding-to-item-selection"></a>Réponse à la sélection d’élément
 
 Un [ `Picker` ](xref:Xamarin.Forms.Picker) prend en charge la sélection d’un élément à la fois. Lorsqu’un utilisateur sélectionne un élément, le [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) se déclenche des événements et le [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) propriété est mise à jour vers un entier représentant l’index de l’élément sélectionné dans la liste. Le `SelectedIndex` propriété est un numéro de base zéro indiquant l’élément sélectionné par l’utilisateur. Si aucun élément n’est sélectionné, ce qui est le cas lorsque le `Picker` est tout d’abord créé et initialisé, `SelectedIndex` sera -1.
 
@@ -83,5 +83,5 @@ Cette méthode obtient le [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.Selected
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Démonstration de sélecteur (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
+- [Démonstration de sélecteur (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 - [Picker](xref:Xamarin.Forms.Picker)

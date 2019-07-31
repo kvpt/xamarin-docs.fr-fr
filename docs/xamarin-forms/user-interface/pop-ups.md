@@ -1,24 +1,24 @@
 ---
-title: Afficher les fenêtres publicitaires
-description: 'Xamarin.Forms fournit deux éléments d’interface utilisateur de type fenêtre contextuelle : une alerte et une feuille d’action. Cet article illustre l’utilisation de la feuille de l’alerte et l’action API pour afficher des boîtes de dialogue poser des questions simples utilisateurs et de guideront les utilisateurs dans les tâches.'
+title: Afficher les fenêtres contextuelles
+description: 'Xamarin.Forms fournit deux éléments d’interface utilisateur de type fenêtre contextuelle : une alerte et une feuille d’action. Cet article montre comment utiliser les API d’alerte et de feuille d’action pour afficher des boîtes de dialogue qui demandent aux utilisateurs des questions simples et guident les utilisateurs à travers les tâches.'
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 58c98aefdf87bcd1ca819de96f67c66646c1723d
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 3b6b2ea2d497c9fdce2c323c7f7a793a4186aa4f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66182301"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656113"
 ---
-# <a name="display-pop-ups"></a>Afficher les fenêtres publicitaires
+# <a name="display-pop-ups"></a>Afficher les fenêtres contextuelles
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-_Xamarin.Forms fournit deux éléments d’interface utilisateur de type fenêtre contextuelle : une alerte et une feuille d’action. Cet article illustre l’utilisation de la feuille de l’alerte et l’action API pour afficher des boîtes de dialogue poser des questions simples utilisateurs et de guideront les utilisateurs dans les tâches._
+_Xamarin.Forms fournit deux éléments d’interface utilisateur de type fenêtre contextuelle : une alerte et une feuille d’action. Cet article montre comment utiliser les API d’alerte et de feuille d’action pour afficher des boîtes de dialogue qui demandent aux utilisateurs des questions simples et guident les utilisateurs à travers les tâches._
 
 Afficher une alerte ou demander à un utilisateur de faire un choix est une tâche d’interface utilisateur courante. Xamarin.Forms propose deux méthodes dans la classe [`Page`](xref:Xamarin.Forms.Page) pour interagir avec l’utilisateur par le biais d’une fenêtre contextuelle : [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) et [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*). Elles sont affichées avec les contrôles natifs appropriés sur chaque plateforme.
 
@@ -46,7 +46,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "Boîte de dialogue d’alerte avec deux boutons")](pop-ups-images/alert2.png#lightbox "Boîte de dialogue d’alerte avec deux boutons")
 
-## <a name="guide-users-through-tasks"></a>Guide des utilisateurs via des tâches
+## <a name="guide-users-through-tasks"></a>Guider les utilisateurs à travers les tâches
 
 [UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) est un élément d’interface utilisateur courant dans iOS. La méthode [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) Xamarin.Forms vous permet d’inclure ce contrôle dans les applications multiplateformes et d’afficher des alternatives natives dans Android et UWP.
 
@@ -76,4 +76,4 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PopupsSample](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Pop-ups/)
+- [PopupsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

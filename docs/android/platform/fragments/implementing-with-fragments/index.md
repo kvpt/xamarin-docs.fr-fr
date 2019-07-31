@@ -1,6 +1,6 @@
 ---
-title: Implémentation des Fragments - procédure pas à pas
-description: Cet article explique comment utiliser des fragments pour développer des applications Xamarin.Android.
+title: Implémentation de fragments-procédure pas à pas
+description: Cet article explique comment utiliser des fragments pour développer des applications Xamarin. Android.
 ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
@@ -8,49 +8,49 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 2ff4729e68497391d41521da26917571c146b541
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e5a09c216f0def71efb1c3ddc0ed18672663bdfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953276"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643615"
 ---
-# <a name="implementing-fragments---walkthrough"></a>Implémentation des fragments - procédure pas à pas
+# <a name="implementing-fragments---walkthrough"></a>Implémentation de fragments-procédure pas à pas
 
-_Les fragments sont des composants autonomes et modulaires qui peuvent aider à gérer la complexité des applications Android qui ciblent les appareils avec un large éventail de tailles d’écran. Cet article décrit comment créer et utiliser des fragments lors du développement d’applications Xamarin.Android._
+_Les fragments sont des composants modulaires autonomes qui peuvent aider à gérer la complexité des applications Android qui ciblent des appareils avec une grande variété de tailles d’écran. Cet article explique comment créer et utiliser des fragments lors du développement d’applications Xamarin. Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
-Dans cette section, vous allez examiner comment créer et utiliser des fragments dans une application Xamarin.Android. Cette application affiche les titres de joue plusieurs par William Shakespeare dans une liste. Lorsque l’utilisateur appuie sur le titre d’une lecture, l’application affiche un devis à partir de ce play dans une activité séparée :
+Dans cette section, vous allez découvrir comment créer et utiliser des fragments dans une application Xamarin. Android. Cette application affiche les titres de plusieurs lectures par William Shakespeare dans une liste. Quand l’utilisateur appuie sur le titre d’une lecture, l’application affiche un guillemet de cette lecture dans une activité distincte:
 
 [![Application en cours d’exécution sur un téléphone Android en mode portrait](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-Lorsque le téléphone pivote en mode paysage, l’apparence de l’application change : la liste de lecture et les guillemets s’affiche dans la même activité. Lorsqu’une lecture est sélectionné, le devis sera affichage dans la même activité :
+Lorsque le téléphone passe en mode paysage, l’apparence de l’application change: la liste des lectures et les guillemets s’affichent dans la même activité. Quand une lecture est sélectionnée, le devis s’affiche dans la même activité:
 
 [![Application en cours d’exécution sur un téléphone Android en mode paysage](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-Enfin, si l’application s’exécute sur un Tablet PC :
+Enfin, si l’application s’exécute sur une tablette:
 
-[![Application en cours d’exécution sur une tablette Android](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
+[![Application s’exécutant sur une tablette Android](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
-Cet exemple d’application peut facilement s’adapter aux différents facteurs de forme et des orientations avec des modifications minimales du code à l’aide de fragments et [autres dispositions](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources).
+Cet exemple d’application peut facilement s’adapter aux différents facteurs de forme et orientations avec des modifications de code minimes à l’aide de fragments et de [dispositions secondaires](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources).
 
-Les données de l’application existe dans deux tableaux de chaînes qui sont codés en dur dans l’application en tant que C# tableaux de chaîne. Chacun de ces ensembles servira de la source de données pour un fragment.  Un tableau contiendra le nom de certains joue par Shakespeare, et l’autre tableau contiendra un devis à partir de ce jeu. Lorsque l’application démarre, il affiche les noms de lecture dans un `ListFragment`. Lorsque l’utilisateur clique sur un cœur de la `ListFragment`, l’application démarre une autre activité qui affichera le devis.
+Les données de l’application existent dans deux tableaux de chaînes codés en dur dans l’application en C# tant que tableaux de chaînes. Chacun des tableaux servira de source de données pour un fragment.  Un groupe contiendra le nom d’un certain nombre de lectures par Shakespeare, et l’autre tableau contiendra un guillemet de cette lecture. Lorsque l’application démarre, elle affiche les noms de lecture dans un `ListFragment`. Lorsque l’utilisateur clique sur une lecture dans `ListFragment`le, l’application démarre une autre activité qui affiche la citation.
 
-L’interface utilisateur pour l’application se compose de deux dispositions, un pour portrait et l’autre pour le mode paysage. Au moment de l’exécution, Android détermine quelle mise en page à charger selon l’orientation de l’appareil et fournira cette disposition à l’activité à restituer. Toute la logique pour répondre aux clics de l’utilisateur et afficher les données se trouvera dans les fragments. Les activités dans l’application existent uniquement en tant que conteneurs qui hébergeront les fragments.
+L’interface utilisateur de l’application se compose de deux dispositions: une pour portrait et une pour le mode paysage. Au moment de l’exécution, Android détermine la disposition à charger en fonction de l’orientation de l’appareil et fournit cette disposition à l’activité à afficher. Toute la logique pour répondre aux clics de l’utilisateur et afficher les données est contenue dans des fragments. Les activités de l’application existent uniquement en tant que conteneurs qui hébergeront les fragments.
 
-Cette procédure pas à pas est divisé en deux guides. Le [première partie](./walkthrough.md) se concentrera sur les parties essentielles de l’application. Un seul ensemble de dispositions (optimisé pour le mode portrait) sera créé, ainsi que les deux fragments et deux activités :
+Cette procédure pas à pas est divisée en deux guides. La [première partie](./walkthrough.md) sera axée sur les principales parties de l’application. Un ensemble unique de dispositions (optimisé pour le mode portrait) sera créé, ainsi que deux fragments et deux activités:
 
-1. `MainActivity` &nbsp; Il s’agit de l’activité de démarrage de l’application.
-1. `TitlesFragment` &nbsp; Ce fragment affichera une liste des titres de lecture qui ont été écrits par William Shakespeare. Il sera hébergé par `MainActivity`.
-1. `PlayQuoteActivity` &nbsp; `TitlesFragment` démarre le `PlayQuoteActivity` en réponse à l’utilisateur en sélectionnant un play dans `TitlesFragment`.
-1. `PlayQuoteFragment` &nbsp; Ce fragment affichera un devis à partir d’une lecture par William Shakespeare. Il sera hébergé par `PlayQuoteActivity`.
+1. `MainActivity`&nbsp; Il s’agit de l’activité de démarrage de l’application.
+1. `TitlesFragment`&nbsp; Ce fragment affiche une liste des titres des lectures écrites par William Shakespeare. Il sera hébergé par `MainActivity`.
+1. `PlayQuoteActivity`démarre le enréponse`TitlesFragment`à l’utilisateur en sélectionnant une lecture dans. `PlayQuoteActivity` &nbsp; `TitlesFragment`
+1. `PlayQuoteFragment`&nbsp; Ce fragment affichera un guillemet d’une lecture de William Shakespeare. Il sera hébergé par `PlayQuoteActivity`.
 
-Le [deuxième partie de cette procédure pas à pas](./walkthrough-landscape.md) aborderons l’ajout d’une disposition différente (optimisée pour le mode paysage), qui affiche les deux fragments à l’écran. En outre, certaines modifications mineures au code sera au code afin que l’application s’adapte son comportement pour le nombre de fragments qui s’affichent simultanément sur l’écran.
+La [deuxième partie de cette procédure pas à pas](./walkthrough-landscape.md) abordera l’ajout d’une disposition alternative (optimisée pour le mode paysage) qui affichera les deux fragments à l’écran. En outre, certaines modifications de code mineures sont apportées au code afin que l’application adapte son comportement au nombre de fragments qui s’affichent simultanément à l’écran.
 
 ## <a name="related-links"></a>Liens associés
 
-- [FragmentsWalkthrough (sample)](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
-- [Vue d’ensemble du Concepteur](~/android/user-interface/android-designer/index.md)
-- [Implémentation des Fragments](https://developer.android.com/guide/topics/fundamentals/fragments.html)
+- [FragmentsWalkthrough (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough)
+- [Vue d’ensemble du concepteur](~/android/user-interface/android-designer/index.md)
+- [Implémentation de fragments](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Package de support](https://developer.android.com/sdk/compatibility-library.html)

@@ -1,110 +1,110 @@
 ---
-title: watchOS applications séances d’entraînement dans Xamarin
-description: Cet article aborde les améliorations Apple a apportées aux applications de séances d’entraînement dans watchOS 3 et comment les implémenter dans Xamarin.
+title: Applications d’entraînement Watchos dans Xamarin
+description: Cet article aborde les améliorations apportées par Apple pour mettre en œuvre des applications dans Watchos 3 et comment les implémenter dans Xamarin.
 ms.prod: xamarin
 ms.assetid: F1D19635-A738-43E5-9873-1FC1BA44EEDF
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 02db7dce6ba38b6c1e943ff189ff69efb7cc1c08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 366f0cac6c21d5e749871a289bdec78f64299c0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61083956"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656445"
 ---
-# <a name="watchos-workout-apps-in-xamarin"></a>watchOS applications séances d’entraînement dans Xamarin
+# <a name="watchos-workout-apps-in-xamarin"></a>Applications d’entraînement Watchos dans Xamarin
 
-_Cet article aborde les améliorations Apple a apportées aux applications de séances d’entraînement dans watchOS 3 et comment les implémenter dans Xamarin._
+_Cet article aborde les améliorations apportées par Apple pour mettre en œuvre des applications dans Watchos 3 et comment les implémenter dans Xamarin._
 
 
-Nouveau watchOS 3, séances d’entraînement associé à des applications ont la possibilité d’exécuter en arrière-plan sur l’Apple Watch et accéder aux données d’HealthKit. Son application iOS 10 en fonction de parent a également la possibilité de lancer l’application en fonction de watchOS 3 sans intervention de l’utilisateur.
+Nouveauté de Watchos 3, les applications associées à l’entraînement ont la possibilité de s’exécuter en arrière-plan sur le Apple Watch et d’accéder aux données HealthKit. L’application iOS 10 parente a également la possibilité de lancer l’application Watchos 3 sans intervention de l’utilisateur.
 
 Les rubriques suivantes sont traitées en détail :
 
-## <a name="about-workout-apps"></a>Sur les applications de séances d’entraînement
+## <a name="about-workout-apps"></a>À propos des applications de la entraînement
 
-Les utilisateurs d’applications de Fitness (pertinence) et les séances d’entraînement peuvent être hautement dédiés, réserver alloués à plusieurs heures de la journée leurs objectifs de contrôle d’intégrité et de pertinence (fitness). Par conséquent, qu’elles attendent des applications réactives et facile à utiliser qui précisément collectent et affichent des données et une intégration transparente avec contrôle d’intégrité de l’Apple.
+Les utilisateurs des applications d’adéquation et d’entraînement peuvent être très dédiés, dévoter plusieurs heures de la journée pour atteindre leurs objectifs de santé et de pertinence. Par conséquent, ils attendent des applications réactives et faciles à utiliser qui collectent et affichent des données avec précision et s’intègrent de manière transparente à Apple Health.
 
-Une application bien conçue de Fitness (pertinence) ou d’entraînement permet aux utilisateurs de leurs activités pour atteindre leurs objectifs de Fitness (pertinence) du graphique. À l’aide de l’Apple Watch, les applications de Fitness (pertinence) et les séances d’entraînement ont un accès instantané à un rythme cardiaque, détection d’avancement et l’activité de calories.
+Une application d’adéquation ou d’entraînement bien conçue aide les utilisateurs à faire un graphique de leurs activités pour atteindre leurs objectifs. En utilisant le Apple Watch, les applications d’adéquation et d’entraînement ont un accès instantané au rythme cardiaque, au gravage de calories et à la détection d’activité.
 
-[![](workout-apps-images/workout01.png "Exemple d’application de Fitness (pertinence) et les séances d’entraînement")](workout-apps-images/workout01.png#lightbox)
+[![](workout-apps-images/workout01.png "Exemple d’application pertinence et entraînement")](workout-apps-images/workout01.png#lightbox)
 
-Nouveau à watchOS 3, _en cours d’exécution en arrière-plan_ séances d’entraînement donne liés applications la possibilité de s’exécuter en arrière-plan sur l’Apple Watch et accéder aux données d’HealthKit.
+Nouveauté de Watchos 3, l' _arrière-plan en cours d’exécution_ donne aux applications liées à l’entraînement la possibilité de s’exécuter en arrière-plan sur le Apple Watch et d’accéder aux données HealthKit.
 
-Ce document présentent la fonctionnalité en cours d’exécution en arrière-plan, couvrent le cycle de vie des applications séances d’entraînement et montrent comment une application de séances d’entraînement peut contribuer à l’utilisateur _activité anneaux_ sur l’Apple Watch.
+Ce document présente la fonctionnalité d’exécution en arrière-plan, couvre le cycle de vie des applications de l’entraînement et montre comment une application de l’entraînement peut contribuer aux _anneaux d’activité_ de l’utilisateur sur le Apple Watch.
 
-## <a name="about-workout-sessions"></a>Sur les Sessions d’entraînement
+## <a name="about-workout-sessions"></a>À propos des sessions d’entraînement
 
-Le cœur de chaque application séances d’entraînement est un _séances d’entraînement Session_ (`HKWorkoutSession`) que l’utilisateur peut démarrer et arrêter. L’API de Session d’entraînement est facile à implémenter et fournit plusieurs avantages à une application d’entraînement, telles que :
+Le cœur de chaque application d’entraînement est une _session_ de`HKWorkoutSession`veille () que l’utilisateur peut démarrer et arrêter. L’API de session de mise en œuvre est facile à implémenter et offre plusieurs avantages pour une application d’entraînement, par exemple:
 
-- Mouvement et calories graver détection basée sur le Type d’activité.
-- Contribution automatique à anneaux d’activité de l’utilisateur.
-- Au cours d’une session, l’application affichera automatiquement chaque fois que l’utilisateur sort de l’appareil (soit en déclenchant leur poignet ou en interagissant avec l’Apple Watch).
+- Détection de brûlure de mouvement et de calories basée sur le type d’activité.
+- Contribution automatique aux anneaux d’activité de l’utilisateur.
+- Pendant une session, l’application s’affiche automatiquement chaque fois que l’utilisateur sort de l’appareil (en déclenchant son poignet ou en interagissant avec le Apple Watch).
 
-## <a name="about-background-running"></a>Sur l’exécution de l’arrière-plan
+## <a name="about-background-running"></a>À propos de l’exécution en arrière-plan
 
-Comme indiqué ci-dessus, avec watchOS 3 une application d’entraînement peut être configurée pour fonctionner en arrière-plan. À l’aide d’une application de l’exercice en cours d’exécution en arrière-plan peut traiter les données de capteurs de l’Apple Watch lors de l’exécution en arrière-plan. Par exemple, une application continue de surveiller le taux de cœur de l’utilisateur, même si elle n’est plus affiché sur l’écran.
+Comme indiqué ci-dessus, avec Watchos 3, une application d’entraînement peut être configurée pour s’exécuter en arrière-plan. L’utilisation de l’arrière-plan exécutant une application de entraînement peut traiter les données des capteurs de Apple Watch en cours d’exécution en arrière-plan. Par exemple, une application peut continuer à surveiller le taux cardiaque de l’utilisateur, même si elle n’est plus affichée à l’écran.
 
-En cours d’exécution en arrière-plan fournit également la possibilité de présenter des commentaires en direct à l’utilisateur à tout moment pendant une Session active de séances d’entraînement, comme l’envoi d’une alerte haptique pour informer l’utilisateur de progression actuelle.
+L’exécution en arrière-plan offre également la possibilité de présenter des commentaires en direct à l’utilisateur à tout moment pendant une session d’exercices actifs, par exemple l’envoi d’une alerte haptique pour informer l’utilisateur de la progression actuelle.
 
-En outre, en cours d’exécution en arrière-plan permet à l’application à mettre à jour rapidement son Interface utilisateur pour l’utilisateur dispose des dernières données quand ils œil rapidement à leurs Apple Watch.
+En outre, l’exécution en arrière-plan permet à l’application de mettre rapidement à jour son interface utilisateur, de sorte que l’utilisateur dispose des données les plus récentes lorsqu’il parvient rapidement à le Apple Watch.
 
-Pour maintenir des performances élevées sur Apple Watch, une application watch à l’aide en cours d’exécution en arrière-plan doit limiter la quantité de travail en arrière-plan afin d’économiser la batterie. Si une application utilise trop de ressources processeur en arrière-plan, il peut obtenir interrompue par watchOS.
+Pour garantir des performances élevées sur Apple Watch, une application espion utilisant l’arrière-plan doit limiter la quantité de travail en arrière-plan pour économiser la batterie. Si une application utilise trop d’UC en arrière-plan, elle peut être suspendue par Watchos.
 
-### <a name="enabling-background-running"></a>L’activation en cours d’exécution en arrière-plan
+### <a name="enabling-background-running"></a>Activation de l’exécution en arrière-plan
 
-Pour permettre l’exécution de l’arrière-plan, procédez comme suit :
+Pour activer l’exécution en arrière-plan, procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur l’application iPhone de l’Extension Watch Compagnon `Info.plist` fichier à ouvrir pour modification.
-2. Basculez vers le **Source** vue : 
+1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier de `Info.plist` l’application iPhone de l’extension Watch pour l’ouvrir et le modifier.
+2. Basculez vers la vue **source** : 
 
-    [![](workout-apps-images/plist01.png "La vue de Source")](workout-apps-images/plist01.png#lightbox)
-3. Ajoutez une nouvelle clé appelée `WKBackgroundModes` et définir le **Type** à `Array`: 
+    [![](workout-apps-images/plist01.png "Vue source")](workout-apps-images/plist01.png#lightbox)
+3. Ajoutez une nouvelle clé nommée `WKBackgroundModes` et définissez le **type** sur `Array`: 
 
-    [![](workout-apps-images/plist02.png "Ajoutez une nouvelle clé appelée WKBackgroundModes")](workout-apps-images/plist02.png#lightbox)
-4. Ajouter un nouvel élément dans le tableau avec la **Type** de `String` et la valeur `workout-processing`: 
+    [![](workout-apps-images/plist02.png "Ajoutez une nouvelle clé nommée WKBackgroundModes")](workout-apps-images/plist02.png#lightbox)
+4. Ajoutez un nouvel élément au tableau avec le **type** `String` `workout-processing`et la valeur: 
 
-    [![](workout-apps-images/plist03.png "Ajouter un nouvel élément dans le tableau avec le Type de chaîne et une valeur de traitement des séances d’entraînement")](workout-apps-images/plist03.png#lightbox)
+    [![](workout-apps-images/plist03.png "Ajouter un nouvel élément au tableau avec le type de chaîne et une valeur d’entraînement-traitement")](workout-apps-images/plist03.png#lightbox)
 5. Enregistrez les modifications dans le fichier.
 
-## <a name="starting-a-workout-session"></a>Démarrage d’une Session d’entraînement
+## <a name="starting-a-workout-session"></a>Démarrage d’une session de exercices
 
-Il existe trois étapes principales pour démarrer une Session de l’exercice :
+Il existe trois étapes principales pour démarrer une session de exercices:
 
-[![](workout-apps-images/workout02.png "Les trois principales étapes pour démarrer une Session d’entraînement")](workout-apps-images/workout02.png#lightbox)
+[![](workout-apps-images/workout02.png "Les trois étapes principales du démarrage d’une session de exercices")](workout-apps-images/workout02.png#lightbox)
 
 1. L’application doit demander une autorisation pour accéder aux données dans HealthKit.
-2. Créer un objet de Configuration de l’exercice pour le type de l’exercice en cours de démarrage.
-3. Créez et démarrez une Session d’entraînement à l’aide de la Configuration d’entraînement nouvellement créé.
+2. Créez un objet de configuration de l’entraînement pour le type d’entraînement en cours de démarrage.
+3. Créer et démarrer une session d’entraînement à l’aide de la configuration d’entraînement nouvellement créée.
 
-### <a name="requesting-authorization"></a>Demandez une autorisation
+### <a name="requesting-authorization"></a>Demande d’autorisation
 
-Une application peut accéder aux données HealthKit de l’utilisateur, il doit demander et recevoir l’autorisation de l’utilisateur. Selon la nature de l’application d’entraînement, il peut être les types de requêtes suivants :
+Pour qu’une application puisse accéder aux données HealthKit de l’utilisateur, elle doit demander et recevoir l’autorisation de l’utilisateur. Selon la nature de l’application d’entraînement, elle peut effectuer les types de requêtes suivants:
 
-- Autorisation d’écrire des données :
-    - Sommeil
-- Autorisation de lire des données :
-    - Énergie consommée
+- Autorisation d’écrire des données:
+    - Entraînements
+- Autorisation de lire les données:
+    - Énergie brûlée
     - Distance
-    - Rythme cardiaque  
+    - Taux cardiaque  
 
-Avant d’une application peut demander l’autorisation, il doit être configuré pour accéder à HealthKit.
+Pour qu’une application puisse demander une autorisation, elle doit être configurée pour accéder à HealthKit.
 
 Effectuez ce qui suit :
 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `Entitlements.plist` pour l’ouvrir et le modifier.
-2. Faites défiler vers le bas et vérifiez **HealthKit activer**: 
+2. Faites défiler vers le bas et cochez **Enable HealthKit**: 
 
-    [![](workout-apps-images/auth01.png "Cocher Activer HealthKit")](workout-apps-images/auth01.png#lightbox)
+    [![](workout-apps-images/auth01.png "Cochez Activer HealthKit")](workout-apps-images/auth01.png#lightbox)
 3. Enregistrez les modifications dans le fichier.
-4. Suivez les instructions de la [ID d’application explicite et profil de provisionnement](~/ios/platform/healthkit.md) et [associant l’ID d’application et la mise en service de profil avec votre application Xamarin.iOS](~/ios/platform/healthkit.md) sections de la [présentation HealthKit](~/ios/platform/healthkit.md) article pour configurer correctement l’application.
-5. Enfin, utilisez les instructions fournies dans le [Kit de contrôle d’intégrité de programmation](~/ios/platform/healthkit.md) et [demandant l’autorisation de l’utilisateur](~/ios/platform/healthkit.md) sections de la [présentation d’HealthKit](~/ios/platform/healthkit.md) article à la demande autorisation d’accéder à la banque de données de l’utilisateur HealthKit.
+4. Suivez les instructions de l' [ID d’application explicite et du profil](~/ios/platform/healthkit.md) de provisionnement et [ASSOCIez l’ID d’application et le profil de provisionnement à vos sections d’application Xamarin. iOS](~/ios/platform/healthkit.md) de l’article [Introduction à HealthKit](~/ios/platform/healthkit.md) pour approvisionner correctement l’application.
+5. Enfin, utilisez les instructions de l’article présentation du [Kit d’intégrité](~/ios/platform/healthkit.md) de la programmation et des demandes d' [autorisation des utilisateurs](~/ios/platform/healthkit.md) de l’article [Introduction à HealthKit](~/ios/platform/healthkit.md) pour demander l’autorisation d’accéder à la Banque de données HealthKit de l’utilisateur.
 
-### <a name="setting-the-workout-configuration"></a>Définition de la Configuration de séances d’entraînement
+### <a name="setting-the-workout-configuration"></a>Définition de la configuration de l’entraînement
 
-Séances d’entraînement Sessions sont créées à l’aide d’un objet de Configuration d’entraînement (`HKWorkoutConfiguration`) qui spécifie le type d’entraînement (tel que `HKWorkoutActivityType.Running`) et l’emplacement d’entraînement (tel que `HKWorkoutSessionLocationType.Outdoor`) :
+Les sessions d’entraînement sont créées à l’aide d'`HKWorkoutConfiguration`un objet de configuration d’entraînement () qui `HKWorkoutActivityType.Running`spécifie le type d’entraînement (tel `HKWorkoutSessionLocationType.Outdoor`que) et l’emplacement de l’entraînement (tel que):
 
 ```csharp
 using HealthKit;
@@ -117,9 +117,9 @@ var configuration = new HKWorkoutConfiguration () {
 };
 ```
 
-### <a name="creating-a-workout-session-delegate"></a>Création d’un délégué de Session séances d’entraînement 
+### <a name="creating-a-workout-session-delegate"></a>Création d’un délégué de session d’entraînement 
 
-Pour gérer les événements qui peuvent se produire pendant une Session d’entraînement, l’application doit créer une instance de délégué de Session d’entraînement. Ajoutez une nouvelle classe au projet et baser issu de la `HKWorkoutSessionDelegate` classe. Pour l’exemple d’une exécution en extérieur, il peut ressembler à ce qui suit :
+Pour gérer les événements qui peuvent se produire pendant une session de veille, l’application doit créer une instance de délégué de session d’entraînement. Ajoutez une nouvelle classe au projet et basez-la en dehors `HKWorkoutSessionDelegate` de la classe. Pour l’exemple d’exécution en extérieur, il peut se présenter comme suit:
 
 ```csharp
 using System;
@@ -212,11 +212,11 @@ namespace MonkeyWorkout.MWWatchExtension
 }
 ```
 
-Cette classe crée plusieurs événements qui seront déclenchés en tant que l’état de la Session d’entraînement change (`DidChangeToState`) et que la Session d’entraînement échoue (`DidFail`). 
+Cette classe crée plusieurs événements qui seront déclenchés à mesure que l’état de la session de`DidChangeToState`l’entraînement change () et si la`DidFail`session de l’entraînement échoue (). 
 
-### <a name="creating-a-workout-session"></a>Création d’une Session d’entraînement
+### <a name="creating-a-workout-session"></a>Création d’une session d’entraînement
 
-À l’aide de la Configuration de séances d’entraînement et les séances d’entraînement Session délégué créé ci-dessus pour créer une nouvelle Session d’entraînement et démarrez-le sur le magasin de l’utilisateur par défaut HealthKit :
+À l’aide de la configuration de l’entraînement et du délégué de session d’entraînement créé ci-dessus pour créer une session d’entraînement et la démarrer sur le magasin de HealthKit par défaut de l’utilisateur:
 
 ```csharp
 using HealthKit;
@@ -271,33 +271,33 @@ private void StartOutdoorRun ()
 }
 ```
 
-Si l’application démarre cette Session d’entraînement et que l’utilisateur bascule vers leur cadran de montre, une icône verte « en cours d’exécution man » minuscule s’affiche au-dessus de la face :
+Si l’application démarre cette session de suivi et que l’utilisateur revient au visage de la montre, une petite icône vert «Running Man» s’affiche au-dessus de la face:
 
-[![](workout-apps-images/workout03.png "Une petite vert en cours d’exécution man icône affichée au-dessus de la face")](workout-apps-images/workout03.png#lightbox)
+[![](workout-apps-images/workout03.png "Petite icône Man en cours d’exécution affichée au-dessus du visage")](workout-apps-images/workout03.png#lightbox)
 
-Si l’utilisateur appuie sur cette icône, ils seront alors renvoyé à l’application.
+Si l’utilisateur appuie sur cette icône, il est redirigé vers l’application.
 
-## <a name="data-collection-and-control"></a>Collecte de données et de contrôle
+## <a name="data-collection-and-control"></a>Collecte et contrôle des données
 
-Une fois qu’une Session d’entraînement a été configurée et démarrée, l’application devra collecter des données sur la session (telles que le taux de cœur de l’utilisateur) et de contrôler l’état de la session :
+Une fois qu’une session de exercices a été configurée et démarrée, l’application doit collecter les données relatives à la session (par exemple, le taux cardiaque de l’utilisateur) et contrôler l’état de la session:
 
-[![](workout-apps-images/workout04.png "Diagramme de contrôle et de collecte de données")](workout-apps-images/workout04.png#lightbox)
+[![](workout-apps-images/workout04.png "Diagramme de collecte et de contrôle des données")](workout-apps-images/workout04.png#lightbox)
 
-1. **En observant les exemples** -l’application doit récupérer les informations d’HealthKit qui est traité et affiché à l’utilisateur.
-2. **En observant les événements** -l’application doit répondre aux événements générés par HealthKit ou à partir de l’interface utilisateur de l’application (par exemple, l’utilisateur la suspension de l’exercice).
-3. **Entrez l’état d’exécution** -la session a été démarrée et est en cours d’exécution.
-4. **Entrez l’état suspendu** -l’utilisateur a interrompu la session active de séances d’entraînement et pouvez la redémarrer à une date ultérieure. L’utilisateur peut basculer entre les États en cours d’exécution et suspendus plusieurs fois dans une seule Session de séances d’entraînement.
-5. **Terminer la Session de séances d’entraînement** : À tout moment l’utilisateur peut se terminer la Session d’entraînement ou il peut expirer et se terminent sur son propre s’il s’agissait d’un exercice limitée (par exemple, une exécution mile deux).
+1. **Exemples d’observation** : l’application doit extraire des informations de HealthKit qui seront traitées et affichées à l’utilisateur.
+2. **Observation des événements** : l’application doit répondre aux événements générés par HealthKit ou à partir de l’interface utilisateur de l’application (par exemple, l’utilisateur suspendant l’entraînement).
+3. **Entrer l’état d’exécution** : la session a été démarrée et est en cours d’exécution.
+4. **Entrer l’état suspendu** -l’utilisateur a suspendu la session en cours et peut le redémarrer à une date ultérieure. L’utilisateur peut basculer entre les États en cours d’exécution et les États suspendus plusieurs fois dans une même session d’entraînement.
+5. **Terminer la session** de séance d’entraînement: à tout moment, l’utilisateur peut mettre fin à la session de la session de faire, ou elle peut expirer et se terminer par elle-même s’il s’agissait d’un entraînement limité (par exemple, une exécution à deux milles).
 
-L’étape finale consiste à enregistrer les résultats de la Session d’entraînement au magasin de données de l’utilisateur HealthKit.
+La dernière étape consiste à enregistrer les résultats de la session de formation dans la Banque de HealthKit de l’utilisateur.
 
-### <a name="observing-healthkit-samples"></a>En observant les exemples HealthKit
+### <a name="observing-healthkit-samples"></a>Observation des exemples HealthKit
 
-L’application doit ouvrir un _requête d’objet d’ancrage_ pour chacun des données HealthKit points qui l’intéressent, tels que le rythme cardiaque ou l’énergie active gravé. Pour chaque point de données en cours d’observation, un gestionnaire de mise à jour sera doivent être créés pour capturer les nouvelles données lorsqu’il est envoyé à l’application.
+L’application doit ouvrir une requête d' _objet d’ancrage_ pour chacun des points de données HealthKit qui l’intéressent, tels que la vitesse cardiaque ou l’énergie active gravée. Pour chaque point de données observé, un gestionnaire de mise à jour doit être créé pour capturer les nouvelles données à mesure qu’elles sont envoyées à l’application.
 
-Ces points de données, l’application peut cumuler les totaux (par exemple, la distance d’exécution totale) et mettre à jour son Interface utilisateur en fonction des besoins. En outre, l’application peut avertir les utilisateurs lorsqu’ils ont atteint un objectif spécifique ou la réalisation, telles que les étapes suivant d’une exécution à la fin.
+À partir de ces points de données, l’application peut accumuler des totaux (tels que la distance totale d’exécution) et mettre à jour son interface utilisateur selon les besoins. En outre, l’application peut notifier les utilisateurs lorsqu’ils ont atteint un objectif ou une réalisation spécifique, par exemple terminer le prochain kilomètre d’une série.
 
-Examinons l’exemple de code suivant :
+Jetez un coup d’œil à l’exemple de code suivant:
 
 ```csharp
 private void ObserveHealthKitSamples ()
@@ -333,30 +333,30 @@ private void ObserveHealthKitSamples ()
 }
 ```
 
-Il crée un prédicat pour définir la date de début qu’il souhaite obtenir des données pour l’utilisation de la `GetPredicateForSamples` (méthode). Il crée un ensemble d’appareils pour extraire des informations d’HealthKit d’à l’aide de la `GetPredicateForObjectsFromDevices` méthode, dans ce cas le local dans l’Apple Watch (`HKDevice.LocalDevice`). Les deux prédicats sont combinés dans un prédicat composée (`NSCompoundPredicate`) à l’aide de la `CreateAndPredicate` (méthode).
+Il crée un prédicat pour définir la date de début à laquelle il souhaite obtenir des données pour l' `GetPredicateForSamples` utilisation de la méthode. Il crée un ensemble d’appareils pour extraire les informations HealthKit à l' `GetPredicateForObjectsFromDevices` aide de la méthode, dans ce cas, l'`HKDevice.LocalDevice`Apple Watch local uniquement (). Les deux prédicats sont combinés en un prédicat composite (`NSCompoundPredicate`) à l' `CreateAndPredicate` aide de la méthode.
 
-Un nouveau `HKAnchoredObjectQuery` est créé pour le point de données que vous le souhaitez (dans ce cas `HKQuantityTypeIdentifier.ActiveEnergyBurned` pour le point de données Active gravé d’énergie), aucune limite sur la quantité de données retournées (`HKSampleQuery.NoLimit`) et un gestionnaire de mise à jour est défini pour gérer le retour à l’application en cours de données à partir d’HealthKit. 
+Une nouvelle `HKAnchoredObjectQuery` est créée pour le point de données souhaité (dans le `HKQuantityTypeIdentifier.ActiveEnergyBurned` cas présent pour le point de données d’énergie brûlé actif), aucune limite n’est imposée`HKSampleQuery.NoLimit`sur la quantité de données retournées () et un gestionnaire de mise à jour est défini pour gérer les données qui sont renvoyées à l’application. à partir de HealthKit. 
 
-Le Gestionnaire de mise à jour sera appelé chaque fois que les données nouvelles sont fournies à l’application du point de données donné. Si aucune erreur n’est retournée, l’application peut en toute sécurité lire les données, vérifiez les calculs requis et mettre à jour son interface utilisateur en fonction des besoins.
+Le gestionnaire de mise à jour est appelé chaque fois que de nouvelles données sont remises à l’application pour le point de données spécifié. Si aucune erreur n’est retournée, l’application peut lire les données en toute sécurité, effectuer les calculs requis et mettre à jour l’interface utilisateur en fonction des besoins.
 
-Le code effectue une itération sur tous les exemples (`HKSample`) retournées dans le `addedObjects` de tableau et effectue un cast à un échantillon de quantité (`HKQuantitySample`). Ensuite, il obtient la valeur double de l’exemple comme un joule (`HKUnit.Joule`) et s’accumulent dans le total cumulé de l’énergie active consommée pour les entraînements et met à jour de l’Interface utilisateur.
+Le code effectue une boucle sur tous les échantillons`HKSample`() retournés dans le `addedObjects` tableau et les convertit en`HKQuantitySample`un exemple Quantity (). Elle obtient ensuite la valeur double de l’échantillon sous la forme d'`HKUnit.Joule`un Joule () et l’accumule dans le total cumulé de l’énergie active gravé pour l’entraînement et met à jour l’interface utilisateur.
 
-### <a name="achieved-goal-notification"></a>Notification de l’objectif atteint
+### <a name="achieved-goal-notification"></a>Notification d’objectif obtenue
 
-Comme mentionné ci-dessus, lorsque l’utilisateur atteint un objectif dans l’application d’entraînement (par exemple, la fin de la première mile d’une exécution), il peut envoyer retour haptique à l’utilisateur via le moteur Taptic. L’application doit également mettre à jour son interface utilisateur à ce stade, dans la mesure où l’utilisateur augmente plus que probable que leur poignet pour voir l’événement que vous y êtes invité aux commentaires.
+Comme indiqué ci-dessus, lorsque l’utilisateur atteint un objectif dans l’application d’entraînement (par exemple, en terminant le premier kilomètre d’une série), il peut envoyer des commentaires haptique à l’utilisateur via le moteur Taptic Engine. L’application doit également mettre à jour son interface utilisateur à ce stade, étant donné que l’utilisateur est plus susceptible de soulever son poignet pour voir l’événement qui a demandé les commentaires.
 
-Pour lire le retour haptique, utilisez le code suivant :
+Pour lire les commentaires haptique, utilisez le code suivant:
 
 ```csharp
 // Play haptic feedback
 WKInterfaceDevice.CurrentDevice.PlayHaptic (WKHapticType.Notification);
 ```
 
-### <a name="observing-events"></a>En observant les événements
+### <a name="observing-events"></a>Événements d’observation
 
-Les événements sont des timestamps que l’application peut utiliser pour mettre en évidence certains points au cours de l’exercice de l’utilisateur. Certains événements sont créés directement par l’application et enregistrés dans l’exercice et certains événements seront créés automatiquement par HealthKit.
+Les événements sont des horodateurs que l’application peut utiliser pour mettre en surbrillance certains points pendant l’entraînement de l’utilisateur. Certains événements sont créés directement par l’application et enregistrés dans l’entraînement, et certains événements sont créés automatiquement par HealthKit.
 
-Pour observer les événements qui sont créés par HealthKit, l’application remplacera le `DidGenerateEvent` méthode de la `HKWorkoutSessionDelegate`:
+Pour observer les événements créés par HealthKit, l’application remplace la `DidGenerateEvent` méthode de l' `HKWorkoutSessionDelegate`événement:
 
 ```csharp
 using System.Collections.Generic;
@@ -390,14 +390,14 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 }
 ```
 
-Apple a ajouté les nouveaux types d’événements suivants dans watchOS 3 :
+Apple a ajouté les nouveaux types d’événements suivants dans Watchos 3:
 
-- `HKWorkoutEventType.Lap` -Sont pour les événements qui rompent l’entraînement en portions d’une distance égale. Par exemple, pour marquer un horizon une piste lors de son exécution.
-- `HKWorkoutEventType.Marker` -Sont des points arbitraires d’intérêt dans l’exercice. Par exemple, atteindre un point spécifique sur l’itinéraire d’une série d’articles de plein air.
+- `HKWorkoutEventType.Lap`-Concernent les événements qui rompent l’entraînement en portions égales à distance. Par exemple, pour marquer un tour autour d’une piste pendant l’exécution.
+- `HKWorkoutEventType.Marker`-Sont destinées à des points d’intérêt arbitraires au sein de l’entraînement. Par exemple, atteindre un point spécifique sur l’itinéraire d’une exécution extérieure.
 
-Ces nouveaux types peuvent être créés par l’application et stockés dans les séances d’entraînement pour une utilisation ultérieure lors de la création de graphiques et des statistiques.
+Ces nouveaux types peuvent être créés par l’application et stockés dans l’entraînement pour une utilisation ultérieure dans la création de graphiques et de statistiques.
 
-Pour créer un événement de marqueur, procédez comme suit :
+Pour créer un événement de marqueur, procédez comme suit:
 
 ```csharp
 using System.Collections.Generic;
@@ -418,17 +418,17 @@ public void ReachedNextMile ()
 }
 ```
 
-Ce code crée une nouvelle instance d’un événement de marqueur (`HKWorkoutEvent`) et les enregistre dans une collection privée d’événements (qui sera plus tard être écrits dans la Session d’entraînement) et informe l’utilisateur de l’événement via HAPTIQUES.
+Ce code crée une nouvelle instance d’un événement marqueur`HKWorkoutEvent`() et l’enregistre dans une collection privée d’événements (qui sera écrite ultérieurement dans la session de veille) et notifie l’utilisateur de l’événement via des haptique.
 
-### <a name="pausing-and-resuming-workouts"></a>Suspension et reprise de sommeil
+### <a name="pausing-and-resuming-workouts"></a>Suspension et reprise des entraînements
 
-À tout moment dans une session d’entraînement, l’utilisateur peut temporairement suspendre l’entraînement et reprendre ultérieurement. Par exemple, ils s’interrompe une exécution intérieur pour prendre une opération importante et de reprendre l’exécution après que l’appel est terminé.
+À tout moment dans une session de mise en veille, l’utilisateur peut suspendre temporairement l’entraînement et le reprendre ultérieurement. Par exemple, ils peuvent suspendre une exécution en intérieur pour effectuer un appel important et reprendre l’exécution une fois l’appel terminé.
 
-L’interface utilisateur de l’application doit fournir un moyen pour suspendre et reprendre l’entraînement (en appelant HealthKit) afin que l’Apple Watch peut économiser de l’espace d’alimentation et de données tandis que l’utilisateur a suspendu son activité. En outre, l’application doit ignorer les nouveaux points de données qui peuvent être reçus lorsque la Session d’entraînement est dans un état suspendu.
+L’interface utilisateur de l’application doit fournir un moyen de suspendre et de reprendre l’entraînement (en appelant dans HealthKit) afin que le Apple Watch puisse économiser à la fois l’espace de l’alimentation et les données pendant que l’utilisateur a suspendu son activité. En outre, l’application doit ignorer tous les nouveaux points de données qui peuvent être reçus lorsque la session de mise en veille est dans un état suspendu.
 
-HealthKit répondra pour suspendre et reprendre des appels en générant des événements de suspendre et reprendre. Lorsque la Session d’entraînement est suspendue, aucune donnée ou nouveaux événements ne sera être envoyée à l’application par HealthKit jusqu'à la reprise de la session.
+HealthKit répondra aux appels de pause et de reprise en générant des événements d’interruption et de reprise. Pendant que la session de suivi est suspendue, aucun nouvel événement ou aucune donnée n’est envoyé à l’application par HealthKit tant que la session n’est pas reprise.
 
-Pour suspendre et reprendre une Session d’entraînement, utilisez le code suivant :
+Utilisez le code suivant pour suspendre et reprendre une session d’entraînement:
 
 ```csharp
 public HKHealthStore HealthStore { get; set;} = new HKHealthStore ();
@@ -448,7 +448,7 @@ public void ResumeWorkout ()
 }
 ```
 
-Les événements de suspendre et reprendre qui doit être générés à partir d’HealthKit peuvent être gérés en substituant le `DidGenerateEvent` méthode de la `HKWorkoutSessionDelegate`:
+Les événements de suspension et de reprise qui seront générés à partir de HealthKit peuvent être gérés `DidGenerateEvent` en substituant `HKWorkoutSessionDelegate`la méthode de l’une des méthodes suivantes:
 
 ```csharp
 public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkoutEvent @event)
@@ -465,16 +465,16 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 }
 ```
 
-### <a name="motion-events"></a>Événements de mouvement
+### <a name="motion-events"></a>Événements motion
 
-Également nouveau à watchOS 3, sont le mouvement interrompu (`HKWorkoutEventType.MotionPaused`) et la reprise de mouvement (`HKWorkoutEventType.MotionResumed`) événements. Ces événements sont déclenchés automatiquement par HealthKit pendant un exercice en cours d’exécution lorsque l’utilisateur démarre et cesse de se déplacer.
+En outre, nouveauté de Watchos 3, les événements Motion pause`HKWorkoutEventType.MotionPaused`() et Motion continued`HKWorkoutEventType.MotionResumed`(). Ces événements sont déclenchés automatiquement par HealthKit lors d’un entraînement lorsque l’utilisateur démarre et arrête le déplacement.
 
-Lorsque l’application reçoit un événement de mouvement est suspendu, il doit s’arrêter la collecte de données jusqu'à ce que l’utilisateur reprend le mouvement et la réception de l’événement mouvement reprend. Application doit être interrompue pas la session d’entraînement en réponse à un événement de mouvement en pause.
+Lorsque l’application reçoit un événement Motion pause, elle doit arrêter la collecte de données jusqu’à ce que l’utilisateur reprenne le mouvement et que l’événement de reprise du mouvement soit reçu. L’application ne doit pas suspendre la session de mise en oeuvre en réponse à un événement de pause.
 
 > [!IMPORTANT]
-> Les événements de mouvement en pause et reprise de mouvement sont uniquement pris en charge pour le Type d’activité RunningWorkout (`HKWorkoutActivityType.Running`).
+> Les événements Motion pause et reresume de mouvement sont uniquement pris en charge pour le type`HKWorkoutActivityType.Running`d’activité RunningWorkout ().
 
-Là encore, ces événements peuvent être gérés en substituant le `DidGenerateEvent` méthode de la `HKWorkoutSessionDelegate`:
+Là encore, ces événements peuvent être gérés en substituant `DidGenerateEvent` la méthode `HKWorkoutSessionDelegate`du:
 
 ```csharp
 public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkoutEvent @event)
@@ -492,25 +492,25 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 ```
 
-## <a name="ending-and-saving-the-workout-session"></a>Fin et l’enregistrement de la Session d’entraînement
+## <a name="ending-and-saving-the-workout-session"></a>Fin et enregistrement de la session d’exercices
 
-Lorsque l’utilisateur a terminé son séances d’entraînement, l’application doit à la fin de la Session séances d’entraînement et l’enregistrer dans la base de données HealthKit. Sommeil enregistrés dans HealthKit s’affichera automatiquement dans la liste d’activités séances d’entraînement.
+Lorsque l’utilisateur a terminé son entraînement, l’application doit mettre fin à la session de suivi en cours et l’enregistrer dans la base de données HealthKit. Les entraînements enregistrés dans HealthKit s’affichent automatiquement dans la liste activité d’entraînement.
 
-Nouveau à iOS 10, cela inclut la liste de liste d’activité séances d’entraînement sur iPhone de l’utilisateur ainsi. Par conséquent, même si l’Apple Watch n’est pas à proximité, l’entraînement s’affiche sur le téléphone.
+Nouveauté d’iOS 10, cela comprend également la liste des activités d’entraînement sur l’iPhone de l’utilisateur. Ainsi, même si le Apple Watch n’est pas à proximité, l’entraînement sera présenté sur le téléphone.
 
-Sommeil qui inclure des exemples d’énergie met à jour anneau de déplacer de l’utilisateur dans l’application d’activités pour les applications tierces 3e peuvent contribuer maintenant aux objectifs de déplacement quotidiennes de l’utilisateur.
+Les entraînements qui incluent des échantillons d’énergie mettent à jour l’anneau de déplacement de l’utilisateur dans l’application des activités afin que les applications tierces puissent désormais contribuer aux objectifs de déplacement quotidiens de l’utilisateur.
 
-Les étapes suivantes sont nécessaires à la fin et enregistrer une Session de l’exercice :
+Les étapes suivantes sont nécessaires pour terminer et enregistrer une session de exercices:
 
-[![](workout-apps-images/workout05.png "Fin et l’enregistrement du diagramme de Session séances d’entraînement")](workout-apps-images/workout05.png#lightbox)
+[![](workout-apps-images/workout05.png "Finalisation et enregistrement du diagramme de session de exercices")](workout-apps-images/workout05.png#lightbox)
 
-1. L’application doit tout d’abord terminer la Session d’entraînement.
-2. La Session d’entraînement est enregistrée dans HealthKit.
-3. Ajouter des exemples (par exemple, l’énergie consommée ou à distance) à la Session de séances d’entraînement enregistré.
+1. Tout d’abord, l’application doit mettre fin à la session d’entraînement.
+2. La session de mise en entraînement est enregistrée dans HealthKit.
+3. Ajoutez tous les échantillons (tels que l’énergie gravée ou la distance) à la session d’entraînement enregistrée.
 
-### <a name="ending-the-session"></a>Fin de la Session
+### <a name="ending-the-session"></a>Fin de la session
 
-Pour terminer la Session d’entraînement, appelez le `EndWorkoutSession` méthode de la `HKHealthStore` en passant le `HKWorkoutSession`:
+Pour mettre fin à la session `EndWorkoutSession` `HKHealthStore` de l’entraînement, appelez la méthode du `HKWorkoutSession`passage de l’un des éléments suivants:
 
 ```csharp
 public HKHealthStore HealthStore { get; private set; }
@@ -524,7 +524,7 @@ public void EndOutdoorRun ()
 }
 ```
 
-Cette opération réinitialise les capteurs de périphériques à leur mode normal. Après la fin de l’exercice par HealthKit, il recevra un rappel à la `DidChangeToState` méthode de la `HKWorkoutSessionDelegate`:
+Cela permet de réinitialiser les capteurs d’appareils en mode normal. Quand HealthKit termine la fin de l’entraînement, il reçoit un rappel `DidChangeToState` de la méthode `HKWorkoutSessionDelegate`de l’opération:
 
 ```csharp
 public override void DidChangeToState (HKWorkoutSession workoutSession, HKWorkoutSessionState toState, HKWorkoutSessionState fromState, NSDate date)
@@ -541,9 +541,9 @@ public override void DidChangeToState (HKWorkoutSession workoutSession, HKWorkou
 }
 ```
 
-### <a name="saving-the-session"></a>La Session est enregistrée
+### <a name="saving-the-session"></a>Enregistrement de la session
 
-Une fois que l’application a interrompu la Session de séances d’entraînement, il doit créer un entraînement (`HKWorkout`) et enregistrez-le (ainsi que les événements d’une) dans le magasin de données HealthKit (`HKHealthStore`) :
+Une fois que l’application a terminé la session d’entraînement, elle doit créer un entraînement`HKWorkout`() et l’enregistrer (avec un événement) dans le magasin de données HealthKit`HKHealthStore`():
 
 ```csharp
 public HKHealthStore HealthStore { get; private set; }
@@ -588,21 +588,21 @@ private void SaveWorkoutSession ()
 }
 ```
 
-Ce code crée le nécessitent une quantité totale de l’énergie consommée et distance pour l’entraînement en tant que `HKQuantity` objets. Un dictionnaire de métadonnées qui définissent l’entraînement est créé et l’emplacement de l’exercice est spécifié :
+Ce code crée la quantité totale d’énergie imbrûlée et la distance pour l' `HKQuantity` entraînement en tant qu’objets. Un dictionnaire de métadonnées définissant l’entraînement est créé et l’emplacement de l’entraînement est spécifié:
 
 ```csharp
 metadata.Add (new NSString ("HKMetadataKeyIndoorWorkout"), new NSString ("NO"));
 ```
 
-Un nouveau `HKWorkout` objet est créé avec le même `HKWorkoutActivityType` en tant que le `HKWorkoutSession`, les dates de début et de fin, la liste des événements (en cours accumulées dans les sections ci-dessus), l’énergie consommée, nombre total de distance et du dictionnaire de métadonnées. Cet objet est enregistré dans le Store de l’intégrité et les erreurs.  
+Un nouvel `HKWorkout` objet est créé avec le même `HKWorkoutActivityType` que `HKWorkoutSession`le, les dates de début et de fin, la liste des événements (accumulés à partir des sections ci-dessus), le dictionnaire énergie brûlée, distance totale et métadonnées. Cet objet est enregistré dans le magasin d’intégrité et toutes les erreurs sont gérées.  
 
 ### <a name="adding-samples"></a>Ajout d’exemples
 
-Lorsque l’application enregistre un ensemble d’exemples dans un exercice, HealthKit génère une connexion entre les exemples et les séances d’entraînement lui-même afin que l’application peut interroger HealthKit à une date ultérieure pour tous les exemples associés à un entraînement donné. À l’aide de ces informations, l’application peut générer des graphiques à partir des données séances d’entraînement et les affichera graphiquement par rapport à une chronologie d’entraînement.
+Lorsque l’application enregistre un ensemble d’exemples dans un entraînement, HealthKit génère une connexion entre les exemples et l’entraînement proprement dit afin que l’application puisse interroger HealthKit à une date ultérieure pour tous les échantillons associés à une entraînement donnée. À l’aide de ces informations, l’application peut générer des graphiques à partir des données de l’entraînement et les tracer sur une chronologie d’entraînement.
 
-Pour une application à contribuer à déplacer anneau l’application de l’activité, il doit inclure des exemples d’énergie avec l’entraînement enregistré. En outre, les totaux de distance et d’énergie doivent correspondre à la somme des exemples de l’application associe à un entraînement enregistré.
+Pour qu’une application contribue à l’anneau de déplacement de l’application d’activité, elle doit inclure des échantillons d’énergie avec l’entraînement enregistré. En outre, les totaux de la distance et de l’énergie doivent correspondre à la somme de tous les échantillons que l’application associe à un entraînement enregistré.
 
-Pour ajouter des exemples à un entraînement enregistrée, procédez comme suit :
+Pour ajouter des exemples à une entraînement enregistré, procédez comme suit:
 
 ```csharp
 using System.Collections.Generic;
@@ -632,26 +632,26 @@ private void SaveWorkoutSamples (HKWorkout workout)
 }
 ```
 
-Si vous le souhaitez, l’application peut calculer et créer un sous-ensemble plus petit d’échantillons ou d’un échantillon méga (couvrant la plage entière de l’entraînement) obtient ensuite associé à l’entraînement enregistré.
+Si vous le souhaitez, l’application peut calculer et créer un sous-ensemble plus petit d’échantillons ou un petit échantillon (couvrant l’ensemble de la plage de l’entraînement) qui est ensuite associé à l’entraînement enregistré.
 
 ## <a name="workouts-and-ios-10"></a>Entraînements et iOS 10
 
 Chaque application d’entraînement watchOS 3 a une application de base entraînement iOS 10 parent et nouvelles pour iOS 10, cette application iOS peut être utilisée pour démarrer les Use qui placer l’Apple Watch dans le Mode d’entraînement (sans intervention de l’utilisateur) et exécutez l’application watchOS en mode en cours d’exécution en arrière-plan (consultez [sur en arrière-plan en cours d’exécution](#about-background-running) ci-dessus pour plus d’informations).
 
-Pendant l’exécution de l’application watchOS, il peut utiliser WatchConnectivity pour la messagerie et de communication avec l’application iOS de parent.
+Pendant l’exécution de l’application Watchos, elle peut utiliser WatchConnectivity pour la messagerie et la communication avec l’application iOS parente.
 
-Examinons le fonctionnement de ce processus :
+Jetez un coup d’œil sur le fonctionnement de ce processus:
 
-[![](workout-apps-images/workout06.png "iPhone et diagramme de communication de l’Apple Watch")](workout-apps-images/workout06.png#lightbox)
+[![](workout-apps-images/workout06.png "diagramme de communication iPhone et Apple Watch")](workout-apps-images/workout06.png#lightbox)
 
-1. L’application iPhone crée un `HKWorkoutConfiguration` de l’objet et définit le Type d’entraînement et l’emplacement.
-2. Le `HKWorkoutConfiguration` objet est envoyé à la version de l’Apple Watch de l’application et, si elle n’est pas déjà en cours d’exécution, il est démarré par le système.
-3. Démarrage de l’application watchOS 3 à l’aide de passé dans la Configuration d’entraînement, une nouvelle Session d’entraînement (`HKWorkoutSession`).
+1. L’application iPhone crée un `HKWorkoutConfiguration` objet et définit le type et l’emplacement de l’entraînement.
+2. L' `HKWorkoutConfiguration` objet reçoit la version Apple Watch de l’application et, s’il n’est pas déjà en cours d’exécution, il est démarré par le système.
+3. À l’aide de la configuration de l’entraînement passé, l’application Watchos 3 démarre une`HKWorkoutSession`nouvelle session de suivi ().
 
 > [!IMPORTANT]
-> Pour l’application iPhone parente démarrer un exercice sur l’Apple Watch, l’application watchOS 3 doit avoir en cours d’exécution en arrière-plan est activée. Consultez [l’activation en cours d’exécution en arrière-plan](#enabling-background-running) ci-dessus pour plus d’informations.
+> Pour permettre à l’application iPhone parente de démarrer un entraînement sur le Apple Watch, l’exécution de l’application Watchos 3 doit être activée. Pour plus d’informations, consultez [activation de l’exécution en arrière-plan](#enabling-background-running) ci-dessus.
 
-Ce processus est très similaire au processus de démarrage d’une Session de séances d’entraînement dans l’application watchOS 3 directement. Sur l’iPhone, utilisez le code suivant :
+Ce processus est très similaire au processus de démarrage d’une session de suivi dans l’application Watchos 3 directement. Sur l’iPhone, utilisez le code suivant:
 
 ```csharp
 using System;
@@ -692,7 +692,7 @@ private void StartOutdoorRun ()
 }
 ```
 
-Ce code permet de s’assurer que la version watchOS de l’application est installée et la version iPhone peut vous y connecter tout d’abord :
+Ce code garantit que la version espionneos de l’application est installée et que la version de l’iPhone peut s’y connecter en premier:
 
 ```csharp
 if (ConnectivitySession.ActivationState == WCSessionActivationState.Activated && ConnectivitySession.WatchAppInstalled) {
@@ -700,9 +700,9 @@ if (ConnectivitySession.ActivationState == WCSessionActivationState.Activated &&
 }
 ```
 
-Puis il crée un `HKWorkoutConfiguration` comme d’habitude et utilise le `StartWatchApp` méthode de la `HKHealthStore` à envoyer à l’Apple Watch et démarrer l’application et la Session d’entraînement.
+Ensuite, il crée `HKWorkoutConfiguration` un comme d’habitude et `StartWatchApp` utilise la méthode `HKHealthStore` de pour l’envoyer au Apple Watch et démarrer l’application et la session de l’entraînement.
 
-Et sur l’application de surveillance du système d’exploitation, utilisez le code suivant dans le `WKExtensionDelegate`:
+Et sur l’application Watch OS, utilisez le code suivant dans le `WKExtensionDelegate`:
 
 ```csharp
 using WatchKit;
@@ -753,24 +753,24 @@ public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutC
 }
 ```
 
-Il prend le `HKWorkoutConfiguration` et crée un nouveau `HKWorkoutSession` et attache une instance de la personnalisation `HKWorkoutSessionDelegate`. La Session d’entraînement est démarrée par rapport à HealthKit Health Store l’utilisateur.
+Il prend le `HKWorkoutConfiguration` et crée un nouveau `HKWorkoutSession` et attache une instance du personnalisé `HKWorkoutSessionDelegate`. La session d’entraînement est démarrée sur le magasin d’intégrité HealthKit de l’utilisateur.
 
-## <a name="bringing-all-the-pieces-together"></a>Rassemble tous les éléments
+## <a name="bringing-all-the-pieces-together"></a>Regroupement de tous les éléments
 
-Effectué toutes les informations présentées dans ce document, un watchOS 3 séances d’entraînement en application et son parent iOS 10 séances d’entraînement en peuvent inclure les éléments suivants :
+En acceptant toutes les informations présentées dans ce document, une application de veille basée sur Watchos 3 et son application d’entraînement à la base iOS 10 parente peuvent inclure les éléments suivants:
 
-1. **iOS 10 `ViewController.cs`**  -gère le démarrage d’une session de connectivité de surveillance et d’un exercice sur l’Apple Watch.
-2. **watchOS 3 `ExtensionDelegate.cs`**  -gère la version watchOS 3 de l’application d’entraînement.
-3. **watchOS 3 `OutdoorRunDelegate.cs`**  -personnalisé `HKWorkoutSessionDelegate` pour gérer les événements pour l’exercice.
+1. **iOS 10 `ViewController.cs`**  -gère le démarrage d’une session de connexion Watch et un entraînement sur le Apple Watch.
+2. **Watchos 3 `ExtensionDelegate.cs`**  : gère la version Watchos 3 de l’application d’entraînement.
+3. **Watchos 3 `OutdoorRunDelegate.cs`**  : un personnalisé `HKWorkoutSessionDelegate` pour gérer les événements de l’entraînement.
 
 > [!IMPORTANT]
-> Le code indiqué dans les sections suivantes inclut uniquement les parties requises pour implémenter les fonctionnalités nouvelles, améliorées fournies aux applications de séances d’entraînement dans watchOS 3. Tout code de prise en charge et le code de présenter et mettre à jour de l’interface utilisateur n’est pas inclus, mais peuvent être facilement créées en suivant notre autre documentation watchOS.<p/>
+> Le code présenté dans les sections suivantes comprend uniquement les composants requis pour implémenter les nouvelles fonctionnalités améliorées fournies pour les applications d’entraînement dans Watchos 3. Tout le code de prise en charge et le code de présentation et de mise à jour de l’interface utilisateur ne sont pas inclus, mais peuvent être facilement créés en suivant notre documentation espionneos.<p/>
 
 
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Le `ViewController.cs` fichier dans la version d’iOS 10 parent de l’application d’entraînement comprend le code suivant :
+Le `ViewController.cs` fichier dans la version d’iOS 10 parente de l’application d’entraînement inclut le code suivant:
 
 ```csharp
 using System;
@@ -852,7 +852,7 @@ namespace MonkeyWorkout
 
 ### <a name="extensiondelegatecs"></a>ExtensionDelegate.cs
 
-Le `ExtensionDelegate.cs` fichier dans la version watchOS 3 de l’application d’entraînement comprend le code suivant :
+Le `ExtensionDelegate.cs` fichier dans la version Watchos 3 de l’application d’entraînement inclut le code suivant:
 
 ```csharp
 using System;
@@ -953,7 +953,7 @@ namespace MonkeyWorkout.MWWatchExtension
 
 ### <a name="outdoorrundelegatecs"></a>OutdoorRunDelegate.cs
 
-Le `OutdoorRunDelegate.cs` fichier dans la version watchOS 3 de l’application d’entraînement comprend le code suivant :
+Le `OutdoorRunDelegate.cs` fichier dans la version Watchos 3 de l’application d’entraînement inclut le code suivant:
 
 ```csharp
 using System;
@@ -1246,21 +1246,21 @@ namespace MonkeyWorkout.MWWatchExtension
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Apple suggère à l’aide des meilleures pratiques suivantes lors de la conception et implémentation d’applications d’entraînement dans watchOS 3 et iOS 10 :
+Apple suggère d’utiliser les meilleures pratiques suivantes lors de la conception et de l’implémentation d’applications de suivi dans Watchos 3 et iOS 10:
 
-- Assurez-vous que l’application de séances d’entraînement watchOS 3 fonctionne toujours même lorsqu’il est impossible de se connecter à l’iPhone et la version iOS 10 de l’application.
-- Utilisez HealthKit distance lorsque le GPS n’est pas disponible, car il est en mesure de générer des exemples de distance sans GPS.
-- Autoriser l’utilisateur démarrer l’exercice à partir de l’Apple Watch ou l’iPhone.
-- Autoriser l’application afficher les entraînements à partir d’autres sources (telles que les autres applications tierces 3e) dans ses vues des données historiques.
-- Assurez-vous que l’application ne pas afficher supprimé sommeil dans les données historiques.
+- Assurez-vous que l’application Watchos 3 entraînement continue à fonctionner même si elle ne peut pas se connecter à l’iPhone et à la version iOS 10 de l’application.
+- Utilisez la distance HealthKit lorsque le GPS n’est pas disponible, car il est en mesure de générer des échantillons de distance sans GPS.
+- Autorisez l’utilisateur à démarrer l’entraînement à partir de l’Apple Watch ou de l’iPhone.
+- Autorise l’application à afficher des entraînements à partir d’autres sources (telles que d’autres applications tierces) dans ses vues de données historiques.
+- Assurez-vous que l’application n’affiche pas les entraînements supprimés dans les données d’historique.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté les améliorations Apple a apportées aux applications de séances d’entraînement dans watchOS 3 et comment les implémenter dans Xamarin.
+Cet article a abordé les améliorations apportées par Apple pour mettre en œuvre des applications dans Watchos 3 et comment les implémenter dans Xamarin.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://developer.xamarin.com/samples/ios/iOS10/)
-- [Présentation d’HealthKit](~/ios/platform/healthkit.md)
+- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [Présentation de HealthKit](~/ios/platform/healthkit.md)

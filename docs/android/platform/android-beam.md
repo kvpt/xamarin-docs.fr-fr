@@ -6,41 +6,41 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 9fcabc90875dda28ecdd5d94f1ca2f263ffe4886
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954196"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643757"
 ---
 # <a name="android-beam"></a>Android Beam
 
-FAISCEAU Android est une technologie de Communication NFC (Near Field) introduite dans Android 4.0 qui permet aux applications de partager des informations sur NFC lorsqu’à proximité.
+Android Beam est une technologie NFC (Near Field communication) introduite dans Android 4,0 qui permet aux applications de partager des informations sur NFC lorsqu’elles sont proches.
 
-[![Diagramme illustrant les deux périphériques à proximité de partage d’informations](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[![Diagramme illustrant deux appareils dans des informations de partage de proximité proches](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
-FAISCEAU Android fonctionne en envoyant des messages sur NFC lorsque deux périphériques sont à portée. Appareils environ 4cm entre eux peuvent partager des données à l’aide de faisceau Android. Une activité sur un périphérique crée un message et spécifie une activité (ou activités) qui peut gérer le placer. Lorsque l’activité spécifiée est au premier plan et les appareils se trouvent dans la plage, faisceau Android envoie le message au deuxième appareil. Sur l’appareil de réception, une intention est appelée contenant les données du message.
+Le faisceau Android fonctionne en envoyant des messages sur NFC lorsque deux appareils sont à portée. Les appareils sur les 4cm peuvent partager des données à l’aide d’Android Beam. Une activité sur un appareil crée un message et spécifie une ou plusieurs activités qui peuvent gérer le push. Lorsque l’activité spécifiée se trouve au premier plan et que les périphériques sont à portée, Android Beam envoie le message au deuxième appareil. Sur l’appareil de réception, une intention est appelée et contient les données du message.
 
-Android prend en charge deux méthodes de définition de messages avec faisceau Android :
+Android prend en charge deux méthodes de configuration des messages avec Android Beam:
 
--   `SetNdefPushMessage` -Avant Android faisceau est lancée, une application peut appeler SetNdefPushMessage pour spécifier un NdefMessage à transmettre via NFC et l’activité qui est l’envoi. Ce mécanisme est utilisé lorsqu’un message ne change pas pendant une application est en cours d’utilisation.
+-   `SetNdefPushMessage`-Avant d’initier le faisceau Android, une application peut appeler SetNdefPushMessage pour spécifier un NdefMessage pour effectuer un push sur NFC et l’activité qui l’exécute. Ce mécanisme est le mieux utilisé lorsqu’un message ne change pas lorsqu’une application est en cours d’utilisation.
 
--   `SetNdefPushMessageCallback` -Lorsque le faisceau Android est lancée, une application peut gérer un rappel pour créer un NdefMessage. Ce mécanisme permet la création de messages peut être différé jusqu'à ce que les appareils se trouvent dans la plage. Il prend en charge les scénarios où le message peut varier en fonction de ce qui se passe dans l’application.
-
-
-Dans les deux cas, pour envoyer des données avec faisceau Android, une application envoie un `NdefMessage`, empaqueter les données dans plusieurs `NdefRecords`. Jetons un œil sur les points clés qui doivent être traitées avant que nous pouvons déclencher faisceau Android. Tout d’abord, nous allons utiliser le style de rappel de la création d’un `NdefMessage`.
+-   `SetNdefPushMessageCallback`-Quand le faisceau Android est initialisé, une application peut gérer un rappel pour créer un NdefMessage. Ce mécanisme permet de différer la création du message jusqu’à ce que les appareils soient à portée. Il prend en charge les scénarios dans lesquels le message peut varier en fonction de ce qui se passe dans l’application.
 
 
-## <a name="creating-a-message"></a>Création d’un Message
+Dans les deux cas, pour envoyer des données avec Android Beam, une application `NdefMessage`envoie un, en empaquetant les données dans plusieurs. `NdefRecords` Jetons un coup d’œil aux points clés qui doivent être traités avant de pouvoir déclencher le faisceau Android. Tout d’abord, nous allons utiliser le style de rappel de `NdefMessage`la création d’un.
 
-Nous pouvons enregistrer des rappels avec un `NfcAdapter` dans l’activité `OnCreate` (méthode). Par exemple, en supposant un `NfcAdapter` nommé `mNfcAdapter` est déclarée comme une variable de classe dans l’activité, nous pouvons écrire le code suivant pour créer le rappel qui construira le message :
+
+## <a name="creating-a-message"></a>Création d’un message
+
+Nous pouvons inscrire des rappels avec `NfcAdapter` un dans la méthode `OnCreate` de l’activité. Par exemple, en supposant `NfcAdapter` qu' `mNfcAdapter` un nommé est déclaré en tant que variable de classe dans l’activité, nous pouvons écrire le code suivant pour créer le rappel qui construira le message:
 
 ```csharp
 mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 mNfcAdapter.SetNdefPushMessageCallback (this, this);
 ```
 
-L’activité, qui implémente `NfcAdapter.ICreateNdefMessageCallback`, est passé à la `SetNdefPushMessageCallback` méthode ci-dessus. Lorsque le faisceau Android est lancée, le système appelle `CreateNdefMessage`, à partir de laquelle l’activité peut construire un `NdefMessage` comme indiqué ci-dessous :
+L’activité, qui implémente `NfcAdapter.ICreateNdefMessageCallback`, est passée à la `SetNdefPushMessageCallback` méthode ci-dessus. Lorsque le faisceau Android est initialisé, le système appelle `CreateNdefMessage`, à partir duquel l’activité peut construire `NdefMessage` un comme indiqué ci-dessous:
 
 ```csharp
 public NdefMessage CreateNdefMessage (NfcEvent evt)
@@ -66,23 +66,23 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 ```
 
 
-## <a name="receiving-a-message"></a>Réception d’un Message
+## <a name="receiving-a-message"></a>Réception d’un message
 
-Sur le côté réception, le système appelle une intention avec le `ActionNdefDiscovered` action, à partir de laquelle nous pouvons extraire le NdefMessage comme suit :
+Du côté de la réception, le système appelle une intention avec l' `ActionNdefDiscovered` action, à partir de laquelle nous pouvons extraire le NdefMessage comme suit:
 
 ```csharp
 IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMessages);
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-Pour obtenir un exemple de code complet qui utilise le faisceau Android, indiqué en cours d’exécution dans la capture d’écran ci-dessous, consultez le [démonstration de faisceau Android](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/) dans la galerie d’exemples.
+Pour obtenir un exemple de code complet qui utilise le faisceau Android, illustré dans la capture d’écran ci-dessous, consultez la [démonstration de faisceau Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo) dans la Galerie d’exemples.
 
-[![Captures d’écran de l’exemple à partir de la démo de faisceau Android](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[![Exemples de captures d’écran de la démonstration de faisceau Android](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démonstration de faisceau Android (exemple)](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
-- [Présentation d’Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme 4.0 Android](https://developer.android.com/sdk/android-4.0.html)
+- [Démo de faisceau Android (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
+- [Présentation du sandwich glacé](http://www.android.com/about/ice-cream-sandwich/)
+- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

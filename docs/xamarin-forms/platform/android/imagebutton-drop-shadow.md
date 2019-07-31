@@ -1,24 +1,24 @@
 ---
-title: Ombres ImageButton sur Android
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser l’Android spécifique à la plateforme qui permet une ombre sur un ImageButton.
+title: Supprimer les ombres sur Android
+description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme Android qui active une ombre portée sur un ImageButton.
 ms.prod: xamarin
 ms.assetid: D3604D87-9F9F-4FE2-8B10-DF3B143C0734
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: ba666d2474934b0cd4349e607329433ae1988b47
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 567216171dd289e849ee0164452e4b876953f2a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926804"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653583"
 ---
-# <a name="imagebutton-drop-shadows-on-android"></a>Ombres ImageButton sur Android
+# <a name="imagebutton-drop-shadows-on-android"></a>Supprimer les ombres sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Cette spécifiques à la plateforme Android est utilisée pour activer une ombre sur un `ImageButton`. Elle est consommée dans XAML en définissant le `ImageButton.IsShadowEnabled` propriété pouvant être liée `true`, ainsi que d’un nombre de propriétés pouvant être liées facultatifs supplémentaires qui contrôlent l’ombre :
+Ce spécifique à la plateforme Android est utilisé pour activer une ombre portée sur `ImageButton`un. Elle est consommée dans XAML en définissant le `ImageButton.IsShadowEnabled` propriété pouvant être liée `true`, ainsi que d’un nombre de propriétés pouvant être liées facultatifs supplémentaires qui contrôlent l’ombre :
 
 ```xaml
 <ContentPage ...
@@ -77,7 +77,7 @@ Le résultat est qu’une ombre portée peut être activée sur un `ImageButton`
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [API AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [API AndroidSpecific. AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

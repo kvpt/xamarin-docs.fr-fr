@@ -1,69 +1,69 @@
 ---
-title: Recherche avec le balisage Web dans Xamarin.iOS
-description: Ce document décrit comment créer des résultats de recherche basée sur le web, un lien vers une application Xamarin.iOS. Il explique comment permettre à du contenu web l’indexation, rendre le site Web de votre application détectable, à l’aide de bannières actives, des liens universels et bien plus encore.
+title: Rechercher avec le balisage Web dans Xamarin. iOS
+description: Ce document décrit comment créer des résultats de recherche basés sur le Web qui renvoient à une application Xamarin. iOS. Il explique comment activer l’indexation de contenu Web, rendre le site Web de votre application détectable, à l’aide de bannières d’applications intelligentes, de liens universels et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830141"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654080"
 ---
-# <a name="search-with-web-markup-in-xamarinios"></a>Recherche avec le balisage Web dans Xamarin.iOS
+# <a name="search-with-web-markup-in-xamarinios"></a>Rechercher avec le balisage Web dans Xamarin. iOS
 
-Pour les applications qui fournissent l’accès à leur contenu via un site web (pas uniquement à partir de l’application), contenu web peut être marqué avec liens spéciaux qui seront analysés par Apple et de fournissent un lien profond à votre application sur son appareil iOS 9.
+Pour les applications qui fournissent un accès à leur contenu via un site Web (non seulement à partir de l’application), le contenu Web peut être marqué avec des liens spéciaux qui seront analysés par Apple et fournir une liaison étroite à votre application sur l’appareil iOS 9 de l’utilisateur.
 
-Si votre application iOS prend déjà en charge le lien profond mobile et votre site Web affiche des liens ciblés vers le contenu au sein de votre application, Apple _Applebot_ robot d’indexation ce contenu d’index et les ajouter automatiquement à leur Index Cloud :
+Si votre application iOS prend déjà en charge la liaison profonde mobile et que votre site Web a présenté des liens ciblés vers du contenu au sein de votre application, le robot Web _Applebot_ d’Apple indexera ce contenu et l’ajoutera automatiquement à son index Cloud:
 
-[![](web-markup-images/webmarkup01.png "Vue d’ensemble des Index de cloud")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "Présentation de l’index Cloud")](web-markup-images/webmarkup01.png#lightbox)
 
-Apple affichera ces résultats dans les résultats de la recherche Spotlight et recherche de Safari.
-Si l’utilisateur appuie sur un de ces résultats (et qu’ils ont installé votre application), puis il est dirigé vers le contenu dans votre application :
+Apple affiche ces résultats dans la recherche Spotlight et les résultats de recherche Safari.
+Si l’utilisateur clique sur l’un de ces résultats (et que votre application est installée), il est dirigé vers le contenu de votre application:
 
-[![](web-markup-images/webmarkup02.png "Lien à partir d’un site Web dans les résultats de la recherche profond")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "Liaison profonde à partir d’un site Web dans les résultats de recherche")](web-markup-images/webmarkup02.png#lightbox)
 
-## <a name="enabling-web-content-indexing"></a>L’activation de l’indexation de contenu Web
+## <a name="enabling-web-content-indexing"></a>Activation de l’indexation de contenu Web
 
-Il existe quatre étapes requises pour que vous contenu l’application consultable à l’aide de balisage Web :
+Quatre étapes sont nécessaires pour faciliter la recherche de contenu d’application à l’aide du balisage Web:
 
-1. Assurez-vous que Apple permettre découvrir et d’index du site Web de votre application en la définissant en tant que le **prise en charge** ou **Marketing** site Web dans iTunes Connect.
-2. Assurez-vous que le site Web de votre application contient le balisage requis pour implémenter le lien profond mobile. Consultez les sections ci-dessous pour plus d’informations.
-3. Activer le lien ciblé de gestion dans votre application iOS.
-4. Ajouter le balisage pour les données structurées exposés par le site Web de votre application pour fournir un résultat de riche et attrayant à l’utilisateur final. Cette étape n’est pas strictement obligatoire, il est vivement recommandé par Apple.
+1. Assurez-vous qu’Apple peut découvrir et indexer le site Web de votre application en le définissant comme site Web de **support** ou de **marketing** dans iTunes Connect.
+2. Assurez-vous que le site Web de votre application contient le balisage requis pour implémenter la liaison profonde mobile. Pour plus d’informations, consultez les sections ci-dessous.
+3. Activez la gestion des liens approfondis dans votre application iOS.
+4. Ajoutez des balises pour les données structurées, exposées par le site Web de votre application, afin de fournir un résultat riche et attrayant à l’utilisateur final. Bien que cette étape ne soit pas strictement obligatoire, elle est fortement recommandée par Apple.
 
-Les sections suivantes passe en revue ces étapes en détail.
+Les sections suivantes décrivent ces étapes en détail.
 
 ## <a name="make-your-apps-website-discoverable"></a>Rendre le site Web de votre application détectable
 
-Le moyen le plus simple d’avoir à Apple de trouver le site Web de votre application consiste à utiliser en tant que le **prise en charge** ou **Marketing** site Web lorsque vous soumettez votre application à Apple via iTunes Connect.
+Le moyen le plus simple pour que Apple recherche le site Web de votre application consiste à l’utiliser comme site Web de **support** ou de **marketing** lorsque vous envoyez votre application à Apple via iTunes Connect.
 
-## <a name="using-smart-app-banners"></a>À l’aide de bannières intelligente
+## <a name="using-smart-app-banners"></a>Utilisation des bannières d’application intelligente
 
-Fournir une bannière d’application actives sur votre site Web pour présenter un lien clair dans votre application. Si l’application n’est pas déjà installée, Safari vous invite automatiquement l’utilisateur à installer votre application. Sinon, l’utilisation peut appuyer sur le **vue** lien pour lancer votre application depuis le site Web. Par exemple, pour créer une bannière d’application intelligente, vous pouvez utiliser le code suivant :
+Fournissez une bannière d’application intelligente sur votre site Web pour présenter un lien clair dans votre application. Si l’application n’est pas déjà installée, Safari invite automatiquement l’utilisateur à installer votre application. Dans le cas contraire, l’utilisation peut appuyer sur le lien de la **vue** pour lancer votre application à partir du site Web. Par exemple, pour créer une bannière d’application intelligente, vous pouvez utiliser le code suivant:
 
 ```xml
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
-Pour plus d’informations, consultez le site d’Apple [la promotion des applications avec Smart bannières](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) documentation.
+Pour plus d’informations, consultez la documentation relative [à la promotion des applications d’Apple avec les bannières d’application intelligentes](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) .
 
-## <a name="using-universal-links"></a>À l’aide de liens universels
+## <a name="using-universal-links"></a>Utilisation des liens universels
 
-Nouveau à iOS 9, des liens universels fournissent une meilleure alternative à bannières actives ou les schémas d’URL personnalisés existants en fournissant les éléments suivants :
+Nouveauté d’iOS 9, les liens universels fournissent une meilleure alternative aux bannières d’application intelligentes ou aux modèles d’URL personnalisés existants en fournissant les éléments suivants:
 
-- **Unique** – la même URL ne peut pas être revendiquée par plus d’un site Web.
-- **Sécuriser** – un certificat signé est requis pour le site Web qui garantit que le site Web est détenu par vous et correctement lié à la votre application.
-- **Flexible** – l’utilisateur final peut contrôler si l’URL lance le site Web ou l’application.
-- **Universal** – la même URL peut être utilisée pour définir le contenu de votre site Web et de votre application.
+- **Unique** : la même URL ne peut pas être revendiquée par plusieurs sites Web.
+- **Sécurisé** : un certificat signé est requis pour le site Web, ce qui garantit que le site Web vous appartient et qu’il est lié de manière valide à votre application.
+- **Flexible** : l’utilisateur final peut contrôler si l’URL lance le site Web ou l’application.
+- **Universel** : la même URL peut être utilisée pour définir le contenu de votre site Web et le contenu de votre application.
 
-## <a name="using-twitter-cards"></a>À l’aide de cartes de Twitter
+## <a name="using-twitter-cards"></a>Utilisation des cartes Twitter
 
-Vous pouvez fournir des liens ciblés vers le contenu de votre application à l’aide d’une carte de Twitter. Par exemple :
+Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’une carte Twitter. Par exemple :
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -71,11 +71,11 @@ Vous pouvez fournir des liens ciblés vers le contenu de votre application à l�
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-Pour plus d’informations, consultez le site de Twitter [protocole de carte Twitter](http://dev.twitter.com/cards/mobile) documentation.
+Pour plus d’informations, consultez la documentation sur le [protocole de carte Twitter](http://dev.twitter.com/cards/mobile) de Twitter.
 
-## <a name="using-facebook-app-links"></a>À l’aide de liens d’application Facebook
+## <a name="using-facebook-app-links"></a>Utilisation des liens d’application Facebook
 
-Vous pouvez fournir des liens ciblés vers le contenu de votre application à l’aide d’un Facebook application Link. Par exemple :
+Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’un lien vers une application Facebook. Par exemple :
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -83,11 +83,11 @@ Vous pouvez fournir des liens ciblés vers le contenu de votre application à l�
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-Pour plus d’informations, consultez le site de Facebook [liens application](http://applinks.org) documentation.
+Pour plus d’informations, consultez la documentation [des liens vers les applications](http://applinks.org) de Facebook.
 
-## <a name="opening-deep-links"></a>Ouverture des liens ciblés
+## <a name="opening-deep-links"></a>Ouverture de liens détaillés
 
-Vous devez ajouter la prise en charge pour l’ouverture et l’affichage des liens ciblés dans votre application Xamarin.iOS. Modifier le **AppDelegate.cs** de fichiers et de remplacer le `OpenURL` méthode pour gérer le format d’URL personnalisé. Par exemple :
+Vous devez ajouter la prise en charge de l’ouverture et de l’affichage des liens détaillés dans votre application Xamarin. iOS. Modifiez le fichier **AppDelegate.cs** et remplacez la `OpenURL` méthode pour gérer le format d’URL personnalisé. Par exemple :
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,15 +113,15 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-Dans le code ci-dessus, nous recherchons une URL contenant `/appname` et en passant la valeur de `query` (`123` dans cet exemple) à un contrôleur d’affichage personnalisé dans notre application pour afficher le contenu demandé à l’utilisateur.
+Dans le code ci-dessus, nous recherchons une `/appname` URL qui contient et transmettant`123` la valeur de `query` (dans cet exemple) à un contrôleur d’affichage personnalisé dans notre application pour afficher le contenu demandé à l’utilisateur.
 
-## <a name="providing-rich-results-with-structured-data"></a>En fournissant des résultats riches avec des données structurées
+## <a name="providing-rich-results-with-structured-data"></a>Fournir des résultats enrichis avec des données structurées
 
-En incluant le balisage de données structurées, vous pouvez fournir des résultats de recherche riche pour l’utilisateur final qui vont au-delà de tout simplement un titre et une description. Inclure des images, des données spécifiques d’application (par exemple, des évaluations) et des actions pour les résultats à l’aide de la balise structuré de données.
+En incluant le balisage de données structurées, vous pouvez fournir à l’utilisateur final des résultats de recherche enrichis qui dépassent simplement un titre et une description. Inclure des images, des données spécifiques à l’application (telles que des évaluations) et des actions pour les résultats à l’aide du balisage de données structurées.
 
-Résultats de riches sont plus intéressantes et peuvent aider à améliorer les Index de recherche de base de votre classement dans le Cloud en incitant davantage d’utilisateurs d’interagir avec elles.
+Les résultats enrichis sont plus attrayants et peuvent contribuer à améliorer votre classement dans l’index de recherche basé sur le Cloud en attirant davantage d’utilisateurs pour interagir avec eux.
 
-Une option permettant de balise structuré de données consiste à l’aide d’Open Graph. Par exemple :
+Une option pour fournir le balisage de données structurées consiste à utiliser ouvrir un graphique. Par exemple :
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -129,9 +129,9 @@ Une option permettant de balise structuré de données consiste à l’aide d’
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-Pour plus d’informations, consultez le [Open Graph](http://ogp.me) site Web.
+Pour plus d’informations, consultez le site Web [Open Graph](http://ogp.me) .
 
-Un autre courantes format de balise structuré de données est de schema.org microdonnées. Par exemple :
+Un autre format courant pour le balisage de données structurées est le format microdonnées de Schema. org. Par exemple :
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -141,7 +141,7 @@ Un autre courantes format de balise structuré de données est de schema.org mic
 
 ```
 
-Les mêmes informations peuvent être représentées au format de JSON-LD de schema.org :
+Les mêmes informations peuvent être représentées au format JSON-LD de Schema. org:
 
 ```xml
 <script type="application/ld+json">
@@ -152,32 +152,32 @@ Les mêmes informations peuvent être représentées au format de JSON-LD de sch
 </script>
 ```
 
-Voici un exemple de métadonnées à partir de votre site Web en fournissant des résultats de recherche riche pour l’utilisateur final :
+Voici un exemple de métadonnées de votre site Web fournissant des résultats de recherche enrichis à l’utilisateur final:
 
-[![](web-markup-images/deeplink01.png "Résultats par le biais de balise structuré de données de recherche avancée")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "Résultats de recherche enrichis via le balisage de données structurées")](web-markup-images/deeplink01.png#lightbox)
 
-Apple prend actuellement en charge les types de schéma suivants à partir de schema.org :
+Apple prend actuellement en charge les types de schémas suivants à partir de schema.org:
 
 - AggregateRating
 - ImageObject
 - InteractionCount
-- Offres
-- Organisation
-- PriceRange
-- Recipe (Recette)
+- Offre
+- Dernière
+- Gammedeprix
+- Recette
 - SearchAction
 
-Pour plus d’informations sur ces types de schéma, consultez [schema.org](http://schema.org).
+Pour plus d’informations sur ces types de schéma, consultez [Schema.org](http://schema.org).
 
-## <a name="providing-actions-with-structured-data"></a>Fournissant des Actions avec des données structurées
+## <a name="providing-actions-with-structured-data"></a>Fournir des actions avec des données structurées
 
-Les types spécifiques de données structurées permettra un résultat de recherche pouvoir être exploitable par l’utilisateur final. Actuellement, les actions suivantes sont prises en charge :
+Des types spécifiques de données structurées permettent à l’utilisateur final d’agir sur les résultats de la recherche. Actuellement, les actions suivantes sont prises en charge:
 
-- Composer un numéro de téléphone.
-- Obtention de direction de mappage à une adresse donnée.
+- Numérotation d’un numéro de téléphone.
+- Obtention de la direction de la carte vers une adresse donnée.
 - Lecture d’un fichier audio ou vidéo.
 
-Par exemple, la définition d’une Action pour composer un numéro de téléphone peut se présenter comme suit :
+Par exemple, la définition d’une action pour composer un numéro de téléphone peut se présenter comme suit:
 
 ```xml
 <div itemscope itemtype="http://schema.org/Organization">
@@ -186,9 +186,9 @@ Par exemple, la définition d’une Action pour composer un numéro de télépho
 
 ```
 
-Lorsque ce résultat de recherche est présenté à l’utilisateur final, une icône de téléphone petit s’affichera dans le résultat. Si l’utilisateur appuie sur l’icône, le nombre spécifié sera appelé.
+Lorsque ce résultat de recherche est présenté à l’utilisateur final, une petite icône de téléphone s’affiche dans le résultat. Si l’utilisateur appuie sur l’icône, le nombre spécifié est appelé.
 
-Ajoutez une action pour lire un fichier audio à partir du résultat de recherche le code HTML suivant :
+Le code HTML suivant ajoute une action pour lire un fichier audio à partir du résultat de la recherche:
 
 ```xml
 <div itemscope itemtype="http://schema.org/AudioObject">
@@ -197,7 +197,7 @@ Ajoutez une action pour lire un fichier audio à partir du résultat de recherch
 
 ```
 
-Enfin, le code HTML suivant ajoutez une action pour obtenir des instructions à partir du résultat de recherche :
+Enfin, le code HTML suivant ajoute une action pour obtenir des instructions à partir du résultat de la recherche:
 
 ```xml
 <div itemscope itemtype="http://schema.org/PostalAddress">
@@ -209,13 +209,13 @@ Enfin, le code HTML suivant ajoutez une action pour obtenir des instructions à 
 
 ```
 
-Pour plus d’informations, consultez le site d’Apple [Site de développement application recherche](https://developer.apple.com/ios/search/).
+Pour plus d’informations, consultez le site des développeurs d’Apple [app Search](https://developer.apple.com/ios/search/).
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
+- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Guide de programmation de recherche de l’application](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [Guide de programmation de recherche d’applications](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

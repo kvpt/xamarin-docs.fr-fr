@@ -7,16 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ca6c8fafe4352bac83e5ae60b43627d4c7fdc10f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410684"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648670"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>Affichage segmenté de bitmaps de SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Le SkiaSharp `SKCanvas` objet définit une méthode nommée `DrawBitmapNinePatch` et deux méthodes nommées `DrawBitmapLattice` qui sont très similaires. À la fois ces méthodes restituer une image bitmap à la taille d’un rectangle de destination, mais au lieu d’étirement de l’image bitmap uniformément, afficher des parties de l’image bitmap dans ses dimensions en pixels et étirer des autres parties de l’image bitmap afin qu’il tienne le rectangle :
 
@@ -44,7 +44,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 Le rectangle central est relatif à l’image bitmap. Il s’agit une `SKRectI` valeur (la version de l’entier de `SKRect`) et toutes les coordonnées et tailles sont exprimées en unités de pixels. Le rectangle de destination est par rapport à la surface d’affichage. L’argument `paint` est obligatoire.
 
-Le **affichage correctif neuf** page dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple utilise d’abord un constructeur statique pour créer une propriété statique publique de type `SKBitmap`:
+Le **affichage correctif neuf** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple utilise d’abord un constructeur statique pour créer une propriété statique publique de type `SKBitmap`:
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -228,4 +228,4 @@ Le **Lattice affichage** page généralise la création de la `Flags` tableau, c
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

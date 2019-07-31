@@ -7,16 +7,16 @@ ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 3ea05563ecbca95d26d692d5424c30e961229ac5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8071f310e899575699e1d0b925541f2863b00676
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61021195"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645193"
 ---
 # <a name="skiasharp-blend-modes"></a>Modes de fusion SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Ces articles se concentrent sur la [ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode) propriété du [ `SKPaint` ](xref:SkiaSharp.SKPaint). Le `BlendMode` propriété est de type [ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode), une énumération avec les membres de 29.
 
@@ -46,13 +46,13 @@ Les 29 membres de le `SKBlendMode` énumération peut être divisée en trois ca
 
 Les noms de ces trois catégories prend plus de sens dans les discussions qui suivent. L’ordre que les membres sont répertoriés ici est le même que dans la définition de la `SKBlendMode` énumération. Les membres de le 13 énumération dans la première colonne ont les valeurs entières 0 à 12. La deuxième colonne sont membres de l’énumération qui correspondent à des entiers 13 à 24, et les membres dans la troisième colonne ont des valeurs de 25 à 28.
 
-Ces modes sont abordés dans blend _environ_ le même ordre dans le W3C **composition et fusion de niveau 1** document, mais il existe quelques différences : Le `Src` mode est appelé _copie_ dans le document du W3C, et `Plus` est appelée _plus clair_. Le document du W3C définit un _Normal_ mode blend qui n’est pas inclus dans `SKBlendModes` , car il serait identique `SrcOver`. Le `Modulate` mode blend (en haut de la première colonne) n’est pas inclus dans le document du W3C et la présentation de la `Multiply` mode précède `Screen`.
+Ces modes de fusion sont décrits _dans le_ même ordre que dans le document du W3C sur la **composition et le niveau de fusion** , mais il existe quelques différences: Le `Src` mode est appelé « _copie_ » dans le document du `Plus` W3C et est appelé plus _clair_. Le document du W3C définit un _Normal_ mode blend qui n’est pas inclus dans `SKBlendModes` , car il serait identique `SrcOver`. Le `Modulate` mode blend (en haut de la première colonne) n’est pas inclus dans le document du W3C et la présentation de la `Multiply` mode précède `Screen`.
 
 Étant donné que le `Modulate` blend mode étant spécifique à Skia, elle sera abordée sous la forme d’un mode de Porter-Duff supplémentaire et un mode séparable.
 
 ## <a name="the-importance-of-transparency"></a>L’importance de la transparence
 
-Historiquement, la composition a été développée conjointement avec le concept de la _canal alpha_. Dans un affichage de la surface comme le `SKCanvas` objet et une image bitmap en couleurs, chaque pixel se compose de 4 octets : 1 octet chaque pour les composants rouges, vert et bleus et un octet supplémentaire pour la transparence. Ce composant alpha est 0 pour une transparence intégrale et 0xFF pour l’opacité complète, avec différents niveaux de transparence entre ces valeurs.
+Historiquement, la composition a été développée conjointement avec le concept de la _canal alpha_. Dans une surface d’affichage telle que `SKCanvas` l’objet et une image bitmap de couleur entière, chaque pixel se compose de 4 octets: 1 octet pour les composants rouge, vert et bleu, et un octet supplémentaire pour la transparence. Ce composant alpha est 0 pour une transparence intégrale et 0xFF pour l’opacité complète, avec différents niveaux de transparence entre ces valeurs.
 
 La plupart des modes de blend s’appuient sur la transparence. Généralement, lorsque un `SKCanvas` est tout d’abord obtenu dans un `PaintSurface` gestionnaire, ou quand un `SKCanvas` est créé pour dessiner sur une image bitmap, la première étape est cet appel :
 
@@ -93,4 +93,4 @@ Utiliser les modes de fusion non séparables de modifier la teinte, saturation o
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740961"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654564"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
 
@@ -35,7 +35,7 @@ L’application parente est également parfois appelée l’application de conte
 
 ## <a name="run-code"></a>Exécuter du Code
 
-Communication entre une extension watch et l’application iPhone parent est illustrée dans le [GpsWatch exemple](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/).
+Communication entre une extension watch et l’application iPhone parent est illustrée dans le [GpsWatch exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gpswatch).
 Votre extension watch peut demander l’application iOS de parent à procéder à un traitement sur son nom à l’aide de la `OpenParentApplication` (méthode).
 
 Cela est particulièrement utile pour longues tâches (y compris les demandes réseau) - uniquement le parent application iOS peuvent tirer parti du traitement en arrière-plan pour effectuer ces tâches et enregistrez les données récupérées dans un emplacement accessible à l’extension watch.
@@ -147,7 +147,7 @@ Téléchargez le C# version [WormHoleSharp](https://github.com/Clancey/WormHoleS
 
 ## <a name="related-links"></a>Liens associés
 
-- [GpsWatch (exemple)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [GpsWatch (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WormHoleSharp (exemple)](https://github.com/Clancey/WormHoleSharp)
 - [Référence de WKInterfaceController d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Apple partage de données avec votre application de conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

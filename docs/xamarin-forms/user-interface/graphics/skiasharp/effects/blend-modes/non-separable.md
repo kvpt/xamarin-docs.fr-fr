@@ -7,16 +7,16 @@ ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9b94db14a197ca31be42e8712c2170fd66b86579
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61162407"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642783"
 ---
 # <a name="the-non-separable-blend-modes"></a>Les modes de fusion non séparables
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Comme vous l’avez vu dans l’article [ **SkiaSharp séparable blend modes**](separable.md), les modes de blend séparables effectuer des opérations sur les canaux rouges, vert et bleus séparément. Les modes de fusion non séparables ne peuvent pas. En opérant sur les niveaux de teinte, Saturation et de luminosité de couleur, les modes de fusion non séparables peuvent modifier les couleurs de façons intéressantes :
 
@@ -28,7 +28,7 @@ Pour comprendre les modes de fusion non séparables, il est nécessaire traiter 
 
 Le modèle de couleurs TSL a été abordé dans l’article [ **l’intégration avec Xamarin.Forms** ](../../basics/integration.md) et un exemple de programme dans cet article permet de l’expérimentation avec les couleurs TSL. Vous pouvez créer un `SKColor` valeur à l’aide des valeurs de teinte, Saturation et de luminosité avec la ligne statique [ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*) (méthode).
 
-La teinte représente la longueur d’onde dominante de la couleur. La valeur de teinte comprise entre 0 et 360 et passer en revue les couleurs primaires addition et soustraction : La couleur rouge est la valeur 0, jaune est 60, vert est 120, cyan est 180, bleu est 240, magenta est 300, et le cycle revient rouge à 360.
+La teinte représente la longueur d’onde dominante de la couleur. Les valeurs de teinte sont comprises entre 0 et 360 et défilent vers l’additif et les primaires de soustraction: Le rouge est la valeur 0, le jaune est 60, le vert est 120, le cyan est 180, le bleu est 240, le magenta est 300 et le cycle revient au rouge à 360.
 
 S’il n’existe aucune couleur dominante &mdash; , par exemple, la couleur est blanc ou noir ou un dégradé de gris &mdash; ensuite la teinte est non définie et généralement la valeur 0. 
 
@@ -198,7 +198,7 @@ Le `SKBlendModes.Color` blend mode conserve la luminosité de la destination, ma
 
 Vous verrez bientôt une application de ce mode blend.
 
-Enfin, le `SKBlendModes.Luminosity` mode de fusion est l’opposé de `SKBlendModes.Color`. Il conserve la teinte et la Saturation de la destination, mais utilise la luminosité de la source. Le `Luminosity` blend mode est le plus mystérieux du lot : Les curseurs Teinte et Saturation affectent l’image, mais même au luminosité moyenne, l’image n’est pas distincte :
+Enfin, le `SKBlendModes.Luminosity` mode de fusion est l’opposé de `SKBlendModes.Color`. Il conserve la teinte et la Saturation de la destination, mais utilise la luminosité de la source. Le `Luminosity` mode de fusion est le plus mystérieux du lot: Les curseurs teinte et saturation affectent l’image, mais même avec une luminosité moyenne, l’image n’est pas distincte:
 
 [![Modes de fusion non séparables - luminosité](non-separable-images/NonSeparableBlendModes-Luminosity.png "Modes Non séparables Blend - luminosité")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
@@ -208,11 +208,11 @@ Il n’est généralement pas le cas où vous souhaitez utiliser un des modes no
 
 ## <a name="a-matte-for-a-separable-mode"></a>Un cache pour un mode séparable
 
-Voici les bitmaps inclus en tant que ressource dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple. Le nom de fichier est **Banana.jpg**:
+Voici les bitmaps inclus en tant que ressource dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. Le nom de fichier est **Banana.jpg**:
 
 ![Banana Monkey](non-separable-images/Banana.jpg "Banana Monkey")
 
-Il est possible de créer un cache qui englobe simplement le banana. Il s’agit également d’une ressource dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple. Le nom de fichier est **BananaMatte.png**:
+Il est possible de créer un cache qui englobe simplement le banana. Il s’agit également d’une ressource dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. Le nom de fichier est **BananaMatte.png**:
 
 ![Cache de banana](non-separable-images/BananaMatte.png "Banana cache")
 
@@ -292,4 +292,4 @@ Essayez de modifier le mode de fusion à `SKBlendMode.Saturation`. Le banana res
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

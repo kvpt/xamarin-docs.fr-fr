@@ -1,6 +1,6 @@
 ---
-title: Vues de pile dans Xamarin.iOS
-description: Cet article traite du nouveau contrôle UIStackView dans une application Xamarin.iOS à gérer un ensemble de sous-vues dans soit une pile organisée horizontalement ou verticalement.
+title: Affichages de la pile dans Xamarin. iOS
+description: Cet article traite de l’utilisation du nouveau contrôle UIStackView dans une application Xamarin. iOS pour gérer un ensemble de sous-affichages dans une pile horizontale ou verticale.
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
@@ -8,79 +8,79 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 88496452595f308c97d26d0f27fae305baef894f
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5519f6e5b1bb0b63ab3169dd8f48f2f87a025ba5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830824"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642816"
 ---
-# <a name="stack-views-in-xamarinios"></a>Vues de pile dans Xamarin.iOS
+# <a name="stack-views-in-xamarinios"></a>Affichages de la pile dans Xamarin. iOS
 
-_Cet article traite du nouveau contrôle UIStackView dans une application Xamarin.iOS à gérer un ensemble de sous-vues dans soit une pile organisée horizontalement ou verticalement._
+_Cet article traite de l’utilisation du nouveau contrôle UIStackView dans une application Xamarin. iOS pour gérer un ensemble de sous-affichages dans une pile horizontale ou verticale._
 
 > [!IMPORTANT]
-> Veuillez noter que StackView est pris en charge dans le concepteur iOS, vous pouvez rencontrer des bogues de facilité d’utilisation lorsque vous utilisez le canal Stable. Le changement de la version bêta ou Alpha canal doit permettre de résoudre ce problème. Nous avons décidé de présenter cette procédure pas à pas à l’aide de Xcode jusqu'à ce que les correctifs requis sont implémentées dans le canal Stable.
+> Notez que si StackView est pris en charge dans le concepteur iOS, vous risquez de rencontrer des bogues d’utilisation lors de l’utilisation du canal stable. Le passage de la version bêta ou des canaux alpha devrait résoudre ce problème. Nous avons décidé de présenter cette procédure pas à pas à l’aide de Xcode jusqu’à ce que les correctifs requis soient implémentés dans le canal stable.
 
-Le contrôle de la vue de la pile (`UIStackView`) tire parti de la puissance de disposition automatique et des Classes de taille pour gérer une pile de sous-vues, horizontalement ou verticalement, qui répond dynamiquement à la taille d’écran et l’orientation de l’appareil iOS.
+Le contrôle d’affichage de`UIStackView`la pile () tire parti de la puissance des classes de mise en page et de taille automatiques pour gérer une pile de sous-vues, horizontale ou verticale, qui répond de manière dynamique à l’orientation et à la taille de l’écran de l’appareil iOS.
 
-La disposition de tous les sous-vues attachée à une vue de la pile sont gérées par en fonction des propriétés de développeur défini comme axe, distribution, alignement et espacement :
+La disposition de toutes les sous-vues attachées à un affichage de la pile est gérée par celle-ci en fonction des propriétés définies par le développeur, telles que l’axe, la distribution, l’alignement et l’espacement:
 
-[![](uistackview-images/stacked01.png "Diagramme de disposition de vue de pile")](uistackview-images/stacked01.png#lightbox)
+[![](uistackview-images/stacked01.png "Diagramme de disposition de la vue pile")](uistackview-images/stacked01.png#lightbox)
 
-Lorsque vous utilisez un `UIStackView` dans une application Xamarin.iOS, le développeur peut définir soit les sous-vues soit à l’intérieur d’une table de montage séquentiel dans le concepteur iOS, ou en ajoutant et supprimant des sous-vues en code c#.
+Lors de l' `UIStackView` utilisation d’un dans une application Xamarin. iOS, le développeur peut soit définir les sous-vues à l’intérieur d’un Storyboard dans le concepteur iOS, soit ajouter et supprimer C# des sous-vues dans le code.
 
-Ce document se compose de deux parties : un démarrage rapide pour vous aider à mettre en œuvre afficher votre pile et puis certains plus de détails techniques sur son fonctionnement.
+Ce document se compose de deux parties: un guide de démarrage rapide pour vous aider à implémenter votre première vue de la pile, puis d’autres détails techniques sur son fonctionnement.
 
 > [!VIDEO https://youtube.com/embed/p3po6507Ip8]
 
-**UIStackView vidéo**
+**Vidéo UIStackView**
 
-## <a name="uistackview-quickstart"></a>Guide de démarrage rapide UIStackView
+## <a name="uistackview-quickstart"></a>Démarrage rapide de UIStackView
 
-En tant qu’une introduction rapide à la `UIStackView` contrôle, nous allons créer une interface simple qui autorise l’utilisateur à entrer une évaluation à partir de 1 à 5. Nous allons utiliser deux vues de la pile : une pour organiser l’interface verticalement sur l’appareil écran et l’autre pour réorganiser les icônes d’évaluation de 1 à 5 horizontalement à l’écran.
+En guise d’introduction rapide `UIStackView` au contrôle, nous allons créer une interface simple qui permet à l’utilisateur d’entrer une évaluation de 1 à 5. Nous allons utiliser deux vues de pile: une pour réorganiser l’interface verticalement sur l’écran de l’appareil et une pour réorganiser horizontalement les icônes d’évaluation 1-5 sur l’écran.
 
 ### <a name="define-the-ui"></a>Définir l’interface utilisateur
 
-Démarrer un nouveau projet Xamarin.iOS et modifier le **Main.storyboard** fichier dans Xcode Interface Builder. Tout d’abord, faites glisser un seul **verticale vue pile** sur le **contrôleur d’affichage**:
+Démarrez un nouveau projet Xamarin. iOS, puis modifiez le fichier **main. Storyboard** dans le Interface Builder de Xcode. Tout d’abord, faites glisser une seule **vue verticale** de la pile sur le **contrôleur d’affichage**:
 
-[![](uistackview-images/quick01.png "Faites glisser une seule vue pile verticale sur le contrôleur d’affichage")](uistackview-images/quick01.png#lightbox)
+[![](uistackview-images/quick01.png "Faites glisser une seule vue verticale de la pile sur le contrôleur d’affichage.")](uistackview-images/quick01.png#lightbox)
 
-Dans le **inspecteur d’attributs**, définissez les options suivantes :
+Dans l' **inspecteur d’attribut**, définissez les options suivantes:
 
-[![](uistackview-images/quick02.png "Définir les options de vue de la pile")](uistackview-images/quick02.png#lightbox)
+[![](uistackview-images/quick02.png "Définir les options d’affichage de la pile")](uistackview-images/quick02.png#lightbox)
 
 Où :
 
-- **Axe** – détermine si la vue pile organise les sous-vues soit **horizontalement** ou **verticalement**.
-- **Alignement** – contrôle la manière dont les sous-affichages sont alignées dans la vue de la pile.
-- **Distribution** – contrôle la façon dont les sous-affichages sont dimensionnés au sein de la vue de la pile.
-- **Espacement** – contrôle l’espace minimal entre chaque sous-affichage dans la vue de la pile.
-- **Ligne de base relatif** – si elle est activée, l’espacement vertical de chaque sous-affichage sera dérivé de sa ligne de base.
-- **Mise en page marges relatif** – place les sous-vues relatif aux marges mise en forme standard.
+- **Axis** : détermine si l’affichage de la pile réorganise les sous- affichages horizontalement ou **verticalement**.
+- **Alignment** : contrôle la manière dont les sous-affichages sont alignés dans l’affichage de la pile.
+- **Distribution** : contrôle la manière dont les sous-vues sont dimensionnées dans l’affichage de la pile.
+- **Espacement** : contrôle l’espace minimal entre chaque sous-vue de l’affichage de la pile.
+- **Ligne de base relative** : si cette option est activée, l’espacement vertical de chaque sous-vue est dérivé de sa ligne de base.
+- **Marges de disposition relatives** : place les sous-vues par rapport aux marges de disposition standard.
 
-Lorsque vous travaillez avec une vue de la pile, vous pouvez considérer le **alignement** en tant que le **X** et **Y** emplacement de la sous-affichage et **Distribution** comme le **Hauteur** et **largeur**.
+Lorsque vous utilisez un affichage de la pile, vous pouvez considérer l' **alignement** comme l’emplacement **X** et **Y** de la sous-vue et la **distribution** comme la **hauteur** et la **largeur**.
 
 > [!IMPORTANT]
-> `UIStackView` est conçu comme une vue non rendu conteneur et par conséquent, il n’est pas dessiné dans le canevas, comme d’autres sous-classes de `UIView`. Par conséquent, définissant les propriétés telles que `BackgroundColor` ou la substitution `DrawRect` n’a aucun effet visuel.
+> `UIStackView`est conçu comme une vue de conteneur sans rendu et, par conséquent, il n’est pas dessiné dans le canevas comme les autres sous `UIView`-classes de. Par conséquent, la définition `BackgroundColor` de propriétés telles `DrawRect` que ou la substitution n’a aucun effet visuel.
 
-Continuer à disposition de l’interface l’application en ajoutant une étiquette, ImageView, deux boutons et un affichage Horizontal de la pile afin qu’il ressemble à ce qui suit :
+Continuez à mettre en page l’interface de l’application en ajoutant une étiquette, ImageView, deux boutons et une vue de pile horizontale afin qu’elle ressemble à ce qui suit:
 
-[![](uistackview-images/quick03.png "Mise en page de l’interface utilisateur de vue pile")](uistackview-images/quick03.png#lightbox)
+[![](uistackview-images/quick03.png "Disposition de l’interface utilisateur de la vue pile")](uistackview-images/quick03.png#lightbox)
 
-Configurer l’affichage Horizontal de la pile avec les options suivantes :
+Configurez l’affichage de la pile horizontale avec les options suivantes:
 
-[![](uistackview-images/quick04.png "Configurez les options de vue de la pile horizontale")](uistackview-images/quick04.png#lightbox)
+[![](uistackview-images/quick04.png "Configurer les options d’affichage horizontal de la pile")](uistackview-images/quick04.png#lightbox)
 
-Étant donné que nous ne voulons pas l’icône qui représente chaque « point » dans l’évaluation étiré lorsqu’il est ajouté à la vue pile horizontale, nous avons défini le **alignement** à **Center** et  **Distribution** à **remplir tout aussi**.
+Étant donné que nous ne souhaitons pas que l’icône représentant chaque «point» de l’évaluation soit étirée lorsqu’elle est ajoutée à l’affichage de la pile horizontale, nous avons défini l' **alignement** sur **Center** et la **distribution** sur **Fill**.
 
-Enfin, raccordées à ce qui suit **Outlets** et **Actions**:
+Enfin, associez les **prises** et les **actions**suivantes:
 
-[![](uistackview-images/quick05.png "Les points de vue pile et les Actions")](uistackview-images/quick05.png#lightbox)
+[![](uistackview-images/quick05.png "Sorties et actions de l’affichage de la pile")](uistackview-images/quick05.png#lightbox)
 
-### <a name="populate-a-uistackview-from-code"></a>Remplir un UIStackView à partir du Code
+### <a name="populate-a-uistackview-from-code"></a>Remplir un UIStackView à partir du code
 
-Retournez dans Visual Studio pour Mac et modifier le **ViewController.cs** fichier, puis ajoutez le code suivant :
+Revenez à Visual Studio pour Mac et modifiez le fichier **ViewController.cs** et ajoutez le code suivant:
 
 ```csharp
 public int Rating { get; set;} = 0;
@@ -132,32 +132,32 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 }
 ```
 
-Jetons un œil à quelques éléments de ce code en détail. Tout d’abord, nous utilisons un `if` instructions pour vérifier qu’il n’est pas plus de cinq « étoiles » ou inférieur à zéro.
+Jetons un coup d’œil à quelques éléments de ce code en détail. Tout d’abord, nous `if` utilisons une instruction pour vérifier qu’il n’y a pas plus de cinq «étoiles» ou moins de zéro.
 
-Pour ajouter un nouveau « star » nous charger son image et définir son **Mode contenu** à **mise à l’échelle Aspect ajuster**:
+Pour ajouter une nouvelle «étoile», nous chargeons son image et définissons son **mode de contenu** sur **ajuster l’aspect**:
 
 ```csharp
 var icon = new UIImageView (new UIImage("icon.png"));
 icon.ContentMode = UIViewContentMode.ScaleAspectFit;
 ```
 
-Cela permet de conserver l’icône « en étoile » de la distorsion lorsqu’il est ajouté à la vue de la pile.
+Cela empêche la déformation de l’icône «étoile» lorsqu’elle est ajoutée à l’affichage de la pile.
 
-Ensuite, nous ajoutons la nouvelle icône « en étoile » à la collection de la vue de la pile de sous-vues :
+Ensuite, nous ajoutons la nouvelle icône «Star» à la collection d’affichages de la vue de la pile:
 
 ```csharp
 RatingView.AddArrangedSubview(icon);
 ```
 
-Vous remarquerez que nous avons ajouté la `UIImageView` à la `UIStackView`de `ArrangedSubviews` propriété et non le `SubView`. N’importe quelle vue que vous souhaitez que l’affichage de pile pour contrôler sa disposition doit être ajouté à la `ArrangedSubviews` propriété.
+Vous remarquerez que nous avons `UIImageView` ajouté à `UIStackView`la `ArrangedSubviews` propriété de et non à `SubView`. Toute vue dont vous souhaitez que l’affichage de la pile contrôle sa disposition doit être ajoutée `ArrangedSubviews` à la propriété.
 
-Pour supprimer un sous-affichage à partir d’une vue de la pile, nous obtenons d’abord le sous-affichage à supprimer :
+Pour supprimer une sous-vue d’une vue de la pile, nous obtenons d’abord la sous-vue à supprimer:
 
 ```csharp
 var icon = RatingView.ArrangedSubviews[RatingView.ArrangedSubviews.Length-1];
 ```
 
-Puis nous avons besoin pour le supprimer à la fois le `ArrangedSubviews` collection et la vue de Super :
+Ensuite, nous devons la supprimer de la `ArrangedSubviews` collection et de la vue super:
 
 ```csharp
 // Remove from stack and screen
@@ -165,96 +165,96 @@ RatingView.RemoveArrangedSubview(icon);
 icon.RemoveFromSuperview();
 ```
 
-Supprime un sous-affichage uniquement le `ArrangedSubviews` collection le supprime du contrôle de la vue de la pile, mais ne le supprime pas de l’écran.
+La suppression d’une sous-vue `ArrangedSubviews` à partir de la collection uniquement la fait sortir du contrôle de l’affichage de la pile, mais ne la supprime pas de l’écran.
 
-### <a name="testing-the-ui"></a>Testez l’interface utilisateur
+### <a name="testing-the-ui"></a>Test de l’interface utilisateur
 
-Avec tous les éléments d’interface utilisateur et requis code en place, vous pouvez maintenant exécuter et tester l’interface. Lorsque l’interface utilisateur s’affiche, tous les éléments dans la vue pile verticale seront régulièrement espacés de haut en bas.
+Avec tous les éléments d’interface utilisateur et le code nécessaires en place, vous pouvez maintenant exécuter et tester l’interface. Lorsque l’interface utilisateur est affichée, tous les éléments de l’affichage vertical de la pile sont espacés de haut en bas.
 
-Lorsque l’utilisateur appuie sur le **augmenter la note** bouton, un autre « star » est ajoutée à l’écran (jusqu'à un maximum de 5) :
+Quand l’utilisateur appuie sur le bouton **augmenter la notation** , une autre «étoile» est ajoutée à l’écran (5 au maximum):
 
 [![](uistackview-images/intro01.png "L’exécution de l’application exemple")](uistackview-images/intro01.png#lightbox)
 
-Les « étoiles » seront automatiquement centrées et répartis dans l’affichage Horizontal de la pile. Lorsque l’utilisateur appuie sur le **baisser la note** bouton, un « star » est supprimé (jusqu'à ce qu’aucun sont à gauche).
+Les «étoiles» seront automatiquement centrées et distribuées de manière égale dans l’affichage de la pile horizontale. Quand l’utilisateur appuie sur le bouton **réduire l’évaluation** , une «étoile» est supprimée (jusqu’à ce qu’aucun élément ne soit laissé).
 
-## <a name="stack-view-details"></a>Afficher les détails de pile
+## <a name="stack-view-details"></a>Détails de l’affichage de la pile
 
-Maintenant que nous avons une idée générale de ce à quoi le `UIStackView` contrôle est et comment il fonctionne, jetons un œil plus approfondie de certaines de ses fonctionnalités et les détails.
+Maintenant que nous avons une idée générale du `UIStackView` contrôle et de son fonctionnement, examinons plus en détail certaines de ses fonctionnalités et détails.
 
-### <a name="auto-layout-and-size-classes"></a>Classes de taille et de disposition automatique
+### <a name="auto-layout-and-size-classes"></a>Disposition automatique et classes de taille
 
-Comme nous l’avons vu, lorsqu’un sous-affichage est ajouté à une vue de la pile sa disposition est entièrement contrôlé par cette vue de la pile à l’aide des Classes de taille et de disposition automatique pour positionner et dimensionner les vues réorganisées.
+Comme nous l’avons vu ci-dessus, quand une sous-vue est ajoutée à un affichage de la pile, sa disposition est entièrement contrôlée par cette vue de la pile à l’aide des classes de disposition et de taille automatiques pour positionner et dimensionner les vues organisées.
 
-La vue de la pile sera _code confidentiel_ le premier et dernier sous-affichage dans sa collection pour le **haut** et **bas** bords pour les vues de pile verticale ou **gauche**et **droite** bords pour les vues de pile horizontale. Si vous définissez la `LayoutMarginsRelativeArrangement` propriété `true`, puis la vue épingle les sous-affichages entre les marges pertinentes au lieu de la périphérie.
+L’affichage de la pile épingle le premier et le dernier sous-affichage de sa collection aux bords **supérieur** et **inférieur** pour les vues verticales de la pile ou les bords **gauche** et **droit** pour les vues de la pile horizontale. Si vous affectez `LayoutMarginsRelativeArrangement` à `true`la propriété la valeur, la vue épingle la sous-vue aux marges appropriées au lieu du bord.
 
-La vue pile utilise le sous-affichage `IntrinsicContentSize` propriété lors du calcul de la taille de sous-vues le long de l’élément défini `Axis` (à l’exception de la `FillEqually Distribution`). Le `FillEqually Distribution` redimensionne tous les sous-vues afin qu’ils soient de la même taille, donc remplissant la vue pile le long de la `Axis`.
+L’affichage de la pile utilise la propriété `IntrinsicContentSize` de la sous-vue lors du calcul de la taille `Axis` des sous-affichages le long du défini (à l’exception de `FillEqually Distribution`). Le `FillEqually Distribution` redimensionne toutes les sous-vues afin qu’elles aient la même taille, ce qui remplit l’affichage de `Axis`la pile le long du.
 
-À l’exception de la `Fill Alignment`, la vue pile utilise le sous-affichage `IntrinsicContentSize` propriété pour le calcul de taille de la vue perpendiculaire à la donnée `Axis`. Pour le `Fill Alignment`, tous les sous-affichages sont dimensionnés pour qu’elles remplissent la vue pile perpendiculaire à la donnée `Axis`.
+À l’exception de `Fill Alignment`, l’affichage de la pile utilise la `IntrinsicContentSize` propriété de la sous-vue pour calculer la taille de la vue `Axis`perpendiculairement au donné. Pour le `Fill Alignment`, toutes les sous-vues sont dimensionnées de sorte qu’elles remplissent la vue de `Axis`la pile perpendiculairement au donné.
 
-### <a name="positioning-and-sizing-the-stack-view"></a>Positionnement et dimensionnement de la vue de la pile
+### <a name="positioning-and-sizing-the-stack-view"></a>Positionnement et redimensionnement de l’affichage des piles
 
-Alors que la vue de la pile a un contrôle total sur la disposition de n’importe quel sous-affichage (selon les propriétés telles que `Axis` et `Distribution`), vous devez toujours positionner la vue de la pile (`UIStackView`) au sein de la vue parent à l’aide des Classes de taille et de disposition automatique.
+Tandis que l’affichage de la pile a un contrôle total sur la disposition d’une sous-vue `Axis` ( `Distribution`en fonction de propriétés telles que et), vous devez`UIStackView`toujours positionner l’affichage de la pile () dans sa vue parente à l’aide des classes de disposition et de taille automatiques.
 
-En règle générale, cela signifie que l’épinglage au moins deux bords de l’affichage de la pile pour être accrus ou réduits, définissant ainsi sa position. Sans contraintes supplémentaires, la vue de la pile sont automatiquement redimensionnée pour s’ajuster à tous ses sous-vues comme suit :
+En général, cela signifie épingler au moins deux bords de l’affichage de la pile pour développer et contracter, définissant ainsi sa position. Sans contraintes supplémentaires, l’affichage de la pile sera automatiquement redimensionné pour s’adapter à toutes ses sous-vues, comme suit:
 
-- La taille le long de son `Axis` sera la somme de toutes les tailles de sous-affichage et n’importe quel espace qui a été défini entre chaque sous-affichage.
-- Si le `LayoutMarginsRelativeArrangement` propriété est `true`, la taille de pile vues inclut également de place pour les marges.
-- La taille perpendiculaire à la `Axis` a la valeur la plus grande sous-affichage dans la collection.
+- La taille le long `Axis` de son correspond à la somme de toutes les tailles de sous-affichages, ainsi qu’à l’espace qui a été défini entre chaque sous-vue.
+- Si la `LayoutMarginsRelativeArrangement` propriété a `true`la valeur, la taille des vues de la pile inclut également l’espace pour les marges.
+- La taille perpendiculaire à `Axis` sera définie sur la plus grande sous-vue de la collection.
 
-En outre, vous pouvez spécifier des contraintes pour la vue pile **hauteur** et **largeur**. Dans ce cas, les sous-affichages sont disposées (taille) pour remplir l’espace spécifié par la vue pile, comme déterminé par le `Distribution` et `Alignment` propriétés.
+En outre, vous pouvez spécifier des contraintes pour la **hauteur** et la **largeur**de la vue de la pile. Dans ce cas, les sous-affichages sont disposés (dimensionnés) pour remplir l’espace spécifié par l’affichage de la pile comme déterminé `Distribution` par `Alignment` les propriétés et.
 
-Si le `BaselineRelativeArrangement` propriété est `true`, les sous-affichages sont disposées en fonction de la ligne de base du sous-affichage premier ou dernier, au lieu d’utiliser le **haut**, **bas** ou **Center** -  **Y** position. Ceux-ci sont calculées sur le contenu de la vue pile comme suit :
+Si la `BaselineRelativeArrangement` propriété est `true`, les sous-affichages sont disposés en fonction de la première ou de la dernière ligne de base de la sous-vue, au lieu d’utiliser la position **supérieure**, **inférieure** ou **centrale**- **Y** . Celles-ci sont calculées sur le contenu de la vue de la pile comme suit:
 
-- Une vue de la pile verticale renvoie le premier sous-affichage pour la première ligne de base et le dernier pour la dernière. Si une de ces sous-vues sont eux-mêmes des vues de la pile, puis leur ligne de base du premier ou dernier servira.
-- Un affichage Horizontal de la pile utilisera sa plus grand sous-affichage pour les deux la première et la dernière ligne de base. Si la vue la plus haute est également une vue de la pile, il utilisera sa plus grand sous-affichage en tant que la ligne de base.
+- Une vue verticale de la pile retourne la première sous-vue pour la première ligne de base et la dernière pour la dernière. Si l’une de ces sous-vues est elle-même des vues de pile, la première ou la dernière ligne de base sera utilisée.
+- Une vue de pile horizontale utilise sa sous-vue la plus grande pour la première et la dernière ligne de base. Si la vue la plus grande est également un affichage de la pile, elle utilise la sous-vue la plus haute comme ligne de base.
 
 > [!IMPORTANT]
-> Alignement de ligne de base ne fonctionne pas sur les tailles de sous-affichage étirée ou compressée que la ligne de base correspond à une position incorrecte. Pour l’alignement de ligne de base, vérifiez que le sous-affichage **hauteur** correspond à la vue contenu intrinsèque **hauteur**.
+> L’alignement de la ligne de base ne fonctionne pas sur les tailles de sous-affichage étirées ou compressées, car la ligne de base est calculée à la mauvaise position. Pour l’alignement de ligne de base, vérifiez que la **hauteur** de la sous-vue correspond à la **hauteur**de l’affichage de contenu intrinsèque.
 
-### <a name="common-stack-view-uses"></a>Utilisations courantes de vue de pile
+### <a name="common-stack-view-uses"></a>Utilisation des vues de pile courantes
 
-Il existe plusieurs types de disposition qui fonctionnent correctement avec les contrôles d’affichage de la pile. En fonction d’Apple, voici quelques-unes des utilisations plus courantes :
+Il existe plusieurs types de disposition qui fonctionnent bien avec les contrôles d’affichage de pile. D’après Apple, voici quelques-unes des utilisations les plus courantes:
 
-- **Définir la taille le long de l’axe** – en épinglant les deux bords le long de la vue pile `Axis` et les bords adjacents pour définir la position, la pile vue augmentera le long de l’axe en fonction de l’espace défini par ses sous-vues.
-- **Définir Position du sous-affichage** – en épinglant à bords adjacents de la vue de la pile à la vue de son parent, la vue pile augmentera dans les deux dimensions en fonction de son conteneur sous-vues.
-- **Définir la taille et la Position de la pile** – en épinglant toutes les quatre bords de la vue de la pile à la vue parent, la vue pile organise les sous-vues en fonction de l’espace défini dans la vue de la pile.
-- **Définir la taille perpendiculaires l’axe** – en épinglant les deux perpendiculairement bords à la vue pile `Axis` et l’autre des bords sur l’axe pour définir la position, la pile vue augmentera perpendiculaire à l’axe en fonction de l’espace défini par ses sous-vues.
+- **Définir la taille le long de l’axe** : en épinglant les bords le long `Axis` de la vue de la pile et l’un des bords adjacents pour définir la position, l’affichage de la pile s’agrandit le long de l’axe pour s’ajuster à l’espace défini par ses sous-vues.
+- **Définir la position de la** sous-vue: en épinglant les bords adjacents de l’affichage de la pile à sa vue parente, l’affichage de la pile augmente dans les deux dimensions pour s’adapter aux sous-vues.
+- **Définissez la taille et la position de la pile** , en épinglant les quatre bords de l’affichage de la pile à la vue parent, l’affichage de la pile organise les sous-vues en fonction de l’espace défini dans l’affichage de la pile.
+- **Définissez la taille perpendiculairement de l’axe** : en épinglant les deux bords perpendiculairement `Axis` à l’affichage de la pile et l’un des bords le long de l’axe pour définir la position, l’affichage de la pile va croître perpendiculairement à l’axe pour s’ajuster à l’espace défini par ses sous-vues.
 
-### <a name="managing-the-appearance"></a>La gestion de l’apparence
+### <a name="managing-the-appearance"></a>Gestion de l’apparence
 
-Le `UIStackView` est conçu comme une vue non rendu conteneur et par conséquent, il n’est pas dessiné dans le canevas, comme d’autres sous-classes de `UIView`. Définition des propriétés telles que `BackgroundColor` ou la substitution `DrawRect` n’a aucun effet visuel.
+Le `UIStackView` est conçu comme une vue de conteneur sans rendu et, par conséquent, il n’est pas dessiné dans le canevas comme les autres sous `UIView`-classes de. La définition de propriétés `BackgroundColor` telles que ou `DrawRect` la substitution n’a aucun effet visuel.
 
-Il existe plusieurs propriétés qui contrôlent la façon dont une vue de la pile réorganiser sa collection de sous-vues :
+Il existe plusieurs propriétés qui contrôlent la façon dont un affichage de la pile réorganisera sa collection de sous-vues:
 
-- **Axe** – détermine si la vue pile organise les sous-vues soit **horizontalement** ou **verticalement**.
-- **Alignement** – contrôle la manière dont les sous-affichages sont alignées dans la vue de la pile.
-- **Distribution** – contrôle la façon dont les sous-affichages sont dimensionnés au sein de la vue de la pile.
-- **Espacement** – contrôle l’espace minimal entre chaque sous-affichage dans la vue de la pile.
-- **Ligne de base relatif** : si `true`, l’espacement vertical de chaque sous-affichage sera dérivé de sa ligne de base.
-- **Mise en page marges relatif** – place les sous-vues relatif aux marges mise en forme standard.
+- **Axis** : détermine si l’affichage de la pile réorganise les sous- affichages horizontalement ou **verticalement**.
+- **Alignment** : contrôle la manière dont les sous-affichages sont alignés dans l’affichage de la pile.
+- **Distribution** : contrôle la manière dont les sous-vues sont dimensionnées dans l’affichage de la pile.
+- **Espacement** : contrôle l’espace minimal entre chaque sous-vue de l’affichage de la pile.
+- **Ligne de base relative** : si `true`, l’espacement vertical de chaque sous-vue est dérivé de la ligne de base.
+- **Marges de disposition relatives** : place les sous-vues par rapport aux marges de disposition standard.
 
-En règle générale, vous allez utiliser une vue de la pile pour organiser un petit nombre de sous-affichages. Les Interfaces utilisateur plus complexes peuvent être créés par l’imbrication d’une ou plusieurs vues de pile à l’intérieur de l’autre (comme nous l’avons fait le [UIStackView Quickstart](#uistackview-quickstart) ci-dessus).
+En général, vous allez utiliser une vue de la pile pour réorganiser un petit nombre de sous-affichages. Il est possible de créer des interfaces utilisateur plus complexes en imbriquant une ou plusieurs vues de pile les unes dans les autres (comme nous l’avons fait dans le [démarrage rapide UIStackView](#uistackview-quickstart) ci-dessus).
 
-Vous pouvez affiner l’apparence des interfaces utilisateur en ajoutant des contraintes supplémentaires pour les sous-affichages (par exemple pour le contrôle de la largeur ou hauteur). Toutefois, il convient ne pas à inclure les contraintes en conflit à celles introduites par la vue pile lui-même.
+Vous pouvez affiner l’apparence des interfaces utilisateur en ajoutant des contraintes aux sous-affichages (par exemple, pour contrôler la hauteur ou la largeur). Toutefois, il convient de veiller à ne pas inclure de contraintes conflictuelles à celles introduites par l’affichage de la pile.
 
-### <a name="maintaining-arranged-views-and-sub-views-consistency"></a>Maintenance organisés vues et cohérence de vues Sub
+### <a name="maintaining-arranged-views-and-sub-views-consistency"></a>Maintien de la cohérence des vues et des sous-vues organisées
 
-La vue de la pile permet de garantir que ses `ArrangedSubviews` propriété est toujours un sous-ensemble de ses `Subviews` propriété utilisant les règles suivantes :
+L’affichage de la pile permet de `ArrangedSubviews` s’assurer que sa propriété est toujours `Subviews` un sous-ensemble de sa propriété à l’aide des règles suivantes:
 
-- Si un sous-affichage est ajouté à la `ArrangedSubviews` collection, il est automatiquement ajoutée à la `Subviews` collection (sauf si elle fait déjà partie de cette collection).
-- Si un sous-affichage est supprimé de la `Subviews` collection (supprimés à partir de l’affichage), il est également supprimé de la `ArrangedSubviews` collection.
-- Suppression d’un sous-affichage à partir de la `ArrangedSubviews` collection sans la supprimer à partir de la `Subviews` collection. Par conséquent, il sera n’est plus disposé par la vue de la pile, mais sera toujours visible sur l’écran.
+- Si une sous-vue est ajoutée à `ArrangedSubviews` la collection, elle est automatiquement ajoutée à la `Subviews` collection (sauf si elle fait déjà partie de cette collection).
+- Si une sous-vue est supprimée `Subviews` de la collection (supprimée de l’affichage), elle est `ArrangedSubviews` également supprimée de la collection.
+- La suppression d’une sous- `ArrangedSubviews` vue de la collection ne la supprime `Subviews` pas de la collection. Elle n’est donc plus présentée par l’affichage de la pile, mais reste visible à l’écran.
 
-Le `ArrangedSubviews` collection est toujours un sous-ensemble de la `Subview` collection, toutefois l’ordre des sous-vues individuels au sein de chaque collection est distinct et contrôlée par les éléments suivants :
+La `ArrangedSubviews` collection est toujours un sous-ensemble `Subview` de la collection, mais l’ordre des sous-vues individuelles au sein de chaque collection est séparé et contrôlé par les éléments suivants:
 
-- L’ordre des sous-vues au sein de la `ArrangedSubviews` ensemble déterminer leur ordre d’affichage dans la pile.
-- L’ordre des sous-vues au sein de la `Subview` collection détermine leur ordre de plan (ou superposition) dans la vue arrière vers l’avant.
+- L’ordre des sous-vues au sein de `ArrangedSubviews` la collection détermine leur ordre d’affichage dans la pile.
+- L’ordre des sous-affichages au sein `Subview` de la collection détermine leur ordre de plan (ou en couches) dans la vue.
 
-### <a name="dynamically-changing-content"></a>Modifier dynamiquement le contenu
+### <a name="dynamically-changing-content"></a>Modification dynamique du contenu
 
-Une vue de la pile s’ajuste automatiquement la disposition des sous-vues chaque fois qu’un sous-affichage est ajouté, supprimé ou masqué. La mise en page soient également ajustée si n’importe quelle propriété de la vue de la pile est ajustée (telles que son `Axis`).
+Un affichage de la pile ajuste automatiquement la disposition des sous-vues chaque fois qu’une sous-vue est ajoutée, supprimée ou masquée. La disposition est également ajustée si une propriété de l’affichage de la pile est ajustée ( `Axis`telle que son).
 
-Les changements de disposition peuvent être animés, en les plaçant dans un bloc d’Animation, par exemple :
+Les modifications de disposition peuvent être animées en les plaçant dans un bloc d’animation, par exemple:
 
 ```csharp
 // Animate stack
@@ -264,19 +264,19 @@ UIView.Animate(0.25, ()=>{
 });
 ```
 
-La plupart des propriétés de la vue pile peuvent être spécifiés à l’aide des Classes de taille au sein d’une table de montage séquentiel. Ces propriétés seront automatiquement animé est la réponse aux modifications de taille ou orientation.
+La plupart des propriétés de la vue de la pile peuvent être spécifiées à l’aide de classes de taille dans une table de montage séquentiel. Ces propriétés sont automatiquement animées pour répondre à des modifications de taille ou d’orientation.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté la nouvelle `UIStackView` contrôler (pour iOS 9) pour gérer un ensemble de sous-vues dans une pile organisée horizontalement ou verticalement dans une application Xamarin.iOS.
-Il a commencé avec un exemple simple d’utilisation des vues de la pile pour créer une interface utilisateur et s’est terminée avec une étude plus détaillée de vues de la pile et leurs propriétés et les fonctionnalités.
+Cet article a abordé le nouveau `UIStackView` contrôle (pour iOS 9) à gérer un ensemble de sous-affichages dans une pile horizontale ou verticale dans une application Xamarin. iOS.
+Il a commencé par un exemple simple d’utilisation d’affichages de pile pour créer une interface utilisateur, et a terminé avec une vue plus détaillée des vues de pile et leurs propriétés et fonctionnalités.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
+- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
-- [Quelles sont les nouveautés dans iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Référence de UIStackView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/)
+- [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [Référence UIStackView](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/)
 - [Présentation de UIStackView (vidéo)](https://university.xamarin.com/lightninglectures/introducing-uistackview-on-ios9)

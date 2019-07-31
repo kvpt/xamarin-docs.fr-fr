@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: d33dc7d789b9a21fd843cd1f7cab8d221145f492
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 228501172ede71204c64e1efe1673ce92be424ea
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978042"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656053"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Le Gestionnaire d’état visuel de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
 _Utilisez le Gestionnaire d’état visuel pour apporter des modifications aux éléments XAML en fonction des états visuels défini à partir du code._
 
@@ -180,7 +180,7 @@ Vous pouvez maintenant insérer un ou plusieurs `Setter` objets entre chaque pai
 
 Chaque `Setter` balise indique la valeur d’une propriété particulière lorsque cet état est en cours. N’importe quelle propriété référencée par un `Setter` objet doit reposer sur une propriété pouvant être liée.
 
-Balisage semblable à celle-ci constitue la base de la **VSM sur vue** page dans le **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** exemple de programme. La page inclut trois `Entry` vues, mais seul le deuxième a le balisage VSM attaché à celui-ci :
+Balisage semblable à celle-ci constitue la base de la **VSM sur vue** page dans le **[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** exemple de programme. La page inclut trois `Entry` vues, mais seul le deuxième a le balisage VSM attaché à celui-ci :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -253,17 +253,17 @@ Balisage semblable à celle-ci constitue la base de la **VSM sur vue** page dans
 
 Notez que la seconde `Entry` a également un `DataTrigger` dans le cadre de son `Trigger` collection. Cela entraîne le `Entry` doit être désactivée jusqu'à ce que quelque chose est tapée dans la troisième `Entry`. Voici la page au démarrage en cours d’exécution sur iOS, Android et la plateforme universelle Windows (UWP) :
 
-[![Migration du stockage dans la vue : Désactivé](vsm-images/VsmOnViewDisabled.png "VSM sur Affichage - désactivé")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![VSM sur la vue: Désactivation](vsm-images/VsmOnViewDisabled.png "de VSM sur la vue-désactivé")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
 L’état visuel actuel est « Disabled » par conséquent, l’arrière-plan de la deuxième `Entry` est rose sur iOS et Android écrans. L’implémentation UWP de `Entry` n’autorise pas la définition de l’arrière-plan de couleur lorsque le `Entry` est désactivé. 
 
 Lorsque vous entrez du texte dans la troisième `Entry`, le deuxième `Entry` switches dans l’état « Normal » et l’arrière-plan est désormais citron vert :
 
-[![Migration du stockage dans la vue : Normal](vsm-images/VsmOnViewNormal.png "VSM sur Affichage - normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![VSM sur la vue: VSM]normal(vsm-images/VsmOnViewNormal.png "sur la vue-normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
 Lorsque vous touchez la seconde `Entry`, il obtient le focus d’entrée. Il passe à l’état « Actif » et se développe à deux fois sa hauteur :
 
-[![Migration du stockage dans la vue : Concentré](vsm-images/VsmOnViewFocused.png "VSM sur affichage - actif")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![VSM sur la vue: VSM]ciblé(vsm-images/VsmOnViewFocused.png "sur la vue")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
 Notez que le `Entry` ne conserve pas l’arrière-plan vert clair lorsqu’il atteint le focus d’entrée. Comme le Gestionnaire d’état visuel bascule entre les états visuels, les propriétés définies par l’état précédent ne sont pas définies. N’oubliez pas que les états visuels s’excluent mutuellement. L’état « Normal » ne signifie pas uniquement que le `Entry` est activé. Cela signifie que le `Entry` est activé et n’a pas le focus d’entrée. 
 
@@ -426,11 +426,11 @@ VisualStateManager.GoToState(this, "Focused");
 
 C’est le seul code de gestionnaire d’état visuel que vous trouverez dans le `VisualElement` classe. Étant donné que `GoToState` est appelée pour chaque objet en fonction de chaque classe qui dérive de `VisualElement`, vous pouvez utiliser le Gestionnaire d’état visuel avec n’importe quel `VisualElement` objet pour répondre à ces modifications.
 
-Curieusement, le nom du groupe d’état visuel « CommonStates » n’est pas référencé explicitement dans `VisualElement`. Le nom du groupe ne fait pas partie de l’API pour le Gestionnaire d’état visuel. Dans un de l’exemple de programme deux montrés jusqu'à présent, vous pouvez modifier le nom du groupe à partir de « CommonStates » pour tout autre élément, et le programme continue de fonctionner. Le nom du groupe est simplement une description générale des États de ce groupe. Il est implicitement entendu que les états visuels dans n’importe quel groupe s’excluent mutuellement : Un état et qu’un seul état est en cours à tout moment.
+Curieusement, le nom du groupe d’état visuel « CommonStates » n’est pas référencé explicitement dans `VisualElement`. Le nom du groupe ne fait pas partie de l’API pour le Gestionnaire d’état visuel. Dans un de l’exemple de programme deux montrés jusqu'à présent, vous pouvez modifier le nom du groupe à partir de « CommonStates » pour tout autre élément, et le programme continue de fonctionner. Le nom du groupe est simplement une description générale des États de ce groupe. Il est implicitement compris que les États visuels d’un groupe s’excluent mutuellement: Un État et un seul État est actuel à tout moment.
 
 Si vous souhaitez implémenter vos propres états visuels, vous devez appeler `VisualStateManager.GoToState` à partir du code. Plus souvent, vous apporterez cet appel à partir du fichier code-behind de votre classe de page.
 
-Le **VSM Validation** page dans le **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** exemple montre comment utiliser le Gestionnaire d’état visuel dans le cadre de la validation des entrées. Le fichier XAML se compose de deux `Label` éléments, un `Entry`, et `Button`:
+Le **VSM Validation** page dans le **[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** exemple montre comment utiliser le Gestionnaire d’état visuel dans le cadre de la validation des entrées. Le fichier XAML se compose de deux `Label` éléments, un `Entry`, et `Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -492,11 +492,11 @@ Balisage VSM est attaché à la seconde `Label` (nommé `helpLabel`) et le `Butt
 
 Si le `Entry` ne contient pas un numéro de téléphone valide, puis l’état actuel est « Invalid » et donc la seconde `Label` est visible et le `Button` est désactivé :
 
-[![Validation de la migration du stockage : État non valide](vsm-images/VsmValidationInvalid.png "validation VSM - non valide")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![Validation VSM: Validation de]l’État VSM non valide(vsm-images/VsmValidationInvalid.png "-non valide")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
 Lorsqu’un numéro de téléphone valide est entré, l’état actuel devient « Valid ». La seconde `Entry` disparaît et la `Button` est maintenant activé :
 
-[![Validation de la migration du stockage : État de valide](vsm-images/VsmValidationValid.png "validation VSM - valide")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![Validation VSM: ](vsm-images/VsmValidationValid.png "Validation VSM de") l’état valide-valide](vsm-images/VsmValidationValid-Large.png#lightbox)
 
 Le fichier code-behind est doit pour la gestion de la `TextChanged` événement à partir de la `Entry`. Le Gestionnaire utilise une expression régulière pour déterminer si la chaîne d’entrée est valide ou non. La méthode dans le fichier code-behind nommé `GoToState` appelle la méthode statique `VisualStateManager.GoToState` méthode pour les deux `helpLabel` et `submitButton`:
 
@@ -529,7 +529,7 @@ Notez également que le `GoToState` méthode est appelée à partir du construct
 
 Notez que le fichier code-behind doit tenir compte de chaque objet dans la page qui est affectée par ces états visuels et d’appeler `VisualStateManager.GoToState` pour chacun de ces objets. Dans cet exemple, il s’agit uniquement de deux objets (la `Label` et `Button`), mais cela peut signifier plusieurs plus.
 
-Vous vous demandez peut-être : Si le fichier code-behind doit faire référence à chaque objet dans la page qui est affectée par ces états visuels, pourquoi ne peut pas le fichier code-behind simplement accéder aux objets directement ? Il peut certainement. Toutefois, l’avantage d’utiliser la migration du stockage est que vous pouvez contrôler les éléments visuels comment réagir à un état différent entièrement dans XAML, ce qui préserve la confidentialité de la conception de l’interface utilisateur dans un emplacement. Cela évite l’apparence visuelle du paramètre en accédant à des éléments visuels directement à partir de code-behind.
+Vous vous demandez peut-être: Si le fichier code-behind doit référencer tous les objets de la page qui sont affectés par ces états visuels, pourquoi le fichier code-behind ne peut-il pas accéder aux objets directement? Il peut certainement. Toutefois, l’avantage d’utiliser la migration du stockage est que vous pouvez contrôler les éléments visuels comment réagir à un état différent entièrement dans XAML, ce qui préserve la confidentialité de la conception de l’interface utilisateur dans un emplacement. Cela évite l’apparence visuelle du paramètre en accédant à des éléments visuels directement à partir de code-behind.
 
 Il peut être tentant d’envisager de dériver une classe à partir de `Entry` et peut-être définition d’une propriété que vous pouvez définir une fonction de validation externe. La classe qui dérive de `Entry` peut ensuite appeler la `VisualStateManager.GoToState` (méthode). Ce schéma fonctionnerait correctement, mais uniquement si le `Entry` était le seul objet affecté par les différents états visuels. Dans cet exemple, un `Label` et un `Button` sont également affectés. Il n’existe aucun moyen pour le balisage de la migration du stockage attaché à un `Entry` pour contrôler les autres objets sur la page et aucun moyen pour le balisage VSM associés à ces autres objets pour faire référence à une modification dans l’état visuel d’un autre objet.
 
@@ -543,15 +543,15 @@ Cette technique est parfois appelée _disposition adaptive_. Étant donné que l
 
 Un exemple simple est une application qui affiche une petite collection de boutons qui affectent le contenu de l’application. En mode portrait, ces boutons peuvent être affichées dans une ligne horizontale en haut de la page :
 
-[![Disposition ADAPTATIF VSM : Portrait](vsm-images/VsmAdaptiveLayoutPortrait.png "disposition ADAPTATIF VSM - portrait")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
+[![Mise en page adaptative VSM: Portrait](vsm-images/VsmAdaptiveLayoutPortrait.png "de la disposition adaptative VSM-portrait")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
 En mode paysage, le tableau des boutons peut être déplacé vers le côté « un » et affiché dans une colonne :
 
-[![Disposition ADAPTATIF VSM : Paysage](vsm-images/VsmAdaptiveLayoutLandscape.png "disposition ADAPTATIF VSM - paysage")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
+[![Mise en page adaptative VSM: Disposition]adaptative du paysage(vsm-images/VsmAdaptiveLayoutLandscape.png "VSM-paysage")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
 
 De haut en bas, le programme est en cours d’exécution sur la plateforme Windows universelle, Android et iOS.
 
-Le **disposition ADAPTATIF VSM** page dans le [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) exemple définit un groupe nommé « OrientationStates » avec deux états visuels nommés « Portrait » et « Paysage ». (Une approche plus complexe peut être basée sur plusieurs différentes largeurs de page ou la fenêtre). 
+Le **disposition ADAPTATIF VSM** page dans le [VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos) exemple définit un groupe nommé « OrientationStates » avec deux états visuels nommés « Portrait » et « Paysage ». (Une approche plus complexe peut être basée sur plusieurs différentes largeurs de page ou la fenêtre). 
 
 Balisage VSM se produit en quatre endroits dans le fichier XAML. Le `StackLayout` nommé `mainStack` contient à la fois le menu et le contenu, qui est un `Image` élément. Cela `StackLayout` doit avoir une orientation verticale en mode portrait et une orientation horizontale en mode paysage :
 
@@ -712,8 +712,8 @@ Il peut sembler que si le fichier code-behind peut gérer les changements d’or
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
 
-**Vidéo de gestionnaire d’état visuel Xamarin.Forms 3.0**
+**Vidéo du gestionnaire d’état visuel de Xamarin. Forms 3,0**
 
 ## <a name="related-links"></a>Liens connexes
 
-- [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)
+- [VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)

@@ -8,39 +8,39 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 661f27b90882234ddc629ac280690d534aca499d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977791"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657031"
 ---
 # <a name="layouts-in-xamarinforms"></a>Dispositions dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Forms a plusieurs dispositions et les fonctionnalités pour organiser le contenu sur l’écran.
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Vidéo de dispositions Xamarin.Forms**
+**Vidéo sur les dispositions Xamarin. Forms**
 
 Chaque contrôle de disposition est décrite ci-dessous, ainsi que des détails sur la façon de gérer les changements d’orientation de l’écran :
 
-* **[StackLayout](stack-layout.md)**  : sert à disposer de façon linéaire, les vues horizontalement ou verticalement. Vues dans un StackLayout peuvent être alignés au centre, gauche ou droit de la disposition.
-* **[DispositionAbsolue](absolute-layout.md)**  : sert à organiser des vues en définissant les coordonnées de la & taille en termes de valeurs absolues ou des taux. DispositionAbsolue peut servir à la couche de vues comme ancrer à gauche, droite ou au centre.
-* **[RelativeLayout](relative-layout.md)**  : sert à organiser des vues en définissant des contraintes par rapport aux dimensions et la position de leurs parents.
-* **[Grille](grid.md)**  : sert à organiser des vues dans une grille. Lignes et colonnes peuvent être spécifiés en termes de valeurs absolues ou des proportions.
-* **[FlexLayout](flex-layout.md)**  : sert à disposer horizontalement ou verticalement les vues avec retour à la ligne.
-* **[ScrollView](scroll-view.md)**  : sert à fournir une vue ne peut pas tenir entièrement dans les limites de l’écran de défilement.
-* **[LayoutOptions](layout-options.md)**  : définir l’alignement et l’expansion pour une vue, par rapport à son parent.
-* **[Entrée de la transparence](#input_transparency)**  : Spécifie si un élément reçoit l’entrée.
-* **[Marge et marge intérieure](margin-and-padding.md)**  : montre comment contrôler le comportement de disposition quand un élément est affiché dans l’interface utilisateur.
-* **[Orientation de l’appareil](device-orientation.md)**  – explique comment gérer les changements d’orientation de périphérique.
-* **[Mise en page sur les périphériques tablette et Bureau](tablet.md)**  – montre comment optimiser pour les écrans plus grands sur chaque plateforme.
-* **[Mises en page peut être liées](bindable-layouts.md)**  – activer les classes de mise en page générer leur contenu en le liant à une collection d’éléments.
-* **[Création d’une disposition personnalisée](custom.md)**  – explique comment créer une classe de disposition personnalisée.
-* **[La Compression des dispositions](layout-compression.md)**  – supprime spécifié de disposition à partir de l’arborescence visuelle dans le but d’améliorer les performances de rendu de page.
+* **[StackLayout](stack-layout.md)** : permet d’organiser les affichages de manière linéaire, horizontalement ou verticalement. Vues dans un StackLayout peuvent être alignés au centre, gauche ou droit de la disposition.
+* **[AbsoluteLayout](absolute-layout.md)** : permet d’organiser les vues en définissant des coordonnées & taille en termes de valeurs ou de ratios absolus. DispositionAbsolue peut servir à la couche de vues comme ancrer à gauche, droite ou au centre.
+* **[RelativeLayout](relative-layout.md)** : permet d’organiser les vues en définissant des contraintes par rapport aux dimensions & position de leurs parents.
+* **[Grid](grid.md)** : permet d’organiser les vues dans une grille. Lignes et colonnes peuvent être spécifiés en termes de valeurs absolues ou des proportions.
+* **[FlexLayout](flex-layout.md)** : permet d’organiser les affichages horizontalement ou verticalement avec l’encapsulation.
+* **[ScrollView](scroll-view.md)** : permet de fournir un défilement lorsqu’une vue ne peut pas s’ajuster entièrement dans les limites de l’écran.
+* **[LayoutOptions](layout-options.md)** : définissez l’alignement et l’expansion d’une vue, par rapport à son parent.
+* **[Transparence d’entrée](#input_transparency)** : spécifie si un élément reçoit une entrée.
+* **[Margin et Padding](margin-and-padding.md)** : montre comment contrôler le comportement de disposition lorsqu’un élément est affiché dans l’interface utilisateur.
+* **[Orientation](device-orientation.md)** de l’appareil: explique comment gérer les modifications de l’orientation de l’appareil.
+* **[Disposition sur les tablettes et les appareils de bureau](tablet.md)** : indique comment optimiser pour les écrans de grande taille sur chaque plateforme.
+* **[Dispositions pouvant être liées](bindable-layouts.md)** : activez les classes de disposition pour générer leur contenu en les liant à une collection d’éléments.
+* **[Création d’une disposition personnalisée](custom.md)** : explique comment créer une classe de disposition personnalisée.
+* **[Compression](layout-compression.md)** de la disposition: supprime la disposition spécifiée de l’arborescence d’éléments visuels afin d’améliorer les performances de rendu des pages.
 
 Plateforme contrôles peuvent également être utilisés directement dans les dispositions Xamarin.Forms avec [ **incorporation Native** ](~/xamarin-forms/platform/native-views/index.md) (Nouveautés de Xamarin.Forms 2.2), et vous pouvez [ **créer des dispositions personnalisées** ](custom.md) pour répondre aux besoins spécifiques.
 
@@ -206,7 +206,7 @@ appareils pour iOS, Android et plateforme Windows universelle prennent toutes en
 
 ### <a name="bindable-layoutsbindable-layoutsmd"></a>[Dispositions liables](bindable-layouts.md)
 
-Le `BindableLayout` classe permet de n’importe quelle classe de disposition qui dérive de la [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) classe pour générer son contenu en le liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate).
+La `BindableLayout` classe active une classe de disposition qui dérive de [`Layout<T>`](xref:Xamarin.Forms.Layout`1) la classe pour générer son contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)avec un.
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[Création d’une disposition personnalisée](custom.md)
 
@@ -225,5 +225,5 @@ La plupart des conceptions impossibles avec une disposition qu’un seul, donc d
 
 - [D’Apple Human Interface Guidelines pour](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG)
 - [Site Web de conception Android](https://developer.android.com/design/index.html)
-- [Disposition (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [Exemple BusinessTumble (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Exemple BusinessTumble (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

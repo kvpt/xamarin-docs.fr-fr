@@ -1,38 +1,38 @@
 ---
-title: Notifications dans Xamarin.iOS
-description: Cette section montre comment implémenter des notifications locales dans Xamarin.iOS. Il explique les différents éléments d’interface utilisateur d’une notification d’iOS et traitent de l’API d’impliquée dans la création et affichage d’une notification.
+title: Notifications dans Xamarin. iOS
+description: Cette section montre comment implémenter des notifications locales dans Xamarin. iOS. Il explique les différents éléments d’interface utilisateur d’une notification iOS et discute des API impliquées dans la création et l’affichage d’une notification.
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: 6710abd28a2b0f992296008d12950b95ec29783d
-ms.sourcegitcommit: dd73477b1bccbd7ca45c1fb4e794da6b36ca163d
+ms.openlocfilehash: 7f2619010a410cabc54074e669ff4f1ea24bd0fa
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394693"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655495"
 ---
-# <a name="notifications-in-xamarinios"></a>Notifications dans Xamarin.iOS
+# <a name="notifications-in-xamarinios"></a>Notifications dans Xamarin. iOS
 
 > [!IMPORTANT]
-> Les informations contenues dans cette section se rapporte à iOS 9 et antérieures. Pour iOS 10 et versions ultérieures, consultez le [guide de framework de notification utilisateur](~/ios/platform/user-notifications/index.md).
+> Les informations contenues dans cette section concernent iOS 9 et versions antérieures. Pour iOS 10 et versions ultérieures, consultez le Guide de l' [infrastructure de notification utilisateur](~/ios/platform/user-notifications/index.md).
 
-iOS a trois façons d’indiquer à l’utilisateur qu’une notification a été reçue :
+iOS offre trois moyens d’indiquer à l’utilisateur qu’une notification a été reçue:
 
-- **Son ou vibration** -iOS peuvent jouer un son pour informer les utilisateurs. Si le son est désactivé, l’appareil peut être configuré pour vibration.
-- **Alertes** -il est possible d’afficher une boîte de dialogue sur l’écran des informations sur la notification.
-- **Badges** - lorsqu’une notification est publiée, un nombre peut être affiché (avec un badge) sur l’icône d’application.
+- Les **sons ou les vibrations** -iOS peuvent émettre un son pour avertir les utilisateurs. Si le son est désactivé, l’appareil peut être configuré pour vibrer.
+- **Alertes** : il est possible d’afficher une boîte de dialogue à l’écran avec des informations sur la notification.
+- **Badges** : lorsqu’une notification est publiée, un nombre peut être affiché (avec un badge) sur l’icône de l’application.
 
-iOS fournit également un *centre de notifications* qui affiche toutes les notifications, à la fois locale et distantes, à l’utilisateur. Les utilisateurs peuvent y accéder en faisant défiler vers le bas en haut de l’écran :
+iOS fournit également un *Centre de notification* qui affiche toutes les notifications, tant locales que distantes, à l’utilisateur. Les utilisateurs peuvent y accéder en effectuant un balayage vers le haut de l’écran:
 
-![Le centre de notifications](local-notifications-in-ios-images/image13.png "le centre de notifications")
+![Le centre de notifications](local-notifications-in-ios-images/image13.png "Le centre de notifications")
 
-## <a name="creating-local-notifications-in-ios"></a>Création des notifications locales dans iOS
+## <a name="creating-local-notifications-in-ios"></a>Création de notifications locales dans iOS
 
-iOS rend relativement simple à créer et gérer les notifications locales.
-Tout d’abord, iOS 8 requiert des applications pour demander l’autorisation de l’utilisateur afficher les notifications. Ajoutez le code suivant à votre application avant d’envoyer une notification locale - le [attaché l’exemple](https://developer.xamarin.com/samples/monotouch/LocalNotifications/) place dans le **AppDelegate**de **FinishedLaunching** (méthode).
+iOS simplifie la création et la gestion des notifications locales.
+Tout d’abord, iOS 8 requiert que les applications demandent l’autorisation de l’utilisateur pour afficher les notifications. Ajoutez le code suivant à votre application avant d’essayer d’envoyer une notification locale. l' [exemple joint](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications) le place dans la méthode **FinishedLaunching** de **AppDelegate**.
 
 ```csharp
 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -41,9 +41,9 @@ var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
 application.RegisterUserNotificationSettings(notificationSettings);
 ```
 
-[![Confirmer la possibilité d’envoyer une notification locale](local-notifications-in-ios-images/image0-sml.png "confirmant la possibilité d’envoyer une notification locale")](local-notifications-in-ios-images/image0.png#lightbox)
+[![Confirmation de la possibilité d’envoyer une notification locale](local-notifications-in-ios-images/image0-sml.png "Confirmation de la possibilité d’envoyer une notification locale")](local-notifications-in-ios-images/image0.png#lightbox)
 
-Pour planifier une notification locale, créez un `UILocalNotification` de l’objet, définissez le `FireDate`et planifier son via la `ScheduleLocalNotification` méthode sur le `UIApplication.SharedApplication` objet. L’extrait de code suivant montre comment planifier une notification qui se déclenchent une minute à l’avenir et affiche une alerte avec un message :
+Pour planifier une notification locale, créez un `UILocalNotification` objet, définissez le `FireDate`et planifiez-le à `ScheduleLocalNotification` l’aide de `UIApplication.SharedApplication` la méthode sur l’objet. L’extrait de code suivant montre comment planifier une notification qui se déclenchera une minute à l’avenir et affichera une alerte avec un message:
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -54,36 +54,36 @@ notification.AlertBody = "Your 15 second alert has fired!";
 UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 ```
 
-La capture d’écran suivante montre à quoi ressemble cette alerte :
+La capture d’écran suivante montre à quoi ressemble cette alerte:
 
 [![](local-notifications-in-ios-images/image2-sml.png "Un exemple d’alerte")](local-notifications-in-ios-images/image2.png#lightbox)
 
-Notez que si l’utilisateur a choisi de *n'autorise pas* notifications alors rien ne s’affichera.
+Notez que si l’utilisateur a choisi de *ne pas autoriser* les notifications, rien ne s’affiche.
 
-Si vous souhaitez appliquer un badge à l’icône d’application avec un nombre, vous pouvez définir comme indiqué dans la ligne de code suivant :
+Si vous souhaitez appliquer un badge à l’icône de l’application avec un nombre, vous pouvez le définir comme indiqué dans le code de ligne suivant:
 
 ```csharp
 notification.ApplicationIconBadgeNumber = 1;
 ```
 
-Dans play d’ordre un son lors de l’icône, définissez la propriété SoundName sur la notification comme indiqué dans l’extrait de code suivant :
+Dans l’ordre, lisez un son avec l’icône, définissez la propriété SoundName sur la notification comme indiqué dans l’extrait de code suivant:
 
 ```csharp
 notification.SoundName = UILocalNotification.DefaultSoundName;
 ```
 
-Si le son de notification est supérieur à 30 secondes, iOS sera lu la valeur par défaut audio à la place.
+Si le son de la notification est supérieur à 30 secondes, iOS lira le son par défaut à la place.
 
 > [!IMPORTANT]
-> Il existe un bogue dans le simulateur iOS qui déclenche la notification de délégué à deux reprises. Ce problème ne doit pas se produire lors de l’exécution de l’application sur un appareil.
+> Il existe un bogue dans le simulateur iOS qui déclenchera la notification de délégué à deux reprises. Ce problème ne doit pas se produire lors de l’exécution de l’application sur un appareil.
 
 ## <a name="handling-notifications"></a>Gestion des notifications
 
-les applications iOS gérer les notifications locales et distantes dans presque exactement la même manière. Lors de l’exécution d’une application, le `ReceivedLocalNotification` méthode ou le `ReceivedRemoteNotification` méthode sur le `AppDelegate` classe sera appelée et les informations de notification recevront en tant que paramètre.
+les applications iOS gèrent les notifications locales et distantes de la même manière presque exactement. Quand une application est en cours d' `ReceivedLocalNotification` exécution, la `ReceivedRemoteNotification` méthode ou la `AppDelegate` méthode sur la classe est appelée, et les informations de notification sont transmises en tant que paramètre.
 
-Une application peut traiter une notification de différentes façons. Par exemple, l’application peut afficher uniquement une alerte pour rappeler aux utilisateurs sur un événement. Ou bien, la notification peut être utilisée pour afficher une alerte à l’utilisateur un processus est terminé, tels que les fichiers de synchronisation en cours à un serveur.
+Une application peut gérer une notification de différentes façons. Par exemple, l’application peut simplement afficher une alerte pour rappeler aux utilisateurs tout événement. Ou la notification peut être utilisée pour afficher une alerte à l’utilisateur qu’un processus est terminé, comme la synchronisation de fichiers avec un serveur.
 
-Le code suivant montre comment gérer une notification locale et d’afficher une alerte et de rétablir le numéro de badge à zéro :
+Le code suivant montre comment gérer une notification locale et afficher une alerte et réinitialiser le numéro de badge à zéro:
 
 ```csharp
 public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-Si l’application n’est pas en cours d’exécution, iOS est le signal sonore et/ou mettre à jour le badge d’icône selon le cas. Lorsque l’utilisateur démarre l’application associée à l’alerte, l’application est lancée et le `FinishedLaunching` méthode sur le délégué de l’application sera appelée et les informations de notification seront transmises via le `launchOptions` paramètre. Si le dictionnaire d’options contient la clé `UIApplication.LaunchOptionsLocalNotificationKey`, puis le `AppDelegate` sait que l’application a été lancée à partir d’une notification locale. L’extrait de code suivant illustre ce processus :
+Si l’application n’est pas en cours d’exécution, iOS lira le son et/ou met à jour le badge d’icône selon le cas. Lorsque l’utilisateur démarre l’application associée à l’alerte, l’application se lance et la `FinishedLaunching` méthode sur le délégué d’application est appelée et les informations de notification sont transmises via le `launchOptions` paramètre. Si le dictionnaire d’options contient la `UIApplication.LaunchOptionsLocalNotificationKey`clé, le `AppDelegate` sait que l’application a été lancée à partir d’une notification locale. L’extrait de code suivant illustre ce processus:
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-Pour une notification à distance, `launchOptions` aura un `LaunchOptionsRemoteNotificationKey` avec associé à un `NSDictionary` contenant la charge utile de notification à distance. Vous pouvez extraire la charge utile de notification via le `alert`, `badge`, et `sound` clés. L’extrait de code suivant montre comment obtenir des notifications à distance :
+Pour une notification distante, `launchOptions` dispose d’un `LaunchOptionsRemoteNotificationKey` avec `NSDictionary` un associé contenant la charge utile de notification distante. Vous pouvez extraire la charge utile de notification `alert`via `badge`les clés `sound` , et. L’extrait de code suivant montre comment recevoir des notifications distantes:
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -131,12 +131,12 @@ if(remoteNotification != null)
 
 ## <a name="summary"></a>Récapitulatif
 
-Cette section vous a montré comment créer et publier une notification dans Xamarin.iOS. Il montre comment une application peut réagir aux notifications en substituant le `ReceivedLocalNotification` méthode ou le `ReceivedRemoteNotification` méthode dans le `AppDelegate`.
+Cette section a montré comment créer et publier une notification dans Xamarin. iOS. Elle montre comment une application peut réagir aux notifications en substituant `ReceivedLocalNotification` la méthode ou `ReceivedRemoteNotification` la méthode dans `AppDelegate`.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notifications locales (exemple)](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
-- [Local et Notifications Push pour les développeurs](https://developer.apple.com/notifications/)
-- [Local et le Guide de programmation des notifications de Push](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Notifications locales (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
+- [Notifications push et locales pour les développeurs](https://developer.apple.com/notifications/)
+- [Guide de programmation des notifications locales et Push](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
 - [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UILocalNotification](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UILocalNotification)

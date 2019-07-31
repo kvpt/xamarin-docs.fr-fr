@@ -7,16 +7,16 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5aa8b2e85d5a7d547af5333dcaf350025b86cc26
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342454"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647695"
 ---
 # <a name="skiasharp-color-filters"></a>Filtres de couleur SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Filtres de couleur peut traduire les couleurs dans une image bitmap (ou autre image) aux autres couleurs pour les effets tels que Postérisation :
 
@@ -120,7 +120,7 @@ La méthode statique [ `SKColorFilter.CreateColorMatrix` ](xref:SkiaSharp.SKColo
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-où `matrix` est un tableau du 20 `float` valeurs. Lors de la création d’un tableau dans C#, il est facile de mettre en forme les nombres afin qu’ils ressemblent à la matrice 4 × 5. Cela est illustré dans le **en nuances de gris matrice** page dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple :
+où `matrix` est un tableau du 20 `float` valeurs. Lors de la création d’un tableau dans C#, il est facile de mettre en forme les nombres afin qu’ils ressemblent à la matrice 4 × 5. Cela est illustré dans le **en nuances de gris matrice** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple :
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -163,7 +163,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-Le `DrawBitmap` provient de la méthode utilisée dans ce code la **BitmapExtension.cs** fichier inclus avec le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple. 
+Le `DrawBitmap` provient de la méthode utilisée dans ce code la **BitmapExtension.cs** fichier inclus avec le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple. 
 
 Voici le résultat en cours d’exécution sur iOS, Android et plateforme Windows universelle :
 
@@ -232,7 +232,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-Les tableaux contiennent toujours les entrées de 256. Dans la `CreateTable` méthode avec une table, la table est utilisée pour les composants rouges, vert et bleus. Il est la table de recherche simple : Si la couleur source est (R, G, B), et la couleur de destination est (R', 'B, G'), puis les composants de destination sont obtenus par l’indexation `table` avec les composants source :
+Les tableaux contiennent toujours les entrées de 256. Dans la `CreateTable` méthode avec une table, la table est utilisée pour les composants rouges, vert et bleus. Il s’agit d’une table de recherche simple: Si la couleur source est (r, G, B) et que la couleur de destination est (r, b, g), les composants de destination sont obtenus par indexation `table` avec les composants sources:
 
 `R' = table[R]`
 
@@ -300,4 +300,4 @@ Vous pouvez utiliser des tables de couleurs différentes pour les canaux de coul
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f5961987e28c09ad703988083f1b127cd7b9dbd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60897249"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645922"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS Notifications dans Xamarin
 
@@ -69,11 +69,11 @@ La vue dynamique peut afficher plus de données et fournir plus d’interactivit
 
 Notifications peuvent provenir d’un serveur distant ([Service de Notifications Push Apple](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), ou APNS) ou peut être généré localement dans l’application iOS.
 
-Reportez-vous à la [iOS procédure pas à pas de Notifications](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) pour obtenir un exemple montrant comment générer des notifications locales et le [WatchNotifications exemple](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/) pour obtenir un exemple.
+Reportez-vous à la [iOS procédure pas à pas de Notifications](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) pour obtenir un exemple montrant comment générer des notifications locales et le [WatchNotifications exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications) pour obtenir un exemple.
 
 Notifications locales doivent avoir le `AlertTitle` définie pour être affichée sur l’Apple Watch - le `AlertTitle` chaîne est affichée dans l’interface courte-coup de œil. À la fois le `AlertTitle` et `AlertBody` sont affichés dans la liste de notifications ; et le `AlertBody` est affichée dans l’interface de l’aspect de longue durée.
 
-Cette capture d’écran montre le `AlertTitle` affiché dans la liste de notifications et le `AlertBody` affichée dans l’interface de l’aspect de longue durée (à l’aide de la [exemple de code](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)) :
+Cette capture d’écran montre le `AlertTitle` affiché dans la liste de notifications et le `AlertBody` affichée dans l’interface de l’aspect de longue durée (à l’aide de la [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)) :
 
 ![](notifications-images/watch-notificationslist-sml.png "Cette capture d’écran montre le AlertTitle affiché dans la liste de notifications") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody l’affichée dans l’interface de l’aspect de longue durée")
 
@@ -126,7 +126,7 @@ Il est également possible d’utiliser le [ligne de commande](~/ios/watchos/tro
 
 ### <a name="example-notification-payload"></a>Exemple charge utile de Notification
 
-Dans le [espion Kit catalogue](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/) exemple il est un exemple de fichier charge utile JSON **NotificationPayload.json** (répertoriés ci-dessous).
+Dans le [espion Kit catalogue](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) exemple il est un exemple de fichier charge utile JSON **NotificationPayload.json** (répertoriés ci-dessous).
 
 ```csharp
 {
@@ -151,6 +151,6 @@ Dans le [espion Kit catalogue](https://developer.xamarin.com/samples/monotouch/w
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchNotifications (notifications locales) (exemple)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)
-- [WatchKitCatalog (exemple)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchNotifications (notifications locales) (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)
+- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Documentation de Notifications de Kit d’espion d’Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

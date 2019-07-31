@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b861993f0d9661a5c9f5c5983020fa0d275ff78c
-ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
+ms.openlocfilehash: 85a1f34e1115c29840b08cfc85969d10d3971939
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469484"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655582"
 ---
 # <a name="controls-reference"></a>Informations de référence sur les contrôles
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/FormsGallery/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 _Une description de tous les éléments visuels utilisés pour construire une application Xamarin.Forms._
 
@@ -31,9 +31,9 @@ Les quatre principaux groupes de contrôles utilisées pour créer l’interface
 
 En règle générale, une page Xamarin.Forms occupe tout l’écran. La page contient généralement une disposition qui contient les vues et éventuellement d’autres dispositions. Les cellules sont des composants spécialisés utilisés par [ `TableView` ](views.md#tableView) et [ `ListView` ](views.md#listView).
 
-Dans les quatre articles sur [ **Pages**](pages.md), [ **dispositions**](layouts.md), [ **vues** ](views.md), et [ **cellules**](cells.md), chaque type de contrôle est décrit avec des liens vers sa documentation des API, un article décrivant son utilisation (le cas échéant) et un ou plusieurs exemples de programmes (s’ils existent). Chaque type de contrôle est également accompagné d’une capture d’écran montrant une page à partir de la [ **FormsGallery** ](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/) exemple en cours d’exécution sur iOS, Android et UWP appareils. Chaque capture d’écran ci-dessous sont des liens vers le code source pour le langage C#, la page équivalent XAML et (le cas échéant) le fichier code-behind C# pour la page XAML.
+Dans les quatre articles sur [ **Pages**](pages.md), [ **dispositions**](layouts.md), [ **vues** ](views.md), et [ **cellules**](cells.md), chaque type de contrôle est décrit avec des liens vers sa documentation des API, un article décrivant son utilisation (le cas échéant) et un ou plusieurs exemples de programmes (s’ils existent). Chaque type de contrôle est également accompagné d’une capture d’écran montrant une page à partir de la [ **FormsGallery** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) exemple en cours d’exécution sur iOS, Android et UWP appareils. Chaque capture d’écran ci-dessous sont des liens vers le code source pour le langage C#, la page équivalent XAML et (le cas échéant) le fichier code-behind C# pour la page XAML.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+- [Exemple de Xamarin.Forms FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 - [Documentation de l’API](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

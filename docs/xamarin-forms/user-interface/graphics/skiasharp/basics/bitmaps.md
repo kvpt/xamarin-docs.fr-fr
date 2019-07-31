@@ -7,16 +7,16 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e1e21fe121fba30755efbabe302ed0f22149e7e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61157400"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645887"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Principes fondamentaux de la bitmap dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Charger des bitmaps à partir de différentes sources et les afficher._
 
@@ -65,7 +65,7 @@ Pour charger une image bitmap basée sur une URL, vous pouvez utiliser la [ `Htt
 HttpClient httpClient = new HttpClient();
 ```
 
-Lorsque vous utilisez `HttpClient` avec les applications iOS et Android, vous voudrez définir les propriétés du projet comme décrit dans les documents sur  **[sécurité TLS (Transport Layer) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**.
+Lorsque vous utilisez `HttpClient` avec les applications iOS et Android, vous voudrez définir les propriétés du projet comme décrit dans les documents sur  **[sécurité TLS (Transport Layer) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** .
 
 Car il est plus pratique d’utiliser le `await` opérateur avec `HttpClient`, le code ne peut pas être exécuté dans le `BasicBitmapsPage` constructeur. Au lieu de cela, il fait partie de la `OnAppearing` remplacer. Ici l’URL pointe vers une zone sur le site web de Xamarin avec des bitmaps d’exemple. Un package sur le site web permet d’ajouter une spécification pour le redimensionnement de la bitmap à une largeur spécifique :
 
@@ -104,7 +104,7 @@ La méthode statique `SKBitmap.Decode` méthode est chargée de décodage des fi
 
 En termes de code, l’approche la plus simple pour charger des bitmaps est y compris une ressource bitmap directement dans votre application. Le **SkiaSharpFormsDemos** programme inclut un dossier nommé **Media** contenant plusieurs fichiers, dont un nommé de bitmap **monkey.png**. Pour les bitmaps stockés en tant que ressources de programme, vous devez utiliser le **propriétés** boîte de dialogue pour donner au fichier un **Action de génération** de **ressource incorporée**!
 
-Chaque ressource incorporée a un *ID de ressource* qui comprend le nom du projet, le dossier et le nom de fichier, tous les éléments par des points : **SkiaSharpFormsDemos.Media.monkey.png**. Vous pouvez accéder à cette ressource en spécifiant cette ressource ID en tant qu’argument à la [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) méthode de la [ `Assembly` ](xref:System.Reflection.Assembly) classe :
+Chaque ressource incorporée possède un *ID de ressource* qui se compose du nom du projet, du dossier et du nom de fichier, tous connectés par périodes: **SkiaSharpFormsDemos.Media.monkey.png**. Vous pouvez accéder à cette ressource en spécifiant cette ressource ID en tant qu’argument à la [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) méthode de la [ `Assembly` ](xref:System.Reflection.Assembly) classe :
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -250,5 +250,5 @@ Vous pouvez afficher des bitmaps avec différents degrés de transparence et de 
 ## <a name="related-links"></a>Liens associés
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [Sélection d’une Photo dans la bibliothèque d’images](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

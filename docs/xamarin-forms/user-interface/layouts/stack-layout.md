@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804894"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657084"
 ---
 # <a name="xamarinforms-stacklayout"></a>StackLayout de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout) organise les vues dans une ligne à dimension unique (« pile »), horizontalement ou verticalement. Vues dans un `StackLayout` peut être dimensionnée en fonction de l’espace dans la disposition à l’aide des options de disposition. Positionnement est déterminé par l’ordre des vues ont été ajoutées à la disposition et les options de disposition des vues.
+[StackLayout](xref:Xamarin.Forms.StackLayout) organise les vues en une ligne unidimensionnelle («Stack»), horizontalement ou verticalement. Vues dans un `StackLayout` peut être dimensionnée en fonction de l’espace dans la disposition à l’aide des options de disposition. Positionnement est déterminé par l’ordre des vues ont été ajoutées à la disposition et les options de disposition des vues.
 
 [![](stack-layout-images/layouts-sml.png "Dispositions Xamarin.Forms")](stack-layout-images/layouts.png#lightbox "dispositions Xamarin.Forms")
 
@@ -226,5 +226,5 @@ Notez que `StackLayouts`s sont imbriquées, car dans certains cas des dispositio
 ## <a name="related-links"></a>Liens associés
 
 - [LayoutOptions](~/xamarin-forms/user-interface/layouts/layout-options.md)
-- [Disposition (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [Exemple BusinessTumble (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [Disposition (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Exemple BusinessTumble (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

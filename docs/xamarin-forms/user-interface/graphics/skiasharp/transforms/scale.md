@@ -7,16 +7,16 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 9bc320273df192f9daf2520f451601335731e7b0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189239"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649286"
 ---
 # <a name="the-scale-transform"></a>La transformation d’échelle
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrir la transformation d’échelle pour la mise à l’échelle des objets à différentes tailles de SkiaSharp_
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Vous vous demandez peut-être : Comment les facteurs d’échelle affectent la valeur retournée par la `MeasureText` méthode de `SKPaint`? La réponse est : Pas du tout. `Scale` est une méthode de `SKCanvas`. Il n’affecte pas tout ce que vous le faites avec un `SKPaint` jusqu'à ce que cet objet vous permet de restituer un élément de la zone de dessin de l’objet.
+Vous vous demandez peut-être: Comment les facteurs de mise à l’échelle affectent-ils la `MeasureText` valeur retournée par la méthode de? `SKPaint` La réponse est la suivante: Pas du tout. `Scale` est une méthode de `SKCanvas`. Il n’affecte pas tout ce que vous le faites avec un `SKPaint` jusqu'à ce que cet objet vous permet de restituer un élément de la zone de dessin de l’objet.
 
 Comme vous pouvez le voir, tous les éléments dessinés après le `Scale` appeler augmente proportionnellement :
 
@@ -251,7 +251,7 @@ Le `pathBounds` rectangle est obtenu au début de ce code et ensuite utilisé av
 
 [![](scale-images/anisotropicscaling-small.png "Capture d’écran triple de la page de mise à l’échelle ANISOTROPIQUE")](scale-images/anisotropicscaling-large.png#lightbox "Triple capture d’écran de la page de mise à l’échelle ANISOTROPIQUE")
 
-Une autre façon, vous pouvez considérer le `Scale` et `Translate` appels consiste à déterminer l’effet dans la séquence inverse : Le `Translate` appel décale le chemin d’accès afin qu’il devienne complètement visible mais orientée dans le coin supérieur gauche de la zone de dessin. Le `Scale` méthode rend ensuite cette étoile supérieure par rapport à l’angle supérieur gauche.
+Une autre façon de penser `Scale` aux appels et `Translate` consiste à déterminer l’effet en séquence inverse: L' `Translate` appel décale le chemin d’accès pour qu’il devienne complètement visible mais orienté dans le coin supérieur gauche du canevas. Le `Scale` méthode rend ensuite cette étoile supérieure par rapport à l’angle supérieur gauche.
 
 En fait, il apparaît que l’étoile est légèrement supérieure à la zone de dessin. Le problème est la largeur du trait. Le `Bounds` propriété du `SKPath` indique les dimensions des coordonnées encodées dans le chemin d’accès, et qui est utilisé par le programme à l’échelle. Lorsque le chemin d’accès est affiché avec une largeur de trait particulier, le chemin d’accès affiché est supérieure à la zone de dessin.
 
@@ -347,4 +347,4 @@ Le code affiche également l’étoile 10 fois de plus, chaque fois que la dimin
 ## <a name="related-links"></a>Liens associés
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2019
-ms.openlocfilehash: fd67072953f0fc4e448fee7edeec84760ebbda9a
-ms.sourcegitcommit: 9d90a26cbe13ebd106f55ba4a5445f28d9c18a1a
+ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65048321"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657277"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Utilisation des Extensions de balisage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 Extensions de balisage XAML vous aider à améliorer la puissance et la flexibilité de XAML en autorisant les attributs de l’élément à définir à partir de diverses sources. Plusieurs extensions de balisage XAML font partie de la spécification de XAML 2009. Ceux-ci s’affichent dans les fichiers XAML avec l’usage `x` préfixe d’espace de noms et sont communément par ce préfixe. Cet article aborde les extensions de balisage suivant :
 
@@ -27,7 +27,7 @@ Extensions de balisage XAML vous aider à améliorer la puissance et la flexibil
 - [`x:Null`](#null) – la valeur est un attribut un `null` valeur.
 - [`OnPlatform`](#onplatform) – personnaliser l’apparence de l’interface utilisateur sur une base par plateforme.
 - [`OnIdiom`](#onidiom) – personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome de l’appareil de l’application est en cours d’exécution.
-- [`DataTemplate`](#datatemplate-markup-extension) -Convertit un type en un [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate).
+- [`DataTemplate`](#datatemplate-markup-extension)-Convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate).
 
 Les extensions de balisage XAML supplémentaires ont toujours été pris en charge par d’autres implémentations XAML et sont également prises en charge par Xamarin.Forms. Ceux-ci sont décrits plus en détail dans d’autres articles :
 
@@ -44,7 +44,7 @@ Le [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) mise en page utilise 
 
 Le `x:Static` extension de balisage est prise en charge par le [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) classe. La classe a une propriété unique nommée [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) de type `string` que vous définissez pour le nom d’une constante publique, une propriété statique, champ statique ou membre d’énumération.
 
-Une façon courante d’utiliser `x:Static` doit d’abord définir une classe avec des constantes ou des variables statiques, tels que ce petit `AppConstants` classe dans le [ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) programme :
+Une façon courante d’utiliser `x:Static` doit d’abord définir une classe avec des constantes ou des variables statiques, tels que ce petit `AppConstants` classe dans le [ **MarkupExtensions** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) programme :
 
 ```csharp
 static class AppConstants
@@ -85,7 +85,7 @@ L’analyseur XAML permet également la `StaticExtension` classe sera abrégé e
 </Label>
 ```
 
-Vous pouvez simplifier encore plus loin, mais la modification introduit une nouvelle syntaxe : Il se compose de placer la `StaticExtension` classe et le nouveau membre entre accolades. L’expression résultante est définie directement à la `FontSize` attribut :
+Cela peut encore être simplifié, mais la modification introduit une nouvelle syntaxe: Il consiste à placer la `StaticExtension` classe et le paramètre de membre entre accolades. L’expression résultante est définie directement à la `FontSize` attribut :
 
 ```xaml
 <Label Text="Label No. 3"
@@ -504,7 +504,7 @@ Voici le programme en cours d’exécution :
 
 ## <a name="onidiom-markup-extension"></a>Extension de balisage de OnIdiom
 
-Le `OnIdiom` extension de balisage vous permet de personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome de l’appareil de l’application s’exécute sur. Il est pris en charge par le [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) (classe), qui définit les propriétés suivantes :
+L' `OnIdiom` extension de balisage vous permet de personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome du périphérique sur lequel l’application s’exécute. Il est pris en charge par le [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) (classe), qui définit les propriétés suivantes :
 
 - `Default` de type `object`, définissez une valeur par défaut à appliquer aux propriétés qui représentent des idiomes de l’appareil.
 - `Phone` de type `object`, que vous définissez une valeur à appliquer sur les téléphones.
@@ -538,14 +538,14 @@ Voici le programme en cours d’exécution :
 
 [![Démonstration de OnIdiom](consuming-images/onidiomdemo-small.png "OnIdiom démonstration")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom démonstration")
 
-## <a name="datatemplate-markup-extension"></a>Extension de balisage de DataTemplate
+## <a name="datatemplate-markup-extension"></a>DataTemplate (extension de balisage)
 
-Le `DataTemplate` extension de balisage vous permet de convertir un type en un [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate). Il est pris en charge par le `DataTemplateExtension` (classe), qui définit un `TypeName` propriété, de type `string`, qui est définie sur le nom du type à convertir en un `DataTemplate`. Le `TypeName` propriété est la propriété de contenu de `DataTemplateExtension`. Par conséquent, pour les expressions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `TypeName=` dans le cadre de l’expression.
+L' `DataTemplate` extension de balisage vous permet de convertir un type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)en. Elle est prise en charge `DataTemplateExtension` par la classe, qui `TypeName` définit une propriété, `string`de type, qui est définie sur le nom `DataTemplate`du type à convertir en. Le `TypeName` propriété est la propriété de contenu de `DataTemplateExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `TypeName=` partie de l’expression.
 
 > [!NOTE]
-> L’analyseur XAML autorise le `DataTemplateExtension` classe sera abrégé en tant que `DataTemplate`.
+> L’analyseur XAML permet à `DataTemplateExtension` la classe d’être abrégée `DataTemplate`comme.
 
-Une utilisation typique de cette extension de balisage est dans une application de Shell, comme indiqué dans l’exemple suivant :
+Une utilisation classique de cette extension de balisage se trouve dans une application d’environnement, comme illustré dans l’exemple suivant:
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -553,9 +553,9 @@ Une utilisation typique de cette extension de balisage est dans une application 
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-Dans cet exemple, `MonkeysPage` est convertie à partir d’un [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) à un [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate), qui est définie comme valeur de la `ShellContent.ContentTemplate` propriété. Cela garantit que `MonkeysPage` est uniquement créé lors de la navigation vers la page se produit, plutôt qu’au démarrage de l’application.
+Dans cet exemple, `MonkeysPage` est converti d’un [`ContentPage`](xref:Xamarin.Forms.ContentPage) en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), qui est défini comme valeur de la `ShellContent.ContentTemplate` propriété. Cela permet de `MonkeysPage` s’assurer que est uniquement créé lorsque la navigation vers la page se produit, plutôt qu’au démarrage de l’application.
 
-Pour plus d’informations sur les applications de l’interpréteur de commandes, consultez [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+Pour plus d’informations sur les applications de l’interpréteur de commandes, consultez [Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
 
 ## <a name="define-your-own-markup-extensions"></a>Définir vos propres Extensions de balisage
 
@@ -563,9 +563,9 @@ Si vous avez rencontré un besoin pour une extension de balisage XAML qui n’es
 
 ## <a name="related-links"></a>Liens associés
 
-- [Extensions de balisage (exemple)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Chapitre d’extensions de balisage XAML de Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Dictionnaires de ressources](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Styles dynamiques](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+- [Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).

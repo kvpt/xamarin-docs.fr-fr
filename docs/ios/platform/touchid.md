@@ -1,141 +1,141 @@
 ---
-title: Touch ID dans Xamarin.iOS
-description: Ce document décrit comment utiliser Touch ID, la technologie d’authentification par empreinte digitale biométrique d’Apple, dans les applications Xamarin.iOS.
+title: Touch ID dans Xamarin. iOS
+description: Ce document explique comment utiliser Touch ID, la technologie d’authentification par empreinte digitale biométrique d’Apple, dans les applications Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 25ace6d7febe495164378b3633f06371806e2f82
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: fe0f3c6904255284c01cbb3277086b01ec852d7b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832304"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654051"
 ---
-# <a name="touch-id-in-xamarinios"></a>Touch ID dans Xamarin.iOS
+# <a name="touch-id-in-xamarinios"></a>Touch ID dans Xamarin. iOS
 
-Touch ID a été introduit dans iOS 7 en tant que méthode d’authentification de l’utilisateur - semblable à un code secret. Toutefois, il était limité à déverrouiller l’appareil, à l’aide de l’App Store, à l’aide d’iTunes et l’authentification de la chaîne de clé iCloud uniquement.
+Touch ID a été introduit dans iOS 7 comme un moyen d’authentifier l’utilisateur, similaire à un code secret. Toutefois, il était limité au déverrouillage de l’appareil à l’aide de l’App Store, en utilisant iTunes et en authentifiant uniquement le trousseau iCloud.
 
-Il existe désormais deux façons d’utiliser Touch ID comme mécanisme d’authentification dans une application iOS 8 à l’aide de l’API d’authentification Local. Actuellement, il n’est pas possible d’utiliser l’authentification locale pour l’authentification à distance.
+Il existe deux façons d’utiliser Touch ID comme mécanisme d’authentification dans une application iOS 8 à l’aide de l’API d’authentification locale. Il n’est actuellement pas possible d’utiliser l’authentification locale pour l’authentification à distance.
 
-Pour bien comprendre Touch ID et sa valeur, nous devons examiner trousseau Services et la signifient de ces nouvelles modifications pour vos données de l’utilisateur. L’accès au trousseau a également été développée lors dans iOS 8 via l’utilisation de la nouvelle fonctionnalité de listes de contrôle d’accès (ACL).
+Pour comprendre parfaitement l’ID tactile et sa valeur, nous devons explorer les services de trousseau et ce que ces nouvelles modifications signifient pour les données de vos utilisateurs. L’accès au trousseau a également été développé sur iOS 8 via l’utilisation de la nouvelle fonctionnalité listes de Access Control (ACL).
 
-## <a name="keychain--secure-enclave"></a>Trousseau & Enclave sécurisée
+## <a name="keychain--secure-enclave"></a>Trousseau & l’enclave sécurisée
 
-Chaîne de clé est une base de données volumineux en fournissant un stockage sécurisé pour les mots de passe, les clés, les certificats et les notes de publication pour un ID Apple individuels. Dans iOS 8 une application always a accès à ses propres éléments de trousseau unique et ne peut pas accéder à tous les éléments trousseau d’autres applications. Cela diffère d’OS X, où le trousseau est déverrouillé avec un seul mot de passe, permettant à n’importe quelle application Keychain compatible avec les Services d’utiliser le trousseau. Dans cet article, nous nous concentrerons sur le fonctionne de la chaîne de clé dans iOS 8.
+Le trousseau est une base de données volumineuse fournissant un stockage sécurisé pour les mots de passe, les clés, les certificats et les notes pour un ID Apple individuel. Dans iOS 8, une application a toujours accès à ses propres éléments de trousseau uniques et ne peut pas accéder aux éléments de Trousseau d’autres applications. Cela diffère du système d’exploitation X où le trousseau est déverrouillé avec un mot de passe unique, ce qui permet à toute application prenant en charge le trousseau d’utiliser le trousseau. Dans cet article, nous allons nous concentrer sur le fonctionnement du trousseau dans iOS 8.
 
-Chaîne de clé est une base de données spécialisé, où chaque ligne est appelé un _trousseau élément_. Chaque élément est décrit par les attributs de trousseau et est composé de valeurs chiffrées. Pour permettre une utilisation efficace de trousseau, il est optimisé pour les éléments de petite taille, ou _secrets_.
-Chaque élément de trousseau est protégé par le mot de passe des utilisateurs et un secret d’appareil unique. Éléments de trousseau doivent être protégées, même lorsque les utilisateurs n’utilisent pas leurs appareils. Ceci est implémenté dans iOS en autorisant uniquement les éléments soient disponibles quand l’appareil est déverrouillé, quand l’appareil est verrouillé, ils deviennent indisponibles. Ils peuvent également être stockées dans une sauvegarde chiffrée. Une des principales fonctionnalités de porte-clés consiste à appliquer le contrôle d’accès ; une application a accès à sa partie de la chaîne de clé et ne pourra pas toutes les autres applications. Le diagramme ci-dessous illustre la façon dont une application interagit avec la chaîne de clé :
+Le trousseau est une base de données spécialisée, où chaque ligne est appelée « _élément de trousseau_». Chaque élément est décrit par des attributs de trousseau et est composé de valeurs chiffrées. Pour permettre une utilisation efficace du trousseau, il est optimisé pour les petits éléments ou les _secrets_.
+Chaque élément de trousseau est protégé par le code secret de l’utilisateur et par un secret d’appareil unique. Les éléments de trousseau doivent être protégés même si les utilisateurs n’utilisent pas leurs appareils. Elle est implémentée dans iOS en autorisant uniquement les éléments à être disponibles lorsque l’appareil est déverrouillé, lorsque l’appareil est verrouillé, ils deviennent indisponibles. Elles peuvent également être stockées dans une sauvegarde chiffrée. L’une des principales fonctionnalités du trousseau consiste à appliquer le contrôle d’accès. une application a accès à sa partie du trousseau, et toutes les autres applications sont bloquées. Le diagramme ci-dessous illustre comment une application interagit avec le trousseau:
 
-[![](touchid-images/image1.png "Ce diagramme illustre la façon dont une application interagit avec le trousseau")](touchid-images/image1.png#lightbox)
+[![](touchid-images/image1.png "Ce diagramme illustre comment une application interagit avec le trousseau")](touchid-images/image1.png#lightbox)
 
 ### <a name="secure-enclave"></a>Enclave sécurisée
 
-La chaîne de clé ne peut pas déchiffrer l’élément trousseau par lui-même ; au lieu de cela, elle est effectuée le *Enclave sécurisée*. L’enclave sécurisée est un coprocesseur dans la puce A7 qui est chargé de déterminer une correspondance à partir de données d’empreintes digitales à partir du capteur de Touch ID contre une impression inscrit. Il sera ensuite déchiffrer l’élément trousseau et retourner la clé secrète déchiffrée au trousseau.
+Le trousseau ne peut pas déchiffrer l’élément de trousseau par lui-même; au lieu de cela, elle est effectuée dans l' *enclave sécurisée*. L’enclave sécurisée est un coprocesseur au sein de la puce a7 qui est responsable de la détermination d’une correspondance réussie entre les données d’empreinte digitale du capteur d’ID tactile et d’une impression enregistrée. Il déchiffre ensuite l’élément de trousseau et retourne le secret déchiffré au trousseau.
 
-### <a name="working-with-keychain"></a>Utilisation de trousseau
+### <a name="working-with-keychain"></a>Utilisation du trousseau
 
-Tout d’abord votre application doit interroger dans le trousseau pour voir s’il existe un mot de passe. S’il n’existe pas, vous devrez peut-être demander un mot de passe afin de l’utilisateur n’est pas invité en permanence. Si le mot de passe doit être mis à jour, inviter l’utilisateur à un nouveau mot de passe et passez la valeur mise à jour dans le trousseau.
+Tout d’abord, votre application doit interroger le trousseau pour voir s’il existe un mot de passe. S’il n’existe pas, vous devrez peut-être demander un mot de passe pour que l’utilisateur ne soit pas continuellement invité. Si le mot de passe doit être mis à jour, invitez l’utilisateur à entrer un nouveau mot de passe et transmettez la valeur mise à jour au trousseau.
 
 > [!NOTE]
-> Une fois à l’aide d’une clé secrète récupérées à partir de la chaîne de clé, toutes les références aux données doivent être supprimés de la mémoire. Jamais l’affecter à une variable globale.
+> Après l’utilisation d’un secret récupéré dans le trousseau, toutes les références aux données doivent être purgées de la mémoire. Ne l’attribuez jamais à une variable globale.
 
-## <a name="keychain-acl-and-touch-id"></a>ID de trousseau ACL et l’interaction tactile
+## <a name="keychain-acl-and-touch-id"></a>ACL de trousseau et ID tactile
 
-Liste de contrôle d’accès est un nouvel attribut d’élément de trousseau dans iOS 8 qui décrit les informations concernant ce qui doit se produire pour autoriser une opération particulière se produise. Cela peut être sous la forme d’affichage d’une boîte de dialogue alerte ou la demande d’un code secret. ACL vous permet de définir l’accessibilité et l’authentification pour un élément de trousseau. Le diagramme ci-dessous illustre la façon dont ce nouvel attribut lie avec le reste de l’élément de trousseau :
+Access Control liste est un nouvel attribut d’élément de trousseau dans iOS 8 qui décrit les informations relatives à ce qui doit se produire pour permettre l’exécution d’une opération particulière. Cela peut se présenter sous la forme d’une boîte de dialogue d’alerte ou d’une demande de code d’accès. La liste de contrôle d’accès vous permet de définir l’accessibilité et l’authentification d’un élément de trousseau. Le diagramme ci-dessous montre comment ce nouvel attribut se lie au reste de l’élément de trousseau:
 
-[![](touchid-images/image2.png "Ce diagramme illustre comment ce nouvel attribut lie avec le reste de l’élément de trousseau")](touchid-images/image2.png#lightbox)
+[![](touchid-images/image2.png "Ce diagramme montre comment ce nouvel attribut se lie au reste de l’élément de trousseau")](touchid-images/image2.png#lightbox)
 
-À compter d’iOS 8, il existe désormais une nouvelle stratégie de présence de l’utilisateur, `SecAccessControl`, qui est appliqué par l’enclave sécurisée sur un iPhone 5 s et versions ultérieures. Nous pouvons voir dans le tableau ci-dessous, simplement comment la configuration de l’appareil peut influencer l’évaluation de stratégie :
+Depuis iOS 8, il existe désormais une nouvelle stratégie de présence d’utilisateur `SecAccessControl`,, qui est appliquée par l’enclave sécurisée sur un iPhone 5 s et versions ultérieures. Nous pouvons voir dans le tableau ci-dessous comment la configuration de l’appareil peut influencer l’évaluation de la stratégie:
 
 |Configuration de l’appareil|Évaluation de la stratégie|Mécanisme de sauvegarde|
 |--- |--- |--- |
 |Appareil sans code secret|Aucun accès|Aucun|
-|Appareil avec le code secret|Nécessite du code secret|Aucun|
-|Appareil avec Touch ID|Préfère Touch ID|Autorise le code secret|
+|Appareil avec code secret|Requiert un code secret|Aucun|
+|Appareil avec Touch ID|Préfère l’ID tactile|Autorise le code secret|
 
-Toutes les opérations à l’intérieur de l’Enclave sécurisée peuvent se font confiance. Cela signifie que nous pouvons utiliser le résultat de l’authentification de Touch ID pour autoriser le déchiffrement d’élément de trousseau. L’Enclave sécurisée conserve également un compteur de correspondances infructueuses de Touch ID, auquel cas un utilisateur a revenir à l’utilisation du code secret.
-Une nouvelle infrastructure dans iOS 8, appelée _l’authentification locale_, prend en charge ce processus d’authentification au sein de l’appareil. Nous allons examiner cela dans la section suivante.
+Toutes les opérations au sein de l’enclave sécurisée peuvent se faire confiance les unes aux autres. Cela signifie que nous pouvons utiliser le résultat de l’authentification Touch ID pour autoriser le déchiffrement de l’élément de trousseau. L’enclave sécurisée conserve également un compteur des correspondances d’ID tactiles ayant échoué. dans ce cas, un utilisateur devra revenir à l’utilisation du code secret.
+Une nouvelle infrastructure dans iOS 8, appelée _authentification locale_, prend en charge ce processus d’authentification au sein de l’appareil. Nous allons l’Explorer dans la section suivante.
 
 ## <a name="local-authentication"></a>Authentification locale
 
-Comme nous avons créée dans la section précédente, les applications peuvent utiliser l’authentification locale pour authentifier l’utilisateur dans le respect de la stratégie de sécurité qui a été configurée sur l’appareil.
+Comme nous l’avons établi dans la section précédente, les applications peuvent utiliser l’authentification locale pour authentifier l’utilisateur en respectant la stratégie de sécurité qui a été configurée sur l’appareil.
 
-Actuellement, l’API fournit uniquement deux fonctionnalités : Tout d’abord, il aide les services de trousseau existants via l’utilisation de la nouvelle Keychain Access Control Lists (ACL). Données de chaîne de clé peuvent être déverrouillées avec l’authentification réussie d’une empreinte digitale d’utilisateurs.
+Actuellement, l’API fournit uniquement deux fonctionnalités: Tout d’abord, il aide les services de trousseau existants grâce à l’utilisation de nouvelles listes de Access Control de trousseau (ACL). Les données de trousseau peuvent être déverrouillées avec l’authentification réussie de l’empreinte digitale d’un utilisateur.
 
-Deuxièmement, LocalAuthentication fournit deux méthodes pour authentifier votre application localement. Les développeurs doivent utiliser `CanEvaluatePolicy` pour déterminer si l’appareil est capable d’accepter de Touch ID, puis `EvaluatePolicy` pour démarrer l’opération d’authentification.
+Deuxièmement, LocalAuthentication fournit deux méthodes pour authentifier votre application localement. Les développeurs doivent `CanEvaluatePolicy` utiliser pour déterminer si l’appareil peut accepter l’id tactile, `EvaluatePolicy` puis démarrer l’opération d’authentification.
 
-Bien que les deux fonctions offrent l’authentification locale, ils ne fournissent pas un mécanisme pour l’application ou l’utilisateur à s’authentifier auprès d’un serveur distant.
-L’authentification locale fournit une nouvelle interface utilisateur standard pour l’authentification. Dans le cas de Touch ID, il s’agit d’un affichage des alertes avec deux boutons, comme illustré ci-dessous. Un bouton Annuler, l’application à utiliser les moyens de secours d’authentification : le code secret. Il existe également un message personnalisé qui doit être défini. Il est recommandé d’utiliser cela pour expliquer à l’utilisateur pourquoi l’authentification de Touch ID est nécessaire.
+Bien que les deux fonctionnalités offrent une authentification locale, elles ne fournissent pas de mécanisme permettant à l’application ou à l’utilisateur de s’authentifier auprès d’un serveur distant.
+L’authentification locale fournit une nouvelle interface utilisateur standard pour l’authentification. Dans le cas de Touch ID, il s’agit d’un affichage des alertes avec deux boutons, comme illustré ci-dessous. Un bouton pour annuler et un pour utiliser le moyen de secours de l’authentification: le code secret. Il y a également un message personnalisé qui doit être défini. Il est conseillé de l’utiliser pour expliquer à l’utilisateur pourquoi l’authentification Touch ID est requise.
 
-[![](touchid-images/image12.png "L’alerte de l’authentification de Touch ID")](touchid-images/image12.png#lightbox)
+[![](touchid-images/image12.png "Alerte d’authentification Touch ID")](touchid-images/image12.png#lightbox)
 
-### <a name="with-keychain-services"></a>Avec les Services de trousseau
+### <a name="with-keychain-services"></a>Avec les services de trousseau
 
-Nous avons étudié un peu plus tôt comment un élément de trousseau est déchiffré, à l’aide de l’enclave sécurisée pour vérifier notre code secret. Dans iOS 8, nous pouvons utiliser l’authentification locale pour demander la vérification de Touch ID conjointement avec la fonctionnalité de listes de contrôle d’accès, qui fournit l’implémentation du mécanisme de secours, ou le mot de passe.
-Pour utiliser les ACL que nous devrions être à l’aide de la `SecAccessControl` stratégie, puis en vérifiant l’état de l’appareil en utilisant `SecAccessible.WhenPasscodeSetThisDeviceOnly` ou `SecAccessible.WhenUnlocked`.
+Nous avons abordé un peu plus tôt dans la manière dont un élément de trousseau est déchiffré, à l’aide de l’enclave sécurisée pour vérifier notre code secret. Dans iOS 8, nous pouvons utiliser l’authentification locale pour demander une vérification de l’ID tactile conjointement avec la fonctionnalité de listes de Access Control, qui fournit l’implémentation du mécanisme de secours ou le mot de passe.
+Pour utiliser la liste de contrôle d’accès `SecAccessControl` , nous devons utiliser la stratégie, puis vérifier l’état `SecAccessible.WhenPasscodeSetThisDeviceOnly` de `SecAccessible.WhenUnlocked`l’appareil à l’aide de ou de.
 
-#### <a name="considerations-with-acl"></a>Considérations relatives à la liste ACL
+#### <a name="considerations-with-acl"></a>Considérations relatives à la liste de contrôle d’accès
 
-Nous devons Gardez à l’esprit lorsque vous utilisez des ACL avec le trousseau de nombreuses choses et certaines d'entre elles sont répertoriées ci-dessous :
+Il y a de nombreuses choses à garder à l’esprit lorsque vous utilisez une liste de contrôle d’accès avec le trousseau et que certaines d’entre elles sont répertoriées ci-dessous:
 
-- Utiliser uniquement avec l’Application de premier plan, si vous appelez une opération keychain sur un thread d’arrière-plan que l’appel échoue.
-- Ajout et la mise à jour des éléments de trousseau peuvent nécessiter l’authentification.
-- Si une requête retourne plusieurs éléments correspondants dans le trousseau, l’authentification peut être nécessaire.
-- ACL des éléments protégés sont appareil uniquement et par conséquent pas synchronisé ou sauvegardée.
+- Utiliser uniquement avec l’application de premier plan: Si vous appelez une opération de trousseau sur un thread d’arrière-plan, l’appel échoue.
+- L’ajout et la mise à jour des éléments de trousseau peuvent nécessiter une authentification.
+- Si une requête retourne plusieurs éléments correspondants dans le trousseau, l’authentification peut être requise.
+- Les éléments protégés par la liste de contrôle d’accès sont uniquement des appareils et ne sont donc pas synchronisés ou sauvegardés.
 
-### <a name="using-local-authentication-without-keychain-services"></a>À l’aide de l’authentification locale sans les Services de trousseau
+### <a name="using-local-authentication-without-keychain-services"></a>Utilisation de l’authentification locale sans les services trousseau
 
-L’authentification locale a été créée comme un moyen de collecter des informations d’identification, telles que le code secret ou Touch ID et fonctionne avec l’Enclave sécurisée pour terminer l’authentification de l’utilisateur. Considérez-le comme un pont entre votre application et de l’Enclave sécurisée, qui ne peuvent jamais directement communiquer entre eux. Il peut également servir pour l’évaluation de stratégie pour votre application.
+L’authentification locale a été créée pour collecter des informations d’identification, telles que code secret ou Touch ID, et pour utiliser l’enclave sécurisée pour terminer l’authentification de l’utilisateur. Considérez-le comme un pont entre votre application et l’enclave sécurisée, qui ne peut jamais communiquer directement entre elles. Il peut également être utilisé pour l’évaluation de la stratégie de votre application.
 
-Pour ce faire une application appelle l’évaluation de stratégie à l’intérieur de l’authentification locale, qui démarre l’opération à l’intérieur d’Enclave sécurisée. Vous pouvez tirer parti pour fournir l’authentification à votre application, sans interrogation et y accéder directement l’Enclave sécurisée.
+Pour ce faire, une application appelle l’évaluation de la stratégie à l’intérieur de l’authentification locale, qui démarre l’opération dans l’enclave sécurisée. Vous pouvez l’utiliser pour fournir une authentification à votre application, sans interroger directement l’enclave sécurisée et y accéder.
 
-[![](touchid-images/image13a.png "À l’aide de l’authentification locale sans les Services de trousseau")](touchid-images/image13a.png#lightbox)
+[![](touchid-images/image13a.png "Utilisation de l’authentification locale sans les services trousseau")](touchid-images/image13a.png#lightbox)
 
-À l’aide de l’authentification locale dans votre application fournit un moyen simple de l’implémentation de vérification de l’utilisateur, par exemple pour déverrouiller une fonctionnalité uniquement pour les yeux du propriétaire de l’appareil, telles qu’applications bancaires ou aux contrôles parentaux aide pour la personne application. Vous pouvez également l’utiliser comme un moyen d’étendre l’authentification qui existe déjà : utilisateurs comme leurs informations pour être sécurisé, mais ils le souhaitent également avoir le choix.
+L’utilisation de l’authentification locale dans votre application offre un moyen simple d’implémenter la vérification de l’utilisateur, par exemple pour déverrouiller une fonctionnalité uniquement pour les yeux du propriétaire de l’appareil, tels que les applications bancaires, ou pour faciliter le contrôle parental pour chaque oeuvre. Vous pouvez également l’utiliser comme méthode d’extension de l’authentification existante: les utilisateurs comme leurs informations doivent être sécurisés, mais ils souhaitent également avoir des options.
 
-La sécurité de l’authentification locale est différent de celui de la chaîne de clé. Par exemple, lorsque vous utilisez le trousseau de clés, l’approbation est entre le système d’exploitation et de l’Enclave sécurisée. Avec l’authentification locale, il est entre l’application et le système d’exploitation, ce qui signifie que vous avez uniquement accès aux résultats de l’Enclave sécurisée, pas le sécuriser Enclave lui-même.
+La sécurité de l’authentification locale diffère de celle du trousseau. Par exemple, lors de l’utilisation du trousseau, l’approbation se fait entre le système d’exploitation et l’enclave sécurisée. Avec l’authentification locale, elle se trouve entre l’application et le système d’exploitation, ce qui signifie que vous n’avez accès qu’aux résultats de l’enclave sécurisée, et non à l’enclave sécurisée proprement dite.
 
-Sur le sujet de la sécurité, il est également extrêmement important de savoir qu’il y a **aucun accès** à doigts inscrits ou des images d’empreintes digitales. L’Enclave sécurisée est le propriétaire de ces informations, et par conséquent, aucun autre composant système n’y a accès.
+Dans le domaine de la sécurité, il est également très important de savoir qu’il n’y a **pas d’accès** aux doigts enregistrés ou aux images d’empreinte digitale. L’enclave sécurisée est le propriétaire de ces informations, ce qui signifie qu’aucun autre composant système n’y a accès.
 
-Pour utiliser Touch ID sans trousseau en tirant parti de l’API d’authentification Local, il existe quelques fonctions que nous pouvons utiliser. Ceux-ci sont décrits ci-dessous :
+Pour utiliser Touch ID sans trousseau en tirant parti de l’API d’authentification locale, il existe quelques fonctions que nous pouvons utiliser. Celles-ci sont détaillées ci-dessous:
 
-*   `CanEvaluatePolicy` : Il vérifie simplement si l’appareil est capable d’accepter un ID tactile.
-*   `EvaluatePolicy` : Il démarre l’opération d’authentification et affiche l’interface utilisateur et retourne un `true` ou `false` réponse.
-*   `DeviceOwnerAuthenticationWithBiometrics` : Il s’agit de la stratégie qui peut être utilisée pour afficher l’écran de Touch ID. Il est important de noter qu’il n’existe ici aucun mécanisme de secours du code secret, au lieu de cela, vous devez implémenter ce secours dans votre application pour permettre aux utilisateurs d’ignorer l’authentification ID tactile.
+*   `CanEvaluatePolicy`: Cela permet simplement de vérifier si l’appareil est en capacité d’accepter Touch ID.
+*   `EvaluatePolicy`: Démarre l’opération d’authentification et affiche l’interface utilisateur, et retourne `true` une `false` réponse ou.
+*   `DeviceOwnerAuthenticationWithBiometrics`: Il s’agit de la stratégie qui peut être utilisée pour afficher l’écran touch ID. Il est important de noter qu’il n’existe aucun mécanisme de secours du code secret ici. vous devez donc implémenter ce secours dans votre application pour permettre aux utilisateurs d’ignorer l’authentification Touch ID.
 
-Il existe quelques inconvénients à l’utilisation de l’authentification locale, qui sont répertoriées ci-dessous :
+Il existe quelques inconvénients à l’utilisation de l’authentification locale, qui sont répertoriées ci-dessous:
 
-*   À l’instar de trousseau d’accès, il peut uniquement être exécuté au premier plan. Appeler sur un thread d’arrière-plan entraîne l’échec.
-*   N’oubliez pas que l’évaluation de stratégie peut échouer. Un bouton de code secret doit être implémenté comme un secours.
-*   Vous devez fournir un `localizedReason` pour expliquer pourquoi l’authentification est nécessaire. Cela permet de consolider la confiance avec l’utilisateur.
+*   Comme pour le trousseau, il ne peut être exécuté qu’au premier plan. Son appel sur un thread d’arrière-plan entraînera l’échec de l’opération.
+*   Gardez à l’esprit que l’évaluation de la stratégie peut échouer. Un bouton de code secret doit être implémenté en tant que chute.
+*   Vous devez fournir un `localizedReason` pour expliquer la raison pour laquelle l’authentification est nécessaire. Cela permet de créer une relation de confiance avec l’utilisateur.
 
-Ensuite, dans la section ci-dessous, nous allons examiner comment implémenter l’API de ces mises en garde en tenant compte.
+Ensuite, dans la section ci-dessous, nous verrons comment implémenter l’API en tenant compte de ces avertissements.
 
 ## <a name="adding-touch-id-to-your-application"></a>Ajout de Touch ID à votre application
 
-Dans les sections précédentes, nous avons vu la théorie des accès et l’authentification à l’aide de la chaîne de clé et l’authentification locale. Nous allons maintenant examiner comment vous pouvez intégrer des ID tactile dans à votre application.
+Dans les sections précédentes, nous avons examiné la théorie qui sous-tend l’accès et l’authentification à l’aide du trousseau et de l’authentification locale. Nous allons maintenant voir comment vous pouvez intégrer Touch ID à votre application.
 
 ### <a name="walkthrough"></a>Procédure pas à pas
 
-Nous allons donc étudier d’ajouter l’authentification ID tactile à notre application. Dans cette procédure pas à pas, nous allons maintenant mettre à jour le [Table de la table de montage séquentiel](https://developer.xamarin.com/samples/StoryboardTable/) exemple, ajout de l’authentification locale afin qu’il fonctionne comme le [Table Storyboard – authentification locale](https://developer.xamarin.com/samples/monotouch/StoryboardTable_LocalAuthentication/) exemple, ce qui permet uniquement utilisateurs authentifiés pour ajouter des tâches à la liste.
+Examinons donc l’ajout d’une authentification Touch ID à notre application. Dans cette procédure pas à pas, nous allons mettre à jour l’exemple de [table de Storyboard](https://docs.microsoft.com/samples/xamarin/ios-samples/data/storyboardtable/) , en ajoutant l’authentification locale afin qu’elle fonctionne comme l’exemple [table de montage séquentiel-authentification locale](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable-localauthentication) , qui permet uniquement aux utilisateurs authentifiés d’ajouter des tâches à la liste.
 
-1. Télécharger l’exemple et l’exécuter dans Visual Studio pour Mac.
-2. Double-cliquez sur `MainStoryboard.Storyboard` pour ouvrir l’exemple dans le concepteur iOS. Avec cet exemple, nous souhaitons ajouter un nouvel écran à notre application, qui contrôlera l’authentification. Celui-ci s’insère avant actuel `MasterViewController`.
-3. Faites glisser une nouvelle **contrôleur d’affichage** à partir de la **boîte à outils** à la **aire de conception**. Définir en tant que le **contrôleur d’affichage racine** par **Ctrl + glisser** à partir de la **contrôleur de Navigation**:
+1. Téléchargez l’exemple et exécutez-le dans Visual Studio pour Mac.
+2. Double-cliquez `MainStoryboard.Storyboard` sur on pour ouvrir l’exemple dans le concepteur iOS. Dans cet exemple, nous souhaitons ajouter un nouvel écran à notre application, qui contrôle l’authentification. Cela va avant le actuel `MasterViewController`.
+3. Faites glisser un nouveau **contrôleur d’affichage** de la boîte à **outils** vers le **aire de conception**. Définissez-le en tant que **contrôleur d’affichage racine** en appuyant sur **CTRL + déplacer** à partir du **contrôleur de navigation**:
 
-    [![](touchid-images/image4.png "Définissez le contrôleur d’affichage racine")](touchid-images/image4.png#lightbox)
-4.  Nommez le contrôleur d’affichage `AuthenticationViewController`.
-5. Ensuite, faites glisser un bouton et placez-le sur le `AuthenticationViewController`. Appelez cela `AuthenticateButton`et attribuez-lui le texte `Add a Chore`.
-6. Créer un événement sur le `AuthenticateButton` appelée `AuthenticateMe`.
-7. Créer un manuel segue à partir de `AuthenticationViewController` en cliquant sur la barre noire située au bas et **Ctrl + glisser** à partir de la barre pour la `MasterViewController` et en choisissant **push** (ou **afficher** Si vous utilisez des classes de taille) :
+    [![](touchid-images/image4.png "Définir le contrôleur d’affichage racine")](touchid-images/image4.png#lightbox)
+4.  Nommez le nouveau contrôleur `AuthenticationViewController`d’affichage.
+5. Ensuite, faites glisser un bouton et placez-le `AuthenticationViewController`sur le. Appelez cette `AuthenticateButton`et donnez-lui le texte `Add a Chore`.
+6. Créez un événement sur le `AuthenticateButton` appelé `AuthenticateMe`.
+7. Créez un segue manuel à `AuthenticationViewController` partir de en cliquant sur la barre noire en bas et en appuyant sur **CTRL + faire glisser** de `MasterViewController` la barre vers et en choisissant **Envoyer** (ou **Afficher** si vous utilisez des classes de taille):
 
-    [![](touchid-images/image5.png "Faites glisser la barre vers MasterViewController et en choisissant push ou afficher")](touchid-images/image6.png#lightbox)
-8. Cliquez sur nouvellement créé segue et lui donner l’identificateur `AuthenticationSegue`, comme illustré ci-dessous :
+    [![](touchid-images/image5.png "Faites glisser la barre vers le MasterViewController et choisissez push ou afficher")](touchid-images/image6.png#lightbox)
+8. Cliquez sur le segue nouvellement créé et donnez-lui l’identificateur `AuthenticationSegue`, comme illustré ci-dessous:
 
-    [![](touchid-images/image7.png "La valeur de l’identificateur de segue AuthenticationSegue")](touchid-images/image7.png#lightbox)
+    [![](touchid-images/image7.png "Définissez l’identificateur segue sur AuthenticationSegue")](touchid-images/image7.png#lightbox)
 9. Ajoutez le code suivant à `AuthenticationViewController` :
 
     ```csharp
@@ -164,27 +164,28 @@ Nous allons donc étudier d’ajouter l’authentification ID tactile à notre a
     }
     ```
 
-Il s’agit de tout le code que vous avez besoin pour implémenter l’authentification de Touch ID à l’aide de l’authentification locale. Les lignes en surbrillance dans l’image ci-dessous illustrent l’utilisation de l’authentification locale :
+Il s’agit de tout le code dont vous avez besoin pour implémenter l’authentification Touch ID à l’aide de l’authentification locale. Les lignes en surbrillance dans l’image ci-dessous illustrent l’utilisation de l’authentification locale:
 
-[![](touchid-images/image8.png "Les lignes en surbrillance illustrent l’utilisation de l’authentification locale")](touchid-images/image8.png#lightbox)
+[![](touchid-images/image8.png "Les lignes en surbrillance montrent l’utilisation de l’authentification locale")](touchid-images/image8.png#lightbox)
 
-Tout d’abord, nous avons besoin établir si l’appareil est capable d’accepter de Touch ID d’entrée, à l’aide de la `CanEvaluatePolicy` et en passant dans la stratégie `DeviceOwnerAuthenticationWithBiometrics`. Si cela est vrai, nous pouvons afficher l’interface utilisateur de ID tactile à l’aide de `EvaluatePolicy`. Il existe trois éléments d’information, nous devons passer dans `EvaluatePolicy` – la stratégie proprement dite, une chaîne expliquant pourquoi l’authentification est nécessaire et un gestionnaire de réponse. Le Gestionnaire de réponse indique à l’application de ce qu’il doit faire dans le cas d’une authentification réussie ou non. Nous allons nous intéresser davantage au Gestionnaire de la réponse :
+Tout d’abord, nous devons établir si l’appareil est en capacité d’accepter l’entrée Touch ID, `CanEvaluatePolicy` en utilisant le et en `DeviceOwnerAuthenticationWithBiometrics`passant la stratégie. Si la valeur est true, vous pouvez afficher l’interface tactile de l' `EvaluatePolicy`ID à l’aide de. Nous devons transférer `EvaluatePolicy` trois éléments d’information: la stratégie elle-même, une chaîne expliquant la raison pour laquelle l’authentification est nécessaire et un gestionnaire de réponse. Le gestionnaire de réponse indique à l’application ce qu’elle doit faire dans le cas d’une authentification réussie ou non réussie. Observons plus en détail le gestionnaire de réponses:
 
-[![](touchid-images/image9.png "Le Gestionnaire de réponse")](touchid-images/image9.png#lightbox)
+[![](touchid-images/image9.png "Gestionnaire de réponse")](touchid-images/image9.png#lightbox)
 
-Le Gestionnaire de la réponse est spécifié de type `LAContextReplyHandler`, ce qui amène la réussite des paramètres – un `bool` valeur et un `NSError` appelée `error`. Si elle réussit, il s’agit où nous allons effectuer réellement tout ce qui doivent impérativement que nous voulons authentifier – dans ce cas afficher l’écran qui nous ajoute une corvée de nouveau. N’oubliez pas parmi les mises en garde de l’authentification locale est qu’il doit être exécuté sur le premier plan, veillez à utiliser `InvokeOnMainThread`:
+Le gestionnaire de réponses est spécifié de `LAContextReplyHandler`type, ce qui prend les paramètres Success `bool` : une valeur et `NSError` un `error`appelé. Si elle réussit, c’est là que nous allons exécuter tout ce que nous voulons authentifier. dans ce cas, nous affichons l’écran qui nous permettra d’ajouter une nouvelle corvée. N’oubliez pas que l’authentification locale doit être exécutée au premier plan. Veillez donc à utiliser `InvokeOnMainThread`:
 
 [![](touchid-images/image10.png "Utiliser InvokeOnMainThread pour l’authentification locale")](touchid-images/image10.png#lightbox)
 
-Enfin, lorsque l’authentification s’est déroulée correctement, nous voulons transition vers le `MasterViewController`. Le `PerformSegue` méthode peut être utilisée pour ce faire :
+Enfin, lorsque l’authentification est réussie, nous voulons passer au `MasterViewController`. La `PerformSegue` méthode peut être utilisée pour effectuer cette opération:
 
-[![](touchid-images/image11.png "Appelez la méthode PerformSegue pour effectuer la transition vers MasterViewController")](touchid-images/image11.png#lightbox)
+[![](touchid-images/image11.png "Appeler la méthode PerformSegue pour passer au MasterViewController")](touchid-images/image11.png#lightbox)
 
 ## <a name="summary"></a>Récapitulatif
-Dans ce guide, nous avons vu trousseau et comment cela fonctionne dans iOS. Nous avons également examiné le trousseau d’accès ACL et les modifications apportées à ce dans iOS. Ensuite, nous avons un coup de œil à l’infrastructure de l’authentification locale, qui est une nouveauté dans iOS 8 et ensuite examiné d’implémentation de l’authentification de Touch ID dans notre application.
+
+Dans ce guide, nous avons examiné le trousseau et le fonctionnement dans iOS. Nous avons également exploré la liste de contrôle d’accès de trousseau et les modifications apportées à ce dans iOS. Ensuite, nous avons examiné l’infrastructure d’authentification locale, qui est nouvelle dans iOS 8, puis j’ai examiné l’implémentation de l’authentification Touch ID dans notre application.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Table de montage séquentiel Table : l’authentification locale](https://developer.xamarin.com/samples/monotouch/StoryboardTable_LocalAuthentication/) 
-- [Exemple de trousseau WWDC](https://developer.xamarin.com/samples/KeychainTouchID/)
-- [Trousseau (exemple)](https://developer.xamarin.com/samples/Keychain/)
+- [Table de montage séquentiel – authentification locale](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable-localauthentication)
+- [Exemple de trousseau WWDC](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-keychaintouchid/)
+- [Trousseau (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/keychain/)

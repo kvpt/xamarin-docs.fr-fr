@@ -1,41 +1,41 @@
 ---
-title: Bien démarrer avec Android
-description: Ce document décrit la prise en main à l’aide de l’incorporation de .NET avec Android. Il aborde l’installation de .NET incorporation, création d’un projet de bibliothèque Android, à l’aide de la sortie générée dans un projet Android Studio et d’autres considérations.
+title: Prise en main d’Android
+description: Ce document explique comment prendre en main l’intégration de .NET à Android. Il traite de l’installation de l’incorporation .NET, de la création d’un projet de bibliothèque Android, de l’utilisation de la sortie générée dans un projet de Android Studio et d’autres considérations.
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: e60892edfcf73f3e7cada8923e16bcc1be2c203e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: df29a7f595973a0447899666838e21418ff69330
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876900"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650074"
 ---
-# <a name="getting-started-with-android"></a>Bien démarrer avec Android
+# <a name="getting-started-with-android"></a>Prise en main d’Android
 
-Outre les exigences à partir de la [mise en route avec Java](~/tools/dotnet-embedding/get-started/java/index.md) guide, vous devez également :
+Outre les spécifications du Guide de [prise en](~/tools/dotnet-embedding/get-started/java/index.md) main de Java, vous aurez également besoin des éléments suivants:
 
-* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/) ou version ultérieure
-* [Android Studio 3.x](https://developer.android.com/studio/index.html) avec Java 1.8
+* [Xamarin. Android 7,5](https://visualstudio.microsoft.com/xamarin/) ou version ultérieure
+* [Android Studio 3. x](https://developer.android.com/studio/index.html) avec Java 1,8
 
-Une vue d’ensemble, nous allons :
+En guise de vue d’ensemble, nous allons:
 
 * Créer un C# projet de bibliothèque Android
-* Installer l’incorporation de .NET via NuGet
-* Exécutez l’incorporation de .NET sur l’assembly de bibliothèque Android
+* Installer l’incorporation .NET via NuGet
+* Exécuter l’incorporation .NET sur l’assembly de bibliothèque Android
 * Utiliser le fichier AAR généré dans un projet Java dans Android Studio
 
 ## <a name="create-an-android-library-project"></a>Créer un projet de bibliothèque Android
 
-Ouvrez Visual Studio pour Windows ou Mac, créez un projet de bibliothèque de classes Android, nommez-le **hello de csharp**et enregistrez-le à **~/Projects/hello-from-csharp** ou **%USERPROFILE%\ Projects\hello de csharp**.
+Ouvrez Visual Studio pour Windows ou Mac, créez un projet de bibliothèque de classes Android, nommez-le **Hello-from-CSharp**, puis enregistrez-le dans **~/projects/hello-from-CSharp** ou **%UserProfile%\Projects\hello-from-CSharp**.
 
-Ajoutez une nouvelle activité Android nommé **HelloActivity.cs**, suivie d’une disposition Android à **Resource/layout/hello.axml**.
+Ajoutez une nouvelle activité Android nommée **HelloActivity.cs**, suivie d’une disposition Android sur **Resource/layout/Hello. AXML**.
 
-Ajouter un nouveau `TextView` à votre disposition, puis remplacez le texte à quelque chose de plus agréable.
+Ajoutez un nouveau `TextView` à votre disposition et remplacez le texte par un texte agréable.
 
-Votre source de mise en page doit ressembler à ceci :
+Votre source de disposition doit ressembler à ceci:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -53,7 +53,7 @@ Votre source de mise en page doit ressembler à ceci :
 </LinearLayout>
 ```
 
-Dans votre activité, assurez-vous que vous appelez `SetContentView` avec votre nouvelle disposition :
+Dans votre activité, assurez-vous que `SetContentView` vous appelez avec votre nouvelle disposition:
 
 ```csharp
 [Activity(Label = "HelloActivity"),
@@ -70,15 +70,15 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> N’oubliez pas que le `[Register]` attribut. Pour plus d’informations, consultez [Limitations](#current-limitations-on-android).
+> N’oubliez pas `[Register]` l’attribut. Pour plus d’informations, consultez [limitations](#current-limitations-on-android).
 
 Générez le projet. L’assembly résultant sera enregistré dans `bin/Debug/hello-from-csharp.dll`.
 
-## <a name="installing-net-embedding-from-nuget"></a>Installation d’incorporation de .NET à partir de NuGet
+## <a name="installing-net-embedding-from-nuget"></a>Installation de l’incorporation .NET à partir de NuGet
 
-Suivez ces [instructions](~/tools/dotnet-embedding/get-started/install/install.md) pour installer et configurer .NET incorporation pour votre projet.
+Suivez ces [instructions](~/tools/dotnet-embedding/get-started/install/install.md) pour installer et configurer l’incorporation .net pour votre projet.
 
-L’appel de commande, vous devez configurer ressemblera à ceci :
+L’appel de commande que vous devez configurer doit ressembler à ceci:
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio pour Mac
 
@@ -96,22 +96,22 @@ if exist %E4K_OUTPUT% rmdir /S /Q %E4K_OUTPUT%
 
 ## <a name="use-the-generated-output-in-an-android-studio-project"></a>Utiliser la sortie générée dans un projet Android Studio
 
-1. Ouvrez Android Studio et créez un nouveau projet avec un **activité vide**.
-2. Avec le bouton droit sur votre **application** module et choisissez **New > Module**.
-3. Sélectionnez **importation. JAR /. Le Package AAR**.
-4. Permet de localiser le navigateur directory **~/Projects/hello-from-csharp/output/hello_from_csharp.aar** et cliquez sur **Terminer**.
+1. Ouvrez Android Studio et créez un projet avec une **activité vide**.
+2. Cliquez avec le bouton droit sur le module de votre **application** , puis choisissez **Nouveau > module**.
+3. Sélectionnez **Importer. JAR/. Package AAR**.
+4. Utilisez le navigateur de répertoires pour localiser **~/projects/hello-from-CSharp/output/hello_from_csharp.AAR** , puis cliquez sur **Terminer**.
 
-![Importer AAR dans Android Studio](android-images/androidstudioimport.png)
+![Importer des AAR dans Android Studio](android-images/androidstudioimport.png)
 
-Cette commande copie le fichier AAR dans un nouveau module nommé **hello_from_csharp**.
+Cette opération copie le fichier AAR dans un nouveau module nommé **hello_from_csharp**.
 
 ![Projet Android Studio](android-images/androidstudioproject.png)
 
-Pour utiliser le nouveau module à partir de votre **application**, avec le bouton droit et choisissez **ouvrir les paramètres du Module**. Sur le **dépendances** onglet, ajoutez une nouvelle **Module dépendance** et choisissez **: hello_from_csharp**.
+Pour utiliser le nouveau module à partir de votre **application**, cliquez avec le bouton droit et choisissez **ouvrir les paramètres du module**. Sous l' onglet dépendances, ajoutez une nouvelle **dépendance de module** et choisissez **: hello_from_csharp**.
 
-![Dépendances d’Android Studio](android-images/androidstudiodependencies.png)
+![Dépendances de Android Studio](android-images/androidstudiodependencies.png)
 
-Dans votre activité, ajoutez un nouveau `onResume` (méthode) et utilisez le code suivant pour lancer le C# activité :
+Dans votre activité, ajoutez une nouvelle `onResume` méthode et utilisez le code suivant pour lancer l' C# activité:
 
 ```java
 import hello_from_csharp.*;
@@ -128,11 +128,11 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### <a name="assembly-compression-important"></a>Compression de l’assembly (*IMPORTANT*)
+### <a name="assembly-compression-important"></a>Compression d’assembly (*important*)
 
-Une modification supplémentaire est requise pour l’incorporation de .NET dans votre projet Android Studio.
+Une autre modification est nécessaire pour l’incorporation .NET dans votre projet de Android Studio.
 
-Ouvrez votre application **build.gradle** fichier, puis ajoutez la modification suivante :
+Ouvrez le fichier **Build. gradle** de votre application et ajoutez la modification suivante:
 
 ```groovy
 android {
@@ -143,43 +143,43 @@ android {
 }
 ```
 
-Xamarin.Android charge actuellement les assemblys .NET directement à partir de l’APK, mais elle nécessite les assemblys ne soient ne pas compressés.
+Xamarin. Android charge actuellement les assemblys .NET directement à partir du APK, mais il n’est pas nécessaire de compresser les assemblys.
 
-Si vous n’avez pas cette configuration, l’application sera bloque au lancement et imprimer quelque chose comme ceci dans la console :
+Si vous ne disposez pas de ce programme d’installation, l’application se bloque lors du lancement et affiche ce qui suit dans la console:
 
 ```shell
 com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavailable>'. Assuming this is part of Fast Deployment. Exiting...
 ```
 
-## <a name="run-the-app"></a>Exécuter l'application
+## <a name="run-the-app"></a>Exécution de l'application
 
-Lors du lancement de votre application :
+Lors du lancement de votre application:
 
-![Hello de C# exemple en cours d’exécution dans l’émulateur](android-images/hello-from-csharp-android.png)
+![Bonjour de C# l’exemple en cours d’exécution dans l’émulateur](android-images/hello-from-csharp-android.png)
 
-Notez que s’est-il passé ici :
+Notez ce qui s’est produit ici:
 
-* Nous avons un C# (classe), `HelloActivity`, que les sous-classes Java
+* Nous avons une C# classe, `HelloActivity`, qui sous-classe Java
 * Nous avons des fichiers de ressources Android
-* Nous avons utilisé à partir de Java dans Android Studio
+* Nous les avons utilisées à partir de Java dans Android Studio
 
-Pour cet exemple fonctionne, tous les éléments suivants sont configurés dans le fichier APK final :
+Pour que cet exemple fonctionne, tous les éléments suivants sont configurés dans le APK final:
 
-* Xamarin.Android est configuré sur le démarrage de l’application
-* Les assemblys .NET inclus dans   **/assemblys de ressources**
-* **AndroidManifest.xml** modifications pour votre C# activités, etc.
-* Des ressources Android à partir de bibliothèques .NET
-* [Les Wrappers RCW Android](~/android/platform/java-integration/android-callable-wrappers.md) pour toute `Java.Lang.Object` sous-classe
+* Xamarin. Android est configuré au démarrage de l’application
+* Assemblys .NET inclus dans les **ressources/assemblys**
+* Modifications apportées à **fichier AndroidManifest. xml** pour vos C# activités, etc.
+* Ressources et ressources Android à partir des bibliothèques .NET
+* [Wrappers Android pouvant être appelés](~/android/platform/java-integration/android-callable-wrappers.md) pour `Java.Lang.Object` une sous-classe
 
-Si vous recherchez une procédure pas à pas supplémentaires, consultez la vidéo suivante, qui illustre l’incorporation de Petzold [démonstration de la peinture avec les doigts](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/) dans un projet Android Studio :
+Si vous recherchez une procédure pas à pas supplémentaire, consultez la vidéo suivante, qui illustre l’incorporation de la [démonstration FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) de Charles Petzold dans un projet Android Studio:
 
 [![Embeddinator-4000 pour Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
-## <a name="using-java-18"></a>À l’aide de Java 1.8
+## <a name="using-java-18"></a>Utilisation de Java 1,8
 
-À compter de la rédaction de cet article, la meilleure option consiste à utiliser Android Studio 3.0 ([télécharger ici](https://developer.android.com/studio/index.html)).
+À l’écriture de cela, la meilleure option consiste à utiliser Android Studio 3,0 ([Téléchargez ici](https://developer.android.com/studio/index.html)).
 
-Pour activer Java 1.8 dans votre module application **build.gradle** fichier :
+Pour activer Java 1,8 dans le fichier **Build. gradle** du module de votre application:
 
 ```groovy
 android {
@@ -191,9 +191,9 @@ android {
 }
 ```
 
-Vous pouvez également examinons une [projet de test Android Studio](https://github.com/mono/Embeddinator-4000/blob/master/tests/android/app/build.gradle) pour plus d’informations. 
+Pour plus d’informations, vous pouvez également consulter un [projet de test Android Studio](https://github.com/mono/Embeddinator-4000/blob/master/tests/android/app/build.gradle) . 
 
-Si vous voulez utiliser stable de 2.3.x Android Studio, vous devrez activer la chaîne d’outils Jack déconseillée :
+Si vous souhaitez utiliser Android Studio 2.3. x stable, vous devez activer la chaîne d’outils Jack déconseillée:
 
 ```groovy
 android {
@@ -207,7 +207,7 @@ android {
 
 ## <a name="current-limitations-on-android"></a>Limitations actuelles sur Android
 
-À ce stade, si vous créez une sous-classe `Java.Lang.Object`, Xamarin.Android génère le stub de Java (Android Callable Wrapper) au lieu d’incorporer de .NET. Pour cette raison, vous devez suivre les mêmes règles pour l’exportation C# à Java en tant que Xamarin.Android. Exemple :
+Pour le moment, si vous sous `Java.Lang.Object`-classez, Xamarin. Android génère le stub Java (wrapper Android pouvant être appelé) au lieu de l’incorporation .net. Pour cette raison, vous devez suivre les mêmes règles pour l' C# exportation vers Java en tant que Xamarin. Android. Par exemple :
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,10 +223,10 @@ public class ViewSubclass : TextView
 }
 ```
 
-* `[Register]` est requise pour mapper à un nom de package Java souhaité
-* `[Export]` est requis pour rendre une méthode visible à Java
+* `[Register]`est requis pour mapper à un nom de package Java souhaité
+* `[Export]`est requis pour rendre une méthode visible pour Java
 
-Nous pouvons utiliser `ViewSubclass` dans Java comme suit :
+Nous pouvons utiliser `ViewSubclass` dans Java comme suit:
 
 ```java
 import mono.embeddinator.android.ViewSubclass;
@@ -235,36 +235,36 @@ ViewSubclass v = new ViewSubclass(this);
 v.apply("Hello");
 ```
 
-En savoir plus sur [intégration Java avec Xamarin.Android](~/android/platform/java-integration/index.md).
+En savoir plus sur l' [intégration de Java à Xamarin. Android](~/android/platform/java-integration/index.md).
 
-## <a name="multiple-assemblies"></a>Plusieurs assemblys
+## <a name="multiple-assemblies"></a>Assemblys multiples
 
-Incorporation d’un assembly unique est simple. Toutefois, il est plus probable que vous aurez plusieurs C# assembly. Nombre de fois où vous aurez dépendances sur les packages NuGet telles que les bibliothèques de prise en charge Android ou les Services Google Play qui compliquer encore davantage les choses.
+L’incorporation d’un assembly unique est simple; Toutefois, il est bien plus probable que vous ayez plus d’un C# assembly. Souvent, vous aurez des dépendances avec les packages NuGet, tels que les bibliothèques de support Android ou les Google Play Services qui compliquent encore davantage les choses.
 
-Cela entraîne un dilemme, étant donné que l’incorporation de .NET doit inclure les nombreux types de fichiers dans la dernière AAR telles que :
+Cela provoque un dilemme, puisque l’incorporation .NET doit inclure de nombreux types de fichiers dans le AAR final, par exemple:
 
 * Ressources Android
 * Ressources Android
 * Bibliothèques natives Android
-* Code source java Android
+* Source Android Java
 
-Vous sûrement ne souhaitez pas inclure ces fichiers à partir de la bibliothèque de prise en charge Android ou Google Play Services dans votre AAR mais préférez utiliser la version officielle à partir de Google dans Android Studio.
+Il est très probable que vous ne souhaitiez pas inclure ces fichiers à partir de la bibliothèque de support Android ou Google Play Services dans votre AAR, mais plutôt utiliser la version officielle de Google dans Android Studio.
 
-Voici l’approche recommandée :
+Voici l’approche recommandée:
 
-* Passer de l’incorporation de .NET n’importe quel assembly que vous possédez (avez pas la source) et à appeler à partir de Java
-* Passer de l’incorporation de .NET tout assembly dont vous avez besoin d’Android, des bibliothèques natives ou des ressources à partir de
-* Ajouter les dépendances Java comme Android prend en charge la bibliothèque ou Google Play Services dans Android Studio
+* Passons à l’incorporation .NET de tout assembly dont vous êtes propriétaire (source pour) et que vous souhaitez appeler à partir de Java
+* Passer .NET incorporer tout assembly dont vous avez besoin des ressources Android, des bibliothèques natives ou des ressources à partir de
+* Ajoutez des dépendances Java comme la bibliothèque de prise en charge Android ou Google Play Services dans Android Studio
 
-Par conséquent, votre commande peut être :
+Par conséquent, votre commande peut être:
 
 ```shell
 mono Embeddinator-4000.exe --gen=Java --platform=Android -c -o output YourMainAssembly.dll YourDependencyA.dll YourDependencyB.dll
 ```
 
-Vous devez exclure quoi que ce soit à partir de NuGet, sauf si vous découvrez qu’il contient des ressources Android, ressources, etc. que vous aurez besoin dans votre projet Android Studio. Vous pouvez également omettre les dépendances que vous n’avez pas besoin d’appeler à partir de Java et l’éditeur de liens _doit_ incluent les parties de votre bibliothèque qui sont nécessaires.
+Vous devez exclure quoi que ce soit de NuGet, à moins que vous ne l’ayez trouvé contient des ressources Android, des ressources, etc. dont vous aurez besoin dans votre projet Android Studio. Vous pouvez également omettre les dépendances que vous n’avez pas besoin d’appeler à partir de Java, et l’éditeur de liens _doit_ inclure les parties de votre bibliothèque qui sont nécessaires.
 
-Pour ajouter toutes les dépendances Java nécessaires dans Android Studio, votre **build.gradle** fichier peut ressembler à :
+Pour ajouter des dépendances Java nécessaires dans Android Studio, votre fichier **Build. gradle** peut se présenter comme suit:
 
 ```groovy
 dependencies {
@@ -279,10 +279,10 @@ dependencies {
 
 * [Rappels sur Android](~/tools/dotnet-embedding/android/callbacks.md)
 * [Recherche Android préliminaire](~/tools/dotnet-embedding/android/index.md)
-* [Limitations de l’incorporation de .NET](~/tools/dotnet-embedding/limitations.md)
+* [Limitations de l’incorporation .NET](~/tools/dotnet-embedding/limitations.md)
 * [Contribution au projet open source](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Codes d’erreur et descriptions](~/tools/dotnet-embedding/errors.md)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de météo (Android)](https://github.com/jamesmontemagno/embeddinator-weather)
+- [Exemple Weather (Android)](https://github.com/jamesmontemagno/embeddinator-weather)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363263"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656192"
 ---
 # <a name="text-in-xamarinforms"></a>Texte dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _À l’aide de Xamarin.Forms pour entrer ou afficher le texte._
 
@@ -66,7 +66,7 @@ Consultez le [éditeur](editor.md) article pour plus d’informations.
 
 ## <a name="fontsfontsmd"></a>[Polices](fonts.md)
 
-De nombreux contrôles prennent en charge les paramètres de police différente à l’aide de polices intégrés sur chaque plateforme, ou des polices personnalisées inclus avec votre application. Consultez le [polices](fonts.md) article pour plus d’informations.
+De nombreux contrôles prennent en charge des paramètres de police différents à l’aide des polices intégrées sur chaque plateforme, ou des polices personnalisées incluses avec votre application. Consultez le [polices](fonts.md) article pour plus d’informations.
 
 <a name="Styles" />
 
@@ -76,4 +76,4 @@ Reportez-vous à [travailler avec des styles](~/xamarin-forms/user-interface/sty
 
 ## <a name="related-links"></a>Liens associés
 
-- [Texte (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

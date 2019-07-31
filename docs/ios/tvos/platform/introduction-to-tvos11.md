@@ -1,48 +1,48 @@
 ---
 title: Introduction à tvOS 11
-description: Ce document fournit une vue d’ensemble des nouvelles fonctionnalités disponibles pour les développeurs Xamarin dans tvOS 11 et des liens vers les notes de publication d’Apple.
+description: Ce document fournit une brève présentation des nouvelles fonctionnalités disponibles pour les développeurs Xamarin dans tvOS 11 et des liens vers les notes de publication d’Apple.
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/08/2018
-ms.openlocfilehash: 4da83d5ecc7a54bcd692751e07c81e8e5bb0d94a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: aa28384b0f0f8e4901f975a7d47a5a3db964e539
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60932560"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657384"
 ---
 # <a name="introduction-to-tvos-11"></a>Introduction à tvOS 11
 
-_Nouvelles fonctionnalités disponibles pour les développeurs à l’aide de Xamarin pour tvOS 11_
+_Nouvelles fonctionnalités disponibles pour les développeurs utilisant Xamarin pour tvOS 11_
 
-Accéder aux nouvelles fonctionnalités de tvOS 11 dans les applications Xamarin.tvOS :
+Accédez aux nouvelles fonctionnalités tvOS 11 dans Xamarin. tvOS Apps:
 
 - Prise en charge des langues de droite à gauche 
-- Prise en charge de focus de SceneKit et SpriteKit
-- Repères de disposition de zone protégée 
-- Style de bouton simple, styles peut plus facilement
-- Images superposées avec prise en charge pour une vue interactive
-- Animations personnalisées coordonné aux interactions de focus
-- Coordonné avec les interactions de focus des sons personnalisés
+- Focus sur la prise en charge de SceneKit et SpriteKit
+- Repères de disposition de zone sécurisée 
+- Style de bouton normal, qui peut être plus facilement stylisé
+- Images en couches avec prise en charge du focus interactif
+- Animations personnalisées coordonnées avec des interactions de focus
+- Sons personnalisés coordonnés avec des interactions de focus
 - Apprentissage automatique avec CoreML
-- Détection de fonctionnalité d’image et vidéo
-- Prise en charge de haute efficacité vidéo de codage (HEVC)
-- Prise en charge de haute efficacité Image Format (HEIF)
+- Détection des fonctionnalités d’images et de vidéos
+- Prise en charge du codage vidéo (HEVC) haut rendement
+- Prise en charge du format d’image haute performance (HEIF)
 - Promotion des achats dans l’application sur l’App Store
-- Images claires et sombres pour les extensions de l’étagère de haut
+- Images claires et sombres pour les extensions d’étagères principales
 - AirPlay 2
-- Métal 2
+- Metal 2
 
-Pour obtenir une liste complète des modifications Apple a introduit dans tvOS 11, consultez le [Nouveautés tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html) document.
+Pour obtenir la liste complète des modifications apportées à Apple dans tvOS 11, consultez le document [What’s New in tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html) .
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://developer.xamarin.com/samples/tvos/all/)
-- [Introduction à tvOS](~/ios/tvos/index.md)
-- [Quelles sont les nouveautés dans tvOS 11 (Guide du développeur Apple)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
-- [Nouveautés dans tvOS 11 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/209/)
-- [Interaction avec le focus dans tvOS 11 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/224/)
+- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Présentation de tvOS](~/ios/tvos/index.md)
+- [Nouveautés de tvOS 11 (Guide du développeur Apple)](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html)
+- [Nouveautés de tvOS 11 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/209/)
+- [Interaction de focus dans tvOS 11 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/224/)
 - [tvOS pour les développeurs (Apple)](https://developer.apple.com/tvos/)

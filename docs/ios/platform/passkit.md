@@ -1,110 +1,110 @@
 ---
-title: PassKit dans Xamarin.iOS
-description: L’application Wallet permet aux utilisateurs de stocker des passes numériques sur leurs appareils à iOS. Le framework PassKit permet aux développeurs d’interagir par programmation avec les passes.
+title: PassKit dans Xamarin. iOS
+description: L’application Wallet permet aux utilisateurs d’iOS de stocker des passages numériques sur leurs appareils. L’infrastructure PassKit permet aux développeurs d’interagir par programme avec les passes.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: d1c640bef41e875b3bb427d657c9c239e4c3e16d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2bd694d903da9f30f8fffa5fea991c1f386752dd
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61192372"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656386"
 ---
-# <a name="passkit-in-xamarinios"></a>PassKit dans Xamarin.iOS
+# <a name="passkit-in-xamarinios"></a>PassKit dans Xamarin. iOS
 
-L’application de portefeuille iOS permet aux utilisateurs de stocker des passes numériques sur leurs appareils.
-Ces passes générés par les commerçants et envoyées au client par courrier électronique, URL, ou via l’application iOS de partenaire. Ces passes peuvent représenter plusieurs choses, à partir de tickets de film aux cartes de fidélité à embarquement. Le framework PassKit permet aux développeurs d’interagir par programmation avec les passes.
+L’application iOS Wallet permet aux utilisateurs de stocker des passages numériques sur leurs appareils.
+Ces tests sont générés par les commerçants et envoyés au client par courrier électronique, URL ou par le biais de l’application iOS du commerçant. Ces passes peuvent représenter diverses choses, des tickets de cinéma aux cartes de fidélité aux passes de la carte. L’infrastructure PassKit permet aux développeurs d’interagir par programme avec les passes.
 
-Ce document présente Wallet et à l’aide de l’API de PassKit avec Xamarin.iOS.
+Ce document présente Wallet et utilise l’API PassKit avec Xamarin. iOS.
 
- [![](passkit-images/image1.png "Le portefeuille stocke et d’organise toutes les étapes sur un téléphone")](passkit-images/image1.png#lightbox)
+ [![](passkit-images/image1.png "Le portefeuille stocke et organise tous les passages sur un téléphone")](passkit-images/image1.png#lightbox)
 
 ## <a name="requirements"></a>Configuration requise
 
-Les fonctionnalités de PassKit décrites dans ce document nécessitent iOS 6 et Xcode 4.5, ainsi que de Xamarin.iOS 6.0.
+Les fonctionnalités PassKit présentées dans ce document requièrent iOS 6 et Xcode 4,5, ainsi que Xamarin. iOS 6,0.
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
-Le problème de clés qui résout de PassKit est la distribution et la gestion de codes-barres. Voici quelques exemples réels d’utilisation de codes-barres sont actuellement :
+Le problème clé que PassKit résout est la distribution et la gestion des codes-barres. Voici quelques exemples concrets de la façon dont les codes-barres sont actuellement utilisés:
 
--   **Achète des tickets de film en ligne** : les clients sont généralement envoyé par courrier électronique un code-barres représentant leurs tickets. Ce code-barres est imprimé et dirigé vers le cinéma pour être analysés pour l’entrée.
--   **Cartes de fidélité** – clients comportent un nombre de différentes cartes spécifiques aux magasins dans leur portefeuille ou les cordons, pour l’affichage et analyse quand ils achètent des marchandises.
--   **Coupons** – Coupons sont distribués par courrier électronique, en tant que pages web imprimable, via partout et comme les codes-barres dans les journaux et magazines. Les clients les mène à un magasin pour l’analyse, pour recevoir en retour de marchandises, des services ou des remises.
--   **Embarquement** – similaire à l’achat d’un ticket de film.
+-   **Achat de tickets de film en ligne** : les clients sont généralement envoyés par e-mail à un code-barres qui représente leurs tickets. Ce code-barres est imprimé et dirigé vers le cinéma à analyser pour l’entrée.
+-   **Cartes de fidélité** : les clients comportent un certain nombre de cartes spécifiques au magasin dans leur portefeuille ou sur leur porte-monnaie pour les afficher et les analyser lorsqu’ils achètent des marchandises.
+-   **Coupons** : les coupons sont distribués par e-mail, en tant que pages Web imprimables, via cadres et en tant que codes-barres dans les journaux et les magazines. Les clients les apportent à un magasin pour la numérisation, pour recevoir des marchandises, des services ou des remises en retour.
+-   Des passes d' **embarquement** , similaires à l’achat d’un ticket de film.
 
-PassKit offre une alternative pour chacun de ces scénarios :
+PassKit offre une alternative pour chacun de ces scénarios:
 
--   **Tickets de film** – après l’achat, le client ajoute une passe de ticket d’événement (via e-mail ou un lien de site Web). En tant que l’heure pour les approches de film, le test s’affichent automatiquement sur l’écran de verrouillage en guise de rappel, et à l’arrivée au cinéma le pass est facilement récupéré et affiché dans le portefeuille pour l’analyse.
--   **Cartes de fidélité** – au lieu de (ou en plus) en fournissant une carte physique, magasins peuvent émettre (par e-mail ou une fois la connexion de site Web) une passe de la carte Store. Le magasin peut fournir des fonctionnalités supplémentaires telles que la mise à jour le solde du compte lors de la passe par le biais de notifications push, et à l’aide des services de géolocalisation la passe peut automatiquement s’affichent sur l’écran de verrouillage lorsque le client est près d’un emplacement de magasin.
--   **Coupons** – passes de Coupon peuvent facilement être générés avec des caractéristiques uniques pour faciliter le suivi et distribués via les liens de messagerie ou un site Web. Coupons téléchargés peuvent automatiquement s’affichent sur l’écran de verrouillage lorsque l’utilisateur est près d’un emplacement spécifique, et/ou à une date donnée (par exemple, lorsque la date d’expiration approche). Étant donné que les coupons sont stockés sur le téléphone de l’utilisateur, elles sont toujours pratique et ne pas égarés. Coupons peuvent encourager les clients à télécharger des applications Compagnon, car les liens de l’App Store peuvent être incorporés dans le passage, augmenter l’engagement avec le client.
--   **Embarquement** – après un processus de vérification en ligne, le client recevrait leur carte d’embarquement par courrier électronique ou un lien. Une application Compagnon fournies par le fournisseur de transport peut inclure le processus d’archivage et permettent également au client d’exécuter des fonctions supplémentaires comme choisir leur siège ou un repas. Le fournisseur de transport peut utiliser des notifications push pour mettre à jour de la passe si le transport est retardé ou annulé. Comme les approches de temps embarquement la passe s’affiche sur l’écran de verrouillage en guise de rappel et pour fournir un accès rapide pour le test.
+-   **Movie Tickets** – après l’achat, le client ajoute une passe de ticket d’événement (par e-mail ou un lien de site Web). À mesure que le temps pour le film approche, le passage s’affiche automatiquement sur l’écran de verrouillage comme un rappel, et à l’arrivée au cinéma, la passe est facilement récupérée et affichée dans Wallet pour analyse.
+-   Les **cartes de fidélité** : plutôt que (ou en plus) fournissant une carte physique, les magasins peuvent émettre (par courrier électronique ou après une connexion à un site Web) une carte de magasin. Le magasin peut fournir des fonctionnalités supplémentaires telles que la mise à jour du solde du compte lors de la transmission via des notifications push et l’utilisation des services de géolocalisation. la passe peut s’afficher automatiquement sur l’écran de verrouillage lorsque le client est proche de l’emplacement du magasin.
+-   **Coupons: les** passes de coupon peuvent facilement être générées avec des caractéristiques uniques pour faciliter le suivi et être distribuées par e-mail ou via des liens de sites Web. Les coupons téléchargés peuvent apparaître automatiquement sur l’écran de verrouillage lorsque l’utilisateur est proche d’un emplacement spécifique, et/ou à une date donnée (par exemple, lorsque la date d’expiration approche). Étant donné que les coupons sont stockés sur le téléphone de l’utilisateur, ils sont toujours pratiques et ne sont pas mal placés. Les coupons peuvent inciter les clients à télécharger des applications auxiliaires, car les liens de l’App Store peuvent être incorporés dans la passe, ce qui renforce l’engagement avec le client.
+-   Passes de l' **embarquement** : après un processus d’archivage en ligne, le client recevrait sa transmission par e-mail ou par lien. Une application auxiliaire fournie par le fournisseur de transport peut inclure le processus d’archivage et permettre au client d’effectuer des fonctions supplémentaires telles que le choix de son siège ou de son repas. Le fournisseur de transport peut utiliser des notifications push pour mettre à jour la passe si le transport est retardé ou annulé. À mesure que le temps d’embarquement s’approche de la passe, l’écran de verrouillage s’affiche comme rappel et pour fournir un accès rapide à la passe.
 
-Fondamentalement, PassKit fournit un moyen simple et pratique pour stocker et afficher les codes-barres sur votre appareil iOS. Avec le plus de temps et l’intégration d’écran de verrouillage emplacement, notifications push et Application Compagnon intègrent offre un foundation pour les ventes très sophistiqués, la création de tickets et la facturation des services.
+PassKit offre un moyen simple et pratique de stocker et d’afficher des codes-barres sur votre appareil iOS. Avec l’intégration de l’écran de verrouillage de l’emplacement et du temps supplémentaire, les notifications push et l’intégration de l’application auxiliaire constituent une base pour les services de vente, de ticket et de facturation très sophistiqués.
 
-## <a name="passkit-ecosystem"></a>Écosystème de PassKit
+## <a name="passkit-ecosystem"></a>Écosystème PassKit
 
-PassKit n’est pas simplement une API au sein de CocoaTouch, au lieu de cela il fait partie d’un plus grand écosystème d’applications, données et services qui facilitent le partage sécurisé et gestion de codes-barres et autres données. Ce diagramme montre les différentes entités qui peuvent être impliquées dans la création et à l’aide de passes :
+PassKit n’est pas simplement une API dans CocoaTouch, il fait plutôt partie d’un plus grand écosystème d’applications, de données et de services qui facilitent le partage et la gestion sécurisés de codes-barres et d’autres données. Ce diagramme de haut niveau montre les différentes entités qui peuvent être impliquées dans la création et l’utilisation de passes:
 
- [![](passkit-images/image2.png "Ce diagramme de haut niveau montre les entités impliquées dans la création et à l’aide de passes")](passkit-images/image2.png#lightbox)
+ [![](passkit-images/image2.png "Ce diagramme de haut niveau montre les entités impliquées dans la création et l’utilisation de passes.")](passkit-images/image2.png#lightbox)
 
-Chaque partie de l’écosystème a un rôle clairement définies :
+Chaque partie de l’écosystème a un rôle clairement défini:
 
--   **Wallet** – application iOS intégrée de d’Apple qui stocke et affiche les passes. Il s’agit du seul emplacement passes sont rendus pour une utilisation dans le monde réel (ie le code-barres s’affiche, ainsi que toutes les données localisées lors du passage).
--   **Le Guide des applications** – les applications iOS 6 créées par passer des fournisseurs pour étendre les fonctionnalités des passes émettre, telles que l’ajout de valeur à une carte de magasin, modification du siège sur une carte d’embarquement ou autre fonction d’entreprise spécifiques. Applications Compagnon ne sont pas requises pour un laissez-passer pour être utile.
--   **Votre serveur** – un serveur sécurisé où passe peut être généré et signé pour la distribution. Votre application Compagnon peuvent se connecter à votre serveur pour générer des passes de nouveau ou demander des mises à jour de passe existant. Vous pouvez éventuellement implémenter le web passe de l’API de service Wallet appellerait pour mettre à jour.
--   **Les serveurs APNS** – votre serveur a la possibilité de notifier le portefeuille des mises à jour à un passage sur un appareil donné à l’aide de APNS. Une notification push à Wallet qui prendra alors contact avec votre serveur pour les détails de la modification. Applications Compagnon n’avez pas besoin d’implémenter APNS pour cette fonctionnalité (ils peuvent écouter le `PKPassLibraryDidChangeNotification` ).
--   **Conduit applications** : les Applications qui ne manipulent directement les passe (par exemple, les applications Compagnon font), mais qui permet d’améliorer leur utilité en reconnaissant les passes et leur permettant à ajouter au Wallet. Clients de messagerie, les navigateurs de réseau social et les autres applications d’agrégation de données peuvent tous rencontrer les pièces jointes ou des liens vers des passes.
+-   **Portefeuille** : application iOS intégrée à Apple qui stocke et affiche des passes. C’est le seul endroit où les passes sont rendues pour une utilisation dans le monde réel (c’est-à-dire que le code-barres est affiché, ainsi que toutes les données localisées dans la passe).
+-   **Applications auxiliaires** : applications iOS 6 générées par les fournisseurs de transmission pour étendre les fonctionnalités des passes qu’elles émettent, telles que l’ajout d’une valeur à une carte de magasin, la modification du siège sur une passe d’embarquement ou une autre fonction spécifique à l’entreprise. Les applications auxiliaires ne sont pas requises pour qu’une Pass soit utile.
+-   **Votre serveur** : serveur sécurisé sur lequel les passes peuvent être générées et signées pour être distribuées. Votre application auxiliaire peut se connecter à votre serveur pour générer de nouvelles Pass ou demander des mises à jour à des passes existantes. Vous pouvez éventuellement implémenter l’API de service Web que Wallet appellera pour mettre à jour les passes.
+-   **Serveurs APNs** : votre serveur a la possibilité de notifier le portefeuille de mises à jour à un transfert sur un appareil donné à l’aide de APNs. Envoyer une notification push à Wallet, qui contactera ensuite votre serveur pour obtenir des détails sur la modification. Les applications auxiliaires n’ont pas besoin d’implémenter APNS pour cette fonctionnalité (elles `PKPassLibraryDidChangeNotification` peuvent écouter le).
+-   Applications de **conduit** : applications qui ne manipulent pas directement les passes (comme les applications auxiliaires), mais qui peuvent améliorer leur utilitaire en reconnaissant des passes et en leur permettant d’être ajoutées à Wallet. Les clients de messagerie, les navigateurs de réseau social et d’autres applications d’agrégation de données peuvent rencontrer des pièces jointes ou des liens vers des réussites.
 
-Tout l’écosystème paraisse complexe, il est important de noter que certains composants sont facultatifs et les implémentations de PassKit beaucoup plus simples sont possibles.
+La totalité de l’écosystème semble complexe. il est donc intéressant de noter que certains composants sont facultatifs et que les implémentations de PassKit les plus simples sont possibles.
 
-## <a name="what-is-a-pass"></a>Qu’est un Pass ?
+## <a name="what-is-a-pass"></a>Qu’est-ce qu’un pass?
 
-Un test est une collection de données représentant un ticket, coupon ou une carte. Elle est prévue pour une seule utilisation par une personne (et par conséquent contenir des détails tels que d’une allocation de nombre et le siège de vol), ou il peut un jeton d’utiliser plusieurs qui peut être partagé par n’importe quel nombre d’utilisateurs (par exemple, un coupon de remise). Une description détaillée est disponible dans d’Apple [propos des fichiers de transmettre](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html) document.
+Une passe est une collection de données représentant un ticket, un coupon ou une carte. Il peut être destiné à une utilisation unique par un individu (et donc contenir des détails tels qu’un numéro de vol et une allocation de sièges) ou un jeton d’utilisation multiple qui peut être partagé par un nombre quelconque d’utilisateurs (par exemple, un coupon de remise). Une description détaillée est disponible dans le document [sur les fichiers de réussite](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html) d’Apple.
 
 ### <a name="types"></a>Types
 
-Actuellement cinq types pris en charge, qui peuvent être distingués dans l’application Wallet par la mise en page et le bord supérieur de la passe :
+Actuellement, cinq types sont pris en charge, qui peuvent être distingués dans l’application Wallet par la disposition et le bord supérieur de la passe:
 
--  **Événement Ticket** – découpage semi-circulaire petit.
--   **Intégration Pass** – crans dans l’icône de côté, spécifique au transport peuvent être spécifiés (par exemple). bus, train, avion).
--   **Store carte** – arrondi supérieur, comme une carte de crédit ou de débit.
--  **Coupon** – perforées en haut.
--  **Générique** – même en tant que carte de Store, haut arrondi.
+-  **Ticket d’événement** : petit découpage semi-circulaire.
+-   **Passe d’embarquement** : des crans dans le côté, une icône spécifique au transport peut être spécifiée (par exemple, bus, apprentissage, avion).
+-   **Carte de stockage** : arrondi à la partie supérieure, comme une carte de crédit ou de débit.
+-  **Coupon** : perforé en haut.
+-  **Générique** : identique à la carte de magasin, arrondie à la partie supérieure.
 
 
-Les types de cinq passes sont affichés dans cette capture d’écran (dans l’ordre : coupon, générique, stocker la carte, carte d’embarquement et de ticket d’événement) :
+Les cinq types de tests sont affichés dans cette capture d’écran (dans l’ordre: coupon, générique, carte de stockage, passe de carte et ticket d’événement):
 
- [![](passkit-images/image3.png "Les types de cinq passes sont affichés dans cette capture d’écran")](passkit-images/image3.png#lightbox)
+ [![](passkit-images/image3.png "Les cinq types de passes sont affichés dans cette capture d’écran.")](passkit-images/image3.png#lightbox)
 
-### <a name="file-structure"></a>Structure de fichiers
+### <a name="file-structure"></a>Structure de fichier
 
-Un fichier pass est en fait une archive ZIP contenant un **.pkpass** , contenant certaines spécifiques fichiers JSON (obligatoires), une variété d’image fichiers (facultatif), ainsi que des chaînes localisées (également facultatif).
+Un fichier Pass est en fait une archive ZIP avec une extension **. pkpass** , contenant des fichiers JSON spécifiques (obligatoires), divers fichiers image (facultatif) ainsi que des chaînes localisées (également facultatives).
 
--   **pass.JSON** – requis. Contient toutes les informations pour le test.
--   **manifest.JSON** – requis. Contient des hachages de SHA1 pour chaque fichier lors du passage à l’exception du fichier de signature et de ce fichier (manifest.json).
--   **signature** – requis. Créée en signant le `manifest.json` fichier avec le certificat généré dans le portail de provisionnement iOS.
--  **logo.png** – facultatif.
--  **Background.png** – facultatif.
--  **Icon.png** – facultatif.
+-   **Pass. JSON** : requis. Contient toutes les informations relatives à la passe.
+-   **Manifest. JSON** – requis. Contient les hachages SHA1 pour chaque fichier du test, à l’exception du fichier de signature et de ce fichier (manifest. Json).
+-   **signature** : obligatoire. Créé en signant le `manifest.json` fichier avec le certificat généré dans le portail d’approvisionnement iOS.
+-  **logo. png** – facultatif.
+-  **Background. png** – facultatif.
+-  **Icon. png** – facultatif.
 -  **Fichiers de chaînes localisables** – facultatif.
 
-Structure de répertoires d’un fichier pass est indiquée ci-dessous (c’est le contenu de l’archive ZIP) :
+La structure de répertoires d’un fichier Pass est indiquée ci-dessous (il s’agit du contenu de l’archive ZIP):
 
- [![](passkit-images/image4.png "Structure de répertoires d’un fichier pass est illustré ici")](passkit-images/image4.png#lightbox)
+ [![](passkit-images/image4.png "La structure de répertoires d’un fichier Pass est présentée ici")](passkit-images/image4.png#lightbox)
 
-### <a name="passjson"></a>pass.JSON
+### <a name="passjson"></a>Pass. JSON
 
-JSON est le format, car les passes sont généralement créés sur un serveur : cela signifie que le code de génération est indépendant de la plateforme sur le serveur. Les trois éléments clés des informations dans chaque pass sont :
+JSON est le format, car les passes sont généralement créées sur un serveur, ce qui signifie que le code de génération est indépendant de la plateforme sur le serveur. Les trois éléments clés de chaque passe sont les suivants:
 
--   **teamIdentifier** – cette opération lie toutes les étapes que vous générez pour votre compte de l’App Store. Cette valeur est visible dans le portail de provisionnement iOS.
--   **passTypeIdentifier** – Inscrivez-vous dans le portail de provisionnement au groupe passe ensemble (si vous produire plusieurs types). Par exemple, un café peut créer un type de passe de carte de magasin pour permettre aux gagner des crédits de fidélité de leurs clients, mais également un bon d’achat séparé passer type pour créer et distribuer des bons de réduction. Ce même café peut même contenir des événements de musique en direct et émettre les passes de Ticket d’événement pour ceux.
--   **serialNumber** – une chaîne unique dans cette `passTypeidentifier` . La valeur est opaque pour Wallet, mais il est importante pour le suivi des passages spécifiques lors de la communication avec votre serveur.
+-   **teamIdentifier** : ce lien permet d’accéder à toutes les étapes que vous générez sur votre compte App Store. Cette valeur est visible dans le portail d’approvisionnement iOS.
+-   **passTypeIdentifier** : Inscrivez-vous au portail de provisionnement pour regrouper les passes (si vous générez plusieurs types). Par exemple, un café peut créer un type de passe de carte de magasin pour permettre à ses clients de gagner des crédits de fidélité, mais également un type de passe de coupon distinct pour créer et distribuer des bons de réduction. Ce même café peut même contenir des événements de musique en direct et émettre des passages de ticket d’événement pour ceux-ci.
+-   **SerialNumber** : chaîne unique dans ce `passTypeidentifier` . La valeur est opaque pour Wallet, mais elle est importante pour le suivi de passes spécifiques lors de la communication avec votre serveur.
 
-Il existe un grand nombre d’autres clés JSON dans chaque étape, un exemple de ce qui est indiqué ci-dessous :
+Il y a un grand nombre d’autres clés JSON à chaque passe, un exemple qui est illustré ci-dessous:
 
 ``` 
 {
@@ -167,117 +167,117 @@ Il existe un grand nombre d’autres clés JSON dans chaque étape, un exemple d
 }
 ```
 
-### <a name="barcodes"></a>Barcodes
+### <a name="barcodes"></a>Codes-barres
 
-Seuls les formats 2D sont pris en charge : PDF417, Aztec, QR. Apple des revendications que codes-barres 1D sont inadaptées à l’analyse sur un écran de téléphone rétroéclairé.
+Seuls les formats 2D sont pris en charge: PDF417, Aztec, QR. Apple prétend que les codes-barres 1D ne sont pas de suite à l’analyse sur un écran de téléphone rétroéclairé.
 
-Texte de remplacement affiché ci-dessous le code-barres est facultatif, certains commerçants souhaitez être en mesure de lire/type manuellement.
+Le texte de remplacement affiché sous le code-barres est facultatif: certains commerçants souhaitent pouvoir lire/taper manuellement.
 
-Encodage ISO-8859-1 est la vérification courante, le codage utilisé par les systèmes d’analyse qui liront les passes.
+L’encodage ISO-8859-1 est le plus courant. Vérifiez l’encodage utilisé par les systèmes d’analyse qui lisent vos passes.
 
 ### <a name="relevancy-lock-screen"></a>Pertinence (écran de verrouillage)
 
-Il existe deux types de données qui peuvent provoquer un passage à afficher sur l’écran de verrouillage :
+Il existe deux types de données qui peuvent entraîner l’affichage d’une passe sur l’écran de verrouillage:
 
- **Emplacement**
+ **Lieu**
 
-Jusqu'à 10 sites peut être spécifié en un passage, par exemple, les magasins un client visite fréquemment, ou l’emplacement d’un aéroport ou de cinéma. Un client peut définir ces emplacements via une application Compagnon ou le fournisseur peut déterminer les données d’utilisation (si collectées avec l’autorisation du client).
+Vous pouvez spécifier jusqu’à 10 emplacements dans une passe, par exemple, les magasins qu’un client visite fréquemment ou l’emplacement d’un Cinema ou d’un aéroport. Un client peut définir ces emplacements via une application auxiliaire ou le fournisseur peut les déterminer à partir des données d’utilisation (si elles sont collectées avec l’autorisation du client).
 
-Lorsque le test s’affiche sur l’écran de verrouillage, une limite est calculée afin que lorsque l’utilisateur laisse la zone de la passe est masquée à partir de l’écran de verrouillage. Le rayon est lié pour passer de style pour éviter les abus.
+Lorsque la passe est affichée sur l’écran de verrouillage, une clôture est calculée de sorte que lorsque l’utilisateur quitte la zone, la passe est masquée dans l’écran de verrouillage. Le rayon est lié au style de passage pour empêcher tout abus.
 
  **Date et heure**
 
-Qu’une seule date/heure peut être spécifié en un passage. La date et l’heure est utile pour déclencher des rappels d’écran de verrouillage d’embarquement et de tickets de l’événement.
+Une seule date/heure peut être spécifiée dans une passe. La date et l’heure sont utiles pour déclencher des rappels d’écran de verrouillage pour les passes de bord et les tickets d’événement.
 
-Peut être mis à jour par envoi de données ou via l’API PassKit, afin que la date/heure peut être mis à jour dans le cas d’un ticket de plusieurs fois (par exemple, un ticket de saison sur un théâtre ou un complexe sportif).
+Peut être mis à jour via l’API push ou via l’API PassKit, de sorte que la date/l’heure peut être mise à jour dans le cas d’un ticket à utilisation multiple (par exemple, un ticket de saison pour un théâtre ou un complexe sportif).
 
 ### <a name="localization"></a>Localisation
 
-Traduire un passage en plusieurs langues est similaire à la localisation d’une application iOS : créer des répertoires spécifiques avec langue le `.lproj` extension et placer les éléments localisés à l’intérieur. Traductions de texte doivent être entrées dans un `pass.strings` de fichiers, tandis que des images localisées doivent présenter le même nom que l’image, elles remplacent à la racine du Pass.
+La traduction d’un passage en plusieurs langues est similaire à la localisation d’une application iOS: créer des répertoires `.lproj` spécifiques à la langue avec l’extension et placer les éléments localisés dans. Les traductions de texte doivent être entrées `pass.strings` dans un fichier, tandis que les images localisées doivent avoir le même nom que l’image qu’elles remplacent dans la racine de réussite.
 
 ## <a name="security"></a>Sécurité
 
-Passes sont signés avec un certificat privé que vous générez dans le portail de provisionnement iOS. Les étapes de la passe de connexion sont :
+Les passes sont signées avec un certificat privé que vous générez dans le portail d’approvisionnement iOS. Les étapes à suivre pour signer la passe sont les suivantes:
 
-1.  Calculer un hachage SHA1 pour chaque fichier dans le répertoire pass (n’incluez pas le `manifest.json` ou `signature` fichier, qui ne doit exister quand même à ce stade).
-1.  Écrire `manifest.json` comme une liste de clé/valeur JSON de chaque nom de fichier avec son hachage.
-1.  Utiliser le certificat pour signer le `manifest.json` de fichiers et écrire le résultat dans un fichier appelé `signature` .
-1.  ZIPPER l’et attribuez au fichier qui en résulte un `.pkpass` extension de fichier.
+1.  Calculez un hachage SHA1 pour chaque fichier dans le répertoire de réussite (n’incluez `signature` pas le `manifest.json` fichier ou, aucun d’entre eux ne doit malgré tout exister à ce niveau).
+1.  Écrire `manifest.json` sous la forme d’une liste de clés/valeurs JSON de chaque nom de fichier avec son hachage.
+1.  Utilisez le certificat pour signer le `manifest.json` fichier et écrire le résultat dans un fichier appelé `signature` .
+1.  Compressez tout le contenu et donnez à l' `.pkpass` extension de fichier le fichier résultant.
 
 
-Étant donné que votre clé privée est nécessaire pour signer le pass, ce processus doit uniquement être effectué sur un serveur sécurisé que vous contrôlez. NE distribuez pas vos clés afin d’essayer de générer des passes dans une application.
+Étant donné que votre clé privée est nécessaire pour signer la passe, ce processus ne doit être effectué que sur un serveur sécurisé que vous contrôlez. NE distribuez pas vos clés pour essayer de générer des passes dans une application.
 
  
-## <a name="configuration-and-setup"></a>Installation et configuration
+## <a name="configuration-and-setup"></a>Configuration et configuration
 
-Cette section contient des instructions pour aider à configurer vos détails de l’approvisionnement et de créer votre première tentative.
+Cette section contient des instructions pour vous aider à configurer les détails de votre approvisionnement et à créer votre premier passage.
 
 ### <a name="provisioning-passkit"></a>Approvisionnement de PassKit
 
-Dans l’ordre pour un passage à entrer l’App Store, il doit être lié à un compte de développeur. Cette option implique deux étapes :
+Pour qu’une passe entre dans l’App Store, elle doit être liée à un compte de développeur. Cela nécessite deux étapes:
 
-1.  Le test doit être inscrite à l’aide d’un identificateur unique, appelé l’ID de passer un Type.
-1.  Un certificat valide doit être généré pour signer la passe de la signature numérique du développeur.
+1.  La passe doit être inscrite à l’aide d’un identificateur unique, appelé ID du type de passe.
+1.  Un certificat valide doit être généré pour signer la passe avec la signature numérique du développeur.
 
-Pour créer un, procédez comme ID de Type passe ce qui suit.
+Pour créer un ID de type de passe, procédez comme suit.
 
-#### <a name="create-a-pass-type-id"></a>Créer un ID de Type Pass
+#### <a name="create-a-pass-type-id"></a>Créer un ID de type de passe
 
-La première étape consiste à configurer un ID de Type de passe pour chaque autre _type_ de passe d’être pris en charge. Le transmettre un ID (ou l’identificateur de Type passer) crée un identificateur unique pour le test. Nous allons utiliser cet ID pour lier la passe de votre compte de développeur à l’aide d’un certificat.
+La première étape consiste à configurer un ID de type de passe pour chaque _type_ de passe à prendre en charge. L’ID de passage (ou l’identificateur de type de passe) crée un identificateur unique pour la passe. Nous utiliserons cet ID pour lier la passe à votre compte de développeur à l’aide d’un certificat.
 
-1. Dans le [section certificats, identificateurs et profils du portail de provisionnement iOS](https://developer.apple.com/account/overview.action), accédez à **identificateurs** et sélectionnez **passer un ID de Type** . Puis sélectionnez le **+** bouton pour créer un nouveau type de passe : [![](passkit-images/passid.png "Créer un nouveau type de pass")](passkit-images/passid.png#lightbox)
+1. Dans la [section certificats, identificateurs et profils du portail d’approvisionnement iOS](https://developer.apple.com/account/overview.action), accédez à identificateurs, puis sélectionnez ID de **type de passe** . Sélectionnez ensuite le **+** bouton pour créer un type de passe: [![](passkit-images/passid.png "Créer un type de passe")](passkit-images/passid.png#lightbox)
 
-2.   Fournir un **Description** (nom) et **identificateur** (chaîne unique) pour le test. Notez que tous les ID de Type passer doit commencer par la chaîne `pass.` dans cet exemple, nous utilisons `pass.com.xamarin.coupon.banana` : [![](passkit-images/register.png "Entrer une Description et un identificateur")](passkit-images/register.png#lightbox)
+2.   Fournissez une **Description** (nom) et un **identificateur** (chaîne unique) pour la passe. Notez que tous les ID de type de passe doivent commencer `pass.` par la chaîne dans cet `pass.com.xamarin.coupon.banana` exemple nous utilisons: [![](passkit-images/register.png "Fournir une description et un identificateur")](passkit-images/register.png#lightbox)
 
 
-3.   Confirmer l’ID de passe en appuyant sur la **inscrire** bouton.
+3.   Confirmez l’ID de test en appuyant sur le bouton **Register** .
 
 #### <a name="generate-a-certificate"></a>Générer un certificat
 
-Pour créer un nouveau certificat pour cet ID de Type de passe, procédez comme suit :
+Pour créer un nouveau certificat pour cet ID de type de passe, procédez comme suit:
 
-1.  Sélectionnez l’ID de passe nouvellement créé dans la liste, puis cliquez sur **modifier** : [![](passkit-images/pass-done.png "Sélectionnez le nouvel ID de passer dans la liste")](passkit-images/pass-done.png#lightbox)
+1.  Sélectionnez l’ID de passe nouvellement créé dans la liste, puis cliquez sur **modifier** : [![](passkit-images/pass-done.png "Sélectionner le nouvel ID de test dans la liste")](passkit-images/pass-done.png#lightbox)
 
-    Ensuite, sélectionnez **Create Certificate...** :
+    Ensuite, sélectionnez **créer un certificat...** :
 
-    [![](passkit-images/cert-dist.png "Sélectionnez Créer le certificat")](passkit-images/cert-dist.png#lightbox)
+    [![](passkit-images/cert-dist.png "Sélectionner créer un certificat")](passkit-images/cert-dist.png#lightbox)
 
 
-2.  Suivez les étapes pour créer une demande (signature de certificat).
+2.  Suivez les étapes pour créer une demande de signature de certificat (CSR).
   
-3. Appuyez sur la **continuer** bouton sur le portail des développeurs et chargez-la pour générer votre certificat.
+3. Appuyez sur le bouton **Continuer** sur le portail des développeurs et chargez la CSR pour générer votre certificat.
 
-4. Téléchargez le certificat, puis double-cliquez dessus pour l’installer dans votre trousseau.
-
-
-Maintenant que nous avons créé un certificat pour cet ID de Type passer, la section suivante décrit comment créer un test manuellement.
-
-Pour plus d’informations sur le provisionnement pour Wallet, reportez-vous à la [utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/wallet-capabilities.md) guide.
-
-### <a name="create-a-pass-manually"></a>Créer un test manuellement
-
-Maintenant que nous avons créé le Type passer, nous pouvons créer manuellement un laissez-passer pour tester sur le simulateur ou un appareil. Les étapes pour créer un test sont :
-
--  Créez un répertoire contenant les fichiers pass.
--  Créez un fichier pass.json qui contient toutes les données requises.
--  Inclure des images dans le dossier (si nécessaire).
--  Calculer les codes de hachage SHA1 pour chaque fichier dans le dossier et d’écriture à manifest.json.
--  Vous connecter à manifest.json avec le fichier .p12 de certificat téléchargé.
--  COMPRESSER le contenu du répertoire et renommer avec l’extension de .pkpass.
+4. Téléchargez le certificat et double-cliquez dessus pour l’installer dans votre trousseau.
 
 
-Il existe certains fichiers sources dans le [exemple de code](https://developer.xamarin.com/samples/monotouch/PassKit/) pour cet article peut être utilisé pour générer un test. Utilisez les fichiers dans le `CouponBanana.raw` répertoire du répertoire CreateAPassManually. Les fichiers suivants sont présents :
+Maintenant que nous avons créé un certificat pour cet ID de type de passe, la section suivante explique comment générer un pass manuellement.
+
+Pour plus d’informations sur l’approvisionnement de Wallet, reportez-vous au Guide d' [utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/wallet-capabilities.md) de.
+
+### <a name="create-a-pass-manually"></a>Créer un pass manuellement
+
+Maintenant que nous avons créé le type de passe, nous pouvons créer manuellement une étape de test sur le simulateur ou sur un appareil. Les étapes de création d’une passe sont les suivantes:
+
+-  Créez un répertoire destiné à contenir les fichiers de réussite.
+-  Créez un fichier Pass. JSON qui contient toutes les données requises.
+-  Inclure les images dans le dossier (si nécessaire).
+-  Calculez les hachages SHA1 pour chaque fichier dans le dossier, puis écrivez dans le fichier manifest. JSON.
+-  Signez manifest. JSON avec le fichier. P12 de certificat téléchargé.
+-  Compressez le contenu du répertoire et renommez-le avec l’extension. pkpass.
+
+
+L' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article contient des fichiers sources qui peuvent être utilisés pour générer une passe. Utilisez les fichiers dans le `CouponBanana.raw` répertoire du répertoire CreateAPassManually. Les fichiers suivants sont présents:
 
  [![](passkit-images/image18.png "Ces fichiers sont présents")](passkit-images/image18.png#lightbox)
 
-Ouvrez pass.json et modifier le script JSON. Vous devez au moins mettre à jour le `passTypeIdentifier` et `teamIdentifer` pour correspondre à votre compte de développeur Apple.
+Ouvrez Pass. JSON et modifiez le JSON. Vous devez au moins mettre à `passTypeIdentifier` jour `teamIdentifer` et pour qu’il corresponde à votre compte de développeur Apple.
 
 ```csharp
 "passTypeIdentifier" : "pass.com.xamarin.coupon.banana",
 "teamIdentifier" : "?????????",
 ```
 
-Vous devez ensuite calculer les hachages pour chaque fichier et créer le `manifest.json` fichier. Il ressemble à ceci lorsque vous avez terminé :
+Vous devez ensuite calculer les hachages pour chaque fichier et créer le `manifest.json` fichier. Une fois que vous avez terminé, cela ressemble à ce qui suit:
 
 ```csharp
 {
@@ -289,148 +289,148 @@ Vous devez ensuite calculer les hachages pour chaque fichier et créer le `manif
 }
 ```
 
-Ensuite, une signature doit être générée pour ce fichier en utilisant le certificat (fichier .p12) qui a été généré pour cet ID de Type Pass.
+Ensuite, une signature doit être générée pour ce fichier à l’aide du certificat (fichier. p12) qui a été généré pour cet ID de type de passe.
 
-#### <a name="signing-on-a-mac"></a>La signature sur un Mac
+#### <a name="signing-on-a-mac"></a>Signature sur un Mac
 
-Télécharger le **matériaux de prise en charge de valeur initiale de Wallet** à partir de la [Apple télécharge](https://developer.apple.com/downloads/index.action?name=Passbook) site. Utilisez le `signpass` outil pour transformer votre dossier en un passage (cela calcule également le SHA1 hache et code postal de la sortie dans un fichier .pkpass).
+Téléchargez les **documents du support technique Wallet** sur le site de [téléchargements Apple](https://developer.apple.com/downloads/index.action?name=Passbook) . Utilisez l' `signpass` outil pour transformer votre dossier en un test (cela permet également de calculer les hachages SHA1 et de compresser la sortie dans un fichier. pkpass).
 
 #### <a name="testing"></a>Test
 
-Si vous deviez examiner la sortie de ces outils (en définissant le nom de fichier par .zip, puis en l’ouvrant), vous voyez les fichiers suivants (Notez l’ajout de la `manifest.json` et `signature` fichiers) :
+Si vous deviez examiner la sortie de ces outils (en définissant le nom de fichier sur. zip et en l’ouvrant), vous verrez les fichiers suivants (Notez l' `manifest.json` ajout `signature` des fichiers et):
 
  [![](passkit-images/image19.png "Examen de la sortie de ces outils")](passkit-images/image19.png#lightbox)
 
-Une fois que vous avez signé, compressés et renommé le fichier (par exemple). à `BananaCoupon.pkpass`) vous pouvez faire glisser dans le simulateur pour tester ou par courrier électronique afin de récupérer sur un appareil réel. Vous devez voir un écran à **ajouter** la passe, comme suit :
+Une fois que vous avez signé, compressé et renommé le fichier (par exemple, à `BananaCoupon.pkpass`) vous pouvez le faire glisser dans le simulateur pour le tester, ou l’envoyer par courrier électronique à vous-même pour effectuer une récupération sur un appareil réel. Vous devez voir un écran pour **Ajouter** la passe, comme suit:
 
  [![](passkit-images/image20.png "Ajouter l’écran de réussite")](passkit-images/image20.png#lightbox)
 
-Ce processus serait normalement être automatisé sur un serveur, la création de pass toutefois manuelle peut être une option pour les petites entreprises qui créent uniquement des coupons qui ne nécessitent pas la prise en charge d’un serveur principal.
+Normalement, le processus est automatisé sur un serveur, mais la création manuelle de passe peut être une option pour les petites entreprises qui créent uniquement des coupons qui ne nécessitent pas la prise en charge d’un serveur principal.
 
 ## <a name="wallet"></a>Wallet
 
-Wallet est l’élément central de l’écosystème de PassKit. Cette capture d’écran montre le Wallet vide et l’aspect de la liste de pass et passe individuels :
+Wallet est le composant central de l’écosystème PassKit. Cette capture d’écran montre le portefeuille vide et l’aspect de la liste de tests et des passages individuels:
 
- [![](passkit-images/image21.png "Cette capture d’écran montre le Wallet vide et l’aspect de la liste de pass et passe individuels")](passkit-images/image21.png#lightbox)
+ [![](passkit-images/image21.png "Cette capture d’écran montre le portefeuille vide et l’apparence de la liste de tests et des passages individuels")](passkit-images/image21.png#lightbox)
 
-Fonctionnalités du portefeuille sont :
+Les fonctionnalités de Wallet sont les suivantes:
 
--  Il est le seul endroit passes sont rendus avec leurs code-barres pour l’analyse.
--  Utilisateur peut modifier les paramètres des mises à jour. Si activé, notifications push peuvent déclencher des mises à jour les données lors du passage.
--  Utilisateur peut activer ou désactiver l’intégration de l’écran de verrouillage. Si activé, cela permet la réussite d’apparaissent automatiquement sur leur écran de verrouillage, selon les données de temps et l’emplacement pertinentes incorporées lors du passage.
--  Le verso de la passe prend en charge les extraire pour actualiser, si une URL de serveur web est fournie lors du passage JSON.
--  Le Guide des applications pouvant être ouvert (ou téléchargé) si l’ID de l’application est fourni lors du passage JSON.
--  Passes peuvent être supprimés (avec une animation de destruction adorable).
+-  C’est le seul endroit où les passes sont rendues avec leur code-barres pour l’analyse.
+-  L’utilisateur peut modifier les paramètres des mises à jour. Si cette option est activée, les notifications push peuvent déclencher des mises à jour des données dans la passe.
+-  L’utilisateur peut activer ou désactiver l’intégration de l’écran de verrouillage. S’il est activé, cette option permet d’afficher automatiquement la passe sur l’écran de verrouillage, en fonction des données de temps et d’emplacement appropriées incorporées dans la passe.
+-  Le côté inverse de la passe prend en charge l’extraction à l’actualisation, si une URL de serveur Web est fournie dans le JSON Pass.
+-  Les applications auxiliaires peuvent être ouvertes (ou téléchargées) si l’ID de l’application est fourni dans le JSON Pass.
+-  Les passes peuvent être supprimées (avec une animation de jolies broyage).
 
-## <a name="adding-passes-into-wallet"></a>Ajout de Passes en Wallet
+## <a name="adding-passes-into-wallet"></a>Ajout de passes à Wallet
 
-Passes peuvent être ajoutées au service Wallet, comme suit :
+Les passes peuvent être ajoutées à Wallet de l’une des manières suivantes:
 
-* **Conduit applications** – ceux-ci ne manipulent pas de passes directement, elles simplement de chargement des fichiers de passage et de présentent à l’utilisateur avec la possibilité d’ajouter au Wallet. 
+* **Applications de conduit** : celles-ci ne manipulent pas directement les passes, elles chargent simplement les fichiers de réussite et présentent à l’utilisateur la possibilité de les ajouter à Wallet. 
 
-* **Le Guide des applications** : ceux-ci sont écrits par les fournisseurs pour distribuer les passes et proposent des fonctionnalités supplémentaires pour parcourir ou les modifier. Les applications Xamarin.iOS ont un accès complet à l’API de PassKit pour créer et manipuler des passes. Passes peuvent ensuite être ajoutées à l’utilisation de Wallet le `PKAddPassesViewController`. Ce processus est décrit plus en détail dans le **les Applications Compagnon** section de ce document.
+* **Applications auxiliaires** : celles-ci sont écrites par les fournisseurs pour distribuer les passes et offrent des fonctionnalités supplémentaires pour les parcourir ou les modifier. Les applications Xamarin. iOS ont un accès complet à l’API PassKit pour créer et manipuler des passes. Les passes peuvent ensuite être ajoutées à Wallet `PKAddPassesViewController`à l’aide du. Ce processus est décrit plus en détail dans la section **applications auxiliaires** de ce document.
 
-### <a name="conduit-applications"></a>Applications conduit
+### <a name="conduit-applications"></a>Applications de conduit
 
-Les applications conduit sont des applications intermédiaires qui peuvent recevoir des passes pour le compte d’un utilisateur et doivent être programmées pour reconnaître leur type de contenu et fournir des fonctionnalités à ajouter au Wallet. Voici quelques exemples d’applications de canal d’échange :
+Les applications de canalisation sont des applications intermédiaires qui peuvent recevoir des passages pour le compte d’un utilisateur et doivent être programmées pour reconnaître leur type de contenu et fournir des fonctionnalités à ajouter au portefeuille. Voici quelques exemples d’applications de conduit:
 
--   **Messagerie** – reconnaît une passe de la pièce jointe.
--   **Safari** – reconnaît la passe de Content-Type, un clic sur un lien d’URL pass.
--   **Autres applications personnalisées** – n’importe quelle application qui reçoivent des pièces jointes ou ouvrir des liens (clients de médias sociaux, les lecteurs de messagerie, etc.).
-
-
-Cette capture d’écran montre comment **Mail** dans iOS 6 reconnaît une pièce jointe pass et (lors d’un contact) offre aux **ajouter** à Wallet.
-
- [![](passkit-images/image22.png "Cette capture d’écran montre comment la messagerie dans iOS 6 reconnaît une pièce jointe pass")](passkit-images/image22.png#lightbox)
-
- [![](passkit-images/image23.png "Cette capture d’écran montre comment offre de messagerie ajouter une pièce jointe pass pour Wallet")](passkit-images/image23.png#lightbox)
-
-Si vous générez une application qui peut être un conduit de pass, ils peuvent être reconnues par :
-
--  **Extension de fichier** -.pkpass
--  **Type MIME** -application/vnd.apple.pkpass
--  **UTI** – com.apple.pkpass
+-   **Mail** : reconnaît les pièces jointes en tant que Pass.
+-   **Safari** : reconnaît le type de contenu Pass quand l’utilisateur clique sur un lien de test d’URL.
+-   **Autres applications personnalisées** : toute application qui reçoit des pièces jointes ou des liens ouverts (clients de réseaux sociaux, lecteurs de messagerie, etc.).
 
 
-L’opération de base d’une application conduit consiste à récupérer le fichier pass et appeler de PassKit `PKAddPassesViewController` pour donner à l’utilisateur la possibilité d’ajouter la passe dans leur portefeuille. L’implémentation de ce contrôleur d’affichage est couverte dans la section suivante sur **Compagnon Applications**.
+Cette capture d’écran montre comment le **courrier électronique** dans iOS 6 reconnaît une pièce jointe de réussite et (lorsqu’il est touché) permet de l' **Ajouter** à Wallet.
 
-Les Applications conduit n’avez pas besoin être approvisionné pour un ID de Type de passage spécifique de la même façon que les Applications Compagnon.
+ [![](passkit-images/image22.png "Cette capture d’écran montre comment le courrier dans iOS 6 reconnaît une pièce jointe de réussite")](passkit-images/image22.png#lightbox)
 
-## <a name="companion-applications"></a>Le Guide des Applications
+ [![](passkit-images/image23.png "Cette capture d’écran montre comment les courriers électroniques permettent d’ajouter une pièce jointe à Wallet")](passkit-images/image23.png#lightbox)
 
-Une application Compagnon fournit des fonctionnalités supplémentaires pour travailler avec les passes, y compris la création d’un passage, la mise à jour des informations associées à un test ainsi que sinon passe associé à l’application.
+Si vous créez une application qui peut être un conduit pour les passes, elle peut être reconnue par:
 
-Les applications Compagnon ne doivent pas tenter de dupliquer les fonctionnalités de portefeuille. Ils ne sont pas destinées à afficher des passes pour l’analyse.
+-  **Extension de fichier** -. pkpass
+-  **Type MIME** -application/vnd. Apple. pkpass
+-  **UTI** – com. Apple. pkpass
 
-Cette suite de cette section décrit comment générer une application Compagnon base qui interagit avec PassKit.
 
-### <a name="provisioning"></a>Provisionnement
+Le fonctionnement de base d’une application de canalisation consiste à récupérer le fichier Pass et `PKAddPassesViewController` à appeler PassKit pour permettre à l’utilisateur d’ajouter la passe à son portefeuille. L’implémentation de ce contrôleur d’affichage est traitée dans la section suivante sur les **applications auxiliaires**.
 
-Étant donné que Wallet est une technologie de stockage, l’application doit être configuré séparément et ne pouvez pas utiliser de profil de provisionnement d’équipe ou Wildcard application ID. Reportez-vous à la [utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/wallet-capabilities.md) guide pour créer un profil de provisionnement et un ID d’application uniques pour l’application Wallet.
+Les applications de conduit n’ont pas besoin d’être configurées pour un ID de type de passe spécifique de la même façon que les applications auxiliaires.
+
+## <a name="companion-applications"></a>Applications auxiliaires
+
+Une application auxiliaire fournit des fonctionnalités supplémentaires pour l’utilisation des passes, notamment la création d’une passe, la mise à jour des informations associées à une passe et la gestion des passes associées à l’application.
+
+Les applications auxiliaires ne doivent pas tenter de dupliquer les fonctionnalités de Wallet. Ils ne sont pas destinés à afficher des passes pour l’analyse.
+
+Ce reste de cette section décrit comment créer une application auxiliaire de base qui interagit avec PassKit.
+
+### <a name="provisioning"></a>Approvisionnement
+
+Étant donné que Wallet est une technologie de magasin, l’application doit être approvisionnée séparément et ne peut pas utiliser le profil de provisionnement d’équipe ou un ID d’application générique. Reportez-vous au Guide d' [utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/wallet-capabilities.md) pour créer un ID d’application et un profil de provisionnement uniques pour l’application Wallet.
 
 ### <a name="entitlements"></a>Droits
 
-Le **Entitlements.plist** fichier doit être inclus dans toutes les récente projet Xamarin.iOS. Pour ajouter un nouveau fichier Entitlements.plist, suivez les étapes de la [utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md) guide.
+Le fichier Entitlements **. plist** doit être inclus dans tous les projets récents Xamarin. iOS. Pour ajouter un nouveau fichier Entitlements. plist, suivez les étapes décrites dans le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
 
-Pour définir les droits procédez comme suit :
+Pour définir les droits, procédez comme suit:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Double-cliquez sur le **Entitlements.plist** fichier dans le panneau de solutions pour ouvrir l’éditeur Entitlements.plist :
+Double-cliquez sur le fichier **habilitations. plist** dans le panneau solutions pour ouvrir l’éditeur de droits. plist:
 
-![](passkit-images/image31.png "Éditeur de Entitlements.plst")
+![](passkit-images/image31.png "Éditeur de droits. plst")
 
-Dans la section Wallet, sélectionnez le **Wallet activer** option
+Sous la section Wallet, sélectionnez l’option **activer Wallet**
 
-![](passkit-images/image32.png "Activer les droits de portefeuille")
+![](passkit-images/image32.png "Activer le droit portefeuille")
 
 
-L’option par défaut est de votre application permettre à que tous les passent des types. Toutefois, il est possible de limiter votre application et autoriser uniquement un sous-ensemble de types de passes d’équipe. Pour activer ce, sélectionnez le **sous-ensemble autoriser de l’équipe de passer des types** et entrez l’identificateur de type pass du sous-ensemble que vous souhaitez autoriser.
+L’option par défaut permet à votre application d’autoriser tous les types de passe. Toutefois, il est possible de restreindre votre application et d’autoriser uniquement un sous-ensemble de types de passes d’équipe. Pour activer cette option, sélectionnez **autoriser le sous-ensemble de types de passe d’équipe** et entrez l’identificateur de type de passe du sous-ensemble que vous souhaitez autoriser.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Double-cliquez sur le **Entitlements.plist** fichier à ouvrir le fichier source XML.
+Double-cliquez sur le fichier Entitlements **. plist** pour ouvrir le fichier source XML.
 
-Pour ajouter le droit de Wallet, définissez le **propriété** à `Passbook Identifiers` dans la liste déroulante, qui définira automatiquement le **Type** `Array`. Ensuite, définissez la chaîne **valeur** à `$(TeamIdentifierPrefix)*`:
+Pour ajouter le droit Wallet, affectez à `Passbook Identifiers` la propriété la valeur dans la liste déroulante, ce qui définit automatiquement le **type** `Array`. Ensuite, définissez la **valeur** de chaîne `$(TeamIdentifierPrefix)*`sur:
 
-![](passkit-images/image33.png "Activer les droits de portefeuille")
+![](passkit-images/image33.png "Activer le droit portefeuille")
 
-Avec cette valeur de chaîne, votre application accepte tous les types de passes. Pour limiter votre application et autoriser uniquement un sous-ensemble de types de passes d’équipe, la valeur est la valeur de chaîne :
+Avec cette valeur de chaîne, votre application accepte tous les types de passes. Pour restreindre votre application et autoriser uniquement un sous-ensemble de types de passes d’équipe, définissez la valeur de chaîne sur:
 
 `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
-Où `pass.$(CFBundleIdentifier)` est l’ID de passe qui a été créé [ci-dessus](~/ios/platform/passkit.md)
+Où `pass.$(CFBundleIdentifier)` est l’ID de réussite qui a été créé [ci-dessus](~/ios/platform/passkit.md)
 
 -----
 
 ### <a name="debugging"></a>Débogage
 
-Si vous rencontrez des problèmes de déploiement de votre application, vérifiez que vous utilisez les bonnes **profil de provisionnement** et que le `Entitlements.plist` est sélectionné comme le **droits personnalisés** fichier dans le **iPhone signature du Bundle** options.
+Si vous rencontrez des problèmes lors du déploiement de votre application, vérifiez que vous utilisez le **Profil** de provisionnement correct `Entitlements.plist` et que l’est sélectionné comme fichier de **droits personnalisés** dans les options de **signature du bundle iPhone** .
 
-Si vous rencontrez cette erreur lors du déploiement :
+Si vous rencontrez cette erreur lors du déploiement:
 
 ```csharp
 Installation failed: Your code signing/provisioning profiles are not correctly configured (error: 0xe8008016)
 ```
 
-le `pass-type-identifiers` tableau des droits est incorrecte (ou ne correspond pas à la **profil de provisionnement**). Vérifiez les ID de Type passer et votre ID d’équipe sont corrects.
+le tableau `pass-type-identifiers` de droits est incorrect (ou ne correspond pas au **Profil**de provisionnement). Vérifiez que les ID de type de passe et votre ID d’équipe sont corrects.
 
 ## <a name="classes"></a>Classes
 
-Les classes de PassKit suivantes sont disponibles pour les applications d’accéder aux passages :
+Les classes PassKit suivantes sont disponibles pour les applications à accéder aux passes:
 
--  **PKPass** – une instance d’une étape.
--  **PKPassLibrary** – fournit l’API pour accéder à des passes sur l’appareil.
--  **PKAddPassesViewController** – utilisé pour afficher une passe de l’utilisateur à enregistrer dans leur portefeuille.
--  **PKAddPassesViewControllerDelegate** – permet aux développeurs de Xamarin.iOS
+-  **PKPass** : instance d’une passe.
+-  **PKPassLibrary** : fournit l’API pour accéder aux passes sur l’appareil.
+-  **PKAddPassesViewController** : permet d’afficher un test permettant à l’utilisateur de s’enregistrer dans son portefeuille.
+-  **PKAddPassesViewControllerDelegate** – Xamarin. iOS développeurs
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-Référence au projet PassLibrary dans le [exemple de code](https://developer.xamarin.com/samples/monotouch/PassKit/) pour cet article. Il illustre les fonctions courantes suivantes qui seraient nécessaires dans une Application Compagnon de portefeuille :
+Reportez-vous au projet PassLibrary dans l' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article. Il illustre les fonctions courantes suivantes qui seraient nécessaires dans une application de portefeuille:
 
-### <a name="check-that-wallet-is-available"></a>Vérifiez que Wallet est disponible
+### <a name="check-that-wallet-is-available"></a>Vérifier que Wallet est disponible
 
-Wallet n’est pas disponible sur l’iPad, donc les applications doivent vérifier avant de tenter d’accéder aux fonctionnalités de PassKit.
+Wallet n’est pas disponible sur iPad. les applications doivent donc vérifier avant de tenter d’accéder aux fonctionnalités PassKit.
 
 ```csharp
 if (PKPassLibrary.IsAvailable) {
@@ -438,9 +438,9 @@ if (PKPassLibrary.IsAvailable) {
 }
 ```
 
-### <a name="creating-a-pass-library-instance"></a>Création d’une Instance de la bibliothèque Pass
+### <a name="creating-a-pass-library-instance"></a>Création d’une instance de la bibliothèque Pass
 
-La bibliothèque de PassKit n’est pas un singleton, les applications doivent créer et stocker et de l’instance pour accéder à l’API de PassKit.
+La bibliothèque PassKit n’est pas un singleton, les applications doivent créer et stocker une instance pour accéder à l’API PassKit.
 
 ```csharp
 if (PKPassLibrary.IsAvailable) {
@@ -449,23 +449,23 @@ if (PKPassLibrary.IsAvailable) {
 }
 ```
 
-### <a name="get-a-list-of-passes"></a>Obtenir la liste des Passes
+### <a name="get-a-list-of-passes"></a>Obtenir une liste de passes
 
-Applications peuvent demander une liste de passes à partir de la bibliothèque. Cette liste est automatiquement filtrée par PassKit, afin que vous pouvez uniquement voir les passes qui ont été créés par votre ID d’équipe et qui sont répertoriées dans vos droits.
+Les applications peuvent demander une liste de passes de la bibliothèque. Cette liste est automatiquement filtrée par PassKit, afin que vous puissiez voir uniquement les passes créées avec votre ID d’équipe et répertoriées dans vos droits.
 
 ```csharp
 var passes = library.GetPasses ();  // returns PKPass[]
 ```
 
-Notez que le simulateur ne filtre pas dans la liste des passes renvoyé, donc cette méthode doit toujours être testée sur des appareils réels. Cette liste peut être affichée dans un UITableView. Le [exemple d’application](https://developer.xamarin.com/samples/monotouch/PassKit/) ressemble à ceci une fois que deux bons d’achat ont été ajoutés :
+Notez que le simulateur ne filtre pas la liste des passes retournées. cette méthode doit donc toujours être testée sur les appareils réels. Cette liste peut être affichée dans un UITableView. L' [exemple d’application](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) ressemble à ceci après que deux coupons ont été ajoutés:
 
- [![](passkit-images/image29.png "L’apparence d’application exemple comme suit après ont ajouté des deux coupons")](passkit-images/image29.png#lightbox)
+ [![](passkit-images/image29.png "L’exemple d’application ressemble à ce qui suit deux coupons ajoutés")](passkit-images/image29.png#lightbox)
 
-### <a name="displaying-passes"></a>Affichage des Passes
+### <a name="displaying-passes"></a>Affichage des passes
 
-Un ensemble limité d’informations est disponible pour le rendu de passes d’applications Compagnon.
+Un ensemble limité d’informations est disponible pour le rendu des passes dans les applications auxiliaires.
 
-Choisissez à partir de ce jeu de propriétés standard pour afficher des listes de passes, comme le fait de l’exemple de code.
+Choisissez parmi cet ensemble de propriétés standard pour afficher les listes de passes, comme l’illustre l’exemple de code.
 
 ```csharp
 string passInfo =
@@ -478,15 +478,15 @@ string passInfo =
                 + "\nPassUrl:" + pass.PassUrl;
 ```
 
-Cette chaîne est affichée comme une alerte dans le [exemple](https://developer.xamarin.com/samples/monotouch/PassKit/):
+Cette chaîne est affichée sous la forme d’une alerte dans l' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit):
 
- [![](passkit-images/image30.png "L’alerte sélectionnée du Coupon dans l’exemple")](passkit-images/image30.png#lightbox)
+ [![](passkit-images/image30.png "Alerte de coupon sélectionnée dans l’exemple")](passkit-images/image30.png#lightbox)
 
-Vous pouvez également utiliser le `LocalizedValueForFieldKey()` méthode pour récupérer des données à partir des champs dans les passes que vous avez conçu (étant donné que vous savez ce que les champs doit être présent). L’exemple de code n’affiche pas cela.
+Vous pouvez également utiliser la `LocalizedValueForFieldKey()` méthode pour récupérer des données à partir de champs dans les passes que vous avez créées (puisque vous saurez quels champs doivent être présents). L’exemple de code ne montre pas cela.
 
-### <a name="loading-a-pass-from-a-file"></a>Chargement d’un passage d’un fichier
+### <a name="loading-a-pass-from-a-file"></a>Chargement d’une passe à partir d’un fichier
 
-Car un passage peut uniquement être ajouté au service Wallet avec l’autorisation de l’utilisateur, un contrôleur d’affichage doit être présenté pour leur permettre de décider. Ce code est utilisé dans le **ajouter** bouton dans l’exemple, pour charger un passage avant génération qui est incorporé dans l’application (vous devez le remplacer par un que vous êtes connecté) :
+Comme une passe peut uniquement être ajoutée à Wallet avec l’autorisation de l’utilisateur, un contrôleur d’affichage doit être présenté pour lui permettre de décider. Ce code est utilisé dans le bouton **Ajouter** de l’exemple, pour charger une passe pré-générée incorporée dans l’application (vous devez remplacer ceci par une étape que vous avez signée):
 
 ```csharp
 NSData nsdata;
@@ -499,13 +499,13 @@ var pkapvc = new PKAddPassesViewController(newPass);
 NavigationController.PresentModalViewController (pkapvc, true);
 ```
 
-Le test est présenté avec **ajouter** et **Annuler** options :
+La réussite est présentée avec des options d' **Ajout** et d' **annulation** :
 
- [![](passkit-images/image20.png "La passe présentée avec les options Ajouter et annuler")](passkit-images/image20.png#lightbox)
+ [![](passkit-images/image20.png "Le passage présenté avec des options d’ajout et d’annulation")](passkit-images/image20.png#lightbox)
 
-### <a name="replace-an-existing-pass"></a>Remplacer un test existant
+### <a name="replace-an-existing-pass"></a>Remplacer une passe existante
 
-Remplacement d’un test existant ne nécessite pas l’autorisation l’utilisateur, mais elle échouera si le test n’existe pas déjà.
+Le remplacement d’une passe existante ne nécessite pas l’autorisation de l’utilisateur, mais elle échoue si elle n’existe pas déjà.
 
 ```csharp
 if (library.Contains (newPass)) {
@@ -513,23 +513,23 @@ if (library.Contains (newPass)) {
 }
 ```
 
-### <a name="editing-a-pass"></a>Modification d’un passage
+### <a name="editing-a-pass"></a>Modification d’une passe
 
-PKPass n’est pas mutable, vous ne pouvez pas mettre à jour passe les objets dans votre code. Pour modifier les données dans un test, une application doit avoir accès à un serveur web qui peut conserver un enregistrement de passes et générer un nouveau fichier pass avec les valeurs mises à jour que l’application peut télécharger.
+PKPass n’est pas mutable, vous ne pouvez donc pas mettre à jour les objets Pass dans votre code. Pour modifier les données d’un Pass, une application doit avoir accès à un serveur Web qui peut conserver un enregistrement de passes et générer un nouveau fichier de réussite avec des valeurs mises à jour que l’application peut télécharger.
 
-Création d’un fichier pass doit être effectuée sur un serveur, car les passes doivent être signées avec un certificat qui doit rester privées et sécurisées.
+La création d’un fichier Pass doit être effectuée sur un serveur, car les passes doivent être signées avec un certificat qui doit rester privé et sécurisé.
 
-Une fois un fichier de mise à jour passe a été généré, utilisez le `Replace` méthode pour remplacer les anciennes données sur l’appareil.
+Une fois qu’un fichier Pass mis à jour a été `Replace` généré, utilisez la méthode pour remplacer les anciennes données sur l’appareil.
 
-### <a name="display-a-pass-for-scanning"></a>Afficher un Pass pour l’analyse
+### <a name="display-a-pass-for-scanning"></a>Afficher une passe pour l’analyse
 
-Comme indiqué précédemment, seuls Wallet peut afficher un pass pour l’analyse. Un passage peut être affiché à l’aide de la `OpenUrl` méthode comme indiqué :
+Comme indiqué précédemment, seul Wallet peut afficher une passe pour l’analyse. Une passe peut être affichée à l' `OpenUrl` aide de la méthode, comme indiqué ci-dessous:
 
  `UIApplication.SharedApplication.OpenUrl (p.PassUrl);`
 
-### <a name="receiving-notifications-of-changes"></a>Réception des Notifications des modifications
+### <a name="receiving-notifications-of-changes"></a>Réception des notifications de modifications
 
-Applications peuvent écouter les modifications apportées à la bibliothèque de passer à l’aide de la `PKPassLibraryDidChangeNotification`. Modifications pourraient être provoquées par les notifications de déclencher des mises à jour en arrière-plan, par conséquent, il est conseillé pour écouter dans votre application.
+Les applications peuvent écouter les modifications apportées à la bibliothèque de `PKPassLibraryDidChangeNotification`tests à l’aide du. Des modifications peuvent être provoquées par des notifications déclenchant des mises à jour en arrière-plan. il est donc conseillé de les écouter dans votre application.
 
 ```csharp
 noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidChangeNotification, (not) => {
@@ -543,34 +543,34 @@ noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidCh
 }, library);  // IMPORTANT: must pass the library in
 ```
 
-Il est important de passer une instance de la bibliothèque lors de l’inscription pour la notification car PKPassLibrary n’est pas un singleton.
+Il est important de passer une instance de bibliothèque lors de l’inscription de la notification, car PKPassLibrary n’est pas un singleton.
 
 ## <a name="server-processing"></a>Traitement du serveur
 
-Une présentation détaillée de la création d’une application serveur pour prendre en charge de PassKit est abordée dans cet article d’introduction.
+La présentation détaillée de la création d’une application serveur pour la prise en charge de PassKit n’entre pas dans le cadre de cet article de présentation.
 
-Consultez [le livret dotnet](https://github.com/tomasmcguinness/dotnet-passbook) open source C# code côté serveur.
+Consultez le code côté serveur Open C# source [dotnet-](https://github.com/tomasmcguinness/dotnet-passbook) encodé.
 
 ## <a name="push-notifications"></a>Notifications Push
 
-Une présentation détaillée de l’utilisation de notifications push pour mettre à jour les passes est abordée dans cet article d’introduction.
+La présentation détaillée de l’utilisation de notifications push pour les passes de mise à jour n’entre pas dans le cadre de cet article de présentation.
 
-Vous serez nécessaire pour implémenter l’API REST de type défini par Apple pour répondre aux requêtes web à partir de Wallet lorsque les mises à jour sont requises.
+Vous devez implémenter l’API de type REST définie par Apple pour répondre aux demandes Web de Wallet lorsque des mises à jour sont requises.
 
-Consultez d’Apple [un passage de la mise à jour](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Updating.html#//apple_ref/doc/uid/TP40012195-CH5-SW1) guide pour plus d’informations.
+Pour plus d’informations, consultez le Guide de [mise à jour d’un test](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/Updating.html#//apple_ref/doc/uid/TP40012195-CH5-SW1) d’Apple.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article introduit PassKit, décrit quelques-unes des raisons pourquoi il est utile et décrit les différentes parties qui doivent être implémentées pour une solution complète de PassKit. Il décrit les étapes requises pour configurer votre compte de développeur Apple pour créer des passes, le processus de faire un passage manuellement et également comment accéder aux APIs PassKit à partir d’une application Xamarin.iOS.
+Cet article a présenté PassKit, expliquant les raisons pour lesquelles il est utile et décrit les différentes parties qui doivent être implémentées pour une solution PassKit complète. Il a décrit les étapes nécessaires à la configuration de votre compte de développeur Apple pour créer des passes, le processus permettant d’effectuer un pass manuellement et également comment accéder aux API PassKit à partir d’une application Xamarin. iOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Wallet pour les développeurs](https://developer.apple.com/wallet/)
-- [Exemple de PassKit](https://developer.xamarin.com/samples/monotouch/PassKit/)
+- [Portefeuille pour les développeurs](https://developer.apple.com/wallet/)
+- [Exemple PassKit](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)
 - [Guide du développeur Wallet](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/index.html#//apple_ref/doc/uid/TP40012195-CH1-SW1)
-- [Frameworks : Apple Pay et Wallet (vidéos WWDC)](https://developer.apple.com/videos/frameworks/apple-pay-and-wallet)
+- [Frameworks – Apple Pay et Wallet (vidéos WWDC)](https://developer.apple.com/videos/frameworks/apple-pay-and-wallet)
 - [Référence du Framework PassKit](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Framework/_index.html)
-- [Le livret une référence de Service Web](https://developer.apple.com/library/prerelease/ios/#documentation/PassKit/Reference/PassKit_WebService/WebService.html)
-- [Sur les fichiers de Pass](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html)
-- [dotnet-livret](https://github.com/tomasmcguinness/dotnet-passbook), une bibliothèque open source pour la génération de packages de portefeuille d’iOS
+- [Référence du service Web de la mémoire](https://developer.apple.com/library/prerelease/ios/#documentation/PassKit/Reference/PassKit_WebService/WebService.html)
+- [À propos des fichiers de réussite](https://developer.apple.com/library/prerelease/ios/#documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html)
+- [dotnet-crédits](https://github.com/tomasmcguinness/dotnet-passbook), bibliothèque open source pour la génération de packages Wallet iOS
 - [Introduction à iOS 6](~/ios/platform/introduction-to-ios6/index.md)

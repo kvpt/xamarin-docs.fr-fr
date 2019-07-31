@@ -7,28 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: d32ef0176f0eff5981720d9e83568a7a40d0a396
-ms.sourcegitcommit: b4a12607ca944de10fd166139765241a4501831c
+ms.openlocfilehash: 8c55fecc8605b8bb7312e658e5edf46008f6b6ce
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687138"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651350"
 ---
 # <a name="xamarinforms-button"></a>Bouton de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _Le bouton répond à un cliquez ou appuyez sur dirigeant d’une application à exécuter une tâche particulière._
 
 Le [ `Button` ](xref:Xamarin.Forms.Button) est le plus fondamental contrôle interactif dans tous les de Xamarin.Forms. Le `Button` généralement affiche une courte chaîne de texte qui indique une commande, mais il peut également affiche une image bitmap, ou une combinaison de texte et une image. L’utilisateur appuie sur le `Button` avec un doigt ou clique dessus avec la souris pour exécuter cette commande.
 
-La plupart des sujets présentés ci-dessous correspondre aux pages dans le [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) exemple.
+La plupart des sujets présentés ci-dessous correspondre aux pages dans le [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos) exemple.
 
 ## <a name="handling-button-clicks"></a>Gestion bouton clique sur
 
 `Button` définit un [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) événement est déclenché lorsque l’utilisateur actionne le `Button` avec un pointeur doigt ou de la souris. L’événement est déclenché lorsque le bouton doigt ou de la souris est relâché à partir de la surface de la `Button`. Le `Button` doit avoir son [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) propriété définie sur `true` pour pouvoir répondre aux clics.
 
-Le **base clic de bouton** page dans le [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) exemple montre comment instancier un `Button` dans XAML et de gérer ses `Clicked` événement. Le **BasicButtonClickPage.xaml** fichier contient un `StackLayout` avec à la fois un `Label` et un `Button`:
+Le **base clic de bouton** page dans le [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos) exemple montre comment instancier un `Button` dans XAML et de gérer ses `Clicked` événement. Le **BasicButtonClickPage.xaml** fichier contient un `StackLayout` avec à la fois un `Label` et un `Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>Désactivation du bouton
 
-Parfois, une application est dans un état particulier où un particulier `Button` clic n’est pas une opération valide. Dans ce cas, le `Button` doit être désactivée en définissant son `IsEnabled` propriété `false`. L’exemple classique est un `Entry` contrôle pour un nom de fichier accompagné d’une ouverture de fichier `Button`: Le `Button` doit être activée uniquement si du texte a été tapé dans le `Entry`.
+Parfois, une application est dans un état particulier où un particulier `Button` clic n’est pas une opération valide. Dans ce cas, le `Button` doit être désactivée en définissant son `IsEnabled` propriété `false`. L’exemple classique est un `Entry` contrôle pour un nom de fichier accompagné d’un fichier `Button`-Open: L' `Button` option doit être activée uniquement si du texte a été tapé dans `Entry`le.
 Vous pouvez utiliser un `DataTrigger` pour cette tâche, comme indiqué dans le [ **données déclencheurs** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) article.
 
 ## <a name="using-the-command-interface"></a>À l’aide de l’interface de commande
@@ -152,7 +152,7 @@ Cette approche convient particulièrement dans le cadre de liaison de données e
 
 Dans une application MVVM, le ViewModel définit les propriétés de type `ICommand` qui sont alors connectés à le XAML `Button` éléments avec des liaisons de données. Xamarin.Forms définit également [ `Command` ]((xref:Xamarin.Forms.Command)) et [ `Command<T>` ](xref:Xamarin.Forms.Command`1) des classes qui implémentent le `ICommand` interface et faciliter le ViewModel dans la définition des propriétés de type `ICommand`.
 
-Exécution des commandes sont décrite plus en détail dans l’article [ **l’Interface de commande** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) mais le **commande de bouton base** page dans le [  **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) exemple illustre l’approche de base.
+Exécution des commandes sont décrite plus en détail dans l’article [ **l’Interface de commande** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) mais le **commande de bouton base** page dans le [  **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos) exemple illustre l’approche de base.
 
 Le `CommandDemoViewModel` classe est un ViewModel très simple qui définit une propriété de type `double` nommé `Number`et deux propriétés de type `ICommand` nommé `MultiplyBy2Command` et `DivideBy2Command`:
 
@@ -268,7 +268,7 @@ Les appels à la `ChangeCanExecute` méthode de `Command` sont nécessaires afin
 
 Il est possible pour deux ou plusieurs `Button` éléments à lier au même `ICommand` propriété. Le `Button` peuvent être distingués des éléments à l’aide de la [ `CommandParameter` ](xref:Xamarin.Forms.Button.CommandParameter) propriété du `Button`. Dans ce cas, vous souhaiterez utiliser générique [ `Command<T>` ](xref:Xamarin.Forms.Command`1) classe. Le `CommandParameter` objet est ensuite passé comme argument à la `execute` et `canExecute` méthodes. Cette technique est illustrée en détail dans le [ **base commandes** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding) section de la [ **Interface de commande** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding) article.
 
-Le [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) exemple utilise également cette technique dans son `MainPage` classe. Le **MainPage.xaml** fichier contient un `Button` pour chaque page de l’exemple :
+Le [ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos) exemple utilise également cette technique dans son `MainPage` classe. Le **MainPage.xaml** fichier contient un `Button` pour chaque page de l’exemple :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -409,7 +409,7 @@ Le résultat est que le `Label` utilise uniquement un doigt est en contact avec 
 
 [![Appuyez sur et relâchez le bouton](button-images/PressAndReleaseButton.png "appuyez et relâchez le bouton")](button-images/PressAndReleaseButton-Large.png)
 
-Ce type de comportement a des applications pour les jeux : Un doigt maintenu sur un `Button` peut être un objet écran on à déplacer dans une orientation particulière.
+Ce type de comportement a des applications pour les jeux: Un doigt détenu sur un `Button` peut faire passer un objet à l’écran dans une direction particulière.
 
 <a name="button-appearance" />
 
@@ -582,7 +582,7 @@ Pour plus d’informations sur les états visuels, consultez [le Gestionnaire d�
 
 ## <a name="creating-a-toggle-button"></a>Création d’un bouton bascule
 
-Il est possible de sous-classe `Button` afin qu’il fonctionne comme un commutateur activé / désactivé : Appuyez une fois le bouton pour activer/désactiver le bouton sur, puis appuyez sur Nouveau pour la désactiver.
+Il est possible d’effectuer une `Button` sous-classe afin qu’elle fonctionne comme un commutateur d’activation: Appuyez une fois sur le bouton pour activer ou désactiver le bouton, puis appuyez dessus pour le désactiver.
 
 Ce qui suit `ToggleButton` dérive de la classe `Button` et définit un événement nommé `Toggled` et une propriété booléenne nommée `IsToggled`. Voici les deux mêmes propriétés définies par le Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
 
@@ -750,7 +750,7 @@ Voici le programme en cours d’exécution sur iOS, Android et UWP :
 
 Le `Button` classe définit un [ `ImageSource` ](xref:Xamarin.Forms.Button.Image) propriété qui vous permet d’afficher une image bitmap sur le `Button`, seul ou conjointement avec le texte. Vous pouvez également spécifier comment le texte et l’image sont organisés.
 
-Le `ImageSource` propriété est de type [ `ImageSource` ](xref:Xamarin.Forms.ImageSource), ce qui signifie que les images bitmap peuvent être chargées à partir d’un fichier, une ressource incorporée, un URI ou un flux.
+La `ImageSource` propriété est de type [`ImageSource`](xref:Xamarin.Forms.ImageSource), ce qui signifie que les bitmaps peuvent être chargées à partir d’un fichier, d’une ressource incorporée, d’un URI ou d’un flux.
 
 Chaque plateforme prise en charge par Xamarin.Forms permet des images à être stockées dans plusieurs tailles pour les divers périphériques de l’application peut s’exécuter sur les résolutions pixels différentes. Ces bitmaps plusieurs sont nommés ou stockés de manière à ce que le système d’exploitation peut choisir la meilleure correspondance pour le périphérique vidéo résolution d’affichage.
 
@@ -887,5 +887,5 @@ Vous avez maintenant vu les différentes méthodes que vous pouvez gérer `Butto
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de ButtonDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos)
+- [Exemple de ButtonDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 - [Bouton API](xref:Xamarin.Forms.Button)

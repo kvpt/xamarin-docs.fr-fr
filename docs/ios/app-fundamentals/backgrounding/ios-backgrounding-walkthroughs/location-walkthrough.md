@@ -1,39 +1,39 @@
 ---
-title: Procédure pas à pas - l’emplacement en arrière-plan dans Xamarin.iOS
-description: Ce document fournit une procédure pas à pas montrant comment utiliser les informations d’emplacement dans une application Xamarin.iOS backgrounded. Elle décrit le programme d’installation nécessaires, interface utilisateur et états de l’application.
+title: Procédure pas à pas-emplacement en arrière-plan dans Xamarin. iOS
+description: Ce document fournit une procédure pas à pas d’utilisation des informations d’emplacement dans une application Xamarin. iOS en arrière-plan. Il décrit l’installation, l’interface utilisateur et les États d’application nécessaires.
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: fa8a48e165764a449af4bc5414d2e66aecea8269
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 20f49f3f0c103791064545311d9f66d409cff357
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61392270"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656539"
 ---
-# <a name="walkthrough---background-location-in-xamarinios"></a>Procédure pas à pas - l’emplacement en arrière-plan dans Xamarin.iOS
+# <a name="walkthrough---background-location-in-xamarinios"></a>Procédure pas à pas-emplacement en arrière-plan dans Xamarin. iOS
 
-Dans cet exemple, nous allons créer une application d’emplacement qui imprime des informations sur notre site actuel iOS : latitude, longitude et autres paramètres à l’écran. Cette application va vous montrer comment effectuer correctement les mises à jour de l’emplacement lorsque l’application est actif ou Backgrounded.
+Dans cet exemple, nous allons créer une application d’emplacement iOS qui imprime des informations sur notre emplacement actuel: Latitude, longitude et d’autres paramètres à l’écran. Cette application montre comment effectuer correctement les mises à jour de l’emplacement lorsque l’application est active ou en arrière-plan.
 
-Cette procédure pas à pas explique certaines clé backgrounding concepts, y compris l’inscription d’une application comme une application nécessaire à l’arrière-plan, la suspension des mises à jour de l’interface utilisateur lorsque l’application est lancé en arrière-plan et l’utilisation de la `WillEnterBackground` et `WillEnterForeground` `AppDelegate` méthodes .
+Cette procédure pas à pas explique certains concepts fondamentaux de l’arrière-plan, notamment l’inscription d’une application en tant qu’application requise en arrière-plan, la suspension des mises à jour `WillEnterBackground` de `WillEnterForeground` l’interface utilisateur quand l’application est en arrière-plan et l’utilisation des méthodes et `AppDelegate` . .
 
-## <a name="application-set-up"></a>Configuration des applications
+## <a name="application-set-up"></a>Configuration de l’application
 
 
-1. Tout d’abord, créez un **iOS > application > Application avec affichage unique (C#)**. Appelez-le _emplacement_ et vous assurer que les iPad et iPhone ont été sélectionnés.
+1. Tout d’abord, créez une **application de > iOS > application avecC#affichage unique ()** . Appelez- _le,_ puis vérifiez que iPad et iPhone ont été sélectionnés.
 
-1. Une application de l’emplacement correspond à une application d’arrière-plan-nécessaire dans iOS. Inscrire l’application en tant qu’emplacement application en modifiant le **Info.plist** fichier pour le projet.
+1. Une application d’emplacement qualifie comme une application requise en arrière-plan dans iOS. Inscrivez l’application en tant qu’application d’emplacement en modifiant le fichier **info. plist** pour le projet.
 
-    Sous l’Explorateur de solutions, double-cliquez sur le **Info.plist** fichier pour l’ouvrir et faites défiler vers le bas de la liste. Cochez la case à la fois par le **Enable Background Modes** et **mises à jour de l’emplacement** cases à cocher.
+    Sous Explorateur de solutions, double-cliquez sur le fichier **info. plist** pour l’ouvrir, puis faites défiler la liste jusqu’en bas. Activez les cases à cocher **activer les modes d’arrière-plan** et **mises à jour** de l’emplacement.
 
-    Dans Visual Studio pour Mac, il ressemblera à quelque chose comme ceci :
+    Dans Visual Studio pour Mac, elle ressemble à ce qui suit:
 
-    [![](location-walkthrough-images/image7.png "Cochez la case en Enable Background Modes et les cases à cocher des mises à jour de l’emplacement")](location-walkthrough-images/image7.png#lightbox)
+    [![](location-walkthrough-images/image7.png "Activez les cases à cocher Activer les modes d’arrière-plan et mises à jour de l’emplacement.")](location-walkthrough-images/image7.png#lightbox)
 
-    Dans Visual Studio, **Info.plist** doit être mis à jour manuellement en ajoutant la paire clé/valeur suivantes :
+    Dans Visual Studio, **info. plist** doit être mis à jour manuellement en ajoutant la paire clé/valeur suivante:
 
     ```xml
     <key>UIBackgroundModes</key>
@@ -42,9 +42,9 @@ Cette procédure pas à pas explique certaines clé backgrounding concepts, y co
     </array>
     ```
 
-1. Maintenant que l’application est inscrite, il peut récupérer les données d’emplacement de l’appareil. Dans iOS, le `CLLocationManager` classe est utilisée pour accéder aux informations d’emplacement et peut déclencher des événements qui fournissent des mises à jour de l’emplacement.
+1. Maintenant que l’application est inscrite, elle peut récupérer les données d’emplacement à partir de l’appareil. Dans iOS, la `CLLocationManager` classe est utilisée pour accéder aux informations d’emplacement et peut déclencher des événements qui fournissent des mises à jour d’emplacement.
 
-1. Dans le code, créez une classe appelée `LocationManager` qui fournit un emplacement unique pour les différents écrans et de code pour vous abonner aux mises à jour de l’emplacement. Dans le `LocationManager` class, créer une instance de la `CLLocationManager` appelée `LocMgr`:
+1. Dans le code, créez une classe appelée `LocationManager` qui fournit un emplacement unique pour différents écrans et code pour vous abonner aux mises à jour de l’emplacement. Dans la `LocationManager` classe, créez une instance `CLLocationManager` du appelé `LocMgr`:
 
     ```csharp
     public class LocationManager
@@ -72,21 +72,21 @@ Cette procédure pas à pas explique certaines clé backgrounding concepts, y co
     }
     ```
 
-    Le code ci-dessus définit un nombre de propriétés et les autorisations sur le [CLLocationManager](xref:CoreLocation.CLLocationManager) classe :
+    Le code ci-dessus définit un certain nombre de propriétés et d’autorisations sur la classe [CLLocationManager](xref:CoreLocation.CLLocationManager) :
 
-    - `PausesLocationUpdatesAutomatically` : Il s’agit d’une valeur booléenne qui peut être définie en fonction de si le système est autorisé à suspendre les mises à jour de l’emplacement. Sur certains appareils par défaut `true`, ce qui peut entraîner l’appareil arrêter de recevoir des mises à jour de l’emplacement après environ 15 minutes en arrière-plan.
-    - `RequestAlwaysAuthorization` -Vous devez passer cette méthode pour permettre à l’utilisateur de l’application pour autoriser l’emplacement accessible en arrière-plan. `RequestWhenInUseAuthorization` peut également être passé si vous souhaitez donner à l’utilisateur de l’option pour autoriser l’emplacement accessible uniquement lorsque l’application est au premier plan.
-    - `AllowsBackgroundLocationUpdates` – Il s’agit d’une propriété booléenne, introduite dans iOS 9 qui peuvent être définies pour permettre à une application recevoir des mises à jour de l’emplacement lorsque suspendu.
+    - `PausesLocationUpdatesAutomatically`: Il s’agit d’une valeur booléenne qui peut être définie selon que le système est autorisé ou non à suspendre les mises à jour de l’emplacement. Sur un appareil `true`, la valeur par défaut est, ce qui peut amener l’appareil à cesser d’obtenir des mises à jour de l’emplacement d’arrière-plan après environ 15 minutes.
+    - `RequestAlwaysAuthorization`-Vous devez passer cette méthode pour donner à l’utilisateur de l’application la possibilité d’autoriser l’accès à l’emplacement en arrière-plan. `RequestWhenInUseAuthorization`peut également être passé si vous souhaitez donner à l’utilisateur la possibilité d’autoriser l’accès à l’emplacement uniquement lorsque l’application est au premier plan.
+    - `AllowsBackgroundLocationUpdates`: Il s’agit d’une propriété booléenne, introduite dans iOS 9, qui peut être définie pour permettre à une application de recevoir des mises à jour d’emplacement lorsqu’elle est suspendue.
 
     > [!IMPORTANT]
-    > iOS 8 (et supérieur) nécessite également une entrée dans le **Info.plist** fichier permettant à l’utilisateur dans le cadre de la demande d’autorisation.
+    > iOS 8 (et versions ultérieures) nécessite également une entrée dans le fichier **info. plist** pour afficher l’utilisateur dans le cadre de la demande d’autorisation.
 
-1. Ajouter une clé `NSLocationAlwaysUsageDescription` ou `NSLocationWhenInUseUsageDescription` avec une chaîne qui sera affichée à l’utilisateur dans l’alerte qui demande l’accès de données d’emplacement.
+1. Ajoutez une clé `NSLocationAlwaysUsageDescription` ou `NSLocationWhenInUseUsageDescription` une chaîne qui sera affichée à l’utilisateur dans l’alerte qui demande l’accès aux données d’emplacement.
 
-1. iOS 9 exige que lorsque vous utilisez `AllowsBackgroundLocationUpdates` le **Info.plist** inclut la clé `UIBackgroundModes` avec la valeur `location`. Si vous avez terminé l’étape 2 de cette procédure pas à pas, cela devrait déjà été dans votre fichier Info.plist.
+1. iOS 9 requiert que, lors `AllowsBackgroundLocationUpdates` de l’utilisation du fichier **info. plist** , `location`la clé `UIBackgroundModes` avec la valeur est incluse. Si vous avez terminé l’étape 2 de cette procédure pas à pas, vous devez déjà avoir dans votre fichier info. plist.
 
 
-1. À l’intérieur de la `LocationManager` classe, créez une méthode appelée `StartLocationUpdates` par le code suivant. Ce code illustre la façon dont pour recevoir des mises à jour de l’emplacement à partir de la `CLLocationManager`:
+1. À l' `LocationManager` intérieur de la classe, créez `StartLocationUpdates` une méthode appelée avec le code suivant. Ce code montre comment démarrer la réception des mises à jour de l’emplacement `CLLocationManager`à partir du:
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -101,20 +101,20 @@ Cette procédure pas à pas explique certaines clé backgrounding concepts, y co
     }
     ```
 
-    Voici quelques points importants qui se produit dans cette méthode. Tout d’abord, nous effectuons une vérification pour voir si l’application a accès aux données d’emplacement sur l’appareil. Nous le vérifier en appelant `LocationServicesEnabled` sur le `CLLocationManager`. Cette méthode retournera **false** si l’utilisateur a refusé l’application à accéder aux informations d’emplacement.
+    Il existe plusieurs éléments importants qui se produisent dans cette méthode. Tout d’abord, nous procédons à une vérification pour voir si l’application a accès aux données d’emplacement sur l’appareil. Nous vérifions cela en `LocationServicesEnabled` appelant `CLLocationManager`sur. Cette méthode retourne la **valeur false** si l’utilisateur a refusé l’accès à l’application aux informations relatives à l’emplacement.
 
-1. Ensuite, indiquez la fréquence à laquelle le Gestionnaire d’emplacement pour mettre à jour. `CLLocationManager` offre de nombreuses options pour le filtrage et la configuration des données d’emplacement, y compris la fréquence des mises à jour. Dans cet exemple, définissez le `DesiredAccuracy` pour mettre à jour chaque fois que l’emplacement est modifié par un compteur. Pour plus d’informations sur la configuration de fréquence de mise à jour d’emplacement et d’autres préférences, reportez-vous à la [référence de classe CLLocationManager](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) dans la documentation Apple.
+1. Ensuite, indiquez au gestionnaire d’emplacement la fréquence de mise à jour. `CLLocationManager`fournit de nombreuses options pour filtrer et configurer les données d’emplacement, y compris la fréquence des mises à jour. Dans cet exemple, définissez le `DesiredAccuracy` à mettre à jour chaque fois que l’emplacement change d’un compteur. Pour plus d’informations sur la configuration de la fréquence de mise à jour de l’emplacement et d’autres préférences, reportez-vous à la référence de la [classe CLLocationManager](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) dans la documentation Apple.
 
-1. Enfin, appelez `StartUpdatingLocation` sur la `CLLocationManager` instance. Cela indique le Gestionnaire d’emplacement pour obtenir un correctif initial sur l’emplacement actuel et démarrer l’envoi des mises à jour
+1. Enfin, appelez `StartUpdatingLocation` sur l' `CLLocationManager` instance. Cela indique au gestionnaire d’emplacement d’avoir un correctif initial à l’emplacement actuel et de commencer à envoyer des mises à jour
 
-Jusqu’ici, le Gestionnaire d’emplacement a été créé, configuré avec les types de données que nous souhaitons recevoir, et a déterminé l’emplacement initial. Le code doit à présent afficher les données de localisation de l’interface utilisateur. Nous pouvons le faire avec un événement personnalisé qui prend un `CLLocation` en tant qu’argument :
+Jusqu’à présent, le gestionnaire d’emplacement a été créé, configuré avec les types de données que vous souhaitez recevoir et a déterminé l’emplacement initial. À présent, le code doit restituer les données d’emplacement dans l’interface utilisateur. Nous pouvons le faire avec un événement personnalisé qui prend `CLLocation` comme argument:
 
 ```csharp
 // event for the location changing
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-L’étape suivante consiste à s’abonner aux mises à jour de l’emplacement à partir de la `CLLocationManager`et déclencher personnalisé `LocationUpdated` événement lorsque de nouvelles données d’emplacement devient disponibles, en passant l’emplacement en tant qu’argument. Pour ce faire, créez une nouvelle classe **LocationUpdateEventArgs.cs**. Ce code est accessible au sein de l’application principale et retourne l’emplacement de l’appareil lorsque l’événement est déclenché :
+L’étape suivante consiste à s’abonner à des mises à jour `CLLocationManager`de localisation à partir du `LocationUpdated` et à déclencher l’événement personnalisé quand de nouvelles données d’emplacement deviennent disponibles, en passant l’emplacement en tant qu’argument. Pour ce faire, créez une nouvelle classe **LocationUpdateEventArgs.cs**. Ce code est accessible dans l’application principale et retourne l’emplacement de l’appareil lorsque l’événement est déclenché:
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -135,16 +135,16 @@ public class LocationUpdatedEventArgs : EventArgs
 
 ## <a name="user-interface"></a>Interface utilisateur
 
-1. Utilisez le concepteur iOS pour créer l’écran qui affiche des informations d’emplacement. Double-cliquez sur le **Main.storyboard** fichier pour commencer.
+1. Utilisez le concepteur iOS pour créer l’écran qui affichera les informations relatives à l’emplacement. Double-cliquez sur le fichier **main. Storyboard** pour commencer.
 
-    Sur le plan conceptuel, faites glisser plusieurs étiquettes à l’écran comme espaces réservés pour les informations d’emplacement. Dans cet exemple, voici les étiquettes pour la latitude, longitude, altitude, cours et la vitesse.
+    Sur le Storyboard, faites glisser plusieurs étiquettes sur l’écran pour servir d’espaces réservés pour les informations d’emplacement. Dans cet exemple, il existe des étiquettes pour la latitude, la longitude, l’altitude, le cours et la vitesse.
 
-    La mise en page doit ressembler à ce qui suit :
+    La disposition doit ressembler à ce qui suit:
 
-    ![](location-walkthrough-images/image8.png "Un exemple de disposition de l’interface utilisateur dans le concepteur iOS")
+    ![](location-walkthrough-images/image8.png "Exemple de disposition d’interface utilisateur dans le concepteur iOS")
 
-1. Dans le panneau de solutions, double-cliquez sur le `ViewController.cs` fichier et modifiez-la pour créer une nouvelle instance de la LocationManager et appelez `StartLocationUpdates`dessus.
-  Modifier le code ressemble à ce qui suit :
+1. Dans la panneau solutions, double-cliquez sur `ViewController.cs` le fichier et modifiez-le pour créer une nouvelle instance du LocationManager et `StartLocationUpdates`appeler dessus.
+  Modifiez le code pour qu’il ressemble à ce qui suit:
 
     ```csharp
     #region Computed Properties
@@ -166,9 +166,9 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-    Cette commande démarre les mises à jour de l’emplacement sur le démarrage de l’application, même si aucune donnée ne s’affichera.
+    Cette opération démarre les mises à jour de l’emplacement au démarrage de l’application, bien qu’aucune donnée ne s’affiche.
 
-1. Maintenant que les mises à jour de l’emplacement sont reçus, mettre à jour l’écran avec les informations d’emplacement. La méthode suivante obtient l’emplacement à partir de notre `LocationUpdated` événements et les affiche dans l’interface utilisateur :
+1. Maintenant que les mises à jour de l’emplacement sont reçues, mettez à jour l’écran avec les informations relatives à l’emplacement. La méthode suivante obtient l’emplacement à partir `LocationUpdated` de notre événement et l’affiche dans l’interface utilisateur:
 
     ```csharp
     #region Public Methods
@@ -188,7 +188,7 @@ public class LocationUpdatedEventArgs : EventArgs
     #endregion
     ```
 
-Nous avons besoin pour vous abonner à la `LocationUpdated` événement notre AppDelegate, puis appelez la nouvelle méthode pour mettre à jour de l’interface utilisateur. Ajoutez le code suivant dans `ViewDidLoad,` juste après le `StartLocationUpdates` appeler :
+Nous devons encore vous abonner à `LocationUpdated` l’événement dans notre AppDelegate et appeler la nouvelle méthode pour mettre à jour l’interface utilisateur. Ajoutez le code `ViewDidLoad,` suivant juste après l' `StartLocationUpdates` appel:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -203,13 +203,13 @@ public override void ViewDidLoad ()
 ```
 
 
-Maintenant, lorsque l’application est exécutée, elle doit ressembler à ceci :
+Désormais, lorsque l’application est exécutée, elle doit ressembler à ceci:
 
-[![](location-walkthrough-images/image5.png "Exécution d’une application exemple")](location-walkthrough-images/image5.png#lightbox)
+[![](location-walkthrough-images/image5.png "Exemple d’exécution d’application")](location-walkthrough-images/image5.png#lightbox)
 
-## <a name="handling-active-and-background-states"></a>Gestion des états actif et d’arrière-plan
+## <a name="handling-active-and-background-states"></a>Gestion des États actifs et d’arrière-plan
 
-1. L’application est sortie de mises à jour de l’emplacement bien qu’il soit au premier plan et active. Pour illustrer ce qui se passe quand l’application entre dans l’arrière-plan, substituez le `AppDelegate` méthodes qui effectuent le suivi d’application les modifications d’état afin que l’application écrit dans la console durant les transitions entre le premier plan et arrière-plan :
+1. L’application expose les mises à jour de l’emplacement alors qu’elle se trouve au premier plan et active. Pour illustrer ce qui se produit lorsque l’application entre en arrière- `AppDelegate` plan, substituez les méthodes qui effectuent le suivi des modifications de l’état de l’application afin que l’application écrit dans la console lors de la transition entre le premier plan et l’arrière-plan:
 
     ```csharp
     public override void DidEnterBackground (UIApplication application)
@@ -223,7 +223,7 @@ Maintenant, lorsque l’application est exécutée, elle doit ressembler à ceci
     }
     ```
 
-    Ajoutez le code suivant dans le `LocationManager` à l’emplacement mis à jour de l’impression en continu des données dans la sortie de l’application, pour vérifier les informations d’emplacement sont toujours disponibles dans l’arrière-plan :
+    Ajoutez le code suivant dans la `LocationManager` pour imprimer en continu les données d’emplacement mises à jour vers la sortie de l’application, afin de vérifier que les informations d’emplacement sont toujours disponibles en arrière-plan:
 
     ```csharp
     public class LocationManager
@@ -247,11 +247,11 @@ Maintenant, lorsque l’application est exécutée, elle doit ressembler à ceci
     }
     ```
 
-1. Il existe un problème restant avec le code : tente de mettre à jour l’interface utilisateur lorsque l’application est lancé en arrière-plan sera cause iOS s’y mettre fin. Lorsque l’application passe en arrière-plan, le code a besoin pour vous désabonner de mises à jour de l’emplacement et d’arrêter la mise à jour de l’interface utilisateur.
+1. Il reste un problème avec le code: Si vous tentez de mettre à jour l’interface utilisateur lorsque l’application est en arrière-plan, iOS l’arrête. Lorsque l’application passe en arrière-plan, le code doit se désabonner des mises à jour de l’emplacement et arrêter la mise à jour de l’interface utilisateur.
 
-    iOS nous fournit des notifications lorsque l’application est sur le point de transition vers une autre application États. Dans ce cas, nous pouvons vous abonner à la `ObserveDidEnterBackground` Notification.
+    iOS fournit des notifications lorsque l’application est sur le paragraphe de la transition vers un état d’application différent. Dans ce cas, nous pouvons m’abonner `ObserveDidEnterBackground` à la notification.
 
-    L’extrait de code suivant montre comment utiliser une notification pour informer la vue quand arrêter les mises à jour de l’interface utilisateur. Celui-ci s’insère `ViewDidLoad`:
+    L’extrait de code suivant montre comment utiliser une notification pour permettre à la vue de savoir quand arrêter les mises à jour de l’interface utilisateur. Cela va dans `ViewDidLoad`:
 
     ```csharp
     UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
@@ -259,15 +259,15 @@ Maintenant, lorsque l’application est exécutée, elle doit ressembler à ceci
     });
     ```
 
-    Lorsque l’application est en cours d’exécution, la sortie se présente comme suit :
+    Quand l’application est en cours d’exécution, la sortie se présente comme suit:
 
-    ![](location-walkthrough-images/image6.png "Exemple de la sortie de l’emplacement dans la console")
+    ![](location-walkthrough-images/image6.png "Exemple de sortie d’emplacement dans la console")
 
-1. L’application imprime les mises à jour de l’emplacement à l’écran lors de l’exploitation au premier plan et continue à imprimer des données dans la fenêtre de sortie d’application lors de l’utilisation en arrière-plan.
+1. L’application imprime les mises à jour de l’emplacement à l’écran lors de son exécution au premier plan, puis continue à imprimer les données dans la fenêtre de sortie de l’application tout en opérant en arrière-plan.
 
-Reste qu’un seul problème en suspens : l’écran de démarrage mises à jour de l’interface utilisateur lorsque l’application est chargée en premier, mais il n’a aucun moyen de savoir quand l’application est rentré de premier plan. Si l’application backgrounded est remise au premier plan, les mises à jour de l’interface utilisateur ne sont pas reprendre.
+Un seul problème en suspens subsiste: l’écran démarre les mises à jour de l’interface utilisateur lorsque l’application est chargée pour la première fois, mais il n’a aucun moyen de savoir quand l’application est à nouveau entrée au premier plan. Si l’application en arrière-plan est replacée au premier plan, les mises à jour de l’interface utilisateur ne sont pas reprises.
 
-Pour résoudre ce problème, imbriquer un appel à démarrer des mises à jour de l’interface utilisateur à l’intérieur d’une autre Notification, qui est déclenché lorsque l’application passe à l’état Active :
+Pour résoudre ce problème, imbriquez un appel pour démarrer les mises à jour de l’interface utilisateur dans une autre notification, qui se déclenche lorsque l’application passe à l’état actif:
 
 ```csharp
 UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
@@ -275,12 +275,12 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 });
 ```
 
-Désormais, l’interface utilisateur commencera la mise à jour lors du premier démarrage de l’application et de reprendre la mise à jour n’importe quel moment l’application revient au premier plan.
+Désormais, l’interface utilisateur commence à se mettre à jour lorsque l’application est démarrée pour la première fois et reprend la mise à jour à chaque fois que l’application revient au premier plan.
 
-Dans cette procédure pas à pas, nous avons créé une application iOS se comportant bien, prenant en charge en arrière-plan qui imprime les données d’emplacement à l’écran et la fenêtre de sortie d’application.
+Dans cette procédure pas à pas, nous avons créé une application iOS avec prise en charge bien comprise qui imprime les données de localisation à la fois sur l’écran et dans la fenêtre de sortie de l’application.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Emplacement (partie 4) (exemple)](https://developer.xamarin.com/samples/monotouch/Location/)
-- [Référence de Framework l’emplacement principal](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)
+- [Emplacement (partie 4) (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
+- [Référence de l’infrastructure d’emplacement principal](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

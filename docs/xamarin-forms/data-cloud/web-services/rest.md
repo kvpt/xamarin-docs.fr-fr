@@ -1,5 +1,5 @@
 ---
-title: Utiliser un Service Web RESTful
+title: Utilisation d’un service Web RESTful
 description: L’intégration d’un service web dans une application est un scénario courant. Cet article montre comment utiliser un service web RESTful à partir d’une application Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: adfc3247bce4d40d73580d6ca9baa31df4f57229
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658966"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644575"
 ---
-# <a name="consume-a-restful-web-service"></a>Utiliser un Service Web RESTful
+# <a name="consume-a-restful-web-service"></a>Utilisation d’un service Web RESTful
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _L’intégration d’un service web dans une application est un scénario courant. Cet article montre comment utiliser un service web RESTful à partir d’une application Xamarin.Forms._
 
@@ -38,7 +38,7 @@ Les services web rESTful utilisent généralement des messages JSON pour retourn
 
 La simplicité de REST a permis de rendre la méthode principale pour accéder aux services web dans les applications mobiles.
 
-Lorsque l’exemple d’application est exécuté, il se connecte à un service REST hébergé localement, comme illustré dans la capture d’écran suivante :
+Lorsque l’exemple d’application est exécuté, il se connecte à un service REST hébergé localement, comme illustré dans la capture d’écran suivante:
 
 ![](rest-images/portal.png "Exemple d’Application")
 
@@ -208,5 +208,5 @@ Le service REST envoie un code d’état HTTP le `HttpResponseMessage.IsSuccessS
 ## <a name="related-links"></a>Liens associés
 
 - [Création de services backend pour les applications mobiles natives](/aspnet/core/mobile/native-mobile-backend/)
-- [TodoREST (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST/)
+- [TodoREST (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

@@ -1,126 +1,126 @@
 ---
-title: 'Installation et configuration de l’usure du système d’exploitation onXamarin.Android '
-description: Cet article décrit les étapes d’installation et les détails de configuration requises pour préparer votre ordinateur et les appareils pour le développement Android Wear. À la fin de cet article, vous disposerez d’un travail d’installation de l’usure de Xamarin.Android intégrée à Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à créer votre première application Xamarin.Android usure.
+title: 'Installation et configuration de l’usure du système d’exploitation onXamarin. Android '
+description: Cet article vous guide tout au long des étapes d’installation et des détails de configuration nécessaires à la préparation de votre ordinateur et de vos appareils au développement Android. À la fin de cet article, vous disposerez d’une installation Xamarin. Android d’usure intégrée dans Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à commencer à créer votre première application Xamarin. Android usure.
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0bae98a204ba3478834894d6c093259a8b2139b2
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827719"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647801"
 ---
 # <a name="setup-and-installation"></a>Installation et configuration
 
-_Cet article décrit les étapes d’installation et les détails de configuration requises pour préparer votre ordinateur et les appareils pour le développement Android Wear. À la fin de cet article, vous disposerez d’un travail d’installation de l’usure de Xamarin.Android intégrée à Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à créer votre première application Xamarin.Android usure._
+_Cet article vous guide tout au long des étapes d’installation et des détails de configuration nécessaires à la préparation de votre ordinateur et de vos appareils au développement Android. À la fin de cet article, vous disposerez d’une installation Xamarin. Android d’usure intégrée dans Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à commencer à créer votre première application Xamarin. Android usure._
 
 ## <a name="requirements"></a>Configuration requise
 
-Les éléments suivants sont requis pour créer des applications basées sur Xamarin Android Wear :
+Les éléments suivants sont requis pour créer des applications d’usure Android basées sur Xamarin:
 
--   **Visual Studio ou Visual Studio pour Mac** &ndash; Visual Studio 2017 Community ou ultérieur est requis.
+-   **Visual Studio ou Visual Studio pour Mac** &ndash; La Communauté Visual Studio 2017 ou une version ultérieure est requise.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 4,17 ou version ultérieure doit être installé et configuré avec Visual Studio ou Visual Studio pour Mac.
+-   **Xamarin. Android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
 
--   **Kit de développement logiciel Android** -Kit de développement logiciel Android 5.0.1 (API 21) ou version ultérieure doit être installé via le gestionnaire Android SDK.
+-   **Android SDK** -Android SDK 5.0.1 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
--   **Kit de développement Java** &ndash; le développement Xamarin Android nécessite [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous êtes développement pour le niveau d’API 24 ou supérieure (JDK 1.8 prend également en charge les niveaux d’API antérieures à 24).
+-   **Kit de développement Java** Le développement Xamarin Android requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24). &ndash;
 
-Vous pouvez continuer à utiliser [JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous êtes développement spécifiquement pour le niveau d’API 23 ou une version antérieure.
+Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
 
 ## <a name="installation"></a>Installation
 
-Une fois que vous avez installé Xamarin.Android, procédez comme suit afin que vous êtes prêt à générer et tester des applications Android Wear : 
+Après avoir installé Xamarin. Android, procédez comme suit pour être prêt à créer et à tester des applications d’usure Android: 
 
-1.  Installez le Kit Android SDK et les outils requis.
-2.  Configurer un appareil de test.
-3.  Créer votre première application Android Wear.
+1.  Installez les Android SDK et les outils requis.
+2.  Configurez un appareil de test.
+3.  Créez votre première application Android usure.
 
 Ces étapes sont décrites dans les sections suivantes.
 
 
-### <a name="install-android-sdk-and-tools"></a>Installer le Kit de développement logiciel Android 
+### <a name="install-android-sdk-and-tools"></a>Installer Android SDK et les outils 
 
-Lancer le **Gestionnaire Android SDK**: 
+Lancez le **Gestionnaire de Android SDK**: 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Comment lancer le gestionnaire Android SDK dans Visual Studio](installation-images/vs/sdk-menu.png)
+![Comment lancer le gestionnaire de Android SDK dans Visual Studio](installation-images/vs/sdk-menu.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![Comment lancer le gestionnaire Android SDK dans Visual Studio pour Mac](installation-images/xs/sdk-menu.png)
+![Comment lancer le gestionnaire de Android SDK dans Visual Studio pour Mac](installation-images/xs/sdk-menu.png)
 
 -----
 
 
-Assurez-vous d’avoir le Kit de développement logiciel Android suivantes et les outils installés :
+Assurez-vous que les Android SDK et les outils suivants sont installés:
 
-* Android SDK Tools v 24.0.0 ou une version ultérieure, et
-* Android 4.4W (API20), ou
-* Android 5.0.1 (API21) ou une version ultérieure.
+* Android SDK Tools v 24.0.0 ou version ultérieure, et
+* Android 4.4 W (API20) ou
+* Android 5.0.1 (API21) ou version ultérieure.
 
-Si vous n’avez pas les dernières SDK et outils sont installés, téléchargez les outils du Kit de développement logiciel requis *et* les bits de l’API (vous devrez peut-être faire défiler un peu pour les trouver &ndash; la sélection de l’API est indiquée ci-dessous) : 
+Si le kit de développement logiciel (SDK) et les outils les plus récents ne sont pas installés, téléchargez les outils requis du kit de développement logiciel (SDK) &ndash; et les bits d’API (vous devrez peut-être faire défiler un peu pour les trouver dans la sélection de l’API): 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Capture d’écran de l’exemple SDK Manager de l’activation d’Android 5.0.1 composants](installation-images/vs/sdk-select.png)
+![Exemple de capture d’écran du gestionnaire SDK de l’activation des composants Android 5.0.1](installation-images/vs/sdk-select.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![Capture d’écran de l’exemple SDK Manager de l’activation d’Android 4.4 et 5.0.1 composants](installation-images/xs/sdk-select.png)
+![Exemple de capture d’écran du gestionnaire SDK de l’activation des composants Android 4,4 et 5.0.1](installation-images/xs/sdk-select.png)
 
 -----
 
 
 ## <a name="configuration"></a>Configuration
 
-Avant de pouvoir utiliser tester votre application, vous devez configurer un émulateur Android Wear ou un appareil Android Wear réel. 
+Avant de pouvoir utiliser tester votre application, vous devez configurer un émulateur d’usure Android ou un appareil d’usure Android réel. 
 
 
-### <a name="android-wear-emulator"></a>Émulateur d’Android Wear
+### <a name="android-wear-emulator"></a>Émulateur d’usure Android
 
-Avant de pouvoir utiliser un émulateur Android Wear, vous devez configurer un Android Wear Android Virtual Device (AVD) à l’aide de la **Gestionnaire d’émulateur Google**:
+Avant de pouvoir utiliser un émulateur Android d’usure, vous devez configurer un appareil virtuel Android d’usure à l’aide du **Gestionnaire d’émulateur Google**:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Comment lancer le Gestionnaire d’émulateur Android à partir de Visual Studio](installation-images/vs/emulator-menu.png)
+![Comment lancer le gestionnaire de Émulateur Android à partir de Visual Studio](installation-images/vs/emulator-menu.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![Comment lancer le Gestionnaire d’émulateur Android à partir de Visual Studio pour Mac](installation-images/xs/emulator-menu.png)
+![Comment lancer le gestionnaire de Émulateur Android à partir de Visual Studio pour Mac](installation-images/xs/emulator-menu.png)
 
 -----
 
-Pour plus d’informations sur la configuration d’un émulateur Android Wear, consultez [déboguer Android Wear sur un émulateur](~/android/wear/deploy-test/debug-on-emulator.md).
+Pour plus d’informations sur la configuration d’un émulateur d’usure Android, consultez déboguer l' [usure Android sur un émulateur](~/android/wear/deploy-test/debug-on-emulator.md).
 
 
-### <a name="android-wear-device"></a>Appareil Android Wear
+### <a name="android-wear-device"></a>Appareil Android usure
 
-Si vous avez un appareil Android Wear, par exemple un Smartwatch Android Wear, vous pouvez déboguer l’application sur cet appareil au lieu d’utiliser un émulateur. Pour plus d’informations sur le développement avec un appareil Wear, consultez [déboguer sur un appareil Wear](~/android/wear/deploy-test/debug-on-device.md).
+Si vous avez un appareil Android d’usure comme un SmartWatch Android, vous pouvez déboguer l’application sur cet appareil au lieu d’utiliser un émulateur. Pour plus d’informations sur le développement avec un appareil d’usure, consultez déboguer [sur un appareil d’usure](~/android/wear/deploy-test/debug-on-device.md).
 
 
-## <a name="create-your-first-android-wear-app"></a>Créer votre première application Android Wear
+## <a name="create-your-first-android-wear-app"></a>Créer votre première application Android usure
 
-Suivez le [Hello, l’usure](~/android/wear/get-started/hello-wear.md) instructions pour créer votre première application watch.
+Suivez les instructions [Hello, usure](~/android/wear/get-started/hello-wear.md) pour créer votre première application Watch.
 
 
 ## <a name="packaging-your-app"></a>Empaquetage de votre application
 
-Android wear applications sont toujours distribuées avec une application de téléphone Android Compagnon. 
+Les applications d’usure Android sont toujours distribuées avec une application de téléphone Android auxiliaire. 
 
-Lorsque vous ajoutez votre application Android Wear comme une référence à votre application Android principale, il est automatiquement considéré comme un projet Android Wear et génère tous les XML et les métadonnées nécessaires pour vous. En outre, il vérifie que les numéros de version et package correspondent donc vous pouvez facilement expédier vos applications sur Google Play. 
+Quand vous ajoutez votre application Android usure comme référence à votre application Android principale, il est automatiquement considéré comme un projet Android d’usure et génère toutes les données XML et les métadonnées nécessaires pour vous. En outre, il vérifie que les numéros de package et de version correspondent pour vous permettre d’envoyer facilement vos applications à Google Play. 
 
-Pour en savoir plus sur l’empaquetage d’applications de l’usure, consultez [fonctionne avec l’empaquetage](~/android/wear/deploy-test/packaging.md).
+Pour en savoir plus sur l’empaquetage d’applications, consultez [utilisation de](~/android/wear/deploy-test/packaging.md)l’empaquetage.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [SkeletonWear (sample)](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)
+- [SkeletonWear (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-skeletonwear)

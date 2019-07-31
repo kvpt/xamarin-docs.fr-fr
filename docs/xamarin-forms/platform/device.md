@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512880"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655970"
 ---
 # <a name="xamarinforms-device-class"></a>Classe de périphérique de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 Le [ `Device` ](xref:Xamarin.Forms.Device) classe contient un nombre de propriétés et méthodes pour aider les développeurs de personnaliser la disposition et les fonctionnalités sur une base par plateforme.
 
-En plus des méthodes et propriétés pour cibler le code à des types de matériel spécifique et les tailles, le `Device` classe inclut des méthodes qui peuvent être utilisées pour interagir avec les contrôles d’interface utilisateur à partir de threads d’arrière-plan. Pour plus d’informations, consultez [interagir avec l’interface utilisateur à partir de threads d’arrière-plan](#interact-with-the-ui-from-background-threads).
+En plus des méthodes et des propriétés pour cibler le code à des tailles et des types `Device` de matériel spécifiques, la classe comprend des méthodes qui peuvent être utilisées pour interagir avec des contrôles d’interface utilisateur à partir de threads d’arrière-plan. Pour plus d’informations, consultez [interagir avec l’interface utilisateur à partir de threads d’arrière-plan](#interact-with-the-ui-from-background-threads).
 
-## <a name="providing-platform-specific-values"></a>En fournissant des valeurs spécifiques à la plateforme
+## <a name="providing-platform-specific-values"></a>Fournir des valeurs spécifiques à la plateforme
 
 Avant de Xamarin.Forms 2.3.4, la plateforme de l’application s’exécutait sur pourrait être obtenue en examinant le [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) propriété et en la comparant à la [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), et [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) valeurs d’énumération. De même, un de la [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) surcharges peut servir à fournir des valeurs spécifiques à la plateforme à un contrôle.
 
@@ -182,22 +182,22 @@ Si le code à l’intérieur de la minuterie interagit avec l’interface utilis
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>Interagir avec l’interface utilisateur à partir de threads d’arrière-plan
 
-La plupart des systèmes d’exploitation, y compris iOS, Android et la plateforme Windows universelle, utilisez un modèle de thread unique pour le code impliquant l’interface utilisateur. Ce thread est souvent appelé la *thread principal* ou *thread d’interface utilisateur*. Une conséquence de ce modèle est que tout le code qui accède aux éléments d’interface utilisateur doit s’exécuter sur le thread principal de l’application.
+La plupart des systèmes d’exploitation, y compris iOS, Android et le plateforme Windows universelle, utilisent un modèle à thread unique pour le code impliquant l’interface utilisateur. Ce thread est souvent appelé thread *principal* ou thread d' *interface utilisateur*. Une conséquence de ce modèle est que tout le code qui accède aux éléments de l’interface utilisateur doit s’exécuter sur le thread principal de l’application.
 
-Les applications utilisent parfois des threads d’arrière-plan pour effectuer des opérations potentiellement longues, telles que la récupération des données à partir d’un service web. Si le code s’exécutant sur un thread d’arrière-plan doit accéder aux éléments d’interface utilisateur, il doit exécuter ce code sur le thread principal.
+Les applications utilisent parfois des threads d’arrière-plan pour exécuter des opérations potentiellement longues, telles que la récupération de données à partir d’un service Web. Si le code qui s’exécute sur un thread d’arrière-plan doit accéder aux éléments de l’interface utilisateur, il doit exécuter ce code sur le thread principal.
 
-Le `Device` classe inclut les éléments suivants `static` éléments à partir de threads d’arrière-plan de l’interface méthodes qui peuvent être utilisées pour interagir avec l’utilisateur :
+La `Device` classe comprend les méthodes `static` suivantes qui peuvent être utilisées pour interagir avec des éléments d’interface utilisateur à partir de threads d’arrière-plan:
 
 | Méthode | Arguments | Returns (Retours) | Objectif |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | Appelle un `Action` sur le thread principal et n’attend pas qu’elle se termine. |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Appelle un `Func<T>` sur le thread principal et attend qu’elle se termine. |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | Appelle un `Action` sur le thread principal et attend qu’elle se termine. |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Appelle un `Func<Task<T>>` sur le thread principal et attend qu’elle se termine. |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Appelle un `Func<Task>` sur le thread principal et attend qu’elle se termine. |
+| `BeginInvokeOnMainThread` | `Action` | `void` | Appelle un `Action` sur le thread principal et n’attend pas qu’il se termine. |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Appelle un `Func<T>` sur le thread principal et attend qu’il se termine. |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | Appelle un `Action` sur le thread principal et attend qu’il se termine. |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Appelle un `Func<Task<T>>` sur le thread principal et attend qu’il se termine. |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Appelle un `Func<Task>` sur le thread principal et attend qu’il se termine. |
 | `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Retourne le `SynchronizationContext` pour le thread principal. |
 
-Le code suivant montre un exemple d’utilisation le `BeginInvokeOnMainThread` méthode :
+Le code suivant illustre un exemple d’utilisation de `BeginInvokeOnMainThread` la méthode:
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
@@ -208,6 +208,6 @@ Device.BeginInvokeOnMainThread (() =>
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’appareil](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
-- [Exemple de styles](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [Exemple d’appareil](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+- [Exemple de styles](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [Appareil](xref:Xamarin.Forms.Device)

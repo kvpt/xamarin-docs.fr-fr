@@ -7,22 +7,22 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4cd84e9134db2b2106af3205f189fbc2a92bdcc
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 484a3ac742d162e1d6faaa38ad2e4eb056ed64a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61018309"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644481"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Dessiner un cercle Simple dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez les principes fondamentaux de dessin SkiaSharp, y compris le canevas et peindre des objets_
 
 Cet article présente les concepts du dessin de graphiques dans Xamarin.Forms à l’aide de SkiaSharp, y compris la création un `SKCanvasView` objet pour héberger la gestion des graphiques le `PaintSurface` événement et à l’aide un `SKPaint` objet pour spécifier la couleur et autres dessins attributs.
 
-Le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programme contient des exemples de code pour cette série d’articles de SkiaSharp. La première page est autorisée à utiliser **cercle Simple** et appelle la classe de page [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Ce code montre comment dessiner un cercle dans le centre de la page avec un rayon de 100 pixels. Le contour du cercle est rouge, et l’intérieur du cercle est bleu.
+Le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) programme contient des exemples de code pour cette série d’articles de SkiaSharp. La première page est autorisée à utiliser **cercle Simple** et appelle la classe de page [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Ce code montre comment dessiner un cercle dans le centre de la page avec un rayon de 100 pixels. Le contour du cercle est rouge, et l’intérieur du cercle est bleu.
 
 ![](circle-images/circleexample.png "Un cercle bleu surlignée en rouge")
 
@@ -153,7 +153,7 @@ Un `SKPaint` objet n’est guère plus qu’une collection de propriétés de de
 > [!NOTE]
 > Le `SKPaint` classe définit un [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) pour activer l’anticrénelage pour le rendu de votre graphique. L’anticrénelage génère en général visuellement plus lisses, vous devez donc probablement définir cette propriété sur `true` dans la plupart de vos `SKPaint` objets. Pour des raisons de simplicité, cette propriété est _pas_ définie dans la plupart des exemples de pages.
 
-Bien que la largeur du contour du cercle est spécifiée comme 25 pixels &mdash; ou un quart du rayon du cercle &mdash; il semble être plus étroit, et il existe une bonne raison pour cela : La largeur de la ligne est masquée par le cercle bleu. Les arguments de la `DrawCircle` méthode définissent les coordonnées géométriques abstraites d’un cercle. L’intérieur de bleu est dimensionné à cette dimension au pixel le plus proche, mais le contour de 25 pixels de large rapproche du cercle géométrique &mdash; la moitié de l’intérieur et l’autre moitié à l’extérieur.
+Bien que la largeur du contour du cercle soit définie sur 25 pixels &mdash; ou sur un quart du rayon du cercle &mdash; , il semble plus mince et il y a une bonne raison pour cela: La moitié de la largeur de la ligne est obscurcie par le cercle bleu. Les arguments de la `DrawCircle` méthode définissent les coordonnées géométriques abstraites d’un cercle. L’intérieur de bleu est dimensionné à cette dimension au pixel le plus proche, mais le contour de 25 pixels de large rapproche du cercle géométrique &mdash; la moitié de l’intérieur et l’autre moitié à l’extérieur.
 
 L’exemple suivant dans le [l’intégration avec Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) article montre visuellement.
 
@@ -161,4 +161,4 @@ L’exemple suivant dans le [l’intégration avec Xamarin.Forms](~/xamarin-form
 ## <a name="related-links"></a>Liens associés
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

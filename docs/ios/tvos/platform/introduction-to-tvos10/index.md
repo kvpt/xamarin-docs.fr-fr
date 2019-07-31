@@ -1,71 +1,71 @@
 ---
 title: Introduction à tvOS 10
-description: Cet article présente tous les nouveaux et modifiés API et fonctionnalités disponibles dans tvOS 10 pour les développeurs Xamarin.tvOS.
+description: Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans tvOS 10 pour les développeurs Xamarin. tvOS.
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 6bad05f62fa9168818aa9a2e73cc1e2830af03b3
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 1b362d91e14d85499099a0fed3637fb128474ef9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830037"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657421"
 ---
 # <a name="introduction-to-tvos-10"></a>Introduction à tvOS 10
 
-_Cet article présente tous les nouveaux et modifiés API et fonctionnalités disponibles dans tvOS 10 pour les développeurs Xamarin.tvOS._
+_Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans tvOS 10 pour les développeurs Xamarin. tvOS._
 
-Avec la nouvelle tvOS 10 SDK Apple a inclus les nouvelles API et services qui permettent au développeur de créer des catégories d’applications et de fonctionnalités. 
+Avec le nouveau kit de développement logiciel (SDK) tvOS 10, Apple a inclus de nouvelles API et de nouveaux services qui permettent au développeur de créer de nouvelles catégories d’applications et de fonctionnalités. 
 
-Pour plus d’informations sur tvOS 10, consultez d’Apple [tvOS + applications](https://developer.apple.com/tvos/) documentation.
+Pour plus d’informations sur tvOS 10, consultez la documentation d’Apple [tvOS + Apps](https://developer.apple.com/tvos/) .
 
-## <a name="whats-new-in-tvos-10"></a>Quelles sont les nouveautés dans tvOS 10
+## <a name="whats-new-in-tvos-10"></a>Nouveautés de tvOS 10
 
-Apple a ajouté plusieurs nouvelles API et services dans tvOS 10, ainsi que de nombreuses améliorations aux fonctionnalités existantes, y compris :
+Apple a ajouté plusieurs nouvelles API et services dans tvOS 10, ainsi que de nombreuses améliorations aux fonctionnalités existantes, notamment:
 
-## <a name="new-user-interface-styles"></a>Nouveaux Styles d’Interface utilisateur
+## <a name="new-user-interface-styles"></a>Nouveaux styles d’interface utilisateur
 
-tvOS 10 maintenant prend en charge un sombre et l’Interface utilisateur de lumière thème que tous le UIKit dans build contrôle va automatiquement s’adapter aux, en fonction des préférences de l’utilisateur.
+tvOS 10 prend désormais en charge à la fois un thème d’interface utilisateur sombre et clair, sur lequel tous les contrôles de UIKit de build s’adapteront automatiquement, en fonction des préférences de l’utilisateur.
 
-Lors de la création et implémentation des nouveaux contrôles d’interface utilisateur personnalisées, le développeur doit utiliser le [UITraitCollection](https://developer.apple.com/reference/uikit/uitraitcollection) classe pour s’adapter à thème sélectionné de l’utilisateur.
+Lors de la création et de l’implémentation de nouveaux contrôles d’interface utilisateur personnalisés, le développeur doit utiliser la classe [UITraitCollection](https://developer.apple.com/reference/uikit/uitraitcollection) pour s’adapter au thème sélectionné de l’utilisateur.
 
-Pour plus d’informations, consultez notre [nouveaux Styles d’Interface utilisateur](~/ios/tvos/platform/user-interface-styles.md) documentation.
+Pour plus d’informations, consultez notre nouvelle documentation sur les styles de l' [interface utilisateur](~/ios/tvos/platform/user-interface-styles.md) .
 
-## <a name="security-and-privacy-enhancements"></a>Améliorations de la confidentialité et de sécurité
+## <a name="security-and-privacy-enhancements"></a>Améliorations en matière de sécurité et de confidentialité
 
-Apple a apporté plusieurs améliorations à la sécurité et confidentialité dans tvOS 10 qui aideront les développeurs à améliorer la sécurité de leurs applications et garantir la confidentialité de l’utilisateur final.
+Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans tvOS 10, ce qui permet au développeur d’améliorer la sécurité de ses applications et de garantir la confidentialité de l’utilisateur final.
 
-Par conséquent, les applications qui s’exécutent sur watchOS 3 (ou version ultérieure) doivent déclarer statiquement leur intention d’accéder à des fonctionnalités spécifiques ou des informations utilisateur en entrant une ou plusieurs clés spécifiques confidentialité dans leurs `Info.plist` fichiers expliquent à l’utilisateur pourquoi l’application souhaite accéder.
+Par conséquent, les applications qui s’exécutent sur Watchos 3 (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en entrant `Info.plist` une ou plusieurs clés spécifiques à la confidentialité dans leurs fichiers qui expliquent à l’utilisateur pourquoi l’application souhaite obtenir un accès.
 
-Étant donné que tvOS 10 partage ces modifications avec iOS 10, consultez notre iOS 10 [sécurité et confidentialité améliorations](~/ios/app-fundamentals/security-privacy.md) guide pour plus d’informations.
+Étant donné que tvOS 10 partage ces modifications avec iOS 10, consultez notre guide d’amélioration de la [sécurité et](~/ios/app-fundamentals/security-privacy.md) de la confidentialité d’iOS 10 pour plus d’informations.
 
-## <a name="video-subscriber-account"></a>Compte abonné vidéo
+## <a name="video-subscriber-account"></a>Compte d’abonné vidéo
 
-Nouveau pour tvOS 10, le framework compte abonné à la vidéo permet aux applications cette prise en charge authentifié de diffusion en continu ou la vidéo à la demande auprès de leur fournisseur de télévision par câble ou satellite à l’aide d’une seul-expérience de connexion pour l’utilisateur final.
+Nouveauté de tvOS 10, l’infrastructure de compte d’abonné vidéo permet aux applications qui prennent en charge la diffusion en continu authentifiée ou la vidéo à la demande de s’authentifier auprès de leur câble ou de votre fournisseur de télévision par satellite à l’aide d’une expérience d’authentification unique pour l’utilisateur final.
 
 <!--To find out more, please see our [Video Subscriber Account](~/ios/platform-features/introduction-to-ios10/video-subscriber-account/) guide.-->
 
 ## <a name="wide-color"></a>Couleur à spectre large
 
-tvOS 10 étend la prise en charge pour les formats de pixel de la plage étendue et des espaces d’une gamme de couleurs dans tout le système, y compris les infrastructures telles que graphismes de base, l’Image de Core, complète et AVFoundation. Prise en charge pour les appareils avec des couleurs large est davantage facilité en fournissant ce comportement dans toute la pile de graphique entière.
+tvOS 10 étend la prise en charge des formats de pixel étendus et des espaces de couleurs à grande échelle dans le système, y compris les infrastructures telles que Core Graphics, Core image, Metal et AVFoundation. La prise en charge des appareils avec des affichages de couleurs larges est encore plus facilitée en fournissant ce comportement dans l’ensemble de la pile graphique.
 
-En outre, `UIKit` a été modifié pour fonctionner dans la nouvelle étendue **sRVB** espace colorimétrique, facilitant ainsi de mélanger les couleurs utilisées dans les gammes de couleurs large sans perte de performances significatifs.
+En outre, `UIKit` a été modifié pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
 
-Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
+Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges:
 
-- `UIColor` maintenant utilise le sRVB espace de couleurs et ne seront plus fixer des valeurs pour le `0.0` à `1.0` plage. Si l’application s’appuie sur le comportement de pince précédent, il devront être modifiées pour tvOS 10.
-- Si l’application effectue le rendu personnalisé de `UIImages`, utilisez la nouvelle [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) classe pour spécifier l’utilisation des formats étendus standard-gamme ou.
-- Lorsque vous utilisez une API de bas niveau tels que les graphismes de base ou complète pour fournir le traitement d’image, l’application doit utiliser un format de couleur plage étendue espace et de pixels qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application aura à fixer manuellement les valeurs de composant de couleur.
-- Graphismes de base, Image Core et des nuanceurs de performances de métal fournissent tous des nouvelles méthodes pour la conversion entre les espaces de deux couleurs.
+- `UIColor`utilise à présent l’espace de couleurs sRVB et ne pincera plus les `0.0` valeurs `1.0` à la plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour tvOS 10.
+- Si l’application effectue un rendu personnalisé `UIImages`de, utilisez la nouvelle classe [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) pour spécifier l’utilisation des formats de plage étendue ou standard.
+- Lorsque vous utilisez une API de bas niveau, telle que des graphiques de base ou du métal, pour fournir un traitement d’image, l’application doit utiliser un espace de couleurs de plage étendue et un format de pixel qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application devra fixer manuellement les valeurs des composants de couleur.
+- Core Graphics, Core image et Metal performance Nuancers fournissent de nouvelles méthodes pour la conversion entre les deux espaces de couleurs.
 
-Pour en savoir plus, consultez notre [Introduction à large couleur](~/ios/platform/wide-color.md) guide.
+Pour en savoir plus, consultez notre guide [de présentation des couleurs larges](~/ios/platform/wide-color.md) .
 
-## <a name="newly-available-existing-frameworks"></a>Infrastructures existantes qui vient d’être disponibles
+## <a name="newly-available-existing-frameworks"></a>Nouvelles infrastructures existantes disponibles
 
-Plusieurs infrastructures qui étaient disponibles sur iOS (et pas tvOS), mis à la disposition de tvOS 10 tels que :
+Plusieurs infrastructures disponibles sur iOS (et non tvOS) ont été mises à disposition pour tvOS 10, par exemple:
 
 - ExternalAccessory
 - HomeKit
@@ -74,19 +74,19 @@ Plusieurs infrastructures qui étaient disponibles sur iOS (et pas tvOS), mis à
 - ReplayKit
 - UserNotification
 
-## <a name="additional-framework-changes"></a>Modifications d’infrastructure supplémentaires
+## <a name="additional-framework-changes"></a>Modifications supplémentaires de l’infrastructure
 
-Outre les modifications de l’infrastructure principale et les ajouts répertoriés ci-dessus, Apple a effectué de nombreuses modifications de framework mineures supplémentaires dans tvOS 10.
+Outre les principales modifications apportées à l’infrastructure et les ajouts ci-dessus, Apple a apporté de nombreuses modifications d’infrastructure mineures supplémentaires dans tvOS 10.
 
-Pour en savoir plus, consultez notre [des modifications supplémentaires Framework](~/ios/tvos/platform/introduction-to-tvos10/additional-framework-changes.md) guide.
+Pour en savoir plus, consultez notre guide [supplémentaire sur les modifications](~/ios/tvos/platform/introduction-to-tvos10/additional-framework-changes.md) de l’infrastructure.
 
 ## <a name="deprecated-apis"></a>API déconseillées
 
-Aucune API ou des infrastructures ont été déconseillées par tvOS 10. Consultez d’Apple [tvOS 10 différences d’API](https://developer.apple.com/library/prerelease/content/releasenotes/General/tvOS10APIDiffs/index.html) documentation pour obtenir la liste complète des modifications de l’API.
+Aucune API ou infrastructure n’a été déconseillée par tvOS 10. Pour obtenir la liste complète des modifications d’API, consultez la documentation sur les différences de l’API d’Apple [tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/tvOS10APIDiffs/index.html) .
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://developer.xamarin.com/samples/tvos/all/)
-- [Quelles sont les nouveautés dans tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)
+- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [Nouveautés de tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

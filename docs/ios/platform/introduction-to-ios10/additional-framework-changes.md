@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 500cb497d8c0d8c304cc9501aa64b1ce90c7ecba
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 5aad72de5d894a83d734cd53fce3ac060125d740
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509434"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656945"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Modifications supplémentaires apportées à iOS 10 frameworks
 
@@ -122,7 +122,7 @@ Pour plus d’informations, consultez notre [Introduction à](~/ios/platform/hom
 
 Les améliorations suivantes ont été apportées à l’infrastructure métallique dans iOS 10:
 
-- les applications et les jeux 3D peuvent  désormais utiliser la facettisation pour restituer efficacement des scènes et une géométrie complexes via le GPU.
+- les applications et les jeux 3D peuvent désormais utiliser la facettisation pour restituer efficacement des scènes et une géométrie complexes via le GPU.
 - Fournir un contrôle affiné de l’allocation des ressources pour optimiser les performances des applications basées sur le métal à l’aide de segments de ressources et de cibles de rendu sans mémoire.
 - Utilisez la spécialisation de fonction pour créer une collection hautement optimisée de fonctions de combinaison de matériau et de lumière pour une scène.
 
@@ -185,7 +185,7 @@ Les améliorations suivantes ont été apportées au contrôle ScrollView dans i
     - `Automatic`-L’affichage de l’index est contrôlé par le système d’exploitation.
     - `AlwaysHidden`-L’affichage de l’index est toujours masqué.
 
-Consultez l' [exemple iOSTenThree](https://developer.xamarin.com/samples/monotouch/iOS10/iOSTenThree) pour plus d’utilisation.
+Consultez l' [exemple iOSTenThree](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree) pour plus d’utilisation.
 
 ## <a name="uikit-enhancements"></a>Améliorations apportées à UIKit
 
@@ -214,5 +214,5 @@ Les améliorations suivantes ont été apportées à l’infrastructure WebKit d
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 10](https://developer.xamarin.com/samples/ios/iOS10/)
+- [Exemples iOS 10](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [Nouveautés d’iOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1)

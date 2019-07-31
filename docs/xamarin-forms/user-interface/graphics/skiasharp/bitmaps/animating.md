@@ -7,16 +7,16 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 604067ac853bd53707e059b7db4abf2cfade21ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 69f77ef7959a53fa46210d7e6e68b9666692423b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076922"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653095"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>Animer des bitmaps de SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les applications qui animent SkiaSharp graphics généralement appeler `InvalidateSurface` sur la `SKCanvasView` à un taux fixe, la fréquence à laquelle toutes les 16 millisecondes. Invalidation de la surface déclenche un appel à la `PaintSurface` gestionnaire pour redessiner l’affichage. Comme les éléments visuels sont redessinées 60 fois par seconde, ils semblent être animées sans heurts.
 
@@ -36,7 +36,7 @@ Le deuxième exemple montre comment utiliser SkiaSharp pour restituer une image 
 
 L’ensemble de Mandelbrot est visuellement fascinant mais computionally longue. (Pour une discussion sur l’ensemble de Mandelbrot et les calculs mathématiques utilisée ici, consultez [chapitre 20 de _création d’applications mobiles avec Xamarin.Forms_ ](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) de début de page 666. La description suivante suppose que ces connaissances en arrière-plan.)
 
-Le [ **Mandelbrot Animation** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/) exemple utilise l’animation d’image bitmap pour simuler un zoom continu d’un point fixe dans l’ensemble de Mandelbrot. Un zoom avant est suivi d’un zoom arrière, et ensuite le cycle se répète indéfiniment ou jusqu'à ce que vous mettre fin au programme.
+Le [ **Mandelbrot Animation** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima) exemple utilise l’animation d’image bitmap pour simuler un zoom continu d’un point fixe dans l’ensemble de Mandelbrot. Un zoom avant est suivi d’un zoom arrière, et ensuite le cycle se répète indéfiniment ou jusqu'à ce que vous mettre fin au programme.
 
 Le programme prépare pour cette animation en créant jusqu'à 50 bitmaps qu’elle stocke dans le stockage local des applications. Chaque bitmap englobe la moitié de la largeur et hauteur du plan complexe en tant que l’image bitmap précédente. (Dans le programme, ces bitmaps sont dits pour représenter le type intégral _niveaux de zoom_.) Les bitmaps sont ensuite affichés dans la séquence. La mise à l’échelle de chaque image bitmap est animée pour fournir une progression smooth à partir d’une bitmap vers un autre.
 
@@ -469,7 +469,7 @@ Voici le programme en cours d’exécution :
 
 La spécification de Format GIF (Graphics Interchange) inclut une fonctionnalité qui permet à un seul fichier GIF contenir plusieurs images séquentielles d’une scène qui peut être affiché à la suite, souvent dans une boucle. Ces fichiers sont appelés _animés_. Navigateurs Web peuvent lire des fichiers GIF animés et SkiaSharp permet à une application pour extraire les images à partir d’un fichier GIF animé et de les afficher de manière séquentielle.
 
-Le [SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple inclut une ressource d’image GIF animée appelée **Newtons_cradle_animation_book_2.gif** créé par DemonDeLuxe et téléchargé à partir du [station d’accueil de Newton ](https://en.wikipedia.org/wiki/Newton%27s_cradle) page Wikipédia. Le **GIF animé** page inclut un fichier XAML qui fournit cette information et instancie un `SKCanvasView`:
+Le [SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple inclut une ressource d’image GIF animée appelée **Newtons_cradle_animation_book_2.gif** créé par DemonDeLuxe et téléchargé à partir du [station d’accueil de Newton ](https://en.wikipedia.org/wiki/Newton%27s_cradle) page Wikipédia. Le **GIF animé** page inclut un fichier XAML qui fournit cette information et instancie un `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -660,5 +660,5 @@ Bien sûr, vous souhaitez exécuter le programme vous-même pour voir l’animat
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Animation de Mandelbrot (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Animation de Mandelbrot (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)

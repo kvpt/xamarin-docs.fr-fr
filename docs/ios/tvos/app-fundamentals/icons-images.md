@@ -1,332 +1,332 @@
 ---
-title: Utilisation de tvOS icônes et des Images dans Xamarin
-description: Ce document décrit comment utiliser des icônes et des images dans une application tvOS générées avec Xamarin. Il aborde les images de lancement, les images en couche, l’icône d’application et bien plus encore.
+title: Utilisation des icônes et des images tvOS dans Xamarin
+description: Ce document décrit comment utiliser des icônes et des images dans une application tvOS générée avec Xamarin. Il aborde les images de lancement, les images en couches, l’icône d’application, et bien plus encore.
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: dab1b0f7bf7aabb4dfcfbfdcb5e202baa48e664d
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4c3739f7d1583966a58ebf102a3d3b2a0a9f93ab
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865164"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653207"
 ---
-# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation de tvOS icônes et des Images dans Xamarin
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation des icônes et des images tvOS dans Xamarin
 
-Création captivante icônes et images sont un élément essentiel du développement d’une expérience utilisateur immersives pour vos applications Apple TV. Ce guide décrit les étapes nécessaires pour créer et inclure les ressources graphiques nécessaires pour vos applications Xamarin.tvOS :
+La création d’icônes et d’images captivistes est un élément essentiel du développement d’une expérience utilisateur immersive pour vos applications Apple TV. Ce guide aborde les étapes nécessaires à la création et à l’inclusion des ressources graphiques nécessaires à vos applications Xamarin. tvOS:
 
-- [Image de lancement](#Launch-Image) -une image de lancement s’affiche lors du premier démarrage de votre application et est remplacée par le premier écran de l’application une fois que le lancement est terminée.
-- [Couches d’Images](#Layered-Images) - spécifiques à l’Apple TV, nouvelles Images superposées travail d’Apple avec l’effet parallaxe pour créer un effet 3D pour les éléments sélectionnés. Il existe plusieurs façons de [créer des Images en couches](#Creating-Layered-Images).
-- [Icône de l’application](#App-Icons) -les icônes sont obligatoires pour non seulement l’Apple TV accueil de l’écran, mais pour l’App Store. Elles doivent être fournies en tant qu’une Image en couches.
-- [Image d’étagère de TOP](#Top-Shelf-Image) -si votre application est placée sur la ligne supérieure de l’écran d’accueil, il doit d’une Image d’étagère supérieure pour mettre en évidence les fonctionnalités de votre application. Si vous le souhaitez, vous pouvez fournir [contenu de la tablette haut dynamique](#Dynamic-Top-Shelf-Content) pour mettre en surbrillance le contenu de votre application.
-- [Images de centre de jeux](#Game-Center-Images) -si votre application est un jeu et utilise Game Center, plusieurs images supplémentaires sera nécessaire.
-- [Définir les Images de projet Xamarin.tvOS](#Setting-Xamarin.tvOS-Project-Images) -décrit les étapes nécessaires pour définir les images de lancement et l’icône de l’application pour votre application Xamarin.tvOS.
+- [Image de lancement](#Launch-Image) : une image de lancement s’affiche lorsque votre application est démarrée pour la première fois et est remplacée par le premier écran de l’application une fois le lancement terminé.
+- [Images](#Layered-Images) superposées-spécifiques au téléviseur Apple, les nouvelles images superposées d’Apple fonctionnent avec l’effet de parallaxe pour créer un effet 3D pour les éléments sélectionnés. Il existe plusieurs façons de [créer des images en couches](#Creating-Layered-Images).
+- [Icône d’application](#App-Icons) : les icônes sont requises pour non seulement l’écran d’accueil Apple TV mais pour l’App Store. Ils doivent être fournis sous la forme d’une image en couches.
+- [Image d’étagère supérieure](#Top-Shelf-Image) : Si votre application est placée sur la ligne supérieure de l’écran d’accueil, elle aura besoin d’une image de premier plan pour mettre en évidence les fonctionnalités de votre application. Si vous le souhaitez, vous pouvez fournir un [contenu dynamique supérieur](#Dynamic-Top-Shelf-Content) pour mettre en surbrillance le contenu de votre application.
+- [Images Game Center](#Game-Center-Images) : Si votre application est un jeu et utilise Game Center, plusieurs images supplémentaires seront nécessaires.
+- [Définition des images de projet Xamarin. tvOS](#Setting-Xamarin.tvOS-Project-Images) : décrit les étapes nécessaires à la définition de l’icône de lancement de l’image et de l’application pour votre application Xamarin. tvOS.
 
 > [!IMPORTANT]
-> Toutes les images sur Apple TV sont à la résolution de 1 x (`@1x`) et vous ne devez _uniquement_ utiliser des images de cette taille. Y compris les plus volumineux, graphiques de résolution plus élevée non seulement un temps télécharger et utiliser plus de mémoire et de stockage, mais ils doivent être remises dynamiquement à l’échelle lors de l’exécution et seront affecter négativement les performances de dessin.
+> Toutes les images sur la TV Apple sont à la résolution 1x`@1x`() et vous ne devez utiliser _que_ des images de cette taille. L’inclusion de graphiques plus grands et de plus haute résolution prend le temps de télécharger et d’utiliser davantage de mémoire et de stockage, mais ils doivent être mis à l’échelle dynamiquement au moment de l’exécution et ont une incidence négative sur les performances de dessin.
 
 <a name="Launch-Image" />
 
 ## <a name="launch-image"></a>Image de lancement
 
-L’Image de lancement est la première chose qui s’affiche au démarrage de votre application Xamarin.tvOS initialement sur Apple TV, et par conséquent, chaque application tvOS doit fournir une Image de lancement. 
+L’image de lancement est la première chose qui s’affiche lorsque votre application Xamarin. tvOS est initialement démarrée sur la TV Apple et, par conséquent, chaque application tvOS doit fournir une image de lancement. 
 
-L’Image de lancement s’affiche rapidement et donne l’impression que votre application est rapide et réactif. L’Apple TV remplace l’Image de lancement par le premier écran de votre application peu de temps il après.
+L’image de lancement s’affiche rapidement et donne l’impression que votre application est rapide et réactive. Le téléviseur Apple remplace l’image de lancement par le premier écran de votre application.
 
-Images de lancement ne sont pas une opportunité pour les annonces ou expression artistique, elles existent uniquement pour donner l’impression que votre application lance rapidement et qu’il est prête à utiliser.
+Les images de lancement ne sont pas une opportunité pour les publicités ou les expressions artistiques, elles existent uniquement pour apporter l’impression que votre application lance rapidement et est prête à l’emploi.
 
-|Taille de l’Image de lancement|Notes|
+|Taille de l’image de lancement|Notes|
 |---|---|
-|1920x1080px|Uniquement les fichiers .png de couches non|
+|1920x1080px|Fichiers. png non superposés uniquement|
 
-Apple rend les suggestions suivantes pour la conception d’images de lancement de votre application :
+Apple effectue les suggestions suivantes pour la conception de l’image de lancement de votre application:
 
-- **Presque identique au premier écran** -votre écran de lancement doit être aussi proche premier écran de votre application en tant que possible. Y compris les graphiques différents ou élément peut entraîner un agaçante « flash » lorsque le premier écran s’affiche.
-- **Éviter le texte à l’aide de** -Images de lancement sont statiques et ne sera par conséquent, ne pas être localisées avant d’être affichées.
-- **Minimiser le lancement** -les utilisateurs car Apple TV changer fréquemment des applications, vous ne devez pas attirer l’attention sur le processus de lancement d’application.
-- **Aucun publicités ou la personnalisation** -ne doit pas être utilisé comme un écran à propos de votre Image de lancement ou inclure toute personnalisation, sauf si elle fait partie statique du premier écran de votre application. ADS sont strictement interdite.
+- **Presque identique au premier écran** : votre écran de lancement doit être aussi proche que possible du premier écran de votre application. L’inclusion de différents graphiques ou éléments peut entraîner un «flash» ennuyeux lorsque le premier écran s’affiche.
+- **Évitez d’utiliser** des images de lancement de texte statiques et, par conséquent, elles ne seront pas localisées avant d’être affichées.
+- **Lancement de minimiser** : étant donné que les utilisateurs d’Apple TV changent fréquemment d’applications, vous ne devez pas attirer l’attention sur le processus de lancement de l’application.
+- **Aucune publicité ou personnalisation** : votre image de lancement ne doit pas être utilisée en tant qu’écran à propos de ou inclure une personnalisation, sauf si elle est statique dans le premier écran de votre application. Les publicités sont strictement interdites.
 
 <a name="Setting-the-Launch-Image" />
 
-### <a name="setting-the-launch-image"></a>Définition de l’Image de lancement
+### <a name="setting-the-launch-image"></a>Définition de l’image de lancement
 
-Pour définir l’Image de lancement de votre projet de tvOS, effectuez le des actions suivantes :
+Pour définir l’image de lancement de votre projet tvOS, procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur `Assets.xcassets` pour l’ouvrir pour modification : 
+1. Dans le **Explorateur de solutions**, double-cliquez `Assets.xcassets` dessus pour l’ouvrir et le modifier: 
 
-    [![](icons-images-images/asset01.png "Le fichier Assets.xcassets")](icons-images-images/asset01.png#lightbox)
-2. Dans le **éditeur de ressources**, cliquez sur le `LaunchImages` actif : 
+    [![](icons-images-images/asset01.png "Fichier Assets. xcassets")](icons-images-images/asset01.png#lightbox)
+2. Dans l' **éditeur de ressources**, cliquez sur `LaunchImages` l’élément multimédia: 
 
-    [![](icons-images-images/asset02.png "L’élément multimédia LaunchImages")](icons-images-images/asset02.png#lightbox)
-3. Cliquez sur le **1 x Apple TV** entrée et sélectionnez l’Image de lancement ou éventuellement faire glisser une nouvelle image le système de fichiers : 
+    [![](icons-images-images/asset02.png "Ressource LaunchImages")](icons-images-images/asset02.png#lightbox)
+3. Cliquez sur l’entrée **1x Apple TV** , sélectionnez l’image de lancement ou faites éventuellement glisser une nouvelle image à partir du système de fichiers: 
 
-    [![](icons-images-images/asset03.png "Sélectionnez une Image de lancement")](icons-images-images/asset03.png#lightbox)
+    [![](icons-images-images/asset03.png "Sélectionner une image de lancement")](icons-images-images/asset03.png#lightbox)
 4. Enregistrez les modifications apportées.
 
 <a name="Layered-Images" />
 
 ## <a name="layered-images"></a>Images superposées
 
-Nouveau à l’Apple TV, travail Images en couche avec l’effet parallaxe pour produire un effet 3D qui permet de garder l’utilisateur sur le canapé mentalement connecté au contenu sur l’écran dans la salle.
+Nouveauté du téléviseur Apple, les images superposées fonctionnent avec l’effet de parallaxe pour produire un effet 3D qui permet de maintenir l’utilisateur sur la canapé mentalement connecté au contenu à l’écran dans toute la pièce.
 
-Contiennent des Images en couches à partir de deux (2) à cinq (5) séparer les couches sont combinées pour former une image complète. À l’exception de la couche d’arrière-plan, chaque couche utilise son ordre de plan, ainsi que la transparence pour créer une illusion de profondeur. Quand l’utilisateur interagit avec une Image en couches, des couches supérieures ordonné Z sont mis à l’échelle et qui se chevauchent pour créer cet effet.
+Les images en couche contiennent de deux (2) à cinq (5) couches distinctes qui sont combinées pour former une image complète. À l’exception de la couche d’arrière-plan, chaque couche utilise son ordre de plan et la transparence pour créer une illusion de profondeur. Lorsque l’utilisateur interagit avec une image en couche, les couches triées plus élevées sont mises à l’échelle et se chevauchent pour créer cet effet.
 
-[![](icons-images-images/layered01.png "Diagramme d’Images Z ordonné en couches")](icons-images-images/layered01.png#lightbox)
+[![](icons-images-images/layered01.png "Images superposées diagramme Z-ordonné")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
-> Images superposées sont requis pour les icônes de votre application et sont facultatifs pour d’autres [peut recevoir le focus des éléments](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (par exemple, l’Image d’étagère supérieure). Toutefois, les suggestions d’Apple à l’aide d’Images en couches pour toute image qui peut obtenir le focus dans votre application.
+> Les images en couches sont requises pour les icônes de votre application et sont facultatives pour d’autres éléments pouvant être mis en [focus](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (tels que l’image de l’étagère supérieure). Toutefois, Apple suggère d’utiliser des images en couche pour toutes les images pouvant être ciblées dans votre application.
 
 
 
 
-Apple rend les suggestions suivantes pour la conception de vos Images en couches :
+Apple effectue les suggestions suivantes pour la conception de vos images en couche:
 
-- **Rendre le Opaque de couche d’arrière-plan** -votre couche d’arrière-plan (couche 1) **doit** être opaques ou vous obtiendrez une erreur lorsque vous essayez d’utiliser l’Image en couches sur Apple TV. Toutes les autres couches peuvent contenir plusieurs niveaux de transparence pour améliorer l’effet 3D.
-- **Isoler de premier plan, au milieu et les éléments d’arrière-plan** -éléments importants (par exemple, le jeu de caractères) au premier plan, utilisez au milieu d’éléments secondaires ou des ombres. Enfin, inclure un arrière-plan neutre pour fournir une étape pour vos couches supérieures.
-- **Conserver le texte au premier plan** -sauf si vous souhaitez être masqué par les niveaux supérieurs de votre texte, généralement il doit se trouver sur la couche de niveau supérieur.
-- **Utiliser la superposition Simple** -l’effet parallaxe a été conçu pour être discret, gardez vos couches à un minimale afin d’éviter des effets souffrent, irréalistes.
-- **Inclure une Zone Safe** -étant donné que les couches supérieures peuvent être rognées pendant un effet parallaxe, vous devez créer une bordure de Zone de Safe dans chaque couche. Si vous obtenez votre contenu trop fermer le bord de couches, il peut devenir rogné. Couches supérieures seront confrontés à plus de mise à l’échelle et de rognage que les couches inférieures. Consultez le [couches d’Image dimensionnement](#Sizing-Image-Layers) section ci-dessous.
-- **Afficher un aperçu souvent** -Images superposées à prévisualiser souvent pour vous assurer que l’effet 3D souhaité se produit et qu’aucun du contenu sur les couches individuelles est rognage. Vous devez prévisualiser vos Images en couches sur du vrai matériel Apple TV pour vous assurer de que leur rendu comme prévu.
+- **Rendre la couche d’arrière-plan opaque** -votre couche d’arrière-plan (couche 1) **doit** être opaque ou vous obtenez une erreur lorsque vous essayez d’utiliser l’image en couche sur Apple TV. Toutes les autres couches peuvent contenir plusieurs niveaux de transparence pour améliorer l’effet 3D.
+- **Isoler les éléments de premier plan, de milieu et d’arrière-plan** : Placez les éléments les plus importants (tels que les caractères de jeu) au premier plan, à l’aide du milieu des éléments secondaires ou des ombres. Enfin, incluez un arrière-plan neutre pour fournir une étape pour vos couches supérieures.
+- **Conserver le texte au premier plan** -à moins que vous ne souhaitiez que votre texte soit masqué par des niveaux supérieurs, en général il doit se trouver sur la couche la plus haute.
+- **Utiliser la structuration en couches simples** : l’effet de parallaxe a été conçu de manière subtile, ce qui permet de réduire au minimum vos couches afin d’éviter les effets transférerezs, non réalistes.
+- **Inclure une zone sécurisée** : étant donné que les couches supérieures peuvent être rognées pendant un effet de parallaxe, vous devez créer une bordure de zone sécurisée dans chaque couche. Si vous faites en sorte que votre contenu soit trop près du bord des couches, il peut devenir rogné. Les couches supérieures subissent davantage de mise à l’échelle et de rognage que les couches inférieures. Consultez la section dimensionnement des [couches d’images](#Sizing-Image-Layers) ci-dessous.
+- **Aperçu** les images à couches fréquentes doivent souvent être prévisualisées pour s’assurer que l’effet 3D souhaité se produit et qu’aucun contenu sur les couches individuelles n’est rogné. Vous devez afficher un aperçu de vos images en couche sur du matériel Apple TV réel pour vous assurer qu’elles s’affichent comme prévu.
 
-Si possible, vous devez toujours utiliser intégrés `UIKit` contrôles pour afficher vos Images en couche, car ils obtiennent automatiquement l’effet parallaxe lorsqu’ils sont dans le focus.
+Chaque fois que cela est possible, vous devez toujours utiliser `UIKit` les contrôles intégrés pour afficher vos images superposées, car elles obtiennent automatiquement l’effet de parallaxe lorsqu’elles entrent en focus.
 
 <a name="Sizing-Image-Layers" />
 
-### <a name="sizing-image-layers"></a>Couches d’Image de dimensionnement
+### <a name="sizing-image-layers"></a>Dimensionnement des couches d’images
 
-Il est important de se rappeler à inclure un _Safe Zone_ bordure dans chaque couche qui constituera votre Image en couches. Étant donné que les couches individuelles peuvent être mis à l’échelle et rognées lors de l’effet parallaxe, le contenu des couches de peut être rogné s’il est trop près bord de la couche :
+Il est important de se souvenir d’inclure une bordure de _zone sécurisée_ dans chaque couche qui composera votre image en couche. Étant donné que les couches individuelles peuvent être mises à l’échelle et rognées pendant l’effet de parallaxe, le contenu des couches peut être rogné s’il est trop proche de l’arête de la couche:
 
 [![](icons-images-images/layered02.png "bordure de 35 pixels")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
-### <a name="creating-layered-images"></a>Création en couches des Images
+### <a name="creating-layered-images"></a>Création d’images en couches
 
-tvOS fonctionne avec des Images en couches dans les formats suivants :
+tvOS fonctionne avec les images en couches dans les formats suivants:
 
-- **Fichiers de voiture** -il s’agit d’un format propriétaire de catalogue de ressources créé par Apple. Vous ne créez pas directement les fichiers de voiture, elles sont créées au moment de la compilation à partir de tous les fichiers LSR et inclus dans votre offre groupée d’applications.
-- **Les Images LSR** -il s’agit d’un format d’image propriétaires créé par Apple. Utilisez le [parallaxe exportateur Adobe Photoshop plug-in](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip) ou [Générateur d’aperçu parallaxe](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) pour créer et afficher un aperçu des Images en couches dans le format LSR.
-- **Assets.xcassets** : à partir de deux (2) à cinq (5) standard `.png` mise en forme des images incluses dans un catalogue de ressources qui seront compilées dans une voiture ou une LSR au format Image en couches au moment de la compilation.
-- **Fichiers LCR** -il s’agit d’un format de fichier propriétaire créé par Apple. Fichiers LCR sont destinées à être utilisées en tant que contenu supplémentaire téléchargé à partir d’un de vos serveurs de contenu. Fichier LCR n’a jamais doit être inclus dans votre offre groupée d’applications. LCR sont générés à partir de fichiers LSR ou Photoshop à l’aide du `layerutil` outil de ligne de commande inclus dans Xcode.
+- **Fichiers de voiture** : il s’agit d’un format de catalogue de ressources propriétaire créé par Apple. Vous ne créez pas de fichiers de voiture directement, ils sont créés au moment de la compilation à partir de tous les fichiers LSR et inclus dans votre offre groupée d’applications.
+- **Images LSR** -il s’agit d’un format d’image propriétaire créé par Apple. Utilisez le [plug-in Adobe Photoshop de l’exportateur parallaxe](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip) ou le générateur d’aperçu de [parallaxe](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) pour créer et afficher un aperçu des images en couche au format LSR.
+- **Assets. xcassets** : de deux (2) à cinq (5) `.png` images formatées standard incluses dans un catalogue de composants qui seront compilées dans une image en couche de voitures ou de LSR au moment de la compilation.
+- **Fichiers LCR** : il s’agit d’un format de fichier propriétaire créé par Apple. Les fichiers LCR sont destinés à être utilisés en tant que contenu supplémentaire téléchargé à partir de l’un de vos serveurs de contenu. Le fichier LCR ne doit jamais être inclus dans votre offre groupée d’applications. Les fichiers LCR sont générés à partir de fichiers LSR `layerutil` ou Photoshop à l’aide de l’outil en ligne de commande inclus dans Xcode.
 
 <a name="The-Parallax-Previewer" />
 
-### <a name="the-parallax-previewer"></a>Le Générateur d’aperçu parallaxe
+### <a name="the-parallax-previewer"></a>Générateur d’aperçu de parallaxe
 
-Apple créé le [Générateur d’aperçu parallaxe](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) pour afficher un aperçu et les Images créées en couches requises pour les icônes d’application et peut recevoir le focus des éléments facultatifs. Le Générateur d’aperçu montre chaque couche qui constitue l’Image en couches terminée :
+Apple a créé le générateur d’aperçu de [parallaxe](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) pour prévisualiser et créer des images en couches requises pour les icônes d’application et les éléments de focus facultatifs. Le générateur d’aperçu affiche chaque couche qui forme l’image en couches terminée:
 
-[![](icons-images-images/layered03.png "Le Générateur d’aperçu parallaxe")](icons-images-images/layered03.png#lightbox)
+[![](icons-images-images/layered03.png "Générateur d’aperçu de parallaxe")](icons-images-images/layered03.png#lightbox)
 
-Lorsque vous prévisualisez une Image en couches, vous pouvez utiliser la souris pour faire pivoter l’image et d’afficher un aperçu de l’effet parallaxe. Utilisez le **+** (plus) et **-** (boutons pour ajouter et supprimer les couches moins).
+En prévisualisant une image en couches, vous pouvez utiliser la souris pour faire pivoter l’image et afficher un aperçu de l’effet parallaxe. Utilisez les **+** boutons (plus) **-** et (moins) pour ajouter et supprimer des couches.
 
-Lorsque vous créez une nouvelle Image en couches, peuvent être exportée au format LSR et inclus dans l’offre groupée de votre application.
+Lors de la création d’une nouvelle image en couche, elle peut être exportée au format LSR et incluse dans le bundle de votre application.
 
-Pour plus d’informations sur la création et l’aperçu des Images en couches, consultez le site d’Apple [création d’une illustration de parallaxe](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/CreatingParallaxArtwork.html#//apple_ref/doc/uid/TP40015241-CH19-SW1) section de la [Guide de programmation d’application pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/).
+Pour plus d’informations sur la création et l’affichage de l’aperçu des images en couche, consultez la section [création d’illustrations de parallaxe](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/CreatingParallaxArtwork.html#//apple_ref/doc/uid/TP40015241-CH19-SW1) dans le Guide de programmation d' [applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/).
 
 <a name="App-Icons" />
 
 ## <a name="app-icons"></a>Icônes d’application
 
-Votre application Xamarin.tvOS requiert non seulement une icône d’application pour l’écran d’accueil de Apple TV, mais également une icône pour l’App Store. L’icône d’application est le votre premier modifier pour faire une impression excellente sur les utilisateurs potentiels et doit communiquer l’objectif de votre application en un clin de œil.
+Votre application Xamarin. tvOS nécessite non seulement une icône d’application pour l’écran d’accueil Apple TV, mais également une icône pour l’App Store. L’icône de l’application est la première modification à apporter à votre utilisateur potentiel et doit communiquer d’un coup d’œil à l’objectif de votre application.
 
-[![](icons-images-images/icon01.png "L’icône d’application")](icons-images-images/icon01.png#lightbox)
+[![](icons-images-images/icon01.png "Icône d’application")](icons-images-images/icon01.png#lightbox)
 
-Chaque application doit fournir une petite et une grande version de son icône de l’application. La petite icône servira à l’écran d’accueil de Apple TV quand l’application est installée. La version grand est utilisée par l’App Store. Icône application de grande taille doit reproduire l’apparence de la version de la petite icône.
+Chaque application doit fournir une petite et une grande version de son icône d’application. La petite icône sera utilisée sur l’écran d’accueil Apple TV lorsque l’application est installée. La version volumineuse est utilisée par l’App Store. L’icône d’application de grande taille doit imiter l’apparence de la petite version de l’icône.
 
 |Petite icône||Grande icône||
 |---|---|---|---|
 |Taille réelle|400x240px|Taille|1280x768px|
-|Taille de la Zone de safe|370x222px|||
-|Taille sans focus|300x180px|||
-|Taille ayant le focus|370x222px|||
+|Taille de zone sécurisée|370x222px|||
+|Taille inactive|300x180px|||
+|Taille focalisée|370x222px|||
 
 > [!IMPORTANT]
-> Icônes de votre application doit être fournie comme **Images superposées**. Veuillez consulter la [Image en couches](#Layered-Images) section ci-dessus pour plus d’informations.
+> Les icônes de votre application doivent être fournies en tant qu' **images en couches**. Pour plus d’informations, consultez la section [image en couche](#Layered-Images) ci-dessus.
 
 
 
 
-Apple propose les suggestions suivantes pour la création d’icônes d’application :
+Apple fournit les suggestions suivantes pour créer les icônes de votre application:
 
-- **Fournir un Point de Focus unique** – conception votre icône avec un point unique de focus placé directement dans le centre de l’icône.
-- **Utilisez un arrière-plan Simple** – simplifier votre arrière-plan de l’icône afin que les couches supérieures ressortent. Envisagez d’utiliser une couleur simple ou le dégradé subtil.
-- **Limiter la quantité de texte** – dans la mesure où le nom de l’application apparaît sous l’icône lorsqu’il est sélectionné par l’utilisateur, vous devez inclure uniquement de texte lorsqu’il est essentiel de la conception de l’icône.
-- **N’utilisez pas de captures d’écran** – captures d’écran sont trop complexes pour une icône et ne pas autoriser l’utilisateur d’afficher l’objectif de votre application en un clin de œil.
-- **Keep icônes carré** – tvOS applique automatiquement un masque qui légèrement arrondit les coins de vos icônes. N’incluez pas cet arrondi vous-même.
-- **Séparer les couches votre soigneusement** – texte doit être dans le coin supérieur, la plupart des couche, les éléments secondaires au milieu et un arrière-plan neutre qui permet à vos couches supérieures à briller.
-- **Utiliser des dégradés et les ombres soigneusement** – des dégradés et les ombres peuvent entrer en conflit avec l’effet parallaxe donc doit être utilisées avec précaution. Simple haut-bas, styles de dégradé de clair à sombre fonctionnent le mieux. Shadows normalement mieux en tant que teintes sharp, bien marquées.
-- **Varier la transparence de la couche** : utilisation de différents niveaux de transparence sur les niveaux supérieurs de l’icône de votre application pour augmenter l’effet 3D. La couche d’arrière-plan doit être opaque ou cela entraînerait une erreur.
+- **Fournir un point de focalisation unique** : concevez votre icône avec un point de focalisation unique placé directement au centre de l’icône.
+- **Utilisez un arrière-plan simple** : laissez votre icône en arrière-plan simple afin que les couches supérieures ressortent. Envisagez d’utiliser une couleur simple ou un dégradé subtil.
+- **Limiter la quantité de texte** : étant donné que le nom de l’application apparaît sous l’icône lorsqu’elle est sélectionnée par l’utilisateur, vous devez inclure du texte uniquement lorsqu’il est essentiel à la conception de l’icône.
+- **N’utilisez pas** les captures d’écran: les captures d’écran sont trop complexes pour une icône et ne permettent pas à l’utilisateur de voir l’objectif de votre application en un clin d’œil.
+- **Conserver les icônes carrées** : tvOS applique automatiquement un masque qui arrondit légèrement les angles de vos icônes. N’incluez pas cet arrondi vous-même.
+- **Séparer vos couches avec précaution** : le texte doit se trouver sur la couche la plus haute, sur les éléments secondaires au milieu et sur un arrière-plan neutre qui permet à vos couches supérieures de briller.
+- **Utilisez** les dégradés et les ombres avec précaution: les dégradés et les ombres peuvent entrer en conflit avec l’effet parallaxe, afin de pouvoir les utiliser avec précaution. Les styles de dégradé de haut en bas et les plus simples fonctionnent mieux. Normalement, les ombres fonctionnent mieux comme des teintes nettes.
+- **Faire varier la transparence** de la couche: utilisez des niveaux de transparence différents sur les niveaux supérieurs de l’icône de votre application pour augmenter l’effet 3D. La couche d’arrière-plan doit être opaque ou une erreur se produit.
 
 <a name="Setting-the-App-Icons" />
 
-### <a name="setting-the-app-icons"></a>Définir les icônes d’application
+### <a name="setting-the-app-icons"></a>Définition des icônes d’application
 
-Pour définir les icônes d’application requis pour votre projet de tvOS, effectuez le des actions suivantes :
+Pour définir les icônes d’application requises pour votre projet tvOS, procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur `Assets.xcassets` pour l’ouvrir pour modification : 
+1. Dans le **Explorateur de solutions**, double-cliquez `Assets.xcassets` dessus pour l’ouvrir et le modifier: 
 
-    [![](icons-images-images/asset01.png "Le fileg Assets.xcassets")](icons-images-images/asset01.png#lightbox)
-2. Dans le **éditeur de ressources**, développez le `App Icon & Top Shelf Image` actif : 
+    [![](icons-images-images/asset01.png "Ressources. xcassets fileg")](icons-images-images/asset01.png#lightbox)
+2. Dans l' **éditeur de ressources**, développez l' `App Icon & Top Shelf Image` élément multimédia: 
 
-    [![](icons-images-images/asset04.png "Développez la ressource d’Image d’étagère supérieure")](icons-images-images/asset04.png#lightbox)
-3. Ensuite, développez le `App Icon - Small` actif : 
+    [![](icons-images-images/asset04.png "Développer la ressource d’image de rayon supérieure")](icons-images-images/asset04.png#lightbox)
+3. Ensuite, développez `App Icon - Small` l’élément multimédia: 
 
-    [![](icons-images-images/asset05.png "Développez l’icône d’application - petite asset")](icons-images-images/asset05.png#lightbox)
-4. Puis développez le `Back` actif, puis cliquez sur le `Contents` entrée : 
+    [![](icons-images-images/asset05.png "Développer l’icône d’application-petite ressource")](icons-images-images/asset05.png#lightbox)
+4. Développez ensuite `Back` l’élément multimédia, puis `Contents` cliquez sur l’entrée suivante: 
 
-    [![](icons-images-images/asset06.png "Puis développez l’élément multimédia précédent")](icons-images-images/asset06.png#lightbox)
-5. Cliquez sur le **1 x entrée de l’Apple TV** et sélectionnez un fichier image.
-6. Répétez les étapes ci-dessus pour le `Front` et `Middle` actifs.
-7. Puis répétez ces étapes pour définir le `App Icon - Large` actif.
+    [![](icons-images-images/asset06.png "Puis développez la ressource back.")](icons-images-images/asset06.png#lightbox)
+5. Cliquez sur l' **entrée 1x Apple TV** et sélectionnez un fichier image.
+6. Répétez les étapes ci- `Front` dessus `Middle` pour les ressources et.
+7. Répétez ensuite les mêmes étapes pour définir `App Icon - Large` la ressource.
 8. Enregistrez les modifications apportées.
 
 <a name="Top-Shelf-Image" />
 
 ## <a name="top-shelf-image"></a>Image d’étagère supérieure
 
-Si l’utilisateur a placé votre application Xamarin.tvOS sur la ligne supérieure sur l’écran d’accueil de Apple TV, une Image d’étagère supérieure volumineux s’affichera lorsque votre application est sélectionnée par l’utilisateur. Cette image doit mettre en évidence les fonctionnalités de votre application ou fournissent des liens directs vers son contenu.
+Si l’utilisateur a placé votre application Xamarin. tvOS sur la ligne supérieure de l’écran d’accueil Apple TV, une grande image de haut rayon s’affiche lorsque votre application est sélectionnée par l’utilisateur. Cette image doit mettre en surbrillance les fonctionnalités de votre application ou fournir des liens directs vers son contenu.
 
-[![](icons-images-images/topshelf01.png "Exemple d’Image d’étagère supérieure")](icons-images-images/topshelf01.png#lightbox)
+[![](icons-images-images/topshelf01.png "Exemple d’image de étagère supérieure")](icons-images-images/topshelf01.png#lightbox)
 
-L’Image d’étagère supérieure peut être fourni en tant que statique unique `.png` ou `.lsr` fichier (voir [création d’Images en couches](#Creating-Layered-Images)) ou il peut être créé dynamiquement lors de l’exécution en tant qu’une seule ligne d’éléments pouvant être actif (consultez [ Contenu de l’étagère supérieure dynamique](#Dynamic-Top-Shelf-Content) ci-dessous).
+L’image de l’étagère supérieure peut être fournie sous la forme `.png` d' `.lsr` un fichier statique ou d’un fichier unique (consultez [création d’images](#Creating-Layered-Images)superposées) ou elle peut être créée dynamiquement au moment de l’exécution en tant qu’une seule ligne d’éléments pouvant être mis sur le focus (consultez [contenu de haut](#Dynamic-Top-Shelf-Content) de page dynamique ci-dessous).
 
-|Taille de l’Image étagère supérieure|Notes|
+|Taille de l’image de l’étagère supérieure|Notes|
 |---|---|
-|1920x720px|.Png statique ou un fichier de .lsr en couches|
+|1920x720px|Fichier static. png ou Layered. LSR|
 
-Apple propose les suggestions suivantes pour la création de vos Images de rayon en haut :
+Apple fournit les suggestions suivantes pour créer vos images de haut rayon:
 
-- **Utiliser des images statiques riche** – si votre application ne fournit pas un contenu dynamique, son Image d’étagère supérieure sera non peut recevoir le focus. Utiliser cette image pour mettre en évidence les fonctionnalités de l’application ou votre marque.
-- **Lien vers le contenu de l’application** – dynamique haut étagère dotent un lien rapide vers le contenu que votre utilisateur trouve plus importante dans votre application. Utilisez cette zone pour fournir un lien rapide pour démarrer votre application et allez directement dans le contenu donné.
-- **Présenter le contenu le plus récent** – contenu de riches haut étagère peut dessiner un utilisateur dans votre application et les rendre plus son utilisation. Utilisez-la en tant qu’une zone pour présenter le contenu du nombre le plus élevé nominal ou plus récente.
-- **Contenu personnalisé** – place les utilisateurs les plus fréquemment utilisées ou applications favorites dans la ligne supérieure de l’écran d’accueil. Utiliser le rayon en haut pour afficher le contenu, qu'ils seraient plus intéressés.
-- **Annonces interdit** – publicités sont strictement interdite s’affiche dans le rayon en haut. Vous pouvez afficher le contenu le plus récent pouvant être achetée, mais aucune information tarifaire ne doit être affichée.
+- **Utiliser une image statique riche** : Si votre application ne fournit pas de contenu dynamique, son image de premier plan ne peut pas être focalisée. Utilisez cette image pour mettre en évidence les fonctionnalités de l’application ou de la vôtre.
+- **Lien vers le contenu de l’application** : les dispositions dynamiques de l’étagère supérieure fournissent un lien rapide vers le contenu que votre utilisateur trouve le plus important dans votre application. Utilisez cette zone pour fournir un lien rapide permettant de démarrer votre application et d’accéder immédiatement au contenu donné.
+- Présentez **le contenu le plus récent: le contenu du** haut de gamme riche peut être utilisé pour créer un utilisateur dans votre application. Utilisez-le comme zone pour présenter le contenu le plus élevé ou le plus récent.
+- **Contenu personnalisé** : les utilisateurs placent leurs applications les plus fréquemment utilisées ou préférées dans la ligne supérieure de l’écran d’accueil. Utilisez l’étagère supérieure pour afficher le contenu qui s’intéresse le plus.
+- **Annonces non autorisées** : il est strictement interdit d’afficher les annonces dans le rack supérieur. Vous pouvez afficher le contenu le plus récent, mais aucune information de tarification ne doit être affichée.
 
-### <a name="setting-the-top-shelf-image"></a>Définition de l’Image d’étagère supérieure
+### <a name="setting-the-top-shelf-image"></a>Définition de l’image de l’étagère supérieure
 
-Pour définir l’Image d’étagère supérieure requis pour votre projet de tvOS, effectuez le des actions suivantes :
+Pour définir l’image de l’étagère supérieure requise pour votre projet tvOS, procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur `Assets.xcassets` pour l’ouvrir pour modification : 
+1. Dans le **Explorateur de solutions**, double-cliquez `Assets.xcassets` dessus pour l’ouvrir et le modifier: 
 
-    [![](icons-images-images/asset01.png "Le fichier Assets.xcassets")](icons-images-images/asset01.png#lightbox)
-2. Dans le **éditeur de ressources**, développez le `App Icon & Top Shelf Image` actif : 
+    [![](icons-images-images/asset01.png "Fichier Assets. xcassets")](icons-images-images/asset01.png#lightbox)
+2. Dans l' **éditeur de ressources**, développez l' `App Icon & Top Shelf Image` élément multimédia: 
 
-    [![](icons-images-images/asset04.png "Développez la ressource d’Image d’étagère supérieure")](icons-images-images/asset04.png#lightbox)
-3. Cliquez sur le `Top Shelf Image` actif : 
+    [![](icons-images-images/asset04.png "Développer la ressource d’image de rayon supérieure")](icons-images-images/asset04.png#lightbox)
+3. Cliquez sur l' `Top Shelf Image` élément multimédia: 
 
-    [![](icons-images-images/asset07.png "La ressource d’Image d’étagère supérieure")](icons-images-images/asset07.png#lightbox)
-4. Cliquez sur le **1 x entrée de l’Apple TV** et sélectionnez un fichier image.
+    [![](icons-images-images/asset07.png "La ressource d’image de rayon supérieure")](icons-images-images/asset07.png#lightbox)
+4. Cliquez sur l' **entrée 1x Apple TV** et sélectionnez un fichier image.
 5. Enregistrez les modifications apportées.
 
 <a name="Dynamic-Top-Shelf-Content" />
 
-### <a name="dynamic-top-shelf-content"></a>Contenu de l’étagère supérieure dynamique
+### <a name="dynamic-top-shelf-content"></a>Contenu dynamique du haut
 
-Au lieu d’afficher une Image d’étagère supérieure statique, l’emploi de haut peut contenir une ligne de dynamique [peut recevoir le focus des éléments](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) ou un ensemble dynamique de bannières de défilement. Deux ces style dynamique vous permettent de mettre en surbrillance le contenu fourni par votre application ou d’un saut dans ses fonctionnalités utilisées le plus.
+Au lieu d’afficher une image de rayon supérieure statique, l’étagère supérieure peut contenir une ligne dynamique d’éléments pouvant faire l' [objet du focus](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) ou un ensemble dynamique de bannières de défilement. Ces deux styles dynamiques vous permettent de mettre en surbrillance le contenu fourni par votre application ou d’accéder à ses fonctionnalités les plus utilisées.
 
 <a name="Sectioned-Content-Row" />
 
-#### <a name="sectioned-content-row"></a>Ligne de contenu sectionnée
+#### <a name="sectioned-content-row"></a>Ligne de contenu avec section
 
-Ce type de contenu haut étagère dynamique présente une seule ligne de défilement, d’éléments pouvant être actif éventuellement divisée en sections. Il sert généralement à nouveau, mettez en surbrillance favori ou que vous avez récemment consulté le contenu de l’application.
+Ce type de contenu de rayon supérieur dynamique présente une seule ligne de défilement, les éléments pouvant être activés, éventuellement répartis en sections. Elle est généralement utilisée pour mettre en surbrillance le contenu de l’application nouveau, favori ou récemment consulté.
 
-Contenu est présenté comme une liste déroulante unique, horizontale du contenu avec une étiquette qui apparaissent sous l’élément actuel de contenu sélectionné (qui possède actuellement le focus). Si l’utilisateur sélectionne un élément de contenu donné, votre application doit être lancée, et il doivent être dirigé directement dans ce contenu.
+Le contenu est présenté sous la forme d’une liste déroulante unique et horizontale de contenu avec une étiquette apparaissant sous la partie de contenu actuelle sélectionnée (qui a actuellement le focus). Si l’utilisateur sélectionne une partie de contenu donnée, votre application est lancée et doit être prise directement dans ce contenu.
 
-Les tailles de contenu suivantes seront nécessaires :
+Les tailles de contenu suivantes sont requises:
 
-||Poster (2:3)|Carré (1:1)|HDTV (16:9)|
+||Affiche (2:3)|Carré (1:1)|HDTV (16:9)|
 |---|---|---|---|
 |Taille réelle|404x608px|608x608px|908x512px|
-|Taille de la Zone de safe|380x570px|570x570px|852x479px|
-|Taille sans focus|333x500px|500x500px|782x440px|
-|Taille ayant le focus|380x570px|570x570px|852x479px|
+|Taille de zone sécurisée|380x570px|570x570px|852x479px|
+|Taille inactive|333x500px|500x500px|782x440px|
+|Taille focalisée|380x570px|570x570px|852x479px|
 
-Apple propose les suggestions suivantes pour la ligne Sectioned contenu :
+Apple fournit les suggestions suivantes pour la ligne de contenu avec section:
 
-- **Terminer la ligne** – vous devez fournir assez de contenu pour couvrir toute la largeur de l’écran.
-- **Mise à l’échelle des Images mixte** – ligne Sectioned le contenu a été conçu pour contenir une combinaison des tailles des images (dans la liste ci-dessus). Si vous mélangez toutefois les tailles d’image, n’oubliez pas que la mise à l’échelle supplémentaires s’appliqueront pour normaliser l’affichage de contenu.
+- **Complétez la ligne** : vous devez fournir un contenu suffisant pour couvrir toute la largeur de l’écran.
+- **Mise à l’échelle d’images mixtes** : la ligne de contenu avec section a été conçue pour contenir une combinaison de tailles d’image (à partir de la liste fournie ci-dessus). Toutefois, si vous combinez des tailles d’image, sachez que la mise à l’échelle supplémentaire sera appliquée pour normaliser l’affichage du contenu.
 
 <a name="Scrolling-Inset-Banners" />
 
-#### <a name="scrolling-inset-banners"></a>Le défilement incrustation bannières
+#### <a name="scrolling-inset-banners"></a>Défilement des bannières d’incrustation
 
-Si vous le souhaitez, votre application Xamarin.tvOS peut présenter son contenu dans l’emploi de haut en tant qu’automatiquement le défilement et bouclage de collection de bannières qui presque plein écran. Ce style est généralement utilisé pour présenter un nouveau contenu comme nouvelles émissions TV.
+Si vous le souhaitez, votre application Xamarin. tvOS peut présenter son contenu dans le rack supérieur en tant que collection automatique de bannières et de bannières qui remplissent presque l’écran. Ce style est généralement utilisé pour présenter du contenu riche et nouveau, comme les nouveaux diaporamas TV.
 
-En plus de la barre de défilement automatique, l’utilisateur peut prendre le contrôle des bannières et faites défiler dans les deux sens à l’aide de l’instance distante de Siri. Rendre un petit, mouvement circulaire Siri à un emplacement distant quand une bannière est en focus activera l’effet parallaxe pour cette bannière.
+En plus du défilement automatique, l’utilisateur peut prendre le contrôle des bannières et faire défiler dans les deux sens à l’aide de la Siri distante. Si vous effectuez un petit mouvement circulaire sur le Siri à distance lorsqu’une bannière est activée, l’effet de parallaxe est activé pour cette bannière.
 
-**Image de bannière (très large)**
+**Image de bannière (très grande largeur)**
 
 |   |   |
 |---|---|
 |Taille réelle|1940x624px|
-|Taille de la Zone de safe|1740x620px|
-|Taille sans focus|1740x560px|
-|Taille ayant le focus|1740x620px|
+|Taille de zone sécurisée|1740x620px|
+|Taille inactive|1740x560px|
+|Taille focalisée|1740x620px|
 
-Le défilement incrustation bannières peut soit être fourni sous forme de statique `.png` ou en couches `.lsr` fichier.
+Le défilement des bannières d’incrustation peut être fourni en `.png` tant que `.lsr` fichier statique ou en couches.
 
-Apple propose les suggestions suivantes pour les bannières d’incrustation de défilement :
+Apple fournit les suggestions suivantes pour les bannières d’incrustation de défilement:
 
-- **Quantité de contenu** -vous devez fournir un minimum de trois (3) les bannières pour le défilement naturelles. Vous devez inclure des bannières pas plus de huit (8) ou il rendre la navigation difficile pour l’utilisateur final.
-- **Contenu texte** : Si votre bannière nécessite le texte dans doit être inclus dans l’image de bannière. Si vous utilisez des Images en couches, votre texte doit être dans la couche de niveau supérieur.
+- **Montant du contenu** : vous devez fournir au moins trois (3) bannières pour que le défilement soit naturel. Vous ne devez pas inclure plus de huit (8) bannières ou cela rend difficile la navigation pour l’utilisateur final.
+- **Texte de contenu** : Si votre bannière requiert du texte dans, elle doit être incluse dans l’image de bannière. Si vous utilisez des images en couches, votre texte doit être dans la couche la plus haut.
 
-Consultez d’Apple [TVServices Framework référence](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) pour plus d’informations sur l’ajout d’une Extension de rayon en haut à votre application pour fournir un contenu dynamique étagère de haut.
+Pour plus d’informations sur l’ajout d’une extension d’étagère supérieure à votre application, consultez le Guide de référence de l' [infrastructure TVServices](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) pour fournir un contenu dynamique supérieur.
 
 <a name="Game-Center-Images" />
 
-## <a name="game-center-images"></a>Images de Game Center
+## <a name="game-center-images"></a>Images Game Center
 
-Si votre application Xamarin.tvOS est un jeu et que vous avez inclus la prise en charge de Game Center, plusieurs ressources d’image plus seront nécessaires :
+Si votre application Xamarin. tvOS est un jeu et que vous avez inclus Game Center support, plusieurs ressources d’image supplémentaires seront nécessaires:
 
-- **Icônes de réalisation** -une image opaque est nécessaire pour chaque prime est détourée automatiquement dans un cercle. Primes sont des éléments non peut recevoir le focus.
-- **Illustration du tableau de bord** -image facultative peut être fournie qui s’affichent en haut du tableau de bord de votre application au sein de Game Center. Ces images sont non peut recevoir le focus.
-- **Illustration de classement** -vous devez fournir entre un (1) à trois (3) les images de proportions 16:9 pour chaque classement qui prend en charge de votre application. Il peut s’agir soit statique `.png` ou en couches `.lsr` fichiers. L’illustration de classement ne peut être actif.
+- **Icônes de réalisation** : une image opaque est nécessaire pour chaque réalisation qui sera automatiquement rognée dans un cercle. Les réalisations sont des éléments qui ne peuvent pas être activés.
+- **Illustration du tableau de bord** : vous pouvez fournir une image facultative qui apparaîtra en haut du tableau de bord de votre application dans Game Center. Ces images ne peuvent pas être focalisées.
+- **Illustration classement** : vous devez fournir entre une (1) à trois (3) images de proportions de 16:9 pour chaque classement pris en charge par votre application. Il peut s’agir de `.png` `.lsr` fichiers statiques ou en couches. L’illustration classement peut être active.
 
-||Icônes de réalisation|Illustration du tableau de bord|Illustration de classement|
+||Icônes de réussite|Illustration du tableau de bord|Graphique classement|
 |---|---|---|---|
 |Taille visible|200x200px|923x150px|N/A|
 |Taille réelle|320x320px|N/A|659x371px|
-|Taille de la Zone de safe|N/A|N/A|618x348px|
-|Taille sans focus|N/A|N/A|548x309px|
-|Taille ayant le focus|N/A|N/A|618x348px|
+|Taille de zone sécurisée|N/A|N/A|618x348px|
+|Taille inactive|N/A|N/A|548x309px|
+|Taille focalisée|N/A|N/A|618x348px|
 
-Pour plus d’informations sur l’utilisation de Game Center, consultez le site d’Apple [Guide de programmation Game Center](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html).
+Pour plus d’informations sur l’utilisation de Game Center, consultez le [Guide de programmation](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)d’Apple Game Center.
 
 <a name="Working-with-Images" />
 
 ## <a name="working-with-images"></a>Utilisation d’images
 
-Étant donné que tvOS 9 est un sous-ensemble d’iOS 9, les mêmes techniques utilisées pour inclure et afficher des images dans une application Xamarin.iOS, fonctionnent également pour une application Xamarin.tvOS. Consultez notre [affichage d’une Image](~/ios/app-fundamentals/images-icons/displaying-an-image.md) documentation pour plus d’informations.
+Étant donné que tvOS 9 est un sous-ensemble d’iOS 9, les mêmes techniques que celles utilisées pour inclure et afficher des images dans une application Xamarin. iOS, fonctionnent également pour une application Xamarin. tvOS. Pour plus d’informations, consultez notre documentation sur [l’affichage d’une image](~/ios/app-fundamentals/images-icons/displaying-an-image.md) .
 
 <a name="Setting-Xamarin.tvOS-Project-Images" />
 
-## <a name="setting-xamarintvos-project-images"></a>Définir les Images de projet de Xamarin.tvOS
+## <a name="setting-xamarintvos-project-images"></a>Définition des images de projet Xamarin. tvOS
 
-Comme indiqué ci-dessus, toutes les applications tvOS nécessitent un [images de lancement](#Launch-Image), et [icône de l’application](#App-Icons). Cette section aborde en sélectionnant les images de lancement et l’icône de l’application pour votre projet d’application Xamarin.tvOS une fois qu’ils ont été définis dans un catalogue de ressources.
+Comme indiqué ci-dessus, toutes les applications tvOS nécessitent une [image de lancement](#Launch-Image)et une [icône d’application](#App-Icons). Cette section décrit la sélection de l’icône de lancement de l’image et de l’application pour votre projet d’application Xamarin. tvOS une fois qu’elles ont été définies dans un catalogue de composants.
 
 Effectuez ce qui suit :
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur le `Info.plist` à ouvrir pour modification : 
+1. Dans la **Explorateur de solutions**, double-cliquez sur `Info.plist` le pour l’ouvrir et le modifier: 
 
-    [![](icons-images-images/info01.png "Le fichier Info.plist")](icons-images-images/info01.png#lightbox)
-2. Dans le **éditeur Info.Plist**, sélectionnez le catalogue de ressources (configuré ci-dessus dans le [définissant les icônes d’application](#Setting-the-App-Icons) section) pour le **icônes d’application**: 
+    [![](icons-images-images/info01.png "Fichier info. plist")](icons-images-images/info01.png#lightbox)
+2. Dans l' **éditeur info. plist**, sélectionnez le catalogue des ressources (configuré ci-dessus dans la section [définition des icônes d’application](#Setting-the-App-Icons) ) pour les **icônes d’application**: 
 
-    [![](icons-images-images/info02.png "L’éditeur Info.Plist")](icons-images-images/info02.png#lightbox)
-3. Ensuite, sélectionnez le catalogue de ressources (configuré ci-dessus dans le [définition de l’Image de lancement](#Setting-the-Launch-Image) section) pour le **Images de lancement**.
+    [![](icons-images-images/info02.png "Éditeur info. plist")](icons-images-images/info02.png#lightbox)
+3. Ensuite, sélectionnez le catalogue des ressources (configuré ci-dessus dans la section [définition de l’image de lancement](#Setting-the-Launch-Image) ) pour les **images de lancement**.
 4. Enregistrez les modifications apportées.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a couvert tous les types d’images et tailles utilisés dans une application Xamarin.tvOS. Tout d’abord, elle couvrait les Images de lancement, Images superposées, icônes d’application, les Images de rayon en haut et Game Center Images. Ensuite, elle couvrait utilisation des images dans votre application Xamarin.tvOS.
+Cet article a traité tous les types d’images et tailles utilisés dans une application Xamarin. tvOS. Tout d’abord, les images de lancement, les images superposées, les icônes d’application, les images de haut rayon et les images de Game Center. Ensuite, il a abordé l’utilisation des images dans votre application Xamarin. tvOS.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [Guide de programmation d’application pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

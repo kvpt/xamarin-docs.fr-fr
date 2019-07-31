@@ -7,16 +7,16 @@ ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1d85c705fb993e9b6b558b0c051de93e449b9d05
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289115"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648721"
 ---
 # <a name="skiasharp-mask-filters"></a>Filtres de masque de SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Masquage des filtres sont des effets qui manipulent la géométrie et le canal alpha des objets graphiques. Pour utiliser un filtre de masque, définissez la [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter) propriété de `SKPaint` à un objet de type [ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter) que vous avez créé en appelant une de le `SKMaskFilter` des méthodes statiques.
 
@@ -43,7 +43,7 @@ Surcharges autorise la spécification des indicateurs pour l’algorithme utilis
 
 Les effets de ces styles sont affichés dans les exemples ci-dessous. Le `sigma` paramètre spécifie l’étendue de l’effet de flou. Dans les versions antérieures de Skia, l’étendue de l’effet de flou était indiqué avec une valeur de rayon. Si une valeur de rayon est préférable pour votre application, il est une variable statique [ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) méthode qui peut être converti à partir d’un à l’autre. La méthode multiplie le rayon par 0.57735 et ajoute 0,5.
 
-Le **Masque flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple vous permet de faire des essais avec les styles de flou et les valeurs de sigma. Le fichier XAML instancie un `Picker` avec les quatre `SKBlurStyle` membres de l’énumération et une `Slider` pour spécifier la valeur sigma :
+Le **Masque flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple vous permet de faire des essais avec les styles de flou et les valeurs de sigma. Le fichier XAML instancie un `Picker` avec les quatre `SKBlurStyle` membres de l’énumération et une `Slider` pour spécifier la valeur sigma :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ Les captures d’écran jusqu'à présent ont montré flou créé avec le `SKBlu
 
 [![Masquer l’expérience de flou](mask-filters-images/MaskBlurExperiment.png "masquer l’expérience de flou")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-La capture d’écran d’iOS affiche les `Solid` style : Les caractères de texte sont toujours présents sous forme de traits noires unies, et le flou est ajouté à l’extérieur de ces caractères de texte. 
+La capture d’écran iOS `Solid` présente le style: Les caractères de texte sont toujours présents sous forme de traits noirs pleins et le flou est ajouté à l’extérieur de ces caractères de texte. 
 
-La capture d’écran Android dans le milieu affiche les `Outer` style : Les traits de caractère proprement dits sont éliminés (comme c’est l’image bitmap) et le flou entoure l’espace vide dans lequel les caractères de texte est apparues qu’une seule fois. 
+La capture d’écran Android au milieu montre `Outer` le style: Les traits de caractère eux-mêmes sont éliminés (comme c’est le cas de la bitmap) et le flou entoure l’espace vide où les caractères de texte sont apparus. 
 
 La capture d’écran UWP de droite montre le `Inner` style. L’effet de flou est limitée à la zone normalement occupée par les caractères de texte.
 
@@ -274,4 +274,4 @@ Ce filtre de flou provoque la réflexion pour paraître beaucoup plus réalistes
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

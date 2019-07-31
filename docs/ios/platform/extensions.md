@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 74f08a274eec4560846fb0c0067e3209031f5c6e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4137ce7542a213a0a4c27b6a66b38828e4646520
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511767"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653466"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>extensions iOS dans Xamarin. iOS
 
@@ -95,7 +95,7 @@ En outre, le projet de l’extension présente les exigences suivantes:
 - Il doit définir la clé `NSExtensionPointIdentifier`avec une valeur appropriée (par `com.apple.widget-extension` exemple, pour un widget de centre de notifications **aujourd’hui** ) `Info.plist` , dans son fichier.
 - Elle doit *également définir la* `NSExtensionMainStoryboard` clé ou la `NSExtensionPrincipalClass` clé dans son `Info.plist` fichier avec une valeur appropriée:
     - Utilisez la `NSExtensionMainStoryboard` clé pour spécifier le nom de la table de montage séquentiel qui présente l’interface utilisateur principale de `.storyboard`l’extension (moins). Par exemple, `Main` pour le `Main.storyboard` fichier.
-    - Utilisez la `NSExtensionPrincipalClass` clé pour spécifier la classe qui sera initialisée au démarrage de l’extension. La valeur doit correspondre à  la valeur de Registre `UIViewController`de votre: 
+    - Utilisez la `NSExtensionPrincipalClass` clé pour spécifier la classe qui sera initialisée au démarrage de l’extension. La valeur doit correspondre à la valeur de Registre `UIViewController`de votre: 
 
     ![](extensions-images/registerandprincipalclass.png)
 
@@ -462,5 +462,5 @@ Ce document contient des extensions couvertes, ce qu’elles sont, le type de po
 
 ## <a name="related-links"></a>Liens connexes
 
-- [ContainerApp (exemple)](https://developer.xamarin.com/samples/monotouch/intro-to-extensions)
+- [ContainerApp (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/intro-to-extensions)
 - [Création d’extensions dans Xamarin. iOS (vidéo)](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)

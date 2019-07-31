@@ -1,6 +1,6 @@
 ---
 title: Naviguer dans une application Xamarin.Forms de plusieurs pages
-description: Cet article explique comment activer l’application à page unique, capable de stocker une seule note, dans une application comportant plusieurs page, capable de stocker plusieurs notes.
+description: Cet article explique comment activer l’application à page unique, qui est en mesure de stocker une seule note dans une application à plusieurs pages, qui est en mesure de stocker plusieurs notes.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -9,59 +9,59 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 886527f6d4338ffbe7026bec536716bf844e3701
-ms.sourcegitcommit: 4b7a0ac33fc64516dd3d70bb68d9aa50e46b2dc5
+ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "65997119"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653794"
 ---
-# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Effectuer la Navigation dans une Application Xamarin.Forms de plusieurs pages
+# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Effectuer la navigation dans une application Xamarin. Forms à plusieurs pages
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
-Dans ce démarrage rapide, vous allez apprendre comment :
+Dans ce guide de démarrage rapide, vous allez apprendre à:
 
-- Ajouter des pages supplémentaires à une solution Xamarin.Forms.
-- Effectuer la navigation entre les pages.
-- Utilisez la liaison de données pour synchroniser les données entre les éléments d’interface utilisateur et de leur source de données.
+- Ajoutez des pages supplémentaires à une solution Xamarin. Forms.
+- Effectuer une navigation entre les pages.
+- Utilisez la liaison de données pour synchroniser les données entre les éléments d’interface utilisateur et leur source de données.
 
-Le démarrage rapide vous montre comment activer une application de Xamarin.Forms multiplateforme page unique, capable de stocker une seule note, dans une application comportant plusieurs page, capable de stocker plusieurs notes. L’application finale est indiquée ci-dessous :
+Le Guide de démarrage rapide vous explique comment transformer une application Xamarin. Forms multiplateforme à une seule page, qui est en mesure de stocker une seule note dans une application à plusieurs pages, afin de stocker plusieurs notes. L’application finale est indiquée ci-dessous :
 
-[![](multi-page-images/screenshots1-sml.png "Page de commentaires")](multi-page-images/screenshots1.png#lightbox "Page de commentaires")
-[![](multi-page-images/screenshots2-sml.png "Notez Page entrée")](multi-page-images/screenshots2.png#lightbox "Remarque Page d’entrée")
+[ ![(multi-page-images/screenshots1-sml.png " ")]Page de notes] (multi-page-images/screenshots1.png#lightbox "Page de notes") (multi-page-images/screenshots2.png#lightbox "Page d'") entrée note page d’entrée de note [ ![(multi-page-images/screenshots2-sml.png " ")]] 
+
 
 ### <a name="prerequisites"></a>Prérequis
 
-Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avant de tenter de ce démarrage rapide. Vous pouvez également télécharger le [précédent exemple de démarrage rapide](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/SinglePage/) et l’utiliser comme point de départ pour ce démarrage rapide.
+Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d’essayer ce guide de démarrage rapide. Vous pouvez également télécharger l' [exemple de démarrage rapide précédent](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/) et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>Mettre à jour l’application avec Visual Studio
 
-1. Lancez Visual Studio. Dans la fenêtre de démarrage, cliquez sur le **Notes** solution dans la liste des projets/solutions récentes, ou cliquez sur **ouvrir un projet ou une solution**, puis, dans le **ouvrir un projet/Solution** boîte de dialogue Sélectionnez le fichier de solution pour le projet de Notes :
+1. Lancez Visual Studio. Dans la fenêtre Démarrer, cliquez sur la solution **Notes** dans la liste projets/solutions récents, ou cliquez sur **ouvrir un projet ou une solution**, puis dans la boîte de dialogue **ouvrir un projet/une solution** , sélectionnez le fichier solution pour le projet Notes:
 
     ![](multi-page-images/vs/open-solution.png "Ouvrir un projet")
 
-2. Dans **l’Explorateur de solutions**, avec le bouton droit sur le **Notes** de projet et sélectionnez **Ajouter > Nouveau dossier**:
+2. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **Notes** et sélectionnez **Ajouter > nouveau dossier**:
 
     ![](multi-page-images/vs/add-new-item.png "Ajouter un nouvel élément")
 
-3. Dans **l’Explorateur de solutions**, nommez le nouveau dossier **modèles**:
+3. Dans **Explorateur de solutions**, nommez le nouveau dossier **modèles**:
 
-    ![](multi-page-images/vs/name-folder.png "Dossier de modèles")
+    ![](multi-page-images/vs/name-folder.png "Dossier Models")
 
-4. Dans **l’Explorateur de solutions**, sélectionnez le **modèles** dossier, avec le bouton droit et sélectionnez **Ajouter > nouvel élément...** :
+4. Dans **Explorateur de solutions**, sélectionnez le dossier Models, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouvel élément...** :
 
     ![](multi-page-images/vs/add-new-models-file.png "Ajouter un nouveau fichier")
 
-5. Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **Visual C# éléments > classe**, nommez le nouveau fichier **Remarque**, puis cliquez sur le **ajouter** bouton :
+5. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **éléments visuels C# > classe**, nommez le nouveau fichier **note**, puis cliquez sur le bouton **Ajouter** :
 
-    ![](multi-page-images/vs/add-note-class.png "Ajouter une classe de Remarque")
+    ![](multi-page-images/vs/add-note-class.png "Ajouter une classe de note")
 
-    Cela ajoutera une classe nommée **Remarque** à la **modèles** dossier de la **Notes** projet.
+    Cette opération ajoute une classe nommée **note** au dossier **Models** du projet **Notes** .
 
-6. Dans **Note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+6. Dans **note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
     ```csharp
     using System;
@@ -77,17 +77,17 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     }
     ```
 
-    Cette classe définit un `Note` modèle qui stockera les données relatives à chaque note dans l’application.    
+    Cette classe définit un `Note` modèle qui stocke les données relatives à chaque note dans l’application.    
 
-    Enregistrez les modifications apportées à **Note.cs** en appuyant sur **CTRL + S**et fermez le fichier.
+    Enregistrez les modifications apportées à **note.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
-7. Dans **l’Explorateur de solutions**, avec le bouton droit sur le **Notes** de projet et sélectionnez **Ajouter > nouvel élément...** . Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **Visual C# éléments > Xamarin.Forms > Page de contenu**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le  **Ajouter** bouton :
+7. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **Notes** et sélectionnez **Ajouter > nouvel élément.** .. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **éléments visuels C# > page de contenu > Xamarin. Forms**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le bouton **Ajouter** :
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Ajouter une Xamarin.Forms ContentPage")
+    ![](multi-page-images/vs/add-note-entry-page.png "Ajouter Xamarin. Forms ContentPage")
 
-    Cela ajoutera une nouvelle page nommée **NoteEntryPage** dans le dossier racine du projet. Cette page sera la deuxième page de l’application.
+    Cette opération ajoute une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page sera la deuxième page de l’application.
 
-8. Dans **NoteEntryPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+8. Dans **NoteEntryPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
       ```xaml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -114,11 +114,11 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
       </ContentPage>
       ```
 
-      Ce code définit de manière déclarative l’interface utilisateur pour la page, ce qui se compose d’un [ `Editor` ](xref:Xamarin.Forms.Editor) pour l’entrée de texte et deux [ `Button` ](xref:Xamarin.Forms.Button) instances qui dirigent l’application à enregistrer ou supprimer un fichier. Les deux `Button` instances sont disposées horizontalement dans une [ `Grid` ](xref:Xamarin.Forms.Grid), avec le `Editor` et `Grid` en cours disposées verticalement dans une [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). En outre, le `Editor` utilise la liaison de données à lier à la `Text` propriété de la `Note` modèle. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+      Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`Editor`](xref:Xamarin.Forms.Editor) compose d’un pour la saisie [`Button`](xref:Xamarin.Forms.Button) de texte, et de deux instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux `Button` instances sont présentées horizontalement dans un [`Grid`](xref:Xamarin.Forms.Grid), avec `Editor` et `Grid` disposés verticalement dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). En outre, utilise `Editor` la liaison de données pour établir une `Text` liaison à la `Note` propriété du modèle. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans l' [expérience approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-      Enregistrez les modifications apportées à **NoteEntryPage.xaml** en appuyant sur **CTRL + S**et fermez le fichier.
+      Enregistrez les modifications apportées à **NoteEntryPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
 
-9. Dans **NoteEntryPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+9. Dans **NoteEntryPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
       ```csharp
       using System;
@@ -169,18 +169,18 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
       }
       ```
 
-      Ce code stocke un `Note` instance, ce qui représente une seule note, dans le [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Lorsque le **enregistrer** [ `Button` ](xref:Xamarin.Forms.Button) est enfoncé le `OnSaveButtonClicked` Gestionnaire d’événements est exécuté, soit enregistre le contenu de la `Editor` dans un nouveau fichier avec un nom de fichier généré de manière aléatoire, ou à un fichier existant si la note est en cours de mise à jour. Dans les deux cas, le fichier est stocké dans le dossier de données d’application locale pour l’application. Puis la méthode revient à la page précédente. Lorsque le **supprimer** `Button` est enfoncé le `OnDeleteButtonClicked` Gestionnaire d’événements est exécuté, ce qui supprime le fichier, si elle existe et revient à la page précédente. Pour plus d’informations sur la navigation, consultez [Navigation](deepdive.md#navigation) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+      Ce code stocke `Note` une instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Lorsque l' **enregistrement** [`Button`](xref:Xamarin.Forms.Button) est activé, `OnSaveButtonClicked` le gestionnaire d’événements est exécuté, `Editor` ce qui permet d’enregistrer le contenu du dans un nouveau fichier avec un nom de fichier généré de manière aléatoire ou un fichier existant si une note est mise à jour. Dans les deux cas, le fichier est stocké dans le dossier de données d’application local de l’application. Ensuite, la méthode revient à la page précédente. Lorsque la **suppression** `Button` est activée, `OnDeleteButtonClicked` le gestionnaire d’événements est exécuté, ce qui a pour effet de supprimer le fichier, à condition qu’il existe, et de revenir à la page précédente. Pour plus d’informations sur la navigation, consultez [navigation](deepdive.md#navigation) dans la formation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-      Enregistrez les modifications apportées à **NoteEntryPage.xaml.cs** en appuyant sur **CTRL + S**et fermez le fichier.
+      Enregistrez les modifications apportées à **NoteEntryPage.Xaml.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
       > [!WARNING]
-      > Une tentative de génération de l’application à ce stade provoquera des erreurs qui seront résolus dans les étapes suivantes.
+      > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-10. Dans **l’Explorateur de solutions**, avec le bouton droit sur le **Notes** de projet et sélectionnez **Ajouter > nouvel élément...** . Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **Visual C# éléments > Xamarin.Forms > Page de contenu**, nommez le nouveau fichier **NotesPage**, puis cliquez sur le **ajouter**  bouton.
+10. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **Notes** et sélectionnez **Ajouter > nouvel élément.** .. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez **éléments visuels C# > page de contenu > Xamarin. Forms**, nommez le nouveau fichier **NotesPage**, puis cliquez sur le bouton **Ajouter** .
 
-      Cela ajoutera une page nommée **NotesPage** dans le dossier racine du projet. Cette page sera la page racine de l’application.
+      Cette opération ajoute une page nommée **NotesPage** au dossier racine du projet. Cette page sera la page racine de l’application.
 
-11. Dans **NotesPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+11. Dans **NotesPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -205,11 +205,11 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur pour la page, ce qui se compose d’un [ `ListView` ](xref:Xamarin.Forms.ListView) et un [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem). Le `ListView` utilise des données de liaison pour afficher toutes les notes sont récupérées par l’application, puis en sélectionnant une note permet d’accéder à la `NoteEntryPage` où la note peut être modifiée. Ou bien, une note peut être créée en appuyant sur la `ToolbarItem`. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`ListView`](xref:Xamarin.Forms.ListView) compose d' [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)un et d’un. Utilise `ListView` la liaison de données pour afficher toutes les notes récupérées par l’application, et la sélection d’une note permet `NoteEntryPage` d’accéder à l’emplacement où la note peut être modifiée. Vous pouvez également créer une nouvelle note en appuyant sur `ToolbarItem`. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans l' [expérience approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-    Enregistrez les modifications apportées à **NotesPage.xaml** en appuyant sur **CTRL + S**et fermez le fichier.
+    Enregistrez les modifications apportées à **NotesPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
 
-12. Dans **NotesPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+12. Dans **NotesPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
     ```csharp
     using System;
@@ -272,14 +272,14 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     }
     ```    
 
-    Ce code définit les fonctionnalités de la `NotesPage`. Lorsque la page s’affiche, le `OnAppearing` méthode est exécutée, qui remplit le [ `ListView` ](xref:Xamarin.Forms.ListView) avec toutes les remarques qui ont été récupérées à partir du dossier de données d’application locale. Lorsque le [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) est enfoncé le `OnNoteAddedClicked` Gestionnaire d’événements est exécuté. Cette méthode accède à la `NoteEntryPage`, ce qui affecte le [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) de la `NoteEntryPage` vers un nouveau `Note` instance. Lorsqu’un élément dans le `ListView` est sélectionné le `OnListViewItemSelected` Gestionnaire d’événements est exécuté. Cette méthode accède à la `NoteEntryPage`, ce qui affecte le [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) de la `NoteEntryPage` au `Note` instance. Pour plus d’informations sur la navigation, consultez [Navigation](deepdive.md#navigation) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+    Ce code définit les fonctionnalités de `NotesPage`. Lorsque la page s’affiche, `OnAppearing` la méthode est exécutée, qui remplit [`ListView`](xref:Xamarin.Forms.ListView) le avec toutes les notes qui ont été récupérées à partir du dossier de données d’application local. Lorsque le [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) est activé, `OnNoteAddedClicked` le gestionnaire d’événements est exécuté. Cette `NoteEntryPage`méthode navigue vers, en [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) affectant la valeur `NoteEntryPage` à une nouvelle `Note` instance de. Lorsqu’un élément de `ListView` est sélectionné, le `OnListViewItemSelected` gestionnaire d’événements est exécuté. Cette `NoteEntryPage`méthode navigue vers, en [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) affectant `NoteEntryPage` à l’instance sélectionnée `Note` la valeur de. Pour plus d’informations sur la navigation, consultez [navigation](deepdive.md#navigation) dans la formation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-    Enregistrez les modifications apportées à **NotesPage.xaml.cs** en appuyant sur **CTRL + S**et fermez le fichier.
+    Enregistrez les modifications apportées à **NotesPage.Xaml.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
     > [!WARNING]
-    > Une tentative de génération de l’application à ce stade provoquera des erreurs qui seront résolus dans les étapes suivantes.
+    > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-13. Dans **l’Explorateur de solutions**, double-cliquez sur **App.xaml.cs** pour l’ouvrir. Puis remplacez le code existant par le code suivant :
+13. Dans **Explorateur de solutions**, double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
 
     ```csharp
     using System;
@@ -303,48 +303,48 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     }
     ```
 
-    Ce code ajoute une déclaration d’espace de noms pour le `System.IO` espace de noms et ajoute une déclaration pour une analyse statique `FolderPath` propriété de type `string`. Le `FolderPath` propriété sert à stocker le chemin d’accès sur le périphérique de stockage de noter que les données. En outre, le code initialise le `FolderPath` propriété dans le `App` constructeur et l’initialise le [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) propriété soit un [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) qui héberge un instance de `NotesPage`. Pour plus d’informations sur la navigation, consultez [Navigation](deepdive.md#navigation) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+    Ce code ajoute une déclaration d’espace de `System.IO` noms pour l’espace de noms et ajoute une `FolderPath` déclaration pour une `string`propriété statique de type. La `FolderPath` propriété est utilisée pour stocker le chemin d’accès sur l’appareil où les données de note seront stockées. En outre, le code `FolderPath` initialise la propriété dans le `App` constructeur et initialise la propriété pour qu' [`MainPage`](xref:Xamarin.Forms.Application.MainPage) elle soit un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) qui héberge une instance de `NotesPage`. Pour plus d’informations sur la navigation, consultez [navigation](deepdive.md#navigation) dans la formation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
     Enregistrez les modifications apportées à **App.xaml.cs** en appuyant sur **Ctrl+S** et fermez le fichier.
 
-14. Dans **l’Explorateur de solutions**, dans le **Notes** du projet, avec le bouton droit **MainPage.xaml**, puis sélectionnez **supprimer**. Dans la boîte de dialogue qui s’affiche appuyez sur le **OK** bouton pour supprimer le fichier à partir de votre disque dur.
+14. Dans **Explorateur de solutions**, dans le projet **Notes** , cliquez avec le bouton droit sur **MainPage. Xaml**, puis sélectionnez **supprimer**. Dans la boîte de dialogue qui s’affiche, appuyez sur le bouton **OK** pour supprimer le fichier de votre disque dur.
 
-    Cette opération supprime une page qui n’est plus utilisée.
+    Cela supprime une page qui n’est plus utilisée.
 
-15. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [création le démarrage rapide](single-page.md#building-the-quickstart).
+15. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [génération du démarrage rapide](single-page.md#building-the-quickstart).
 
-    Sur le **NotesPage** appuyez sur le **+** bouton pour accéder à la **NoteEntryPage** et entrez une note. Une fois que l’enregistrement de la note de l’application permet d’accéder à la **NotesPage**.
+    Sur le **NotesPage** , appuyez **+** sur le bouton pour accéder au **NoteEntryPage** et entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
 
-    Entrez le nombre de notes, de longueur variable, pour observer le comportement de l’application.
+    Entrez un nombre de notes, de longueur variable, pour observer le comportement de l’application.
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Mettre à jour l’application avec Visual Studio pour Mac
 
-1. Lancez Visual Studio pour Mac. Dans la fenêtre de démarrage, cliquez sur **Open**et dans la boîte de dialogue, sélectionnez le fichier de solution pour le projet de Notes :
+1. Lancez Visual Studio pour Mac. Dans la fenêtre Démarrer, cliquez sur **ouvrir**, puis dans la boîte de dialogue, sélectionnez le fichier solution pour le projet Notes:
 
     ![](multi-page-images/vsmac/open-solution.png "Ouvrir une solution")
 
-2. Dans le **panneau solutions**, sélectionnez le **Notes** projet, avec le bouton droit et sélectionnez **Ajouter > Nouveau dossier**:
+2. Dans le **panneau solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau dossier**:
 
     ![](multi-page-images/vsmac/add-new-folder.png "Ajouter un nouveau dossier")
 
-3. Dans le **panneau solutions**, nommez le nouveau dossier **modèles**:
+3. Dans la **panneau solutions**, nommez le nouveau dossier **modèles**:
 
-    ![](multi-page-images/vsmac/name-folder.png "Dossier de modèles")
+    ![](multi-page-images/vsmac/name-folder.png "Dossier Models")
 
-4. Dans le **panneau solutions**, sélectionnez le **modèles** dossier, avec le bouton droit et sélectionnez **Ajouter > nouveau fichier...** :
+4. Dans le **panneau solutions**, sélectionnez le dossier Models, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...** :
 
     ![](multi-page-images/vsmac/add-new-models-file.png "Ajouter un nouveau fichier")
 
-5. Dans le **nouveau fichier** boîte de dialogue, sélectionnez **général > classe vide**, nommez le nouveau fichier **Remarque**, puis cliquez sur le **New** bouton :
+5. Dans la boîte de dialogue **nouveau fichier** , sélectionnez **général > classe vide**, nommez le nouveau fichier **note**, puis cliquez sur le bouton **nouveau** :
 
-    ![](multi-page-images/vsmac/add-note-class.png "Ajouter une classe de Remarque")
+    ![](multi-page-images/vsmac/add-note-class.png "Ajouter une classe de note")
 
-    Cela ajoutera une classe nommée **Remarque** à la **modèles** dossier de la **Notes** projet.
+    Cette opération ajoute une classe nommée **note** au dossier **Models** du projet **Notes** .
 
-6. Dans **Note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+6. Dans **note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
     ```csharp
     using System;
@@ -360,17 +360,17 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     }
     ```
 
-    Cette classe définit un `Note` modèle qui stockera les données relatives à chaque note dans l’application.
+    Cette classe définit un `Note` modèle qui stocke les données relatives à chaque note dans l’application.
 
-    Enregistrez les modifications apportées à **Note.cs** en choisissant **fichier > Enregistrer** (ou en appuyant sur  **&#8984; + S**) et fermez le fichier.
+    Enregistrez les modifications apportées à **note.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-7. Dans le **panneau solutions**, sélectionnez le **Notes** projet, avec le bouton droit et sélectionnez **Ajouter > nouveau fichier...** . Dans le **nouveau fichier** boîte de dialogue, sélectionnez **Forms > Forms ContentPage XAML**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le **New** bouton :
+7. Dans le **panneau solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...** . Dans la boîte de dialogue **nouveau fichier** , sélectionnez **formulaires > Forms ContentPage XAML**, nommez le nouveau fichier **NoteEntryPage**, puis cliquez sur le bouton **nouveau** :
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Ajouter une Xamarin.Forms ContentPage")
+    ![](multi-page-images/vsmac/add-note-entry-page.png "Ajouter Xamarin. Forms ContentPage")
 
-    Cela ajoutera une nouvelle page nommée **NoteEntryPage** dans le dossier racine du projet. Cette page sera la deuxième page de l’application.
+    Cette opération ajoute une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page sera la deuxième page de l’application.
 
-8. Dans **NoteEntryPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+8. Dans **NoteEntryPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
       ```xaml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -397,11 +397,11 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
       </ContentPage>
       ```
 
-      Ce code définit de manière déclarative l’interface utilisateur pour la page, ce qui se compose d’un [ `Editor` ](xref:Xamarin.Forms.Editor) pour l’entrée de texte et deux [ `Button` ](xref:Xamarin.Forms.Button) instances qui dirigent l’application à enregistrer ou supprimer un fichier. Les deux `Button` instances sont disposées horizontalement dans une [ `Grid` ](xref:Xamarin.Forms.Grid), avec le `Editor` et `Grid` en cours disposées verticalement dans une [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). En outre, le `Editor` utilise la liaison de données à lier à la `Text` propriété de la `Note` modèle. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+      Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`Editor`](xref:Xamarin.Forms.Editor) compose d’un pour la saisie [`Button`](xref:Xamarin.Forms.Button) de texte, et de deux instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux `Button` instances sont présentées horizontalement dans un [`Grid`](xref:Xamarin.Forms.Grid), avec `Editor` et `Grid` disposés verticalement dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). En outre, utilise `Editor` la liaison de données pour établir une `Text` liaison à la `Note` propriété du modèle. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans l' [expérience approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-      Enregistrez les modifications apportées à **NoteEntryPage.xaml** en choisissant **fichier > Enregistrer** (ou en appuyant sur  **&#8984; + S**) et fermez le fichier.
+      Enregistrez les modifications apportées à **NoteEntryPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-9. Dans **NoteEntryPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+9. Dans **NoteEntryPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
       ```csharp
       using System;
@@ -452,18 +452,18 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
       }
       ```
 
-      Ce code stocke un `Note` instance, ce qui représente une seule note, dans le [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Lorsque le **enregistrer** [ `Button` ](xref:Xamarin.Forms.Button) est enfoncé le `OnSaveButtonClicked` Gestionnaire d’événements est exécuté, soit enregistre le contenu de la `Editor` dans un nouveau fichier avec un nom de fichier généré de manière aléatoire, ou à un fichier existant si la note est en cours de mise à jour. Dans les deux cas, le fichier est stocké dans le dossier de données d’application locale pour l’application. Puis la méthode revient à la page précédente. Lorsque le **supprimer** `Button` est enfoncé le `OnDeleteButtonClicked` Gestionnaire d’événements est exécuté, ce qui supprime le fichier, si elle existe et revient à la page précédente. Pour plus d’informations sur la navigation, consultez [Navigation](deepdive.md#navigation) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+      Ce code stocke `Note` une instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Lorsque l' **enregistrement** [`Button`](xref:Xamarin.Forms.Button) est activé, `OnSaveButtonClicked` le gestionnaire d’événements est exécuté, `Editor` ce qui permet d’enregistrer le contenu du dans un nouveau fichier avec un nom de fichier généré de manière aléatoire ou un fichier existant si une note est mise à jour. Dans les deux cas, le fichier est stocké dans le dossier de données d’application local de l’application. Ensuite, la méthode revient à la page précédente. Lorsque la **suppression** `Button` est activée, `OnDeleteButtonClicked` le gestionnaire d’événements est exécuté, ce qui a pour effet de supprimer le fichier, à condition qu’il existe, et de revenir à la page précédente. Pour plus d’informations sur la navigation, consultez [navigation](deepdive.md#navigation) dans la formation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-      Enregistrez les modifications apportées à **NoteEntryPage.xaml.cs** en choisissant **fichier > Enregistrer** (ou en appuyant sur  **&#8984; + S**) et fermez le fichier.
+      Enregistrez les modifications apportées à **NoteEntryPage.Xaml.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
       > [!WARNING]
-      > Une tentative de génération de l’application à ce stade provoquera des erreurs qui seront résolus dans les étapes suivantes.
+      > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-10. Dans le **panneau solutions**, sélectionnez le **Notes** projet, avec le bouton droit et sélectionnez **Ajouter > nouveau fichier...** . Dans le **nouveau fichier** boîte de dialogue, sélectionnez **Forms > Forms ContentPage XAML**, nommez le nouveau fichier **NotesPage**, puis cliquez sur le **New** bouton.
+10. Dans le **panneau solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...** . Dans la boîte de dialogue **nouveau fichier** , sélectionnez **formulaires > Forms ContentPage XAML**, nommez le nouveau fichier **NotesPage**, puis cliquez sur le bouton **nouveau** .
 
-      Cela ajoutera une page nommée **NotesPage** dans le dossier racine du projet. Cette page sera la page racine de l’application.
+      Cette opération ajoute une page nommée **NotesPage** au dossier racine du projet. Cette page sera la page racine de l’application.
 
-11. Dans **NotesPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+11. Dans **NotesPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -488,11 +488,11 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur pour la page, ce qui se compose d’un [ `ListView` ](xref:Xamarin.Forms.ListView) et un [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem). Le `ListView` utilise des données de liaison pour afficher toutes les notes sont récupérées par l’application, puis en sélectionnant une note permet d’accéder à la `NoteEntryPage` où la note peut être modifiée. Ou bien, une note peut être créée en appuyant sur la `ToolbarItem`. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`ListView`](xref:Xamarin.Forms.ListView) compose d' [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)un et d’un. Utilise `ListView` la liaison de données pour afficher toutes les notes récupérées par l’application, et la sélection d’une note permet `NoteEntryPage` d’accéder à l’emplacement où la note peut être modifiée. Vous pouvez également créer une nouvelle note en appuyant sur `ToolbarItem`. Pour plus d’informations sur la liaison de données, consultez [liaison de données](deepdive.md#data-binding) dans l' [expérience approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-    Enregistrez les modifications apportées à **NotesPage.xaml** en choisissant **fichier > Enregistrer** (ou en appuyant sur  **&#8984; + S**) et fermez le fichier.
+    Enregistrez les modifications apportées à **NotesPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-12. Dans **NotesPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
+12. Dans **NotesPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
 
     ```csharp
     using System;
@@ -555,14 +555,14 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     }
     ```    
 
-    Ce code définit les fonctionnalités de la `NotesPage`. Lorsque la page s’affiche, le `OnAppearing` méthode est exécutée, qui remplit le [ `ListView` ](xref:Xamarin.Forms.ListView) avec toutes les remarques qui ont été récupérées à partir du dossier de données d’application locale. Lorsque le [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem) est enfoncé le `OnNoteAddedClicked` Gestionnaire d’événements est exécuté. Cette méthode accède à la `NoteEntryPage`, ce qui affecte le [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) de la `NoteEntryPage` vers un nouveau `Note` instance. Lorsqu’un élément dans le `ListView` est sélectionné le `OnListViewItemSelected` Gestionnaire d’événements est exécuté. Cette méthode accède à la `NoteEntryPage`, ce qui affecte le [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) de la `NoteEntryPage` au `Note` instance. Pour plus d’informations sur la navigation, consultez [Navigation](deepdive.md#navigation) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+    Ce code définit les fonctionnalités de `NotesPage`. Lorsque la page s’affiche, `OnAppearing` la méthode est exécutée, qui remplit [`ListView`](xref:Xamarin.Forms.ListView) le avec toutes les notes qui ont été récupérées à partir du dossier de données d’application local. Lorsque le [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) est activé, `OnNoteAddedClicked` le gestionnaire d’événements est exécuté. Cette `NoteEntryPage`méthode navigue vers, en [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) affectant la valeur `NoteEntryPage` à une nouvelle `Note` instance de. Lorsqu’un élément de `ListView` est sélectionné, le `OnListViewItemSelected` gestionnaire d’événements est exécuté. Cette `NoteEntryPage`méthode navigue vers, en [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) affectant `NoteEntryPage` à l’instance sélectionnée `Note` la valeur de. Pour plus d’informations sur la navigation, consultez [navigation](deepdive.md#navigation) dans la formation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
-    Enregistrez les modifications apportées à **NotesPage.xaml.cs** en choisissant **fichier > Enregistrer** (ou en appuyant sur  **&#8984; + S**) et fermez le fichier.
+    Enregistrez les modifications apportées à **NotesPage.Xaml.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
     > [!WARNING]
-    > Une tentative de génération de l’application à ce stade provoquera des erreurs qui seront résolus dans les étapes suivantes.
+    > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-13. Dans le **panneau solutions**, double-cliquez sur **App.xaml.cs** pour l’ouvrir. Puis remplacez le code existant par le code suivant :
+13. Dans la **panneau solutions**, double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
 
     ```csharp
     using System;
@@ -586,36 +586,36 @@ Vous devez mener à bien le [démarrage rapide précédent](single-page.md) avan
     }
     ```
 
-    Ce code ajoute une déclaration d’espace de noms pour le `System.IO` espace de noms et ajoute une déclaration pour une analyse statique `FolderPath` propriété de type `string`. Le `FolderPath` propriété sert à stocker le chemin d’accès sur le périphérique de stockage de noter que les données. En outre, le code initialise le `FolderPath` propriété dans le `App` constructeur et l’initialise le [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) propriété soit un [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) qui héberge un instance de `NotesPage`. Pour plus d’informations sur la navigation, consultez [Navigation](deepdive.md#navigation) dans le [présentation approfondie du Guide de démarrage rapide Xamarin.Forms](deepdive.md).
+    Ce code ajoute une déclaration d’espace de `System.IO` noms pour l’espace de noms et ajoute une `FolderPath` déclaration pour une `string`propriété statique de type. La `FolderPath` propriété est utilisée pour stocker le chemin d’accès sur l’appareil où les données de note seront stockées. En outre, le code `FolderPath` initialise la propriété dans le `App` constructeur et initialise la propriété pour qu' [`MainPage`](xref:Xamarin.Forms.Application.MainPage) elle soit un [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) qui héberge une instance de `NotesPage`. Pour plus d’informations sur la navigation, consultez [navigation](deepdive.md#navigation) dans la formation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
     Enregistrez les modifications apportées à **App.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
 
-14. Dans le **panneau solutions**, dans le **Notes** du projet, avec le bouton droit **MainPage.xaml**, puis sélectionnez **supprimer**. Dans la boîte de dialogue qui s’affiche appuyez sur le **supprimer** bouton pour supprimer le fichier à partir de votre disque dur.
+14. Dans le **panneau solutions**, dans le projet **Notes** , cliquez avec le bouton droit sur **MainPage. Xaml**, puis sélectionnez **supprimer**. Dans la boîte de dialogue qui s’affiche, appuyez sur le bouton **supprimer** pour supprimer le fichier de votre disque dur.
 
-    Cette opération supprime une page qui n’est plus utilisée.
+    Cela supprime une page qui n’est plus utilisée.
 
-15. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [création le démarrage rapide](single-page.md#building-the-quickstart).
+15. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [génération du démarrage rapide](single-page.md#building-the-quickstart).
 
-    Sur le **NotesPage** appuyez sur le **+** bouton pour accéder à la **NoteEntryPage** et entrez une note. Une fois que l’enregistrement de la note de l’application permet d’accéder à la **NotesPage**.
+    Sur le **NotesPage** , appuyez **+** sur le bouton pour accéder au **NoteEntryPage** et entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
 
-    Entrez le nombre de notes, de longueur variable, pour observer le comportement de l’application.
+    Entrez un nombre de notes, de longueur variable, pour observer le comportement de l’application.
 
 ::: zone-end
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce démarrage rapide, vous avez appris comment :
+Dans ce guide de démarrage rapide, vous avez appris à:
 
-- Ajouter des pages supplémentaires à une solution Xamarin.Forms.
-- Effectuer la navigation entre les pages.
-- Utilisez la liaison de données pour synchroniser les données entre les éléments d’interface utilisateur et de leur source de données.
+- Ajoutez des pages supplémentaires à une solution Xamarin. Forms.
+- Effectuer une navigation entre les pages.
+- Utilisez la liaison de données pour synchroniser les données entre les éléments d’interface utilisateur et leur source de données.
 
-Pour modifier l’application afin qu’il stocke ses données dans une base de données locale SQLite.NET, continuer au démarrage rapide suivant.
+Pour modifier l’application afin qu’elle stocke ses données dans une base de données SQLite.NET locale, passez au démarrage rapide suivant.
 
 > [!div class="nextstepaction"]
 > [Next](database.md)
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notes (exemple)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/MultiPage/)
-- [Immersion dans Xamarin.Forms-démarrage rapide](deepdive.md)
+- [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+- [Présentation approfondie des Démarrages rapides Xamarin. Forms](deepdive.md)

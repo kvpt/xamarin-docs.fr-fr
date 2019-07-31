@@ -1,187 +1,187 @@
 ---
-title: Modes plan dans Xamarin.Mac
-description: Cet article aborde l’utilisation des modes plan dans une application Xamarin.Mac. Il décrit la création et gestion des modes plan dans Xcode et Interface Builder et leur utilisation par programmation.
+title: Modes plan dans Xamarin. Mac
+description: Cet article traite de l’utilisation des vues en mode plan dans une application Xamarin. Mac. Il décrit la création et la gestion des vues en mode plan dans Xcode et Interface Builder et leur utilisation par programmation.
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: fd97dbbe102c5a755c4a8974cf1a952c0050ac7c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a57363ef0fec4668fe35e1d7198372a543d672e7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61292697"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655347"
 ---
-# <a name="outline-views-in-xamarinmac"></a>Modes plan dans Xamarin.Mac
+# <a name="outline-views-in-xamarinmac"></a>Modes plan dans Xamarin. Mac
 
-_Cet article aborde l’utilisation des modes plan dans une application Xamarin.Mac. Il décrit la création et gestion des modes plan dans Xcode et Interface Builder et leur utilisation par programmation._
+_Cet article traite de l’utilisation des vues en mode plan dans une application Xamarin. Mac. Il décrit la création et la gestion des vues en mode plan dans Xcode et Interface Builder et leur utilisation par programmation._
 
-Lorsque vous travaillez avec C# et .NET dans une application Xamarin.Mac, que vous avez accès à la structure du même vues dont un développeur travaillant *Objective-C* et *Xcode* est. Comme Xamarin.Mac s’intègre directement à Xcode, vous pouvez utiliser de Xcode _Interface Builder_ pour créer et gérer vos modes de plan (ou éventuellement pour les créer directement en code c#).
+Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes vues de plan qu’un développeur qui travaille en *objective-C* et *Xcode* . Étant donné que Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser les _Interface Builder_ de Xcode pour créer et gérer vos vues en mode plan (ou éventuellement C# les créer directement dans le code).
 
-Un mode plan est un type de Table qui permet à l’utilisateur développer ou réduire des lignes de données hiérarchiques. Comme une vue de Table, une vue hiérarchique affiche les données pour un ensemble d’éléments associés, avec des lignes représentant des éléments individuels et des colonnes représentant les attributs de ces éléments. Contrairement à une vue de Table dans une vue hiérarchique des éléments ne sont pas dans une liste plate, ils sont organisés dans une hiérarchie, comme les fichiers et dossiers sur un disque dur.
+Un mode plan est un type de table qui permet à l’utilisateur de développer ou de réduire des lignes de données hiérarchiques. À l’instar d’une vue de table, un mode plan affiche des données pour un ensemble d’éléments connexes, avec des lignes représentant des éléments individuels et des colonnes représentant les attributs de ces éléments. Contrairement à une vue de table, les éléments d’un mode plan ne se trouvent pas dans une liste plate, ils sont organisés dans une hiérarchie, comme les fichiers et les dossiers sur un disque dur.
 
-[![](outline-view-images/populate03.png "Exécution d’une application exemple")](outline-view-images/populate03.png#lightbox)
+[![](outline-view-images/populate03.png "Exemple d’exécution d’application")](outline-view-images/populate03.png#lightbox)
 
-Dans cet article, nous traiterons les notions de base de l’utilisation des modes plan dans une application Xamarin.Mac. Il est fortement recommandé que vous travaillez via le [Hello, Mac](~/mac/get-started/hello-mac.md) article tout d’abord, en particulier le [Introduction à Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et [Outlets et Actions](~/mac/get-started/hello-mac.md#outlets-and-actions) sections, tel qu’il couvre les principaux concepts et techniques que nous utilisons dans cet article.
+Dans cet article, nous allons aborder les bases de l’utilisation des modes plan dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. Cet article.
 
-Vous pouvez souhaiter de jeter un coup de œil à la [C# exposition de classes / méthodes vers Objective-C](~/mac/internals/how-it-works.md) section de la [éléments internes de Xamarin.Mac](~/mac/internals/how-it-works.md) de document, il explique le `Register` et `Export` commandes utilisé pour AutoEventWireup vos classes c# pour les objets Objective-C et les éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les `Register` commandes `Export` et utilisées pour relier vos C# classes à Objets objective-C et éléments d’interface utilisateur.
 
 <a name="Introduction_to_Outline_Views" />
 
-## <a name="introduction-to-outline-views"></a>Introduction aux modes plan
+## <a name="introduction-to-outline-views"></a>Présentation des modes plan
 
-Un mode plan est un type de Table qui permet à l’utilisateur développer ou réduire des lignes de données hiérarchiques. Comme une vue de Table, une vue hiérarchique affiche les données pour un ensemble d’éléments associés, avec des lignes représentant des éléments individuels et des colonnes représentant les attributs de ces éléments. Contrairement à une vue de Table dans une vue hiérarchique des éléments ne sont pas dans une liste plate, ils sont organisés dans une hiérarchie, comme les fichiers et dossiers sur un disque dur.
+Un mode plan est un type de table qui permet à l’utilisateur de développer ou de réduire des lignes de données hiérarchiques. À l’instar d’une vue de table, un mode plan affiche des données pour un ensemble d’éléments connexes, avec des lignes représentant des éléments individuels et des colonnes représentant les attributs de ces éléments. Contrairement à une vue de table, les éléments d’un mode plan ne se trouvent pas dans une liste plate, ils sont organisés dans une hiérarchie, comme les fichiers et les dossiers sur un disque dur.
 
-Si un élément dans une vue hiérarchique contient d’autres éléments, il peut être développée ou réduite par l’utilisateur. Un élément pouvant être développé affiche un triangle, qui pointe vers la droite quand l’élément est réduit et pointe vers le bas lorsque l’élément est développé. En cliquant sur le triangle de provoque l’élément développer ou réduire.
+Si un élément en mode plan contient d’autres éléments, il peut être développé ou réduit par l’utilisateur. Un élément développable affiche un triangle de publicité, qui pointe vers la droite lorsque l’élément est réduit et pointe vers le dessous lorsque l’élément est développé. Lorsque vous cliquez sur le triangle de divulgation, l’élément est développé ou réduit.
 
-Le mode plan (`NSOutlineView`) est une sous-classe de la vue de Table (`NSTableView`) et par conséquent, une grande partie de son comportement hérite sa classe parente. Par conséquent, de nombreuses opérations prises en charge par une vue de Table, telles que la sélection des lignes ou colonnes, repositionnement des colonnes en faisant glisser les en-têtes de colonnes, etc., sont également pris en charge par un mode plan. Une application Xamarin.Mac possède le contrôle de ces fonctionnalités et pouvez configurer les paramètres du mode plan (soit dans le code ou d’Interface Builder) pour autoriser ou interdire certaines opérations.
+Le mode plan (`NSOutlineView`) est une sous-classe de la vue de`NSTableView`table () et, en tant que tel, hérite la majeure partie de son comportement de sa classe parente. Par conséquent, de nombreuses opérations prises en charge par une vue de table, telles que la sélection de lignes ou de colonnes, le repositionnement des colonnes en faisant glisser les en-têtes de colonne, etc., sont également prises en charge par un mode plan. Une application Xamarin. Mac contrôle ces fonctionnalités et peut configurer les paramètres de la vue plan (dans le code ou Interface Builder) pour autoriser ou interdire certaines opérations.
 
-Une vue hiérarchique ne stocke pas ses propres données, au lieu de cela, elle s’appuie sur une Source de données (`NSOutlineViewDataSource`) pour fournir les lignes et les colonnes requises sur une en fonction des besoins.
+Un mode plan ne stocke pas ses propres données. il s’appuie plutôt sur une source de données`NSOutlineViewDataSource`() pour fournir à la fois les lignes et les colonnes requises, en fonction des besoins.
 
-Comportement d’un mode plan peut être personnalisé en fournissant une sous-classe du délégué de mode plan (`NSOutlineViewDelegate`) pour prendre en charge la gestion de colonne de structure, tapez pour sélectionner des fonctionnalités, la sélection de ligne, la modification, suivi personnalisé et des vues personnalisées de chaque les colonnes et lignes.
+Le comportement d’un mode plan peut être personnalisé en fournissant une sous-classe du délégué en mode`NSOutlineViewDelegate`plan () pour prendre en charge la gestion des colonnes en mode plan, le type pour sélectionner les fonctionnalités, la sélection de lignes et la modification, le suivi personnalisé et les vues personnalisées pour les colonnes et lignes.
 
-Dans la mesure où une vue hiérarchique une grande partie de son comportement et les fonctionnalités partage avec une vue de Table, vous pouvez souhaiter passer par notre [affichages tableau](~/mac/user-interface/table-view.md) documentation avant de poursuivre cet article.
+Dans la mesure où une vue en mode plan partage une grande partie de son comportement et des fonctionnalités avec une vue de table, vous souhaiterez peut-être parcourir notre documentation sur les [vues de tableau](~/mac/user-interface/table-view.md) avant de poursuivre cet article.
 
 <a name="Creating_and_Maintaining_Outline_Views_in_Xcode" />
 
-## <a name="creating-and-maintaining-outline-views-in-xcode"></a>Création et gestion des modes plan dans Xcode
+## <a name="creating-and-maintaining-outline-views-in-xcode"></a>Création et gestion des vues en mode plan dans Xcode
 
-Lorsque vous créez une nouvelle application Xamarin.Mac Cocoa, vous obtenez une fenêtre vide, standard par défaut. Ce paramètre, windows est défini dans un `.storyboard` fichier automatiquement inclus dans le projet. Pour modifier votre conception de windows, dans le **l’Explorateur de solutions**, double-cliquez sur le `Main.storyboard` fichier :
+Lorsque vous créez une application de cacao Xamarin. Mac, vous recevez une fenêtre vide standard par défaut. Cette fenêtre est définie dans un `.storyboard` fichier inclus automatiquement dans le projet. Pour modifier votre conception Windows, dans le **Explorateur de solutions**, double-cliquez `Main.storyboard` sur le fichier:
 
-[![](outline-view-images/edit01.png "En sélectionnant le storyboard principal")](outline-view-images/edit01.png#lightbox)
+[![](outline-view-images/edit01.png "Sélection de la table de montage séquentiel principale")](outline-view-images/edit01.png#lightbox)
 
-La conception de la fenêtre s’ouvre dans Xcode Interface Builder :
+Cette opération ouvre la conception de la fenêtre dans le Interface Builder de Xcode:
 
 [![](outline-view-images/edit02.png "Modification de l’interface utilisateur dans Xcode")](outline-view-images/edit02.png#lightbox)
 
-Type `outline` dans le **l’inspecteur de bibliothèque** zone de recherche pour le rendre plus facile à trouver les contrôles de mode plan :
+Tapez `outline` dans la zone **de recherche de l’inspecteur de bibliothèque** pour faciliter la recherche des contrôles du mode plan:
 
 [![](outline-view-images/edit03.png "Sélection d’un mode plan à partir de la bibliothèque")](outline-view-images/edit03.png#lightbox)
 
-Faire glisser une vue hiérarchique du contrôleur d’affichage dans le **Éditeur d’Interface**, rendent la remplir la zone de contenu du contrôleur d’affichage et affectez-lui la valeur où il augmente et diminue avec la fenêtre dans le **éditeur de contrainte**:
+Faites glisser un mode plan sur le contrôleur d’affichage dans l' **éditeur d’interface**, faites-le remplir dans la zone de contenu du contrôleur d’affichage, puis affectez-le à l’emplacement où il se réduit et s’agrandit avec la fenêtre de l' **éditeur de contrainte**:
 
 [![](outline-view-images/edit04.png "Modification des contraintes")](outline-view-images/edit04.png#lightbox)
 
-Sélectionnez le mode plan dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez le mode plan dans la **hiérarchie** de l’interface et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/edit05.png "L’inspecteur d’attributs")](outline-view-images/edit05.png#lightbox)
+[![](outline-view-images/edit05.png "L’inspecteur d’attribut")](outline-view-images/edit05.png#lightbox)
 
-- **Décrit la colonne** -la colonne de Table dans laquelle les données hiérarchiques sont affichées.
-- **Colonne de structure AutoSave** : si `true`, la colonne de structure est automatiquement enregistrée et restaurée entre les exécutions de l’application.
-- **Mise en retrait** -la quantité pour mettre en retrait les colonnes sous un élément développé.
-- **Mise en retrait suit cellules** : si `true`, seront en retrait la marque de mise en retrait, ainsi que les cellules.
-- **Éléments de développé AutoSave** : si `true`, l’état développé/réduit des éléments est automatiquement enregistré et restauré entre les exécutions de l’application.
-- **Mode de contenu** -vous permet d’utiliser deux vues (`NSView`) ou les cellules (`NSCell`) pour afficher les données dans les lignes et colonnes. À compter de macOS 10.7, vous devez utiliser des vues.
-- **Regrouper des lignes de flotte** : si `true`, la vue Table dessinera cellules groupées comme s’ils sont flottants.
+- **Colonne de plan** : colonne de table dans laquelle les données hiérarchiques sont affichées.
+- **Enregistrement** automatique de la colonne de `true`structure: si, la colonne de structure est automatiquement enregistrée et restaurée entre les exécutions de l’application.
+- **Mise en retrait** : quantité de retrait des colonnes sous un élément développé.
+- La **mise en retrait suit** des `true`cellules-si, la marque de mise en retrait sera mise en retrait en même temps que les cellules.
+- **Enregistrement automatique des éléments développés** - `true`si, l’état développé/réduit des éléments est automatiquement enregistré et restauré entre les exécutions de l’application.
+- **Mode de contenu** : vous permet d’utiliser des vues`NSView`() ou des`NSCell`cellules () pour afficher les données dans les lignes et les colonnes. À partir de macOS 10,7, vous devez utiliser des vues.
+- **Flotter les lignes** de groupe `true`: si la vue table dessine des cellules groupées comme si elles étaient flottantes.
 - **Colonnes** -définit le nombre de colonnes affichées.
-- **En-têtes** : si `true`, les colonnes ont des en-têtes.
-- **Réorganisation** : si `true`, l’utilisateur sera en mesure de faire glisser réorganiser les colonnes dans la table.
-- **Redimensionnement** : si `true`, l’utilisateur sera en mesure de faire glisser pour redimensionner des colonnes, les en-têtes de colonne.
-- **Dimensionnement de colonnes** -contrôle la façon dont la table est automatiquement la taille des colonnes.
-- **Mettez en surbrillance** -contrôles le type de mise en surbrillance de la table utilise lorsqu’une cellule est sélectionnée.
-- **Remplacement des lignes** : si `true`, jamais autres ligne aura une couleur d’arrière-plan différente.
-- **Quadrillage horizontal** -sélectionne le type de bordure dessinée entre les cellules horizontalement.
+- **En-têtes** - `true`si, les colonnes auront des en-têtes.
+- **Réorganisation** : si `true`la valeur est, l’utilisateur peut faire glisser les colonnes de la table.
+- Redimensionnement: `true`si la valeur est, l’utilisateur peut faire glisser des en-têtes de colonne pour redimensionner les colonnes.
+- Redimensionnement de **colonne** : contrôle la manière dont la table redimensionne automatiquement les colonnes.
+- **Mettre** en surbrillance: contrôle le type de mise en surbrillance de la table lorsqu’une cellule est sélectionnée.
+- **Lignes de remplacement** : `true`si une autre ligne a une couleur d’arrière-plan différente.
+- **Grille horizontale** -sélectionne le type de bordure dessinée entre les cellules horizontalement.
 - **Quadrillage vertical** -sélectionne le type de bordure dessinée entre les cellules verticalement.
-- **Couleur de la grille** -définit la couleur de bordure de cellule.
-- **Arrière-plan** -définit la couleur d’arrière-plan de cellule.
-- **Sélection** -vous permettent de contrôler la façon dont l’utilisateur peut sélectionner des cellules dans la table en tant que :
-    - **Plusieurs** : si `true`, l’utilisateur peut sélectionner plusieurs lignes et colonnes.
-    - **Colonne** : si `true`, l’utilisateur peut sélectionner des colonnes.
-    - **Tapez sélectionner** : si `true`, l’utilisateur peut taper un caractère pour sélectionner une ligne.
-    - **Vide** : si `true`, l’utilisateur n’est pas obligé de sélectionner une ligne ou une colonne, la table autorise pour aucune sélection du tout.
-- **Enregistrement automatique** -le nom que le format des tables est automatiquement enregistrer sous.
-- **Informations sur les colonnes** : si `true`, l’ordre et la largeur des colonnes sont automatiquement enregistrés.
-- **Sauts de ligne** - sélectionnez la façon dont la cellule gère des sauts de ligne.
-- **Tronque la dernière ligne Visible** : si `true`, la cellule est tronquée dans le données peuvent ne tiennent ne pas dans ses limites.
+- **Couleur** de la grille-définit la couleur de bordure de la cellule.
+- **Background** : définit la couleur d’arrière-plan de la cellule.
+- **Sélection** : vous permet de contrôler la manière dont l’utilisateur peut sélectionner des cellules dans la table en tant que:
+    - **Multiple** -si `true`, l’utilisateur peut sélectionner plusieurs lignes et colonnes.
+    - **Colonne** : si `true`la colonne est, l’utilisateur peut sélectionner des colonnes.
+    - **Tapez Select** -if `true`, l’utilisateur peut taper un caractère pour sélectionner une ligne.
+    - **Empty** : si `true`la valeur est, l’utilisateur n’est pas obligé de sélectionner une ligne ou une colonne, la table n’autorise aucune sélection.
+- **Enregistrement** automatique: nom sous lequel le format des tables est automatiquement enregistré.
+- **Informations sur** la colonne `true`-si, l’ordre et la largeur des colonnes sont automatiquement enregistrés.
+- **Sauts de ligne** : sélectionnez la façon dont la cellule gère les sauts de ligne.
+- **Tronque la dernière ligne visible** : `true`si la cellule est tronquée dans les données ne peut pas être contenue dans ses limites.
 
 > [!IMPORTANT]
-> Sauf si vous mettez à jour une application Xamarin.Mac héritée, `NSView` en modes de plan doit être utilisés sur `NSCell` en fonction des vues de Table. `NSCell` est considéré comme hérité et de ne pas être gérée à l’avenir.
+> À moins que vous ne conserviez une application Xamarin `NSView` . Mac héritée, les modes `NSCell` plan basés sur les vues de table doivent être utilisés sur des vues de tables basées sur. `NSCell`est considéré comme hérité et peut ne pas être pris en charge à l’avenir.
 
-Sélectionnez une colonne de Table dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une colonne de table dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l’inspecteur d' **attribut**:
 
-[![](outline-view-images/edit06.png "L’inspecteur d’attributs")](outline-view-images/edit06.png#lightbox)
+[![](outline-view-images/edit06.png "L’inspecteur d’attribut")](outline-view-images/edit06.png#lightbox)
 
-- **Titre** -définit le titre de la colonne.
-- **Alignement** -définir l’alignement du texte dans les cellules.
-- **Police du titre** -sélectionne la police pour le texte d’en-tête de la cellule.
-- **Clé de tri** -est la clé utilisée pour trier les données dans la colonne. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
-- **Sélecteur de** -est la **Action** utilisé pour effectuer le tri. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
-- **Commande** -est de l’ordre de tri pour les données de colonnes.
-- **Redimensionnement** -sélectionne le type de redimensionnement pour la colonne.
-- **Modifiable** : si `true`, l’utilisateur peut modifier les cellules dans une table en fonction de cellule.
-- **Masqué** : si `true`, la colonne est masquée.
+- **Titre** : définit le titre de la colonne.
+- **Alignement** : définissez l’alignement du texte dans les cellules.
+- **Police du titre** -sélectionne la police du texte d’en-tête de la cellule.
+- **Clé de tri** : clé utilisée pour trier les données dans la colonne. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
+- **Selector** -est l' **action** utilisée pour effectuer le tri. Laissez vide si l’utilisateur ne peut pas trier cette colonne.
+- **Order** : il s’agit de l’ordre de tri pour les données de colonnes.
+- Redimensionnement-sélectionne le type de redimensionnement de la colonne.
+- **Modifiable** : `true`si, l’utilisateur peut modifier des cellules dans une table basée sur des cellules.
+- **Hidden** : si `true`la colonne est masquée.
 
-Vous pouvez également redimensionner la colonne en faisant glisser sa poignée (centré verticalement sur la droite de la colonne) à gauche ou à droite.
+Vous pouvez également redimensionner la colonne en faisant glisser sa poignée (centrée verticalement sur le côté droit de la colonne) à gauche ou à droite.
 
-Nous allons sélectionner la chaque colonne dans notre vue Table et donnez à la première colonne un **titre** de `Product` et la deuxième `Details`.
+Nous allons sélectionner chaque colonne dans notre vue de table et attribuer à la première colonne un titre `Product` `Details`et la deuxième.
 
-Sélectionnez une vue de cellule de Table (`NSTableViewCell`) dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une vue de cellule de`NSTableViewCell`table () dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/edit07.png "L’inspecteur d’attributs")](outline-view-images/edit07.png#lightbox)
+[![](outline-view-images/edit07.png "L’inspecteur d’attribut")](outline-view-images/edit07.png#lightbox)
 
-Il s’agit de toutes les propriétés d’une vue standard. Vous avez également la possibilité de redimensionner les lignes pour cette colonne ici.
+Il s’agit de toutes les propriétés d’une vue standard. Vous avez également la possibilité de redimensionner les lignes de cette colonne ici.
 
-Sélectionnez une cellule d’affichage Table (par défaut, il s’agit d’un `NSTextField`) dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une cellule d’affichage de table (par défaut, il `NSTextField`s’agit d’un) dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/edit08.png "L’inspecteur d’attributs")](outline-view-images/edit08.png#lightbox)
+[![](outline-view-images/edit08.png "L’inspecteur d’attribut")](outline-view-images/edit08.png#lightbox)
 
-Vous aurez toutes les propriétés d’un champ de texte standard pour définir ici. Par défaut, un champ de texte standard est utilisé pour afficher les données d’une cellule dans une colonne.
+Vous disposez de toutes les propriétés d’un champ de texte standard à définir ici. Par défaut, un champ de texte standard est utilisé pour afficher les données d’une cellule dans une colonne.
 
-Sélectionnez une vue de cellule de Table (`NSTableFieldCell`) dans le **hiérarchie des interfaces** et les propriétés suivantes sont disponibles dans le **inspecteur d’attributs**:
+Sélectionnez une vue de cellule de`NSTableFieldCell`table () dans la **hiérarchie d’interface** et les propriétés suivantes sont disponibles dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/edit09.png "L’inspecteur d’attributs")](outline-view-images/edit09.png#lightbox)
+[![](outline-view-images/edit09.png "L’inspecteur d’attribut")](outline-view-images/edit09.png#lightbox)
 
-Plus important ici sont les suivantes :
+Les paramètres les plus importants sont les suivants:
 
-- **Disposition** - sélectionnez la façon dont les cellules de cette colonne sont disposés.
-- **Utilise le Mode à ligne unique** : si `true`, la cellule est limitée à une seule ligne.
-- **La largeur de première exécution disposition** : si `true`, la cellule préféreront la largeur définie pour elle (manuellement ou automatiquement) quand il est affiché à la première fois que l’application est exécutée.
-- **Action** -contrôle le moment où la modification **Action** est envoyé pour la cellule.
-- **Comportement** -définit si une cellule est sélectionnable ou modifiable.
-- **Texte riche** : si `true`, la cellule peut afficher du texte mis en forme et de style.
-- **Annuler** : si `true`, la cellule assume la responsabilité pour qu’il est annuler le comportement.
+- **Disposition** : sélectionnez la disposition des cellules de cette colonne.
+- **Utilise le mode à ligne simple** : si `true`la valeur est, la cellule est limitée à une seule ligne.
+- **Largeur de la première disposition** du `true`Runtime: si la valeur est, la cellule préfèrera la largeur définie pour celle-ci (manuellement ou automatiquement) lorsqu’elle sera affichée lors de la première exécution de l’application.
+- **Action** -contrôle quand l' **action** de modification est envoyée pour la cellule.
+- **Comportement** : définit si une cellule est sélectionnable ou modifiable.
+- **Texte enrichi** : si `true`la cellule est affichée, la cellule peut afficher du texte mis en forme et un style.
+- **Undo** -si `true`, la cellule assume la responsabilité de son comportement d’annulation.
 
-Sélectionnez la vue de cellule de Table (`NSTableFieldCell`) en bas d’une colonne de Table dans le **hiérarchie des interfaces**:
+Sélectionnez la vue de cellule de`NSTableFieldCell`table () en bas d’une colonne de table dans la hiérarchie de l' **interface**:
 
-[![](outline-view-images/edit11.png "En sélectionnant la vue de cellule de table")](outline-view-images/edit10.png#lightbox)
+[![](outline-view-images/edit11.png "Sélection de la vue de cellule de table")](outline-view-images/edit10.png#lightbox)
 
-Cela vous permet de modifier la vue de cellule de Table utilisée comme base _modèle_ pour toutes les cellules créés pour la colonne donnée.
+Cela vous permet de modifier la vue de cellule de table utilisée comme _modèle_ de base pour toutes les cellules créées pour la colonne donnée.
 
 <a name="Adding_Actions_and_Outlets" />
 
-### <a name="adding-actions-and-outlets"></a>Ajoute des Actions et Outlets
+### <a name="adding-actions-and-outlets"></a>Ajout d’actions et de prises
 
-Juste comme tout autre contrôle de l’interface utilisateur Cocoa, nous devons exposer notre mode plan et il est de colonnes et des cellules à c# code à l’aide de **Actions** et **Outlets** (basé sur les fonctionnalités requises).
+Tout comme n’importe quel autre contrôle d’IU de cacao, nous devons exposer notre mode plan et ses colonnes et C# cellules au code à l’aide d' **actions** et de **prises** (selon les fonctionnalités requises).
 
-Le processus est identique pour n’importe quel élément de mode plan que nous souhaitons exposer :
+Le processus est le même pour tout élément de vue en mode plan que nous souhaitons exposer:
 
-1. Basculez vers le **éditeur de l’Assistant** et vérifiez que le `ViewController.h` fichier est sélectionné : 
+1. Basculez vers l’éditeur de l' **Assistant** et `ViewController.h` Vérifiez que le fichier est sélectionné: 
 
-    [![](outline-view-images/edit11.png "En sélectionnant le fichier .h correct")](outline-view-images/edit11.png#lightbox)
-2. Sélectionnez le mode plan à partir de la **hiérarchie des interfaces**, cliquez et faites glisser vers le `ViewController.h` fichier.
-3. Créer un **Outlet** pour le mode plan appelé `ProductOutline`: 
+    [![](outline-view-images/edit11.png "Sélection du fichier. h correct")](outline-view-images/edit11.png#lightbox)
+2. Sélectionnez le mode plan dans la **hiérarchie**de l’interface, cliquez dessus et faites- `ViewController.h` le glisser vers le fichier.
+3. Créez un **orifice** pour la vue plan appelée `ProductOutline`: 
 
-    [![](outline-view-images/edit13.png "Configuration d’un Outlet")](outline-view-images/edit13.png#lightbox)
-4. Créer **Outlets** pour les colonnes de tables aussi appelé `ProductColumn` et `DetailsColumn`: 
+    [![](outline-view-images/edit13.png "Configuration d’une prise")](outline-view-images/edit13.png#lightbox)
+4. Créez des **sorties** pour les colonnes de tables, ainsi `ProductColumn` que `DetailsColumn`les suivantes: 
 
-    [![](outline-view-images/edit14.png "Configuration d’un Outlet")](outline-view-images/edit14.png#lightbox)
-5. Enregistrer les modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+    [![](outline-view-images/edit14.png "Configuration d’une prise")](outline-view-images/edit14.png#lightbox)
+5. Enregistrez vos modifications et revenez à Visual Studio pour Mac à synchroniser avec Xcode.
 
-Nous allons ensuite écrire à l’affichage de code des données pour le plan lors de l’application est exécutée.
+Nous allons ensuite écrire le code pour afficher des données pour le plan lors de l’exécution de l’application.
 
 <a name="Populating_the_Table_View" />
 
-## <a name="populating-the-outline-view"></a>Remplissage de l’affichage hiérarchique
+## <a name="populating-the-outline-view"></a>Remplissage du mode plan
 
-Avec notre mode plan conçu dans Interface Builder et exposées via un **Outlet**, nous devons ensuite créer le code c# pour le remplir.
+Avec notre mode plan conçu en Interface Builder et exposé par le biais d’une **prise**, nous devons ensuite C# créer le code pour le remplir.
 
-Tout d’abord, nous allons créer un nouveau `Product` classe pour contenir les informations pour les lignes individuelles et les groupes de produits de sub. Dans le **l’Explorateur de solutions**, cliquez sur le projet et sélectionnez **ajouter** > **nouveau fichier...** Sélectionnez **général** > **classe vide**, entrez `Product` pour le **nom** et cliquez sur le **New** bouton :
+Tout d’abord, nous allons créer `Product` une classe pour stocker les informations relatives aux lignes et aux groupes de sous-produits individuels. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `Product` pour le **nom** et cliquez sur le bouton **nouveau** :
 
 [![](outline-view-images/populate01.png "Création d’une classe vide")](outline-view-images/populate01.png#lightbox)
 
-Rendre le `Product.cs` fichier ressemble ce qui suit :
+Faites en `Product.cs` sorte que le fichier ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -219,9 +219,9 @@ namespace MacOutlines
 }
 ```
 
-Ensuite, nous devons créer une sous-classe de `NSOutlineDataSource` pour fournir les données de notre plan comme cela est demandé. Dans le **l’Explorateur de solutions**, cliquez sur le projet et sélectionnez **ajouter** > **nouveau fichier...** Sélectionnez **général** > **classe vide**, entrez `ProductOutlineDataSource` pour le **nom** et cliquez sur le **New** bouton.
+Ensuite, nous devons créer une sous-classe de `NSOutlineDataSource` pour fournir les données de notre plan au fur et à mesure qu’elles sont demandées. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `ProductOutlineDataSource` pour le **nom** et cliquez sur le bouton **nouveau** .
 
-Modifier la `ProductTableDataSource.cs` de fichier et qu’elle ressemble à ce qui suit :
+Modifiez le `ProductTableDataSource.cs` fichier et faites en sorte qu’il ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -280,11 +280,11 @@ namespace MacOutlines
 }
 ```
 
-Cette classe dispose d’un stockage pour les éléments de notre mode plan et remplace le `GetChildrenCount` pour retourner le nombre de lignes dans la table. Le `GetChild` retourne un élément parent ou enfant spécifique (comme requis par le mode plan) et le `ItemExpandable` définit l’élément spécifié comme un parent ou enfant.
+Cette classe possède un stockage pour les éléments de l’affichage du plan et remplace `GetChildrenCount` le pour retourner le nombre de lignes dans la table. Le `GetChild` retourne un élément parent ou enfant spécifique (comme demandé par le mode plan) `ItemExpandable` et définit l’élément spécifié en tant que parent ou enfant.
 
-Enfin, nous devons créer une sous-classe de `NSOutlineDelegate` pour fournir le comportement de notre plan. Dans le **l’Explorateur de solutions**, cliquez sur le projet et sélectionnez **ajouter** > **nouveau fichier...** Sélectionnez **général** > **classe vide**, entrez `ProductOutlineDelegate` pour le **nom** et cliquez sur le **New** bouton.
+Enfin, nous devons créer une sous-classe de `NSOutlineDelegate` pour fournir le comportement de notre plan. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `ProductOutlineDelegate` pour le **nom** et cliquez sur le bouton **nouveau** .
 
-Modifier la `ProductOutlineDelegate.cs` de fichier et qu’elle ressemble à ce qui suit :
+Modifiez le `ProductOutlineDelegate.cs` fichier et faites en sorte qu’il ressemble à ce qui suit:
 
 ```csharp
 using System;
@@ -349,9 +349,9 @@ namespace MacOutlines
 }
 ```
 
-Lorsque nous créons une instance de la `ProductOutlineDelegate`, nous passons également dans une instance de la `ProductOutlineDataSource` qui fournit les données pour le contour. Le `GetView` méthode est chargée de retourner une vue (données) pour afficher la cellule pour une colonne donnée et une ligne. Si possible, une vue existante sera réutilisée pour afficher la cellule, si ce n’est pas une nouvelle vue doit être créée.
+Lorsque nous créons une instance `ProductOutlineDelegate`du, nous transmettons également une instance `ProductOutlineDataSource` du qui fournit les données pour le plan. La `GetView` méthode est chargée de retourner une vue (données) pour afficher la cellule d’une colonne et d’une ligne. Si possible, une vue existante sera réutilisée pour afficher la cellule, s’il n’est pas nécessaire de créer une nouvelle vue.
 
-Pour remplir le contour, nous allons modifier le `MainWindow.cs` et effectuez le `AwakeFromNib` méthode ressemble ce qui suit :
+Pour remplir le plan, nous allons modifier le `MainWindow.cs` fichier et faire en `AwakeFromNib` sorte que la méthode ressemble à ce qui suit:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -388,25 +388,25 @@ public override void AwakeFromNib ()
 }
 ```
 
-Si nous exécutons l’application, ce qui suit s’affiche :
+Si nous exécutons l’application, les éléments suivants s’affichent:
 
-[![](outline-view-images/populate02.png "L’affichage réduit")](outline-view-images/populate02.png#lightbox)
+[![](outline-view-images/populate02.png "Affichage réduit")](outline-view-images/populate02.png#lightbox)
 
-Si nous allons développer un nœud en mode plan, il ressemble à ce qui suit :
+Si nous développons un nœud en mode plan, il se présente comme suit:
 
-[![](outline-view-images/populate03.png "La vue développée")](outline-view-images/populate03.png#lightbox)
+[![](outline-view-images/populate03.png "Vue développée")](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
 ## <a name="sorting-by-column"></a>Tri par colonne
 
-Nous allons autoriser l’utilisateur de trier les données dans le plan en cliquant sur un en-tête de colonne. Tout d’abord, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez le `Product` colonne, entrez `Title` pour le **clé de tri**, `compare:` pour le **sélecteur** et sélectionnez `Ascending` pour le **ordre**:
+Permettons à l’utilisateur de trier les données dans le plan en cliquant sur un en-tête de colonne. Tout d’abord, double- `Main.storyboard` cliquez sur le fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez la `Product` colonne, entrez `Title` pour la **clé**de tri `compare:` , pour le **Sélecteur** et `Ascending` sélectionnez pour la **commande**:
 
-[![](outline-view-images/sort01.png "Définition de l’ordre de clé de tri")](outline-view-images/sort01.png#lightbox)
+[![](outline-view-images/sort01.png "Définition de l’ordre des clés de tri")](outline-view-images/sort01.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Maintenant nous allons modifier le `ProductOutlineDataSource.cs` fichier, puis ajoutez les méthodes suivantes :
+À présent, modifions `ProductOutlineDataSource.cs` le fichier et ajoutez les méthodes suivantes:
 
 ```csharp
 public void Sort(string key, bool ascending) {
@@ -431,9 +431,9 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 }
 ```
 
-Le `Sort` méthode nous permettent de trier les données dans la Source de données basée sur une donnée `Product` champ de classe dans l’ordre croissant ou décroissant. Substituées `SortDescriptorsChanged` méthode sera appelée chaque fois que l’utilisation clique sur un en-tête de colonne. Il sera passé le **clé** valeur que nous avons défini dans le Générateur d’Interface et l’ordre de tri pour cette colonne.
+La `Sort` méthode nous permet de trier les données dans la source de données en fonction d' `Product` un champ de classe donné, dans l’ordre croissant ou décroissant. La méthode substituée `SortDescriptorsChanged` sera appelée chaque fois que l’utilisera un clic sur un en-tête de colonne. La valeur de **clé** que nous avons définie dans Interface Builder et l’ordre de tri de cette colonne seront transmis.
 
-Si nous pouvons exécuter l’application et que vous cliquez sur dans les en-têtes de colonnes, les lignes seront triées par cette colonne :
+Si nous exécutons l’application et que vous cliquez dans les en-têtes de colonne, les lignes sont triées selon cette colonne:
 
 [![](outline-view-images/sort02.png "Exemple de sortie triée")](outline-view-images/sort02.png#lightbox)
 
@@ -441,14 +441,14 @@ Si nous pouvons exécuter l’application et que vous cliquez sur dans les en-t�
 
 ## <a name="row-selection"></a>Sélection de ligne
 
-Si vous souhaitez autoriser l’utilisateur à sélectionner une seule ligne, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez le mode plan dans le **hiérarchie des interfaces** et désactivez le **plusieurs** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à sélectionner une seule ligne, double-cliquez sur le `Main.storyboard` fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez le mode plan dans la **hiérarchie des interfaces** et décochez la case **multiple** dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/select01.png "L’inspecteur d’attributs")](outline-view-images/select01.png#lightbox)
+[![](outline-view-images/select01.png "L’inspecteur d’attribut")](outline-view-images/select01.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
 
-Ensuite, modifiez le `ProductOutlineDelegate.cs` fichier, puis ajoutez la méthode suivante :
+Modifiez ensuite le `ProductOutlineDelegate.cs` fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
@@ -458,20 +458,20 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 }
 ```
 
-Cela permettra à l’utilisateur de sélectionner une seule ligne en mode plan. Retourner `false` pour le `ShouldSelectItem` pour des éléments que vous voulez l’utilisateur soit en mesure de sélectionner ou `false` pour chaque élément, si vous ne souhaitez pas l’utilisateur soit en mesure de sélectionner tous les éléments.
+Cela permettra à l’utilisateur de sélectionner n’importe quelle ligne dans le mode plan. Retournez `false` pour le `ShouldSelectItem` pour tout élément que vous ne voulez pas que l’utilisateur puisse sélectionner ou `false` pour chaque élément si vous ne souhaitez pas que l’utilisateur puisse sélectionner des éléments.
 
 <a name="Multiple_Row_Selection" />
 
 ## <a name="multiple-row-selection"></a>Sélection de plusieurs lignes
 
-Si vous souhaitez autoriser l’utilisateur à sélectionner un plusieurs lignes, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez le mode plan dans le **hiérarchie des interfaces** et vérifiez le **plusieurs** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à sélectionner plusieurs lignes, double-cliquez sur le fichier `Main.storyboard` pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez le mode plan dans la **hiérarchie** de l’interface et cochez la case **multiple** dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/select02.png "L’inspecteur d’attributs")](outline-view-images/select02.png#lightbox)
+[![](outline-view-images/select02.png "L’inspecteur d’attribut")](outline-view-images/select02.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
 
-Ensuite, modifiez le `ProductOutlineDelegate.cs` fichier, puis ajoutez la méthode suivante :
+Modifiez ensuite le `ProductOutlineDelegate.cs` fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
@@ -481,19 +481,19 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 }
 ```
 
-Cela permettra à l’utilisateur de sélectionner une seule ligne en mode plan. Retourner `false` pour le `ShouldSelectRow` pour des éléments que vous voulez l’utilisateur soit en mesure de sélectionner ou `false` pour chaque élément, si vous ne souhaitez pas l’utilisateur soit en mesure de sélectionner tous les éléments.
+Cela permettra à l’utilisateur de sélectionner n’importe quelle ligne dans le mode plan. Retournez `false` pour le `ShouldSelectRow` pour tout élément que vous ne voulez pas que l’utilisateur puisse sélectionner ou `false` pour chaque élément si vous ne souhaitez pas que l’utilisateur puisse sélectionner des éléments.
 
 <a name="Type_to_Select_Row" />
 
-## <a name="type-to-select-row"></a>Type à sélectionner la ligne
+## <a name="type-to-select-row"></a>Tapez pour sélectionner la ligne
 
-Si vous souhaitez autoriser l’utilisateur à taper un caractère avec le mode plan sélectionné et sélectionnez la première ligne qui a ce caractère, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez le mode plan dans le **hiérarchie des interfaces** et vérifiez le **Type Sélectionnez** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à taper un caractère avec le mode plan sélectionné et à sélectionner la première ligne qui contient ce caractère, double-cliquez sur `Main.storyboard` le fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez le mode plan dans la **hiérarchie** de l’interface et cochez la case **type de sélection** dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/type01.png "Modifier le type de ligne")](outline-view-images/type01.png#lightbox)
+[![](outline-view-images/type01.png "Modification du type de ligne")](outline-view-images/type01.png#lightbox)
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Maintenant nous allons modifier le `ProductOutlineDelegate.cs` fichier, puis ajoutez la méthode suivante :
+À présent, modifions `ProductOutlineDelegate.cs` le fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSObject startItem, NSObject endItem, string searchString)
@@ -509,21 +509,21 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 }
 ```
 
-Le `GetNextTypeSelectMatch` méthode prend le donné `searchString` et retourne l’élément de la première `Product` qui possède cette chaîne dans son `Title`.
+La `GetNextTypeSelectMatch` méthode prend le donné `searchString` et retourne l’élément de la première `Product` qui contient cette chaîne `Title`.
 
 <a name="Reordering_Columns" />
 
 ## <a name="reordering-columns"></a>Réorganisation des colonnes
 
-Si vous souhaitez autoriser l’utilisateur à faire glisser réorganiser les colonnes en mode plan, double-cliquez sur le `Main.storyboard` fichier à ouvrir pour modification dans l’Interface Builder. Sélectionnez le mode plan dans le **hiérarchie des interfaces** et vérifiez le **réorganisation** case à cocher dans la **inspecteur d’attributs**:
+Si vous souhaitez autoriser l’utilisateur à faire glisser les colonnes de réorganisation en mode plan, double-cliquez `Main.storyboard` sur le fichier pour l’ouvrir et le modifier dans Interface Builder. Sélectionnez le mode plan dans la **hiérarchie** de l’interface et cochez la case réorganisation dans l' **inspecteur d’attribut**:
 
-[![](outline-view-images/reorder01.png "L’inspecteur d’attributs")](outline-view-images/reorder01.png#lightbox)
+[![](outline-view-images/reorder01.png "L’inspecteur d’attribut")](outline-view-images/reorder01.png#lightbox)
 
-Si nous donner une valeur pour le **Autosave** propriété et vérifiez la **les informations de colonne** champ, les modifications que nous apportons à disposition de la table seront automatiquement enregistrées pour nous et restaurée la prochaine fois que l’application est exécuté.
+Si nous attribuons une valeur à la propriété **enregistrement** automatique et que vous vérifiez le champ **informations sur la colonne** , les modifications que nous apportons à la disposition de la table sont automatiquement enregistrées pour nous et restaurées lors de la prochaine exécution de l’application.
 
-Enregistrez vos modifications et revenir à Visual Studio pour Mac se synchroniser avec Xcode.
+Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Maintenant nous allons modifier le `ProductOutlineDelegate.cs` fichier, puis ajoutez la méthode suivante :
+À présent, modifions `ProductOutlineDelegate.cs` le fichier et ajoutez la méthode suivante:
 
 ```csharp
 public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex, nint newColumnIndex)
@@ -532,9 +532,9 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 }
 ```
 
-Le `ShouldReorder` méthode doit retourner `true` pour n’importe quelle colonne il souhaite autoriser à être glisser réorganisés dans le `newColumnIndex`, sinon retour `false`;
+La `ShouldReorder` méthode doit retourner `true` pour toute colonne qu’il est possible de faire glisser dans le `newColumnIndex`, sinon retourner `false`;
 
-Si nous exécutons l’application, nous pouvons faire glisser les en-têtes de colonnes pour réorganiser les colonnes :
+Si nous exécutons l’application, nous pouvons faire glisser les en-têtes de colonne pour réorganiser les colonnes:
 
 [![](outline-view-images/reorder02.png "Exemple de réorganisation des colonnes")](outline-view-images/reorder02.png#lightbox)
 
@@ -542,7 +542,7 @@ Si nous exécutons l’application, nous pouvons faire glisser les en-têtes de 
 
 ## <a name="editing-cells"></a>Modification des cellules
 
-Si vous souhaitez autoriser l’utilisateur à modifier les valeurs pour une cellule donnée, modifier le `ProductOutlineDelegate.cs` du fichier et changer la `GetViewForItem` méthode comme suit :
+Si vous souhaitez autoriser l’utilisateur à modifier les valeurs d’une cellule donnée, modifiez le `ProductOutlineDelegate.cs` fichier et modifiez la `GetViewForItem` méthode comme suit:
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -596,15 +596,15 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 }
 ```
 
-Maintenant si nous exécutons l’application, l’utilisateur peut modifier les cellules dans la vue de Table :
+Maintenant, si nous exécutons l’application, l’utilisateur peut modifier les cellules de la vue table:
 
-[![](outline-view-images/editing01.png "Un exemple de modification des cellules")](outline-view-images/editing01.png#lightbox)
+[![](outline-view-images/editing01.png "Exemple de modification de cellules")](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views" />
 
-## <a name="using-images-in-outline-views"></a>L’utilisation d’Images dans des modes plan
+## <a name="using-images-in-outline-views"></a>Utilisation d’images en mode plan
 
-Pour inclure une image dans le cadre de la cellule dans un `NSOutlineView`, vous devrez modifier la façon dont les données sont retournées par la vue hiérarchique `NSTableViewDelegate's` `GetView` méthode à utiliser un `NSTableCellView` au lieu du type `NSTextField`. Exemple :
+Pour inclure une image en tant que partie de la cellule `NSOutlineView`dans un, vous devez modifier la façon dont les données sont retournées par `NSTableViewDelegate's` la méthode du `GetView` mode `NSTableCellView` plan pour utiliser un `NSTextField`au lieu du type standard. Exemple :
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {
@@ -668,34 +668,34 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 }
 ```
 
-Pour plus d’informations, consultez le [à l’aide d’Images des modes plan](~/mac/app-fundamentals/image.md) section de notre [fonctionne avec Image](~/mac/app-fundamentals/image.md) documentation.
+Pour plus d’informations, consultez la section [utilisation d’images avec des vues en mode plan](~/mac/app-fundamentals/image.md) de notre documentation [sur l’utilisation](~/mac/app-fundamentals/image.md) de l’image.
 
 <a name="Data_Binding_Outline_Views" />
 
-## <a name="data-binding-outline-views"></a>Modes de plan de liaison de données
+## <a name="data-binding-outline-views"></a>Mode plan de la liaison de données
 
-À l’aide de techniques de codage de clé-valeur et une liaison de données dans votre application Xamarin.Mac, vous pouvez considérablement réduire la quantité de code que vous devez écrire et maintenir pour remplir et utiliser des éléments d’interface utilisateur. Vous avez également l’avantage de découplage davantage vos données de sauvegarde (_modèle de données_) à partir de votre front end Interface d’utilisateur (_Model-View-Controller_), conduit à la plus facile à gérer, une application plus flexible conception.
+En utilisant le codage clé-valeur et les techniques de liaison de données dans votre application Xamarin. Mac, vous pouvez réduire la quantité de code que vous devez écrire et maintenir pour remplir et utiliser des éléments d’interface utilisateur. Vous avez également l’avantage de dissocier vos données de stockage (modèle de_données_) de votre interface utilisateur frontale (_Model-View-Controller_), ce qui vous permet de gérer plus facilement la conception d’applications plus souple.
 
-Codage de clé-valeur (KVM) est un mécanisme permettant l’accès aux propriétés d’un objet indirectement, à l’aide de clés (spécialement mise en forme des chaînes) pour identifier les propriétés au lieu d’y accéder via des variables d’instance ou des méthodes d’accesseur (`get/set`). En implémentant la clé-valeur de codage des accesseurs conformes dans votre application Xamarin.Mac, vous avez accès à d’autres fonctionnalités macOS comme clé-valeur en observant (KVO), liaison de données, les données principales, Cocoa les liaisons et scriptability.
+Le codage de clé-valeur (KVC) est un mécanisme permettant d’accéder indirectement aux propriétés d’un objet, à l’aide de clés (chaînes spécialement mises en forme) pour identifier les propriétés au lieu d'`get/set`y accéder via des variables d’instance ou des méthodes d’accesseur (). En implémentant des accesseurs conformes de codage de clé-valeur dans votre application Xamarin. Mac, vous accédez à d’autres fonctionnalités macOS telles que l’observation de la valeur clé (KVO), la liaison de données, les données de base, les liaisons de cacao et la scriptabilité.
 
-Pour plus d’informations, consultez le [une liaison de données hiérarchique vue](~/mac/app-fundamentals/databinding.md#Outline_View_Data_Binding) section de notre [une liaison de données et le codage de clé-valeur](~/mac/app-fundamentals/databinding.md) documentation.
+Pour plus d’informations, consultez la section [structure de liaison de données](~/mac/app-fundamentals/databinding.md#Outline_View_Data_Binding) de notre documentation sur la liaison de [données et le codage de clé-valeur](~/mac/app-fundamentals/databinding.md) .
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a examiné en détail à l’utilisation des modes plan dans une application Xamarin.Mac. Nous avons vu les différents types et utilise des modes plan, comment créer et gérer des modes plan dans Xcode Interface Builder et l’utilisation des modes plan dans le code c#.
+Cet article a décrit en détail l’utilisation des vues en mode plan dans une application Xamarin. Mac. Nous avons vu les différents types et utilisations des modes plan, comment créer et gérer des vues en mode plan dans les Interface Builder de Xcode et comment travailler avec C# des modes plan dans le code.
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacOutlines (sample)](https://developer.xamarin.com/samples/mac/MacOutlines/)
-- [MacImages (exemple)](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacOutlines (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
+- [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Vues Table](~/mac/user-interface/table-view.md)
 - [Listes de sources](~/mac/user-interface/source-list.md)
 - [Liaison de données et codage de clé-valeur](~/mac/app-fundamentals/databinding.md)
 - [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Introduction aux modes plan](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [Présentation des modes plan](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

@@ -7,16 +7,16 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 17ca8ec481b8af5ad0515e6544613864f0a66271
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342086"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655490"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Extensions de balisage XAML constituent une fonctionnalité importante dans XAML qui permettent d’être définie sur des objets ou des valeurs qui sont référencés indirectement à partir d’autres sources. Extensions de balisage XAML sont particulièrement importantes pour le partage d’objets et le référencement de constantes utilisées dans une application, mais ils trouver leur plus grande utilité dans les liaisons de données._
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 Notez que le mot clé `clr-namespace` est suivi par un signe deux-points, puis le nom d’espace de noms de .NET, suivi par un point-virgule, le mot clé `assembly`, un signe égal et le nom de l’assembly.
 
-Oui, un signe deux-points suit `clr-namespace` mais signe égal suit `assembly`. La syntaxe a été définie de cette façon délibérément : La plupart des déclarations d’espace de noms XML référencent un URI qui commence un nom de schéma d’URI tel que `http`, qui est toujours suivi par un signe deux-points. Le `clr-namespace` partie de cette chaîne est destiné à reproduire cette convention.
+Oui, un signe deux-points suit `clr-namespace` mais signe égal suit `assembly`. La syntaxe a été définie de cette façon délibérée: La plupart des déclarations d’espaces de noms XML référencent un URI qui commence `http`un nom de modèle d’URI tel que, qui est toujours suivi d’un signe deux-points. Le `clr-namespace` partie de cette chaîne est destiné à reproduire cette convention.
 
 Les deux ces déclarations d’espace de noms sont incluses dans le **StaticConstantsPage** exemple. Notez que le `BoxView` dimensions sont définies pour `Math.PI` et `Math.E`, mais à l’échelle par un facteur de 100 :
 
@@ -547,7 +547,7 @@ Voici un exemple :
 </ContentPage>
 ```
 
-La leçon plus importantes à suivre à partir de cet exemple est sans doute la syntaxe de l’extension de balisage : Les guillemets ne doit apparaître entre les accolades d’une extension de balisage. Lorsque vous tapez l’extension de balisage dans un fichier XAML, il est naturel de délimiter les valeurs des propriétés entre guillemets. Résistez à la tentation !
+La leçon la plus importante que vous devez suivre à partir de cet exemple est la syntaxe de l’extension de balisage: Aucun guillemet ne doit apparaître entre les accolades d’une extension de balisage. Lorsque vous tapez l’extension de balisage dans un fichier XAML, il est naturel de délimiter les valeurs des propriétés entre guillemets. Résistez à la tentation !
 
 Voici le programme en cours d’exécution :
 
@@ -561,7 +561,7 @@ Les extensions de balisage XAML illustrées ici important prennent en charge les
 
 ## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Bien démarrer avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 4. Notions de base sur la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

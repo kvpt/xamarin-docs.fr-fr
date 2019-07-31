@@ -1,76 +1,76 @@
 ---
-title: contrôles d’interface utilisateur macOS dans Xamarin.Mac
-description: Ce document contient des liens vers des guides qui décrivent les différents contrôles d’interface utilisateur qui permettent aux développeurs de Xamarin.Mac. Contenu lié examine de windows, boîtes de dialogue, alertes, menus, barres d’outils, des vues de table, modes plan et bien plus encore.
+title: contrôles de l’interface utilisateur macOS dans Xamarin. Mac
+description: Ce document contient des liens vers des guides qui décrivent différents contrôles d’interface utilisateur disponibles pour les développeurs Xamarin. Mac. Le contenu lié examine les fenêtres, les boîtes de dialogue, les alertes, les menus, les barres d’outils, les vues de table, les vues en mode plan, etc.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7dfd8392abf832e53cb90d0a09990fc5ef57b0bb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61281595"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656319"
 ---
-# <a name="macos-user-interface-controls-in-xamarinmac"></a>contrôles d’interface utilisateur macOS dans Xamarin.Mac
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>contrôles de l’interface utilisateur macOS dans Xamarin. Mac
 
-_Cette article fournit des directives qui décrivent les différents contrôles d’interface utilisateur macOS._
+_Cet article contient des liens vers des guides qui décrivent différents contrôles d’interface utilisateur macOS._
 
-Lorsque vous travaillez avec c# et .NET dans une application Xamarin.Mac, vous avez accès à l’utilisateur d’interface qui contrôle un développeur travaillant *Objective-C* et *Xcode* est. Comme Xamarin.Mac s’intègre directement à Xcode, vous pouvez utiliser de Xcode _Interface Builder_ pour créer et gérer vos interfaces utilisateur (ou éventuellement pour les créer directement en code c#).
+Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes contrôles d’interface utilisateur qu’un développeur qui travaille en *objective-C* et *Xcode* . Comme Xamarin. Mac s’intègre directement à Xcode, vous pouvez utiliser la _Interface Builder_ de Xcode pour créer et gérer vos interfaces utilisateur (ou éventuellement les créer directement dans C# le code).
 
-Les guides ci-dessous donnent des informations détaillées sur l’utilisation des éléments d’interface utilisateur macOS dans une application Xamarin.Mac. Il est fortement recommandé que vous travaillez via le [Hello, Mac](~/mac/get-started/hello-mac.md) article tout d’abord, en particulier le [Introduction à Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et [Outlets et Actions](~/mac/get-started/hello-mac.md#outlets-and-actions) sections, tel qu’il couvre les principaux concepts et techniques que nous allons utiliser dans chaque article.
+Les guides listés ci-dessous fournissent des informations détaillées sur l’utilisation des éléments d’interface utilisateur macOS dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. chaque article.
 
-Vous pouvez souhaiter de jeter un coup de œil à la [C# exposition de classes / méthodes vers Objective-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) section de la [éléments internes de Xamarin.Mac](~/mac/internals/how-it-works.md) de document, car il explique le `Register` et `Export` attributs utilisés pour la communication à distance vos classes c# aux objets de Objective-C et des éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) du document [Internals Xamarin. Mac](~/mac/internals/how-it-works.md) , car elle explique `Register` les attributs et `Export` utilisés pour relier vos C# classes. aux objets objective-C et aux éléments d’interface utilisateur.
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
-Cet article aborde l’utilisation des fenêtres et des panneaux dans une application Xamarin.Mac. Il aborde la création et gestion des fenêtres et des panneaux dans Xcode et Interface Builder, le chargement de windows et des panneaux à partir de fichiers .storyboard ou .xib, à l’aide de windows et réponse aux fenêtres en code c#.
+Cet article traite de l’utilisation des fenêtres et des panneaux dans une application Xamarin. Mac. Il aborde la création et la maintenance des fenêtres et des panneaux dans Xcode et Interface Builder, le chargement des fenêtres et des panneaux à partir de fichiers. Storyboard ou. C# XIB, l’utilisation de Windows et la réponse à Windows dans le code.
 
 ## <a name="dialogsmacuser-interfacedialogmd"></a>[Boîtes de dialogue](~/mac/user-interface/dialog.md)
 
-Cet article aborde l’utilisation des boîtes de dialogue et fenêtres modales dans une application Xamarin.Mac. Il aborde la création et gestion des fenêtres modales dans Xcode et Interface Builder, utilisation des boîtes de dialogue standard et d’affichage et de réponse aux fenêtres en code c#.
+Cet article traite de l’utilisation des boîtes de dialogue et des fenêtres modales dans une application Xamarin. Mac. Il aborde la création et la gestion des fenêtres modales dans Xcode et Interface Builder, l’utilisation de boîtes de dialogue standard et C# l’affichage et la réponse à Windows dans le code.
 
 ## <a name="alertsmacuser-interfacealertmd"></a>[Alertes](~/mac/user-interface/alert.md)
 
-Cet article aborde l’utilisation des alertes dans une application Xamarin.Mac. Il couvre la création et affichage des alertes à partir de code c# et répondre aux alertes.
+Cet article traite de l’utilisation des alertes dans une application Xamarin. Mac. Il aborde la création et l' C# affichage des alertes à partir du code et la réponse aux alertes.
 
 ## <a name="menusmacuser-interfacemenumd"></a>[Menus](~/mac/user-interface/menu.md)
 
-Les menus sont utilisés dans différentes parties de l’interface utilisateur d’une application Mac à partir du menu principal de l’application en haut de l’écran pour les menus déroulants et menus contextuels qui peuvent apparaître n’importe où dans une fenêtre. Les menus sont une partie intégrante de l’expérience utilisateur d’une application Mac. Cet article aborde l’utilisation des menus Cocoa dans une application Xamarin.Mac.
+Les menus sont utilisés dans différentes parties de l’interface utilisateur d’une application Mac. à partir du menu principal de l’application en haut de l’écran, aux menus contextuels et aux menus contextuels qui peuvent apparaître n’importe où dans une fenêtre. Les menus sont une partie intégrante de l’expérience utilisateur d’une application Mac. Cet article traite de l’utilisation des menus de cacao dans une application Xamarin. Mac.
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[Contrôles standard](~/mac/user-interface/standard-controls.md)
 
-Fonctionne avec les contrôles AppKit standards tels que des boutons, des étiquettes, des champs de texte, des cases à cocher et des contrôles segmentés dans une application Xamarin.Mac. Ce guide couvre les ajouter à une conception d’interface utilisateur dans l’Interface Builder de Xcode, les exposer au code via les outlets et actions et l’utilisation de contrôles AppKit en code c#.
+Utilisation des contrôles AppKit standard, tels que les boutons, les étiquettes, les champs de texte, les cases à cocher et les contrôles segmentés dans une application Xamarin. Mac. Ce guide explique comment les ajouter à la conception d’une interface utilisateur dans le Interface Builder de Xcode, les exposer à du code via des sorties et des actions, et C# utiliser des contrôles AppKit dans le code.
 
 ## <a name="toolbarsmacuser-interfacetoolbarmd"></a>[Barres d’outils](~/mac/user-interface/toolbar.md)
 
-Cet article aborde l’utilisation des barres d’outils dans une application Xamarin.Mac. Il aborde la création et la maintenance des barres d’outils dans Xcode et Interface Builder, comment exposer les éléments de barre d’outils au code à l’aide des outlets et actions, l’activation et désactivation des éléments de barre d’outils et enfin la réponse aux éléments de barre d’outils en code c#.
+Cet article traite de l’utilisation des barres d’outils dans une application Xamarin. Mac. Il aborde la création et la gestion des barres d’outils dans Xcode et Interface Builder, comment exposer les éléments de la barre d’outils au code à l’aide de prises et d’actions, activer et désactiver C# des éléments de barre d’outils et enfin répondre aux éléments de barre d’outils dans le code.
 
 ## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[Vues de table](~/mac/user-interface/table-view.md)
 
-Cet article aborde l’utilisation des vues de table dans une application Xamarin.Mac. Il aborde la création et la gestion des vues de table dans Xcode et Interface Builder, comment exposer la vue de la table éléments de code à l’aide des outlets et actions, remplissant les vues de table et la réponse aux éléments de vue de table dans le code c#.
+Cet article traite de l’utilisation des vues de table dans une application Xamarin. Mac. Il aborde la création et la gestion des vues de table dans Xcode et Interface Builder, comment exposer les éléments d’affichage de table au code à l’aide de prises et d’actions, en remplissant C# les vues de table et en répondant aux éléments de vue de table dans le code.
 
 ## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[Modes plan](~/mac/user-interface/outline-view.md)
 
-Cet article aborde l’utilisation des modes plan dans une application Xamarin.Mac. Il aborde la création et gestion des modes plan dans Xcode et Interface Builder, comment exposer le mode plan éléments de code à l’aide des outlets et actions, remplissant des modes plan et répondre à l’ébauche d’afficher les éléments dans le code c#.
+Cet article traite de l’utilisation des vues en mode plan dans une application Xamarin. Mac. Il aborde la création et la gestion des vues en mode plan dans Xcode et Interface Builder, comment exposer les éléments du mode plan au code à l’aide de prises et d’actions, le remplissage C# des vues en mode plan et la réponse aux éléments de vue de plan dans le code.
 
-## <a name="source-listsmacuser-interfacesource-listmd"></a>[Listes sources](~/mac/user-interface/source-list.md)
+## <a name="source-listsmacuser-interfacesource-listmd"></a>[Listes de sources](~/mac/user-interface/source-list.md)
 
-Cet article aborde l’utilisation des listes de sources dans une application Xamarin.Mac. Il aborde la création et la gestion des listes de sources dans Xcode et Interface Builder, l’exposition des éléments de liste source au code à l’aide des outlets et actions, le remplissage des listes sources et la réponse aux éléments de liste source en code c#.
+Cet article traite de l’utilisation des listes de sources dans une application Xamarin. Mac. Il aborde la création et la gestion des listes de sources dans Xcode et Interface Builder, l’exposition des éléments de liste source au code à l’aide de prises et d’actions, le remplissage C# des listes de sources et la réponse aux éléments de liste source dans le code.
 
 ## <a name="collection-viewsmacuser-interfacecollection-viewmd"></a>[Vues de collection](~/mac/user-interface/collection-view.md)
 
-Cet article aborde l’utilisation des vues de collection dans une application Xamarin.Mac. Il aborde la création et la gestion des vues de collection dans Xcode et Interface Builder, comment exposer la vue de collection éléments de code à l’aide des outlets et actions, le remplissage des vues de collection et réponse aux vues de collection dans le code c#.
+Cet article traite de l’utilisation des vues de collection dans une application Xamarin. Mac. Il aborde la création et la gestion des vues de collection dans Xcode et Interface Builder, comment exposer les éléments d’affichage de collection au code à l’aide de prises et d’actions, en C# remplissant des vues de collection et en répondant à des vues de collection dans le code.
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[Création de contrôles personnalisés](~/mac/user-interface/custom-controls.md)
 
-Cet article aborde la création des contrôles d’interface utilisateur personnalisée (en héritant de `NSControl`), une interface personnalisée pour le contrôle de dessin et la création d’actions personnalisées qui peuvent être utilisées avec Interface Builder de Xcode.
+Cet article explique comment créer des contrôles d’interface utilisateur personnalisés (en `NSControl`héritant de), comment dessiner une interface personnalisée pour le contrôle et comment créer des actions personnalisées qui peuvent être utilisées avec l’interface Builder de Xcode.
 
 ## <a name="mac-samples-gallery"></a>Galerie d’exemples Mac
 
-Nous vous suggérons également de jeter un coup de œil à la [Galerie d’exemples Mac](https://developer.xamarin.com/samples/mac/all/). Il comprend une multitude de code prêts à l’emploi qui permettre vous aider à un projet Xamarin.Mac décoller rapidement.
+Nous vous suggérons également de jeter un coup d’œil à la [Galerie d’exemples Mac](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac). Il comprend un grand éventail de code prêt à l’emploi qui peut vous aider à faire passer rapidement un projet Xamarin. Mac.
 
 ## <a name="related-links"></a>Liens connexes
 

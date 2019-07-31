@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 235a30293939333555c52b8d9e00bcf25ddd4dbd
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658586"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645253"
 ---
 # <a name="xamarinforms-local-databases"></a>Bases de données locales Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 _Xamarin.Forms prend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, ce qui permet de charger et d’enregistrer des objets dans du code partagé. Cet article explique comment les applications Xamarin.Forms peuvent lire et écrire des données dans une base de données SQLite locale à l’aide de SQLite.Net._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Les applications Xamarin.Forms peuvent utiliser le package [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) pour incorporer des opérations de base de données dans du code partagé, en référençant les classes `SQLite` fournies avec le package NuGet. Les opérations de base de données peuvent être définies dans le projet de bibliothèque .NET Standard de la solution Xamarin.Forms.
 
@@ -122,6 +122,6 @@ Cet article vous a montré comment **accéder** à une base de données SQLite �
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de liste de tâches](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
-- [Exemples Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Exemple de liste de tâches](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+- [Exemples Xamarin.Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 

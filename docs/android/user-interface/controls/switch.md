@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: 7ff10433ffe11965ccfb8c9a46a785b8cb0304e6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 7fe4ffc733a71ed0f372da8288c7f1b63a961442
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510169"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642571"
 ---
 # <a name="xamarinandroid-switch"></a>Xamarin. Android (commutateur)
 
@@ -80,5 +80,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>Liens associés
 
-- [SwitchDemo (exemple)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
+- [SwitchDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/switchdemo)
 - [Didacticiel sur la disposition des onglets](~/android/user-interface/layouts/tab-layout/index.md)

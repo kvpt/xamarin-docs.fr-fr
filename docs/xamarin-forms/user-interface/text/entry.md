@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 238ba1853df523ee275de628ebdbd138a6d1d1bf
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649610"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650276"
 ---
 # <a name="xamarinforms-entry"></a>Entrée de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Texte à ligne unique ou entrée de mot de passe_
 
@@ -59,9 +59,9 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > La largeur d’un `Entry` peut être définie en configurant ses `WidthRequest` propriété. Ne dépendent pas de la largeur d’un `Entry` qui est défini selon la valeur de son `Text` propriété.
 
-### <a name="preventing-text-entry"></a>Empêche l’entrée de texte
+### <a name="preventing-text-entry"></a>Empêcher la saisie de texte
 
-Les utilisateurs peuvent être évitées de modifier le texte dans un [ `Entry` ](xref:Xamarin.Forms.Entry) en définissant le `IsReadOnly` propriété, qui a comme valeur par défaut de `false`, à `true`:
+Les utilisateurs peuvent empêcher la modification du texte [`Entry`](xref:Xamarin.Forms.Entry) d’un en définissant la propriété, qui `false`a la `IsReadOnly` valeur par défaut, pour `true`:
 
 ```xaml
 <Entry Text="This is a read-only Entry"
@@ -73,7 +73,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> Le `IsReadonly` propriété ne modifie pas l’apparence visuelle d’un [ `Entry` ](xref:Xamarin.Forms.Entry), contrairement à la `IsEnabled` qui modifie également l’apparence visuelle de le `Entry` au gris, puis.
+> La `IsReadonly` propriété ne modifie pas l’apparence visuelle d’un [`Entry`](xref:Xamarin.Forms.Entry), contrairement `Entry` à `IsEnabled` la propriété qui modifie également l’apparence visuelle du en gris.
 
 ### <a name="limiting-input-length"></a>Limiter la longueur d’entrée
 
@@ -323,11 +323,11 @@ Entrée expose deux événements :
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; déclenché lorsque l’utilisateur s’est terminée entrée en appuyant sur la touche Retour sur le clavier.
 
 > [!NOTE]
-> Le [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) (classe), à partir de laquelle [ `Entry` ](xref:Xamarin.Forms.Entry) hérite, a également [ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused) et [ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)événements.
+> La [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe, dont [`Entry`](xref:Xamarin.Forms.Entry) hérite, possède [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) également les événements [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) et.
 
 ### <a name="completed"></a>Terminé
 
-Le `Completed` événement est utilisé pour réagir à la fin d’une interaction avec une entrée. `Completed` est déclenché lorsque l’utilisateur termine l’entrée avec un champ en appuyant sur la touche Retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire pour l’événement est un gestionnaire d’événements générique, en prenant l’expéditeur et `EventArgs`:
+Le `Completed` événement est utilisé pour réagir à la fin d’une interaction avec une entrée. `Completed`est déclenché lorsque l’utilisateur termine l’entrée par un champ en appuyant sur la touche retour sur le clavier (ou en appuyant sur la touche Tab sur UWP). Le gestionnaire pour l’événement est un gestionnaire d’événements générique, en prenant l’expéditeur et `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -381,5 +381,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>Liens associés
 
-- [Texte (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Entrée API](xref:Xamarin.Forms.Entry)

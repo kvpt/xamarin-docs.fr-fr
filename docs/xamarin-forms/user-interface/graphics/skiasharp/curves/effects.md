@@ -7,16 +7,16 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: ee1df713315559c076fbfaed6f5a34057940ff36
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e0af5188dd34e76b419b4cd5bf8d604fb059b7d3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61083133"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642756"
 ---
 # <a name="path-effects-in-skiasharp"></a>Effets de chemin d’accès dans SkiaSharp
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrir les divers effets de chemin d’accès qui autorise des chemins d’accès à utiliser pour le contour et en remplissant_
 
@@ -418,7 +418,7 @@ Une chaîne ou un câble de répartition uniforme se bloque sous la forme d’un
 
 `y = a · cosh(x / a)`
 
-Le *cosh* est la fonction cosinus hyperbolique. Pour *x* égal à 0, *cosh* est égal à zéro et *y* est égal à *un*. C’est le centre de la caténaire. Comme le *cosinus* (fonction), *cosh* est dite *même*, ce qui signifie que *cosh(–x)* est égal à *cosh(x)*, et les valeurs augmentent permettant d’accroître les arguments positifs ou négatifs. Ces valeurs décrivent les courbes qui forment les côtés de la caténaire.
+Le *cosh* est la fonction cosinus hyperbolique. Pour *x* égal à 0, *cosh* est égal à zéro et *y* est égal à *un*. C’est le centre de la caténaire. Comme le *cosinus* (fonction), *cosh* est dite *même*, ce qui signifie que *cosh(–x)* est égal à *cosh(x)* , et les valeurs augmentent permettant d’accroître les arguments positifs ou négatifs. Ces valeurs décrivent les courbes qui forment les côtés de la caténaire.
 
 Recherche la valeur appropriée de *un* en fonction de la caténaire aux dimensions de la page du téléphone n’est pas un calcul direct. Si *w* et *h* sont la largeur et la hauteur d’un rectangle, la valeur optimale de *un* satisfait l’équation suivante :
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Si vous examinez attentivement les résultats, vous verrez que les lignes de hachurage rouge et bleu ne sont pas limités précisément le rectangle à coins arrondis. (Cela est apparemment une caractéristique du code sous-jacent Skia.) Si ce n’est pas satisfaisant, une autre approche est indiquée pour les lignes de hachurage diagonales en vert : Le rectangle à coins arrondis est utilisé comme un tracé de détourage et les lignes de hachurage sont dessinées sur la page entière.
+Si vous examinez attentivement les résultats, vous verrez que les lignes de hachurage rouge et bleu ne sont pas limités précisément le rectangle à coins arrondis. (Cela est apparemment une caractéristique du code sous-jacent Skia.) Si ce n’est pas satisfaisant, une autre approche est indiquée pour les hachures diagonales en vert: Le rectangle arrondi est utilisé comme tracé de détourage et les lignes de hachurage sont dessinées sur la page entière.
 
 Le `PaintSurface` gestionnaire se termine par un appel à simplement rayer le rectangle à coins arrondis, afin de voir la différence avec les lignes de hachurage rouge et bleu :
 
 [![](effects-images/hatchfill-small.png "Capture d’écran triple de la page de hachurage de remplissage")](effects-images/hatchfill-large.png#lightbox "Triple capture d’écran de la page de hachurage de remplissage")
 
-L’écran Android ne ressemble pas vraiment comme celle-ci : La mise à l’échelle de la capture d’écran a provoqué les fines lignes rouges et les espaces minces à consolider en lignes rouges apparemment plus larges et les espaces plus large.
+L’écran Android ne ressemble pas vraiment à ce qui suit: La mise à l’échelle de la capture d’écran a entraîné la consolidation des lignes rouges fines et des espaces fins dans des lignes rouges apparemment plus larges et des espaces plus larges.
 
 ## <a name="filling-with-a-path"></a>Remplir avec un chemin d’accès
 
@@ -1086,7 +1086,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 Seuls les deux premiers arguments sont requis. La méthode accède au chemin d’accès référencé par le `src` argument, modifie les données de chemin d’accès basées sur les propriétés de trait dans le `SKPaint` objet (y compris le `PathEffect` propriété), puis écrit les résultats dans le `dst` chemin d’accès. Le `resScale` paramètre permet de réduire la précision pour créer un chemin d’accès de destination plus petits et le `cullRect` argument peut éliminer les contours en dehors d’un rectangle.
 
-Une utilisation de base de cette méthode n’implique pas les effets de chemin d’accès : Si le `SKPaint` objet possède ses `Style` propriété définie sur `SKPaintStyle.Stroke`et effectue *pas* ont son `PathEffect` définie, alors `GetFillPath` crée un chemin d’accès qui représente un *contour*du chemin d’accès source comme s’il avait été dessiné par les propriétés de peinture.
+Une utilisation de base de cette méthode n’implique pas du tout des effets de chemin d’accès: Si la `SKPaint` `Style` propriété de l’objet a la `SKPaintStyle.Stroke`valeur `PathEffect`etqu' il n’a *pas* son ensemble, créeunchemind’accèsquireprésenteuncontourduchemind’accèssourcecommes’ilavaitétérayé`GetFillPath` par le Propriétés de la peinture.
 
 Par exemple, si le `src` chemin d’accès est un cercle de rayon 500, simple et le `SKPaint` objet spécifie une épaisseur de contour de 100, puis le `dst` chemin d’accès devient deux cercles concentriques, l’autre avec un rayon de 450 et l’autre avec un rayon de 550. La méthode est appelée `GetFillPath` car remplissant ce `dst` chemin d’accès est le même que le contour du `src` chemin d’accès. Mais vous pouvez également tracer le `dst` chemin d’accès pour afficher les contours du chemin d’accès.
 
@@ -1418,4 +1418,4 @@ Maintenant que vous avez vu les effets de chemin d’accès allant de simples po
 ## <a name="related-links"></a>Liens associés
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

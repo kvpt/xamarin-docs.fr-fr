@@ -1,49 +1,49 @@
 ---
-title: Touchers et gestes dans Xamarin.Android
-description: "Les écrans tactiles sur la plupart des appareils d’aujourd'hui permettent aux utilisateurs rapidement et efficacement interagir avec les appareils de façon naturelle et intuitive. Cette interaction n’est pas limitée uniquement à la détection de tactile : il est possible d’utiliser des gestes également. Par exemple, le geste de zoom par pincement est un exemple très courant de ce par pincement une partie de l’écran avec deux doigts, que l’utilisateur peut effectuer un zoom avant ou arrière. Ce guide examine tactiles et les mouvements dans Android."
+title: Toucher et gestes dans Xamarin. Android
+description: Les écrans tactiles sur la plupart des appareils actuels permettent aux utilisateurs d’interagir rapidement et efficacement avec les appareils de manière naturelle et intuitive. Cette interaction n’est pas limitée uniquement à la détection tactile simple. il est également possible d’utiliser des mouvements. Par exemple, le geste de pincement de zoom est un exemple très courant en dépinceant une partie de l’écran avec deux doigts. l’utilisateur peut effectuer un zoom avant ou arrière. Ce guide examine les entrées tactiles et les gestes dans Android.
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1efccdd5f56194f002731b0490bad7573321d7d2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013122"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643995"
 ---
-# <a name="touch-and-gestures-in-xamarinandroid"></a>Touchers et gestes dans Xamarin.Android
+# <a name="touch-and-gestures-in-xamarinandroid"></a>Toucher et gestes dans Xamarin. Android
 
-_Les écrans tactiles sur la plupart des appareils d’aujourd'hui permettent aux utilisateurs rapidement et efficacement interagir avec les appareils de façon naturelle et intuitive. Cette interaction n’est pas limitée uniquement à la détection de tactile : il est possible d’utiliser des gestes également. Par exemple, le geste de zoom par pincement est un exemple très courant de ce par pincement une partie de l’écran avec deux doigts, que l’utilisateur peut effectuer un zoom avant ou arrière. Ce guide examine tactiles et les mouvements dans Android._
+_Les écrans tactiles sur la plupart des appareils actuels permettent aux utilisateurs d’interagir rapidement et efficacement avec les appareils de manière naturelle et intuitive. Cette interaction n’est pas limitée uniquement à la détection tactile simple. il est également possible d’utiliser des mouvements. Par exemple, le geste de pincement de zoom est un exemple très courant en dépinceant une partie de l’écran avec deux doigts. l’utilisateur peut effectuer un zoom avant ou arrière. Ce guide examine les entrées tactiles et les gestes dans Android._
 
-## <a name="touch-overview"></a>Vue d’ensemble des fonctions tactiles
+## <a name="touch-overview"></a>Vue d’ensemble tactile
 
-iOS et Android sont similaires dans les méthodes qu’ils gèrent tactile. À la fois peuvent prendre en charge l’interaction tactile multipoint - nombre de points de contact sur l’écran - et des mouvements complexes. Ce guide présente certaines des similarités dans les concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et mouvements sur les deux plateformes.
+iOS et Android sont similaires dans la manière dont ils gèrent les fonctions tactiles. Les deux peuvent prendre en charge des points de contact multipoint à plusieurs touches sur les gestes d’écran et complexes. Ce guide présente certaines des similarités des concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et des gestes sur les deux plateformes.
 
-Android utilise un `MotionEvent` objet pour encapsuler des données de toucher et des méthodes sur l’objet de vue pour écouter les contacts tactiles.
+Android utilise un `MotionEvent` objet pour encapsuler les données tactiles et les méthodes sur l’objet de vue pour écouter les touches.
 
-En plus de capturer des données de toucher, iOS et Android fournissent les moyens permettant d’interpréter les modèles de contacts dans des gestes. Ces modules de reconnaissance de mouvement peuvent à son tour être utilisés pour interpréter correctement les commandes spécifiques à l’application, comme une rotation d’une image ou un tour d’une page. Android fournit un certain nombre de mouvements pris en charge, ainsi que des ressources pour que d’ajouter facilement des mouvements personnalisés complexes.
+En plus de capturer les données tactiles, iOS et Android offrent à la fois des moyens d’interpréter les modèles de touches en gestes. Ces détecteurs de mouvement peuvent à leur tour être utilisés pour interpréter des commandes spécifiques à l’application, telles que la rotation d’une image ou l’activation d’une page. Android fournit une poignée de mouvements pris en charge, ainsi que des ressources pour faciliter l’ajout de gestes personnalisés complexes.
 
-Si vous travaillez sur Android ou iOS, le choix entre les contacts tactiles et les modules de reconnaissance de mouvement peut être une source de confusion. Ce guide recommande qu’en règle générale, préférence doit être émises pour les modules de reconnaissance de mouvement. Modules de reconnaissance de mouvement sont implémentées en tant que classes discrètes, qui fournissent une plus grande séparation des préoccupations et améliorer l’encapsulation. Cela rend plus facile de partager la logique entre différentes vues, en réduisant la quantité de code écrit.
+Que vous travailliez sur Android ou iOS, le choix entre les touches de contact et les reconnaissances de mouvement peut être une opération confuse. Ce guide recommande que, en général, la préférence soit donnée aux détecteurs de mouvement. Les module de reconnaissance de mouvement sont implémentés en tant que classes discrètes, ce qui permet une plus grande séparation des préoccupations et une meilleure encapsulation. Cela facilite le partage de la logique entre différentes vues, ce qui réduit la quantité de code écrite.
 
-Ce guide suit un format similaire pour chaque système d’exploitation : tout d’abord, tactiles de la plateforme API sont introduites et expliqué, tels qu’ils sont le fondement sur les fonctions tactiles interactions sont construites. Ensuite, nous plonger dans le monde des modules de reconnaissance de mouvement – tout d’abord en explorant certains mouvements courants et en cours d’achèvement avec la création des mouvements personnalisés pour les applications. Enfin, vous verrez comment suivre chaque doigt à l’aide du suivi tactile de bas niveau pour créer un programme finger-paint.
+Ce guide suit un format similaire pour chaque système d’exploitation: tout d’abord, les API tactiles de la plateforme sont introduites et expliquées, car il s’agit de la base sur laquelle les interactions tactiles sont créées. Ensuite, nous plongeons dans le monde des détecteurs de mouvement: tout d’abord en explorant certains mouvements courants et en terminant par la création de mouvements personnalisés pour les applications. Enfin, vous verrez comment suivre des doigts individuels à l’aide d’un suivi tactile de bas niveau pour créer un programme de peinture par doigt.
 
 ## <a name="sections"></a>Sections
 
 -  [Entrées tactiles dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
--  [Procédure pas à pas : À l’aide des fonctions tactiles dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+-  [Procédure pas à pas : Utilisation de Touch dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 -  [Suivi tactile multipoint](touch-tracking.md)
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans ce guide, nous avons examiné des entrées tactiles dans Android. Pour les deux systèmes d’exploitation, nous avons appris comment activer tactile et comment répondre aux événements tactiles. Ensuite, nous avons appris sur les mouvements et parmi les modules de reconnaissance de mouvement qu’iOS et Android fournissent pour gérer certains scénarios les plus courants. Nous avons examiné comment créer des mouvements personnalisés et de les implémenter dans les applications. Une procédure pas à pas a présenté les concepts et les API pour chaque système d’exploitation en action, et vous avez également vu comment suivre chaque doigt.
+Dans ce guide, nous avons examiné Touch dans Android. Pour les deux systèmes d’exploitation, nous avons appris à activer touch et à répondre aux événements tactiles. Ensuite, nous avons appris les gestes et certains des détecteurs de mouvement fournis par Android et iOS pour gérer certains des scénarios les plus courants. Nous avons examiné comment créer des mouvements personnalisés et les implémenter dans des applications. Une procédure pas à pas A montré les concepts et les API pour chaque système d’exploitation en action, et vous avez également vu comment suivre des doigts individuels.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Android Touch Démarrer (exemple)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android Touch finale (exemple)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
-- [FingerPaint (sample)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)
+- [Android touch Start (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android Touch (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
+- [FingerPaint (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

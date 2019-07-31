@@ -1,33 +1,33 @@
 ---
-title: Classes de Style de Xamarin.Forms
-description: Classes de style de Xamarin.Forms permettent plusieurs styles à appliquer à un contrôle, sans avoir recours à l’héritage de style.
+title: Classes de style Xamarin. Forms
+description: Les classes de style Xamarin. Forms permettent d’appliquer plusieurs styles à un contrôle, sans recourir à l’héritage de style.
 ms.prod: xamarin
 ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: a3ef0f96bcc955dcac4231f9eb9cf1ab16ee61aa
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925290"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645555"
 ---
-# <a name="xamarinforms-style-classes"></a>Classes de Style de Xamarin.Forms
+# <a name="xamarinforms-style-classes"></a>Classes de style Xamarin. Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Classes de style de Xamarin.Forms permettent plusieurs styles à appliquer à un contrôle, sans avoir recours à l’héritage de style._
+_Les classes de style Xamarin. Forms permettent d’appliquer plusieurs styles à un contrôle, sans recourir à l’héritage de style._
 
 ## <a name="create-style-classes"></a>Créer des classes de style
 
-Une classe de style peut être créée en définissant le [ `Class` ](xref:Xamarin.Forms.Style.Class) propriété sur un [ `Style` ](xref:Xamarin.Forms.Style) à un `string` qui représente le nom de classe. L’avantage de cette offre, sur la définition d’un style explicite à l’aide de la `x:Key` d’attribut, est que plusieurs classes de style peuvent être appliqués à un [ `VisualElement` ](xref:Xamarin.Forms.VisualElement).
+Une classe de style peut être créée en affectant [`Class`](xref:Xamarin.Forms.Style.Class) [`Style`](xref:Xamarin.Forms.Style) à `string` la propriété sur un qui représente le nom de la classe. L’avantage que cela offre, par rapport à la définition d' `x:Key` un style explicite à l’aide de l’attribut, est que [`VisualElement`](xref:Xamarin.Forms.VisualElement)plusieurs classes de style peuvent être appliquées à un.
 
 > [!IMPORTANT]
-> Plusieurs styles peuvent partager le même nom de classe, sous réserve qu’ils ciblent différents types. Ainsi, plusieurs classes de style identique, à différents types de cible.
+> Plusieurs styles peuvent partager le même nom de classe, à condition qu’ils ciblent des types différents. Cela permet à plusieurs classes de style, qui sont nommées de manière identique, de cibler différents types.
 
-L’exemple suivant illustre trois [ `BoxView` ](xref:Xamarin.Forms.BoxView) classes, de style et un [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) classe de style :
+L’exemple suivant montre trois [`BoxView`](xref:Xamarin.Forms.BoxView) classes de style et une [`VisualElement`](xref:Xamarin.Forms.VisualElement) classe de style:
 
 ```xaml
 <ContentPage ...>
@@ -74,9 +74,9 @@ L’exemple suivant illustre trois [ `BoxView` ](xref:Xamarin.Forms.BoxView) cla
 </ContentPage>
 ```
 
-Le `Separator`, `Rounded`, et `Circle` chaque jeu de classes de style [ `BoxView` ](xref:Xamarin.Forms.BoxView) propriétés aux valeurs spécifiques.
+Les `Separator`classes `Rounded`de style `Circle` , et définissent [`BoxView`](xref:Xamarin.Forms.BoxView) les propriétés sur des valeurs spécifiques.
 
-Le `Rotated` style classe a un [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) de [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), ce qui signifie qu’elle peut uniquement être appliqué à `VisualElement` instances. Toutefois, son [ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) propriété est définie sur `true`, ce qui garantit qu’il peut être appliqué à tous les contrôles qui dérivent de `VisualElement`, tel que [ `BoxView` ](xref:Xamarin.Forms.BoxView). Pour plus d’informations sur l’application d’un style à un type dérivé, consultez [appliquer un style aux types dérivés](implicit.md#apply-a-style-to-derived-types).
+La `Rotated` classe style a un [`TargetType`](xref:Xamarin.Forms.Style.TargetType) de [`VisualElement`](xref:Xamarin.Forms.VisualElement), ce qui signifie qu’elle ne peut être `VisualElement` appliquée qu’aux instances. Toutefois, sa [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) propriété a la `true`valeur, ce qui garantit qu’il peut être appliqué à tous les contrôles qui `VisualElement`dérivent [`BoxView`](xref:Xamarin.Forms.BoxView)de, tels que. Pour plus d’informations sur l’application d’un style à un type dérivé, consultez [appliquer un style à des types dérivés](implicit.md#apply-a-style-to-derived-types).
 
 Le code C# équivalent est :
 
@@ -178,11 +178,11 @@ Resources = new ResourceDictionary
 };
 ```
 
-## <a name="consume-style-classes"></a>Consommer des classes de style
+## <a name="consume-style-classes"></a>Utiliser des classes de style
 
-Classes de style peuvent être consommées en définissant le [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass) propriété du contrôle, qui est de type `IList<string>`, à une liste des noms de classe de style. Les classes de style sont appliquées, fournie par le type du contrôle correspond à la [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) des classes de style.
+Les classes de style peuvent être consommées [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) en définissant la propriété du contrôle, qui `IList<string>`est de type, à une liste de noms de classes de style. Les classes de style seront appliquées, à condition que le type du contrôle corresponde [`TargetType`](xref:Xamarin.Forms.Style.TargetType) à l’une des classes de style.
 
-L’exemple suivant illustre trois [ `BoxView` ](xref:Xamarin.Forms.BoxView) instances, la valeur des classes de style différent :
+L’exemple suivant illustre trois [`BoxView`](xref:Xamarin.Forms.BoxView) instances, chacune ayant des classes de style différentes:
 
 ```xaml
 <ContentPage ...>
@@ -201,12 +201,12 @@ L’exemple suivant illustre trois [ `BoxView` ](xref:Xamarin.Forms.BoxView) ins
 </ContentPage>    
 ```
 
-Dans cet exemple, la première [ `BoxView` ](xref:Xamarin.Forms.BoxView) est un style à un séparateur de ligne, lors de la troisième `BoxView` est circulaire. La seconde `BoxView` a deux classes de style appliqué, qui donnent les angles de l’informatique arrondi et faire pivoter de 45 degrés :
+Dans cet exemple, le premier [`BoxView`](xref:Xamarin.Forms.BoxView) est stylisé pour être un séparateur de ligne, tandis que `BoxView` le troisième est circulaire. Deux classes `BoxView` de style sont appliquées à la seconde, ce qui lui donne des angles arrondis et la fait pivoter de 45 degrés:
 
-![](style-class-images/boxviews.png "BoxViews stylé avec les classes de style")
+![](style-class-images/boxviews.png "BoxViews avec des classes de style")
 
 > [!IMPORTANT]
-> Plusieurs classes de style peuvent être appliqués à un contrôle, car la [ `StyleClass` ](xref:Xamarin.Forms.NavigableElement.StyleClass) propriété est de type `IList<string>`. Lorsque cela se produit, les classes de style sont appliquées dans l’ordre croissant d’ordre de la liste. Par conséquent, lorsque plusieurs classes de style définissent des propriétés identiques, la propriété dans la classe de style qui se trouve dans la position la plus élevée de la liste sont prioritaires.
+> Plusieurs classes de style peuvent être appliquées à un contrôle, [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) car la propriété est `IList<string>`de type. Lorsque cela se produit, les classes de style sont appliquées dans l’ordre croissant de la liste. Par conséquent, lorsque plusieurs classes de style définissent des propriétés identiques, la propriété dans la classe de style qui se trouve dans la position de liste la plus élevée est prioritaire.
 
 Le code C# équivalent est :
 
@@ -225,4 +225,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Styles de base (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+- [Styles de base (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

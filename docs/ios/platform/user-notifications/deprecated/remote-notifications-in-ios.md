@@ -1,110 +1,110 @@
 ---
 title: Notifications push dans iOS
-description: Ce document décrit comment utiliser des notifications push dans iOS 9 et versions antérieures. Il présente les certificats, l’inscription auprès de l’Apple Push Notifications passerelle de Service (APNS) et bien plus encore.
+description: Ce document explique comment utiliser les notifications push dans iOS 9 et versions antérieures. Il aborde les certificats, l’inscription auprès du service Apple Push notifications Gateway (APNS), et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f6d059e5a30e7e3dac92a2c4e0e6079222e66b22
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 143dd8c5ad2e762235641680e1217a11e1b48bb5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865202"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651324"
 ---
 # <a name="push-notifications-in-ios"></a>Notifications push dans iOS
 
 > [!IMPORTANT]
-> Les informations contenues dans cette section se rapporte à iOS 9 et antérieures, il a été laissé ici pour prendre en charge les anciennes versions d’iOS. Pour iOS 10 et versions ultérieures, consultez le [guide de l’infrastructure de Notification utilisateur](~/ios/platform/user-notifications/index.md) pour prendre en charge locale et une Notification à distance sur un appareil iOS.
+> Les informations contenues dans cette section concernent iOS 9 et les versions antérieures, elles ont été laissées ici pour prendre en charge les anciennes versions d’iOS. Pour iOS 10 et versions ultérieures, consultez le Guide de l' [infrastructure de notification utilisateur](~/ios/platform/user-notifications/index.md) pour prendre en charge la notification locale et distante sur un appareil iOS.
 
-Notifications push doivent rester brefs et ne contient suffisamment de données pour notifier l’application mobile qu’il doit contacter l’application serveur pour une mise à jour. Par exemple, e-mail, l’application serveur serait uniquement avertir l’application mobile de l’arrivée de nouveaux messages électroniques. La notification ne contiendrait pas le nouvel e-mail lui-même. L’application mobile serait ensuite récupérer les nouveaux e-mails du serveur lorsqu’il était approprié
+Les notifications push doivent être conservées de façon concise et ne contenir que suffisamment de données pour informer l’application mobile qu’elle doit contacter l’application serveur pour une mise à jour. Par exemple, lorsque de nouveaux courriers électroniques arrivent, l’application serveur notifie uniquement à l’application mobile que le nouvel e-mail est arrivé. La notification ne contient pas le nouvel e-mail lui-même. L’application mobile récupère ensuite les nouveaux messages électroniques à partir du serveur lorsqu’elle était appropriée.
 
-Dans le centre de notification push notifications dans iOS est le *Service passerelle Apple Push Notification (APNS)* . Il s’agit d’un service fourni par Apple qui est responsable de routage des notifications à partir d’un serveur d’applications sur des appareils iOS.
-L’image suivante illustre la topologie de notification push pour iOS : ![](remote-notifications-in-ios-images/image4.png "Cette image illustre la topologie de notification push pour iOS")
+Au centre des notifications push dans iOS se trouve le *service Apple Push Notification Gateway (APNs)* . Il s’agit d’un service fourni par Apple et chargé de router les notifications d’un serveur d’applications vers des appareils iOS.
+L’image suivante illustre la topologie de notification push pour iOS: ![](remote-notifications-in-ios-images/image4.png "Cette image illustre la topologie de notification push pour iOS")
 
-Notifications à distance eux-mêmes sont des chaînes qui respectent le format au format JSON et protocoles spécifié dans [la charge utile de Notification](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) section de la [Guide locales et Push Notification programmation](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)dans les [documentation du développeur iOS](https://developer.apple.com/devcenter/ios/index.action).
+Les notifications distantes sont des chaînes au format JSON qui adhèrent au format et aux protocoles spécifiés dans [la section charge utile de notification](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) du [Guide de programmation des notifications locales et Push](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/) dans la [documentation du développeur iOS. ](https://developer.apple.com/devcenter/ios/index.action).
 
-Apple gère deux environnements d’APNS : un *bac à sable* et un *Production* environnement. L’environnement de bac à sable est destiné à tester pendant la phase de développement et trouverez `gateway.sandbox.push.apple.com` sur le port TCP 2195. L’environnement de Production est destiné à être utilisé dans les applications qui ont été déployées et peuvent être à `gateway.push.apple.com` sur le port TCP 2195.
+Apple gère deux environnements de APNS: un *bac à sable (sandbox)* et un environnement de *production* . L’environnement du bac à sable (sandbox) est destiné à des tests pendant la `gateway.sandbox.push.apple.com` phase de développement et se trouve sur le port TCP 2195. L’environnement de production est destiné à être utilisé dans les applications qui ont été déployées et se `gateway.push.apple.com` trouve sur le port TCP 2195.
 
 ## <a name="requirements"></a>Configuration requise
 
-Notification push doit respecter les règles suivantes qui sont dictés par l’architecture de APNS :
+La notification push doit respecter les règles suivantes qui sont dictées par l’architecture de APNS:
 
--  **256 octets de Message limite** -la taille de l’intégralité du message de la notification ne doit pas dépasser 256 octets.
--  **Aucune Confirmation de réception** -APNS ne fournit pas de l’expéditeur avec une notification d’un message rendait au destinataire prévu. Si l’appareil est inaccessible et plusieurs notifications séquentielles sont envoyées, toutes les notifications, sauf les plus récentes seront perdues. Uniquement la dernière notification sera remise à l’appareil.
--  **Chaque application requiert un certificat sécurisé** -Communication avec APNS doit être effectuée via le protocole SSL.
+-  **limite de messages de 256 octets** : la taille de message entière de la notification ne doit pas dépasser 256 octets.
+-  **Aucune confirmation de réception** -APNs ne fournit pas à l’expéditeur une notification indiquant qu’un message l’a envoyé au destinataire prévu. Si l’appareil est inaccessible et que plusieurs notifications séquentielles sont envoyées, toutes les notifications, à l’exception de la plus récente, seront perdues. Seule la notification la plus récente sera remise à l’appareil.
+-  **Chaque application requiert un certificat sécurisé: la** communication avec APNs doit être effectuée via le protocole SSL.
 
 
-## <a name="creating-and-using-certificates"></a>Création et l’utilisation de certificats
+## <a name="creating-and-using-certificates"></a>Création et utilisation de certificats
 
-Chacun des environnements mentionnés dans la section précédente nécessitent leur propre certificat. Cette section décrit comment créer un certificat, associez-le à un profil de provisionnement et obtenir un certificat d’échange d’informations personnelles pour une utilisation avec PushSharp.
+Chacun des environnements mentionnés dans la section précédente requiert leur propre certificat. Cette section explique comment créer un certificat, l’associer à un profil de provisionnement, puis obtenir un certificat d’échange d’informations personnelles à utiliser avec PushSharp.
 
-1.  Pour créer un certificat, accédez à l’iOS portail de provisionnement sur le site Web d’Apple, comme illustré dans la capture d’écran suivante (Notez que l’élément de menu d’ID d’application sur la gauche) :
+1.  Pour créer des certificats, accédez au portail d’approvisionnement iOS sur le site Web d’Apple, comme indiqué dans la capture d’écran suivante (Remarquez l’élément de menu ID d’application sur la gauche):
 
-    [![](remote-notifications-in-ios-images/image5new.png "Le portail de provisionnement iOS sur le site Web de pommes")](remote-notifications-in-ios-images/image5new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image5new.png "Portail d’approvisionnement iOS sur le site Web apples")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
-2.  Ensuite, accédez à la section de l’ID d’application et créer un nouvel ID d’application comme illustré dans la capture d’écran suivante :
+2.  Ensuite, accédez à la section de l’ID de l’application et créez un nouvel ID d’application, comme illustré dans la capture d’écran suivante:
 
-    [![](remote-notifications-in-ios-images/image6new.png "Accédez à la section de l’ID d’application et créer un nouvel ID d’application")](remote-notifications-in-ios-images/image6new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image6new.png "Accédez à la section ID d’application et créez un nouvel ID d’application")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Lorsque vous cliquez sur le **+** bouton, vous serez en mesure d’entrer la description et un identificateur de Bundle pour l’ID d’application, comme indiqué dans la capture d’écran suivante :
+3.  Lorsque vous cliquez sur le **+** bouton, vous pouvez entrer la description et un identificateur de Bundle pour l’ID d’application, comme indiqué dans la capture d’écran suivante:
 
-    [![](remote-notifications-in-ios-images/image7new.png "Entrez la description et un identificateur de Bundle pour l’ID d’application")](remote-notifications-in-ios-images/image7new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image7new.png "Entrer la description et un identificateur de Bundle pour l’ID d’application")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
-4. Veillez à sélectionner **ID d’application explicite** et qui ne s’arrête pas l’identificateur de Bundle avec un `*` . Cette opération crée un identificateur qui est bon pour plusieurs applications, et les certificats de notification push doivent être pour une seule application.
+4. Veillez à sélectionner l' **ID d’application explicite** et à ce que l’identificateur de Bundle `*` ne se termine pas par un. Cela créera un identificateur adapté à plusieurs applications, et les certificats de notification push doivent être pour une seule application.
 
-5. Sous App Services, sélectionnez **Notifications Push**:
+5. Sous App Services, sélectionnez **notifications push**:
 
-    [![](remote-notifications-in-ios-images/image8new.png "Sélectionnez les Notifications Push")](remote-notifications-in-ios-images/image8new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image8new.png "Sélectionner les notifications push")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
-6. Appuyez sur **Submit** pour confirmer l’inscription de l’ID d’application :
+6. Et appuyez sur **Envoyer** pour confirmer l’inscription du nouvel ID d’application:
 
-    [![](remote-notifications-in-ios-images/image9new.png "Confirmer l’inscription de l’ID d’application")](remote-notifications-in-ios-images/image9new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image9new.png "Confirmer l’inscription du nouvel ID d’application")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
-7.  Ensuite, vous devez créer le certificat pour l’ID d’application. Dans le volet de navigation gauche, accédez à **certificats > tous les** et sélectionnez le `+` bouton, comme illustré dans la capture d’écran suivante :
+7.  Ensuite, vous devez créer le certificat pour l’ID de l’application. Dans le volet de navigation de gauche, accédez à **certificats > tout** et `+` sélectionnez le bouton, comme illustré dans la capture d’écran suivante:
 
     [![](remote-notifications-in-ios-images/image10new.png "Créer le certificat pour l’ID d’application")](remote-notifications-in-ios-images/image8.png#lightbox)
 
-8. Sélectionnez si vous souhaitez utiliser un certificat de développement ou de Production :
+8. Indiquez si vous souhaitez utiliser un certificat de développement ou de production:
 
-    [![](remote-notifications-in-ios-images/image11new.png "Sélectionnez un certificat de développement ou de Production")](remote-notifications-in-ios-images/image11new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image11new.png "Sélectionner un certificat de développement ou de production")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
-9. Puis sélectionnez le nouvel ID d’application que nous venons de créer :
+9. Puis sélectionnez le nouvel ID d’application que nous venons de créer:
 
-    [![](remote-notifications-in-ios-images/image12new.png "Sélectionnez le nouvel ID d’application venez de créer")](remote-notifications-in-ios-images/image12new.png#lightbox)
+    [![](remote-notifications-in-ios-images/image12new.png "Sélectionnez le nouvel ID d’application que vous venez de créer")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
-10.  Cela affiche des instructions qui vous guideront tout au long du processus de création d’un *Certificate Signing Request* à l’aide de la **trousseau d’accès** application sur votre Mac.
+10.  Cette opération affiche des instructions qui vous guideront tout au long du processus de création d’une *demande de signature de certificat* à l’aide de l’application Trousseau d' **accès** sur votre Mac.
 
-11.  Maintenant que le certificat a été créé, il doit être utilisé pour signer l’application afin qu’elle peut s’inscrire auprès d’APNs dans le cadre du processus de génération. Cela nécessite la création et l’installation d’un profil d’approvisionnement qui utilise le certificat.
+11.  Maintenant que le certificat a été créé, il doit être utilisé dans le cadre du processus de génération pour signer l’application afin qu’il puisse s’inscrire auprès de APNs. Cela nécessite la création et l’installation d’un profil de provisionnement qui utilise le certificat.
 
-12.  Pour créer un profil de provisionnement de développement, accédez à la **profils de provisionnement** section et suivez les étapes pour créer, à l’aide de l’Id d’application que nous venons de créer.
+12.  Pour créer un profil de provisionnement de développement, accédez à la section **profils** de provisionnement et suivez les étapes pour le créer, à l’aide de l’ID d’application que nous venons de créer.
 
-13.  Une fois que vous avez créé le profil de configuration, ouvrez **Xcode Organizer** et l’actualiser. Si le profil de configuration que vous avez créé n’apparaît pas qu’il peut être nécessaire de télécharger le profil à partir du portail de provisionnement iOS et l’importer manuellement. La capture d’écran suivante montre un exemple de la bibliothèque multimédia avec le profil d’approvisionnement ajouté :  
-    [![](remote-notifications-in-ios-images/image13new.png "Cette capture d’écran montre un exemple de la bibliothèque multimédia avec le profil d’approvisionnement ajouté")](remote-notifications-in-ios-images/image13new.png#lightbox)
+13.  Une fois que vous avez créé le profil de provisionnement, ouvrez l' **organiseur Xcode** et actualisez-le. Si le profil de configuration que vous avez créé n’apparaît pas, il peut être nécessaire de télécharger le profil à partir du portail d’approvisionnement iOS et de l’importer manuellement. La capture d’écran suivante montre un exemple de l’organisateur avec le profil de mise en service ajouté:  
+    [![](remote-notifications-in-ios-images/image13new.png "Cette capture d’écran montre un exemple de l’organisateur avec le profil de mise en service ajouté")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-14.  À ce stade, nous devons configurer le projet Xamarin.iOS pour utiliser ce nouveau profil de provisionnement. Cette opération est effectuée à partir de **Options du projet** boîte de dialogue, sous **signature du Bundle iOS** onglet, comme dans la capture d’écran suivante :  
-    [![](remote-notifications-in-ios-images/image11.png "Configurer le projet Xamarin.iOS pour utiliser ce nouveau profil de provisionnement")](remote-notifications-in-ios-images/image11.png#lightbox)
+14.  À ce stade, nous devons configurer le projet Xamarin. iOS pour qu’il utilise ce profil de provisionnement nouvellement créé. Cette opération s’effectue à partir de la boîte de dialogue **Options du projet** , sous l’onglet signature de l' **offre groupée iOS** , comme illustré dans la capture d’écran suivante:  
+    [![](remote-notifications-in-ios-images/image11.png "Configurer le projet Xamarin. iOS pour utiliser ce profil de provisionnement nouvellement créé")](remote-notifications-in-ios-images/image11.png#lightbox)
 
-À ce stade, l’application est configurée pour fonctionner avec des notifications push. Toutefois, il existe quelques étapes supplémentaires nécessaires avec le certificat. Ce certificat est au format DER qui n’est pas compatible avec PushSharp, ce qui nécessite un certificat d’échange d’informations personnelles (PKCS12). Pour convertir le certificat afin qu’il soit utilisable par PushSharp, effectuez ces étapes finales :
+À ce stade, l’application est configurée pour fonctionner avec les notifications push. Toutefois, il existe encore quelques étapes supplémentaires requises avec le certificat. Ce certificat est au format DER qui n’est pas compatible avec PushSharp, ce qui nécessite un certificat PKCS12 (Personal Information Exchange). Pour convertir le certificat afin qu’il puisse être utilisé par PushSharp, procédez comme suit:
 
-1.  **Télécharger le fichier de certificat** -connexion pour le portail de provisionnement iOS, choisissez l’onglet certificats, sélectionnez le certificat associé avec le profil de provisionnement approprié et choisissez **télécharger** .
-1.  **Ouvrir l’accès au trousseau** -il s’agit d’application est une interface utilisateur graphique pour le système de gestion de mot de passe dans OS X.
-1.  **Importez le certificat** : si le certificat n’est pas déjà installé, **fichier... Importer des éléments** dans le menu de trousseau d’accès. Accédez au certificat exporté ci-dessus et sélectionnez-le.
-1.  **Exporter le certificat** : développez le certificat pour que la clé privée associée soit visible, avec le bouton droit sur la clé et a choisi d’exportation. Vous demandera un nom de fichier et un mot de passe pour le fichier exporté.
+1.  **Téléchargez le fichier de certificat** : Connectez-vous au portail d’approvisionnement iOS, choisissez l’onglet certificats, sélectionnez le certificat associé au profil de provisionnement correct, puis choisissez **Télécharger** .
+1.  **Ouvrir l’accès au trousseau** -il s’agit d’une interface GUI du système de gestion des mots de passe dans OS X.
+1.  **Importer le certificat** : si le certificat n’est pas déjà installé, **fichier...** Importez des éléments à partir du menu Trousseau d’accès. Accédez au certificat qui a été exporté précédemment et sélectionnez-le.
+1.  **Exporter le certificat** -développez le certificat afin que la clé privée associée soit visible, cliquez avec le bouton droit sur la clé et choisissez Exporter. Vous serez invité à entrer un nom de fichier et un mot de passe pour le fichier exporté.
 
-À ce stade, nous avons terminé avec des certificats. Nous avons créé un certificat qui sera utilisé pour signer des applications iOS et converti ce certificat dans un format qui peut être utilisé avec PushSharp dans une application serveur. Suivant nous allons voir comment les applications iOS interagissent avec APNS.
+À ce stade, nous avons terminé avec des certificats. Nous avons créé un certificat qui sera utilisé pour signer des applications iOS et convertir ce certificat dans un format qui peut être utilisé avec PushSharp dans une application serveur. Voyons ensuite comment les applications iOS interagissent avec APNS.
 
-## <a name="registering-with-apns"></a>L’inscription auprès d’APNS
+## <a name="registering-with-apns"></a>Inscription auprès de APNS
 
-Avant un iOS application peut recevoir une notification à distance que doit s’inscrire avec APNS. APNS se générer un jeton d’appareil unique et que l’application iOS. L’application iOS prend ensuite le jeton d’appareil et ensuite de s’inscrire avec le serveur d’applications. Une fois tout cela se produit, l’inscription est terminée, et le serveur d’applications peut transmettre des notifications à l’appareil mobile.
+Pour qu’une application iOS puisse recevoir une notification à distance, elle doit s’inscrire auprès de APNS. APNS génère un jeton d’appareil unique et le retourne à l’application iOS. L’application iOS prend alors le jeton de l’appareil, puis s’inscrit auprès du serveur d’applications. Une fois cela se produit, l’inscription est terminée et le serveur d’applications peut envoyer des notifications push à l’appareil mobile.
 
-En théorie, le jeton d’appareil peut changer chaque fois qu’une application iOS s’inscrit lui-même auprès d’APNS, toutefois, dans la pratique cela n’arrive pas qui souvent. En guise d’optimisation, une application peut mettre en cache le jeton d’appareil plus récente et uniquement mettre à jour le serveur d’applications lorsqu’il change. Le diagramme suivant illustre le processus d’inscription et obtenir un jeton d’appareil :
+En théorie, le jeton d’appareil peut changer chaque fois qu’une application iOS s’inscrit elle-même auprès de APNS. Toutefois, dans la pratique, cela ne se produit pas souvent. En tant qu’optimisation, une application peut mettre en cache le jeton d’appareil le plus récent et mettre à jour le serveur d’applications uniquement lorsqu’il change. Le diagramme suivant illustre le processus d’inscription et d’obtention d’un jeton d’appareil:
 
- ![](remote-notifications-in-ios-images/image12.png "Ce diagramme illustre le processus d’inscription et obtenir un jeton d’appareil")
+ ![](remote-notifications-in-ios-images/image12.png "Ce diagramme illustre le processus d’inscription et d’obtention d’un jeton d’appareil")
 
-Inscription auprès d’APNS est gérée dans le `FinishedLaunching` méthode de la classe de délégué d’application en appelant `RegisterForRemoteNotificationTypes` sur actuel `UIApplication` objet. Lorsqu’une application iOS s’inscrit auprès d’APNS, il doit également spécifier les types de notifications à distance il aimerait recevoir. Ces types de notification à distance sont déclarées dans l’énumération `UIRemoteNotificationType`. L’extrait de code suivant est un exemple de la manière dont une application iOS peut inscrire pour recevoir des notifications d’alerte et des badges à distance :
+L’inscription avec APNs est gérée `FinishedLaunching` dans la méthode de la classe déléguée `RegisterForRemoteNotificationTypes` d’application en `UIApplication` appelant sur l’objet actuel. Quand une application iOS s’inscrit auprès de APNS, elle doit également spécifier les types de notifications distantes qu’elle souhaite recevoir. Ces types de notifications distants sont `UIRemoteNotificationType`déclarés dans l’énumération. L’extrait de code suivant est un exemple de la façon dont une application iOS peut s’inscrire pour recevoir des notifications d’alerte et de badge à distance:
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -120,7 +120,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
 }
 ```
 
-La demande d’inscription APNS se produit en arrière-plan - lors de la réponse est reçue, iOS appellera la méthode `RegisteredForRemoteNotifications` dans la `AppDelegate` classe et passer le jeton de périphérique enregistré. Le jeton se trouvera dans un `NSData` objet. L’extrait de code suivant montre comment récupérer le jeton d’appareil que APNS fourni :
+La demande d’inscription APNs se produit en arrière-plan-lorsque la réponse est reçue, iOS appelle `RegisteredForRemoteNotifications` la méthode `AppDelegate` dans la classe et passe le jeton d’appareil inscrit. Le jeton sera contenu dans un `NSData` objet. L’extrait de code suivant montre comment récupérer le jeton de l’appareil fourni par APNS:
 
 ```csharp
 public override void RegisteredForRemoteNotifications (
@@ -146,7 +146,7 @@ UIApplication application, NSData deviceToken)
 }
 ```
 
-Si l’inscription échoue pour une raison quelconque (tel que l’appareil est non connecté à Internet), iOS appelle `FailedToRegisterForRemoteNotifications` sur l’application de la classe déléguée. L’extrait de code suivant montre comment afficher une alerte à l’utilisateur pour l’informer que l’inscription a échoué :
+Si l’inscription échoue pour une raison quelconque (par exemple, si l’appareil n’est pas connecté à Internet), `FailedToRegisterForRemoteNotifications` iOS appellera sur la classe du délégué d’application. L’extrait de code suivant montre comment afficher une alerte à l’utilisateur pour l’informer que l’inscription a échoué:
 
 ```csharp
 public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
@@ -155,30 +155,30 @@ public override void FailedToRegisterForRemoteNotifications (UIApplication appli
 }
 ```
 
-### <a name="device-token-housekeeping"></a>Ménage de jeton de périphérique
+### <a name="device-token-housekeeping"></a>Nettoyage des jetons d’appareil
 
-Jetons d’appareil seront d’expirer ou de changer au fil du temps. Par conséquent, les applications serveur devront faire un nettoyage de la maison et vider ces jetons expirés ou modifiées. Lorsqu’une application envoie en tant que notification push à un périphérique qui a un jeton expiré, APNS enregistre et enregistrez ce jeton a expiré. Serveurs peuvent ensuite interroger APNS pour savoir quels jetons ont expiré.
+Les jetons de l’appareil expirent ou évoluent au fil du temps. En raison de ce fait, les applications serveur doivent nettoyer et purger ces jetons arrivés à expiration ou modifiés. Lorsqu’une application envoie une notification push à un appareil qui a un jeton expiré, APNS enregistre et enregistre ce jeton expiré. Les serveurs peuvent ensuite interroger APNS pour connaître les jetons arrivés à expiration.
 
-APNS permet de fournir un *commentaires Service* -point de terminaison HTTPS qui authentifie via le certificat qui a été créé pour renvoyer les push notifications et envoie les données sur les jetons ont expiré. Cela a été déconseillé par Apple et supprimé.
+APNS utilisé pour fournir un *service de commentaires* : un point de terminaison HTTPS qui s’authentifie via le certificat créé pour envoyer des notifications push et envoie des données sur les jetons arrivés à expiration. Il a été déconseillé par Apple et supprimé.
 
-Au lieu de cela, il existe un nouveau code d’état HTTP pour le cas a été signalé précédemment par le Service de commentaires :
+Au lieu de cela, il existe un nouveau code d’état HTTP pour le cas précédemment signalé par le service de Feedback:
 
-> 410 - le jeton d’appareil n’est plus actif de la rubrique.
+> 410-le jeton de l’appareil n’est plus actif pour la rubrique.
 
-En outre, un nouveau `timestamp` clé des données JSON sera dans le corps de réponse :
+En outre, une nouvelle `timestamp` clé de données JSON sera dans le corps de la réponse:
 
-> Si la valeur dans le : en-tête de l’état est 410, la valeur de cette clé est la dernière heure à laquelle APNs a confirmé que le jeton d’appareil était n’est plus valide pour la rubrique.
+> Si la valeur de l’en-tête d’État est 410, la valeur de cette clé est la dernière fois que APNs a confirmé que le jeton de l’appareil n’était plus valide pour la rubrique.
 >
-> Arrêtez d’envoyer des notifications jusqu'à ce que l’appareil inscrit un jeton avec une horodatage la plus récente avec votre fournisseur.
+> Arrêtez le push des notifications jusqu’à ce que l’appareil inscrive un jeton avec un horodateur ultérieur auprès de votre fournisseur.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cette section présente les concepts de clés qui entourent les notifications push dans iOS. Vous avez appris le rôle de l’Apple Push Notification passerelle de Service (APNS). Ensuite, elle couvrait la création et l’utilisation des certificats de sécurité qui sont essentielles à APNS. Enfin ce document terminé avec une discussion sur comment les serveurs d’applications peuvent utiliser le *commentaires Services* à arrêter le suivi des jetons de périphérique expirés.
+Cette section présente les concepts clés entourant les notifications push dans iOS. Il a expliqué le rôle du service Apple Push Notification Gateway (APNS). Il a ensuite abordé la création et l’utilisation des certificats de sécurité qui sont essentiels à APNS. Enfin, ce document s’est terminé par une discussion sur la façon dont les serveurs d’applications peuvent utiliser les *services de feedback* pour arrêter le suivi des jetons d’appareil arrivés à expiration.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Notifications - démonstration des notifications locales et distantes (exemple)](https://developer.xamarin.com/samples/monotouch/Notifications/)
-- [Local et Notifications Push pour les développeurs](https://developer.apple.com/notifications/)
+- [Notifications-démonstration des notifications locales et distantes (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)
+- [Notifications push et locales pour les développeurs](https://developer.apple.com/notifications/)
 - [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UIRemoteNotificationType](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIRemoteNotificationType)

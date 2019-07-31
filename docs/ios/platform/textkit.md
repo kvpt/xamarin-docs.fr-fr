@@ -1,24 +1,24 @@
 ---
-title: TextKit dans Xamarin.iOS
-description: Ce document décrit comment utiliser TextKit dans Xamarin.iOS. TextKit fournit des fonctionnalités de mise en page et le rendu de texte puissant.
+title: TextKit dans Xamarin. iOS
+description: Ce document explique comment utiliser TextKit dans Xamarin. iOS. TextKit fournit de puissantes fonctionnalités de rendu et de disposition du texte.
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: f08e37d17cc32e45232d54cc4a51bb48d7ec94b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61184519"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655367"
 ---
-# <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin.iOS
+# <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin. iOS
 
-TextKit est une nouvelle API qui offre des fonctionnalités de mise en page et rendu de texte puissant. Il repose sur le framework Core texte de bas niveau, mais il est beaucoup plus facile à utiliser que le texte de base.
+TextKit est une nouvelle API qui offre de puissantes fonctionnalités de présentation et de rendu du texte. Il s’appuie sur l’infrastructure de texte de base de bas niveau, mais il est beaucoup plus facile à utiliser que le texte de base.
 
-Pour rendre les fonctionnalités de TextKit disponible pour les contrôles standard, plusieurs contrôles de texte iOS ont été réimplémentées à utiliser TextKit, y compris :
+Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles standard, plusieurs contrôles de texte iOS ont été réimplémentés pour utiliser TextKit, notamment:
 
 -  UITextView
 -  UITextField
@@ -26,24 +26,24 @@ Pour rendre les fonctionnalités de TextKit disponible pour les contrôles stand
 
 ## <a name="architecture"></a>Architecture
 
-TextKit fournit une architecture en couches qui sépare le stockage de texte à partir de la disposition et l’affichage, y compris les classes suivantes :
+TextKit fournit une architecture en couches qui sépare le stockage de texte de la disposition et de l’affichage, y compris les classes suivantes:
 
--  `NSTextContainer` – Fournit le système de coordonnées et la géométrie qui est utilisé pour le texte de la mise en page.
--  `NSLayoutManager` – Distille texte en activant le texte dans des glyphes. 
--  `NSTextStorage` : Contient les données texte, ainsi que gère les mises à jour de propriété de texte batch. Les mises à jour par lots sont transmis au Gestionnaire de disposition pour le traitement des modifications, telles que recalculer la disposition et le rafraîchissement du dessin du texte.
+-  `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
+-  `NSLayoutManager`: Met du texte en forme de glyphes. 
+-  `NSTextStorage`: Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
 
 
-Ces trois classes sont appliquées à une vue qui restitue le texte. Le texte intégré, gestion des vues, telles que `UITextView`, `UITextField`, et `UILabel` en avez pas défini, mais vous pouvez créer et les appliquer à tout `UIView` instance également.
+Ces trois classes sont appliquées à une vue qui restitue le texte. Les vues de gestion de texte intégrées, telles que `UITextView`, `UITextField`et `UILabel` qui les ont déjà définies, vous pouvez les créer et les appliquer également à `UIView` n’importe quelle instance.
 
-La figure suivante illustre cette architecture :
+La figure suivante illustre cette architecture:
 
  ![](textkit-images/textkitarch.png "Cette figure illustre l’architecture TextKit")
 
-## <a name="text-storage-and-attributes"></a>Attributs et stockage de texte
+## <a name="text-storage-and-attributes"></a>Stockage et attributs de texte
 
-Le `NSTextStorage` classe contient le texte affiché par une vue. Il communique également toutes les modifications au texte - telles que les modifications de caractères ou de leurs attributs : pour le Gestionnaire de disposition pour l’affichage. `NSTextStorage` hérite de `MSMutableAttributed` chaîne, ce qui permet des modifications apportées aux attributs de texte doit être spécifié dans les lots entre `BeginEditing` et `EndEditing` appels.
+La `NSTextStorage` classe contient le texte affiché par une vue. Il communique également toutes les modifications apportées au texte, telles que les modifications apportées aux caractères ou à leurs attributs, dans le gestionnaire de disposition pour l’affichage. `NSTextStorage`hérite de `MSMutableAttributed` String, ce qui permet de spécifier des modifications des attributs de texte dans `BeginEditing` des `EndEditing` lots entre les appels et.
 
-Par exemple, l’extrait de code suivant spécifie une modification au premier plan et arrière-plan, respectivement et certaines gammes de cible :
+Par exemple, l’extrait de code suivant spécifie une modification des couleurs de premier plan et d’arrière-plan, respectivement, et cible des plages spécifiques:
 
 ```csharp
 textView.TextStorage.BeginEditing ();
@@ -52,17 +52,17 @@ textView.TextStorage.AddAttribute(UIStringAttributeKey.BackgroundColor, UIColor.
 textView.TextStorage.EndEditing ();
 ```
 
-Après avoir `EndEditing` est appelée, les modifications sont envoyées au Gestionnaire de présentation, qui à son tour effectue toute disposition nécessaire et les calculs de rendu pour le texte à afficher dans la vue.
+Une `EndEditing` fois que est appelé, les modifications sont envoyées au gestionnaire de présentation, qui à son tour effectue toute mise en page et tout calcul de rendu nécessaires pour le texte à afficher dans la vue.
 
-## <a name="layout-with-exclusion-path"></a>Mise en page avec le chemin d’Exclusion
+## <a name="layout-with-exclusion-path"></a>Disposition avec chemin d’exclusion
 
-TextKit également prend en charge la mise en page et permet des scénarios complexes, telles que plusieurs colonne texte et placer du texte autour des chemins d’accès spécifiés appelé *chemins d’accès d’exclusion*. Chemins d’accès d’exclusion sont appliquées pour le conteneur de texte, ce qui modifie la géométrie de la disposition de texte, ce qui entraîne le texte à circuler dans les chemins d’accès spécifiés.
+TextKit prend également en charge la disposition et permet des scénarios complexes, tels que le texte à plusieurs colonnes et le placement de texte autour de chemins d’accès spécifiés, appelés *chemins d’exclusion*. Les chemins d’exclusion sont appliqués au conteneur de texte, qui modifie la géométrie de la disposition du texte, provoquant le déplacement du texte autour des chemins d’accès spécifiés.
 
-Ajout d’un chemin d’accès d’exclusion requiert la définition du `ExclusionPaths` propriété sur le Gestionnaire de disposition. Cette propriété, le Gestionnaire de disposition invalider la disposition de texte et de placer le texte autour du chemin d’exclusion.
+L’ajout d’un chemin d’exclusion `ExclusionPaths` requiert la définition de la propriété sur le gestionnaire de disposition. La définition de cette propriété entraîne l’invalidation de la disposition du texte par le gestionnaire de disposition et le placement du texte autour du chemin d’exclusion.
 
-### <a name="exclusion-based-on-a-cgpath"></a>Exclure selon une CGPath
+### <a name="exclusion-based-on-a-cgpath"></a>Exclusion basée sur un CGPath
 
-Considérez les éléments suivants `UITextView` implémentation de sous-classe :
+Examinez l' `UITextView` implémentation de sous-classe suivante:
 
 ```csharp
 public class ExclusionPathView : UITextView
@@ -139,35 +139,35 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-Ce code ajoute la prise en charge permettant de dessiner sur l’affichage de texte à l’aide des graphismes de base. Dans la mesure où la `UITextView` classe est désormais intégrée pour utiliser TextKit pour son rendu de texte et la disposition, il peut utiliser toutes les fonctionnalités de TextKit, telles que la définition des chemins d’accès d’exclusion.
+Ce code ajoute la prise en charge du dessin sur l’affichage de texte à l’aide de graphiques principaux. Étant donné `UITextView` que la classe est maintenant conçue pour utiliser TextKit pour son rendu et sa disposition de texte, elle peut utiliser toutes les fonctionnalités de TextKit, telles que la définition de chemins d’exclusion.
 
 > [!IMPORTANT]
-> Sous-classes de cet exemple `UITextView` pour ajouter une touche de prise en charge de dessin. Sous-classement `UITextView` n’est pas nécessaire pour obtenir les fonctionnalités de TextKit.
+> Cet exemple sous-classe `UITextView` pour ajouter la prise en charge du dessin tactile. Le sous- `UITextView` classement n’est pas nécessaire pour bénéficier des fonctionnalités de TextKit.
 
 
 
-Une fois que l’utilisateur dessine sur l’affichage de texte, le texte dessiné `CGPath` est appliqué à un `UIBezierPath` instance en définissant le `UIBezierPath.CGPath` propriété :
+Une fois que l’utilisateur a dessiné `CGPath` l’affichage de texte, il est appliqué à une `UIBezierPath` instance en `UIBezierPath.CGPath` définissant la propriété:
 
 ```csharp
 bezierPath.CGPath = exclusionPath;
 ```
 
-La mise à jour de la ligne de code suivante rend la disposition du texte à mettre à jour dans le chemin d’accès :
+La mise à jour de la ligne de code suivante rend la mise à jour de la disposition du texte autour du chemin d’accès:
 
 ```csharp
 TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ```
 
-La capture d’écran suivante illustre comment la disposition de texte change pour transmettre le chemin d’accès dessinée autour de :
+La capture d’écran suivante illustre la façon dont la disposition du texte change pour circuler autour du tracé dessiné:
 
 <!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
-![](textkit-images/exclusionpath2.png "Cette capture d’écran illustre comment la disposition de texte change pour transmettre le chemin d’accès dessinée autour de")
+![](textkit-images/exclusionpath2.png "Cette capture d’écran illustre la modification de la disposition du texte autour du tracé dessiné.")
 
-Notez que le Gestionnaire de disposition `AllowsNonContiguousLayout` propriété est définie sur false dans ce cas. Cela entraîne la mise en page à être recalculé, pour tous les cas où le texte est modifié. Valeur true peut bénéficier des performances en évitant une actualisation complète à disposition, en particulier dans le cas de documents volumineux. Toutefois, l’affectation `AllowsNonContiguousLayout` à true empêcheraient le chemin d’exclusion de la mise à jour de la mise en page dans certaines circonstances - par exemple, si le texte est entré lors de l’exécution sans retour de chariot fin avant le chemin d’accès définie.
+Notez que la propriété du `AllowsNonContiguousLayout` gestionnaire de présentation est définie sur false dans ce cas. Cela entraîne le recalcul de la disposition pour tous les cas où le texte change. Si vous affectez la valeur true, vous pouvez bénéficier des performances en évitant une actualisation de la mise en page complète, en particulier dans le cas de documents volumineux. Toutefois, l' `AllowsNonContiguousLayout` affectation de la valeur true empêche le chemin d’exclusion de mettre à jour la disposition dans certains cas, par exemple, si du texte est entré au moment de l’exécution sans retour chariot de fin avant la définition du chemin d’accès.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Introduction à iOS 7 (exemple)](https://developer.xamarin.com/samples/monotouch/IntroToiOS7)
+- [Introduction à iOS 7 (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
 - [Vue d'ensemble de l'interface utilisateur iOS 7](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [Backgrounding](~/ios/app-fundamentals/backgrounding/index.md)

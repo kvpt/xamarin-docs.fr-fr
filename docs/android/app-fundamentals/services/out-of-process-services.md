@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: aaecc0da52fe692840ed928946963a995364fa9f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509185"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644094"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Exécution des services Android dans des processus distants
 
@@ -386,7 +386,7 @@ Android offre quatre niveaux d’autorisation:
 
 * **normal** &ndash; Il s’agit du niveau d’autorisation par défaut. Il est utilisé pour identifier les autorisations à faible risque qui peuvent être accordées automatiquement par Android aux clients qui le demandent. L’utilisateur n’a pas besoin d’accorder explicitement ces autorisations, mais les autorisations peuvent être affichées dans les paramètres de l’application.
 * **signature** &ndash; Il s’agit d’une catégorie spéciale d’autorisation qui sera accordée automatiquement par Android aux applications qui sont toutes signées avec le même certificat. Cette autorisation est conçue pour permettre à un développeur d’applications de partager facilement des composants ou des données entre leurs applications sans avoir à passer l’utilisateur à des approbations constantes.
-* **signatureOrSystem** Cela est très similaire aux autorisations de signature décrites ci-dessus.  &ndash; En plus d’être accordé automatiquement aux applications qui sont signées par le même certificat, cette autorisation est également accordée aux applications qui sont signées avec le même certificat que celui utilisé pour signer les applications installées avec l’image système Android. En général, cette autorisation est utilisée uniquement par les développeurs de la ROM Android pour permettre à leurs applications de fonctionner avec des applications tierces. Elle n’est généralement pas utilisée par les applications qui sont destinées à la distribution générale pour le grand public.
+* **signatureOrSystem** Cela est très similaire aux autorisations de signature décrites ci-dessus. &ndash; En plus d’être accordé automatiquement aux applications qui sont signées par le même certificat, cette autorisation est également accordée aux applications qui sont signées avec le même certificat que celui utilisé pour signer les applications installées avec l’image système Android. En général, cette autorisation est utilisée uniquement par les développeurs de la ROM Android pour permettre à leurs applications de fonctionner avec des applications tierces. Elle n’est généralement pas utilisée par les applications qui sont destinées à la distribution générale pour le grand public.
 * **dangereux** &ndash; Les autorisations dangereuses sont celles qui peuvent entraîner des problèmes pour l’utilisateur. Pour cette raison, les autorisations **dangereuses** doivent être approuvées explicitement par l’utilisateur.
 
 Étant `signature` donné `normal` que les autorisations et sont accordées automatiquement au moment de l’installation par Android, il est essentiel que apk hébergeant le service soit installé **avant** le apk contenant le client. Si le client est installé en premier, Android n’accorde pas les autorisations. Dans ce cas, il est nécessaire de désinstaller le client APK, d’installer le service APK, puis de réinstaller le APK client.
@@ -488,4 +488,4 @@ Ce guide a été une discussion avancée sur l’exécution d’un service Andro
 - [Processus et threads](https://developer.android.com/guide/components/processes-and-threads.html)
 - [Manifeste Android-autorisations](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms)
 - [Conseils de sécurité](https://developer.android.com/training/articles/security-tips.html)
-- [MessengerServiceDemo (exemple)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/MessengerServiceDemo/)
+- [MessengerServiceDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-messengerservicedemo)

@@ -1,6 +1,6 @@
 ---
-title: Programme d’installation de la plateforme WPF
-description: Xamarin.Forms a désormais la prise en charge de la version préliminaire de la plateforme WPF
+title: Configuration de la plateforme WPF
+description: Xamarin. Forms prend désormais en charge la version préliminaire de la plateforme WPF
 ms.prod: xamarin
 ms.assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E
 ms.technology: xamarin-forms
@@ -8,64 +8,64 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2018
-ms.openlocfilehash: a7dbe7ae5bb1162bcbcb58ea1b39df197b8ed916
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 35652c0fc0e64686a79b2ea0fe96a1fca0b2825d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977709"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652851"
 ---
-# <a name="wpf-platform-setup"></a>Programme d’installation de la plateforme WPF
+# <a name="wpf-platform-setup"></a>Configuration de la plateforme WPF
 
 ![Preview](~/media/shared/preview.png)
 
-Xamarin.Forms prend désormais en charge de version préliminaire pour Windows Presentation Foundation (WPF). Cet article montre comment ajouter un projet WPF à une solution Xamarin.Forms.
+Xamarin. Forms dispose désormais de la prise en charge de l’Aperçu pour le Windows Presentation Foundation (WPF). Cet article explique comment ajouter un projet WPF à une solution Xamarin. Forms.
 
-Avant de démarrer, créer une solution Xamarin.Forms dans Visual Studio 2019 ou utiliser une solution Xamarin.Forms existante, par exemple, [ **BoxViewClock**](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/). Vous pouvez uniquement ajouter des applications WPF à une solution Xamarin.Forms dans Windows.
+Avant de commencer, créez une nouvelle solution Xamarin. Forms dans Visual Studio 2019, ou utilisez une solution Xamarin. Forms existante, par exemple, [**BoxViewClock**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock). Vous pouvez uniquement ajouter des applications WPF à une solution Xamarin. Forms dans Windows.
 
-## <a name="add-a-wpf-project-to-a-xamarinforms-app-with-xamarinuniversity"></a>Ajouter un projet WPF à une application Xamarin.Forms avec Xamarin.University
+## <a name="add-a-wpf-project-to-a-xamarinforms-app-with-xamarinuniversity"></a>Ajouter un projet WPF à une application Xamarin. Forms avec Xamarin. University
 
 > [!VIDEO https://youtube.com/embed/Fy9N6OSxK64]
 
-**Vidéo de prise en charge WPF Xamarin.Forms 3.0**
+**Vidéo sur la prise en charge de WPF Xamarin. Forms 3,0**
 
 ## <a name="adding-a-wpf-app"></a>Ajout d’une application WPF
 
-Suivez ces instructions pour ajouter une application WPF qui s’exécutera sur les ordinateurs de bureau Windows 7, 8 et 10 :
+Suivez ces instructions pour ajouter une application WPF qui s’exécutera sur les ordinateurs de bureau Windows 7, 8 et 10:
 
-1. Dans Visual Studio 2019, cliquez sur le nom de la solution dans le **l’Explorateur de solutions** et choisissez **Ajouter > Nouveau projet...** .
+1. Dans Visual Studio 2019, cliquez avec le bouton droit sur le nom de la solution dans le **Explorateur de solutions** puis sélectionnez **Ajouter > nouveau projet...** .
 
-2. Dans le **nouveau projet** fenêtre, sélectionnez à gauche **Visual C#** et **bureau classique Windows**. Dans la liste des types de projets, choisissez **application WPF (.NET Framework)**. 
+2. Dans la fenêtre **nouveau projet** , sur le côté gauche, sélectionnez **visuel C#**  et **Bureau classique Windows**. Dans la liste des types de projets, choisissez **application WPF (.NET Framework)** . 
 
-3. Tapez un nom pour le projet avec un **WPF** extension, par exemple, **BoxViewClock.WPF**. Cliquez sur le **Parcourir** bouton, sélectionnez le **BoxViewClock** dossier, puis appuyez sur **sélectionner le dossier**. Cela place le projet WPF dans le même répertoire que les autres projets dans la solution.
+3. Tapez un nom pour le projet avec une extension **WPF** , par exemple, **BoxViewClock. WPF**. Cliquez sur le bouton **Parcourir** , sélectionnez le dossier **BoxViewClock** , puis appuyez sur **Sélectionner un dossier**. Le projet WPF est alors placé dans le même répertoire que les autres projets de la solution.
 
-    ![Ajouter un nouveau projet WPF](wpf-images/add-new-project.png "ajouter un nouveau projet WPF")
+    ![Ajouter un nouveau projet WPF](wpf-images/add-new-project.png "Ajouter un nouveau projet WPF")
 
     Appuyez sur OK pour créer le projet.
 
-4. Dans le **l’Explorateur de solutions**, droit cliquez sur le nouveau **BoxViewClock.WPF** de projet et sélectionnez **gérer les Packages NuGet**. Sélectionnez le **Parcourir** onglet, cliquez sur le **inclure la version préliminaire** case à cocher, puis recherchez **Xamarin.Forms**.
+4. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nouveau projet **BoxViewClock. WPF** , puis sélectionnez **gérer les packages NuGet**. Sélectionnez l’onglet **Parcourir** , cliquez sur la case à cocher **inclure la version préliminaire** , puis recherchez **Xamarin. Forms**.
 
-    ![Sélectionnez le package NuGet](wpf-images/select-nuget-package.png "sélectionnez le package NuGet")
+    ![Sélectionner le package NuGet](wpf-images/select-nuget-package.png "Sélectionner le package NuGet")
 
-    Permet de choisir d’empaqueter et cliquez sur le **installer** bouton.
+    Sélectionnez ce package, puis cliquez sur le bouton **installer** .
 
-5. Recherchez maintenant **Xamarin.Forms.Platform.WPF** empaqueter et installer qu’un également. Assurez-vous que le package provient de Microsoft !
+5. À présent, recherchez le package **Xamarin. Forms. Platform. WPF** et installez-le également. Assurez-vous que le package provient de Microsoft.
 
-6. Cliquez avec le bouton droit sur le nom de la solution dans le **l’Explorateur de solutions** et sélectionnez **gérer les Packages NuGet pour la Solution**. Sélectionnez le **mise à jour** onglet et le **Xamarin.Forms** package. Sélectionnez tous les projets et les mettre à jour vers la même version de Xamarin.Forms :
+6. Cliquez avec le bouton droit sur le nom de la solution dans le **Explorateur de solutions** puis sélectionnez **gérer les packages NuGet pour la solution**. Sélectionnez l’onglet **mettre à jour** et le package **Xamarin. Forms** . Sélectionnez tous les projets et mettez-les à jour vers la même version de Xamarin. Forms:
 
-    ![Mettre à jour le package NuGet](wpf-images/update-nuget-package.png "mettre à jour le package NuGet") 
+    ![Mettre à jour le package NuGet](wpf-images/update-nuget-package.png "Mettre à jour le package NuGet") 
 
-7. Dans le projet WPF, cliquez sur **références**. Dans le **Gestionnaire de références** boîte de dialogue, sélectionnez **projets** à gauche, puis cocher la case à cocher adjacente à la **BoxViewClock** projet :
+7. Dans le projet WPF, cliquez avec le bouton droit sur **références**. Dans la boîte de dialogue **Gestionnaire de références** , sélectionnez **projets** à gauche, puis cochez la case située en regard du projet **BoxViewClock** :
 
-    ![Référencez le projet partagé](wpf-images/reference-shared-project.png "référencer le projet partagé")
+    ![Référencer le projet partagé](wpf-images/reference-shared-project.png "Référencer le projet partagé")
 
-8. Modifier le **MainWindow.xaml** fichier du projet WPF. Dans le `Window` , ajoutez une déclaration d’espace de noms XML pour le **Xamarin.Forms.Platform.WPF** assembly et l’espace de noms :
+8. Modifiez le fichier **MainWindow. Xaml** du projet WPF. Dans la `Window` balise, ajoutez une déclaration d’espace de noms XML pour l’assembly et l’espace de noms **Xamarin. Forms. Platform. WPF** :
 
     ```xaml
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    Modifiez à présent la `Window` balise au `wpf:FormsApplicationPage`. Modifier le `Title` affectant le nom de votre application, par exemple, **BoxViewClock**. Le fichier XAML complet doit ressembler à ceci :
+    À présent, `Window` remplacez la `wpf:FormsApplicationPage`balise par. Remplacez le `Title` paramètre par le nom de votre application, par exemple, **BoxViewClock**. Le fichier XAML complet doit se présenter comme suit:
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -83,21 +83,21 @@ Suivez ces instructions pour ajouter une application WPF qui s’exécutera sur 
     </wpf:FormsApplicationPage>
     ```
 
-9. Modifier le **MainWindow.xaml.cs** fichier du projet WPF. Ajoutez deux nouvelles `using` directives :
+9. Modifiez le fichier **MainWindow.Xaml.cs** du projet WPF. Ajoutez deux nouvelles `using` directives:
 
     ```csharp
     using Xamarin.Forms;
     using Xamarin.Forms.Platform.WPF;
     ```
 
-    Modifier la classe de base de `MainWindow` de `Window` à `FormsApplicationPage`. Suivant le `InitializeComponent` appeler, ajoutez les deux instructions suivantes :
+    Remplacez la classe de base `MainWindow` de `Window` `FormsApplicationPage`par. Après l' `InitializeComponent` appel, ajoutez les deux instructions suivantes:
 
     ```csharp
     Forms.Init();
     LoadApplication(new BoxViewClock.App());
     ```
     
-    À l’exception des commentaires et inutilisé `using` directives, l’ensemble **MainWindows.xaml.cs** fichier doit ressembler à ceci :
+    À l’exception des commentaires et `using` des directives inutilisées, le fichier **MainWindows.Xaml.cs** complet doit ressembler à ceci:
 
     ```csharp
     using Xamarin.Forms;
@@ -118,17 +118,17 @@ Suivez ces instructions pour ajouter une application WPF qui s’exécutera sur 
     }
     ```
 
-10. Cliquez sur le projet WPF dans le **l’Explorateur de solutions** et sélectionnez **définir comme projet de démarrage**. Appuyez sur F5 pour exécuter le programme avec le débogueur Visual Studio sur le bureau Windows :
+10. Cliquez avec le bouton droit sur le projet WPF dans le **Explorateur de solutions** , puis sélectionnez **définir comme projet de démarrage**. Appuyez sur F5 pour exécuter le programme avec le débogueur Visual Studio sur le bureau Windows:
 
-    ![WPF BoxView Clock](wpf-images/wpf-boxviewclock.png "WPF BoxView Clock" )
+    ![Horloge BoxView WPF] (wpf-images/wpf-boxviewclock.png "Horloge BoxView WPF" )
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 ### <a name="platform-specifics"></a>Caractéristiques de la plateforme
 
-Vous pouvez déterminer quelle plate-forme de votre application Xamarin.Forms est en cours d’exécution à partir de code ou XAML. Cela vous permet de modifier les caractéristiques de programme lorsqu’il s’exécute sur WPF. Dans le code, comparez la valeur de `Device.RuntimePlatform` avec la `Device.WPF` (constante) (qui est égale à la chaîne « WPF »). S’il existe une correspondance, l’application s’exécute sur WPF.
+Vous pouvez déterminer quelle plateforme est exécutée par votre application Xamarin. Forms à partir du code ou du code XAML. Cela vous permet de modifier les caractéristiques du programme lorsqu’il s’exécute sur WPF. Dans le code, comparez la `Device.RuntimePlatform` valeur de `Device.WPF` à la constante (qui est égale à la chaîne «WPF»). En cas de correspondance, l’application s’exécute sur WPF.
 
-Dans XAML, vous pouvez utiliser le `OnPlatform` balise pour sélectionner une valeur de propriété spécifique à la plateforme :
+En XAML, vous pouvez utiliser la `OnPlatform` balise pour sélectionner une valeur de propriété spécifique à la plateforme:
 
 ```xaml
 <Button.TextColor>
@@ -143,7 +143,7 @@ Dans XAML, vous pouvez utiliser le `OnPlatform` balise pour sélectionner une va
 
 ### <a name="window-size"></a>Taille de la fenêtre
 
-Vous pouvez ajuster la taille initiale de la fenêtre dans WPF **MainWindow.xaml** fichier :
+Vous pouvez ajuster la taille initiale de la fenêtre dans le fichier **. Xaml MAINWINDOW** WPF:
 
 ```xaml
 Title="BoxViewClock" Height="450" Width="800"
@@ -151,5 +151,5 @@ Title="BoxViewClock" Height="450" Width="800"
 
 ## <a name="issues"></a>Questions
 
-Il s’agit d’une version préliminaire, vous devez donc vous attendre que pas tout est prêt pour la production. Tous les packages NuGet pour Xamarin.Forms sont prêts pour WPF, et certaines fonctionnalités peuvent être entièrement ne fonctionne pas.
+Il s’agit d’une version préliminaire. vous devez donc vous attendre à ce que tous les éléments soient prêts pour la production. Tous les packages NuGet pour Xamarin. Forms sont prêts pour WPF, et certaines fonctionnalités peuvent ne pas être entièrement opérationnelles.
 

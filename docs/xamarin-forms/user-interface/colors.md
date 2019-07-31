@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: a1d49639d28e677ebbe2d7cf870a6e91dfff8575
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 1f29f283207ed8c1382424b3680177886ad2c806
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740919"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653155"
 ---
 # <a name="colors-in-xamarinforms"></a>Couleurs dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin.Forms fournit une classe de couleur inter-plateformes flexible._
 
@@ -25,7 +25,7 @@ Cet article présente les différentes façons la `Color` classe peut être util
 Le `Color` classe fournit plusieurs méthodes pour créer une instance de couleur
 
 -  **Couleurs nommées** -une collection de common couleurs nommées, y compris `Red`, `Green`, et `Blue`.
--  **FromHex** -valeur similaire à la syntaxe utilisée dans le code HTML, par exemple « 00FF00 » de chaîne. Alpha peut éventuellement être spécifié en tant que la première paire de caractères (« CC00FF00 »).
+-  **FromHex** : valeur de chaîne similaire à la syntaxe utilisée en HTML, par exemple «00FF00». Alpha peut éventuellement être spécifié en tant que première paire de caractères («CC00FF00»).
 -  **FromHsla** -teinte, saturation et luminosité `double` valeurs, avec une valeur alpha facultative (0.0-1.0).
 -  **FromRgb** -rouge, vert et bleu `int` valeurs (0-255).
 -  **FromRgba** -rouge, vert, bleu et alpha `int` valeurs (0-255).
@@ -124,5 +124,5 @@ Xamarin.Forms `Color` classe est utilisée pour créer des références de coule
 
 ## <a name="related-links"></a>Liens associés
 
-- [ColorsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
-- [Sélecteur peut être lié (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
+- [ColorsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+- [Sélecteur peut être lié (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)

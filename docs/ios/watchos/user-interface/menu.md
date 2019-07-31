@@ -1,48 +1,48 @@
 ---
-title: watchOS (Force Touch) contrôle de Menu dans Xamarin
-description: Ce document décrit comment utiliser le mouvement tactile de force watchOS dans Xamarin. Elle explique comment répondre à une pression tactile force, l’ajout d’un menu et en modifiant les éléments de menu.
+title: Contrôle de menu Watchos (Force Touch) dans Xamarin
+description: Ce document explique comment utiliser le mouvement de force tactile Watchos dans Xamarin. Il explique comment répondre à une pression tactile, comment ajouter un menu et comment modifier les éléments de menu.
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 7696c820ab6fdf19bdef46db31061fb5914e6cf4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6ad021d07d1263b20919cf4f640a8b65bf3b12b2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880690"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655747"
 ---
-# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS (Force Touch) contrôle de Menu dans Xamarin
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>Contrôle de menu Watchos (Force Touch) dans Xamarin
 
-Regardez que kit fournit un mouvement Force Touch qui déclenche un menu en cas d’implémentation sur un écran de l’application watch.
+Le kit Watch fournit un mouvement Force Touch qui déclenche un menu lorsqu’il est implémenté sur un écran d’application Watch.
 
-![](menu-images/menu.png "Apple Watch affichant un menu")
+![](menu-images/menu.png "Apple Watch avec un menu")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
-## <a name="responding-to-force-touch"></a>Répondre aux entrées tactiles de Force
+## <a name="responding-to-force-touch"></a>Réponse aux Force Touch
 
-Si un `Menu` a été implémentée pour un contrôleur d’interface, lorsqu’un utilisateur effectue un Touch Force le menu s’affiche. Si aucun menu n’a été implémenté, l’écran est animée brièvement une aucune autre action ne se produit.
+Si un `Menu` a été implémenté pour un contrôleur d’interface, lorsqu’un utilisateur exécute une force Touch le menu s’affiche. Si aucun menu n’a été implémenté, l’écran est brièvement animé. aucune autre action ne se produit.
 
-Force finales ne sont pas associés à un élément particulier sur l’écran ; menu qu’un seul peut être attaché à un contrôleur d’interface et il s’affiche, quel que soit l’où la presse Force Touch se produit sur l’écran.
+Les touches de force ne sont pas associées à un élément particulier à l’écran; un seul menu peut être attaché à un contrôleur d’interface et il s’affiche, quel que soit l’endroit où se trouve le Force Touch sur l’écran.
 
-Entre un et quatre menu options peuvent être présentées.
+Il est possible de présenter entre une et quatre options de menu.
 
 
-## <a name="adding-a-menu"></a>Ajout d’un Menu
+## <a name="adding-a-menu"></a>Ajout d’un menu
 
-Un `Menu` doit être ajouté à un `InterfaceController` sur le plan conceptuel au moment du design. Lorsque vous faites glisser un contrôle de menu sur un contrôleur d’interface il n’existe aucune indication visuelle sur l’aperçu de la table de montage séquentiel, mais le **Menu** s’affiche dans le **structure du Document** panneau :
+Un `Menu` doit être ajouté à un `InterfaceController` sur le Storyboard au moment du Design. Lorsqu’un contrôle de menu est glissé sur un contrôleur d’interface, il n’existe aucune indication visuelle sur l’aperçu de la table de montage séquentiel, mais le **menu** s’affiche dans le bloc de **structure du document** :
 
 ![](menu-images/menu-action.png "Modification d’un menu au moment du design")
 
-Jusqu'à quatre menu éléments peuvent être ajoutés au contrôle de menu. Ils peuvent être configurés dans le **propriétés** remplissage. Les attributs suivants peuvent être définies :
+Vous pouvez ajouter jusqu’à quatre éléments de menu au contrôle Menu. Ils peuvent être configurés dans le panneau **Propriétés** . Les attributs suivants peuvent être définis:
 
-- Titre, et
-- Image personnalisée, ou
-- Une image du système : Accepter, ajouter, bloc, de refuser, Info, peut-être, de plus, couper, Pause, lire, répétez, Resume, partage, lecture aléatoire, l’orateur, la Corbeille.
+- Titre et
+- Image personnalisée ou
+- Une image système: Accepter, ajouter, bloquer, refuser, info, peut-être, plus, muet, suspendre, lire, répéter, reprendre, partager, lire en lecture seule, orateur, corbeille.
 
-Créer un `Action` en sélectionnant le **événements** section de la **propriétés** panneau, puis en tapant le nom de la méthode d’action. Une méthode partielle sera créée dans le code, qui peut être implémenté dans la classe de contrôleur d’interface, comme suit :
+Créez un `Action` en sélectionnant la section **événements** du panneau **Propriétés** et en tapant le nom de la méthode d’action. Une méthode partielle est créée dans le code, qui peut être implémentée dans la classe de contrôleur d’interface, comme suit:
 
 ```csharp
 partial void MenuItemTapped ()
@@ -53,12 +53,12 @@ partial void MenuItemTapped ()
 
 ### <a name="custom-images"></a>Images personnalisées
 
-Comme pour les images d’onglet dans iOS, images d’élément de menu nécessitent un modèle opaque avec un canal alpha qui permet à l’arrière-plan de transparaître à travers.
+Comme pour les images avec onglets dans iOS, les images d’élément de menu requièrent un modèle opaque avec un canal alpha qui permet d’afficher l’arrière-plan.
 
-Vous devez ajouter les images utilisées pour le menu pour le projet d’application watch (pas le suivi application projet d’extension) pour de meilleures performances.
+Pour des performances optimales, vous devez ajouter les images utilisées pour le menu au projet d’application Watch (et non au projet d’extension de l’application Watch).
 
 
-## <a name="changing-the-menu-items"></a>Modifier les éléments de Menu
+## <a name="changing-the-menu-items"></a>Modification des éléments de menu
 
 <!--
 ### Design Time Items
@@ -66,16 +66,16 @@ Vous devez ajouter les images utilisées pour le menu pour le projet d’applica
 Menu items added the storyboard can be shown and hidden programmatically.
 -->
 
-### <a name="adding-at-runtime"></a>Ajout lors de l’exécution
+### <a name="adding-at-runtime"></a>Ajouter au moment de l’exécution
 
-Vous ne peut pas entraîner un `Menu` à ajouter à un contrôleur d’interface lors de l’exécution, bien que la collection de `MenuItem`s *pouvez* être modifiée par programmation.
-Utilisez le `AddMenuItem` méthode comme indiqué :
+Vous ne pouvez pas `Menu` faire en sorte qu’un soit ajouté à un contrôleur d’interface au moment `MenuItem`de l’exécution, même si la collection de s *peut* être modifiée par programme.
+Utilisez la `AddMenuItem` méthode comme indiqué ci-dessous:
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-L’API de Kit Xamarin.iOS espion nécessite actuellement un `selector` pour le `AdMenuItem` (méthode), qui doit être déclarée comme suit :
+L’API du kit de surveillance Xamarin. iOS requiert `selector` actuellement un `AdMenuItem` pour la méthode, qui doit être déclarée comme suit:
 
 ```csharp
 [Export("tapped")]
@@ -85,15 +85,15 @@ void MenuItemTapped ()
 }
 ```
 
-### <a name="removing-at-runtime"></a>Suppression lors de l’exécution
+### <a name="removing-at-runtime"></a>Supprimer au moment de l’exécution
 
-Le `ClearAllMenuItems` méthode peut être appelée pour supprimer tous les *ajoutés par programme* des éléments de menu.
+La `ClearAllMenuItems` méthode peut être appelée pour supprimer tous les éléments de menu *ajoutés par programmation* .
 
-Impossible d’effacer les éléments de menu configurés dans le storyboard.
+Impossible d’effacer les éléments de menu configurés dans la table de montage séquentiel.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [WatchKitCatalog (exemple)](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [Document du Menu d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)
+- [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Doc menu d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

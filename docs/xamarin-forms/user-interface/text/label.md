@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 31303114ddd829b596569981b5812b91c4e95b30
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: 5c12b5a5c0e558403362bd12baddfb8201f40759
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557440"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642926"
 ---
 # <a name="xamarinforms-label"></a>Étiquette de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _Texte affiché dans Xamarin.Forms_
 
@@ -146,7 +146,7 @@ Les captures d’écran suivantes affichent le résultat du paramètre de la `Ma
 
 ## <a name="formatted-text"></a>Texte mis en forme
 
-Étiquettes exposent un [ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText) propriété qui permet à la présentation du texte avec plusieurs polices et couleurs dans la même vue.
+Les étiquettes exposent une [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) propriété qui autorise la présentation de texte avec plusieurs polices et couleurs dans la même vue.
 
 Le `FormattedText` propriété est de type [ `FormattedString` ](xref:Xamarin.Forms.FormattedString), qui comprend un ou plusieurs [ `Span` ](xref:Xamarin.Forms.Span) instances, définis par le biais du [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans) propriété . Ce qui suit `Span` propriétés peuvent être utilisées pour définir l’apparence visuelle :
 
@@ -157,13 +157,13 @@ Le `FormattedText` propriété est de type [ `FormattedString` ](xref:Xamarin.Fo
 - [`FontSize`](xref:Xamarin.Forms.Span.FontSize) – la taille de la police du texte dans l’étendue.
 - [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) – la couleur du texte dans l’étendue. Cette propriété est obsolète et a été remplacée par le `TextColor` propriété.
 - [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -le multiplicateur à appliquer à la hauteur de ligne par défaut de l’étendue. Pour plus d’informations, consultez [hauteur de ligne](#line-height).
-- [`Style`](xref:Xamarin.Forms.Span.Style)  – le style à appliquer à l’étendue.
+- [`Style`](xref:Xamarin.Forms.Span.Style): style à appliquer à l’étendue.
 - [`Text`](xref:Xamarin.Forms.Span.Text) – le texte de l’étendue.
 - [`TextColor`](xref:Xamarin.Forms.Span.TextColor) – la couleur du texte dans l’étendue.
 - `TextDecorations` -les ornements à appliquer au texte dans l’étendue. Pour plus d’informations, consultez [ornements de texte](#text-decorations).
 
 > [!NOTE]
-> Le [ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor), [ `Text` ](xref:Xamarin.Forms.Span.Text), et [ `Text` ](xref:Xamarin.Forms.Span.Text) propriétés pouvant être liées ont un mode de liaison par défaut de [ `OneWay` ](xref:Xamarin.Forms.BindingMode). Pour plus d’informations sur ce mode de liaison, consultez [le Mode de liaison par défaut](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode) dans le [Mode de liaison](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md) guide.
+> Les [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)propriétés [`Text`](xref:Xamarin.Forms.Span.Text), [`OneWay`](xref:Xamarin.Forms.BindingMode)et [`Text`](xref:Xamarin.Forms.Span.Text) pouvant être liées ont un mode de liaison par défaut de. Pour plus d’informations sur ce mode de liaison, consultez [le mode de liaison par défaut](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode) dans le Guide de [mode de liaison](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md) .
 
 En outre, le [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers) propriété peut être utilisée pour définir une collection de modules de reconnaissance de mouvement qui répondront aux mouvements sur le [ `Span` ](xref:Xamarin.Forms.Span).
 
@@ -298,14 +298,14 @@ Les captures d’écran suivantes affichent le résultat du paramètre de la [ `
 
 ## <a name="hyperlinks"></a>Liens hypertexte
 
-Le texte affiché par [ `Label` ](xref:Xamarin.Forms.Label) et [ `Span` ](xref:Xamarin.Forms.Span) instances peuvent être converties en liens hypertexte avec l’approche suivante :
+Le texte affiché par [`Label`](xref:Xamarin.Forms.Label) les [`Span`](xref:Xamarin.Forms.Span) instances et peut être converti en liens hypertexte avec l’approche suivante:
 
-1. Définir le `TextColor` et `TextDecoration` propriétés de la [ `Label` ](xref:Xamarin.Forms.Label) ou [ `Span` ](xref:Xamarin.Forms.Span).
-1. Ajouter un [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) à la [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers) collection de la [ `Label` ](xref:Xamarin.Forms.Label) ou [ `Span` ](xref:Xamarin.Forms.Span), dont [ `Command` ](xref:Xamarin.Forms.TapGestureRecognizer.Command) propriété est liée à un `ICommand`et dont [ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) propriété contient l’URL à ouvrir.
-1. Définir le `ICommand` qui sera exécutée par le [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer).
-1. Écrire le code qui sera exécuté par le `ICommand`.
+1. Définissez les `TextColor` propriétés `TextDecoration` et de [`Label`](xref:Xamarin.Forms.Label) ou. [`Span`](xref:Xamarin.Forms.Span)
+1. Ajoutez un [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) à la [`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) collection du [`Label`](xref:Xamarin.Forms.Label) ou [`Span`](xref:Xamarin.Forms.Span)de, dont [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command) la propriété est liée à `ICommand`un, et [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) dont la propriété contient l’URL à ouvrir.
+1. Définissez le `ICommand` qui sera exécuté par le [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer).
+1. Écrivez le code qui sera exécuté par le `ICommand`.
 
-L’exemple de code suivant, extrait de la [démonstrations de lien hypertexte](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos) exemple, montre un [ `Label` ](xref:Xamarin.Forms.Label) dont le contenu est défini à partir de plusieurs [ `Span` ](xref:Xamarin.Forms.Span) instances :
+L’exemple de code suivant, tiré de l’exemple de démonstrations de [lien hypertexte](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) , montre un dont [`Label`](xref:Xamarin.Forms.Label) le [`Span`](xref:Xamarin.Forms.Span) contenu est défini à partir de plusieurs instances:
 
 ```xaml
 <Label>
@@ -326,13 +326,13 @@ L’exemple de code suivant, extrait de la [démonstrations de lien hypertexte](
 </Label>
 ```
 
-Dans cet exemple, le premier et le troisième [ `Span` ](xref:Xamarin.Forms.Span) instances comprennent le texte, tandis que le second `Span` représente un lien hypertexte tappable. Il a sa couleur de texte bleu, et a une décoration de texte souligné. Cette opération crée l’apparence d’un lien hypertexte, comme indiqué dans les captures d’écran suivante :
+Dans cet exemple, la première et la [`Span`](xref:Xamarin.Forms.Span) troisième instance comprennent du texte, tandis `Span` que la seconde représente un lien hypertexte tappable. Sa couleur de texte est définie sur bleu et a une décoration de texte souligné. Cela crée l’apparence d’un lien hypertexte, comme illustré dans les captures d’écran suivantes:
 
-[![Liens hypertexte](label-images/hyperlinks-small.png "des liens hypertexte")](label-images/hyperlinks-large.png#lightbox)
+[![Liens hypertexte](label-images/hyperlinks-small.png "Liens hypertexte")](label-images/hyperlinks-large.png#lightbox)
 
-Lors de l’appui sur le lien hypertexte, la [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) répond en exécutant la `ICommand` défini par ses [ `Command` ](xref:Xamarin.Forms.TapGestureRecognizer.Command) propriété. En outre, l’URL spécifiée par le [ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) propriété sera passée à la `ICommand` en tant que paramètre.
+Lorsque le lien hypertexte est frappé, [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) le répond en exécutant le `ICommand` défini par sa [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command) propriété. En outre, l’URL spécifiée par la [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) propriété est passée `ICommand` à en tant que paramètre.
 
-Le code-behind pour la page XAML contient le `TapCommand` implémentation :
+Le code-behind de la page XAML contient l' `TapCommand` implémentation:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -352,13 +352,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Le `TapCommand` exécute le `OpenBrowser` méthode, en passant le [ `TapGestureRecognizer.CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) valeur de propriété en tant que paramètre. À son tour, cette méthode appelle la [ `Device.OpenUri` ](xref:Xamarin.Forms.Device.OpenUri*) méthode pour ouvrir l’URL dans un navigateur web. Par conséquent, l’effet global est que lorsque l’appui sur le lien hypertexte sur la page, un navigateur web s’affiche et l’URL associée au lien hypertexte cible.
+Exécute la `OpenBrowser` méthode, en passant la valeur [`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) de la propriété en tant que paramètre. `TapCommand` Ensuite, cette méthode appelle la [`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*) méthode pour ouvrir l’URL dans un navigateur Web. Par conséquent, l’effet global est que lorsque le lien hypertexte est frappé sur la page, un navigateur Web s’affiche et l’URL associée au lien hypertexte est vers laquelle il est accédé.
 
-### <a name="creating-a-reusable-hyperlink-class"></a>Création d’une classe réutilisable de lien hypertexte
+### <a name="creating-a-reusable-hyperlink-class"></a>Création d’une classe HYPERLINK réutilisable
 
-L’approche précédente à la création d’un lien hypertexte requiert l’écriture de code répétitif chaque fois que vous avez besoin d’un lien hypertexte dans votre application. Toutefois, à la fois le [ `Label` ](xref:Xamarin.Forms.Label) et [ `Span` ](xref:Xamarin.Forms.Span) classes peuvent être sous-classée pour créer `HyperlinkLabel` et `HyperlinkSpan` classes, avec la reconnaissance de mouvement et le code de mise en forme de texte y a été ajoutée.
+L’approche précédente de la création d’un lien hypertexte requiert l’écriture d’un code répétitif chaque fois que vous avez besoin d’un lien hypertexte dans votre application. Toutefois, [`Label`](xref:Xamarin.Forms.Label) les classes et [`Span`](xref:Xamarin.Forms.Span) peuvent être sous-classées pour créer `HyperlinkLabel` des `HyperlinkSpan` classes et, avec le module de reconnaissance de mouvement et le code de mise en forme du texte ajoutés ici.
 
-L’exemple de code suivant, extrait de la [démonstrations de lien hypertexte](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/HyperlinkDemos) exemple, montre un `HyperlinkSpan` classe :
+L’exemple de code suivant, tiré de l’exemple de démonstrations de [lien hypertexte](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) , illustre une `HyperlinkSpan` classe:
 
 ```csharp
 public class HyperlinkSpan : Span
@@ -384,9 +384,9 @@ public class HyperlinkSpan : Span
 }
 ```
 
-Le `HyperlinkSpan` classe définit un `Url` propriété et associés [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty), et le constructeur définit l’apparence des liens hypertexte et le [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) qui répondra Lorsque le lien hypertexte est activé par un clic. Lorsqu’un `HyperlinkSpan` est activé par un clic, le `TapGestureRecognizer` répond en exécutant la [ `Device.OpenUri` ](xref:Xamarin.Forms.Device.OpenUri*) méthode pour ouvrir l’URL spécifiée par le `Url` propriété, dans un navigateur web.
+La `HyperlinkSpan` classe définit une `Url` propriété, et associée [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), et le constructeur définit l’apparence du lien hypertexte [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) et le qui répondra lorsque le lien hypertexte sera appuyé. Lorsqu’un `HyperlinkSpan` est frappé, le `TapGestureRecognizer` répond en exécutant la [`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*) méthode pour ouvrir l’URL, spécifiée par la `Url` propriété, dans un navigateur Web.
 
-Le `HyperlinkSpan` classe peut être consommée par ajout d’une instance de la classe pour le XAML :
+La `HyperlinkSpan` classe peut être consommée en ajoutant une instance de la classe au XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -415,8 +415,8 @@ Les sections précédentes couverts paramètre [ `Label` ](xref:Xamarin.Forms.La
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Texte (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Liens hypertexte (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Hyperlinks)
+- [Texte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Liens hypertexte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [Création d’applications mobiles avec Xamarin.Forms, chapitre 3](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [API de l’étiquette](xref:Xamarin.Forms.Label)
 - [Étendue API](xref:Xamarin.Forms.Span)

@@ -1,5 +1,5 @@
 ---
-title: Présentation de Cognitive Services Xamarin.Forms et Azure
+title: Présentation de Xamarin. Forms et d’Azure Cognitive Services
 description: Cet article présente un exemple d’application qui montre comment appeler des API Microsoft Cognitive services.
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 36aa53a6d257d8f5311cab84485e608bef3e97f8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659266"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652309"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Présentation de Cognitive Services Xamarin.Forms et Azure
+# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Présentation de Xamarin. Forms et d’Azure Cognitive Services
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services sont un ensemble d’API, les kits de développement logiciel et les services qui permettent aux développeurs de créer des applications plus intelligentes en ajoutant des fonctionnalités telles que la reconnaissance faciale, reconnaissance vocale et compréhension du langage. Cet article fournit une introduction à l’exemple d’application qui montre comment appeler des API Microsoft Cognitive services._
 
@@ -50,9 +50,9 @@ En cliquant sur le bouton smilies sur le `TodoListPage` accède à la `RateAppPa
 
 Le `RateAppPage` permet à l’utilisateur à prendre une photo de leur visage, qui est envoyé à l’API visage avec l’émotion retournée affichée.
 
-## <a name="understand-the-application-anatomy"></a>Découvrez l’anatomie d’application
+## <a name="understand-the-application-anatomy"></a>Comprendre l’anatomie des applications
 
-Le projet de code partagé pour l’exemple d’application se compose de cinq dossiers principaux :
+Le projet de code partagé pour l’exemple d’application se compose de cinq dossiers principaux:
 
 |Dossier|Objectif|
 |--- |--- |
@@ -62,7 +62,7 @@ Le projet de code partagé pour l’exemple d’application se compose de cinq d
 |Utils|Contient le `Timer` (classe), qui est utilisé par le `AuthenticationService` classe pour renouveler un jeton d’accès JWT 9 minutes.|
 |Affichages|Contient les pages de l’application.|
 
-Le projet de code partagé contient également des fichiers importants :
+Le projet de code partagé contient également des fichiers importants:
 
 |Fichier|Objectif|
 |--- |--- |
@@ -105,15 +105,15 @@ Le `TodoItemRepository` classe implémente les opérations de base de données, 
 - **SaveItemAsync** : crée ou met à jour un élément dans la base de données SQLite locale.
 - **DeleteItemAsync** : supprime l’élément spécifié à partir de la base de données SQLite locale.
 
-### <a name="platform-project-implementations"></a>Implémentations de projet de plateforme
+### <a name="platform-project-implementations"></a>Implémentations de projets de plateforme
 
-Le `Services` dossier dans le projet de code partagé contient la `IFileHelper` et `IAudioRecorderService` interfaces qui sont utilisées par la `DependencyService` classe pour localiser les classes qui implémentent les interfaces dans les projets de plateforme.
+Le `Services` dossier du projet de code partagé contient les `IFileHelper` interfaces `IAudioRecorderService` et utilisées par la `DependencyService` classe pour localiser les classes qui implémentent les interfaces dans les projets de plateforme.
 
 Le `IFileHelper` interface est implémentée par le `FileHelper` classe dans chaque projet de plateforme. Cette classe se compose d’une méthode unique, `GetLocalFilePath`, qui retourne un chemin d’accès de fichier local pour stocker la base de données SQLite.
 
 Le `IAudioRecorderService` interface est implémentée par le `AudioRecorderService` classe dans chaque projet de plateforme. Cette classe se compose de `StartRecording`, `StopRecording`, ainsi que les méthodes, qui utilisent des API de la plate-forme à enregistrer l’audio à partir du microphone de l’appareil et stockez-le dans un fichier wav. Sur iOS, le `AudioRecorderService` utilise le `AVFoundation` API pour enregistrer l’audio. Sur Android, le `AudioRecordService` utilise le `AudioRecord` API pour enregistrer l’audio. Sur la plateforme de Windows universelle (UWP), le `AudioRecorderService` utilise le `AudioGraph` API pour enregistrer l’audio.
 
-### <a name="invoke-cognitive-services"></a>Appeler cognitives services
+### <a name="invoke-cognitive-services"></a>Appeler cognitive services
 
 L’exemple d’application appelle les Services cognitifs Microsoft suivants :
 
@@ -125,4 +125,4 @@ L’exemple d’application appelle les Services cognitifs Microsoft suivants :
 ## <a name="related-links"></a>Liens connexes
 
 - [Documentation de Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services/documentation)
-- [TODO Cognitive Services (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [TODO Cognitive Services (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

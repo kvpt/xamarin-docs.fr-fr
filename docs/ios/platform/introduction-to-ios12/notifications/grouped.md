@@ -1,36 +1,36 @@
 ---
-title: Notifications groupées dans Xamarin.iOS
-description: Avec iOS 12, il est possible pour les notifications de groupe dans le centre de Notification ou de l’écran de verrouillage par application ou par thread. Ce document décrit comment envoyer des fils et notifications non filetées avec Xamarin.iOS.
+title: Notifications groupées dans Xamarin. iOS
+description: Avec iOS 12, il est possible de regrouper les notifications dans le centre de notifications ou l’écran de verrouillage par application ou par thread. Ce document explique comment envoyer des notifications de thread et non thread avec Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 6798c4c5fa7502ba5e99cb8bc209468acaa4a9ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3edaabe287bc2b37d2ec5a759ada9f59441c6d3a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402419"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652578"
 ---
-# <a name="grouped-notifications-in-xamarinios"></a>Notifications groupées dans Xamarin.iOS
+# <a name="grouped-notifications-in-xamarinios"></a>Notifications groupées dans Xamarin. iOS
 
-Par défaut, iOS 12 place toutes les notifications d’une application dans un groupe. L’écran de verrouillage et le centre de notifications affichent ce groupe comme une pile avec la dernière notification en haut. Les utilisateurs peuvent développer le groupe pour afficher toutes les notifications qu’il contient et ignorer l’ensemble du groupe.
+Par défaut, iOS 12 place toutes les notifications d’une application dans un groupe. L’écran de verrouillage et le centre de notifications affichent ce groupe sous la forme d’une pile avec la notification la plus récente par-dessus. Les utilisateurs peuvent développer le groupe pour voir toutes les notifications qu’il contient et faire disparaître le groupe dans son ensemble.
 
-Les applications peuvent également les notifications de groupe par thread, ce qui facilite pour les utilisateurs de rechercher et interagir avec les informations spécifiques qui que les intéresse.
+Les applications peuvent également regrouper les notifications par thread, ce qui permet aux utilisateurs de rechercher et d’interagir plus facilement avec les informations spécifiques qui vous intéressent.
 
-## <a name="sample-app-groupednotifications"></a>Exemple d’application : GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>Exemple d’application: GroupedNotifications
 
-Pour savoir comment utiliser les notifications regroupées avec Xamarin.iOS, examinons le [GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications) exemple d’application.
+Pour savoir comment utiliser des notifications groupées avec Xamarin. iOS, consultez l’exemple d’application [GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications) .
 
-Cet exemple d’application simule les conversations avec différents amis, envoyer une notification pour chaque message et en les regroupant par thread. Il montre également comment non filetés land de notifications dans un groupe de niveau application.
+Cet exemple d’application simule des conversations avec différents amis, en envoyant une notification pour chaque message et en les regroupant par thread. Il montre également comment les notifications déthreadées s’imposent dans un groupe au niveau de l’application.
 
-Extraits de code dans ce guide proviennent de cet exemple d’application.
+Les extraits de code de ce guide proviennent de cet exemple d’application.
 
-## <a name="request-authorization-and-allow-foreground-notifications"></a>Demander l’autorisation et autoriser les notifications de premier plan
+## <a name="request-authorization-and-allow-foreground-notifications"></a>Demander l’autorisation et autoriser les notifications au premier plan
 
-Qu’une application puisse envoyer des notifications locales, il doit demander l’autorisation pour ce faire. Dans l’exemple d’application [ `AppDelegate` ](xref:UIKit.UIApplicationDelegate), le [ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) méthode demande cette autorisation :
+Avant qu’une application puisse envoyer des notifications locales, elle doit demander l’autorisation de le faire. Dans l’exemple d' [`AppDelegate`](xref:UIKit.UIApplicationDelegate)application, la [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) méthode demande cette autorisation:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Le [ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) (défini ci-dessus) pour un [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter) décide si une application de premier plan doit afficher une notification entrante en appelant le Gestionnaire d’achèvement passé à [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
+Le [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (défini ci-dessus) [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) pour un décide si une application de premier plan doit ou non afficher une notification entrante en appelant [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))le gestionnaire d’achèvement passé à:
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,18 +56,18 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-Le [ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions) paramètre indique que l’application doit afficher l’alerte, mais pas un signal sonore ou un badge de mise à jour.
+Le [`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions) paramètre indique que l’application doit afficher l’alerte, mais pas lire un son ou mettre à jour un badge.
 
-## <a name="threaded-notifications"></a>Notifications de threads
+## <a name="threaded-notifications"></a>Notifications de thread
 
-Appuyez sur l’exemple d’application **Message avec Alice** à plusieurs reprises pour qu’il envoie des notifications pour une conversation avec un ami nommé Alice.
-Étant donné que les notifications de cette conversation font partie du même thread, l’écran de verrouillage et le centre de Notification les regroupent.
+Appuyez sur le message de l’exemple d’application avec le bouton **Alice** à plusieurs reprises pour qu’il envoie des notifications pour une conversation avec un ami nommé Alice.
+Étant donné que les notifications de cette conversation font partie du même thread, l’écran de verrouillage et le centre de notification les regroupent ensemble.
 
-Pour démarrer une conversation avec un ami différent, appuyez sur la **choisir un nouvel ami** bouton. Notifications pour cette conversation s’affichent dans un groupe distinct.
+Pour démarrer une conversation avec un autre ami, appuyez sur le bouton **choisir un nouvel ami** . Les notifications pour cette conversation s’affichent dans un groupe distinct.
 
 ### <a name="threadidentifier"></a>ThreadIdentifier
 
-N’importe quel moment de que l’exemple d’application démarre un nouveau thread, il crée un identificateur de thread unique :
+Chaque fois que l’exemple d’application démarre un nouveau thread, il crée un identificateur de thread unique:
 
 ```csharp
 void StartNewThread()
@@ -77,13 +77,13 @@ void StartNewThread()
 }
 ```
 
-Pour envoyer une notification de thread, l’exemple d’application :
+Pour envoyer une notification de thread, l’exemple d’application:
 
-- Vérifie si l’application dispose d’autorisations pour envoyer une notification.
-- Crée un [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-objet pour la notification du contenu et définit son [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
+- Vérifie si l’application a l’autorisation d’envoyer une notification.
+- Crée un[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+objet pour le contenu de la notification et définit son[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 à l’identificateur de thread créé ci-dessus.
-- Crée une demande et planifie la notification :
+- Crée une demande et planifie la notification:
 
 ```csharp
 async partial void ScheduleThreadedNotification(UIButton sender)
@@ -119,29 +119,29 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 }
 ```
 
-Toutes les notifications à partir de la même application avec le même identificateur de thread seront affiche dans le même groupe de notification.
+Toutes les notifications de la même application avec le même identificateur de thread s’affichent dans le même groupe de notification.
 
 > [!NOTE]
-> Pour définir un identificateur de thread sur une notification à distance, ajoutez le `thread-id` clé pour la charge utile JSON de la notification. Consultez d’Apple [générer une Notification à distance](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) document pour plus d’informations.
+> Pour définir un identificateur de thread sur une notification distante, `thread-id` ajoutez la clé à la charge utile JSON de la notification. Pour plus d’informations, consultez la page génération d’un document de [notification à distance](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) par Apple.
 
 ### <a name="summaryargument"></a>SummaryArgument
 
-`SummaryArgument` Spécifie comment une notification aura un impact sur le texte du résumé qui s’affiche dans le coin inférieur gauche d’un groupe de notification à laquelle appartient la notification. texte du résumé agrégats iOS à partir des notifications dans le même groupe pour créer une description résumée de global.
+`SummaryArgument`spécifie comment une notification aura un impact sur le texte résumé qui apparaît dans le coin inférieur gauche d’un groupe de notification auquel la notification appartient. iOS agrège le texte récapitulatif des notifications dans le même groupe pour créer une description résumée globale.
 
-L’exemple d’application utilise l’auteur du message en tant que l’argument de résumé. À l’aide de cette approche, le texte de résumé d’un groupe de six notifications avec Alice peut être **plus de 5 notifications à partir d’Alice et Me**.
+L’exemple d’application utilise l’auteur du message en tant qu’argument Summary. À l’aide de cette approche, le texte Résumé d’un groupe de six notifications avec Alice peut être **de 5 autres notifications d’Alice et de moi**.
 
-## <a name="unthreaded-notifications"></a>Notifications non filetées
+## <a name="unthreaded-notifications"></a>Notifications déthreadées
 
-Chaque en appuyant sur l’exemple d’application **rappel de rendez-vous** bouton envoie une des différentes notifications de rappel de rendez-vous. Étant donné que ces rappels ne sont pas suivies, elles apparaissent dans le groupe de notification au niveau de l’application sur l’écran de verrouillage et dans le centre de Notification.
+Chaque pression sur le bouton de **rappel de rendez-vous** de l’application d’exemple envoie une des nombreuses notifications de rappel de rendez-vous. Étant donné que ces rappels ne sont pas liés, ils apparaissent dans le groupe de notification au niveau de l’application sur l’écran de verrouillage et dans le centre de notification.
 
-Pour envoyer une non filetés de la notification, l’exemple d’application `ScheduleUnthreadedNotification` méthode utilise un code similaire comme indiqué ci-dessus.
-Toutefois, il ne définit pas le `ThreadIdentifier` sur la `UNMutableNotificationContent` objet.
+Pour envoyer une notification non thread, la méthode de l’exemple `ScheduleUnthreadedNotification` d’application utilise du code similaire à celui indiqué ci-dessus.
+Toutefois, il ne définit `ThreadIdentifier` pas sur l' `UNMutableNotificationContent` objet.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application – GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)
-- [Infrastructure de Notifications d’utilisateur dans Xamarin.iOS](~/ios/platform/user-notifications/index.md)
-- [Quelles sont les nouveautés dans les Notifications à l’utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [À l’aide de Notifications groupées (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
-- [Meilleures pratiques et quelles sont les nouveautés dans les Notifications à l’utilisateur (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [Générer une Notification à distance (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [Exemple d’application – GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [Infrastructure de notifications utilisateur dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
+- [Nouveautés des notifications utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [Utilisation de notifications groupées (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
+- [Meilleures pratiques et nouveautés dans les notifications utilisateur (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [Génération d’une notification à distance (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

@@ -7,16 +7,16 @@ ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: f988c16e933214b3ce737febb89d05a451eb2f14
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 60de4b8abc200ac7892838765210167f8a79dcfe
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61205561"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645844"
 ---
 # <a name="porter-duff-blend-modes"></a>Modes de fusion de porter-Duff
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Les modes de blend Duff de Porter sont nommés d’après les Thomas Porter et Tom Duff, qui a développé un algèbre de la composition lors de l’utilisation pour cinématographique Lucasfilm. Leur livre [ _Images numériques de composition_ ](https://graphics.pixar.com/library/Compositing/paper.pdf) a été publié dans le numéro de juillet 1984 de _infographie_, pages de 253 à 259. Ces modes de fusion sont essentielles pour la composition, qui est rassemblant les différentes images dans une scène composite :
 
@@ -279,11 +279,11 @@ Il peut être tentant de remplacer les images bitmap dans le **Duff de Porter gr
 
 ## <a name="using-mattes-with-porter-duff"></a>À l’aide de caches avec Porter-Duff
 
-Le **mur de briques composition** page montre un exemple d’une tâche de composition classique : Une image doit être assemblés à partir de plusieurs éléments, y compris un bitmap avec un arrière-plan devant être éliminée. Voici le **SeatedMonkey.jpg** bitmap avec l’arrière-plan problématique :
+La page de **composition du mur brique** illustre un exemple de tâche de composition classique: Une image doit être Assemblée à partir de plusieurs éléments, y compris une image bitmap avec un arrière-plan qui doit être éliminé. Voici le **SeatedMonkey.jpg** bitmap avec l’arrière-plan problématique :
 
 ![Assis Monkey](porter-duff-images/SeatedMonkey.jpg "assis Monkey")
 
-En vue de la composition, correspondante _cache_ a été créé, qui est une autre image bitmap noir où vous souhaitez que l’image s’affichent et transparente dans le cas contraire. Ce fichier se nomme **SeatedMonkeyMatte.png** et est entre les ressources dans le **Media** dossier dans le [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple :
+En vue de la composition, correspondante _cache_ a été créé, qui est une autre image bitmap noir où vous souhaitez que l’image s’affichent et transparente dans le cas contraire. Ce fichier se nomme **SeatedMonkeyMatte.png** et est entre les ressources dans le **Media** dossier dans le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple :
 
 ![Assis Monkey cache](porter-duff-images/SeatedMonkeyMatte.png "assis Monkey cache")
 
@@ -505,9 +505,9 @@ La notation dans le tableau ci-dessous utilise les abréviations suivantes :
 - **Sa** est le canal alpha de source
 - **SC** est la couleur RVB de la source
 
-Les couleurs RVB sont préalablement multipliées par la valeur alpha. Par exemple, si **Sc** représente rouge pure mais **Sa** est 0 x 80, est la couleur RVB **(0 x 80, 0, 0)**. Si **Sa** est 0, tous les composants RVB sont également égales à zéro.
+Les couleurs RVB sont préalablement multipliées par la valeur alpha. Par exemple, si **Sc** représente rouge pure mais **Sa** est 0 x 80, est la couleur RVB **(0 x 80, 0, 0)** . Si **Sa** est 0, tous les composants RVB sont également égales à zéro.
 
-Le résultat est indiqué entre crochets avec le canal alpha et la couleur RVB séparés par une virgule : **[couleur alpha,]**. Pour la couleur, le calcul est effectué séparément pour les composants rouges, vert et bleus :
+Le résultat est indiqué entre crochets avec le canal alpha et la couleur RVB séparés par une virgule : **[couleur alpha,]** . Pour la couleur, le calcul est effectué séparément pour les composants rouges, vert et bleus :
 
 | Mode       | Opération |
 | ---------- | --------- |
@@ -526,11 +526,11 @@ Le résultat est indiqué entre crochets avec le canal alpha et la couleur RVB s
 | `Plus`     | [Sa + Da, Sc + Dc] |
 | `Modulate` | [Sa· DA, Sc· Contrôleur de domaine] | 
 
-Ces opérations sont plus faciles à analyser lorsque **Da** et **Sa** sont 0 ou 1. Par exemple, pour la valeur par défaut `SrcOver` mode, si **Sa** est 0, puis **Sc** est 0 et le résultat est également **[Da, contrôleur de domaine]**, l’alpha de destination et la couleur. Si **Sa** est 1, le résultat est **[Sa, Sc]**, l’alpha de la source et la couleur, ou **[1, Sc]**.
+Ces opérations sont plus faciles à analyser lorsque **Da** et **Sa** sont 0 ou 1. Par exemple, pour la valeur par défaut `SrcOver` mode, si **Sa** est 0, puis **Sc** est 0 et le résultat est également **[Da, contrôleur de domaine]** , l’alpha de destination et la couleur. Si **Sa** est 1, le résultat est **[Sa, Sc]** , l’alpha de la source et la couleur, ou **[1, Sc]** .
 
-Le `Plus` et `Modulate` modes sont un peu différents des autres dans la mesure nouvelles couleurs peuvent être dû à la combinaison de la source et la destination. Le `Plus` mode peut être interprété soit avec les composants de l’octet ou à virgule flottante. Dans le **Duff de Porter grille** page présentée précédemment, la couleur de destination est **(0xC0, 0 x 80, 0 x 00)** et la couleur de la source est **(0 x 00, 0 x 80, 0xC0)**. Chaque paire de composants est ajouté, mais la somme est ancrée à 0xFF. Le résultat est la couleur **(0xC0, 0xFF, 0xC0)**. Qui est la couleur indiquée par l’intersection.
+Le `Plus` et `Modulate` modes sont un peu différents des autres dans la mesure nouvelles couleurs peuvent être dû à la combinaison de la source et la destination. Le `Plus` mode peut être interprété soit avec les composants de l’octet ou à virgule flottante. Dans le **Duff de Porter grille** page présentée précédemment, la couleur de destination est **(0xC0, 0 x 80, 0 x 00)** et la couleur de la source est **(0 x 00, 0 x 80, 0xC0)** . Chaque paire de composants est ajouté, mais la somme est ancrée à 0xFF. Le résultat est la couleur **(0xC0, 0xFF, 0xC0)** . Qui est la couleur indiquée par l’intersection.
 
-Pour le `Modulate` mode, les valeurs RVB doivent être converties à virgule flottante. La couleur de destination est **(0,75, 0,5, 0)** et la source est **(0, 0,5, 0,75)**. Les composants RVB sont chacun multipliés, et le résultat est **(0, 0,25, 0)**. Qui est la couleur indiquée par l’intersection de la **Duff de Porter grille** page pour ce mode.
+Pour le `Modulate` mode, les valeurs RVB doivent être converties à virgule flottante. La couleur de destination est **(0,75, 0,5, 0)** et la source est **(0, 0,5, 0,75)** . Les composants RVB sont chacun multipliés, et le résultat est **(0, 0,25, 0)** . Qui est la couleur indiquée par l’intersection de la **Duff de Porter grille** page pour ce mode.
 
 Le **Duff de Porter transparence** page vous permet d’examiner comment les modes de blend de Porter-Duff fonctionnent sur des objets graphiques qui sont partiellement transparents. Le fichier XAML inclut un `Picker` avec les modes de Porter-Duff :
 
@@ -903,4 +903,4 @@ Les captures d’écran suivantes montrent les trois types de transitions diffé
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

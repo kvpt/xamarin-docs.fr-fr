@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/17/2018
-ms.openlocfilehash: a224d82ed7bb993f51be6cca6ccf09b5331cfac0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c89f04b1d1d87fed8d86d50cb68527391a7f317
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250586"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656204"
 ---
 # <a name="xamarinforms-stepper"></a>Exécution pas à pas de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
 _Utiliser une exécution pas à pas pour la sélection d’une valeur numérique à partir d’une plage de valeurs._
 
@@ -42,11 +42,11 @@ Le [ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) objet q
 
 ## <a name="basic-stepper-code-and-markup"></a>Balisage et code d’exécution pas à pas de base
 
-Le [ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) exemple contient trois pages qui sont fonctionnellement identiques, mais sont implémentées de différentes façons. La première page utilise uniquement C# code, la deuxième utilise XAML avec un gestionnaire d’événements dans le code et de la troisième est possible d’éviter le Gestionnaire d’événements à l’aide de la liaison de données dans le fichier XAML.
+Le [ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos) exemple contient trois pages qui sont fonctionnellement identiques, mais sont implémentées de différentes façons. La première page utilise uniquement C# code, la deuxième utilise XAML avec un gestionnaire d’événements dans le code et de la troisième est possible d’éviter le Gestionnaire d’événements à l’aide de la liaison de données dans le fichier XAML.
 
 ### <a name="creating-a-stepper-in-code"></a>Création d’une exécution pas à pas dans le code
 
-Le **Code d’exécution pas à pas de base** page dans le [ **StepperDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos) exemple montre comment créer un [ `Stepper` ](xref:Xamarin.Forms.Stepper) et deux [ `Label` ](xref:Xamarin.Forms.Label) objets dans le code :
+Le **Code d’exécution pas à pas de base** page dans le [ **StepperDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos) exemple montre comment créer un [ `Stepper` ](xref:Xamarin.Forms.Stepper) et deux [ `Label` ](xref:Xamarin.Forms.Label) objets dans le code :
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -182,7 +182,7 @@ Le **base liaisons d’exécution pas à pas** page montre comment écrire une a
 </ContentPage>
 ```
 
-Le [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) propriété du premier [ `Label` ](xref:Xamarin.Forms.Label) est lié à la [ `Value` ](xref:Xamarin.Forms.Stepper.Value) propriété de la [ `Stepper` ](xref:Xamarin.Forms.Stepper), comme est le [ `Text` ](xref:Xamarin.Forms.Label.Text) propriété du deuxième `Label` avec un `StringFormat` spécification. Le **exécution pas à pas des liaisons de base** page fonctions un peu différemment dans les deux pages précédentes : Lorsque la page s’affiche tout d’abord, le second `Label` affiche la chaîne de texte avec la valeur. Il s’agit d’un avantage de l’utilisation de la liaison de données. Pour afficher un texte sans liaison de données, vous devez initialiser spécifiquement le `Text` propriété de la `Label` ou simuler le déclenchement de la [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged) événement en appelant le Gestionnaire d’événements à partir du constructeur de classe .
+Le [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation) propriété du premier [ `Label` ](xref:Xamarin.Forms.Label) est lié à la [ `Value` ](xref:Xamarin.Forms.Stepper.Value) propriété de la [ `Stepper` ](xref:Xamarin.Forms.Stepper), comme est le [ `Text` ](xref:Xamarin.Forms.Label.Text) propriété du deuxième `Label` avec un `StringFormat` spécification. La page des liaisons de pas à pas de **base** fonctionne un peu différemment des deux pages précédentes: Lorsque la page s’affiche pour la première `Label` fois, la deuxième affiche la chaîne de texte avec la valeur. Il s’agit d’un avantage de l’utilisation de la liaison de données. Pour afficher un texte sans liaison de données, vous devez initialiser spécifiquement le `Text` propriété de la `Label` ou simuler le déclenchement de la [ `ValueChanged` ](xref:Xamarin.Forms.Stepper.ValueChanged) événement en appelant le Gestionnaire d’événements à partir du constructeur de classe .
 
 ## <a name="precautions"></a>Précautions
 
@@ -258,5 +258,5 @@ Lorsque [ `Minimum` ](xref:Xamarin.Forms.Stepper.Minimum) a la valeur 180, [ `Va
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de démonstrations d’exécution pas à pas](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/StepperDemos)
+- [Exemple de démonstrations d’exécution pas à pas](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 - [Exécution pas à pas API](xref:Xamarin.Forms.Stepper)

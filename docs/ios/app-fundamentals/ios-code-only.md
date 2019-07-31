@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 28475df4baa225cc9a608607be6ed673ad0e6e8a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 105d06c7cea23ac0873c8de68d7ad1ad62ae1ffc
+ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251381"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665716"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Création d’interfaces utilisateur iOS dans le code dans Xamarin.iOS
 
@@ -89,10 +89,10 @@ Les étapes ci-dessous vous guident lors de la suppression de la table de montag
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -118,10 +118,10 @@ public class AppDelegate : UIApplicationDelegate
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -132,7 +132,7 @@ Si vous deviez exécuter cette application maintenant, vous obtiendriez probable
 
 ## <a name="adding-a-controller"></a>Ajout d’un contrôleur
 
-Votre application peut contenir plusieurs contrôleurs d’affichage, mais il doit avoir un contrôleur d’affichage racine pour contrôler tous les contrôleurs d’affichage.  Ajouter un contrôleur à la fenêtre en créant un `UIViewController` instance et lui affectant la `window.RootViewController` propriété :
+Votre application peut contenir plusieurs contrôleurs d’affichage, mais il doit avoir un contrôleur d’affichage racine pour contrôler tous les contrôleurs d’affichage.  Ajouter un contrôleur à la fenêtre en créant un `UIViewController` instance et lui affectant la `Window.RootViewController` propriété :
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -632,4 +632,4 @@ Cet article a expliqué comment développer des applications iOS par programmati
 
 ## <a name="related-links"></a>Liens associés
 
-- [SimpleLogin (exemple)](https://developer.xamarin.com/samples/monotouch/SimpleLogin)
+- [SimpleLogin (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)
