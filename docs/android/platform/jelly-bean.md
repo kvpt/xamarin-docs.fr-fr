@@ -1,42 +1,42 @@
 ---
-title: Jelly Bean fonctionnalités
-description: 'Ce document vous fournit une vue d’ensemble détaillée des nouvelles fonctionnalités pour les développeurs qui ont été introduites dans Android 4.1. Ces fonctionnalités incluent : améliorée des notifications, les mises à jour Android faisceaux de partager des fichiers volumineux, les mises à jour de la découverte de réseau peer-to-peer multimédia, les animations, les nouvelles autorisations.'
+title: Fonctionnalités de la gelée
+description: 'Ce document fournit un aperçu général des nouvelles fonctionnalités pour les développeurs qui ont été introduits dans Android 4,1. Parmi ces fonctionnalités, citons les suivantes: notifications améliorées, mises à jour d’Android Beam pour partager des fichiers volumineux, mises à jour des éléments multimédias, découverte du réseau pair à pair, animations et nouvelles autorisations.'
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e54f499316d2b99d87d05fbd202308eecaaed220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61078393"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643374"
 ---
-# <a name="jelly-bean-features"></a>Jelly Bean fonctionnalités
+# <a name="jelly-bean-features"></a>Fonctionnalités de la gelée
 
-_Ce document vous fournit une vue d’ensemble détaillée des nouvelles fonctionnalités pour les développeurs qui ont été introduites dans Android 4.1. Ces fonctionnalités incluent : améliorée des notifications, les mises à jour Android faisceaux de partager des fichiers volumineux, les mises à jour de la découverte de réseau peer-to-peer multimédia, les animations, les nouvelles autorisations._
+_Ce document fournit un aperçu général des nouvelles fonctionnalités pour les développeurs qui ont été introduits dans Android 4,1. Parmi ces fonctionnalités, citons les suivantes: notifications améliorées, mises à jour d’Android Beam pour partager des fichiers volumineux, mises à jour des éléments multimédias, découverte du réseau pair à pair, animations et nouvelles autorisations._
 
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
-Android 4.1 (niveau d’API 16), également appelé « Jelly Bean », a été mise en production le 9 juillet 2012. Cet article fournit une introduction générale à certaines des nouvelles fonctionnalités dans Android 4.1 pour les développeurs à l’aide de Xamarin.Android. Certaines de ces nouvelles fonctionnalités introduites sont des animations pour le lancement d’une activité, de nouveaux sons pour un appareil photo et prise en charge améliorée pour la navigation de pile d’application. Il est désormais possible de couper et coller avec des intentions.
+Android 4,1 (API de niveau 16), également connu sous le nom de «composant Bean gelé», a été publié le 9 juillet 2012. Cet article fournit une présentation générale de certaines des nouvelles fonctionnalités d’Android 4,1 pour les développeurs qui utilisent Xamarin. Android. Certaines de ces nouvelles fonctionnalités introduites sont des améliorations apportées aux animations pour lancer une activité, de nouveaux sons pour un appareil photo et une meilleure prise en charge de la navigation dans la pile d’applications. Il est désormais possible de couper et coller avec des intentions.
 
-La stabilité des applications Android est améliorée avec la possibilité d’isoler la dépendance sur les fournisseurs de contenu instables. Services peuvent également être isolés afin qu’ils soient accessibles uniquement par l’activité qui a démarré les.
+La stabilité des applications Android est améliorée grâce à la possibilité d’isoler la dépendance vis-à-vis des fournisseurs de contenu instables. Les services peuvent également être isolés afin qu’ils soient accessibles uniquement par l’activité qui les a démarrés.
 
-Prise en charge a été ajoutée pour la découverte de service de réseau à l’aide de Bonjour, UPnP ou multidiffusion DNS des services basés sur. Il est désormais possible pour les notifications plus riches qui ont mises en forme de texte, des boutons d’action et des images de grande taille.
+Une prise en charge a été ajoutée pour la découverte de service réseau à l’aide de services basés sur Bonjour, UPnP ou DNS de multidiffusion. Il est désormais possible d’obtenir des notifications plus riches qui contiennent du texte mis en forme, des boutons d’action et des images volumineuses.
 
-Enfin, plusieurs nouvelles autorisations ont été ajoutées dans Android 4.1.
+Enfin, plusieurs nouvelles autorisations ont été ajoutées dans Android 4,1.
 
 
 
 ## <a name="requirements"></a>Configuration requise
 
-Pour développer des applications Xamarin.Android à l’aide de Jelly Bean nécessite Xamarin.Android 4.2.6 ou supérieur et Android 4.1 (niveau API 16) être installé via le gestionnaire Android SDK comme indiqué dans la capture d’écran suivante :
+Pour développer des applications Xamarin. Android à l’aide de gelée, vous devez installer Xamarin. Android 4.2.6 ou version ultérieure et Android 4,1 (niveau d’API 16) via le gestionnaire de Android SDK, comme illustré dans la capture d’écran suivante:
 
-[![Sélection d’Android 4.1 dans le gestionnaire Android SDK](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
+[![Sélection d’Android 4,1 dans le gestionnaire de Android SDK](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
 
 
@@ -46,14 +46,14 @@ Pour développer des applications Xamarin.Android à l’aide de Jelly Bean néc
 
 ### <a name="animations"></a>Animations
 
-Les activités peuvent être lancées à l’aide des animations de zoom ou des animations personnalisées à l’aide de la `ActivityOptions` classe. Les nouvelles méthodes suivantes sont fournies pour prendre en charge ces animations :
+Les activités peuvent être lancées à l’aide d’animations de zoom ou `ActivityOptions` d’animations personnalisées à l’aide de la classe. Les nouvelles méthodes suivantes sont fournies pour prendre en charge ces animations:
 
--   `MakeScaleUpAnimation` – Cette opération crée une animation qui monte une fenêtre d’activité à partir d’une position de départ et la taille à l’écran.
--   `MakeThumbnailScaleUpAnimation` – Cette opération crée une animation qui monte à partir d’une image miniature à partir de la position spécifiée dans l’écran.
--   `MakeCustomAnimation` : Il crée une animation à partir des ressources dans l’application. Il existe une animation pour lorsque l’activité s’ouvre et l’autre à l’arrêt de l’activité.
+-   `MakeScaleUpAnimation`: Cette opération crée une animation qui met à l’échelle une fenêtre d’activité à partir d’une position de départ et d’une taille à l’écran.
+-   `MakeThumbnailScaleUpAnimation`: Crée une animation qui se met à l’échelle à partir d’une image miniature de la position spécifiée à l’écran.
+-   `MakeCustomAnimation`: Crée une animation à partir des ressources de l’application. Il existe une animation pour le moment où l’activité s’ouvre et une autre pour lorsque l’activité s’arrête.
 
 
-La nouvelle `TimeAnimator` classe fournit une interface `TimeAnimator.ITimeListener` qui peut avertir une application chaque fois qu’un frame change dans une animation. Par exemple, considérez l’implémentation suivante de `TimeAnimator.ITimeListener`:
+La nouvelle `TimeAnimator` classe fournit une interface `TimeAnimator.ITimeListener` qui peut notifier une application chaque fois qu’un frame change dans une animation. Par exemple, considérez l’implémentation suivante `TimeAnimator.ITimeListener`de:
 
 ```csharp
 class MyTimeListener : Java.Lang.Object,  TimeAnimator.ITimeListener
@@ -65,7 +65,7 @@ class MyTimeListener : Java.Lang.Object,  TimeAnimator.ITimeListener
 }
 ```
 
-Et maintenant, pour utiliser la classe, une instance de `TimeAnimator` est créé, et l’écouteur est défini :
+Et maintenant, pour utiliser la classe, une instance `TimeAnimator` de est créée et l’écouteur est défini:
 
 ```csharp
 var animator = new TimeAnimator();
@@ -73,31 +73,31 @@ animator.SetTimeListener(new MyTimeListener());
 animator.Start();
 ```
 
-Comme le `TimeAnimator` instance est en cours d’exécution, il appelle `ITimeAnimator.ITimeListener`, qui enregistre alors la façon dont l’animation a depuis longtemps en cours d’exécution et la durée pendant laquelle il comme depuis la dernière fois que la méthode a été appelée.
+Lorsque l' `TimeAnimator` instance est en cours d’exécution, `ITimeAnimator.ITimeListener`elle appelle, qui consigne ensuite la durée d’exécution de l’animateur et le temps écoulé depuis la dernière fois que la méthode a été appelée.
 
 
 
-### <a name="application-stack-navigation"></a>Navigation de pile d’application
+### <a name="application-stack-navigation"></a>Navigation dans la pile d’applications
 
-Android 4.1 améliore la navigation de pile d’application qui a été introduite dans 3.0 Android. En spécifiant le `ParentName` propriété de la `ActivityAttribute`, Android peut ouvrir l’activité parente appropriée lorsque l’utilisateur appuie sur le [bouton](https://developer.android.com/design/patterns/navigation.html#up-vs-back) sur la barre d’action - Android instancie l’activité spécifiée par le `ParentName`propriété. Cela permet aux applications conserver la hiérarchie d’activités qui rendent une tâche donnée.
+Android 4,1 améliore la navigation dans la pile d’applications qui a été introduite dans Android 3,0. En spécifiant `ParentName` la propriété `ActivityAttribute`du, Android peut ouvrir l’activité parente appropriée lorsque l’utilisateur appuie sur le [bouton haut](https://developer.android.com/design/patterns/navigation.html#up-vs-back) de la barre d’action. Android instancie l’activité spécifiée `ParentName` par la propriété. Cela permet aux applications de conserver la hiérarchie des activités qui effectuent une tâche donnée.
 
-Pour la plupart des applications définissant le `ParentName` sur l’activité est suffisamment d’informations pour Android fournir le comportement correct pour naviguer dans la pile d’applications ; Android sera synthétiser la pile de retour nécessaires en créant une série d’intentions pour chaque activité parent. Toutefois, comme il s’agit d’une pile d’applications artificiel, chaque activité synthétique n’aura pas l’état enregistré ayant une activité naturelle. Pour fournir l’état enregistré pour une activité parente synthétique, une activité peut remplacer le `OnPrepareNavigationUpTaskStack` (méthode). Cette méthode reçoit un `TaskStackBuilder` objets d’instance qui auront un ensemble d’intention que Android utilisera pour créer la pile de retour. L’activité peut modifier ces intentions afin que, comme la création de l’activité synthétique, il recevra les informations d’état approprié.
+Pour la plupart des applications `ParentName` , le paramètre sur l’activité est suffisamment d’informations pour que Android fournisse le comportement correct pour naviguer dans la pile d’applications. Android synthétise la pile de retour nécessaire en créant une série d’intentions pour chaque activité parent. Toutefois, étant donné qu’il s’agit d’une pile d’applications artificielles, chaque activité synthétique n’aura pas l’état enregistré qu’une activité naturelle aurait. Pour fournir l’état enregistré à une activité parente synthétique, une activité peut substituer la `OnPrepareNavigationUpTaskStack` méthode. Cette méthode reçoit une `TaskStackBuilder` instance qui aura une collection d’objets d’intention qu’Android utilisera pour créer la pile de retour. L’activité peut modifier ces intentions afin que, lors de la création de l’activité synthétique, les informations d’État appropriées soient reçues.
 
-Pour des scénarios plus complexes, il existe nouvelles méthodes sur la classe d’activité qui peut-être être utilisée pour gérer le comportement de la navigation et de construire la pile de retour :
+Pour les scénarios plus complexes, il existe de nouvelles méthodes sur la classe Activity qui peuvent être utilisées pour gérer le comportement de la navigation vers le haut et construire la pile Back:
 
--   `OnNavigateUp` – En substituant cette méthode, il est possible d’effectuer une action personnalisée lorsque le <span class="ui">des</span> bouton est enfoncé.
--   `NavigateUpTo` – Cette méthode entraîne l’application à accéder à partir de l’activité actuelle à l’activité spécifiée par une intention donnée.
--   `ParentActivityIntent` : Il est utilisé pour obtenir une intention qui lancera l’activité parente de l’activité actuelle.
--   `ShouldUpRecreateTask` – Cette méthode est utilisée pour interroger si la pile de retour synthétique doit être créée pour naviguer jusqu'à une activité parente. Retourne `true` si la pile synthétique doit être créée. 
--   `FinishAffinity` – Cette méthode se termine l’activité actuelle et toutes les activités en dessous de la tâche en cours qui ont une affinité même de la tâche.
--   `OnCreateNavigateUpTaskStack` – Cette méthode est substituée lorsqu’il est nécessaire de disposer d’un contrôle complet sur la façon dont la pile synthétique est créée.
+-   `OnNavigateUp`: En substituant cette méthode, il est possible d’exécuter une action personnalisée quand vous appuyez sur le bouton <span class="ui">haut</span> .
+-   `NavigateUpTo`: L’appel de cette méthode permet à l’application de naviguer de l’activité actuelle à l’activité spécifiée par une intention donnée.
+-   `ParentActivityIntent`: Permet d’obtenir une intention qui lance l’activité parente de l’activité en cours.
+-   `ShouldUpRecreateTask`: Cette méthode est utilisée pour interroger si la pile de retour synthétique doit être créée pour accéder à une activité parente. Retourne `true` si la pile synthétique doit être créée. 
+-   `FinishAffinity`: L’appel de cette méthode termine l’activité en cours et toutes les activités situées au-dessous de celle-ci dans la tâche actuelle qui ont la même affinité de tâche.
+-   `OnCreateNavigateUpTaskStack`: Cette méthode est substituée lorsqu’il est nécessaire de disposer d’un contrôle total sur la façon dont la pile synthétique est créée.
 
 
 
 
 ### <a name="camera"></a>Appareil photo
 
-Il existe une nouvelle interface, `Camera.IAutoFocusMoveCallback`, qui peut être utilisé pour détecter lorsque le focus automatique a démarré ou arrêté le déplacement. Un exemple de cette nouvelle interface peut être consultée dans l’extrait suivant :
+Il existe une nouvelle interface, `Camera.IAutoFocusMoveCallback`, qui peut être utilisée pour détecter quand le focus automatique a démarré ou a cessé de se déplacer. Vous pouvez voir un exemple de cette nouvelle interface dans l’extrait de code suivant:
 
 ```csharp
 public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
@@ -118,15 +118,15 @@ public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
 }
 ```
 
-La nouvelle classe `MediaActionSound` fournit un ensemble de l’API de production des sons pour les différentes actions de support. Il existe plusieurs actions qui peuvent se produire avec un appareil photo, elles sont définies par l’énumération `Android.Media.MediaActionSoundType`:
+La nouvelle classe `MediaActionSound` fournit un ensemble d’API pour produire des sons pour les différentes actions de média. Il existe plusieurs actions qui peuvent se produire avec une caméra, celles-ci sont définies `Android.Media.MediaActionSoundType`par l’énumération:
 
--   `MediaActionSoundType.FocusComplete` – Cet son est lu en mettant l’accent est terminée.
--   `MediaActionSoundType.ShutterClick` – Ce son est lu lors de la prise d’une image d’image fixe.
--   `MediaActionSoundType.StartVideoRecording` – Ce son sert indiquer le début d’un enregistrement vidéo.
--   `MediaActionSoundType.StopVideoRecording` – Ce son est lu pour indiquer la fin de l’enregistrement vidéo.
+-   `MediaActionSoundType.FocusComplete`: Ce son qui est lu lorsque le focus est terminé.
+-   `MediaActionSoundType.ShutterClick`: Ce son est lu quand une image continue est prise.
+-   `MediaActionSoundType.StartVideoRecording`: Ce son est utilisé pour indiquer le début de l’enregistrement vidéo.
+-   `MediaActionSoundType.StopVideoRecording`: Ce son est lu pour indiquer la fin de l’enregistrement vidéo.
 
 
-Un exemple montrant comment utiliser le `MediaActionSound` classe peut être consultée dans l’extrait de code suivant :
+Vous pouvez voir un exemple d’utilisation `MediaActionSound` de la classe dans l’extrait de code suivant:
 
 ```csharp
 var mediaActionPlayer = new MediaActionSound();
@@ -151,139 +151,139 @@ mediaActionPlayer.Release();
 
 #### <a name="android-beam"></a>Android Beam
 
-FAISCEAU Android est une technologie de NFC en autorisant les appareils Android deux communiquer entre eux. Android 4.1 fournit une meilleure prise en charge pour le transfert de fichiers volumineux. Lors de l’utilisation de la nouvelle méthode `NfcAdapter.SetBeamPushUris()` Android bascule entre les mécanismes de transport autre (par exemple, Bluetooth) pour atteindre une vitesse de transfert rapide.
+Android Beam est une technologie NFC qui permet à deux appareils Android de communiquer entre eux. Android 4,1 offre une meilleure prise en charge du transfert de fichiers volumineux. Lorsque vous utilisez la nouvelle `NfcAdapter.SetBeamPushUris()` méthode, Android bascule entre les mécanismes de transport alternatifs (tels que Bluetooth) pour obtenir une vitesse de transfert rapide.
 
 
 
-#### <a name="network-services-discovery"></a>Découverte de Services réseau
+#### <a name="network-services-discovery"></a>Découverte de Network Services
 
-Android 4.1 contient de nouvelles API pour la découverte de service de multidiffusion basée sur DNS.
-Cela permet à une application détecter et se connecter via le Wi-Fi avec d’autres appareils tels que des imprimantes, des caméras et des appareils multimédias. Ces nouvelles API est dans le `Android.Net.Nsd` package.
+Android 4,1 contient de nouvelles API pour la détection des services basés sur DNS de multidiffusion.
+Cela permet à une application de détecter et de se connecter via le Wi-Fi à d’autres appareils, tels que des imprimantes, des appareils photo et des appareils multimédias. Ces nouvelles API se trouvent dans le `Android.Net.Nsd` package.
 
-Pour créer un service qui peut être consommé par d’autres services, le `NsdServiceInfo` classe est utilisée pour créer un objet qui définit les propriétés d’un service. Cet objet est alors fourni `NsdManager.RegisterService()` ainsi que d’une implémentation de `NsdManager.ResolveListener`. Les implémentations de `NsdManager.ResolveListener` servent à avertir d’une inscription réussie et annuler l’inscription du service.
+Pour créer un service qui peut être consommé par d’autres services, `NsdServiceInfo` la classe est utilisée pour créer un objet qui définit les propriétés d’un service. Cet objet est ensuite fourni `NsdManager.RegisterService()` avec une implémentation de. `NsdManager.ResolveListener` Les implémentations `NsdManager.ResolveListener` de sont utilisées pour notifier une inscription réussie et pour annuler l’inscription du service.
 
-Pour découvrir les services sur le réseau et l’implémentation de `Nsd.DiscoveryListener` passé à `NsdManager.discoverServices()`.
+Pour découvrir les services sur le réseau et l’implémentation `Nsd.DiscoveryListener` de passé `NsdManager.discoverServices()`à.
 
 
 
 #### <a name="network-usage"></a>Utilisation du réseau
 
-Une nouvelle méthode, `ConnectivityManager.IsActiveNetworkMetered` permet à un appareil vérifier si elle est connecté à un réseau limitées. Cette méthode peut être utilisée pour aider à gérer l’utilisation des données en informant précisément des utilisateurs qu’il existe peut-être des frais coûteux pour les opérations de données.
+Une nouvelle méthode `ConnectivityManager.IsActiveNetworkMetered` permet à un appareil de vérifier s’il est connecté à un réseau contrôlé. Cette méthode peut être utilisée pour faciliter la gestion de l’utilisation des données en informant les utilisateurs qu’il peut y avoir des frais coûteux pour les opérations de données.
 
 
 
-#### <a name="wifi-direct-service-discovery"></a>Détection du Service Wi-Fi Direct
+#### <a name="wifi-direct-service-discovery"></a>Détection du service Wi-Fi direct
 
-Le `WifiP2pManager` classe a été introduite dans Android 4.0 pour prendre en charge *zeroconf*. Zeroconf (aucune gestion de réseau de configuration) est un ensemble de techniques qui permette aux appareils (ordinateurs, imprimantes, téléphones) pour se connecter aux réseaux automatiquement, avec l’intervention des opérateurs humains réseau ou des serveurs de configuration spéciale.
+La `WifiP2pManager` classe a été introduite dans Android 4,0 pour prendre en charge *Zeroconf*. Zeroconf (mise en réseau de configuration nulle) est un ensemble de techniques qui permet aux appareils (ordinateurs, imprimantes, téléphones) de se connecter automatiquement aux réseaux, avec l’intervention d’opérateurs de réseau humain ou de serveurs de configuration spéciaux.
 
-Dans Jelly Bean, `WifiP2pManager` peut découvrir les périphériques à l’aide proches *Bonjour* ou *Upnp*. Bonjour est mise en œuvre d’Apple de zeroconf. UPnP est un ensemble de protocoles réseau qui prend également en charge zeroconf. Les méthodes suivantes, ajoutées à la `WiFiP2pManager` pour prendre en charge la détection du service Wi-Fi :
+Dans une haricot de gelée, `WifiP2pManager` peut détecter des appareils à proximité à l’aide de *Bonjour* ou de *UPnP*. Bonjour est l’implémentation d’Apple de Zeroconf. UPnP est un ensemble de protocoles réseau qui prend également en charge Zeroconf. Les méthodes suivantes ont été ajoutées `WiFiP2pManager` à pour prendre en charge la découverte de service Wi-Fi:
 
--   `AddLocalService()` – Cette méthode est utilisée annoncer une application en tant que service via le Wi-Fi pour la découverte par les homologues.
--   `AddServiceRequest(` ) : Cette méthode consiste à envoyer une demande de découverte de service à l’infrastructure. Elle est utilisée pour initialiser la découverte de service Wi-Fi.
--   `SetDnsSdResponseListeners()` – Cette méthode est utilisée pour enregistrer des rappels à appeler à la réception d’une réponse aux demandes de découverte de Bonjour.
--   `SetUpnpServiceResponseListener()` – Cette méthode est utilisée pour enregistrer des rappels à appeler pour recevoir une réponse aux demandes de découverte Upnp.
+-   `AddLocalService()`: Cette méthode est utilisée pour annoncer une application en tant que service sur le Wi-Fi pour la découverte par des pairs.
+-   `AddServiceRequest(`): Cette méthode permet d’envoyer une demande de découverte de service à l’infrastructure. Elle est utilisée pour initialiser la détection du service Wi-Fi.
+-   `SetDnsSdResponseListeners()`: Cette méthode est utilisée pour enregistrer les rappels à appeler lors de la réception d’une réponse aux demandes de découverte à partir de Bonjour.
+-   `SetUpnpServiceResponseListener()`: Cette méthode est utilisée pour enregistrer les rappels à appeler lors de la réception d’une réponse aux requêtes de découverte UPnP.
 
 
 
 
 ### <a name="content-providers"></a>Fournisseurs de contenu
 
-Le `ContentResolver` classe a reçu une nouvelle méthode, `AcquireUnstableContentProvider`. Cette méthode permet à une application acquérir un fournisseur de contenu « instable ». Normalement, quand une application acquiert un fournisseur de contenu et ce fournisseur de contenu se bloque, il en sera de l’application. Avec cet appel de méthode, une application se bloquera pas si le fournisseur de contenu tombe en panne. Au lieu de cela, `Android.OS.DeadObjectionException` sera levée à partir des appels sur le fournisseur de contenu pour informer une application du fournisseur de contenu a disparu. Un fournisseur de contenu « instable » est utile lors de l’interaction avec les fournisseurs de contenu à partir d’autres applications : il est moins probable que le code bogué à partir d’une autre application affectera une autre application.
+La `ContentResolver` classe a reçu une nouvelle méthode, `AcquireUnstableContentProvider`. Cette méthode permet à une application d’obtenir un fournisseur de contenu «instable». Normalement, lorsqu’une application acquiert un fournisseur de contenu, et que ce fournisseur de contenu se bloque, l’application est donc. Avec cet appel de méthode, une application ne se bloquera pas en cas de blocage du fournisseur de contenu. Au lieu `Android.OS.DeadObjectionException` de cela, sera levée à partir des appels sur le fournisseur de contenu pour informer une application que le fournisseur de contenu a disparu. Un fournisseur de contenu «instable» est utile lors de l’interaction avec les fournisseurs de contenu à partir d’autres applications: il est moins probable que le code de bogue d’une autre application affecte une autre application.
 
 
 
-### <a name="copy-and-paste-with-intents"></a>Copier et coller avec des intentions
+### <a name="copy-and-paste-with-intents"></a>Copier et coller avec les intentions
 
-Le `Intent` classe peut désormais avoir un `ClipData` objet associé à celui-ci via le `Intent.ClipData` propriété. Cette méthode permet des données supplémentaires à partir du Presse-papiers doit être transmis avec l’intention. Une instance de `ClipData` peut contenir un ou plusieurs `ClipData.Item`. `ClipData.Item`de sont des éléments des types suivants :
+`Intent.ClipData` Un `Intent` objetestmaintenantassociéàlaclasse`ClipData` via la propriété. Cette méthode permet de transmettre des données supplémentaires du presse-papiers avec l’intention. Une instance de `ClipData` peut contenir un ou plusieurs `ClipData.Item`. `ClipData.Item`les sont des éléments des types suivants:
 
--   **Texte** : il s’agit d’une chaîne de texte, soit HTML ou étendues de n’importe quelle chaîne dont le format est pris en charge par le style Android intégré.
--  **Intention** – n’importe laquelle `Intent` objet.
--   **URI** : cela peut être n’importe quel URI, par exemple un signet HTTP ou l’URI vers un fournisseur de contenu.
+-   **Text** : il s’agit d’une chaîne de texte, html ou toute chaîne dont le format est pris en charge par les étendues de style Android intégrées.
+-  **Intent** : `Intent` tout objet.
+-   **URI** : il peut s’agir de n’importe quel URI, tel qu’un signet http ou l’URI d’un fournisseur de contenu.
 
 
 
 
 ### <a name="isolated-services"></a>Services isolés
 
-Un service isolé est un service qui s’exécute sous son propre processus spécial et dispose d’aucune autorisation de son propre. La seule communication avec le service est lorsque démarre le service et la liaison à ce dernier via l’API de Service. Il est possible de déclarer un service en tant qu’isolé en définissant la propriété `IsolatedProcess="true"` dans le `ServiceAttribute` qui orne une classe de service.
+Un service isolé est un service qui s’exécute sous son propre processus spécial et ne dispose d’aucune autorisation propre. La seule communication avec le service est lors du démarrage du service et de sa liaison via l’API de service. Il est possible de déclarer un service comme isolé en définissant la `IsolatedProcess="true"` propriété `ServiceAttribute` dans qui orne une classe de service.
 
 
 ### <a name="media"></a>Médias
 
-La nouvelle `Android.Media.MediaCodec` classe fournit une API permettant de codecs multimédias de bas niveau. Les applications peuvent interroger le système pour savoir quels codecs de bas niveau sont disponibles sur l’appareil.
+La nouvelle `Android.Media.MediaCodec` classe fournit une API aux codecs de média de bas niveau. Les applications peuvent interroger le système pour connaître les codecs de bas niveau disponibles sur l’appareil.
 
-La nouvelle `Android.Media.Audiofx.AudioEffect` sous-classes ont été ajoutées pour prendre en charge audio supplémentaire prétraitement sur audio capturé :
+Les nouvelles `Android.Media.Audiofx.AudioEffect` sous-classes ont été ajoutées pour prendre en charge un prétraitement audio supplémentaire sur le son capturé:
 
--   `Android.Media.Audiofx.AcousticEchoCanceler` – Cette classe est utilisée pour le prétraitement audio pour supprimer le signal d’un tiers distant à partir d’un signal audio capturé. Par exemple, la suppression l’écho à partir d’une application de communication vocale.
--   `Android.Media.Audiofx.AutomaticGainControl` – Cette classe est utilisée pour normaliser le signal capturé par boosting ou réduction d’un signal d’entrée afin que le signal de sortie est constant.
--   `Android.Media.Audiofx.NoiseSuppressor` -Cette classe supprime le bruit de fond le signal capturé.
+-   `Android.Media.Audiofx.AcousticEchoCanceler`: Cette classe est utilisée pour le pré-traitement audio pour supprimer le signal d’un tiers distant d’un signal audio capturé. Par exemple, la suppression de l’écho d’une application de communication vocale.
+-   `Android.Media.Audiofx.AutomaticGainControl`: Cette classe est utilisée pour normaliser le signal capturé en amplifiant ou en abaissant un signal d’entrée afin que le signal de sortie soit constant.
+-   `Android.Media.Audiofx.NoiseSuppressor`: Cette classe supprime le bruit de fond du signal capturé.
 
 
-Tous les périphériques prendra en charge ces effets. La méthode `AudioEffect.IsAvailable` doit être appelée par une application pour voir si l’effet audio en question est pris en charge sur l’appareil qui exécute l’application.
+Tous les appareils ne prennent pas en charge ces effets. La méthode `AudioEffect.IsAvailable` doit être appelée par une application pour voir si l’effet audio en question est pris en charge sur l’appareil exécutant l’application.
 
-Le `MediaPlayer` classe prend désormais en charge la lecture du ininterrompue avec le `SetNextMediaPlayer()` (méthode). Cette nouvelle méthode spécifie MediaPlayer suivant pour démarrer le lecteur multimédia actuel issue de sa lecture.
+La `MediaPlayer` classe prend désormais en charge la lecture `SetNextMediaPlayer()` ininterrompue avec la méthode. Cette nouvelle méthode spécifie le prochain MediaPlayer à démarrer lorsque le lecteur multimédia actuel termine sa lecture.
 
-Les nouvelles classes suivantes fournissent des mécanismes standard et l’interface utilisateur permettant de sélectionner où le média est lu :
+Les nouvelles classes suivantes fournissent des mécanismes standard et une interface utilisateur pour sélectionner l’emplacement de lecture des médias:
 
--   `MediaRouter` – Cette classe permet aux applications de contrôler le routage des canaux de support à partir d’un appareil à haut-parleurs externes ou d’autres périphériques.
--   `MediaRouterActionProvider` et `MediaRouteButton` – ces classes permettent de fournir une interface utilisateur cohérente pour sélectionner et de lecture de médias.
+-   `MediaRouter`: Cette classe permet aux applications de contrôler le routage des canaux multimédias d’un appareil vers des haut-parleurs externes ou d’autres appareils.
+-   `MediaRouterActionProvider`et `MediaRouteButton` : ces classes aident à fournir une interface utilisateur cohérente pour la sélection et la diffusion de médias.
 
 
 
 
 ### <a name="notifications"></a>Notifications
 
-Android 4.1 permet aux applications de plus de souplesse et de contrôle d’affichage des notifications. Applications peuvent désormais afficher les notifications plues aux utilisateurs. Une nouvelle méthode, `NotificationBuilder.SetStyle()` permet d’être définie sur les notifications pour l’une des trois nouvelles nouveau style :
+Android 4,1 offre aux applications plus de souplesse et de contrôle sur l’affichage des notifications. Les applications peuvent désormais afficher des notifications plus volumineuses et plus performantes pour les utilisateurs. Une nouvelle méthode `NotificationBuilder.SetStyle()` permet de définir l’un des trois nouveaux styles sur les notifications:
 
--   `Notification.BigPictureStyle` – Il s’agit d’une classe d’assistance qui génère des notifications qui contiennent une image dans les. L’illustration suivante montre un exemple d’une notification avec une grande image :
-
-
- [![Capture d’écran de l’exemple d’une notification BigPictureStyle](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
-
--   `Notification.BigTextStyle` – Il s’agit d’une classe d’assistance qui génère des notifications qui ont plusieurs lignes de texte, comme le courrier électronique. Un exemple de ce nouveau style de notification peut être consultée dans la capture d’écran suivante :
+-   `Notification.BigPictureStyle`: Il s’agit d’une classe d’assistance qui génèrera des notifications qui comporteront une image. L’illustration suivante montre un exemple de notification avec une image Big:
 
 
- [![Capture d’écran de l’exemple d’une notification BigTextStyle](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
+ [![Exemple de capture d’écran d’une notification BigPictureStyle](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
--   `Notification.InboxStyle` – Il s’agit d’une classe d’assistance qui génère des notifications qui contiennent une liste de chaînes, telles que des extraits de code à partir d’un message électronique, comme indiqué dans cette capture d’écran :
+-   `Notification.BigTextStyle`: Il s’agit d’une classe d’assistance qui génèrera des notifications qui auront plusieurs lignes de texte, telles que le courrier électronique. Vous pouvez voir un exemple de ce nouveau style de notification dans la capture d’écran suivante:
 
 
- [![Capture d’écran de l’exemple d’une notification Notification.InboxStyle](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
+ [![Exemple de capture d’écran d’une notification BigTextStyle](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
-Il est possible d’ajouter deux boutons d’action en bas d’un message de notification lorsque la notification utilise le style normal ou supérieur.
-Un exemple de ce peut être consultée dans la capture d’écran suivante, où les boutons d’action sont visibles en bas de la notification :
+-   `Notification.InboxStyle`: Il s’agit d’une classe d’assistance qui génère des notifications contenant une liste de chaînes, telles que des extraits de code à partir d’un message électronique, comme illustré dans cette capture d’écran:
 
- [![Capture d’écran de l’exemple de boutons d’action affichés un message de notification ci-dessous](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
-Le `Notification` classe a reçu de nouvelles constantes qui permettent au développeur de spécifier l’une des cinq niveaux de priorité pour une notification. Ils peuvent être définis sur une notification à l’aide de la `Priority` propriété.
+ [![Exemple de capture d’écran d’une notification. InboxStyle](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
+
+Il est possible d’ajouter jusqu’à deux boutons d’action en bas d’un message de notification lorsque la notification utilise le style normal ou plus grand.
+Vous pouvez voir un exemple dans la capture d’écran suivante, où les boutons d’action sont visibles au bas de la notification:
+
+ [![Exemple de capture d’écran des boutons d’action affichés sous un message de notification](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
+
+La `Notification` classe a reçu de nouvelles constantes qui permettent à un développeur de spécifier l’un des cinq niveaux de priorité pour une notification. Elles peuvent être définies sur une notification à l' `Priority` aide de la propriété.
 
 
 
 ### <a name="permissions"></a>Autorisations
 
-Les nouvelles autorisations suivantes ont été ajoutées :
+Les nouvelles autorisations suivantes ont été ajoutées:
 
--   `READ_EXTERNAL_STORAGE` -L’application requiert un accès en lecture seule à un stockage externe. Actuellement toutes les applications ont un accès en lecture par défaut, mais les versions futures d’Android nécessiteront applications demandent explicitement l’accès en lecture.
--   `READ_USER_DICTIONARY` -Permet un accès en lecture au dictionnaire de word de l’utilisateur.
--   `READ_CALL_LOG` -Permet d’obtenir des informations sur les appels entrants et sortants en lisant le journal des appels.
--   `WRITE_CALL_LOG` -Permet à une application à écrire dans le journal des appels sur le téléphone.
--   `WRITE_USER_DICTIONARY` -Permet à une application à écrire dans le dictionnaire de word de l’utilisateur.
+-   `READ_EXTERNAL_STORAGE`-L’application nécessite un accès en lecture seule au stockage externe. Actuellement, toutes les applications ont un accès en lecture par défaut, mais les versions ultérieures d’Android requièrent des applications qui demandent explicitement un accès en lecture.
+-   `READ_USER_DICTIONARY`-Autorise un accès en lecture au dictionnaire Word de l’utilisateur.
+-   `READ_CALL_LOG`-Permet à une application d’obtenir des informations sur les appels entrants et sortants en lisant le journal des appels.
+-   `WRITE_CALL_LOG`-Permet à une application d’écrire dans le journal des appels sur le téléphone.
+-   `WRITE_USER_DICTIONARY`-Permet à une application d’écrire dans le dictionnaire Word de l’utilisateur.
 
 
-Un changement important de noter `READ_EXTERNAL_STORAGE` – actuellement cette autorisation est accordée automatiquement par Android. Les versions futures d’Android nécessiteront une application de demander cette autorisation avant de l’autorisation.
+Une modification importante à noter `READ_EXTERNAL_STORAGE` : actuellement, cette autorisation est accordée automatiquement par Android. Les versions ultérieures d’Android requièrent qu’une application demande cette autorisation avant de lui accorder l’autorisation.
 
 
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté certaines de la nouvelle API qui sont disponible dans Android 4.1 (niveau API 16). Mis en surbrillance certaines modifications pour les animations et animer le lancement d’une activité, elle a introduit la nouvelle API Service découverte du réseau d’autres appareils à l’aide de protocoles tels que Bonjour ou UPnP. Autres modifications apportées à l’API ont été mis en surbrillance, comme la possibilité de couper et coller des données via les intentions, la possibilité d’utiliser des services isolés ou des fournisseurs de contenu « instables ».
+Cet article a présenté quelques-unes des nouvelles API disponibles dans Android 4,1 (niveau d’API 16). Il a mis en évidence certaines des modifications apportées aux animations et à animer le lancement d’une activité, et a introduit les nouvelles API pour la découverte du réseau d’autres appareils à l’aide de protocoles tels que Bonjour ou UPnP. D’autres modifications apportées à l’API ont également été mises en surbrillance, telles que la possibilité de couper et coller des données via des intentions, la possibilité d’utiliser des services isolés ou des fournisseurs de contenu «instables».
 
-Cet article s’est passé pour présenter les mises à jour les notifications, puis abordé certaines des nouvelles autorisations qui ont été introduites avec Android 4.1
+Cet article s’est ensuite présenté à l’introduction des mises à jour des notifications et a abordé certaines des nouvelles autorisations introduites avec Android 4,1
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple d’Animation de temps (exemple)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
-- [Android 4.1 API](https://developer.android.com/about/versions/android-4.1.html)
-- [Tâches et les piles Back](https://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [Navigation précédent et à distance](https://developer.android.com/design/patterns/navigation.html)
+- [Exemple d’animation temporelle (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-timeanimatorexample)
+- [API Android 4,1](https://developer.android.com/about/versions/android-4.1.html)
+- [Tâches et piles de arrière-plan](https://developer.android.com/guide/components/tasks-and-back-stack.html)
+- [Navigation avec l’arrière-plan](https://developer.android.com/design/patterns/navigation.html)

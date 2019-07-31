@@ -1,48 +1,48 @@
 ---
-title: Affichage des alertes dans Xamarin.iOS
-description: Ce document décrit comment afficher les alertes dans Xamarin.iOS à l’aide de l’API introduit dans iOS 8 UIAlertController.
+title: Affichage des alertes dans Xamarin. iOS
+description: Ce document explique comment afficher des alertes dans Xamarin. iOS à l’aide des API UIAlertController introduites dans iOS 8.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 576de9a46fc89fe01c564c05568d4331a32dbd96
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674394"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652049"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>Affichage des alertes dans Xamarin.iOS
+# <a name="displaying-alerts-in-xamarinios"></a>Affichage des alertes dans Xamarin. iOS
 
-À compter d’iOS 8, UIAlertController a terminé UIActionSheet remplacé et UIAlertView qui sont désormais déconseillés.
+À compter d’iOS 8, UIAlertController a terminé le remplacement de UIActionSheet et UIAlertView tous deux qui sont désormais dépréciés.
 
-Contrairement aux classes qui sont des sous-classes de UIView, qu'il est remplacé, UIAlertController est une sous-classe de UIViewController.
+Contrairement aux classes qu’il a remplacées, qui sont des sous-classes de UIView, UIAlertController est une sous-classe de UIViewController.
 
-Utilisez `UIAlertControllerStyle` pour indiquer le type d’alerte à afficher. Ces types d’alertes sont :
+Utilisez `UIAlertControllerStyle` pour indiquer le type d’alerte à afficher. Ces types d’alertes sont les suivants:
 
 - **UIAlertControllerStyleActionSheet**
-    * Préliminaire iOS 8 cela aurait été un UIActionSheet
+    * Pré-iOS 8 cela aurait été un UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * Préliminaire iOS 8 cela aurait été UIAlertView 
+    * Pré-iOS 8 cela aurait été UIAlertView 
 
-Il existe trois étapes nécessaires à prendre lors de la création d’un contrôleur d’alerte :
+Il existe trois étapes nécessaires à suivre lors de la création d’un contrôleur d’alerte:
 
-- Créer et configurer l’alerte avec r :
-    * titre
+- Créez et configurez l’alerte avec:
+    * title
     * message
     * preferredStyle
     
-- (Facultatif) Ajouter un champ de texte
-- Ajoutez les actions requises
+- Facultatif Ajouter un champ de texte
+- Ajouter les actions requises
 - Présenter le contrôleur d’affichage
 
-L’alerte la plus simple contient un seul bouton, comme indiqué dans cette capture d’écran :
+L’alerte la plus simple contient un seul bouton, comme illustré dans cette capture d’écran:
 
  ![Alerte avec un bouton](alerts-images/alert1.png)
 
-Le code permettant d’afficher une alerte simple est la suivante :
+Le code permettant d’afficher une alerte simple est le suivant:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-Affiche une alerte avec plusieurs options, s’effectue de manière similaire, mais ajouter deux actions. Par exemple, la capture d’écran suivante montre une alerte avec deux boutons :
+L’affichage d’une alerte avec plusieurs options s’effectue de la même manière, mais ajoute deux actions. Par exemple, la capture d’écran suivante montre une alerte avec deux boutons:
 
- ![Avec deux boutons d’alerte](alerts-images/alert2.png)
+ ![Alerte avec deux boutons](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Alertes peuvent également afficher une feuille d’action, semblable à la capture d’écran ci-dessous :
+Les alertes peuvent également afficher une feuille d’action, similaire à la capture d’écran ci-dessous:
 
- ![Alerte de feuille d’action](alerts-images/alert3.png)
+ ![Alerte de la feuille d’action](alerts-images/alert3.png)
 
-Boutons sont ajoutés à l’alerte avec le `AddAction` méthode :
+Les boutons sont ajoutés à l’alerte avec `AddAction` la méthode:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôles (exemple)](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [Contrôles (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
 - [Contrôleur d’alerte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

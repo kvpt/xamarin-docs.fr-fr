@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: e959f0d3cafa9e856458472668244fcd33ba4f81
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fea96ab645b2d01b774f691402a5796eec1f1dba
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510232"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644968"
 ---
 # <a name="android-time-picker"></a>Sélecteur d’heure Android
 
@@ -34,7 +34,7 @@ L’exemple d’application pour ce guide cible Android 4,1 (niveau d’API
 
 ## <a name="using-the-timepicker"></a>Utilisation de TimePicker
 
-Cet exemple s' `DialogFragment`étend; l’implémentation de la `DialogFragment` sous- `TimePickerFragment` classe de (appelée ci- `TimePickerDialog`dessous) héberge et affiche un. Lorsque l’exemple d’application est lancé pour la première fois  , il affiche un bouton `TextView` de sélection au-dessus d’un qui sera utilisé pour afficher l’heure sélectionnée:
+Cet exemple s' `DialogFragment`étend; l’implémentation de la `DialogFragment` sous- `TimePickerFragment` classe de (appelée ci- `TimePickerDialog`dessous) héberge et affiche un. Lorsque l’exemple d’application est lancé pour la première fois , il affiche un bouton `TextView` de sélection au-dessus d’un qui sera utilisé pour afficher l’heure sélectionnée:
 
 [![Écran d’exemple d’application initial](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
@@ -42,7 +42,7 @@ Lorsque vous cliquez sur le bouton **choisir une heure** , l’exemple d' `TimeP
 
 [![Capture d’écran de la boîte de dialogue du sélecteur d’heure par défaut affichée par l’application](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
-Dans le `TimePickerDialog`, si vous sélectionnez une heure et  cliquez sur le bouton `TimePickerDialog` OK, le appelle la méthode [IOnTimeSetListener. OnTimeSet](xref:Android.App.TimePickerDialog.IOnTimeSetListener.OnTimeSet*).
+Dans le `TimePickerDialog`, si vous sélectionnez une heure et cliquez sur le bouton `TimePickerDialog` OK, le appelle la méthode [IOnTimeSetListener. OnTimeSet](xref:Android.App.TimePickerDialog.IOnTimeSetListener.OnTimeSet*).
 Cette interface est implémentée par l' `DialogFragment` hébergement`TimePickerFragment`(, décrit ci-dessous). Lorsque vous cliquez sur le bouton **Annuler** , le fragment et la boîte de dialogue sont ignorés.
 
 `DialogFragment`retourne l’heure sélectionnée à l’activité d’hébergement de l’une des trois façons suivantes:
@@ -282,4 +282,4 @@ Cet article a expliqué comment afficher un `TimePicker` widget en tant que boî
 - [Sélecteur d’heure](xref:Android.Widget.TimePicker)
 - [TimePickerDialog](xref:Android.App.TimePickerDialog)
 - [TimePickerDialog.IOnTimeSetListener](xref:Android.App.TimePickerDialog.IOnTimeSetListener)
-- [TimePickerDemo (exemple)](https://developer.xamarin.com/samples/monodroid/UserInterface/TimePickerDemo)
+- [TimePickerDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-timepickerdemo)

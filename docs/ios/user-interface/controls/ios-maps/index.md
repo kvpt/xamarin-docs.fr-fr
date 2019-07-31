@@ -1,26 +1,26 @@
 ---
-title: Cartes dans Xamarin.iOS
-description: Ce document décrit l’infrastructure de MapKit iOS et comment il est utilisé avec Xamarin.iOS. Elle explique comment ajouter un mappage, style, panoramique et zoom, travailler avec l’emplacement de l’utilisateur, ajouter des annotations, des légendes et des superpositions et effectuer la recherche locale.
+title: Cartes dans Xamarin. iOS
+description: Ce document décrit l’infrastructure iOS MapKit et la façon dont elle est utilisée avec Xamarin. iOS. Il explique comment ajouter un mappage, le stylet, le panoramique et le zoom, comment utiliser l’emplacement de l’utilisateur, ajouter des annotations, travailler avec des légendes et des superpositions, et effectuer une recherche locale.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c61b5a8bd99afda5e8fbeea44e3362574fa7feea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61226729"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642919"
 ---
-# <a name="maps-in-xamarinios"></a>Cartes dans Xamarin.iOS
+# <a name="maps-in-xamarinios"></a>Cartes dans Xamarin. iOS
 
-Les mappages sont une fonctionnalité commune dans tous les systèmes d’exploitation mobiles modernes. iOS prend en charge de mappage en mode natif par le biais du Kit de la carte. Avec le Kit de la carte, applications peuvent facilement ajouter des mappages riches et interactives. Ces cartes peuvent être personnalisés de plusieurs façons, telles que l’ajout d’annotations pour marquer des emplacements sur une carte et recouvrir des graphiques de formes arbitraires. Kit de carte a même la prise en charge intégrée de l’affichage de l’emplacement actuel d’un appareil.
+Les mappages sont une fonctionnalité commune à tous les systèmes d’exploitation mobiles modernes. iOS offre une prise en charge du mappage en mode natif via l’infrastructure du kit de cartes. Avec le kit de cartes, les applications peuvent facilement ajouter des cartes riches et interactives. Ces cartes peuvent être personnalisées de différentes façons, telles que l’ajout d’annotations pour marquer les emplacements sur une carte et la superposition de graphiques de formes arbitraires. Le kit de cartes offre une prise en charge intégrée pour l’indication de l’emplacement actuel d’un appareil.
 
-## <a name="adding-a-map"></a>Ajout d’une carte
+## <a name="adding-a-map"></a>Ajout d’un mappage
 
-Ajout d’une carte à une application s’effectue en ajoutant un `MKMapView` de l’instance de la hiérarchie d’affichage, comme indiqué ci-dessous :
+L’ajout d’un mappage à une application s’effectue en `MKMapView` ajoutant une instance à la hiérarchie d’affichage, comme indiqué ci-dessous:
 
 ```csharp
 // map is an MKMapView declared as a class variable
@@ -28,31 +28,31 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView` est un `UIView` sous-classe qui affiche une carte. Simplement ajouter le mappage en utilisant le code ci-dessus génère une carte interactive :
+ `MKMapView``UIView` sous-classe qui affiche une carte. Le simple ajout de la carte à l’aide du code ci-dessus génère une carte interactive:
 
- ![](images/00-map.png "Un exemple de mappage")
+ ![](images/00-map.png "Exemple de mappage")
 
 ## <a name="map-style"></a>Style de carte
 
- `MKMapView` prend en charge 3 différents styles de cartes. Pour appliquer un style de carte, il suffit de définir la `MapType` propriété une valeur à partir de la `MKMapType` énumération :
+ `MKMapView`prend en charge 3 styles différents de mappages. Pour appliquer un style de carte, il vous `MapType` suffit de définir la propriété sur `MKMapType` une valeur de l’énumération:
  ```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
  ```
-  La capture d’écran suivante montrent les styles de carte différents sont disponibles :
+  La capture d’écran suivante montre les différents styles de carte disponibles:
 
- ![](images/01-mapstyles.png "Cette capture d’écran afficher les styles de carte différents sont disponibles")
+ ![](images/01-mapstyles.png "Cette capture d’écran montre les différents styles de carte disponibles")
 
 ## <a name="panning-and-zooming"></a>Panoramique et zoom
 
- `MKMapView` prend en charge les fonctionnalités d’interactivité carte telles que :
+ `MKMapView`prend en charge les fonctionnalités d’interactivité de la carte, telles que:
 
--  Le zoom via un mouvement de pincement
+-  Zoom à l’aide d’un geste de pincement
 -  Panoramique via un mouvement panoramique
 
 
-Ces fonctionnalités peuvent être activées ou désactivées en définissant simplement le `ZoomEnabled` et `ScrollEnabled` propriétés de la `MKMapView` instance, où la valeur par défaut est true pour les deux. Par exemple, pour afficher une carte statique, définissez simplement les propriétés appropriées sur false :
+Ces fonctionnalités peuvent être activées ou désactivées en `ZoomEnabled` définissant simplement les `MKMapView` propriétés et `ScrollEnabled` de l’instance, où la valeur par défaut est true pour les deux. Par exemple, pour afficher une carte statique, définissez simplement les propriétés appropriées sur false:
 
 ```csharp
 map.ZoomEnabled = false;
@@ -61,7 +61,7 @@ map.ScrollEnabled = false;
 
 ## <a name="user-location"></a>Emplacement de l’utilisateur
 
-En plus de l’interaction de l’utilisateur, `MKMapView` a également une prise en charge intégrée pour l’affichage de l’emplacement de l’appareil. Il utilise pour cela le *Core emplacement* framework. Avant de pouvoir accéder à l’emplacement utilisateur, vous devez inviter l’utilisateur. Pour ce faire, créez une instance de `CLLocationManager` et appelez `RequestWhenInUseAuthorization`.
+Outre l’interaction de l’utilisateur `MKMapView` , intègre également la prise en charge de l’affichage de l’emplacement de l’appareil. Pour ce faire, il utilise l’infrastructure d' *emplacement principale* . Avant de pouvoir accéder à l’emplacement de l’utilisateur, vous devez inviter l’utilisateur. Pour ce faire, créez une instance de `CLLocationManager` et appelez `RequestWhenInUseAuthorization`.
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -69,40 +69,40 @@ locationManager.RequestWhenInUseAuthorization();
 //locationManager.RequestAlwaysAuthorization(); //requests permission for access to location data while running in the background
 ```
 
-Notez que dans les versions d’iOS antérieure 8.0, essayez d’appeler `RequestWhenInUseAuthorization` entraîne une erreur. Veillez à vérifier la version d’e/s avant d’effectuer cet appel si vous avez l’intention de prendre en charge des versions antérieures à 8.
+Notez que dans les versions d’iOS antérieures à 8,0, toute tentative `RequestWhenInUseAuthorization` d’appel entraînera une erreur. Veillez à vérifier la version d’iOS avant d’effectuer cet appel si vous envisagez de prendre en charge les versions antérieures à 8.
 
-L’accès à l’emplacement utilisateur nécessite également des modifications à **Info.plist**. Vous devez définir les clés suivantes relatives aux données d’emplacement :
+L’accès à l’emplacement de l’utilisateur nécessite également des modifications du fichier **info. plist**. Vous devez définir les clés suivantes relatives aux données d’emplacement :
 
 - **NSLocationWhenInUseUsageDescription** : cette clé est utilisée quand vous accédez à l’emplacement d’un utilisateur en train d’interagir avec votre application.
 - **NSLocationAlwaysUsageDescription** : cette clé est utilisée quand votre application accède à l’emplacement d’un utilisateur en arrière-plan.
 
-Vous pouvez ajouter ces clés en ouvrant **Info.plist** et en sélectionnant *Source* en bas de l’éditeur.
+Vous pouvez ajouter ces clés en ouvrant **info. plist** et en sélectionnant *source* en bas de l’éditeur.
 
-Une fois que vous avez mis à jour **Info.plist** et vous y êtes invité à l’utilisateur l’autorisation d’accéder à leur emplacement, vous pouvez afficher l’emplacement de l’utilisateur sur la carte en définissant le `ShowsUserLocation` true à la propriété :
+Une fois que vous avez mis à jour le fichier **info. plist** et demandé à l’utilisateur l’autorisation d’accéder à son emplacement, vous pouvez afficher l’emplacement `ShowsUserLocation` de l’utilisateur sur la carte en affectant à la propriété la valeur true:
 
 ```csharp
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "L’alerte de l’accès d’emplacement autoriser")
+ ![](images/02-location-alert.png "Alerte autoriser l’accès à l’emplacement")
  
 ## <a name="annotations"></a>Annotations
 
- `MKMapView` prend également en charge d’affichage d’images, connu sous forme d’annotations, sur une carte. Il peut s’agir d’images personnalisées ou définie par le système de codes confidentiels de différentes couleurs. Par exemple, la capture d’écran suivante illustre un mappage avec un à la fois un code confidentiel et une image personnalisée :
+ `MKMapView`prend également en charge l’affichage d’images, appelées annotations, sur une carte. Il peut s’agir d’images personnalisées ou d’épingles de différentes couleurs définies par le système. Par exemple, la capture d’écran suivante montre un mappage avec un code confidentiel et une image personnalisée:
 
- ![](images/03-annotations.png "Cette capture d’écran illustre un mappage avec un à la fois un code confidentiel et une image personnalisée")
+ ![](images/03-annotations.png "Cette capture d’écran montre un mappage avec un code confidentiel et une image personnalisée")
 
 ### <a name="adding-an-annotation"></a>Ajout d’une annotation
 
-Une annotation lui-même comporte deux parties :
+Une annotation elle-même se compose de deux parties:
 
--  Le `MKAnnotation` objet, qui inclut des données de modèle sur l’annotation, telles que le titre et l’emplacement de l’annotation.
--  Le `MKAnnotationView` , qui contient l’image à afficher et éventuellement une légende qui s’affiche lorsque l’utilisateur appuie sur l’annotation.
+-  `MKAnnotation` Objet, qui comprend les données de modèle relatives à l’annotation, telles que le titre et l’emplacement de l’annotation.
+-  `MKAnnotationView` , Qui contient l’image à afficher et éventuellement une légende qui s’affiche lorsque l’utilisateur appuie sur l’annotation.
 
 
-Mapkit utilise le modèle de délégation iOS pour ajouter des annotations à un mappage, où le `Delegate` propriété du `MKMapView` est définie sur une instance d’un `MKMapViewDelegate`. Il est l’implémentation de ce délégué qui est chargée de retourner la `MKAnnotationView` d’une annotation.
+Le kit de cartes utilise le modèle de délégation IOS pour ajouter des annotations à `Delegate` une carte, `MKMapView` où la propriété du est définie sur `MKMapViewDelegate`une instance d’un. Il s’agit de l’implémentation de ce délégué qui est chargée `MKAnnotationView` de retourner le pour une annotation.
 
-Pour ajouter une annotation, tout d’abord l’annotation est ajoutée en appelant `AddAnnotations` sur la `MKMapView` instance :
+Pour ajouter une annotation, vous devez d’abord ajouter l’annotation `AddAnnotations` en appelant `MKMapView` sur l’instance:
 
 ```csharp
 // add an annotation
@@ -112,9 +112,9 @@ map.AddAnnotations (new MKPointAnnotation (){
 });
 ```
 
-Lorsque l’emplacement de l’annotation est visible sur la carte, le `MKMapView` appellera de son délégué `GetViewForAnnotation` méthode pour obtenir le `MKAnnotationView` à afficher.
+Lorsque l’emplacement de l’annotation devient visible sur la carte, le `MKMapView` appelle la méthode de `GetViewForAnnotation` son délégué pour obtenir le `MKAnnotationView` à afficher.
 
-Par exemple, le code suivant retourne fournie par le système `MKPinAnnotationView`:
+Par exemple, le code suivant retourne un fourni `MKPinAnnotationView`par le système:
 
 ```csharp
 string pId = "PinAnnotation";
@@ -137,34 +137,34 @@ public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObje
 }
 ```
 
-### <a name="reusing-annotations"></a>Réutilisation des Annotations
+### <a name="reusing-annotations"></a>Réutilisation d’annotations
 
-Pour économiser la mémoire, `MKMapView` permet aux vue de l’annotation de regroupés pour réutilisation, similaire à la façon dont les cellules du tableau sont réutilisées. Obtention d’une vue de l’annotation à partir du pool est effectuée avec un appel à `DequeueReusableAnnotation`:
+Pour économiser de la mémoire `MKMapView` , permet de regrouper les vues d’annotation en vue de les réutiliser, comme dans le cas de la réutilisation des cellules de tableau. L’obtention d’une vue d’annotation à partir du pool s’effectue `DequeueReusableAnnotation`à l’aide d’un appel à:
 
 ```csharp
 MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotation (pId);
 ```
 
-#### <a name="showing-callouts"></a>Affichage des légendes
+#### <a name="showing-callouts"></a>Indication des légendes
 
-Comme mentionné précédemment, une annotation peut éventuellement afficher une légende. Pour afficher une légende simplement définie `CanShowCallout` sur true sur le `MKAnnotationView`. Il en résulte dans le titre de l’annotation s’affiche lorsque l’annotation est activé par un clic, comme indiqué :
+Comme mentionné précédemment, une annotation peut éventuellement afficher une légende. Pour afficher une légende, affectez `CanShowCallout` simplement la `MKAnnotationView`valeur true à. Cela entraîne l’affichage du titre de l’annotation lorsque l’annotation est frappée, comme indiqué ci-dessous:
 
- ![](images/04-callout.png "Les annotations du titre affiché")
+ ![](images/04-callout.png "Titre des annotations affiché")
 
 ### <a name="customizing-the-callout"></a>Personnalisation de la légende
 
-La légende peut également être personnalisée pour afficher les affichages gauche et droite Accessoires, comme indiqué ci-dessous :
+La légende peut également être personnalisée pour afficher les vues d’accessoires de gauche et de droite, comme indiqué ci-dessous:
 
 ```csharp
 pinView.RightCalloutAccessoryView = UIButton.FromType (UIButtonType.DetailDisclosure);
 pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png"));
 ```
 
-Ce code génère la légende suivante :
+Ce code génère la légende suivante:
 
- ![](images/05-callout-accessories.png "Une légende de l’exemple")
+ ![](images/05-callout-accessories.png "Un exemple de légende")
 
-Pour gérer l’utilisateur en appuyant sur la droite accessoire, implémentez simplement le `CalloutAccessoryControlTapped` méthode dans le `MKMapViewDelegate`:
+Pour gérer l’utilisateur en appuyant sur l’accessoire approprié, `CalloutAccessoryControlTapped` il vous suffit `MKMapViewDelegate`d’implémenter la méthode dans le:
 
 ```csharp
 public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotationView view, UIControl control)
@@ -175,24 +175,24 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 ### <a name="overlays"></a>Superpositions
 
-Une autre façon de graphiques de couche sur une carte à l’aide de superpositions. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. iOS prend en charge plusieurs types de superpositions, y compris :
+Une autre façon de superposer des graphiques sur une carte consiste à utiliser des superpositions. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. iOS assure la prise en charge de plusieurs types de superpositions, notamment:
 
--  Polygones - couramment utilisés pour mettre en surbrillance une région sur une carte.
--  Polylignes - souvent lors de l’affichage d’un itinéraire.
--  Cercles - utilisés pour mettre en surbrillance une zone circulaire d’un mappage.
+-  Polygones-couramment utilisés pour mettre en surbrillance une région d’une carte.
+-  Polylignes, souvent affichées lors de l’affichage d’un itinéraire.
+-  Cercles-utilisé pour mettre en surbrillance une zone circulaire d’une carte.
 
 
-En outre, des superpositions personnalisées peuvent être créées pour afficher les géométries arbitraires avec code de dessin granulaire et personnalisé. Par exemple, en radar weather serait un bon candidat pour un segment de recouvrement personnalisé.
+En outre, des superpositions personnalisées peuvent être créées pour afficher des géométries arbitraires avec un code de dessin granulaire et personnalisé. Par exemple, le radar météo est un bon candidat pour une superposition personnalisée.
 
 #### <a name="adding-an-overlay"></a>Ajout d’une superposition
 
-Similaire aux annotations, ajout d’un segment de recouvrement déroule 2 parties :
+Comme pour les annotations, l’ajout d’une superposition implique deux parties:
 
--  Création d’un objet de modèle pour la superposition et en l’ajoutant à la `MKMapView` .
--  Création d’une vue pour la superposition dans la `MKMapViewDelegate` .
+-  Création d’un objet de modèle pour la superposition et ajout `MKMapView` de celui-ci à.
+-  Création d’une vue pour la superposition `MKMapViewDelegate` dans le.
 
 
-Le modèle pour la superposition peut être une `MKShape` sous-classe. Inclut Xamarin.iOS `MKShape` sous-classes des polygones, des polylignes et des cercles, via le `MKPolygon`, `MKPolyline` et `MKCircle` classes respectivement.
+Le modèle de la superposition peut être `MKShape` n’importe quelle sous-classe. Xamarin. iOS comprend `MKShape` des sous-classes pour les polygones, `MKPolyline` les polylignes et `MKPolygon`les cercles `MKCircle` , par le biais des classes et respectivement.
 
 Par exemple, le code suivant est utilisé pour ajouter un `MKCircle`:
 
@@ -201,7 +201,7 @@ var circleOverlay = MKCircle.Circle (mapCenter, 1000);
 map.AddOverlay (circleOverlay);
 ```
 
-La vue de superposition est un `MKOverlayView` instance qui est retourné par la `GetViewForOverlay` dans le `MKMapViewDelegate`. Chaque `MKShape` correspond un `MKOverlayView` qui sait comment afficher la forme donnée. Pour `MKPolygon` est `MKPolygonView`. De même, `MKPolyline` correspond à `MKPolylineView`et pour `MKCircle` est `MKCircleView`.
+La vue d’une superposition est `MKOverlayView` une instance retournée `GetViewForOverlay` par dans le `MKMapViewDelegate`. Chacun `MKShape` a un correspondant `MKOverlayView` qui sait comment afficher la forme donnée. Pour `MKPolygon` y figure `MKPolygonView`. De même, `MKPolyline` correspond à `MKPolylineView` `MKCircle` et`MKCircleView`à.
 
 Par exemple, le code suivant retourne un `MKCircleView` pour un `MKCircle`:
 
@@ -215,31 +215,31 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 }
 ```
 
-Cela affiche un cercle sur la carte, comme indiqué :
+Un cercle s’affiche sur la carte, comme indiqué ci-dessous:
 
- ![](images/06-circle-overlay.png "Un cercle affiché sur la carte")
+ ![](images/06-circle-overlay.png "Cercle affiché sur la carte")
 
 ## <a name="local-search"></a>Recherche locale
 
-iOS inclut une API avec le Kit de mappage, ce qui permet des recherches asynchrones pour les points d’intérêt dans une région géographique spécifiée de recherche locale.
+iOS comprend une API de recherche locale avec le kit Map, qui permet des recherches asynchrones de points d’intérêt dans une région géographique spécifiée.
 
-Pour effectuer une recherche en locale, une application doit procéder comme suit :
+Pour effectuer une recherche locale, une application doit suivre les étapes suivantes:
 
-1.  Créer `MKLocalSearchRequest` objet.
-1.  Créer un `MKLocalSearch` de l’objet à partir de la `MKLocalSearchRequest` .
-1.  Appelez le `Start` méthode sur le `MKLocalSearch` objet.
-1.  Récupérer le `MKLocalSearchResponse` objet dans un rappel.
+1.  Créer `MKLocalSearchRequest` un objet.
+1.  Créez un `MKLocalSearch` objet à partir `MKLocalSearchRequest` du.
+1.  Appelez la `Start` méthode sur l' `MKLocalSearch` objet.
+1.  Récupérez `MKLocalSearchResponse` l’objet dans un rappel.
 
 
-L’API elle-même de recherche local ne fournit aucune interface utilisateur. Il ne nécessite pas même un mappage à utiliser. Toutefois, pour rendre l’utilisation pratique de recherche locale, une application doit fournir un moyen de spécifier une requête de recherche et d’affichage des résultats. En outre, étant donné que les résultats contiennent les données d’emplacement, il est souvent judicieux de les afficher sur une carte.
+L’API recherche locale elle-même ne fournit pas d’interface utilisateur. Il n’a même pas besoin d’utiliser un mappage. Toutefois, pour faciliter l’utilisation de la recherche locale, une application doit fournir un moyen de spécifier une requête de recherche et d’afficher les résultats. En outre, étant donné que les résultats contiendront des données d’emplacement, il est souvent judicieux de les afficher sur une carte.
 
 <a name="Adding_a_Local_Search_UI"/>
 
-### <a name="adding-a-local-search-ui"></a>Ajout d’une interface utilisateur de recherche Local
+### <a name="adding-a-local-search-ui"></a>Ajout d’une interface utilisateur de recherche locale
 
-La première consiste à accepter une entrée de recherche avec un `UISearchBar`, qui est fournie par un `UISearchController` et affiche les résultats dans une table.
+L’une des façons d’accepter une entrée de `UISearchBar`recherche est avec un, `UISearchController` qui est fourni par un et affiche les résultats dans une table.
 
-Le code suivant ajoute le `UISearchController` (qui est une propriété de barre de recherche) dans le `ViewDidLoad` méthode de `MapViewController`:
+Le code suivant ajoute le `UISearchController` (qui a une propriété de barre de recherche) `ViewDidLoad` dans la `MapViewController`méthode de:
 
 ```csharp
 //Creates an instance of a custom View Controller that holds the results
@@ -269,21 +269,21 @@ DefinesPresentationContext = true;
 NavigationItem.TitleView = searchController.SearchBar;
 ```
 
-Notez que vous êtes responsable de l’intégration de l’objet de barre de recherche dans l’interface utilisateur. Dans cet exemple, nous avons attribué à la TitleView de la barre de navigation, mais si vous n’utilisez pas un contrôleur de navigation dans votre application, vous devrez trouver un autre emplacement pour l’afficher.
+Notez que vous êtes responsable de l’incorporation de l’objet de barre de recherche dans l’interface utilisateur. Dans cet exemple, nous l’avons attribué à TitleView de la barre de navigation, mais si vous n’utilisez pas de contrôleur de navigation dans votre application, vous devrez trouver un autre emplacement pour l’afficher.
 
-Dans cet extrait de code, nous avons créé un autre contrôleur d’affichage personnalisé – `searchResultsController` : qui affiche les résultats de recherche et puis nous avons utilisé cet objet pour créer notre objet de contrôleur de recherche. Nous avons également créé une nouvelle mise à jour recherche, qui devient active lorsque l’utilisateur interagit avec la barre de recherche. Il reçoit des notifications concernant les recherches avec chaque frappe au clavier et est responsable de la mise à jour de l’interface utilisateur.
-Nous allons voir comment implémenter les deux le `searchResultsController` et `searchResultsUpdater` plus loin dans ce guide.
+Dans cet extrait de code, nous avons créé un autre contrôleur `searchResultsController` d’affichage personnalisé – – qui affiche les résultats de la recherche, puis nous avons utilisé cet objet pour créer notre objet de contrôleur de recherche. Nous avons également créé une nouvelle mise à jour de recherche, qui devient active lorsque l’utilisateur interagit avec la barre de recherche. Il reçoit des notifications sur les recherches avec chaque séquence de touches et est responsable de la mise à jour de l’interface utilisateur.
+Nous verrons comment implémenter à la fois le `searchResultsController` et le `searchResultsUpdater` plus loin dans ce guide.
 
-Il en résulte dans une barre de recherche affichée sur la carte, comme indiqué ci-dessous :
+Cela entraîne l’affichage d’une barre de recherche sur la carte, comme indiqué ci-dessous:
 
- ![](images/07-searchbar.png "Une barre de recherche affichée sur la carte")
+ ![](images/07-searchbar.png "Barre de recherche affichée sur la carte")
  
 
 
-### <a name="displaying-the-search-results"></a>Afficher les résultats de recherche
+### <a name="displaying-the-search-results"></a>Affichage des résultats de la recherche
 
-Pour afficher les résultats de recherche, nous devons créer un contrôleur d’affichage personnalisé ; normalement un `UITableViewController`. Comme indiqué ci-dessus, le `searchResultsController` est passée au constructeur de la `searchController` lorsqu’il est créé.
-Le code suivant est un exemple montrant comment créer ce contrôleur d’affichage personnalisé :
+Pour afficher les résultats de la recherche, nous devons créer un contrôleur d’affichage personnalisé. `UITableViewController`normalement. Comme indiqué ci-dessus `searchResultsController` , est passé au constructeur `searchController` du lorsqu’il est créé.
+Le code suivant est un exemple de création de ce contrôleur d’affichage personnalisé:
 
 ```csharp
 public class SearchResultsViewController : UITableViewController
@@ -354,11 +354,11 @@ public class SearchResultsViewController : UITableViewController
 }
 ```
 
-### <a name="updating-the-search-results"></a>La mise à jour les résultats de recherche
+### <a name="updating-the-search-results"></a>Mise à jour des résultats de la recherche
 
-Le `SearchResultsUpdater` agit comme un médiateur entre le `searchController`de barre de recherche et les résultats de la recherche. 
+Le `SearchResultsUpdater` agit comme un médiateur entre la barre `searchController`de recherche de et les résultats de recherche. 
 
-Dans cet exemple, nous avons d’abord créer la méthode de recherche dans le `SearchResultsViewController`. Pour cela nous devons créer un `MKLocalSearch` de l’objet et l’utiliser pour émettre une recherche pour un `MKLocalSearchRequest`, les résultats sont récupérés dans un rappel passé à la `Start` méthode de la `MKLocalSearch` objet. Les résultats sont ensuite renvoyés dans une `MKLocalSearchResponse` objet contenant un tableau de `MKMapItem` objets :
+Dans cet exemple, nous devons d’abord créer la méthode Search dans `SearchResultsViewController`le. Pour ce faire, nous devons créer `MKLocalSearch` un objet et l’utiliser pour lancer une recherche pour `MKLocalSearchRequest`une, les résultats sont récupérés dans un rappel passé `Start` à la méthode `MKLocalSearch` de l’objet. Les résultats sont ensuite retournés `MKLocalSearchResponse` dans un objet contenant un `MKMapItem` tableau d’objets:
 
 ```csharp
 public void Search (string forSearchString)
@@ -384,7 +384,7 @@ public void Search (string forSearchString)
 }
 ```
 
-Ensuite, dans notre `MapViewController` nous allons créer une implémentation personnalisée de `UISearchResultsUpdating`, qui est assignée à la `SearchResultsUpdater` propriété de notre `searchController` dans le [Ajout d’une interface utilisateur de recherche Local](#Adding_a_Local_Search_UI) section :
+Ensuite, dans notre `MapViewController` , nous allons créer une implémentation personnalisée `UISearchResultsUpdating`de, qui est affectée à `SearchResultsUpdater` la propriété de `searchController` notre dans la section [Ajout d’une interface utilisateur de recherche locale](#Adding_a_Local_Search_UI) :
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -398,20 +398,20 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 }
 ```
 
-L’implémentation ci-dessus ajoute une annotation à la carte lorsqu’un élément est sélectionné dans les résultats, comme indiqué ci-dessous :
+L’implémentation ci-dessus ajoute une annotation à la carte lorsqu’un élément est sélectionné dans les résultats, comme indiqué ci-dessous:
 
- ![](images/08-search-results.png "Une annotation ajoutée à la carte lorsqu’un élément est sélectionné à partir des résultats")
+ ![](images/08-search-results.png "Annotation ajoutée à la carte lorsqu’un élément est sélectionné dans les résultats")
  
 > [!IMPORTANT]
-> `UISearchController` a été implémenté dans iOS 8. Si vous souhaitez prendre en charge les appareils antérieurs à cela, vous devrez utiliser `UISearchDisplayController`.
+> `UISearchController`a été implémenté dans iOS 8. Si vous souhaitez prendre en charge des appareils antérieurs à cette version, vous devez `UISearchDisplayController`utiliser.
 
 
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article examiné la *carte* *Kit* framework pour iOS. Tout d’abord, il étudié la façon la `MKMapView` classe permet de cartes interactives à inclure dans une application. Puis il a montré comment personnaliser davantage les mappages à l’aide des annotations et superpositions. Enfin, il a examiné les fonctionnalités de recherche local qui ont été ajoutées au Kit de la carte avec iOS 6.1, illustrant l’utilisation d’effectuer des requêtes d’emplacement en fonction des points d’intérêt et de les ajouter à une carte.
+Cet article a examiné l’infrastructure du *Kit* *Map* pour iOS. Tout d’abord, il a vu `MKMapView` comment la classe autorise l’inclusion de mappages interactifs dans une application. Ensuite, il a démontré comment personnaliser davantage les mappages à l’aide d’annotations et de superpositions. Enfin, il a examiné les fonctionnalités de recherche locales qui ont été ajoutées au kit de cartes avec iOS 6,1, en indiquant comment utiliser les requêtes d’emplacement pour les points d’intérêt et les ajouter à une carte.
 
 ## <a name="related-links"></a>Liens associés
 
 - [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
-- [MapDemo (sample)](https://developer.xamarin.com/samples/monotouch/MapDemo)
+- [MapDemo (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)

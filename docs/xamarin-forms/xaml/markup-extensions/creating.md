@@ -1,22 +1,22 @@
 ---
 title: Création d’Extensions de balisage XAML
-description: Cet article explique comment définir vos propres extensions de balisage XAML de Xamarin.Forms personnalisées. Une extension de balisage XAML est une classe qui implémente le IMarkupExtension ou IMarkupExtension<T> interface.
+description: Cet article explique comment définir vos propres extensions de balisage XAML de Xamarin.Forms personnalisées. Une extension de balisage XAML est une classe qui implémente l’interface<T> IMarkupExtension ou IMarkupExtension.
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e69d4b9dcf93c095804c5ac46527c03049580d1c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4d26713f258a8c97abd4b4e9970ebdd4d490f485
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178112"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655865"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Création d’extensions de balisage XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 Sur le niveau par programmation, une extension de balisage XAML est une classe qui implémente le [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) ou [ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) interface. Vous pouvez explorer le code source des extensions de balisage standard décrit ci-dessous dans le [ **MarkupExtensions** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) du référentiel GitHub de Xamarin.Forms.
 
@@ -203,5 +203,5 @@ Extensions de balisage XAML jouent un rôle essentiel dans XAML en étendant la 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Extensions de balisage (exemple)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
+- [Extensions de balisage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [Chapitre d’extensions de balisage XAML de Xamarin.Forms livre](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

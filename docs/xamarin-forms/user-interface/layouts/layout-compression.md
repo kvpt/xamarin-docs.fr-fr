@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 4b37435c9cec7549c04c35a81ec31d3a2236e7c1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 97aa8c321362ebccc954a79f99b7bc69b5a0ad63
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925473"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657076"
 ---
 # <a name="layout-compression"></a>Compression des dispositions
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _La compression des dispositions supprime les dispositions spécifiées à partir de l’arborescence visuelle dans le but d’améliorer les performances de rendu de page. Cet article explique comment activer la compression des dispositions et les avantages qu’elles peuvent apporter._
 
@@ -123,4 +123,4 @@ La compression des dispositions supprime les dispositions spécifiées à partir
 
 - [Création d’une disposition personnalisée](~/xamarin-forms/user-interface/layouts/custom.md)
 - [Convertisseurs rapides](~/xamarin-forms/internals/fast-renderers.md)
-- [LayoutCompression (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutCompression/)
+- [LayoutCompression (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
