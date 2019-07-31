@@ -114,5 +114,5 @@ sections:
             href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9'
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9">Documentation sur les API Android</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">Bibliothèque de classes de base</a></p>'
           - title: Exemples
-            href: 'https://developer.xamarin.com/samples/android/all/'
-            html: '<p><a href="https://developer.xamarin.com/samples/android/all/">Exemples Android</a></p>'
+            href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
+            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android">Exemples Android</a></p>'

@@ -87,4 +87,4 @@ sections:
           - title: API
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/AppKit">Documentation sur les API Mac</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0">Bibliothèque de classes de base</a></p>'
           - title: Exemples
-            html: '<p><a href="https://developer.xamarin.com/samples/mac/all/">Exemples Mac</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac">Exemples Mac</a></p>'
