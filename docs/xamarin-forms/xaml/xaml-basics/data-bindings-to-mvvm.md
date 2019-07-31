@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: c7bf7ca28200004e2383631c68cdaa4299348ecb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61174547"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657109"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Partie 5. Liaisons de données à MVVM
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Le modèle d’architecture Model-View-ViewModel (MVVM) a été inventé avec XAML à l’esprit. Le modèle met en œuvre une séparation entre les trois couches logicielles, l’interface utilisateur XAML, appelée la vue ; les données sous-jacentes, appelées le modèle ; et un intermédiaire entre la vue et le modèle, appelé le ViewModel. La vue et le ViewModel sont souvent connectés via des liaisons de données définies dans le fichier XAML. BindingContext pour la vue est généralement une instance du ViewModel._
 
@@ -35,7 +35,7 @@ Le programme peut utiliser `x:Static` pour obtenir la date et heure actuelles à
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext` est une propriété très spéciale : Lorsque vous définissez le `BindingContext` sur un élément, elle est héritée par tous les enfants de cet élément. Cela signifie que tous les enfants de la `StackLayout` ont cette même `BindingContext`, et elles peuvent contenir des liaisons simples aux propriétés de cet objet.
+`BindingContext`est une propriété très spéciale: Quand vous définissez la `BindingContext` sur un élément, elle est héritée par tous les enfants de cet élément. Cela signifie que tous les enfants de la `StackLayout` ont cette même `BindingContext`, et elles peuvent contenir des liaisons simples aux propriétés de cet objet.
 
 Dans le **One-Shot DateTime** programme, deux des enfants contiennent des liaisons aux propriétés de le `DateTime` valeur, mais les deux autres enfants contiennent des liaisons qui semblent avoir disparu un chemin de liaison. Cela signifie que le `DateTime` valeur lui-même est utilisée pour le `StringFormat`:
 
@@ -298,7 +298,7 @@ La liaison sur chaque `Label` est la valeur par défaut `OneWay`. Il doit unique
 
 ## <a name="commanding-with-viewmodels"></a>Exécution de commandes avec les ViewModels
 
-Dans de nombreux cas, le modèle MVVM est limité à la manipulation d’éléments de données : Objets d’interface utilisateur dans la vue parallèle des objets de données dans le ViewModel.
+Dans de nombreux cas, le modèle MVVM est limité à la manipulation d’éléments de données: Objets de l’interface utilisateur dans la vue Parallel Data Objects dans le ViewModel.
 
 Toutefois, la vue doit parfois contenir des boutons qui déclenchent des actions différentes dans le ViewModel. Mais le ViewModel ne doit pas contenir `Clicked` gestionnaires pour les boutons, car qui serait lier le ViewModel à un modèle d’interface utilisateur particulier.
 
@@ -581,7 +581,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>Implémentation d’un Menu de Navigation
 
-Le [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/) programme qui contient tout le code source dans cette série d’articles utilise un ViewModel pour sa page d’accueil. Ce ViewModel est une définition d’une classe courte avec trois propriétés nommées `Type`, `Title`, et `Description` qui contiennent le type de chacun des exemples de pages, un titre et une brève description. En outre, le ViewModel définit une propriété statique nommée `All` qui est une collection de toutes les pages dans le programme :
+Le [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples) programme qui contient tout le code source dans cette série d’articles utilise un ViewModel pour sa page d’accueil. Ce ViewModel est une définition d’une classe courte avec trois propriétés nommées `Type`, `Title`, et `Description` qui contiennent le type de chacun des exemples de pages, un titre et une brève description. En outre, le ViewModel définit une propriété statique nommée `All` qui est une collection de toutes les pages dans le programme :
 
 ```csharp
 public class PageDataViewModel
@@ -702,7 +702,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin Evolve 2016 : MVVM simplifiée avec Xamarin.Forms et Prism**
+**Xamarin évoluer 2016: MVVM simplifié avec Xamarin. Forms et Prism**
 
 ## <a name="summary"></a>Récapitulatif
 
@@ -711,7 +711,7 @@ XAML est un outil puissant pour la définition des interfaces utilisateur dans l
 
 ## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Bien démarrer avec XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

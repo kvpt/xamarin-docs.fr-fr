@@ -1,24 +1,24 @@
 ---
-title: Fast ListView le défilement sur Android
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser l’Android spécifique à la plateforme qui permet un défilement rapide des données dans un ListView.
+title: Défilement rapide de ListView sur Android
+description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme Android, qui permet de faire défiler rapidement les données d’un ListView.
 ms.prod: xamarin
 ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 6ae266f9309e32c79ec6028d737cfdcaaa85b0d4
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ce51483da9599cf049cf005ae18b35d110aa325b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926572"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649986"
 ---
-# <a name="listview-fast-scrolling-on-android"></a>Fast ListView le défilement sur Android
+# <a name="listview-fast-scrolling-on-android"></a>Défilement rapide de ListView sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Cette spécifiques à la plateforme Android est utilisé pour activer le défilement rapide des données dans un [ `ListView` ](xref:Xamarin.Forms.ListView). Elle est consommée dans XAML en définissant le `ListView.IsFastScrollEnabled` propriété jointe un `boolean` valeur :
+Ce spécifique à la plateforme Android est utilisé pour permettre le défilement rapide des données dans [`ListView`](xref:Xamarin.Forms.ListView)un. Elle est consommée dans XAML en définissant le `ListView.IsFastScrollEnabled` propriété jointe un `boolean` valeur :
 
 ```xaml
 <ContentPage ...
@@ -60,7 +60,7 @@ Il en résulte que défilement rapide des données dans un [ `ListView` ](xref:X
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [API AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [API AndroidSpecific. AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

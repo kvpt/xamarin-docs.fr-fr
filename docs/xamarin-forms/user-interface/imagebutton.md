@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: f97cd3030b865b53b82845ff8941e3f0a10f0320
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 90d860cb6429025672a058e22e76f029872d3b34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169836"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657175"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton affiche une image et répond à un cliquez ou appuyez sur dirigeant d’une application à exécuter une tâche particulière._
 
@@ -25,7 +25,7 @@ Le `ImageButton` afficher combine le [ `Button` ](xref:Xamarin.Forms.Button) vue
 > [!NOTE]
 > Bien que le [ `Button` ](xref:Xamarin.Forms.Button) vue définit un [ `Image` ](xref:Xamarin.Forms.Button.Image) propriété, ce qui vous permet d’afficher une image sur le `Button`, cette propriété est destinée à être utilisée lors de l’affichage d’une petite icône à côté du `Button` texte.
 
-Les exemples de code dans ce guide sont extraites de la [FormsGallery exemple](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/).
+Les exemples de code dans ce guide sont extraites de la [FormsGallery exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery).
 
 ## <a name="setting-the-image-source"></a>Définition de la source d’image
 
@@ -276,4 +276,4 @@ Pour plus d’informations sur les états visuels, consultez [le Gestionnaire d�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple de FormsGallery](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+- [Exemple de FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

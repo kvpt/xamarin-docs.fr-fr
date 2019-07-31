@@ -1,24 +1,24 @@
 ---
-title: Animations de Transition de Page de TabbedPage sur Android
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser l’Android spécifique à la plateforme qui désactive les animations de transition en parcourant les pages dans un TabbedPage.
+title: Animations de transition de page TabbedPage sur Android
+description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme Android qui désactive les animations de transition lors de la navigation dans les pages d’un TabbedPage.
 ms.prod: xamarin
 ms.assetid: 2DB4EA6D-9CED-4137-BAB2-B20A457B1CA3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: b57718038c43f7bc2a9e27e780a0624eb50a54fe
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 4f8d6ec2b06855364970bc9b672c3d3f7b9bfdfc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926412"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649844"
 ---
-# <a name="tabbedpage-page-transition-animations-on-android"></a>Animations de Transition de Page de TabbedPage sur Android
+# <a name="tabbedpage-page-transition-animations-on-android"></a>Animations de transition de page TabbedPage sur Android
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Cette spécifiques à la plateforme Android est utilisée pour désactiver les animations de transition lors de la navigation via les pages, soit par programmation ou lors de l’utilisation de la barre d’onglet, dans un [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Elle est consommée dans XAML en définissant le `TabbedPage.IsSmoothScrollEnabled` propriété pouvant être liée `false`:
+Ce spécifique à la plateforme Android est utilisé pour désactiver les animations de transition lors de la navigation dans les pages, par programmation ou à l’aide de la [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)barre d’onglets dans un. Elle est consommée dans XAML en définissant le `TabbedPage.IsSmoothScrollEnabled` propriété pouvant être liée `false`:
 
 ```xaml
 <TabbedPage ...
@@ -46,7 +46,7 @@ Le `TabbedPage.On<Android>` méthode spécifie que cette plateforme spécifique 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [API AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [API AndroidSpecific. AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

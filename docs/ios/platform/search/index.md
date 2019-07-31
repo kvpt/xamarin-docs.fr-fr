@@ -1,100 +1,100 @@
 ---
-title: API de recherche dans Xamarin.iOS
-description: Cet article traite les nouvelles API de recherche d’application fourni par iOS 9 à autoriser les utilisateurs à rechercher des informations et des fonctionnalités à l’intérieur de vos applications Xamarin.iOS.
+title: Rechercher des API dans Xamarin. iOS
+description: Cet article aborde l’utilisation des nouvelles API de recherche d’application fournies par iOS 9 pour permettre aux utilisateurs de rechercher des informations et des fonctionnalités à l’intérieur de vos applications Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 87f7689a082c891bc199f4221e68ed7ab19adf85
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 334ae6db2efa3b9d3212d0faf4d5f1bb730abb3b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832709"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654106"
 ---
-# <a name="search-apis-in-xamarinios"></a>API de recherche dans Xamarin.iOS
+# <a name="search-apis-in-xamarinios"></a>Rechercher des API dans Xamarin. iOS
 
-_Cet article couvre l’utilisation de l’API de recherche d’application fourni par iOS 9 permettant aux utilisateurs de rechercher des informations et des fonctionnalités à l’intérieur de vos applications Xamarin.iOS._
+_Cet article traite de l’utilisation des API de recherche d’applications fournies par iOS 9 pour permettre aux utilisateurs de rechercher des informations et des fonctionnalités dans vos applications Xamarin. iOS._
 
-Recherche a été développée dans iOS 9 pour fournir de nouvelles façons d’accéder aux informations et des fonctionnalités à l’intérieur d’une application Xamarin.iOS. En utilisant les nouvelles API de recherche d’application, contenu de l’application est effectuée recherche Spotlight et Safari résultats de recherche, remise et les rappels de Siri et les Suggestions. Cela permet aux utilisateurs d’accéder rapidement aux activités et informations approfondies au sein de votre application.
+La recherche a été développée dans iOS 9 pour offrir de nouvelles façons d’accéder à des informations et à des fonctionnalités à l’intérieur d’une application Xamarin. iOS. À l’aide des nouvelles API de recherche d’application, le contenu de l’application peut faire l’objet d’une recherche via les résultats de recherche Spotlight et Safari, les rappels et les suggestions de Siri et de remise. Cela permet aux utilisateurs d’accéder rapidement aux activités et aux informations contenues dans votre application.
 
-En outre, les nouvelles API de recherche facilitent l’intégrez la recherche dans votre application sans expérience de mise en œuvre de recherche précédents. Pour cette raison, Apple revendications qu’il prend généralement quelques heures pour rendre le contenu d’une application iOS 9 universellement consultable à l’aide de la recherche de l’application.
+En outre, les nouvelles API de recherche facilitent l’intégration de la recherche dans votre application sans une expérience d’implémentation de recherche antérieure. Pour cette raison, Apple prétend qu’il faut généralement quelques heures pour que le contenu d’une application iOS 9 fasse l’objet d’une recherche universelle à l’aide de la recherche d’applications.
 
-[![](images/intro01.png "Un exemple de contenu de l’application iOS 9 universellement consultable à l’aide de la recherche de l’application")](images/intro01.png#lightbox)
+[![](images/intro01.png "Exemple de contenu d’application iOS 9 pouvant faire l’objet d’une recherche universelle à l’aide de la recherche d’application")](images/intro01.png#lightbox)
 
-Recherche de l’application se compose de trois API séparées :
+La recherche d’application est composée de trois API distinctes:
 
-1. [**NSUserActivity** ](nsuseractivity.md) -il s’agit d’une extension de l’API de remise Apple publié dans iOS 8. Il est utilisé pour faciliter la recherche des historique des interactions d’application à la fois publiques et privées) par l’utilisateur.
+1. [**NSUserActivity**](nsuseractivity.md) : il s’agit d’une extension de l’API de transfert qu’Apple a publiée dans iOS 8. Il est utilisé pour permettre à l’utilisateur d’effectuer des recherches dans l’historique des interactions entre les applications à la fois publique et privée.
 
-2. [**Spotlight de base** ](corespotlight.md) -permet à une application à son contenu devant être présenté dans les résultats de la recherche d’index. Il fonctionne comme une API où les éléments peuvent être ajoutées ou supprimées et c’est le meilleur moyen pour indexer le contenu privé au sein d’une application de base de données.
+2. [**Core Spotlight**](corespotlight.md) : permet à une application d’indexer son contenu pour qu’elle soit présentée dans les résultats de recherche. Elle fonctionne comme une API de base de données où les éléments peuvent être ajoutés et supprimés et c’est la meilleure façon d’indexer le contenu privé dans une application.
 
-3. [**WebMarkup** ](web-markup.md) : pour les applications qui fournissent l’accès à leur contenu via une interface web (pas uniquement à partir de l’application). Contenu Web peut être marqué avec liens spéciaux qui seront analysés par Apple et de fournissent un lien profond à votre application sur son appareil iOS 9.
+3. [**Webmarkup**](web-markup.md) : pour les applications qui fournissent un accès à leur contenu via une interface Web (non seulement à partir de l’application). Le contenu Web peut être marqué avec des liens spéciaux qui seront analysés par Apple et fourniront une liaison étroite à votre application sur l’appareil iOS 9 de l’utilisateur.
 
-## <a name="selecting-an-app-search-approach"></a>Choix d’une méthode de recherche de l’application
+## <a name="selecting-an-app-search-approach"></a>Sélection d’une approche de recherche d’application
 
-Décider laquelle de ces méthodes à implémenter varie sur les types d’interaction fournies par votre application et le type de contenu qu'il présente.
+Le choix de l’une des méthodes à implémenter dépend des types d’interaction fournis par votre application et du type de contenu qu’elle présente.
 
-Utilisez les instructions suivantes :
+Suivez les instructions ci-dessous:
 
-- [**NSUserActivity** ](nsuseractivity.md) – cette infrastructure permet d’offrir des possibilités de recherche de contenu public et privé et également les possibilités de recherche de points de navigation au sein de votre application.
+- [**NSUserActivity**](nsuseractivity.md) : utilisez cette infrastructure pour fournir des options de recherche pour le contenu public et privé et pour la recherche des points de navigation au sein de votre application.
 
-- [**Spotlight de base** ](corespotlight.md) – cette infrastructure permet d’offrir des possibilités de recherche pour les données confidentielles stockées sur l’appareil.
+- [**Spotlight Core**](corespotlight.md) : utilisez ce Framework pour fournir des recherches sur les données privées stockées sur l’appareil.
 
-- [**Web balisage** ](web-markup.md) – cette infrastructure permet d’offrir des possibilités de recherche pour les applications qui présentent leur contenu non seulement à partir de l’application, mais à partir du site Web de l’application ainsi.
+- [**Balisage Web**](web-markup.md) : utilisez cette infrastructure pour fournir des recherches aux applications qui présentent leur contenu à l’intérieur de l’application, mais également à partir du site Web de l’application.
 
-Chacun de la recherche de l’application approches sont distincts et peuvent être utilisés individuellement, toutefois Apple conçus pour fonctionner ensemble. Lorsque vous utilisez plusieurs approches pour indexer un élément spécifique, assurez-vous d’utiliser le même **ID d’élément** sur chaque approche, par conséquent, cette personne fonctionnent les liens entre eux.
+Chaque approche de recherche d’application est distincte et peut être utilisée individuellement, mais Apple les a conçues pour travailler ensemble. Lorsque vous utilisez plusieurs méthodes pour indexer un élément spécifique, veillez à utiliser le même **ID d’élément** sur chaque approche, afin que les liens individuels fonctionnent ensemble.
 
-À l’aide de plusieurs approches non seulement permet de s’assurer que votre contenu est accessible par l’utilisateur final, mais contribue également à améliorer le classement de votre élément de recherche.
+L’utilisation de plusieurs approches permet non seulement de garantir que votre contenu sera trouvé par l’utilisateur final, mais également d’améliorer le classement de votre élément à partir de la recherche.
 
-Tandis que le processus de classement dans essentiellement transparente pour le développeur, l’interaction utilisateur avec un élément donné pèse fortement à ce classement (par exemple l’utilisateur touchant un lien).
-En fournissant les éléments riches et informatives, vous pouvez vous assurer qu’un utilisateur s’est conduit pour interagir avec votre contenu, élève donc son classement.
+Tandis que le processus de classement est surtout transparent pour le développeur, l’interaction de l’utilisateur avec un élément donné pèse fortement sur ce rang (par exemple, l’utilisateur touchant un lien).
+En fournissant des éléments riches et informatifs, vous pouvez vous assurer qu’un utilisateur sera amené à interagir avec votre contenu, ce qui augmentera son classement.
 
-## <a name="what-content-to-index"></a>Le contenu à l’Index
+## <a name="what-content-to-index"></a>Contenu à indexer
 
-Apple propose les suggestions suivantes concernant le contenu et des actions pour fournir des index de recherche pour dans votre application :
+Apple fournit les suggestions suivantes quant au contenu et aux actions à fournir pour les index de recherche dans votre application:
 
-- Tout contenu affiché, créé ou organisé par l’utilisateur à partir de votre application.
-- Points de navigation et les fonctionnalités de l’application.
-- Choses comme les nouveaux messages, de contenu ou d’autres types d’éléments affichés par votre application et qui ont récemment été téléchargées vers l’appareil.
+- Tout contenu affiché, créé ou organisé par l’utilisateur dans votre application.
+- Points de navigation et fonctionnalités au sein de l’application.
+- Éléments tels que les nouveaux messages, le contenu ou d’autres types d’éléments affichés par votre application et récemment téléchargés sur l’appareil.
 
 ## <a name="app-search-enhancements"></a>Améliorations de la recherche d’applications
 
-Spotlight de base dans iOS 10 apporte plusieurs améliorations à la recherche d’application telles que :
+Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que:
 
-- **Popularité de lien ciblé participatives (avec privacy différentielle)** -offre un moyen pour promouvoir le contenu de l’application lié à la profondeur dans les résultats de la recherche.
-- **Dans l’application recherche** -utiliser le nouveau `CSSearchQuery` classe pour fournir la possibilité de recherche Spotlight dans l’application similaire au fonctionnement des applications de messagerie, les Messages et les Notes.
-- **Rechercher la Continuation** - permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis ouvrez une application et continuer cette recherche.
-- **Visualisation des résultats de la Validation** -Apple [outil de Validation API application recherche](https://search.developer.apple.com/appsearch-validation-tool) affiche maintenant une représentation visuelle du balisage d’un site Web et lien profond lors de la réalisation de tests.
-- **Message d’application partage d’images** -permet des images populaires dans l’application fournies pour le partage dans les Messages (via une Extension d’application Message) doit s’afficher dans les recherches d’actualités.
+- **Participatives popularité des liens approfondis (avec confidentialité différentielle)** : permet de promouvoir le contenu d’application lié de manière détaillée dans les résultats de recherche.
+- **Recherche dans l’application** : utilisez la nouvelle `CSSearchQuery` classe pour fournir une fonctionnalité de recherche en vedette dans l’application similaire à la façon dont les applications de messagerie, de messages et notes fonctionnent.
+- Continuation de la **recherche** : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
+- **Visualisation des résultats de la validation** : l’outil de validation de l' [API de recherche d’applications](https://search.developer.apple.com/appsearch-validation-tool) d’Apple affiche désormais une représentation visuelle du balisage d’un site Web et des liens détaillés lors de la préformation des tests.
+- **Partage d’images d’application de message** : permet d’afficher les images courantes dans l’application fournies pour le partage des messages (via une extension de l’application de message) dans les recherches Spotlight.
 
-Pour en savoir plus, consultez notre [les améliorations de recherche application](~/ios/platform/search/app-search-enhancements.md) guide.
+Pour en savoir plus, consultez notre guide d’amélioration de la [recherche d’applications](~/ios/platform/search/app-search-enhancements.md) .
 
 ### <a name="proactive-suggestions"></a>Suggestions proactives
 
-iOS 10 présente les nouvelles façons d’engagement de conduite à une application en autorisant le système de manière proactive présenter des informations utiles automatiquement à l’utilisateur aux moments opportuns. Tout comme iOS 9 fourni la possibilité d’ajouter une recherche approfondie à l’application à l’aide de Spotlight, remise et des Suggestions de Siri, avec iOS 10, qu'une application peut exposer des fonctionnalités qui peuvent être présentées à l’utilisateur par le système à partir des emplacements suivants :
+iOS 10 présente de nouvelles façons de conduire des engagements à une application en permettant au système de présenter de manière proactive des informations utiles à l’utilisateur à des moments opportuns. Tout comme iOS 9 offrait la possibilité d’ajouter une recherche poussée à l’application à l’aide de suggestions Spotlight, de remise et de Siri, avec iOS 10, une application peut exposer des fonctionnalités qui peuvent être présentées à l’utilisateur par le système depuis les emplacements suivants:
 
 - Le sélecteur d’application
 - L’écran de verrouillage
 - CarPlay
 - Cartes
-- Interactions de Siri
-- Suggestions de QuickType 
+- Interactions Siri
+- Suggestions QuickType 
 
-Une application expose cette fonctionnalité dans le système à l’aide d’une collection de technologies telles que [NSUserActivity](xref:Foundation.NSUserActivity), balisage web, Spotlight de base, MapKit, Media Player et UIKit.
+Une application expose cette fonctionnalité au système à l’aide d’une collection de technologies telles que [NSUserActivity](xref:Foundation.NSUserActivity), Web Markup, Core Spotlight, MapKit, Media Player et uikit.
 
-Pour en savoir plus, consultez notre [Suggestions proactives](~/ios/platform/search/proactive-suggestions.md) guide.
+Pour en savoir plus, consultez notre guide de [suggestions](~/ios/platform/search/proactive-suggestions.md) proactives.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté les nouvelles fonctionnalités de l’API de recherche qu’iOS 9 fournit pour les applications Xamarin.iOS. Couvert [NSUserActivity](nsuseractivity.md), [Spotlight de base](corespotlight.md) et [balisage Web](web-markup.md) méthodes pour l’indexation de contenu. Il est terminé avec une brève présentation des quand une approche de recherche donnée doit être utilisée et les types de contenu doivent être indexée.
+Cet article a abordé les nouvelles fonctionnalités de l’API de recherche fournies par iOS 9 pour les applications Xamarin. iOS. Il a abordé les méthodes [NSUserActivity](nsuseractivity.md), [Spotlight Core](corespotlight.md) et [Web Markup](web-markup.md) pour l’indexation du contenu. Il s’est terminé avec une brève description de l’utilisation d’une approche de recherche donnée et des types de contenu qui doivent être indexés.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
+- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Guide de programmation de recherche de l’application](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [Guide de programmation de recherche d’applications](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

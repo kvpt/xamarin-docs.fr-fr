@@ -7,22 +7,22 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309521"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655255"
 ---
 # <a name="part-4-data-binding-basics"></a>Partie 4. Principes fondamentaux de liaison de données
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Liaisons de données permettent les propriétés de deux objets à lier afin qu’une modification dans une provoque une modification dans l’autre. Il s’agit d’un outil très précieux, et tandis que les liaisons de données peuvent être définis entièrement en code, XAML fournit des raccourcis et convivialité. Par conséquent, les extensions de balisage plus importantes dans Xamarin.Forms sont lié._
 
 ## <a name="data-bindings"></a>Liaisons de données
 
-Liaisons de données connectent des propriétés de deux objets, appelés le *source* et *cible*. Dans le code, les deux étapes sont requises : Le `BindingContext` propriété de l’objet cible doit être définie à l’objet source et le `SetBinding` (méthode) (souvent utilisée conjointement avec la `Binding` classe) doit être appelée sur l’objet cible à lier une propriété de cet objet à une propriété de la source objet.
+Liaisons de données connectent des propriétés de deux objets, appelés le *source* et *cible*. Dans le code, deux étapes sont requises: La propriété de l’objet cible doit être définie sur l’objet source et la `SetBinding` méthode (souvent utilisée conjointement avec la `Binding` classe) doit être appelée sur l’objet cible pour lier une propriété de cet objet à une propriété de la source. `BindingContext` dessin.
 
 La propriété cible doit être une propriété pouvant être liée, ce qui signifie que l’objet cible doit dériver de `BindableObject`. La documentation en ligne de Xamarin.Forms indique quelles propriétés sont des propriétés pouvant être liées. Une propriété de `Label` comme `Text` est associé à la propriété peut être liée `TextProperty`.
 
@@ -114,11 +114,11 @@ La solution à ces informations et autres problèmes implique le `Mode` proprié
 - `OneWay` — les valeurs sont transférés de la source à la cible
 - `OneWayToSource` — les valeurs sont transférés de la cible à la source
 - `TwoWay` — les valeurs sont transférés les deux sens entre source et cible
-- `OneTime` — données accède à partir de la source à la cible, mais uniquement lorsque le `BindingContext` modifications
+- `OneTime`— les données passent de la source à la cible, mais `BindingContext` uniquement lorsque les modifications
 
 Le programme suivant montre une utilisation courante de la `OneWayToSource` et `TwoWay` modes de liaison. Quatre `Slider` vues sont destinées au contrôle de la `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés d’un `Label`. Dans un premier temps, il semble que si ces quatre propriétés de la `Label` doit être des cibles de liaison de données, car chacun est définie un `Slider`. Toutefois, le `BindingContext` de `Label` peut être qu’un seul objet, et il existe quatre curseurs différents.
 
-Pour cette raison, toutes les liaisons sont définies apparemment descendante façons : Le `BindingContext` de chacun des quatre curseurs est défini sur le `Label`, et les liaisons sont définies sur le `Value` propriétés des curseurs. À l’aide de la `OneWayToSource` et `TwoWay` modes, ces `Value` propriétés peuvent définir les propriétés de la source, qui sont le `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés de la `Label`:
+Pour cette raison, toutes les liaisons sont définies de manière apparemment en arrière: Le `BindingContext` de chacun des quatre curseurs a la `Label`valeur, et les liaisons sont définies sur les `Value` propriétés des curseurs. À l’aide de la `OneWayToSource` et `TwoWay` modes, ces `Value` propriétés peuvent définir les propriétés de la source, qui sont le `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés de la `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -255,7 +255,7 @@ Pour définir un modèle pour les éléments, vous souhaitez répartir le `ItemT
 ```
 
 > [!NOTE]
-> La source de liaison de cellules et les enfants de cellules, est la `ListView.ItemsSource` collection.
+> La source de liaison pour les cellules, et les enfants de cellules `ListView.ItemsSource` , est la collection.
 
 Le `Label` élément est défini sur le `View` propriété de la `ViewCell`. (Le `ViewCell.View` balises ne sont pas nécessaires, car le `View` propriété est la propriété de contenu de `ViewCell`.) Ce balisage affiche le `FriendlyName` propriété de chaque `NamedColor` objet :
 
@@ -410,7 +410,7 @@ Liaisons de données fournissent un mécanisme puissant pour la liaison des prop
 
 ## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 1. Bien démarrer avec XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Partie 2. Syntaxe XAML essentielle (exemple)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 3. Extensions de balisage XAML (exemple)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

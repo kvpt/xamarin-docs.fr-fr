@@ -1,161 +1,161 @@
 ---
-title: HomeKit dans Xamarin.iOS
-description: HomeKit est un framework d’Apple permettant de contrôler les appareils domotique. Cet article présente les HomeKit et couvre la configuration accessoires de test dans le simulateur d’accessoires HomeKit et écrivez une application Xamarin.iOS simple d’interagir avec ces Accessoires.
+title: HomeKit dans Xamarin. iOS
+description: HomeKit est l’infrastructure d’Apple pour le contrôle des appareils domotiques. Cet article présente HomeKit et traite de la configuration des accessoires de test dans le simulateur d’accessoire HomeKit et de l’écriture d’une application Xamarin. iOS simple pour interagir avec ces accessoires.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9daedbe9bba5a2923a247104c4e69ae2e1b635aa
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: e8acec18785ff5017aa012a646f40f8a866070f8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865771"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656627"
 ---
-# <a name="homekit-in-xamarinios"></a>HomeKit dans Xamarin.iOS
+# <a name="homekit-in-xamarinios"></a>HomeKit dans Xamarin. iOS
 
-_HomeKit est un framework d’Apple permettant de contrôler les appareils domotique. Cet article présente les HomeKit et couvre la configuration accessoires de test dans le simulateur d’accessoires HomeKit et écrivez une application Xamarin.iOS simple d’interagir avec ces Accessoires._
+_HomeKit est l’infrastructure d’Apple pour le contrôle des appareils domotiques. Cet article présente HomeKit et traite de la configuration des accessoires de test dans le simulateur d’accessoire HomeKit et de l’écriture d’une application Xamarin. iOS simple pour interagir avec ces accessoires._
 
-[![](homekit-images/accessory01.png "Application activée pour un exemple HomeKit")](homekit-images/accessory01.png#lightbox)
+[![](homekit-images/accessory01.png "Exemple d’application prenant en charge HomeKit")](homekit-images/accessory01.png#lightbox)
 
-Apple a introduit HomeKit dans iOS 8 comme un moyen d’intégrer en toute transparence plusieurs périphériques de domotique à partir d’un fournisseurs diverses en une unité unique et cohérente. Par la promotion d’un protocole commun pour la découverte, configuration et contrôle des appareils de la domotique, HomeKit permet aux appareils à partir de non lié à des fournisseurs de travailler ensemble, tout cela sans avoir à coordonner les efforts de fournisseurs individuels.
+Apple a introduit HomeKit dans iOS 8 comme un moyen d’intégrer en toute transparence plusieurs appareils domotiques à l’intérieur d’un grand nombre de fournisseurs dans une seule unité cohérente. En promouvant un protocole commun pour la découverte, la configuration et le contrôle des appareils domotiques, HomeKit permet aux appareils de fournisseurs non liés de travailler ensemble, sans que les fournisseurs individuels aient à coordonner les efforts.
 
-Avec HomeKit, vous pouvez créer une application Xamarin.iOS qui contrôle n’importe quel appareil HomeKit activé sans à l’aide du fournisseur fourni API ou des applications. L’utilisation d’HomeKit, vous pouvez procédez comme suit :
+Avec HomeKit, vous pouvez créer une application Xamarin. iOS qui contrôle tous les appareils compatibles HomeKit sans utiliser des API ou des applications fournies par le fournisseur. À l’aide de HomeKit, vous pouvez effectuer les opérations suivantes:
 
-- Détecter les nouveaux appareils de domotique HomeKit activée et les ajouter à une base de données qui rend persistantes sur l’ensemble des appareils iOS de l’utilisateur.
-- Le programme d’installation, configurer, afficher et contrôler n’importe quel appareil dans le HomeKit _base de données de Configuration accueil_.
-- Communiquer avec n’importe quel appareil HomeKit préconfiguré et des commandes à effectuer des actions individuelles ou fonctionnent de concert, telles que l’allumage sur toutes les lumières dans la cuisine.
+- Découvrez les nouveaux appareils domotiques HomeKit activés et ajoutez-les à une base de données qui sera conservée sur tous les appareils iOS de l’utilisateur.
+- Installer, configurer, afficher et contrôler n’importe quel appareil dans la _base de données de configuration_de base HomeKit.
+- Communiquez avec n’importe quel appareil HomeKit préconfiguré et commandez-les pour effectuer des actions individuelles ou travailler de concert, par exemple pour activer tous les éclairages de la cuisine.
 
-Outre son utilisation des appareils dans la base de Configuration accueil aux applications d’HomeKit activé, HomeKit fournit l’accès aux commandes vocales de Siri. Étant donné un programme d’installation HomeKit correctement configuré, l’utilisateur peut émettre des commandes vocales tel que « Siri, allumer l’éclairage dans le salon. »
+En plus de servir des appareils dans la base de données de configuration d’accès à distance aux applications HomeKit, HomeKit permet d’accéder aux commandes vocales de Siri. Dans le cadre d’une configuration HomeKit correctement configurée, l’utilisateur peut émettre des commandes vocales telles que «Siri, allumer les voyants dans la salle de vie».
 
 <a name="Home-Configuration-Database" />
 
-## <a name="the-home-configuration-database"></a>La base de données de Configuration de base
+## <a name="the-home-configuration-database"></a>La base de données de configuration de base
 
-HomeKit organise tous les appareils d’automation dans un emplacement donné dans une Collection d’accueil. Cette collection fournit un moyen de l’utilisateur regrouper leurs appareils domotique en unités logiquement organisées avec des étiquettes significatives, contrôlable de visu.
+HomeKit organise tous les appareils Automation d’un emplacement donné dans une collection d’hébergement. Ce regroupement permet à l’utilisateur de regrouper ses appareils domotiques dans des unités disposées de manière logique avec des étiquettes explicites explicites.
 
-La Collection d’accueil est stockée dans une base de Configuration accueil sera automatiquement sauvegardée et synchronisés sur l’ensemble des appareils iOS de l’utilisateur. HomeKit fournit les classes suivantes pour travailler avec la base de données accueil Configuration :
+La collection d’hébergement est stockée dans une base de données de configuration de base qui sera automatiquement sauvegardée et synchronisée sur tous les appareils iOS de l’utilisateur. HomeKit fournit les classes suivantes pour l’utilisation de la base de données de configuration de base:
 
-- `HMHome` -Il s’agit du conteneur de niveau supérieur qui contient toutes les informations et les configurations pour tous les appareils domotique dans un seul emplacement physique (par exemple). une seule famille résidence). L’utilisateur peut avoir plusieurs résidence, telles que leur accueil principale et une maison de vacances. Ou ils peuvent avoir différentes « héberge » sur la même propriété, telles que la maison principale et une maison invité sur le garage. Dans les deux cas, au moins un `HMHome` objet _doit_ être configuré et stockées avant toutes les autres informations HomeKit peuvent être entrées.
-- `HMRoom` Bien que facultatif, un `HMRoom` permet à l’utilisateur définir des salles spécifiques à l’intérieur d’une maison (`HMHome`) tel que : Cuisine, salle de bain, Garage ou salon. L’utilisateur peut grouper tous les appareils domotique à un emplacement spécifique dans leur maison dans un `HMRoom` et agir sur eux en tant qu’unité. Par exemple, vous demandant Siri à éteindre la lumière garage.
-- `HMAccessory` -Il s’agit d’un individu, HomeKit physique activé appareil automation a été installé dans le lieu de résidence de l’utilisateur (par exemple, un thermostat intelligent). Chaque `HMAccessory` est affecté à un `HMRoom`. Si l’utilisateur n’a pas configuré les salles de conversation, HomeKit affecte accessoires à une salle par défaut spéciale.
-- `HMService` : Représente un service fourni par une donnée `HMAccessory`, telles que l’état activé/désactivé d’une lumière ou sa couleur (si le changement de couleur est pris en charge). Chaque `HMAccessory` peut avoir plusieurs services, tels que d’une porte de garage qui inclut également une lumière. En outre, une donnée `HMAccessory` peut avoir des services, tels que de la mise à jour du microprogramme, qui sont trouvent en dehors du contrôle utilisateur.
-- `HMZone` -Permet à l’utilisateur regrouper un ensemble de `HMRoom` des objets dans des zones logiques, tels qu’attirail, Downstairs ou sous-sol. Bien que facultative, ainsi, pour les interactions comme demander Siri pour activer la lumière downstairs désactivé.
+- `HMHome`-Il s’agit du conteneur de niveau supérieur qui contient toutes les informations et configurations de tous les appareils domotiques à un seul emplacement physique (par exemple, un séjour de famille unique). L’utilisateur peut avoir plusieurs résidences, telles que la maison principale et un bureau de vacances. Ils peuvent également avoir des «maisons» différents sur la même propriété, telles que la maison principale et une maison invitée sur le garage. Dans les deux cas, au `HMHome` moins un objet _doit_ être configuré et stocké avant que toute autre information HomeKit puisse être entrée.
+- `HMRoom`-While facultatif, `HMRoom` un permet à l’utilisateur de définir des pièces spécifiques à l'`HMHome`intérieur d’une page d’hébergement () telles que: Cuisine, salle de bain, garage ou salon. L’utilisateur peut regrouper tous les appareils domotiques dans un emplacement spécifique de leur maison dans `HMRoom` un et les agit en tant qu’unité. Par exemple, demander à Siri de désactiver les lumières du garage.
+- `HMAccessory`: Représente un périphérique d’automatisation HomeKit physique individuel qui a été installé dans la résidence de l’utilisateur (par exemple, un thermostat intelligent). Chaque `HMAccessory` est assigné à un `HMRoom`. Si l’utilisateur n’a configuré aucune salle, HomeKit affecte des accessoires à une salle par défaut spéciale.
+- `HMService`-Représente un service fourni par un donné `HMAccessory`, tel que l’état activé/désactivé d’une lumière ou sa couleur (si le changement de couleur est pris en charge). Chacun `HMAccessory` peut avoir plusieurs services, tels qu’un ouvreur de porte de garage qui comprend également une lumière. En outre, un donné `HMAccessory` peut avoir des services, tels que la mise à jour du microprogramme, qui sont en dehors du contrôle utilisateur.
+- `HMZone`-Permet à l’utilisateur de regrouper `HMRoom` une collection d’objets dans des zones logiques, telles que les escaliers, les Starbucks ou le sous-sol. S’il est facultatif, cela permet des interactions comme demander à Siri de désactiver l’ensemble du Starbucks clair.
 
 <a name="Provisioning-a-HomeKit-App" />
 
-## <a name="provisioning-a-homekit-app"></a>Provisionnement d’une application HomeKit
+## <a name="provisioning-a-homekit-app"></a>Configuration d’une application HomeKit
 
-En raison des exigences de sécurité imposées par HomeKit, une application Xamarin.iOS qui utilise le framework HomeKit doit être correctement configurée dans les deux le portail des développeurs Apple et dans le fichier projet Xamarin.iOS.
+En raison des exigences de sécurité imposées par HomeKit, une application Xamarin. iOS qui utilise HomeKit Framework doit être correctement configurée dans le portail des développeurs Apple et dans le fichier de projet Xamarin. iOS.
 
 Effectuez ce qui suit :
 
-1. Connectez-vous à la [portail des développeurs Apple](https://developer.apple.com).
-2. Cliquez sur **certificats, identificateurs et profils**.
-3. Si vous n’avez pas déjà fait, cliquez sur **identificateurs** et créer un ID pour votre application (par exemple, `com.company.appname`), sinon modifier votre code existant.
-4. Vérifiez que le **HomeKit** service a été activée pour l’ID donné : 
+1. Connectez-vous au [portail des développeurs Apple](https://developer.apple.com).
+2. Cliquez sur **certificats, identificateurs & profils**.
+3. Si vous ne l’avez pas déjà fait, cliquez sur identificateurs et créez un ID pour votre application ( `com.company.appname`par exemple,), ou modifiez votre ID existant.
+4. Assurez-vous que le service **HomeKit** a été vérifié pour l’ID donné: 
 
-    [![](homekit-images/provision01.png "Activer le service d’HomeKit pour l’ID donné")](homekit-images/provision01.png#lightbox)
+    [![](homekit-images/provision01.png "Activer le service HomeKit pour l’ID donné")](homekit-images/provision01.png#lightbox)
 5. Enregistrez les modifications apportées.
-6. Cliquez sur **profils de provisionnement** > **développement** et créer un environnement de développement nouveau profil de configuration pour votre application : 
+6. Cliquez sur **Configuration des profils** > de provisionnement**et créez** un nouveau profil de provisionnement de développement pour votre application: 
 
-    [![](homekit-images/provision02.png "Créer un environnement de développement nouveau profil de configuration pour l’application")](homekit-images/provision02.png#lightbox)
-7. Télécharger et installer le nouveau profil de provisionnement ou utiliser Xcode pour télécharger et installer le profil.
-8. Modifier les options de votre projet Xamarin.iOS et vous assurer que vous utilisez le profil de configuration que vous venez de créer : 
+    [![](homekit-images/provision02.png "Créer un nouveau profil de provisionnement de développement pour l’application")](homekit-images/provision02.png#lightbox)
+7. Téléchargez et installez le nouveau profil de provisionnement ou utilisez Xcode pour télécharger et installer le profil.
+8. Modifiez les options de votre projet Xamarin. iOS et assurez-vous d’utiliser le profil de provisionnement que vous venez de créer: 
 
-    [![](homekit-images/provision03.png "Sélectionnez le profil de provisionnement venez de créer")](homekit-images/provision03.png#lightbox)
-9. Ensuite, modifiez votre **Info.plist** de fichiers et de vous assurer que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement : 
+    [![](homekit-images/provision03.png "Sélectionner le profil de provisionnement que vous venez de créer")](homekit-images/provision03.png#lightbox)
+9. Modifiez ensuite votre fichier **info. plist** et assurez-vous que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement: 
 
-    [![](homekit-images/provision04.png "Définir l’ID d’application ")](homekit-images/provision04.png#lightbox)
-10. Enfin, modifiez votre **Entitlements.plist** de fichiers et vérifiez que le **HomeKit** droit a été sélectionné : 
+    [![](homekit-images/provision04.png "Définir l’ID d’application")](homekit-images/provision04.png#lightbox)
+10. Enfin, modifiez votre fichier Entitlements **. plist** et assurez-vous que le droit **HomeKit** a été sélectionné: 
 
-    [![](homekit-images/provision05.png "Activer le droit d’HomeKit")](homekit-images/provision05.png#lightbox)
-11. Enregistrez les modifications à tous les fichiers.
+    [![](homekit-images/provision05.png "Activer le droit HomeKit")](homekit-images/provision05.png#lightbox)
+11. Enregistrez les modifications apportées à tous les fichiers.
 
-Ces paramètres en place, l’application est maintenant prête à accéder aux API de Framework HomeKit. Pour obtenir des informations détaillées sur l’approvisionnement, consultez notre [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md) et [l’approvisionnement de votre application](~/ios/get-started/installation/device-provisioning/index.md) guides.
+Lorsque ces paramètres sont en place, l’application est maintenant prête à accéder aux API HomeKit Framework. Pour plus d’informations sur l’approvisionnement, consultez nos guides d’approvisionnement et d' [approvisionnement](~/ios/get-started/installation/device-provisioning/index.md) des [appareils](~/ios/get-started/installation/device-provisioning/index.md) .
 
 > [!IMPORTANT]
-> Test d’une application HomeKit activée nécessite un appareil iOS réels qui a été configuré correctement pour le développement. HomeKit ne peut pas être testée dans le simulateur iOS.
+> Le test d’une application HomeKit activée requiert un appareil iOS réel qui a été correctement approvisionné pour le développement. HomeKit ne peut pas être testé à partir du simulateur iOS.
 
-## <a name="the-homekit-accessory-simulator"></a>Le simulateur d’accessoire de HomeKit
+## <a name="the-homekit-accessory-simulator"></a>Simulateur d’accessoires HomeKit
 
-Pour fournir un moyen de tester tous les appareils de la domotique possibles et les services, sans devoir disposer d’un appareil physique, Apple créé le _HomeKit accessoire simulateur_. À l’aide de ce simulateur, vous pouvez configurer et configurer des appareils virtuels de HomeKit.
+Pour fournir un moyen de tester tous les appareils et services domotiques, sans avoir besoin d’un appareil physique, Apple a créé le simulateur d' _accessoire HomeKit_. À l’aide de ce simulateur, vous pouvez configurer et configurer des appareils HomeKit virtuels.
 
-### <a name="installing-the-simulator"></a>Installez le simulateur
+### <a name="installing-the-simulator"></a>Installation du simulateur
 
-Apple fournit le simulateur d’accessoires HomeKit sous forme de téléchargement distinct à partir de Xcode, vous devrez installer avant de continuer.
+Apple fournit le simulateur d’accessoire HomeKit comme un téléchargement séparé de Xcode. vous devez donc l’installer avant de continuer.
 
 Effectuez ce qui suit :
 
-1. Dans un navigateur web, visitez [téléchargements pour les développeurs d’Apple](https://developer.apple.com/download/more/?name=for%20Xcode)
-2. Téléchargez le **des outils supplémentaires pour Xcode xxx** (où xxx est la version de Xcode que vous avez installée) : 
+1. Dans un navigateur Web, visitez [téléchargements pour les développeurs Apple](https://developer.apple.com/download/more/?name=for%20Xcode)
+2. Téléchargez les **outils supplémentaires pour XCode xxx** (où xxx est la version de Xcode que vous avez installée): 
 
-    [![](homekit-images/simulator01.png "Téléchargez les outils supplémentaires pour Xcode")](homekit-images/simulator01.png#lightbox)
-3. Ouvrir l’image de disque et installez les outils dans votre **Applications** directory.
+    [![](homekit-images/simulator01.png "Télécharger les outils supplémentaires pour Xcode")](homekit-images/simulator01.png#lightbox)
+3. Ouvrez l’image de disque et installez les outils dans le répertoire de votre **application** .
 
-Avec le simulateur d’accessoires HomeKit installé, Accessoires virtuels peuvent être créés pour le test.
+Une fois le simulateur d’accessoires HomeKit installé, des accessoires virtuels peuvent être créés pour le test.
 
 ### <a name="creating-virtual-accessories"></a>Création d’accessoires virtuels
 
-Pour démarrer le simulateur d’accessoires HomeKit et créer quelques accessoires virtuels, procédez comme suit :
+Pour démarrer le simulateur d’accessoires HomeKit et créer quelques accessoires virtuels, procédez comme suit:
 
-1. À partir du dossier d’Applications, démarrer le simulateur d’accessoires HomeKit : 
+1. À partir du dossier applications, démarrez le simulateur d’accessoires HomeKit: 
 
-    [![](homekit-images/simulator02.png "Le simulateur d’accessoire de HomeKit")](homekit-images/simulator02.png#lightbox)
-2. Cliquez sur le **+** bouton et sélectionnez **accessoire nouvelle...** : 
+    [![](homekit-images/simulator02.png "Simulateur d’accessoires HomeKit")](homekit-images/simulator02.png#lightbox)
+2. Cliquez sur **+** le bouton et sélectionnez **nouvel accessoire...** : 
 
     [![](homekit-images/simulator03.png "Ajouter un nouvel accessoire")](homekit-images/simulator03.png#lightbox)
-3. Remplissez les informations sur le nouvel accessoire et cliquez sur le **Terminer** bouton : 
+3. Renseignez les informations relatives au nouvel accessoire, puis cliquez sur le bouton **Terminer** : 
 
-    [![](homekit-images/simulator04.png "Remplissez les informations sur le nouvel accessoire")](homekit-images/simulator04.png#lightbox)
-4. Cliquez sur le **ajouter Service...** bouton, puis sélectionnez un type de service dans la liste déroulante : 
+    [![](homekit-images/simulator04.png "Renseignez les informations relatives au nouvel accessoire")](homekit-images/simulator04.png#lightbox)
+4. Cliquez sur **Ajouter un service.** et sélectionnez un type de service dans la liste déroulante: 
 
-    [![](homekit-images/simulator05.png "Sélectionnez un type de service dans la liste déroulante")](homekit-images/simulator05.png#lightbox)
-5. Fournir un **nom** pour le service et cliquez sur le **Terminer** bouton : 
+    [![](homekit-images/simulator05.png "Sélectionner un type de service dans la liste déroulante")](homekit-images/simulator05.png#lightbox)
+5. Fournissez un **nom** pour le service, puis cliquez sur le bouton **Terminer** : 
 
-    [![](homekit-images/simulator06.png "Entrez un nom pour le service")](homekit-images/simulator06.png#lightbox)
-6. Vous pouvez fournir les caractéristiques facultatives pour un service en cliquant sur le **ajouter une caractéristique** bouton et la configuration des paramètres requis : 
+    [![](homekit-images/simulator06.png "Entrer un nom pour le service")](homekit-images/simulator06.png#lightbox)
+6. Vous pouvez fournir des caractéristiques facultatives pour un service en cliquant sur le bouton **Ajouter une caractéristique** et en configurant les paramètres requis: 
 
     [![](homekit-images/simulator07.png "Configuration des paramètres requis")](homekit-images/simulator07.png#lightbox)
-7. Répétez les étapes ci-dessus pour créer l’un de chaque type d’appareil virtuel domotique qui prend en charge de HomeKit.
+7. Répétez les étapes ci-dessus pour créer l’un des types d’appareils d’automatisation de la racine virtuelle pris en charge par HomeKit.
 
-Avec certains exemples virtuel des accessoires HomeKit créé et configuré, vous pouvez maintenant utiliser et contrôler ces appareils à partir de votre application Xamarin.iOS.
+Avec quelques exemples d’accessoires HomeKit virtuels créés et configurés, vous pouvez désormais utiliser et contrôler ces appareils à partir de votre application Xamarin. iOS.
 
-## <a name="configuring-the-infoplist-file"></a>Configuration du fichier Info.plist
+## <a name="configuring-the-infoplist-file"></a>Configuration du fichier info. plist
 
-Nouveau dans iOS 10 (et version ultérieure), le développeur doit ajouter la `NSHomeKitUsageDescription` clé à l’application `Info.plist` de fichiers et de fournir une chaîne de déclaration pourquoi l’application souhaite accéder à la base de données de l’utilisateur HomeKit. Cette chaîne sera présentée à l’utilisateur la première exécution de l’application :
+Nouveauté pour iOS 10 (et versions ultérieures), le développeur doit ajouter la `NSHomeKitUsageDescription` clé au fichier de `Info.plist` l’application et fournir une chaîne qui déclare la raison pour laquelle l’application souhaite accéder à la base de données HomeKit de l’utilisateur. Cette chaîne est présentée à l’utilisateur la première fois qu’il exécute l’application:
 
-[![](homekit-images/info01.png "La boîte de dialogue autorisation HomeKit")](homekit-images/info01.png#lightbox)
+[![](homekit-images/info01.png "Boîte de dialogue d’autorisation HomeKit")](homekit-images/info01.png#lightbox)
 
-Pour définir cette clé, procédez comme suit :
+Pour définir cette clé, procédez comme suit:
 
-1. Double-cliquez sur le `Info.plist` de fichiers dans le **l’Explorateur de solutions** à ouvrir pour modification.
-2. En bas de l’écran, basculez vers le **Source** vue.
-3. Ajouter un nouveau **entrée** à la liste.
-4. Dans la liste déroulante, sélectionnez **confidentialité - Description de l’utilisation de HomeKit**: 
+1. Double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
+2. En bas de l’écran, basculez en mode **source** .
+3. Ajoutez une nouvelle **entrée** à la liste.
+4. Dans la liste déroulante, sélectionnez **Privacy-HomeKit utilisation Description**: 
 
-    [![](homekit-images/info02.png "Sélectionnez confidentialité - Description de l’utilisation de HomeKit")](homekit-images/info02.png#lightbox)
-5. Entrez une description pour la raison pour laquelle l’application souhaite accéder à la base de données de l’utilisateur HomeKit : 
+    [![](homekit-images/info02.png "Sélectionner la confidentialité-Description de l’utilisation de HomeKit")](homekit-images/info02.png#lightbox)
+5. Entrez une description de la raison pour laquelle l’application veut accéder à la base de données HomeKit de l’utilisateur: 
 
-    [![](homekit-images/info03.png "Entrez une description")](homekit-images/info03.png#lightbox)
+    [![](homekit-images/info03.png "Entrer une description")](homekit-images/info03.png#lightbox)
 6. Enregistrez les modifications dans le fichier.
 
 > [!IMPORTANT]
-> Échec de définition de la `NSHomeKitUsageDescription` clé dans le `Info.plist` fichier entraîne l’application _échouent silencieusement_ (en cours de fermeture par le système lors de l’exécution) sans erreur lorsque exécutez dans iOS 10 (ou version ultérieure).
+> Si vous ne définissez `NSHomeKitUsageDescription` pas la clé `Info.plist` dans le fichier, l’application _échoue silencieusement_ (en cours de fermeture par le système lors de l’exécution) sans erreur lorsqu’elle est exécutée dans iOS 10 (ou version ultérieure).
 
 ## <a name="connecting-to-homekit"></a>Connexion à HomeKit
 
-Pour communiquer avec HomeKit, votre application Xamarin.iOS doit tout d’abord instancier une instance de la `HMHomeManager` classe. Le gestionnaire accueil est le point d’entrée central dans HomeKit et est chargé de fournir une liste de biens immobiliers disponibles, la mise à jour et de maintenir cette liste, de retour de l’utilisateur _principal accueil_.
+Pour communiquer avec HomeKit, votre application Xamarin. iOS doit d’abord instancier une instance de `HMHomeManager` la classe. Le responsable Home est le point d’entrée central dans HomeKit et est responsable de la fourniture d’une liste de maisons disponibles, de la mise à jour et de la maintenance de cette liste et du retour de la _maison principale_de l’utilisateur.
 
-Le `HMHome` objet contient toutes les informations concernant un accueil donnent y compris les salles de conversation, les groupes ou les zones qu’elle peut contenir, ainsi que tous les accessoires domotique qui ont été installés. Avant de pouvoir effectuer des opérations dans HomeKit, au moins un `HMHome` doit être créé et affecté en tant que la page d’accueil principale.
+L' `HMHome` objet contient toutes les informations relatives à une page d’hébergement, y compris les salles, les groupes ou les zones qu’elle peut contenir, ainsi que tous les accessoires d’automatisation d’habitation qui ont été installés. Avant de pouvoir effectuer des opérations dans HomeKit, au moins une `HMHome` d’entre elles doit être créée et affectée en tant que principal d’hébergement.
 
-Votre application est chargée de vérifier si un accueil principal existe et créer et affecter si elle n’est pas le cas.
+Votre application est chargée de vérifier s’il existe une origine principale et de la créer et de l’affecter si ce n’est pas le cas.
 
-### <a name="adding-a-home-manager"></a>Ajout d’un gestionnaire de base
+### <a name="adding-a-home-manager"></a>Ajout d’un gestionnaire d’hébergement
 
-Pour ajouter la reconnaissance d’HomeKit à une application Xamarin.iOS, modifiez le **AppDelegate.cs** fichier pour le modifier et qu’elle ressemble à ce qui suit :
+Pour ajouter la reconnaissance HomeKit à une application Xamarin. iOS, modifiez le fichier **AppDelegate.cs** pour le modifier et faites-le ressembler à ce qui suit:
 
 ```csharp
 using HomeKit;
@@ -187,21 +187,21 @@ public override void FinishedLaunching (UIApplication application)
 }
 ```
 
-Lors de la première exécution de l’application, l’utilisateur sera invité s’ils souhaitent pouvoir accéder à leurs informations d’HomeKit :
+Lorsque l’application est exécutée pour la première fois, l’utilisateur est invité à indiquer s’il souhaite lui permettre d’accéder à ses informations HomeKit:
 
-[![](homekit-images/home01.png "L’utilisateur sera invité s’ils souhaitent pouvoir accéder à leurs informations d’HomeKit")](homekit-images/home01.png#lightbox)
+[![](homekit-images/home01.png "L’utilisateur sera invité à l’autoriser à accéder à ses informations HomeKit")](homekit-images/home01.png#lightbox)
 
-Si l’utilisateur répond **OK**, puis l’application sera en mesure d’utiliser leurs accessoires HomeKit sinon il ne peut pas et tous les appels à HomeKit échoue avec une erreur.
+Si l’utilisateur répond **OK**, l’application sera en mesure de fonctionner avec ses accessoires HomeKit. sinon, elle ne le sera pas et tout appel à HomeKit échouera avec une erreur.
 
-Avec le gestionnaire accueil en place, ensuite l’application devra voir si un accueil principal a été configuré, dans le cas contraire, offrent un moyen de l’utilisateur créer et affecter une.
+Lorsque le responsable de la famille est en place, l’application doit déterminer si une racine principale a été configurée et, dans le cas contraire, fournir un moyen à l’utilisateur de créer et d’affecter un.
 
-### <a name="accessing-the-primary-home"></a>L’accès à la page d’accueil principale
+### <a name="accessing-the-primary-home"></a>Accès à la page d’hébergement principale
 
-Comme indiqué ci-dessus, un accueil principal doit être créé et configuré avant d’HomeKit est disponible et elle est la responsabilité de l’application de fournir un moyen de l’utilisateur créer et affecter un accueil principal s’il n’existe pas déjà.
+Comme indiqué ci-dessus, une racine principale doit être créée et configurée avant que HomeKit soit disponible et il incombe à l’application de fournir à l’utilisateur un moyen de créer et d’affecter une page d’hébergement principale s’il n’en existe pas déjà une.
 
-Lorsque tout d’abord, votre application démarre ou retourne à partir de l’arrière-plan, il doit surveiller le `DidUpdateHomes` événements de la `HMHomeManager` class à vérifier l’existence d’une maison principal. S’il n’existe pas, il doit fournir une interface pour l’utilisateur à en créer un.
+Lorsque votre application démarre pour la première fois ou est retournée à partir de l' `DidUpdateHomes` arrière-plan `HMHomeManager` , elle doit surveiller l’événement de la classe pour vérifier l’existence d’une racine principale. S’il n’en existe pas, il doit fournir une interface permettant à l’utilisateur d’en créer un.
 
-Le code suivant peut être ajouté à un contrôleur d’affichage à vérifier pour la page d’accueil principale :
+Le code suivant peut être ajouté à un contrôleur d’affichage pour vérifier la racine principale:
 
 ```csharp
 using HomeKit;
@@ -223,15 +223,15 @@ ThisApp.HomeManager.DidUpdateHomes += (sender, e) => {
 };
 ```
 
-Lorsque le Gestionnaire d’accueil établit une connexion avec HomeKit, le `DidUpdateHomes` événement est déclenché, les habitations existantes seront chargées dans la collection du Gestionnaire de biens immobiliers et la page d’accueil principal sera chargé, s’il est disponible.
+Lorsque le responsable Home établit une connexion à HomeKit, l' `DidUpdateHomes` événement est déclenché, toutes les maisons existantes sont chargées dans la collection de maisons du responsable et la maison principale est chargée, si elle est disponible.
 
-### <a name="adding-a-primary-home"></a>Ajout d’une maison principal
+### <a name="adding-a-primary-home"></a>Ajout d’une page d’hébergement principale
 
-Si le `PrimaryHome` propriété de la `HMHomeManager` est `null` après un `DidUpdateHomes` événement, vous devez fournir un moyen de l’utilisateur créer et affecter un accueil principal avant de continuer.
+Si la `PrimaryHome` `HMHomeManager` propriété du est `null` après un `DidUpdateHomes` événement, vous devez fournir un moyen à l’utilisateur de créer et d’affecter un serveur d’hébergement principal avant de continuer.
 
-En général, l’application présente un formulaire pour l’utilisateur de nommer une nouvelle maison qui ensuite est passée au Gestionnaire de base pour le programme d’installation en tant que la page d’accueil principale. Pour le **HomeKitIntro** exemple d’application, une vue modale a été créée dans le concepteur IOS et appelée par le `AddHomeSegue` segue à partir de l’interface principale de l’application.
+En général, l’application présente un formulaire permettant à l’utilisateur de nommer une nouvelle page d’hébergement qui est ensuite transmise au responsable de l’installation principale afin d’être configurée comme page d’hébergement principale. Pour l’exemple d’application **HomeKitIntro** , une vue modale a été créée dans le concepteur iOS et `AddHomeSegue` appelée par segue à partir de l’interface principale de l’application.
 
-Il fournit un champ de texte pour l’utilisateur à entrer un nom pour la nouvelle page d’accueil et un bouton pour ajouter la page d’accueil. Lorsque l’utilisateur appuie sur le **ajouter accueil** bouton, le code suivant appelle le Gestionnaire de base pour ajouter la page d’accueil :
+Il fournit un champ de texte permettant à l’utilisateur d’entrer un nom pour la nouvelle page d’hébergement et un bouton pour ajouter la page d’hébergement. Quand l’utilisateur appuie sur le bouton **Ajouter** , le code suivant appelle le responsable pour ajouter la page d’hébergement:
 
 ```csharp
 // Add new home to HomeKit
@@ -258,34 +258,34 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 });
 ```
 
-Le `AddHome` méthode tente de créer la nouvelle maison et le renvoyer à la routine de rappel donné. Si le `error` propriété n’est pas `null`, une erreur s’est produite et il doit être présenté à l’utilisateur. Les erreurs courantes sont provoquées par un nom de base non unique ou le Gestionnaire de base n’est pas en mesure de communiquer avec HomeKit.
+La `AddHome` méthode tente de créer une nouvelle page d’hébergement et de la retourner à la routine de rappel donnée. Si la `error` propriété n’a `null`pas la valeur, une erreur s’est produite et elle doit être présentée à l’utilisateur. Les erreurs les plus courantes sont causées par un nom de famille non unique ou le responsable de la famille ne parvient pas à communiquer avec HomeKit.
 
-Si la page d’accueil a été créé avec succès, vous devez appeler la `UpdatePrimaryHome` méthode pour définir la nouvelle page d’accueil comme la page d’accueil principale. Là encore, si le `error` propriété n’est pas `null`, une erreur s’est produite et il doit être présenté à l’utilisateur.
+Si la page d’hébergement a été créée avec succès, vous `UpdatePrimaryHome` devez appeler la méthode pour définir la nouvelle page d’hébergement comme racine principale. Là encore, si `error` la propriété n' `null`a pas la valeur, une erreur s’est produite et elle doit être présentée à l’utilisateur.
 
-Vous devez également surveiller l’accueil du Gestionnaire de `DidAddHome` et `DidRemoveHome` événements et mise à jour de l’interface utilisateur de l’application en fonction des besoins.
+Vous devez également surveiller les événements et `DidAddHome` `DidRemoveHome` le gestionnaire d’hébergement et mettre à jour l’interface utilisateur de l’application selon vos besoins.
 
 > [!IMPORTANT]
-> Le `AlertView.PresentOKAlert` méthode utilisée dans l’exemple de code ci-dessus est une classe d’assistance dans l’application HomeKitIntro qui rend l’utilisation de l’iOS alertes plus facile.
+> La `AlertView.PresentOKAlert` méthode utilisée dans l’exemple de code ci-dessus est une classe d’assistance dans l’application HomeKitIntro qui facilite l’utilisation des alertes iOS.
 
 
 ## <a name="finding-new-accessories"></a>Recherche de nouveaux accessoires
 
-Une fois un accueil principal a été défini ou chargé à partir du Gestionnaire d’accueil, votre application Xamarin.iOS peut appeler le `HMAccessoryBrowser` pour trouver tous les accessoires domotique nouvelle et les ajouter à une page d’accueil.
+Une fois qu’une page d’hébergement principale a été définie ou chargée à partir du gestionnaire d’hébergement, votre application `HMAccessoryBrowser` Xamarin. iOS peut appeler pour rechercher de nouveaux accessoires d’automatisation de la domotique et les ajouter à une page d’hébergement.
 
-Appelez le `StartSearchingForNewAccessories` méthode pour commencer la recherche de nouveaux accessoires et les `StopSearchingForNewAccessories` méthode une fois.
+Appelez la `StartSearchingForNewAccessories` méthode pour commencer à rechercher de nouveaux accessoires et `StopSearchingForNewAccessories` la méthode lorsque vous avez terminé.
 
 > [!IMPORTANT]
-> `StartSearchingForNewAccessories` doit pas être conservé en cours d’exécution pendant de longues périodes de temps, car elle va compromettre l’autonomie et performances de l’appareil iOS. Apple suggère d’appeler `StopSearchingForNewAccessories` après une minute ou effectuez une recherche uniquement lorsque l’interface utilisateur d’accessoire rechercher est présentée à l’utilisateur.
+> `StartSearchingForNewAccessories`ne doit pas être exécuté pendant de longues périodes, car cela aura une incidence négative sur la durée de vie de la batterie et sur les performances de l’appareil iOS. Apple suggère un `StopSearchingForNewAccessories` appel après une minute ou uniquement lorsque l’interface utilisateur de recherche d’accessoire est présentée à l’utilisateur.
 
-Le `DidFindNewAccessory` événement sera appelé lors de la nouvelle accessoires sont découverts et ils seront ajoutés à la `DiscoveredAccessories` liste dans le navigateur d’accessoire.
+L' `DidFindNewAccessory` événement est appelé quand de nouveaux accessoires sont découverts et qu’ils sont ajoutés à `DiscoveredAccessories` la liste dans le navigateur d’accessoire.
 
-Le `DiscoveredAccessories` liste contiendra une collection de `HMAccessory` les objets qui définissent un donnent HomeKit activé appareil de la domotique et ses services disponibles, tels que les voyants ou le contrôle de la porte de garage.
+La `DiscoveredAccessories` liste contient une collection d' `HMAccessory` objets qui définissent un appareil domotique HomeKit activé et ses services disponibles, tels que les lumières ou le contrôle de la porte de garage.
 
-Une fois le nouvel accessoire a été trouvé, il doit être présenté à l’utilisateur et par conséquent, ils peuvent sélectionner et l’ajouter à une maison. Exemple :
+Une fois le nouvel accessoire trouvé, il doit être présenté à l’utilisateur et peut donc le sélectionner et l’ajouter à une page d’hébergement. Exemple :
 
 [![](homekit-images/accessory01.png "Recherche d’un nouvel accessoire")](homekit-images/accessory01.png#lightbox)
 
-Appelez le `AddAccessory` méthode pour ajouter l’accessoire sélectionné à la collection de la page d’accueil. Par exemple :
+Appelez la `AddAccessory` méthode pour ajouter l’accessoire sélectionné à la collection de l’hébergement. Par exemple :
 
 ```csharp
 // Add the requested accessory to the home
@@ -298,96 +298,96 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 });
 ```
 
-Si le `err` propriété n’est pas `null`, une erreur s’est produite et il doit être présenté à l’utilisateur. Sinon, l’utilisateur sera invité à entrer le code de programme d’installation pour le périphérique à ajouter :
+Si la `err` propriété n’a `null`pas la valeur, une erreur s’est produite et elle doit être présentée à l’utilisateur. Dans le cas contraire, l’utilisateur sera invité à entrer le code d’installation de l’appareil à ajouter:
 
-[![](homekit-images/accessory02.png "Entrez le code d’installation pour le périphérique à ajouter")](homekit-images/accessory02.png#lightbox)
+[![](homekit-images/accessory02.png "Entrez le code d’installation de l’appareil à ajouter")](homekit-images/accessory02.png#lightbox)
 
-Dans le simulateur d’accessoires HomeKit ce nombre peut être trouvé sous le **Code d’installation** champ :
+Dans le simulateur d’accessoire HomeKit, ce numéro se trouve sous le champ **code d’installation** :
 
 [![](homekit-images/accessory03.png "Le champ Code d’installation dans le simulateur d’accessoires HomeKit")](homekit-images/accessory03.png#lightbox)
 
-Pour les accessoires HomeKit réels, le code d’installation soit être imprimé sur une étiquette sur l’appareil lui-même, sur l’emballage du produit ou dans le manuel de l’utilisateur de l’accessoire.
+Pour les accessoires HomeKit réels, le code d’installation est imprimé sur une étiquette sur l’appareil lui-même, dans la zone produit ou dans le manuel de l’utilisateur de l’accessoire.
 
-Vous devez surveiller le navigateur accessoire `DidRemoveNewAccessory` événement et mise à jour de l’utilisateur de l’interface pour supprimer un accessoire dans la liste disponible une fois que l’utilisateur a ajouté à leur Collection d’accueil.
+Vous devez surveiller l’événement du `DidRemoveNewAccessory` navigateur d’accessoires et mettre à jour l’interface utilisateur pour supprimer un accessoire de la liste disponible une fois que l’utilisateur l’a ajouté à sa collection personnelle.
 
 ## <a name="working-with-accessories"></a>Utilisation des accessoires
 
-Une fois un accueil principal et établi et accessoires ont été ajoutés à ce dernier, vous pouvez présenter une liste des accessoires (et éventuellement des salles de conversation) pour l’utilisateur travailler avec.
+Une fois que vous avez ajouté une page d’hébergement principale et que des accessoires ont été ajoutés, vous pouvez présenter une liste d’accessoires (et éventuellement de salles) à utiliser par l’utilisateur.
 
-Le `HMRoom` objet contient toutes les informations concernant une salle donnée et tous les accessoires qui lui appartiennent. Salles de conversation peuvent éventuellement être organisés en une ou plusieurs zones. Un `HMZone` contient toutes les informations sur une zone donnée et toutes les pièces qui lui appartiennent.
+L' `HMRoom` objet contient toutes les informations relatives à une salle donnée et à tous les accessoires qui lui appartiennent. Les salles peuvent éventuellement être organisées en une ou plusieurs zones. Un `HMZone` contient toutes les informations relatives à une zone donnée et à toutes les pièces qui lui appartiennent.
 
-Cet exemple, nous allons garder des données simples et fonctionnent avec les accessoires d’une maison directement, au lieu d’organisant dans des zones ou des salles de conversation.
+Dans le cadre de cet exemple, nous allons conserver des choses simples et travailler directement avec les accessoires d’une famille, au lieu de les organiser en salles ou en zones.
 
-Le `HMHome` objet contient une liste d’accessoire attribué qui peut être présentée à l’utilisateur dans son `Accessories` propriété. Par exemple :
+L' `HMHome` objet contient une liste d’accessoires affectés qui peuvent être présentés à l’utilisateur dans sa `Accessories` propriété. Par exemple :
 
-[![](homekit-images/accessory04.png "Un accessoire exemple")](homekit-images/accessory04.png#lightbox)
+[![](homekit-images/accessory04.png "Exemple d’accessoire")](homekit-images/accessory04.png#lightbox)
 
-Écran ici, l’utilisateur peut sélectionner un accessoire donné et travailler avec les services qu’il fournit.
+Formulaire ici, l’utilisateur peut sélectionner un accessoire donné et utiliser les services qu’il fournit.
 
-## <a name="working-with-services"></a>Utilisation des Services
+## <a name="working-with-services"></a>Utilisation des services
 
-Quand l’utilisateur interagit avec un appareil HomeKit domotique est activée, il est généralement via les services qu’il fournit. Le `Services` propriété de la `HMAccessory` classe contient une collection de `HMService` propose des objets qui définissent les services un appareil.
+Lorsque l’utilisateur interagit avec un périphérique d’automatisation à la racine HomeKit donné, il s’agit généralement des services qu’il fournit. La `Services` propriété de la `HMAccessory` classe contient une collection d' `HMService` objets qui définissent les services offerts par un appareil.
 
-Les services sont des éléments tels que les lumières, thermostats, porte de garage, commutateurs ou les verrous. Certains appareils (comme une porte de garage) fournit plusieurs services, par exemple une lumière et la capacité à ouvrir ou fermer une porte.
+Les services sont des éclairages, des thermostats, des appareils ouverts, des commutateurs ou des verrous. Certains appareils (comme un ouvreur de porte de garage) fournissent plusieurs services, tels qu’une lumière et la possibilité d’ouvrir ou de fermer une porte.
 
-En plus des services spécifiques qui fournit un accessoire donné, chaque accessoire contient un `Information Service` qui définit des propriétés telles que son nom, le fabricant, le modèle et le numéro de série.
+En plus des services spécifiques fournis par un accessoire donné, chaque accessoire contient un `Information Service` qui définit des propriétés telles que son nom, son fabricant, son modèle et son numéro de série.
 
-### <a name="accessory-service-types"></a>Types de Service accessoire
+### <a name="accessory-service-types"></a>Types de service accessoire
 
-Les Types de Service suivants sont disponibles via le `HMServiceType` enum :
+Les types de service suivants sont disponibles via `HMServiceType` l’énumération:
 
-- **AccessoryInformation** -fournit des informations sur l’appareil domotique donné (accessoire).
-- **AirQualitySensor** -définit un capteur de qualité d’air.
-- **Batterie** -définit l’état de la batterie d’un accessoire.
-- **CarbonDioxideSensor** -définit un capteur de dioxyde de carbone.
-- **CarbonMonoxideSensor** -définit un capteur monoxyde.
-- **ContactSensor** -définit un capteur de contact (par exemple, une fenêtre qui est ouvert ou fermé).
-- **La porte** -définit un capteur d’état porte (tel qu’ouvert ou fermé).
-- **Ventilateur** -définit un ventilateur contrôlé à distance.
-- **GarageDoorOpener** -définit une porte de garage.
-- **HumiditySensor** -définit un capteur d’humidité.
-- **LeakSensor** -définit un capteur de fuite (comme pour une machine de lavage ou le chauffe-eau).
-- **Appareil d’éclairage** -définit une lumière autonome ou une lumière qui fait partie d’un autre accessoire (par exemple, une porte de garage).
-- **LightSensor** -définit un capteur d’éclairage.
-- **LockManagement** -définit un service qui gère un verrouillage de porte automatisés.
-- **LockMechanism** -définit un verrou contrôlé à distance (par exemple, un verrouillage de porte).
-- **MotionSensor** -définit un capteur de mouvement.
-- **OccupancySensor** -définit un capteur d’occupation.
-- **Outlet** -définit une prise murale contrôlée à distance.
-- **SecuritySystem** -définit un système de sécurité de base.
-- **StatefulProgrammableSwitch** -définit un commutateur programmable qui reste dans un état donnent une fois déclenché (par exemple, un commutateur retournement).
-- **StatelessProgrammableSwitch** -définit un commutateur programmable qui renvoie à son état initial après le déclenchement (par exemple, un bouton de commande).
-- **SmokeSensor** -définit un capteur de détection de fumée.
-- **Commutateur** -définit un commutateur activé/désactivé, par exemple un commutateur standard mur.
-- **Capteur de température** -définit un capteur de température.
-- **Thermostat** -définit un thermostat intelligent permet de contrôler un système HVAC.
-- **Fenêtre** -définit une fenêtre automatisée que canne à sucre être ouvert ou fermé à distance.
-- **WindowCovering** -définit une fenêtre contrôlée à distance couvrant comme Stores qui peuvent être ouvert ou fermés.
+- **AccessoryInformation** -fournit des informations sur l’appareil Automation (accessoire).
+- **AirQualitySensor** : définit un capteur de qualité de l’air.
+- **Battery** -définit l’état de la batterie d’un accessoire.
+- **CarbonDioxideSensor** : définit un capteur de dioxyde de carbone.
+- **CarbonMonoxideSensor** : définit un capteur de monoxyde de carbone.
+- **ContactSensor** : définit un capteur de contact (par exemple, une fenêtre ouverte ou fermée).
+- **Porte** : définit un capteur d’état de la porte (tel qu’ouvert ou fermé).
+- **Fan** -définit un ventilateur contrôlé à distance.
+- **GarageDoorOpener** : définit un ouvreur de porte de garage.
+- **HumiditySensor** : définit un capteur d’humidité.
+- **LeakSensor** : définit un capteur de fuites (comme pour un chauffe-eau chaud ou une machine à laver).
+- **Ampoule** -définit une lumière autonome ou une lumière qui fait partie d’un autre accessoire (comme un ouvreur de porte de garage).
+- **LightSensor** : définit un capteur de lumière.
+- **LockManagement** : définit un service qui gère un verrou de porte automatique.
+- **LockMechanism** : définit un verrou contrôlé à distance (par exemple, un verrou de porte).
+- **MotionSensor** : définit un capteur de mouvement.
+- **OccupancySensor** : définit un capteur d’occupation.
+- **Outlet** : définit une prise murale contrôlée à distance.
+- **SecuritySystem** : définit un système de sécurité de l’ordinateur de bureau.
+- **StatefulProgrammableSwitch** : définit un commutateur programmable qui reste dans un état d’octroi une fois déclenché (comme un commutateur Flip).
+- **StatelessProgrammableSwitch** : définit un commutateur programmable qui retourne à son état initial après avoir été déclenché (comme un bouton de commande).
+- **SmokeSensor** : définit un capteur de fumée.
+- **Commutateur** -définit un commutateur on/off comme un commutateur mural standard.
+- **Capteur** : définit un capteur de température.
+- **Thermostat** : définit un thermostat intelligent utilisé pour contrôler un système HVAC.
+- **Window** -définit une fenêtre automatisée à laquelle la canne est ouverte ou fermée à distance.
+- **WindowCovering** : définit une couverture de fenêtre contrôlée à distance, comme les aveugles qui peuvent être ouvertes ou fermées.
 
-### <a name="displaying-service-information"></a>Affichage des informations de Service
+### <a name="displaying-service-information"></a>Affichage des informations de service
 
-Après avoir chargé un `HMAccessory` vous pouvez interroger l’individu `HNService` objets il fournit et afficher ces informations à l’utilisateur :
+Une fois que vous `HMAccessory` avez chargé un, vous `HNService` pouvez interroger les objets qu’il fournit et afficher ces informations à l’utilisateur:
 
-[![](homekit-images/accessory05.png "Affichage des informations de Service")](homekit-images/accessory05.png#lightbox)
+[![](homekit-images/accessory05.png "Affichage des informations de service")](homekit-images/accessory05.png#lightbox)
 
-Vous devez toujours doit vérifier la `Reachable` propriété d’un `HMAccessory` avant d’essayer de les utiliser. Un accessoire peut être inaccessible l’utilisateur n’est pas dans la plage de l’appareil ou si elle a été déconnecté.
+Vous devez toujours vérifier la propriété `Reachable` d’un `HMAccessory` avant de tenter de l’utiliser. Un accessoire peut être inaccessible. l’utilisateur n’est pas dans la plage de l’appareil ou s’il a été débranché.
 
-Une fois qu’un service a été sélectionné, l’utilisateur peut afficher ou modifier une ou plusieurs caractéristiques de ce service pour surveiller et de contrôler un appareil domotique donné.
+Une fois qu’un service a été sélectionné, l’utilisateur peut afficher ou modifier une ou plusieurs caractéristiques de ce service afin de surveiller ou de contrôler un périphérique d’automatisation de l’hôte donné.
 
 <a name="Working-with-Characteristics" />
 
-## <a name="working-with-characteristics"></a>Utilisation de caractéristiques
+## <a name="working-with-characteristics"></a>Utilisation des caractéristiques
 
-Chaque `HMService` objet peut contenir une collection de `HMCharacteristic` des objets qui peuvent fournir des informations sur l’état du service (par exemple, une porte qui est ouvert ou fermé) ou autoriser l’utilisateur d’ajuster un état (par exemple, en définissant la couleur d’une lumière).
+Chaque `HMService` objet peut contenir une collection d' `HMCharacteristic` objets qui peuvent fournir des informations sur l’état du service (par exemple, une porte ouverte ou fermée) ou autoriser l’utilisateur à ajuster un État (par exemple, définir la couleur d’une lumière).
 
-`HMCharacteristic` fournit non seulement des informations sur une caractéristique et son état, mais fournit également des méthodes pour travailler avec l’état via _caractéristique métadonnées_ (`HMCharacteristisMetadata`). Ces métadonnées peuvent fournir des propriétés (telles que les plages de valeur minimale et maximale) qui sont utiles lors de l’affichage des informations à l’utilisateur ou leur permettant de modifier des États.
+`HMCharacteristic`fournit non seulement des informations sur une caractéristique et son état, mais fournit également des méthodes pour l’utilisation de l’état via`HMCharacteristisMetadata`des _métadonnées caractéristiques_ (). Ces métadonnées peuvent fournir des propriétés (telles que des plages de valeurs minimales et maximales) qui sont utiles lors de l’affichage d’informations à l’utilisateur ou de leur autorisation de modifier les États.
 
-Le `HMCharacteristicType` enum fournit un ensemble de valeurs de métadonnées de la caractéristique qui peut être défini ou modifié comme suit :
+L' `HMCharacteristicType` énumération fournit un ensemble de valeurs de métadonnées caractéristiques qui peuvent être définies ou modifiées comme suit:
 
 - AdminOnlyAccess
 - AirParticulateDensity
 - AirParticulateSize
-- AirQuality
+- Qualité de l’As
 - AudioFeedback
 - BatteryLevel
 - Luminosité
@@ -436,7 +436,7 @@ Le `HMCharacteristicType` enum fournit un ensemble de valeurs de métadonnées d
 - RotationDirection
 - RotationSpeed
 - Saturation
-- SerialNumber (Numéro_série)
+- SerialNumber
 - SmokeDetected
 - SoftwareVersion
 - StatusActive
@@ -456,13 +456,13 @@ Le `HMCharacteristicType` enum fournit un ensemble de valeurs de métadonnées d
 - TemperatureUnits
 - Version
 
-### <a name="working-with-a-characteristics-value"></a>Utilisation de valeur d’une caractéristique
+### <a name="working-with-a-characteristics-value"></a>Utilisation de la valeur d’une caractéristique
 
-Pour vous assurer que votre application a le dernier état d’une caractéristique donné, appelez le `ReadValue` méthode de la `HMCharacteristic` classe. Si le `err` propriété n’est pas `null`, une erreur s’est produite et il peut ou ne peut pas être présentée à l’utilisateur.
+Pour vous assurer que votre application possède l’état le plus récent d’une caractéristique donnée `ReadValue` , appelez la `HMCharacteristic` méthode de la classe. Si la `err` propriété n’a `null`pas la valeur, une erreur s’est produite et peut ne pas être présentée à l’utilisateur.
 
-La caractéristique `Value` propriété contient l’état actuel de la caractéristique donnée comme un `NSObject`et par conséquent ne peut pas être manipulées directement dans C#.
+La propriété de `Value` la caractéristique contient l’état actuel de la caractéristique donnée `NSObject`en tant que, et par conséquent, ne peut pas C#être utilisé directement dans.
 
-Pour lire la valeur, la classe d’assistance suivante a été ajoutée à la **HomeKitIntro** exemple d’application :
+Pour lire la valeur, la classe d’assistance suivante a été ajoutée à l’exemple d’application **HomeKitIntro** :
 
 ```csharp
 using System;
@@ -630,15 +630,15 @@ namespace HomeKitIntro
 }
 ```
 
-Le `NSObjectConverter` est utilisé chaque fois que l’application doit lire l’état actuel d’une caractéristique. Par exemple :
+`NSObjectConverter` Est utilisé chaque fois que l’application doit lire l’état actuel d’une caractéristique. Par exemple :
 
 ```csharp
 var value = NSObjectConverter.ToFloat (characteristic.Value);
 ```
 
-La ligne ci-dessus convertit la valeur dans un `float` qui peut ensuite être utilisé dans le Xamarin C# code.
+La ligne ci-dessus convertit la `float` valeur en une qui peut ensuite être utilisée C# dans le code Xamarin.
 
-Pour modifier un `HMCharacteristic`, appelez sa `WriteValue` méthode et encapsuler la nouvelle valeur dans un `NSObject.FromObject` appeler. Par exemple :
+Pour modifier un `HMCharacteristic`, appelez sa `WriteValue` méthode et encapsulez la nouvelle valeur `NSObject.FromObject` dans un appel. Par exemple :
 
 ```csharp
 Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
@@ -650,69 +650,69 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 });
 ```
 
-Si le `err` propriété n’est pas `null`, une erreur s’est produite et doit être présentée à l’utilisateur.
+Si la `err` propriété n’a `null`pas la valeur, une erreur s’est produite et doit être présentée à l’utilisateur.
 
-### <a name="testing-characteristic-value-changes"></a>Test des modifications de valeur caractéristique
+### <a name="testing-characteristic-value-changes"></a>Test des modifications de valeur de caractéristiques
 
-Lorsque vous travaillez avec `HMCharacteristics` et accessoires simulés, les modifications apportées à la `Value` propriété peut être surveillée dans le simulateur d’accessoires HomeKit.
+Lorsque vous utilisez `HMCharacteristics` et simulez des accessoires, les modifications `Value` apportées à la propriété peuvent être surveillées dans le simulateur d’accessoire HomeKit.
 
-Avec le **HomeKitIntro** application s’exécutant sur iOS réels matériels des périphériques, modifications apportées à valeur d’une caractéristique doit être visible presque instantanément dans le simulateur d’accessoires HomeKit. Par exemple, modification de l’état d’une lumière dans l’application iOS :
+Lorsque l’application **HomeKitIntro** s’exécute sur du matériel d’appareil iOS réel, les modifications apportées à la valeur d’une caractéristique doivent être affichées presque instantanément dans le simulateur d’accessoire HomeKit. Par exemple, la modification de l’état d’une lumière dans l’application iOS:
 
 [![](homekit-images/test01.png "Modification de l’état d’une lumière dans une application iOS")](homekit-images/test01.png#lightbox)
 
-Devez modifier l’état de la lumière dans le simulateur d’accessoires HomeKit. Si la valeur ne change pas, vérifiez l’état du message d’erreur lors de l’écriture de nouvelles valeurs de caractéristiques et assurez-vous que l’accessoire est toujours accessible.
+Doit modifier l’état de la lumière dans le simulateur d’accessoires HomeKit. Si la valeur ne change pas, vérifiez l’état du message d’erreur lors de l’écriture de nouvelles valeurs de caractéristiques et assurez-vous que l’accessoire est toujours accessible.
 
-## <a name="advanced-homekit-features"></a>Fonctionnalités avancées d’HomeKit
+## <a name="advanced-homekit-features"></a>Fonctionnalités avancées de HomeKit
 
-Cet article a présenté les fonctionnalités de base requises pour travailler avec des accessoires HomeKit dans une application Xamarin.iOS. Toutefois, il existe plusieurs fonctionnalités avancées de HomeKit qui ne sont pas traitées dans cette introduction :
+Cet article a abordé les fonctionnalités de base requises pour l’utilisation des accessoires HomeKit dans une application Xamarin. iOS. Toutefois, il existe plusieurs fonctionnalités avancées de HomeKit qui ne sont pas abordées dans cette introduction:
 
-- **Salles** -des accessoires HomeKit activé peuvent éventuellement organisés en salles par l’utilisateur final. Ainsi, HomeKit accessoires présents dans un moyen simple pour l’utilisateur à comprendre et utiliser. Pour plus d’informations sur la création et la gestion des salles de conversation, consultez d’Apple [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom) documentation.
-- **Zones** -salles peuvent éventuellement être organisés en zones par l’utilisateur final. Une zone fait référence à une collection de classes que l’utilisateur peut traiter comme une seule unité. Par exemple :  Attirail Downstairs ou sous-sol. Là encore, cela permet d’HomeKit présenter et utiliser des accessoires d’une manière qui a du sens pour l’utilisateur final. Pour plus d’informations sur la création et la gestion des zones, consultez d’Apple [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) documentation.
-- **Actions et jeux d’actions** -Actions modifier les caractéristiques des accessoires de service et peuvent être regroupées en ensembles. Jeux d’actions agisse en tant que scripts permettant de contrôler un groupe d’accessoires et coordonner leurs actions. Par exemple, un script de « Télévision » peut fermer les stores atténue l’éclairage et activer la télévision et son système audio. Pour plus d’informations sur la création et la gestion des Actions et des jeux d’actions, consultez d’Apple [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction) et [HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet) documentation.
-- **Déclencheurs** : un déclencheur peut activer une ou plusieurs Action définie lorsqu’un ensemble donné de conditions ont été remplies. Par exemple, allumer le voyant portch et verrouiller toutes les portes externes lorsqu’il atteint foncé à l’extérieur. Pour plus d’informations sur la création et la gestion des déclencheurs, consultez d’Apple [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger) documentation.
+- **Salles** -les accessoires compatibles HomeKit peuvent éventuellement être organisés en espaces par l’utilisateur final. Cela permet à HomeKit de présenter des accessoires de manière à ce que l’utilisateur comprenne et travaille facilement avec. Pour plus d’informations sur la création et la maintenance de salles, consultez la documentation [HMRoom](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMRoom_Class/index.html#//apple_ref/occ/cl/HMRoom) d’Apple.
+- **Zones** -les salles peuvent éventuellement être organisées en zones par l’utilisateur final. Une zone fait référence à une collection de salles que l’utilisateur peut traiter en tant qu’unité unique. Par exemple :  Escaliers, Starbucks ou sous-sol. Là encore, cela permet à HomeKit de présenter et de travailler avec des accessoires d’une manière qui paraît logique pour l’utilisateur final. Pour plus d’informations sur la création et la gestion des zones, consultez la documentation [HMZone](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMZone_Class/index.html#//apple_ref/occ/cl/HMZone) d’Apple.
+- **Actions et jeux** d’actions: les actions modifient les caractéristiques du service accessoire et peuvent être regroupées dans des ensembles. Les jeux d’actions jouent le rôle de scripts pour contrôler un groupe d’accessoires et coordonner leurs actions. Par exemple, un script «Watch TV» peut fermer les aveugles, estomper les lumières et allumer la télévision et son système son. Pour plus d’informations sur la création et la gestion des actions et des jeux d’actions, consultez la documentation [HMAction](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMAction_Class/index.html#//apple_ref/occ/cl/HMAction) et [HMActionSet](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMActionSet_Class/index.html#//apple_ref/occ/cl/HMActionSet) d’Apple.
+- **Déclencheurs** : un déclencheur peut activer un ou plusieurs jeux d’actions lorsqu’un ensemble de conditions donné a été respecté. Par exemple, activez la lumière portch et verrouillez toutes les portes externes quand elles sont sombres à l’extérieur. Pour plus d’informations sur la création et la gestion des déclencheurs, consultez la documentation [HMTrigger](https://developer.apple.com/library/prerelease/ios/documentation/HomeKit/Reference/HMTrigger_Class/index.html#//apple_ref/occ/cl/HMTrigger) d’Apple.
 
-Dans la mesure où ces fonctionnalités utilisent les mêmes techniques présentées ci-dessus, ils doivent être faciles à implémenter par Apple suivant [HomeKitDeveloper Guide](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html), [indications de l’Interface utilisateur HomeKit](https://developer.apple.com/homekit/ui-guidelines/) et [ Référence de l’infrastructure d’HomeKit](https://developer.apple.com/library/ios/home_kit_framework_ref).
+Étant donné que ces fonctionnalités utilisent les mêmes techniques que celles présentées ci-dessus, elles doivent être faciles à implémenter en suivant le [Guide HomeKitDeveloper](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)d’Apple, [les instructions de l’interface utilisateur HomeKit](https://developer.apple.com/homekit/ui-guidelines/) et la [référence HomeKit Framework](https://developer.apple.com/library/ios/home_kit_framework_ref).
 
-## <a name="homekit-app-review-guidelines"></a>Directives de révision d’application HomeKit
+## <a name="homekit-app-review-guidelines"></a>Instructions de révision de l’application HomeKit
 
-Avant de soumettre un HomeKit activée application Xamarin.iOS dans iTunes Connect pour la version de l’iTunes App Store, veillez à suivre les instructions d’Apple pour les applications d’HomeKit activé :
+Avant de soumettre une application Xamarin. iOS activée pour HomeKit à iTunes Connect pour la publication dans l’App Store iTunes, veillez à suivre les instructions d’Apple pour les applications prenant en charge HomeKit:
 
-- Objectif principal de l’application _doit_ être domotique si vous utilisez le framework HomeKit.
-- Texte marketing de l’application doit informer les utilisateurs que HomeKit est utilisé et qu’ils doivent fournir une politique de confidentialité.
-- Collecte des informations sur l’utilisateur ou l’utilisation d’HomeKit à des fins publicitaires est strictement interdite.
+- L’objectif principal de l’application _doit_ être Automation en cas d’utilisation de l’infrastructure HomeKit.
+- Le texte marketing de l’application doit avertir les utilisateurs qu’HomeKit est en cours d’utilisation et ils doivent fournir une politique de confidentialité.
+- La collecte des informations utilisateur ou l’utilisation de HomeKit pour la publicité est strictement interdite.
 
-Pour la version complète, consultez les instructions, consultez d’Apple [App Store passez en revue les instructions](https://developer.apple.com/app-store/review/guidelines/).
+Pour connaître les instructions de révision complète, consultez [les instructions d’examen de l’App Store](https://developer.apple.com/app-store/review/guidelines/)d’Apple.
 
-## <a name="whats-new-in-ios-9"></a>Quelles sont les nouveautés dans iOS 9
+## <a name="whats-new-in-ios-9"></a>Nouveautés d’iOS 9
 
-Apple a effectué les modifications et additions suivantes à HomeKit pour iOS 9 :
+Apple a apporté les modifications et ajouts suivants à HomeKit pour iOS 9:
 
-- **Conservation d’objets existants** : si un accessoire existant est modifié, le Gestionnaire d’accueil (`HMHomeManager`) vous informe de l’élément spécifique qui a été modifié.
-- **Identificateurs persistants** -toutes les classes HomeKit pertinentes incluent désormais un `UniqueIdentifier` propriété pour identifier de façon unique un élément donné sur HomeKit activée applications (ou instances de la même application).
-- **Gestion des utilisateurs** -ajouter un contrôleur d’affichage intégré pour fournir la gestion des utilisateurs sur les utilisateurs qui ont accès aux appareils HomeKit à domicile de l’utilisateur principal.
-- **Fonctionnalités utilisateur** - HomeKit utilisateurs ont désormais un ensemble de privilèges qui contrôlent ce que les fonctions qu’ils sont en mesure d’utiliser dans HomeKit et HomeKit activé accessoires. Votre application doit afficher uniquement les fonctionnalités applicables à l’utilisateur actuel. Par exemple, seuls les administrateurs doivent être en mesure de maintenir les autres utilisateurs.
-- **Prédéfinis scènes** -arrière-plan prédéfinis ont été créés pour les quatre événements courants qui se produisent pour l’utilisateur HomeKit moyen : Opérationnel, laissez, retourner, accédez à la base de l’analyse. Impossible de supprimer ces séquences prédéfinis à partir d’une maison.
-- **Arrière-plan et Siri** -Siri a prise en charge accrue pour les scènes dans iOS 9 et peut reconnaissent le nom de toutes les scènes défini dans HomeKit. Un utilisateur peut exécuter une scène simplement en parlant de son nom par Siri.
-- **Catégories Accessoires** -un ensemble de catégories prédéfinies a été ajouté à tous les accessoires et vous aide à identifier le type d’accessoire ajouté à une page d’accueil ou a travaillé sur à partir de votre application. Ces nouvelles catégories sont disponibles pendant l’installation d’accessoire.
-- **Prise en charge d’Apple Watch** - HomeKit est désormais disponible pour watchOS et l’Apple Watch pourront contrôle HomeKit des appareils compatibles sans un iPhone en cours près de la montre. HomeKit pour watchOS prend en charge les fonctionnalités suivantes : Affichage des habitations, contrôler les accessoires et l’exécution de séquences.
-- **Nouveau Type de déclencheur d’événement** : outre le type de déclencheur du minuteur pris en charge dans iOS 8, iOS 9 maintenant prend en charge les déclencheurs d’événements en fonction d’état accessoire (telles que les données de capteur) ou la géolocalisation. Utilisent des déclencheurs d’événements `NSPredicates` pour définir des conditions pour leur exécution.
-- **Accès à distance** -avec accès à distance, l’utilisateur est maintenant en mesure de contrôler leur HomeKit activé accueil Automation accessoires lorsqu’ils sont en dehors de la maison à un emplacement distant. Dans iOS 8 cela était uniquement pris en charge si l’utilisateur avait une génération 3e Apple TV dans la page d’accueil. Dans iOS 9, cette limitation a été supprimée et accès à distance est prise en charge par le biais d’iCloud et le protocole d’accessoires HomeKit (HAP).
-- **Nouvelles fonctionnalités Bluetooth Low Energy (BLE)** -HomeKit prend désormais en charge plusieurs types accessoires capable de communiquer via le protocole Bluetooth Low Energy (BLE). À l’aide de HAP Secure Tunneling, un accessoire HomeKit peut exposer un autre accessoire Bluetooth via le Wi-Fi (s’il est hors limites de Bluetooth). Dans iOS 9, BLE accessoires ont une prise en charge complète pour les notifications et les métadonnées.
-- **Nouvelles catégories accessoire** -Apple ajouté les nouvelles catégories accessoire suivant dans iOS 9 : Revêtements de fenêtre, trotinette portes et Windows, systèmes d’alarme, capteurs et des commutateurs programmables.
+- **Conservation des objets existants** : si un accessoire existant est modifié, le responsable de`HMHomeManager`la famille () vous informe de l’élément spécifique qui a été modifié.
+- **Identificateurs persistants** : toutes les classes HomeKit pertinentes incluent `UniqueIdentifier` désormais une propriété permettant d’identifier de manière unique un élément donné sur les applications compatibles HomeKit (ou les instances de la même application).
+- **Gestion des utilisateurs** : ajout d’un contrôleur d’affichage intégré pour assurer la gestion des utilisateurs sur les utilisateurs qui ont accès aux appareils HomeKit dans la base de l’utilisateur principal.
+- **Fonctionnalités utilisateur** : les utilisateurs de HomeKit disposent désormais d’un ensemble de privilèges qui contrôlent les fonctions qu’ils sont en mesure d’utiliser dans les accessoires HomeKit et HomeKit. Votre application doit uniquement afficher les fonctionnalités pertinentes pour l’utilisateur actuel. Par exemple, seuls les administrateurs doivent être en mesure de gérer d’autres utilisateurs.
+- **Séquences** prédéfinies: des scènes prédéfinies ont été créées pour quatre événements courants qui se produisent pour l’utilisateur HomeKit moyen: Recevez, laissez, retourner, accédez à la vitre. Ces scènes prédéfinies ne peuvent pas être supprimées d’une page d’hébergement.
+- **Scenes and Siri** -Siri offre une prise en charge plus poussée des scènes dans iOS 9 et peut reconnaître le nom d’une scène définie dans HomeKit. Un utilisateur peut exécuter une scène simplement en parlant son nom à Siri.
+- **Catégories d’accessoires** : un ensemble de catégories prédéfinies a été ajouté à tous les accessoires et permet d’identifier le type d’accessoire ajouté à un foyer ou de travailler à partir de votre application. Ces nouvelles catégories sont disponibles lors de la configuration des accessoires.
+- **Prise en charge Apple Watch** : HomeKit est désormais disponible pour Watchos et le Apple Watch peut contrôler les appareils activés HomeKit sans iPhone près de la montre. HomeKit pour Watchos prend en charge les fonctionnalités suivantes: Affichage des maisons, contrôle des accessoires et exécution des scènes.
+- **Nouveau type** de déclencheur d’événement-en plus des déclencheurs de type Timer pris en charge dans iOS 8, iOS 9 prend désormais en charge les déclencheurs d’événements en fonction de l’état des accessoires (tels que les données de capteur) ou de la géolocalisation. Les déclencheurs d' `NSPredicates` événements utilisent pour définir les conditions d’exécution.
+- **Accès à distance** : avec l’accès à distance, l’utilisateur est maintenant en mesure de contrôler ses accessoires d’automatisation de la maison HomeKit lorsqu’ils sont éloignés de la maison sur un site distant. Dans iOS 8, ce n’était pris en charge que si l’utilisateur avait une troisième génération d’Apple TV à la page. Dans iOS 9, cette limitation est levée et l’accès à distance est pris en charge via iCloud et HAP (HomeKit accessoire Protocol).
+- **Nouvelles capacités Bluetooth Low Energy (BLE)** -HomeKit prend désormais en charge davantage de types d’accessoires qui peuvent communiquer via le protocole Bluetooth Low Energy (BLE). À l’aide du tunneling sécurisé HAP, un accessoire HomeKit peut exposer un autre accessoire Bluetooth sur le Wi-Fi (s’il est hors de la plage Bluetooth). Dans iOS 9, les accessoires BLE prennent entièrement en charge les notifications et les métadonnées.
+- **Nouvelles catégories d’accessoires** : Apple a ajouté les nouvelles catégories d’accessoires suivantes dans iOS 9: Couvertures de fenêtre, portes motorisées, fenêtres, systèmes d’alarme, capteurs et commutateurs programmables.
 
-Pour plus d’informations sur les nouvelles fonctionnalités de HomeKit dans iOS 9, consultez d’Apple [HomeKit Index](https://developer.apple.com/homekit/) et [What ' s New in HomeKit](https://developer.apple.com/videos/wwdc/2015/?id=210) vidéo.
+Pour plus d’informations sur les nouvelles fonctionnalités de HomeKit dans iOS 9, consultez [index HomeKit](https://developer.apple.com/homekit/) d’Apple et [Nouveautés de HomeKit](https://developer.apple.com/videos/wwdc/2015/?id=210) Video.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté le framework d’Apple HomeKit domotique. Il vous a montré comment installer et configurer des appareils de test à l’aide du simulateur d’accessoires HomeKit et comment créer une simple application Xamarin.iOS pour découvrir, de communiquer avec et contrôler les appareils domotique à l’aide de HomeKit.
+Cet article a introduit l’infrastructure domotique HomeKit d’Apple. Il a montré comment configurer et configurer des appareils de test à l’aide du simulateur d’accessoires HomeKit et comment créer une application Xamarin. iOS simple pour découvrir, communiquer avec et contrôler des appareils domotiques à l’aide de HomeKit.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
+- [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
-- [Quelles sont les nouveautés dans iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Guide de HomeKitDeveloper](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
-- [Recommandations pour l’Interface utilisateur de HomeKit](https://developer.apple.com/homekit/ui-guidelines/)
-- [Référence de l’infrastructure de HomeKit](https://developer.apple.com/library/ios/home_kit_framework_ref)
+- [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [Guide HomeKitDeveloper](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html)
+- [Instructions relatives à l’interface utilisateur HomeKit](https://developer.apple.com/homekit/ui-guidelines/)
+- [Référence du Framework HomeKit](https://developer.apple.com/library/ios/home_kit_framework_ref)

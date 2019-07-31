@@ -1,43 +1,43 @@
 ---
-title: L’installation de la prise en charge de tvOS dans Xamarin
-description: Cet article décrit la prise en charge de tvOS dans Xcode 9 et 11 de Xamarin.iOS et fournit de brèves instructions concernant la configuration pour développer des applications tvOS avec Xamarin.
+title: Installation de la prise en charge de tvOS dans Xamarin
+description: Cet article traite de la prise en charge de tvOS dans Xcode 9 et Xamarin. iOS 11, et fournit des instructions succinctes sur la configuration du développement d’applications tvOS avec Xamarin.
 ms.prod: xamarin
 ms.assetid: 0819DC93-A46B-49DC-A566-8E27CAE1B829
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: e84ce04f3745c46ba94845ba2f815c638cf81a74
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 04ba792cd1381c3f0dbda63fd7e3e3cabdc978f1
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61398042"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650152"
 ---
-# <a name="installing-tvos-support-in-xamarin"></a>L’installation de la prise en charge de tvOS dans Xamarin
+# <a name="installing-tvos-support-in-xamarin"></a>Installation de la prise en charge de tvOS dans Xamarin
 
 > [!TIP]
-> Pour commencer à expérimenter avec prise en charge de la version préliminaire de Xamarin pour iOS 12 et tvOS 12, lire la [iOS 12 guide de démarrage](~/ios/platform/introduction-to-ios12/get-started.md).
+> Pour commencer à expérimenter la prise en charge de la version préliminaire de Xamarin pour iOS 12 et tvOS 12, consultez le Guide de mise en route d' [IOS 12](~/ios/platform/introduction-to-ios12/get-started.md).
 
-Apple a publié l’Apple TV 4K et tvOS 11. La plateforme Apple TV est ouverte pour les développeurs, ce qui leur permet de créer des applications riches et immersives et publiez-les via le Store d’application intégrée des téléviseurs Apple.
+Apple a publié la version d’Apple TV 4K et tvOS 11. La plateforme Apple TV est ouverte aux développeurs, ce qui leur permet de créer des applications riches et immersifs et de les diffuser via l’App Store intégré d’Apple TV.
 
-Xamarin.iOS 11 et versions ultérieures prennent en charge le tvOS 11 Kit de développement logiciel est livré avec Xcode 9 d’Apple.
+Xamarin. iOS 11 et versions ultérieures prennent en charge le kit de développement logiciel (SDK) tvOS 11 fourni avec Xcode 9 d’Apple.
 
-- [Notes de version de Xamarin.iOS](https://docs.microsoft.com/xamarin/ios/release-notes/)
-- [Notes de version de Xcode](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)
+- [Notes de publication pour Xamarin. iOS](https://docs.microsoft.com/xamarin/ios/release-notes/)
+- [Notes de publication pour Xcode](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html#//apple_ref/doc/uid/TP40001051-CH1-SW876)
 
 ## <a name="installation"></a>Installation
 
-Pour créer des applications de tvOS avec Xamarin :
+Pour générer des applications tvOS avec Xamarin:
 
-1. **Installez la dernière Xcode** – [télécharger la dernière version de Xcode](https://developer.apple.com/xcode/download/) et installez-le. Sans Xcode installée, elle ne sera pas possible de créer des applications Xamarin. 
-2. **Exécuter Xcode** : après l’installation de Xcode, démarrez-le une seule fois avant la mise à jour et l’exécution de Visual Studio pour Mac. Xcode installe des outils qui nécessite de Xamarin.
-3. **Installer la dernière version stable de Xamarin** -mettre à jour vers la dernière version [stable mise en production Xamarin](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel).
+1. **Installer la dernière** [version de Xcode: Téléchargez la dernière version de Xcode](https://developer.apple.com/xcode/download/) et installez-la. Si Xcode n’est pas installé, il n’est pas possible de créer des applications Xamarin. 
+2. **Exécuter Xcode** : après avoir installé Xcode, démarrez-le une fois avant de mettre à jour et d’exécuter Visual Studio pour Mac. Xcode installe certains outils requis par Xamarin.
+3. **Installez la dernière version stable de Xamarin** -mettez à jour vers la dernière [version stable de Xamarin](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel).
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [Guide de programmation d’application pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
 - [Création d’applications pour tvOS avec Xamarin (vidéo)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

@@ -1,43 +1,43 @@
 ---
-title: Création d’une application Xamarin.iOS à l’aide de l’API de réflexion
-description: Ce document décrit le MonoTouch.Dialog basé sur attribut API de réflexion, ce qui crée l’interface utilisateur basée sur des classes décorées avec attributs.
+title: Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
+description: Ce document décrit l’API de réflexion basée sur les attributs MonoTouch. Dialog, qui crée une interface utilisateur basée sur des classes décorées avec des attributs.
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: fac19cd7273b5b396946fc1867049db19348c853
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 9dc98480d57dc7d4883306e9f4fc530599af9bd7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039682"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652418"
 ---
-# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin.iOS à l’aide de l’API de réflexion
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
 
-Le serveur cible maître. API de réflexion D permet aux classes d’être décorés avec des attributs de ce serveur cible maître. D utilise pour créer des écrans automatiquement. L’API de réflexion fournit une liaison entre ces classes et ce qui est affiché sur l’écran. Bien que cette API ne fournit pas le contrôle précis qui effectue les éléments API, il réduit la complexité en création automatique de la hiérarchie d’éléments en fonction de la décoration de la classe.
+MT. L’API de réflexion D permet aux classes d’être décorées avec les attributs de ce dernier. D utilise pour créer des écrans automatiquement. L’API de réflexion fournit une liaison entre ces classes et ce qui est affiché à l’écran. Bien que cette API ne fournisse pas le contrôle affiné que fait l’API Elements, elle réduit la complexité en générant automatiquement la hiérarchie des éléments en fonction de la décoration de la classe.
 
-## <a name="setting-up-mtd"></a>Configuration de serveur cible maître. D
+## <a name="setting-up-mtd"></a>Configuration de MT. E
 
-SERVEUR CIBLE MAÎTRE. D est distribué avec Xamarin.iOS. Pour l’utiliser, cliquez sur le **références** nœud d’un Xamarin.iOS de projet dans Visual Studio 2017 ou Visual Studio pour Mac et ajoutez une référence à la **MonoTouch.Dialog-1** assembly. Ensuite, ajoutez `using MonoTouch.Dialog` instructions dans votre source de code en fonction des besoins.
+MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouton droit sur le nœud **références** d’un projet Xamarin. iOS dans Visual Studio 2017 ou Visual Studio pour Mac et ajoutez une référence à l’assembly **MonoTouch. boîte de dialogue-1** . Ajoutez `using MonoTouch.Dialog` ensuite des instructions dans votre code source, si nécessaire.
 
-## <a name="getting-started-with-the-reflection-api"></a>Mise en route avec l’API de réflexion
+## <a name="getting-started-with-the-reflection-api"></a>Prise en main de l’API de réflexion
 
-À l’aide de l’API de réflexion est aussi simple que :
+L’utilisation de l’API de réflexion est aussi simple que:
 
-1.  Création d’une classe décorée avec le serveur cible maître. Attributs de D.
-1.  Création d’un `BindingContext` instance, en lui passant une instance de la classe ci-dessus. 
-1.  Création d’un `DialogViewController` , en lui passant le `BindingContext’s` `RootElement` . 
+1.  Création d’une classe décorée avec MT. Attributs D.
+1.  Création d' `BindingContext` une instance, en lui passant une instance de la classe ci-dessus. 
+1.  Création d' `DialogViewController` un, en lui `BindingContext’s` passant le `RootElement` . 
 
 
-Examinons un exemple pour illustrer comment utiliser l’API de réflexion. Dans cet exemple, nous allons créer un écran de saisie de données simple comme indiqué ci-dessous :
+Examinons un exemple pour illustrer l’utilisation de l’API de réflexion. Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ci-dessous:
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "Dans cet exemple, nous allons créer un écran de saisie de données simple comme illustré ici")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ici")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
-## <a name="creating-a-class-with-mtd-attributes"></a>Création d’une classe avec le serveur cible maître. Attributs des D
+## <a name="creating-a-class-with-mtd-attributes"></a>Création d’une classe avec MT. Attributs D
 
-La première chose que nous devons utiliser l’API de réflexion est une classe décorée avec attributs. Ces attributs seront utilisés par le serveur cible maître. D en interne pour créer des objets à partir de l’API d’éléments. Par exemple, considérez la définition de classe suivante :
+La première chose dont nous avons besoin pour utiliser l’API de réflexion est une classe décorée avec des attributs. Ces attributs seront utilisés par MT. D en interne pour créer des objets à partir de l’API d’éléments. Par exemple, considérez la définition de classe suivante:
 
 ```csharp
 public class Expense
@@ -58,23 +58,23 @@ public class Expense
 }
 ```
 
-Le `SectionAttribute` entraîne dans les sections de la `UITableView` en cours de création, avec l’argument de chaîne utilisée pour remplir les en-tête de la section. Une fois qu’une section est déclarée, tous les champs qui le suit figureront dans cette section, jusqu'à ce qu’une autre section est déclarée.
-Le type d’élément d’interface utilisateur créé pour le champ varient en fonction du type de champ et le serveur cible maître. Attribut D décorant.
+Entraîne la création de sections `UITableView` du, avec l’argument de chaîne utilisé pour remplir l’en-tête de la section. `SectionAttribute` Une fois qu’une section est déclarée, chaque champ qui la suit est inclus dans cette section, jusqu’à ce qu’une autre section soit déclarée.
+Le type d’élément d’interface utilisateur créé pour le champ dépend du type du champ et du MT. Attribut D décoration.
 
-Par exemple, le `Name` champ est un `string` et il est décoré avec un `EntryAttribute`. Cela entraîne une ligne ajoutée à la table avec un champ d’entrée de texte et la légende spécifiée. De même, le `IsApproved` champ est un `bool` avec un `CheckboxAttribute`, se traduisant par une ligne de table avec une case à cocher située à droite de la cellule du tableau. SERVEUR CIBLE MAÎTRE. D utilise le nom du champ, ajouter automatiquement un espace, à créer dans ce cas, la légende dans la mesure où il n’est pas spécifié dans un attribut.
+Par exemple, le `Name` champ est un `string` et est décoré avec un `EntryAttribute`. Cela entraîne l’ajout d’une ligne à la table avec un champ d’entrée de texte et la légende spécifiée. De même, le `IsApproved` champ est un `bool` avec un `CheckboxAttribute`, ce qui donne une ligne de tableau avec une case à cocher à droite de la cellule de tableau. MT. D utilise le nom du champ, en ajoutant automatiquement un espace, pour créer la légende dans ce cas, puisqu’il n’est pas spécifié dans un attribut.
 
-## <a name="adding-the-bindingcontext"></a>Ajout de BindingContext
+## <a name="adding-the-bindingcontext"></a>Ajout de l’BindingContext
 
-Pour utiliser le `Expense` (classe), nous devons créer un `BindingContext`. Un `BindingContext` est une classe qui lie les données à partir de la classe avec attributs pour créer la hiérarchie d’éléments. Pour en créer un, nous simplement instancier et passer une instance de la classe avec attributs au constructeur.
+Pour utiliser la `Expense` classe, nous devons créer un. `BindingContext` Un `BindingContext` est une classe qui lie les données de la classe avec attributs pour créer la hiérarchie d’éléments. Pour en créer un, il vous suffit de l’instancier et de passer une instance de la classe avec attributs au constructeur.
 
-Par exemple, pour ajouter une interface utilisateur que nous avons déclaré à l’aide de l’attribut dans le `Expense` de classe, incluez le code suivant dans le `FinishedLaunching` méthode de la `AppDelegate`:
+Par exemple, pour ajouter l’interface utilisateur que nous avons déclarée `Expense` à l’aide de l’attribut dans la `FinishedLaunching` classe, incluez le code suivant dans la méthode du `AppDelegate`:
 
 ```csharp
 var expense = new Expense ();
 var bctx = new BindingContext (null, expense, "Create a task");
 ```
 
-Il nous suffit pour créer l’interface utilisateur est d’ajouter le `BindingContext` à la `DialogViewController` et définissez-le comme le `RootViewController` de la fenêtre, comme indiqué ci-dessous :
+Ensuite, tout ce que nous devons faire pour créer l’interface utilisateur `BindingContext` est d' `DialogViewController` ajouter le à `RootViewController` et de le définir en tant que de la fenêtre, comme indiqué ci-dessous:
 
 ```csharp
 UIWindow window;
@@ -94,22 +94,22 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 }
 ```
 
-À présent, l’application en cours d’exécution entraîne l’écran ci-dessus affiché.
+L’exécution de l’application entraîne désormais l’affichage de l’écran ci-dessus.
 
 ### <a name="adding-a-uinavigationcontroller"></a>Ajout d’un UINavigationController
 
-Notez toutefois que le titre « crée une tâche » que nous avons transmis à la `BindingContext` n’est pas affiché. Il s’agit, car le `DialogViewController` est ne fait pas partie d’un `UINavigatonController`. Nous allons modifier le code pour ajouter un `UINavigationController` en tant que la fenêtre `RootViewController,` et ajoutez le `DialogViewController` comme racine de la `UINavigationController` comme indiqué ci-dessous :
+Notez cependant que le titre «créer une tâche» que nous avons transmise `BindingContext` à n’est pas affiché. Cela est dû au `DialogViewController` fait que ne fait pas `UINavigatonController`partie d’un. Nous allons modifier le code pour ajouter un `UINavigationController` comme pour la `RootViewController,` fenêtre et ajouter `DialogViewController` en tant que racine du `UINavigationController` comme indiqué ci-dessous:
 
 ```csharp
 nav = new UINavigationController(dvc);
 window.RootViewController = nav;
 ```
 
-Maintenant lorsque nous exécutons l’application, le titre s’affiche dans le `UINavigationController’s` barre de navigation en tant que la capture d’écran ci-dessous :
+Maintenant, lorsque nous exécutons l’application, le titre s' `UINavigationController’s` affiche dans la barre de navigation, comme le montre la capture d’écran ci-dessous:
 
- [![](reflection-api-walkthrough-images/02-create-task.png "Maintenant, lorsque nous exécutons l’application, le titre apparaît dans la barre de navigation UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![](reflection-api-walkthrough-images/02-create-task.png "Maintenant, lorsque nous exécutons l’application, le titre s’affiche dans la barre de navigation UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
-En incluant un `UINavigationController`, nous pouvons désormais tirer parti d’autres fonctionnalités de serveur cible maître. D pour lequel la navigation est nécessaire. Par exemple, nous pouvons ajouter une énumération pour la `Expense` classe pour définir la catégorie pour les dépenses et le serveur cible maître. D créera automatiquement un écran de sélection. Pour illustrer, modifier le `Expense` classe pour inclure un `ExpenseCategory` champ comme suit :
+En incluant un `UINavigationController`, nous pouvons désormais tirer parti des autres fonctionnalités de Mt. D pour laquelle la navigation est nécessaire. Par exemple, nous pouvons ajouter une énumération à `Expense` la classe pour définir la catégorie des dépenses et Mt. D crée automatiquement un écran de sélection. Pour illustrer, modifiez `Expense` la classe pour inclure `ExpenseCategory` un champ comme suit:
 
 ```csharp
 public enum Category
@@ -128,29 +128,29 @@ public class Expense
 }
 ```
 
-Exécution de l’application maintenant des résultats dans une nouvelle ligne dans la table pour la catégorie comme indiqué :
+L’exécution de l’application génère désormais une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous:
 
- [![](reflection-api-walkthrough-images/03-set-details.png "Exécution de l’application maintenant des résultats dans une nouvelle ligne dans la table pour la catégorie comme indiqué")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![](reflection-api-walkthrough-images/03-set-details.png "L’exécution de l’application entraîne désormais la création d’une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous.")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
-Sélection de la ligne entraîne dans l’application accédant à un nouvel écran avec les lignes correspondant à l’énumération, comme indiqué ci-dessous :
+Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération, comme indiqué ci-dessous:
 
- [![](reflection-api-walkthrough-images/04-set-category.png "Sélection de la ligne entraîne dans la navigation application vers un nouvel écran avec les lignes correspondant à l’énumération")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![](reflection-api-walkthrough-images/04-set-category.png "Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté une procédure pas à pas de l’API de réflexion. Nous vous avons montré comment ajouter des attributs à une classe pour contrôler ce qui est affiché. Nous avons abordé également comment utiliser un `BindingContext` pour lier des données à partir d’une classe à la hiérarchie d’éléments qui est créée, ainsi que comment utiliser serveur cible maître. D avec un `UINavigationController`.
+Cet article a présenté une procédure pas à pas de l’API de réflexion. Nous avons montré comment ajouter des attributs à une classe pour contrôler ce qui est affiché. Nous avons également expliqué comment utiliser un `BindingContext` pour lier les données d’une classe à la hiérarchie d’éléments créée, ainsi que l’utilisation de Mt. D avec un `UINavigationController`.
 
 
 ## <a name="related-links"></a>Liens connexes
 
-- [MTDReflectionWalkthrough (sample)](https://developer.xamarin.com/samples/monotouch/MTDReflectionWalkthrough/)
-- [Introduction à la boîte de dialogue MonoTouch](~/ios/user-interface/monotouch.dialog/index.md)
-- [API de procédure pas à pas les éléments](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
-- [Procédure pas à pas JSON élément](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
-- [Boîte de dialogue MonoTouch sur Github](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [Application de TweetStation](https://github.com/migueldeicaza/TweetStation)
-- [Référence de classe de UITableViewController](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [Référence de classe de UINavigationController](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [MTDReflectionWalkthrough (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
+- [Présentation de la boîte de dialogue MonoTouch](~/ios/user-interface/monotouch.dialog/index.md)
+- [Procédure pas à pas d’API d’éléments](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
+- [Procédure pas à pas d’élément JSON](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
+- [Boîte de dialogue MonoTouch sur GitHub](https://github.com/migueldeicaza/MonoTouch.Dialog)
+- [Application TweetStation](https://github.com/migueldeicaza/TweetStation)
+- [Référence de la classe UITableViewController](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [Référence de la classe UINavigationController](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

@@ -7,16 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dea7f5e51a864922d56f7b65d19b21a889cbc650
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61292939"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656159"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp bruit et la composition
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Graphismes vectoriels simple ont tendance à être non naturelles. Les lignes droites, des courbes lissées et des couleurs unies ne se présenter comme les imperfections des objets du monde réel. Lorsque vous travaillez sur les graphiques générés par l’ordinateur pour le film 1982 _Tron_, authentique scientifique Ken Perlin a commencé à développer des algorithmes qui permettant de donner ces images textures plus réalistes processus aléatoire. En 1997, Ken Perlin a gagné une récompense Academy pour une prime en technique. Son travail est venu à être connu comme un bruit de Perlin, et il est pris en charge dans SkiaSharp. Voici un exemple :
 
@@ -24,7 +24,7 @@ Graphismes vectoriels simple ont tendance à être non naturelles. Les lignes dr
 
 Comme vous pouvez le voir, chaque pixel n’est pas une valeur de couleur aléatoire. La continuité des activités à partir de pixel au pixel entraîne des formes aléatoire.
 
-La prise en charge de bruit de Perlin dans Skia est basé sur une spécification W3C pour CSS et SVG. 8.20 de section de [ **1 de niveau Module filtre effets** ](http://www.w3.org/TR/filter-effects-1/#feTurbulenceElement) inclut les algorithmes de bruit de Perlin sous-jacente dans le code C.
+La prise en charge de bruit de Perlin dans Skia est basé sur une spécification W3C pour CSS et SVG. 8\.20 de section de [ **1 de niveau Module filtre effets** ](http://www.w3.org/TR/filter-effects-1/#feTurbulenceElement) inclut les algorithmes de bruit de Perlin sous-jacente dans le code C.
 
 ## <a name="exploring-perlin-noise"></a>Exploration de bruit de Perlin
 
@@ -44,7 +44,7 @@ Le `numOctaves` valeur est un entier de 1 ou supérieure. Il est lié à un fact
 
 Le `seed` paramètre est le point de départ pour le Générateur de nombres aléatoires. Bien qu’il est spécifié en tant que valeur à virgule flottante, la fraction est tronquée avant qu’il est utilisé, et 0 est identique à 1.
 
-Le **bruit de Perlin** page dans le [ **SkiaSharpFormsDemos**)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) exemple permet de vous faire des essais avec différentes valeurs de la `baseFrequency` et `numOctaves` arguments. Voici le fichier XAML :
+Le **bruit de Perlin** page dans le [ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) exemple permet de vous faire des essais avec différentes valeurs de la `baseFrequency` et `numOctaves` arguments. Voici le fichier XAML :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -399,4 +399,4 @@ Le paramètre final est un membre de la `SKBlendMode` énumération, une énumé
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

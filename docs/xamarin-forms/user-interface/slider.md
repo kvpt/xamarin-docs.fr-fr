@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1fa46af1ac1cf6ea49a53e3f8d3c3dca6ba83e13
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511890"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656256"
 ---
 # <a name="xamarinforms-slider"></a>Curseur de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _Utilisez un curseur de sélection à partir d’une plage de valeurs continues._
 
@@ -56,11 +56,11 @@ Le `Slider` définit également plusieurs propriétés qui affectent son apparen
 
 ## <a name="basic-slider-code-and-markup"></a>Balisage et code de curseur de base
 
-Le [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) exemple commence par trois pages qui sont fonctionnellement identiques, mais sont implémentées de différentes façons. La première page utilise uniquement du code C#, la deuxième utilise XAML avec un gestionnaire d’événements dans le code et le troisième est possible d’éviter le Gestionnaire d’événements à l’aide de la liaison de données dans le fichier XAML.
+Le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple commence par trois pages qui sont fonctionnellement identiques, mais sont implémentées de différentes façons. La première page utilise uniquement du code C#, la deuxième utilise XAML avec un gestionnaire d’événements dans le code et le troisième est possible d’éviter le Gestionnaire d’événements à l’aide de la liaison de données dans le fichier XAML.
 
 ### <a name="creating-a-slider-in-code"></a>Création d’un curseur dans le code
 
-Le **base Code curseur** page dans le [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) exemple montre comment créer un `Slider` et deux `Label` objets dans le code :
+Le **base Code curseur** page dans le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple montre comment créer un `Slider` et deux `Label` objets dans le code :
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -295,7 +295,7 @@ L’implémentation Android de `Slider` repose sur Android [ `SeekBar` ](xref:An
 
 L’implémentation UWP de `Slider` repose sur la plateforme Windows universelle [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider) contrôle. Le `StepFrequency` propriété de la plateforme Windows universelle `Slider` est défini sur la différence entre la `Maximum` et `Minimum` propriétés divisé par 10, mais pas supérieure à 1.
 
-Par exemple, pour la plage par défaut de 0 à 1, le `StepFrequency` propriété a la valeur 0.1. Comme le `Slider` est manipulé, le `Value` propriété est limitée à 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0.6, 0,7, 0,8, 0,9 et 1.0. (Ceci est évident dans la dernière page dans le [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) exemple.) Lorsque la différence entre la `Maximum` et `Minimum` propriétés est 10 ou version ultérieure, puis `StepFrequency` est défini sur 1 et le `Value` propriété a des valeurs intégrales.
+Par exemple, pour la plage par défaut de 0 à 1, le `StepFrequency` propriété a la valeur 0.1. Comme le `Slider` est manipulé, le `Value` propriété est limitée à 0, 0.1, 0.2, 0.3, 0,4, 0,5, 0.6, 0,7, 0,8, 0,9 et 1.0. (Ceci est évident dans la dernière page dans le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple.) Lorsque la différence entre la `Maximum` et `Minimum` propriétés est 10 ou version ultérieure, puis `StepFrequency` est défini sur 1 et le `Value` propriété a des valeurs intégrales.
 
 ### <a name="the-stepslider-solution"></a>La solution StepSlider
 
@@ -303,7 +303,7 @@ Plus polyvalents `StepSlider` est abordée dans [chapitre 27. Renderers personna
 
 ## <a name="sliders-for-color-selection"></a>Curseurs de sélection de couleur
 
-La dernière des deux pages dans le [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) exemple utilisent tous deux trois `Slider` instances pour la sélection de couleur. La première page gère toutes les interactions dans le fichier code-behind, tandis que la deuxième page montre comment utiliser la liaison de données avec un ViewModel.
+La dernière des deux pages dans le [ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos) exemple utilisent tous deux trois `Slider` instances pour la sélection de couleur. La première page gère toutes les interactions dans le fichier code-behind, tandis que la deuxième page montre comment utiliser la liaison de données avec un ViewModel.
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>Gestion des curseurs dans le fichier code-behind
 
@@ -509,5 +509,5 @@ Le `StringFormat` composant de la `Binding` extension de balisage est définie p
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de démonstrations de curseur](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
+- [Exemple de démonstrations de curseur](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 - [Curseur API](xref:Xamarin.Forms.Slider)

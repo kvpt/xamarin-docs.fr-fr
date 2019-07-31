@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493358"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656510"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Dans une application Xamarin.Forms, XAML est principalement utilisé pour définir le contenu visuel d’une page et fonctionne en association avec un C# fichier code-behind._
 
@@ -102,7 +102,7 @@ Le **MainPage.xaml** fichier ressemble à ceci (bien que la mise en forme peut �
 </ContentPage>
 ```
 
-L’espace de noms XML deux (`xmlns`) déclarations font référence aux URI, le premier apparemment sur le site web de Xamarin et le second de Microsoft. Nul besoin de vérifier quel point des ces URI à. Il est vide. Elles sont simplement des URI détenus par Xamarin et Microsoft, et ils fonctionnent essentiellement en tant qu’identificateurs de version.
+Les deux déclarations de l'`xmlns`espace de noms XML () font référence aux URI, la première apparemment sur le site Web de Xamarin et la seconde sur le site Microsoft. Nul besoin de vérifier quel point des ces URI à. Il est vide. Elles sont simplement des URI détenus par Xamarin et Microsoft, et ils fonctionnent essentiellement en tant qu’identificateurs de version.
 
 La première déclaration d’espace de noms XML signifie que les balises définies dans le fichier XAML sans préfixe font référence aux classes dans Xamarin.Forms, par exemple `ContentPage`. La seconde déclaration d’espace de noms définit un préfixe `x`. Il est utilisé pour plusieurs éléments et attributs qui font partie intégrante XAML lui-même et qui sont pris en charge par les autres implémentations de XAML. Toutefois, ces éléments et attributs sont légèrement différents selon l’année incorporée dans l’URI. Xamarin.Forms prend en charge la spécification de XAML 2009, mais pas entièrement.
 
@@ -203,9 +203,9 @@ Le `ContentPage.Content` balises sont appelés *élément property* balises. `Co
 
 Notez également qu’un `Title` attribut a été défini sur la balise racine.
 
-À ce stade, la relation entre les classes, propriétés et XML doit être évidente : Une classe Xamarin.Forms (tel que `ContentPage` ou `Label`) apparaît dans le fichier XAML comme un élément XML. Propriétés de la classe, y compris `Title` sur `ContentPage` et sept propriétés de `Label`— apparaissent généralement sous la forme d’attributs XML.
+À ce stade, la relation entre les classes, les propriétés et le XML doit être évidente: Une classe Xamarin. Forms (telle `ContentPage` que `Label`ou) apparaît dans le fichier XAML sous la forme d’un élément XML. Propriétés de la classe, y compris `Title` sur `ContentPage` et sept propriétés de `Label`— apparaissent généralement sous la forme d’attributs XML.
 
-Il existe de nombreux raccourcis pour définir les valeurs de ces propriétés. Certaines propriétés sont des types de base de données : Par exemple, le `Title` et `Text` propriétés sont de type `String`, `Rotation` est de type `Double`, et `IsVisible` (c'est-à-dire `true` par défaut et est définie ici uniquement à titre d’illustration) est de type `Boolean`.
+Il existe de nombreux raccourcis pour définir les valeurs de ces propriétés. Certaines propriétés sont des types de données de base: Par exemple, les `Title` propriétés `Text` et sont de type `String`, `Rotation` est de type `Double`, et `IsVisible` (qui est `true` par défaut et qui est défini ici uniquement pour l’illustration) est de type `Boolean`.
 
 Le `HorizontalTextAlignment` propriété est de type `TextAlignment`, qui est une énumération. Pour une propriété de n’importe quel type d’énumération, il vous suffit d’approvisionnement est un nom de membre.
 
@@ -453,7 +453,7 @@ Avec cette présentation, vous avez vu comment un fichier XAML et le fichier de 
 
 ## <a name="related-links"></a>Liens associés
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Partie 4. Notions de base sur la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

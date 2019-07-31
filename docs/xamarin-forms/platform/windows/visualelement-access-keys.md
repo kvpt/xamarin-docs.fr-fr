@@ -1,28 +1,28 @@
 ---
-title: Clés d’accès de VisualElement sur Windows
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le Windows spécifique à la plateforme qui spécifie une clé d’accès pour un VisualElement.
+title: Clés d’accès VisualElement sur Windows
+description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plate-forme Windows qui spécifie une clé d’accès pour un VisualElement.
 ms.prod: xamarin
 ms.assetid: 771AF785-76B8-4372-89F5-E4D521D21E0C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: c480f398c37ce43b634e0ec1c955b965466757f1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ce1d682678c17bb24e7a4fd528c84554465c4fa6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926840"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656841"
 ---
-# <a name="visualelement-access-keys-on-windows"></a>Clés d’accès de VisualElement sur Windows
+# <a name="visualelement-access-keys-on-windows"></a>Clés d’accès VisualElement sur Windows
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Clés d’accès sont des raccourcis clavier qui améliorent la facilité d’utilisation et l’accessibilité des applications sur la plateforme Windows universelle (UWP) en fournissant une méthode intuitive permettant aux utilisateurs de naviguer rapidement et d’interagir avec l’interface utilisateur visible de l’application via un clavier au lieu de via tactile ou une souris. Ils sont des combinaisons de la touche Alt et une ou plusieurs touches alphanumériques, généralement enfoncés séquentiellement. Raccourcis clavier sont automatiquement pris en charge pour les clés d’accès qui utilisent un seul caractère alphanumérique.
+Les touches d’accès rapide sont des raccourcis clavier qui améliorent la convivialité et l’accessibilité des applications sur le plateforme Windows universelle (UWP) en fournissant un moyen intuitif aux utilisateurs de naviguer rapidement et d’interagir avec l’interface utilisateur visible de l’application via un clavier plutôt que via Touch. ou une souris. Ils sont des combinaisons de la touche Alt et une ou plusieurs touches alphanumériques, généralement enfoncés séquentiellement. Raccourcis clavier sont automatiquement pris en charge pour les clés d’accès qui utilisent un seul caractère alphanumérique.
 
 Conseils sur les touches accès sont flottantes badges affichées en regard des contrôles qui intègrent des clés d’accès. Chaque Conseil de clé d’accès contient les clés d’alphanumériques qui activent le contrôle associé. Lorsqu’un utilisateur appuie sur la touche Alt, les conseils de clé d’accès sont affichés.
 
-Cette spécifiques à la plateforme UWP est utilisé pour spécifier une clé d’accès pour un [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Elle est consommée dans XAML en définissant le [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) propriété attachée à une valeur alphanumérique et en définissant éventuellement le [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) propriété attachée à une valeur de la [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) énumération, le [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) propriété jointe un `double`et le [ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) propriété jointe à un `double`:
+Ce propre à la plateforme UWP est utilisé pour spécifier une clé d’accès [`VisualElement`](xref:Xamarin.Forms.VisualElement)pour un. Elle est consommée dans XAML en définissant le [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) propriété attachée à une valeur alphanumérique et en définissant éventuellement le [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) propriété attachée à une valeur de la [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) énumération, le [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) propriété jointe un `double`et le [ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) propriété jointe à un `double`:
 
 ```xaml
 <TabbedPage ...
@@ -104,6 +104,6 @@ Pour plus d’informations sur les clés d’accès, consultez [clés d’accès
 
 ## <a name="related-links"></a>Liens connexes
 
-- [PlatformSpecifics (exemple)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [Création de caractéristiques de la plateforme](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)
+- [API WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

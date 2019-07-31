@@ -1,5 +1,5 @@
 ---
-title: Rechercher des données avec Azure Search et Xamarin.Forms
+title: Rechercher des données avec Azure Search et Xamarin. Forms
 description: Cet article montre comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une application Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 0ecb546cfb657aa138f05ade64354eb46380e9ab
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658636"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652041"
 ---
-# <a name="search-data-with-azure-search-and-xamarinforms"></a>Rechercher des données avec Azure Search et Xamarin.Forms
+# <a name="search-data-with-azure-search-and-xamarinforms"></a>Rechercher des données avec Azure Search et Xamarin. Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Recherche Azure est un service cloud qui fournit l’indexation et l’interrogation des fonctionnalités pour les données téléchargées. Cette opération supprime les exigences de l’infrastructure et la recherche algorithme complexité traditionnellement avec implémentation de la fonctionnalité de recherche dans une application. Cet article montre comment utiliser la bibliothèque de recherche Microsoft Azure pour intégrer Azure Search dans une application Xamarin.Forms._
 
@@ -279,6 +279,6 @@ Cet article a montré comment utiliser la bibliothèque de recherche Microsoft A
 
 ## <a name="related-links"></a>Liens associés
 
-- [Recherche Azure (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+- [Recherche Azure (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Documentation recherche Azure](/azure/search/)
 - [Bibliothèque de recherche Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.Search/)

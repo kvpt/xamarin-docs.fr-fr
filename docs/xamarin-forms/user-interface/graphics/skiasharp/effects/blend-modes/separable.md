@@ -7,16 +7,16 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5bd1e883adc3be89bde7cc0e1529e77165247
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61387356"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655047"
 ---
 # <a name="the-separable-blend-modes"></a>Les modes de blend séparables
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Comme vous l’avez vu dans l’article [ **SkiaSharp Porter-Duff les modes de fusion**](porter-duff.md), en règle générale, les modes de blend Porter-Duff remplissent les opérations de découpage. Les modes de blend séparables sont différents. Les modes séparables de modifier les composants de couleur rouge, vert et bleu individuelles d’une image. Modes de fusion séparables peuvent combiner couleur afin de démontrer que la combinaison de rouge, vert et bleu est effectivement blanche :
 
@@ -127,7 +127,7 @@ Les captures d’écran de gauche à droite affichent toujours plus grands `Slid
 
 [![Éclaircir et assombrir](separable-images/LightenAndDarken.png "éclaircir et assombrir")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-Ce programme montre normalement dans lequel les modes séparables blend sont utilisés : La destination est une image quelconque, très souvent une image bitmap. La source est un rectangle affiché à l’aide un `SKPaint` de l’objet avec ses `BlendMode` définie sur un mode blend séparables de propriété. Le rectangle peut être une couleur unie (comme c’est ici) ou un dégradé. La transparence est _pas_ généralement utilisé avec les modes séparables blend.
+Ce programme montre le mode d’utilisation normal des modes de fusion séparables: La destination est une image d’un tri, très souvent un bitmap. La source est un rectangle affiché à l’aide un `SKPaint` de l’objet avec ses `BlendMode` définie sur un mode blend séparables de propriété. Le rectangle peut être une couleur unie (comme c’est ici) ou un dégradé. La transparence est _pas_ généralement utilisé avec les modes séparables blend.
 
 Comme vous faire des essais avec ce programme, vous découvrirez que ces modes deux blend ne sont pas éclaircir et assombrir l’image de manière uniforme. Au lieu de cela, le `Slider` semble définir un seuil quelconque. Par exemple, en tant que vous augmentez le `Slider` pour la `Lighten` mode, les zones plus sombre de l’image accéder light tout d’abord tandis que les zones plus claires restent les mêmes.
 
@@ -149,9 +149,9 @@ Le tableau suivant affiche tous les modes de blend séparables avec une brève e
 
 | Mode de fusion   | Aucune modification | Opération |
 | ------------ | --------- | --------- |
-| `Plus`       | Noir     | Éclaircit en ajoutant des couleurs : Sc + Dc |
-| `Modulate`   | Blanc     | Assombrit en multipliant les couleurs : SC· Contrôleur de domaine | 
-| `Screen`     | Noir     | Complète le produit des compléments : SC + Dc &ndash; Sc· Contrôleur de domaine |
+| `Plus`       | Noir     | Éclaircit en ajoutant des couleurs: SC + DC |
+| `Modulate`   | Blanc     | Assombrit en multipliant les couleurs: SC Métafichier | 
+| `Screen`     | Noir     | Complète le produit des compléments: SC + DC &ndash; SC · Métafichier |
 | `Overlay`    | Gris      | Inverse de `HardLight` |
 | `Darken`     | Blanc     | Minimum de couleurs : min (Sc, contrôleur de domaine) |
 | `Lighten`    | Noir     | Nombre maximal de couleurs : max (Sc, contrôleur de domaine) |
@@ -159,9 +159,9 @@ Le tableau suivant affiche tous les modes de blend séparables avec une brève e
 | `ColorBurn`  | Blanc     | Assombrit selon la source de destination | 
 | `HardLight`  | Gris      | Similaire à l’effet de lumière crue |
 | `SoftLight`  | Gris      | Similaire à l’effet de spotlight de manière réversible | 
-| `Difference` | Noir     | Soustrait la plus foncée à la plus claire : Abs(Dc &ndash; Sc) | 
+| `Difference` | Noir     | Soustrait le plus sombre du plus clair: ABS (DC &ndash; SC) | 
 | `Exclusion`  | Noir     | Semblable à `Difference` mais réduire contraste |
-| `Multiply`   | Blanc     | Assombrit en multipliant les couleurs : SC· Contrôleur de domaine |
+| `Multiply`   | Blanc     | Assombrit en multipliant les couleurs: SC Métafichier |
 
 Vous trouverez des algorithmes plus détaillées dans le W3C [ **composition et fusion de niveau 1** ](https://www.w3.org/TR/compositing-1/) spécification et la Skia [ **SkBlendMode référence** ](https://skia.org/user/api/SkBlendMode_Reference), bien que la notation dans ces deux sources n’est pas le même. N’oubliez pas que `Plus` est souvent considéré comme un mode de lissage Porter-Duff, et `Modulate` ne fait pas partie de la spécification W3C.
 
@@ -428,4 +428,4 @@ Le `Darken` mode fonctionne également pour cet même effet.
 ## <a name="related-links"></a>Liens connexes
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (exemple)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
