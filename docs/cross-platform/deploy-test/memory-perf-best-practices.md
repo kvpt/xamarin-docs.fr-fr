@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9377dcca1cd72b68a0e5b6a5ac5ac4d12d25d50c
-ms.sourcegitcommit: 41b44f2e9bde3b174e7c08605bff65aff594dcd6
+ms.openlocfilehash: 2665e45277eccaedbbbbd77f6c7c0ca47700d950
+ms.sourcegitcommit: c2bffcdee5a7c619280c6b9032ba90e4df8b63d9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690922"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68533020"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
@@ -380,4 +380,3 @@ Cet article a abordé les techniques qui permettent d’accroître les performan
 - [Niveau de performance de Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)
 - [Vue d’ensemble de la prise en charge asynchrone](~/cross-platform/platform/async.md)
 - [IDisposable](xref:System.IDisposable)
-- [Pièges courants à éviter avec les applications Xamarin (vidéo)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

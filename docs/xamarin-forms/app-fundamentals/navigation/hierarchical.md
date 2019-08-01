@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 01bb3d19b5e79a6ce9942447b5ddd4afb04574cc
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b1f2dbe87fed951223e731912b696c649d0b6edb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978617"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647189"
 ---
 # <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _La classe NavigationPage propose une expérience de navigation hiérarchique où l’utilisateur est en mesure de parcourir les pages, vers l’avant et vers l’arrière, comme il le souhaite. La classe implémente la navigation sous forme de pile LIFO (dernier entré, premier sorti) d’objets Pages. Cet article montre comment utiliser la classe NavigationPage pour effectuer la navigation dans une pile de pages._
 
@@ -310,7 +310,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 Toute [`View`](xref:Xamarin.Forms.View) Xamarin.Forms peut être affichée dans la barre de navigation d’une [`NavigationPage`](xref:Xamarin.Forms.NavigationPage). Pour cela, vous devez définir la propriété jointe [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) sur une `View`. Cette propriété jointe peut être définie sur n’importe quelle [`Page`](xref:Xamarin.Forms.Page), et quand la `Page` envoyée vers sur une `NavigationPage`, la `NavigationPage` respecte la valeur de la propriété.
 
-L’exemple suivant, tiré de l’[exemple Title View](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/), montre comment définir la propriété jointe [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) à partir de XAML :
+L’exemple suivant, tiré de l’[exemple Title View](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview), montre comment définir la propriété jointe [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) à partir de XAML :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -362,9 +362,9 @@ Vous devez prendre en compte un certain nombre de limitations lors de l’affich
 ## <a name="related-links"></a>Liens associés
 
 - [Navigation entre les pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Hierarchical (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
-- [PassingData (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
-- [LoginFlow (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
-- [TitleView (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
+- [Hierarchical (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+- [PassingData (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [LoginFlow (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
+- [TitleView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
 - [Vidéo sur la création d’un flux d’écran de connexion dans Xamarin.Forms](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

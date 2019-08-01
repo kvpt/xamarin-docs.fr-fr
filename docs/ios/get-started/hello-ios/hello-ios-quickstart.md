@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: f7319a2c3dd4c3f77873d9b3d2cba74a77f14ae0
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 1d900a7a3fc1bfabc9498852fa37579f5d5a4615
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865596"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645241"
 ---
 # <a name="hello-ios--quickstart"></a>Hello.iOS - Démarrage rapide
 
@@ -496,6 +496,6 @@ Maintenant, le moment est venu d’examiner de plus près les outils et compéte
 ## <a name="related-links"></a>Liens associés
 
 - [Icônes d’application et images de lancement Xamarin (exemple)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
-- [Hello, iOS (exemple)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail de provisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

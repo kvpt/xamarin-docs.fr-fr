@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831492"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646761"
 ---
 # <a name="localization"></a>Localisation
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 _Vous pouvez localiser les applications Xamarin.Forms à l’aide de fichiers de ressources.NET._
 
@@ -805,8 +805,8 @@ Les images sont généralement gérées de manière spécifique à la plateforme
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemple de localisation de fichier RESX](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
-- [Exemple d’application TodoLocalized](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalized/)
+- [Exemple de localisation de fichier RESX](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [Exemple d’application TodoLocalized](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalized)
 - [Localisation multiplateforme](~/cross-platform/app-fundamentals/localization.md)
 - [Localisation iOS](~/ios/app-fundamentals/localization/index.md)
 - [Localisation Android](~/android/app-fundamentals/localization.md)

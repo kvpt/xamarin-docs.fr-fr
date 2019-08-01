@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: c64714974f6467bcd7e0e4705a1426c83aa691b5
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667588"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509022"
 ---
 # <a name="gdb"></a>GDB
 
@@ -147,7 +147,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 L’autorisation `INTERNET` est activée par défaut dans les applications de débogage. Si elle n’est pas déjà présente dans votre application, vous pouvez l’ajouter en modifiant **Properties/AndroidManifest.xml**, ou en modifiant les [Propriétés du projet](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest).
 
-Le débogage de l’application peut être activé soit en définissant la propriété d’attribut personnalisé [ApplicationAttribute.Debugging](https://developer.xamarin.com/api/property/Android.App.ApplicationAttribute.Debuggable/) sur `true`, soit en modifiant **Properties/AndroidManifest.xml** et en définissant l’attribut `//application/@android:debuggable` sur `true` :
+Le débogage de l’application peut être activé soit en définissant la propriété d’attribut personnalisé [ApplicationAttribute.Debugging](xref:Android.App.ApplicationAttribute.Debuggable) sur `true`, soit en modifiant **Properties/AndroidManifest.xml** et en définissant l’attribut `//application/@android:debuggable` sur `true` :
 
 ```xml
 <application android:label="Example.Name.Here" android:debuggable="true">

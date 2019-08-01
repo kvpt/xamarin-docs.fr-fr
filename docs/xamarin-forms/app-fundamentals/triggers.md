@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 901bf683f59574d71c035b9635abaa3441152252
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: b803c1ccfbd8bae008a763f8a31283b653ae4cf3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741064"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652150"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés.
 
@@ -333,5 +333,5 @@ Remarque : `EnterActions` et `ExitActions` sont ignorés par les **déclencheur
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples de déclencheurs](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithTriggers)
+- [Exemples de déclencheurs](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 - [Documentation sur les API Xamarin.Forms](xref:Xamarin.Forms.TriggerAction`1)

@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827203"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643839"
 ---
 # <a name="linking-on-android"></a>Liaison sur Android
 
 Les applications Xamarin.Android utilisent un *éditeur de liens* pour réduire la taille de l’application. L’éditeur de liens effectue une analyse statique de votre application pour déterminer les assemblys réellement utilisés, les types réellement utilisés et les membres réellement utilisés. L’éditeur de liens se comporte ensuite comme un *récupérateur de mémoire*, qui recherche en permanence des assemblys, des types des membres qui sont référencés jusqu'à la fermeture complète des assemblys, types et membres référencés. Tous les autres éléments sont *ignorés*.
 
-Par exemple, [Hello, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) :
+Par exemple, [Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) :
 
 |Configuration|1.2.0 Size|4.0.1 Size|
 |---|---|---|
@@ -98,7 +98,7 @@ L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. P
 
 -   Si vous utilisez la sérialisation XML, vous souhaiterez éventuellement conserver les propriétés de vos types.
 
-Dans ce cas, vous pouvez utiliser l’attribut [Android.Runtime.Preserve](https://developer.xamarin.com/api/type/Android.Runtime.PreserveAttribute/). Chaque membre qui n’est pas lié de manière statique par l’application est sujet à suppression. Ainsi, cet attribut peut être utilisé pour marquer les membres qui ne sont pas statiquement référencés, mais sont toujours requis par votre application. Vous pouvez appliquer cet attribut à chaque membre d’un type, ou au type lui-même.
+Dans ce cas, vous pouvez utiliser l’attribut [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute). Chaque membre qui n’est pas lié de manière statique par l’application est sujet à suppression. Ainsi, cet attribut peut être utilisé pour marquer les membres qui ne sont pas statiquement référencés, mais sont toujours requis par votre application. Vous pouvez appliquer cet attribut à chaque membre d’un type, ou au type lui-même.
 
 Dans l’exemple suivant, cet attribut est utilisé pour conserver le constructeur de la classe `Example` :
 

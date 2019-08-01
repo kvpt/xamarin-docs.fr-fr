@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 37fbc0107414521a87c263d327ffd9b8940384eb
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 9c6edddd70fa7a74a72857a94dbed613b5b0d66d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53053462"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657150"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Interface de commande Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Dans l’architecture MVVM (modèle-vue-vue modèle), les liaisons de données sont définies entre les propriétés de ViewModel (généralement une classe dérivée de `INotifyPropertyChanged`) et les propriétés dans la vue (généralement le fichier XAML). Parfois, une application a des besoins qui vont au-delà de ces liaisons de propriété en exigeant de l’utilisateur qu’il lance des commandes qui affectent un élément dans le ViewModel. Ces commandes sont généralement signalées par des clics de bouton ou des appuis tactiles et, en règle générale, elles sont traitées dans le fichier code-behind dans un gestionnaire pour l’événement `Clicked` du `Button` ou l’événement `Tapped` d’un `TapGestureRecognizer`.
 
@@ -86,7 +86,7 @@ Si le partage d’objets ViewModel entre Windows et Xamarin.Forms n’est pas un
 
 ## <a name="basic-commanding"></a>Exécution de commandes de base
 
-La page **Person Entry** (Saisie des détails de la personne) dans le programme [**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (Démos des liaisons de données) illustre des commandes simples, implémentées dans un ViewModel.
+La page **Person Entry** (Saisie des détails de la personne) dans le programme [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) illustre des commandes simples, implémentées dans un ViewModel.
 
 La classe `PersonViewModel` définit trois propriétés nommées `Name`, `Age` et `Skills` qui définissent une personne. Cette classe *ne contient pas* de propriété `ICommand` :
 
@@ -693,7 +693,7 @@ Si vous souhaitez utiliser l’interface d’exécution de commandes avec des vu
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>Exécution asynchrone de commandes pour les menus de navigation
 
-L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml** :
+L’exécution de commandes est pratique pour implémenter des menus de navigation, tels que celui du programme [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) lui-même. Voici une partie de **MainPage.xaml** :
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -767,5 +767,5 @@ Comme vous l’avez vu dans cette série d’articles, bien que les liaisons de 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démos des liaisons de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

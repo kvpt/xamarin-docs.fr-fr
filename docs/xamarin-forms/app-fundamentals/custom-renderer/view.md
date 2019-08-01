@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 8f5c440784205fa0e7e2001c981e37eab8646f24
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: e8070894bab89ab2e38772518c94482409e4d17f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268935"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650427"
 ---
 # <a name="implementing-a-view"></a>Implémentation d’une vue
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
 _Les contrôles d’interface utilisateur personnalisés Xamarin.Forms doivent dériver de la classe View, qui est utilisée pour placer des dispositions et des contrôles sur l’écran. Cet article montre comment créer un renderer personnalisé pour un contrôle personnalisé Xamarin.Forms qui est utilisé afin d’afficher un flux vidéo d’aperçu à partir de la caméra de l’appareil._
 
@@ -335,4 +335,4 @@ Cet article a montré comment créer un renderer personnalisé pour un contrôle
 
 ## <a name="related-links"></a>Liens associés
 
-- [CustomRendererView (sample)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/View/)
+- [CustomRendererView (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)

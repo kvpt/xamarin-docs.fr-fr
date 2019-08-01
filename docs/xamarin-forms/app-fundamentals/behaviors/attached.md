@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 8553eb57ca33efd23b2fedf78413eb1df00bb63e
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 094f980922762ff33c19af6c9210e2e533bf5196
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925979"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651030"
 ---
 # <a name="attached-behaviors"></a>Comportements attachés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/AttachedNumericValidationBehavior/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _Les comportements attachés sont des classes avec une ou plusieurs propriétés attachées. Cet article montre comment créer et consommer des comportements attachés._
 
@@ -132,4 +132,4 @@ Cet article a montré comment créer et consommer des comportements attachés. L
 
 ## <a name="related-links"></a>Liens associés
 
-- [Comportements attachés (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/AttachedNumericValidationBehavior/)
+- [Comportements attachés (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)

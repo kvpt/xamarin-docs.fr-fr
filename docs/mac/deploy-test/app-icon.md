@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5245ce6c2c8a2317e18a90514039d36232e933ef
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 25a0a6f5f16b3035307b6b42f1c509401beb3553
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117906"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647127"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Icône d’application pour les applications Xamarin.Mac
 
@@ -54,10 +54,10 @@ Lisez les sections [Galerie d’icônes d’application](https://developer.apple
 
 Comme toute autre ressource d’image que le développeur va utiliser dans une application Xamarin.Mac, l’icône de l’application doit être fournie à la fois dans une version de résolution standard et de résolution Retina. Là encore, comme toute autre image, utilisez un format `@2x` quand vous nommez les fichiers d’icône :
 
-- **Résolution standard**  - _NomImage_**.**_nomfichier-extension_ (Exemple : **icon_512x512.png**)
-- **Haute résolution**  - _NomImage_**@2x.**_nomfichier-extension_ (Exemple : **icon_512x512@2x.png**)
+- **Résolution standard**  - _NomImage_ **.** _nomfichier-extension_ (Exemple : **icon_512x512.png**)
+- **Haute résolution**  - _NomImage_ **@2x.** _nomfichier-extension_ (Exemple : **icon_512x512@2x.png** )
 
-Par exemple, pour fournir la version 512 x 512 de l’icône de l’application, le fichier serait nommé **icon_512x512.png** et **icon_512x512@2x.png**.
+Par exemple, pour fournir la version 512 x 512 de l’icône de l’application, le fichier serait nommé **icon_512x512.png** et **icon_512x512@2x.png** .
 
 Pour vérifier que l’icône s’affiche parfaitement dans tous les emplacements où les utilisateurs la voient, fournissez les ressources dans les tailles répertoriées ci-dessous :
 
@@ -116,7 +116,7 @@ Cet article a examiné en détail l’utilisation des images nécessaires pour c
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacImages (exemple)](https://developer.xamarin.com/samples/mac/MacImages/)
+- [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Utilisation d’images](~/mac/app-fundamentals/image.md)
 - [Human Interface Guidelines pour macOS - Icons and Images](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)

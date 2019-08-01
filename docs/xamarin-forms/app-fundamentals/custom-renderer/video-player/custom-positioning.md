@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a962c61027fa6f9f05c59272c900a3ca32e1b01f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926130"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650646"
 ---
 # <a name="custom-video-positioning"></a>Positionnement vidéo personnalisé
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport implémentés par chaque plateforme incluent une barre de position. Cette barre ressemble à un curseur ou une barre de défilement et indique la position actuelle de la vidéo au sein de sa durée totale. En outre, l’utilisateur peut avancer ou reculer la barre de position vers une nouvelle position dans la vidéo.
 
@@ -481,4 +481,4 @@ Ainsi se termine la discussion sur le `VideoPlayer`.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de lecteur vidéo (exemple)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

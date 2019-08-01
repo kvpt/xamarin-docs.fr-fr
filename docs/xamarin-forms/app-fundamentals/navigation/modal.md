@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c84995e210d61e735d12a089f40bf9afa720acb5
-ms.sourcegitcommit: 5d4e6677224971e2bc0268f405d192d0358c74b8
+ms.openlocfilehash: cd29e284c45bfe59633dde924e27d8022e8416ba
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329284"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645932"
 ---
 # <a name="xamarinforms-modal-pages"></a>Pages modales Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
 _Xamarin.Forms prend en charge les pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome et ne peut pas être quittée tant que la tâche n’est pas terminée ou annulée. Cet article explique comment accéder à des pages modales._
 
@@ -262,5 +262,5 @@ Cet article a montré comment accéder aux pages modales. Une page modale encour
 ## <a name="related-links"></a>Liens associés
 
 - [Navigation de page](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Modal (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
-- [PassingData (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
+- [Modal (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
+- [PassingData (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)

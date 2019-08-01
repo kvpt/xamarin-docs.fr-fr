@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 1bb3f319eb104a7425c3be820f5c91efe300737f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925163"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650910"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>EventToCommandBehavior réutilisable
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _Vous pouvez utiliser des comportements pour associer des commandes à des contrôles qui n’ont pas été conçus pour interagir avec des commandes. Cet article montre comment créer et consommer un comportement Xamarin.Forms pour appeler une commande quand un événement est déclenché._
 
@@ -35,7 +35,7 @@ Les propriétés de comportement facultatives suivantes peuvent aussi être déf
 - **Converter** – implémentation [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) qui change le format des données d’argument d’événement puisque celles-ci sont passées de la *source* à la *cible* par le moteur de liaison.
 
 > [!NOTE]
-> `EventToCommandBehavior` est une classe personnalisée qui peut se trouver dans l’[exemple Comportement EventToCommand](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/) et qui ne fait pas partie de Xamarin.Forms.
+> `EventToCommandBehavior` est une classe personnalisée qui peut se trouver dans l’[exemple Comportement EventToCommand](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior) et qui ne fait pas partie de Xamarin.Forms.
 
 ## <a name="creating-the-behavior"></a>Création du comportement
 
@@ -208,6 +208,6 @@ Cet article a montré comment utiliser un comportement Xamarin.Forms pour appele
 
 ## <a name="related-links"></a>Liens associés
 
-- [Comportement EventToCommand (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+- [Comportement EventToCommand (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

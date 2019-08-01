@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2018
-ms.openlocfilehash: c607cecf6c7044fa4c8d0270a5b8d1471d3f9227
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059059"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653367"
 ---
 # <a name="xamarinforms-data-binding"></a>Liaison de données Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _La liaison de données est la technique qui permet de lier les propriétés de deux objets afin que les changements d’une propriété soient automatiquement répercutés sur l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application modèle-vue-vue modèle (MVVM)._
 
@@ -35,7 +35,7 @@ Un des deux objets impliqués dans une liaison de données est presque toujours 
 - Un autre `View` dérivé, généralement dans la même page.
 - Un objet dans un fichier de code.
 
-Dans les programmes de démonstration comme ceux de l’exemple [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/), les liaisons de données entre deux `View` dérivées sont souvent montrées pour plus de clarté et de simplicité. Toutefois, les mêmes principes peuvent être appliqués aux liaisons de données entre un `View` et d’autres objets. Quand une application est créée à l’aide de l’architecture modèle-vue-vue modèle (MVVM), la classe avec les données sous-jacentes est souvent appelée ViewModel.
+Dans les programmes de démonstration comme ceux de l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), les liaisons de données entre deux `View` dérivées sont souvent montrées pour plus de clarté et de simplicité. Toutefois, les mêmes principes peuvent être appliqués aux liaisons de données entre un `View` et d’autres objets. Quand une application est créée à l’aide de l’architecture modèle-vue-vue modèle (MVVM), la classe avec les données sous-jacentes est souvent appelée ViewModel.
 
 Les liaisons de données sont décrites dans la série d’articles suivante :
 
@@ -73,6 +73,6 @@ Utilisez des liaisons compilées pour améliorer les performances de liaison de 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démos des liaisons de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)

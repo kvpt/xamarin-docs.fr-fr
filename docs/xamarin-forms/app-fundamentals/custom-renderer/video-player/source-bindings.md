@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 93383376c9167900bd69e43e8d83044bfdc3b607
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924975"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650458"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Liaison de sources vidéo au lecteur
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-Quand la propriété `Source` de l’affichage `VideoPlayer` est définie sur un nouveau fichier vidéo, la lecture de la vidéo existante s’arrête et celle de la nouvelle vidéo commence. Cela est illustré par la page **Sélectionner une vidéo web** de l’exemple [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/). La page inclut un `ListView` avec les titres des trois vidéos référencées à partir du fichier **App.xaml** :
+Quand la propriété `Source` de l’affichage `VideoPlayer` est définie sur un nouveau fichier vidéo, la lecture de la vidéo existante s’arrête et celle de la nouvelle vidéo commence. Cela est illustré par la page **Sélectionner une vidéo web** de l’exemple [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos). La page inclut un `ListView` avec les titres des trois vidéos référencées à partir du fichier **App.xaml** :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -142,4 +142,4 @@ Comme avec la première page **Sélectionner une vidéo web**, aucun élément n
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de lecteur vidéo (exemple)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

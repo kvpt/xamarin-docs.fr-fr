@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977785"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650225"
 ---
 # <a name="xamarinforms-binding-mode"></a>Mode de liaison Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Dans l’[article précédent](basic-bindings.md), les pages **Alternative Code Binding** (Liaison de code alternative) et **Alternative XAML Binding** (Liaison XAML alternative) présentaient un objet `Label` avec sa propriété `Scale` liée à la propriété `Value` d’un élément `Slider`. Comme la valeur initiale `Slider` est 0, la propriété `Scale` du `Label` était définie sur 0 au lieu de 1 et le `Label` disparaissait.
 
-Dans l’exemple [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/), la page **Reverse Binding** (Liaison inverse) est similaire aux programmes de l’article précédent, si ce n’est que la liaison de données est définie sur le `Slider` plutôt que sur le `Label`:
+Dans l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), la page **Reverse Binding** (Liaison inverse) est similaire aux programmes de l’article précédent, si ce n’est que la liaison de données est définie sur le `Slider` plutôt que sur le `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -684,5 +684,5 @@ Dans le prochain article, vous verrez comment spécifier un [**formatage de cha�
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démos des liaisons de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 2dd7efb9f295143775961afb97e70b5f241d1337
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 87972df2b15a5bc1f6323a6953f809379cae4a50
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056121"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644522"
 ---
 # <a name="xamarinforms-string-formatting"></a>Formatage de chaîne dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Il est parfois pratique d’utiliser des liaisons de données pour afficher la représentation de chaîne d’un objet ou d’une valeur. Par exemple, vous souhaiterez peut-être utiliser un objet `Label` pour afficher la valeur actuelle d’un élément `Slider`. Dans cette liaison de données, l’élément `Slider` est la source, et la cible est la propriété `Text` de l’objet `Label`.
 
@@ -187,5 +187,5 @@ Le prochain article, toutefois, explore le [**chemin de liaison**](binding-path.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démos des liaisons de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

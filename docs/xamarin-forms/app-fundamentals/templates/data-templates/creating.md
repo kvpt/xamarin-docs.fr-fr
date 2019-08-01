@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: dee45f9788360326ddb393305e9a52627264a671
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 1163f264fc54a461d8d95854524439589cdc81f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926289"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646982"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Création d’un DataTemplate Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _Vous pouvez créer des modèles de données inline, dans un ResourceDictionary, à partir d’un type personnalisé ou à partir du type de cellule Xamarin.Forms approprié. Cet article explore chaque technique._
 
@@ -293,5 +293,5 @@ Cet article explique comment créer des modèles de données inline à partir d�
 ## <a name="related-links"></a>Liens associés
 
 - [Apparence de cellule](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Modèles de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+- [Modèles de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

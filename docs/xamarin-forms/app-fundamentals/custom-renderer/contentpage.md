@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 290cd36f36d86d161b7fc124f8961888ade41955
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 73d57c632cfcd36bd7f38865c39acb7fecb55e3e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925955"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650916"
 ---
 # <a name="customizing-a-contentpage"></a>Personnalisation d’un ContentPage
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
 _Un ContentPage est un élément visuel qui affiche une seule vue et occupe la majeure partie de l’écran. Cet article montre comment créer un renderer personnalisé pour la page ContentPage afin de permettre aux développeurs de remplacer le rendu natif par défaut par leur propre personnalisation spécifique à la plateforme._
 
@@ -199,7 +199,7 @@ namespace CustomRenderer.Droid
 
 L’appel à la méthode `OnElementChanged` de la classe de base instancie un contrôle `ViewGroup` Android, qui est en fait un groupe de vues. Le flux vidéo en temps réel est restitué à condition que le renderer ne soit pas déjà attaché à un élément Xamarin.Forms existant et sous réserve qu’une instance de page soit en cours de restitution par le renderer personnalisé.
 
-La page est ensuite personnalisée en appelant une série de méthodes qui utilisent l’API `Camera` pour fournir le flux en temps réel de la caméra et la possibilité de capturer une photo, puis la méthode `AddView` est appelée pour ajouter l’interface utilisateur du flux vidéo en temps réel à `ViewGroup`. Sur Android, notez qu’il est également nécessaire de remplacer la méthode `OnLayout` pour effectuer les opérations de mesure et de disposition sur la vue. Pour plus d’informations, consultez l’[exemple de renderer ContentPage](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/).
+La page est ensuite personnalisée en appelant une série de méthodes qui utilisent l’API `Camera` pour fournir le flux en temps réel de la caméra et la possibilité de capturer une photo, puis la méthode `AddView` est appelée pour ajouter l’interface utilisateur du flux vidéo en temps réel à `ViewGroup`. Sur Android, notez qu’il est également nécessaire de remplacer la méthode `OnLayout` pour effectuer les opérations de mesure et de disposition sur la vue. Pour plus d’informations, consultez l’[exemple de renderer ContentPage](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Création du renderer de page sur UWP
 
@@ -257,4 +257,4 @@ Dans cet article, nous avons vu comment créer un renderer personnalisé pour la
 
 ## <a name="related-links"></a>Liens associés
 
-- [CustomRendererContentPage (exemple)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/ContentPage/)
+- [CustomRendererContentPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

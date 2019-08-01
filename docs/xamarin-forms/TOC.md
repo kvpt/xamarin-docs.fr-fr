@@ -35,7 +35,8 @@
 ### [XAML Standard (préversion)](xaml/standard/index.md)
 #### [Contrôles](xaml/standard/controls.md)
 ### [Chargement de XAML lors de l’exécution](xaml/runtime-load.md)
-## [Notions de base des applications](app-fundamentals/index.md)
+## Notions de base des applications
+### [Vue d’ensemble](app-fundamentals/index.yml)
 ### [Accessibilité](app-fundamentals/accessibility/index.md)
 #### [Propriétés d’automatisation](app-fundamentals/accessibility/automation-properties.md)
 #### [Accessibilité du clavier](app-fundamentals/accessibility/keyboard.md)

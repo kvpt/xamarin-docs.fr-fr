@@ -5,7 +5,7 @@ metadata:
   description: Exemples d’applications Xamarin multiplateformes pour les développeurs d’applications mobiles.
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/26/2018
+  ms.date: 07/30/2019
   ms.topic: sample
 abstract:
   description: 'Exemples d’applications multiplateformes et démonstrations de code Xamarin pour vous aider à créer des applications mobiles avec C# et Xamarin.'

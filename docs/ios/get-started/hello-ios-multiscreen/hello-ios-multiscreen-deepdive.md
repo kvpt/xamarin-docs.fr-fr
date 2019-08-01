@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 953f626774c02a2861d0d9b3be1f1234f181c622
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 9ce29df9070ee99bb3de9579025f5b0f366d6331
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670595"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655900"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
 
@@ -28,11 +28,11 @@ Dans le tutoriel [Hello, iOS](~/ios/get-started/hello-ios/index.md), nous avons 
 
  [![](hello-ios-multiscreen-deepdive-images/08.png "Ce diagramme illustre le passage de données entre deux écrans")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
-Dans notre exemple, les données étaient collectées dans le premier écran, passées du premier contrôleur de vue au second, puis affichées par le second écran. Cette séparation des écrans, contrôleurs de vues et données suit le modèle *MVC (modèle-vue-contrôleur)*. Dans les sections suivantes, nous présentons les avantages de ce modèle, ses composants et la manière dont nous l’utilisons dans notre application Phoneword.
+Dans notre exemple, les données étaient collectées dans le premier écran, passées du premier contrôleur de vue au second, puis affichées par le second écran. Cette séparation des écrans, contrôleurs de vues et données suit le modèle *MVC (modèle-vue-contrôleur)* . Dans les sections suivantes, nous présentons les avantages de ce modèle, ses composants et la manière dont nous l’utilisons dans notre application Phoneword.
 
 ### <a name="benefits-of-the-mvc-pattern"></a>Avantages du modèle MVC
 
-Le modèle MVC (Model-View-Controller) est un *modèle de conception*, autrement dit une solution d’architecture réutilisable à un problème courant ou cas d’usage dans le code. Le modèle MVC est une architecture destinée aux applications dotées d’une *interface graphique utilisateur (GUI)*. Il attribue aux objets dans l’application un des trois rôles suivants : *modèle* (Model) (données ou logique d’application), *affichage* (View) (interface utilisateur) et *contrôleur* (Controller) (code-behind). Le diagramme ci-dessous illustre les relations entre les trois éléments du modèle MVC et l’utilisateur :
+Le modèle MVC (Model-View-Controller) est un *modèle de conception*, autrement dit une solution d’architecture réutilisable à un problème courant ou cas d’usage dans le code. Le modèle MVC est une architecture destinée aux applications dotées d’une *interface graphique utilisateur (GUI)* . Il attribue aux objets dans l’application un des trois rôles suivants : *modèle* (Model) (données ou logique d’application), *affichage* (View) (interface utilisateur) et *contrôleur* (Controller) (code-behind). Le diagramme ci-dessous illustre les relations entre les trois éléments du modèle MVC et l’utilisateur :
 
  [![](hello-ios-multiscreen-deepdive-images/00.png "Ce diagramme illustre les relations entre les trois éléments du modèle MVC et l’utilisateur")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
@@ -205,6 +205,6 @@ Maintenant, apprenons à générer des applications multiplateforme avec Xamarin
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Hello, iOS (exemple)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail de provisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

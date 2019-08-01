@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
-ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
+ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411763"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651673"
 ---
 # <a name="invoking-events-from-effects"></a>Appel d’événements à partir d’effets
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _Un effet peut définir et appeler un événement, en signalant des changements dans la vue native sous-jacente. Cet article explique comment implémenter le suivi de l’interaction tactile multipoint de bas niveau et comment générer des événements qui indiquent une activité tactile._
 
@@ -52,7 +52,7 @@ Pour cette raison, l’effet de suivi tactile décrit dans cet article implémen
 
 ## <a name="the-touch-tracking-effect-api"></a>L’API Effet de suivi tactile
 
-L’exemple [**Touch Tracking Effect Demos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) contient les classes (et une énumération) qui implémentent le suivi tactile de bas niveau. Ces types appartiennent à l’espace de noms `TouchTracking` et commencent par le mot `Touch`. Le projet de bibliothèque .NET Standard **TouchTrackingEffectDemos** inclut l’énumération `TouchActionType` pour le type d’événements tactiles :
+L’exemple [**Touch Tracking Effect Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) contient les classes (et une énumération) qui implémentent le suivi tactile de bas niveau. Ces types appartiennent à l’espace de noms `TouchTracking` et commencent par le mot `Touch`. Le projet de bibliothèque .NET Standard **TouchTrackingEffectDemos** inclut l’énumération `TouchActionType` pour le type d’événements tactiles :
 
 ```csharp
 public enum TouchActionType
@@ -359,7 +359,7 @@ La plus grande partie de la structure de cette classe `TouchRecognizer` est simi
 
 ## <a name="putting-the-touch-effect-to-work"></a>Utilisation de l’effet tactile
 
-Le programme [**TouchTrackingEffectDemos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) contient cinq pages qui testent l’effet de suivi tactile pour des tâches courantes.
+Le programme [**TouchTrackingEffectDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) contient cinq pages qui testent l’effet de suivi tactile pour des tâches courantes.
 
 La page **BoxView Dragging** vous permet d’ajouter des éléments `BoxView` à `AbsoluteLayout`, puis de les faire glisser sur l’écran. Le [fichier XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml) instancie deux vues `Button` pour l’ajout d’éléments `BoxView` à `AbsoluteLayout` et pour l’effacement de `AbsoluteLayout`.
 
@@ -809,4 +809,4 @@ Cet article a montré comment appeler des événements dans un effet, et comment
 
 - [Suivi de l’interaction tactile multipoint dans iOS](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [Suivi de l’interaction tactile multipoint dans Android](~/android/app-fundamentals/touch/touch-tracking.md)
-- [Effet de suivi tactile (exemple)](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+- [Effet de suivi tactile (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5c67684f7d8cb763d4698de86c904e2887185361
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 19da0de80819a48259a28b30e003c32923d37378
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925185"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650686"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>Mise en surbrillance d’un itinéraire sur une carte
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline)
 
 _Cet article explique comment ajouter une superposition polyligne sur une carte. Une superposition polyligne est une série de segments de ligne connectés, généralement utilisés pour montrer un itinéraire sur une carte ou tracer la forme qui convient._
 
@@ -304,6 +304,6 @@ Cet article a expliqué comment ajouter une superposition polyligne sur une cart
 
 ## <a name="related-links"></a>Liens associés
 
-- [Superposition polyligne sur une carte (exemple)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
+- [Superposition polyligne sur une carte (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline)
 - [Personnalisation d’une épingle de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

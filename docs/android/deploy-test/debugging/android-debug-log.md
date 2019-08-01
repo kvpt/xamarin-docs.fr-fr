@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 8cf6c11675f0f3ddca0d5aea69e5e07160ef8454
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114780"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509209"
 ---
 # <a name="android-debug-log"></a>Journal de débogage Android
 
@@ -137,8 +137,8 @@ Plusieurs commandes sont accessibles en entrant **adb** et en lisant les message
 
 ## <a name="writing-to-the-debug-log"></a>Écriture dans le journal de débogage
 
-Des messages peuvent être écrits dans le **Journal de débogage** en utilisant les méthodes de la classe [Android.Util.Log](https://developer.xamarin.com/api/type/Android.Util.Log/).
-Exemple : 
+Des messages peuvent être écrits dans le **Journal de débogage** en utilisant les méthodes de la classe [Android.Util.Log](xref:Android.Util.Log).
+Par exemple : 
 
 ```csharp
 string tag = "myapp";

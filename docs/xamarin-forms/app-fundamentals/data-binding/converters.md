@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4594da09d48a0888a88cbce9ab135a007eb6f4cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 34b449aa358874f06a495ec52578dcca2dd13767
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054329"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654724"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Convertisseurs de valeurs de liaison Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Les liaisons de données transfèrent généralement des données d’une propriété source vers une propriété cible et, dans certains cas, de la propriété cible vers la propriété source. Ce transfert est direct lorsque les propriétés source et cible sont du même type, ou quand un type peut être converti vers l’autre type via une conversion implicite. Lorsque ce n’est pas le cas, une conversion de type doit avoir lieu.
 
@@ -51,7 +51,7 @@ La méthode `ConvertBack` est appelée lorsque les données sont transférées d
 
 Si la liaison de données inclut également un paramètre `StringFormat`, le convertisseur de valeurs est appelé avant que le résultat soit formaté en tant que chaîne.
 
-La page **Enable Buttons** (Activer les boutons) dans l’exemple [**Data Binding Demos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (Démos des liaisons de données) illustre l’utilisation de ce convertisseur de valeurs dans une liaison de données. `IntToBoolConverter` est instancié dans le dictionnaire de ressources de la page. Il est ensuite référencé avec une extension de balisage `StaticResource` pour définir la propriété `Converter` dans deux liaisons de données. Il est très courant de partager des convertisseurs de données entre plusieurs liaisons de données sur la page :
+La page **Enable Buttons** (Activer les boutons) dans l’exemple [**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (Démos des liaisons de données) illustre l’utilisation de ce convertisseur de valeurs dans une liaison de données. `IntToBoolConverter` est instancié dans le dictionnaire de ressources de la page. Il est ensuite référencé avec une extension de balisage `StaticResource` pour définir la propriété `Converter` dans deux liaisons de données. Il est très courant de partager des convertisseurs de données entre plusieurs liaisons de données sur la page :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -467,5 +467,5 @@ Voici le résultat :
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démos des liaisons de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

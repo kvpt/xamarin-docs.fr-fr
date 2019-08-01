@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 9ea2b3ddef731efb9e4bf291ec836248c13d6390
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 400075a1cbd2303f2ecddb9b1cc9465bbcbde32d
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113133"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680265"
 ---
 # <a name="profiling-android-apps"></a>Profilage des applications Android
 
@@ -38,7 +38,7 @@ Android Studio 3.0 et versions ultérieures incluent un outil nommé Android Pr
 
 ### <a name="launching-a-xamarin-android-app-in-android-profiler"></a>Lancement d’une application Xamarin Android dans Android Profiler
 
-Les étapes suivantes expliquent comment lancer une application Xamarin Android dans l’outil Android Profiler d’Android Studio. Dans les exemples de captures d’écran ci-dessous, l’application Xamarin Forms [XamagonXuzzle](https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/) est générée et profilée à l’aide d’Android Profiler :
+Les étapes suivantes expliquent comment lancer une application Xamarin Android dans l’outil Android Profiler d’Android Studio. Dans les exemples de captures d’écran ci-dessous, l’application Xamarin Forms [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) est générée et profilée à l’aide d’Android Profiler :
 
 1.  Dans les options de génération de projet Android, désactivez **Utiliser le runtime partagé**. Cela garantit que le package APK est généré sans dépendance envers le runtime Mono partagé au moment du développement.
 

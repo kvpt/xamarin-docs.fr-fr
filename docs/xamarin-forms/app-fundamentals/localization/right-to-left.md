@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: e74231133c0a52ba0fe4e5589f09aab15e1b9924
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978597"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656979"
 ---
 # <a name="right-to-left-localization"></a>Localisation de droite à gauche
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
 _La localisation de droite à gauche ajoute la prise en charge de la direction de flux de droite à gauche pour les applications Xamarin.Forms._
 
@@ -154,4 +154,4 @@ La localisation de droite à gauche de Xamarin.Forms présente un certain nombre
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Exemple d’application TodoLocalizedRTL](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+- [Exemple d’application TodoLocalizedRTL](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

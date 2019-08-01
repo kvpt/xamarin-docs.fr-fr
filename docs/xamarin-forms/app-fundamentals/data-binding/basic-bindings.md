@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d1759701708c337a804471167223ef68cc3f2910
-ms.sourcegitcommit: 2ee36611ef667affee7d417db947fbb614d75315
+ms.openlocfilehash: 8cec67ec582edad506aecb0945257b9baae3da90
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54479743"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650347"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Liaisons de base Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Une liaison de données Xamarin.Forms lie une paire de propriétés entre deux objets, dont au moins un est généralement un objet d’interface utilisateur. Ces deux objets sont appelés la *cible* et la *source* :
 
@@ -332,7 +332,7 @@ Dans le [prochain article](binding-mode.md), vous verrez comment le *mode de lia
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démos des liaisons de données (exemple)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>Vidéo associée

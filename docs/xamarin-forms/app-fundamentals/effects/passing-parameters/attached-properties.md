@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925441"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645369"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Passer des paramètres d’effet en tant que propriétés jointes
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _Les propriétés jointes permettent de définir des paramètres d’effet qui répondent aux changements apportés aux propriétés au moment de l’exécution. Cet article décrit comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment changer un paramètre au moment de l’exécution._
 
@@ -318,7 +318,7 @@ namespace EffectsDemo.Droid
     }
 ```
 
-La méthode `OnAttached` appelle les méthodes qui récupèrent les valeurs de propriété jointe à l’aide des méthodes getter `ShadowEffect`, et appelle la méthode [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) pour créer une ombre avec les valeurs de propriété définies. Cette fonctionnalité est wrappée dans un bloc `try`/`catch` au cas où le contrôle auquel l’effet est joint n’a pas les propriétés `Control.Layer`. Aucune implémentation n’est fournie par la méthode `OnDetached`, car aucun nettoyage n’est nécessaire.
+La méthode `OnAttached` appelle les méthodes qui récupèrent les valeurs de propriété jointe à l’aide des méthodes getter `ShadowEffect`, et appelle la méthode [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) pour créer une ombre avec les valeurs de propriété définies. Cette fonctionnalité est wrappée dans un bloc `try`/`catch` au cas où le contrôle auquel l’effet est joint n’a pas les propriétés `Control.Layer`. Aucune implémentation n’est fournie par la méthode `OnDetached`, car aucun nettoyage n’est nécessaire.
 
 #### <a name="responding-to-property-changes"></a>Répondre aux changements apportés aux propriétés
 
@@ -440,4 +440,4 @@ Cet article a décrit comment utiliser des propriétés jointes pour passer des 
 - [Effect](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [Effet d’ombre (exemple)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+- [Effet d’ombre (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

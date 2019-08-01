@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 3e5db00a73047aaadb1162fa1cc8a21f6e77b3a0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926194"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650636"
 ---
 # <a name="custom-video-transport-controls"></a>Contrôles de transport vidéo personnalisés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Les contrôles de transport d’un lecteur vidéo incluent les boutons qui effectuent les fonctions **Lecture**, **Pause** et **Arrêt**. Ces boutons sont habituellement identifiés par des icônes familières plutôt que du texte, et les fonctions **Lecture** et **Pause** sont généralement combinées en un seul bouton.
 
@@ -364,7 +364,7 @@ Deux propriétés de `AVPlayer` doivent être accessibles : La propriété [`St
 
 ### <a name="the-android-status-setting"></a>Paramètre d’état Android
 
-La propriété [`IsPlaying`](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) du `VideoView` Android est une valeur booléenne qui indique uniquement si la vidéo est en cours de lecture ou en pause. Pour déterminer si le `VideoView` ne peut ni lire ni suspendre la vidéo pour l’instant, l’événement `Prepared` de `VideoView` doit être géré. Ces deux gestionnaires sont définis dans la méthode `OnElementChanged` et détachés pendant le remplacement de `Dispose` :
+La propriété [`IsPlaying`](xref:Android.Widget.VideoView.IsPlaying) du `VideoView` Android est une valeur booléenne qui indique uniquement si la vidéo est en cours de lecture ou en pause. Pour déterminer si le `VideoView` ne peut ni lire ni suspendre la vidéo pour l’instant, l’événement `Prepared` de `VideoView` doit être géré. Ces deux gestionnaires sont définis dans la méthode `OnElementChanged` et détachés pendant le remplacement de `Dispose` :
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -660,4 +660,4 @@ Dans une application de production, vous voudrez probablement utiliser vos propr
 
 ## <a name="related-links"></a>Liens associés
 
-- [Démonstrations de lecteur vidéo (exemple)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+- [Démonstrations de lecteur vidéo (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

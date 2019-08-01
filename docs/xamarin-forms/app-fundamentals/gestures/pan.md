@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 36f01fb309f174e0ed7c709fb77f133b101ef8e0
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 03b9c5f903cea67032a9560754a32ac552635e92
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53061091"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653873"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Ajout d’un module de reconnaissance des mouvements panoramiques
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
 _Le mouvement panoramique est utilisé pour détecter le mouvement des doigts sur l’écran et l’appliquer au contenu. Il est implémenté avec la classe `PanGestureRecognizer`. Un scénario courant du mouvement panoramique est l’exécution d’un panoramique horizontal et vertical d’une image pour que tout le contenu de l’image soit visible quand il est affiché dans une fenêtre d’affichage plus petite que les dimensions de l’image. Cette action est accomplie en déplaçant l’image dans la fenêtre d’affichage, elle est illustrée dans cet article._
 
@@ -151,6 +151,6 @@ Quand vous effectuez un panoramique d’un élément qui n’occupe pas tout l�
 
 ## <a name="related-links"></a>Liens associés
 
-- [PanGesture (exemple)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
+- [PanGesture (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)

@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: e7b8ae57f127b4c9397ab4e5f7e097fa330e827a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 36069bc20a5341b87d55b60f83466e89f263b2ec
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650660"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646127"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/xamarin-forms/DeepLinking/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _L’indexation d’applications permet aux applications, qui sinon auraient été oubliées après quelques utilisations, de rester pertinentes en apparaissant dans les résultats de recherche. Les liens ciblés permettent aux applications de répondre à un résultat de recherche qui contient des données d’application, généralement en parcourant une page référencée à partir d’un lien ciblé. Cet article explique comment utiliser l’indexation d’applications et les liens ciblés pour qu’il soit possible de rechercher du contenu d’application Xamarin.Forms sur les appareils iOS et Android._
 
@@ -248,7 +248,7 @@ Cet article a expliqué comment utiliser l’indexation d’applications et les 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Deep Linking (sample)](https://developer.xamarin.com/samples/xamarin-forms/DeepLinking/)
+- [Deep Linking (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 - [API de recherche iOS](~/ios/platform/search/index.md)
 - [Liaison d’applications dans Android 6.0](~/android/platform/app-linking.md)
 - [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)
