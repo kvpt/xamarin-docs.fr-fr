@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 4ade8fbb3ac596ef2da5d76b4efa751661cd8611
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646252"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680942"
 ---
 # <a name="async-support-overview"></a>Présentation de la prise en charge asynchrone
 
@@ -87,9 +87,9 @@ La tâche est ensuite annulée et accuse réception de l’annulation.
 
 Pour plus d’informations sur l’annulation, consultez [Réglage de votre application Async (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-Téléchargez l' [exemple de solution Xamarin](https://developer.xamarin.com/samples/mobile/AsyncAwait/) (pour iOS et Android) pour voir un exemple fonctionnel de `async` et `await` dans les applications mobiles. L’exemple de code est abordé plus en détail dans cette section.
+Téléchargez l' [exemple de solution Xamarin](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/) (pour iOS et Android) pour voir un exemple fonctionnel de `async` et `await` dans les applications mobiles. L’exemple de code est abordé plus en détail dans cette section.
 
 ### <a name="writing-an-async-method"></a>Écriture d’une méthode Async
 
@@ -196,7 +196,7 @@ Ce document a donné une vue d’ensemble des nouveaux mots clés de langage et 
 
 ## <a name="related-links"></a>Liens associés
 
-- [AsyncAwait (exemple)](https://developer.xamarin.com/samples/mobile/AsyncAwait/)
+- [AsyncAwait (exemple)](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)
 - [Rappels en tant qu’instruction Go de la génération](https://tirania.org/blog/archive/2013/Aug-15.html)
 - [Données (iOS) (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/data/)
 - [HttpClient (iOS) (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/httpclient/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: fc06514be70d64f200a22fa96a7644c7d97be012
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2acc57a65f9a9dfb49088c17b5b4cfac7e9d2ab6
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643519"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680882"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>Utilisation de JNI et Xamarin. Android
 
@@ -1514,6 +1514,5 @@ La gestion directe d’JNI est une expérience terrible qui devrait être évit�
 
 ## <a name="related-links"></a>Liens connexes
 
-- [SanityTests (exemple)](https://developer.xamarin.com/samples/SanityTests/)
 - [Spécification de l’interface native Java](http://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/jniTOC.html)
 - [Fonctions d’interface native Java](http://download.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html)

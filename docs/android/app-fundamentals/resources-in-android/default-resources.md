@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 3be63eb8909f129f046b2959ec7963e493674914
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b3a6dfb11b49f9ab3b09cf09594eb374f63fe304
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644226"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680227"
 ---
 # <a name="default-resources"></a>Ressources par défaut
 
@@ -38,7 +38,7 @@ La liste complète des types de ressources est fournie ci-dessous:
  
 -  **disposition** &ndash; Fichiers XML qui décrivent une disposition d’interface utilisateur, telle qu’une activité ou une ligne d’une liste.
 
--  **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus*contextuels et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://developer.xamarin.com/samples/mobile/StandardControls/) .
+-  **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus*contextuels et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
 
 -  **brut** &ndash; Fichiers arbitraires enregistrés sous leur forme binaire brute. Ces fichiers sont compilés dans une application Android dans un format binaire.
 
@@ -70,7 +70,7 @@ La liste complète des types de ressources est fournie ci-dessous:
 
 -  **disposition** &ndash; Fichiers XML qui décrivent une disposition d’interface utilisateur, telle qu’une activité ou une ligne d’une liste.
 
--  **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus*contextuels et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://developer.xamarin.com/samples/mobile/StandardControls/) .
+-  **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus*contextuels et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
 
 -  **brut** &ndash; Fichiers arbitraires enregistrés sous leur forme binaire brute. Ces fichiers sont compilés dans une application Android dans un format binaire.
 

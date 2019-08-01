@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f2e65439084d4e89ae529bda79c2cb2739f1529d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656215"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680988"
 ---
 # <a name="3d-coordinates-in-monogame"></a>Coordonnées 3D en monojeu
 
@@ -37,7 +37,7 @@ Une fois que vous avez terminé, nous aurons un projet avec un robot qui se dép
 
 ## <a name="creating-a-project"></a>Création d'un projet
 
-Cette procédure pas à pas se concentre sur le déplacement d’objets dans l’espace 3D. Nous allons commencer par le projet de rendu des modèles et des tableaux de vertex [qui se trouvent ici](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/). Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que les éléments suivants doivent s’afficher:
+Cette procédure pas à pas se concentre sur le déplacement d’objets dans l’espace 3D. Nous allons commencer par le projet de rendu des modèles et des tableaux de vertex [qui se trouvent ici](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/). Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que les éléments suivants doivent s’afficher:
 
 ![](part3-images/image2.png "Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que cette vue doit être affichée.")
 

@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: deb4caa4d23d23b2997361cca161b218c1ff7b61
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511291"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680205"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Utilisation de types natifs dans des applications multiplateformes
 
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-Notez que nous avons ici modifié la `CalculateArea` méthode pour retourner un `nfloat` à la place de `float`la norme. Cela a été fait afin de ne pas obtenir une erreur de compilation tentant  de convertir implicitement `nfloat` le résultat de notre calcul (puisque les deux valeurs multipliées sont `nfloat`de type) `float` dans une valeur de retour.
+Notez que nous avons ici modifié la `CalculateArea` méthode pour retourner un `nfloat` à la place de `float`la norme. Cela a été fait afin de ne pas obtenir une erreur de compilation tentant de convertir implicitement `nfloat` le résultat de notre calcul (puisque les deux valeurs multipliées sont `nfloat`de type) `float` dans une valeur de retour.
 
 Si le code est compilé et exécuté sur un appareil non API unifiée, le `using nfloat = global::System.Single;` `nfloat` mappe à un `Single` qui effectue une conversion implicite en `float` qui permet à l’application frontale de consommer d’appeler la `CalculateArea` méthode sans modifiées.
 
@@ -251,4 +251,4 @@ Dans cet article, nous avons vu quand utiliser les types de données natifs dans
 - [API unifiée](~/cross-platform/macios/unified/index.md)
 - [Types natifs](~/cross-platform/macios/nativetypes.md)
 - [Options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Exemple de partage de code](https://developer.xamarin.com/samples/mobile/SharingCode/)
+- [Exemple de partage de code](https://docs.microsoft.com/samples/xamarin/mobile-samples/sharingcode/)
