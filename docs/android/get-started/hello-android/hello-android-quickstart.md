@@ -9,18 +9,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 71343aa69cc7fa34fb716ea39454e6437a64169f
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: c9f9fb7eecd41c3aeffb7a28042f944c9d6a320b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855079"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644070"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android : Démarrage rapide
 
 _Dans ce guide en deux parties, vous allez générer votre première application Xamarin.Android avec Visual Studio, et acquérir les fondements du développement d’applications Android avec Xamarin._
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://developer.xamarin.com/samples/monodroid/Phoneword/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
 
 Vous allez créer une application qui permet de convertir un numéro de téléphone alphanumérique (entré par l’utilisateur) en un numéro de téléphone numérique, puis de l’afficher à l’écran de l’utilisateur. L’application finale ressemble à ceci :
 
@@ -72,6 +72,11 @@ Dans la boîte de dialogue **Application Android**, cliquez sur **Application vi
 
 ## <a name="create-a-layout"></a>Créer une disposition
 
+> [!TIP]
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
+>
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
+
 Une fois le projet créé, développez le dossier **Ressources**, puis le dossier **Disposition** dans l’**Explorateur de solutions**.
 Double-cliquez sur **activity_main.axml** pour l’ouvrir dans Android Designer. Voici le fichier de disposition pour l’écran de l’application :
 
@@ -91,7 +96,7 @@ Après avoir sélectionné le contrôle **Text (Large)** dans l’aire de concep
 
 [![Définition des propriétés du widget Text (Large)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
 
-Faites glisser un widget **Plain Text** de la **boîte à outils** vers l’aire de conception, puis placez-le sous le widget **Text (Large)**. Vous ne pouvez pas placer le widget tant que vous n’avez pas déplacé le pointeur de souris vers un emplacement pouvant accepter le widget. Dans les captures d’écran ci-dessous, vous ne pouvez pas placer le widget (comme illustré à gauche) tant que vous n’avez pas déplacé le pointeur de souris juste en dessous du `TextView` précédent (comme illustré à droite) :
+Faites glisser un widget **Plain Text** de la **boîte à outils** vers l’aire de conception, puis placez-le sous le widget **Text (Large)** . Vous ne pouvez pas placer le widget tant que vous n’avez pas déplacé le pointeur de souris vers un emplacement pouvant accepter le widget. Dans les captures d’écran ci-dessous, vous ne pouvez pas placer le widget (comme illustré à gauche) tant que vous n’avez pas déplacé le pointeur de souris juste en dessous du `TextView` précédent (comme illustré à droite) :
 
 [![La souris indique où vous pouvez placer le widget](hello-android-quickstart-images/vs/06a-cant-drop-w158-sml.png)](hello-android-quickstart-images/vs/06a-cant-drop-w158.png#lightbox)
 
@@ -291,6 +296,11 @@ Dans la boîte de dialogue **Configurer votre application Android**, conservez l
 
 ## <a name="create-a-layout"></a>Créer une disposition
 
+> [!TIP]
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
+>
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
+
 Une fois le projet créé, développez le dossier **Ressources**, puis le dossier **Disposition** dans le **Panneau Solutions**.
 Double-cliquez sur **Main.axml** pour l’ouvrir dans Android Designer. Voici le fichier de disposition de l’écran lorsqu’il est affiché dans Android Designer :
 
@@ -306,7 +316,7 @@ Après avoir sélectionné le widget **Text (Large)** dans l’aire de conceptio
 
 [![Définition des propriétés du widget Text (Large)](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
-Ensuite, faites glisser un widget **Plain Text** de la **boîte à outils** vers l’aire de conception, puis placez-le sous le widget **Text (Large)**. Notez que vous pouvez utiliser le champ de recherche pour localiser les widgets plus facilement à l’aide de leur nom :
+Ensuite, faites glisser un widget **Plain Text** de la **boîte à outils** vers l’aire de conception, puis placez-le sous le widget **Text (Large)** . Notez que vous pouvez utiliser le champ de recherche pour localiser les widgets plus facilement à l’aide de leur nom :
 
 [![Ajout du widget Plain Text](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
@@ -483,7 +493,7 @@ namespace Phoneword
 }
 ```
 
-À présent, nous allons définir l’icône de l’application. Par défaut, Visual Studio pour Mac fournit une icône pour le projet. Supprimez ces fichiers de la solution, et remplacez-les par une autre icône. Développez le dossier **Ressources** dans le **Panneau Solutions**. Notez qu’il y a cinq dossiers dont le nom est précédé de **mipmap-**, et que chacun de ces dossiers contient un fichier **Icon.png** :
+À présent, nous allons définir l’icône de l’application. Par défaut, Visual Studio pour Mac fournit une icône pour le projet. Supprimez ces fichiers de la solution, et remplacez-les par une autre icône. Développez le dossier **Ressources** dans le **Panneau Solutions**. Notez qu’il y a cinq dossiers dont le nom est précédé de **mipmap-** , et que chacun de ces dossiers contient un fichier **Icon.png** :
 
 [![Dossiers mipmap- et fichiers Icon.png](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
 
@@ -503,7 +513,7 @@ Dans la boîte de dialogue **Ajouter un fichier à un dossier**, sélectionnez *
 
 [![Boîte de dialogue Copier le fichier dans le répertoire](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
 
-Répétez ces étapes pour chaque dossier **mipmap-**, jusqu’à ce que le contenu des dossiers d’icônes d’application Xamarin **mipmap-** soit copié vers les dossiers **mipmap-** correspondants dans le projet **Phoneword**.
+Répétez ces étapes pour chaque dossier **mipmap-** , jusqu’à ce que le contenu des dossiers d’icônes d’application Xamarin **mipmap-** soit copié vers les dossiers **mipmap-** correspondants dans le projet **Phoneword**.
 
 Une fois que toutes les icônes sont copiées dans le projet Xamarin.Android, ouvrez la boîte de dialogue **Options du projet** en cliquant avec le bouton droit sur le projet dans le **Panneau Solutions**. Sélectionnez **Générer > Application Android**, puis sélectionnez `@mipmap/icon` dans la zone de liste modifiable **Icône d’application** :
 
@@ -525,4 +535,4 @@ Nous allons maintenant étudier en détail les outils et les compétences que no
 ## <a name="related-links"></a>Liens connexes
 
 - [Icônes d’application Xamarin Android (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword (exemple)](https://developer.xamarin.com/samples/monodroid/Phoneword)
+- [Phoneword (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)

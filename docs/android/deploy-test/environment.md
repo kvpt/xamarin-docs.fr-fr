@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: f0ad51738e0bbe785773f653b06fe5f582527f0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120877"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508998"
 ---
 # <a name="xamarinandroid-environment"></a>Environnement de Xamarin.Android
 
@@ -49,7 +49,7 @@ Le type qualifié d’assembly qui doit hériter de [HttpMessageHandler](https:/
 
 Dans Xamarin.Android 6.1, cette variable d’environnement n’est pas définie par défaut, et [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) sera utilisée.
 
-Vous pouvez également spécifier la valeur `Xamarin.Android.Net.AndroidClientHandler` pour utiliser [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/)
+Vous pouvez également spécifier la valeur `Xamarin.Android.Net.AndroidClientHandler` pour utiliser [`java.net.URLConnection`](xref:Java.Net.URLConnection)
 pour l’accès réseau, ce qui *peut* permettre d’employer le protocole TLS 1.2, quand Android le prend en charge.
 
 Ajouté dans Xamarin.Android 6.1.
@@ -90,15 +90,15 @@ Ceci équivaut à ce que la propriété système `debug.mono.log` contienne `gc`
 Contrôle les informations supplémentaires que Xamarin.Android enregistrera dans `adb logcat`.
 Il s’agit d’une chaîne séparée par des virgules (`,`), qui contient l’une des valeurs suivantes :
 
-* `all` : imprimer *tous les* messages. C’est rarement une bonne idée, car cela inclut les messages `lref`.
-* `assembly` : imprimer `.apk` et les messages analyse d’assembly.
-* `gc` : imprimer les messages associés au GC.
-* `gref` : imprimer les messages de référence globale de JNI.
-* `lref` : imprimer les messages de référence locale de JNI.  
+* `all`: imprimer *tous* les messages. C’est rarement une bonne idée, car cela inclut les messages `lref`.
+* `assembly`: imprimer les fichiers `.apk` et les messages analyse d’assembly.
+* `gc`: imprimer les messages associés au GC.
+* `gref`: imprimer les messages de référence globale JNI.
+* `lref`: imprimer les messages de référence locale JNI.  
     *Remarque* : ceci spammera *vraiment* `adb logcat`.  
     Dans Xamarin.Android 5.1, ceci créera également un fichier `.__override__/lrefs.txt`, qui peut être *énorme*.  
     Éviter.
-* `timing` : imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
+* `timing`: imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
 
 
 ### `debug.mono.max_grefc`
@@ -107,7 +107,7 @@ La valeur de la propriété système `debug.mono.max_grefc` est un entier.
 Elle *remplace* le nombre GREF maximal par défaut détecté pour l’appareil cible.
 
 *Remarque :* c’est utilisable uniquement avec `adb shell setprop
-debug.mono.max_grefc`, étant donné que la valeur ne sera pas disponible à temps avec un fichier **environment.txt**.
+debug.mono.max_grefc`, étant donné que la valeur n’est pas disponible à temps avec un fichier **environment.txt**.
 
 ### `debug.mono.profile`
 
@@ -131,8 +131,8 @@ Cependant, elle permet *parfois* d’effectuer des recherches supplémentaires..
 
 La propriété système `debug.mono.wref` permet de remplacer le mécanisme à faible référence JNI par défaut détecté. Deux valeurs sont prises en charge :
 
-* `jni` : utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
-* `java` : utilisez les références globales JNI qui référencent des instances `java.lang.WeakReference`.
+* `jni`: utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
+* `java`: utilisez les références globales JNI qui référencent des instances `java.lang.WeakReference`.
 
 `java` est utilisé, par défaut, jusqu'à l’API-7 et sur l’API-19 (Kit Kat) où ART est activé. (API-8 a ajouté des références `jni` et ART a *rompu* des références `jni`.)
 
@@ -152,7 +152,7 @@ XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
 Android 5.0 et les versions ultérieures prennent en charge TLS 1.2
 
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 ```shell
 ## Comments are lines which start with '#'

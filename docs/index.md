@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ad1c033b35da548921ec47d8cc2f3a8ef87d2fa8
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 00e48907f3044fab8dcf23d0bbb5838bc587bb2f
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486065"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68681085"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -294,7 +294,7 @@ Xamarin.Forms est un kit d’outils multiplateforme pour Android, iOS, Mac et Wi
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -305,7 +305,7 @@ Xamarin.Forms est un kit d’outils multiplateforme pour Android, iOS, Mac et Wi
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Notions de base des applications</h3>
-                                                    <p>Tout ce que vous devez savoir pour créer des applications, par exemple l’utilisation de fichiers, d’images, de bases de données, et bien plus encore.</p>
+                                                    <p>Tout ce que vous devez savoir pour développer des applications Xamarin.Forms : navigation, mouvements, liaison de données, etc.</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -2,7 +2,7 @@
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
-  description: 'Xamarin.Forms expose un kit de ressources d''IU multiplateforme complet qui permet aux développeurs .NET de créer des applications mobiles, de bureau et pour tablette.'
+  description: 'Xamarin.Forms expose un kit complet de ressources d’interface utilisateur multiplateforme qui permet aux développeurs .NET de créer des applications mobiles, de bureau et pour tablette.'
   author: conceptdev
   ms.author: crdun
   ms.date: 04/22/2019
@@ -57,7 +57,7 @@ sections:
         className: cardsB
         items:
           - href: ~/xamarin-forms/app-fundamentals/
-            html: 'Tout ce que vous devez savoir pour créer des applications de Xamarin.Forms, par exemple l’utilisation de fichiers, d’images, de bases de données, et bien plus encore.'
+            html: "Tout ce que vous devez savoir pour développer des applications Xamarin.Forms\_: navigation, mouvements, liaison de données, etc."
             image:
               src: ~/media/icons/i_app-build.svg
               href: ~/xamarin-forms/app-fundamentals/

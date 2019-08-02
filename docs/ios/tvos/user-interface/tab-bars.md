@@ -1,156 +1,156 @@
 ---
-title: Utilisation de tvOS contrôleurs de barre d’onglet dans Xamarin
-description: Ce document décrit comment utiliser des contrôleurs de barre d’onglet dans une application tvOS générées avec Xamarin. Il fournit un niveau élevé sur l’affichage de barres d’onglets et traite des éléments de barre d’onglet, l’intégration de la table de montage séquentiel et éléments de barre d’onglet.
+title: Utilisation des contrôleurs de barre d’onglets tvOS dans Xamarin
+description: Ce document décrit comment utiliser les contrôleurs de barre d’onglets dans une application tvOS créée avec Xamarin. Il fournit un haut niveau de vue des barres d’onglets et traite des éléments de barre d’onglets, de l’intégration des storyboards et des éléments de barre d’onglets.
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7ac4d0effc1067b065bad114160dc8648e998dad
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 236a64736bc5f92537c858b9cdf938410cf4b0f4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830793"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649660"
 ---
-# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Utilisation de tvOS contrôleurs de barre d’onglet dans Xamarin
+# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Utilisation des contrôleurs de barre d’onglets tvOS dans Xamarin
 
-Pour de nombreux types d’applications de tvOS, navigation principale est présentée comme une barre d’onglets dans la partie supérieure de l’écran. L’utilisateur fait glisser sa gauche et droite sur la liste des catégories possibles et la zone de contenu ci-dessous les modifications pour refléter la sélection de l’utilisateur.
+Pour de nombreux types d’applications tvOS, la navigation principale est présentée sous la forme d’une barre d’onglets en haut de l’écran. L’utilisateur fait défiler vers la gauche et vers la droite dans la liste des catégories possibles et la zone de contenu sous les modifications pour refléter la sélection de l’utilisateur.
 
 [![](tab-bars-images/tab01.png "Exemple de barre d’onglets")](tab-bars-images/tab01.png#lightbox)
 
-La barre d’onglet est translucide par défaut et apparaît toujours en haut de l’écran. En cas de focus, une barre d’onglets couvrent les 140 pixels supérieurs de l’écran mais sera rapidement diapositive disparaître lors de la sélection se déplace vers la zone de contenu ci-dessous.
+La barre d’onglets est translucide par défaut et s’affiche toujours en haut de l’écran. Lorsque le focus est activé, une barre d’onglets couvre les 140 pixels les plus hauts de l’écran, mais s’éloigne rapidement lorsque le focus se déplace vers la zone de contenu ci-dessous.
 
 <a name="Tab-Bars-in-tvOS" />
 
 ## <a name="tab-bars-in-tvos"></a>Barres d’onglets dans tvOS
 
-Le `UITabViewController` fonctionne de manière similaire et possède un objectif similaire sur tvOS comme il le fait dans iOS, avec les différences clés suivantes :
+Le `UITabViewController` fonctionne de la même manière et a un objectif similaire sur tvOS comme il le fait dans iOS, avec les principales différences suivantes:
 
-- Contrairement à la barre d’onglets sur iOS qui s’affiche en bas de l’écran, les barres d’onglets dans tvOS occupent 140 pixels supérieures de l’écran et sont translucides par défaut.
-- Lorsque le focus quitte la barre d’onglet pour la zone de contenu ci-dessous, la barre d’onglet glisser rapidement la partie supérieure de l’écran et être masquée. L’utilisateur peut soit appuyez une fois sur le bouton de Menu ou passez sur le [Siri Remote](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) pour afficher la barre d’onglet à nouveau.
-- Balayer vers le bas de la télécommande Siri déplacera le focus vers la zone de contenu sous la barre d’onglet pour la première [élément peut recevoir le focus](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) dans le contenu affiché. Là encore, cela masquera la barre d’onglets une fois que la sélection se déplace.
-- Cliquer pour sélectionner une catégorie affichée dans la barre d’onglet passe à qui la catégorie du contenu et le focus bascule vers le premier élément pouvant être actif dans cette vue.
-- Le nombre de catégories affichées dans la barre d’onglet doit être fixe et toutes les catégories doivent être accessibles à tout moment, une catégorie donnée ne doit jamais être désactivée.
-- Barres d’onglets ne prennent pas en charge la personnalisation sur tvOS. En outre, elles ne présentent pas la **plus** catégorie (comme iOS) s’il existe plus de catégories que peut être contenue dans la barre d’onglet.
+- Contrairement à la barre d’onglets iOS qui apparaît en bas de l’écran, les barres d’onglets dans tvOS occupent les 140 pixels les plus hauts de l’écran et sont translucides par défaut.
+- Lorsque le focus quitte la barre d’onglets de la zone de contenu ci-dessous, la barre d’onglets s’affiche rapidement en haut de l’écran et est masquée. L’utilisateur peut appuyer sur le bouton de menu une fois ou balayer le [Siri à distance](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) pour afficher à nouveau la barre d’onglets.
+- Le fait de faire défiler vers le bas sur le Siri distant déplace le focus vers la zone de contenu sous la barre d’onglet jusqu’au premier élément pouvant être [actif](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) dans le contenu affiché. Là encore, la barre d’onglets est masquée lorsque le focus est déplacé.
+- Le fait de cliquer pour sélectionner une catégorie affichée dans la barre d’onglets bascule vers le contenu de cette catégorie et le focus est basculé vers le premier élément pouvant être actif dans cette vue.
+- Le nombre de catégories affichées dans la barre d’onglets doit être fixe et toutes les catégories doivent être accessibles à tout moment; une catégorie donnée ne doit jamais être désactivée.
+- Les barres d’onglet ne prennent pas en charge la personnalisation sur tvOS. En outre, ils n’affichent pas la catégorie **plus** (comme IOS) s’il existe plus de catégories que la barre d’onglets ne peut en contenir.
 
-Apple a les suggestions suivantes pour l’utilisation des barres d’onglets :
+Apple propose les suggestions suivantes pour l’utilisation des barres d’onglets:
 
-- **Utilisez les barres d’onglets pour organiser logiquement les contenu** -utiliser la barre d’onglet pour organiser logiquement le contenu associé à votre application tvOS. Par exemple, par défaut, les graphiques de haut, acheté et la recherche.
-- **Ajouter les Badges à informer les utilisateurs de nouveau contenu** -vous pouvez éventuellement afficher un Badge (un ovale rouge avec un nombre blanc ou un point d’exclamation) pour informer l’utilisateur du nouveau contenu dans une catégorie.
-- **Utilisez Badges avec parcimonie** - ne viennent pas alourdir la barre d’onglets avec des Badges et uniquement les afficher où ils fournissent des informations critiques à l’utilisateur.
-- **Limiter le nombre de catégories** : pour réduire la complexité et que vous application reste gérable, ne pas surcharger votre barre d’onglets avec des catégories et vous assurer que toutes les catégories sont visibles et non encombré. Titres simples et courtes fonctionnent le mieux.
-- **Ne désactivez pas une catégorie** -tous les onglets (catégories) doit toujours être visible et activé en permanence. Si un onglet donné n’a aucun contenu, pourquoi de fournir une explication à l’utilisateur. Par exemple, l’onglet achats sera vide si l’utilisateur n’a effectué aucune des achats.
+- **Utiliser des barres d’onglets pour organiser logiquement le contenu** : utilisez la barre d’onglets pour organiser logiquement le contenu avec lequel votre application tvOS fonctionne. Par exemple, les graphiques en vedette, achetés et de recherche.
+- **Ajouter des badges pour informer les utilisateurs du nouveau contenu** : vous pouvez éventuellement afficher un badge (un ovale rouge avec un nombre blanc ou un point d’exclamation) pour informer l’utilisateur du nouveau contenu dans une catégorie.
+- **Utilisez** les badges avec modération: n’encombrez pas la barre d’onglets avec des badges et affichez-les uniquement là où elles fournissent des informations critiques à l’utilisateur.
+- **Limiter le nombre de catégories** -pour réduire la complexité et garder votre application gérable, ne surchargez pas votre barre d’onglets avec des catégories et assurez-vous que toutes les catégories sont visibles et non encombrées. Les titres simples et courts fonctionnent mieux.
+- **Ne désactivez pas une catégorie** : tous les onglets (catégories) doivent toujours être visibles et activés en permanence. Si un onglet donné n’a pas de contenu, fournissez une explication à l’utilisateur. Par exemple, l’onglet achats est vide si l’utilisateur n’a effectué aucun achat.
 
 <a name="Tab-Bar-Items" />
 
-## <a name="tab-bar-items"></a>Éléments de la barre d’onglet
+## <a name="tab-bar-items"></a>Éléments de la barre d’onglets
 
-Chaque catégorie (onglet) dans la barre d’onglet est représentée par un élément de barre d’onglet (`UITabBarItem`). Apple a les suggestions suivantes pour l’utilisation des éléments de barre d’onglet :
+Chaque catégorie (onglet) de la barre d’onglets est représentée par un élément de`UITabBarItem`barre d’onglets (). Apple propose les suggestions suivantes pour l’utilisation des éléments de barre d’onglets:
 
-- **Utilisez les onglets en fonction de texte** -tandis que la barre TabItem est en mesure d’être représentées sous forme d’icône, les suggestions d’Apple en utilisant le texte uniquement, car un titre concis est plus facile à interpréter qu’une icône.
-- **Utiliser des noms significatifs à court ou verbes** -élément de barre d’onglet A indiquent clairement le contenu qu’il contienne et fonctionne mieux lorsqu’elle est un nom simple (par exemple, des Photos, musique ou des vidéos) ou des verbes (tels que la recherche ou Play).
+- **Utiliser des onglets basés sur du texte** : lorsque l’élément de barre d’onglets peut être représenté sous la forme d’une icône, Apple suggère d’utiliser du texte uniquement, car un titre concis est plus facile à interpréter qu’une icône.
+- **Utilisez des noms ou des verbes courts** et explicites: un élément de barre d’onglets doit relayer clairement le contenu qu’il contient et fonctionne mieux lorsqu’il s’agit d’un nom simple (tel que photos, films ou musique) ou de verbes (par exemple, la recherche ou la lecture).
 
 <a name="Tab-Bars-and-Storyboards" />
 
-## <a name="tab-bars-and-storyboards"></a>Barres d’onglets et des tables de montage séquentiel
+## <a name="tab-bars-and-storyboards"></a>Barres d’onglets et storyboards
 
-Pour travailler avec des barres d’onglets dans une application Xamarin.tvOS, le plus simple consiste à ajouter à l’interface utilisateur de l’application à l’aide du concepteur iOS.
+Le moyen le plus simple d’utiliser les barres d’onglets dans une application Xamarin. tvOS consiste à les ajouter à l’interface utilisateur de l’application à l’aide du concepteur iOS.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
     
-1. Démarrez une nouvelle application Xamarin.tvOS et sélectionnez **tvOS** > **application** > **application avec onglets**: 
+1. Démarrez une nouvelle application Xamarin. tvOS et sélectionnez l’application à onglets d'**application** >  **tvOS** > : 
 
-    [![](tab-bars-images/tab02.png "Sélectionnez l’application avec onglets")](tab-bars-images/tab02.png#lightbox)
-1. Suivez toutes les invites pour créer une nouvelle Xamarin.tvOS Solution.
-1. Dans le **panneau solutions**, double-cliquez sur le `Main.storyboard` de fichier et l’ouvrir pour modification.
-1. Pour modifier le **icône** ou **titre** pour une catégorie donnée, sélectionnez le **élément de barre d’onglet** pour le **contrôleur d’affichage** dans le  **Structure du document**:
+    [![](tab-bars-images/tab02.png "Sélectionner une application avec onglets")](tab-bars-images/tab02.png#lightbox)
+1. Suivez toutes les invites pour créer une nouvelle solution Xamarin. tvOS.
+1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
+1. Pour modifier l' **icône** ou le **titre** d’une catégorie donnée, sélectionnez l' **élément de barre** d’onglets du **contrôleur d’affichage** dans la **structure du document**:
 
-    [![](tab-bars-images/tab03a.png "Élément de la barre d’onglet pour le contrôleur d’affichage dans la structure du Document")](tab-bars-images/tab03a.png#lightbox)
-1. Puis définissez les propriétés requises le **onglet Widget** de la **l’Explorateur de propriétés**: 
+    [![](tab-bars-images/tab03a.png "Élément de barre d’onglets du contrôleur d’affichage dans la structure du document")](tab-bars-images/tab03a.png#lightbox)
+1. Définissez ensuite les propriétés requises dans l' **onglet widget** de l' **Explorateur de propriétés**: 
 
-    [![](tab-bars-images/tab03.png "L’onglet de Widget")](tab-bars-images/tab03.png#lightbox)
-1. Pour ajouter une nouvelle catégorie (onglet), déposez un **contrôleur d’affichage** votre aire de conception : 
+    [![](tab-bars-images/tab03.png "Onglet widget")](tab-bars-images/tab03.png#lightbox)
+1. Pour ajouter une nouvelle catégorie (onglet), déposez un **contrôleur d’affichage** sur votre aire de conception: 
 
     [![](tab-bars-images/tab04.png "Un contrôleur d’affichage")](tab-bars-images/tab04.png#lightbox)
-1. Cliquez et faites glisser de la **contrôleur d’affichage onglet** au nouveau **contrôleur d’affichage**.
-1. Dans le menu contextuel, sélectionnez **afficher les contrôleurs** pour ajouter la nouvelle vue sous forme d’onglet (catégorie) : 
+1. Cliquez avec le contrôle sur le contrôleur d' **affichage** , puis faites-le glisser vers le nouveau **contrôleur d’affichage**.
+1. Dans le menu contextuel, sélectionnez **Afficher** les contrôleurs pour ajouter la nouvelle vue sous la forme d’un onglet (catégorie): 
 
-    [![](tab-bars-images/tab05.png "Sélectionnez l’onglet")](tab-bars-images/tab05.png#lightbox)
-1. Concevoir la disposition de l’interface utilisateur pour chaque zone de contenu Caterogies comme d’habitude, en ajoutant des éléments d’interface utilisateur dans le concepteur iOS.
-1. Exposer tous les événements requis pour travailler avec les contrôles d’IU dans C# code.
-1. Nommez les contrôles d’interface utilisateur que vous souhaitez exposer dans C# code.
+    [![](tab-bars-images/tab05.png "Sélectionner un onglet")](tab-bars-images/tab05.png#lightbox)
+1. Concevez la disposition de l’interface utilisateur pour chaque zone de contenu Caterogies comme d’habitude, en ajoutant des éléments d’interface utilisateur dans le concepteur iOS.
+1. Exposez les événements requis pour utiliser vos contrôles d' C# interface utilisateur dans le code.
+1. Nommez les contrôles d’interface utilisateur que vous souhaitez C# exposer dans le code.
 1. Enregistrez les modifications apportées.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
     
-1. Démarrez une nouvelle application Xamarin.tvOS et sélectionnez **tvOS** > **application** > **application avec onglets**: 
+1. Démarrez une nouvelle application Xamarin. tvOS et sélectionnez l’application à onglets d'**application** >  **tvOS** > : 
 
-    [![](tab-bars-images/tab02vs.png "Sélectionnez l’application avec onglets")](tab-bars-images/tab02vs.png#lightbox)
-1. Suivez toutes les invites pour créer une nouvelle Xamarin.tvOS Solution.
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur le `Main.storyboard` de fichier et l’ouvrir pour modification.
-1. Pour modifier le **icône** ou **titre** pour une catégorie donnée, sélectionnez le **élément de barre d’onglet** pour le **contrôleur d’affichage** dans le  **Structure du document**:
+    [![](tab-bars-images/tab02vs.png "Sélectionner une application avec onglets")](tab-bars-images/tab02vs.png#lightbox)
+1. Suivez toutes les invites pour créer une nouvelle solution Xamarin. tvOS.
+1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
+1. Pour modifier l' **icône** ou le **titre** d’une catégorie donnée, sélectionnez l' **élément de barre** d’onglets du **contrôleur d’affichage** dans la **structure du document**:
 
-    [![](tab-bars-images/tab03avs.png "Le contrôleur d’affichage dans la structure du Document")](tab-bars-images/tab03avs.png#lightbox)
-1. Puis définissez les propriétés requises le **onglet Widget** de la **l’Explorateur de propriétés**: 
+    [![](tab-bars-images/tab03avs.png "Contrôleur d’affichage dans la structure du document")](tab-bars-images/tab03avs.png#lightbox)
+1. Définissez ensuite les propriétés requises dans l' **onglet widget** de l' **Explorateur de propriétés**: 
 
-    [![](tab-bars-images/tab03vs.png "L’onglet de Widget")](tab-bars-images/tab03vs.png#lightbox)
-1. Pour ajouter une nouvelle catégorie (onglet), faites glisser un **contrôleur d’affichage** à partir de la **boîte à outils** et déposez-le sur votre surface de conception : 
+    [![](tab-bars-images/tab03vs.png "Onglet widget")](tab-bars-images/tab03vs.png#lightbox)
+1. Pour ajouter une nouvelle catégorie (onglet), faites glisser un **contrôleur d’affichage** à partir de la **boîte à outils** et déposez-le sur votre aire de conception: 
 
     [![](tab-bars-images/tab04vs.png "Un contrôleur d’affichage")](tab-bars-images/tab04vs.png#lightbox)
-1. Cliquez et faites glisser de la **contrôleur d’affichage onglet** au nouveau **contrôleur d’affichage**.
-1. Dans le menu contextuel, sélectionnez **afficher les contrôleurs** pour ajouter la nouvelle vue sous forme d’onglet (catégorie) : 
+1. Cliquez avec le contrôle sur le contrôleur d' **affichage** , puis faites-le glisser vers le nouveau **contrôleur d’affichage**.
+1. Dans le menu contextuel, sélectionnez **Afficher** les contrôleurs pour ajouter la nouvelle vue sous la forme d’un onglet (catégorie): 
 
-    [![](tab-bars-images/tab05vs.png "Sélectionnez l’onglet")](tab-bars-images/tab05vs.png#lightbox)
-1. Concevoir la disposition de l’interface utilisateur pour chaque zone de contenu Caterogies comme d’habitude, en ajoutant des éléments d’interface utilisateur dans le concepteur iOS.
-1. Exposer tous les événements requis pour travailler avec les contrôles d’IU dans C# code.
-1. Nommez les contrôles d’interface utilisateur que vous souhaitez exposer dans C# code.
+    [![](tab-bars-images/tab05vs.png "Sélectionner un onglet")](tab-bars-images/tab05vs.png#lightbox)
+1. Concevez la disposition de l’interface utilisateur pour chaque zone de contenu Caterogies comme d’habitude, en ajoutant des éléments d’interface utilisateur dans le concepteur iOS.
+1. Exposez les événements requis pour utiliser vos contrôles d' C# interface utilisateur dans le code.
+1. Nommez les contrôles d’interface utilisateur que vous souhaitez C# exposer dans le code.
 1. Enregistrez les modifications apportées.
     
 -----
 
 > [!IMPORTANT]
-> Bien qu’il soit possible d’attribuer des événements tels que `TouchUpInside` à un élément d’interface utilisateur (comme un `UIButton`) dans le concepteur iOS, il ne sera jamais appelée car Apple TV n’a pas une pression tactile écran ou de prendre en charge les événements tactiles. Vous devez toujours utiliser le `Primary Action` événement lors de la création des éléments d’interface utilisateur de gestionnaires d’événements pour tvOS.
+> Bien qu’il soit possible d’assigner `TouchUpInside` des événements tels que à un élément d' `UIButton`interface utilisateur (par exemple,) dans le concepteur iOS, il ne sera jamais appelé, car Apple TV n’a pas d’écran tactile ni d’événements tactiles de prise en charge. Vous devez toujours utiliser l' `Primary Action` événement lors de la création de gestionnaires d’événements pour les éléments d’interface utilisateur tvOS.
 
-Pour plus d’informations sur l’utilisation des tables de montage séquentiel, consultez notre [Hello, tvOS Guide de démarrage rapide](~/ios/tvos/get-started/hello-tvos.md). 
+Pour plus d’informations sur l’utilisation des storyboards, consultez notre [Guide de démarrage rapide Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md). 
 
 <a name="Working-with-Tab-Bars" />
 
 ## <a name="working-with-tab-bars"></a>Utilisation des barres d’onglets
 
-Utilisez le `Items` propriété de la `UITabBar` pour accéder à la collection de `UITabBarItems` qu’il contient en tant qu’un tableau indexé zéro (0). Le `SelectedItem` propriété retournera l’onglet actuellement sélectionné (catégorie) comme un `UITabBarItem`.
+Utilisez la `Items` propriété `UITabBar` du `UITabBarItems` pour accéder à la collection qu’il contient comme un tableau indexé zéro (0). La `SelectedItem` propriété retourne l’onglet actuellement sélectionné (catégorie) `UITabBarItem`en tant que.
 
 
 <a name="Working-with-Tab-Bar-Items" />
 
 ## <a name="working-with-tab-bar-items"></a>Utilisation des éléments de barre d’onglets
 
-Pour afficher un Badge d’un onglet donné (un ovale rouge avec un texte blanc), utilisez le code suivant :
+Pour afficher un badge sur un onglet donné (un ovale rouge avec du texte blanc), utilisez le code suivant:
 
 ```csharp
 // Display a badge
 TabBar.Items [2].BadgeValue = "10";
 ```
 
-Ce qui produit les résultats suivants lorsque vous exécutez :
+Ce qui produit les résultats suivants lors de l’exécution:
 
-[![](tab-bars-images/tab06.png "Un élément de barre d’onglet avec badge")](tab-bars-images/tab06.png#lightbox)
+[![](tab-bars-images/tab06.png "Élément de barre d’onglets avec badge")](tab-bars-images/tab06.png#lightbox)
 
-Utilisez le `Title` propriété de la `UITabBarItem` pour modifier le titre et le `Image` propriété à modifier l’icône.
+Utilisez la `Title` propriété `UITabBarItem` du pour modifier le titre et la `Image` propriété pour changer l’icône.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté la conception et fonctionne avec le contrôleur de barre d’onglet à l’intérieur d’une application Xamarin.tvOS.
+Cet article a abordé la conception et l’utilisation du contrôleur de barre d’onglets à l’intérieur d’une application Xamarin. tvOS.
 
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Exemples tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Exemples tvOS](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS Human Interface Guides](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [Guide de programmation d’application pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [Guides de l’interface utilisateur tvOS](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [Guide de programmation d’applications pour tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

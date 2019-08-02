@@ -9,27 +9,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: dcc60243957bb1a7720c08dc7a5ce51caf585ce8
-ms.sourcegitcommit: 56b2f5cda7c37874618736d6129f19a8976826f0
+ms.openlocfilehash: aab10d434461521825fd633369ffa3c6331e905b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/21/2019
-ms.locfileid: "54418658"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643961"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android multi-écran : Démarrage rapide
 
 _Ce guide en deux parties étend l’application Phoneword de manière à gérer un second écran. Vous allez également y découvrir les composants des applications Android et plonger au cœur de l’architecture Android._
 
-Dans la partie de ce guide présentant la procédure pas à pas, vous allez ajouter un second écran à l’application [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) de manière à suivre l’historique des numéros appelés à partir de l’application. L’[application finale](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/) proposera un second écran qui affichera les numéros qui ont été «traduits », comme illustré dans la capture d’écran de droite :
+Dans la partie de ce guide présentant la procédure pas à pas, vous allez ajouter un second écran à l’application [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) de manière à suivre l’historique des numéros appelés à partir de l’application. L’[application finale](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen) proposera un second écran qui affichera les numéros qui ont été «traduits », comme illustré dans la capture d’écran de droite :
 
 [![Capture d’écran de l’exemple d’application](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 La seconde partie, [En profondeur](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md), examine ce que vous avez généré et décrit l’architecture, la navigation et d’autres nouveaux concepts Android que vous avez rencontrés en chemin.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Ce guide reprenant là où [Hello, Android](~/android/get-started/hello-android/index.md) s’est arrêté, vous devez avoir terminé [Hello, Android - Démarrage rapide](~/android/get-started/hello-android/hello-android-quickstart.md).
-Si vous souhaitez accéder directement à la procédure pas à pas ci-dessous, vous pouvez télécharger la version complète de [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) (à partir de Hello, Android - Démarrage rapide) et l’utiliser pour démarrer la procédure pas à pas.
+Si vous souhaitez accéder directement à la procédure pas à pas ci-dessous, vous pouvez télécharger la version complète de [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) (à partir de Hello, Android - Démarrage rapide) et l’utiliser pour démarrer la procédure pas à pas.
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
@@ -38,6 +38,11 @@ Dans cette procédure pas à pas, vous allez ajouter un écran **Historique de t
 ::: zone pivot="windows"
 
 Commencez par ouvrir l’application **Phoneword** dans Visual Studio et modifier le fichier **Main.axml** à partir de l’**Explorateur de solutions**.
+
+> [!TIP]
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
+>
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
 
 ### <a name="updating-the-layout"></a>Mise à jour de la disposition
 
@@ -77,7 +82,7 @@ Créez une seconde activité pour activer le second écran. Dans l’**Explorate
 
 [![Ajouter un nouveau fichier](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
-Dans la boîte de dialogue **Ajouter un nouvel élément**, choisissez **Visual C# > Activité** et nommez le fichier d’activité **ActivitéHistoriqueTraduction.cs**.
+Dans la boîte de dialogue **Ajouter un nouvel élément**, choisissez **Visual c# > Activité** et nommez le fichier d’activité **ActivitéHistoriqueTraduction.cs**.
 
 Remplacez le modèle de code dans **ActivitéHistoriqueTraduction.cs** par le suivant :
 
@@ -177,6 +182,11 @@ Déployez l’application sur un émulateur ou un appareil. Les captures d’éc
 ::: zone pivot="macos"
 
 Commencez par ouvrir l’application **Phoneword** dans Visual Studio pour Mac et modifier le fichier **Main.axml** dans le **Panneau Solutions**.
+
+> [!TIP]
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
+>
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
 
 ### <a name="updating-the-layout"></a>Mise à jour de la disposition
 
@@ -313,5 +323,5 @@ Félicitations, vous avez terminé votre première application Xamarin.Android m
 ## <a name="related-links"></a>Liens connexes
 
 - [Icônes et écrans de lancement de l’application Xamarin (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword (exemple)](https://developer.xamarin.com/samples/monodroid/Phoneword)
-- [PhonewordMultiscreen (exemple)](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen)
+- [Phoneword (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
+- [PhonewordMultiscreen (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen)

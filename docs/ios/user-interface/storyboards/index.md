@@ -1,97 +1,97 @@
 ---
-title: Introduction aux Storyboards dans Xamarin.iOS
-description: Ce document fournit une introduction aux storyboards dans Xamarin.iOS. Il décrit l’utilisation d’une table de montage séquentiel pour définir une interface utilisateur, enchaînements et comment utiliser le concepteur iOS pour modifier des fichiers de la table de montage séquentiel.
+title: Présentation des storyboards dans Xamarin. iOS
+description: Ce document fournit une introduction aux storyboards dans Xamarin. iOS. Il décrit comment une table de montage séquentiel est utilisée pour définir une interface utilisateur, SEGUES et comment utiliser le concepteur iOS pour modifier des fichiers de Storyboard.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 79c1d7852cdde9b557965931706fcd24e43954f7
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 9b4f71599ecf85e51899c41c37aecc63e44e7188
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865214"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646423"
 ---
-# <a name="introduction-to-storyboards-in-xamarinios"></a>Introduction aux Storyboards dans Xamarin.iOS
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Présentation des storyboards dans Xamarin. iOS
 
-Dans ce guide, nous allons expliquer quelles un Storyboard est et examiner certains des composants clés, tels que Segues. Nous allons étudier comment les Storyboards peuvent être créés et utilisés, et quels sont les avantages que qu’ils utilisent pour un développeur.
+Dans ce guide, nous allons expliquer ce qu’est une table de montage séquentiel et examiner certains composants clés, tels que SEGUES. Nous allons examiner comment créer et utiliser les storyboards, et quels avantages ils ont pour un développeur.
 
-Avant que le format de fichier Storyboard a été introduit par Apple comme une représentation visuelle de l’interface utilisateur d’une application iOS, les développeurs a créé les fichiers XIB pour chaque contrôleur d’affichage et programmer le volet de navigation entre chaque vue manuellement.  À l’aide d’un Storyboard permet au développeur de définir des contrôleurs d’affichage et la navigation entre eux sur une aire de conception et permet la modification WYSIWYG de l’interface utilisateur de l’application.
+Avant que le format de fichier de Storyboard ait été introduit par Apple comme représentation visuelle de l’interface utilisateur d’une application iOS, les développeurs créaient des fichiers XIB pour chaque contrôleur d’affichage et ont programmé la navigation entre chaque vue manuellement.  L’utilisation d’un Storyboard permet au développeur de définir à la fois les contrôleurs d’affichage et la navigation entre eux sur une aire de conception et offre une modification WYSIWYG de l’interface utilisateur de l’application.
 
-Un Storyboard peut être créé, ouvert et modifié avec le Concepteur de Xamarin iOS. Ce guide effectue également une procédure pas à pas comment utiliser le concepteur pour créer vos plans conceptuels depuis tout en utilisant c# pour programmer le volet de navigation.
+Une table de montage séquentiel peut être créée, ouverte et modifiée à l’aide du concepteur iOS Xamarin. Ce guide explique également comment utiliser le concepteur pour créer vos storyboards lors de l’utilisation C# de pour programmer la navigation.
 
 
 ## <a name="requirements"></a>Spécifications
 
-Tables de montage séquentiel utilisable avec le concepteur dans Visual Studio pour Mac iOS ou avec Visual Studio 2017 avec les charges de travail Xamarin installés.
+Les storyboards peuvent être utilisés avec le concepteur iOS dans Visual Studio pour Mac ou avec Visual Studio 2017 avec les charges de travail Xamarin installées.
 
-## <a name="what-is-a-storyboard"></a>Qu’est une table de montage séquentiel ?
+## <a name="what-is-a-storyboard"></a>Qu’est-ce qu’une table de montage séquentiel?
 
-Un Storyboard est la représentation visuelle de tous les écrans dans une application. Il contient une séquence d’arrière-plan, avec chaque scène représentant un *contrôleur d’affichage* et son *vues*. Ces vues peuvent contenir des objets et [contrôles](~/ios/user-interface/controls/index.md) qui permettra à votre utilisateur d’interagir avec votre application. Cette collection de vues et de contrôles (ou *sous-affichages*) est appelé un *hiérarchie d’affichage de contenu*. Arrière-plan est connectés par segue objets qui représentent une transition entre des contrôleurs d’affichage. Cela est généralement obtenue en créant un segue entre un objet sur la vue initiale et la vue qui se connecte. Les relations sur l’aire de conception sont illustrées dans l’image ci-dessous :
+Une table de montage séquentiel est la représentation visuelle de tous les écrans dans une application. Il contient une séquence de scènes, avec chaque scène représentant un *contrôleur d’affichage* et ses *vues*. Ces vues peuvent contenir des objets et des [contrôles](~/ios/user-interface/controls/index.md) qui permettront à votre utilisateur d’interagir avec votre application. Cette collection de vues et de contrôles (ou sous- *vues*) est appelée *hiérarchie d’affichage de contenu*. Les scènes sont connectées par des objets Segue, qui représentent une transition entre les contrôleurs d’affichage. Pour cela, il suffit généralement de créer un segue entre un objet sur la vue initiale et la vue de connexion. Les relations sur l’aire de conception sont illustrées dans l’image ci-dessous:
 
  [![](images/storyboardsview.png "Les relations sur l’aire de conception sont illustrées dans cette image")](images/storyboardsview.png#lightbox)
 
-Comme indiqué, le plan conceptuel sera mise en page chacun de vos scènes avec du contenu déjà et illustre les connexions entre eux.  Il est important de noter à ce stade, lorsque nous parlons d’arrière-plan sur un iPhone, il est logique de supposer qu’un *scène* sur le plan conceptuel est égal à un *écran* du contenu sur l’appareil. Toutefois, avec un iPad, qu'il est possible d’avoir plusieurs scènes apparaissent à la fois – par exemple, à l’aide un contrôleur d’affichage de menu.
+Comme indiqué, la table de montage séquentiel met en page chacune de vos scènes avec un contenu déjà rendu et illustre les connexions entre elles.  À ce stade, il est intéressant de noter que lorsque nous parlerons des scènes sur un iPhone, il est possible de supposer qu’une *scène* sur le Storyboard est égale à un *écran* de contenu sur l’appareil. Toutefois, avec un iPad, il est possible d’afficher plusieurs scènes en même temps, par exemple, à l’aide d’un contrôleur d’affichage menu segue.
 
-Il existe de nombreux avantages à l’aide de storyboards pour créer l’interface utilisateur de votre application, en particulier lorsque vous utilisez Xamarin. Tout d’abord, il est une représentation visuelle de l’interface utilisateur, comme tous les objets – notamment [des contrôles personnalisés](~/ios/user-interface/designer/ios-designable-controls-overview.md) – sont rendus au moment du design. Cela signifie qu’avant de générer ou déployer votre application, vous pouvez visualiser son apparence et le flux. Prenez l’image ci-dessus, par exemple. Nous pouvons dire à partir de l’examen rapide de la conception sont surfaces scènes combien il, la disposition de chaque vue et comment tout est lié. C’est ce qui rend des Storyboards si puissant.
+L’utilisation des storyboards présente de nombreux avantages pour créer l’interface utilisateur de votre application, en particulier lors de l’utilisation de Xamarin. Tout d’abord, il s’agit d’une représentation visuelle de l’interface utilisateur, car tous les objets, y compris les [contrôles personnalisés](~/ios/user-interface/designer/ios-designable-controls-overview.md) , sont rendus au moment de la conception. Cela signifie qu’avant de générer ou de déployer votre application, vous pouvez visualiser son apparence et son Flow. Prenons l’image ci-dessus, par exemple. Nous pouvons vous demander un aperçu rapide de l’aire de conception, le nombre de scènes, la disposition de chaque vue et la manière dont tout est lié. C’est ce qui rend les storyboards si puissants.
 
-Les événements sont plus faciles à gérer avec des Storyboards, particulièrement lorsque vous utilisez le concepteur iOS. La plupart des contrôles d’interface utilisateur possède une liste d’événements possible dans le panneau Propriétés. Le Gestionnaire d’événements peut être ajouté ici et exécutée dans une méthode partielle dans la classe de contrôleurs d’affichage...
+Les événements sont plus gérables avec les storyboards, en particulier lors de l’utilisation du concepteur iOS. La plupart des contrôles d’interface utilisateur comporteront une liste des événements possibles dans le Panneau Propriétés. Le gestionnaire d’événements peut être ajouté ici et terminé dans une méthode partielle de la classe de contrôleurs d’affichage.
 
-Le contenu d’un storyboard est stocké dans un fichier XML. AT heure de création, n’importe quel `.storyboard` fichiers sont compilés dans des fichiers binaires appelés plumes. Lors de l’exécution, ces plumes initialisées et instanciés pour créer des vues.
+Le contenu d’une table de montage séquentiel est stocké sous la forme d’un fichier XML. Au moment de la génération `.storyboard` , tous les fichiers sont compilés dans des fichiers binaires appelés NIBS. Lors de l’exécution, ces NIBS sont initialisés et instanciés pour créer des vues.
 
-## <a name="segues"></a>Segues
+## <a name="segues"></a>SEGUES
 
-Un *Segue*, ou *objet Segue*, est utilisé dans le développement iOS pour représenter une transition entre les scènes. Pour créer un segue, maintenez la **Ctrl** clé et cliquez et faites glisser à partir d’une scène à l’autre. Lorsque nous avons faites glisser nos la souris, un connecteur bleu s’affiche, indiquant où le segue entraîne comme illustré dans l’image ci-dessous :
+Un objet *segue*, ou *segue*, est utilisé dans le développement iOS pour représenter une transition entre des scènes. Pour créer un Segue, maintenez la touche **CTRL** enfoncée et cliquez sur glisser d’une scène à une autre. Au fur et à mesure que nous faisons glisser notre souris, un connecteur bleu s’affiche pour indiquer l’emplacement du segue dans l’image ci-dessous:
 
- [![](images/createsegue.png "Un connecteur bleu s’affiche, indiquant où le segue entraîne comme illustré dans cette image")](images/createsegue.png#lightbox)
+ [![](images/createsegue.png "Un connecteur bleu s’affiche pour indiquer l’emplacement du segue dans cette image.")](images/createsegue.png#lightbox)
 
-Sur le trajet de souris, un menu s’affiche permet de choisir l’action pour notre segue. Il peut ressembler aux images ci-dessous : 
+Au niveau de la souris, un menu s’affiche pour vous permettre de choisir l’action pour notre segue. Il peut ressembler aux images ci-dessous: 
 
-**Les Classes préliminaire iOS 8 et de la taille**:
+**Classes pre-iOS 8 et Size**:
 
-[![](images/segue1.png "La liste déroulante de Action Segue sans Classes de taille")](images/segue1.png#lightbox)
+[![](images/segue1.png "Liste déroulante d’action segue sans classes de taille")](images/segue1.png#lightbox)
 
-**Lorsque vous utilisez les Classes de taille et les enchaînements Adaptive**:
+**Lorsque vous utilisez des classes de taille et des SEGUES adaptatifs**:
 
-[![](images/16new.png "La liste déroulante de Action Segue avec les Classes de taille")](images/16new.png#lightbox)
+[![](images/16new.png "Liste déroulante des actions segue avec des classes de taille")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> Si vous utilisez pour votre Machine virtuelle Windows VMWare, Ctrl + clic est mappé comme le _avec le bouton droit_ bouton de la souris par défaut. Pour créer un Segue, modifiez vos préférences de clavier via **préférences** > **clavier et souris** > **raccourcis souris** et remapper votre **Bouton secondaire** comme illustré ci-dessous :
+> Si vous utilisez VMWare pour votre machine virtuelle Windows, l’option Ctrl + clic est mappée en cliquant avec le bouton _droit sur_ le bouton de la souris par défaut. Pour créer un Segue, modifiez vos préférences de clavier à l’aide des **Préférences** > **clavier &**  > **raccourcis souris** et remappez votre **bouton secondaire** , comme illustré ci-dessous:
 > 
-> [![](images/image22.png "Paramètres de préférence de clavier et souris")](images/image22.png#lightbox)
+> [![](images/image22.png "Paramètres de préférence du clavier et de la souris")](images/image22.png#lightbox)
 > 
 > Vous devez maintenant être en mesure d’ajouter un segue entre vos contrôleurs d’affichage comme d’habitude.
 
-Il existe différents types de transitions, chaque contrôle donné sur la façon dont un contrôleur d’affichage est présenté à l’utilisateur et comment elle interagit avec les autres contrôleurs d’affichage dans le Storyboard. Ils sont expliqués ci-dessous. Il est également possible de sous-classe d’un objet de segue pour implémenter une transition personnalisée :
+Il existe différents types de transitions, chacun donnant le contrôle de la présentation d’un nouveau contrôleur d’affichage à l’utilisateur et de la façon dont il interagit avec d’autres contrôleurs d’affichage dans le Storyboard. Celles-ci sont expliquées ci-dessous. Il est également possible de sous-créer un objet segue pour implémenter une transition personnalisée:
 
--  **Afficher / Push** – un push de segue ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage le push d’origine fait partie du même contrôleur de navigation en tant que le contrôleur d’affichage qui est ajouté à la pile. Cela fait la même chose que `pushViewController` et est généralement utilisée lorsqu’il existe une relation entre les données sur les écrans. À l’aide de la notification push segue vous donne le luxe d’avoir une barre de navigation avec un bouton Précédent et le titre ajoutés à la vue sur la pile, ce qui permet de descendre dans la navigation dans la hiérarchie d’affichage de la hiérarchie.
--  **Modale** – un segue modale créer une relation entre les contrôleurs de deux affichage dans votre projet, avec la possibilité d’une transition animée affichée. Le contrôleur d’affichage enfant masquera complètement le contrôleur d’affichage parent lorsque présentée dans l’affichage. Contrairement à une notification push segue, qui ajoute un bouton Précédent pour nous ; Quand à l’aide d’une fenêtre modale segue `DismissViewController` doit être utilisé afin de retourner le contrôleur d’affichage précédente.
--  **Personnalisé** : toute personnalisé segue peut être créés en tant que sous-classe de `UIStoryboardSegue`.
--  **Déroulement** : déroulement segue peut être utilisé pour naviguer émetteur ou modal segue – par exemple, en fermant le contrôleur d’affichage modal présentées. En outre, vous pouvez dérouler via pas qu’un seul, mais une série de push et modal enchaînements et revenir en arrière plusieurs étapes dans votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un déroulement segue dans iOS, lire la [création de déroulement Enchaînements](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) Recipe (Recette).
--  **Sans** – un segue sans source indique la scène contenant le contrôleur d’affichage initial, et par conséquent vue dans laquelle l’utilisateur voient en premier. Il est représenté par le segue indiqué ci-dessous :  
+-  **Show/Push** : un segue Push ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage à l’origine du push fait partie du même contrôleur de navigation que le contrôleur d’affichage ajouté à la pile. Cela fait la même chose que `pushViewController` , et est généralement utilisé lorsqu’il existe une relation entre les données sur les écrans. L’utilisation de l’segue Push vous donne le luxe de disposer d’une barre de navigation avec un bouton précédent et un titre ajoutés à chaque vue de la pile, ce qui permet une navigation dans la hiérarchie d’affichage.
+-  **Modal** : un segue modal crée une relation entre deux contrôleurs d’affichage de votre projet, avec l’option d’une transition animée affichée. Le contrôleur d’affichage enfant obscurcit complètement le contrôleur d’affichage parent lorsqu’il est mis en vue. Contrairement à un segue push, qui ajoute un bouton précédent pour nous; Lorsque vous utilisez un segue `DismissViewController` modal, vous devez utiliser pour revenir au contrôleur d’affichage précédent.
+-  **Personnalisé** : tout segue personnalisé peut être créé en tant que sous- `UIStoryboardSegue`classe de.
+-  **Déroulement** – un segue de déroulement peut être utilisé pour naviguer en arrière dans un segue de type push ou modal, par exemple, en rejetant le contrôleur d’affichage présenté de façon modale. En outre, vous pouvez dérouler non seulement une, mais également une série de SEGUES push et modaux, puis revenir à plusieurs étapes de votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un segue de déroulement dans iOS, consultez la recette de création d’un [déroulement SEGUES](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+-  Sans **source** : un segue sans source indique la scène contenant le contrôleur d’affichage initial et, par conséquent, la vue que l’utilisateur verra en premier. Elle est représentée par le segue illustré ci-dessous:  
 
-    [![](images/sourcelesssegue.png "Un segue sans source")](images/sourcelesssegue.png#lightbox)
+    [![](images/sourcelesssegue.png "Segue de code source")](images/sourcelesssegue.png#lightbox)
 
-### <a name="adaptive-segue-types"></a>Types de Segue ADAPTATIF
+### <a name="adaptive-segue-types"></a>Types segue adaptatifs
 
- iOS 8 introduit [catégories de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) pour autoriser un fichier de storyboard iOS fonctionne avec toutes les tailles d’écran disponible, permettant aux développeurs de créer une interface utilisateur pour tous les appareils iOS. Par défaut, toutes les nouvelles applications Xamarin.iOS utilise les classes de taille. Pour utiliser les classes de taille à partir d’un projet antérieur, reportez-vous à la [Introduction aux Storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) guide. 
+ iOS 8 a introduit des [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) pour permettre à un fichier de Storyboard iOS de fonctionner avec toutes les tailles d’écran disponibles, ce qui permet aux développeurs de créer une interface utilisateur pour tous les appareils iOS. Par défaut, toutes les nouvelles applications Xamarin. iOS utilisent des classes de taille. Pour utiliser les classes de taille d’un ancien projet, reportez-vous au guide [Présentation](~/ios/user-interface/storyboards/unified-storyboards.md) des storyboards unifiés. 
  
-Toute application à l’aide des Classes de taille également utilisera le nouveau [ *Enchaînements Adaptive*](~/ios/user-interface/storyboards/unified-storyboards.md). Lorsque vous utilisez des classes de taille, n’oubliez pas que nous ne spécifier directement les accepte, nous utilisons un iPhone ou iPad. En d’autres termes, nous allons créer une interface utilisateur que recherche toujours la même, quelle que soit la quantité immobilier il doit fonctionner avec. Travail de Segues ADAPTATIF en juger de l’environnement et en déterminant la meilleure façon de présenter le contenu. Les enchaînements ADAPTATIF sont présentées ci-dessous : 
+Toute application utilisant des classes de taille utilisera également la nouvelle [*SEGUES adaptative*](~/ios/user-interface/storyboards/unified-storyboards.md). Lorsque vous utilisez des classes de taille, n’oubliez pas que nous ne spécifions pas directement si nous utilisons un iPhone ou un iPad. En d’autres termes, nous créons une interface utilisateur qui aura toujours le même aspect, quelle que soit la quantité réelle d’espace de travail. Les SEGUES adaptatifs fonctionnent en déterminant l’environnement et en déterminant la meilleure façon de présenter le contenu. Les SEGUES adaptatifs sont affichés ci-dessous: 
 
-[![](images/adaptivesegue.png "La liste déroulante Enchaînements ADAPTATIF")](images/adaptivesegue.png#lightbox)
+[![](images/adaptivesegue.png "Liste déroulante SEGUES adaptatif")](images/adaptivesegue.png#lightbox)
 
 |Segue|Description|
 |--- |--- |
-|Afficher|Cela est très similaire à une notification Push segue, mais il prend le contenu de l’écran en compte.|
-|Afficher les détails|Si l’application affiche une vue maître et détail (par exemple, dans un contrôleur d’affichage fractionné sur un iPad), le contenu remplace la vue détail. Si l’application affiche uniquement le maître ou détail, le contenu remplacera le haut de la pile de contrôleur d’affichage.|
-|La présentation|Cela ressemble au segue Modal et autorise la sélection de styles de présentation et de transition.|
-|Présentation de menu|Cela présente le contenu sous la forme d’un menu|
+|Afficher|Cela est très similaire à un segue push, mais il prend en compte le contenu de l’écran.|
+|Afficher les détails|Si l’application affiche un affichage maître et détail (par exemple, dans un contrôleur d’affichage fractionné sur un iPad), le contenu remplace l’affichage détaillé. Si l’application affiche uniquement le maître ou le détail, le contenu remplace le haut de la pile du contrôleur d’affichage.|
+|La présentation|Cela est similaire à l’segue modal et permet de sélectionner des styles de présentation et de transition.|
+|Présentation menu segue|Cela présente le contenu sous la forme d’un menu segue|
 
-### <a name="transferring-data-with-segues"></a>Transfert de données avec des Segues
+### <a name="transferring-data-with-segues"></a>Transfert de données avec SEGUES
 
-Les avantages d’un segue ne pas se terminer avec les transitions. Ils peuvent également être utilisés pour gérer le transfert de données entre les contrôleurs d’affichage. Pour cela en substituant le `PrepareForSegue` méthode sur le contrôleur d’affichage initial et le traitement des données nous-mêmes. Quand le segue est déclenché : par exemple, avec un sur le bouton – l’application appelle cette méthode, en offrant la possibilité de préparer le contrôleur d’affichage *avant* aucune navigation se produit. Le code ci-dessous, à partir de la [Phoneword](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) exemples, illustre cela : 
+Les avantages d’un segue ne se terminent pas par des transitions. Elles peuvent également être utilisées pour gérer le transfert de données entre les contrôleurs d’affichage. Cela est possible en remplaçant la `PrepareForSegue` méthode sur le contrôleur d’affichage initial et en gérant les données. Lorsque le segue est déclenché, par exemple avec une pression sur un bouton, l’application appellera cette méthode, en fournissant la possibilité de préparer le nouveau contrôleur d’affichage *avant* toute navigation. Le code ci-dessous, extrait de l’exemple [Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) , illustre ce qui suit: 
 
 
 ```csharp
@@ -109,13 +109,13 @@ NSObject sender)
 }
 ```
 
-Dans cet exemple, le `PrepareForSegue` méthode sera appelée lorsque le segue est déclenché par l’utilisateur. Nous devons d’abord créer une instance de contrôleur d’affichage « réception » et le définir comme le de destination du segue contrôleur d’affichage. Cette opération est effectuée par la ligne de code ci-dessous :
+Dans cet exemple, la `PrepareForSegue` méthode est appelée lorsque le segue est déclenché par l’utilisateur. Nous devons d’abord créer une instance du contrôleur d’affichage «réception» et la définir en tant que contrôleur d’affichage de destination de Segue. Cette opération est effectuée par la ligne de code ci-dessous:
 
 ```csharp
 var callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
-La méthode a désormais la possibilité de définir des propriétés sur le `DestinationViewController`. Dans cet exemple nous avons tiré parti de cela en passant une liste appelée `PhoneNumbers` à la `CallHistoryController` et l’affecter à un objet du même nom :
+La méthode a désormais la possibilité de définir des propriétés sur `DestinationViewController`le. Dans cet exemple, nous avons tiré parti de cette méthode en transmettant `PhoneNumbers` une liste `CallHistoryController` appelée à et en l’affectant à un objet du même nom:
 
 ```csharp
 if (callHistoryController != null) {
@@ -123,25 +123,25 @@ if (callHistoryController != null) {
     }
 ```
 
-Une fois la transition terminée, l’utilisateur verra le `CallHistoryController` avec la liste.
+Une fois la transition terminée, l’utilisateur verra le `CallHistoryController` avec la liste remplie.
 
-## <a name="adding-a-storyboard-to-a-non-storyboard-project"></a>Ajout d’une table de montage séquentiel à un projet table de montage séquentiel
+## <a name="adding-a-storyboard-to-a-non-storyboard-project"></a>Ajout d’une table de montage séquentiel à un projet non-Storyboard
 
-Parfois, vous devrez peut-être ajouter une table de montage séquentiel dans un fichier précédemment non-table de montage séquentiel. Cette opération qu’une seule fois dans Visual Studio pour Mac peut être rationalisée en suivant les étapes ci-dessous :
+Il se peut que vous deviez ajouter une table de montage séquentiel à un fichier qui n’est pas un Storyboard. Une fois cette opération effectuée dans Visual Studio pour Mac peut être rationalisée en suivant les étapes ci-dessous:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Créer un nouveau fichier de table de montage séquentiel en accédant à **fichier > nouveau fichier > iOS > Storyboard**, comme illustré ci-dessous : 
+1. Créez un fichier de table de montage séquentiel en accédant à **fichier > nouveau fichier > iOS > Storyboard**, comme illustré ci-dessous: 
     
-    [![](images/new-storyboard-xs.png "La boîte de dialogue Nouveau fichier")](images/new-storyboard-xs.png#lightbox)
+    [![](images/new-storyboard-xs.png "Boîte de dialogue nouveau fichier")](images/new-storyboard-xs.png#lightbox)
 
-2. Ajoutez votre nom de la table de montage séquentiel à la **Interface principale** section de la **Info.plist**, comme illustré ci-dessous :
+2. Ajoutez le nom de votre Storyboard à la section de l' **interface principale** du fichier **info. plist**, comme indiqué ci-dessous:
     
-    [![](images/infoplist.png "L’éditeur Info.plist")](images/infoplist.png#lightbox)
+    [![](images/infoplist.png "Éditeur info. plist")](images/infoplist.png#lightbox)
     
-    Cela fait l’équivalent de l’instanciation du contrôleur d’affichage Initial dans le `FinishedLaunching` méthode dans le délégué de l’application. Avec cette option, l’application instancie une fenêtre (voir ci-dessous), charge le storyboard principal et affecte une instance de contrôleur d’affichage Initial de la table de montage séquentiel (celui qui se trouve à côté du Segue sans source) en tant que le `RootViewController` propriété de la fenêtre, puis rend la fenêtre visible à l’écran.
+    Cela équivaut à instancier le contrôleur d’affichage initial dans la `FinishedLaunching` méthode au sein du délégué d’application. Lorsque cette option est définie, l’application instancie une fenêtre (voir ci-dessous), charge la table de montage séquentiel principale et assigne une instance du contrôleur d’affichage initial de la table de montage séquentiel (celle `RootViewController` à côté de la segue sans source) en tant que propriété de la fenêtre, puis effectue fenêtre visible à l’écran.
 
-3. Dans le `AppDelegate`, remplacer la valeur par défaut `Window` (méthode), avec le code suivant pour implémenter la propriété de fenêtre :
+3. Dans, remplacez la méthode par défaut `Window` , par le code suivant pour implémenter la propriété de fenêtre: `AppDelegate`
         
         public override UIWindow Window {
             get;
@@ -150,17 +150,17 @@ Parfois, vous devrez peut-être ajouter une table de montage séquentiel dans un
             
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Créer un nouveau fichier de table de montage séquentiel en cliquant sur le projet à **Ajouter > nouveau fichier > iOS > Storyboard vide**, comme illustré ci-dessous : 
+1. Créez un fichier de table de montage séquentiel en cliquant avec le bouton droit sur le projet pour **ajouter > nouveau fichier > iOS > Storyboard vide**, comme illustré ci-dessous: 
     
-    [![](images/new-storyboard-vs.png "La boîte de dialogue Nouvel élément")](images/new-storyboard-vs.png#lightbox)
+    [![](images/new-storyboard-vs.png "Boîte de dialogue Nouvel élément")](images/new-storyboard-vs.png#lightbox)
 
-2. Ajoutez votre nom de la table de montage séquentiel à la **Interface principale** section d’iOS Application, comme indiqué ci-dessous :
+2. Ajoutez le nom de votre Storyboard à la section de l' **interface principale** de l’application iOS, comme indiqué ci-dessous:
     
-    [![](images/ios-app.png "L’éditeur Info.plist")](images/ios-app.png#lightbox)
+    [![](images/ios-app.png "Éditeur info. plist")](images/ios-app.png#lightbox)
     
-    Cela fait l’équivalent de l’instanciation du contrôleur d’affichage Initial dans le `FinishedLaunching` méthode dans le délégué de l’application. Avec cette option, l’application instancie une fenêtre (voir ci-dessous), charge le storyboard principal et affecte une instance de contrôleur d’affichage Initial de la table de montage séquentiel (celui qui se trouve à côté du Segue sans source) en tant que le `RootViewController` propriété de la fenêtre, puis rend la fenêtre visible à l’écran.
+    Cela équivaut à instancier le contrôleur d’affichage initial dans la `FinishedLaunching` méthode au sein du délégué d’application. Lorsque cette option est définie, l’application instancie une fenêtre (voir ci-dessous), charge la table de montage séquentiel principale et assigne une instance du contrôleur d’affichage initial de la table de montage séquentiel (celle `RootViewController` à côté de la segue sans source) en tant que propriété de la fenêtre, puis effectue fenêtre visible à l’écran.
 
-3. Dans le `AppDelegate`, remplacer la valeur par défaut `Window` (méthode), avec le code suivant pour implémenter la propriété de fenêtre :
+3. Dans, remplacez la méthode par défaut `Window` , par le code suivant pour implémenter la propriété de fenêtre: `AppDelegate`
 
         public override UIWindow Window {
             get;
@@ -171,51 +171,51 @@ Parfois, vous devrez peut-être ajouter une table de montage séquentiel dans un
 
 ## <a name="creating-a-storyboard-with-the-ios-designer"></a>Création d’une table de montage séquentiel avec le concepteur iOS
 
-Une table de montage peut être créé à l’aide du Concepteur de Xamarin pour iOS, ce qui a été entièrement intégré à Visual Studio pour Mac et Visual Studio.
+Une table de montage séquentiel peut être créée à l’aide de la Xamarin Designer pour iOS, qui a été intégrée en toute transparence avec Visual Studio pour Mac et Visual Studio.
 
-Pour commencer à utiliser le concepteur iOS pour créer des plans conceptuels, suivez le [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) guide. Dans cette procédure pas à pas, vous allez Explorer navigation entre les contrôleurs d’affichage à l’aide de Segues et comment gérer des événements sur vos contrôles.
+Pour commencer à utiliser le concepteur iOS pour créer des storyboards, suivez le guide [Hello, iOS multi-écran](~/ios/get-started/hello-ios-multiscreen/index.md) . Dans cette procédure pas à pas, vous allez explorer la navigation entre les contrôleurs d’affichage à l’aide de SEGUES et comment gérer des événements sur vos contrôles.
 
-## <a name="instantiate-storyboards-manually"></a>Instancier manuellement des tables de montage séquentiel
+## <a name="instantiate-storyboards-manually"></a>Instancier manuellement des storyboards
 
-Storyboards remplacement totalement les fichiers XIB individuels dans votre projet, mais les contrôleurs d’affichage individuels dans une table de montage séquentiel peuvent toujours être instanciés à l’aide de `Storyboard.InstantiateViewController`.
+Les storyboards remplacent entièrement des fichiers XIB individuels dans votre projet. Toutefois, les contrôleurs d’affichage individuels d’une `Storyboard.InstantiateViewController`table de montage séquentiel peuvent toujours être instanciés à l’aide de.
 
-Parfois, les applications ont des exigences particulières qui ne peuvent pas être gérées avec les transitions de storyboard intégrés fournies par le concepteur. Par exemple, si nous consistait à créer une application qui lance des différents écrans à partir du bouton même, selon l’état actuel d’une application, nous souhaiterons peut-être instancier les contrôleurs d’affichage manuellement et programmer la transition nous-mêmes.
+Parfois, les applications ont des exigences spéciales qui ne peuvent pas être gérées avec les transitions de Storyboard intégrées fournies par le concepteur. Par exemple, si nous devions créer une application qui lance différents écrans à partir du même bouton, en fonction de l’état actuel d’une application, nous pouvons éventuellement instancier les contrôleurs d’affichage manuellement et programmer la transition.
 
-La capture d’écran ci-dessous montre deux contrôleurs d’affichage sur l’aire de conception de notre sans aucune segue entre eux. La section suivante guidera comment cette transition peut être configurée dans le code.
+La capture d’écran ci-dessous montre deux contrôleurs d’affichage sur notre aire de conception, sans segue. La section suivante vous guidera tout au long de la configuration de cette transition dans le code.
 
- [![](images/viewcontrollerspink.png "Cette capture d’écran montre deux contrôleurs d’affichage sur l’aire de conception sans aucune segue entre eux")](images/viewcontrollerspink.png#lightbox)
+ [![](images/viewcontrollerspink.png "Cette capture d’écran montre deux contrôleurs d’affichage sur l’aire de conception sans segue.")](images/viewcontrollerspink.png#lightbox)
 
-1. Ajouter un _iPhone Storyboard vide_ à un projet de projet existant :
+1. Ajoutez un _Storyboard iPhone vide_ à un projet de projet existant:
     
-    [![](images/add-storyboard1.png "Ajout de table de montage séquentiel")](images/add-storyboard1.png#lightbox)
+    [![](images/add-storyboard1.png "Ajout d’un Storyboard")](images/add-storyboard1.png#lightbox)
 
-2. Double-cliquez sur la table de montage séquentiel qui vient d’être créé pour l’ouvrir, puis ajoutez une nouvelle **contrôleur de Navigation** à l’aire de conception. Comme le contrôleur de Navigation est sans interface utilisateur, par défaut, elle sera accompagnée d’un contrôleur d’affichage racine, comme illustré ci-dessous :
+2. Double-cliquez sur le Storyboard que vous venez de créer pour l’ouvrir, puis ajoutez un nouveau **contrôleur de navigation** à l’aire de conception. Comme le contrôleur de navigation est sans interface utilisateur, par défaut, il est fourni avec un contrôleur d’affichage racine, comme illustré ci-dessous:
 
-    [![](images/uinavigationcontroller.png "Contrôleurs d’affichage avec Segues")](images/uinavigationcontroller.png#lightbox)
+    [![](images/uinavigationcontroller.png "Afficher les contrôleurs avec SEGUES")](images/uinavigationcontroller.png#lightbox)
 
-3. Sélectionnez le _contrôleur d’affichage_ en cliquant sur la barre noire située en bas. Dans le concepteur **remplissage de la propriété**, sous **identité** nous pouvons définir une classe personnalisée, ainsi qu’un ID unique pour le contrôleur d’affichage. Définir le **nom de la classe** et **ID de Storyboard** à `MainViewController`.
+3. Sélectionnez le _contrôleur d’affichage_ en cliquant sur la barre noire en bas. Dans le panneau des **Propriétés**du concepteur, sous **identité** , nous pouvons spécifier une classe personnalisée, ainsi qu’un ID unique pour le contrôleur d’affichage. Définissez le **nom** de la classe et l' `MainViewController`ID du **Storyboard** sur.
 
-    [![](images/identitypanelnew.png "Spécifiez la classe personnalisée")](images/identitypanelnew.png#lightbox)
+    [![](images/identitypanelnew.png "Spécifier une classe personnalisée")](images/identitypanelnew.png#lightbox)
 
-4. Plus tard, nous devons instancier nos contrôleurs d’affichage à partir de la table de montage séquentiel et utilisera l’ID de Storyboard pour y faites référence dans notre code. Définition de l’ID de la restauration pour faire correspondre l’ID de Storyboard permet de s’assurer que le contrôleur d’affichage obtient correctement recréé si l’état doit être restaurée.
+4. Plus tard, nous aurons besoin d’instancier nos contrôleurs d’affichage à partir de la table de montage séquentiel et utiliseront l’ID de Storyboard pour les référencer dans notre code. La définition de l’ID de restauration pour qu’il corresponde à l’ID de Storyboard garantit que le contrôleur d’affichage est recréé correctement si l’État doit être restauré.
 
-5. Nous disposons actuellement uniquement un contrôleur d’affichage. Faites glisser à un autre contrôleur d’affichage sur l’aire de conception. Dans le **remplissage de la propriété**, sous l’identité, définissez la classe et l’ID de Storyboard à `PinkViewController`, comme illustré ci-dessous :
+5. Nous n’avons actuellement qu’un seul contrôleur d’affichage. Faites glisser un autre contrôleur d’affichage sur l’aire de conception. Dans le panneau des **Propriétés**, sous identité, définissez la classe et l’ID `PinkViewController`du storyboard sur, comme illustré ci-dessous:
 
-    [![](images/pinkvcnew.png "Le bloc de propriété")](images/pinkvcnew.png#lightbox)
+    [![](images/pinkvcnew.png "Le panneau des propriétés")](images/pinkvcnew.png#lightbox)
     
-    L’IDE crée ces classes personnalisées pour les contrôleurs d’affichage. Ceux-ci peuvent être affichés dans le **panneau solutions**, comme illustré dans la capture d’écran ci-dessous :
+    L’IDE crée ces classes personnalisées pour les contrôleurs d’affichage. Vous pouvez les consulter dans le **panneau solutions**, comme illustré dans la capture d’écran ci-dessous:
     
-    [![](images/solution-pad.png "Panneau solution")](images/solution-pad.png#lightbox)
+    [![](images/solution-pad.png "Panneau Solutions")](images/solution-pad.png#lightbox)
 
-6. Dans le `PinkViewController`, sélectionnez la vue en cliquant sur vers le centre du frame du contrôleur. Dans le panneau Propriétés, sous affichage, modifiez le **arrière-plan** magenta :
+6. Dans la `PinkViewController`, sélectionnez la vue en cliquant vers le centre du frame du contrôleur. Dans le Panneau Propriétés, sous affichage, changez l' **arrière-plan** en magenta:
     
     [![](images/pinkcontroller.png "Définir la couleur d’arrière-plan")](images/pinkcontroller.png#lightbox)
 
-7. Enfin, faites glisser un bouton à partir de la **boîte à outils** sur le `MainViewController`. Dans le panneau Propriétés, attribuez-lui le nom `PinkButton` et le titre GoToPink, comme illustré ci-dessous :
+7. Enfin, faites glisser un bouton de la **boîte à outils** vers le `MainViewController`. Dans le panneau Propriétés, donnez-lui le `PinkButton` nom et le titre GoToPink, comme illustré ci-dessous:
 
-    [![](images/pinkbutton.png "Définir le nom de bouton")](images/pinkbutton.png#lightbox)
+    [![](images/pinkbutton.png "Définir le nom du bouton")](images/pinkbutton.png#lightbox)
 
-La table de montage est terminée, mais si nous déployer le projet maintenant, nous allons un écran vide. C’est parce que nous devons toujours demander à l’IDE à utiliser notre table de montage séquentiel et pour configurer un contrôleur d’affichage racine pour servir la première vue. Normalement cela est possible via nos Options du projet, comme indiqué ci-dessus. Toutefois dans cet exemple nous allons atteint le même résultat dans le code, en ajoutant le code suivant à la **AppDelegate**:
+La table de montage séquentiel est terminée, mais si nous déployons le projet maintenant, vous obtiendrez un écran vide. C’est parce que nous devons toujours dire à l’IDE d’utiliser notre Storyboard et à configurer un contrôleur d’affichage racine qui servira de première vue. Normalement, vous pouvez le faire via nos options de projet, comme indiqué ci-dessus. Toutefois, dans cet exemple, nous allons obtenir le même résultat dans le code, en ajoutant le code suivant à **AppDelegate**:
 
 ```csharp
 public partial class AppDelegate : UIApplicationDelegate
@@ -238,9 +238,9 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 ```
 
-Cela représente beaucoup de code, mais seulement quelques lignes ne sont pas familiarisés. Tout d’abord, nous enregistrons notre table de montage séquentiel avec le **AppDelegate** en passant le nom de la table de montage séquentiel, **MainStoryboard**. Ensuite, nous indiquons à l’application pour instancier un contrôleur d’affichage initial à partir du storyboard en appelant `InstantiateInitialViewController` sur notre plan conceptuel, et nous définissons ce contrôleur d’affichage en tant que contrôleur d’affichage racine de notre application. Cette méthode détermine le premier écran que l’utilisateur voit, et crée une nouvelle instance de ce contrôleur d’affichage.
+C’est beaucoup de code, mais seules quelques lignes ne vous sont pas familières. Tout d’abord, nous enregistrons notre Storyboard avec **AppDelegate** en transmettant le nom de la table de montage séquentiel, **fichier mainstoryboard**. Ensuite, nous indiquons à l’application d’instancier un contrôleur d’affichage initial à `InstantiateInitialViewController` partir de la table de montage séquentiel en appelant sur notre Storyboard, et nous définissons ce contrôleur d’affichage en tant que contrôleur d’affichage racine de votre application. Cette méthode détermine le premier écran que l’utilisateur voit, et crée une nouvelle instance de ce contrôleur d’affichage.
 
-Notez que, dans le volet de la solution que l’IDE a créé un `MainViewcontroller.cs` (classe) et son `corresponding designer.cs` lorsque nous avons ajouté le nom de classe pour le panneau de propriétés à l’étape 4. Nous pouvons voir cette classe créée d’un constructeur spécial qui inclut une classe de base :
+Notez dans le volet solution que l’IDE a créé une `MainViewcontroller.cs` classe, et son `corresponding designer.cs` lorsque nous avons ajouté le nom de la classe au panneau Propriétés à l’étape 4. Nous pouvons voir que cette classe a créé un constructeur spécial qui comprend une classe de base:
 
 ```csharp
 public MainViewController (IntPtr handle) : base (handle) 
@@ -249,9 +249,9 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-Lorsque vous créez une table de montage séquentiel à l’aide du concepteur, l’IDE ajoute automatiquement le [[inscrire]](xref:Foundation.RegisterAttribute) attribut en haut de la `designer.cs` classe et vous transmettez un identificateur de chaîne, qui est identique à l’ID de plan conceptuel spécifié dans le étape précédente. Cela lie le c# à la scène pertinentes dans le Storyboard.
+Lorsque vous créez une table de montage séquentiel à l’aide du concepteur, l’IDE ajoute automatiquement l’attribut [[register]](xref:Foundation.RegisterAttribute) en haut de la `designer.cs` classe et passe un identificateur de chaîne, identique à l’ID de Storyboard spécifié à l’étape précédente. Cela permet de lier C# le à la scène appropriée dans le Storyboard.
 
-À un moment donné vous souhaiterez peut-être ajouter une classe existante qui a été **pas** créé dans le concepteur. Dans ce cas, vous pouvez enregistrer cette classe comme d’habitude :
+À un moment donné, vous souhaiterez peut-être ajouter une classe existante qui n’a **pas** été créée dans le concepteur. Dans ce cas, vous devez enregistrer cette classe comme d’habitude:
 
 ```csharp
 [Register ("MainViewController")]
@@ -265,9 +265,9 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-Pour plus d’informations sur l’inscription des classes et méthodes, reportez-vous à la [bureau d’enregistrement de Type](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/) documentation.
+Pour plus d’informations sur l’inscription des classes et des méthodes, reportez-vous à la documentation [type Registrar](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/) .
 
-La dernière étape de cette classe consiste à associer le bouton et la transition vers le contrôleur d’affichage rose. Nous allons instancier le `PinkViewController` à partir de la table de montage séquentiel ; ensuite, nous sera programmer un push de segue avec `PushViewController`, comme l’illustre l’exemple de code ci-dessous :
+La dernière étape de cette classe consiste à relier le bouton et la transition au contrôleur d’affichage rose. Nous instancierons le `PinkViewController` à partir de la table de montage séquentiel. ensuite, nous allons `PushViewController`programmer un push segue avec, comme illustré dans l’exemple de code ci-dessous:
 
 ```csharp
 public partial class MainViewController : UIViewController
@@ -305,40 +305,40 @@ public partial class MainViewController : UIViewController
 }
 ```
 
-Exécution de l’application génère une application écran 2 :
+L’exécution de l’application génère une application à 2 écrans:
 
-![](images/finishedstoryboard.png "Exécution des écrans de l’application exemple")
+![](images/finishedstoryboard.png "Exemples d’écrans d’exécution d’application")
 
-## <a name="conditional-segues"></a>Conditionnel Segues
+## <a name="conditional-segues"></a>SEGUES conditionnel
 
-Souvent, le déplacement d’un contrôleur d’affichage à l’autre est dépend d’une certaine condition. Par exemple, si nous devions effectuer un écran de connexion simple nous seulement voulons passer à l’écran suivant *si* le nom d’utilisateur et le mot de passe qui avaient été vérifiés.
+Souvent, le passage d’un contrôleur d’affichage à l’autre dépend d’une certaine condition. Par exemple, si nous avions un simple écran de connexion, nous voulons simplement passer à l’écran suivant *si* le nom d’utilisateur et le mot de passe ont été vérifiés.
 
-Dans l’exemple suivant, nous allons ajouter un champ de mot de passe à l’exemple ci-dessus. L’utilisateur seulement sera en mesure d’accéder à la *PinkViewController* s’il a entré le mot de passe, sinon une erreur s’affichera.
+Dans l’exemple suivant, nous allons ajouter un champ de mot de passe à l’exemple ci-dessus. L’utilisateur pourra uniquement accéder au *PinkViewController* s’il entre le mot de passe correct. sinon, une erreur s’affichera.
 
-Avant de commencer, suivez les étapes 1 à 8 ci-dessus. Dans ces étapes nous créer notre table de montage séquentiel, commence à créer notre interface utilisateur et indiquer à quel contrôleur d’affichage à utiliser notre délégué de l’application car il s’agit de RootViewController.
+Avant de commencer, suivez les étapes 1 à 8 ci-dessus. Dans ces étapes, nous créons notre Storyboard, nous commençons à créer notre interface utilisateur et indiquons à notre application le contrôleur d’affichage à utiliser comme RootViewController.
 
-1. Maintenant, nous allons créer notre interface utilisateur et ajouter des affichages supplémentaires répertoriées à la `MainViewController` afin qu’il apparaisse comme celle-ci dans la capture d’écran ci-dessous :
+1. Nous allons maintenant développer notre interface utilisateur et ajouter les vues supplémentaires listées à la `MainViewController` pour qu’elle ressemble à ceci dans la capture d’écran ci-dessous:
 
     - UITextField
         - Nom : PasswordTextField
-        - Espace réservé : « Entrez le mot de passe Secret »
+        - Situé «Entrer le mot de passe secret»
     - UILabel
-        - Texte : « Erreur : Mot de passe incorrect. Vous ne sont pas transmettre ! »
-        - Couleur : Rouge
-        - Alignement : Center
-        - Lignes : 2
-        - Case à cocher « Masqué » activée    
+        - Financière Erreurs Mot de passe incorrect. Vous ne devez pas passer! '
+        - Couleur: Rouge
+        - Repère Center
+        - Courbes 2
+        - Case à cocher «Masqué» activée    
         
-    [![](images/passwordvc.png "Centre les lignes")](images/passwordvc.png#lightbox)
+    [![](images/passwordvc.png "Lignes de centre")](images/passwordvc.png#lightbox)
     
-2. Créer un Segue entre le bouton Accédez rose et le contrôleur d’affichage en faisant glisser de Ctrl de la *PinkButton* à la *PinkViewController*et en sélectionnant **Push** sur le trajet de souris . 
+2. Créez un segue entre le bouton atteindre le rose et le contrôleur d’affichage en faisant glisser le pointeur de la souris du *PinkButton* vers le *PinkViewController*, puis en sélectionnant **Push** sur souris. 
 
-3. Cliquez sur le Segue et lui donner le *identificateur* `SegueToPink`:
+3. Cliquez sur segue et donnez-lui l' *identificateur* `SegueToPink`:
 
-    [![](images/namesegue.png "Cliquez sur le Segue et lui donner le SegueToPink identificateur")](images/namesegue.png#lightbox)  
+    [![](images/namesegue.png "Cliquez sur segue et donnez-lui l’identificateur SegueToPink")](images/namesegue.png#lightbox)  
     
 
-4. Enfin, ajoutez la méthode ShouldPerformSegue suivante à la `MainViewController` classe :
+4. Enfin, ajoutez la méthode ShouldPerformSegue suivante à la `MainViewController` classe:
 
     ```csharp
     public override bool ShouldPerformSegue (string segueIdentifier, NSObject sender)
@@ -358,139 +358,139 @@ Avant de commencer, suivez les étapes 1 à 8 ci-dessus. Dans ces étapes nous c
     }
     ```
 
-Dans ce code nous avons mis en correspondance le segueIdentifier à notre `SegueToPink` segue, donc nous pouvons ensuite tester une condition ; un mot de passe valide dans ce cas. Si notre condition retourne `true`, effectuera le Segue et présentera le `PinkViewController`. Si `false`, le contrôleur d’affichage ne seront pas présenté.
+Dans ce code, nous avons mis en correspondance le segueIdentifier `SegueToPink` à notre segue. nous pouvons donc tester une condition; un mot de passe valide dans ce cas. Si notre condition retourne `true`, le segue s’exécute et présente le. `PinkViewController` Si `false`la condition est, le nouveau contrôleur d’affichage n’est pas présenté.
 
-Nous pouvons appliquer cette approche à n’importe quel Segue sur ce contrôleur d’affichage en vérifiant l’argument segueIdentifier à la méthode ShouldPerformSegue. Dans ce cas nous n’avons qu’un identificateur de Segue – `SegueToPink`.
+Nous pouvons appliquer cette approche à n’importe quel segue sur ce contrôleur d’affichage en vérifiant l’argument segueIdentifier pour la méthode ShouldPerformSegue. Dans ce cas, nous n’avons qu’un seul identificateur `SegueToPink`segue:.
 
-Reportez-vous à la solution Storyboards.Conditional dans les [exemple de tables de montage séquentiel manuel](https://developer.xamarin.com/samples/monotouch/ManualStoryboard/) pour obtenir un exemple.
+Reportez-vous à la solution storyboards. Conditional dans l' [exemple de storyboards manuels](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard) pour obtenir un exemple fonctionnel.
 
 <a name="Using-Storyboard-References" />
 
-## <a name="using-storyboard-references"></a>Utilisation de références de table de montage séquentiel
+## <a name="using-storyboard-references"></a>Utilisation de références de Storyboard
 
-Une référence de table de montage séquentiel vous permet de prendre une conception de table de montage séquentiel volumineuses et complexe et la décomposer en plus petites tables de montage séquentiel obtient référencés à partir de l’original, par conséquent, de suppression de la complexité et de faciliter les Storyboards individuels qui en résulte concevoir et gérer.
+Une référence de table de montage séquentiel vous permet d’effectuer une conception de Storyboard complexe et de la décomposer en plus petits storyboards qui sont référencés à partir de l’original, supprimant ainsi la complexité et rendant les storyboards individuels résultants plus faciles à concevoir et à gérer.
 
-En outre, une référence de table de montage séquentiel peut fournir un _ancre_ à un autre scène dans la même table de montage séquentiel ou une scène spécifique sur une autre.
+En outre, une référence de table de montage séquentiel peut fournir une _ancre_ à une autre scène au sein d’une même table de montage séquentiel ou d’une scène spécifique sur un autre plan.
 
 <a name="Referencing-an-External-Storyboard" />
 
-### <a name="referencing-an-external-storyboard"></a>Faisant référence à une table de montage séquentiel externe
+### <a name="referencing-an-external-storyboard"></a>Référencement d’un Storyboard externe
 
-Pour ajouter une référence à une table de montage séquentiel externe, procédez comme suit :
+Pour ajouter une référence à un Storyboard externe, procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, avec le bouton droit sur le nom du projet et sélectionnez **ajouter** > **nouveau fichier...**   >  **iOS** > **Storyboard**. Entrez un **nom** pour la table de montage séquentiel et cliquez sur le **New** bouton :
+1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Storyboard iOS.  >  >  Entrez un **nom** pour la nouvelle table de montage séquentiel, puis cliquez sur le bouton **nouveau** :
     
-    [![](images/ref01.png "La boîte de dialogue Nouveau fichier")](images/ref01.png#lightbox)
+    [![](images/ref01.png "Boîte de dialogue nouveau fichier")](images/ref01.png#lightbox)
     
-2. Concevoir la disposition de l’arrière-plan de la nouvelle table de montage séquentiel serait normalement et enregistrer vos modifications : 
+2. Concevez la disposition des scènes de la nouvelle table de montage séquentiel comme vous le feriez normalement et enregistrez vos modifications: 
     
-    [![](images/ref02.png "La disposition de la nouvelle scène")](images/ref02.png#lightbox)
+    [![](images/ref02.png "Disposition de la nouvelle scène")](images/ref02.png#lightbox)
     
-3. Ouvrez la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans le concepteur iOS.
+3. Ouvrez le Storyboard auquel vous allez ajouter la référence dans le concepteur iOS.
 
-4. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
+4. Faites glisser une **référence de Storyboard** de la **boîte à outils** vers le aire de conception: 
     
     [![](images/ref03.png "Une référence de table de montage séquentiel")](images/ref03.png#lightbox)
     
-5. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, sélectionnez le nom de la **Storyboard** que vous avez créé ci-dessus : 
+5. Dans l’onglet **widget** de l' **Explorateur de propriétés**, sélectionnez le nom de la table de **montage séquentiel** que vous avez créée ci-dessus: 
 
-    [![](images/ref04.png "L’onglet de Widget")](images/ref04.png#lightbox)
+    [![](images/ref04.png "Onglet widget")](images/ref04.png#lightbox)
     
-6. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer : 
+6. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer: 
 
     [![](images/ref05.png "Création d’un segue")](images/ref05.png#lightbox) 
     
-7. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
+7. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
 
-    [![](images/ref06.png "Sélectionnez Afficher pour terminer le Segue")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Sélection de l’option afficher pour terminer le segue")](images/ref06.png#lightbox) 
     
-8. Enregistrez vos modifications dans la table de montage séquentiel.
+8. Enregistrez vos modifications dans le Storyboard.
 
-Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur que vous avez créé le Segue à partir, le contrôleur d’affichage Initial à partir du Storyboard externe spécifié dans la référence de table de montage séquentiel seront affiche.
+Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur à partir duquel vous avez créé le Segue, le contrôleur d’affichage initial du storyboard externe spécifié dans la référence de la table de montage séquentiel s’affiche.
 
 <a name="Referencing-a-Specific-Scene-in-an-External-Storyboard" />
 
-### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Référencement d’une scène spécifique dans une table de montage séquentiel externe
+### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Référencement d’une scène spécifique dans un Storyboard externe
 
-Pour ajouter une référence à une scène spécifique un Storyboard externe (et pas le contrôleur d’affichage Initial), procédez comme suit :
+Pour ajouter une référence à une scène spécifique, un Storyboard externe (et non le contrôleur d’affichage initial), procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur la table de montage séquentiel externe pour l’ouvrir pour modification.
+1. Dans la **Explorateur de solutions**, double-cliquez sur le Storyboard externe pour l’ouvrir en vue de le modifier.
 
-2. Ajouter une nouvelle scène et concevoir sa disposition, comme vous le feriez normalement : 
+2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement: 
 
-    [![](images/ref07.png "La nouvelle disposition de la scène")](images/ref07.png#lightbox)
+    [![](images/ref07.png "Nouvelle disposition de scène")](images/ref07.png#lightbox)
     
-3. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, entrez un **ID de Storyboard** pour le contrôleur d’affichage de la scène de nouveau : 
+3. Dans l’onglet **widget** de l' **Explorateur de propriétés**, entrez un **ID de Storyboard** pour le contrôleur d’affichage de la nouvelle scène: 
 
-    [![](images/ref08.png "Entrez un ID de Storyboard pour le nouveau contrôleur de vue de scènes")](images/ref08.png#lightbox)
+    [![](images/ref08.png "Entrer un ID de Storyboard pour le nouveau contrôleur d’affichage de scènes")](images/ref08.png#lightbox)
     
-4. Ouvrez la table de montage séquentiel que vous vous apprêtez à ajouter la référence à dans le concepteur iOS.
+4. Ouvrez le Storyboard auquel vous allez ajouter la référence dans le concepteur iOS.
 
-5. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
+5. Faites glisser une **référence de Storyboard** de la **boîte à outils** vers le aire de conception: 
 
     [![](images/ref03.png "Une référence de table de montage séquentiel")](images/ref03.png#lightbox)
     
-6. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, sélectionnez le nom de la **Storyboard** et le **ID de référence** (ID de Storyboard) de la Scène que vous avez créé ci-dessus : 
+6. Dans l’onglet **widget** de l' **Explorateur de propriétés**, sélectionnez le nom de la table de **montage séquentiel** et l' **ID de référence** (Storyboard ID) de la scène que vous avez créée ci-dessus: 
 
-    [![](images/ref09.png "L’onglet de Widget ")](images/ref09.png#lightbox)
+    [![](images/ref09.png "Onglet widget")](images/ref09.png#lightbox)
     
-7. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer : 
+7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer: 
 
     [![](images/ref10.png "Création d’un segue")](images/ref10.png#lightbox) 
     
-8. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
+8. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
 
-    [![](images/ref06.png "Sélectionnez Afficher pour terminer le Segue")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Sélection de l’option afficher pour terminer le segue")](images/ref06.png#lightbox) 
     
-9. Enregistrez vos modifications dans la table de montage séquentiel.
+9. Enregistrez vos modifications dans le Storyboard.
 
-Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur que vous avez créé le Segue à partir de la scène avec la donnée **ID de Storyboard** à partir du Storyboard externe spécifié dans la référence de table de montage séquentiel s’affichera.
+Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur à partir duquel vous avez créé le Segue, la scène avec l' **ID de Storyboard** donné à partir du storyboard externe spécifié dans la référence de la table de montage séquentiel s’affiche.
 
 <a name="Referencing-a-Specific-Scene-in-the-Same-Storyboard" />
 
 ### <a name="referencing-a-specific-scene-in-the-same-storyboard"></a>Référencement d’une scène spécifique dans la même table de montage séquentiel
 
-Pour ajouter une référence à une scène spécifique de la même table de montage séquentiel, procédez comme suit :
+Pour ajouter une référence à une scène spécifique du même Storyboard, procédez comme suit:
 
-1. Dans le **l’Explorateur de solutions**, double-cliquez sur le plan conceptuel pour l’ouvrir pour modification.
+1. Dans la **Explorateur de solutions**, double-cliquez sur le Storyboard pour l’ouvrir pour le modifier.
 
-2. Ajouter une nouvelle scène et concevoir sa disposition, comme vous le feriez normalement : 
+2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement: 
 
-    [![](images/ref11.png "La nouvelle disposition de la scène")](images/ref11.png#lightbox)
+    [![](images/ref11.png "Nouvelle disposition de scène")](images/ref11.png#lightbox)
 
-3. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, entrez un **ID de Storyboard** pour le contrôleur d’affichage de la scène de nouveau : 
+3. Dans l’onglet **widget** de l' **Explorateur de propriétés**, entrez un **ID de Storyboard** pour le contrôleur d’affichage de la nouvelle scène: 
 
-    [![](images/ref12.png "L’onglet de Widget")](images/ref12.png#lightbox)
+    [![](images/ref12.png "Onglet widget")](images/ref12.png#lightbox)
     
-4. Faites glisser un **Storyboard référence** à partir de la **boîte à outils** sur l’aire de conception : 
+4. Faites glisser une **référence de Storyboard** de la **boîte à outils** vers le aire de conception: 
 
    [![](images/ref03.png "Une référence de table de montage séquentiel")](images/ref03.png#lightbox)
     
-5. Dans le **Widget** onglet de la **l’Explorateur de propriétés**, sélectionnez **ID de référence** (ID de Storyboard) de la scène que vous avez créé ci-dessus : 
+5. Dans l’onglet **widget** de l' **Explorateur de propriétés**, sélectionnez **ID de référence** (ID de Storyboard) de la scène créée ci-dessus: 
 
-    [![](images/ref13.png "L’onglet de Widget")](images/ref13.png#lightbox)
+    [![](images/ref13.png "Onglet widget")](images/ref13.png#lightbox)
     
-6. Cliquez sur un Widget d’interface utilisateur (par exemple, un bouton) sur une scène existante et créer un nouveau Segue à la **référence de table de montage séquentiel** que vous venez de créer : 
+6. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer: 
 
     [![](images/ref14.png "Création d’un segue")](images/ref14.png#lightbox) 
     
-7. Dans le menu contextuel, sélectionnez **afficher** pour terminer le Segue : 
+7. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
 
-    [![](images/ref06.png "Sélectionnez Afficher pour terminer le Segue")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Sélection de l’option afficher pour terminer le segue")](images/ref06.png#lightbox) 
     
-8. Enregistrez vos modifications dans la table de montage séquentiel.
+8. Enregistrez vos modifications dans le Storyboard.
 
-Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur que vous avez créé le Segue à partir de la scène avec la donnée **ID de Storyboard** dans la même table de montage spécifié dans la référence de table de montage séquentiel s’affichera.
+Lorsque l’application est exécutée et que l’utilisateur clique sur l’élément d’interface utilisateur à partir duquel vous avez créé le Segue, la scène avec l' **ID de Storyboard** donné dans le même Storyboard spécifié dans la référence de la table de montage séquentiel s’affiche.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article présente le concept des Storyboards et comment ils peuvent être utiles dans le développement d’applications iOS. Il aborde les scènes, contrôleurs d’affichage, vues et hiérarchies d’affichage et comment les scènes sont liés avec différents types de Segues.  Il étudie également les contrôleurs d’affichage lors de l’instanciation manuellement à partir d’une table de montage séquentiel et création Segues conditionnel.
+Cet article présente le concept de storyboards et la façon dont ils peuvent être bénéfiques au développement d’applications iOS. Il aborde les scènes, les contrôleurs d’affichage, les vues et les hiérarchies de vues, ainsi que la façon dont les scènes sont liées avec différents types de SEGUES.  Il explore également l’instanciation manuelle des contrôleurs d’affichage à partir d’une table de montage séquentiel et la création de SEGUES conditionnelles.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Table de montage séquentiel manuelle (exemple)](https://developer.xamarin.com/samples/ManualStoryboard/)
-- [Introduction au concepteur iOS](~/ios/user-interface/designer/introduction.md)
-- [Conversion vers des animations](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
-- [Référence de classe de UIStoryboard](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)
+- [Storyboard manuel (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualstoryboard/)
+- [Présentation du concepteur iOS](~/ios/user-interface/designer/introduction.md)
+- [Convertir en storyboards](https://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [Référence de la classe UIStoryboard](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

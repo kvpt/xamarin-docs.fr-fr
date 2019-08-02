@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 3d34ce3d5cb6e8e4931eafcc7cd82d141f5db8d7
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670179"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509580"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android : Immersion
 
@@ -153,6 +153,11 @@ Les sections qui suivent explorent les relations entre les différents composant
 
 ## <a name="user-interface"></a>Interface utilisateur
 
+> [!TIP]
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
+>
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
+
 ::: zone pivot="windows"
 
 **activity_main.axml** est le fichier de disposition de l’interface utilisateur correspondant au premier écran de l’application. L’extension .axml indique qu’il s’agit d’un fichier Android Designer (AXML est l’acronyme d’*Android XML*). Le nom *Main* est arbitraire du point de vue d’Android. Vous pourriez attribuer n’importe quel nom au fichier de disposition. Quand vous ouvrez **activity_main.axml** dans l’IDE, l’éditeur visuel pour fichiers de disposition Android, appelé *Android Designer*, se lance :
@@ -193,7 +198,7 @@ Tous les éléments définis dans l’aire de conception sont traduits en code 
 
 ::: zone-end
 
-Ce code source XML doit contenir les widgets **Text (Large)**, **Plain Text** et les deux widgets **Button**. Pour une présentation plus approfondie d’Android Designer, reportez-vous au guide Xamarin Android [Android Designer](~/android/user-interface/android-designer/index.md).
+Ce code source XML doit contenir quatre éléments de contrôle : deux éléments **TextView**, un élément **EditText** et un élément **Button**. Pour une présentation plus approfondie d’Android Designer, reportez-vous au guide Xamarin Android [Android Designer](~/android/user-interface/android-designer/index.md).
 
 Nous venons de voir les outils et les concepts utilisés pour la partie visuelle de l’interface utilisateur. À présent, il est temps de passer au code qui gère l’interface utilisateur.
 
@@ -207,7 +212,7 @@ Cette section présente la classe `Activity`, décrit le cycle de vie des activi
 
 L’application **Phoneword** n’a qu’un seul écran (ou activité). La classe qui gère l’écran est appelée `MainActivity` et réside dans le fichier **MainActivity.cs**. Le nom `MainActivity` n’a aucune signification spéciale dans Android. Même si la convention veut que la première activité d’une application soit nommée `MainActivity`, le nom que porte l’activité n’a pas d’importance pour Android.
 
-Lorsque vous ouvrez **MainActivity.cs**, vous pouvez voir que la classe `MainActivity` est une *sous-classe* de la classe `Activity`, et que l’activité est dotée de l’attribut [Activity](https://developer.xamarin.com/api/type/Android.App.ActivityAttribute/) :
+Lorsque vous ouvrez **MainActivity.cs**, vous pouvez voir que la classe `MainActivity` est une *sous-classe* de la classe `Activity`, et que l’activité est dotée de l’attribut [Activity](xref:Android.App.ActivityAttribute) :
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -333,7 +338,7 @@ Une fois l’appareil configuré, vous pouvez y déployer des applications. Pour
 ::: zone-end
 ::: zone pivot="macos"
 
-Une fois l’appareil configuré, vous pouvez y déployer des applications. Pour cela, appuyez sur **Démarrer (Lire)**, sélectionnez-le dans la boîte de dialogue **Sélectionner un appareil**, puis appuyez sur **OK** :
+Une fois l’appareil configuré, vous pouvez y déployer des applications. Pour cela, appuyez sur **Démarrer (Lire)** , sélectionnez-le dans la boîte de dialogue **Sélectionner un appareil**, puis appuyez sur **OK** :
 
 [![Sélection d’un appareil pour le débogage](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 7f40671cd37ba88834698dea8cdaba267c96600c
-ms.sourcegitcommit: c77d4257f8a35c8d931538b78a2ebc2aa48c0db9
+ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58751259"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647052"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – Exploration approfondie
 
@@ -414,7 +414,7 @@ Le simulateur IOS offre un moyen rapide de tester une application. Il propose de
 Un appareil a besoin de temps pour être provisionné et un compte de développeur Apple est nécessaire. Le guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) fournit des instructions précises sur la préparation d’un appareil au développement.
 
 > [!NOTE]
-> En raison d’une exigence d’Apple, vous devez disposer d’un certificat de développement ou d’une _identité de signature_ afin de générer du code pour un appareil ou un simulateur. Suivez les étapes indiquées dans le [guide de provisionnement des appareils](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) pour les obtenir.
+> En raison d’une exigence d’Apple, vous devez actuellement disposer d’un certificat de développement ou d’une _identité de signature_ afin de générer votre code pour un appareil physique ou le simulateur. Suivez les étapes indiquées dans le [guide de provisionnement des appareils](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) pour les obtenir.
 
 Une fois que l’appareil est provisionné, vous pouvez y déployer des applications en le branchant, en remplaçant la cible dans la barre d’outils de génération par l’appareil iOS et en appuyant sur **Démarrer** (**Lecture**), comme l’illustre la capture d’écran suivante :
 
@@ -458,10 +458,10 @@ Pour plus d’informations sur les tailles et spécifications des icônes et ima
 ## <a name="summary"></a>Récapitulatif
 
 Félicitations ! Vous avez maintenant une connaissance approfondie des composants des applications Xamarin.iOS, ainsi que des outils nécessaires à leur création.
-Dans le [didacticiel suivant de la série de mise en route](~/ios/get-started/hello-ios-multiscreen/index.md), vous allez étendre notre application pour gérer plusieurs écrans. Vous allez au fur et à mesure implémenter un contrôleur de navigation, découvrir les enchaînements de Storyboard et faire connaissance avec le modèle MVC (Model-View-Controller) quand vous étendrez notre application pour gérer plusieurs écrans.
+Dans le [didacticiel suivant de la série de mise en route](~/ios/get-started/hello-ios-multiscreen/index.md), vous allez étendre notre application pour gérer plusieurs écrans. Vous allez au fur et à mesure implémenter un contrôleur de navigation, découvrir les enchaînements de Storyboard et faire connaissance avec le modèle MVC (modèle-vue-contrôleur) quand vous étendrez votre application pour gérer plusieurs écrans.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Hello, iOS (exemple)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [Portail de provisionnement iOS](https://developer.apple.com/account/#/overview)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: f3fb083457fa1fbf6590eb53eea504257e93ecc6
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: d59d4fc3ff9df3ea883ab4d5845da193e6cb8c51
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51617772"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643789"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin pour les développeurs Java
 
@@ -43,7 +43,7 @@ Java et C# sont compilés dans un langage intermédiaire qui est exécuté dans 
 Les deux langages utilisent une hiérarchie de classes à racine unique. Comme Java, C# prend uniquement en charge l’héritage unique et n’autorise pas les méthodes globales.
 Dans les deux langages, les objets sont créés sur le tas en utilisant le mot-clé `new` et les objets sont récupérés par le garbage collector lorsqu’ils ne sont plus utilisés. Les deux langages fournissent la prise en charge des exceptions formelles avec une sémantique `try`/`catch`. Les deux prennent en charge la gestion et la synchronisation des threads.
 
-Toutefois, il existe de nombreuses différences entre les Java et C#. Exemple :
+Toutefois, il existe de nombreuses différences entre les Java et C#. Par exemple :
 
 -   Java ne prend pas en charge les variables locales implicitement typées (C# prend en charge le mot-clé `var`).
 
@@ -148,7 +148,7 @@ Ces instructions importent les fonctionnalités des espaces de noms `System`, `A
 
 Java et C# prennent en charge les *génériques*, qui sont des espaces réservés qui vous permettent de connecter différents types au moment de la compilation. Toutefois, les génériques fonctionnent différemment en C#. En Java, [l’effacement de type](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) rend les informations de type disponibles uniquement au moment de la compilation, mais pas au moment de l’exécution. En revanche, le common language runtime (CLR) .NET fournit une prise en charge explicite des types génériques, ce qui signifie que C# a accès aux informations de type lors de l’exécution. Pour le développement Xamarin.Android au quotidien, l’importance de cette distinction n’est pas souvent évidente, mais si vous utilisez la [réflexion](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection), cette fonctionnalité est cruciale pour accéder aux informations de type au moment de l’exécution.
 
-Dans Xamarin.Android, vous verrez souvent la méthode générique `FindViewById` utilisée pour obtenir une référence à un contrôle de disposition. Cette méthode accepte un paramètre de type générique qui spécifie le type de contrôle à rechercher. Exemple :
+Dans Xamarin.Android, vous verrez souvent la méthode générique `FindViewById` utilisée pour obtenir une référence à un contrôle de disposition. Cette méthode accepte un paramètre de type générique qui spécifie le type de contrôle à rechercher. Par exemple :
 
 ```csharp
 TextView label = FindViewById<TextView> (Resource.Id.Label);
@@ -174,7 +174,7 @@ Java et C# utilisent des idiomes de programmation orientée objet très similair
 
 -   Toutes les instances de classe sont créées sur le tas via l’opérateur `new`.
 
--   Étant donné que les deux langages utilisent la garbage collection, il n’existe pas de moyen de libérer explicitement les objets non utilisés (il n’y a pas de mot-clé `delete` comme en C++).
+-   Étant donné que les deux langages utilisent le garbage collection, il n’existe aucun moyen de libérer explicitement les objets non utilisés (il n’y a pas de mot clé `delete` comme en C++).
 
 -   Vous pouvez étendre les classes par héritage, et les deux langages autorisent une seule classe de base par type.
 
@@ -228,7 +228,7 @@ Pour plus d’informations sur les définitions de classe C#, consultez les rubr
 En Java, les méthodes de mutateurs (setters) et d’inspecteurs (getters) sont souvent utilisées pour contrôler la façon dont les modifications sont apportées aux membres de classe tout en masquant et protégeant ces membres à partir de l’extérieur du code. Par exemple, la classe `TextView` d’Android fournit les méthodes `getText` et `setText`. C# fournit un mécanisme similaire, mais plus direct appelé *propriétés*.
 Les utilisateurs d’une classe C# peuvent accéder à une propriété de la même façon qu’ils accèdent à un champ, mais chaque accès entraîne en fait un appel de méthode qui est transparent pour l’appelant. Cette méthode « en coulisses » peut implémenter des effets secondaires, tels que la définition d’autres valeurs, la réalisation de conversions ou la modification d’état des objets.
 
-Les propriétés sont souvent utilisées pour l’accès et modification des membres de l’objet d’interface utilisateur. Exemple :
+Les propriétés sont souvent utilisées pour l’accès et modification des membres de l’objet d’interface utilisateur. Par exemple :
 
 ```csharp
 int width = rulerView.MeasuredWidth;
@@ -327,7 +327,7 @@ En C#, les expressions lambda sont créées avec l’opérateur `=>`, comme indi
 };
 ```
 
-Dans Xamarin.Android, les expressions lambda sont souvent utilisées pour définir des gestionnaires d’événements. Exemple :
+Dans Xamarin.Android, les expressions lambda sont souvent utilisées pour définir des gestionnaires d’événements. Par exemple :
 
 ```csharp
 button.Click += (sender, args) => {
@@ -372,7 +372,7 @@ startActivityButton.Click += delegate {
 
 ```
 
-Toutefois, vous pouvez également utiliser une expression lambda pour enregistrer les événements, et ignorer le mot-clé `delegate` entièrement. Exemple :
+Toutefois, vous pouvez également utiliser une expression lambda pour enregistrer les événements, et ignorer le mot-clé `delegate` entièrement. Par exemple :
 
 ```csharp
 startActivityButton.Click += (sender, e) => {
@@ -448,7 +448,7 @@ Plusieurs mots-clés de langage utilisés en Java sont également utilisés en C
 |`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|Encapsule une section critique du code avec acquisition et libération de verrou.|
 
 
-Il existe également plusieurs mots-clés qui sont propres à C# et n’ont aucun équivalent en Java. Le code Xamarin.Android utilise souvent les mots-clés C# suivants (cette table est utile comme référence lors de la lecture de [l’exemple de code](https://developer.xamarin.com/samples/android/all/) Xamarin.Android) :
+Il existe également plusieurs mots-clés qui sont propres à C# et n’ont aucun équivalent en Java. Le code Xamarin.Android utilise souvent les mots-clés C# suivants (cette table est utile comme référence lors de la lecture de [l’exemple de code](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android) Xamarin.Android) :
 
 |C#|Description|
 |---|---|
@@ -473,7 +473,7 @@ Il existe également plusieurs mots-clés qui sont propres à C# et n’ont aucu
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|Un type valeur qui encapsule un groupe de variables liées.|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|Obtient le type d’un objet.|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|Définit une variable locale implicitement typée.|
-|[valeur](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Fait référence à la valeur que le code client souhaite affecter à une propriété.|
+|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Fait référence à la valeur que le code client souhaite affecter à une propriété.|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|Autorise la substitution d'une méthode dans une classe dérivée.|
 
 
@@ -493,7 +493,7 @@ Pour plus d’informations sur ces techniques, consultez [Présentation de l’i
 
 ## <a name="for-further-reading"></a>Pour obtenir des informations supplémentaires
 
-Le [Guide de programmation C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/) de MSDN est un excellent moyen de commencer à apprendre le langage de programmation C#, et vous pouvez utiliser la [Référence C#](https://docs.microsoft.com/dotnet/csharp/language-reference/) pour rechercher des fonctionnalités spécifiques du langage C#.
+Le [Guide de programmation C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/) de MSDN est un excellent moyen de commencer à apprendre le langage de programmation C#, et vous pouvez utiliser la [Référence c#](https://docs.microsoft.com/dotnet/csharp/language-reference/) pour rechercher des fonctionnalités spécifiques du langage C#.
 
 De la même façon que les connaissances de Java impliquent autant la familiarisation avec les bibliothèques de classes Java que le fait de connaître le langage Java, une connaissance pratique de C# nécessite d’être familiarisé avec le .NET framework. Le paquet d’apprentissage [Passage à C# et .NET Framework pour les développeurs Java](https://www.microsoft.com/download/details.aspx?id=6073) de Microsoft est une bonne solution pour en savoir plus sur .NET Framework à partir d’une perspective Java (tout en obtenant une meilleure compréhension du langage C#).
 
