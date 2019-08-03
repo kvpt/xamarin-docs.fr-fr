@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 5a9bb5164e63afd6649b2f2cb8bafebbf6849dd7
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
+ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510419"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757250"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
 
@@ -114,7 +114,25 @@ Xamarin. Android prend en charge les propriétés système suivantes:
 
 -   *Debug. mono. trace*: Permet de définir le paramètre [mono--trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` .
 
+## <a name="deleting-bin-and-obj"></a>Suppression `bin` et`obj`
 
+Xamarin. Android a subi par le passé une situation telle que:
+
+- Vous rencontrez une erreur de build ou d’exécution étrange.
+- Vous pouvez `Clean`supprimer manuellement vos `bin` répertoires et `obj`. `Rebuild`
+- Le problème disparaît.
+
+Nous avons beaucoup investi dans la résolution des problèmes tels que ceux liés à leur impact sur la productivité des développeurs.
+
+Si cela vous pose un problème:
+
+1. Prenez une note mentale. Quelle était la dernière action qui a obtenu votre projet dans cet État?
+1. Enregistrez votre journal de génération actuel. Réessayez de générer et enregistrez un [Journal de génération de diagnostic](#diagnostic-msbuild-output).
+1. Soumettre un [rapport][bug]de bogue.
+
+Avant de supprimer `bin` vos `obj` répertoires et, compressez-les et enregistrez-les pour les diagnostics ultérieurs, si nécessaire. `Clean` Votre projet d’application Xamarin. Android vous suffit probablement pour faire fonctionner à nouveau des choses.
+
+[bug]: https://github.com/xamarin/xamarin-android/wiki/Submitting-Bugs,-Feature-Requests,-and-Pull-Requests
 
 ## <a name="xamarinandroid-cannot-resolve-systemvaluetuple"></a>Xamarin. Android ne peut pas résoudre System. ValueTuple
 
@@ -169,7 +187,7 @@ adb shell setprop debug.mono.log gref
 
 Xamarin. Android utilise des références internationales Android pour fournir des mappages entre les instances Java et les instances gérées associées, comme lors de l’appel d’une méthode Java, une instance Java doit être fournie à Java.
 
-Malheureusement, les émulateurs Android n’autorisent l’existence que de 2000 références globales à la fois. Le matériel a une limite plus élevée de 52000 références globales. La limite inférieure peut être problématique lors de l’exécution d’applications sur l’émulateur. par conséquent, il peut être très utile *de connaître l'* origine de l’instance.
+Malheureusement, les émulateurs Android n’autorisent l’existence que de 2000 références globales à la fois. Le matériel a une limite plus élevée de 52000 références globales. La limite inférieure peut être problématique lors de l’exécution d’applications sur l’émulateur . par conséquent, il peut être très utile de connaître l’origine de l’instance.
 
  *Remarque*: le décompte de références global est interne à Xamarin. Android et n’inclut pas (et ne peut pas) les références globales extraites par d’autres bibliothèques natives chargées dans le processus. Utilisez le nombre de références global comme estimation.
 
@@ -397,7 +415,7 @@ Pour contourner ce problème, *désinstallez complètement* le package Android, 
 $ adb uninstall @PACKAGE_NAME@
 ```
 
-**ne pas utiliser** , car cela permet de conserver les données d’application et donc de conserver l’UID en conflit sur l’appareil cible.  `adb uninstall -k`
+**ne pas utiliser** , car cela permet de conserver les données d’application et donc de conserver l’UID en conflit sur l’appareil cible. `adb uninstall -k`
 
 
 
