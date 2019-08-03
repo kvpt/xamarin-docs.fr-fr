@@ -1,42 +1,42 @@
 ---
-title: Xamarin.Forms CollectionView le défilement
-description: Quand un où les balayages utilisateur pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments sont affichées. En outre, CollectionView définit deux méthodes ScrollTo, défilement par programmation des éléments dans l’affichage.
+title: Xamarin. Forms CollectionView défilement
+description: Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. En outre, CollectionView définit deux méthodes ScrollTo, qui défilent par programmation des éléments dans la vue.
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: bd328c307ef5ad243569c294a7256ae9bdb3806a
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: 89bbe402f056b875a7dadd96527364847ad470e8
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005263"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738927"
 ---
-# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView le défilement
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. Forms CollectionView défilement
 
 ![](~/media/shared/preview.png "Cette API est actuellement en préversion")
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit deux [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes, que faire défiler les éléments dans la vue. Une des surcharges fait défiler l’élément à l’index spécifié dans la vue, tandis que l’autre fait défiler l’élément spécifié dans la vue. Les deux surcharges ont des arguments supplémentaires qui peuvent être spécifiées pour indiquer la position exacte de l’élément après que le défilement est terminé et si vous souhaitez animer le défilement.
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit deux [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes qui défilent les éléments dans la vue. L’une des surcharges fait défiler l’élément à l’index spécifié dans la vue, tandis que l’autre fait défiler l’élément spécifié dans la vue. Les deux surcharges ont des arguments supplémentaires qui peuvent être spécifiés pour indiquer la position exacte de l’élément une fois le défilement terminé, et s’il faut animer le défilement.
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit un [ `ScrollToRequested` ](xref:Xamarin.Forms.ItemsView.ScrollToRequested) événement est déclenché lorsque un de la [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes est appelée. Le [ `ScrollToRequestedEventArgs` ](xref:Xamarin.Forms.ScrollToRequestedEventArgs) objet qui accompagne le `ScrollToRequested` événement dispose de nombreuses propriétés, y compris `IsAnimated`, `Index`, `Item`, et `ScrollToPosition`. Ces propriétés sont définies à partir des arguments spécifiés dans le `ScrollTo` les appels de méthode.
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit un [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) événement qui est déclenché lorsque l’une [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) des méthodes est appelée. L' [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) objet qui accompagne l' `ScrollToRequested` événement a de nombreuses `Item`propriétés, notamment `IsAnimated`, `Index`, et `ScrollToPosition`. Ces propriétés sont définies à partir des arguments spécifiés `ScrollTo` dans les appels de méthode.
 
-Quand un où les balayages utilisateur pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments sont affichées. Cette fonctionnalité est appelée l’alignement, étant donné que les éléments d’alignement pour positionner lors du défilement s’arrête. Pour plus d’informations, consultez [points d’alignement](#snap-points).
+Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. Cette fonctionnalité est appelée alignement, car les éléments sont alignés à la position lorsque le défilement s’arrête. Pour plus d’informations, consultez [points d’alignement](#snap-points).
 
-## <a name="scroll-an-item-at-an-index-into-view"></a>Faire défiler un élément à un index dans la vue
+## <a name="scroll-an-item-at-an-index-into-view"></a>Faire défiler un élément d’un index dans la vue
 
-La première [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) surcharge de méthode fait défiler l’élément à l’index spécifié dans la vue. Étant donné un [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) objet nommé `collectionView`, l’exemple suivant montre comment faire défiler l’élément à l’index 12 dans la vue :
+La première [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) surcharge de méthode fait défiler l’élément à l’index spécifié dans la vue. À partir [`CollectionView`](xref:Xamarin.Forms.CollectionView) d’un `collectionView`objet nommé, l’exemple suivant montre comment faire défiler l’élément à l’index 12 dans la vue:
 
 ```csharp
 collectionView.ScrollTo(12);
 ```
 
-## <a name="scroll-an-item-into-view"></a>Faire défiler un élément dans la vue
+## <a name="scroll-an-item-into-view"></a>Faire défiler un élément dans l’affichage
 
-La seconde [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) surcharge de méthode fait défiler l’élément spécifié dans la vue. Étant donné un [ `CollectionView` ](xref:Xamarin.Forms.CollectionView) objet nommé `collectionView`, l’exemple suivant montre comment faire défiler l’élément spécifié dans la vue :
+La deuxième [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) surcharge de méthode fait défiler l’élément spécifié dans la vue. À partir [`CollectionView`](xref:Xamarin.Forms.CollectionView) d’un `collectionView`objet nommé, l’exemple suivant montre comment faire défiler l’élément spécifié dans la vue:
 
 ```csharp
 MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
@@ -44,64 +44,64 @@ Monkey monkey = viewModel.Monkeys.FirstOrDefault(m => m.Name == "Proboscis Monke
 collectionView.ScrollTo(monkey);
 ```
 
-## <a name="control-scroll-position"></a>Position de défilement de contrôle
+## <a name="control-scroll-position"></a>Position de défilement du contrôle
 
-Lors du défilement d’un élément dans la vue, la position exacte de l’élément une fois terminé le défilement peut être spécifiée avec le `position` argument de la [ `ScrollTo` ](xref:Xamarin.Forms.ItemsView.ScrollTo*) méthodes. Cet argument accepte un [ `ScrollToPosition` ](xref:Xamarin.Forms.ScrollToPosition) membre d’énumération.
+Lorsque vous faites défiler un élément dans l’affichage, la position exacte de l’élément après la fin du défilement peut `position` être spécifiée avec [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) l’argument des méthodes. Cet argument accepte un [`ScrollToPosition`](xref:Xamarin.Forms.ScrollToPosition) membre de l’énumération.
 
 ### <a name="makevisible"></a>MakeVisible
 
-Le [ `ScrollToPosition.MakeVisible` ](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit défiler jusqu'à ce qu’il soit visible dans la vue :
+Le [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit faire l’objet d’un défilement jusqu’à ce qu’il soit visible dans la vue:
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 ```
 
-Cet exemple de code entraîne le défilement minimal requis pour faire défiler l’élément dans la vue :
+Cet exemple de code entraîne le défilement minimal requis pour faire défiler l’élément dans l’affichage:
 
-[![Capture d’écran de liste verticale CollectionView avec un élément objet d’un défilement dans une vue, sur iOS et Android](scrolling-images/scrolltoposition-makevisible.png "CollectionView de liste verticale avec élément défilé")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "CollectionView de liste verticale avec élément objet d’un défilement")
+[ ![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans la vue, sur iOS et Android](scrolling-images/scrolltoposition-makevisible.png "CollectionView liste verticale avec élément défilé") ] (scrolling-images/scrolltoposition-makevisible-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 > [!NOTE]
-> Le [ `ScrollToPosition.MakeVisible` ](xref:Xamarin.Forms.ScrollToPosition) membre est utilisé par défaut, si le `position` argument n’est pas spécifié lors de l’appel le `ScrollTo` (méthode).
+> Le [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) membre est utilisé par défaut, si l' `position` argument n’est pas spécifié lors de `ScrollTo` l’appel de la méthode.
 
 ### <a name="start"></a>Start
 
-Le [ `ScrollToPosition.Start` ](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit faire défiler vers le début de la vue :
+Le [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit défiler jusqu’au début de la vue:
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 ```
 
-Cet exemple de code génère l’élément en cours défile vers le début de la vue :
+Cet exemple de code entraîne le défilement de l’élément jusqu’au début de la vue:
 
-[![Capture d’écran de liste verticale CollectionView avec un élément objet d’un défilement dans une vue, sur iOS et Android](scrolling-images/scrolltoposition-start.png "CollectionView de liste verticale avec élément défilé")](scrolling-images/scrolltoposition-start-large.png#lightbox "CollectionView de liste verticale avec élément objet d’un défilement")
+[ ![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans la vue, sur iOS et Android](scrolling-images/scrolltoposition-start.png "CollectionView liste verticale avec élément défilé") ] (scrolling-images/scrolltoposition-start-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 ### <a name="center"></a>Center
 
-Le [ `ScrollToPosition.Center` ](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit faire défiler vers le centre de la vue :
+Le [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit défiler jusqu’au centre de la vue:
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 ```
 
-Cet exemple de code génère l’élément en cours défile vers le centre de la vue :
+Cet exemple de code entraîne le défilement de l’élément au centre de la vue:
 
-[![Capture d’écran de liste verticale CollectionView avec un élément objet d’un défilement dans une vue, sur iOS et Android](scrolling-images/scrolltoposition-center.png "CollectionView de liste verticale avec élément défilé")](scrolling-images/scrolltoposition-center-large.png#lightbox "CollectionView de liste verticale avec élément objet d’un défilement")
+[ ![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans la vue, sur iOS et Android](scrolling-images/scrolltoposition-center.png "CollectionView liste verticale avec élément défilé") ] (scrolling-images/scrolltoposition-center-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 ### <a name="end"></a>Fin
 
-Le [ `ScrollToPosition.End` ](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit être l’objet d’un défilement à la fin de la vue :
+Le [`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition) membre indique que l’élément doit défiler jusqu’à la fin de la vue:
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 ```
 
-Cet exemple de code génère l’élément en cours défile vers la fin de la vue :
+Cet exemple de code entraîne le défilement de l’élément à la fin de la vue:
 
-[![Capture d’écran de liste verticale CollectionView avec un élément objet d’un défilement dans une vue, sur iOS et Android](scrolling-images/scrolltoposition-end.png "CollectionView de liste verticale avec élément défilé")](scrolling-images/scrolltoposition-end-large.png#lightbox "CollectionView de liste verticale avec élément objet d’un défilement")
+[ ![Capture d’écran d’une liste verticale CollectionView avec un élément défilé dans la vue, sur iOS et Android](scrolling-images/scrolltoposition-end.png "CollectionView liste verticale avec élément défilé") ] (scrolling-images/scrolltoposition-end-large.png#lightbox "CollectionView liste verticale avec élément défilé")
 
 ## <a name="disable-scroll-animation"></a>Désactiver l’animation de défilement
 
-Une animation de défilement s’affiche lors du défilement d’un élément dans la vue. Toutefois, cette animation peut être désactivée en définissant le `animate` argument de la `ScrollTo` méthode `false`:
+Une animation de défilement s’affiche lorsque vous faites défiler un élément dans l’affichage. Toutefois, cette animation peut être désactivée en `animate` affectant à `ScrollTo` `false`l’argument de la méthode la valeur:
 
 ```csharp
 collectionView.ScrollTo(monkey, animate: false);
@@ -109,40 +109,40 @@ collectionView.ScrollTo(monkey, animate: false);
 
 ## <a name="snap-points"></a>Points d’alignement
 
-Quand un où les balayages utilisateur pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments sont affichées. Cette fonctionnalité est appelée l’alignement, étant donné que les éléments d’alignement pour positionner lorsque le défilement s’arrête et est contrôlé par les propriétés suivantes à partir de la [ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout) classe :
+Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. Cette fonctionnalité est appelée alignement, car les éléments sont alignés à la position lorsque le défilement s’arrête et sont contrôlés par les propriétés [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) suivantes de la classe:
 
-- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType), de type [ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType), spécifie le comportement des points d’ancrage lors du défilement.
-- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment), de type [ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment), spécifie comment les points d’ancrage sont alignées avec les éléments.
+- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType), de type [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType), spécifie le comportement des points d’alignement lors du défilement.
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment), de type [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment), spécifie la manière dont les points d’alignement sont alignés avec les éléments.
 
-Ces propriétés sont secondées par [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
+Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
 
 > [!NOTE]
-> En cas d’alignement, il se produira dans la direction qui produit le moins de mouvement.
+> Lorsque l’alignement se produit, il se produit dans la direction qui produit le moins de mouvement.
 
-### <a name="snap-points-type"></a>Type de points d’alignement
+### <a name="snap-points-type"></a>Type des points d’alignement
 
-Le [ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType) énumération définit les membres suivants :
+L' [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) énumération définit les membres suivants:
 
-- `None` Indique que le défilement ne s’aligne pas aux éléments.
-- `Mandatory` Indique que le contenu s’aligne sur le composant logiciel enfichable le plus proche pointe toujours vers où le défilement naturellement arrêterait, le long de la direction de l’inertie.
-- `MandatorySingle` Indique le même comportement que `Mandatory`, mais uniquement fait défiler un élément à la fois.
+- `None`indique que le défilement n’est pas aligné sur les éléments.
+- `Mandatory`indique que le contenu s’aligne toujours sur le point d’alignement le plus proche jusqu’où le défilement s’arrête naturellement, le long de la direction d’inertie.
+- `MandatorySingle`indique le même comportement que `Mandatory`, mais ne fait que faire défiler un élément à la fois.
 
-Par défaut, le [ `SnapPointsType` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) propriété est définie sur `SnapPointsType.None`, ce qui garantit que le défilement ne s’aligne pas les éléments, comme indiqué dans les captures d’écran suivante :
+Par défaut, la [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) propriété a la `SnapPointsType.None`valeur, ce qui permet de s’assurer que le défilement n’aligne pas les éléments, comme illustré dans les captures d’écran suivantes:
 
-[![Capture d’écran d’une liste verticale CollectionView sans points d’ancrage, sur iOS et Android](scrolling-images/snappoints-none.png "CollectionView de liste verticale sans points d’ancrage")](scrolling-images/snappoints-none-large.png#lightbox "CollectionView de liste verticale sans le composant logiciel enfichable points")
+[ ![Capture d’écran d’une liste verticale CollectionView sans points d’alignement, sur iOS et Android](scrolling-images/snappoints-none.png "CollectionView liste verticale sans points d’alignement") ] (scrolling-images/snappoints-none-large.png#lightbox "CollectionView liste verticale sans points d’alignement")
 
 ### <a name="snap-points-alignment"></a>Alignement des points d’alignement
 
-Le [ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment) énumération définit `Start`, `Center`, et `End` membres.
+L' [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) énumération `Start` `End` définit lesmembres,et.`Center`
 
 > [!IMPORTANT]
-> La valeur de la [ `SnapPointsAlignment` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) propriété n’est respecté lorsque le [ `SnapPointsType` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) propriété est définie sur `Mandatory`, ou `MandatorySingle`.
+> La valeur de la [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) propriété est respectée uniquement lorsque [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) la propriété a `Mandatory`la valeur, `MandatorySingle`ou.
 
 #### <a name="start"></a>Start
 
-Le `SnapPointsAlignment.Start` membre indique que les points d’ancrage sont alignés avec le bord de tête d’éléments.
+Le `SnapPointsAlignment.Start` membre indique que les points d’ancrage sont alignés sur le bord de tête des éléments.
 
-Par défaut, le [ `SnapPointsAlignment` ](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) propriété est définie sur `SnapPointsAlignment.Start`. Toutefois, par souci d’exhaustivité, l’exemple XAML suivant montre comment définir ce membre d’énumération :
+Par défaut, la [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) propriété a la `SnapPointsAlignment.Start`valeur. Toutefois, à des fins d’exhaustivité, l’exemple de code XAML suivant montre comment définir ce membre de l’énumération:
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -180,13 +180,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-Quand un où les balayages utilisateur pour lancer un défilement, le premier élément est aligné en haut de la vue :
+Lorsqu’un utilisateur fait défiler pour lancer un défilement, l’élément supérieur est aligné avec le haut de la vue:
 
-[![Capture d’écran de liste verticale CollectionView avec des points d’ancrage de début, sur iOS et Android](scrolling-images/snappoints-start.png "CollectionView de liste verticale avec des points d’ancrage de début")](scrolling-images/snappoints-start-large.png#lightbox "CollectionView de liste verticale avec démarrage points d’alignement")
+[ ![Capture d’écran d’une liste verticale CollectionView avec des points d’ancrage de début, sur iOS et Android](scrolling-images/snappoints-start.png "CollectionView liste verticale avec points d’ancrage de début") ] (scrolling-images/snappoints-start-large.png#lightbox "Liste verticale CollectionView avec points d’ancrage de début")
 
 #### <a name="center"></a>Center
 
-Le `SnapPointsAlignment.Center` membre indique que les points d’ancrage sont alignées avec le centre d’éléments. L’exemple XAML suivant montre comment définir ce membre d’énumération :
+Le `SnapPointsAlignment.Center` membre indique que les points d’ancrage sont alignés sur le Centre des éléments. L’exemple de code XAML suivant montre comment définir ce membre de l’énumération:
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -224,13 +224,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-Quand un où les balayages utilisateur pour lancer un défilement, le premier élément sera aligné en haut de la vue de centre :
+Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, l’élément supérieur est centré en haut de la vue:
 
-[![Capture d’écran de liste verticale CollectionView avec les points d’ancrage center sur iOS et Android](scrolling-images/snappoints-center.png "CollectionView de liste verticale avec des points d’ancrage center")](scrolling-images/snappoints-center-large.png#lightbox "CollectionView de liste verticale avec points centraux de composant logiciel enfichable")
+[ ![Capture d’écran d’une liste verticale CollectionView avec des points d’ancrage centraux, sur iOS et Android](scrolling-images/snappoints-center.png "CollectionView liste verticale avec points d’alignement du centre") ] (scrolling-images/snappoints-center-large.png#lightbox "Liste verticale CollectionView avec points d’ancrage centraux")
 
 #### <a name="end"></a>Fin
 
-Le `SnapPointsAlignment.End` membre indique que les points d’ancrage sont alignés avec le bord de fin des éléments. L’exemple XAML suivant montre comment définir ce membre d’énumération :
+Le `SnapPointsAlignment.End` membre indique que les points d’ancrage sont alignés sur le bord de fin des éléments. L’exemple de code XAML suivant montre comment définir ce membre de l’énumération:
 
 ```xaml
 <CollectionView x:Name="collectionView"
@@ -268,10 +268,10 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-Quand un où les balayages utilisateur pour lancer un défilement, le dernier élément est aligné sur le bas de la vue :
+Lorsqu’un utilisateur fait défiler pour lancer un défilement, l’élément inférieur est aligné sur le bas de la vue:
 
-[![Capture d’écran de liste verticale CollectionView avec des points d’ancrage de fin, sur iOS et Android](scrolling-images/snappoints-end.png "CollectionView de liste verticale avec des points de terminaison de composant logiciel enfichable")](scrolling-images/snappoints-end-large.png#lightbox "CollectionView de liste verticale d’alignement de fin points")
+[ ![Capture d’écran d’une liste verticale CollectionView avec des points d’accrochage, sur iOS et Android](scrolling-images/snappoints-end.png "CollectionView liste verticale avec points d’ancrage de fin") ] (scrolling-images/snappoints-end-large.png#lightbox "CollectionView liste verticale avec points d’ancrage de fin")
 
 ## <a name="related-links"></a>Liens connexes
 
-- [CollectionView (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+- [CollectionView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

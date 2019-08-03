@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c05bc88ef6d182f282decedff3e4fb03b4bb96b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: feae1a33b2e090ccfe3573285c75978aacd1799a
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334698"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739201"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>Création d’applications mobiles avec xamarin.Forms
 
@@ -26,11 +26,11 @@ Le livre a été publié dans le ressort de 2016 et n’a pas été mis à jour 
 
 Téléchargez votre format de livre électronique par défaut à partir de Microsoft Virtual Academy :
 
-*    [**PDF (56 Mo)**](https://aka.ms/xamebook)
+*    [**PDF (56 Mo)** ](https://aka.ms/xamebook)
 
-*    [**ePub (151 Mo)**](https://aka.ms/xamebook/epub)
+*    [**ePub (151 Mo)** ](https://aka.ms/xamebook/epub)
 
-*    [**Kindle Édition (325 Mo)**](https://aka.ms/xamebook/mobi)
+*    [**Kindle Édition (325 Mo)** ](https://aka.ms/xamebook/mobi)
 
 Vous pouvez également [Téléchargez des chapitres](#download-chapters-and-summaries) au format PDF.
 
@@ -103,7 +103,7 @@ La bibliothèque .NET Standard 2.0 permet également à utiliser les application
 
 <i>Création d’applications mobiles avec Xamarin.Forms</i> commence par décrire comment écrire des applications Xamarin.Forms à l’aide de C#. Le d’Extensible Application Markup Language (XAML) n’est pas introduites jusqu'à ce que [chapitre 7. Visual Studio XAML. Code](summaries/chapter07.md).
 
-XAML a maintenant un rôle plus important dans Xamarin.Forms. Les modèles de solution Xamarin.Forms distribués avec Visual Studio créent des fichiers page XAML. Un développeur à l’aide de Xamarin.Forms devez vous familiariser avec le XAML dès que possible. Le [langage de balisage d’Application eXtensible (XAML)](~/xamarin-forms/xaml/index.md) section de la documentation de Xamarin.Forms contient plusieurs articles concernant XAML pour vous aider à démarrer.
+XAML a maintenant un rôle plus important dans Xamarin.Forms. Les modèles de solution Xamarin.Forms distribués avec Visual Studio créent des fichiers page XAML. Un développeur à l’aide de Xamarin.Forms devez vous familiariser avec le XAML dès que possible. Le [langage de balisage d’Application eXtensible (XAML)](~/xamarin-forms/xaml/index.yml) section de la documentation de Xamarin.Forms contient plusieurs articles concernant XAML pour vous aider à démarrer.
 
 ### <a name="supported-platforms"></a>Plateformes prises en charge
 

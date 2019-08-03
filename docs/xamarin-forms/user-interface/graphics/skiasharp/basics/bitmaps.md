@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645887"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738895"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Principes fondamentaux de la bitmap dans SkiaSharp
 
@@ -22,7 +22,7 @@ _Charger des bitmaps à partir de différentes sources et les afficher._
 
 La prise en charge des images bitmap dans SkiaSharp est assez longue. Cet article traite uniquement les principes de base &mdash; comment charger des bitmaps et comment les afficher :
 
-![](bitmaps-images/bitmapssample.png "L’affichage de deux bitmaps")
+![](bitmaps-images/basicbitmaps-small.png "L’affichage de deux bitmaps")
 
 Vous trouverez une quantité exploration plus approfondie des images bitmap dans la section [SkiaSharp Bitmaps](../bitmaps/index.md).
 
@@ -98,7 +98,7 @@ protected override async void OnAppearing()
 
 Le système d’exploitation Android lève une exception lorsque vous utilisez le `Stream` retourné à partir de `GetStreamAsync` dans le `SKBitmap.Decode` (méthode), car elle est une opération de longue durée sur un thread principal. Pour cette raison, le contenu du fichier bitmap est copié dans un `MemoryStream` à l’aide de l’objet `CopyToAsync`.
 
-La méthode statique `SKBitmap.Decode` méthode est chargée de décodage des fichiers bitmap. Il fonctionne avec les formats bitmap GIF, JPEG et PNG et stocke les résultats dans un format SkiaSharp interne. À ce stade, le `SKCanvasView` doit être invalidée pour autoriser le `PaintSurface` gestionnaire à mettre à jour l’affichage. 
+La méthode statique `SKBitmap.Decode` méthode est chargée de décodage des fichiers bitmap. Il fonctionne avec les formats bitmap GIF, JPEG et PNG et stocke les résultats dans un format SkiaSharp interne. À ce stade, le `SKCanvasView` doit être invalidée pour autoriser le `PaintSurface` gestionnaire à mettre à jour l’affichage.
 
 ## <a name="loading-a-bitmap-resource"></a>Le chargement d’une ressource Bitmap
 

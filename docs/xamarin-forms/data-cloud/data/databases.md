@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645253"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739181"
 ---
 # <a name="xamarinforms-local-databases"></a>Bases de données locales Xamarin.Forms
 
@@ -24,7 +24,7 @@ _Xamarin.Forms prend en charge les applications pilotées par base de données �
 
 Les applications Xamarin.Forms peuvent utiliser le package [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) pour incorporer des opérations de base de données dans du code partagé, en référençant les classes `SQLite` fournies avec le package NuGet. Les opérations de base de données peuvent être définies dans le projet de bibliothèque .NET Standard de la solution Xamarin.Forms.
 
-L’[exemple d’application](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) qui l’accompagne est une simple application de liste de tâches. Les captures d’écran suivantes montrent comment l’exemple s’affiche sur chaque plateforme :
+L’[exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) qui l’accompagne est une simple application de liste de tâches. Les captures d’écran suivantes montrent comment l’exemple s’affiche sur chaque plateforme :
 
 [![Captures d’écran de l’exemple de base de données Xamarin.Forms](databases-images/todo-list-sml.png "Captures d’écran de la première page de la liste de tâches")](databases-images/todo-list.png#lightbox "Captures d’écran de la première page de la liste de tâches") [![Captures d’écran de l’exemple de base de données Xamarin.Forms](databases-images/todo-list-sml.png "Captures d’écran de la première page de la liste de tâches")](databases-images/todo-list.png#lightbox "Captures d’écran de la première page de la liste de tâches")
 
@@ -124,4 +124,3 @@ Cet article vous a montré comment **accéder** à une base de données SQLite �
 
 - [Exemple de liste de tâches](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [Exemples Xamarin.Forms](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-
