@@ -128,7 +128,8 @@
 ##### [Création d’un modèle de données](app-fundamentals/templates/data-templates/creating.md)
 ##### [Sélection d’un modèle de données](app-fundamentals/templates/data-templates/selector.md)
 ### [Déclencheurs](app-fundamentals/triggers.md)
-## [Interface utilisateur](user-interface/index.md)
+## Interface utilisateur
+### [Vue d’ensemble](user-interface/index.yml)
 ### [Indicateur d’activité](user-interface/activityindicator.md)
 ### [Animation](user-interface/animation/index.md)
 #### [Animations simples](user-interface/animation/simple.md)
