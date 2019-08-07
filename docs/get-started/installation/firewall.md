@@ -39,7 +39,7 @@ Si vous utilisez un ordinateur Mac et rencontrez des problèmes d’installatio
 
 Les adresses suivantes doivent être ajoutées pour permettre l’accès à NuGet (Xamarin.Forms est empaqueté au format NuGet) :
 
-- www.nuget.org (pour accéder à NuGet)
+- [www.nuget.org](www.nuget.org) (pour accéder à NuGet)
 - globalcdn.nuget.org (téléchargements NuGet)
 - dl-ssl.google.com (composants Google pour Android et Xamarin.Forms)
 
