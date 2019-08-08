@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 365e580d7d1182cca55a53a714ebb2b9be45ce35
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 25fcf40f7ad94bf5c2ba03fca7413fcaaedba09e
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650730"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739247"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Onglets Shell Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Lorsque le modèle de navigation pour une application comprend un menu volant, le niveau de navigation suivant dans l’application se situe dans la barre d’onglets du bas. De plus, lorsque le menu volant est fermé, la barre d’onglets du bas peut être considérée comme le plus haut niveau de navigation.
 
@@ -290,6 +290,6 @@ Il est également possible de styliser les onglets avec des feuilles de style en
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Navigation Shell Xamarin.Forms](navigation.md)
 - [Propriétés spécifiques du CSS Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

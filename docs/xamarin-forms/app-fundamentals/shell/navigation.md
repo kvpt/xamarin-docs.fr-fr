@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 9f48659a8af7bb74cc33ec0929f41b2a881e1978
-ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
+ms.openlocfilehash: 4c0fc5edd309d5ed8103c5fc3e33817001049241
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66469509"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739266"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation dans Xamarin.Forms Shell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell inclut une expérience de navigation basée sur URI qui utilise des itinéraires pour accéder à n’importe quelle page dans l’application, sans avoir à suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
 
@@ -339,4 +339,4 @@ La propriété `Command` est définie sur un élément `ICommand` à exécuter l
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

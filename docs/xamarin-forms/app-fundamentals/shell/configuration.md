@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
-ms.openlocfilehash: 186e9af867e89c0130822593bb0d7ab071ee0505
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 022aa9f1aeb2961d98b52747441e875bd89a584a
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252413"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739317"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Configuration de la page Shell Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 La classe `Shell` définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications Shell Xamarin.Forms. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’affichage des vues dans la barre de navigation.
 
@@ -150,6 +150,6 @@ La classe [`Layout`](xref:Xamarin.Forms.Layout) dérive de la classe [`View`](xr
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Styler des applications Xamarin.Forms avec des styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md)
 - [Propriétés spécifiques du CSS Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

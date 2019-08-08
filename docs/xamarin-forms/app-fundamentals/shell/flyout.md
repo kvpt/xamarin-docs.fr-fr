@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 51d8764854db2fb62a412fab6e1e48c8beabbf1f
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66178057"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739288"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Menu volant Shell Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Le menu volant est le menu racine d’une application Shell. Il est accessible par une icône ou par balayage en partant du côté de l’écran. Il se compose d’un en-tête facultatif, d’éléments de menu volant et d’éléments de menu facultatifs :
 
@@ -467,4 +467,4 @@ Cet exemple joint le `MenuItemTemplate` au niveau du Shell au premier objet `Men
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

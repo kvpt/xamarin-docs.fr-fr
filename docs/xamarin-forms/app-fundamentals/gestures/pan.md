@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 03b9c5f903cea67032a9560754a32ac552635e92
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 73e312a1af56091a7e579d3fcbcea810ee0efb1e
+ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653873"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820967"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Ajout d’un module de reconnaissance des mouvements panoramiques
 
@@ -48,9 +48,6 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
   // Handle the pan
 }
 ```
-
-> [!NOTE]
-> Pour effectuer un panoramique sur Android, vous devez avoir au moins le [package NuGet Xamarin.Forms 2.1.0-pre1](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1).
 
 ## <a name="creating-a-pan-container"></a>Création d’un conteneur panoramique
 
@@ -147,7 +144,7 @@ Cette méthode met à jour le contenu visible de l’élément d’interface uti
 Quand vous effectuez un panoramique d’un élément qui n’occupe pas tout l’écran, la hauteur et la largeur de la fenêtre d’affichage peuvent être obtenues à partir des propriétés [`Height`](xref:Xamarin.Forms.VisualElement.Height) et [`Width`](xref:Xamarin.Forms.VisualElement.Width) de l’élément.
 
 > [!NOTE]
-> L’affichage d’images haute résolution peut augmenter considérablement l’empreinte mémoire d’une application. Par conséquent, elles doivent être créées seulement si elles sont nécessaires et doivent être libérées dès que l’application n’en a plus besoin. Pour plus d’informations, consultez [Optimiser les ressources d’images](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
+> L’affichage d’images haute résolution peut augmenter considérablement l’empreinte mémoire d’une application. Par conséquent, elles doivent être créées seulement si elles sont nécessaires et doivent être libérées dès que l’application n’en a plus besoin. Pour plus d’informations, consultez [Optimiser les ressources d’images](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources).
 
 ## <a name="related-links"></a>Liens associés
 
