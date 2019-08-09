@@ -101,7 +101,7 @@ sections:
             html: Découvrez comment créer des propriétés jointes et les utiliser à partir de XAML.
             image:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-              href: bindable-properties.md
+              href: attached-properties.md
             title: Propriétés jointes
           - href: resource-dictionaries.md
             html: Apprenez à créer des ressources XAML et à les réutiliser dans une application Xamarin. Forms.
