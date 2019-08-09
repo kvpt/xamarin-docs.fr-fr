@@ -829,6 +829,8 @@
               href: troubleshooting/questions/exception-marshal-obj-c.md
             - name: "Erreur d’exécution\_: l’assembly mscorlib.dll est introuvable ou ne peut pas être chargé"
               href: troubleshooting/questions/error-mscorlib-not-found.md
+            - name: "Erreur de compilation\_: impossible d’encoder le décalage X dans le réadressage dispersé qui en résulte"
+              href: troubleshooting/questions/error-encode-offset-scattered-relocation.md
             - name: Le fichier IPA contient 0 octet
               href: troubleshooting/questions/ipa-zero-bytes.md
             - name: "Erreur IBTool\_: impossible d’effectuer l’opération."
