@@ -1,5 +1,5 @@
 ---
-title: Reconnaissance des émotions à l’aide de l’API visage
+title: Reconnaissance des émotions perçues à l’aide de l’API Visage
 description: L’API visage prend une expression faciale dans une image en tant qu’entrée et retourne des données qui inclut des niveaux de confiance sur un ensemble d’émotions pour chaque visage de l’image. Cet article explique comment utiliser l’API visage de reconnaître l’émotion, pour évaluer une application Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
@@ -7,22 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656566"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869396"
 ---
-# <a name="emotion-recognition-using-the-face-api"></a>Reconnaissance des émotions à l’aide de l’API visage
+# <a name="perceived-emotion-recognition-using-the-face-api"></a>Reconnaissance des émotions perçues à l’aide de l’API Visage
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_L’API visage prend une expression faciale dans une image en tant qu’entrée et retourne des données qui inclut des niveaux de confiance sur un ensemble d’émotions pour chaque visage de l’image. Cet article explique comment utiliser l’API visage de reconnaître l’émotion, pour évaluer une application Xamarin.Forms._
+La API Visage peut effectuer la détection d’émotion pour détecter colère, satentant, dégoût, peur, bonheur, neutral, tristesse et surprise, dans une expression faciale basée sur des annotations perçues par des codeurs humains. Il est important de noter, cependant, que les expressions faciales seules ne peuvent pas nécessairement représenter les États internes des personnes.
 
-## <a name="overview"></a>Vue d'ensemble
-
-L’API visage peut effectuer la détection d’émotion pour détecter la colère, mépris, le dégoût, peur, le bonheur, neutre, tristesse et la surprise, dans une expression faciale. Ces émotions sont universellement et toutes les cultures communiquées via les mêmes expressions du visage de base. Ainsi que de retourner un résultat de l’émotion d’une expression faciale, l’API visage peut également retourne un rectangle englobant pour les visages détectés. Notez qu’une clé API doit être obtenue pour utiliser l’API visage. Cela peut être obtenue au [essayez Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+En plus de retourner un résultat émotion pour une expression faciale, le API Visage peut également retourner un cadre englobant pour les visages détectés. Notez qu’une clé API doit être obtenue pour utiliser l’API visage. Cela peut être obtenue au [essayez Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
 
 Reconnaissance des émotions peut être effectuée via une bibliothèque de client et via l’API REST. Cet article se concentre sur l’exécution de la reconnaissance des émotions via l’API REST. Pour plus d’informations sur l’API REST, consultez [API REST de visage](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
@@ -44,7 +42,7 @@ public FaceRecognitionService()
 
 Échec de transmettre une clé API valide à l’API visage entraîne une erreur de 401 réponse.
 
-## <a name="performing-emotion-recognition"></a>Exécution de la reconnaissance des émotions
+## <a name="perform-emotion-recognition"></a>Effectuer la reconnaissance des émotions
 
 La reconnaissance d’émotions est effectuée en effectuant une demande POST contenant une image à la `detect` à l’API `https://[location].api.cognitive.microsoft.com/face/v1.0`, où `[location]]` correspond à la région que vous avez utilisé pour obtenir votre clé API. Les paramètres facultatifs de la demande sont :
 
@@ -81,7 +79,7 @@ Cette méthode génère un URI de demande et envoie ensuite la demande à la `de
 > [!NOTE]
 > Vous devez utiliser la même région dans vos appels d’API visage en tant que vous avez utilisé pour obtenir vos clés d’abonnement. Par exemple, si vous avez obtenu vos clés d’abonnement à partir de la `westus` région, le point de terminaison de détection de visage sera `https://westus.api.cognitive.microsoft.com/face/v1.0/detect`.
 
-### <a name="sending-the-request"></a>Envoi de la demande
+### <a name="send-the-request"></a>Envoyer la demande
 
 Le `SendRequestAsync` méthode rend la requête POST à l’API visage et retourne le résultat comme un `Face` tableau :
 
@@ -132,7 +130,7 @@ La requête POST est ensuite envoyée à `detect` API. La réponse est lu, dés�
 
 Le `detect` API enverra un code d’état HTTP 200 (OK) dans la réponse, à condition que la demande est valide, ce qui indique que la demande a réussi et que les informations demandées figurent dans la réponse. Pour obtenir la liste des réponses d’erreur possibles, consultez [API REST de visage](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
-### <a name="processing-the-response"></a>Traitement de la réponse
+### <a name="process-the-response"></a>Traiter la réponse
 
 La réponse de l’API est renvoyée au format JSON. Les données JSON suivantes affiche un message de réponse correcte standard qui fournit les données demandées par l’exemple d’application :
 
@@ -174,11 +172,7 @@ La capture d’écran suivante montre le résultat du processus de reconnaissanc
 
 ![](emotion-recognition-images/emotion-recognition.png "Reconnaissance des émotions")
 
-## <a name="summary"></a>Récapitulatif
-
-Cet article a expliqué comment utiliser l’API visage de reconnaître l’émotion, pour évaluer une application Xamarin.Forms. L’API visage prend une expression faciale dans une image en tant qu’entrée et retourne des données qui inclut la confiance entre un ensemble d’émotions pour chaque visage de l’image.
-
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [API visage](/azure/cognitive-services/face/overview/).
 - [TODO Cognitive Services (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

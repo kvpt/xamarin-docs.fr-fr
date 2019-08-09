@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 71836021b29094911f9d1ad43639ed103fa18b73
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8173ebcc174df6e34a53f226a43083bd28941031
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652817"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869375"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>Créer un convertisseur visuel Xamarin. Forms
 
@@ -104,20 +104,23 @@ Le `CustomVisual` type peut ensuite être inscrit auprès des classes de convert
 
 ## <a name="register-the-ivisual-type"></a>Inscrire le type IVisual
 
-Dans les projets de plateforme, décorez les classes de `ExportRendererAttribute`convertisseur avec les éléments suivants:
+Dans les projets de plateforme, décorez les espaces de noms `ExportRendererAttribute`du convertisseur avec les éléments suivants:
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]
-public class CustomButtonRenderer : ButtonRenderer
+namespace VisualDemos.iOS
 {
-    protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+    public class CustomButtonRenderer : ButtonRenderer
     {
-        ...
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        {
+            // ...
+        }
     }
 }
 ```
 
-Dans cet exemple, le `ExportRendererAttribute` spécifie que `CustomButtonRenderer` la classe sera [`Button`](xref:Xamarin.Forms.Button) utilisée pour restituer des objets consommatrices, `IVisual` avec le type inscrit comme troisième argument. Un convertisseur qui spécifie un `IVisual` type, dans le cadre de `ExportRendererAttribute`son, sera utilisé pour le rendu de l’option choisi dans les vues, plutôt que dans le convertisseur par défaut.
+Dans cet exemple pour le projet de plateforme iOS, `ExportRendererAttribute` le spécifie `CustomButtonRenderer` que la classe sera [`Button`](xref:Xamarin.Forms.Button) utilisée pour restituer des objets consommatrices `IVisual` , avec le type inscrit comme troisième argument. Un convertisseur qui spécifie un `IVisual` type, dans le cadre de `ExportRendererAttribute`son, sera utilisé pour le rendu de l’option choisi dans les vues, plutôt que dans le convertisseur par défaut.
 
 ## <a name="consume-the-visual-renderer"></a>Utiliser le convertisseur visuel
 
