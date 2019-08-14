@@ -1,6 +1,6 @@
 ---
-title: Règles d’analyse Xamarin.iOS
-description: Ce document décrit un ensemble de règles d’analyse qui vérifient les paramètres du projet Xamarin.iOS pour vous aider à déterminer si les paramètres plus/better-optimized sont disponibles.
+title: Règles d’analyse Xamarin. iOS
+description: Ce document décrit un ensemble de règles d’analyse qui vérifient les paramètres de projet Xamarin. iOS pour déterminer si plus ou moins de paramètres optimisés sont disponibles.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
@@ -8,63 +8,70 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 8a4990ce7b2bcacbd4b97b214458531b3d94122e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5f968e01cc0b866f94f524728b4bba1e759e8bf8
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61416381"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012382"
 ---
-# <a name="xamarinios-analysis-rules"></a>Règles d’analyse Xamarin.iOS
+# <a name="xamarinios-analysis-rules"></a>Règles d’analyse Xamarin. iOS
 
-Analyse de Xamarin.iOS est un ensemble de règles qui vérifient les paramètres de votre projet pour vous aider à déterminer si des paramètres optimisés meilleure/plus élevé sont disponibles.
+Xamarin. iOS Analysis est un ensemble de règles qui vérifient les paramètres de votre projet pour vous aider à déterminer si des paramètres optimisés/plus optimisés sont disponibles.
 
-Exécuter les règles d’analyse aussi souvent que possible pour rechercher les améliorations possibles au début et de gagner du temps de développement.
+Exécutez les règles d’analyse le plus souvent possible pour trouver des améliorations possibles dès le début et économisez le temps de développement.
 
-Pour exécuter les règles, dans Visual Studio pour le menu du Mac, sélectionnez **projet > exécuter l’analyse du Code**.
+Pour exécuter les règles, dans le menu de Visual Studio pour Mac, sélectionnez **projet > exécuter l’analyse du code**.
 
 > [!NOTE]
-> Analyse de Xamarin.iOS s’exécute uniquement sur votre configuration actuellement sélectionnée. Nous vous recommandons vivement de l’outil pour le débogage en cours d’exécution **et** configurations release.
+> L’analyse Xamarin. iOS s’exécute uniquement sur la configuration actuellement sélectionnée. Nous vous recommandons vivement d’exécuter l’outil pour les configurations Debug **et** Release.
 
 <a name="XIA0001" />
 
-## <a name="xia0001-disabledlinkerrule"></a>XIA0001 : DisabledLinkerRule
+## <a name="xia0001-disabledlinkerrule"></a>XIA0001: DisabledLinkerRule
 
-- **Problème :** L’éditeur de liens est désactivé sur l’appareil pour le mode de débogage.
-- **Correctif :** Vous devez tenter d’exécuter votre code avec l’éditeur de liens afin d’éviter les surprises.
-Pour configurer, accéder au projet > Build iOS > comportement de l’éditeur de liens.
+- **Problème :** L’éditeur de liens est désactivé sur l’appareil pour le mode débogage.
+- **Résoudre** Vous devez essayer d’exécuter votre code avec l’éditeur de liens pour éviter les surprises.
+Pour le configurer, accédez à projet > iOS Build > comportement de l’éditeur de liens.
 
 <a name="XIA0002" />
 
-## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002 : TestCloudAgentReleaseRule
+## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002: TestCloudAgentReleaseRule
 
-- **Problème :** Builds d’applications qui initialisent l’agent de Test Cloud sont rejetées par Apple lorsque envoyé, car elles utilisent les API privée.
-- **Correctif :** Ajouter ou corriger les #if nécessaires et définit dans le code.
+- **Problème :** Les builds d’application qui initialisent l’agent de Test Cloud sont rejetées par Apple quand elles sont soumises, car elles utilisent l’API privée.
+- **Résoudre** Ajoutez ou corrigez les #if et les définitions nécessaires dans le code.
 
 <a name="XIA0003" />
 
-## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003 : IPADebugBuildsRule
+## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003: IPADebugBuildsRule
 
-- **Problème :** Configuration de débogage qui utilise des clés de signature de développeur ne doit pas générer un fichier IPA qu’il est nécessaire uniquement pour la distribution, qui utilise désormais l’Assistant Publication.
-- **Correctif :** Désactivez la génération IPA dans Options du projet pour la configuration Debug.
+- **Problème :** La configuration de débogage qui utilise des clés de signature de développeur ne doit pas générer de loi, car elle n’est nécessaire que pour la distribution, qui utilise désormais l’Assistant Publication.
+- **Résoudre** Désactivez la génération de la configuration de la loi dans les options de projet pour la configuration Debug.
 
 <a name="XIA0004" />
 
-## <a name="xia0004-missing64bitsupportrule"></a>XIA0004 : Missing64BitSupportRule
+## <a name="xia0004-missing64bitsupportrule"></a>XIA0004: Missing64BitSupportRule
 
-- **Problème :** L’architecture de prise en charge pour « mise en production | l’appareil » n’est pas compatible, manquant ARM64 64 bits. Il s’agit d’un problème comme Apple n’accepte pas les applications iOS uniquement 32 bits dans l’App Store.
-- **Correctif :** Double-cliquez sur votre projet iOS, accédez à Build > iOS, générer et modifier les architectures prises en charge, par conséquent, il a ARM64.
+- **Problème :** L’architecture prise en charge pour «Release | l’appareil n’est pas compatible 64 bits, ARM64 manquant. Il s’agit d’un problème car Apple n’accepte pas 32 bits uniquement pour les applications iOS dans AppStore.
+- **Résoudre** Double-cliquez sur votre projet iOS, accédez à Build > iOS Build et modifiez les architectures prises en charge pour qu’elles disposent de ARM64.
 
 <a name="XIA0005" />
 
-## <a name="xia0005-float32rule"></a>XIA0005 : Float32Rule
+## <a name="xia0005-float32rule"></a>XIA0005: Float32Rule
 
-- **Problème :** N’utilisez ne pas l’option float32 (--aot-options-O = = float32) entraîne des performances importantes de coût, en particulier sur mobile, où les mathématiques à double précision est sensiblement plus lente. Notez que .NET utilise double précision en interne, même pour float, par conséquent, l’activation de cette option affecte la précision et, éventuellement, de compatibilité.
-- **Correctif :** Double-cliquez sur votre projet iOS, accédez à Build > iOS générer et décochez le « Effectuer toutes les opérations de virgule flottante 32 bits en tant que valeur float 64 bits ».
+- **Problème :** Le fait de ne pas utiliser l’option float32 (--AOT-options =-O = float32) entraîne un coût de performance de lourdeur, en particulier sur mobile, où la mathématique double précision est sensiblement plus lente. Notez que .NET utilise la double précision en interne, même pour le type float, donc l’activation de cette option affecte la précision et, éventuellement, la compatibilité.
+- **Résoudre** Double-cliquez sur votre projet iOS, accédez à Build > iOS Build et décochez la case «effectuer toutes les opérations float 32 bits sous la forme d’une virgule flottante de 64 bits».
 
 <a name="XIA0006" />
 
-## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006 : HttpClientAvoidManaged
+## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006: HttpClientAvoidManaged
 
-- **Problème :** Nous recommandons d’utiliser le gestionnaire HttpClient natif au lieu de celle pour de meilleures performances, plus petite taille de l’exécutable, géré et facilement prendre en charge les standards plus récents.
-- **Correctif :** Double-cliquez sur votre projet iOS, accédez à Build > iOS, générer et modifier l’implémentation de HttpClient NSUrlSession (iOS 7 +) ou CFNetwork pour prendre en charge de la version précédente d’iOS 7.
+- **Problème :** Nous vous recommandons d’utiliser le gestionnaire HttpClient natif au lieu de l’un d’eux pour obtenir de meilleures performances, une plus petite taille d’exécutable et pour prendre en charge facilement les normes les plus récentes.
+- **Résoudre** Double-cliquez sur votre projet iOS, accédez à Build > iOS Build et remplacez l’implémentation de HttpClient par passer (iOS 7 +) ou CFNetwork pour prendre en charge la version précédente d’iOS 7.
+
+<a name="XIA0007" />
+
+## <a name="xia0007-usellvmrule"></a>XIA0007: UseLLVMRule
+
+- **Problème :** Pour la configuration de la version | iPhone, nous vous recommandons d’activer le compilateur LLVM qui génère du code plus rapide à exécuter au détriment du temps de génération.
+- **Résoudre** Double-cliquez sur votre projet iOS, accédez à Build > iOS Build et pour Release | iPhone, activez l’option du compilateur d’optimisation LLVM.
