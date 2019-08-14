@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: da19b9071695f11a7c5591b7e715d85daa01841b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3291589f4a61fad7d7465e0ac2bd4844ae4a0655
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508720"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980733"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -137,7 +137,7 @@ Vérifiez que la version installée de Xcode prend en charge les architectures s
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: ABI non valide: *. Les Abi pris en charge sont: i386, x86_64, ARMv7, ARMv7 + LLVM, ARMv7 + LLVM + Thumb2, armv7s, armv7s + LLVM, armv7s + LLVM + Thumb2, arm64 et arm64 + LLVM.
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: ABI non valide: *. Les Abi pris en charge sont: i386, x86_64, ARMv7, ARMv7 + LLVM, ARMv7 + LLVM + Thumb2, armv7s, armv7s + LLVM, armv7s + LLVM + Thumb2, arm64 et arm64 + LLVM.
 
 Un ABI non valide a été passé à mTouch. Spécifiez un ABI valide.
 
@@ -252,7 +252,7 @@ Pour résoudre ce problème, modifiez «nom de l’application» dans les option
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x8664"></a>MT0037: unitouch. dll n’est pas compatible 64 bits. Référencez Xamarin. iOS. dll ou ne générez pas pour une architecture 64 bits (ARM64 et/ou x86_64).
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: unitouch. dll n’est pas compatible 64 bits. Référencez Xamarin. iOS. dll ou ne générez pas pour une architecture 64 bits (ARM64 et/ou x86_64).
 
 <a name="MT0038" />
 
@@ -838,7 +838,7 @@ Pour plus d’informations, consultez le bogue n °[52727](https://bugzilla.xama
 
 Une erreur s’est produite lors du contact d’un fichier (qui est effectuée pour garantir que les builds partielles sont effectuées correctement).
 
-Cet avertissement peut probablement être ignoré; en cas de problème, le fichier est un https://bugzilla.xamarin.com bogue https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) (] (et il sera examiné.
+Cet avertissement peut probablement être ignoré; en cas de problème, le fichier est [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) un bogue et il est examiné.
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx: Messages d’erreur liés au projet
 
@@ -1678,7 +1678,7 @@ Il est parfois possible de contourner ce problème en désactivant les builds in
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvancedtopicslimitationsreversecallbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: Restriction AOA: La méthode' * 'doit être statique, car elle est décorée avec [MonoPInvokeCallback]. Voir [developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: Restriction AOA: La méthode' * 'doit être statique, car elle est décorée avec [MonoPInvokeCallback]. Voir [developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 Ce message d’erreur provient du compilateur AOA.
 
@@ -1824,7 +1824,7 @@ Il s’agit toujours d’un bogue dans Xamarin. iOS. Veuillez renseigner un rapp
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112: Le Bureau d’enregistrement a trouvé `*`un type non valide. L’inscription de types génériques avec Objective-C n’est pas prise en charge et peut entraîner un comportement aléatoire et/ou des pannes (pour la compatibilité descendante avec les versions antérieures de Xamarin. iOS, `--unsupported--enable-generics-in-registrar` il est possible d’ignorer cette erreur en passant comme un mTouch supplémentaire argument dans la page des options de génération iOS du projet. Pour plus d’informations, consultez [Developer.xamarin.com/guides/iOS/advanced_topics/Registrar](~/ios/internals/registrar.md) .
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112: Le Bureau d’enregistrement a trouvé `*`un type non valide. L’inscription de types génériques avec Objective-C n’est pas prise en charge et peut entraîner un comportement aléatoire et/ou des pannes (pour la compatibilité descendante avec les versions antérieures de Xamarin. iOS, `--unsupported--enable-generics-in-registrar` il est possible d’ignorer cette erreur en passant comme un mTouch supplémentaire argument dans la page des options de génération iOS du projet. Pour plus d’informations, consultez [Developer.xamarin.com/guides/iOS/advanced_topics/Registrar](~/ios/internals/registrar.md) .
 
 <a name="MT4113" />
 
@@ -2110,7 +2110,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez signaler un bog
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managedname-because-its-objective-c-name-exportedname-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168: Impossible d’enregistrer le type «{\_Managed Name}», car son nom objective\_-c «{Export Name}» est un mot clé objective-c. Veuillez utiliser un autre nom.
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168: Impossible d’enregistrer le type «{\_Managed Name}», car son nom objective\_-c «{Export Name}» est un mot clé objective-c. Veuillez utiliser un autre nom.
 
 Le nom objective-C du type en question n’est pas un identificateur objective-C valide.
 
@@ -3017,6 +3017,6 @@ Cela indique un bogue dans Xamarin. iOS. Veuillez signaler un bogue [http://bugz
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: Impossible de trouver un type d’extension valide pour l’enum intelligent «{smart_type}». Veuillez signaler un bogue https://bugzilla.xamarin.com dans.
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: Impossible de trouver un type d’extension valide pour l’enum intelligent «{smart_type}». Veuillez signaler un bogue https://bugzilla.xamarin.com dans.
 
 Cela indique un bogue dans Xamarin. iOS. Veuillez signaler un bogue [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)dans.

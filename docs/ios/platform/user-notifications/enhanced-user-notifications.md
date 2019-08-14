@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 775675e11b85bb53bb51c36b71129a086d9dd60f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ccb10829f10ddd76fe7402143d66a32949daccc1
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651264"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980803"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Notifications utilisateur améliorées dans Xamarin. iOS
 
@@ -78,7 +78,7 @@ Voici quelques exemples de notifications distantes:
 Deux types de notifications distantes sont disponibles pour une application iOS:
 
 - **Accès** de l’utilisateur: ceux-ci sont affichés à l’utilisateur sur l’appareil.
-- **Mises à jour silencieuses** : celles-ci fournissent un mécanisme permettant de mettre à jour le contenu d’une application IOS en arrière-plan. Lorsqu’une mise à jour en mode silencieux est reçue, l’application peut accéder aux serveurs de suppression pour extraire le contenu le plus récent.
+- **Mises à jour silencieuses** : celles-ci fournissent un mécanisme permettant de mettre à jour le contenu d’une application IOS en arrière-plan. Lorsqu’une mise à jour silencieuse est reçue, l’application peut accéder aux serveurs distants pour extraire le contenu le plus récent.
 
 Pour plus d’informations, consultez la documentation relative au [Guide de programmation des notifications locales et](https://developer.apple.com/documentation/usernotifications) distantes d’Apple.
 

@@ -6,12 +6,12 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 47ed7fc1b4485864646a17940aceed395a4a8983
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680910"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978388"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>Présentation du développement de jeux avec monojeu
 
@@ -23,7 +23,7 @@ Monogame est une API multiplateformes, accélérée sur le matériel, qui fourni
 
 La première section de cette procédure pas à pas se concentre sur la configuration d’un projet vide. La dernière section couvre l’écriture de la logique et du contenu de votre jeu, dont la plupart seront multiplateformes.
 
-À la fin de cette procédure pas à pas, nous allons créer un jeu simple où le joueur peut contrôler un personnage animé avec entrée tactile.  Bien qu’il ne s’agisse pas techniquement d’un jeu complet (dans la mesure où il n’a pas de conditions gagnantes ou perdues), il montre de nombreux concepts de développement de jeux et peut servir de base pour de nombreux types de jeux. 
+À la fin de cette procédure pas à pas, nous allons créer un jeu simple où le joueur peut contrôler un personnage animé avec entrée tactile.  Bien qu’il ne s’agisse pas techniquement d’un jeu complet (dans la mesure où il n’a pas de conditions gagnantes ou perdues), il montre de nombreux concepts de développement de jeux et peut servir de base pour de nombreux types de jeux.
 
 Le résultat de cette procédure pas à pas est le suivant:
 
@@ -31,10 +31,9 @@ Le résultat de cette procédure pas à pas est le suivant:
 
 ## <a name="monogame-and-xna"></a>Monojeu et XNA
 
-La bibliothèque monojeu est conçue pour imiter la bibliothèque XNA de Microsoft dans la syntaxe et les fonctionnalités.  Tous les objets monojeu existent sous l’espace de noms Microsoft. XNA, ce qui permet l’utilisation de la plupart du code XNA en monojeu sans aucune modification. 
+La bibliothèque monojeu est conçue pour imiter la bibliothèque XNA de Microsoft dans la syntaxe et les fonctionnalités.  Tous les objets monojeu existent sous l’espace de noms Microsoft. XNA, ce qui permet l’utilisation de la plupart du code XNA en monojeu sans aucune modification.
 
 Les développeurs familiarisés avec XNA seront déjà familiarisés avec la syntaxe de monojeu, et les développeurs qui recherchent des informations supplémentaires sur l’utilisation du monojeu pourront faire référence à des procédures pas à pas de XNA en ligne existantes, à la documentation des API et aux discussions.
-
 
 ## <a name="walkthrough-parts"></a>Parties de procédure pas à pas
 

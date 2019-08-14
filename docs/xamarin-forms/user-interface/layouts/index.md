@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 1889579a48364204a977d63bd9bdb875df37a2bf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7d63dafbb17a3757f5d15f65e977b4b0cb8bc44a
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657031"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980861"
 ---
 # <a name="layouts-in-xamarinforms"></a>Dispositions dans Xamarin.Forms
 
@@ -32,6 +32,7 @@ Chaque contrôle de disposition est décrite ci-dessous, ainsi que des détails 
 * **[RelativeLayout](relative-layout.md)** : permet d’organiser les vues en définissant des contraintes par rapport aux dimensions & position de leurs parents.
 * **[Grid](grid.md)** : permet d’organiser les vues dans une grille. Lignes et colonnes peuvent être spécifiés en termes de valeurs absolues ou des proportions.
 * **[FlexLayout](flex-layout.md)** : permet d’organiser les affichages horizontalement ou verticalement avec l’encapsulation.
+* **[Frame](frame.md)** : utilisé pour encapsuler une vue avec une bordure, ou un cadre, qui peut être configurée avec des couleurs, des ombres, et bien plus encore.
 * **[ScrollView](scroll-view.md)** : permet de fournir un défilement lorsqu’une vue ne peut pas s’ajuster entièrement dans les limites de l’écran.
 * **[LayoutOptions](layout-options.md)** : définissez l’alignement et l’expansion d’une vue, par rapport à son parent.
 * **[Transparence d’entrée](#input_transparency)** : spécifie si un élément reçoit une entrée.
@@ -179,6 +180,10 @@ Notez les aspects suivants du code ci-dessus :
 - Grilles et les colonnes sont explicitement spécifiés, ne pas déduit à partir du contenu.
 - `Height` et `Width` valeurs peuvent être définies en étoile, ce qui signifie que la grille définit ces valeurs pour remplir l’espace disponible.
 - La position de chaque bouton est spécifiée par `Grid.Row`  &  `Grid.Column` propriétés.
+
+### <a name="frameframemd"></a>[Frame](frame.md)
+
+Une `Frame` disposition permet de créer une bordure personnalisable autour de l' `View`enfant. Un `Frame` peut être utilisé pour placer une bordure autour d’un contrôle tel qu' `Button` un `Label` ou ou peut encapsuler d’autres dispositions pour créer des objets d’interface utilisateur plus complexes tels qu’une carte.
 
 ### <a name="layoutoptionslayout-optionsmd"></a>[LayoutOptions](layout-options.md)
 

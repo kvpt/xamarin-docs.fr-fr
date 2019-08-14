@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: b48e92bcb49109dad6e8c5260b5cb822945e7a0b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82ca106f29eb28672abcbd282b60841bfdb4da8c
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651331"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980828"
 ---
 # <a name="xamarinforms-layouts"></a>Dispositions Xamarin.Forms
 
@@ -45,7 +45,7 @@ Ces classes dérivent [ `Layout` ](xref:Xamarin.Forms.Layout), qui définit [ `P
 
 |     |     |
 | --- | --- |
-| Le [ `Frame` ](xref:Xamarin.Forms.Frame) dérive de la classe [ `ContentView` ](#contentView) et affiche un cadre rectangulaire autour de ses enfants. `Frame` a une valeur par défaut [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) valeur 20 et définit également [ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor), [ `CornerRadius` ](xref:Xamarin.Forms.Frame.CornerRadius), et [ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow)propriétés.<br /><br />[Documentation de l’API](xref:Xamarin.Forms.Frame) | [![Exemple de frame](layouts-images/Frame.png "Frame exemple")](layouts-images/Frame-Large.png#lightbox "Frame exemple")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| La [`Frame`](xref:Xamarin.Forms.Frame) classe dérive de [`ContentView`](#contentView) et affiche une bordure, ou Frame, autour de son enfant. La `Frame` classe a une valeur [`Padding`](xref:Xamarin.Forms.Layout.Padding) par défaut de 20 et définit [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)également les [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)propriétés, [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) et.<br /><br />[Documentation de l’API](xref:Xamarin.Forms.Frame) / [Guide](~/xamarin-forms/user-interface/layouts/frame.md) / [exemple](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![Exemple de frame](layouts-images/Frame.png "Frame exemple")](layouts-images/Frame-Large.png#lightbox "Frame exemple")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />

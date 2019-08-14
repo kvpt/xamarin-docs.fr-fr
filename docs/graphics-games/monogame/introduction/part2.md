@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680952"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978484"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>Partie 2: implémentation du WalkingGame
 
@@ -28,7 +28,6 @@ Les parties précédentes de cette procédure pas à pas ont montré comment cr�
 - Ajout de la première animation à CharacterEntity
 - Ajout d’un déplacement au caractère
 - Mouvement et animation correspondants
-
 
 ## <a name="unzipping-our-game-content"></a>Décompression de notre contenu de jeu
 
@@ -57,11 +56,11 @@ Nous devons créer une `Texture2D` instance à utiliser lors du rendu de notre S
 
 Pour ajouter le contenu de votre jeu, cliquez avec le bouton droit sur le dossier **contenu** , puis sélectionnez **Ajouter > ajouter des fichiers...** Accédez à l’emplacement où le fichier. zip de contenu a été extrait, puis sélectionnez le fichier **charactersheet. png** . Si vous êtes invité à ajouter le fichier au dossier, sélectionnez l’option de **copie** :
 
-![](part2-images/image1.png "Si vous êtes invité à ajouter le fichier au dossier, sélectionnez l’option de copie")
+![Si vous êtes invité à ajouter le fichier au dossier, sélectionnez l’option de copie](part2-images/image1.png)
 
 Le dossier Content contient maintenant le fichier charactersheet. png:
 
-![](part2-images/image2.png "Le dossier de contenu contient maintenant le fichier charactersheet. png")
+![Le dossier de contenu contient maintenant le fichier charactersheet. png](part2-images/image2.png)
 
 Ensuite, nous allons ajouter du code pour charger le fichier charactersheet. png et créer `Texture2D`un. Pour ce faire, ouvrez `Game1.cs` le fichier et ajoutez le champ suivant à la classe Game1.cs:
 
@@ -117,7 +116,7 @@ protected override void Draw(GameTime gameTime)
 
 L’exécution du jeu affiche maintenant un seul Sprite affichant la texture créée à partir de charactersheet. png:
 
-![](part2-images/image3.png "L’exécution du jeu affiche maintenant un seul Sprite affichant la texture créée à partir de charactersheet. png")
+![L’exécution du jeu affiche maintenant un seul Sprite affichant la texture créée à partir de charactersheet. png](part2-images/image3.png)
 
 ## <a name="creating-the-characterentity"></a>Création du CharacterEntity
 
@@ -132,7 +131,6 @@ Un modèle courant pour l’organisation du code de jeu consiste à créer une n
 - Peut être créée et détruite dynamiquement, par exemple une mise sous tension qui s’affiche et est recueillie par le joueur
 
 Les systèmes d’organisation d’entités peuvent être complexes et de nombreux moteurs de jeu offrent des classes pour faciliter la gestion des entités. Nous allons implémenter un système d’entités très simple. il est donc important de noter que les jeux complets requièrent généralement plus d’organisations sur la part du développeur.
-
 
 ### <a name="defining-the-characterentity"></a>Définition de CharacterEntity
 
@@ -215,7 +213,6 @@ La `Draw` méthode implémentée ci-dessus `SpriteBatch` accepte un argument, `c
 
 La raison en est que le rendu le plus efficace est possible lorsque la même `SpriteBatch` instance est utilisée pour tous `Draw` les appels, et lorsque `Draw` tous les appels sont effectués entre un ensemble unique `Begin` d' `End` appels et. Bien entendu, notre jeu n’inclut qu’une seule instance d’entité, mais des jeux plus compliqués bénéficient d’un modèle qui permet à plusieurs entités `SpriteBatch` d’utiliser la même instance.
 
-
 ## <a name="adding-characterentity-to-the-game"></a>Ajout de CharacterEntity au jeu
 
 Maintenant que nous avons ajouté notre `CharacterEntity` code pour le rendu proprement dit, nous pouvons remplacer le `Game1.cs` code dans pour utiliser une instance de cette nouvelle entité. Pour ce faire, nous allons remplacer `Texture2D` le champ par `CharacterEntity` un champ `Game1`dans:
@@ -278,7 +275,7 @@ protected override void Draw(GameTime gameTime)
 
 Si nous exécutons le jeu, nous verrons maintenant le caractère. Étant donné que X et Y ont par défaut la valeur 0, le caractère est positionné par rapport à l’angle supérieur gauche de l’écran:
 
-![](part2-images/image4.png "Étant donné que X et Y ont par défaut la valeur 0, le caractère est positionné par rapport à l’angle supérieur gauche de l’écran")
+![Étant donné que X et Y ont par défaut la valeur 0, le caractère est positionné par rapport à l’angle supérieur gauche de l’écran](part2-images/image4.png)
 
 ## <a name="creating-the-animation-class"></a>Création de la classe d’animation
 
@@ -286,11 +283,9 @@ Actuellement, `CharacterEntity` notre affiche le fichier **charactersheet. png**
 
 Nous allons créer la `Animation` classe pour contrôler la logique et l’état de l’animation CharacterEntity. La classe d’animation est une classe générale qui peut être utilisée pour n’importe quelle entité, `CharacterEntity` pas seulement pour les animations. Ultimate la `Animation` classe fournira un `Rectangle` que le `CharacterEntity` utilisera pour se dessiner lui-même. Nous allons également créer une `AnimationFrame` classe qui sera utilisée pour définir l’animation.
 
-
 ### <a name="defining-animationframe"></a>Définition de AnimationFrame
 
 `AnimationFrame`ne contient pas de logique relative à l’animation. Nous ne l’utiliserons que pour stocker des données. Pour ajouter la `AnimationFrame` classe, cliquez avec le bouton droit ou cliquez avec le bouton droit sur le projet partagé **WalkingGame** , puis sélectionnez **Ajouter > nouveau fichier....** Entrez le nom **AnimationFrame** , puis cliquez sur le bouton **nouveau** . Nous allons modifier le `AnimationFrame.cs` fichier pour qu’il contienne le code suivant:
-
 
 ```csharp
 using System;
@@ -504,7 +499,7 @@ protected override void Update(GameTime gameTime)
 
 À présent `CharacterEntity` , le lira `walkDown` son animation:
 
-![](part2-images/image5.gif "À présent, le CharacterEntity lira son animation walkDown")
+![À présent, le CharacterEntity lira son animation walkDown](part2-images/image5.gif)
 
 ## <a name="adding-movement-to-the-character"></a>Ajout d’un déplacement au caractère
 
@@ -513,7 +508,6 @@ Nous allons ensuite ajouter un mouvement à notre caractère à l’aide de cont
 ### <a name="defining-getdesiredvelocityfrominput"></a>Définition de GetDesiredVelocityFromInput
 
 Nous utiliserons la classe de `TouchPanel` monojeu, qui fournit des informations sur l’état actuel de l’écran tactile. Nous allons ajouter une méthode qui vérifiera et `TouchPanel` renverra la vélocité souhaitée de notre caractère:
-
 
 ```csharp
 Vector2 GetDesiredVelocityFromInput()
@@ -552,7 +546,6 @@ Ce qui suit est un peu de Math qui conservera le déplacement du caractère à l
 
 L' `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)` instruction vérifie si la vélocité est différente de zéro: en d’autres termes, elle vérifie que l’utilisateur ne touche pas le même emplacement que la position actuelle du caractère. Si ce n’est pas le cas, nous devons définir la vitesse du caractère sur constant, quelle que soit la distance entre le toucher. Pour ce faire, nous mettons en normal le vecteur de vélocité, ce qui donne une longueur de 1. Un vecteur de vélocité de 1 signifie que le caractère se déplacera à 1 pixel par seconde. Nous allons accélérer cela en multipliant la valeur par la vitesse souhaitée de 200.
 
-
 ### <a name="applying-velocity-to-position"></a>Application de la vélocité à la position
 
 La rapidité retournée par `GetDesiredVelocityFromInput` doit être appliquée aux valeurs et `Y` du `X` caractère pour avoir un effet au moment de l’exécution. Nous allons modifier la `Update` méthode comme suit:
@@ -578,7 +571,7 @@ Ce que nous avons implémenté ici est appelé déplacement *basé sur le temps*
 
 Si nous exécutons notre jeu maintenant, nous voyons que le personnage se déplace vers l’emplacement tactile:
 
-![](part2-images/image6.gif "Le caractère se déplace vers l’emplacement tactile")
+![Le caractère se déplace vers l’emplacement tactile](part2-images/image6.gif)
 
 ## <a name="matching-movement-and-animation"></a>Mouvement et animation correspondants
 
@@ -661,7 +654,6 @@ Nous devons noter que le code ci-dessus a été `CharacterEntity` ajouté au con
 
 Ensuite, nous allons ajuster la logique pour utiliser les animations en fonction de la direction dans laquelle le caractère est déplacé, ou en fonction de la dernière animation si le caractère vient d’être arrêté. Pour ce faire, nous allons modifier la `Update` méthode:
 
-
 ```csharp
 public void Update(GameTime gameTime)
 {
@@ -736,7 +728,7 @@ Si le caractère n’est pas déplacé, nous voulons définir le caractère `cur
 
 Le résultat de ce code est que le caractère s’anime correctement lorsqu’il progresse, puis confronte à la dernière direction qu’il parvient lorsqu’il s’arrête:
 
-![](part2-images/image7.gif "Le résultat de ce code est que le caractère s’anime correctement lorsqu’il progresse, puis fait face à la dernière direction qu’il parcourt lorsqu’il s’arrête.")
+![Le résultat de ce code est que le caractère s’anime correctement lorsqu’il progresse, puis fait face à la dernière direction qu’il parcourt lorsqu’il s’arrête.](part2-images/image7.gif)
 
 ## <a name="summary"></a>Récapitulatif
 

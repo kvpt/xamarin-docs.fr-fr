@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2019
-ms.openlocfilehash: 9456512931822abd59a081485744846a11cdea88
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 925e97292d19745b0b89fb98103d205ab8476157
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869372"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980761"
 ---
 # <a name="controls-reference"></a>Informations de référence sur les contrôles
 
@@ -27,7 +27,7 @@ Les quatre principaux groupes de contrôles utilisés pour créer l’interface 
 - [**Affichage**](views.md)
 - [**Cellules**](cells.md)
 
-En règle générale, une page Xamarin.Forms occupe tout l’écran. La page contient généralement une disposition qui contient les vues et éventuellement d’autres dispositions. Les cellules sont des composants spécialisés utilisés par [ `TableView` ](views.md#tableView) et [ `ListView` ](views.md#listView).
+En règle générale, une page Xamarin.Forms occupe tout l’écran. La page contient généralement une disposition qui contient les vues et éventuellement d’autres dispositions. Les cellules sont des composants spécialisés utilisés par [ `TableView` ](views.md#tableView) et [ `ListView` ](views.md#listView). Un diagramme de classes qui affiche la hiérarchie des types généralement utilisés pour créer une interface utilisateur dans Xamarin. Forms se trouve dans la [hiérarchie de classes de contrôles Xamarin. Forms](~/xamarin-forms/internals/class-hierarchy.md).
 
 Dans les quatre articles sur [ **Pages**](pages.md), [ **dispositions**](layouts.md), [ **vues** ](views.md), et [ **cellules**](cells.md), chaque type de contrôle est décrit avec des liens vers sa documentation des API, un article décrivant son utilisation (le cas échéant) et un ou plusieurs exemples de programmes (s’ils existent). Chaque type de contrôle est également accompagné d’une capture d’écran montrant une page de l’exemple [**FormsGallery**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) s’exécutant sur des appareils iOS et Android. Chaque capture d’écran ci-dessous sont des liens vers le code source pour le langage C#, la page équivalent XAML et (le cas échéant) le fichier code-behind C# pour la page XAML.
 
@@ -36,4 +36,5 @@ Outre les contrôles fournis avec Xamarin. Forms, des contrôles tiers sont disp
 ## <a name="related-links"></a>Liens associés
 
 - [Exemple de Xamarin.Forms FormsGallery](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Hiérarchie des classes des contrôles Xamarin. Forms](~/xamarin-forms/internals/class-hierarchy.md)
 - [Documentation de l’API](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
