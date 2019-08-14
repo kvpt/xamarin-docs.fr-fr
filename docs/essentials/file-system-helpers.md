@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials : composants d’assistance de système de fichiers'
+title: 'Xamarin.Essentials: Assistances de système de fichiers'
 description: La classe FileSystem de Xamarin.Essentials contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 74089d55006555168d9774924c484cb8866cfb37
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898847"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738863"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials : composants d’assistance de système de fichiers
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Assistances de système de fichiers
 
 La classe **FileSystem** contient une série de composants d’assistance qui permettent de rechercher les répertoires de cache et de données de l’application, ainsi que d’ouvrir des fichiers contenus dans le paquet d’application.
 
@@ -28,7 +28,7 @@ Ajoutez une référence à Xamarin.Essentials dans votre classe :
 using Xamarin.Essentials;
 ```
 
-Permet au répertoire de l’application de stocker les **données du cache**. Vous pouvez utiliser les données de cache pour toutes les données à conserver plus longtemps que les données temporaires, mais qui ne sont pas indispensables au bon fonctionnement des opérations.
+Permet au répertoire de l’application de stocker les **données du cache**. Vous pouvez utiliser les données de cache pour toutes les données à conserver plus longtemps que les données temporaires, car le système d’exploitation dicte le moment où le stockage est effacé.
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
