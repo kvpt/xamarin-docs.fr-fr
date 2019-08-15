@@ -1,5 +1,5 @@
 ---
-title: Création d’une disposition personnalisée
+title: Créer une disposition personnalisée dans Xamarin. Forms
 description: Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe de WrapLayout orientation accents qui réorganise ses enfants horizontalement sur la page et encapsule ensuite afficher les enfants suivants à des lignes supplémentaires.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
@@ -7,20 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 11707a1e871b0988847ab4a2c266d268db063000
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645201"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024532"
 ---
-# <a name="creating-a-custom-layout"></a>Création d’une disposition personnalisée
+# <a name="create-a-custom-layout-in-xamarinforms"></a>Créer une disposition personnalisée dans Xamarin. Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms définit quatre classes de mise en page – StackLayout, DispositionAbsolue, RelativeLayout et grille, et chacune dispose ses enfants d’une manière différente. Toutefois, il est parfois nécessaire organiser le contenu de la page à l’aide d’une disposition non fournie par Xamarin.Forms. Cet article explique comment écrire une classe de disposition personnalisée et illustre une classe de WrapLayout orientation accents qui réorganise ses enfants horizontalement sur la page et encapsule ensuite afficher les enfants suivants à des lignes supplémentaires._
-
-## <a name="overview"></a>Vue d'ensemble
 
 Dans Xamarin.Forms, dont dérivent toutes les classes de mise en page le [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1) classe et de contraindre le type générique à [ `View` ](xref:Xamarin.Forms.View) et ses types dérivés. À son tour, le `Layout<T>` classe dérive de la [ `Layout` ](xref:Xamarin.Forms.Layout) (classe), qui fournit le mécanisme pour les enfants de dimensionnement et de positionnement des éléments.
 
@@ -67,7 +65,7 @@ Le [ `Layout` ](xref:Xamarin.Forms.Layout) classe définit également un [ `Inva
 
 Le [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) peut être substituée pour implémenter un cache pour réduire les appels successifs de la [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) méthodes les enfants de la disposition. Substitution de la `InvalidateLayout` méthode fournira une notification de lorsque les enfants sont ajoutés ou supprimés à partir de la mise en page. De même, le [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) méthode peut être substituée pour fournir une notification lorsqu’un des enfants de la disposition change de taille. Pour les deux substitutions de méthode, une disposition personnalisée doit répondre en effaçant le cache. Pour plus d’informations, consultez [calcul et la mise en cache des données](#caching).
 
-## <a name="creating-a-custom-layout"></a>Création d’une disposition personnalisée
+## <a name="create-a-custom-layout"></a>Créer une disposition personnalisée
 
 Le processus de création d’une disposition personnalisée est la suivante :
 
@@ -89,7 +87,7 @@ La classe de disposition peut ensuite être consommée en l’ajoutant à un [ `
 
 <a name="creating" />
 
-### <a name="creating-a-wraplayout"></a>Création d’un WrapLayout
+### <a name="create-a-wraplayout"></a>Créer un WrapLayout
 
 L’exemple d’application montre l’orientation accents `WrapLayout` classe qui réorganise ses enfants horizontalement sur la page et encapsule ensuite afficher les enfants suivants à des lignes supplémentaires.
 
@@ -107,7 +105,7 @@ public class WrapLayout : Layout<View>
 
 <a name="caching" />
 
-#### <a name="calculating-and-caching-layout-data"></a>Calcul et la mise en cache des données de disposition
+#### <a name="calculate-and-cache-layout-data"></a>Calculer et mettre en cache les données de disposition
 
 Le `LayoutData` structure stocke les données sur une collection d’enfants dans un nombre de propriétés :
 
@@ -200,7 +198,7 @@ Le `GetLayoutData` méthode effectue les opérations suivantes :
 
 <a name="adding_properties" />
 
-#### <a name="adding-properties-backed-by-bindable-properties"></a>Ajout de propriétés assorties de propriétés pouvant être liées
+#### <a name="add-properties-backed-by-bindable-properties"></a>Ajouter des propriétés sauvegardées par des propriétés pouvant être liées
 
 Le `WrapLayout` classe définit `ColumnSpacing` et `RowSpacing` propriétés, dont les valeurs sont utilisées pour séparer les lignes et colonnes dans la disposition, et qui sont assortie de propriétés pouvant être liées. Les propriétés pouvant être liées sont affichées dans l’exemple de code suivant :
 
@@ -230,7 +228,7 @@ Appelle le Gestionnaire de modification de propriété de chaque propriété à 
 
 <a name="onmeasure" />
 
-#### <a name="overriding-the-onmeasure-method"></a>Substitution de la méthode OnMeasure
+#### <a name="override-the-onmeasure-method"></a>Remplacer la méthode OnMeasure
 
 Le `OnMeasure` override est illustré dans l’exemple de code suivant :
 
@@ -256,7 +254,7 @@ Appelle la substitution de la `GetLayoutData` (méthode) et les constructions un
 
 <a name="layoutchildren" />
 
-#### <a name="overriding-the-layoutchildren-method"></a>Substitution de la méthode LayoutChildren
+#### <a name="override-the-layoutchildren-method"></a>Remplacer la méthode LayoutChildren
 
 Le `LayoutChildren` override est illustré dans l’exemple de code suivant :
 
@@ -307,7 +305,7 @@ Pour plus d’informations sur la `GetLayoutData` (méthode), consultez [calcul 
 
 <a name="invalidatelayout" />
 
-#### <a name="overriding-the-invalidatelayout-method"></a>Substitution de la méthode InvalidateLayout
+#### <a name="overridethe-invalidatelayout-method"></a>Méthode Overridethe InvalidateLayout
 
 Le [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) override est appelée lorsque les enfants sont ajoutés ou supprimés à partir de la mise en page, ou lorsque l’une de le `WrapLayout` propriétés change de valeur, comme indiqué dans l’exemple de code suivant :
 
@@ -326,7 +324,7 @@ Le remplacement invalide la disposition et ignore toutes les informations de pr�
 
 <a name="onchildmeasureinvalidated" />
 
-#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>Substitution de la méthode OnChildMeasureInvalidated
+#### <a name="override-the-onchildmeasureinvalidated-method"></a>Remplacer la méthode OnChildMeasureInvalidated
 
 Le [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) override est appelé lorsqu’un des enfants de la disposition change de taille et est illustré dans l’exemple de code suivant :
 
@@ -342,7 +340,7 @@ Le remplacement invalide la disposition de l’enfant et ignore toutes les infor
 
 <a name="consuming" />
 
-### <a name="consuming-the-wraplayout"></a>Utilisation de la WrapLayout
+### <a name="consume-the-wraplayout"></a>Utilisation du WrapLayout
 
 Le `WrapLayout` classe peut être consommée en le plaçant sur un [ `Page` ](xref:Xamarin.Forms.Page) type dérivé, comme illustré dans l’exemple de code XAML suivant :
 
