@@ -1,145 +1,145 @@
 ---
-title: Historique des versions de Sharpie objectif
-description: Ce document décrit l’historique de publication de Sharpie objectif, l’outil utilisé pour automatiser la création de C# liaisons au code Objective-C.
+title: Historique des versions objectivie
+description: Ce document décrit l’historique des versions d’objective Sharp, l’outil utilisé pour automatiser la création C# de liaisons au code Objective-C.
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 03e4a5ac8906d2593cbdf3c15f6b2d1f4a2c6d19
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 86c9f46064b66dc31f805e830309cb061a78a2c8
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61199647"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509648"
 ---
-# <a name="objective-sharpie-release-history"></a>Historique des versions de Sharpie objectif
+# <a name="objective-sharpie-release-history"></a>Historique des versions objectivie
 
-## <a name="34-october-11-2017"></a>3.4 (11 octobre 2017)
+## <a name="34-october-11-2017"></a>3,4 (11 octobre 2017)
 
-[Télécharger v3.4.0](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie-3.4.0.pkg)
+[Télécharger v 3.4.0](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie-3.4.0.pkg)
 
-* Prise en charge de Xcode 9 : iOS 11, macOS 10.13, 11, de tvOS et watchOS 4
-* Problèmes avec SIMD et tgmath doivent maintenant être résolus
-* Données de télémétrie a été complètement supprimée
+* Prise en charge de Xcode 9: iOS 11, macOS 10,13, tvOS 11 et Watchos 4
+* Les problèmes liés à SIMD et tgmath doivent maintenant être résolus
+* La télémétrie a été entièrement supprimée
 
-## <a name="33-august-3-2016"></a>3.3 (3 août 2016)
+## <a name="33-august-3-2016"></a>3,3 (3 août 2016)
 
-[Télécharger v3.3.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.3.0.pkg)
+[Télécharger v 3.3.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.3.0.pkg)
 
-* Prise en charge pour Xcode 8 bêta 4, iOS 10, macOS 10.12, tvOS 10 et watchOS 3.
-* Mise à jour pour la dernière Clang génération maître (2016-08-02)
-* [Conserver les options d’envoi de données de télémétrie](https://twitter.com/Symbiatch/status/760373403878559744) de `sharpie pod bind` à `sharpie bind`.
+* Prise en charge de Xcode 8 bêta 4, iOS 10, macOS 10,12, tvOS 10 et Watchos 3.
+* Mise à jour vers la dernière version de Clang Master (2016-08-02)
+* [Persistance des options d’envoi de données de télémétrie](https://twitter.com/Symbiatch/status/760373403878559744) de `sharpie pod bind` à `sharpie bind`.
 
-## <a name="32-june-14-2016"></a>3.2 (14 juin 2016)
+## <a name="32-june-14-2016"></a>3,2 (14 juin, 2016)
 
-[Télécharger v3.2.3](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.2.3.pkg)
+[Télécharger v 3.2.3](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.2.3.pkg)
 
-* Prendre en charge pour la version bêta 1 de Xcode 8, iOS 10, macOS 10.12, tvOS 10 et watchOS 3.
+* Prise en charge de Xcode 8 bêta 1, iOS 10, macOS 10,12, tvOS 10 et Watchos 3.
 
-## <a name="31-may-31-2016"></a>3.1 (31 mai 2016)
+## <a name="31-may-31-2016"></a>3,1 (31 mai, 2016)
 
-[Télécharger v3.1.1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.1.1.pkg)
+[Télécharger v 3.1.1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.1.1.pkg)
 
-* Prise en charge de CocoaPods 1.0
-* Meilleure fiabilité de liaison de CocoaPods en premier générant native `.framework` puis la liaison qui
-* Copier les CocoaPods `.framework` et liaison de définition dans un `Binding` directory pour faciliter l’intégration avec les projets de liaison Xamarin.iOS et Xamarin.Mac
+* Prise en charge de CocoaPods 1,0
+* Amélioration de la fiabilité de la liaison CocoaPods en `.framework` générant d’abord une liaison native, puis en liant
+* Copier CocoaPods `.framework` et la définition de liaison `Binding` dans un répertoire pour faciliter l’intégration avec les projets de liaison Xamarin. iOS et Xamarin. Mac
 
-## <a name="30-october-5-2015"></a>3.0 (5 octobre 2015)
+## <a name="30-october-5-2015"></a>3,0 (5 octobre 2015)
 
-[Télécharger v3.0.8](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.0.8.pkg)
+[Télécharger v 3.0.8](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-3.0.8.pkg)
 
-* Prise en charge des nouvelles fonctionnalités de langage Objective-C, y compris des génériques légers et possibilité de valeur null, introduite dans Xcode 7
-* Prise en charge pour les dernières iOS et kits de développement logiciel Mac.
-* Projet Xcode création et l’analyse de prise en charge ! Vous pouvez maintenant passer à un projet Xcode complet pour objectif Sharpie et elle s’efforcera de déterminer la bonne chose à faire (par exemple, `sharpie bind Project.xcodeproj -sdk ios`).
-* [CocoaPods](https://cocoapods.org) prennent en charge ! Vous pouvez maintenant configurer, générer et lier les CocoaPods directement à partir de l’objectif Sharpie (par exemple, `sharpie pod init ios AFNetworking && sharpie pod bind`).
-* Lors de la liaison d’infrastructures, les modules Clang seront activés si le framework prend en charge, ce qui entraîne le mieux adapté d’analyse d’une infrastructure, étant donné que la structure du framework est définie par son `module.modulemap`.
-* Pour les projets Xcode qui génèrent un produit de framework, analyser ce produit au lieu de cibles de produit intermédiaire comme cibles non framework dans un projet Xcode ait des ambiguïtés qui ne peut pas être résolues automatiquement.
+* Prise en charge des nouvelles fonctionnalités de langage Objective-C, notamment les génériques légers et la possibilité de valeur null, comme introduit dans Xcode 7
+* Prise en charge des derniers kits de développement logiciel (SDK) iOS et Mac.
+* Prise en charge de l’analyse et du développement de projets Xcode! Vous pouvez maintenant passer un projet XCode complet à la finesse objective et il fera de son mieux pour déterminer la bonne chose à faire (par exemple `sharpie bind Project.xcodeproj -sdk ios`,).
+* Prise en charge de [CocoaPods](https://cocoapods.org) ! Vous pouvez désormais configurer, générer et lier des CocoaPods directement à partir de la finesse objective `sharpie pod init ios AFNetworking && sharpie pod bind`(par exemple,).
+* Lors de la liaison d’infrastructures, les modules Clang sont activés si le Framework les prend en charge, ce qui aboutit à l’analyse la plus correcte d’une infrastructure, car la `module.modulemap`structure de l’infrastructure est définie par son.
+* Pour les projets Xcode qui génèrent un produit Framework, analysez ce produit au lieu des cibles de produit intermédiaires en tant que cibles non-Framework dans un projet XCode peut encore avoir des ambiguïtés qui ne peuvent pas être résolues automatiquement.
 
-## <a name="216-march-17-2015"></a>2.1.6 (17 mars 2015)
+## <a name="216-march-17-2015"></a>2.1.6 (17 mars, 2015)
 
-[Télécharger v2.1.6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
+[Télécharger v 2.1.6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
 
-* Liaison d’expression opérateur binaire fixe : la partie gauche de l’expression a été incorrectement échanger avec la droite (par exemple, `1 << 0` a été incorrectement liées en tant que `0 << 1`). Merci à Adam Kemp pour constaté que cela !
-* Correction d’un problème avec `NSInteger` et `NSUInteger` liée en tant que `int` et `uint` au lieu de `nint` et `nuint` sur i386 ; `-DNS_BUILD_32_LIKE_64` est maintenant passé à Clang pour rendre l’analyse `objc/NSObjCRuntime.h` fonctionne comme prévu sur i386.
-* L’architecture par défaut pour les kits de développement logiciel Mac OS X (par exemple, `-sdk macosx10.10`) est désormais x86_64 au lieu d’i386, par conséquent, `-arch` peut être omis, sauf si vous souhaitez substituer la valeur par défaut.
+* Liaison d’expression d’opérateur binaire fixe: la partie gauche de l’expression n’a pas été correctement remplacée par la droite (par exemple `1 << 0` , a été lié de manière incorrecte en tant que `0 << 1`). Merci à Adam Kemp de noter cela!
+* Correction d’un problème `NSInteger` avec `NSUInteger` et lié en `int` tant `uint` que et `nint` à `nuint` la place de et sur i386; est maintenant transmis à Clang pour que l' `objc/NSObjCRuntime.h` analyse fonctionne comme prévu sur i386. `-DNS_BUILD_32_LIKE_64`
+* L’architecture par défaut des kits de développement logiciel `-sdk macosx10.10`(SDK) Mac OS X (par exemple,) `-arch` est maintenant x86_64 au lieu de i386. vous pouvez donc l’omettre, sauf si vous souhaitez remplacer la valeur par défaut.
 
-## <a name="210-march-15-2015"></a>2.1.0 (15 mars 2015)
+## <a name="210-march-15-2015"></a>2.1.0 (15 mars, 2015)
 
-[Télécharger v2.1.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.0.pkg)
+[Télécharger v 2.1.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.0.pkg)
 
-* [bxc#27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849): Vérifiez `using ObjCRuntime;` est généré lorsque `ArgumentSemantic` est utilisé.
-* [bxc#27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850): Vérifiez `using System.Runtime.InteropServices;` est généré lorsque `DllImport` est utilisé.
-* [bxc#27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852): Par défaut `DllImport` au chargement de symboles à partir de `__Internal`.
-* [bxc#27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848): Ignorer les déclarations de conteneur Objective-C-déclaré avant.
-* [bxc#27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846): Lier les types de protocole avec une qualification unique en tant qu’interfaces concrètes (`id<Foo>` comme `Foo` au lieu de `Foundation.NSObject<Foo>`).
-* [bxc#28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037): Lier `UInt32`, `UInt64`, et `Int64` littéraux en tant que `Int32` pour supprimer la `u` et/ou `uL` suffixes lorsque les valeurs s’adapte en toute sécurité à `Int32`.
-* [bxc#28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038): Corriger le mappage de noms d’enum lorsque le nom natif d’origine commence par un `k` préfixe.
-* `sizeof` Les expressions C dont le type d’argument n’est pas mappé à un C# type primitif sera évalué dans Clang et lié comme un littéral d’entier pour éviter de générer non valide C#.
-* Corrigez la syntaxe Objective-C pour les propriétés dont le type est un bloc (code Objective-C apparaît dans les commentaires au-dessus des déclarations de liées).
-* Lier les types de cariés de leur type d’origine (`int[]` chute à `int*` pendant l’analyse sémantique dans Clang, mais lier en tant que l’original comme écrit par `int[]` à la place).
+* [BXC # 27849](https://bugzilla.xamarin.com/show_bug.cgi?id=27849): Vérifiez `using ObjCRuntime;` que est produit `ArgumentSemantic` lorsque est utilisé.
+* [BXC # 27850](https://bugzilla.xamarin.com/show_bug.cgi?id=27850): Vérifiez `using System.Runtime.InteropServices;` que est produit `DllImport` lorsque est utilisé.
+* [BXC # 27852](https://bugzilla.xamarin.com/show_bug.cgi?id=27852): Par `DllImport` défaut, pour charger `__Internal`les symboles à partir de.
+* [BXC # 27848](https://bugzilla.xamarin.com/show_bug.cgi?id=27848): Ignore les déclarations de conteneur objective-C déclarées avant.
+* [BXC # 27846](https://bugzilla.xamarin.com/show_bug.cgi?id=27846): Liez les types de protocole avec une seule qualification comme interfaces`id<Foo>` concrètes ( `Foundation.NSObject<Foo>`comme `Foo` au lieu de).
+* [BXC # 28037](https://bugzilla.xamarin.com/show_bug.cgi?id=28037): Liez `UInt32`, `Int32` `u` `Int32`et les littéraux comme pour supprimer les suffixes et `uL` /ou lorsque les valeurs peuvent être contenues en toute sécurité dans. `Int64` `UInt64`
+* [BXC # 28038](https://bugzilla.xamarin.com/show_bug.cgi?id=28038): Corriger le mappage de noms enum lorsque le nom natif d' `k` origine commence par un préfixe.
+* `sizeof`Les expressions C dont le type d’argument n’est C# pas mappé à un type primitif sont évaluées dans Clang et liées en tant que littéral C#d’entier pour éviter la génération d’une valeur non valide.
+* Corriger la syntaxe objective-C pour les propriétés dont le type est un bloc (le code Objective-C apparaît dans les commentaires ci-dessus les déclarations liées).
+* Liez les types dépassés comme leur type`int[]` d’origine ( `int*` s’atténue à au cours de l’analyse sémantique dans Clang, mais liez- `int[]` le en tant qu’écriture comme écrit à la place).
 
-Merci beaucoup pour Dave Dunkin pour la plupart des bogues résolus dans cette version de point de reporting.
+Merci beaucoup à Dave Dunkin pour signaler un grand nombre des bogues résolus dans cette version de point.
 
-## <a name="200-march-9-2015"></a>2.0.0: 9 mars 2015
+## <a name="200-march-9-2015"></a>2.0.0 9 mars, 2015
 
-[Télécharger la version 2.0.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.0.0.pkg)
+[Télécharger v 2.0.0](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.0.0.pkg)
 
-Objectif Sharpie 2.0 est une version majeure qui comprend un pilote Clang améliorée et analyseur et un nouveau moteur de liaison en fonction du NRefactory. Ces composants améliorées fournissent pour _beaucoup_ mieux les liaisons, notamment concernant la liaison de type. De nombreuses autres améliorations ont été apportées qui sont internes à Sharpie objectif qui assureront de nombreuses fonctionnalités visible par l’utilisateur dans les versions futures.
+La version objective Sharpy 2,0 est une version majeure qui intègre un pilote et un analyseur Clang améliorés, ainsi qu’un nouveau moteur de liaison basé sur NRefactory. Ces composants améliorés fournissent des liaisons _bien_ meilleures, en particulier autour de la liaison de type. De nombreuses autres améliorations ont été apportées, qui sont internes à un grand nombre d’objectifs, qui générera de nombreuses fonctionnalités visibles par l’utilisateur dans les futures versions.
 
-Objectif Sharpie 2.0 est basé sur Clang 3.6.1.
+L’objectif Sharpy 2,0 est basé sur Clang 3.6.1.
 
-### <a name="type-binding-improvements"></a>Améliorations de liaison de type
+### <a name="type-binding-improvements"></a>Améliorations de la liaison de type
 
-* Objective-C blocs sont désormais pris en charge. Cela inclut les blocs d’anonyme/inline et blocs nommés `typedef`. Blocs anonymes seront liés en tant que `System.Action` ou `System.Func` délègue, tandis que les blocs nommés seront liés comme un nom fort `delegate` types.
+* Les blocs objective-C sont désormais pris en charge. Cela comprend les blocs anonymes/inline et les `typedef`blocs nommés via. Les blocs anonymes sont liés `System.Action` en `System.Func` tant que délégués ou, tandis que les blocs nommés `delegate` sont liés en tant que types portant un nom fort.
 
-* Il existe une heuristique améliorée d’affectation de noms pour les enums anonymes qui sont immédiatement précédés d’un `typedef` résolution à un type intégral builtin comme `long` ou `int`.
+* Il existe une méthode heuristique de dénomination améliorée pour les énumérations anonymes qui sont immédiatement `typedef` précédées d’une résolution en un type `long` intégral `int`intégré tel que ou.
 
-* Les pointeurs C sont maintenant liées en tant que C# `unsafe` des pointeurs plutôt `System.IntPtr`. Il en résulte dans plus de clarté dans la liaison pour lorsque vous souhaitez activer les paramètres de pointeur dans `out` ou `ref` paramètres. Il n’est pas possible de toujours déduire si un paramètre doit être `out` ou `ref`, de sorte que le pointeur est conservé dans la liaison pour permettre l’audit plus facile.
+* Les pointeurs C sont maintenant liés C# `unsafe` comme pointeurs au `System.IntPtr`lieu de. Cela donne plus de clarté à la liaison lorsque vous souhaitez peut-être transformer les paramètres du `out` pointeur `ref` en paramètres ou. Il n’est pas possible de toujours déterminer si un paramètre doit `out` être `ref`ou. par conséquent, le pointeur est conservé dans la liaison pour permettre un audit plus facile.
 
-* Une exception à la liaison de pointeur ci-dessus est lorsqu’un pointeur de rang de 2 à un objet Objective-C est rencontré en tant que paramètre. Dans ce cas, la convention est prédominante et le paramètre sera lié en tant que `out` (par exemple, `NSError **error` → `out NSError error`).
+* Une exception à la liaison de pointeur ci-dessus se produit lorsqu’un pointeur à 2 rangs vers un objet objective-C est rencontré comme paramètre. Dans ces cas-là, la Convention est prédominante et le paramètre est `out` lié en tant `NSError **error` que `out NSError error`(par exemple, →).
 
 ### <a name="verify-attribute"></a>Vérifier l’attribut
 
-Vous trouverez souvent que les liaisons produites par objectif Sharpie seront désormais annotées avec le `[Verify]` attribut. Ces attributs indiquent que vous devez _vérifier_ qu’objectif Sharpie fait la chose correcte en comparant la liaison avec la déclaration d’origine de C/Objective-C (qui vous sont fournie dans un commentaire au-dessus de la déclaration de liaison).
+Vous constaterez souvent que les liaisons produites par la finesse objective seront désormais annotées avec `[Verify]` l’attribut. Ces attributs indiquent que vous devez _vérifier_ que la netteté objective a effectué la bonne chose en comparant la liaison avec la déclaration d’origine c/objective-c (qui sera fournie dans un commentaire au-dessus de la déclaration liée).
 
-La vérification est _recommandé_ toutes les déclarations de liées, mais est plus probable _requis_ pour les déclarations annotées avec le `[Verify]` attribut. Il s’agit, car dans de nombreuses situations, il n’est pas suffisamment de métadonnées dans le code natif source d’origine pour déduire comment mieux produire une liaison. Vous devrez peut-être faire référence à la documentation ou des commentaires de code dans les fichiers d’en-tête à prendre la bonne décision de liaison.
+La vérification est _recommandée_ pour toutes les déclarations liées, mais elle est très probablement _requise_ pour les déclarations `[Verify]` annotées avec l’attribut. En effet, dans de nombreux cas, il n’y a pas assez de métadonnées dans le code source natif d’origine pour déduire comment créer au mieux une liaison. Vous devrez peut-être référencer la documentation ou des commentaires de code dans les fichiers d’en-tête pour prendre la meilleure décision de liaison.
 
-Consultez le [vérifier les attributs](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) documentation pour plus d’informations.
+Pour plus d’informations, consultez la documentation sur les [attributs](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) .
 
 ### <a name="other-notable-improvements"></a>Autres améliorations notables
 
-* `using` les instructions sont maintenant générées selon les types liés. Par exemple, si un `NSURL` a été liée, un `using Foundation;` instruction sera également générée.
+* `using`les instructions sont désormais générées en fonction des types liés. Par exemple, si un `NSURL` a été lié, `using Foundation;` une instruction est également générée.
 
-* `struct` et `union` déclarations va maintenant être liées, à l’aide de la `[FieldOffset]` astuce pour les unions.
+* `struct`les `union` déclarations et sont maintenant liées, à l' `[FieldOffset]` aide de la astuce pour les unions.
 
-* Valeurs d’énumération avec les initialiseurs de l’expression constante seront désormais correctement liés ; l’expression complète est traduite en C#.
+* Les valeurs enum avec des initialiseurs d’expression constantes sont désormais correctement liées; l’expression complète est traduite C#en.
 
-* Blocs et les méthodes Variadic sont maintenant liées.
+* Les méthodes et les blocs variadiques sont maintenant liés.
 
-* Infrastructures sont désormais pris en charge par le biais de la `-framework` option. Consultez la documentation sur [liaison d’infrastructures natives](https://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/#frameworks) pour plus d’informations.
+* Les frameworks sont désormais pris en `-framework` charge via l’option. Pour plus d’informations, consultez la documentation sur la [liaison](~/cross-platform/macios/binding/objective-sharpie/index.md) de frameworks natifs.
 
-* Code objective-C source sera détecté automatiquement à présent, ce qui devrait éliminer la nécessité de passer `-ObjC` ou `-xobjective-c` pour Clang manuellement.
+* Le code source objective-C sera maintenant détecté automatiquement, ce qui devrait éliminer la nécessité de `-ObjC` passer `-xobjective-c` ou de Clang manuellement.
 
-* Clang l’utilisation des modules (`@import`) est désormais détecté automatiquement, ce qui devrait éliminer la nécessité de passer `-fmodules` pour Clang manuellement pour les bibliothèques qui utilisent la nouvelle prise en charge du module dans Clang.
+* L’utilisation du module`@import`Clang () est maintenant détectée automatiquement, ce qui évite d’avoir `-fmodules` à passer à Clang manuellement pour les bibliothèques qui utilisent la nouvelle prise en charge de module dans Clang.
 
-* L’API unifiée de Xamarin est désormais la cible de liaison par défaut ; Utilisez la `-classic` option pour cibler l’API classique de 32 bits uniquement.
+* La API unifiée Xamarin est désormais la cible de liaison par défaut; Utilisez l' `-classic` option pour cibler le API classique 32 bits uniquement.
 
 ### <a name="notable-bug-fixes"></a>Correctifs de bogues notables
 
-* Corriger `instancetype` liaison lorsqu’il est utilisé dans une catégorie Objective-C
-* Catégories de Objective-C de nom complet
-* Préfixe des protocoles Objective-C avec `I` (par exemple, `INSCopying` au lieu de `NSCopying`)
+* Corriger `instancetype` la liaison quand elle est utilisée dans une catégorie objective-C
+* Nom complet des catégories objective-C
+* Préfixez les protocoles objective-C `INSCopying` avec `I` ( `NSCopying`par exemple, au lieu de)
 
 ## <a name="1135-december-21-2014"></a>1.1.35: 21 décembre 2014
 
-[Télécharger v1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
+[Télécharger v 1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
 Correctifs de bogues mineurs.
 
-## <a name="111-december-15-2014"></a>1.1.1: 15 décembre 2014
+## <a name="111-december-15-2014"></a>1.1.1 Le 15 décembre 2014
 
-[Télécharger la version 1.1.1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
+[Télécharger v 1.1.1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
 
-1.1.1 a été la première version majeure après 1,5 années d’utilisation interne et de développement chez Xamarin suivant la version préliminaire initiale de l’objectif Sharpie en avril 2013. Cette version est le premier à être généralement considérées comme stables et utilisable pour une grande variété de bibliothèques natives, avec un serveur principal Clang.
+1.1.1 était la première version majeure après 1,5 ans d’utilisation et de développement internes à Xamarin, à la suite de la préversion initiale de la finesse objective en avril 2013. Cette version est la première à être considérée comme stable et utilisable pour une grande variété de bibliothèques natives, avec un nouveau backend Clang.
 
