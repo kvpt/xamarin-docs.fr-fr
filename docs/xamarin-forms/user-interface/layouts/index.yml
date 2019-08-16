@@ -1,0 +1,105 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Dispositions Xamarin.Forms
+metadata:
+  title: Dispositions Xamarin.Forms
+  description: Découvrez les classes de disposition et les fonctionnalités de disposition dans Xamarin.Forms.
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CF6BD41F-CD4B-4576-841D-B8A49A4EC754
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 08/14/2019
+abstract:
+  description: Découvrez les classes de disposition et les fonctionnalités de disposition dans Xamarin.Forms.
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: stack-layout.md
+            html: 'Apprenez à organiser les affichages dans une pile unidimensionnelle, à l’horizontale ou à la verticale.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: stack-layout.md
+            title: StackLayout
+          - href: grid.md
+            html: Découvrez comment organiser des affichages en lignes et en colonnes avec des tailles proportionnelles ou absolues.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: grid.md
+            title: Grille
+          - href: flex-layout.md
+            html: 'Découvrez comment organiser les vues horizontalement ou verticalement, avec retour à la ligne.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: flex-layout.md
+            title: FlexLayout
+          - href: absolute-layout.md
+            html: 'Découvrez comment organiser les vues en définissant des valeurs de coordonnées et de taille, qui peuvent être proportionnelles ou absolues.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
+          - href: relative-layout.md
+            html: 'Découvrez comment organiser les vues en définissant des contraintes, par rapport aux propriétés de la disposition ou de vues sœurs.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: RelativeLayout
+          - href: scroll-view.md
+            html: Découvrez comment permettre le défilement lorsqu’une vue ne tient pas dans les limites de l’écran.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: scroll-view.md
+            title: ScrollView
+          - href: frame.md
+            html: 'Découvrez comment placer une vue dans un cadre que vous pouvez configurer avec des couleurs, une ombre portée et d’autres options.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: frame.md
+            title: Frame
+          - href: layout-options.md
+            html: Découvrez comment définir l’alignement d’une vue dans sa disposition parente.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-options.md
+            title: LayoutOptions
+          - href: margin-and-padding.md
+            html: 'Découvrez comment contrôler la distance entre un élément et ses éléments adjacents, et ses éléments enfants.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: margin-and-padding.md
+            title: Marge et remplissage
+          - href: device-orientation.md
+            html: Découvrez comment configurer et répondre aux changements d’orientation des appareils.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: device-orientation.md
+            title: Orientation de l’appareil
+          - href: tablet.md
+            html: Découvrez comment optimiser la disposition des applications pour tablette et des applications de bureau.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: tablet.md
+            title: Disposition des tablettes et des postes de travail
+          - href: bindable-layouts.md
+            html: 'Découvrez comment activer les classes de disposition pour générer leur contenu et définir leur apparence, en les liant à une collection d’éléments.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: bindable-layouts.md
+            title: Dispositions liables
+          - href: layout-compression.md
+            html: Découvrez comment supprimer des objets de disposition de l’arborescence d’éléments visuels dans le but d’améliorer les performances de rendu des pages.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-compression.md
+            title: Compression des dispositions
+          - href: custom.md
+            html: Découvrez comment créer une classe de disposition personnalisée sensible à l’orientation.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: custom.md
+            title: Disposition personnalisée

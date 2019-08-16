@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
+  ms.date: 08/07/2019
 abstract:
   description: Découvrez comment créer des interfaces utilisateur avec Xamarin.Forms.
 sections:
@@ -115,6 +115,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: map.md
             title: Maps
+          - href: menuitem.md
+            html: Découvrez comment utiliser la classe MenuItem pour ajouter des éléments au menu contextuel des cellules ListView.
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: menuitem.md
+            title: MenuItem
           - href: picker/index.md
             html: Découvrez comment utiliser le contrôle Picker pour sélectionner un élément de texte dans une liste de données.
             image:
@@ -169,12 +175,24 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: text/index.md
             title: Texte
+          - href: theming.md
+            html: Découvrez comment créer des thèmes pour les applications Xamarin. Forms et changer le thème au moment de l’exécution.
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: theming.md
+            title: Création de thèmes
           - href: timepicker.md
             html: Découvrez comment utiliser un TimePicker pour permettre la sélection d’une heure.
             image:
               src: ~/media/icons/i_user-interface.svg
               href: timepicker.md
             title: Sélecteur d'heure
+          - href: toolbaritem.md
+            html: Découvrez comment utiliser un ToolbarItem pour ajouter des boutons à la barre de navigation.
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: toolbaritem.md
+            title: ToolbarItem
           - href: visual/index.md
             html: 'Découvrez comment utiliser Xamarin.Forms Material Visual pour créer des applications identiques, ou en grande partie identiques, sur iOS et Android.'
             image:

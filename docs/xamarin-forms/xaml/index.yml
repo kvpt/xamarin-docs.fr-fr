@@ -49,6 +49,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: hot-reload.md
+            html: Découvrez comment utiliser le rechargement à chaud XAML pour valider rapidement les modifications apportées à l’interface utilisateur.
+            image:
+              src: ~/media/icons/i_quickstart-3.svg
+              href: hot-reload.md
+            title: Rechargement à chaud
           - href: toolbox.md
             html: Découvrez comment utiliser la boîte à outils XAML pour faire glisser des contrôles et des dispositions Xamarin. Forms dans l’éditeur XAML.
             image:
