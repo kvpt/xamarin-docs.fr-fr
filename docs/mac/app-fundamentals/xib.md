@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 4878f2516e764f3ea01ac89569ab4dfdbdbd37e6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5e0f096e5f2c05452a285182db4e455769aa737b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647575"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529020"
 ---
 # <a name="xib-files-in-xamarinmac"></a>fichiers. XIB dans Xamarin. Mac
 
@@ -79,14 +79,14 @@ Dans la section **Propriétés**, il existe 8 *onglets d’inspecteurs* différ
 
 De gauche à droite, ces onglets sont :
 
--   **File Inspector** (Inspecteur de fichier) : l’onglet Inspecteur de fichier affiche des informations sur le fichier, telles que l’emplacement et le nom du fichier Xib qui est en cours de modification.
--   **Aide rapide** : l’onglet Aide rapide fournit une aide contextuelle basée sur la sélection dans Xcode.
--   **Identity Inspector** (Inspecteur d’identité) : l’onglet Inspecteur d’identité fournit des informations sur la vue/le contrôle sélectionné.
--   **Inspecteur d’attributs** : l’inspecteur d’attributs vous permet de personnaliser différents attributs du contrôle/de la vue sélectionné (e).
--   **Inspecteur de taille** : l’inspecteur de taille vous permet de contrôler la taille et le comportement de redimensionnement du contrôle/de la vue sélectionné (e).
--   **Inspecteur des connexions** : l’inspecteur de connexions affiche les connexions de sortie et d’action des contrôles sélectionnés. Nous allons examiner les sorties et les actions dans un instant.
--   **Inspecteur de liaisons** : l’inspecteur de liaisons vous permet de configurer des contrôles afin que leurs valeurs soient automatiquement liées aux modèles de données.
--   **Inspecteur des effets de vue** : l’inspecteur des effets de vue vous permet de spécifier des effets sur les contrôles, tels que les animations.
+- **File Inspector** (Inspecteur de fichier) : l’onglet Inspecteur de fichier affiche des informations sur le fichier, telles que l’emplacement et le nom du fichier Xib qui est en cours de modification.
+- **Aide rapide** : l’onglet Aide rapide fournit une aide contextuelle basée sur la sélection dans Xcode.
+- **Identity Inspector** (Inspecteur d’identité) : l’onglet Inspecteur d’identité fournit des informations sur la vue/le contrôle sélectionné.
+- **Inspecteur d’attributs** : l’inspecteur d’attributs vous permet de personnaliser différents attributs du contrôle/de la vue sélectionné (e).
+- **Inspecteur de taille** : l’inspecteur de taille vous permet de contrôler la taille et le comportement de redimensionnement du contrôle/de la vue sélectionné (e).
+- **Inspecteur des connexions** : l’inspecteur de connexions affiche les connexions de sortie et d’action des contrôles sélectionnés. Nous allons examiner les sorties et les actions dans un instant.
+- **Inspecteur de liaisons** : l’inspecteur de liaisons vous permet de configurer des contrôles afin que leurs valeurs soient automatiquement liées aux modèles de données.
+- **Inspecteur des effets de vue** : l’inspecteur des effets de vue vous permet de spécifier des effets sur les contrôles, tels que les animations.
 
 Dans la section **bibliothèque** , vous pouvez trouver des contrôles et des objets à placer dans le concepteur pour créer graphiquement votre interface utilisateur:
 
@@ -271,8 +271,8 @@ Effectuez ce qui suit :
 
 Quelles sont les sorties et les actions? Dans la programmation de l’interface utilisateur .NET traditionnelle, un contrôle dans l’interface utilisateur est automatiquement exposé en tant que propriété quand il est ajouté. Le fonctionnement est différent dans Mac : le simple ajout d’un contrôle à une vue ne le rend pas accessible au code. Le développeur doit exposer explicitement l’élément d’interface utilisateur au code. Pour ce faire, Apple nous offre deux options:
 
--  **Outlets** : les outlets ressemblent à des propriétés. Si vous associez un contrôle à une sortie, elle est exposée à votre code via une propriété, ce qui vous permet d’effectuer des opérations telles que joindre des gestionnaires d’événements, appeler des méthodes sur celle-ci, etc.
--  **Actions** : les actions ressemblent au modèle de commande dans WPF. Par exemple, lorsqu’une action est effectuée sur un contrôle, par exemple un clic sur un bouton, le contrôle appelle automatiquement une méthode dans votre code. Les actions sont puissantes et pratiques, car vous pouvez associer de nombreux contrôles à la même action.
+- **Outlets** : les outlets ressemblent à des propriétés. Si vous associez un contrôle à une sortie, elle est exposée à votre code via une propriété, ce qui vous permet d’effectuer des opérations telles que joindre des gestionnaires d’événements, appeler des méthodes sur celle-ci, etc.
+- **Actions** : les actions ressemblent au modèle de commande dans WPF. Par exemple, lorsqu’une action est effectuée sur un contrôle, par exemple un clic sur un bouton, le contrôle appelle automatiquement une méthode dans votre code. Les actions sont puissantes et pratiques, car vous pouvez associer de nombreux contrôles à la même action.
 
 Dans Xcode, les prises et les actions sont ajoutées directement dans le code via *le glissement de contrôle*. Plus précisément, cela signifie que pour créer une sortie ou une action, vous choisissez l’élément de contrôle auquel vous souhaitez ajouter une prise ou une action, maintenez le bouton **CTRL** enfoncé sur le clavier, puis faites glisser ce contrôle directement dans votre code.
 

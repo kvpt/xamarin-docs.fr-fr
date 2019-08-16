@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2b8e524d95fb60c8eb45b3dd5b64b68469d97ad1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ec93083ee3d99dbf748309b23248e982b793ce13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510733"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524854"
 ---
 # <a name="architecture"></a>Architecture
 
@@ -33,12 +33,11 @@ Pour plus d’informations sur la façon dont les classes Android communiquent a
 
 Les packages d’application Android sont des conteneurs ZIP avec une extension de fichier *. apk* . Les packages d’application Xamarin. Android ont la même structure et la même disposition que les packages Android normaux, avec les ajouts suivants:
 
--   Les assemblys d’application (contenant le langage intermédiaire) sont *stockés* non compressés dans le dossier d' *assemblys* . Lors du démarrage du processus dans les versions release, le *. apk* est *mmap ()* ed dans le processus et les assemblys sont chargés à partir de la mémoire. Cela permet un démarrage plus rapide des applications, car les assemblys n’ont pas besoin d’être extraits avant l’exécution.  
--   *Remarque :* Les informations d’emplacement de l’assembly, telles que [assembly. Location](xref:System.Reflection.Assembly.Location) et [assembly.](xref:System.Reflection.Assembly.CodeBase)
-    CodeBase,*ne peuvent pas être reposées sur* dans les versions release. Ils n’existent pas en tant qu’entrées distinctes du système de fichiers et n’ont pas d’emplacement utilisable.
+- Les assemblys d’application (contenant le langage intermédiaire) sont *stockés* non compressés dans le dossier d' *assemblys* . Lors du démarrage du processus dans les versions release, le *. apk* est *mmap ()* ed dans le processus et les assemblys sont chargés à partir de la mémoire. Cela permet un démarrage plus rapide des applications, car les assemblys n’ont pas besoin d’être extraits avant l’exécution.  
+- *Remarque :* Les informations d’emplacement de l’assembly, telles que [assembly. Location](xref:System.Reflection.Assembly.Location) et [assembly.](xref:System.Reflection.Assembly.CodeBase) CodeBase, *ne peuvent pas être reposées sur* dans les versions release. Ils n’existent pas en tant qu’entrées distinctes du système de fichiers et n’ont pas d’emplacement utilisable.
 
 
--   Les bibliothèques natives contenant le runtime mono sont présentes dans le *. apk* . Une application Xamarin. Android doit contenir des bibliothèques natives pour les architectures Android souhaitées/ciblées, par exemple, *ARMEABI* , *ARMEABI-V7A* , *x86* . Les applications Xamarin. Android ne peuvent pas s’exécuter sur une plateforme, sauf si elle contient les bibliothèques d’exécution appropriées.
+- Les bibliothèques natives contenant le runtime mono sont présentes dans le *. apk* . Une application Xamarin. Android doit contenir des bibliothèques natives pour les architectures Android souhaitées/ciblées, par exemple, *ARMEABI* , *ARMEABI-V7A* , *x86* . Les applications Xamarin. Android ne peuvent pas s’exécuter sur une plateforme, sauf si elle contient les bibliothèques d’exécution appropriées.
 
 
 Les applications Xamarin. Android contiennent également des *wrappers pouvant être appelés* par Android pour permettre à Android d’appeler du code managé.
@@ -63,7 +62,7 @@ Pour suivre le moment où les références globales sont créées et détruites,
 
 Les références globales peuvent être libérées explicitement en appelant [java. lang. Object. Dispose ()](xref:Java.Lang.Object.Dispose) sur le wrapper managé pouvant être appelé. Cela supprimera le mappage entre l’instance Java et l’instance gérée et autorisera la collecte de l’instance java. Si l’instance Java est à nouveau accessible à partir du code managé, un nouveau wrapper managé pouvant être appelé sera créé pour celle-ci.
 
-Soyez vigilant lorsque vous supprimez des wrappers pouvant être appelés si l’instance peut être partagée par inadvertance entre les threads, car la suppression de l’instance aura un impact sur les références de tous les autres threads. Pour une sécurité maximale, `Dispose()` seules les instances qui ont été allouées via `new` des méthodes *ou* à partir de *sont toujours* allouées aux nouvelles instances et non mises en cache, ce qui peut entraîner un partage d’instance accidentel entre thèmes.
+Soyez vigilant lorsque vous supprimez des wrappers pouvant être appelés si l’instance peut être partagée par inadvertance entre les threads, car la suppression de l’instance aura un impact sur les références de tous les autres threads. Pour une sécurité maximale, `Dispose()` seules les instances qui ont été allouées via `new` des méthodes *ou* à partir de sont toujours allouées aux nouvelles instances et non mises en cache, ce qui peut entraîner un partage d’instance accidentel entre thèmes.
 
 
 
@@ -94,23 +93,23 @@ Cela est pris en charge en instanciant une instance LogTextBox par le biais du c
 
 Ordre des événements:
 
-1.  La disposition XML est chargée dans un [ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41).
+1. La disposition XML est chargée dans un [ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41).
 
-2.  Android instancie le graphique d’objets de disposition et instancie une instance de *monodroid. apidemo. LogTextBox* , ACW pour *LogTextBox* .
+2. Android instancie le graphique d’objets de disposition et instancie une instance de *monodroid. apidemo. LogTextBox* , ACW pour *LogTextBox* .
 
-3.  Le constructeur *monodroid. apidemo. LogTextBox* exécute le constructeur [Android. widget. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) .
+3. Le constructeur *monodroid. apidemo. LogTextBox* exécute le constructeur [Android. widget. TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29) .
 
-4.  Le constructeur *TextView* appelle *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* .
+4. Le constructeur *TextView* appelle *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* .
 
-5.  *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* appelle *LogTextBox. n_getDefaultMovementMethod ()* , qui appelle *TextView. n_getDefaultMovementMethod ()* , qui appelle [java. lang. Object. GetObject&lt; TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
+5. *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* appelle *LogTextBox. n_getDefaultMovementMethod ()* , qui appelle *TextView. n_getDefaultMovementMethod ()* , qui appelle [java. lang. Object. GetObject&lt; TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
 
-6.  *Java. lang. Object. GetObject&lt;TextView&gt;()* vérifie s’il existe déjà une instance correspondante C# pour descripteur. Si c’est le cas, il est retourné. Dans ce scénario, ce n’est pas le cas, donc *Object. GetObject&lt;&gt;t ()* doit en créer un.
+6. *Java. lang. Object. GetObject&lt;TextView&gt;()* vérifie s’il existe déjà une instance correspondante C# pour descripteur. Si c’est le cas, il est retourné. Dans ce scénario, ce n’est pas le cas, donc *Object. GetObject&lt;&gt;t ()* doit en créer un.
 
-7.  *Object. GetObject&lt;T&gt;()* recherche le constructeur *LogTextBox (IntPtr, JniHandleOwneship)* , l’appelle, crée un mappage entre *handle* et l’instance créée et retourne l’instance créée.
+7. *Object. GetObject&lt;T&gt;()* recherche le constructeur *LogTextBox (IntPtr, JniHandleOwneship)* , l’appelle, crée un mappage entre *handle* et l’instance créée et retourne l’instance créée.
 
-8.  *TextView. n_GetDefaultMovementMethod ()* appelle l’accesseur Get de la propriété *LogTextBox. DefaultMovementMethod* .
+8. *TextView. n_GetDefaultMovementMethod ()* appelle l’accesseur Get de la propriété *LogTextBox. DefaultMovementMethod* .
 
-9.  Le contrôle retourne au constructeur *Android. widget. TextView* , qui termine l’exécution.
+9. Le contrôle retourne au constructeur *Android. widget. TextView* , qui termine l’exécution.
 
 10. Le constructeur *monodroid. apidemo. LogTextBox* s’exécute, en appelant *TypeManager. Activate ()* .
 

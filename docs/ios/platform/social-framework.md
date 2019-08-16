@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 715fd408cc05671beba0277a690585fdbb558c7e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff406b8bd6630ef9e17011e0b4b6b996fa944d89
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654030"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528788"
 ---
 # <a name="social-framework-in-xamarinios"></a>Infrastructure sociale dans Xamarin. iOS
 
@@ -55,9 +55,9 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 
  `SLComposeViewController`n’envoie jamais de Tweet directement sans intervention de l’utilisateur. Toutefois, il peut être initialisé à l’aide des méthodes suivantes:
 
--   `SetInitialText`: Ajoute le texte initial à afficher dans le tweet. 
--  `AddUrl`: Ajoute une URL au tweet.
--  `AddImage`: Ajoute une image au tweet.
+- `SetInitialText`: Ajoute le texte initial à afficher dans le tweet. 
+- `AddUrl`: Ajoute une URL au tweet.
+- `AddImage`: Ajoute une image au tweet.
 
 
 Une fois initialisé, l' `PresentVIewController` appel de affiche la vue créée `SLComposeViewController`par le. L’utilisateur peut ensuite éventuellement modifier et envoyer le tweet, ou annuler son envoi. Dans les deux cas, le contrôleur doit être rejeté dans `CompletionHandler`le, où le résultat peut également être vérifié pour voir si le tweet a été envoyé ou annulé, comme indiqué ci-dessous:

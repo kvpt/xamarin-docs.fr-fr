@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e4676314b361bac17b3c6df64631572e62f4d870
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6960fe3db1ddf7d6d911fe8151e49b1a42388d26
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653726"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527854"
 ---
 # <a name="core-image-in-xamarinios"></a>Image principale dans Xamarin. iOS
 
@@ -22,9 +22,9 @@ L’image principale est une nouvelle infrastructure introduite dans iOS 5, qui 
 
 Ce document contient des exemples simples de:
 
--  Détection de visage.
--  Application de filtres à une image
--  Liste des filtres disponibles.
+- Détection de visage.
+- Application de filtres à une image
+- Liste des filtres disponibles.
 
 
 Ces exemples doivent vous aider à commencer à incorporer des fonctionnalités d’image principales dans vos applications Xamarin. iOS.
@@ -49,12 +49,12 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 
 Le tableau de fonctionnalités est rempli avec `CIFaceFeature` des objets (si des visages ont été détectés). Il existe un `CIFaceFeature` pour chaque visage. `CIFaceFeature`a les propriétés suivantes:
 
--  HasMouthPosition: indique si une bouche a été détectée pour ce visage.
--  HasLeftEyePosition: indique si l’œil gauche a été détecté pour cette face.
--  HasRightEyePosition: indique si l’œil droit a été détecté pour cette face. 
--  MouthPosition: coordonnées de l’embouchure pour ce visage.
--  LeftEyePosition: coordonnées de l’œil gauche de cette face.
--  RightEyePosition: coordonnées de l’œil droit de cette face.
+- HasMouthPosition: indique si une bouche a été détectée pour ce visage.
+- HasLeftEyePosition: indique si l’œil gauche a été détecté pour cette face.
+- HasRightEyePosition: indique si l’œil droit a été détecté pour cette face. 
+- MouthPosition: coordonnées de l’embouchure pour ce visage.
+- LeftEyePosition: coordonnées de l’œil gauche de cette face.
+- RightEyePosition: coordonnées de l’œil droit de cette face.
 
 
 Les coordonnées de toutes ces propriétés ont leur origine dans le coin inférieur gauche, contrairement à UIKit qui utilise l’angle supérieur gauche comme origine. Lorsque vous utilisez les coordonnées `CIFaceFeature` , veillez à les «retourner». Cette vue d’image personnalisée de base dans CoreImage\CoreImageViewController.cs montre comment dessiner des triangles «indicateur de visage» sur l’image ( `FlipForBottomOrigin` Notez la méthode):

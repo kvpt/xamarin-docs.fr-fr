@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 2efc782386b8ec39ecca21aaf88738c813c260f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511656"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529046"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -143,8 +143,8 @@ Le profileur Xamarin peut être lancé à partir de votre IDE quand vous profile
 
 #### <a name="launching-from-visual-studio"></a>Lancement à partir de Visual Studio
 
-1.  Tout d’abord, assurez-vous que votre application est chargée dans Visual Studio et sélectionnez la configuration de débogage (par défaut), comme indiqué ci-dessus.
-2.  Accédez à **analyser > Xamarin Profiler** dans Visual Studio pour ouvrir le profileur, comme illustré dans le diagramme ci-dessous:
+1. Tout d’abord, assurez-vous que votre application est chargée dans Visual Studio et sélectionnez la configuration de débogage (par défaut), comme indiqué ci-dessus.
+2. Accédez à **analyser > Xamarin Profiler** dans Visual Studio pour ouvrir le profileur, comme illustré dans le diagramme ci-dessous:
 
 ![Lancement du profileur à partir de Visual Studio](images/start-profiling-vs.png)
 
@@ -231,8 +231,8 @@ Il existe différentes vues de données dans l’instrument allocations, qui per
 La vue de l’inspecteur pour les Allocations fournit les options de filtrage et regroupement d’objets, en fournissant des statistiques sur la mémoire allouée, ainsi que les allocations supérieures, ainsi que les vues pour la Trace de la pile et le chemin d’accès à la racine.
 
 - **Arborescence des appels** : affiche la totalité de l’arborescence des appels de tous les threads de l’application et comprend des informations sur la mémoire allouée sur chaque nœud. Lorsqu’un élément est sélectionné dans la liste, tous les nœuds frères s’affichent en gris. Vous pouvez développer l’arborescence ou double-cliquer sur l’élément pour l’examiner. Lorsque vous Affichez cette vue de données, vous pouvez utiliser la vue inspecteur des paramètres d’affichage pour modifier la façon dont elle est présentée. Il existe actuellement deux options:
-    1.  **Inversée arborescence des appels** : prend en compte la trace de la pile de haut en bas. Il s’agit d’une option d’affichage pratique, car elle indique les méthodes les plus profondes dans lesquelles le processeur consacre son temps.
-    2.  **Séparer par thread** : cette option permet d’organiser l’arborescence des appels par thread.
+    1. **Inversée arborescence des appels** : prend en compte la trace de la pile de haut en bas. Il s’agit d’une option d’affichage pratique, car elle indique les méthodes les plus profondes dans lesquelles le processeur consacre son temps.
+    2. **Séparer par thread** : cette option permet d’organiser l’arborescence des appels par thread.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

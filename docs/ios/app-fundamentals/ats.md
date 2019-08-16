@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 62ccaea83a3648c5d9b0a029b3a22d136c4f2cee
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6890846a1cb5cd44429c9157b3aeb75c7a1f2f4b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649409"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521431"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Sécurité du transport d’application dans Xamarin. iOS
 
@@ -175,7 +175,7 @@ Chaque clé a le type et la signification suivants:
 - **NSAllowsArbitraryLoads** (`Boolean`)-Si `YES` ATS est désactivé pour un domaine **non** listé dans `NSExceptionDomains`. Pour les domaines listés, les paramètres de sécurité spécifiés sont utilisés.
 - **NSAllowsArbitraryLoadsInWebContent** (`Boolean`)-Si `YES` autorise le chargement correct des pages Web alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application.
 - **NSExceptionDomains** (`Dictionary`): Collection de domaines qui et les paramètres de sécurité que l’ATS doit utiliser pour un domaine donné.
-- **< Domain-Name-for-exception-as-string >** (`Dictionary`): Collection d’exceptions pour un domaine donné (par exemple, `www.xamarin.com`).
+- `Dictionary`  **Domain-Name-for-exception-As-String>():collectiond’exceptionspourundomaine\<** donné (par exemple, `www.xamarin.com`).
 - **NSExceptionMinimumTLSVersion** (`String`): Version TLS minimale `TLSv1.0`en tant que, `TLSv1.1` ou `TLSv1.2` (valeur par défaut).
 - **NSExceptionRequiresForwardSecrecy** (`Boolean`)-Si `NO` le domaine n’a pas besoin d’utiliser un chiffrement avec la sécurité de transfert. La valeur par défaut est `YES`.
 - **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`)-Si `NO` (valeur par défaut), toutes les communications avec ce domaine doivent `HTTPS` être dans le protocole.
@@ -248,7 +248,7 @@ Dans Visual Studio pour Mac, double-cliquez sur `Info.plist` le fichier dans le 
 
 
 
-Là encore, la désactivation de l’ATS _ne doit être_ utilisée qu’en dernier recours, si le basculement vers des connexions sécurisées n’est pas disponible ou n’est pas pratique.
+Là encore, la désactivation de l’ATS ne doit être utilisée qu’en dernier recours, si le basculement vers des connexions sécurisées n’est pas disponible ou n’est pas pratique.
 
 <a name="Summary" />
 

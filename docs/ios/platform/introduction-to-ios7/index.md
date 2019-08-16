@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 067d97e6a36dae6c11f056241c08c21899e96c08
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649326"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527572"
 ---
 # <a name="introduction-to-ios-7"></a>Introduction à iOS 7
 
@@ -28,8 +28,8 @@ iOS 7 augmente la prise en charge de l’animation dans UIKit, ce qui permet aux
 
  `UIView`prend désormais en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la `AnimateNotify` méthode ou `AnimateNotifyAsync` , en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous:
 
--  `springWithDampingRatio`: Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
--  `initialSpringVelocity`: Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
+- `springWithDampingRatio`: Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
+- `initialSpringVelocity`: Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
 
 
 Le code suivant produit un effet de ressort lorsque le centre de la vue d’image change:
@@ -97,19 +97,19 @@ L’API est déclarative par nature. Vous pouvez déclarer comment les interacti
 
 Plusieurs comportements primitifs différents sont disponibles pour déclencher des interactions complexes, notamment:
 
--  `UIAttachmentBehavior`: Attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
--  `UICollisionBehavior`: Permet aux éléments dynamiques de participer aux collisions.
--  `UIDynamicItemBehavior`: Spécifie un ensemble général de propriétés à appliquer aux éléments dynamiques, tels que l’élasticité, la densité et le frottement.
--  `UIGravityBehavior`: Applique la gravité à un élément dynamique, ce qui entraîne l’accélération des éléments dans la direction de la gravité.
--  `UIPushBehavior`: Applique la force à un élément dynamique.
--  `UISnapBehavior`: Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
+- `UIAttachmentBehavior`: Attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
+- `UICollisionBehavior`: Permet aux éléments dynamiques de participer aux collisions.
+- `UIDynamicItemBehavior`: Spécifie un ensemble général de propriétés à appliquer aux éléments dynamiques, tels que l’élasticité, la densité et le frottement.
+- `UIGravityBehavior`: Applique la gravité à un élément dynamique, ce qui entraîne l’accélération des éléments dans la direction de la gravité.
+- `UIPushBehavior`: Applique la force à un élément dynamique.
+- `UISnapBehavior`: Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
 
 
 Bien qu’il existe de nombreuses primitives, le processus général d’ajout d’interactions physiques à une vue à l’aide de UIKit Dynamics est cohérent entre les comportements:
 
-1.  Créer un animateur dynamique.
-1.  Créer un ou plusieurs comportements.
-1.  Ajoutez des comportements à l’animateur dynamique.
+1. Créer un animateur dynamique.
+1. Créer un ou plusieurs comportements.
+1. Ajoutez des comportements à l’animateur dynamique.
 
 
 ### <a name="dynamics-example"></a>Exemple Dynamics
@@ -230,9 +230,9 @@ Pour plus d’informations, consultez notre [TextKit](~/ios/platform/textkit.md)
 
 iOS 7 change quand et comment le travail en arrière-plan est effectué. L’achèvement des tâches dans iOS 7 ne maintient plus les applications éveillées lorsque les tâches s’exécutent en arrière-plan, et les applications sont réveillées pour le traitement en arrière-plan de manière non contiguë. iOS 7 ajoute également trois nouvelles API pour mettre à jour les applications avec le nouveau contenu en arrière-plan:
 
--  Récupération en arrière-plan: permet aux applications de mettre à jour le contenu en arrière-plan à intervalles réguliers.
--  Notifications distantes: permet aux applications de mettre à jour le contenu lors de la réception d’une notification push. Les notifications peuvent être en mode silencieux ou afficher une bannière sur l’écran de verrouillage.
--  Service de transfert en arrière-plan: permet le chargement et le téléchargement de données, telles que des fichiers volumineux, sans limite de temps fixe.
+- Récupération en arrière-plan: permet aux applications de mettre à jour le contenu en arrière-plan à intervalles réguliers.
+- Notifications distantes: permet aux applications de mettre à jour le contenu lors de la réception d’une notification push. Les notifications peuvent être en mode silencieux ou afficher une bannière sur l’écran de verrouillage.
+- Service de transfert en arrière-plan: permet le chargement et le téléchargement de données, telles que des fichiers volumineux, sans limite de temps fixe.
 
 
 Pour plus d’informations sur les nouvelles fonctionnalités multitâches, consultez les sections iOS du [Guide d’arrière-plan](~/ios/app-fundamentals/backgrounding/index.md)Xamarin.

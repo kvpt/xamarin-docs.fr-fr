@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6826088dcc192f4bc4dcfa7424236f98391e0bd6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656704"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528396"
 ---
 # <a name="watchos-troubleshooting"></a>Résolution des problèmes surveilléos
 
@@ -105,37 +105,39 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
 4. Fermez le Storyboard et revenez à Visual Studio pour Mac. Créez un nouveau C# fichier **MyInterfaceController.cs** (ou le nom de votre choix) dans le projet d’extension de l' **application Watch** (et non l’application Watch elle-même où se trouve la table de montage séquentiel). Ajoutez le code suivant (mise à jour de l’espace de noms, ClassName et du nom du constructeur):
 
-        using System;
-        using WatchKit;
-        using Foundation;
-        
-        namespace WatchAppExtension  // remember to update this
+    ```csharp
+    using System;
+    using WatchKit;
+    using Foundation;
+
+    namespace WatchAppExtension  // remember to update this
+    {
+        public partial class MyInterfaceController // remember to update this
+        : WKInterfaceController
         {
-            public partial class MyInterfaceController // remember to update this
-            : WKInterfaceController
+            public MyInterfaceController // remember to update this
+            (IntPtr handle) : base (handle)
             {
-                public MyInterfaceController // remember to update this
-                (IntPtr handle) : base (handle)
-                {
-                }
-                public override void Awake (NSObject context)
-                {
-                    base.Awake (context);
-                    // Configure interface objects here.
-                    Console.WriteLine ("{0} awake with context", this);
-                }
-                public override void WillActivate ()
-                {
-                    // This method is called when the watch view controller is about to be visible to the user.
-                    Console.WriteLine ("{0} will activate", this);
-                }
-                public override void DidDeactivate ()
-                {
-                    // This method is called when the watch view controller is no longer visible to the user.
-                    Console.WriteLine ("{0} did deactivate", this);
-                }
+            }
+            public override void Awake (NSObject context)
+            {
+                base.Awake (context);
+                // Configure interface objects here.
+                Console.WriteLine ("{0} awake with context", this);
+            }
+            public override void WillActivate ()
+            {
+                // This method is called when the watch view controller is about to be visible to the user.
+                Console.WriteLine ("{0} will activate", this);
+            }
+            public override void DidDeactivate ()
+            {
+                // This method is called when the watch view controller is no longer visible to the user.
+                Console.WriteLine ("{0} did deactivate", this);
             }
         }
+    }
+    ```
 
 5. Créez un autre C# fichier **MyInterfaceController.Designer.cs** dans le projet d’extension de l' **application Watch** et ajoutez le code ci-dessous. Veillez à mettre à jour l’espace de noms, `Register` le ClassName et l’attribut:
 
@@ -188,22 +190,22 @@ Si tout fonctionne correctement, il doit apparaître automatiquement dans la lis
 
 11. Une fois que les modifications de la table de montage séquentiel sont enregistrées et que Xcode est fermé, revenez à Visual Studio pour Mac. Il détecte les modifications du fichier d’en-tête et ajoute automatiquement le code au fichier **. Designer.cs** :
 
+    ```csharp
+    [Register ("MyInterfaceController")]
+    partial class MyInterfaceController
+    {
+        [Outlet]
+        WatchKit.WKInterfaceButton myButton { get; set; }
 
-        [Register ("MyInterfaceController")]
-        partial class MyInterfaceController
+        void ReleaseDesignerOutlets ()
         {
-            [Outlet]
-            WatchKit.WKInterfaceButton myButton { get; set; }
-        
-            void ReleaseDesignerOutlets ()
-            {
-                if (myButton != null) {
-                    myButton.Dispose ();
-                    myButton = null;
-                }
+            if (myButton != null) {
+                myButton.Dispose ();
+                myButton = null;
             }
         }
-
+    }
+    ```
 
 Vous pouvez maintenant référencer le contrôle (ou implémenter l’action C#) dans!
 

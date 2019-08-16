@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: f5a672f6b34edf02eeac0f2820989d0656342167
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a6077029a82577cccbf060f14cdd7586c2793a94
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648824"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529256"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Utilisation de CocosSharp dans Xamarin.Forms
 
@@ -62,7 +62,7 @@ Tout le code sera écrit dans le projet de bibliothèque .NET Standard. Toutefoi
 Le package Nuget de CocosSharp contient tous les objets nécessaires pour créer des objets de CocosSharp.
 Le package nuget CocosSharp.Forms inclut la `CocosSharpView` classe, qui est utilisé pour héberger CocosSharp dans Xamarin.Forms.
 Ajouter le **CocosSharp.Forms** NuGet et **CocosSharp** sera automatiquement ajouté également.
-Pour ce faire, cliquez sur le <span class="UIItem">Packages</span> dossier dans le projet de bibliothèque .NET Standard, puis sélectionnez <span class="UIItem">ajouter des Packages... </span>. Entrez le terme de recherche <span class="UIItem">CocosSharp.Forms</span>, sélectionnez <span class="UIItem">CocosSharp pour Xamarin.Forms</span>, puis cliquez sur <span class="UIItem">ajouter un Package</span>.
+Pour ce faire, cliquez sur le **Packages** dossier dans le projet de bibliothèque .NET Standard, puis sélectionnez **ajouter des Packages...** . Entrez le terme de recherche **CocosSharp.Forms**, sélectionnez **CocosSharp pour Xamarin.Forms**, puis cliquez sur **ajouter un Package**.
 
 ![](cocossharp-images/image1.png "Ajouter la boîte de dialogue Packages")
 

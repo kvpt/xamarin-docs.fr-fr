@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 70555a0e2df3bcdd9c3abe47cf8231145891a826
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865960"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528406"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Utilisation de watchOS localisation dans Xamarin
 
@@ -56,7 +56,7 @@ Par défaut, l’application Apple watch n’est pas configurée pour la localis
 
 1. Créer **Base.lproj** directory et déplacer le **Interface.storyboard** dedans.
 
-2. Créer  **<language>.lproj** répertoires pour chaque langue que vous souhaitez prendre en charge.
+2. Créez les répertoires  **Language>.lprojpourchaquelanguequevoussouhaitezprendreencharge\<** .
 
 3. Le **.lproj** répertoires doivent contenir un **Interface.strings** fichier texte (le nom de fichier doit correspondre à nom de la storboard). Vous pouvez éventuellement placer toutes les images doivent donc être localisées dans ces répertoires.
 
@@ -125,7 +125,7 @@ displayText.SetText (localizedDisplay);
 
 Les images qui sont remplies par le code peuvent être définies de deux manières.
 
-1. Vous pouvez modifier un `Image` contrôle en lui attribuant la valeur du nom de chaîne d’une image qui déjà existe dans l’application Apple Watch, par exemple,
+1. Vous pouvez modifier un `Image` contrôle en définissant sa valeur sur le nom de chaîne d’une image qui existe déjà dans l’application Watch, par exemple
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
@@ -139,7 +139,7 @@ Les images qui sont remplies par le code peuvent être définies de deux manièr
     }
     ```
 
-    Notez que vous n’avez pas besoin de spécifier le **@2x** lorsque vous faites référence au nom de fichier de l’image.
+    Notez que vous n’avez pas besoin de spécifier **@2x** le en faisant référence au nom de fichier de l’image.
 
 La seconde méthode est également applicable si vous téléchargez une image à partir d’un serveur distant à restituer sur la surveillance ; Toutefois dans ce cas vous devez vous assurer que l’image que vous téléchargez est correctement localisé en fonction des préférences de l’utilisateur.
 

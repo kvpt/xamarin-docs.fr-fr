@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 15ff11c5100f697e1945793da0baca68add082be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a4e165f6156bf5224881327049b2c3ed48b5c2fe
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646552"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522760"
 ---
 # <a name="viewpager-with-views"></a>ViewPager avec des vues
 
@@ -101,11 +101,11 @@ protected override void OnCreate(Bundle bundle)
 
 Ce code effectue les opérations suivantes:
 
-1.  Définit la vue à partir de la ressource de disposition **main. AXML** .
+1. Définit la vue à partir de la ressource de disposition **main. AXML** .
 
-2.  Récupère une référence au `ViewPager` à partir de la disposition.
+2. Récupère une référence au `ViewPager` à partir de la disposition.
 
-3.  Instancie un nouveau `TreeCatalog` comme source de données.
+3. Instancie un nouveau `TreeCatalog` comme source de données.
 
 Lorsque vous générez et exécutez ce code, vous devez voir un affichage qui ressemble à la capture d’écran suivante: 
 
@@ -120,13 +120,13 @@ Lorsque vous générez et exécutez ce code, vous devez voir un affichage qui re
 
 Lorsque vous implémentez `PagerAdapter`un, vous devez substituer les éléments suivants:
 
--   **InstantiateItem** Crée la page (`View`) pour une position donnée et l’ajoute à la `ViewPager`collection de vues de. &ndash; 
+- **InstantiateItem** Crée la page (`View`) pour une position donnée et l’ajoute à la `ViewPager`collection de vues de. &ndash; 
 
--   **DestroyItem** &ndash; Supprime une page d’une position donnée.
+- **DestroyItem** &ndash; Supprime une page d’une position donnée.
 
--   **Nombre** &ndash; Propriété en lecture seule qui retourne le nombre de vues (pages) disponibles. 
+- **Nombre** &ndash; Propriété en lecture seule qui retourne le nombre de vues (pages) disponibles. 
 
--   **IsViewFromObject** &ndash; Détermine si une page est associée à un objet clé spécifique. (Cet objet est créé par la `InstantiateItem` méthode.) Dans cet exemple, l’objet clé est l' `TreeCatalog` objet de données.
+- **IsViewFromObject** &ndash; Détermine si une page est associée à un objet clé spécifique. (Cet objet est créé par la `InstantiateItem` méthode.) Dans cet exemple, l’objet clé est l' `TreeCatalog` objet de données.
 
 Ajoutez un nouveau fichier appelé **TreePagerAdapter.cs** et remplacez son contenu par le code suivant: 
 
@@ -224,14 +224,14 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 
 Ce code effectue les opérations suivantes:
 
-1.  Instancie un nouveau `ImageView` pour afficher l’image de l’arborescence à la position spécifiée. L’application `MainActivity` est le contexte qui est passé `ImageView` au constructeur.
+1. Instancie un nouveau `ImageView` pour afficher l’image de l’arborescence à la position spécifiée. L’application `MainActivity` est le contexte qui est passé `ImageView` au constructeur.
 
-2.  Définit la `ImageView` ressource sur l' `TreeCatalog` ID de ressource d’image à la position spécifiée.
+2. Définit la `ImageView` ressource sur l' `TreeCatalog` ID de ressource d’image à la position spécifiée.
 
-3.  Convertit le conteneur `View` passé en `ViewPager` une référence.
+3. Convertit le conteneur `View` passé en `ViewPager` une référence.
     Notez que vous devez utiliser `JavaCast<ViewPager>()` pour effectuer correctement ce Cast (cela est nécessaire pour qu’Android effectue une conversion de type vérifiée au moment de l’exécution).
 
-4.  Ajoute le instancié `ImageView` `ViewPager` à et retourne `ImageView` à l’appelant.
+4. Ajoute le instancié `ImageView` `ViewPager` à et retourne `ImageView` à l’appelant.
 
 Lorsque affiche l’image à `position`, elle affiche ce `ImageView`. `ViewPager` Initialement, `InstantiateItem` est appelé deux fois pour remplir les deux premières pages avec des vues. À mesure que l’utilisateur fait défiler, il est rappelé pour gérer les affichages juste après et avant l’élément actuellement affiché. 
 
@@ -253,11 +253,11 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 
 Ce code effectue les opérations suivantes:
 
-1.  Convertit le conteneur `View` passé en `ViewPager` une référence.
+1. Convertit le conteneur `View` passé en `ViewPager` une référence.
 
-2.  Convertit l’objet Java passé`view`() en C# `View` un`view as View`();
+2. Convertit l’objet Java passé`view`() en C# `View` un`view as View`();
 
-3.  Supprime la vue de `ViewPager`. 
+3. Supprime la vue de `ViewPager`. 
 
 
 

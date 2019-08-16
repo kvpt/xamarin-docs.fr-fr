@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a57273005df45c2f8035563efe9562c27cdfa732
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6a9bb5fae84b6883943410d0c2585ce60a1208a4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648406"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526442"
 ---
 # <a name="introduction-to-android-wear"></a>Introduction à Android Wear
 
@@ -90,15 +90,15 @@ L' [utilisation](~/android/wear/deploy-test/packaging.md) de l’empaquetage exp
 
 La meilleure façon de se familiariser avec Android est de générer et tester votre première application. La liste suivante fournit un ordre de lecture recommandé pour vous permettre d’être rapidement opérationnel:
 
-1.  [Le programme d'](~/android/wear/get-started/installation.md) installation de & fournit des instructions détaillées pour l’installation et la configuration de votre environnement de développement afin de générer des applications d’usure Xamarin. Android. 
+1. [Le programme d'](~/android/wear/get-started/installation.md) installation de & fournit des instructions détaillées pour l’installation et la configuration de votre environnement de développement afin de générer des applications d’usure Xamarin. Android. 
 
-2.  Une fois que vous avez installé les packages requis et configuré un émulateur ou un appareil, consultez [Hello, usure](~/android/wear/get-started/hello-wear.md) pour obtenir des instructions pas à pas qui expliquent comment créer un petit projet Android d’usure qui gère les clics de bouton et affiche un compteur sur l’usure passerelle. 
+2. Une fois que vous avez installé les packages requis et configuré un émulateur ou un appareil, consultez [Hello, usure](~/android/wear/get-started/hello-wear.md) pour obtenir des instructions pas à pas qui expliquent comment créer un petit projet Android d’usure qui gère les clics de bouton et affiche un compteur sur l’usure passerelle. 
 
-3.  Le [test de & de déploiement](~/android/wear/deploy-test/index.md) fournit des informations plus détaillées sur la configuration et le déploiement des émulateurs et des appareils, y compris des instructions sur la façon de déployer votre application sur un appareil d’usure via Bluetooth.
+3. Le [test de & de déploiement](~/android/wear/deploy-test/index.md) fournit des informations plus détaillées sur la configuration et le déploiement des émulateurs et des appareils, y compris des instructions sur la façon de déployer votre application sur un appareil d’usure via Bluetooth.
 
-4.  [Utilisation des tailles d’écran](~/android/wear/screen-sizes.md) explique comment afficher un aperçu et optimiser votre interface utilisateur pour les différentes tailles d’écran disponibles sur les appareils d’usure. 
+4. [Utilisation des tailles d’écran](~/android/wear/screen-sizes.md) explique comment afficher un aperçu et optimiser votre interface utilisateur pour les différentes tailles d’écran disponibles sur les appareils d’usure. 
 
-5.  [Utilisation de](~/android/wear/deploy-test/packaging.md) l’empaquetage décrit les étapes à suivre pour empaqueter manuellement des applications d’usure pour la distribution sur Google Play.
+5. [Utilisation de](~/android/wear/deploy-test/packaging.md) l’empaquetage décrit les étapes à suivre pour empaqueter manuellement des applications d’usure pour la distribution sur Google Play.
 
 Une fois que vous avez créé votre première application d’usure, vous souhaiterez peut-être essayer de créer une facette personnalisée pour l’usure Android. 
 [La création d’une face de montre](~/android/wear/platform/creating-a-watchface.md) fournit des instructions pas à pas et des exemples de code pour le développement d’un service de visage de montre numérique supprimé, suivi d’un plus grand code qui l’améliore à un visage de type analogique avec des fonctionnalités supplémentaires. 
@@ -169,8 +169,8 @@ Android usure 2,0 les applications peuvent fonctionner indépendamment des appli
 
 Les gestes de poignet permettent aux utilisateurs d’interagir avec votre application sans utiliser l’écran &ndash; tactile. les utilisateurs peuvent répondre à l’application à l’aide d’une seule main. Deux gestes de poignet sont pris en charge: 
 
--   Poignet de scintillement
--   Poignet de scintillement
+- Poignet de scintillement
+- Poignet de scintillement
 
 Pour plus d’informations, consultez la rubrique [gestes du poignet](https://developer.android.com/wear/preview/features/gestures.html) Android. 
 

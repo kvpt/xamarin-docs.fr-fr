@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: fea96ab645b2d01b774f691402a5796eec1f1dba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dfee003ba327b199974ae277a93cb1ca55a81b0d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644968"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522884"
 ---
 # <a name="android-time-picker"></a>Sélecteur d’heure Android
 
@@ -167,20 +167,20 @@ Cette `TimePickerFragment` classe est divisée en éléments plus petits et expl
 
 `TimePickerFragment`implémente plusieurs méthodes: une méthode de fabrique, une méthode d’instanciation de `OnTimeSet` boîte de dialogue et `TimePickerDialog.IOnTimeSetListener`la méthode de gestionnaire requise par.
 
--   `TimePickerFragment`est une sous-classe `DialogFragment`de. Il implémente également l' `TimePickerDialog.IOnTimeSetListener` interface (autrement dit, il fournit la méthode `OnTimeSet` requise):
+- `TimePickerFragment`est une sous-classe `DialogFragment`de. Il implémente également l' `TimePickerDialog.IOnTimeSetListener` interface (autrement dit, il fournit la méthode `OnTimeSet` requise):
 
     ```csharp
     public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
     ```
 
--   `TAG`est initialisé à des fins de journalisation (*MyTimePickerFragment* peut être remplacé par la chaîne que vous souhaitez utiliser). L' `timeSelectedHandler` action est initialisée sur un délégué vide pour empêcher les exceptions de référence null:
+- `TAG`est initialisé à des fins de journalisation (*MyTimePickerFragment* peut être remplacé par la chaîne que vous souhaitez utiliser). L' `timeSelectedHandler` action est initialisée sur un délégué vide pour empêcher les exceptions de référence null:
 
     ```csharp
     public static readonly string TAG = "MyTimePickerFragment";
     Action<DateTime> timeSelectedHandler = delegate { };
     ```
 
--   La `NewInstance` méthode de fabrique est appelée pour instancier `TimePickerFragment`un nouveau. Cette méthode prend un `Action<DateTime>` gestionnaire qui est appelé quand l’utilisateur clique sur le bouton **OK** dans `TimePickerDialog`le:
+- La `NewInstance` méthode de fabrique est appelée pour instancier `TimePickerFragment`un nouveau. Cette méthode prend un `Action<DateTime>` gestionnaire qui est appelé quand l’utilisateur clique sur le bouton **OK** dans `TimePickerDialog`le:
 
     ```csharp
     public static TimePickerFragment NewInstance(Action<DateTime> onTimeSelected)
@@ -191,7 +191,7 @@ Cette `TimePickerFragment` classe est divisée en éléments plus petits et expl
     }
     ```
 
--   Lorsque le fragment doit être affiché, Android appelle la `DialogFragment` méthode [OnCreateDialog](xref:Android.App.DialogFragment.OnCreateDialog*).
+- Lorsque le fragment doit être affiché, Android appelle la `DialogFragment` méthode [OnCreateDialog](xref:Android.App.DialogFragment.OnCreateDialog*).
     Cette méthode crée un nouvel `TimePickerDialog` objet et l’initialise avec l’activité, l’objet `TimePickerFragment`de rappel (qui est l’instance actuelle de) et l’heure actuelle:
 
     ```csharp
@@ -205,7 +205,7 @@ Cette `TimePickerFragment` classe est divisée en éléments plus petits et expl
     }
     ```
 
--   Lorsque l’utilisateur modifie le paramètre d’heure dans `TimePicker` la boîte de `OnTimeSet` dialogue, la méthode est appelée. `OnTimeSet`crée un `DateTime` objet à l’aide de la date actuelle et des fusions dans l’heure (heure et minute) sélectionnées par l’utilisateur:
+- Lorsque l’utilisateur modifie le paramètre d’heure dans `TimePicker` la boîte de `OnTimeSet` dialogue, la méthode est appelée. `OnTimeSet`crée un `DateTime` objet à l’aide de la date actuelle et des fusions dans l’heure (heure et minute) sélectionnées par l’utilisateur:
 
     ```csharp
     public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
@@ -215,7 +215,7 @@ Cette `TimePickerFragment` classe est divisée en éléments plus petits et expl
     ```
 
 
--   Cet `DateTime` objet est passé `timeSelectedHandler` au qui est inscrit avec l' `TimePickerFragment` objet au moment de la création. `OnTimeSet`appelle ce gestionnaire pour mettre à jour l’affichage de l’heure de l’activité à l’heure sélectionnée (ce gestionnaire est implémenté dans la section suivante):
+- Cet `DateTime` objet est passé `timeSelectedHandler` au qui est inscrit avec l' `TimePickerFragment` objet au moment de la création. `OnTimeSet`appelle ce gestionnaire pour mettre à jour l’affichage de l’heure de l’activité à l’heure sélectionnée (ce gestionnaire est implémenté dans la section suivante):
 
     ```csharp
     timeSelectedHandler (selectedTime);
@@ -225,7 +225,7 @@ Cette `TimePickerFragment` classe est divisée en éléments plus petits et expl
 
 Maintenant que le `DialogFragment` a été implémenté, il est temps d’instancier `DialogFragment` le à `NewInstance` l’aide de la méthode de fabrique et de l’afficher en appelant [DialogFragment. Show](xref:Android.App.DialogFragment.Show*):
 
-Ajoutez la méthode suivante à `MainActivity`:
+Ajoutez la méthode suivante à `MainActivity` :
 
 ```csharp
 void TimeSelectOnClick (object sender, EventArgs eventArgs)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647801"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522169"
 ---
 # <a name="setup-and-installation"></a>Installation et configuration
 
@@ -22,13 +22,13 @@ _Cet article vous guide tout au long des étapes d’installation et des détail
 
 Les éléments suivants sont requis pour créer des applications d’usure Android basées sur Xamarin:
 
--   **Visual Studio ou Visual Studio pour Mac** &ndash; La Communauté Visual Studio 2017 ou une version ultérieure est requise.
+- **Visual Studio ou Visual Studio pour Mac** &ndash; La Communauté Visual Studio 2017 ou une version ultérieure est requise.
 
--   **Xamarin. Android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
+- **Xamarin. Android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
 
--   **Android SDK** -Android SDK 5.0.1 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
+- **Android SDK** -Android SDK 5.0.1 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
--   **Kit de développement Java** Le développement Xamarin Android requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24). &ndash;
+- **Kit de développement Java** Le développement Xamarin Android requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24). &ndash;
 
 Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur.
 
@@ -39,9 +39,9 @@ Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/j
 
 Après avoir installé Xamarin. Android, procédez comme suit pour être prêt à créer et à tester des applications d’usure Android: 
 
-1.  Installez les Android SDK et les outils requis.
-2.  Configurez un appareil de test.
-3.  Créez votre première application Android usure.
+1. Installez les Android SDK et les outils requis.
+2. Configurez un appareil de test.
+3. Créez votre première application Android usure.
 
 Ces étapes sont décrites dans les sections suivantes.
 

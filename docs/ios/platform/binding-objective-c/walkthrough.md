@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646174"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527990"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS
 
@@ -45,10 +45,10 @@ L’exemple d’application montre comment utiliser un délégué renforcé pour
 
 Cet article suppose que vous êtes familiarisé avec Xcode et le langage Objective-C et que vous avez lu notre documentation [objective-c de liaison](~/cross-platform/macios/binding/index.md) . En outre, les éléments suivants sont requis pour effectuer les étapes présentées:
 
--  Le **Kit de développement logiciel (SDK) Xcode et iOS** -le Xcode de Apple et la dernière API iOS doivent être installés et configurés sur l’ordinateur du développeur.
--  **[Outils en ligne de commande Xcode](#Installing_the_Xcode_Command_Line_Tools)** : les outils en ligne de commande Xcode doivent être installés pour la version actuellement installée de Xcode (voir ci-dessous pour plus d’informations sur l’installation).
--  **Visual Studio pour Mac ou Visual Studio** -la dernière version de Visual Studio pour Mac ou Visual Studio doit être installée et configurée sur l’ordinateur de développement. Un Mac Apple est requis pour le développement d’une application Xamarin. iOS et, lors de l’utilisation de Visual Studio, vous devez être connecté à [un hôte de build Xamarin. iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **La dernière version de objective Sharp** -une copie en cours de l’outil Sharpship objective téléchargée [ici](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Si vous avez déjà installé Sharpy, vous pouvez le mettre à jour vers la version la plus récente à l’aide de la`sharpie update`
+- Le **Kit de développement logiciel (SDK) Xcode et iOS** -le Xcode de Apple et la dernière API iOS doivent être installés et configurés sur l’ordinateur du développeur.
+- **[Outils en ligne de commande Xcode](#Installing_the_Xcode_Command_Line_Tools)** : les outils en ligne de commande Xcode doivent être installés pour la version actuellement installée de Xcode (voir ci-dessous pour plus d’informations sur l’installation).
+- **Visual Studio pour Mac ou Visual Studio** -la dernière version de Visual Studio pour Mac ou Visual Studio doit être installée et configurée sur l’ordinateur de développement. Un Mac Apple est requis pour le développement d’une application Xamarin. iOS et, lors de l’utilisation de Visual Studio, vous devez être connecté à [un hôte de build Xamarin. iOS](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- **La dernière version de objective Sharp** -une copie en cours de l’outil Sharpship objective téléchargée [ici](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Si vous avez déjà installé Sharpy, vous pouvez le mettre à jour vers la version la plus récente à l’aide de la`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 

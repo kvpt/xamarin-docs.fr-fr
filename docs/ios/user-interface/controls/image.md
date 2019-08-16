@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: fb51d0d04c86274d43e23e4912ed16765b7cdc8b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7f1e61f9364a6a59f2bbacd1c773fe49cc338db9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657528"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528823"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Affichage d’images avec Xamarin. iOS
 
@@ -48,8 +48,8 @@ L’image sera ajoutée à votre projet et disponible pour être chargée et aff
 
 Les fichiers placés dans le répertoire Resources sont traités différemment des fichiers standard: le contenu du dossier Resources est copié à la racine de l’application et peut être référencé à partir de cet emplacement dans votre code. Cela peut être utile pour de nombreuses raisons:
 
--  Stockage des images configurées dans les propriétés de l’application, telles que les images de démarrage par défaut et les icônes d’application.
--  Le stockage d’autres images et fichiers séparément du code, afin qu’ils soient plus faciles à gérer (les sous-répertoires sont conservés lors de la copie du contenu du répertoire des ressources).
+- Stockage des images configurées dans les propriétés de l’application, telles que les images de démarrage par défaut et les icônes d’application.
+- Le stockage d’autres images et fichiers séparément du code, afin qu’ils soient plus faciles à gérer (les sous-répertoires sont conservés lors de la copie du contenu du répertoire des ressources).
 
 
 Le répertoire Resources est particulièrement utile dans un projet de bibliothèque, étant donné que le code peut supposer que ces images seront copiées à la racine de l’application consommatrice, ce qui facilitera l’écriture de bibliothèques de code partagé qui nécessitent une image, un son, une vidéo, XML ou autres fichiers.

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: b40b2d2d5083f32edcb0fc08c8365096e6d4fda9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82423e48f844cde60bcd5e85c5bbe3cb8bc856b8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645354"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522469"
 ---
 # <a name="a-basic-recyclerview-example"></a>Exemple de RecyclerView de base
 
@@ -171,11 +171,11 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 Le `mPhotoAlbum` membre contient la source de données (l’album photo) qui est passée dans le constructeur; le constructeur copie l’album photo dans cette variable membre. Les méthodes requises `RecyclerView.Adapter` suivantes sont implémentées:
 
--   **`OnCreateViewHolder`** &ndash; Instancie le fichier de disposition de l’élément et le détenteur de l’affichage.
+- **`OnCreateViewHolder`** &ndash; Instancie le fichier de disposition de l’élément et le détenteur de l’affichage.
 
--   **`OnBindViewHolder`** &ndash; Charge les données à la position spécifiée dans les vues dont les références sont stockées dans le détenteur de vue donné.
+- **`OnBindViewHolder`** &ndash; Charge les données à la position spécifiée dans les vues dont les références sont stockées dans le détenteur de vue donné.
 
--   **`ItemCount`** &ndash; Retourne le nombre d’éléments dans la source de données.
+- **`ItemCount`** &ndash; Retourne le nombre d’éléments dans la source de données.
 
 Le gestionnaire de disposition appelle ces méthodes pendant qu’il positionne des éléments `RecyclerView`dans le. L’implémentation de ces méthodes est examinée dans les sections suivantes.
 

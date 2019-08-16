@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9387b44419af87785d45a25ab254d3361a5615a3
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485921"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523650"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Utilisation de Xamarin. Android Designer
 
@@ -25,9 +25,9 @@ Les interfaces utilisateur Android peuvent être créées de façon déclarative
 Cet article explique comment utiliser Xamarin. Android Designer pour créer visuellement une interface utilisateur.
 
 > [!TIP]
-> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers. XML à l’intérieur du Android Designer.
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
 >
-> Les fichiers. AXML et. XML sont pris en charge dans la Android Designer.
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
@@ -105,11 +105,11 @@ Si les deux `textView` widgets ne sont pas `linearLayout1`à l’intérieur, vou
 
 L’étape suivante consiste à modifier l’interface utilisateur pour afficher `ImageView` le à gauche, avec les deux `TextView` widgets empilés `ImageView`à droite de.
 
-1.  Sélectionnez le contrôle `ImageView`.
+1. Sélectionnez le contrôle `ImageView`.
 
-2.  Dans la **fenêtre Propriétés**, entrez *Width* dans la zone de recherche et localisez la largeur de la **disposition**.
+2. Dans la **fenêtre Propriétés**, entrez *Width* dans la zone de recherche et localisez la largeur de la **disposition**.
 
-3.  Modifiez le paramètre de **largeur** de `wrap_content`disposition en:
+3. Modifiez le paramètre de **largeur** de `wrap_content`disposition en:
 
 ![Définir le contenu du retour à la ligne](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
@@ -153,11 +153,11 @@ Ensuite, ajustez la position du `LinearLayout` widget qui contient les deux `Tex
 
 Étant donné que est utilisé pour afficher les couleurs (plutôt que les images), l’étape suivante consiste à supprimer la source d’image par défaut ajoutée par le modèle. `ImageView`
 
-1.  Sélectionnez dans l' **aire du concepteur.** `ImageView`
+1. Sélectionnez dans l' **aire du concepteur.** `ImageView`
 
-2.  Dans **Propriétés**, entrez *src* dans la zone de recherche.
+2. Dans **Propriétés**, entrez *src* dans la zone de recherche.
 
-3.  Cliquez sur le petit carré situé à droite du paramètre de propriété **src** , puis sélectionnez **Réinitialiser**:
+3. Cliquez sur le petit carré situé à droite du paramètre de propriété **src** , puis sélectionnez **Réinitialiser**:
 
 [![Effacer le paramètre SRC ImageView](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
@@ -357,11 +357,11 @@ Si les deux `textView` widgets ne sont pas `linearLayout1`à l’intérieur, vou
 
 L’étape suivante consiste à modifier l’interface utilisateur pour afficher `ImageView` le à gauche, avec les deux `TextView` widgets empilés `ImageView`à droite de.
 
-1.  Avec le `ImageView` sélectionné, cliquez sur l’onglet **Propriétés** .
+1. Avec le `ImageView` sélectionné, cliquez sur l’onglet **Propriétés** .
 
-2.  Juste en dessous de l’onglet **Propriétés** , cliquez sur **disposition**.
+2. Juste en dessous de l’onglet **Propriétés** , cliquez sur **disposition**.
 
-3.  Faites défiler jusqu’à **ViewGroup** et `Width` remplacez `wrap_content`le paramètre par:
+3. Faites défiler jusqu’à **ViewGroup** et `Width` remplacez `wrap_content`le paramètre par:
 
 [![Définir le contenu du retour à la ligne](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
@@ -397,11 +397,11 @@ Ensuite, ajustez la position du `LinearLayout` widget qui contient les deux `Tex
 
 Étant donné que est utilisé pour afficher les couleurs (plutôt que les images), l’étape suivante consiste à supprimer la source d’image par défaut ajoutée par le modèle. `ImageView`
 
-1.  Sélectionnez le contrôle `ImageView`.
+1. Sélectionnez le contrôle `ImageView`.
 
-2.  Sous **Propriétés**, cliquez sur l’onglet **widget** .
+2. Sous **Propriétés**, cliquez sur l’onglet **widget** .
 
-3.  Effacez `Src` le paramètre pour qu’il soit vide:
+3. Effacez `Src` le paramètre pour qu’il soit vide:
 
 [![Effacer le paramètre SRC ImageView](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 

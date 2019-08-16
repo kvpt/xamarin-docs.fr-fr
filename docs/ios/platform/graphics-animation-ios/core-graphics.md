@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: dac81a40983ea8414ec730f10c4c1f17e4d9915c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653813"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527930"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Core Graphics dans Xamarin. iOS
 
@@ -24,10 +24,10 @@ Core Graphics est un Framework graphique 2D de bas niveau qui permet de dessiner
 
 Core Graphics prend en charge le dessin dans plusieurs scénarios, notamment:
 
--  [Dessin à l’écran via un `UIView` ](#Drawing_in_a_UIView_Subclass) .
--  [Dessin d’images en mémoire ou à l’écran](#Drawing_Images_and_Text).
--  Création et dessin dans un fichier PDF.
--  Lecture et dessin d’un fichier PDF existant.
+- [Dessin à l’écran via un `UIView` ](#Drawing_in_a_UIView_Subclass) .
+- [Dessin d’images en mémoire ou à l’écran](#Drawing_Images_and_Text).
+- Création et dessin dans un fichier PDF.
+- Lecture et dessin d’un fichier PDF existant.
 
 
 ## <a name="geometric-space"></a>Espace géométrique
@@ -36,9 +36,9 @@ Quel que soit le scénario, tout dessin effectué avec des graphiques de base es
 
 Cette approche présente quelques avantages:
 
--  Le dessin de code devient dynamique et peut ensuite modifier des graphiques au moment de l’exécution.
--  La réduction de la nécessité d’images statiques dans le bundle d’applications peut réduire la taille de l’application.
--  Les graphiques sont plus résistants aux modifications de résolution sur les appareils.
+- Le dessin de code devient dynamique et peut ensuite modifier des graphiques au moment de l’exécution.
+- La réduction de la nécessité d’images statiques dans le bundle d’applications peut réduire la taille de l’application.
+- Les graphiques sont plus résistants aux modifications de résolution sur les appareils.
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
@@ -270,10 +270,10 @@ Le texte obtenu s’affiche avec l’image, comme indiqué ci-dessous:
 
 En plus de dessiner dans le contexte graphique d’une vue, Core Graphics prend en charge le dessin d’images sauvegardées en mémoire, également connues sous le nom de dessin hors écran. Cela nécessite les éléments suivants:
 
--  Création d’un contexte graphique qui est stocké par un en mémoire bitmap
--  Définition de l’état des dessins et des commandes de dessin émises
--  Obtention de l’image à partir du contexte
--  Suppression du contexte
+- Création d’un contexte graphique qui est stocké par un en mémoire bitmap
+- Définition de l’état des dessins et des commandes de dessin émises
+- Obtention de l’image à partir du contexte
+- Suppression du contexte
 
 
 Contrairement à `Draw` la méthode, où le contexte est fourni par la vue, dans ce cas, vous créez le contexte de l’une des deux manières suivantes:

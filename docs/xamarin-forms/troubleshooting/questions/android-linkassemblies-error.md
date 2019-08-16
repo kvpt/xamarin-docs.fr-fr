@@ -1,5 +1,5 @@
 ---
-title: 'Erreur de génération Android : échouée inattendu de la tâche LinkAssemblies le'
+title: 'Erreur de build Android: échec inattendu de la tâche LinkAssemblies'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
@@ -7,33 +7,33 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: f517aaa770fa7b2f1463954638f0afc95168bf65
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 71305dd7287df56036d0298ebfcf8a8cb7c4d3b3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61250738"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528376"
 ---
-# <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Erreur de génération Android : échouée inattendu de la tâche LinkAssemblies le
+# <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Erreur de build Android: échec inattendu de la tâche LinkAssemblies
 
-Vous pouvez voir un message d’erreur `The "LinkAssemblies" task failed unexpectedly` lorsque la génération d’un projet Xamarin.Android qui utilise les formulaires. Cela se produit lorsque l’éditeur de liens est active (en général sur un *version* build pour réduire la taille du package d’application) ; et il se produit car les cibles Android ne sont pas mis à jour vers la dernière version de framework. (Plus d’informations : [Xamarin.Forms pour Android exigences](~/get-started/requirements.md#android))
+Vous pouvez voir un message `The "LinkAssemblies" task failed unexpectedly` d’erreur lors de la création d’un projet Xamarin. Android qui utilise des formulaires. Cela se produit lorsque l’éditeur de liens est actif (généralement sur une version *Release* pour réduire la taille du package d’application); Cela se produit parce que les cibles Android ne sont pas mises à jour avec le Framework le plus récent. (Plus d’informations: [Xamarin. Forms pour les conditions requises pour Android](~/get-started/requirements.md#android))
 
-La résolution de ce problème consiste à s’assurer que vous avez les dernières versions du Kit Android SDK pris en charge et définissez le **Framework cible** à la dernière plateforme installée. Il est également recommandé que vous avez défini le **Version Android cible** à la dernière plateforme installée et le **version Android minimale** supérieure ou égale à 19 d’API. Cela est considéré comme la configuration prise en charge.
+Pour résoudre ce problème, assurez-vous de disposer des dernières versions de Android SDK prises en charge et définissez la version **cible de .NET Framework** sur la dernière plateforme installée. Il est également recommandé de définir la **version Android cible** sur la dernière plateforme installée, et la **version Android minimale** sur API 19 ou supérieure. Cela est considéré comme une configuration prise en charge.
 
-## <a name="setting-in-visual-studio-for-mac"></a>Configuration dans Visual Studio pour Mac
+## <a name="setting-in-visual-studio-for-mac"></a>Définir dans Visual Studio pour Mac
 
-1.  Cliquez avec le bouton droit sur le projet Android, puis sélectionnez **Options** dans le menu.
-2.  Dans le **Options du projet** boîte de dialogue, accédez à **Générer > Général**.
-3.  Définir le **compiler à l’aide de la version d’Android : (Framework cible)**  à la dernière plateforme installée.
-4.  Dans le **Options du projet** boîte de dialogue, accédez à **Générer > Application Android**.
-5.  Définir le **version minimale d’Android** au niveau d’API 19 ou une version ultérieure et le **version Android cible** à la dernière plateforme installée que vous avez choisi dans (3).
+1. Cliquez avec le bouton droit sur le projet Android, puis sélectionnez **options** dans le menu.
+2. Dans la boîte de dialogue **Options du projet** , accédez à **Générer > général**.
+3. Définir la **compilation avec la version Android: (Version cible du .NET Framework)**  sur la dernière plateforme installée.
+4. Dans la boîte de dialogue **Options du projet** , accédez à **Générer > application Android**.
+5. Définissez la **version d’Android minimale** sur l’API de niveau 19 ou version ultérieure, et la **version Android cible** sur la dernière plateforme installée que vous avez choisie dans (3).
 
-## <a name="setting-in-visual-studio"></a>Paramètre dans Visual Studio
+## <a name="setting-in-visual-studio"></a>Définir dans Visual Studio
 
-1.  Cliquez avec le bouton droit sur le projet Android, puis sélectionnez **propriétés** dans le menu.
-2.  Dans les propriétés du projet, accédez à **Application**.
-3.  Définir le **compiler à l’aide de la version d’Android : (Framework cible)**  à la dernière plateforme installée.
-4.  Dans les propriétés du projet, accédez à **manifeste Android**.
-5.  Définir le **version minimale d’Android** au niveau d’API 19 ou une version ultérieure et le **version Android cible** à la dernière plateforme installée que vous avez choisi dans (3).
+1. Cliquez avec le bouton droit sur le projet Android , puis sélectionnez corrections dans le menu.
+2. Dans les propriétés du projet, accédez à **application**.
+3. Définir la **compilation avec la version Android: (Version cible du .NET Framework)**  sur la dernière plateforme installée.
+4. Dans les propriétés du projet, accédez à **Android manifest**.
+5. Définissez la **version d’Android minimale** sur l’API de niveau 19 ou version ultérieure, et la **version Android cible** sur la dernière plateforme installée que vous avez choisie dans (3).
 
-Une fois que vous avez mis à jour ces paramètres, Veuillez nettoyer et régénérer votre projet pour vérifier que vos changements sont récupérés.
+Une fois que vous avez mis à jour ces paramètres, nettoyez et régénérez votre projet pour vous assurer que vos modifications sont sélectionnées.

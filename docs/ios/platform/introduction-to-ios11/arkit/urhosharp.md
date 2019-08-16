@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/01/2017
-ms.openlocfilehash: 69ddb42f6bf51ec78d9735346c44efa94fb9c418
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 106d6100d373c8d14a35aaee59035cf4a98083a5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508775"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528255"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Utilisation de ARKit avec UrhoSharp dans Xamarin. iOS
 
@@ -59,33 +59,33 @@ Vous devez ensuite sous-définir la `ArkitApp` classe et substituer la `Start` m
 
 L’exemple ARKit/UrhoSharp charge un caractère animé avec des textures et lit l’animation, avec l’implémentation suivante:
 
-    ```csharp
-    public class MutantDemo : ArkitApp
+```csharp
+public class MutantDemo : ArkitApp
+{
+    [Preserve]
+    public MutantDemo(ApplicationOptions opts) : base(opts) { }
+
+    Node mutantNode;
+
+    protected override void Start()
     {
-        [Preserve]
-        public MutantDemo(ApplicationOptions opts) : base(opts) { }
+        base.Start ();
 
-        Node mutantNode;
+        // Mutant
+        mutantNode = Scene.CreateChild();
+        mutantNode.Rotation = new Quaternion(x: 0, y:15, z:0);
+        mutantNode.Position = new Vector3(0, -1f, 2f); /*two meters away*/
+        mutantNode.SetScale(0.5f);
 
-        protected override void Start()
-        {
-            base.Start ();
+        var mutant = mutantNode.CreateComponent<AnimatedModel>();
+        mutant.Model = ResourceCache.GetModel("Models/Mutant.mdl");
+        mutant.Material = ResourceCache.GetMaterial("Materials/mutant_M.xml");
 
-            // Mutant
-            mutantNode = Scene.CreateChild();
-            mutantNode.Rotation = new Quaternion(x: 0, y:15, z:0);
-            mutantNode.Position = new Vector3(0, -1f, 2f); /*two meters away*/
-            mutantNode.SetScale(0.5f);
-
-            var mutant = mutantNode.CreateComponent<AnimatedModel>();
-            mutant.Model = ResourceCache.GetModel("Models/Mutant.mdl");
-            mutant.Material = ResourceCache.GetMaterial("Materials/mutant_M.xml");
-
-            var animation = mutantNode.CreateComponent<AnimationController>();
-            animation.Play("Animations/Mutant_HipHop1.ani", 0, true, 0.2f);
-        }
+        var animation = mutantNode.CreateComponent<AnimationController>();
+        animation.Play("Animations/Mutant_HipHop1.ani", 0, true, 0.2f);
     }
-    ```
+}
+```
 
 Et c’est tout ce que vous devez faire à ce stade pour que votre contenu 3D soit affiché en réalité augmentée.
 

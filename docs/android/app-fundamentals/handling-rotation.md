@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b1039dd433456731b775399ab42222fe0e4cc6d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 198d667ea52fcad4758c2845e5f2e935d1f74a0b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644370"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521121"
 ---
 # <a name="handling-rotation"></a>Rotation de la gestion
 
@@ -25,9 +25,9 @@ _Cette rubrique explique comment gérer les modifications d’orientation des ap
 
 Ce guide examine les rubriques d’orientation suivantes:
 
--   **Rotation de disposition déclarative** &ndash; Comment utiliser le système de ressources Android pour créer des applications orientées orientation, y compris le chargement des dispositions et des drawables pour des orientations particulières.
+- **Rotation de disposition déclarative** &ndash; Comment utiliser le système de ressources Android pour créer des applications orientées orientation, y compris le chargement des dispositions et des drawables pour des orientations particulières.
 
--   **Rotation de la disposition par programmation** &ndash; Comment ajouter des contrôles par programmation et comment gérer les modifications d’orientation manuellement.
+- **Rotation de la disposition par programmation** &ndash; Comment ajouter des contrôles par programmation et comment gérer les modifications d’orientation manuellement.
 
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>Gestion de la rotation de manière déclarative avec les dispositions
@@ -35,9 +35,9 @@ Ce guide examine les rubriques d’orientation suivantes:
 En incluant des fichiers dans des dossiers qui suivent les conventions de nommage, Android charge automatiquement les fichiers appropriés lorsque l’orientation change.
 Cela prend en charge les éléments suivants:
 
--   *Ressources de disposition* &ndash; Spécification des fichiers de disposition qui sont gonflés pour chaque orientation.
+- *Ressources de disposition* &ndash; Spécification des fichiers de disposition qui sont gonflés pour chaque orientation.
 
--   *Ressources dessinables* &ndash; Spécification des drawables chargés pour chaque orientation.
+- *Ressources dessinables* &ndash; Spécification des drawables chargés pour chaque orientation.
 
 
 ### <a name="layout-resources"></a>Ressources de disposition
@@ -133,12 +133,12 @@ Parfois, nous définissons des dispositions dans le code. Cela peut se produire 
 
 Pour ajouter des contrôles par programme, une application doit effectuer les étapes suivantes:
 
--  Créer une disposition.
--  Définissez les paramètres de disposition.
--  Créer des contrôles.
--  Définissez les paramètres de disposition du contrôle.
--  Ajoutez des contrôles à la disposition.
--  Définissez la disposition comme affichage du contenu.
+- Créer une disposition.
+- Définissez les paramètres de disposition.
+- Créer des contrôles.
+- Définissez les paramètres de disposition du contrôle.
+- Ajoutez des contrôles à la disposition.
+- Définissez la disposition comme affichage du contenu.
 
 Par exemple, considérez une interface utilisateur composée d’un `TextView` seul contrôle ajouté à `RelativeLayout`un, comme illustré dans le code suivant.
 

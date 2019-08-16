@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646399"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522616"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>Personnalisation de l’apparence d’un ListView avec Xamarin. Android
 
@@ -164,17 +164,17 @@ Les quatre vues de lignes intégrées sont très simples. Pour afficher des disp
 
 Cet exemple diffère des exemples précédents de plusieurs façons:
 
--  Hérite de `Activity` , et `ListActivity` non de. Vous pouvez personnaliser des lignes pour `ListView` tout, mais d’autres contrôles peuvent également être inclus `Activity` dans une disposition (par exemple, un en-tête, des boutons ou d’autres éléments d’interface utilisateur). Cet exemple ajoute un en-tête `ListView` au-dessus du à illustrer.
+- Hérite de `Activity` , et `ListActivity` non de. Vous pouvez personnaliser des lignes pour `ListView` tout, mais d’autres contrôles peuvent également être inclus `Activity` dans une disposition (par exemple, un en-tête, des boutons ou d’autres éléments d’interface utilisateur). Cet exemple ajoute un en-tête `ListView` au-dessus du à illustrer.
 
--  Requiert un fichier de disposition AXML pour l’écran; dans les exemples précédents, `ListActivity` le ne requiert pas de fichier de disposition. Ce AXML contient une `ListView` déclaration de contrôle.
+- Requiert un fichier de disposition AXML pour l’écran; dans les exemples précédents, `ListActivity` le ne requiert pas de fichier de disposition. Ce AXML contient une `ListView` déclaration de contrôle.
 
--  Requiert un fichier de disposition AXML pour afficher chaque ligne. Ce fichier AXML contient les contrôles texte et image avec des paramètres de couleur et de police personnalisés.
+- Requiert un fichier de disposition AXML pour afficher chaque ligne. Ce fichier AXML contient les contrôles texte et image avec des paramètres de couleur et de police personnalisés.
 
--  Utilise un fichier XML de sélecteur personnalisé facultatif pour définir l’apparence de la ligne lorsqu’elle est sélectionnée.
+- Utilise un fichier XML de sélecteur personnalisé facultatif pour définir l’apparence de la ligne lorsqu’elle est sélectionnée.
 
--  L' `Adapter` implémentation retourne une disposition personnalisée à partir `GetView` du remplacement.
+- L' `Adapter` implémentation retourne une disposition personnalisée à partir `GetView` du remplacement.
 
--  `ItemClick`doit être déclaré différemment (un gestionnaire d’événements est attaché `ListView.ItemClick` à plutôt qu’à une `OnListItemClick` substitution `ListActivity`dans).
+- `ItemClick`doit être déclaré différemment (un gestionnaire d’événements est attaché `ListView.ItemClick` à plutôt qu’à une `OnListItemClick` substitution `ListActivity`dans).
 
 
 Ces modifications sont détaillées ci-dessous, en commençant par la création de l’affichage de l’activité et de la vue de ligne personnalisée, puis en couvrant les modifications apportées à l’adaptateur et à l’activité pour les afficher.

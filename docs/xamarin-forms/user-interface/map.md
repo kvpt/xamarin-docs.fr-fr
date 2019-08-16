@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: 51555382e38412b7fa2c5c821b252984758bb1ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e818495d45435546f9d2fc9c5593d9c7caa608ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656964"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528880"
 ---
 # <a name="xamarinforms-map"></a>Mappage de Xamarin.Forms
 
@@ -56,9 +56,9 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 Ajoutez cet appel dans les fichiers suivants pour chaque plateforme :
 
--  **iOS** -fichier AppDelegate.cs, dans le `FinishedLaunching` (méthode).
--  **Android** -MainActivity.cs de fichiers, dans le `OnCreate` (méthode).
--  **UWP** -fichier MainPage.xaml.cs, dans le `MainPage` constructeur.
+- **iOS** -fichier AppDelegate.cs, dans le `FinishedLaunching` (méthode).
+- **Android** -MainActivity.cs de fichiers, dans le `OnCreate` (méthode).
+- **UWP** -fichier MainPage.xaml.cs, dans le `MainPage` constructeur.
 
 Une fois que le package NuGet a été ajouté et la méthode d’initialisation appelée à l' `Xamarin.Forms.Maps` intérieur de chaque application, les API peuvent être utilisées dans le projet de bibliothèque .NET standard commun ou dans le code de projet partagé.
 
@@ -178,16 +178,16 @@ map.MapType == MapType.Street;
 
 Valide `MapType` les valeurs sont :
 
--  Hybride
--  Satellite
--  Rue (la valeur par défaut)
+- Hybride
+- Satellite
+- Rue (la valeur par défaut)
 
 ### <a name="map-region-and-mapspan"></a>Zone de mappage et MapSpan
 
 Comme indiqué dans l’extrait de code ci-dessus, en fournissant un `MapSpan` instance à un constructeur de la carte définit la vue initiale (point central et un niveau de zoom) de la carte lorsqu’il est chargé. Le `MoveToRegion` méthode sur la classe map peut ensuite être utilisée pour modifier le niveau de zoom ou de la position de la carte. Il existe deux façons de créer un nouveau `MapSpan` instance :
 
--  **MapSpan.FromCenterAndRadius()** -méthode statique pour créer une étendue d’un `Position` et en spécifiant un `Distance` .
--  **nouvelle MapSpan ()** -constructeur qui utilise un `Position` et les degrés de latitude et longitude à afficher.
+- **MapSpan.FromCenterAndRadius()** -méthode statique pour créer une étendue d’un `Position` et en spécifiant un `Distance` .
+- **nouvelle MapSpan ()** -constructeur qui utilise un `Position` et les degrés de latitude et longitude à afficher.
 
 
 Pour modifier le niveau de zoom de la carte sans modifier l’emplacement, créez un nouveau `MapSpan` à l’aide de l’emplacement actuel à partir de la `VisibleRegion.Center` propriété du contrôle de carte. Un `Slider` peut servir à contrôler le zoom de mappage comme suit (mais le zoom directement dans le contrôle de carte actuellement ne peut pas mettre à jour la valeur du curseur) :
@@ -220,10 +220,10 @@ map.Pins.Add(pin);
 
 `PinType`peut être défini sur l’une des valeurs suivantes, qui peut affecter la façon dont le code confidentiel est rendu (selon la plateforme):
 
--  Générique
--  Sur place
--  SavedPin
--  Résultats de la recherche
+- Générique
+- Sur place
+- SavedPin
+- Résultats de la recherche
 
 ### <a name="map-clicks"></a>Clics de la carte
 

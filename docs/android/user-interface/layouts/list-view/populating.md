@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646344"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522541"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Remplissage d’un ListView Xamarin. Android avec des données
 
@@ -62,14 +62,14 @@ L’utilisateur peut maintenant toucher une ligne et une `Toast` alerte s’affi
 `ArrayAdapter<string>`est parfait en raison de sa simplicité, mais il est extrêmement limité. Toutefois, il arrive souvent que vous ayez une collection d’entités métier, plutôt que simplement des chaînes que vous souhaitez lier.
 Par exemple, si vos données se composent d’une collection de classes Employee, vous souhaiterez peut-être que la liste affiche simplement les noms de chaque employé. Pour personnaliser le comportement d’un `ListView` objet afin de contrôler les données affichées, vous devez implémenter une `BaseAdapter` sous-classe de remplacement des quatre éléments suivants:
 
--   **Nombre** &ndash; Pour indiquer au contrôle le nombre de lignes dans les données.
+- **Nombre** &ndash; Pour indiquer au contrôle le nombre de lignes dans les données.
 
--   **GetView** &ndash; Pour retourner une vue pour chaque ligne, remplie avec des données.
+- **GetView** &ndash; Pour retourner une vue pour chaque ligne, remplie avec des données.
     Cette méthode a un paramètre pour que `ListView` le transmette une ligne existante inutilisée pour une réutilisation.
 
--   **GetItemID** &ndash; Retourne un identificateur de ligne (en général, le numéro de ligne, bien qu’il puisse s’agir de toute valeur de type long que vous aimez).
+- **GetItemID** &ndash; Retourne un identificateur de ligne (en général, le numéro de ligne, bien qu’il puisse s’agir de toute valeur de type long que vous aimez).
 
--   Cet indexeur &ndash; **[int]** retourne les données associées à un numéro de ligne particulier.
+- Cet indexeur &ndash; **[int]** retourne les données associées à un numéro de ligne particulier.
 
 L’exemple de code dans **BasicTableAdapter/HomeScreenAdapter. cs** montre comment effectuer une `BaseAdapter`sous-classe:
 
@@ -159,11 +159,11 @@ Un index de section fournit des commentaires supplémentaires aux utilisateurs l
 
 Pour implémenter `ISectionIndexer` , vous devez ajouter trois méthodes à un adaptateur:
 
--   **GetSections** &ndash; Fournit la liste complète des titres d’index de section qui peuvent être affichés. Cette méthode nécessite un tableau d’objets Java afin que le code doive créer un `Java.Lang.Object[]` à partir d’une collection .net. Dans notre exemple, elle retourne une liste des caractères initiaux de la liste `Java.Lang.String` sous la forme.
+- **GetSections** &ndash; Fournit la liste complète des titres d’index de section qui peuvent être affichés. Cette méthode nécessite un tableau d’objets Java afin que le code doive créer un `Java.Lang.Object[]` à partir d’une collection .net. Dans notre exemple, elle retourne une liste des caractères initiaux de la liste `Java.Lang.String` sous la forme.
 
--   **GetPositionForSection** &ndash; Retourne la position de la première ligne d’un index de section donné.
+- **GetPositionForSection** &ndash; Retourne la position de la première ligne d’un index de section donné.
 
--   **GetSectionForPosition** &ndash; Retourne l’index de la section à afficher pour une ligne donnée.
+- **GetSectionForPosition** &ndash; Retourne l’index de la section à afficher pour une ligne donnée.
 
 
 L’exemple `SectionIndex/HomeScreenAdapter.cs` de fichier implémente ces méthodes, ainsi que du code supplémentaire dans le constructeur. Le constructeur génère l’index de section en effectuant une boucle sur chaque ligne et en extrayant le premier caractère du titre (les éléments doivent déjà être triés pour que cela fonctionne).

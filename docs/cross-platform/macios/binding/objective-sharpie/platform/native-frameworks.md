@@ -1,37 +1,41 @@
 ---
 title: Liaison de frameworks natifs
-description: Ce document décrit comment utiliser l’objectif Sharpie - framework permet de créer une liaison vers une bibliothèque distribué en tant qu’infrastructure.
+description: Ce document explique comment utiliser l’option Framework de l’infrastructure d’objectif pour créer une liaison à une bibliothèque distribuée en tant qu’infrastructure.
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 0da40918c8ae36c4ab3d4c41128429b49706d653
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: cb6c39b2110161b3f839b8adc03701007f09cc4d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977655"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521882"
 ---
 # <a name="binding-native-frameworks"></a>Liaison de frameworks natifs
 
-Parfois, une bibliothèque native est distribuée comme un [framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html). Objectif Sharpie fournit une fonctionnalité pratique de liaison correctement définie infrastructures via la `-framework` option.
+Parfois, une bibliothèque native est distribuée en tant qu' [infrastructure](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html). La fonction sharpship objective offre une fonctionnalité pratique pour la liaison des frameworks correctement définis par le biais de l' `-framework` option.
 
-Par exemple, la liaison la [Adobe Creative SDK Framework](https://creativesdk.adobe.com/downloads.html) pour iOS est simple :
+Par exemple, la liaison de l' [infrastructure Adobe Creative SDK](https://creativesdk.adobe.com/downloads.html) pour iOS est simple:
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -framework AdobeCreativeSDKFoundation.framework \
-    -sdk iphoneos8.1</b></pre>
+    -sdk iphoneos8.1
+```
 
-Dans certains cas, une infrastructure spécifierez un **Info.plist** qui indique sur quel Kit de développement logiciel de l’infrastructure doit être compilé. Si ces informations existent et explicites ne `-sdk` est passée à l’option, l’objectif Sharpie déduira à partir de l’infrastructure **Info.plist** (soit la `DTSDKName` clé ou une combinaison de la `DTPlatformName` et `DTPlatformVersion`clés).
+Dans certains cas, une infrastructure spécifie un fichier **info. plist** qui indique le kit de développement logiciel (SDK) dans lequel l’infrastructure doit être compilée. Si ces informations existent et qu’aucune `-sdk` option explicite n’est passée, objective Sharp le déduire du Framework **info. plist** (la `DTSDKName` clé ou une combinaison des `DTPlatformName` touches et `DTPlatformVersion` ).
 
-Le `-framework` option ne permet pas de fichiers d’en-tête explicite à passer. Le fichier d’en-tête PARAPLUIE est choisi par convention, en fonction du nom du framework. Si un en-tête PARAPLUIE est introuvable, objectif Sharpie ne tente pas de lier l’infrastructure et vous devez effectuer manuellement la liaison en fournissant les fichiers d’en-tête PARAPLUIE correct à analyser, ainsi que les arguments de framework pour clang (telles que la `-F`option de chemin d’accès de recherche de framework).
+L' `-framework` option n’autorise pas la transmission des fichiers d’en-tête explicites. Le fichier d’en-tête du parapluie est choisi par Convention en fonction du nom de l’infrastructure. Si un en-tête de parapluie est introuvable, objective Sharp ne tente pas de lier l’infrastructure et vous devez effectuer manuellement la liaison en fournissant les fichiers d’en-tête de parapluie corrects à analyser, ainsi que tous les arguments d’infrastructure pour Clang ( `-F`commeoption de chemin de recherche de Framework).
 
-Sous le capot, en spécifiant `-framework` est simplement un raccourci. Les arguments de liaison suivants sont identiques à la `-framework` raccourci ci-dessus.
-D’une importance particulière est le `-F .` framework recherche chemin d’accès fourni à clang (Notez l’espace et la période, qui sont nécessaires dans le cadre de la commande).
+En coulisses, le `-framework` fait de spécifier n’est qu’un raccourci. Les arguments de liaison suivants sont identiques au `-framework` raccourci ci-dessus.
+L’importance particulière est le `-F .` chemin de recherche du Framework fourni à Clang (Notez l’espace et le point, qui sont nécessaires dans le cadre de la commande).
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -sdk iphoneos8.1 \
     AdobeCreativeSDKFoundation.framework/Headers/AdobeCreativeSDKFoundation.h \
     -scope AdobeCreativeSDKFoundation.framework/Headers \
-    -c -F .</b></pre>
+    -c -F .
+```

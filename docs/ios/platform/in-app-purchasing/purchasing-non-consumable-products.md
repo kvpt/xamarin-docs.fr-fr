@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 99723c390b217600e6aaea570195cf21b177abf0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e09d8511dc74bdf9368497ff8fe39bd87b62565c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648164"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528294"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Achat de produits non-consommables dans Xamarin. iOS
 
@@ -55,14 +55,14 @@ Votre code doit normalement masquer ou réaffecter un bouton d’achat une fois 
    
  Dans certains cas, une application ne peut pas déterminer si un produit non utilisable a déjà été acheté:
 
--  Si une application est supprimée et réinstallée sur un appareil, tous les enregistrements d’achat sont supprimés (sauf si/jusqu’à ce que l’utilisateur effectue une restauration de sauvegarde). 
--  Si l’utilisateur a installé l’application sur deux (ou plus) appareils et effectue un achat sur l’un des appareils. Les autres appareils continuent à afficher le produit disponible à l’achat. 
--  Si un client tente de réacheter un produit non consommable dans ce cas, l’App Store réexécutera le produit sans frais. L’interface utilisateur s’affiche initialement pour effectuer un achat (par exemple, une alerte de confirmation s’affiche et l’ID Apple est requis). Toutefois, l’utilisateur voit un message le avertissant que le produit a déjà été acheté.  
+- Si une application est supprimée et réinstallée sur un appareil, tous les enregistrements d’achat sont supprimés (sauf si/jusqu’à ce que l’utilisateur effectue une restauration de sauvegarde). 
+- Si l’utilisateur a installé l’application sur deux (ou plus) appareils et effectue un achat sur l’un des appareils. Les autres appareils continuent à afficher le produit disponible à l’achat. 
+- Si un client tente de réacheter un produit non consommable dans ce cas, l’App Store réexécutera le produit sans frais. L’interface utilisateur s’affiche initialement pour effectuer un achat (par exemple, une alerte de confirmation s’affiche et l’ID Apple est requis). Toutefois, l’utilisateur voit un message le avertissant que le produit a déjà été acheté.  
    
    
    
  Le chemin de code dans ce scénario est exactement le même qu’un achat régulier, les seules différences sont les suivantes:
 
--  L’utilisateur n’est pas facturé à nouveau pour le produit.
--  L' `SKPaymentTransaction` objet passé à l’application aura une `OriginalTransaction` propriété qui fait référence à la transaction qui a été générée lors de l’achat initial du produit. 
--  Les applications qui vendent des produits non consommables doivent également implémenter la fonctionnalité de **restauration** de StoreKit pour aider les utilisateurs à récupérer des achats existants. 
+- L’utilisateur n’est pas facturé à nouveau pour le produit.
+- L' `SKPaymentTransaction` objet passé à l’application aura une `OriginalTransaction` propriété qui fait référence à la transaction qui a été générée lors de l’achat initial du produit. 
+- Les applications qui vendent des produits non consommables doivent également implémenter la fonctionnalité de **restauration** de StoreKit pour aider les utilisateurs à récupérer des achats existants. 

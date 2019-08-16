@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 1d4c93e625b92275828428917ebbc86d931e8363
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649504"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522018"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
 
@@ -97,10 +97,10 @@ Une présentation détaillée du format du fichier API et des attributs que vous
 
 Pour produire une liaison complète, vous devez généralement gérer quatre composants:
 
--  Fichier de définition de l'`ApiDefinition.cs` API (dans le modèle).
--  Facultatif: tous les enums, types et structs requis par le fichier de définition`StructsAndEnums.cs` d’API (dans le modèle).
--  Facultatif: sources supplémentaires qui peuvent développer la liaison générée ou fournir une API plus C# conviviale (tous C# les fichiers que vous ajoutez au projet).
--  Bibliothèque Native que vous liez.
+- Fichier de définition de l'`ApiDefinition.cs` API (dans le modèle).
+- Facultatif: tous les enums, types et structs requis par le fichier de définition`StructsAndEnums.cs` d’API (dans le modèle).
+- Facultatif: sources supplémentaires qui peuvent développer la liaison générée ou fournir une API plus C# conviviale (tous C# les fichiers que vous ajoutez au projet).
+- Bibliothèque Native que vous liez.
 
 Ce graphique montre la relation entre les fichiers:
 
@@ -309,10 +309,10 @@ interface MyMutableTree {
 
 L' `btouch-native` outil génère automatiquement quatre constructeurs dans votre classe, pour une classe `Foo`donnée, il génère:
 
--  `Foo ()`: le constructeur par défaut (est mappé au constructeur «init» de Objective-C)
--  `Foo (NSCoder)`: le constructeur utilisé pendant la désérialisation des fichiers de plume (est mappé au constructeur «initWithCoder:» de Objective-C).
--  `Foo (IntPtr handle)`: le constructeur pour la création basée sur des handles, appelé par le runtime quand le runtime doit exposer un objet managé à partir d’un objet non managé.
--  `Foo (NSEmptyFlag)`: utilisé par les classes dérivées pour empêcher une double initialisation.
+- `Foo ()`: le constructeur par défaut (est mappé au constructeur «init» de Objective-C)
+- `Foo (NSCoder)`: le constructeur utilisé pendant la désérialisation des fichiers de plume (est mappé au constructeur «initWithCoder:» de Objective-C).
+- `Foo (IntPtr handle)`: le constructeur pour la création basée sur des handles, appelé par le runtime quand le runtime doit exposer un objet managé à partir d’un objet non managé.
+- `Foo (NSEmptyFlag)`: utilisé par les classes dérivées pour empêcher une double initialisation.
 
 Pour les constructeurs que vous définissez, ils doivent être déclarés à l’aide de la signature suivante à l’intérieur de la définition `IntPtr` de l’interface: ils doivent retourner une valeur et le nom de la méthode doit être Constructor. Par exemple, pour lier `initWithFrame:` le constructeur, c’est ce que vous utiliseriez:
 
@@ -545,14 +545,14 @@ L’exemple ci-dessus `LonelyClass` génère un qui ne dérive pas de `NSObject`
 
 L' [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) attribut peut être appliqué aux types de données suivants:
 
--  `NSString`références (propriétés en lecture seule)
--  `NSArray`références (propriétés en lecture seule)
--  32 bits ints (`System.Int32`)
--  64 bits ints (`System.Int64`)
--  32 bits float (`System.Single`)
--  64 bits float (`System.Double`)
--  `System.Drawing.SizeF`
--  `CGSize`
+- `NSString`références (propriétés en lecture seule)
+- `NSArray`références (propriétés en lecture seule)
+- 32 bits ints (`System.Int32`)
+- 64 bits ints (`System.Int64`)
+- 32 bits float (`System.Single`)
+- 64 bits float (`System.Double`)
+- `System.Drawing.SizeF`
+- `CGSize`
 
 En plus du nom de champ natif, vous pouvez spécifier le nom de la bibliothèque dans laquelle se trouve le champ, en passant le nom de la bibliothèque:
 
@@ -1197,9 +1197,9 @@ Lorsque vous utilisez l' [`[Export]`](~/cross-platform/macios/binding/binding-ty
 
 L’exemple ci-dessus marque la valeur comme ayant la sémantique «retain». Les sémantiques disponibles sont les suivantes:
 
--  Assigner
--  Copier
--  Conserver
+- Assigner
+- Copier
+- Conserver
 
 <a name="Style_Guidelines" />
 
@@ -1255,9 +1255,9 @@ interface MyClassDelegate {
 
 Pour encapsuler la classe, vous devez:
 
--  Dans votre classe hôte, ajoutez à votre[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+- Dans votre classe hôte, ajoutez à votre[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
    déclaration le type qui agit comme son délégué et le C# nom que vous avez exposé. Dans notre exemple ci-dessus `typeof (MyClassDelegate)` , `WeakDelegate` il s’agit de et respectivement.
--  Dans votre classe déléguée, sur chaque méthode ayant plus de deux paramètres, vous devez spécifier le type que vous souhaitez utiliser pour la classe EventArgs générée automatiquement.
+- Dans votre classe déléguée, sur chaque méthode ayant plus de deux paramètres, vous devez spécifier le type que vous souhaitez utiliser pour la classe EventArgs générée automatiquement.
 
 Le générateur de liaison n’est pas limité à l’encapsulation d’une seule destination d’événement, il est possible que certaines classes objective-C émettent des messages vers plusieurs délégués. vous devez donc fournir des tableaux pour prendre en charge cette installation. La plupart des configurations n’en ont pas besoin, mais le générateur est prêt à prendre en charge ces cas de figure.
 

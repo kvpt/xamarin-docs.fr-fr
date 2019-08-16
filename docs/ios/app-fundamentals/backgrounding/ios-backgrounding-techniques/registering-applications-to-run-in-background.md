@@ -1,54 +1,54 @@
 ---
-title: L’inscription d’applications Xamarin.iOS à exécuter en arrière-plan
-description: Ce document décrit comment inscrire une application Xamarin.iOS s’exécuter en arrière-plan. Il aborde Audio applications VoIP applications, Accessoires externes et bluetooth et bien plus encore.
+title: Inscription des applications Xamarin. iOS pour une exécution en arrière-plan
+description: Ce document explique comment inscrire une application Xamarin. iOS pour qu’elle s’exécute en arrière-plan. Il aborde les applications audio, les applications VoIP, les accessoires externes et Bluetooth, et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a0a66571d0249ef6fd65ff382f14c38f48a8af37
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 67cc2028276b6e1415c88cb8957e2cd567fa5bae
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393700"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521278"
 ---
-# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>L’inscription d’applications Xamarin.iOS à exécuter en arrière-plan
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Inscription des applications Xamarin. iOS pour une exécution en arrière-plan
 
-L’inscription des tâches individuelles pour les travaux de privilèges en arrière-plan pour certaines applications, mais que se passe-t-il si une application est appelée en permanence à effectuer des tâches importantes et de longue durée, telles que l’obtention des instructions relatives à l’utilisateur par le biais de GPS ? Applications telles que celles-ci doivent plutôt être enregistrées comme applications nécessaire à l’arrière-plan connues.
+L’inscription de tâches individuelles pour les privilèges d’arrière-plan fonctionne pour certaines applications, mais que se passe-t-il si une application est régulièrement appelée pour exécuter des tâches importantes et longues, telles que l’obtention de directions pour l’utilisateur via GPS? Les applications telles que celles-ci doivent plutôt être inscrites en tant qu’applications requises en arrière-plan connues.
 
-Inscription d’une application signale à iOS, que l’application doit disposer des privilèges spéciaux nécessaires pour effectuer des tâches en arrière-plan.
+L’inscription d’une application signale à iOS que l’application doit disposer de privilèges spéciaux nécessaires pour effectuer des tâches en arrière-plan.
 
-## <a name="application-registration-categories"></a>Catégories d’inscription de l’application
+## <a name="application-registration-categories"></a>Catégories d’inscription d’application
 
-Applications inscrites peuvent appartenir à plusieurs catégories :
+Les applications inscrites peuvent appartenir à plusieurs catégories:
 
--  **Audio** -lecteurs de musique et d’autres applications qui fonctionnent avec contenu audio peuvent être inscrit pour poursuivre la lecture audio même quand l’application n’est plus au premier plan. Si une application dans cette catégorie tente de faire quelque chose autre que de lire des fichiers audio ou de téléchargement en arrière-plan, il se termine par iOS.
--  **VoIP** -obtiennent des applications de voix sur IP (VoIP) des mêmes privilèges accordées aux applications audio à continuer de traiter l’audio en arrière-plan. Ils sont également autorisés à répondre si nécessaire aux services VoIP qui alimentent les, pour maintenir leurs connexions.
--  **Accessoires et Bluetooth externes** -réservé pour les applications qui doivent communiquer avec les périphériques Bluetooth et autres accessoires de matériel externe, l’inscription sous ces catégories autorise l’application à rester connecté à du matériel.
--  **Newsstand** -application d’un kiosque peut continuer à synchroniser le contenu en arrière-plan.
--  **Emplacement** : les Applications qui utilisent de GPS ou les données d’emplacement réseau peuvent envoyer et recevoir des mises à jour de l’emplacement en arrière-plan.
--  **FETCH (iOS 7 +)** : une application inscrite pour des privilèges d’extraction en arrière-plan peuvent vérifier un fournisseur pour nouveau contenu à intervalles réguliers, présentant l’utilisateur avec le contenu mis à jour leur retour à l’application.
--  **Notifications à distance (iOS 7 +)** -Applications peuvent s’inscrire pour recevoir des notifications à partir d’un fournisseur et utilisez la notification pour lancer une mise à jour avant que l’utilisateur ouvre l’application. Notifications peuvent se présentent sous la forme de notifications push, ou choisir de mettre en éveil de l’application en mode silencieux.
+- Les lecteurs **audio** -musique et autres applications qui fonctionnent avec du contenu audio peuvent être enregistrés pour continuer à jouer du son, même lorsque l’application n’est plus au premier plan. Si une application de cette catégorie tente d’effectuer autre chose que de lire un fichier audio ou de télécharger en arrière-plan, iOS l’arrête.
+- Les applications VoIP (voix sur IP) bénéficient des mêmes privilèges que ceux octroyés aux applications audio pour maintenir le traitement audio en arrière-plan. Ils sont également autorisés à répondre en fonction des besoins des services VoIP qui les alimentent pour maintenir les connexions actives.
+- **Accessoires externes et Bluetooth** -réservés aux applications qui doivent communiquer avec des appareils Bluetooth et d’autres accessoires matériels externes, l’inscription dans ces catégories permet à l’application de rester connectée au matériel.
+- **Newsstand** : une application Newsstand peut continuer à synchroniser le contenu en arrière-plan.
+- **Emplacement** : les applications qui utilisent des données GPS ou d’emplacement réseau peuvent envoyer et recevoir des mises à jour d’emplacement en arrière-plan.
+- **Fetch (iOS 7 +)** : une application inscrite pour les privilèges d’extraction en arrière-plan peut vérifier un nouveau contenu par un fournisseur à intervalles réguliers, en présentant à l’utilisateur un contenu mis à jour lorsqu’il retourne à l’application.
+- **Notifications distantes (iOS 7 +)** : les applications peuvent s’inscrire pour recevoir des notifications d’un fournisseur et utiliser la notification pour lancer une mise à jour avant que l’utilisateur n’ouvre l’application. Les notifications peuvent se présenter sous la forme de notifications push, ou choisir de réveiller l’application en mode silencieux.
 
 
-Les applications peuvent être inscrits en définissant le **Required Background Modes** propriété dans l’application *Info.plist*. Une application peut enregistrer dans autant de catégories car il nécessite :
+Les applications peuvent être inscrites en définissant la propriété **modes d’arrière-plan requis** dans le fichier *info. plist*de l’application. Une application peut s’inscrire dans autant de catégories que nécessaire:
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "Définir les modes d’arrière-plan")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Définition des modes d’arrière-plan")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
-Pour obtenir un guide pas à pas pour l’inscription d’une application pour les mises à jour en arrière-plan, consultez le [procédure pas à pas de d’arrière-plan emplacement](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
+Pour obtenir un guide pas à pas d’inscription d’une application pour les mises à jour de l’emplacement en arrière-plan, consultez la procédure pas à pas relative à l' [emplacement en arrière-plan](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
-## <a name="application-does-not-run-in-background-property"></a>Application ne s’exécute pas dans la propriété d’arrière-plan
+## <a name="application-does-not-run-in-background-property"></a>L’application n’est pas exécutée dans la propriété Background
 
-Une autre propriété qui peut être définie dans *Info.plist* est la *Application ne s’exécute pas en arrière-plan*, ou `UIApplicationExitsOnSuspend` propriété :
+Une autre propriété qui peut être définie dans *info. plist* est l' *application ne s’exécute pas en arrière-plan*, ou `UIApplicationExitsOnSuspend` propriété:
 
- [![](registering-applications-to-run-in-background-images/plist.png "La désactivation en cours d’exécution en arrière-plan")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "Désactivation de l’exécution en arrière-plan")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
-Cela a exactement le même effet que de définir le paramètre d’application d’actualisation en arrière-plan à désactivée dans iOS 7 +, mais il peut uniquement être modifié sur le côté développeur et est disponible pour iOS 4 et versions ultérieures. L’application sera suspendue immédiatement après l’entrée de l’arrière-plan et ne sera pas en mesure d’effectuer tout traitement.
+Cela revient exactement à définir le paramètre d’actualisation de l’application en arrière-plan sur désactivé dans iOS 7 +, sauf qu’il ne peut être modifié que côté développeur et est disponible pour iOS 4 et versions ultérieures. L’application est suspendue immédiatement après avoir entré l’arrière-plan et ne peut pas effectuer de traitement.
 
-Utilisez cette propriété si votre application n’est pas conçue pour gérer le traitement en arrière-plan, car elle permet d’éviter tout comportement inattendu.
+Utilisez cette propriété si votre application n’est pas conçue pour gérer le traitement en arrière-plan, car elle permet d’éviter un comportement inattendu.
 
-## <a name="background-fetch-and-remote-notifications"></a>Récupération en arrière-plan et des Notifications à distance
+## <a name="background-fetch-and-remote-notifications"></a>Récupération en arrière-plan et notifications à distance
 
-Récupération en arrière-plan et des notifications à distance sont les catégories d’enregistrement spécial introduits dans iOS 7. Ces catégories permettent aux applications de recevoir le nouveau contenu à partir d’un fournisseur et mettre à jour en arrière-plan. La section suivante explore l’extraction et des notifications à distance plus en détail et présente également connaissance des emplacements comme moyen de mise à jour d’une application en arrière-plan sur iOS 6.
+L’extraction en arrière-plan et les notifications distantes sont des catégories d’inscription spéciales introduites dans iOS 7. Ces catégories permettent aux applications de recevoir le nouveau contenu d’un fournisseur et de les mettre à jour en arrière-plan. La section suivante explore les notifications d’extraction et les notifications distantes de manière plus détaillée, et introduit également la sensibilisation à l’emplacement comme moyen de mise à jour d’une application en arrière-plan sur iOS 6.

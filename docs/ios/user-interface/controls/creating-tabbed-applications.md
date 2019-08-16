@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7fe03fbbdff02df9494317abe223ede5ed386c48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657538"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528929"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Barres d’onglets et contrôleurs de barre d’onglets dans Xamarin.iOS
 
@@ -26,8 +26,8 @@ Nous allons examiner l’utilisation des onglets ici à travers une procédure p
 
 Le `UITabBarController` prend en charge avec onglet développement d’applications par ce qui suit :
 
--  Autorise plusieurs contrôleurs à ajouter à ce dernier.
--  En fournissant une interface utilisateur à onglets, via le `UITabBar` (classe), pour autoriser un utilisateur de basculer entre les contrôleurs et leurs points de vue. 
+- Autorise plusieurs contrôleurs à ajouter à ce dernier.
+- En fournissant une interface utilisateur à onglets, via le `UITabBar` (classe), pour autoriser un utilisateur de basculer entre les contrôleurs et leurs points de vue. 
 
 
 Contrôleurs sont ajoutés à la `UITabBarController` via son `ViewControllers` propriété, qui est un `UIViewController` tableau. Le `UITabBarController` lui-même gère le chargement du contrôleur approprié et à la présentation de sa vue en fonction de l’onglet sélectionné.
@@ -69,9 +69,9 @@ Le `TabController` classe contiendra l’implémentation de la `UITabBarControll
 
 Pour implémenter le `UITabBarController` nous devons effectuer les opérations suivantes :
 
-1.  Définir la classe de base de `TabController` à `UITabBarController` . 
-1.  Créer `UIViewController` instances à ajouter à la `TabController` . 
-1.  Ajouter le `UIViewController` instances dans un tableau assigné à la `ViewControllers` propriété de la `TabController` . 
+1. Définir la classe de base de `TabController` à `UITabBarController` . 
+1. Créer `UIViewController` instances à ajouter à la `TabController` . 
+1. Ajouter le `UIViewController` instances dans un tableau assigné à la `ViewControllers` propriété de la `TabController` . 
 
 
 Ajoutez le code suivant à la `TabController` classe pour atteindre ces étapes :
@@ -283,8 +283,8 @@ Ensuite, nous allons créer une interface utilisateur simple pour chacune des vu
 
 Nous souhaitons faire glisser un `Label` et un `Button` sur ViewController1 à partir de la **boîte à outils** sur le côté droit. Ensuite, nous allons utiliser le panneau Propriétés pour modifier le nom et le texte des contrôles à ce qui suit :
 
--  **Étiquette** : `Text` = **Un**
--  **Bouton** : `Title` = **L’utilisateur effectue une action initiale**
+- **Étiquette** : `Text` = **Un**
+- **Bouton** : `Title` = **L’utilisateur effectue une action initiale**
 
 
 Nous contrôlera la visibilité de notre bouton dans un `TouchUpInside` événement et nous devons y faire référence dans le code-behind. Nous allons identifier avec le **nom** `aButton` dans le panneau Propriétés, comme illustré dans la capture d’écran suivante :

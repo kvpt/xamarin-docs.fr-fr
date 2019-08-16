@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 82320b069156828101d17e79ca48a8933b8a8777
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655081"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528462"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API Elements
 
 _Cet article s’appuie sur les informations présentées dans l’article présentation de la boîte de dialogue présentation de monocontact. Il présente une procédure pas à pas qui montre comment utiliser la boîte de dialogue MonoTouch. D) API Elements pour commencer rapidement à créer une application avec MT. E._
 
-Dans cette procédure pas à pas, nous allons utiliser le MT. API D Elements pour créer un style maître/détail d’une application qui affiche une liste de tâches. Quand l’utilisateur sélectionne le <span class="ui">+</span> bouton dans la barre de navigation, une nouvelle ligne est ajoutée à la table pour la tâche. Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance, comme illustré ci-dessous:
+Dans cette procédure pas à pas, nous allons utiliser le MT. API D Elements pour créer un style maître/détail d’une application qui affiche une liste de tâches. Quand l’utilisateur sélectionne le **+** bouton dans la barre de navigation, une nouvelle ligne est ajoutée à la table pour la tâche. Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance, comme illustré ci-dessous:
 
  [![](elements-api-walkthrough-images/01-task-list-app.png "Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
@@ -36,11 +36,11 @@ Pour démarrer le processus de création d’écran, la boîte de dialogue `Dial
 
 Pour créer une application à plusieurs écrans avec la boîte de dialogue MonoTouch, nous devons:
 
-1.  Créer un`UINavigationController.`
-1.  Créer un`DialogViewController.`
-1.  `DialogViewController` Ajoutez en tant que racine du`UINavigationController.` 
-1.  Ajoutez un `RootElement` au`DialogViewController.`
-1.  Ajoutez `Sections` et`Elements` à la`RootElement.` 
+1. Créer un`UINavigationController.`
+1. Créer un`DialogViewController.`
+1. `DialogViewController` Ajoutez en tant que racine du`UINavigationController.` 
+1. Ajoutez un `RootElement` au`DialogViewController.`
+1. Ajoutez `Sections` et`Elements` à la`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>Utilisation d’un UINavigationController
 
@@ -77,14 +77,14 @@ Les sections sont constituées d’éléments, d’autres sections, voire d' `Ro
 
 ### <a name="using-dialogviewcontroller"></a>Utilisation de DialogViewController
 
-, Étant une `UITableViewController` sous-classe, a un `UITableView` comme vue. `DialogViewController` Dans cet exemple, nous souhaitons ajouter des éléments à la table chaque fois que <span class="ui">+</span> le bouton est frappé. Dans la `DialogViewController` mesure où le a `UINavigationController`été ajouté à un, `NavigationItem`nous `RightBarButton` pouvons utiliser la propriété <span class="ui">+</span> de pour ajouter le bouton, comme indiqué ci-dessous:
+, Étant une `UITableViewController` sous-classe, a un `UITableView` comme vue. `DialogViewController` Dans cet exemple, nous souhaitons ajouter des éléments à la table chaque fois que **+** le bouton est frappé. Dans la `DialogViewController` mesure où le a `UINavigationController`été ajouté à un, `NavigationItem`nous `RightBarButton` pouvons utiliser la propriété **+** de pour ajouter le bouton, comme indiqué ci-dessous:
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-Lorsque nous avons créé `RootElement` le précédent, nous lui avons passé `Section` une seule instance afin de pouvoir ajouter des éléments <span class="ui">+</span> lorsque l’utilisateur appuie sur le bouton. Pour ce faire, nous pouvons utiliser le code suivant dans le gestionnaire d’événements pour le bouton:
+Lorsque nous avons créé `RootElement` le précédent, nous lui avons passé `Section` une seule instance afin de pouvoir ajouter des éléments **+** lorsque l’utilisateur appuie sur le bouton. Pour ce faire, nous pouvons utiliser le code suivant dans le gestionnaire d’événements pour le bouton:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                

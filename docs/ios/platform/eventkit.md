@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 881590b7b2b7277a2f8f2cc17ce1c8bdff68c626
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bb64a0457ad5228e32f233d630576da2836547c1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655786"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528047"
 ---
 # <a name="eventkit-in-xamarinios"></a>EventKit dans Xamarin. iOS
 
@@ -22,8 +22,8 @@ L’infrastructure EventKit permet d’accéder aux données calendriers, *évé
 
 Dans ce guide, nous allons aborder les éléments suivants:
 
--   **Notions de base de EventKit** : cette rubrique présente les éléments fondamentaux de EventKit via les principales classes et fournit une compréhension de leur utilisation. Cette section est nécessaire pour la lecture avant la partie suivante du document. 
--   **Tâches courantes** : la section tâches courantes est destinée à servir de référence rapide sur la façon d’effectuer des opérations courantes, telles que; énumération des calendriers, création, enregistrement et récupération des événements de calendrier et des rappels, et utilisation des contrôleurs intégrés pour la création et la modification d’événements de calendrier. Cette section n’a pas besoin d’être lue avant-arrière, car elle est destinée à être une référence pour des tâches particulières. 
+- **Notions de base de EventKit** : cette rubrique présente les éléments fondamentaux de EventKit via les principales classes et fournit une compréhension de leur utilisation. Cette section est nécessaire pour la lecture avant la partie suivante du document. 
+- **Tâches courantes** : la section tâches courantes est destinée à servir de référence rapide sur la façon d’effectuer des opérations courantes, telles que; énumération des calendriers, création, enregistrement et récupération des événements de calendrier et des rappels, et utilisation des contrôleurs intégrés pour la création et la modification d’événements de calendrier. Cette section n’a pas besoin d’être lue avant-arrière, car elle est destinée à être une référence pour des tâches particulières. 
 
 
 Toutes les tâches de ce guide sont disponibles dans l’exemple d’application auxiliaire:

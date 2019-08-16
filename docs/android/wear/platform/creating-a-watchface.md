@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
-ms.openlocfilehash: 52891a11dcc271497031658d0eff9f98a01d3555
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a3b38a77f045c17b66c65a14eda32f5a7fcd5fc5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647883"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522249"
 ---
 # <a name="creating-a-watch-face"></a>Création d’un cadran de montre
 
@@ -35,9 +35,9 @@ Les services de visage Watch sont regroupés et installés dans le cadre d’une
 
 Pour implémenter un service de visage Watch, les conditions suivantes sont requises:
 
--   Android 5,0 (niveau d’API 21) ou supérieur sur l’appareil ou l’émulateur d’usure.
+- Android 5,0 (niveau d’API 21) ou supérieur sur l’appareil ou l’émulateur d’usure.
 
--   Les [bibliothèques de support Xamarin Android usure](https://www.nuget.org/packages/Xamarin.Android.Wear) doivent être ajoutées au projet Xamarin. Android.
+- Les [bibliothèques de support Xamarin Android usure](https://www.nuget.org/packages/Xamarin.Android.Wear) doivent être ajoutées au projet Xamarin. Android.
 
 Même si Android 5,0 est le niveau d’API minimal pour l’implémentation d’un service Watch face, Android 5,1 ou version ultérieure est recommandé. Les appareils Android d’usure exécutant Android 5,1 (API 22) ou une version ultérieure permettent aux applications d’utiliser l’usure de contrôler ce qui est affiché à l’écran pendant que l’appareil est en mode *ambiant* à faible consommation d’énergie. Lorsque l’appareil quitte le mode *ambiant* de faible puissance, il est en mode *interactif* . Pour plus d’informations sur ces modes, consultez [maintien de l’affichage de votre application](https://developer.android.com/training/wearables/apps/always-on.html).
 
@@ -127,17 +127,17 @@ Qui n’est pas illustré dans ce `Canvas` diagramme `CanvasWatchFaceService` es
 
 Dans les sections suivantes, un service de visage de montre personnalisé est créé en procédant comme suit:
 
-1.  Définissez une classe appelée `MyWatchFaceService` qui est dérivée `CanvasWatchFaceService`de.
+1. Définissez une classe appelée `MyWatchFaceService` qui est dérivée `CanvasWatchFaceService`de.
 
-2.  Dans `MyWatchFaceService`, créez une classe imbriquée appelée `MyWatchFaceEngine` qui est dérivée `CanvasWatchFaceService.Engine`de.
+2. Dans `MyWatchFaceService`, créez une classe imbriquée appelée `MyWatchFaceEngine` qui est dérivée `CanvasWatchFaceService.Engine`de.
 
-3.  Dans `MyWatchFaceService`, implémentez `CreateEngine` une méthode qui instancie `MyWatchFaceEngine` et la retourne.
+3. Dans `MyWatchFaceService`, implémentez `CreateEngine` une méthode qui instancie `MyWatchFaceEngine` et la retourne.
 
-4.  Dans `MyWatchFaceEngine`, implémentez `OnCreate` la méthode pour créer le style de visage Watch et effectuer d’autres tâches d’initialisation.
+4. Dans `MyWatchFaceEngine`, implémentez `OnCreate` la méthode pour créer le style de visage Watch et effectuer d’autres tâches d’initialisation.
 
-5.  Implémentez `OnDraw` la méthode `MyWatchFaceEngine`de. Cette méthode est appelée chaque fois que la face de la montre doit être redessinée(c’est-à-dire invalidée). `OnDraw`est la méthode qui dessine (et redessine) les éléments de face tels que les heures, les minutes et les secondes.
+5. Implémentez `OnDraw` la méthode `MyWatchFaceEngine`de. Cette méthode est appelée chaque fois que la face de la montre doit être redessinée(c’est-à-dire invalidée). `OnDraw`est la méthode qui dessine (et redessine) les éléments de face tels que les heures, les minutes et les secondes.
 
-6.  Implémentez `OnTimeTick` la méthode `MyWatchFaceEngine`de.
+6. Implémentez `OnTimeTick` la méthode `MyWatchFaceEngine`de.
     `OnTimeTick`est appelé au moins une fois par minute (dans les modes ambiants et interactifs) ou lorsque la date/l’heure a changé.
 
 Pour plus d’informations `CanvasWatchFaceService`sur, consultez la documentation de l’API [CanvasWatchFaceService](https://developer.android.com/reference/android/support/wearable/watchface/CanvasWatchFaceService.html) Android.
@@ -222,11 +222,11 @@ public override void OnCreate(ISurfaceHolder holder)
 
 L’appel à `SetWatchFaceStyle` effectue les opérations suivantes:
 
-1.  Définit le *mode aperçu* sur `PeekModeShort`, ce qui entraîne l’affichage des notifications sous forme de petites cartes de «lecture» à l’écran.
+1. Définit le *mode aperçu* sur `PeekModeShort`, ce qui entraîne l’affichage des notifications sous forme de petites cartes de «lecture» à l’écran.
 
-2.  Définit la visibilité de l' `Interruptive`arrière-plan sur, ce qui entraîne l’affichage rapide de l’arrière-plan d’une carte d’aperçu si elle représente une notification ininterrompue.
+2. Définit la visibilité de l' `Interruptive`arrière-plan sur, ce qui entraîne l’affichage rapide de l’arrière-plan d’une carte d’aperçu si elle représente une notification ininterrompue.
 
-3.  Désactive l’heure par défaut de l’interface utilisateur du système sur le visage de la montre afin que la face personnalisée puisse afficher l’heure à la place.
+3. Désactive l’heure par défaut de l’interface utilisateur du système sur le visage de la montre afin que la face personnalisée puisse afficher l’heure à la place.
 
 Pour plus d’informations sur ces options de style de visage, consultez la documentation de l’API Android [WatchFaceStyle. Builder](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) .
 
@@ -237,7 +237,7 @@ Une `SetWatchFaceStyle` fois terminé, `OnCreate` instancie l' `Paint` objet (`h
 
 La `OnDraw` méthode est peut &ndash; -être la `CanvasWatchFaceService.Engine` méthode la plus importante. il s’agit de la méthode qui dessine des éléments de face tels que des chiffres et des mains de la facette de l’horloge.
 Dans l’exemple suivant, il dessine une chaîne de temps sur le visage de la montre.
-Ajoutez la méthode suivante à `MyWatchFaceEngine`:
+Ajoutez la méthode suivante à `MyWatchFaceEngine` :
 
 ```csharp
 public override void OnDraw (Canvas canvas, Rect frame)
@@ -256,7 +256,7 @@ Pour plus d’informations sur `OnDraw` la méthode, consultez la documentation 
 
 ### <a name="implement-the-engine-ontimetick-method"></a>Implémenter la méthode OnTimeTick du moteur
 
-Android appelle périodiquement `OnTimeTick` la méthode pour mettre à jour l’heure indiquée par le visage de la montre. Elle est appelée au moins une fois par minute (dans les modes ambiants et interactifs), ou lorsque la date/l’heure ou le fuseau horaire ont changé. Ajoutez la méthode suivante à `MyWatchFaceEngine`:
+Android appelle périodiquement `OnTimeTick` la méthode pour mettre à jour l’heure indiquée par le visage de la montre. Elle est appelée au moins une fois par minute (dans les modes ambiants et interactifs), ou lorsque la date/l’heure ou le fuseau horaire ont changé. Ajoutez la méthode suivante à `MyWatchFaceEngine` :
 
 ```csharp
 public override void OnTimeTick()
@@ -296,13 +296,13 @@ Pour plus d’informations sur `OnTimeTick` la méthode, consultez la documentat
 
 Ce code XML effectue les opérations suivantes:
 
-1.  Définit l' `android.permission.BIND_WALLPAPER` autorisation. Cette autorisation donne au service de visage de la montre l’autorisation de changer le papier peint du système sur l’appareil. Notez que cette autorisation doit être définie dans la `<service>` section plutôt que dans la section `<application>` externe.
+1. Définit l' `android.permission.BIND_WALLPAPER` autorisation. Cette autorisation donne au service de visage de la montre l’autorisation de changer le papier peint du système sur l’appareil. Notez que cette autorisation doit être définie dans la `<service>` section plutôt que dans la section `<application>` externe.
 
-2.  Définit une `watch_face` ressource. Cette ressource est un bref fichier XML qui déclare une `wallpaper` ressource (ce fichier sera créé dans la section suivante).
+2. Définit une `watch_face` ressource. Cette ressource est un bref fichier XML qui déclare une `wallpaper` ressource (ce fichier sera créé dans la section suivante).
 
-3.  Déclare une image dessinable appelée `preview` qui sera affichée par l’écran de sélection du sélecteur de espion.
+3. Déclare une image dessinable appelée `preview` qui sera affichée par l’écran de sélection du sélecteur de espion.
 
-4.  Comprend un `intent-filter` pour informer Android qu' `MyWatchFaceService` il affichera un visage de montre.
+4. Comprend un `intent-filter` pour informer Android qu' `MyWatchFaceService` il affichera un visage de montre.
 
 Cela termine le code de l’exemple `WatchFace` de base. L’étape suivante consiste à ajouter les ressources nécessaires.
 
@@ -338,17 +338,17 @@ Installez-le à l’adresse **ressources/Drawing/preview. png**. Veillez à ajou
 
 Générez et déployez l’application sur l’appareil d’usure. L’écran de l’application d’usure doit s’afficher comme avant. Pour activer la nouvelle facette, procédez comme suit:
 
-1.  Faites défiler vers la droite jusqu’à ce que l’arrière-plan de l’écran Watch s’affiche.
+1. Faites défiler vers la droite jusqu’à ce que l’arrière-plan de l’écran Watch s’affiche.
 
-2.  Touchez et maintenez le contact n’importe où sur l’arrière-plan de l’écran pendant deux secondes.
+2. Touchez et maintenez le contact n’importe où sur l’arrière-plan de l’écran pendant deux secondes.
 
-3.  Faites défiler de gauche à droite pour parcourir les différentes faces de la montre.
+3. Faites défiler de gauche à droite pour parcourir les différentes faces de la montre.
 
-4.  Sélectionnez la face de l' **exemple Xamarin** (illustrée à droite):
+4. Sélectionnez la face de l' **exemple Xamarin** (illustrée à droite):
 
     [![Sélecteur watchface](creating-a-watchface-images/11-watchface-picker.png "Balayer pour localiser Xamarin exemple de visage de montre")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
-5.  Appuyez sur l’exemple de visage Watch **Xamarin** pour le sélectionner.
+5. Appuyez sur l’exemple de visage Watch **Xamarin** pour le sélectionner.
 
 Cela modifie le visage de la montre de l’appareil d’usure pour utiliser le service de visage de montre personnalisé mis en œuvre jusqu’à présent:
 
@@ -364,15 +364,15 @@ Dans la section suivante, ce visage de la montre sera mis à niveau vers une imp
 
 Dans le reste de cette procédure pas `MyWatchFaceService` à pas, est mis à niveau pour afficher un visage de type analogique et il est étendu pour prendre en charge davantage de fonctionnalités. Les fonctionnalités suivantes seront ajoutées pour créer la facette de la montre mise à niveau:
 
-1.  Indique l’heure avec des mains d’heures, de minutes et de secondes analogues.
+1. Indique l’heure avec des mains d’heures, de minutes et de secondes analogues.
 
-2.  Réagit aux modifications de visibilité.
+2. Réagit aux modifications de visibilité.
 
-3.  Répond aux modifications entre le mode ambiant et le mode interactif.
+3. Répond aux modifications entre le mode ambiant et le mode interactif.
 
-4.  Lit les propriétés de l’appareil sous-jacent usure.
+4. Lit les propriétés de l’appareil sous-jacent usure.
 
-5.  Met à jour automatiquement l’heure à laquelle une modification de fuseau horaire a lieu.
+5. Met à jour automatiquement l’heure à laquelle une modification de fuseau horaire a lieu.
 
 Avant d’implémenter les modifications de code ci-dessous, téléchargez le fichier [Drawable. zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true), décompressez-le, puis déplacez les fichiers. png décompressés vers Resources **/Drawing** (remplacez la version **preview. png**précédente). Ajoutez les nouveaux fichiers. png au `WatchFace` projet.
 
@@ -387,13 +387,13 @@ Cette version de **MyWatchFaceService.cs** ajoute du code aux méthodes existant
 
 La méthode **OnCreate** mise à jour configure le style de visage Watch comme précédemment, mais il comprend quelques étapes supplémentaires:
 
-1.  Définit l’image d’arrière-plan sur la ressource **xamarin_background** qui réside dans Resources **/Drawable-HDPI/xamarin_background. png**.
+1. Définit l’image d’arrière-plan sur la ressource **xamarin_background** qui réside dans Resources **/Drawable-HDPI/xamarin_background. png**.
 
-2.  Initialise des `Paint` objets pour dessiner la main, la main et la seconde.
+2. Initialise des `Paint` objets pour dessiner la main, la main et la seconde.
 
-3.  Initialise un `Paint` objet pour dessiner les graduations de l’heure autour du bord du visage de la montre.
+3. Initialise un `Paint` objet pour dessiner les graduations de l’heure autour du bord du visage de la montre.
 
-4.  Crée un minuteur qui appelle `Invalidate` la méthode (redessiner) afin que la deuxième main soit redessinée chaque seconde. Notez que ce minuteur est nécessaire `OnTimeTick` car `Invalidate` n’appelle qu’une fois par minute.
+4. Crée un minuteur qui appelle `Invalidate` la méthode (redessiner) afin que la deuxième main soit redessinée chaque seconde. Notez que ce minuteur est nécessaire `OnTimeTick` car `Invalidate` n’appelle qu’une fois par minute.
 
 Cet exemple comprend une seule image **xamarin_background. png.** Toutefois, vous souhaiterez peut-être créer une image d’arrière-plan différente pour chaque densité d’écran que votre espion personnalisé prendra en charge.
 
@@ -401,17 +401,17 @@ Cet exemple comprend une seule image **xamarin_background. png.** Toutefois, vou
 
 La méthode **OnDraw** mise à jour dessine une face de type analogique à l’aide des étapes suivantes:
 
-1.  Obtient l’heure actuelle, qui est maintenant conservée dans `time` un objet.
+1. Obtient l’heure actuelle, qui est maintenant conservée dans `time` un objet.
 
-2.  Détermine les limites de la surface de dessin et de son centre.
+2. Détermine les limites de la surface de dessin et de son centre.
 
-3.  Dessine l’arrière-plan, mis à l’échelle pour s’ajuster à l’appareil lors du dessin de l’arrière-plan.
+3. Dessine l’arrière-plan, mis à l’échelle pour s’ajuster à l’appareil lors du dessin de l’arrière-plan.
 
-4.  Dessine douze graduations autour de l’horloge (correspondant aux heures sur la face de l’horloge).
+4. Dessine douze graduations autour de l’horloge (correspondant aux heures sur la face de l’horloge).
 
-5.  Calcule l’angle, la rotation et la longueur de chaque main de suivi.
+5. Calcule l’angle, la rotation et la longueur de chaque main de suivi.
 
-6.  Dessine chaque main sur la surface de la montre. Notez que la deuxième main n’est pas dessinée si la montre est en mode ambiant.
+6. Dessine chaque main sur la surface de la montre. Notez que la deuxième main n’est pas dessinée si la montre est en mode ambiant.
 
 
 #### <a name="onpropertieschanged"></a>OnPropertiesChanged

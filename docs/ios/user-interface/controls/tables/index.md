@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: d01814bc241dcfb7b62f40bef226ee720a96ff23
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0dd3830b4903658d0b014eceaad9c57859963c04
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657003"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528630"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Utilisation des tables et des cellules dans Xamarin. iOS
 
@@ -22,10 +22,10 @@ Pour ceux qui travaillent sur des applications multiplateformes avec Xamarin. An
 
 Ces articles présentent un aperçu complet de l’utilisation des tables, notamment:
 
--   **Parties de table** : présentation et explication des éléments visuels du `UITableView` contrôle. 
--   **Affichage des données dans les tables** : l’illustration de la création et du remplissage d’une table, l’utilisation de différents styles de table et de cellule et l’évitement des problèmes de mémoire en recyclant des objets Cell. 
--   **Utilisation avancée** : génération de cellules personnalisées et utilisation des fonctionnalités de modification de la classe UITableView. 
--   **Création visuelle d’une table** : à l’aide de l’Xamarin Designer pour IOS pour créer une interface pilotée par table avec une table de montage séquentiel. 
+- **Parties de table** : présentation et explication des éléments visuels du `UITableView` contrôle. 
+- **Affichage des données dans les tables** : l’illustration de la création et du remplissage d’une table, l’utilisation de différents styles de table et de cellule et l’évitement des problèmes de mémoire en recyclant des objets Cell. 
+- **Utilisation avancée** : génération de cellules personnalisées et utilisation des fonctionnalités de modification de la classe UITableView. 
+- **Création visuelle d’une table** : à l’aide de l’Xamarin Designer pour IOS pour créer une interface pilotée par table avec une table de montage séquentiel. 
 
 ## <a name="contents"></a>Sommaire
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: d3e5b36f2cbc48dac09b55bfba8c3613db12bbc8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa0a3a75a4cc2cfd04b607f17206faa822af0474
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643281"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523642"
 ---
 # <a name="using-native-libraries"></a>Utilisation de bibliothèques natives
 
@@ -24,8 +24,8 @@ Pour déployer une bibliothèque native avec un projet de bibliothèque Xamarin.
 Notez que dans la mesure où Android prend en charge plusieurs interfaces binaires d’application (ABI), Xamarin. Android doit savoir à quel ABI la bibliothèque native est générée.
 Vous pouvez faire cela de deux façons :
 
-1.  Chemin d’accès «détection»
-1.  En utilisant un `AndroidNativeLibrary/Abi` élément dans le fichier projet
+1. Chemin d’accès «détection»
+1. En utilisant un `AndroidNativeLibrary/Abi` élément dans le fichier projet
 
 
 Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi/libfoo.so` au projet, l’Abi sera «reniflée» comme. `armeabi`

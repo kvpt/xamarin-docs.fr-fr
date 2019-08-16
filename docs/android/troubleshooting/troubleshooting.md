@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
-ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
+ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757250"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523197"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
 
@@ -22,9 +22,9 @@ ms.locfileid: "68757250"
 Xamarin. Android présente quelques emplacements à examiner pour le suivi de divers bogues.
 Elles incluent notamment :
 
-1.  Sortie MSBuild de diagnostic.
-2.  Journaux de déploiement de l’appareil.
-3.  Sortie du journal de débogage Android.
+1. Sortie MSBuild de diagnostic.
+2. Journaux de déploiement de l’appareil.
+3. Sortie du journal de débogage Android.
 
 
 <a name="Diagnostic_MSBuild_Output" />
@@ -35,23 +35,23 @@ Diagnostic MSBuild peut contenir des informations supplémentaires relatives à 
 
 Pour activer la sortie MSBuild de diagnostic dans Visual Studio :
 
-1.  Cliquez sur **outils > options...**
-2.  Dans l’arborescence de gauche, sélectionnez **projets et Solutions > générer et exécuter**
-3.  Dans le volet de droite, définissez la liste déroulante détail de la sortie de génération MSBuild sur diagnostic
-4.  Cliquez sur **OK**.
-5.  Nettoyez et regénérez votre package.
-6.  La sortie de diagnostic est visible dans le panneau sortie.
+1. Cliquez sur **outils > options...**
+2. Dans l’arborescence de gauche, sélectionnez **projets et Solutions > générer et exécuter**
+3. Dans le volet de droite, définissez la liste déroulante détail de la sortie de génération MSBuild sur diagnostic
+4. Cliquez sur **OK**.
+5. Nettoyez et regénérez votre package.
+6. La sortie de diagnostic est visible dans le panneau sortie.
 
 
 Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac/OS X:
 
-1.  Cliquez sur **Visual Studio pour Mac > préférences...**
-2.  Dans l’arborescence de gauche, sélectionnez **projets > générer**
-3.  Dans le volet de droite, définissez la liste déroulante commentaires du journal sur diagnostic
-4.  Cliquez sur **OK**.
-5.  Redémarrer Visual Studio pour Mac
-6.  Nettoyez et regénérez votre package.
-7.  La sortie de diagnostic est visible dans le bloc d’erreurs (**affichez > > Erreurs** ) en cliquant sur le bouton sortie de la génération.
+1. Cliquez sur **Visual Studio pour Mac > préférences...**
+2. Dans l’arborescence de gauche, sélectionnez **projets > générer**
+3. Dans le volet de droite, définissez la liste déroulante commentaires du journal sur diagnostic
+4. Cliquez sur **OK**.
+5. Redémarrer Visual Studio pour Mac
+6. Nettoyez et regénérez votre package.
+7. La sortie de diagnostic est visible dans le bloc d’erreurs (**affichez > > Erreurs** ) en cliquant sur le bouton sortie de la génération.
 
 
 
@@ -60,16 +60,16 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac/OS X:
 
 Pour activer la journalisation du déploiement des appareils dans Visual Studio:
 
-1.  **Outils > Options...** >
-2.  Dans l’arborescence de gauche, sélectionnez **Xamarin > paramètres Android**
-3.  Dans le volet de droite, activez la case à cocher journalisation du débogage de l’extension [X] **(écrit monodroid. log sur votre bureau)** .
-4.  Les messages de journal sont écrits dans le fichier monodroid. log sur votre bureau.
+1. **Outils > Options...** >
+2. Dans l’arborescence de gauche, sélectionnez **Xamarin > paramètres Android**
+3. Dans le volet de droite, activez la case à cocher journalisation du débogage de l’extension [X] **(écrit monodroid. log sur votre bureau)** .
+4. Les messages de journal sont écrits dans le fichier monodroid. log sur votre bureau.
 
 
 Visual Studio pour Mac écrit toujours les journaux de déploiement d’appareil. Leur recherche est un peu plus difficile. un fichier journal *AndroidUtils* est créé pour chaque jour + heure à laquelle un déploiement a lieu, par exemple: **AndroidTools-2012-10-24_12-35-45.log**.
 
--  Sur Windows, les fichiers journaux sont écrits `%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`dans.
--  Sur OS X, les fichiers journaux sont écrits `$HOME/Library/Logs/XamarinStudio-{VERSION}`dans.
+- Sur Windows, les fichiers journaux sont écrits `%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`dans.
+- Sur OS X, les fichiers journaux sont écrits `$HOME/Library/Logs/XamarinStudio-{VERSION}`dans.
 
 
 
@@ -91,9 +91,9 @@ Les propriétés système sont lues pendant le démarrage du processus et doiven
 
 Xamarin. Android prend en charge les propriétés système suivantes:
 
--   *Debug. mono. Debug*: S’il s’agit d’une chaîne non vide, cela `*mono-debug*`équivaut à.
+- *Debug. mono. Debug*: S’il s’agit d’une chaîne non vide, cela `*mono-debug*`équivaut à.
 
--   *Debug. mono. env*: Séparées par une barre verticale (\« *|* ') liste des variables d’environnement à exporter pendant le démarrage de l’application, *avant* mono a été initialisé. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
+- *Debug. mono. env*: Séparées par une barre verticale (\« *|* ') liste des variables d’environnement à exporter pendant le démarrage de l’application, *avant* mono a été initialisé. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
 
     - *Remarque*: Dans la mesure où la valeur est *|* '-séparés, la valeur doit avoir un niveau supplémentaire de guillemets, comme le \`*interpréteur de commandes adb*\` commande supprime un jeu de guillemets.
 
@@ -101,18 +101,20 @@ Xamarin. Android prend en charge les propriétés système suivantes:
 
     - Exemple :
 
-            adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
+      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
 
--   *Debug. mono. log*: Une virgule ( *,* ') liste des composants qui doit afficher des messages supplémentaires dans le journal de débogage Android. Par défaut, rien n’est défini. Les composants sont les suivants:
+- *Debug. mono. log*: Une virgule ( *,* ') liste des composants qui doit afficher des messages supplémentaires dans le journal de débogage Android. Par défaut, rien n’est défini. Les composants sont les suivants:
 
-    -   *tout*: Imprimer tous les messages
-    -   *GC*: Imprimer les messages relatifs au garbage collector.
-    -   *Gref*: Affichez les messages d’allocation de référence et de désallocation (faibles, globaux).
-    -   *lref*: Affichez les messages d’allocation et de désallocation des références locales.
+    - *tout*: Imprimer tous les messages
+    - *GC*: Imprimer les messages relatifs au garbage collector.
+    - *Gref*: Affichez les messages d’allocation de référence et de désallocation (faibles, globaux).
+    - *lref*: Affichez les messages d’allocation et de désallocation des références locales.
 
     *Remarque*: ces éléments sont *extrêmement* détaillés. N’activez pas, sauf si vous en avez vraiment besoin.
 
--   *Debug. mono. trace*: Permet de définir le paramètre [mono--trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` .
+- *Debug. mono. trace*: Permet de définir le paramètre [mono--trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` .
 
 ## <a name="deleting-bin-and-obj"></a>Suppression `bin` et`obj`
 
@@ -213,10 +215,10 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 
 Il y a quatre messages de conséquence:
 
--  Création de références globales: il s’agit des lignes qui commencent par *+ g +* et qui fourniront une trace de la pile pour le chemin de code de création.
--  Destruction de référence globale: il s’agit des lignes qui commencent par *-g-* et peuvent fournir une trace de la pile pour le chemin de code en supprimant la référence globale. Si le GC supprime le Gref, aucune trace de la pile ne sera fournie.
--  Création de références globales faible: il s’agit des lignes qui commencent par *+ w +* .
--  Destruction de référence globale faible: il s’agit de lignes qui commencent par *-w-* .
+- Création de références globales: il s’agit des lignes qui commencent par *+ g +* et qui fourniront une trace de la pile pour le chemin de code de création.
+- Destruction de référence globale: il s’agit des lignes qui commencent par *-g-* et peuvent fournir une trace de la pile pour le chemin de code en supprimant la référence globale. Si le GC supprime le Gref, aucune trace de la pile ne sera fournie.
+- Création de références globales faible: il s’agit des lignes qui commencent par *+ w +* .
+- Destruction de référence globale faible: il s’agit de lignes qui commencent par *-w-* .
 
 
 Dans tous les messages, la valeur *grefc* est le nombre de références globales créées par Xamarin. Android, tandis que la valeur *grefwc* est le nombre de références globales faibles que Xamarin. Android a créées. Le *gérer* ou *obj-handle* valeur est la valeur du handle JNI et le caractère situé après le */* est le type de valeur du handle :   */l* pour référence locale, */G* pour les références globales, et */W* pour les références faibles globales.
@@ -341,24 +343,24 @@ emulator -partition-size 512 -avd MonoDroid
 Veillez à utiliser le nom de simulateur correct, c.-à-d. [le nom que vous avez utilisé lors de la configuration du simulateur](~/android/get-started/installation/windows.md#device).
 
 
-## <a name="installfailedinvalidapk-when-installing-a-package"></a>\_Échec\_del’installationdeapknonvalidelorsdel’installationd’unpackage\_
+## <a name="install_failed_invalid_apk-when-installing-a-package"></a>\_Échec\_del’installationdeapknonvalidelorsdel’installationd’unpackage\_
 
 Les noms de package Android *doit* contiennent un point ( *.* '). Modifiez le nom de votre package de sorte qu’il contienne un point.
 
--   Dans Visual Studio:
-    -   Cliquez avec le bouton droit sur les propriétés de votre projet >
-    -   Cliquez sur l’onglet manifeste Android sur la gauche.
-    -   Mettez à jour le champ nom du package.
-        -   Si vous voyez le message &ldquo;«aucun fichier AndroidManifest. xml trouvé. Cliquez pour en ajouter un. &rdquo;, cliquez sur le lien, puis mettez à jour le champ nom du package.
--   Dans Visual Studio pour Mac:
-    -   Cliquez avec le bouton droit sur vos options de > de projet.
-    -   Accédez à la section Build/application Android.
-    -   Modifiez le champ nom du package pour qu’il contienne un «.».
+- Dans Visual Studio:
+    - Cliquez avec le bouton droit sur les propriétés de votre projet >
+    - Cliquez sur l’onglet manifeste Android sur la gauche.
+    - Mettez à jour le champ nom du package.
+        - Si vous voyez le message &ldquo;«aucun fichier AndroidManifest. xml trouvé. Cliquez pour en ajouter un. &rdquo;, cliquez sur le lien, puis mettez à jour le champ nom du package.
+- Dans Visual Studio pour Mac:
+    - Cliquez avec le bouton droit sur vos options de > de projet.
+    - Accédez à la section Build/application Android.
+    - Modifiez le champ nom du package pour qu’il contienne un «.».
 
 
 
 
-## <a name="installfailedmissingsharedlibrary-when-installing-a-package"></a>Échec\_\_\_de l’installation de la bibliothèque partagée manquante lors de l’installation d’un package\_
+## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>Échec\_\_\_de l’installation de la bibliothèque partagée manquante lors de l’installation d’un package\_
 
 Dans ce contexte, une «bibliothèque partagée» n’est *pas* un fichier*libfoo.so*(Native Shared Library); au lieu de cela, il s’agit d’une bibliothèque qui doit être installée séparément sur l’appareil cible, par exemple Google Maps.
 
@@ -371,19 +373,19 @@ Par exemple, l’ajout d’une référence d’assembly à *mono. Android. Googl
 
 
 
-## <a name="installfailedupdateincompatible-when-installing-a-package"></a>\_Échec\_del’installationd’unemiseàjourincompatiblelorsdel’installationd’unpackage\_
+## <a name="install_failed_update_incompatible-when-installing-a-package"></a>\_Échec\_del’installationd’unemiseàjourincompatiblelorsdel’installationd’unpackage\_
 
 Les packages Android présentent trois exigences:
 
--   Ils doivent contenir un'. ' (Voir l’entrée précédente)
--   Ils doivent avoir un nom de package de chaîne unique (par conséquent, la Convention de type TLD inverse dans les noms d’application Android, par exemple, com. Android. chrome pour l’application chrome)
--   Lors de la mise à niveau de packages, le package doit avoir la même clé de signature.
+- Ils doivent contenir un'. ' (Voir l’entrée précédente)
+- Ils doivent avoir un nom de package de chaîne unique (par conséquent, la Convention de type TLD inverse dans les noms d’application Android, par exemple, com. Android. chrome pour l’application chrome)
+- Lors de la mise à niveau de packages, le package doit avoir la même clé de signature.
 
 Imaginez donc ce scénario:
 
-1.  Vous générez & déployer votre application en tant qu’application de débogage
-2.  Vous modifiez la clé de signature, par exemple pour l’utiliser comme une application de mise en sortie (ou parce que vous n’aimez pas la clé de signature de débogage fournie par défaut)
-3.  Vous installez votre application sans la supprimer, par exemple, Déboguer > démarrer sans débogage dans Visual Studio
+1. Vous générez & déployer votre application en tant qu’application de débogage
+2. Vous modifiez la clé de signature, par exemple pour l’utiliser comme une application de mise en sortie (ou parce que vous n’aimez pas la clé de signature de débogage fournie par défaut)
+3. Vous installez votre application sans la supprimer, par exemple, Déboguer > démarrer sans débogage dans Visual Studio
 
 
 Dans ce cas, l’installation du package échouera avec\_une\_erreur\_échec de la mise à jour incompatible de l’installation, car le nom du package n’a pas changé tant que la clé de signature n’a pas été modifiée. Le [Journal de débogage Android](~/android/deploy-test/debugging/android-debug-log.md) contient également un message similaire à celui-ci:
@@ -395,7 +397,7 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 Pour corriger cette erreur, supprimez complètement l’application de votre appareil avant de réinstaller.
 
 
-## <a name="installfaileduidchanged-when-installing-a-package"></a>\_Échec\_de\_l’installation d’UID modifié lors de l’installation d’un package
+## <a name="install_failed_uid_changed-when-installing-a-package"></a>\_Échec\_de\_l’installation d’UID modifié lors de l’installation d’un package
 
 Lorsqu’un package Android est installé, il reçoit un *ID d’utilisateur* (UID).
 *Parfois*, pour des raisons actuellement inconnues, lorsque vous installez sur une application déjà installée, l' `INSTALL_FAILED_UID_CHANGED`installation échoue avec:
@@ -433,10 +435,10 @@ E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:36
 
 Dans ce cas, deux causes sont possibles:
 
-1.  Le. apk ne fournit pas d’ABI que l’appareil cible prend en charge.
+1. Le. apk ne fournit pas d’ABI que l’appareil cible prend en charge.
     Par exemple, le. apk contient uniquement des binaires ARMEABI-V7A, et l’appareil cible prend en charge uniquement ARMEABI.
 
-2.  [Bogue Android](http://code.google.com/p/android/issues/detail?id=21670). Si c’est le cas, désinstallez l’application, franchissez vos doigts, puis réinstallez l’application.
+2. [Bogue Android](http://code.google.com/p/android/issues/detail?id=21670). Si c’est le cas, désinstallez l’application, franchissez vos doigts, puis réinstallez l’application.
 
 Pour corriger (1), modifiez les options/propriétés du projet et [Ajoutez la prise en charge de l’Abi requis à la liste des Abi prises en charge](~/android/app-fundamentals/cpu-architectures.md). Pour déterminer quel ABI vous devez ajouter, exécutez la commande ADB suivante sur votre appareil cible:
 
@@ -457,7 +459,7 @@ $ adb shell getprop | grep ro.product.cpu
 
 Cela signifie généralement que vous avez un ordinateur HP et que la &ldquo;plateforme&rdquo; de variable d’environnement a été définie sur une valeur telle que MCD ou HPD. Cela est en conflit avec la propriété de la plateforme MSBuild qui &ldquo;est généralement&rdquo; définie sur&rdquo;Any CPU ou &ldquo;x86. Vous devrez supprimer cette variable d’environnement de votre ordinateur avant que MSBuild puisse fonctionner:
 
--   Panneau de configuration > les variables d’environnement > avancées du système >
+- Panneau de configuration > les variables d’environnement > avancées du système >
 
 Redémarrez Visual Studio ou Visual Studio pour Mac, puis régénérez. Les choses devraient maintenant fonctionner comme prévu.
 
@@ -686,11 +688,11 @@ Pour utiliser C\# Dynamic dans votre application ou bibliothèque, vous devez aj
 
 ### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>Dans la version Release, MissingMethodException se produit pour le code dynamique au moment de l’exécution.
 
--   Il est probable que votre projet d’application n’a pas de références à System. Core. dll, Microsoft. CSharp. dll ou mono. CSharp. dll. Assurez-vous que ces assemblys sont référencés.
+- Il est probable que votre projet d’application n’a pas de références à System. Core. dll, Microsoft. CSharp. dll ou mono. CSharp. dll. Assurez-vous que ces assemblys sont référencés.
 
-    -   Gardez à l’esprit que le code dynamique est toujours onéreux. Si vous avez besoin de code efficace, envisagez de ne pas utiliser de code dynamique.
+    - Gardez à l’esprit que le code dynamique est toujours onéreux. Si vous avez besoin de code efficace, envisagez de ne pas utiliser de code dynamique.
 
--   Dans le premier aperçu, ces assemblys ont été exclus, à moins que les types dans chaque assembly soient utilisés explicitement par le code d’application. Pour obtenir une solution de contournement, consultez les rubriques suivantes:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+- Dans le premier aperçu, ces assemblys ont été exclus, à moins que les types dans chaque assembly soient utilisés explicitement par le code d’application. Pour obtenir une solution de contournement, consultez les rubriques suivantes:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>Projets générés avec l’AOA + LLVM Crash sur les appareils x86

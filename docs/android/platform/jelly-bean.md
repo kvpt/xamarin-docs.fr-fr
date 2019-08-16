@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e54f499316d2b99d87d05fbd202308eecaaed220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 614a0e3952db42d2587930b66bf71ce4c703d035
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643374"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524063"
 ---
 # <a name="jelly-bean-features"></a>Fonctionnalités de la gelée
 
@@ -48,9 +48,9 @@ Pour développer des applications Xamarin. Android à l’aide de gelée, vous d
 
 Les activités peuvent être lancées à l’aide d’animations de zoom ou `ActivityOptions` d’animations personnalisées à l’aide de la classe. Les nouvelles méthodes suivantes sont fournies pour prendre en charge ces animations:
 
--   `MakeScaleUpAnimation`: Cette opération crée une animation qui met à l’échelle une fenêtre d’activité à partir d’une position de départ et d’une taille à l’écran.
--   `MakeThumbnailScaleUpAnimation`: Crée une animation qui se met à l’échelle à partir d’une image miniature de la position spécifiée à l’écran.
--   `MakeCustomAnimation`: Crée une animation à partir des ressources de l’application. Il existe une animation pour le moment où l’activité s’ouvre et une autre pour lorsque l’activité s’arrête.
+- `MakeScaleUpAnimation`: Cette opération crée une animation qui met à l’échelle une fenêtre d’activité à partir d’une position de départ et d’une taille à l’écran.
+- `MakeThumbnailScaleUpAnimation`: Crée une animation qui se met à l’échelle à partir d’une image miniature de la position spécifiée à l’écran.
+- `MakeCustomAnimation`: Crée une animation à partir des ressources de l’application. Il existe une animation pour le moment où l’activité s’ouvre et une autre pour lorsque l’activité s’arrête.
 
 
 La nouvelle `TimeAnimator` classe fournit une interface `TimeAnimator.ITimeListener` qui peut notifier une application chaque fois qu’un frame change dans une animation. Par exemple, considérez l’implémentation suivante `TimeAnimator.ITimeListener`de:
@@ -85,12 +85,12 @@ Pour la plupart des applications `ParentName` , le paramètre sur l’activité 
 
 Pour les scénarios plus complexes, il existe de nouvelles méthodes sur la classe Activity qui peuvent être utilisées pour gérer le comportement de la navigation vers le haut et construire la pile Back:
 
--   `OnNavigateUp`: En substituant cette méthode, il est possible d’exécuter une action personnalisée quand vous appuyez sur le bouton <span class="ui">haut</span> .
--   `NavigateUpTo`: L’appel de cette méthode permet à l’application de naviguer de l’activité actuelle à l’activité spécifiée par une intention donnée.
--   `ParentActivityIntent`: Permet d’obtenir une intention qui lance l’activité parente de l’activité en cours.
--   `ShouldUpRecreateTask`: Cette méthode est utilisée pour interroger si la pile de retour synthétique doit être créée pour accéder à une activité parente. Retourne `true` si la pile synthétique doit être créée. 
--   `FinishAffinity`: L’appel de cette méthode termine l’activité en cours et toutes les activités situées au-dessous de celle-ci dans la tâche actuelle qui ont la même affinité de tâche.
--   `OnCreateNavigateUpTaskStack`: Cette méthode est substituée lorsqu’il est nécessaire de disposer d’un contrôle total sur la façon dont la pile synthétique est créée.
+- `OnNavigateUp`: En substituant cette méthode, il est possible d’exécuter une action personnalisée quand vous appuyez sur le bouton **haut** .
+- `NavigateUpTo`: L’appel de cette méthode permet à l’application de naviguer de l’activité actuelle à l’activité spécifiée par une intention donnée.
+- `ParentActivityIntent`: Permet d’obtenir une intention qui lance l’activité parente de l’activité en cours.
+- `ShouldUpRecreateTask`: Cette méthode est utilisée pour interroger si la pile de retour synthétique doit être créée pour accéder à une activité parente. Retourne `true` si la pile synthétique doit être créée. 
+- `FinishAffinity`: L’appel de cette méthode termine l’activité en cours et toutes les activités situées au-dessous de celle-ci dans la tâche actuelle qui ont la même affinité de tâche.
+- `OnCreateNavigateUpTaskStack`: Cette méthode est substituée lorsqu’il est nécessaire de disposer d’un contrôle total sur la façon dont la pile synthétique est créée.
 
 
 
@@ -120,10 +120,10 @@ public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
 
 La nouvelle classe `MediaActionSound` fournit un ensemble d’API pour produire des sons pour les différentes actions de média. Il existe plusieurs actions qui peuvent se produire avec une caméra, celles-ci sont définies `Android.Media.MediaActionSoundType`par l’énumération:
 
--   `MediaActionSoundType.FocusComplete`: Ce son qui est lu lorsque le focus est terminé.
--   `MediaActionSoundType.ShutterClick`: Ce son est lu quand une image continue est prise.
--   `MediaActionSoundType.StartVideoRecording`: Ce son est utilisé pour indiquer le début de l’enregistrement vidéo.
--   `MediaActionSoundType.StopVideoRecording`: Ce son est lu pour indiquer la fin de l’enregistrement vidéo.
+- `MediaActionSoundType.FocusComplete`: Ce son qui est lu lorsque le focus est terminé.
+- `MediaActionSoundType.ShutterClick`: Ce son est lu quand une image continue est prise.
+- `MediaActionSoundType.StartVideoRecording`: Ce son est utilisé pour indiquer le début de l’enregistrement vidéo.
+- `MediaActionSoundType.StopVideoRecording`: Ce son est lu pour indiquer la fin de l’enregistrement vidéo.
 
 
 Vous pouvez voir un exemple d’utilisation `MediaActionSound` de la classe dans l’extrait de code suivant:
@@ -178,10 +178,10 @@ La `WifiP2pManager` classe a été introduite dans Android 4,0 pour prendre en c
 
 Dans une haricot de gelée, `WifiP2pManager` peut détecter des appareils à proximité à l’aide de *Bonjour* ou de *UPnP*. Bonjour est l’implémentation d’Apple de Zeroconf. UPnP est un ensemble de protocoles réseau qui prend également en charge Zeroconf. Les méthodes suivantes ont été ajoutées `WiFiP2pManager` à pour prendre en charge la découverte de service Wi-Fi:
 
--   `AddLocalService()`: Cette méthode est utilisée pour annoncer une application en tant que service sur le Wi-Fi pour la découverte par des pairs.
--   `AddServiceRequest(`): Cette méthode permet d’envoyer une demande de découverte de service à l’infrastructure. Elle est utilisée pour initialiser la détection du service Wi-Fi.
--   `SetDnsSdResponseListeners()`: Cette méthode est utilisée pour enregistrer les rappels à appeler lors de la réception d’une réponse aux demandes de découverte à partir de Bonjour.
--   `SetUpnpServiceResponseListener()`: Cette méthode est utilisée pour enregistrer les rappels à appeler lors de la réception d’une réponse aux requêtes de découverte UPnP.
+- `AddLocalService()`: Cette méthode est utilisée pour annoncer une application en tant que service sur le Wi-Fi pour la découverte par des pairs.
+- `AddServiceRequest(`): Cette méthode permet d’envoyer une demande de découverte de service à l’infrastructure. Elle est utilisée pour initialiser la détection du service Wi-Fi.
+- `SetDnsSdResponseListeners()`: Cette méthode est utilisée pour enregistrer les rappels à appeler lors de la réception d’une réponse aux demandes de découverte à partir de Bonjour.
+- `SetUpnpServiceResponseListener()`: Cette méthode est utilisée pour enregistrer les rappels à appeler lors de la réception d’une réponse aux requêtes de découverte UPnP.
 
 
 
@@ -196,9 +196,9 @@ La `ContentResolver` classe a reçu une nouvelle méthode, `AcquireUnstableConte
 
 `Intent.ClipData` Un `Intent` objetestmaintenantassociéàlaclasse`ClipData` via la propriété. Cette méthode permet de transmettre des données supplémentaires du presse-papiers avec l’intention. Une instance de `ClipData` peut contenir un ou plusieurs `ClipData.Item`. `ClipData.Item`les sont des éléments des types suivants:
 
--   **Text** : il s’agit d’une chaîne de texte, html ou toute chaîne dont le format est pris en charge par les étendues de style Android intégrées.
--  **Intent** : `Intent` tout objet.
--   **URI** : il peut s’agir de n’importe quel URI, tel qu’un signet http ou l’URI d’un fournisseur de contenu.
+- **Text** : il s’agit d’une chaîne de texte, html ou toute chaîne dont le format est pris en charge par les étendues de style Android intégrées.
+- **Intent** : `Intent` tout objet.
+- **URI** : il peut s’agir de n’importe quel URI, tel qu’un signet http ou l’URI d’un fournisseur de contenu.
 
 
 
@@ -214,9 +214,9 @@ La nouvelle `Android.Media.MediaCodec` classe fournit une API aux codecs de méd
 
 Les nouvelles `Android.Media.Audiofx.AudioEffect` sous-classes ont été ajoutées pour prendre en charge un prétraitement audio supplémentaire sur le son capturé:
 
--   `Android.Media.Audiofx.AcousticEchoCanceler`: Cette classe est utilisée pour le pré-traitement audio pour supprimer le signal d’un tiers distant d’un signal audio capturé. Par exemple, la suppression de l’écho d’une application de communication vocale.
--   `Android.Media.Audiofx.AutomaticGainControl`: Cette classe est utilisée pour normaliser le signal capturé en amplifiant ou en abaissant un signal d’entrée afin que le signal de sortie soit constant.
--   `Android.Media.Audiofx.NoiseSuppressor`: Cette classe supprime le bruit de fond du signal capturé.
+- `Android.Media.Audiofx.AcousticEchoCanceler`: Cette classe est utilisée pour le pré-traitement audio pour supprimer le signal d’un tiers distant d’un signal audio capturé. Par exemple, la suppression de l’écho d’une application de communication vocale.
+- `Android.Media.Audiofx.AutomaticGainControl`: Cette classe est utilisée pour normaliser le signal capturé en amplifiant ou en abaissant un signal d’entrée afin que le signal de sortie soit constant.
+- `Android.Media.Audiofx.NoiseSuppressor`: Cette classe supprime le bruit de fond du signal capturé.
 
 
 Tous les appareils ne prennent pas en charge ces effets. La méthode `AudioEffect.IsAvailable` doit être appelée par une application pour voir si l’effet audio en question est pris en charge sur l’appareil exécutant l’application.
@@ -225,8 +225,8 @@ La `MediaPlayer` classe prend désormais en charge la lecture `SetNextMediaPlaye
 
 Les nouvelles classes suivantes fournissent des mécanismes standard et une interface utilisateur pour sélectionner l’emplacement de lecture des médias:
 
--   `MediaRouter`: Cette classe permet aux applications de contrôler le routage des canaux multimédias d’un appareil vers des haut-parleurs externes ou d’autres appareils.
--   `MediaRouterActionProvider`et `MediaRouteButton` : ces classes aident à fournir une interface utilisateur cohérente pour la sélection et la diffusion de médias.
+- `MediaRouter`: Cette classe permet aux applications de contrôler le routage des canaux multimédias d’un appareil vers des haut-parleurs externes ou d’autres appareils.
+- `MediaRouterActionProvider`et `MediaRouteButton` : ces classes aident à fournir une interface utilisateur cohérente pour la sélection et la diffusion de médias.
 
 
 
@@ -235,17 +235,17 @@ Les nouvelles classes suivantes fournissent des mécanismes standard et une inte
 
 Android 4,1 offre aux applications plus de souplesse et de contrôle sur l’affichage des notifications. Les applications peuvent désormais afficher des notifications plus volumineuses et plus performantes pour les utilisateurs. Une nouvelle méthode `NotificationBuilder.SetStyle()` permet de définir l’un des trois nouveaux styles sur les notifications:
 
--   `Notification.BigPictureStyle`: Il s’agit d’une classe d’assistance qui génèrera des notifications qui comporteront une image. L’illustration suivante montre un exemple de notification avec une image Big:
+- `Notification.BigPictureStyle`: Il s’agit d’une classe d’assistance qui génèrera des notifications qui comporteront une image. L’illustration suivante montre un exemple de notification avec une image Big:
 
 
  [![Exemple de capture d’écran d’une notification BigPictureStyle](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
--   `Notification.BigTextStyle`: Il s’agit d’une classe d’assistance qui génèrera des notifications qui auront plusieurs lignes de texte, telles que le courrier électronique. Vous pouvez voir un exemple de ce nouveau style de notification dans la capture d’écran suivante:
+- `Notification.BigTextStyle`: Il s’agit d’une classe d’assistance qui génèrera des notifications qui auront plusieurs lignes de texte, telles que le courrier électronique. Vous pouvez voir un exemple de ce nouveau style de notification dans la capture d’écran suivante:
 
 
  [![Exemple de capture d’écran d’une notification BigTextStyle](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
--   `Notification.InboxStyle`: Il s’agit d’une classe d’assistance qui génère des notifications contenant une liste de chaînes, telles que des extraits de code à partir d’un message électronique, comme illustré dans cette capture d’écran:
+- `Notification.InboxStyle`: Il s’agit d’une classe d’assistance qui génère des notifications contenant une liste de chaînes, telles que des extraits de code à partir d’un message électronique, comme illustré dans cette capture d’écran:
 
 
  [![Exemple de capture d’écran d’une notification. InboxStyle](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
@@ -263,11 +263,11 @@ La `Notification` classe a reçu de nouvelles constantes qui permettent à un d�
 
 Les nouvelles autorisations suivantes ont été ajoutées:
 
--   `READ_EXTERNAL_STORAGE`-L’application nécessite un accès en lecture seule au stockage externe. Actuellement, toutes les applications ont un accès en lecture par défaut, mais les versions ultérieures d’Android requièrent des applications qui demandent explicitement un accès en lecture.
--   `READ_USER_DICTIONARY`-Autorise un accès en lecture au dictionnaire Word de l’utilisateur.
--   `READ_CALL_LOG`-Permet à une application d’obtenir des informations sur les appels entrants et sortants en lisant le journal des appels.
--   `WRITE_CALL_LOG`-Permet à une application d’écrire dans le journal des appels sur le téléphone.
--   `WRITE_USER_DICTIONARY`-Permet à une application d’écrire dans le dictionnaire Word de l’utilisateur.
+- `READ_EXTERNAL_STORAGE`-L’application nécessite un accès en lecture seule au stockage externe. Actuellement, toutes les applications ont un accès en lecture par défaut, mais les versions ultérieures d’Android requièrent des applications qui demandent explicitement un accès en lecture.
+- `READ_USER_DICTIONARY`-Autorise un accès en lecture au dictionnaire Word de l’utilisateur.
+- `READ_CALL_LOG`-Permet à une application d’obtenir des informations sur les appels entrants et sortants en lisant le journal des appels.
+- `WRITE_CALL_LOG`-Permet à une application d’écrire dans le journal des appels sur le téléphone.
+- `WRITE_USER_DICTIONARY`-Permet à une application d’écrire dans le dictionnaire Word de l’utilisateur.
 
 
 Une modification importante à noter `READ_EXTERNAL_STORAGE` : actuellement, cette autorisation est accordée automatiquement par Android. Les versions ultérieures d’Android requièrent qu’une application demande cette autorisation avant de lui accorder l’autorisation.

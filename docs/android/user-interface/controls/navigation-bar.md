@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c017ab96bdd78a41b31a3305021c5bc1f8e472d0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bb2b47623c03d335ae1edc4bf87881622823ea1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644909"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522926"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Barre de navigation Xamarin. Android
 
@@ -22,9 +22,9 @@ La capture d’écran suivante montre la barre de navigation d’un appareil pri
 
 Plusieurs nouveaux indicateurs sont disponibles pour contrôler la visibilité de la barre de navigation et de ses contrôles, ainsi que la visibilité de la barre système qui a été introduite dans Android 3. Les indicateurs sont définis dans la `Android.View.View` classe et sont répertoriés ci-dessous:
 
--   `SystemUiFlagVisible`&ndash; Rend la barre de navigation visible. 
--   `SystemUiFlagLowProfile`&ndash; Estompe les contrôles dans la barre de navigation. 
--   `SystemUiFlagHideNavigation`&ndash; Masque la barre de navigation. 
+- `SystemUiFlagVisible`&ndash; Rend la barre de navigation visible. 
+- `SystemUiFlagLowProfile`&ndash; Estompe les contrôles dans la barre de navigation. 
+- `SystemUiFlagHideNavigation`&ndash; Masque la barre de navigation. 
 
 
 Ces indicateurs peuvent être appliqués à n’importe quelle vue de la hiérarchie d’affichage `SystemUiVisibility` en définissant la propriété. Si cette propriété est définie pour plusieurs vues, le système les associe à une opération ou et les applique tant que la fenêtre dans laquelle les indicateurs sont définis conserve le focus. Lorsque vous supprimez une vue, tous les indicateurs qu’elle a définis sont également supprimés.

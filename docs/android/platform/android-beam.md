@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 83fa64ca207358b712341e1923a3a9a67a449e1f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643757"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524736"
 ---
 # <a name="android-beam"></a>Android Beam
 
@@ -23,9 +23,9 @@ Le faisceau Android fonctionne en envoyant des messages sur NFC lorsque deux app
 
 Android prend en charge deux méthodes de configuration des messages avec Android Beam:
 
--   `SetNdefPushMessage`-Avant d’initier le faisceau Android, une application peut appeler SetNdefPushMessage pour spécifier un NdefMessage pour effectuer un push sur NFC et l’activité qui l’exécute. Ce mécanisme est le mieux utilisé lorsqu’un message ne change pas lorsqu’une application est en cours d’utilisation.
+- `SetNdefPushMessage`-Avant d’initier le faisceau Android, une application peut appeler SetNdefPushMessage pour spécifier un NdefMessage pour effectuer un push sur NFC et l’activité qui l’exécute. Ce mécanisme est le mieux utilisé lorsqu’un message ne change pas lorsqu’une application est en cours d’utilisation.
 
--   `SetNdefPushMessageCallback`-Quand le faisceau Android est initialisé, une application peut gérer un rappel pour créer un NdefMessage. Ce mécanisme permet de différer la création du message jusqu’à ce que les appareils soient à portée. Il prend en charge les scénarios dans lesquels le message peut varier en fonction de ce qui se passe dans l’application.
+- `SetNdefPushMessageCallback`-Quand le faisceau Android est initialisé, une application peut gérer un rappel pour créer un NdefMessage. Ce mécanisme permet de différer la création du message jusqu’à ce que les appareils soient à portée. Il prend en charge les scénarios dans lesquels le message peut varier en fonction de ce qui se passe dans l’application.
 
 
 Dans les deux cas, pour envoyer des données avec Android Beam, une application `NdefMessage`envoie un, en empaquetant les données dans plusieurs. `NdefRecords` Jetons un coup d’œil aux points clés qui doivent être traités avant de pouvoir déclencher le faisceau Android. Tout d’abord, nous allons utiliser le style de rappel de `NdefMessage`la création d’un.

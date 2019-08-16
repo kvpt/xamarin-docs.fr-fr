@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 802f9ff60f74914a9369c7ef281cb2e70ca01d4b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655970"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529062"
 ---
 # <a name="xamarinforms-device-class"></a>Classe de périphérique de Xamarin.Forms
 
@@ -71,12 +71,12 @@ Vous pouvez également le `OnPlatform` extension de balisage peut être utilisé
 
 Le `Device.Idiom` propriété peut être utilisée pour modifier les dispositions ou fonctionnalités en fonction de l’appareil de l’application sont en cours d’exécution. Le [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom) énumération contient les valeurs suivantes :
 
--  **Téléphone** – iPhone, iPod touch et les appareils Android plus restrictif que les adresses IP 600 dynamiques ^
--  **Tablette** : iPad, les appareils Windows et les appareils Android plus larges que les adresses IP 600 dynamiques ^
--  **Desktop** : seuls retournées dans [applications UWP](~/xamarin-forms/platform/windows/installation/index.md) sur les ordinateurs de bureau Windows 10 (retourne `Phone` sur les appareils Windows mobiles, notamment dans les scénarios Continuum)
--  **TV** : les appareils Tizen TV
--  **Espion** – Tizen des appareils espion
--  **Non pris en charge** – inutilisées
+- **Téléphone** – iPhone, iPod touch et les appareils Android plus restrictif que les adresses IP 600 dynamiques ^
+- **Tablette** : iPad, les appareils Windows et les appareils Android plus larges que les adresses IP 600 dynamiques ^
+- **Desktop** : seuls retournées dans [applications UWP](~/xamarin-forms/platform/windows/installation/index.md) sur les ordinateurs de bureau Windows 10 (retourne `Phone` sur les appareils Windows mobiles, notamment dans les scénarios Continuum)
+- **TV** : les appareils Tizen TV
+- **Espion** – Tizen des appareils espion
+- **Non pris en charge** – inutilisées
 
 *^ DIP n’est pas nécessairement le nombre de pixels physiques*
 

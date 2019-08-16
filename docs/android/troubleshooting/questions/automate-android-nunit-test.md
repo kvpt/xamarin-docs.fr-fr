@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 94a0bddcb3a9a1e7236bed4b4c95fc38e1f9f0dd
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f25ce3c5bfe7e3d8032709e9df99e7538e978862
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510438"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523414"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Comment automatiser un projet de test Android NUnit ?
 
@@ -28,7 +28,7 @@ adb shell am instrument
 
 Les étapes suivantes expliquent ce processus:
 
-1.  Créez un nouveau fichier appelé **TestInstrumentation.cs**: 
+1. Créez un nouveau fichier appelé **TestInstrumentation.cs**: 
 
     ```cs 
     using System;
@@ -37,16 +37,16 @@ Les étapes suivantes expliquent ce processus:
     using Android.Content;
     using Android.Runtime;
     using Xamarin.Android.NUnitLite;
-     
+
     namespace App.Tests {
-     
+
         [Instrumentation(Name="app.tests.TestInstrumentation")]
         public class TestInstrumentation : TestSuiteInstrumentation {
-     
+
             public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
             {
             }
-     
+
             protected override void AddTests ()
             {
                 AddTest (Assembly.GetExecutingAssembly ());
@@ -54,11 +54,12 @@ Les étapes suivantes expliquent ce processus:
         }
     }
     ```
+
     Dans ce fichier, `Xamarin.Android.NUnitLite.TestSuiteInstrumentation` (à partir de **Xamarin. Android. NUnitLite. dll**) est sous-classé `TestInstrumentation`pour créer.
 
-2.  Implémentez `TestInstrumentation` le constructeur et `AddTests` la méthode. La `AddTests` méthode contrôle les tests qui sont réellement exécutés.
+2. Implémentez `TestInstrumentation` le constructeur et `AddTests` la méthode. La `AddTests` méthode contrôle les tests qui sont réellement exécutés.
 
-3.  Modifiez le `.csproj` fichier pour ajouter **TestInstrumentation.cs**. Par exemple :
+3. Modifiez le `.csproj` fichier pour ajouter **TestInstrumentation.cs**. Par exemple :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +75,13 @@ Les étapes suivantes expliquent ce processus:
     </Project>
     ```
 
-4.  Utilisez la commande suivante pour exécuter les tests unitaires. Remplacez `PACKAGE_NAME` par le nom du package de l’application (le nom du package se trouve dans l' `/manifest/@package` attribut de l’application situé dans **fichier AndroidManifest. xml**):
+4. Utilisez la commande suivante pour exécuter les tests unitaires. Remplacez `PACKAGE_NAME` par le nom du package de l’application (le nom du package se trouve dans l' `/manifest/@package` attribut de l’application situé dans **fichier AndroidManifest. xml**):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5.  Si vous le souhaitez, vous pouvez `.csproj` modifier le fichier pour `RunTests` ajouter la cible MSBuild. Cela permet d’appeler les tests unitaires à l’aide d’une commande telle que la suivante:
+5. Si vous le souhaitez, vous pouvez `.csproj` modifier le fichier pour `RunTests` ajouter la cible MSBuild. Cela permet d’appeler les tests unitaires à l’aide d’une commande telle que la suivante:
 
     ```shell
     msbuild /t:RunTests Project.csproj

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 8c816bf98d9997d09b73e7c9cb0d2ff436b65fbb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fd34532e647f0595ed8afa5ef7ad044b84b7d918
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643981"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525797"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Notifications distantes avec Google Cloud Messaging
 
@@ -31,12 +31,12 @@ Avant de pouvoir suivre cette procédure pas à pas, vous devez obtenir les info
 
 Nous allons utiliser les étapes suivantes pour créer une application cliente Xamarin. Android compatible GCM:
 
-1.  Installez les packages supplémentaires requis pour les communications avec les serveurs GCM.
-2.  Configurez les autorisations d’application pour l’accès aux serveurs GCM.
-3.  Implémentez le code pour vérifier la présence de Google Play Services. 
-4.  Implémentez un service d’intention d’inscription qui négocie avec GCM pour un jeton d’inscription.
-5.  Implémentez un service d’écoute d’ID d’instance qui écoute les mises à jour de jeton d’inscription à partir de GCM.
-6.  Implémentez un service d’écoute GCM qui reçoit des messages distants du serveur d’applications via GCM.
+1. Installez les packages supplémentaires requis pour les communications avec les serveurs GCM.
+2. Configurez les autorisations d’application pour l’accès aux serveurs GCM.
+3. Implémentez le code pour vérifier la présence de Google Play Services. 
+4. Implémentez un service d’intention d’inscription qui négocie avec GCM pour un jeton d’inscription.
+5. Implémentez un service d’écoute d’ID d’instance qui écoute les mises à jour de jeton d’inscription à partir de GCM.
+6. Implémentez un service d’écoute GCM qui reçoit des messages distants du serveur d’applications via GCM.
 
 Cette application utilise une nouvelle fonctionnalité GCM appelée messagerie des *rubriques*. Dans la rubrique messagerie, le serveur d’applications envoie un message à une rubrique plutôt qu’à une liste d’appareils individuels. Les appareils qui s’abonnent à cette rubrique peuvent recevoir des messages de rubrique en tant que notifications push. Pour plus d’informations sur la messagerie de rubrique GCM, consultez la [rubrique mise en œuvre](https://developers.google.com/cloud-messaging/topic-messaging)de la messagerie Google. 
 
@@ -87,14 +87,14 @@ Notez que l’application cliente ne sera pas en mesure de recevoir un jeton d�
 
 Les autorisations suivantes doivent être configurées pour une application Android pour pouvoir recevoir des notifications de Google Cloud Messaging: 
 
--   `com.google.android.c2dm.permission.RECEIVE`&ndash; Accorde à notre application l’autorisation d’inscrire et de recevoir des messages de Google Cloud Messaging. (Qu’est `c2dm` -ce que cela signifie? Il s’agit de la _messagerie Cloud vers appareil_, qui est le prédécesseur désormais déconseillé de GCM. 
+- `com.google.android.c2dm.permission.RECEIVE`&ndash; Accorde à notre application l’autorisation d’inscrire et de recevoir des messages de Google Cloud Messaging. (Qu’est `c2dm` -ce que cela signifie? Il s’agit de la _messagerie Cloud vers appareil_, qui est le prédécesseur désormais déconseillé de GCM. 
     GCM utilise `c2dm` toujours un grand nombre de ses chaînes d’autorisation.) 
 
--   `android.permission.WAKE_LOCK`&ndash; (Facultatif) empêche le processeur de l’appareil de passer en mode veille lors de l’écoute d’un message. 
+- `android.permission.WAKE_LOCK`&ndash; (Facultatif) empêche le processeur de l’appareil de passer en mode veille lors de l’écoute d’un message. 
 
--   `android.permission.INTERNET`&ndash; Octroie l’accès à Internet afin que l’application cliente puisse communiquer avec GCM. 
+- `android.permission.INTERNET`&ndash; Octroie l’accès à Internet afin que l’application cliente puisse communiquer avec GCM. 
 
--   *package_name inscrit l’application* `.permission.C2D_MESSAGE` auprès d’Android et demande l’autorisation de recevoir en exclusivité tous les messages C2D (Cloud à périphérique). &ndash; Le préfixe *package_name* est le même que l’ID de votre application. 
+- *package_name inscrit l’application* `.permission.C2D_MESSAGE` auprès d’Android et demande l’autorisation de recevoir en exclusivité tous les messages C2D (Cloud à périphérique). &ndash; Le préfixe *package_name* est le même que l’ID de votre application. 
 
 Nous allons définir ces autorisations dans le manifeste Android. Modifions **fichier AndroidManifest. xml** et remplacez le contenu par le code XML suivant: 
 
@@ -205,11 +205,11 @@ Nous allons ensuite écrire du code pour contacter GCM et obtenir un jeton d’i
 
 Pour que l’application puisse recevoir des notifications distantes du serveur d’applications, elle doit s’inscrire auprès de GCM et récupérer un jeton d’inscription. Le travail d’inscription de notre application avec GCM est géré par `IntentService` un que nous créons. Notre `IntentService` effectue les étapes suivantes: 
 
-1.  Utilise l’API [InstanceID](https://developers.google.com/instance-id/) pour générer des jetons de sécurité qui autorisent notre application cliente à accéder au serveur d’applications. En retour, nous obtenons un jeton d’inscription à partir de GCM.
+1. Utilise l’API [InstanceID](https://developers.google.com/instance-id/) pour générer des jetons de sécurité qui autorisent notre application cliente à accéder au serveur d’applications. En retour, nous obtenons un jeton d’inscription à partir de GCM.
 
-2.  Transfère le jeton d’inscription au serveur d’applications (si le serveur d’applications en a besoin).
+2. Transfère le jeton d’inscription au serveur d’applications (si le serveur d’applications en a besoin).
 
-3.  S’abonne à un ou plusieurs canaux de rubrique de notification.
+3. S’abonne à un ou plusieurs canaux de rubrique de notification.
 
 Après cela `IntentService`, nous allons le tester pour voir si nous obtenons un jeton d’inscription à partir de GCM.
 
@@ -272,11 +272,11 @@ namespace ClientApp
 
 Dans l’exemple de code ci-dessus, remplacez *YOUR_SENDER_ID* par le numéro d’ID de l’expéditeur pour votre projet d’application cliente. Pour obtenir l’ID de l’expéditeur pour votre projet: 
 
-1.  Connectez-vous à la [console Google Cloud](https://console.cloud.google.com/) et sélectionnez le nom de votre projet dans le menu déroulant. Dans le volet d' **informations du projet** qui s’affiche pour votre projet, cliquez sur **accéder aux paramètres du projet**:
+1. Connectez-vous à la [console Google Cloud](https://console.cloud.google.com/) et sélectionnez le nom de votre projet dans le menu déroulant. Dans le volet d' **informations du projet** qui s’affiche pour votre projet, cliquez sur **accéder aux paramètres du projet**:
 
     [![Sélection du projet XamarinGCM](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
-2.  Dans la page **paramètres** , recherchez le **numéro** &ndash; de projet. il s’agit de l’ID de l’expéditeur pour votre projet:
+2. Dans la page **paramètres** , recherchez le **numéro** &ndash; de projet. il s’agit de l’ID de l’expéditeur pour votre projet:
 
     [![Numéro de projet affiché](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 

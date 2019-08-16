@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: d81435f7d693204a76249fc3fa6953766f7ab59a
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.openlocfilehash: 16708ad1d26c9d7394ad95b2d449ca304534a2bd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012466"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528864"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Messages d’erreur Xamarin. Mac (MMP)
 
@@ -103,7 +103,7 @@ Une erreur s’est produite lors du chargement des assemblys à partir des réf�
 
 <a name="MM0056" />
 
-#### <a name="mm0056-cannot-find-xcode-in-any-of-our-default-locations-please-install-xcode-or-pass-a-custom-path-using---sdkrootpath"></a>MM0056: Xcode introuvable dans l’un de nos emplacements par défaut. Veuillez installer Xcode ou passer un chemin d’accès personnalisé à l’aide de--SDKRoot =<path>
+#### <a name="mm0056-cannot-find-xcode-in-any-of-our-default-locations-please-install-xcode-or-pass-a-custom-path-using---sdkrootpath"></a>MM0056: Xcode introuvable dans l’un de nos emplacements par défaut. Veuillez installer Xcode ou passer un chemin d’accès personnalisé à l’aide de\<--SDKRoot = Path >
 
 <a name="MM0059" />
 
@@ -566,7 +566,7 @@ Consultez l' [Avertissement mTouch équivalent](~/ios/troubleshooting/mtouch-err
 
 <a name="MM5309" />
 
-#### <a name="mm5309-native-linking-failed-with-error-code-1--check-build-log-for-details"></a>MM5309: Échec de la liaison native avec le code d’erreur 1.  Pour plus d’informations, consultez le journal de génération.
+#### <a name="mm5309-native-linking-failed-with-error-code-1-check-build-log-for-details"></a>MM5309: Échec de la liaison native avec le code d’erreur 1. Pour plus d’informations, consultez le journal de génération.
 
 <a name="MM5310" />
 

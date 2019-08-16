@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: dfc50defb6eafe705cc9c59b1b9793f1ce48c527
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984301"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522030"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms, ToolbarItem
 
@@ -37,6 +37,9 @@ La `ToolbarItem` classe hérite des propriétés suivantes utilisées en génér
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)est un `object` qui spécifie le paramètre qui doit être passé à `SearchCommand`l'.
 
 Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, `ToolbarItem` ce qui signifie qu’une instance peut être la cible des liaisons de données.
+
+> [!NOTE]
+> Une alternative à la création d’une [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) barre d’outils à partir [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) d’objets consiste à définir la propriété jointe sur une classe de disposition qui contient plusieurs vues. Pour plus d’informations, consultez [affichage des affichages dans la barre de navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar).
 
 ## <a name="create-a-toolbaritem"></a>Créer un ToolbarItem
 

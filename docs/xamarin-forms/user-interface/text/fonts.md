@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: 329f7dc9cc43582f630a4895fba452a8496bae9a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c18c4e63831a03cbe28accfe10f4c7da31130803
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656176"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529310"
 ---
 # <a name="fonts-in-xamarinforms"></a>Polices dans Xamarin.Forms
 
@@ -58,9 +58,9 @@ Xamarin. Forms définit également les champs [`NamedSize`](xref:Xamarin.Forms.N
 
 Styles de police comme **gras** et *italique* peuvent être définies sur le `FontAttributes` propriété. Les valeurs suivantes sont actuellement prises en charge :
 
--  **Aucun**
--  **Gras**
--  **Italique**
+- **Aucun**
+- **Gras**
+- **Italique**
 
 Le `FontAttribute` énumération peut être utilisée comme suit (vous pouvez spécifier un seul attribut ou `OR` utilisez-les) :
 
@@ -100,7 +100,7 @@ Il existe un convertisseur intégré pour le `FontSize` propriété qui permet �
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) peut également être utilisé dans XAML pour restituer une police différente sur chaque plateforme. L’exemple ci-dessous utilise un type de police personnalisée sur iOS (<span style="font-family:MarkerFelt-Thin">MarkerFelt-fin</span>) et spécifie uniquement taille/attributs sur d’autres plateformes :
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) peut également être utilisé dans XAML pour restituer une police différente sur chaque plateforme. L’exemple ci-dessous utilise un type de police personnalisé sur iOS (MarkerFelt-Thin) et spécifie uniquement la taille/les attributs sur les autres plateformes:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -183,7 +183,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-Xamarin.Forms pour les plateformes Windows peut référencer une police personnalisée qui a été ajoutée au projet en suivant une norme d’affectation de noms spécifique. Tout d’abord ajouter le fichier de police pour le **/Assets/polices/** dossier dans le projet d’application et le jeu le <span class="UIItem">Build Action : contenu</span>. Puis utilisez le nom de chemin d’accès et de la police complète, suivi d’un signe dièse (#) et le <span class="UIItem">nom de la police</span>, comme le montre l’extrait de code ci-dessous :
+Xamarin.Forms pour les plateformes Windows peut référencer une police personnalisée qui a été ajoutée au projet en suivant une norme d’affectation de noms spécifique. Tout d’abord ajouter le fichier de police pour le **/Assets/polices/** dossier dans le projet d’application et le jeu le **Build Action : contenu**. Puis utilisez le nom de chemin d’accès et de la police complète, suivi d’un signe dièse (#) et le **nom de la police**, comme le montre l’extrait de code ci-dessous :
 
 ```csharp
 new Label

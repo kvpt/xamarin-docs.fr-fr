@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 80ec7a2ae13b3c76bccae80d2c6956533b027047
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e36a8e25c5924ac82356c0f1c3110d1596f81cbf
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643264"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523888"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Utilisation de Google Maps et emplacement avec Xamarin. Android
 
@@ -22,9 +22,9 @@ _Cet article explique comment utiliser Maps et location avec Xamarin. Android. I
 
 Les technologies de mappage sont un complément omniprésent des appareils mobiles. Les ordinateurs de bureau et les ordinateurs portables n’ont pas tendance à avoir une reconnaissance d’emplacement intégrée. En revanche, les appareils mobiles utilisent ces applications pour localiser les appareils et pour afficher les informations relatives à la modification de l’emplacement. Android offre une technologie puissante et intégrée qui affiche les données d’emplacement sur les cartes à l’aide de périphériques de localisation qui peuvent être disponibles sur l’appareil. Cet article couvre un large éventail d’offres des applications Maps sous Xamarin. Android, notamment: 
 
--  Utilisation de l’application Maps intégrée pour ajouter rapidement des fonctionnalités de mappage.
--  Utilisation de l’API Maps pour contrôler l’affichage d’une carte.
--  À l’aide de diverses techniques pour ajouter des superpositions graphiques.
+- Utilisation de l’application Maps intégrée pour ajouter rapidement des fonctionnalités de mappage.
+- Utilisation de l’API Maps pour contrôler l’affichage d’une carte.
+- À l’aide de diverses techniques pour ajouter des superpositions graphiques.
 
 Les rubriques de cette section couvrent un large éventail de fonctionnalités de mappage.
 Tout d’abord, ils expliquent comment tirer parti de l’application Maps intégrée d’Android et comment afficher une vue panoramique de la rue d’un emplacement. Ils décrivent ensuite comment utiliser l’API Maps pour incorporer les fonctionnalités de mappage directement dans une application, en couvrant à la fois la façon de contrôler la position et l’affichage d’une carte, ainsi que l’ajout de superpositions graphiques.

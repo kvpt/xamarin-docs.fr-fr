@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 12bb8fe6f8ed77ea9091c165d4656da292266679
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9412012949cd012d572b65b7af6e2890160338dc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656616"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527947"
 ---
 # <a name="core-animation-in-xamarinios"></a>Animation principale dans Xamarin. iOS
 
@@ -40,9 +40,9 @@ UIKit fournit plusieurs fonctionnalités qui facilitent l’ajout d’une animat
 
 Cette section traite des fonctionnalités d’animation UIKit, notamment:
 
--  Transitions entre contrôleurs
--  Transitions entre les vues
--  Afficher l’animation des propriétés
+- Transitions entre contrôleurs
+- Transitions entre les vues
+- Afficher l’animation des propriétés
 
 
 ### <a name="view-controller-transitions"></a>Transitions du contrôleur d’affichage
@@ -59,9 +59,9 @@ SecondViewController vc2 = new SecondViewController {
 
 Dans ce cas, `PartialCurl` une animation est utilisée, bien que plusieurs autres soient disponibles, notamment:
 
--  `CoverVertical`: Diapositives à partir du bas de l’écran
--  `CrossDissolve`: L’ancienne vue disparaît en fondu & la nouvelle vue apparaît en fondu
--  `FlipHorizontal`-Retournement horizontal de droite à gauche. En cas de disparition, la transition s’inverse de gauche à droite.
+- `CoverVertical`: Diapositives à partir du bas de l’écran
+- `CrossDissolve`: L’ancienne vue disparaît en fondu & la nouvelle vue apparaît en fondu
+- `FlipHorizontal`-Retournement horizontal de droite à gauche. En cas de disparition, la transition s’inverse de gauche à droite.
 
 
 Pour animer la transition, `true` passez comme deuxième argument à `PresentViewController`:
@@ -100,12 +100,12 @@ La capture d’écran ci-dessous montre la transition animée entre `TransitionF
 
 UIKit prend en charge l’animation gratuite d’une variété `UIView` de propriétés sur la classe, notamment:
 
--  Frame
--  Limites
--  Center
--  Alpha
--  Transformer
--  Color
+- Frame
+- Limites
+- Center
+- Alpha
+- Transformer
+- Color
 
 
 Ces animations se produisent implicitement en spécifiant des modifications `NSAction` de propriétés dans un délégué `UIView.Animate` passé à la méthode statique. Par exemple, le code suivant anime le point central d’un `UIImageView`:

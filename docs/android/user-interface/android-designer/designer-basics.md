@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
-ms.openlocfilehash: 383a49f9baa85d50c956efbdd2ce29e3d62977b4
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: ebe8f483e501c4e34295a889f0d9ae06df8ba1d9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485940"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523701"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Notions de base de Xamarin. Android Designer
 
@@ -34,9 +34,9 @@ De même, vous pouvez ajouter une nouvelle disposition en cliquant avec le bouto
 Cela crée un fichier de disposition **. AXML** et le charge dans le concepteur.
 
 > [!TIP]
-> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers. XML à l’intérieur du Android Designer.
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
 >
-> Les fichiers. AXML et. XML sont pris en charge dans la Android Designer.
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
 
 ## <a name="designer-features"></a>Fonctionnalités du concepteur
 
@@ -46,17 +46,17 @@ Le concepteur est composé de plusieurs sections qui prennent en charge ses dive
 
 Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonctionnalités suivantes pour créer et mettre en forme votre conception:
 
--   **Aire de conception** &ndash; Facilite la construction visuelle de l’interface utilisateur en vous donnant une représentation modifiable de la façon dont la disposition s’affichera sur l’appareil. Le **aire de conception** s’affiche dans le **volet de conception** (avec la **barre d’outils du concepteur** positionnée au-dessus).
+- **Aire de conception** &ndash; Facilite la construction visuelle de l’interface utilisateur en vous donnant une représentation modifiable de la façon dont la disposition s’affichera sur l’appareil. Le **aire de conception** s’affiche dans le **volet de conception** (avec la **barre d’outils du concepteur** positionnée au-dessus).
 
--   **Volet source** Fournit une vue de la source XML sous-jacente qui correspond à la conception présentée sur la **aire de conception.** &ndash;
+- **Volet source** Fournit une vue de la source XML sous-jacente qui correspond à la conception présentée sur la **aire de conception.** &ndash;
 
--   **Barre d’outils du concepteur** &ndash; Affiche la liste des sélecteurs: Paramètres de l' **appareil**, de la **version**, du **thème**, de la disposition et de la barre d’action. La **barre d’outils du concepteur** comprend également des icônes pour lancer l’éditeur de thème et pour activer la grille de conception de matériau.
+- **Barre d’outils du concepteur** &ndash; Affiche la liste des sélecteurs: Paramètres de l' **appareil**, de la **version**, du **thème**, de la disposition et de la barre d’action. La **barre d’outils du concepteur** comprend également des icônes pour lancer l’éditeur de thème et pour activer la grille de conception de matériau.
 
--   **Boîte à outils** Fournit la liste des widgets et des mises en page que vous pouvez glisser-déplacer sur le **aire de conception.** &ndash;
+- **Boîte à outils** Fournit la liste des widgets et des mises en page que vous pouvez glisser-déplacer sur le **aire de conception.** &ndash;
 
--   **Fenêtre Propriétés** &ndash; Répertorie les propriétés du widget sélectionné pour l’affichage et la modification.
+- **Fenêtre Propriétés** &ndash; Répertorie les propriétés du widget sélectionné pour l’affichage et la modification.
 
--   **Structure du document** &ndash; Affiche l’arborescence des widgets qui composent la disposition. Vous pouvez cliquer sur un élément dans l’arborescence pour qu’il soit sélectionné sur la **aire de conception**. En outre, le fait de cliquer sur un élément de l’arborescence charge les propriétés de l’élément dans la fenêtre **Propriétés** .
+- **Structure du document** &ndash; Affiche l’arborescence des widgets qui composent la disposition. Vous pouvez cliquer sur un élément dans l’arborescence pour qu’il soit sélectionné sur la **aire de conception**. En outre, le fait de cliquer sur un élément de l’arborescence charge les propriétés de l’élément dans la fenêtre **Propriétés** .
 
 ## <a name="design-surface"></a>Aire de conception
 
@@ -74,31 +74,31 @@ La **barre d’outils du concepteur** (positionnée au-dessus du **aire de conce
 
 La **barre d’outils du concepteur** permet d’accéder aux fonctionnalités suivantes:
 
--   **Autre sélecteur de disposition** &ndash; Vous permet de sélectionner différentes versions de la disposition.
+- **Autre sélecteur de disposition** &ndash; Vous permet de sélectionner différentes versions de la disposition.
 
--   **Sélecteur d’appareils** &ndash; Définit un ensemble de qualificateurs (tels que la taille de l’écran, la résolution et la disponibilité du clavier) associés à un appareil particulier. Vous pouvez également ajouter et supprimer de nouveaux appareils.
+- **Sélecteur d’appareils** &ndash; Définit un ensemble de qualificateurs (tels que la taille de l’écran, la résolution et la disponibilité du clavier) associés à un appareil particulier. Vous pouvez également ajouter et supprimer de nouveaux appareils.
 
--   **Sélecteur de version Android** &ndash; Version d’Android ciblée par la disposition. Le concepteur affiche la disposition en fonction de la version d’Android sélectionnée.
+- **Sélecteur de version Android** &ndash; Version d’Android ciblée par la disposition. Le concepteur affiche la disposition en fonction de la version d’Android sélectionnée.
 
--   **Sélecteur de thème** &ndash; Sélectionne le thème de l’interface utilisateur pour la disposition.
+- **Sélecteur de thème** &ndash; Sélectionne le thème de l’interface utilisateur pour la disposition.
 
--   **Sélecteur de configuration** Sélectionne la configuration de l’appareil, par exemple *portrait* ou *paysage.* &ndash;
+- **Sélecteur de configuration** Sélectionne la configuration de l’appareil, par exemple *portrait* ou *paysage.* &ndash;
 
--   **Options du qualificateur de ressource**Ouvre une boîte de dialogue qui présente des menus déroulants permettant de sélectionner la langue, le mode interface utilisateur, le mode nuit et les options d’écran rond. &ndash;
+- **Options du qualificateur de ressource**Ouvre une boîte de dialogue qui présente des menus déroulants permettant de sélectionner la langue, le mode interface utilisateur, le mode nuit et les options d’écran rond. &ndash;
 
--   **Paramètres de barre d’action** &ndash; Configure les paramètres de barre d’action pour la disposition.
+- **Paramètres de barre d’action** &ndash; Configure les paramètres de barre d’action pour la disposition.
 
--   **Éditeur de thème** Ouvre l' *éditeur de thème*, qui vous permet de personnaliser les éléments du thème sélectionné. &ndash;
+- **Éditeur de thème** Ouvre l' *éditeur de thème*, qui vous permet de personnaliser les éléments du thème sélectionné. &ndash;
 
--   **Grille de conception de matériau** Active ou désactive la grille de *conception de matériau.* &ndash; L’élément de menu déroulant adjacent à la grille de création de matériau ouvre une boîte de dialogue qui vous permet de personnaliser la grille.
+- **Grille de conception de matériau** Active ou désactive la grille de *conception de matériau.* &ndash; L’élément de menu déroulant adjacent à la grille de création de matériau ouvre une boîte de dialogue qui vous permet de personnaliser la grille.
 
 Chacune de ces fonctionnalités est expliquée plus en détail dans les rubriques suivantes:
 
--   Les [options qualificateurs de ressources et visualisation](~/android/user-interface/android-designer/resource-qualifiers.md) fournissent des informations détaillées sur le **Sélecteur d’appareil**, le sélecteur de **version Android**, le **Sélecteur de thème**, le **Sélecteur de configuration**, les **qualifications de ressource Options**et **paramètres de barre d’action**.
+- Les [options qualificateurs de ressources et visualisation](~/android/user-interface/android-designer/resource-qualifiers.md) fournissent des informations détaillées sur le **Sélecteur d’appareil**, le sélecteur de **version Android**, le **Sélecteur de thème**, le **Sélecteur de configuration**, les **qualifications de ressource Options**et **paramètres de barre d’action**.
 
--   D' [autres modes de disposition](~/android/user-interface/android-designer/alternative-layout-views.md) expliquent comment utiliser l' **autre sélecteur de disposition**.
+- D' [autres modes de disposition](~/android/user-interface/android-designer/alternative-layout-views.md) expliquent comment utiliser l' **autre sélecteur de disposition**.
 
--   Les [fonctionnalités de conception de matériaux Xamarin. Android designer](~/android/user-interface/android-designer/material-design-features.md) fournissent une vue d’ensemble complète de l' **éditeur de thème** et de la grille de **conception de matériau**.
+- Les [fonctionnalités de conception de matériaux Xamarin. Android designer](~/android/user-interface/android-designer/material-design-features.md) fournissent une vue d’ensemble complète de l' **éditeur de thème** et de la grille de **conception de matériau**.
 
 ### <a name="context-menu-commands"></a>Commandes du menu contextuel
 
@@ -108,9 +108,9 @@ Un menu contextuel est disponible à la fois dans le **aire de conception** et d
 
 Dans cet exemple, cliquez avec le bouton `TextView` droit sur un menu contextuel qui propose plusieurs options:
 
--   **Élément LinearLayout** ouvre un sous-menu permettant de `LinearLayout` modifier le parent `TextView`du. &ndash;
+- **Élément LinearLayout** ouvre un sous-menu permettant de `LinearLayout` modifier le parent `TextView`du. &ndash;
 
--   **Supprimer**, **copier**et **couper** &ndash; les opérations `TextView`qui s’appliquent au clic droit.
+- **Supprimer**, **copier**et **couper** &ndash; les opérations `TextView`qui s’appliquent au clic droit.
 
 
 ### <a name="zoom-controls"></a>Contrôles de zoom
@@ -121,15 +121,15 @@ Le **aire de conception** prend en charge le zoom à l’aide de plusieurs contr
 
 Ces contrôles permettent de voir plus facilement certaines zones de l’interface utilisateur dans le concepteur:
 
--   **Mettre** en surbrillance les conteneurs Met en surbrillance les conteneurs sur le aire de conception afin qu’ils soient plus faciles à localiser lors du zoom avant et arrière. &ndash;
+- **Mettre** en surbrillance les conteneurs Met en surbrillance les conteneurs sur le aire de conception afin qu’ils soient plus faciles à localiser lors du zoom avant et arrière. &ndash;
 
--   **Taille normale** &ndash; Génère le rendu de la disposition Pixel-pour-pixel afin que vous puissiez voir comment la disposition examine la résolution de l’appareil sélectionné.
+- **Taille normale** &ndash; Génère le rendu de la disposition Pixel-pour-pixel afin que vous puissiez voir comment la disposition examine la résolution de l’appareil sélectionné.
 
--   **Ajuster à la fenêtre** &ndash; Définit le niveau de zoom afin que la disposition entière soit visible sur la aire de conception.
+- **Ajuster à la fenêtre** &ndash; Définit le niveau de zoom afin que la disposition entière soit visible sur la aire de conception.
 
--   **Zoom avant** &ndash; Effectue un zoom avant de chaque clic, en agrandissant la disposition.
+- **Zoom avant** &ndash; Effectue un zoom avant de chaque clic, en agrandissant la disposition.
 
--   **Zoom arrière** &ndash; Effectue un zoom arrière de manière incrémentielle de chaque clic, ce qui rend la disposition plus petite sur le aire de conception.
+- **Zoom arrière** &ndash; Effectue un zoom arrière de manière incrémentielle de chaque clic, ce qui rend la disposition plus petite sur le aire de conception.
 
 Notez que le paramètre de zoom choisi n’affecte pas l’interface utilisateur de l’application au moment de l’exécution.
 
@@ -141,17 +141,17 @@ Dans la bande centrale entre les volets **conception** et **source** , plusieurs
 
 Ces boutons effectuent les opérations suivantes:
 
--   **Conception** Ce bouton supérieur, **conception**, sélectionne le volet **conception.** &ndash; Lorsque vous cliquez sur ce bouton, les volets **boîte à outils** et **Propriétés** sont activés et la **barre d’outils Éditeur de texte** n’est pas affichée. Quand l’utilisateur clique sur le bouton **réduire** (voir ci-dessous), le volet de **conception** est présenté seul sans le volet **source** .
+- **Conception** Ce bouton supérieur, **conception**, sélectionne le volet **conception.** &ndash; Lorsque vous cliquez sur ce bouton, les volets **boîte à outils** et **Propriétés** sont activés et la **barre d’outils Éditeur de texte** n’est pas affichée. Quand l’utilisateur clique sur le bouton **réduire** (voir ci-dessous), le volet de **conception** est présenté seul sans le volet **source** .
 
--   Permuter les volets Ce bouton (qui ressemble à deux flèches opposées) échange les volets de conception et source afin que le volet source se trouve à gauche et que le volet de conception se trouve à droite. &ndash; Le fait de cliquer à nouveau Replace ces volets dans leurs emplacements d’origine.
+- Permuter les volets Ce bouton (qui ressemble à deux flèches opposées) échange les volets de conception et source afin que le volet source se trouve à gauche et que le volet de conception se trouve à droite. &ndash; Le fait de cliquer à nouveau Replace ces volets dans leurs emplacements d’origine.
 
--   **Source** Ce bouton (qui ressemble à deux chevrons opposés) sélectionne le volet **source.** &ndash; Lorsque vous cliquez sur ce bouton, les volets **boîte à outils** et **Propriétés** sont désactivés et la **barre d’outils Éditeur de texte** est visible en haut de Visual Studio. Quand l’utilisateur clique sur le bouton **réduire** (voir ci-dessous), le fait de cliquer sur le bouton **source** permet d’afficher le volet **source** à la place du volet de **conception** .
+- **Source** Ce bouton (qui ressemble à deux chevrons opposés) sélectionne le volet **source.** &ndash; Lorsque vous cliquez sur ce bouton, les volets **boîte à outils** et **Propriétés** sont désactivés et la **barre d’outils Éditeur de texte** est visible en haut de Visual Studio. Quand l’utilisateur clique sur le bouton **réduire** (voir ci-dessous), le fait de cliquer sur le bouton **source** permet d’afficher le volet **source** à la place du volet de **conception** .
 
--   **Fractionnement vertical** Ce bouton (qui ressemble à une barre verticale) affiche les volets conception et **source** côte à côte. &ndash; Il s’agit de la disposition par défaut.
+- **Fractionnement vertical** Ce bouton (qui ressemble à une barre verticale) affiche les volets conception et **source** côte à côte. &ndash; Il s’agit de la disposition par défaut.
 
--   **Fractionnement horizontal** Ce bouton (qui ressemble à une barre horizontale) affiche le volet de **conception** au-dessus du volet **source.** &ndash; Vous pouvez cliquer sur les volets d' **échange** pour placer le volet **source** au-dessus du volet de **conception** .
+- **Fractionnement horizontal** Ce bouton (qui ressemble à une barre horizontale) affiche le volet de **conception** au-dessus du volet **source.** &ndash; Vous pouvez cliquer sur les volets d' **échange** pour placer le volet **source** au-dessus du volet de **conception** .
 
--   **Réduire le volet** Ce bouton (qui ressemble à deux crochets pointant vers la droite) «réduit» l’affichage à deux volets de la **conception** et de la source dans une vue unique de l’un de ces volets. &ndash;
+- **Réduire le volet** Ce bouton (qui ressemble à deux crochets pointant vers la droite) «réduit» l’affichage à deux volets de la **conception** et de la source dans une vue unique de l’un de ces volets. &ndash;
     Ce bouton devient le bouton du **volet de développement** (qui ressemble à deux crochets pointant vers la gauche), sur lequel vous pouvez cliquer pour revenir au mode d’affichage à deux volets (**conception** et **source**).
 
 Lorsque l’utilisateur clique sur le **volet réduire** , seul le volet de **conception** s’affiche. Toutefois, vous pouvez cliquer sur le bouton **source** pour afficher uniquement le volet **source** . Cliquez à nouveau sur le bouton **conception** pour revenir au volet de **conception** .
@@ -306,9 +306,9 @@ De même, vous pouvez ajouter une nouvelle disposition en cliquant avec le bouto
 Cela crée un nouveau fichier. AXML et le charge sur le Aire de conception.
 
 > [!TIP]
-> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers. XML à l’intérieur du Android Designer.
+> Les nouvelles versions de Visual Studio prennent en charge l’ouverture de fichiers .xml dans Android Designer.
 >
-> Les fichiers. AXML et. XML sont pris en charge dans la Android Designer.
+> Les fichiers .axml et .xml sont pris en charge dans Android Designer.
 
 ## <a name="designer-features"></a>Fonctionnalités du concepteur
 
@@ -318,15 +318,15 @@ Le concepteur est composé de plusieurs sections qui prennent en charge ses dive
 
 Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonctionnalités suivantes pour créer et mettre en forme votre conception:
 
--   **Aire de conception** &ndash; Facilite la construction visuelle de l’interface utilisateur en vous donnant une représentation modifiable de la façon dont la disposition s’affichera sur l’appareil.
+- **Aire de conception** &ndash; Facilite la construction visuelle de l’interface utilisateur en vous donnant une représentation modifiable de la façon dont la disposition s’affichera sur l’appareil.
 
--   **Barre d’outils** &ndash; Affiche la liste des sélecteurs: Paramètres de l' **appareil**, de la **version**, du **thème**, de la disposition et de la barre d’action. La barre d’outils comprend également des icônes pour lancer l’éditeur de thème et pour activer la grille de conception de matériau.
+- **Barre d’outils** &ndash; Affiche la liste des sélecteurs: Paramètres de l' **appareil**, de la **version**, du **thème**, de la disposition et de la barre d’action. La barre d’outils comprend également des icônes pour lancer l’éditeur de thème et pour activer la grille de conception de matériau.
 
--   **Boîte à outils** &ndash; Fournit la liste des widgets et des mises en page que vous pouvez glisser-déplacer sur le aire de conception.
+- **Boîte à outils** &ndash; Fournit la liste des widgets et des mises en page que vous pouvez glisser-déplacer sur le aire de conception.
 
--   Panneau des **Propriétés** &ndash; Répertorie les propriétés du widget sélectionné pour l’affichage et la modification.
+- Panneau des **Propriétés** &ndash; Répertorie les propriétés du widget sélectionné pour l’affichage et la modification.
 
--   **Structure du document** &ndash; Affiche l’arborescence des widgets qui composent la disposition. Vous pouvez cliquer sur un élément dans l’arborescence pour le faire sélectionner dans le concepteur. En outre, le fait de cliquer sur un élément de l’arborescence charge les propriétés de l’élément dans le panneau des propriétés.
+- **Structure du document** &ndash; Affiche l’arborescence des widgets qui composent la disposition. Vous pouvez cliquer sur un élément dans l’arborescence pour le faire sélectionner dans le concepteur. En outre, le fait de cliquer sur un élément de l’arborescence charge les propriétés de l’élément dans le panneau des propriétés.
 
 ## <a name="toolbar"></a>ToolBar
 
@@ -336,23 +336,23 @@ La barre d’outils (positionnée au-dessus du Aire de conception) présente les
 
 La barre d’outils permet d’accéder aux fonctionnalités suivantes:
 
--   **Autre sélecteur de disposition** &ndash; Vous permet de sélectionner différentes versions de la disposition.
+- **Autre sélecteur de disposition** &ndash; Vous permet de sélectionner différentes versions de la disposition.
 
--   **Sélecteur d’appareils** &ndash; Définit un ensemble de qualificateurs associés à un appareil particulier, tels que la taille de l’écran, la résolution et la disponibilité du clavier. Vous pouvez également ajouter et supprimer de nouveaux appareils.
+- **Sélecteur d’appareils** &ndash; Définit un ensemble de qualificateurs associés à un appareil particulier, tels que la taille de l’écran, la résolution et la disponibilité du clavier. Vous pouvez également ajouter et supprimer de nouveaux appareils.
 
--   **Sélecteur de version Android** &ndash; Version d’Android ciblée par la disposition. Le concepteur affiche la disposition en fonction de la version d’Android sélectionnée.
+- **Sélecteur de version Android** &ndash; Version d’Android ciblée par la disposition. Le concepteur affiche la disposition en fonction de la version d’Android sélectionnée.
 
--   **Sélecteur de thème** &ndash; Sélectionne le thème de l’interface utilisateur pour la disposition.
+- **Sélecteur de thème** &ndash; Sélectionne le thème de l’interface utilisateur pour la disposition.
 
--   **Sélecteur de configuration** Sélectionne la configuration de l’appareil, par exemple *portrait* ou *paysage.* &ndash;
+- **Sélecteur de configuration** Sélectionne la configuration de l’appareil, par exemple *portrait* ou *paysage.* &ndash;
 
--   **Options du qualificateur de ressource**Ouvre une boîte de dialogue qui présente des menus déroulants permettant de sélectionner la langue, le mode interface utilisateur, le mode nuit et les options d’écran rond. &ndash;
+- **Options du qualificateur de ressource**Ouvre une boîte de dialogue qui présente des menus déroulants permettant de sélectionner la langue, le mode interface utilisateur, le mode nuit et les options d’écran rond. &ndash;
 
--   **Paramètres de barre d’action** &ndash; Configure les paramètres de barre d’action pour la disposition.
+- **Paramètres de barre d’action** &ndash; Configure les paramètres de barre d’action pour la disposition.
 
--   **Éditeur de thème** Ouvre l' *éditeur de thème*, qui vous permet de personnaliser les éléments du thème sélectionné. &ndash;
+- **Éditeur de thème** Ouvre l' *éditeur de thème*, qui vous permet de personnaliser les éléments du thème sélectionné. &ndash;
 
--   **Grille de conception de matériau** Active ou désactive la grille de *conception de matériau.* &ndash; L’élément de menu déroulant adjacent à la grille de création de matériau ouvre une boîte de dialogue qui vous permet de personnaliser la grille.
+- **Grille de conception de matériau** Active ou désactive la grille de *conception de matériau.* &ndash; L’élément de menu déroulant adjacent à la grille de création de matériau ouvre une boîte de dialogue qui vous permet de personnaliser la grille.
 
 Chacune de ces fonctionnalités est expliquée plus en détail dans les rubriques suivantes:
 
@@ -378,9 +378,9 @@ Un menu contextuel est disponible à la fois dans le Aire de conception et dans 
 
 Dans cet exemple, cliquez avec le bouton `Button` droit sur un menu contextuel qui propose plusieurs options:
 
--   **Élément LinearLayout** ouvre un sous-menu permettant de `LinearLayout` modifier le parent `Button`du. &ndash;
+- **Élément LinearLayout** ouvre un sous-menu permettant de `LinearLayout` modifier le parent `Button`du. &ndash;
 
--   Opérations de **couper**, **copier**et **supprimer** &ndash; `Button`qui s’appliquent au clic droit.
+- Opérations de **couper**, **copier**et **supprimer** &ndash; `Button`qui s’appliquent au clic droit.
 
 ### <a name="zoom-controls"></a>Contrôles de zoom
 
@@ -390,15 +390,15 @@ Le Aire de conception prend en charge le zoom à l’aide de plusieurs contrôle
 
 Ces contrôles permettent de voir plus facilement certaines zones de l’interface utilisateur dans le concepteur:
 
--   **Mettre** en surbrillance les conteneurs &ndash; Met en surbrillance les conteneurs sur le aire de conception afin qu’ils soient plus faciles à localiser lors du zoom avant et arrière.
+- **Mettre** en surbrillance les conteneurs &ndash; Met en surbrillance les conteneurs sur le aire de conception afin qu’ils soient plus faciles à localiser lors du zoom avant et arrière.
 
--   **Taille normale** &ndash; Génère le rendu de la disposition Pixel-pour-pixel afin que vous puissiez voir comment la disposition examine la résolution de l’appareil sélectionné.
+- **Taille normale** &ndash; Génère le rendu de la disposition Pixel-pour-pixel afin que vous puissiez voir comment la disposition examine la résolution de l’appareil sélectionné.
 
--   **Ajuster à la fenêtre** &ndash; Définit le niveau de zoom afin que la disposition entière soit visible sur la aire de conception.
+- **Ajuster à la fenêtre** &ndash; Définit le niveau de zoom afin que la disposition entière soit visible sur la aire de conception.
 
--   **Zoom avant** &ndash; Effectue un zoom avant de chaque clic, en agrandissant la disposition.
+- **Zoom avant** &ndash; Effectue un zoom avant de chaque clic, en agrandissant la disposition.
 
--   **Zoom arrière** &ndash; Effectue un zoom arrière de manière incrémentielle de chaque clic, ce qui rend la disposition plus petite sur le aire de conception.
+- **Zoom arrière** &ndash; Effectue un zoom arrière de manière incrémentielle de chaque clic, ce qui rend la disposition plus petite sur le aire de conception.
 
 Notez que le paramètre de zoom choisi n’affecte pas l’interface utilisateur de l’application au moment de l’exécution.
 
@@ -412,15 +412,15 @@ Le concepteur prend en charge la modification des propriétés des widgets via l
 
 Le panneau des propriétés est divisé en plusieurs sections qui regroupent &ndash; des propriétés similaires, ce qui facilite la localisation des propriétés intéressantes:
 
--   **Widget** Propriétés principales du widget, telles que `id`, `visibility` `text`,, etc. &ndash; Les propriétés pour gérer le contenu du widget sont généralement placées ici.
+- **Widget** Propriétés principales du widget, telles que `id`, `visibility` `text`,, etc. &ndash; Les propriétés pour gérer le contenu du widget sont généralement placées ici.
 
--   **Style** Propriétés qui modifient l’apparence visuelle du widget, telles que `font`, `text color` `background`,, etc. &ndash;
+- **Style** Propriétés qui modifient l’apparence visuelle du widget, telles que `font`, `text color` `background`,, etc. &ndash;
 
--   **Disposition** &ndash; Propriétés qui définissent l’emplacement et la taille du widget.
+- **Disposition** &ndash; Propriétés qui définissent l’emplacement et la taille du widget.
 
--   **Défilement** &ndash; Propriétés de défilement.
+- **Défilement** &ndash; Propriétés de défilement.
 
--   **Comportement** &ndash; Indicateurs qui définissent le comportement du widget.
+- **Comportement** &ndash; Indicateurs qui définissent le comportement du widget.
 
 ### <a name="default-values"></a>Valeurs par défaut
 

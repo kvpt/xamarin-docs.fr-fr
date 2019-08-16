@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4a0a7a4db4b0ca982a162ec3a0b67dc729af0ed2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a1fae280f42f91fce4b4fe28c3f728cf14c7a21c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655943"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528906"
 ---
 # <a name="listview-performance"></a>Performances de ListView
 
@@ -163,20 +163,20 @@ Le [ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) val
 
 Il existe plusieurs techniques permettant d’améliorer les performances d’un `ListView`:
 
--  Lier le `ItemsSource` propriété à un `IList<T>` collection au lieu d’un `IEnumerable<T>` collection, car `IEnumerable<T>` collections ne prennent pas en charge un accès aléatoire.
--  Utilisez les cellules intégrés (tels que `TextCell`  /  `SwitchCell` ) au lieu de `ViewCell` chaque fois que vous pouvez.
--  Utiliser moins d’éléments. Par exemple envisagez d’utiliser un seul `FormattedString` étiquette au lieu de plusieurs étiquettes.
--  Remplacez le `ListView` avec un `TableView` lors de l’affichage des données non homogènes : autrement dit, les données de types différents.
--  Limiter l’utilisation de la [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) (méthode). Si l’utilisation excessive, il sera dégrader les performances.
--  Sur Android, évitez de définir un `ListView`de visibilité de séparateur de ligne ou de couleur après qu’il a été instancié, comme il en résulte une baisse des performances de grande taille.
--  Évitez de modifier la disposition des cellules selon la [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext). Cela entraîne des coûts importants de mise en page et de l’initialisation.
--  Évitez les hiérarchies de dispositions profondément imbriquées. Utilisez `AbsoluteLayout` ou `Grid` afin de réduire l’imbrication.
--  Éviter spécifique `LayoutOptions` autre que `Fill` (remplissage est le cher pour calculer).
--  Éviter de placer un `ListView` à l’intérieur d’un `ScrollView` pour les raisons suivantes :
+- Lier le `ItemsSource` propriété à un `IList<T>` collection au lieu d’un `IEnumerable<T>` collection, car `IEnumerable<T>` collections ne prennent pas en charge un accès aléatoire.
+- Utilisez les cellules intégrés (tels que `TextCell`  /  `SwitchCell` ) au lieu de `ViewCell` chaque fois que vous pouvez.
+- Utiliser moins d’éléments. Par exemple envisagez d’utiliser un seul `FormattedString` étiquette au lieu de plusieurs étiquettes.
+- Remplacez le `ListView` avec un `TableView` lors de l’affichage des données non homogènes : autrement dit, les données de types différents.
+- Limiter l’utilisation de la [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) (méthode). Si l’utilisation excessive, il sera dégrader les performances.
+- Sur Android, évitez de définir un `ListView`de visibilité de séparateur de ligne ou de couleur après qu’il a été instancié, comme il en résulte une baisse des performances de grande taille.
+- Évitez de modifier la disposition des cellules selon la [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext). Cela entraîne des coûts importants de mise en page et de l’initialisation.
+- Évitez les hiérarchies de dispositions profondément imbriquées. Utilisez `AbsoluteLayout` ou `Grid` afin de réduire l’imbrication.
+- Éviter spécifique `LayoutOptions` autre que `Fill` (remplissage est le cher pour calculer).
+- Éviter de placer un `ListView` à l’intérieur d’un `ScrollView` pour les raisons suivantes :
     - Le `ListView` implémente son propre le défilement.
     - Le `ListView` ne recevra pas les mouvements, car ceux-ci sont gérés par le parent `ScrollView`.
     - Le `ListView` peut présenter un en-tête personnalisé et le pied de page qui fait défiler les éléments de la liste, potentiellement offre les fonctionnalités qui le `ScrollView` a été utilisé pour. Pour plus d’informations, consultez [en-têtes et pieds de page](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
--  Envisagez un convertisseur personnalisé si vous avez besoin d’une conception très spécifique, complexe présentée dans vos cellules.
+- Envisagez un convertisseur personnalisé si vous avez besoin d’une conception très spécifique, complexe présentée dans vos cellules.
 
 `AbsoluteLayout` a la possibilité d’effectuer des mises en page sans un appel de la mesure unique. Cela rend très puissante pour les performances. Si `AbsoluteLayout` ne peut pas être utilisée, envisagez [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout). Si vous utilisez `RelativeLayout`, en passant directement des contraintes sera beaucoup plus rapide que l’utilisation de l’API de l’expression. C’est parce que l’API de l’expression utilise JIT et sur iOS l’arborescence doit être interprétée, qui est plus lente. L’expression API convient aux mises en page où il requis uniquement sur la disposition initiale et la rotation, mais en `ListView`, où elle est exécutée en permanence pendant le défilement, elle nuit aux performances.
 

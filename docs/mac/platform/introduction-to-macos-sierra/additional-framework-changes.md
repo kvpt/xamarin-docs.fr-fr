@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: d48f7012d0389b262e2dfce560d4f8aa925c21d5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c8b2b20d037edd35fd3c50d1418df2110cb8e4c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655650"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528894"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Autres modifications du framework macOS Sierra
 
@@ -39,12 +39,12 @@ Les améliorations suivantes ont été apportées à l’infrastructure AppKit p
 - La passe de disposition de la vue différée a été optimisée et étendue.
 - L’API glisser-déplacer comprend désormais les nouvelles `NSFilePromiseProvider` classes et `NSFilePromiseReceiver` pour prendre en charge le troupeau de glissement.
 - Plusieurs constructeurs pratiques ont été ajoutés aux contrôles existants:
-    -  `NSButton`comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
-    -  `NSTextField`comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
-    -  `NSSegmentedControl`comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
-    -  `NSSlider`comprend de nouveaux constructeurs pour créer des curseurs linéaires horizontaux.
-    -  `NSImageView`comprend de nouveaux constructeurs permettant de créer des vues d’images non modifiables `NSImage`à partir d’un donné.
--  Le nouveau `NSGridView` a été ajouté pour mettre automatiquement en forme une collection de sous-vues dans une grille avec des lignes et des colonnes de taille variable qui peuvent être masquées ou affichées dynamiquement.
+    - `NSButton`comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
+    - `NSTextField`comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
+    - `NSSegmentedControl`comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
+    - `NSSlider`comprend de nouveaux constructeurs pour créer des curseurs linéaires horizontaux.
+    - `NSImageView`comprend de nouveaux constructeurs permettant de créer des vues d’images non modifiables `NSImage`à partir d’un donné.
+- Le nouveau `NSGridView` a été ajouté pour mettre automatiquement en forme une collection de sous-vues dans une grille avec des lignes et des colonnes de taille variable qui peuvent être masquées ou affichées dynamiquement.
 
 <a name="AVFoundation-Framework-Enhancements" />
 

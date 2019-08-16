@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 209d8a61e6505e34fdf714b94ba40465f7f6aa4b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646373"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528800"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS Guide de démarrage rapide
 
@@ -38,10 +38,10 @@ Cet article vous présente les concepts clés nécessaires à la création d’u
 
 Nous allons aborder les concepts suivants:
 
--  **Visual Studio pour Mac** : présentation du Visual Studio pour Mac et de la création d’applications Xamarin. tvOS.
--  **Anatomie d’une application Xamarin. tvOS** – qu’est-ce qu’une application Xamarin. tvOS.
--  **Création d’une interface utilisateur** : comment utiliser pour Xamarin Designer pour IOS pour créer une interface utilisateur.
--  **Déploiement et test** : comment exécuter et tester votre application dans le simulateur tvOS et sur le matériel tvOS réel.
+- **Visual Studio pour Mac** : présentation du Visual Studio pour Mac et de la création d’applications Xamarin. tvOS.
+- **Anatomie d’une application Xamarin. tvOS** – qu’est-ce qu’une application Xamarin. tvOS.
+- **Création d’une interface utilisateur** : comment utiliser pour Xamarin Designer pour IOS pour créer une interface utilisateur.
+- **Déploiement et test** : comment exécuter et tester votre application dans le simulateur tvOS et sur le matériel tvOS réel.
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>Démarrage d’une nouvelle application Xamarin. tvOS dans Visual Studio pour Mac
 
@@ -77,12 +77,12 @@ Si vous êtes familiarisé avec la programmation iOS, vous remarquerez un grand 
 
 Jetons un coup d’œil aux fichiers du projet:
 
--   `Main.cs` : ce fichier contient le point d’entrée principal de l’application. Quand l’application est lancée, il contient la toute première classe et la méthode qui est exécutée.
--   `AppDelegate.cs`: Ce fichier contient la classe d’application principale qui est chargée d’écouter les événements du système d’exploitation.
--   `Info.plist`: Ce fichier contient des propriétés d’application telles que le nom de l’application, des icônes, etc.
--   `ViewController.cs`: Il s’agit de la classe qui représente la fenêtre principale et contrôle le cycle de vie de celui-ci.
--   `ViewController.designer.cs`: Ce fichier contient le code de base qui vous permet de l’intégrer à l’interface utilisateur de l’écran principal.
--  `Main.storyboard`: Interface utilisateur pour la fenêtre principale. Ce fichier peut être créé et géré par le Xamarin Designer pour iOS.
+- `Main.cs` : ce fichier contient le point d’entrée principal de l’application. Quand l’application est lancée, il contient la toute première classe et la méthode qui est exécutée.
+- `AppDelegate.cs`: Ce fichier contient la classe d’application principale qui est chargée d’écouter les événements du système d’exploitation.
+- `Info.plist`: Ce fichier contient des propriétés d’application telles que le nom de l’application, des icônes, etc.
+- `ViewController.cs`: Il s’agit de la classe qui représente la fenêtre principale et contrôle le cycle de vie de celui-ci.
+- `ViewController.designer.cs`: Ce fichier contient le code de base qui vous permet de l’intégrer à l’interface utilisateur de l’écran principal.
+- `Main.storyboard`: Interface utilisateur pour la fenêtre principale. Ce fichier peut être créé et géré par le Xamarin Designer pour iOS.
 
 Dans les sections suivantes, nous allons examiner rapidement certains de ces fichiers. Nous les explorerons plus en détail plus tard, mais il est judicieux de comprendre leurs principes de base dès maintenant.
 
@@ -435,8 +435,8 @@ Il est temps de créer et d’exécuter notre application pour vérifier qu’el
 
 Chaque fois que vous générez une application, nous pouvons choisir le type de build que nous souhaitons:
 
--   **Débogage** – une version Debug est compilée dans un fichier' ' (application) avec des métadonnées supplémentaires qui nous permettent de déboguer ce qui se passe pendant l’exécution de l’application.
--   **Release** : une version Release crée également un fichier' ', mais elle n’inclut pas d’informations de débogage. elle est donc plus petite et s’exécute plus rapidement.  
+- **Débogage** – une version Debug est compilée dans un fichier' ' (application) avec des métadonnées supplémentaires qui nous permettent de déboguer ce qui se passe pendant l’exécution de l’application.
+- **Release** : une version Release crée également un fichier' ', mais elle n’inclut pas d’informations de débogage. elle est donc plus petite et s’exécute plus rapidement.  
 
 Vous pouvez sélectionner le type de build dans le **Sélecteur de configuration** , dans le coin supérieur gauche de l’écran Visual Studio pour Mac:
 
@@ -452,9 +452,9 @@ S’il n’y a pas d’erreurs, vous verrez un message **Build SUCCEEDED (géné
 
 Pour exécuter l’application, trois options s’offrent à vous:
 
--  Appuyez sur **⌘+Entrée**.
--  Dans le menu **Exécuter**, choisissez **Déboguer**.
--  Cliquez sur le bouton **Play** (Lire) dans la barre d’outils Visual Studio pour Mac (juste au-dessus de l’**Explorateur de solutions**).
+- Appuyez sur **⌘+Entrée**.
+- Dans le menu **Exécuter**, choisissez **Déboguer**.
+- Cliquez sur le bouton **Play** (Lire) dans la barre d’outils Visual Studio pour Mac (juste au-dessus de l’**Explorateur de solutions**).
 
 L’application sera générée (si elle n’a pas déjà été générée), démarrer en mode débogage, le simulateur tvOS démarrera et l’application sera lancée et affichera sa fenêtre d’interface principale:
 

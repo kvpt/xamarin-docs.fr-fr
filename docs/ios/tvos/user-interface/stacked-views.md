@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 646a26b4c9b2d44595315a6a32b7294b18c42d7a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648960"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528839"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Utilisation des vues empilées tvOS dans Xamarin
 
@@ -85,9 +85,9 @@ Si la `BaselineRelativeArrangement` propriété est `true`, les sous-affichages 
 Il existe plusieurs types de disposition qui fonctionnent bien avec les contrôles d’affichage de pile. D’après Apple, voici quelques-unes des utilisations les plus courantes:
 
 - **Définir la taille le long de l’axe** : en épinglant les bords le long `Axis` de la vue de la pile et l’un des bords adjacents pour définir la position, l’affichage de la pile s’agrandit le long de l’axe pour s’ajuster à l’espace défini par ses sous-vues.
-*  **Définir la position de la** sous-vue: en épinglant les bords adjacents de l’affichage de la pile à sa vue parente, l’affichage de la pile augmente dans les deux dimensions pour s’adapter aux sous-vues.
+- **Définir la position de la** sous-vue: en épinglant les bords adjacents de l’affichage de la pile à sa vue parente, l’affichage de la pile augmente dans les deux dimensions pour s’adapter aux sous-vues.
 - **Définissez la taille et la position de la pile** , en épinglant les quatre bords de l’affichage de la pile à la vue parent, l’affichage de la pile organise les sous-vues en fonction de l’espace défini dans l’affichage de la pile.
-*  **Définissez la taille perpendiculairement de l’axe** : en épinglant les deux bords perpendiculairement `Axis` à l’affichage de la pile et l’un des bords le long de l’axe pour définir la position, l’affichage de la pile va croître perpendiculairement à l’axe pour s’ajuster à l’espace défini par ses sous-vues.
+- **Définissez la taille perpendiculairement de l’axe** : en épinglant les deux bords perpendiculairement `Axis` à l’affichage de la pile et l’un des bords le long de l’axe pour définir la position, l’affichage de la pile va croître perpendiculairement à l’axe pour s’ajuster à l’espace défini par ses sous-vues.
 
 <a name="Stack-Views-and-Storyboards" />
 

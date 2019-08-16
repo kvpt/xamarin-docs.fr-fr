@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509256"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526225"
 ---
 # <a name="creating-a-service"></a>Création d'un service
 
@@ -38,7 +38,7 @@ Au moment de la compilation, Xamarin. Android inscrira le service en injectant l
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-Il est possible de partager un service avec d’autres applications Android  en l’exportant. Pour ce faire, définissez la `Exported` propriété sur. `ServiceAttribute` Lors de l’exportation d’un `ServiceAttribute.Name` service, la propriété doit également être définie pour fournir un nom public significatif pour le service. Cet extrait de code montre comment exporter et nommer un service:
+Il est possible de partager un service avec d’autres applications Android en l’exportant. Pour ce faire, définissez la `Exported` propriété sur. `ServiceAttribute` Lors de l’exportation d’un `ServiceAttribute.Name` service, la propriété doit également être définie pour fournir un nom public significatif pour le service. Cet extrait de code montre comment exporter et nommer un service:
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -75,7 +75,7 @@ L’étape suivante consiste à examiner comment démarrer un service, puis à e
 
 La méthode la plus simple pour démarrer un service dans Android est de distribuer `Intent` un qui contient des métadonnées pour aider à identifier le service qui doit être démarré. Il existe deux styles différents d’intentions qui peuvent être utilisés pour démarrer un service:
 
--   **Intention explicite** Une _intention explicite_ identifie exactement le service qui doit être utilisé pour effectuer une action donnée. &ndash; Une intention explicite peut être considérée comme une lettre qui a une adresse spécifique; Android acheminera l’intention vers le service explicitement identifié. Cet extrait de code est un exemple d’utilisation d’une intention explicite pour démarrer `DownloadService`un service appelé:
+- **Intention explicite** Une _intention explicite_ identifie exactement le service qui doit être utilisé pour effectuer une action donnée. &ndash; Une intention explicite peut être considérée comme une lettre qui a une adresse spécifique; Android acheminera l’intention vers le service explicitement identifié. Cet extrait de code est un exemple d’utilisation d’une intention explicite pour démarrer `DownloadService`un service appelé:
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ La méthode la plus simple pour démarrer un service dans Android est de distrib
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **Intention implicite** &ndash; Ce type d’intention identifie librement l’action que l’utilisateur souhaite effectuer, mais le service exact pour effectuer cette action est inconnu. Une intention implicite peut être considérée comme une lettre adressée «à qui elle peut poser problème...».
+- **Intention implicite** &ndash; Ce type d’intention identifie librement l’action que l’utilisateur souhaite effectuer, mais le service exact pour effectuer cette action est inconnu. Une intention implicite peut être considérée comme une lettre adressée «à qui elle peut poser problème...».
     Android examine le contenu de l’intention et détermine s’il existe un service qui correspond à l’intention.
 
     Un _filtre d’intention_ est utilisé pour aider à faire correspondre l’intention implicite avec un service inscrit. Un filtre d’intention est un élément XML qui est ajouté à **fichier AndroidManifest. xml** , qui contient les métadonnées nécessaires pour aider à faire correspondre un service à un but implicite.

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2256e52e1b2a468ecbed97d5c7ed2d0a05f6cc4e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510745"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524705"
 ---
 # <a name="app-linking-in-android"></a>Liaison d’applications dans Android
 
@@ -159,7 +159,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 
 Deux tests peuvent être effectués pour s’assurer que les filtres d’intention ont été correctement configurés et que l’application est définie en tant que gestionnaire par défaut d’un URI:
 
-1.  Le fichier de ressources numériques est correctement hébergé comme décrit ci-dessus. Le premier test distribuera une intention qu’Android devrait rediriger vers l’application mobile. L’application Android doit démarrer et afficher l’activité inscrite pour l’URL. À l’invite de commandes, tapez:
+1. Le fichier de ressources numériques est correctement hébergé comme décrit ci-dessus. Le premier test distribuera une intention qu’Android devrait rediriger vers l’application mobile. L’application Android doit démarrer et afficher l’activité inscrite pour l’URL. À l’invite de commandes, tapez:
 
     ```shell
     $ adb shell am start -a android.intent.action.VIEW \
@@ -167,7 +167,7 @@ Deux tests peuvent être effectués pour s’assurer que les filtres d’intenti
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2.  Affichez les stratégies de gestion des liens existantes pour les applications installées sur un appareil donné. La commande suivante permet de vider une liste de stratégies de liaison pour chaque utilisateur sur l’appareil avec les informations suivantes. À l'invite de commandes, tapez la commande suivante :
+2. Affichez les stratégies de gestion des liens existantes pour les applications installées sur un appareil donné. La commande suivante permet de vider une liste de stratégies de liaison pour chaque utilisateur sur l’appareil avec les informations suivantes. À l'invite de commandes, tapez la commande suivante :
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps

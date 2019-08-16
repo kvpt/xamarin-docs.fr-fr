@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: a9297d9a19ef56d658e983c38329b1aa400ffd05
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680942"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521719"
 ---
 # <a name="async-support-overview"></a>Présentation de la prise en charge asynchrone
 
@@ -87,7 +87,7 @@ La tâche est ensuite annulée et accuse réception de l’annulation.
 
 Pour plus d’informations sur l’annulation, consultez [Réglage de votre application Async (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Téléchargez l' [exemple de solution Xamarin](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/) (pour iOS et Android) pour voir un exemple fonctionnel de `async` et `await` dans les applications mobiles. L’exemple de code est abordé plus en détail dans cette section.
 
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 Notez les points suivants:
 
--  La déclaration de méthode comprend `async` le mot clé.
--  Le type de retour `Task<int>` est afin que le code appelant `int` puisse accéder à la valeur calculée dans cette méthode.
--  L’instruction Return `return exampleInt;` est un objet entier, le fait que la méthode retourne `Task<int>` fait partie des améliorations du langage.
+- La déclaration de méthode comprend `async` le mot clé.
+- Le type de retour `Task<int>` est afin que le code appelant `int` puisse accéder à la valeur calculée dans cette méthode.
+- L’instruction Return `return exampleInt;` est un objet entier, le fait que la méthode retourne `Task<int>` fait partie des améliorations du langage.
 
 
 ### <a name="calling-an-async-method-1"></a>Appel d’une méthode Async 1
@@ -148,11 +148,11 @@ GetButton.Click += async (sender, e) => {
 
 Remarques :
 
--  Le délégué anonyme a le préfixe de mot clé Async.
--  La méthode asynchrone DownloadHomepage retourne une tâche <int> qui est stockée dans la variable sizeTask.
--  Le code attend la variable sizeTask.  *Il* s’agit de l’emplacement où la méthode est suspendue et le contrôle est retourné au code appelant jusqu’à ce que la tâche asynchrone se termine sur son propre thread.
--  L’exécution ne s’interrompt *pas* lorsque la tâche est créée sur la première ligne de la méthode, malgré la tâche en cours de création. Le mot clé await désigne l’emplacement où l’exécution est suspendue.
--  Lorsque la tâche asynchrone se termine, intresult est défini et l’exécution se poursuit sur le thread d’origine, à partir de la ligne await.
+- Le délégué anonyme a le préfixe de mot clé Async.
+- La méthode asynchrone DownloadHomepage retourne une tâche\<int > stockée dans la variable sizeTask.
+- Le code attend la variable sizeTask.  *Il* s’agit de l’emplacement où la méthode est suspendue et le contrôle est retourné au code appelant jusqu’à ce que la tâche asynchrone se termine sur son propre thread.
+- L’exécution ne s’interrompt *pas* lorsque la tâche est créée sur la première ligne de la méthode, malgré la tâche en cours de création. Le mot clé await désigne l’emplacement où l’exécution est suspendue.
+- Lorsque la tâche asynchrone se termine, intresult est défini et l’exécution se poursuit sur le thread d’origine, à partir de la ligne await.
 
 
 ### <a name="calling-an-async-method-2"></a>Appel d’une méthode Async 2
@@ -181,9 +181,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 Quelques points importants:
 
--  La méthode est marquée comme `async` , mais `void` retourne. Cela s’effectue généralement uniquement pour les gestionnaires d’événements (sinon, vous retournez `Task` un `Task<TResult>` ou).
--  Le code `await` s sur la `DownloadHomepage` méthode directement sur une assignation à une variable ( `intResult` ) contrairement à l’exemple précédent où nous avons utilisé `Task<int>` une variable intermédiaire pour référencer la tâche.  *Il* s’agit de l’emplacement où le contrôle est retourné à l’appelant jusqu’à ce que la méthode asynchrone soit terminée sur un autre thread.
--  Quand la méthode asynchrone se termine et retourne, l’exécution reprend à `await` , ce qui signifie que le résultat de l’entier est retourné, puis restitué dans un widget d’interface utilisateur.
+- La méthode est marquée comme `async` , mais `void` retourne. Cela s’effectue généralement uniquement pour les gestionnaires d’événements (sinon, vous retournez `Task` un `Task<TResult>` ou).
+- Le code `await` s sur la `DownloadHomepage` méthode directement sur une assignation à une variable ( `intResult` ) contrairement à l’exemple précédent où nous avons utilisé `Task<int>` une variable intermédiaire pour référencer la tâche.  *Il* s’agit de l’emplacement où le contrôle est retourné à l’appelant jusqu’à ce que la méthode asynchrone soit terminée sur un autre thread.
+- Quand la méthode asynchrone se termine et retourne, l’exécution reprend à `await` , ce qui signifie que le résultat de l’entier est retourné, puis restitué dans un widget d’interface utilisateur.
 
 
 ## <a name="summary"></a>Récapitulatif

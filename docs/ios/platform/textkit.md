@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655367"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528718"
 ---
 # <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin. iOS
 
@@ -20,17 +20,17 @@ TextKit est une nouvelle API qui offre de puissantes fonctionnalités de présen
 
 Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles standard, plusieurs contrôles de texte iOS ont été réimplémentés pour utiliser TextKit, notamment:
 
--  UITextView
--  UITextField
--  UILabel
+- UITextView
+- UITextField
+- UILabel
 
 ## <a name="architecture"></a>Architecture
 
 TextKit fournit une architecture en couches qui sépare le stockage de texte de la disposition et de l’affichage, y compris les classes suivantes:
 
--  `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
--  `NSLayoutManager`: Met du texte en forme de glyphes. 
--  `NSTextStorage`: Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
+- `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
+- `NSLayoutManager`: Met du texte en forme de glyphes. 
+- `NSTextStorage`: Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
 
 
 Ces trois classes sont appliquées à une vue qui restitue le texte. Les vues de gestion de texte intégrées, telles que `UITextView`, `UITextField`et `UILabel` qui les ont déjà définies, vous pouvez les créer et les appliquer également à `UIView` n’importe quelle instance.

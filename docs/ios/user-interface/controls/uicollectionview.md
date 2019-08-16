@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 256f38b4e08b1a7cb91b0a0a977ef222f7affbb4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 871020ff1f69edc20b582806a584dfd51982d336
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642873"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528610"
 ---
 # <a name="collection-views-in-xamarinios"></a>Vues de collection dans Xamarin. iOS
 
@@ -28,9 +28,9 @@ iOS fournit une classe de disposition `UICollectionViewFlowLayout` appelée qui 
 
 La `UICollectionView` classe est composée de trois éléments différents:
 
--  **Cellules** -vues pilotées par les données pour chaque élément
--  **Vues supplémentaires** : vues pilotées par les données associées à une section.
--  **Vues de décoration** -vues non pilotées par les données créées par une disposition
+- **Cellules** -vues pilotées par les données pour chaque élément
+- **Vues supplémentaires** : vues pilotées par les données associées à une section.
+- **Vues de décoration** -vues non pilotées par les données créées par une disposition
 
 ## <a name="cells"></a>Cellules
 
@@ -40,9 +40,9 @@ Les cellules sont des objets qui représentent un seul élément dans le jeu de 
 
 La `UICollectionViewCell` classe a les propriétés suivantes pour chacune de ces vues:
 
--   `ContentView`: Cette vue contient le contenu que la cellule présente. Il est affiché dans l’ordre de plan le plus haut sur l’écran.
--   `SelectedBackgroundView`: Les cellules prennent en charge la sélection. Cette vue est utilisée pour indiquer visuellement qu’une cellule est sélectionnée. Il s’affiche juste en dessous `ContentView` du lorsqu’une cellule est sélectionnée.
--   `BackgroundView`: Les cellules peuvent également afficher un arrière-plan, qui est `BackgroundView` présenté par le. Cette vue est affichée sous le `SelectedBackgroundView` .
+- `ContentView`: Cette vue contient le contenu que la cellule présente. Il est affiché dans l’ordre de plan le plus haut sur l’écran.
+- `SelectedBackgroundView`: Les cellules prennent en charge la sélection. Cette vue est utilisée pour indiquer visuellement qu’une cellule est sélectionnée. Il s’affiche juste en dessous `ContentView` du lorsqu’une cellule est sélectionnée.
+- `BackgroundView`: Les cellules peuvent également afficher un arrière-plan, qui est `BackgroundView` présenté par le. Cette vue est affichée sous le `SelectedBackgroundView` .
 
 
 En définissant `ContentView` le tel qu’il est plus petit `BackgroundView` que `SelectedBackgroundView`et, `BackgroundView` le peut `SelectedBackgroundView` être utilisé pour imager visuellement le contenu, tandis que est affiché quand une cellule est sélectionnée, comme indiqué ci-dessous:
@@ -142,10 +142,10 @@ Les vues de décoration sont purement visuelles qui peuvent être affichées `UI
 
 Comme avec d’autres parties d’iOS, telles `UITableView` que `MKMapView`et `UICollectionView` , obtient ses données à partir d’une *source de données*, qui est exposée dans **`UICollectionViewDataSource`** Xamarin. iOS via la classe. Cette classe est chargée de fournir du contenu à `UICollectionView` l’exemple suivant:
 
--  **Cells** : retourné `GetCell` à partir de la méthode.
--  **Vues supplémentaires** : renvoyées `GetViewForSupplementaryElement` par la méthode.
--  **Nombre de sections** – retourné à `NumberOfSections` partir de la méthode. La valeur par défaut est 1 si elle n’est pas implémentée.
--  **Nombre d’éléments par section** – retourné à `GetItemsCount` partir de la méthode.
+- **Cells** : retourné `GetCell` à partir de la méthode.
+- **Vues supplémentaires** : renvoyées `GetViewForSupplementaryElement` par la méthode.
+- **Nombre de sections** – retourné à `NumberOfSections` partir de la méthode. La valeur par défaut est 1 si elle n’est pas implémentée.
+- **Nombre d’éléments par section** – retourné à `GetItemsCount` partir de la méthode.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 Pour plus de commodité `UICollectionViewController` , la classe est disponible. Il est automatiquement configuré pour être le délégué, qui est abordé dans la section suivante, et la source de données pour `UICollectionView` sa vue.
@@ -193,9 +193,9 @@ Dans ce cas, en inscrivant `AnimalCell` la classe, iOS crée un nouveau `AnimalC
 
 La `UICollectionView` classe utilise un délégué de type `UICollectionViewDelegate` pour prendre en charge l’interaction avec `UICollectionView`le contenu dans le. Cela permet de contrôler:
 
--  **Sélection de cellules** : détermine si une cellule est sélectionnée.
--  **Mise** en surbrillance des cellules: détermine si une cellule est actuellement touchée.
--  **Menus de cellule** : menu affiché pour une cellule en réponse à un mouvement de longue durée.
+- **Sélection de cellules** : détermine si une cellule est sélectionnée.
+- **Mise** en surbrillance des cellules: détermine si une cellule est actuellement touchée.
+- **Menus de cellule** : menu affiché pour une cellule en réponse à un mouvement de longue durée.
 
 
 Comme avec la source de données, `UICollectionViewController` est configuré par défaut pour être le délégué `UICollectionView`de.
@@ -250,9 +250,9 @@ Lorsque la mise en surbrillance est désactivée, le processus de sélection d�
 
 Chaque cellule d’un `UICollectionView` est capable d’illustrer un menu qui permet, éventuellement, de prendre en charge les opérations couper, copier et coller. Pour créer un menu Edition sur une cellule:
 
-1.  Substitue `ShouldShowMenu` et retourne la valeur true si l’élément doit afficher un menu.
-1.  Substituez `CanPerformAction` et retournez la valeur true pour chaque action que l’élément peut effectuer, qui correspond à l’une des opérations couper, copier ou coller.
-1.  Remplacement `PerformAction` pour effectuer la modification, copie de l’opération de collage.
+1. Substitue `ShouldShowMenu` et retourne la valeur true si l’élément doit afficher un menu.
+1. Substituez `CanPerformAction` et retournez la valeur true pour chaque action que l’élément peut effectuer, qui correspond à l’une des opérations couper, copier ou coller.
+1. Remplacement `PerformAction` pour effectuer la modification, copie de l’opération de collage.
 
 
 La capture d’écran suivante montre le menu quand une cellule est appuyée sur une longue durée:
@@ -274,8 +274,8 @@ La capture d’écran suivante montre le menu quand une cellule est appuyée sur
 
 Les dispositions dans un `UICollectionView` sont définies dans une classe qui hérite de `UICollectionViewLayout`. L’implémentation de la disposition est chargée de créer les attributs de disposition pour chaque `UICollectionView`élément de. Il existe deux façons de créer une disposition:
 
--  Utilisez le intégré `UICollectionViewFlowLayout` .
--  Fournissez une disposition personnalisée en héritant `UICollectionViewLayout` de.
+- Utilisez le intégré `UICollectionViewFlowLayout` .
+- Fournissez une disposition personnalisée en héritant `UICollectionViewLayout` de.
 
 
  <a name="Flow_Layout" />
@@ -287,14 +287,14 @@ La `UICollectionViewFlowLayout` classe fournit une disposition linéaire qui con
 
 Pour utiliser une mise en page fluide:
 
--  Créer une instance de `UICollectionViewFlowLayout` :
+- Créer une instance de `UICollectionViewFlowLayout` :
 
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
--  Transmettez l’instance au constructeur du `UICollectionView` :
+- Transmettez l’instance au constructeur du `UICollectionView` :
 
 
 ```csharp
@@ -332,10 +332,10 @@ Dans Edition, pour `UICollectionViewFlowLayout` utiliser directement, il peut é
 
 Pour implémenter cela par le biais `UICollectionViewFlowLayout` de sous-classes, requiert:
 
--  Initialisation des propriétés de disposition qui s’appliquent à la disposition elle-même ou à tous les éléments de la disposition dans le constructeur.
--  En remplaçant `ShouldInvalidateLayoutForBoundsChange` , en retournant true afin que, lorsque les `UICollectionView` limites des modifications sont modifiées, la disposition des cellules soit recalculée. Utilisé dans ce cas, assurez-vous que le code de la transformation appliquée à la cellule centermost sera appliqué lors du défilement.
--  Substitution `TargetContentOffset` pour que la cellule centermost soit alignée au centre `UICollectionView` du au fur et à mesure que le défilement s’arrête.
--  Substitution `LayoutAttributesForElementsInRect` pour retourner un tableau de `UICollectionViewLayoutAttributes` . Chaque `UICollectionViewLayoutAttribute` contient des informations sur la façon de mettre en page l’élément particulier, y `Center` compris des propriétés `Transform3D` telles que, `Size` `ZIndex` et.
+- Initialisation des propriétés de disposition qui s’appliquent à la disposition elle-même ou à tous les éléments de la disposition dans le constructeur.
+- En remplaçant `ShouldInvalidateLayoutForBoundsChange` , en retournant true afin que, lorsque les `UICollectionView` limites des modifications sont modifiées, la disposition des cellules soit recalculée. Utilisé dans ce cas, assurez-vous que le code de la transformation appliquée à la cellule centermost sera appliqué lors du défilement.
+- Substitution `TargetContentOffset` pour que la cellule centermost soit alignée au centre `UICollectionView` du au fur et à mesure que le défilement s’arrête.
+- Substitution `LayoutAttributesForElementsInRect` pour retourner un tableau de `UICollectionViewLayoutAttributes` . Chaque `UICollectionViewLayoutAttribute` contient des informations sur la façon de mettre en page l’élément particulier, y `Center` compris des propriétés `Transform3D` telles que, `Size` `ZIndex` et.
 
 
 Le code suivant illustre une telle implémentation:
@@ -416,9 +416,9 @@ En plus d’utiliser `UICollectionViewFlowLayout`, les dispositions peuvent éga
 
 Les principales méthodes de remplacement sont les suivantes:
 
--   `PrepareLayout`: Utilisé pour effectuer des calculs géométriques initiaux qui seront utilisés tout au long du processus de disposition.
--   `CollectionViewContentSize`: Retourne la taille de la zone utilisée pour afficher le contenu.
--   `LayoutAttributesForElementsInRect`– Comme avec l’exemple UICollectionViewFlowLayout présenté précédemment, cette méthode est utilisée pour fournir des informations sur `UICollectionView` la façon de mettre en page chaque élément. Toutefois, contrairement à `UICollectionViewFlowLayout` , lors de la création d’une disposition personnalisée, vous pouvez positionner des éléments comme vous le souhaitez.
+- `PrepareLayout`: Utilisé pour effectuer des calculs géométriques initiaux qui seront utilisés tout au long du processus de disposition.
+- `CollectionViewContentSize`: Retourne la taille de la zone utilisée pour afficher le contenu.
+- `LayoutAttributesForElementsInRect`– Comme avec l’exemple UICollectionViewFlowLayout présenté précédemment, cette méthode est utilisée pour fournir des informations sur `UICollectionView` la façon de mettre en page chaque élément. Toutefois, contrairement à `UICollectionViewFlowLayout` , lors de la création d’une disposition personnalisée, vous pouvez positionner des éléments comme vous le souhaitez.
 
 
 Par exemple, le même contenu peut être présenté dans une disposition circulaire comme indiqué ci-dessous:

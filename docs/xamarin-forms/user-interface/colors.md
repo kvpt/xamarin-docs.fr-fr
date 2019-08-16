@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1f29f283207ed8c1382424b3680177886ad2c806
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f68e192db0b7acceb325ad44f40dce9cb229a26a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653155"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528987"
 ---
 # <a name="colors-in-xamarinforms"></a>Couleurs dans Xamarin.Forms
 
@@ -24,12 +24,12 @@ Cet article présente les différentes façons la `Color` classe peut être util
 
 Le `Color` classe fournit plusieurs méthodes pour créer une instance de couleur
 
--  **Couleurs nommées** -une collection de common couleurs nommées, y compris `Red`, `Green`, et `Blue`.
--  **FromHex** : valeur de chaîne similaire à la syntaxe utilisée en HTML, par exemple «00FF00». Alpha peut éventuellement être spécifié en tant que première paire de caractères («CC00FF00»).
--  **FromHsla** -teinte, saturation et luminosité `double` valeurs, avec une valeur alpha facultative (0.0-1.0).
--  **FromRgb** -rouge, vert et bleu `int` valeurs (0-255).
--  **FromRgba** -rouge, vert, bleu et alpha `int` valeurs (0-255).
--  **FromUint** -définir un seul `double` valeur représentant **ARVB**.
+- **Couleurs nommées** -une collection de common couleurs nommées, y compris `Red`, `Green`, et `Blue`.
+- **FromHex** : valeur de chaîne similaire à la syntaxe utilisée en HTML, par exemple «00FF00». Alpha peut éventuellement être spécifié en tant que première paire de caractères («CC00FF00»).
+- **FromHsla** -teinte, saturation et luminosité `double` valeurs, avec une valeur alpha facultative (0.0-1.0).
+- **FromRgb** -rouge, vert et bleu `int` valeurs (0-255).
+- **FromRgba** -rouge, vert, bleu et alpha `int` valeurs (0-255).
+- **FromUint** -définir un seul `double` valeur représentant **ARVB**.
 
 Voici certaines couleurs de l’exemple, assignés à la `BackgroundColor` certaines étiquettes à l’aide de différentes variantes de la syntaxe autorisée :
 
@@ -69,11 +69,11 @@ Sur iOS et Android, cette instance est définie sur une couleur contrastée qui 
 
 `Color` instances incluent des méthodes supplémentaires qui peuvent être utilisées pour créer de nouvelles couleurs :
 
--  **AddLuminosity** -retourne une nouvelle couleur en modifiant la luminosité par le delta fourni.
--  **WithHue** -retourne une nouvelle couleur, en remplaçant la teinte avec la valeur fournie.
--  **WithLuminosity** -retourne une nouvelle couleur, en remplaçant la luminosité avec la valeur fournie.
--  **WithSaturation** -retourne une nouvelle couleur, en remplaçant la saturation avec la valeur fournie.
--  **MultiplyAlpha** -retourne une nouvelle couleur en modifiant la valeur alpha, multipliant par la valeur alpha fournie.
+- **AddLuminosity** -retourne une nouvelle couleur en modifiant la luminosité par le delta fourni.
+- **WithHue** -retourne une nouvelle couleur, en remplaçant la teinte avec la valeur fournie.
+- **WithLuminosity** -retourne une nouvelle couleur, en remplaçant la luminosité avec la valeur fournie.
+- **WithSaturation** -retourne une nouvelle couleur, en remplaçant la saturation avec la valeur fournie.
+- **MultiplyAlpha** -retourne une nouvelle couleur en modifiant la valeur alpha, multipliant par la valeur alpha fournie.
 
 ## <a name="implicit-conversions"></a>Conversions implicites
 

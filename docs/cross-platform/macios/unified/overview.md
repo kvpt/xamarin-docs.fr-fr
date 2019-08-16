@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9d36101c1416ea8ddf451f5677258972c4f34990
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1e8723fd8cc2119c6d65ea760d514373d00ce1d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511135"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521824"
 ---
 # <a name="unified-api-overview"></a>Présentation de API unifiée
 
@@ -40,8 +40,8 @@ Quelles que soient les applications que vous migrez, consultez [ces conseils](up
 
 À partir de ce point, nos API seront exposées de deux manières:
 
--  **API classique:** Limité à 32 bits (uniquement) et exposés dans les `monotouch.dll` assemblys et. `XamMac.dll`
--  **API unifiée:** Prenez en charge le développement 32 et 64 bits avec une seule API disponible `Xamarin.iOS.dll` dans `Xamarin.Mac.dll` les assemblys et.
+- **API classique:** Limité à 32 bits (uniquement) et exposés dans les `monotouch.dll` assemblys et. `XamMac.dll`
+- **API unifiée:** Prenez en charge le développement 32 et 64 bits avec une seule API disponible `Xamarin.iOS.dll` dans `Xamarin.Mac.dll` les assemblys et.
 
 Cela signifie que pour les développeurs d’entreprise (ne ciblant pas l’App Store), vous pouvez continuer à utiliser les API classiques existantes, car nous allons toujours les conserver à jour, ou vous pouvez effectuer une mise à niveau vers les nouvelles API.
 
@@ -55,8 +55,8 @@ Nous supprimons le préfixe «unitouch» de notre produit iOS et «MonoMac» de 
 
 Il est ainsi plus simple de partager du code entre les plateformes Mac et iOS sans avoir recours à la compilation conditionnelle et réduira le bruit en haut de vos fichiers de code source.
 
--  **API classique:** Les espaces de `MonoTouch.` noms `MonoMac.` utilisent ou prefix.
--  **API unifiée:** Aucun préfixe d’espace de noms
+- **API classique:** Les espaces de `MonoTouch.` noms `MonoMac.` utilisent ou prefix.
+- **API unifiée:** Aucun préfixe d’espace de noms
 
 ## <a name="runtime-defaults"></a>Valeurs par défaut du Runtime
 
@@ -179,9 +179,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 Dans l’API classique Xamarin. iOS, l' `[Obsolete]` attribut a été utilisé de deux manières différentes:
 
--  **API iOS déconseillée:** C’est le cas lorsqu’Apple vous indique d’arrêter d’utiliser une API, car elle est remplacée par une version plus récente. Le API classique est toujours parfait et souvent requis (si vous prenez en charge l’ancienne version d’iOS).
+- **API iOS déconseillée:** C’est le cas lorsqu’Apple vous indique d’arrêter d’utiliser une API, car elle est remplacée par une version plus récente. Le API classique est toujours parfait et souvent requis (si vous prenez en charge l’ancienne version d’iOS).
  Ces API (et l' `[Obsolete]` attribut) sont incluses dans les nouveaux assemblys Xamarin. iOS.
--  **API** incorrecte Certaines API avaient des fautes de frappe sur leurs noms.
+- **API** incorrecte Certaines API avaient des fautes de frappe sur leurs noms.
 
 Pour les assemblys d’origine (MonoTouch. dll et XamMac. dll), nous avons conservé l’ancien code disponible pour la compatibilité, mais ils ont été supprimés de la API unifiée assemblys (Xamarin. iOS. dll et Xamarin. Mac).
 
@@ -193,9 +193,11 @@ Chaque `NSObject` sous-classe a un constructeur qui accepte `IntPtr`un. C’est 
 
 Dans le modèle classique, `public` il s’agissait d’un constructeur. Toutefois, il était facile d’utiliser cette fonctionnalité dans le code utilisateur, par exemple la création de plusieurs instances gérées pour une instance ObjC unique *ou* la création d’une instance gérée qui n’aurait pas l’état managé attendu (pour les sous-classes).
 
-Pour éviter ces types de problèmes, `IntPtr` les constructeurs sont désormais `protected` dans  une API unifiée, à utiliser uniquement pour la sous-classe. Cela permet de s’assurer que l’API correcte/sécurisée est utilisée pour créer une instance gérée à partir de handles, c.-à-d.
+Pour éviter ces types de problèmes, `IntPtr` les constructeurs sont désormais `protected` dans une API unifiée, à utiliser uniquement pour la sous-classe. Cela permet de s’assurer que l’API correcte/sécurisée est utilisée pour créer une instance gérée à partir de handles, c.-à-d.
 
-    var label = Runtime.GetNSObject<UILabel> (handle);
+```csharp
+var label = Runtime.GetNSObject<UILabel> (handle);
+```
 
 Cette API retourne une instance gérée existante (si elle existe déjà) ou en crée une (si nécessaire). Il est déjà disponible dans les API classiques et unifiées.
 
@@ -222,19 +224,21 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 Auparavant, il s’agit d’une erreur du `Action` compilateur, car une `NSAction`ne peut pas être assignée à, `NSAction` mais depuis que `UITapGestureRecognizer` prend maintenant un `Action` au lieu d’un, il est valide dans les API unifiées.
 
-### <a name="custom-delegates-replaced-with-actiont"></a>Délégués personnalisés remplacés par l’action<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>Délégués personnalisés remplacés par l'\<action T >
 
 Dans **Unified** some simple (par exemple, un paramètre), les délégués `Action<T>`.net ont été remplacés par. Par exemple,
 
-    public delegate void NSNotificationHandler (NSNotification notification);
+```csharp
+public delegate void NSNotificationHandler (NSNotification notification);
+```
 
 peut maintenant être utilisé en tant `Action<NSNotification>`que. Cela favorise la réutilisation du code et réduit la duplication du code à la fois dans Xamarin. iOS et vos propres applications.
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>Tâche<bool> remplacée par Task < Boolean, nserror > >
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>La\<tâche bool > remplacée par la tâche < booléenne, nserror > >
 
 En mode **classique** , certaines API Async retournent `Task<bool>`. Toutefois, certaines d’entre elles doivent être utilisées quand `NSError` un faisait partie de la signature, c.-à-d `bool` . que a `true` déjà été et que vous `NSError`deviez intercepter une exception pour récupérer.
 
-Étant donné que certaines erreurs sont très courantes et que la valeur de retour n’est pas utile  , ce modèle a `Task<Tuple<Boolean,NSError>>`été modifié dans Unified pour retourner un. Cela vous permet de vérifier à la fois la réussite et toute erreur qui peut s’être produite pendant l’appel asynchrone.
+Étant donné que certaines erreurs sont très courantes et que la valeur de retour n’est pas utile , ce modèle a `Task<Tuple<Boolean,NSError>>`été modifié dans Unified pour retourner un. Cela vous permet de vérifier à la fois la réussite et toute erreur qui peut s’être produite pendant l’appel asynchrone.
 
 ### <a name="nsstring-vs-string"></a>Chaîne NSString et chaîne
 
@@ -242,11 +246,15 @@ Dans certains cas, certaines constantes devaient être modifiées de `string` en
 
 **Classic**
 
-    public virtual string ReuseIdentifier { get; }
+```csharp
+public virtual string ReuseIdentifier { get; }
+```
 
 **Unifié**
 
-    public virtual NSString ReuseIdentifier { get; }
+```csharp
+public virtual NSString ReuseIdentifier { get; }
+```
 
 En général, nous préférons `System.String` le type .net. Toutefois, malgré les instructions Apple, certaines API natives sont en comparant des pointeurs constants (pas la chaîne elle-même) et cela ne fonctionne `NSString`que lorsque nous exposez les constantes comme.
 
@@ -260,23 +268,31 @@ Ces limitations ont été supprimées et nettoyées sur les API unifiées. La pl
 
 **Classic**
 
-    public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 **Unifié**
 
-    public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```
 
-Le `I` préfixe  signifie que la méthode Unified expose une interface, au lieu d’un type spécifique, pour le protocole objc. Cela facilite les cas où vous ne souhaitez pas sous-classer le type spécifique fourni par Xamarin. iOS.
+Le `I` préfixe signifie que la méthode Unified expose une interface, au lieu d’un type spécifique, pour le protocole objc. Cela facilite les cas où vous ne souhaitez pas sous-classer le type spécifique fourni par Xamarin. iOS.
 
 Il permettait également à certaines API d’être plus précises et faciles à utiliser, par exemple:
 
 **Classic**
 
-    public virtual void SelectionDidChange (NSObject uiTextInput);
+```csharp
+public virtual void SelectionDidChange (NSObject uiTextInput);
+```
 
 **Unifié**
 
-    public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```csharp
+public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```
 
 De telles API sont désormais plus faciles à nous, sans référence à la documentation, et la saisie semi-automatique de votre code IDE vous fournira des suggestions plus utiles basées sur le protocole/l’interface.
 

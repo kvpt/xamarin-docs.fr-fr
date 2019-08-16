@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645167"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522877"
 ---
 # <a name="adding-a-second-toolbar"></a>Ajout d’une seconde barre d’outils
 
@@ -86,13 +86,13 @@ Cette section explique comment ajouter des éléments de menu Edition en bas `To
 
 Pour ajouter des éléments de menu à `Toolbar`un réplica secondaire: 
 
-1.  Ajoutez des icônes de menu `mipmap-` aux dossiers du projet d’application (si nécessaire).
+1. Ajoutez des icônes de menu `mipmap-` aux dossiers du projet d’application (si nécessaire).
 
-2.  Définissez le contenu des éléments de menu en ajoutant un fichier de ressources de menu supplémentaire à **ressources/menu**. 
+2. Définissez le contenu des éléments de menu en ajoutant un fichier de ressources de menu supplémentaire à **ressources/menu**. 
 
-3.  Dans la méthode de `OnCreate` l’activité, `Toolbar` recherchez (en appelant `FindViewById`) et gonflez `Toolbar`les menus de.
+3. Dans la méthode de `OnCreate` l’activité, `Toolbar` recherchez (en appelant `FindViewById`) et gonflez `Toolbar`les menus de.
 
-4.  Implémentez un gestionnaire de `OnCreate` clic dans pour les nouveaux éléments de menu. 
+4. Implémentez un gestionnaire de `OnCreate` clic dans pour les nouveaux éléments de menu. 
 
 Les sections suivantes illustrent ce processus en détail: Les éléments de menu **couper**, **copier**et **coller** sont ajoutés en bas `Toolbar`. 
 
@@ -183,7 +183,7 @@ Quand l’utilisateur navigue de `MainActivity` vers `DetailActivity`, le `Detai
 
 [![Capture d’écran exemple de flèche gauche dans la barre d’outils](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-Si vous appuyez **sur ce bouton** , l’application retourne `MainActivity`à. Dans une application plus complexe avec plusieurs niveaux de hiérarchie, le fait d’appuyer sur ce bouton permet de ramener l’utilisateur au niveau le plus élevé suivant dans l’application plutôt qu’à l’écran précédent. 
+Si vous Appuyez sur ce bouton, l’application retourne `MainActivity`à. Dans une application plus complexe avec plusieurs niveaux de hiérarchie, le fait d’appuyer sur ce bouton permet de ramener l’utilisateur au niveau le plus élevé suivant dans l’application plutôt qu’à l’écran précédent. 
 
 
 

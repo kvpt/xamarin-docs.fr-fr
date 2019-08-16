@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656510"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528356"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
 
@@ -211,9 +211,9 @@ Le `HorizontalTextAlignment` propriété est de type `TextAlignment`, qui est un
 
 Pour les propriétés de types plus complexes, toutefois, les convertisseurs sont utilisés pour l’analyse du XAML. Il s’agit de classes dans Xamarin.Forms qui dérivent `TypeConverter`. La plupart sont des classes publiques, mais certains ne sont pas. Pour ce fichier XAML particulier, plusieurs de ces classes jouent un rôle dans les coulisses :
 
--  `LayoutOptionsConverter` pour le `VerticalOptions` propriété
--  `FontSizeConverter` pour le `FontSize` propriété
--  `ColorTypeConverter` pour le `TextColor` propriété
+- `LayoutOptionsConverter` pour le `VerticalOptions` propriété
+- `FontSizeConverter` pour le `FontSize` propriété
+- `ColorTypeConverter` pour le `TextColor` propriété
 
 Ces convertisseurs régissent la syntaxe autorisée des paramètres de propriété.
 

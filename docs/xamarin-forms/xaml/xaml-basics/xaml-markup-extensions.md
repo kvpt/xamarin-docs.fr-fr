@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655490"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529270"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
@@ -441,9 +441,9 @@ La taille de la résultante `BoxView` par rapport à l’écran est dépendante 
 
 Plusieurs extensions de balisage sont intrinsèques à XAML et pris en charge dans les fichiers XAML de Xamarin.Forms. Certaines d'entre elles ne sont pas très souvent utilisés, mais sont essentielles lorsque vous en avez besoin :
 
--  Si une propriété a non - `null` valeur par défaut, mais vous souhaitez lui attribuer `null`, affectez-lui le `{x:Null}` extension de balisage.
--  Si une propriété est de type `Type`, vous pouvez l’affecter à un `Type` à l’aide de l’extension de balisage de l’objet `{x:Type someClass}`.
--  Vous pouvez définir des tableaux à l’aide de XAML le `x:Array` extension de balisage. Cette extension de balisage a un attribut obligatoire nommé `Type` qui indique le type des éléments dans le tableau.
+- Si une propriété a non - `null` valeur par défaut, mais vous souhaitez lui attribuer `null`, affectez-lui le `{x:Null}` extension de balisage.
+- Si une propriété est de type `Type`, vous pouvez l’affecter à un `Type` à l’aide de l’extension de balisage de l’objet `{x:Type someClass}`.
+- Vous pouvez définir des tableaux à l’aide de XAML le `x:Array` extension de balisage. Cette extension de balisage a un attribut obligatoire nommé `Type` qui indique le type des éléments dans le tableau.
 - Le `Binding` extension de balisage est abordée dans [partie 4. Liaison des bases de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 ## <a name="the-constraintexpression-markup-extension"></a>L’Extension de balisage de ConstraintExpression

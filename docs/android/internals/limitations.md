@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 57d9d6a91f88d117f0889a8dba9e6198ec6b7f62
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510708"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524770"
 ---
 # <a name="limitations"></a>Limites
 
@@ -90,7 +90,7 @@ class MyIntentService : IntentService {
 Les C# classes génériques ne sont que partiellement prises en charge. Les limitations suivantes existent:
 
 
--   Les types génériques ne peuvent `[Export]` pas `[ExportField`utiliser ou]. Si vous tentez de le faire `XA4207` , une erreur est générée.
+- Les types génériques ne peuvent `[Export]` pas `[ExportField`utiliser ou]. Si vous tentez de le faire `XA4207` , une erreur est générée.
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -103,7 +103,7 @@ Les C# classes génériques ne sont que partiellement prises en charge. Les limi
     }
     ```
 
--   Les méthodes génériques ne peuvent `[Export]` pas `[ExportField]`utiliser ou:
+- Les méthodes génériques ne peuvent `[Export]` pas `[ExportField]`utiliser ou:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -118,7 +118,7 @@ Les C# classes génériques ne sont que partiellement prises en charge. Les limi
     }
     ```
 
--   `[ExportField]`ne peut pas être utilisé sur les méthodes `void`qui retournent:
+- `[ExportField]`ne peut pas être utilisé sur les méthodes `void`qui retournent:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -131,7 +131,7 @@ Les C# classes génériques ne sont que partiellement prises en charge. Les limi
     }
     ```
 
--   Les instances de types génériques _ne doivent pas_ être créées à partir du code Java.
+- Les instances de types génériques _ne doivent pas_ être créées à partir du code Java.
     Ils peuvent uniquement être créés en toute sécurité à partir du code managé:
 
     ```csharp

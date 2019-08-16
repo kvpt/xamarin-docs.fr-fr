@@ -1,35 +1,35 @@
 ---
-title: Transactions et la vérification dans Xamarin.iOS
-description: Ce document explique comment autoriser pour la restauration de leurs achats passés dans une application Xamarin.iOS. Il aborde également les méthodes permettant de sécuriser les achats et produits assurée par le serveur.
+title: Transactions et vérification dans Xamarin. iOS
+description: Ce document explique comment autoriser la restauration des achats antérieurs dans une application Xamarin. iOS. Il aborde également les méthodes de sécurisation des achats et des produits fournis par le serveur.
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 83f5fd233c004271169a4d00d0a65e70aa925b95
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2a0d0e1ab7272094d55dff7fa083e61ee9c3286c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61369115"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527590"
 ---
-# <a name="transactions-and-verification-in-xamarinios"></a>Transactions et la vérification dans Xamarin.iOS
+# <a name="transactions-and-verification-in-xamarinios"></a>Transactions et vérification dans Xamarin. iOS
 
-## <a name="restoring-past-transactions"></a>Restaurer les Transactions passées
+## <a name="restoring-past-transactions"></a>Restauration de transactions passées
 
-Si votre application prend en charge les types de produits qui peuvent être restaurées, vous devez inclure certains éléments d’interface utilisateur pour permettre aux utilisateurs de restaurer ces achats.
-Cette fonctionnalité permet à un client pour ajouter le produit à des appareils supplémentaires ou pour restaurer le produit sur le même appareil après être nettoyées ou la suppression et la réinstallation de l’application. Les types de produits suivants peuvent être restaurées :
+Si votre application prend en charge les types de produits pouvant être restaurés, vous devez inclure des éléments d’interface utilisateur pour permettre aux utilisateurs de restaurer ces achats.
+Cette fonctionnalité permet à un client d’ajouter le produit à des appareils supplémentaires ou de restaurer le produit sur le même appareil après avoir été réinitialisé ou supprimé et réinstallé l’application. Les types de produits suivants peuvent être restaurés:
 
--  Produits non consommables
--  Abonnements renouvelables automatiquement
--  Abonnements gratuits
+- Produits non consommables
+- Abonnements renouvelés automatiquement
+- Abonnements gratuits
 
-Le processus de restauration doit mettre à jour les enregistrements vous conservez sur l’appareil pour répondre à vos produits. Le client peut choisir de restaurer à tout moment, sur leurs appareils. Le processus de restauration envoie à nouveau toutes les transactions précédentes pour cet utilisateur ; le code d’application doit ensuite déterminer l’action à entreprendre avec ces informations (par exemple, la vérification s’il existe déjà un enregistrement de cet achat sur l’appareil et si ne pas, créez un enregistrement de l’achat et l’activation de produit pour l’utilisateur).
+Le processus de restauration doit mettre à jour les enregistrements que vous conservez sur l’appareil pour exécuter vos produits. Le client peut choisir de restaurer à tout moment, sur l’un de ses appareils. Le processus de restauration envoie à nouveau toutes les transactions précédentes pour cet utilisateur. le code d’application doit ensuite déterminer l’action à entreprendre avec ces informations (par exemple, vérifier s’il existe déjà un enregistrement de cet achat sur l’appareil et, si ce n’est pas le cas, créer un enregistrement de l’achat et activer le produit pour l’utilisateur).
 
-### <a name="implementing-restore"></a>Implémentation de restauration
+### <a name="implementing-restore"></a>Implémentation de la restauration
 
-L’interface utilisateur **restaurer** bouton appelle la méthode suivante, ce qui déclenche RestoreCompletedTransactions sur le `SKPaymentQueue`.
+Le bouton **restauration** de l’interface utilisateur appelle la méthode suivante, qui déclenche RestoreCompletedTransactions sur `SKPaymentQueue`le.
 
 ```csharp
 public void Restore()
@@ -39,9 +39,9 @@ public void Restore()
 }
 ```
 
-StoreKit envoie la demande de restauration pour les serveurs d’Apple en mode asynchrone.   
+StoreKit enverra la demande de restauration aux serveurs Apple de manière asynchrone.   
    
-Étant donné que le `CustomPaymentObserver` est inscrit en tant qu’un observateur de la transaction, il recevra les messages lorsque les serveurs Apple répondent. La réponse contiendra toutes les transactions que cet utilisateur effectuées dans cette application (sur tous leurs appareils). Le code parcourt chaque transaction, détecte l’état de restauration et les appels de la `UpdatedTransactions` méthode pour le traiter comme indiqué ci-dessous :
+Étant donné `CustomPaymentObserver` que le est inscrit en tant qu’observateur de transaction, il reçoit des messages lorsque les serveurs d’Apple répondent. La réponse contiendra toutes les transactions que cet utilisateur a déjà effectuées dans cette application (sur tous ses appareils). Le code parcourt chaque transaction, détecte l’état restauré et appelle la `UpdatedTransactions` méthode pour le traiter comme indiqué ci-dessous:
 
 ```csharp
 // called when the transaction status is updated
@@ -67,9 +67,9 @@ default:
 }
 ```
 
-Si aucun produit pouvant être restaurée pour l’utilisateur, `UpdatedTransactions` n’est pas appelée.   
+S’il n’existe aucun produit pouvant être restauré pour l' `UpdatedTransactions` utilisateur, n’est pas appelé.   
    
-Le code de possible la plus simple pour restaurer une transaction donnée dans l’exemple effectue les mêmes actions que quand un achat a lieu, à ceci près que le `OriginalTransaction` propriété est utilisée pour accéder à l’ID de produit :
+Le code le plus simple possible pour restaurer une transaction donnée dans l’exemple effectue les mêmes actions que lorsqu’un achat a lieu, sauf que `OriginalTransaction` la propriété est utilisée pour accéder à l’ID de produit:
 
 ```csharp
 public void RestoreTransaction (SKPaymentTransaction transaction)
@@ -82,11 +82,11 @@ public void RestoreTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-Une implémentation plus sophistiquée peut vérifier autres `transaction.OriginalTransaction` propriétés, telles que le nombre de date et d’accusé de réception d’origine. Ces informations seront utiles pour certains types de produits (tels que les abonnements).
+Une implémentation plus sophistiquée peut vérifier `transaction.OriginalTransaction` d’autres propriétés, telles que la date d’origine et le numéro de réception. Ces informations seront utiles pour certains types de produits (tels que les abonnements).
 
-#### <a name="restore-completion"></a>Restaurer la saisie semi-automatique
+#### <a name="restore-completion"></a>Restauration automatique
 
-Le `CustomPaymentObserver` possède deux méthodes supplémentaires qui seront appelées par StoreKit lorsque le processus de restauration est terminée (correctement ou avec un échec), illustré ci-dessous :
+Le `CustomPaymentObserver` a deux méthodes supplémentaires qui seront appelées par StoreKit lorsque le processus de restauration est terminé (avec succès ou avec un échec), comme indiqué ci-dessous:
 
 ```csharp
 public override void PaymentQueueRestoreCompletedTransactionsFinished (SKPaymentQueue queue)
@@ -99,97 +99,97 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 }
 ```
 
-Dans l’exemple de ces méthodes ne rien font, toutefois, une application réelle peut choisir d’implémenter un message à l’utilisateur ou d’autres fonctionnalités.
+Dans l’exemple, ces méthodes ne font rien, mais une application réelle peut choisir d’implémenter un message à l’utilisateur ou d’autres fonctionnalités.
 
 ## <a name="securing-purchases"></a>Sécurisation des achats
 
-Les deux exemples dans ce document utilise `NSUserDefaults` pour effectuer le suivi des achats :   
+Les deux exemples de ce document utilisent `NSUserDefaults` pour effectuer le suivi des achats:   
    
- **Consommables** – le solde de crédit achats est une simple `NSUserDefaults` valeur entière qui est incrémenté à chaque achat.   
+ **Consommables** : le «solde» des achats de crédit est `NSUserDefaults` une valeur entière simple qui est incrémentée à chaque achat.   
    
- **Non-consommables** – chaque achat de filtre photo est stocké sous la forme d’une paire clé-valeur dans `NSUserDefaults`.
+ **Non-consommables** : chaque achat de filtre photo est stocké sous la forme d' `NSUserDefaults`une paire clé-valeur dans.
 
-À l’aide de `NSUserDefaults` conserve l’exemple de code simple, mais n’offre pas une solution très sécurisée comme il est possible pour les utilisateurs préoccupés par techniquement mettre à jour les paramètres (ignorer le mécanisme de paiement).   
+L' `NSUserDefaults` utilisation de permet de simplifier l’exemple de code, mais n’offre pas une solution très sécurisée, car il est possible pour les utilisateurs de l’esprit technique de mettre à jour les paramètres (en ignorant le mécanisme de paiement).   
    
-Remarque : Applications réelles doivent adopter un mécanisme sécurisé pour le stockage acheté le contenu qui n’est pas soumis aux manipulations d’utilisateur. Cela peut impliquer le chiffrement et/ou d’autres techniques, notamment l’authentification de serveur distant.   
+Remarque : Les applications réelles doivent adopter un mécanisme sécurisé pour stocker le contenu acheté qui n’est pas soumis aux falsifications de l’utilisateur. Cela peut impliquer le chiffrement et/ou d’autres techniques, y compris l’authentification du serveur distant.   
    
- Le mécanisme doit également être conçu pour tirer parti des fonctionnalités intégrées de sauvegarde et de restauration d’iOS, iTunes et iCloud. Cela garantit qu’une fois un utilisateur restaure une sauvegarde de leurs achats précédentes peut être immédiatement.   
+ Le mécanisme doit également être conçu pour tirer parti des fonctionnalités de sauvegarde et de récupération intégrées d’iOS, iTunes et iCloud. Cela garantit qu’une fois qu’un utilisateur a restauré une sauvegarde, ses achats précédents sont immédiatement disponibles.   
    
-Consultez Secure codage Guide d’Apple pour obtenir des instructions plus spécifique à iOS.
+Reportez-vous au Guide de codage sécurisé d’Apple pour plus d’informations sur iOS.
 
-## <a name="receipt-verification-and-server-delivered-products"></a>Vérification de la réception et les produits assurée par le serveur
+## <a name="receipt-verification-and-server-delivered-products"></a>Vérification de réception et produits fournis par le serveur
 
-Les exemples de ce document jusqu'à présent ont est composé uniquement de l’application de communiquer directement avec les serveurs App Store d’effectuer des transactions d’achat, qui déverrouiller les fonctionnalités ou fonctions déjà codées dans l’application.   
+Les exemples de ce document jusqu’à présent ont constitué la seule application qui communique directement avec les serveurs de l’App Store pour effectuer des transactions d’achat, qui déverrouillent des fonctionnalités ou des fonctionnalités déjà codées dans l’application.   
    
-Apple fournit un niveau supplémentaire de sécurité d’achat en autorisant les reçus d’achat être vérifié en toute indépendance par un autre serveur, ce qui peut être utile pour valider une demande avant de remettre le contenu numérique dans le cadre de l’achat (par exemple un livre numérique ou Magazine).   
+Apple offre un niveau supplémentaire de sécurité des achats en permettant aux bons de commande d’être vérifiés indépendamment par un autre serveur, ce qui peut être utile pour valider une demande avant de fournir du contenu numérique dans le cadre d’un achat (par exemple, un livre numérique ou magazine).   
    
- **Produits intégrés** – comme dans les exemples dans ce document, le produit acheté existe en tant que fonctionnalités fournies avec l’application. Un achat dans l’application permet à l’utilisateur à accéder à la fonctionnalité.
-ID de produit sont codées en dur.   
+ **Produits intégrés** : comme les exemples de ce document, le produit en cours d’achat existe en tant que fonctionnalité fournie avec l’application. Un achat dans l’application permet à l’utilisateur d’accéder aux fonctionnalités.
+Les ID de produit sont codés en dur.   
    
- **Produits assurée par le serveur** – le produit se compose d’un contenu téléchargeable qui est stocké sur un serveur distant jusqu'à ce qu’une transaction réussie entraîne le téléchargement de contenu.
-Exemples peuvent inclure la documentation ou problèmes magazines. ID de produit proviennent généralement un serveur externe (où le contenu du produit est également hébergé). Les applications doivent implémenter une solution robuste d’enregistrement lorsqu’une transaction est terminée, afin que si l’échec de téléchargement de contenu peut être tentée de nouveau sans confusion pour l’utilisateur.
+ **Produits fournis par le serveur** : le produit se compose d’un contenu téléchargeable stocké sur un serveur distant jusqu’à ce qu’une transaction réussie provoque le téléchargement du contenu.
+Il peut s’agir par exemple de livres ou de problèmes de magazines. Les ID de produit sont généralement issus d’un serveur externe (où le contenu du produit est également hébergé). Les applications doivent implémenter un moyen fiable d’enregistrer lorsqu’une transaction est terminée, de sorte que si le téléchargement du contenu échoue, elle peut être tentée à nouveau sans déroutant l’utilisateur.
 
-### <a name="server-delivered-products"></a>Produits assurée par le serveur
+### <a name="server-delivered-products"></a>Produits fournis par le serveur
 
-Certains produit son contenu, telles que la documentation et magazines (ou un niveau de jeu) doit être téléchargés à partir d’un serveur distant pendant le processus d’achat. Cela signifie que d’un serveur supplémentaire est nécessaire pour stocker et fournir le contenu du produit après son achat.
+Le contenu de certains produits, tels que des livres et des magazines (ou même un niveau de jeu), doit être téléchargé à partir d’un serveur distant au cours du processus d’achat. Cela signifie qu’un serveur supplémentaire est requis pour stocker et livrer le contenu du produit après son achat.
 
-#### <a name="getting-prices-for-server-delivered-products"></a>Obtenir les prix pour les produits assurée par le serveur
+#### <a name="getting-prices-for-server-delivered-products"></a>Obtention de prix pour les produits fournis par le serveur
 
-Étant donné que les produits sont transmises à distance, il est également possible d’ajouter d’autres produits au fil du temps (sans la mise à jour le code d’application), telles que l’ajout de plus de la documentation ou de nouveaux problèmes d’un magazine. Afin que l’application peut détecter ces produits actualités et les afficher à l’utilisateur, le serveur supplémentaire doit stocker et fournir ces informations.   
+Étant donné que les produits sont remis à distance, il est également possible d’ajouter d’autres produits au fil du temps (sans mettre à jour le code de l’application), tels que l’ajout de livres ou de nouveaux problèmes à un magazine. Pour que l’application puisse découvrir ces produits de News et les afficher à l’utilisateur, le serveur supplémentaire doit stocker et fournir ces informations.   
    
-[![](transactions-and-verification-images/image38.png "Obtenir les prix pour les produits assurée par le serveur")](transactions-and-verification-images/image38.png#lightbox)   
+[![](transactions-and-verification-images/image38.png "Obtention de prix pour les produits fournis par le serveur")](transactions-and-verification-images/image38.png#lightbox)   
    
-1. Informations sur les produits doivent être stockées dans plusieurs endroits : sur votre serveur et dans iTunes Connect. En outre, chaque produit aura des fichiers de contenu associés. Ces fichiers seront transmises après un achat réussi.   
+1. Les informations sur les produits doivent être stockées à plusieurs emplacements: sur votre serveur et dans iTunes Connect. En outre, chaque produit est associé à des fichiers de contenu. Ces fichiers seront remis après un achat réussi.   
    
-2. Lorsque l’utilisateur souhaite acheter un produit, l’application doit déterminer quels produits sont disponibles. Ces informations peuvent être mises en cache, mais il doivent être remises à partir d’un serveur distant où se trouve la liste principale des produits.   
+2. Lorsque l’utilisateur souhaite acheter un produit, l’application doit déterminer les produits disponibles. Ces informations peuvent être mises en cache, mais doivent être fournies à partir d’un serveur distant où la liste principale des produits est stockée.   
    
 3. Le serveur renvoie une liste d’ID de produit pour l’application à analyser.   
    
-4. L’application puis détermine laquelle de ces ID de produit à envoyer à StoreKit pour récupérer les prix et les descriptions.   
+4. L’application détermine ensuite l’ID de produit à envoyer à StoreKit pour récupérer les tarifs et les descriptions.   
    
-5. StoreKit envoie la liste des ID de produit pour les serveurs d’Apple.   
+5. StoreKit envoie la liste des ID de produit aux serveurs Apple.   
    
-6. Les serveurs iTunes répondent avec des informations de produit valide (description et prix actuel).   
+6. Les serveurs iTunes répondent avec des informations de produit valides (description et prix actuel).   
    
-7. L’application `SKProductsRequestDelegate` est passé les informations de produit pour l’affichage à l’utilisateur.
+7. Les informations sur `SKProductsRequestDelegate` le produit pour l’utilisateur sont transmises à l’application.
 
-#### <a name="purchasing-server-delivered-products"></a>Achat de produits assurée par le serveur
+#### <a name="purchasing-server-delivered-products"></a>Achat de produits fournis par le serveur
 
-Étant donné que le serveur à distance nécessite un moyen de valider qu’une demande de contenu est valide (ie. n’a été payé), les informations de réception ne sont transmises pour l’authentification. Le serveur distant transfère ces données à iTunes pour la vérification et, en cas de réussite, inclut le contenu du produit dans la réponse à l’application.   
+Étant donné que le serveur distant requiert un moyen de valider qu’une demande de contenu est valide (c’est-à-dire qu’elle a été payée pour), les informations de réception sont transmises pour l’authentification. Le serveur distant transmet ces données à iTunes pour vérification et, en cas de réussite, intègre le contenu du produit dans la réponse à l’application.   
    
- [![](transactions-and-verification-images/image39.png "Achat de produits assurée par le serveur")](transactions-and-verification-images/image39.png#lightbox)   
+ [![](transactions-and-verification-images/image39.png "Achat de produits fournis par le serveur")](transactions-and-verification-images/image39.png#lightbox)   
    
-1. L’application ajoute un `SKPayment` à la file d’attente. Si nécessaire l’utilisateur sera invité à entrer leur ID Apple et invité à confirmer le paiement.   
+1. L’application ajoute un `SKPayment` à la file d’attente. Si nécessaire, l’utilisateur sera invité à entrer son ID Apple et a demandé à confirmer le paiement.   
    
 2. StoreKit envoie la demande au serveur pour traitement.   
    
-3. Lorsque la transaction est terminée, le serveur répond avec un accusé de réception de transaction.   
+3. Une fois la transaction terminée, le serveur répond avec un accusé de réception de la transaction.   
    
-4. Le `SKPaymentTransactionObserver` sous-classe reçoit l’accusé de réception et le traite. Étant donné que le produit doit être téléchargé à partir d’un serveur, l’application lance une demande réseau au serveur distant.   
+4. La `SKPaymentTransactionObserver` sous-classe reçoit l’accusé de réception et le traite. Étant donné que le produit doit être téléchargé à partir d’un serveur, l’application envoie une demande réseau au serveur distant.   
    
-5. La demande de téléchargement est accompagnée par les données de réception afin que le serveur distant peut vérifier qu’il est autorisé à accéder au contenu. Client réseau de l’application attend une réponse à cette demande.   
+5. La demande de téléchargement est accompagnée des données de réception afin que le serveur distant puisse vérifier qu’il est autorisé à accéder au contenu. Le client réseau de l’application attend une réponse à cette demande.   
    
-6. Lorsque le serveur reçoit une demande de contenu, il analyse les données de réception et envoie une demande directement aux serveurs iTunes pour vérifier l’accusé de réception est pour une transaction valide. Le serveur doit utiliser une logique pour déterminer s’il faut envoyer la demande à l’URL de production ou bac à sable. Apple suggère toujours à l’aide de l’URL de production et en basculant vers le bac à sable si votre réception état 21007 (réception d’un bac à sable envoyée au serveur de production). Reportez-vous à Apple [Guide de programmation de la Validation de réception](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) pour plus d’informations.
+6. Lorsque le serveur reçoit une requête de contenu, il analyse les données de réception et envoie une demande directement aux serveurs iTunes pour vérifier que l’accusé de réception est destiné à une transaction valide. Le serveur doit utiliser une certaine logique pour déterminer si la demande doit être envoyée à l’URL de production ou de bac à sable (sandbox). Apple suggère toujours d’utiliser l’URL de production et de basculer vers le bac à sable (sandbox) si votre état de réception 21007 (réception bac à sable envoyée au serveur de production). Pour plus d’informations, consultez le [Guide de programmation de validation](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) de tickets d’Apple.
    
-7. iTunes vérifie l’accusé de réception et retourne un état de zéro si elle est valide.   
+7. iTunes vérifie l’accusé de réception et retourne l’état zéro s’il est valide.   
    
-8. Le serveur attend de réponse des iTunes. S’il reçoit une réponse valide, le code devrait localiser le fichier de contenu produit associé à inclure dans la réponse à l’application.   
+8. Le serveur attend une réponse iTunes. S’il reçoit une réponse valide, le code doit localiser le fichier de contenu du produit associé à inclure dans la réponse à l’application.   
   
-9. L’application reçoit et traite la réponse, l’enregistrement du contenu du produit au système de fichiers de l’appareil.   
+9. L’application reçoit et analyse la réponse, en enregistrant le contenu du produit dans le système de fichiers de l’appareil.   
    
-10. L’application active le produit et appelle ensuite de StoreKit `FinishTransaction`. L’application peut afficher puis éventuellement le contenu acheté (par exemple, afficher la première page d’un livre achetée ou d’un problème magazine).
+10. L’application active le produit, puis appelle StoreKit `FinishTransaction`. L’application peut éventuellement afficher le contenu acheté (par exemple, afficher la première page d’un livre ou d’un numéro de magazine acheté).
 
-Une autre implémentation pour les fichiers de contenu de produit de très grande taille peut impliquer simplement stocker la réception de la transaction à l’étape 9 de # afin de la transaction peut être effectuée rapidement et en fournissant une interface utilisateur pour l’utilisateur à télécharger le contenu réel de produit à un moment ultérieur. La demande de téléchargement suivantes peut renvoyer l’accusé de réception stockée pour accéder au fichier de contenu produit requis.
+Une autre implémentation pour les fichiers de contenu de très grande taille du produit pourrait impliquer simplement le stockage de la réception de la transaction à l’étape #9 afin que la transaction puisse être terminée rapidement et la fourniture d’une interface utilisateur permettant à l’utilisateur de télécharger le contenu réel du produit. à un moment ultérieur. La demande de téléchargement suivante peut renvoyer la réception stockée pour accéder au fichier de contenu du produit requis.
 
-### <a name="writing-server-side-receipt-verification-code"></a>Écriture de Code de vérification de réception du côté serveur
+### <a name="writing-server-side-receipt-verification-code"></a>Écriture du code de vérification de l’accusé de réception côté serveur
 
-Validation d’un accusé de réception dans le code côté serveur peut être effectuée avec une simple requête HTTP POST demande/réponse qui comprend les étapes #5 à 8 # dans le diagramme de flux de travail.   
+La validation d’un accusé de réception dans le code côté serveur peut être effectuée à l’aide d’une simple requête/réponse HTTP POSTÉRIEURe qui englobe les étapes #5 par #8 dans le diagramme du flux de travail.   
    
-Extraire le `SKPaymentTansaction.TransactionReceipt` propriété dans l’application. Il s’agit de données qui doivent être envoyé à iTunes pour la vérification (étape #5).
+Extrayez la `SKPaymentTansaction.TransactionReceipt` propriété dans l’application. Il s’agit des données qui doivent être envoyées à iTunes pour vérification (étape #5).
 
-Au format Base64 les données de réception de transaction (soit à l’étape #5 ou #6).
+Coder en base64 les données de réception de la transaction (à l’étape #5 ou #6).
 
-Créer une charge JSON simple comme suit :
+Créez une charge utile JSON simple comme suit:
 
 ```csharp
 {
@@ -197,9 +197,9 @@ Créer une charge JSON simple comme suit :
 }
 ```
 
-HTTP POST le JSON sur [ https://buy.itunes.apple.com/verifyReceipt ](https://buy.itunes.apple.com/verifyReceipt) pour la production ou [ https://sandbox.itunes.apple.com/verifyReceipt ](https://sandbox.itunes.apple.com/verifyReceipt) pour le test.   
+HTTP publiez le JSON [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) à pour production [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) ou à des fins de test.   
    
- La réponse JSON contient les clés suivantes :
+ La réponse JSON contiendra les clés suivantes:
 
 ```csharp
 {
@@ -208,6 +208,6 @@ HTTP POST le JSON sur [ https://buy.itunes.apple.com/verifyReceipt ](https://buy
 }
 ```
 
-Un état de zéro indique un accusé de réception valide. Votre serveur peut continuer à remplir le contenu du produit acheté. La clé de l’accusé de réception contient un dictionnaire JSON avec les mêmes propriétés que le `SKPaymentTransaction` objet qui a été reçu par l’application, pour que le code du serveur puisse interroger ce dictionnaire pour récupérer des informations telles que le product_id et la quantité de l’achat.
+L’état zéro indique un accusé de réception valide. Votre serveur peut traiter le contenu du produit acheté. La clé de réception contient un dictionnaire JSON avec les mêmes propriétés que `SKPaymentTransaction` l’objet qui a été reçu par l’application, de sorte que le code serveur peut interroger ce dictionnaire pour récupérer des informations telles que le product_id et la quantité de l’achat.
 
-Consultez d’Apple [Guide de programmation de la Validation de réception](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html) documentation pour plus d’informations.
+Pour plus d’informations, consultez la documentation relative au [Guide de programmation de validation](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html) de tickets d’Apple.

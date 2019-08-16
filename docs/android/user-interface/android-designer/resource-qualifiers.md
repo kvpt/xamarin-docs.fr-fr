@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: d9f624084c83b318487f1162a9a2350f9e2cc409
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 750cf801d8ae9dfe63f9b2259d4a3f6a386a4404
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510499"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523236"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Qualificateurs de ressources et options de visualisation
 
@@ -29,9 +29,9 @@ Vous pouvez accéder aux **Options du qualificateur de ressource** en cliquant s
 
 Cette boîte de dialogue présente des menus déroulants pour les qualificateurs de ressources suivants:
 
--   **Langue** &ndash; Affiche les ressources linguistiques disponibles et propose une option permettant d’ajouter de nouvelles ressources de langue/région.
+- **Langue** &ndash; Affiche les ressources linguistiques disponibles et propose une option permettant d’ajouter de nouvelles ressources de langue/région.
 
--   **Mode interface utilisateur** Répertorie les modes d’affichage (par exemple, **station d’accueil de voiture** et station d’accueil de bureau), ainsi que les directions de disposition.  &ndash;
+- **Mode interface utilisateur** Répertorie les modes d’affichage (par exemple, **station d’accueil de voiture** et station d’accueil de bureau), ainsi que les directions de disposition. &ndash;
 
 Chacun de ces menus déroulants ouvre de nouvelles boîtes de dialogue où vous pouvez sélectionner et configurer des qualificateurs de ressources (comme expliqué ci-dessous).
 
@@ -71,11 +71,11 @@ L’icône Paramètres de la **barre d’action** est disponible à gauche de l�
 
 Cette icône ouvre un menu segue de dialogue qui permet de sélectionner l’un des trois modes d’Barre d’action:
 
--   **Standard** &ndash; Est constitué soit d’un logo, soit d’une icône et d’un texte de titre avec un sous-titre facultatif.
+- **Standard** &ndash; Est constitué soit d’un logo, soit d’une icône et d’un texte de titre avec un sous-titre facultatif.
 
--   **Liste** &ndash; Mode de navigation de la liste. Au lieu d’un texte de titre statique, ce mode présente un menu de liste pour la navigation au sein de l’activité (autrement dit, il peut être présenté à l’utilisateur sous la forme d’une liste déroulante).
+- **Liste** &ndash; Mode de navigation de la liste. Au lieu d’un texte de titre statique, ce mode présente un menu de liste pour la navigation au sein de l’activité (autrement dit, il peut être présenté à l’utilisateur sous la forme d’une liste déroulante).
 
--   **Onglets** &ndash; Mode de navigation par onglets. Au lieu d’un texte de titre statique, ce mode présente une série d’onglets pour la navigation au sein de l’activité.
+- **Onglets** &ndash; Mode de navigation par onglets. Au lieu d’un texte de titre statique, ce mode présente une série d’onglets pour la navigation au sein de l’activité.
 
 ## <a name="themes"></a>Thèmes
 
@@ -111,9 +111,9 @@ Vous pouvez accéder aux **Options du qualificateur de ressource** en cliquant s
 
 Cette boîte de dialogue présente des menus déroulants pour les qualificateurs de ressources suivants:
 
--   **Langue** &ndash; Affiche les ressources linguistiques disponibles et propose une option permettant d’ajouter de nouvelles ressources de langue/région.
+- **Langue** &ndash; Affiche les ressources linguistiques disponibles et propose une option permettant d’ajouter de nouvelles ressources de langue/région.
 
--   **Mode interface utilisateur** Répertorie les modes d’affichage (par exemple, **station d’accueil de voiture** et station d’accueil de bureau), ainsi que les directions de disposition.  &ndash;
+- **Mode interface utilisateur** Répertorie les modes d’affichage (par exemple, **station d’accueil de voiture** et station d’accueil de bureau), ainsi que les directions de disposition. &ndash;
 
 Chacun de ces menus déroulants ouvre de nouvelles boîtes de dialogue où vous pouvez sélectionner et configurer des qualificateurs de ressources (comme expliqué ci-dessous).
 
@@ -153,11 +153,11 @@ L’icône Paramètres de la **barre d’action** est disponible à gauche de l�
 
 Cette icône ouvre un menu segue de dialogue qui permet de sélectionner l’un des trois modes d’Barre d’action:
 
--   **Standard** &ndash; Est constitué d’un logo ou d’une icône et d’un texte de titre avec un sous-titre facultatif.
+- **Standard** &ndash; Est constitué d’un logo ou d’une icône et d’un texte de titre avec un sous-titre facultatif.
 
--   **Liste** &ndash; Mode de navigation de la liste. Au lieu d’un texte de titre statique, ce mode présente un menu de liste pour la navigation au sein de l’activité (autrement dit, il peut être présenté à l’utilisateur sous la forme d’une liste déroulante).
+- **Liste** &ndash; Mode de navigation de la liste. Au lieu d’un texte de titre statique, ce mode présente un menu de liste pour la navigation au sein de l’activité (autrement dit, il peut être présenté à l’utilisateur sous la forme d’une liste déroulante).
 
--   **Onglets** &ndash; Mode de navigation par onglets. Au lieu d’un texte de titre statique, ce mode présente une série d’onglets pour la navigation au sein de l’activité.
+- **Onglets** &ndash; Mode de navigation par onglets. Au lieu d’un texte de titre statique, ce mode présente une série d’onglets pour la navigation au sein de l’activité.
 
 ## <a name="themes"></a>Thèmes
 

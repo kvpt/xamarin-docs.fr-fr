@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dd935e6feb14d9077c1ad98a2e7e10e67646dc4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f77a4f2f31c72726515e33dc273616f175df2891
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650114"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528526"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Création d’objets d’interface utilisateur dans Xamarin. iOS
 
@@ -28,9 +28,9 @@ Tous les contrôles présentés dans ce chapitre se trouvent dans l’espace de 
 
 Vous pouvez modifier les mises en page et les contrôles de l’interface utilisateur de trois façons:
 
--  **[Concepteur iOS Xamarin](~/ios/user-interface/designer/index.md)** : utilisez le concepteur de disposition intégré à Xamarin pour concevoir des écrans. Double-cliquez sur fichiers Storyboard ou XIB à modifier avec le concepteur intégré.
--  **Xcode Interface Builder** : faites glisser les contrôles sur vos dispositions d’écran avec Interface Builder. Ouvrez le fichier Storyboard ou XIB dans Xcode en cliquant avec le bouton droit sur le fichier dans le **panneau solutions** et en choisissant **ouvrir avec > Interface Builder Xcode**.
--  **À C# l’aide** de, les contrôles peuvent également être construits par programmation avec du code et ajoutés à la hiérarchie d’affichage.
+- **[Concepteur iOS Xamarin](~/ios/user-interface/designer/index.md)** : utilisez le concepteur de disposition intégré à Xamarin pour concevoir des écrans. Double-cliquez sur fichiers Storyboard ou XIB à modifier avec le concepteur intégré.
+- **Xcode Interface Builder** : faites glisser les contrôles sur vos dispositions d’écran avec Interface Builder. Ouvrez le fichier Storyboard ou XIB dans Xcode en cliquant avec le bouton droit sur le fichier dans le **panneau solutions** et en choisissant **ouvrir avec > Interface Builder Xcode**.
+- **À C# l’aide** de, les contrôles peuvent également être construits par programmation avec du code et ajoutés à la hiérarchie d’affichage.
 
 Vous pouvez ajouter de nouveaux fichiers Storyboard et XIB en cliquant avec le bouton droit sur un projet iOS et en choisissant **ajouter > nouveau fichier...** .
 
@@ -76,7 +76,7 @@ Vous pouvez faire glisser les contrôles sur le Aire de conception à partir de 
 
  [![](creating-ui-objects-images/image5a.png "Bibliothèque d’objets Xcode")](creating-ui-objects-images/image5a.png#lightbox)
 
-Lorsque vous concevez votre interface utilisateur avec Interface Builder vous devez créer une **sortie** pour chaque contrôle que vous souhaitez référencer C#. Pour ce faire, vous activez l' **éditeur** de l’Assistant à l’aide du **bouton centrer** de la barre d’outils Xcode:
+Lorsque vous concevez votre interface utilisateur avec Interface Builder vous devez créer une **sortie** pour chaque contrôle que vous souhaitez référencer C#. Pour ce faire, vous activez l' **éditeur** de l’Assistant à l’aide du bouton centrer de la barre d’outils Xcode:
 
  [![](creating-ui-objects-images/image6a.png "Bouton de l’éditeur de l’Assistant")](creating-ui-objects-images/image6a.png#lightbox)
 
@@ -92,12 +92,12 @@ Pour plus d’informations sur l’intégration de l’Interface Builder de Xcod
 
 Si vous décidez de créer par programmation un objet d’interface utilisateur à C# l’aide de (dans un contrôleur de vue ou de vue, par exemple), procédez comme suit:
 
--  Déclarez un champ au niveau de la classe pour l’objet d’interface utilisateur. Créez le contrôle lui-même une `ViewDidLoad` seule fois, par exemple. L’objet peut ensuite être référencé dans toutes les méthodes de cycle de vie du contrôleur d’affichage (par exemple,
+- Déclarez un champ au niveau de la classe pour l’objet d’interface utilisateur. Créez le contrôle lui-même une `ViewDidLoad` seule fois, par exemple. L’objet peut ensuite être référencé dans toutes les méthodes de cycle de vie du contrôleur d’affichage (par exemple,
 `ViewWillAppear`).
--  Créez un `CGRect` qui définit le frame du contrôle (ses coordonnées X et Y sur l’écran, ainsi que sa largeur et sa hauteur). Vous devez vous assurer que vous disposez d’une `using CoreGraphics` directive pour ce.
--  Appelez le constructeur pour créer et assigner le contrôle.
--  Définissez des propriétés ou des gestionnaires d’événements.
--  Appelez `Add()` pour ajouter le contrôle à la hiérarchie d’affichage.
+- Créez un `CGRect` qui définit le frame du contrôle (ses coordonnées X et Y sur l’écran, ainsi que sa largeur et sa hauteur). Vous devez vous assurer que vous disposez d’une `using CoreGraphics` directive pour ce.
+- Appelez le constructeur pour créer et assigner le contrôle.
+- Définissez des propriétés ou des gestionnaires d’événements.
+- Appelez `Add()` pour ajouter le contrôle à la hiérarchie d’affichage.
 
 Voici un exemple simple de création d’un `UILabel` dans un contrôleur d’affichage C#à l’aide de:
 

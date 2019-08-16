@@ -1,93 +1,93 @@
 ---
-title: Génération de code .xib dans Xamarin.iOS
-description: Ce document décrit comment Xamarin.iOS génère du code pour mapper les fichiers .xib vers C#, rendre des contrôles visuels accessibles par programmation.
+title: Génération de code. XIB dans Xamarin. iOS
+description: Ce document décrit comment Xamarin. iOS génère du code pour mapper des fichiers. C#XIB à, ce qui rend les contrôles visuels accessibles par programme.
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 57988374b4383f5659e29edff3834958b8f99f1b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 280802adbb5326854b4d47045bbb1569dd123f30
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035910"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527332"
 ---
-# <a name="xib-code-generation-in-xamarinios"></a>Génération de code .xib dans Xamarin.iOS
+# <a name="xib-code-generation-in-xamarinios"></a>Génération de code. XIB dans Xamarin. iOS
 
 > [!IMPORTANT]
->  Ce document explique de Visual Studio pour l’intégration du Mac avec Interface Builder de Xcode uniquement, comme les Actions et Outlets ne sont pas utilisés dans le Concepteur de Xamarin pour iOS. Pour plus d’informations sur le concepteur iOS, veuillez consulter la [concepteur iOS](~/ios/user-interface/designer/index.md) document.
+>  Ce document explique l’intégration de Visual Studio pour Mac à la Interface Builder de Xcode uniquement, car les actions et les prises ne sont pas utilisées dans le Xamarin Designer pour iOS. Pour plus d’informations sur le concepteur iOS, consultez le document du [Concepteur iOS](~/ios/user-interface/designer/index.md) .
 
-L’outil d’Interface Builder de Apple i (« b ») peut être utilisé pour concevoir visuellement des interfaces utilisateur. Les définitions d’interface créées par IB sont enregistrées dans **.xib** fichiers. Widgets et autres objets dans **.xib** fichiers peuvent être attribués à une « classe identité », qui peut être un type personnalisé défini par l’utilisateur. Cela vous permet de personnaliser le comportement de widgets et d’écrire des widgets personnalisés.
+L’outil Apple Interface Builder («IB») peut être utilisé pour concevoir visuellement des interfaces utilisateur. Les définitions d’interface créées par IB sont enregistrées dans des fichiers **. XIB** . Les widgets et autres objets dans les fichiers **. XIB** peuvent recevoir une «identité de classe», qui peut être un type personnalisé défini par l’utilisateur. Cela vous permet de personnaliser le comportement des widgets et d’écrire des widgets personnalisés.
 
-Ces classes d’utilisateur sont normalement des sous-classes de classes de contrôleur d’interface utilisateur. Ils ont *outlets* (analogues aux propriétés) et *actions* (analogue aux événements) qui peuvent être connectés à des objets d’interface. Lors de l’exécution, lorsque le fichier IB est chargé, les objets sont créés, et les prises de courant et les actions sont connectées aux différents objets interface utilisateur dynamiquement. Lorsque vous définissez ces classes managées, vous devez définir toutes les actions et outlets pour correspondre à ceux qui attend IB. Visual Studio pour Mac utilise un modèle semblable à code-behind pour simplifier cela. Cela est similaire à ce que fait Xcode pour Objective-C, mais les conventions et le modèle de génération de code ont été modifiées pour être plus familières aux développeurs de .NET.
+Ces classes d’utilisateur sont normalement des sous-classes de classes de contrôleur d’interface utilisateur. Ils possèdent des *prises* (analogues aux propriétés) et des *actions* (analogues aux événements) qui peuvent être connectées à des objets d’interface. Lors de l’exécution, lorsque le fichier IB est chargé, les objets sont créés, et les prises et actions sont connectées aux différents objets d’interface utilisateur de façon dynamique. Lors de la définition de ces classes managées, vous devez définir toutes les actions et prises correspondant à celles attendues par IB. Visual Studio pour Mac utilise un modèle de type CodeBehind pour simplifier cela. Cela est similaire à celui de Xcode pour objective-C, mais le modèle et les conventions de génération de code ont été modifiés pour être plus familiers aux développeurs .NET.
 
-Utilisation de **.xib** fichiers n'est pas actuellement pris en charge dans Xamarin.iOS pour Visual Studio.
+L’utilisation des fichiers **. XIB** n’est pas prise en charge actuellement dans Xamarin. IOS pour Visual Studio.
 
-## <a name="xib-files-and-custom-classes"></a>fichiers .xib et Classes personnalisées
+## <a name="xib-files-and-custom-classes"></a>Fichiers. XIB et classes personnalisées
 
-Ainsi qu’à l’aide des types existants à partir de Cocoa Touch, il est possible de définir des types personnalisés dans **.xib** fichiers. Il est également possible d’utiliser des types qui sont définis dans d’autres **.xib** fichiers, ou définie purement dans C# code. Actuellement, Interface Builder ne connaît pas les détails des types définis en dehors de le **.xib** de fichiers, donc il ne sera pas les répertorier ou afficher leurs prises personnalisés et les actions. Suppression de cette limitation est prévue pour un certain temps à l’avenir.
+En plus d’utiliser les types existants de cacao Touch, il est possible de définir des types personnalisés dans les fichiers **. XIB** . Il est également possible d’utiliser des types définis dans d’autres fichiers **. XIB** , ou définis uniquement dans C# le code. Actuellement, Interface Builder n’a pas connaissance des détails des types définis en dehors du fichier **. XIB actuel.** il ne les répertorie pas ou n’affiche pas leurs prises et leurs actions personnalisées. La suppression de cette limitation est prévue dans le futur.
 
-Classes personnalisées peuvent être définies dans un **.xib** fichier à l’aide de la commande « Ajouter la sous-classe » dans l’onglet « Classes » de l’Interface Builder. Nous faisons référence à ces en tant que classes de « Code-behind ». Si le **.xib** fichier a un «. xib.designer.cs « fichier équivalent dans le projet, puis Visual Studio pour Mac sera automatiquement remplir avec des définitions de classes partielles pour toutes les classes personnalisées dans le **.xib**. Nous faisons référence à ces classes partielles en tant que « classes de concepteur ».
+Les classes personnalisées peuvent être définies dans un fichier **. XIB** à l’aide de la commande «Ajouter une sous-classe» sous l’onglet «classes» de Interface Builder. Nous faisons référence à ceux-ci en tant que classes «CodeBehind». Si le fichier **. XIB** a un fichier équivalent «. XIB.Designer.cs» dans le projet, Visual Studio pour Mac le remplit automatiquement avec les définitions de classes partielles pour toutes les classes personnalisées dans le fichier **. XIB**. Nous faisons référence à ces classes partielles comme «classes de concepteur».
 
 ## <a name="generating-code"></a>Génération du code
 
-Pour toute  **{0}.xib** fichier avec une action de génération *Page*, si un  **{0}. xib.designer.cs** fichier existe également dans le projet, Visual Studio pour Mac générer des classes partielles dans le fichier concepteur pour toutes les classes d’utilisateur, il peut trouver dans le **.xib** fichier, avec des propriétés pour les prises de courant et méthodes partielles pour toutes les actions. Génération de code est activée simplement par la présence de ce fichier.
+Pour tout  **{0}fichier. XIB** avec une action de génération de *page*, si un  **{0}fichier. XIB.Designer.cs** existe également dans le projet, Visual Studio pour Mac génère des classes partielles dans le fichier de concepteur pour toutes les classes d’utilisateur qu’il peut être trouvé dans le fichier **. XIB** , avec les propriétés des prises et des méthodes partielles pour toutes les actions. La génération de code est activée simplement par la présence de ce fichier.
 
-Le fichier de concepteur est automatiquement mis à jour lorsque le **.xib** changements de fichier et Visual Studio pour Mac a regagné le focus. Le fichier de concepteur ne doit pas être modifié manuellement, comme les modifications seront remplacée prochaine Visual Studio pour les mises à jour Mac le fichier.
+Le fichier du concepteur est automatiquement mis à jour lorsque le fichier **. XIB** est modifié et que Visual Studio pour Mac réobtient le focus. Le fichier de concepteur ne doit pas être modifié manuellement, car les modifications seront remplacées la prochaine fois que Visual Studio pour Mac met à jour le fichier.
 
-## <a name="registration-and-namespaces"></a>L’inscription et les espaces de noms
+## <a name="registration-and-namespaces"></a>Inscription et espaces de noms
 
-Visual Studio pour Mac génère les classes de concepteur à l’aide d’espace de noms du projet par défaut pour l’emplacement du fichier de concepteur, pour le rendre cohérent avec namespacing de projet .NET normal. L’espace de noms de fichiers de concepteur est déterminé par « par défaut namespace » du projet et ses paramètres « Stratégies d’appellation .NET ». Prenez garde que si l’espace de noms par défaut de votre projet change, MD sera régénérer les classes dans le nouvel espace de noms est donc possible que vos classes partielles ne correspondent pas à.
+Visual Studio pour Mac génère les classes de concepteur à l’aide de l’espace de noms par défaut du projet pour l’emplacement du fichier de concepteur, afin de le rendre cohérent avec le projet .NET normal Namespacing. L’espace de noms des fichiers de concepteur est piloté par l’espace de noms par défaut du projet et ses paramètres «stratégies de nommage .NET». ATTENTION: si l’espace de noms par défaut de votre projet change, MD régénère les classes dans le nouvel espace de noms. vous pouvez donc constater que vos classes partielles ne correspondent plus.
 
-Pour rendre la classe détectable par le runtime Objective-C, Visual Studio pour Mac s’applique une `[Register (name)]` à la classe d’attributs. Bien que Xamarin.iOS enregistre automatiquement `NSObject`-les classes dérivées, elle utilise les noms .NET qualifié complet. L’attribut appliqué par Visual Studio pour Mac remplace ainsi pour vous assurer de chaque classe est inscrit avec le nom utilisé dans le **.xib** fichier. Si vous utilisez des classes personnalisées dans IB sans utiliser Visual Studio pour Mac pour générer des fichiers de concepteur, vous devrez peut-être appliquer ceci manuellement pour rendre vos classes gérées correspondent aux noms de classe Objective-C attendus.
+Pour rendre la classe détectable par le runtime objective-C, Visual Studio pour Mac applique un `[Register (name)]` attribut à la classe. Bien que Xamarin. iOS inscrive `NSObject`automatiquement les classes dérivées de, il utilise les noms .net complets. L’attribut appliqué par Visual Studio pour Mac Substitue cela pour garantir que chaque classe est inscrite avec le nom utilisé dans le fichier **. XIB** . Si vous utilisez des classes personnalisées en IB sans utiliser Visual Studio pour Mac pour générer des fichiers de concepteur, vous devrez peut-être les appliquer manuellement pour que vos classes managées correspondent aux noms de classe objective-C attendus.
 
-Les classes ne peuvent pas être définies dans plusieurs **.xib**, ou ils entrent en conflit.
+Les classes ne peuvent pas être définies dans plus d’un **. XIB**, ou elles sont en conflit.
 
-## <a name="non-designer-class-parts"></a>Parties de la classe de concepteur non
+## <a name="non-designer-class-parts"></a>Parties de classe non concepteur
 
-Concepteurs classes partielles ne sont pas destinées à être utilisé en tant que-est. Outlets sont privées, et aucune classe de base n’est spécifié. Il est probable que chaque classe aura une partie de « non concepteur » classe correspondante dans un autre fichier, qui définit la classe de base, qui utilise ou expose les prises et définit des constructeurs qui sont requis pour instancier la classe à partir du code natif lors du chargement de la **.xib**. La valeur par défaut **.xib** modèles pour ce faire, mais pour les classes personnalisées supplémentaires que vous définissez dans un **.xib**, vous devez ajouter manuellement la partie non concepteur.
+Les classes partielles du concepteur ne sont pas destinées à être utilisées telles quelles. Les prises sont privées et aucune classe de base n’est spécifiée. Il est supposé que chaque classe aura une partie de classe «non-concepteur» correspondante dans un autre fichier, qui définit la classe de base, utilise ou expose les prises et définit des constructeurs qui sont requis pour instancier la classe à partir du code natif lors du chargement de **. XIB** . Les modèles default **. XIB** font cela, mais pour toutes les classes personnalisées supplémentaires que vous définissez dans un **. XIB**, vous devez ajouter manuellement la partie non du concepteur.
 
-La raison à cela est le besoin de flexibilité. Par exemple, plusieurs classes de code-behind peut sous-classe qu'un commun géré classe abstraite, que les sous-classes de la classe pour être sous-classé par IB.
+Cela est dû à la flexibilité. Par exemple, plusieurs classes CodeBehind peuvent sous-classe une classe abstraite managée commune, qui sous-classe la classe à sous-classée par IB.
 
-Il est classique placer ces éléments un  **{0}. xib.cs** en regard du fichier le  **{0}. xib.designer.cs** fichier de concepteur.
+Il est conventionnel de les placer dans un  **{0}fichier. XIB.cs** à côté du  **{0}fichier. XIB.Designer.cs** designer.
 
 <a name="generated" />
 
-## <a name="generated-actions-and-outlets"></a>Outlets et Actions générées
+## <a name="generated-actions-and-outlets"></a>Actions et prises générées
 
-Dans les classes de concepteur partielles, Visual Studio pour Mac génère des propriétés correspondant à n’importe quel prises connectés définis dans IB et méthodes partielles correspondant à toutes les actions connectées.
+Dans les classes de concepteur partiel, Visual Studio pour Mac génère des propriétés correspondant à des prises connectées définies en IB, et des méthodes partielles correspondant à toutes les actions connectées.
 
 ### <a name="outlet-properties"></a>Propriétés de la sortie
 
-Classes de concepteur contiennent des propriétés correspondant à toutes les prises définis sur la classe personnalisée. Le fait qu’il s’agit de propriétés est un détail d’implémentation de la Xamarin.iOS vers pont Objective C, pour activer la liaison tardive. Vous devez envisager les équivalents aux champs privés, destinées à être utilisée uniquement à partir de la classe code-behind. Si vous souhaitez les rendre publiques, ajouter des propriétés d’accesseur à la partie non-Concepteur de classes, comme vous le feriez pour tout autre champ privé.
+Les classes de concepteur contiennent des propriétés correspondant à toutes les prises définies sur la classe personnalisée. Le fait qu’il s’agit de propriétés est un détail d’implémentation du pont Xamarin. iOS vers objective C, pour permettre la liaison tardive. Vous devez les considérer comme équivalents à des champs privés, destinés à être utilisés uniquement à partir de la classe CodeBehind. Si vous souhaitez les rendre publics, ajoutez des propriétés d’accesseur à la partie non de classe de concepteur, comme vous le feriez pour tout autre champ privé.
 
-Si les propriétés de la sortie sont définies pour avoir un type de `id` (équivalent à `NSObject`) puis le Générateur de code du concepteur actuellement détermine que le type possible plus fort basé sur les objets connectés à cette sortie, pour des raisons pratiques.
-Toutefois, cela ne peut pas être pris en charge dans les versions ultérieures, il est donc recommandé que vous tapez explicitement fortement les prises lors de la définition de la classe personnalisée.
+Si les propriétés de la sortie sont définies de façon `id` à avoir un `NSObject`type (équivalent à), le générateur de code du concepteur détermine actuellement le type le plus fort possible en fonction des objets connectés à cette sortie, pour des raisons pratiques.
+Toutefois, cela n’est peut-être pas pris en charge dans les versions ultérieures. il est donc recommandé de taper explicitement les prises lors de la définition de la classe personnalisée.
 
-### <a name="action-properties"></a>Propriétés d’une action
+### <a name="action-properties"></a>Propriétés de l’action
 
-Classes de concepteur contiennent des méthodes partielles correspondant à toutes les actions définies sur la classe personnalisée. Il s’agit de méthodes sans implémentation. L’objectif des méthodes partielles est double :
+Les classes de concepteur contiennent des méthodes partielles correspondant à toutes les actions définies sur la classe personnalisée. Il s’agit de méthodes sans implémentation. L’objectif des méthodes partielles est double:
 
-1.  Si vous tapez `partial` dans le corps de la classe de la partie de la classe de Concepteur de non, Visual Studio pour Mac offre à la saisie semi-automatique les signatures de toutes les méthodes partielles non implémentée.
-2.  Les signatures de méthode partielle ont un attribut appliqué, ce qui les expose au monde Objective-C, ils peuvent obtenir traité en tant que l’action correspondante.
+1. Si vous tapez `partial` dans le corps de classe de la partie non de la classe de concepteur, Visual Studio pour Mac offrira la saisie semi-automatique des signatures de toutes les méthodes partielles non implémentées.
+2. Les signatures de méthode partielles ont un attribut appliqué qui les expose au monde objective-C, afin qu’ils puissent être gérés en tant qu’action correspondante.
 
 
-Si vous le souhaitez, vous pouvez ignorer la méthode partielle et implémenter l’action en appliquant l’attribut à une autre méthode ou laissez-le passer à une classe de base.
+Si vous le souhaitez, vous pouvez ignorer la méthode partielle et implémenter l’action en appliquant l’attribut à une autre méthode, ou le laisser passer à une classe de base.
 
-Si les actions sont définies pour avoir un type d’expéditeur de `id` (équivalent à `NSObject`), puis le Générateur de code du concepteur actuellement détermine que le type possible plus fort basé sur les objets connectés à cette action. Toutefois, cela ne peut pas être pris en charge dans les versions ultérieures, il est donc recommandé que vous tapez explicitement fortement les actions lors de la définition de la classe personnalisée.
+Si les actions sont définies pour avoir un type d’expéditeur `id` (équivalant `NSObject`à), le générateur de code du concepteur détermine actuellement le type le plus fort possible en fonction des objets connectés à cette action. Toutefois, cela n’est peut-être pas pris en charge dans les versions ultérieures. il est donc recommandé de taper explicitement les actions lors de la définition de la classe personnalisée.
 
-Notez que ces méthodes partielles sont créés uniquement pour C#, car le CodeDOM ne prend en charge les méthodes partielles, ils ne sont pas générés pour les autres langues.
+Notez que ces méthodes partielles sont créées uniquement C#pour, car CodeDom ne prend pas en charge les méthodes partielles, donc elles ne sont pas générées pour d’autres langages.
 
-## <a name="cross-xib-class-usage"></a>Utilisation des classes de cross-XIB
+## <a name="cross-xib-class-usage"></a>Utilisation des classes Cross-XIB
 
-Parfois, les utilisateurs souhaitent faire référence à la même classe à partir de plusieurs **.xib** fichiers, par exemple avec des contrôleurs de l’onglet. Cela est possible en explicitement faisant référence à la définition de classe à partir d’un autre **.xib** de fichiers, ou en les définissant le même nom de classe dans la seconde **.xib**.
+Parfois, les utilisateurs souhaitent faire référence à la même classe à partir de plusieurs fichiers **. XIB** , par exemple avec les contrôleurs d’onglets. Pour ce faire, il suffit de référencer explicitement la définition de classe à partir d’un autre fichier **. XIB** ou de redéfinir le même nom de classe dans le second **. XIB**.
 
-Le dernier cas peut être problématique, car Visual Studio pour le traitement de Mac **.xib** fichiers individuellement. Il ne peut pas automatiquement détecter et fusionner des définitions en double, donc vous risquez présentant des conflits appliquant l’attribut d’inscrire plusieurs fois lors de la même classe partielle est définie dans plusieurs fichiers de concepteur. Les versions récentes de Visual Studio pour Mac tentent de résoudre ce problème, mais il peut ne pas toujours fonctionner comme prévu. Dans un avenir cela est susceptible de devenir non pris en charge et au lieu de cela, Visual Studio pour Mac rendra tous les types définis dans toutes les **.xib** fichiers et le code managé dans le projet directement visible de tous les **.xib** fichiers.
+Ce dernier cas peut être problématique en raison de Visual Studio pour Mac traitement des fichiers **. XIB.** Il ne peut pas détecter et fusionner automatiquement les définitions dupliquées. vous risquez donc de vous retrouver avec des conflits d’application de l’attribut Register à plusieurs moments lorsque la même classe partielle est définie dans plusieurs fichiers de concepteur. Les versions récentes de Visual Studio pour Mac tentent de résoudre ce comportement, mais elles ne fonctionnent pas toujours comme prévu. À l’avenir, cela risque de ne pas être pris en charge et, à la place Visual Studio pour Mac rend tous les types définis dans tous les fichiers **. XIB** et le code managé dans le projet directement visibles à partir de tous les fichiers **. XIB** .
 
 ## <a name="type-resolution"></a>Résolution de type
 
-Types utilisés dans IB sont des noms de type Objective-C. Elles sont mappées aux types CLR via l’utilisation d’attributs du Registre. Lors de la génération de code de sortie et l’action, Visual Studio pour Mac résoudre les types CLR correspondants pour tous les types d’Objective-C encapsulés par le noyau de Xamarin.iOS et leurs noms de type qualifiés complets.
+Les types utilisés dans IB sont des noms de type objective-C. Ils sont mappés aux types CLR par le biais de l’utilisation d’attributs de registre. Lors de la génération du code de sortie et d’action, Visual Studio pour Mac résout les types CLR correspondants pour tous les types objective-C encapsulés par le noyau Xamarin. iOS et qualifie entièrement leurs noms de types.
 
-Toutefois, le Générateur de code ne peut pas résoudre actuellement les types CLR à partir des noms de type Objective-C dans le code de l’utilisateur ou de bibliothèques, donc dans ce cas, il affiche le nom de type mot pour mot. Cela signifie que le type CLR correspondant doit avoir le même nom que le type Objective-C et se trouver dans le même espace de noms que le code qui l’utilise. Cette intégration est prévue pour être résolu un certain temps à l’avenir en tenant compte de tous les types de Objective-C dans le projet pendant la génération du code.
+Toutefois, le générateur de code ne peut pas actuellement résoudre les types CLR à partir des noms de type objective-C dans le code utilisateur ou les bibliothèques. dans ce cas, il renvoie le nom de type Verbatim. Cela signifie que le type CLR correspondant doit avoir le même nom que le type objective-C et se trouver dans le même espace de noms que le code qui l’utilise. Il est prévu de corriger ce problème à l’avenir en prenant en compte tous les types objective-C dans le projet lors de la génération du code.

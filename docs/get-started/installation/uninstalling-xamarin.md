@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 6a0fe95d6d471bfb464234f0540b8398acb22e6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b870d96a2ffc599e010e049554b51b550a7311
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262880"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521580"
 ---
 # <a name="uninstalling-xamarin"></a>Désinstallation de Xamarin
 
@@ -196,14 +196,18 @@ Pour exécuter le script, effectuez les étapes suivantes :
 
 1. Cliquez avec le bouton droit sur le script et sélectionnez Enregistrer sous... pour enregistrer le fichier sur votre Mac.
 
-2.  Ouvrez **Terminal**, puis accédez au répertoire de travail où le script a été téléchargé :
+2. Ouvrez **Terminal**, puis accédez au répertoire de travail où le script a été téléchargé :
 
-        $ cd /location/of/file
+    ```
+    cd /location/of/file
+    ```
 
 3. Rendez le script exécutable et exécutez-le avec **sudo** :
 
-        $ chmod +x ./xamarin_uninstall.sh
-        $ sudo ./xamarin_uninstall.sh
+    ```
+    chmod +x ./xamarin_uninstall.sh
+    sudo ./xamarin_uninstall.sh
+    ```
 
 4. Enfin, supprimez le script de désinstallation.
 
@@ -224,7 +228,7 @@ Xamarin est pris en charge dans :
 
 ### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 et Visual Studio 2017
 
-Xamarin est désinstallé de Visual Studio 2019 et Visual Studio 2017 à l’aide de l’application du programme d’installation :
+Xamarin est désinstallé de Visual Studio 2019 et de Visual Studio 2017 à l’aide de l’application du programme d’installation:
 
 1. Utilisez le **menu Démarrer** pour ouvrir **Visual Studio Installer**.
 

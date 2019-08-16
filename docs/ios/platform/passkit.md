@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 2bd694d903da9f30f8fffa5fea991c1f386752dd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656386"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528320"
 ---
 # <a name="passkit-in-xamarinios"></a>PassKit dans Xamarin. iOS
 
@@ -31,17 +31,17 @@ Les fonctionnalités PassKit présentées dans ce document requièrent iOS 6 et 
 
 Le problème clé que PassKit résout est la distribution et la gestion des codes-barres. Voici quelques exemples concrets de la façon dont les codes-barres sont actuellement utilisés:
 
--   **Achat de tickets de film en ligne** : les clients sont généralement envoyés par e-mail à un code-barres qui représente leurs tickets. Ce code-barres est imprimé et dirigé vers le cinéma à analyser pour l’entrée.
--   **Cartes de fidélité** : les clients comportent un certain nombre de cartes spécifiques au magasin dans leur portefeuille ou sur leur porte-monnaie pour les afficher et les analyser lorsqu’ils achètent des marchandises.
--   **Coupons** : les coupons sont distribués par e-mail, en tant que pages Web imprimables, via cadres et en tant que codes-barres dans les journaux et les magazines. Les clients les apportent à un magasin pour la numérisation, pour recevoir des marchandises, des services ou des remises en retour.
--   Des passes d' **embarquement** , similaires à l’achat d’un ticket de film.
+- **Achat de tickets de film en ligne** : les clients sont généralement envoyés par e-mail à un code-barres qui représente leurs tickets. Ce code-barres est imprimé et dirigé vers le cinéma à analyser pour l’entrée.
+- **Cartes de fidélité** : les clients comportent un certain nombre de cartes spécifiques au magasin dans leur portefeuille ou sur leur porte-monnaie pour les afficher et les analyser lorsqu’ils achètent des marchandises.
+- **Coupons** : les coupons sont distribués par e-mail, en tant que pages Web imprimables, via cadres et en tant que codes-barres dans les journaux et les magazines. Les clients les apportent à un magasin pour la numérisation, pour recevoir des marchandises, des services ou des remises en retour.
+- Des passes d' **embarquement** , similaires à l’achat d’un ticket de film.
 
 PassKit offre une alternative pour chacun de ces scénarios:
 
--   **Movie Tickets** – après l’achat, le client ajoute une passe de ticket d’événement (par e-mail ou un lien de site Web). À mesure que le temps pour le film approche, le passage s’affiche automatiquement sur l’écran de verrouillage comme un rappel, et à l’arrivée au cinéma, la passe est facilement récupérée et affichée dans Wallet pour analyse.
--   Les **cartes de fidélité** : plutôt que (ou en plus) fournissant une carte physique, les magasins peuvent émettre (par courrier électronique ou après une connexion à un site Web) une carte de magasin. Le magasin peut fournir des fonctionnalités supplémentaires telles que la mise à jour du solde du compte lors de la transmission via des notifications push et l’utilisation des services de géolocalisation. la passe peut s’afficher automatiquement sur l’écran de verrouillage lorsque le client est proche de l’emplacement du magasin.
--   **Coupons: les** passes de coupon peuvent facilement être générées avec des caractéristiques uniques pour faciliter le suivi et être distribuées par e-mail ou via des liens de sites Web. Les coupons téléchargés peuvent apparaître automatiquement sur l’écran de verrouillage lorsque l’utilisateur est proche d’un emplacement spécifique, et/ou à une date donnée (par exemple, lorsque la date d’expiration approche). Étant donné que les coupons sont stockés sur le téléphone de l’utilisateur, ils sont toujours pratiques et ne sont pas mal placés. Les coupons peuvent inciter les clients à télécharger des applications auxiliaires, car les liens de l’App Store peuvent être incorporés dans la passe, ce qui renforce l’engagement avec le client.
--   Passes de l' **embarquement** : après un processus d’archivage en ligne, le client recevrait sa transmission par e-mail ou par lien. Une application auxiliaire fournie par le fournisseur de transport peut inclure le processus d’archivage et permettre au client d’effectuer des fonctions supplémentaires telles que le choix de son siège ou de son repas. Le fournisseur de transport peut utiliser des notifications push pour mettre à jour la passe si le transport est retardé ou annulé. À mesure que le temps d’embarquement s’approche de la passe, l’écran de verrouillage s’affiche comme rappel et pour fournir un accès rapide à la passe.
+- **Movie Tickets** – après l’achat, le client ajoute une passe de ticket d’événement (par e-mail ou un lien de site Web). À mesure que le temps pour le film approche, le passage s’affiche automatiquement sur l’écran de verrouillage comme un rappel, et à l’arrivée au cinéma, la passe est facilement récupérée et affichée dans Wallet pour analyse.
+- Les **cartes de fidélité** : plutôt que (ou en plus) fournissant une carte physique, les magasins peuvent émettre (par courrier électronique ou après une connexion à un site Web) une carte de magasin. Le magasin peut fournir des fonctionnalités supplémentaires telles que la mise à jour du solde du compte lors de la transmission via des notifications push et l’utilisation des services de géolocalisation. la passe peut s’afficher automatiquement sur l’écran de verrouillage lorsque le client est proche de l’emplacement du magasin.
+- Coupons: les passes de coupon peuvent facilement être générées avec des caractéristiques uniques pour faciliter le suivi et être distribuées par e-mail ou via des liens de sites Web. Les coupons téléchargés peuvent apparaître automatiquement sur l’écran de verrouillage lorsque l’utilisateur est proche d’un emplacement spécifique, et/ou à une date donnée (par exemple, lorsque la date d’expiration approche). Étant donné que les coupons sont stockés sur le téléphone de l’utilisateur, ils sont toujours pratiques et ne sont pas mal placés. Les coupons peuvent inciter les clients à télécharger des applications auxiliaires, car les liens de l’App Store peuvent être incorporés dans la passe, ce qui renforce l’engagement avec le client.
+- Passes de l' **embarquement** : après un processus d’archivage en ligne, le client recevrait sa transmission par e-mail ou par lien. Une application auxiliaire fournie par le fournisseur de transport peut inclure le processus d’archivage et permettre au client d’effectuer des fonctions supplémentaires telles que le choix de son siège ou de son repas. Le fournisseur de transport peut utiliser des notifications push pour mettre à jour la passe si le transport est retardé ou annulé. À mesure que le temps d’embarquement s’approche de la passe, l’écran de verrouillage s’affiche comme rappel et pour fournir un accès rapide à la passe.
 
 PassKit offre un moyen simple et pratique de stocker et d’afficher des codes-barres sur votre appareil iOS. Avec l’intégration de l’écran de verrouillage de l’emplacement et du temps supplémentaire, les notifications push et l’intégration de l’application auxiliaire constituent une base pour les services de vente, de ticket et de facturation très sophistiqués.
 
@@ -53,11 +53,11 @@ PassKit n’est pas simplement une API dans CocoaTouch, il fait plutôt partie d
 
 Chaque partie de l’écosystème a un rôle clairement défini:
 
--   **Portefeuille** : application iOS intégrée à Apple qui stocke et affiche des passes. C’est le seul endroit où les passes sont rendues pour une utilisation dans le monde réel (c’est-à-dire que le code-barres est affiché, ainsi que toutes les données localisées dans la passe).
--   **Applications auxiliaires** : applications iOS 6 générées par les fournisseurs de transmission pour étendre les fonctionnalités des passes qu’elles émettent, telles que l’ajout d’une valeur à une carte de magasin, la modification du siège sur une passe d’embarquement ou une autre fonction spécifique à l’entreprise. Les applications auxiliaires ne sont pas requises pour qu’une Pass soit utile.
--   **Votre serveur** : serveur sécurisé sur lequel les passes peuvent être générées et signées pour être distribuées. Votre application auxiliaire peut se connecter à votre serveur pour générer de nouvelles Pass ou demander des mises à jour à des passes existantes. Vous pouvez éventuellement implémenter l’API de service Web que Wallet appellera pour mettre à jour les passes.
--   **Serveurs APNs** : votre serveur a la possibilité de notifier le portefeuille de mises à jour à un transfert sur un appareil donné à l’aide de APNs. Envoyer une notification push à Wallet, qui contactera ensuite votre serveur pour obtenir des détails sur la modification. Les applications auxiliaires n’ont pas besoin d’implémenter APNS pour cette fonctionnalité (elles `PKPassLibraryDidChangeNotification` peuvent écouter le).
--   Applications de **conduit** : applications qui ne manipulent pas directement les passes (comme les applications auxiliaires), mais qui peuvent améliorer leur utilitaire en reconnaissant des passes et en leur permettant d’être ajoutées à Wallet. Les clients de messagerie, les navigateurs de réseau social et d’autres applications d’agrégation de données peuvent rencontrer des pièces jointes ou des liens vers des réussites.
+- **Portefeuille** : application iOS intégrée à Apple qui stocke et affiche des passes. C’est le seul endroit où les passes sont rendues pour une utilisation dans le monde réel (c’est-à-dire que le code-barres est affiché, ainsi que toutes les données localisées dans la passe).
+- **Applications auxiliaires** : applications iOS 6 générées par les fournisseurs de transmission pour étendre les fonctionnalités des passes qu’elles émettent, telles que l’ajout d’une valeur à une carte de magasin, la modification du siège sur une passe d’embarquement ou une autre fonction spécifique à l’entreprise. Les applications auxiliaires ne sont pas requises pour qu’une Pass soit utile.
+- **Votre serveur** : serveur sécurisé sur lequel les passes peuvent être générées et signées pour être distribuées. Votre application auxiliaire peut se connecter à votre serveur pour générer de nouvelles Pass ou demander des mises à jour à des passes existantes. Vous pouvez éventuellement implémenter l’API de service Web que Wallet appellera pour mettre à jour les passes.
+- **Serveurs APNs** : votre serveur a la possibilité de notifier le portefeuille de mises à jour à un transfert sur un appareil donné à l’aide de APNs. Envoyer une notification push à Wallet, qui contactera ensuite votre serveur pour obtenir des détails sur la modification. Les applications auxiliaires n’ont pas besoin d’implémenter APNS pour cette fonctionnalité (elles `PKPassLibraryDidChangeNotification` peuvent écouter le).
+- Applications de **conduit** : applications qui ne manipulent pas directement les passes (comme les applications auxiliaires), mais qui peuvent améliorer leur utilitaire en reconnaissant des passes et en leur permettant d’être ajoutées à Wallet. Les clients de messagerie, les navigateurs de réseau social et d’autres applications d’agrégation de données peuvent rencontrer des pièces jointes ou des liens vers des réussites.
 
 La totalité de l’écosystème semble complexe. il est donc intéressant de noter que certains composants sont facultatifs et que les implémentations de PassKit les plus simples sont possibles.
 
@@ -69,11 +69,11 @@ Une passe est une collection de données représentant un ticket, un coupon ou u
 
 Actuellement, cinq types sont pris en charge, qui peuvent être distingués dans l’application Wallet par la disposition et le bord supérieur de la passe:
 
--  **Ticket d’événement** : petit découpage semi-circulaire.
--   **Passe d’embarquement** : des crans dans le côté, une icône spécifique au transport peut être spécifiée (par exemple, bus, apprentissage, avion).
--   **Carte de stockage** : arrondi à la partie supérieure, comme une carte de crédit ou de débit.
--  **Coupon** : perforé en haut.
--  **Générique** : identique à la carte de magasin, arrondie à la partie supérieure.
+- **Ticket d’événement** : petit découpage semi-circulaire.
+- **Passe d’embarquement** : des crans dans le côté, une icône spécifique au transport peut être spécifiée (par exemple, bus, apprentissage, avion).
+- **Carte de stockage** : arrondi à la partie supérieure, comme une carte de crédit ou de débit.
+- **Coupon** : perforé en haut.
+- **Générique** : identique à la carte de magasin, arrondie à la partie supérieure.
 
 
 Les cinq types de tests sont affichés dans cette capture d’écran (dans l’ordre: coupon, générique, carte de stockage, passe de carte et ticket d’événement):
@@ -84,13 +84,13 @@ Les cinq types de tests sont affichés dans cette capture d’écran (dans l’o
 
 Un fichier Pass est en fait une archive ZIP avec une extension **. pkpass** , contenant des fichiers JSON spécifiques (obligatoires), divers fichiers image (facultatif) ainsi que des chaînes localisées (également facultatives).
 
--   **Pass. JSON** : requis. Contient toutes les informations relatives à la passe.
--   **Manifest. JSON** – requis. Contient les hachages SHA1 pour chaque fichier du test, à l’exception du fichier de signature et de ce fichier (manifest. Json).
--   **signature** : obligatoire. Créé en signant le `manifest.json` fichier avec le certificat généré dans le portail d’approvisionnement iOS.
--  **logo. png** – facultatif.
--  **Background. png** – facultatif.
--  **Icon. png** – facultatif.
--  **Fichiers de chaînes localisables** – facultatif.
+- **Pass. JSON** : requis. Contient toutes les informations relatives à la passe.
+- **Manifest. JSON** – requis. Contient les hachages SHA1 pour chaque fichier du test, à l’exception du fichier de signature et de ce fichier (manifest. Json).
+- **signature** : obligatoire. Créé en signant le `manifest.json` fichier avec le certificat généré dans le portail d’approvisionnement iOS.
+- **logo. png** – facultatif.
+- **Background. png** – facultatif.
+- **Icon. png** – facultatif.
+- **Fichiers de chaînes localisables** – facultatif.
 
 La structure de répertoires d’un fichier Pass est indiquée ci-dessous (il s’agit du contenu de l’archive ZIP):
 
@@ -100,9 +100,9 @@ La structure de répertoires d’un fichier Pass est indiquée ci-dessous (il s�
 
 JSON est le format, car les passes sont généralement créées sur un serveur, ce qui signifie que le code de génération est indépendant de la plateforme sur le serveur. Les trois éléments clés de chaque passe sont les suivants:
 
--   **teamIdentifier** : ce lien permet d’accéder à toutes les étapes que vous générez sur votre compte App Store. Cette valeur est visible dans le portail d’approvisionnement iOS.
--   **passTypeIdentifier** : Inscrivez-vous au portail de provisionnement pour regrouper les passes (si vous générez plusieurs types). Par exemple, un café peut créer un type de passe de carte de magasin pour permettre à ses clients de gagner des crédits de fidélité, mais également un type de passe de coupon distinct pour créer et distribuer des bons de réduction. Ce même café peut même contenir des événements de musique en direct et émettre des passages de ticket d’événement pour ceux-ci.
--   **SerialNumber** : chaîne unique dans ce `passTypeidentifier` . La valeur est opaque pour Wallet, mais elle est importante pour le suivi de passes spécifiques lors de la communication avec votre serveur.
+- **teamIdentifier** : ce lien permet d’accéder à toutes les étapes que vous générez sur votre compte App Store. Cette valeur est visible dans le portail d’approvisionnement iOS.
+- **passTypeIdentifier** : Inscrivez-vous au portail de provisionnement pour regrouper les passes (si vous générez plusieurs types). Par exemple, un café peut créer un type de passe de carte de magasin pour permettre à ses clients de gagner des crédits de fidélité, mais également un type de passe de coupon distinct pour créer et distribuer des bons de réduction. Ce même café peut même contenir des événements de musique en direct et émettre des passages de ticket d’événement pour ceux-ci.
+- **SerialNumber** : chaîne unique dans ce `passTypeidentifier` . La valeur est opaque pour Wallet, mais elle est importante pour le suivi de passes spécifiques lors de la communication avec votre serveur.
 
 Il y a un grand nombre d’autres clés JSON à chaque passe, un exemple qui est illustré ci-dessous:
 
@@ -199,10 +199,10 @@ La traduction d’un passage en plusieurs langues est similaire à la localisati
 
 Les passes sont signées avec un certificat privé que vous générez dans le portail d’approvisionnement iOS. Les étapes à suivre pour signer la passe sont les suivantes:
 
-1.  Calculez un hachage SHA1 pour chaque fichier dans le répertoire de réussite (n’incluez `signature` pas le `manifest.json` fichier ou, aucun d’entre eux ne doit malgré tout exister à ce niveau).
-1.  Écrire `manifest.json` sous la forme d’une liste de clés/valeurs JSON de chaque nom de fichier avec son hachage.
-1.  Utilisez le certificat pour signer le `manifest.json` fichier et écrire le résultat dans un fichier appelé `signature` .
-1.  Compressez tout le contenu et donnez à l' `.pkpass` extension de fichier le fichier résultant.
+1. Calculez un hachage SHA1 pour chaque fichier dans le répertoire de réussite (n’incluez `signature` pas le `manifest.json` fichier ou, aucun d’entre eux ne doit malgré tout exister à ce niveau).
+1. Écrire `manifest.json` sous la forme d’une liste de clés/valeurs JSON de chaque nom de fichier avec son hachage.
+1. Utilisez le certificat pour signer le `manifest.json` fichier et écrire le résultat dans un fichier appelé `signature` .
+1. Compressez tout le contenu et donnez à l' `.pkpass` extension de fichier le fichier résultant.
 
 
 Étant donné que votre clé privée est nécessaire pour signer la passe, ce processus ne doit être effectué que sur un serveur sécurisé que vous contrôlez. NE distribuez pas vos clés pour essayer de générer des passes dans une application.
@@ -216,8 +216,8 @@ Cette section contient des instructions pour vous aider à configurer les détai
 
 Pour qu’une passe entre dans l’App Store, elle doit être liée à un compte de développeur. Cela nécessite deux étapes:
 
-1.  La passe doit être inscrite à l’aide d’un identificateur unique, appelé ID du type de passe.
-1.  Un certificat valide doit être généré pour signer la passe avec la signature numérique du développeur.
+1. La passe doit être inscrite à l’aide d’un identificateur unique, appelé ID du type de passe.
+1. Un certificat valide doit être généré pour signer la passe avec la signature numérique du développeur.
 
 Pour créer un ID de type de passe, procédez comme suit.
 
@@ -227,23 +227,23 @@ La première étape consiste à configurer un ID de type de passe pour chaque _t
 
 1. Dans la [section certificats, identificateurs et profils du portail d’approvisionnement iOS](https://developer.apple.com/account/overview.action), accédez à identificateurs, puis sélectionnez ID de **type de passe** . Sélectionnez ensuite le **+** bouton pour créer un type de passe: [![](passkit-images/passid.png "Créer un type de passe")](passkit-images/passid.png#lightbox)
 
-2.   Fournissez une **Description** (nom) et un **identificateur** (chaîne unique) pour la passe. Notez que tous les ID de type de passe doivent commencer `pass.` par la chaîne dans cet `pass.com.xamarin.coupon.banana` exemple nous utilisons: [![](passkit-images/register.png "Fournir une description et un identificateur")](passkit-images/register.png#lightbox)
+2. Fournissez une **Description** (nom) et un **identificateur** (chaîne unique) pour la passe. Notez que tous les ID de type de passe doivent commencer `pass.` par la chaîne dans cet `pass.com.xamarin.coupon.banana` exemple nous utilisons: [![](passkit-images/register.png "Fournir une description et un identificateur")](passkit-images/register.png#lightbox)
 
 
-3.   Confirmez l’ID de test en appuyant sur le bouton **Register** .
+3. Confirmez l’ID de test en appuyant sur le bouton **Register** .
 
 #### <a name="generate-a-certificate"></a>Générer un certificat
 
 Pour créer un nouveau certificat pour cet ID de type de passe, procédez comme suit:
 
-1.  Sélectionnez l’ID de passe nouvellement créé dans la liste, puis cliquez sur **modifier** : [![](passkit-images/pass-done.png "Sélectionner le nouvel ID de test dans la liste")](passkit-images/pass-done.png#lightbox)
+1. Sélectionnez l’ID de passe nouvellement créé dans la liste, puis cliquez sur **modifier** : [![](passkit-images/pass-done.png "Sélectionner le nouvel ID de test dans la liste")](passkit-images/pass-done.png#lightbox)
 
     Ensuite, sélectionnez **créer un certificat...** :
 
     [![](passkit-images/cert-dist.png "Sélectionner créer un certificat")](passkit-images/cert-dist.png#lightbox)
 
 
-2.  Suivez les étapes pour créer une demande de signature de certificat (CSR).
+2. Suivez les étapes pour créer une demande de signature de certificat (CSR).
   
 3. Appuyez sur le bouton **Continuer** sur le portail des développeurs et chargez la CSR pour générer votre certificat.
 
@@ -258,12 +258,12 @@ Pour plus d’informations sur l’approvisionnement de Wallet, reportez-vous au
 
 Maintenant que nous avons créé le type de passe, nous pouvons créer manuellement une étape de test sur le simulateur ou sur un appareil. Les étapes de création d’une passe sont les suivantes:
 
--  Créez un répertoire destiné à contenir les fichiers de réussite.
--  Créez un fichier Pass. JSON qui contient toutes les données requises.
--  Inclure les images dans le dossier (si nécessaire).
--  Calculez les hachages SHA1 pour chaque fichier dans le dossier, puis écrivez dans le fichier manifest. JSON.
--  Signez manifest. JSON avec le fichier. P12 de certificat téléchargé.
--  Compressez le contenu du répertoire et renommez-le avec l’extension. pkpass.
+- Créez un répertoire destiné à contenir les fichiers de réussite.
+- Créez un fichier Pass. JSON qui contient toutes les données requises.
+- Inclure les images dans le dossier (si nécessaire).
+- Calculez les hachages SHA1 pour chaque fichier dans le dossier, puis écrivez dans le fichier manifest. JSON.
+- Signez manifest. JSON avec le fichier. P12 de certificat téléchargé.
+- Compressez le contenu du répertoire et renommez-le avec l’extension. pkpass.
 
 
 L' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article contient des fichiers sources qui peuvent être utilisés pour générer une passe. Utilisez les fichiers dans le `CouponBanana.raw` répertoire du répertoire CreateAPassManually. Les fichiers suivants sont présents:
@@ -315,12 +315,12 @@ Wallet est le composant central de l’écosystème PassKit. Cette capture d’�
 
 Les fonctionnalités de Wallet sont les suivantes:
 
--  C’est le seul endroit où les passes sont rendues avec leur code-barres pour l’analyse.
--  L’utilisateur peut modifier les paramètres des mises à jour. Si cette option est activée, les notifications push peuvent déclencher des mises à jour des données dans la passe.
--  L’utilisateur peut activer ou désactiver l’intégration de l’écran de verrouillage. S’il est activé, cette option permet d’afficher automatiquement la passe sur l’écran de verrouillage, en fonction des données de temps et d’emplacement appropriées incorporées dans la passe.
--  Le côté inverse de la passe prend en charge l’extraction à l’actualisation, si une URL de serveur Web est fournie dans le JSON Pass.
--  Les applications auxiliaires peuvent être ouvertes (ou téléchargées) si l’ID de l’application est fourni dans le JSON Pass.
--  Les passes peuvent être supprimées (avec une animation de jolies broyage).
+- C’est le seul endroit où les passes sont rendues avec leur code-barres pour l’analyse.
+- L’utilisateur peut modifier les paramètres des mises à jour. Si cette option est activée, les notifications push peuvent déclencher des mises à jour des données dans la passe.
+- L’utilisateur peut activer ou désactiver l’intégration de l’écran de verrouillage. S’il est activé, cette option permet d’afficher automatiquement la passe sur l’écran de verrouillage, en fonction des données de temps et d’emplacement appropriées incorporées dans la passe.
+- Le côté inverse de la passe prend en charge l’extraction à l’actualisation, si une URL de serveur Web est fournie dans le JSON Pass.
+- Les applications auxiliaires peuvent être ouvertes (ou téléchargées) si l’ID de l’application est fourni dans le JSON Pass.
+- Les passes peuvent être supprimées (avec une animation de jolies broyage).
 
 ## <a name="adding-passes-into-wallet"></a>Ajout de passes à Wallet
 
@@ -334,9 +334,9 @@ Les passes peuvent être ajoutées à Wallet de l’une des manières suivantes:
 
 Les applications de canalisation sont des applications intermédiaires qui peuvent recevoir des passages pour le compte d’un utilisateur et doivent être programmées pour reconnaître leur type de contenu et fournir des fonctionnalités à ajouter au portefeuille. Voici quelques exemples d’applications de conduit:
 
--   **Mail** : reconnaît les pièces jointes en tant que Pass.
--   **Safari** : reconnaît le type de contenu Pass quand l’utilisateur clique sur un lien de test d’URL.
--   **Autres applications personnalisées** : toute application qui reçoit des pièces jointes ou des liens ouverts (clients de réseaux sociaux, lecteurs de messagerie, etc.).
+- **Mail** : reconnaît les pièces jointes en tant que Pass.
+- **Safari** : reconnaît le type de contenu Pass quand l’utilisateur clique sur un lien de test d’URL.
+- **Autres applications personnalisées** : toute application qui reçoit des pièces jointes ou des liens ouverts (clients de réseaux sociaux, lecteurs de messagerie, etc.).
 
 
 Cette capture d’écran montre comment le **courrier électronique** dans iOS 6 reconnaît une pièce jointe de réussite et (lorsqu’il est touché) permet de l' **Ajouter** à Wallet.
@@ -347,9 +347,9 @@ Cette capture d’écran montre comment le **courrier électronique** dans iOS 6
 
 Si vous créez une application qui peut être un conduit pour les passes, elle peut être reconnue par:
 
--  **Extension de fichier** -. pkpass
--  **Type MIME** -application/vnd. Apple. pkpass
--  **UTI** – com. Apple. pkpass
+- **Extension de fichier** -. pkpass
+- **Type MIME** -application/vnd. Apple. pkpass
+- **UTI** – com. Apple. pkpass
 
 
 Le fonctionnement de base d’une application de canalisation consiste à récupérer le fichier Pass et `PKAddPassesViewController` à appeler PassKit pour permettre à l’utilisateur d’ajouter la passe à son portefeuille. L’implémentation de ce contrôleur d’affichage est traitée dans la section suivante sur les **applications auxiliaires**.
@@ -419,12 +419,12 @@ le tableau `pass-type-identifiers` de droits est incorrect (ou ne correspond pas
 
 Les classes PassKit suivantes sont disponibles pour les applications à accéder aux passes:
 
--  **PKPass** : instance d’une passe.
--  **PKPassLibrary** : fournit l’API pour accéder aux passes sur l’appareil.
--  **PKAddPassesViewController** : permet d’afficher un test permettant à l’utilisateur de s’enregistrer dans son portefeuille.
--  **PKAddPassesViewControllerDelegate** – Xamarin. iOS développeurs
+- **PKPass** : instance d’une passe.
+- **PKPassLibrary** : fournit l’API pour accéder aux passes sur l’appareil.
+- **PKAddPassesViewController** : permet d’afficher un test permettant à l’utilisateur de s’enregistrer dans son portefeuille.
+- **PKAddPassesViewControllerDelegate** – Xamarin. iOS développeurs
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Reportez-vous au projet PassLibrary dans l' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article. Il illustre les fonctions courantes suivantes qui seraient nécessaires dans une application de portefeuille:
 

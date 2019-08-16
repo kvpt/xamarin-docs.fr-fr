@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 209d70c2e158261ca671e6a889e979de39362d53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 38d58350cf067a2d5f7813250590cc0715b6c9ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647984"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527391"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Présentation de l’interface tactile 3D dans Xamarin. iOS
 
@@ -78,7 +78,7 @@ Pour plus d’informations, consultez TouchCanvas d' [Apple: Utilisation d’un]
 
 l’interface tactile 3D offre aux utilisateurs de nouvelles façons d’interagir plus rapidement que jamais avec les informations de votre application, sans avoir à naviguer à partir de leur emplacement actuel.
 
-Par exemple, si votre application affiche un tableau de messages, l’utilisateur peut appuyer sur un élément pour afficher un aperçu de son contenu dans une vue en forme de superposition (laquelle Apple fait référence à un *Aperçu).*
+Par exemple, si votre application affiche un tableau de messages, l’utilisateur peut appuyer sur un élément pour afficher un aperçu de son contenu dans une vue en forme de superposition (laquelleApple fait référence à un aperçu).
 
 [![](3d-touch-images/peekandpop01.png "Exemple de lecture du contenu")](3d-touch-images/peekandpop01.png#lightbox)
 
@@ -175,7 +175,7 @@ namespace DTouch
 
 La `GetViewControllerForPreview` méthode est utilisée pour effectuer l’opération de **lecture** . Il obtient l’accès à la cellule de table et aux données de stockage, `DetailViewController` puis charge le à partir du storyboard actuel. En affectant `PreferredContentSize` la valeur (0, 0), nous demandons la taille de l’aperçu avant **lecture** par défaut. Enfin, nous brouillerons tout sauf la cellule avec laquelle `previewingContext.SourceRect = cell.Frame` nous affichons et nous retournons la nouvelle vue pour l’affichage.
 
-Le `CommitViewController` réutilise la vue que nous avons créée dans l' **aperçu de la** vue **pop** lorsque l’utilisateur appuie plus difficile.
+Le `CommitViewController` réutilise la vue que nous avons créée dans l’aperçu de la vue **pop** lorsque l’utilisateur appuie plus difficile.
 
 ### <a name="registering-for-peek-and-pop"></a>Inscription pour Peek et pop
 
@@ -274,11 +274,11 @@ Ici, nous définissons deux éléments d’action rapide statiques avec les clé
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-        ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![](3d-touch-images/uiapplicationshortcuticontype.png "Image UIApplicationShortcutIconType")
 
-* `UIApplicationShortcutItemSubtitle`: Définit le sous-titre de l’élément.
-* `UIApplicationShortcutItemTitle`-Définit le titre de l’élément.
-* `UIApplicationShortcutItemType`-Valeur de chaîne que nous allons utiliser pour identifier l’élément dans notre application. Pour plus d'informations, consultez la section suivante.
+- `UIApplicationShortcutItemSubtitle`: Définit le sous-titre de l’élément.
+- `UIApplicationShortcutItemTitle`-Définit le titre de l’élément.
+- `UIApplicationShortcutItemType`-Valeur de chaîne que nous allons utiliser pour identifier l’élément dans notre application. Pour plus d'informations, consultez la section suivante.
 
 > [!IMPORTANT]
 > Les éléments de raccourci d’action rapide définis dans `Info.plist` le fichier ne sont pas accessibles `Application.ShortcutItems` avec la propriété. Elles sont uniquement transmises au gestionnaire d' `HandleShortcutItem` événements.

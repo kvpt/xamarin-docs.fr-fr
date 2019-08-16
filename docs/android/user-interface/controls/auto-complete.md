@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 810c6ddead66d191870ce97a50653f29737492b0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 186dab1d48d928426d223c8961ce21846c351107
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510650"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523080"
 ---
 # <a name="auto-complete-for-xamarinandroid"></a>Saisie semi-automatique pour Xamarin. Android
 
@@ -199,11 +199,8 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 ### <a name="references"></a>Références
 
--   [Recette AutoCompleteTextView](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) Exemple de projet Xamarin. Android pour `AutoCompleteTextView`le. &ndash;
--   [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
--   [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+- [Recette AutoCompleteTextView](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) &ndash; Exemple de projet Xamarin. Android pour le`AutoCompleteTextView`
+- [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+- [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la*
-[*licence*](http://creativecommons.org/licenses/by/2.5/) *d’attribution de Creative-2,5. Ce didacticiel est basé sur le*didacticiel
-sur
-la[*saisie semi-automatique Android*](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html) *.*
+_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](http://creativecommons.org/licenses/by/2.5/). Ce didacticiel est basé sur le [didacticiel de saisie semi-automatique Android *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)._

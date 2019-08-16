@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/06/2018
-ms.openlocfilehash: 30e471174d30e58b126c174fd4eacfdbe87d97b0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d8f467b4dcc5e6c4628ed7afa43779cc48b7ef5
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646059"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522178"
 ---
 # <a name="splash-screen"></a>Écran de démarrage
 
@@ -25,11 +25,11 @@ Une application Android prend un certain temps pour démarrer, en particulier lo
 
 Ce guide décrit une technique permettant d’implémenter un écran de démarrage dans une application Android. Il couvre les étapes suivantes:
 
-1.  Création d’une ressource dessinable pour l’écran de démarrage.
+1. Création d’une ressource dessinable pour l’écran de démarrage.
 
-2.  Définition d’un nouveau thème qui affichera la ressource pouvant être dessinée.
+2. Définition d’un nouveau thème qui affichera la ressource pouvant être dessinée.
 
-3.  Ajout d’une nouvelle activité à l’application qui sera utilisée comme écran de démarrage défini par le thème créé à l’étape précédente.
+3. Ajout d’une nouvelle activité à l’application qui sera utilisée comme écran de démarrage défini par le thème créé à l’étape précédente.
 
 [![Exemple d’écran de démarrage du logo Xamarin suivi d’un écran d’application](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
@@ -178,11 +178,11 @@ Pour ajouter un écran de démarrage en mode paysage, procédez comme suit:
     </layer-list>
     ```
 
-3.  Créez le dossier Resources **/values-Land** s’il n’existe pas déjà.
+3. Créez le dossier Resources **/values-Land** s’il n’existe pas déjà.
 
-4.  Ajoutez les fichiers **Colors. xml** et **style. xml** à **values-Land** (ils peuvent être copiés et modifiés à partir des fichiers **values/Colors. xml** et **values/style. xml** existants).
+4. Ajoutez les fichiers **Colors. xml** et **style. xml** à **values-Land** (ils peuvent être copiés et modifiés à partir des fichiers **values/Colors. xml** et **values/style. xml** existants).
 
-5.  Modifiez **values-Land/style. xml** de façon à ce qu’il utilise la version paysage du dessinable pour `windowBackground`. Dans cet exemple, **splash_screen_land. xml** est utilisé:
+5. Modifiez **values-Land/style. xml** de façon à ce qu’il utilise la version paysage du dessinable pour `windowBackground`. Dans cet exemple, **splash_screen_land. xml** est utilisé:
 
     ```xml
     <resources>
@@ -200,7 +200,7 @@ Pour ajouter un écran de démarrage en mode paysage, procédez comme suit:
     </resources>
     ```
 
-6.  Modifiez **values-Land/couleurs. xml** pour configurer les couleurs que vous souhaitez utiliser pour la version paysage de l’écran de démarrage. Dans cet exemple, la couleur d’arrière-plan de démarrage devient bleue en mode paysage:
+6. Modifiez **values-Land/couleurs. xml** pour configurer les couleurs que vous souhaitez utiliser pour la version paysage de l’écran de démarrage. Dans cet exemple, la couleur d’arrière-plan de démarrage devient bleue en mode paysage:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -213,7 +213,7 @@ Pour ajouter un écran de démarrage en mode paysage, procédez comme suit:
     </resources>
     ```
 
-7.  Générez et exécutez à nouveau l’application. Faire pivoter l’appareil en mode paysage lorsque l’écran de démarrage est toujours affiché. L’écran de démarrage passe à la version paysage:
+7. Générez et exécutez à nouveau l’application. Faire pivoter l’appareil en mode paysage lorsque l’écran de démarrage est toujours affiché. L’écran de démarrage passe à la version paysage:
 
     [![Rotation de l’écran de démarrage en mode paysage](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 

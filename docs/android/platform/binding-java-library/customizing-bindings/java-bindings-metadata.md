@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f0f15647e439381c2aa291234b444d668d1b63d0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869353"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524609"
 ---
 # <a name="java-bindings-metadata"></a>Métadonnées de liaisons Java
 
@@ -55,21 +55,21 @@ Au lieu de cela, les modifications sont enregistrées dans des fichiers XML spé
 
 Ces fichiers de mappage XML se trouvent dans le dossier transformations du projet:
 
--   **Metadata. xml** &ndash; permet d’apporter des modifications à l’API finale, telles que la modification de l’espace de noms de la liaison générée. 
+- **Metadata. xml** &ndash; permet d’apporter des modifications à l’API finale, telles que la modification de l’espace de noms de la liaison générée. 
 
--   **EnumFields. xml** &ndash; contient le mappage entre les `int` constantes Java C# `enums` et. 
+- **EnumFields. xml** &ndash; contient le mappage entre les `int` constantes Java C# `enums` et. 
 
--   **EnumMethods,. xml** &ndash; permet de modifier les paramètres de méthode et les `int` types de retour C# `enums` des constantes Java à. 
+- **EnumMethods,. xml** &ndash; permet de modifier les paramètres de méthode et les `int` types de retour C# `enums` des constantes Java à. 
 
 Le fichier **Metadata. xml** est le plus importé de ces fichiers, car il permet des modifications à caractère général de la liaison, telles que:
 
--   Renommer des espaces de noms, des classes, des méthodes ou des champs afin qu’ils respectent les conventions .NET. 
+- Renommer des espaces de noms, des classes, des méthodes ou des champs afin qu’ils respectent les conventions .NET. 
 
--   Suppression des espaces de noms, des classes, des méthodes ou des champs qui ne sont pas nécessaires. 
+- Suppression des espaces de noms, des classes, des méthodes ou des champs qui ne sont pas nécessaires. 
 
--   Déplacement des classes vers des espaces de noms différents. 
+- Déplacement des classes vers des espaces de noms différents. 
 
--   L’ajout de classes de prise en charge supplémentaires pour que la conception de la liaison suive les modèles .NET Framework. 
+- L’ajout de classes de prise en charge supplémentaires pour que la conception de la liaison suive les modèles .NET Framework. 
 
 Pour plus d’informations, passez en revue le **fichier Metadata. xml** .
 
@@ -103,13 +103,13 @@ Voici un exemple de fichier **Metadata. xml** :
 
 La liste suivante répertorie certains des éléments XPath les plus couramment utilisés pour les API Java:
 
--   `interface`&ndash; Utilisé pour localiser une interface java. par exemple,. `/interface[@name='AuthListener']`
+- `interface`&ndash; Utilisé pour localiser une interface java. par exemple,. `/interface[@name='AuthListener']`
 
--   `class`&ndash; Utilisé pour localiser une classe. par exemple,. `/class[@name='MapView']`
+- `class`&ndash; Utilisé pour localiser une classe. par exemple,. `/class[@name='MapView']`
 
--   `method`&ndash; Utilisé pour localiser une méthode sur une classe ou une interface java. par exemple,. `/class[@name='MapView']/method[@name='setTitleSource']`
+- `method`&ndash; Utilisé pour localiser une méthode sur une classe ou une interface java. par exemple,. `/class[@name='MapView']/method[@name='setTitleSource']`
 
--   `parameter`&ndash; Identifiez un paramètre pour une méthode. destin`/parameter[@name='p0']`
+- `parameter`&ndash; Identifiez un paramètre pour une méthode. destin`/parameter[@name='p0']`
 
 
 

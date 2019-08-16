@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9b4f71599ecf85e51899c41c37aecc63e44e7188
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86198c7a2fa0460070d012afd0b7b9d078d2a5f3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646423"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528565"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Présentation des storyboards dans Xamarin. iOS
 
@@ -66,11 +66,11 @@ Au niveau de la souris, un menu s’affiche pour vous permettre de choisir l’a
 
 Il existe différents types de transitions, chacun donnant le contrôle de la présentation d’un nouveau contrôleur d’affichage à l’utilisateur et de la façon dont il interagit avec d’autres contrôleurs d’affichage dans le Storyboard. Celles-ci sont expliquées ci-dessous. Il est également possible de sous-créer un objet segue pour implémenter une transition personnalisée:
 
--  **Show/Push** : un segue Push ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage à l’origine du push fait partie du même contrôleur de navigation que le contrôleur d’affichage ajouté à la pile. Cela fait la même chose que `pushViewController` , et est généralement utilisé lorsqu’il existe une relation entre les données sur les écrans. L’utilisation de l’segue Push vous donne le luxe de disposer d’une barre de navigation avec un bouton précédent et un titre ajoutés à chaque vue de la pile, ce qui permet une navigation dans la hiérarchie d’affichage.
--  **Modal** : un segue modal crée une relation entre deux contrôleurs d’affichage de votre projet, avec l’option d’une transition animée affichée. Le contrôleur d’affichage enfant obscurcit complètement le contrôleur d’affichage parent lorsqu’il est mis en vue. Contrairement à un segue push, qui ajoute un bouton précédent pour nous; Lorsque vous utilisez un segue `DismissViewController` modal, vous devez utiliser pour revenir au contrôleur d’affichage précédent.
--  **Personnalisé** : tout segue personnalisé peut être créé en tant que sous- `UIStoryboardSegue`classe de.
--  **Déroulement** – un segue de déroulement peut être utilisé pour naviguer en arrière dans un segue de type push ou modal, par exemple, en rejetant le contrôleur d’affichage présenté de façon modale. En outre, vous pouvez dérouler non seulement une, mais également une série de SEGUES push et modaux, puis revenir à plusieurs étapes de votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un segue de déroulement dans iOS, consultez la recette de création d’un [déroulement SEGUES](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
--  Sans **source** : un segue sans source indique la scène contenant le contrôleur d’affichage initial et, par conséquent, la vue que l’utilisateur verra en premier. Elle est représentée par le segue illustré ci-dessous:  
+- **Show/Push** : un segue Push ajoute le contrôleur d’affichage à la pile de navigation. Il part du principe que le contrôleur d’affichage à l’origine du push fait partie du même contrôleur de navigation que le contrôleur d’affichage ajouté à la pile. Cela fait la même chose que `pushViewController` , et est généralement utilisé lorsqu’il existe une relation entre les données sur les écrans. L’utilisation de l’segue Push vous donne le luxe de disposer d’une barre de navigation avec un bouton précédent et un titre ajoutés à chaque vue de la pile, ce qui permet une navigation dans la hiérarchie d’affichage.
+- **Modal** : un segue modal crée une relation entre deux contrôleurs d’affichage de votre projet, avec l’option d’une transition animée affichée. Le contrôleur d’affichage enfant obscurcit complètement le contrôleur d’affichage parent lorsqu’il est mis en vue. Contrairement à un segue push, qui ajoute un bouton précédent pour nous; Lorsque vous utilisez un segue `DismissViewController` modal, vous devez utiliser pour revenir au contrôleur d’affichage précédent.
+- **Personnalisé** : tout segue personnalisé peut être créé en tant que sous- `UIStoryboardSegue`classe de.
+- **Déroulement** – un segue de déroulement peut être utilisé pour naviguer en arrière dans un segue de type push ou modal, par exemple, en rejetant le contrôleur d’affichage présenté de façon modale. En outre, vous pouvez dérouler non seulement une, mais également une série de SEGUES push et modaux, puis revenir à plusieurs étapes de votre hiérarchie de navigation avec une seule action de déroulement. Pour comprendre comment utiliser un segue de déroulement dans iOS, consultez la recette de création d’un [déroulement SEGUES](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) .
+- Sans **source** : un segue sans source indique la scène contenant le contrôleur d’affichage initial et, par conséquent, la vue que l’utilisateur verra en premier. Elle est représentée par le segue illustré ci-dessous:  
 
     [![](images/sourcelesssegue.png "Segue de code source")](images/sourcelesssegue.png#lightbox)
 
@@ -142,12 +142,14 @@ Il se peut que vous deviez ajouter une table de montage séquentiel à un fichie
     Cela équivaut à instancier le contrôleur d’affichage initial dans la `FinishedLaunching` méthode au sein du délégué d’application. Lorsque cette option est définie, l’application instancie une fenêtre (voir ci-dessous), charge la table de montage séquentiel principale et assigne une instance du contrôleur d’affichage initial de la table de montage séquentiel (celle `RootViewController` à côté de la segue sans source) en tant que propriété de la fenêtre, puis effectue fenêtre visible à l’écran.
 
 3. Dans, remplacez la méthode par défaut `Window` , par le code suivant pour implémenter la propriété de fenêtre: `AppDelegate`
-        
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Créez un fichier de table de montage séquentiel en cliquant avec le bouton droit sur le projet pour **ajouter > nouveau fichier > iOS > Storyboard vide**, comme illustré ci-dessous: 
@@ -162,11 +164,13 @@ Il se peut que vous deviez ajouter une table de montage séquentiel à un fichie
 
 3. Dans, remplacez la méthode par défaut `Window` , par le code suivant pour implémenter la propriété de fenêtre: `AppDelegate`
 
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 -----
 
 ## <a name="creating-a-storyboard-with-the-ios-designer"></a>Création d’une table de montage séquentiel avec le concepteur iOS

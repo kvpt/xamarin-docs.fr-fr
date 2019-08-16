@@ -6,69 +6,69 @@ ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 99fde9330498ee62d3cf6b5910c2cbfae39cfdeb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e387e398f3a79ea2063457f0c5c6e7469c07ac23
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61159621"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521533"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Comment effectuer une désinstallation complète de Xamarin pour Visual Studio ?
 
 
-1.  À partir du Panneau de configuration de Windows, désinstallez les éléments suivants qui sont présents :
+1. Dans le panneau de configuration Windows, désinstallez l’un des éléments suivants:
 
-    -   Xamarin
-    -   Xamarin pour Windows
-    -   Xamarin.Android
-    -   Xamarin.iOS
-    -   Xamarin pour Visual Studio
+    - Xamarin
+    - Xamarin pour Windows
+    - Xamarin.Android
+    - Xamarin.iOS
+    - Xamarin pour Visual Studio
 
-2.  Dans l’Explorateur, supprimez tous les fichiers restants à partir des dossiers d’extension Xamarin Visual Studio (toutes les versions, y compris les _Program Files_ et _Program Files (x86)_) :
+2. Dans l’Explorateur, supprimez tous les fichiers restants dans les dossiers d’extension Xamarin Visual Studio (toutes les versions, y compris les fichiers _programme_ et les _fichiers programme (x86)_ ):
 
-    _C:\\Program Files\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\Extensions\\Xamarin_
+    _C:\\Program Files\*\\Microsoft Visual Studio\\1\*.0\\:extensions\\IDECommon7\\Xamarin_
 
-3.  Supprimer MEF composant répertoire du cache de Visual Studio ainsi :
+3. Supprimez également le répertoire de cache des composants MEF de Visual Studio:
 
     _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
 
-    En fait, cette étape en lui-même est souvent suffisante pour résoudre les erreurs, par exemple :
+    En fait, cette étape est souvent suffisante pour résoudre les erreurs telles que:
 
-    -   « Le package 'XamarinShellPackage' ne pas été chargé correctement »
+    - «Le package «XamarinShellPackage» n’a pas été chargé correctement»
 
-    -   « Le fichier projet... ne peut pas être ouvert. Il est un sous-type de projet manquant »
+    - «Le fichier projet... ne peut pas être ouvert. Il manque un sous-type de projet»
 
-    -   « Référence d’objet non définie sur une instance d’un objet.  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
+    - «La référence d’objet n’est pas définie sur une instance d’un objet.  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
 
-    -   « Échec de SetSite pour package » (dans Visual Studio _ActivityLog.xml_)
+    - «Échec de la des éléments pour le package» (dans _ActivityLog. xml_de Visual Studio)
 
-    -   « Échec de LegacySitePackage pour package » (dans Visual Studio _ActivityLog.xml_)
+    - «LegacySitePackage a échoué pour le package» (dans _ActivityLog. xml_de Visual Studio)
 
-    (Voir aussi le [vider le Cache composant MEF](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd) extension Visual Studio.  Et consultez [bogue 40781, commentaire 19](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19) pour un peu plus de contexte sur le problème en amont dans Visual Studio qui peuvent provoquer ces erreurs.)
+    (Voir aussi l’extension Visual Studio [du cache du composant MEF Clear](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd) .  Et consultez le [bogue 40781, commentaire 19](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19) pour un peu plus de contexte sur le problème en amont dans Visual Studio qui peut provoquer ces erreurs.)
 
-4.  Vérifiez aussi dans le _VirtualStore_ fichiers de superposition de répertoire pour voir si Windows a stocké de la _Extensions\\Xamarin_ ou _ComponentModelCache_répertoires :
+4. Archivez également le répertoire _VirtualStore_ pour voir si Windows a stocké des fichiers de superposition pour les répertoires Xamarin ou _ComponentModelCache_ des _extensions\\_ :
 
-    _%LOCALAPPDATA%\\VirtualStore_
+    _% LocalAppData%\\VirtualStore_
 
-5.  Ouvrez l’Éditeur du Registre (`regedit`).
+5. Ouvrez l’éditeur du Registre`regedit`().
 
-6.  Recherchez la clé suivante :
+6. Recherchez la clé suivante:
 
     _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
-7.  Recherchez et supprimez toutes les entrées qui correspondent à ce modèle :
+7. Recherchez et supprimez toutes les entrées qui correspondent à ce modèle :
 
-    _C:\\Program Files\*\\Microsoft Visual Studio 1\*.0\\Common7\\IDE\\Extensions\\Xamarin_
+    _C:\\Program Files\*\\Microsoft Visual Studio\\1\*.0\\:extensions\\IDECommon7\\Xamarin_
 
-8.  Recherchez cette clé :
+8. Recherchez cette clé :
 
     _HKEY\_CURRENT\_USER\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
-9.  Supprimez les entrées qui semblent éventuellement liées à Xamarin.  Par exemple, celui de Voici qui permet de poser des problèmes dans les versions antérieures de Xamarin :
+9. Supprimez les entrées qui semblent éventuellement liées à Xamarin.  Par exemple, voici un qui était utilisé pour provoquer des problèmes dans les versions antérieures de Xamarin:
 
     _Mono.VisualStudio.Shell,1.0_
 
-10. Ouvrez un administrateur `cmd.exe` invite de commandes, puis exécutez le `devenv /setup` et `devenv /updateconfiguration` commandes pour chaque version installée de Visual Studio.  Par exemple, pour Visual Studio 2015 :
+10. Ouvrez une invite `cmd.exe` de commandes d’administrateur, puis exécutez `devenv /setup` les `devenv /updateconfiguration` commandes et pour chaque version installée de Visual Studio.  Par exemple, pour Visual Studio 2015 :
 
     ```
     "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /setup
@@ -77,20 +77,20 @@ ms.locfileid: "61159621"
 
 11. Redémarrez.
 
-12. Réinstallez la version stable actuelle de Xamarin à l’aide de [visualstudio.com](https://visualstudio.com/xamarin/).
+12. Réinstallez la version stable actuelle de Xamarin à l’aide de à partir de [VisualStudio.com](https://visualstudio.com/xamarin/).
 
-## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>Autres étapes de dépannage pour « package non chargés correctement »
+## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>Étapes de dépannage supplémentaires pour «le package n’a pas été chargé correctement»
 
-Dans les cas où les étapes ci-dessus ne résolvent pas l’erreur « package non chargés correctement », voici quelques étapes supplémentaires.
+Dans les cas où les étapes ci-dessus ne résolvent pas l’erreur «le package n’a pas été correctement chargé», voici quelques étapes supplémentaires à essayer.
 
-1.  Créer un nouveau compte d’utilisateur Windows.
+1. Créez un nouveau compte d’utilisateur Windows.
 
-2.  Vérifiez si les extensions de Xamarin Visual Studio se chargent sans erreur pour le nouvel utilisateur.
+2. Vérifiez si les extensions Visual Studio Xamarin sont chargées sans erreur pour le nouvel utilisateur.
 
-3.  Si les extensions se chargement correctement, le problème est probablement causé par certains des paramètres stockés pour l’utilisateur d’origine :
+3. Si les extensions sont chargées correctement, le problème est probablement dû à certains des paramètres stockés pour l’utilisateur d’origine:
 
-    -   **Dans l’Explorateur de** – _% LocalAppData%\\Microsoft\\VisualStudio\\1\*.0_
-    -   **Dans regedit** – _HKEY\_actuel\_utilisateur\\logiciel\\Microsoft\\VisualStudio\\1\*.0_
-    -   **Dans regedit** – _HKEY\_actuel\_utilisateur\\logiciel\\Microsoft\\VisualStudio\\1\*.0\_Config_
+    - **Dans l’Explorateur** – _% LocalAppData\\%\\Microsoft\\VisualStudio\*1.0_
+    - **Dans Regedit** – _HKEY\_Current\_user\\SoftwareMicrosoftVisualStudio\\1.\*0\\\\_
+    - **Dans Regedit** – _HKEY\_Current\_user\\SoftwareMicrosoftVisualStudio\\10\*config\\\\\__
 
-4.  Si ces paramètres stockés apparaissent effectivement du problème, vous pouvez essayer de les sauvegarder et de les supprimer ensuite.
+4. Si ces paramètres stockés semblent être le problème, vous pouvez essayer de les sauvegarder, puis de les supprimer.

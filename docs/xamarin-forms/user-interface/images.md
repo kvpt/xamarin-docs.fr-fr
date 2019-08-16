@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 40a44b2748b29b21a1456c55cb75514f18506dd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648574"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527075"
 ---
 # <a name="images-in-xamarinforms"></a>Images dans Xamarin.Forms
 
@@ -204,7 +204,7 @@ Pour utiliser cette extension, ajoutez un personnalisé `xmlns` vers le XAML, en
 
 #### <a name="debugging-code"></a>Débogage du code
 
-Car il est parfois difficile de comprendre pourquoi une ressource d’image particulier n’est pas en cours de chargement, le débogage code suivant peut être temporairement ajouté à une application pour vous aider à vérifier que les ressources sont correctement configurées. Il génère en sortie connues de toutes les ressources incorporées dans l’assembly donné à la <span class="UIItem">Console</span> pour aider à déboguer les problèmes de chargement des ressources.
+Car il est parfois difficile de comprendre pourquoi une ressource d’image particulier n’est pas en cours de chargement, le débogage code suivant peut être temporairement ajouté à une application pour vous aider à vérifier que les ressources sont correctement configurées. Il génère en sortie connues de toutes les ressources incorporées dans l’assembly donné à la **Console** pour aider à déboguer les problèmes de chargement des ressources.
 
 ```csharp
 using System.Reflection;

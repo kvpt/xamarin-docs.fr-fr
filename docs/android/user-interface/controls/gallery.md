@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 6fe6b5a11473827eb716b0adf0fb0f3ae28a3538
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 04fac4084328c0af962282dea7a31e3c00457bef
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510280"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523007"
 ---
 # <a name="xamarinandroid-gallery-control"></a>Contrôle de la Galerie Xamarin. Android
 
@@ -152,5 +152,4 @@ Exécutez l'application. Elle doit ressembler à la capture d’écran ci-dessou
 - [`Gallery`](xref:Android.Widget.Gallery)
 - [`ImageView`](xref:Android.Widget.ImageView)
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la*
-[*licence d’attribution de Creative-2,5*](http://creativecommons.org/licenses/by/2.5/).
+_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](http://creativecommons.org/licenses/by/2.5/)._

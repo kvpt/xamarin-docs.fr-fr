@@ -1,73 +1,73 @@
 ---
-title: Xamarin.Mac avant au moins une compilation
-description: Ce document décrit avant la compilation de temps dans Xamarin.Mac. Il compare la compilation AOT à la compilation JIT, explique comment activer AOT et examine la compilation AOT hybride.
+title: Compilation anticipée de Xamarin. Mac
+description: Ce document décrit la compilation d’avance dans Xamarin. Mac. Il compare la compilation AOA à la compilation JIT, explique comment activer AOT et examine l’AOA hybride.
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: e155a394afd68d9970ee32785f6d0aeda6e2d129
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 08bc93e7a17cef35bc992afe0f6fb655a4e69aef
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034202"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528912"
 ---
-# <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin.Mac avant au moins une compilation
+# <a name="xamarinmac-ahead-of-time-compilation"></a>Compilation anticipée de Xamarin. Mac
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
-À l’avance de time (AOT), la compilation est une technique d’optimisation performante pour améliorer les performances de démarrage. Toutefois, elle affecte également votre temps de génération, taille de l’application et l’exécution du programme de manières profondes. Pour comprendre les compromis qu'il impose, nous allons approfondir un peu la compilation et l’exécution d’une application.
+La compilation à l’avance (AOA) est une technique d’optimisation puissante pour améliorer les performances de démarrage. Toutefois, cela affecte également le temps de génération, la taille de l’application et l’exécution du programme de manière profonde. Pour comprendre les compromis qu’il impose, nous allons explorer un peu la compilation et l’exécution d’une application.
 
-Le code écrit les langages, managés tels que C# et F#, est compilé en une représentation intermédiaire appelée langage intermédiaire. Ce langage intermédiaire, stocké dans vos assemblys de bibliothèque et un programme, est relativement compact et plus portable entre les architectures de processeur. Langage intermédiaire, cependant, est uniquement un intermédiaire de définir des instructions et à un moment donné IL devra être traduit en code machine spécifique au processeur.
+Le code écrit dans des langages managés, tel que C# et F#, est compilé en une représentation intermédiaire appelée il. Ce langage intermédiaire, stocké dans vos assemblys de bibliothèque et de programme, est relativement compact et portable entre les architectures de processeur. Toutefois, IL n’est qu’un ensemble d’instructions intermédiaires et, à un moment donné, qu’IL devra être traduit en code machine spécifique au processeur.
 
-Il existe deux points dans lequel ce traitement peut être effectué :
+Ce traitement peut être effectué de deux points:
 
-- **Juste à temps (JIT)** : pendant le démarrage et l’exécution de votre application, le langage intermédiaire est compilé en mémoire en code machine.
-- **Anticipée de time (AOT)** : lors de la génération, le langage intermédiaire est compilé et écrit dans les bibliothèques natives et stocké au sein de votre offre groupée d’applications.
+- **Juste-à-temps (JIT)** : lors du démarrage et de l’exécution de votre application, le langage intermédiaire est compilé en mémoire en code machine.
+- À l' **avance (AOA)** : lors de la génération, le langage intermédiaire est compilé et écrit dans les bibliothèques natives et stocké dans votre offre groupée d’applications.
 
-Chaque option a un nombre d’avantages et les inconvénients :
+Chaque option présente un certain nombre d’avantages et de compromis:
 
 - **JIT**
-  - **Temps de démarrage** – compilation JIT doit être effectuée au démarrage. Pour la plupart des applications, c’est l’ordre de 100 ms, mais pour les grandes applications cette heure peut être beaucoup plus.
-  - **L’exécution** – code en tant que le JIT peut être optimisé pour le processeur spécifique utilisé, légèrement meilleur code peut être généré. Dans la plupart des applications, c’est plus rapidement les points de pourcentage quelques au maximum.
+  - **Heure de démarrage** : la compilation JIT doit être effectuée au démarrage. Pour la plupart des applications, il s’agit de l’ordre de 100 $, mais pour les applications volumineuses, cette durée peut être beaucoup plus importante.
+  - **Exécution** : comme le code JIT peut être optimisé pour le processeur utilisé, un code légèrement meilleur peut être généré. Dans la plupart des applications, il s’agit de quelques points de pourcentage plus rapides.
 - **AOA**
-  - **Temps de démarrage** – le chargement les dylibs précompilés est nettement plus rapide que les assemblys JIT.
-  - **Espace disque** – ces les dylibs peut prendre une quantité significative d’espace disque toutefois. Selon les assemblys qui sont AOTed, il peut doubler ou plus la taille de la partie du code de votre application.
-  - **Heure de création** – compilation AOT est sensiblement plus lente que JIT et ralentir les builds à l’utiliser. Ce ralentissement peut varier de secondes jusqu'à une minute ou plus, en fonction de la taille et le nombre d’assemblys compilés.
-  - **Obscurcissement** : en tant que le langage intermédiaire, ce qui est beaucoup plus facile à rétroconcevoir que du code machine, n’est pas nécessairement obligatoire peuvent être supprimé pour aider à obscurcir le code sensible. Cela nécessite l’option décrit ci-dessous « hybride ».
+  - **Temps de démarrage** : le chargement des dylibs précompilés est beaucoup plus rapide que les assemblys JIT.
+  - **Espace disque** : ces dylibs peuvent prendre une quantité significative d’espace disque toutefois. Selon les assemblys qui sont AOTed, la taille de la partie code de votre application peut être double ou supérieure.
+  - **Temps de génération** : la compilation AOA est beaucoup plus lente que JIT et ralentira les builds qui l’utilisent. Ce ralentissement peut aller de quelques secondes à une minute ou plus, en fonction de la taille et du nombre d’assemblys compilés.
+  - L' **obscurcissement** : comme il, qui est beaucoup plus facile à rétroconcevoir que le code machine, n’est pas nécessairement obligatoire, il peut être supprimé pour aider à obscurcir le code sensible. Cela nécessite l’option «hybride» décrite ci-dessous.
 
-## <a name="enabling-aot"></a>L’activation AOA
+## <a name="enabling-aot"></a>Activation de l’AOA
 
-Options de compilation AOT seront ajoutées au volet Build Mac dans une prochaine mise à jour. En attendant, d’activer AOT nécessite en passant un argument de ligne de commande via le champ « arguments mmp supplémentaires » dans la Build Mac. Les options sont les suivantes :
+Les options AOA seront ajoutées au volet Build Mac dans une prochaine mise à jour. Jusqu’à ce moment, l’activation de l’AOA nécessite le passage d’un argument de ligne de commande via le champ «arguments MMP supplémentaires» dans la build Mac. Les options sont les suivantes :
+
+```
+--aot[=VALUE]          Specify assemblies that should be AOT compiled
+                          - none - No AOT (default)
+                          - all - Every assembly in MonoBundle
+                          - core - Xamarin.Mac, System, mscorlib
+                          - sdk - Xamarin.Mac.dll and BCL assemblies
+                          - |hybrid after option enables hybrid AOT which
+                          allows IL stripping but is slower (only valid
+                          for 'all')
+                          - Individual files can be included for AOT via +
+                          FileName.dll and excluded via -FileName.dll
+
+                          Examples:
+                            --aot:all,-MyAssembly.dll
+                            --aot:core,+MyOtherAssembly.dll,-mscorlib.dll
+```
 
 
-      --aot[=VALUE]          Specify assemblies that should be AOT compiled
-                               - none - No AOT (default)
-                               - all - Every assembly in MonoBundle
-                               - core - Xamarin.Mac, System, mscorlib
-                               - sdk - Xamarin.Mac.dll and BCL assemblies
-                               - |hybrid after option enables hybrid AOT which
-                               allows IL stripping but is slower (only valid
-                               for 'all')
-                                - Individual files can be included for AOT via +
-                               FileName.dll and excluded via -FileName.dll
+## <a name="hybrid-aot"></a>AOA hybride
 
-                               Examples:
-                                 --aot:all,-MyAssembly.dll
-                                 --aot:core,+MyOtherAssembly.dll,-mscorlib.dll
+Lors de l’exécution d’une application macOS, le runtime utilise par défaut le code machine chargé à partir des bibliothèques natives produites par la compilation AOA. Toutefois, il existe certaines zones de code telles que trampolines, où la compilation JIT peut produire des résultats beaucoup plus optimisés. Cela nécessite que le langage intermédiaire des assemblys managés soit disponible. Sur iOS, les applications sont limitées à toute utilisation de la compilation JIT; ces sections de code sont également compilées par l’AOA.
 
-
-
-## <a name="hybrid-aot"></a>Compilation AOT hybride
-
-Pendant l’exécution d’une application macOS le runtime par défaut, à l’aide de code machine chargés depuis les bibliothèques natives produites par la compilation AOT. Il existe, toutefois, certaines zones du code tel que trampolines, où la compilation JIT peut produire des résultats considérablement plus optimisées. Cela nécessite l’IL d’assemblys managés soit disponible. Sur iOS, les applications sont limitées à partir de toute utilisation de la compilation JIT ; Ces section de code sont AOT compilé également.
-
-L’option hybride indique au compilateur pour les deux compilation de ces section (comme iOS), mais également à supposer que le langage intermédiaire ne sera pas disponible lors de l’exécution. Ce langage intermédiaire peut ensuite être supprimé post-build. Comme indiqué ci-dessus, le runtime est contraints d’utiliser le moins optimisés routines à certains endroits.
+L’option hybride indique au compilateur de compiler cette section (comme iOS), mais aussi de supposer que le langage intermédiaire n’est pas disponible au moment de l’exécution. Ce langage intermédiaire peut ensuite être supprimé après la génération. Comme indiqué ci-dessus, le runtime sera contraint d’utiliser des routines moins optimisées à certains endroits.
 
 ## <a name="further-considerations"></a>Autres considérations
 
-Les conséquences négatives d’AOT à l’échelle avec les tailles et le nombre d’assemblys traités. La version complète [framework cible](~/mac/platform/target-framework.md) pour l’exemple contient une bibliothèque de classes Base beaucoup plus important (BCL) que moderne, et donc AOT doit prendre beaucoup plus de temps et produire des lots plus volumineux. Cela est aggravé par incompatibilité du framework cible complet avec des liens, qui supprime le code inutilisé. Envisagez de déplacer votre application moderne et l’activation de l’édition des liens pour de meilleurs résultats.
+Conséquences négatives de l’échelle de l’AOA avec les tailles et le nombre d’assemblys traités. Le [Framework cible](~/mac/platform/target-framework.md) complet, par exemple, contient une bibliothèque de classes de base (BCL) beaucoup plus volumineuse que la version moderne, et par conséquent, l’AOA prendra beaucoup plus de temps et produira des offres plus volumineuses. Cela est composé de l’incompatibilité de l’infrastructure cible complète avec la liaison, ce qui supprime le code inutilisé. Envisagez de déplacer votre application vers moderne et d’activer la liaison pour obtenir les meilleurs résultats.
 
-L’un des avantages supplémentaires d’AOT est fourni avec des interactions améliorées avec débogage natif et les chaînes d’outils de profilage. Dans la mesure où une grande majorité de la base de code sera compilée avance, elle aura des noms de fonction et de symboles qui sont plus faciles à lire à l’intérieur des rapports d’incidents native, profilage et de débogage. Fonctions JIT généré n’ont ces noms pas et ne sont pas souvent apparaissent comme des décalages hexadécimal sans nom qui sont très difficiles à résoudre.
+L’un des autres avantages offerts par l’AOA est l’amélioration des interactions avec le débogage et le profilage natifs chaînes. Étant donné qu’une grande majorité du code base sera compilée à l’avance, il aura des noms de fonctions et des symboles plus faciles à lire dans les rapports d’incidents natifs, le profilage et le débogage. Les fonctions générées juste-à-temps n’ont pas ces noms et apparaissent souvent comme des décalages hexadécimaux sans nom qui sont très difficiles à résoudre.

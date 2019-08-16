@@ -1,31 +1,31 @@
 ---
-title: Lancement de l’Application de mappages
-description: Guide pratique pour lancer l’application Maps intégrée à partir de votre application Xamarin.Android.
+title: Lancement de l’application Maps
+description: Comment lancer l’application Maps intégrée à partir de votre application Xamarin. Android.
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: fa32783617fce99514560677184f17be904cd42d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b436ea4f5d8c70f0ca641bea72d1230fc07c5086
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186381"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523782"
 ---
-# <a name="launching-the-maps-application"></a>Lancement de l’Application de mappages
+# <a name="launching-the-maps-application"></a>Lancement de l’application Maps
 
-Pour travailler avec des mappages dans Xamarin.Android, le plus simple consiste à tirer parti de l’application de cartes intégrées indiquée ci-dessous :
+La façon la plus simple de travailler avec des mappages dans Xamarin. Android est de tirer parti de l’application Maps intégrée illustrée ci-dessous:
 
-[![Capture d’écran de l’exemple d’application Google Maps intégrée](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
+[![Exemple de capture d’écran de l’application Google Maps intégrée](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
-Lorsque vous utilisez l’application de cartes, la carte ne fera pas partie de votre application. Au lieu de cela, votre application lance l’application maps et charger la carte en externe. La section suivante examine comment utiliser Xamarin.Android pour lancer des cartes comme celui illustré ci-dessus.
+Lorsque vous utilisez l’application Maps, la carte ne fait pas partie de votre application. Au lieu de cela, votre application lance l’application Maps et charge la carte en externe. La section suivante explique comment utiliser Xamarin. Android pour lancer des cartes comme celle ci-dessus.
 
 
 ## <a name="creating-the-intent"></a>Création de l’intention
 
-Utilisation avec les cartes d’application est aussi simple que la création d’une intention avec un URI approprié, la définition de l’action à ActionView et l’appelant la méthode StartActivity. Par exemple, le code suivant lance l’application de cartes centrée à une donnée de latitude et une longitude :
+L’utilisation de l’application Maps est aussi simple que la création d’une intention avec un URI approprié, la définition de l’action sur ActionView et l’appel de la méthode StartActivity. Par exemple, le code suivant lance l’application Maps centrée sur une latitude et une longitude données:
 
 ```csharp
 var geoUri = Android.Net.Uri.Parse ("geo:42.374260,-71.120824");
@@ -33,38 +33,38 @@ var mapIntent = new Intent (Intent.ActionView, geoUri);
 StartActivity (mapIntent);
 ```
 
-Ce code est tout ce qui est nécessaire pour lancer le mappage indiqué dans la capture d’écran précédente. Outre la spécification de latitude et longitude, le schéma d’URI pour les cartes prend en charge plusieurs autres options.
+Ce code est tout ce qui est nécessaire pour lancer la carte illustrée dans la capture d’écran précédente. En plus de spécifier la latitude et la longitude, le schéma d’URI pour les mappages prend en charge plusieurs autres options.
 
 
-## <a name="geo-uri-scheme"></a>Schéma d’URI de la zone géographique
+## <a name="geo-uri-scheme"></a>Schéma géo-URI
 
-Le code ci-dessus permet de créer un URI le schéma de la zone géographique. Ce schéma d’URI prend en charge plusieurs formats, comme indiqué ci-dessous :
+Le code ci-dessus utilisait le schéma géo pour créer un URI. Ce modèle d’URI prend en charge plusieurs formats, comme indiqué ci-dessous:
 
--   `geo:latitude,longitude` &ndash; Ouvre l’application maps centrée sur un LAT./lon. 
+- `geo:latitude,longitude`&ndash; Ouvre l’application Maps centrée sur un LAT/LON. 
 
--   `geo:latitude,longitude?z=zoom` &ndash; Ouvre les mappages d’application centrée sur un LAT./lon et zoom au niveau spécifié. Le niveau de zoom peut varier de 1 à 23 : 1 affiche la terre entière et 23 est le niveau de zoom le plus proche.
+- `geo:latitude,longitude?z=zoom`&ndash; Ouvre l’application Maps centrée sur une table lat/lon et effectue un zoom sur le niveau spécifié. Le niveau de zoom peut être compris entre 1 et 23: 1 affiche la totalité de la terre et 23 le niveau de zoom le plus proche.
 
--   `geo:0,0?q=my+street+address` &ndash; Ouvre l’application de mappages à l’emplacement d’une adresse postale. 
+- `geo:0,0?q=my+street+address`&ndash; Ouvre l’application Maps à l’emplacement d’une adresse postale. 
 
--   `geo:0,0?q=business+near+city` &ndash; Ouvre l’application maps et affiche les résultats de recherche annoté. 
-
-
-Les versions de l’URI qui prennent une requête (à savoir les rues adresse ou recherche termes) utilisent service de geocoder de Google pour extraire l’emplacement qui est ensuite affiché sur la carte. Par exemple, l’URI `geo:0,0?q=coop+Cambridge` entraîne le mappage indiqué ci-dessous :
-
-[![Capture d’écran montrant Google Maps avec un terme de recherche](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
+- `geo:0,0?q=business+near+city`&ndash; Ouvre l’application Maps et affiche les résultats de la recherche annotés. 
 
 
+Les versions de l’URI qui acceptent une requête (à savoir l’adresse postale ou les termes de recherche) utilisent le service de géocodeur de Google pour récupérer l’emplacement qui est ensuite affiché sur la carte. Par exemple, l’URI `geo:0,0?q=coop+Cambridge` donne la carte illustrée ci-dessous:
 
-Pour plus d’informations sur les schémas d’URI géographique, consultez [afficher un emplacement sur une carte](https://developer.android.com/guide/components/intents-common.html#Maps).
+[![Exemple de capture d’écran montrant Google Maps avec un terme de recherche](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-## <a name="street-view"></a>Vue rue
 
-Outre le schéma de la zone géographique, Android également en charge le chargement des vues (rue) à partir d’une intention. Voici un exemple de l’application de vue postale lancée à partir de Xamarin.Android :
+Pour plus d’informations sur les schémas d’URI géo, consultez [afficher un emplacement sur une carte](https://developer.android.com/guide/components/intents-common.html#Maps).
 
-[![Capture d’écran de l’exemple d’une vue de rue](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
-Pour lancer une vue rue, utilisez simplement le `google.streetview` schéma d’URI, comme illustré dans le code suivant :
+## <a name="street-view"></a>Affichage de la rue
+
+En plus de la géo-schéma, Android prend également en charge le chargement de vues de rue à partir d’une intention. Vous trouverez ci-dessous un exemple de l’application de la vue Street lancée à partir de Xamarin. Android:
+
+[![Exemple de capture d’écran d’une vue de la rue](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+
+Pour lancer un affichage de la rue, utilisez `google.streetview` simplement le modèle d’URI, comme illustré dans le code suivant:
 
 ```csharp
 var streetViewUri = Android.Net.Uri.Parse (
@@ -73,25 +73,25 @@ var streetViewIntent = new Intent (Intent.ActionView, streetViewUri);
 StartActivity (streetViewIntent);
 ```
 
-Le schéma d’URI google.streetview ci-dessus prend la forme suivante :
+Le schéma d’URI Google. Streetview utilisé ci-dessus prend la forme suivante:
 
 ```csharp
 google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 ```
 
-Comme vous pouvez le voir, il existe plusieurs paramètres pris en charge, comme indiqué ci-dessous :
+Comme vous pouvez le voir, plusieurs paramètres sont pris en charge, comme indiqué ci-dessous:
 
--   `lat` &ndash; Latitude de l’emplacement à afficher dans la vue de rue.
+- `lat`&ndash; Latitude de l’emplacement à afficher dans la vue de la rue.
 
--   `lng` &ndash; Longitude de l’emplacement à afficher dans la vue de rue.
+- `lng`&ndash; Longitude de l’emplacement à afficher dans la vue de la rue.
 
--   `pitch` &ndash; Angle de panorama vue rue, mesurée à partir du centre en degrés où 90 degrés est directement vers le bas et de-90 degrés est vers le haut.
+- `pitch`&ndash; Angle de la vue de la rue, mesuré à partir du centre en degrés, où 90 degrés est vers le haut et-90 degrés vers le haut.
 
--   `yaw` &ndash; Centre de vue de panorama vue rue, mesuré dans le sens horaire en degrés à partir du Nord.
+- `yaw`&ndash; Center-of-View of Street View Panorama, mesuré dans le sens des aiguilles d’une montre, en degrés, du Nord.
 
--   `zoom` &ndash; Zoom multiplicateur de panorama de vue rue, où 1.0 = zoom normal, 2.0 = zoom 2 x 3.0 = 4 zoom x, etc.
+- `zoom`&ndash; Zoom multiplicateur pour Street View Panorama, où 1,0 = zoom normal, 2,0 = Zoomed 2x, 3,0 = zoomé 4x, etc.
 
--   `mz` &ndash; Le niveau de zoom de carte qui sera utilisé lors du passage à l’application de mappages à partir de la vue rue.
+- `mz`&ndash; Niveau de zoom de la carte qui sera utilisé pour accéder à l’application Maps à partir de la vue de la rue.
 
 
-Utilisation d’intégrés mappe application ou la vue (rue) est un moyen simple pour ajouter rapidement la prise en charge du mappage. Toutefois, les API de cartes d’Android offre un contrôle plus précis sur l’expérience de mappage.
+L’utilisation de l’application Maps intégrée ou de la vue Street est un moyen simple d’ajouter rapidement la prise en charge du mappage. Toutefois, l’API Maps d’Android offre un contrôle plus précis de l’expérience de mappage.

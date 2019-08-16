@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 03c18c50b15db05d26e1cec20e571367219f8643
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 818d5c734e8e662c271e20c26347e5e941ddad3e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643075"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527859"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>Modifications apportées à StoreKit dans iOS 6
 
@@ -60,7 +60,7 @@ L’API permettant d’afficher un produit dans n’importe quelle application e
 1. Assignez un gestionnaire à l’événement `Finished` du contrôleur d’affichage, qui doit faire disparaître le contrôleur d’affichage. Cet événement est appelé quand l’utilisateur appuie sur Annuler. Sinon, finalise une transaction dans le contrôleur d’affichage.
 1. Appelez la `LoadProduct` méthode en passant le `StoreProductParameters` et un gestionnaire d’achèvement. Le gestionnaire d’achèvement doit vérifier que la demande de produit s’est bien déroulée et `SKProductViewController` , le cas échéant, présenter le modal. Une gestion appropriée des erreurs doit être ajoutée si le produit ne peut pas être récupéré.
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
 Le projet *ProductView* dans l’exemple de code *StoreKit* pour cet article implémente `Buy` une méthode qui accepte l’ID Apple d’un produit et `SKStoreProductViewController`affiche le. Le code suivant affiche les informations sur les produits pour un ID Apple donné:
 
@@ -244,8 +244,8 @@ La création de packages de contenu pour les produits d’achat dans l’applica
 
 Notre exemple d’application contient des chapitres de la vente, chaque package de contenu de chapitre contient les éléments suivants:
 
--  un fichier texte, et
--  image représentant le chapitre.
+- un fichier texte, et
+- image représentant le chapitre.
 
 
 Commencez par sélectionner **fichier > nouveau projet** dans le menu, puis choisissez **contenu de l’achat dans l’application**:

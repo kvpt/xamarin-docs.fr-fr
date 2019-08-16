@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645331"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522491"
 ---
 # <a name="extending-the-recyclerview-example"></a>Extension de l’exemple RecyclerView
 
@@ -26,11 +26,11 @@ Lorsqu’un utilisateur touche un élément dans le `RecyclerView`, un événeme
 
 Pour illustrer comment gérer des événements de clic d’élément, les étapes suivantes expliquent comment l’application de visualisation de base est modifiée pour signaler la photographie touchée par l’utilisateur. Lorsqu’un événement de clic d’élément se produit dans l’exemple d’application, la séquence suivante a lieu:
 
-1.  La photographie détecte `CardView` l’événement de clic d’élément et avertit l’adaptateur.
+1. La photographie détecte `CardView` l’événement de clic d’élément et avertit l’adaptateur.
 
-2.  L’adaptateur transfère l’événement (avec les informations de position de l’élément) au gestionnaire de clic d’élément de l’activité.
+2. L’adaptateur transfère l’événement (avec les informations de position de l’élément) au gestionnaire de clic d’élément de l’activité.
 
-3.  Le gestionnaire de clics d’élément de l’activité répond à l’événement de clic d’élément.
+3. Le gestionnaire de clics d’élément de l’activité répond à l’événement de clic d’élément.
 
 Tout d’abord, un membre de `ItemClick` gestionnaire d’événements appelé `PhotoAlbumAdapter` est ajouté à la définition de classe:
 

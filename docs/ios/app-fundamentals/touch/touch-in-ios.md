@@ -1,34 +1,34 @@
 ---
-title: Événements tactiles et les mouvements dans Xamarin.iOS
-description: Ce document décrit comment utiliser des événements tactiles multipoint, mouvements, plusieurs mouvements et des mouvements personnalisés dans les applications Xamarin.iOS.
+title: Événements tactiles et mouvements dans Xamarin. iOS
+description: Ce document explique comment utiliser des événements tactiles, des entrées tactiles tactiles, des gestes multiples et des mouvements personnalisés dans les applications Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f7160c48e1b1ac85f4aa0173c0eb9f42b8fefca2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 70c46282c9eebfed45bbdae75fdb2216e7f4c889
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218616"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526600"
 ---
-# <a name="touch-events-and-gestures-in-xamarinios"></a>Événements tactiles et les mouvements dans Xamarin.iOS
+# <a name="touch-events-and-gestures-in-xamarinios"></a>Événements tactiles et mouvements dans Xamarin. iOS
 
-Il est important de comprendre les événements tactiles et de toucher l’API dans une application iOS, tels qu’ils sont central pour toutes les interactions avec l’appareil physiques. Toutes les interactions tactiles impliquent un `UITouch` objet. Dans cet article, nous allez apprendre à utiliser le `UITouch` classe et ses API pour prendre en charge tactile. Plus tard, nous étendrons sur nos connaissances pour savoir comment prendre en charge des gestes.
+Il est important de comprendre les événements tactiles et les API tactiles dans une application iOS, car ils sont essentiels à toutes les interactions physiques avec l’appareil. Toutes les interactions tactiles `UITouch` impliquent un objet. Dans cet article, nous allons apprendre à utiliser la `UITouch` classe et ses API pour prendre en charge Touch. Plus tard, nous développerons notre connaissance pour apprendre à prendre en charge les gestes.
 
-## <a name="enabling-touch"></a>L’activation tactile
+## <a name="enabling-touch"></a>Activation de Touch
 
-Contrôles dans `UIKit` – ces sous-classé à partir du contrôle – dépendent c’est le cas intervention de l’utilisateur qui sont intégrées à UIKit de mouvements et par conséquent il n’est pas nécessaire d’activer Touch. Il est déjà activé.
+Les contrôles `UIKit` dans, ceux sous-classés à partir de uicontrolextensions, dépendent de l’interaction de l’utilisateur qu’ils ont des gestes intégrés à uikit. par conséquent, il n’est pas nécessaire d’activer Touch. Elle est déjà activée.
 
-Toutefois, un grand nombre des vues dans `UIKit` n’ont pas tactile est activé par défaut. Il existe deux façons d’activer touch sur un contrôle. La première consiste à vérifier la case à cocher activée d’Interaction utilisateur dans le panneau de la propriété du concepteur, iOS comme indiqué dans la capture d’écran suivante :
+Toutefois, la plupart des vues dans `UIKit` n’ont pas de fonction tactile activée par défaut. Il existe deux façons d’activer la fonction tactile sur un contrôle. La première consiste à activer la case à cocher interaction utilisateur activée dans le panneau des propriétés du concepteur iOS, comme illustré dans la capture d’écran suivante:
 
- [![](touch-in-ios-images/image1.png "Case à cocher activée d’Interaction utilisateur dans le panneau de la propriété du concepteur iOS")](touch-in-ios-images/image1.png#lightbox)
+ [![](touch-in-ios-images/image1.png "Cochez la case interaction avec l’utilisateur activée dans le panneau des propriétés du concepteur iOS.")](touch-in-ios-images/image1.png#lightbox)
 
-Nous pouvons également utiliser un contrôleur pour définir le `UserInteractionEnabled` propriété sur true sur un `UIView` classe. Cela est nécessaire si l’interface utilisateur est créé dans le code.
+Nous pouvons également utiliser un contrôleur pour affecter la `UserInteractionEnabled` valeur true à la propriété `UIView` sur une classe. Cette condition est requise si l’interface utilisateur est créée dans le code.
 
-La ligne de code suivante est un exemple :
+La ligne de code suivante est un exemple:
 
 ```csharp
 imgTouchMe.UserInteractionEnabled = true;
@@ -36,18 +36,18 @@ imgTouchMe.UserInteractionEnabled = true;
 
 ## <a name="touch-events"></a>Événements tactiles
 
-Il existe trois phases de l’entrée tactile qui se produisent lorsque l’utilisateur touche l’écran, déplace son doigt ou supprime son doigt. Ces méthodes sont définies dans `UIResponder`, qui est la classe de base pour UIView. iOS remplacent les méthodes associées sur le `UIView` et `UIViewController` pour gérer tactile :
+Trois phases de saisie tactile se produisent lorsque l’utilisateur touche l’écran, déplace son doigt ou supprime son doigt. Ces méthodes sont définies dans `UIResponder`, qui est la classe de base pour UIView. iOS remplace les méthodes associées sur le `UIView` et le `UIViewController` pour gérer les fonctions tactiles:
 
--  `TouchesBegan` : Il est appelé lorsque l’écran est touché tout d’abord.
--  `TouchesMoved` : Il est appelé lorsque l’emplacement des modifications tactile en tant que l’utilisateur est décalée à leurs doigts dans l’écran.
--  `TouchesEnded` ou `TouchesCancelled` – `TouchesEnded` est appelée lorsque les doigts de l’utilisateur sont levées en dehors de l’écran.  `TouchesCancelled` est appelée si iOS annule la pression tactile – par exemple, si un utilisateur saisit son doigt en dehors d’un bouton pour annuler l’appui sur des diapositives.
+- `TouchesBegan`: Cette méthode est appelée lorsque l’écran est abordé pour la première fois.
+- `TouchesMoved`: Cette méthode est appelée lorsque l’emplacement du toucher change au fur et à mesure que l’utilisateur fait glisser ses doigts sur l’écran.
+- `TouchesEnded`ou `TouchesCancelled` -`TouchesEnded` est appelé quand les doigts de l’utilisateur sont levés hors de l’écran.  `TouchesCancelled`est appelé si iOS annule la touche tactile, par exemple, si un utilisateur glisse son doigt sur un bouton pour annuler une pression.
 
 
-Touch événements voyage de manière récursive vers le bas dans la pile de UIViews, pour vérifier si l’événement tactile est dans les limites d’un objet de vue. On parle souvent _le test de positionnement_. Ils seront tout d’abord être appelées sur le premier `UIView` ou `UIViewController` et est ensuite appelée sur le `UIView` et `UIViewControllers` ci-dessous dans la hiérarchie d’affichage.
+Les événements tactiles se déplacent de manière récursive dans la pile de UIViews, pour vérifier si l’événement tactile se trouve dans les limites d’un objet de vue. On parle souvent _de test de positionnement_. Ils sont d' `UIView` abord appelés en premier, ou `UIViewController` ils sont appelés sur le `UIView` et `UIViewControllers` sous-situés dans la hiérarchie d’affichage.
 
-Un `UITouch` objet sera créé chaque fois que l’utilisateur touche l’écran. Le `UITouch` objet inclut des données sur les fonctions tactiles, tels que lorsque la pression tactile se sont produites, où il s’est produite, si la pression tactile a été un balayage etc. Les événements tactiles transmis une propriété finales – un `NSSet` contenant un ou plusieurs finales. Nous pouvons utiliser cette propriété pour obtenir une référence à une pression tactile et déterminer la réponse de l’application.
+Un `UITouch` objet est créé chaque fois que l’utilisateur touche l’écran. L' `UITouch` objet comprend des données sur le toucher, par exemple quand le toucher s’est produit, où il s’est produit, si le toucher était un balayage, etc. Les événements tactiles reçoivent une propriété Touch, `NSSet` qui contient un ou plusieurs touches. Nous pouvons utiliser cette propriété pour obtenir une référence à une fonction tactile et déterminer la réponse de l’application.
 
-Les classes qui remplacent un des événements tactiles doivent d’abord appeler l’implémentation de base, puis obtenez le `UITouch` objet associé à l’événement. Pour obtenir une référence à la première fonction tactile, appelez le `AnyObject` propriété et effectuer un cast en tant qu’un `UITouch` comme indiqué dans l’exemple suivant :
+Les classes qui substituent l’un des événements tactiles doivent d’abord appeler l’implémentation de base `UITouch` , puis récupérer l’objet associé à l’événement. Pour obtenir une référence à la première touche tactile, appelez `AnyObject` la propriété et effectuez un cast `UITouch` en comme illustré dans l’exemple suivant:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -61,7 +61,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-iOS reconnaît automatiquement successive rapide aborde l’écran et collectera tout comme un simple clic dans une seule `UITouch` objet. Cela rend inutile la vérification pour un double appui aussi simple que la vérification du `TapCount` propriété, comme illustré dans le code suivant :
+iOS reconnaît automatiquement les touches rapides successives sur l’écran et les recueille toutes en un seul robinet dans `UITouch` un seul objet. Cela facilite la vérification d’un double-clic aussi simple que `TapCount` la vérification de la propriété, comme illustré dans le code suivant:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -78,19 +78,19 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="multi-touch"></a>L’interaction tactile multipoint
+## <a name="multi-touch"></a>Multipoint
 
-L’interaction tactile multipoint n’est pas activée par défaut sur les contrôles. L’interaction tactile multipoint peut être activée dans le concepteur, iOS, comme illustré par la capture d’écran suivante :
+L’interface multipoint n’est pas activée par défaut sur les contrôles. Vous pouvez activer multipoint dans le concepteur iOS, comme illustré dans la capture d’écran suivante:
 
- [![](touch-in-ios-images/image2.png "L’interaction tactile multipoint est activée dans le concepteur iOS")](touch-in-ios-images/image2.png#lightbox)
+ [![](touch-in-ios-images/image2.png "Multi-Touch activé dans le concepteur iOS")](touch-in-ios-images/image2.png#lightbox)
 
-Il est également possible de définir l’interaction tactile multipoint par programme en définissant le `MultipleTouchEnabled` comme indiqué dans la ligne de code suivante :
+Il est également possible de définir des fonctions tactiles multiples par programme en définissant la `MultipleTouchEnabled` propriété comme indiqué dans la ligne de code suivante:
 
 ```csharp
 imgTouchMe.MultipleTouchEnabled = true;
 ```
 
-Pour déterminer combien de doigts toucher l’écran, utilisez le `Count` propriété sur le `UITouch` propriété :
+Pour déterminer le nombre de doigts touchés par l’écran, `Count` utilisez la propriété `UITouch` sur la propriété:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -100,9 +100,9 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="determining-touch-location"></a>Détermination de l’emplacement de tactile
+## <a name="determining-touch-location"></a>Détermination de l’emplacement tactile
 
-La méthode `UITouch.LocationInView` retourne un objet CGPoint qui contient les coordonnées de la pression tactile au sein d’une vue donnée. En outre, nous pouvons tester si cet emplacement est dans un contrôle en appelant la méthode `Frame.Contains`. L’extrait de code suivant montre un exemple de ceci :
+La méthode `UITouch.LocationInView` retourne un objet CGPoint qui contient les coordonnées de la pression tactile dans une vue donnée. En outre, nous pouvons tester pour déterminer si cet emplacement se trouve dans un contrôle en appelant la `Frame.Contains`méthode. L’extrait de code suivant en montre un exemple:
 
 ```csharp
 if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
@@ -111,82 +111,82 @@ if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
 }
 ```
 
-Maintenant que nous avons une compréhension des événements tactiles dans iOS, nous allons en savoir plus sur les modules de reconnaissance de mouvement.
+Maintenant que nous avons une compréhension des événements tactiles dans iOS, voyons les informations relatives aux détecteurs de mouvement.
 
-## <a name="gesture-recognizers"></a>Modules de reconnaissance de mouvement
+## <a name="gesture-recognizers"></a>Détecteurs de mouvement
 
-Modules de reconnaissance de mouvement peuvent considérablement simplifier et réduire l’effort de programmation pour prendre en charge touch dans une application. modules de reconnaissance de mouvement iOS regrouper une série d’événements tactiles dans un événement tactile unique.
+Les détecteurs de mouvement peuvent simplifier et réduire l’effort de programmation pour prendre en charge la saisie tactile dans une application. les détecteurs de mouvements iOS agrègent une série d’événements tactiles en un seul événement tactile.
 
-Xamarin.iOS fournit la classe `UIGestureRecognizer` comme classe de base pour les modules de reconnaissance de mouvement intégrés suivants :
+Xamarin. iOS fournit la classe `UIGestureRecognizer` en tant que classe de base pour les détecteurs de mouvements intégrés suivants:
 
--  *UITapGestureRecognizer* – il s’agit pour un ou plusieurs clics.
--  *UIPinchGestureRecognizer* – Pinching et la propagation des uns des autres doigts.
--  *UIPanGestureRecognizer* : panoramique ou glissement.
--  *UISwipeGestureRecognizer* – balayant dans n’importe quelle direction.
--  *UIRotationGestureRecognizer* – rotation des deux doigts en un mouvement dans le sens horaire ou antihoraire.
--  *UILongPressGestureRecognizer* – appuyer et maintenir, parfois dénommé un long, appuyez sur ou cliquez sur du long.
+- *UITapGestureRecognizer* : il s’agit d’un ou plusieurs robinets.
+- *UIPinchGestureRecognizer* : pincement et étalement des doigts.
+- *UIPanGestureRecognizer* – panoramique ou glissement.
+- *UISwipeGestureRecognizer* : balayer dans n’importe quelle direction.
+- *UIRotationGestureRecognizer* : rotation de deux doigts dans le sens des aiguilles d’une montre ou dans le sens des aiguilles d’une montre.
+- *UILongPressGestureRecognizer* : maintenez la touche enfoncée, parfois appelée longue pression ou long-clic.
 
 
-Le modèle de base à l’aide d’un module de reconnaissance de mouvement est comme suit :
+Le modèle de base pour l’utilisation d’un module de reconnaissance de mouvement est le suivant:
 
-1.  **Instancier la reconnaissance de mouvement** – tout d’abord, instanciez un `UIGestureRecognizer` sous-classe. L’objet est instancié est associée par une vue et est garbage collecté lorsque la vue est supprimée. Il n’est pas nécessaire de créer cette vue comme une variable de niveau classe.
-1.  **Configurer des paramètres de mouvement** – l’étape suivante consiste à configurer la reconnaissance de mouvement. La documentation de Xamarin sur `UIGestureRecognizer` et ses sous-classes pour obtenir la liste des propriétés qui peuvent être définies pour contrôler le comportement d’un `UIGestureRecognizer` instance.
-1.  **Configurer la cible** – en raison de son héritage Objective-C, Xamarin.iOS ne déclenchent des événements lorsqu’un module de reconnaissance de mouvement correspond à un mouvement.  `UIGestureRecognizer` possède une méthode – `AddTarget` – qui peut accepter un délégué anonyme ou un sélecteur d’Objective-C avec le code à exécuter lors de la reconnaissance de mouvement est en correspondance.
-1.  **Activer la reconnaissance de mouvement** : tout comme avec les événements tactiles, les mouvements sont reconnus uniquement si les interactions tactiles sont activées.
-1.  **Ajouter la reconnaissance de mouvement à la vue** – la dernière étape consiste à ajouter le mouvement à une vue en appelant `View.AddGestureRecognizer` et en lui passant un objet de module de reconnaissance de mouvement.
+1. **Instancier la reconnaissance de mouvement** – tout d’abord `UIGestureRecognizer` , instanciez une sous-classe. L’objet qui est instancié sera associé à une vue et sera récupéré par le garbage collector quand la vue sera supprimée. Il n’est pas nécessaire de créer cette vue en tant que variable au niveau de la classe.
+1. **Configurer des paramètres de mouvement** : l’étape suivante consiste à configurer le module de reconnaissance de mouvement. Consultez la documentation `UIGestureRecognizer` de Xamarin et ses sous-classes pour obtenir la liste des propriétés qui peuvent être définies pour contrôler le comportement d' `UIGestureRecognizer` une instance.
+1. **Configurer la cible** – en raison de son patrimoine objective-C, Xamarin. iOS ne déclenche pas d’événements lorsqu’un module de reconnaissance de mouvement correspond à un geste.  `UIGestureRecognizer`a une méthode, `AddTarget` qui peut accepter un délégué anonyme ou un sélecteur objective-C avec le code à exécuter lorsque le module de reconnaissance de mouvement fait une correspondance.
+1. **Activer** le module de reconnaissance de mouvement: comme avec les événements tactiles, les mouvements sont uniquement reconnus si les interactions tactiles sont activées.
+1. **Ajouter le module de reconnaissance de mouvement à la vue** : la dernière étape consiste à ajouter le geste à une vue `View.AddGestureRecognizer` en appelant et en lui passant un objet de module de reconnaissance de mouvement.
 
-Reportez-vous à la [exemples de module de reconnaissance du mouvement](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples) pour plus d’informations sur la façon de les implémenter dans le code.
+Reportez-vous aux exemples de module de [reconnaissance de mouvement](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples) pour plus d’informations sur la façon de les implémenter dans le code.
 
-Lorsque les cibles du mouvement sont appelée, il sera passé à une référence pour le mouvement s’est produite. Ainsi, la cible de mouvement obtenir des informations sur le mouvement s’est produite. L’étendue des informations disponibles varie selon le type de module de reconnaissance de mouvement qui a été utilisé. Consultez la documentation Xamarin pour plus d’informations sur les données disponibles pour chaque `UIGestureRecognizer` sous-classe.
+Lorsque la cible du mouvement est appelée, une référence au mouvement qui s’est produit lui est passée. Cela permet à la cible de mouvement d’obtenir des informations sur le mouvement qui s’est produit. L’étendue des informations disponibles dépend du type de module de reconnaissance de mouvement utilisé. Pour plus d’informations sur les données disponibles pour chaque `UIGestureRecognizer` sous-classe, consultez la documentation de Xamarin.
 
-Il est important de se rappeler qu’une fois qu’un module de reconnaissance de mouvement a été ajouté à une vue, la vue (et toutes les vues en dessous) ne recevront pas les événements tactiles. Pour permettre aux événements tactiles simultanément les gestes, les `CancelsTouchesInView` propriété doit être définie sur false, comme l’illustre le code suivant :
+Il est important de se souvenir qu’une fois qu’un module de reconnaissance de mouvement a été ajouté à une vue, la vue (et les vues situées au-dessous) ne recevront aucun événement tactile. Pour autoriser les événements tactiles simultanément avec les gestes `CancelsTouchesInView` , la propriété doit avoir la valeur false, comme l’illustre le code suivant:
 
 ```csharp
 _tapGesture.Recognizer.CancelsTouchesInView = false;
 ```
 
-Chaque `UIGestureRecognizer` possède une propriété d’état qui fournit des informations importantes sur l’état de la reconnaissance de mouvement. Chaque fois que la valeur de cette propriété change, iOS appellera la méthode abonnée en lui attribuant une mise à jour. Si un module de reconnaissance de mouvement personnalisée met jamais à jour la propriété d’état, l’abonné n’est jamais appelé, la reconnaissance de mouvement de rendu inutilisable.
+Chaque `UIGestureRecognizer` possède une propriété State qui fournit des informations importantes sur l’état du module de reconnaissance de mouvement. Chaque fois que la valeur de cette propriété change, iOS appellera la méthode d’abonnement en lui donnant une mise à jour. Si un module de reconnaissance de mouvement personnalisé ne met jamais à jour la propriété d’État, l’abonné n’est jamais appelé, ce qui rend le module de reconnaissance de mouvement inutile.
 
-Mouvements peuvent être résumées comme l’un des deux types :
+Les gestes peuvent être résumés comme l’un des deux types suivants:
 
-1.  *Discrètes* – ces mouvements seule incendie la première fois où ils sont reconnus.
-1.  *Continue* – ces mouvements continuent à déclencher tant qu’elles ne sont reconnues.
-
-
-Modules de reconnaissance de mouvement existe dans un des états suivants :
-
--  *Possible* – c’est l’état initial de tous les modules de reconnaissance de mouvement. Il s’agit de la valeur par défaut la propriété State.
--  *Began* – lorsqu’un mouvement continu est reconnu tout d’abord, l’état est défini sur Began. Cela permet de s’abonne pour faire la distinction entre l’heure de début de la reconnaissance de mouvement et lorsqu’il est modifié.
--  *Changed* – lorsqu’un mouvement continu a commencé, mais n’est pas terminée, l’état sera défini sur Changed chaque fois qu’une pression tactile se déplace ou change, tant qu’elle se trouve toujours dans les paramètres prévus du geste.
--  *Annulé* : cet état est défini si le module de reconnaissance est passé de Began Changed, puis la touche modifiée de manière à ne plus ajuster le modèle du geste.
--  *Reconnu* – l’état est défini lors de la reconnaissance de mouvement correspond à un ensemble de fonctions tactiles et informe l’abonné que le geste est terminé.
--  *Fin* – il s’agit d’un alias pour l’état reconnues.
--  *Échec de* : lors de la reconnaissance de mouvement peut ne correspondent pas à la touche est à l’écoute pour l’état sera remplacé par échec.
+1. *Discret* : ces mouvements se déclenchent uniquement la première fois qu’ils sont reconnus.
+1. *Continu* : ces mouvements continuent à se déclencher tant qu’ils sont reconnus.
 
 
-Xamarin.iOS représente ces valeurs dans le `UIGestureRecognizerState` énumération.
+Les détecteurs de mouvement existent dans l’un des États suivants:
 
-## <a name="working-with-multiple-gestures"></a>Utilisation de gestes plusieurs
+- *Possible* : il s’agit de l’état initial de tous les module de reconnaissance de mouvement. Il s’agit de la valeur par défaut de la propriété State.
+- *Commencée* : lorsqu’un mouvement continu est reconnu pour la première fois, l’État est défini sur commencé. Cela permet aux abonnés de faire la différence entre le moment où la reconnaissance de mouvement démarre et celui où elle est modifiée.
+- *Modifié* : après qu’un mouvement continu a commencé, mais n’est pas terminé, l’État est défini sur modifié chaque fois qu’une pression tactile se déplace ou change, tant qu’elle est toujours dans les paramètres attendus du mouvement.
+- *Annulé* : cet État est défini si le module de reconnaissance a commencé à être modifié, et que la touche a été modifiée de telle façon qu’il ne s’adapte plus au modèle du mouvement.
+- *Reconnu* : l’État est défini lorsque le module de reconnaissance de mouvement correspond à un ensemble de touches et informe l’abonné que le mouvement est terminé.
+- *Terminé* : il s’agit d’un alias pour l’État reconnu.
+- *Échec* : lorsque le module de reconnaissance de mouvement ne peut plus correspondre aux touches qu’il écoute, l’état passe à échec.
 
-Par défaut, iOS n’autorise pas les gestes par défaut pour s’exécuter simultanément. Au lieu de cela, chaque module de reconnaissance de mouvement recevoir des événements tactiles dans un ordre non déterministe. L’extrait de code suivant illustre comment rendre un module de reconnaissance de mouvement à s’exécuter simultanément :
+
+Xamarin. iOS représente ces valeurs dans l' `UIGestureRecognizerState` énumération.
+
+## <a name="working-with-multiple-gestures"></a>Utilisation de mouvements multiples
+
+Par défaut, iOS n’autorise pas l’exécution simultanée des gestes par défaut. Au lieu de cela, chaque module de reconnaissance de mouvement recevra des événements tactiles dans un ordre non déterministe. L’extrait de code suivant illustre comment faire exécuter un module de reconnaissance de mouvement simultanément:
 
 ```csharp
 gesture.ShouldRecognizeSimultaneously += (UIGestureRecognizer r) => { return true; };
 ```
 
-Il est également possible de désactiver un mouvement dans iOS. Il existe deux propriétés de délégué qui autorise un module de reconnaissance de mouvement examiner l’état d’une application et les événements tactiles actuelle, pour rendre des décisions sur la façon et si un mouvement doit être reconnu. Les deux événements sont :
+Il est également possible de désactiver un mouvement dans iOS. Il existe deux propriétés de délégué qui permettent à un module de reconnaissance de mouvement d’examiner l’état d’une application et les événements tactiles actuels, afin de prendre des décisions sur la façon dont et si un mouvement doit être reconnu. Les deux événements sont les suivants:
 
-1.  *ShouldReceiveTouch* : ce délégué est appelé juste avant que la reconnaissance de mouvement est passée à un événement tactile et offre la possibilité d’examiner la touche et de décider quels finales seront gérées par le module de reconnaissance de mouvement.
-1.  *ShouldBegin* – il s’agit quand un module de reconnaissance tente de modifier l’état de Possible à un autre état. Retourne la valeur false forcera l’état de la reconnaissance de mouvement pour être changé en échec.
+1. *ShouldReceiveTouch* : ce délégué est appelé juste avant que le module de reconnaissance de mouvement soit passé à un événement tactile, et offre la possibilité d’examiner les touches et de décider quels sont les contacts qui seront gérés par le module de reconnaissance de mouvement.
+1. *ShouldBegin* : cette méthode est appelée lorsqu’un module de reconnaissance tente de changer l’état d’un État à un autre. Si la valeur false est renvoyée, l’état du module de reconnaissance de mouvement sera remplacé par échec.
 
 
-Vous pouvez substituer ces méthodes avec fortement typé `UIGestureRecognizerDelegate`, un délégué faible ou la liaison via la syntaxe de gestionnaire d’événements, comme l’illustre l’extrait de code suivant :
+Vous pouvez substituer ces méthodes par un délégué fortement `UIGestureRecognizerDelegate`typé, un délégué faible ou une liaison via la syntaxe du gestionnaire d’événements, comme l’illustre l’extrait de code suivant:
 
 ```csharp
 gesture.ShouldReceiveTouch += (UIGestureRecognizer r, UITouch t) => { return true; };
 ```
 
-Enfin, il est possible en file d’attente un module de reconnaissance de mouvement afin qu’elle réussira uniquement si un autre module de reconnaissance de mouvement échoue. Par exemple, un module de reconnaissance de mouvement de simple clic doit réussir uniquement en cas d’échec d’un module de reconnaissance de mouvement appuyer deux fois. L’extrait de code suivant fournit un exemple de ceci :
+Enfin, il est possible de faire en sorte qu’un module de reconnaissance de mouvement soit mis en file d’attente pour qu’il réussisse uniquement en cas d’échec d’un autre module de reconnaissance de mouvement. Par exemple, un seul module de reconnaissance de mouvement TAP ne doit se faire qu’en cas d’échec du module de reconnaissance de mouvement double-tap. L’extrait de code suivant en fournit un exemple:
 
 ```csharp
 singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
@@ -194,11 +194,11 @@ singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
 
 ## <a name="creating-a-custom-gesture"></a>Création d’un mouvement personnalisé
 
-Bien qu’iOS fournit certains par défaut des modules de reconnaissance de mouvement, il peut être nécessaire de créer des modules de reconnaissance de mouvement personnalisées dans certains cas. Création d’un module de reconnaissance de mouvement personnalisée implique les étapes suivantes :
+Bien qu’iOS fournisse des détecteurs de mouvement par défaut, il peut être nécessaire de créer des détecteurs de mouvement personnalisés dans certains cas. La création d’un module de reconnaissance de mouvement personnalisé implique les étapes suivantes:
 
-1.  Sous-classe `UIGestureRecognizer` .
-1.  Substituez les méthodes d’événement tactile approprié.
-1.  Statut de reconnaissance via la propriété d’état de la classe de base se propager.
+1. Sous- `UIGestureRecognizer` classe.
+1. Substituez les méthodes d’événement tactile appropriées.
+1. Propagez l’état de reconnaissance à l’aide de la propriété état de la classe de base.
 
 
-Un exemple pratique de ce sera abordée dans le [à l’aide de Touch dans iOS](ios-touch-walkthrough.md) procédure pas à pas.
+Un exemple concret est abordé dans la procédure pas à pas d' [utilisation de Touch dans iOS](ios-touch-walkthrough.md) .

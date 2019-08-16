@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d6ad088f9223dccb1966148fe8f53d76e85040a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff0773b3073221bead48439b7d99f1db993e3353
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645603"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528594"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Parties et fonctionnalités de table dans Xamarin. iOS
 
 Un UITableView peut avoir un style «groupé» ou «clair», et se compose des éléments suivants:
 
--  [En-tête de section](#Section_Header)
--  [Cellules](#Cells) (ou lignes, si vous préférez)
--  [Pied de page de la section](#Section_Footer)
--  [Index](#Index)
--  [Mode édition](#Edit_Features) (comprend «balayer pour supprimer» et faire glisser les poignées pour modifier l’ordre des lignes) 
+- [En-tête de section](#Section_Header)
+- [Cellules](#Cells) (ou lignes, si vous préférez)
+- [Pied de page de la section](#Section_Footer)
+- [Index](#Index)
+- [Mode édition](#Edit_Features) (comprend «balayer pour supprimer» et faire glisser les poignées pour modifier l’ordre des lignes) 
 
 Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de page, les contrôles d’édition et l’index sont affichés.
 

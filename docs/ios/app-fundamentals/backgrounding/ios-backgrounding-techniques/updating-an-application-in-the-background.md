@@ -1,53 +1,53 @@
 ---
-title: La mise à jour d’une application Xamarin.iOS en arrière-plan
-description: Ce document décrit différentes façons de mettre à jour une application Xamarin.iOS qui se trouve dans l’arrière-plan, telles que la surveillance de la région, récupération en arrière-plan et des notifications à distance.
+title: Mise à jour d’une application Xamarin. iOS en arrière-plan
+description: Ce document décrit les différentes façons de mettre à jour une application Xamarin. iOS en arrière-plan, comme la surveillance des régions, la récupération en arrière-plan et les notifications à distance.
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 835dccaea79467582f56fd4b8b6b3b8f42acd632
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 68200d5cde78628e23e6bdb5c4adf7a16b646bf0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61392325"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521301"
 ---
-# <a name="updating-a-xamarinios-app-in-the-background"></a>La mise à jour d’une application Xamarin.iOS en arrière-plan
+# <a name="updating-a-xamarinios-app-in-the-background"></a>Mise à jour d’une application Xamarin. iOS en arrière-plan
 
-Actualisation en arrière-plan est le processus de mise en éveil une application est suspendue ou ne pas en cours d’exécution et sa mise à jour avec le nouveau contenu. iOS fournit trois options pour l’actualisation du contenu en arrière-plan :
+L’actualisation en arrière-plan est le processus qui consiste à sortir une application suspendue ou non en cours d’exécution, et à la mettre à jour avec un nouveau contenu. iOS offre trois options d’actualisation du contenu en arrière-plan:
 
-1.  *Surveillance de la région* et *Service de modifications significatives emplacement* -arrière-plan de déclencheur de géolocalisation APIs met à jour en fonction des changements dans l’emplacement de l’utilisateur. Ces API peuvent être utilisées avec précaution pour actualiser le contenu dans les applications non basée sur un emplacement iOS 6, où les autres options ne sont pas disponibles.
-1.  *En arrière-plan Fetch (iOS 7 +)* -une approche temporelle pour l’actualisation *non critiques* contenu met à jour *fréquemment* .
-1.  *Notifications à distance (iOS 7 +)* -Applications qui reçoivent des notifications push peuvent utiliser les notifications pour déclencher des actualisations de contenu en arrière-plan. Cette méthode peut être utilisée pour mettre à jour avec *temps important,* contenu met à jour *sporadique* .
-
-
-Les sections suivantes abordent les principes fondamentaux de ces options.
-
-## <a name="region-monitoring-and-significant-location-changes"></a>Surveillance de la région et les changements d’emplacement importantes
-
-iOS fournit deux API de géolocalisation avec backgrounding fonctionnalités :
-
-1.  *Surveillance de la région* est le processus de paramétrage de régions avec des limites et la mise en éveil de l’appareil lorsque l’utilisateur entre ou quitte une région. Régions sont circulaires et peuvent être de taille variable. Quand l’utilisateur franchit une limite de région, l’appareil sera sortir de veille pour gérer l’événement, généralement par le déclenchement d’une notification ou lancer une tâche. Surveillance de la région nécessite le GPS et augmente la batterie et l’utilisation des données.
-1.  Le *Service de modifications significatives emplacement* est une option plus simple et la conservation d’alimentation disponible pour les appareils avec des signaux radio de téléphonie mobile. Une application à écouter les changements d’emplacement significatif est notifiée lorsque l’appareil bascule tours de cellule. Ce service peut être utilisé pour l’éveil par une application suspendue ou arrêtée et offre la possibilité de vérifier de nouveau contenu en arrière-plan. Activité d’arrière-plan est limitée à environ 10 secondes, sauf si associé à un [tâche en arrière-plan](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md) .
+1. *Surveillance des régions* et *changements d’emplacement significatifs* les API prenant en charge l’emplacement déclenchent des mises à jour en arrière-plan en fonction des modifications apportées à l’emplacement de l’utilisateur. Ces API peuvent être utilisées avec précaution pour actualiser le contenu des applications iOS 6 non basées sur l’emplacement, où d’autres options ne sont pas disponibles.
+1. *Extraction en arrière-plan (iOS 7 +)* : approche temporelle permettant d’actualiser le contenu *non critique* mis à jour *fréquemment* .
+1. *Notifications distantes (iOS 7 +)* : les applications qui reçoivent des notifications push peuvent utiliser les notifications pour déclencher des actualisations de contenu en arrière-plan. Cette méthode peut être utilisée pour effectuer une mise à jour avec *un contenu important qui respecte le temps,* qui est mis à jour de façon *sporadique* .
 
 
-Une application n’a pas besoin de l’emplacement `UIBackgroundMode` à utiliser ces API de géolocalisation. Étant donné qu’iOS ne suit pas les types de tâches pouvant s’exécuter quand l’appareil est sorti par des modifications dans l’emplacement de l’utilisateur, ces API offrent une solution de contournement pour la mise à jour de contenu en arrière-plan sur iOS 6. *N’oubliez pas que déclencher des mises à jour en arrière-plan avec les API de localisation dessine sur les ressources de l’appareil et risque de perturber les utilisateurs qui ne comprennent pas pourquoi une application doit accéder à leur emplacement*. Faites preuve de discernement lors de l’implémentation de surveillance de la région ou l’emplacement des modifications importantes pour les applications qui ne sont pas déjà à l’aide de l’API de l’emplacement de traitement en arrière-plan.
+Les sections suivantes couvrent les principes de base de ces options.
 
-Applications à l’aide de la surveillance de l’emplacement pour le traitement en arrière-plan exposent un défaut dans iOS 6 : si les besoins d’une application ne tiennent pas dans une catégorie nécessaire à l’arrière-plan, il a backgrounding dispose d’options limitées. Avec l’introduction de deux nouvelles API, *récupération en arrière-plan* et *Notifications à distance*, iOS 7 (et supérieur) fournit des opportunités de backgrounding à davantage d’applications. Les deux sections suivantes présentent ces nouvelles API.
+## <a name="region-monitoring-and-significant-location-changes"></a>Surveillance des régions et modifications significatives de l’emplacement
+
+iOS fournit deux API prenant en charge l’emplacement avec des fonctionnalités d’arrière-plan:
+
+1. La *surveillance* des régions est le processus de configuration de régions avec des limites et de mise en éveil de l’appareil lorsque l’utilisateur entre ou quitte une région. Les régions sont circulaires et peuvent avoir une taille variable. Lorsque l’utilisateur franchit une limite de région, l’appareil se réveille pour gérer l’événement, généralement en déclenchant une notification ou en lançant une tâche. L’analyse des régions requiert le GPS et augmente la batterie et l’utilisation des données.
+1. Le *service de changements d’emplacement significatifs* est une option plus simple pour les appareils avec des radios cellulaires. Une application écoutant des modifications d’emplacement importantes sera avertie lorsque l’appareil change de cellule Towers. Ce service peut être utilisé pour mettre en éveil une application interrompue ou arrêtée et permet de vérifier le nouveau contenu en arrière-plan. L’activité en arrière-plan est limitée à environ 10 secondes, sauf si elle est associée à une [tâche en arrière-plan](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md) .
+
+
+Une application n’a pas besoin de `UIBackgroundMode` l’emplacement pour utiliser ces API prenant en charge l’emplacement. Comme iOS ne suit pas les types de tâches qui peuvent s’exécuter quand l’appareil est en veille par des modifications à l’emplacement de l’utilisateur, ces API fournissent une solution de contournement pour la mise à jour du contenu en arrière-plan sur iOS 6. N' *oubliez pas que le déclenchement des mises à jour en arrière-plan avec des API basées sur l’emplacement dessinera sur les ressources de l’appareil et risque de tromper les utilisateurs qui ne comprennent pas pourquoi une application nécessite l’accès à leur emplacement*. Utilisez la précaution lors de l’implémentation de la surveillance des régions ou des modifications d’emplacement importantes pour le traitement en arrière-plan dans les applications qui n’utilisent pas déjà les API de localisation
+
+Les applications qui utilisent la surveillance d’emplacement pour le traitement en arrière-plan exposent une faille dans iOS 6: si les besoins d’une application ne sont pas adaptés à une catégorie d’arrière-plan, les options d’arrière-plan sont limitées. Avec l’introduction de deux nouvelles API, l' *extraction en arrière-plan* et les notifications distantes, iOS 7 (et versions ultérieures) offre des possibilités d’arrière-plan à d’autres applications. Les deux sections suivantes présentent ces nouvelles API.
 
 <a name="background_fetch" />
 
-## <a name="background-fetch-ios-7-and-greater"></a>Récupération en arrière-plan (iOS 7 et ultérieures)
+## <a name="background-fetch-ios-7-and-greater"></a>Récupération en arrière-plan (iOS 7 et versions ultérieures)
 
-Dans iOS 6, une application de saisie de premier plan avaient besoin de temps pour charger le nouveau contenu, présenter brièvement les utilisateurs avec du contenu, qu'ils ont déjà vu. Récupération en arrière-plan permet aux applications de charger de nouvelles données *avant* un utilisateur lance l’application et fournir à l’utilisateur avec le contenu le plus récent.
+Dans iOS 6, une application qui entre en premier plan avait besoin de temps pour charger un nouveau contenu, en présentant brièvement les utilisateurs avec le contenu qu’ils ont déjà vu. La récupération en arrière-plan permet aux applications de charger de nouvelles données *avant qu'* un utilisateur ne lance l’application et de fournir à l’utilisateur le contenu le plus à jour.
 
-Pour implémenter la récupération en arrière-plan, modifier *Info.plist* et vérifiez le **Enable Background Modes** et **récupération en arrière-plan** cases à cocher :
+Pour implémenter l’extraction en arrière-plan, modifiez *info. plist* et cochez les cases **activer les modes d’arrière-** plan et **récupérer l’arrière-plan** :
 
- [![](updating-an-application-in-the-background-images/fetch.png "Modifier le fichier Info.plist et cochez les cases à cocher Activer les Modes d’arrière-plan et de récupération en arrière-plan")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![](updating-an-application-in-the-background-images/fetch.png "Modifiez le fichier info. plist, puis activez les cases à cocher Activer les modes d’arrière-plan et récupérer l’arrière-plan.")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
-Ensuite, dans le `AppDelegate`, remplacer le `FinishedLaunching` méthode pour définir l’intervalle d’extraction minimale. Dans cet exemple, nous laissons le système d’exploitation décider comment souvent extraire de nouveau contenu :
+Ensuite, dans `AppDelegate`, remplacez la `FinishedLaunching` méthode pour définir l’intervalle d’extraction minimal. Dans cet exemple, nous autorisons le système d’exploitation à déterminer la fréquence de récupération du nouveau contenu:
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -57,7 +57,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-Pour finir, effectuez l’extraction en substituant le `PerformFetch` méthode dans le `AppDelegate`et en passant un *Gestionnaire d’achèvement*. Le Gestionnaire d’achèvement est un délégué qui prend un `UIBackgroundFetchResult`:
+Enfin, effectuez l’extraction en remplaçant la `PerformFetch` méthode dans le `AppDelegate`et en passant un gestionnaire d' *achèvement*. Le gestionnaire d’achèvement est un délégué qui prend `UIBackgroundFetchResult`un:
 
 ```csharp
 public override void PerformFetch (UIApplication application, Action<UIBackgroundFetchResult> completionHandler)
@@ -70,46 +70,46 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 }
 ```
 
-Lorsque nous avons terminé la mise à jour de contenu, nous informer le système d’exploitation en appelant le Gestionnaire d’achèvement avec le statut approprié. iOS offre trois options pour l’état de gestionnaire d’achèvement :
+Quand nous avons terminé la mise à jour du contenu, nous laissons le système d’exploitation savoir en appelant le gestionnaire d’achèvement avec l’état approprié. iOS offre trois options pour l’état du gestionnaire d’achèvement:
 
-1.  `UIBackgroundFetchResult.NewData` -Appelée lorsque le nouveau contenu a été extrait, et l’application a été mis à jour.
-1.  `UIBackgroundFetchResult.NoData` -Appelée lorsque l’extraction du nouveau contenu a abouti, mais aucun contenu n’est disponible.
-1.  `UIBackgroundFetchResult.Failed` -Utile pour la gestion des erreurs, on parle lors de l’opération de récupération n’a pas pu suivre.
+1. `UIBackgroundFetchResult.NewData`-Appelé quand un nouveau contenu a été récupéré et que l’application a été mise à jour.
+1. `UIBackgroundFetchResult.NoData`-Appelé lorsque l’extraction de nouveau contenu est passée, mais qu’aucun contenu n’est disponible.
+1. `UIBackgroundFetchResult.Failed`-Utile pour la gestion des erreurs, cette méthode est appelée lorsque l’extraction n’a pas pu traverser.
 
 
-Applications à l’aide de la récupération en arrière-plan peuvent effectuer des appels pour mettre à jour de l’interface utilisateur à partir de l’arrière-plan. Lorsque l’utilisateur ouvre l’application, l’interface utilisateur sera jusqu'à la date et l’affichage du nouveau contenu. Cela met également à jour instantané du sélecteur d’application de l’application, afin que l’utilisateur peut voir lorsque l’application a le nouveau contenu.
+Les applications utilisant la récupération en arrière-plan peuvent appeler pour mettre à jour l’interface utilisateur à partir de l’arrière-plan. Lorsque l’utilisateur ouvre l’application, l’interface utilisateur est à jour et affiche le nouveau contenu. Cette opération met également à jour l’instantané du sélecteur d’applications de l’application, de sorte que l’utilisateur peut voir quand l’application a un nouveau contenu.
 
 > [!IMPORTANT]
-> Une fois `PerformFetch` est appelée, l’application a environ 30 secondes pour lancer le téléchargement du contenu nouveau et appeler le bloc de gestionnaire d’achèvement. Si cela prend trop de temps, l’application va être interrompue. Envisagez d’utiliser la récupération en arrière-plan avec le _Service de transfert en arrière-plan_ lors du téléchargement de média ou autres fichiers volumineux.
+> Une `PerformFetch` fois appelée, l’application dispose d’environ 30 secondes pour lancer le téléchargement du nouveau contenu et appeler le bloc de gestionnaire d’achèvement. Si cela prend trop de temps, l’application se termine. Envisagez d’utiliser FETCH en arrière-plan avec le _service de transfert en arrière-plan_ lors du téléchargement de médias ou d’autres fichiers volumineux.
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
-Dans l’exemple de code ci-dessus, nous laisser le système d’exploitation décider de la fréquence à laquelle extraire de nouveau contenu en définissant l’intervalle de récupération minimale `BackgroundFetchIntervalMinimum`. iOS offre trois options pour l’intervalle d’extraction :
+Dans l’exemple de code ci-dessus, nous permettons au système d’exploitation de déterminer la fréquence d’extraction du nouveau `BackgroundFetchIntervalMinimum`contenu en définissant l’intervalle de récupération minimal sur. iOS offre trois options pour l’intervalle d’extraction:
 
-1.  `BackgroundFetchIntervalNever` -Informer le système pour extraire jamais de nouveau contenu. Cela permet de désactiver l’extraction dans certaines situations, par exemple lorsque l’utilisateur n’est pas signée. Ceci est la valeur par défaut pour l’intervalle d’extraction. 
-1.  `BackgroundFetchIntervalMinimum` -Laisser le système décider comment souvent extraire selon des modèles utilisateur, autonomie, l’utilisation des données et les besoins des autres applications.
-1.  `BackgroundFetchIntervalCustom` -Si vous connaissez la fréquence à laquelle le contenu de l’application est mise à jour, vous pouvez spécifier un intervalle de « veille » après chaque opération d’extraction, au cours de laquelle l’application ne peuvent pas l’extraction du nouveau contenu. Une fois cet intervalle est opérationnel, le système détermine quand rechercher du contenu.
+1. `BackgroundFetchIntervalNever`-Indiquez au système de ne jamais récupérer le nouveau contenu. Utilisez cette option pour désactiver l’extraction dans certaines situations, par exemple lorsque l’utilisateur n’est pas connecté. Il s’agit de la valeur par défaut de l’intervalle d’extraction. 
+1. `BackgroundFetchIntervalMinimum`-Laisser le système décider de la fréquence d’extraction en fonction des modèles utilisateur, de la durée de vie de la batterie, de l’utilisation des données et des besoins d’autres applications.
+1. `BackgroundFetchIntervalCustom`-Si vous connaissez la fréquence de mise à jour du contenu d’une application, vous pouvez spécifier un intervalle de «veille» après chaque extraction, pendant laquelle l’application ne peut pas récupérer de nouveau contenu. Une fois cet intervalle défini, le système détermine le moment où il doit récupérer le contenu.
 
 
-Les deux `BackgroundFetchIntervalMinimum` et `BackgroundFetchIntervalCustom` s’appuient sur le système pour planifier les extractions. Cet intervalle est dynamique, adaptation aux besoins de l’appareil, ainsi que les habitudes de l’utilisateur. Par exemple, si un utilisateur vérifie une application chaque matin, et un autre vérifie toutes les heures, iOS garantira le contenu est mis à jour pour les deux utilisateurs chaque fois qu’ils ouvrent l’application.
+`BackgroundFetchIntervalMinimum` Et`BackgroundFetchIntervalCustom` s’appuient sur le système pour planifier des extractions. Cet intervalle est dynamique et s’adapte aux besoins de l’appareil, ainsi qu’aux habitudes de l’utilisateur individuel. Par exemple, si un utilisateur vérifie une application tous les matins, et qu’une autre vérification toutes les heures, iOS s’assure que le contenu est à jour pour les deux utilisateurs chaque fois qu’ils ouvrent l’application.
 
-Récupération en arrière-plan doit être utilisée pour les applications qui mettent à jour fréquemment avec du contenu non critiques. Pour les applications avec les mises à jour critiques, les Notifications à distance doit être utilisées. Notifications à distance sont basées sur la récupération en arrière-plan et partagent le même gestionnaire d’achèvement. Nous allons approfondir ensuite Notifications à distance.
+La récupération en arrière-plan doit être utilisée pour les applications qui sont fréquemment mises à jour avec du contenu non critique. Pour les applications avec des mises à jour critiques, des notifications distantes doivent être utilisées. Les notifications distantes sont basées sur la récupération en arrière-plan et partagent le même gestionnaire d’achèvement. Nous allons ensuite étudier les notifications distantes.
 
  <a name="remote_notifications" />
 
 
-## <a name="remote-notifications-ios-7-and-greater"></a>Notifications à distance (iOS 7 et ultérieures)
+## <a name="remote-notifications-ios-7-and-greater"></a>Notifications à distance (iOS 7 et versions ultérieures)
 
-Notifications Push sont des messages JSON envoyées à partir d’un fournisseur à un appareil par le biais de la *Apple Push Notification service (APNs)*.
+Les notifications push sont des messages JSON envoyés d’un fournisseur à un appareil par le biais du *service Apple Push Notification (APNs)* .
 
-Dans iOS 6, des notifications push entrantes indique au système pour avertir l’utilisateur que quelque chose d’intéressant s’est produit dans une application. En cliquant sur la notification extrait l’application hors de l’état suspendu ou se termine et l’application serait commencer la mise à jour de contenu. iOS 7 (et supérieur) étend les notifications push ordinaire en permettant aux applications une occasion de mettre à jour le contenu en arrière-plan *avant* avertir l’utilisateur, afin que l’utilisateur peut ouvrir l’application et être présentée avec le nouveau contenu immédiatement.
+Dans iOS 6, les notifications push entrantes indiquent au système d’alerter l’utilisateur qu’une action intéressante s’est produite dans une application. Cliquez sur la notification pour extraire l’application de l’état suspendu ou arrêté, et l’application commence à mettre à jour le contenu. iOS 7 (et versions ultérieures) étend les notifications push ordinaires en donnant aux applications la possibilité de mettre à jour le contenu en arrière-plan *avant* de notifier l’utilisateur, de sorte que l’utilisateur puisse ouvrir l’application et recevoir immédiatement un nouveau contenu.
 
-Pour implémenter des notifications à distance, modifiez *Info.plist* et vérifiez le **Enable Background Modes** et **notifications à distance** cases à cocher :
+Pour implémenter des notifications distantes, modifiez *info. plist* et cochez les cases **activer les modes d’arrière-plan** et **notifications à distance** :
 
- [![](updating-an-application-in-the-background-images/remote.png "Mode d’arrière-plan de la valeur Enable Background Modes et des notifications à distance")](updating-an-application-in-the-background-images/remote.png#lightbox)
+ [![](updating-an-application-in-the-background-images/remote.png "Mode en arrière-plan défini pour activer les modes d’arrière-plan et les notifications à distance")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
-Ensuite, définissez le `content-available` indicateur sur la notification push elle-même à 1. Cela permet à l’application de savoir à extraire de nouveau contenu avant d’afficher l’alerte :
+Ensuite, affectez `content-available` la valeur 1 à l’indicateur sur la notification push. Cela permet à l’application de savoir récupérer le nouveau contenu avant d’afficher l’alerte:
 
 ```csharp
 'aps' {
@@ -118,7 +118,7 @@ Ensuite, définissez le `content-available` indicateur sur la notification push 
 }
 ```
 
-Dans le *AppDelegate*, remplacer le `DidReceiveRemoteNotification` méthode pour vérifier la charge utile de notification pour le contenu disponible et appelez du bloc de gestionnaire d’achèvement approprié :
+Dans le *AppDelegate*, remplacez la `DidReceiveRemoteNotification` méthode pour vérifier la charge utile de notification pour le contenu disponible et appelez le bloc de gestionnaire d’achèvement approprié:
 
 ```csharp
 public override void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
@@ -130,17 +130,17 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 }
 ```
 
-Notifications à distance doivent être utilisées pour les mises à jour peu fréquents avec du contenu qui est essentiel pour la fonctionnalité d’application. Pour plus d’informations sur les notifications à distance, consultez le Xamarin [Notifications Push dans iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md) guide.
+Les notifications distantes doivent être utilisées pour les mises à jour peu fréquentes avec un contenu essentiel à la fonctionnalité de l’application. Pour plus d’informations sur les notifications distantes, consultez le guide Xamarin [notifications push dans iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md) .
 
 > [!IMPORTANT]
-> Étant donné que le mécanisme de mise à jour dans les Notifications à distance repose sur la récupération en arrière-plan, l’application doit lancer le téléchargement du contenu nouveau et appeler le bloc de gestionnaire de saisie semi-automatique dans les 30 secondes de la réception de notifications ou iOS pour fermer l’application. Prendre en compte le jumelage des Notifications à distance avec _Service de transfert en arrière-plan_ lors du téléchargement de média ou autres fichiers volumineux en arrière-plan.
+> Étant donné que le mécanisme de mise à jour dans les notifications distantes est basé sur l’extraction en arrière-plan, l’application doit lancer le téléchargement du nouveau contenu et appeler le bloc de gestionnaire d’achèvement dans les 30 secondes suivant la réception de la notification, ou iOS met fin à l’application. Envisagez de coupler les notifications à distance avec le _service de transfert en arrière-_ plan lors du téléchargement de médias ou d’autres fichiers volumineux en arrière-plan
 
 
-### <a name="silent-remote-notifications"></a>Notifications à distance en mode silencieux
+### <a name="silent-remote-notifications"></a>Notifications distantes silencieuses
 
-Notifications à distance sont un moyen simple pour avertir les applications des mises à jour et de lancer l’extraction de nouveau contenu, mais il existe des cas où nous ne devons avertir l’utilisateur que quelque chose a changé. Par exemple, si un utilisateur signale un fichier permettant la synchronisation, nous n’avez pas besoin de les avertir chaque fois que le fichier met à jour. Synchronisation de fichier n’est pas un événement surprenant, et aucune attention immédiate de l’utilisateur. Les utilisateurs attendent simplement le fichier soit à jour lorsqu’il est ouvert.
+Les notifications distantes sont un moyen simple de notifier les applications de mises à jour et de lancer la récupération de nouveau contenu, mais dans certains cas, nous n’avons pas besoin d’informer l’utilisateur de la modification d’un événement. Par exemple, si un utilisateur signale un fichier pour la synchronisation, nous n’avons pas besoin de les notifier chaque fois que le fichier est mis à jour. La synchronisation de fichiers n’est pas un événement étonnant et ne nécessite pas l’attention immédiate de l’utilisateur. Les utilisateurs s’attendent à ce que le fichier soit à jour lorsqu’il l’ouvre.
 
-Pour les cas comme celui ci-dessus, iOS permet de notifications push à envoyer en mode silencieux - autrement dit, sans une alerte. Pour activer une notification régulière dans une autre en mode silencieux, supprimez simplement l’alerte à partir de la charge utile de notification :
+Dans les cas comme celui ci-dessus, iOS autorise l’envoi de notifications push en mode silencieux, autrement dit, sans alerte. Pour transformer une notification normale en une notification en mode silencieux, supprimez simplement l’alerte de la charge utile de notification:
 
 ```csharp
 'aps' {
@@ -150,16 +150,16 @@ Pour les cas comme celui ci-dessus, iOS permet de notifications push à envoyer 
 
 #### <a name="rate-limits"></a>Limites du débit
 
-La différence majeure entre normales et en mode silencieux les notifications à partir d’un point de vue des développeurs est qu’en mode silencieux de notifications push est soumis à restriction. APNs retardera la remise de notifications push en mode silencieux à l’appareil si le taux de push est trop élevé. Il s’agit pour vous assurer que les applications ne d’épuiser les ressources de périphérique avec trop de notifications en mode silencieux.
+La plus grande différence entre les notifications normales et silencieuses du point de vue du développeur est que les push silencieux sont limités au débit. APNs retardera la remise des notifications push silencieuses à l’appareil si le taux de transmission est trop élevé. Cela permet de s’assurer que les applications ne drainent pas les ressources de l’appareil avec un trop grand nombre de notifications en mode silencieux.
 
-Toutefois, APNs permettra de notifications en mode silencieux une « superposition » en même temps que d’une Notification à distance normal ou d’une réponse keep-alive. Étant donné que des notifications régulières ne sont pas des taux limité, elles peuvent servir à stockée des silencieux des notifications push à partir de l’APNs à l’appareil, comme l’illustre le diagramme suivant :
+Toutefois, APNs permet aux notifications silencieuses de se superposer à une notification à distance normale ou à une réponse Keep-Alive. Comme les notifications régulières ne sont pas limitées au tarif, elles peuvent être utilisées pour envoyer des notifications en mode silencieux stockées à partir du APNs vers l’appareil, comme l’illustre le diagramme suivant:
 
- [![](updating-an-application-in-the-background-images/silent.png "Des notifications régulières peuvent être utilisées pour stockées en mode silencieux des notifications push à partir de l’APNs à l’appareil, comme illustré dans ce diagramme")](updating-an-application-in-the-background-images/silent.png#lightbox)
+ [![](updating-an-application-in-the-background-images/silent.png "Des notifications régulières peuvent être utilisées pour envoyer des notifications silencieuses stockées à partir de APNs vers l’appareil, comme illustré dans ce diagramme")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> Encourage les développeurs à envoyer des notifications push silent chaque fois que l’application requiert d’Apple et permettre à l’APNs de planifier leur remise.
+> Apple encourage les développeurs à envoyer des notifications push sans assistance chaque fois que l’application en a besoin, et à laisser les APNs planifier leur remise.
 
 
-Dans cette section, nous avons couvert les différentes options de l’actualisation du contenu en arrière-plan pour exécuter des tâches qui ne tiennent pas dans une catégorie nécessaire à l’arrière-plan. Maintenant, nous allons voir certains de ces API en action.
+Dans cette section, nous avons abordé les différentes options d’actualisation du contenu en arrière-plan pour exécuter des tâches qui ne sont pas adaptées à une catégorie d’arrière-plan. À présent, voyons quelques-unes de ces API en action.
 
- [Suivant : 4ème partie - iOS Backgrounding procédures pas à pas](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+ [Suivant : Partie 4-procédures pas à pas d’arrière-plan iOS](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 92278fb84cba6329c33ac8a972a686fff7186f67
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673b178512a886e5fdb154c57c8d659276bb392
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647442"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522327"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Dispositions avec onglets avec barre
 
@@ -47,17 +47,17 @@ Lorsque la barre ne peut pas afficher tous les onglets, elle configure les ongle
 
 Chaque onglet de la barre d’action doit être associé à un [*fragment*](~/android/platform/fragments/index.md). Lorsque l’utilisateur sélectionne un onglet, l’application affiche le fragment associé à l’onglet. Barre n’est pas responsable de l’affichage du fragment approprié à l’utilisateur. Au lieu de cela, le barre avertit une application des modifications d’État dans un onglet par le biais d’une classe qui implémente l’interface barre. ITabListener. Cette interface fournit trois méthodes de rappel que Android appellera quand l’état de l’onglet change: 
 
--  **OnTabSelected** : cette méthode est appelée lorsque l’utilisateur sélectionne l’onglet. Il doit afficher le fragment.
+- **OnTabSelected** : cette méthode est appelée lorsque l’utilisateur sélectionne l’onglet. Il doit afficher le fragment.
 
--  **OnTabReselected** : cette méthode est appelée lorsque l’onglet est déjà sélectionné, mais est de nouveau sélectionné par l’utilisateur. Ce rappel est généralement utilisé pour actualiser/mettre à jour le fragment affiché.
+- **OnTabReselected** : cette méthode est appelée lorsque l’onglet est déjà sélectionné, mais est de nouveau sélectionné par l’utilisateur. Ce rappel est généralement utilisé pour actualiser/mettre à jour le fragment affiché.
 
--  **OnTabUnselected** : cette méthode est appelée lorsque l’utilisateur sélectionne un autre onglet. Ce rappel est utilisé pour enregistrer l’État dans le fragment affiché avant qu’il ne se ferme.
+- **OnTabUnselected** : cette méthode est appelée lorsque l’utilisateur sélectionne un autre onglet. Ce rappel est utilisé pour enregistrer l’État dans le fragment affiché avant qu’il ne se ferme.
 
 Xamarin. Android encapsule les `ActionBar.ITabListener` avec des événements sur `ActionBar.Tab` la classe. Les applications peuvent assigner des gestionnaires d’événements à un ou plusieurs de ces événements. Il existe trois événements (un pour chaque méthode dans `ActionBar.ITabListener`) qu’un onglet de barre d’action sera déclenché: 
 
--  TabSelected
--  TabReselected
--  TabUnselected
+- TabSelected
+- TabReselected
+- TabUnselected
 
 
 

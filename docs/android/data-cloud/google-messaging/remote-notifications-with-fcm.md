@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 3837e28fa657764312cdbe379ba66caf9ccf18a4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644199"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526156"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Notifications distantes avec Firebase Cloud Messaging
 
@@ -26,11 +26,11 @@ Dans cette procédure pas à pas, une application de base appelée **FCMClient**
 
 Les rubriques suivantes sont explorées:
 
-1.  Notifications en arrière-plan
+1. Notifications en arrière-plan
 
-2.  Messages de rubrique
+2. Messages de rubrique
 
-3.  Notifications au premier plan
+3. Notifications au premier plan
 
 Au cours de cette procédure pas à pas, vous allez ajouter de façon incrémentielle des fonctionnalités à **FCMClient** et les exécuter sur un appareil ou un émulateur pour comprendre comment il interagit avec FCM. Vous allez utiliser la journalisation des transactions de l’application en temps réel avec des serveurs FCM, et vous observerez comment les notifications sont générées à partir des messages FCM que vous entrez dans l’interface graphique utilisateur des notifications de la console Firebase.
 
@@ -55,9 +55,9 @@ Dans [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-c
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Ouvrez les propriétés du projet **FCMClient** .
+1. Ouvrez les propriétés du projet **FCMClient** .
 
-2.  Dans la page du **manifeste Android** , définissez le nom du package.
+2. Dans la page du **manifeste Android** , définissez le nom du package.
 
 Dans l’exemple suivant, le nom du package est défini `com.xamarin.fcmexample`sur:
 
@@ -67,9 +67,9 @@ Pendant la mise à jour du **manifeste Android**, vérifiez également que l' `I
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1.  Ouvrez les propriétés du projet **FCMClient** .
+1. Ouvrez les propriétés du projet **FCMClient** .
 
-2.  Dans la page **application Android** , définissez le nom du package.
+2. Dans la page **application Android** , définissez le nom du package.
 
 Dans l’exemple suivant, le nom du package est défini `com.xamarin.fcmexample`sur:
 
@@ -88,21 +88,21 @@ Pendant la mise à jour du **manifeste Android**, vérifiez également que l' `I
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Dans Visual Studio, cliquez avec le bouton droit sur **références > gérer les packages NuGet...** .
+1. Dans Visual Studio, cliquez avec le bouton droit sur **références > gérer les packages NuGet...** .
 
-2.  Cliquez sur l’onglet **Parcourir** et recherchez **Xamarin. GooglePlayServices. base**.
+2. Cliquez sur l’onglet **Parcourir** et recherchez **Xamarin. GooglePlayServices. base**.
 
-3.  Installez ce package dans le projet **FCMClient** :
+3. Installez ce package dans le projet **FCMClient** :
 
     [![Installation de la base de Google Play Services](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1.  Dans Visual Studio pour Mac, cliquez avec le bouton droit sur **packages > ajouter des packages**....
+1. Dans Visual Studio pour Mac, cliquez avec le bouton droit sur **packages > ajouter des packages**....
 
-2.  Recherchez **Xamarin. GooglePlayServices. base**.
+2. Recherchez **Xamarin. GooglePlayServices. base**.
 
-3.  Installez ce package dans le projet **FCMClient** :
+3. Installez ce package dans le projet **FCMClient** :
 
     [![Installation de la base de Google Play Services](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
@@ -125,21 +125,21 @@ Pour recevoir des messages de FCM, le package NuGet [Xamarin Firebase-Messaging]
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Dans Visual Studio, cliquez avec le bouton droit sur **références > gérer les packages NuGet...** .
+1. Dans Visual Studio, cliquez avec le bouton droit sur **références > gérer les packages NuGet...** .
 
 2. Recherchez **Xamarin. Firebase. Messaging**.
 
-3.  Installez ce package dans le projet **FCMClient** :
+3. Installez ce package dans le projet **FCMClient** :
 
     [![Installation de la messagerie Xamarin Firebase](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1.  Dans Visual Studio pour Mac, cliquez avec le bouton droit sur **packages > ajouter des packages**....
+1. Dans Visual Studio pour Mac, cliquez avec le bouton droit sur **packages > ajouter des packages**....
 
-2.  Recherchez **Xamarin. Firebase. Messaging**.
+2. Recherchez **Xamarin. Firebase. Messaging**.
 
-3.  Installez ce package dans le projet **FCMClient** :
+3. Installez ce package dans le projet **FCMClient** :
 
     [![Installation de la messagerie Xamarin Firebase](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
@@ -163,13 +163,13 @@ L’étape suivante consiste à ajouter le fichier **Google-services. JSON** au 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Copiez **Google-services. JSON** dans le dossier du projet.
+1. Copiez **Google-services. JSON** dans le dossier du projet.
 
-2.  Ajoutez **Google-services. JSON** au projet d’application (cliquez sur **Afficher tous les fichiers** dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **Google-services. JSON**, puis sélectionnez **inclure dans le projet**).
+2. Ajoutez **Google-services. JSON** au projet d’application (cliquez sur **Afficher tous les fichiers** dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **Google-services. JSON**, puis sélectionnez **inclure dans le projet**).
 
-3.  Sélectionnez **Google-services. JSON** dans la fenêtre **Explorateur de solutions** .
+3. Sélectionnez **Google-services. JSON** dans la fenêtre **Explorateur de solutions** .
 
-4.  Dans le volet **Propriétés** , définissez l' **action de génération** sur **GoogleServicesJson**:
+4. Dans le volet **Propriétés** , définissez l' **action de génération** sur **GoogleServicesJson**:
 
     [![Définition de l’action de génération sur GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
@@ -178,13 +178,13 @@ L’étape suivante consiste à ajouter le fichier **Google-services. JSON** au 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1.  Copiez **Google-services. JSON** dans le dossier du projet.
+1. Copiez **Google-services. JSON** dans le dossier du projet.
 
-2.  Ajoutez **Google-services. JSON** au projet d’application.
+2. Ajoutez **Google-services. JSON** au projet d’application.
 
-3.  Cliquez avec le bouton droit sur **Google-services. JSON**.
+3. Cliquez avec le bouton droit sur **Google-services. JSON**.
 
-4.  Définissez l' **action de génération** sur **GoogleServicesJson**:
+4. Définissez l' **action de génération** sur **GoogleServicesJson**:
 
     [![Définition de l’action de génération sur GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
 
@@ -338,11 +338,11 @@ Modifiez **fichier AndroidManifest. xml** et insérez les éléments `<receiver>
 
 Ce code XML effectue les opérations suivantes:
 
--   Déclare une `FirebaseInstanceIdReceiver` implémentation qui fournit un [identificateur unique](https://developers.google.com/instance-id/) pour chaque instance d’application. Ce récepteur également authentifie et autorise des actions.
+- Déclare une `FirebaseInstanceIdReceiver` implémentation qui fournit un [identificateur unique](https://developers.google.com/instance-id/) pour chaque instance d’application. Ce récepteur également authentifie et autorise des actions.
 
--   Déclare un interne `FirebaseInstanceIdInternalReceiver` implémentation qui est utilisée pour démarrer les services en toute sécurité.
+- Déclare un interne `FirebaseInstanceIdInternalReceiver` implémentation qui est utilisée pour démarrer les services en toute sécurité.
 
--   L' [ID d’application](./firebase-cloud-messaging.md#fcm-in-action-app-id) est stocké dans le fichier **Google-services. JSON** qui a été [ajouté au projet](#add-googleplayservices-json). Les liaisons Xamarin. Android Firebase remplacent le jeton `${applicationId}` par l’ID d’application; aucun code supplémentaire n’est requis par l’application cliente pour fournir l’ID d’application.
+- L' [ID d’application](./firebase-cloud-messaging.md#fcm-in-action-app-id) est stocké dans le fichier **Google-services. JSON** qui a été [ajouté au projet](#add-googleplayservices-json). Les liaisons Xamarin. Android Firebase remplacent le jeton `${applicationId}` par l’ID d’application; aucun code supplémentaire n’est requis par l’application cliente pour fournir l’ID d’application.
 
 Le `FirebaseInstanceIdReceiver` est un `WakefulBroadcastReceiver` qui reçoit `FirebaseInstanceId` les `FirebaseMessaging` événements et les remet à la classe à partir de `FirebaseInstanceIdService`laquelle vous dérivez.
 
@@ -351,9 +351,9 @@ Le `FirebaseInstanceIdReceiver` est un `WakefulBroadcastReceiver` qui reçoit `F
 Le travail d’inscription de l’application auprès de FCM est géré par `FirebaseInstanceIdService` le service personnalisé que vous fournissez.
 `FirebaseInstanceIdService`effectue les étapes suivantes:
 
-1.  Utilise l' [API ID d’instance](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID) pour générer des jetons de sécurité qui autorisent l’application cliente à accéder à FCM et au serveur d’applications. En retour, l’application récupère un [jeton d’inscription](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token) à partir de FCM.
+1. Utilise l' [API ID d’instance](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID) pour générer des jetons de sécurité qui autorisent l’application cliente à accéder à FCM et au serveur d’applications. En retour, l’application récupère un [jeton d’inscription](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token) à partir de FCM.
 
-2.  Transmet le jeton d’inscription au serveur d’applications si le serveur d’applications en a besoin.
+2. Transmet le jeton d’inscription au serveur d’applications si le serveur d’applications en a besoin.
 
 Ajoutez un nouveau fichier appelé **MyFirebaseIIDService.cs** et remplacez son code de modèle par ce qui suit:
 
@@ -393,13 +393,13 @@ Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 
 `OnTokenRefresh`est rarement appelé: il est utilisé pour mettre à jour le jeton dans les circonstances suivantes:
 
--   Lorsque l’application est installée ou désinstallée.
+- Lorsque l’application est installée ou désinstallée.
 
--   Lorsque l’utilisateur supprime des données d’application.
+- Lorsque l’utilisateur supprime des données d’application.
 
--   Lorsque l’application efface l’ID d’instance.
+- Lorsque l’application efface l’ID d’instance.
 
--   Lorsque la sécurité du jeton a été compromise.
+- Lorsque la sécurité du jeton a été compromise.
 
 Conformément à la documentation de l' [ID d’instance](https://developers.google.com/instance-id/guides/android-implementation) de Google, le service d’ID d’instance FCM demande que l’application actualise son jeton régulièrement (en général, tous les 6 mois).
 
@@ -573,19 +573,19 @@ Si l’application a été inscrite avec succès, vous devriez voir synchronisat
 
 Pour envoyer un message de rubrique, procédez comme suit:
 
-1.  Dans la console Firebase, cliquez sur **nouveau message**.
+1. Dans la console Firebase, cliquez sur **nouveau message**.
 
-2.  Dans la page **message de composition** , entrez le texte du message et sélectionnez **rubrique**.
+2. Dans la page **message de composition** , entrez le texte du message et sélectionnez **rubrique**.
 
-3.  Dans le menu déroulant de la **rubrique** , sélectionnez la rubrique, **Actualités**:
+3. Dans le menu déroulant de la **rubrique** , sélectionnez la rubrique, **Actualités**:
 
     [![Sélection de la rubrique Actualités](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
-4.  Sur l’appareil (ou l’émulateur) Android, en arrière-plan de l’application en appuyant sur le bouton de **présentation d'** Android et en touchant l’écran d’accueil.
+4. Sur l’appareil (ou l’émulateur) Android, en arrière-plan de l’application en appuyant sur le bouton de **présentation d'** Android et en touchant l’écran d’accueil.
 
-5.  Lorsque l’appareil est prêt, cliquez sur **Envoyer un message** dans la console Firebase.
+5. Lorsque l’appareil est prêt, cliquez sur **Envoyer un message** dans la console Firebase.
 
-6.  Consultez la fenêtre sortie de l’IDE pour afficher **/topics/News** dans la sortie du journal:
+6. Consultez la fenêtre sortie de l’IDE pour afficher **/topics/News** dans la sortie du journal:
 
     [![Le message de/topic/News est affiché](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
@@ -653,19 +653,19 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 
 Désinstallez l’application, reconstruisez-la, réexécutez-la et suivez les étapes suivantes pour envoyer un autre message:
 
-1.  Dans la console Firebase, cliquez sur **nouveau message**.
+1. Dans la console Firebase, cliquez sur **nouveau message**.
 
-2.  Dans la page **message de composition** , entrez le texte du message, puis sélectionnez **appareil unique**.
+2. Dans la page **message de composition** , entrez le texte du message, puis sélectionnez **appareil unique**.
 
-3.  Copiez la chaîne de jeton à partir de la fenêtre de sortie de l’IDE et collez-la dans le champ **jeton d’inscription FCM** de la console Firebase comme précédemment.
+3. Copiez la chaîne de jeton à partir de la fenêtre de sortie de l’IDE et collez-la dans le champ **jeton d’inscription FCM** de la console Firebase comme précédemment.
 
-4.  Assurez-vous que l’application est en cours d’exécution au premier plan, puis cliquez sur **Envoyer un message** dans la console Firebase:
+4. Assurez-vous que l’application est en cours d’exécution au premier plan, puis cliquez sur **Envoyer un message** dans la console Firebase:
 
     [![Envoi d’un autre message à partir de la console](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
-5.  Quand la boîte de dialogue **consulter le message** s’affiche, cliquez sur **Envoyer**.
+5. Quand la boîte de dialogue **consulter le message** s’affiche, cliquez sur **Envoyer**.
 
-6.  Le message entrant est enregistré dans la fenêtre de sortie de l’IDE:
+6. Le message entrant est enregistré dans la fenêtre de sortie de l’IDE:
 
     [![Corps du message imprimé dans la fenêtre sortie](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
@@ -679,7 +679,7 @@ using FCMClient;
 using System.Collections.Generic;
 ```
 
-Ajoutez la méthode suivante à `MyFirebaseMessagingService`:
+Ajoutez la méthode suivante à `MyFirebaseMessagingService` :
 
 <a name="sendnotification-method"></a>
 
@@ -741,13 +741,13 @@ Dans cet exemple, si l’application est en arrière- `SendNotification` plan, s
 
 Désinstallez l’application, reconstruisez-la, réexécutez-la, puis procédez comme suit pour envoyer le dernier message:
 
-1.  Dans la console Firebase, cliquez sur **nouveau message**.
+1. Dans la console Firebase, cliquez sur **nouveau message**.
 
-2.  Dans la page **message de composition** , entrez le texte du message, puis sélectionnez **appareil unique**.
+2. Dans la page **message de composition** , entrez le texte du message, puis sélectionnez **appareil unique**.
 
-3.  Copiez la chaîne de jeton à partir de la fenêtre de sortie de l’IDE et collez-la dans le champ **jeton d’inscription FCM** de la console Firebase comme précédemment.
+3. Copiez la chaîne de jeton à partir de la fenêtre de sortie de l’IDE et collez-la dans le champ **jeton d’inscription FCM** de la console Firebase comme précédemment.
 
-4.  Assurez-vous que l’application est en cours d’exécution au premier plan, puis cliquez sur **Envoyer un message** dans la console Firebase:
+4. Assurez-vous que l’application est en cours d’exécution au premier plan, puis cliquez sur **Envoyer un message** dans la console Firebase:
 
     [![Envoi du message de premier plan](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 

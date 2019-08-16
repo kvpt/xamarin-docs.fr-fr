@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f772bf1309330b41f9faea812e2cdcdba8e969cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653137"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527055"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : Utilisation de Touch dans Xamarin. iOS
 
@@ -181,8 +181,8 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
 La [section précédente](#Touch_Samples) expliquait comment faire glisser un objet autour de l’écran à l’aide d’événements tactiles.
 Dans cette section, nous allons supprimer les événements tactiles et montrer comment utiliser les module de reconnaissance de mouvement suivants:
 
--  `UIPanGestureRecognizer` Pour faire glisser une image autour de l’écran.
--  `UITapGestureRecognizer` Pour répondre aux doubles pressions sur l’écran.
+- `UIPanGestureRecognizer` Pour faire glisser une image autour de l’écran.
+- `UITapGestureRecognizer` Pour répondre aux doubles pressions sur l’écran.
 
 Si vous exécutez l' [exemple de code de départ](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start) et que vous cliquez sur le bouton exemples de module de **reconnaissance de mouvement** , l’écran suivant doit s’afficher:
 

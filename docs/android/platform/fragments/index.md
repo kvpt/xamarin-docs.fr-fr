@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: cfc4420d95778188368f3e7d3595713d83371d33
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b04ecf0685e78b73346ea5af815ed46f98b5da0f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643604"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524356"
 ---
 # <a name="fragments"></a>Fragments
 
@@ -42,9 +42,9 @@ Alors que l’activité est un hôte vers un ou plusieurs fragments, elle n’es
 
 Ce guide contient une couverture complète de l’utilisation des fragments, notamment:
 
--   **Création** de fragments: comment créer un fragment et des méthodes de clé de base qui doivent être implémentés.
--   **Gestion des fragments et transactions** : comment manipuler des fragments au moment de l’exécution.
--   **Package de support Android** : comment utiliser les bibliothèques qui permettent l’utilisation de fragments sur des versions antérieures d’Android.
+- **Création** de fragments: comment créer un fragment et des méthodes de clé de base qui doivent être implémentés.
+- **Gestion des fragments et transactions** : comment manipuler des fragments au moment de l’exécution.
+- **Package de support Android** : comment utiliser les bibliothèques qui permettent l’utilisation de fragments sur des versions antérieures d’Android.
 
 
 ## <a name="requirements"></a>Configuration requise

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 2bcbdf437956ed2e03e91236125d5e050cf349be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: edabddfeeac7f1c75df298cba6f885ec130972ba
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642769"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528550"
 ---
 # <a name="text-input-in-xamarinios"></a>Entrée de texte dans Xamarin. iOS
 
@@ -37,15 +37,15 @@ Le `UITextField` contrôle est le plus souvent utilisé pour accepter une seule 
 
 Ces contrôles sont expliqués ci-dessous:
 
--  **Espace réservé** : facultatif. S’il est défini, il s’affiche lorsque le champ de texte est vide, généralement pour expliquer à l’utilisateur quelle entrée est attendue.
--  **Bouton Effacer** : contrôle le moment où le bouton Effacer standard (le cercle gris avec (X)) apparaît dans le champ de texte, ce qui permet à l’utilisateur d’effacer rapidement le texte. Elle peut être masquée définitivement, visible définitivement ou affichée, selon que le champ est modifié ou non.
--  **Taille de police minimale** et **ajuster pour ajuster** : permet d’ajuster automatiquement la taille de police pour qu’elle s’ajuste au texte le plus long et d’empêcher la troncation, mais limitée à une taille inférieure à la taille spécifiée.
--  Mise en majuscules: indique s’il faut mettre automatiquement en majuscules les mots, les phrases ou toutes les entrées.
--  **Correction** : indique si la vérification de l’orthographe et les suggestions sont activées.
--  **Clavier** : contrôle le style de clavier affiché pour l’entrée et, par conséquent, les touches disponibles sur le clavier. Cela comprend le pavé numérique, le pavé téléphonique, l’adresse de messagerie et l’URL, ainsi que d’autres options.
--  **Apparence** : contrôle le style d’apparence du clavier et est sombre ou clair.
--  **Clé de retour** : modifiez l’étiquette sur la clé de retour pour mieux refléter l’action qui sera entreprise. Les valeurs prises en charge sont les suivantes: Go, Join, Next, route, Done et Search.
--  **Secure** : indique si l’entrée est masquée (par exemple, pour une entrée de mot de passe).
+- **Espace réservé** : facultatif. S’il est défini, il s’affiche lorsque le champ de texte est vide, généralement pour expliquer à l’utilisateur quelle entrée est attendue.
+- **Bouton Effacer** : contrôle le moment où le bouton Effacer standard (le cercle gris avec (X)) apparaît dans le champ de texte, ce qui permet à l’utilisateur d’effacer rapidement le texte. Elle peut être masquée définitivement, visible définitivement ou affichée, selon que le champ est modifié ou non.
+- **Taille de police minimale** et **ajuster pour ajuster** : permet d’ajuster automatiquement la taille de police pour qu’elle s’ajuste au texte le plus long et d’empêcher la troncation, mais limitée à une taille inférieure à la taille spécifiée.
+- Mise en majuscules: indique s’il faut mettre automatiquement en majuscules les mots, les phrases ou toutes les entrées.
+- **Correction** : indique si la vérification de l’orthographe et les suggestions sont activées.
+- **Clavier** : contrôle le style de clavier affiché pour l’entrée et, par conséquent, les touches disponibles sur le clavier. Cela comprend le pavé numérique, le pavé téléphonique, l’adresse de messagerie et l’URL, ainsi que d’autres options.
+- **Apparence** : contrôle le style d’apparence du clavier et est sombre ou clair.
+- **Clé de retour** : modifiez l’étiquette sur la clé de retour pour mieux refléter l’action qui sera entreprise. Les valeurs prises en charge sont les suivantes: Go, Join, Next, route, Done et Search.
+- **Secure** : indique si l’entrée est masquée (par exemple, pour une entrée de mot de passe).
 
 
 Si un champ UITextField appelé `textfield1` a été ajouté à un écran avec le concepteur, vous pouvez définir ou modifier ses propriétés dans C# comme suit:
@@ -81,8 +81,8 @@ Le `UITextView` contrôle peut être utilisé pour afficher du texte en lecture 
 
 Les propriétés spécifiques sont les suivantes:
 
--  **Comportement** : indique si le texte est modifiable ou en lecture seule.
--  **Détection** : détecte et convertit les données entrées en éléments interactives, tels que les numéros de téléphone qui peuvent déclencher un appel, les adresses qui deviennent des liens vers les mappages, les URL qui s’ouvrent dans Safari ou les dates et heures qui deviennent des événements dans le calendrier.
+- **Comportement** : indique si le texte est modifiable ou en lecture seule.
+- **Détection** : détecte et convertit les données entrées en éléments interactives, tels que les numéros de téléphone qui peuvent déclencher un appel, les adresses qui deviennent des liens vers les mappages, les URL qui s’ouvrent dans Safari ou les dates et heures qui deviennent des événements dans le calendrier.
 
 
 Si un UITextView a été ajouté à un écran avec le concepteur, vous pouvez définir ou modifier ses propriétés comme suit:

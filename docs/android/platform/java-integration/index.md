@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510568"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524084"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Intégration de Java à Xamarin. Android
 
@@ -24,11 +24,11 @@ Compte tenu de l’étendue de l’écosystème Java, il est très probable que 
 
 Il existe trois façons de réutiliser des bibliothèques Java dans une application Xamarin. Android: 
 
--   **Créer une bibliothèque de liaisons Java** Avec cette technique, un projet Xamarin. Android est utilisé pour créer C# des wrappers autour des types Java. &ndash; Une application Xamarin. Android peut ensuite référencer C# les wrappers créés par ce projet, puis utiliser le `.jar` fichier. 
+- **Créer une bibliothèque de liaisons Java** Avec cette technique, un projet Xamarin. Android est utilisé pour créer C# des wrappers autour des types Java. &ndash; Une application Xamarin. Android peut ensuite référencer C# les wrappers créés par ce projet, puis utiliser le `.jar` fichier. 
 
--   **Interface native Java**  C++ C#  JNI (Java Native Interface) est une infrastructure qui permet à du code non-Java (tel que ou) d’appeler ou d’être appelé par du code Java exécuté dans une machine virtuelle Java. &ndash; 
+- **Interface native Java** C++ C# JNI (Java Native Interface) est une infrastructure qui permet à du code non-Java (tel que ou) d’appeler ou d’être appelé par du code Java exécuté dans une machine virtuelle Java. &ndash; 
 
--   **Portage du code** Cette méthode implique de créer le code source Java, puis de le convertir en C# &ndash; Cette opération peut être effectuée manuellement ou à l’aide d’un outil automatisé tel que la netteté. 
+- **Portage du code** Cette méthode implique de créer le code source Java, puis de le convertir en C# &ndash; Cette opération peut être effectuée manuellement ou à l’aide d’un outil automatisé tel que la netteté. 
 
 L' *interface native Java* (JNI) est au cœur des deux premières techniques. JNI est un Framework qui permet aux applications qui ne sont pas écrites en Java d’interagir avec le code Java s’exécutant dans un Machine virtuelle Java. Xamarin. Android utilise JNI pour créer des *liaisons* pour C# le code. 
 

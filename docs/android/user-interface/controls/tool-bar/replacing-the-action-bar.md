@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 19ac5a023b1f97b2e08bbe1821a2b9259280fc98
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d59acaec36c63c62fe934f145d06bfbb78d11f6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645155"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522859"
 ---
 # <a name="replacing-the-action-bar"></a>Remplacement de la barre d’action
 
@@ -21,15 +21,15 @@ L’une des utilisations les plus courantes de `Toolbar` est de remplacer la bar
 
 Pour remplacer la barre d’action par défaut d’une `Toolbar`application par un: 
 
-1.  Créez un nouveau thème personnalisé et modifiez les propriétés de l’application afin qu’elle utilise ce nouveau thème. 
+1. Créez un nouveau thème personnalisé et modifiez les propriétés de l’application afin qu’elle utilise ce nouveau thème. 
 
-2.  Désactivez l' `windowActionBar` attribut dans le thème personnalisé et `windowNoTitle` activez l’attribut.
+2. Désactivez l' `windowActionBar` attribut dans le thème personnalisé et `windowNoTitle` activez l’attribut.
 
-3.  Définissez une disposition pour le `Toolbar`.
+3. Définissez une disposition pour le `Toolbar`.
 
-4.  Incluez `Toolbar` la disposition dans le fichier de disposition **principal. AXML** de l’activité. 
+4. Incluez `Toolbar` la disposition dans le fichier de disposition **principal. AXML** de l’activité. 
 
-5.  Ajoutez du code à la méthode `OnCreate` de l’activité pour `Toolbar` Rechercher et `SetActionBar` appeler pour installer `ToolBar` le comme barre d’action.
+5. Ajoutez du code à la méthode `OnCreate` de l’activité pour `Toolbar` Rechercher et `SetActionBar` appeler pour installer `ToolBar` le comme barre d’action.
 
 Les sections suivantes expliquent ce processus en détail. Une application simple est créée et sa barre d’action est remplacée par une `Toolbar`application personnalisée. 
 
@@ -175,13 +175,13 @@ Dans cette section, les `Toolbar`menus sont ajoutés au. La zone supérieure dro
 
 Pour ajouter des `Toolbar`menus à: 
 
-1.  Ajoutez des icônes de menu (si nécessaire) `mipmap-` aux dossiers du projet d’application. Google fournit un ensemble d’icônes de menu gratuites sur la page [icônes de matériau](https://design.google.com/icons/) . 
+1. Ajoutez des icônes de menu (si nécessaire) `mipmap-` aux dossiers du projet d’application. Google fournit un ensemble d’icônes de menu gratuites sur la page [icônes de matériau](https://design.google.com/icons/) . 
 
-2.  Définissez le contenu des éléments de menu en ajoutant un nouveau fichier de ressources de menu sous **ressources/menu**. 
+2. Définissez le contenu des éléments de menu en ajoutant un nouveau fichier de ressources de menu sous **ressources/menu**. 
 
-3.  Implémentez `OnCreateOptionsMenu` la méthode de l' &ndash; activité que cette méthode fixe les éléments de menu. 
+3. Implémentez `OnCreateOptionsMenu` la méthode de l' &ndash; activité que cette méthode fixe les éléments de menu. 
 
-4.  Implémentez `OnOptionsItemSelected` la méthode de l' &ndash; activité dont cette méthode effectue une action lorsqu’un élément de menu est frappé. 
+4. Implémentez `OnOptionsItemSelected` la méthode de l' &ndash; activité dont cette méthode effectue une action lorsqu’un élément de menu est frappé. 
 
 Les sections suivantes illustrent ce processus en détail en ajoutant des éléments de menu **modifier** et **Enregistrer** au personnalisé `Toolbar`. 
 
@@ -218,11 +218,11 @@ Créez un sous-répertoire de **menu** sous **ressources**. Dans le sous-répert
 
 Ce code XML crée trois éléments de menu:
 
--   Élément de menu **Edition** qui utilise l' `ic_action_content_create.png` icône (crayon). 
+- Élément de menu **Edition** qui utilise l' `ic_action_content_create.png` icône (crayon). 
 
--   Un élément de menu **Enregistrer** qui utilise `ic_action_content_save.png` l’icône (disquette). 
+- Un élément de menu **Enregistrer** qui utilise `ic_action_content_save.png` l’icône (disquette). 
 
--   Élément de menu **Préférences** qui n’a pas d’icône.
+- Élément de menu **Préférences** qui n’a pas d’icône.
 
 Les `showAsAction` attributs des éléments de menu **modifier** et **Enregistrer** ont la valeur `ifRoom` &ndash; de ce paramètre, ces éléments de menu s’affichent dans le `Toolbar` s’il y a suffisamment d’espace pour s’afficher. L' élément `showAsAction` de `never` menu Préférences définit cette option pour afficher le menu Préférences dans le menu de dépassement de capacité (trois points verticaux). &ndash; 
 

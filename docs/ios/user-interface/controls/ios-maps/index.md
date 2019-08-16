@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642919"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528698"
 ---
 # <a name="maps-in-xamarinios"></a>Cartes dans Xamarin. iOS
 
@@ -48,8 +48,8 @@ map.MapType = MKMapType.Hybrid;
 
  `MKMapView`prend en charge les fonctionnalités d’interactivité de la carte, telles que:
 
--  Zoom à l’aide d’un geste de pincement
--  Panoramique via un mouvement panoramique
+- Zoom à l’aide d’un geste de pincement
+- Panoramique via un mouvement panoramique
 
 
 Ces fonctionnalités peuvent être activées ou désactivées en `ZoomEnabled` définissant simplement les `MKMapView` propriétés et `ScrollEnabled` de l’instance, où la valeur par défaut est true pour les deux. Par exemple, pour afficher une carte statique, définissez simplement les propriétés appropriées sur false:
@@ -96,8 +96,8 @@ map.ShowsUserLocation = true;
 
 Une annotation elle-même se compose de deux parties:
 
--  `MKAnnotation` Objet, qui comprend les données de modèle relatives à l’annotation, telles que le titre et l’emplacement de l’annotation.
--  `MKAnnotationView` , Qui contient l’image à afficher et éventuellement une légende qui s’affiche lorsque l’utilisateur appuie sur l’annotation.
+- `MKAnnotation` Objet, qui comprend les données de modèle relatives à l’annotation, telles que le titre et l’emplacement de l’annotation.
+- `MKAnnotationView` , Qui contient l’image à afficher et éventuellement une légende qui s’affiche lorsque l’utilisateur appuie sur l’annotation.
 
 
 Le kit de cartes utilise le modèle de délégation IOS pour ajouter des annotations à `Delegate` une carte, `MKMapView` où la propriété du est définie sur `MKMapViewDelegate`une instance d’un. Il s’agit de l’implémentation de ce délégué qui est chargée `MKAnnotationView` de retourner le pour une annotation.
@@ -177,9 +177,9 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 Une autre façon de superposer des graphiques sur une carte consiste à utiliser des superpositions. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. iOS assure la prise en charge de plusieurs types de superpositions, notamment:
 
--  Polygones-couramment utilisés pour mettre en surbrillance une région d’une carte.
--  Polylignes, souvent affichées lors de l’affichage d’un itinéraire.
--  Cercles-utilisé pour mettre en surbrillance une zone circulaire d’une carte.
+- Polygones-couramment utilisés pour mettre en surbrillance une région d’une carte.
+- Polylignes, souvent affichées lors de l’affichage d’un itinéraire.
+- Cercles-utilisé pour mettre en surbrillance une zone circulaire d’une carte.
 
 
 En outre, des superpositions personnalisées peuvent être créées pour afficher des géométries arbitraires avec un code de dessin granulaire et personnalisé. Par exemple, le radar météo est un bon candidat pour une superposition personnalisée.
@@ -188,8 +188,8 @@ En outre, des superpositions personnalisées peuvent être créées pour affiche
 
 Comme pour les annotations, l’ajout d’une superposition implique deux parties:
 
--  Création d’un objet de modèle pour la superposition et ajout `MKMapView` de celui-ci à.
--  Création d’une vue pour la superposition `MKMapViewDelegate` dans le.
+- Création d’un objet de modèle pour la superposition et ajout `MKMapView` de celui-ci à.
+- Création d’une vue pour la superposition `MKMapViewDelegate` dans le.
 
 
 Le modèle de la superposition peut être `MKShape` n’importe quelle sous-classe. Xamarin. iOS comprend `MKShape` des sous-classes pour les polygones, `MKPolyline` les polylignes et `MKPolygon`les cercles `MKCircle` , par le biais des classes et respectivement.
@@ -225,10 +225,10 @@ iOS comprend une API de recherche locale avec le kit Map, qui permet des recherc
 
 Pour effectuer une recherche locale, une application doit suivre les étapes suivantes:
 
-1.  Créer `MKLocalSearchRequest` un objet.
-1.  Créez un `MKLocalSearch` objet à partir `MKLocalSearchRequest` du.
-1.  Appelez la `Start` méthode sur l' `MKLocalSearch` objet.
-1.  Récupérez `MKLocalSearchResponse` l’objet dans un rappel.
+1. Créer `MKLocalSearchRequest` un objet.
+1. Créez un `MKLocalSearch` objet à partir `MKLocalSearchRequest` du.
+1. Appelez la `Start` méthode sur l' `MKLocalSearch` objet.
+1. Récupérez `MKLocalSearchResponse` l’objet dans un rappel.
 
 
 L’API recherche locale elle-même ne fournit pas d’interface utilisateur. Il n’a même pas besoin d’utiliser un mappage. Toutefois, pour faciliter l’utilisation de la recherche locale, une application doit fournir un moyen de spécifier une requête de recherche et d’afficher les résultats. En outre, étant donné que les résultats contiendront des données d’emplacement, il est souvent judicieux de les afficher sur une carte.

@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/01/2018
-ms.openlocfilehash: b0f747c37362997563a35d9b94f8e677d4104ee1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1df10c4b8eaa30ce417feb2abae7f52b2494edf6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013369"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526371"
 ---
 # <a name="android-resource-basics"></a>Principes de base des ressources Android
 
-Presque toutes les applications Android aura une sorte de ressources dans au minimum, ils ont souvent les dispositions d’interface utilisateur sous la forme de fichiers XML. Création d’une application Xamarin.Android tout d’abord, les ressources par défaut sont configurées par le modèle de projet Xamarin.Android :
+Presque toutes les applications Android auront un certain nombre de ressources. au minimum, elles ont souvent les dispositions de l’interface utilisateur sous la forme de fichiers XML. Quand une application Xamarin. Android est créée pour la première fois, les ressources par défaut sont configurées par le modèle de projet Xamarin. Android:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -27,44 +27,44 @@ Presque toutes les applications Android aura une sorte de ressources dans au min
  
 -----
 
-Les cinq fichiers qui composent les ressources par défaut ont été créés dans le dossier de ressources :
+Les cinq fichiers qui composent les ressources par défaut ont été créés dans le dossier ressources:
 
--  **Icon.png** &ndash; l’icône par défaut pour l’application
+- **Icon. png** &ndash; icône par défaut de l’application
 
--  **Main.axml** &ndash; le fichier de disposition de l’interface de l’utilisateur par défaut pour une application. Bien que Android utilise le **.xml** extension de fichier, Xamarin.Android utilise le **.axml** extension de fichier.
+- **Main. AXML** &ndash; le fichier de disposition de l’interface utilisateur par défaut pour une application. Notez que si Android utilise l’extension de fichier **. xml** , Xamarin. Android utilise l’extension de fichier **. AXML** .
 
--  **Strings.XML** &ndash; une table de chaînes pour faciliter la localisation de l’application
+- Strings **. xml** &ndash; table de chaînes pour faciliter la localisation de l’application
 
--  **AboutResources.txt** &ndash; cela n’est pas nécessaire et peut être supprimé. Il fournit simplement une vue d’ensemble de haut niveau du dossier de ressources et les fichiers qu’il contient.
+- **AboutResources. txt** &ndash; cette opération n’est pas nécessaire et peut être supprimée en toute sécurité. Il fournit simplement une vue d’ensemble globale du dossier ressources et des fichiers qu’il contient.
 
--  **Resource.Designer.cs** &ndash; ce fichier est automatiquement généré et géré par Xamarin.Android et contient l’unique ID affecté à chaque ressource. C’est très similaire et identique dans leur usage au fichier R.java ayant une application Android écrite en Java. Il est automatiquement créé par les outils Xamarin.Android et va être régénérée de temps à autre.
+- Resource.Designer.cs&ndash; ce fichier est généré et géré automatiquement par Xamarin. Android et contient l’ID unique affecté à chaque ressource. Cette fonction est très similaire et identique à celle du fichier R. Java qu’une application Android écrite en Java aurait. Elle est automatiquement créée par les outils Xamarin. Android et sera régénérée de temps en temps.
 
 
-## <a name="creating-and-accessing-resources"></a>Création et l’accès aux ressources
+## <a name="creating-and-accessing-resources"></a>Création et accès aux ressources
 
-Création de ressources est aussi simple que l’ajout de fichiers dans le répertoire du type de ressource en question. La capture d’écran ci-dessous montre les ressources de chaîne pour les paramètres régionaux allemands ont été ajoutés à un projet. Lorsque **Strings.xml** a été ajouté au fichier, le **Action de génération** a été défini automatiquement sur **AndroidResource** par les outils Xamarin.Android :
+La création de ressources est aussi simple que l’ajout de fichiers au répertoire pour le type de ressource en question. La capture d’écran ci-dessous montre les ressources de type chaîne pour les paramètres régionaux allemands qui ont été ajoutés à un projet. Quand **Strings. xml** a été ajouté au fichier, l' **action de génération** a été automatiquement définie sur **AndroidResource** par les outils Xamarin. Android:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![Action pour Strings.xml AndroidResource la valeur de génération](android-resource-basics-images/02-build-action-vs.png)
+![Action de génération pour Strings. XML définie sur AndroidResource](android-resource-basics-images/02-build-action-vs.png)
  
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![Action pour Strings.xml AndroidResource la valeur de génération](android-resource-basics-images/02-build-action-xs.png)
+![Action de génération pour Strings. XML définie sur AndroidResource](android-resource-basics-images/02-build-action-xs.png)
  
 -----
  
 
-Ainsi, les outils Xamarin.Android compiler correctement et d’incorporer les ressources dans le fichier APK. If pour une raison quelconque le **Action de génération** n’a pas la valeur **ressources Android**, les fichiers seront exclus de l’APK et toute tentative de chargement ou d’accéder aux ressources entraîne une erreur d’exécution et le application se bloque.
+Cela permet aux outils Xamarin. Android de compiler et d’incorporer correctement les ressources dans le fichier APK. Si, pour une raison quelconque, l' **action de génération** n’est pas définie sur **ressource Android**, les fichiers sont exclus du apk et toute tentative de chargement ou d’accès aux ressources entraîne une erreur d’exécution et l’application se bloque.
 
-En outre, il est important de noter que bien qu’Android prend uniquement en charge les noms de fichiers en minuscules pour les éléments de ressource, Xamarin.Android est un peu plus indulgent ; Il prendra en charge les majuscules et minuscules des noms de fichiers. La convention de nom d’image consiste à utiliser des minuscules avec des traits de soulignement comme séparateurs (par exemple, **mon\_image\_name.png**). Notez que les noms de ressource ne peut pas être traités si des tirets ou des espaces sont utilisés comme séparateurs.
+En outre, il est important de noter que même si Android ne prend en charge que les noms de fichiers en minuscules pour les éléments de ressource, Xamarin. Android est un peu plus indulgent avec. Il prend en charge les noms de fichiers en majuscules et en minuscules. La Convention pour les noms d’image consiste à utiliser des minuscules avec des traits de soulignement comme séparateurs (par exemple, **mon\_image\_Name. png**). Notez que les noms de ressources ne peuvent pas être traités si des tirets ou des espaces sont utilisés comme séparateurs.
 
-Une fois que les ressources ont été ajoutés à un projet, il existe deux façons de les utiliser dans une application &ndash; par programmation (à l’intérieur de code) ou à partir de fichiers XML.
+Une fois les ressources ajoutées à un projet, il existe deux façons de les utiliser dans une application &ndash; par programmation (dans le code) ou à partir de fichiers XML.
 
 
-## <a name="referencing-resources-programmatically"></a>Référence à des ressources par programme
+## <a name="referencing-resources-programmatically"></a>Référencement de ressources par programmation
 
-Pour accéder par programmation à ces fichiers, ils sont attribués à un ID de ressource unique. Cet ID de ressource est un entier défini dans une classe spéciale appelée `Resource`, qui se trouve dans le fichier **Resource.designer.cs**, et ressemble à ceci :
+Pour accéder à ces fichiers par programme, un ID de ressource unique leur est affecté. Cet ID de ressource est un entier défini dans une classe spéciale `Resource`appelée, qui se trouve dans le fichier **Resource.Designer.cs**et ressemble à ceci:
 
 ```csharp
 public partial class Resource
@@ -91,37 +91,37 @@ public partial class Resource
 }
 ```
 
-Chaque ID de ressource est contenue dans une classe imbriquée qui correspond au type de ressource. Par exemple, lorsque le fichier **Icon.png** a été ajouté au projet, la mise à jour Xamarin.Android le `Resource` (classe), la création d’une classe imbriquée appelée `Drawable` avec un intérieur constante nommée `Icon`.
-Cela permet au fichier **Icon.png** doit être référencée dans le code comme `Resource.Drawable.Icon`. Le `Resource` classe ne doit pas être modifiée manuellement, comme toutes les modifications sont apportées à ce dernier seront remplacées par Xamarin.Android.
+Chaque ID de ressource est contenu dans une classe imbriquée qui correspond au type de ressource. Par exemple, lorsque le fichier **Icon. png** a été ajouté au projet, Xamarin. Android a mis `Resource` à jour la classe, créant une classe `Drawable` imbriquée appelée avec une `Icon`constante dans nommée.
+Cela permet au fichier **Icon. png** d’être référencé dans le code sous `Resource.Drawable.Icon`la forme. La `Resource` classe ne doit pas être modifiée manuellement, car toutes les modifications qui y sont apportées seront remplacées par Xamarin. Android.
 
-Lorsque vous référencez des ressources par programme (dans le code), ils sont accessibles par le biais de la hiérarchie de classes de ressources qui utilise la syntaxe suivante :
+Lorsque vous référencez des ressources par programme (dans le code), elles sont accessibles via la hiérarchie de classes de ressources qui utilise la syntaxe suivante:
 
 ```csharp
 [<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
--  **PackageName** &ndash; le package qui fournit la ressource et est uniquement requis lorsque les ressources à partir d’autres packages sont utilisées.
+- **PackageName** &ndash; Package qui fournit la ressource et requis uniquement lorsque des ressources d’autres packages sont utilisées.
 
--  **ResourceType** &ndash; c’est le type de ressource imbriquée qui se trouve dans la classe de ressource décrite ci-dessus.
+- **ResourceType** &ndash; Il s’agit du type de ressource imbriquée qui se trouve dans la classe de ressource décrite ci-dessus.
 
--  **Nom de la ressource** &ndash; il s’agit du nom de fichier de la ressource (sans l’extension) ou la valeur de l’attribut android : name pour les ressources qui se trouvent dans un élément XML.
+- **Nom** de la ressource &ndash; il s’agit du nom de fichier de la ressource (sans l’extension) ou de la valeur de l’attribut Android: Name pour les ressources qui se trouvent dans un élément XML.
 
 
-## <a name="referencing-resources-from-xml"></a>Référence à des ressources à partir de XML
+## <a name="referencing-resources-from-xml"></a>Référencement de ressources à partir de XML
 
-Ressources dans un fichier XML sont accessibles par une suivant une syntaxe spéciale :
+Les ressources d’un fichier XML sont accessibles à l’aide d’une syntaxe spéciale:
 
 ```xml
 @[<PackageName>:]<ResourceType>/<ResourceName>
 ```
 
--  **PackageName** &ndash; le package qui fournit la ressource et est uniquement requis lorsque les ressources à partir d’autres packages sont utilisées.
+- **PackageName** &ndash; package qui fournit la ressource et requis uniquement lorsque des ressources d’autres packages sont utilisées.
 
--  **ResourceType** &ndash; c’est le type de ressource imbriquée qui se trouve dans la classe de ressource.
+- **ResourceType** &ndash; Il s’agit du type de ressource imbriquée qui se trouve dans la classe de ressource.
 
--  **Nom de la ressource** &ndash; il s’agit du nom de fichier de la ressource (*sans* l’extension de type de fichier) ou la valeur de la `android:name` attribut pour les ressources qui se trouvent dans un élément XML.
+- **Nom** de la ressource Il s’agit du nom de fichier de la ressource (*sans* l’extension de type de fichier) `android:name` ou de la valeur de l’attribut pour les ressources qui se trouvent dans un élément XML. &ndash;
 
-Par exemple, le contenu d’un fichier de disposition, **Main.axml**, sont les suivantes :
+Par exemple, le contenu d’un fichier de disposition, **main. AXML**, est le suivant:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -136,7 +136,7 @@ Par exemple, le contenu d’un fichier de disposition, **Main.axml**, sont les s
 </LinearLayout>
 ```
 
-Cet exemple a un [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) qui nécessite une ressource drawable nommée **indicateur**. Le `ImageView` a son `src` attribut la valeur `@drawable/flag`. Lorsque l’activité démarre, Android ressemblera à l’intérieur du répertoire **ressource/Drawable** pour un fichier nommé **flag.png** (l’extension de fichier peut être un autre format d’image, comme **flag.jpg**) et charger ce fichier et l’afficher dans le `ImageView`.
-Lorsque cette application est exécutée, elle serait similaire à l’image suivante :
+Cet exemple a un [`ImageView`](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) qui requiert une ressource dessinable nommée **indicateur**. A son `src` attribut défini sur `@drawable/flag`. `ImageView` Lorsque l’activité démarre, Android examine la ressource de répertoire **/dessinable** pour un fichier nommé **Flag. png** (l’extension de fichier peut être un autre format d’image, comme **Flag. jpg**) et charger ce fichier et l’afficher `ImageView`dans le.
+Lorsque cette application est exécutée, elle doit ressembler à l’image suivante:
 
-![ImageView localisée](android-resource-basics-images/03-localized-screenshot.png)
+![ImageView localisé](android-resource-basics-images/03-localized-screenshot.png)

@@ -1,45 +1,45 @@
 ---
-title: À l’aide des données dans une application iOS
-description: Ce document décrit le DataAccess_Adv exemple qui montre comment recueillir les entrées utilisateur et effectuer créer, lire, mettre à jour et supprimer (CRUD) des opérations de base de données dans une application Xamarin.iOS.
+title: Utilisation des données dans une application iOS
+description: Ce document décrit l’exemple DataAccess_Adv, qui montre comment collecter les entrées d’utilisateur et effectuer des opérations de base de données CRUD (création, lecture, mise à jour et suppression) dans une application Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: a47ab26777c594658810b014025477486bbe5cc2
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 9da0f48a8798a16ccd6410913d0b31c0b4444cb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650149"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527192"
 ---
-# <a name="using-data-in-an-ios-app"></a>À l’aide des données dans une application iOS
+# <a name="using-data-in-an-ios-app"></a>Utilisation des données dans une application iOS
 
-Le **DataAccess_Adv** exemple montre une application opérationnelle qui autorise l’entrée d’utilisateur et *CRUD* les fonctionnalités de base de données (Create, Read, Update et Delete). L’application se compose de deux écrans : une liste et un formulaire de saisie de données. Tout le code d’accès aux données est réutilisable dans iOS et Android sans modification.
+L’exemple **DataAccess_Adv** illustre une application opérationnelle qui autorise les entrées d’utilisateur et les fonctionnalités de base de données *CRUD* (création, lecture, mise à jour et suppression). L’application se compose de deux écrans: une liste et un formulaire de saisie de données. Tout le code d’accès aux données peut être réutilisé dans iOS et Android sans modification.
 
-Après avoir ajouté des données les écrans de l’application ressembler à ceci sur iOS :
+Après avoir ajouté des données, les écrans de l’application ressemblent à ce qui suit sur iOS:
 
  ![](using-data-in-an-app-images/image9.png "liste d’exemples iOS")
 
- ![](using-data-in-an-app-images/image10.png "détails d’échantillon iOS")
+ ![](using-data-in-an-app-images/image10.png "exemple de détail iOS")
 
-IOS le projet est indiqué ci-dessous : le code présenté dans cette section est contenu dans le **Orm** directory :
+Le projet iOS est illustré ci-dessous: le code présenté dans cette section est contenu dans le répertoire **ORM** :
 
- ![](using-data-in-an-app-images/image13.png "arborescence du projet iOS")
+ ![](using-data-in-an-app-images/image13.png "arborescence de projet iOS")
 
-Le code de l’interface utilisateur natif pour le ViewControllers dans iOS est hors de portée pour ce document.
-Reportez-vous à la [iOS utilisation des Tables et cellules](~/ios/user-interface/controls/tables/index.md) guide pour plus d’informations sur les contrôles d’interface utilisateur.
+Le code d’interface utilisateur natif pour ViewControllers dans iOS est hors de portée pour ce document.
+Pour plus d’informations sur les contrôles d’interface utilisateur, reportez-vous au Guide d' [utilisation d’iOS avec des tables et des cellules](~/ios/user-interface/controls/tables/index.md) .
 
 ## <a name="read"></a>Lecture
 
-Il existe quelques opérations de lecture dans l’exemple :
+Il existe deux opérations de lecture dans l’exemple:
 
--  Lecture de la liste
--  Lecture des enregistrements individuels
+- Lecture de la liste
+- Lecture d’enregistrements individuels
 
 
-Les deux méthodes dans la `StockDatabase` classe sont :
+Les deux méthodes de la `StockDatabase` classe sont:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -56,12 +56,12 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS restitue les données différemment, comme un `UITableView`.
+iOS effectue le rendu des données différemment sous `UITableView`la forme d’un.
 
 ## <a name="create-and-update"></a>Créer et mettre à jour
 
-Pour simplifier le code d’application, une méthode de sauvegarde unique est fournie qui effectue une insertion ou mise à jour selon que la clé primaire a été défini. Étant donné que le `Id` propriété est marquée avec un `[PrimaryKey]` attribut pas définissez-le dans votre code.
-Cette méthode détecte si la valeur a été précédente enregistrée (en vérifiant la propriété de clé primaire) et insérer ou mettre à jour l’objet en conséquence :
+Pour simplifier le code de l’application, une méthode Save unique est fournie, qui effectue une insertion ou une mise à jour selon que la valeur PrimaryKey a été définie ou non. Étant donné `Id` que la propriété est marquée `[PrimaryKey]` avec un attribut, vous ne devez pas la définir dans votre code.
+Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -79,13 +79,13 @@ public int SaveStock (Stock item)
 
 
 
-Les applications réelles nécessitent généralement des validations (telles que les champs obligatoires, les longueurs minimale ou les autres règles d’entreprise).
-Bonne des applications multiplateformes implémentent autant de la validation logique que possible dans le code partagé, en passant des erreurs de validation vers l’interface utilisateur pour l’affichage selon les fonctionnalités de la plateforme.
+Les applications réelles nécessitent généralement une validation (par exemple, les champs obligatoires, les longueurs minimales ou d’autres règles d’entreprise).
+De bonnes applications multiplateforme implémentent autant de validation logique que possible dans le code partagé, en passant les erreurs de validation à l’interface utilisateur pour l’affichage en fonction des fonctionnalités de la plateforme.
 
 ## <a name="delete"></a>Supprimer
 
-Contrairement à la `Insert` et `Update` méthodes, le `Delete<T>` méthode peut accepter uniquement la valeur de clé primaire plutôt que complète `Stock` objet.
-Dans cet exemple un `Stock` objet est passé à la méthode, mais uniquement la propriété Id est passée à la `Delete<T>` (méthode).
+Contrairement aux méthodes `Update` `Delete<T>` et, la méthode peut uniquement accepter la valeur de clé primaire plutôt qu’un objet complet `Stock`. `Insert`
+Dans cet exemple, `Stock` un objet est passé dans la méthode, mais seule la propriété ID est passée à `Delete<T>` la méthode.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -96,18 +96,18 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>À l’aide d’un fichier de base de données SQLite prérempli
+## <a name="using-a-pre-populated-sqlite-database-file"></a>Utilisation d’un fichier de base de données SQLite pré-rempli
 
-Certaines applications sont livrées avec une base de données déjà remplie avec des données.
-Vous pouvez le faire facilement dans votre application mobile par un fichier de base de données SQLite existant avec votre application d’expédition et de les copier dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard qui est utilisé sur de nombreuses plateformes, il existe plusieurs outils disponibles pour créer un fichier de base de données SQLite :
+Certaines applications sont livrées avec une base de données déjà remplie de données.
+Vous pouvez facilement effectuer cette opération dans votre application mobile en envoyant un fichier de base de données SQLite existant avec votre application et en le copiant dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard utilisé sur de nombreuses plateformes, un certain nombre d’outils sont disponibles pour créer un fichier de base de données SQLite:
 
--  **Extension de Firefox SQLite Manager** – fonctionne sur Mac et Windows et génère des fichiers qui sont compatibles avec iOS et Android.
--  **Ligne de commande** – consultez [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
+- **Extension SQLite Manager Firefox** : fonctionne sur Mac et Windows et produit des fichiers compatibles avec iOS et Android.
+- **Ligne de commande** : consultez [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
 
-Lorsque vous créez un fichier de base de données de distribution avec votre application, soyez attentif avec l’affectation des noms de tables et de colonnes pour vous assurer qu’ils correspondent aux attentes de votre code, en particulier si vous utilisez SQLite.NET qui s’attendent les noms pour faire correspondre vos classes c# et les propriétés (ou attributs personnalisés associés).
+Lorsque vous créez un fichier de base de données à distribuer avec votre application, prenez soin de nommer les tables et les colonnes pour vous assurer qu’elles correspondent à ce que votre code attend, en particulier si vous utilisez des SQLite.NET C# qui s’attendent à ce que les noms correspondent à vos classes et propriétés ( ou les attributs personnalisés associés).
 
-Pour iOS, incluez le fichier de sqlite dans votre application et vérifiez qu’il est marqué avec **Action de génération : Contenu**. Placez le code dans le `FinishedLaunching` pour copier le fichier dans un répertoire accessible en écriture *avant* vous appelez les méthodes de données. Le code suivant copie une base de données appelée **data.sqlite**, uniquement s’il n’existe pas déjà.
+Pour iOS, incluez le fichier SQLite dans votre application et assurez-vous **qu’il est marqué avec l’action de génération: Contenu**. Placez le code dans le `FinishedLaunching` pour copier le fichier dans un répertoire accessible en écriture *avant* d’appeler des méthodes de données. Le code suivant copie une base de données existante appelée **Data. sqlite**, uniquement si elle n’existe pas déjà.
 
 ```csharp
 // Copy the database across (if it doesn't exist)
@@ -119,12 +119,12 @@ if (!File.Exists (Database.DatabaseFilePath))
 }
 ```
 
-N’importe quel code d’accès aux données (Si ADO.NET ou à l’aide de SQLite.NET) qui s’exécute une fois que cela a seront terminée ont accès aux données préremplies.
+Tout code d’accès aux données (qu’il s’agisse de ADO.NET ou d’utilisation de SQLite.NET) qui s’exécute après cette opération aura accès aux données préremplies.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [DataAccess Basic (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess de base (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess avancé (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS recettes de données](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Accès aux données de Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md)
+- [Recettes de données iOS](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
+- [Accès aux données Xamarin. Forms](~/xamarin-forms/data-cloud/data/databases.md)

@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 26. Dispositions personnalisées
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 26. Dispositions personnalisées'
+description: 'Création d’Mobile Apps avec Xamarin. Forms: Résumé du chapitre 26. Dispositions personnalisées'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 9fa9802f94e10612c4b0fe02c84ddcabc89820a8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 46a9887d12d251e60cf6767fe89f6125fe1438d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331558"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529244"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Résumé du chapitre 26. Dispositions personnalisées
 
@@ -116,7 +116,7 @@ Contraintes infinies indiquent que la taille demandée doit refléter la taille 
 
 Le [ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) affiche contrainte et la taille de demander des informations pour une disposition simple.
 
-## <a name="deriving-from-layoutview"></a>Dérivation à partir de la mise en page<View>
+## <a name="deriving-from-layoutview"></a>Dérivation à partir du\<mode page >
 
 Une classe de disposition personnalisée dérive `Layout<View>`. Il possède deux responsabilités :
 

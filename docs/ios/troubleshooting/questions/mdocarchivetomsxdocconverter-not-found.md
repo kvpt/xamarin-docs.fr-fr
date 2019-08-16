@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 0746174857f66843ef9a09429b6286f2efca90d6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: af90baf6d7b94973a76bcf391f2cb28c45340602
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61420535"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528152"
 ---
 # <a name="mdocarchivetomsxdocconverterexe-not-found-rverbasecommandonrequest"></a>MDocArchiveToMsxDocConverter.exe introuvable rver.BaseCommand.OnRequest
 
 > [!IMPORTANT]
-> Ce problème a été résolu dans les versions récentes de Xamarin. Toutefois, si le problème se produit sur la dernière version du logiciel, veuillez soumettre un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) avec votre contrôle de version complet intégral et les informations de générer la sortie de journal.
+> Ce problème a été résolu dans les versions récentes de Xamarin. Toutefois, si le problème se produit sur la version la plus récente du logiciel, envoyez un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) à vos informations de contrôle de version et à la sortie complète du journal de génération.
 
 
-## <a name="error-message"></a>Message d'erreur
+## <a name="error-message"></a>Message d’erreur
 
-Cette erreur peut apparaître dans le *journal du serveur Mac* dans Visual Studio :
+Cette erreur peut s’afficher dans le *Journal du serveur Mac* dans Visual Studio:
 
 ```
 Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found
@@ -30,12 +30,12 @@ Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter
   at Mtb.Server.Listener.OnRequest (System.Object state) [0x00000] in <filename unknown>:0
 ```
 
-Il existe 2 problèmes distincts dans ce message :
+Il y a 2 problèmes distincts dans ce message:
 
-1.  `Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found`
+1. `Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter.exe not found`
 
-    Cette erreur est sans incidence, mais il est également trompeur. Il [sera supprimée](https://bugzilla.xamarin.com/show_bug.cgi?id=21667) dans une version ultérieure.
+    Cette erreur est sans conséquence, mais elle est également trompeuse. Elle [sera supprimée](https://bugzilla.xamarin.com/show_bug.cgi?id=21667) dans une version ultérieure.
 
-2.  `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
+2. `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
 
-    Cette erreur est le véritable problème. Malheureusement, dû à un [limitation](https://bugzilla.xamarin.com/show_bug.cgi?id=22080) cette trace de pile d’exception est *incomplète*. Si vous remarquez une trace de pile incomplète comme suit dans le journal du serveur Mac, vous pouvez vérifier le `~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` fichier sur l’hôte de build Mac pour rechercher la trace de pile complète.
+    Cette erreur est le vrai problème. Malheureusement, en raison d’une [limitation](https://bugzilla.xamarin.com/show_bug.cgi?id=22080) , la trace de la pile d’exception est incomplète. Si vous remarquez une trace de pile incomplète comme celle-ci dans le journal du `~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` serveur Mac, vous pouvez vérifier le fichier sur l’hôte de build Mac pour trouver la trace de la pile complète.

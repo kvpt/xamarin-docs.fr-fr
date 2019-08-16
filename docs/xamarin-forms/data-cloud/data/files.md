@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656681"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529229"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Gestion des fichiers dans Xamarin.Forms
 
@@ -115,8 +115,8 @@ Les projets partagés peuvent également contenir des fichiers agissant comme de
 
 Il existe deux solutions à ce problème de projet partagé :
 
--  **Synchroniser les projets** : modifiez les propriétés du projet pour que chaque plateforme utilise les **mêmes** nom d’assembly et espace de noms par défaut. Cette valeur peut ensuite être « codée en dur » comme préfixe pour les ID de ressource incorporée dans le projet partagé.
--  **Directives de compilateur #if** : utilisez des directives de compilateur pour définir le préfixe d’ID de ressource approprié, et utilisez cette valeur pour construire de façon dynamique l’ID de ressource approprié.
+- **Synchroniser les projets** : modifiez les propriétés du projet pour que chaque plateforme utilise les **mêmes** nom d’assembly et espace de noms par défaut. Cette valeur peut ensuite être « codée en dur » comme préfixe pour les ID de ressource incorporée dans le projet partagé.
+- **Directives de compilateur #if** : utilisez des directives de compilateur pour définir le préfixe d’ID de ressource approprié, et utilisez cette valeur pour construire de façon dynamique l’ID de ressource approprié.
 
 
 Voici le code qui illustre la deuxième option : Les directives de compilateur sont utilisées pour sélectionner le préfixe de ressource codé en dur (qui est normalement le même que l’espace de noms par défaut du projet de référence). La variable `resourcePrefix` est ensuite utilisée pour créer un ID de ressource valide, en le concaténant avec le nom de fichier de la ressource incorporée.
