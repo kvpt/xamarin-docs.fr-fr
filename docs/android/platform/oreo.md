@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 798819176c741d8afc07f9cd097a61d753debbc9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643427"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523773"
 ---
 # <a name="oreo-features"></a>Fonctionnalités de Oreo
 
@@ -30,11 +30,11 @@ Cet article est structuré pour vous aider à commencer à développer des appli
 
 Les éléments suivants sont requis pour utiliser les fonctionnalités Android Oreo dans les applications basées sur Xamarin:
 
--   **Visual Studio** &ndash; Si vous utilisez Windows, la version 15,5 ou une version ultérieure de Visual Studio est requise.  Si vous utilisez un Mac, Visual Studio pour Mac version 7.2.0 est requise.
+- **Visual Studio** &ndash; Si vous utilisez Windows, la version 15,5 ou une version ultérieure de Visual Studio est requise.  Si vous utilisez un Mac, Visual Studio pour Mac version 7.2.0 est requise.
 
--   **Xamarin. Android** &ndash; Xamarin. Android 8,0 ou version ultérieure doit être installé et configuré avec Visual Studio.
+- **Xamarin. Android** &ndash; Xamarin. Android 8,0 ou version ultérieure doit être installé et configuré avec Visual Studio.
 
--   **Android SDK** &ndash; Android SDK 8,0 (API 26) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
+- **Android SDK** &ndash; Android SDK 8,0 (API 26) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
 
 
@@ -141,26 +141,26 @@ Pour utiliser **avdmanager** pour créer un appareil virtuel, procédez comme su
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  Ouvrez une fenêtre d’invite de commandes `JAVA_HOME` et définissez l’emplacement du kit de développement logiciel (SDK) Java sur votre ordinateur. Pour une installation Xamarin classique, vous pouvez utiliser la commande suivante:
+1. Ouvrez une fenêtre d’invite de commandes `JAVA_HOME` et définissez l’emplacement du kit de développement logiciel (SDK) Java sur votre ordinateur. Pour une installation Xamarin classique, vous pouvez utiliser la commande suivante:
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2.  Ajoutez l’emplacement du dossier de `bin` Android SDK à votre `PATH`.
+2. Ajoutez l’emplacement du dossier de `bin` Android SDK à votre `PATH`.
     Pour une installation Xamarin classique, vous pouvez utiliser la commande suivante:
 
     ```cmd
     setx PATH "%PATH%;C:\Program Files (x86)\Android\android-sdk\tools\bin"
     ```
 
-3.  Fermez la fenêtre d’invite de commandes et ouvrez une nouvelle fenêtre d’invite de commandes. Créez un nouvel appareil virtuel à l’aide de la commande [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) . Par exemple, pour créer une AVD nommée **AVD-Oreo-8,0** à l’aide de l’image système x86 pour l’API de niveau 26, utilisez la commande suivante:
+3. Fermez la fenêtre d’invite de commandes et ouvrez une nouvelle fenêtre d’invite de commandes. Créez un nouvel appareil virtuel à l’aide de la commande [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) . Par exemple, pour créer une AVD nommée **AVD-Oreo-8,0** à l’aide de l’image système x86 pour l’API de niveau 26, utilisez la commande suivante:
 
     ```cmd
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  Lorsque vous êtes invité à **créer un profil matériel personnalisé [non]** , vous pouvez entrer **non** et accepter le profil matériel par défaut. Si vous dites **Oui**, **avdmanager** vous invitera à fournir une liste de questions pour la personnalisation du profil matériel.
+4. Lorsque vous êtes invité à **créer un profil matériel personnalisé [non]** , vous pouvez entrer **non** et accepter le profil matériel par défaut. Si vous dites **Oui**, **avdmanager** vous invitera à fournir une liste de questions pour la personnalisation du profil matériel.
 
 Une fois que vous avez **avdmanager** pour créer votre appareil virtuel, il est inclus dans le menu déroulant de l’appareil:
 
@@ -168,19 +168,19 @@ Une fois que vous avez **avdmanager** pour créer votre appareil virtuel, il est
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1.  Ouvrez une fenêtre de **Terminal** et accédez à l’emplacement du répertoire Android SDK Tools sur votre Mac. Pour une installation Xamarin classique, vous pouvez utiliser la commande suivante:
+1. Ouvrez une fenêtre de **Terminal** et accédez à l’emplacement du répertoire Android SDK Tools sur votre Mac. Pour une installation Xamarin classique, vous pouvez utiliser la commande suivante:
 
     ```bash
     cd ~/Library/Developer/Xamarin/android-sdk-macosx/tools/bin
     ```
 
-2.  Créez un nouvel appareil virtuel à l’aide de la commande [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) . Par exemple, pour créer une AVD nommée **AVD-Oreo-8,0** à l’aide de l’image système x86 pour l’API de niveau 26, utilisez la commande suivante:
+2. Créez un nouvel appareil virtuel à l’aide de la commande [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) . Par exemple, pour créer une AVD nommée **AVD-Oreo-8,0** à l’aide de l’image système x86 pour l’API de niveau 26, utilisez la commande suivante:
 
     ```bash
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  Lorsque vous êtes invité à **créer un profil matériel personnalisé [non]** , vous pouvez entrer **non** et accepter le profil matériel par défaut. Si vous dites **Oui**, **avdmanager** vous invitera à fournir une liste de questions pour la personnalisation du profil matériel.
+3. Lorsque vous êtes invité à **créer un profil matériel personnalisé [non]** , vous pouvez entrer **non** et accepter le profil matériel par défaut. Si vous dites **Oui**, **avdmanager** vous invitera à fournir une liste de questions pour la personnalisation du profil matériel.
 
 Une fois que vous avez utilisé **avdmanager** pour créer votre appareil virtuel, il est inclus dans le menu déroulant de l’appareil:
 
@@ -250,15 +250,15 @@ Vous pouvez également créer un fichier XML de famille de polices qui décrit p
 
 Lorsque votre application a besoin d’une police, vous `FontsRequest` créez un objet (en spécifiant la police à télécharger), puis `FontsContract` vous le transmettez à une méthode pour télécharger la police. Les étapes suivantes décrivent le processus de téléchargement de polices plus en détail:
 
-1.  Instanciez un objet [FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html) . 
+1. Instanciez un objet [FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html) . 
 
-2.  Sous-classe et instanciez [FontsContract. FontRequestCallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html).
+2. Sous-classe et instanciez [FontsContract. FontRequestCallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html).
 
-3.  Implémentez la méthode [FontRequestCallback. OnTypeFaceRetrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29) , qui est utilisée pour gérer l’achèvement de la demande de police.
+3. Implémentez la méthode [FontRequestCallback. OnTypeFaceRetrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29) , qui est utilisée pour gérer l’achèvement de la demande de police.
 
-4.  Implémentez la méthode [FontRequestCallback. OnTypeFaceRequestFailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29) , qui est utilisée pour informer votre application des erreurs qui se produisent pendant le processus de demande de police.
+4. Implémentez la méthode [FontRequestCallback. OnTypeFaceRequestFailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29) , qui est utilisée pour informer votre application des erreurs qui se produisent pendant le processus de demande de police.
 
-5.  Appelez la méthode [FontsContract. RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) pour récupérer la police du fournisseur de polices. 
+5. Appelez la méthode [FontsContract. RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) pour récupérer la police du fournisseur de polices. 
 
 Quand vous appelez la `RequestFonts` méthode, il commence par vérifier si la police est mise en cache localement (à partir d’un appel `RequestFont`précédent à). S’il n’est pas mis en cache, il appelle le fournisseur de polices, récupère la police de manière asynchrone, puis renvoie les résultats à votre application en appelant votre `OnTypeFaceRetrieved` méthode.
 
@@ -290,9 +290,9 @@ android:supportsPictureInPicture
 
 Pour spécifier la façon dont votre activité doit se comporter lorsqu’elle est en mode PIP, vous utilisez le nouvel objet [PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html) . `PictureInPictureParams`représente un ensemble de paramètres que vous utilisez pour initialiser et mettre à jour une activité en mode PIP (par exemple, les proportions par défaut de l’activité). Les nouvelles méthodes PIP suivantes ont été ajoutées `Activity` à dans Android Oreo:
 
--   [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; met l’activité en mode PIP. L’activité est placée dans le coin de l’écran, et le reste de l’écran est rempli avec l’activité précédente qui était à l’écran.
+- [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; met l’activité en mode PIP. L’activité est placée dans le coin de l’écran, et le reste de l’écran est rempli avec l’activité précédente qui était à l’écran.
 
--   [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; Met à jour les paramètres de configuration PIP de l’activité (par exemple, une modification des proportions).
+- [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; Met à jour les paramètres de configuration PIP de l’activité (par exemple, une modification des proportions).
 
 L’exemple [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) illustre l’utilisation de base du mode incrustation d’image (PIP) pour les appareils mobiles introduits dans Oreo. L’exemple lit une vidéo qui continue sans interruption lors du basculement entre les modes d’affichage ou d’autres activités.
 
@@ -313,9 +313,9 @@ Android Oreo comprend une série de modifications de comportement du système et
 
 Pour améliorer l’expérience utilisateur, Android Oreo impose des limitations sur les applications qui peuvent être exécutées en arrière-plan. Par exemple, si l’utilisateur regarde une vidéo ou émet un jeu, une application qui s’exécute en arrière-plan peut altérer les performances d’une application qui utilise beaucoup de vidéo au premier plan. En conséquence, Android Oreo place les restrictions suivantes sur les applications qui n’interagissent pas directement avec l’utilisateur:
 
-1.  **Limitations du service d’arrière-plan** &ndash; Quand une application s’exécute en arrière-plan, elle dispose d’une fenêtre de plusieurs minutes dans laquelle elle est toujours autorisée à créer et à utiliser des services. À la fin de cette fenêtre, Android arrête le service en arrière-plan de l’application etle traite comme étant inactif.
+1. **Limitations du service d’arrière-plan** &ndash; Quand une application s’exécute en arrière-plan, elle dispose d’une fenêtre de plusieurs minutes dans laquelle elle est toujours autorisée à créer et à utiliser des services. À la fin de cette fenêtre, Android arrête le service en arrière-plan de l’application etle traite comme étant inactif.
 
-2.  **Limitations** de la diffusion &ndash; Android 7,0 (API 25) a placé des limitations sur les diffusions qu’une application s’inscrit à recevoir. Android Oreo rend ces limitations plus strictes. Par exemple, les applications Oreo Android ne peuvent plus inscrire de récepteurs de diffusion pour les diffusions implicites dans leurs manifestes.
+2. **Limitations** de la diffusion &ndash; Android 7,0 (API 25) a placé des limitations sur les diffusions qu’une application s’inscrit à recevoir. Android Oreo rend ces limitations plus strictes. Par exemple, les applications Oreo Android ne peuvent plus inscrire de récepteurs de diffusion pour les diffusions implicites dans leurs manifestes.
 
 Pour plus d’informations sur les nouvelles limites d’exécution en arrière-plan, consultez la rubrique [limites d’exécution en arrière-plan](https://developer.android.com/about/versions/oreo/background.html) du développeur Android.
 
@@ -333,19 +333,19 @@ Les applications qui ciblent Android Oreo ou version ultérieure doivent modifie
 
 Plusieurs exemples Xamarin. Android sont disponibles pour vous montrer comment tirer parti des fonctionnalités Android Oreo:
 
--   [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) montre comment utiliser le nouveau système de canaux de notification introduit dans Android Oreo. Cet exemple gère deux canaux de notification: l’un avec l’importance par défaut et l’autre avec une importance élevée.
+- [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) montre comment utiliser le nouveau système de canaux de notification introduit dans Android Oreo. Cet exemple gère deux canaux de notification: l’un avec l’importance par défaut et l’autre avec une importance élevée.
 
--   [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) illustre l’utilisation de base du mode incrustation d’image (PIP) pour les appareils mobiles introduits dans Oreo. L’exemple lit une vidéo qui continue sans interruption lors du basculement entre les modes d’affichage ou d’autres activités.
+- [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) illustre l’utilisation de base du mode incrustation d’image (PIP) pour les appareils mobiles introduits dans Oreo. L’exemple lit une vidéo qui continue sans interruption lors du basculement entre les modes d’affichage ou d’autres activités.
 
--   [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) illustre l’utilisation de l’infrastructure de remplissage automatique. Il comprend des implémentations d’activités clientes avec des vues qui doivent être renseignées automatiquement et un service qui peut fournir des données de remplissage automatique aux activités du client.
+- [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) illustre l’utilisation de l’infrastructure de remplissage automatique. Il comprend des implémentations d’activités clientes avec des vues qui doivent être renseignées automatiquement et un service qui peut fournir des données de remplissage automatique aux activités du client.
 
--   [Polices](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) téléchargeables fournit un exemple d’utilisation de la fonctionnalité de polices téléchargeables décrite précédemment.
+- [Polices](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) téléchargeables fournit un exemple d’utilisation de la fonctionnalité de polices téléchargeables décrite précédemment.
 
--   [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) illustre l’utilisation de la bibliothèque de prise en charge EmojiCompat. Vous pouvez utiliser cette bibliothèque pour empêcher votre application d’illustrer des caractères Emoji manquants en tant que caractères «tofu».
+- [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) illustre l’utilisation de la bibliothèque de prise en charge EmojiCompat. Vous pouvez utiliser cette bibliothèque pour empêcher votre application d’illustrer des caractères Emoji manquants en tant que caractères «tofu».
 
--   Les [mises à jour d’emplacement en attente](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) montrent comment utiliser l’API d’emplacement pour obtenir des mises à jour sur l’emplacement d' `PendingIntent`un appareil à l’aide d’un.
+- Les [mises à jour d’emplacement en attente](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) montrent comment utiliser l’API d’emplacement pour obtenir des mises à jour sur l’emplacement d' `PendingIntent`un appareil à l’aide d’un.
 
--   Le [service de premier plan des mises à jour d’emplacement](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) montre comment utiliser l’API d’emplacement pour obtenir des mises à jour sur l’emplacement d’un appareil à l’aide d’un service de premier plan lié et démarré.
+- Le [service de premier plan des mises à jour d’emplacement](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) montre comment utiliser l’API d’emplacement pour obtenir des mises à jour sur l’emplacement d’un appareil à l’aide d’un service de premier plan lié et démarré.
 
 
 ## <a name="video"></a>Vidéo

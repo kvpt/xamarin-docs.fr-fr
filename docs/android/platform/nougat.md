@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: a28368e0fa4574fbb92a43dbd650a127008f5d06
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 2abc4b9b39fa90e525c3562a27ffd5d8c67f0078
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643465"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523794"
 ---
 # <a name="nougat-features"></a>Fonctionnalités de nougat
 
@@ -32,11 +32,11 @@ Pour obtenir la liste des problèmes connus de Xamarin. Android 7,0, consultez l
 
 Android nougat fournit de nombreuses nouvelles fonctionnalités intéressantes pour les développeurs Xamarin. Android. Ces fonctions incluent :
 
--   **Prise en charge de plusieurs fenêtres** &ndash; Cette amélioration permet aux utilisateurs d’ouvrir deux applications à la fois sur l’écran.
+- **Prise en charge de plusieurs fenêtres** &ndash; Cette amélioration permet aux utilisateurs d’ouvrir deux applications à la fois sur l’écran.
 
--   **Améliorations** des notifications Le système de notifications remanié dans Android nougat comprend une fonctionnalité de *réponse directe* qui permet aux utilisateurs de répondre rapidement aux messages texte directement à partir de l’interface utilisateur de notification. &ndash; En outre, si votre application crée des notifications pour les messages reçus, la nouvelle fonctionnalité de notifications regroupées peut regrouper les notifications sous la forme d’un groupe unique lorsque plusieurs messages sont reçus.
+- **Améliorations** des notifications Le système de notifications remanié dans Android nougat comprend une fonctionnalité de *réponse directe* qui permet aux utilisateurs de répondre rapidement aux messages texte directement à partir de l’interface utilisateur de notification. &ndash; En outre, si votre application crée des notifications pour les messages reçus, la nouvelle fonctionnalité de notifications regroupées peut regrouper les notifications sous la forme d’un groupe unique lorsque plusieurs messages sont reçus.
 
--   **Économiseur de données** &ndash; Cette fonctionnalité est un nouveau service système qui permet de réduire l’utilisation des données cellulaires par les applications. elle permet aux utilisateurs de contrôler le mode d’utilisation des données cellulaires par les applications.
+- **Économiseur de données** &ndash; Cette fonctionnalité est un nouveau service système qui permet de réduire l’utilisation des données cellulaires par les applications. elle permet aux utilisateurs de contrôler le mode d’utilisation des données cellulaires par les applications.
 
 En outre, Android nougat offre de nombreuses autres améliorations intéressantes pour les développeurs d’applications, telles qu’une nouvelle fonctionnalité de configuration de la sécurité réseau, Doze sur Go, l’attestation de clé, de nouvelles API de paramètres rapides, la prise en charge de plusieurs paramètres régionaux, les API ICU4J, les améliorations de WebView, accès aux fonctionnalités du langage Java 8, à l’accès à l’annuaire étendu, à une API pointeur personnalisée, à la prise en charge de la plateforme VR, aux fichiers virtuels et aux optimisations de traitement en arrière-plan.
 
@@ -47,13 +47,13 @@ Cet article explique comment prendre en main la création d’applications avec 
 
 Les éléments suivants sont requis pour utiliser les nouvelles fonctionnalités Android nougat dans les applications basées sur Xamarin:
 
--   **Visual Studio ou Visual Studio pour Mac** &ndash; Si vous utilisez Visual Studio, la version 4.2.0.628 ou ultérieure de Visual Studio Tools pour Xamarin est requise. Si vous utilisez Visual Studio pour Mac, la version 6.1.0 ou ultérieure de Visual Studio pour Mac est requise.
+- **Visual Studio ou Visual Studio pour Mac** &ndash; Si vous utilisez Visual Studio, la version 4.2.0.628 ou ultérieure de Visual Studio Tools pour Xamarin est requise. Si vous utilisez Visual Studio pour Mac, la version 6.1.0 ou ultérieure de Visual Studio pour Mac est requise.
 
--   **Xamarin. Android** &ndash; Xamarin. Android 7,0 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
+- **Xamarin. Android** &ndash; Xamarin. Android 7,0 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
 
--   **Android SDK** -Android SDK 7,0 (API 24) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
+- **Android SDK** -Android SDK 7,0 (API 24) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
--   **Kit de développement Java** Le développement Xamarin Android 7,0 requiert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ou version ultérieure si vous développez pour l’API de niveau 24 ou supérieur (JDK 8 prend également en charge les niveaux d’API antérieurs à 24). &ndash; La version 64 bits de JDK 8 est requise si vous utilisez des contrôles personnalisés ou le générateur d’aperçu de formulaires.
+- **Kit de développement Java** Le développement Xamarin Android 7,0 requiert [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ou version ultérieure si vous développez pour l’API de niveau 24 ou supérieur (JDK 8 prend également en charge les niveaux d’API antérieurs à 24). &ndash; La version 64 bits de JDK 8 est requise si vous utilisez des contrôles personnalisés ou le générateur d’aperçu de formulaires.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -66,13 +66,13 @@ Notez que les applications doivent être reconstruites avec Xamarin C6SR4 ou ver
 
 Pour commencer à utiliser Android nougat avec Xamarin. Android, vous devez télécharger et installer les derniers outils et packages du kit de développement logiciel (SDK) avant de pouvoir créer un projet Android nougat:
 
-1.  Installez les dernières mises à jour Xamarin. Android à partir du Xamarin.
+1. Installez les dernières mises à jour Xamarin. Android à partir du Xamarin.
 
-2.  Installez les packages et outils **Android 7,0 (API 24)** ou version ultérieure.
+2. Installez les packages et outils **Android 7,0 (API 24)** ou version ultérieure.
 
-3.  Créez un nouveau projet Xamarin. Android qui cible Android nougat.
+3. Créez un nouveau projet Xamarin. Android qui cible Android nougat.
 
-4.  Configurez un émulateur ou un appareil pour Android nougat.
+4. Configurez un émulateur ou un appareil pour Android nougat.
 
 Chacune de ces étapes est expliquée dans les sections suivantes:
 
@@ -87,19 +87,19 @@ Pour ajouter la prise en charge Xamarin pour Android nougat, modifiez le canal d
 
 Pour créer un projet avec Xamarin Android 7,0, vous devez d’abord utiliser le gestionnaire de Android SDK pour installer le **Kit de développement logiciel (SDK) Android N (API 24)** ou version ultérieure. Vous devez également installer la dernière **Android SDK Tools**:
 
-1.  Démarrez le gestionnaire de Android SDK (dans Visual Studio pour Mac, utilisez les **Outils > Ouvrir&hellip;Android SDK Manager**; dans Visual Studio, utilisez **Outils > Android > Android SDK gestionnaire**).
+1. Démarrez le gestionnaire de Android SDK (dans Visual Studio pour Mac, utilisez les **Outils > Ouvrir&hellip;Android SDK Manager**; dans Visual Studio, utilisez **Outils > Android > Android SDK gestionnaire**).
 
-2.  Installez **Android 7,0 (API 24)** ou version ultérieure:
+2. Installez **Android 7,0 (API 24)** ou version ultérieure:
 
     [![Sélection de packages Android 7,0 dans le gestionnaire de Android SDK](nougat-images/preview-packages.png)](nougat-images/preview-packages.png#lightbox)
 
-3.  Installez les derniers outils de Android SDK:
+3. Installez les derniers outils de Android SDK:
 
     [![Sélection des derniers outils de Android SDK dans le gestionnaire de Android SDK](nougat-images/preview-tools.png)](nougat-images/preview-tools.png#lightbox)
 
     Vous devez installer Android SDK Tools révision 25.2.2 ou ultérieure, Android SDK outils de plateforme 24.0.3 ou version ultérieure et Android SDK outils de génération 24.0.2 ou version ultérieure.
 
-4.  Vérifiez que l' **emplacement du kit de développement Java** est configuré pour JDK 1,8:
+4. Vérifiez que l' **emplacement du kit de développement Java** est configuré pour JDK 1,8:
 
     [![Configuration du chemin JDK 8 sous outils options](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
@@ -123,9 +123,9 @@ Lorsque vous créez un projet Android, vous devez configurer les paramètres de 
 
 Si vous utilisez un émulateur, démarrez Android AVD Manager et créez un appareil à l’aide des paramètres suivants:
 
--   Périphérique : La réversion 5X, le joueur 6, le 6H00 de la réversion, le joueur de la, la réversion 9 ou le C pixel.
--   Cible : Android 7,0-niveau d’API 24
--   Abi: x86 ou x86\_64
+- Périphérique : La réversion 5X, le joueur 6, le 6H00 de la réversion, le joueur de la, la réversion 9 ou le C pixel.
+- Cible : Android 7,0-niveau d’API 24
+- Abi: x86 ou x86\_64
 
 Par exemple, cet appareil virtuel est configuré pour émuler une passerelle 6:
 
@@ -253,15 +253,15 @@ Pour plus d’informations sur la nouvelle fonctionnalité de raccourcis d’app
 
 Plusieurs exemples Xamarin. Android sont disponibles pour vous montrer comment tirer parti des fonctionnalités Android nougat:
 
--   [MultiWindowPlayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground) illustre l’utilisation de l’API à plusieurs fenêtres disponible dans Android nougat. Vous pouvez basculer l’exemple d’application en mode multi-Windows pour voir comment il affecte le cycle de vie et le comportement de l’application.
+- [MultiWindowPlayground](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-multiwindowplayground) illustre l’utilisation de l’API à plusieurs fenêtres disponible dans Android nougat. Vous pouvez basculer l’exemple d’application en mode multi-Windows pour voir comment il affecte le cycle de vie et le comportement de l’application.
 
--   Le [service de messagerie](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) est un service simple qui envoie des `NotificationCompatManager`notifications à l’aide du. Elle étend également la notification avec un `RemoteInput` objet pour permettre aux appareils nougat Android de répondre via le texte directement à partir de la notification sans avoir à ouvrir une application.
+- Le [service de messagerie](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice) est un service simple qui envoie des `NotificationCompatManager`notifications à l’aide du. Elle étend également la notification avec un `RemoteInput` objet pour permettre aux appareils nougat Android de répondre via le texte directement à partir de la notification sans avoir à ouvrir une application.
 
--   Les [notifications actives](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications) montrent comment utiliser `NotificationManager` l’API pour vous indiquer le nombre de notifications affichées actuellement par votre application.
+- Les [notifications actives](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-activenotifications) montrent comment utiliser `NotificationManager` l’API pour vous indiquer le nombre de notifications affichées actuellement par votre application.
 
--   [Accès à l’annuaire étendu](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess) Montre comment utiliser l’API d’accès à l’annuaire étendu pour accéder facilement à des répertoires spécifiques. Cela constitue une alternative à la nécessité de définir `READ_EXTERNAL_STORAGE` des `WRITE_EXTERNAL_STORAGE` autorisations ou dans votre manifeste.
+- [Accès à l’annuaire étendu](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-scopeddirectoryaccess) Montre comment utiliser l’API d’accès à l’annuaire étendu pour accéder facilement à des répertoires spécifiques. Cela constitue une alternative à la nécessité de définir `READ_EXTERNAL_STORAGE` des `WRITE_EXTERNAL_STORAGE` autorisations ou dans votre manifeste.
 
--   [Démarrage direct](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot) Montre comment stocker des données dans un stockage chiffré par appareil qui est toujours disponible pendant le démarrage de l’appareil, avant et après les informations d’identification de l’utilisateur (code confidentiel/modèle/mot de passe).
+- [Démarrage direct](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot) Montre comment stocker des données dans un stockage chiffré par appareil qui est toujours disponible pendant le démarrage de l’appareil, avant et après les informations d’identification de l’utilisateur (code confidentiel/modèle/mot de passe).
 
 
 ## <a name="summary"></a>Récapitulatif

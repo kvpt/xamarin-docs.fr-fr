@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 90bffc2360654f571728f76810f144e702a81e57
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 0657e89e3026cbe2d146d538ca0158ed1d1806d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646104"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522743"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager avec des fragments
 
@@ -106,11 +106,11 @@ protected override void OnCreate(Bundle bundle)
 
 Ce code effectue les opérations suivantes:
 
-1.  Définit la vue à partir de la ressource de disposition **main. AXML** .
+1. Définit la vue à partir de la ressource de disposition **main. AXML** .
 
-2.  Récupère une référence au `ViewPager` à partir de la disposition.
+2. Récupère une référence au `ViewPager` à partir de la disposition.
 
-3.  Instancie un nouveau `FlashCardDeck` comme source de données.
+3. Instancie un nouveau `FlashCardDeck` comme source de données.
 
 Lorsque vous générez et exécutez ce code, vous devez voir un affichage qui ressemble à la capture d’écran suivante: 
 
@@ -248,9 +248,9 @@ La `answer` variable n’est pas utilisée ici, mais elle sera utilisée ultéri
 
 Lorsque vous implémentez `FragmentPagerAdapter`un, vous devez substituer les éléments suivants:
 
--   **Nombre** &ndash; Propriété en lecture seule qui retourne le nombre de vues (pages) disponibles.
+- **Nombre** &ndash; Propriété en lecture seule qui retourne le nombre de vues (pages) disponibles.
 
--   **GetItem** &ndash; Retourne le fragment à afficher pour la page spécifiée.
+- **GetItem** &ndash; Retourne le fragment à afficher pour la page spécifiée.
 
 Ajoutez un nouveau fichier appelé **FlashCardDeckAdapter.cs** et remplacez son contenu par le code suivant:
 
@@ -335,13 +335,13 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 
 Ce code effectue les opérations suivantes:
 
-1.  Recherche la chaîne de problème mathématique dans le `FlashCardDeck` jeu de la position spécifiée. 
+1. Recherche la chaîne de problème mathématique dans le `FlashCardDeck` jeu de la position spécifiée. 
 
-2.  Recherche la chaîne de réponse dans le `FlashCardDeck` jeu de la position spécifiée. 
+2. Recherche la chaîne de réponse dans le `FlashCardDeck` jeu de la position spécifiée. 
 
-3.  Appelle la `FlashCardFragment` méthode `newInstance`de fabrique, en passant le problème de la carte Flash et les chaînes de réponse. 
+3. Appelle la `FlashCardFragment` méthode `newInstance`de fabrique, en passant le problème de la carte Flash et les chaînes de réponse. 
 
-4.  Crée et retourne une nouvelle carte `Fragment` Flash qui contient la question et le texte de réponse pour cette position. 
+4. Crée et retourne une nouvelle carte `Fragment` Flash qui contient la question et le texte de réponse pour cette position. 
 
 Lorsque le `ViewPager` restitue le `Fragment` à `position`, il affiche le `TextBox` contenant la chaîne `position` de problème mathématique résidant dans le jeu de cartes flash. 
 
