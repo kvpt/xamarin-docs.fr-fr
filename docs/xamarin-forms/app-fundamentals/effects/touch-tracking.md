@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651673"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978560"
 ---
 # <a name="invoking-events-from-effects"></a>Appel d’événements à partir d’effets
 
@@ -40,7 +40,7 @@ Dans Android, la classe `View` définit une méthode remplaçable nommée `OnTou
 
 Sur la plateforme Windows universelle (UWP), la classe `UIElement` définit des événements nommés `PointerPressed`, `PointerMoved` et `PointerReleased`. Ceux-ci sont décrits dans l’article [Gérer une entrée de pointeur sur MSDN](/windows/uwp/input-and-devices/handle-pointer-input/) et dans la documentation de l’API pour la classe [`UIElement`](/uwp/api/windows.ui.xaml.uielement/).
 
-L’API `Pointer` de la plateforme Windows universelle est destinée à unifier les entrées de la souris, de l’écran tactile et du stylet. Pour cette raison, l’événement `PointerMoved` est appelé quand la souris traverse un élément même quand un bouton de la souris n’est pas relâché. L’objet `PointerRoutedEventArgs` qui accompagne ces événements a une propriété nommée `Pointer`, qui a une propriété nommée `IsInContact` indiquant si un bouton de la souris est enfoncé ou si un doigt est en contact avec l’écran.
+L’API `Pointer` de la plateforme Windows universelle est destinée à unifier les entrées de la souris, de l’écran tactile et du stylet. Pour cette raison, l’événement `PointerMoved` est appelé quand la souris traverse un élément, même si l’utilisateur n’appuie pas sur un bouton de la souris. L’objet `PointerRoutedEventArgs` qui accompagne ces événements a une propriété nommée `Pointer`, qui a une propriété nommée `IsInContact` indiquant si un bouton de la souris est enfoncé ou si un doigt est en contact avec l’écran.
 
 En outre, la plateforme Windows universelle définit deux autres événements nommés `PointerEntered` et `PointerExited`. Ils indiquent quand une souris ou un doigt se déplace d’un élément à un autre. Par exemple, considérez les deux éléments adjacents nommés A et B. Les deux éléments ont des gestionnaires installés pour les événements de pointeur. Quand un doigt appuie sur A, l’événement `PointerPressed` est appelé. Quand le doigt se déplace, A appelle les événements `PointerMoved`. Si le doigt se déplace de A à B, A appelle un événement `PointerExited` et B appelle un événement `PointerEntered`. Si le doigt est ensuite détaché de l’écran, B appelle un événement `PointerReleased`.
 

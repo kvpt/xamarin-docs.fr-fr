@@ -5,12 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
-ms.openlocfilehash: 73c398a7dbc2b8b7b22b9b8e38177efe2ff48735
-ms.sourcegitcommit: 8fe8d163cb9927917f6a83204b4c387fc50181c2
+ms.openlocfilehash: f2c275260625fe3842b4473e404f49c71d1d28ae
+ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68388501"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012490"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: Messagerie
 
@@ -107,7 +107,7 @@ Aucune différence entre les plateformes.
 
 Prend uniquement en charge `PlainText` comme `BodyFormat`, la tentative d’envoi de `Html` lèvera une `FeatureNotSupportedException`.
 
-Tous les clients de messagerie ne prennent pas en charge l’envoi de pièces jointes. Consultez [documentation](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email) pour plus d’informations.
+Tous les clients de messagerie ne prennent pas en charge l’envoi de pièces jointes. Pour plus d’informations, consultez la [documentation](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email) .
 
 -----
 
