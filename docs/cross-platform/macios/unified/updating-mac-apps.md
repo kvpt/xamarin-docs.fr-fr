@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c1a374feaadf28898b7fde8e364cf0adab83acd5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dc23aed074360a06fcef6ad540d91aa98a19318b
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509606"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560293"
 ---
 # <a name="updating-existing-mac-apps"></a>Mise à jour des applications Mac existantes
 
@@ -52,7 +52,7 @@ Là encore, une fois les avertissements résolus, procédez comme suit pour mett
 
 ### <a name="1-update-project-type--build-target"></a>1. Mettre à jour le type de projet & la cible de build
 
-Remplacez la version de projet dans  vos fichiers csproj `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` par `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous:
+Remplacez la version de projet dans vos fichiers csproj `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` par `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous:
 
 ![](updating-mac-apps-images/csproj.png "Modifiez le fichier csproj dans un éditeur de texte en remplaçant le premier élément de l’élément ProjectTypeGuids comme indiqué")
 
@@ -70,7 +70,7 @@ Ajoutez les lignes de code suivantes après l' `<AssemblyName>` élément:
 
 Exemple :
 
-![](updating-mac-apps-images/csproj3.png "Ajoutez ces lignes de code après l’élément < AssemblyName >")
+![Ajoutez ces lignes de code après l' \<élément AssemblyName >](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2. Mettre à jour les références de projet
 

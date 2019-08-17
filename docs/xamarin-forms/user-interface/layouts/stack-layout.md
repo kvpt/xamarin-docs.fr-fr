@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657084"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560279"
 ---
 # <a name="xamarinforms-stacklayout"></a>StackLayout de Xamarin.Forms
 
@@ -219,7 +219,7 @@ Le code ci-dessus génère la disposition suivante :
 
 ![](stack-layout-images/stack.png "StackLayout complexe")
 
-Notez que `StackLayouts`s sont imbriquées, car dans certains cas des dispositions d’imbrication peut être plus facile que de présenter tous les éléments dans la même disposition. Notez également que, étant donné que `StackLayout` ne gère pas les éléments qui se chevauchent, la page n’ont des fonctionnalités très utiles de disposition trouvés dans les pages pour les autres dispositions.
+Notez que le `StackLayouts` sont imbriqués car, dans certains cas, l’imbrication des dispositions peut être plus facile que la présentation de tous les éléments dans la même disposition. Notez également que, étant donné que `StackLayout` ne gère pas les éléments qui se chevauchent, la page n’ont des fonctionnalités très utiles de disposition trouvés dans les pages pour les autres dispositions.
 
 
 
