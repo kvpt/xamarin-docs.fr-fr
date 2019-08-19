@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 19998f685955ce118ffe37e7624fd43b082ab994
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 3ff6bc9c603360232b22a36dadb42b6caf31cada
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644415"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522396"
 ---
 # <a name="local-notifications-on-android"></a>Notifications locales sur Android
 
@@ -30,9 +30,9 @@ Pour obtenir des informations détaillées sur la notification, l’utilisateur 
 
 Les notifications Android utilisent deux types de dispositions:
 
--   ***Disposition de base*** &ndash; format de présentation compact et fixe.
+- ***Disposition de base*** &ndash; format de présentation compact et fixe.
 
--   ***Disposition développée*** &ndash; format de présentation qui peut s’étendre à une taille plus importante pour révéler plus d’informations.
+- ***Disposition développée*** &ndash; format de présentation qui peut s’étendre à une taille plus importante pour révéler plus d’informations.
 
 Chacun de ces types de dispositions (et comment les créer) est expliqué dans les sections suivantes.
 
@@ -43,13 +43,13 @@ Chacun de ces types de dispositions (et comment les créer) est expliqué dans l
 
 Toutes les notifications Android sont basées sur le format de disposition de base, qui, au minimum, comprend les éléments suivants:
 
-1.  Une *icône de notification*, qui représente l’application d’origine, ou le type de notification si l’application prend en charge différents types de notifications.
+1. Une *icône de notification*, qui représente l’application d’origine, ou le type de notification si l’application prend en charge différents types de notifications.
 
-2.  *Titre*de la notification, ou le nom de l’expéditeur si la notification est un message personnel.
+2. *Titre*de la notification, ou le nom de l’expéditeur si la notification est un message personnel.
 
-3.  Message de notification.
+3. Message de notification.
 
-4.  *Horodateur*.
+4. *Horodateur*.
 
 Ces éléments sont affichés comme illustré dans le diagramme suivant:
 
@@ -75,11 +75,11 @@ Les notifications par tête permettent à l’interface utilisateur du système 
 
 Android prend en charge les métadonnées de notification afin que les notifications puissent être triées et affichées intelligemment. Les métadonnées de notification contrôlent également la manière dont les notifications sont présentées sur l’écran de verrouillage et au format en tête. Les applications peuvent définir les types de métadonnées de notification suivants:
 
--   **Priorité** &ndash; Le niveau de priorité détermine comment et quand les notifications sont présentées. Par exemple, dans Android 5,0, les notifications de haute priorité s’affichent sous la forme de notifications principales.
+- **Priorité** &ndash; Le niveau de priorité détermine comment et quand les notifications sont présentées. Par exemple, dans Android 5,0, les notifications de haute priorité s’affichent sous la forme de notifications principales.
 
--   **Visibilité** &ndash; Spécifie la quantité de contenu de notification à afficher lorsque la notification s’affiche sur l’écran de verrouillage.
+- **Visibilité** &ndash; Spécifie la quantité de contenu de notification à afficher lorsque la notification s’affiche sur l’écran de verrouillage.
 
--   **Catégorie** Informe le système Comment gérer la notification dans différentes circonstances, par exemple quand l’appareil est en mode *ne pas déranger.* &ndash;
+- **Catégorie** Informe le système Comment gérer la notification dans différentes circonstances, par exemple quand l’appareil est en mode *ne pas déranger.* &ndash;
 
 > [!NOTE]
 > La **visibilité** et la **catégorie** ont été introduites dans Android 5,0 et ne sont pas disponibles dans les versions antérieures d’Android. À partir d’Android 8,0, les [canaux de notification](#notif-chan) sont utilisés pour contrôler la façon dont les notifications sont présentées à l’utilisateur.
@@ -97,11 +97,11 @@ Lorsque cette notification est développée, elle révèle l’intégralité du 
 
 Android prend en charge trois styles de disposition développés pour les notifications d’événements uniques:
 
--   ***Texte volumineux*** &ndash; En mode contractuel, affiche un extrait de la première ligne du message, suivi de deux points. En mode développé, affiche l’intégralité du message (comme indiqué dans l’exemple ci-dessus).
+- ***Texte volumineux*** &ndash; En mode contractuel, affiche un extrait de la première ligne du message, suivi de deux points. En mode développé, affiche l’intégralité du message (comme indiqué dans l’exemple ci-dessus).
 
--   ***Boîte de réception*** &ndash; En mode contractuel, affiche le nombre de nouveaux messages. En mode développé, affiche le premier message électronique ou une liste des messages dans la boîte de réception.
+- ***Boîte de réception*** &ndash; En mode contractuel, affiche le nombre de nouveaux messages. En mode développé, affiche le premier message électronique ou une liste des messages dans la boîte de réception.
 
--   ***Image*** &ndash; En mode contractuel, affiche uniquement le texte du message. En mode développé, affiche le texte et une image.
+- ***Image*** &ndash; En mode contractuel, affiche uniquement le texte du message. En mode développé, affiche le texte et une image.
 
 [Au-delà de la notification de base](#beyond-the-basic-notification) (plus loin dans cet article) explique comment créer des notifications de *texte volumineux*, de *boîte de réception*et d' *image* .
 
@@ -121,15 +121,15 @@ Chacune de ces catégories correspond à un canal de notification. L’applicati
 
 Dans cet écran, l’utilisateur peut modifier le comportement du canal de notifications de **Téléchargement** en procédant comme suit:
 
--   Définissez le niveau d’importance sur **urgent**, **élevé**, **moyen**ou **faible**, ce qui permet de configurer le niveau d’interruption sonore et visuel.
+- Définissez le niveau d’importance sur **urgent**, **élevé**, **moyen**ou **faible**, ce qui permet de configurer le niveau d’interruption sonore et visuel.
 
--   Activez ou désactivez le point de notification.
+- Activez ou désactivez le point de notification.
 
--   Activez ou désactivez le voyant clignotant.
+- Activez ou désactivez le voyant clignotant.
 
--   Affichez ou masquez les notifications sur l’écran de verrouillage.
+- Affichez ou masquez les notifications sur l’écran de verrouillage.
 
--   Remplacez le paramètre **ne pas** déranger.
+- Remplacez le paramètre **ne pas** déranger.
 
 Le canal **des notifications générales a des** paramètres similaires:
 
@@ -144,19 +144,19 @@ Pour créer une notification dans Android, vous utilisez la classe [Notification
 
 `NotificationCompat.Builder`fournit des méthodes pour définir les différentes options dans une notification, par exemple:
 
--   Contenu, y compris le titre, le texte du message et l’icône de notification.
+- Contenu, y compris le titre, le texte du message et l’icône de notification.
 
--   Style de la notification, tel que le *texte volumineux*, la *boîte de réception*ou le style d' *image* .
+- Style de la notification, tel que le *texte volumineux*, la *boîte de réception*ou le style d' *image* .
 
--   Priorité de la notification: minimale, faible, par défaut, haute ou maximale. Sur Android 8,0 et versions ultérieures, la priorité est définie via un [_canal de notification_](#notification-channels).
+- Priorité de la notification: minimale, faible, par défaut, haute ou maximale. Sur Android 8,0 et versions ultérieures, la priorité est définie via un [_canal de notification_](#notification-channels).
 
--   Visibilité de la notification sur l’écran de verrouillage: public, privé ou secret.
+- Visibilité de la notification sur l’écran de verrouillage: public, privé ou secret.
 
--   Métadonnées de catégorie qui permettent à Android de classifier et de filtrer la notification.
+- Métadonnées de catégorie qui permettent à Android de classifier et de filtrer la notification.
 
--   Intention facultative indiquant une activité à lancer lorsque la notification est exploitée.
+- Intention facultative indiquant une activité à lancer lorsque la notification est exploitée.
 
--   ID du canal de notification sur lequel la notification sera publiée (Android 8,0 et versions ultérieures).
+- ID du canal de notification sur lequel la notification sera publiée (Android 8,0 et versions ultérieures).
 
 Une fois que vous avez défini ces options dans le générateur, vous générez un objet de notification qui contient les paramètres. Pour publier la notification, vous transmettez cet objet de notification au *Gestionnaire*de notifications. Android fournit la classe [notificationmanager](xref:Android.App.NotificationManager) , qui est responsable de la publication des notifications et de leur affichage pour l’utilisateur. Une référence à cette classe peut être obtenue à partir de n’importe quel contexte, tel qu’une activité ou un service.
 
@@ -200,21 +200,21 @@ Le canal de notification doit être créé chaque fois que l’activité est cr�
 
 Pour générer une notification dans Android, procédez comme suit:
 
-1.  Instanciez `NotificationCompat.Builder` un objet.
+1. Instanciez `NotificationCompat.Builder` un objet.
 
-2.  Appelez différentes méthodes sur l' `NotificationCompat.Builder` objet pour définir des options de notification.
+2. Appelez différentes méthodes sur l' `NotificationCompat.Builder` objet pour définir des options de notification.
 
-3.  Appelez la méthode de [génération](xref:Android.App.Notification.Builder.Build) de `NotificationCompat.Builder` l’objet pour instancier un objet de notification.
+3. Appelez la méthode de [génération](xref:Android.App.Notification.Builder.Build) de `NotificationCompat.Builder` l’objet pour instancier un objet de notification.
 
-4.  Appelez la méthode [Notify](xref:Android.App.NotificationManager.Notify*) du gestionnaire de notifications pour publier la notification.
+4. Appelez la méthode [Notify](xref:Android.App.NotificationManager.Notify*) du gestionnaire de notifications pour publier la notification.
 
 Vous devez fournir au moins les informations suivantes pour chaque notification:
 
--   Petite icône (24x24 DP en taille)
+- Petite icône (24x24 DP en taille)
 
--   Titre abrégé
+- Titre abrégé
 
--   Texte de la notification
+- Texte de la notification
 
 L’exemple de code suivant illustre l’utilisation `NotificationCompat.Builder` de pour générer une notification de base. Notez que `NotificationCompat.Builder` les méthodes prennent en charge le [chaînage de méthode](https://en.wikipedia.org/wiki/Method_chaining); autrement dit, chaque méthode retourne l’objet générateur afin que vous puissiez utiliser le résultat du dernier appel de méthode pour appeler l’appel de méthode suivant:
 
@@ -321,11 +321,11 @@ Le corps de la notification précédente est réutilisé &ndash; uniquement le t
 
 Une notification reste visible jusqu’à ce que l’un des trois événements suivants se produise:
 
--   L’utilisateur ignore la notification (ou clique sur *Effacer tout*).
+- L’utilisateur ignore la notification (ou clique sur *Effacer tout*).
 
--   L’application effectue un appel à `NotificationManager.Cancel`, en passant l’ID de notification unique qui a été attribué lors de la publication de la notification.
+- L’application effectue un appel à `NotificationManager.Cancel`, en passant l’ID de notification unique qui a été attribué lors de la publication de la notification.
 
--   L’application appelle `NotificationManager.CancelAll`.
+- L’application appelle `NotificationManager.CancelAll`.
 
 Pour plus d’informations sur la mise à jour des notifications Android, consultez [modifier une notification](https://developer.android.com/training/notify-user/managing.html#Updating).
 
@@ -604,22 +604,22 @@ Vous pouvez également utiliser le style de la *boîte de réception* pour toute
 
 Les applications qui s’exécutent sur Android 7,1 et les versions inférieures doivent définir la priorité directement sur la notification elle-même. Le paramètre de priorité d’une notification détermine deux résultats lors de la publication de la notification:
 
--   Où la notification s’affiche par rapport à d’autres notifications.
+- Où la notification s’affiche par rapport à d’autres notifications.
     Par exemple, les notifications de priorité élevée sont présentées au-dessus des notifications de priorité inférieure dans le tiroir notifications, quel que soit le moment où chaque notification a été publiée.
 
--   Indique si la notification est affichée dans le format de notification de tête (Android 5,0 et versions ultérieures). Seules les notifications de priorité *élevée* et *maximale* sont affichées sous forme de notifications de niveau supérieur.
+- Indique si la notification est affichée dans le format de notification de tête (Android 5,0 et versions ultérieures). Seules les notifications de priorité *élevée* et *maximale* sont affichées sous forme de notifications de niveau supérieur.
 
 Xamarin. Android définit les énumérations suivantes pour la définition de la priorité de notification:
 
--   `NotificationPriority.Max`&ndash; Avertit l’utilisateur d’une condition urgente ou critique (par exemple, un appel entrant, une direction de marche par tour ou une alerte d’urgence). Sur les appareils Android 5,0 et versions ultérieures, les notifications de priorité maximale sont affichées au format en tête.
+- `NotificationPriority.Max`&ndash; Avertit l’utilisateur d’une condition urgente ou critique (par exemple, un appel entrant, une direction de marche par tour ou une alerte d’urgence). Sur les appareils Android 5,0 et versions ultérieures, les notifications de priorité maximale sont affichées au format en tête.
 
--   `NotificationPriority.High`&ndash; Informe l’utilisateur des événements importants (tels que les courriers électroniques importants ou l’arrivée de messages de conversation en temps réel). Sur les appareils Android 5,0 et versions ultérieures, les notifications de priorité élevée sont affichées au format en tête.
+- `NotificationPriority.High`&ndash; Informe l’utilisateur des événements importants (tels que les courriers électroniques importants ou l’arrivée de messages de conversation en temps réel). Sur les appareils Android 5,0 et versions ultérieures, les notifications de priorité élevée sont affichées au format en tête.
 
--   `NotificationPriority.Default`&ndash; Avertit l’utilisateur des conditions qui ont un niveau moyen d’importance.
+- `NotificationPriority.Default`&ndash; Avertit l’utilisateur des conditions qui ont un niveau moyen d’importance.
 
--   `NotificationPriority.Low`&ndash; Pour les informations non urgentes dont l’utilisateur a besoin pour être informé (par exemple, les rappels de mises à jour logicielles ou les mises à jour du réseau social).
+- `NotificationPriority.Low`&ndash; Pour les informations non urgentes dont l’utilisateur a besoin pour être informé (par exemple, les rappels de mises à jour logicielles ou les mises à jour du réseau social).
 
--   `NotificationPriority.Min`&ndash; Pour les informations générales que l’utilisateur remarque uniquement lors de l’affichage des notifications (par exemple, des informations sur l’emplacement ou la météo).
+- `NotificationPriority.Min`&ndash; Pour les informations générales que l’utilisateur remarque uniquement lors de l’affichage des notifications (par exemple, des informations sur l’emplacement ou la météo).
 
 Pour définir la priorité d’une notification, appelez la méthode [SetPriority](xref:Android.App.Notification.Builder.SetPriority*) de l' `NotificationCompat.Builder` objet, en passant le niveau de priorité. Par exemple :
 
@@ -649,11 +649,11 @@ Dans l’exemple suivant, la notification de faible priorité «pensée pour la 
 À compter d’Android 5,0, le paramètre de *visibilité* est disponible pour contrôler la quantité de contenu de notification qui s’affiche sur l’écran verrouillage sécurisé.
 Xamarin. Android définit les énumérations suivantes pour la définition de la visibilité des notifications:
 
--   `NotificationVisibility.Public`&ndash; Le contenu complet de la notification s’affiche sur l’écran verrouillage sécurisé.
+- `NotificationVisibility.Public`&ndash; Le contenu complet de la notification s’affiche sur l’écran verrouillage sécurisé.
 
--   `NotificationVisibility.Private`&ndash; Seules les informations essentielles sont affichées sur l’écran verrouillage sécurisé (par exemple, l’icône de notification et le nom de l’application qui l’a publié), mais le reste des détails de la notification est masqué. Toutes les notifications `NotificationVisibility.Private`ont par défaut la valeur.
+- `NotificationVisibility.Private`&ndash; Seules les informations essentielles sont affichées sur l’écran verrouillage sécurisé (par exemple, l’icône de notification et le nom de l’application qui l’a publié), mais le reste des détails de la notification est masqué. Toutes les notifications `NotificationVisibility.Private`ont par défaut la valeur.
 
--   `NotificationVisibility.Secret`&ndash; Rien ne s’affiche sur l’écran verrouillage sécurisé, pas même l’icône de notification. Le contenu de la notification n’est disponible qu’une fois que l’utilisateur a déverrouillé l’appareil.
+- `NotificationVisibility.Secret`&ndash; Rien ne s’affiche sur l’écran verrouillage sécurisé, pas même l’icône de notification. Le contenu de la notification n’est disponible qu’une fois que l’utilisateur a déverrouillé l’appareil.
 
 Pour définir la visibilité d’une notification, les applications appellent `SetVisibility` la méthode de `NotificationCompat.Builder` l’objet, en passant le paramètre de visibilité. Par exemple, cet appel à `SetVisibility` rend la notification `Private`:
 
@@ -671,33 +671,33 @@ Dans cet exemple, **NotificationsLab** est le nom de l’application d’origine
 
 À partir d’Android 5,0, les catégories prédéfinies sont disponibles pour le classement et le filtrage des notifications. Xamarin. Android fournit les énumérations suivantes pour ces catégories:
 
--   `Notification.CategoryCall`&ndash; Appel téléphonique entrant.
+- `Notification.CategoryCall`&ndash; Appel téléphonique entrant.
 
--   `Notification.CategoryMessage`&ndash; Message texte entrant.
+- `Notification.CategoryMessage`&ndash; Message texte entrant.
 
--   `Notification.CategoryAlarm`&ndash; Condition d’alarme ou expiration du minuteur.
+- `Notification.CategoryAlarm`&ndash; Condition d’alarme ou expiration du minuteur.
 
--   `Notification.CategoryEmail`&ndash; Message électronique entrant.
+- `Notification.CategoryEmail`&ndash; Message électronique entrant.
 
--   `Notification.CategoryEvent`&ndash; Événement de calendrier.
+- `Notification.CategoryEvent`&ndash; Événement de calendrier.
 
--   `Notification.CategoryPromo`&ndash; Message ou publication promotionnel.
+- `Notification.CategoryPromo`&ndash; Message ou publication promotionnel.
 
--   `Notification.CategoryProgress`&ndash; Progression d’une opération d’arrière-plan.
+- `Notification.CategoryProgress`&ndash; Progression d’une opération d’arrière-plan.
 
--   `Notification.CategorySocial`&ndash; Mise à jour des réseaux sociaux.
+- `Notification.CategorySocial`&ndash; Mise à jour des réseaux sociaux.
 
--   `Notification.CategoryError`&ndash; Échec d’une opération d’arrière-plan ou d’un processus d’authentification.
+- `Notification.CategoryError`&ndash; Échec d’une opération d’arrière-plan ou d’un processus d’authentification.
 
--   `Notification.CategoryTransport`&ndash; Mise à jour de la lecture du média.
+- `Notification.CategoryTransport`&ndash; Mise à jour de la lecture du média.
 
--   `Notification.CategorySystem`&ndash; Réservé à l’utilisation du système (État du système ou du périphérique).
+- `Notification.CategorySystem`&ndash; Réservé à l’utilisation du système (État du système ou du périphérique).
 
--   `Notification.CategoryService`&ndash; Indique qu’un service en arrière-plan est en cours d’exécution.
+- `Notification.CategoryService`&ndash; Indique qu’un service en arrière-plan est en cours d’exécution.
 
--   `Notification.CategoryRecommendation`&ndash; Message de recommandation lié à l’application en cours d’exécution.
+- `Notification.CategoryRecommendation`&ndash; Message de recommandation lié à l’application en cours d’exécution.
 
--   `Notification.CategoryStatus`&ndash; Informations sur l’appareil.
+- `Notification.CategoryStatus`&ndash; Informations sur l’appareil.
 
 Lorsque les notifications sont triées, la priorité de la notification est prioritaire par rapport à son paramètre de catégorie. Par exemple, une notification de haute priorité sera affichée en tant que tête, même si elle appartient à la `Promo` catégorie. Pour définir la catégorie d’une notification, vous appelez la `SetCategory` méthode de l' `NotificationCompat.Builder` objet, en passant le paramètre de catégorie. Par exemple :
 
