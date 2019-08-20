@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 733f50954c7ea6bd4ada7468eb14443f4f3b1f1d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654413"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620669"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
@@ -124,12 +124,12 @@ Avec iOS 9, Apple étend la prise en charge des extensions en fournissant plusie
 - **Nouveau point d’extension Audio Unit** : utilisez ce point d’extension pour fournir des effets audio, des instruments de musique, des générateurs de sons, etc. à utiliser dans d’autres applications hôtes d’unités audio (telles que GarageBand). Ce point d’extension vous permet également de vendre des _unités audio_ (plug-ins audio) sur l’App Store.
 - **Nouveau point d’extension de maintenance d’index** : utilisez ce point d’extension pour prendre en charge la réindexation des données d’application sans nécessiter un redémarrage de l’application.
 - **Nouveaux points d’extension réseau** (ceux-ci requièrent une autorisation spéciale d’Apple):
-    - **Extension du fournisseur de proxy d’application** : utilisez ce point d’extension pour implémenter un proxy réseau transparent côté client personnalisé.
-    - **Filtrez l’extension du fournisseur de contrôle fournisseur de données/filtre** -utilisez ces points d’extension pour implémenter le filtrage du contenu réseau dynamique sur l’appareil.
-    - **Extension de fournisseur de tunnel de paquets** : utilisez ce point d’extension pour implémenter un protocole de tunnel VPN personnalisé côté client.
+  - **Extension du fournisseur de proxy d’application** : utilisez ce point d’extension pour implémenter un proxy réseau transparent côté client personnalisé.
+  - **Filtrez l’extension du fournisseur de contrôle fournisseur de données/filtre** -utilisez ces points d’extension pour implémenter le filtrage du contenu réseau dynamique sur l’appareil.
+  - **Extension de fournisseur de tunnel de paquets** : utilisez ce point d’extension pour implémenter un protocole de tunnel VPN personnalisé côté client.
 - **Nouveaux points d’extension Safari**:
-    - **Extension de blocage de contenu** : utilisez ce point d’extension pour définir une liste de contenu bloqué qui ne sera pas affichée lorsque l’utilisateur navigue sur le Web.
-    - **Extension des liens partagés** : utilisez ce point d’extension pour activer l’affichage du contenu de votre application dans les liens partagés de Safari.
+  - **Extension de blocage de contenu** : utilisez ce point d’extension pour définir une liste de contenu bloqué qui ne sera pas affichée lorsque l’utilisateur navigue sur le Web.
+  - **Extension des liens partagés** : utilisez ce point d’extension pour activer l’affichage du contenu de votre application dans les liens partagés de Safari.
 
 Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md) et la documentation du Guide de programmation de l' [extension d’application](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214) d’Apple.
 
@@ -148,7 +148,7 @@ Pour plus d’informations, consultez notre [Introduction à la documentation To
 
 ## <a name="right-to-left-language-support"></a>Prise en charge des langues de droite à gauche
 
-Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Ce dernier est détaillé ci-après :
+Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Notamment :
 
 - Les contrôles [UIKit](xref:UIKit) standard sont automatiquement retournés de droite à gauche selon les paramètres régionaux et linguistiques des appareils iOS.
 - La classe [UIView](xref:UIKit.UIView) fournit des attributs qui vous permettent de définir la manière dont une vue donnée doit apparaître lorsqu’elle est retournée de droite à gauche.

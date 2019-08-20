@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 5aad72de5d894a83d734cd53fce3ac060125d740
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656945"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620718"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Modifications supplémentaires apportées à iOS 10 frameworks
 
@@ -182,8 +182,8 @@ Les améliorations suivantes ont été apportées à l’infrastructure SpriteKi
 Les améliorations suivantes ont été apportées au contrôle ScrollView dans iOS 10,3:
 
 - `UIScrollView`incluez maintenant `IndexDisplayMode` la propriété pour contrôler la façon dont l’index est affiché lorsque l’utilisateur fait défiler `UIScrollViewIndexDisplayMode` en tant que:
-    - `Automatic`-L’affichage de l’index est contrôlé par le système d’exploitation.
-    - `AlwaysHidden`-L’affichage de l’index est toujours masqué.
+  - `Automatic`-L’affichage de l’index est contrôlé par le système d’exploitation.
+  - `AlwaysHidden`-L’affichage de l’index est toujours masqué.
 
 Consultez l' [exemple iOSTenThree](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree) pour plus d’utilisation.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
-ms.openlocfilehash: 8f1e77d112eae951f3441484df94772da1b0f303
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5abd28dc9a6fc2a0dca5fa31908731a5496ce5fa
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655519"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621046"
 ---
 # <a name="introduction-to-watchos-3"></a>Introduction à watchOS 3
 
@@ -21,17 +21,17 @@ _Cet article présente toutes les API et fonctionnalités nouvelles et modifiée
 Ce document aborde les sujets suivants:
 
 - [Nouveautés de Watchos 3](#Whats-New-in-watchOS-3)
-    - [Apple Pay améliorations](#Apple-Pay-Enhancements) ajoute la prise en charge des paiements dans l’application sur le Apple Watch.
-    - Les [tâches en arrière-plan](#Background-Tasks) donnent à l’application la possibilité de mettre à jour ses informations en arrière-plan afin qu’elles soient prêtes lorsque l’utilisateur en a besoin.
-    - Des [améliorations](#Complications-Enhancements) ont été apportées à Watchos 3, qui fournissent de nouvelles fonctionnalités pour les applications.
-    - Les [nouvelles infrastructures disponibles](#Newly-Available-Frameworks) ont été exposées pour les applications Watchos.
-    - Les suggestions proactives permettent à l’application d’afficher de manière [proactive](#Proactive-Suggestions) des informations à l’utilisateur.
-    * Plusieurs [améliorations en matière de sécurité et de confidentialité](#Security-and-Privacy-Enhancements) ont été apportées à Watchos 3.
-    - Les [instantanés et la station d’accueil](#Snapshots-and-Dock) offrent à l’utilisateur un accès rapide aux applications Watchos.
-    - Les notifications de l' [utilisateur](#User-Notifications) fournissent à l’utilisateur des notifications locales et distantes.
-    * Plusieurs [améliorations de l’infrastructure de connexion Watch](#Watch-Connectivity-Framework-Enhancements) ont été apportées dans Watchos 3.
-    * Plusieurs améliorations apportées à [WatchKit Framework](#WatchKit-Framework-Enhancements) ont été apportées dans Watchos 3.
-    - Les améliorations apportées aux applications de l' [entraînement](#Workout-App-Enhancements) offrent de nouvelles fonctionnalités à l’entraînement Apple Watch applications.
+  - [Apple Pay améliorations](#Apple-Pay-Enhancements) ajoute la prise en charge des paiements dans l’application sur le Apple Watch.
+  - Les [tâches en arrière-plan](#Background-Tasks) donnent à l’application la possibilité de mettre à jour ses informations en arrière-plan afin qu’elles soient prêtes lorsque l’utilisateur en a besoin.
+  - Des [améliorations](#Complications-Enhancements) ont été apportées à Watchos 3, qui fournissent de nouvelles fonctionnalités pour les applications.
+  - Les [nouvelles infrastructures disponibles](#Newly-Available-Frameworks) ont été exposées pour les applications Watchos.
+  - Les suggestions proactives permettent à l’application d’afficher de manière [proactive](#Proactive-Suggestions) des informations à l’utilisateur.
+  - Plusieurs [améliorations en matière de sécurité et de confidentialité](#Security-and-Privacy-Enhancements) ont été apportées à Watchos 3.
+  - Les [instantanés et la station d’accueil](#Snapshots-and-Dock) offrent à l’utilisateur un accès rapide aux applications Watchos.
+  - Les notifications de l' [utilisateur](#User-Notifications) fournissent à l’utilisateur des notifications locales et distantes.
+  - Plusieurs [améliorations de l’infrastructure de connexion Watch](#Watch-Connectivity-Framework-Enhancements) ont été apportées dans Watchos 3.
+  - Plusieurs améliorations apportées à [WatchKit Framework](#WatchKit-Framework-Enhancements) ont été apportées dans Watchos 3.
+  - Les améliorations apportées aux applications de l' [entraînement](#Workout-App-Enhancements) offrent de nouvelles fonctionnalités à l’entraînement Apple Watch applications.
 - [Des modifications d’infrastructure supplémentaires](#Additional-Framework-Changes) ont été apportées dans Watchos 3.
 - [API](#Deprecated-APIs) déconseillées dans Watchos 3.
 

@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac77977f3832b0ab7ba440a2c795037e8fcf5f2e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529046"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620993"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -68,21 +68,21 @@ Actuellement, le Xamarin Profiler peut être utilisé pour tester des applicatio
 La prise en charge de l’Xamarin Profiler est disponible sur les plateformes suivantes:
 
 - Visual Studio pour Mac (macOS, avec licence entreprise)
-    - Android
-        - Appareil et émulateur
-    - iOS
-        - Appareil et simulateur
-    - tvOS (l’instrumentation de temps n’est pas pris en charge)
-        - Appareil et simulateur
-    - Mac
+  - Android
+    - Appareil et émulateur
+  - iOS
+    - Appareil et simulateur
+  - tvOS (l’instrumentation de temps n’est pas pris en charge)
+    - Appareil et simulateur
+  - Mac
 
 - Visual Studio (version **Enterprise** uniquement)
-    - Android
-        - Appareil et émulateur
-    - iOS [expérimental]
-        - Appareil et simulateur
-    - tvOS
-        - Appareil et simulateur
+  - Android
+    - Appareil et émulateur
+  - iOS [expérimental]
+    - Appareil et simulateur
+  - tvOS
+    - Appareil et simulateur
 
 Notez que vous pouvez **uniquement** profiler les configurations de **débogage** .
 

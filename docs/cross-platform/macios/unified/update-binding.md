@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4046dcff5cb572890ad41ab57efe6345d09f61fd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 16cf976b252e409ae4302ab51eb594370a6689d1
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646297"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620937"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrer une liaison vers l’API unifiée
 
@@ -140,7 +140,8 @@ Si nous utilisons un makefile pour générer notre projet de liaison dans un Xam
 
 Par conséquent, étant `MakeFile`donné ce qui suit:
 
-```csharp
+<!--markdownlint-disable MD010 -->
+```makefile
 BINDDIR=/src/binding
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 PROJECT_ROOT=XMBindingLibrarySample
@@ -172,19 +173,22 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 clean:
     -rm -f *.a *.dll
 ```
+<!--markdownlint-enable MD010 -->
 
 Nous devons passer de l’appel `btouch` à `btouch-native`, donc nous ajusterons notre définition de macro comme suit:
 
-```csharp
+```makefile
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch-native
 ```
 
 Nous allons mettre à jour l' `btouch` appel à et `--new-style` ajouter l’option comme suit:
 
-```csharp
+<!--markdownlint-disable MD010 -->
+```makefile
 XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMBindingLibrarySampleUniversal.a
     $(BTOUCH) -unsafe --new-style -out:$@ XMBindingLibrarySample.cs -x=AssemblyInfo.cs -x=extras.cs --link-with=libXMBindingLibrarySampleUniversal.a,libXMBindingLibrarySampleUniversal.a
 ```
+<!--markdownlint-enable MD010 -->
 
 Nous pouvons maintenant exécuter notre `MakeFile` version normale pour créer la nouvelle version 64 bit de notre API.
 

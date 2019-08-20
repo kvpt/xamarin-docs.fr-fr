@@ -1,46 +1,46 @@
 ---
-title: Programmation UrhoSharp avecF#
-description: Ce document décrit comment créer un simple hello world UrhoSharp application à l’aide F# dans Visual Studio pour Mac.
+title: Programmation de UrhoSharp avecF#
+description: Ce document explique comment créer une application Hello World UrhoSharp simple à l' F# aide de dans Visual Studio pour Mac.
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 6269a7f2fa097136f492657d0ba7c6a1f056c38c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d87749bd74cf2c478e96284060fed7386d10b853
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832318"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621006"
 ---
-# <a name="programming-urhosharp-with-f"></a>Programmation UrhoSharp avecF#
+# <a name="programming-urhosharp-with-f"></a>Programmation de UrhoSharp avec F\#
 
-UrhoSharp peut être programmé avec F# avec les mêmes bibliothèques et concepts utilisés par C# les programmeurs. Le [à l’aide de UrhoSharp](~/graphics-games/urhosharp/using.md) article donne une vue d’ensemble du moteur UrhoSharp et doivent être lues avant cet article.
+UrhoSharp peut être programmé avec F# les mêmes bibliothèques et les mêmes concepts que C# ceux utilisés par les programmeurs. L’article [utilisation de UrhoSharp](~/graphics-games/urhosharp/using.md) donne une vue d’ensemble du moteur UrhoSharp et doit être lu avant cet article.
 
-Telles que de nombreuses bibliothèques origine dans le monde de C++, de nombreuses fonctions de UrhoSharp retournent des valeurs booléennes ou des entiers indiquant la réussite ou l’échec. Vous devez utiliser `|> ignore` pour ignorer ces valeurs.
+Comme de nombreuses bibliothèques provenant du C++ monde, de nombreuses fonctions UrhoSharp retournent des valeurs booléennes ou des entiers indiquant la réussite ou l’échec. Vous devez utiliser `|> ignore` pour ignorer ces valeurs.
 
-Le [exemple de programme](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) est un « Hello World » pour UrhoSharp de F#.
+L' [exemple de programme](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) est un «Hello World» pour UrhoSharp F#à partir de.
 
 ## <a name="creating-an-empty-project"></a>Création d’un projet vide
 
-Il y a aucune F# modèles pour UrhoSharp encore disponible, par conséquent, pour créer votre propre projet UrhoSharp vous pouvez soit commencer par le [exemple](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) ou procédez comme suit :
+Aucun F# modèle n’est encore disponible pour UrhoSharp. par conséquent, pour créer votre propre projet UrhoSharp, vous pouvez commencer par l' [exemple](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) ou suivre les étapes suivantes:
 
-1. À partir de Visual Studio pour Mac, créer un nouveau **Solution**. Choisissez **iOS > application > application avec affichage unique** et sélectionnez **F#** comme langage d’implémentation. 
-1. Supprimer le **Main.storyboard** fichier. Ouvrir le **Info.plist** fichier puis, dans le **iPhone / iPod des informations de déploiement** volet, supprimer le `Main` chaîne dans le **Interface principale** liste déroulante.
-1. Supprimer le **ViewController.fs** également le fichier.
+1. À partir de Visual Studio pour Mac, créez une nouvelle **solution**. Choisissez **iOS > application > application avec affichage unique** et **F#** sélectionnez comme langue d’implémentation. 
+1. Supprimez le fichier **main. Storyboard** . Ouvrez le fichier **info. plist** et dans le volet d' **informations de déploiement iPhone/iPod** , supprimez la `Main` chaîne dans la liste déroulante **interface principale** .
+1. Supprimez également le fichier **ViewController. FS** .
 
-## <a name="building-hello-world-in-urho"></a>Création de Hello World dans Urho
+## <a name="building-hello-world-in-urho"></a>Génération de Hello World dans Urho
 
-Vous êtes maintenant prêt à commencer à définir les classes de votre jeu. Au minimum, vous devez définir une sous-classe de `Urho.Application` et substituer sa `Start` (méthode). Pour créer ce fichier, cliquez sur votre F# de projet, choisissez **ajouter un nouveau fichier...**  et ajoutez vide F# classe à votre projet. Le nouveau fichier sera ajouté à la fin de la liste des fichiers dans votre projet, mais vous devez faire glisser afin qu’il apparaisse *avant* il est utilisé dans **AppDelegate.fs**.
+Vous êtes maintenant prêt à commencer à définir les classes de votre jeu. Au minimum, vous devrez définir une sous-classe de `Urho.Application` et substituer sa `Start` méthode. Pour créer ce fichier, cliquez avec le bouton droit F# sur votre projet, choisissez **Ajouter un nouveau fichier...** et F# ajoutez une classe vide à votre projet. Le nouveau fichier est ajouté à la fin de la liste des fichiers de votre projet, mais vous devez le faire glisser pour qu’il apparaisse *avant* d’être utilisé dans **AppDelegate. FS**.
 
-1. Ajoutez une référence au package NuGet de Urho.
-1. À partir d’un projet existant de Urho, copier les répertoires (grandes) **CoreData /** et **données /** dans votre projet **ressources /** directory. Dans votre F# du projet, avec le bouton droit sur le **ressources** dossier et utilisez **ajouter / ajouter un dossier existant** pour ajouter tous ces fichiers à votre projet.
+1. Ajoutez une référence au package NuGet Urho.
+1. À partir d’un projet Urho existant, copiez les répertoires (volumineux) **CoreData/** et **Data/** dans le répertoire Resources **/** de votre projet. Dans votre F# projet, cliquez avec le bouton droit sur le dossier **ressources** et utilisez **Ajouter/Ajouter un dossier existant** pour ajouter tous ces fichiers à votre projet.
 
-Structure de votre projet doit maintenant ressembler à :
+La structure de votre projet doit maintenant ressembler à ce qui suit:
 
-![](fsharp-images/solutionpane.png "La structure de projet doit maintenant ressembler à")
+![](fsharp-images/solutionpane.png "La structure du projet doit maintenant ressembler à")
 
-Définir votre classe qui vient d’être créé comme un sous-type de `Urho.Application` et substituer sa `Start` méthode :
+Définissez votre classe nouvellement créée en tant que sous-type `Urho.Application` de et remplacez sa `Start` méthode:
 
 ```fsharp
 namespace HelloWorldUrho1
@@ -69,11 +69,11 @@ override this.Start() =
             
 ```
 
-Le code est très simple. Il utilise le `Urho.Gui.Text` classe pour afficher une chaîne alignée au centre avec une certaine taille de police et de couleur. 
+Le code est très simple. Elle utilise la `Urho.Gui.Text` classe pour afficher une chaîne alignée au centre avec une certaine taille de police et de couleur. 
 
-Avant ce code peut s’exécuter, cependant, UrhoSharp doit être initialisé. 
+Avant de pouvoir exécuter ce code, UrhoSharp doit être initialisé. 
 
-Ouvrez le fichier AppDelegate.fs et modifiez le `FinishedLaunching` méthode comme suit :
+Ouvrez le fichier AppDelegate. FS et modifiez la `FinishedLaunching` méthode comme suit:
 
 ```fsharp
 namespace HelloWorldUrho1
@@ -97,14 +97,14 @@ type AppDelegate () =
         true
 ```
 
-Le `ApplicationOptions.Default` fournit les options par défaut pour une application en mode paysage. Transmettre `ApplicationOptions` au constructeur par défaut pour votre `Application` sous-classe (Notez que lorsque vous avez défini le `HelloWorld` classe, la ligne `inherit Application(o)` appelle le constructeur de classe de base).
+Le `ApplicationOptions.Default` fournit les options par défaut pour une application en mode paysage. Transmettez-les `Application` `HelloWorld` `inherit Application(o)` au constructeur par défaut de votre sous-classe (Notez que lorsque vous avez défini la classe, la ligne appelle le constructeur de classe de base). `ApplicationOptions`
 
-Le `Run` méthode de votre `Application` lance le programme. Il est défini comme retournant un `int`, ce qui peut être transmis à `ignore`.
+La `Run` méthode de votre `Application` lance le programme. Elle est définie en tant que `int`retournant un, qui peut `ignore`être redirigé vers.
 
-Le programme résultant doit ressembler à cette capture d’écran :
+Le programme obtenu doit ressembler à la capture d’écran suivante:
 
-![Capture d’écran du programme qui en résulte](fsharp-images/helloworldfsharp.png)
+![Capture d’écran du programme obtenu](fsharp-images/helloworldfsharp.png)
 
 ## <a name="related-links"></a>Liens associés
 
-- [Rechercher sur GitHub (exemple)](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [Parcourir sur GitHub (exemple)](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

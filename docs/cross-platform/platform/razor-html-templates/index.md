@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521802"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621032"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Génération de vues HTML à l’aide de modèles Razor
 
@@ -167,7 +167,7 @@ puis définissez le client sur l’affichage Web:
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>Appeler JavaScript à partir deC#
+### <a name="calling-javascript-from-c"></a>Appel de JavaScript à partir de C\#
 
 En plus d’indiquer à une vue Web de charger une nouvelle page HTML C# , le code peut également exécuter JavaScript dans la page actuellement affichée. Vous pouvez créer des blocs de code JavaScript C# entiers à l’aide de chaînes et les exécuter, ou vous pouvez créer des appels de `script` méthode vers JavaScript déjà disponibles sur la page via des balises.
 
@@ -465,7 +465,7 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 Après avoir géré l’URL, la méthode abandonne la navigation afin que l’affichage Web ne tente pas de terminer la navigation vers l’URL personnalisée.
 
-#### <a name="manipulating-the-template-from-c"></a>Manipulation du modèle à partir deC#
+#### <a name="manipulating-the-template-from-c"></a>Manipulation du modèle à partir de C\#
 
 La communication à une vue Web HTML rendue C# à partir de est effectuée en appelant JavaScript dans l’affichage Web. Sur iOS, cette opération s’effectue en `EvaluateJavascript` appelant sur le UIWebView:
 

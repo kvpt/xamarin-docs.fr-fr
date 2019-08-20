@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 75affbdb6e919c15c644a68ae45e7ff657a53f6a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652279"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620382"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Présentation des storyboards dans Xamarin. Mac
 
@@ -79,9 +79,9 @@ Lorsque vous utilisez la SEGUES de présentation, vous pouvez `PrepareForSegue` 
 Au moment de la conception (lors de la disposition de l’interface utilisateur dans l’Interface Builder de Xcode), chaque élément de l’interface utilisateur de l’application est divisé en éléments constitutifs:
 
 - **Scènes** , composées des éléments suivants:
-    - **Contrôleur d’affichage** : qui définissent les relations entre les vues et les données qui les prennent en charge.
-    - **Vues et** sous-vues-éléments réels qui composent l’interface utilisateur.
-    - **SEGUES de relation contenant-contenu** : qui définissent les relations parent-enfant entre les scènes.
+  - **Contrôleur d’affichage** : qui définissent les relations entre les vues et les données qui les prennent en charge.
+  - **Vues et** sous-vues-éléments réels qui composent l’interface utilisateur.
+  - **SEGUES de relation contenant-contenu** : qui définissent les relations parent-enfant entre les scènes.
 - **SEGUES de présentation** : qui définissent des modes de présentation individuels. 
 
 En définissant chaque élément de cette manière, il permet le chargement différé de chaque élément uniquement si nécessaire pendant l’exécution. Dans macOS, l’ensemble du processus a été conçu pour permettre au développeur de créer des interfaces utilisateur complexes et flexibles qui nécessitent un minimum de code de sauvegarde pour les faire fonctionner, tout en étant aussi efficaces que possible avec les ressources système.

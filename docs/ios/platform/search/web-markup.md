@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 77d526fd49ac62788bea1ab885cb1248ffc5697e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654080"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620956"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Rechercher avec le balisage Web dans Xamarin. iOS
 
@@ -46,7 +46,7 @@ Le moyen le plus simple pour que Apple recherche le site Web de votre applicatio
 
 Fournissez une bannière d’application intelligente sur votre site Web pour présenter un lien clair dans votre application. Si l’application n’est pas déjà installée, Safari invite automatiquement l’utilisateur à installer votre application. Dans le cas contraire, l’utilisation peut appuyer sur le lien de la **vue** pour lancer votre application à partir du site Web. Par exemple, pour créer une bannière d’application intelligente, vous pouvez utiliser le code suivant:
 
-```xml
+```html
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
@@ -65,7 +65,7 @@ Nouveauté d’iOS 9, les liens universels fournissent une meilleure alternative
 
 Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’une carte Twitter. Par exemple :
 
-```xml
+```html
 <meta name="twitter:app:name:iphone" content="AppName">
 <meta name="twitter:app:id:iphone" content="AppNameID">
 <meta name="twitter:app:url:iphone" content="AppNameURL">
@@ -77,7 +77,7 @@ Pour plus d’informations, consultez la documentation sur le [protocole de cart
 
 Vous pouvez fournir des liens détaillés vers le contenu de votre application à l’aide d’un lien vers une application Facebook. Par exemple :
 
-```xml
+```html
 <meta property="al:ios:app_name" content="AppName">
 <meta property="al:ios:app_store_id" content="AppNameID">
 <meta property="al:ios:url" content="AppNameURL">
@@ -93,23 +93,23 @@ Vous devez ajouter la prise en charge de l’ouverture et de l’affichage des l
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 {
 
-    // Handling a URL in the form http://company.com/appname/?123
-    try {
-        var components = new NSUrlComponents(url,true);
-        var path = components.Path;
-        var query = components.Query;
+  // Handling a URL in the form http://company.com/appname/?123
+  try {
+    var components = new NSUrlComponents(url,true);
+    var path = components.Path;
+    var query = components.Query;
 
-        // Is this a known format?
-        if (path == "/appname") {
-            // Display the view controller for the content
-            // specified in query (123)
-            return ContentViewController.LoadContent(query);
-        }
-    } catch {
-        // Ignore issue for now
+    // Is this a known format?
+    if (path == "/appname") {
+      // Display the view controller for the content
+      // specified in query (123)
+      return ContentViewController.LoadContent(query);
     }
+  } catch {
+    // Ignore issue for now
+  }
 
-    return false;
+  return false;
 }
 ```
 
@@ -123,7 +123,7 @@ Les résultats enrichis sont plus attrayants et peuvent contribuer à améliorer
 
 Une option pour fournir le balisage de données structurées consiste à utiliser ouvrir un graphique. Par exemple :
 
-```xml
+```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
 <meta property="og:audio" content="http://company.com/appname/theme.m4a">
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
@@ -133,22 +133,20 @@ Pour plus d’informations, consultez le site Web [Open Graph](http://ogp.me) .
 
 Un autre format courant pour le balisage de données structurées est le format microdonnées de Schema. org. Par exemple :
 
-```xml
+```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue">4** stars -
-    <span itemprop="reviewCount">255** reviews
-
-
+  <span itemprop="ratingValue">4** stars -
+  <span itemprop="reviewCount">255** reviews
 ```
 
 Les mêmes informations peuvent être représentées au format JSON-LD de Schema. org:
 
-```xml
+```html
 <script type="application/ld+json">
-    "@content":"http://schema.org",
-    "@type":"AggregateRating",
-    "ratingValue":"4",
-    "reviewCount":"255"
+  "@content":"http://schema.org",
+  "@type":"AggregateRating",
+  "ratingValue":"4",
+  "reviewCount":"255"
 </script>
 ```
 
@@ -179,34 +177,28 @@ Des types spécifiques de données structurées permettent à l’utilisateur fi
 
 Par exemple, la définition d’une action pour composer un numéro de téléphone peut se présenter comme suit:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/Organization">
-    <span itemprop="telephone">(408) 555-1212**
-
-
+  <span itemprop="telephone">(408) 555-1212**
 ```
 
 Lorsque ce résultat de recherche est présenté à l’utilisateur final, une petite icône de téléphone s’affiche dans le résultat. Si l’utilisateur appuie sur l’icône, le nombre spécifié est appelé.
 
 Le code HTML suivant ajoute une action pour lire un fichier audio à partir du résultat de la recherche:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/AudioObject">
-    <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
-
-
+  <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
 ```
 
 Enfin, le code HTML suivant ajoute une action pour obtenir des instructions à partir du résultat de la recherche:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/PostalAddress">
-    <span itemprop="streetAddress">1 Infinite Loop**
-    <span itemprop="addressLocality">Cupertino**
-    <span itemprop="addressRegion">CA**
-    <span itemprop="postalCode">95014**
-
-
+  <span itemprop="streetAddress">1 Infinite Loop**
+  <span itemprop="addressLocality">Cupertino**
+  <span itemprop="addressRegion">CA**
+  <span itemprop="postalCode">95014**
 ```
 
 Pour plus d’informations, consultez le site des développeurs d’Apple [app Search](https://developer.apple.com/ios/search/).

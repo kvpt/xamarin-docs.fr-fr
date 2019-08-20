@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528713"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620605"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -24,7 +24,7 @@ Par exemple, paramètres, environnement, outils manquants.
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
  https://github.com/xamarin/xamarin-macios/blob/master/tools/mtouch/error.cs
-    -->
+  -->
 
 <a name="MT0000" />
 
@@ -1975,14 +1975,14 @@ Cela se produit lors de la sous-classe d’un type d’infrastructure, et lors d
 ```csharp
 class MyNSObject : NSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -1995,14 +1995,14 @@ class MyNSObject : NSObject
 
 class MyCustomNSObject : MyNSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -2414,8 +2414,8 @@ L’argument `--ignore-dynamic-symbol=symbol` de ligne de commande a été pass�
 Il y a deux raisons principales à cela:
 
 * Le nom du symbole est incorrect.
-    * N’ajoutez pas de trait de soulignement au nom du symbole.
-    * Le symbole des classes objective-C `OBJC_CLASS_$_<classname>`est.
+  * N’ajoutez pas de trait de soulignement au nom du symbole.
+  * Le symbole des classes objective-C `OBJC_CLASS_$_<classname>`est.
 * Le symbole est correct, mais il s’agit d’un symbole déjà préservé par des moyens normaux (certaines options de génération provoquent la liste exacte des symboles dynamiques).
 
 ### <a name="mt53xx-other-tools"></a>MT53xx: Autres outils

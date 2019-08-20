@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 11d9c3d27fa9cf9ba830648d95ef8af9ed386afb
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 5fe0c4d02dbe6cc5b3768ea92179b3781ef09aa9
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526474"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620854"
 ---
 # <a name="xamarinios-api-design"></a>Conception de l’API Xamarin. iOS
 
@@ -48,16 +48,16 @@ Voici quelques-uns de nos principes de conception pour les liaisons Xamarin. iOS
 - Encourager l’exploration dans l’IDE des API:
 
   - Par exemple, au lieu d’exposer un tableau faiblement typé comme suit:
-    
+
     ```objc
     NSArray *getViews
     ```
     Exposez un type fort, comme suit:
-    
+
     ```csharp
     NSView [] Views { get; set; }
     ```
-    
+
     Cela donne à Visual Studio pour Mac la possibilité d’effectuer une saisie semi-automatique lors de la navigation dans l' `System.Array` API, rend toutes les opérations disponibles sur la valeur retournée et permet à la valeur de retour de participer à Linq.
 
 - Types C# natifs:
@@ -72,8 +72,8 @@ Voici quelques-uns de nos principes de conception pour les liaisons Xamarin. iOS
 
 - Prendre en charge le modèle de délégué objective-C:
 
-    - C#système d’événements
-    - Exposer C# des délégués (lambdas, méthodes anonymes `System.Delegate`et) à des API objective-C en tant que blocs
+  - C#système d’événements
+  - Exposer C# des délégués (lambdas, méthodes anonymes `System.Delegate`et) à des API objective-C en tant que blocs
 
 ### <a name="assemblies"></a>Assemblys
 
