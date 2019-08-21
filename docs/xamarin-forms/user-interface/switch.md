@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: 58755c54ce2afe80a8bf43adc25a0cf2d90a0bb5
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739465"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658046"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. Forms, commutateur
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Xamarin. Forms [`Switch`](xref:Xamarin.Forms.Switch) est un bouton bascule horizontal qui peut être manipulé par l’utilisateur pour basculer entre les États activés et désactivés, représentés par une `boolean` valeur. La `Switch` classe hérite de [`View`](xref:Xamarin.Forms.View).
+Le contrôle Xamarin. [`Switch`](xref:Xamarin.Forms.Switch) Forms est un bouton bascule horizontal qui peut être manipulé par l’utilisateur pour basculer entre les États activés et désactivés, représentés par `boolean` une valeur. La `Switch` classe hérite de [`View`](xref:Xamarin.Forms.View).
 
-La capture d’écran suivante `Switch` montre un contrôle dans ses États d’activation et de désactivation sur iOS et Android:
+Les captures d’écran suivantes `Switch` montrent un contrôle dans ses États d’activation et de désactivation sur iOS et Android:
 
 ![Capture d’écran des commutateurs activés et désactivés, sur iOS et Android](switch-images/switch-states-default.png "Commutateurs sur iOS et Android")
 
@@ -44,7 +44,7 @@ Un `Switch` peut être instancié en XAML. Sa `IsToggled` propriété peut être
 Un `Switch` peut également être créé dans le code:
 
 ```csharp
-Switch switch = new Switch { IsToggled = true };
+Switch switchControl = new Switch { IsToggled = true };
 ```
 
 ### <a name="switch-style-properties"></a>Propriétés du style de commutateur
@@ -58,10 +58,10 @@ La `OnColor` propriété peut être définie pour définir la `Switch` couleur l
 La `OnColor` propriété peut également être définie lors de la `Switch` création d’un dans le code:
 
 ```csharp
-Switch switch = new Switch { OnColor = Color.Orange };
+Switch switchControl = new Switch { OnColor = Color.Orange };
 ```
 
-La capture d’écran suivante `Switch` montre les États de basculement **activés** et désactivés `OnColor` `Color.Orange` , avec la propriété définie sur iOS et Android:
+Les captures d’écran suivantes `Switch` montrent les États de basculement **activés** et désactivés `OnColor` `Color.Orange` , la propriété ayant la valeur on iOS et Android:
 
 ![Capture d’écran des commutateurs activés et désactivés, sur iOS et Android](switch-images/switch-states-oncolor.png "Commutateurs sur iOS et Android")
 
@@ -87,8 +87,8 @@ L' `sender` argument dans le gestionnaire d’événements `Switch` est chargé 
 Le `Toggled` gestionnaire d’événements peut également être assigné dans le code:
 
 ```csharp
-Switch switch = new Switch {...};
-switch.Toggled += (sender, e) =>
+Switch switchControl = new Switch {...};
+switchControl.Toggled += (sender, e) =>
 {
     // Perform an action after examining e.Value
 }
