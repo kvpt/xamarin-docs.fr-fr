@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/17/2019
-ms.openlocfilehash: 765f34af3b3c43531857b705bb4a39ea56e32f61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a13501218b6d3039f189693512d185a9d546d23f
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656137"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629644"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Authentifier les utilisateurs avec Azure Active Directory B2C
 
@@ -247,7 +247,7 @@ public partial class LogoutPage : ContentPage
 
 ### <a name="ios"></a>iOS
 
-Sur iOS, le modèle d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans **info. plist**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). La capture d’écran suivante montre le schéma d’URL personnalisé dans **info. plist**.
+Sur iOS, le modèle d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans **info. plist**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). La capture d’écran suivante montre le schéma d’URL personnalisé dans **info. plist**.
 
 ![«Inscription d’un schéma d’URL personnalisé sur iOS»](azure-ad-b2c-images/customurl-ios.png)
 
@@ -277,7 +277,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans **fichier AndroidManifest. xml**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). L’exemple suivant montre le schéma d’URL personnalisé dans **fichier AndroidManifest. xml**.
+Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure Active Directory B2C doit être inscrit dans **fichier AndroidManifest. xml**. MSAL s’attend à ce que le schéma d’URL adhère à un modèle spécifique, décrit précédemment dans [inscrire votre application mobile avec Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c). L’exemple suivant montre le schéma d’URL personnalisé dans **fichier AndroidManifest. xml**.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -289,7 +289,9 @@ Sur Android, le schéma d’URL personnalisé qui a été enregistré avec Azure
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="INSERT_URI_SCHEME_HERE" android:host="auth" />"
+        <!-- example -->
+        <!-- <data android:scheme="msalaaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" android:host="auth" /> -->
+        <data android:scheme="INSERT_URI_SCHEME_HERE" android:host="auth" />
       </intent-filter>
     </activity>"
   </application>
