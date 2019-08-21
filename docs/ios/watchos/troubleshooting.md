@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528396"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629657"
 ---
 # <a name="watchos-troubleshooting"></a>Résolution des problèmes surveilléos
 
@@ -92,7 +92,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 *Si* vous utilisez Xcode Interface Builder, procédez comme suit pour créer de nouveaux contrôleurs d’interface pour votre application Watch et activer la synchronisation avec Xcode afin que les prises et les C#actions soient disponibles dans:
 
 1. Ouvrez l’interface de l’application Watch **. Storyboard** dans **Xcode Interface Builder**.
-    
+
     ![](troubleshooting-images/add-6.png "Ouverture de la table de montage séquentiel dans Xcode Interface Builder")
 
 2. Faites glisser un `InterfaceController` nouveau sur le Storyboard:
@@ -144,7 +144,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     ```csharp
     using Foundation;
     using System.CodeDom.Compiler;
-    
+
     namespace HelloWatchExtension  // remember to update this
     {
         [Register ("MyInterfaceController")] // remember to update this
@@ -156,9 +156,10 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
         }
     }
     ```
-    
-    Conseil : Vous pouvez (si vous le souhaitez) faire de ce fichier un nœud enfant du premier fichier en le faisant glisser vers C# l’autre fichier dans le panneau solutions Visual Studio pour Mac. Elle s’affiche alors comme suit:
-    
+
+    > [!TIP]
+    > Vous pouvez (si vous le souhaitez) faire de ce fichier un nœud enfant du premier fichier en le faisant glisser vers C# l’autre fichier dans le panneau solutions Visual Studio pour Mac. Elle s’affiche alors comme suit:
+
     ![](troubleshooting-images/add-5.png "Panneau solutions")
 
 6. Sélectionnez **Générer > générer tout** afin que la synchronisation Xcode reconnaisse la nouvelle classe ( `Register` via l’attribut) que nous avons utilisée.
@@ -168,7 +169,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     ![](troubleshooting-images/add-6.png "Ouverture de la table de montage séquentiel dans Interface Builder")
 
 8. Sélectionnez votre nouveau contrôleur d’interface et donnez-lui le ClassName que vous avez défini ci-dessus, par exemple. `MyInterfaceController`.
-Si tout fonctionne correctement, il doit apparaître automatiquement dans la liste déroulante **classe:** et vous pouvez le sélectionner à partir de là.
+    Si tout fonctionne correctement, il doit apparaître automatiquement dans la liste déroulante **classe:** et vous pouvez le sélectionner à partir de là.
 
     ![](troubleshooting-images/add-4.png "Définition d’une classe personnalisée")
 
