@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d700aa8c0744d08e6536614b8cb8b024a99c84e1
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528625"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889790"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Remplissage d’une table avec des données dans Xamarin. iOS
 
@@ -109,6 +109,7 @@ Ensuite, créez une instance de notre contrôleur d’affichage:
 ```csharp
 HomeScreen owner;
 ```
+
 Ajoutez un constructeur à votre classe UITableViewSource qui prend un contrôleur d’affichage comme paramètre et l’enregistre dans un champ:
 
 ```csharp
@@ -119,11 +120,13 @@ public TableSource (string[] items, HomeScreen owner)
 
 }
 ```
+
 Modifiez la méthode ViewDidLoad où la classe UITableViewSource est créée pour passer la `this` référence:
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
+
 Enfin, dans votre `RowSelected` méthode, appelez `PresentViewController` sur le champ mis en cache:
 
 ```csharp

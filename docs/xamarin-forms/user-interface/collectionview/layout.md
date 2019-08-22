@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/01/2019
-ms.openlocfilehash: 5fb92882f443007e5b3dd693f54e582757db1905
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/12/2019
+ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739021"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888657"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Disposition Xamarin. Forms CollectionView
 
@@ -105,16 +105,12 @@ Toutefois, à des fins d’exhaustivité, un [`CollectionView`](xref:Xamarin.For
 </CollectionView>
 ```
 
-Cela peut également être [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) accompli en affectant à la propriété un objet de la [`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout) classe, en spécifiant le `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) membre de l’énumération en tant qu’argument:
+Cela peut également être accompli [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) en affectant à la propriété un objet de la [`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout) classe, en spécifiant `Orientation` le `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) membre de l’énumération comme valeur de la propriété:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Vertical" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -173,16 +169,12 @@ Il en résulte une liste de colonnes unique, qui s’étend verticalement à mes
 </CollectionView>
 ```
 
-Cela peut également être [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) accompli en affectant à la propriété un [`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout) objet, en spécifiant le `Horizontal` membre de l' [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) énumération en tant qu’argument:
+Cela peut également être accompli [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) en affectant à la propriété un objet de la [`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout) classe, en spécifiant `Orientation` le `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) membre de l’énumération comme valeur de la propriété:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Horizontal</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Horizontal" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -313,6 +305,147 @@ CollectionView collectionView = new CollectionView
 Par défaut, un horizontal [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) affiche des éléments sur une seule ligne. Toutefois, cet exemple affecte à `GridItemsLayout.Span` la propriété la valeur 4. Il en résulte une grille de quatre lignes, qui s’agrandit horizontalement à mesure que de nouveaux éléments sont ajoutés:
 
 [ ![Capture d’écran d’une disposition de grille horizontale CollectionView, sur iOS et Android](layout-images/horizontal-grid.png "CollectionView disposition de grille horizontale") ] (layout-images/horizontal-grid-large.png#lightbox "Disposition de grille horizontale CollectionView")
+
+## <a name="headers-and-footers"></a>En-têtes et pieds de page
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)peut présenter un en-tête et un pied de page qui défilent avec les éléments de la liste. L’en-tête et le pied de page peuvent être des [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) chaînes, des vues ou des objets.
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes pour spécifier l’en-tête et le pied de page:
+
+- `Header`, de type `object`, spécifie la chaîne, la liaison ou la vue qui sera affichée au début de la liste.
+- `HeaderTemplate`, de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), spécifie `DataTemplate` le `Header`à utiliser pour mettre en forme.
+- `Footer`, de type `object`, spécifie la chaîne, la liaison ou la vue qui sera affichée à la fin de la liste.
+- `FooterTemplate`, de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), spécifie `DataTemplate` le `Footer`à utiliser pour mettre en forme.
+
+Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
+
+> [!IMPORTANT]
+> Les en-têtes et les pieds de page sont actuellement pris en charge uniquement sur Android.
+
+Lorsqu’un en-tête est ajouté à une disposition qui augmente horizontalement, de gauche à droite, l’en-tête est affiché à gauche de la liste. De même, lorsqu’un pied de page est ajouté à une disposition qui augmente horizontalement, de gauche à droite, le pied de page est affiché à droite de la liste.
+
+### <a name="display-strings-in-the-header-and-footer"></a>Afficher des chaînes dans l’en-tête et le pied de page
+
+Les `Header` propriétés `Footer` et peuvent être définies sur `string` des valeurs, comme indiqué dans l’exemple suivant:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="Monkeys"
+                Footer="2019">
+    ...
+</CollectionView>
+```
+
+Le code C# équivalent est :
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = "Monkeys",
+    Footer = "2019"
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-views-in-the-header-and-footer"></a>Afficher les affichages dans l’en-tête et le pied de page
+
+Les `Header` propriétés `Footer` et peuvent toutes être définies sur une vue. Il peut s’agir d’une vue unique ou d’une vue contenant plusieurs vues enfants. L’exemple suivant montre les `Header` propriétés `Footer` et dont chacune a pour [`StackLayout`](xref:Xamarin.Forms.StackLayout) valeur un objet qui [`Label`](xref:Xamarin.Forms.Label) contient un objet:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.Header>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Monkeys"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Header>
+    <CollectionView.Footer>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Friends of Xamarin Monkey"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Footer>
+    ...
+</CollectionView>
+```
+
+Le code C# équivalent est :
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Monkeys", ... }
+        }
+    },
+    Footer = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Friends of Xamarin Monkey", ... }
+        }
+    }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-a-templated-header-and-footer"></a>Afficher un en-tête et un pied de page basés sur un modèle
+
+Les `HeaderTemplate` propriétés `FooterTemplate` et peuvent être définies sur [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) des objets utilisés pour mettre en forme l’en-tête et le pied de page. Dans ce scénario, les `Header` propriétés `Footer` et doivent être liées à la source actuelle pour que les modèles soient appliqués, comme indiqué dans l’exemple suivant:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="{Binding .}"
+                Footer="{Binding .}">
+    <CollectionView.HeaderTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Monkeys"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.HeaderTemplate>
+    <CollectionView.FooterTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Friends of Xamarin Monkey"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.FooterTemplate>
+    ...
+</CollectionView>
+```
+
+Le code C# équivalent est :
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    HeaderTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    }),
+    FooterTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    })
+};
+collectionView.SetBinding(ItemsView.HeaderProperty, ".");
+collectionView.SetBinding(ItemsView.FooterProperty, ".");
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
 
 ## <a name="item-spacing"></a>Espacement d’éléments
 

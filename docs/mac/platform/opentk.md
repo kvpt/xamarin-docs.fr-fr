@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 953b36eb48823cc23c5e7b3e831beca7b655a057
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eb6eff59ccb44d9954139c294592fafcba1f08e0
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645061"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889528"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Présentation de OpenTK dans Xamarin. Mac
 
@@ -180,6 +180,7 @@ using OpenTK.Platform.MacOS;
 using Foundation;
 using CoreGraphics;
 ```
+
 Cet ensemble minimal est requis pour toute classe qui utilise OpenTK.
 
 <a name="Adding_the_Game_View" />

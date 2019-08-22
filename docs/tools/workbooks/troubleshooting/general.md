@@ -1,69 +1,70 @@
 ---
-title: Solutions de contournement et problèmes connus
-description: Ce document décrit les problèmes connus et solutions de contournement pour les classeurs de Xamarin. Il aborde les problèmes de CultureInfo, les problèmes JSON et bien plus encore.
+title: Problèmes connus & solutions de contournement
+description: Ce document décrit les problèmes connus et les solutions de contournement pour Xamarin Workbooks. Il aborde les problèmes CultureInfo, les problèmes JSON et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 221ed97db17da62f513448b6c85d4df205a7cbaf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61268884"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889402"
 ---
-# <a name="known-issues--workarounds"></a>Solutions de contournement et problèmes connus
+# <a name="known-issues--workarounds"></a>Problèmes connus & solutions de contournement
 
-## <a name="persistence-of-cultureinfo-across-cells"></a>Persistance de CultureInfo toutes les cellules
+## <a name="persistence-of-cultureinfo-across-cells"></a>Persistance de CultureInfo sur les cellules
 
-Paramètre `System.Threading.CurrentThread.CurrentCulture` ou `System.Globalization.CultureInfo.CurrentCulture` ne sont pas conservées entre les cellules de classeur sur les cibles des classeurs Mono (Mac, iOS et Android) en raison un [bogue dans Mono `AppContext.SetSwitch` ] [ appcontext-bug] implémentation .
+Le `System.Threading.CurrentThread.CurrentCulture` paramètre `System.Globalization.CultureInfo.CurrentCulture` ou n’est pas conservé entre les cellules de classeur sur des classeurs mono, cibles (Mac, iOS et Android) en raison d’un bogue dans l’implémentation [de `AppContext.SetSwitch` mono][appcontext-bug] .
 
 ### <a name="workarounds"></a>Solutions
 
-* Définir l’application-domaine local `DefaultThreadCurrentCulture`:
+* Définissez l’application-domaine local `DefaultThreadCurrentCulture`:
+
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* Ou mise à jour aux classeurs 1.2.1 ou une version ultérieure, qui sera réécrire les assignations à `System.Threading.CurrentThread.CurrentCulture` et `System.Globalization.CultureInfo.CurrentCulture` pour fournir le comportement souhaité (contourner le bogue Mono).
+* Ou, mettez à jour vers les classeurs 1.2.1 ou une version plus récente, `System.Threading.CurrentThread.CurrentCulture` qui `System.Globalization.CultureInfo.CurrentCulture` réécrira les assignations dans et pour fournir le comportement souhaité (contournement du bogue mono).
 
-## <a name="unable-to-use-newtonsoftjson"></a>Impossible d’utiliser Newtonsoft.Json
+## <a name="unable-to-use-newtonsoftjson"></a>Impossible d’utiliser Newtonsoft. JSON
 
 ### <a name="workaround"></a>Solution de contournement
 
-* Mettre à jour vers des classeurs 1.2.1, ce qui va installer Newtonsoft.Json 9.0.1.
-  Classeurs 1.3, actuellement dans le canal alpha, prend en charge les versions 10 et versions ultérieures.
+* Mise à jour des classeurs 1.2.1, qui installe Newtonsoft. JSON 9.0.1.
+  Les classeurs 1,3, actuellement dans le canal alpha, prennent en charge les versions 10 et ultérieures.
 
 ### <a name="details"></a>Détails
 
-Newtonsoft.Json 10 a été publiée qui essentiellement sa dépendance vis-à-vis Microsoft.CSharp qui est en conflit avec les classeurs de version est fourni pour prendre en charge `dynamic`. Ce problème est résolu dans la version 1.3 de classeurs, mais pour l’instant, nous avons travaillé contourner ce problème par épinglage Newtonsoft.Json spécifiquement pour la version 9.0.1.
+Newtonsoft. JSON 10 a été publié, ce qui a vu sa dépendance vis-à-vis de Microsoft. CSharp, qui `dynamic`est en conflit avec les classeurs de version fournis pour la prise en charge. Cela est traité dans la version préliminaire du classeur 1,3, mais pour l’instant, nous avons contourné Newtonsoft. JSON spécifiquement pour la version 9.0.1.
 
-Les packages NuGet explicitement en fonction de Newtonsoft.Json 10 ou version ultérieure sont uniquement pris en charge dans les classeurs 1.3, actuellement dans le canal alpha.
+Les packages NuGet explicitement en fonction de Newtonsoft. JSON 10 ou plus récents sont uniquement pris en charge dans les classeurs 1,3, actuellement dans le canal alpha.
 
-## <a name="code-tooltips-are-blank"></a>Info-bulles de code sont vides
+## <a name="code-tooltips-are-blank"></a>Les info-bulles de code sont vides
 
-Il existe un [bogue dans l’éditeur Monaco] [ monaco-bug] dans Safari/WebKit, qui est utilisé dans l’application Mac classeurs, qui entraîne le rendu d’info-bulles de code sans texte.
+Il existe un [bogue dans l’éditeur Monaco][monaco-bug] dans Safari/WebKit, qui est utilisé dans l’application classeurs Mac, qui génère le rendu des info-bulles de code sans texte.
 
 ![](general-images/monaco-signature-help-bug.png)
 
 ### <a name="workaround"></a>Solution de contournement
 
-* En cliquant sur l’info-bulle quand elle apparaît forcera le texte à afficher.
+* Le fait de cliquer sur l’info-bulle après l’affichage force le rendu du texte.
 
-* Ou mettre à jour vers des classeurs 1.2.1 ou une version ultérieure
+* Ou mettre à jour des classeurs 1.2.1 ou version ultérieure
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
 
-## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>Convertisseurs de SkiaSharp sont manquants dans les classeurs 1.3
+## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>Les convertisseurs SkiaSharp sont absents dans les classeurs 1,3
 
-À partir de classeurs 1.3, nous avons supprimé les convertisseurs de SkiaSharp que nous avons livrée dans les classeurs 0.99.0, en faveur de SkiaSharp fournissant les convertisseurs lui-même, à l’aide de notre [SDK](~/tools/workbooks/sdk/index.md).
+À compter des classeurs 1,3, nous avons supprimé les convertisseurs SkiaSharp que nous avons fournis dans les classeurs 0.99.0, en faveur de SkiaSharp fournissant les convertisseurs eux-mêmes, à l’aide de notre [Kit de développement logiciel (SDK)](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>Solution de contournement
 
-* Mettre à jour SkiaSharp vers la dernière version de NuGet. Au moment de l’écriture, il s’agit de 1.57.1.
+* Mettez à jour SkiaSharp vers la version la plus récente dans NuGet. Au moment de la rédaction de cet article, il s’agit de 1.57.1.
 
 ## <a name="related-links"></a>Liens associés
 

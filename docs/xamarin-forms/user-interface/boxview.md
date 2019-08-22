@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
-ms.openlocfilehash: 21edcf4a660049f2ef4ecf8426741a62b56b71e4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 06b4764570205a39734d38e3e118b7dc1fa35d18
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651443"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888732"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
@@ -168,6 +168,7 @@ Enfin, vous pouvez dessiner une ligne verticale sur le côté « un » d’un 
     </Label>
 </StackLayout>
 ```
+
 <a name="listingcolors" />
 
 ## <a name="listing-colors-with-boxview"></a>Liste des couleurs avec BoxView
@@ -594,6 +595,7 @@ public partial class MainPage : ContentPage
     }
 }
 ```
+
 <a name="analogclock" />
 
 ## <a name="creating-an-analog-clock"></a>Création d’une horloge analogique

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528698"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887488"
 ---
 # <a name="maps-in-xamarinios"></a>Cartes dans Xamarin. iOS
 
@@ -28,25 +28,27 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView``UIView` sous-classe qui affiche une carte. Le simple ajout de la carte à l’aide du code ci-dessus génère une carte interactive:
+`MKMapView``UIView` sous-classe qui affiche une carte. Le simple ajout de la carte à l’aide du code ci-dessus génère une carte interactive:
 
- ![](images/00-map.png "Exemple de mappage")
+![](images/00-map.png "Exemple de mappage")
 
 ## <a name="map-style"></a>Style de carte
 
- `MKMapView`prend en charge 3 styles différents de mappages. Pour appliquer un style de carte, il vous `MapType` suffit de définir la propriété sur `MKMapType` une valeur de l’énumération:
- ```
+`MKMapView`prend en charge 3 styles différents de mappages. Pour appliquer un style de carte, il vous `MapType` suffit de définir la propriété sur `MKMapType` une valeur de l’énumération:
+
+```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
- ```
-  La capture d’écran suivante montre les différents styles de carte disponibles:
+```
 
- ![](images/01-mapstyles.png "Cette capture d’écran montre les différents styles de carte disponibles")
+La capture d’écran suivante montre les différents styles de carte disponibles:
+
+![](images/01-mapstyles.png "Cette capture d’écran montre les différents styles de carte disponibles")
 
 ## <a name="panning-and-zooming"></a>Panoramique et zoom
 
- `MKMapView`prend en charge les fonctionnalités d’interactivité de la carte, telles que:
+`MKMapView`prend en charge les fonctionnalités d’interactivité de la carte, telles que:
 
 - Zoom à l’aide d’un geste de pincement
 - Panoramique via un mouvement panoramique

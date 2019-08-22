@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 16cf976b252e409ae4302ab51eb594370a6689d1
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e6aac37561d107cb7e3f646c15621b86385dd0ee
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620937"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887511"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrer une liaison vers l’API unifiée
 
@@ -89,6 +89,7 @@ Nous mettons à jour la nouvelle liaison pour qu’elle soit:
 [Export("add:and:")]
 nint Add(nint operandUn, nint operandDeux);
 ```
+
 Si nous effectuons un mappage vers une bibliothèque de version tierce plus récente que celle que nous avons initialement liée, nous devons `.h` examiner les fichiers d’en-tête pour la bibliothèque et voir si des appels `int`explicites `unsigned int`à `uint32_t` , `int32_t`, ou ont été mis à niveau pour `NSInteger`être `NSUInteger` ou `CGFloat`. `float` Si c’est le cas, les mêmes `nint`modifications `nuint` apportées aux types et `nfloat` doivent également être apportées à leurs mappages.
 
 Pour en savoir plus sur ces modifications de types de données, consultez le document [types natifs](~/cross-platform/macios/nativetypes.md) .

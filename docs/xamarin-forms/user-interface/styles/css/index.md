@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: ed9a376da0fcfebffd707e2e93919237adfef87b
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1de7ec7dc87fc4ba61e76603240197fc9d041255
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620835"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887934"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Styler des applications Xamarin.Forms à l’aide de feuilles de Style en cascade (CSS)
 
@@ -131,25 +131,7 @@ Pour plus d’informations sur les dictionnaires de ressources, consultez [dicti
 
 ### <a name="c"></a>C\#
 
-Dans C#, une feuille de style peut être chargée sous la forme d’une ressource incorporée et ajoutée à un [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
-
-```csharp
-public partial class MyPage : ContentPage
-{
-    public MyPage()
-    {
-        InitializeComponent();
-
-        this.Resources.Add(StyleSheet.FromAssemblyResource(
-            IntrospectionExtensions.GetTypeInfo(typeof(MyPage)).Assembly,
-            "MyProject.Assets.styles.css"));
-    }
-}
-```
-
-Le premier argument de la `StyleSheet.FromAssemblyResource` méthode est l’assembly contenant la feuille de style, tandis que le second argument est un `string` représentant l’identificateur de ressource. L’identificateur de ressource peut être obtenu à partir de la **propriétés** fenêtre lorsque le fichier CSS est sélectionné.
-
-Vous pouvez également une feuille de style peut être chargée à partir d’un `StringReader` et ajouté à un [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
+Dans C#, une feuille de style peut être chargée à `StringReader` partir d’un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)et ajoutée à:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -451,7 +433,7 @@ Les propriétés CSS spécifiques Xamarin.Forms suivantes sont également autori
 
 Les propriétés CSS spécifiques à l’interpréteur de commandes Xamarin. Forms sont également prises en charge (dans la colonne **valeurs** , les types `gray`sont en _italique_, tandis que les littéraux de chaîne sont):
 
-|Propriété|S'applique à|Valeurs|Exemple|
+|Propriété|S'applique à|Valeurs|Exemples|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_Couleur_ \| `initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_Couleur_ \| `initial` |`-xf-shell-background: green;`|

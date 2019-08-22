@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 729daef1a7a003613bebc4f82067bc267dab8e00
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: de63a0f3f6564671a50594c66b55ed095329c95c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522845"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887636"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin. Android RatingBar
 
@@ -26,13 +26,14 @@ Un RatingBar est un widget d’interface utilisateur qui affiche une évaluation
 1. Ouvrez le fichier **Resource/layout/main. AXML** et ajoutez le[`RatingBar`](xref:Android.Widget.RatingBar)
    élément (à l' [`LinearLayout`](xref:Android.Widget.LinearLayout)intérieur de):
 
-    ```xml
-    <RatingBar android:id="@+id/ratingbar"
+   ```xml
+   <RatingBar android:id="@+id/ratingbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
             android:stepSize="1.0"/>
-    ```
+   ```
+
    L' `android:numStars` attribut définit le nombre d’étoiles à afficher pour la barre d’évaluation. L' `android:stepSize` attribut définit la granularité pour chaque étoile (par exemple, une valeur de `0.5` autorise les évaluations de demi-étoile).
 
 2. Pour effectuer une opération quand une nouvelle évaluation a été définie, ajoutez le code suivant à la fin de la[`OnCreate()`](xref:Android.App.Activity.OnCreate*)

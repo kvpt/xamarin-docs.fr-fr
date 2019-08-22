@@ -6,13 +6,13 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ce745109ea2852b597de3a8a5922a171ad83e289
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/13/2019
+ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738916"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888542"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Données CollectionView Xamarin. Forms
 
@@ -26,6 +26,11 @@ ms.locfileid: "68738916"
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate), de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), spécifie le modèle à appliquer à chaque élément de la collection d’éléments à afficher.
 
 Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)définit une `ItemsUpdatingScrollMode` propriété qui représente le comportement `CollectionView` de défilement de lorsque de nouveaux éléments y sont ajoutés. Pour plus d’informations sur cette propriété, consultez [contrôler la position de défilement quand de nouveaux éléments sont ajoutés](scrolling.md#control-scroll-position-when-new-items-are-added).
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)peut également charger des données de façon incrémentielle au fur et à mesure que l’utilisateur fait défiler. Pour plus d’informations, consultez [charger des données de façon incrémentielle](#load-data-incrementally).
 
 ## <a name="populate-a-collectionview-with-data"></a>Remplir un CollectionView avec des données
 
@@ -90,10 +95,10 @@ CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-Dans cet exemple, les [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) données de propriété sont liées à `Monkeys` la propriété du modèle de vue connecté.
+Dans cet exemple, les [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) données de propriété sont liées à `Monkeys` la propriété du ViewModel connecté.
 
 > [!NOTE]
-> Les liaisons compilées peuvent être activées pour améliorer les performances de liaison de données dans les applications Xamarin. Forms. Pour plus d’informations, consultez [liaisons compilées](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
+> Les liaisons compilées peuvent être activées pour améliorer les performances de liaison de données dans les applications Xamarin. Forms. Pour plus d’informations, consultez [Liaisons compilées](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md).
 
 Pour plus d’informations sur la liaison de données, consultez la page [Liaison de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
@@ -244,6 +249,56 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 
 > [!IMPORTANT]
 > Lorsque vous [`CollectionView`](xref:Xamarin.Forms.CollectionView)utilisez, ne définissez jamais l’élément racine [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) de vos objets `ViewCell`sur un. Cela entraînera la levée d’une exception, `CollectionView` car n’a pas de concept de cellules.
+
+## <a name="load-data-incrementally"></a>Charger les données de façon incrémentielle
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)prend en charge le chargement incrémentiel des données au fur et à mesure que les utilisateurs parcourent les éléments. Cela permet des scénarios tels que le chargement asynchrone d’une page de données à partir d’un service Web, lorsque l’utilisateur fait défiler. En outre, le point auquel des données supplémentaires sont chargées est configurable afin que les utilisateurs ne voient pas d’espace vide ou ne soient plus défilant.
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes pour contrôler le chargement incrémentiel des données:
+
+- `RemainingItemsThreshold`, de type `int`, le seuil d’éléments qui ne sont pas encore visibles dans la liste `RemainingItemsThresholdReached` à laquelle l’événement est déclenché.
+- `RemainingItemsThresholdReachedCommand`, de type `ICommand`, qui est exécuté `RemainingItemsThreshold` lorsque est atteint.
+- `RemainingItemsThresholdReachedCommandParameter`, de type `object` : paramètre passé à la commande `RemainingItemsThresholdReachedCommand`.
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit également un `RemainingItemsThresholdReached` événement qui est déclenché lorsque le `CollectionView` est défilé suffisamment loin pour que `RemainingItemsThreshold` les éléments n’aient pas été affichés. Cet événement peut être géré pour charger plus d’éléments. En outre, lorsque l' `RemainingItemsThresholdReached` événement est déclenché, le `RemainingItemsThresholdReachedCommand` est exécuté, ce qui permet le chargement incrémentiel des données dans un ViewModel.
+
+La valeur par défaut de `RemainingItemsThreshold` la propriété est-1, ce qui indique `RemainingItemsThresholdReached` que l’événement ne sera jamais déclenché. Lorsque la valeur de la propriété est 0 `RemainingItemsThresholdReached` , l’événement est déclenché lorsque l’élément [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) final du est affiché. Pour les valeurs supérieures à 0, `RemainingItemsThresholdReached` l’événement est déclenché quand le `ItemsSource` contient ce nombre d’éléments qui n’ont pas encore fait l’objet d’un défilement.
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)valide la `RemainingItemsThreshold` propriété afin que sa valeur soit toujours supérieure ou égale à-1.
+
+L’exemple de code XAML suivant [`CollectionView`](xref:Xamarin.Forms.CollectionView) montre un qui charge des données de façon incrémentielle:
+
+```xaml
+<CollectionView ItemsSource="{Binding Animals}"
+                RemainingItemsThreshold="5"
+                RemainingItemsThresholdReached="OnCollectionViewRemainingItemsThresholdReached">
+    ...
+</CollectionView>
+```
+
+Le code C# équivalent est :
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    RemainingItemsThreshold = 5
+};
+collectionView.RemainingItemsThresholdReached += OnCollectionViewRemainingItemsThresholdReached;
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
+```
+
+Dans cet exemple de code, `RemainingItemsThresholdReached` l’événement se déclenche lorsque 5 éléments n’ont pas encore fait l’objet d’un défilement, et `OnCollectionViewRemainingItemsThresholdReached` en réponse exécute le gestionnaire d’événements:
+
+```csharp
+void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
+{
+    // Retrieve more data here and add it to the CollectionView's ItemsSource collection.
+}
+```
+
+> [!NOTE]
+> Les données peuvent également être chargées de façon incrémentielle `RemainingItemsThresholdReachedCommand` en liant `ICommand` le à une implémentation dans le ViewModel.
 
 ## <a name="related-links"></a>Liens connexes
 

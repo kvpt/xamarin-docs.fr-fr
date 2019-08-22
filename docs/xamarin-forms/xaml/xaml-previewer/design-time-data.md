@@ -1,26 +1,26 @@
 ---
-title: Utiliser des données de conception avec le Générateur d’aperçu XAML
-description: Cet article explique comment utiliser des données au moment du design pour afficher les mises en page comportant beaucoup de données dans le Générateur d’aperçu XAML sans exécuter votre application.
+title: Utiliser des données au moment du design avec le générateur d’aperçu XAML
+description: Cet article explique comment utiliser les données au moment du design pour afficher des dispositions lourdes en données dans le générateur d’aperçu XAML sans exécuter votre application.
 ms.prod: xamarin
 ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557435"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887857"
 ---
-# <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données de conception avec le Générateur d’aperçu XAML
+# <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données au moment du design avec le générateur d’aperçu XAML
 
-_Certaines dispositions sont difficiles à visualiser les données. Utilisez ces conseils pour tirer le meilleur parti de l’aperçu de vos pages comportant beaucoup de données dans le Générateur d’aperçu XAML._
+_Certaines dispositions sont difficiles à visualiser sans données. Utilisez ces conseils pour tirer le meilleur parti de l’aperçu de vos pages à données volumineuses dans le générateur d’aperçu XAML._
 
-## <a name="design-time-data-basics"></a>Concevoir des bases de données de temps
+## <a name="design-time-data-basics"></a>Notions de base des données au moment du design
 
-Données de conception sont fausses données que vous définissez pour faciliter vos contrôles visualiser dans le Générateur d’aperçu XAML. Pour commencer, ajoutez les lignes de code suivantes à l’en-tête de votre page XAML :
+Les données au moment de la conception sont des données factices que vous définissez pour faciliter la visualisation de vos contrôles dans le générateur d’aperçu XAML. Pour commencer, ajoutez les lignes de code suivantes à l’en-tête de votre page XAML:
 
 ```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -28,40 +28,41 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-Après avoir ajouté les espaces de noms, vous pouvez placer `d:` devant n’importe quel attribut ou d’un contrôle à afficher dans le Générateur d’aperçu XAML. Éléments avec `d:` ne sont pas visibles lors de l’exécution.
+Après avoir ajouté les espaces de noms, vous `d:` pouvez placer devant un attribut ou un contrôle pour l’afficher dans le générateur d’aperçu XAML. Les éléments `d:` avec ne sont pas affichés au moment de l’exécution.
 
-Par exemple, vous pouvez ajouter le texte à une étiquette qui est généralement liée aux données.
+Par exemple, vous pouvez ajouter du texte à une étiquette qui est généralement liée à des données.
 
 ```xaml
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![Concevoir des données d’heure avec le texte dans une étiquette](xaml-previewer-images/designtimedata-label-sm.png "conception heure des données avec le texte une étiquette")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![Données au moment de la conception avec du texte dans une étiquette](xaml-previewer-images/designtimedata-label-sm.png "Données au moment de la conception avec texte d’une étiquette")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-Dans cet exemple, sans `d:Text`, le Générateur d’aperçu XAML afficherait rien pour l’étiquette. Au lieu de cela, il affiche « Name » ! où l’étiquette a des données réelles lors de l’exécution.
+Dans cet exemple, sans `d:Text`, le générateur d’aperçu XAML n’affichera rien pour l’étiquette. Au lieu de cela, il affiche «Name!» où l’étiquette aura des données réelles au moment de l’exécution.
 
-Vous pouvez utiliser `d:` avec n’importe quel attribut pour un contrôle Xamarin.Forms, telles que les couleurs, les tailles de police et l’espacement. Vous pouvez même l’ajouter au contrôle lui-même :
+Vous pouvez utiliser `d:` avec n’importe quel attribut pour un contrôle Xamarin. Forms, comme les couleurs, les tailles de police et l’espacement. Vous pouvez même l’ajouter au contrôle lui-même:
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![Concevoir des données d’heure avec un contrôle bouton](xaml-previewer-images/designtimedata-controls-sm.png "Design des données de temps avec un contrôle de bouton")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![Données au moment du design avec un contrôle Button](xaml-previewer-images/designtimedata-controls-sm.png "Données au moment du design avec un contrôle Button")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
-Dans cet exemple, le bouton apparaît uniquement au moment du design. Utilisez cette méthode pour placer un espace réservé dans un [contrôle personnalisé non pris en charge par le Générateur d’aperçu XAML](render-custom-controls.md).
+Dans cet exemple, le bouton s’affiche uniquement au moment du Design. Utilisez cette méthode pour placer un espace réservé dans pour un [contrôle personnalisé non pris en charge par le générateur d’aperçu XAML](render-custom-controls.md).
 
-## <a name="preview-images-at-design-time"></a>Images d’aperçu au moment du design
+## <a name="preview-images-at-design-time"></a>Aperçu des images au moment du design
 
-Vous pouvez définir un moment du design pour les images qui sont liées à la page ou chargée dynamiquement dans Source. Dans votre projet Android, ajoutez l’image que vous souhaitez afficher dans le Générateur d’aperçu XAML pour le **ressources > Drawable** dossier. Dans votre projet iOS, ajoutez l’image à la **ressources** dossier. Vous pouvez ensuite afficher cette image dans le Générateur d’aperçu XAML au moment du design :
+Vous pouvez définir une source au moment de la conception pour les images qui sont liées à la page ou chargées dans dynamiquement. Dans votre projet Android, ajoutez l’image que vous souhaitez afficher dans le générateur d’aperçu XAML aux **ressources >** dossier dessinable. Dans votre projet iOS, ajoutez l’image au dossier Resources. Vous pouvez ensuite afficher cette image dans le générateur d’aperçu XAML au moment de la conception:
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![Concevoir des données de temps avec des images](xaml-previewer-images/designtimedata-image-sm.png "données chronologique avec iamges de conception")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
-## <a name="design-time-data-for-listviews"></a>Données de temps de conception de ListView
+[![Données au moment de la conception avec des images](xaml-previewer-images/designtimedata-image-sm.png "Données au moment de la conception avec iamges")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
-ListView est largement utilisé pour afficher des données dans une application mobile. Toutefois, ils sont difficiles à visualiser les données réelles. Pour utiliser les données de conception avec eux, vous devez créer un tableau de temps de conception à utiliser comme un ItemsSource. Le Générateur d’aperçu XAML présente les nouveautés dans ce tableau dans votre ListView au moment du design.
+## <a name="design-time-data-for-listviews"></a>Données au moment de la conception pour les ListView
+
+Les ListViews sont un moyen couramment utilisé pour afficher des données dans une application mobile. Toutefois, ils sont difficiles à visualiser sans données réelles. Pour utiliser des données au moment du design avec eux, vous devez créer un tableau au moment de la conception à utiliser comme ItemsSource. Le générateur d’aperçu XAML affiche ce qui se trouve dans ce tableau dans votre ListView au moment du Design.
 
 ```xaml
 <StackLayout>
@@ -83,26 +84,26 @@ ListView est largement utilisé pour afficher des données dans une application 
 </StackLayout>
 ```
 
-[![Concevoir des données chronologiques présentant un ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "concevoir des données chronologiques présentant un ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![Données au moment de la conception avec un ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "Données au moment de la conception avec un ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-Cet exemple affiche un ListView de trois TextCells dans le Générateur d’aperçu XAML. Vous pouvez modifier `x:String` à un modèle de données existant dans votre projet.
+Cet exemple affiche une liste de trois TextCells dans le générateur d’aperçu XAML. Vous pouvez passer `x:String` à un modèle de données existant dans votre projet.
 
-Reportez-vous à [application de Hanselman.Forms de James Montemagno](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47) pour obtenir un exemple plus complexe.
+Reportez-vous à [l’application Hanselman. Forms de James Montemagno](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47) pour obtenir un exemple plus complexe.
 
-## <a name="alternative-hardcode-a-static-viewmodel"></a>Alternative : Coder en dur un ViewModel statique
+## <a name="alternative-hardcode-a-static-viewmodel"></a>Prix Coder en dur un ViewModel statique
 
-Si vous ne souhaitez pas ajouter des données au moment du design à des contrôles individuels, vous pouvez configurer un magasin de données fictives pour lier à votre page. Reportez-vous à de James Montemagno [billet de blog sur l’ajout de données au moment du design](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) pour voir comment lier à un ViewModel statique dans XAML.
+Si vous ne souhaitez pas ajouter de données au moment de la conception à des contrôles individuels, vous pouvez configurer un magasin de données factices à lier à votre page. Reportez-vous au billet de blog de James Montemagno [sur l’ajout de données au moment](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) de la conception pour voir comment établir une liaison à un ViewModel statique en XAML.
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
 ### <a name="requirements"></a>Configuration requise
 
-Données de conception nécessitent une version minimale de Xamarin.Forms 3.6.
+Les données au moment de la conception requièrent une version minimale de Xamarin. Forms 3,6.
 
-### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense affiche des lignes ondulées sous Mes données de conception
+### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense affiche des lignes ondulées sous mes données au moment de la conception
 
-Il existe un problème connu et sera résolu dans une prochaine version de Visual Studio. Le projet sera toujours généré sans erreur.
+Il s’agit d’un problème connu qui sera résolu dans une prochaine version de Visual Studio. Le projet sera toujours généré sans erreur.
 
-### <a name="the-xaml-previewer-stopped-working"></a>Le Générateur d’aperçu XAML a cessé de fonctionner
+### <a name="the-xaml-previewer-stopped-working"></a>Le générateur d’aperçu XAML a cessé de fonctionner
 
-Essayez de fermer et rouvrir le fichier XAML, nettoyer et régénérer votre projet.
+Essayez de fermer et de rouvrir le fichier XAML, puis de nettoyer et de reconstruire votre projet.

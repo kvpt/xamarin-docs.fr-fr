@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: ff406b8bd6630ef9e17011e0b4b6b996fa944d89
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b95c68b43e4c7fda4d60f6976ab626968800d3dc
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528788"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889809"
 ---
 # <a name="social-framework-in-xamarinios"></a>Infrastructure sociale dans Xamarin. iOS
 
@@ -252,6 +252,7 @@ var parameters = new NSDictionary ();
 var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?count=10");
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
+
 Cet exemple limite les résultats retournés aux dix dernières entrées en incluant `?count=10` dans l’URL. Enfin, il joint la requête au compte Twitter (qui a été chargé ci-dessus) et effectue l’appel à Twitter pour extraire les données:
 
 ```csharp

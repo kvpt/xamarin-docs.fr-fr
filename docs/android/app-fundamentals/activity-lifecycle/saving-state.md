@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9fafc6965c5d2dec79f440579a5cf3746a545bae
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: febb9b297712a97c03613468b79ca583ec300e77
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644392"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887722"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Procédure pas à pas : enregistrement de l’état de l’activité
 
@@ -60,6 +60,7 @@ Lorsque nous cliquons sur le bouton **précédent** , l' *activité B* est détr
 [ActivityLifecycle.SecondActivity] Activity B - OnStop
 [ActivityLifecycle.SecondActivity] Activity B - OnDestroy
 ```
+
 ### <a name="adding-a-click-counter"></a>Ajout d’un compteur de clic
 
 Ensuite, nous allons modifier l’application afin de disposer d’un bouton qui compte et affiche le nombre de clics effectués. Tout d’abord, nous allons `_counter` ajouter une variable `MainActivity`d’instance à:

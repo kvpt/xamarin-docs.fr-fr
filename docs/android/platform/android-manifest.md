@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524697"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887844"
 ---
 # <a name="working-with-the-android-manifest"></a>Utilisation du manifeste Android
 
@@ -227,6 +227,7 @@ Cette déclaration provoque la génération du fragment XML suivant dans **obj/D
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
+
 Dans cet exemple, toutes les activités de l’application s’affichent `Theme.Light` par défaut dans le style. Si vous définissez le thème d’une activité `Theme.Dialog`sur, seule cette activité utilisera `Theme.Dialog` le style, tandis que toutes les autres activités de votre `Theme.Light` application auront comme valeur par `<application>` défaut le style défini dans l’élément. 
 
 L' `Application` élément n’est pas la seule façon de `<application>` configurer des attributs. Vous pouvez également insérer des attributs directement dans l' `<application>` élément de **Properties/fichier AndroidManifest. xml**. Ces paramètres sont fusionnés dans le dernier `<application>` élément qui réside dans **obj/Debug/Android/fichier AndroidManifest. xml**. Notez que le contenu de **Properties/fichier AndroidManifest. xml** remplace toujours les données fournies par les attributs personnalisés. 

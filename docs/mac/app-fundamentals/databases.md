@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: febfa23ecb2f1536631b3009d6ddc614fa355f01
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e6bc829ec947f8f3c01c7ef9679a5feadf4a42a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656498"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887373"
 ---
 # <a name="databases-in-xamarinmac"></a>Bases de données dans Xamarin. Mac
 
@@ -612,6 +612,7 @@ for (nuint n = 0; n < People.Count; ++n) {
     Person.Update (conn);
 }
 ```
+
 #### <a name="loading-a-record"></a>Chargement d’un enregistrement
 
 Le code suivant a été ajouté pour charger un enregistrement existant à partir de la base de données SQLite:
@@ -1971,6 +1972,7 @@ Tout d’abord, nous incluons sqlite.net (`using Sqlite`), puis nous exposons pl
 [PrimaryKey, AutoIncrement]
 public int ID { get; set; }
 ```
+
 ### <a name="initializing-the-database"></a>Initialisation de la base de données
 
 Avec les modifications apportées à notre modèle de données en place pour prendre en charge la lecture et l’écriture dans la base de données, nous devons ouvrir une connexion à la base de données et l’initialiser lors de la première exécution. Nous allons ajouter le code suivant:

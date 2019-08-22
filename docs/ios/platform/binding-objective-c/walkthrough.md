@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 4c4aaeaa451a67da16057cd9b345fbbcd0af6f35
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 634081b63ce4a70368ef7621837932a3ae6de0a8
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621026"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890391"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS
 
@@ -490,6 +490,7 @@ Bien qu’il y ait parfois un problème de `Delegates`traduction, nous devons mo
 [BaseType(typeof(NSObject))]
 [Model]
 ```
+
 Pour que la définition ressemble à ceci:
 
 [![](walkthrough-images/os11.png "La définition")](walkthrough-images/os11.png#lightbox)
@@ -660,6 +661,7 @@ public override void ViewDidLoad ()
   selector = new ColorSelectedDelegate (this);
 }
 ```
+
 **Implémentez la méthode HandleTouchUpInsideWithStrongDelegate** . ensuite, implémentez le gestionnaire d’événements pour lorsque l’utilisateur touche **ColorChangeButton**. Modifiez `ViewController`et ajoutez la méthode suivante:
 
 ```csharp
@@ -698,6 +700,7 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
     picker.PresentModallyOverViewController (this);
 }
 ```
+
 **Mettez à jour ViewDidLoad** -nous `ViewDidLoad` devons changer afin qu’il utilise le gestionnaire d’événements que nous venons de créer. Modifiez `ViewController` et modifiez `ViewDidLoad` pour ressembler à l’extrait de code suivant:
 
 

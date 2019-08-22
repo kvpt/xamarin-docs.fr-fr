@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6085f85a1b13bdeb4fe7b906beeca0bdc7a45a17
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528544"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890172"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Storyboards unifiés dans Xamarin. iOS
 
@@ -71,6 +71,7 @@ Le comportement de chargement d’image dans iOS reconnaît `@3x` également un 
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
+
 Ou, s’ils affectent l’image à un élément d’interface utilisateur à l' `MonkeyIcon.png`aide du `MonkeyIcon@3x.png` concepteur IOS en tant que, le sera utilisé, de nouveau automatiquement, sur l’iPhone 6 plus.
 
 <a name="dynamic-launch-screens" />
@@ -114,7 +115,7 @@ Cette section couvre les types typiques de collections de traits que l’utilisa
 
 Voici une collection de caractéristiques typique que le développeur peut voir sur un iPhone:
 
-|Propriété|Valeur|
+|Propriété|`Value`|
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
 |`VerticalSizeClass`|Normal|
@@ -125,7 +126,7 @@ L’ensemble ci-dessus représente une collection de traits complète, car elle 
 
 Il est également possible de disposer d’une collection de caractéristiques qui ne contient pas certaines de ses valeurs (dont Apple fait référence à une valeur *non spécifiée*):
 
-|Propriété|`Value`|
+|Propriété|Valeur|
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
 |`VerticalSizeClass`|Non spécifié|

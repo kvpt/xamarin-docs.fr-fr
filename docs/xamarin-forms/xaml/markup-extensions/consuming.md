@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2019
-ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 07/18/2019
+ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657277"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887900"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Utilisation des Extensions de balisage XAML
 
@@ -28,6 +28,7 @@ Extensions de balisage XAML vous aider à améliorer la puissance et la flexibil
 - [`OnPlatform`](#onplatform) – personnaliser l’apparence de l’interface utilisateur sur une base par plateforme.
 - [`OnIdiom`](#onidiom) – personnaliser l’apparence de l’interface utilisateur en fonction de l’idiome de l’appareil de l’application est en cours d’exécution.
 - [`DataTemplate`](#datatemplate-markup-extension)-Convertit un type en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate).
+- [`FontImage`](#fontimage-markup-extension)-afficher une icône de police dans n’importe quelle vue pouvant `ImageSource`afficher un.
 
 Les extensions de balisage XAML supplémentaires ont toujours été pris en charge par d’autres implémentations XAML et sont également prises en charge par Xamarin.Forms. Ceux-ci sont décrits plus en détail dans d’autres articles :
 
@@ -556,6 +557,37 @@ Une utilisation classique de cette extension de balisage se trouve dans une appl
 Dans cet exemple, `MonkeysPage` est converti d’un [`ContentPage`](xref:Xamarin.Forms.ContentPage) en [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), qui est défini comme valeur de la `ShellContent.ContentTemplate` propriété. Cela permet de `MonkeysPage` s’assurer que est uniquement créé lorsque la navigation vers la page se produit, plutôt qu’au démarrage de l’application.
 
 Pour plus d’informations sur les applications de l’interpréteur de commandes, consultez [Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md).
+
+## <a name="fontimage-markup-extension"></a>Extension de balisage FontImage
+
+L' `FontImage` extension de balisage vous permet d’afficher une icône de police dans n’importe quelle `ImageSource`vue pouvant afficher un. Il fournit les mêmes fonctionnalités que la `FontImageSource` classe, mais avec une représentation plus concise.
+
+L' `FontImage` extension de balisage est prise `FontImageExtension` en charge par la classe, qui définit les propriétés suivantes:
+
+- `FontFamily`de type `string`, la famille de polices à laquelle appartient l’icône de police.
+- `Glyph`de type `string`, la valeur de caractère Unicode de l’icône de police.
+- `Color`de type `Color`, la couleur à utiliser lors de l’affichage de l’icône de police.
+- `Size`de type `double`, la taille, en unités indépendantes du périphérique, de l’icône de police rendue.
+
+> [!NOTE]
+> L’analyseur XAML permet à `FontImageExtension` la classe d’être abrégée `FontImage`comme.
+
+Le `Glyph` propriété est la propriété de contenu de `FontImageExtension`. Par conséquent, pour les expressions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `Glyph=` dans le cadre de l’expression de condition qu’il soit le premier argument.
+
+La page de **démonstration FontImage** montre comment utiliser l' `FontImage` extension de balisage:
+
+```xaml
+<Image BackgroundColor="#D1D1D1"
+       Source="{FontImage &#xf30c;, FontFamily={OnPlatform iOS=Ionicons, Android=ionicons.ttf#}, Size=44}" />
+```
+
+Dans cet exemple, la version abrégée du nom `FontImageExtension` de la classe est utilisée pour afficher une icône Xbox, à partir de la famille de polices [`Image`](xref:Xamarin.Forms.Image)Ionicons, dans un. L’expression utilise également l' `OnPlatform` extension de balisage pour `FontFamily` spécifier des valeurs de propriété différentes sur iOS et Android. En outre, la `Glyph=` partie de l’expression est éliminée, et les propriétés d’extension de balisage définies sont séparées par des virgules. Notez que, si le caractère Unicode de l’icône `\uf30c`est, il doit être placé dans une séquence d’échappement en `&#xf30c;`XAML et devient donc.
+
+Voici le programme en cours d’exécution :
+
+[ ![Capture d’écran de la démonstration de l’extension de balisage FontImage](consuming-images/fontimagedemo.png "FontImage") ] (consuming-images/fontimagedemo-large.png#lightbox "Démonstration FontImage")
+
+Pour plus d’informations sur l’affichage des icônes de police en spécifiant `FontImageSource` les données d’icône de police dans un objet, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons).
 
 ## <a name="define-your-own-markup-extensions"></a>Définir vos propres Extensions de balisage
 
