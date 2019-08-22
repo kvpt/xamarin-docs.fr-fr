@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: a6fe5cc3a126cc42c07f38b89c5d1de308b3c0dc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109911"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525783"
 ---
 # <a name="application-package-size"></a>Taille des packages d'application
 
@@ -63,17 +63,17 @@ L’option de build de *déploiement d’assembly rapide* peut être utilisée p
 
 Pour activer *le déploiement d’assembly rapide*, procédez comme suit :
 
-1.  Cliquez avec le bouton droit sur le projet Android dans l’Explorateur de solutions et sélectionnez **Options**.
+1. Cliquez avec le bouton droit sur le projet Android dans l’Explorateur de solutions et sélectionnez **Options**.
 
-2.  Dans la boîte de dialogue Options du projet, sélectionnez **Build Android** :  
+2. Dans la boîte de dialogue Options du projet, sélectionnez **Build Android** :  
 
     ![Options de projet Android](app-package-size-images/fastdev0.png)
 
-3.  Cochez les cases **case runtime partagé Mono** et **Déploiement d’assembly rapide** :  
+3. Cochez les cases **case runtime partagé Mono** et **Déploiement d’assembly rapide** :  
 
     ![cases à cocher sélectionnées sous l’onglet Packages](app-package-size-images/fastdev.png)
 
-4.  Cliquez sur le bouton **OK** pour enregistrer les modifications et fermez la boîte de dialogue Options du projet.
+4. Cliquez sur le bouton **OK** pour enregistrer les modifications et fermez la boîte de dialogue Options du projet.
 
 
 La prochaine fois que l’application sera générée pour le débogage, les assemblys seront installés directement sur l’appareil (s’ils ne l’ont pas déjà été) et un plus petit package d’application (qui n’inclut pas les assemblys) sera installé sur l’appareil. Cela réduit le temps nécessaire pour que les modifications apportées à l’application s’exécutent pour le test.

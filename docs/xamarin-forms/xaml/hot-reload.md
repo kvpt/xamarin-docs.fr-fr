@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 4f6a0b45d37252c141b2741dd0b37a980c958a51
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 59b72daecdc1159494d069bec044ee1891916d11
+ms.sourcegitcommit: fd349a121164c85545f4b0881940eefdd0cf3b65
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984531"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896402"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>Rechargement à chaud XAML pour Xamarin. Forms (version préliminaire)
 
@@ -30,7 +30,7 @@ Xamarin.Forms | 4,1 ou version ultérieure
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>Utiliser le rechargement à chaud XAML pour Xamarin. Forms
 
-Aucune installation ou configuration supplémentaire n’est requise pour utiliser le rechargement à chaud XAML. Il est intégré à Visual Studio et peut être activé dans les paramètres de l’IDE. Une fois activé, vous pouvez commencer à utiliser le rechargement à chaud XAML en déboguant votre application sur un émulateur, un simulateur ou un appareil physique.
+Aucune installation ou configuration supplémentaire n’est requise pour utiliser le rechargement à chaud XAML. Il est intégré à Visual Studio et peut être activé dans les paramètres de l’IDE. Une fois activé, vous pouvez commencer à utiliser le rechargement à chaud XAML en déboguant votre application sur un émulateur, un simulateur ou un appareil physique. Actuellement, le rechargement à chaud XAML fonctionne uniquement lors du débogage sur iOS ou Android.
 
 Sur Windows, le rechargement à chaud XAML peut être activé en activant la case à cocher Activer le rechargement à **chaud Xamarin** dans **Outils** > **options** > **Xamarin** > rechargement**chaud**.
 
@@ -53,7 +53,7 @@ Si vous apportez une modification que le rechargement à chaud XAML ne peut pas 
 
 Si vous étiez dans le cadre de la préversion privée, votre extension de rechargement à chaud XAML sera automatiquement mise à jour lors de la mise à jour de Visual Studio. Si vous choisissez de ne pas mettre à jour Visual Studio, vous pouvez continuer à utiliser la version actuelle du rechargement à chaud XAML, mais vous ne recevrez pas d’autres mises à jour via le flux d’extension privé en préversion.
 
-## <a name="troubleshooting"></a>Résolution de problèmes
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 - Si le rechargement à chaud XAML ne parvient pas à s’initialiser:
   - Mettez à jour votre version de Xamarin. Forms.

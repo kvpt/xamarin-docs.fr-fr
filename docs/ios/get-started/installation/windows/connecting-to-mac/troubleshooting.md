@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865804"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890164"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Résolution des problèmes de connexion pour un hôte de build Xamarin.iOS
 
@@ -83,6 +83,7 @@ L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus
     ```bash
     ssh amyb@10.1.8.95
     ```
+
     <a name="stepnine" />
 
 9. Si l’**étape 8 réussit**, vous pouvez essayer d’exécuter une commande simple comme `ls` via la connexion :
@@ -218,7 +219,7 @@ Ce message peut être ignoré tant que le Mac exécute OS X 10.11 (El Capitan)
 
 Ce message peut être ignoré sauf si vous remarquez que la boîte de dialogue de connexion n’affiche pas l’adresse IP de l’hôte de build Mac. Si l’adresse IP ne figure _pas_ dans cette boîte de dialogue, vous pouvez toujours [ajouter le Mac manuellement](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac).
 
-#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>« Utilisateur a non valide à partir de 10.1.8.95 » et « input\_userauth\_request : utilisateur a non valide [autorisation préalable] »
+#### <a name="invalid-user-a-from-101895-and-input_userauth_request-invalid-user-a-preauth"></a>« Utilisateur a non valide à partir de 10.1.8.95 » et « input\_userauth\_request : utilisateur a non valide [autorisation préalable] »
 
 Vous pouvez remarquer ce message si vous consultez le fichier **sshd.log**. Ces messages font partie du processus de connexion normal. Ils s’affichent car Xamarin utilise temporairement le nom d’utilisateur **a** lors de la récupération de l’_empreinte digitale SSH_.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5729c32ca671a4fcc309d235a34929dcba6a3d03
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865582"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621112"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
@@ -55,21 +55,21 @@ Le workflow suivant décrit les étapes à effectuer pour commencer à utiliser 
 3. Gérez le bêta testing :
     - Ajoutez les métadonnées.
     - Ajoutez les utilisateurs internes :
-        - Le maximum est de 25 utilisateurs.
+      - Le maximum est de 25 utilisateurs.
     - Ajoutez les utilisateurs externes :
-        - Le maximum est de 1 000 utilisateurs.
-        - Nécessite une revue de test bêta, qui doit respecter les règles d’Apple.
+      - Le maximum est de 1 000 utilisateurs.
+      - Nécessite une revue de test bêta, qui doit respecter les règles d’Apple.
 4. Collectez les commentaires des utilisateurs, prenez les actions requises, puis recommencez l’étape 2.
 
 ## <a name="create-an-itunes-connect-record"></a>Créer un enregistrement iTunes Connect
 
-1.  Connectez-vous au [portail iTunes Connect](https://itunesconnect.apple.com/) avec vos identifiants développeur Apple.
-2.  Sélectionnez **Mes apps** :
+1. Connectez-vous au [portail iTunes Connect](https://itunesconnect.apple.com/) avec vos identifiants développeur Apple.
+2. Sélectionnez **Mes apps** :
 
     [![](testflight-images/my-apps.png "Sélectionner Mes apps")](testflight-images/my-apps.png#lightbox)
 
 
-3.  Dans l’écran **Mes apps**, cliquez sur le bouton **+** en haut à gauche de l’écran pour ajouter une nouvelle application. Si vous avez des comptes de développeur Mac et iOS, vous êtes invité à choisir le type de la nouveau application.
+3. Dans l’écran **Mes apps**, cliquez sur le bouton **+** en haut à gauche de l’écran pour ajouter une nouvelle application. Si vous avez des comptes de développeur Mac et iOS, vous êtes invité à choisir le type de la nouveau application.
 
 La fenêtre de soumission **Nouvelle app iOS** qui s’affiche doit contenir exactement les mêmes informations que celles figurant dans le fichier Info.plist de votre application
 
@@ -84,12 +84,12 @@ Le formulaire doit comporter exactement les mêmes informations que celles du fi
 [![](testflight-images/infoplist.png "Fichier Info.plist de l’application")](testflight-images/infoplist.png#lightbox)
 [![](testflight-images/newiosapp.png "Formulaire dans iTunes Connect")](testflight-images/newiosapp.png#lightbox)
 
--  **Nom** : nom descriptif entré au moment de la création du bundle d’application. Ce nom doit être strictement identique au **nom d’application** entré dans votre fichier `Info.plist`.
--  **Langue principale** : langue par défaut utilisée dans l’application. Il s’agit généralement de la langue dans laquelle vous parlez.
--  **Identifiant de lot** : liste déroulante répertoriant tous les ID d’application créés dans votre compte de développeur.
-    *   **Suffixe de l’identifiant de lot** : si vous avez sélectionné un identifiant de lot générique (par exemple, qui se termine par un *, comme dans l’exemple ci-dessus), vous êtes invité à entrer le suffixe dans la zone supplémentaire qui s’affiche. Dans l’exemple, l’**identifiant de lot** est `mobi.chkn.*` et le suffixe est **PageView**. Ces deux éléments composent l’**identificateur de lot** spécifié dans le fichier `Info.plist`.
--  **Version** : numéro de version de l’application chargée. La version est choisie par le développeur.
--  **SKU** : la référence SKU est un identificateur unique pour votre application. Elle n’est pas visible par les utilisateurs. Elle peut être considérée comme un ID produit. Dans l’exemple ci-dessus, j’ai choisi la date avec un numéro de version pour cette date.
+- **Nom** : nom descriptif entré au moment de la création du bundle d’application. Ce nom doit être strictement identique au **nom d’application** entré dans votre fichier `Info.plist`.
+- **Langue principale** : langue par défaut utilisée dans l’application. Il s’agit généralement de la langue dans laquelle vous parlez.
+- **Identifiant de lot** : liste déroulante répertoriant tous les ID d’application créés dans votre compte de développeur.
+  - **Suffixe de l’identifiant de lot** : si vous avez sélectionné un identifiant de lot générique (par exemple, qui se termine par un *, comme dans l’exemple ci-dessus), vous êtes invité à entrer le suffixe dans la zone supplémentaire qui s’affiche. Dans l’exemple, l’**identifiant de lot** est `mobi.chkn.*` et le suffixe est **PageView**. Ces deux éléments composent l’**identificateur de lot** spécifié dans le fichier `Info.plist`.
+- **Version** : numéro de version de l’application chargée. La version est choisie par le développeur.
+- **SKU** : la référence SKU est un identificateur unique pour votre application. Elle n’est pas visible par les utilisateurs. Elle peut être considérée comme un ID produit. Dans l’exemple ci-dessus, j’ai choisi la date avec un numéro de version pour cette date.
 
 
 ## <a name="upload-your-app"></a>Charger votre application
@@ -190,9 +190,9 @@ Vous pouvez désactiver les tests à tout moment.
 
 Les testeurs internes sont des membres de votre équipe de développement auxquels a été attribué l’un des rôles suivants dans iTunes Connect :
 
--  **Administrateur** : un administrateur est responsable de l’ajout et de la gestion des nouveaux utilisateurs dans iTunes Connect.
--  **Juridique** : l’Agent de l’équipe est le seul utilisateur administrateur qui peut avoir ce rôle. Il a en charge la signature des contrats.
--  **Technique** : un utilisateur technique peut modifier la plupart des propriétés d’une application. Par exemple, il peut modifier les informations de l’application, charger un binaire et soumettre une application pour revue.
+- **Administrateur** : un administrateur est responsable de l’ajout et de la gestion des nouveaux utilisateurs dans iTunes Connect.
+- **Juridique** : l’Agent de l’équipe est le seul utilisateur administrateur qui peut avoir ce rôle. Il a en charge la signature des contrats.
+- **Technique** : un utilisateur technique peut modifier la plupart des propriétés d’une application. Par exemple, il peut modifier les informations de l’application, charger un binaire et soumettre une application pour revue.
 
 Chaque build peut être partagée par 25 membres au maximum.
 

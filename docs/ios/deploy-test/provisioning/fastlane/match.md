@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0363f6fa1611a15c6925717f7bdf3905f467831e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 92631fa50dc4826e70df4333bb55f7f69937d053
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107792"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526548"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane pour iOS : match
 
@@ -53,7 +53,9 @@ Si vous êtes administrateur de l’équipe, créez un référentiel Git privé 
 
 Dans le terminal, basculez vers le répertoire du projet et exécutez :
 
-    fastlane match init
+```
+fastlane match init
+```
 
 Lorsque vous y êtes invité, entrez l’URL du référentiel Git :
 
@@ -76,11 +78,13 @@ L’initialisation du projet crée un matchfile, qui est un fichier texte que vo
 
 En fonction du type d’environnement ciblé, utilisez l’une des commandes suivantes pour créer un certificat et un profil de provisionnement, et les stocker dans votre nouveau référentiel Git :
 
-    fastlane match appstore
+```
+fastlane match appstore
 
-    fastlane match adhoc
+fastlane match adhoc
 
-    fastlane match development
+fastlane match development
+```
 
 Ces commandes, en plus de créer des certificats et profils, ajoutent les éléments suivants (ou les mettent à jour s’ils existent déjà) dans votre référentiel Git :
 
@@ -99,15 +103,21 @@ Les profils de provisionnement sont créés dans `~/Library/MobileDevice/Provisi
 
 Si vous avez des certificats non nettoyés, vous pouvez utiliser `nuke` afin de révoquer des certificats et des profils pour chaque environnement, en utilisant les commandes suivantes :
 
-    fastlane match nuke
+```
+fastlane match nuke
+```
 
 Pour révoquer la totalité des certificats et des profils de provisionnement d’un environnement spécifique, exécutez :
 
-    fastlane match nuke development
+```
+fastlane match nuke development
+```
 
  ou
 
-    fastlane match nuke distribution
+```
+fastlane match nuke distribution
+```
 
 fastlane vous demande de confirmer la suppression des fichiers indiqués avant de les supprimer.
 
@@ -127,15 +137,21 @@ Vous pouvez utiliser les options suivantes pour bénéficier d’une assistance 
 
 - Utilisez l’indicateur `-–help` pour obtenir la liste de toutes les commandes disponibles :
 
-        fastlane match cert --help
+    ```
+    fastlane match cert --help
+    ```
 
 - Utilisez l’indicateur `-–verbose` pour afficher des commentaires plus détaillés dans la sortie :
 
-        fastlane match --development --verbose
+    ```
+    fastlane match --development --verbose
+    ```
 
 - Utilisez l’indicateur `--force_for_new_devices` pour forcer le renouvellement des profils de provisionnement en cas de changement du nombre d’appareils sur le portail des développeurs.
 
-        fastlane match development --force_for_new_devices
+    ```
+    fastlane match development --force_for_new_devices
+    ```
 
 ## <a name="related-links"></a>Liens associés
 

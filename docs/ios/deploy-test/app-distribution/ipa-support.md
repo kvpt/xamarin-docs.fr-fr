@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 100b98d12d45713b0d5f6dfb435f3aa879e7da9f
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: c430d7771d443b80bec2a3e8a79565e2a7994a8b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899120"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887577"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Prise en charge d’IPA dans Xamarin.iOS
 
@@ -128,7 +128,7 @@ Dans certains cas, par exemple dans un environnement d’intégration continue (
     <IpaIncludeArtwork>false</IpaIncludeArtwork>
     ```
 
-1. Si vous incluez un fichier **iTunesMetadata.plist** facultatif, cliquez sur le bouton **...**, sélectionnez-le dans la liste, puis cliquez sur **OK** :
+1. Si vous incluez un fichier **iTunesMetadata.plist** facultatif, cliquez sur le bouton **...** , sélectionnez-le dans la liste, puis cliquez sur **OK** :
 
      ![](ipa-support-images/imagexs03.png "Sélectionner iTunesMetadata.plist dans la liste")
 
@@ -153,7 +153,7 @@ Une fois que vous avez créé et sélectionné le profil de provisionnement, que
     > [!NOTE]
     > Une configuration ad hoc n’est pas forcément disponible pour les nouveaux projets Xamarin.iOS. Si elle n’est pas disponible, sélectionnez la configuration **Mise en production**.
 
-3. Si vous incluez un fichier **iTunesMetadata.plist** facultatif, cliquez sur le bouton **...**, sélectionnez-le dans la liste, puis cliquez sur **Ouvrir** :
+3. Si vous incluez un fichier **iTunesMetadata.plist** facultatif, cliquez sur le bouton **...** , sélectionnez-le dans la liste, puis cliquez sur **Ouvrir** :
 
     ![](ipa-support-images/imagevs03.png "Sélectionner iTunesMetadata.plist dans la liste")
 
@@ -219,6 +219,7 @@ Voici à quoi peut ressembler un exemple complet de cette approche sur Windows 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
+
 Ou sur Mac :
 
 ```bash
@@ -231,7 +232,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 Vous pouvez remettre le paquet IPA à vos utilisateurs de test pour qu’ils l’installent sur leurs appareils iOS, ou le préparer à un déploiement en entreprise. Quelle que soit la méthode choisie, l’utilisateur final installe le paquet dans son application iTunes sur Mac ou sur PC Windows en double-cliquant sur le fichier IPA (ou en le faisant glisser vers la fenêtre ouverte d’iTunes).
 
-La nouvelle application iOS s’affiche dans la section **My Apps (Mes applications)**. Pour obtenir des informations sur l’application, il vous suffit de cliquer sur celle-ci avec le bouton droit de la souris :
+La nouvelle application iOS s’affiche dans la section **My Apps (Mes applications)** . Pour obtenir des informations sur l’application, il vous suffit de cliquer sur celle-ci avec le bouton droit de la souris :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

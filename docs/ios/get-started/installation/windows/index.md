@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 7c7a3e311a6c5f19242b51dd14f59bcdc9a75c64
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: 2f580571e7b871e724ca1a760060a238098e4f44
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574713"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526499"
 ---
 # <a name="installing-xamarinios-on-windows"></a>Installation de Xamarin.iOS sur un système Windows
 
@@ -71,10 +71,10 @@ Afin de préparer la configuration pour le développement Xamarin.iOS dans Visua
 
 Pour générer des applications Xamarin.iOS avec Visual Studio 2017 sur Windows, vous avez besoin des éléments suivants :
 
--  Machine Windows sur laquelle Visual Studio 2017 est installé. Il peut s’agir d’une machine virtuelle ou physique.
+- Machine Windows sur laquelle Visual Studio 2017 est installé. Il peut s’agir d’une machine virtuelle ou physique.
     - [Configuration requise pour Windows](~/cross-platform/get-started/requirements.md#windows-requirements)
     
--  Un Mac accessible via le réseau configuré avec les outils de génération d’Apple et Xamarin.iOS. Visual Studio 2017 accède à cette machine via une connexion réseau pour utiliser les outils de génération d’Apple, qui sont nécessaires pour compiler des applications iOS natives. 
+- Un Mac accessible via le réseau configuré avec les outils de génération d’Apple et Xamarin.iOS. Visual Studio 2017 accède à cette machine via une connexion réseau pour utiliser les outils de génération d’Apple, qui sont nécessaires pour compiler des applications iOS natives. 
     - [Configuration requise pour Mac](~/cross-platform/get-started/requirements.md#macos-requirements)
 
 ## <a name="setup"></a>Installation

@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c00f074e2f002d82795e9bd445fdf617275089f
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301264"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525023"
 ---
 # <a name="manually-signing-the-apk"></a>Signature manuelle de l’APK
 
 
 Une fois l’application générée pour sa mise en production, l’APK doit être signé avant distribution afin de pouvoir être exécuté sur un appareil Android. Ce processus est généralement géré par l’environnement IDE. Toutefois, dans certaines situations, il est nécessaire de signer l’APK manuellement au niveau de la ligne de commande. La signature d’un APK met en œuvre les étapes suivantes :
 
-1.   **Créer une clé privée** &ndash; Cette étape ne doit être effectuée qu’une seule fois. Une clé privée est nécessaire pour signer numériquement l’APK.
+1. **Créer une clé privée** &ndash; Cette étape ne doit être effectuée qu’une seule fois. Une clé privée est nécessaire pour signer numériquement l’APK.
     Une fois la clé privée préparée, cette étape peut être ignorée pour les prochaines builds de mise en production.
 
-2.   **Compresser l’APK dans un fichier zipalign** &ndash; *Zipalign* est un processus d’optimisation qui est réalisé sur une application. Il permet à Android d’interagir plus efficacement avec l’APK au moment de l’exécution. Xamarin.Android effectue une vérification au moment de l’exécution et n’autorise pas l’exécution de l’application si l’APK n’a pas été compressé dans un fichier zipalign.
+2. **Compresser l’APK dans un fichier zipalign** &ndash; *Zipalign* est un processus d’optimisation qui est réalisé sur une application. Il permet à Android d’interagir plus efficacement avec l’APK au moment de l’exécution. Xamarin.Android effectue une vérification au moment de l’exécution et n’autorise pas l’exécution de l’application si l’APK n’a pas été compressé dans un fichier zipalign.
 
-3.  **Signer l’APK** &ndash; Cette étape implique l’utilisation de l’utilitaire **apksigner** du kit Android SDK et la signature de l’APK avec la clé privée qui a été créée à l’étape précédente. Les applications développées avec des versions des outils de génération du kit Android SDK antérieures à la version 24.0.3 utiliseront l’application **jarsigner** du JDK. Ces deux outils sont décrits plus en détail ci-dessous. 
+3. **Signer l’APK** &ndash; Cette étape implique l’utilisation de l’utilitaire **apksigner** du kit Android SDK et la signature de l’APK avec la clé privée qui a été créée à l’étape précédente. Les applications développées avec des versions des outils de génération du kit Android SDK antérieures à la version 24.0.3 utiliseront l’application **jarsigner** du JDK. Ces deux outils sont décrits plus en détail ci-dessous. 
 
 L’ordre des étapes est important et dépend de l’outil utilisé pour signer l’APK. Si vous utilisez **apksigner**, il est important de commencer par compresser l’application dans un fichier **zipalign**, puis de le signer avec **apksigner**.  Si **jarsigner** doit être utilisé pour signer l’APK, il est important de commencer par signer l’APK, puis d’exécuter **zipalign**. 
 

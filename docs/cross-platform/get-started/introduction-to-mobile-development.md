@@ -6,12 +6,12 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: conceptdev
 ms.author: crdun
 ms.date: 07/16/2019
-ms.openlocfilehash: f958e53a2468263898ffedf0ca2ab6afc42d2923
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
+ms.openlocfilehash: 372aee9d48866ac49f34b9550fdfa37b7cc0b646
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290120"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526668"
 ---
 # <a name="what-is-xamarin"></a>Qu’est-ce que Xamarin ?
 
@@ -29,12 +29,12 @@ Xamarin vous permet de développer dans C#, avec une bibliothèque de classes et
 
 Xamarin possède toute les capacités des plateformes natives, et propose en plus ses propres fonctionnalités, notamment :
 
-1.   **Une liaison complète pour les SDK sous-jacents** : Xamarin contient des liaisons pour quasiment tous les SDK de plateforme sous-jacents, à la fois pour iOS et pour Android. En outre, ces liaisons sont fortement typées, ce qui signifie qu’il est facile de les parcourir et de les utiliser. En outre, elles fournissent un contrôle de type robuste au moment de la compilation et pendant le développement. De cette façon, vous obtenez moins d’erreurs d’exécution et des applications de meilleure qualité.
-1.   **Objective-C, Java, C et C++ Interop** : Xamarin fournit des fonctionnalités qui permettent d’appeler directement les bibliothèques Objective-C, Java, C et C++. Ainsi, vous pouvez utiliser une large gamme de code tiers déjà écrit. En outre, cela vous permet de tirer parti des bibliothèques iOS et Android existantes qui sont écrites en C/C++, Java ou Objective-C. Xamarin fournit des projets de liaison qui permettent de lier facilement des bibliothèques Objective-C et Java natives à l’aide d’une syntaxe déclarative.
-1.   **Des constructions de langage modernes** : les applications Xamarin sont écrites en C#. Ce langage moderne inclut des améliorations significatives par rapport à Objective-C et à Java, telles que les *fonctionnalités de langage dynamique, les *constructions fonctionnelles* comme les *expressions lambda, *LINQ et la *programmation parallèle*, des *génériques sophistiqués, et bien plus encore.
-1.   **Une bibliothèque de classes de base très riche** : Les applications Xamarin utilisent la bibliothèque de classes de base .NET. Ce très grand ensemble de classes comprend des fonctionnalités complètes, simplifiées et puissantes, telles que la prise en charge du langage XML, des bases de données, de la sérialisation, des E/S, des chaînes et de la mise en réseau, et bien plus encore. Le code C# existant peut être compilé pour être utilisé dans une application. Ainsi, vous pouvez accéder à des milliers de bibliothèques qui vous fourniront des fonctionnalités dont ne dispose pas la bibliothèque de classes de base.
-1.   **Un environnement IDE moderne** : Xamarin utilise Visual Studio pour Mac sur macOS et Visual Studio sur Windows. Ces deux environnements IDE modernes incluent des fonctionnalités telles que la saisie semi-automatique, un système de gestion sophistiqué pour les projets et les solutions, une bibliothèque complète de modèles de projets, un contrôle de code source intégré, et bien d’autres.
-1.   **Une prise en charge mobile multiplateforme** : Xamarin offre une prise en charge multiplateforme élaborée pour les trois principales plateformes mobiles que sont iOS, Android et Windows. Les applications peuvent être écrites pour partager jusqu’à 90 % de leur code. En outre, la bibliothèque Xamarin.Mobile fournit une API unifiée qui permet d’accéder aux ressources qui sont communes aux trois plateformes. Les développeurs mobiles qui ciblent ces trois plateformes mobiles peuvent ainsi réduire considérablement les coûts de développement et accélérer la mise sur le marché.
+1. **Une liaison complète pour les SDK sous-jacents** : Xamarin contient des liaisons pour quasiment tous les SDK de plateforme sous-jacents, à la fois pour iOS et pour Android. En outre, ces liaisons sont fortement typées, ce qui signifie qu’il est facile de les parcourir et de les utiliser. En outre, elles fournissent un contrôle de type robuste au moment de la compilation et pendant le développement. De cette façon, vous obtenez moins d’erreurs d’exécution et des applications de meilleure qualité.
+1. **Objective-C, Java, C et C++ Interop** : Xamarin fournit des fonctionnalités qui permettent d’appeler directement les bibliothèques Objective-C, Java, C et C++. Ainsi, vous pouvez utiliser une large gamme de code tiers déjà écrit. En outre, cela vous permet de tirer parti des bibliothèques iOS et Android existantes qui sont écrites en C/C++, Java ou Objective-C. Xamarin fournit des projets de liaison qui permettent de lier facilement des bibliothèques Objective-C et Java natives à l’aide d’une syntaxe déclarative.
+1. **Des constructions de langage modernes** : les applications Xamarin sont écrites en C#. Ce langage moderne inclut des améliorations significatives par rapport à Objective-C et à Java, telles que les *fonctionnalités de langage dynamique, les *constructions fonctionnelles* comme les *expressions lambda, *LINQ et la *programmation parallèle*, des *génériques sophistiqués, et bien plus encore.
+1. **Une bibliothèque de classes de base très riche** : Les applications Xamarin utilisent la bibliothèque de classes de base .NET. Ce très grand ensemble de classes comprend des fonctionnalités complètes, simplifiées et puissantes, telles que la prise en charge du langage XML, des bases de données, de la sérialisation, des E/S, des chaînes et de la mise en réseau, et bien plus encore. Le code C# existant peut être compilé pour être utilisé dans une application. Ainsi, vous pouvez accéder à des milliers de bibliothèques qui vous fourniront des fonctionnalités dont ne dispose pas la bibliothèque de classes de base.
+1. **Un environnement IDE moderne** : Xamarin utilise Visual Studio pour Mac sur macOS et Visual Studio sur Windows. Ces deux environnements IDE modernes incluent des fonctionnalités telles que la saisie semi-automatique, un système de gestion sophistiqué pour les projets et les solutions, une bibliothèque complète de modèles de projets, un contrôle de code source intégré, et bien d’autres.
+1. **Une prise en charge mobile multiplateforme** : Xamarin offre une prise en charge multiplateforme élaborée pour les trois principales plateformes mobiles que sont iOS, Android et Windows. Les applications peuvent être écrites pour partager jusqu’à 90 % de leur code. En outre, la bibliothèque Xamarin.Mobile fournit une API unifiée qui permet d’accéder aux ressources qui sont communes aux trois plateformes. Les développeurs mobiles qui ciblent ces trois plateformes mobiles peuvent ainsi réduire considérablement les coûts de développement et accélérer la mise sur le marché.
 
 Les fonctionnalités de Xamarin viennent répondre aux besoins des développeurs qui souhaitent utiliser un langage et une plateforme modernes pour développer des applications mobiles multiplateformes.
 

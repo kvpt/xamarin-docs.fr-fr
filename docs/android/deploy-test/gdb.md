@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: aa72daae1727e0d100592873a7895a7d8942b4f2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509022"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525502"
 ---
 # <a name="gdb"></a>GDB
 
@@ -24,9 +24,9 @@ Xamarin.Android 4.10 a introduit la prise en charge partielle de l’utilisatio
 
 Il y a trois manières d’utiliser `gdb` :
 
-1.  [Versions de débogage avec déploiement rapide activé](#Debug_Builds_with_Fast_Deployment).
-1.  [Versions de débogage avec déploiement rapide désactivé](#Debug_Builds_without_Fast_Deployment).
-1.  [Versions Release](#Release_Builds).
+1. [Versions de débogage avec déploiement rapide activé](#Debug_Builds_with_Fast_Deployment).
+1. [Versions de débogage avec déploiement rapide désactivé](#Debug_Builds_without_Fast_Deployment).
+1. [Versions Release](#Release_Builds).
 
 
 En cas de problème, veuillez consulter la section [Dépannage](#Troubleshooting).
@@ -83,8 +83,8 @@ Les versions de débogage *avec déploiement rapide de* fonctionnent en copiant 
 
 Il y a deux manières d’y remédier :
 
--   Définissez la propriété système `debug.mono.log` afin que le répertoire `.__override__` soit créé.
--   Incluez `gdbserver` dans votre `.apk`.
+- Définissez la propriété système `debug.mono.log` afin que le répertoire `.__override__` soit créé.
+- Incluez `gdbserver` dans votre `.apk`.
 
 ### <a name="setting-the-debugmonolog-system-property"></a>Définition de la propriété système `debug.mono.log`
 
@@ -141,9 +141,9 @@ GNU gdb (GDB) 7.3.1-gg2
 
 `gdb` prend en charge trois opérations :
 
-1.  L’autorisation `INTERNET`.
-2.  Le débogage d’application activé.
-3.  Un `gdbserver` accessible.
+1. L’autorisation `INTERNET`.
+2. Le débogage d’application activé.
+3. Un `gdbserver` accessible.
 
 L’autorisation `INTERNET` est activée par défaut dans les applications de débogage. Si elle n’est pas déjà présente dans votre application, vous pouvez l’ajouter en modifiant **Properties/AndroidManifest.xml**, ou en modifiant les [Propriétés du projet](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest).
 
@@ -161,7 +161,7 @@ Une ombre au tableau : la cible MSBuild `_Gdb` va tuer toutes les instances d�
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
-### <a name="monopmip-doesnt-work"></a>`mono_pmip` ne fonctionne pas
+### <a name="mono_pmip-doesnt-work"></a>`mono_pmip` ne fonctionne pas
 
 La fonction `mono_pmip` (utile pour que [obtienne des frames de pile managées ](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)) est exportée à partir de `libmonosgen-2.0.so`, qui n’est actuellement pas déroulé par la cible `_Gdb`. (Ceci fera l’objet d’un correctif dans une version future.)
 

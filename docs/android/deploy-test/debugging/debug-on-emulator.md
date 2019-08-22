@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 6d595a487d87c7e30c87a0347d25404d0b2f7dbc
-ms.sourcegitcommit: 7eed80186e23e6aff3ddbbf7ce5cd1fa20af1365
+ms.openlocfilehash: 133550bab03c4d2e3826ea59cf231ac3d85f29cc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2018
-ms.locfileid: "51527311"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525655"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Débogage sur l’émulateur Android
 
@@ -29,19 +29,19 @@ L’émulateur Android (installé avec la charge de travail **Développement mob
 
 Visual Studio inclut des appareils virtuels préconfigurés qui s’affichent dans le menu déroulant des appareils. Par exemple, dans la capture d’écran suivante de Visual Studio 2017, plusieurs appareils virtuels préconfigurés sont disponibles :
 
--   **VisualStudio\_android-23\_arm\_phone**
+- **VisualStudio\_android-23\_arm\_phone**
 
--   **VisualStudio\_android-23\_arm\_tablet**
+- **VisualStudio\_android-23\_arm\_tablet**
 
--   **VisualStudio\_android-23\_x86\_phone** 
+- **VisualStudio\_android-23\_x86\_phone** 
 
--   **VisualStudio\_android-23\_x86\_tablet** 
+- **VisualStudio\_android-23\_x86\_tablet** 
 
 [![Appareils virtuels](debug-on-emulator-images/win/01-virtual-devices-sml.png)](debug-on-emulator-images/win/01-virtual-devices.png#lightbox)
 
 En règle générale, vous sélectionnez l’appareil virtuel **VisualStudio\_android-23\_x86\_phone** pour tester et déboguer une application pour téléphone. Si l’un de ces appareils virtuels préconfigurés répond à vos besoins (autrement dit, correspond au niveau d’API cible de votre application), passez directement à la section [Lancement de l’émulateur](#launching) pour commencer à exécuter votre application dans l’émulateur. (Si vous n’êtes pas encore familiarisé avec les niveaux d’API Android, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).)
 
-Si votre projet Xamarin.Android utilise un niveau Framework cible qui n’est pas compatible avec les appareils virtuels disponibles, le menu déroulant liste les appareils virtuels inutilisables sous **Appareils non pris en charge**. Par exemple, dans le projet suivant, le Framework cible est défini sur **Android 7.1 Nougat (API 25)**, qui n’est pas compatible avec les appareils virtuels **Android 6.0** listés dans cet exemple :
+Si votre projet Xamarin.Android utilise un niveau Framework cible qui n’est pas compatible avec les appareils virtuels disponibles, le menu déroulant liste les appareils virtuels inutilisables sous **Appareils non pris en charge**. Par exemple, dans le projet suivant, le Framework cible est défini sur **Android 7.1 Nougat (API 25)** , qui n’est pas compatible avec les appareils virtuels **Android 6.0** listés dans cet exemple :
 
 [![Appareil virtuel incompatible](debug-on-emulator-images/win/02-incompatible-level-sml.png)](debug-on-emulator-images/win/02-incompatible-level.png#lightbox)
 
@@ -52,9 +52,9 @@ Avant de pouvoir configurer les appareils virtuels pour un nouveau niveau d’AP
 
 Visual Studio pour Mac inclut des appareils virtuels préconfigurés qui s’affichent dans le menu déroulant des appareils. Par exemple, dans la capture d’écran suivante, deux appareils virtuels préconfigurés sont disponibles :
 
--   **Android\_Accelerated\_x86**
+- **Android\_Accelerated\_x86**
 
--   **Android\_ARMv7a**
+- **Android\_ARMv7a**
 
 [![Appareils virtuels](debug-on-emulator-images/mac/01-virtual-devices-sml.png)](debug-on-emulator-images/mac/01-virtual-devices.png#lightbox)
 
@@ -96,8 +96,8 @@ Vous pouvez laisser l’émulateur s’exécuter ; il n’est pas nécessaire d
 Les versions les plus récentes de l’émulateur Android incluent une fonctionnalité appelée _Quick Boot_ qui lance l’émulateur en quelques secondes seulement. Quand vous fermez l’émulateur, il prend un instantané de l’état de l’appareil virtuel afin de pouvoir le restaurer rapidement à partir de cet état lors de son redémarrage.
 Pour accéder à cette fonctionnalité, vous avez besoin des éléments suivants :
 
--   Émulateur Android version 27.0.2 ou ultérieure
--   Android SDK Tools version 26.1.1 ou ultérieure
+- Émulateur Android version 27.0.2 ou ultérieure
+- Android SDK Tools version 26.1.1 ou ultérieure
 
 Quand les versions de l’émulateur et des outils SDK répertoriées ci-dessus sont installées, la fonctionnalité Quick Boot est activée par défaut. 
 
@@ -125,10 +125,10 @@ Ce guide a expliqué le processus de configuration de l’émulateur Android pou
 
 Pour plus d’informations sur l’utilisation de l’émulateur Android, consultez les rubriques suivantes relatives au développement Android :
 
--   [Navigation dans l’écran](https://developer.android.com/studio/run/emulator.html#navigate)
+- [Navigation dans l’écran](https://developer.android.com/studio/run/emulator.html#navigate)
 
--   [Réaliser des tâches de base dans l’émulateur](https://developer.android.com/studio/run/emulator.html#tasks)
+- [Réaliser des tâches de base dans l’émulateur](https://developer.android.com/studio/run/emulator.html#tasks)
 
--   [Utilisation des contrôles étendus, des paramètres et de l’aide](https://developer.android.com/studio/run/emulator.html#extended)
+- [Utilisation des contrôles étendus, des paramètres et de l’aide](https://developer.android.com/studio/run/emulator.html#extended)
 
--   [Exécuter l’émulateur avec Quick Boot](https://developer.android.com/studio/run/emulator#quickboot)
+- [Exécuter l’émulateur avec Quick Boot](https://developer.android.com/studio/run/emulator#quickboot)

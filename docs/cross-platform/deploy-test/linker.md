@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: caf43e6cb975b65240f5c0f8538b9be175978eac
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: bf934d50c90efaba266cbfac00aa5140ea92009b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780458"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526686"
 ---
 # <a name="custom-linker-configuration"></a>Configuration personnalisée de l’éditeur de liens
 
@@ -20,12 +20,12 @@ Si l’ensemble d’options par défaut ne suffit pas, vous pouvez piloter le pr
 Vous pouvez fournir à l’éditeur de liens des définitions supplémentaires pour garantir que le type, les méthodes et/ou les champs ne sont pas éliminés de votre application. Dans votre propre code, le meilleur moyen consiste à utiliser l’attribut personnalisé `[Preserve]`, tel que décrit dans les guides [Liaison sur iOS](~/ios/deploy-test/linker.md) et [Liaison sur Android](~/android/deploy-test/linker.md).
 Toutefois si vous avez besoin de définitions issues du Kit de développement logiciel (SDK) ou des assemblys du produit, l’utilisation d’un fichier XML est sans doute la meilleure solution (contrairement à l’ajout de code qui permettra d’assurer que l’éditeur de liens n’éliminera pas ce dont vous avez besoin).
 
-Pour ce faire, définissez un fichier XML avec l’élément de niveau supérieur <linker> qui contient les nœuds *assembly* contenant à leur tour les nœuds *type*, contenant pour leur part les nœuds *méthode* et *champ*.
+Pour ce faire, définissez un fichier XML avec l’élément de niveau supérieur `<linker>` qui contient les nœuds *assembly* contenant à leur tour les nœuds *type*, contenant pour leur part les nœuds *méthode* et *champ*.
 
 Une fois que vous avez ce fichier de description de l’éditeur de liens, ajoutez-le à votre projet et :
 
--  **Pour Android** : définissez  **Action de génération** sur **LinkDescription**
--  **Pour iOS** : définissez **Action de génération** sur **LinkDescription**
+- **Pour Android** : définissez  **Action de génération** sur **LinkDescription**
+- **Pour iOS** : définissez **Action de génération** sur **LinkDescription**
 
 
 L’exemple suivant montre à quoi ressemble le fichier XML :

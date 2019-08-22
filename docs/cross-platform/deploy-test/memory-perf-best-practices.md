@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 2665e45277eccaedbbbbd77f6c7c0ca47700d950
-ms.sourcegitcommit: c2bffcdee5a7c619280c6b9032ba90e4df8b63d9
+ms.openlocfilehash: 75bc540ee518a1f5cfef29886d968648ea5769ed
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68533020"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526704"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
@@ -262,9 +262,9 @@ Les langages managés tels que C# utilisent le nettoyage de mémoire pour libé
 
 SGen utilise l’un des trois segments de mémoire pour allouer de l’espace aux objets :
 
--  **La « nursery »**  : Là où sont alloués les nouveaux petits objets. Lorsque la nursery manque d’espace, un nettoyage mineur de la mémoire est effectué. Tous les objets actifs seront déplacés vers le segment de mémoire principal.
--  **Le segment de mémoire principal** : Là où sont conservés les objets de longue durée. Si le segment de mémoire principal manque d’espace, un nettoyage majeur de la mémoire est effectué. Si un nettoyage de la mémoire ne parvient pas à libérer suffisamment de mémoire, SGen demande davantage de mémoire au système.
--  **L’espace des objets volumineux** : Là où sont conservés les objets qui nécessitent plus de 8 000 octets. Les objets volumineux ne passeront pas par la nursery et iront directement dans ce segment.
+- **La « nursery »**  : Là où sont alloués les nouveaux petits objets. Lorsque la nursery manque d’espace, un nettoyage mineur de la mémoire est effectué. Tous les objets actifs seront déplacés vers le segment de mémoire principal.
+- **Le segment de mémoire principal** : Là où sont conservés les objets de longue durée. Si le segment de mémoire principal manque d’espace, un nettoyage majeur de la mémoire est effectué. Si un nettoyage de la mémoire ne parvient pas à libérer suffisamment de mémoire, SGen demande davantage de mémoire au système.
+- **L’espace des objets volumineux** : Là où sont conservés les objets qui nécessitent plus de 8 000 octets. Les objets volumineux ne passeront pas par la nursery et iront directement dans ce segment.
 
 L’un des avantages de SGen est que le temps qu’il prend pour effectuer un nettoyage mineur de la mémoire est proportionnel au nombre de nouveaux objets actifs qui ont été créés depuis le dernier nettoyage mineur de la mémoire. Cela permet de réduire l’impact du nettoyage de la mémoire sur les performances d’une application, car les nettoyages mineurs seront moins longs que les nettoyages majeurs. Les nettoyages majeurs de la mémoire continueront d’être effectués, mais moins fréquemment.
 
@@ -307,16 +307,16 @@ La capture d’écran suivante présente les options de l’éditeur de liens da
 
 L’éditeur de liens fournit trois paramètres pour contrôler son comportement :
 
--  **Ne pas lier** : L’éditeur de liens ne supprime aucun des types et méthodes inutilisés. Pour des raisons de performances, il s’agit du paramètre utilisé par défaut pour les builds de débogage.
--  **Lier les SDK Framework uniquement/Assemblys de SDK uniquement** : Ces paramètres réduisent uniquement la taille des assemblys qui sont fournis par Xamarin. Le code utilisateur n’est pas concerné.
--  **Lier tous les assemblys** : Il s’agit d’une optimisation plus agressive qui cible les assemblys du SDK et le code utilisateur. Pour les liaisons, ce paramètre supprime les champs de stockage inutilisés et allège chaque instance (ou objet lié), ce qui permet de consommer moins de mémoire.
+- **Ne pas lier** : L’éditeur de liens ne supprime aucun des types et méthodes inutilisés. Pour des raisons de performances, il s’agit du paramètre utilisé par défaut pour les builds de débogage.
+- **Lier les SDK Framework uniquement/Assemblys de SDK uniquement** : Ces paramètres réduisent uniquement la taille des assemblys qui sont fournis par Xamarin. Le code utilisateur n’est pas concerné.
+- **Lier tous les assemblys** : Il s’agit d’une optimisation plus agressive qui cible les assemblys du SDK et le code utilisateur. Pour les liaisons, ce paramètre supprime les champs de stockage inutilisés et allège chaque instance (ou objet lié), ce qui permet de consommer moins de mémoire.
 
 L’option *Lier tous les assemblys* doit être utilisée avec précaution, car elle peut endommager l’application de façon inattendue. L’analyse statique qui est effectuée par l’éditeur de liens peut ne pas identifier correctement tout le code nécessaire, et entraîner la suppression d’une trop grande quantité de code dans l’application compilée. Vous ne pourrez constater cette situation qu’au moment de l’exécution, lorsque l’application se bloquera. Pour cette raison, il est important de bien tester une application après avoir modifié le comportement de l’éditeur de liens.
 
 Si les tests ne révèlent pas que l’éditeur de liens a supprimé à tort une classe ou une méthode, il est possible de marquer les types ou les méthodes qui ne sont pas statiquement référencés, mais dont l’application a besoin, avec l’un des attributs suivants :
 
--  `Xamarin.iOS.Foundation.PreserveAttribute` : Cet attribut est celui qui est utilisé pour les projets Xamarin.iOS.
--  `Android.Runtime.PreserveAttribute` : Cet attribut est celui qui est utilisé pour les projets Xamarin.Android.
+- `Xamarin.iOS.Foundation.PreserveAttribute` : Cet attribut est celui qui est utilisé pour les projets Xamarin.iOS.
+- `Android.Runtime.PreserveAttribute` : Cet attribut est celui qui est utilisé pour les projets Xamarin.Android.
 
 Par exemple, il peut être nécessaire de conserver les constructeurs par défaut des types qui sont instanciés dynamiquement. En outre, l’utilisation de la sérialisation XML peut nécessiter la conservation des propriétés de types.
 

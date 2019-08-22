@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865891"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526634"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Provisionnement manuel pour Xamarin.iOS
 
@@ -193,14 +193,14 @@ Une fois le profil de provisionnement correctement créé, il peut être nécess
 
 Les certificats et les profils de provisionnement qui ont été créés dans le portail des développeurs Apple peuvent ne pas apparaître automatiquement dans Xcode. Par conséquent, il peut être nécessaire de les télécharger pour qu’ils soient accessibles par Visual Studio pour Mac et Visual Studio. Pour mettre à jour et télécharger des certificats créés dans le portail des développeurs Apple, effectuez les étapes suivantes :
 
-1.   Quittez Visual Studio pour Mac ou Visual Studio.
-2.   Démarrez Xcode.
-3.   Choisissez **Menu Xcode > Préférences...**
-4.   Cliquez sur l’onglet **Comptes**.
-5.   Sélectionnez une équipe, puis cliquez sur le bouton **Télécharger les profils manuels** : [![](manual-provisioning-images/selectteam1.png "Téléchargement de profils manuels")](manual-provisioning-images/selectteam1.png#lightbox)
+1. Quittez Visual Studio pour Mac ou Visual Studio.
+2. Démarrez Xcode.
+3. Choisissez **Menu Xcode > Préférences...**
+4. Cliquez sur l’onglet **Comptes**.
+5. Sélectionnez une équipe, puis cliquez sur le bouton **Télécharger les profils manuels** :  [![](manual-provisioning-images/selectteam1.png "Téléchargement de profils manuels")](manual-provisioning-images/selectteam1.png#lightbox)
 
-6.   Quittez Xcode.
-7.  Démarrez Visual Studio pour Mac ou Visual Studio.
+6. Quittez Xcode.
+7. Démarrez Visual Studio pour Mac ou Visual Studio.
 
 Les nouveaux certificats ou profils de provisionnement sont alors disponibles dans Visual Studio pour Mac ou Visual Studio et prêts à être utilisés.
 

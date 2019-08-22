@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: aac558f52423132bef53f1754307e743c69f6f22
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b3bc6874a8584b60b15d1d373ad97fde565dfc4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121203"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527126"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Compilation pour différents appareils dans Xamarin.iOS
 
@@ -128,8 +128,8 @@ Si votre projet souhaite tirer parti de certaines des fonctionnalités des versi
 
 Pour ce faire, vous devez suivre les étapes suivantes :
 
--  Ouvrez vos **Options de projet** et naviguez vers le volet **Build iOS**.
--  Ajoutez `'-gcc_flags "-weak_framework iAd"'` aux **Options supplémentaires** pour chaque configuration que vous souhaitez lier faiblement sur :
+- Ouvrez vos **Options de projet** et naviguez vers le volet **Build iOS**.
+- Ajoutez `'-gcc_flags "-weak_framework iAd"'` aux **Options supplémentaires** pour chaque configuration que vous souhaitez lier faiblement sur :
 
 
 [![](compiling-for-different-devices-images/image3.png "Options supplémentaires")](compiling-for-different-devices-images/image3.png#lightbox)

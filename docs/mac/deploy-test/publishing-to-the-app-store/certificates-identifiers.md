@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ba09afc477ddaadc07aa415376860eea3c8c28d
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 30731dda1007127caff84eae20696b45803b74f1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57671466"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528994"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Certificats et identificateurs dans Xamarin.Mac
 
@@ -40,10 +40,10 @@ Cliquez sur le lien **All**, puis sur le bouton  **+**  :
 
 Le reste de cette section décrit en détail chacune des quatre étapes à effectuer pour configurer un compte de développeur Mac.
 
--   **Inscrire l’ID d’application Mac** : le développeur doit suivre ces étapes pour chaque application qu’il écrit.
--   **Inscrire les systèmes macOS** : cette opération est obligatoire uniquement lors de l’ajout d’ordinateurs sur lesquels effectuer les tests.
--   **Créer des certificats** : opération nécessaire une seule fois lors de la configuration des certificats, et ultérieurement lors de leur renouvellement.
--   **Créer un profil de provisionnement** : le développeur doit suivre ces étapes pour chaque nouvelle application écrite et lors de l’ajout de nouveaux systèmes.
+- **Inscrire l’ID d’application Mac** : le développeur doit suivre ces étapes pour chaque application qu’il écrit.
+- **Inscrire les systèmes macOS** : cette opération est obligatoire uniquement lors de l’ajout d’ordinateurs sur lesquels effectuer les tests.
+- **Créer des certificats** : opération nécessaire une seule fois lors de la configuration des certificats, et ultérieurement lors de leur renouvellement.
+- **Créer un profil de provisionnement** : le développeur doit suivre ces étapes pour chaque nouvelle application écrite et lors de l’ajout de nouveaux systèmes.
 
 Cliquez sur le lien **Overview** situé en haut à gauche de la page pour revenir à ce menu à tout moment.
 
@@ -93,9 +93,9 @@ La section Certificates permet de créer différents types de certificats qui se
 
 Il existe trois types principaux de certificats :
 
--   **Certificat de développement Mac** : facultatif pour le développement d’application général, mais obligatoire si le développeur prévoit d’utiliser des fonctionnalités comme iCloud ou les notifications Push. Le développeur doit disposer d’un certificat de développement avant de créer des profils de provisionnement qui l’autorisent à accéder à ces fonctionnalités.
--   **Mac App Store** : le développeur doit disposer d’un certificat pour son application et d’un autre certificat pour le programme d’installation.
--   **ID de développeur** : certificats pour l’application et le programme d’installation si vous choisissez d’effectuer une distribution en dehors du Mac App Store.
+- **Certificat de développement Mac** : facultatif pour le développement d’application général, mais obligatoire si le développeur prévoit d’utiliser des fonctionnalités comme iCloud ou les notifications Push. Le développeur doit disposer d’un certificat de développement avant de créer des profils de provisionnement qui l’autorisent à accéder à ces fonctionnalités.
+- **Mac App Store** : le développeur doit disposer d’un certificat pour son application et d’un autre certificat pour le programme d’installation.
+- **ID de développeur** : certificats pour l’application et le programme d’installation si vous choisissez d’effectuer une distribution en dehors du Mac App Store.
 
 Les sections suivantes fournissent les exemples de création de chacun des types de certificats mentionnés ci-dessus.
 
@@ -175,7 +175,7 @@ Pour publier automatiquement une application Xamarin.Mac (et ne pas la publier p
 
 Effectuez les étapes suivantes :
 
-1. Dans la section **Certificates**, commencez par cliquer sur le bouton **+**, puis sélectionnez la case d’option **Developer ID** : 
+1. Dans la section **Certificates**, commencez par cliquer sur le bouton **+** , puis sélectionnez la case d’option **Developer ID** : 
 
     [![Ajout d’un ID de développeur](certificates-identifiers-images/certif07.png "Ajout d’un ID de développeur")](certificates-identifiers-images/certif07-large.png#lightbox)
 2. Cliquez sur le bouton **Continue**, puis sélectionnez le type d’ID de développeur à créer : 

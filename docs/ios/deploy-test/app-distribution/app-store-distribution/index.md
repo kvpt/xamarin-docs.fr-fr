@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e6f7ec4fe018181b6f470de4201d5e5a3f90d4da
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831521"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527647"
 ---
 # <a name="app-store-distribution"></a>Distribution dans l’App Store
 
@@ -64,11 +64,11 @@ Vous pouvez sélectionner le même **ID d’application** et les mêmes **appare
 
 Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, suivez les étapes ci-dessous :
 
-1.   Sélectionnez votre équipe, puis cliquez sur **Gérer les certificats…**  : [![](images/selectteam.png "Sélectionner l’équipe et afficher les détails")](images/selectteam.png#lightbox)
+1. Sélectionnez votre équipe, puis cliquez sur **Gérer les certificats…**  :  [![](images/selectteam.png "Sélectionner l’équipe et afficher les détails")](images/selectteam.png#lightbox)
 
-2.   Cliquez ensuite sur le bouton **Créer** à côté de **iOS Distribution Certificate (Certificat de distribution iOS)**  : [![](images/selectcert.png "Créer un certificat de distribution iOS")](images/selectcert.png#lightbox)
+2. Cliquez ensuite sur le bouton **Créer** à côté de **iOS Distribution Certificate (Certificat de distribution iOS)**  :  [![](images/selectcert.png "Créer un certificat de distribution iOS")](images/selectcert.png#lightbox)
 
-3.   En fonction de vos privilèges d’équipe, l’identité de signature est générée, comme indiqué ci-dessous. Sinon, vous devez attendre qu’un agent ou un administrateur d’équipe l’approuve : [![](images/generated.png "L’identité de signature est générée et une boîte de dialogue s’affiche")](images/generated.png#lightbox)
+3. En fonction de vos privilèges d’équipe, l’identité de signature est générée, comme indiqué ci-dessous. Sinon, vous devez attendre qu’un agent ou un administrateur d’équipe l’approuve :  [![](images/generated.png "L’identité de signature est générée et une boîte de dialogue s’affiche")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />

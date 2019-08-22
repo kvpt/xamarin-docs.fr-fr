@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: c03815776921a61c1f54136e3f09c0996dff71d3
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: f632b44e087c0e380ecd81c2af7db3d49c072f7e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528414"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887741"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Fichier iTunesMetadata.plist dans les applications Xamarin.iOS
 
@@ -108,7 +108,7 @@ Les valeurs des clés individuelles sont détaillées ci-dessous.
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-La clé `UIRequiredDeviceCapabilities` permet à iTunes de connaître les fonctionnalités spécifiques qu’une application iOS doit avoir pour pouvoir être installée sur un appareil iOS donné. Elle est fournie sous la forme d’un dictionnaire (`<dict>...</dict>`) de fonctionnalités (`<key>...</key>`) et d’une valeur booléenne pour chaque fonctionnalité. Si la valeur d’une fonctionnalité est `true`, cette fonctionnalité doit être présente. Si la valeur est `false`, la fonctionnalité ne doit pas être présente sur l’appareil. Exemple :
+La clé `UIRequiredDeviceCapabilities` permet à iTunes de connaître les fonctionnalités spécifiques qu’une application iOS doit avoir pour pouvoir être installée sur un appareil iOS donné. Elle est fournie sous la forme d’un dictionnaire (`<dict>...</dict>`) de fonctionnalités (`<key>...</key>`) et d’une valeur booléenne pour chaque fonctionnalité. Si la valeur d’une fonctionnalité est `true`, cette fonctionnalité doit être présente. Si la valeur est `false`, la fonctionnalité ne doit pas être présente sur l’appareil. Par exemple :
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -119,6 +119,7 @@ La clé `UIRequiredDeviceCapabilities` permet à iTunes de connaître les foncti
     <true/>
 </dict>
 ```
+
 Spécifie que l’appareil iOS doit prendre en charge le jeu d’instructions ARM7 et disposer d’une caméra frontale pour que l’application puisse être installée. Pour obtenir la liste complète des valeurs autorisées, consultez la documentation d’Apple relative à [UIRequiredDeviceCapabilities](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW3).
 
 ### <a name="artistname-and-playlistartistname"></a>artistName et playlistArtistName
@@ -333,7 +334,7 @@ Effectuez ce qui suit :
 2. Copiez l’exemple de contenu de la section [Contenu d’iTunesMetadata.plist](#iTunesMetadata_contents) ci-dessus.
 3. Collez le contenu dans le fichier, puis modifiez-le en fonction de vos besoins.
 4. Enregistrez le fichier, puis retournez à Visual Studio pour Mac.
-5. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Fichiers existants...**.
+5. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Fichiers existants...** .
 6. Dans la boîte de dialogue Ouvrir un fichier, sélectionnez le fichier `iTunesMetadata.plist` créé ci-dessus, puis cliquez sur le bouton **OK**.
 7. Laissez à l’option **Action de génération** de ce fichier la valeur **Aucune**.
 
@@ -347,7 +348,7 @@ Effectuez ce qui suit :
 2. Copiez l’exemple de contenu de la section [Contenu d’iTunesMetadata.plist](#iTunesMetadata_contents) ci-dessus.
 3. Collez le contenu dans le fichier, puis modifiez-le en fonction de vos besoins.
 4. Enregistrez le fichier, puis retournez à Visual Studio.
-5. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Fichiers existants...**.
+5. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Fichiers existants...** .
 6. Dans la boîte de dialogue Ouvrir un fichier, sélectionnez le fichier `iTunesMetadata.plist` créé ci-dessus, puis cliquez sur le bouton **Ouvrir**.
 7. Laissez à l’option **Action de génération** de ce fichier la valeur **Aucune**.
 
