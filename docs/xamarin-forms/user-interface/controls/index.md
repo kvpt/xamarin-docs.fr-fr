@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2019
-ms.openlocfilehash: 925e97292d19745b0b89fb98103d205ab8476157
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: dfc6c71a252b57bb39b464425b89fe8f5bda7d3e
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980761"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976515"
 ---
 # <a name="controls-reference"></a>Informations de référence sur les contrôles
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 L’interface utilisateur d’une application Xamarin. Forms est constituée d’objets qui mappent aux contrôles natifs de chaque plateforme cible. Cela permet aux applications spécifiques à la plateforme pour iOS, Android et le plateforme Windows universelle d’utiliser le code Xamarin. Forms contenu dans une [bibliothèque de .NET standard](~/cross-platform/app-fundamentals/net-standard.md).
 

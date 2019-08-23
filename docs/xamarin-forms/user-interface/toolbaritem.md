@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: e6ce55f25b130c64b72a5a7e2ec2ec9a00291d14
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658057"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976342"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms, ToolbarItem
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 La classe Xamarin. [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) Forms est un type spécial de bouton qui peut être ajouté à `Page` la collection `ToolbarItems` d’un objet. Chaque `ToolbarItem` objet apparaît sous la forme d’un bouton dans la barre de navigation de l’application. Une `ToolbarItem` instance peut avoir une icône et apparaître en tant qu’élément de menu principal ou secondaire. La `ToolbarItem` classe hérite de [`MenuItem`](xref:Xamarin.Forms.MenuItem).
 
@@ -117,6 +117,6 @@ Lorsque la `Order` propriété a la valeur `Secondary`, le comportement varie d�
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Démos de ToolbarItem](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [Démos de ToolbarItem](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Images dans Xamarin. Forms](~/xamarin-forms/user-interface/images.md)
 * [Xamarin. Forms, MenuItem](~/xamarin-forms/user-interface/menuitem.md)

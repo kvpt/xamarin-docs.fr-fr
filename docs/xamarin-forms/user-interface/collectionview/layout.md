@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/12/2019
-ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 08/22/2019
+ms.openlocfilehash: ac32e340212dd42c373a39df138436e7ee313958
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888657"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976547"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Disposition Xamarin. Forms CollectionView
 
@@ -319,9 +319,6 @@ Par défaut, un horizontal [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayou
 
 Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, ce qui signifie que les propriétés peuvent être des cibles de liaisons de données.
 
-> [!IMPORTANT]
-> Les en-têtes et les pieds de page sont actuellement pris en charge uniquement sur Android.
-
 Lorsqu’un en-tête est ajouté à une disposition qui augmente horizontalement, de gauche à droite, l’en-tête est affiché à gauche de la liste. De même, lorsqu’un pied de page est ajouté à une disposition qui augmente horizontalement, de gauche à droite, le pied de page est affiché à droite de la liste.
 
 ### <a name="display-strings-in-the-header-and-footer"></a>Afficher des chaînes dans l’en-tête et le pied de page
@@ -346,6 +343,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+Ce code génère les captures d’écran suivantes, avec l’en-tête illustré dans la capture d’écran iOS et le pied de page affiché dans la capture d’écran Android:
+
+[ ![Capture d’écran d’un en-tête et d’un pied de page de chaîne CollectionView sur iOS et Android](layout-images/header-footer-string.png "CollectionView en-tête et pied de page") ] (layout-images/header-footer-string-large.png#lightbox "En-tête et pied de page de chaîne CollectionView")
 
 ### <a name="display-views-in-the-header-and-footer"></a>Afficher les affichages dans l’en-tête et le pied de page
 
@@ -395,6 +396,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+Ce code génère les captures d’écran suivantes, avec l’en-tête illustré dans la capture d’écran iOS et le pied de page affiché dans la capture d’écran Android:
+
+[ ![Capture d’écran d’un en-tête et d’un pied de page CollectionView utilisant des vues, sur iOS et Android](layout-images/header-footer-view.png "CollectionView afficher l’en-tête et le pied de page") ] (layout-images/header-footer-view-large.png#lightbox "En-tête et pied de page de l’affichage CollectionView")
 
 ### <a name="display-a-templated-header-and-footer"></a>Afficher un en-tête et un pied de page basés sur un modèle
 
@@ -446,6 +451,10 @@ collectionView.SetBinding(ItemsView.HeaderProperty, ".");
 collectionView.SetBinding(ItemsView.FooterProperty, ".");
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+Ce code génère les captures d’écran suivantes, avec l’en-tête illustré dans la capture d’écran iOS et le pied de page affiché dans la capture d’écran Android:
+
+[ ![Capture d’écran d’un en-tête et d’un pied de page CollectionView à l’aide de modèles, sur iOS et Android](layout-images/header-footer-template.png "modèle CollectionView en-tête et pied de page") ] (layout-images/header-footer-template-large.png#lightbox "En-tête et pied de page du modèle CollectionView")
 
 ## <a name="item-spacing"></a>Espacement d’éléments
 

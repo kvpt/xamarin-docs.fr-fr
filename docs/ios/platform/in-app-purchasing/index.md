@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: fb8f4a8e62ea163dc58589382c31c4bf19973c36
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2445645012e54b1818b1ec72116a85d8b985ead3
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528269"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976458"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Achats dans l’application dans Xamarin. iOS
 
@@ -59,7 +59,7 @@ Cet article a introduit le concept d’achats dans l’application, a expliqué 
 
 ## <a name="related-links"></a>Liens associés
 
-- [InAppPurchaseSample](https://docs.microsoft.com/en-us/samples/xamarin/ios-samples/storekit/)
+- [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
 - [Dans le Guide de programmation de l’achat d’applications](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
 - [Guide du développeur iTunes Connect](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [Référence de l’infrastructure du kit Store](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)

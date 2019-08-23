@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 379791d4dda676140425d79eca696cdca94cd55b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2dde7415f40c9db205351a81d63d273fc211ed2b
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888430"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976585"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
 
 La classe Xamarin. [`ContentView`](xref:Xamarin.Forms.ContentView) Forms est un type `Layout` de qui contient un seul élément enfant et est généralement utilisé pour créer des contrôles personnalisés et réutilisables. La `ContentView` classe hérite de [`TemplatedView`](xref:Xamarin.Forms.TemplatedView). Cet article, ainsi que l’exemple associé, expliquent comment créer `CardView` un contrôle personnalisé basé `ContentView` sur la classe.
 
@@ -205,7 +205,7 @@ Pour plus d’informations sur les modèles de contrôle, consultez [modèles de
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Exemple d’application CardView](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/)
+* [Exemple d’application ContentView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
 * [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [Propriétés pouvant être liées](~/xamarin-forms/xaml/bindable-properties.md).
 * [Modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)

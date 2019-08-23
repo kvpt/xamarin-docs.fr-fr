@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5f8d977c126cfe4bdfdb48470841ee17de6bda31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 421d51cbb1ae3adb80aef6e4bf3cf1da38d6de8e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117731"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887825"
 ---
 # <a name="android-emulator-troubleshooting"></a>Résolution des problèmes de l’émulateur Android
 
@@ -39,7 +39,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
    adb devices
    ```
 
-4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Exemple :
+4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Par exemple :
 
    ```shell
    List of devices attached
@@ -180,6 +180,7 @@ Dans certains cas, l’activation d’**Hyper-V** et de la **Plateforme d’hype
     ```powershell
     Get-WindowsOptionalFeature -FeatureName HypervisorPlatform -Online
     ```
+
     Si l’hyperviseur n’est pas activé, un message similaire à l’exemple suivant s’affiche pour indiquer que l’état de la plateforme d’hyperviseur est **Désactivé** :
 
     ```
@@ -304,14 +305,16 @@ Si Device Guard est activé, effectuez les étapes suivantes pour le désactiver
 
 6. Copiez et collez les commandes suivantes dans la fenêtre d’invite de commandes (si lecteur **Z:** est utilisé, choisissez une lettre de lecteur non utilisée) :
 
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
+    ```cmd
+    mountvol Z: /s
+    copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
+    bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+    bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
+    mountvol Z: /d
+    ```
 
 7. Redémarrez votre ordinateur. Dans l’écran de démarrage, vous devez voir s’afficher une invite similaire au message suivant :
 
@@ -384,7 +387,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
    adb devices
    ```
 
-4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Exemple :
+4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Par exemple :
 
    ```shell
    List of devices attached
