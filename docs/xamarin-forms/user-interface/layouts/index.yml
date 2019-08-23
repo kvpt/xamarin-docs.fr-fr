@@ -19,6 +19,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: choose-layout.md
+            html: Découvrez comment les principales classes de disposition de Xamarin. Forms positionnent et dimensionnent leurs enfants.
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: choose-layout.md
+            title: Choisir une disposition
           - href: stack-layout.md
             html: 'Apprenez à organiser les affichages dans une pile unidimensionnelle, à l’horizontale ou à la verticale.'
             image:
@@ -37,18 +43,18 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: flex-layout.md
             title: FlexLayout
-          - href: absolute-layout.md
-            html: 'Découvrez comment organiser les vues en définissant des valeurs de coordonnées et de taille, qui peuvent être proportionnelles ou absolues.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: AbsoluteLayout
           - href: relative-layout.md
             html: 'Découvrez comment organiser les vues en définissant des contraintes, par rapport aux propriétés de la disposition ou de vues sœurs.'
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: absolute-layout.md
             title: RelativeLayout
+          - href: absolute-layout.md
+            html: 'Découvrez comment organiser les vues en définissant des valeurs de coordonnées et de taille, qui peuvent être proportionnelles ou absolues.'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
           - href: scroll-view.md
             html: Découvrez comment permettre le défilement lorsqu’une vue ne tient pas dans les limites de l’écran.
             image:
@@ -60,7 +66,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: contentview.md
-            title: Frame
+            title: ContentView
           - href: frame.md
             html: 'Découvrez comment placer une vue dans un cadre que vous pouvez configurer avec des couleurs, une ombre portée et d’autres options.'
             image:
