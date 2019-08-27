@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: e65030092b1f59b1111bc521a8613cfe8a9160ee
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 430f4fedc8e988c89826e3ae023fc25b7b798727
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50118693"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525338"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Publication dans l’Amazon Appstore
 
@@ -22,15 +22,15 @@ Le programme de distribution des applications mobiles d’Amazon permet aux dév
 Amazon ne limite pas la taille des APK. Toutefois, si un APK est supérieur à 30 Mo, il est distribué par FTP et non via le Portail de distribution des applications mobiles de l'Amazon Appstore.
 
 
-## <a name="submitting-apps-binary-info"></a>Envoi d’applications : informations binaires
+## <a name="submitting-apps-binary-info"></a>Envoi d’applications : Informations binaires
 
 Le processus d’envoi d’une application sur l’Amazon Appstore est similaire à celui de l’envoi d’une application sur Google Play. Les applications distribuées par Amazon requièrent les ressources suivantes : 
 
--   **Icône** &ndash;   Fichier .png de 114 x 114 pixels avec un arrière-plan transparent. Cette icône est obligatoire.
--   **Miniature** &ndash;   Version plus grande de l’icône ci-dessus, de 512 x 512 pixels avec un arrière-plan transparent. Cette icône est également obligatoire.
--   **Captures d’écran** &ndash;   Amazon nécessite entre 3 (minimum) et 10 (maximum) captures d’écran. Les captures d’écran doivent être de 1024 x 600 pixels ou de 800 x 480 pixels (largeur x hauteur). Les formats .png et .jpg sont acceptés.
--   **Image promotionnelle** &ndash;   Pour que l’application soit mise en avant dans des présentations promotionnelles comme la page d’accueil, une image promotionnelle peut éventuellement être envoyée. Elle doit être fournie dans un fichier .png ou .jpg de 1 024 x500 pixels (largeur x hauteur), en mode paysage. Elle ne doit pas contenir d’animation.
--  Des mises à jour de cinq vidéos peuvent être fournies.
+- **Icône** &ndash;   Fichier .png de 114 x 114 pixels avec un arrière-plan transparent. Cette icône est obligatoire.
+- **Miniature** &ndash;   Version plus grande de l’icône ci-dessus, de 512 x 512 pixels avec un arrière-plan transparent. Cette icône est également obligatoire.
+- **Captures d’écran** &ndash;   Amazon nécessite entre 3 (minimum) et 10 (maximum) captures d’écran. Les captures d’écran doivent être de 1024 x 600 pixels ou de 800 x 480 pixels (largeur x hauteur). Les formats .png et .jpg sont acceptés.
+- **Image promotionnelle** &ndash;   Pour que l’application soit mise en avant dans des présentations promotionnelles comme la page d’accueil, une image promotionnelle peut éventuellement être envoyée. Elle doit être fournie dans un fichier .png ou .jpg de 1 024 x500 pixels (largeur x hauteur), en mode paysage. Elle ne doit pas contenir d’animation.
+- Des mises à jour de cinq vidéos peuvent être fournies.
 
 
 

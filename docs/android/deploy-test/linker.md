@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643839"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525420"
 ---
 # <a name="linking-on-android"></a>Liaison sur Android
 
@@ -55,9 +55,9 @@ public class MyActivity {
 
 Le principal mécanisme de contrôle de l’éditeur de liens est la liste déroulante **Comportement de l’éditeur de liens** (*Liaison* dans Visual Studio) dans la boîte de dialogue **Options du projet**. Vous avez trois options :
 
-1.  **Ne pas lier** (*Aucune* dans Visual Studio)
-1.  **Lier les assemblys du SDK** (*Uniquement les assemblys du SDK*)
-1.  **Lier tous les assemblys** (*Assemblys utilisateur et du SDK*)
+1. **Ne pas lier** (*Aucune* dans Visual Studio)
+1. **Lier les assemblys du SDK** (*Uniquement les assemblys du SDK*)
+1. **Lier tous les assemblys** (*Assemblys utilisateur et du SDK*)
 
 
 L’option **Ne pas lier** désactive l’éditeur de liens ; l’exemple de taille des applications « Version sans liaison » ci-dessus utilisait ce comportement. Cela est utile pour la résolution des échecs d’exécution, pour déterminer si l’éditeur de liens est responsable. Ce paramètre n’est généralement pas recommandé pour les versions de production.
@@ -92,11 +92,11 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Par exemple :
 
--   Vous pouvez obtenir le code que vous appelez dynamiquement via `System.Reflection.MemberInfo.Invoke`.
+- Vous pouvez obtenir le code que vous appelez dynamiquement via `System.Reflection.MemberInfo.Invoke`.
 
--   Si vous instanciez dynamiquement des types, vous souhaiterez éventuellement conserver le constructeur par défaut de vos types.
+- Si vous instanciez dynamiquement des types, vous souhaiterez éventuellement conserver le constructeur par défaut de vos types.
 
--   Si vous utilisez la sérialisation XML, vous souhaiterez éventuellement conserver les propriétés de vos types.
+- Si vous utilisez la sérialisation XML, vous souhaiterez éventuellement conserver les propriétés de vos types.
 
 Dans ce cas, vous pouvez utiliser l’attribut [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute). Chaque membre qui n’est pas lié de manière statique par l’application est sujet à suppression. Ainsi, cet attribut peut être utilisé pour marquer les membres qui ne sont pas statiquement référencés, mais sont toujours requis par votre application. Vous pouvez appliquer cet attribut à chaque membre d’un type, ou au type lui-même.
 
@@ -198,27 +198,27 @@ Il est possible de spécifier qu’un jeu d’assemblys fourni par l’utilisate
 
 Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants sont supprimés de tous les membres :
 
--  System.ObsoleteAttribute
--  System.MonoDocumentationNoteAttribute
--  System.MonoExtensionAttribute
--  System.MonoInternalNoteAttribute
--  System.MonoLimitationAttribute
--  System.MonoNotSupportedAttribute
--  System.MonoTODOAttribute
--  System.Xml.MonoFIXAttribute
+- System.ObsoleteAttribute
+- System.MonoDocumentationNoteAttribute
+- System.MonoExtensionAttribute
+- System.MonoInternalNoteAttribute
+- System.MonoLimitationAttribute
+- System.MonoNotSupportedAttribute
+- System.MonoTODOAttribute
+- System.Xml.MonoFIXAttribute
 
 
 Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants sont supprimés de tous les membres dans les builds de production :
 
--  System.Diagnostics.DebuggableAttribute
--  System.Diagnostics.DebuggerBrowsableAttribute
--  System.Diagnostics.DebuggerDisplayAttribute
--  System.Diagnostics.DebuggerHiddenAttribute
--  System.Diagnostics.DebuggerNonUserCodeAttribute
--  System.Diagnostics.DebuggerStepperBoundaryAttribute
--  System.Diagnostics.DebuggerStepThroughAttribute
--  System.Diagnostics.DebuggerTypeProxyAttribute
--  System.Diagnostics.DebuggerVisualizerAttribute
+- System.Diagnostics.DebuggableAttribute
+- System.Diagnostics.DebuggerBrowsableAttribute
+- System.Diagnostics.DebuggerDisplayAttribute
+- System.Diagnostics.DebuggerHiddenAttribute
+- System.Diagnostics.DebuggerNonUserCodeAttribute
+- System.Diagnostics.DebuggerStepperBoundaryAttribute
+- System.Diagnostics.DebuggerStepThroughAttribute
+- System.Diagnostics.DebuggerTypeProxyAttribute
+- System.Diagnostics.DebuggerVisualizerAttribute
 
 
 ## <a name="related-links"></a>Liens associés

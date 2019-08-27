@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 4c0fc5edd309d5ed8103c5fc3e33817001049241
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739266"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888969"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation dans Xamarin.Forms Shell
 
@@ -91,7 +91,7 @@ about
 Afin d’accéder à l’objet `ShellContent` pour l’itinéraire `dogs`, l’URI de l’itinéraire absolu est `//animals/domestic/dogs`. De même, afin d’accéder à l’objet `ShellContent` pour l’itinéraire `about`, l’URI de l’itinéraire absolu est `//about`.
 
 > [!IMPORTANT]
-> Les noms d’itinéraires en double sont autorisés. Mais les itinéraires en double ne sont pas autorisés. Une exception `ArgumentException` sera levée au démarrage de l’application si un itinéraire en double est détecté.
+> Une exception `ArgumentException` sera levée au démarrage de l’application si un itinéraire en double est détecté. Cette exception est également levée si au moins deux routes au même niveau dans la hiérarchie partagent un nom de route.
 
 #### <a name="register-page-routes"></a>Inscrire les itinéraires de pages
 
@@ -123,7 +123,7 @@ Routing.RegisterRoute("elephants/details", typeof(ElephantDetailPage));
 Cet exemple active la navigation contextuelle dans les pages, dans laquelle l’accès à l’itinéraire `details` depuis la page pour l’itinéraire `monkeys` affiche l’élément `MonkeyDetailPage`. De même, l’accès à l’itinéraire `details` depuis la page pour l’itinéraire `elephants` affiche l’élément `ElephantDetailPage`.
 
 > [!IMPORTANT]
-> Actuellement, les noms d’itinéraires en double sont autorisés lorsque vous utilisez la méthode `Routing.RegisterRoute`, l’inscription en double remplaçant l’inscription précédente.
+> Une `ArgumentException` est levée si la méthode `Routing.RegisterRoute` tente d’enregistrer la même route dans au moins deux types différents.
 
 ## <a name="perform-navigation"></a>Effectuer la navigation
 

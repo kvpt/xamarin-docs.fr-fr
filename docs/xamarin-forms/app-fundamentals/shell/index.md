@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
-ms.openlocfilehash: a988a99e20af76d071f55c4cd2c97b135ad077f8
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
+ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66252275"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888920"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
@@ -43,6 +43,10 @@ Les applications Shell peuvent utiliser un modèle de navigation basée sur des 
 ## <a name="searchsearchmd"></a>[Rechercher](search.md)
 
 Les applications Shell peuvent utiliser la fonctionnalité de recherche intégrée fournie par une zone de recherche qui peut être ajoutée en haut de chaque page.
+
+## <a name="lifecyclelifecyclemd"></a>[Cycle de vie](lifecycle.md)
+
+Les applications Shell respectent le cycle de vie Xamarin.Forms. Un événement `Appearing` est déclenché lorsqu’une page est sur le point d'apparaître sur l’écran, tandis qu’un événement `Disappearing` est déclenché lorsqu’une page est sur le point de disparaître de l’écran.
 
 ## <a name="custom-rendererscustomrenderersmd"></a>[Renderers personnalisés](customrenderers.md)
 

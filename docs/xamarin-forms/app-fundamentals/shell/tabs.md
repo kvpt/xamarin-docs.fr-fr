@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 25fcf40f7ad94bf5c2ba03fca7413fcaaedba09e
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739247"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888984"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Onglets Shell Xamarin.Forms
 
@@ -163,6 +163,9 @@ L’enfant de chaque objet `Tab` est un objet `ShellContent`, dont la propriét�
 ```
 
 Dans chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage), des objets `ContentPage` supplémentaires sont accessibles. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
+
+> [!NOTE]
+> Le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de chaque objet `ShellContent` est hérité de l’objet `Tab` parent.
 
 ### <a name="shellcontent-class"></a>Classe ShellContent
 

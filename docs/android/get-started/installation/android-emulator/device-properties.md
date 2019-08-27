@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: 9007157cfd96b82a5781b3bdc3ffb4fe63f4e422
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: a1906d8c5c001c2328a0dbdce58f92092454e2c0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119616"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525085"
 ---
 # <a name="editing-android-virtual-device-properties"></a>Modification des propriétés d’appareil virtuel Android
 
@@ -31,15 +31,15 @@ Lorsque vous sélectionnez une propriété, une description détaillée de cette
 
 Vous pouvez modifier les propriétés en suivant les instructions ci-dessous :
 
--   Pour modifier une propriété booléenne, cliquez sur la coche à droite de la propriété booléenne :
+- Pour changer une propriété booléenne, cliquez sur la coche à droite de la propriété booléenne :
 
     ![Modification d’une propriété booléenne](device-properties-images/win/02-boolean-value.png)
 
--   Pour modifier une propriété *enum* (avec liste de choix), cliquez sur la flèche vers le bas à droite de la propriété et choisissez une nouvelle valeur.
+- Pour changer une propriété *enum* (avec liste de choix), cliquez sur la flèche vers le bas à droite de la propriété et choisissez une nouvelle valeur.
 
     ![Modification d’une propriété enum](device-properties-images/win/04-enum-value.png)
 
--   Pour modifier une propriété de chaîne ou d’entier, double-cliquez sur le paramètre de chaîne ou d’entier actuel dans la colonne de valeur et entrez une nouvelle valeur.
+- Pour changer une propriété de chaîne ou d’entier, double-cliquez sur le paramètre de chaîne ou d’entier actuel dans la colonne de valeur et entrez une nouvelle valeur.
 
     ![Modification d’une propriété d’entier](device-properties-images/win/03-integer-value.png)
 
@@ -56,15 +56,15 @@ Lorsque vous sélectionnez une propriété, une description détaillée de cette
 
 Vous pouvez modifier les propriétés en suivant les instructions ci-dessous :
 
--   Pour modifier une propriété booléenne, cliquez sur la coche à droite de la propriété booléenne :
+- Pour changer une propriété booléenne, cliquez sur la coche à droite de la propriété booléenne :
 
     ![Modification d’une propriété booléenne](device-properties-images/mac/02-boolean-value.png)
 
--   Pour modifier une propriété *enum* (avec liste de choix), cliquez sur le menu déroulant à droite de la propriété et choisissez une nouvelle valeur.
+- Pour changer une propriété *enum* (avec liste de choix), cliquez sur le menu déroulant à droite de la propriété et choisissez une nouvelle valeur.
 
     ![Modification d’une propriété enum](device-properties-images/mac/04-enum-value.png)
 
--   Pour modifier une propriété de chaîne ou d’entier, double-cliquez sur le paramètre de chaîne ou d’entier actuel dans la colonne de valeur et entrez une nouvelle valeur.
+- Pour changer une propriété de chaîne ou d’entier, double-cliquez sur le paramètre de chaîne ou d’entier actuel dans la colonne de valeur et entrez une nouvelle valeur.
 
     ![Modification d’une propriété d’entier](device-properties-images/mac/03-integer-value.png)
 

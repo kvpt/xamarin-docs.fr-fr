@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8ba0d14fff22d38d9e1a1d062fcce3f9ace88dea
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57668853"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525472"
 ---
 # <a name="publishing-to-google-play"></a>Publication sur Google Play
 
@@ -20,7 +20,7 @@ Même s’il existe de nombreux marchés pour la distribution d’une applicatio
 Cette section aborde des rubriques spécifiques à Google Play, comme l’inscription en vue de devenir un éditeur, la collecte des ressources pour aider Google Play à promouvoir et publier votre application, des recommandations pour évaluer votre application sur Google Play et l’utilisation de filtres pour limiter le déploiement d’une application à certains appareils.
 
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour distribuer une application via Google Play, vous devez créer un compte de développeur. La création de ce compte implique des frais uniques de 25 USD.
 
@@ -36,19 +36,19 @@ Google Play n’est pas disponible dans le monde entier. Il est possible que cer
 
 Pour publier des applications sur Google play, il est nécessaire de disposer d’un compte d’éditeur. Pour créer un compte d’éditeur, effectuez les étapes suivantes :
 
-1.  Rendez-vous sur la [Console développeur de Google Play](https://play.google.com/apps/publish).
-1.  Entrez les informations de base sur votre identité de développeur.
-1.  Lisez et acceptez le contrat relatif à la distribution pour les développeurs correspondant à vos paramètres régionaux.
-1.  Réglez les frais d’inscription de 25 USD.
-1.  Confirmez la vérification par e-mail.
-1.  Une fois le compte créé, il est possible de publier des applications à l’aide de Google Play.
+1. Rendez-vous sur la [Console développeur de Google Play](https://play.google.com/apps/publish).
+1. Entrez les informations de base sur votre identité de développeur.
+1. Lisez et acceptez le contrat relatif à la distribution pour les développeurs correspondant à vos paramètres régionaux.
+1. Réglez les frais d’inscription de 25 USD.
+1. Confirmez la vérification par e-mail.
+1. Une fois le compte créé, il est possible de publier des applications à l’aide de Google Play.
 
 
 Google Play ne prend pas en charge tous les pays dans le monde. Vous trouverez les listes de pays les plus récentes dans les liens suivants :
 
-1.  [Pays où l'inscription en tant que développeur ou marchand est possible](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Il s’agit d’une liste de tous les pays où les développeurs peuvent s’inscrire en tant que marchands et vendre des applications payantes.
+1. [Pays où l'inscription en tant que développeur ou marchand est possible](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Il s’agit d’une liste de tous les pays où les développeurs peuvent s’inscrire en tant que marchands et vendre des applications payantes.
 
-1.  [Pays où la distribution de contenus aux utilisateurs de Google Play est possible](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Il s’agit d’une liste de tous les pays où les applications peuvent être distribuées.
+1. [Pays où la distribution de contenus aux utilisateurs de Google Play est possible](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Il s’agit d’une liste de tous les pays où les applications peuvent être distribuées.
 
 
 
@@ -62,21 +62,21 @@ Pour assurer efficacement la promotion et la publicité d’une application sur 
 
 Une *icône de lancement* est un graphique qui représente une application. Chaque icône de lancement doit être un PNG de 32 bits avec un canal alpha pour la transparence. Une application doit avoir des icônes pour toutes les densités d’écran, comme indiqué dans la liste ci-dessous :
 
--   **ldpi** (120 dpi) &ndash; 36  x 36 pixels
--   **mdpi** (160 dpi) &ndash; 48 x 48 pixels
--   **hdpi** (240 dpi) &ndash; 72 x 72 pixels
--   **xhdpi** (320 dpi) &ndash; 96 x 96 pixels
+- **ldpi** (120 dpi) &ndash; 36  x 36 pixels
+- **mdpi** (160 dpi) &ndash; 48 x 48 pixels
+- **hdpi** (240 dpi) &ndash; 72 x 72 pixels
+- **xhdpi** (320 dpi) &ndash; 96 x 96 pixels
 
 
 Les icônes de lancement sont la première chose que l’utilisateur voit sur Google Play. Une attention particulière doit donc être donnée à ces icônes qui doivent être visuellement attrayantes et explicites.
 
 Conseils pour les icônes de lancement :
 
-1.  **Simples et épurées** &ndash; Les icônes de lancement doivent rester simples et épurées. Cela signifie que le nom de l’application ne doit pas apparaître sur l’icône. Plus les icônes sont simples, plus elles sont marquantes et faciles à distinguer à taille réduite.
+1. **Simples et épurées** &ndash; Les icônes de lancement doivent rester simples et épurées. Cela signifie que le nom de l’application ne doit pas apparaître sur l’icône. Plus les icônes sont simples, plus elles sont marquantes et faciles à distinguer à taille réduite.
 
-1.  **Les icônes ne doivent pas être fines** &ndash; Les icônes trop fines ne ressortiront pas convenablement sur tous les arrière-plans.
+1. **Les icônes ne doivent pas être fines**&ndash; Les icônes trop fines ne ressortiront pas bien sur tous les arrière-plans.
 
-1.  **Utilisez le canal alpha** &ndash; Les icônes doivent utiliser le canal alpha et ne doivent pas être entièrement encadrées.
+1. **Utilisez le canal alpha**&ndash; Les icônes doivent utiliser le canal alpha et ne doivent pas être entièrement encadrées.
 
 
 
@@ -84,9 +84,9 @@ Conseils pour les icônes de lancement :
 
 Les applications présentes sur Google Play doivent avoir une version haute fidélité de l’icône d’application. Cette icône haute résolution est utilisée uniquement par Google Play et ne se substitue pas à l’icône de lancement de l’application. Les spécifications de l’icône haute résolution sont les suivantes :
 
-1.  PNG 32 bits avec un canal alpha
-1.  512 x 512 pixels
-1.  Taille maximale de 1 024 Ko
+1. PNG 32 bits avec un canal alpha
+1. 512 x 512 pixels
+1. Taille maximale de 1 024 Ko
 
 [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) est un outil très utile pour créer les icônes de lancement et l’icône d’application haute résolution.
 
@@ -98,8 +98,8 @@ Google Play requiert un minimum de deux et un maximum de huit captures d’écra
 
 Les spécifications pour les captures d’écran sont les suivantes :
 
-1.  PNG ou JPG 24 bits sans canal alpha
-1.  320 x 480 pixels ou 480 x 800 pixels ou 480 x 854 pixels (largeur x hauteur). Les images au format paysage seront rognées.
+1. PNG ou JPG 24 bits sans canal alpha
+1. 320 x 480 pixels ou 480 x 800 pixels ou 480 x 854 pixels (largeur x hauteur). Les images au format paysage seront rognées.
 
 
 
@@ -107,8 +107,8 @@ Les spécifications pour les captures d’écran sont les suivantes :
 
 Il s’agit d’une image facultative utilisée par Google Play :
 
-1.  PNG ou JPG 24 bits sans canal alpha de 180 x 120 pixels (largeur x hauteur).
-1.  Aucune bordure.
+1. PNG ou JPG 24 bits sans canal alpha de 180 x 120 pixels (largeur x hauteur).
+1. Aucune bordure.
 
 
 
@@ -116,9 +116,9 @@ Il s’agit d’une image facultative utilisée par Google Play :
 
 Utilisée dans la section de présentation de Google Play. Cette image peut être affichée seule sans icône d’application.
 
-1.  PNG ou JPG 1 024 x 500 pixels (largeur x hauteur) sans canal alpha et sans transparence.
-1.  Tout le contenu important doit tenir dans un cadre de 924 x 500 pixels. Les pixels en dehors de ce cadre peuvent être rognés pour des raisons de style.
-1.  Cette image peut être réduite : utilisez des grandes polices et faites en sorte que l’image reste simple.
+1. PNG ou JPG 1 024 x 500 pixels (largeur x hauteur) sans canal alpha et sans transparence.
+1. Tout le contenu important doit tenir dans un cadre de 924 x 500 pixels. Les pixels en dehors de ce cadre peuvent être rognés pour des raisons de style.
+1. Cette image peut être réduite : utilisez des grandes polices et faites en sorte que l’image reste simple.
 
 
 
@@ -299,13 +299,13 @@ Dans la boîte de dialogue **Compte Google Play**, sélectionnez un compte Googl
 
 Google Play propose quatre pistes pour le chargement de votre application :
 
--   **Alpha** &ndash; Utilisé pour charger une toute première version de l’application pour un nombre réduit de testeurs.
+- **Alpha** &ndash; Utilisé pour charger une toute première version de l’application pour un nombre réduit de testeurs.
 
--   **Bêta** &ndash; Utilisé pour charger une version préliminaire de l’application pour un nombre plus important de testeurs.
+- **Bêta** &ndash; Utilisé pour charger une version préliminaire de l’application pour un nombre plus important de testeurs.
 
--   **Lancement** &ndash; Permet à un pourcentage d’utilisateurs de recevoir une version mise à jour de l’application. Cela permet d’augmenter progressivement le pourcentage de 10 % des utilisateurs à 100 % à mesure que vous supprimez les bogues.
+- **Lancement** &ndash; Permet à un pourcentage d’utilisateurs de recevoir une version mise à jour de l’application. Cela permet d’augmenter progressivement le pourcentage de 10 % des utilisateurs à 100 % à mesure que vous supprimez les bogues.
 
--   **Production** &ndash; Sélectionnez cette option lorsque l’application est prête pour la distribution complète à partir sur le magasin Google Play.
+- **Production** &ndash; Sélectionnez cette option lorsque l’application est prête pour la distribution complète à partir sur le magasin Google Play.
 
 Pour plus d’informations sur le test et les lancements intermédiaires de Google Play, consultez [Configurer des tests alpha/bêta](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 

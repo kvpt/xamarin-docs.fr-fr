@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/20/2017
-ms.openlocfilehash: eedfcfe2ed274ddf541addec67e66250deab7899
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 47b9d76cb0b7b2fc48fe83d291479f7d1ed00eb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114624"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525214"
 ---
 # <a name="google-licensing-services"></a>Services Google Licensing
 
@@ -30,9 +30,9 @@ Une application ayant implémenté Google Licensing fait une demande à un servi
 
 Le diagramme ci-dessus illustre ce workflow : 
 
--   L’application fournit le nom du paquet, un *nonce* (authentificateur de chiffrement) qui est utilisé pour valider la réponse du serveur et un rappel qui peut traiter la réponse de façon asynchrone. 
+- L’application fournit le nom du paquet, un *nonce* (authentificateur de chiffrement) qui est utilisé pour valider la réponse du serveur et un rappel qui peut traiter la réponse de façon asynchrone. 
 
--   Google Play fournit des informations telles que le compte Google et des informations sur l’appareil lui-même, comme le numéro IMSI. 
+- Google Play fournit des informations telles que le compte Google et des informations sur l’appareil lui-même, comme le numéro IMSI. 
 
 Le service Google Licensing est également un composant essentiel des fichiers d’extension d’APK (qui sont décrits plus loin dans ce document). Les fichiers d’extension d’APK utilisent les services Google Licensing pour obtenir l’URL des fichiers d’extension qui seront téléchargés.
 

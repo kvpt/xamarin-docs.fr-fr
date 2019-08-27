@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509209"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525710"
 ---
 # <a name="android-debug-log"></a>Journal de débogage Android
 
@@ -22,8 +22,8 @@ L’une des astuces couramment utilisées par les développeurs pour déboguer l
 
 L’outil **Journal de débogage** fournit un moyen d’afficher la sortie du journal pendant le débogage d’une application via Visual Studio. Le journal de débogage prend en charge les périphériques suivants :
 
--   Les téléphones, tablettes et wearables Android physiques.
--   Un appareil Android virtuel en cours d’exécution sur l’émulateur Android. 
+- Les téléphones, tablettes et wearables Android physiques.
+- Un appareil Android virtuel en cours d’exécution sur l’émulateur Android. 
 
 > [!NOTE]
 > L’outil **Journal de débogage** ne fonctionne pas avec Xamarin Live Player.
@@ -41,24 +41,24 @@ Pour ouvrir l’outil **Journal de l’appareil**, cliquez sur l’icône **Jour
 
 Autrement, lancez l’outil **Journal de l’appareil** à partir d’une des sélections de menu suivantes :
 
--   **Affichage > Autres fenêtres > Journal de l’appareil**
--   **Outils > Android > Journal de l’appareil**
+- **Affichage > Autres fenêtres > Journal de l’appareil**
+- **Outils > Android > Journal de l’appareil**
 
 La capture d’écran suivante illustre les différentes parties de la fenêtre **Outil de débogage** :
 
 [![Parties de la fenêtre Outils de débogage](android-debug-log-images/vswin-03-features-sml.png)](android-debug-log-images/vswin-03-features.png#lightbox)
 
--   **Sélecteur d’appareils** &ndash; sélectionne l’appareil physique ou l’émulateur en cours d’exécution à analyser.
+- **Sélecteur d’appareils** &ndash; sélectionne l’appareil physique ou l’émulateur en cours d’exécution à superviser.
 
--   **Entrées du journal** &ndash; une table de messages du journal à partir de logcat.
+- **Entrées du journal** &ndash; une table de messages du journal à partir de logcat.
 
--   **Effacer les entrées du journal** &ndash; efface toutes les entrées du journal actuelles de la table.
+- **Effacer les entrées du journal** &ndash; efface toutes les entrées du journal actuelles de la table.
 
--   **Lecture/Pause** &ndash; bascule entre la mise à jour ou la suspension de l’affichage des nouvelles entrées du journal.
+- **Lecture/Pause** &ndash; bascule entre la mise à jour ou la mise en pause de l’affichage des nouvelles entrées du journal.
 
--   **Arrêter** &ndash; arrête l’affichage de nouvelles entrées du journal.
+- **Arrêter** &ndash; arrête l’affichage de nouvelles entrées du journal.
 
--   **Zone de recherche** &ndash; entrez les chaînes de recherche dans cette zone pour filtrer un sous-ensemble d’entrées du journal.
+- **Zone de recherche** &ndash; entrez les chaînes de recherche dans cette zone pour filtrer un sous-ensemble d’entrées du journal.
 
 
 Lorsque la fenêtre de l’outil **Journal de débogage** s’affiche, utilisez le menu déroulant de l’appareil pour sélectionner l’appareil Android à analyser :
@@ -78,23 +78,23 @@ La capture d’écran suivante illustre les différentes parties de la fenêtre 
 
 [![composants de la fenêtre Outils de débogage](android-debug-log-images/vsmac-03-features-sml.png)](android-debug-log-images/vsmac-03-features.png#lightbox)
 
--   **Sélecteur d’appareils** &ndash; sélectionne l’appareil physique ou l’émulateur en cours d’exécution à analyser.
+- **Sélecteur d’appareils** &ndash; sélectionne l’appareil physique ou l’émulateur en cours d’exécution à superviser.
 
--   **Entrées du journal** &ndash; une table de messages du journal à partir de logcat.
+- **Entrées du journal** &ndash; une table de messages du journal à partir de logcat.
 
--   **Effacer les entrées du journal** &ndash; efface toutes les entrées du journal actuelles de la table.
+- **Effacer les entrées du journal** &ndash; efface toutes les entrées du journal actuelles de la table.
 
--   **Zone de recherche** &ndash; entrez les chaînes de recherche dans cette zone pour filtrer un sous-ensemble d’entrées du journal.
+- **Zone de recherche** &ndash; entrez les chaînes de recherche dans cette zone pour filtrer un sous-ensemble d’entrées du journal.
 
--   **Afficher les Messages** &ndash; active ou désactive l’affichage des messages d’information.
+- **Afficher les Messages** &ndash; active ou désactive l’affichage des messages d’information.
 
--   **Afficher les avertissements** &ndash; active ou désactive l’affichage des messages d’avertissement (les messages d’avertissement sont affichés en jaune).
+- **Afficher les avertissements** &ndash; active ou désactive l’affichage des messages d’avertissement (les messages d’avertissement sont affichés en jaune).
 
--   **Afficher les erreurs** &ndash; active ou désactive l’affichage des messages d’erreur (les messages d’erreur sont affichés en rouge).
+- **Afficher les erreurs** &ndash; active ou désactive l’affichage des messages d’erreur (les messages d’erreur sont affichés en rouge).
 
--   **Reconnecter** &ndash; se reconnecte à l’appareil et actualise l’affichage des entrées du journal.
+- **Reconnecter** &ndash; se reconnecte à l’appareil et actualise l’affichage des entrées du journal.
 
--   **Ajouter le marqueur** &ndash; insère un message de marqueur (tel que `--- Marker N ---`) après la dernière entrée du journal, où _N_ est un compteur qui démarre à partir de 1 et est incrémenté de 1 lors de l’ajout de nouveaux marqueurs.
+- **Ajouter le marqueur** &ndash; insère un message de marqueur (tel que `--- Marker N ---`) après la dernière entrée du journal, où _N_ est un compteur qui démarre à partir de 1 et est incrémenté de 1 lors de l’ajout de nouveaux marqueurs.
 
 Lorsque la fenêtre de l’outil Journal de débogage s’affiche, utilisez le menu déroulant de l’appareil pour sélectionner l’appareil Android à analyser :
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119512"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526509"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane pour iOS - sigh
 
@@ -50,7 +50,7 @@ Pour plus d’informations sur l’installation de fastlane, consultez le guide 
 
 ## <a name="what-is-sigh"></a>Présentation de sigh
 
-sigh fournit une interface de terminal qui permet de créer et renouveler des profils de provisionnement pour toutes les configurations : développement, distribution sur l’App Store, distribution ad hoc et distribution en entreprise. Il offre également un moyen simple de télécharger et réparer les profils de provisionnement.
+sigh fournit une interface de terminal qui vous permet de créer et de renouveler des profils de provisionnement pour toutes les configurations : Développement, distribution App Store, distribution ad hoc et distribution entreprise. Il offre également un moyen simple de télécharger et réparer les profils de provisionnement.
 
 <a name="appid" />
 
@@ -58,7 +58,9 @@ sigh fournit une interface de terminal qui permet de créer et renouveler des pr
 
 Vous pouvez créer un ID d’application avec la commande suivante :
 
-    fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
+fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
 
 `com.company.appname` correspond à l’ID de bundle de l’application, qui est indiqué dans le fichier Info.plist de votre application Xamarin.iOS, comme illustré ci-dessous :
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 3be28815441b65df101ac9722a665e01503e1b5c
-ms.sourcegitcommit: 4b6e832d1db5616b657dc8540da67c509b28dc1d
+ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386213"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525103"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
@@ -41,11 +41,11 @@ Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléme
 
 Le Gestionnaire Xamarin Android SDK requiert également le Kit de développement Java (qui est installé automatiquement avec Xamarin.Android). Vous pouvez choisir entre plusieurs alternatives JDK :
 
--   Par défaut, Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 ou des niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24).
+- Par défaut, Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 ou des niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24).
 
--   Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
+- Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
--   Si vous utilisez Visual Studio 15.8 Preview 5 ou une version ultérieure, vous pouvez essayer d’utiliser la [distribution Mobile OpenJDK de Microsoft](openjdk.md) (en préversion) au lieu du kit JDK 8.
+- Si vous utilisez Visual Studio 15.8 Preview 5 ou ultérieur, vous pouvez essayer d’utiliser la [distribution Mobile OpenJDK de Microsoft](openjdk.md) (en préversion) au lieu du kit JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -134,15 +134,15 @@ Pour revenir au référentiel pris en charge de plateformes et d’outils, cliqu
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
--   Visual Studio pour Mac 7.5 (ou ultérieur).
+- Visual Studio pour Mac 7.5 (ou ultérieur).
 
 Le Gestionnaire Xamarin Android SDK requiert également le Kit de développement Java (qui est installé automatiquement avec Xamarin.Android). Vous pouvez choisir entre plusieurs alternatives JDK :
 
--   Par défaut, Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 ou des niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24).
+- Par défaut, Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 ou des niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24).
 
--   Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
+- Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
--   Si vous utilisez Visual Studio pour Mac 7.7 ou une version ultérieure, vous pouvez essayer d’utiliser la [distribution Mobile OpenJDK de Microsoft](openjdk.md) (en préversion) au lieu du kit JDK 8.
+- Si vous utilisez Visual Studio pour Mac 7.7 ou ultérieur, vous pouvez essayer d’utiliser la [distribution Mobile OpenJDK de Microsoft](openjdk.md) (en préversion) au lieu du kit JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.

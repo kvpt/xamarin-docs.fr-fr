@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 0053bf97dbcc98c5ffbd6fbddb1e40f884810e60
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670751"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524937"
 ---
 # <a name="windows-installation"></a>Installation sur un système Windows
 
@@ -24,13 +24,13 @@ _Ce guide décrit les étapes d’installation de Xamarin.Android pour Visual St
 Étant donné que Xamarin est désormais inclus gratuitement dans toutes les éditions de Visual Studio et ne nécessite pas de licence supplémentaire, vous pouvez utiliser le programme d’installation de Visual Studio pour télécharger et installer les outils Xamarin.Android
 (l’installation manuelle et la gestion des licences qui étaient nécessaires pour les versions antérieures de Xamarin.Android ne le sont plus pour cette version). Dans ce guide, vous apprendrez à :
 
--   Configurer des emplacements personnalisés pour Java Development Kit, pour Android SDK et pour le NDK Android
+- Configurer des emplacements personnalisés pour le Java Development Kit, le kit Android SDK et le kit Android NDK
 
--   Lancer le Gestionnaire Android SDK pour télécharger et installer les composants supplémentaires du kit Android SDK
+- Lancer le Gestionnaire Android SDK pour télécharger et installer les composants supplémentaires du kit Android SDK
 
--   Préparer un appareil ou un émulateur Android en vue d’un débogage ou d’un test
+- Préparer un appareil ou un émulateur Android en vue d’un débogage ou d’un test
 
--   Créer votre premier projet d’application Xamarin.Android
+- Créer votre premier projet d’application Xamarin.Android
 
 À la fin de ce guide, Xamarin.Android aura été intégré à Visual Studio, et vous serez prêt à créer votre première application Xamarin.Android.
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194935"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521105"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -45,15 +45,17 @@ Pour des contributions importantes et un nouveau contenu, [ouvrez un problème](
 
 S’il s’agit d’une nouvelle rubrique, vous pouvez utiliser le [fichier de modèle](../contributing-guidelines/template.md) comme point de départ. Il contient les recommandations rédactionnelles et explique aussi les métadonnées nécessaires pour chaque article, comme les informations sur l’auteur.
 
-Ajoutez les images et autres ressources statiques au sous-dossier appelé **<mypage>-images**. Si vous créez un dossier pour le contenu, ajoutez un dossier images au nouveau dossier.
+Ajoutez les images et autres ressources statiques au sous-dossier appelé **\<mypage>-images**. Si vous créez un dossier pour le contenu, ajoutez un dossier images au nouveau dossier.
 
 #### <a name="example-structure"></a>Exemple de structure
 
-    docs
-      /android
-          mypage.md
-          /mypage-images
-              some-image.png
+```
+docs
+    /android
+        mypage.md
+        /mypage-images
+            some-image.png
+```
 
 Veillez à respecter la syntaxe Markdown appropriée. Pour plus d’informations, consultez le [guide de style](../contributing-guidelines/template.md).
 

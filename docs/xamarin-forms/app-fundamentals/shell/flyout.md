@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/19/2019
+ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739288"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889204"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Menu volant Shell Xamarin.Forms
 
@@ -130,6 +130,32 @@ L’exemple suivant montre comment réduire l’en-tête du menu volant lorsque 
     ...
 </Shell>
 ```
+
+## <a name="flyout-background-image"></a>Image d'arrière-plan du menu volant
+
+Le menu volant peut avoir une image d’arrière-plan facultative, qui apparaît sous son en-tête et derrière ses éléments et les éléments de menu. L’image d’arrière-plan peut être spécifiée en définissant la propriété liable `FlyoutBackgroundImage` de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) à un fichier, une ressource incorporée, un URI ou un flux.
+
+Les proportions de l’image d’arrière-plan peuvent être configurées en définissant la propriété liable `FlyoutBackgroundImageAspect` de type [`Aspect`](xref:Xamarin.Forms.Aspect) sur l’un des membres d’énumération `Aspect` :
+
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) - découpe l’image pour qu’elle remplisse la zone d’affichage tout en conservant les proportions.
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) - cadre l’image, si nécessaire, pour que l’image s’ajuste à la zone d’affichage, avec un espace ajouté en haut/bas ou sur les côtés selon que l’image est large ou haute.
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) - étire l’image pour qu’elle remplisse complètement et exactement la zone d’affichage. Cela peut entraîner une distorsion de l’image.
+
+Par défaut, la propriété `FlyoutBackgroundImageAspect` a la valeur `AspectFit`.
+
+L’exemple suivant illustre la définition de ces propriétés :
+
+```xaml
+<Shell ...
+       FlyoutBackgroundImage="photo.jpg"
+       FlyoutBackgroundImageAspect="AspectFill">
+    ...
+</Shell>
+```
+
+Cela entraîne l’affichage d’une image d’arrière-plan dans le menu volant :
+
+![Capture d’écran d’une image d’arrière-plan de menu volant](flyout-images/flyout-backgroundimage.png "Image d’arrière-plan de menu")
 
 ## <a name="flyout-items"></a>Éléments de menu volant
 
