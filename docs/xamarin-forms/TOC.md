@@ -154,6 +154,7 @@
 #### [Dispositions](user-interface/controls/layouts.md)
 #### [Vues](user-interface/controls/views.md)
 #### [Cellules](user-interface/controls/cells.md)
+#### [Propriétés, méthodes et événements courants](user-interface/controls/common-properties.md)
 #### [Contrôles tiers](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [Bien démarrer](user-interface/datapages/get-started.md)
@@ -324,6 +325,7 @@
 ### [Convertisseurs d’unités](~/essentials/unit-converters.md?context=xamarin/xamarin-forms)
 ### [Suivi des versions](~/essentials/version-tracking.md?context=xamarin/xamarin-forms)
 ### [Vibreur](~/essentials/vibrate.md?context=xamarin/xamarin-forms)
+### [Notes de publication de Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 ### [Résolution des problèmes](~/essentials/troubleshooting.md?context=xamarin/xamarin-forms)
 
 ## Données et Azure Cloud Services
