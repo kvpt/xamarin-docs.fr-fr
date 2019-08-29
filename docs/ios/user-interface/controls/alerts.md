@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: e8113a9cefad5f53b66595728340f71101faa9de
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652049"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065574"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Affichage des alertes dans Xamarin. iOS
 
@@ -23,17 +23,17 @@ Contrairement aux classes qu’il a remplacées, qui sont des sous-classes de UI
 Utilisez `UIAlertControllerStyle` pour indiquer le type d’alerte à afficher. Ces types d’alertes sont les suivants:
 
 - **UIAlertControllerStyleActionSheet**
-    * Pré-iOS 8 cela aurait été un UIActionSheet
+  * Pré-iOS 8 cela aurait été un UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * Pré-iOS 8 cela aurait été UIAlertView 
+  * Pré-iOS 8 cela aurait été UIAlertView 
 
 Il existe trois étapes nécessaires à suivre lors de la création d’un contrôleur d’alerte:
 
 - Créez et configurez l’alerte avec:
-    * title
-    * message
-    * preferredStyle
-    
+  * title
+  * message
+  * preferredStyle
+
 - Facultatif Ajouter un champ de texte
 - Ajouter les actions requises
 - Présenter le contrôleur d’affichage

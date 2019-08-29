@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 2dde7415f40c9db205351a81d63d273fc211ed2b
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 86e92ee5293b4c9ed902f1c8d9858e06db1aa458
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976585"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065508"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 La classe Xamarin. [`ContentView`](xref:Xamarin.Forms.ContentView) Forms est un type `Layout` de qui contient un seul élément enfant et est généralement utilisé pour créer des contrôles personnalisés et réutilisables. La `ContentView` classe hérite de [`TemplatedView`](xref:Xamarin.Forms.TemplatedView). Cet article, ainsi que l’exemple associé, expliquent comment créer `CardView` un contrôle personnalisé basé `ContentView` sur la classe.
 
@@ -205,7 +205,7 @@ Pour plus d’informations sur les modèles de contrôle, consultez [modèles de
 
 ## <a name="related-links"></a>Liens connexes
 
-* [Exemple d’application ContentView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
+* [Exemple d’application ContentView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [Propriétés pouvant être liées](~/xamarin-forms/xaml/bindable-properties.md).
 * [Modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)

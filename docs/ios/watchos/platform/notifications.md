@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 39c77b4016027171a4e76bc4fb15c77d733cf5ba
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645922"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065372"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS Notifications dans Xamarin
 
@@ -37,7 +37,7 @@ Une fois que vous avez personnalisé le contrôleur, il peut ressembler à cet e
 
 Il existe deux types de notification :
 
-- **Apparence courte** -non déroulante vue statique définie par le système.
+- Affichage statique de type «non défilant» **concis** défini par le système.
 
 - **Présentation de long** - déroulable, vue personnalisable définie par vous ! Une version plus simple, statique et une version dynamique plus complexe peuvent être spécifiés.
 
@@ -99,21 +99,21 @@ Vous *doit* fournir une charge utile JSON de test lorsque vous testez le mode de
 
 Visual Studio pour Mac affiche des options supplémentaires quand une extension watch est définie comme le **projet de démarrage**.
 Avec le bouton droit sur le projet d’extension watch et choisissez **exécuter avec > les paramètres personnalisés...** :
-    
+
 [![](notifications-images/runwith-customparams-sml.png "En cours d’exécution avec des propriétés personnalisées")](notifications-images/runwith-customparams.png#lightbox)
-    
+
 Cette opération ouvre le **Arguments d’exécution** fenêtre qui contient un **WatchKit** onglet. Sélectionnez **Notification** et fournir une charge utile JSON, puis appuyez sur **Execute** pour démarrer l’application de surveillance dans le simulateur :
-    
+
 [![](notifications-images/runwith-execargs-sml.png "Sélectionnez la valeur par défaut de charge utile de Notification")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Pour définir la charge utile de notification test dans avec le bouton droit de Visual Studio sur l’extension watch pour modifier le **propriétés de projet**. Accédez à la **déboguer** section et sélectionnez un fichier JSON de notifications à partir de la liste (elle sera automatiquement tous les fichiers JSON inclus dans le projet).
-    
+
 [![](notifications-images/runwith-execargs-sml-vs.png "Sélectionnez un fichier JSON de notifications")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 Lorsque l’extension watch est la **projet de démarrage**, Visual Studio affichera des options supplémentaires, comme indiqué ci-dessous. Choisissez une de la **Notification** options pour démarrer l’application watch dans **Notification** mode (en utilisant le fichier JSON sélectionné dans la fenêtre Propriétés) :
-    
+
 ![](notifications-images/runwith-vs.png "Le menu de l’appareil")
 
 -----
@@ -128,7 +128,7 @@ Il est également possible d’utiliser le [ligne de commande](~/ios/watchos/tro
 
 Dans le [espion Kit catalogue](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) exemple il est un exemple de fichier charge utile JSON **NotificationPayload.json** (répertoriés ci-dessous).
 
-```csharp
+```json
 {
     "aps": {
         "alert": "Test message content",

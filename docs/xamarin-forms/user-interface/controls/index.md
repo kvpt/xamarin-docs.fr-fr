@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2019
-ms.openlocfilehash: dfc6c71a252b57bb39b464425b89fe8f5bda7d3e
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: f3aa8249b0e94721b8e35437997b74b24e31f689
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976515"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065247"
 ---
 # <a name="controls-reference"></a>Informations de référence sur les contrôles
 
@@ -30,6 +30,9 @@ Les quatre principaux groupes de contrôles utilisés pour créer l’interface 
 En règle générale, une page Xamarin.Forms occupe tout l’écran. La page contient généralement une disposition qui contient les vues et éventuellement d’autres dispositions. Les cellules sont des composants spécialisés utilisés par [ `TableView` ](views.md#tableView) et [ `ListView` ](views.md#listView). Un diagramme de classes qui affiche la hiérarchie des types généralement utilisés pour créer une interface utilisateur dans Xamarin. Forms se trouve dans la [hiérarchie de classes de contrôles Xamarin. Forms](~/xamarin-forms/internals/class-hierarchy.md).
 
 Dans les quatre articles sur [ **Pages**](pages.md), [ **dispositions**](layouts.md), [ **vues** ](views.md), et [ **cellules**](cells.md), chaque type de contrôle est décrit avec des liens vers sa documentation des API, un article décrivant son utilisation (le cas échéant) et un ou plusieurs exemples de programmes (s’ils existent). Chaque type de contrôle est également accompagné d’une capture d’écran montrant une page de l’exemple [**FormsGallery**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) s’exécutant sur des appareils iOS et Android. Chaque capture d’écran ci-dessous sont des liens vers le code source pour le langage C#, la page équivalent XAML et (le cas échéant) le fichier code-behind C# pour la page XAML.
+
+> [!NOTE]
+> Les pages, les dispositions et les vues dérivent de la `VisualElement` classe. La `VisualElement` classe fournit diverses propriétés, méthodes et événements qui sont utiles dans la dérivation des classes. Pour plus d’informations, consultez [Propriétés, méthodes et événements VisualElement](common-properties.md).
 
 Outre les contrôles fournis avec Xamarin. Forms, des contrôles tiers sont disponibles. Pour plus d’informations, consultez [contrôles tiers](thirdparty.md).
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 54e910d0a4f3301ca441fd18ddb27da930e9415c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 0f92dca71f74266e1408cd65c842f729a9a648ce
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528772"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065663"
 ---
 # <a name="touch-id-in-xamarinios"></a>Touch ID dans Xamarin. iOS
 
@@ -102,15 +102,15 @@ Dans le domaine de la sécurité, il est également très important de savoir qu
 
 Pour utiliser Touch ID sans trousseau en tirant parti de l’API d’authentification locale, il existe quelques fonctions que nous pouvons utiliser. Celles-ci sont détaillées ci-dessous:
 
-*   `CanEvaluatePolicy`: Cela permet simplement de vérifier si l’appareil est en capacité d’accepter Touch ID.
-*   `EvaluatePolicy`: Démarre l’opération d’authentification et affiche l’interface utilisateur, et retourne `true` une `false` réponse ou.
-*   `DeviceOwnerAuthenticationWithBiometrics`: Il s’agit de la stratégie qui peut être utilisée pour afficher l’écran touch ID. Il est important de noter qu’il n’existe aucun mécanisme de secours du code secret ici. vous devez donc implémenter ce secours dans votre application pour permettre aux utilisateurs d’ignorer l’authentification Touch ID.
+* `CanEvaluatePolicy`: Cela permet simplement de vérifier si l’appareil est en capacité d’accepter Touch ID.
+* `EvaluatePolicy`: Démarre l’opération d’authentification et affiche l’interface utilisateur, et retourne `true` une `false` réponse ou.
+* `DeviceOwnerAuthenticationWithBiometrics`: Il s’agit de la stratégie qui peut être utilisée pour afficher l’écran touch ID. Il est important de noter qu’il n’existe aucun mécanisme de secours du code secret ici. vous devez donc implémenter ce secours dans votre application pour permettre aux utilisateurs d’ignorer l’authentification Touch ID.
 
 Il existe quelques inconvénients à l’utilisation de l’authentification locale, qui sont répertoriées ci-dessous:
 
-*   Comme pour le trousseau, il ne peut être exécuté qu’au premier plan. Son appel sur un thread d’arrière-plan entraînera l’échec de l’opération.
-*   Gardez à l’esprit que l’évaluation de la stratégie peut échouer. Un bouton de code secret doit être implémenté en tant que chute.
-*   Vous devez fournir un `localizedReason` pour expliquer la raison pour laquelle l’authentification est nécessaire. Cela permet de créer une relation de confiance avec l’utilisateur.
+* Comme pour le trousseau, il ne peut être exécuté qu’au premier plan. Son appel sur un thread d’arrière-plan entraînera l’échec de l’opération.
+* Gardez à l’esprit que l’évaluation de la stratégie peut échouer. Un bouton de code secret doit être implémenté en tant que chute.
+* Vous devez fournir un `localizedReason` pour expliquer la raison pour laquelle l’authentification est nécessaire. Cela permet de créer une relation de confiance avec l’utilisateur.
 
 Ensuite, dans la section ci-dessous, nous verrons comment implémenter l’API en tenant compte de ces avertissements.
 

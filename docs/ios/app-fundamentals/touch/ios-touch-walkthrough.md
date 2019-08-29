@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527055"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065439"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : Utilisation de Touch dans Xamarin. iOS
 
@@ -37,7 +37,7 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
 
 
 1. Ouvrez le projet **Touch_Start**. Exécutez d’abord le projet pour vérifier que tout est correct, puis appuyez sur le bouton d' **exemples tactiles** . Vous devez voir un écran similaire à ce qui suit (même si aucun des boutons ne fonctionne):
-    
+
     [![](ios-touch-walkthrough-images/image4.png "Exemple d’exécution d’application avec des boutons non fonctionnels")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
@@ -164,11 +164,11 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
         touchStartedInside = false;
     }
     ```
-    
+
     Ces deux méthodes réinitialisent l' `touchStartedInside` indicateur sur false. `TouchesEnded`s’affiche `TouchesEnded` également à l’écran.
 
 1. À ce stade, l’écran d’exemples tactiles est terminé. Notez que l’écran change quand vous interagissez avec chacune des images, comme illustré dans la capture d’écran suivante:
-        
+
     [![](ios-touch-walkthrough-images/image4.png "Écran de démarrage de l’application")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "L’écran lorsque l’utilisateur fait glisser un bouton")](ios-touch-walkthrough-images/image5.png#lightbox)
