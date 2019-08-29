@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 59df461c52cd01187ca3a9fc25fe741342910061
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: e5f322ece2775f975ab3737eb20ebbd854afa6c4
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58854533"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064835"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
@@ -108,11 +108,11 @@ Pour définir un point d’arrêt conditionnel, accédez à la **fenêtre Propri
 
 - Pour ajouter un nouveau point d’arrêt conditionnel, cliquez avec le bouton droit sur la marge de l’éditeur, à gauche du numéro de la ligne de code pour laquelle vous voulez définir un point d’arrêt, et sélectionnez Nouveau point d’arrêt :
 
-    [![](debugging-in-xamarin-ios-images/image4.png "Sélectionner un nouveau point d’arrêt")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+  [![](debugging-in-xamarin-ios-images/image4.png "Sélectionner un nouveau point d’arrêt")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Pour ajouter une condition à un point d’arrêt existant, cliquez avec le bouton droit sur le point d’arrêt, puis sélectionnez **Propriétés de point d’arrêt** ou dans le **Panneau Points d’arrêt**, sélectionnez le bouton de propriétés illustré ci-dessous :
 
-    [![](debugging-in-xamarin-ios-images/image5.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+  [![](debugging-in-xamarin-ios-images/image5.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 Vous pouvez ensuite entrer la condition de déclenchement du point d’arrêt :

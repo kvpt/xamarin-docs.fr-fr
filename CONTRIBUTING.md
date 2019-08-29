@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521105"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118912"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -12,7 +12,7 @@ Nous vous remercions de l’intérêt que vous portez à la documentation Xamari
 
 Cette page décrit le processus simple de mise à jour de contenu dans la [documentation Xamarin](https://docs.microsoft.com/xamarin).
 
-* [Contrat de licence de contribution (CLA)](LICENSE)
+- [Contrat de licence de contribution (CLA)](LICENSE)
 
 ## <a name="process-for-contributing"></a>Processus de contribution
 

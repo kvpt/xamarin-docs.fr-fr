@@ -4,13 +4,13 @@ description: La classe Email de Xamarin.Essentials permet à une application d�
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
-ms.openlocfilehash: f2c275260625fe3842b4473e404f49c71d1d28ae
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.date: 08/20/2019
+ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012490"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060093"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials: Messagerie
 
@@ -62,18 +62,9 @@ public class EmailTest
 }
 ```
 
-
 ## <a name="file-attachments"></a>Pièces jointes
 
-![Fonctionnalité d’évaluation](~/media/shared/preview.png)
-
-L’envoi de fichiers par e-mail est disponible en tant que préversion expérimentale dans Xamarin.Essentials version 1.1.0. Cette fonctionnalité permet à une application d’envoyer des fichiers par e-mail dans des clients de messagerie sur l’appareil. Pour activer cette fonctionnalité, définissez la propriété suivante dans le code de démarrage de votre application :
-
-```csharp
-ExperimentalFeatures.Enable(ExperimentalFeatures.EmailAttachments);
-```
-
-Une fois la fonctionnalité activée, n’importe quel fichier peut être envoyé. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ajouté en tant que pièce jointe. Chaque client de messagerie est différent et susceptible de ne prendre en charge que certaines extensions de fichiers spécifiques, voire aucune.
+Cette fonctionnalité permet à une application d’envoyer des fichiers par e-mail dans des clients de messagerie sur l’appareil. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ajouté en tant que pièce jointe. Chaque client de messagerie est différent et susceptible de ne prendre en charge que certaines extensions de fichiers spécifiques, voire aucune.
 
 Voici un exemple d’écriture de texte sur le disque et d’ajout en tant que pièce jointe à un e-mail :
 

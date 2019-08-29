@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525472"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119807"
 ---
 # <a name="publishing-to-google-play"></a>Publication sur Google Play
 
@@ -246,10 +246,10 @@ Après avoir cliqué sur **Autoriser**, le navigateur indique _Code de vérifica
 
 Ensuite, la boîte de dialogue **Piste Google Play** s’affiche. Google Play propose quatre pistes pour le chargement de votre application :
 
-* **Alpha** &ndash; Utilisé pour charger une toute première version de l’application pour un nombre réduit de testeurs.
-* **Bêta** &ndash; Utilisé pour charger une version préliminaire de l’application pour un nombre plus important de testeurs.
-* **Lancement** &ndash; Permet à un pourcentage d’utilisateurs de recevoir une version mise à jour de l’application. Cela permet d’augmenter progressivement le pourcentage de 10 % des utilisateurs à 100 % à mesure que vous supprimez les bogues.
-* **Production** &ndash; Sélectionnez cette option lorsque l’application est prête pour la distribution complète à partir sur le magasin Google Play.
+- **Alpha** &ndash; Utilisé pour charger une toute première version de l’application pour un nombre réduit de testeurs.
+- **Bêta** &ndash; Utilisé pour charger une version préliminaire de l’application pour un nombre plus important de testeurs.
+- **Lancement** &ndash; Permet à un pourcentage d’utilisateurs de recevoir une version mise à jour de l’application. Cela permet d’augmenter progressivement le pourcentage de 10 % des utilisateurs à 100 % à mesure que vous supprimez les bogues.
+- **Production** &ndash; Sélectionnez cette option lorsque l’application est prête pour la distribution complète à partir sur le magasin Google Play.
 
 Choisissez la piste Google Play qui sera utilisée pour chargement l’application et cliquez sur **Charger**. Si vous sélectionnez **Lancement**, veillez à entrer une valeur de pourcentage :
 

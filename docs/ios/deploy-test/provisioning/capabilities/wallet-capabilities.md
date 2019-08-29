@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 25ebf101dfe0cc3d51e8411b7977e6dc0b061f2d
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8cb5d1cb29f5668194d15102c0b2fb4118388e94
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978406"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065472"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Fonctionnalités Wallet dans Xamarin.iOS
 
@@ -22,11 +22,11 @@ Wallet est une application qui stocke et affiche les codes-barres et autres cont
 
 Les développeurs peuvent utiliser Wallet de diverses façons :
 
-*   Pour créer un passe, une application n’a pas besoin d’être générée. Un Passfile est une archive zippée qui contient des fichiers JSON et les fichiers de métadonnées facultatifs. Au préalable, un [ID de type de passe](~/ios/platform/passkit.md) et un [certificat de passe ](~/ios/platform/passkit.md) doivent avoir été créés. Ces informations sont ensuite déclarées dans un fichier JSON. Pour plus d’informations sur le provisionnement d’un Passfile, consultez le guide [Présentation de PassKit](~/ios/platform/passkit.md).
+* Pour créer un passe, une application n’a pas besoin d’être générée. Un Passfile est une archive zippée qui contient des fichiers JSON et les fichiers de métadonnées facultatifs. Au préalable, un [ID de type de passe](~/ios/platform/passkit.md) et un [certificat de passe ](~/ios/platform/passkit.md) doivent avoir été créés. Ces informations sont ensuite déclarées dans un fichier JSON. Pour plus d’informations sur le provisionnement d’un Passfile, consultez le guide [Présentation de PassKit](~/ios/platform/passkit.md).
 
-*   Des applications compagnes sont écrites pour distribuer les passes. Elles permettent également de créer, modifier et mettre à jour les passes, puis de les ajouter à l’application Wallet. Une application cinéma est un bon exemple de ce type d’application : quand un utilisateur achète un billet via l’application, ce billet est ensuite directement ajouté au service Wallet à partir de l’application. Pour utiliser une application compagne, votre profil de provisionnement doit contenir un ID d’application avec les fonctionnalités Wallet, comme cela est fait dans les étapes ci-dessous. Votre application doit également inclure les droits requis.
+* Des applications compagnes sont écrites pour distribuer les passes. Elles permettent également de créer, modifier et mettre à jour les passes, puis de les ajouter à l’application Wallet. Une application cinéma est un bon exemple de ce type d’application : quand un utilisateur achète un billet via l’application, ce billet est ensuite directement ajouté au service Wallet à partir de l’application. Pour utiliser une application compagne, votre profil de provisionnement doit contenir un ID d’application avec les fonctionnalités Wallet, comme cela est fait dans les étapes ci-dessous. Votre application doit également inclure les droits requis.
 
-*   Les applications Conduit sont des applications qui ne manipulent pas de passes directement. Leur interaction avec les passes consiste principalement à les recevoir et à permettre à l’utilisateur de les ajouter au Wallet. Ces applications n’ont pas besoin de provisionnement ou droits particuliers, mais elles utilisent certaines méthodes du framework PassKit.
+* Les applications Conduit sont des applications qui ne manipulent pas de passes directement. Leur interaction avec les passes consiste principalement à les recevoir et à permettre à l’utilisateur de les ajouter au Wallet. Ces applications n’ont pas besoin de provisionnement ou droits particuliers, mais elles utilisent certaines méthodes du framework PassKit.
 
 ## <a name="developer-center"></a>Developer Center
 
@@ -57,7 +57,7 @@ Cet ID d’application peut maintenant être utilisé pour générer ou regéné
 
 Pour plus d’informations sur l’utilisation de Wallet, consultez le guide suivant :
 
-*   [Présentation de PassKit](~/ios/platform/passkit.md)
+* [Présentation de PassKit](~/ios/platform/passkit.md)
  
 ## <a name="next-steps"></a>Étapes suivantes
  

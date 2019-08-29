@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: f0d6d2343350455a101033aced7cec0c31695503
-ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
+ms.openlocfilehash: 477bb7289588d0ab1b1dd29909c7dc36f2b2dfac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39353228"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121424"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Provisionnement d’appareil pour Xamarin.iOS
 
@@ -47,17 +47,17 @@ Ces étapes permettent de vérifier que tout ce qui est créé ou utilisé penda
 
 Il existe deux façons de provisionner votre appareil iOS :
 
-* **Automatiquement (recommandé)** : Sélectionnez le schéma **Provisionnement automatique** dans votre projet pour que Visual Studio crée et gère automatiquement vos identités de signature, ID d’application et profils de provisionnement. Pour plus d’informations sur la façon de gérer automatiquement le provisionnement, consultez le guide de [provisionnement automatique](automatic-provisioning.md). Il s’agit de la méthode recommandée pour provisionner un appareil iOS.
+- **Automatiquement (recommandé)** : Sélectionnez le schéma **Provisionnement automatique** dans votre projet pour que Visual Studio crée et gère automatiquement vos identités de signature, ID d’application et profils de provisionnement. Pour plus d’informations sur la façon de gérer automatiquement le provisionnement, consultez le guide de [provisionnement automatique](automatic-provisioning.md). Il s’agit de la méthode recommandée pour provisionner un appareil iOS.
 
-* **Manuellement** : Il est possible de créer et gérer des identités de signature, ID d’application et profils de provisionnement par le biais du portail des développeurs Apple, comme décrit dans le guide de [provisionnement manuel](manual-provisioning.md). Ces artefacts peuvent être gérés comme décrit dans le guide de [gestion des comptes Apple](~/cross-platform/macios/apple-account-management.md).
+- **Manuellement** : Il est possible de créer et gérer des identités de signature, ID d’application et profils de provisionnement par le biais du portail des développeurs Apple, comme décrit dans le guide de [provisionnement manuel](manual-provisioning.md). Ces artefacts peuvent être gérés comme décrit dans le guide de [gestion des comptes Apple](~/cross-platform/macios/apple-account-management.md).
 
 ## <a name="provisioning-for-application-services"></a>Provisionnement des services d’application
 
 Apple propose une sélection de services d’application spéciaux, également appelés fonctionnalités, que vous pouvez activer pour une application Xamarin.iOS. Ces services d’application doivent être configurés à la fois sur le portail de provisionnement iOS quand l’**ID d’application** est créé et dans le fichier **Entitlements.plist** qui fait partie du projet d’application Xamarin.iOS. Pour plus d’informations sur l’ajout de services d’application à votre application, reportez-vous au guide de [présentation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md) et au guide d’[utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md).
 
-* Créez un ID d’application avec les services d’application requis.
-* Créez un [profil de provisionnement](#provisioning-your-device) qui contient cet ID d’application.
-* Définir des droits dans le projet Xamarin.iOS
+- Créez un ID d’application avec les services d’application requis.
+- Créez un [profil de provisionnement](#provisioning-your-device) qui contient cet ID d’application.
+- Définir des droits dans le projet Xamarin.iOS
 
 ## <a name="related-links"></a>Liens connexes
 

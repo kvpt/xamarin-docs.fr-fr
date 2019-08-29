@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 4ddae1ae4f49c01220b2f5ce78dc19122b3015a0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525276"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119632"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
@@ -319,15 +319,15 @@ Le **Gestionnaire d’archives** est composé d’un volet **Liste des solutions
 
 Le volet **Liste des solutions** affiche toutes les solutions ayant au moins un projet archivé. **Liste des solutions** comprend les sections suivantes :
 
-* **Solution actuelle** &ndash; Affiche la solution actuelle. Notez que cette zone peut être vide s’il n’existe aucune archive pour la solution actuelle.
-* **Toutes les archives** &ndash; Affiche toutes les solutions ayant une archive.
-* Zone de texte **Rechercher** (en haut) &ndash; Filtre les solutions répertoriées dans la liste **Toutes les archives** en fonction de la chaîne de recherche entrée.
+- **Solution actuelle** &ndash; Affiche la solution actuelle. Notez que cette zone peut être vide s’il n’existe aucune archive pour la solution actuelle.
+- **Toutes les archives** &ndash; Affiche toutes les solutions ayant une archive.
+- Zone de texte **Rechercher** (en haut) &ndash; Filtre les solutions répertoriées dans la liste **Toutes les archives** en fonction de la chaîne de recherche entrée.
 
 Le volet **Liste des archives** affiche la liste de toutes les archives de la solution sélectionnée. **Liste des archives** comprend les sections suivantes :
 
-* **Nom de la solution sélectionnée** &ndash; Affiche le nom de la solution sélectionnée dans le volet **Liste des solutions**. Toutes les informations affichées dans le volet **Liste des archives** font référence à la solution sélectionnée.
-* **Filtre Plateformes** &ndash; Ce champ permet de filtrer les archives par type de plateforme (par exemple, iOS ou Android).
-* **Éléments d’archive** &ndash; Liste des archives de la solution sélectionnée. Chaque élément de cette liste inclut le nom du projet, la date de création et la plateforme. Cette liste peut également afficher des informations supplémentaires telles que la progression de l’archivage ou de la publication d’un élément.
+- **Nom de la solution sélectionnée** &ndash; Affiche le nom de la solution sélectionnée dans le volet **Liste des solutions**. Toutes les informations affichées dans le volet **Liste des archives** font référence à la solution sélectionnée.
+- **Filtre Plateformes** &ndash; Ce champ permet de filtrer les archives par type de plateforme (par exemple, iOS ou Android).
+- **Éléments d’archive** &ndash; Liste des archives de la solution sélectionnée. Chaque élément de cette liste inclut le nom du projet, la date de création et la plateforme. Cette liste peut également afficher des informations supplémentaires telles que la progression de l’archivage ou de la publication d’un élément.
 
 Le **Panneau des détails** affiche des informations supplémentaires sur chaque archive. Il permet également à l’utilisateur de démarrer le workflow de distribution ou d’ouvrir le dossier dans lequel la distribution a été créée. La section **Commentaires de build** permet d’inclure des commentaires de build dans l’archive.
 
@@ -343,9 +343,9 @@ La boîte de dialogue **Canal de distribution** affiche des informations sur l�
 
 Il est possible de choisir l’un des canaux de distribution suivants :
 
-* **Ad-Hoc** &ndash; Enregistre un APK signé sur disque qui peut être chargé de façon indépendante (sideloaded) sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version _ad hoc_ de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
+- **Ad-Hoc** &ndash; Enregistre un APK signé sur disque qui peut être chargé de façon indépendante (sideloaded) sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version _ad hoc_ de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
 
-* **Google Play** &ndash; Publie un APK signé sur Google Play. Poursuivez avec [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md) pour apprendre comment signer et publier un APK sur Google Play Store.
+- **Google Play** &ndash; Publie un APK signé sur Google Play. Poursuivez avec [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md) pour apprendre comment signer et publier un APK sur Google Play Store.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

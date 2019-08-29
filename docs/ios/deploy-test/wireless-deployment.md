@@ -8,12 +8,12 @@ author: lobrien
 ms.author: laobri
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 0e7516f030955c9b0f89db6db11b93afd9b358de
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: ac4ae1d8b247a709307841be1ffa1fee2afbf68f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865504"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121476"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Déploiement sans fil pour les applications Xamarin.iOS et tvOS
 
@@ -95,9 +95,9 @@ Le débogage sans fil est automatiquement activé après le déploiement sans fi
 
 2. Si l’appareil n’apparaît pas dans Visual Studio, vérifiez la fenêtre **Appareils et simulateurs** de Xcode. 
 
-    * Si Xcode n’affiche **pas** votre appareil comme étant connecté, essayez de [coupler](#pair) à nouveau votre appareil.
+    - Si Xcode n’affiche **pas** votre appareil comme étant connecté, essayez de [coupler](#pair) à nouveau votre appareil.
 
-    * Si Xcode n’affiche pas l’appareil comme étant connecté, essayez de redémarrer Visual Studio et votre appareil.
+    - Si Xcode n’affiche pas l’appareil comme étant connecté, essayez de redémarrer Visual Studio et votre appareil.
 
 3. Si vous ne le n'avez pas encore fait, vous devrez [configurer](~/ios/get-started/installation/device-provisioning/index.md) votre appareil.
 

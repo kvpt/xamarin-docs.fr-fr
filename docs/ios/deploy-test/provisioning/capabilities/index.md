@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7bb4e142a8b7bd0cf0691da381729dc226028193
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832180"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121357"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Utilisation des fonctionnalités dans Xamarin.iOS
 
@@ -21,28 +21,28 @@ _L’ajout de fonctionnalités à une application nécessite souvent une configu
 Apple fournit aux développeurs diverses _fonctionnalités_, souvent appelées _services d’application_, qui leur permettent de proposer des applications iOS plus complètes et dotées de capacités étendues. Les développeurs peuvent mieux intégrer les fonctionnalités de la plateforme à leurs applications, par exemple, des transactions monétaires lancées à partir de l’application, des services d’appareil supplémentaires comme Siri, et bien plus encore.
 Ces fonctionnalités sont compatibles avec les projets Xamarin.iOS. Voici la liste complète des services :
 
-* App Groups
-* Associated Domains
-* Data Protection
-* Game Center
-* HealthKit
-* HomeKit
-* Configuration d’accessoires sans fil
-* iCloud
-* In-App Purchase
-* Inter-App Audio
-* Apple Pay
-* Wallet
-* Push Notification
-* VPN personnel
-* Siri
-* Maps
-* Background Modes
-* Keychain Sharing
-* Extensions réseau
-* Hotspot Configuration
-* Multipath
-* NFC Tag Reading
+- App Groups
+- Associated Domains
+- Data Protection
+- Game Center
+- HealthKit
+- HomeKit
+- Configuration d’accessoires sans fil
+- iCloud
+- In-App Purchase
+- Inter-App Audio
+- Apple Pay
+- Wallet
+- Push Notification
+- VPN personnel
+- Siri
+- Maps
+- Background Modes
+- Keychain Sharing
+- Extensions réseau
+- Hotspot Configuration
+- Multipath
+- NFC Tag Reading
 
 Vous pouvez activer ces fonctionnalités à partir de Visual Studio pour Mac et Visual Studio 2019, ou manuellement dans le portail des développeurs d’Apple. Certaines fonctionnalités, telles que Wallet, Apple Pay et iCloud, nécessitent une configuration supplémentaire des ID d’application.
 
@@ -57,16 +57,16 @@ Cette section décrit comment utiliser le provisionnement automatique de Visual 
 > [!IMPORTANT]
 > Toutes les fonctionnalités ne peuvent pas être ajoutées et gérées avec le provisionnement automatique. La liste suivante répertorie les fonctionnalités prises en charge :
 >
->* HealthKit 
->* HomeKit 
->* VPN personnel 
->* Configuration d’accessoires sans fil 
->* Inter-App Audio 
->* SiriKit 
->* Zone réactive 
->* Extensions réseau 
->* NFC Tag Reading
->* Multipath 
+>- HealthKit 
+>- HomeKit 
+>- VPN personnel 
+>- Configuration d’accessoires sans fil 
+>- Inter-App Audio 
+>- SiriKit 
+>- Zone réactive 
+>- Extensions réseau 
+>- NFC Tag Reading
+>- Multipath 
 >
 >Les fonctionnalités Push Notifications, Game Center, In-App Purchase, Maps, Keychain Sharing, Associated Domains et Data Protection ne sont pas prises en charge. Pour ajouter ces fonctionnalités, utilisez le provisionnement manuel et suivez les étapes décrites dans la section [Developer center](#devcenter).
 
@@ -85,8 +85,8 @@ Les fonctionnalités sont ajoutées au fichier **Entitlements.plist** dans Visua
     ![Ajouter des fonctionnalités au fichier entitlements.plist](images/image17.png)
 
     La sélection d’une fonctionnalité a deux actions :
-    * Elle ajoute cette fonctionnalité à votre ID d’application.
-    * Elle ajoute la paire clé-valeur du droit dans votre fichier Entitlements.plist.
+    - Elle ajoute cette fonctionnalité à votre ID d’application.
+    - Elle ajoute la paire clé-valeur du droit dans votre fichier Entitlements.plist.
 
     Visual Studio pour Mac vous signale la réussite de ces opérations par le message suivant :
 
@@ -108,8 +108,8 @@ Les fonctionnalités sont ajoutées à **Entitlements.plist**. Pour ajouter des 
 
     L’enregistrement du fichier **Entitlement.plist** a deux actions :
 
-    * Elle ajoute cette fonctionnalité à votre ID d’application.
-    * Elle ajoute la paire clé-valeur du droit dans votre fichier Entitlements.plist.
+    - Elle ajoute cette fonctionnalité à votre ID d’application.
+    - Elle ajoute la paire clé-valeur du droit dans votre fichier Entitlements.plist.
 
 -----
 
@@ -196,8 +196,8 @@ Maintenant, créez un profil de provisionnement qui contient cet ID d’applicat
 
 Une fois que vous avez ajouté une fonctionnalité côté serveur, il vous reste quelques étapes à effectuer pour permettre à votre application d’utiliser la fonctionnalité. S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
-*   Utilisez l’espace de noms de framework dans votre application.
-*   Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+- Utilisez l’espace de noms de framework dans votre application.
+- Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 
 <a name="troubleshooting" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: d9e3055130a66fe240bf378ad2f63679e71bec14
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629625"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121137"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
@@ -24,13 +24,13 @@ Vous pouvez affecter directement un déclencheur à un contrôle, ou vous pouvez
 
 Il existe quatre types de déclencheurs :
 
-* [Déclencheur de propriétés](#property) : activé lorsqu’une propriété d’un contrôle est définie sur une valeur particulière.
+- [Déclencheur de propriétés](#property) : activé lorsqu’une propriété d’un contrôle est définie sur une valeur particulière.
 
-* [Déclencheur de données](#data) : utilise la liaison de données pour son déclenchement, en se basant sur les propriétés d’un autre contrôle.
+- [Déclencheur de données](#data) : utilise la liaison de données pour son déclenchement, en se basant sur les propriétés d’un autre contrôle.
 
-* [Déclencheur d’événements](#event) : activé lorsqu’un événement se produit au niveau d’un contrôle.
+- [Déclencheur d’événements](#event) : activé lorsqu’un événement se produit au niveau d’un contrôle.
 
-* [Déclencheur multiple](#multi) : permet de définir plusieurs conditions de déclenchement avant qu’une action ne se produise.
+- [Déclencheur multiple](#multi) : permet de définir plusieurs conditions de déclenchement avant qu’une action ne se produise.
 
 <a name="property" />
 
@@ -52,15 +52,15 @@ Cet exemple montre un déclencheur qui modifie la couleur d’arrière-plan d’
 
 Les parties importantes de la déclaration d’un déclencheur sont :
 
-* **TargetType** : type du contrôle auquel le déclencheur est appliqué.
+- **TargetType** : type du contrôle auquel le déclencheur est appliqué.
 
-* **Property** : propriété du contrôle qui est supervisé.
+- **Property** : propriété du contrôle qui est supervisé.
 
-* **Value** : valeur qui entraîne l’activation du déclencheur, pour la propriété supervisée.
+- **Value** : valeur qui entraîne l’activation du déclencheur, pour la propriété supervisée.
 
-* **Setter** : collection d’éléments `Setter` qui peuvent être ajoutés lorsque la condition de déclenchement est remplie. Vous devez spécifier le `Property` et le `Value` à définir.
+- **Setter** : collection d’éléments `Setter` qui peuvent être ajoutés lorsque la condition de déclenchement est remplie. Vous devez spécifier le `Property` et le `Value` à définir.
 
-* **EnterActions et ExitActions** (non montrés ici) : sont écrits en code et peuvent être utilisés en plus des éléments `Setter` (ou à leur place). Ils sont [décrits ci-dessous](#enterexit).
+- **EnterActions et ExitActions** (non montrés ici) : sont écrits en code et peuvent être utilisés en plus des éléments `Setter` (ou à leur place). Ils sont [décrits ci-dessous](#enterexit).
 
 ### <a name="applying-a-trigger-using-a-style"></a>Application d’un déclencheur à l’aide d’un style
 
@@ -140,11 +140,11 @@ La classe implémente `TriggerAction`, ce qui signifie qu’elle doit fournir un
 
 Une implémentation d’action de déclencheur doit :
 
-* Implémenter la classe générique `TriggerAction<T>`, avec le paramètre générique correspondant au type de contrôle auquel le déclencheur doit être appliqué. Vous pouvez utiliser des superclasses telles que `VisualElement` pour écrire des actions de déclencheur qui fonctionnent avec un large éventail de contrôles, ou vous pouvez spécifier un type de contrôle comme `Entry`.
+- Implémenter la classe générique `TriggerAction<T>`, avec le paramètre générique correspondant au type de contrôle auquel le déclencheur doit être appliqué. Vous pouvez utiliser des superclasses telles que `VisualElement` pour écrire des actions de déclencheur qui fonctionnent avec un large éventail de contrôles, ou vous pouvez spécifier un type de contrôle comme `Entry`.
 
-* Remplacer la méthode `Invoke` qui est appelée chaque fois que les critères de déclenchement sont remplis.
+- Remplacer la méthode `Invoke` qui est appelée chaque fois que les critères de déclenchement sont remplis.
 
-* Si vous le souhaitez, vous pouvez exposer des propriétés qui peuvent être définies dans le code XAML lorsque le déclencheur est déclaré (comme `Anchor`, `Scale` et `Length` dans cet exemple).
+- Si vous le souhaitez, vous pouvez exposer des propriétés qui peuvent être définies dans le code XAML lorsque le déclencheur est déclaré (comme `Anchor`, `Scale` et `Length` dans cet exemple).
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -236,9 +236,9 @@ Pour utiliser ce convertisseur dans un déclencheur multiple, ajoutez-le d’abo
 
 Le code XAML est fourni ci-dessous. Notez les différences suivantes par rapport au premier exemple de déclencheur multiple :
 
-* Dans le bouton, `IsEnabled="false"` est défini par défaut.
-* Les conditions du déclencheur multiple utilisent le convertisseur pour transformer la valeur `Text.Length` en un `boolean`.
-* Lorsque toutes les conditions sont `true`, la méthode setter définit la propriété `IsEnabled` du bouton sur `true`.
+- Dans le bouton, `IsEnabled="false"` est défini par défaut.
+- Les conditions du déclencheur multiple utilisent le convertisseur pour transformer la valeur `Text.Length` en un `boolean`.
+- Lorsque toutes les conditions sont `true`, la méthode setter définit la propriété `IsEnabled` du bouton sur `true`.
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
