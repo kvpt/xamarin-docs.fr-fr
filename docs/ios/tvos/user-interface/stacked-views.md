@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528839"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120740"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Utilisation des vues empilées tvOS dans Xamarin
 
@@ -61,16 +61,16 @@ Tandis que l’affichage de la pile a un contrôle total sur la disposition d’
 
 En général, cela signifie épingler au moins deux bords de l’affichage de la pile pour développer et contracter, définissant ainsi sa position. Sans contraintes supplémentaires, l’affichage de la pile sera automatiquement redimensionné pour s’adapter à toutes ses sous-vues, comme suit:
 
-* La taille le long `Axis` de son correspond à la somme de toutes les tailles de sous-affichages, ainsi qu’à l’espace qui a été défini entre chaque sous-vue.
-* Si la `LayoutMarginsRelativeArrangement` propriété a `true`la valeur, la taille des vues de la pile inclut également l’espace pour les marges.
-* La taille perpendiculaire à `Axis` sera définie sur la plus grande sous-vue de la collection.
+- La taille le long `Axis` de son correspond à la somme de toutes les tailles de sous-affichages, ainsi qu’à l’espace qui a été défini entre chaque sous-vue.
+- Si la `LayoutMarginsRelativeArrangement` propriété a `true`la valeur, la taille des vues de la pile inclut également l’espace pour les marges.
+- La taille perpendiculaire à `Axis` sera définie sur la plus grande sous-vue de la collection.
 
 En outre, vous pouvez spécifier des contraintes pour la **hauteur** et la **largeur**de la vue de la pile. Dans ce cas, les sous-affichages sont disposés (dimensionnés) pour remplir l’espace spécifié par l’affichage de la pile comme déterminé `Distribution` par `Alignment` les propriétés et.
 
 Si la `BaselineRelativeArrangement` propriété est `true`, les sous-affichages sont disposés en fonction de la première ou de la dernière ligne de base du sous-affichage, au lieu d’utiliser la position **supérieure**, **inférieure** ou*centrale*- **Y** . Celles-ci sont calculées sur le contenu de la vue de la pile comme suit:
 
-* Une vue verticale de la pile retourne la première sous-vue pour la première ligne de base et la dernière pour la dernière. Si l’une de ces sous-vues est elle-même des vues de pile, la première ou la dernière ligne de base sera utilisée.
-* Une vue de pile horizontale utilise sa sous-vue la plus grande pour la première et la dernière ligne de base. Si la vue la plus grande est également un affichage de la pile, elle utilise la sous-vue la plus haute comme ligne de base.
+- Une vue verticale de la pile retourne la première sous-vue pour la première ligne de base et la dernière pour la dernière. Si l’une de ces sous-vues est elle-même des vues de pile, la première ou la dernière ligne de base sera utilisée.
+- Une vue de pile horizontale utilise sa sous-vue la plus grande pour la première et la dernière ligne de base. Si la vue la plus grande est également un affichage de la pile, elle utilise la sous-vue la plus haute comme ligne de base.
 
 > [!IMPORTANT]
 > L’alignement de la ligne de base ne fonctionne pas sur les tailles de sous-affichage étirées ou compressées, car la ligne de base est calculée à la mauvaise position. Pour l’alignement de ligne de base, vérifiez que la **hauteur** de la sous-vue correspond à la **hauteur**de l’affichage de contenu intrinsèque.

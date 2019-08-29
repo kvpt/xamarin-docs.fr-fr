@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b5ffa884def5acb01dc07ce39a2189e2570209c3
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 09e4ca561f962e46dfe4eccbaf1cf284f4bb2827
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620574"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120827"
 ---
 # <a name="table-views-in-xamarinmac"></a>Vues de table dans Xamarin. Mac
 
@@ -40,8 +40,8 @@ Le comportement d’une vue de table peut être personnalisé en fournissant une
 
 Lorsque vous créez des vues de table, Apple suggère ce qui suit:
 
-* Autorisez l’utilisateur à trier la table en cliquant sur un en-tête de colonne.
-* Créez des en-têtes de colonnes qui sont des noms ou des expressions nominales courtes qui décrivent les données affichées dans cette colonne.
+- Autorisez l’utilisateur à trier la table en cliquant sur un en-tête de colonne.
+- Créez des en-têtes de colonnes qui sont des noms ou des expressions nominales courtes qui décrivent les données affichées dans cette colonne.
 
 Pour plus d’informations, consultez la section affichages du [contenu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) des [instructions relatives à l’interface humaine OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)d’Apple.
 

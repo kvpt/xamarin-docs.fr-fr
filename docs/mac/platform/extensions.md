@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5138062cec6ee71f1db17d0118001b59dd7bc02c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 58250770b925c20b912b71e5591b1d0e252c801a
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642948"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119036"
 ---
 # <a name="xamarinmac-extension-support"></a>Prise en charge de l’extension Xamarin.Mac
 
@@ -28,9 +28,9 @@ Dans Xamarin. Mac 2,10, la prise en charge a été ajoutée pour plusieurs point
 
 Voici les limitations et les problèmes qui peuvent se produire lors du développement d’extensions dans Xamarin. Mac:
 
-* Il n’existe actuellement aucune prise en charge du débogage dans Visual Studio pour Mac. Tout le débogage doit être effectué via **NSLog** et la **console**. Pour plus d’informations, consultez la section conseils ci-dessous.
-* Les extensions doivent être contenues dans une application hôte, qui, lorsqu’elles sont exécutées une fois, s’inscrivent auprès du système. Ils doivent ensuite être activés dans la section **extension** des **Préférences système**. 
-* Certains incidents d’extension peuvent déstabiliser l’application hôte et provoquer un comportement étrange. En particulier, le **Finder** et la section **Today** du **Centre de notification** peuvent devenir «coincés» et cesser de répondre. Cela a également été constaté dans les projets d’extension dans Xcode et n’est pas lié à Xamarin. Mac. Ce problème peut se produire dans le journal système (via la **console**, consultez les conseils pour plus d’informations) sur l’impression des messages d’erreur répétés. Le redémarrage de macOS s’affiche pour résoudre le problème.
+- Il n’existe actuellement aucune prise en charge du débogage dans Visual Studio pour Mac. Tout le débogage doit être effectué via **NSLog** et la **console**. Pour plus d’informations, consultez la section conseils ci-dessous.
+- Les extensions doivent être contenues dans une application hôte, qui, lorsqu’elles sont exécutées une fois, s’inscrivent auprès du système. Ils doivent ensuite être activés dans la section **extension** des **Préférences système**. 
+- Certains incidents d’extension peuvent déstabiliser l’application hôte et provoquer un comportement étrange. En particulier, le **Finder** et la section **Today** du **Centre de notification** peuvent devenir «coincés» et cesser de répondre. Cela a également été constaté dans les projets d’extension dans Xcode et n’est pas lié à Xamarin. Mac. Ce problème peut se produire dans le journal système (via la **console**, consultez les conseils pour plus d’informations) sur l’impression des messages d’erreur répétés. Le redémarrage de macOS s’affiche pour résoudre le problème.
 
 <a name="Tips" />
 

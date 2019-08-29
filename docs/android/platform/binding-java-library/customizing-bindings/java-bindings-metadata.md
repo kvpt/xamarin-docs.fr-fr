@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d6cb1e407740fa4c182639a77e3725baec4286ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524609"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119850"
 ---
 # <a name="java-bindings-metadata"></a>Métadonnées de liaisons Java
 
@@ -79,9 +79,9 @@ Pour plus d’informations, passez en revue le **fichier Metadata. xml** .
 Comme nous l’avons déjà appris, le fichier **Metadata. xml** est utilisé par le générateur de liaisons pour influencer la création de l’assembly de liaison.
 Le format de métadonnées utilise la syntaxe [XPath](https://www.w3.org/TR/xpath/) et est quasiment identique aux *métadonnées GAPI* décrites dans Guide des [métadonnées GAPI](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata) . Cette implémentation est presque une implémentation complète de XPath 1,0 et prend donc en charge les éléments de la norme 1,0. Ce fichier est un mécanisme puissant basé sur XPath permettant de modifier, d’ajouter, de masquer ou de déplacer un élément ou un attribut dans le fichier d’API. Tous les éléments de règle dans les spécifications de métadonnées incluent un attribut de chemin d’accès pour identifier le nœud auquel la règle doit être appliquée. Les règles sont appliquées dans l’ordre suivant:
 
-* **Ajouter un nœud** &ndash; Ajoute un nœud enfant au nœud spécifié par l’attribut path.
-* **attr** &ndash; Définit la valeur d’un attribut de l’élément spécifié par l’attribut path.
-* **supprimer un nœud** &ndash; Supprime les nœuds correspondant à un XPath spécifié.
+- **Ajouter un nœud** &ndash; Ajoute un nœud enfant au nœud spécifié par l’attribut path.
+- **attr** &ndash; Définit la valeur d’un attribut de l’élément spécifié par l’attribut path.
+- **supprimer un nœud** &ndash; Supprime les nœuds correspondant à un XPath spécifié.
 
 Voici un exemple de fichier **Metadata. xml** :
 
@@ -248,8 +248,8 @@ Modifie le type de retour d’une méthode. Cela ne modifie pas l’attribut de 
 
 Les outils qui brouillent les bibliothèques Java peuvent interférer avec le générateur de liaisons Xamarin. Android et C# sa capacité à générer des classes wrapper. Les caractéristiques des classes obscurcies sont les suivantes: 
 
-* Le nom de la classe **$** comprend un, c.-à-d. **une classe $.**
-* Le nom de la classe est entièrement compromis en minuscules, c.-à-d. **une classe.**
+- Le nom de la classe **$** comprend un, c.-à-d. **une classe $.**
+- Le nom de la classe est entièrement compromis en minuscules, c.-à-d. **une classe.**
 
 Cet extrait de code est un exemple de la façon de générer un type «non C# masqué»:
 

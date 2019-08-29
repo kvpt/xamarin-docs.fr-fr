@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 9f15ef73e51a2e94e1a1174134f3e69d2cb2c4a3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 14fb3740f558b006d507ff6875fd2cfc81a04298
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511428"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119736"
 ---
 # <a name="an-introduction-to-renderscript"></a>Présentation de RenderScript
 
@@ -22,11 +22,11 @@ _Ce guide présente RenderScript et explique comment utiliser l’API RenderScri
 
 RenderScript est une infrastructure de programmation créée par Google dans le but d’améliorer les performances des applications Android qui nécessitent des ressources de calcul étendues. Il s’agit d’une API de niveau faible et hautes performances basée sur [C99](https://en.wikipedia.org/wiki/C99). Étant donné qu’il s’agit d’une API de bas niveau qui s’exécute sur des UC, des GPU ou des DSP, RenderScript est bien adapté aux applications Android qui peuvent avoir besoin d’effectuer les opérations suivantes:
 
-* Graphiques
-* Traitement des images
-* Chiffrement
-* Traitement des signaux
-* Routines mathématiques
+- Graphiques
+- Traitement des images
+- Chiffrement
+- Traitement des signaux
+- Routines mathématiques
 
 RenderScript utilise `clang` et compile les scripts dans le code d’octet LLVM qui est regroupé dans le apk. Lorsque l’application est exécutée pour la première fois, le code d’octet LLVM est compilé en code machine pour les processeurs sur l’appareil. Cette architecture permet à une application Android d’exploiter les avantages du code machine sans que les développeurs aient eux-mêmes à les écrire pour chaque processeur de l’appareil.
 
@@ -44,7 +44,7 @@ Il existe trois concepts importants pour l’utilisation de Renderscripts dans u
 
 1. **Un contexte** &ndash; Une API gérée fournie par le Android SDK qui alloue des ressources à RenderScript et permet à l’application Android de transmettre et de recevoir des données à partir du RenderScript.
 
-2. **Un _noyau de calcul_**  Également appelé noyau _ou noyau_racine, il s’agit d’une routine qui effectue le travail.  &ndash; Le noyau est très similaire à une fonction C. Il s’agit d’une routine parallèles qui est exécutée sur toutes les données de la mémoire allouée.
+2. **Un _noyau de calcul_**  Également appelé noyau ou noyau _racine_ , il s’agit d’une routine qui effectue le travail. &ndash; Le noyau est très similaire à une fonction C. Il s’agit d’une routine parallèles qui est exécutée sur toutes les données de la mémoire allouée.
 
 3. **Mémoire** allouée Les données sont passées vers et à partir d’un noyau via une _[allocation.](xref:Android.Renderscripts.Allocation)_ &ndash; Un noyau peut avoir une seule entrée et/ou une allocation de sortie.
 

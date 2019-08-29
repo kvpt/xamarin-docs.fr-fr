@@ -1,77 +1,77 @@
 ---
-title: Mise en page pour les applications de tablette et bureau
-description: Cet article explique comment optimiser les présentations d’applications Xamarin.Forms pour les tablettes, par opposition aux téléphones.
+title: Mise en page pour les applications de bureau et tablette
+description: Cet article explique comment optimiser les dispositions d’application Xamarin. Forms pour les tablettes, par opposition aux téléphones.
 ms.prod: xamarin
 ms.assetid: D62F472B-4345-4983-8403-659A538B591F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 9d1f54fa4753ba2ef44ba9b8b48a84a3ca932c4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7455e9b8f8e164dd5733b44db4aaac8a93133a05
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61369920"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121595"
 ---
-# <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de tablette et bureau
+# <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de bureau et tablette
 
-Xamarin.Forms prend en charge tous les types d’appareils disponibles sur les plateformes prises en charge, en plus des téléphones, applications peuvent également s’exécuter :
+Xamarin. Forms prend en charge tous les types d’appareils disponibles sur les plateformes prises en charge. ainsi, en plus des téléphones, les applications peuvent également s’exécuter sur:
 
-* iPad,
-* Tablettes Android
-* Les tablettes Windows et les ordinateurs de bureau (exécutant Windows 10).
+- iPad
+- Tablettes Android,
+- Tablettes et ordinateurs de bureau Windows (exécutant Windows 10).
 
-Cette page décrit brièvement :
+Cette page présente brièvement les éléments suivants:
 
-* la prise en charge [types d’appareils](#Device_Types), et
-* Comment [optimiser](#optimize) dispositions pour les tablettes et téléphones.
+- les [types d’appareils](#Device_Types)pris en charge, et
+- [optimisation](#optimize) des dispositions pour les tablettes et les téléphones.
 
 <a name="Device_Types" />
 
 ## <a name="device-types"></a>Types d’appareils
 
-Appareils d’écran supérieure sont disponibles pour toutes les plateformes prises en charge par Xamarin.Forms.
+Des appareils à écran plus volumineux sont disponibles pour toutes les plateformes prises en charge par Xamarin. Forms.
 
 ### <a name="ipads-ios"></a>iPads (iOS)
 
-Le modèle Xamarin.Forms inclut automatiquement la prise en charge de l’iPad en configurant le **Info.plist > appareils** à **universelle** (ce qui signifie que les iPhone et iPad sont pris en charge).
+Le modèle Xamarin. Forms comprend automatiquement la prise en charge de iPad en configurant le paramètre **info. plist >** Devices sur **Universal** (ce qui signifie que iPhone et iPad sont pris en charge).
 
-Pour fournir une expérience agréable de démarrage et garantir la résolution plein écran est utilisée sur tous les appareils, vous devez vous assurer une [écran de lancement de spécifiques à l’iPad](~/ios/app-fundamentals/images-icons/launch-screens.md) (à l’aide d’une table de montage séquentiel) est fourni. Cela garantit que l’application s’affiche correctement sur iPad mini iPad, appareils et iPad Pro.
+Pour fournir une expérience de démarrage agréable et garantir que la résolution plein écran est utilisée sur tous les appareils, vous devez vous assurer qu’un [écran de lancement spécifique à iPad](~/ios/app-fundamentals/images-icons/launch-screens.md) (à l’aide d’un Storyboard) est fourni. Cela garantit l’affichage correct de l’application sur les appareils iPad mini, iPad et iPad Pro.
 
-Avant d’iOS 9 toutes les applications prenait le plein écran sur l’appareil, mais certains iPad peut désormais effectuer [fractionner écran multitâche](~/ios/platform/multitasking.md).
-Cela signifie que votre application peut prendre jusqu'à simplement une colonne léger sur le côté de l’écran, 50 % de la largeur de l’écran ou la totalité de l’écran.
+Avant iOS 9, toutes les applications remontent en mode plein écran sur l’appareil, mais certains iPad peuvent désormais effectuer des [tâches](~/ios/platform/multitasking.md)multitâches fractionnées.
+Cela signifie que votre application peut utiliser simplement une colonne fine sur le côté de l’écran, 50% de la largeur de l’écran ou l’écran entier.
 
-[![](tablet-images/ipad-sml.png "iPad partagé écran exemple")](tablet-images/ipad.png#lightbox "iPad exemple d’écran de fractionnement")
+exemple d’écran de fractionnement iPad [ ![(tablet-images/ipad-sml.png " ")]] (tablet-images/ipad.png#lightbox "exemple d’écran de fractionnement iPad")
 
-Fractionné fonctionnalité signifie que vous devez concevoir votre application pour fonctionner avec aussi peu que 320 pixels de larges, ou autant que 1366 pixels de large.
+La fonctionnalité de fractionnement d’écran signifie que vous devez concevoir votre application pour qu’elle fonctionne correctement avec un minimum de 320 pixels de largeur, ou jusqu’à 1366 pixels de largeur.
 
 ### <a name="android-tablets"></a>Tablettes Android
 
-L’écosystème Android a une myriade pris en charge de tailles d’écran, à partir de téléphones petits jusqu'à des tablettes volumineux. Xamarin.Forms peut prendre en charge toutes les tailles d’écran, mais comme avec d’autres plateformes vous pouvez souhaiter ajuster votre interface utilisateur pour les appareils plus volumineux.
+L’écosystème Android offre une multitude de tailles d’écran prises en charge, allant des petits téléphones jusqu’aux tablettes volumineuses. Xamarin. Forms peut prendre en charge toutes les tailles d’écran, mais comme avec les autres plateformes, vous souhaiterez peut-être ajuster votre interface utilisateur pour les périphériques plus volumineux.
 
-Lors de la prise en charge de nombreux différentes résolutions d’écran, vous pouvez fournir vos ressources d’image native dans différentes tailles pour optimiser l’expérience utilisateur.
-Examinez le [ressources Android](~/android/app-fundamentals/resources-in-android/index.md) documentation (et notamment [crée des ressources pour différentes tailles d’écran](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)) pour plus d’informations sur la structure de dossiers et des noms de fichiers dans votre application Android projet pour inclure des ressources de l’image optimisée dans votre application.
+Lorsque vous prenez en charge de nombreuses résolutions d’écran différentes, vous pouvez fournir vos ressources d’images natives dans différentes tailles pour optimiser l’expérience utilisateur.
+Consultez la documentation des [ressources Android](~/android/app-fundamentals/resources-in-android/index.md) (et, en particulier, la [création de ressources pour différentes tailles d’écran](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)) pour plus d’informations sur la façon de structurer les dossiers et les noms de fichiers dans votre projet d’application Android afin d’inclure des ressources d’image optimisées dans votre application.
 
-### <a name="windows-tablets-and-desktops"></a>Ordinateurs de bureau et les tablettes Windows
+### <a name="windows-tablets-and-desktops"></a>Tablettes et ordinateurs de bureau Windows
 
-Pour prendre en charge des tablettes et ordinateurs de bureau exécutant Windows, vous devrez utiliser [prise en charge Windows UWP](~/xamarin-forms/platform/windows/installation/index.md), quelles sont les builds des applications universelles qui s’exécutent sur Windows 10.
+Pour prendre en charge les tablettes et les ordinateurs de bureau exécutant Windows, vous devez utiliser la [prise en charge de Windows UWP](~/xamarin-forms/platform/windows/installation/index.md), qui crée des applications universelles qui s’exécutent sur Windows 10.
 
-Applications qui s’exécutent sur des ordinateurs de bureau et les tablettes Windows peuvent être redimensionnées en outre aux dimensions arbitraires en mode plein écran en cours d’exécution.
+Les applications qui s’exécutent sur des tablettes et des postes de travail Windows peuvent être redimensionnées en dimensions arbitraires, en plus de s’exécuter en mode plein écran.
 
-[![](tablet-images/splitscreen-sml.png "Windows fractionner écran exemple")](tablet-images/splitscreen.png#lightbox "Windows fractionner l’exemple d’écran")
+[Exemple d’écran fractionné Windows ![(tablet-images/splitscreen-sml.png " ")]] (tablet-images/splitscreen.png#lightbox "Exemple d’écran fractionné Windows")
 
 
 <a name="optimize" />
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>Optimisation pour tablette et bureau
 
-Vous pouvez ajuster votre interface utilisateur de Xamarin.Forms en fonction de si un téléphone ou périphérique de tablette/bureau est utilisé. Cela signifie que vous pouvez optimiser l’expérience utilisateur pour les appareils à grand écran telles que des tablettes et ordinateurs de bureau.
+Vous pouvez ajuster votre interface utilisateur Xamarin. Forms selon que vous utilisez un téléphone ou une tablette/ordinateur de bureau. Cela signifie que vous pouvez optimiser l’expérience utilisateur pour les appareils à écran large tels que les tablettes et les ordinateurs de bureau.
 
 
 ### <a name="deviceidiom"></a>Device.Idiom
 
-Vous pouvez utiliser la [ `Device` ](~/xamarin-forms/platform/device.md) classe pour modifier le comportement de votre application ou l’interface utilisateur. À l’aide de la `Device.Idiom` énumération, vous pouvez
+Vous pouvez utiliser la [`Device`](~/xamarin-forms/platform/device.md) classe pour modifier le comportement de votre application ou de votre interface utilisateur. À l' `Device.Idiom` aide de l’énumération, vous pouvez
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -82,17 +82,17 @@ if (Device.Idiom == TargetIdiom.Phone)
 }
 ```
 
-Cette approche peut être développée pour apporter des modifications significatives aux dispositions de page individuelle, ou même à restituer les pages complètement différents sur les écrans plus grands.
+Cette approche peut être développée pour apporter des modifications significatives à des dispositions de page individuelles, ou même pour restituer des pages entièrement différentes sur des écrans plus grands.
 
-### <a name="leveraging-masterdetailpage"></a>En tirant parti de MasterDetailPage
+### <a name="leveraging-masterdetailpage"></a>Exploitation de MasterDetailPage
 
-Le [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) est idéal pour les écrans plus grands, en particulier sur l’iPad où il utilise le [ `UISplitViewController` ](xref:UIKit.UISplitViewController) pour fournir une expérience iOS native.
+Le [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) est idéal pour les écrans plus grands, en particulier sur l’iPad où [`UISplitViewController`](xref:UIKit.UISplitViewController) il utilise le pour fournir une expérience iOS native.
 
-Révision [ce billet de blog Xamarin](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) pour voir comment vous pouvez adapter votre interface utilisateur afin que les téléphones utilisent une disposition et écrans plus grands peuvent utiliser une autre (avec le `MasterDetailPage`).
+Consultez [ce billet de blog Xamarin](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les `MasterDetailPage`écrans plus grands puissent utiliser une autre (avec).
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Blog de Xamarin](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/)
-- [Exemple de MyShoppe](https://github.com/jamesmontemagno/myshoppe)
+- [Blog Xamarin](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/)
+- [Exemple MyShoppe](https://github.com/jamesmontemagno/myshoppe)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 2445645012e54b1818b1ec72116a85d8b985ead3
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 2e429002923d4bfdd2cf5ded4ef1508f8ebf20b8
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976458"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121509"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Achats dans l’application dans Xamarin. iOS
 
@@ -34,17 +34,17 @@ Pour prendre en charge l’achat dans l’application, vous devez utiliser Xamar
 
 ## <a name="contents"></a>Sommaire
 
-* [Principes de base et configuration de l’achat dans l’application](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
+- [Principes de base et configuration de l’achat dans l’application](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
-* [Présentation de StoreKit et récupération des informations sur le produit](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+- [Présentation de StoreKit et récupération des informations sur le produit](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
-* [Achat de produits consommables](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
+- [Achat de produits consommables](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
-* [Achat de produits non consommables](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
+- [Achat de produits non consommables](~/ios/platform/in-app-purchasing/purchasing-non-consumable-products.md)
 
-* [Transactions et vérification](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
+- [Transactions et vérification](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
-* [Abonnements et création de rapports](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
+- [Abonnements et création de rapports](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
 ## <a name="summary"></a>Récapitulatif
 

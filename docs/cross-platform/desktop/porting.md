@@ -1,74 +1,74 @@
 ---
 ms.assetid: 814857C5-D54E-469F-97ED-EE1CAA0156BB
-title: Instructions de transfert d’application de bureau
-description: Une explication simple montrant comment découpler les formulaires Windows existants ou les applications WPF pour créer des applications multiplateformes à exécuter sur macOS, iOS, Android, ainsi que UWP et Windows 10.
+title: Guide de portage des applications de bureau
+description: Explication simple de la façon de découpler des applications Windows Forms ou WPF existantes pour créer des applications multiplateformes à exécuter sur macOS, iOS, Android, ainsi que UWP/Windows 10.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 4bf1dea170bd6b63209693963d54cc2e16163eea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bdea1c472d95c86037056a2905679b43e12e0468
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270023"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120379"
 ---
-# <a name="desktop-app-porting-guidance"></a>Instructions de transfert d’application de bureau
+# <a name="desktop-app-porting-guidance"></a>Guide de portage des applications de bureau
 
-La plupart des codes d’application peuvent être classées parmi les domaines suivants :
+La plupart des codes d’application peuvent être classés dans l’un des domaines suivants:
 
-* Code d’interface utilisateur (par exemple). Windows et les boutons)
-* 3e contrôles tiers (par exemple). graphiques)
-* Logique métier (par exemple). règles de validation)
-* Accès et stockage de données local
-* Accès aux données à distance et services Web
+- Code d’interface utilisateur (par exemple, fenêtres et boutons)
+- contrôles tiers (par exemple, anneaux
+- Logique métier (par exemple, règles de validation)
+- Stockage et accès aux données locales
+- Services Web et accès aux données à distance
 
-Pour les applications Windows Forms et WPF écrites avec C# (ou Visual Basic.NET) une quantité étonnante de la logique métier, accès aux données locales et code de services web peut être partagée entre les plateformes.
+Pour les Windows Forms et les applications WPF C# écrites avec (ou Visual Basic.net), une quantité surprenante de la logique métier, de l’accès aux données locales et du code des services Web peut être partagée entre les plateformes.
 
 ## <a name="net-portability-analyzer"></a>Analyseur de portabilité .NET
 
-Visual Studio 2017 et ultérieur prennent en charge la [Analyseur de portabilité .NET](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([télécharger pour Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) qui peut examiner vos applications existantes et vous indiquent la quantité de code peut être porté « tel quel » à d’autres plateformes. Vous pouvez en savoir plus à partir de ce [vidéo Channel 9](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
+Visual Studio 2017 et versions ultérieures prennent en charge l’analyseur de [portabilité .net](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Télécharger pour Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) qui peut examiner vos applications existantes et vous indiquer la quantité de code qui peut être portée «en l’aspect» sur d’autres plateformes. Vous pouvez en savoir plus à ce sujet à partir de cette [vidéo Channel 9](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
 
-Il existe également un outil de ligne de commande peut être téléchargé à partir de [Analyseur de portabilité sur GitHub](https://github.com/Microsoft/dotnet-apiport) et utilisée pour fournir les mêmes rapports.
+Un outil en ligne de commande peut également être téléchargé à partir de l’analyseur de [portabilité sur GitHub](https://github.com/Microsoft/dotnet-apiport) et utilisé pour fournir les mêmes rapports.
 
-## <a name="x-of-my-code-is-portable-what-next"></a>« x % de mon code est portable. Et maintenant ? »
+## <a name="x-of-my-code-is-portable-what-next"></a>«x% de mon code est portable. Et ensuite?»
 
-J’espère que l’analyseur montre une grande partie de votre code est portable, mais il est certainement sera certaines parties de chaque application qui _ne peut pas_ être déplacés vers d’autres plateformes.
+Avec un peu de chance, l’analyseur montre qu’une grande partie de votre code est portable, mais il existe certainement des parties de chaque application qui _ne peuvent pas_ être déplacées vers d’autres plateformes.
 
-Différents segments de code seront probablement appartiennent à une de ces compartiments, expliqués plus en détail ci-dessous :
+Des blocs de code différents seront probablement classés dans l’un de ces compartiments, expliqués plus en détail ci-dessous:
 
-* Code portable réutilisables
-* Code qui nécessite des modifications
-* Code qui n’est pas portable et nécessite une réécriture
+- Code portable réutilisable
+- Code nécessitant des modifications
+- Code qui n’est pas portable et qui requiert une réécriture
 
-### <a name="re-useable-portable-code"></a>Code portable réutilisables
+### <a name="re-useable-portable-code"></a>Code portable réutilisable
 
-Le code .NET écrit par rapport aux API disponibles sur toutes les plateformes vous pouvez entreprendre inter-plateformes inchangé. Dans l’idéal, vous serez en mesure de déplacer tout ce code dans une bibliothèque de classes Portable, une bibliothèque partagée ou une bibliothèque .NET Standard et à le tester au sein de votre application existante.
+Le code .NET écrit par rapport aux API disponibles sur toutes les plates-formes peut être pris sans modification. Idéalement, vous pourrez déplacer tout ce code dans une bibliothèque de classes portable, une bibliothèque partagée ou une bibliothèque de .NET Standard, puis le tester dans votre application existante.
 
-Cette bibliothèque partagée peut ensuite être ajoutée aux projets d’application pour d’autres plateformes (par exemple, Android, iOS, Mac OS).
+Cette bibliothèque partagée peut ensuite être ajoutée aux projets d’application pour d’autres plateformes (par exemple, Android, iOS, macOS).
 
-### <a name="code-that-requires-changes"></a>Code qui nécessite des modifications
+### <a name="code-that-requires-changes"></a>Code nécessitant des modifications
 
-Certaines API .NET n’est peut-être pas disponible sur toutes les plateformes. Si ces API existe dans votre code, vous devrez réécrire ces sections pour utiliser des API multiplateforme.
+Certaines API .NET peuvent ne pas être disponibles sur toutes les plateformes. Si ces API existent dans votre code, vous devrez réécrire ces sections pour utiliser des API multiplateformes.
 
-Voici quelques exemples utilisent des API de réflexion qui sont disponibles dans .NET 4.6, mais ne sont pas disponibles sur toutes les plates-formes.
+Voici des exemples d’utilisation des API de réflexion disponibles dans .NET 4,6, mais qui ne sont pas disponibles sur toutes les plateformes.
 
-Une fois que vous avez ré-écrit le code à l’aide des API portables, il se peut que vous devez être en mesure de ce code dans une bibliothèque partagée et le tester au sein de votre application existante.
+Une fois que vous avez réécrit le code à l’aide des API portables, vous devez être en mesure d’empaqueter ce code dans une bibliothèque partagée et de le tester dans votre application existante.
 
-### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>Code qui n’est pas portable et nécessite une réécriture
+### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>Code qui n’est pas portable et qui requiert une réécriture
 
-Voici quelques exemples de code qui n’est pas susceptible d’être inter-plateformes :
+Parmi les exemples de code qui ne sont pas susceptibles d’être multiplateformes, citons:
 
-- **Interface utilisateur** – écrans Windows Forms ou WPF ne peut pas être utilisés dans les projets sur Android ou iOS, par exemple. Votre interface utilisateur doit être réécrites à l’aide de ce [comparaison des contrôles](~/cross-platform/desktop/controls/index.md) en tant que référence.
+- **Interface utilisateur** : les écrans Windows Forms ou WPF ne peuvent pas être utilisés dans les projets Android ou iOS, par exemple. Votre interface utilisateur doit être réécrite, à l’aide de cette [Comparaison de contrôles](~/cross-platform/desktop/controls/index.md) en tant que référence.
 
-- **Spécifique à la plateforme stockage** -Code qui s’appuie sur une technologie spécifique à la plateforme (par exemple, une base de données locale de SQL Server Express). Vous devrez réécrire cela à l’aide d’une alternative inter-plateformes (telles que SQLite pour le moteur de base de données).
-Certaines opérations de système de fichiers serez peut-être amené à ajuster, étant donné que UWP a légèrement différentes API pour Android et iOS (par ex. certains systèmes de fichiers respectent la casse et d’autres ne sont pas).
+- Code de **stockage spécifique** à la plateforme qui repose sur une technologie spécifique à une plateforme (par exemple, une base de données SQL Server Express locale). Vous devez réécrire cette méthode à l’aide d’une alternative multiplateforme (telle que SQLite pour le moteur de base de données).
+Certaines opérations du système de fichiers peuvent également avoir besoin d’être ajustées, car UWP a des API légèrement différentes pour Android et iOS (par exemple, certains systèmes de fichiers respectent la casse et d’autres non).
 
-- **les composants tiers 3e** – vérifie si des composants tiers 3e dans vos applications sont disponibles sur d’autres plateformes. Certains, tels que les packages NuGet non visuel, ne soient pas disponibles, mais d’autres (en particulier visual contrôles comme les lecteurs de graphiques ou un support)
+- **composants** tiers: Vérifiez si des composants tiers de vos applications sont disponibles sur d’autres plateformes. Certains, tels que les packages NuGet non visuels, peuvent être disponibles, mais d’autres (surtout des contrôles visuels tels que des graphiques ou des lecteurs multimédias)
 
 ## <a name="tips-for-making-code-portable"></a>Conseils pour rendre le code portable
 
-- **L’Injection de dépendances** : fournir des implémentations différentes pour chaque plateforme, et
+- **Injection** de dépendances: fournissez différentes implémentations pour chaque plateforme, et
 
-- **Approche en couches** : indique si MVVM, MVC, MVP ou un autre modèle qui vous permet de séparer le code portable à partir du code spécifique à la plateforme.
+- **Approche en couche** : qu’il s’agisse de MVVM, MVC, MVP ou d’un autre modèle qui vous aide à séparer le code portable du code spécifique à la plateforme.
 
-- **Messagerie** – vous pouvez utiliser la transmission de messages dans votre code à coupler retirer les interactions entre les différentes parties de l’application.
+- **Messagerie** : vous pouvez utiliser le passage de messages dans votre code pour découpler les interactions entre les différentes parties de l’application.

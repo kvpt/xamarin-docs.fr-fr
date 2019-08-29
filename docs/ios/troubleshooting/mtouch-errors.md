@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: d75f46f8b06ef0e743218d5f42d5b2732b6e4158
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620605"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120977"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -32,9 +32,9 @@ Par exemple, paramètres, environnement, outils manquants.
 
 Une condition d’erreur inattendue s’est produite. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec autant d’informations que possible, notamment:
 
-* Journaux de génération complets, avec un niveau de détail maximal `-v -v -v -v` (par exemple, dans les **arguments mTouch supplémentaires**);
-* Un cas de test minimal qui reproduit l’erreur; les
-* Toutes les informations sur les versions
+- Journaux de génération complets, avec un niveau de détail maximal `-v -v -v -v` (par exemple, dans les **arguments mTouch supplémentaires**);
+- Un cas de test minimal qui reproduit l’erreur; les
+- Toutes les informations sur les versions
 
 Le moyen le plus simple d’obtenir des informations de version exactes consiste à utiliser le menu **Visual Studio pour Mac** , **à propos de Visual Studio pour Mac** élément, afficher le bouton **Détails** et copier/coller la version informations (vous pouvez utiliser le bouton **copier les informations** ) .
 
@@ -130,8 +130,8 @@ SGen (--Sgen) doit être activé si le profilage (--profilage) est activé.
 
 Cela peut se produire dans les circonstances suivantes:
 
-* ARMv6 est activé et Xcode 4,5 ou version ultérieure est installé.
-* ARMv7s est activé et Xcode 4,4 ou version antérieure est installé.
+- ARMv6 est activé et Xcode 4,5 ou version ultérieure est installé.
+- ARMv7s est activé et Xcode 4,4 ou version antérieure est installé.
 
 Vérifiez que la version installée de Xcode prend en charge les architectures sélectionnées.
 
@@ -673,15 +673,15 @@ Pour plus d’informations, consultez le bogue n °[51634](https://bugzilla.xama
 
 Il existe plusieurs raisons pour lesquelles le partage de code peut être désactivé:
 
-* étant donné que la cible de déploiement de l’application conteneur est antérieure à iOS 8,0 (*)).
+- étant donné que la cible de déploiement de l’application conteneur est antérieure à iOS 8,0 (*)).
 
 Le partage de code natif nécessite iOS 8,0 car le partage de code natif est implémenté à l’aide d’infrastructures d’utilisateur, introduites avec iOS 8,0.
 
-* étant donné que l’application de conteneur comprend des assemblys I18N (*).
+- étant donné que l’application de conteneur comprend des assemblys I18N (*).
 
 Le partage de code natif n’est actuellement pas pris en charge si l’application conteneur comprend des assemblys I18N.
 
-* parce que l’application conteneur a des définitions XML personnalisées pour l’éditeur de liens managé (*).
+- parce que l’application conteneur a des définitions XML personnalisées pour l’éditeur de liens managé (*).
 
 Le partage de code natif requiert n’est pas pris en charge pour les projets qui utilisent des définitions XML personnalisées pour l’éditeur de liens managé.
 
@@ -689,59 +689,59 @@ Le partage de code natif requiert n’est pas pris en charge pour les projets qu
 
 ### <a name="mt0113-native-code-sharing-has-been-disabled-for-the-extension--because-"></a>MT0113: Le partage de code natif a été désactivé pour l’extension' * ', car *.
 
-* étant donné que les options bitcode diffèrent entre l'\*application conteneur () et\*l’extension ().
+- étant donné que les options bitcode diffèrent entre l'\*application conteneur () et\*l’extension ().
 
   Le partage de code natif requiert que les options bitcode correspondent entre les projets qui partagent du code.
 
-* étant donné que les options--assembly-Build-target sont différentes entre l'\*application conteneur () et\*l’extension ().
+- étant donné que les options--assembly-Build-target sont différentes entre l'\*application conteneur () et\*l’extension ().
 
   Le partage de code natif requiert que les options--assembly-Build-Target soient identiques entre les projets qui partagent du code.
 
   Cette condition peut se produire si les builds incrémentielles ne sont pas activées ou désactivées dans tous les projets.
 
-* étant donné que les assemblys i18n sont différents entre l’application\*conteneur () et l'\*extension ().
+- étant donné que les assemblys i18n sont différents entre l’application\*conteneur () et l'\*extension ().
 
   Le partage de code natif n’est actuellement pas pris en charge pour les extensions qui incluent des assemblys I18N.
 
-* comme les arguments du compilateur AOA sont différents entre l’application conteneur (\*) et l’extension (\*).
+- comme les arguments du compilateur AOA sont différents entre l’application conteneur (\*) et l’extension (\*).
 
   Le partage de code natif requiert que les arguments du compilateur AOA ne diffèrent pas entre les projets qui partagent du code.
 
-* étant donné que les autres arguments du compilateur AOA sont différents entre l’application conteneur\*() et l’extension\*().
+- étant donné que les autres arguments du compilateur AOA sont différents entre l’application conteneur\*() et l’extension\*().
 
   Le partage de code natif requiert que les arguments du compilateur AOA ne diffèrent pas entre les projets qui partagent du code.
 
   Cette condition se produit si l’opération «effectuer toutes les opérations float 32 bits en tant que valeurs float 64 bits» diffère entre les projets.
 
-* étant donné que LLVM n’est pas activé ou désactivé à la fois\*dans l’application conteneur (\*) et l’extension ().
+- étant donné que LLVM n’est pas activé ou désactivé à la fois\*dans l’application conteneur (\*) et l’extension ().
 
   Le partage de code natif requiert que LLVM soit activé ou désactivé pour tous les projets qui partagent du code.
 
-* étant donné que les paramètres de l’éditeur de liens managé sont différents\*entre l’application conteneur (\*) et l’extension ().
+- étant donné que les paramètres de l’éditeur de liens managé sont différents\*entre l’application conteneur (\*) et l’extension ().
 
   Le partage de code natif requiert que les paramètres de l’éditeur de liens managé soient identiques pour tous les projets qui partagent du code.
 
-* étant donné que les assemblys ignorés pour l’éditeur de liens managé sont différents entre l'\*application conteneur () et\*l’extension ().
+- étant donné que les assemblys ignorés pour l’éditeur de liens managé sont différents entre l'\*application conteneur () et\*l’extension ().
 
   Le partage de code natif requiert que les paramètres de l’éditeur de liens managé soient identiques pour tous les projets qui partagent du code.
 
-* parce que l’extension a des définitions XML personnalisées pour l’éditeur de liens managé (*).
+- parce que l’extension a des définitions XML personnalisées pour l’éditeur de liens managé (*).
 
   Le partage de code natif requiert n’est pas pris en charge pour les projets qui utilisent des définitions XML personnalisées pour l’éditeur de liens managé.
 
-* parce que l’application conteneur n’est pas générée pour l’ABI * (pendant la génération de l’extension pour cet ABI).
+- parce que l’application conteneur n’est pas générée pour l’ABI * (pendant la génération de l’extension pour cet ABI).
 
   Le partage de code natif requiert que l’application conteneur soit générée pour toutes les architectures pour lesquelles toute extension d’application est générée.
 
   Par exemple: cette condition se produit lorsqu’une extension est générée pour ARM64 + ARMv7, mais que l’application conteneur est uniquement générée pour ARM64.
 
-* parce que l’application conteneur est en génération pour \*l’ABI, qui n’est pas compatible avec l’Abi\*de l’extension ().
+- parce que l’application conteneur est en génération pour \*l’ABI, qui n’est pas compatible avec l’Abi\*de l’extension ().
 
   Le partage de code natif requiert que tous les projets soient générés pour la même API.
 
   Par exemple: cette condition se produit lorsqu’une extension est générée pour ARMv7 + LLVM + Thumb2, mais que l’application conteneur est uniquement générée pour ARMv7 + LLVM.
 
-* étant donné que l’application de conteneur référence l'\*assembly'\*'à partir de' ', alors que l’extension fait référence à une autre version de' * '.
+- étant donné que l’application de conteneur référence l'\*assembly'\*'à partir de' ', alors que l’extension fait référence à une autre version de' * '.
 
   Le partage de code natif requiert que tous les projets qui partagent du code utilisent les mêmes versions pour tous les assemblys.
 
@@ -973,11 +973,11 @@ Supprimez le `NOTICE` répertoire du projet.
 
 Cela peut se produire si :
 
-* Votre application a des droits que le profil de provisionnement actuel ne prend pas en charge.
+- Votre application a des droits que le profil de provisionnement actuel ne prend pas en charge.
   Solutions possibles :
   - Spécifiez un autre profil de provisionnement qui prend en charge les droits dont votre application a besoin.
   - Supprimez les droits non pris en charge dans le profil de configuration actuel.
-* L’appareil sur lequel vous essayez d’effectuer le déploiement n’est pas inclus dans le profil de provisionnement que vous utilisez.
+- L’appareil sur lequel vous essayez d’effectuer le déploiement n’est pas inclus dans le profil de provisionnement que vous utilisez.
   Solutions possibles :
   - Créez une application à partir d’un modèle dans Xcode, sélectionnez le même profil de provisionnement et déployez sur le même appareil. Xcode peut parfois actualiser automatiquement les profils de provisionnement avec de nouveaux appareils (dans d’autres cas, Xcode vous demande quoi faire).
   -Accédez au centre de développement iOS et mettez à jour le profil de provisionnement avec le nouvel appareil, puis téléchargez le profil d’approvisionnement mis à jour sur votre ordinateur.
@@ -1008,10 +1008,10 @@ Une erreur s’est produite lors de la tentative de recherche d’une applicatio
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
 
 <a name="MT1024" />
 
@@ -1029,11 +1029,11 @@ Une erreur s’est produite lors de la tentative de liste des rapports d’incid
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1026" />
 
@@ -1043,11 +1043,11 @@ Une erreur s’est produite lors de la tentative de téléchargement des rapport
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1027" />
 
@@ -1259,9 +1259,9 @@ Cela indique généralement un problème avec Xcode.
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Utilisez le simulateur une seule fois dans Xcode.
-* Passer une version explicite du SDK à l’aide \<de--SDK version >.
-* Réinstallez Xcode.
+- Utilisez le simulateur une seule fois dans Xcode.
+- Passer une version explicite du SDK à l’aide \<de--SDK version >.
+- Réinstallez Xcode.
 
 <a name="MT1221" />
 
@@ -1323,11 +1323,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1401" />
 
@@ -1337,11 +1337,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1402" />
 
@@ -1351,11 +1351,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1403" />
 
@@ -1365,11 +1365,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1404" />
 
@@ -1379,11 +1379,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1405" />
 
@@ -1393,11 +1393,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <a name="MT1406" />
 
@@ -1407,11 +1407,11 @@ Une erreur s’est produite lors de la tentative d’accès aux rapports d’inc
 
 Voici ce que vous pouvez tenter de résoudre:
 
-* Supprimez l’application de l’appareil et réessayez.
-* Déconnectez l’appareil et reconnectez-le.
-* Redémarrez l’appareil.
-* Redémarrez le Mac.
-* Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
+- Supprimez l’application de l’appareil et réessayez.
+- Déconnectez l’appareil et reconnectez-le.
+- Redémarrez l’appareil.
+- Redémarrez le Mac.
+- Synchroniser l’appareil avec iTunes (cette opération supprime tous les rapports d’incidents de l’appareil).
 
 <!--- 1407 used by mmp -->
 
@@ -1598,9 +1598,9 @@ L’assembly racine n’a pas pu être chargé. Vérifiez que le chemin d’acc�
 Une erreur inattendue s’est produite lors de la tentative d’optimisation du code de liaison généré. L’élément à l’origine du problème est nommé dans le message d’erreur. Pour résoudre ce problème, l’assembly nommé (ou contenant le type ou la méthode nommé) doit être fourni dans un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un journal de génération complet avec des commentaires activés ( `-v -v -v -v` c’est-à-dire dans les **arguments mTouch supplémentaires**).
 
 Le dernier chiffre `x` sera:
-* `0`pour un nom d’assembly;
-* `1`pour un nom de type;
-* `3`pour un nom de méthode;
+- `0`pour un nom d’assembly;
+- `1`pour un nom de type;
+- `3`pour un nom de méthode;
 
 <a name="MT2030" />
 
@@ -1610,8 +1610,8 @@ Une erreur inattendue s’est produite lors de la tentative de suppression des r
 
 Les ressources utilisateur sont des fichiers inclus dans des assemblys (en tant que ressources) qui doivent être extraits au moment de la génération pour créer l’offre groupée d’applications. notamment :
 
-* `__monotouch_content_*`et `__monotouch_pages_*` ressources; et
-* Bibliothèques natives incorporées dans un assembly de liaison;
+- `__monotouch_content_*`et `__monotouch_pages_*` ressources; et
+- Bibliothèques natives incorporées dans un assembly de liaison;
 
 <a name="MT2040" />
 
@@ -2238,7 +2238,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole référencé quelque part. Cela peut se produire pour plusieurs raisons:
 
-* Une liaison tierce requiert une infrastructure, mais la liaison ne la spécifie pas dans son `[LinkWith]` attribut. Elles
+- Une liaison tierce requiert une infrastructure, mais la liaison ne la spécifie pas dans son `[LinkWith]` attribut. Elles
   - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut de `[LinkWith]` la liaison pour inclure l’infrastructure dont elle a besoin:
 
     ```csharp
@@ -2246,11 +2246,11 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
     ```
 
   - Si vous ne pouvez pas modifier la liaison tierce, vous pouvez établir une liaison manuelle avec l’infrastructure requise `-gcc_flags '-framework SystemFramework'` en `mtouch` passant à (cette opération s’effectue en modifiant les arguments mTouch supplémentaires dans la page des options de génération iOS du projet. N’oubliez pas que cela doit être fait pour chaque configuration de projet).
-* Dans certains cas, une liaison managée est composée de plusieurs bibliothèques natives, et toutes doivent être incluses dans les liaisons. Il est possible d’avoir plusieurs bibliothèques natives dans chaque projet de liaison. par conséquent, la solution consiste simplement à ajouter toutes les bibliothèques natives requises au projet de liaison.</li>
-* Une liaison managée fait référence à des symboles natifs qui n’existent pas dans la bibliothèque native.
+- Dans certains cas, une liaison managée est composée de plusieurs bibliothèques natives, et toutes doivent être incluses dans les liaisons. Il est possible d’avoir plusieurs bibliothèques natives dans chaque projet de liaison. par conséquent, la solution consiste simplement à ajouter toutes les bibliothèques natives requises au projet de liaison.</li>
+- Une liaison managée fait référence à des symboles natifs qui n’existent pas dans la bibliothèque native.
     Cela se produit généralement lorsqu’une liaison a existé pendant un certain temps et que le code natif a été modifié pendant ce temps afin qu’une classe Native particulière soit supprimée ou renommée, alors que la liaison n’a pas été mise à jour.
-* Un appel P/Invoke fait référence à un symbole natif qui n’existe pas. À compter de Xamarin. iOS 7,4, une erreur <a href="#MT5214">MT5214</a> est signalée pour ce cas (pour plus d’informations, consultez MT5214).
-* Une liaison/bibliothèque tierce a été créée à l' C++aide de, mais la liaison ne la spécifie `[LinkWith]` pas dans son attribut. C’est généralement relativement facile à reconnaître, car les symboles sont décomposés C++ de symboles (un exemple `__ZNKSt9exception4whatEv`courant est).
+- Un appel P/Invoke fait référence à un symbole natif qui n’existe pas. À compter de Xamarin. iOS 7,4, une erreur <a href="#MT5214">MT5214</a> est signalée pour ce cas (pour plus d’informations, consultez MT5214).
+- Une liaison/bibliothèque tierce a été créée à l' C++aide de, mais la liaison ne la spécifie `[LinkWith]` pas dans son attribut. C’est généralement relativement facile à reconnaître, car les symboles sont décomposés C++ de symboles (un exemple `__ZNKSt9exception4whatEv`courant est).
   - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut de `[LinkWith]` la liaison pour définir l' `IsCxx` indicateur:
 
     ```csharp
@@ -2265,7 +2265,7 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
 
 Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une classe objective-C référencée quelque part. Cela peut se produire pour plusieurs raisons: comme pour [MT5210](#MT5210) et en plus:
 
-* Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée `[Protocol]` avec l’attribut dans sa définition d’API. Elles
+- Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée `[Protocol]` avec l’attribut dans sa définition d’API. Elles
   - Ajoutez l’attribut `[Protocol]` manquant:
 
     ```csharp
@@ -2282,9 +2282,9 @@ Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une clas
 
 Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupliqués entre toutes les bibliothèques natives. Après cette erreur, il peut y avoir une ou plusieurs erreurs [MT5213](#MT5213) avec l’emplacement pour chaque occurrence du symbole. Raisons possibles pour cette erreur:
 
-* La même bibliothèque native est incluse deux fois.
-* Deux bibliothèques natives distinctes se produisent pour définir les mêmes symboles.
-* Une bibliothèque Native n’est pas générée correctement et contient le même symbole plusieurs fois.
+- La même bibliothèque native est incluse deux fois.
+- Deux bibliothèques natives distinctes se produisent pour définir les mêmes symboles.
+- Une bibliothèque Native n’est pas générée correctement et contient le même symbole plusieurs fois.
   Vous pouvez le vérifier à l’aide de l’ensemble de commandes suivant à partir d’un terminal (remplacez i386 par x86_64/ARMv7/armv7s/arm64 en fonction de l’architecture que vous générez pour):
 
   ```
@@ -2391,19 +2391,19 @@ Généralement, Xamarin. iOS demande à l’éditeur de liens natif de conserver
 
 Il existe plusieurs sources possibles pour ces symboles dynamiques:
 
-* P/Invoke des méthodes dans les bibliothèques liées statiquement (où le nom de la `__Internal` dll se trouve dans `[DllImport ("__Internal")]`l’attribut DllImport).
-* Références de champs aux emplacements de mémoire dans les bibliothèques liées statiquement à`[Field]` partir des projets de liaison (attributs).
-* Classes objective-C référencées dans des bibliothèques liées de manière statique à partir de projets de liaison (en cas d’utilisation de builds incrémentielles ou lorsque le registre statique n’est pas utilisé).
+- P/Invoke des méthodes dans les bibliothèques liées statiquement (où le nom de la `__Internal` dll se trouve dans `[DllImport ("__Internal")]`l’attribut DllImport).
+- Références de champs aux emplacements de mémoire dans les bibliothèques liées statiquement à`[Field]` partir des projets de liaison (attributs).
+- Classes objective-C référencées dans des bibliothèques liées de manière statique à partir de projets de liaison (en cas d’utilisation de builds incrémentielles ou lorsque le registre statique n’est pas utilisé).
 
 Solutions possibles :
 
-* Activez l’éditeur de liens managé (si possible pour tous les assemblys au lieu de uniquement les assemblys SDK). Cela peut supprimer suffisamment de sources pour les symboles dynamiques afin que la ligne de commande de l’éditeur de liens ne dépasse pas la valeur maximale.
-* Réduisez le nombre d’appels P/Invoke, de références de champ et/ou de classes objective-C.
-* Réécrivez les symboles dynamiques avec des noms plus courts.
-* Transmettez `-dlsym:false` comme argument mTouch supplémentaire dans les options de génération iOS du projet. Avec cette option, Xamarin. iOS génère une référence native dans le code compilé par l’AOA et n’a pas besoin de demander à l’éditeur de liens de conserver ce symbole. Toutefois, cela ne fonctionne que pour les builds d’appareils et entraîne des erreurs de l’éditeur de liens s’il y a P/Invoke vers des fonctions qui n’existent pas dans la bibliothèque statique.
-* Transmettez `--dynamic-symbol-mode=code` comme arguments mTouch supplémentaires dans les options de génération iOS du projet. Avec cette option, Xamarin. iOS génère du code natif supplémentaire qui référence ces symboles au lieu de demander à l’éditeur de liens natif de conserver ces symboles à l’aide d’arguments de ligne de commande. L’inconvénient de cette approche est qu’elle augmente un peu la taille de l’exécutable.
-* Activez le registre statique en passant `--registrar:static` comme argument mTouch supplémentaire dans les options de génération iOS du projet (pour les builds du simulateur, puisque le Bureau d’enregistrement statique est déjà utilisé par défaut pour les builds d’appareils). Le Bureau d’enregistrement statique génère du code qui référence les classes objective-C de manière statique. il n’est donc pas nécessaire de demander à l’éditeur de liens natif de conserver ces classes.
-* Désactivez les builds incrémentielles (pour les builds d’appareils). Lorsque les builds incrémentielles sont activées, le code généré par l’registraire statique n’est pas pris en compte par l’éditeur de liens natif, ce qui signifie que Xamarin. iOS doit toujours demander à l’éditeur de liens de conserver les classes objective-C référencées. Ainsi, la désactivation des builds incrémentielles empêchera ce besoin.
+- Activez l’éditeur de liens managé (si possible pour tous les assemblys au lieu de uniquement les assemblys SDK). Cela peut supprimer suffisamment de sources pour les symboles dynamiques afin que la ligne de commande de l’éditeur de liens ne dépasse pas la valeur maximale.
+- Réduisez le nombre d’appels P/Invoke, de références de champ et/ou de classes objective-C.
+- Réécrivez les symboles dynamiques avec des noms plus courts.
+- Transmettez `-dlsym:false` comme argument mTouch supplémentaire dans les options de génération iOS du projet. Avec cette option, Xamarin. iOS génère une référence native dans le code compilé par l’AOA et n’a pas besoin de demander à l’éditeur de liens de conserver ce symbole. Toutefois, cela ne fonctionne que pour les builds d’appareils et entraîne des erreurs de l’éditeur de liens s’il y a P/Invoke vers des fonctions qui n’existent pas dans la bibliothèque statique.
+- Transmettez `--dynamic-symbol-mode=code` comme arguments mTouch supplémentaires dans les options de génération iOS du projet. Avec cette option, Xamarin. iOS génère du code natif supplémentaire qui référence ces symboles au lieu de demander à l’éditeur de liens natif de conserver ces symboles à l’aide d’arguments de ligne de commande. L’inconvénient de cette approche est qu’elle augmente un peu la taille de l’exécutable.
+- Activez le registre statique en passant `--registrar:static` comme argument mTouch supplémentaire dans les options de génération iOS du projet (pour les builds du simulateur, puisque le Bureau d’enregistrement statique est déjà utilisé par défaut pour les builds d’appareils). Le Bureau d’enregistrement statique génère du code qui référence les classes objective-C de manière statique. il n’est donc pas nécessaire de demander à l’éditeur de liens natif de conserver ces classes.
+- Désactivez les builds incrémentielles (pour les builds d’appareils). Lorsque les builds incrémentielles sont activées, le code généré par l’registraire statique n’est pas pris en compte par l’éditeur de liens natif, ce qui signifie que Xamarin. iOS doit toujours demander à l’éditeur de liens de conserver les classes objective-C référencées. Ainsi, la désactivation des builds incrémentielles empêchera ce besoin.
 
 <a name="MT5218" />
 
@@ -2413,10 +2413,10 @@ L’argument `--ignore-dynamic-symbol=symbol` de ligne de commande a été pass�
 
 Il y a deux raisons principales à cela:
 
-* Le nom du symbole est incorrect.
-  * N’ajoutez pas de trait de soulignement au nom du symbole.
-  * Le symbole des classes objective-C `OBJC_CLASS_$_<classname>`est.
-* Le symbole est correct, mais il s’agit d’un symbole déjà préservé par des moyens normaux (certaines options de génération provoquent la liste exacte des symboles dynamiques).
+- Le nom du symbole est incorrect.
+  - N’ajoutez pas de trait de soulignement au nom du symbole.
+  - Le symbole des classes objective-C `OBJC_CLASS_$_<classname>`est.
+- Le symbole est correct, mais il s’agit d’un symbole déjà préservé par des moyens normaux (certaines options de génération provoquent la liste exacte des symboles dynamiques).
 
 ### <a name="mt53xx-other-tools"></a>MT53xx: Autres outils
 

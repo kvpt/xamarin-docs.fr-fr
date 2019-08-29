@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 22efd672c041ad84488f822ac2e7e51a80ea2b61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: be353c6274dcf69946740e2d195b9e4d64208313
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655329"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121570"
 ---
 # <a name="adding-ios-specific-formatting"></a>Ajout d’une mise en forme spécifique à iOS
 
@@ -20,8 +20,8 @@ Une façon de définir une mise en forme spécifique à iOS consiste à créer u
 
 D’autres options pour contrôler la façon dont l’apparence de votre application iOS Xamarin. Forms sont les suivantes:
 
-* Configuration des options d’affichage dans [ **info. plist**](#info-plist)
-* Définition de styles de contrôle via l' [ `UIAppearance` API](#uiappearance)
+- Configuration des options d’affichage dans [ **info. plist**](#info-plist)
+- Définition de styles de contrôle via l' [ `UIAppearance` API](#uiappearance)
 
 Ces alternatives sont présentées ci-dessous.
 

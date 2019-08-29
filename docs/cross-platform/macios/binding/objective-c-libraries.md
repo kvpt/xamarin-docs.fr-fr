@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522018"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120473"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
 
@@ -918,8 +918,8 @@ La `Volume` propriété est définie en tant que valeur float Nullable, étant d
 
 Pour ce faire, vous devez effectuer quelques opérations:
 
-* Créez une classe fortement typée, qui sous-classe [DictionaryContainer](xref:Foundation.DictionaryContainer) et fournit les différents getters et setters pour chaque propriété.
-* Déclarez des surcharges pour les `NSDictionary` méthodes qui prennent la nouvelle version fortement typée.
+- Créez une classe fortement typée, qui sous-classe [DictionaryContainer](xref:Foundation.DictionaryContainer) et fournit les différents getters et setters pour chaque propriété.
+- Déclarez des surcharges pour les `NSDictionary` méthodes qui prennent la nouvelle version fortement typée.
 
 Vous pouvez créer la classe fortement typée soit manuellement, soit à l’aide du générateur pour effectuer le travail pour vous.  Nous allons tout d’abord apprendre à effectuer cette opération manuellement pour comprendre ce qui se passe, puis l’approche automatique.
 
@@ -1404,3 +1404,4 @@ Historiquement, nous avons nécessité de copier le protocole à chaque impléme
 ## <a name="related-links"></a>Liens connexes
 
 - [Exemple de liaison](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
+ 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 2def6280a159203fd2c8d3db01a8e66c9ae61688
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1e1e86c6301214c7117b8f3b21b19554499d7fbd
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657397"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121443"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Contrôleurs distants et Bluetooth Siri pour tvOS dans Xamarin
 
@@ -58,10 +58,10 @@ La surface tactile de la Siri distante est en mesure de détecter une variété 
 
 Apple fournit les suggestions suivantes pour l’utilisation des gestes de surface tactile:
 
-* La **distinction entre les clics et** les clics est une action intentionnelle de l’utilisateur et est bien adaptée à la sélection, à l’activation et au bouton principal d’un jeu. Le taraudage est plus subtil et doit être utilisé avec modération, car l’utilisateur maintient souvent le Siri à distance et peut facilement activer un événement TAP.
-* **Ne pas redéfinir les gestes standard** : l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques, vous ne devez pas redéfinir la signification ou la fonction de ces mouvements dans votre application. La seule exception est une application de jeu pendant le jeu actif.
-* **Définir de nouveaux gestes** avec modération, l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques. Vous devez éviter de définir des mouvements personnalisés pour effectuer des actions standard. Là encore, les jeux sont l’exception la plus courante dans laquelle les gestes personnalisés peuvent ajouter un jeu amusant et immersif au jeu.
-* Le **cas échéant, répondez aux pressions d-pad** -l’appui faible sur les bords de la surface tactile réagira comme un BMD sur un contrôleur de jeu en déplaçant le focus ou la direction vers le haut, vers le bas, vers la gauche ou vers la droite. Le cas échéant, vous devez répondre à ces gestes dans votre application ou votre jeu.
+- La **distinction entre les clics et** les clics est une action intentionnelle de l’utilisateur et est bien adaptée à la sélection, à l’activation et au bouton principal d’un jeu. Le taraudage est plus subtil et doit être utilisé avec modération, car l’utilisateur maintient souvent le Siri à distance et peut facilement activer un événement TAP.
+- **Ne pas redéfinir les gestes standard** : l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques, vous ne devez pas redéfinir la signification ou la fonction de ces mouvements dans votre application. La seule exception est une application de jeu pendant le jeu actif.
+- **Définir de nouveaux gestes** avec modération, l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques. Vous devez éviter de définir des mouvements personnalisés pour effectuer des actions standard. Là encore, les jeux sont l’exception la plus courante dans laquelle les gestes personnalisés peuvent ajouter un jeu amusant et immersif au jeu.
+- Le **cas échéant, répondez aux pressions d-pad** -l’appui faible sur les bords de la surface tactile réagira comme un BMD sur un contrôleur de jeu en déplaçant le focus ou la direction vers le haut, vers le bas, vers la gauche ou vers la droite. Le cas échéant, vous devez répondre à ces gestes dans votre application ou votre jeu.
 
 <a name="Siri-Remote-Buttons" />
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 2c69c995317d5121f203946cf1a4196bce9b4177
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643084"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120596"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Affichage d’une image dans Xamarin. iOS
 
@@ -159,9 +159,9 @@ if (MyIcon.Image != null) {
 
 Il existe trois paramètres possibles pour `UIImage.RenderMode` via l' `UIImageRenderingMode` énumération:
 
-* `AlwaysOriginal`: Force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
-* `AlwaysTemplate`: Force le rendu de l’image en tant qu’image de modèle en coloriant les pixels avec `Tint` la couleur spécifiée.
-* `Automatic`: Effectue le rendu de l’image en tant que modèle ou original en fonction de l’environnement dans lequel elle est utilisée. Par exemple, si l’image est utilisée dans un `UIToolBar` `UITabBar` , `UINavigationBar`ou `UISegmentControl` si elle est traitée comme un modèle.
+- `AlwaysOriginal`: Force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
+- `AlwaysTemplate`: Force le rendu de l’image en tant qu’image de modèle en coloriant les pixels avec `Tint` la couleur spécifiée.
+- `Automatic`: Effectue le rendu de l’image en tant que modèle ou original en fonction de l’environnement dans lequel elle est utilisée. Par exemple, si l’image est utilisée dans un `UIToolBar` `UITabBar` , `UINavigationBar`ou `UISegmentControl` si elle est traitée comme un modèle.
 
 ## <a name="adding-new-assets-collections"></a>Ajout de nouveaux regroupements de ressources
 

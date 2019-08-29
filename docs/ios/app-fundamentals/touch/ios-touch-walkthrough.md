@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: bd6f40a117734712941585b6ce0d630105e54693
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065439"
+ms.locfileid: "70121038"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : Utilisation de Touch dans Xamarin. iOS
 
@@ -96,9 +96,9 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
     
     Cette méthode permet de rechercher un `UITouch` objet et, s’il existe, d’effectuer une action en fonction de l’endroit où la pression tactile s’est produite:
 
-    * _À l’intérieur de TouchImage_ : `Touches Began` Affichez le texte dans une étiquette et modifiez l’image.
-    * _À l’intérieur de DoubleTouchImage_ : modifiez l’image affichée si le mouvement était un double-appui.
-    * _Dans DragImage_ , définissez un indicateur qui indique que la fonction tactile a démarré. La méthode `TouchesMoved` utilise cet indicateur pour déterminer si `DragImage` doit être déplacé à l’écran ou non, comme nous le verrons à l’étape suivante.
+    - _À l’intérieur de TouchImage_ : `Touches Began` Affichez le texte dans une étiquette et modifiez l’image.
+    - _À l’intérieur de DoubleTouchImage_ : modifiez l’image affichée si le mouvement était un double-appui.
+    - _Dans DragImage_ , définissez un indicateur qui indique que la fonction tactile a démarré. La méthode `TouchesMoved` utilise cet indicateur pour déterminer si `DragImage` doit être déplacé à l’écran ou non, comme nous le verrons à l’étape suivante.
 
     Le code ci-dessus ne traite que les touches individuelles, il n’y a toujours aucun comportement si l’utilisateur déplace son doigt sur l’écran. Pour répondre au mouvement, implémentez `TouchesMoved` comme indiqué dans le code ci-dessous:
 

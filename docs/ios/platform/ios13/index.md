@@ -1,51 +1,51 @@
 ---
-title: Introduction à iOS 13
-description: Ce document fournit une description détaillée de certaines API iOS 13 pour l’aperçu avant des Xamarin version offre C# liaisons.
+title: Présentation d’iOS 13
+description: Ce document fournit une description de haut niveau de certaines API iOS 13 pour lesquelles la version préliminaire de Xamarin C# fournit des liaisons.
 ms.prod: xamarin
 ms.assetid: AB486B2F-6E3B-4E0B-ABB8-58F5804D56D2
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: eaa479f220c9cd0115fd2d4496fbfb1202fb3aa0
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: ea7ebdf5e589f3c24f8c607d1464e86678012f23
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558705"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120616"
 ---
-# <a name="introduction-to-ios-13"></a>Introduction à iOS 13
+# <a name="introduction-to-ios-13"></a>Présentation d’iOS 13
 
 ![Fonctionnalité d’évaluation](~/media/shared/preview.png)
 
 Suivez ces [instructions](~/ios/platform/ios13/get-started.md) pour commencer.
 
-## <a name="dark-mode"></a>Mode foncé
+## <a name="dark-modedark-modemd"></a>[Mode sombre](dark-mode.md)
 
-iOS 13 introduit un nouveau mode foncé qui fournit aux développeurs les moyens d’autoriser facilement leurs applications tenir dans. Nouveaux outils vous permettent de vous permet de simultanément concevoir vos applications grâce aux thèmes claires et sombres.
+iOS 13 introduit un nouveau mode sombre qui offre aux développeurs la possibilité d’adapter facilement leurs applications. De nouveaux outils vous permettent de concevoir simultanément vos applications avec des thèmes clairs et foncés.
 
 ## <a name="augmented-reality"></a>Réalité augmentée
 
-Réalité augmentée dans iOS 13 a désormais davantage de fonctionnalités, notamment une nouvelle fonction de « Personnes Occlusion » qui permet des AR applications contenu à respecter la présence de l’homme et la déplacer en conséquence.
+La réalité augmentée dans iOS 13 dispose désormais d’un plus grand nombre de fonctionnalités, notamment une nouvelle fonction «People occlusion» qui permet au contenu AR des applications de respecter la présence des êtres humains et de les déplacer en conséquence.
 
 ## <a name="siri"></a>Siri
 
-Siri a été étendue pour permettre la gestion du contenu audio, ainsi que la meilleure gestion des raccourcis par le biais de l’application de raccourcis.
+Siri a été développé pour permettre la gestion du contenu audio et une meilleure gestion des raccourcis via l’application de raccourcis.
 
 ## <a name="machine-learning"></a>Machine Learning
 
-Core ML 3 rend possible pour vous former facilement des modèles ML à l’aide des capacités matérielles de leurs appareils.
+Core ML 3 permet de former facilement des modèles ML à l’aide des capacités matérielles de leurs appareils.
 
 ## <a name="ipados"></a>iPadOS
 
-iPadOS est une extension d’e/s générées en particulier avec l’iPad esprit.
+iPados est une extension d’iOS créée spécifiquement avec l’iPad à l’esprit.
 
-Avec iPadOS, vous pouvez tirer le meilleur parti du crayon Apple à l’aide de PencilKit avec nouveaux mouvements, autorise l’utilisation de plusieurs fenêtres et le contenu de divers de glisser-déplacer entre les applications. iPadOS peuvent également autoriser les applications fournir des polices de l’échelle du système.
+Avec iPados, vous pouvez tirer le meilleur usage de l’Apple crayon à l’aide de PencilKit avec de nouveaux gestes, autoriser l’utilisation de plusieurs fenêtres et glisser-déplacer divers contenus entre les applications. iPados peut également permettre aux applications de fournir des polices à l’ensemble du système.
 
-## <a name="privacy-and-security"></a>Sécurité et confidentialité
+## <a name="privacy-and-security"></a>Confidentialité et sécurité
 
-iOS 13 offrent de nouvelles fonctionnalités pour vous connecter à des applications à l’aide de se connecter avec des appareils d’Apple, ce qui vous permet d’avoir plus de confiance leurs informations personnelles ne sont pas en cours volé ou regroupés en aucune façon en tirant parti de 2FA et un ensemble limité de condition plus d’informations.
+iOS 13 offre de nouvelles fonctionnalités pour la connexion à des applications à l’aide de la connexion avec des appareils Apple, ce qui vous permet d’avoir la certitude que leurs informations personnelles ne sont pas volées ou collectées de quelque manière que ce soit en tirant parti de 2FA et d’un ensemble restreint de informations.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Notes de publication de Xamarin.iOS version préliminaire](/xamarin/ios/release-notes/12/12.99)
+- [Notes de publication de Xamarin. iOS preview](/xamarin/ios/release-notes/12/12.99)

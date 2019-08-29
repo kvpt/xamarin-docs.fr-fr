@@ -7,12 +7,12 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 1977da75e430e72bee151814abc4502ee090b40c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521496"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119964"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Où trouver les informations sur ma version et les journaux ?
 
@@ -182,9 +182,9 @@ Consultez également la page [Journal de débogage Android](~/android/deploy-tes
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />journaux du simulateur iOS (sur Mac)
 
-* Pour accéder au journal système, sélectionnez **Déboguer > ouvrir le journal système** dans l’application iOS Simulator.
+- Pour accéder au journal système, sélectionnez **Déboguer > ouvrir le journal système** dans l’application iOS Simulator.
 
-* Pour afficher les rapports d’incident à partir du simulateur, ouvrez console. `~/Library/Logs > DiagnosticReports`App et accédez à.
+- Pour afficher les rapports d’incident à partir du simulateur, ouvrez console. `~/Library/Logs > DiagnosticReports`App et accédez à.
 
 ### <a name="a-idios-device-logs-nameios-device-logs-ios-device-logs-on-mac"></a><a id="ios-device-logs" name="ios-device-logs" />journaux des appareils iOS (sur Mac)
 

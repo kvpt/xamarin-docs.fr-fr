@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/21/2019
-ms.openlocfilehash: c487442af7df4e4b8dc8860dcea4cd6065087a7f
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 6d10e665c6461655440ddfb2c524cb56a14337f6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70075655"
+ms.locfileid: "70121345"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Propriétés, méthodes et événements du contrôle commun Xamarin. Forms
 
@@ -80,11 +80,15 @@ La `IsVisible` propriété est une `bool` valeur qui détermine si le contrôle 
 
 ### [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest)
 
-La `MinimumHeightRequest` propriété est une `double` valeur qui détermine la plus petite hauteur souhaitée du contrôle. Pour plus d’informations, consultez Propriétés de la [demande](#request-properties).
+La `MinimumHeightRequest` propriété est une `double` valeur qui détermine comment le dépassement de capacité est géré lorsque deux éléments sont en concurrence pour l’espace limité. La définition `MinimumHeightRequest` de la propriété permet au processus de disposition de réduire l’élément à la dimension minimale demandée. Si aucun `MinimumHeightRequest` n’est spécifié, la valeur par défaut est-1 et le processus `HeightRequest` de disposition prend en compte la valeur minimale. Cela signifie que les éléments sans `MinimumHeightRequest` valeur n’auront pas de hauteur évolutive.
+
+Pour plus d’informations, consultez [propriétés minimales des demandes](#minimum-request-properties).
 
 ### [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest)
 
-La `MinimumWidthRequest` propriété est une `double` valeur qui détermine la plus petite largeur souhaitée pour le contrôle. Pour plus d’informations, consultez Propriétés de la [demande](#request-properties).
+La `MinimumWidthRequest` propriété est une `double` valeur qui détermine comment le dépassement de capacité est géré lorsque deux éléments sont en concurrence pour l’espace limité. La définition `MinimumWidthRequest` de la propriété permet au processus de disposition de réduire l’élément à la dimension minimale demandée. Si aucun `MinimumWidthRequest` n’est spécifié, la valeur par défaut est-1 et le processus `WidthRequest` de disposition prend en compte la valeur minimale. Cela signifie que les éléments sans `MinimumWidthRequest` valeur n’auront pas de largeur redimensionnable.
+
+Pour plus d’informations, consultez [propriétés minimales des demandes](#minimum-request-properties).
 
 ### [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)
 
@@ -229,6 +233,35 @@ Les plateformes Android, iOS et UWP ont toutes des unités de mesure différente
 ## <a name="request-properties"></a>Propriétés de requête
 
 Les propriétés dont le nom contient «Request» définissent une valeur souhaitée, qui peut ne pas correspondre à la valeur affichée réelle. Par exemple, `HeightRequest` peut avoir la valeur 150, mais si la disposition autorise uniquement de l’espace pour 100 unités `Height` , le rendu du contrôle sera uniquement 100. La taille rendue est affectée par l’espace disponible et les composants contenus.
+
+## <a name="minimum-request-properties"></a>Propriétés minimales de la demande
+
+Les propriétés de demande `MinimumHeightRequest` minimales `MinimumWidthRequest`incluent et, et sont destinées à permettre un contrôle plus précis sur la façon dont les éléments gèrent le dépassement de capacité les uns par rapport aux autres. Toutefois, le comportement de disposition lié à ces propriétés présente des considérations importantes.
+
+### <a name="unspecified-minimum-property-values"></a>Valeurs de propriété minimales non spécifiées
+
+Si une valeur minimale n’est pas définie, la propriété minimale prend par défaut la valeur-1. Le processus de disposition ignore cette valeur et considère que la valeur absolue est la valeur minimale. La conséquence pratique de ce comportement est qu’un élément sans valeur minimale spécifiée **ne sera pas** réduit. Un élément avec une valeur minimale spécifiée **est** réduit.
+
+Le code XAML suivant montre `BoxView` deux éléments dans un `StackLayout`horizontal:
+
+```xaml
+<StackLayout Orientation="Horizontal">
+    <BoxView HeightRequest="100" BackgroundColor="Purple" WidthRequest="500"></BoxView>
+    <BoxView HeightRequest="100" BackgroundColor="Green" WidthRequest="500" MinimumWidthRequest="250"></BoxView>
+</StackLayout>
+```
+
+La première `BoxView` instance demande une largeur de 500 et ne spécifie pas de largeur minimale. La deuxième `BoxView` instance demande une largeur de 500 et une largeur minimale de 250. Si l’élément `StackLayout` parent n’est pas suffisamment grand pour contenir les deux composants à la largeur demandée, `BoxView` la première instance est considérée par le processus de disposition pour avoir une largeur minimale de 500 car aucun autre minimum valide n’est spécifié. La deuxième `BoxView` instance est autorisée à réduire le nombre de 250 et elle sera réduite pour s’ajuster jusqu’à ce que sa largeur atteigne 250 unités.
+
+Si le comportement souhaité est que la première `BoxView` instance est mise à l’échelle sans largeur minimale `MinimumWidthRequest` , doit être défini sur une valeur valide, telle que 0.
+
+### <a name="minimum-and-absolute-property-values"></a>Valeurs de propriété minimale et absolue
+
+Le comportement n’est pas défini lorsque la valeur minimale est supérieure à la valeur absolue. Par exemple, si `MinimumWidthRequest` a la valeur 100, la `WidthRequest` propriété ne doit jamais dépasser 100. Lorsque vous spécifiez une valeur de propriété minimale, vous devez toujours spécifier une valeur absolue pour garantir que la valeur absolue est supérieure à la valeur minimale.
+
+### <a name="minimum-properties-within-a-grid"></a>Propriétés minimales dans une grille
+
+`Grid`les dispositions disposent de leur propre système pour le dimensionnement relatif des lignes et des colonnes. L' `MinimumWidthRequest` utilisation `MinimumHeightRequest` de ou `Grid` dans une disposition n’aura pas d’effet. Pour plus d’informations, consultez [Xamarin. Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md).
 
 ## <a name="related-links"></a>Liens connexes
 

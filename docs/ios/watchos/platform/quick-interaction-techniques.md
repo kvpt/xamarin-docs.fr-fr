@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e04b6be1547183869fb49955703245e19365bdb3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620511"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120168"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Techniques d’interaction rapide pour Watchos 3 dans Xamarin
 
@@ -230,16 +230,16 @@ Un utilisateur peut répondre à la notification de plusieurs façons:
 
 Nouveauté pour Watchos 3:
 
-* La notification utilise une API similaire sur toutes les plateformes (iOS, Watchos, tvOS et macOS).
-* La notification locale peut être planifiée sur la Apple Watch.
-* La notification d’arrière-plan sera routée vers l’extension de l’application si elle a été planifiée sur le Apple Watch.
+- La notification utilise une API similaire sur toutes les plateformes (iOS, Watchos, tvOS et macOS).
+- La notification locale peut être planifiée sur la Apple Watch.
+- La notification d’arrière-plan sera routée vers l’extension de l’application si elle a été planifiée sur le Apple Watch.
 
 #### <a name="notification-scheduling-and-delivery"></a>Planification et remise des notifications
 
 La notification de l’iPhone de l’utilisateur est transférée vers le Apple Watch lorsque les éléments suivants se produisent:
 
-* L’écran de l’iPhone est désactivé.
-* La Apple Watch est en cours d’usure et a été déverrouillée.
+- L’écran de l’iPhone est désactivé.
+- La Apple Watch est en cours d’usure et a été déverrouillée.
 
 Dans Watchos 3, les notifications locales peuvent être planifiées sur la Apple Watch et ne sont fournies qu’à la montre. Il revient au développeur de planifier une notification iPhone correspondante si elle est requise par l’application.
 

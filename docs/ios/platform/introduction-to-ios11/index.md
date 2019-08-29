@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 648b03dc34daa8906adab316c552a9615649800d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa4744ba217d602dbd3134e616ac3bc4d47f7b76
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655820"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120812"
 ---
 # <a name="introduction-to-ios-11"></a>Introduction à iOS 11
 
@@ -61,24 +61,24 @@ Offre une variété de fonctionnalités d’analyse et de traitement d’images 
 
 Nous disposons d’un certain C# nombre d' [exemples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11) pour vous aider à démarrer:
 
-* [Exemple ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-* [ARKit placement d’objets](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-* [ARKit et UrhoSharp](arkit/urhosharp.md)
-* [Exemple de reconnaissance d’image CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-* [CoreML avec modèle personnalisé Azure](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
-* [Exemple de lecteur de balise CoreNFC](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
-* [Faire glisser & drop table View](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
-* [Faire glisser & déplacer la vue de collection](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
-* [Faire glisser & déplacer la vue personnalisée](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
-* [Glisser-déplacer glisser-déplacer & l’exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
-* [Exemple MapKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
-* [Exemple SiriKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
-* [Exemple de Framework photos mis à jour](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
-* [Exemple de vision & CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-* [Exemple de détection de rectangles de vision](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
-* [Exemple de détection de visages de vision](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
-* [Exemple de widgets PDKFit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
-* [Exemple de filigrane PDFKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
+- [Exemple ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit placement d’objets](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [ARKit et UrhoSharp](arkit/urhosharp.md)
+- [Exemple de reconnaissance d’image CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [CoreML avec modèle personnalisé Azure](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [Exemple de lecteur de balise CoreNFC](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [Faire glisser & drop table View](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [Faire glisser & déplacer la vue de collection](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [Faire glisser & déplacer la vue personnalisée](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+- [Glisser-déplacer glisser-déplacer & l’exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+- [Exemple MapKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [Exemple SiriKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [Exemple de Framework photos mis à jour](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
+- [Exemple de vision & CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+- [Exemple de détection de rectangles de vision](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
+- [Exemple de détection de visages de vision](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [Exemple de widgets PDKFit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+- [Exemple de filigrane PDFKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>Liens associés
 

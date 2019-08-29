@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8e5d4cf50874a0976c1dd10e35e7bd84518f14c4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 03796af880aaef74c2d4b54007ac34ef1c5dc180
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511153"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119835"
 ---
 # <a name="creating-a-cryptoobject"></a>Création d’un CryptoObject
 
@@ -105,10 +105,10 @@ Le chiffrement est instancié avec un appel à `Cipher.GetInstance`, en effectua
 
 Il est important de comprendre que dans certaines situations, Android peut invalider la clé: 
 
-* Une nouvelle empreinte digitale a été inscrite auprès de l’appareil.
-* Aucune empreinte digitale n’est inscrite auprès de l’appareil.
-* L’utilisateur a désactivé le verrouillage de l’écran.
-* L’utilisateur a modifié le verrou d’écran (le type de screenlock ou le code PIN/modèle utilisé).
+- Une nouvelle empreinte digitale a été inscrite auprès de l’appareil.
+- Aucune empreinte digitale n’est inscrite auprès de l’appareil.
+- L’utilisateur a désactivé le verrouillage de l’écran.
+- L’utilisateur a modifié le verrou d’écran (le type de screenlock ou le code PIN/modèle utilisé).
 
 Dans ce cas, `Cipher.Init` lèvera une. [`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html) L’exemple de code ci-dessus va intercepter cette exception, supprimer la clé, puis en créer une nouvelle.
 
@@ -122,11 +122,11 @@ Un `KeyGenerator` est instancié à l’aide `GetInstance` de la méthode de fab
 
 Ensuite, un `KeyGenParameterSpec` est créé à l' `KeyGenParameterSpec.Builder`aide de. `KeyGenParameterSpec.Builder` Encapsule les informations suivantes sur la clé qui doit être créée:
 
-* Le nom de la clé.
-* La clé doit être valide pour le chiffrement et le déchiffrement.
-* Dans l’exemple de code `BLOCK_MODE` , le est défini sur le chaînage de`KeyProperties.BlockModeCbc` _blocs_ de chiffrement (), ce qui signifie que chaque bloc est XOR avec le bloc précédent (créant des dépendances entre chaque bloc). 
-* Le `CryptoObjectHelper` utilise la norme_PKCS7_( [_Public Key Cryptography standard #7_](https://tools.ietf.org/html/rfc2315) ) pour générer les octets qui rempliront les blocs afin de garantir qu’ils ont tous la même taille.
-* `SetUserAuthenticationRequired(true)`signifie que l’authentification de l’utilisateur est nécessaire pour pouvoir utiliser la clé.
+- Le nom de la clé.
+- La clé doit être valide pour le chiffrement et le déchiffrement.
+- Dans l’exemple de code `BLOCK_MODE` , le est défini sur le chaînage de`KeyProperties.BlockModeCbc` _blocs_ de chiffrement (), ce qui signifie que chaque bloc est XOR avec le bloc précédent (créant des dépendances entre chaque bloc). 
+- Le `CryptoObjectHelper` utilise la norme_PKCS7_( [_Public Key Cryptography standard #7_](https://tools.ietf.org/html/rfc2315) ) pour générer les octets qui rempliront les blocs afin de garantir qu’ils ont tous la même taille.
+- `SetUserAuthenticationRequired(true)`signifie que l’authentification de l’utilisateur est nécessaire pour pouvoir utiliser la clé.
 
 Une fois `KeyGenParameterSpec` le créé, il est utilisé pour initialiser `KeyGenerator`, ce qui génère une clé et la stocke en toute sécurité sur l’appareil. 
 

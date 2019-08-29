@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 49e1b382d711f3486782e9e8747ef422c6853979
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 294616e7766a6613a014495e5f9d124f74465072
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620976"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121412"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Présentation des suggestions proactives dans Xamarin. iOS
 
@@ -514,14 +514,14 @@ Indique au système que l’application s’attend à ce que l’utilisateur ent
 
 Voici quelques-uns des types les plus courants disponibles pour le développeur dans la `UITextContentType` classe statique:
 
-* `Name`
-* `GivenName`
-* `FamilyName`
-* `Location`
-* `FullStreetAddress`
-* `AddressCityAndState`
-* `TelephoneNumber`
-* `EmailAddress`
+- `Name`
+- `GivenName`
+- `FamilyName`
+- `Location`
+- `FullStreetAddress`
+- `AddressCityAndState`
+- `TelephoneNumber`
+- `EmailAddress`
 
 ### <a name="routing-apps-and-locations-suggestions"></a>Suggestions relatives aux applications et aux emplacements de routage
 

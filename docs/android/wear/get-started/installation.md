@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d85c199f6243fc49c1ca924bbd60cfef48b6d91f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522169"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120003"
 ---
 # <a name="setup-and-installation"></a>Installation et configuration
 
@@ -63,9 +63,9 @@ Lancez le **Gestionnaire de Android SDK**:
 
 Assurez-vous que les Android SDK et les outils suivants sont installés:
 
-* Android SDK Tools v 24.0.0 ou version ultérieure, et
-* Android 4.4 W (API20) ou
-* Android 5.0.1 (API21) ou version ultérieure.
+- Android SDK Tools v 24.0.0 ou version ultérieure, et
+- Android 4.4 W (API20) ou
+- Android 5.0.1 (API21) ou version ultérieure.
 
 Si le kit de développement logiciel (SDK) et les outils les plus récents ne sont pas installés, téléchargez les outils requis du kit de développement logiciel (SDK) &ndash; et les bits d’API (vous devrez peut-être faire défiler un peu pour les trouver dans la sélection de l’API): 
 

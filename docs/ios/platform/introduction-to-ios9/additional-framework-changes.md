@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 886a6145851720c088e39818b3a6e42a7b66e4bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eaae0859ddce1c7601b0429381c8643c0884c3ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654402"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121393"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Modifications supplémentaires des frameworks iOS 9
 
@@ -78,8 +78,8 @@ Apple a inclus les modifications suivantes à l’infrastructure de Fondation da
 
 Les modifications suivantes ont été apportées à la classe [NSBundle](xref:Foundation.NSBundle) pour iOS 9:
 
-* `GetPreservationPriorityForTag (NSString tag)`-Obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` de `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
-* `SetPreservationPriorityForTag (double priority, NSSet tags)`: Définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` de `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
+- `GetPreservationPriorityForTag (NSString tag)`-Obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` de `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`: Définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` de `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
 
 Pour plus d’informations, consultez la [référence NSBundle](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)d’Apple.
 

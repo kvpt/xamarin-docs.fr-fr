@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528800"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119164"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS Guide de démarrage rapide
 
@@ -327,8 +327,8 @@ Maintenant que nous avons créé notre interface utilisateur, nous devons expose
 
 Il existe deux façons principales d’accéder aux contrôles que vous avez ajoutés dans le concepteur iOS à partir du code:
 
-* Création d’un gestionnaire d’événements sur un contrôle.
-* Donnez un nom au contrôle pour pouvoir le référencer ultérieurement.
+- Création d’un gestionnaire d’événements sur un contrôle.
+- Donnez un nom au contrôle pour pouvoir le référencer ultérieurement.
 
 Quand l’un de ces deux est ajouté, la classe partielle `ViewController.designer.cs` dans le sera mise à jour pour refléter les modifications. Cela vous permettra d’accéder ensuite aux contrôles dans le contrôleur d’affichage.
 

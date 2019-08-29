@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 634081b63ce4a70368ef7621837932a3ae6de0a8
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: ffd244a77ae75fefcf42f185bad1e8f7ccdbe560
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890391"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121335"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS
 
@@ -22,9 +22,9 @@ Lorsque vous travaillez sur iOS, vous pouvez rencontrer des cas où vous souhait
 
 En général, dans l’écosystème iOS, vous pouvez trouver des bibliothèques dans 3 versions:
 
-* En tant que fichier de bibliothèque statique précompilé avec `.a` extension avec son ou ses en-têtes (fichiers. h). Par exemple, [la bibliothèque d’analyse de Google](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* Comme une infrastructure précompilée. Il s’agit simplement d’un dossier contenant la bibliothèque statique, les en-têtes et `.framework` parfois des ressources supplémentaires avec l’extension. Par exemple, [la bibliothèque AdMob de Google](https://developers.google.com/admob/ios/download).
-* En tant que fichiers de code source uniquement. Par exemple, une bibliothèque contenant uniquement `.m` des `.h` fichiers C objectifs et.
+- En tant que fichier de bibliothèque statique précompilé avec `.a` extension avec son ou ses en-têtes (fichiers. h). Par exemple, [la bibliothèque d’analyse de Google](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+- Comme une infrastructure précompilée. Il s’agit simplement d’un dossier contenant la bibliothèque statique, les en-têtes et `.framework` parfois des ressources supplémentaires avec l’extension. Par exemple, [la bibliothèque AdMob de Google](https://developers.google.com/admob/ios/download).
+- En tant que fichiers de code source uniquement. Par exemple, une bibliothèque contenant uniquement `.m` des `.h` fichiers C objectifs et.
 
 Dans le premier et le deuxième scénario, il existe déjà une bibliothèque statique CocoaTouch précompilée. dans cet article, nous allons nous concentrer sur le troisième scénario. N’oubliez pas que, avant de commencer à créer une liaison, vérifiez toujours la licence fournie avec la bibliothèque pour vous assurer que vous êtes libre de la lier.
 

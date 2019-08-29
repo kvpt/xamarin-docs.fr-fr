@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 802f9ff60f74914a9369c7ef281cb2e70ca01d4b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: eb1358f039cc5d5a200f929fcc7dfa71ca863d2a
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529062"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121316"
 ---
 # <a name="xamarinforms-device-class"></a>Classe de périphérique de Xamarin.Forms
 
@@ -135,12 +135,12 @@ Pour plus d’informations sur la direction du flux, consultez [localisation de 
 
 Le [ `Styles` propriété](~/xamarin-forms/user-interface/styles/index.md) contient les définitions de style prédéfini qui peuvent être appliquées à certains contrôles (tels que `Label`) `Style` propriété. Les styles disponibles sont :
 
-* BodyStyle
-* CaptionStyle
-* ListItemDetailTextStyle
-* ListItemTextStyle
-* SubtitleStyle
-* TitleStyle
+- BodyStyle
+- CaptionStyle
+- ListItemDetailTextStyle
+- ListItemTextStyle
+- SubtitleStyle
+- TitleStyle
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 

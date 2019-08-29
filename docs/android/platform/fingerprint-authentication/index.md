@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b865f08c9f6506996b5303bb80677977f1d0fa21
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643562"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119524"
 ---
 # <a name="fingerprint-authentication"></a>Authentification par empreinte digitale
 
@@ -27,9 +27,9 @@ Les API FingerprintManager ciblent les appareils avec un scanneur d’empreintes
 
 Le [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (et son équivalent de la bibliothèque de prise en charge, [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) est la classe principale pour l’utilisation du matériel de numérisation d’empreintes digitales. Cette classe est un wrapper Android SDK autour du service au niveau du système qui gère les interactions avec le matériel lui-même. Il est responsable du démarrage du scanneur d’empreintes digitales et de la réponse aux commentaires du scanneur. Cette classe a une interface relativement simple avec seulement trois membres:
 
-* **`Authenticate`** &ndash; Cette méthode initialise le scanneur matériel et démarre le service en arrière-plan, en attendant que l’utilisateur analyse son empreinte digitale.
-* **`EnrolledFingerprints`** Cette propriété retourne `true` si l’utilisateur a inscrit une ou plusieurs empreintes digitales avec l’appareil. &ndash;
-* **`HardwareDetected`** &ndash; Cette propriété est utilisée pour déterminer si l’appareil prend en charge l’analyse par empreinte digitale.
+- **`Authenticate`** &ndash; Cette méthode initialise le scanneur matériel et démarre le service en arrière-plan, en attendant que l’utilisateur analyse son empreinte digitale.
+- **`EnrolledFingerprints`** Cette propriété retourne `true` si l’utilisateur a inscrit une ou plusieurs empreintes digitales avec l’appareil. &ndash;
+- **`HardwareDetected`** &ndash; Cette propriété est utilisée pour déterminer si l’appareil prend en charge l’analyse par empreinte digitale.
 
 La `FingerprintManager.Authenticate` méthode est utilisée par une application Android pour démarrer le scanneur d’empreintes digitales. L’extrait de code suivant montre comment l’appeler à l’aide des API de compatibilité de la bibliothèque de prise en charge:
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 4c01022e01c5ba6a9099b88e99558bd7d7ce728d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b795a53fc78adee19e1e2d1c57c9c4344aa4281b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524545"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119647"
 ---
 # <a name="binding-a-java-library"></a>Liaison d’une bibliothèque Java
 
@@ -68,36 +68,36 @@ using Com.Company.Package;
 
 Lors de la liaison d’une bibliothèque Android existante, il est nécessaire de garder les points suivants à l’esprit:
 
-* **Existe-t-il des dépendances externes pour la bibliothèque?** &ndash;Toutes les dépendances Java requises par la bibliothèque Android doivent être incluses dans le projet Xamarin. Android en tant que **ReferenceJar** ou **EmbeddedReferenceJar**. Tous les assemblys natifs doivent être ajoutés au projet de liaison en tant que **EmbeddedNativeLibrary**.  
+- **Existe-t-il des dépendances externes pour la bibliothèque?** &ndash;Toutes les dépendances Java requises par la bibliothèque Android doivent être incluses dans le projet Xamarin. Android en tant que **ReferenceJar** ou **EmbeddedReferenceJar**. Tous les assemblys natifs doivent être ajoutés au projet de liaison en tant que **EmbeddedNativeLibrary**.  
 
-* **Quelle version de l’API Android la cible de la bibliothèque Android?** &ndash;Il n’est pas possible de «rétrograder» le niveau de l’API Android. Assurez-vous que le projet de liaison Xamarin. Android cible le même niveau d’API (ou une version ultérieure) que la bibliothèque Android.
+- **Quelle version de l’API Android la cible de la bibliothèque Android?** &ndash;Il n’est pas possible de «rétrograder» le niveau de l’API Android. Assurez-vous que le projet de liaison Xamarin. Android cible le même niveau d’API (ou une version ultérieure) que la bibliothèque Android.
 
-* **Quelle version du JDK a été utilisée pour compiler la bibliothèque?** &ndash;Des erreurs de liaison peuvent se produire si la bibliothèque Android a été créée avec une version différente de JDK et qu’elle est utilisée par Xamarin. Android. Si possible, recompilez la bibliothèque Android en utilisant la même version du JDK que celle utilisée par votre installation de Xamarin. Android.
+- **Quelle version du JDK a été utilisée pour compiler la bibliothèque?** &ndash;Des erreurs de liaison peuvent se produire si la bibliothèque Android a été créée avec une version différente de JDK et qu’elle est utilisée par Xamarin. Android. Si possible, recompilez la bibliothèque Android en utilisant la même version du JDK que celle utilisée par votre installation de Xamarin. Android.
 
 
 ## <a name="build-actions"></a>Actions de génération
 
 Lorsque vous créez une bibliothèque de liaisons, vous définissez des *actions de génération* sur le fichier **. jar** ou. AAR fichiers que vous incorporez dans votre projet &ndash; de bibliothèque de liaisons chaque action de génération détermine la manière dont le fichier **. jar** ou. Le fichier AAR sera incorporé dans (ou référencé par) votre bibliothèque de liaisons. La liste suivante résume ces actions de génération:
 
-* `EmbeddedJar`Incorpore le fichier **. jar** dans la dll de la bibliothèque de liaisons résultante en tant que ressource incorporée. &ndash; Il s’agit de l’action de génération la plus simple et la plus couramment utilisée. Utilisez cette option lorsque vous souhaitez que le fichier **. jar** soit automatiquement compilé en code d’octet et empaqueté dans la bibliothèque de liaisons.
+- `EmbeddedJar`Incorpore le fichier **. jar** dans la dll de la bibliothèque de liaisons résultante en tant que ressource incorporée. &ndash; Il s’agit de l’action de génération la plus simple et la plus couramment utilisée. Utilisez cette option lorsque vous souhaitez que le fichier **. jar** soit automatiquement compilé en code d’octet et empaqueté dans la bibliothèque de liaisons.
 
-* `InputJar`N’incorpore pas le fichier **. jar** dans la bibliothèque de liaisons résultante. &ndash; DLL. Votre bibliothèque de liaisons. La DLL aura une dépendance sur ce fichier **. jar** au moment de l’exécution. Utilisez cette option lorsque vous ne souhaitez pas inclure le fichier **. jar** dans votre bibliothèque de liaisons (par exemple, pour des raisons de licence). Si vous utilisez cette option, vous devez vous assurer que le fichier Input **. jar** est disponible sur l’appareil qui exécute votre application.
+- `InputJar`N’incorpore pas le fichier **. jar** dans la bibliothèque de liaisons résultante. &ndash; DLL. Votre bibliothèque de liaisons. La DLL aura une dépendance sur ce fichier **. jar** au moment de l’exécution. Utilisez cette option lorsque vous ne souhaitez pas inclure le fichier **. jar** dans votre bibliothèque de liaisons (par exemple, pour des raisons de licence). Si vous utilisez cette option, vous devez vous assurer que le fichier Input **. jar** est disponible sur l’appareil qui exécute votre application.
 
-* `LibraryProjectZip`&ndash; Incorpore un. AAR fichier dans la bibliothèque de liaisons résultante. DLL. Cela est similaire à EmbeddedJar, à ceci près que vous pouvez accéder aux ressources (ainsi qu’au code) dans le lié. Fichier AAR. Utilisez cette option lorsque vous souhaitez incorporer un. AAR dans votre bibliothèque de liaisons.
+- `LibraryProjectZip`&ndash; Incorpore un. AAR fichier dans la bibliothèque de liaisons résultante. DLL. Cela est similaire à EmbeddedJar, à ceci près que vous pouvez accéder aux ressources (ainsi qu’au code) dans le lié. Fichier AAR. Utilisez cette option lorsque vous souhaitez incorporer un. AAR dans votre bibliothèque de liaisons.
 
-* `ReferenceJar`Spécifie un fichier Reference. jar: un fichier. jar de référence est un fichier. jar dont l’un des. jar ou. &ndash; Les fichiers AAR dépendent de. Ce fichier Reference **. jar** est utilisé uniquement pour répondre aux dépendances au moment de la compilation. Lorsque vous utilisez cette action de génération C# , les liaisons ne sont pas créées pour Reference **. jar** et ne sont pas incorporées dans la bibliothèque de liaisons résultante. DLL. Utilisez cette option lorsque vous créez une bibliothèque de liaisons pour la référence **. jar** , mais que vous ne l’avez pas encore fait. Cette action de génération est utile pour l’empaquetage de plusieurs **. jar**s (et/ou. AARs) dans plusieurs bibliothèques de liaisons interdépendantes.
+- `ReferenceJar`Spécifie un fichier Reference. jar: un fichier. jar de référence est un fichier. jar dont l’un des. jar ou. &ndash; Les fichiers AAR dépendent de. Ce fichier Reference **. jar** est utilisé uniquement pour répondre aux dépendances au moment de la compilation. Lorsque vous utilisez cette action de génération C# , les liaisons ne sont pas créées pour Reference **. jar** et ne sont pas incorporées dans la bibliothèque de liaisons résultante. DLL. Utilisez cette option lorsque vous créez une bibliothèque de liaisons pour la référence **. jar** , mais que vous ne l’avez pas encore fait. Cette action de génération est utile pour l’empaquetage de plusieurs **. jar**s (et/ou. AARs) dans plusieurs bibliothèques de liaisons interdépendantes.
 
-* `EmbeddedReferenceJar`Incorpore un fichier Reference **. jar** dans la bibliothèque de liaisons résultante. &ndash; DLL. Utilisez cette action de génération lorsque vous souhaitez créer C# des liaisons pour le fichier d’entrée **. jar** (ou. AAR) et tous ses fichier Reference **. jar**dans votre bibliothèque de liaisons.
+- `EmbeddedReferenceJar`Incorpore un fichier Reference **. jar** dans la bibliothèque de liaisons résultante. &ndash; DLL. Utilisez cette action de génération lorsque vous souhaitez créer C# des liaisons pour le fichier d’entrée **. jar** (ou. AAR) et tous ses fichier Reference **. jar**dans votre bibliothèque de liaisons.
 
-* `EmbeddedNativeLibrary`Incorpore un natif **. so** dans la liaison. &ndash; Cette action de génération est utilisée pour les fichiers **. so** requis par le fichier **. jar** qui est lié. Il peut être nécessaire de charger manuellement la bibliothèque **. so** avant d’exécuter le code à partir de la bibliothèque Java. Cela est décrit ci-dessous.
+- `EmbeddedNativeLibrary`Incorpore un natif **. so** dans la liaison. &ndash; Cette action de génération est utilisée pour les fichiers **. so** requis par le fichier **. jar** qui est lié. Il peut être nécessaire de charger manuellement la bibliothèque **. so** avant d’exécuter le code à partir de la bibliothèque Java. Cela est décrit ci-dessous.
 
 Ces actions de génération sont expliquées plus en détail dans les guides suivants.
 
 En outre, les actions de génération suivantes permettent d’importer la documentation de l’API Java et de C# les convertir en documentation XML:
 
-* `JavaDocJar`est utilisé pour pointer vers l’archive Javadoc jar pour une bibliothèque Java qui est conforme à un style de package Maven `FOOBAR-javadoc**.jar**`(généralement).
-* `JavaDocIndex`est utilisé pour pointer `index.html` vers un fichier dans le code HTML de la documentation de référence de l’API.
-* `JavaSourceJar`est utilisé pour compléter `JavaDocJar`, afin de générer d’abord Javadoc à partir de sources, puis `JavaDocIndex`traiter les résultats comme, pour une bibliothèque Java qui est conforme à un style de `FOOBAR-sources**.jar**`package Maven (généralement).
+- `JavaDocJar`est utilisé pour pointer vers l’archive Javadoc jar pour une bibliothèque Java qui est conforme à un style de package Maven `FOOBAR-javadoc**.jar**`(généralement).
+- `JavaDocIndex`est utilisé pour pointer `index.html` vers un fichier dans le code HTML de la documentation de référence de l’API.
+- `JavaSourceJar`est utilisé pour compléter `JavaDocJar`, afin de générer d’abord Javadoc à partir de sources, puis `JavaDocIndex`traiter les résultats comme, pour une bibliothèque Java qui est conforme à un style de `FOOBAR-sources**.jar**`package Maven (généralement).
 
 La documentation de l’API doit être la Doclet par défaut de Java8, Java7 ou java6 SDK (ils ont un format différent) ou le style DroidDoc.
 

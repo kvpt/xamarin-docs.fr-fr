@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528320"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119175"
 ---
 # <a name="passkit-in-xamarinios"></a>PassKit dans Xamarin. iOS
 
@@ -326,9 +326,9 @@ Les fonctionnalités de Wallet sont les suivantes:
 
 Les passes peuvent être ajoutées à Wallet de l’une des manières suivantes:
 
-* **Applications de conduit** : celles-ci ne manipulent pas directement les passes, elles chargent simplement les fichiers de réussite et présentent à l’utilisateur la possibilité de les ajouter à Wallet. 
+- **Applications de conduit** : celles-ci ne manipulent pas directement les passes, elles chargent simplement les fichiers de réussite et présentent à l’utilisateur la possibilité de les ajouter à Wallet. 
 
-* **Applications auxiliaires** : celles-ci sont écrites par les fournisseurs pour distribuer les passes et offrent des fonctionnalités supplémentaires pour les parcourir ou les modifier. Les applications Xamarin. iOS ont un accès complet à l’API PassKit pour créer et manipuler des passes. Les passes peuvent ensuite être ajoutées à Wallet `PKAddPassesViewController`à l’aide du. Ce processus est décrit plus en détail dans la section **applications auxiliaires** de ce document.
+- **Applications auxiliaires** : celles-ci sont écrites par les fournisseurs pour distribuer les passes et offrent des fonctionnalités supplémentaires pour les parcourir ou les modifier. Les applications Xamarin. iOS ont un accès complet à l’API PassKit pour créer et manipuler des passes. Les passes peuvent ensuite être ajoutées à Wallet `PKAddPassesViewController`à l’aide du. Ce processus est décrit plus en détail dans la section **applications auxiliaires** de ce document.
 
 ### <a name="conduit-applications"></a>Applications de conduit
 

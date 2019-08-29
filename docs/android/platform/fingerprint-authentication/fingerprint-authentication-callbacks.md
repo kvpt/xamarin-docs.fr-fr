@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: cb4933695d34a0805be4139c7b345f7a70f33613
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f1fc484931ba7a574ac660b4856f20b1cb1e08a3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524326"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119585"
 ---
 # <a name="responding-to-authentication-callbacks"></a>Réponse aux rappels d’authentification
 
 Le scanneur d’empreintes digitales s’exécute en arrière-plan sur son propre thread et, lorsqu’il est terminé, il signale les résultats de l' `FingerprintManager.AuthenticationCallback` analyse en appelant une méthode de sur le thread d’interface utilisateur. Une application Android doit fournir son propre gestionnaire qui étend cette classe abstraite, en implémentant toutes les méthodes suivantes:
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; Appelé en cas d’erreur irrécupérable. Il n’y a rien d’autre qu’une application ou un utilisateur ne peut faire pour corriger la situation, sauf s’il est possible de réessayer.
-* **`OnAuthenticationFailed()`** &ndash; Cette méthode est appelée lorsqu’une empreinte digitale a été détectée mais qu’elle n’est pas reconnue par l’appareil.
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; Appelée lorsqu’il y a une erreur récupérable, telle que le doigt en cours de balayage sur le scanneur.
-* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; Cette méthode est appelée lorsqu’une empreinte digitale a été reconnue.
+- **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash; Appelé en cas d’erreur irrécupérable. Il n’y a rien d’autre qu’une application ou un utilisateur ne peut faire pour corriger la situation, sauf s’il est possible de réessayer.
+- **`OnAuthenticationFailed()`** &ndash; Cette méthode est appelée lorsqu’une empreinte digitale a été détectée mais qu’elle n’est pas reconnue par l’appareil.
+- **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash; Appelée lorsqu’il y a une erreur récupérable, telle que le doigt en cours de balayage sur le scanneur.
+- **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash; Cette méthode est appelée lorsqu’une empreinte digitale a été reconnue.
 
 Si un `CryptoObject` a été utilisé lors `Authenticate`de l’appel de, il `Cipher.DoFinal` est `OnAuthenticationSuccessful`recommandé d’appeler dans.
 `DoFinal`lèvera une exception si le chiffrement a été falsifié ou mal initialisé, indiquant que le résultat du scanneur d’empreintes digitales a peut-être été falsifié en dehors de l’application.

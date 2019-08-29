@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fe871985700c5a40db2736ded78588b0b7d4f616
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655392"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121284"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Reconnaissance vocale dans Xamarin. iOS
 
@@ -89,8 +89,8 @@ Le développeur doit suivre quatre étapes majeures pour adopter la reconnaissan
 - Fournissez une description d’utilisation dans le `Info.plist` fichier de l' `NSSpeechRecognitionUsageDescription` application à l’aide de la clé. Par exemple, une application de caméra peut inclure la description suivante: _«cela vous permet de prendre une photo simplement en disant le mot «fromage».»_
 - Demandez l’autorisation en appelant `SFSpeechRecognizer.RequestAuthorization` la méthode pour présenter une explication (fournie dans `NSSpeechRecognitionUsageDescription` la clé ci-dessus) de la raison pour laquelle l’application souhaite que la reconnaissance vocale accède à l’utilisateur dans une boîte de dialogue et lui permette d’accepter ou de refuser.
 - Créer une demande de reconnaissance vocale:
-    * Pour les données audio pré-enregistrées sur le disque `SFSpeechURLRecognitionRequest` , utilisez la classe.
-    * Pour l’audio en direct (ou l’audio de la mémoire `SFSPeechAudioBufferRecognitionRequest` ), utilisez la classe.
+    - Pour les données audio pré-enregistrées sur le disque `SFSpeechURLRecognitionRequest` , utilisez la classe.
+    - Pour l’audio en direct (ou l’audio de la mémoire `SFSPeechAudioBufferRecognitionRequest` ), utilisez la classe.
 - Transmettez la demande de reconnaissance vocale à un module de`SFSpeechRecognizer`reconnaissance vocale () pour commencer la reconnaissance. L’application peut éventuellement contenir le retourné `SFSpeechRecognitionTask` pour surveiller et suivre les résultats de la reconnaissance.
 
 Ces étapes seront traitées en détail ci-dessous.

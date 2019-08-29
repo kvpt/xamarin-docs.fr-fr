@@ -6,12 +6,12 @@ ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 3701a2a111c5c18f694def241b1e888fa6f4ce19
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889402"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120315"
 ---
 # <a name="known-issues--workarounds"></a>Problèmes connus & solutions de contournement
 
@@ -21,20 +21,20 @@ Le `System.Threading.CurrentThread.CurrentCulture` paramètre `System.Globalizat
 
 ### <a name="workarounds"></a>Solutions
 
-* Définissez l’application-domaine local `DefaultThreadCurrentCulture`:
+- Définissez l’application-domaine local `DefaultThreadCurrentCulture`:
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* Ou, mettez à jour vers les classeurs 1.2.1 ou une version plus récente, `System.Threading.CurrentThread.CurrentCulture` qui `System.Globalization.CultureInfo.CurrentCulture` réécrira les assignations dans et pour fournir le comportement souhaité (contournement du bogue mono).
+- Ou, mettez à jour vers les classeurs 1.2.1 ou une version plus récente, `System.Threading.CurrentThread.CurrentCulture` qui `System.Globalization.CultureInfo.CurrentCulture` réécrira les assignations dans et pour fournir le comportement souhaité (contournement du bogue mono).
 
 ## <a name="unable-to-use-newtonsoftjson"></a>Impossible d’utiliser Newtonsoft. JSON
 
 ### <a name="workaround"></a>Solution de contournement
 
-* Mise à jour des classeurs 1.2.1, qui installe Newtonsoft. JSON 9.0.1.
+- Mise à jour des classeurs 1.2.1, qui installe Newtonsoft. JSON 9.0.1.
   Les classeurs 1,3, actuellement dans le canal alpha, prennent en charge les versions 10 et ultérieures.
 
 ### <a name="details"></a>Détails
@@ -51,9 +51,9 @@ Il existe un [bogue dans l’éditeur Monaco][monaco-bug] dans Safari/WebKit, qu
 
 ### <a name="workaround"></a>Solution de contournement
 
-* Le fait de cliquer sur l’info-bulle après l’affichage force le rendu du texte.
+- Le fait de cliquer sur l’info-bulle après l’affichage force le rendu du texte.
 
-* Ou mettre à jour des classeurs 1.2.1 ou version ultérieure
+- Ou mettre à jour des classeurs 1.2.1 ou version ultérieure
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
@@ -64,7 +64,7 @@ Il existe un [bogue dans l’éditeur Monaco][monaco-bug] dans Safari/WebKit, qu
 
 ### <a name="workaround"></a>Solution de contournement
 
-* Mettez à jour SkiaSharp vers la version la plus récente dans NuGet. Au moment de la rédaction de cet article, il s’agit de 1.57.1.
+- Mettez à jour SkiaSharp vers la version la plus récente dans NuGet. Au moment de la rédaction de cet article, il s’agit de 1.57.1.
 
 ## <a name="related-links"></a>Liens associés
 

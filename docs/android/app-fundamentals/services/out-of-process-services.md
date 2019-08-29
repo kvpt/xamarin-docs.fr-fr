@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2794a1d23cd7c1eab9cf4e94eaa805ad2b8bca61
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526250"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119129"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Exécution des services Android dans des processus distants
 
@@ -33,9 +33,9 @@ En général, il n’est pas nécessaire qu’une application implémente un ser
 
 À de nombreux égards, la liaison à un service qui s’exécute dans un autre processus est identique [à la liaison à un service local](~/android/app-fundamentals/services/creating-a-service/bound-services.md). Le client `BindService` appellera pour lier (et démarrer, si nécessaire) le service. Un `Android.OS.IServiceConnection` objet sera créé pour gérer la connexion entre le client et le service. Si le client se connecte correctement au service, Android retourne un objet via le `IServiceConnection` qui peut être utilisé pour appeler des méthodes sur le service. Le client interagit ensuite avec le service à l’aide de cet objet. Pour passer en revue, Voici les étapes à suivre pour établir une liaison à un service:
 
-* **Créer une intention** &ndash; Une intention explicite doit être utilisée pour la liaison au service.
-* **Implémenter et instancier `IServiceConnection` un objet** &ndash; l' `IServiceConnection` objet agit comme un intermédiaire entre le client et le service.  Il est responsable de la surveillance de la connexion entre le client et le serveur.
-* **Appeler l' `BindService`**  &ndash; appel de`BindService` la méthode permet de distribuer l’intention et la connexion de service créées dans les étapes précédentes à Android, ce qui se charge de démarrer le service et d’établir la communication entre client et service.
+- **Créer une intention** &ndash; Une intention explicite doit être utilisée pour la liaison au service.
+- **Implémenter et instancier `IServiceConnection` un objet** &ndash; l' `IServiceConnection` objet agit comme un intermédiaire entre le client et le service.  Il est responsable de la surveillance de la connexion entre le client et le serveur.
+- **Appeler l' `BindService`**  &ndash; appel de`BindService` la méthode permet de distribuer l’intention et la connexion de service créées dans les étapes précédentes à Android, ce qui se charge de démarrer le service et d’établir la communication entre client et service.
 
 La nécessité de franchir les limites d’un processus introduit une complexité supplémentaire: la communication est unidirectionnelle (client à serveur) et le client ne peut pas appeler directement des méthodes sur la classe de service. Rappelez-vous que lorsqu’un service exécute le même processus que le client, Android `IBinder` fournit un objet qui peut permettre une communication bidirectionnelle. Ce n’est pas le cas avec le service qui s’exécute dans son propre processus. Un client communique avec un service distant avec l’aide de la `Android.OS.Messenger` classe.
 
@@ -68,9 +68,9 @@ Bien qu’il soit possible d’utiliser des intentions implicites avec des appli
 
 Comme décrit ci-dessus, le fait qu’un service s’exécute dans son propre processus signifie que certaines API différentes sont impliquées. Pour une vue d’ensemble rapide, Voici les étapes à suivre pour établir une liaison avec un service distant et l’utiliser:  
 
-* **Créez la `Service`**  `Service` sous-classe de sous-classe du type et implémentez les méthodes de cycle de vie pour un service lié. &ndash; Il est également nécessaire de définir des métadonnées qui informent Android que le service doit s’exécuter dans son propre processus.
-* **Implémenter `Handler` un** estchargé&ndash; d’analyser les demandes des clients, d’extraire tous les paramètres qui ont été transmis à partir du client et d’appeler les méthodes appropriées sur le service. `Handler`
-* **Instanciez `Messenger` un** `Service` `Messenger` `Handler` comme décrit ci-dessus, chaque doit conserver une instance de la classe qui acheminera les demandes des clients vers le qui a été créé à l’étape précédente. &ndash;
+- **Créez la `Service`**  `Service` sous-classe de sous-classe du type et implémentez les méthodes de cycle de vie pour un service lié. &ndash; Il est également nécessaire de définir des métadonnées qui informent Android que le service doit s’exécuter dans son propre processus.
+- **Implémenter `Handler` un** estchargé&ndash; d’analyser les demandes des clients, d’extraire tous les paramètres qui ont été transmis à partir du client et d’appeler les méthodes appropriées sur le service. `Handler`
+- **Instanciez `Messenger` un** `Service` `Messenger` `Handler` comme décrit ci-dessus, chaque doit conserver une instance de la classe qui acheminera les demandes des clients vers le qui a été créé à l’étape précédente. &ndash;
 
 Un service destiné à s’exécuter dans son propre processus est fondamentalement un service lié. La classe de service étendra la `Service` classe de base et sera décorée avec le `ServiceAttribute` contenant les métadonnées qu’Android doit regrouper dans le manifeste Android. Pour commencer, les propriétés suivantes du `ServiceAttribute` qui sont importantes pour un service hors processus:
 
@@ -133,8 +133,8 @@ Pour traiter les demandes des clients, le service doit `Handler` implémenter un
 
 L’extrait de code suivant de l’exemple d’application montre un `HandleMessage`exemple de. Dans cet exemple, il existe deux actions qu’un client peut demander au service:
 
-* La première action est un message _Hello, World_ , le client a envoyé un message simple au service.
-* La deuxième action appelle une méthode sur le service et récupère une chaîne. dans ce cas, la chaîne est un message qui retourne l’heure à laquelle le service a démarré et la durée d’exécution de ce dernier:
+- La première action est un message _Hello, World_ , le client a envoyé un message simple au service.
+- La deuxième action appelle une méthode sur le service et récupère une chaîne. dans ce cas, la chaîne est un message qui retourne l’heure à laquelle le service a démarré et la durée d’exécution de ce dernier:
 
 ```csharp
 public class TimestampRequestHandler : Android.OS.Handler
@@ -384,10 +384,10 @@ Les autorisations peuvent être identifiées `Permission` par la propriété `Se
 
 Android offre quatre niveaux d’autorisation:
 
-* **normal** &ndash; Il s’agit du niveau d’autorisation par défaut. Il est utilisé pour identifier les autorisations à faible risque qui peuvent être accordées automatiquement par Android aux clients qui le demandent. L’utilisateur n’a pas besoin d’accorder explicitement ces autorisations, mais les autorisations peuvent être affichées dans les paramètres de l’application.
-* **signature** &ndash; Il s’agit d’une catégorie spéciale d’autorisation qui sera accordée automatiquement par Android aux applications qui sont toutes signées avec le même certificat. Cette autorisation est conçue pour permettre à un développeur d’applications de partager facilement des composants ou des données entre leurs applications sans avoir à passer l’utilisateur à des approbations constantes.
-* **signatureOrSystem** Cela est très similaire aux autorisations de signature décrites ci-dessus. &ndash; En plus d’être accordé automatiquement aux applications qui sont signées par le même certificat, cette autorisation est également accordée aux applications qui sont signées avec le même certificat que celui utilisé pour signer les applications installées avec l’image système Android. En général, cette autorisation est utilisée uniquement par les développeurs de la ROM Android pour permettre à leurs applications de fonctionner avec des applications tierces. Elle n’est généralement pas utilisée par les applications qui sont destinées à la distribution générale pour le grand public.
-* **dangereux** &ndash; Les autorisations dangereuses sont celles qui peuvent entraîner des problèmes pour l’utilisateur. Pour cette raison, les autorisations **dangereuses** doivent être approuvées explicitement par l’utilisateur.
+- **normal** &ndash; Il s’agit du niveau d’autorisation par défaut. Il est utilisé pour identifier les autorisations à faible risque qui peuvent être accordées automatiquement par Android aux clients qui le demandent. L’utilisateur n’a pas besoin d’accorder explicitement ces autorisations, mais les autorisations peuvent être affichées dans les paramètres de l’application.
+- **signature** &ndash; Il s’agit d’une catégorie spéciale d’autorisation qui sera accordée automatiquement par Android aux applications qui sont toutes signées avec le même certificat. Cette autorisation est conçue pour permettre à un développeur d’applications de partager facilement des composants ou des données entre leurs applications sans avoir à passer l’utilisateur à des approbations constantes.
+- **signatureOrSystem** Cela est très similaire aux autorisations de signature décrites ci-dessus. &ndash; En plus d’être accordé automatiquement aux applications qui sont signées par le même certificat, cette autorisation est également accordée aux applications qui sont signées avec le même certificat que celui utilisé pour signer les applications installées avec l’image système Android. En général, cette autorisation est utilisée uniquement par les développeurs de la ROM Android pour permettre à leurs applications de fonctionner avec des applications tierces. Elle n’est généralement pas utilisée par les applications qui sont destinées à la distribution générale pour le grand public.
+- **dangereux** &ndash; Les autorisations dangereuses sont celles qui peuvent entraîner des problèmes pour l’utilisateur. Pour cette raison, les autorisations **dangereuses** doivent être approuvées explicitement par l’utilisateur.
 
 Étant `signature` donné `normal` que les autorisations et sont accordées automatiquement au moment de l’installation par Android, il est essentiel que apk hébergeant le service soit installé **avant** le apk contenant le client. Si le client est installé en premier, Android n’accorde pas les autorisations. Dans ce cas, il est nécessaire de désinstaller le client APK, d’installer le service APK, puis de réinstaller le APK client.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065589"
+ms.locfileid: "70120062"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Styles de l’interface utilisateur tvOS dans Xamarin
 
@@ -183,22 +183,22 @@ Pour activer la prise en charge de la collection de traits, procédez comme suit
 
 Apple a ajouté les fonctionnalités suivantes lors de la modification des storyboards tvOS dans Interface Builder:
 
-* Le développeur peut spécifier différentes variantes d’éléments d’interface utilisateur en fonction du thème de l’interface utilisateur dans l' **inspecteur d’attribut**:
+- Le développeur peut spécifier différentes variantes d’éléments d’interface utilisateur en fonction du thème de l’interface utilisateur dans l' **inspecteur d’attribut**:
 
-  * À présent, plusieurs propriétés **+** sont à côté d’elles, sur lesquelles vous pouvez cliquer pour ajouter une version spécifique au thème de l’interface utilisateur:
+  - À présent, plusieurs propriétés **+** sont à côté d’elles, sur lesquelles vous pouvez cliquer pour ajouter une version spécifique au thème de l’interface utilisateur:
 
     [![](user-interface-styles-images/theme08.png "Ajouter une version spécifique au thème de l’interface utilisateur")](user-interface-styles-images/theme08.png#lightbox)
 
-  * Le développeur peut spécifier une nouvelle propriété ou cliquer sur le bouton **x** pour le supprimer:
+  - Le développeur peut spécifier une nouvelle propriété ou cliquer sur le bouton **x** pour le supprimer:
 
     [![](user-interface-styles-images/theme09.png "Spécifiez une nouvelle propriété ou cliquez sur le bouton x pour la supprimer")](user-interface-styles-images/theme09.png#lightbox)
-* Le développeur peut afficher un aperçu de la conception de l’interface utilisateur dans le thème clair ou sombre à partir d’Interface Builder:
+- Le développeur peut afficher un aperçu de la conception de l’interface utilisateur dans le thème clair ou sombre à partir d’Interface Builder:
 
-  * Le bas de la Aire de conception permet au développeur de changer le thème de l’interface utilisateur actuel:
+  - Le bas de la Aire de conception permet au développeur de changer le thème de l’interface utilisateur actuel:
 
     [![](user-interface-styles-images/theme10.png "Le bas de la Aire de conception")](user-interface-styles-images/theme10.png#lightbox)
 
-  * Le nouveau thème s’affiche dans Interface Builder et les ajustements spécifiques à la collection de traits s’affichent:
+  - Le nouveau thème s’affiche dans Interface Builder et les ajustements spécifiques à la collection de traits s’affichent:
 
     [![](user-interface-styles-images/theme11.png "Thème affiché dans Interface Builder")](user-interface-styles-images/theme11.png#lightbox)
 
