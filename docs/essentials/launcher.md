@@ -4,17 +4,17 @@ description: La classe Lanceur dans Xamarin.Essentials permet à une application
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 26ab3687e9bcfecbd003ddd0a97f3e46a0cd92b2
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.date: 08/20/2019
+ms.openlocfilehash: 276e4d9bc1294984a73ef2214cf9c1fd6c3bb89b
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870051"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060106"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Lanceur
 
-La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)**.
+La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)** .
 
 ## <a name="get-started"></a>Prise en main
 
@@ -40,6 +40,35 @@ public class LauncherTest
             await Launcher.OpenAsync("lyft://ridetype?id=lyft_line");
     }
 }
+```
+
+Cette méthode peut être combinée en un seul appel à `TryOpenAsync`, qui vérifie si le paramètre peut être ouvert et, le cas échéant, l’ouvre.
+
+```csharp
+public class LauncherTest
+{
+    public async Task<bool> OpenRideShareAsync()
+    {
+        return await Launcher.TryOpenAsync("lyft://ridetype?id=lyft_line");
+    }
+}
+```
+
+## <a name="files"></a>Fichiers
+
+Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ouvert.
+
+Voici un exemple d’écriture de texte sur le disque et de demande d’ouverture du fichier :
+
+```csharp
+var fn = "File.txt";
+var file = Path.Combine(FileSystem.CacheDirectory, fn);
+File.WriteAllText(file, "Hello World");
+
+await Launcher.OpenAsync(new OpenFileRequest
+{
+    File = new ReadOnlyFile(file)
+});
 ```
 
 ## <a name="platform-differences"></a>Différences entre les plateformes

@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials : Baromètre'
+title: 'Xamarin.Essentials: Baromètre'
 description: La classe Baromètre dans Xamarin.Essentials vous permet d’analyser le capteur du baromètre de l’appareil, qui mesure la pression.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 342ae1b64fefebaa4b3fa82e9f48c6e9a58d4751
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899042"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976435"
 ---
-# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials : Baromètre
+# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Baromètre
 
 La classe **Baromètre** vous permet d’analyser le capteur du baromètre de l’appareil, qui mesure la pression.
 
@@ -82,6 +82,8 @@ Aucun détail d’implémentation spécifique à la plateforme.
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 Cette API utilise [CMAltimeter](https://developer.apple.com/documentation/coremotion/cmaltimeter#//apple_ref/occ/cl/CMAltimeter) pour surveiller les changements de pression, qui est une fonctionnalité matérielle ajoutée à l’iPhone 6 et aux appareils les plus récents. Un `FeatureNotSupportedException` sera levé sur les appareils qui ne prennent pas en charge l’altimètre.
+
+`SensorSpeed` n’est pas utilisé, car il n’est pas pris en charge sur iOS.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

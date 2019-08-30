@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials : Capteur d’orientation'
+title: 'Xamarin.Essentials: OrientationSensor'
 description: La classe Capteur d’orientation vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: f1fceaef93e7ac30bbbe0f13da7dde3cde5275fd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898668"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120716"
 ---
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials : Capteur d’orientation
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
 La classe **Capteur d’orientation** vous permet de surveiller l’orientation d’un appareil dans l’espace tridimensionnel.
 
@@ -98,13 +98,13 @@ Il s’agit de systèmes de coordonnées droitiers, donc avec le pouce de la mai
 
 Exemples :
 
-* Lorsque l’appareil se trouve à plat sur une table avec son écran vers le haut, avec le bord supérieur de l’appareil (en mode portrait) pointant vers le nord, les deux systèmes de coordonnées sont alignés. La valeur `Quaternion` représente le quaternion d’identité (0, 0, 0, 1). Toutes les rotations peuvent être analysées par rapport à cette position.
+- Lorsque l’appareil se trouve à plat sur une table avec son écran vers le haut, avec le bord supérieur de l’appareil (en mode portrait) pointant vers le nord, les deux systèmes de coordonnées sont alignés. La valeur `Quaternion` représente le quaternion d’identité (0, 0, 0, 1). Toutes les rotations peuvent être analysées par rapport à cette position.
 
-* Lorsque l’appareil se trouve à plat sur une table avec son écran vers le haut, avec le bord supérieur de l’appareil (en mode portrait) pointant vers l’ouest, la valeur `Quaternion` est (0, 0, 0.707, 0.707). L’appareil a été pivoté de 90 degrés autour de l’axe Z de la terre.
+- Lorsque l’appareil se trouve à plat sur une table avec son écran vers le haut, avec le bord supérieur de l’appareil (en mode portrait) pointant vers l’ouest, la valeur `Quaternion` est (0, 0, 0.707, 0.707). L’appareil a été pivoté de 90 degrés autour de l’axe Z de la terre.
 
-* Lorsque l’appareil est maintenu à la verticale afin que le haut (en mode portrait) pointe vers le ciel et que l’arrière de l’appareil soit face au nord, l’appareil a été pivoté de 90 degrés autour de l’axe X. La valeur `Quaternion` est (0.707, 0, 0, 0.707).
+- Lorsque l’appareil est maintenu à la verticale afin que le haut (en mode portrait) pointe vers le ciel et que l’arrière de l’appareil soit face au nord, l’appareil a été pivoté de 90 degrés autour de l’axe X. La valeur `Quaternion` est (0.707, 0, 0, 0.707).
 
-* Si l’appareil est positionné de façon à ce que son bord gauche soit sur une table et que le haut de l’appareil pointe vers le nord, l’appareil a été pivoté de &ndash;90 degrés autour de l’axe Y (ou 90 degrés autour de l’axe Y négatif). La valeur `Quaternion` est (0, -0.707, 0, 0.707).
+- Si l’appareil est positionné de façon à ce que son bord gauche soit sur une table et que le haut de l’appareil pointe vers le nord, l’appareil a été pivoté de &ndash;90 degrés autour de l’axe Y (ou 90 degrés autour de l’axe Y négatif). La valeur `Quaternion` est (0, -0.707, 0, 0.707).
 
 [!include[](~/essentials/includes/sensor-speed.md)]
 

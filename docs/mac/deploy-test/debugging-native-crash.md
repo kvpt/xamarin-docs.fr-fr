@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 777e8d2880313b5a793d6257cc0fd9d8299cb94d
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 4a80b14aeb1517bac1e0d994a606ac4e74b2a94a
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528479"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065639"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Débogage d’un plantage natif dans une application Xamarin.Mac
 
@@ -22,7 +22,7 @@ Des erreurs de programmation peuvent parfois provoquer des plantages dans le run
 
 Passons en revue quelques exemples de plantages natifs réels.
 
-## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
+## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
 
 Voici les quelques premières lignes d’un plantage dans une application de test simple (ces informations se trouvent dans le panneau **Sortie de l’application**) :
 
@@ -32,17 +32,17 @@ Voici les quelques premières lignes d’un plantage dans une application de tes
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] *** Assertion failure in -[NSTableView _uncachedRectHeightOfRow:], /SourceCache/AppKit/AppKit-1343.13/TableView.subproj/NSTableView.m:1855
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] NSTableView variable rowHeight error: The value must be > 0 for row 0, but the delegate <NSOutlineViewHottness_HotnessViewDelegate: 0xaa01860> gave -1.000.
 2014-10-15 16:18:02.381 NSOutlineViewHottness[79111:1304993] (
-    0   CoreFoundation                      0x91888343 __raiseError + 195
-    1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
-    2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
-    3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
-    4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
-    5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
-    6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
-    7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
-    8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
-    9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
-    10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
+  0   CoreFoundation                      0x91888343 __raiseError + 195
+  1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
+  2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
+  3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
+  4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
+  5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
+  6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
+  7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
+  8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
+  9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
+  10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
 ```
 
 Les lignes préfixées par des nombres constituent la trace de pile native. Vous pouvez voir ici que le plantage s’est produit quelque part dans `NSTableView`, dans la gestion des hauteurs des lignes. `NSAssertionHandler` déclenche alors une `NSException (objc_exception_throw)`, et nous voyons l’échec d’assertion :
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>Exemple 2 : Un rappel aboutit au milieu de nulle part
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>Exemple 2 : Un rappel aboutit au milieu de nulle part
 
 ```csharp
 Stacktrace:
@@ -134,7 +134,7 @@ Le `NSButton` retourné par `StandardWindowButton()` était nettoyé même si un
 
 Même si ce n’était pas la cause racine de ce problème particulier, des traces de pile comme celle-ci peuvent également être provoquées par des signatures de méthode incorrectes dans les fonctions `[Export]` vers Objective-C. Par exemple, si une méthode attend qu’un paramètre soit `out string` et que vous le tapez en `string`, un plantage peut se produire de la même façon.
 
-## <a name="example-3-callbacks-and-managed-objects"></a>Exemple 3 : Rappels et objets gérés
+## <a name="example-3-callbacks-and-managed-objects"></a>Exemple 3 : Rappels et objets managés
 
 De nombreuses API Cocoa impliquent d’être « rappelées » par la bibliothèque quand un événement se produit, ce qui vous donne l’opportunité de répondre, ou quand des données sont nécessaires pour effectuer une tâche. Même si vous pensez principalement aux modèles **Delegate** et **DataSource**, il existe une multitude d’API qui fonctionnent de cette manière. Par exemple, quand vous remplacez les méthodes d’un `NSView`, puis que vous l’insérez dans l’arborescence d’éléments visuels, vous vous attendez à ce que AppKit vous rappelle quand certains événements se produisent.
 

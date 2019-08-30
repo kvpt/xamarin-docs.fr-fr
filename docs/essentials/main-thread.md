@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials : MainThread'
+title: 'Xamarin.Essentials: MainThread'
 description: La classe MainThread permet aux applications d’exécuter du code sur le thread principal de l'application. Elle permet également de déterminer si un bloc de code particulier est en cours d’exécution sur le thread principal ou non.
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7ec1420d87c898f63614eb6d980c28834e980afd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 08/20/2019
+ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899003"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060117"
 ---
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials : MainThread
+# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
 
 La classe **MainThread** permet aux applications d’exécuter du code sur le thread d’exécution principal, et de déterminer si un bloc de code donné est en cours d’exécution sur le thread principal.
 
@@ -93,6 +93,18 @@ else
 On peut imaginer que cette vérification améliore les performances lorsque le bloc de code est déjà en cours d’exécution sur le thread principal.
 
 _Toutefois, elle n’est pas nécessaire._ Les implémentations de `BeginInvokeOnMainThread` sur la plateforme vérifient directement si l’appel est effectué sur le thread principal. La perte de performances est très faible si l’on appelle `BeginInvokeOnMainThread` alors que ce n’est pas vraiment nécessaire.
+
+## <a name="additional-methods"></a>Autres méthodes
+
+La classe `MainThread` comprend les méthodes `static` supplémentaires suivantes qui peuvent être utilisées pour interagir avec des éléments d’interface utilisateur à partir de threads d’arrière-plan :
+
+| Méthode | Arguments | Returns (Retours) | Objectif |
+|---|---|---|---|
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Appelle un `Func<T>` sur le thread principal, puis attend qu’il se termine. |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | Appelle un `Action` sur le thread principal, puis attend qu’il se termine. |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Appelle un `Func<Task<T>>` sur le thread principal, puis attend qu’il se termine. |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Appelle un `Func<Task>` sur le thread principal, puis attend qu’il se termine. |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Retourne le `SynchronizationContext` pour le thread principal. |
 
 ## <a name="api"></a>API
 
