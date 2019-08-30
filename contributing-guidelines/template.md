@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: eac7d316b65b57231d2fc25ef6b859293650d3f8
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "53709589"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119009"
 ---
 # <a name="metadata-and-markdown-template"></a>Métadonnées et modèle Markdown
 
@@ -65,12 +65,12 @@ Markdown utilise des caractères spéciaux tels que \*, \` et \# pour la mise en
 ## <a name="file-name"></a>Nom de fichier
 
 Les noms des fichiers utilisent les règles suivantes :
-* Ils contiennent uniquement des lettres minuscules, des chiffres et des traits d’union.
-* Aucun espace ni caractère de ponctuation. Utilisez les traits d’union pour séparer les mots et les nombres dans le nom de fichier.
-* Utilisez des verbes d’actions spécifiques, tels que développer, acheter, générer, dépanner. Pas de substantif.
-* Pas de mot trop court ; évitez un, et, le, en, ou, etc.
-* Le nom doit être au format Markdown et utiliser l’extension de fichier .md.
-* Privilégiez des noms de fichiers courts. Ils font partie de l’URL pour vos articles.
+- Ils contiennent uniquement des lettres minuscules, des chiffres et des traits d’union.
+- Aucun espace ni caractère de ponctuation. Utilisez les traits d’union pour séparer les mots et les nombres dans le nom de fichier.
+- Utilisez des verbes d’actions spécifiques, tels que développer, acheter, générer, dépanner. Pas de substantif.
+- Pas de mot trop court ; évitez un, et, le, en, ou, etc.
+- Le nom doit être au format Markdown et utiliser l’extension de fichier .md.
+- Privilégiez des noms de fichiers courts. Ils font partie de l’URL pour vos articles.
 
 
 
