@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120473"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169256"
 ---
 # <a name="binding-objective-c-libraries"></a>Liaison des bibliothèques objective-C
 
@@ -325,7 +325,7 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>Protocoles de liaison
 
-Comme décrit dans le document de conception d’API, dans la section discussion sur les [modèles et les protocoles](~/ios/internals/api-design/index.md#Models), Xamarin. iOS mappe les protocoles objective-C dans des classes qui ont été marquées avec l’interface[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+Comme décrit dans le document de conception d’API, dans la section discussion sur les [modèles et les protocoles](~/ios/internals/api-design/index.md#models), Xamarin. iOS mappe les protocoles objective-C dans des classes qui ont été marquées avec l’interface[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
 attribut. Cela est généralement utilisé lors de l’implémentation de classes déléguées objective-C.
 
 La grande différence entre une classe liée normale et une classe déléguée est que la classe déléguée peut avoir une ou plusieurs méthodes facultatives.
@@ -1404,4 +1404,3 @@ Historiquement, nous avons nécessité de copier le protocole à chaque impléme
 ## <a name="related-links"></a>Liens connexes
 
 - [Exemple de liaison](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
- 
