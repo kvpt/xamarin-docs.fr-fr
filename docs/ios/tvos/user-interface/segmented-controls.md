@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: f4f063cf7004d35aa93f688e71a917caa7a3e5a8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 622960f73c96209c1a67a08a4f0abe27656331bf
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648944"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200254"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Utilisation des contrôles segmentés tvOS dans Xamarin
 
@@ -71,7 +71,7 @@ Le moyen le plus simple d’utiliser des contrôles de segment dans une applicat
 1. Enregistrez les modifications apportées.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
 1. Faites glisser un **contrôle segment** de la **boîte à outils** et déposez-le sur la vue: 
 
@@ -85,7 +85,7 @@ Le moyen le plus simple d’utiliser des contrôles de segment dans une applicat
 
     [![](segmented-controls-images/segment04-vs.png "Attribuer un nom")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Enregistrez les modifications apportées.
-    
+
 -----
 
 Pour plus d’informations sur l’utilisation des storyboards, consultez notre [Guide de démarrage rapide Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md). 

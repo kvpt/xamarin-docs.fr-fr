@@ -6,12 +6,12 @@ ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d119d96a3ce8389a71726e1359e064efe1fbb1ae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dee3b04630ae9fc94548becdcc294427f9deb433
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509452"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199209"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Mise à jour des applications Xamarin. Forms existantes
 
@@ -53,7 +53,7 @@ Cliquez sur le projet iOS pour le sélectionner, puis choisissez **projet > migr
 Cela va automatiquement:
 
 - Modifiez le type de projet pour prendre en charge l’API unifiée 64 bits.
-- Modifiez la référence de Framework à **Xamarin. iOS** (en remplaçant **l’ancienne référence** monopoint).
+- Modifiez la référence de Framework à **Xamarin. iOS** (en remplaçant l’ancienne référence monopoint).
 - Modifiez les références d’espace de noms dans le code `MonoTouch` pour supprimer le préfixe.
 - Mettez à jour le fichier **csproj** pour utiliser les cibles de génération appropriées pour le API unifiée.
 
@@ -77,7 +77,7 @@ Ces étapes sont expliquées ci-dessous:
 Mettez à jour Xamarin. Forms à la version 1.3.1 en préversion à l’aide du gestionnaire de package NuGet pour tous les projets de la solution: PCL (le cas échéant), iOS, Android et Windows Phone. Il est recommandé de **supprimer et** de rajouter le package NuGet Xamarin. Forms pour effectuer la mise à jour vers la version 1,3.
 
 > [!NOTE]
-> Xamarin. Forms version 1.3.1 est actuellement en version *préliminaire*. Cela signifie que vous devez sélectionner **l’option de** préversion dans NuGet (à l’aide d’une case à cocher dans Visual Studio pour Mac ou une liste déroulante dans Visual Studio) pour afficher la version préliminaire la plus récente.
+> Xamarin. Forms version 1.3.1 est actuellement en version *préliminaire*. Cela signifie que vous devez sélectionner l’option de préversion dans NuGet (à l’aide d’une case à cocher dans Visual Studio pour Mac ou une liste déroulante dans Visual Studio) pour afficher la version préliminaire la plus récente.
 
 > [!IMPORTANT]
 > Si vous utilisez Visual Studio, vérifiez que la dernière version du gestionnaire de package NuGet est installée. Les versions antérieures de NuGet dans Visual Studio n’installeront pas correctement la version unifiée de Xamarin. Forms 1.3.1. Accédez à **outils > extensions et mises à jour...** , puis cliquez sur la liste **installé** pour vérifier que le **Gestionnaire de package NuGet pour Visual Studio** est au moins la version 2.8.5. Si elle est plus ancienne, cliquez sur la liste des **mises à jour** pour télécharger la dernière version.
@@ -192,7 +192,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
  }
 ```
 
-### <a name="troubleshooting"></a>Résolution de problèmes
+### <a name="troubleshooting"></a>Résolution des problèmes
 
 Parfois, une erreur semblable à celle-ci s’affiche après la mise à jour du package NuGet Xamarin. Forms. Cela se produit lorsque le programme de mise à jour NuGet ne supprime pas complètement les références à des versions antérieures de vos fichiers **csproj** .
 

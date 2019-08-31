@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: d75f46f8b06ef0e743218d5f42d5b2732b6e4158
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: aa8f25af4a394b981fdc7d5dc5a8836b7ff240cc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120977"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200266"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -2506,7 +2506,7 @@ Une erreur de sécurité s’est produite lors de la suppression des symboles de
 - essayez d’exécuter `csharp -e 'System.Net.Dns.GetHostEntry (System.Net.Dns.GetHostName ()).AddressList'` (qui devrait vous fournir une adresse IP et non une erreur évidemment).
 - essayez d’exécuter «ping \`hostname\`», qui peut vous fournir plus d’informations, par exemple:`cannot resolve MyHost.local: Unknown host`
 
-Dans certains cas, il s’agit d’un problème de «réseau local» qui peut être résolu en ajoutant l' `127.0.0.1   MyHost.local` hôte `/etc/hosts`inconnu dans.
+Dans certains cas, il s’agit d’un problème de «réseau local» qui peut être résolu en ajoutant l' `127.0.0.1    MyHost.local` hôte `/etc/hosts`inconnu dans.
 
 <a name="MT7002" />
 

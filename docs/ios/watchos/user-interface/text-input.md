@@ -1,39 +1,39 @@
 ---
-title: Utilisation de watchOS Text Input dans Xamarin
-description: Ce document décrit l’entrée de texte watchOS dans Xamarin. Il traite des PresentTextInputController (méthode), de brouillon, texte brut, emojis et la dictée.
+title: Utilisation de l’entrée de texte Watchos dans Xamarin
+description: Ce document décrit l’entrée de texte Watchos dans Xamarin. Il aborde la méthode PresentTextInputController, le griffonnage, le texte brut, les Emoji et la dictée.
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 2092b12254008936f2c5b6a7d9dd610ff751e802
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f77c48cbec6a672a67808cda4e7b8fe887b492af
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61207437"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200149"
 ---
-# <a name="working-with-watchos-text-input-in-xamarin"></a>Utilisation de watchOS Text Input dans Xamarin
+# <a name="working-with-watchos-text-input-in-xamarin"></a>Utilisation de l’entrée de texte Watchos dans Xamarin
 
-L’Apple Watch ne fournit pas d’un clavier pour les utilisateurs d’entrer du texte, mais il ne prend pas en charge des alternatives espion conviviale :
+Le Apple Watch ne fournit pas de clavier permettant aux utilisateurs d’entrer du texte. Toutefois, il prend en charge certaines alternatives conviviales:
 
-- Sélection dans une liste prédéfinie d’options de texte,
-- Dictée Siri,
-- En choisissant un emoji,
-- Scribble reconnaissance de l’écriture manuscrite lettre par lettre (introduite dans watchOS 3).
+- Sélection à partir d’une liste prédéfinie d’options de texte,
+- Siri dictée,
+- Choix d’un emoji,
+- La reconnaissance de l’écriture manuscrite lettre par lettre (présentée dans Watchos 3).
 
-Le simulateur ne prend pas en charge la dictée, mais vous pouvez toujours tester l’entrée de texte d’autres options du contrôleur, par exemple Scribble, comme illustré ici :
+Le simulateur ne prend pas actuellement en charge la dictée, mais vous pouvez toujours tester les autres options du contrôleur d’entrée de texte, telles que Scribble, comme illustré ici:
 
-![](text-input-images/textinput-sml.png "Test de l’option de dessin à main levée")
+![](text-input-images/textinput-sml.png "Test de l’option Scribble")
 
-Pour accepter l’entrée de texte dans une application watch :
+Pour accepter la saisie de texte dans une application Watch:
 
-1. Créer un tableau de chaînes des options prédéfinies.
-2. Appelez `PresentTextInputController` avec le tableau, s’il faut autoriser emoji ou non et un `Action` qui est appelée lorsque l’utilisateur est terminé.
-3. Dans l’action d’achèvement, test pour le résultat d’entrée et prendre les mesures appropriées dans l’application (éventuellement définissant la valeur de texte d’une étiquette).
+1. Créez un tableau de chaînes d’options prédéfinies.
+2. Appelez `PresentTextInputController` avec le tableau, s’il faut autoriser l’Emoji ou non, `Action` et un appelé lorsque l’utilisateur a terminé.
+3. Dans l’action d’achèvement, testez le résultat d’entrée et prenez les mesures appropriées dans l’application (en définissant éventuellement la valeur de texte d’une étiquette).
 
-L’extrait de code suivant présente trois options prédéfinies à l’utilisateur :
+L’extrait de code suivant présente trois options prédéfinies pour l’utilisateur:
 
 ```csharp
 var suggest = new string[] {"Get groceries", "Buy gas", "Post letter"};
@@ -49,41 +49,41 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 });
 ```
 
-Le `WKTextInputMode` énumération a trois valeurs :
+L' `WKTextInputMode` énumération a trois valeurs:
 
-- Brut
+- Traditionnelle
 - AllowEmoji
 - AllowAnimatedEmoji
 
-## <a name="plain"></a>Brut
+## <a name="plain"></a>Traditionnelle
 
-Lorsque le mode brut est défini, l’utilisateur peut choisir :
+Lorsque le mode normal est défini, l’utilisateur peut choisir:
 
-- Dictée,
-- Scribble, ou
-- à partir d’une liste prédéfinie qui fournit de l’application.
+- Dictée
+- Scribble ou
+- à partir d’une liste prédéfinie que l’application fournit.
 
-[![](text-input-images/plain-scribble-sml.png "Dictée, Scribble, ou à partir d’une liste prédéfinie qui fournit de l’application")](text-input-images/plain-scribble.png#lightbox)
+[![](text-input-images/plain-scribble-sml.png "Dictée, griffonnage ou à partir d’une liste prédéfinie que l’application fournit")](text-input-images/plain-scribble.png#lightbox)
 
-Le résultat retourné est toujours un `NSObject` qui peut être casté en un `string`.
+Le résultat est toujours retourné comme un `NSObject` qui peut être casté `string`en.
 
 ## <a name="emoji"></a>Emoji
 
-Il existe deux types d’emoji :
+Il existe deux types d’Emoji:
 
-- Régulières Unicode emoji
+- Emoji Unicode standard
 - Images animées
 
-Lorsque l’utilisateur choisit un emoji Unicode, elle est retournée sous forme de chaîne.
+Quand l’utilisateur choisit un Emoji Unicode, il est retourné sous forme de chaîne.
 
-Si un emoji image animée est sélectionné le `result` dans la réalisation Gestionnaire contiendra un `NSData` objet qui contient l’emoji `UIImage`.
+Si une image animée Emoji est sélectionnée, `result` le dans le gestionnaire d’achèvement contient `NSData` un objet qui contient l' `UIImage`Emoji.
 
-## <a name="accepting-dictation-only"></a>Accepter la dictée uniquement
+## <a name="accepting-dictation-only"></a>Acceptation de la dictée uniquement
 
-Dirige l’utilisateur directement à l’écran de dictée sans afficher des suggestions (ou l’option de dessin à main levée) :
+Pour amener l’utilisateur directement à l’écran de dictée sans montrer de suggestions (ou l’option Scribble):
 
-- passer un tableau vide pour obtenir la liste des suggestions, et
-- Définir `WatchKit.WKTextInputMode.Plain`.
+- passer un tableau vide pour la liste des suggestions, et
+- définissez `WatchKit.WKTextInputMode.Plain`.
 
 ```csharp
 PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (result) => {
@@ -96,15 +96,15 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 });
 ```
 
-Lorsque l’utilisateur est en parlant, l’écran de surveillance affiche l’écran suivant, qui inclut le texte comme il est entendu (par exemple « Ceci est un test ») :
+Lorsque l’utilisateur parle, l’écran de surveillance affiche l’écran suivant, qui comprend le texte tel qu’il est compris (par exemple, «il s’agit d’un test»):
 
-![](text-input-images/dictation.png "Lorsque l’utilisateur est en parlant, l’écran de surveillance affiche le texte comme il est entendu")
+![](text-input-images/dictation.png "Lorsque l’utilisateur parle, l’écran espion affiche le texte tel qu’il est compris")
 
-Une fois qu’ils appuient sur la **fait** s’affichera le texte de bouton.
+Une fois que vous **avez** appuyé sur le bouton terminé, le texte est renvoyé.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Apple texte et étiquettes doc](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
+- [Document texte et étiquettes d’Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
 - [Introduction à watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

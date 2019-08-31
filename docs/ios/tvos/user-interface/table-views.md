@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0d93978d6f7b3dff6d0d7ebf7c9f9afbe3572079
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121370"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199912"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Utilisation des vues de table tvOS dans Xamarin
 
@@ -69,7 +69,7 @@ Le moyen le plus simple d’utiliser les vues de table dans une application Xama
 Pour commencer, effectuez les étapes suivantes :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
-    
+
 1. Dans Visual Studio pour Mac, démarrez un nouveau projet d’application tvOS et sélectionnez application de**vue unique** de l'**application** >  **tvOS** > , puis cliquez sur le bouton **suivant** : 
 
     [![](table-views-images/table02.png "Sélectionner une application avec affichage unique")](table-views-images/table02.png#lightbox)
@@ -112,9 +112,9 @@ Pour commencer, effectuez les étapes suivantes :
 
     [![](table-views-images/table15.png "Disposition de l’interface utilisateur")](table-views-images/table15.png#lightbox)
 1. Enregistrez vos modifications dans le Storyboard.
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Dans Visual Studio, démarrez un nouveau projet d’application tvOS et sélectionnez **tvOS** > **affichage unique application** , puis entrez un nom pour votre application. Cliquez sur le bouton **OK** pour créer une solution: 
 
     [![](table-views-images/table02-vs.png "Sélectionner une application avec affichage unique")](table-views-images/table02-vs.png#lightbox)
@@ -153,7 +153,7 @@ Pour commencer, effectuez les étapes suivantes :
 
     [![](table-views-images/table15.png "Disposition de l’interface utilisateur")](table-views-images/table15.png#lightbox)
 1. Enregistrez vos modifications dans le Storyboard.
-    
+
 -----
 
 <a name="Designing-a-Data-Model" />

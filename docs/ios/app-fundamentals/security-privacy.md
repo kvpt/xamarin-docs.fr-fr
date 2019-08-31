@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9fcd4820b5e22254356250ef2d26714dc32a59f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c818cac3b26e94710a64938a80690b8d4946320
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655206"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200218"
 ---
 # <a name="ios-security-and-privacy-features"></a>Fonctionnalités de sécurité et de confidentialité iOS
 
 _Cet article traite de l’utilisation de la sécurité et de la confidentialité dans iOS, ainsi que de la façon dont ils affectent une application Xamarin. iOS._
 
 Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans iOS 10 (et versions ultérieures), ce qui permet au développeur d’améliorer la sécurité de ses applications et de garantir la confidentialité de l’utilisateur final. Cet article aborde l’implémentation de ces fonctionnalités dans une application Xamarin. iOS.
-    
+
 <a name="General-Enhancements" />
 
 ## <a name="general-enhancements"></a>Améliorations générales
@@ -51,9 +51,9 @@ Les clés associées à la confidentialité suivantes sont disponibles:
 - **Confidentialité-Description de l’utilisation des mises à jour de santé** (`NSHealthUpdateUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite modifier les données d’intégrité de l’utilisateur. Pour plus d’informations, consultez Référence de la [classe HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)d’Apple.
 - **Confidentialité-Description de l’utilisation de HomeKit** (`NSHomeKitUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux données de configuration HomeKit de l’utilisateur.
 - **Confidentialité-Description de l’utilisation systématique de l’emplacement** (`NSLocationAlwaysUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite toujours avoir accès à l’emplacement de l’utilisateur.
-- Déconseillé **Confidentialité-Description de l’utilisation de l’emplacement** (`NSLocationUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur. *OBSERVE Cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez `NSLocationAlwaysUsageDescription` ou`NSLocationWhenInUseUsageDescription` à la place.*
+- Déconseillé **Confidentialité-Description de l’utilisation de l’emplacement** (`NSLocationUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur. *REMARQUE : Cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez `NSLocationAlwaysUsageDescription` ou`NSLocationWhenInUseUsageDescription` à la place.*
 - **Confidentialité-emplacement d’utilisation-Description de l’utilisation** (`NSLocationWhenInUseUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur pendant qu’elle est en cours d’exécution.
-- Déconseillé **Confidentialité-Description de l’utilisation de la bibliothèque multimédia** : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur. *OBSERVE Cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez `NSAppleMusicUsageDescription` à la place.*
+- Déconseillé **Confidentialité-Description de l’utilisation de la bibliothèque multimédia** : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur. *REMARQUE : Cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez `NSAppleMusicUsageDescription` à la place.*
 - **Confidentialité-Description de l’utilisation du microphone** (`NSMicrophoneUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au microphone des appareils.
 - **Confidentialité-Description de l’utilisation du mouvement** (`NSMotionUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’accéléromètre de l’appareil.
 - **Confidentialité-Description de l’utilisation de la bibliothèque de photos** (`NSPhotoLibraryUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque de photos de l’utilisateur.

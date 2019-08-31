@@ -6,34 +6,34 @@ ms.assetid: D61CC966-1D4A-49A5-8A6F-41572E28329B
 author: asb3993
 ms.author: amburns
 ms.date: 05/08/2018
-ms.openlocfilehash: 7cb802dd60d4e4879a260ff56d4f94ea5acb2965
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 49f0e57af1ad6b6e0f322eb9865ba99db4dd47ec
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61356888"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199894"
 ---
 # <a name="missing-packages-error-after-updating-nuget-packages"></a>Erreur de packages manquants après la mise à jour de packages NuGet
 
-Ce problème a principalement été signalé sur les solutions d’application exemple Xamarin.Forms, mais le risque de ce problème peut se produire sur n’importe quel projet qui utilise les packages NuGet. 
+Ce problème a été signalé principalement dans les exemples de solutions d’application Xamarin. Forms, mais le potentiel de ce problème peut se produire sur n’importe quel projet qui utilise des packages NuGet.
 
-Si, après la mise à jour les packages Nuget dans votre projet ou solution, vous voyez une erreur qui fait référence à l’ancien numéros de version de package, telles que :
+Si, après avoir mis à jour les packages NuGet dans votre projet ou votre solution, une erreur qui fait référence aux anciens numéros de version de package s’affiche, par exemple:
 
 ```csharp
 Error: This project references NuGet package(s) that are missing on this computer.
-Enable NuGet Package Restore to download them.  
+Enable NuGet Package Restore to download them.
 For more information, see http://go.microsoft.com/fwlink/?LinkID=322105
 
 The missing file is ../../packages/Xamarin.Forms.1.3.1.6296/build/portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Xamarin.Forms.targets. (FormsGallery)
 ```
 
-Dans cet exemple *Xamarin.Forms.1.3.1.6296* ancien numéro de version qui a été supprimée avec la mise à jour du package Nuget.
+Dans cet exemple, *Xamarin. Forms. 1.3.1.6296* est l’ancien numéro de version qui a été supprimé avec la mise à jour du package NuGet.
 
-Cela peut se produire si les éléments XML dans le fichier .csproj qui font référence à l’ancien numéro de version de package avaient été ajoutées manuellement ou modifié, Nuget ne supprimer ni les mettre à jour s’ils avaient été manuellement ajoutés/modifiés, donc le projet est maintenant recherche de packages qui ont été supprimé. 
+Cela peut se produire si les éléments XML du fichier. csproj qui font référence à l’ancien numéro de version du package ont été ajoutés ou modifiés manuellement, que NuGet ne les supprime pas ou ne les met pas à jour s’ils avaient été ajoutés/modifiés manuellement, de sorte que le projet cherche à présent les packages qui ont été supprimé.
 
-Pour résoudre ce problème, modifier manuellement l’ou les fichiers .csproj et à supprimer tous les éléments qui font référence à l’ancien numéro de version. 
+Pour résoudre ce problème, modifiez manuellement le ou les fichiers. csproj et supprimez tous les éléments qui font référence à l’ancien numéro de version.
 
-Exemples d’éléments à supprimer (s’ils ont l’ancien numéro de version de package) :
+Exemples d’éléments à supprimer (s’ils ont l’ancien numéro de version de package):
 
 ```xml
 <Reference Include="Xamarin.Forms.Maps">

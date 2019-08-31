@@ -1,40 +1,40 @@
 ---
 title: Accessibilité sur macOS
-description: Ce document décrit comment utiliser des fonctionnalités d’accessibilité de macOS dans une application Xamarin.Mac. Il aborde les éléments d’interface utilisateur décrivant dans les tables de montage séquentiel et code, des contrôles personnalisés et test d’accessibilité.
+description: Ce document décrit comment utiliser les fonctionnalités d’accessibilité macOS dans une application Xamarin. Mac. Il décrit la description des éléments d’interface utilisateur dans les storyboards et le code, les contrôles personnalisés et l’accessibilité des tests.
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: fdda52309ffdb0d32cc42a4dff052cd9050b1e4f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d53cda17864a6afa8f8af187df7c4a07e9f8cbe
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61378476"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198625"
 ---
 # <a name="accessibility-on-macos"></a>Accessibilité sur macOS
 
-Cette page décrit comment utiliser l’API d’accessibilité de macOS pour créer des applications en fonction de la [liste de contrôle d’accessibilité](~/cross-platform/app-fundamentals/accessibility.md).
-Reportez-vous à la [accessibilité Android](~/android/app-fundamentals/accessibility.md) et [iOS accessibilité](~/ios/app-fundamentals/accessibility.md) pages pour les autres API de la plateforme.
+Cette page explique comment utiliser les API d’accessibilité macOS pour créer des applications en fonction de la [liste de contrôle d’accessibilité](~/cross-platform/app-fundamentals/accessibility.md).
+Reportez-vous aux pages accessibilité [Android](~/android/app-fundamentals/accessibility.md) et [accessibilité iOS](~/ios/app-fundamentals/accessibility.md) pour d’autres API de plateforme.
 
-Pour comprendre comment l’API d’accessibilité fonctionnent dans macOS (anciennement appelé OS X), le premier examen le [modèle d’accessibilité du système d’exploitation X](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html).
+Pour comprendre le fonctionnement des API d’accessibilité dans macOS (anciennement appelé OS X), consultez tout d’abord le [modèle d’accessibilité OS x](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXmodel.html).
 
-## <a name="describing-ui-elements"></a>Décrivant les éléments d’interface utilisateur
+## <a name="describing-ui-elements"></a>Description des éléments d’interface utilisateur
 
-AppKit utilise le `NSAccessibility` protocole pour exposer les API qui permettent de rendre l’interface utilisateur accessibles. Cela inclut un comportement par défaut qui tente de définir des valeurs significatives pour les propriétés d’accessibilité, telles que la définition d’un bouton `AccessibilityLabel`. L’étiquette est généralement un seul mot ou phrase courte décrivant le contrôle ou la vue.
+AppKit utilise le `NSAccessibility` protocole pour exposer des API qui facilitent l’accès à l’interface utilisateur. Cela comprend un comportement par défaut qui tente de définir des valeurs significatives pour les propriétés d’accessibilité, telles `AccessibilityLabel`que la définition d’un bouton. L’étiquette est généralement un mot unique ou une expression brève décrivant le contrôle ou la vue.
 
-### <a name="storyboard-files"></a>Fichiers de la table de montage séquentiel
+### <a name="storyboard-files"></a>Fichiers de Storyboard
 
-Xamarin.Mac utilise l’Interface Builder de Xcode pour modifier des fichiers de la table de montage séquentiel.
-Informations d’accessibilité peuvent être modifiées dans le **inspecteur d’identité** quand un contrôle est sélectionné sur l’aire de conception (comme indiqué dans la capture d’écran ci-dessous) :
+Xamarin. Mac utilise le Interface Builder Xcode pour modifier les fichiers de Storyboard.
+Vous pouvez modifier les informations d’accessibilité dans l' **inspecteur d’identité** lorsqu’un contrôle est sélectionné sur l’aire de conception (comme indiqué dans la capture d’écran ci-dessous):
 
-[![Ajout d’accessibilité dans Interface Builder de Xcode](accessibility-images/xcode.png "Ajout d’accessibilité dans Interface Builder de Xcode")](accessibility-images/xcode-large.png#lightbox)
+[![Ajout de l’accessibilité dans le Interface Builder de Xcode](accessibility-images/xcode.png "Ajout de l’accessibilité dans le Interface Builder de Xcode")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>Code
 
-Xamarin.Mac n’expose pas actuellement en tant que `AccessibilityLabel` setter.  Ajoutez la méthode d’assistance suivante pour définir l’étiquette d’accessibilité :
+Xamarin. Mac n’expose pas actuellement `AccessibilityLabel` comme accesseur Set.  Ajoutez la méthode d’assistance suivante pour définir l’étiquette d’accessibilité:
 
 ```csharp
 public static class AccessibilityHelper
@@ -49,44 +49,44 @@ public static class AccessibilityHelper
 }
 ```
 
-Cette méthode peut ensuite être utilisée dans le code comme indiqué :
+Cette méthode peut ensuite être utilisée dans le code, comme indiqué ci-dessous:
 
 ```csharp
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-Le `AccessibilityHelp` propriété est utilisée pour obtenir une explication de ce que fait le contrôle ou une vue et doivent être ajoutés uniquement lorsque l’étiquette ne peut pas fournir suffisamment d’informations. Le texte d’aide doit toujours rester aussi court que possible, pour l’exemple « supprime le document ».
+La `AccessibilityHelp` propriété est une explication de ce que fait le contrôle ou la vue et doit être ajoutée uniquement lorsque l’étiquette peut ne pas fournir d’informations suffisantes. Le texte d’aide doit toujours être aussi petit que possible, par exemple «supprime le document».
 
-Certains éléments d’interface utilisateur ne sont pas pertinentes pour un accès accessible (par exemple, une étiquette en regard d’une entrée qui a son propre étiquette d’accessibilité et aide).
-Dans ces cas, définissez `AccessibilityElement = false` afin que ces contrôles ou les vues sont ignorées par les lecteurs d’écran ou d’autres outils d’accessibilité.
+Certains éléments de l’interface utilisateur ne sont pas pertinents pour l’accès accessible (par exemple, une étiquette en regard d’une entrée ayant sa propre étiquette d’accessibilité et son aide).
+Dans ces cas, définissez `AccessibilityElement = false` afin que ces contrôles ou vues soient ignorés par les lecteurs d’écran ou d’autres outils d’accessibilité.
 
-Apple fournit [lignes directrices d’accessibilité](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html) qui explique les meilleures pratiques pour les étiquettes et le texte d’accessibilité.
+Apple fournit des [instructions d’accessibilité](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html) qui expliquent les meilleures pratiques pour les étiquettes d’accessibilité et le texte d’aide.
 
 ## <a name="custom-controls"></a>Contrôles personnalisés
 
-Reportez-vous à Apple [les instructions pour les contrôles personnalisés accessibles](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/ImplementingAccessibilityforCustomControls.html) pour plus d’informations sur les étapes supplémentaires requises.
+Pour plus d’informations sur les étapes supplémentaires requises, reportez-vous aux instructions d’Apple [pour obtenir des contrôles personnalisés accessibles](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/ImplementingAccessibilityforCustomControls.html) .
 
 ## <a name="testing-accessibility"></a>Test de l’accessibilité
 
-macOS fournit un **accessibilité inspecteur** que vous aide à tester les fonctionnalités d’accessibilité. L’inspecteur est inclus dans Xcode.
+macOS fournit un **inspecteur d’accessibilité** qui permet de tester les fonctionnalités d’accessibilité. L’inspecteur est inclus dans Xcode.
 
-La première fois qu’elle est lancée, le **accessibilité inspecteur** aura besoin d’autorisation pour contrôler l’ordinateur par le biais d’accessibilité :
+La première fois qu’il est lancé, l' **inspecteur d’accessibilité** doit avoir l’autorisation de contrôler l’ordinateur via l’accessibilité:
 
-![Inspecteur d’accessibilité demande l’autorisation d’exécuter](accessibility-images/accessibility-inspector-1.png "inspecteur d’accessibilité demandant l’autorisation de s’exécuter")
+![Inspecteur d’accessibilité demandant l’autorisation d’exécution](accessibility-images/accessibility-inspector-1.png "Inspecteur d’accessibilité demandant l’autorisation d’exécution")
 
-Déverrouiller l’écran des paramètres (si nécessaire, dans le coin inférieur gauche) et les graduations le **accessibilité inspecteur**:
+Déverrouillez l’écran des paramètres (si nécessaire, en bas à gauche) et cochez l' **inspecteur d’accessibilité**:
 
-![Écran des paramètres pour activer l’inspecteur d’accessibilité](accessibility-images/accessibility-inspector-2.png "écran des paramètres pour activer l’inspecteur d’accessibilité")
+![Écran Paramètres pour activer l’inspecteur d’accessibilité](accessibility-images/accessibility-inspector-2.png "Écran Paramètres pour activer l’inspecteur d’accessibilité")
 
-Une fois activé, l’inspecteur s’affiche dans une fenêtre flottante qui peut être déplacée de l’écran. La capture d’écran ci-dessous montre l’inspecteur en cours d’exécution en regard d’un exemple d’application Mac. Comme le curseur est déplacé au-dessus de la fenêtre, l’inspecteur affiche toutes les propriétés accessibles de chaque contrôle :
+Une fois activé, l’inspecteur s’affiche sous la forme d’une fenêtre flottante qui peut être déplacée à l’écran. La capture d’écran ci-dessous montre l’inspecteur en cours d’exécution à côté d’un exemple d’application Mac. Lorsque le curseur est déplacé au-dessus de la fenêtre, l’inspecteur affiche toutes les propriétés accessibles de chaque contrôle:
 
-[![Exemple de l’exécution de l’inspecteur d’accessibilité](accessibility-images/accessibility-example.png "en cours d’exécution exemple d’accessibilité inspecteur")](accessibility-images/accessibility-example-large.png#lightbox)
+[![Exemple d’inspecteur d’accessibilité exécutant](accessibility-images/accessibility-example.png "Exemple d’inspecteur d’accessibilité exécutant")](accessibility-images/accessibility-example-large.png#lightbox)
 
-Pour plus d’informations, consultez le [test d’accessibilité pour le guide du système d’exploitation X](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
+Pour plus d’informations, consultez le [Guide test d’accessibilité pour OS X](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Accessibilité d’inter-plateformes](~/cross-platform/app-fundamentals/accessibility.md)
-- [Accessibilité du Mac](https://www.apple.com/accessibility/mac/)
+- [Accessibilité multiplateforme](~/cross-platform/app-fundamentals/accessibility.md)
+- [Accessibilité Mac](https://www.apple.com/accessibility/mac/)

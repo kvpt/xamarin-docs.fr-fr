@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfb419834c2eee94f98d023df3a3fe8d6eee90
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654564"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198119"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
 
@@ -22,11 +22,11 @@ ms.locfileid: "68654564"
 
 Il existe différentes façons de communiquer entre l’application de surveillance et de l’application iOS qui il est fourni avec :
 
-- Espion extensions peut [appeler une méthode](#code) par rapport à l’application parente qui s’exécute en arrière-plan sur l’iPhone.
+- Les extensions Watch peuvent [appeler une méthode](#code) sur l’application parente qui s’exécute en arrière-plan sur l’iPhone.
 
 - Espion extensions peut [partagent un emplacement de stockage](#storage) avec l’application iPhone parent.
 
-- À l’aide de remise pour passer des données à partir d’un coup de œil ou une Notification à l’application Watch, envoi de l’utilisateur à un contrôleur d’interface spécifique dans l’application.
+- Utilisation de la remise pour transmettre des données d’un coup d’œil ou d’une notification à l’application Watch, en envoyant l’utilisateur à un contrôleur d’interface spécifique dans l’application.
 
 L’application parente est également parfois appelée l’application de conteneur.
 

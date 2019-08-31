@@ -6,12 +6,12 @@ ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6b6a7b8bb2efdd099d7fde6bb5397e6330258bcc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509591"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199388"
 ---
 # <a name="native-types-for-ios-and-macos"></a>Types natifs pour iOS et macOS
 
@@ -45,9 +45,9 @@ Les opérateurs de conversion implicite sont fournis lorsqu’il n’existe aucu
 
 Les opérateurs de conversions explicites sont fournis lorsqu’il existe un risque de perte de données (la valeur de 64 bits est stockée sur un emplacement de stockage 32 ou potentiellement 32).
 
- `int`, `uint` et `float` sont `nuint` tousimplicitement`nfloat` convertibles en ,etàmesureque32bitssonttoujourscontenusdans32ou64bits.`nint`
+`int`, `uint` et `float` sont `nuint` tousimplicitement`nfloat` convertibles en ,etàmesureque32bitssonttoujourscontenusdans32ou64bits.`nint`
 
- `nint`, `nuint` et `nfloat` sont `ulong` tousimplicitement`double` convertibles en ,etlesvaleursdebit32ou64sonttoujoursadaptéesaustockage64bits.`long`
+`nint`, `nuint` et `nfloat` sont `ulong` tousimplicitement`double` convertibles en ,etlesvaleursdebit32ou64sonttoujoursadaptéesaustockage64bits.`long`
 
 Vous devez utiliser des conversions explicites à partir `int`de `uint` `nint`, `float` `nuint` et `nfloat` dans, et puisque les types natifs peuvent contenir 64 bits de stockage.
 
@@ -57,7 +57,7 @@ Vous devez utiliser des conversions explicites à partir `nint`de `nuint` `long`
 
 Les types de données point, size et rectangle utilisés avec CoreGraphics utilisent des bits 32 ou 64 selon l’appareil sur lequel ils s’exécutent.  Lors de la liaison initiale des API iOS et Mac, nous avons utilisé des structures de données existantes qui correspondent aux tailles de la plateforme hôte (les `System.Drawing`types de données dans).
 
-Lors du passage à Unified, vous devrez remplacer les instances `System.Drawing` de par `CoreGraphics` leurs équivalents, comme indiqué dans le tableau suivant:
+Lors du passageà Unified, vous devrez remplacer les instances `System.Drawing` de par `CoreGraphics` leurs équivalents, comme indiqué dans le tableau suivant:
 
 |Ancien type dans System. Drawing|Nouveau type de données CoreGraphics|Description|
 |--- |--- |--- |

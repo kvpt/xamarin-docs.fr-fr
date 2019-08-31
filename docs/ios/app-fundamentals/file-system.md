@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser le système de fichiers dans 
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/12/2018
-ms.openlocfilehash: e52f9abb31090f3acc361eb5a3f9ae2e12600b36
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daa9625ccbac3661d3678889d4efd6319e0bd424
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653515"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198132"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Accès au système de fichiers dans Xamarin. iOS
 
@@ -155,7 +155,7 @@ Pour marquer un fichier à inclure, cliquez avec le bouton droit sur le ou les f
 
 Il est important de comprendre que le système de fichiers iOS respecte la *casse*. Le respect de la casse signifie que vos noms de fichiers et de répertoires doivent correspondre exactement – **Readme. txt** et **Readme. txt** sont considérés comme des noms de fichiers différents.
 
-Cela peut être confus pour les développeurs .NET qui sont plus familiarisés avec le système de fichiers Windows, qui ne respecte pas la *casse* : les **fichiers** **, les**fichiers et les **fichiers** font tous référence au même répertoire.
+Cela peut être confus pour les développeurs .NET qui sont plus familiarisés avec le système de fichiers Windows, qui ne respecte pas la *casse* : les **fichiers**, les fichiers et les **fichiers** font tous référence au même répertoire.
 
 > [!WARNING]
 > Le simulateur iOS ne respecte pas la casse.
@@ -292,7 +292,7 @@ La sauvegarde d’une grande quantité de données peut prendre beaucoup de temp
 
 Apple a introduit la fonctionnalité de *sauvegarde icloud* avec iOS 5. Lorsque la sauvegarde icloud est activée, tous les fichiers dans le répertoire de démarrage de votre application (à l’exclusion des répertoires qui ne sont normalement pas sauvegardés, `Caches`par exemple `tmp`, l’ensemble d’applications, et) sont sauvegardés sur les serveurs iCloud. Cette fonctionnalité permet à l’utilisateur d’effectuer une sauvegarde complète en cas de perte, de vol ou d’endommagement de son appareil.
 
-Étant donné que iCloud fournit uniquement 5 Go d’espace libre à chaque utilisateur et qu’il n’utilise pas nécessairement la bande passante, Apple s’attend à ce que les applications ne sauvegardent que les données essentielles générées par l’utilisateur. Pour se conformer aux instructions de stockage de données iOS, vous devez limiter la quantité de données sauvegardées en adhérant aux éléments suivants:
+Étant donné que iCloud fournit uniquement 5 Go d’espace libre à chaque utilisateur et pour éviter d’utiliser inutilement la bande passante, Apple s’attend à ce que les applications ne sauvegardent que les données essentielles générées par l’utilisateur. Pour se conformer aux instructions de stockage de données iOS, vous devez limiter la quantité de données sauvegardées en adhérant aux éléments suivants:
 
 - Stockez uniquement les données générées par l’utilisateur ou les données qui ne peuvent pas être recréées dans le répertoire documents (qui est sauvegardé).
 - Stockez toutes les autres données qui peuvent être facilement recréées ou téléchargées `Library/Caches` dans `tmp` ou (qui ne sont pas sauvegardées et qui peuvent être «nettoyées»).

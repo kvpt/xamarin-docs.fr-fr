@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: 89afb106320ce77e86a66f2c78bd6e32de8c38f3
-ms.sourcegitcommit: be9658de032f3893741261f16162a664952ce178
+ms.openlocfilehash: 33a121c97df435d3423e3e0f525e6a3d32c780ad
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64986986"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197465"
 ---
 # <a name="xamarinforms-requirements"></a>Configuration requise pour Xamarin.Forms
 
@@ -25,10 +25,10 @@ Reportez-vous à l’article [Installation](installation/index.md) pour obtenir 
 Les applications Xamarin.Forms peuvent être écrites pour les systèmes d’exploitation suivants :
 
 - iOS 8 ou ultérieur
-- Android 5.0 (API 21) ou une version ultérieure ([plus de détails](#android))
+- Android 5,0 (API 21) ou version ultérieure ([plus de détails](#android))
 - Plateforme Windows universelle Windows 10 ([plus de détails](#windows10))
 
-Il est supposé que les développeurs connaissent [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md).
+Il est supposé que les développeurs se familiarisent avec [.NET standard](~/cross-platform/app-fundamentals/net-standard.md).
 
 ### <a name="additional-platform-support"></a>Prise en charge de plateforme supplémentaire
 
@@ -55,11 +55,11 @@ De plus, la version cible/de compilation pour les projets Android **doit** avoir
 
 **Générer > Général**
 
-![Sélectionnez la dernière version du framework cible](requirements-images/options-general-sml.png)
+![Sélectionner la dernière version cible de .NET Framework](requirements-images/options-general-sml.png)
 
 **Générer > Application Android**
 
-![Sélectionnez la valeur minimale et cibler des versions Android pour votre application](requirements-images/options-android-sml.png)
+![Sélectionner les versions d’Android minimale et cible pour votre application](requirements-images/options-android-sml.png)
 
 -----
 
@@ -69,7 +69,7 @@ Les applications Xamarin.Forms peuvent être développées sur macOS et Windows.
 
 ## <a name="mac-system-requirements"></a>Configuration requise pour Mac
 
-Vous pouvez utiliser Visual Studio pour Mac pour développer des applications Xamarin.Forms sur macOS High Sierra (10.13) ou une version ultérieure. Pour développer des applications iOS, nous vous recommandons au moins le SDK iOS 10 et Xcode 9 est installé.
+Vous pouvez utiliser Visual Studio pour Mac pour développer des applications Xamarin. Forms sur macOS High Sierra (10,13) ou une version ultérieure. Pour développer des applications iOS, nous vous recommandons d’avoir au moins le kit de développement logiciel (SDK) iOS 10 et Xcode 9 installé.
 
 > [!NOTE]
 >  Les applications Windows ne peuvent pas être développées sur macOS.
@@ -84,17 +84,17 @@ Les applications Xamarin.Forms pour iOS et Android peuvent être générées sur
 
 Le développement d’applications Xamarin.Forms pour UWP nécessite :
 
-- Windows 10 (dernière version recommandée, Fall Creators Update minimale)
+- Windows 10 (version la plus récente recommandée, configuration des créateurs de automne minimale)
 
-- Visual Studio 2019 recommandé (Visual Studio 2017 version 15.8 minimale)
+- Visual Studio 2019 recommandé (Visual Studio 2017 version 15,8 minimum)
 
 - [SDK Windows 10](https://dev.windows.com/downloads/windows-10-sdk)
 
 Vous pouvez [ajouter une application de plateforme Windows universelle (UWP)](~/xamarin-forms/platform/windows/installation/index.md) à une solution Xamarin.Forms existante à tout moment.
 
-## <a name="deprecated-platforms"></a>Plates-formes déconseillées
+## <a name="deprecated-platforms"></a>Plateformes déconseillées
 
-Ces plateformes ne sont pas prises en charge lors de l’utilisation de Xamarin.Forms 3.0 ou version ultérieure :
+Ces plateformes ne sont pas prises en charge lors de l’utilisation de Xamarin. Forms 3,0 ou plus récente:
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

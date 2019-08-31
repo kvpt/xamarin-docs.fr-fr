@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/25/2018
-ms.openlocfilehash: 6ab1b4ad5493075e8806190e77f6d234354af9ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab82b98351b95fbdea9c33a9eae7142c7a54fc77
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648976"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200306"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Utilisation des indicateurs de progression tvOS dans Xamarin
 
@@ -46,7 +46,7 @@ Apple propose les suggestions suivantes pour l’utilisation des barres de progr
 Le moyen le plus simple d’utiliser un indicateur de progression dans une application Xamarin. tvOS consiste à l’ajouter à l’interface utilisateur de l’application à l’aide du concepteur iOS.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
-    
+
 1. Dans la **panneau solutions**, double-cliquez sur le fichier **main. Storyboard** et ouvrez-le pour le modifier.
 
 2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue: 
@@ -72,7 +72,7 @@ Le moyen le plus simple d’utiliser un indicateur de progression dans une appli
 6. Enregistrez les modifications apportées.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier **main. Storyboard** et ouvrez-le pour le modifier.
 
 2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue: 

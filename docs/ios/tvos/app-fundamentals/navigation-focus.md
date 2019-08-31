@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: a65509184611ae8fc4102f7c4f198cef7a5ff9d2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 96b35764da1922ae1810a78e760e8ed39a8a8a3b
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645482"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199627"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Utilisation de la navigation tvOS et focus dans Xamarin
 
@@ -74,7 +74,7 @@ Apple propose les suggestions suivantes pour l’utilisation du focus et de la s
 - **Utilisez la fonction parallaxe pour rendre les éléments ciblés** réactifs: les gestes circulaires sur le Siri distant entraînent un déplacement doux et en temps réel de l’élément ayant le focus. Cet [effet de parallaxe](#Focus-and-Parallax) est intégré `UIKit` à des _images en couches_ pour permettre à l’utilisateur de se connecter à l’élément ayant le focus.
 - **Créer des éléments pouvant se concentrer sur la taille appropriée-les** éléments volumineux avec un espacement important sont plus faciles à sélectionner et à parcourir que les éléments plus petits.
 - **Concevez l’élément d’interface utilisateur de façon à ce qu’il soit bien ciblé ou inactif** -généralement, Apple TV représente l’élément ayant le focus en augmentant sa taille. Assurez-vous que les éléments d’interface utilisateur de votre application s’affichent parfaitement à toute taille de présentation et, si nécessaire, fournissez des ressources pour les éléments de plus grande taille.
-- **Représentent les modifications de focus** de manière fluide: utilisez l’animation pour effectuer un fondu fluide entre un état **actif et sans** **focus** pour empêcher les transitions d’être transférerez.
+- **Représentent les modifications de focus** de manière fluide: utilisez l’animation pour effectuer un fondu fluide entre un état actif et sans **focus** pour empêcher les transitions d’être transférerez.
 - **N’affiche pas de curseur** : les utilisateurs s’attendent à parcourir l’interface utilisateur de votre application en utilisant le focus et non en déplaçant un curseur à l’écran. Votre interface utilisateur doit toujours utiliser le modèle de focus pour présenter une expérience utilisateur cohérente.
 
 <a name="Working-with-Focus" />
