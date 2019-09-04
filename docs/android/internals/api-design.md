@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d32b96cd489f84ea93e7ada9b6458272d0dea1c0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3ae18a2009ee3c34498a2e7586b561c525e76d45
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524857"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225542"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Principes de conception de l’API Xamarin. Android
 
@@ -42,21 +42,21 @@ Voici quelques-uns de nos principes de conception pour la liaison Xamarin. Andro
 
 - Exposer une API fortement typée:
 
-    - Augmentez la sécurité du type.
+  - Augmentez la sécurité du type.
 
-    - Réduire les erreurs d’exécution.
+  - Réduire les erreurs d’exécution.
 
-    - Obtenir l’IDE IntelliSense sur les types de retour.
+  - Obtenir l’IDE IntelliSense sur les types de retour.
 
-    - Autorise la documentation contextuelle de l’IDE.
+  - Autorise la documentation contextuelle de l’IDE.
 
 - Encourager l’exploration dans l’IDE des API:
 
-    - Utilisez des solutions d’infrastructure pour réduire l’exposition CLASSLIB Java.
+  - Utilisez des solutions d’infrastructure pour réduire l’exposition CLASSLIB Java.
 
-    - Exposez C# les délégués (lambdas, méthodes anonymes et System. Delegate) à la place des interfaces à méthode unique, le cas échéant.
+  - Exposez C# les délégués (lambdas, méthodes anonymes et System. Delegate) à la place des interfaces à méthode unique, le cas échéant.
 
-    - Fournissez un mécanisme pour appeler des bibliothèques Java arbitraires ( [Android. Runtime. JNIEnv](xref:Android.Runtime.JNIEnv)).
+  - Fournissez un mécanisme pour appeler des bibliothèques Java arbitraires ( [Android. Runtime. JNIEnv](xref:Android.Runtime.JNIEnv)).
 
 
 ## <a name="assemblies"></a>Assemblys
@@ -198,17 +198,17 @@ CubeWallpaper. CubeEngine est un exemple de dérivation d’une classe interne:
 
 ```csharp
 class CubeWallpaper : WallpaperService {
-        public override WallpaperService.Engine OnCreateEngine ()
-        {
-                return new CubeEngine (this);
-        }
+    public override WallpaperService.Engine OnCreateEngine ()
+    {
+        return new CubeEngine (this);
+    }
 
-        class CubeEngine : WallpaperService.Engine {
-                public CubeEngine (CubeWallpaper s)
-                        : base (s)
-                {
-                }
+    class CubeEngine : WallpaperService.Engine {
+        public CubeEngine (CubeWallpaper s)
+                : base (s)
+        {
         }
+    }
 }
 ```
 

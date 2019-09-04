@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1e1e86c6301214c7117b8f3b21b19554499d7fbd
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 99fafe0ae0186ac68609ebe22dabe64e588ee5e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121443"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226670"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Contrôleurs distants et Bluetooth Siri pour tvOS dans Xamarin
 
@@ -67,7 +67,7 @@ Apple fournit les suggestions suivantes pour l’utilisation des gestes de surfa
 
 ## <a name="siri-remote-buttons"></a>Boutons distants de Siri
 
-En plus des mouvements sur la surface tactile, votre application peut répondre à l’utilisateur en cliquant sur la surface tactile ou en appuyant sur le bouton de lecture/pause. Si vous accédez au Siri à distance à l’aide de l’infrastructure du contrôleur de jeu, vous pouvez également détecter le bouton de menu enfoncé. 
+En plus des mouvements sur la surface tactile, votre application peut répondre à l’utilisateur en cliquant sur la surface tactile ou en appuyant sur le bouton de lecture/pause. Si vous accédez au Siri à distance à l’aide de l’infrastructure du contrôleur de jeu, vous pouvez également détecter le bouton de menu enfoncé.
 
 En outre, les enfonceurs de bouton de menu peuvent être détectés à l’aide `UIKit` d’un module de reconnaissance de mouvement avec des éléments standard. Si vous interceptez le bouton de menu enfoncé, vous êtes chargé de fermer l’affichage et le contrôleur d’affichage en cours et de revenir au précédent.
 
@@ -83,14 +83,14 @@ Le moyen le plus simple de travailler avec la Siri distante dans votre applicati
 Pour ajouter un module de reconnaissance des mouvements, procédez comme suit:
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour modifier le concepteur d’interface.
-2. Faites glisser un module de **reconnaissance de mouvement TAP** de la **bibliothèque** et déposez-le sur la vue: 
+2. Faites glisser un module de **reconnaissance de mouvement TAP** de la **bibliothèque** et déposez-le sur la vue:
 
     [![](remote-bluetooth-images/storyboard01.png "Module de reconnaissance de mouvement TAP")](remote-bluetooth-images/storyboard01.png#lightbox)
-3. Cochez la case **Sélectionner** dans la section du **bouton** de l' **inspecteur d’attribut**: 
+3. Cochez la case **Sélectionner** dans la section du **bouton** de l' **inspecteur d’attribut**:
 
     [![](remote-bluetooth-images/storyboard02.png "Cocher sélectionner")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** signifie que le geste répond à l’utilisateur en cliquant sur la **surface tactile** sur le Siri distant. Vous avez également la possibilité de répondre aux boutons **menu**, **lire/suspendre**, **monter**, **descendre**, à **gauche** et à **droite** .
-5. Ensuite, associez une **action** à partir du module de **reconnaissance de mouvement TAP** et appelez- `TouchSurfaceClicked`la: 
+5. Ensuite, associez une **action** à partir du module de **reconnaissance de mouvement TAP** et appelez- `TouchSurfaceClicked`la:
 
     [![](remote-bluetooth-images/storyboard03.png "Action du module de reconnaissance de mouvement TAP")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Enregistrez vos modifications et revenez à Visual Studio pour Mac.
@@ -142,7 +142,7 @@ namespace tvRemote
         #region Override Methods
         public override void ViewDidLoad ()
         {
-            base.ViewDidLoad ();    
+            base.ViewDidLoad ();
 
             // Wire-up gestures
             var upGesture = new UISwipeGestureRecognizer (() => {
@@ -186,9 +186,9 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>Gestion des événements de bas niveau
 
-Si vous créez un type personnalisé basé sur `UIKit` dans votre application Xamarin. tvOS (par exemple `UIView`), vous avez également la possibilité de fournir une gestion de bas niveau de l’appui sur `UIPress` les boutons via des événements. 
+Si vous créez un type personnalisé basé sur `UIKit` dans votre application Xamarin. tvOS (par exemple `UIView`), vous avez également la possibilité de fournir une gestion de bas niveau de l’appui sur `UIPress` les boutons via des événements.
 
-Un `UIPress` événement consiste à tvOS ce qu' `UITouch` est un événement iOS, à `UIPress` l’exception des informations relatives aux presses sur les Siri distants ou autres périphériques Bluetooth attachés (comme un contrôleur de jeu). `UIPress`les événements décrivent le bouton enfoncé et son état (commencé, annulé, modifié ou terminé). 
+Un `UIPress` événement consiste à tvOS ce qu' `UITouch` est un événement iOS, à `UIPress` l’exception des informations relatives aux presses sur les Siri distants ou autres périphériques Bluetooth attachés (comme un contrôleur de jeu). `UIPress`les événements décrivent le bouton enfoncé et son état (commencé, annulé, modifié ou terminé).
 
 Pour les boutons analogiques sur des appareils tels que `UIPress` les contrôleurs de jeu Bluetooth, retourne également la quantité de force appliquée au bouton. La `Type` propriété de l' `UIPress` événement définit le bouton physique qui a changé d’État, tandis que les autres propriétés décrivent la modification qui s’est produite.
 
@@ -211,7 +211,7 @@ namespace tvRemote
         }
         #endregion
 
-        #region 
+        #region
         public EventView (IntPtr handle) : base (handle)
         {
         }

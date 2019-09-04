@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b9e8ad848204f7db785327093cd4b7ed9aa6de81
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bce2c1e543084ea80908946b1e37e43cf53c1676
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654073"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227343"
 ---
 # <a name="understanding-sirikit-concepts"></a>Présentation des concepts de SiriKit
 
@@ -152,7 +152,7 @@ L’intention est ensuite envoyée à l’extension d’application pour traitem
 
 Chaque IntentResponse inclut également un **Code de réponse** qui indique à Siri si l’application a pu terminer la demande ou non. Certains domaines ont des codes de réponse d’erreur très spécifiques qui peuvent également être envoyés.
 
-Enfin, le IntentResponse inclut un ( `NSUserActivity` comme ceux utilisés pour prendre en charge la main). Le `NSUserActivity` sera utilisé pour lancer l’application si la réponse en oblige à sortir l’environnement Siri et à entrer l’application pour la terminer. 
+Enfin, le IntentResponse inclut un ( `NSUserActivity` comme ceux utilisés pour prendre en charge la main). Le `NSUserActivity` sera utilisé pour lancer l’application si la réponse en oblige à sortir l’environnement Siri et à entrer l’application pour la terminer.
 
 Siri crée automatiquement un approprié `NSUserActivity` pour démarrer l’application et récupérer l’emplacement où l’utilisateur s’est arrêté dans l’environnement Siri. Toutefois, l’application peut fournir ses propres `NSUserActivity` informations personnalisées, si nécessaire.
 
@@ -174,7 +174,7 @@ Il existe trois tâches principales que l’extension d’application devra effe
 
 ### <a name="the-resolve-stage"></a>Étape de résolution
 
-L’étape de résolution permet à Siri de comprendre les valeurs fournies par l’utilisateur et de s’assurer que l’utilisateur signifiait vraiment ce qui se passerait lorsque l’intention est traitée par l’application. 
+L’étape de résolution permet à Siri de comprendre les valeurs fournies par l’utilisateur et de s’assurer que l’utilisateur signifiait vraiment ce qui se passerait lorsque l’intention est traitée par l’application.
 
 Cette étape permet également à l’application d’influencer le comportement de Siri pendant la conversation avec l’utilisateur. Pour ce faire, l’application fournit une **réponse de résolution**. Il existe un certain nombre de réponses prédéfinies pour les différents types de données que Siri comprend.
 
@@ -182,7 +182,7 @@ La réponse de résolution la plus courante de l’application est **réussite**
 
 Il peut arriver que l’application doive confirmer qu’une demande donnée correspond à la bonne information connue. Dans ce cas, il envoie une réponse **ConfirmationRequired** pour demander à l’utilisateur de répondre à une question de type oui ou non, par exemple *«Envoyer un message à Bobo?»* .
 
-Il peut y avoir d’autres cas où l’application demandera à l’utilisateur de choisir parmi une brève liste d’options. Dans ce cas, l’application fournit une réponse de **désambiguïsation** avec une liste de deux à dix options pour l’utilisateur, par exemple: 
+Il peut y avoir d’autres cas où l’application demandera à l’utilisateur de choisir parmi une brève liste d’options. Dans ce cas, l’application fournit une réponse de **désambiguïsation** avec une liste de deux à dix options pour l’utilisateur, par exemple:
 
 ```csharp
 Who do you want to message?
@@ -217,7 +217,7 @@ Selon le type de domaine et d’action, Siri peut demander confirmation à l’u
 
 L’étape du handle est la partie la plus importante de l’utilisation d’une intention, car il s’agit du point où l’application répond à la demande de l’utilisateur en effectuant la tâche demandée.
 
-Comme dans l’étape de confirmation, l’application doit fournir autant d’informations que possible sur le résultat, de sorte que Siri puisse la mettre en relation avec l’utilisateur. Parfois, ces informations sont présentées visuellement ou d’autres fois, Siri les rappelle à l’utilisateur. 
+Comme dans l’étape de confirmation, l’application doit fournir autant d’informations que possible sur le résultat, de sorte que Siri puisse la mettre en relation avec l’utilisateur. Parfois, ces informations sont présentées visuellement ou d’autres fois, Siri les rappelle à l’utilisateur.
 
 Dans certains cas, l’application peut nécessiter plus de temps pour traiter une demande donnée, par exemple des retards d’appels réseau ou si une personne en ligne doit répondre à la demande (comme la finalisation et l’expédition d’une commande ou la conduite d’une voiture à l’emplacement de l’utilisateur). Quand Siri attend une réponse de l’application, il affiche une interface utilisateur en attente à l’utilisateur lui indiquant que l’application est en cours de traitement de la requête.
 
@@ -228,7 +228,7 @@ Dans l’idéal, l’application doit fournir une réponse à Siri dans un déla
 Avec SiriKit dans iOS 10, Apple a créé deux nouveaux points d’extension:
 
 - **Extension intentions** : fournit Siri avec le contenu de l’application et effectue les tâches requises pour exécuter les intentions prises en charge.
-- **Extension d’IU** Intents: fournit une interface utilisateur personnalisée qui sera affichée pour le contenu des applications à l’intérieur de Siri. 
+- **Extension d’IU** Intents: fournit une interface utilisateur personnalisée qui sera affichée pour le contenu des applications à l’intérieur de Siri.
 
 Il existe également une API pour fournir des mots et des expressions à Siri pour faciliter la reconnaissance sous la forme de:
 
@@ -292,9 +292,9 @@ Un fichier de vocabulaire `AppIntentVocabulary.plist` comporte plusieurs parties
 
 - **Exemples d’applications** : celles-ci fournissent un ensemble de cas d’usage courants pour les demandes que l’utilisateur peut effectuer. Par exemple :  *«Démarrer un entraînement avec MonkeyFit.»*
 - **Paramètres** : ils fournissent un ensemble de types de paramètres non standard spécifiques à l’application. Par exemple, les noms des entraînements pour l’application MonkeyFit. Il s’agit des éléments suivants:
-    - **Expression** : permet à l’application de définir des termes uniques pour l’application. Par exemple: type d’entraînement «Bananarific» pour l’application MonkeyFit. 
-    - **Prononciation** : donne des indications de prononciation à Siri comme une simple orthographe phonétique pour une expression donnée. Par exemple, «BA Nana RI FIC».
-    - **Exemple** : fournit un exemple d’utilisation de l’expression donnée dans l’application. Par exemple, *«Démarrer un Bananarific dans MonkeyFit»* .
+  - **Expression** : permet à l’application de définir des termes uniques pour l’application. Par exemple: type d’entraînement «Bananarific» pour l’application MonkeyFit.
+  - **Prononciation** : donne des indications de prononciation à Siri comme une simple orthographe phonétique pour une expression donnée. Par exemple, «BA Nana RI FIC».
+  - **Exemple** : fournit un exemple d’utilisation de l’expression donnée dans l’application. Par exemple, *«Démarrer un Bananarific dans MonkeyFit»* .
 
 Pour plus d’informations, consultez Référence du [format de fichier du vocabulaire d’application](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CustomVocabularyKeys.html#//apple_ref/doc/uid/TP40016875-CH10-SW1)Apple.
 
@@ -326,7 +326,7 @@ Plus important encore, l’application _doit_ supprimer rapidement les informati
 
 La dernière partie de SiriKit est centrée autour des autorisations. Tout comme l’utilisation d’autres fonctionnalités d’iOS (telles que des photos, des appareils photo ou des contacts), les utilisateurs doivent accorder une autorisation explicite pour que l’application communique avec Siri.
 
-L’application peut fournir une chaîne définissant les informations qu’elle fournira à Siri et indiquer la raison pour laquelle l’utilisateur doit accorder cet accès. 
+L’application peut fournir une chaîne définissant les informations qu’elle fournira à Siri et indiquer la raison pour laquelle l’utilisateur doit accorder cet accès.
 
 Apple suggère que l’application doit demander l’autorisation à l’utilisateur d’utiliser Siri la première fois que l’utilisateur ouvre l’application une fois qu’elle a été mise à niveau vers iOS 10. C’est pour cela que les utilisateurs connaissent l’intégration de Siri et qu’ils peuvent préapprouver l’utilisation avant d’effectuer leur première demande.
 
@@ -336,9 +336,9 @@ SiriKit fait partie intégrante d’iOS et utilise l’infrastructure d’intent
 
 L’infrastructure des intentions va au-delà de l’intégration de Siri et fournit d’autres fonctionnalités telles que l’intégration des contacts, où l’application peut devenir l’application de téléphonie ou de messagerie par défaut pour des contacts spécifiques. Les intentions offrent également une intégration profonde avec CallKit pour fournir aux utilisateurs la meilleure expérience VOIP possible.
 
-L’application Maps dans iOS 10 a ajouté des fonctionnalités telles que le partage de correspondances, où l’utilisateur peut réserver une position directement à l’intérieur de l’interface utilisateur Maps. SiriKit fournit un point d’extension commun avec Maps, de sorte que les intentions de partage (et autres) peuvent être partagées entre les Siri et les mappages. 
+L’application Maps dans iOS 10 a ajouté des fonctionnalités telles que le partage de correspondances, où l’utilisateur peut réserver une position directement à l’intérieur de l’interface utilisateur Maps. SiriKit fournit un point d’extension commun avec Maps, de sorte que les intentions de partage (et autres) peuvent être partagées entre les Siri et les mappages.
 
-Cela signifie que si l’application a adopté les extensions SiriKit, elle obtiendra également l’intégration de Maps gratuitement. 
+Cela signifie que si l’application a adopté les extensions SiriKit, elle obtiendra également l’intégration de Maps gratuitement.
 
 ## <a name="designing-a-great-siri-experience"></a>Conception d’une expérience Siri exceptionnelle
 
@@ -456,7 +456,7 @@ Prenez le temps nécessaire pour explorer et expérimenter la manière dont l’
 
 N’oubliez pas de tester l’application dans différentes situations et toutes les différentes méthodes pour appeler une conversation avec Siri. Tester dans des emplacements réels l’utilisateur peut utiliser l’application, loin du bureau et du bureau.
 
-Efforcez-vous que les conversations avec Siri (pour le compte de l’application) soient fluides, naturelles et «semblent juste». 
+Efforcez-vous que les conversations avec Siri (pour le compte de l’application) soient fluides, naturelles et «semblent juste».
 
 ## <a name="summary"></a>Récapitulatif
 
