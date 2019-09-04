@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646231"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228271"
 ---
 # <a name="three-types-of-bzier-curves"></a>Trois types de courbes Bézier
 
@@ -24,7 +24,7 @@ La courbe de Bézier est nommée d’après la Pierre Bézier (1910 : 1999), in
 
 Les courbes de Bézier sont connues pour être bien adaptées à la conception interactive: Ils se comportent &mdash; bien, en d’autres termes, il n’y a pas de singularités qui entraînent une courbe &mdash; infinie ou difficile, et elles sont généralement agréables à l’aspect esthétique:
 
-![](beziers-images/beziersample.png "Une courbe de Bézier exemple")
+![Exemple de courbe de Bézier](beziers-images/beziersample.png)
 
 Contours de caractère des polices basées sur l’ordinateur sont généralement définies avec des courbes de Bézier.
 
@@ -93,7 +93,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ici, il s’exécute :
 
-[![](beziers-images/beziercurve-small.png "Capture d’écran triple de la page de la courbe de Bézier")](beziers-images/beziercurve-large.png#lightbox "Triple capture d’écran de la page de la courbe de Bézier")
+[![Capture d’écran triple de la page de courbe de Bézier](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
 Point de vue mathématique, la courbe est une représentation polynomiale cubique. La courbe entre en intersection avec une ligne droite à trois points au maximum. Sur le point de départ, la courbe est toujours tangent à et, dans la même direction que, une ligne droite à partir du début pointez le premier point de contrôle. Au point de terminaison, la courbe est toujours tangent à et, dans la même direction que, une ligne droite à partir du deuxième contrôle pointez le point de terminaison.
 
@@ -125,7 +125,7 @@ Il est parfois pratique d’utiliser une courbe de Bézier pour restituer un arc
 
 Le diagramme suivant illustre quatre points étiquetés `pto`, `pt1`, `pt2`, et `pt3` définissant une courbe de Bézier (indiquée en rouge) qui est une approximation d’un arc de cercle :
 
-![](beziers-images/bezierarc45.png "Approximation d’un arc de cercle avec une courbe de Bézier")
+![Approximation d’un arc de cercle avec une courbe de Bézier](beziers-images/bezierarc45.png)
 
 Les lignes au début et les points de terminaison pour les points de contrôle sont tangente pour le cercle et la courbe de Bézier, et ils ont une longueur de *L*. Le premier article cité plus haut indique que la courbe de Bézier meilleures rapproche un arc de cercle lorsque cette longueur *L* est calculé comme suit :
 
@@ -211,13 +211,13 @@ Le début et points de terminaison (`point0` et `point3`) sont calculées selon 
 
 Voici le programme s’exécute avec des angles différents :
 
-[![](beziers-images/beziercirculararc-small.png "Capture d’écran triple de la page d’Arc de cercle de Bézier")](beziers-images/beziercirculararc-large.png#lightbox "Triple capture d’écran de la page d’Arc de cercle de Bézier")
+[![Capture d’écran triple de la page de l’arc de cercle de Bézier](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
 Examinez attentivement la capture d’écran tiers, et vous verrez que la courbe de Bézier diffère notamment un demi-cercle lors de l’angle est de 180 degrés, mais l’écran iOS montre qu’il semble tenir un cercle trimestre parfaitement lorsque l’angle est de 90 degrés.
 
 Il est facile de calculer les coordonnées de deux points de contrôle lorsque le quart de cercle est orienté à ceci :
 
-![](beziers-images/bezierarc90.png "Approximation d’un quart de cercle avec une courbe de Bézier")
+![Approximation d’un cercle quart avec une courbe de Bézier](beziers-images/bezierarc90.png)
 
 Si le rayon du cercle est de 100, puis *L* est 55, et c’est un nombre facile à mémoriser.
 
@@ -293,7 +293,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Les points sont interpolés selon une valeur sinusoïdal OSCILLANTE de `t`. Les points interpolées sont ensuite utilisés pour construire une série de quatre courbes de Bézier connectées. Voici l’animation en cours d’exécution :
 
-[![](beziers-images/squaringthecircle-small.png "Capture d’écran triple de la Squaring la page de cercle")](beziers-images/squaringthecircle-large.png#lightbox "Triple capture d’écran de la Squaring la page de cercle")
+[![Capture d’écran triple de la page de cercle](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
 Une animation de ce type serait impossible sans les courbes de façon algorithmique suffisamment flexibles pour être rendus sous forme de lignes droites et à la fois des arcs de cercle.
 
@@ -342,7 +342,7 @@ Il peut être un bon exercice pour tracer ces coordonnées sur le document de gr
 
 Voici le signe de l’infini :
 
-[![](beziers-images/bezierinfinity-small.png "Capture d’écran triple de la page de l’infini Bézier")](beziers-images/bezierinfinity-large.png#lightbox "Triple capture d’écran de la page de l’infini de Bézier")
+[![Capture d’écran triple de la page d’infini de Bézier](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
 Il est un peu plus lisse vers le centre que le signe de l’infini restitué par le **Arc infini** page à partir de la [ **trois moyens pour dessiner un Arc** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) article.
 
@@ -405,7 +405,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Et ici il est en cours d’exécution :
 
-[![](beziers-images/quadraticcurve-small.png "Capture d’écran triple de la page de la courbe quadratique")](beziers-images/quadraticcurve-large.png#lightbox "Triple capture d’écran de la page de la courbe quadratique")
+[![Capture d’écran triple de la page de courbe quadratique](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
 Les lignes en pointillés sont la tangente de la courbe en le point de départ et le point de terminaison et répondre au niveau du point de contrôle.
 
@@ -483,7 +483,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ici, il s’exécute :
 
-[![](beziers-images/coniccurve-small.png "Capture d’écran triple de la page de la courbe conique")](beziers-images/coniccurve-large.png#lightbox "Triple capture d’écran de la page de la courbe conique")
+[![Capture d’écran triple de la page de courbe conique](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
 Comme vous pouvez le voir, le point de contrôle semble pour extraire la courbe vers elle plus lorsque le poids est supérieur. Lorsque le poids est égal à zéro, la courbe devient une ligne droite entre le point de départ pour le point de terminaison.
 
@@ -491,7 +491,7 @@ En théorie, poids négatifs sont autorisés et provoquer la courbe à plier *di
 
 Il est très facile de dériver le point de contrôle et le poids à utiliser le `ConicTo` pour dessiner un arc de cercle jusqu'à (méthode) (mais non compris) un demi-cercle. Dans le diagramme suivant, les tangentes au début et les points de terminaison répondent au niveau du point de contrôle.
 
-![](beziers-images/conicarc.png "Un rendu de l’arc conique d’un arc de cercle")
+![Rendu conique d’un arc de cercle](beziers-images/conicarc.png)
 
 Vous pouvez utiliser trigonométrique pour déterminer la distance du point de contrôle à partir du centre du cercle: Il s’agit du rayon du cercle divisé par le cosinus de la moitié de l’angle α. Pour dessiner un arc circulaire entre le début et les points de terminaison, définissez le poids à ce même cosinus de la moitié de l’angle. Notez que si l’angle est de 180 degrés, puis les tangentes ne rencontrez jamais et que le poids est égal à zéro. Mais pour les angles inférieur à 180 degrés, les calculs fonctionnement correctement.
 
@@ -547,7 +547,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Comme vous pouvez le voir, il n’existe aucune différence visuelle entre les `ConicTo` chemin d’accès indiqué en rouge et le cercle sous-jacent affichés pour référence :
 
-[![](beziers-images/coniccirculararc-small.png "Capture d’écran triple de la page d’Arc de cercle conique")](beziers-images/coniccirculararc-large.png#lightbox "Triple capture d’écran de la page d’Arc de cercle conique")
+[![Capture d’écran triple de la page de l’arc de cercle conique](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
 Mais la valeur est l’angle de 180 degrés et l’échec de mathématiques.
 

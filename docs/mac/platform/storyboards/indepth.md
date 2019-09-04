@@ -7,22 +7,22 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 06d3127bbe7766a70efc570bd455a8d570548731
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2f3bdc70928dc06719bf7cfb775bf70fae9695a4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653783"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227864"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Utilisation des storyboards dans Xamarin. Mac
 
 Une table de montage séquentiel définit la totalité de l’interface utilisateur pour une application donnée, divisée en une vue d’ensemble fonctionnelle de ses contrôleurs d’affichage. Dans Interface Builder de Xcode, chacun de ces contrôleurs vit dans sa propre scène.
 
-[![](indepth-images/intro01.png "Une table de montage séquentiel dans le Interface Builder de Xcode")](indepth-images/intro01.png#lightbox)
+[![Une table de montage séquentiel dans le Interface Builder de Xcode](indepth-images/intro01.png)](indepth-images/intro01.png#lightbox)
 
 Le Storyboard est un fichier de ressources (avec les extensions `.storyboard`de) qui est inclus dans l’offre groupée de l’application Xamarin. Mac lorsqu’il est compilé et expédié. Pour définir le plan conceptuel de départ de votre application, modifiez `Info.plist` son fichier et sélectionnez l' **interface principale** dans la zone de liste déroulante: 
 
-[![](indepth-images/sb01.png "Éditeur info. plist")](indepth-images/sb01.png#lightbox)
+[![Éditeur info. plist](indepth-images/sb01.png)](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 Le `FromName` charge le fichier de Storyboard avec le nom donné qui a été inclus dans l’offre groupée de l’application. `InstantiateControllerWithIdentifier` Crée une instance du contrôleur d’affichage avec l’identité donnée. Vous définissez l’identité dans le Interface Builder de Xcode lors de la conception de l’interface utilisateur:
 
-[![](indepth-images/sb02.png "Définition de l’ID de Storyboard")](indepth-images/sb02.png#lightbox)
+[![Définition de l’ID de Storyboard](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
 
 Si vous le souhaitez, vous pouvez `InstantiateInitialController` utiliser la méthode pour charger le contrôleur d’affichage auquel a été attribué le contrôleur initial dans Interface Builder:
 
-[![](indepth-images/sb03.png "Définition du contrôleur initial")](indepth-images/sb03.png#lightbox)
+[![Définition du contrôleur initial](indepth-images/sb03.png)](indepth-images/sb03.png#lightbox)
 
 Elle est marquée par le **point d’entrée de la table de montage séquentiel** et la flèche ouverte terminée ci-dessus.
 
@@ -76,7 +76,7 @@ Plusieurs nouvelles méthodes ont été ajoutées à la `NSViewController` class
 
 En outre, `NSViewControllers` font désormais partie de la chaîne de _répondeur_de la fenêtre:
 
-[![](indepth-images/vc01.png "Chaîne du répondeur")](indepth-images/vc01.png#lightbox)
+[![Chaîne du répondeur](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
 
 Et, par conséquent, ils sont reliés pour recevoir des événements tels que les sélections couper, copier et coller. Ce contrôleur d’affichage automatique s’exécute uniquement sur les applications qui s’exécutent sur macOS Sierra (10,12) et versions ultérieures.
 
@@ -86,13 +86,13 @@ Et, par conséquent, ils sont reliés pour recevoir des événements tels que le
 
 Dans les storyboards, les contrôleurs d’affichage (tels que le contrôleur d’affichage fractionné et le contrôleur d’affichage d’onglets) peuvent désormais implémenter la _relation contenant-contenu_, de sorte qu’ils peuvent «contenir» d’autres contrôleurs de sous-affichage:
 
-[![](indepth-images/vc02.png "Exemple de relation contenant-contenu de contrôleur d’affichage")](indepth-images/vc02.png#lightbox)
+[![Exemple de relation contenant-contenu de contrôleur d’affichage](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
 Les contrôleurs d’affichage enfants contiennent des méthodes et des propriétés pour les lier à leur contrôleur d’affichage parent et pour utiliser l’affichage et la suppression des vues de l’écran.
 
 Tous les contrôleurs d’affichage de conteneur intégrés à macOS ont une disposition spécifique que Apple suggère de suivre si vous créez vos propres contrôleurs d’affichage de conteneur personnalisés:
 
-[![](indepth-images/vc03.png "Disposition du contrôleur d’affichage")](indepth-images/vc03.png#lightbox)
+[![Disposition du contrôleur d’affichage](indepth-images/vc03.png)](indepth-images/vc03.png#lightbox)
 
 Le contrôleur d’affichage de collection contient un tableau d’éléments de vue de collection, chacun contenant un ou plusieurs contrôleurs d’affichage qui contiennent leurs propres vues.
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 L’ID segue est défini à l’intérieur de l’Interface Builder de Xcode quand vous disposez de l’interface utilisateur de l’application:
 
-[![](indepth-images/sg02.png "Saisie d’un nom de Segue")](indepth-images/sg02.png#lightbox)
+[![Saisie d’un nom de Segue](indepth-images/sg02.png)](indepth-images/sg02.png#lightbox)
 
 Dans le contrôleur d’affichage qui agit en tant que source du Segue, vous devez substituer la `PrepareForSegue` méthode et effectuer toute initialisation requise avant l’exécution de Segue et le contrôleur d’affichage spécifié s’affiche:
 
@@ -215,7 +215,7 @@ Voici quelques points à noter:
 
 Pour utiliser ce nouveau type segue dans le Interface Builder de Xcode, nous devons d’abord compiler l’application, puis basculer vers Xcode et ajouter un nouveau segue entre deux scènes. Définissez le **style** sur **personnalisé** et la **classe segue** sur `ReplaceViewSegue` (le nom de notre classe segue personnalisée):
 
-[![](indepth-images/sg01.png "Définition de la classe segue")](indepth-images/sg01.png#lightbox)
+[![Définition de la classe segue](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ Pour ajouter une référence à un Storyboard externe, procédez comme suit:
 
 1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Storyboard Mac.  >  >  Entrez un **nom** pour la nouvelle table de montage séquentiel, puis cliquez sur le bouton **nouveau** : 
 
-    [![](indepth-images/ref01.png "Ajout d’un nouveau Storyboard")](indepth-images/ref01.png#lightbox)
+    [![Ajout d’un nouveau Storyboard](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
 2. Dans la **Explorateur de solutions**, double-cliquez sur le nouveau nom de la table de montage séquentiel pour l’ouvrir et le modifier dans le Interface Builder de Xcode.
 3. Concevez la disposition des scènes de la nouvelle table de montage séquentiel comme vous le feriez normalement et enregistrez vos modifications: 
 
-    [![](indepth-images/ref02.png "Conception de l’interface")](indepth-images/ref02.png#lightbox)
+    [![Conception de l’interface](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
 4. Basculez vers le Storyboard auquel vous allez ajouter la référence dans le Interface Builder.
 5. Faites glisser une **référence de table de montage séquentiel** de la **bibliothèque d’objets** vers l’aire de conception: 
 
-    [![](indepth-images/ref03.png "Sélection d’une référence de table de montage séquentiel dans la bibliothèque")](indepth-images/ref03.png#lightbox)
+    [![Sélection d’une référence de table de montage séquentiel dans la bibliothèque](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 6. Dans l' **inspecteur d’attribut**, sélectionnez le nom de la **table de montage séquentiel** que vous avez créée ci-dessus: 
 
-    [![](indepth-images/ref04.png "Configuration de la référence")](indepth-images/ref04.png#lightbox)
+    [![Configuration de la référence](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
 7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer.  Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
 
-    [![](indepth-images/ref06.png "Définition du type segue")](indepth-images/ref06.png#lightbox) 
+    [![Définition du type segue](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. Enregistrez vos modifications dans le Storyboard.
 9. Revenez à Visual Studio pour Mac pour synchroniser vos modifications.
 
@@ -300,20 +300,20 @@ Pour ajouter une référence à une scène spécifique, un Storyboard externe (e
 1. Dans la **Explorateur de solutions**, double-cliquez sur le Storyboard externe pour l’ouvrir et le modifier dans le Interface Builder de Xcode.
 2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement: 
 
-    [![](indepth-images/ref07.png "Conception de la disposition dans Xcode")](indepth-images/ref07.png#lightbox)
+    [![Conception de la disposition dans Xcode](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
 3. Dans l' **inspecteur d’identité**, entrez un **ID de Storyboard** pour le contrôleur de fenêtre du nouveau décor: 
 
-    [![](indepth-images/ref08.png "Définition de l’ID de Storyboard")](indepth-images/ref08.png#lightbox)
+    [![Définition de l’ID de Storyboard](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
 4. Ouvrez le Storyboard auquel vous allez ajouter la référence dans Interface Builder.
 5. Faites glisser une **référence de table de montage séquentiel** de la **bibliothèque d’objets** vers l’aire de conception: 
 
-    [![](indepth-images/ref03.png "Sélection d’une référence de table de montage séquentiel dans la bibliothèque")](indepth-images/ref03.png#lightbox)
+    [![Sélection d’une référence de table de montage séquentiel dans la bibliothèque](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 6. Dans l' **inspecteur d’identité**, sélectionnez le nom de la **table de montage séquentiel** et l' **ID de référence** (Storyboard ID) de la scène que vous avez créée ci-dessus: 
 
-    [![](indepth-images/ref09.png "Définition de l’ID de référence")](indepth-images/ref09.png#lightbox)
+    [![Définition de l’ID de référence](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
 7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
 
-    [![](indepth-images/ref06.png "Définition du type segue")](indepth-images/ref06.png#lightbox) 
+    [![Définition du type segue](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. Enregistrez vos modifications dans le Storyboard.
 9. Revenez à Visual Studio pour Mac pour synchroniser vos modifications.
 
@@ -328,19 +328,19 @@ Pour ajouter une référence à une scène spécifique du même Storyboard, proc
 1. Dans la **Explorateur de solutions**, double-cliquez sur le Storyboard pour l’ouvrir pour le modifier.
 2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement: 
 
-    [![](indepth-images/ref11.png "Modification de la table de montage séquentiel dans Xcode")](indepth-images/ref11.png#lightbox)
+    [![Modification de la table de montage séquentiel dans Xcode](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
 3. Dans l' **inspecteur d’identité**, entrez un **ID de Storyboard** pour le contrôleur de fenêtre du nouveau décor: 
 
-    [![](indepth-images/ref12.png "Définition de l’ID de Storyboard")](indepth-images/ref12.png#lightbox)
+    [![Définition de l’ID de Storyboard](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
 4. Faites glisser une **référence de Storyboard** de la **boîte à outils** vers le aire de conception: 
 
-    [![](indepth-images/ref03.png "Sélection d’une référence de table de montage séquentiel dans la bibliothèque")](indepth-images/ref03.png#lightbox)
+    [![Sélection d’une référence de table de montage séquentiel dans la bibliothèque](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 5. Dans l' **inspecteur d’attribut**, sélectionnez ID de **référence** (ID de Storyboard) de la scène créée ci-dessus: 
 
-    [![](indepth-images/ref13.png "Définition de l’ID de référence")](indepth-images/ref13.png#lightbox)
+    [![Définition de l’ID de référence](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
 6. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
 
-    [![](indepth-images/ref06.png "Sélection du type de Segue")](indepth-images/ref06.png#lightbox) 
+    [![Sélection du type de Segue](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 7. Enregistrez vos modifications dans le Storyboard.
 8. Revenez à Visual Studio pour Mac pour synchroniser vos modifications.
 

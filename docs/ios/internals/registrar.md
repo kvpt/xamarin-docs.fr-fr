@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199720"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226035"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Entrer le Bureau d’enregistrement pour Xamarin. iOS
 
@@ -129,10 +129,10 @@ Ce code exporte `IMyProtocol` vers objective-C en tant `MyProtocol` que protocol
 Ce nouveau système d’inscription offre les nouvelles fonctionnalités suivantes:
 
 - Détection des erreurs du programmeur au moment de la compilation:
-    - Deux classes en cours d’inscription avec le même nom.
-    - Plusieurs méthodes exportées pour répondre au même sélecteur
+  - Deux classes en cours d’inscription avec le même nom.
+  - Plusieurs méthodes exportées pour répondre au même sélecteur
 - Suppression du code natif inutilisé:
-    - Le nouveau système d’inscription ajoute des références fortes au code utilisé dans les bibliothèques statiques, ce qui permet à l’éditeur de liens natif de supprimer le code natif inutilisé du fichier binaire résultant. Sur les exemples de liaisons de Xamarin, la plupart des applications deviennent au moins 300 000 plus petites.
+  - Le nouveau système d’inscription ajoute des références fortes au code utilisé dans les bibliothèques statiques, ce qui permet à l’éditeur de liens natif de supprimer le code natif inutilisé du fichier binaire résultant. Sur les exemples de liaisons de Xamarin, la plupart des applications deviennent au moins 300 000 plus petites.
 
 - Prise en charge des sous-classes `NSObject`génériques de; pour plus d’informations, consultez [génériques NSObject](~/ios/internals/api-design/nsobject-generics.md) . En outre, le nouveau système d’inscription intercepte les constructions génériques non prises en charge qui auraient précédemment provoqué un comportement aléatoire au moment de l’exécution.
 
@@ -142,37 +142,37 @@ Voici quelques exemples d’erreurs détectées par le nouveau bureau d’enregi
 
 - Exportation du même sélecteur plusieurs fois dans la même classe:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo:")]
-        void Foo (NSString str);
-        [Export ("foo:")]
-        void Foo (string str)
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo:")]
+      void Foo (NSString str);
+      [Export ("foo:")]
+      void Foo (string str)
+  }
+  ```
 
 - Exportation de plusieurs classes managées avec le même nom objective-C:
 
-    ```csharp
-    [Register ("Class")]
-    class MyClass : NSObject {}
+  ```csharp
+  [Register ("Class")]
+  class MyClass : NSObject {}
 
-    [Register ("Class")]
-    class YourClass : NSObject {}
-    ```
+  [Register ("Class")]
+  class YourClass : NSObject {}
+  ```
 
 - Exportation des méthodes génériques:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo")]
-        void Foo<T> () {}
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo")]
+      void Foo<T> () {}
+  }
+  ```
 
 ### <a name="limitations-of-the-new-registrar"></a>Limitations du nouveau bureau d’enregistrement
 

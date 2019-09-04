@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 27eff717fd1390f54a177cc7636e7d107b69cd24
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ec7523ac2adc3a6b4ba18a7b8a0fe21749bd7856
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656283"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227409"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Améliorations de la recherche d’applications dans Xamarin. iOS
 
@@ -44,13 +44,13 @@ Pour plus d’informations sur l’implémentation de la liaison profonde dans u
 
 En implémentant la nouvelle classe [CSSearchQuery](https://developer.apple.com/reference/corespotlight/cssearchquery) , une application peut fournir une technologie de recherche et de correspondance de mise en vedette pour rechercher du contenu à l’intérieur de lui-même, sans que l’utilisateur n’ait à laisser l’application (semblable à la façon dont l’application mail, les messages et les notes fonctionnent).
 
-En règle générale, les `CSSearchQuery` applications qui prennent en charge n’ont pas besoin de conserver leur propre index de recherche distinct. 
+En règle générale, les `CSSearchQuery` applications qui prennent en charge n’ont pas besoin de conserver leur propre index de recherche distinct.
 
 ## <a name="search-continuation"></a>Continuation de recherche
 
 Dans iOS 9, Apple a introduit les API de recherche (telles que Core `NSUserActivity` Spotlight et le balisage Web) pour fournir des informations détaillées sur le contenu d’une application, afin de permettre aux utilisateurs de Rechercher ce contenu à l’aide des interfaces de recherche Spotlight et Safari. Pour plus d’informations, consultez la documentation de notre [nouvelle API de recherche](~/ios/platform/search/index.md) .
 
-Dans iOS 10, Apple s’appuie sur cette fonctionnalité en permettant à l’utilisateur de lancer une recherche dans Spotlight ou Safari, puis de continuer la recherche lors de l’ouverture d’une application. 
+Dans iOS 10, Apple s’appuie sur cette fonctionnalité en permettant à l’utilisateur de lancer une recherche dans Spotlight ou Safari, puis de continuer la recherche lors de l’ouverture d’une application.
 
 Pour implémenter cette fonctionnalité, modifiez le fichier `Info.plist` de l’application, `CoreSpotlightContinuation` ajoutez la clé de type **booléen** et définissez sa `YES`valeur sur:
 

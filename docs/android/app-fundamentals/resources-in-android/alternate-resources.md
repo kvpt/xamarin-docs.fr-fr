@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 7c48244e316854b04234ec8dee4eebeb55a4f119
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 05c3816d0cc01beb3ed99994788b58e5f187171a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526377"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225781"
 ---
 # <a name="alternate-resources"></a>Autres ressources
 
@@ -73,52 +73,52 @@ Les qualificateurs possibles sont répertoriés ci-dessous pour référence:
 
 - **Densité de pixels de l’écran (dpi)** &ndash; Nombre de pixels dans une zone donnée sur l’écran physique. Généralement exprimé en points par pouce (dpi). Les valeurs possibles sont les suivantes :
 
-    - `ldpi`&ndash; Écrans à faible densité.
+  - `ldpi`&ndash; Écrans à faible densité.
 
-    - `mdpi`&ndash; Écrans de densité moyenne
+  - `mdpi`&ndash; Écrans de densité moyenne
 
-    - `hdpi`&ndash; Écrans à haute densité
+  - `hdpi`&ndash; Écrans à haute densité
 
-    - `xhdpi`&ndash; Écrans à haute densité supplémentaires
+  - `xhdpi`&ndash; Écrans à haute densité supplémentaires
 
-    - `nodpi`&ndash; Ressources qui ne doivent pas être mises à l’échelle
+  - `nodpi`&ndash; Ressources qui ne doivent pas être mises à l’échelle
 
-    - `tvdpi`&ndash; Introduit dans le niveau d’API 13 (Android 3,2) pour les écrans entre MDPI et HDPI.
+  - `tvdpi`&ndash; Introduit dans le niveau d’API 13 (Android 3,2) pour les écrans entre MDPI et HDPI.
 
 - **Type d’écran tactile** &ndash; Spécifie le type d’écran tactile qu’un appareil peut avoir. Les valeurs possibles `notouch` sont (pas d’écran tactile `stylus` ), (un écran tactile résistant adapté à un stylet) `finger` et (un écran tactile).
 
 - **Disponibilité du clavier** &ndash; Spécifie le type de clavier disponible. Cela peut changer pendant la durée de vie d' &ndash; une application, par exemple lorsqu’un utilisateur ouvre un clavier matériel. Les valeurs possibles sont les suivantes :
 
-    - `keysexposed`&ndash; Le clavier est disponible sur l’appareil. Si aucun clavier logiciel n’est activé, cette option est utilisée uniquement lorsque le clavier matériel est ouvert.
+  - `keysexposed`&ndash; Le clavier est disponible sur l’appareil. Si aucun clavier logiciel n’est activé, cette option est utilisée uniquement lorsque le clavier matériel est ouvert.
 
-    - `keyshidden`&ndash; L’appareil possède un clavier matériel, mais il est masqué et aucun clavier logiciel n’est activé.
+  - `keyshidden`&ndash; L’appareil possède un clavier matériel, mais il est masqué et aucun clavier logiciel n’est activé.
 
-    - `keyssoft`&ndash; un clavier logiciel est activé sur l’appareil.
+  - `keyssoft`&ndash; un clavier logiciel est activé sur l’appareil.
 
 - **Méthode d’entrée de texte principal** &ndash; Utilisez pour spécifier les types de clés matérielles disponibles pour l’entrée. Les valeurs possibles sont les suivantes :
 
-    - `nokeys`&ndash; Il n’existe aucune clé matérielle pour l’entrée.
+  - `nokeys`&ndash; Il n’existe aucune clé matérielle pour l’entrée.
 
-    - `qwerty`&ndash; Un clavier QWERTY est disponible.
+  - `qwerty`&ndash; Un clavier QWERTY est disponible.
 
-    - `12key`&ndash; Il y a un clavier matériel à 12 clés
+  - `12key`&ndash; Il y a un clavier matériel à 12 clés
 
 
 - **Disponibilité** de la clé de navigation &ndash; Pour les cas où la navigation à 5 ou d-pad est disponible. Cela peut changer pendant la durée de vie de votre application. Les valeurs possibles sont les suivantes :
 
-    - `navexposed`&ndash; les touches de navigation sont disponibles pour l’utilisateur.
+  - `navexposed`&ndash; les touches de navigation sont disponibles pour l’utilisateur.
 
-    - `navhidden`&ndash; les touches de navigation ne sont pas disponibles.
+  - `navhidden`&ndash; les touches de navigation ne sont pas disponibles.
 
 - **Méthode de navigation non tactile principale** &ndash; Type de navigation disponible sur l’appareil. Les valeurs possibles sont les suivantes :
 
-    - `nonav`&ndash; la seule fonctionnalité de navigation disponible est l’écran tactile
+  - `nonav`&ndash; la seule fonctionnalité de navigation disponible est l’écran tactile
 
-    - `dpad`&ndash; une d-pad (pavé directionnel) est disponible pour la navigation
+  - `dpad`&ndash; une d-pad (pavé directionnel) est disponible pour la navigation
 
-    - `trackball`&ndash; l’appareil a un trackball pour la navigation
+  - `trackball`&ndash; l’appareil a un trackball pour la navigation
 
-    - `wheel`&ndash; scénario rare où une ou plusieurs roues directionnelles sont disponibles
+  - `wheel`&ndash; scénario rare où une ou plusieurs roues directionnelles sont disponibles
 
 - **Version de la plateforme (niveau d’API)** Niveau d’API pris en charge par l’appareil au format v*n*, où N est le niveau d’API ciblé. &ndash; Par exemple, v11 ciblera un appareil d’API de niveau 11 (Android 3,0).
 

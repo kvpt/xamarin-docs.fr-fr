@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c752f4acf4bf43c138a7b359b94620dae5e8d46e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2137ff95e65c6841b3e525f0c9755e013310c7e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524524"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225600"
 ---
 # <a name="troubleshooting-bindings"></a>Résolution des problèmes de liaisons
 
@@ -51,8 +51,8 @@ Une fois que vous avez décompilé la bibliothèque Android, examinez le code so
 
 - **Classes qui ont des caractéristiques d’obscurcissement** &ndash; Les caractéristiques des classes obscurcies sont les suivantes:
 
-    - Le nom de la classe **$** comprend un, c.-à-d. **une classe $.**
-    - Le nom de la classe est entièrement compromis en minuscules, c.-à-d. **une classe.**      
+  - Le nom de la classe **$** comprend un, c.-à-d. **une classe $.**
+  - Le nom de la classe est entièrement compromis en minuscules, c.-à-d. **une classe.**      
 
 - les instructions &ndash; **pour les bibliothèques non référencées identifient la bibliothèque non référencée et ajoutent ces dépendances au projet de liaison Xamarin. Android avec une action de génération ReferenceJar ou `import`**   **EmbedddedReferenceJar**.
 
@@ -114,19 +114,19 @@ Cette erreur peut se produire pour plusieurs raisons, comme indiqué ci-dessous:
 
 - Java autorise la dérivation d’une classe publique à partir d’une classe non publique, mais cela n’est pas pris en charge dans .NET. Étant donné que le générateur de liaisons ne génère pas de liaisons pour les classes non publiques, les classes dérivées telles que celles-ci ne peuvent pas être générées correctement. Pour résoudre ce problème, supprimez l’entrée de métadonnées pour ces classes dérivées à l’aide de Remove-node dans **Metadata. xml**, ou corrigez les métadonnées qui rend la classe non publique publique. Bien que la dernière solution crée la liaison afin que la C# source soit générée, la classe non publique ne doit pas être utilisée.
 
-    Par exemple :
+  Par exemple :
 
-    ```xml
-    <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
-        name="visibility">public</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
+      name="visibility">public</attr>
+  ```
 
 - Les outils qui brouillent les bibliothèques Java peuvent interférer avec le générateur de liaisons Xamarin. Android et C# sa capacité à générer des classes wrapper. L’extrait de code suivant montre comment mettre à jour le **fichier Metadata. xml** pour débrouiller un nom de classe:
 
-    ```xml
-    <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
-        name="obfuscated">false</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
+      name="obfuscated">false</attr>
+  ```
 
 ### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>Problème : La C# source générée n’est pas générée en raison d’une incompatibilité de type de paramètre
 
@@ -134,7 +134,7 @@ La source C# générée n’est pas générée. Les types de paramètres de la m
 
 #### <a name="possible-causes"></a>Causes possibles:
 
-Xamarin. Android comprend un large éventail de champs Java qui sont mappés aux enums dans C# les liaisons. Celles-ci peuvent entraîner des incompatibilités de type dans les liaisons générées. Pour résoudre ce besoin, les signatures de méthode créées à partir du générateur de liaisons doivent être modifiées pour utiliser les énumérations. Pour plus d’informations, consultez correction des [énumérations](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md).
+Xamarin. Android comprend un large éventail de champs Java qui sont mappés aux enums dans C# les liaisons. Celles-ci peuvent entraîner des incompatibilités de type dans les liaisons générées. Pour résoudre ce besoin, les signatures de méthode créées à partir du générateur de liaisons doivent être modifiées pour utiliser les énumérations. Pour plus d’informations, consultez [Correction](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)des énumérations.
 
 ### <a name="problem-noclassdeffounderror-in-packaging"></a>Problème : NoClassDefFoundError dans l’empaquetage
 
@@ -203,24 +203,24 @@ Il s’agit d’un problème qui se produit lors de la liaison de méthodes Java
 
 - Ajoutez une déclaration de classe partielle `HttpURLConnectionRequestAdapter` pour et implémentez `IHttpRequest.Unwrap()`explicitement:
 
-    ```csharp
-    namespace Oauth.Signpost.Basic {
-        partial class HttpURLConnectionRequestAdapter {
-            Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
-                return Unwrap();
-            }
-        }
-    }
-    ```
+  ```csharp
+  namespace Oauth.Signpost.Basic {
+      partial class HttpURLConnectionRequestAdapter {
+          Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
+              return Unwrap();
+          }
+      }
+  }
+  ```
 
 - Supprimez la covariance du code C# généré. Cela implique l’ajout de la transformation suivante à **Transforms\Metadata.xml** , ce qui C# entraîne le code généré à avoir un `Java.Lang.Object`type de retour:
 
-    ```xml
-    <attr
-        path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
-        name="managedReturn">Java.Lang.Object
-    </attr>
-    ```
+  ```xml
+  <attr
+      path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
+      name="managedReturn">Java.Lang.Object
+  </attr>
+  ```
 
 ### <a name="problem-name-collisions-on-inner-classes--properties"></a>Problème : Collisions de noms sur les classes/propriétés internes
 

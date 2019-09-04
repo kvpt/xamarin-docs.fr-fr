@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b7cd9445ec9f28211037608ab04ffc45bec705c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656192"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227973"
 ---
 # <a name="text-in-xamarinforms"></a>Texte dans Xamarin.Forms
 
@@ -34,7 +34,7 @@ Apparence du texte peut être modifié à l’aide d’intégrés ou personnalis
 
 Le `Label` vue est utilisée pour afficher le texte. Il peut afficher plusieurs lignes de texte ou une seule ligne de texte. `Label` peut présenter texte avec plusieurs options de mise en forme utilisées dans inline. La vue de l’étiquette peut inclure dans un wrapper ou texte tronqué lorsqu’il ne peut pas tenir sur une seule ligne.
 
-![](images/label.png "Exemple d’étiquette")
+![Exemple d’étiquette](images/label.png)
 
 Consultez le [étiquette](label.md) article pour plus d’informations.
 
@@ -46,7 +46,7 @@ Pour plus d’informations sur la personnalisation de la police utilisée dans u
 
 `Entry` est utilisé pour accepter l’entrée de texte à ligne unique. `Entry` offre un contrôle sur les polices et couleurs. `Entry` dispose d’un mode de mot de passe et peut afficher du texte de l’espace réservé jusqu'à ce que l’entrée de texte.
 
-![](images/entry.png "Exemple d’entrée")
+![Exemple d’entrée](images/entry.png)
 
 Consultez le [entrée](entry.md) article pour plus d’informations.
 
@@ -58,7 +58,7 @@ Notez que, contrairement à `Label`, `Entry` ne peut pas avoir de paramètres de
 
 `Editor` est utilisé pour accepter l’entrée de texte multiligne. `Editor` offre un contrôle sur les polices et couleurs.
 
-![](images/editor.png "Exemple d’éditeur")
+![Exemple d’éditeur](images/editor.png)
 
 Consultez le [éditeur](editor.md) article pour plus d’informations.
 

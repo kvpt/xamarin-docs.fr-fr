@@ -7,38 +7,38 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119964"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226772"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Où trouver les informations sur ma version et les journaux ?
 
 ## <a name="outline"></a>Contour
 
 - [Informations sur la version](#version-information)
-    - Informations sur la version de Windows
-    - Informations sur la version Mac
-    - Android SDK Tools, outils de plateforme, outils de génération
+  - Informations sur la version de Windows
+  - Informations sur la version Mac
+  - Android SDK Tools, outils de plateforme, outils de génération
 - [Journaux de l’IDE et du programme d’installation](#ide-and-installer-logs)
-    - [Journaux Windows](#windows-logs)
-        - Xamarin Studio
-        - Xamarin pour Visual Studio
-        - Programme d’installation Xamarin Universal
-        - Programmes `.msi` d’installation individuels, journaux détaillés
-        - Démarrage de Visual Studio, journaux détaillés
-    - [Journaux Mac](#mac-logs)
-        - Hôte de build
-    - Visual Studio pour Mac
-        - Xamarin Studio
-        - Programme d’installation de Xamarin
+  - [Journaux Windows](#windows-logs)
+    - Xamarin Studio
+    - Xamarin pour Visual Studio
+    - Programme d’installation Xamarin Universal
+    - Programmes `.msi` d’installation individuels, journaux détaillés
+    - Démarrage de Visual Studio, journaux détaillés
+  - [Journaux Mac](#mac-logs)
+    - Hôte de build
+  - Visual Studio pour Mac
+    - Xamarin Studio
+    - Programme d’installation de Xamarin
 - [Sortie de la génération détaillée](#verbose-build-output-logs)
 - [Journaux de débogage pour les applications Xamarin. Android et Xamarin. iOS](#debug-logs-for-xamarin-apps)
-    - Journaux `adb` logcat Android
-    - journaux du simulateur iOS (sur Mac)
-    - journaux des appareils iOS (sur Mac)
+  - Journaux `adb` logcat Android
+  - journaux du simulateur iOS (sur Mac)
+  - journaux des appareils iOS (sur Mac)
 
 ## <a name="a-idversion-information-nameversion-information-version-information"></a><a id="version-information" name="version-information" />Informations sur la version
 

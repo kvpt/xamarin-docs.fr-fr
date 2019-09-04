@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: 29e737e5a6cb6abdae099c0224a2da058c2ea025
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: af0765adb7e059bdc80c0b851b4bdcad8be0e3e4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527737"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227827"
 ---
 # <a name="cloudkit-in-xamarinios"></a>CloudKit dans Xamarin. iOS
 
@@ -55,7 +55,7 @@ Avant qu’une application Xamarin puisse utiliser CloudKit Framework, l’appli
 
 1. Ouvrez le projet dans Visual Studio pour Mac ou Visual Studio.
 2. Dans le **Explorateur de solutions**, ouvrez le fichier **info. plist** et assurez-vous que l' **identificateur de Bundle** correspond à celui défini dans ID d' **application** créé dans le cadre de la configuration de l’approvisionnement:
- 
+
     [![](intro-to-cloudkit-images/image26a.png "Entrer l’identificateur de Bundle")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3. Faites défiler le fichier **info. plist** jusqu’en bas et sélectionnez **activé les modes d’arrière-plan**, les **mises à jour** de l’emplacement et les notifications distantes:
@@ -471,42 +471,42 @@ CloudKit prend en charge les types `NSPredicates` suivants de lorsque vous utili
 
 
 1. Enregistrements correspondants où le nom est égal à une valeur stockée dans une variable:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("name = '{0}'", recordName))
     ```
-   
+
 2. Permet à la correspondance d’être basée sur une valeur de clé dynamique, de sorte que la clé n’a pas besoin d’être connue au moment de la compilation:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("{0} = '{1}'", key, value))
     ```
-    
+
 3. Enregistrements correspondants où la valeur de l’enregistrement est supérieure à la valeur donnée:
-   
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0}", (NSDate)date))
     ```
 
 4. Les enregistrements correspondants où l’emplacement de l’enregistrement se trouve dans 100 mètres de l’emplacement donné:
-    
-    ```
+
+    ```csharp
     var location = new CLLocation(37.783,-122.404);
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
 5. CloudKit prend en charge une recherche avec jetons. Cet appel va créer deux jetons, un pour `after` et un autre pour. `session` Elle renverra un enregistrement qui contient ces deux jetons:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
-    
+
 6. CloudKit prend en charge les prédicats composés `AND` joints à l’aide de l’opérateur.
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-    
+
 
 
 #### <a name="creating-queries"></a>Création de requêtes
@@ -820,40 +820,40 @@ Avant d’expédier une application qui utilise CloudKit, elle doit être config
 
 Effectuez ce qui suit :
 
-1. Dans Visual Studio pour ma, compilez l’application pour l'**appareil iOS**de **mise en sortie** > : 
+1. Dans Visual Studio pour ma, compilez l’application pour l'**appareil iOS**de **mise en sortie** > :
 
     [![](intro-to-cloudkit-images/shipping01.png "Compiler l’application pour la mise en version")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. Dans le menu **générer** , sélectionnez **Archive**: 
+2. Dans le menu **générer** , sélectionnez **Archive**:
 
     [![](intro-to-cloudkit-images/shipping02.png "Sélectionner l’archive")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
-3. L' **Archive** est créée et affichée dans Visual Studio pour Mac: 
+3. L' **Archive** est créée et affichée dans Visual Studio pour Mac:
 
     [![](intro-to-cloudkit-images/shipping03.png "L’archive sera créée et affichée")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. Démarrez **Xcode**.
-5. Dans le menu **fenêtre** , sélectionnez **organisateur**: 
+5. Dans le menu **fenêtre** , sélectionnez **organisateur**:
 
     [![](intro-to-cloudkit-images/shipping04.png "Sélectionner l’organisateur")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. Sélectionnez l’archive de l’application, puis cliquez sur le bouton **Exporter...** : 
+6. Sélectionnez l’archive de l’application, puis cliquez sur le bouton **Exporter...** :
 
     [![](intro-to-cloudkit-images/shipping05.png "L’archive de l’application")](intro-to-cloudkit-images/shipping05.png#lightbox)
-    
-7. Sélectionnez une méthode pour l’exportation, puis cliquez sur le bouton **suivant** : 
+
+7. Sélectionnez une méthode pour l’exportation, puis cliquez sur le bouton **suivant** :
 
     [![](intro-to-cloudkit-images/shipping06.png "Sélectionner une méthode pour l’exportation")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. Sélectionnez l' **équipe de développement** dans la liste déroulante, puis cliquez sur le bouton **choisir** : 
+8. Sélectionnez l' **équipe de développement** dans la liste déroulante, puis cliquez sur le bouton **choisir** :
 
     [![](intro-to-cloudkit-images/shipping07.png "Sélectionner l’équipe de développement dans la liste déroulante")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. Sélectionnez **production** dans la liste déroulante, puis cliquez sur le bouton **suivant** : 
+9. Sélectionnez **production** dans la liste déroulante, puis cliquez sur le bouton **suivant** :
 
     [![](intro-to-cloudkit-images/shipping08.png "Sélectionnez production dans la liste déroulante.")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. Vérifiez le paramètre, puis cliquez sur le bouton **Exporter** : 
+10. Vérifiez le paramètre, puis cliquez sur le bouton **Exporter** :
 
     [![](intro-to-cloudkit-images/shipping09.png "Vérifier le paramètre")](intro-to-cloudkit-images/shipping09.png#lightbox)
 

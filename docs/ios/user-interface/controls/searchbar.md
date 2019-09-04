@@ -1,50 +1,50 @@
 ---
-title: Barres de recherche dans Xamarin.iOS
-description: Ce document décrit comment utiliser des barres de recherche dans Xamarin.iOS. Il explique comment créer des barres de recherche dans une table de montage séquentiel et par programme.
+title: Rechercher des barres dans Xamarin. iOS
+description: Ce document explique comment utiliser les barres de recherche dans Xamarin. iOS. Il explique comment créer des barres de recherche par programmation et dans une table de montage séquentiel.
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 75abb943dbc56d7b4213e0c36c19ff338182ae8a
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 78776b669b9f389398c54d72a9080a90f8664429
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674870"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226316"
 ---
-# <a name="search-bars-in-xamarinios"></a>Barres de recherche dans Xamarin.iOS
+# <a name="search-bars-in-xamarinios"></a>Rechercher des barres dans Xamarin. iOS
 
-Le UISearchBar est utilisé pour effectuer des recherches dans une liste de valeurs. 
+Le UISearchBar est utilisé pour effectuer une recherche dans une liste de valeurs.
 
-Il contient trois composants principaux : 
+Il contient trois composants principaux:
 
-- Un champ utilisé pour entrer du texte. Les utilisateurs peuvent utiliser cette option pour entrer leur terme de recherche.
-- Bouton Effacer, à supprimer n’importe quel texte à partir du champ de recherche.
-- Un bouton Annuler pour quitter la fonction de recherche.
+- Champ utilisé pour entrer du texte. Les utilisateurs peuvent l’utiliser pour entrer leur terme de recherche.
+- Bouton Effacer pour supprimer tout texte du champ de recherche.
+- Bouton Annuler pour quitter la fonction de recherche.
 
 ![Barre de recherche](searchbar-images/image1.png)
 
 ## <a name="implementing-the-search-bar"></a>Implémentation de la barre de recherche
 
-Pour implémenter le début de barre de recherche en instanciant un :
+Pour implémenter la barre de recherche, commencez par instancier une nouvelle:
 
 ```csharp
 searchBar = new UISearchBar();
 ```
 
-Et puis les placer. L’exemple ci-dessous montre comment placer dans la barre de navigation ou dans le HeaderView d’une Table :
+Puis placez-le. L’exemple ci-dessous montre comment le placer dans la barre de navigation ou dans le HeaderView d’un tableau:
 
 ```csharp
 NavigationItem.TitleView = searchBar;
 
-\\or
+// or
 
 TableView.TableHeaderView = searchBar;
 ```
 
-Définition des propriétés sur la barre de recherche :
+Définition des propriétés dans la barre de recherche:
 
 ```csharp
  searchBar = new UISearchBar(){
@@ -57,7 +57,7 @@ Définition des propriétés sur la barre de recherche :
 
 ![Propriétés de la barre de recherche](searchbar-images/image6.png)
 
-Déclencher la `SearchButtonClicked` événement lorsque l’utilisateur appuie sur le bouton de recherche. Cela permet d’appeler votre logique de recherche :
+Déclenchez `SearchButtonClicked` l’événement lorsque le bouton de recherche est enfoncé. Cela appellera votre logique de recherche:
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -65,36 +65,36 @@ searchBar.SearchButtonClicked += (sender, e) => {
             };
 ```
 
-Pour plus d’informations sur la gestion de la présentation de la barre de recherche et les résultats de recherche, reportez-vous à la [recherche contrôleur](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller) Recipe (Recette).
+Pour plus d’informations sur la gestion de la présentation de la barre de recherche et des résultats de recherche, reportez-vous à la recette du [contrôleur de recherche](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller) .
 
-## <a name="using-the-search-bar-in-the-designer"></a>À l’aide de la barre de recherche dans le Concepteur
+## <a name="using-the-search-bar-in-the-designer"></a>Utilisation de la barre de recherche dans le concepteur
 
-Le concepteur propose deux options pour l’implémentation d’une barre de recherche dans le Concepteur
+Le concepteur propose deux options pour implémenter une barre de recherche dans le concepteur.
 
 - Barre de recherche
-- Barre de recherche avec le contrôleur d’affichage de recherche (déconseillé)
+- Barre de recherche avec contrôleur d’affichage de la recherche (déconseillé)
 
-![Contrôles de barre de recherche dans le Concepteur](searchbar-images/image2.png)
+![Contrôles de la barre de recherche dans le concepteur](searchbar-images/image2.png)
 
-Utilisez le panneau de propriété pour définir des propriétés sur la barre de recherche
+Utilisez le panneau des propriétés pour définir les propriétés de la barre de recherche
 
-![Concepteur de propriétés de barre de recherche](searchbar-images/image3.png)
+![Concepteur des propriétés de la barre de recherche](searchbar-images/image3.png)
 
-Ces propriétés sont expliquées ci-dessous :
+Ces propriétés sont expliquées ci-dessous:
 
-- **Invite de texte, l’espace réservé,** – ces propriétés sont utilisées pour proposer et indiquer comment les utilisateurs doivent utiliser la barre de recherche. Par exemple, si votre application affiche une liste des magasins, vous pouvez utiliser la propriété d’invite pour signaler que les utilisateurs peuvent « entrer une ville, le nom de l’article ou le Code postal »
-- **Rechercher le Style** – vous pouvez définir la barre de recherche pour être **Prominent** ou **minimale**. À l’aide de l’importante colorer tout le reste à l’écran, à l’exception de la recherche de la barre, provoquant le focus à dessiner à la barre de recherche. La barre de recherche du style minimale s’intégreront avec son environnement.
-- **Fonctionnalités** : l’activation de ces propriétés n’affiche que l’élément d’interface utilisateur. La fonctionnalité doit être implémentée pour ces en déclenchant l’événement correct comme indiqué dans le [documentation sur les API de barre de recherche](xref:UIKit.UISearchBar)
-    - Affiche les résultats de recherche / signets – affiche une icône de résultats de recherche ou des signets sur la barre de recherche
-    - Affiche le bouton Annuler – permet aux utilisateurs de quitter la fonction de recherche. Il est recommandé que cette option est sélectionnée.
-    - Affiche barre d’outils : Cela permet aux utilisateurs limiter l’étendue de leur recherche. Par exemple, lors de la recherche dans l’application musique l’utilisateur peut sélectionner si qu’ils veulent rechercher Apple Music ou leur bibliothèque pour une chanson donnée ou d’un artiste. Pour afficher les différentes options, ajoutez un tableau de titres pour le **ScopeBarTitles** propriété.
-    ![Titres de portée de barre de recherche](searchbar-images/image4.png)
+- **Texte, espace réservé, invite** : ces propriétés sont utilisées pour suggérer et indiquer comment les utilisateurs doivent utiliser la barre de recherche. Par exemple, si votre application affiche une liste de magasins, vous pouvez utiliser la propriété prompt pour indiquer que les utilisateurs peuvent «entrer une ville, un nom d’histoire ou un code postal»
+- **Style de recherche** : vous pouvez définir la barre de recherche pour qu’elle soit **visible** ou **minimale**. À l’aide de l’élément le plus visible, vous allez teinter tout le reste à l’écran, à l’exception de la barre de recherche, ce qui entraîne le dessin du focus sur la barre de recherche. La barre de recherche de style minimale sera fusionnée avec son environnement.
+- **Fonctionnalités** : l’activation de ces propriétés affiche uniquement l’élément d’interface utilisateur. La fonctionnalité doit être implémentée pour ces derniers en déclenchant l’événement correct, comme détaillé dans les documents de l’API de la [barre de recherche](xref:UIKit.UISearchBar)
+  - Affiche le bouton résultats de la recherche/signets – affiche les résultats de la recherche ou l’icône de signets dans la barre de recherche
+  - Affiche le bouton Annuler: permet aux utilisateurs de quitter la fonction de recherche. Il est recommandé de sélectionner cette option.
+  - Affiche la barre d’étendue: permet aux utilisateurs de limiter l’étendue de leur recherche. Par exemple, lors de la recherche dans l’application musique, l’utilisateur peut choisir s’il souhaite effectuer une recherche dans Apple Music ou dans sa bibliothèque pour obtenir une chanson ou un artiste particulier. Pour afficher différentes options, ajoutez un tableau de titres à la propriété **ScopeBarTitles** .
+  ![Titres de l’étendue de la barre de recherche](searchbar-images/image4.png)
 
-- **Comportement de texte** – ces options sont utilisées pour traiter le mode de formatage de l’entrée d’utilisateur lorsqu’il tape. Mise en majuscules définira le début de chaque mot ou une phrase, ou tous les caractères en majuscules. Correction et la vérification de l’orthographe avec invitent l’utilisateur avec des suggestions de mots de frappe.
-- **Clavier** : contrôles le style de clavier affiché pour l’entrée, et par conséquent, les clés sont disponibles sur le clavier. Cela inclut le pavé numérique, remplissage du téléphone, E-mail, URL, ainsi que d’autres options.
-- **Apparence** : contrôle le style d’apparence du clavier et seront soit sombre ou clair à thème.
-- **Touche retour** : modifier l’étiquette sur la touche Retour afin de mieux refléter les mesures. Valeurs prises en charge incluent Go, Join, Next, itinéraire, terminé et recherche.
-- **Sécuriser** – indique si l’entrée est masquée (par exemple pour une entrée de mot de passe).
+- **Comportement du texte** : ces options sont utilisées pour traiter la manière dont l’entrée utilisateur est mise en forme lors de la saisie. La mise en majuscules définit le début de chaque mot ou phrase, ou chaque caractère en majuscules. Correction et vérification de l’orthographe avec invite l’utilisateur à saisir l’orthographe suggérée des mots au fur et à mesure de leur saisie.
+- **Clavier** : contrôle le style de clavier affiché pour l’entrée et, par conséquent, les touches disponibles sur le clavier. Cela comprend le pavé numérique, le pavé téléphonique, l’adresse de messagerie et l’URL, ainsi que d’autres options.
+- **Apparence** : contrôle le style d’apparence du clavier et est sombre ou clair.
+- **Clé de retour** : modifiez l’étiquette sur la clé de retour pour mieux refléter l’action qui sera entreprise. Les valeurs prises en charge sont les suivantes: Go, Join, Next, route, Done et Search.
+- **Secure** : indique si l’entrée est masquée (par exemple, pour une entrée de mot de passe).
 
 ## <a name="related-links"></a>Liens associés
 

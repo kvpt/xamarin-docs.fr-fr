@@ -1,60 +1,60 @@
 ---
-title: Étiquettes dans Xamarin.iOS
-description: Ce document explique comment utiliser des étiquettes dans Xamarin.iOS. Il décrit comment créer des étiquettes par programmation et avec le concepteur iOS.
+title: Étiquettes dans Xamarin. iOS
+description: Ce document explique comment utiliser des étiquettes dans Xamarin. iOS. Il décrit comment créer des étiquettes par programmation et avec le concepteur iOS.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: cca74ac74e5077822193f6dd97a69f8d9b823561
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 41cd0eb93cee216311ea42f7ca027a1556b322e6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227827"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227073"
 ---
-# <a name="labels-in-xamarinios"></a>Étiquettes dans Xamarin.iOS
+# <a name="labels-in-xamarinios"></a>Étiquettes dans Xamarin. iOS
 
-Le `UILabel` contrôle est utilisé pour l’affichage unique et plusieurs lignes, texte en lecture seule. 
+Le `UILabel` contrôle est utilisé pour afficher du texte en lecture seule et multiligne.
 
 ## <a name="implementing-a-label"></a>Implémentation d’une étiquette
 
-Une nouvelle étiquette est créée en instanciant un [ `UILabel` ](xref:UIKit.UILabel):
+Une nouvelle étiquette est créée en instanciant [`UILabel`](xref:UIKit.UILabel)un:
 
 ```csharp
 UILabel label = new UILabel();
 ```
 
-### <a name="labels-and-storyboards"></a>Étiquettes et les tables de montage séquentiel
+### <a name="labels-and-storyboards"></a>Étiquettes et storyboards
 
-Vous pouvez également ajouter une étiquette à votre interface utilisateur lors de l’utilisation du concepteur iOS. Recherchez **étiquette** dans le **boîte à outils** et faites-le glisser vers votre vue :
+Vous pouvez également ajouter une étiquette à votre interface utilisateur lors de l’utilisation du concepteur iOS. Recherchez **étiquette** dans la **boîte à outils** et faites-la glisser vers votre vue:
 
-![L’étiquette dans la boîte à outils](labels-images/image3.png)
+![Étiquette dans la boîte à outils](labels-images/image3.png)
 
-Les propriétés suivantes peuvent être ajustées pour le panneau Propriétés :
+Les propriétés suivantes peuvent être ajustées dans le panneau Propriétés:
 
-![Panneau Propriétés de l’étiquette](labels-images/image2.png)
+![Panneau des propriétés de l’étiquette](labels-images/image2.png)
 
-- **Contexte du texte** – brut ou avec attributs. Texte brut vous permet de définir le [mise en forme des attributs](#Formatting_Text_and_Label) sur la chaîne entière. Textes avec attributs vous permet de définir la mise en forme des caractères différents ou des mots dans la chaîne.
-- **Alignement de la couleur, la police,** – mise en forme des attributs qui peuvent être appliquées à l’étiquette.
-- **Lignes** : définit le nombre de lignes de l’étiquette peut s’étendre sur. Définissez ce paramètre sur 0 pour permettre à l’étiquette à utiliser autant de lignes en fonction des besoins.
-- **Comportement** – peut être définie sur activée ou en surbrillance. Activé est définie par défaut, le texte désactivé apparaît dans une couleur grise plus claire. Mise en surbrillance est désactivée par défaut et permet l’étiquette à être redessiné avec un état mis en surbrillance lorsqu’il est sélectionné par un utilisateur.
-- **Baselane et saut de ligne** : 
-    - La ligne de base détermine la façon dont le texte sera positionné si les tailles de police est différente de celle spécifiée.
-    - Sauts de ligne déterminent la façon dont une chaîne sera encapsulée ou tronquée si elle est supérieure à une seule ligne.
-- **Autoshrink** : détermine la façon dont la taille de police sera réduite au sein d’une étiquette, si nécessaire.
-- **Mise en surbrillance, ombre, décalage** : vous permet de définir la couleur en surbrillance et les clichés instantanés, et le décalage de l’ombre.
+- **Contexte de texte** : brut ou attribué. Le texte brut vous permet de définir les [attributs de mise en forme](#Formatting_Text_and_Label) de la chaîne entière. Les textes avec attributs vous permettent de définir une mise en forme avec des caractères ou des mots différents dans la chaîne.
+- **Couleur, police, alignement** -attributs de mise en forme qui peuvent être appliqués à l’étiquette.
+- **Lignes** : définit le nombre de lignes que l’étiquette peut couvrir. Affectez-lui la valeur 0 pour permettre à l’étiquette d’utiliser autant de lignes que nécessaire.
+- **Comportement** : peut être défini sur activé ou mis en surbrillance. Activé est défini par défaut, le texte désactivé s’affiche dans une couleur plus claire. La mise en surbrillance est désactivée par défaut et permet de redessiner l’étiquette avec un État mis en surbrillance lorsqu’elle est sélectionnée par un utilisateur.
+- **Baselane et saut de ligne** :
+  - Limites détermine la façon dont le texte est positionné si les tailles de police sont différentes de celles spécifiées.
+  - Les sauts de ligne déterminent la façon dont une chaîne est encapsulée ou tronquée si elle est plus longue qu’une seule ligne.
+- **AutoShrink** : détermine la façon dont la taille de la police est réduite au sein d’une étiquette, si nécessaire.
+- **Surligné, ombre, décalage** : vous permet de définir la maillage et la couleur de l’ombre, ainsi que le décalage de l’ombre.
 
-## <a name="truncating-and-wrapping"></a>Troncation et d’habillage
+## <a name="truncating-and-wrapping"></a>Troncation et encapsulation
 
-Pour plus d’informations sur l’utilisation de la ligne s’arrête dans iOS, reportez-vous à la [tronquer et habiller le texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) Recipe (Recette).
+Pour plus d’informations sur l’utilisation des sauts de ligne dans iOS, reportez-vous à la recette de [troncation et de retour automatique](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) à la ligne.
 
 <a name="Formatting_Text_and_Label"/>
 
-## <a name="formatting-text-and-label"></a>Mise en forme de texte et étiquette
+## <a name="formatting-text-and-label"></a>Mise en forme du texte et de l’étiquette
 
-Pour mettre en forme la chaîne que vous utilisez dans une étiquette, vous pouvez soit définir les attributs sur l’ensemble de la chaîne de mise en forme ou vous pouvez utiliser des chaînes avec attributs. Les exemples suivants montrent comment implémenter ces :
+Pour mettre en forme la chaîne que vous utilisez dans une étiquette, vous pouvez soit définir des attributs de mise en forme sur la chaîne entière, soit utiliser des chaînes avec attributs. Les exemples suivants montrent comment les implémenter:
 
 ```csharp
 label = new UILabel(){
@@ -74,19 +74,19 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Pour plus d’informations sur l’utilisation de texte de style `NSAttributedString` reportez-vous à la [Style texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) Recipe (Recette).
+Pour plus d’informations sur le style du `NSAttributedString` texte à l’aide de, consultez la recette du [style de texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) .
 
-Par défaut, les étiquettes ont le `Enabled` défini sur true, mais il est possible de définir sur désactivé pour donner à l’utilisateur une indication qu’un contrôle est désactivé :
+Par défaut, les étiquettes `Enabled` ont la valeur true, mais il est possible de lui affecter la valeur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé:
 
 ```csharp
 label.Enabled = false;
 ```
 
-Cela définit l’étiquette sur une couleur grise claire, comme illustré dans l’exemple d’image de l’écran de Restrictions dans iOS :
+Cela affecte à l’étiquette une couleur gris clair, comme illustré dans l’exemple suivant d’image de l’écran restrictions dans iOS:
 
 ![Bouton désactivé dans iOS](labels-images/image1.png)
 
-Vous pouvez également définir les couleurs de texte mise en surbrillance et les clichés instantanés pour votre texte d’étiquette pour des effets supplémentaires :
+Vous pouvez également définir les couleurs de surbrillance et de texte ombré sur le texte de votre étiquette pour des effets supplémentaires:
 
 ```csharp
 label.Highlighted = true;
@@ -96,11 +96,11 @@ label.ShadowColor = UIColor.Black;
 label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ```
 
-Qui affiche le texte comme suit :
+Qui affiche le texte comme suit:
 
-![Mise en surbrillance et les clichés instantanés de la définir sur du texte](labels-images/image4.png)
+![Mise en surbrillance et jeu d’ombres sur le texte](labels-images/image4.png)
 
-Pour plus d’informations sur la modification de la police d’un UILabel, reportez-vous à la [modifier la police le](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) Recipe (Recette).
+Pour plus d’informations sur la modification de la police d’un UILabel, consultez [modifier la](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) recette de la police.
 
 
 

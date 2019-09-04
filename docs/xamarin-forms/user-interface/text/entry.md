@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650276"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227981"
 ---
 # <a name="xamarinforms-entry"></a>Entrée de Xamarin.Forms
 
@@ -105,7 +105,7 @@ En C# :
 var MyEntry = new Entry { IsPassword = true };
 ```
 
-![](entry-images/password.png "Exemple d’entrée IsPassword")
+![Exemple de IsPassword d’entrée](entry-images/password.png)
 
 Espaces réservés peuvent être utilisés avec les instances de `Entry` qui sont configurés en tant que champs de mot de passe :
 
@@ -121,7 +121,7 @@ En C# :
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "Entrée IsPassword et exemple d’espace réservé")
+![Exemple d’entrée IsPassword et d’espace réservé](entry-images/passwordplaceholder.png)
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>Définition de la Position du curseur et la longueur de sélection de texte
 
@@ -294,7 +294,7 @@ var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "Exemple d’entrée TextColor")
+![Exemple de TextColor d’entrée](entry-images/textcolor.png)
 
 Notez que l’espace réservé n’est pas affecté par le `TextColor`.
 
@@ -311,7 +311,7 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "Exemple d’entrée BackgroundColor")
+![Exemple d’entrée BackgroundColor](entry-images/textbackgroundcolor.png)
 
 Veillez à vous assurer que les couleurs d’arrière-plan et le texte que vous choisissez sont utilisables sur chaque plateforme et n’assombrissent pas n’importe quel texte d’espace réservé.
 

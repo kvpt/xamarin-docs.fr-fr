@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 5c12b5a5c0e558403362bd12baddfb8201f40759
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 24ab8f4b988277cbbf1162a08e5641332a58bd81
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642926"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228150"
 ---
 # <a name="xamarinforms-label"></a>Étiquette de Xamarin.Forms
 
@@ -48,7 +48,7 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 
 L’émission des captures d’écran suivante le `TextDecorations` appliqués aux membres de l’énumération [ `Label` ](xref:Xamarin.Forms.Label) instances :
 
-![](label-images/label-textdecorations.png "Étiquettes avec décorations de texte")
+![Étiquettes avec décorations de texte](label-images/label-textdecorations.png)
 
 > [!NOTE]
 > Ornements de texte peuvent également être appliqués aux [ `Span` ](xref:Xamarin.Forms.Span) instances. Pour plus d’informations sur la `Span` de classe, consultez [texte au format](#Formatted_Text).
@@ -91,7 +91,7 @@ public partial class LabelPage : ContentPage
 
 Les captures d’écran suivantes affichent le résultat du paramètre de la `TextColor` propriété :
 
-![](label-images/textcolor.png "Exemple d’étiquette TextColor")
+![Exemple d’étiquette TextColor](label-images/textcolor.png)
 
 Pour plus d’informations sur les couleurs, consultez [couleurs](~/xamarin-forms/user-interface/colors.md).
 
@@ -140,7 +140,7 @@ var label =
 
 Les captures d’écran suivantes affichent le résultat du paramètre de la `MaxLines` propriété à 2, lorsque le texte est suffisamment long pour occuper plus de 2 lignes :
 
-![](label-images/label-maxlines.png "Exemple d’étiquette MaxLines")
+![Exemple d’étiquette MaxLines](label-images/label-maxlines.png)
 
 <a name="Formatted_Text" />
 
@@ -223,7 +223,7 @@ Notez qu’un [ `Span` ](xref:Xamarin.Forms.Span) peut également répondre à n
 
 Les captures d’écran suivantes affichent le résultat du paramètre de la `FormattedString` propriété à trois `Span` instances :
 
-![](label-images/formattedtext.png "Exemple d’étiquette FormattedText")
+![Exemple d’étiquette FormattedText](label-images/formattedtext.png)
 
 ## <a name="line-height"></a>Hauteur de ligne
 
@@ -254,7 +254,7 @@ var label =
 
 Les captures d’écran suivantes affichent le résultat du paramètre de la [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight) propriété 1.8 :
 
-![](label-images/label-lineheight.png "Exemple d’étiquette LineHeight")
+![Exemple d’étiquette LineHeight](label-images/label-lineheight.png)
 
 L’exemple XAML suivant montre comment définir le [ `LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) propriété sur un [ `Span` ](xref:Xamarin.Forms.Span):
 
@@ -294,7 +294,7 @@ var label = new Label
 
 Les captures d’écran suivantes affichent le résultat du paramètre de la [ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight) propriété 1.8 :
 
-![](label-images/span-lineheight.png "Exemple de LineHeight span")
+![Exemple d’étendue de LineHeight](label-images/span-lineheight.png)
 
 ## <a name="hyperlinks"></a>Liens hypertexte
 

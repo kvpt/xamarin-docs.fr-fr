@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c0ee125090a2bb817f09a18c34033a1f8a788569
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528718"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227282"
 ---
 # <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin. iOS
 
@@ -29,7 +29,7 @@ Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles 
 TextKit fournit une architecture en couches qui sépare le stockage de texte de la disposition et de l’affichage, y compris les classes suivantes:
 
 - `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
-- `NSLayoutManager`: Met du texte en forme de glyphes. 
+- `NSLayoutManager`: Met du texte en forme de glyphes.
 - `NSTextStorage`: Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
 
 
@@ -160,7 +160,7 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 La capture d’écran suivante illustre la façon dont la disposition du texte change pour circuler autour du tracé dessiné:
 
-<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")--> 
+<!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")-->
 ![](textkit-images/exclusionpath2.png "Cette capture d’écran illustre la modification de la disposition du texte autour du tracé dessiné.")
 
 Notez que la propriété du `AllowsNonContiguousLayout` gestionnaire de présentation est définie sur false dans ce cas. Cela entraîne le recalcul de la disposition pour tous les cas où le texte change. Si vous affectez la valeur true, vous pouvez bénéficier des performances en évitant une actualisation de la mise en page complète, en particulier dans le cas de documents volumineux. Toutefois, l' `AllowsNonContiguousLayout` affectation de la valeur true empêche le chemin d’exclusion de mettre à jour la disposition dans certains cas, par exemple, si du texte est entré au moment de l’exécution sans retour chariot de fin avant la définition du chemin d’accès.

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 543a94cbe1c882aba6b005427eb11f52e6a40327
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: badb65ace8d2ab68e102c9be127abe998a602091
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653763"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225852"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Utilisation des graphiques de base et des animations principales dans Xamarin. iOS
 
@@ -28,18 +28,18 @@ Avant de commencer, téléchargez l’exemple *GraphicsDemo* qui accompagne ce g
 
 
 1. Dans `DemoView` , ajoutez `CGPath` une variable à la classe et instanciez-la dans le constructeur. Vous pouvez également `CGPoint` déclarer deux `initialPoint` variables `latestPoint`, et, que nous utiliserons pour capturer le point tactile à partir duquel nous créons le chemin d’accès:
-    
+
     ```csharp
     public class DemoView : UIView
     {
         CGPath path;
         CGPoint initialPoint;
         CGPoint latestPoint;
-    
+
         public DemoView ()
         {
             BackgroundColor = UIColor.White;
-    
+
             path = new CGPath ();
         }
     }
@@ -57,22 +57,22 @@ Avant de commencer, téléchargez l’exemple *GraphicsDemo* qui accompagne ce g
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
-    
+
         base.TouchesBegan (touches, evt);
-    
+
         UITouch touch = touches.AnyObject as UITouch;
-        
+
         if (touch != null) {
             initialPoint = touch.LocationInView (this);
         }
     }
-    
+
     public override void TouchesMoved (NSSet touches, UIEvent evt){
-    
+
         base.TouchesMoved (touches, evt);
-    
+
         UITouch touch = touches.AnyObject as UITouch;
-        
+
         if (touch != null) {
             latestPoint = touch.LocationInView (this);
             SetNeedsDisplay ();
@@ -86,30 +86,30 @@ Avant de commencer, téléchargez l’exemple *GraphicsDemo* qui accompagne ce g
 
     ```csharp
     public override void Draw (CGRect rect){
-    
+
         base.Draw (rect);
-    
+
         if (!initialPoint.IsEmpty) {
-    
+
             //get graphics context
             using(CGContext g = UIGraphics.GetCurrentContext ()){
-                    
+
                 //set up drawing attributes
                 g.SetLineWidth (2);
                 UIColor.Red.SetStroke ();
-    
+
                 //add lines to the touch points
                 if (path.IsEmpty) {
                     path.AddLines (new CGPoint[]{initialPoint, latestPoint});
                 } else {
                     path.AddLineToPoint (latestPoint);
                 }
-            
+
                 //use a dashed line
                 g.SetLineDash (0, new nfloat[] { 5, 2 * (nfloat)Math.PI });
-                                
+
                 //add geometry to graphics context and draw it
-                g.AddPath (path);       
+                g.AddPath (path);
                 g.DrawPath (CGPathDrawingMode.Stroke);
             }
         }
@@ -130,12 +130,12 @@ Maintenant que nous avons implémenté le code pour permettre aux utilisateurs d
     public class DemoView : UIView
         {
             …
-    
+
             CALayer layer;
-    
+
             public DemoView (){
                 …
-    
+
                 //create layer
                 layer = new CALayer ();
                 layer.Bounds = new CGRect (0, 0, 50, 50);

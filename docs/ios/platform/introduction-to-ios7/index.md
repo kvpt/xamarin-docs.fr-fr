@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 962f06367542cc0e5d0d17f3261411c96f215e44
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527572"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227476"
 ---
 # <a name="introduction-to-ios-7"></a>Introduction à iOS 7
 
@@ -36,14 +36,14 @@ Le code suivant produit un effet de ressort lorsque le centre de la vue d’imag
 
 ```csharp
 void AnimateWithSpring ()
-{ 
+{
     float springDampingRatio = 0.25f;
     float initialSpringVelocity = 1.0f;
-    
+
     UIView.AnimateNotify (3.0, 0.0, springDampingRatio, initialSpringVelocity, 0, () => {
-    
-        imageView.Center = new CGPoint (imageView.Center.X, 400);   
-            
+
+        imageView.Center = new CGPoint (imageView.Center.X, 400);
+
     }, null);
 }
 ```
@@ -67,11 +67,11 @@ void AnimateViewWithKeyframes ()
     // can now use keyframes directly on UIView without needing to drop directly into Core Animation
 
     UIView.AnimateKeyframes (2.0, 0, UIViewKeyframeAnimationOptions.Autoreverse, () => {
-        UIView.AddKeyframeWithRelativeStartTime (0.0, 0.5, () => { 
+        UIView.AddKeyframeWithRelativeStartTime (0.0, 0.5, () => {
             imageView.Center = new CGPoint (200, 200);
         });
 
-        UIView.AddKeyframeWithRelativeStartTime (0.5, 0.5, () => { 
+        UIView.AddKeyframeWithRelativeStartTime (0.5, 0.5, () => {
             imageView.Transform = CGAffineTransform.MakeRotation ((float)Math.PI / 2);
         });
     }, (finished) => {
@@ -156,7 +156,7 @@ dynAnimator.AddBehavior (gravity);
 
 Cela a pour effet d’animer l’image vers le bas avec la gravité, comme illustré ci-dessous:
 
-![](images/gravity2.png "") 
+![](images/gravity2.png "")
 Emplacement de l’image de départ![](images/gravity3.png "de l’emplacement de fin de l’image")
 
 Étant donné qu’il n’y a rien de contraindre les limites de l’écran, la vue d’image se trouve simplement en bas. Pour contraindre la vue afin que l’image soit en conflit avec les bords de l’écran, nous pouvons ajouter `UICollisionBehavior`un. Nous aborderons cela dans la section suivante.

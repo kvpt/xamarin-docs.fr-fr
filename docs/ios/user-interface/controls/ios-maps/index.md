@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 157f797ebb19de1ae00a00328a9c63b051c7224f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887488"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226446"
 ---
 # <a name="maps-in-xamarinios"></a>Cartes dans Xamarin. iOS
 
@@ -36,7 +36,7 @@ View = map;
 
 `MKMapView`prend en charge 3 styles différents de mappages. Pour appliquer un style de carte, il vous `MapType` suffit de définir la propriété sur `MKMapType` une valeur de l’énumération:
 
-```
+```csharp
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
@@ -87,7 +87,7 @@ map.ShowsUserLocation = true;
 ```
 
  ![](images/02-location-alert.png "Alerte autoriser l’accès à l’emplacement")
- 
+
 ## <a name="annotations"></a>Annotations
 
  `MKMapView`prend également en charge l’affichage d’images, appelées annotations, sur une carte. Il peut s’agir d’images personnalisées ou d’épingles de différentes couleurs définies par le système. Par exemple, la capture d’écran suivante montre un mappage avec un code confidentiel et une image personnalisée:
@@ -250,7 +250,7 @@ var searchResultsController = new SearchResultsViewController (map);
 //Creates a search controller updater
 var searchUpdater = new SearchResultsUpdator ();
 searchUpdater.UpdateSearchResults += searchResultsController.Search;
-            
+
 //add the search controller
 searchController = new UISearchController (searchResultsController) {
                 SearchResultsUpdater = searchUpdater
@@ -264,7 +264,7 @@ searchController.SearchBar.Placeholder = "Enter a search query";
 //the search bar is contained in the navigation bar, so it should be visible
 searchController.HidesNavigationBarDuringPresentation = false;
 
-//Ensure the searchResultsController is presented in the current View Controller 
+//Ensure the searchResultsController is presented in the current View Controller
 DefinesPresentationContext = true;
 
 //Set the search bar in the navigation bar
@@ -279,7 +279,7 @@ Nous verrons comment implémenter à la fois le `searchResultsController` et le 
 Cela entraîne l’affichage d’une barre de recherche sur la carte, comme indiqué ci-dessous:
 
  ![](images/07-searchbar.png "Barre de recherche affichée sur la carte")
- 
+
 
 
 ### <a name="displaying-the-search-results"></a>Affichage des résultats de la recherche
@@ -358,7 +358,7 @@ public class SearchResultsViewController : UITableViewController
 
 ### <a name="updating-the-search-results"></a>Mise à jour des résultats de la recherche
 
-Le `SearchResultsUpdater` agit comme un médiateur entre la barre `searchController`de recherche de et les résultats de recherche. 
+Le `SearchResultsUpdater` agit comme un médiateur entre la barre `searchController`de recherche de et les résultats de recherche.
 
 Dans cet exemple, nous devons d’abord créer la méthode Search dans `SearchResultsViewController`le. Pour ce faire, nous devons créer `MKLocalSearch` un objet et l’utiliser pour lancer une recherche pour `MKLocalSearchRequest`une, les résultats sont récupérés dans un rappel passé `Start` à la méthode `MKLocalSearch` de l’objet. Les résultats sont ensuite retournés `MKLocalSearchResponse` dans un objet contenant un `MKMapItem` tableau d’objets:
 
@@ -403,7 +403,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 L’implémentation ci-dessus ajoute une annotation à la carte lorsqu’un élément est sélectionné dans les résultats, comme indiqué ci-dessous:
 
  ![](images/08-search-results.png "Annotation ajoutée à la carte lorsqu’un élément est sélectionné dans les résultats")
- 
+
 > [!IMPORTANT]
 > `UISearchController`a été implémenté dans iOS 8. Si vous souhaitez prendre en charge des appareils antérieurs à cette version, vous devez `UISearchDisplayController`utiliser.
 

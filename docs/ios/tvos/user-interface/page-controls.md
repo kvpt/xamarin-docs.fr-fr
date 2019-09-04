@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb53c11612cf492cda39067db861c1d67e0d3e16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: decbbdab09b514bd49784f6ba45575ae845c547f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648979"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226476"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Utilisation des contrôles de page tvOS dans Xamarin
 
@@ -35,37 +35,37 @@ Le moyen le plus simple d’utiliser les contrôles de page dans une application
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-    
+
 1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue: 
+1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue:
 
     [![](page-controls-images/page02.png "Contrôle de page")](page-controls-images/page02.png#lightbox)
-1. Dans l' **onglet widget** du **panneau Propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**: 
+1. Dans l' **onglet widget** du **panneau Propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**:
 
     [![](page-controls-images/page03.png "Onglet widget")](page-controls-images/page03.png#lightbox)
 1. Ensuite, ajoutez des contrôles ou des gestes à la vue pour vous déplacer vers l’avant et vers l’arrière dans la collection de pages.
-1. Enfin, assignez des **noms** aux contrôles pour pouvoir y répondre dans C# le code. Par exemple : 
+1. Enfin, assignez des **noms** aux contrôles pour pouvoir y répondre dans C# le code. Par exemple :
 
     [![](page-controls-images/page04.png "Nommer le contrôle")](page-controls-images/page04.png#lightbox)
 1. Enregistrez les modifications apportées.
-    
+
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
+
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue: 
+1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue:
 
     [![](page-controls-images/page02-vs.png "Contrôle de page")](page-controls-images/page02-vs.png#lightbox)
-1. Dans l' **onglet widget** de l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**: 
+1. Dans l' **onglet widget** de l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**:
 
     [![](page-controls-images/page03-vs.png "Onglet widget")](page-controls-images/page03-vs.png#lightbox)
 1. Ensuite, ajoutez des contrôles ou des gestes à la vue pour vous déplacer vers l’avant et vers l’arrière dans la collection de pages.
-1. Enfin, assignez des **noms** aux contrôles pour pouvoir y répondre dans C# le code. Par exemple : 
+1. Enfin, assignez des **noms** aux contrôles pour pouvoir y répondre dans C# le code. Par exemple :
 
     [![](page-controls-images/page04-vs.png "Nommer le contrôle")](page-controls-images/page04-vs.png#lightbox)
 1. Enregistrez les modifications apportées.
-    
+
 
 -----
 
@@ -160,7 +160,7 @@ PageView.CurrentPage = PageNumber;
 
 La `CurrentPage` propriété a une valeur de zéro (0). par conséquent, la première page est égale à zéro et la dernière à un moins le nombre maximal de pages.
 
-Pour plus d’informations sur l’utilisation des storyboards, consultez notre [Guide de démarrage rapide Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md). 
+Pour plus d’informations sur l’utilisation des storyboards, consultez notre [Guide de démarrage rapide Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md).
 
 <a name="Summary" />
 

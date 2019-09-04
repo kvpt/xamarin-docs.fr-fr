@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: eb6eff59ccb44d9954139c294592fafcba1f08e0
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 806f58ae6a79f935916008e93deed0136920951a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889528"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227817"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Présentation de OpenTK dans Xamarin. Mac
 
@@ -237,7 +237,7 @@ Game.Resize += (sender, e) =>
 
 ### <a name="the-updateframe-event"></a>Événement UpdateFrame
 
-L' `UpdateFrame` événement est utilisé pour gérer les entrées d’utilisateur, mettre à jour les positions des objets, exécuter des calculs physiques ou ai. Pour notre application de test simple, nous n’utilisons pas l' `UpdateFrame` événement, mais nous l’avons inclus à des fins de référence: 
+L' `UpdateFrame` événement est utilisé pour gérer les entrées d’utilisateur, mettre à jour les positions des objets, exécuter des calculs physiques ou ai. Pour notre application de test simple, nous n’utilisons pas l' `UpdateFrame` événement, mais nous l’avons inclus à des fins de référence:
 
 ```csharp
 Game.UpdateFrame += (sender, e) =>
@@ -253,7 +253,7 @@ Game.UpdateFrame += (sender, e) =>
 
 ### <a name="the-renderframe-event"></a>Événement RenderFrame
 
-L' `RenderFrame` événement contient le code utilisé pour effectuer le rendu (dessin) de vos graphiques. Pour notre exemple d’application, nous remplissons la vue de jeu avec un triangle simple: 
+L' `RenderFrame` événement contient le code utilisé pour effectuer le rendu (dessin) de vos graphiques. Pour notre exemple d’application, nous remplissons la vue de jeu avec un triangle simple:
 
 ```csharp
 Game.RenderFrame += (sender, e) =>

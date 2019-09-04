@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f2272b90f664331959cfc8f60c6e59adc9550a98
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: eca0f82fd967c28bffc8f20bcc9e2ec6bb3ba737
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522770"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227705"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -34,7 +34,7 @@ Ce guide présente les deux approches:
 - Dans [Viewpager avec views](~/android/user-interface/controls/view-pager/viewpager-and-views.md), une application [TreePager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager) est développée pour montrer comment utiliser `ViewPager` pour afficher les vues d’un catalogue d’arborescence (une galerie d’images d’arbres à feuilles de feuilles et de feuilles de route). 
     `PagerTabStrip`et `PagerTitleStrip` sont utilisés pour afficher des titres qui facilitent la navigation entre les pages.
 
-- Dans [Viewpager avec des fragments](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md), une application [FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager) légèrement plus complexe est développée pour montrer comment utiliser `ViewPager` avec `Fragment`pour créer une application qui présente des problèmes mathématiques sous forme de cartes Flash et répond aux entrées d’utilisateur. 
+- Dans [Viewpager avec des fragments](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md), une application [FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager) légèrement plus complexe est développée pour montrer comment utiliser `ViewPager` avec `Fragment`pour créer une application qui présente des problèmes mathématiques sous forme de cartes Flash et répond aux entrées d’utilisateur. 
 
 
 ## <a name="requirements"></a>Configuration requise

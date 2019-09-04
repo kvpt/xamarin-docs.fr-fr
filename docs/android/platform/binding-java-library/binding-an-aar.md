@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 4c612faca90d4b2b4e44cfbb53ff65ec07fcdfd1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ee29f54ac68f370cb9499d315116a030247f6044
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524839"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225713"
 ---
 # <a name="binding-an-aar"></a>Liaison d’un fichier .AAR
 
@@ -83,7 +83,7 @@ Avant de commencer à suivre les étapes ci-dessous, téléchargez l’exemple d
 
 1. Créez un projet de bibliothèque de liaisons en commençant par le modèle Bibliothèque de liaisons Android. Vous pouvez utiliser Visual Studio pour Mac ou Visual Studio (les captures d’écran ci-dessous illustrent Visual Studio, mais Visual Studio pour Mac sont très similaires). Nommez la solution **AarBinding**:
 
-    [![Créer un projet AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
+    [![Créer un projet AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
 
 2. Le modèle comprend un dossier **jar** dans lequel vous ajoutez votre. AAR (s) au projet de bibliothèque de liaisons. Cliquez avec le bouton droit sur le dossier **jar** et sélectionnez **Ajouter > élément existant**:
 

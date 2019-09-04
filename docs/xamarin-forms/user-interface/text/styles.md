@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642888"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228009"
 ---
 # <a name="xamarinforms-text-styles"></a>Styles de texte de Xamarin.Forms
 
@@ -48,7 +48,7 @@ En c#, les styles intégrés sont sélectionnés à partir de `Device.Styles`:
 label.Style = Device.Styles.TitleStyle;
 ```
 
-![](styles-images/builtinstyles.png "Exemple de Styles de périphérique")
+![Exemple de styles de périphérique](styles-images/builtinstyles.png)
 
 <a name="Custom_Styles" />
 
@@ -90,7 +90,7 @@ Dans XAML :
 
 Notez que les ressources (y compris tous les styles) sont définis dans `ContentPage.Resources`, qui est un frère de plus familiers `ContentPage.Content` élément.
 
-![](styles-images/customstyle.png "Exemple de Styles personnalisés")
+![Exemple de styles personnalisés](styles-images/customstyle.png)
 
 <a name="Applying_Styles" />
 
@@ -137,11 +137,11 @@ Prenons l’exemple suivant de la même page de vues mis en forme avec les style
 
 Désactivé :
 
-![](styles-images/pre-access.png "Styles d’appareils avec accessibilité désactivé")
+![Styles d’appareil avec accessibilité désactivée](styles-images/pre-access.png)
 
 Activé :
 
-![](styles-images/post-access.png "Styles d’appareils avec l’accessibilité est activée")
+![Styles d’appareil avec accessibilité activée](styles-images/post-access.png)
 
 Pour garantir l’accessibilité, assurez-vous que les styles intégrés sont utilisés comme base pour tous les styles de texte au sein de votre application, et que vous utilisez les styles de manière cohérente. Consultez [Styles](~/xamarin-forms/user-interface/styles/index.md) pour plus d’informations sur l’extension et l’utilisation des styles en général.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be4d10eceb4ddf7da44409815f3e9c08117a06f7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120740"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227215"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Utilisation des vues empilées tvOS dans Xamarin
 
@@ -24,7 +24,7 @@ La disposition de toutes les sous-vues attachées à un affichage de la pile est
 
 Lors de l' `UIStackView` utilisation d’un dans une application Xamarin. tvOS, le développeur peut définir les sous-vues soit à l’intérieur d’un Storyboard dans le concepteur iOS, soit en ajoutant et C# supprimant des sous-vues dans le code.
 
-## <a name="about-stacked-view-controls"></a>À propos des contrôles d’affichage empilé 
+## <a name="about-stacked-view-controls"></a>À propos des contrôles d’affichage empilé
 
 Le `UIStackView` est conçu comme une vue de conteneur sans rendu et, par conséquent, il n’est pas dessiné dans le canevas comme les autres sous `UIView`-classes de. La définition de propriétés `BackgroundColor` telles que ou `DrawRect` la substitution n’a aucun effet visuel.
 
@@ -98,21 +98,21 @@ Le moyen le plus simple d’utiliser les vues de pile dans une application Xamar
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Concevez la disposition de vos éléments individuels que vous allez ajouter à l’affichage de la pile: 
+1. Concevez la disposition de vos éléments individuels que vous allez ajouter à l’affichage de la pile:
 
     [![](stacked-views-images/layout01.png "Exemple de disposition d’élément")](stacked-views-images/layout01.png#lightbox)
 1. Ajoutez toutes les contraintes requises aux éléments pour garantir leur mise à l’échelle correctement. Cette étape est importante une fois que l’élément est ajouté à l’affichage de la pile.
-1. Effectuez le nombre requis de copies (quatre dans ce cas): 
+1. Effectuez le nombre requis de copies (quatre dans ce cas):
 
     [![](stacked-views-images/layout02.png "Nombre requis de copies")](stacked-views-images/layout02.png#lightbox)
-1. Faites glisser une vue de la **pile** de la **boîte à outils** et déposez-la sur la vue: 
+1. Faites glisser une vue de la **pile** de la **boîte à outils** et déposez-la sur la vue:
 
     [![](stacked-views-images/layout03.png "Affichage de la pile")](stacked-views-images/layout03.png#lightbox)
-1. Sélectionnez l’affichage des piles, sous l' **onglet widget** du **panneau Propriétés** sélectionnez **remplissage** pour l' **alignement**, **remplissez la même** position pour la **distribution** et entrez `25` pour l' **espacement**: 
+1. Sélectionnez l’affichage des piles, sous l' **onglet widget** du **panneau Propriétés** sélectionnez **remplissage** pour l' **alignement**, **remplissez la même** position pour la **distribution** et entrez `25` pour l' **espacement**:
 
     [![](stacked-views-images/layout04.png "Onglet widget")](stacked-views-images/layout04.png#lightbox)
 1. Placez l’affichage de la pile à l’écran où vous le souhaitez et ajoutez des contraintes pour le conserver à l’emplacement requis.
-1. Sélectionnez les éléments individuels et faites-les glisser vers l’affichage de la pile: 
+1. Sélectionnez les éléments individuels et faites-les glisser vers l’affichage de la pile:
 
     [![](stacked-views-images/layout05.png "Éléments individuels dans l’affichage de la pile")](stacked-views-images/layout05.png#lightbox)
 1. La disposition est ajustée et les éléments sont disposés en vue pile en fonction des attributs que vous avez définis ci-dessus.
@@ -122,21 +122,21 @@ Le moyen le plus simple d’utiliser les vues de pile dans une application Xamar
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Concevez la disposition de vos éléments individuels que vous allez ajouter à l’affichage de la pile: 
+1. Concevez la disposition de vos éléments individuels que vous allez ajouter à l’affichage de la pile:
 
     [![](stacked-views-images/layout01.png "Exemple de disposition des éléments")](stacked-views-images/layout01.png#lightbox)
 1. Ajoutez toutes les contraintes requises aux éléments pour garantir leur mise à l’échelle correctement. Cette étape est importante une fois que l’élément est ajouté à l’affichage de la pile.
-1. Effectuez le nombre requis de copies (quatre dans ce cas): 
+1. Effectuez le nombre requis de copies (quatre dans ce cas):
 
     [![](stacked-views-images/layout02.png "Nombre requis de copies")](stacked-views-images/layout02.png#lightbox)
-1. Faites glisser une vue de la **pile** de la **boîte à outils** et déposez-la sur la vue: 
+1. Faites glisser une vue de la **pile** de la **boîte à outils** et déposez-la sur la vue:
 
     [![](stacked-views-images/layout03-vs.png "Affichage de la pile")](stacked-views-images/layout03-vs.png#lightbox)
-1. Sélectionnez l’affichage des piles, puis dans l' **onglet widget** de l' **Explorateur de propriétés** , sélectionnez **remplissage** pour l' **alignement**, **remplissez** la même `25` **distribution** et entrez pour l' **espacement**: 
+1. Sélectionnez l’affichage des piles, puis dans l' **onglet widget** de l' **Explorateur de propriétés** , sélectionnez **remplissage** pour l' **alignement**, **remplissez** la même `25` **distribution** et entrez pour l' **espacement**:
 
     [![](stacked-views-images/layout04-vs.png "Onglet widget")](stacked-views-images/layout04-vs.png#lightbox)
 1. Placez l’affichage de la pile à l’écran où vous le souhaitez et ajoutez des contraintes pour le conserver à l’emplacement requis.
-1. Sélectionnez les éléments individuels et faites-les glisser vers l’affichage de la pile: 
+1. Sélectionnez les éléments individuels et faites-les glisser vers l’affichage de la pile:
 
     [![](stacked-views-images/layout05-vs.png "Éléments individuels dans l’affichage de la pile")](stacked-views-images/layout05-vs.png#lightbox)
 1. La disposition est ajustée et les éléments sont disposés en vue pile en fonction des attributs que vous avez définis ci-dessus.

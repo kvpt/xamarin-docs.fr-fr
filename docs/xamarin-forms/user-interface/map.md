@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
-ms.openlocfilehash: 5eee9fea7ea0fffe9dc254ac4340ff05d087ce33
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 242673efb38931eb678432a28f24db0ad9b8cb7d
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121557"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228217"
 ---
 # <a name="xamarinforms-map"></a>Mappage de Xamarin.Forms
 
@@ -73,11 +73,11 @@ Une fois que le package NuGet a été ajouté et la méthode d’initialisation 
 Pour accéder aux services de localisation sur iOS, vous devez définir les clés suivantes dans **Info.plist**:
 
 - iOS 11
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services de localisation lors de l’application est en cours d’utilisation
-    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – pour l’utilisation des services de localisation à tout moment
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services de localisation lors de l’application est en cours d’utilisation
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – pour l’utilisation des services de localisation à tout moment
 - iOS 10 et versions antérieures
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services de localisation lors de l’application est en cours d’utilisation
-    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – pour l’utilisation des services de localisation à tout moment    
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pour l’utilisation des services de localisation lors de l’application est en cours d’utilisation
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – pour l’utilisation des services de localisation à tout moment    
 
 Pour prendre en charge iOS 11 et versions antérieures, vous pouvez inclure toutes les trois clés : `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, et `NSLocationAlwaysUsageDescription`.
 

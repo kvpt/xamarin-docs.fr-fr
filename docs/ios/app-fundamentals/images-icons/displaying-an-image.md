@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120596"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227750"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Affichage d’une image dans Xamarin. iOS
 
@@ -41,7 +41,7 @@ Pour créer un ensemble d’images et y ajouter des images, procédez comme suit
 3. Sélectionnez le nouvel ensemble d’images et l’éditeur s’affichera:
 
     ![](displaying-an-image-images/imageset03.png "Éditeur d’ensemble d’images")
-4. À partir de là, faites glisser les images pour chacun des différents appareils et résolutions requis. 
+4. À partir de là, faites glisser les images pour chacun des différents appareils et résolutions requis.
 5. Double-cliquez sur le **nom** du nouvel ensemble d’images dans la **liste ressources** pour le modifier: ![](displaying-an-image-images/imageset04.png "Modification du nom du nouvel ensemble d’images")
 
 Quand vous utilisez un **ensemble d’images** dans le concepteur iOS, il vous suffit de sélectionner le nom du jeu dans la liste déroulante de l’éditeur de propriétés:
@@ -54,7 +54,7 @@ Quand vous utilisez un **ensemble d’images** dans le concepteur iOS, il vous s
 
     ![](displaying-an-image-images/asset5.png "Cliquez sur le bouton plus")
 
-2. Sélectionnez **Ajouter un ensemble d’images** et l’éditeur d’images s’affichera pour le nouvel ensemble d’images. À partir de là, faites glisser les images pour chacun des différents appareils et résolutions requis. 
+2. Sélectionnez **Ajouter un ensemble d’images** et l’éditeur d’images s’affichera pour le nouvel ensemble d’images. À partir de là, faites glisser les images pour chacun des différents appareils et résolutions requis.
 
     ![](displaying-an-image-images/asset7.png "Éditeur d’ensemble d’images")
 
@@ -193,7 +193,7 @@ En plus d’utiliser des images pour prendre en charge une application, iOS util
 
 ### <a name="frombundle"></a>FromBundle
 
-L' `FromBundle` appel de méthode est un appel synchrone (bloquant) qui a un certain nombre de fonctionnalités de chargement et de gestion d’image intégrées, telles que la prise en charge de la mise en cache et la gestion automatique des fichiers image pour diverses résolutions.  
+L' `FromBundle` appel de méthode est un appel synchrone (bloquant) qui a un certain nombre de fonctionnalités de chargement et de gestion d’image intégrées, telles que la prise en charge de la mise en cache et la gestion automatique des fichiers image pour diverses résolutions.
 
 L’exemple suivant montre comment définir l’image d’un `UITabBarItem` sur un: `UITabBar`
 

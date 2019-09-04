@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8379b9c9575c5a4f24f6c35c37cf8682e53b78ec
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5c697ebc4621fa8287bd001bcc4b44bb23fc163e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121123"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227239"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Bac à sable (sandbox) d’une application Xamarin. Mac
 
@@ -68,24 +68,24 @@ Nous allons vérifier que l’application est en fait bac à sable (sandbox) et 
 Procédez comme suit pour créer notre exemple de projet:
 
 1. Démarrez Visual Studio pour Mac, puis cliquez sur la **nouvelle solution.** compte.
-2. Dans la boîte de dialogue **nouveau projet** , > sélectionnez application **Mac** > application**cacao**: 
+2. Dans la boîte de dialogue **nouveau projet** , > sélectionnez application **Mac** > application**cacao**:
 
     [![Création d’une application de cacao](sandboxing-images/sample01.png "Création d’une application de cacao")](sandboxing-images/sample01-large.png#lightbox)
-3. Cliquez sur le bouton **suivant** , `MacSandbox` entrez pour le nom du projet et cliquez sur le bouton **créer** : 
+3. Cliquez sur le bouton **suivant** , `MacSandbox` entrez pour le nom du projet et cliquez sur le bouton **créer** :
 
     [![Saisie du nom de l’application](sandboxing-images/sample02.png "Saisie du nom de l’application")](sandboxing-images/sample02-large.png#lightbox)
-4. Dans la **panneau solutions**, double-cliquez sur le fichier **main. Storyboard** pour l’ouvrir en vue de le modifier dans Xcode: 
+4. Dans la **panneau solutions**, double-cliquez sur le fichier **main. Storyboard** pour l’ouvrir en vue de le modifier dans Xcode:
 
     [![Modification du storyboard principal](sandboxing-images/sample03.png "Modification du storyboard principal")](sandboxing-images/sample03-large.png#lightbox)
-5. Faites glisser une **vue Web** dans la fenêtre, dimensionnez-la pour remplir la zone de contenu, puis définissez-la sur agrandir et réduire avec la fenêtre: 
+5. Faites glisser une **vue Web** dans la fenêtre, dimensionnez-la pour remplir la zone de contenu, puis définissez-la sur agrandir et réduire avec la fenêtre:
 
     [![Ajout d’une vue Web](sandboxing-images/sample04.png "Ajout d’une vue Web")](sandboxing-images/sample04-large.png#lightbox)
-6. Créez une prise pour l’affichage Web appelée `webView`: 
+6. Créez une prise pour l’affichage Web appelée `webView`:
 
     [![Création d’une nouvelle prise](sandboxing-images/sample05.png "Création d’une nouvelle prise")](sandboxing-images/sample05-large.png#lightbox)
 7. Revenez à Visual Studio pour Mac et double-cliquez sur le fichier **ViewController.cs** dans le **panneau solutions** pour l’ouvrir et le modifier.
 8. Ajoutez l’instruction using suivante:`using WebKit;`
-9. Faites en `ViewDidLoad` sorte que la méthode ressemble à ce qui suit: 
+9. Faites en `ViewDidLoad` sorte que la méthode ressemble à ce qui suit:
 
     ```csharp
     public override void AwakeFromNib ()
@@ -109,34 +109,34 @@ Avant de pouvoir activer le bac à sable (sandbox) de l’application, nous devo
 
 Procédez comme suit:
 
-1. Connectez-vous au portail des développeurs Apple: 
+1. Connectez-vous au portail des développeurs Apple:
 
     [![Connexion au portail des développeurs Apple](sandboxing-images/sign01.png "Connexion au portail des développeurs Apple")](sandboxing-images/sign01-large.png#lightbox)
-2. Sélectionnez **certificats, identificateurs & profils**: 
+2. Sélectionnez **certificats, identificateurs & profils**:
 
     [![Sélection de certificats, d’identificateurs et de profils](sandboxing-images/sign02.png "Sélection de certificats, d’identificateurs et de profils")](sandboxing-images/sign02-large.png#lightbox)
-3. Sous **applications Mac**, sélectionnez **identificateurs**: 
+3. Sous **applications Mac**, sélectionnez **identificateurs**:
 
     [![Sélection] des identificateurs (sandboxing-images/sign03.png "Sélection") des identificateurs](sandboxing-images/sign03-large.png#lightbox)
-4. Créez un nouvel ID pour l’application: 
+4. Créez un nouvel ID pour l’application:
 
     [![Création d’un ID d’application](sandboxing-images/sign04.png "Création d’un ID d’application")](sandboxing-images/sign04-large.png#lightbox)
-5. Sous **profils**de provisionnement, sélectionnez **développement**: 
+5. Sous **profils**de provisionnement, sélectionnez **développement**:
 
     [![Sélection du développement](sandboxing-images/sign05.png "Sélection du développement")](sandboxing-images/sign05-large.png#lightbox)
-6. Créer un nouveau profil et sélectionner le **développement d’applications Mac**: 
+6. Créer un nouveau profil et sélectionner le **développement d’applications Mac**:
 
     [![Création d’un nouveau profil](sandboxing-images/sign06.png "Création d’un nouveau profil")](sandboxing-images/sign06-large.png#lightbox)
-7. Sélectionnez l’ID d’application que nous avons créé ci-dessus: 
+7. Sélectionnez l’ID d’application que nous avons créé ci-dessus:
 
     [![Sélection de l’ID d’application](sandboxing-images/sign07.png "Sélection de l’ID d’application")](sandboxing-images/sign07-large.png#lightbox)
-8. Sélectionnez les développeurs pour ce profil: 
+8. Sélectionnez les développeurs pour ce profil:
 
     [![Ajout de développeurs](sandboxing-images/sign08.png "Ajout de développeurs")](sandboxing-images/sign08-large.png#lightbox)
-9. Sélectionnez les ordinateurs pour ce profil: 
+9. Sélectionnez les ordinateurs pour ce profil:
 
     [![Sélection des ordinateurs autorisés](sandboxing-images/sign09.png "Sélection des ordinateurs autorisés")](sandboxing-images/sign09-large.png#lightbox)
-10. Donnez un nom au profil: 
+10. Donnez un nom au profil:
 
     [![Attribution d’un nom au profil](sandboxing-images/sign10.png "Attribution d’un nom au profil")](sandboxing-images/sign10-large.png#lightbox)
 11. Cliquez sur le bouton **terminé** .
@@ -146,10 +146,10 @@ Procédez comme suit:
 
 Ensuite, nous devons charger le nouvel ID d’application et le nouveau profil sur l’ordinateur de développement. Procédez comme suit:
 
-1. Démarrez Xcode et sélectionnez **Préférences** dans le menu **Xcode** : 
+1. Démarrez Xcode et sélectionnez **Préférences** dans le menu **Xcode** :
 
     ![Modification des comptes dans Xcode](sandboxing-images/sign11.png "Modification des comptes dans Xcode")
-2. Cliquez sur le bouton **afficher les détails.** ..: 
+2. Cliquez sur le bouton **afficher les détails.** ..:
 
     ![Cliquant sur le bouton afficher les détails](sandboxing-images/sign12.png "Cliquant sur le bouton afficher les détails")
 3. Cliquez sur le bouton Actualiser (dans le coin inférieur gauche).
@@ -158,17 +158,17 @@ Ensuite, nous devons charger le nouvel ID d’application et le nouveau profil s
 Ensuite, nous devons sélectionner le nouvel ID d’application et le profil de provisionnement dans notre projet Xamarin. Mac. Procédez comme suit:
 
 1. Dans la **panneau solutions**, double-cliquez sur le fichier **info. plist** pour l’ouvrir et le modifier.
-2. Assurez-vous que l' **identificateur de Bundle** correspond à l’ID d’application que `com.appracatappra.MacSandbox`nous avons créé ci-dessus (exemple:): 
+2. Assurez-vous que l' **identificateur de Bundle** correspond à l’ID d’application que `com.appracatappra.MacSandbox`nous avons créé ci-dessus (exemple:):
 
     [![Modification de l’identificateur de Bundle](sandboxing-images/sign13.png "Modification de l’identificateur de Bundle")](sandboxing-images/sign13-large.png#lightbox)
-3. Ensuite, double-cliquez sur le fichier **habilitations. plist** et vérifiez que notre **magasin clé-valeur icloud** et que les **conteneurs icloud** correspondent tous à notre ID d’application que `com.appracatappra.MacSandbox`nous avons créé ci-dessus (exemple:): 
+3. Ensuite, double-cliquez sur le fichier **habilitations. plist** et vérifiez que notre **magasin clé-valeur icloud** et que les **conteneurs icloud** correspondent tous à notre ID d’application que `com.appracatappra.MacSandbox`nous avons créé ci-dessus (exemple:):
 
     [![Modification du fichier habilitations. plist](sandboxing-images/sign17.png "Modification du fichier habilitations. plist")](sandboxing-images/sign17-large.png#lightbox)
 4. Enregistrez les modifications apportées.
-5. Dans la **panneau solutions**, double-cliquez sur le fichier projet pour ouvrir les options de modification:  
+5. Dans la **panneau solutions**, double-cliquez sur le fichier projet pour ouvrir les options de modification:
 
     ![Editign les options de la solution](sandboxing-images/sign14.png "Editign les options de la solution")
-6. Sélectionnez **signature Mac**, puis cochez **la case signer le bundle d’applications** et **signer le package d’installation**. Sous **Profil**de provisionnement, sélectionnez celui que nous avons créé ci-dessus: 
+6. Sélectionnez **signature Mac**, puis cochez **la case signer le bundle d’applications** et **signer le package d’installation**. Sous **Profil**de provisionnement, sélectionnez celui que nous avons créé ci-dessus:
 
     ![Définition du profil de] provisionnement (sandboxing-images/sign15.png "Définition du profil de") provisionnement
 7. Cliquez sur le bouton **terminé** .
@@ -195,7 +195,7 @@ Dans le cas d’un problème, corrigez le problème sur le portail des développ
 Vous activez le bac à sable (sandbox) de l’application en activant une case à cocher dans les options de vos projets. Effectuez ce qui suit :
 
 1. Dans la **panneau solutions**, double-cliquez sur le fichier Entitlements **. plist** pour l’ouvrir et le modifier.
-2. Cochez la case **activer les droits** et **activer**le sandboxing d’application: 
+2. Cochez la case **activer les droits** et **activer**le sandboxing d’application:
 
     [![Modification des droits et activation] du sandboxing (sandboxing-images/sign17.png "Modification des droits et activation") du sandboxing](sandboxing-images/sign17-large.png#lightbox)
 3. Enregistrez les modifications apportées.
@@ -208,25 +208,25 @@ Vous activez le bac à sable (sandbox) de l’application en activant une case �
 
 Hormis le comportement de blocage des ressources, il existe trois façons de savoir si une application Xamarin. Mac a été correctement bac à sable (sandbox):
 
-1. Dans Finder, vérifiez le contenu du `~/Library/Containers/` dossier: si l’application est bac à sable (sandbox), il y aura un dossier nommé comme l’identificateur de Bundle de votre application (exemple: `com.appracatappra.MacSandbox`): 
+1. Dans Finder, vérifiez le contenu du `~/Library/Containers/` dossier: si l’application est bac à sable (sandbox), il y aura un dossier nommé comme l’identificateur de Bundle de votre application (exemple: `com.appracatappra.MacSandbox`):
 
     [![Ouverture de l’offre groupée de l’application](sandboxing-images/sample09.png "Ouverture de l’offre groupée de l’application")](sandboxing-images/sample09-large.png#lightbox)
 2. Le système voit l’application comme bac à sable (sandbox) dans le moniteur d’activité:
-    - Lancez le moniteur d’activité `/Applications/Utilities`(sous). 
+    - Lancez le moniteur d’activité `/Applications/Utilities`(sous).
     - Choisissez **Afficher** > les**colonnes** et vérifiez que l’option de menu **sandbox** est cochée.
-    - Assurez-vous que la `Yes` colonne sandbox lit pour votre application: 
+    - Assurez-vous que la `Yes` colonne sandbox lit pour votre application:
 
     [![Vérification de l’application dans le moniteur d’activité](sandboxing-images/sample10.png "Vérification de l’application dans le moniteur d’activité")](sandboxing-images/sample10-large.png#lightbox)
 3. Vérifiez que le fichier binaire de l’application est en mode bac à sable (sandbox):
     - Démarrez l’application Terminal.
     - Accédez au répertoire des `bin` applications.
-    - Exécutez cette commande: `codesign -dvvv --entitlements :- executable_path` (où `executable_path` est le chemin d’accès à votre application): 
+    - Exécutez cette commande: `codesign -dvvv --entitlements :- executable_path` (où `executable_path` est le chemin d’accès à votre application):
 
     [![Vérification de l’application sur la ligne de commande](sandboxing-images/sample11.png "Vérification de l’application sur la ligne de commande")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>Débogage d’une application bac à sable (sandbox)
 
-Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie que par défaut, lorsque vous activez le sandboxing, il ne peut pas se connecter à l’application. par conséquent, si vous essayez d’exécuter l’application sans que les autorisations appropriées soient activées, vous recevez un message d’erreur *«Impossible de se connecter au débogueur».* . 
+Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie que par défaut, lorsque vous activez le sandboxing, il ne peut pas se connecter à l’application. par conséquent, si vous essayez d’exécuter l’application sans que les autorisations appropriées soient activées, vous recevez un message d’erreur *«Impossible de se connecter au débogueur».* .
 
 [![Définition des options requises](sandboxing-images/debug01.png "Définition des options requises")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -246,7 +246,7 @@ Effectuez ce qui suit :
 
 1. Compilez l’application en question et exécutez-la à partir de Visual Studio pour Mac.
 2. Ouvrez l’application **console** (à `/Applications/Utilties/`partir de).
-3. Sélectionnez **tous les messages** dans la barre latérale `sandbox` , puis entrez dans la recherche: 
+3. Sélectionnez **tous les messages** dans la barre latérale `sandbox` , puis entrez dans la recherche:
 
     [![Exemple de problème de sandbox dans la console](sandboxing-images/resolve01.png "Exemple de problème de sandbox dans la console")](sandboxing-images/resolve01-large.png#lightbox)
 
@@ -259,7 +259,7 @@ Maintenant que nous avons vu comment trouver des violations de sandboxing d’ap
 Effectuez ce qui suit :
 
 1. Dans la **panneau solutions**, double-cliquez sur le fichier Entitlements **. plist** pour l’ouvrir et le modifier.
-2. Sous la section **droits** , activez la case à cocher **autoriser les connexions réseau sortantes (client)** : 
+2. Sous la section **droits** , activez la case à cocher **autoriser les connexions réseau sortantes (client)** :
 
     [![Modification des droits](sandboxing-images/sign17.png "Modification des droits")](sandboxing-images/sign17-large.png#lightbox)
 3. Enregistrez les modifications apportées à l’application.
@@ -280,7 +280,7 @@ Lorsque vous concevez pour le bac à sable de l’application, vous concevez pou
 
 Comme nous l’avons vu plus haut, une application Xamarin. Mac qui n’a pas été bac à sable (sandbox) reçoit les droits et l’accès complets de l’utilisateur qui exécute l’application. Si elles sont compromises par du code malveillant, une application non protégée peut agir en tant qu’agent pour un comportement hostile, avec un grand nombre d’attaques potentielles.
 
-En activant le bac à sable (sandbox) de l’application, vous supprimez tous les privilèges sauf un ensemble minimal de privilèges, que vous réactivez ensuite en fonction des besoins uniquement à l’aide de vos droits d’application Xamarin. Mac. 
+En activant le bac à sable (sandbox) de l’application, vous supprimez tous les privilèges sauf un ensemble minimal de privilèges, que vous réactivez ensuite en fonction des besoins uniquement à l’aide de vos droits d’application Xamarin. Mac.
 
 Vous modifiez les ressources du bac à sable (sandbox) de votre application en modifiant son fichier **habilitations. plist** et en vérifiant ou en sélectionnant les droits requis dans les zones de liste déroulante éditeurs:
 
@@ -356,13 +356,13 @@ En outre, le système autorise automatiquement les éléments suivants dans une 
 - Ouvrez fichiers choisir par l’utilisateur dans le menu **ouvrir récemment** .
 - Utilisez copier & coller entre d’autres applications.
 - Lire les fichiers à partir des emplacements lisibles dans le monde:
-    - `/bin`
-    - `/sbin`
-    - `/usr/bin`
-    - `/usr/lib`
-    - `/usr/sbin`
-    - `/usr/share`
-    - `/System`
+  - `/bin`
+  - `/sbin`
+  - `/usr/bin`
+  - `/usr/lib`
+  - `/usr/sbin`
+  - `/usr/share`
+  - `/System`
 - Lire et écrire des fichiers dans les répertoires `NSTemporaryDirectory`créés par.
 
 Par défaut, les fichiers ouverts ou enregistrés par une application Xamarin. Mac bac à sable (sandbox) restent accessibles jusqu’à ce que l’application se termine (à moins que le fichier ne soit encore ouvert à la fermeture de l’application). Les fichiers ouverts sont automatiquement restaurés dans le bac à sable (sandbox) de l’application via la fonctionnalité de reprise macOS lors du prochain démarrage de l’application.
@@ -401,10 +401,10 @@ En utilisant des signets de _portée de sécurité_, une application Xamarin. Ma
 
 Lorsque vous travaillez avec des signets de portée de sécurité et un accès permanent aux ressources, il existe deux cas d’utilisation de Sistine:
 
-- **Un signet à portée d’application fournit un accès permanent à un fichier ou à un dossier spécifié par l’utilisateur.** 
+- **Un signet à portée d’application fournit un accès permanent à un fichier ou à un dossier spécifié par l’utilisateur.**
 
     Par exemple, si l’application Xamarin. Mac bac à sable (sandbox) autorise à utiliser pour ouvrir un document externe en `NSOpenPanel`vue de sa modification (à l’aide d’un), l’application peut créer un signet à portée d’application afin qu’elle puisse à nouveau accéder au même fichier.
-- **Un signet d’étendue de document fournit un accès permanent à un document spécifique à un sous-fichier.** 
+- **Un signet d’étendue de document fournit un accès permanent à un document spécifique à un sous-fichier.**
 
 Par exemple, une application de modification vidéo qui crée un fichier projet qui a accès aux images individuelles, aux clips vidéo et aux fichiers audio qui seront ultérieurement combinés en un seul film.
 
@@ -432,7 +432,7 @@ Une fois que vous avez libéré l’accès à une ressource, vous devez repasser
 
 ### <a name="the-app-sandbox-and-code-signing"></a>Le bac à sable de l’application et la signature du code
 
-Une fois que vous avez activé le bac à sable (sandbox) de l’application et activé les exigences spécifiques de votre application Xamarin. Mac (par le biais des droits), vous devez coder le projet pour que le bac à sable soit pris en compte. Vous devez effectuer la signature du code, car les droits requis pour le sandbox d’application sont liés à la signature de l’application. 
+Une fois que vous avez activé le bac à sable (sandbox) de l’application et activé les exigences spécifiques de votre application Xamarin. Mac (par le biais des droits), vous devez coder le projet pour que le bac à sable soit pris en compte. Vous devez effectuer la signature du code, car les droits requis pour le sandbox d’application sont liés à la signature de l’application.
 
 macOS applique un lien entre le conteneur d’une application et sa signature de code, de cette façon aucune autre application ne peut accéder à ce conteneur, même s’il usurpe l’ID d’ensemble d’applications. Ce mécanisme fonctionne de la façon suivante:
 
@@ -529,7 +529,7 @@ Voici quelques problèmes courants que vous pouvez effectuer pour les résoudre:
 - **Conserver l’accès aux ressources du système de fichiers** : si l’application Xamarin. Mac dépend de l’accès permanent aux ressources en dehors de son conteneur, utilisez des signets de portée sécurité pour conserver l’accès.
 - **Créer un élément de connexion pour une application** : avec le bac à sable (sandbox) de l’application `LSSharedFileList` , vous ne pouvez pas créer un élément de connexion `LSRegisterURL`à l’aide de ni manipuler l’état des services de lancement à l’aide de. Utilisez la `SMLoginItemSetEnabled` fonction comme décrit dans apples, [Ajout d’éléments de connexion à l’aide de la documentation de service Management Framework](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1) .
 - **Accès aux données utilisateur** -si vous utilisez des fonctions POSIX, telles `getpwuid` que pour obtenir le répertoire de base de l’utilisateur à partir des services d’annuaire, envisagez `NSHomeDirectory`d’utiliser des symboles de cacao ou Core Foundation tels que.
-- **Accès aux préférences d’autres applications** : étant donné que le bac à sable (sandbox) de l’application dirige les API de recherche de chemin vers le conteneur de l’application, la modification des préférences s’effectue dans ce conteneur et l’accès aux autres préférences des applications n’est pas autorisé. 
+- **Accès aux préférences d’autres applications** : étant donné que le bac à sable (sandbox) de l’application dirige les API de recherche de chemin vers le conteneur de l’application, la modification des préférences s’effectue dans ce conteneur et l’accès aux autres préférences des applications n’est pas autorisé.
 - **Utilisation d’une vidéo HTML5 incorporée dans les vues Web** : si l’application Xamarin. Mac utilise WebKit pour lire des vidéos HTML5 incorporées, vous devez également lier l’application à l’infrastructure de Fondation av. Le bac à sable de l’application empêchera le coremédier de lire ces vidéos dans le cas contraire.
 
 ### <a name="applying-required-app-sandbox-entitlements"></a>Application des droits du bac à sable (sandbox) d’application requis
@@ -555,7 +555,7 @@ Pour plus d’informations, consultez le Guide de programmation [création de se
 
 ### <a name="implement-a-migration-strategy"></a>Implémenter une stratégie de migration
 
-Si vous publiez une nouvelle version bac à sable (sandbox) d’une application Xamarin. Mac qui n’était pas précédemment bac à sable (sandbox), vous devez vous assurer que les utilisateurs actuels disposent d’un chemin de mise à niveau fluide. 
+Si vous publiez une nouvelle version bac à sable (sandbox) d’une application Xamarin. Mac qui n’était pas précédemment bac à sable (sandbox), vous devez vous assurer que les utilisateurs actuels disposent d’un chemin de mise à niveau fluide.
 
  Pour plus d’informations sur la façon d’implémenter un manifeste de migration de conteneur, consultez la rubrique [migration d’une application vers un bac à sable (sandbox)](https://developer.apple.com/library/prerelease/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/MigratingALegacyApp/MigratingAnAppToASandbox.html#//apple_ref/doc/uid/TP40011183-CH6-SW1) .
 

@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 620a986ea9c5a6792d321b0c89dae936ffa256da
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529270"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227925"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
@@ -297,7 +297,7 @@ Voici le fichier XAML complet final avec trois boutons, l’accès aux six valeu
 
 Les captures d’écran vérifier la cohérence du style et le style dépend de la plateforme :
 
-[![](xaml-markup-extensions-images/sharedresources.png "Contrôles de style")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "des contrôles de style")
+[![Contrôles de style](xaml-markup-extensions-images/sharedresources.png)](xaml-markup-extensions-images/sharedresources-large.png#lightbox)
 
 Bien qu’il est plus courant de définir la `Resources` collection en haut de la page, n’oubliez pas qui le `Resources` propriété est définie par `VisualElement`, et vous pouvez avoir `Resources` regroupements sur d’autres éléments sur la page. Par exemple, essayez d’ajouter un à le `StackLayout` dans cet exemple :
 
@@ -435,7 +435,7 @@ Les deux ces déclarations d’espace de noms sont incluses dans le **StaticCons
 
 La taille de la résultante `BoxView` par rapport à l’écran est dépendante de la plateforme :
 
- [![](xaml-markup-extensions-images/staticconstants.png "Contrôles à l’aide de x : Static, Extension de balisage")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "contrôles à l’aide de x : Static, Extension de balisage")
+[![Contrôles utilisant l’extension de balisage x:Static](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
 
 ## <a name="other-standard-markup-extensions"></a>Autres Extensions de balisage Standard
 
@@ -551,7 +551,7 @@ La leçon la plus importante que vous devez suivre à partir de cet exemple est 
 
 Voici le programme en cours d’exécution :
 
-[![](xaml-markup-extensions-images/relativelayout.png "Mise en page relative à l’aide de contraintes")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "disposition relatif à l’aide de contraintes")
+[![Disposition relative utilisant des contraintes](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
 ## <a name="summary"></a>Récapitulatif
 

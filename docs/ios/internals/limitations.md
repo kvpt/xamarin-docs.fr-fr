@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527339"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227529"
 ---
 # <a name="limitations-of-xamarinios"></a>Limitations de Xamarin. iOS
 
@@ -57,11 +57,11 @@ class Foo<T> : UIView {
 
 - System. Reflection. Emit n’est pas disponible.
 - Aucune prise en charge de System. Runtime. Remoting.
-- Aucune prise en charge de la création dynamique de types (sans type. GetType ("MyType' 1")), bien que la recherche de types existants (type. GetType ("System. String") par exemple, fonctionne parfaitement). 
+- Aucune prise en charge de la création dynamique de types (sans type. GetType ("MyType' 1")), bien que la recherche de types existants (type. GetType ("System. String") par exemple, fonctionne parfaitement).
 - Les rappels inverses doivent être inscrits auprès du Runtime au moment de la compilation.
 
 
- 
+
  <a name="System.Reflection.Emit" />
 
 
@@ -71,7 +71,7 @@ L’absence de System. Reflection. L' **émission** signifie qu’aucun code dé
 
 - Le Dynamic Language Runtime.
 - Tous les langages reposant sur le Dynamic Language Runtime.
-- La valeur TransparentProxy de communication à distance ou tout autre qui obligerait le runtime à générer du code dynamiquement. 
+- La valeur TransparentProxy de communication à distance ou tout autre qui obligerait le runtime à générer du code dynamiquement.
 
 
   > [!IMPORTANT]
@@ -91,7 +91,7 @@ L’échec de la fourniture de l’un de ces attributs entraînera une erreur d�
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
- 
+
  <a name="Reverse_Callbacks" />
 
 
@@ -103,7 +103,7 @@ Dans mono, ces ponts sont implémentés par le compilateur juste-à-temps. Lorsq
 
 - Vous devez marquer toutes vos méthodes de rappel avec [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)
 - Les méthodes doivent être des méthodes statiques, il n’existe aucune prise en charge des méthodes d’instance.
- 
+
 <a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Aucune communication à distance

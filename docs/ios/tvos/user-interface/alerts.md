@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3f1761df5c2b638c5777e6384f4c0c06e9b3071f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: de7c8918ff500cb2353214fd84eaa4c97713493e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657291"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227265"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Utilisation des alertes tvOS dans Xamarin
 
@@ -34,7 +34,7 @@ Comme indiqué ci-dessus, les alertes sont utilisées pour attirer l’attention
 
 Apple propose les suggestions suivantes pour l’utilisation des alertes:
 
-- **Utiliser des alertes** avec modération-les alertes perturbent le workflow de l’utilisateur avec l’application et interrompent l’expérience utilisateur. ne doivent donc être utilisées que dans des situations importantes, telles que les notifications d’erreur, les achats dans l’application et les actions destructrices. 
+- **Utiliser des alertes** avec modération-les alertes perturbent le workflow de l’utilisateur avec l’application et interrompent l’expérience utilisateur. ne doivent donc être utilisées que dans des situations importantes, telles que les notifications d’erreur, les achats dans l’application et les actions destructrices.
 - **Fournit des choix utiles** : si l’alerte présente des options à l’utilisateur, vous devez vous assurer que chaque option présente des informations critiques et fournit des actions utiles à l’utilisateur.
 
 <a name="Alert-Titles-and-Messages" />
@@ -44,7 +44,7 @@ Apple propose les suggestions suivantes pour l’utilisation des alertes:
 Apple propose les suggestions suivantes pour présenter le titre d’une alerte et un message facultatif:
 
 - **Utiliser des titres** à plusieurs mots: le titre d’une alerte doit faire apparaître clairement le point de la situation tout en restant simple. Un titre de mot unique fournit rarement des informations suffisantes.
-- **Utilisez des titres descriptifs qui ne nécessitent pas de message** , dans la mesure du possible, pensez à rendre le titre de l’alerte suffisamment descriptif pour que le texte de message facultatif ne soit pas obligatoire. 
+- **Utilisez des titres descriptifs qui ne nécessitent pas de message** , dans la mesure du possible, pensez à rendre le titre de l’alerte suffisamment descriptif pour que le texte de message facultatif ne soit pas obligatoire.
 - **Faites en sorte que le message soit une phrase brève et complète** : si le message facultatif est nécessaire pour faire passer le point de l’alerte, maintenez-le aussi simple que possible et faites-en une phrase complète avec une mise en majuscule et une ponctuation appropriées.
 
 <a name="Alert-Buttons" />
@@ -70,15 +70,15 @@ const string acceptButtonTitle = "OK";
 const string cancelButtonTitle = "Cancel";
 const string deleteButtonTitle = "Delete";
 ...
-        
+
 var alertController = UIAlertController.Create (title, message, UIAlertControllerStyle.Alert);
 
 // Create the action.
-var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ => 
+var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
-var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ => 
+var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
@@ -97,7 +97,7 @@ UIAlertController.Create (title, message, UIAlertControllerStyle.Alert)
 Ensuite, pour chaque bouton que vous souhaitez afficher dans l’alerte, nous créons une action qui définit le titre du bouton, son style et l’action que vous souhaitez effectuer si le bouton est enfoncé:
 
 ```csharp
-UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ => 
+UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
     // Do something when the button is pressed
     ...
 );

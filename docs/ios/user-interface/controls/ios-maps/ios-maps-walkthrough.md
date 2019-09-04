@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c768003e2737fef191a1afb24b7ac50b28ace9b0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889763"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226264"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Annotations et superpositions dans Xamarin. iOS
 
 L’application que nous allons créer dans cette procédure pas à pas est illustrée ci-dessous:
 
  [![](ios-maps-walkthrough-images/00-map-overlay.png "Exemple d’application MapKit")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
- 
+
 Vous trouverez le code complet dans l' [exemple de procédure pas à pas Maps](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough).
 
 Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertinent. Nous allons commencer par ajouter du code à notre contrôleur d’affichage pour afficher MapView, puis créer des classes pour notre MapDelegate et les annotations personnalisées. Suivez les étapes ci-dessous pour y parvenir :
@@ -66,7 +66,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
     map.ShowsUserLocation = true;
     map.ZoomEnabled = true;
     map.ScrollEnabled = true;
-    
+
     ```
 
 1. Ensuite, ajoutez du code pour centrer la carte et définir sa région:
@@ -78,14 +78,14 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
     MKCoordinateRegion mapRegion = MKCoordinateRegion.FromDistance (mapCenter, 100, 100);
     map.CenterCoordinate = mapCenter;
     map.Region = mapRegion;
-    
+
     ```
 
 1. Créez une nouvelle instance de `MapDelegate` et assignez- `Delegate` la au `MKMapView`du. Là encore, nous implcodeent `MapDelegate` bientôt:
 
     ```csharp
     mapDelegate = new MapDelegate ();
-    map.Delegate = mapDelegate;     
+    map.Delegate = mapDelegate;
     ```
 
 1. À partir d’iOS 8, vous devez demander à l’utilisateur d’utiliser son emplacement. nous allons donc l’ajouter à notre exemple. Tout d’abord, `CLLocationManager` définissez une variable de niveau classe:
@@ -98,15 +98,15 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
-                    locationManager.RequestWhenInUseAuthorization ();
-                }
+        locationManager.RequestWhenInUseAuthorization ();
+    }
     ```
 
 1. Enfin, vous devez modifier le fichier **info. plist** pour informer les utilisateurs de la raison de demander leur emplacement. Dans le menu **source** du fichier **info. plist**, ajoutez la clé suivante:
-    
-    `NSLocationWhenInUseUsageDescription` 
-    
-    et chaîne: 
+
+    `NSLocationWhenInUseUsageDescription`
+
+    et chaîne:
 
     `Maps Walkthrough Docs Sample`.
 
@@ -120,34 +120,34 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
     using System;
     using CoreLocation;
     using MapKit;
-    
+
     namespace MapsWalkthrough
     {
         public class ConferenceAnnotation : MKAnnotation
         {
             string title;
             CLLocationCoordinate2D coord;
-    
+
             public ConferenceAnnotation (string title,
             CLLocationCoordinate2D coord)
             {
                 this.title = title;
                 this.coord = coord;
             }
-    
+
             public override string Title {
                 get {
                     return title;
                 }
             }
-    
+
             public override CLLocationCoordinate2D Coordinate {
                 get {
                     return coord;
                 }
             }
         }
-    }   
+    }
     ```
 
 ## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-ajout de l’annotation et de la superposition
@@ -155,7 +155,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 1. Avec le `ConferenceAnnotation` en place, nous pouvons l’ajouter à la carte. De retour dans `ViewDidLoad` la méthode `ViewController`de, ajoutez l’annotation à la coordonnée centrale de la carte:
 
     ```csharp
-    map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter)); 
+    map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
 1. Nous souhaitons également avoir un chevauchement de l’hôtel. Ajoutez le code suivant pour créer le `MKPolygon` à l’aide des coordonnées de l’hôtel fourni, puis ajoutez-le à la `AddOverlay`carte par appel:
@@ -175,8 +175,8 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
         new CLLocationCoordinate2D(30.2650364981811, -97.7385709662122),
         new CLLocationCoordinate2D(30.2650470749025, -97.7386199493406)
     });
-    
-    map.AddOverlay (hotelOverlay);  
+
+    map.AddOverlay (hotelOverlay);
     ```
 
 Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter `MapDelegate` notre classe pour gérer la création des vues d’annotation et de superposition, respectivement.
@@ -202,22 +202,22 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter `M
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
     {
         MKAnnotationView annotationView = null;
-    
+
         if (annotation is MKUserLocation)
-            return null; 
-    
+            return null;
+
         if (annotation is ConferenceAnnotation) {
-    
+
             // show conference annotation
             annotationView = mapView.DequeueReusableAnnotation (annotationId);
-    
+
             if (annotationView == null)
                 annotationView = new MKAnnotationView (annotation, annotationId);
-        
+
             annotationView.Image = UIImage.FromFile ("images/conference.png");
             annotationView.CanShowCallout = true;
-        } 
-    
+        }
+
         return annotationView;
     }
     ```
@@ -236,13 +236,13 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter `M
     {
         // show an image view when the conference annotation view is selected
         if (view.Annotation is ConferenceAnnotation) {
-    
+
             venueView = new UIImageView ();
             venueView.ContentMode = UIViewContentMode.ScaleAspectFit;
             venueImage = UIImage.FromFile ("image/venue.png");
             venueView.Image = venueImage;
             view.AddSubview (venueView);
-    
+
             UIView.Animate (0.4, () => {
             venueView.Frame = new CGRect (-75, -75, 200, 200); });
         }
@@ -256,7 +256,7 @@ Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter `M
     {
         // remove the image view when the conference annotation is deselected
         if (view.Annotation is ConferenceAnnotation) {
-    
+
             venueView.RemoveFromSuperview ();
             venueView.Dispose ();
             venueView = null;

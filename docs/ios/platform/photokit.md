@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 5e5cc20e9fbeaf2b00e022ccdbf67286aed6d5ef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3920445c234344fe7f2a1cdd93ed7f4f6405727d
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528808"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226577"
 ---
 # <a name="photokit-in-xamarinios"></a>PhotoKit dans Xamarin. iOS
 
@@ -25,13 +25,13 @@ De même, les `PHAssetCollection` classes `PHCollectionList` et contiennent resp
 
 ## <a name="querying-model-data"></a>Interrogation des données de modèle
 
-PhotoKit facilite l’interrogation des données de modèle par le biais de diverses méthodes d’extraction. Par exemple, pour récupérer toutes les images, vous devez `PFAsset.Fetch`appeler, en `PHAssetMediaType.Image` passant le type de média.
+PhotoKit facilite l’interrogation des données de modèle par le biais de diverses méthodes d’extraction. Par exemple, pour récupérer toutes les images, vous devez `PHAsset.Fetch`appeler, en `PHAssetMediaType.Image` passant le type de média.
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-L' `PHFetchResult` instance contient alors toutes les `PFAsset` instances représentant les images. Pour obtenir les images elles-mêmes, vous `PHImageManager` utilisez (ou la `PHCachingImageManager`version de mise en cache) pour effectuer une demande pour l' `RequestImageForAsset`image en appelant. Par exemple, le code suivant récupère une image pour chaque élément multimédia d’un `PHFetchResult` à afficher dans une cellule d’affichage de collection:
+L' `PHFetchResult` instance contient alors toutes les `PHAsset` instances représentant les images. Pour obtenir les images elles-mêmes, vous `PHImageManager` utilisez (ou la `PHCachingImageManager`version de mise en cache) pour effectuer une demande pour l' `RequestImageForAsset`image en appelant. Par exemple, le code suivant récupère une image pour chaque élément multimédia d’un `PHFetchResult` à afficher dans une cellule d’affichage de collection:
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)

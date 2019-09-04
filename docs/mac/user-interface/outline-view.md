@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a57363ef0fec4668fe35e1d7198372a543d672e7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3b045d18d66463a1464e446847cb5dbfd531bbf3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655347"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227886"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Modes plan dans Xamarin. Mac
 
@@ -87,10 +87,10 @@ Sélectionnez le mode plan dans la **hiérarchie** de l’interface et les propr
 - **Couleur** de la grille-définit la couleur de bordure de la cellule.
 - **Background** : définit la couleur d’arrière-plan de la cellule.
 - **Sélection** : vous permet de contrôler la manière dont l’utilisateur peut sélectionner des cellules dans la table en tant que:
-    - **Multiple** -si `true`, l’utilisateur peut sélectionner plusieurs lignes et colonnes.
-    - **Colonne** : si `true`la colonne est, l’utilisateur peut sélectionner des colonnes.
-    - **Tapez Select** -if `true`, l’utilisateur peut taper un caractère pour sélectionner une ligne.
-    - **Empty** : si `true`la valeur est, l’utilisateur n’est pas obligé de sélectionner une ligne ou une colonne, la table n’autorise aucune sélection.
+  - **Multiple** -si `true`, l’utilisateur peut sélectionner plusieurs lignes et colonnes.
+  - **Colonne** : si `true`la colonne est, l’utilisateur peut sélectionner des colonnes.
+  - **Tapez Select** -if `true`, l’utilisateur peut taper un caractère pour sélectionner une ligne.
+  - **Empty** : si `true`la valeur est, l’utilisateur n’est pas obligé de sélectionner une ligne ou une colonne, la table n’autorise aucune sélection.
 - **Enregistrement** automatique: nom sous lequel le format des tables est automatiquement enregistré.
 - **Informations sur** la colonne `true`-si, l’ordre et la largeur des colonnes sont automatiquement enregistrés.
 - **Sauts de ligne** : sélectionnez la façon dont la cellule gère les sauts de ligne.
@@ -157,14 +157,14 @@ Tout comme n’importe quel autre contrôle d’IU de cacao, nous devons exposer
 
 Le processus est le même pour tout élément de vue en mode plan que nous souhaitons exposer:
 
-1. Basculez vers l’éditeur de l' **Assistant** et `ViewController.h` Vérifiez que le fichier est sélectionné: 
+1. Basculez vers l’éditeur de l' **Assistant** et `ViewController.h` Vérifiez que le fichier est sélectionné:
 
     [![](outline-view-images/edit11.png "Sélection du fichier. h correct")](outline-view-images/edit11.png#lightbox)
 2. Sélectionnez le mode plan dans la **hiérarchie**de l’interface, cliquez dessus et faites- `ViewController.h` le glisser vers le fichier.
-3. Créez un **orifice** pour la vue plan appelée `ProductOutline`: 
+3. Créez un **orifice** pour la vue plan appelée `ProductOutline`:
 
     [![](outline-view-images/edit13.png "Configuration d’une prise")](outline-view-images/edit13.png#lightbox)
-4. Créez des **sorties** pour les colonnes de tables, ainsi `ProductColumn` que `DetailsColumn`les suivantes: 
+4. Créez des **sorties** pour les colonnes de tables, ainsi `ProductColumn` que `DetailsColumn`les suivantes:
 
     [![](outline-view-images/edit14.png "Configuration d’une prise")](outline-view-images/edit14.png#lightbox)
 5. Enregistrez vos modifications et revenez à Visual Studio pour Mac à synchroniser avec Xcode.
@@ -263,7 +263,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).Products [childIndex];
             }
-                
+
         }
 
         public override bool ItemExpandable (NSOutlineView outlineView, NSObject item)
@@ -273,7 +273,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).IsProductGroup;
             }
-        
+
         }
         #endregion
     }
@@ -298,7 +298,7 @@ namespace MacOutlines
 {
     public class ProductOutlineDelegate : NSOutlineViewDelegate
     {
-        #region Constants 
+        #region Constants
         private const string CellIdentifier = "ProdCell";
         #endregion
 
@@ -578,7 +578,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.StringValue;
-            break; 
+            break;
         }
     };
 
@@ -649,7 +649,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.TextField.StringValue;
-            break; 
+            break;
         }
     };
 

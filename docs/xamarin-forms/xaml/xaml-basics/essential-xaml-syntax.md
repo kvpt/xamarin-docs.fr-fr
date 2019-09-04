@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529296"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228065"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Partie 2. Syntaxe XAML essentielle
 
@@ -255,7 +255,7 @@ Le `Grid.Row` et `Grid.Column` paramètres 0 ne sont pas nécessaires mais sont 
 
 Voici à quoi elle ressemble :
 
-[![](essential-xaml-syntax-images/griddemo.png "Disposition en grille")](essential-xaml-syntax-images/griddemo-large.png#lightbox "mise en page de grille")
+[![Disposition Grille](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
 Juger uniquement à partir de la syntaxe, ces `Grid.Row`, `Grid.Column`, `Grid.RowSpan`, et `Grid.ColumnSpan` attributs semblent être des champs statiques ou des propriétés de `Grid`, mais il est intéressant, `Grid` ne définit aucun élément nommé `Row`, `Column`, `RowSpan`, ou `ColumnSpan`.
 
@@ -312,7 +312,7 @@ Le `AbsoluteLayout` classe définit deux propriétés jointes nommées `LayoutBo
 
 Et voici :
 
-[![](essential-xaml-syntax-images/absolutedemo-large.png "Disposition absolue")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "disposition absolue")
+[![Disposition absolue](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
 
 Quelque chose comme ceci, vous pourrez remettre en question la sagesse d’à l’aide de XAML. Sans aucun doute, la répétition et la régularité de la `LayoutBounds` rectangle suggère qu’il peut être mieux a réalisé dans le code.
 

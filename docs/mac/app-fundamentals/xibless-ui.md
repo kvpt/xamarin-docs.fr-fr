@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 1f49f3c24bc4c89edb005206b953176639214481
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d51e1b20e1409d228db2f38e6c31ad1165897654
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647175"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226892"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. Storyboard/. XIB-conception de l’interface utilisateur moins dans Xamarin. Mac
 
@@ -35,16 +35,16 @@ Lorsque vous créez une application de cacao Xamarin. Mac, vous recevez une fen�
 Pour basculer vers une fenêtre Xibless pour une application, procédez comme suit:
 
 1. Ouvrez l’application que vous souhaitez arrêter à l' `.storyboard` aide des fichiers ou. XIB pour définir l’interface utilisateur dans Visual Studio pour Mac.
-2. Dans le **panneau solutions**, cliquez avec le bouton droit sur le fichier **main. Storyboard** ou **MainWindow. XIB** , puis sélectionnez **supprimer**: 
+2. Dans le **panneau solutions**, cliquez avec le bouton droit sur le fichier **main. Storyboard** ou **MainWindow. XIB** , puis sélectionnez **supprimer**:
 
     ![Suppression de la fenêtre ou du storyboard principal](xibless-ui-images/switch01.png "Suppression de la fenêtre ou du storyboard principal")
-3. Dans la **boîte de dialogue supprimer**, cliquez sur le bouton **supprimer** pour supprimer complètement le. Storyboard ou. XIB du projet: 
+3. Dans la **boîte de dialogue supprimer**, cliquez sur le bouton **supprimer** pour supprimer complètement le. Storyboard ou. XIB du projet:
 
     ![Confirmation de la suppression](xibless-ui-images/switch02.png "Confirmation de la suppression")
 
 Nous devons maintenant modifier le fichier **MainWindow.cs** pour définir la disposition de la fenêtre et modifier le fichier **ViewController.cs** ou **MainWindowController.cs** pour créer une instance de notre `MainWindow` classe, car nous n’utilisons plus le. fichier Storyboard ou. XIB.
 
-Les applications Xamarin. Mac modernes qui utilisent des storyboards pour leur interface utilisateur peuvent ne pas inclure automatiquement les fichiers **MainWindow.cs**, **ViewController.cs** ou **MainWindowController.cs** . Si nécessaire, ajoutez simplement une nouvelle classe C# vide au projet (**Ajouter** > un**nouveau fichier...** Classe videgénérale > ) et nommez-la identique au fichier manquant.  >  
+Les applications Xamarin. Mac modernes qui utilisent des storyboards pour leur interface utilisateur peuvent ne pas inclure automatiquement les fichiers **MainWindow.cs**, **ViewController.cs** ou **MainWindowController.cs** . Si nécessaire, ajoutez simplement une nouvelle classe C# vide au projet (**Ajouter** > un**nouveau fichier...** Classe videgénérale > ) et nommez-la identique au fichier manquant.  > 
 
 
 ### <a name="defining-the-window-in-code"></a>Définition de la fenêtre dans le code
@@ -160,7 +160,7 @@ La `AutoresizingMask = NSViewResizingMask.MinYMargin` propriété indique au bou
 
 Enfin, la `ContentView.AddSubview (ClickMeButton)` méthode ajoute le `NSButton` à la vue de contenu afin qu’il s’affiche à l’écran lorsque l’application est exécutée et que la fenêtre s’affiche.
 
-Ensuite, une étiquette est ajoutée à la fenêtre qui affiche le nombre de clics effectués sur `NSButton` le. 
+Ensuite, une étiquette est ajoutée à la fenêtre qui affiche le nombre de clics effectués sur `NSButton` le.
 
 ```csharp
 ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width - 130, 20)) {
@@ -172,7 +172,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
     StringValue = "Button has not been clicked yet."
 };
 ContentView.AddSubview (ClickMeLabel);
-``` 
+```
 
 Étant donné que MacOS n’a pas d’élément d’interface utilisateur d' _étiquette_ spécifique, nous avons ajouté un style `NSTextField` spécial, non modifiable pour agir en tant qu’étiquette. À l’instar du bouton, la taille et l’emplacement prennent en compte le fait que (0, 0) est en bas à gauche de la fenêtre. La `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` propriété utilise l’opérateur **or** pour combiner deux `NSViewResizingMask` fonctionnalités. L’étiquette reste alors dans le même emplacement que le haut de la fenêtre lorsque la fenêtre est redimensionnée verticalement et diminue et s’agrandit au fur et à mesure que la fenêtre est redimensionnée horizontalement.
 
@@ -239,7 +239,7 @@ Nous définissons l’emplacement de la fenêtre de l’écran `CGRect`avec un. 
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
-``` 
+```
 
 Les fonctionnalités `NSWindowStyle` suivantes sont disponibles:
 
@@ -249,7 +249,7 @@ Les fonctionnalités `NSWindowStyle` suivantes sont disponibles:
 - **Miniaturizable** : la fenêtre a un bouton de la miniature et peut être réduite.
 - **Redimensionnable** : la fenêtre a un bouton redimensionner et être redimensionnable.
 - **Utilitaire** : la fenêtre est une fenêtre de style utilitaire (panneau).
-- **DocModal** : si la fenêtre est un panneau, il s’agit d’un document modal au lieu d’un système modal. 
+- **DocModal** : si la fenêtre est un panneau, il s’agit d’un document modal au lieu d’un système modal.
 - **NonactivatingPanel** : si la fenêtre est un panneau, elle ne devient pas la fenêtre principale.
 - **TexturedBackground** : la fenêtre aura un arrière-plan texturé.
 - Non mis à l' **échelle** : la fenêtre ne sera pas mise à l’échelle.
@@ -292,7 +292,7 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 Si vous souhaitez ajouter un code uniquement, une fenêtre xibless à une application Xamarin. Mac existante, cliquez avec le bouton droit sur le projet dans le **panneau solutions** puis sélectionnez **Ajouter** > un**nouveau fichier.** .. Dans la boîte de dialogue **nouveau fichier** , choisissez **Xamarin. Mac** > **cacao fenêtre avec contrôleur**, comme illustré ci-dessous:
 
-![Ajout d’un nouveau contrôleur de fenêtre](xibless-ui-images/add01.png "Ajout d’un nouveau contrôleur de fenêtre") 
+![Ajout d’un nouveau contrôleur de fenêtre](xibless-ui-images/add01.png "Ajout d’un nouveau contrôleur de fenêtre")
 
 Comme précédemment, nous allons supprimer le fichier. Storyboard ou. XIB par défaut du projet (dans ce cas **SecondWindow. XIB**) et suivre les étapes de la section [basculer une fenêtre pour utiliser le code](#Switching_a_Window_to_use_Code) ci-dessus pour traiter la définition de la fenêtre en code.
 

@@ -6,12 +6,12 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 61562eed8867b7a2e12b3d2e96feed28d957696b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 021139c817d2b0eb430a6c8fe09dbd07b7c17813
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511201"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226156"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Mise à jour des applications existantes vers le API unifiée
 
@@ -40,7 +40,7 @@ Les applications Xamarin. iOS existantes peuvent être mises à jour vers le API
 
 Les applications Xamarin. Mac existantes peuvent être mises à jour vers le API unifiée à l’aide de l’outil de migration automatisé intégré à Visual Studio pour Mac. Certains correctifs supplémentaires peuvent être nécessaires, comme expliqué dans [ces instructions](~/cross-platform/macios/unified/updating-mac-apps.md) et [conseils](~/cross-platform/macios/unified/updating-tips.md).
 
-### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Applications Xamarin. Forms](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Applications Xamarin.Forms](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
 Suivez ces instructions pour mettre à jour une solution Xamarin. Forms existante avec un projet iOS afin d’utiliser le API unifiée. La prise en charge de API unifiée est disponible uniquement dans Xamarin. Forms 1,3 et versions ultérieures. par conséquent, [les instructions](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md) expliquent également comment mettre à jour votre application Xamarin. Forms vers la version 1,3. Ces [conseils](~/cross-platform/macios/unified/updating-tips.md) peuvent vous aider à mettre à jour des codes iOS natifs dans des convertisseurs personnalisés ou des services de dépendance.
 

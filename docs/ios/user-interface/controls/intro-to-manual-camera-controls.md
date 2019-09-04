@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 889bc13cfd0cbea51c34e8b3bcb6393293f4c2ae
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6f60b52d4fd29aacf319f9de94051e28c9876e33
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528746"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226698"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Contrôles d’appareil photo manuels dans Xamarin. iOS
 
@@ -172,8 +172,8 @@ Procédez comme suit pour modifier l’application `AppDelegate` et ajouter le c
 
 1. Double-cliquez sur `AppDelegate.cs` le fichier dans le Explorateur de solutions pour l’ouvrir et le modifier.
 1. Ajoutez les instructions using suivantes au début du fichier:
-    
-    ```
+
+    ```csharp
     using System;
     using Foundation;
     using UIKit;
@@ -188,12 +188,12 @@ Procédez comme suit pour modifier l’application `AppDelegate` et ajouter le c
     ```
 
 1. Ajoutez les variables privées et les propriétés calculées suivantes à `AppDelegate` la classe:
-    
-    ```
+
+    ```csharp
     #region Private Variables
     private NSError Error;
     #endregion
-    
+
     #region Computed Properties
     public override UIWindow Window {get;set;}
     public bool CameraAvailable { get; set; }
@@ -204,16 +204,16 @@ Procédez comme suit pour modifier l’application `AppDelegate` et ajouter le c
     public AVCaptureDeviceInput Input { get; set; }
     #endregion
     ```
-  
+
 1. Remplacez la méthode terminée et remplacez-la par:
-    
-    ```
+
+    ```csharp
     public override void FinishedLaunching (UIApplication application)
     {
         // Create a new capture session
         Session = new AVCaptureSession ();
         Session.SessionPreset = AVCaptureSession.PresetMedium;
-    
+
         // Create a device input
         CaptureDevice = AVCaptureDevice.DefaultDeviceWithMediaType (AVMediaType.Video);
         if (CaptureDevice == null) {
@@ -222,7 +222,7 @@ Procédez comme suit pour modifier l’application `AppDelegate` et ajouter le c
             CameraAvailable = false;
             return;
         }
-    
+
         // Prepare device for configuration
         CaptureDevice.LockForConfiguration (out Error);
         if (Error != null) {
@@ -231,13 +231,13 @@ Procédez comme suit pour modifier l’application `AppDelegate` et ajouter le c
             CaptureDevice.UnlockForConfiguration ();
             return;
         }
-    
+
         // Configure stream for 15 frames per second (fps)
         CaptureDevice.ActiveVideoMinFrameDuration = new CMTime (1, 15);
-    
+
         // Unlock configuration
         CaptureDevice.UnlockForConfiguration ();
-    
+
         // Get input from capture device
         Input = AVCaptureDeviceInput.FromDevice (CaptureDevice);
         if (Input == null) {
@@ -246,27 +246,27 @@ Procédez comme suit pour modifier l’application `AppDelegate` et ajouter le c
             CameraAvailable = false;
             return;
         }
-    
+
         // Attach input to session
         Session.AddInput (Input);
-    
+
         // Create a new output
         var output = new AVCaptureVideoDataOutput ();
         var settings = new AVVideoSettingsUncompressed ();
         settings.PixelFormatType = CVPixelFormatType.CV32BGRA;
         output.WeakVideoSettings = settings.Dictionary;
-    
+
         // Configure and attach to the output to the session
         Queue = new DispatchQueue ("ManCamQueue");
         Recorder = new OutputRecorder ();
         output.SetSampleBufferDelegate (Recorder, Queue);
         Session.AddOutput (output);
-    
+
         // Let tabs know that a camera is available
         CameraAvailable = true;
     }
-    ```  
-  
+    ```
+
 1. Enregistrez les modifications dans le fichier.
 
 
@@ -300,10 +300,10 @@ Dans un appareil iOS, l’objectif est plus proche ou plus éloigné du capteur 
 
 Lorsque vous vous concentrez sur le focus, le développeur doit connaître les conditions suivantes:
 
-- **Profondeur de champ** : distance entre les objets in-Focus les plus proches et les plus éloignés. 
+- **Profondeur de champ** : distance entre les objets in-Focus les plus proches et les plus éloignés.
 - **Macro** : il s’agit de la plus proche de la gamme de focalisation et est la distance la plus proche à laquelle la lentille peut se concentrer.
 - **Infinity** : il s’agit de la fin du spectre de focus et de la distance la plus éloignée à laquelle la lentille peut se concentrer.
-- **Distance hyperfocal** : il s’agit du point dans le spectre de focus où l’objet le plus éloigné dans le cadre est juste à la fin de la concentration. En d’autres termes, il s’agit de la position focale qui maximise la profondeur du champ. 
+- **Distance hyperfocal** : il s’agit du point dans le spectre de focus où l’objet le plus éloigné dans le cadre est juste à la fin de la concentration. En d’autres termes, il s’agit de la position focale qui maximise la profondeur du champ.
 - **Position** de l’objectif: c’est ce qui contrôle tous les autres termes ci-dessus. Il s’agit de la distance de la lentille par rapport au capteur et, par conséquent, du contrôleur de focus.
 
 
@@ -383,8 +383,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. Ajoutez les variables privées suivantes:
 
     ```csharp
@@ -392,8 +392,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     private NSError Error;
     private bool Automatic = true;
     #endregion
-    ```  
-  
+    ```
+
 1. Ajoutez les propriétés calculées suivantes:
 
     ```csharp
@@ -403,21 +403,21 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. Substituez la `ViewDidLoad` méthode et ajoutez le code suivant:
 
     ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Create a timer to monitor and update the UI
         SampleTimer = new Timer (5000);
         SampleTimer.Elapsed += (sender, e) => {
@@ -426,13 +426,13 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
                 Position.Value = ThisApp.Input.Device.LensPosition;
             });
         };
-    
+
         // Watch for value changes
         Segments.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // Lock device for change
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
-    
+
             // Take action based on the segment selected
             switch(Segments.SelectedSegment) {
             case 0:
@@ -450,43 +450,43 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
                 Position.Enabled = true;
                 break;
             }
-    
+
             // Unlock device
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         // Monitor position changes
         Position.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.SetFocusModeLocked(Position.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
     }
-    ```  
-  
+    ```
+
 1. Substituez la `ViewDidAppear` méthode et ajoutez le code suivant pour démarrer l’enregistrement lorsque la vue se charge:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. Avec l’appareil photo en mode auto, le curseur se déplace automatiquement à mesure que l’appareil photo ajuste le focus:
 
     [![](intro-to-manual-camera-controls-images/image6.png "Le curseur se déplace automatiquement à mesure que la caméra ajuste le focus dans cet exemple d’application")](intro-to-manual-camera-controls-images/image6.png#lightbox)
@@ -517,7 +517,7 @@ Avant de discuter des détails relatifs au contrôle de l’exposition dans une 
 Les trois éléments de base qui se combinent pour contrôler l’exposition sont les suivants:
 
 - **Vitesse d’obturation** : il s’agit de la durée pendant laquelle l’obturateur est ouvert pour laisser la lumière sur le capteur d’appareil photo. Plus la durée d’ouverture de l’obturateur est faible, plus la lumière est faible et plus l’image est nette (moins de flou de mouvement). Plus l’obturateur est ouvert, plus la lumière est longue et plus le flou de mouvement est grand.
-- **Mappage ISO** : il s’agit d’un terme emprunté par film photographie et qui fait référence à la sensibilité des produits chimiques dans le film à la lumière. Les valeurs ISO faibles du film ont moins de grain et une reproduction plus fine des couleurs; les valeurs ISO faibles sur les capteurs numériques ont moins de bruit de capteur mais moins de luminosité. Plus la valeur ISO est élevée, plus l’image est brillante, mais avec plus de bruit de capteur. «ISO» sur un capteur numérique est une mesure de [gain électronique](https://en.wikipedia.org/wiki/Gain), et non une fonctionnalité physique. 
+- **Mappage ISO** : il s’agit d’un terme emprunté par film photographie et qui fait référence à la sensibilité des produits chimiques dans le film à la lumière. Les valeurs ISO faibles du film ont moins de grain et une reproduction plus fine des couleurs; les valeurs ISO faibles sur les capteurs numériques ont moins de bruit de capteur mais moins de luminosité. Plus la valeur ISO est élevée, plus l’image est brillante, mais avec plus de bruit de capteur. «ISO» sur un capteur numérique est une mesure de [gain électronique](https://en.wikipedia.org/wiki/Gain), et non une fonctionnalité physique.
 - **Ouverture** de l’objectif: il s’agit de la taille de l’ouverture de la lentille. Sur tous les appareils iOS, l’ouverture de l’objectif est fixe, donc les seules deux valeurs qui peuvent être utilisées pour ajuster l’exposition sont vitesse d’obturation et ISO.
 
 
@@ -573,12 +573,12 @@ CaptureDevice.UnlockForConfiguration();
 
 Les plages de paramètres minimale et maximale dépendent du périphérique sur lequel l’application s’exécute, donc ils ne doivent jamais être codés en dur. Au lieu de cela, utilisez les propriétés suivantes pour récupérer les plages de valeurs minimale et maximale:
 
-- `CaptureDevice.MinExposureTargetBias` 
-- `CaptureDevice.MaxExposureTargetBias` 
-- `CaptureDevice.ActiveFormat.MinISO` 
-- `CaptureDevice.ActiveFormat.MaxISO` 
-- `CaptureDevice.ActiveFormat.MinExposureDuration` 
-- `CaptureDevice.ActiveFormat.MaxExposureDuration` 
+- `CaptureDevice.MinExposureTargetBias`
+- `CaptureDevice.MaxExposureTargetBias`
+- `CaptureDevice.ActiveFormat.MinISO`
+- `CaptureDevice.ActiveFormat.MaxISO`
+- `CaptureDevice.ActiveFormat.MinExposureDuration`
+- `CaptureDevice.ActiveFormat.MaxExposureDuration`
 
 
 Comme indiqué dans le code ci-dessus, l’appareil de capture doit être verrouillé pour la configuration avant qu’une modification de l’exposition puisse être apportée.
@@ -600,8 +600,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
 
 
 1. Ajoutez les instructions using suivantes:
-    
-    ```
+
+    ```csharp
     using System;
     using Foundation;
     using UIKit;
@@ -614,19 +614,19 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. Ajoutez les variables privées suivantes:
 
     ```csharp
     #region Private Variables
-    private NSError Error; 
+    private NSError Error;
     private bool Automatic = true;
     private nfloat ExposureDurationPower = 5;
     private nfloat ExposureMinimumDuration = 1.0f/1000.0f;
     #endregion
-    ```  
-  
+    ```
+
 1. Ajoutez les propriétés calculées suivantes:
 
     ```csharp
@@ -636,34 +636,34 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. Substituez la `ViewDidLoad` méthode et ajoutez le code suivant:
 
     ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Set min and max values
         Offset.MinValue = ThisApp.CaptureDevice.MinExposureTargetBias;
         Offset.MaxValue = ThisApp.CaptureDevice.MaxExposureTargetBias;
-    
+
         Duration.MinValue = 0.0f;
         Duration.MaxValue = 1.0f;
-    
+
         ISO.MinValue = ThisApp.CaptureDevice.ActiveFormat.MinISO;
         ISO.MaxValue = ThisApp.CaptureDevice.ActiveFormat.MaxISO;
-    
+
         Bias.MinValue = ThisApp.CaptureDevice.MinExposureTargetBias;
         Bias.MaxValue = ThisApp.CaptureDevice.MaxExposureTargetBias;
-    
+
         // Create a timer to monitor and update the UI
         SampleTimer = new Timer (5000);
         SampleTimer.Elapsed += (sender, e) => {
@@ -671,7 +671,7 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
             Offset.BeginInvokeOnMainThread(() =>{
                 Offset.Value = ThisApp.Input.Device.ExposureTargetOffset;
             });
-    
+
             Duration.BeginInvokeOnMainThread(() =>{
                 var newDurationSeconds = CMTimeGetSeconds(ThisApp.Input.Device.ExposureDuration);
                 var minDurationSeconds = Math.Max(CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MinExposureDuration), ExposureMinimumDuration);
@@ -679,22 +679,22 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
                 var p = (newDurationSeconds - minDurationSeconds) / (maxDurationSeconds - minDurationSeconds);
                 Duration.Value = (float)Math.Pow(p, 1.0f/ExposureDurationPower);
             });
-    
+
             ISO.BeginInvokeOnMainThread(() => {
                 ISO.Value = ThisApp.Input.Device.ISO;
             });
-    
+
             Bias.BeginInvokeOnMainThread(() => {
                 Bias.Value = ThisApp.Input.Device.ExposureTargetBias;
             });
         };
-    
+
         // Watch for value changes
         Segments.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // Lock device for change
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
-    
+
             // Take action based on the segment selected
             switch(Segments.SelectedSegment) {
             case 0:
@@ -722,71 +722,71 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
                 ISO.Enabled = true;
                 break;
             }
-    
+
             // Unlock device
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         // Monitor position changes
         Duration.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Calculate value
             var p = Math.Pow(Duration.Value,ExposureDurationPower);
             var minDurationSeconds = Math.Max(CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MinExposureDuration),ExposureMinimumDuration);
             var maxDurationSeconds = CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MaxExposureDuration);
             var newDurationSeconds = p * (maxDurationSeconds - minDurationSeconds) +minDurationSeconds;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.LockExposure(CMTime.FromSeconds(p,1000*1000*1000),ThisApp.CaptureDevice.ISO,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         ISO.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.LockExposure(ThisApp.CaptureDevice.ExposureDuration,ISO.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         Bias.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             // if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.SetExposureTargetBias(Bias.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
     }
-    ```  
-  
+    ```
+
 1. Substituez la `ViewDidAppear` méthode et ajoutez le code suivant pour démarrer l’enregistrement lorsque la vue se charge:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. Une fois l’appareil photo en mode auto, les curseurs se déplacent automatiquement à mesure que l’appareil photo ajuste l’exposition:
 
     [![](intro-to-manual-camera-controls-images/image13.png "Les curseurs se déplaceront automatiquement à mesure que l’appareil photo ajuste l’exposition")](intro-to-manual-camera-controls-images/image13.png#lightbox)
@@ -853,9 +853,9 @@ Outre les fonctionnalités déjà fournies par iOS 7 et versions ultérieures, l
 
 Pour implémenter les fonctionnalités ci- `AVCaptureWhiteBalanceGain` dessus, la structure a été ajoutée avec les membres suivants:
 
-- `RedGain` 
-- `GreenGain` 
-- `BlueGain` 
+- `RedGain`
+- `GreenGain`
+- `BlueGain`
 
 
 Le gain de solde blanc maximal est actuellement de quatre (4) et peut être prêt `MaxWhiteBalanceGain` à partir de la propriété. Par conséquent, la plage légale va de 1 à `MaxWhiteBalanceGain` (4) actuellement.
@@ -926,17 +926,17 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. Ajoutez les variables privées suivantes:
 
     ```csharp
     #region Private Variables
-    private NSError Error; 
+    private NSError Error;
     private bool Automatic = true;
     #endregion
     ```
-  
+
 1. Ajoutez les propriétés calculées suivantes:
 
     ```csharp
@@ -946,8 +946,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. Ajoutez la méthode privée suivante pour définir la nouvelle température et la teinte de l’équilibre blanc:
 
     ```csharp
@@ -966,7 +966,7 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
             ThisApp.CaptureDevice.UnlockForConfiguration ();
         }
     }
-    
+
     AVCaptureWhiteBalanceGains NomralizeGains (AVCaptureWhiteBalanceGains gains)
     {
         gains.RedGain = Math.Max (1, gains.RedGain);
@@ -981,8 +981,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
         return gains;
     }
     #endregion
-    ```   
-  
+    ```
+
 1. Substituez la `ViewDidLoad` méthode et ajoutez le code suivant:
 
     ```csharp
@@ -1086,26 +1086,26 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour le contrô
             }
         };
     }
-    ``` 
-  
+    ```
+
 1. Substituez la `ViewDidAppear` méthode et ajoutez le code suivant pour démarrer l’enregistrement lorsque la vue se charge:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. Enregistrez les modifications apportées au code et exécutez l’application.
 1. Une fois l’appareil photo en mode auto, les curseurs se déplacent automatiquement à mesure que l’appareil photo ajuste l’équilibre des blancs:
 
@@ -1145,8 +1145,8 @@ Toutes les commandes de capture entre crochets sont implémentées dans la `AVCa
 
 Deux nouvelles classes ont été implémentées pour gérer les paramètres:
 
-- `AVCaptureAutoExposureBracketedStillImageSettings`: Il possède une propriété, `ExposureTargetBias`, utilisée pour définir le décalage pour un crochet d’exposition automatique. 
-- `AVCaptureManual`  `ExposureBracketedStillImageSettings`: Il a deux propriétés, `ExposureDuration` et `ISO`, utilisées pour définir la vitesse d’obturation et ISO pour un crochet d’exposition manuel. 
+- `AVCaptureAutoExposureBracketedStillImageSettings`: Il possède une propriété, `ExposureTargetBias`, utilisée pour définir le décalage pour un crochet d’exposition automatique.
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings`: Il a deux propriétés, `ExposureDuration` et `ISO`, utilisées pour définir la vitesse d’obturation et ISO pour un crochet d’exposition manuel.
 
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>Les contrôles de capture entre crochets ne sont pas
@@ -1214,8 +1214,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour la capture
     using CoreGraphics;
     using CoreFoundation;
     using CoreImage;
-    ```  
-  
+    ```
+
 1. Ajoutez les variables privées suivantes:
 
     ```csharp
@@ -1224,8 +1224,8 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour la capture
     private List<UIImageView> Output = new List<UIImageView>();
     private nint OutputIndex = 0;
     #endregion
-    ```    
-  
+    ```
+
 1. Ajoutez les propriétés calculées suivantes:
 
     ```csharp
@@ -1234,68 +1234,68 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour la capture
         get { return (AppDelegate)UIApplication.SharedApplication.Delegate; }
     }
     #endregion
-    ```  
-  
+    ```
+
 1. Ajoutez la méthode privée suivante pour générer les vues d’images de sortie requises:
 
     ```csharp
     #region Private Methods
     private UIImageView BuildOutputView(nint n) {
-    
+
         // Create a new image view controller
         var imageView = new UIImageView (new CGRect (CameraView.Frame.Width * n, 0, CameraView.Frame.Width, CameraView.Frame.Height));
-    
+
         // Load a temp image
         imageView.Image = UIImage.FromFile ("Default-568h@2x.png");
-    
+
         // Add a label
         UILabel label = new UILabel (new CGRect (0, 20, CameraView.Frame.Width, 24));
         label.TextColor = UIColor.White;
         label.Text = string.Format ("Bracketed Image {0}", n);
         imageView.AddSubview (label);
-    
+
         // Add to scrolling view
         ScrollView.AddSubview (imageView);
-    
+
         // Return new image view
         return imageView;
     }
     #endregion
-    ```  
-  
-1. Substituez la `ViewDidLoad` méthode et ajoutez le code suivant:
-    
     ```
+
+1. Substituez la `ViewDidLoad` méthode et ajoutez le code suivant:
+
+    ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Setup scrolling area
         ScrollView.ContentSize = new SizeF (CameraView.Frame.Width * 4, CameraView.Frame.Height);
-    
+
         // Add output views
         Output.Add (BuildOutputView (1));
         Output.Add (BuildOutputView (2));
         Output.Add (BuildOutputView (3));
-    
+
         // Create preset settings
         var Settings = new AVCaptureBracketedStillImageSettings[] {
             AVCaptureAutoExposureBracketedStillImageSettings.Create(-2.0f),
             AVCaptureAutoExposureBracketedStillImageSettings.Create(0.0f),
             AVCaptureAutoExposureBracketedStillImageSettings.Create(2.0f)
         };
-    
+
         // Wireup capture button
         CaptureButton.TouchUpInside += (sender, e) => {
             // Reset output index
             OutputIndex = 0;
-    
+
             // Tell the camera that we are getting ready to do a bracketed capture
             ThisApp.StillImageOutput.PrepareToCaptureStillImageBracket(ThisApp.StillImageOutput.Connections[0],Settings,async (bool ready, NSError err) => {
                 // Was there an error, if so report it
@@ -1303,16 +1303,16 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour la capture
                     Console.WriteLine("Error: {0}",err.LocalizedDescription);
                 }
             });
-    
+
             // Ask the camera to snap a bracketed capture
             ThisApp.StillImageOutput.CaptureStillImageBracket(ThisApp.StillImageOutput.Connections[0],Settings, (sampleBuffer, settings, err) =>{
                 // Convert raw image stream into a Core Image Image
                 var imageData = AVCaptureStillImageOutput.JpegStillToNSData(sampleBuffer);
                 var image = CIImage.FromData(imageData);
-    
+
                 // Display the resulting image
                 Output[OutputIndex++].Image = UIImage.FromImage(image);
-    
+
                 // IMPORTANT: You must release the buffer because AVFoundation has a fixed number
                 // of buffers and will stop delivering frames if it runs out.
                 sampleBuffer.Dispose();
@@ -1320,26 +1320,26 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour la capture
         };
     }
     ```
-    
-  
+
+
 1. Substituez la `ViewDidAppear` méthode et ajoutez le code suivant:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
         }
     }
-    
-    ```  
-    
+
+    ```
+
 1. Enregistrez les modifications apportées au code et exécutez l’application.
 1. Cadrez une scène et appuyez sur le bouton de crochet de capture:
 

@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 97c168460b091b9ada954cacd895a670c31805b2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ada7ce8fc9365ab4133ddf439353e97e640f39d6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655179"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228112"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Trois façons de dessiner un arc
 
@@ -22,7 +22,7 @@ _Découvrez comment utiliser SkiaSharp pour définir des arcs de trois façons d
 
 Un arc est une courbe de la circonférence d’une ellipse, telles que les parties arrondies de ce signe l’infini :
 
-![](arcs-images/arcsample.png "Connexion de l’infini")
+![Signe infini](arcs-images/arcsample.png)
 
 En dépit de la simplicité de cette définition, il n’existe aucun moyen de définir une fonction de dessin de l’arc qui satisfait à tous les besoins, et par conséquent, aucun consensus entre les systèmes de graphiques de la meilleure façon de dessiner un arc. Pour cette raison, la `SKPath` classe ne se limite pas à la seule approche.
 
@@ -42,21 +42,21 @@ Ces méthodes sont identiques aux méthodes Android [`AddArc`](xref:Android.Grap
 
 Les deux méthodes commencent par un `SKRect` valeur qui définit l’emplacement et la taille d’une ellipse :
 
-![](arcs-images/anglearcoval.png "L’ovale qui commence un arc angle")
+![Ovale qui commence un arc d’angle](arcs-images/anglearcoval.png)
 
 L’arc est une partie de la circonférence de cette ellipse.
 
 Le `startAngle` argument est un angle dans le sens horaire en degrés par rapport à une ligne horizontale dessinée à partir du centre de l’ellipse à droite. Le `sweepAngle` argument est relative à la `startAngle`. Voici `startAngle` et `sweepAngle` valeurs de 60 degrés et 100 degrés, respectivement :
 
-![](arcs-images/anglearcangles.png "Les angles qui définissent un arc angle")
+![Angles qui définissent un arc d’angle](arcs-images/anglearcangles.png)
 
 L’arc commence à l’angle de début. Sa longueur est régie par l’angle de balayage. L’arc est illustrée ici en rouge :
 
-![](arcs-images/anglearchighlight.png "L’arc angle en surbrillance")
+![L’arc d’angle en surbrillance](arcs-images/anglearchighlight.png)
 
 La courbe ajoutée au chemin avec le `AddArc` ou `ArcTo` méthode est simplement cette partie de la circonférence de l’ellipse :
 
-![](arcs-images/anglearc.png "L’arc angle par lui-même")
+![L’arc d’angle par lui-même](arcs-images/anglearc.png)
 
 Les `startAngle` arguments `sweepAngle` ou peuvent être négatifs: L’arc est dans le sens des aiguilles `sweepAngle` d’une montre pour les valeurs positives de et du compteur dans le sens inverse des aiguilles d’une montre.
 
@@ -103,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Comme vous pouvez le voir, l’angle de début et de l’angle de balayage peuvent prendre les valeurs négatives :
 
-[![](arcs-images/anglearc-small.png "Capture d’écran triple de la page de l’Angle Arc")](arcs-images/anglearc-large.png#lightbox "Triple capture d’écran de la page de l’Angle Arc")
+[![Capture d’écran triple de la page de l’arc angulaire](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
 
 Cette approche pour générer un arc est par algorithme le plus simple, et il est facile de dériver les équations paramétriques qui décrivent l’arc. Si nous connaissons la taille et l’emplacement de l’ellipse et les angles de début et de balayage, le début et points de terminaison de l’arc peut être calculées à l’aide de trigonométrie simple :
 
@@ -208,11 +208,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Un nouveau `SKPath` objet est créé pour chaque secteur. Le chemin d’accès se compose d’une ligne à partir du centre, puis un `ArcTo` pour dessiner l’arc et une autre ligne retour aux résultats center à partir de la `Close` appeler. Ce programme affiche les secteurs « éclaté » en les déplaçant toutes à partir du centre de 50 pixels. Cette tâche nécessite un vecteur dans la direction du milieu de l’angle de balayage pour chaque tranche :
 
-[![](arcs-images/explodedpiechart-small.png "Capture d’écran triple de la page du graphique de graphique à secteurs éclatés")](arcs-images/explodedpiechart-large.png#lightbox "Triple capture d’écran de la page du graphique de graphique à secteurs éclatés")
+[![Capture d’écran triple de la page de graphique à secteurs éclatés](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
 
 Pour voir à quoi elle ressemble sans le « explosion », mettez simplement en commentaire la `Translate` appeler :
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Capture d’écran triple de la page de graphique de graphique à secteurs éclatés sans l’explosion")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Triple capture d’écran de la page de graphique de graphique à secteurs éclatés sans l’explosion")
+[![Capture d’écran triple de la page de graphique à secteurs éclatés sans explosion](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
 
 ## <a name="the-tangent-arc"></a>L’Arc tangente
 
@@ -234,31 +234,31 @@ Le `ArcTo` méthode implique les trois points :
 - Le premier argument de point à la `ArcTo` méthode, appelée le *coin inférieur droit de point*
 - Le deuxième argument de point de `ArcTo`, appelée le *point de destination*:
 
-![](arcs-images/tangentarcthreepoints.png "Trois points qui commencent un arc tangent")
+![Trois points qui commencent un arc tangent](arcs-images/tangentarcthreepoints.png)
 
 Ces trois points définissent deux lignes connectées :
 
-![](arcs-images/tangentarcconnectinglines.png "Lignes qui connectent les trois points d’un arc tangent")
+![Lignes reliant les trois points d’un arc tangent](arcs-images/tangentarcconnectinglines.png)
 
 Si les trois points sont colinéaires &mdash; , autrement dit, si elles se trouvent sur la même ligne droite &mdash; aucun arc ne sera dessiné.
 
 Le `ArcTo` inclut également un `radius` paramètre. Cela définit le rayon d’un cercle :
 
-![](arcs-images/tangentarccircle.png "Le cercle d’un arc tangent")
+![Cercle d’un arc tangente](arcs-images/tangentarccircle.png)
 
 L’arc tangente n’est pas généralisée pour une ellipse.
 
 Si les deux lignes répondent à n’importe quel angle, ce cercle peut être inséré entre ces lignes afin qu’il soit tangente dans les deux lignes :
 
-![](arcs-images/tangentarctangentcircle.png "Le cercle d’arc tangent entre les deux lignes")
+![Cercle de l’arc tangente entre les deux lignes](arcs-images/tangentarctangentcircle.png)
 
 La courbe est ajoutée au contour ne touche pas un des points définis dans le `ArcTo` (méthode). Il se compose d’une ligne droite à partir du point actuel et le premier point tangent, un arc qui se termine par le deuxième point tangent, illustré ici en rouge :
 
-![](arcs-images/tangentarchighlight.png "L’arc tangente en surbrillance entre les deux lignes")
+![Arc tangente en surbrillance entre les deux lignes](arcs-images/tangentarchighlight.png)
 
 Voici la dernière ligne droite et arc de cercle est ajouté pour le profil :
 
-![](arcs-images/tangentarc.png "L’arc tangente en surbrillance entre les deux lignes")
+![Arc tangente en surbrillance entre les deux lignes](arcs-images/tangentarc.png)
 
 Le profil peut être poursuivi à partir du deuxième point tangent.
 
@@ -416,7 +416,7 @@ public partial class TangentArcPage : InteractivePage
 
 Voici le **les Arc tangente** page en cours d’exécution :
 
-[![](arcs-images/tangentarc-small.png "Capture d’écran triple de la page de tangente Arc")](arcs-images/tangentarc-large.png#lightbox "Triple capture d’écran de la page de l’Arc de tangente")
+[![Capture d’écran triple de la page de l’arc tangente](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
 L’arc tangente est idéale pour créer des angles arrondis est utilisée, par exemple un rectangle arrondi. Étant donné que `SKPath` inclut déjà une `AddRoundedRect` (méthode), le **arrondi de sur un heptagone** page montre comment utiliser `ArcTo` pour arrondir les angles d’un polygone sept recto verso. (Le code est généralisé pour un polygone régulière).
 
@@ -491,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Voici le programme en cours d’exécution :
 
-[![](arcs-images/roundedheptagon-small.png "Capture d’écran triple de la page de l’arrondi de sur un heptagone")](arcs-images/roundedheptagon-large.png#lightbox "Triple capture d’écran de la page sur un heptagone d’arrondi")
+[![Capture d’écran triple de la page heptagon arrondie](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
 
 ## <a name="the-elliptical-arc"></a>L’Arc elliptique
 
@@ -507,31 +507,31 @@ L’arc elliptique est cohérent avec la [arc elliptique](http://www.w3.org/TR/S
 
 Ces `ArcTo` méthodes dessiner un arc entre deux points, qui sont le point du contour actuel, et le dernier paramètre à la `ArcTo` (méthode) (le `xy` paramètre ou le distinct `x` et `y` paramètres) :
 
-![](arcs-images/ellipticalarcpoints.png "Les deux points qui a défini un arc elliptique")
+![Deux points définissant un arc elliptique](arcs-images/ellipticalarcpoints.png)
 
 Le premier paramètre de point à la `ArcTo` (méthode) (`r`, ou `rx` et `ry`) n’est pas du tout un point, mais spécifie plutôt les rayons horizontaux et verticaux d’une ellipse ;
 
-![](arcs-images/ellipticalarcellipse.png "L’ellipse définie par un arc elliptique")
+![Ellipse qui a défini un arc elliptique](arcs-images/ellipticalarcellipse.png)
 
 Le `xAxisRotate` paramètre correspond au nombre de degrés dans le sens horaire pour faire pivoter cette ellipse :
 
-![](arcs-images/ellipticalarctiltedellipse.png "L’ellipse inclinée défini un arc elliptique")
+![Ellipse inclinée qui a défini un arc elliptique](arcs-images/ellipticalarctiltedellipse.png)
 
 Si cette ellipse inclinée est ensuite placée afin qu’il touche les deux points, les points sont reliés par deux façons différentes :
 
-![](arcs-images/ellipticalarcellipse1.png "Le premier ensemble d’arcs elliptiques")
+![Premier jeu d’arcs elliptiques](arcs-images/ellipticalarcellipse1.png)
 
 Ces deux arcs peuvent être distingués de deux façons: L’arc supérieur est plus grand que l’arc inférieur, et à mesure que l’arc est dessiné de gauche à droite, l’arc supérieur est dessiné dans le sens des aiguilles d’une montre, tandis que l’arc inférieur est dessiné dans un sens dans le sens inverse des aiguilles d’une montre.
 
 Il est également possible d’ajuster l’ellipse entre les deux points dans une autre façon :
 
-![](arcs-images/ellipticalarcellipse2.png "Le deuxième ensemble d’arcs elliptiques")
+![Deuxième jeu d’arcs elliptiques](arcs-images/ellipticalarcellipse2.png)
 
 Il existe désormais un arc plus petits en haut est dessiné dans le sens horaire et un plus grand arc en bas qui est dessiné le sens antihoraire.
 
 Ces deux points peuvent par conséquent être connectées par un arc défini par l’ellipse incline un total de quatre manières :
 
-![](arcs-images/ellipticalarccolors.png "Toutes les quatre arcs elliptiques")
+![Les quatre arcs elliptiques](arcs-images/ellipticalarccolors.png)
 
 Ces quatre arcs sont distinguent par les quatre combinaisons de la [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) et [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) arguments de type énumération dans le `ArcTo` méthode :
 
@@ -586,21 +586,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Ici, il s’exécute :
 
-[![](arcs-images/ellipticalarc-small.png "Capture d’écran triple de la page de l’Arc elliptique")](arcs-images/ellipticalarc-large.png#lightbox "Triple capture d’écran de la page de l’Arc elliptique")
+[![Capture d’écran triple de la page de l’arc elliptique](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
 Le **Arc infini** page utilise l’arc elliptique pour dessiner un signe de l’infini. Le signe de l’infini est basé sur deux cercles à rayon de 100 unités séparées par des unités de 100 :
 
-![](arcs-images/infinitycircles.png "Deux cercles")
+![Deux cercles](arcs-images/infinitycircles.png)
 
 Deux lignes franchissement des uns des autres sont tangent à deux cercles :
 
-![](arcs-images/infinitycircleslines.png "Deux cercles avec les tangentes")
+![Deux cercles avec des lignes tangentes](arcs-images/infinitycircleslines.png)
 
 Le signe de l’infini est une combinaison des éléments de ces cercles et les deux lignes. Pour utiliser l’arc elliptique pour dessiner le signe de l’infini, les coordonnées où les deux lignes sont tangent à cercles doivent être déterminées.
 
 Construire un rectangle de droite dans un des cercles :
 
-![](arcs-images/infinitytriangle.png "Deux cercles avec les tangentes et embedded cercle")
+![Deux cercles avec des lignes tangentes et un cercle incorporé](arcs-images/infinitytriangle.png)
 
 Le rayon du cercle est de 100 unités et l’hypoténuse du triangle est 150 unités, donc l’angle α est l’arc sinus (sinus inverse) de 100 divisé par 150 ou 41,8 degrés. La longueur de l’autre côté du triangle est 150 fois le cosinus de degrés 41,8 ou 112, ce qui peut également être calculé en le théorème de Pythagore.
 
@@ -612,7 +612,7 @@ Les coordonnées du point tangent peuvent ensuite être calculées à l’aide d
 
 Les quatre points de tangentes sont tout ce qui est nécessaire d’établir une connexion de l’infini centrée sur le point (0, 0) à rayon du cercle de 100 :
 
-![](arcs-images/infinitycoordinates.png "Deux cercles avec les coordonnées et les tangentes")
+![Deux cercles avec des lignes tangentes et des coordonnées](arcs-images/infinitycoordinates.png)
 
 Le `PaintSurface` gestionnaire dans le [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) classe positionne le signe de l’infini afin que le (0, 0) point est positionné au centre de la page et s’adapte le chemin d’accès à la taille d’écran :
 
@@ -654,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Le code utilise le `Bounds` propriété du `SKPath` pour déterminer les dimensions du sinus de l’infini à l’échelle à la taille de la zone de dessin :
 
-[![](arcs-images/arcinfinity-small.png "Capture d’écran triple de la page de l’infini Arc")](arcs-images/arcinfinity-large.png#lightbox "Triple capture d’écran de la page de l’infini d’arc de cercle")
+[![Capture d’écran triple de la page d’infini d’arc](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
 
 Le résultat paraît un peu petit, ce qui suggère que le `Bounds` propriété du `SKPath` signale une taille supérieure au chemin d’accès.
 
@@ -662,7 +662,7 @@ En interne, Skia effectue une approximation de l’arc à l’aide de plusieurs 
 
 Pour obtenir un choix plus étroit, utilisez le `TightBounds` propriété, qui exclut les points de contrôle. Voici le programme en cours d’exécution en mode paysage et à l’aide de la `TightBounds` propriété pour obtenir les limites de chemin d’accès :
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Capture d’écran triple de la page de l’infini d’arc de cercle avec des limites étroite")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Triple capture d’écran de la page de l’infini d’arc de cercle avec des limites étroite")
+[![Capture d’écran triple de la page d’infini d’arc avec limites étroites](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
 
 Bien que les connexions entre les arcs et des lignes droites sont mathématiquement smooth, la modification à partir de l’arc à ligne droite peut sembler un peu brusque. Une meilleure connexion infini est présentée dans l’article suivant sur [ **trois Types de courbes de Bézier**](beziers.md).
 

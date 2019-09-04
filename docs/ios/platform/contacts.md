@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fe69e596193aab306a3701ea1ae0792362270557
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8b551a17fc54ec1557cd385b4c91b33720316879
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644681"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225976"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Contacts et ContactsUI dans Xamarin. iOS
 
@@ -23,7 +23,7 @@ Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, `Cont
 Les deux nouvelles infrastructures contiennent les fonctionnalités suivantes:
 
 - [**Contacts**](#contacts) : permet d’accéder aux données de la liste de contacts de l’utilisateur.
-    Étant donné que la plupart des applications requièrent uniquement un accès en lecture seule, cette infrastructure a été optimisée pour l’accès en lecture seule thread-safe.
+  Étant donné que la plupart des applications requièrent uniquement un accès en lecture seule, cette infrastructure a été optimisée pour l’accès en lecture seule thread-safe.
 
 - [**ContactsUI**](#contactsui) : fournit des éléments d’interface utilisateur Xamarin. IOS pour afficher, modifier, sélectionner et créer des contacts sur des appareils iOS.
 

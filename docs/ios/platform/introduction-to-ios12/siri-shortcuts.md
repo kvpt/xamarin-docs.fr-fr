@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 4fa15e73575e20541df7ee8f606b01ec6e3d875a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f0927a6d6d5e3b9db6f203f779fbd50a026ce7e8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656720"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226568"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Raccourcis Siri dans Xamarin. iOS
 
@@ -264,19 +264,19 @@ Pour générer la bibliothèque statique et générer C# des définitions de lia
 
 - Configurez votre système pour utiliser les outils en ligne de commande Xcode 10:
 
-    > [!WARNING]
-    > La mise à jour des outils en ligne de commande sélectionnés a un impact sur toutes les versions installées de XCode sur votre système. Une fois que vous avez fini d’utiliser l’exemple d’application de soupe chef, veillez à rétablir la configuration d’origine de ce paramètre.
+  > [!WARNING]
+  > La mise à jour des outils en ligne de commande sélectionnés a un impact sur toutes les versions installées de XCode sur votre système. Une fois que vous avez fini d’utiliser l’exemple d’application de soupe chef, veillez à rétablir la configuration d’origine de ce paramètre.
 
-    - Dans Xcode, choisissez **xcode > préférences > emplacements** et définissez les **outils en ligne de commande** sur l’installation de Xcode 10 la plus récente disponible sur votre système.
+  - Dans Xcode, choisissez **xcode > préférences > emplacements** et définissez les **outils en ligne de commande** sur l’installation de Xcode 10 la plus récente disponible sur votre système.
 
 - Dans le terminal, `cd` dans le répertoire **OrderSoupIntentStaticLib** .
 
 - Type `make`, qui génère:
 
-    - Bibliothèque statique, **libOrderSoupIntentStaticLib. a**
-    - Dans le répertoire de sortie Bo C# , définitions de liaisons:
-        - **ApiDefinitions.cs**
-        - **StructsAndEnums.cs**
+  - Bibliothèque statique, **libOrderSoupIntentStaticLib. a**
+  - Dans le répertoire de sortie Bo C# , définitions de liaisons:
+    - **ApiDefinitions.cs**
+    - **StructsAndEnums.cs**
 
 Le projet **OrderSoupIntentBindings** , qui s’appuie sur cette bibliothèque statique et ses définitions de liaisons associées, génère automatiquement ces éléments.
 Toutefois, l’exécution manuelle par le biais du processus ci-dessus permet de s’assurer qu’il s’exécute comme prévu.
@@ -315,7 +315,7 @@ Dans la C# solution **SoupChef** , le projet **SoupKit** contient du code partag
 
 Pour que Siri suggère un raccourci, il doit tout d’abord comprendre quand le raccourci est pertinent.
 
-Pour donner à Siri cette compréhension, soupe _chef donne_ une intention à Siri chaque fois que l’utilisateur place une commande de soupe. En fonction de ce don, quand il a été retenu, où il a été Don, les paramètres qu’il contient, Siri apprennent quand suggérer le raccourci à l’avenir.
+Pour donner à Siri cette compréhension, soupe chef donne une intention à Siri chaque fois que l’utilisateur place une commande de soupe. En fonction de ce don, quand il a été retenu, où il a été Don, les paramètres qu’il contient, Siri apprennent quand suggérer le raccourci à l’avenir.
 
 **SoupChef** utilise la `SoupOrderDataManager` classe pour placer les dons.
 Lorsqu’elle est appelée pour placer un ordre de soupe pour un `PlaceOrder` utilisateur, la méthode [`DonateInteraction`](xref:Intents.INInteraction.DonateInteraction*)appelle à son tour:
@@ -647,14 +647,14 @@ Dans la section **certificats, id & profils** du [portail des développeurs Appl
 
 - Créez trois ID d’application: l’un pour l’application elle-même, l’autre pour l’extension intentions et l’autre pour l’extension d’interface utilisateur Intents. Par exemple :
 
-    - Application: **com. yourcompanyname. SoupChef**
-        - Pour cet ID d’application, affectez les fonctionnalités SiriKit et **app Groups** .
+  - Application: **com. yourcompanyname. SoupChef**
+    - Pour cet ID d’application, affectez les fonctionnalités SiriKit et **app Groups** .
 
-    - Extension intentes: **com. yourcompanyname. SoupChef. intentions**
-        - Pour cet ID d’application, affectez la fonctionnalité **groupes d’applications** .
+  - Extension intentes: **com. yourcompanyname. SoupChef. intentions**
+    - Pour cet ID d’application, affectez la fonctionnalité **groupes d’applications** .
 
-    - Extension d’interface utilisateur Intents: **com. yourcompanyname. SoupChef. Intentsui**
-        - Cet ID d’application n’a pas besoin de fonctionnalités spéciales.
+  - Extension d’interface utilisateur Intents: **com. yourcompanyname. SoupChef. Intentsui**
+    - Cet ID d’application n’a pas besoin de fonctionnalités spéciales.
 
 - Après avoir créé les ID d’application ci-dessus, modifiez la capacité des **groupes d’applications** affectée à l’application et à l’extension intentions, en spécifiant le groupe d’applications spécifique créé ci-dessus.
 
@@ -668,16 +668,16 @@ Dans Visual Studio pour Mac ou Visual Studio 2017, procédez comme suit:
 
 - Mettez à jour les divers fichiers **info. plist** dans la solution. Définissez les ID d’application définis ci-dessus pour l’extension application, intentions et l' **identificateur de Bundle** d’extension d’interface utilisateur Intents.
 
-    - Application: **com. yourcompanyname. SoupChef**
-    - Extension intentes: **com. yourcompanyname. SoupChef. intentions**
-    - Extension d’interface utilisateur Intents: **com. yourcompanyname. SoupChef. Intentsui**
+  - Application: **com. yourcompanyname. SoupChef**
+  - Extension intentes: **com. yourcompanyname. SoupChef. intentions**
+  - Extension d’interface utilisateur Intents: **com. yourcompanyname. SoupChef. Intentsui**
 
 - Mettez à jour le fichier **habilitations. plist** pour le projet **SoupChef** :
-    - Pour la fonctionnalité **groupes d’applications** , définissez le groupe sur le nouveau groupe d’applications créé ci-dessus (dans l’exemple ci-dessus, il s’agissait de **Group. com. yourcompanyname. SoupChef**).
-    - Assurez-vous que **SiriKit** est activé.
+  - Pour la fonctionnalité **groupes d’applications** , définissez le groupe sur le nouveau groupe d’applications créé ci-dessus (dans l’exemple ci-dessus, il s’agissait de **Group. com. yourcompanyname. SoupChef**).
+  - Assurez-vous que **SiriKit** est activé.
 
 - Mettez à jour le fichier **habilitations. plist** pour le projet **SoupChefIntents** :
-    - Pour la fonctionnalité **groupes d’applications** , définissez le groupe sur le nouveau groupe d’applications créé ci-dessus (dans l’exemple ci-dessus, il s’agissait de **Group. com. yourcompanyname. SoupChef**).
+  - Pour la fonctionnalité **groupes d’applications** , définissez le groupe sur le nouveau groupe d’applications créé ci-dessus (dans l’exemple ci-dessus, il s’agissait de **Group. com. yourcompanyname. SoupChef**).
 
 - Enfin, ouvrez **NSUserDefaultsHelper.cs**. Affectez `AppGroup` à la variable la valeur de votre nouveau groupe d’applications (par exemple, affectez `group.com.yourcompanyname.SoupChef`-lui la valeur).
 

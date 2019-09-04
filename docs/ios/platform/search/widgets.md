@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f2ac37676dbdfc96c853c9bc679e79c2aae1adb1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71c58baee5e98efcfb38b75ffed2b85c90f8a131
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656236"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227366"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Améliorations des widgets de recherche et d’écran d’accueil dans iOS 10
 
@@ -71,7 +71,7 @@ var vibrancy2 = UIVibrancyEffect.CreateSecondaryVibrancyEffectForNotificationCen
 
 Nouveauté d’iOS 10, les widgets contiennent désormais une propriété [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) qui permet au développeur de décrire la quantité de contenu disponible et permet à l’utilisateur de développer et de réduire le contenu.
 
-Lorsqu’un widget est initialement affiché, il est dans un État réduit. Un widget réduit a une hauteur d’environ deux lignes de table iOS standard et demie. Le développeur peut demander la taille d’un widget développé, mais il doit idéalement être inférieur à la hauteur de l’écran. 
+Lorsqu’un widget est initialement affiché, il est dans un État réduit. Un widget réduit a une hauteur d’environ deux lignes de table iOS standard et demie. Le développeur peut demander la taille d’un widget développé, mais il doit idéalement être inférieur à la hauteur de l’écran.
 
 Dans l’État réduit, le widget doit afficher uniquement les informations essentielles et autonomes. Lorsqu’il est développé, le widget doit afficher des informations supplémentaires qui améliorent le contenu principal affiché dans l’État réduit. Par exemple, l’application météo affiche les conditions météorologiques actuelles lorsqu’elle est réduite, et ajoute les prévisions horaires lorsqu’elles sont développées.
 

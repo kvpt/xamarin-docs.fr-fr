@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 7a6ea06d77b8eb170f4165bfc8cf2fd643d56406
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651668"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228091"
 ---
 # <a name="passing-arguments-in-xaml"></a>Passage des Arguments dans XAML
 
@@ -91,7 +91,7 @@ Le nombre d’éléments dans le `x:Arguments` balise et les types de ces élém
 
 Les captures d’écran suivantes affichent le résultat de l’appel de chaque [ `Color` ](xref:Xamarin.Forms.Color) constructeur avec les valeurs d’argument spécifié :
 
-![](passing-arguments-images/passing-arguments.png "BoxView.Color spécifié avec x : Arguments")
+![BoxView. Color spécifié avec x:Arguments](passing-arguments-images/passing-arguments.png)
 
 <a name="factory_methods" />
 
@@ -141,7 +141,7 @@ Le nombre d’éléments dans le `x:Arguments` balise et les types de ces élém
 
 Les captures d’écran suivantes affichent le résultat de l’appel de chaque [ `Color` ](xref:Xamarin.Forms.Color) méthode de fabrique avec les valeurs d’argument spécifié :
 
-![](passing-arguments-images/factory-methods.png "BoxView.Color spécifié avec x : FactoryMethod et x : Arguments")
+![BoxView. Color spécifié avec x:FactoryMethod et x:Arguments](passing-arguments-images/factory-methods.png)
 
 <a name="generic_type_arguments" />
 
