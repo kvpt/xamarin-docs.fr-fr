@@ -4,15 +4,15 @@ description: Ce document présente les techniques de distribution disponibles po
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: c7b31e05a5b9d75559fae14f467312f5abc8fe94
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865833"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289809"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Vue d’ensemble de la distribution d’applications Xamarin.iOS
 
@@ -77,4 +77,4 @@ Cet article a fourni une brève présentation des mécanismes de distribution di
 - [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Fichier iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [Prise en charge IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
-- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
+- [Dépannage](~/ios/deploy-test/troubleshooting.md)

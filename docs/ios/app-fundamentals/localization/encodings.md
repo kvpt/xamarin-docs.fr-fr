@@ -4,15 +4,15 @@ description: Ce document décrit les encodages d’internationalisation dans Xam
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: fee3e4d409302204a218a18b52cf51fc46249e95
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5430407798dd556532b2cacf592439acc7c02be
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527042"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290139"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Encodages d’internationalisation dans Xamarin. iOS
 
@@ -20,15 +20,15 @@ Par défaut, tous les encodages ne sont pas inclus dans la bibliothèque de clas
 
 Pour réduire la taille de l’application, Xamarin. iOS n’inclut pas d’encodage spécifique, et vous devez ordonner à mTouch d’inclure les assemblys contenant la prise en charge de l’encodage dont vous avez besoin.
 
-Pour ce faire, sélectionnez les encodages supplémentaires à partir du volet Build/avancé iOS dans Visual Studio pour Mac ou Visual Studio:
+Pour ce faire, sélectionnez les encodages supplémentaires à partir du volet Build/avancé iOS dans Visual Studio pour Mac ou Visual Studio :
 
  [![](encodings-images/00.png "Sélection des encodages supplémentaires")](encodings-images/00.png#lightbox)
 
  [![](encodings-images/00a.png "Sélection des encodages supplémentaires")](encodings-images/00a.png#lightbox)
 
-Vous pouvez sélectionner l’un des éléments suivants:
+Vous pouvez sélectionner l’un des éléments suivants :
 
-- CJC: pour Chineese, japonais et coréen
+- CJC : pour Chineese, japonais et coréen
 - mideast: Arabe, hébreu, turc et Latin5.
 - autres Cyrillique, balte, vietnamien, ukrainien et thaï
 - rares Encodages EBCDIC et autres pages de codes rares

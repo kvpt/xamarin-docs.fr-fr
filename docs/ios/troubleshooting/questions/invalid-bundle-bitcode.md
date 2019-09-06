@@ -1,23 +1,23 @@
 ---
-title: 'Erreur lors de l’envoi à l’App Store : « Bundle non valide : Options non autorisées à incorporer dans bitcode sont détectées dans l’envoi »'
+title: 'Erreur lors de l’envoi à l’App Store : « Bundle non valide-options non autorisées à être incorporées dans bitcode sont détectées dans la soumission »'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 137313FB-3D29-428B-93C1-5A05DC8F7C03
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 867ad29abfa6a38971b60ac9ebf181905949dafd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 84244e0c4c24a8ca6ac71a79de963bedf5c1ee68
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421727"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292532"
 ---
-# <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submission"></a>Erreur lors de l’envoi à l’App Store : « Bundle non valide : Options non autorisées à incorporer dans bitcode sont détectées dans l’envoi »
+# <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submission"></a>Erreur lors de l’envoi à l’App Store : « Bundle non valide-options non autorisées à être incorporées dans bitcode sont détectées dans la soumission »
 
-watchOS les applications et tvOS _nécessitent_ bitcode lorsqu’ils sont soumis à l’App Store. Créer et soumettre des applications watchOS et tvOS à l’aide de Xcode 8.3 ou une version antérieure, l’erreur suivante peut se produire (via la notification par courrier électronique) lorsque vous tentez de charger sur l’App Store :
+les applications Watchos et tvOS _requièrent_ bitcode quand elles sont envoyées à l’App Store. Lors de la création et de la soumission d’applications Watchos et tvOS à l’aide de Xcode 8,3 ou version antérieure, l’erreur suivante peut se produire (par notification par courrier électronique) lors d’une tentative de chargement vers l’App Store :
 
->Bundle non valide : l’application ne peut pas être traitée, car les options non autorisées à incorporer dans bitcode sont détectées dans la soumission. Il est probable que vous ne créez pas de l’application avec la chaîne d’outils fourni dans Xcode.
+>Bundle non valide-l’application ne peut pas être traitée, car les options qui ne sont pas autorisées à être incorporées dans bitcode sont détectées dans la soumission. Il est probable que vous ne générez pas l’application avec le chaîne d’outils fourni dans Xcode.
 
-La solution à ce problème consiste à générer les applications avec Xcode 9 et la dernière version de Xamarin.iOS.
+La solution à ce problème consiste à créer les applications avec Xcode 9 et la dernière version de Xamarin. iOS.

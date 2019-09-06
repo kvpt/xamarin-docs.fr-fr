@@ -4,22 +4,22 @@ description: Ce document décrit la commande sigh de fastlane, qui sert à crée
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: f90ce8dcb8c3ab9d4fee9f684c0e53218b8440a9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526509"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285712"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane pour iOS - sigh
 
 > [!IMPORTANT]
 > fastlane recommande l’utilisation de [`match`](~/ios/deploy-test/provisioning/fastlane/match.md) pour la génération et la gestion de vos profils d’approvisionnement. Utilisez sigh directement seulement si vous voulez avoir un contrôle total de la signature de code et si vous maîtrisez suffisamment ce sujet.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 En règle générale, le provisionnement des appareils est effectué par chaque membre d’une équipe de développement, à l’aide de l’outil Xcode ou à partir du portail des développeurs d’Apple. Ce processus comprend les étapes suivantes :
 

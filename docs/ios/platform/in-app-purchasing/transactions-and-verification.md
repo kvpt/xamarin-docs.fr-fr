@@ -4,22 +4,22 @@ description: Ce document explique comment autoriser la restauration des achats a
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a0d0e1ab7272094d55dff7fa083e61ee9c3286c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 537d804f1fa7e6ac95cb86a16849ed9fbc006507
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527590"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290200"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>Transactions et vérification dans Xamarin. iOS
 
 ## <a name="restoring-past-transactions"></a>Restauration de transactions passées
 
 Si votre application prend en charge les types de produits pouvant être restaurés, vous devez inclure des éléments d’interface utilisateur pour permettre aux utilisateurs de restaurer ces achats.
-Cette fonctionnalité permet à un client d’ajouter le produit à des appareils supplémentaires ou de restaurer le produit sur le même appareil après avoir été réinitialisé ou supprimé et réinstallé l’application. Les types de produits suivants peuvent être restaurés:
+Cette fonctionnalité permet à un client d’ajouter le produit à des appareils supplémentaires ou de restaurer le produit sur le même appareil après avoir été réinitialisé ou supprimé et réinstallé l’application. Les types de produits suivants peuvent être restaurés :
 
 - Produits non consommables
 - Abonnements renouvelés automatiquement
@@ -41,7 +41,7 @@ public void Restore()
 
 StoreKit enverra la demande de restauration aux serveurs Apple de manière asynchrone.   
    
-Étant donné `CustomPaymentObserver` que le est inscrit en tant qu’observateur de transaction, il reçoit des messages lorsque les serveurs d’Apple répondent. La réponse contiendra toutes les transactions que cet utilisateur a déjà effectuées dans cette application (sur tous ses appareils). Le code parcourt chaque transaction, détecte l’état restauré et appelle la `UpdatedTransactions` méthode pour le traiter comme indiqué ci-dessous:
+Étant donné `CustomPaymentObserver` que le est inscrit en tant qu’observateur de transaction, il reçoit des messages lorsque les serveurs d’Apple répondent. La réponse contiendra toutes les transactions que cet utilisateur a déjà effectuées dans cette application (sur tous ses appareils). Le code parcourt chaque transaction, détecte l’état restauré et appelle la `UpdatedTransactions` méthode pour le traiter comme indiqué ci-dessous :
 
 ```csharp
 // called when the transaction status is updated
@@ -69,7 +69,7 @@ default:
 
 S’il n’existe aucun produit pouvant être restauré pour l' `UpdatedTransactions` utilisateur, n’est pas appelé.   
    
-Le code le plus simple possible pour restaurer une transaction donnée dans l’exemple effectue les mêmes actions que lorsqu’un achat a lieu, sauf que `OriginalTransaction` la propriété est utilisée pour accéder à l’ID de produit:
+Le code le plus simple possible pour restaurer une transaction donnée dans l’exemple effectue les mêmes actions que lorsqu’un achat a lieu, sauf que `OriginalTransaction` la propriété est utilisée pour accéder à l’ID de produit :
 
 ```csharp
 public void RestoreTransaction (SKPaymentTransaction transaction)
@@ -86,7 +86,7 @@ Une implémentation plus sophistiquée peut vérifier `transaction.OriginalTrans
 
 #### <a name="restore-completion"></a>Restauration automatique
 
-Le `CustomPaymentObserver` a deux méthodes supplémentaires qui seront appelées par StoreKit lorsque le processus de restauration est terminé (avec succès ou avec un échec), comme indiqué ci-dessous:
+Le `CustomPaymentObserver` a deux méthodes supplémentaires qui seront appelées par StoreKit lorsque le processus de restauration est terminé (avec succès ou avec un échec), comme indiqué ci-dessous :
 
 ```csharp
 public override void PaymentQueueRestoreCompletedTransactionsFinished (SKPaymentQueue queue)
@@ -103,9 +103,9 @@ Dans l’exemple, ces méthodes ne font rien, mais une application réelle peut 
 
 ## <a name="securing-purchases"></a>Sécurisation des achats
 
-Les deux exemples de ce document utilisent `NSUserDefaults` pour effectuer le suivi des achats:   
+Les deux exemples de ce document utilisent `NSUserDefaults` pour effectuer le suivi des achats :   
    
- **Consommables** : le «solde» des achats de crédit est `NSUserDefaults` une valeur entière simple qui est incrémentée à chaque achat.   
+ **Consommables** : le « solde » des achats de crédit est `NSUserDefaults` une valeur entière simple qui est incrémentée à chaque achat.   
    
  **Non-consommables** : chaque achat de filtre photo est stocké sous la forme d' `NSUserDefaults`une paire clé-valeur dans.
 
@@ -139,7 +139,7 @@ Le contenu de certains produits, tels que des livres et des magazines (ou même 
    
 [![](transactions-and-verification-images/image38.png "Obtention de prix pour les produits fournis par le serveur")](transactions-and-verification-images/image38.png#lightbox)   
    
-1. Les informations sur les produits doivent être stockées à plusieurs emplacements: sur votre serveur et dans iTunes Connect. En outre, chaque produit est associé à des fichiers de contenu. Ces fichiers seront remis après un achat réussi.   
+1. Les informations sur les produits doivent être stockées à plusieurs emplacements : sur votre serveur et dans iTunes Connect. En outre, chaque produit est associé à des fichiers de contenu. Ces fichiers seront remis après un achat réussi.   
    
 2. Lorsque l’utilisateur souhaite acheter un produit, l’application doit déterminer les produits disponibles. Ces informations peuvent être mises en cache, mais doivent être fournies à partir d’un serveur distant où la liste principale des produits est stockée.   
    
@@ -169,7 +169,7 @@ Le contenu de certains produits, tels que des livres et des magazines (ou même 
    
 5. La demande de téléchargement est accompagnée des données de réception afin que le serveur distant puisse vérifier qu’il est autorisé à accéder au contenu. Le client réseau de l’application attend une réponse à cette demande.   
    
-6. Lorsque le serveur reçoit une requête de contenu, il analyse les données de réception et envoie une demande directement aux serveurs iTunes pour vérifier que l’accusé de réception est destiné à une transaction valide. Le serveur doit utiliser une certaine logique pour déterminer si la demande doit être envoyée à l’URL de production ou de bac à sable (sandbox). Apple suggère toujours d’utiliser l’URL de production et de basculer vers le bac à sable (sandbox) si votre état de réception 21007 (réception bac à sable envoyée au serveur de production). Pour plus d’informations, consultez le [Guide de programmation de validation](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) de tickets d’Apple.
+6. Lorsque le serveur reçoit une requête de contenu, il analyse les données de réception et envoie une demande directement aux serveurs iTunes pour vérifier que l’accusé de réception est destiné à une transaction valide. Le serveur doit utiliser une certaine logique pour déterminer si la demande doit être envoyée à l’URL de production ou de bac à sable (sandbox). Apple suggère toujours d’utiliser l’URL de production et de basculer vers le bac à sable (sandbox) si votre état de réception 21007 (réception bac à sable envoyée au serveur de production). Pour plus d’informations, consultez le [Guide de programmation de validation de tickets](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html) d’Apple.
    
 7. iTunes vérifie l’accusé de réception et retourne l’état zéro s’il est valide.   
    
@@ -189,7 +189,7 @@ Extrayez la `SKPaymentTansaction.TransactionReceipt` propriété dans l’applic
 
 Coder en base64 les données de réception de la transaction (à l’étape #5 ou #6).
 
-Créez une charge utile JSON simple comme suit:
+Créez une charge utile JSON simple comme suit :
 
 ```csharp
 {
@@ -199,7 +199,7 @@ Créez une charge utile JSON simple comme suit:
 
 HTTP publiez le JSON [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) à pour production [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) ou à des fins de test.   
    
- La réponse JSON contiendra les clés suivantes:
+ La réponse JSON contiendra les clés suivantes :
 
 ```csharp
 {
@@ -210,4 +210,4 @@ HTTP publiez le JSON [https://buy.itunes.apple.com/verifyReceipt](https://buy.it
 
 L’état zéro indique un accusé de réception valide. Votre serveur peut traiter le contenu du produit acheté. La clé de réception contient un dictionnaire JSON avec les mêmes propriétés que `SKPaymentTransaction` l’objet qui a été reçu par l’application, de sorte que le code serveur peut interroger ce dictionnaire pour récupérer des informations telles que le product_id et la quantité de l’achat.
 
-Pour plus d’informations, consultez la documentation relative au [Guide de programmation de validation](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html) de tickets d’Apple.
+Pour plus d’informations, consultez la documentation relative au [Guide de programmation de validation de tickets](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html) d’Apple.

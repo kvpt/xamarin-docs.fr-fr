@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser les catalogues de ressources 
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/26/2017
-ms.openlocfilehash: 984ef59a4571379f7b2969ed4f15674f8819e4e4
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: b6bf2aa8925e29ed5120de5cc2d3146704259d87
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620336"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282405"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>Icônes App Store dans Xamarin. iOS
 
@@ -35,16 +35,16 @@ Pour plus d’informations, consultez Instructions de l' [interface utilisateur 
 
 Vous devez désormais fournir les icônes à afficher dans l’App Store via un catalogue de ressources. 
 
-Pour ajouter une icône App Store, procédez comme suit:
+Pour ajouter une icône App Store, procédez comme suit :
 
-1. Recherchez l' image AppIcon définie dans le fichier **Assets. xcassets** de votre projet. 
+1. Recherchez l’image **AppIcon** définie dans le fichier **Assets. xcassets** de votre projet. 
     - Tous les nouveaux projets doivent être fournis avec un fichier **Assets. xcassets** qui contient un ensemble d’images AppIcon.
     - Pour ajouter un nouveau catalogue de ressources, cliquez avec le bouton droit sur votre projet, puis sélectionnez **ajouter > nouveau fichier > catalogue de ressources**.
     - Pour ajouter une nouvelle icône d’application icône d’image, cliquez avec le bouton droit dans la zone jeu d’icônes et sélectionnez **icônes d’application & images de lancement > nouvelle icône d’application**:
 
     ![Add New image Set (option)](app-store-icon-images/image1.png)
 
-2. Faites défiler jusqu’à l’icône **App Store** dans la liste:
+2. Faites défiler jusqu’à l’icône **App Store** dans la liste :
 
     ![Icône App Store](app-store-icon-images/image2.png)
 

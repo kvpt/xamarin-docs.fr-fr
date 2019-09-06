@@ -4,15 +4,15 @@ description: Cet article aborde l’inclusion d’une ressource d’image dans u
 ms.prod: xamarin
 ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/24/2018
-ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 8e06b03e0acb129f1eb0c3c793d0b4a05c11ce2b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227750"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282376"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Affichage d’une image dans Xamarin. iOS
 
@@ -28,23 +28,23 @@ Ajouté dans iOS 7, les **jeux d’images des catalogues de ressources** contien
 
 Comme indiqué ci-dessus, un **ensemble d’images de catalogues de ressources** contient toutes les versions ou représentations d’une image qui sont nécessaires pour prendre en charge différents appareils et facteurs d’échelle pour une application. Au lieu de s’appuyer sur le nom de fichier des ressources d’image, les **jeux d’images** utilisent un fichier JSON pour spécifier l’image qui appartient à l’appareil et/ou à la résolution.
 
-Pour créer un ensemble d’images et y ajouter des images, procédez comme suit:
+Pour créer un ensemble d’images et y ajouter des images, procédez comme suit :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Dans la **Explorateur de solutions**, double-cliquez sur `Assets.xcassets` le fichier pour l’ouvrir et le modifier:
+1. Dans la **Explorateur de solutions**, double-cliquez sur `Assets.xcassets` le fichier pour l’ouvrir et le modifier :
 
     ![](displaying-an-image-images/imageset01.png "Ressources. xcassets dans le Explorateur de solutions")
 2. Cliquez avec le bouton droit sur la **liste ressources** et sélectionnez **nouvel ensemble d’images**:
 
     ![](displaying-an-image-images/imageset02.png "Ajout d’un nouveau jeu d’images")
-3. Sélectionnez le nouvel ensemble d’images et l’éditeur s’affichera:
+3. Sélectionnez le nouvel ensemble d’images et l’éditeur s’affichera :
 
     ![](displaying-an-image-images/imageset03.png "Éditeur d’ensemble d’images")
 4. À partir de là, faites glisser les images pour chacun des différents appareils et résolutions requis.
-5. Double-cliquez sur le **nom** du nouvel ensemble d’images dans la **liste ressources** pour le modifier: ![](displaying-an-image-images/imageset04.png "Modification du nom du nouvel ensemble d’images")
+5. Double-cliquez sur le **nom** du nouvel ensemble d’images dans la **liste ressources** pour le modifier : ![](displaying-an-image-images/imageset04.png "Modification du nom du nouvel ensemble d’images")
 
-Quand vous utilisez un **ensemble d’images** dans le concepteur iOS, il vous suffit de sélectionner le nom du jeu dans la liste déroulante de l’éditeur de propriétés:
+Quand vous utilisez un **ensemble d’images** dans le concepteur iOS, il vous suffit de sélectionner le nom du jeu dans la liste déroulante de l’éditeur de propriétés :
 
 ![](displaying-an-image-images/imageset06.png "Sélectionner le nom d’un ensemble d’images dans la liste déroulante")
 
@@ -60,15 +60,15 @@ Quand vous utilisez un **ensemble d’images** dans le concepteur iOS, il vous s
 
 ### <a name="renaming-an-image-set"></a>Attribution d’un nouveau nom à un ensemble d’images
 
-Pour renommer un ensemble d’images, procédez comme suit:
+Pour renommer un ensemble d’images, procédez comme suit :
 
-1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier de **catalogue de ressources** pour l’ouvrir et le modifier:
+1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier de **catalogue de ressources** pour l’ouvrir et le modifier :
 
     ![](displaying-an-image-images/rename01.png "Le catalogue de ressources dans le Explorateur de solutions")
-2. Sélectionnez l' **ensemble d’images** à renommer:
+2. Sélectionnez l' **ensemble d’images** à renommer :
 
     ![](displaying-an-image-images/rename02.png "Sélectionner l’ensemble d’images à renommer")
-3. Dans l' **Explorateur de propriétés**, faites défiler vers le bas et sélectionnez **nom**(sous la section **divers** ):
+3. Dans l' **Explorateur de propriétés**, faites défiler vers le bas et sélectionnez **nom**(sous la section **divers** ) :
 
     ![](displaying-an-image-images/rename03.png "Sélectionnez nom sous la section divers")
 4. Entrez un nouveau **nom** pour l' **ensemble d’images** et enregistrez les modifications.
@@ -98,13 +98,13 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 -----
 
-Par exemple, si le développeur inclut un `MonkeyIcon.pdf` fichier comme vecteur d’un catalogue de composants avec une résolution de 150 px x 150 px, les ressources bitmap suivantes sont incluses dans l’ensemble d’applications final lors de la compilation:
+Par exemple, si le développeur inclut un `MonkeyIcon.pdf` fichier comme vecteur d’un catalogue de composants avec une résolution de 150 px x 150 px, les ressources bitmap suivantes sont incluses dans l’ensemble d’applications final lors de la compilation :
 
 - `MonkeyIcon@1x.png`-150 px x 150 px résolution.
 - `MonkeyIcon@2x.png`-300 pixels x 300 pixels résolution.
 - `MonkeyIcon@3x.png`-450px x 450px résolution.
 
-Les éléments suivants doivent être pris en considération lors de l’utilisation d’images vectorielles PDF dans des catalogues de ressources:
+Les éléments suivants doivent être pris en considération lors de l’utilisation d’images vectorielles PDF dans des catalogues de ressources :
 
 - Il ne s’agit pas d’une prise en charge complète de Vector, car le fichier PDF sera pixellisé en bitmap au moment de la compilation et les bitmaps expédiés dans l’application finale.
 - La taille de l’image ne peut pas être ajustée une fois qu’elle a été définie dans le catalogue de ressources. Si le développeur tente de redimensionner l’image (dans le code ou à l’aide des classes de disposition et de taille automatiques), l’image sera déformée comme n’importe quelle autre image bitmap.
@@ -126,7 +126,7 @@ Pour obtenir facilement cet effet, basculez le _mode de rendu_ de la ressource d
 
 -----
 
-À partir du concepteur iOS, assignez la ressource d’image à un contrôle d' interface utilisateur, puis définissez la teinte pour colorier l’image:
+À partir du concepteur iOS, assignez la ressource d’image à un contrôle d’interface utilisateur, puis définissez la **teinte** pour colorier l’image :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -138,14 +138,14 @@ Pour obtenir facilement cet effet, basculez le _mode de rendu_ de la ressource d
 
 -----
 
-Si vous le souhaitez, la ressource et la teinte de l’image peuvent être définies directement dans le code:
+Si vous le souhaitez, la ressource et la teinte de l’image peuvent être définies directement dans le code :
 
 ```csharp
 MyIcon.Image = UIImage.FromBundle ("MessageIcon");
 MyIcon.TintColor = UIColor.Red;
 ```
 
-Pour utiliser complètement une image de modèle à partir du code, procédez comme suit:
+Pour utiliser complètement une image de modèle à partir du code, procédez comme suit :
 
 ```csharp
 if (MyIcon.Image != null) {
@@ -157,7 +157,7 @@ if (MyIcon.Image != null) {
 
 Étant donné `RenderMode` que la propriété `UIImage` d’un est en lecture seule `ImageWithRenderingMode` , utilisez la méthode pour créer une nouvelle instance de l’image avec le paramètre de mode de rendu souhaité.
 
-Il existe trois paramètres possibles pour `UIImage.RenderMode` via l' `UIImageRenderingMode` énumération:
+Il existe trois paramètres possibles pour `UIImage.RenderMode` via l' `UIImageRenderingMode` énumération :
 
 - `AlwaysOriginal`: Force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
 - `AlwaysTemplate`: Force le rendu de l’image en tant qu’image de modèle en coloriant les pixels avec `Tint` la couleur spécifiée.
@@ -167,7 +167,7 @@ Il existe trois paramètres possibles pour `UIImage.RenderMode` via l' `UIImageR
 
 Lorsque vous utilisez des images dans des catalogues de ressources, il peut arriver qu’une nouvelle collection soit requise, au lieu d’ajouter toutes les images de l’application `Assets.xcassets` à la collection. Par exemple, lors de la conception de ressources à la demande.
 
-Pour ajouter un nouveau catalogue de ressources au projet:
+Pour ajouter un nouveau catalogue de ressources au projet :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -195,7 +195,7 @@ En plus d’utiliser des images pour prendre en charge une application, iOS util
 
 L' `FromBundle` appel de méthode est un appel synchrone (bloquant) qui a un certain nombre de fonctionnalités de chargement et de gestion d’image intégrées, telles que la prise en charge de la mise en cache et la gestion automatique des fichiers image pour diverses résolutions.
 
-L’exemple suivant montre comment définir l’image d’un `UITabBarItem` sur un: `UITabBar`
+L’exemple suivant montre comment définir l’image d’un `UITabBarItem` sur un : `UITabBar`
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
@@ -217,52 +217,52 @@ Pour plus d’informations sur les icônes et les images, consultez la documenta
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>Affichage d’une image dans des storyboards
 
-Une fois qu’une image a été ajoutée à un projet Xamarin. IOS à l’aide de catalogues de ressources, elle peut être facilement affichée sur `UIImageView` une table de montage séquentiel à l’aide d’un dans le concepteur iOS. Par exemple, si la ressource d’image suivante a été ajoutée:
+Une fois qu’une image a été ajoutée à un projet Xamarin. IOS à l’aide de catalogues de ressources, elle peut être facilement affichée sur `UIImageView` une table de montage séquentiel à l’aide d’un dans le concepteur iOS. Par exemple, si la ressource d’image suivante a été ajoutée :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![](displaying-an-image-images/display01.png "Un exemple d’élément multimédia d’image a été ajouté")
 
-Procédez comme suit pour l’afficher sur une table de montage séquentiel:
+Procédez comme suit pour l’afficher sur une table de montage séquentiel :
 
 1. Double-cliquez sur `Main.storyboard` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS.
 2. Sélectionnez une **vue d’image** à partir de la **boîte à outils**:
 
      ![](displaying-an-image-images/display02.png "Sélectionner une vue d’image à partir de la boîte à outils")
-3. Faites glisser la vue image sur l’aire de conception et positionnez-la et redimensionnez-la en fonction des besoins:
+3. Faites glisser la vue image sur l’aire de conception et positionnez-la et redimensionnez-la en fonction des besoins :
 
     ![](displaying-an-image-images/display03.png "Nouvelle vue d’image sur le Aire de conception")
-4. Dans la section **widget** de l' **Explorateur de propriétés** , sélectionnez la ressource d' **image** que vous souhaitez afficher:
+4. Dans la section **widget** de l' **Explorateur de propriétés** , sélectionnez la ressource d' **image** que vous souhaitez afficher :
 
     ![](displaying-an-image-images/display04.png "Sélectionnez la ressource d’image souhaitée à afficher")
 5. Dans la section **vue** , utilisez le **mode** pour contrôler la façon dont l’image est redimensionnée lorsque la **vue d’image** est redimensionnée.
 6. Une fois la **vue d’image** sélectionnée, cliquez à nouveau dessus pour ajouter des **contraintes**:
 
     ![](displaying-an-image-images/display05.png "Ajout de contraintes")
-7. Faites glisser la poignée de mise en forme «T» sur chaque bord de la **vue d’image** vers le côté correspondant de l’écran pour «épingler» l’image sur les côtés. De cette façon, la **vue d’image** sera réduite et croître à mesure que l’écran sera redimensionné.
+7. Faites glisser la poignée de mise en forme « T » sur chaque bord de la **vue d’image** vers le côté correspondant de l’écran pour « épingler » l’image sur les côtés. De cette façon, la **vue d’image** sera réduite et croître à mesure que l’écran sera redimensionné.
 8. Enregistrez les modifications apportées à la table de montage séquentiel.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ![](displaying-an-image-images/display01vs.png "Un exemple d’élément multimédia d’image a été ajouté")
 
-Procédez comme suit pour l’afficher sur une table de montage séquentiel:
+Procédez comme suit pour l’afficher sur une table de montage séquentiel :
 
 1. Double-cliquez sur `Main.storyboard` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS.
 2. Sélectionnez une **vue d’image** à partir de la **boîte à outils**:
 
      ![](displaying-an-image-images/display02vs.png "Sélectionner une vue d’image à partir de la boîte à outils")
-3. Faites glisser la vue image sur l’aire de conception et positionnez-la et redimensionnez-la en fonction des besoins:
+3. Faites glisser la vue image sur l’aire de conception et positionnez-la et redimensionnez-la en fonction des besoins :
 
     ![](displaying-an-image-images/display03vs.png "Nouvelle vue d’image sur le Aire de conception")
-4. Dans la section **widget** de l' **Explorateur de propriétés** , sélectionnez la ressource d' **image** que vous souhaitez afficher:
+4. Dans la section **widget** de l' **Explorateur de propriétés** , sélectionnez la ressource d' **image** que vous souhaitez afficher :
 
     ![](displaying-an-image-images/display04vs.png "Sélectionnez la ressource d’image souhaitée à afficher")
 5. Dans la section **vue** , utilisez le **mode** pour contrôler la façon dont l’image est redimensionnée lorsque la **vue d’image** est redimensionnée.
 6. Une fois la **vue d’image** sélectionnée, cliquez à nouveau dessus pour ajouter des **contraintes**:
 
     ![](displaying-an-image-images/display05vs.png "Ajout de contraintes")
-7. Faites glisser la poignée de mise en forme «T» sur chaque bord de la **vue d’image** vers le côté correspondant de l’écran pour «épingler» l’image sur les côtés. De cette façon, la **vue d’image** sera réduite et croître à mesure que l’écran sera redimensionné.
+7. Faites glisser la poignée de mise en forme « T » sur chaque bord de la **vue d’image** vers le côté correspondant de l’écran pour « épingler » l’image sur les côtés. De cette façon, la **vue d’image** sera réduite et croître à mesure que l’écran sera redimensionné.
 8. Enregistrez les modifications apportées à la table de montage séquentiel.
 
 -----

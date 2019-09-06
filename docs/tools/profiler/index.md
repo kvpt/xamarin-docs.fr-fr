@@ -3,15 +3,15 @@ title: Xamarin Profiler
 description: Ce guide présente les principales fonctionnalités du profileur Xamarin. Il permet de consulter les profileurs, le profilage, et de savoir quand les utiliser à bon escient et dans un flux de travail standard pour le profilage d’applications de Xamarin.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: b62c8453049a1e014cd75cbee562c8f1a2c16c31
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: ca26edc0311de2028af529dc43ea1ffde2383cf4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227895"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283668"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -32,7 +32,7 @@ Ce guide examine les scénarios de profilage courants et présente le profileur 
 
 Le Xamarin Profiler est une application autonome et est intégré à Visual Studio pour Mac et Visual Studio pour activer le profilage à partir de l’IDE.
 
-Téléchargez le package d’installation pour votre plateforme:
+Téléchargez le package d’installation pour votre plateforme :
 
 - [**macOS**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
@@ -57,7 +57,7 @@ Actuellement, le Xamarin Profiler peut être utilisé pour tester des applicatio
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Actuellement, le Xamarin Profiler peut être utilisé pour tester des applications Xamarin. Android sur Windows (par le biais de Visual Studio et Visual Studio pour Mac). Le profileur est un processus distinct de l’IDE, et donc, en plus du lancement à partir de Visual Studio, il peut être utilisé comme une application autonome pour examiner `.mlpd` les fichiers. exe et les fichiers qui ont été générés à partir du profileur de [Journal mono](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
+Actuellement, le Xamarin Profiler peut être utilisé pour tester des applications Xamarin. Android sur Windows (par le biais de Visual Studio et Visual Studio pour Mac). Le profileur est un processus distinct de l’IDE, et donc, en plus du lancement à partir de Visual Studio, il peut être utilisé comme une application autonome pour examiner `.mlpd` les fichiers. exe et les fichiers qui ont été générés à partir du [profileur de journal mono](https://www.mono-project.com/docs/debug+profile/profile/profiler/).
 
 -----
 
@@ -65,7 +65,7 @@ Actuellement, le Xamarin Profiler peut être utilisé pour tester des applicatio
 
 ## <a name="profiler-support"></a>Prise en charge du profileur
 
-La prise en charge de l’Xamarin Profiler est disponible sur les plateformes suivantes:
+La prise en charge de l’Xamarin Profiler est disponible sur les plateformes suivantes :
 
 - Visual Studio pour Mac (macOS, avec licence entreprise)
   - Android
@@ -135,7 +135,7 @@ Le profileur Xamarin peut être lancé à partir de votre IDE quand vous profile
 #### <a name="launching-from-visual-studio-for-mac"></a>Lancement à partir de Visual Studio pour Mac
 
 1. Tout d’abord, assurez-vous que votre application est chargée dans Visual Studio pour Mac et sélectionnez la configuration de débogage (par défaut).
-2. Parcourez l’écran pour **exécuter > démarrer**le profilage dans Visual Studio pour Mac, ou **analyser > Xamarin Profiler** dans Visual Studio, pour ouvrir le profileur, comme illustré dans le diagramme ci-dessous:
+2. Parcourez l’écran pour **exécuter > démarrer le profilage**dans Visual Studio pour Mac, ou **analyser > Xamarin Profiler** dans Visual Studio, pour ouvrir le profileur, comme illustré dans le diagramme ci-dessous :
 
   ![Lancement du profileur à partir de Visual Studio pour Mac](images/start-profiling-xs.png)
 
@@ -144,7 +144,7 @@ Le profileur Xamarin peut être lancé à partir de votre IDE quand vous profile
 #### <a name="launching-from-visual-studio"></a>Lancement à partir de Visual Studio
 
 1. Tout d’abord, assurez-vous que votre application est chargée dans Visual Studio et sélectionnez la configuration de débogage (par défaut), comme indiqué ci-dessus.
-2. Accédez à **analyser > Xamarin Profiler** dans Visual Studio pour ouvrir le profileur, comme illustré dans le diagramme ci-dessous:
+2. Accédez à **analyser > Xamarin Profiler** dans Visual Studio pour ouvrir le profileur, comme illustré dans le diagramme ci-dessous :
 
 ![Lancement du profileur à partir de Visual Studio](images/start-profiling-vs.png)
 
@@ -162,13 +162,13 @@ Pour enregistrer une session de profilage à tout moment, choisissez **fichier >
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Une fois l’installation terminée, le Xamarin Profiler se trouve dans votre dossier applications, comme illustré dans la capture d’écran ci-dessous:
+Une fois l’installation terminée, le Xamarin Profiler se trouve dans votre dossier applications, comme illustré dans la capture d’écran ci-dessous :
 
 ![Ouvrir le profileur autonome à partir de Mac](images/applications.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Une fois installée, l’application Xamarin Profiler se trouve dans le répertoire de votre application:
+Une fois installée, l’application Xamarin Profiler se trouve dans le répertoire de votre application :
 
 ![Ouvrir le profileur autonome à partir de Windows](images/applications-vs.png)
 
@@ -180,7 +180,7 @@ Pour plus d’informations, consultez [génération de fichiers. MLPD](~/tools/p
 
 ## <a name="profiler-features"></a>Fonctionnalités du profileur
 
-La Xamarin Profiler est composée de cinq sections, comme illustré ci-dessous:
+La Xamarin Profiler est composée de cinq sections, comme illustré ci-dessous :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -193,10 +193,10 @@ La Xamarin Profiler est composée de cinq sections, comme illustré ci-dessous:
 -----
 
 - **Barre d’outils** : située en haut du profileur, il offre des options pour démarrer/arrêter le profilage, sélectionner un processus cible, afficher le temps d’exécution de l’application et sélectionner les affichages fractionnés qui composent l’application du profileur.
-- **Liste** des instruments: répertorie tous les instruments chargés pour la session de profilage.
-- **Graphique** à courbes: ces graphiques sont reliés horizontalement aux instruments pertinents dans la liste d’instruments. Un curseur (indiqué sous Time Profiler) peut être utilisé pour modifier l’échelle.
-- **Zone de détails** de l’instrument: contient les données affichées par la vue sélectionnée de l’instrument actuel. Nous examinerons ces vues plus en détail dans la section ci-dessous.
-- **Vue Inspector** : contient des sections qui peuvent être sélectionnées par le contrôle segmenté. Les sections dépendent de l’instrument sélectionné et incluent les éléments suivants: Paramètres de configuration, statistiques, informations de trace de la pile et chemin d’accès aux racines.
+- **Liste** des instruments : répertorie tous les instruments chargés pour la session de profilage.
+- **Graphique** à courbes : ces graphiques sont reliés horizontalement aux instruments pertinents dans la liste d’instruments. Un curseur (indiqué sous Time Profiler) peut être utilisé pour modifier l’échelle.
+- **Zone de détails** de l’instrument : contient les données affichées par la vue sélectionnée de l’instrument actuel. Nous examinerons ces vues plus en détail dans la section ci-dessous.
+- **Vue Inspector** : contient des sections qui peuvent être sélectionnées par le contrôle segmenté. Les sections dépendent de l’instrument sélectionné et incluent les éléments suivants : Paramètres de configuration, statistiques, informations de trace de la pile et chemin d’accès aux racines.
 
 ### <a name="allocations"></a>Allocations
 
@@ -214,9 +214,9 @@ En haut du profileur se trouve le graphique allocations, qui affiche la quantit�
 
 -----
 
-Il existe différentes vues de données dans l’instrument allocations, qui permettent aux développeurs d’analyser la manière dont l’application utilise et libère de la mémoire. Ces vues sont décrites ci-dessous:
+Il existe différentes vues de données dans l’instrument allocations, qui permettent aux développeurs d’analyser la manière dont l’application utilise et libère de la mémoire. Ces vues sont décrites ci-dessous :
 
-- Allocations: affiche une liste de toutes les allocations et les regroupe par nom de classe. Vous bénéficiez ainsi d’une vue d’ensemble des classes et des méthodes utilisées, de leur fréquence d’utilisation et de la taille collective des classes utilisées. Double-cliquez sur une classe pour afficher la mémoire allouée: 
+- **Allocations** : affiche une liste de toutes les allocations et les regroupe par nom de classe. Vous bénéficiez ainsi d’une vue d’ensemble des classes et des méthodes utilisées, de leur fréquence d’utilisation et de la taille collective des classes utilisées. Double-cliquez sur une classe pour afficher la mémoire allouée : 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -230,7 +230,7 @@ Il existe différentes vues de données dans l’instrument allocations, qui per
 
 La vue de l’inspecteur pour les Allocations fournit les options de filtrage et regroupement d’objets, en fournissant des statistiques sur la mémoire allouée, ainsi que les allocations supérieures, ainsi que les vues pour la Trace de la pile et le chemin d’accès à la racine.
 
-- **Arborescence des appels** : affiche la totalité de l’arborescence des appels de tous les threads de l’application et comprend des informations sur la mémoire allouée sur chaque nœud. Lorsqu’un élément est sélectionné dans la liste, tous les nœuds frères s’affichent en gris. Vous pouvez développer l’arborescence ou double-cliquer sur l’élément pour l’examiner. Lorsque vous Affichez cette vue de données, vous pouvez utiliser la vue inspecteur des paramètres d’affichage pour modifier la façon dont elle est présentée. Il existe actuellement deux options:
+- **Arborescence des appels** : affiche la totalité de l’arborescence des appels de tous les threads de l’application et comprend des informations sur la mémoire allouée sur chaque nœud. Lorsqu’un élément est sélectionné dans la liste, tous les nœuds frères s’affichent en gris. Vous pouvez développer l’arborescence ou double-cliquer sur l’élément pour l’examiner. Lorsque vous Affichez cette vue de données, vous pouvez utiliser la vue inspecteur des paramètres d’affichage pour modifier la façon dont elle est présentée. Il existe actuellement deux options :
     1. **Inversée arborescence des appels** : prend en compte la trace de la pile de haut en bas. Il s’agit d’une option d’affichage pratique, car elle indique les méthodes les plus profondes dans lesquelles le processeur consacre son temps.
     2. **Séparer par thread** : cette option permet d’organiser l’arborescence des appels par thread.
 
@@ -260,7 +260,7 @@ La vue de l’inspecteur pour les Allocations fournit les options de filtrage et
 
 L’instrument du profileur de temps mesure exactement le temps passé dans chaque méthode d’une application. L’application est suspendue à intervalles réguliers et une trace de la pile est exécutée sur chaque thread actif. Chaque ligne de la zone de détails de l’instrument affiche le chemin d’exécution qui a été suivi.
 
-Le graphique en courbes, comme indiqué dans la capture d’écran ci-dessous, affiche le nombre d’exemples reçus par l’application pendant son exécution:
+Le graphique en courbes, comme indiqué dans la capture d’écran ci-dessous, affiche le nombre d’exemples reçus par l’application pendant son exécution :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -276,7 +276,7 @@ Le graphique en courbes, comme indiqué dans la capture d’écran ci-dessous, a
 
 -----
 
-- **Arborescence des appels** : affiche la durée passée dans chaque méthode:
+- **Arborescence des appels** : affiche la durée passée dans chaque méthode :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -306,7 +306,7 @@ Grâce à l’utilisation C# de F# et du code managé, il peut être assez coura
 
 Actuellement, seules les configurations de débogage par défaut peuvent être profilées.
 
-Si vous profilez une application avec une autre configuration, la boîte de dialogue de message suivante s’affiche:
+Si vous profilez une application avec une autre configuration, la boîte de dialogue de message suivante s’affiche :
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
@@ -325,7 +325,7 @@ Sélectionnez **mettre à jour** pour continuer.
 
 Le garbage collector [SGen](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) est utilisé pour toutes les plateformes Xamarin.
 
-SGen est un GC générationnel qui alloue des objets d’une application en trois tas: le tas de la pépinière, le tas principal et l’espace de Large Object. Cela permet une exécution plus rapide des garbage collection. SGen est actuellement le catalogue global par défaut pour les applications unifiées Xamarin. Android et Xamarin. iOS.
+SGen est un GC générationnel qui alloue des objets d’une application en trois tas : le tas de la pépinière, le tas principal et l’espace de Large Object. Cela permet une exécution plus rapide des garbage collection. SGen est actuellement le catalogue global par défaut pour les applications unifiées Xamarin. Android et Xamarin. iOS.
 
 L’application Xamarin. iOS utilisant le API classique utilisé le garbage collector Boehm, un récupérateur de mémoire non générationnel et prudent. Comme il est conservateur, il est moins probable de libérer de la mémoire disponible, ce qui peut entraîner des résultats incorrects lors de l’utilisation du profileur. Pour cette raison, l’instrument allocations ne peut pas être utilisé avec le garbage collector Boehm.
 

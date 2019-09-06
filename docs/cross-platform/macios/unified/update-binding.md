@@ -3,15 +3,15 @@ title: Migrer une liaison vers l’API unifiée
 description: Cet article décrit les étapes nécessaires pour mettre à jour un projet de liaison Xamarin existant afin de prendre en charge les API unifiées pour les applications Xamarin. IOS et Xamarin. Mac.
 ms.prod: xamarin
 ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 90ef47d4e105dc401369c92e9196111c060314e3
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: dcee5c6d5324be11f424739a20ba673817553e36
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976422"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287380"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrer une liaison vers l’API unifiée
 
@@ -25,7 +25,7 @@ En outre, tout projet de liaison Xamarin doit également prendre en charge les n
 
 ## <a name="requirements"></a>Configuration requise
 
-Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article:
+Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article :
 
 - **Visual Studio pour Mac** : la dernière version de Visual Studio pour Mac installée et configurée sur l’ordinateur de développement.
 - **Mac Apple** : un Mac Apple est nécessaire pour créer des projets de liaison pour iOS et Mac.
@@ -34,11 +34,11 @@ Les projets de liaison ne sont pas pris en charge dans Visual Studio sur un ordi
 
 ## <a name="modify-the-using-statements"></a>Modifier les instructions using
 
-Les API unifiées facilitent plus que jamais le partage de code entre Mac et iOS, ainsi que la prise en charge d’applications 32 et 64 bits avec le même binaire. En supprimant les préfixes _MonoMac_ et unitouch des espaces de noms, un partage plus simple est réalisé entre les projets d’application Xamarin. Mac et Xamarin. iOS.
+Les API unifiées facilitent plus que jamais le partage de code entre Mac et iOS, ainsi que la prise en charge d’applications 32 et 64 bits avec le même binaire. En supprimant les préfixes _MonoMac_ et _unitouch_ des espaces de noms, un partage plus simple est réalisé entre les projets d’application Xamarin. Mac et Xamarin. iOS.
 
-Par conséquent, nous aurons besoin de modifier l’un de nos contrats de liaison ( `.cs` et d’autres fichiers dans notre projet de liaison) pour supprimer les préfixes _MonoMac_ et `using` unitouch de nos instructions.
+Par conséquent, nous aurons besoin de modifier l’un de nos contrats de liaison ( `.cs` et d’autres fichiers dans notre projet de liaison) pour supprimer les préfixes _MonoMac_ et _unitouch_ de nos `using` instructions.
 
-Par exemple, étant donné les instructions using suivantes dans un contrat de liaison:
+Par exemple, étant donné les instructions using suivantes dans un contrat de liaison :
 
 ```csharp
 using System;
@@ -48,7 +48,7 @@ using MonoTouch.UIKit;
 using MonoTouch.ObjCRuntime;
 ```
 
-Nous allons supprimer le `MonoTouch` préfixe de ce qui suit:
+Nous allons supprimer le `MonoTouch` préfixe de ce qui suit :
 
 ```csharp
 using System;
@@ -70,20 +70,20 @@ En même temps que `nint` le nouveau type de données, le `nuint` API unifiée `
 
 Compte tenu de ce qui précède, nous devons passer en revue notre API et `NSInteger`vérifier `NSUInteger` que `CGFloat` toutes les instances de et `float` que `int`nous `uint` avons précédemment mappées à la `nint`nouvelle, `nuint` types et`nfloat` .
 
-Par exemple, étant donné une définition de méthode objective-C de:
+Par exemple, étant donné une définition de méthode objective-C de :
 
 ```csharp
 -(NSInteger) add:(NSInteger)operandUn and:(NSInteger) operandDeux;
 ```
 
-Si le contrat de liaison précédent comportait la définition suivante:
+Si le contrat de liaison précédent comportait la définition suivante :
 
 ```csharp
 [Export("add:and:")]
 int Add(int operandUn, int operandDeux);
 ```
 
-Nous mettons à jour la nouvelle liaison pour qu’elle soit:
+Nous mettons à jour la nouvelle liaison pour qu’elle soit :
 
 ```csharp
 [Export("add:and:")]
@@ -98,7 +98,7 @@ Pour en savoir plus sur ces modifications de types de données, consultez le doc
 
 Types de données de point, de taille et de rectangle utilisés `CoreGraphics` avec les bits 32 ou 64, en fonction de l’appareil sur lequel ils s’exécutent. Lorsque Xamarin a lié à l’origine les API iOS et Mac, nous avons utilisé des structures de données existantes qui `System.Drawing` correspondent`RectangleF` aux types de données dans (par exemple).
 
-En raison de la configuration requise pour prendre en charge 64 bits et les nouveaux types de données natifs, les ajustements suivants doivent être apportés au code existant lors de l’appel `CoreGraphic` de méthodes:
+En raison de la configuration requise pour prendre en charge 64 bits et les nouveaux types de données natifs, les ajustements suivants doivent être apportés au code existant lors de l’appel `CoreGraphic` de méthodes :
 
 - **CGRect** : à `CGRect` utiliser au `RectangleF` lieu de lors de la définition de régions rectangulaires à virgule flottante.
 - **CGSize** : à `CGSize` utiliser au `SizeF` lieu de lors de la définition de tailles à virgule flottante (largeur et hauteur).
@@ -106,13 +106,13 @@ En raison de la configuration requise pour prendre en charge 64 bits et les nouv
 
 Étant donné ce qui précède, nous devons passer en revue notre API et vérifier que `CGRect`toute `CGSize` instance `CGPoint` de, ou précédemment liée `RectangleF`, `SizeF` ou `PointF` être remplacée par le type `CGRect`natif. `CGSize` ou`CGPoint` directement.
 
-Par exemple, en fonction d’un initialiseur objective-C de:
+Par exemple, en fonction d’un initialiseur objective-C de :
 
 ```csharp
 - (id)initWithFrame:(CGRect)frame;
 ```
 
-Si la liaison précédente comprenait le code suivant:
+Si la liaison précédente comprenait le code suivant :
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -120,7 +120,7 @@ IntPtr Constructor (RectangleF frame);
 
 ```
 
-Nous mettons à jour ce code pour effectuer les opérations suivantes:
+Nous mettons à jour ce code pour effectuer les opérations suivantes :
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -139,7 +139,7 @@ Comme dernière étape de la mise à jour de notre projet de liaison pour utilis
 
 Si nous utilisons un makefile pour générer notre projet de liaison dans un Xamarin. DLL, vous devez inclure l' `--new-style` option de ligne de commande et appeler `btouch-native` au lieu de. `btouch`
 
-Par conséquent, étant `MakeFile`donné ce qui suit:
+Par conséquent, étant `MakeFile`donné ce qui suit :
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -176,13 +176,13 @@ clean:
 ```
 <!--markdownlint-enable MD010 -->
 
-Nous devons passer de l’appel `btouch` à `btouch-native`, donc nous ajusterons notre définition de macro comme suit:
+Nous devons passer de l’appel `btouch` à `btouch-native`, donc nous ajusterons notre définition de macro comme suit :
 
 ```makefile
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch-native
 ```
 
-Nous allons mettre à jour l' `btouch` appel à et `--new-style` ajouter l’option comme suit:
+Nous allons mettre à jour l' `btouch` appel à et `--new-style` ajouter l’option comme suit :
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -204,7 +204,7 @@ Effectuez ce qui suit :
 3. Dans la boîte de dialogue nouvelle solution, sélectionnez **iOS** > **API unifiée** > **projet de liaison iOS**: 
 
     [![](update-binding-images/image01new.png "Dans la boîte de dialogue nouvelle solution, sélectionnez le projet de liaison iOS/API unifiée/iOS.")](update-binding-images/image01new.png#lightbox)
-4. Dans la boîte de dialogue «Configurer votre nouveau projet», entrez un **nom** pour le nouveau projet de liaison, puis cliquez sur le bouton **OK** .
+4. Dans la boîte de dialogue « Configurer votre nouveau projet », entrez un **nom** pour le nouveau projet de liaison, puis cliquez sur le bouton **OK** .
 5. Incluez la version 64 bits de la bibliothèque objective-C pour laquelle vous allez créer des liaisons.
 6. Copiez le code source à partir de votre projet de liaison API classique bits 32 existant ( `ApiDefinition.cs` par `StructsAndEnums.cs` exemple, les fichiers et).
 7. Apportez les modifications indiquées ci-dessus aux fichiers de code source.

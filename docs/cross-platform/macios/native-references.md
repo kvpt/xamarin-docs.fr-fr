@@ -3,15 +3,15 @@ title: Références natives projets iOS, Mac et liaisons
 description: Les références natives vous permettent d’incorporer un Framework natif dans un projet Xamarin. iOS, Xamarin. Mac ou de liaison.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: e5e232ffa8a41f7adbffae595b85341a10d8667a
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: de34dcdd194bd3777214d23fded7e5f42ec5141c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065263"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287543"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>Références natives dans les projets iOS, Mac et Bindings
 
@@ -26,7 +26,7 @@ Depuis iOS 8,0, il était possible de créer une infrastructure intégrée pour 
 
 ## <a name="terminology"></a>Terminologie
 
-Dans iOS 8 (et versions ultérieures), les **infrastructures incorporées** peuvent être des frameworks incorporés statiquement et liés de manière dynamique. Pour les distribuer correctement, vous devez les intégrer dans des infrastructures «Fat» qui incluaient toutes leurs _tranches_ pour chaque architecture d’appareil que vous souhaitez prendre en charge avec votre application.
+Dans iOS 8 (et versions ultérieures), les **infrastructures incorporées** peuvent être des frameworks incorporés statiquement et liés de manière dynamique. Pour les distribuer correctement, vous devez les intégrer dans des infrastructures « Fat » qui incluaient toutes leurs _tranches_ pour chaque architecture d’appareil que vous souhaitez prendre en charge avec votre application.
 
 <a name="Static-vs-Dynamic-Frameworks" />
 
@@ -38,7 +38,7 @@ Les **infrastructures statiques** sont liées au moment de la compilation, où l
 
 ### <a name="embedded-vs-system-frameworks"></a>Intégré et Frameworks système
 
-Les frameworks incorporés sont inclus dans votre offre groupée d’applications et sont uniquement accessibles à votre application spécifique via son bac à sable (sandbox). Les **infrastructures système** sont stockées au niveau du système d’exploitation et sont disponibles pour toutes les applications sur l’appareil. Actuellement, seul Apple a la possibilité de créer des frameworks au niveau du système d’exploitation.
+Les **frameworks incorporés** sont inclus dans votre offre groupée d’applications et sont uniquement accessibles à votre application spécifique via son bac à sable (sandbox). Les **infrastructures système** sont stockées au niveau du système d’exploitation et sont disponibles pour toutes les applications sur l’appareil. Actuellement, seul Apple a la possibilité de créer des frameworks au niveau du système d’exploitation.
 
 <a name="Thin-vs-Fat-Frameworks" />
 
@@ -52,7 +52,7 @@ Si vous avez essayé de distribuer cet exemple d’infrastructure avec votre app
 
 ## <a name="working-with-embedded-frameworks"></a>Utilisation des frameworks intégrés
 
-Vous devez effectuer deux étapes pour utiliser des frameworks incorporés dans une application Xamarin. iOS ou Xamarin. Mac: Création d’une infrastructure FAT et incorporation de l’infrastructure.
+Vous devez effectuer deux étapes pour utiliser des frameworks incorporés dans une application Xamarin. iOS ou Xamarin. Mac : Création d’une infrastructure FAT et incorporation de l’infrastructure.
 
 <a name="Overview" />
 
@@ -68,7 +68,7 @@ Pour résoudre ce problème, l' `lipo` outil en ligne de commande peut être uti
 
 ### <a name="embedding-a-framework"></a>Incorporation d’une infrastructure
 
-L’étape suivante est requise pour incorporer une infrastructure dans un projet Xamarin. iOS ou Xamarin. Mac à l’aide de références natives:
+L’étape suivante est requise pour incorporer une infrastructure dans un projet Xamarin. iOS ou Xamarin. Mac à l’aide de références natives :
 
 1. Créez ou ouvrez un projet Xamarin. iOS, Xamarin. Mac ou de liaison existant.
 2. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ajouter** > **Ajouter une référence Native**: 
@@ -77,7 +77,7 @@ L’étape suivante est requise pour incorporer une infrastructure dans un proje
 3. Dans la boîte de dialogue **ouvrir** , sélectionnez le nom de l’infrastructure Native que vous souhaitez incorporer, puis cliquez sur le bouton **ouvrir** : 
 
     [![](native-references-images/ref02.png "Sélectionnez le nom de l’infrastructure native à incorporer, puis cliquez sur le bouton Ouvrir.")](native-references-images/ref02.png#lightbox)
-4. L’infrastructure sera ajoutée à l’arborescence du projet: 
+4. L’infrastructure sera ajoutée à l’arborescence du projet : 
 
     [![](native-references-images/ref03.png "L’infrastructure sera ajoutée à l’arborescence des projets")](native-references-images/ref03.png#lightbox)
 

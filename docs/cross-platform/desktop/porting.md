@@ -2,19 +2,19 @@
 ms.assetid: 814857C5-D54E-469F-97ED-EE1CAA0156BB
 title: Guide de portage des applications de bureau
 description: Explication simple de la façon de découpler des applications Windows Forms ou WPF existantes pour créer des applications multiplateformes à exécuter sur macOS, iOS, Android, ainsi que UWP/Windows 10.
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: bdea1c472d95c86037056a2905679b43e12e0468
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 2a678c2b1880cb69b1bece85ed558309aa611a62
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120379"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290343"
 ---
 # <a name="desktop-app-porting-guidance"></a>Guide de portage des applications de bureau
 
-La plupart des codes d’application peuvent être classés dans l’un des domaines suivants:
+La plupart des codes d’application peuvent être classés dans l’un des domaines suivants :
 
 - Code d’interface utilisateur (par exemple, fenêtres et boutons)
 - contrôles tiers (par exemple, anneaux
@@ -26,15 +26,15 @@ Pour les Windows Forms et les applications WPF C# écrites avec (ou Visual Basic
 
 ## <a name="net-portability-analyzer"></a>Analyseur de portabilité .NET
 
-Visual Studio 2017 et versions ultérieures prennent en charge l’analyseur de [portabilité .net](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Télécharger pour Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) qui peut examiner vos applications existantes et vous indiquer la quantité de code qui peut être portée «en l’aspect» sur d’autres plateformes. Vous pouvez en savoir plus à ce sujet à partir de cette [vidéo Channel 9](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
+Visual Studio 2017 et versions ultérieures prennent en charge l' [Analyseur de portabilité .net](https://docs.microsoft.com/dotnet/articles/standard/portability-analyzer) ([Télécharger pour Windows](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) qui peut examiner vos applications existantes et vous indiquer la quantité de code qui peut être portée « en l’aspect » sur d’autres plateformes. Vous pouvez en savoir plus à ce sujet à partir de cette [vidéo Channel 9](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer).
 
-Un outil en ligne de commande peut également être téléchargé à partir de l’analyseur de [portabilité sur GitHub](https://github.com/Microsoft/dotnet-apiport) et utilisé pour fournir les mêmes rapports.
+Un outil en ligne de commande peut également être téléchargé à partir de l' [Analyseur de portabilité sur GitHub](https://github.com/Microsoft/dotnet-apiport) et utilisé pour fournir les mêmes rapports.
 
-## <a name="x-of-my-code-is-portable-what-next"></a>«x% de mon code est portable. Et ensuite?»
+## <a name="x-of-my-code-is-portable-what-next"></a>«x% de mon code est portable. Et ensuite ?»
 
 Avec un peu de chance, l’analyseur montre qu’une grande partie de votre code est portable, mais il existe certainement des parties de chaque application qui _ne peuvent pas_ être déplacées vers d’autres plateformes.
 
-Des blocs de code différents seront probablement classés dans l’un de ces compartiments, expliqués plus en détail ci-dessous:
+Des blocs de code différents seront probablement classés dans l’un de ces compartiments, expliqués plus en détail ci-dessous :
 
 - Code portable réutilisable
 - Code nécessitant des modifications
@@ -56,18 +56,18 @@ Une fois que vous avez réécrit le code à l’aide des API portables, vous dev
 
 ### <a name="code-that-isnt-portable-and-requires-a-re-write"></a>Code qui n’est pas portable et qui requiert une réécriture
 
-Parmi les exemples de code qui ne sont pas susceptibles d’être multiplateformes, citons:
+Parmi les exemples de code qui ne sont pas susceptibles d’être multiplateformes, citons :
 
 - **Interface utilisateur** : les écrans Windows Forms ou WPF ne peuvent pas être utilisés dans les projets Android ou iOS, par exemple. Votre interface utilisateur doit être réécrite, à l’aide de cette [Comparaison de contrôles](~/cross-platform/desktop/controls/index.md) en tant que référence.
 
 - Code de **stockage spécifique** à la plateforme qui repose sur une technologie spécifique à une plateforme (par exemple, une base de données SQL Server Express locale). Vous devez réécrire cette méthode à l’aide d’une alternative multiplateforme (telle que SQLite pour le moteur de base de données).
 Certaines opérations du système de fichiers peuvent également avoir besoin d’être ajustées, car UWP a des API légèrement différentes pour Android et iOS (par exemple, certains systèmes de fichiers respectent la casse et d’autres non).
 
-- **composants** tiers: Vérifiez si des composants tiers de vos applications sont disponibles sur d’autres plateformes. Certains, tels que les packages NuGet non visuels, peuvent être disponibles, mais d’autres (surtout des contrôles visuels tels que des graphiques ou des lecteurs multimédias)
+- **composants** tiers : Vérifiez si des composants tiers de vos applications sont disponibles sur d’autres plateformes. Certains, tels que les packages NuGet non visuels, peuvent être disponibles, mais d’autres (surtout des contrôles visuels tels que des graphiques ou des lecteurs multimédias)
 
 ## <a name="tips-for-making-code-portable"></a>Conseils pour rendre le code portable
 
-- **Injection** de dépendances: fournissez différentes implémentations pour chaque plateforme, et
+- **Injection de dépendances** : fournissez différentes implémentations pour chaque plateforme, et
 
 - **Approche en couche** : qu’il s’agisse de MVVM, MVC, MVP ou d’un autre modèle qui vous aide à séparer le code portable du code spécifique à la plateforme.
 

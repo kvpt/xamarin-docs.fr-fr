@@ -4,15 +4,15 @@ description: Ce guide montre comment créer des actions de balayage personnalis�
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: e90e108e6b02055a585129b6412641a726afaab4
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: aabbbb706d4b6fcd022e30f726696b5d4f46167f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226296"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279517"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Utilisation des actions de ligne dans Xamarin. iOS
 
@@ -30,7 +30,7 @@ Par exemple, lors de la modification d’une table, le balayage à gauche d’un
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
-Trois étapes sont nécessaires pour implémenter des actions de balayage `UISwipeActionsConfiguration`avec:
+Trois étapes sont nécessaires pour implémenter des actions de balayage `UISwipeActionsConfiguration`avec :
 
 1. Substituez `GetLeadingSwipeActionsConfiguration` les méthodes et `GetTrailingSwipeActionsConfiguration` /ou. Ces méthodes retournent un `UISwipeActionsConfiguration`.
 2. Instanciez `UISwipeActionsConfiguration` le à retourner. Cette classe prend un tableau de `UIContextualAction`.
@@ -40,7 +40,7 @@ Celles-ci sont expliquées plus en détail dans les sections suivantes.
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. Implémentation des méthodes SwipeActionsConfigurations
 
-`UITableViewController``UITableViewSource` (et `UITableViewDelegate`) contiennent deux méthodes: `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration`, qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de vue de table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
+`UITableViewController``UITableViewSource` (et `UITableViewDelegate`) contiennent deux méthodes : `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration`, qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de vue de table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
 
 L’exemple suivant (de l’exemple [TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) ) illustre l’implémentation de la configuration de balayage de début. Deux actions sont créées à partir des actions contextuelles, qui sont expliquées [ci-dessous](#create-uicontextualaction). Ces actions sont ensuite transmises à un récemment initialisé [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations), qui est utilisé comme valeur de retour.
 
@@ -65,7 +65,7 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 ### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. Instancier un`UISwipeActionsConfiguration`
 
-Instanciez `UISwipeActionsConfiguration` un à l' `FromActions` aide de la méthode pour ajouter un `UIContextualAction`nouveau tableau de s, comme indiqué dans l’extrait de code suivant:
+Instanciez `UISwipeActionsConfiguration` un à l' `FromActions` aide de la méthode pour ajouter un `UIContextualAction`nouveau tableau de s, comme indiqué dans l’extrait de code suivant :
 
 ```csharp
 var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction })
@@ -73,15 +73,15 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-Il est important de noter que l’ordre d’affichage des actions dépend de la façon dont elles sont transmises à votre tableau. Par exemple, le code ci-dessus pour les balayages principaux affiche les actions comme suit:
+Il est important de noter que l’ordre d’affichage des actions dépend de la façon dont elles sont transmises à votre tableau. Par exemple, le code ci-dessus pour les balayages principaux affiche les actions comme suit :
 
 ![Actions de balayage de début affichées sur une ligne de tableau](row-action-images/action03.png)
 
-Pour les balayages de fin, les actions sont affichées comme illustré dans l’image suivante:
+Pour les balayages de fin, les actions sont affichées comme illustré dans l’image suivante :
 
 ![Actions de balayage à droite affichées sur une ligne de tableau](row-action-images/action04.png)
 
-Cet extrait de code utilise également la nouvelle `PerformsFirstActionWithFullSwipe` propriété. Par défaut, cette propriété a la valeur true, ce qui signifie que la première action du tableau se produit lorsqu’un utilisateur fait défiler entièrement une ligne. Si vous avez une action qui n’est pas destructrice (par exemple, «Delete», cela peut ne pas être idéal et vous devez donc la `false`définir sur.
+Cet extrait de code utilise également la nouvelle `PerformsFirstActionWithFullSwipe` propriété. Par défaut, cette propriété a la valeur true, ce qui signifie que la première action du tableau se produit lorsqu’un utilisateur fait défiler entièrement une ligne. Si vous avez une action qui n’est pas destructrice (par exemple, « Delete », cela peut ne pas être idéal et vous devez donc la `false`définir sur.
 
 <a name="create-uicontextualaction" />
 
@@ -89,7 +89,7 @@ Cet extrait de code utilise également la nouvelle `PerformsFirstActionWithFullS
 
 L’action contextuelle consiste à créer l’action qui sera affichée lorsque l’utilisateur fait glisser une ligne de tableau.
 
-Pour initialiser une action, vous devez fournir `UIContextualActionStyle`un, un titre et un `UIContextualActionHandler`. Le `UIContextualActionHandler` prend trois paramètres: une action, la vue dans laquelle l’action a été affichée et un gestionnaire d’achèvement:
+Pour initialiser une action, vous devez fournir `UIContextualActionStyle`un, un titre et un `UIContextualActionHandler`. Le `UIContextualActionHandler` prend trois paramètres : une action, la vue dans laquelle l’action a été affichée et un gestionnaire d’achèvement :
 
 ```csharp
 public UIContextualAction ContextualFlagAction(int row)
@@ -175,7 +175,7 @@ table.Delegate = tableDelegate;
 
 ```
 
-Lorsque le code ci-dessus est exécuté et que l’utilisateur fait défiler la ligne vers la gauche, le bouton **haut** s’affiche à la place du bouton **supprimer** qui s’affiche par défaut:
+Lorsque le code ci-dessus est exécuté et que l’utilisateur fait défiler la ligne vers la gauche, le bouton **haut** s’affiche à la place du bouton **supprimer** qui s’affiche par défaut :
 
 [![](row-action-images/action01.png "Bouton AIM affiché à la place du bouton supprimer")](row-action-images/action01.png#lightbox)
 

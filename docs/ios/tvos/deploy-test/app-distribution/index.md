@@ -4,28 +4,28 @@ description: Ce document fournit une vue d’ensemble des techniques de distribu
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: df3a3462923ab396037f9267194588ffcb03f9e5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0ea96eb3808daeb9f8764695d1b4b3d432727ff2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655236"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292482"
 ---
 # <a name="tvos-app-distribution-overview"></a>Présentation de la distribution d’applications tvOS
 
 _Ce document fournit une vue d’ensemble des techniques de distribution disponibles pour l’application Xamarin. tvOS et sert de pointeur vers des documents plus détaillés dans la rubrique._
 
 
-Une fois votre application Xamarin. tvOS développée, l’étape suivante du cycle de vie du développement de logiciels consiste à distribuer votre application aux utilisateurs, comme indiqué dans la section en surbrillance du diagramme ci-dessous:
+Une fois votre application Xamarin. tvOS développée, l’étape suivante du cycle de vie du développement de logiciels consiste à distribuer votre application aux utilisateurs, comme indiqué dans la section en surbrillance du diagramme ci-dessous :
 
 
 [![Présentation du cycle de vie du développement de logiciels](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 
-Apple offre les moyens suivants de distribuer une application tvOS, prise en charge par Xamarin. tvOS:
+Apple offre les moyens suivants de distribuer une application tvOS, prise en charge par Xamarin. tvOS :
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
 2. [**Interne (Entreprise)** ](#In-House-Distribution) 

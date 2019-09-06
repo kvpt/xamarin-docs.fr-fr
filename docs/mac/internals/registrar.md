@@ -1,47 +1,47 @@
 ---
-title: Xamarin.Mac registrar
-description: Ce document décrit l’objectif du bureau d’enregistrement de Xamarin.Mac et son statique partielle, statique et dynamique (hybride) des configurations de l’utilisation.
+title: Bureau d’enregistrement Xamarin. Mac
+description: Ce document décrit l’objectif de l’registraire Xamarin. Mac et ses configurations d’utilisation statiques, statiques et statiques (hybrides).
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 21e1a2c6ae5a9ad8b6acf520851ea92a340da887
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032495"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290094"
 ---
-# <a name="xamarinmac-registrar"></a>Xamarin.Mac registrar
+# <a name="xamarinmac-registrar"></a>Bureau d’enregistrement Xamarin. Mac
 
-_Ce document décrit l’objectif du bureau d’enregistrement de Xamarin.Mac et sa configuration de l’utilisation diffère._
+_Ce document décrit l’objectif du Bureau d’enregistrement Xamarin. Mac et ses différentes configurations d’utilisation._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
-Xamarin.Mac comble le fossé entre le monde géré (.NET) et le runtime de Cocoa, ce qui permet des classes managées appeler les classes non managées de Objective-C et être rappelé lorsqu’événements se produisent. Le travail requis pour effectuer cette « magiques » est géré par le bureau d’enregistrement et est, en règle générale, masqué.
+Xamarin. Mac permet de combler l’écart entre le runtime du monde géré (.NET) et le runtime de cacao, ce qui permet aux classes managées d’appeler des classes objective-C non managées et d’être rappelées lorsque des événements se produisent. Le travail requis pour préformer ce « Magic » est géré par le Bureau d’enregistrement et est, en général, masqué de l’affichage.
 
-Impacte les performances de l’enregistrement, en particulier sur le démarrage de l’application le temps, et comprendre un peu de ce qui se passe « en coulisse » peut parfois être utile.
+Cette inscription a des répercussions sur les performances, en particulier sur le temps de démarrage de l’application, et la compréhension d’un peu de ce qui se passe « en coulisse » peut parfois être utile.
 
 ## <a name="configurations"></a>Configurations
 
-Fondamentalement, travail du bureau d’enregistrement au démarrage peut être divisée en deux catégories :
+Fondamentalement, la tâche du Bureau d’enregistrement au démarrage peut être divisée en deux catégories :
 
-- Analyse de chaque classe managée pour ceux dérivant NSObject et collectez une liste des éléments à être exposés au runtime Objective-C.
-- Enregistrer ces informations avec le runtime Objective-C.
+- Analysez chaque classe managée pour ceux qui dérivent de NSObject et collectez une liste d’éléments à exposer au runtime objective-C.
+- Enregistrez ces informations avec le runtime objective-C.
 
-Au fil du temps, les trois configurations autre bureau d’enregistrement ont été créées pour couvrir différents cas d’usage. Chacune a build différente et exécutez les conséquences de l’heure :
+Au fil du temps, trois configurations de bureaux d’enregistrement différentes ont été créées pour couvrir différents cas d’utilisation. Chacun a des conséquences différentes au moment de la génération et de l’exécution :
 
-- **Bureau d’enregistrement dynamique** – lors du démarrage, utilisez la réflexion .NET pour chaque type chargé d’analyse, de déterminer la liste d’éléments appropriés et informer le runtime natif. Cette option ajoute l’heure zéro à la build, mais est très coûteuse à calculer pendant le lancement (jusqu'à plusieurs secondes).
-- **Bureau d’enregistrement statique** : lors de la génération, le jeu d’éléments d’être inscrit et générer du code Objective-C pour gérer l’inscription de calcul. Ce code est appelé lors du démarrage à inscrire rapidement tous les éléments. Ajoute qu'une pause importante pour la build, mais peut coupe une quantité significative de temps de démarrage de l’application.
-- **« Partielle » statique** – une approche « hybride » plus récente qui offre la plupart des avantages des deux. Depuis les exportations de **Xamarin.Mac.dll** sont constants, enregistrez une bibliothèque précalculée pour gérer leur inscription et de lier que dans. Utiliser la réflexion pour gérer les bibliothèques utilisateur, mais en tant que bibliothèques utilisateur exporter beaucoup moins de types que les liaisons de plate-forme il s’agit souvent assez rapide. Un négligeable générer l’impact du temps et réduit une grande majorité de « coût » dynamique.
+- **Registraire dynamique** : au démarrage, utilisez la réflexion .net pour analyser chaque type chargé, déterminer la liste des éléments pertinents et informer le runtime natif. Cette option ajoute zéro heure à la build, mais elle est très coûteuse à calculer au cours du lancement (jusqu’à plusieurs secondes).
+- **Registraire statique** : lors de la génération, calculez l’ensemble des éléments à inscrire et générez du code Objective-C pour gérer l’inscription. Ce code est appelé au démarrage pour inscrire rapidement tous les éléments. Ajoute une pause significative à la build, mais peut réduire le temps de démarrage de l’application.
+- **Statique « partielle »** : approche « hybride » plus récente qui offre la plupart des avantages des deux. Étant donné que les exportations de **Xamarin. Mac. dll** sont constantes, enregistrez une bibliothèque précalculée pour gérer son inscription et liez-la dans. Utilisez la réflexion pour gérer les bibliothèques utilisateur, mais comme les bibliothèques utilisateur exportent beaucoup moins de types que les liaisons de la plateforme sont souvent assez rapides. Un impact négligeable sur la durée de la génération et réduit une grande majorité du « coût » de Dynamic.
 
-Aujourd'hui statique partielle est la valeur par défaut pour la configuration Debug et statique est la valeur par défaut pour les configurations Release.
+Aujourd’hui, la valeur statique partielle est la valeur par défaut pour la configuration de débogage et statique est la valeur par défaut pour les configurations Release.
 
-Il existe certains scénarios :
+Voici quelques scénarios :
 
-- Plug-ins chargés après le lancement avec les classes dérivées de NSObject
-- Créé dynamiquement des instances de classe dérivant de NSObject
+- Plug-ins chargés après le lancement avec des classes dérivant de NSObject
+- Instances de classes créées dynamiquement dérivant de NSObject
 
-où le bureau d’enregistrement ne peut pas savoir qu’il doit inscrire un type au démarrage. Le `ObjCRuntime.Runtime.RegisterAssembly` méthode est fournie pour informer le bureau d’enregistrement qu’il a des types supplémentaires à prendre en compte.
+Lorsque le Bureau d’enregistrement n’est pas en mesure de savoir qu’il doit inscrire un type au démarrage. La `ObjCRuntime.Runtime.RegisterAssembly` méthode est fournie pour informer le Bureau d’enregistrement qu’il a des types supplémentaires à prendre en compte.

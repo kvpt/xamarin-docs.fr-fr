@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C29B69F5-08E4-4DCC-831E-7FD692AB0886
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 5f968e01cc0b866f94f524728b4bba1e759e8bf8
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.openlocfilehash: 211bb94b595a6b4e2f4f8c05ab6a90ba200d44e5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012382"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292045"
 ---
 # <a name="xamarinios-analysis-rules"></a>Règles d’analyse Xamarin. iOS
 
@@ -60,7 +60,7 @@ Pour le configurer, accédez à projet > iOS Build > comportement de l’éditeu
 ## <a name="xia0005-float32rule"></a>XIA0005: Float32Rule
 
 - **Problème :** Le fait de ne pas utiliser l’option float32 (--AOT-options =-O = float32) entraîne un coût de performance de lourdeur, en particulier sur mobile, où la mathématique double précision est sensiblement plus lente. Notez que .NET utilise la double précision en interne, même pour le type float, donc l’activation de cette option affecte la précision et, éventuellement, la compatibilité.
-- **Résoudre** Double-cliquez sur votre projet iOS, accédez à Build > iOS Build et décochez la case «effectuer toutes les opérations float 32 bits sous la forme d’une virgule flottante de 64 bits».
+- **Résoudre** Double-cliquez sur votre projet iOS, accédez à Build > iOS Build et décochez la case « effectuer toutes les opérations float 32 bits sous la forme d’une virgule flottante de 64 bits ».
 
 <a name="XIA0006" />
 

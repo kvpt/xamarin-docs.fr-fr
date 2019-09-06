@@ -4,19 +4,19 @@ description: Ce document décrit les mises à jour de ARKit dans iOS 12. Il se c
 ms.prod: xamarin
 ms.assetid: af758092-1523-4ab7-aa53-c37a81fb156a
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/22/2018
-ms.openlocfilehash: 4af5e7ea9c1d744cd3b5ea5444312ba68bfcea11
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 17995f61d92856a88769e2cd7ac8ed7445cf9782
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120455"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281129"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 dans Xamarin. iOS
 
-ARKit a considérablement évolué depuis son introduction l’année dernière dans iOS 11. Tout d’abord, vous pouvez désormais détecter des plans verticaux et horizontaux, ce qui améliore considérablement l’expérience des expériences de réalité augmentées en intérieur. En outre, il existe de nouvelles fonctionnalités:
+ARKit a considérablement évolué depuis son introduction l’année dernière dans iOS 11. Tout d’abord, vous pouvez désormais détecter des plans verticaux et horizontaux, ce qui améliore considérablement l’expérience des expériences de réalité augmentées en intérieur. En outre, il existe de nouvelles fonctionnalités :
 
 - Reconnaissance d’images et d’objets de référence en tant que jonction entre le monde réel et l’image numérique
 - Nouveau mode d’éclairage qui simule l’éclairage réel
@@ -27,9 +27,9 @@ ARKit a considérablement évolué depuis son introduction l’année dernière 
 
 Une fonctionnalité de vitrine dans ARKit 2 est la possibilité de reconnaître des images et des objets de référence. Les images de référence peuvent être chargées à partir de fichiers image normaux ([voir plus loin](#more-tracking-configurations)), mais les objets de référence doivent être [`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)analysés à l’aide du axé sur les développeurs.
 
-### <a name="sample-app-scanning-and-detecting-3d-objects"></a>Exemple d’application: Analyse et détection d’objets 3D
+### <a name="sample-app-scanning-and-detecting-3d-objects"></a>Exemple d’application : Analyse et détection d’objets 3D
 
-L’exemple [analyse et détection d’objets 3D](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects) est un port d’un [projet Apple](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc) qui illustre les éléments suivants:
+L’exemple [analyse et détection d’objets 3D](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects) est un port d’un [projet Apple](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc) qui illustre les éléments suivants :
 
 - Gestion de l’état [`NSNotification`](xref:Foundation.NSNotification) des applications à l’aide d’objets
 - Visualisation personnalisée
@@ -41,21 +41,21 @@ L’analyse d’un objet de référence est gourmande en batterie et en processe
 
 ### <a name="state-management-using-nsnotification-objects"></a>Gestion d’État à l’aide d’objets NSNotification
 
-Cette application utilise une machine à États qui passe des États suivants:
+Cette application utilise une machine à États qui passe des États suivants :
 
 - `AppState.StartARSession`
 - `AppState.NotReady`
 - `AppState.Scanning`
 - `AppState.Testing`
 
-En outre, utilise un jeu d’États et de transitions incorporé `AppState.Scanning`dans:
+En outre, utilise un jeu d’États et de transitions incorporé `AppState.Scanning`dans :
 
 - `Scan.ScanState.Ready`
 - `Scan.ScanState.DefineBoundingBox`
 - `Scan.ScanState.Scanning`
 - `Scan.ScanState.AdjustingOrigin`
 
-L’application utilise une architecture réactive qui publie des notifications de transition d' [`NSNotificationCenter`](xref:Foundation.NSNotificationCenter) État vers et s’abonne à ces notifications. Le programme d’installation ressemble à l' `ViewController.cs`extrait de code suivant:
+L’application utilise une architecture réactive qui publie des notifications de transition d' [`NSNotificationCenter`](xref:Foundation.NSNotificationCenter) État vers et s’abonne à ces notifications. Le programme d’installation ressemble à l' `ViewController.cs`extrait de code suivant :
 
 ```csharp
 // Configure notifications for application state changes
@@ -73,7 +73,7 @@ notificationCenter.AddObserver(NSProcessInfo.PowerStateDidChangeNotification, Di
 
 ```
 
-Un gestionnaire de notifications standard met à jour l’interface utilisateur et peut éventuellement modifier l’état de l’application, tel que le gestionnaire mis à jour à mesure que l’objet est analysé:
+Un gestionnaire de notifications standard met à jour l’interface utilisateur et peut éventuellement modifier l’état de l’application, tel que le gestionnaire mis à jour à mesure que l’objet est analysé :
 
 ```csharp
 private void ScanPercentageChanged(NSNotification notification)
@@ -97,7 +97,7 @@ private void ScanPercentageChanged(NSNotification notification)
 
 ```
 
-Enfin, `Enter{State}` les méthodes modifient le modèle et l’expérience utilisateur en fonction du nouvel État:
+Enfin, `Enter{State}` les méthodes modifient le modèle et l’expérience utilisateur en fonction du nouvel État :
 
 ```csharp
 internal void EnterStateTesting()
@@ -117,12 +117,12 @@ internal void EnterStateTesting()
 
 ### <a name="custom-visualization"></a>Visualisation personnalisée
 
-L’application affiche le «Cloud point» de bas niveau de l’objet contenu dans un cadre englobant projeté sur un plan horizontal détecté.
+L’application affiche le « Cloud point » de bas niveau de l’objet contenu dans un cadre englobant projeté sur un plan horizontal détecté.
 
-Ce Cloud de point est disponible pour les développeurs [`ARFrame.RawFeaturePoints`](xref:ARKit.ARFrame.RawFeaturePoints) dans la propriété. La visualisation efficace du Cloud point peut être un problème délicat. En effectuant une itération sur les points, la création et le placement d’un nouveau nœud SceneKit pour chaque point interrompent la fréquence d’images. En guise d’alternative, s’il s’agit d’une opération asynchrone, il y a un décalage. L’exemple gère les performances avec une stratégie en trois parties:
+Ce Cloud de point est disponible pour les développeurs [`ARFrame.RawFeaturePoints`](xref:ARKit.ARFrame.RawFeaturePoints) dans la propriété. La visualisation efficace du Cloud point peut être un problème délicat. En effectuant une itération sur les points, la création et le placement d’un nouveau nœud SceneKit pour chaque point interrompent la fréquence d’images. En guise d’alternative, s’il s’agit d’une opération asynchrone, il y a un décalage. L’exemple gère les performances avec une stratégie en trois parties :
 
 - Utilisation de code non sécurisé pour épingler les données sur place et interpréter les données comme une mémoire tampon d’octets brute.
-- Conversion de cette mémoire tampon brute [`SCNGeometrySource`](xref:SceneKit.SCNGeometrySource) en et création d’un objet [`SCNGeometryElement`](xref:SceneKit.SCNGeometryElement) «template».
+- Conversion de cette mémoire tampon brute [`SCNGeometrySource`](xref:SceneKit.SCNGeometrySource) en et création d’un objet [`SCNGeometryElement`](xref:SceneKit.SCNGeometryElement) « template ».
 - Regrouper rapidement les données brutes et le modèle à l’aide de[`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
 
 ```csharp
@@ -182,7 +182,7 @@ Le résultat ressemble à :
 
 L’utilisateur peut mettre à l’échelle, faire pivoter et faire glisser le cadre englobant qui entoure l’objet cible. Les module de reconnaissance de mouvement associés présentent deux éléments intéressants.
 
-Tout d’abord, tous les module de reconnaissance de mouvement s’activent uniquement après la transmission d’un seuil; par exemple, un doigt a fait glisser un grand nombre de pixels ou la rotation dépasse un certain angle. La technique consiste à accumuler le déplacement jusqu’à ce que le seuil soit dépassé, puis à l’appliquer de façon incrémentielle:
+Tout d’abord, tous les module de reconnaissance de mouvement s’activent uniquement après la transmission d’un seuil ; par exemple, un doigt a fait glisser un grand nombre de pixels ou la rotation dépasse un certain angle. La technique consiste à accumuler le déplacement jusqu’à ce que le seuil soit dépassé, puis à l’appliquer de façon incrémentielle :
 
 ```csharp
 // A custom rotation gesture recognizer that fires only when a threshold is passed
@@ -249,7 +249,7 @@ La deuxième chose intéressante en ce qui concerne les gestes est la façon don
 
 ### <a name="more-tracking-configurations"></a>Autres configurations de suivi
 
-À présent, vous pouvez utiliser l’un des éléments suivants comme base pour une expérience de réalité mixte:
+À présent, vous pouvez utiliser l’un des éléments suivants comme base pour une expérience de réalité mixte :
 
 - L’accéléromètre de l’appareil[`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)uniquement (, iOS 11)
 - Visages ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration), iOS 11)
@@ -259,7 +259,7 @@ La deuxième chose intéressante en ce qui concerne les gestes est la façon don
 
 `AROrientationTrackingConfiguration`, présenté dans [ce billet de blog F# et notre exemple](https://github.com/lobrien/FSharp_Face_AR), est le plus limité et fournit une expérience de réalité mixte médiocre, car il place uniquement les objets numériques par rapport au mouvement de l’appareil, sans essayer de lier l’appareil et l’écran dans le monde réel.
 
-Le `ARImageTrackingConfiguration` vous permet de reconnaître des images 2D réelles (peintures, logos, etc.) et de les utiliser pour ancrer les images numériques:
+Le `ARImageTrackingConfiguration` vous permet de reconnaître des images 2D réelles (peintures, logos, etc.) et de les utiliser pour ancrer les images numériques :
 
 ```csharp
 var imagesAndWidths = new[] {
@@ -282,25 +282,25 @@ var referenceImages = new NSSet<ARReferenceImage>(
 configuration.TrackingImages = referenceImages;
 ```
 
-Cette configuration comporte deux aspects intéressants:
+Cette configuration comporte deux aspects intéressants :
 
 - Elle est efficace et peut être utilisée avec un nombre potentiellement important d’images de référence
 - L’image numérique est ancrée à l’image, même si cette image se déplace dans le monde réel (par exemple, si la couverture d’un livre est reconnue, elle suit le livre tel qu’il est retiré de l’étagère, arrêtée, etc.).
 
 Le `ARObjectScanningConfiguration` a été abordé [précédemment](#recognizing-reference-objects) et est une configuration centrée sur les développeurs pour l’analyse d’objets 3D. Le processeur et la batterie sont très gourmands en ressources et ne doivent pas être utilisés dans les applications des utilisateurs finaux. L’exemple d' [analyse et de détection d’objets 3D](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects) illustre l’utilisation de cette configuration.
 
-La configuration de suivi finale `ARWorldTrackingConfiguration` ,, est la plus propre des expériences de réalité mixte. Cette configuration utilise «odometry d’inertie visuel» pour mettre en relation des «points de fonctionnalité» réels avec l’image numérique. Les géométries numériques ou les sprites sont ancrés par rapport à des plans horizontaux réels et verticaux ou relatifs `ARReferenceObject` à des instances détectées. Dans cette configuration, l’origine du monde est la position d’origine de la caméra dans l’espace, l’axe Z étant aligné sur la gravité et les objets numériques «restent en place» par rapport aux objets dans le monde réel.
+La configuration de suivi finale `ARWorldTrackingConfiguration` ,, est la plus propre des expériences de réalité mixte. Cette configuration utilise « odometry d’inertie visuel » pour mettre en relation des « points de fonctionnalité » réels avec l’image numérique. Les géométries numériques ou les sprites sont ancrés par rapport à des plans horizontaux réels et verticaux ou relatifs `ARReferenceObject` à des instances détectées. Dans cette configuration, l’origine du monde est la position d’origine de la caméra dans l’espace, l’axe Z étant aligné sur la gravité et les objets numériques « restent en place » par rapport aux objets dans le monde réel.
 
 ### <a name="environmental-texturing"></a>Texturation environnementale
 
-ARKit 2 prend en charge la «texturation environnementale» qui utilise l’image capturée pour estimer l’éclairage et même appliquer des surbrillances spéculaires aux objets brillants. Le carte cubique environnemental est créé dynamiquement et, une fois que la caméra a regardé toutes les directions, peut produire une expérience réaliste impressionnante:
+ARKit 2 prend en charge la « texturation environnementale » qui utilise l’image capturée pour estimer l’éclairage et même appliquer des surbrillances spéculaires aux objets brillants. Le carte cubique environnemental est créé dynamiquement et, une fois que la caméra a regardé toutes les directions, peut produire une expérience réaliste impressionnante :
 
 ![image de démonstration de la texture environnementale](images/arkit_env_texturing.png)
 
-Afin d’utiliser la texturation environnementale:
+Afin d’utiliser la texturation environnementale :
 
 - Vos [`SCNMaterial`](xref:SceneKit.SCNMaterial) objets doivent utiliser [`SCNLightingModel.PhysicallyBased`](xref:SceneKit.SCNLightingModel.PhysicallyBased) et assigner une valeur comprise entre 0 et [`Metalness.Contents`](xref:SceneKit.SCNMaterial.Metalness) 1 [`Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents) pour et et
-- Votre configuration de suivi doit [`EnvironmentTexturing`](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing) être définie  =  [`AREnvironmentTexturing.Automatic`](xref:ARKit.AREnvironmentTexturing.Automatic) comme suit:
+- Votre configuration de suivi doit [`EnvironmentTexturing`](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing) être définie  =  [`AREnvironmentTexturing.Automatic`](xref:ARKit.AREnvironmentTexturing.Automatic) comme suit :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);
@@ -318,7 +318,7 @@ var configuration = new ARWorldTrackingConfiguration
 };
 ```
 
-Bien que la texture parfaite réfléchie apparaissant dans l’extrait de code précédent soit amusante dans un exemple, la texturation environnementale est probablement mieux utilisée avec la restriction de restriction. elle déclenche une réponse «unformy Valley» (la texture n’est qu’une estimation basée sur l’appareil photo enregistré).
+Bien que la texture parfaite réfléchie apparaissant dans l’extrait de code précédent soit amusante dans un exemple, la texturation environnementale est probablement mieux utilisée avec la restriction de restriction. elle déclenche une réponse « unformy Valley » (la texture n’est qu’une estimation basée sur l’appareil photo enregistré).
 
 
 ### <a name="shared-and-persistent-ar-experiences"></a>Expériences AR partagées et persistantes
@@ -342,11 +342,11 @@ if (worldMap != null)
 }
 ```
 
-Pour partager ou restaurer la carte du monde:
+Pour partager ou restaurer la carte du monde :
 
 1. Charger les données à partir du fichier,
 2. L’archiver dans un `ARWorldMap` objet,
-3. Utilisez-le comme valeur de la [`ARWorldTrackingConfiguration.InitialWorldMap`](xref:ARKit.ARWorldTrackingConfiguration.InitialWorldMap) propriété:
+3. Utilisez-le comme valeur de la [`ARWorldTrackingConfiguration.InitialWorldMap`](xref:ARKit.ARWorldTrackingConfiguration.InitialWorldMap) propriété :
 
 ```csharp
 var data = NSData.FromArray(File.ReadAllBytes(PersistentWorldController.PersistenWorldPath));
@@ -371,7 +371,7 @@ La dernière fonctionnalité de ARKit 2 est l’adoption par Apple du format de 
 
 ### <a name="manual-resource-management"></a>Gestion manuelle des ressources
 
-Dans ARKit, il est essentiel de gérer manuellement les ressources. Non seulement cela permet d’obtenir des fréquences d’images élevées, mais il est en fait _nécessaire_ d’éviter un «blocage d’écran» confus. L’infrastructure ARKit est différée de la fourniture d’un nouveau frame[`ARSession.CurrentFrame`](xref:ARKit.ARSession.CurrentFrame)d’appareil photo (. Tant que le [`ARFrame`](xref:ARKit.ARFrame) en cours `Dispose()` n’a pas été appelé, ARKit ne fournira pas de nouveau Frame! La vidéo est alors «figée» même si le reste de l’application est réactif. La solution consiste à toujours accéder `ARSession.CurrentFrame` à un `using` bloc ou à appeler `Dispose()` manuellement.
+Dans ARKit, il est essentiel de gérer manuellement les ressources. Non seulement cela permet d’obtenir des fréquences d’images élevées, mais il est en fait _nécessaire_ d’éviter un « blocage d’écran » confus. L’infrastructure ARKit est différée de la fourniture d’un nouveau frame[`ARSession.CurrentFrame`](xref:ARKit.ARSession.CurrentFrame)d’appareil photo (. Tant que le [`ARFrame`](xref:ARKit.ARFrame) en cours `Dispose()` n’a pas été appelé, ARKit ne fournira pas de nouveau Frame ! La vidéo est alors « figée » même si le reste de l’application est réactif. La solution consiste à toujours accéder `ARSession.CurrentFrame` à un `using` bloc ou à appeler `Dispose()` manuellement.
 
 Tous les objets dérivés `IDisposable` de `NSObject` `NSObject` sont et implémentent le [modèle de suppression](https://docs.microsoft.com/dotnet/standard/design-guidelines/dispose-pattern). par conséquent, vous devez généralement suivre [ce modèle pour implémenter `Dispose` sur une classe dérivée](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose).
 
@@ -379,7 +379,7 @@ Tous les objets dérivés `IDisposable` de `NSObject` `NSObject` sont et implém
 
 Dans n’importe quelle application 3D, vous allez utiliser des matrices de transformation 4x4 qui décrivent de façon compacte comment déplacer, faire pivoter et déformer un objet à l’aide de l’espace 3D. Dans SceneKit, il s' [`SCNMatrix4`](xref:SceneKit.SCNMatrix4) agit d’objets.  
 
-La [`SCNNode.Transform`](xref:SceneKit.SCNNode.Transform) propriété retourne la `SCNMatrix4` matrice de transformation pour [`SCNNode`](xref:SceneKit.SCNNode) le _sauvegardé par_ le type de ligne principale `simdfloat4x4` . Par exemple:
+La [`SCNNode.Transform`](xref:SceneKit.SCNNode.Transform) propriété retourne la `SCNMatrix4` matrice de transformation pour [`SCNNode`](xref:SceneKit.SCNNode) le _sauvegardé par_ le type de ligne principale `simdfloat4x4` . Par exemple :
 
 ```csharp
 var node = new SCNNode { Position = new SCNVector3(2, 3, 4) };  
@@ -390,11 +390,11 @@ Console.WriteLine(xform);
 
 Comme vous pouvez le voir, la position est encodée dans les trois premiers éléments de la ligne inférieure.
 
-Dans Xamarin, le type commun pour manipuler des matrices de transformation `NVector4`est, qui, par Convention, est interprété dans une colonne-principale. Autrement dit, le composant translation/position est attendu dans M14, M24, M34, et non M41, M42, M43:
+Dans Xamarin, le type commun pour manipuler des matrices de transformation `NVector4`est, qui, par Convention, est interprété dans une colonne-principale. Autrement dit, le composant translation/position est attendu dans M14, M24, M34, et non M41, M42, M43 :
 
 ![ligne-principale vs colonne-principale](images/arkit_row_vs_column.png)
 
-La cohérence avec le choix de l’interprétation de la matrice est vitale pour un comportement correct. Étant donné que les matrices de transformation 3D sont 4x4, les erreurs de cohérence ne produisent aucun type d’exception au moment de la compilation ou même au moment de l’exécution; il s’agit simplement que les opérations agissent de façon inattendue. Si vos objets SceneKit/ARKit semblent être bloqués, volés ou instables, une matrice de transformation incorrecte est une bonne possibilité. La solution est simple: [`NMatrix4.Transpose`](xref:OpenTK.NMatrix4.Transpose*) effectue une transposition sur place des éléments.
+La cohérence avec le choix de l’interprétation de la matrice est vitale pour un comportement correct. Étant donné que les matrices de transformation 3D sont 4x4, les erreurs de cohérence ne produisent aucun type d’exception au moment de la compilation ou même au moment de l’exécution ; il s’agit simplement que les opérations agissent de façon inattendue. Si vos objets SceneKit/ARKit semblent être bloqués, volés ou instables, une matrice de transformation incorrecte est une bonne possibilité. La solution est simple : [`NMatrix4.Transpose`](xref:OpenTK.NMatrix4.Transpose*) effectue une transposition sur place des éléments.
 
 ## <a name="related-links"></a>Liens connexes
 

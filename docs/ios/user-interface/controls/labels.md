@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser des étiquettes dans Xamarin.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/11/2017
-ms.openlocfilehash: 41cd0eb93cee216311ea42f7ca027a1556b322e6
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 0447bd643f359b21ec58bb8bdd79f8482fdb8955
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227073"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286325"
 ---
 # <a name="labels-in-xamarinios"></a>Étiquettes dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Le `UILabel` contrôle est utilisé pour afficher du texte en lecture seule et m
 
 ## <a name="implementing-a-label"></a>Implémentation d’une étiquette
 
-Une nouvelle étiquette est créée en instanciant [`UILabel`](xref:UIKit.UILabel)un:
+Une nouvelle étiquette est créée en instanciant [`UILabel`](xref:UIKit.UILabel)un :
 
 ```csharp
 UILabel label = new UILabel();
@@ -28,11 +28,11 @@ UILabel label = new UILabel();
 
 ### <a name="labels-and-storyboards"></a>Étiquettes et storyboards
 
-Vous pouvez également ajouter une étiquette à votre interface utilisateur lors de l’utilisation du concepteur iOS. Recherchez **étiquette** dans la **boîte à outils** et faites-la glisser vers votre vue:
+Vous pouvez également ajouter une étiquette à votre interface utilisateur lors de l’utilisation du concepteur iOS. Recherchez **étiquette** dans la **boîte à outils** et faites-la glisser vers votre vue :
 
 ![Étiquette dans la boîte à outils](labels-images/image3.png)
 
-Les propriétés suivantes peuvent être ajustées dans le panneau Propriétés:
+Les propriétés suivantes peuvent être ajustées dans le panneau Propriétés :
 
 ![Panneau des propriétés de l’étiquette](labels-images/image2.png)
 
@@ -54,7 +54,7 @@ Pour plus d’informations sur l’utilisation des sauts de ligne dans iOS, repo
 
 ## <a name="formatting-text-and-label"></a>Mise en forme du texte et de l’étiquette
 
-Pour mettre en forme la chaîne que vous utilisez dans une étiquette, vous pouvez soit définir des attributs de mise en forme sur la chaîne entière, soit utiliser des chaînes avec attributs. Les exemples suivants montrent comment les implémenter:
+Pour mettre en forme la chaîne que vous utilisez dans une étiquette, vous pouvez soit définir des attributs de mise en forme sur la chaîne entière, soit utiliser des chaînes avec attributs. Les exemples suivants montrent comment les implémenter :
 
 ```csharp
 label = new UILabel(){
@@ -76,17 +76,17 @@ label.AttributedText = new NSAttributedString(
 
 Pour plus d’informations sur le style du `NSAttributedString` texte à l’aide de, consultez la recette du [style de texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) .
 
-Par défaut, les étiquettes `Enabled` ont la valeur true, mais il est possible de lui affecter la valeur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé:
+Par défaut, les étiquettes `Enabled` ont la valeur true, mais il est possible de lui affecter la valeur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé :
 
 ```csharp
 label.Enabled = false;
 ```
 
-Cela affecte à l’étiquette une couleur gris clair, comme illustré dans l’exemple suivant d’image de l’écran restrictions dans iOS:
+Cela affecte à l’étiquette une couleur gris clair, comme illustré dans l’exemple suivant d’image de l’écran restrictions dans iOS :
 
 ![Bouton désactivé dans iOS](labels-images/image1.png)
 
-Vous pouvez également définir les couleurs de surbrillance et de texte ombré sur le texte de votre étiquette pour des effets supplémentaires:
+Vous pouvez également définir les couleurs de surbrillance et de texte ombré sur le texte de votre étiquette pour des effets supplémentaires :
 
 ```csharp
 label.Highlighted = true;
@@ -96,7 +96,7 @@ label.ShadowColor = UIColor.Black;
 label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ```
 
-Qui affiche le texte comme suit:
+Qui affiche le texte comme suit :
 
 ![Mise en surbrillance et jeu d’ombres sur le texte](labels-images/image4.png)
 

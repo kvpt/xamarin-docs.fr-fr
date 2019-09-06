@@ -3,15 +3,15 @@ title: Application Xamarin Live Player
 description: Ce document décrit l’application Xamarin Live Player, qui peut être utilisée pour afficher un aperçu des modifications du code en direct sur l’appareil. Il traite de l’installation, des exemples, des journaux, des paramètres, de la gestion des appareils et bien plus encore.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2019
-ms.openlocfilehash: b09ea4e8ec09db5e9bf443476cd3a67e16f02d19
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d725cb0687cce85f10dbf6915e4eeec785c0ae54
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651222"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290211"
 ---
 # <a name="xamarin-live-player-app"></a>Application Xamarin Live Player
 
@@ -23,11 +23,11 @@ ms.locfileid: "68651222"
 > [!TIP]
 > Vous pouvez utiliser le [Générateur d’aperçu XAML](~/xamarin-forms/xaml/xaml-previewer/index.md) dans Visual Studio 2019 ou Visual Studio pour Mac pour afficher les conceptions d’écran au fur et à mesure de leur modification.
 
-Au démarrage, l’application Xamarin Live Player se présente comme suit:
+Au démarrage, l’application Xamarin Live Player se présente comme suit :
 
 ![Capture d’écran de l’application Live Player Android](player-images/app-android-sml.png)
 
-Quand vous appuyez sur **paire vers Visual Studio**, utilisez l’appareil photo pour scanner le code-barres sur votre ordinateur:
+Quand vous appuyez sur **paire vers Visual Studio**, utilisez l’appareil photo pour scanner le code-barres sur votre ordinateur :
 
 ![Capture d’écran du scanneur de codes-barres Android](player-images/scan-android-sml.png)
 
@@ -63,7 +63,7 @@ Dans Visual Studio, choisissez **outils > Xamarin Live Player > gérer les appar
 
 ![Fenêtre gérer les appareils](player-images/manage-tools-menu-vs.png)
 
-Cette fenêtre vous permet d’effectuer les opérations suivantes:
+Cette fenêtre vous permet d’effectuer les opérations suivantes :
 
 - Coupler un nouvel appareil en analysant le code
 - Vous pouvez également coupler un appareil en tapant le code affiché à l’écran
@@ -77,7 +77,7 @@ Dans Visual Studio pour Mac, choisissez **outils > (Xamarin Live Player) gérer 
 
 ![Fenêtre gérer les appareils](player-images/manage-tools-menu.png)
 
-Cette fenêtre vous permet d’effectuer les opérations suivantes:
+Cette fenêtre vous permet d’effectuer les opérations suivantes :
 
 - Coupler un nouvel appareil en analysant le code
 - Vous pouvez également coupler un appareil en tapant le code affiché à l’écran
@@ -85,7 +85,7 @@ Cette fenêtre vous permet d’effectuer les opérations suivantes:
 
 ![Fenêtre gérer les appareils](player-images/manage.png)
 
-Vous pouvez également accéder à cette fenêtre à partir de la liste des appareils:
+Vous pouvez également accéder à cette fenêtre à partir de la liste des appareils :
 
 ![Choisir des appareils Xamarin Live Player dans la liste des appareils](player-images/manage-device-menu.png)
 

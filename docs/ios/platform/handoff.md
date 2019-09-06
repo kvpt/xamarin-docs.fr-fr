@@ -4,15 +4,15 @@ description: Cet article traite de l’utilisation de la fonction de transfert d
 ms.prod: xamarin
 ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 28c5086833ceb1dc8550e513b120f7355aa9bebe
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656578"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290759"
 ---
 # <a name="handoff-in-xamarinios"></a>Transfert dans Xamarin. iOS
 
@@ -22,13 +22,13 @@ Apple a introduit la remise dans iOS 8 et OS X Yosemite (10,10) pour fournir un 
 
 [![](handoff-images/handoff02.png "Exemple d’exécution d’une opération de remise")](handoff-images/handoff02.png#lightbox)
 
-Cet article examine rapidement l’activation du partage d’activités dans une application Xamarin. iOS et couvre l’infrastructure de transfert en détail:
+Cet article examine rapidement l’activation du partage d’activités dans une application Xamarin. iOS et couvre l’infrastructure de transfert en détail :
 
 ## <a name="about-handoff"></a>À propos de la remise
 
 La remise (également appelée continuité) a été introduite par Apple dans iOS 8 et OS X Yosemite (10,10) pour que l’utilisateur démarre une activité sur l’un de ses appareils (iOS ou Mac) et continue cette même activité sur un autre de ses appareils (identifiés par le iClou de l’utilisateur). Compte d).
 
-Le transfert a été étendu dans iOS 9 pour prendre également en charge les nouvelles fonctionnalités de recherche améliorées. Pour plus d’informations, consultez notre documentation sur les améliorations apportées à la [recherche](~/ios/platform/search/index.md) .
+Le transfert a été étendu dans iOS 9 pour prendre également en charge les nouvelles fonctionnalités de recherche améliorées. Pour plus d’informations, consultez notre documentation sur les [améliorations apportées](~/ios/platform/search/index.md) à la recherche.
 
 Par exemple, l’utilisateur peut démarrer un e-mail sur son iPhone et continuer en toute transparence l’e-mail sur son Mac, avec les mêmes informations de message et le curseur dans le même emplacement que celui dans lequel ils ont été laissés dans iOS.
 
@@ -52,7 +52,7 @@ Seules les applications qui partagent le même ID d’équipe de développeur et
 
 L’application réceptrice utilise les informations du `NSUserActivity` `UserInfo` dictionnaire de pour configurer son interface utilisateur et restaurer l’état de l’activité donnée afin que la transition semble transparente pour l’utilisateur final.
 
-Si la continuation requiert plus d’informations qu’il n’est possible `NSUserActivity`d’envoyer efficacement via un, l’application qui reprend peut envoyer un appel à l’application d’origine et établir un ou plusieurs flux pour transmettre les données requises. Par exemple, si l’activité a modifié un grand document texte avec plusieurs images, la diffusion en continu est nécessaire pour transférer les informations nécessaires pour continuer l’activité sur l’appareil de réception. Pour plus d’informations, consultez la section [prise en charge des flux](#supporting-continuation-streams) de continuation ci-dessous.
+Si la continuation requiert plus d’informations qu’il n’est possible `NSUserActivity`d’envoyer efficacement via un, l’application qui reprend peut envoyer un appel à l’application d’origine et établir un ou plusieurs flux pour transmettre les données requises. Par exemple, si l’activité a modifié un grand document texte avec plusieurs images, la diffusion en continu est nécessaire pour transférer les informations nécessaires pour continuer l’activité sur l’appareil de réception. Pour plus d’informations, consultez la section [prise en charge des flux de continuation](#supporting-continuation-streams) ci-dessous.
 
 Comme indiqué ci- `NSDocument` dessus `UIDocument` , ou les applications basées ont automatiquement une prise en charge de la remise intégrée. Pour plus d’informations, consultez la section [prise en charge du transfert dans les applications basées sur des documents](#supporting-handoff-in-document-based-apps) ci-dessous.
 
@@ -68,7 +68,7 @@ Est utilisé pour tenir à jour les informations `NSUserActivity`contenues dans 
 
 Vous `UserActivityWillSave` devrez implémenter la méthode et apporter des modifications `NSUserActivity` au (par exemple `UserInfo`, `Title`, etc.) pour vous assurer qu’elle reflète toujours l’état de l’activité en cours. Lorsque le système appelle la `UserActivityWillSave` méthode, l' `NeedsSave` indicateur est effacé. Si vous modifiez l’une des propriétés de données de l’activité, vous devez réaffecter `NeedsSave` à `true` la valeur.
 
-Au lieu d’utiliser `UserActivityWillSave` la méthode présentée ci-dessus, vous pouvez `UIKit` éventuellement `AppKit` avoir ou gérer l’activité de l’utilisateur automatiquement. Pour ce faire, définissez la propriété de l’objet `UserActivity` du répondeur et `UpdateUserActivityState` implémentez la méthode. Pour plus d’informations, consultez la section [prise en charge de la remise dans](#supporting-handoff-in-responders) les répondeurs ci-dessous.
+Au lieu d’utiliser `UserActivityWillSave` la méthode présentée ci-dessus, vous pouvez `UIKit` éventuellement `AppKit` avoir ou gérer l’activité de l’utilisateur automatiquement. Pour ce faire, définissez la propriété de l’objet `UserActivity` du répondeur et `UpdateUserActivityState` implémentez la méthode. Pour plus d’informations, consultez la section [prise en charge de la remise dans les répondeurs](#supporting-handoff-in-responders) ci-dessous.
 
 ### <a name="app-framework-support"></a>Prise en charge de l’infrastructure d’application
 
@@ -94,7 +94,7 @@ Si plusieurs répondeurs partagent une instance `NSUserActivity` unique, ils re�
 
 Pour se dissocier d’une activité, un répondeur peut affecter à `UserActivity` `null`sa propriété la valeur. Quand une instance gérée `NSUserActivity` de l’infrastructure d’application n’a plus de répondeurs ou de documents associés, elle est automatiquement invalidée.
 
-Pour plus d’informations, consultez la section [prise en charge de la remise dans](#supporting-handoff-in-responders) les répondeurs ci-dessous.
+Pour plus d’informations, consultez la section [prise en charge de la remise dans les répondeurs](#supporting-handoff-in-responders) ci-dessous.
 
 #### <a name="user-activities-and-the-appdelegate"></a>Activités de l’utilisateur et AppDelegate
 
@@ -112,22 +112,22 @@ Effectuez ce qui suit :
 
 1. Connectez-vous au [portail des développeurs Apple](https://developer.apple.com).
 2. Cliquez sur **certificats, identificateurs & profils**.
-3. Si vous ne l’avez pas déjà fait, cliquez sur identificateurs et créez un ID pour votre application ( `com.company.appname`par exemple,), ou modifiez votre ID existant.
-4. Assurez-vous que le service **icloud** a été vérifié pour l’ID donné:
+3. Si vous ne l’avez pas déjà fait, cliquez sur **identificateurs** et créez un ID pour votre application ( `com.company.appname`par exemple,), ou modifiez votre ID existant.
+4. Assurez-vous que le service **icloud** a été vérifié pour l’ID donné :
 
     [![](handoff-images/provision01.png "Activer le service iCloud pour l’ID donné")](handoff-images/provision01.png#lightbox)
 5. Enregistrez les modifications apportées.
-6. Cliquez sur **Configuration des profils** > de provisionnement**et créez** un nouveau profil de provisionnement de développement pour votre application:
+6. Cliquez > sur **Configuration des profils de provisionnement** **et créez** un nouveau profil de provisionnement de développement pour votre application :
 
     [![](handoff-images/provision02.png "Créer un nouveau profil de provisionnement de développement pour l’application")](handoff-images/provision02.png#lightbox)
 7. Téléchargez et installez le nouveau profil de provisionnement ou utilisez Xcode pour télécharger et installer le profil.
-8. Modifiez les options de votre projet Xamarin. iOS et assurez-vous d’utiliser le profil de provisionnement que vous venez de créer:
+8. Modifiez les options de votre projet Xamarin. iOS et assurez-vous d’utiliser le profil de provisionnement que vous venez de créer :
 
     [![](handoff-images/provision03.png "Sélectionner le profil de provisionnement que vous venez de créer")](handoff-images/provision03.png#lightbox)
-9. Modifiez ensuite votre fichier **info. plist** et assurez-vous que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement:
+9. Modifiez ensuite votre fichier **info. plist** et assurez-vous que vous utilisez l’ID d’application qui a été utilisé pour créer le profil de provisionnement :
 
     [![](handoff-images/provision04.png "Définir l’ID de l’application")](handoff-images/provision04.png#lightbox)
-10. Faites défiler jusqu’à la section **modes d’arrière-plan** et vérifiez les éléments suivants:
+10. Faites défiler jusqu’à la section **modes d’arrière-plan** et vérifiez les éléments suivants :
 
     [![](handoff-images/provision05.png "Activer les modes d’arrière-plan requis")](handoff-images/provision05.png#lightbox)
 11. Enregistrez les modifications apportées à tous les fichiers.
@@ -140,7 +140,7 @@ Les activités de l’utilisateur peuvent être poursuivies parmi les applicatio
 
 ### <a name="identifying-user-activities"></a>Identification des activités de l’utilisateur
 
-La première étape de l’implémentation de la remise consiste à identifier les types d’activités utilisateur que votre application prend en charge et à déterminer quelles sont les activités les plus adaptées à la continuation sur un autre appareil. Par exemple: une application ToDo peut prendre en charge la modification d’éléments comme un seul _type d’activité utilisateur_et prendre en charge l’exploration de la liste des éléments disponibles en tant qu’autre.
+La première étape de l’implémentation de la remise consiste à identifier les types d’activités utilisateur que votre application prend en charge et à déterminer quelles sont les activités les plus adaptées à la continuation sur un autre appareil. Par exemple : une application ToDo peut prendre en charge la modification d’éléments comme un seul _type d’activité utilisateur_et prendre en charge l’exploration de la liste des éléments disponibles en tant qu’autre.
 
 Une application peut créer autant de types d’activité utilisateur que nécessaire, l’un pour les fonctions fournies par l’application. Pour chaque type d’activité utilisateur, l’application doit suivre le moment auquel une activité du type commence et se termine, et doit maintenir à jour les informations d’État pour poursuivre cette tâche sur un autre appareil.
 
@@ -148,13 +148,13 @@ Les activités de l’utilisateur peuvent être poursuivies sur n’importe quel
 
 ### <a name="creating-activity-type-identifiers"></a>Création d’identificateurs de type d’activité
 
-L' _identificateur de type d’activité_ est une chaîne abrégée ajoutée `NSUserActivityTypes` au tableau du fichier **info. plist** de l’application, utilisée pour identifier de manière unique un type d’activité utilisateur donné. Il y aura une entrée dans le tableau pour chaque activité que l’application prend en charge. Apple suggère d’utiliser une notation de style DNS inversé pour l’identificateur de type d’activité afin d’éviter les collisions. Par exemple: `com.company-name.appname.activity` pour des activités spécifiques basées sur `com.company-name.activity` une application ou pour des activités pouvant s’exécuter sur plusieurs applications.
+L' _identificateur de type d’activité_ est une chaîne abrégée ajoutée `NSUserActivityTypes` au tableau du fichier **info. plist** de l’application, utilisée pour identifier de manière unique un type d’activité utilisateur donné. Il y aura une entrée dans le tableau pour chaque activité que l’application prend en charge. Apple suggère d’utiliser une notation de style DNS inversé pour l’identificateur de type d’activité afin d’éviter les collisions. Par exemple : `com.company-name.appname.activity` pour des activités spécifiques basées sur `com.company-name.activity` une application ou pour des activités pouvant s’exécuter sur plusieurs applications.
 
 L’identificateur de type d’activité est utilisé lors de `NSUserActivity` la création d’une instance pour identifier le type d’activité. Lorsqu’une activité est poursuivie sur un autre appareil, le type d’activité (ainsi que l’ID d’équipe de l’application) détermine l’application à lancer pour continuer l’activité.
 
 Par exemple, nous allons créer un exemple d’application appelé **MonkeyBrowser** ([Téléchargez ici](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser)). Cette application présente quatre onglets, chacun avec une URL différente ouverte dans une vue de navigateur Web. L’utilisateur pourra continuer à accéder à tous les onglets d’un autre appareil iOS exécutant l’application.
 
-Pour créer les identificateurs de type d’activité requis pour prendre en charge ce comportement, modifiez le fichier **info. plist** et basculez en mode **source** . Ajoutez une `NSUserActivityTypes` clé et créez les identificateurs suivants:
+Pour créer les identificateurs de type d’activité requis pour prendre en charge ce comportement, modifiez le fichier **info. plist** et basculez en mode **source** . Ajoutez une `NSUserActivityTypes` clé et créez les identificateurs suivants :
 
 [![](handoff-images/type01.png "Clé NSUserActivityTypes et identificateurs requis dans l’éditeur plist")](handoff-images/type01.png#lightbox)
 
@@ -162,7 +162,7 @@ Nous avons créé quatre nouveaux identificateurs de type d’activité, un pour
 
 ### <a name="tracking-user-activity-changes"></a>Suivi des modifications de l’activité des utilisateurs
 
-Lorsque nous créons une nouvelle instance de la `NSUserActivity` classe, nous spécifions une `NSUserActivityDelegate` instance pour suivre les modifications apportées à l’état de l’activité. Par exemple, le code suivant peut être utilisé pour effectuer le suivi des modifications d’État:
+Lorsque nous créons une nouvelle instance de la `NSUserActivity` classe, nous spécifions une `NSUserActivityDelegate` instance pour suivre les modifications apportées à l’état de l’activité. Par exemple, le code suivant peut être utilisé pour effectuer le suivi des modifications d’État :
 
 ```csharp
 using System;
@@ -201,7 +201,7 @@ namespace MonkeyBrowse
 }
 ```
 
-La `UserActivityReceivedData` méthode est appelée lorsqu’un flux de continuation a reçu des données d’un appareil émetteur. Pour plus d’informations, consultez la section [prise en charge des flux](#supporting-continuation-streams) de continuation ci-dessous.
+La `UserActivityReceivedData` méthode est appelée lorsqu’un flux de continuation a reçu des données d’un appareil émetteur. Pour plus d’informations, consultez la section [prise en charge des flux de continuation](#supporting-continuation-streams) ci-dessous.
 
 La `UserActivityWasContinued` méthode est appelée lorsqu’un autre appareil a pris le contrôle d’une activité à partir de l’appareil actuel. Selon le type d’activité, par exemple l’ajout d’un nouvel élément à une liste de tâches, l’application peut nécessiter l’abandon de l’activité sur l’appareil émetteur.
 
@@ -211,7 +211,7 @@ La `UserActivityWillSave` méthode est appelée avant que les modifications appo
 
 Chaque activité que votre application souhaite pouvoir continuer sur un autre appareil doit être encapsulée dans une `NSUserActivity` instance. L’application peut créer autant d’activités que nécessaire et la nature de ces activités dépend de la fonctionnalité et des fonctionnalités de l’application en question. Par exemple, une application de messagerie peut créer une activité pour la création d’un nouveau message, et une autre pour la lecture d’un message.
 
-Pour notre exemple d’application, un `NSUserActivity` nouveau est créé chaque fois que l’utilisateur entre une nouvelle URL dans l’un des affichages de navigateurs Web avec onglets. Le code suivant stocke l’état d’un onglet donné:
+Pour notre exemple d’application, un `NSUserActivity` nouveau est créé chaque fois que l’utilisateur entre une nouvelle URL dans l’un des affichages de navigateurs Web avec onglets. Le code suivant stocke l’état d’un onglet donné :
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");
@@ -237,7 +237,7 @@ Il crée un nouveau `NSUserActivity` à l’aide de l’un des types d’activit
 
 Comme nous l’avons vu ci- `UserInfo` dessus, la `NSUserActivity` propriété de la `NSDictionary` classe est une paire clé-valeur utilisée pour définir l’état d’une activité donnée. Les valeurs stockées dans `UserInfo` doivent être de l’un des types suivants `NSArray`: `NSData`, `NSDate`, `NSDictionary`, `NSNull`, `NSNumber`, `NSSet`, `NSString`, ou `NSURL`. `NSURL`les valeurs de données qui pointent vers des documents iCloud sont automatiquement ajustées afin qu’elles pointent vers les mêmes documents sur un appareil de réception.
 
-Dans l’exemple ci-dessus, nous `NSMutableDictionary` avons créé un objet et l’avons renseigné avec une clé unique fournissant l’URL actuellement affichée par l’utilisateur sur l’onglet donné. La `AddUserInfoEntries` méthode de l’activité utilisateur a été utilisée pour mettre à jour l’activité avec les données qui seront utilisées pour restaurer l’activité sur l’appareil de réception:
+Dans l’exemple ci-dessus, nous `NSMutableDictionary` avons créé un objet et l’avons renseigné avec une clé unique fournissant l’URL actuellement affichée par l’utilisateur sur l’onglet donné. La `AddUserInfoEntries` méthode de l’activité utilisateur a été utilisée pour mettre à jour l’activité avec les données qui seront utilisées pour restaurer l’activité sur l’appareil de réception :
 
 ```csharp
 // Update the activity when the tab's URL changes
@@ -246,13 +246,13 @@ userInfo.Add (new NSString ("Url"), new NSString (url));
 UserActivity.AddUserInfoEntries (userInfo);
 ```
 
-Apple suggère de conserver les informations envoyées au minimum le plus simple pour s’assurer que l’activité est envoyée en temps utile au périphérique récepteur. Si des informations plus importantes sont nécessaires, comme une image attachée à un document doit être envoyée, vous devez utiliser des flux de continuation. Pour plus d’informations, consultez la section [prise en charge des flux](#supporting-continuation-streams) de continuation ci-dessous.
+Apple suggère de conserver les informations envoyées au minimum le plus simple pour s’assurer que l’activité est envoyée en temps utile au périphérique récepteur. Si des informations plus importantes sont nécessaires, comme une image attachée à un document doit être envoyée, vous devez utiliser des flux de continuation. Pour plus d’informations, consultez la section [prise en charge des flux de continuation](#supporting-continuation-streams) ci-dessous.
 
 ### <a name="continuing-an-activity"></a>Poursuite d’une activité
 
 Le transfert informe automatiquement les appareils iOS et OS X locaux qui se trouvent à proximité de l’appareil d’origine et qui sont connectés au même compte iCloud, de la disponibilité des activités utilisateur continues. Si l’utilisateur choisit de poursuivre une activité sur un nouvel appareil, le système lance l’application appropriée (selon l’ID d’équipe et le type d’activité) et les `AppDelegate` informations dont elle a besoin pour se produire.
 
-Premièrement, la `WillContinueUserActivityWithType` méthode est appelée afin que l’application puisse informer l’utilisateur que la continuation va commencer. Nous utilisons le code suivant dans le fichier **AppDelegate.cs** de notre exemple d’application pour gérer une continuation à partir de:
+Premièrement, la `WillContinueUserActivityWithType` méthode est appelée afin que l’application puisse informer l’utilisateur que la continuation va commencer. Nous utilisons le code suivant dans le fichier **AppDelegate.cs** de notre exemple d’application pour gérer une continuation à partir de :
 
 ```csharp
 public NSString UserActivityTab1 = new NSString ("com.xamarin.monkeybrowser.tab1");
@@ -322,7 +322,7 @@ public void PreparingToHandoff() {
 }
 ```
 
-`ContinueUserActivity` Le`AppDelegate` du sera appelé pour continuer l’activité donnée. Là encore, à partir de notre exemple d’application:
+`ContinueUserActivity` Le`AppDelegate` du sera appelé pour continuer l’activité donnée. Là encore, à partir de notre exemple d’application :
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -596,7 +596,7 @@ Pour plus d’informations, consultez la documentation relative [à l’utilisat
 
 ## <a name="handoff-best-practices"></a>Bonnes pratiques de remise
 
-La réussite de l’implémentation de la continuation transparente d’une activité utilisateur via le transfert requiert une conception minutieuse en raison de l’ensemble des différents composants impliqués. Apple suggère d’adopter les meilleures pratiques suivantes pour vos applications pour lesquelles le transfert est activé:
+La réussite de l’implémentation de la continuation transparente d’une activité utilisateur via le transfert requiert une conception minutieuse en raison de l’ensemble des différents composants impliqués. Apple suggère d’adopter les meilleures pratiques suivantes pour vos applications pour lesquelles le transfert est activé :
 
 - Concevez vos activités utilisateur pour exiger la charge utile la plus petite possible pour associer l’état de l’activité à la poursuite. Plus la charge utile est importante, plus le démarrage de la continuation est long.
 - Si vous devez transférer de grandes quantités de données pour réussir la continuation, prenez en compte les coûts liés à la configuration et à la surcharge du réseau.
@@ -607,17 +607,17 @@ La réussite de l’implémentation de la continuation transparente d’une acti
 
 ## <a name="example-handoff-app"></a>Exemple d’application de remise
 
-En guise d’exemple d’utilisation de la remise dans une application Xamarin. iOS, nous avons inclus l’exemple d’application [**MonkeyBrowser**](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser) avec ce guide. L’application comporte quatre onglets que l’utilisateur peut utiliser pour parcourir le Web, chacun avec un type d’activité donné: Météo, favori, pause café et travail.
+En guise d’exemple d’utilisation de la remise dans une application Xamarin. iOS, nous avons inclus l’exemple d’application [**MonkeyBrowser**](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-monkeybrowser) avec ce guide. L’application comporte quatre onglets que l’utilisateur peut utiliser pour parcourir le Web, chacun avec un type d’activité donné : Météo, favori, pause café et travail.
 
-Dans n’importe quel onglet, lorsque l’utilisateur entre une nouvelle URL et appuie sur le bouton OK `NSUserActivity` , un nouveau est créé pour cet onglet qui contient l’URL actuellement visitée par l’utilisateur:
+Dans n’importe quel onglet, lorsque l’utilisateur entre une nouvelle URL et appuie sur le bouton OK `NSUserActivity` , un nouveau est créé pour cet onglet qui contient l’URL actuellement visitée par l’utilisateur :
 
 [![](handoff-images/handoff01.png "Exemple d’application de remise")](handoff-images/handoff01.png#lightbox)
 
-Si l’application **MonkeyBrowser** est installée sur un autre des appareils de l’utilisateur, est connectée à iCloud à l’aide du même compte d’utilisateur, se trouve sur le même réseau et à proximité de l’appareil ci-dessus, l’activité de remise s’affiche sur l’écran d’accueil (dans la partie inférieure angle gauche):
+Si l’application **MonkeyBrowser** est installée sur un autre des appareils de l’utilisateur, est connectée à iCloud à l’aide du même compte d’utilisateur, se trouve sur le même réseau et à proximité de l’appareil ci-dessus, l’activité de remise s’affiche sur l’écran d’accueil (dans la partie inférieure angle gauche) :
 
 [![](handoff-images/handoff02.png "Activité de remise affichée sur l’écran d’accueil dans le coin inférieur gauche")](handoff-images/handoff02.png#lightbox)
 
-Si l’utilisateur fait glisser vers le haut sur l’icône de remise, l’application est lancée et l’activité utilisateur `NSUserActivity` spécifiée dans la se poursuit sur le nouvel appareil:
+Si l’utilisateur fait glisser vers le haut sur l’icône de remise, l’application est lancée et l’activité utilisateur `NSUserActivity` spécifiée dans la se poursuit sur le nouvel appareil :
 
 [![](handoff-images/handoff03.png "L’activité de l’utilisateur a continué sur le nouvel appareil")](handoff-images/handoff03.png#lightbox)
 

@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7E4ACC7E-F4FB-46C1-8837-C7FBAAFB2DC7
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d834c06c5fa5ee55e5e3b91bd16b5b4d326c42ee
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8ae465c98dee25cd0f1fe635da45f4d399b42ee3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528159"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284480"
 ---
 # <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>Erreur System.Exception AMDeviceNotificationSubscribe retournée ...
 
@@ -22,7 +22,7 @@ ms.locfileid: "69528159"
 
 ## <a name="fix"></a>Corriger
 
-1. Arrêtez le `usbmuxd` processus afin que le système le redémarre:
+1. Arrêtez le `usbmuxd` processus afin que le système le redémarre :
 
     ```csharp
     sudo killall -QUIT usbmuxd
@@ -48,7 +48,7 @@ Notez qu’il s’agit d’un problème rare. Si Visual Studio rencontre des pro
 
 ### <a name="errors-in-systemlog"></a>Erreurs dans System. log
 
-Dans certains cas, les deux messages d’erreur suivants peuvent également apparaître à `/var/log/system.log`plusieurs reprises dans:
+Dans certains cas, les deux messages d’erreur suivants peuvent également apparaître à `/var/log/system.log`plusieurs reprises dans :
 
 ```csharp
 17:17:11.369 usbmuxd[55040]: dnssd_clientstub ConnectToServer: socket failed 24 Too many open files
@@ -63,4 +63,4 @@ En fonction des erreurs `system.log` qui s’affichent, ce problème peut être 
 
 ## <a name="references"></a>Références
 
-* [Bogue 11789-MonoTouch. MobileDevice. MobileDeviceException: AMDeviceNotificationSubscribe retourné: 0xe8000063 [résolu NoResponse]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+* [Bogue 11789-MonoTouch. MobileDevice. MobileDeviceException : AMDeviceNotificationSubscribe retourné : 0xe8000063 [résolu NoResponse]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

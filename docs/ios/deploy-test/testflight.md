@@ -4,15 +4,15 @@ description: TestFlight est un outil racheté par Apple. Il constitue le princip
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 5729c32ca671a4fcc309d235a34929dcba6a3d03
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
-ms.translationtype: HT
+ms.openlocfilehash: 2080961e2741ea0d0f0316918c55f3c2a194a00a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621112"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289979"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>Utilisation de TestFlight pour distribuer des applications Xamarin.iOS
 
@@ -23,7 +23,7 @@ Le bêta testing fait partie intégrante du cycle de développement des logiciel
 TestFlight est un service Apple de bêta testing pour les applications iOS. Il est uniquement accessible à partir d’[iTunes Connect](https://itunesconnect.apple.com/), et disponible pour les applications iOS 8.0 et versions ultérieures. TestFlight permet de faire tester les versions bêta d’une application par des utilisateurs internes et externes. De plus, la revue de l’application bêta effectuée par des testeurs externes simplifie nettement le processus de revue finale avant la publication sur l’App Store.
 
 
-Auparavant, le binaire devait être généré dans Visual Studio pour Mac, puis chargé sur le site web TestFlightApp pour être distribué aux testeurs. Ce nouveau processus apporte plusieurs améliorations qui vous permettront de diffuser des applications testées et de grande qualité sur l’App Store. Par exemple :
+Auparavant, le binaire devait être généré dans Visual Studio pour Mac, puis chargé sur le site web TestFlightApp pour être distribué aux testeurs. Ce nouveau processus apporte plusieurs améliorations qui vous permettront de diffuser des applications testées et de grande qualité sur l’App Store. Par exemple :
 
 
 - La revue d’application bêta, qui est obligatoire dans le cadre de tests externes, augmente les chances de validation de l’application lors de la revue finale dans l’App Store, car ces deux revues sont soumises au respect des règles d’Apple.
@@ -37,7 +37,7 @@ TestFlight permet uniquement de tester des applications iOS 8.0 ou version ult
 
 Tous les testeurs doivent tester l’application au moins sur un appareil iOS 8. Toutefois, la bonne pratique est de tester l’application sur toutes les versions d’iOS.
 
-## <a name="provisioning"></a>Provisionnement
+## <a name="provisioning"></a>Approvisionnement
 
 Pour tester vos builds avec TestFlight, vous devez créer un *profil de distribution sur l’App Store* qui intègre le nouveau droit bêta. Ce droit active le bêta testing dans TestFlight ; il est automatiquement inclus dans chaque **nouveau** profil de distribution sur l’App Store. Pour générer un nouveau profil, vous pouvez suivre les instructions pas à pas fournies dans [Création d’un profil de distribution](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile).
 
@@ -129,7 +129,7 @@ Tout d’abord, générez votre [distribuable final](~/ios/deploy-test/app-distr
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>Génération de votre distribuable final
- Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces équivalents sont :
+ Le plug-in Xamarin pour Visual Studio ne prend pas en charge l’archivage des applications Xamarin.iOS pour la publication sur l’App Store. Pour publier une application iOS à partir de Visual Studio, vous avez le choix entre les Ces règles sont les suivantes :
 
 1. Charger un IPA créé avec la commande Générer un paquet ad-hoc (IPA).
 1. Charger un bundle `.app` zippé.

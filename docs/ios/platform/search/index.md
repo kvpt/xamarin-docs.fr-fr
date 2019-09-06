@@ -4,15 +4,15 @@ description: Cet article aborde l’utilisation des nouvelles API de recherche d
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 344bc8f46ecad250c5021be4682f02489aa5cb96
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: eb88f7c1de12eee59ea4c2a271079e6b96c29b09
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198453"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286599"
 ---
 # <a name="search-apis-in-xamarinios"></a>Rechercher des API dans Xamarin. iOS
 
@@ -24,7 +24,7 @@ En outre, les nouvelles API de recherche facilitent l’intégration de la reche
 
 [![](images/intro01.png "Exemple de contenu d’application iOS 9 pouvant faire l’objet d’une recherche universelle à l’aide de la recherche d’application")](images/intro01.png#lightbox)
 
-La recherche d’application est composée de trois API distinctes:
+La recherche d’application est composée de trois API distinctes :
 
 1. [**NSUserActivity**](nsuseractivity.md) : il s’agit d’une extension de l’API de transfert qu’Apple a publiée dans iOS 8. Il est utilisé pour permettre à l’utilisateur d’effectuer des recherches dans l’historique des interactions entre les applications à la fois publique et privée.
 
@@ -36,7 +36,7 @@ La recherche d’application est composée de trois API distinctes:
 
 Le choix de l’une des méthodes à implémenter dépend des types d’interaction fournis par votre application et du type de contenu qu’elle présente.
 
-Suivez les instructions ci-dessous:
+Suivez les instructions ci-dessous :
 
 - [**NSUserActivity**](nsuseractivity.md) : utilisez cette infrastructure pour fournir des options de recherche pour le contenu public et privé et pour la recherche des points de navigation au sein de votre application.
 
@@ -53,7 +53,7 @@ En fournissant des éléments riches et informatifs, vous pouvez vous assurer qu
 
 ## <a name="what-content-to-index"></a>Contenu à indexer
 
-Apple fournit les suggestions suivantes quant au contenu et aux actions à fournir pour les index de recherche dans votre application:
+Apple fournit les suggestions suivantes quant au contenu et aux actions à fournir pour les index de recherche dans votre application :
 
 - Tout contenu affiché, créé ou organisé par l’utilisateur dans votre application.
 - Points de navigation et fonctionnalités au sein de l’application.
@@ -61,11 +61,11 @@ Apple fournit les suggestions suivantes quant au contenu et aux actions à fourn
 
 ## <a name="app-search-enhancements"></a>Améliorations de la recherche d’applications
 
-Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que:
+Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que :
 
 - **Participatives popularité des liens approfondis (avec confidentialité différentielle)** : permet de promouvoir le contenu d’application lié de manière détaillée dans les résultats de recherche.
 - **Recherche dans l’application** : utilisez la nouvelle `CSSearchQuery` classe pour fournir une fonctionnalité de recherche en vedette dans l’application similaire à la façon dont les applications de messagerie, de messages et notes fonctionnent.
-- Continuation de la **recherche** : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
+- **Continuation** de la recherche : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
 - **Visualisation des résultats de la validation** : l’outil de validation de l' [API de recherche d’applications](https://search.developer.apple.com/appsearch-validation-tool) d’Apple affiche désormais une représentation visuelle du balisage d’un site Web et des liens détaillés lors de la préformation des tests.
 - **Partage d’images d’application de message** : permet d’afficher les images courantes dans l’application fournies pour le partage des messages (via une extension de l’application de message) dans les recherches Spotlight.
 
@@ -73,7 +73,7 @@ Pour en savoir plus, consultez notre guide d’amélioration de la [recherche d�
 
 ### <a name="proactive-suggestions"></a>Suggestions proactives
 
-iOS 10 présente de nouvelles façons de conduire des engagements à une application en permettant au système de présenter de manière proactive des informations utiles à l’utilisateur à des moments opportuns. Tout comme iOS 9 offrait la possibilité d’ajouter une recherche poussée à l’application à l’aide de suggestions Spotlight, de remise et de Siri, avec iOS 10, une application peut exposer des fonctionnalités qui peuvent être présentées à l’utilisateur par le système depuis les emplacements suivants:
+iOS 10 présente de nouvelles façons de conduire des engagements à une application en permettant au système de présenter de manière proactive des informations utiles à l’utilisateur à des moments opportuns. Tout comme iOS 9 offrait la possibilité d’ajouter une recherche poussée à l’application à l’aide de suggestions Spotlight, de remise et de Siri, avec iOS 10, une application peut exposer des fonctionnalités qui peuvent être présentées à l’utilisateur par le système depuis les emplacements suivants :
 
 - Le sélecteur d’application
 - L’écran de verrouillage
@@ -84,7 +84,7 @@ iOS 10 présente de nouvelles façons de conduire des engagements à une applica
 
 Une application expose cette fonctionnalité au système à l’aide d’une collection de technologies telles que [NSUserActivity](xref:Foundation.NSUserActivity), Web Markup, Core Spotlight, MapKit, Media Player et uikit.
 
-Pour en savoir plus, consultez notre guide de [suggestions](~/ios/platform/search/proactive-suggestions.md) proactives.
+Pour en savoir plus, consultez notre guide de [suggestions proactives](~/ios/platform/search/proactive-suggestions.md) .
 
 ## <a name="summary"></a>Récapitulatif
 

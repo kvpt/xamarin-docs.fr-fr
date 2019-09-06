@@ -1,41 +1,41 @@
 ---
-title: Modifications de l’architecture dans iOS 11
-description: Ce document décrit la désapprobation des applications 32 bits dans iOS 11. Il explique comment mettre à jour des applications pour les architectures 64 bits cible.
+title: Changements d’architecture dans iOS 11
+description: Ce document décrit la désapprobation des applications 32 bits dans iOS 11. Il explique comment mettre à jour des applications pour cibler des architectures 64 bits.
 ms.prod: xamarin
 ms.assetid: 55F62F3F-8570-402B-B7D9-2875F76CB946
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: b7d1df6ed2a8bd480025681ebcbe48acd7592564
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 15cd6139cc83639146e6044d2b791d94ee30f2d9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169354"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286346"
 ---
-# <a name="architecture-changes-in-ios-11"></a>Modifications de l’architecture dans iOS 11
+# <a name="architecture-changes-in-ios-11"></a>Changements d’architecture dans iOS 11
 
-Un des plus grands changements que vous devez connaître avec iOS 11 est la désapprobation de prise en charge 32 bits pour les applications, comme détaillé dans [Apple](https://developer.apple.com/news/?id=06282017b) communiqué de presse. Toutes les nouvelles applications et mises à jour des applications existantes doivent prendre en charge 64 bits. les applications 32 bits **ne lancera pas** dans iOS 11.
+L’une des modifications les plus importantes que vous devez connaître avec iOS 11 est la désapprobation de la prise en charge de 32 bits pour les applications, comme indiqué dans le communiqué de presse [d’Apple](https://developer.apple.com/news/?id=06282017b) . Toutes les nouvelles applications et mises à jour des applications existantes doivent prendre en charge 64 bits. les applications 32 bits ne **seront pas lancées** dans iOS 11.
 
 Pour mettre à jour votre application dans Visual Studio pour Mac, procédez comme suit :
 
-1. Avec le bouton droit sur le nom du projet pour ouvrir **Options du projet**.
-2. Accédez à la **Build iOS** onglet.
-3. Définir le **architectures prises en charge** liste déroulante pour **x86_64** pour le **déboguer | iPhoneSimulator** et **version | iPhoneSimulator**:
+1. Cliquez avec le bouton droit sur le nom du projet pour ouvrir **Options du projet**.
+2. Accédez à l’onglet **Build iOS** .
+3. Définissez la liste déroulante **architectures prises en charge** sur **x86_64** pour **Déboguer | iphonesimulator dans** et **Release | iphonesimulator dans**:
 
-    ![Modifier des architectures de simulateur liste déroulante](architecture-changes-images/image1.png)
+    ![Liste déroulante modifier les architectures de simulateur](architecture-changes-images/image1.png)
 
-4. Pour les appareils iOS, passez à la configuration **Debug | iPhone** et définir le **architectures prises en charge** liste déroulante pour **ARM64**:
+4. Pour les appareils iOS, modifiez la configuration pour **Déboguer | iPhone** et définissez la liste déroulante **architectures prises en charge** sur **ARM64**:
 
-    ![Modifier la liste déroulante les architectures](architecture-changes-images/image2.png)
+    ![Liste déroulante modifier les architectures des appareils](architecture-changes-images/image2.png)
 
-5. Passez à la configuration **mise en production | iPhone** et définir le **architectures prises en charge** liste déroulante pour **ARM64**.
+5. Modifiez la configuration en **Release | iPhone** et définissez la liste déroulante **architectures prises en charge** sur **ARM64**.
 
-Pour plus d’informations sur les architectures 32 bits et 64 bits, consultez le [considérations relatives à la plateforme 32/64 bits](~/cross-platform/macios/32-and-64/index.md#ios) guide.
+Pour plus d’informations sur les architectures 32 bits et 64 bits, consultez le guide des [considérations relatives à la plateforme 32/64 bits](~/cross-platform/macios/32-and-64/index.md#ios) .
 
 ## <a name="related-links"></a>Liens associés
 
-- [Quelles sont les nouveautés dans iOS 11 (Apple)](https://developer.apple.com/ios/)
-- [Page du produit mis à jour App Store (Apple)](https://developer.apple.com/app-store/product-page/)
-- [La mise à jour de votre application pour iOS 11 (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/204/)
+- [Nouveautés d’iOS 11 (Apple)](https://developer.apple.com/ios/)
+- [Page produit App Store mise à jour (Apple)](https://developer.apple.com/app-store/product-page/)
+- [Mise à jour de votre application pour iOS 11 (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/204/)

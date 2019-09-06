@@ -1,74 +1,74 @@
 ---
-title: macOS API pour les développeurs Xamarin.Mac
-description: Ce document décrit comment lire des sélecteurs Objective-C et rechercher leurs méthodes c# correspondants dans une application Xamarin.Mac.
+title: API macOS pour les développeurs Xamarin. Mac
+description: Ce document décrit comment lire les sélecteurs objective-C et comment trouver les méthodes C# correspondantes dans une application Xamarin. Mac.
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/02/2017
-ms.openlocfilehash: c387bbead1ac56d7f4c4c05a79c430302e50aec1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c7dfa87d2fa4e3e5b917029451a081640a552cce
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085277"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280999"
 ---
-# <a name="macos-apis-for-xamarinmac-developers"></a>macOS API pour les développeurs Xamarin.Mac
+# <a name="macos-apis-for-xamarinmac-developers"></a>API macOS pour les développeurs Xamarin. Mac
 
 ## <a name="overview"></a>Vue d'ensemble
 
-Pour une grande partie de votre temps à développer avec Xamarin.Mac, vous pouvez donc réfléchir, lire et écrire en c#, sans se soucier de bien avec les API Objective-C sous-jacente. Cependant, parfois, allez à lire la documentation de l’API d’Apple, traduire une réponse de Stack Overflow à une solution à votre problème, ou que vous comparer à un exemple existant.
+Pour la plupart de votre temps, le développement avec Xamarin. Mac vous permet de penser, de lire C# et d’écrire sans trop de préoccupation avec les API objective-C sous-jacentes. Toutefois, vous aurez parfois besoin de lire la documentation de l’API auprès d’Apple, de traduire une réponse de Stack Overflow à une solution pour votre problème ou de la comparer à un exemple existant.
 
-## <a name="reading-enough-objective-c-to-be-dangerous"></a>Lecture suffisamment Objective-C pour être dangereux
+## <a name="reading-enough-objective-c-to-be-dangerous"></a>En lisant suffisamment objective-C pour être dangereux
 
-Parfois, il sera nécessaire lire une définition d’Objective-C ou méthode appeler et qui les traduire la méthode c# équivalente. Nous allons jeter un coup de œil à une définition de fonction Objective-C et décomposer les différentes parties. Cette méthode (un *sélecteur* en Objective-C) sont accessibles sur `NSTableView`:
+Il est parfois nécessaire de lire une définition objective-C ou un appel de méthode et de la traduire C# en méthode équivalente. Jetons un coup d’œil à une définition de fonction objective-C et décomposons les éléments. Vous pouvez trouver cette méthode (un *Sélecteur* dans objective-C) `NSTableView`sur :
 
 ```objc
 - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes atPoint:(NSPoint)mouseDownPoint
 ```
 
-La déclaration permettre être lues de gauche à droite :
+La déclaration peut être lue de gauche à droite :
 
-- Le `-` préfixe signifie qu’il est une méthode d’instance (non statique). + signifie que c’est une méthode de classe (statique)
-- `(BOOL)` est le type de retour (bool en c#)
-- `canDragRowsWithIndexes` est la première partie du nom.
-- `(NSIndexSet *)rowIndexes` est le premier paramètre et dont il a le type. Le premier paramètre est au format : `(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint` est le deuxième paramètre et son type. Chaque paramètre après le premier est le format : `selectorPart:(Type) pararmName`
-- Le nom complet de ce sélecteur de message est : `canDragRowsWithIndexes:atPoint:`. Remarque la `:` à la fin - il est important.
-- La liaison réelle de Xamarin.Mac c# est : `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
+- Le `-` préfixe signifie qu’il s’agit d’une méthode d’instance (non statique). + signifie qu’il s’agit d’une méthode de classe (statique)
+- `(BOOL)`est le type de retour (bool C#dans)
+- `canDragRowsWithIndexes`première partie du nom.
+- `(NSIndexSet *)rowIndexes`est le premier paramètre et son type est. Le premier paramètre est au format :`(Type) pararmName`
+- `atPoint:(NSPoint)mouseDownPoint`est le deuxième paramètre et son type. Chaque paramètre après le premier est le format :`selectorPart:(Type) pararmName`
+- Le nom complet de ce sélecteur de messages est `canDragRowsWithIndexes:atPoint:`:. Notez qu' `:` à la fin, il est important.
+- La liaison Xamarin. Mac C# réelle est :`bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
-Cet appel sélecteur peut être lu de la même façon :
+Cet appel du sélecteur peut être lu de la même façon :
 
 ```objc
 [v canDragRowsWithIndexes:set atPoint:point];
 ```
 
-- L’instance `v` rencontre son `canDragRowsWithIndexes:atPoint` sélecteur appelée avec deux paramètres, `set` et `point`, transmis.
-- En c#, l’appel de méthode ressemble à ceci : `x.CanDragRows (set, point);`
+- L’instance `v` a son `canDragRowsWithIndexes:atPoint` sélecteur appelé avec deux paramètres, `set` et `point`, passé.
+- Dans C#, l’appel de la méthode se présente comme suit :`x.CanDragRows (set, point);`
 
 <a name="finding_selector" />
 
-## <a name="finding-the-c-member-for-a-given-selector"></a>Recherche le membre c# pour un sélecteur donné
+## <a name="finding-the-c-member-for-a-given-selector"></a>Recherche du C# membre pour un sélecteur donné
 
-Maintenant que vous avez trouvé le sélecteur d’Objective-C que vous devez appeler, l’étape suivante qui mappe vers le membre équivalent c#. Il existe quatre approches que vous pouvez essayer (poursuivre le `NSTableView CanDragRows` exemple) :
+Maintenant que vous avez trouvé le sélecteur objective-C que vous devez appeler, l’étape suivante consiste à le mapper à C# un membre équivalent. Vous pouvez essayer quatre approches (en poursuivant avec l' `NSTableView CanDragRows` exemple) :
 
-1. Utilisez la liste de saisie semi-automatique pour rechercher rapidement un élément du même nom. Étant donné que nous savons qu’il est une instance de `NSTableView` vous pouvez taper :
-
-    - `NSTableView x;`
-    - `x.` [ctrl + espace si la liste n’apparaît pas).
-    - `CanDrag` [enter]
-    - Avec le bouton droit de la méthode, atteindre la déclaration pour ouvrir le navigateur de l’Assembly dans lequel vous pouvez comparer la `Export` d’attribut pour le sélecteur en question
-
-2. Rechercher la liaison de la classe entière. Étant donné que nous savons qu’il est une instance de `NSTableView` vous pouvez taper :
+1. Utilisez la liste de saisie semi-automatique pour rechercher rapidement un nom identique. Étant donné que nous savons qu’il s' `NSTableView` agit d’une instance de, vous pouvez taper :
 
     - `NSTableView x;`
-    - Avec le bouton droit `NSTableView`, accédez à la déclaration de l’Explorateur d’Assembly
-    - Recherchez le sélecteur en question
+    - `x.`[Ctrl + Espace si la liste n’apparaît pas).
+    - `CanDrag`Entrez
+    - Cliquez avec le bouton droit sur la méthode, accédez à déclaration pour ouvrir le navigateur de l’assembly dans lequel vous pouvez comparer l' `Export` attribut au sélecteur en question
 
-3. Vous pouvez utiliser la [documentation en ligne API Xamarin.Mac](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0) .
+2. Recherche la liaison de classe entière. Étant donné que nous savons qu’il s' `NSTableView` agit d’une instance de, vous pouvez taper :
 
-4. Miguel fournit une vue de « Rosetta Pierre » des APIs Xamarin.Mac [ici](https://tirania.org/tmp/rosetta.html) que vous pouvez rechercher via une API donnée. Si votre API n’est pas AppKit ou macOS spécifique, vous pouvez le trouver là.
+    - `NSTableView x;`
+    - Cliquez `NSTableView`avec le bouton droit, accédez à déclaration du navigateur d’assembly
+    - Rechercher le sélecteur en question
+
+3. Vous pouvez utiliser la [documentation en ligne de l’API Xamarin. Mac](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0) .
+
+4. Miguel fournit une vue « Rosetta Stone » des API Xamarin. Mac dans [laquelle vous](https://tirania.org/tmp/rosetta.html) pouvez rechercher une API donnée. Si votre API n’est pas AppKit ou macOS spécifique, vous pouvez y accéder.
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

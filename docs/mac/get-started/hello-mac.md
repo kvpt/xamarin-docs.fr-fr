@@ -5,15 +5,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/02/2018
-ms.openlocfilehash: 8f5be75c750a6ee7efc52300382ca2241b87ecd3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: c017bd1a932847885f93c2df84b53887b184b538
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656922"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291134"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – Procédure pas à pas
 
@@ -53,7 +53,7 @@ Pour exécuter une application générée avec Xamarin.Mac, vous aurez besoin de
 
 Comme indiqué ci-dessus, ce guide passe en revue les étapes pour créer une application Mac appelée `Hello_Mac` qui ajoute un seul bouton et une étiquette à la fenêtre principale. Quand vous cliquez sur le bouton, l’étiquette affiche le nombre de clics effectués.
 
-Pour commencer, effectuez les étapes suivantes :
+Pour commencer, suivez les étapes ci-dessous :
 
 1. Démarrez Visual Studio pour Mac :
 

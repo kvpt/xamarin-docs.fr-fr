@@ -1,65 +1,65 @@
 ---
-title: Principes de base application Xamarin.Mac
-description: Ce document contient des liens vers des guides qui décrivent les différents concepts nécessaires pour comprendre lors du développement d’applications Xamarin.Mac.
+title: Notions de base de l’application Xamarin. Mac
+description: Ce document contient des liens vers des guides qui décrivent les différents concepts nécessaires à la compréhension du développement d’applications Xamarin. Mac.
 ms.prod: xamarin
 ms.assetid: 5A36B3A7-F197-4AC3-A40D-B2C49362FF06
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/17/2015
-ms.openlocfilehash: 376286b73c92cba40de183043b86cb4ffb5e699d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 73ec847b697c2d588d0c217bcbf12d4f0b6aa817
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085303"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291346"
 ---
-# <a name="xamarinmac-application-fundamentals"></a>Principes de base application Xamarin.Mac
+# <a name="xamarinmac-application-fundamentals"></a>Notions de base de l’application Xamarin. Mac
 
-## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[Modèles et idiomes courants](~/mac/app-fundamentals/patterns.md)
+## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[Modèles courants et idiomes](~/mac/app-fundamentals/patterns.md)
 
-Tout au long de l’API Apple exposées via c#, certains modèles et idiomes apparu indéfiniment. Si vous êtes habitué avec la programmation avec Xamarin.iOS, il peuvent vous paraître familiers. Documentation fait souvent référence à ces modèles et idiomes d’à plusieurs reprises, afin d’avoir une connaissance approfondie des vous permettra de sens de la documentation que vous trouverez.
+Tout au long des API Apple C#exposées via, certains idiomes et modèles sont reportés de façon répétée. Si vous avez une expérience de programmation avec Xamarin. iOS, ceux-ci peuvent vous paraître familiers. La documentation fait souvent référence à ces modèles et idiomes à plusieurs reprises. ainsi, une bonne compréhension de ces modèles vous aidera à comprendre la documentation que vous trouvez.
 
-## <a name="understanding-mac-apismacapp-fundamentalsmac-apismd"></a>[Présentation des API Mac](~/mac/app-fundamentals/mac-apis.md)
+## <a name="understanding-mac-apismacapp-fundamentalsmac-apismd"></a>[Fonctionnement des API Mac](~/mac/app-fundamentals/mac-apis.md)
 
-Pour une grande partie de votre temps à développer avec Xamarin.Mac, vous pouvez donc réfléchir, lire et écrire en c#, sans se soucier de bien avec les API Objective-C sous-jacente. Cependant, parfois, allez à lire la documentation de l’API d’Apple, traduire une réponse de Stack Overflow à une solution à votre problème, ou que vous comparer à un exemple existant.
+Pour la plupart de votre temps, le développement avec Xamarin. Mac vous permet de penser, de lire C# et d’écrire sans trop de préoccupation avec les API objective-C sous-jacentes. Toutefois, vous aurez parfois besoin de lire la documentation de l’API auprès d’Apple, de traduire une réponse de Stack Overflow à une solution pour votre problème ou de la comparer à un exemple existant.
 
 ## <a name="console-appsmacapp-fundamentalsconsolemd"></a>[Applications de console](~/mac/app-fundamentals/console.md)
 
-Vous pouvez également créer des applications de console « headless » qui accèdent aux API de macOS native à l’aide de Xamarin.Mac.
+Vous pouvez également créer des applications console « headless » qui accèdent aux API macOS natives à l’aide de Xamarin. Mac.
 
-## <a name="working-with-xib-filesmacapp-fundamentalsxibmd"></a>[Utilisation des fichiers .xib](~/mac/app-fundamentals/xib.md)
+## <a name="working-with-xib-filesmacapp-fundamentalsxibmd"></a>[Utilisation des fichiers. XIB](~/mac/app-fundamentals/xib.md)
 
-Cet article aborde l’utilisation avec les fichiers .xib créés dans l’Interface Builder de Xcode pour créer et gérer des interfaces utilisateur pour une application Xamarin.Mac.
+Cet article traite de l’utilisation des fichiers. XIB créés dans le Interface Builder de Xcode pour créer et gérer des interfaces utilisateur pour une application Xamarin. Mac.
 
-## <a name="storyboardxib-less-user-interface-designmacapp-fundamentalsxibless-uimd"></a>[.Storyboard/.XIB moins de conception de l’interface utilisateur](~/mac/app-fundamentals/xibless-ui.md)
+## <a name="storyboardxib-less-user-interface-designmacapp-fundamentalsxibless-uimd"></a>[. Storyboard/. XIB moins conception de l’interface utilisateur](~/mac/app-fundamentals/xibless-ui.md)
 
-Cet article aborde la création d’interface utilisateur d’une application Xamarin.Mac sans utiliser Interface Builder de Xcode avec fichiers .storyboard ou .xib directement à partir de code c#.
+Cet article explique comment créer une interface utilisateur de l’application Xamarin. Mac C# directement à partir du code sans utiliser les Interface Builder de Xcode avec les fichiers. Storyboard ou. XIB.
 
-## <a name="working-with-imagesmacapp-fundamentalsimagemd"></a>[Utilisation d’images](~/mac/app-fundamentals/image.md)
+## <a name="working-with-imagesmacapp-fundamentalsimagemd"></a>[Utilisation des images](~/mac/app-fundamentals/image.md)
 
-Cet article aborde l’utilisation des images et icônes dans une application Xamarin.Mac. Il aborde la création et gestion des images nécessaires pour créer l’icône de votre application et l’utilisation d’images dans le code c# et Interface Builder de Xcode.
+Cet article traite de l’utilisation des images et des icônes dans une application Xamarin. Mac. Il aborde la création et la gestion des images nécessaires à la création de l’icône de votre C# application et l’utilisation d’images dans le code et le Interface Builder de Xcode.
 
-## <a name="data-binding-and-key-value-codingmacapp-fundamentalsdatabindingmd"></a>[Liaison de données et le codage de clé-valeur](~/mac/app-fundamentals/databinding.md)
+## <a name="data-binding-and-key-value-codingmacapp-fundamentalsdatabindingmd"></a>[Liaison de données et codage de clé-valeur](~/mac/app-fundamentals/databinding.md)
 
-Cet article couvre l’utilisation de la clé-valeur de codage et en observant pour permettre la liaison de données pour les éléments d’interface utilisateur dans l’Interface Builder de Xcode clé-valeur. À l’aide de cette technique, vous réduisez considérablement la quantité de code c# qui doit être écrit pour votre application Xamarin.Mac. 
+Cet article aborde l’utilisation du codage clé-valeur et de l’observation clé-valeur pour permettre la liaison de données aux éléments d’interface utilisateur dans les Interface Builder de Xcode. À l’aide de cette technique, vous réduisez C# la quantité de code qui doit être écrite pour votre application Xamarin. Mac. 
 
 ## <a name="working-with-databasesmacapp-fundamentalsdatabasesmd"></a>[Utilisation des bases de données](~/mac/app-fundamentals/databases.md)
 
-Cet article couvre l’utilisation de la clé-valeur de codage et en observant pour permettre la liaison de données avec un accès direct aux bases de données SQLite pour les éléments d’interface utilisateur dans l’Interface Builder de Xcode clé-valeur. Il couvre également l’utilisation de la SQLite.NET ORM pour fournir l’accès aux données de SQLite.
+Cet article aborde l’utilisation du codage clé-valeur et de l’observation clé-valeur pour permettre la liaison de données avec un accès direct aux bases de données SQLite aux éléments d’interface utilisateur dans les Interface Builder de Xcode. Il couvre également l’utilisation de l’ORM SQLite.NET pour fournir l’accès aux données SQLite.
 
-## <a name="working-with-copy-and-pastemacapp-fundamentalscopy-pastemd"></a>[Utilisation de copier et coller](~/mac/app-fundamentals/copy-paste.md)
+## <a name="working-with-copy-and-pastemacapp-fundamentalscopy-pastemd"></a>[Utilisation du copier-coller](~/mac/app-fundamentals/copy-paste.md)
 
-Cet article aborde l’utilisation avec la table de montage pour fournir les copier et coller dans une application Xamarin.Mac. Il montre comment travailler avec des types de données standard qui peuvent être partagés entre plusieurs applications et comment prendre en charge des données personnalisées dans une application donnée.
+Cet article traite de l’utilisation de la copie pour fournir des copies et des collages dans une application Xamarin. Mac. Il montre comment utiliser des types de données standard qui peuvent être partagés entre plusieurs applications et comment prendre en charge des données personnalisées dans une application de type « fournir ».
 
-## <a name="sandboxing-a-xamarinmac-appmacapp-fundamentalssandboxingmd"></a>[Sandboxing d’une application Xamarin.Mac](~/mac/app-fundamentals/sandboxing.md)
+## <a name="sandboxing-a-xamarinmac-appmacapp-fundamentalssandboxingmd"></a>[Bac à sable (sandbox) d’une application Xamarin. Mac](~/mac/app-fundamentals/sandboxing.md)
 
-Cet article traite de sandboxing une application Xamarin.Mac relatives à la version sur l’App Store. Il couvre tous les éléments qui entrent dans le bac à sable : répertoires de conteneur, droits, déterminées par l’utilisateur des autorisations, séparation de privilèges et mise en œuvre du noyau.
+Cet article traite de la mise en sandbox d’une application Xamarin. Mac pour la publication sur l’App Store. Il couvre tous les éléments qui entrent dans le sandboxing : répertoires de conteneurs, droits, autorisations déterminées par l’utilisateur, séparation des privilèges et application du noyau.
 
-## <a name="playing-sound-with-avaudioplayermacapp-fundamentalssoundsmd"></a>[Lecture audio avec AVAudioPlayer](~/mac/app-fundamentals/sounds.md)
+## <a name="playing-sound-with-avaudioplayermacapp-fundamentalssoundsmd"></a>[Émettre du son avec AVAudioPlayer](~/mac/app-fundamentals/sounds.md)
 
 Cet article explique comment utiliser une classe d’assistance pour contrôler la lecture du son à l’aide d’un AVAudioPlayer.
 
 ## <a name="reporting-bugsmacapp-fundamentalstroubleshootingmd"></a>[Signalement des bogues](~/mac/app-fundamentals/troubleshooting.md)
 
-Parfois, nous sommes bloqués pendant que vous travaillez sur un projet, l’impossibilité d’obtenir une API permettant de travailler comme nous voulons soit en tentant de contourner un bogue. Notre objectif chez Xamarin est pour vous permettre de réussir à écrire vos applications mobiles et de bureau, et nous vous avons fourni quelques ressources pour aider.
+Parfois, nous sommes tous bloqués lors de l’utilisation d’un projet, soit sur l’impossibilité d’obtenir une API pour travailler comme je le souhaite, soit pour tenter de contourner un bogue. Notre objectif de Xamarin est de vous permettre de réussir à écrire vos applications mobiles et de bureau, et nous avons fourni des ressources pour vous aider.

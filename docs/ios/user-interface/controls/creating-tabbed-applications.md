@@ -4,15 +4,15 @@ description: Ce document décrit les contrôleurs de barre d’onglet iOS et com
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 617c1a15dd316ebd4a107d420841a83d4ca1fd6d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200002"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292986"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Barres d’onglets et contrôleurs de barre d’onglets dans Xamarin.iOS
 
@@ -61,7 +61,7 @@ Sélectionnez le **fichier > Nouveau > Solution** élément de menu dans Visual 
 
 ### <a name="adding-the-uitabbarcontroller"></a>Ajout de la UITabBarController
 
-Ensuite, ajoutez une classe vide en sélectionnant **fichier > nouveau fichier** et en **choisissant l’option général: Modèle de** classe vide. Nommez le fichier `TabController` comme indiqué ci-dessous :
+Ensuite, ajoutez une classe vide en sélectionnant **fichier > nouveau fichier** et en **choisissant l’option général : Modèle de** classe vide. Nommez le fichier `TabController` comme indiqué ci-dessous :
 
 [![](creating-tabbed-applications-images/02-newclass.png "Ajoutez la classe TabController")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 

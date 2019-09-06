@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser les indicateurs de progressio
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ab82b98351b95fbdea9c33a9eae7142c7a54fc77
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200306"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291404"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Utilisation des indicateurs de progression tvOS dans Xamarin
 
@@ -26,17 +26,17 @@ Il peut arriver que votre application Xamarin. tvOS doive charger un nouveau con
 
 Un indicateur d’activité présente comme une roue dentée rotative et est utilisé pour représenter une tâche d’une longueur indéterminée. L’indicateur est présenté lorsque la tâche démarre et disparaît lorsque la tâche est terminée.
 
-Apple propose les suggestions suivantes pour l’utilisation des indicateurs d’activité:
+Apple propose les suggestions suivantes pour l’utilisation des indicateurs d’activité :
 
 - Dans la mesure du **possible, utilisez des barres de progression** à la place, car un indicateur d’activité ne donne à l’utilisateur aucun commentaire sur la durée d’exécution du processus, toujours utiliser une barre de progression si la longueur est connue (par exemple, le nombre d’octets à télécharger dans un fichier).
 - **Garder l’indicateur animé** : les utilisateurs associent un indicateur d’activité stationnaire à une application bloquée. vous devez donc toujours animer l’indicateur pendant qu’il est affiché.
-- **Décrire la tâche en cours de traitement** : l’affichage de l’indicateur d’activité seul n’est pas suffisant; l’utilisateur doit être informé du processus sur lequel il est en attente. Incluez une étiquette significative (généralement une phrase unique et complète) qui définit clairement la tâche.
+- **Décrire la tâche en cours de traitement** : l’affichage de l’indicateur d’activité seul n’est pas suffisant ; l’utilisateur doit être informé du processus sur lequel il est en attente. Incluez une étiquette significative (généralement une phrase unique et complète) qui définit clairement la tâche.
 
 ## <a name="about-progress-bars"></a>À propos des barres de progression
 
 Une barre de progression présente comme une ligne qui remplit la couleur pour indiquer l’État et la durée d’une tâche longue. Les barres de progression doivent toujours être utilisées lorsque la longueur des tâches est connue ou peut être calculée.
 
-Apple propose les suggestions suivantes pour l’utilisation des barres de progression:
+Apple propose les suggestions suivantes pour l’utilisation des barres de progression :
 
 - **Signaler avec précision la progression** -les barres de progression doivent toujours présenter une représentation précise du temps nécessaire à l’exécution d’une tâche. Ne vous contentez pas de rendre l’application visible.
 - **À utiliser pour les durées bien définies** -les barres de progression ne montrent pas seulement qu’une longue tâche est effectuée, mais donnent à l’utilisateur et indique la quantité de tâche terminée et une estimation du temps restant.
@@ -49,7 +49,7 @@ Le moyen le plus simple d’utiliser un indicateur de progression dans une appli
 
 1. Dans la **panneau solutions**, double-cliquez sur le fichier **main. Storyboard** et ouvrez-le pour le modifier.
 
-2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue: 
+2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue : 
 
     ![Indicateur d’activité](progress-indicators-images/activity01.png "Indicateur d’activité")
 
@@ -59,7 +59,7 @@ Le moyen le plus simple d’utiliser un indicateur de progression dans une appli
     
     Le **nom** détermine le nom de la propriété qui représente l’indicateur d’activité C# dans le code.
 
-4. Faites glisser une **vue de progression** de la **boîte à outils** et déposez-la sur la vue: 
+4. Faites glisser une **vue de progression** de la **boîte à outils** et déposez-la sur la vue : 
 
     ![Vue de la progression](progress-indicators-images/activity03.png "Vue de la progression")
 
@@ -75,7 +75,7 @@ Le moyen le plus simple d’utiliser un indicateur de progression dans une appli
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier **main. Storyboard** et ouvrez-le pour le modifier.
 
-2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue: 
+2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue : 
 
     ![](progress-indicators-images/activity01-vs.png
     "Indicateur d’activité indicateur d’activité")
@@ -86,7 +86,7 @@ Le moyen le plus simple d’utiliser un indicateur de progression dans une appli
 
     Le **nom** détermine le nom de la propriété qui représente l’indicateur d’activité C# dans le code.
 
-4. Faites glisser une **vue de progression** de la **boîte à outils** et déposez-la sur la vue: 
+4. Faites glisser une **vue de progression** de la **boîte à outils** et déposez-la sur la vue : 
 
    ![Vue de la progression](progress-indicators-images/activity03-vs.png "Vue de la progression")
 
@@ -108,13 +108,13 @@ Comme indiqué ci-dessus, les indicateurs d’activité doivent s’afficher lor
 
 À tout moment, vous pouvez voir si un indicateur d’activité est en train d’être `IsAnimating` animé en vérifiant sa propriété. Si la `HidesWhenStopped` propriété est `true`, l’indicateur d’activité sera automatiquement masqué lorsque son animation sera arrêtée.
 
-Vous pouvez utiliser le code suivant pour démarrer l’animation: 
+Vous pouvez utiliser le code suivant pour démarrer l’animation : 
 
 ```csharp
 ActivityIndicator.StartAnimating();
 ```
 
-La commande suivante permet d’arrêter l’animation:
+La commande suivante permet d’arrêter l’animation :
 
 ```csharp
 ActivityIndicator.StopAnimating();

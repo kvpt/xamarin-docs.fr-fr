@@ -4,15 +4,15 @@ description: Ce document explique comment configurer une application ARKit dans 
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/01/2017
-ms.openlocfilehash: 106d6100d373c8d14a35aaee59035cf4a98083a5
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4c23caade91a1a46d6b2b9bb2425a5bdead40030
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528255"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289231"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Utilisation de ARKit avec UrhoSharp dans Xamarin. iOS
 
@@ -46,7 +46,7 @@ Cette classe fournit un ensemble de valeurs par défaut pratiques, à la fois un
 
 L’installation a lieu dans la `Start` méthode virtuelle.   Lorsque vous substituez cette méthode sur votre sous-classe, vous devez vous assurer de chaîner à votre parent en `base.Start()` utilisant sur votre propre implémentation.
 
-La `Start` méthode Configure la scène, la fenêtre d’affichage, l’appareil photo et un éclairage directionnel, et les fait apparaître en tant que propriétés publiques:
+La `Start` méthode Configure la scène, la fenêtre d’affichage, l’appareil photo et un éclairage directionnel, et les fait apparaître en tant que propriétés publiques :
 
 - `Scene` pour stocker vos objets,
 - directionnel `Light` avec des ombres et dont l’emplacement est disponible via `LightNode` la propriété
@@ -57,7 +57,7 @@ La `Start` méthode Configure la scène, la fenêtre d’affichage, l’appareil
 
 Vous devez ensuite sous-définir la `ArkitApp` classe et substituer la `Start` méthode.   La première chose que votre méthode doit faire est d' `ArkitApp.Start` enchaîner au en appelant. `base.Start()`  Après cela, vous pouvez utiliser l’une des propriétés du programme d’installation de ArkitApp pour ajouter vos objets à la scène, personnaliser les lumières, les ombres ou les événements que vous souhaitez gérer.
 
-L’exemple ARKit/UrhoSharp charge un caractère animé avec des textures et lit l’animation, avec l’implémentation suivante:
+L’exemple ARKit/UrhoSharp charge un caractère animé avec des textures et lit l’animation, avec l’implémentation suivante :
 
 ```csharp
 public class MutantDemo : ArkitApp
@@ -102,7 +102,7 @@ L’API ARKit est assez simple, mais vous créez et configurez un objet [ARSessi
 
 Nous allons composer les images fournies par la caméra avec notre contenu 3D et ajuster l’appareil photo dans UrhoSharp pour qu’il corresponde à l’emplacement et à la position de l’appareil.
 
-Le diagramme suivant montre ce qui se produit dans la `ArkitApp` classe:
+Le diagramme suivant montre ce qui se produit dans la `ArkitApp` classe :
 
 [![Diagramme des classes et des écrans dans le ArkitApp](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
@@ -112,18 +112,18 @@ L’idée est simple et combinez la vidéo de l’appareil photo avec nos graphi
 
 La méthode la plus simple consiste à insérer un `RenderPathCommand` dans le principal. `RenderPath`  Il s’agit d’un ensemble de commandes qui sont effectuées pour dessiner une seule image.  Cette commande remplit la fenêtre d’affichage avec les textures que nous lui transmettons.    Nous l’avons configurée sur la première image qui est en cours de traitement et la définition réelle est effectuée dans le fichier **ARRenderPath. xml** qui est chargé à ce stade.
 
-Toutefois, nous sommes confrontés à deux problèmes pour combiner ces deux mondes:
+Toutefois, nous sommes confrontés à deux problèmes pour combiner ces deux mondes :
 
 
-1. Sur iOS, les textures GPU doivent avoir une résolution qui est une puissance de deux, mais les trames que nous obtenons de l’appareil photo n’ont pas de résolution qui sont une puissance de deux, par exemple: 1280 x 720.
-2. Les frames sont encodés au format [YUV](https://en.wikipedia.org/wiki/YUV) , représenté par deux images: luminance et chrominance.
+1. Sur iOS, les textures GPU doivent avoir une résolution qui est une puissance de deux, mais les trames que nous obtenons de l’appareil photo n’ont pas de résolution qui sont une puissance de deux, par exemple : 1280 x 720.
+2. Les frames sont encodés au format [YUV](https://en.wikipedia.org/wiki/YUV) , représenté par deux images : luminance et chrominance.
 
-Les trames YUV présentent deux résolutions différentes.  une image 1280 x 720 représentant la luminance (fondamentalement une image de mise à l’échelle grise) et des 640 x 360 de plus petite taille pour le composant de chrominance:
+Les trames YUV présentent deux résolutions différentes.  une image 1280 x 720 représentant la luminance (fondamentalement une image de mise à l’échelle grise) et des 640 x 360 de plus petite taille pour le composant de chrominance :
 
 ![Image illustrant la combinaison des composants Y et UV](urhosharp-images/image3.png)
 
 
-Pour dessiner une image de couleur entière à l’aide d’OpenGL ES, nous devons écrire un petit nuanceur qui prend la luminance (composant Y) et la chrominance (plans UV) à partir des emplacements de texture.  Dans UrhoSharp, ils portent les noms «sDiffMap» et «sNormalMap» et les convertissent au format RVB:
+Pour dessiner une image de couleur entière à l’aide d’OpenGL ES, nous devons écrire un petit nuanceur qui prend la luminance (composant Y) et la chrominance (plans UV) à partir des emplacements de texture.  Dans UrhoSharp, ils portent les noms « sDiffMap » et « sNormalMap » et les convertissent au format RVB :
 
 ```csharp
 mat4 ycbcrToRGBTransform = mat4(
@@ -137,7 +137,7 @@ vec4 ycbcr = vec4(texture2D(sDiffMap, vTexCoord).r,
 gl_FragColor = ycbcrToRGBTransform * ycbcr;
 ```
 
-Pour afficher la texture qui n’a pas de puissance de deux résolutions, nous devons définir Texture2D avec les paramètres suivants:
+Pour afficher la texture qui n’a pas de puissance de deux résolutions, nous devons définir Texture2D avec les paramètres suivants :
 
 ```chsarp
 // texture for UV-plane;
@@ -157,7 +157,7 @@ Les `ARFrame` objets contiennent également la position estimée de l’appareil
 
 Cela se produit parce que les capteurs intégrés tels que les gyroscopes ne sont pas en mesure de suivre les mouvements, ils peuvent uniquement s’accélérer.  ARKit analyse chaque cadre et extrait les points de fonctionnalité à suivre et peut donc nous fournir une matrice de transformation exacte contenant les données de mouvement et de rotation.
 
-Par exemple, voici comment nous pouvons obtenir la position actuelle:
+Par exemple, voici comment nous pouvons obtenir la position actuelle :
 
 ```csharp
 var row = arCamera.Transform.Row3;
@@ -169,7 +169,7 @@ Nous utilisons `-row.Z` car ARKit utilise un système de coordonnées droitier.
 
 ### <a name="plane-detection"></a>Détection de plan
 
-ARKit est en mesure de détecter les plans horizontaux et cette capacité vous permet d’interagir avec le monde réel, par exemple, nous pouvons placer le mutant sur une table réelle ou un étage. La façon la plus simple de procéder consiste à utiliser la méthode HitTest (Raycasting). Il convertit les coordonnées d’écran (0.5; 0.5 est le centre) en coordonnées réelles (0; 0; 0 est l’emplacement du premier frame).
+ARKit est en mesure de détecter les plans horizontaux et cette capacité vous permet d’interagir avec le monde réel, par exemple, nous pouvons placer le mutant sur une table réelle ou un étage. La façon la plus simple de procéder consiste à utiliser la méthode HitTest (Raycasting). Il convertit les coordonnées d’écran (0.5 ; 0.5 est le centre) en coordonnées réelles (0 ; 0 ; 0 est l’emplacement du premier frame).
 
 ```chsarp
 protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
@@ -185,7 +185,7 @@ protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
 }
 ```
 
-Nous pouvons maintenant placer le mutant sur une surface horizontale en fonction de l’emplacement de l’écran de l’appareil que vous appuyez:
+Nous pouvons maintenant placer le mutant sur une surface horizontale en fonction de l’emplacement de l’écran de l’appareil que vous appuyez :
 
 ```chsarp
 void OnTouchEnd(TouchEndEventArgs e)
@@ -202,7 +202,7 @@ void OnTouchEnd(TouchEndEventArgs e)
 
 ### <a name="realistic-lighting"></a>Éclairage réaliste
 
-En fonction des conditions d’éclairage réelles, la scène virtuelle doit être plus claire ou plus sombre pour mieux correspondre à son environnement. ARFrame contient une propriété LightEstimate que nous pouvons utiliser pour ajuster la lumière ambiante Urho. cela s’effectue comme suit:
+En fonction des conditions d’éclairage réelles, la scène virtuelle doit être plus claire ou plus sombre pour mieux correspondre à son environnement. ARFrame contient une propriété LightEstimate que nous pouvons utiliser pour ajuster la lumière ambiante Urho. cela s’effectue comme suit :
 
 ```csharp
 var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;

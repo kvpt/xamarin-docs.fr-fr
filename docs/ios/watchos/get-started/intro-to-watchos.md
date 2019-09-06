@@ -4,15 +4,15 @@ description: Ce document fournit une vue d’ensemble de watchOS, qui décrit le
 ms.prod: xamarin
 ms.assetid: 99c316d6-6707-40f6-bec9-801d05888759
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 6367ab41be821c5b1add4fface6bd17eb00b763b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 59d02db9fa2787e93ad88e4b6f37e0fef50572a5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121609"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293110"
 ---
 # <a name="introduction-to-watchos"></a>Introduction à watchOS
 
@@ -90,7 +90,7 @@ Pour plus d’informations sur la conception de l’interface utilisateur de Not
 
 ## <a name="screen-sizes"></a>Tailles d’écran
 
-Le Apple Watch a deux tailles de visage: 38mm et Watch 42mm, avec un ratio d’affichage de 5:4 et un écran de retine. Leur taille utilisable est :
+Le Apple Watch a deux tailles de visage : 38mm et Watch 42mm, avec un ratio d’affichage de 5:4 et un écran de retine. Leur taille utilisable est :
 
 - 38mm 136 x 170 pixels logiques (272 x 340 pixels physiques)
 - Watch 42mm 156 x 195 pixels logiques (312 x 390 pixels physiques).

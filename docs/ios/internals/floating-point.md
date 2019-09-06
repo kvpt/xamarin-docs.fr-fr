@@ -4,15 +4,15 @@ description: Ce document décrit comment Xamarin. iOS gère les opérations à v
 ms.prod: xamarin
 ms.assetid: 003F25C1-B430-4339-9C95-7DF527EBC699
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: cd1bd0507f89f7b29bfcd3ef1ba0a3b1215632ce
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1ecb00fecaf14afb8c6d5c59297eb26821ed791a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527373"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291927"
 ---
 # <a name="floating-point-operations-in-xamarinios"></a>Opérations à virgule flottante dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Xamarin. iOS effectue par défaut des opérations à virgule flottante 32 bits e
 
 Bien que cette précision plus proche de ce que les développeurs attendent des opérations à C# virgule flottante dans sur le bureau, sur les appareils mobiles, l’impact sur les performances peut être significatif.
 
-Il est possible de compiler votre code à virgule flottante 32 bits pour utiliser des opérations à virgule flottante 32 bits.  Pour ce faire, vous devez utiliser au moins Xamarin. iOS 8,10 et définir dans le panneau des options de build iOS sur la ligne d’entrée «arguments supplémentaires mTouch» la valeur suivante:
+Il est possible de compiler votre code à virgule flottante 32 bits pour utiliser des opérations à virgule flottante 32 bits.  Pour ce faire, vous devez utiliser au moins Xamarin. iOS 8,10 et définir dans le panneau des options de build iOS sur la ligne d’entrée « arguments supplémentaires mTouch » la valeur suivante :
 
 ```
 --aot-options=-O=float32

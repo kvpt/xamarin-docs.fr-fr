@@ -4,15 +4,15 @@ description: Cet article décrit l’utilisation des barres d’outils dans une 
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b2008b93f208d73af06c12fa493232fd56ddd64f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: de0db40fb678bf88a18c6be42d89644d41583b99
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644750"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280103"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Barres d’outils dans Xamarin. Mac
 
@@ -30,13 +30,13 @@ Jetez également un coup d’œil à la section [exposition des C# classes/méth
 
 ## <a name="introduction-to-toolbars"></a>Présentation des barres d’outils
 
-Toute fenêtre dans une application macOS peut inclure une barre d’outils:
+Toute fenêtre dans une application macOS peut inclure une barre d’outils :
 
 ![Une fenêtre d’exemple avec une barre d’outils](toolbar-images/info01.png "Une fenêtre d’exemple avec une barre d’outils")
 
 Les barres d’outils offrent un moyen simple aux utilisateurs de votre application d’accéder rapidement aux fonctionnalités importantes ou couramment utilisées. Par exemple, une application de modification de document peut fournir des éléments de barre d’outils pour définir la couleur du texte, modifier la police ou imprimer le document actif.
 
-Les barres d’outils peuvent afficher des éléments de trois façons:
+Les barres d’outils peuvent afficher des éléments de trois façons :
 
 1. **Icône et texte** 
 
@@ -50,21 +50,21 @@ Les barres d’outils peuvent afficher des éléments de trois façons:
 
      ![Barre d’outils de texte uniquement](toolbar-images/info04.png "Barre d’outils de texte uniquement")
 
-Pour passer d’un mode à un autre, cliquez avec le bouton droit sur la barre d’outils et sélectionnez un mode d’affichage dans le menu contextuel:
+Pour passer d’un mode à un autre, cliquez avec le bouton droit sur la barre d’outils et sélectionnez un mode d’affichage dans le menu contextuel :
 
 ![Menu contextuel d’une barre d’outils](toolbar-images/info05.png "Menu contextuel d’une barre d’outils")
 
-Utilisez le même menu pour afficher la barre d’outils à une taille plus petite:
+Utilisez le même menu pour afficher la barre d’outils à une taille plus petite :
 
 ![Barre d’outils avec petites icônes](toolbar-images/info06.png "Barre d’outils avec petites icônes")
 
-Le menu permet également de personnaliser la barre d’outils:
+Le menu permet également de personnaliser la barre d’outils :
 
 ![Boîte de dialogue utilisée pour personnaliser une barre d’outils](toolbar-images/info07.png "Boîte de dialogue utilisée pour personnaliser une barre d’outils")
 
 Quand vous configurez une barre d’outils dans le Interface Builder de Xcode, un développeur peut fournir des éléments de barre d’outils supplémentaires qui ne font pas partie de sa configuration par défaut. Les utilisateurs de l’application peuvent alors personnaliser la barre d’outils, en ajoutant et en supprimant ces éléments prédéfinis, si nécessaire. Bien entendu, la barre d’outils peut être réinitialisée à sa configuration par défaut.
 
-La barre d’outils se connecte automatiquement au menu **affichage** , qui permet aux utilisateurs de les masquer, de les afficher et de les personnaliser:
+La barre d’outils se connecte automatiquement au menu **affichage** , qui permet aux utilisateurs de les masquer, de les afficher et de les personnaliser :
 
 ![Éléments associés à une barre d’outils dans le menu Affichage](toolbar-images/info08.png "Éléments associés à une barre d’outils dans le menu Affichage")
 
@@ -76,21 +76,21 @@ Les sections suivantes de ce guide décrivent comment créer et gérer des barre
 
 ## <a name="setting-a-custom-main-window-controller"></a>Définition d’un contrôleur de fenêtre principale personnalisé
 
-Pour exposer des éléments d' C# interface utilisateur au code via des prises et des actions, l’application Xamarin. Mac doit utiliser un contrôleur de fenêtre personnalisé:
+Pour exposer des éléments d' C# interface utilisateur au code via des prises et des actions, l’application Xamarin. Mac doit utiliser un contrôleur de fenêtre personnalisé :
 
 1. Ouvrez le Storyboard de l’application dans le Interface Builder de Xcode.
 2. Sélectionnez le contrôleur de fenêtre sur l’aire de conception.
-3. Basculez vers l' **inspecteur d’identité** et entrez «WindowController» comme nom de **classe**: 
+3. Basculez vers l' **inspecteur d’identité** et entrez « WindowController » comme nom de **classe**: 
 
     [![Définition d’un nom de classe personnalisé pour le contrôleur de fenêtre](toolbar-images/windowcontroller01.png "Définition d’un nom de classe personnalisé pour le contrôleur de fenêtre")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. Enregistrez vos modifications et revenez à Visual Studio pour Mac à synchroniser.
-5. Un fichier **WindowController.cs** sera ajouté à votre projet dans le **panneau solutions** dans Visual Studio pour Mac: 
+5. Un fichier **WindowController.cs** sera ajouté à votre projet dans le **panneau solutions** dans Visual Studio pour Mac : 
 
     ![Sélection de WindowController.cs dans le panneau solutions](toolbar-images/windowcontroller02.png "Sélection de WindowController.cs dans le panneau solutions")
 
 6. Rouvrez le Storyboard dans le Interface Builder de Xcode.
-7. Le fichier **WindowController. h** sera disponible en vue de son utilisation: 
+7. Le fichier **WindowController. h** sera disponible en vue de son utilisation : 
 
     [![Le fichier WindowController. h](toolbar-images/windowcontroller03.png "Le fichier WindowController. h")](toolbar-images/windowcontroller03-large.png#lightbox)
 
@@ -100,7 +100,7 @@ Les barres d’outils sont créées et gérées à l’aide de l’Interface Bui
 
 ![Ouverture de main. Storyboard dans le panneau solutions](toolbar-images/edit01.png "Ouverture de main. Storyboard dans le panneau solutions")
 
-Dans l' **inspecteur de bibliothèque**, entrez «outil» dans la **zone de recherche** pour afficher plus facilement tous les éléments de la barre d’outils disponibles:
+Dans l' **inspecteur de bibliothèque**, entrez « outil » dans la **zone de recherche** pour afficher plus facilement tous les éléments de la barre d’outils disponibles :
 
 ![Inspecteur de bibliothèque, filtré pour afficher les éléments de barre d’outils](toolbar-images/edit02.png "Inspecteur de bibliothèque, filtré pour afficher les éléments de barre d’outils")
 
@@ -119,7 +119,7 @@ Les propriétés suivantes sont disponibles :
 
 Sélectionnez l’option **enregistrement automatique** et laissez les paramètres par défaut de toutes les autres propriétés. 
 
-Après avoir ouvert la barre d’outils dans la hiérarchie de l' **interface**, affichez la boîte de dialogue de personnalisation en sélectionnant un élément de la barre d’outils:
+Après avoir ouvert la barre d’outils dans la hiérarchie de l' **interface**, affichez la boîte de dialogue de personnalisation en sélectionnant un élément de la barre d’outils :
 
 ![Personnalisation de la barre d’outils](toolbar-images/edit05.png "Personnalisation de la barre d’outils")
 
@@ -127,7 +127,7 @@ Utilisez cette boîte de dialogue pour définir les propriétés des éléments 
 
 ![L’inspecteur de bibliothèque](toolbar-images/edit06.png "L’inspecteur de bibliothèque")
 
-Les éléments de barre d’outils suivants peuvent être ajoutés:
+Les éléments de barre d’outils suivants peuvent être ajoutés :
 
 - **Image de la barre d’outils** : élément de barre d’outils avec une image personnalisée sous forme d’icône.
 - **Élément de barre d’outils d’espace flexible** : espace flexible utilisé pour justifier les éléments de barre d’outils suivants. Par exemple, un ou plusieurs éléments de barre d’outils suivis d’un élément de barre d’outils d’espace flexible et d’un autre élément de barre d’outils épinglerait le dernier élément sur le côté droit de la barre d’outils.
@@ -135,11 +135,11 @@ Les éléments de barre d’outils suivants peuvent être ajoutés:
 - **Élément de barre d’outils séparateur** : un séparateur visible entre deux ou plusieurs éléments de barre d’outils, pour le regroupement
 - **Personnaliser l’élément de barre d’outils** : permet aux utilisateurs de personnaliser la barre d’outils
 - **Imprimer l’élément de la barre d’outils** -permet aux utilisateurs d’imprimer le document ouvert
-- **Élément de barre d’outils afficher les couleurs** -affiche le sélecteur de couleurs système standard: 
+- **Élément de barre d’outils afficher les couleurs** -affiche le sélecteur de couleurs système standard : 
 
      ![Sélecteur de couleurs système](toolbar-images/edit07.png "Sélecteur de couleurs système")
 
-- **Afficher l’élément de la barre d’outils des polices** -affiche la boîte de dialogue police système standard: 
+- **Afficher l’élément de la barre d’outils des polices** -affiche la boîte de dialogue police système standard : 
 
      ![Sélecteur de police](toolbar-images/edit08.png "Sélecteur de police")
 
@@ -158,7 +158,7 @@ Pour vous assurer qu’un nouvel élément fait partie de la barre d’outils pa
 
 Pour réorganiser les éléments de la barre d’outils par défaut, faites-les glisser vers la gauche ou la droite.
 
-Ensuite, utilisez l' **inspecteur d’attributs** pour définir les propriétés par défaut de l’élément:
+Ensuite, utilisez l' **inspecteur d’attributs** pour définir les propriétés par défaut de l’élément :
 
 ![Personnalisation d’un élément de barre d’outils à l’aide de l’inspecteur d’attributs](toolbar-images/add03.png "Personnalisation d’un élément de barre d’outils à l’aide de l’inspecteur d’attributs")
 
@@ -186,17 +186,17 @@ Pour ce faire, ouvrez la barre d’outils dans la hiérarchie de l' **interface*
 
 ## <a name="built-in-toolbar-item-support"></a>Prise en charge des éléments de barre d’outils intégrés
 
-Par défaut, plusieurs éléments d’interface utilisateur de cacao interagissent avec les éléments de barre d’outils standard. Par exemple, faites glisser un **affichage de texte** dans la fenêtre de l’application et positionnez-le pour remplir la zone de contenu:
+Par défaut, plusieurs éléments d’interface utilisateur de cacao interagissent avec les éléments de barre d’outils standard. Par exemple, faites glisser un **affichage de texte** dans la fenêtre de l’application et positionnez-le pour remplir la zone de contenu :
 
 [![Ajout d’un affichage de texte à l’application](toolbar-images/edit09.png "Ajout d’un affichage de texte à l’application")](toolbar-images/edit09-large.png#lightbox)
 
-Enregistrez le document, revenez à Visual Studio pour Mac à synchroniser avec Xcode, exécutez l’application, entrez du texte, sélectionnez-le, puis cliquez sur l’élément de barre d’outils **couleurs** . Notez que l’affichage de texte fonctionne automatiquement avec le sélecteur de couleurs:
+Enregistrez le document, revenez à Visual Studio pour Mac à synchroniser avec Xcode, exécutez l’application, entrez du texte, sélectionnez-le, puis cliquez sur l’élément de barre d’outils **couleurs** . Notez que l’affichage de texte fonctionne automatiquement avec le sélecteur de couleurs :
 
 ![Fonctionnalités intégrées de la barre d’outils avec un affichage de texte et un sélecteur de couleurs](toolbar-images/edit10.png "Fonctionnalités intégrées de la barre d’outils avec un affichage de texte et un sélecteur de couleurs")
 
 ## <a name="using-images-with-toolbar-items"></a>Utilisation d’images avec des éléments de barre d’outils
 
-À l’aide d’un élément de la **barre d’outils image**, toute image bitmap ajoutée au dossier **ressources** (et avec une action de génération de **ressource Bundle**) peut être affichée dans la barre d’outils sous la forme d’une icône:
+À l’aide d’un élément de la **barre d’outils image**, toute image bitmap ajoutée au dossier **ressources** (et avec une action de génération de **ressource Bundle**) peut être affichée dans la barre d’outils sous la forme d’une icône :
 
 1. Dans Visual Studio pour Mac, dans la **panneau solutions**, cliquez avec le bouton droit sur le dossier **ressources** , puis sélectionnez **Ajouter** > **Ajouter des fichiers**.
 2. Dans la boîte de dialogue **Ajouter des fichiers** , accédez aux images de votre choix, sélectionnez-les et cliquez sur le bouton **ouvrir** : 
@@ -211,38 +211,38 @@ Enregistrez le document, revenez à Visual Studio pour Mac à synchroniser avec 
 
 5. Sélectionnez la barre d’outils dans la hiérarchie de l' **interface** et cliquez sur l’un de ses éléments pour ouvrir la boîte de dialogue de personnalisation.
 
-6. Faites glisser un **élément de barre d’outils image** de l' **inspecteur de bibliothèque** vers la zone éléments de **barre d’outils autorisés** de la barre d’outils: 
+6. Faites glisser un **élément de barre d’outils image** de l' **inspecteur de bibliothèque** vers la zone éléments de **barre d’outils autorisés** de la barre d’outils : 
 
     ![Élément de barre d’outils d’image ajouté à la zone éléments de barre d’outils autorisés](toolbar-images/edit14.png "Élément de barre d’outils d’image ajouté à la zone éléments de barre d’outils autorisés")
 
-7. Dans l' **inspecteur d’attributs**, sélectionnez l’image qui vient d’être ajoutée dans Visual Studio pour Mac: 
+7. Dans l' **inspecteur d’attributs**, sélectionnez l’image qui vient d’être ajoutée dans Visual Studio pour Mac : 
 
     ![Définition d’une image personnalisée pour un élément de barre d’outils](toolbar-images/edit15.png "Définition d’une image personnalisée pour un élément de barre d’outils")
 
-8. Définissez l' **étiquette** sur «Trash» et l' **étiquette de palette** sur «Effacer le document»: 
+8. Définissez l' **étiquette** sur « Trash » et l' **étiquette de palette** sur « Effacer le document » : 
 
     ![Définition de l’étiquette de l’élément de barre d’outils et de l’étiquette de palette](toolbar-images/edit16.png "Définition de l’étiquette de l’élément de barre d’outils et de l’étiquette de palette")
 
-9. Faites glisser un **élément de barre d’outils de séparateur** de l’inspecteur de **bibliothèque** vers la zone **éléments de barre d’outils autorisés** de la barre d’outils: 
+9. Faites glisser un **élément de barre d’outils de séparateur** de l’inspecteur de **bibliothèque** vers la zone **éléments de barre d’outils autorisés** de la barre d’outils : 
 
     [![Élément de barre d’outils séparateur ajouté à la zone éléments de barre d’outils autorisés](toolbar-images/edit17.png "Élément de barre d’outils séparateur ajouté à la zone éléments de barre d’outils autorisés")](toolbar-images/edit17-large.png#lightbox)
 
-10. Faites glisser l’élément séparateur et l’élément «corbeille» vers la zone éléments de la **barre d’outils par défaut** et définissez l’ordre des éléments de la barre d’outils de gauche à droite comme suit (couleurs, polices, séparateur, corbeille, espace flexible, imprimer): 
+10. Faites glisser l’élément séparateur et l’élément « corbeille » vers la zone éléments de la **barre d’outils par défaut** et définissez l’ordre des éléments de la barre d’outils de gauche à droite comme suit (couleurs, polices, séparateur, corbeille, espace flexible, imprimer) : 
 
     ![Éléments de la barre d’outils par défaut](toolbar-images/edit18.png "Éléments de la barre d’outils par défaut")
 
 11. Enregistrez les modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Exécutez l’application pour vérifier que la nouvelle barre d’outils est affichée par défaut:
+Exécutez l’application pour vérifier que la nouvelle barre d’outils est affichée par défaut :
 
 ![Une barre d’outils avec des éléments par défaut personnalisés](toolbar-images/edit19.png "Une barre d’outils avec des éléments par défaut personnalisés")
 
 ## <a name="exposing-toolbar-items-with-outlets-and-actions"></a>Exposition d’éléments de barre d’outils avec des sorties et des actions
 
-Pour accéder à une barre d’outils ou à un élément de barre d’outils dans le code, celui-ci doit être attaché à une prise ou à une action:
+Pour accéder à une barre d’outils ou à un élément de barre d’outils dans le code, celui-ci doit être attaché à une prise ou à une action :
 
 1. Dans la **panneau solutions**, double-cliquez sur **main. Storyboard** pour l’ouvrir dans Xcode.
-2. Assurez-vous que la classe personnalisée «WindowController» a été assignée au contrôleur de fenêtre principale dans l' **inspecteur d’identité**:
+2. Assurez-vous que la classe personnalisée « WindowController » a été assignée au contrôleur de fenêtre principale dans l' **inspecteur d’identité**:
 
     [![Utilisation de l’inspecteur d’identité pour définir une classe personnalisée pour le contrôleur de fenêtre](toolbar-images/edit20a.png "Utilisation de l’inspecteur d’identité pour définir une classe personnalisée pour le contrôleur de fenêtre")](toolbar-images/edit20a-large.png#lightbox)
 
@@ -251,17 +251,17 @@ Pour accéder à une barre d’outils ou à un élément de barre d’outils dan
     ![Sélection de l’élément de barre d’outils dans la hiérarchie d’interface](toolbar-images/edit20.png "Sélection de l’élément de barre d’outils dans la hiérarchie d’interface")  
 
 4. Ouvrez la **vue Assistant**, sélectionnez le fichier **WindowController. h** et faites-le glisser à partir de l’élément de barre d’outils vers le fichier **WindowController. h** .
-5. Définissez le type de **connexion** sur **action**, entrez «trashDocument» comme **nom**, puis cliquez sur le bouton **se connecter** : 
+5. Définissez le type de **connexion** sur **action**, entrez « trashDocument » comme **nom**, puis cliquez sur le bouton **se connecter** : 
 
     [![Configuration d’une action pour un élément de barre d’outils](toolbar-images/edit23.png "Configuration d’une action pour un élément de barre d’outils")](toolbar-images/edit23-large.png#lightbox)
 
-6. Exposez l' **affichage de texte** sous forme de sortie appelée «documentEditor» dans le fichier **ViewController. h** : 
+6. Exposez l' **affichage de texte** sous forme de sortie appelée « documentEditor » dans le fichier **ViewController. h** : 
 
     [![Configuration d’une prise pour l’affichage de texte](toolbar-images/edit24.png "Configuration d’une prise pour l’affichage de texte")](toolbar-images/edit24-large.png#lightbox)
 
 7. Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
 
-Dans Visual Studio pour Mac, modifiez le fichier **ViewController.cs** et ajoutez le code suivant:
+Dans Visual Studio pour Mac, modifiez le fichier **ViewController.cs** et ajoutez le code suivant :
 
 ```csharp
 public void EraseDocument() {
@@ -269,7 +269,7 @@ public void EraseDocument() {
 }
 ```
 
-Modifiez ensuite le fichier **WindowController.cs** et ajoutez le code suivant au bas de la `WindowController` classe:
+Modifiez ensuite le fichier **WindowController.cs** et ajoutez le code suivant au bas de la `WindowController` classe :
 
 ```csharp
 [Export ("trashDocument:")]
@@ -280,7 +280,7 @@ void TrashDocument (NSObject sender) {
 }
 ```
 
-Lors de l’exécution de l’application, l’élément de barre d’outils **Corbeille** est actif:
+Lors de l’exécution de l’application, l’élément de barre d’outils **Corbeille** est actif :
 
 ![Barre d’outils avec un élément de la corbeille Active](toolbar-images/edit25.png "Barre d’outils avec un élément de la corbeille Active")
 
@@ -290,11 +290,11 @@ Notez que l’élément de la barre d’outils **Corbeille** peut maintenant êt
 
 Pour désactiver un élément dans une barre d’outils, créez `NSToolbarItem` une classe personnalisée et substituez la `Validate` méthode. Ensuite, dans Interface Builder, assignez le type personnalisé à l’élément que vous souhaitez activer/désactiver.
 
-Pour créer une classe `NSToolbarItem` personnalisée, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > un**nouveau fichier...** . Sélectionnez classe **générale** > **vide**, entrez «ActivatableItem» comme **nom**, puis cliquez sur le bouton **nouveau** : 
+Pour créer une classe `NSToolbarItem` personnalisée, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > un**nouveau fichier...** . Sélectionnez classe **générale** > **vide**, entrez « ActivatableItem » comme **nom**, puis cliquez sur le bouton **nouveau** : 
 
 ![Ajout d’une classe vide dans Visual Studio pour Mac](toolbar-images/custom01.png "Ajout d’une classe vide dans Visual Studio pour Mac")
 
-Modifiez ensuite le fichier **ActivatableItem.cs** de façon à ce qu’il soit lu comme suit:
+Modifiez ensuite le fichier **ActivatableItem.cs** de façon à ce qu’il soit lu comme suit :
 
 ```csharp
 using System;
@@ -334,11 +334,11 @@ namespace MacToolbar
 }
 ```
 
-Double-cliquez sur **main. Storyboard** pour l’ouvrir dans Xcode. Sélectionnez l’élément de barre d’outils **Corbeille** créé ci-dessus et remplacez sa classe par «ActivatableItem» dans l' **inspecteur d’identité**:
+Double-cliquez sur **main. Storyboard** pour l’ouvrir dans Xcode. Sélectionnez l’élément de barre d’outils **Corbeille** créé ci-dessus et remplacez sa classe par « ActivatableItem » dans l' **inspecteur d’identité**:
 
 ![Définition d’une classe personnalisée pour un élément de barre d’outils](toolbar-images/custom02.png "Définition d’une classe personnalisée pour un élément de barre d’outils")
 
-Créez une prise appelée `trashItem` pour l’élément de barre d’outils **Corbeille** . Enregistrez les modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode. Enfin, ouvrez **MainWindow.cs** et mettez à `AwakeFromNib` jour la méthode pour lire comme suit:
+Créez une prise appelée `trashItem` pour l’élément de barre d’outils **Corbeille** . Enregistrez les modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode. Enfin, ouvrez **MainWindow.cs** et mettez à `AwakeFromNib` jour la méthode pour lire comme suit :
 
 ```csharp
 public override void AwakeFromNib ()
@@ -350,7 +350,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-Exécutez l’application et notez que l’élément **Corbeille** est maintenant désactivé dans la barre d’outils:
+Exécutez l’application et notez que l’élément **Corbeille** est maintenant désactivé dans la barre d’outils :
 
 ![Barre d’outils avec élément de poubelle inactif](toolbar-images/custom03.png "Barre d’outils avec élément de poubelle inactif")
 

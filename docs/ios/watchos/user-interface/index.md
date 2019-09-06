@@ -4,19 +4,19 @@ description: Ce document décrit les différents contrôles qui peuvent être ut
 ms.prod: xamarin
 ms.assetid: EDFAD203-02EA-4A74-9CE2-7B8513BC90E1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/19/2016
-ms.openlocfilehash: 5b8cbfb3529af0eef81524d450bf395a07c65471
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cebacf6d845affe017e289fe4522a3b7c76d2942
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651734"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291778"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>Contrôles de l’interface utilisateur Watchos dans Xamarin
 
-L’exemple [**WatchKitCatalog**](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) illustre différents contrôles Watchos. Le Storyboard de l’application est affiché ici (cliquez pour effectuer un zoom):
+L’exemple [**WatchKitCatalog**](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) illustre différents contrôles Watchos. Le Storyboard de l’application est affiché ici (cliquez pour effectuer un zoom) :
 
 [![](images/storyboard-sml.png "Exemple de disposition Watchos")](images/storyboard.png#lightbox)
 
@@ -38,7 +38,7 @@ Les noms de programmation de tous les contrôles ont pour préfixe (par `WKInter
 |[Menu](~/ios/watchos/user-interface/menu.md)|Définissez le menu force-Press dans le Storyboard et implémentez les actions pour chaque bouton dans le code.<br />[Documentation sur le contrôle de menu (Force Touch)](~/ios/watchos/user-interface/menu.md)<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ControllerDetailController.cs)|![](Images/controller.png)|
 |Entrée de texte|Utilisez `PresentTextInputController` et l' `WKTextInputMode` énumération.<br />[Documentation d’entrée de texte](~/ios/watchos/user-interface/text-input.md)<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |Digital Crown|La Digital Crown peut être utilisée pour piloter un sélecteur, ou sa rotation peut être suivie dans le code.<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
-|Mouvements|Quatre types de reconnaissance de mouvement peuvent être ajoutés à une scène: TAP, balayer, Pan et LongPress.<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
+|Mouvements|Quatre types de reconnaissance de mouvement peuvent être ajoutés à une scène : TAP, balayer, Pan et LongPress.<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
 
 
 ## <a name="related-links"></a>Liens associés

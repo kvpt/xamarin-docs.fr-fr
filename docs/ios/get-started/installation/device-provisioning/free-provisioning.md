@@ -4,15 +4,15 @@ description: Ce document décrit comment les développeurs Xamarin.iOS peuvent t
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/16/2018
-ms.openlocfilehash: 533ab09a73116402e39da65933f26b8f3065357c
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: HT
+ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58855066"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291438"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Provisionnement gratuit pour les applications Xamarin.iOS
 
@@ -27,7 +27,7 @@ Pour utiliser le provisionnement gratuit et déployer une application sur un app
 > [!IMPORTANT]
 > Le [provisionnement automatique](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) permet à Visual Studio pour Mac ou Visual Studio 2019 de configurer automatiquement un appareil pour permettre aux développeurs d’effectuer des tests. Toutefois, le provisionnement automatique n’est pas compatible avec le provisionnement gratuit. Pour pouvoir utiliser le provisionnement automatique, vous devez avoir un compte payant du programme Developer d’Apple.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Pour déployer vos applications Xamarin.iOS sur un appareil à l’aide du provisionnement gratuit :
 
@@ -128,7 +128,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 
 -----
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Apple a imposé un certain nombre de limitations qui définissent quand et comment utiliser le provisionnement gratuit pour exécuter votre application sur un appareil iOS. Ainsi, vous pouvez uniquement effectuer un déploiement sur *votre* appareil :
 

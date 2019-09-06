@@ -5,15 +5,15 @@ description: Ce document contient un lien vers un guide d’installation Visual 
 ms.prod: xamarin
 ms.assetid: 68E2A17F-7C10-EF1C-8362-C60E7F2FD94D
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: ecbe3bf5d0506e17e5b958a05adf150753d56aa8
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 66d279c5bc98aadbf0a046ca35c70a90294f65a1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119044"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281228"
 ---
 # <a name="xamarinmac-installation"></a>Installation de Xamarin.Mac
 

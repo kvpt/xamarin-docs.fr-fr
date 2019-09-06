@@ -5,22 +5,22 @@ ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: lobrien
-ms.author: laobri
-ms.openlocfilehash: cc7d966e7dd0371e967775d112789af9f0ad7c59
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528510"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282428"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Présentation de la boîte de dialogue MonoTouch. Xamarin. iOS
 
-Dialogue monotactile, appelé MT. D pour résumer, est une boîte à outils de développement d’interface utilisateur rapide qui permet aux développeurs de créer des écrans d’application et de naviguer à l’aide d’informations, plutôt que de caractère fastidieux de créer des contrôleurs d’affichage, des tables, etc. En tant que tel, il offre une simplification significative du développement de l’interface utilisateur et de la réduction du code. Par exemple, examinez la capture d’écran suivante:
+Dialogue monotactile, appelé MT. D pour résumer, est une boîte à outils de développement d’interface utilisateur rapide qui permet aux développeurs de créer des écrans d’application et de naviguer à l’aide d’informations, plutôt que de caractère fastidieux de créer des contrôleurs d’affichage, des tables, etc. En tant que tel, il offre une simplification significative du développement de l’interface utilisateur et de la réduction du code. Par exemple, examinez la capture d’écran suivante :
 
  [![](images/image1.png "Par exemple, considérez cette capture d’écran")](images/image1.png#lightbox)
 
-Le code suivant a été utilisé pour définir la totalité de l’écran:
+Le code suivant a été utilisé pour définir la totalité de l’écran :
 
 ```csharp
 public enum Category
@@ -62,7 +62,7 @@ MT. D est compressé avec un grand nombre d’éléments d’interface utilisate
 
 En outre, MT. D possède un certain nombre de fonctionnalités d’expérience utilisateur iOS communes intégrées, telles que la prise en charge de l’extraction vers l’actualisation, le chargement d’images asynchrones et la prise en charge de la recherche.
 
-Cet article présente en détail l’utilisation de la solution MT. D, y compris:
+Cet article présente en détail l’utilisation de la solution MT. D, y compris :
 
 - **Mt. Composants D** : il est axé sur la compréhension des classes qui composent Mt. D pour permettre une mise à niveau rapide. 
 - **Référence des éléments** : liste complète des éléments intégrés de Mt. E. 
@@ -76,7 +76,7 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 
 Même en cas d’utilisation de l’API de réflexion, MT. D crée une hiérarchie d’éléments sous le capot, comme s’il avait été créé directement via l’API Elements. En outre, la prise en charge de JSON mentionnée dans la section précédente crée également des éléments. Pour cette raison, il est important d’avoir une compréhension de base des composants de MT. E.
 
-MT. D génère des écrans à l’aide des quatre parties suivantes:
+MT. D génère des écrans à l’aide des quatre parties suivantes :
 
 - **DialogViewController**
 - **RootElement**
@@ -90,17 +90,17 @@ Un *DialogViewController*, ou *DVC* pour Short, hérite de `UITableViewControlle
 
 ### <a name="rootelement"></a>RootElement
 
-Un *RootElement* est le conteneur de niveau supérieur pour les éléments qui passent dans un DVC. Elle contient des sections qui peuvent ensuite contenir des éléments. Les RootElements ne sont pas restitués; au lieu de cela, il s’agit simplement de conteneurs pour ce qui est réellement rendu. Un RootElement est attribué à un DVC, puis le DVC affiche ses enfants.
+Un *RootElement* est le conteneur de niveau supérieur pour les éléments qui passent dans un DVC. Elle contient des sections qui peuvent ensuite contenir des éléments. Les RootElements ne sont pas restitués ; au lieu de cela, il s’agit simplement de conteneurs pour ce qui est réellement rendu. Un RootElement est attribué à un DVC, puis le DVC affiche ses enfants.
 
 ### <a name="section"></a>Section
 
-Une section est un groupe de cellules dans un tableau. Comme avec une section de table normale, il peut éventuellement avoir un en-tête et un pied de page qui peuvent être du texte, ou même des vues personnalisées, comme dans la capture d’écran suivante:
+Une section est un groupe de cellules dans un tableau. Comme avec une section de table normale, il peut éventuellement avoir un en-tête et un pied de page qui peuvent être du texte, ou même des vues personnalisées, comme dans la capture d’écran suivante :
 
  [![](images/image2.png "Comme avec une section de table normale, il peut éventuellement avoir un en-tête et un pied de page qui peuvent être du texte ou même des vues personnalisées, comme dans cette capture d’écran.")](images/image2.png#lightbox)
 
 ### <a name="element"></a>Élément
 
-Un élément représente une cellule réelle dans la table. MT. D est compressé avec une grande variété d’éléments qui représentent des types de données différents ou des entrées différentes. Par exemple, les captures d’écran suivantes illustrent quelques-uns des éléments disponibles:
+Un élément représente une cellule réelle dans la table. MT. D est compressé avec une grande variété d’éléments qui représentent des types de données différents ou des entrées différentes. Par exemple, les captures d’écran suivantes illustrent quelques-uns des éléments disponibles :
 
  [![](images/image3.png "Par exemple, ces captures d’écran illustrent quelques-uns des éléments disponibles")](images/image3.png#lightbox)
 
@@ -112,7 +112,7 @@ Nous allons maintenant aborder les RootElements et les sections de manière plus
 
 Au moins un RootElement est requis pour démarrer le processus MonoTouch.
 
-Si un RootElement est initialisé avec une valeur de section/élément, cette valeur est utilisée pour rechercher un élément enfant qui fournira un résumé de la configuration, qui est rendue à droite de l’affichage. Par exemple, la capture d’écran ci-dessous montre un tableau sur la gauche avec une cellule contenant le titre de l’écran de détails à droite, «dessert», ainsi que la valeur du désert sélectionné.
+Si un RootElement est initialisé avec une valeur de section/élément, cette valeur est utilisée pour rechercher un élément enfant qui fournira un résumé de la configuration, qui est rendue à droite de l’affichage. Par exemple, la capture d’écran ci-dessous montre un tableau sur la gauche avec une cellule contenant le titre de l’écran de détails à droite, « dessert », ainsi que la valeur du désert sélectionné.
 
  [![](images/image4.png "Cette capture d’écran montre une table sur la gauche avec une cellule qui contient le titre de l’écran de détails sur la droite, Dessert, ainsi que la valeur de la desert sélectionné")](images/image4.png#lightbox) [![](images/image5.png "cela capture d’écran ci-dessous illustre une table sur la gauche, avec une cellule qui contient le titre de l’écran de détails sur la droite, Dessert, ainsi que la valeur de la desert sélectionné")](images/image5.png#lightbox)
 
@@ -132,9 +132,9 @@ var root = new RootElement ("Meals") {
 };
 ```
 
-Dans l’exemple ci-dessus, quand l’utilisateur appuie sur «dessert», le dialogue monotactile crée une nouvelle page et y accède avec la racine «dessert» et un groupe radio avec trois valeurs.
+Dans l’exemple ci-dessus, quand l’utilisateur appuie sur « dessert », le dialogue monotactile crée une nouvelle page et y accède avec la racine « dessert » et un groupe radio avec trois valeurs.
 
-Dans cet exemple, le groupe de radios sélectionne «Chocolate gâteau» dans la section «dessert», car nous avons transmis la valeur «2» au groupe de radiogroupe. Cela signifie sélectionner le troisième élément de la liste (index zéro).
+Dans cet exemple, le groupe de radios sélectionne « Chocolate gâteau » dans la section « dessert », car nous avons transmis la valeur « 2 » au groupe de radiogroupe. Cela signifie sélectionner le troisième élément de la liste (index zéro).
 
 L’appel de la méthode Add ou C# l’utilisation de la syntaxe 4 initializer ajoute des sections.
 Les méthodes d’insertion sont fournies pour insérer des sections à l’aide d’une animation.
@@ -148,13 +148,13 @@ Les sections sont utilisées pour regrouper des éléments dans l’écran et so
 RootElements Embedded dans une section est utilisé pour accéder à un nouveau niveau plus profond.
 
 Les sections peuvent avoir des en-têtes et des pieds de page en tant que chaînes, ou en tant que UIViews.
-En général, vous utilisez simplement les chaînes, mais pour créer des interfaces utilisateur personnalisées, vous pouvez utiliser n’importe quel UIView comme en-tête ou pied de page. Vous pouvez utiliser une chaîne pour les créer comme suit:
+En général, vous utilisez simplement les chaînes, mais pour créer des interfaces utilisateur personnalisées, vous pouvez utiliser n’importe quel UIView comme en-tête ou pied de page. Vous pouvez utiliser une chaîne pour les créer comme suit :
 
 ```csharp
 var section = new Section ("Header", "Footer");
 ```
 
-Pour utiliser des vues, il vous suffit de transmettre les vues au constructeur:
+Pour utiliser des vues, il vous suffit de transmettre les vues au constructeur :
 
 ```csharp
 var header = new UIImageView (Image.FromFile ("sample.png"));
@@ -166,7 +166,7 @@ var section = new Section (header);
 #### <a name="handling-nsaction"></a>Gestion de NSAction
 
 MT. D surface un `NSAction` en tant que délégué pour gérer les rappels.
-Par exemple, imaginons que vous souhaitez gérer un événement tactile pour une cellule de table créée par MT. E. Lors de la création d’un élément avec MT. D, fournissez simplement une fonction de rappel, comme indiqué ci-dessous:
+Par exemple, imaginons que vous souhaitez gérer un événement tactile pour une cellule de table créée par MT. E. Lors de la création d’un élément avec MT. D, fournissez simplement une fonction de rappel, comme indiqué ci-dessous :
 
 ```csharp
 new Section () {
@@ -243,7 +243,7 @@ Comme `EntryElement`son nom l’indique, est utilisé pour récupérer l’entr�
 
  [![](images/image11.png "EntryElement est utilisé pour récupérer l’entrée d’utilisateur")](images/image11.png#lightbox)
 
-Elle est initialisée avec trois valeurs:
+Elle est initialisée avec trois valeurs :
 
 - Légende de l’entrée qui sera affichée à l’utilisateur.
 - Texte d’espace réservé (il s’agit du texte grisé qui fournit une indication à l’utilisateur). 
@@ -254,7 +254,7 @@ L’espace réservé et la valeur peuvent être null. Toutefois, la légende est
 
 À tout moment, l’accès à sa propriété Value peut récupérer la valeur de `EntryElement`.
 
-En outre, `KeyboardType` la propriété peut être définie au moment de la création en lui attribuant le style de type de clavier souhaité pour l’entrée de données. Cela peut être utilisé pour configurer le clavier à l’aide des `UIKeyboardType` valeurs de comme indiqué ci-dessous:
+En outre, `KeyboardType` la propriété peut être définie au moment de la création en lui attribuant le style de type de clavier souhaité pour l’entrée de données. Cela peut être utilisé pour configurer le clavier à l’aide des `UIKeyboardType` valeurs de comme indiqué ci-dessous :
 
 - Numérique
 - Phone
@@ -280,7 +280,7 @@ mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 
  [![](images/image14.png "Un radioélément nécessite la spécification d’un groupe de radiogroupe dans le RootElement")](images/image14.png#lightbox)
 
- `RootElements`sont également utilisés pour coordonner les éléments radio. Les `RadioElement` membres peuvent s’étendre sur plusieurs sections (par exemple, pour implémenter un nom similaire au sélecteur de sonnerie de sonnerie et séparer les tonalités personnalisées des sonneries système). La vue Résumé affiche l’élément radio actuellement sélectionné. Pour ce faire, créez le `RootElement` avec le constructeur de groupe, comme suit:
+ `RootElements`sont également utilisés pour coordonner les éléments radio. Les `RadioElement` membres peuvent s’étendre sur plusieurs sections (par exemple, pour implémenter un nom similaire au sélecteur de sonnerie de sonnerie et séparer les tonalités personnalisées des sonneries système). La vue Résumé affiche l’élément radio actuellement sélectionné. Pour ce faire, créez le `RootElement` avec le constructeur de groupe, comme suit :
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
@@ -304,7 +304,7 @@ Le nom du groupe dans `RadioGroup` est utilisé pour afficher la valeur sélecti
 
  ![](images/image18.png "Élément Date")
 
-Lorsque la cellule correspondant à l’DateElement est sélectionnée, un sélecteur de dates est présenté comme indiqué ci-dessous:
+Lorsque la cellule correspondant à l’DateElement est sélectionnée, un sélecteur de dates est présenté comme indiqué ci-dessous :
 
  [![](images/image19.png "Lorsque la cellule correspondant à l’DateElement est sélectionnée, un sélecteur de dates est présenté comme indiqué")](images/image19.png#lightbox)
 
@@ -312,7 +312,7 @@ Lorsque la cellule correspondant à l’DateElement est sélectionnée, un séle
 
  [![](images/image20.png "Élément Time")](images/image20.png#lightbox)
 
-Lorsque la cellule correspondant à l’TimeElement est sélectionnée, un sélecteur d’heure est présenté comme indiqué ci-dessous:
+Lorsque la cellule correspondant à l’TimeElement est sélectionnée, un sélecteur d’heure est présenté comme indiqué ci-dessous :
 
  [![](images/image21.png "Lorsque la cellule correspondant à l’TimeElement est sélectionnée, un sélecteur d’heure est présenté comme indiqué")](images/image21.png#lightbox)
 
@@ -320,7 +320,7 @@ Lorsque la cellule correspondant à l’TimeElement est sélectionnée, un séle
 
  [![](images/image22.png "Élément DateTime")](images/image22.png#lightbox)
 
-Lorsque la cellule correspondant à l’DateTimeElement est sélectionnée, un sélecteur de date/heure est présenté comme indiqué ci-dessous:
+Lorsque la cellule correspondant à l’DateTimeElement est sélectionnée, un sélecteur de date/heure est présenté comme indiqué ci-dessous :
 
  [![](images/image23.png "Lorsque la cellule correspondant à l’DateTimeElement est sélectionnée, un sélecteur de date/heure est présenté comme indiqué")](images/image23.png#lightbox)
 
@@ -328,7 +328,7 @@ Lorsque la cellule correspondant à l’DateTimeElement est sélectionnée, un s
 
  [![](images/image24.png "Élément HTML")](images/image24.png#lightbox)
 
-Affiche la valeur de sa `Caption` propriété dans la cellule de tableau. `HTMLElement` Whe sélectionné, le `Url` assigné à l’élément est chargé dans un `UIWebView` contrôle comme indiqué ci-dessous:
+Affiche la valeur de sa `Caption` propriété dans la cellule de tableau. `HTMLElement` Whe sélectionné, le `Url` assigné à l’élément est chargé dans un `UIWebView` contrôle comme indiqué ci-dessous :
 
  [![](images/image25.png "Whe sélectionné, l’URL assignée à l’élément est chargée dans un contrôle UIWebView comme indiqué ci-dessous")](images/image25.png#lightbox)
 
@@ -349,7 +349,7 @@ En outre, n’importe `UIView` quel personnalisé peut être affiché `UIViewEle
 
 Cet élément doit être sous-classé, car il s’agit d’une classe abstraite. Vous devez substituer la `Height(RectangleF bounds)` méthode dans laquelle vous devez retourner la hauteur de l’élément, ainsi que `Draw(RectangleF bounds, CGContext context, UIView view)` dans lequel vous devez effectuer tous vos dessins personnalisés dans les limites spécifiées, à l’aide des paramètres Context et View. Cet élément fait le plus gros du sous-classement d' `UIView`un et le place dans la cellule pour être retourné, ce qui vous permet de ne pas avoir à implémenter deux remplacements simples. Vous pouvez voir un meilleur exemple d’implémentation dans l’exemple d’application `DemoOwnerDrawnElement.cs` dans le fichier.
 
-Voici un exemple très simple d’implémentation de la classe:
+Voici un exemple très simple d’implémentation de la classe :
 
 ```csharp
 public class SampleOwnerDrawnElement : OwnerDrawnElement
@@ -381,13 +381,13 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 
 Est une sous-classe de `RootElement` qui étend un `RootElement` pour pouvoir charger le contenu d’un enfant imbriqué à partir d’une URL locale ou distante. `JsonElement`
 
-Le `JsonElement` est un `RootElement` qui peut être instancié sous deux formes. Une version crée un `RootElement` qui chargera le contenu à la demande. Celles-ci sont créées à `JsonElement` l’aide des constructeurs qui prennent un argument supplémentaire à la fin, l’URL à partir de laquelle charger le contenu:
+Le `JsonElement` est un `RootElement` qui peut être instancié sous deux formes. Une version crée un `RootElement` qui chargera le contenu à la demande. Celles-ci sont créées à `JsonElement` l’aide des constructeurs qui prennent un argument supplémentaire à la fin, l’URL à partir de laquelle charger le contenu :
 
 ```csharp
 var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
-L’autre formulaire crée les données à partir d’un fichier local ou `System.Json.JsonObject` d’un existant que vous avez déjà analysé:
+L’autre formulaire crée les données à partir d’un fichier local ou `System.Json.JsonObject` d’un existant que vous avez déjà analysé :
 
 ```csharp
 var je = JsonElement.FromFile ("json.sample");
@@ -403,15 +403,15 @@ Pour plus d’informations sur l’utilisation de JSON avec MT. D, consultez le 
 
  *Pull-to-* L' *actualisation* est un effet visuel identifié à l’origine dans l’application *Tweetie2* , qui est devenu un effet populaire parmi de nombreuses applications.
 
-Pour ajouter la prise en charge de l’extraction automatique à vos boîtes de dialogue, vous devez effectuer deux opérations: raccorder un gestionnaire d’événements pour être averti lorsque l’utilisateur extrait les données et notifier le `DialogViewController` moment où les données ont été chargées pour revenir à son état par défaut.
+Pour ajouter la prise en charge de l’extraction automatique à vos boîtes de dialogue, vous devez effectuer deux opérations : raccorder un gestionnaire d’événements pour être averti lorsque l’utilisateur extrait les données et notifier le `DialogViewController` moment où les données ont été chargées pour revenir à son état par défaut.
 
-Le raccordement d’une notification est simple; Connectez-vous simplement `RefreshRequested` à l’événement `DialogViewController`sur le, comme suit:
+Le raccordement d’une notification est simple ; Connectez-vous simplement `RefreshRequested` à l’événement `DialogViewController`sur le, comme suit :
 
 ```csharp
 dvc.RefreshRequested += OnUserRequestedRefresh;
 ```
 
-Ensuite, sur votre `OnUserRequestedRefresh`méthode, vous pouvez effectuer la mise en file d’attente d’un chargement de données, demander des données à partir du réseau ou faire tourner un thread pour calculer les données. Une fois les données chargées, vous devez notifier `DialogViewController` la présence des nouvelles données et rétablir l’État par défaut de la vue, en appelant: `ReloadComplete`
+Ensuite, sur votre `OnUserRequestedRefresh`méthode, vous pouvez effectuer la mise en file d’attente d’un chargement de données, demander des données à partir du réseau ou faire tourner un thread pour calculer les données. Une fois les données chargées, vous devez notifier `DialogViewController` la présence des nouvelles données et rétablir l’État par défaut de la vue, en appelant : `ReloadComplete`
 
 ```csharp
 dvc.ReloadComplete ();
@@ -421,7 +421,7 @@ dvc.ReloadComplete ();
 
 Pour prendre en charge la recherche `EnableSearch` , définissez la `DialogViewController`propriété sur votre. Vous pouvez également définir la `SearchPlaceholder` propriété à utiliser comme texte de filigrane dans la barre de recherche.
 
-La recherche va modifier le contenu de la vue au fur et à mesure que l’utilisateur tape. Il recherche les champs visibles et les affiche à l’utilisateur. Le `DialogViewController` expose trois méthodes pour lancer, terminer ou déclencher par programmation une nouvelle opération de filtre sur les résultats. Ces méthodes sont répertoriées ci-dessous:
+La recherche va modifier le contenu de la vue au fur et à mesure que l’utilisateur tape. Il recherche les champs visibles et les affiche à l’utilisateur. Le `DialogViewController` expose trois méthodes pour lancer, terminer ou déclencher par programmation une nouvelle opération de filtre sur les résultats. Ces méthodes sont répertoriées ci-dessous :
 
 - `StartSearch`
 - `FinishSearch`
@@ -438,7 +438,7 @@ Il limite également le nombre de connexions réseau sortantes.
 
 Le chargeur d’image est implémenté dans la `ImageLoader` classe. il vous suffit d’appeler la `DefaultRequestImage` méthode, vous devez fournir l’URI de l’image que vous souhaitez charger, ainsi qu’une instance de l' `IImageUpdated` interface qui sera appelée lorsque la haute disponibilité de l’image ont été chargés.
 
-Par exemple, le code suivant charge une image à partir d’une `BadgeElement`URL dans un:
+Par exemple, le code suivant charge une image à partir d’une `BadgeElement`URL dans un :
 
 ```csharp
 string uriString = "http://some-server.com/some image url";
@@ -454,7 +454,7 @@ La classe ImageLoader expose une méthode de vidage que vous pouvez appeler lors
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>Utilisation de LINQ pour créer une hiérarchie d’éléments
 
-Grâce à l’utilisation astucieuse de LINQ C#et de la syntaxe d’initialisation de LINQ, LINQ peut être utilisé pour créer une hiérarchie d’éléments. Par exemple, le code suivant crée un écran à partir de certains tableaux de chaînes et gère la sélection des cellules via une fonction anonyme qui `StringElement`est transmise à chaque:
+Grâce à l’utilisation astucieuse de LINQ C#et de la syntaxe d’initialisation de LINQ, LINQ peut être utilisé pour créer une hiérarchie d’éléments. Par exemple, le code suivant crée un écran à partir de certains tableaux de chaînes et gère la sélection des cellules via une fonction anonyme qui `StringElement`est transmise à chaque :
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {
@@ -474,7 +474,7 @@ Cela peut être facilement combiné avec un magasin de données XML ou des donn�
 
 Vous pouvez créer votre propre élément en héritant d’un élément existant ou en dérivant de l’élément de classe racine.
 
-Pour créer votre propre élément, vous pouvez substituer les méthodes suivantes:
+Pour créer votre propre élément, vous pouvez substituer les méthodes suivantes :
 
 ```csharp
 // To release any heavy resources that you might have
@@ -496,14 +496,14 @@ void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path
 bool Matches (string text);
 ```
 
-Si votre élément peut avoir une taille variable, vous devez implémenter l' `IElementSizing` interface, qui contient une méthode:
+Si votre élément peut avoir une taille variable, vous devez implémenter l' `IElementSizing` interface, qui contient une méthode :
 
 ```csharp
 // Returns the height for the cell at indexPath.Section, indexPath.Row
 float GetHeight (UITableView tableView, NSIndexPath indexPath);
 ```
 
-Si vous envisagez d’implémenter votre `GetCell` méthode en appelant `base.GetCell(tv)` et en personnalisant la cellule retournée, vous devez également `CellKey` substituer la propriété pour retourner une clé qui sera unique à votre élément, comme suit:
+Si vous envisagez d’implémenter votre `GetCell` méthode en appelant `base.GetCell(tv)` et en personnalisant la cellule retournée, vous devez également `CellKey` substituer la propriété pour retourner une clé qui sera unique à votre élément, comme suit :
 
 ```csharp
 static NSString MyKey = new NSString ("MyKey");
@@ -522,7 +522,7 @@ La réflexion et l’API des éléments utilisent le même `DialogViewController
 
 Est simplement une sous-classe `UITableViewController` du et vous pouvez la personnaliser de la même façon `UITableViewController`que vous le feriez. `DialogViewController`
 
-Par exemple, si vous souhaitez modifier le style de liste pour `Grouped` qu’il soit ou `Plain`, vous pouvez définir cette valeur en modifiant la propriété lors de la création du contrôleur, comme suit:
+Par exemple, si vous souhaitez modifier le style de liste pour `Grouped` qu’il soit ou `Plain`, vous pouvez définir cette valeur en modifiant la propriété lors de la création du contrôleur, comme suit :
 
 ```csharp
 var myController = new DialogViewController (root, true) {
@@ -530,7 +530,7 @@ var myController = new DialogViewController (root, true) {
 }
 ```
 
-Pour les `DialogViewController`personnalisations plus avancées du, telles que la définition de son arrière-plan, vous devez la sous-classer et remplacer les méthodes appropriées, comme illustré dans l’exemple ci-dessous:
+Pour les `DialogViewController`personnalisations plus avancées du, telles que la définition de son arrière-plan, vous devez la sous-classer et remplacer les méthodes appropriées, comme illustré dans l’exemple ci-dessous :
 
 ```csharp
 class SpiffyDialogViewController : DialogViewController {

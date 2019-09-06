@@ -4,15 +4,15 @@ description: Ce document explique où rechercher les informations de version et 
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f2d9921795d2a788a6646aad36712a0691c07d50
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226772"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291174"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>Où trouver les informations sur ma version et les journaux ?
 
@@ -88,7 +88,7 @@ Pour chaque emplacement de journalisation, assurez-vous de procéder à l’inst
 
 #### <a name="a-idvs-2015-namevs-2015--visual-studio-2015"></a><a id="vs-2015" name="vs-2015" />Visual Studio 2015
 
-#### <a name="a-idwindows-universal-installer-namewindows-universal-installer--xamarin-universal-installer"></a><a id="windows-universal-installer" name="windows-universal-installer" />Programme d’installation de Xamarin «Universal»
+#### <a name="a-idwindows-universal-installer-namewindows-universal-installer--xamarin-universal-installer"></a><a id="windows-universal-installer" name="windows-universal-installer" />Programme d’installation de Xamarin « Universal »
 
 `%LOCALAPPDATA%\Xamarin\Universal`
 
@@ -108,7 +108,7 @@ Faire [Options de ligne de commande](https://msdn.microsoft.com/library/aa367988
 devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 ```
 
-Référence: [/log (devenv. exe)](https://msdn.microsoft.com/library/ms241272.aspx)
+Référence : [/log (devenv. exe)](https://msdn.microsoft.com/library/ms241272.aspx)
 
 ### <a name="a-idmac-logs-namemac-logs-mac-logs"></a><a id="mac-logs" name="mac-logs" />Journaux Mac
 
@@ -118,15 +118,15 @@ Vous pouvez sélectionner l’élément de menu **go > accéder au dossier** dan
 
 `~/Library/Logs/VisualStudio/7.0`(ce nombre peut varier selon la version que vous utilisez)
 
-Ce dossier peut également être ouvert via «aide-> Ouvrir le répertoire des journaux».
+Ce dossier peut également être ouvert via « aide-> Ouvrir le répertoire des journaux ».
 
 #### <a name="a-idmac-logs-xamarin-studio-namemac-logs-xamarin-studio-xamarin-studio"></a><a id="mac-logs-xamarin-studio" name="mac-logs-xamarin-studio" />Xamarin Studio
 
 `~/Library/Logs/XamarinStudio-6.0`(ce nombre peut varier selon la version que vous utilisez)
 
-Ce dossier peut également être ouvert via «aide-> Ouvrir le répertoire des journaux».
+Ce dossier peut également être ouvert via « aide-> Ouvrir le répertoire des journaux ».
 
-#### <a name="a-idmac-universal-installer-namemac-universal-installer-xamarin-universal-installer"></a><a id="mac-universal-installer" name="mac-universal-installer" />Programme d’installation de Xamarin «Universal»
+#### <a name="a-idmac-universal-installer-namemac-universal-installer-xamarin-universal-installer"></a><a id="mac-universal-installer" name="mac-universal-installer" />Programme d’installation de Xamarin « Universal »
 
 `~/Library/Logs/XamarinInstaller/Universal`
 
@@ -145,8 +145,8 @@ Il s’agit des journaux du `XamarinInstaller.dmg` programme d’installation.
 3. Nettoyez et régénérez le projet.
 
 4. Copiez et collez la sortie de génération de l’IDE dans un fichier texte.
-     - Visual Studio (Windows): **Afficher > sortie > Afficher la sortie à partir de: Build**
-     - Visual Studio pour Mac: **Afficher > Pad > erreurs > sortie de la génération (onglet)**
+     - Visual Studio (Windows) : **Afficher > sortie > Afficher la sortie à partir de : Build**
+     - Visual Studio pour Mac : **Afficher > Pad > erreurs > sortie de la génération (onglet)**
 
 ## <a name="a-iddebug-logs-for-xamarin-apps-namedebug-logs-for-xamarin-apps-debug-logs-for-xamarinandroid-and-xamarinios-apps"></a><a id="debug-logs-for-xamarin-apps" name="debug-logs-for-xamarin-apps" />Journaux de débogage pour les applications Xamarin. Android et Xamarin. iOS
 
@@ -158,7 +158,7 @@ Il s’agit des journaux du `XamarinInstaller.dmg` programme d’installation.
 
 ### <a name="visual-studio"></a>Visual Studio
 
-**Afficher > sortie > Afficher la sortie à partir de: Debug**
+**Afficher > sortie > Afficher la sortie à partir de : Debug**
 
 ### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Journaux [`adb`](https://developer.android.com/tools/help/adb.html) logcat Android
 
@@ -169,16 +169,16 @@ Consultez également la page [Journal de débogage Android](~/android/deploy-tes
 #### <a name="visual-studio"></a>Visual Studio
 
 1. **Outils > Android > Démarrer l’invite de commandes Android ADB**
-2. Nettoyer le journal:`adb logcat -c`
+2. Nettoyer le journal :`adb logcat -c`
 3. Reproduisez le problème.
-4. Sortie du journal:`adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
+4. Sortie du journal :`adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio pour Mac
 
 1. **Outils > Ouvrir Android SDK invite de commandes**
-2. Nettoyer le journal:`adb logcat -c`
+2. Nettoyer le journal :`adb logcat -c`
 3. Reproduisez le problème.
-4. Sortie du journal:`adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
+4. Sortie du journal :`adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />journaux du simulateur iOS (sur Mac)
 

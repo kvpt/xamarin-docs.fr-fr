@@ -1,37 +1,37 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
-title: Cross-Platform pour développeurs bureautiques
-description: Ce document contient des liens vers des guides différents qui décrivent les Xamarin.Forms pour les développeurs WPF et Windows Forms. Le contenu lié explore l’application du cycle de vie, les contrôles d’interface utilisateur, des conseils et des exemples de portage.
-author: asb3993
-ms.author: amburns
+title: Multiplateforme pour les développeurs de postes de travail
+description: Ce document contient des liens vers les différents guides qui décrivent Xamarin. Forms pour les développeurs WPF et Windows Forms. Le contenu lié explore le cycle de vie de l’application, les contrôles d’interface utilisateur, le guidage des portages et des exemples.
+author: conceptdev
+ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4c14b3f6458180c6da9f123cab5aad406091667
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270515"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290362"
 ---
-# <a name="cross-platform-for-desktop-developers"></a>Cross-Platform pour développeurs bureautiques
+# <a name="cross-platform-for-desktop-developers"></a>Multiplateforme pour les développeurs de postes de travail
 
-Cette section contient des informations pour aider les développeurs WPF et Windows Forms pour découvrir le développement d’applications mobiles avec Xamarin, en comparant leurs connaissances existantes à l’expérience et idiomes mobiles et en fournissant des exemples de portage des applications de bureau pour mobiles.
+Cette section contient des informations destinées à aider WPF et Windows Forms développeurs à apprendre le développement d’applications mobiles avec Xamarin, en référençant leurs connaissances et leur expérience existantes sur des idiomes mobiles et en fournissant des exemples de Portage d’applications de bureau vers des appareils mobiles.
 
 ## <a name="app-lifecycle-comparisonlifecyclemd"></a>[Comparaison du cycle de vie des applications](lifecycle.md)
 
-Présentation des différences entre WPF et Xamarin.Forms États de démarrage et d’arrière-plan application.
+Comprendre les différences entre les États de démarrage et d’arrière-plan des applications WPF et Xamarin. Forms.
 
-## <a name="ui-controls-comparisoncontrolsindexmd"></a>[Comparaison des contrôles de l’interface utilisateur](controls/index.md)
+## <a name="ui-controls-comparisoncontrolsindexmd"></a>[Comparaison des contrôles d’interface utilisateur](controls/index.md)
 
-Référence rapide pour rechercher des contrôles équivalents dans les Windows Forms, WPF et Xamarin.Forms, y compris des conseils supplémentaires sur les différences entre WPF et Xamarin.Forms.
+Aide-mémoire pour trouver des contrôles équivalents dans Windows Forms, WPF et Xamarin. Forms, y compris des conseils supplémentaires sur les différences entre WPF et Xamarin. Forms.
 
-## <a name="porting-guidanceportingmd"></a>[Guide de portage](porting.md)
+## <a name="porting-guidanceportingmd"></a>[Guide de Portage](porting.md)
 
-À l’aide de l’Analyseur de portabilité pour aider à migrer le code d’application de bureau (à l’exception de l’interface utilisateur) pour Xamarin.Forms.
+Utilisation de l’analyseur de portabilité pour faciliter la migration du code de l’application de bureau (à l’exclusion de l’interface utilisateur) vers Xamarin. Forms.
 
 ## <a name="samplessamplesmd"></a>[Exemples](samples.md)
 
-Exemples de référence illustrant l’architecture d’application enterprise et de portage de code à partir de WPF vers Xamarin.Forms.
+Exemples de référence illustrant l’architecture des applications d’entreprise et le portage du code de WPF vers Xamarin. Forms.
 
 ## <a name="learn-more"></a>En savoir plus
 
-[![Création de livre électronique Mobile Apps](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [ ![livre électronique des modèles d’Application d’entreprise](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)
+[Création d’Mobile Apps livre électronique des modèles d’application d’entreprise ![](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [ ![](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)

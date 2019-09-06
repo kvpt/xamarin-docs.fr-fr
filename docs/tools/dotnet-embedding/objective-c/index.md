@@ -3,15 +3,15 @@ title: Support objective-C
 description: Ce document fournit une description de la prise en charge de Objective-C dans l’incorporation .NET. Il aborde le décompte de références automatiques, chaîne NSString, les protocoles, le protocole NSObject, les exceptions et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 3367A4A4-EC88-4B75-96D0-51B1FCBCE614
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 0053bdf4e34f12accc59bde36c04404a19c6d54b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 8798e0acf7b1184c64c7012b2f724e2fa7d2c816
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227799"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292767"
 ---
 # <a name="objective-c-support"></a>Support objective-C
 
@@ -35,7 +35,7 @@ Les interfaces managées sont converties en protocoles objective- `@required`C o
 
 Par défaut, le hachage et l’égalité par défaut de .NET et du runtime objective-C sont supposés être interchangeables, car ils partagent une sémantique similaire.
 
-Lorsqu’un type managé substitue `Equals(Object)` ou `GetHashCode`, cela signifie généralement que le comportement par défaut (.net) n’était pas suffisant; cela implique que le comportement objective-C par défaut n’est probablement pas suffisant.
+Lorsqu’un type managé substitue `Equals(Object)` ou `GetHashCode`, cela signifie généralement que le comportement par défaut (.net) n’était pas suffisant ; cela implique que le comportement objective-C par défaut n’est probablement pas suffisant.
 
 Dans ce cas, le générateur remplace la [`isEqual:`](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc) méthode et [`hash`](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc) la propriété définies dans le [ `NSObject` protocole](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc). Cela permet d’utiliser l’implémentation managée personnalisée de manière transparente à partir du code Objective-C.
 
@@ -53,7 +53,7 @@ Les types managés `IComparable` qui implémentent (ou `IComparable<T>`sa versio
 
 ### <a name="categories"></a>Categories
 
-Les méthodes d’extensions managées sont converties en catégories. Par exemple, les méthodes d’extension suivantes `Collection`sur:
+Les méthodes d’extensions managées sont converties en catégories. Par exemple, les méthodes d’extension suivantes `Collection`sur :
 
 ```csharp
 public static class SomeExtensions {
@@ -62,7 +62,7 @@ public static class SomeExtensions {
 }
 ```
 
-créerait une catégorie objective-C similaire à celle-ci:
+créerait une catégorie objective-C similaire à celle-ci :
 
 ```objc
 @interface Collection (SomeExtensions)
@@ -86,14 +86,14 @@ public bool this[int index] {
 }
 ```
 
-crée objective-C similaire à ce qui suit:
+crée objective-C similaire à ce qui suit :
 
 ```objc
 - (id)objectAtIndexedSubscript:(int)idx;
 - (void)setObject:(id)obj atIndexedSubscript:(int)idx;
 ```
 
-qui peut être utilisé par le biais de la syntaxe de script objective-C:
+qui peut être utilisé par le biais de la syntaxe de script objective-C :
 
 ```objc
 if ([intCollection [0] isEqual:@42])
@@ -134,7 +134,7 @@ public class SuperUnique : Unique {
 }
 ```
 
-API en surface objective-C:
+API en surface objective-C :
 
 ```objc
 @interface SuperUnique : Unique
@@ -149,7 +149,7 @@ Ici, `initWithId:` a été marqué comme non disponible.
 
 ### <a name="operator"></a>Opérateur
 
-Objective-C ne prend pas en charge la surcharge C# d’opérateur comme c’est le cas, par conséquent, les opérateurs sont convertis en sélecteurs de classe:
+Objective-C ne prend pas en charge la surcharge C# d’opérateur comme c’est le cas, par conséquent, les opérateurs sont convertis en sélecteurs de classe :
 
 ```csharp
 public static AllOperators operator + (AllOperators c1, AllOperators c2)
@@ -164,9 +164,9 @@ par celle-ci :
 + (instancetype)add:(Overloads_AllOperators *)anObjectC1 c2:(Overloads_AllOperators *)anObjectC2;
 ```
 
-Toutefois, certains langages .NET ne prennent pas en charge la surcharge d’opérateur. il est donc courant d’inclure également une méthode nommée [«conviviale»](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) en plus de la surcharge d’opérateur.
+Toutefois, certains langages .NET ne prennent pas en charge la surcharge d’opérateur. il est donc courant d’inclure également une méthode nommée [« conviviale »](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) en plus de la surcharge d’opérateur.
 
-Si la version de l’opérateur et la version «conviviale» sont trouvées, seule la version conviviale sera générée, car elles seront générées avec le même nom objective-C.
+Si la version de l’opérateur et la version « conviviale » sont trouvées, seule la version conviviale sera générée, car elles seront générées avec le même nom objective-C.
 
 ```csharp
 public static AllOperatorsWithFriendly operator + (AllOperatorsWithFriendly c1, AllOperatorsWithFriendly c2)
@@ -190,11 +190,11 @@ fait
 
 Dans, l' `==` opérateur C# in est géré en tant qu’opérateur général, comme indiqué ci-dessus.
 
-Toutefois, si l’opérateur «convivial» est trouvé, `==` l’opérateur `!=` et l’opérateur seront ignorés dans la génération.
+Toutefois, si l’opérateur « convivial » est trouvé, `==` l’opérateur `!=` et l’opérateur seront ignorés dans la génération.
 
 ### <a name="datetime-vs-nsdate"></a>DateTime vs NSDate
 
-À partir [`NSDate`](https://developer.apple.com/reference/foundation/nsdate?language=objc) de la documentation:
+À partir [`NSDate`](https://developer.apple.com/reference/foundation/nsdate?language=objc) de la documentation :
 
 > `NSDate`les objets encapsulent un point unique dans le temps, indépendamment d’un système calendrical ou d’un fuseau horaire particulier. Les objets date sont immuables, ce qui représente un intervalle de temps invariant par rapport à une date de référence absolue (00:00:00 UTC le 1er janvier 2001).
 
@@ -202,7 +202,7 @@ En raison `NSDate` de la date de référence, toutes les conversions entre les d
 
 #### <a name="datetime-to-nsdate"></a>DateTime pour NSDate
 
-Lors de la `DateTime` conversion `NSDate`de en `Kind` , la `DateTime` propriété sur est prise en compte:
+Lors de la `DateTime` conversion `NSDate`de en `Kind` , la `DateTime` propriété sur est prise en compte :
 
 |Kind|Résultats|
 |---|---|
@@ -210,15 +210,15 @@ Lors de la `DateTime` conversion `NSDate`de en `Kind` , la `DateTime` propriét�
 |`Local`|Le résultat de l' `ToUniversalTime()` appel de dans `DateTime` l’objet fourni est utilisé pour la conversion.|
 |`Unspecified`|L’objet `DateTime` fourni est supposé être UTC, ce qui est le même `Kind` comportement `Utc`lorsque est.|
 
-La conversion utilise la formule suivante:
+La conversion utilise la formule suivante :
 
 ```
 TimeInterval = DateTimeObjectTicks - NSDateReferenceDateTicks / TicksPerSecond
 ```
 
-Dans cette formule: 
+Dans cette formule : 
 
-- `NSDateReferenceDateTicks`est calculé en fonction de `NSDate` la date de référence de 00:00:00 UTC le 1er janvier 2001: 
+- `NSDateReferenceDateTicks`est calculé en fonction de `NSDate` la date de référence de 00:00:00 UTC le 1er janvier 2001 : 
 
     ```csharp
     new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
@@ -226,19 +226,19 @@ Dans cette formule:
 
 - [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond)est défini sur[`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)
 
-Pour créer l' `NSDate` objet `TimeInterval` , est utilisé avec le `NSDate` sélecteur [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) .
+Pour créer l' `NSDate` objet `TimeInterval` , est utilisé avec le `NSDate` sélecteur [dateWithTimeIntervalSinceReferenceDate :](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) .
 
 #### <a name="nsdate-to-datetime"></a>NSDate à DateTime
 
-La conversion de `NSDate` en `DateTime` utilise la formule suivante:
+La conversion de `NSDate` en `DateTime` utilise la formule suivante :
 
 ```
 DateTimeTicks = NSDateTimeIntervalSinceReferenceDate * TicksPerSecond + NSDateReferenceDateTicks
 ```
 
-Dans cette formule: 
+Dans cette formule : 
 
-- `NSDateReferenceDateTicks`est calculé en fonction de `NSDate` la date de référence de 00:00:00 UTC le 1er janvier 2001: 
+- `NSDateReferenceDateTicks`est calculé en fonction de `NSDate` la date de référence de 00:00:00 UTC le 1er janvier 2001 : 
 
     ```csharp
     new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;

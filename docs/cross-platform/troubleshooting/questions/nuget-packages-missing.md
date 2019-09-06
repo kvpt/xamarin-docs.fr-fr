@@ -3,21 +3,21 @@ title: Erreur de packages manquants après la mise à jour de packages NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: D61CC966-1D4A-49A5-8A6F-41572E28329B
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 49f0e57af1ad6b6e0f322eb9865ba99db4dd47ec
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 6ea175859055420780463619d0ae7fe9ec85c857
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199894"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288206"
 ---
 # <a name="missing-packages-error-after-updating-nuget-packages"></a>Erreur de packages manquants après la mise à jour de packages NuGet
 
 Ce problème a été signalé principalement dans les exemples de solutions d’application Xamarin. Forms, mais le potentiel de ce problème peut se produire sur n’importe quel projet qui utilise des packages NuGet.
 
-Si, après avoir mis à jour les packages NuGet dans votre projet ou votre solution, une erreur qui fait référence aux anciens numéros de version de package s’affiche, par exemple:
+Si, après avoir mis à jour les packages NuGet dans votre projet ou votre solution, une erreur qui fait référence aux anciens numéros de version de package s’affiche, par exemple :
 
 ```csharp
 Error: This project references NuGet package(s) that are missing on this computer.
@@ -33,7 +33,7 @@ Cela peut se produire si les éléments XML du fichier. csproj qui font référe
 
 Pour résoudre ce problème, modifiez manuellement le ou les fichiers. csproj et supprimez tous les éléments qui font référence à l’ancien numéro de version.
 
-Exemples d’éléments à supprimer (s’ils ont l’ancien numéro de version de package):
+Exemples d’éléments à supprimer (s’ils ont l’ancien numéro de version de package) :
 
 ```xml
 <Reference Include="Xamarin.Forms.Maps">

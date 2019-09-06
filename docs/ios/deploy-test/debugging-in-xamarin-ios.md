@@ -4,15 +4,15 @@ description: Ce document décrit comment utiliser le débogueur dans Visual Stud
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: e5f322ece2775f975ab3737eb20ebbd854afa6c4
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: a307641b466eae680c8eb43c1b8fff7623195cde
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70064835"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283093"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
@@ -145,7 +145,7 @@ Dans Visual Studio pour Mac, ils se présentent comme ceci :
 
  [![](debugging-in-xamarin-ios-images/image7.png "Les outils de débogage permettent au développeur de contrôler l’exécution du programme")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-Ces équivalents sont :
+Ces règles sont les suivantes :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal** - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
@@ -158,7 +158,7 @@ Dans Visual Studio, ils se présentent comme ceci :
 
 [![](debugging-in-xamarin-ios-images/image7vs.png "Les outils de débogage permettent au développeur de contrôler l’exécution du programme")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-Ces équivalents sont :
+Ces règles sont les suivantes :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal (F11)**  - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.

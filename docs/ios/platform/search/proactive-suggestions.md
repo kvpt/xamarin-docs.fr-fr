@@ -4,15 +4,15 @@ description: Cet article explique comment utiliser des suggestions proactives da
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 294616e7766a6613a014495e5f9d124f74465072
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121412"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291735"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Présentation des suggestions proactives dans Xamarin. iOS
 
@@ -55,7 +55,7 @@ Si l’application lit le média à l’aide de l’API [MPPlayableContentManage
 
 ## <a name="contextual-siri-reminders"></a>Rappels Siri contextuels
 
-Permet à l’utilisateur d’utiliser Siri pour créer rapidement un rappel afin d’afficher le contenu actuellement affiché dans l’application à une date ultérieure. Par exemple, s’ils visualisaient un avis de restaurant dans l’application, ils pouvaient appeler Siri et *«me le rappeler lorsque je suis à la page.»* Siri génère le rappel avec un lien vers la revue dans l’application.
+Permet à l’utilisateur d’utiliser Siri pour créer rapidement un rappel afin d’afficher le contenu actuellement affiché dans l’application à une date ultérieure. Par exemple, s’ils visualisaient un avis de restaurant dans l’application, ils pouvaient appeler Siri et *« me le rappeler lorsque je suis à la page. »* Siri génère le rappel avec un lien vers la revue dans l’application.
 
 ## <a name="contact-based-suggestions"></a>Suggestions basées sur les contacts
 
@@ -65,7 +65,7 @@ Permet aux contacts de l’application (et aux informations associées de contac
 
 Si une application de partage de la casse utilise l’API [MKDirectionsRequest](xref:MapKit.MKDirectionsRequest) , iOS 10 la présente comme option dans le sélecteur d’applications à des moments où l’utilisateur est susceptible de vouloir effectuer une opération de remplacement. L’application doit également être inscrite en tant qu’application de partage de code `MKDirectionsModeRideShare` en spécifiant pour la clé `Info.plist` [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) dans son fichier.
 
-Si l’application prend uniquement en charge le partage d’une seule fois, la suggestion du système commence par *«obtenir une valeur...»* , si d’autres types de direction du routage (tels que le parcours ou le vélo) sont pris en charge, le système utilise *«obtenir des directions vers...».*
+Si l’application prend uniquement en charge le partage d’une seule fois, la suggestion du système commence par *« obtenir une valeur... »* , si d’autres types de direction du routage (tels que le parcours ou le vélo) sont pris en charge, le système utilise *« obtenir des directions vers... ».*
 
 > [!IMPORTANT]
 > L’objet [MKMapItem](xref:MapKit.MKMapItem) que l’application reçoit peut ne pas inclure d’informations de longitude et de latitude et nécessitera le géocodage.
@@ -74,17 +74,17 @@ Si l’application prend uniquement en charge le partage d’une seule fois, la 
 
 L’ajout de la prise en charge de suggestions proactives à une application Xamarin. iOS est généralement aussi simple que d’implémenter quelques API ou de s’étendre sur quelques API que l’application peut déjà implémenter.
 
-Les suggestions proactives fonctionnent avec les applications de trois manières principales:
+Les suggestions proactives fonctionnent avec les applications de trois manières principales :
 
 - **`NSUserActivity`et**  -  Schema.org`NSUserActivity` aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. Schema.org ajoute des fonctionnalités similaires aux pages Web.
 - **Suggestions d’emplacement** : si l’application offre ou consomme des informations sur l’emplacement, ces extensions d’API offrent de nouvelles façons de partager ces informations entre les applications.
 - **Suggestions d’applications multimédias** : le système peut promouvoir l’application et son contenu multimédia en fonction du contexte de l’interaction de l’utilisateur avec l’appareil iOS.
 
-Et est pris en charge dans l’application en implémentant les éléments suivants:
+Et est pris en charge dans l’application en implémentant les éléments suivants :
 
 - **La remise** - `NSUserActivity` a été ajoutée dans iOS 8 pour prendre en charge le transfert, ce qui permet au développeur de démarrer une activité sur un appareil, puis de le poursuivre sur un autre (voir [présentation du transfert](~/ios/platform/handoff.md)).
 - **Recherche Spotlight** -iOS 9 a ajouté la possibilité de promouvoir le contenu de l’application dans les résultats `NSUserActivity` de la recherche Spotlight à l’aide de (consultez la page [Rechercher avec un projecteur principal](~/ios/platform/search/corespotlight.md)).
-- Les **rappels Siri** contextuels-dans iOS `NSUserActivity` 10, ont été développés pour permettre à Siri de créer rapidement un rappel pour afficher le contenu actuellement affiché par l’utilisateur dans l’application à une date ultérieure.
+- Les **rappels Siri contextuels** -dans iOS `NSUserActivity` 10, ont été développés pour permettre à Siri de créer rapidement un rappel pour afficher le contenu actuellement affiché par l’utilisateur dans l’application à une date ultérieure.
 - **Suggestions d’emplacement** : iOS 10 `NSUserActivity` s’améliore pour capturer les emplacements affichés dans l’application et les promouvoir à de nombreux endroits dans le système.
 - **Les requêtes**  -  Siricontextuellesfournissentuncontexteauxinformationsprésentéesàl’intérieurdel’applicationàSiriafinquel’utilisateurpuisseobtenirdesinstructionsoupasserunappelenappelantSiriàpartirdel’application.`NSUserActivity`
 - **Interactions de contact** -nouveauté dans iOS 10 `NSUserActivity` , permet de promouvoir les applications de communication à partir d’une carte de visite (dans l’application contacts) en tant que méthode de communication alternative.
@@ -93,17 +93,17 @@ Toutes ces fonctionnalités ont une chose en commun, elles sont toutes utilisée
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-Comme indiqué ci- `NSUserActivity` dessus, le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity`est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant une application de restaurant:
+Comme indiqué ci- `NSUserActivity` dessus, le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity`est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant une application de restaurant :
 
 [![](proactive-suggestions-images/activity02.png "Mécanisme de mise en cache de l’État léger NSUserActivity")](proactive-suggestions-images/activity02.png#lightbox)
 
-Avec les interactions suivantes:
+Avec les interactions suivantes :
 
 1. Lorsque l’utilisateur travaille avec l’application, un `NSUserActivity` est créé pour recréer l’état de l’application ultérieurement.
 2. Si l’utilisateur recherche un restaurant, le même modèle de création d’activités est suivi.
 3. Là encore, lorsque l’utilisateur affiche un résultat. Dans ce dernier cas, l’utilisateur visualise un emplacement et dans iOS 10, le système est plus conscient de certains concepts (tels que l’emplacement ou les interactions de communication).
 
-Examinez de plus près le dernier écran:
+Examinez de plus près le dernier écran :
 
 [![](proactive-suggestions-images/activity03.png "Détails du NSUserActivity")](proactive-suggestions-images/activity03.png#lightbox)
 
@@ -115,9 +115,9 @@ Pour plus d’informations sur le transfert et la recherche Spotlight, consultez
 
 ### <a name="creating-an-activity"></a>Création d’une activité
 
-Avant de créer une activité, vous devez créer un identificateur de type d’activité pour l’identifier. L’identificateur de type d’activité est une chaîne abrégée ajoutée `NSUserActivityTypes` au tableau du `Info.plist` fichier de l’application utilisée pour identifier de manière unique un type d’activité utilisateur donné. Il y aura une entrée dans le tableau pour chaque activité que l’application prend en charge et expose à la recherche d’applications. Pour plus d’informations, consultez notre référence sur la création d’identificateurs de [type d’activité](~/ios/platform/search/nsuseractivity.md) .
+Avant de créer une activité, vous devez créer un identificateur de type d’activité pour l’identifier. L’identificateur de type d’activité est une chaîne abrégée ajoutée `NSUserActivityTypes` au tableau du `Info.plist` fichier de l’application utilisée pour identifier de manière unique un type d’activité utilisateur donné. Il y aura une entrée dans le tableau pour chaque activité que l’application prend en charge et expose à la recherche d’applications. Pour plus d’informations, consultez notre référence sur la [création d’identificateurs de type d’activité](~/ios/platform/search/nsuseractivity.md) .
 
-Examinez un exemple d’activité:
+Examinez un exemple d’activité :
 
 ```csharp
 // Create App Activity
@@ -142,7 +142,7 @@ activity.BecomeCurrent();
 
 Une activité est créée à l’aide d’un identificateur de type d’activité. Ensuite, certaines métadonnées qui définissent l’activité sont créées afin que cet État puisse être restauré à une date ultérieure. Ensuite, l’activité reçoit un titre explicite et est attachée aux informations utilisateur. Enfin, certaines fonctionnalités sont activées et l’activité est envoyée au système.
 
-Le code ci-dessus peut être amélioré pour inclure les métadonnées qui fournissent le contexte à l’activité en effectuant les modifications suivantes:
+Le code ci-dessus peut être amélioré pour inclure les métadonnées qui fournissent le contexte à l’activité en effectuant les modifications suivantes :
 
 ```csharp
 ...
@@ -157,7 +157,7 @@ activity.ContentAttributeSet = attributes;
 activity.BecomeCurrent();
 ```
 
-Si le développeur dispose d’un site Web capable d’afficher les mêmes informations que l’application, l’application peut inclure l’URL et le contenu peut être affiché sur d’autres appareils sur lesquels l’application n’est pas installée (par le biais du transfert):
+Si le développeur dispose d’un site Web capable d’afficher les mêmes informations que l’application, l’application peut inclure l’URL et le contenu peut être affiché sur d’autres appareils sur lesquels l’application n’est pas installée (par le biais du transfert) :
 
 ```csharp
 // Restore on the web
@@ -187,37 +187,37 @@ Le développeur doit s’assurer qu’il s’agit du même identificateur de typ
 
 ### <a name="benefits-of-creating-an-activity"></a>Avantages de la création d’une activité
 
-Avec la quantité minimale de code présentée ci-dessus, l’application peut désormais tirer parti de trois nouvelles fonctionnalités iOS 10:
+Avec la quantité minimale de code présentée ci-dessus, l’application peut désormais tirer parti de trois nouvelles fonctionnalités iOS 10 :
 
 - **Handoff**
 - **Recherche Spotlight**
 - **Rappels Siri contextuels**
 
-La section suivante présente l’activation de deux autres nouvelles fonctionnalités iOS 10:
+La section suivante présente l’activation de deux autres nouvelles fonctionnalités iOS 10 :
 
 - **Suggestions d’emplacement**
 - **Requêtes Siri contextuelles**
 
 ### <a name="location-based-suggestions"></a>Suggestions basées sur l’emplacement 
 
-Prenons l’exemple de l’application restaurant Search ci-dessus. S’il a implémenté `NSUserActivity` et correctement rempli tous les métadonnées et attributs, l’utilisateur peut effectuer les opérations suivantes:
+Prenons l’exemple de l’application restaurant Search ci-dessus. S’il a implémenté `NSUserActivity` et correctement rempli tous les métadonnées et attributs, l’utilisateur peut effectuer les opérations suivantes :
 
 1. Trouvez un restaurant dans l’application à laquelle il souhaite atteindre un ami.
 2. Lorsque l’utilisateur quitte l’application à l’aide du sélecteur d’applications multitâche, le système affiche automatiquement une suggestion (en bas de l’écran) pour obtenir des instructions sur le restaurant à l’aide de son application de navigation préférée.
-3. Si l’utilisateur bascule vers l’application messages et commence à taper *«allons-y répondre»* , le clavier QuickType suggère automatiquement le collage dans l’adresse du restaurant.
+3. Si l’utilisateur bascule vers l’application messages et commence à taper *« allons-y répondre »* , le clavier QuickType suggère automatiquement le collage dans l’adresse du restaurant.
 4. Si l’utilisateur bascule vers l’application Maps, l’adresse du restaurant est automatiquement suggérée comme destination.
 5. Cela fonctionne même pour les applications tierces (qui `NSUserActivity`prennent en charge). l’utilisateur peut donc basculer vers une application de partage d’emplacement et l’adresse du restaurant est également suggérée ici comme destination.
-6. Il fournit également le contexte à Siri, de sorte que l’utilisateur peut appeler Siri au sein de l’application restaurant et demander *«obtenir des directions...»* et Siri fournit des instructions au restaurant que l’utilisateur visualise.
+6. Il fournit également le contexte à Siri, de sorte que l’utilisateur peut appeler Siri au sein de l’application restaurant et demander *« obtenir des directions... »* et Siri fournit des instructions au restaurant que l’utilisateur visualise.
 
 Toutes les fonctionnalités ci-dessus ont une chose en commun, elles indiquent toutes l’emplacement d’origine de la suggestion. Dans le cas de l’exemple ci-dessus, il s’agit de l’application fictive de revue de restaurant.
 
-iOS 10 a été amélioré pour activer cette fonctionnalité pour une application via plusieurs petites modifications et ajouts aux Frameworks existants:
+iOS 10 a été amélioré pour activer cette fonctionnalité pour une application via plusieurs petites modifications et ajouts aux Frameworks existants :
 
 - `NSUserActivity`contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
 - Plusieurs ajouts ont été apportés à MapKit et CoreSpotlight pour capturer l’emplacement.
 - La fonctionnalité de prise en charge de l’emplacement a été ajoutée à Siri, Maps, claviers, multitâche et à d’autres applications dans le système.
 
-Pour implémenter des suggestions basées sur l’emplacement, commencez avec le même code d’activité que celui présenté ci-dessus:
+Pour implémenter des suggestions basées sur l’emplacement, commencez avec le même code d’activité que celui présenté ci-dessus :
 
 ```csharp
 // Create App Activity
@@ -249,14 +249,14 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 activity.BecomeCurrent();
 ```
 
-Si l’application utilise MapKit, il est aussi simple d’ajouter la carte `MKMapItem` actuelle à l’activité:
+Si l’application utilise MapKit, il est aussi simple d’ajouter la carte `MKMapItem` actuelle à l’activité :
 
 ```csharp
 // Save MKMapItem location
 activity.MapItem = myMapItem;
 ```
 
-Si l’application n’utilise pas MapKit, elle peut adopter la recherche d’application et spécifier les nouveaux attributs suivants pour l’emplacement:
+Si l’application n’utilise pas MapKit, elle peut adopter la recherche d’application et spécifier les nouveaux attributs suivants pour l’emplacement :
 
 ```csharp
 // Provide context
@@ -276,13 +276,13 @@ attributes.SupportsPhoneCalls = true;
 attributes.SupportsNavigation = true;
 ```
 
-Jetez un coup d’œil au code ci-dessus. Tout d’abord, le nom de l’emplacement est requis dans chaque instance:
+Jetez un coup d’œil au code ci-dessus. Tout d’abord, le nom de l’emplacement est requis dans chaque instance :
 
 ```csharp
 attributes.NamedLocation = "Apple Inc.";
 ```
 
-Ensuite, la description textuelle de l’emplacement est requise pour les instances de type texte (par exemple, le clavier QuickType):
+Ensuite, la description textuelle de l’emplacement est requise pour les instances de type texte (par exemple, le clavier QuickType) :
 
 ```csharp
 attributes.SubThoroughfare = "1";
@@ -292,20 +292,20 @@ attributes.StateOrProvince = "CA";
 attributes.Country = "United States";
 ```
 
-La latitude et la longitude sont facultatives, mais assurez-vous que l’utilisateur est acheminé vers l’emplacement exact auquel l’application souhaite l’envoyer. il doit donc être inclus:
+La latitude et la longitude sont facultatives, mais assurez-vous que l’utilisateur est acheminé vers l’emplacement exact auquel l’application souhaite l’envoyer. il doit donc être inclus :
 
 ```csharp
 attributes.Latitude = 37.33072;
 attributes.Longitude = 122.029674;
 ```
 
-En définissant les numéros de téléphone, l’application peut accéder à Siri pour que l’utilisateur puisse appeler Siri à partir de l’application en disant *«appeler ce lieu»* :
+En définissant les numéros de téléphone, l’application peut accéder à Siri pour que l’utilisateur puisse appeler Siri à partir de l’application en disant *« appeler ce lieu »* :
 
 ```csharp
 attributes.PhoneNumbers = new string[]{"(800) 275-2273"};
 ```
 
-Enfin, l’application peut indiquer si l’instance est appropriée pour la navigation et les appels téléphoniques:
+Enfin, l’application peut indiquer si l’instance est appropriée pour la navigation et les appels téléphoniques :
 
 ```csharp
 attributes.SupportsPhoneCalls = true;
@@ -322,7 +322,7 @@ Les interactions entre les contacts sont implémentées `NSUserActivity` dans l�
 
 #### <a name="donating-interactions"></a>Don d’interactions
 
-Jetez un coup d’œil sur la façon dont l’application peut faire don d’interactions:
+Jetez un coup d’œil sur la façon dont l’application peut faire don d’interactions :
 
 [![](proactive-suggestions-images/activity04.png "Présentation du don d’interactions")](proactive-suggestions-images/activity04.png#lightbox)
 
@@ -332,11 +332,11 @@ Le développeur ne crée jamais directement une instance `INIntent` de `INIntent
 
 Une fois que l’interaction est entièrement remplie, `DonateInteraction` appelez la méthode pour informer le système que l’interaction peut être utilisée.
 
-Lorsque l’utilisateur interagit avec l’application à partir de la carte de visite, l’interaction est regroupée avec un `NSUserActivity`, qui est ensuite utilisé pour lancer l’application:
+Lorsque l’utilisateur interagit avec l’application à partir de la carte de visite, l’interaction est regroupée avec un `NSUserActivity`, qui est ensuite utilisé pour lancer l’application :
 
 [![](proactive-suggestions-images/activity05.png "L’interaction est regroupée avec un NSUserActivity qui est utilisé pour lancer l’application")](proactive-suggestions-images/activity05.png#lightbox)
 
-Jetez un coup d’œil à l’exemple suivant d’une intention d’envoi de message:
+Jetez un coup d’œil à l’exemple suivant d’une intention d’envoi de message :
 
 ```csharp
 using System;
@@ -397,25 +397,25 @@ namespace MonkeyNotification
 }
 ```
 
-En examinant ce code en détail, il crée et remplit une instance de `NSUserActivity` (comme indiqué dans la section [création d’une activité](#creating-an-activity) ci-dessus). Ensuite, il crée une instance de `INSendMessageIntent` (qui hérite de `INIntent`) et la remplit avec les détails du message envoyé:
+En examinant ce code en détail, il crée et remplit une instance de `NSUserActivity` (comme indiqué dans la section [création d’une activité](#creating-an-activity) ci-dessus). Ensuite, il crée une instance de `INSendMessageIntent` (qui hérite de `INIntent`) et la remplit avec les détails du message envoyé :
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
 ```
 
-Un `INSendMessageIntentResponse` est créé et reçoit le `NSUserActivity` créé ci-dessus:
+Un `INSendMessageIntentResponse` est créé et reçoit le `NSUserActivity` créé ci-dessus :
 
 ```csharp
 var response = new INSendMessageIntentResponse (INSendMessageIntentResponseCode.Success, activity);
 ```
 
-Un `INInteraction` est construit à partir de l’intention du`INSendMessageIntent`message Send ()`INSendMessageIntentResponse`et de la réponse () que vous venez de créer:
+Un `INInteraction` est construit à partir de l’intention du`INSendMessageIntent`message Send ()`INSendMessageIntentResponse`et de la réponse () que vous venez de créer :
 
 ```csharp
 var interaction = new INInteraction (intent, response);
 ```
 
-Enfin, le système est averti de l’interaction:
+Enfin, le système est averti de l’interaction :
 
 ```csharp
 // Donate interaction to the system
@@ -429,7 +429,7 @@ Un gestionnaire d’achèvement est passé là où l’application peut répondr
 
 ### <a name="activities-best-practices"></a>Meilleures pratiques relatives aux activités
 
-Apple suggère les meilleures pratiques suivantes lorsque vous travaillez avec des activités:
+Apple suggère les meilleures pratiques suivantes lorsque vous travaillez avec des activités :
 
 - Utilisez `NeedsSave` pour les mises à jour de charge utile tardive.
 - Veillez à conserver une référence forte à l’activité en cours.
@@ -442,7 +442,7 @@ Comme indiqué ci- `NSUserActivity` dessus, le système aide le système à comp
 
 Schema.org peut fournir les mêmes types d’interactions basées sur l’emplacement au site Web. Apple a conçu les nouvelles suggestions d’emplacement pour fonctionner tout aussi bien lorsqu’il est affiché dans Safari comme c’est le cas dans une application native.
 
-En arrière-plan Schema.org:
+En arrière-plan Schema.org :
 
 - Il fournit une norme Open Web Markup vocabulaire standard.
 - Elle fonctionne en incluant des métadonnées structurées sur des pages Web.
@@ -451,7 +451,7 @@ En arrière-plan Schema.org:
 
 Les schémas sont organisés dans une structure de type arborescence, où des types spécifiques tels que le *restaurant*, héritent d’autres types génériques tels que *les activités locales*. Pour plus d’informations, consultez [Schema.org](http://schema.org).
 
-Par exemple, si la page Web inclut les données suivantes:
+Par exemple, si la page Web inclut les données suivantes :
 
 ```html
 <script type="application/ld+json">
@@ -478,7 +478,7 @@ Par exemple, si la page Web inclut les données suivantes:
 
 Si l’utilisateur a visité cette page dans Safari, puis a basculé vers une autre application, les informations d’emplacement de la page sont capturées et proposées comme suggestion d’emplacement dans d’autres parties du système (comme indiqué dans les activités ci-dessus).
 
-Safari extraira tout ce qui se trouve sur une page Web conforme à l’une des propriétés de schéma suivantes:
+Safari extraira tout ce qui se trouve sur une page Web conforme à l’une des propriétés de schéma suivantes :
 
 - **Property**
 - **GeoCoordinates**
@@ -490,14 +490,14 @@ Pour plus d’informations, consultez notre guide de [recherche avec les balises
 
 La section suivante aborde la consommation de suggestions d’emplacement provenant d’autres parties du système (telles que l’application Maps) ou d’autres applications tierces.
 
-L’application peut utiliser des suggestions d’emplacement de deux manières principales:
+L’application peut utiliser des suggestions d’emplacement de deux manières principales :
 
 - Via le clavier QuickType.
 - Directement en consommant les informations d’emplacement dans les applications de routage.
 
 ### <a name="location-suggestions-and-the-quicktype-keyboard"></a>Suggestions d’emplacement et le clavier QuickType
 
-Si l’application traite des adresses dans des formats textuels, l’application peut tirer parti des suggestions d’emplacement via l’interface utilisateur QuickType. iOS 10 développe l’interface utilisateur QuickType avec les fonctionnalités suivantes:
+Si l’application traite des adresses dans des formats textuels, l’application peut tirer parti des suggestions d’emplacement via l’interface utilisateur QuickType. iOS 10 développe l’interface utilisateur QuickType avec les fonctionnalités suivantes :
 
 - L’application peut ajouter des indications sur l’intention sémantique des champs de texte dans l’interface utilisateur.
 - L’application peut obtenir des suggestions proactives dans l’application.
@@ -512,7 +512,7 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 Indique au système que l’application s’attend à ce que l’utilisateur entre une adresse postale complète dans le champ donné. Cela permettra au clavier QuickType de fournir automatiquement des suggestions d’emplacement sur le clavier lorsque l’utilisateur entre une valeur dans ce champ.
 
-Voici quelques-uns des types les plus courants disponibles pour le développeur dans la `UITextContentType` classe statique:
+Voici quelques-uns des types les plus courants disponibles pour le développeur dans la `UITextContentType` classe statique :
 
 - `Name`
 - `GivenName`
@@ -525,7 +525,7 @@ Voici quelques-uns des types les plus courants disponibles pour le développeur 
 
 ### <a name="routing-apps-and-locations-suggestions"></a>Suggestions relatives aux applications et aux emplacements de routage
 
-Cette section examine l’utilisation des suggestions d’emplacement directement dans une application de routage. Pour que l’application de routage ajoute cette fonctionnalité, le développeur doit tirer parti de `MKDirectionsRequest` l’infrastructure existante comme suit:
+Cette section examine l’utilisation des suggestions d’emplacement directement dans une application de routage. Pour que l’application de routage ajoute cette fonctionnalité, le développeur doit tirer parti de `MKDirectionsRequest` l’infrastructure existante comme suit :
 
 - Pour promouvoir l’application dans le multitâche.
 - Pour inscrire l’application en tant qu’application de routage.
@@ -570,19 +570,19 @@ namespace MonkeyChat
 }
 ```
 
-Jetez un coup d’œil sur ce code en détail. Il effectue un test pour déterminer s’il s’agit d’une demande de destination valide:
+Jetez un coup d’œil sur ce code en détail. Il effectue un test pour déterminer s’il s’agit d’une demande de destination valide :
 
 ```csharp
 if (MKDirectionsRequest.IsDirectionsRequestUrl(url)) {
 ```
 
-Si c’est le cas, il crée `MKDirectionsRequest` un à partir de l’URL:
+Si c’est le cas, il crée `MKDirectionsRequest` un à partir de l’URL :
 
 ```csharp
 var request = new MKDirectionsRequest(url);
 ```
 
-Nouveauté dans iOS 10, l’application peut recevoir une adresse qui n’a pas de coordonnées géographiques, dans ce cas, le développeur doit encoder l’adresse:
+Nouveauté dans iOS 10, l’application peut recevoir une adresse qui n’a pas de coordonnées géographiques, dans ce cas, le développeur doit encoder l’adresse :
 
 ```csharp
 var geocoder = new CLGeocoder();
@@ -597,11 +597,11 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 
 Si l’application gère un type de support comme une application de podcast ou un contenu multimédia en continu, tel qu’un fichier audio ou vidéo, avec iOS 10, il peut tirer parti des suggestions de médias dans le système.
 
-Pour les applications qui gèrent des médias, iOS prend en charge les comportements suivants:
+Pour les applications qui gèrent des médias, iOS prend en charge les comportements suivants :
 
 - iOS encourage les applications que l’utilisateur est susceptible d’utiliser en fonction de son comportement précédent.
 - Les suggestions relatives à l’application sont présentées dans Spotlight et dans la vue aujourd’hui.
-- Si l’application répond à l’un des déclencheurs suivants, elle peut être élevée à une suggestion d’écran de verrouillage:
+- Si l’application répond à l’un des déclencheurs suivants, elle peut être élevée à une suggestion d’écran de verrouillage :
   - Une fois le casque branché ou un périphérique Bluetooth établit une connexion.
   - Après avoir obtenu une voiture.
   - Après avoir arrivé à chez vous ou au travail. 

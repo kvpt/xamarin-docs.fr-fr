@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6df393d59207cea9c316189059f8d0e08a5e5137
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656365"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290065"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Résolution des dépendances dans Xamarin.Forms
 
@@ -29,9 +29,9 @@ Contrôle sur la création et la durée de vie de types dans les projets de plat
 
 ## <a name="injecting-a-dependency-resolution-method"></a>Injection d’une méthode de résolution de dépendance
 
-Le [ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) classe offre la possibilité d’injecter une méthode de résolution de dépendance dans Xamarin.Forms, à l’aide de la [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) (méthode). Alors, lorsque Xamarin.Forms a besoin d’une instance d’un type particulier, la méthode de résolution de dépendance est la possibilité de fournir l’instance. Si la méthode de résolution de dépendance retourne `null` pour un type demandé, repasse Xamarin.Forms à essayer de créer le type de l’instance elle-même à l’aide de la `Activator.CreateInstance` (méthode).
+Le [ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) classe offre la possibilité d’injecter une méthode de résolution de dépendance dans Xamarin.Forms, à l’aide de la [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) (méthode). Alors, lorsque Xamarin.Forms a besoin d’une instance d’un type particulier, la méthode de résolution de dépendance est la possibilité de fournir l’instance. Si la méthode de résolution de dépendance retourne `null` pour un type demandé, repasse Xamarin.Forms à essayer de créer le type de l’instance elle-même à l’aide de la `Activator.CreateInstance` (méthode).
 
-L’exemple suivant montre comment définir la méthode de résolution de dépendance avec le [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) méthode :
+L’exemple suivant montre comment définir la méthode de résolution de dépendance avec le [ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) méthode :
 
 ```csharp
 using Autofac;

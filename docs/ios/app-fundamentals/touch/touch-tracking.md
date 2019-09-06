@@ -4,15 +4,15 @@ description: Ce document décrit comment suivre des doigts individuels dans les 
 ms.prod: xamarin
 ms.assetid: 48E8B20D-0833-43D2-976A-0605DDB386E3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: cdf6e78356ee1c846b5921957e8eda53931a3c6b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 00fa1a65d2a73220675d8142e70ac904a93e3042
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655153"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281973"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Suivi des doigts multipoint dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ Il arrive parfois qu’une application multipoint doive suivre les doigts indivi
 
 Quand un doigt touche l’écran pour la première fois, [`UITouch`](xref:UIKit.UITouch) iOS crée un objet pour ce doigt. Cet objet reste le même que le doigt se déplace sur l’écran, puis monte de l’écran, à partir duquel l’objet est supprimé. Pour effectuer le suivi des doigts, un programme doit éviter de `UITouch` stocker cet objet directement. Au lieu de cela, il [`Handle`](xref:Foundation.NSObject.Handle) peut utiliser la `IntPtr` propriété de type pour identifier `UITouch` ces objets de manière unique.
 
-Presque toujours, un programme qui suit des doigts individuels conserve un dictionnaire pour le suivi tactile. Pour un programme iOS, la clé de dictionnaire est `Handle` la valeur qui identifie un doigt particulier. La valeur du dictionnaire dépend de l’application. Dans le programme [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) , chaque trait de doigt (du toucher au lancement) est associé à un objet qui contient toutes les informations nécessaires pour afficher la ligne dessinée avec ce doigt. Le programme définit une petite `FingerPaintPolyline` classe à cet effet:
+Presque toujours, un programme qui suit des doigts individuels conserve un dictionnaire pour le suivi tactile. Pour un programme iOS, la clé de dictionnaire est `Handle` la valeur qui identifie un doigt particulier. La valeur du dictionnaire dépend de l’application. Dans le programme [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) , chaque trait de doigt (du toucher au lancement) est associé à un objet qui contient toutes les informations nécessaires pour afficher la ligne dessinée avec ce doigt. Le programme définit une petite `FingerPaintPolyline` classe à cet effet :
 
 ```csharp
 class FingerPaintPolyline
@@ -43,7 +43,7 @@ class FingerPaintPolyline
 Chaque polyligne a une couleur, une largeur de trait et un objet [`CGPath`](xref:CoreGraphics.CGPath) graphique IOS pour accumuler et afficher plusieurs points de la ligne lorsqu’elle est dessinée.
 
 
-Tout le reste du code présenté ci-dessous est contenu dans `UIView` une dérivée nommée. `FingerPaintCanvasView` Cette classe gère un dictionnaire d’objets de type `FingerPaintPolyline` pendant la durée pendant laquelle ils sont activement dessinés par un ou plusieurs doigts:
+Tout le reste du code présenté ci-dessous est contenu dans `UIView` une dérivée nommée. `FingerPaintCanvasView` Cette classe gère un dictionnaire d’objets de type `FingerPaintPolyline` pendant la durée pendant laquelle ils sont activement dessinés par un ou plusieurs doigts :
 
 ```csharp
 Dictionary<IntPtr, FingerPaintPolyline> inProgressPolylines = new Dictionary<IntPtr, FingerPaintPolyline>();
@@ -51,7 +51,7 @@ Dictionary<IntPtr, FingerPaintPolyline> inProgressPolylines = new Dictionary<Int
 
 Ce dictionnaire permet à la vue d’obtenir rapidement `FingerPaintPolyline` les informations associées à chaque doigt en fonction `Handle` de la propriété `UITouch` de l’objet.
 
-La `FingerPaintCanvasView` classe gère également un `List` objet pour les polylignes qui ont été terminées:
+La `FingerPaintCanvasView` classe gère également un `List` objet pour les polylignes qui ont été terminées :
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
@@ -69,7 +69,7 @@ Les objets de ce `List` sont dans le même ordre que celui dans lequel ils ont �
 
 Les différents `Touches` remplacements accumulent les points qui composent les polylignes.
 
-La substitution`Draw`[] dessine les polylignes terminées, puis les polylignes en cours:
+La substitution`Draw`[] dessine les polylignes terminées, puis les polylignes en cours :
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -103,7 +103,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Chacun des `Touches` remplacements signale potentiellement les actions de plusieurs doigts, indiquées par un ou plusieurs `UITouch` objets stockés dans l' `touches` argument de la méthode. Les `TouchesBegan` substitutions parcourent ces objets. Pour chaque `UITouch` objet, la méthode crée et initialise un nouvel `FingerPaintPolyline` objet, y compris le stockage de l’emplacement initial du doigt obtenu à `LocationInView` partir de la méthode. Cet `FingerPaintPolyline` objet est ajouté `InProgressPolylines` au dictionnaire à l’aide `Handle` de la propriété `UITouch` de l’objet en tant que clé de dictionnaire:
+Chacun des `Touches` remplacements signale potentiellement les actions de plusieurs doigts, indiquées par un ou plusieurs `UITouch` objets stockés dans l' `touches` argument de la méthode. Les `TouchesBegan` substitutions parcourent ces objets. Pour chaque `UITouch` objet, la méthode crée et initialise un nouvel `FingerPaintPolyline` objet, y compris le stockage de l’emplacement initial du doigt obtenu à `LocationInView` partir de la méthode. Cet `FingerPaintPolyline` objet est ajouté `InProgressPolylines` au dictionnaire à l’aide `Handle` de la propriété `UITouch` de l’objet en tant que clé de dictionnaire :
 
 ```csharp
 public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -128,7 +128,7 @@ public override void TouchesBegan(NSSet touches, UIEvent evt)
 
 La méthode conclut en appelant `SetNeedsDisplay` pour générer un appel à la `Draw` substitution et pour mettre à jour l’écran.
 
-À mesure que le doigt ou les doigts se déplacent sur l’écran, `TouchesMoved` le `View` obtient plusieurs appels à sa substitution. Cette substitution effectue une boucle de la même `UITouch` manière dans les objets `touches` stockés dans l’argument et ajoute l’emplacement actuel du doigt au tracé graphique:
+À mesure que le doigt ou les doigts se déplacent sur l’écran, `TouchesMoved` le `View` obtient plusieurs appels à sa substitution. Cette substitution effectue une boucle de la même `UITouch` manière dans les objets `touches` stockés dans l’argument et ajoute l’emplacement actuel du doigt au tracé graphique :
 
 ```csharp
 public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -146,7 +146,7 @@ public override void TouchesMoved(NSSet touches, UIEvent evt)
 
 La `touches` collection contient `UITouch` uniquement les objets pour les doigts qui ont été déplacés depuis le `TouchesBegan` dernier `TouchesMoved`appel à ou. Si vous avez besoin `UITouch` d’objets correspondant à *tous* les doigts actuellement en contact avec l’écran, ces informations sont disponibles via `AllTouches` la propriété de `UIEvent` l’argument de la méthode.
 
-Le `TouchesEnded` remplacement a deux tâches. Il doit ajouter le dernier point au chemin d’accès graphique et transférer l' `FingerPaintPolyline` objet `inProgressPolylines` du dictionnaire à la `completedPolylines` liste:
+Le `TouchesEnded` remplacement a deux tâches. Il doit ajouter le dernier point au chemin d’accès graphique et transférer l' `FingerPaintPolyline` objet `inProgressPolylines` du dictionnaire à la `completedPolylines` liste :
 
 ```csharp
 public override void TouchesEnded(NSSet touches, UIEvent evt)
@@ -167,7 +167,7 @@ public override void TouchesEnded(NSSet touches, UIEvent evt)
 }
 ```
 
-Le `TouchesCancelled` remplacement est géré en abandonnant simplement l' `FingerPaintPolyline` objet dans le dictionnaire:
+Le `TouchesCancelled` remplacement est géré en abandonnant simplement l' `FingerPaintPolyline` objet dans le dictionnaire :
 
 ```csharp
 public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -182,7 +182,7 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 }
 ```
 
-Ensemble, ce traitement permet au programme [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) d’effectuer le suivi des doigts individuels et de dessiner les résultats à l’écran:
+Ensemble, ce traitement permet au programme [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) d’effectuer le suivi des doigts individuels et de dessiner les résultats à l’écran :
 
 [![](touch-tracking-images/image01.png "Suivi des doigts individuels et dessin des résultats à l’écran")](touch-tracking-images/image01.png#lightbox)
 

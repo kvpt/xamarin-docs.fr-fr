@@ -4,21 +4,21 @@ description: Ce document décrit les limitations de Xamarin. iOS, la discussion 
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/09/2018
-ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1d6f4dc20a32810bb218ce3aa2281fa1355a584d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227529"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291902"
 ---
 # <a name="limitations-of-xamarinios"></a>Limitations de Xamarin. iOS
 
 Étant donné que les applications qui utilisent Xamarin. iOS sont compilées en code statique, il n’est pas possible d’utiliser des fonctionnalités qui requièrent la génération de code au moment de l’exécution.
 
-Il s’agit des limitations de Xamarin. iOS comparées à l’ordinateur de bureau mono:
+Il s’agit des limitations de Xamarin. iOS comparées à l’ordinateur de bureau mono :
 
  <a name="Limited_Generics_Support" />
 
@@ -29,14 +29,14 @@ Contrairement aux mono/. NET classiques, le code sur l’iPhone est compilé sta
 
 La technologie [AOA complète](https://www.mono-project.com/docs/advanced/aot/#full-aot) de mono présente quelques limitations en ce qui concerne les génériques, ce qui est dû au fait que toutes les instanciations génériques possibles ne peuvent pas être déterminées en amont au moment de la compilation. Ce n’est pas un problème pour les runtimes .NET ou mono ordinaires, car le code est toujours compilé au moment de l’exécution à l’aide du compilateur juste-à-temps. Mais cela pose un défi pour un compilateur statique comme Xamarin. iOS.
 
-Parmi les problèmes courants rencontrés par les développeurs, citons:
+Parmi les problèmes courants rencontrés par les développeurs, citons :
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Les sous-classes génériques de NSObjects sont limitées
 
-Xamarin. iOS offre actuellement une prise en charge limitée pour la création de sous-classes génériques de la classe NSObject, telles que l’absence de prise en charge des méthodes génériques. À partir de la 7.2.1, l’utilisation de sous-classes génériques de NSObjects est possible, comme celle-ci:
+Xamarin. iOS offre actuellement une prise en charge limitée pour la création de sous-classes génériques de la classe NSObject, telles que l’absence de prise en charge des méthodes génériques. À partir de la 7.2.1, l’utilisation de sous-classes génériques de NSObjects est possible, comme celle-ci :
 
 ```csharp
 class Foo<T> : UIView {
@@ -67,7 +67,7 @@ class Foo<T> : UIView {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-L’absence de System. Reflection. L' **émission** signifie qu’aucun code dépendant de la génération du code d’exécution ne fonctionnera. Cela comprend des éléments tels que:
+L’absence de System. Reflection. L' **émission** signifie qu’aucun code dépendant de la génération du code d’exécution ne fonctionnera. Cela comprend des éléments tels que :
 
 - Le Dynamic Language Runtime.
 - Tous les langages reposant sur le Dynamic Language Runtime.
@@ -77,16 +77,16 @@ L’absence de System. Reflection. L' **émission** signifie qu’aucun code dé
   > [!IMPORTANT]
   > Ne confondez pas la **réflexion. Emit** avec **réflexion**. La réflexion. Emit concerne la génération dynamique du code et l’compilées et la compilation du code en code natif. En raison des limitations relatives à iOS (aucune compilation JIT), cela n’est pas pris en charge.
 
-Mais la totalité de l’API de réflexion, y compris type. GetType («someClass»), la liste des méthodes, la liste des propriétés, la récupération des attributs et des valeurs fonctionne parfaitement.
+Mais la totalité de l’API de réflexion, y compris type. GetType (« someClass »), la liste des méthodes, la liste des propriétés, la récupération des attributs et des valeurs fonctionne parfaitement.
 
 ### <a name="using-delegates-to-call-native-functions"></a>Utilisation de délégués pour appeler des fonctions natives
 
-Pour appeler une fonction native par le C# biais d’un délégué, la déclaration du délégué doit être décorée avec l’un des attributs suivants:
+Pour appeler une fonction native par le C# biais d’un délégué, la déclaration du délégué doit être décorée avec l’un des attributs suivants :
 
 - [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (par défaut, car il est multiplateforme et compatible avec .NET Standard 1.1 +)
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-L’échec de la fourniture de l’un de ces attributs entraînera une erreur d’exécution, par exemple:
+L’échec de la fourniture de l’un de ces attributs entraînera une erreur d’exécution, par exemple :
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -99,7 +99,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 En mono standard, il est possible de C# passer des instances de délégué au code non managé à la place d’un pointeur de fonction. Le Runtime transforme généralement ces pointeurs fonction en un petit thunk qui permet au code non managé de rappeler le code managé.
 
-Dans mono, ces ponts sont implémentés par le compilateur juste-à-temps. Lorsque vous utilisez le compilateur à l’avance requis par l’iPhone, il existe deux limitations importantes à ce stade:
+Dans mono, ces ponts sont implémentés par le compilateur juste-à-temps. Lorsque vous utilisez le compilateur à l’avance requis par l’iPhone, il existe deux limitations importantes à ce stade :
 
 - Vous devez marquer toutes vos méthodes de rappel avec [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)
 - Les méthodes doivent être des méthodes statiques, il n’existe aucune prise en charge des méthodes d’instance.
@@ -116,7 +116,7 @@ La pile de communication à distance n’est pas disponible sur Xamarin. iOS.
 
 ## <a name="runtime-disabled-features"></a>Fonctionnalités désactivées du Runtime
 
-Les fonctionnalités suivantes ont été désactivées dans le runtime iOS de mono:
+Les fonctionnalités suivantes ont été désactivées dans le runtime iOS de mono :
 
 - Profiler
 - Réflexion. Emit

@@ -1,34 +1,34 @@
 ---
 title: Vue d'ensemble de l'architecture
-description: Ce document décrit l’architecture de Xamarin Workbooks, en examinant le fonctionnement conjoint l’agent interactive et le client interactive.
+description: Ce document décrit l’architecture de Xamarin Workbooks, en examinant la façon dont l’agent interactif et le client interactif fonctionnent ensemble.
 ms.prod: xamarin
 ms.assetid: 6C0226BE-A0C4-4108-B482-0A903696AB04
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 352e8d0191512184ffd7d82fa0dfa0bc79fa24ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7129d0bedddb272ef87e3d209cb05c2ca0c0acf4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61257423"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285281"
 ---
 # <a name="architecture-overview"></a>Vue d'ensemble de l'architecture
 
-Xamarin Workbooks comprend deux composants principaux qui doivent travailler conjointement avec eux : _Agent_ et _Client_.
+Xamarin Workbooks comporte deux composants principaux qui doivent fonctionner conjointement les uns avec les autres : _Agent_ et _client_.
 
 ## <a name="interactive-agent"></a>Agent interactif
 
-Le composant Agent est un petit assembly spécifique à la plateforme qui s’exécute dans le contexte d’une application .NET.
+Le composant agent est un petit assembly spécifique à une plateforme qui s’exécute dans le contexte d’une application .NET.
 
-Xamarin Workbooks fournit avant génération d’applications « vide » pour un nombre de plateformes, notamment iOS, Android, Mac et WPF. Ces applications hôtes explicitement l’agent.
+Xamarin Workbooks fournit des applications « vides » prédéfinies pour plusieurs plateformes, telles qu’iOS, Android, Mac et WPF. Ces applications hébergent explicitement l’agent.
 
-Pendant l’inspection en direct (Xamarin Inspector), l’agent est injecté via le débogueur de l’IDE dans une application existante dans le cadre du développement régulière & débogage de flux de travail.
+Pendant l’inspection en temps réel (Xamarin Inspector), l’agent est injecté via le débogueur IDE dans une application existante dans le cadre du flux de travail de développement normal & le débogage.
 
 ## <a name="interactive-client"></a>Client interactif
 
-Le client est un shell natif qui héberge une surface de navigateur web pour présenter l’interface de classeur/REPL (Cocoa sur Mac, WPF sur Windows). À partir d’un point de vue du Kit de développement logiciel, toutes les intégrations de client sont implémentées dans JavaScript et CSS.
+Le client est un interpréteur de commandes natif (cacao sur Mac, WPF sur Windows) qui héberge une surface de navigateur Web pour la présentation de l’interface de classeur/REPL. Du point de vue du SDK, toutes les intégrations de clients sont implémentées en JavaScript et CSS.
 
-Le client est chargé (via Roslyn) pour compiler le code source dans des assemblys de petite et de les transmettre à l’agent connecté pour l’exécution. Résultats de l’exécution sont envoyées au client pour le rendu. Chaque cellule dans un classeur génère un assembly qui référence l’assembly de la cellule précédente.
+Le client est responsable (via Roslyn) de la compilation du code source en petits assemblys et de son envoi à l’agent connecté pour exécution. Les résultats de l’exécution sont renvoyés au client à des fins de rendu. Chaque cellule d’un classeur produit un assembly qui fait référence à l’assembly de la cellule précédente.
 
-Comme un agent peut s’exécuter sur n’importe quel type de plate-forme .NET et a accès à quoi que ce soit dans l’application en cours d’exécution, doivent veiller à sérialiser les résultats de manière indépendante de la plateforme.
+Étant donné qu’un agent peut s’exécuter sur n’importe quel type de plateforme .NET et qu’il a accès à quoi que ce soit dans l’application en cours d’exécution, il convient de veiller à sérialiser les résultats de manière indépendante de la plateforme.

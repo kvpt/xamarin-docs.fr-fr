@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F9FEDFF5-C84C-42B4-8F25-E34846E7315A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: b01701566cec88ad4a1493cf5ab9778bd38792b0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8973093d851cf2c38fe57bada0e9d01e9664b15b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511814"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293007"
 ---
 # <a name="error-mt1009-could-not-copy-the-assembly"></a>Erreur MT1009 : impossible de copier l’assembly
 
@@ -21,6 +21,6 @@ ms.locfileid: "68511814"
 
 Comme décrit dans nos [notes de publication](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_7/xamarin.ios_7.2/index.md), il s’agit d’un problème connu dans Xamarin. iOS 7.2.6. Ce problème est dû aux autorisations de fichier nécessitant des privilèges plus élevés quand Xamarin. iOS est installé avec un compte d’utilisateur différent, puis le compte principal du développeur.
 
-Pour contourner le problème, ouvrez l’application Terminal Server sur la station de travail Mac et exécutez la commande suivante:
+Pour contourner le problème, ouvrez l’application Terminal Server sur la station de travail Mac et exécutez la commande suivante :
 
 `sudo chmod 0644 /Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll.mdb`

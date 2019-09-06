@@ -3,15 +3,15 @@ title: Installation et configuration requise des classeurs
 description: Ce document décrit comment télécharger et installer Xamarin Workbooks, abordant les plateformes prises en charge et la configuration système requise.
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: d94a14bcd1486b7b64e9ce6d9fee6d36406b2710
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 5292a052d4f93af9b21cc7cbc51891c99d6f9403
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511853"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285246"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Installation et configuration requise des classeurs
 
@@ -54,20 +54,20 @@ ms.locfileid: "68511853"
 
 ## <a name="reporting-bugs"></a>Signalement des bogues
 
-Signalez les [problèmes sur GitHub][bugs]et incluez toutes les informations suivantes:
+[Signalez les problèmes sur GitHub][bugs]et incluez toutes les informations suivantes :
 
 ### <a name="log-files"></a>Fichiers journaux
 
-Toujours joindre les classeurs des fichiers journaux du client:
+Toujours joindre les classeurs des fichiers journaux du client :
 
 - Macintosh`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal:
+1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal :
 
 - **Aide > Afficher le fichier journal**
 
-#### <a name="log-paths-for-workbooks-13-and-earlier"></a>Chemins d’accès de journal pour les classeurs 1,3 et versions antérieures:
+#### <a name="log-paths-for-workbooks-13-and-earlier"></a>Chemins d’accès de journal pour les classeurs 1,3 et versions antérieures :
 
 - Macintosh`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
@@ -76,11 +76,11 @@ Toujours joindre les classeurs des fichiers journaux du client:
 
 Il est très utile de connaître les détails sur votre système d’exploitation et les produits Xamarin installés.
 
-Dans le menu principal de classeurs:
+Dans le menu principal de classeurs :
 
-* **Aide > copier les informations de version**
+- **Aide > copier les informations de version**
 
-#### <a name="instructions-for-workbooks-13-and-earlier"></a>Instructions pour les classeurs 1,3 et versions antérieures:
+#### <a name="instructions-for-workbooks-13-and-earlier"></a>Instructions pour les classeurs 1,3 et versions antérieures :
 
 Visual Studio pour Mac
 
@@ -98,16 +98,16 @@ Si vous êtes en mesure de joindre le fichier **. classeurs** ou de créer un li
 
 ### <a name="devices"></a>Appareils
 
-Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android et que vous avez déjà consulté [notre page de dépannage](~/tools/workbooks/troubleshooting/index.md), nous devrons connaître les éléments suivants:
+Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android et que vous avez déjà consulté [notre page de dépannage](~/tools/workbooks/troubleshooting/index.md), nous devrons connaître les éléments suivants :
 
 - Nom de l’appareil auquel vous essayez de vous connecter
 - Version du système d’exploitation de votre appareil
 - Tablette Vérifier que vous utilisez un émulateur x86
-- Tablette Quelle plateforme d’émulateur utilisez-vous? Émulateur Google?
-  Visual Studio Émulateur Android? Xamarin Android Player?
-- iOS sur Windows: Quelle version du simulateur iOS Xamarin distante avez-vous installé (sélectionnez **Ajout/suppression de programmes** dans le **panneau de configuration**)?
-- iOS sur Windows: Fournissez également les informations de version de la plateforme pour votre hôte de build Mac
-- L’appareil dispose-t-il d’une connectivité réseau (Vérifiez via le navigateur Web)?
+- Tablette Quelle plateforme d’émulateur utilisez-vous ? Émulateur Google ?
+  Visual Studio Émulateur Android ? Xamarin Android Player ?
+- iOS sur Windows : Quelle version du simulateur iOS Xamarin distante avez-vous installé (sélectionnez **Ajout/suppression de programmes** dans le **panneau de configuration**) ?
+- iOS sur Windows : Fournissez également les informations de version de la plateforme pour votre hôte de build Mac
+- L’appareil dispose-t-il d’une connectivité réseau (Vérifiez via le navigateur Web) ?
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
@@ -135,7 +135,7 @@ Si vous avez installé des classeurs avec un programme d’installation téléch
 
 ### <a name="macos"></a>macOS
 
-À compter de la [1.2.2](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/interactive/interactive-1.2.md), Xamarin Workbooks peut être désinstallé d’un terminal en exécutant:
+À compter de la [1.2.2](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/interactive/interactive-1.2.md), Xamarin Workbooks peut être désinstallé d’un terminal en exécutant :
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -158,7 +158,7 @@ Identificateur de Bundle pour les **classeurs/applications/Xamarin. l’applicat
 
 En raison d’un bogue dans les programmes d’installation plus anciens, il n’est pas possible de rétrograder 1,4 ou des versions plus récentes à l’aide des programmes d’installation 1.3.2 ou antérieurs.
 
-Pour passer à une version antérieure de 1,4 ou ultérieure à 1.3.2 ou une version antérieure:
+Pour passer à une version antérieure de 1,4 ou ultérieure à 1.3.2 ou une version antérieure :
 
 1. [Désinstaller manuellement des classeurs & Inspector](#uninstall-macos)
 2. Exécutez le programme d’installation `.pkg` 1.3.2 ou une version antérieure

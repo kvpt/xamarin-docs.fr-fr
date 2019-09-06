@@ -4,15 +4,15 @@ description: Ce document décrit les mises à jour de la conception visuelle int
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 488c3d7d2b4d57295f73f65b361abff939c2aebb
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: aa99d50295e214b7926d0655ea434c851b3ba099
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889827"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286322"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Mises à jour de la conception visuelle dans iOS 11
 
@@ -31,13 +31,13 @@ barItem.LargeContentSizeImage = UIImage.FromBundle("AccessibleImage");
 ```
 
 ### <a name="navigation-bar"></a>Barre de navigation
-iOS 11 a introduit de nouvelles fonctionnalités pour faciliter la lecture des titres de barre de navigation. Les applications peuvent afficher ce titre plus grand en attribuant à la propriété la `PrefersLargeTitles` valeur true:
+iOS 11 a introduit de nouvelles fonctionnalités pour faciliter la lecture des titres de barre de navigation. Les applications peuvent afficher ce titre plus grand en attribuant à la propriété la `PrefersLargeTitles` valeur true :
 
 ```csharp
 NavigationController.NavigationBar.PrefersLargeTitles = true;
 ```
 
-Si vous définissez des titres plus grands dans votre application, _tous les_ titres des barres de navigation de votre application apparaissent plus grands, comme illustré dans la capture d’écran suivante:
+Si vous définissez des titres plus grands dans votre application, _tous les_ titres des barres de navigation de votre application apparaissent plus grands, comme illustré dans la capture d’écran suivante :
 
 ![Titre de navigation de grande taille](visual-design-images/image7.png)
 
@@ -45,7 +45,7 @@ Pour contrôler quand un titre de grande taille est affiché dans une barre de n
 
 ### <a name="search-controller"></a>Contrôleur de recherche
 
-iOS 11 a facilité l’ajout d’un contrôleur de recherche directement à la barre de navigation. Une fois que vous avez créé un contrôleur de recherche, ajoutez-le à votre `SearchController` barre de navigation avec la propriété:
+iOS 11 a facilité l’ajout d’un contrôleur de recherche directement à la barre de navigation. Une fois que vous avez créé un contrôleur de recherche, ajoutez-le à votre `SearchController` barre de navigation avec la propriété :
 
 ```csharp
 NavigationItem.SearchController = searchController;
@@ -59,7 +59,7 @@ Selon les fonctionnalités de votre application, vous pouvez ou non que la barre
 
 Apple a créé une nouvelle propriété, `directionalLayoutMargins` qui peut être utilisée pour définir l’espace entre les vues et les sous-vues. Utilisez `directionalLayoutMargins` avec `leading` ou`trailing` indéfinis. Que le système soit une langue de gauche à droite ou de droite à gauche, l’espacement dans votre application est correctement défini par iOS.
 
-Dans iOS 10 et avant, toutes les vues avaient une taille de marge minimale à laquelle elles s’aligneraient. iOS 11 a introduit la possibilité de remplacer cette valeur `ViewRespectsSystemMinimumLayoutMargins`à l’aide de. Par exemple, si vous affectez la valeur false à cette propriété, vous pouvez ajuster la valeur de votre bord à zéro:
+Dans iOS 10 et avant, toutes les vues avaient une taille de marge minimale à laquelle elles s’aligneraient. iOS 11 a introduit la possibilité de remplacer cette valeur `ViewRespectsSystemMinimumLayoutMargins`à l’aide de. Par exemple, si vous affectez la valeur false à cette propriété, vous pouvez ajuster la valeur de votre bord à zéro :
 
 ```csharp
 ViewRespectsSystemMinimumLayoutMargins = false;
@@ -74,7 +74,7 @@ View.LayoutMargins = UIEdgeInsets.Zero;
 
 iOS 7 [introduit](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) `topLayoutGuide` et `bottomLayoutGuide` comme un moyen de contraindre vos vues afin qu’elles ne soient pas masquées par des barres UIKit et se trouvent dans une zone visible de l’écran. Celles-ci ont été dépréciées dans iOS 11 en faveur de la _zone sécurisée_.
 
-La zone sécurisée est une nouvelle façon de réfléchir à l’espace visible de votre application et à la façon dont les contraintes sont ajoutées entre une vue et une vue super. Par exemple, considérez l’image suivante:
+La zone sécurisée est une nouvelle façon de réfléchir à l’espace visible de votre application et à la façon dont les contraintes sont ajoutées entre une vue et une vue super. Par exemple, considérez l’image suivante :
 
 [![Zone sécurisée et guide de disposition en haut et en bas](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
@@ -92,7 +92,7 @@ Le UITableView a subi un grand nombre de modifications mineures, mais importante
 
 Par défaut, les en-têtes, les pieds de page et les cellules sont maintenant dimensionnés automatiquement en fonction de leur contenu. Pour désactiver ce comportement de dimensionnement automatique, `EstimatedRowHeight` `EstimatedSectionHeaderHeight`affectez la valeur à `EstimatedSectionFooterHeight` , ou à zéro.
 
-Toutefois, dans certains cas (par exemple, lors de l’ajout de UITableViewController dans le concepteur iOS ou lors de l’utilisation de Storboards existants dans Interface Builder), vous devrez peut-être activer manuellement les cellules à redimensionnement automatique. Pour ce faire, assurez-vous que vous avez défini les propriétés suivantes sur la vue table pour les cellules, les en-têtes et les pieds de page, respectivement:
+Toutefois, dans certains cas (par exemple, lors de l’ajout de UITableViewController dans le concepteur iOS ou lors de l’utilisation de Storboards existants dans Interface Builder), vous devrez peut-être activer manuellement les cellules à redimensionnement automatique. Pour ce faire, assurez-vous que vous avez défini les propriétés suivantes sur la vue table pour les cellules, les en-têtes et les pieds de page, respectivement :
 
 ```csharp
 // Cells

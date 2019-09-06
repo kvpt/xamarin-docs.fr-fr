@@ -3,22 +3,22 @@ title: Accès à l’API Graph
 description: Ce document décrit comment ajouter Azure Active Directory l’authentification à une application mobile créée avec Xamarin.
 ms.prod: xamarin
 ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 74072a48e190478af79ec06ca8e5048d2cb61e36
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 96e0991bb0805e61dfbf91e8479cbf1c9943f212
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198573"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287758"
 ---
 # <a name="accessing-the-graph-api"></a>Accès à l’API Graph
 
-Procédez comme suit pour utiliser le API Graph à partir d’une application Xamarin:
+Procédez comme suit pour utiliser le API Graph à partir d’une application Xamarin :
 
 1. L' [inscription auprès de Azure Active Directory](~/cross-platform/data-cloud/active-directory/get-started/register.md) sur le portail *WindowsAzure.com* , puis
-2. Configurez les [services](~/cross-platform/data-cloud/active-directory/get-started/configure.md).
+2. [Configurez les services](~/cross-platform/data-cloud/active-directory/get-started/configure.md).
 
 ## <a name="step-3-adding-active-directory-authentication-to-an-app"></a>Étape 3. Ajout d’Active Directory l’authentification à une application
 
@@ -50,7 +50,7 @@ Une chose à noter ici est `commonAuthority`. Lorsque le point de terminaison `c
 
 ### <a name="write-method-to-acquire-access-token"></a>Méthode Write pour acquérir un jeton d’accès
 
-Le code suivant (pour Android) démarre l’authentification et, à la fin, assigne `authResult`le résultat dans. Les implémentations iOS et Windows Phone diffèrent légèrement: le deuxième paramètre`Activity`() est différent sur iOS et absent sur Windows Phone.
+Le code suivant (pour Android) démarre l’authentification et, à la fin, assigne `authResult`le résultat dans. Les implémentations iOS et Windows Phone diffèrent légèrement : le deuxième paramètre`Activity`() est différent sur iOS et absent sur Windows Phone.
 
 ```csharp
 public static async Task<AuthenticationResult> GetAccessToken
@@ -83,7 +83,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ### <a name="handle-continuation-for-windows-phone"></a>Gérer la continuation pour Windows Phone
 
-Pour Windows Phone modifiez la `OnActivated` méthode dans le fichier **app.Xaml.cs** avec le code ci-dessous:
+Pour Windows Phone modifiez la `OnActivated` méthode dans le fichier **app.Xaml.cs** avec le code ci-dessous :
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args)
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 ```
 
 Maintenant, si vous exécutez l’application, une boîte de dialogue d’authentification doit s’afficher.
-Une fois l’authentification réussie, elle vous demandera vos autorisations d’accès aux ressources (dans notre cas API Graph):
+Une fois l’authentification réussie, elle vous demandera vos autorisations d’accès aux ressources (dans notre cas API Graph) :
 
 ![](graph-images/08.-authentication-flow.jpg "Une fois l’authentification réussie, elle vous demandera vos autorisations d’accès aux ressources dans le cas API Graph")
 

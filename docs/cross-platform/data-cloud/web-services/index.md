@@ -3,15 +3,15 @@ title: Introduction aux services web
 description: Ce guide montre comment utiliser différentes technologies de service Web. Les sujets abordés incluent la communication avec les services REST, les services SOAP et les services Windows Communication Foundation.
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 07ebd61704ed07892eed9ce4d7fd7a21e215bee2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526727"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287574"
 ---
 # <a name="introduction-to-web-services"></a>Introduction aux services web
 
@@ -61,14 +61,14 @@ Pour plus d’informations sur `HttpClient` la classe, consultez [création de l
 
 ### <a name="httpwebrequest"></a>HTTPWebRequest
 
-L’appel de services `HTTPWebRequest` Web avec implique:
+L’appel de services `HTTPWebRequest` Web avec implique :
 
 - Création de l’instance de requête pour un URI particulier.
 - Définition de différentes propriétés HTTP sur l’instance de demande.
 - Récupération d’un `HttpWebResponse` à partir de la demande.
 - Lecture des données en dehors de la réponse.
 
-Par exemple, le code suivant récupère les données des États-Unis. Bibliothèque nationale du service Web Medicine:
+Par exemple, le code suivant récupère les données des États-Unis. Bibliothèque nationale du service Web Medicine :
 
 ```csharp
 var rxcui = "198440";
@@ -101,7 +101,7 @@ L’exemple ci-dessus `HttpWebRequest` crée un qui renverra des données au for
 
 ### <a name="restsharp"></a>RestSharp
 
-Une autre approche de l’utilisation des services REST consiste à utiliser la bibliothèque [RestSharp](http://restsharp.org/) . RestSharp encapsule les requêtes HTTP, y compris la prise en charge de la récupération des résultats en tant que contenu de C# chaîne brute ou en tant qu’objet désérialisé. Par exemple, le code suivant envoie une demande aux États-Unis. La Bibliothèque nationale du service Web Medicine et récupère les résultats sous la forme d’une chaîne au format JSON:
+Une autre approche de l’utilisation des services REST consiste à utiliser la bibliothèque [RestSharp](http://restsharp.org/) . RestSharp encapsule les requêtes HTTP, y compris la prise en charge de la récupération des résultats en tant que contenu de C# chaîne brute ou en tant qu’objet désérialisé. Par exemple, le code suivant envoie une demande aux États-Unis. La Bibliothèque nationale du service Web Medicine et récupère les résultats sous la forme d’une chaîne au format JSON :
 
 ```csharp
 var request = new RestRequest(string.Format("{0}/allinfo", rxcui));
@@ -121,7 +121,7 @@ rxTerm = DeserializeRxTerm(response.Content);
 
 En plus des classes disponibles dans la bibliothèque de classes de base mono (BCL), `HttpWebRequest`telles que, et C# les bibliothèques tierces, telles que RestSharp, les classes spécifiques à la plateforme sont également disponibles pour l’utilisation des services Web. Par exemple, dans iOS, les `NSUrlConnection` classes `NSMutableUrlRequest` et peuvent être utilisées.
 
-L’exemple de code suivant montre comment appeler la version américaine. Bibliothèque nationale de service Web Medicine utilisant des classes iOS:
+L’exemple de code suivant montre comment appeler la version américaine. Bibliothèque nationale de service Web Medicine utilisant des classes iOS :
 
 ```csharp
 var rxcui = "198440";
@@ -165,7 +165,7 @@ En règle générale, les classes spécifiques à la plateforme pour consommer d
 
 ### <a name="servicestack"></a>ServiceStack
 
-Une autre option pour appeler des services Web est la bibliothèque de [pile de services](http://www.servicestack.net/) . Par exemple, le code suivant montre comment utiliser la méthode de la `IServiceClient.GetAsync` pile de services pour émettre une demande de service:
+Une autre option pour appeler des services Web est la bibliothèque de [pile de services](http://www.servicestack.net/) . Par exemple, le code suivant montre comment utiliser la méthode de la `IServiceClient.GetAsync` pile de services pour émettre une demande de service :
 
 ```csharp
 client.GetAsync<CustomersResponse>("",
@@ -193,7 +193,7 @@ Les services web rESTful utilisent généralement des messages JSON pour retourn
 
 ### <a name="systemjson"></a>System.JSON
 
-La plateforme Xamarin est fournie avec la prise en charge de JSON prête à l’emploi. En utilisant un `JsonObject`, les résultats peuvent être récupérés comme indiqué dans l’exemple de code suivant:
+La plateforme Xamarin est fournie avec la prise en charge de JSON prête à l’emploi. En utilisant un `JsonObject`, les résultats peuvent être récupérés comme indiqué dans l’exemple de code suivant :
 
 ```csharp
 var obj = JsonObject.Parse(json);
@@ -212,7 +212,7 @@ Toutefois, il est important de savoir que les `System.Json` outils chargent l’
 
 ### <a name="jsonnet"></a>JSON.NET
 
-La [bibliothèque NewtonSoft JSON.net](http://www.newtonsoft.com/json) est une bibliothèque largement utilisée pour sérialiser et désérialiser des messages JSON. L’exemple de code suivant montre comment utiliser JSON.NET pour désérialiser un message JSON dans un C# objet:
+La [bibliothèque NewtonSoft JSON.net](http://www.newtonsoft.com/json) est une bibliothèque largement utilisée pour sérialiser et désérialiser des messages JSON. L’exemple de code suivant montre comment utiliser JSON.NET pour désérialiser un message JSON dans un C# objet :
 
 ```csharp
 var term = new RxTerm();
@@ -230,7 +230,7 @@ term.RxCUI = properties["rxcui"].Value<string>();
 
 ### <a name="servicestacktext"></a>ServiceStack.Text
 
-ServiceStack. Text est une bibliothèque de sérialisation JSON conçue pour fonctionner avec la bibliothèque ServiceStack. L’exemple de code suivant montre comment analyser JSON à l' `ServiceStack.Text.JsonObject`aide d’un:
+ServiceStack. Text est une bibliothèque de sérialisation JSON conçue pour fonctionner avec la bibliothèque ServiceStack. L’exemple de code suivant montre comment analyser JSON à l' `ServiceStack.Text.JsonObject`aide d’un :
 
 ```csharp
 var result = JsonObject.Parse(json).Object("rxtermsProperties")
@@ -252,7 +252,7 @@ var result = JsonObject.Parse(json).Object("rxtermsProperties")
 
 ### <a name="systemxmllinq"></a>System.Xml.Linq
 
-En cas d’utilisation d’un service Web REST basé sur XML, LINQ to XML peut être utilisé pour analyser le code XML et remplir un C# objet en ligne, comme illustré dans l’exemple de code suivant:
+En cas d’utilisation d’un service Web REST basé sur XML, LINQ to XML peut être utilisé pour analyser le code XML et remplir un C# objet en ligne, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 var doc = XDocument.Parse(xml);
@@ -288,7 +288,7 @@ SOAP peut opérer sur plusieurs protocoles de transport, y compris HTTP, SMTP, T
 
 Un *proxy* doit être généré pour consommer un service asmx, ce qui permet à l’application de se connecter au service. Le proxy est construit par la consommation des métadonnées de service qui définissant les méthodes et la configuration de service associé. Ces métadonnées sont exposées en tant que document Web Services Description Language (WSDL) qui est généré par le service Web. Le proxy est généré à l’aide de Visual Studio pour Mac ou Visual Studio pour ajouter une référence Web pour le service Web aux projets spécifiques à la plateforme.
 
-L’URL du service Web peut être une source distante hébergée ou une ressource du système `file:///` de fichiers local accessible via le préfixe du chemin d’accès, par exemple:
+L’URL du service Web peut être une source distante hébergée ou une ressource du système `file:///` de fichiers local accessible via le préfixe du chemin d’accès, par exemple :
 
 ```csharp
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
@@ -359,7 +359,7 @@ Une alternative à la création du proxy à l’aide de la Microsoft WCF Web Ser
 
 ### <a name="configuring-the-proxy"></a>Configuration du proxy
 
-La configuration du proxy généré prend généralement deux arguments de configuration (selon SOAP 1.1/asmx ou WCF) pendant l’initialisation: `EndpointAddress` et/ou les informations de liaison associées, comme indiqué dans l’exemple ci-dessous:
+La configuration du proxy généré prend généralement deux arguments de configuration (selon SOAP 1.1/asmx ou WCF) pendant l’initialisation : `EndpointAddress` et/ou les informations de liaison associées, comme indiqué dans l’exemple ci-dessous :
 
 ```csharp
 var binding = new BasicHttpBinding () {
@@ -413,7 +413,7 @@ Pour plus d’informations sur l’utilisation d’un service WCF, consultez [co
 
 #### <a name="using-transport-security"></a>Utilisation de la sécurité de transport
 
-Les services WCF peuvent utiliser la sécurité au niveau du transport pour empêcher l’interception des messages. La plateforme Xamarin prend en charge les liaisons qui utilisent la sécurité au niveau du transport à l’aide de SSL. Toutefois, il peut arriver que la pile doive valider le certificat, ce qui entraîne un comportement inattendu. La validation peut être substituée en inscrivant `ServerCertificateValidationCallback` un délégué avant d’appeler le service, comme illustré dans l’exemple de code suivant:
+Les services WCF peuvent utiliser la sécurité au niveau du transport pour empêcher l’interception des messages. La plateforme Xamarin prend en charge les liaisons qui utilisent la sécurité au niveau du transport à l’aide de SSL. Toutefois, il peut arriver que la pile doive valider le certificat, ce qui entraîne un comportement inattendu. La validation peut être substituée en inscrivant `ServerCertificateValidationCallback` un délégué avant d’appeler le service, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 System.Net.ServicePointManager.ServerCertificateValidationCallback +=
@@ -432,14 +432,14 @@ Les services WCF peuvent également nécessiter que les clients du service s’a
 basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
 ```
 
-Ensuite, vous pouvez spécifier les informations d’identification de l’authentification de base:
+Ensuite, vous pouvez spécifier les informations d’identification de l’authentification de base :
 
 ```csharp
 client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-Dans l’exemple ci-dessus, si vous recevez le message «trampolines de type 0», vous pouvez augmenter le nombre de type 0 trampolines en ajoutant l' `–aot “trampolines={number of trampolines}”` argument à la Build. Pour plus d’informations, consultez la page [Dépannage](~/ios/troubleshooting/troubleshooting.md#trampolines).
+Dans l’exemple ci-dessus, si vous recevez le message « trampolines de type 0 », vous pouvez augmenter le nombre de type 0 trampolines en ajoutant l' `–aot “trampolines={number of trampolines}”` argument à la Build. Pour plus d’informations, consultez la page [Dépannage](~/ios/troubleshooting/troubleshooting.md#trampolines).
 
 Pour plus d’informations sur l’authentification HTTP de base, bien que dans le contexte d’un service Web REST, consultez [authentification d’un service Web RESTful](~/xamarin-forms/data-cloud/authentication/rest.md).
 

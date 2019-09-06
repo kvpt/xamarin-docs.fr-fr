@@ -4,15 +4,15 @@ description: Ce document décrit les modifications d’infrastructure supplémen
 ms.prod: xamarin
 ms.assetid: CFDE1FC4-9327-402B-95A0-581D4AA0E9D5
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c3f140affe3d539eb07d06f50a031cd7ef469728
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 706efdd9cb39db63ab0c7b9cd4404b7b84f4c14b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197751"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292407"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Modifications supplémentaires des frameworks iOS 9
 
@@ -26,7 +26,7 @@ Outre les modifications majeures apportées à iOS, Apple a apporté des modific
 
 Dans l’infrastructure AVFoundation, la classe [AVSpeechSynthesisVoice](xref:AVFoundation.AVSpeechSynthesisVoice) vous permet désormais de spécifier une voix par identificateur en plus de la langue.
 
-Par exemple, le code suivant obtient une liste de toutes les voix disponibles:
+Par exemple, le code suivant obtient une liste de toutes les voix disponibles :
 
 ```csharp
 var voices = AVSpeechSynthesisVoice.GetSpeechVoices ();
@@ -59,24 +59,24 @@ La nouvelle infrastructure de _services Web CloudKit_ fournit une bibliothèque 
 
 
 
-Pour plus d’informations, consultez les documents suivants:
+Pour plus d’informations, consultez les documents suivants :
 
 - [Présentation de CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) : notre introduction à l’utilisation de CloudKit dans une application Xamarin. iOS.
 - [CloudKit démarrage rapide](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987) -présentation d’Apple à CloudKit.
 - [Référence CLOUDKIT js](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359) -documentation CloudKit JS d’Apple.
 - [Référence des services Web CloudKit](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) -référence d’Apple qui décrit l’interface http à CloudKit.
-- [Catalogue CloudKit: Présentation de CloudKit (cacao et JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) : exemple d’application Apple utilisant CloudKit et CloudKit js.
+- [Catalogue CloudKit : Présentation de CloudKit (cacao et JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) : exemple d’application Apple utilisant CloudKit et CloudKit js.
 
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
 
 ## <a name="foundation-framework-additions"></a>Ajouts de Foundation Framework
 
-Apple a inclus les modifications suivantes à l’infrastructure de Fondation dans iOS 9:
+Apple a inclus les modifications suivantes à l’infrastructure de Fondation dans iOS 9 :
 
 ### <a name="changes-to-nsbundle"></a>Modifications apportées à NSBundle
 
-Les modifications suivantes ont été apportées à la classe [NSBundle](xref:Foundation.NSBundle) pour iOS 9:
+Les modifications suivantes ont été apportées à la classe [NSBundle](xref:Foundation.NSBundle) pour iOS 9 :
 
 - `GetPreservationPriorityForTag (NSString tag)`-Obtient la priorité de conservation actuelle pour les ressources avec la balise donnée. Les valeurs valides sont comprises dans la plage `0.0` de `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
 - `SetPreservationPriorityForTag (double priority, NSSet tags)`: Définit la priorité de conservation actuelle pour les ressources avec les balises spécifiées. Les valeurs valides sont comprises dans la plage `0.0` de `1.0`, les ressources dont la priorité est la plus basse seront supprimées en premier.
@@ -87,7 +87,7 @@ Pour plus d’informations, consultez la [référence NSBundle](https://develope
 
 Chaque processus en cours d’exécution sur un appareil iOS possède un assembly PIA ( _Process information agent_ ) unique. Utilisez la classe [NSProcessInfo](xref:Foundation.NSProcessInfo) pour fournir des informations sur l’assembly PIA actuel et contrôler la gestion de l’alimentation et de la chaleur pour un processus donné.
 
-Par exemple, pour contrôler l’arrêt automatique d’un processus, vous pouvez utiliser le code suivant:
+Par exemple, pour contrôler l’arrêt automatique d’un processus, vous pouvez utiliser le code suivant :
 
 ```csharp
 // Disable automatic termination
@@ -117,7 +117,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 
 ## <a name="healthkit-framework-changes"></a>Modifications de l’infrastructure HealthKit
 
-Apple a inclus les modifications suivantes à l’infrastructure [HealthKit](xref:HealthKit) dans iOS 9:
+Apple a inclus les modifications suivantes à l’infrastructure [HealthKit](xref:HealthKit) dans iOS 9 :
 
 - Prise en charge du suivi de suppression et de suppression en bloc des entrées dans la base de données HealthKit. Pour plus d’informations, consultez Référence de la classe [HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject), [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery) et [HKHealthStore](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708) d’Apple.
 - De nouvelles catégories et caractéristiques de suivi ont été ajoutées `HKQuantityTypeIdentifier` à la classe ( `UVExposure`telle que) et `HKCategoryTypeIdentifier` à la classe ( `OvulationTestResult`telle que). Pour plus d’informations, consultez [référence des constantes HealthKit](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710) d’Apple.
@@ -126,7 +126,7 @@ Pour plus d’informations sur l’utilisation de HealthKit dans Xamarin. iOS, c
 
 ## <a name="local-authentication-framework-changes"></a>Modifications de l’infrastructure d’authentification locale
 
-Apple a inclus les modifications suivantes à l’infrastructure [d’authentification locale](xref:LocalAuthentication) dans iOS 9:
+Apple a inclus les modifications suivantes à l’infrastructure [d’authentification locale](xref:LocalAuthentication) dans iOS 9 :
 
 - À l' `EvaluateAccessControl` aide `EvaluatePolicy` des méthodes et de la classe [LAContext](xref:LocalAuthentication.LAContext) , vous pouvez désormais réutiliser les correspondances d’ID tactiles à partir des tentatives de déverrouillage réussies précédentes.
 - La possibilité d’obtenir la liste des doigts actuellement inscrits.
@@ -138,14 +138,14 @@ Pour plus d’informations sur l’utilisation de Touch ID dans Xamarin. iOS, co
 
 ### <a name="lacontext-changes"></a>Modifications de LAContext
 
-Les modifications suivantes ont été apportées à la classe [LAContext](xref:LocalAuthentication.LAContext) pour iOS 9:
+Les modifications suivantes ont été apportées à la classe [LAContext](xref:LocalAuthentication.LAContext) pour iOS 9 :
 
 - **TouchIdAuthenticationMaximumAllowableReuseDuration** : retourne la durée maximale pendant laquelle une authentification Touch ID peut être réutilisée.
 - **EvaluatedPolicyDomainState** : Obtient ou définit l’état d’une stratégie évaluée.
 - **MaxBiometryFailures** -a été amorti dans iOS 9.
 - **TouchIdAuthenticationAllowableReuseDuration** Obtient ou définit la durée pendant laquelle une authentification Touch ID peut être réutilisée.
 - **EvaluateAccessControl** : évalue de manière asynchrone une stratégie d’authentification.
-- Invalidate: invalide une authentification Touch ID donnée.
+- **Invalidate** : invalide une authentification Touch ID donnée.
 - **IsCredentialSet** -retourne `true` si les informations d’identification sont actuellement définies.
 - **SetCredentialType** Définit le type d’informations d’identification donné.
 
@@ -153,17 +153,17 @@ Pour plus d’informations, consultez la [référence LAContext](https://develop
 
 ## <a name="mapkit-framework-changes"></a>Modifications de l’infrastructure MapKit
 
-Apple a inclus les modifications suivantes à l’infrastructure [MapKit](xref:MapKit) dans iOS 9:
+Apple a inclus les modifications suivantes à l’infrastructure [MapKit](xref:MapKit) dans iOS 9 :
 
 - MapKit prend désormais en charge le lancement de l’application Map directement dans les directions de transit et l’interrogation de l’heure d’arrivée estimée de transit (ETA) à l’aide des classes [MKLaunchOptions](xref:MapKit.MKLaunchOptions) et [MKDirections](xref:MapKit.MKLaunchOptions) .
 - Les résultats de la recherche retournés par MapKit et la classe [CLGeocoder](xref:CoreLocation.CLGeocoder) peuvent également fournir le fuseau horaire du résultat.
 - Vous pouvez désormais personnaliser entièrement les annotations de carte présentées par votre application `DetailCalloutAccessoryView` iOS à l’aide de la propriété de la classe [MKAnnotationView](xref:MapKit.MKAnnotationView) .
 
-Pour plus d’informations sur l’utilisation des mappages et des annotations dans Xamarin. iOS et la [référence CLGeocoder](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder) d’Apple, consultez nos [cartes iOS](~/ios/user-interface/controls/ios-maps/index.md) et la [procédure pas à pas: exploration](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md) des annotations et des superpositions dans la documentation de MapKit.
+Pour plus d’informations sur l’utilisation des mappages et des annotations dans Xamarin. iOS et la [référence CLGeocoder](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder) d’Apple, consultez nos [cartes iOS](~/ios/user-interface/controls/ios-maps/index.md) et la [procédure pas à pas : exploration des annotations et des superpositions dans](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md) la documentation de MapKit.
 
 ## <a name="passkit-framework-additions"></a>Ajouts du Framework PassKit
 
-Apple a inclus les modifications suivantes à l’infrastructure [PassKit](xref:PassKit) dans iOS 9:
+Apple a inclus les modifications suivantes à l’infrastructure [PassKit](xref:PassKit) dans iOS 9 :
 
 - Apple Pay prend désormais en charge les cartes de débit et de crédit stockées, ainsi que les cartes Discover. Pour plus d’informations, consultez la section sur les **réseaux de paiement** de la [référence de classe PKPaymentRequest](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKPaymentRequest_Ref/index.html#//apple_ref/doc/uid/TP40014832) d’Apple.
 - Directement au sein d’une application Xamarin. iOS, vous pouvez désormais ajouter des réseaux de paiement et des émetteurs de cartes à Apple Pay. Pour plus d’informations, consultez Référence de la [classe PKAddPaymentPassViewController](https://developer.apple.com/library/prerelease/ios/documentation/PassKit/Reference/PKAddPaymentPassViewController_Class/index.html#//apple_ref/doc/uid/TP40016116) d’Apple.
@@ -172,7 +172,7 @@ Pour plus d’informations sur l’utilisation de PassKit dans Xamarin. iOS, con
 
 ## <a name="safari-services-framework-additions"></a>Ajouts de l’infrastructure des services Safari
 
-Apple a inclus les modifications suivantes à l’infrastructure des [services Safari](xref:SafariServices) dans iOS 9:
+Apple a inclus les modifications suivantes à l’infrastructure des [services Safari](xref:SafariServices) dans iOS 9 :
 
 - Vous pouvez maintenant utiliser la nouvelle classe [SFSafariViewController](xref:SafariServices.SFSafariViewController) pour afficher le contenu Web dans une application Xamarin. iOS. Il offre la possibilité de partager des données de site Web et des cookies avec l’application Safari et inclut plusieurs fonctionnalités de Safari (telles que le lecteur et le remplissage automatique). [SFSafariViewController](xref:SafariServices.SFSafariViewController) propose un bouton **terminé** qui renverra les utilisateurs à votre application lorsqu’ils auront terminé de consulter le contenu Web.
 
@@ -180,7 +180,7 @@ Apple a inclus les modifications suivantes à l’infrastructure des [services S
 
 ### <a name="displaying-a-website"></a>Affichage d’un site Web
 
-Le code ci-dessous est un exemple d’appel d’un [SFSafariViewController](xref:SafariServices.SFSafariViewController) à partir d’un autre contrôleur d’affichage:
+Le code ci-dessous est un exemple d’appel d’un [SFSafariViewController](xref:SafariServices.SFSafariViewController) à partir d’un autre contrôleur d’affichage :
 
 ```csharp
 // Create an instance of the Safari Services View Controller
@@ -242,7 +242,7 @@ Pour plus d’informations, consultez la [référence UIApplicationDelegate](htt
 
 ### <a name="uikit-dynamics-changes"></a>Modifications de Dynamics UIKit
 
-Apple a inclus les modifications suivantes dans UIKit Dynamics dans iOS 9:
+Apple a inclus les modifications suivantes dans UIKit Dynamics dans iOS 9 :
 
 - Dynamics prend désormais en charge les limites de collision non rectangulaires.
 - La nouvelle `UIFieldBehavior` classe personnalisable est utilisée pour prendre en charge différents types de champs.
@@ -256,7 +256,7 @@ Avant iOS 9, les contrôles [UIPickerView](xref:UIKit.UIPickerView) et [UIDatePi
 
 Dans iOS 9, ce redimensionnement automatique ne se produit plus et les contrôles sont rendus à une largeur de 320 points sur tous les appareils iOS, quelle que soit la taille et l’orientation de l’écran.
 
-Pour corriger cette situation, utilisez les classes disposition automatique et taille pour épingler la largeur du contrôle aux bords du conteneur parent (vue) et spécifiez la hauteur requise. Pour plus d’informations sur l’utilisation des classes de disposition et de taille automatiques dans une application Xamarin. iOS, consultez notre [Introduction à](~/ios/user-interface/storyboards/unified-storyboards.md) la documentation sur les storyboards unifiées.
+Pour corriger cette situation, utilisez les classes disposition automatique et taille pour épingler la largeur du contrôle aux bords du conteneur parent (vue) et spécifiez la hauteur requise. Pour plus d’informations sur l’utilisation des classes de disposition et de taille automatiques dans une application Xamarin. iOS, consultez notre introduction à la documentation sur les [storyboards unifiées](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 ### <a name="new-uitextinputassistantitem-class"></a>Nouvelle classe UITextInputAssistantItem
 

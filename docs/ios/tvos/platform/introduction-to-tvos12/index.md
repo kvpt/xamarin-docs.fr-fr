@@ -4,15 +4,15 @@ description: Ce document fournit une vue d’ensemble des fonctionnalités nouve
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: c8d1f3dda459bc679048291e5df94bd68fbb80b2
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f5028fe6ae7ee726ffd94d7908a089ce3bdcb385
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200058"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287948"
 ---
 # <a name="introduction-to-tvos-12"></a>Introduction à tvOS 12
 

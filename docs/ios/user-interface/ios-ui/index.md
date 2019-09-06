@@ -1,40 +1,40 @@
 ---
 title: Interfaces utilisateur dans iOS
-description: Ce document contient des liens vers des guides qui expliquent comment créer des interfaces utilisateur dans une application Xamarin.iOS. Les guides liés couvrent l’API d’apparence, création d’objets d’interface utilisateur, les options de disposition et bien plus encore.
+description: Ce document contient des liens vers des guides qui décrivent comment créer des interfaces utilisateur dans l’application Xamarin. iOS. Les repères liés couvrent l’API d’apparence, la création d’objets d’interface utilisateur, les options de disposition et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: efb88ada8a4b4c36dd49de137eb64acd63552968
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 106cadc6fef43c06597cf1e3b846bd48cecb6fa5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382334"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287051"
 ---
 # <a name="user-interfaces-in-ios"></a>Interfaces utilisateur dans iOS
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[API d’apparence](introduction-to-the-appearance-api.md)
 
-iOS permet de nombreux attributs visuels de contrôles d’interface utilisateur pour être à thème à l’aide de la APIs UIAppearance.
+iOS permet à de nombreux attributs visuels des contrôles de l’interface utilisateur d’être à thème à l’aide des API UIAppearance.
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[Création des objets de l’interface utilisateur](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple regroupe des connexes des fonctionnalités dans « frameworks », qui sont équivalentes aux espaces de noms Xamarin.iOS. `UIKit` est l’espace de noms qui contient tous les contrôles d’interface utilisateur pour iOS.
+Apple regroupe des fonctionnalités connexes dans des « frameworks » qui correspondent à des espaces de noms Xamarin. iOS. `UIKit`est l’espace de noms qui contient tous les contrôles d’interface utilisateur pour iOS.
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[Options de disposition](~/ios/user-interface/ios-ui/layout-options.md)
 
-Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée : Redimensionnement automatique et mise en forme automatique.
+Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée : Redimensionnement automatique et mise en page automatique.
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Activation du retour haptique](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
-Cet article décrit les nouveaux types de retour haptique disponible dans iOS 10 et comment les implémenter dans Xamarin.iOS.
+Cet article aborde les nouveaux types de commentaires haptique disponibles dans iOS 10 et comment les implémenter dans Xamarin. iOS.
 
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[Utilisation du thread d’interface utilisateur](~/ios/user-interface/ios-ui/ui-thread.md)
 
-Votre code doit faire uniquement les threads de modifications apportées aux contrôles d’interface à partir de la main de l’utilisateur (ou l’interface utilisateur). Les mises à jour de l’interface utilisateur qui se produisent sur un thread différent (par exemple, un thread de rappel ou d’arrière-plan) ne peuvent pas obtenir rendus à l’écran, ou peuvent même provoquer un blocage.
+Votre code doit uniquement apporter des modifications aux contrôles de l’interface utilisateur à partir du thread principal (ou de l’interface utilisateur). Les mises à jour de l’interface utilisateur qui se produisent sur un thread différent (par exemple, un rappel ou un thread d’arrière-plan) peuvent ne pas être rendues à l’écran ou peuvent même provoquer un blocage.
 
 
 

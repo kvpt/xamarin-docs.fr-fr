@@ -4,15 +4,15 @@ description: Ce guide explore Xamarin. Mac et sa relation à Objective-C à un n
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: 61a5757c20f3a39df583bda10a11145e04560bf8
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198211"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287783"
 ---
 # <a name="xamarinmac-architecture"></a>Architecture Xamarin. Mac
 
@@ -22,13 +22,13 @@ _Ce guide explore Xamarin. Mac et sa relation à Objective-C à un niveau bas. I
 
 Les applications Xamarin. Mac s’exécutent dans l’environnement d’exécution mono et utilisent le compilateur de Xamarin pour compiler en langage intermédiaire (IL), qui est ensuite compilé juste-à-temps (JIT) en code natif au moment de l’exécution. S’exécute côte à côte avec le runtime objective-C. Les deux environnements d’exécution s’exécutent sur un noyau de type UNIX, en particulier XNU, et exposent diverses API au code utilisateur, ce qui permet aux développeurs d’accéder au système managé ou natif sous-jacent.
 
-Le diagramme ci-dessous illustre une vue d’ensemble de cette architecture:
+Le diagramme ci-dessous illustre une vue d’ensemble de cette architecture :
 
 [![Diagramme montrant une vue d’ensemble de base de l’architecture](architecture-images/mac-arch.png "Diagramme montrant une vue d’ensemble de base de l’architecture")](architecture-images/mac-arch-large.png#lightbox)
 
 ### <a name="native-and-managed-code"></a>Code natif et managé
 
-Lors du développement pour Xamarin, les termes *natif* et code *managé* sont souvent utilisés. Le code managé est du code dont l’exécution est gérée par le Common Language Runtime .NET Framework, ou dans le cas de Xamarin: le runtime mono.
+Lors du développement pour Xamarin, les termes *natif* et code *managé* sont souvent utilisés. Le code managé est du code dont l’exécution est gérée par le Common Language Runtime .NET Framework, ou dans le cas de Xamarin : le runtime mono.
 
 Le code natif est du code qui s’exécute en mode natif sur la plateforme spécifique (par exemple, Objective-C ou code compilé de l’AOA, sur un processeur ARM). Ce guide explore la manière dont votre code managé est compilé en code natif et explique le fonctionnement d’une application Xamarin. Mac, en utilisant pleinement les API Mac d’Apple à l’aide de liaisons, tout en ayant également accès à. La BCL du NET et un langage sophistiqué tel C#que.
 
@@ -54,20 +54,20 @@ Avec les applications Xamarin. Mac, mono est généralement incorporé dans l’
 
 ## <a name="selectors"></a>Sélecteurs
 
-Avec Xamarin, nous avons deux écosystèmes distincts, .NET et Apple, que nous devons rassembler pour qu’ils semblent aussi rationalisés que possible, afin de s’assurer que l’objectif final est une expérience utilisateur fluide. Nous avons vu dans la section précédente Comment les deux runtimes communiquent, et vous pouvez très bien avoir entendu parler du terme «liaisons» qui permet d’utiliser les API Mac natives dans Xamarin. Les liaisons sont expliquées en détail dans la [documentation relative à la liaison objective-C](~/mac/platform/binding.md), donc pour l’instant, examinons le fonctionnement de Xamarin. Mac.
+Avec Xamarin, nous avons deux écosystèmes distincts, .NET et Apple, que nous devons rassembler pour qu’ils semblent aussi rationalisés que possible, afin de s’assurer que l’objectif final est une expérience utilisateur fluide. Nous avons vu dans la section précédente Comment les deux runtimes communiquent, et vous pouvez très bien avoir entendu parler du terme « liaisons » qui permet d’utiliser les API Mac natives dans Xamarin. Les liaisons sont expliquées en détail dans la [documentation relative à la liaison objective-C](~/mac/platform/binding.md), donc pour l’instant, examinons le fonctionnement de Xamarin. Mac.
 
 Tout d’abord, il doit exister un moyen d’exposer objective- C#C à, ce qui est effectué via des sélecteurs. Un sélecteur est un message qui est envoyé à un objet ou à une classe. Avec Objective-C, cette opération s’effectue à l’aide des fonctions [objc_msgSend](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html) . Pour plus d’informations sur l’utilisation des sélecteurs, reportez-vous au guide [des sélecteurs objective-C](~/ios/internals/objective-c-selectors.md) iOS. Il doit également exister un moyen d’exposer le code managé à Objective-C, ce qui est plus compliqué en raison du fait que objective-C ne sait rien du code géré. Pour contourner ce propos, nous utilisons un [Bureau](~/mac/internals/registrar.md)d’enregistrement. Cela est expliqué plus en détail dans la section suivante.
 
 ## <a name="registrar"></a>Inscription
 
-Comme indiqué ci-dessus, le Bureau d’enregistrement est du code qui expose du code managé à Objective-C. Pour ce faire, il crée une liste de toutes les classes managées qui dérivent de NSObject:
+Comme indiqué ci-dessus, le Bureau d’enregistrement est du code qui expose du code managé à Objective-C. Pour ce faire, il crée une liste de toutes les classes managées qui dérivent de NSObject :
 
 - Pour toutes les classes qui n’encapsulent pas une classe objective-c existante, elle crée une nouvelle classe objective-c avec des membres objective-c qui reflètent `[Export]` tous les membres managés ayant un attribut.
 - Dans les implémentations pour chaque membre objective – C, le code est ajouté automatiquement pour appeler le membre managé mis en miroir.
 
-Le pseudo-code ci-dessous montre un exemple de cette opération:
+Le pseudo-code ci-dessous montre un exemple de cette opération :
 
-**C#(code managé):**
+**C#(code managé) :**
 
 ```csharp
 class MyViewController : UIViewController{
@@ -78,7 +78,7 @@ class MyViewController : UIViewController{
  }
  ```
 
-**Objective-C (code natif):**
+**Objective-C (code natif) :**
 
 ```objc
 @interface MyViewController : UIViewController
@@ -94,10 +94,10 @@ class MyViewController : UIViewController{
 
 Le code managé peut contenir les attributs, `[Register]` et `[Export]`, que le Bureau d’enregistrement utilise pour savoir que l’objet doit être exposé à Objective-C. L’attribut [register] est utilisé pour spécifier le nom de la classe objective-C générée si le nom généré par défaut n’est pas approprié. Toutes les classes dérivées de NSObject sont automatiquement inscrites avec Objective-C. L’attribut [Export] requis contient une chaîne, qui est le sélecteur utilisé dans la classe objective-C générée.
 
-Il existe deux types d’bureaux d’enregistrement utilisés dans Xamarin. Mac, dynamiques et statiques:
+Il existe deux types d’bureaux d’enregistrement utilisés dans Xamarin. Mac, dynamiques et statiques :
 
-- Registraires dynamiques: il s’agit du Bureau d’enregistrement par défaut pour toutes les builds Xamarin. Mac. Le Bureau d’enregistrement dynamique procède à l’inscription de tous les types de votre assembly au moment de l’exécution. Pour ce faire, il utilise les fonctions fournies par l’API Runtime objective-C. Le Bureau d’enregistrement dynamique a donc un démarrage plus lent, mais une génération plus rapide. Les fonctions natives (généralement en C), appelées trampolines, sont utilisées en tant qu’implémentations de méthode lors de l’utilisation des registres dynamiques. Ils varient en fonction des différentes architectures.
-- Bureaux d’enregistrement statiques: le Bureau d’enregistrement statique génère du code Objective-C pendant la génération, qui est ensuite compilé dans une bibliothèque statique et lié à l’exécutable. Cela permet un démarrage plus rapide, mais prend plus de temps pendant la génération.
+- Registraires dynamiques : il s’agit du Bureau d’enregistrement par défaut pour toutes les builds Xamarin. Mac. Le Bureau d’enregistrement dynamique procède à l’inscription de tous les types de votre assembly au moment de l’exécution. Pour ce faire, il utilise les fonctions fournies par l’API Runtime objective-C. Le Bureau d’enregistrement dynamique a donc un démarrage plus lent, mais une génération plus rapide. Les fonctions natives (généralement en C), appelées trampolines, sont utilisées en tant qu’implémentations de méthode lors de l’utilisation des registres dynamiques. Ils varient en fonction des différentes architectures.
+- Bureaux d’enregistrement statiques : le Bureau d’enregistrement statique génère du code Objective-C pendant la génération, qui est ensuite compilé dans une bibliothèque statique et lié à l’exécutable. Cela permet un démarrage plus rapide, mais prend plus de temps pendant la génération.
 
 ## <a name="application-launch"></a>Lancement de l’application
 
@@ -105,7 +105,7 @@ La logique de démarrage de Xamarin. Mac varie selon que l’utilisation de la f
 
 ## <a name="generator"></a>Générateur
 
-Xamarin. Mac contient des définitions pour chaque API Mac. Vous pouvez parcourir n’importe lequel d’entre eux sur le [référentiel MaCiO GitHub](https://github.com/xamarin/xamarin-macios/tree/master/src). Ces définitions contiennent des interfaces avec des attributs, ainsi que toutes les méthodes et propriétés nécessaires. Par exemple, le code suivant est utilisé pour définir un NSBox dans l' [espace de noms AppKit](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Notez qu’il s’agit d’une interface avec un certain nombre de méthodes et de propriétés:
+Xamarin. Mac contient des définitions pour chaque API Mac. Vous pouvez parcourir n’importe lequel d’entre eux sur le [référentiel MaCiO GitHub](https://github.com/xamarin/xamarin-macios/tree/master/src). Ces définitions contiennent des interfaces avec des attributs, ainsi que toutes les méthodes et propriétés nécessaires. Par exemple, le code suivant est utilisé pour définir un NSBox dans l' [espace de noms AppKit](https://github.com/xamarin/xamarin-macios/blob/master/src/appkit.cs#L1465-L1526). Notez qu’il s’agit d’une interface avec un certain nombre de méthodes et de propriétés :
 
 ```csharp
 [BaseType (typeof (NSView))]
@@ -140,7 +140,7 @@ Le générateur, appelé `bmac` dans Xamarin. Mac, prend ces fichiers de défini
 
 Une fois le fichier Xamarin. Mac. dll créé, le gestionnaire de package `mmp`regroupe tous les composants ensemble.
 
-À un niveau élevé, il y parvient en exécutant les tâches suivantes:
+À un niveau élevé, il y parvient en exécutant les tâches suivantes :
 
 - Créez une structure de bundle d’applications.
 - Copiez dans vos assemblys managés.

@@ -4,15 +4,15 @@ description: Ce document décrit le Bureau d’enregistrement de types Xamarin. 
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 0d8e16c2a651df293b13e7f7586d5a643caa1c9c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226035"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291839"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Entrer le Bureau d’enregistrement pour Xamarin. iOS
 
@@ -20,14 +20,14 @@ Ce document décrit le système d’enregistrement de type utilisé par Xamarin.
 
 ## <a name="registration-of-managed-classes-and-methods"></a>Inscription des classes et des méthodes managées
 
-Au démarrage, Xamarin. iOS s’inscrit:
+Au démarrage, Xamarin. iOS s’inscrit :
 
 - Classes avec un attribut [[register]](xref:Foundation.RegisterAttribute) en tant que classes objective-C.
 - Classes avec un attribut [[category]](xref:ObjCRuntime.CategoryAttribute) en tant que catégories objective-C.
 - Interfaces avec un attribut [[Protocole]](xref:Foundation.ProtocolAttribute) en tant que protocoles objective-C.
 - Les membres avec un [[Export]](xref:Foundation.ExportAttribute), ce qui permet à Objective-C d’y accéder.
 
-Par exemple, considérez la `Main` méthode managée commune dans les applications Xamarin. iOS:
+Par exemple, considérez la `Main` méthode managée commune dans les applications Xamarin. iOS :
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
@@ -52,7 +52,7 @@ Pour créer une catégorie, utilisez l' `[Category]` attribut et spécifiez le t
 [Category (typeof (NSString))]
 ```
 
-Chacune des méthodes d’une catégorie a un `[Export]` attribut, ce qui la rend disponible pour le runtime objective-C:
+Chacune des méthodes d’une catégorie a un `[Export]` attribut, ce qui la rend disponible pour le runtime objective-C :
 
 ```csharp
 [Export ("today")]
@@ -62,7 +62,7 @@ public static string Today ()
 }
 ```
 
-Toutes les méthodes d’extension managées doivent être statiques, mais il est possible de créer des méthodes d’instance C# objective-C à l’aide de la syntaxe standard pour les méthodes d’extension:
+Toutes les méthodes d’extension managées doivent être statiques, mais il est possible de créer des méthodes d’instance C# objective-C à l’aide de la syntaxe standard pour les méthodes d’extension :
 
 ```csharp
 [Export ("toUpper")]
@@ -72,7 +72,7 @@ public static string ToUpper (this NSString self)
 }
 ```
 
-Le premier argument de la méthode d’extension est l’instance sur laquelle la méthode a été appelée:
+Le premier argument de la méthode d’extension est l’instance sur laquelle la méthode a été appelée :
 
 ```csharp
 [Category (typeof (NSString))]
@@ -86,7 +86,7 @@ public static class MyStringCategory
  }
  ```
 
-Cet exemple ajoute une méthode d' `toUpper` instance native à la `NSString` classe. Cette méthode peut être appelée à partir de Objective-C:
+Cet exemple ajoute une méthode d' `toUpper` instance native à la `NSString` classe. Cette méthode peut être appelée à partir de Objective-C :
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -102,7 +102,7 @@ public static class MyViewControllerCategory
 
 ### <a name="protocols"></a>Protocoles
 
-À compter de Xamarin. iOS 8,10, les interfaces `[Protocol]` avec l’attribut seront exportées vers objective-C en tant que protocoles:
+À compter de Xamarin. iOS 8,10, les interfaces `[Protocol]` avec l’attribut seront exportées vers objective-C en tant que protocoles :
 
 ```csharp
 [Protocol ("MyProtocol")]
@@ -126,21 +126,21 @@ Ce code exporte `IMyProtocol` vers objective-C en tant `MyProtocol` que protocol
 
 À partir de la version stable de 6.2.6 et de la version bêta 6.3.4, nous avons ajouté un nouveau bureau d’enregistrement statique. Dans la version 7.2.1, nous avons fait du nouveau bureau d’enregistrement la valeur par défaut.
 
-Ce nouveau système d’inscription offre les nouvelles fonctionnalités suivantes:
+Ce nouveau système d’inscription offre les nouvelles fonctionnalités suivantes :
 
-- Détection des erreurs du programmeur au moment de la compilation:
+- Détection des erreurs du programmeur au moment de la compilation :
   - Deux classes en cours d’inscription avec le même nom.
   - Plusieurs méthodes exportées pour répondre au même sélecteur
-- Suppression du code natif inutilisé:
+- Suppression du code natif inutilisé :
   - Le nouveau système d’inscription ajoute des références fortes au code utilisé dans les bibliothèques statiques, ce qui permet à l’éditeur de liens natif de supprimer le code natif inutilisé du fichier binaire résultant. Sur les exemples de liaisons de Xamarin, la plupart des applications deviennent au moins 300 000 plus petites.
 
-- Prise en charge des sous-classes `NSObject`génériques de; pour plus d’informations, consultez [génériques NSObject](~/ios/internals/api-design/nsobject-generics.md) . En outre, le nouveau système d’inscription intercepte les constructions génériques non prises en charge qui auraient précédemment provoqué un comportement aléatoire au moment de l’exécution.
+- Prise en charge des sous-classes `NSObject`génériques de ; pour plus d’informations, consultez [génériques NSObject](~/ios/internals/api-design/nsobject-generics.md) . En outre, le nouveau système d’inscription intercepte les constructions génériques non prises en charge qui auraient précédemment provoqué un comportement aléatoire au moment de l’exécution.
 
 ### <a name="errors-caught-by-the-new-registrar"></a>Erreurs détectées par le nouveau bureau d’enregistrement
 
 Voici quelques exemples d’erreurs détectées par le nouveau bureau d’enregistrement.
 
-- Exportation du même sélecteur plusieurs fois dans la même classe:
+- Exportation du même sélecteur plusieurs fois dans la même classe :
 
   ```csharp
   [Register]
@@ -153,7 +153,7 @@ Voici quelques exemples d’erreurs détectées par le nouveau bureau d’enregi
   }
   ```
 
-- Exportation de plusieurs classes managées avec le même nom objective-C:
+- Exportation de plusieurs classes managées avec le même nom objective-C :
 
   ```csharp
   [Register ("Class")]
@@ -163,7 +163,7 @@ Voici quelques exemples d’erreurs détectées par le nouveau bureau d’enregi
   class YourClass : NSObject {}
   ```
 
-- Exportation des méthodes génériques:
+- Exportation des méthodes génériques :
 
   ```csharp
   [Register]
@@ -176,7 +176,7 @@ Voici quelques exemples d’erreurs détectées par le nouveau bureau d’enregi
 
 ### <a name="limitations-of-the-new-registrar"></a>Limitations du nouveau bureau d’enregistrement
 
-Voici quelques éléments à prendre en compte sur le nouveau bureau d’enregistrement:
+Voici quelques éléments à prendre en compte sur le nouveau bureau d’enregistrement :
 
 - Certaines bibliothèques tierces doivent être mises à jour pour fonctionner avec le nouveau système d’inscription. Pour plus d’informations, consultez les [modifications requises](#required-modifications) ci-dessous.
 
@@ -186,7 +186,7 @@ Voici quelques éléments à prendre en compte sur le nouveau bureau d’enregis
 
 ## <a name="selecting-a-registrar"></a>Sélection d’un bureau d’enregistrement
 
-Vous pouvez sélectionner un autre bureau d’enregistrement en ajoutant l’une des options suivantes aux arguments mTouch supplémentaires dans les paramètres de **génération iOS** du projet:
+Vous pouvez sélectionner un autre bureau d’enregistrement en ajoutant l’une des options suivantes aux arguments mTouch supplémentaires dans les paramètres de **génération iOS** du projet :
 
 - `--registrar:static`– valeur par défaut pour les builds d’appareils
 - `--registrar:dynamic`– valeur par défaut pour les builds du simulateur
@@ -196,7 +196,7 @@ Vous pouvez sélectionner un autre bureau d’enregistrement en ajoutant l’une
 
 ## <a name="shortcomings-in-the-old-registration-system"></a>Lacunes dans l’ancien système d’enregistrement
 
-L’ancien système d’inscription présente les inconvénients suivants:
+L’ancien système d’inscription présente les inconvénients suivants :
 
 - Il n’existait aucune référence statique (Native) aux classes et méthodes objective-C dans les bibliothèques natives tierces, ce qui signifiait que nous n’aurions pas pu demander à l’éditeur de liens natif de supprimer le code natif tiers qui n’était pas réellement utilisé (car tout serait supprimé). C’est la raison pour `-force_load libNative.a` laquelle chaque liaison tierce devait faire (ou l’équivalent `ForceLoad=true` dans l' `[LinkWith]` attribut).
 - Vous pouvez exporter deux types managés avec le même nom objective-C sans avertissement. Un scénario rare consistait à se retrouver avec `AppDelegate` deux classes dans des espaces de noms différents. Au moment de l’exécution, il serait tout à fait aléatoire qu’il était possible de le prélever (en fait, il variait entre les exécutions d’une application qui n’étaient pas encore régénérées, ce qui a été effectué pour une expérience de débogage très curieuse et frustrante).
@@ -206,13 +206,13 @@ L’ancien système d’inscription présente les inconvénients suivants:
 
 <a name="required-modifications" />
 
-## <a name="new-registrar-required-changes-to-bindings"></a>Nouveau bureau d’enregistrement: modifications requises pour les liaisons
+## <a name="new-registrar-required-changes-to-bindings"></a>Nouveau bureau d’enregistrement : modifications requises pour les liaisons
 
 Cette section décrit les modifications de liaison qui doivent être effectuées pour fonctionner avec le nouveau bureau d’enregistrement.
 
 ### <a name="protocols-must-have-the-protocol-attribute"></a>Les protocoles doivent avoir l’attribut [Protocole]
 
-Les protocoles doivent maintenant avoir `[Protocol]` l’attribut. Si vous ne le faites pas, vous obtiendrez une erreur native de l’éditeur de liens, par exemple:
+Les protocoles doivent maintenant avoir `[Protocol]` l’attribut. Si vous ne le faites pas, vous obtiendrez une erreur native de l’éditeur de liens, par exemple :
 
 ```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
@@ -222,13 +222,13 @@ Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", reference
 
 Tous les sélecteurs doivent indiquer correctement le nombre de paramètres. Auparavant, ces erreurs étaient ignorées et pouvaient provoquer des problèmes d’exécution.
 
-En bref, le nombre de signes deux-points doit correspondre au nombre de paramètres:
+En bref, le nombre de signes deux-points doit correspondre au nombre de paramètres :
 
-- Aucun paramètre:`foo`
-- Un paramètre:`foo:`
-- Deux paramètres:`foo:parameterName2:`
+- Aucun paramètre :`foo`
+- Un paramètre :`foo:`
+- Deux paramètres :`foo:parameterName2:`
 
-Les utilisations incorrectes sont les suivantes:
+Les utilisations incorrectes sont les suivantes :
 
 ```csharp
 // Invalid: export takes no arguments, but function expects one
@@ -242,7 +242,7 @@ void Display ();
 
 ### <a name="use-isvariadic-parameter-in-export"></a>Utiliser le paramètre IsVariadic dans l’exportation
 
-Les fonctions variadiques doivent utiliser `IsVariadic` l’argument de `[Export]` l’attribut:
+Les fonctions variadiques doivent utiliser `IsVariadic` l’argument de `[Export]` l’attribut :
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]

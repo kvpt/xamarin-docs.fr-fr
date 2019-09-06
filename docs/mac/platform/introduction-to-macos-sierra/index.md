@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: 71A8A737-F310-4320-BD23-743AA1E9033C
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 7d758d4cb9906542d388f3ced185a0d0bcba5fcd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b452d4b0a75a64349692c633a8c1bee6a8770256
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651531"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290922"
 ---
 # <a name="introduction-to-macos-sierra"></a>Introduction à macOS Sierra
 
@@ -24,13 +24,13 @@ Pour plus d’informations sur macOS Sierra, consultez la documentation sur [Mac
 
 ## <a name="whats-new-in-macos-sierra"></a>Nouveautés de macOS Sierra
 
-Apple a ajouté plusieurs nouvelles API et services dans macOS Sierra, ainsi que de nombreuses améliorations apportées aux fonctionnalités existantes, notamment:
+Apple a ajouté plusieurs nouvelles API et services dans macOS Sierra, ainsi que de nombreuses améliorations apportées aux fonctionnalités existantes, notamment :
 
 <a name="Apple-File-System" />
 
 ### <a name="apple-file-system"></a>Système de fichiers Apple
 
-Avec macOS Sierra, Apple a publié le nouveau système de fichiers Apple comme système de fichiers moderne pour iOS, macOS, tvOS et Watchos. Le système de fichiers Apple a été optimisé pour le stockage flash et SSD et fournit les fonctionnalités suivantes: chiffrement renforcé, métadonnées de copie sur écriture, partage d’espace, clonage pour les fichiers et répertoires, instantanés, dimensionnement rapide d’annuaire et primitives d’enregistrement atomiques sécurisées.
+Avec macOS Sierra, Apple a publié le nouveau système de fichiers Apple comme système de fichiers moderne pour iOS, macOS, tvOS et Watchos. Le système de fichiers Apple a été optimisé pour le stockage flash et SSD et fournit les fonctionnalités suivantes : chiffrement renforcé, métadonnées de copie sur écriture, partage d’espace, clonage pour les fichiers et répertoires, instantanés, dimensionnement rapide d’annuaire et primitives d’enregistrement atomiques sécurisées.
 
 Pour plus d’informations, consultez le [Guide du système de fichiers Apple](https://developer.apple.com/library/prerelease/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40016999)d’Apple.
 
@@ -81,7 +81,7 @@ Pour plus d’informations, consultez le Guide de programmation de l' [extension
 
 ### <a name="security-and-privacy-enhancements"></a>Améliorations en matière de sécurité et de confidentialité
 
-Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans macOS Sierra, ce qui permet à l’application d’améliorer la sécurité de l’application et de garantir la confidentialité de l’utilisateur final, y compris les éléments suivants:
+Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans macOS Sierra, ce qui permet à l’application d’améliorer la sécurité de l’application et de garantir la confidentialité de l’utilisateur final, y compris les éléments suivants :
 
 - La nouvelle `NSAllowsArbitraryLoadsInWebContent` clé peut être ajoutée au fichier de `Info.plist` l’application et autoriser le chargement correct des pages Web, tandis que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application.
 - L’API CDSA (Common Data Security Architecture) est dépréciée et doit être remplacée par l’API SecKey pour générer des clés asymétriques.
@@ -115,7 +115,7 @@ macOS Sierra inclut une nouvelle application console (dans Applications/Utilitai
 
 En outre, les messages de journal peuvent être affichés et gérés à l’aide des outils en ligne de commande.
 
-Pour plus d’informations, consultez les informations de [référence](https://developer.apple.com/documentation/os/logging)sur la journalisation d’Apple.
+Pour plus d’informations, consultez les informations de référence sur la [journalisation](https://developer.apple.com/documentation/os/logging)d’Apple.
 
 <a name="Wide-Color" />
 
@@ -125,7 +125,7 @@ macOS Sierra étend la prise en charge des formats de pixel étendus et des espa
 
 En outre, `AppKit` a été modifié pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
 
-Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges:
+Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
 - `NSColor`utilise à présent l’espace de couleurs sRVB et ne pincera plus les `0.0` valeurs `1.0` à la plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour macOS Sierra.
 - Lorsque vous utilisez une API de bas niveau, telle que des graphiques de base ou du métal, pour fournir un traitement d’image, l’application doit utiliser un espace de couleurs de plage étendue et un format de pixel qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application devra fixer manuellement les valeurs des composants de couleur.
@@ -145,7 +145,7 @@ Pour en savoir plus, consultez notre guide [supplémentaire sur les modification
 
 ## <a name="deprecated-apis"></a>API déconseillées
 
-Les API suivantes sont dépréciées dans macOS Sierra:
+Les API suivantes sont dépréciées dans macOS Sierra :
 
 - Le système de fichiers standard HFS n’est plus pris en charge.
 

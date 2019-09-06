@@ -3,15 +3,15 @@ title: Résolution des problèmes Xamarin Workbooks sur Android
 description: Ce document fournit des conseils de dépannage pour l’utilisation de Xamarin Workbooks sur Android. Il aborde la prise en charge de l’émulateur, les classeurs qui ne sont pas chargés et d’autres rubriques.
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 0d04b42a8d9f230c48bb09059296eb3740336dc6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 04f02e6136d9d489a36e994575519e579770ac3d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511835"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291155"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Résolution des problèmes Xamarin Workbooks sur Android
 
@@ -37,7 +37,7 @@ Tout d’abord, vérifiez que votre émulateur dispose d’un accès réseau ent
 
 ### <a name="visual-studio-android-emulator-cannot-connect-to-the-internet"></a>Émulateur Android Visual Studio ne peut pas se connecter à Internet
 
-Si votre émulateur ne dispose pas d’un accès réseau, vous devrez peut-être suivre les étapes ci-dessous pour corriger votre commutateur réseau Hyper-V. Si vous basculez entre les réseaux Wi-Fi fréquemment, vous devrez peut-être répéter cette opération régulièrement:
+Si votre émulateur ne dispose pas d’un accès réseau, vous devrez peut-être suivre les étapes ci-dessous pour corriger votre commutateur réseau Hyper-V. Si vous basculez entre les réseaux Wi-Fi fréquemment, vous devrez peut-être répéter cette opération régulièrement :
 
 1. **Assurez-vous que toutes les opérations de réseau critiques sont terminées, car cela peut temporairement déconnecter Windows d’Internet.**
 1. Fermez les émulateurs.

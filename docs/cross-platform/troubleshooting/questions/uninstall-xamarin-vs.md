@@ -3,20 +3,20 @@ title: Comment effectuer une désinstallation complète de Xamarin pour Visual S
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: e387e398f3a79ea2063457f0c5c6e7469c07ac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4d8396574f02cde4c75fd96c98f79d5ed4080293
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521533"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291075"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>Comment effectuer une désinstallation complète de Xamarin pour Visual Studio ?
 
 
-1. Dans le panneau de configuration Windows, désinstallez l’un des éléments suivants:
+1. Dans le panneau de configuration Windows, désinstallez l’un des éléments suivants :
 
     - Xamarin
     - Xamarin pour Windows
@@ -24,25 +24,25 @@ ms.locfileid: "69521533"
     - Xamarin.iOS
     - Xamarin pour Visual Studio
 
-2. Dans l’Explorateur, supprimez tous les fichiers restants dans les dossiers d’extension Xamarin Visual Studio (toutes les versions, y compris les fichiers _programme_ et les _fichiers programme (x86)_ ):
+2. Dans l’Explorateur, supprimez tous les fichiers restants dans les dossiers d’extension Xamarin Visual Studio (toutes les versions, y compris les fichiers _programme_ et les _fichiers programme (x86)_ ) :
 
-    _C:\\Program Files\*\\Microsoft Visual Studio\\1\*.0\\:extensions\\IDECommon7\\Xamarin_
+    _C :\\Program Files\*\\Microsoft Visual Studio\\1\*.0\\:extensions\\IDECommon7\\Xamarin_
 
-3. Supprimez également le répertoire de cache des composants MEF de Visual Studio:
+3. Supprimez également le répertoire de cache des composants MEF de Visual Studio :
 
     _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
 
-    En fait, cette étape est souvent suffisante pour résoudre les erreurs telles que:
+    En fait, cette étape est souvent suffisante pour résoudre les erreurs telles que :
 
-    - «Le package «XamarinShellPackage» n’a pas été chargé correctement»
+    - « Le package «XamarinShellPackage » n’a pas été chargé correctement»
 
     - «Le fichier projet... ne peut pas être ouvert. Il manque un sous-type de projet»
 
     - «La référence d’objet n’est pas définie sur une instance d’un objet.  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
 
-    - «Échec de la des éléments pour le package» (dans _ActivityLog. xml_de Visual Studio)
+    - « Échec de la des éléments pour le package » (dans _ActivityLog. xml_de Visual Studio)
 
-    - «LegacySitePackage a échoué pour le package» (dans _ActivityLog. xml_de Visual Studio)
+    - « LegacySitePackage a échoué pour le package » (dans _ActivityLog. xml_de Visual Studio)
 
     (Voir aussi l’extension Visual Studio [du cache du composant MEF Clear](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd) .  Et consultez le [bogue 40781, commentaire 19](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19) pour un peu plus de contexte sur le problème en amont dans Visual Studio qui peut provoquer ces erreurs.)
 
@@ -52,19 +52,19 @@ ms.locfileid: "69521533"
 
 5. Ouvrez l’éditeur du Registre`regedit`().
 
-6. Recherchez la clé suivante:
+6. Recherchez la clé suivante :
 
     _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
 7. Recherchez et supprimez toutes les entrées qui correspondent à ce modèle :
 
-    _C:\\Program Files\*\\Microsoft Visual Studio\\1\*.0\\:extensions\\IDECommon7\\Xamarin_
+    _C :\\Program Files\*\\Microsoft Visual Studio\\1\*.0\\:extensions\\IDECommon7\\Xamarin_
 
 8. Recherchez cette clé :
 
     _HKEY\_CURRENT\_USER\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
-9. Supprimez les entrées qui semblent éventuellement liées à Xamarin.  Par exemple, voici un qui était utilisé pour provoquer des problèmes dans les versions antérieures de Xamarin:
+9. Supprimez les entrées qui semblent éventuellement liées à Xamarin.  Par exemple, voici un qui était utilisé pour provoquer des problèmes dans les versions antérieures de Xamarin :
 
     _Mono.VisualStudio.Shell,1.0_
 
@@ -79,15 +79,15 @@ ms.locfileid: "69521533"
 
 12. Réinstallez la version stable actuelle de Xamarin à l’aide de à partir de [VisualStudio.com](https://visualstudio.com/xamarin/).
 
-## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>Étapes de dépannage supplémentaires pour «le package n’a pas été chargé correctement»
+## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>Étapes de dépannage supplémentaires pour « le package n’a pas été chargé correctement »
 
-Dans les cas où les étapes ci-dessus ne résolvent pas l’erreur «le package n’a pas été correctement chargé», voici quelques étapes supplémentaires à essayer.
+Dans les cas où les étapes ci-dessus ne résolvent pas l’erreur « le package n’a pas été correctement chargé », voici quelques étapes supplémentaires à essayer.
 
 1. Créez un nouveau compte d’utilisateur Windows.
 
 2. Vérifiez si les extensions Visual Studio Xamarin sont chargées sans erreur pour le nouvel utilisateur.
 
-3. Si les extensions sont chargées correctement, le problème est probablement dû à certains des paramètres stockés pour l’utilisateur d’origine:
+3. Si les extensions sont chargées correctement, le problème est probablement dû à certains des paramètres stockés pour l’utilisateur d’origine :
 
     - **Dans l’Explorateur** – _% LocalAppData\\%\\Microsoft\\VisualStudio\*1.0_
     - **Dans Regedit** – _HKEY\_Current\_user\\SoftwareMicrosoftVisualStudio\\1.\*0\\\\_

@@ -4,21 +4,21 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/07/2017
-ms.openlocfilehash: 5abd28dc9a6fc2a0dca5fa31908731a5496ce5fa
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 50278eaa6d3518b8de85685c1faf64eabac4531d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621046"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292200"
 ---
 # <a name="introduction-to-watchos-3"></a>Introduction à watchOS 3
 
 _Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans Watchos 3 pour les développeurs Xamarin._
 
-Ce document aborde les sujets suivants:
+Ce document aborde les sujets suivants :
 
 - [Nouveautés de Watchos 3](#Whats-New-in-watchOS-3)
   - [Apple Pay améliorations](#Apple-Pay-Enhancements) ajoute la prise en charge des paiements dans l’application sur le Apple Watch.
@@ -28,18 +28,18 @@ Ce document aborde les sujets suivants:
   - Les suggestions proactives permettent à l’application d’afficher de manière [proactive](#Proactive-Suggestions) des informations à l’utilisateur.
   - Plusieurs [améliorations en matière de sécurité et de confidentialité](#Security-and-Privacy-Enhancements) ont été apportées à Watchos 3.
   - Les [instantanés et la station d’accueil](#Snapshots-and-Dock) offrent à l’utilisateur un accès rapide aux applications Watchos.
-  - Les notifications de l' [utilisateur](#User-Notifications) fournissent à l’utilisateur des notifications locales et distantes.
+  - Les [notifications](#User-Notifications) de l’utilisateur fournissent à l’utilisateur des notifications locales et distantes.
   - Plusieurs [améliorations de l’infrastructure de connexion Watch](#Watch-Connectivity-Framework-Enhancements) ont été apportées dans Watchos 3.
   - Plusieurs améliorations apportées à [WatchKit Framework](#WatchKit-Framework-Enhancements) ont été apportées dans Watchos 3.
-  - Les améliorations apportées aux applications de l' [entraînement](#Workout-App-Enhancements) offrent de nouvelles fonctionnalités à l’entraînement Apple Watch applications.
+  - Les [améliorations apportées aux applications](#Workout-App-Enhancements) de l’entraînement offrent de nouvelles fonctionnalités à l’entraînement Apple Watch applications.
 - [Des modifications d’infrastructure supplémentaires](#Additional-Framework-Changes) ont été apportées dans Watchos 3.
-- [API](#Deprecated-APIs) déconseillées dans Watchos 3.
+- [API déconseillées](#Deprecated-APIs) dans Watchos 3.
 
 <a name="Whats-New-in-watchOS-3" />
 
 ## <a name="whats-new-in-watchos-3"></a>Nouveautés de Watchos 3
 
-Apple a ajouté plusieurs nouvelles API et services dans Watchos 3, ainsi que de nombreuses améliorations apportées aux fonctionnalités existantes, notamment:
+Apple a ajouté plusieurs nouvelles API et services dans Watchos 3, ainsi que de nombreuses améliorations apportées aux fonctionnalités existantes, notamment :
 
 <a name="Apple-Pay-Enhancements" />
 
@@ -57,10 +57,10 @@ Pour en savoir plus, consultez notre guide d’amélioration de l' [Apple Pay](~
 
 Watchos 3 introduit plusieurs tâches en arrière-plan qu’une application peut utiliser pour mettre à jour ses informations afin de s’assurer qu’elle dispose du contenu dont l’utilisateur a besoin avant de l’ouvrir.
 
-Les nouvelles tâches en arrière-plan suivantes sont disponibles:
+Les nouvelles tâches en arrière-plan suivantes sont disponibles :
 
-- **Actualisation** de l’application en arrière-plan: la tâche [WKApplicationRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkapplicationrefreshbackgroundtask) permet à l’application de mettre à jour son état en arrière-plan. Cela inclut généralement une autre tâche, par exemple le téléchargement d’un nouveau contenu à partir d’Internet à l’aide d’un [passer](https://developer.apple.com/reference/foundation/nsurlsession).
-- **Actualisation** des instantanés d’arrière-plan: la tâche [WKSnapshotRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wksnapshotrefreshbackgroundtask) permet à l’application de mettre à jour son contenu et son interface utilisateur avant que le système prenne un instantané qui sera utilisé pour remplir l’ancre.
+- **Actualisation** de l’application en arrière-plan : la tâche [WKApplicationRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkapplicationrefreshbackgroundtask) permet à l’application de mettre à jour son état en arrière-plan. Cela inclut généralement une autre tâche, par exemple le téléchargement d’un nouveau contenu à partir d’Internet à l’aide d’un [passer](https://developer.apple.com/reference/foundation/nsurlsession).
+- **Actualisation des instantanés d’arrière-plan** : la tâche [WKSnapshotRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wksnapshotrefreshbackgroundtask) permet à l’application de mettre à jour son contenu et son interface utilisateur avant que le système prenne un instantané qui sera utilisé pour remplir l’ancre.
 - **Connectivité de surveillance en arrière-plan** : la tâche [WKWatchConnectivityRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkwatchconnectivityrefreshbackgroundtask) est démarrée pour l’application lorsqu’elle reçoit des données d’arrière-plan de l’iPhone couplé.
 - **Session d’URL d’arrière-plan** : la tâche [WKURLSessionRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkurlsessionrefreshbackgroundtask) est démarrée pour l’application lorsqu’un transfert en arrière-plan requiert une autorisation ou se termine (avec succès ou par erreur).
 
@@ -74,7 +74,7 @@ Les complications sont de petits éléments visuels qui fournissent des informat
 
 Watchos 3 donne à l’application la possibilité de créer une ou plusieurs complications pour l’application Watch afin que l’utilisateur puisse accéder à ses informations en un clin d’œil à partir d’un visage de montre.
 
-En outre, les complications offrent les avantages suivants:
+En outre, les complications offrent les avantages suivants :
 
 - L’utilisateur peut rapidement lancer l’application en appuyant sur la complication directement à partir d’une face de montre.
 - Le fait de disposer de l’une des complications de l’application sur la face de la montre amène le système à conserver l’application dans un état prêt à être lancé, où elle tente de lancer l’application en arrière-plan, de la conserver en mémoire et de la mettre à jour plus longtemps.
@@ -89,7 +89,7 @@ Pour en savoir plus, consultez notre guide [des techniques d’interaction rapid
 
 ## <a name="newly-available-frameworks"></a>Nouvelles infrastructures disponibles
 
-Watchos 3 comprend plusieurs frameworks Apple existants qui étaient auparavant indisponibles, tels que:
+Watchos 3 comprend plusieurs frameworks Apple existants qui étaient auparavant indisponibles, tels que :
 
 - **SceneKit** : utilisez SceneKit pour inclure des modèles 3D dans l’interface utilisateur de l’application espion, y compris la plupart des fonctionnalités disponibles sur d’autres plateformes, telles que l’éclairage, l’ombrage, l’animation, la physique et les systèmes de particules. l’audio spatial 3D, les nuanceurs métalliques personnalisés ou OpenGL, les filtres d’image de base et les matériaux basés sur physiquement ne sont pas pris en charge.
 - **SpriteKit** : utilisez SpriteKit pour afficher et animer des sprites dans l’interface utilisateur de l’application espion d’application, y compris la plupart des fonctionnalités disponibles sur d’autres plateformes, telles que les actions, la physique, l’éclairage et les systèmes de particule. les filtres audio spatial 3D, de lecture vidéo et d’image principale ne sont pas pris en charge.
@@ -104,7 +104,7 @@ Watchos 3 comprend plusieurs frameworks Apple existants qui étaient auparavant 
 
 Watchos 3 permet à l’application de présenter de manière proactive des informations à l’utilisateur dans des contextes donnés. Pour prendre en charge cette fonctionnalité, [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity) comprend désormais `MapItem` la propriété qui permet à l’application de fournir des informations d’emplacement pour une utilisation ultérieure par d’autres applications.
 
-Pour en savoir plus, consultez notre guide [de présentation des suggestions](~/ios/watchos/platform/proactive-suggestions.md) proactives.
+Pour en savoir plus, consultez notre guide [de présentation des suggestions proactives](~/ios/watchos/platform/proactive-suggestions.md) .
 
 <a name="Security-and-Privacy-Enhancements" />
 
@@ -146,14 +146,14 @@ Pour en savoir plus, consultez notre guide des [tâches en arrière-plan](~/ios/
 
 ## <a name="watchkit-framework-enhancements"></a>Améliorations apportées à WatchKit Framework
 
-Watchos 3 inclut plusieurs améliorations de l’infrastructure WatchKit, notamment les suivantes:
+Watchos 3 inclut plusieurs améliorations de l’infrastructure WatchKit, notamment les suivantes :
 
 - L’application peut obtenir l’état de la Digital Crown à l’aide de la nouvelle classe [WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer) et recevoir des mises à jour lorsque l’utilisateur fait tourner la Couronne à l’aide de la classe [WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate) .
 - La classe [WKExtension](https://developer.apple.com/reference/watchkit/wkextension) comprend désormais la `ApplicationState` méthode et la constante [WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate) que l’application peut utiliser pour suivre l’état d’exécution de l’application. `WKExtension`fournit également deux nouvelles méthodes qui peuvent être utilisées pour planifier des tâches en arrière-plan.
 - Le [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate) comprend maintenant les nouvelles `ApplicationWillEnterForeground`méthodes `ApplicationDidEnterBackground` , `HandleBackgroundTasks` et pour surveiller les modifications de l’état de l’application et gérer les mises à jour des tâches en arrière-plan.
-- Une nouvelle classe [WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) a été ajoutée pour fournir les types de reconnaissance de mouvement suivants aux applications Watch: [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer), [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer), [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) et [WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer).
+- Une nouvelle classe [WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer) a été ajoutée pour fournir les types de reconnaissance de mouvement suivants aux applications Watch : [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer), [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer), [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) et [WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer).
 - La nouvelle classe [WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera) fournit une interface pour tout appareil photo IP attaché à HomeKit.
-- La nouvelle classe [WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie) permet à l’application d’afficher une «affiche» de film qui est remplacée par le film en cours d’exécution lorsque l’utilisateur le fait glisser.
+- La nouvelle classe [WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie) permet à l’application d’afficher une « affiche » de film qui est remplacée par le film en cours d’exécution lorsque l’utilisateur le fait glisser.
 - La nouvelle classe [WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton) permet à l’application de présenter un bouton Apple Pay dans son interface utilisateur qui lance une demande de paiement lorsqu’elle est exploitée.
 - La nouvelle classe [WKInterfaceSCNScene](https://developer.apple.com/reference/watchkit/wkinterfacescnscene) présente une interface permettant d’afficher une scène SceneKit sur le Apple Watch.
 - La nouvelle classe [WKInterfaceSKScene](https://developer.apple.com/reference/watchkit/wkinterfaceskscene) présente une interface permettant d’afficher une scène SpriteKit sur le Apple Watch.
@@ -182,7 +182,7 @@ Pour en savoir plus, consultez notre guide [supplémentaire sur les modification
 
 ## <a name="deprecated-apis"></a>API déconseillées
 
-Les API suivantes ont été dépréciées dans Watchos 3:
+Les API suivantes ont été dépréciées dans Watchos 3 :
 
 - La `UILocalNotification` classe de UIKit est dépréciée et doit être remplacée par l’infrastructure de notification de l’utilisateur.
 

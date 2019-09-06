@@ -4,15 +4,15 @@ description: iOS vous permet d’appliquer des paramètres de propriété visuel
 ms.prod: xamarin
 ms.assetid: C1727F0C-82B1-D085-D46F-C6383FF04B16
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/15/2018
-ms.openlocfilehash: 2211897af70712f9de2dec5c7c0771c5089dad1a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b0f09a729c6998e7a728bfc3d805058e7a43a54a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655893"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287077"
 ---
 # <a name="appearance-api-in-xamarinios"></a>API Appearance dans Xamarin. iOS
 
@@ -24,22 +24,22 @@ Cette fonctionnalité est exposée dans Xamarin. iOS via une `Appearance` propri
 
 iOS vous permet de personnaliser l’apparence de nombreux contrôles UIKit pour que les contrôles standard soient conformes à la marque que vous souhaitez appliquer à votre application.
 
-Il existe deux façons différentes d’appliquer une apparence personnalisée:
+Il existe deux façons différentes d’appliquer une apparence personnalisée :
 
 - **Directement sur une instance de contrôle** : vous pouvez définir la couleur de teinte, l’image d’arrière-plan et la position du titre (ainsi que d’autres attributs) sur de nombreux contrôles, notamment les barres d’outils, les barres de navigation, les boutons et les curseurs.
 
 - **Définissez les valeurs par défaut sur la propriété statique d’apparence** : les attributs personnalisables pour chaque contrôle `Appearance` sont exposés via la propriété statique. Toutes les personnalisations que vous appliquez à ces propriétés sont utilisées par défaut pour tout contrôle de ce type créé après la définition de la propriété.
 
-L’exemple d’application Appearance illustre les trois méthodes, comme indiqué dans les captures d’écran suivantes:
+L’exemple d’application Appearance illustre les trois méthodes, comme indiqué dans les captures d’écran suivantes :
 
 [![](introduction-to-the-appearance-api-images/appearance01-sml.png "L’exemple d’application Appearance illustre les trois méthodes")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Depuis iOS 8, le proxy d’apparence a été étendu à TraitCollections.
- `AppearanceForTraitCollection`peut être utilisé pour définir l’apparence par défaut sur une collection de traits particulière. Pour plus d’informations à ce sujet, consultez le guide [Présentation](~/ios/user-interface/storyboards/unified-storyboards.md) des storyboards.
+ `AppearanceForTraitCollection`peut être utilisé pour définir l’apparence par défaut sur une collection de traits particulière. Pour plus d’informations à ce sujet, consultez le guide [Présentation des storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 ## <a name="setting-appearance-properties"></a>Définition des propriétés d’apparence
 
-Dans le premier écran, la classe d’apparence statique est utilisée pour appliquer un style aux boutons et aux éléments jaunes/orange comme suit:
+Dans le premier écran, la classe d’apparence statique est utilisée pour appliquer un style aux boutons et aux éléments jaunes/orange comme suit :
 
 ```csharp
 // Set the default appearance values
@@ -73,31 +73,31 @@ L’API Appearance peut être utile lorsque vous [appliquez un style à l’appl
 
 ### <a name="custom-themes-and-uiappearance"></a>Thèmes personnalisés et UIAppearance
 
-iOS permet à de nombreux attributs visuels des contrôles de l’interface utilisateur d’être «à thème» à l’aide des API *UIAppearance* pour forcer toutes les instances d’un contrôle particulier à avoir la même apparence. Cela est exposé en tant que propriété d’apparence sur de nombreuses classes de contrôle d’interface utilisateur, et non sur des instances individuelles du contrôle. La définition d’une propriété d’affichage `Appearance` sur la propriété statique affecte tous les contrôles de ce type dans votre application.
+iOS permet à de nombreux attributs visuels des contrôles de l’interface utilisateur d’être « à thème » à l’aide des API *UIAppearance* pour forcer toutes les instances d’un contrôle particulier à avoir la même apparence. Cela est exposé en tant que propriété d’apparence sur de nombreuses classes de contrôle d’interface utilisateur, et non sur des instances individuelles du contrôle. La définition d’une propriété d’affichage `Appearance` sur la propriété statique affecte tous les contrôles de ce type dans votre application.
 
 Pour mieux comprendre le concept, prenons un exemple.
 
-Pour modifier un spécifique `UISegmentedControl` de façon à ce qu’il ait une teinte magenta, nous référençons le contrôle spécifique `ViewDidLoad`sur notre écran comme suit dans:
+Pour modifier un spécifique `UISegmentedControl` de façon à ce qu’il ait une teinte magenta, nous référençons le contrôle spécifique `ViewDidLoad`sur notre écran comme suit dans :
 
 ```csharp
 sg1.TintColor = UIColor.Magenta;
 ```
 
-Vous pouvez également définir la valeur dans le panneau Propriétés du concepteur:
+Vous pouvez également définir la valeur dans le panneau Propriétés du concepteur :
 
 [![](introduction-to-the-appearance-api-images/propertiespadtint.png "Teinte de Panneau Propriétés")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
-L’image ci-dessous montre que cela définit la teinte uniquement sur le contrôle nommé «SG1».
+L’image ci-dessous montre que cela définit la teinte uniquement sur le contrôle nommé « SG1 ».
 
 [![](introduction-to-the-appearance-api-images/image53.png "Définition de la teinte d’un contrôle individuel")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
-Pour définir de nombreux contrôles de cette manière serait totalement inefficace, nous pouvons plutôt définir la propriété statique `Appearance` sur la classe elle-même. Cela est illustré dans le code ci-dessous:
+Pour définir de nombreux contrôles de cette manière serait totalement inefficace, nous pouvons plutôt définir la propriété statique `Appearance` sur la classe elle-même. Cela est illustré dans le code ci-dessous :
 
 ```csharp
 UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 ```
 
-L’image ci-dessous illustre maintenant les deux contrôles segmentés avec l’apparence définie sur magenta:
+L’image ci-dessous illustre maintenant les deux contrôles segmentés avec l’apparence définie sur magenta :
 
 [![](introduction-to-the-appearance-api-images/image54.png "Définition de la teinte de contrôle d’apparence")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 

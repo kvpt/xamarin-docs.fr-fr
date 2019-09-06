@@ -4,21 +4,21 @@ description: Ce guide décrit comment utiliser Appairer avec un Mac pour connect
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: e77a5d7863428d743c536b5aa7b2bb88d12cffc0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
-ms.translationtype: HT
+ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978325"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292125"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Appairer avec un Mac pour le développement Xamarin.iOS
 
 _Ce guide explique comment utiliser Appairer avec un Mac pour connecter Visual Studio 2019 à un hôte de build Mac. Les mêmes instructions s’appliquent à Visual Studio 2017._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 La génération d’applications iOS natives nécessite l’accès aux outils de génération d’Apple, qui s’exécutent seulement sur un Mac. Pour cette raison, Visual Studio 2019 doit se connecter à un Mac accessible par le biais du réseau pour générer des applications Xamarin.iOS.
 
@@ -39,12 +39,12 @@ Avec Appairer avec un Mac, le flux de travail de développement est le suivant :
 - Il est possible d’utiliser la ligne de commande Windows pour générer des applications iOS.
 
 > [!NOTE]
-> 
+>
 > Avant de suivre les instructions fournies dans ce guide, effectuez les étapes ci-dessous :
-> 
+>
 > - Sur un ordinateur Windows, [installez Visual Studio 2019](~/get-started/installation/windows.md)
 > - Sur un Mac, [installez Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) et [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
->    - _Vous devez ouvrir manuellement Xcode après l’installation_ afin que celui-ci puisse ajouter des composants supplémentaires.
+>   - _Vous devez ouvrir manuellement Xcode après l’installation_ afin que celui-ci puisse ajouter des composants supplémentaires.
 >
 > Si vous préférez ne pas installer Visual Studio pour Mac, Visual Studio 2019 peut configurer automatiquement l’hôte de build Mac avec Xamarin.iOS et Mono.
 > Vous devez quand même installer et exécuter Xcode.
@@ -74,28 +74,28 @@ Maintenant que la session à distance est activée, connectez Visual Studio 201
 
 1. Dans Visual Studio 2019, ouvrez un projet iOS existant ou créez-en un en choisissant **Fichier > Nouveau > Projet**, puis en sélectionnant un modèle de projet iOS.
 
-2. Ouvrez la boîte de dialogue **Appairer avec un Mac**. 
+2. Ouvrez la boîte de dialogue **Appairer avec un Mac**.
 
     - Utilisez le bouton **Appairer avec un Mac** de la barre d’outils iOS :
 
-        ![Barre d’outils iOS avec le bouton Appairer avec un Mac en surbrillance](images/ios-toolbar.png "lBarre d’outils iOS avec le bouton Appairer avec un Mac en surbrillance")
+      ![Barre d’outils iOS avec le bouton Appairer avec un Mac en surbrillance](images/ios-toolbar.png "lBarre d’outils iOS avec le bouton Appairer avec un Mac en surbrillance")
 
     - Vous pouvez aussi sélectionner **Outils > iOS > Appairer avec un Mac**.
 
     - La boîte de dialogue **Appairer avec un Mac** affiche une liste de tous les hôtes de build Mac précédemment connectés et actuellement disponibles :
 
-        ![Boîte de dialogue Appairer avec un Mac](images/pairtomac.png "Boîte de dialogue Appairer avec un Mac")
+      ![Boîte de dialogue Appairer avec un Mac](images/pairtomac.png "Boîte de dialogue Appairer avec un Mac")
 
-3. Sélectionnez un Mac dans la liste. Cliquez sur **Connexion**. 
+3. Sélectionnez un Mac dans la liste. Cliquez sur **Connecter**.
 
 4. Entrez vos nom d’utilisateur et mot de passe.
 
     - La première fois que vous vous connectez à un Mac spécifique, vous êtes invité à entrer vos nom d’utilisateur et mot de passe pour cet ordinateur :
 
-        ![Saisie d’un nom d’utilisateur et d’un mot de passe pour le Mac](images/auth.png "Saisie d’un nom d’utilisateur et d’un mot de passe pour le Mac")
+      ![Saisie d’un nom d’utilisateur et d’un mot de passe pour le Mac](images/auth.png "Saisie d’un nom d’utilisateur et d’un mot de passe pour le Mac")
 
-        > [!TIP]
-        > Lors de la connexion, utilisez votre nom d’utilisateur système plutôt que votre nom complet.
+      > [!TIP]
+      > Lors de la connexion, utilisez votre nom d’utilisateur système plutôt que votre nom complet.
 
     - Appairer avec un Mac utilise ces informations d’identification pour créer une connexion SSH au Mac. En cas de réussite, une clé est ajoutée au fichier **authorized_keys** sur le Mac. Les connexions ultérieures au même Mac seront établies automatiquement.
 
@@ -107,12 +107,12 @@ Maintenant que la session à distance est activée, connectez Visual Studio 201
 
     - Quand Visual Studio 2019 est connecté à un Mac, l’élément de ce Mac dans la boîte de dialogue **Appairer avec un Mac** affiche une icône indiquant qu’il est actuellement connecté :
 
-        ![Mac connecté](images/connected.png "Mac connecté")
+      ![Mac connecté](images/connected.png "Mac connecté")
 
       Il ne peut y avoir qu’un seul Mac connecté à la fois.
 
       > [!TIP]
-      > Un clic droit sur n’importe quel Mac dans la liste **Appairer avec un Mac** permet d’afficher un menu contextuel dans lequel vous pouvez choisir **Se connecter...**, **Oublier ce Mac** ou **Se déconnecter**  :
+      > Un clic droit sur n’importe quel Mac dans la liste **Appairer avec un Mac** permet d’afficher un menu contextuel dans lequel vous pouvez choisir **Se connecter...** , **Oublier ce Mac** ou **Se déconnecter**  :
       >
       > ![Menus contextuels Appairer avec un Mac](images/contextmenu.png "Menus contextuels Appairer avec un Mac")
       >
@@ -126,18 +126,18 @@ Si vous n’avez pas réussi à vous associer à un Mac, essayez [d’ajouter ma
 
 Si vous ne voyez pas un Mac particulier répertorié dans la boîte de dialogue **Appairer avec un Mac**, ajoutez-le manuellement :
 
-1. Recherchez l’adresse IP de votre Mac. 
+1. Recherchez l’adresse IP de votre Mac.
 
     - Ouvrez **Préférences système > Partage > Session à distance** sur votre Mac :
 
-        [![Adresse IP du Mac dans Préférences système > Partage](images/sharing-ipaddress.png "Adresse IP du Mac dans Préférences système > Partage")](images/sharing.png#lightbox)
+      [![Adresse IP du Mac dans Préférences système > Partage](images/sharing-ipaddress.png "Adresse IP du Mac dans Préférences système > Partage")](images/sharing.png#lightbox)
 
-    - Vous pouvez également utiliser la ligne de commande. Dans Terminal, exécutez cette commande : 
+    - Vous pouvez également utiliser la ligne de commande. Dans Terminal, exécutez cette commande :
 
-        ```bash
-        $ ipconfig getifaddr en0
-        196.168.1.8
-        ```
+      ```bash
+      $ ipconfig getifaddr en0
+      196.168.1.8
+      ```
 
       Selon votre configuration réseau, vous devrez peut-être utiliser un nom d’interface autre que `en0`. Par exemple : `en1`, `en2`, etc.
 
@@ -171,7 +171,7 @@ Appairer avec un Mac effectue les installations/mises à jour de logiciels néce
 
 ### <a name="mono"></a>Mono
 
-Appairer avec un Mac vérifie que Mono est installé. S’il n’est pas installé, Appairer avec un Mac télécharge et installe la dernière version stable de Mono sur le Mac. 
+Appairer avec un Mac vérifie que Mono est installé. S’il n’est pas installé, Appairer avec un Mac télécharge et installe la dernière version stable de Mono sur le Mac.
 
 La progression est indiquée par différentes invites, comme illustré par les captures d’écran suivantes (cliquez pour effectuer un zoom) :
 
@@ -202,7 +202,7 @@ Appairer avec un Mac vérifie également si Xcode a été installé et sa licenc
 |---|---|---|
 |Xcode|[![Installation de Xcode manquante](images/xcode-missing.png "Installation de Xcode manquante")](images/xcode-missing-large.png#lightbox)|[![Licence Xcode](images/xcode-license.png "Licence Xcode")](images/xcode-license-large.png#lightbox)|
 
-En outre, Appairer avec un Mac installe ou met à jour différents packages distribués avec Xcode. Par exemple :
+En outre, Appairer avec un Mac installe ou met à jour différents packages distribués avec Xcode. Par exemple :
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -220,7 +220,7 @@ Si vous rencontrez des problèmes d’utilisation du provisionnement Mac automat
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>Générer des applications iOS à partir de la ligne de commande Windows
 
-Appairer avec un Mac prend en charge la génération d’applications Xamarin.iOS à partir de la ligne de commande. Par exemple :
+Appairer avec un Mac prend en charge la génération d’applications Xamarin.iOS à partir de la ligne de commande. Par exemple :
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword

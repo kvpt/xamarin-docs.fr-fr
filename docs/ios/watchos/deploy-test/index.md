@@ -4,35 +4,35 @@ description: Ce document décrit comment déployer et tester des applications Wa
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d950ceb18bd13378ced06ec7257300fc5bf4504b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: af6d32808e2847c99c4f8a2d90e7dc2d3955ae03
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120176"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284674"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Déploiement et test d’applications Watchos avec Xamarin
 
 ## <a name="deployment-checklist"></a>Liste de vérification du déploiement
 
-Que vous déployiez sur un espion de test ou que vous téléchargeiez sur l’App Store, vous devez effectuer les étapes de cette page:
+Que vous déployiez sur un espion de test ou que vous téléchargeiez sur l’App Store, vous devez effectuer les étapes de cette page :
 
 - Dans le **Centre de développement iOS**:
   - Les [ID d’application](#App_IDs) ont été créés.
   - [Groupes d’applications](#App_Groups) configurés (si nécessaire).
   - Profil (s) de provisionnement de distribution créé (s)
 
-- Dans votre solution:
+- Dans votre solution :
 
   - Vérifiez que les [ID de Bundle et les références de projet](~/ios/watchos/get-started/installation.md) sont définis.
   - Vérifiez que vos icônes sont [correctement configurées](~/ios/watchos/app-fundamentals/icons.md).
   - Vérifiez que les numéros de version de Bundle correspondent dans tous les projets.
   - Configurez les groupes de **droits. plist** pour les groupes d’applications (si nécessaire).
 
-- Suivez ensuite les instructions pour:
+- Suivez ensuite les instructions pour :
   - [Déployez sur un Apple Watch à des fins de test](~/ios/watchos/deploy-test/device.md), ou
   - [Téléchargez vers l’App Store](~/ios/watchos/deploy-test/appstore.md).
 
@@ -40,7 +40,7 @@ Que vous déployiez sur un espion de test ou que vous téléchargeiez sur l’Ap
 
 ## <a name="app-ids"></a>ID d’application
 
-Comme indiqué dans les [instructions d’installation](~/ios/watchos/get-started/installation.md), les trois projets d’une application Watch comportent des ID groupés associés, tels que:
+Comme indiqué dans les [instructions d’installation](~/ios/watchos/get-started/installation.md), les trois projets d’une application Watch comportent des ID groupés associés, tels que :
 
 - Projet unifié Xamarin. iOS-`com.xamarin.WatchKitCatalog`
 - Projet d’extension WatchKit-`com.xamarin.WatchKitCatalog.watchkitextension`
@@ -50,7 +50,7 @@ Les trois projets nécessitent un profil de provisionnement de distribution corr
 
 ### <a name="explicit-app-ids"></a>ID d’application explicites
 
-Créez un **ID d’application** pour chaque ID de Bundle de projet (qui ressemble à ceci dans le centre de développement iOS):
+Créez un **ID d’application** pour chaque ID de Bundle de projet (qui ressemble à ceci dans le centre de développement iOS) :
 
 ![ID d’offre groupée dans le centre de développement iOS](images/appids-specific-sml.png)
 
@@ -70,7 +70,7 @@ Pour la distribution, il vous suffit de créer un profil de provisionnement de d
 
 ## <a name="app-groups"></a>App Groups
 
-Vous pouvez utiliser un groupe d’applications pour partager des données entre votre application iOS et l’extension Watch. Vous devez vous assurer que votre solution dispose des éléments suivants:
+Vous pouvez utiliser un groupe d’applications pour partager des données entre votre application iOS et l’extension Watch. Vous devez vous assurer que votre solution dispose des éléments suivants :
 
 - Configurez le **groupe d’applications** dans la section certificats du portail des développeurs Apple **, identificateurs & profils** .
 
@@ -78,11 +78,11 @@ Vous pouvez utiliser un groupe d’applications pour partager des données entre
 
 ### <a name="certificates-identifiers--profiles"></a>Certificats, identificateurs & profils
 
-Pour utiliser un groupe d’applications, créez une entrée dans l’écran **groupes d’applications** . Dans l’exemple ci-dessous, le nom du groupe est identique à celui de DNS inversé couramment utilisé pour les ID d’application, `group.` mais avec le préfixe (qui est requis):
+Pour utiliser un groupe d’applications, créez une entrée dans l’écran **groupes d’applications** . Dans l’exemple ci-dessous, le nom du groupe est identique à celui de DNS inversé couramment utilisé pour les ID d’application, `group.` mais avec le préfixe (qui est requis) :
 
 ![Identificateur](images/appgroups-new-sml.png)
 
-Le groupe d’applications s’affiche alors dans la liste:
+Le groupe d’applications s’affiche alors dans la liste :
 
 ![Liste d’identificateurs](images/appgroups-setup-sml.png)
 
@@ -95,7 +95,7 @@ N’activez **pas** les groupes d’applications dans l’ID d’application App
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 Certaines fonctionnalités de l’application (par exemple, Les groupes d’applications) vous obligent à définir vos droits.
-Double-cliquez pour modifier le fichier **habilitations. plist** dans ces projets:
+Double-cliquez pour modifier le fichier **habilitations. plist** dans ces projets :
 
 - projet d’application iOS
 - Projet d’extension Watch

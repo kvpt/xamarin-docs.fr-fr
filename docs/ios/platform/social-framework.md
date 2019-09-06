@@ -4,15 +4,15 @@ description: L’infrastructure sociale fournit une API unifiée pour l’intera
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: c6e0005207a7c6fc444d029c9577684370b4cbf0
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226627"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292668"
 ---
 # <a name="social-framework-in-xamarinios"></a>Infrastructure sociale dans Xamarin. iOS
 
@@ -27,7 +27,7 @@ L’utilisation de l’infrastructure sociale permet aux applications d’intera
 
 ### <a name="twitter-account-settings"></a>Paramètres du compte Twitter
 
-Pour vous connecter à Twitter à l’aide de l’infrastructure sociale, vous devez configurer un compte dans les paramètres de l’appareil, comme indiqué ci-dessous:
+Pour vous connecter à Twitter à l’aide de l’infrastructure sociale, vous devez configurer un compte dans les paramètres de l’appareil, comme indiqué ci-dessous :
 
  [![](social-framework-images/twitter01.png "Paramètres du compte Twitter")](social-framework-images/twitter01.png#lightbox)
 
@@ -35,11 +35,11 @@ Une fois qu’un compte a été entré et vérifié avec Twitter, toute applicat
 
 ### <a name="sending-tweets"></a>Envoi de tweets
 
-L’infrastructure sociale comprend un contrôleur appelé `SLComposeViewController` qui présente une vue fournie par le système pour la modification et l’envoi d’un tweet. La capture d’écran suivante montre un exemple de cette vue:
+L’infrastructure sociale comprend un contrôleur appelé `SLComposeViewController` qui présente une vue fournie par le système pour la modification et l’envoi d’un tweet. La capture d’écran suivante montre un exemple de cette vue :
 
  [![](social-framework-images/twitter02.png "Cette capture d’écran montre un exemple de SLComposeViewController")](social-framework-images/twitter02.png#lightbox)
 
-Pour utiliser un `SLComposeViewController` avec Twitter, vous devez créer une instance du contrôleur en appelant la `FromService` méthode avec `SLServiceType.Twitter` , comme indiqué ci-dessous:
+Pour utiliser un `SLComposeViewController` avec Twitter, vous devez créer une instance du contrôleur en appelant la `FromService` méthode avec `SLServiceType.Twitter` , comme indiqué ci-dessous :
 
 ```csharp
 var slComposer = SLComposeViewController.FromService (SLServiceType.Twitter);
@@ -53,14 +53,14 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController`n’envoie jamais de Tweet directement sans intervention de l’utilisateur. Toutefois, il peut être initialisé à l’aide des méthodes suivantes:
+ `SLComposeViewController`n’envoie jamais de Tweet directement sans intervention de l’utilisateur. Toutefois, il peut être initialisé à l’aide des méthodes suivantes :
 
 - `SetInitialText`: Ajoute le texte initial à afficher dans le tweet.
 - `AddUrl`: Ajoute une URL au tweet.
 - `AddImage`: Ajoute une image au tweet.
 
 
-Une fois initialisé, l' `PresentVIewController` appel de affiche la vue créée `SLComposeViewController`par le. L’utilisateur peut ensuite éventuellement modifier et envoyer le tweet, ou annuler son envoi. Dans les deux cas, le contrôleur doit être rejeté dans `CompletionHandler`le, où le résultat peut également être vérifié pour voir si le tweet a été envoyé ou annulé, comme indiqué ci-dessous:
+Une fois initialisé, l' `PresentVIewController` appel de affiche la vue créée `SLComposeViewController`par le. L’utilisateur peut ensuite éventuellement modifier et envoyer le tweet, ou annuler son envoi. Dans les deux cas, le contrôleur doit être rejeté dans `CompletionHandler`le, où le résultat peut également être vérifié pour voir si le tweet a été envoyé ou annulé, comme indiqué ci-dessous :
 
 ```csharp
 slComposer.CompletionHandler += (result) => {
@@ -73,7 +73,7 @@ slComposer.CompletionHandler += (result) => {
 
 #### <a name="tweet-example"></a>Exemple de Tweet
 
-Le code suivant illustre l’utilisation `SLComposeViewController` du pour présenter une vue utilisée pour envoyer un tweet:
+Le code suivant illustre l’utilisation `SLComposeViewController` du pour présenter une vue utilisée pour envoyer un tweet :
 
 ```csharp
 using System;
@@ -140,7 +140,7 @@ namespace SocialFrameworkDemo
 
 L’infrastructure sociale prend également en charge la création de requêtes HTTP sur des réseaux sociaux. Elle encapsule la requête dans une `SLRequest` classe qui est utilisée pour cibler l’API du réseau social particulier.
 
-Par exemple, le code suivant effectue une demande à Twitter pour obtenir la chronologie publique (en développant le code indiqué ci-dessus):
+Par exemple, le code suivant effectue une demande à Twitter pour obtenir la chronologie publique (en développant le code indiqué ci-dessus) :
 
 ```csharp
 using Accounts;
@@ -220,14 +220,14 @@ partial void RequestTwitterTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-Examinons ce code en détail. Tout d’abord, il accède au magasin de comptes et obtient le type d’un compte Twitter:
+Examinons ce code en détail. Tout d’abord, il accède au magasin de comptes et obtient le type d’un compte Twitter :
 
 ```csharp
 var accountStore = new ACAccountStore ();
 var accountType = accountStore.FindAccountType (ACAccountType.Twitter);
 ```
 
-Ensuite, il demande à l’utilisateur si votre application peut accéder à son compte Twitter et, si l’accès est accordé, le compte est chargé en mémoire et l’interface utilisateur est mise à jour:
+Ensuite, il demande à l’utilisateur si votre application peut accéder à son compte Twitter et, si l’accès est accordé, le compte est chargé en mémoire et l’interface utilisateur est mise à jour :
 
 ```csharp
 // Request access to Twitter account
@@ -244,7 +244,7 @@ accountStore.RequestAccess (accountType, (granted, error) => {
 });
 ```
 
-Lorsque l’utilisateur demande les données de chronologie (en appuyant sur un bouton dans l’interface utilisateur), l’application commence par faire une demande d’accès aux données à partir de Twitter:
+Lorsque l’utilisateur demande les données de chronologie (en appuyant sur un bouton dans l’interface utilisateur), l’application commence par faire une demande d’accès aux données à partir de Twitter :
 
 ```csharp
 // Initialize request
@@ -253,7 +253,7 @@ var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?cou
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
 
-Cet exemple limite les résultats retournés aux dix dernières entrées en incluant `?count=10` dans l’URL. Enfin, il joint la requête au compte Twitter (qui a été chargé ci-dessus) et effectue l’appel à Twitter pour extraire les données:
+Cet exemple limite les résultats retournés aux dix dernières entrées en incluant `?count=10` dans l’URL. Enfin, il joint la requête au compte Twitter (qui a été chargé ci-dessus) et effectue l’appel à Twitter pour extraire les données :
 
 ```csharp
 // Request data
@@ -282,7 +282,7 @@ request.PerformRequest ((data, response, error) => {
 });
 ```
 
-Si les données ont été chargées avec succès, les données JSON brutes sont affichées (comme dans l’exemple de sortie ci-dessous):
+Si les données ont été chargées avec succès, les données JSON brutes sont affichées (comme dans l’exemple de sortie ci-dessous) :
 
 [![](social-framework-images/twitter03.png "Exemple d’affichage de données JSON brutes")](social-framework-images/twitter03.png#lightbox)
 
@@ -292,7 +292,7 @@ Dans une application réelle, les résultats JSON pouvaient ensuite être analys
 
 ### <a name="facebook-account-settings"></a>Paramètres de compte Facebook
 
-La connexion à Facebook à l’aide de l’infrastructure sociale est quasiment identique au processus utilisé pour Twitter présenté ci-dessus. Un compte d’utilisateur Facebook doit être configuré dans les paramètres de l’appareil, comme indiqué ci-dessous:
+La connexion à Facebook à l’aide de l’infrastructure sociale est quasiment identique au processus utilisé pour Twitter présenté ci-dessus. Un compte d’utilisateur Facebook doit être configuré dans les paramètres de l’appareil, comme indiqué ci-dessous :
 
 [![](social-framework-images/facebook01.png "Paramètres de compte Facebook")](social-framework-images/facebook01.png#lightbox)
 
@@ -366,13 +366,13 @@ namespace SocialFrameworkDemo
 }
 ```
 
-Lorsqu’il est utilisé avec Facebook `SLComposeViewController` , le affiche une vue qui ressemble presque exactement à l’exemple Twitter, en affichant **Facebook** comme titre dans ce cas:
+Lorsqu’il est utilisé avec Facebook `SLComposeViewController` , le affiche une vue qui ressemble presque exactement à l’exemple Twitter, en affichant **Facebook** comme titre dans ce cas :
 
 [![](social-framework-images/facebook02.png "Affichage SLComposeViewController")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Appel de API Graph Facebook
 
-Semblable à l’exemple Twitter, l’objet de `SLRequest` l’infrastructure sociale peut être utilisé avec l’API Graph de Facebook. Par exemple, le code suivant retourne des informations à partir de l’API Graph sur le compte Xamarin (en développant le code indiqué ci-dessus):
+Semblable à l’exemple Twitter, l’objet de `SLRequest` l’infrastructure sociale peut être utilisé avec l’API Graph de Facebook. Par exemple, le code suivant retourne des informations à partir de l’API Graph sur le compte Xamarin (en développant le code indiqué ci-dessus) :
 
 ```csharp
 using Accounts;
@@ -455,7 +455,7 @@ partial void RequestFacebookTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-La seule différence réelle entre ce code et la version Twitter présentée ci-dessus est que Facebook doit avoir un ID spécifique au développeur/à l’application (que vous pouvez générer à partir du portail des développeurs de Facebook), qui doit être défini comme option lors de la demande:
+La seule différence réelle entre ce code et la version Twitter présentée ci-dessus est que Facebook doit avoir un ID spécifique au développeur/à l’application (que vous pouvez générer à partir du portail des développeurs de Facebook), qui doit être défini comme option lors de la demande :
 
 ```csharp
 var options = new AccountStoreOptions ();

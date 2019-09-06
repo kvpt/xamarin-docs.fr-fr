@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 14345503-1742-41F5-B2EF-EE31AB7C3516
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: b6bb036962522e83144843e38b1aa320e6145fda
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 688b2b431ca385e8e5bc4ae721e3eaf4049a193d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648042"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283654"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Présentation de tvOS dans Xamarin
 
@@ -31,7 +31,7 @@ Pour plus d’informations sur tvOS, consultez le document [prise en main](~/ios
 
 ## <a name="documentation"></a>Documentation
 
-Les documents suivants vous aideront à créer des applications tvOS avec Xamarin:
+Les documents suivants vous aideront à créer des applications tvOS avec Xamarin :
 
 - [Présentation de tvOS 11](~/ios/tvos/platform/introduction-to-tvos11.md) -cet article décrit les nouvelles fonctionnalités disponibles dans tvOS 11 pour les développeurs Xamarin. tvOS.
 - [Présentation de tvOS 10](~/ios/tvos/platform/introduction-to-tvos10/index.md) -cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans tvOS 10 pour les développeurs Xamarin. tvOS.
@@ -48,9 +48,9 @@ Les documents suivants vous aideront à créer des applications tvOS avec Xamari
 
 ## <a name="sample-projects"></a>Exemples de projet
 
-Exemples d’applications tvOS générées avec Xamarin:
+Exemples d’applications tvOS générées avec Xamarin :
 
-- [Hello, tvOS](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-hello-tvos) – cet exemple implémente une simple application «Hello World» dans Xamarin. tvOS et présente les principes fondamentaux de l’utilisation de tvOS.
+- [Hello, tvOS](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-hello-tvos) – cet exemple implémente une simple application « Hello World » dans Xamarin. tvOS et présente les principes fondamentaux de l’utilisation de tvOS.
 - [tvAlerts](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvalerts) : cet exemple montre comment utiliser des alertes dans une application Xamarin. tvOS.
 - [tvButtons](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvbuttons) : cet exemple montre comment utiliser les boutons est une application Xamarin. tvOS.
 - [tvRemote](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvremote) : cet exemple présente plusieurs manières dont votre application Xamarin. tvOS peut interagir avec le Siri distant pour naviguer dans votre interface utilisateur.
@@ -62,7 +62,7 @@ Exemples d’applications tvOS générées avec Xamarin:
 - [tvStackView](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvstackview) : cet exemple montre comment utiliser les vues de la pile dans une application Xamarin. tvOS.
 - [UICatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-uicatalog) : montre comment utiliser de nombreux affichages et contrôles dans l’infrastructure UIKit sur tvOS. Reportez-vous à cet exemple si vous recherchez des contrôles ou des vues spécifiques fournis par le système.
 
-En outre, Apple fournit les exemples d’applications suivants qui peuvent être transcodés C# pour fonctionner avec la prise en charge de Xamarin pour les applications tvOS:
+En outre, Apple fournit les exemples d’applications suivants qui peuvent être transcodés C# pour fonctionner avec la prise en charge de Xamarin pour les applications tvOS :
 
 - [DemoBots: Création d’un jeu multiplateforme avec SpriteKit et GameplayKit](https://developer.apple.com/library/prerelease/tvos/samplecode/DemoBots/)
 

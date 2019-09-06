@@ -4,15 +4,15 @@ description: Cet article explique comment créer un fichier IPA afin de déploye
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c430d7771d443b80bec2a3e8a79565e2a7994a8b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: 58621701d832660b125d7589762cc033811eb69b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887577"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281840"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Prise en charge d’IPA dans Xamarin.iOS
 
@@ -261,7 +261,7 @@ Cet article a décrit les étapes nécessaires à la préparation d’une applic
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Fichier iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
+- [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Conception graphique iTunes](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
 - [Développer et distribuer des applications d’entreprise (Apple)](https://help.apple.com/xcode/mac/current/#/devba5e7054d)
 - [Distribution d’applications d’entreprise (vidéo WWDC)](https://developer.apple.com/videos/play/wwdc2014/705/)

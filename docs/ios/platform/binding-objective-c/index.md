@@ -1,50 +1,50 @@
 ---
-title: Liaison de bibliothèques d’iOS
-description: Ce document décrit comment créer C# liaisons au code Objective-C, ce qui permet d’utiliser les bibliothèques natives et CocoaPods dans une application Xamarin.iOS.
+title: Liaison de bibliothèques iOS
+description: Ce document décrit comment créer C# des liaisons au code Objective-C, ce qui permet de consommer des bibliothèques natives et des CocoaPods dans une application Xamarin. iOS.
 ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 8c4dcbe0baf74479e94f8663280e7654b4d58a9d
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978152"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291803"
 ---
-# <a name="binding-ios-libraries"></a>Liaison de bibliothèques d’iOS
+# <a name="binding-ios-libraries"></a>Liaison de bibliothèques iOS
 
-Suivez ces liens pour en savoir plus sur la liaison de bibliothèques Objective-C et CocoaPods pour Xamarin.iOS et Xamarin.Mac :
+Suivez ces liens pour en savoir plus sur la liaison de bibliothèques objective-C et CocoaPods pour Xamarin. iOS et Xamarin. Mac :
 
-- [**Vue d’ensemble** ](~/cross-platform/macios/binding/overview.md) -
-  décrit le fonctionne de la liaison.
-- [**Liaison de bibliothèques Objective-C** ](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  obtenir des Instructions sur la façon de lier des bibliothèques Objective-C à utiliser dans les projets Xamarin.
-- [**Guide de référence de définition de type** ](~/cross-platform/macios/binding/binding-types-reference.md) -
-  décrit tous les attributs disponibles pour les auteurs de liaison pour piloter le processus de génération de liaison.
+- [**Vue d’ensemble**](~/cross-platform/macios/binding/overview.md) -
+  Décrit le fonctionnement de la liaison.
+- [**Liaison des bibliothèques objective-C**](~/cross-platform/macios/binding/objective-c-libraries.md) -
+  Instructions sur la façon de lier des bibliothèques objective-C pour une utilisation dans des projets Xamarin.
+- [**Guide de référence des définitions de types**](~/cross-platform/macios/binding/binding-types-reference.md) -
+  Décrit tous les attributs disponibles pour lier des auteurs afin de piloter le processus de génération de liaison.
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-Objectif Sharpie est un outil de ligne de commande pour aider à démarrer la première passe d’une liaison.
-Il fonctionne en analysant les fichiers d’en-tête d’une bibliothèque native pour mapper l’API publique dans le [définition de liaison](~/cross-platform/macios/binding/objective-c-libraries.md) (un processus qui est sinon effectué manuellement). Objectif Sharpie ne crée pas d’une liaison par lui-même, mais il peut vous aider à commencer !
+La finesse d’objectif est un outil en ligne de commande qui permet de démarrer le premier passage d’une liaison.
+Il fonctionne en analysant les fichiers d’en-tête d’une bibliothèque native pour mapper l’API publique dans la [définition de liaison](~/cross-platform/macios/binding/objective-c-libraries.md) (un processus qui est autrement effectué manuellement). La finesse objective ne crée pas de liaison seule, mais elle peut vous aider à démarrer.
 
-Objectif Sharpie 3.0 a introduit la possibilité de lier directement les Cocoapods !
+L’objectif de Sharpy 3,0 a introduit la possibilité de lier directement les Cocoapods !
 
-## <a name="walkthrough---binding-an-ios-objective-c-librarywalkthroughmd"></a>[Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS](walkthrough.md)
+## <a name="walkthrough---binding-an-ios-objective-c-librarywalkthroughmd"></a>[Procédure pas à pas : liaison d’une bibliothèque objective-C iOS](walkthrough.md)
 
-Cette page fournit une procédure de création d’un projet de liaison iOS à l’aide de l’open source [ **InfColorPicker** ](https://github.com/InfinitApps/InfColorPicker) projet Objective-C comme exemple. Le **InfColorPicker** bibliothèque fournit un contrôleur d’affichage réutilisable permettant aux utilisateurs de sélectionner une couleur en fonction de sa représentation sous forme de TSL, effectuer une sélection de couleur plus conviviales.
-Objectif Sharpie permet de faciliter le processus de liaison.
+Cette page fournit une procédure pas à pas de création d’un projet de liaison iOS à l’aide du projet open source [**InfColorPicker**](https://github.com/InfinitApps/InfColorPicker) objective-C, par exemple. La bibliothèque **InfColorPicker** fournit un contrôleur d’affichage réutilisable qui permet à l’utilisateur de sélectionner une couleur en fonction de sa représentation TSL, ce qui rend la sélection des couleurs plus conviviale.
+La finesse d’objectif est utilisée pour faciliter le processus de liaison.
 
 ## <a name="video"></a>Vidéo
 
 > [!VIDEO https://youtube.com/embed/ZUoPLcmnf1o]
 
-**iOS liaisons en C /C++ vidéo**
+**Liaisons iOS dans C/C++ Video**
 
 ## <a name="related-links"></a>Liens associés
 
 - [Liaison Objective-C](~/cross-platform/macios/binding/index.md)
-- [Liaison du Mac](~/mac/platform/binding.md)
+- [Liaison Mac](~/mac/platform/binding.md)

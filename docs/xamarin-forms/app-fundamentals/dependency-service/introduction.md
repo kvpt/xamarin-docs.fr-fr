@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: d49a12e38b9bfe1014583ce7f0d7c7770270af7b
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.openlocfilehash: 3521d3fb632261c880e67f7a8c889881485e313d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739371"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198161"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Présentation de Xamarin.Forms DependencyService
 
@@ -40,7 +40,7 @@ L’exemple suivant montre une interface pour une API qui peut être utilisée p
 ```csharp
 public interface IDeviceOrientationService
 {
-        DeviceOrientation GetOrientation();
+    DeviceOrientation GetOrientation();
 }
 ```
 

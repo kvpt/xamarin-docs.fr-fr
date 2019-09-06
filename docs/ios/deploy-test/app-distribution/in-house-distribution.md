@@ -4,15 +4,15 @@ description: Ce document fournit une brève présentation de la distribution d�
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a2dc974fba7beb70f1caecf8198181193d32e4c2
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865529"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289886"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Distribution interne pour les applications Xamarin.iOS
 
@@ -22,7 +22,7 @@ Une fois votre application Xamarin.iOS développée, la prochaine étape du cycl
 
 - Votre application n’a pas besoin d’être soumise à l’évaluation d’Apple.
 - Il n’existe aucune limite à la quantité d’appareils sur lesquels vous pouvez déployer une application
-    - Il est important de noter qu’Apple indique très clairement que les applications internes sont réservées à un usage interne.
+  - Il est important de noter qu’Apple indique très clairement que les applications internes sont réservées à un usage interne.
 
 Il est également important de noter les points suivants pour le programme Developer Enterprise :
 
@@ -146,7 +146,7 @@ Vous distribuez votre application de manière sécurisée à l’aide de différ
 - Localement via iTunes
 - Serveur MDM
 - Serveur web interne sécurisé
-- Messagerie
+- Email
 
 Pour distribuer votre application selon l’une de ces méthodes, vous devez d’abord créer un fichier IPA, comme expliqué dans la section suivante.
 

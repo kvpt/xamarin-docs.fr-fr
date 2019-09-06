@@ -4,21 +4,21 @@ description: Ce document décrit les différentes paires clé/valeur qui peuvent
 ms.prod: xamarin
 ms.assetid: 944DFDB5-ADBA-4D6E-984C-5AEC19A1CC57
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 2a61a4a313fa23b5cdc629279bee39f1eed792cc
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: 9b766677c10a06b933504f3fdcba0b43e2c84a1c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120499"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284392"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Informations de référence sur le fichier Info.plist pour Xamarin.iOS
 
 Pour plus d’informations sur l’utilisation des clés Info.plist, consultez le guide [Sécurité et confidentialité](~/ios/app-fundamentals/security-privacy.md). 
 
-## <a name="location"></a>Emplacement 
+## <a name="location"></a>Lieu 
 
 L’accès à l’emplacement de l’utilisateur nécessite également des modifications dans le fichier Info.plist. Vous devez définir les clés suivantes relatives aux données d’emplacement : 
 

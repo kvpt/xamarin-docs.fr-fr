@@ -4,15 +4,15 @@ description: Cet article fournit une introduction à l’utilisation des storybo
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 722e09cc292bad682a49ee0cba4ff0ca0f39a844
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620382"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291641"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Présentation des storyboards dans Xamarin. Mac
 
@@ -26,7 +26,7 @@ Cet article fournit une introduction à l’utilisation des storyboards pour dé
 
 <a name="What-are-Storyboards" />
 
-## <a name="what-are-storyboards"></a>Que sont les storyboards?
+## <a name="what-are-storyboards"></a>Que sont les storyboards ?
 
 En utilisant des storyboards, toute l’interface utilisateur d’une application Xamarin. Mac peut être définie dans un emplacement unique avec l’ensemble de la navigation entre ses éléments individuels et les interfaces utilisateur. Les storyboards pour Xamarin. Mac, fonctionnent de manière très similaire aux storyboards pour Xamarin. iOS. Toutefois, ils contiennent un ensemble différent de _types segue_ en raison des différents idiomes d’interface.
 
@@ -34,7 +34,7 @@ En utilisant des storyboards, toute l’interface utilisateur d’une applicatio
 
 ### <a name="working-with-scenes"></a>Utilisation des scènes
 
-Comme indiqué ci-dessus, un Storyboard définit la totalité de l’interface utilisateur pour une application donnée, décomposée en une vue d’ensemble fonctionnelle de ses contrôleurs d' _affichage_. Dans Interface Builder de Xcode, chacun de ces contrôleurs vit dans sa propre _scène_.
+Comme indiqué ci-dessus, un Storyboard définit la totalité de l’interface utilisateur pour une application donnée, décomposée en une vue d’ensemble fonctionnelle de ses _contrôleurs d’affichage_. Dans Interface Builder de Xcode, chacun de ces contrôleurs vit dans sa propre _scène_.
 
 [![](images/intro02.png "Exemple de contrôleur d’affichage")](images/intro02.png#lightbox)
 
@@ -64,7 +64,7 @@ Dans une scène donnée, vous pouvez effectuer toutes les opérations qui auraie
 
 ### <a name="working-with-segues"></a>Utilisation de SEGUES
 
-Comme indiqué ci-dessus, SEGUES fournit les relations entre toutes les scènes qui définissent l’interface utilisateur de votre application. Si vous êtes familiarisé avec l’utilisation des storyboards dans iOS, vous savez que SEGUES pour iOS définit généralement des transitions entre les vues plein écran. Cela diffère de macOS, lorsque SEGUES définit généralement la «relation contenant-contenu» (où une scène est l’enfant d’une scène parente).
+Comme indiqué ci-dessus, SEGUES fournit les relations entre toutes les scènes qui définissent l’interface utilisateur de votre application. Si vous êtes familiarisé avec l’utilisation des storyboards dans iOS, vous savez que SEGUES pour iOS définit généralement des transitions entre les vues plein écran. Cela diffère de macOS, lorsque SEGUES définit généralement la « relation contenant-contenu » (où une scène est l’enfant d’une scène parente).
 
 Dans macOS, la plupart des applications ont tendance à regrouper leurs vues dans la même fenêtre à l’aide d’éléments d’interface utilisateur tels que les onglets et les affichages fractionnés. Contrairement à iOS, où les vues doivent être activées et désactivées à l’écran, en raison d’un espace d’affichage physique limité.
 
@@ -76,9 +76,9 @@ Lorsque vous utilisez la SEGUES de présentation, vous pouvez `PrepareForSegue` 
 
 ### <a name="design-and-run-times"></a>Temps de conception et d’exécution
 
-Au moment de la conception (lors de la disposition de l’interface utilisateur dans l’Interface Builder de Xcode), chaque élément de l’interface utilisateur de l’application est divisé en éléments constitutifs:
+Au moment de la conception (lors de la disposition de l’interface utilisateur dans l’Interface Builder de Xcode), chaque élément de l’interface utilisateur de l’application est divisé en éléments constitutifs :
 
-- **Scènes** , composées des éléments suivants:
+- **Scènes** , composées des éléments suivants :
   - **Contrôleur d’affichage** : qui définissent les relations entre les vues et les données qui les prennent en charge.
   - **Vues et** sous-vues-éléments réels qui composent l’interface utilisateur.
   - **SEGUES de relation contenant-contenu** : qui définissent les relations parent-enfant entre les scènes.
@@ -96,7 +96,7 @@ Dans le Guide de Démarrage rapide de la [table de montage séquentiel](~/mac/pl
 
 ## <a name="working-with-storyboards"></a>Utilisation de storyboards
 
-Cette section décrit en détail l' [utilisation](~/mac/platform/storyboards/indepth.md) des storyboards dans une application Xamarin. Mac. Nous examinons en détail les scènes et la façon dont elles se composent de contrôleurs d’affichage et d’une vue. Ensuite, nous allons examiner comment les scènes sont liées à SEGUES. Enfin, nous examinerons l’utilisation des types de Segue personnalisés. 
+Cette section décrit en détail l' [utilisation des storyboards](~/mac/platform/storyboards/indepth.md) dans une application Xamarin. Mac. Nous examinons en détail les scènes et la façon dont elles se composent de contrôleurs d’affichage et d’une vue. Ensuite, nous allons examiner comment les scènes sont liées à SEGUES. Enfin, nous examinerons l’utilisation des types de Segue personnalisés. 
 
 <a name="Complex-Storyboard-Example" />
 

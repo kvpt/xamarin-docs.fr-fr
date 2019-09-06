@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: 33a121c97df435d3423e3e0f525e6a3d32c780ad
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: a79f22fa96c4c34d2a9704e9aa3be3825895a15b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197465"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291595"
 ---
 # <a name="xamarinforms-requirements"></a>Configuration requise pour Xamarin.Forms
 
@@ -72,7 +72,7 @@ Les applications Xamarin.Forms peuvent être développées sur macOS et Windows.
 Vous pouvez utiliser Visual Studio pour Mac pour développer des applications Xamarin. Forms sur macOS High Sierra (10,13) ou une version ultérieure. Pour développer des applications iOS, nous vous recommandons d’avoir au moins le kit de développement logiciel (SDK) iOS 10 et Xcode 9 installé.
 
 > [!NOTE]
->  Les applications Windows ne peuvent pas être développées sur macOS.
+> Les applications Windows ne peuvent pas être développées sur macOS.
 
 ## <a name="windows-system-requirements"></a>Configuration requise pour Windows
 
@@ -94,7 +94,7 @@ Vous pouvez [ajouter une application de plateforme Windows universelle (UWP)](~/
 
 ## <a name="deprecated-platforms"></a>Plateformes déconseillées
 
-Ces plateformes ne sont pas prises en charge lors de l’utilisation de Xamarin. Forms 3,0 ou plus récente:
+Ces plateformes ne sont pas prises en charge lors de l’utilisation de Xamarin. Forms 3,0 ou plus récente :
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

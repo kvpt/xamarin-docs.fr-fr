@@ -4,15 +4,15 @@ description: Ce guide vous guide dans la création de votre première applicatio
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 30fcf586a280688834e1ae9af61630c2611964a5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119164"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281819"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS Guide de démarrage rapide
 
@@ -32,11 +32,11 @@ Xamarin. tvOS vous permet de développer des applications de TV Apple entièreme
 
 En outre, étant donné que les applications Xamarin. tvOS C# sont écrites dans et .net, le code backend commun peut être partagé avec les applications Xamarin. iOS, Xamarin. Android et Xamarin. Mac. tout en distribuant une expérience native sur chaque plateforme.
 
-Cet article vous présente les concepts clés nécessaires à la création d’une application de TV Apple à l’aide de Xamarin. tvOS et de Visual Studio en vous guidant tout au long du processus de création d’une application **Hello, tvOS** de base qui compte le nombre de clics sur un bouton:
+Cet article vous présente les concepts clés nécessaires à la création d’une application de TV Apple à l’aide de Xamarin. tvOS et de Visual Studio en vous guidant tout au long du processus de création d’une application **Hello, tvOS** de base qui compte le nombre de clics sur un bouton :
 
 [![](hello-tvos-images/run05.png "Exemple d’exécution d’application")](hello-tvos-images/run05.png#lightbox)
 
-Nous allons aborder les concepts suivants:
+Nous allons aborder les concepts suivants :
 
 - **Visual Studio pour Mac** : présentation du Visual Studio pour Mac et de la création d’applications Xamarin. tvOS.
 - **Anatomie d’une application Xamarin. tvOS** – qu’est-ce qu’une application Xamarin. tvOS.
@@ -47,7 +47,7 @@ Nous allons aborder les concepts suivants:
 
 Comme indiqué ci-dessus, nous allons créer une application de `Hello-tvOS` TV Apple appelée qui ajoute un bouton et une étiquette uniques à l’écran principal. Quand vous cliquez sur le bouton, l’étiquette affiche le nombre de clics effectués.
 
-Pour commencer, procédez comme suit:
+Pour commencer, procédez comme suit :
 
 1. Démarrez Visual Studio pour Mac :
 
@@ -63,7 +63,7 @@ Pour commencer, procédez comme suit:
 
     [![](hello-tvos-images/setup03.png "Entrez HellotvOS")](hello-tvos-images/setup03.png#lightbox)
 
-Visual Studio pour Mac créera la nouvelle application Xamarin. tvOS et affichera les fichiers par défaut qui seront ajoutés à la solution de votre application:
+Visual Studio pour Mac créera la nouvelle application Xamarin. tvOS et affichera les fichiers par défaut qui seront ajoutés à la solution de votre application :
 
  [![](hello-tvos-images/project01.png "Affichage des fichiers par défaut")](hello-tvos-images/project01.png#lightbox)
 
@@ -75,7 +75,7 @@ Si vous le souhaitez, vous pouvez créer un ou plusieurs projets de bibliothèqu
 
 Si vous êtes familiarisé avec la programmation iOS, vous remarquerez un grand nombre de similarités. En fait, tvOS 9 est un sous-ensemble d’iOS 9, donc un grand nombre de concepts seront abordés ici.
 
-Jetons un coup d’œil aux fichiers du projet:
+Jetons un coup d’œil aux fichiers du projet :
 
 - `Main.cs` : ce fichier contient le point d’entrée principal de l’application. Quand l’application est lancée, il contient la toute première classe et la méthode qui est exécutée.
 - `AppDelegate.cs`: Ce fichier contient la classe d’application principale qui est chargée d’écouter les événements du système d’exploitation.
@@ -88,7 +88,7 @@ Dans les sections suivantes, nous allons examiner rapidement certains de ces fic
 
 ### <a name="maincs"></a>Main.cs
 
-Le `Main.cs` fichier contient une méthode `Main` statique qui crée une instance de l’application Xamarin. tvOS et transmet le nom de la classe qui gérera les événements du système d’exploitation, qui `AppDelegate` , dans notre cas, est la classe:
+Le `Main.cs` fichier contient une méthode `Main` statique qui crée une instance de l’application Xamarin. tvOS et transmet le nom de la classe qui gérera les événements du système d’exploitation, qui `AppDelegate` , dans notre cas, est la classe :
 
 ```csharp
 using UIKit;
@@ -110,7 +110,7 @@ namespace Hello_tvOS
 
 ### <a name="appdelegatecs"></a>AppDelegate.cs
 
-Le `AppDelegate.cs` fichier contient notre `AppDelegate` classe, qui est responsable de la création de la fenêtre et de l’écoute des événements du système d’exploitation:
+Le `AppDelegate.cs` fichier contient notre `AppDelegate` classe, qui est responsable de la création de la fenêtre et de l’écoute des événements du système d’exploitation :
 
 ```csharp
 using Foundation;
@@ -174,7 +174,7 @@ namespace Hello_tvOS
 
 Ce code n’est probablement pas familier, sauf si vous avez déjà créé une application iOS, mais cela est relativement simple. Examinons les lignes importantes.
 
-Tout d’abord, examinons la déclaration de variable au niveau de la classe:
+Tout d’abord, examinons la déclaration de variable au niveau de la classe :
 
 ```csharp
 public override UIWindow Window {
@@ -192,7 +192,7 @@ Il existe de nombreuses autres méthodes fournies dans le modèle, telles que `D
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-La `ViewController` classe est le contrôleur de la fenêtre principale. Cela signifie qu’il est responsable du cycle de vie de la fenêtre principale. Nous allons examiner cela en détail plus tard, pour l’instant, commençons par un bref aperçu:
+La `ViewController` classe est le contrôleur de la fenêtre principale. Cela signifie qu’il est responsable du cycle de vie de la fenêtre principale. Nous allons examiner cela en détail plus tard, pour l’instant, commençons par un bref aperçu :
 
 ```csharp
 using System;
@@ -224,7 +224,7 @@ namespace Hello_tvOS
 
 #### <a name="viewcontrollerdesignercs"></a>ViewController.Designer.cs
 
-Le fichier de concepteur pour la classe de fenêtre principale est vide pour l’instant, mais il sera rempli automatiquement par Visual Studio pour Mac lors de la création de notre interface utilisateur avec le concepteur iOS:
+Le fichier de concepteur pour la classe de fenêtre principale est vide pour l’instant, mais il sera rempli automatiquement par Visual Studio pour Mac lors de la création de notre interface utilisateur avec le concepteur iOS :
 
 ```csharp
 using Foundation;
@@ -251,11 +251,11 @@ Maintenant que nous avons créé notre application Xamarin. tvOS et que nous avo
 
 Vous n’êtes pas obligé d’utiliser Xamarin Designer pour iOS pour créer l’interface utilisateur de votre application Xamarin. tvOS, l’interface utilisateur peut être C# créée directement à partir du code, mais cela dépasse le cadre de cet article. Par souci de simplicité, nous utiliserons le concepteur iOS pour créer l’interface utilisateur dans le reste de ce didacticiel.
 
-Pour commencer à créer votre interface utilisateur, nous allons double- `Main.storyboard` cliquer sur le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS:
+Pour commencer à créer votre interface utilisateur, nous allons double- `Main.storyboard` cliquer sur le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS :
 
 [![](hello-tvos-images/designer01.png "Fichier Main.storyboard dans l’Explorateur de solutions")](hello-tvos-images/designer01.png#lightbox)
 
-Cette commande lance le concepteur et ressemble à ce qui suit:
+Cette commande lance le concepteur et ressemble à ce qui suit :
 
 [![](hello-tvos-images/designer02.png "Le concepteur")](hello-tvos-images/designer02.png#lightbox)
 
@@ -265,57 +265,57 @@ Nous pouvons maintenant commencer à ajouter des contrôles à la surface de des
 
 Effectuez ce qui suit :
 
-1. Recherchez la **boîte à outils**, qui doit se trouver à droite de l’aire de conception:
+1. Recherchez la **boîte à outils**, qui doit se trouver à droite de l’aire de conception :
 
     [![](hello-tvos-images/designer03.png "Boîte à outils")](hello-tvos-images/designer03.png#lightbox)
 
     Si vous ne le trouvez pas ici, accédez à **afficher > pad > boîte à outils** pour l’afficher.
-2. Faites glisser une **étiquette** de la **boîte à outils** vers l’aire de conception:
+2. Faites glisser une **étiquette** de la **boîte à outils** vers l’aire de conception :
 
     [![](hello-tvos-images/designer04.png "Faire glisser une étiquette à partir de la boîte à outils")](hello-tvos-images/designer04.png#lightbox)
-3. Cliquez sur la propriété **title** dans le panneau des **Propriétés** et remplacez le titre du bouton `Hello, tvOS` par et définissez la taille de la **police** sur 128:
+3. Cliquez sur la propriété **title** dans le panneau des **Propriétés** et remplacez le titre du bouton `Hello, tvOS` par et définissez la taille de la **police** sur 128 :
 
     [![](hello-tvos-images/designer05.png "Définissez le titre sur Hello, tvOS et définissez la taille de police sur 128")](hello-tvos-images/designer05.png#lightbox)
-4. Redimensionnez l’étiquette afin que tous les mots soient visibles et placez-le centré en haut de la fenêtre:
+4. Redimensionnez l’étiquette afin que tous les mots soient visibles et placez-le centré en haut de la fenêtre :
 
     [![](hello-tvos-images/designer06.png "Redimensionner et centrer l’étiquette")](hello-tvos-images/designer06.png#lightbox)
-5. L’étiquette doit à présent être contrainte d’être positionnée sur sa position, afin qu’elle apparaisse comme prévu. quelle que soit la taille de l’écran. Pour ce faire, cliquez sur l’étiquette jusqu’à ce que la *poignée en forme de T* s’affiche:
+5. L’étiquette doit à présent être contrainte d’être positionnée sur sa position, afin qu’elle apparaisse comme prévu. quelle que soit la taille de l’écran. Pour ce faire, cliquez sur l’étiquette jusqu’à ce que la *poignée en forme de T* s’affiche :
 
     [![](hello-tvos-images/designer07.png "Handle en forme de T")](hello-tvos-images/designer07.png#lightbox)
-6. Pour contraindre l’étiquette horizontalement, sélectionnez le carré central et faites-le glisser sur la ligne verticale en pointillés:
+6. Pour contraindre l’étiquette horizontalement, sélectionnez le carré central et faites-le glisser sur la ligne verticale en pointillés :
 
     [![](hello-tvos-images/designer08.png "Sélectionner le carré central")](hello-tvos-images/designer08zoom.png#lightbox)
 
      L’étiquette doit devenir orange.
-7. Sélectionnez la poignée T en haut de l’étiquette, puis faites-la glisser vers le bord supérieur de la fenêtre:
+7. Sélectionnez la poignée T en haut de l’étiquette, puis faites-la glisser vers le bord supérieur de la fenêtre :
 
     [![](hello-tvos-images/designer09.png "Faites glisser la poignée vers le bord supérieur de la fenêtre.")](hello-tvos-images/designer09.png#lightbox)
-8. Ensuite, cliquez sur la largeur, puis sur la poignée de hauteur de l' *OS* , comme illustré ci-dessous:
+8. Ensuite, cliquez sur la largeur, puis sur la poignée de hauteur de l' *OS* , comme illustré ci-dessous :
 
     [![](hello-tvos-images/designer10.png "La largeur et la hauteur des poignées osseuses")](hello-tvos-images/designer10.png#lightbox)
 
      Lorsque vous cliquez sur chaque *poignée osseuse* , sélectionnez la largeur et la hauteur respectivement pour définir des dimensions fixes.
-9. Lorsque vous avez terminé, vos contraintes doivent ressembler à celles de l’onglet disposition du panneau Propriétés:
+9. Lorsque vous avez terminé, vos contraintes doivent ressembler à celles de l’onglet disposition du panneau Propriétés :
 
     [![](hello-tvos-images/designer11.png "Exemples de contraintes")](hello-tvos-images/designer11.png#lightbox)
 10. Faites glisser un **bouton** de la **boîte à outils** et placez-le sous l’étiquette.
-11. Cliquez sur la propriété **title** dans le **bloc de propriétés** et remplacez le titre du bouton `Click Me`par:
+11. Cliquez sur la propriété **title** dans le **bloc de propriétés** et remplacez le titre du bouton `Click Me`par :
 
     [![](hello-tvos-images/designer12.png "Modifiez le titre des boutons pour cliquer sur me")](hello-tvos-images/designer12.png#lightbox)
-12. Répétez les étapes 5 à 8 ci-dessus pour contraindre le bouton dans la fenêtre tvOS. Toutefois, au lieu de faire glisser le handle T vers le haut de la fenêtre (comme à l’étape #7), faites-le glisser vers le bas de l’étiquette:
+12. Répétez les étapes 5 à 8 ci-dessus pour contraindre le bouton dans la fenêtre tvOS. Toutefois, au lieu de faire glisser le handle T vers le haut de la fenêtre (comme à l’étape #7), faites-le glisser vers le bas de l’étiquette :
 
     [![](hello-tvos-images/designer14.png "Contraindre le bouton")](hello-tvos-images/designer14.png#lightbox)
 13. Faites glisser une autre étiquette sous le bouton, redimensionnez-la de façon à ce qu’elle ait la même largeur que la première étiquette et définissez son **alignement** sur **Center**:
 
     [![](hello-tvos-images/designer15.png "Faites glisser une autre étiquette sous le bouton, redimensionnez-la de façon à ce qu’elle ait la même largeur que la première étiquette et définissez son alignement sur Center")](hello-tvos-images/designer15.png#lightbox)
-14. Comme le premier contrôle Label et le bouton, définissez cette étiquette sur Center et épinglez-la dans emplacement et taille:
+14. Comme le premier contrôle Label et le bouton, définissez cette étiquette sur Center et épinglez-la dans emplacement et taille :
 
     [![](hello-tvos-images/designer16.png "Épingler l’étiquette à l’emplacement et à la taille")](hello-tvos-images/designer16.png#lightbox)
 15. Enregistrez les modifications apportées à l’interface utilisateur.
 
 Au fur et à mesure que vous redimensionnez et déplacez des contrôles, vous avez dû remarquer que le concepteur vous donne des conseils d’accrochage basés sur [les instructions d’interface utilisateur Apple TV](https://developer.apple.com/tvos/human-interface-guidelines/). Ces instructions vous aideront à créer des applications de haute qualité qui auront une apparence familière pour les utilisateurs d’Apple TV.
 
-Si vous regardez dans la section **structure du document** , vous remarquerez comment la disposition et la hiérarchie des éléments qui composent notre interface utilisateur sont affichées:
+Si vous regardez dans la section **structure du document** , vous remarquerez comment la disposition et la hiérarchie des éléments qui composent notre interface utilisateur sont affichées :
 
 [![](hello-tvos-images/designer17.png "La section structure du document")](hello-tvos-images/designer17.png#lightbox)
 
@@ -325,7 +325,7 @@ Maintenant que nous avons créé notre interface utilisateur, nous devons expose
 
 ### <a name="accessing-the-controls-in-the-code-behind"></a>Accès aux contrôles dans le code-behind
 
-Il existe deux façons principales d’accéder aux contrôles que vous avez ajoutés dans le concepteur iOS à partir du code:
+Il existe deux façons principales d’accéder aux contrôles que vous avez ajoutés dans le concepteur iOS à partir du code :
 
 - Création d’un gestionnaire d’événements sur un contrôle.
 - Donnez un nom au contrôle pour pouvoir le référencer ultérieurement.
@@ -334,19 +334,19 @@ Quand l’un de ces deux est ajouté, la classe partielle `ViewController.design
 
 ### <a name="creating-an-event-handler"></a>Création d’un gestionnaire d’événements
 
-Dans cet exemple d’application, lorsque l’utilisateur clique sur le bouton, nous voulons qu’un événement se produise. un gestionnaire d’événements doit donc être ajouté à un événement spécifique sur le bouton. Pour configurer cette configuration, procédez comme suit:
+Dans cet exemple d’application, lorsque l’utilisateur clique sur le bouton, _nous voulons qu'_ un événement se produise. un gestionnaire d’événements doit donc être ajouté à un événement spécifique sur le bouton. Pour configurer cette configuration, procédez comme suit :
 
 1. Dans le concepteur iOS Xamarin, sélectionnez le bouton sur le contrôleur d’affichage.
 2. Dans le panneau Propriétés, sélectionnez l’onglet **événements** :
 
     [![](hello-tvos-images/event1.png "Onglet événements")](hello-tvos-images/event1.png#lightbox)
-3. Recherchez l’événement TouchUpInside et donnez-lui un gestionnaire d’événements `Clicked`nommé:
+3. Recherchez l’événement TouchUpInside et donnez-lui un gestionnaire d’événements `Clicked`nommé :
 
     [![](hello-tvos-images/event2.png "Événement TouchUpInside")](hello-tvos-images/event2.png#lightbox)
-4. Lorsque vous appuyez sur **entrée**, le fichier **ViewController**. cs s’ouvre, suggérant des emplacements pour votre gestionnaire d’événements dans le code. Utilisez les touches de direction de votre clavier pour définir l’emplacement:
+4. Lorsque vous appuyez sur **entrée**, le fichier **ViewController**. cs s’ouvre, suggérant des emplacements pour votre gestionnaire d’événements dans le code. Utilisez les touches de direction de votre clavier pour définir l’emplacement :
 
     [![](hello-tvos-images/event3.png "Définition de l’emplacement")](hello-tvos-images/event3.png#lightbox)
-5. Cette opération crée une méthode partielle comme indiqué ci-dessous:
+5. Cette opération crée une méthode partielle comme indiqué ci-dessous :
 
     [![](hello-tvos-images/event4.png "Méthode partielle")](hello-tvos-images/event4.png#lightbox)
 
@@ -403,7 +403,7 @@ namespace Hello_tvOS
         ...
 ```
 
-Ensuite, dans la même classe (`ViewController`), nous devons remplacer la méthode **ViewDidLoad** et ajouter du code pour définir le message initial pour notre étiquette:
+Ensuite, dans la même classe (`ViewController`), nous devons remplacer la méthode **ViewDidLoad** et ajouter du code pour définir le message initial pour notre étiquette :
 
 ```csharp
 public override void ViewDidLoad ()
@@ -417,7 +417,7 @@ public override void ViewDidLoad ()
 
 Nous devons `ViewDidLoad`utiliser, au lieu d’une autre méthode `Initialize`comme, car `ViewDidLoad` est appelée *après que* le système d’exploitation a chargé et instancié l’interface utilisateur `.storyboard` à partir du fichier. Si nous avons essayé d’accéder au contrôle Label avant `.storyboard` le chargement et l’instanciation complets du fichier, nous obtenons `NullReferenceException` une erreur, car le contrôle Label n’est pas encore créé.
 
-Ensuite, nous devons ajouter le code pour répondre à l’utilisateur en cliquant sur le bouton. Ajoutez le code suivant à la classe partielle pour que nous ayons créé:
+Ensuite, nous devons ajouter le code pour répondre à l’utilisateur en cliquant sur le bouton. Ajoutez le code suivant à la classe partielle pour que nous ayons créé :
 
 ```csharp
 partial void Clicked (UIButton sender)
@@ -433,12 +433,12 @@ Tout en étant en place, nous sommes maintenant prêts à créer et à tester no
 
 Il est temps de créer et d’exécuter notre application pour vérifier qu’elle s’exécute comme prévu. Nous pouvons générer et exécuter tout en une seule étape, ou vous pouvez le créer sans l’exécuter.
 
-Chaque fois que vous générez une application, nous pouvons choisir le type de build que nous souhaitons:
+Chaque fois que vous générez une application, nous pouvons choisir le type de build que nous souhaitons :
 
 - **Débogage** – une version Debug est compilée dans un fichier' ' (application) avec des métadonnées supplémentaires qui nous permettent de déboguer ce qui se passe pendant l’exécution de l’application.
 - **Release** : une version Release crée également un fichier' ', mais elle n’inclut pas d’informations de débogage. elle est donc plus petite et s’exécute plus rapidement.  
 
-Vous pouvez sélectionner le type de build dans le **Sélecteur de configuration** , dans le coin supérieur gauche de l’écran Visual Studio pour Mac:
+Vous pouvez sélectionner le type de build dans le **Sélecteur de configuration** , dans le coin supérieur gauche de l’écran Visual Studio pour Mac :
 
 [![](hello-tvos-images/run01.png "Sélectionner le type de build")](hello-tvos-images/run01.png#lightbox)
 
@@ -450,13 +450,13 @@ S’il n’y a pas d’erreurs, vous verrez un message **Build SUCCEEDED (géné
 
 ### <a name="running-the-application"></a>Exécution de l'application
 
-Pour exécuter l’application, trois options s’offrent à vous:
+Pour exécuter l’application, trois options s’offrent à vous :
 
 - Appuyez sur **⌘+Entrée**.
 - Dans le menu **Exécuter**, choisissez **Déboguer**.
 - Cliquez sur le bouton **Play** (Lire) dans la barre d’outils Visual Studio pour Mac (juste au-dessus de l’**Explorateur de solutions**).
 
-L’application sera générée (si elle n’a pas déjà été générée), démarrer en mode débogage, le simulateur tvOS démarrera et l’application sera lancée et affichera sa fenêtre d’interface principale:
+L’application sera générée (si elle n’a pas déjà été générée), démarrer en mode débogage, le simulateur tvOS démarrera et l’application sera lancée et affichera sa fenêtre d’interface principale :
 
 [![Écran d’accueil de l’exemple d’application](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
 
@@ -464,17 +464,17 @@ Dans le menu **matériel** , sélectionnez **Afficher Apple TV à distance** pou
 
 [![](hello-tvos-images/run04.png "Sélectionnez Afficher Apple TV à distance")](hello-tvos-images/run04.png#lightbox)
 
-À l’aide de l’accès distant du simulateur, si vous cliquez sur le bouton plusieurs fois, l’étiquette doit être mise à jour avec le nombre:
+À l’aide de l’accès distant du simulateur, si vous cliquez sur le bouton plusieurs fois, l’étiquette doit être mise à jour avec le nombre :
 
 [![](hello-tvos-images/run05.png "Étiquette avec le nombre mis à jour")](hello-tvos-images/run05.png#lightbox)
 
 Félicitations ! Nous avons abordé un grand nombre de sujets ici, mais si vous avez suivi ce didacticiel du début à la fin, vous devez maintenant avoir une compréhension approfondie des composants d’une application Xamarin. tvOS, ainsi que des outils utilisés pour les créer.
 
-## <a name="where-to-next"></a>Où ensuite?
+## <a name="where-to-next"></a>Où ensuite ?
 
 Le développement d’applications de téléviseurs Apple présente quelques défis en raison de la déconnexion entre l’utilisateur et l’interface (il se trouve dans la salle qui n’est pas dans la main de l’utilisateur) et les limitations tvOSent la taille et le stockage de l’application.
 
-Par conséquent, nous vous suggérons vivement de lire les documents suivants avant de passer à la conception d’une application Xamarin. tvOS:
+Par conséquent, nous vous suggérons vivement de lire les documents suivants avant de passer à la conception d’une application Xamarin. tvOS :
 
 - [Présentation de tvOS 9](~/ios/tvos/platform/tvos9.md) : cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans tvOS 9 pour les développeurs Xamarin. tvOS.
 - [Utilisation de la navigation et du focus](~/ios/tvos/app-fundamentals/navigation-focus.md) : les utilisateurs de votre application Xamarin. tvOS n’interagissent pas avec son interface directement comme avec iOS, où ils appuient sur des images sur l’écran de l’appareil, mais indirectement à travers la salle à l’aide de la télécommande Siri. Cet article traite du concept de focus et de la façon dont il est utilisé pour gérer la navigation dans une interface utilisateur de l’application Xamarin. tvOS.

@@ -4,15 +4,15 @@ description: Cet article traite de la prise en charge de tvOS dans Xcode 9 et Xa
 ms.prod: xamarin
 ms.assetid: 0819DC93-A46B-49DC-A566-8E27CAE1B829
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 04ba792cd1381c3f0dbda63fd7e3e3cabdc978f1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b814fdb05b3eaba6feb47f6969519a5b99fcdad4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650152"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283631"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>Installation de la prise en charge de tvOS dans Xamarin
 
@@ -28,9 +28,9 @@ Xamarin. iOS 11 et versions ultérieures prennent en charge le kit de développe
 
 ## <a name="installation"></a>Installation
 
-Pour générer des applications tvOS avec Xamarin:
+Pour générer des applications tvOS avec Xamarin :
 
-1. **Installer la dernière** [version de Xcode: Téléchargez la dernière version de Xcode](https://developer.apple.com/xcode/download/) et installez-la. Si Xcode n’est pas installé, il n’est pas possible de créer des applications Xamarin. 
+1. **Installer la dernière** [version de Xcode : Téléchargez la dernière version de Xcode](https://developer.apple.com/xcode/download/) et installez-la. Si Xcode n’est pas installé, il n’est pas possible de créer des applications Xamarin. 
 2. **Exécuter Xcode** : après avoir installé Xcode, démarrez-le une fois avant de mettre à jour et d’exécuter Visual Studio pour Mac. Xcode installe certains outils requis par Xamarin.
 3. **Installez la dernière version stable de Xamarin** -mettez à jour vers la dernière [version stable de Xamarin](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/change_updates_channel).
 

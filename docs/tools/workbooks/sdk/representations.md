@@ -3,15 +3,15 @@ title: Représentations dans Xamarin Workbooks
 description: Ce document décrit le pipeline de représentation Xamarin Workbooks, qui permet le rendu de résultats enrichis pour tout code qui retourne une valeur.
 ms.prod: xamarin
 ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: b61452fc21d81f427249825decee4f119c50abf0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dde4e6b9c4903ccb0f23d8df82f39ff68030850e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511496"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292823"
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Représentations dans Xamarin Workbooks
 
@@ -27,7 +27,7 @@ Outre les représentations communes, le kit de développement logiciel (SDK) d�
 
 `Xamarin.Interactive.IAgent.RepresentationManager`offre la possibilité d’inscrire un `RepresentationProvider`, qu’une intégration doit implémenter pour convertir un objet arbitraire en un formulaire agnostique à restituer. Ces formulaires agnostiques doivent implémenter l' `ISerializableObject` interface.
 
-L’implémentation `ISerializableObject` de l’interface ajoute une méthode Serialize qui contrôle précisément la manière dont les objets sont sérialisés. La `Serialize` méthode s’attend à ce qu’un développeur spécifie exactement les propriétés qui doivent être sérialisées, ainsi que le nom final. En examinant `Person` l’objet dans notre`KitchenSink` [exemple] [exemple], nous pouvons voir comment cela fonctionne:
+L’implémentation `ISerializableObject` de l’interface ajoute une méthode Serialize qui contrôle précisément la manière dont les objets sont sérialisés. La `Serialize` méthode s’attend à ce qu’un développeur spécifie exactement les propriétés qui doivent être sérialisées, ainsi que le nom final. En examinant `Person` l’objet dans notre`KitchenSink` [exemple] [exemple], nous pouvons voir comment cela fonctionne :
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -41,7 +41,7 @@ public sealed class Person : ISerializableObject
 }
 ```
 
-Si nous voulions fournir un sur-ensemble ou sous-ensemble de propriétés à partir de l’objet d' `Serialize`origine, nous pouvons le faire avec. Par exemple, nous pouvons effectuer une opération semblable à celle-ci pour fournir une `Age` propriété précalculée sur: `Person`
+Si nous voulions fournir un sur-ensemble ou sous-ensemble de propriétés à partir de l’objet d' `Serialize`origine, nous pouvons le faire avec. Par exemple, nous pouvons effectuer une opération semblable à celle-ci pour fournir une `Age` propriété précalculée sur : `Person`
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -65,7 +65,7 @@ public sealed class Person : ISerializableObject
 ```
 
 > [!NOTE]
-> Les API qui `ISerializableObject` produisent directement des objets n’ont pas besoin d’être `RepresentationProvider`gérées par un. Si l’objet que vous souhaitez afficher n'  est pas `ISerializableObject`un, vous pouvez le gérer dans votre. `RepresentationProvider`
+> Les API qui `ISerializableObject` produisent directement des objets n’ont pas besoin d’être `RepresentationProvider`gérées par un. Si l’objet que vous souhaitez afficher n' est pas `ISerializableObject`un, vous pouvez le gérer dans votre. `RepresentationProvider`
 
 ### <a name="rendering-a-representation"></a>Rendu d’une représentation
 
@@ -73,7 +73,7 @@ Les convertisseurs sont implémentés en JavaScript et auront accès à une vers
 
 Nous vous recommandons d’utiliser la machine à écrire pour le code d’intégration du client, qui, bien sûr, est compilé en JavaScript vanille. Dans les deux cas, le kit de développement logiciel (SDK) fournit des [types][typings] qui peuvent être référencés directement par écriture manuscrite ou simplement référencés manuellement si vous préférez écrire du code JavaScript vanille.
 
-Le principal point d’intégration pour le `xamarin.interactive.RendererRegistry`rendu est le suivant:
+Le principal point d’intégration pour le `xamarin.interactive.RendererRegistry`rendu est le suivant :
 
 ```js
 xamarin.interactive.RendererRegistry.registerRenderer(

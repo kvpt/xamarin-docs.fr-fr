@@ -3,15 +3,15 @@ title: Bien démarrer avec Objective-C
 description: Ce document décrit la prise en main de l’intégration de .NET avec Objective-C. Il aborde les conditions requises, l’installation de l’incorporation .NET à partir de NuGet et les plateformes prises en charge.
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 9d17027b1b84c7d742404c36fbdd4886de523914
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 66b99e0da574c50df32afedb1dd6dc9de315b347
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119983"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278463"
 ---
 # <a name="getting-started-with-objective-c"></a>Bien démarrer avec Objective-C
 
@@ -19,7 +19,7 @@ Il s’agit de la page de prise en main pour objective-C, qui couvre les notions
 
 ## <a name="requirements"></a>Configuration requise
 
-Pour utiliser l’incorporation .NET avec Objective-C, vous avez besoin d’un Mac exécutant:
+Pour utiliser l’incorporation .NET avec Objective-C, vous avez besoin d’un Mac exécutant :
 
 - macOS 10,12 (Sierra) ou version ultérieure
 - Xcode 8.3.2 ou version ultérieure

@@ -4,15 +4,15 @@ description: Cet article examine l’infrastructure d’animation principale, qu
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 4a5e4766321babebed9a84b37590ef1d50bfc77e
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 366932e32443a7284f15f51a7a9a437d4b177438
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621123"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286250"
 ---
 # <a name="core-animation-in-xamarinios"></a>Animation principale dans Xamarin. iOS
 
@@ -27,7 +27,7 @@ L’animation principale et les infrastructures graphiques principales peuvent f
 
 ## <a name="core-animation"></a>Animation de base
 
-iOS utilise l’infrastructure d’animation principale pour créer des effets d’animation tels que la transition entre des affichages, des menus déroulants et des effets de défilement pour n’en nommer que quelques-uns. Il existe deux façons d’utiliser l’animation:
+iOS utilise l’infrastructure d’animation principale pour créer des effets d’animation tels que la transition entre des affichages, des menus déroulants et des effets de défilement pour n’en nommer que quelques-uns. Il existe deux façons d’utiliser l’animation :
 
 - [Via UIKit](#Using_UIKit_Animation), qui comprend des animations basées sur les vues, ainsi que des transitions animées entre les contrôleurs.
 - Les [animations de base](#Using_Core_Animation), qui effectuent des couches directement, ce qui permet un contrôle plus précis.
@@ -38,7 +38,7 @@ iOS utilise l’infrastructure d’animation principale pour créer des effets d
 
 UIKit fournit plusieurs fonctionnalités qui facilitent l’ajout d’une animation à une application. Bien qu’elle utilise l’animation de base en interne, elle l’extrait pour vous permettre de travailler uniquement avec les vues et les contrôleurs.
 
-Cette section traite des fonctionnalités d’animation UIKit, notamment:
+Cette section traite des fonctionnalités d’animation UIKit, notamment :
 
 - Transitions entre contrôleurs
 - Transitions entre les vues
@@ -49,7 +49,7 @@ Cette section traite des fonctionnalités d’animation UIKit, notamment:
 
  `UIViewController`fournit la prise en charge intégrée pour la transition entre les contrôleurs `PresentViewController` d’affichage via la méthode. Lors de `PresentViewController`l’utilisation de, la transition vers le deuxième contrôleur peut éventuellement être animée.
 
-Par exemple, considérez une application avec deux contrôleurs, où le contact d’un bouton dans `PresentViewController` le premier contrôleur appelle pour afficher un deuxième contrôleur. Pour contrôler l’animation de transition utilisée pour afficher le deuxième contrôleur, il vous suffit [`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle) de définir sa propriété comme indiqué ci-dessous:
+Par exemple, considérez une application avec deux contrôleurs, où le contact d’un bouton dans `PresentViewController` le premier contrôleur appelle pour afficher un deuxième contrôleur. Pour contrôler l’animation de transition utilisée pour afficher le deuxième contrôleur, il vous suffit [`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle) de définir sa propriété comme indiqué ci-dessous :
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -57,7 +57,7 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-Dans ce cas, `PartialCurl` une animation est utilisée, bien que plusieurs autres soient disponibles, notamment:
+Dans ce cas, `PartialCurl` une animation est utilisée, bien que plusieurs autres soient disponibles, notamment :
 
 - `CoverVertical`: Diapositives à partir du bas de l’écran
 - `CrossDissolve`: L’ancienne vue disparaît en fondu & la nouvelle vue apparaît en fondu
@@ -70,7 +70,7 @@ Pour animer la transition, `true` passez comme deuxième argument à `PresentVie
 PresentViewController (vc2, true, null);
 ```
 
-La capture d’écran suivante montre à quoi ressemble la transition `PartialCurl` pour le cas:
+La capture d’écran suivante montre à quoi ressemble la transition `PartialCurl` pour le cas :
 
  ![](core-animation-images/06-view-transitions.png "Cette capture d’écran montre la transition PartialCurl")
 
@@ -78,7 +78,7 @@ La capture d’écran suivante montre à quoi ressemble la transition `PartialCu
 
 En plus des transitions entre les contrôleurs, UIKit prend également en charge l’animation des transitions entre les vues pour échanger une vue pour une autre.
 
-Par exemple, imaginons que vous disposiez `UIImageView`d’un contrôleur avec, où le taraudage de `UIImageView`l’image devrait afficher une seconde. Pour animer la SuperVue de la vue image afin de passer à la deuxième vue image, il `UIView.Transition`suffit d’appeler, `toView` en `fromView` lui transmettant le et comme indiqué ci-dessous:
+Par exemple, imaginons que vous disposiez `UIImageView`d’un contrôleur avec, où le taraudage de `UIImageView`l’image devrait afficher une seconde. Pour animer la SuperVue de la vue image afin de passer à la deuxième vue image, il `UIView.Transition`suffit d’appeler, `toView` en `fromView` lui transmettant le et comme indiqué ci-dessous :
 
 ```csharp
 UIView.Transition (
@@ -92,13 +92,13 @@ UIView.Transition (
 
 `UIView.Transition`prend également un `duration` paramètre qui contrôle la durée d’exécution de l’animation, [`options`](xref:UIKit.UIViewAnimationOptions) ainsi que pour spécifier des éléments tels que l’animation à utiliser et la fonction d’accélération. En outre, vous pouvez spécifier un gestionnaire d’achèvement qui sera appelé à la fin de l’animation.
 
-La capture d’écran ci-dessous montre la transition animée entre `TransitionFlipFromTop` les vues d’image lorsque est utilisé:
+La capture d’écran ci-dessous montre la transition animée entre `TransitionFlipFromTop` les vues d’image lorsque est utilisé :
 
  ![](core-animation-images/07-animated-transition.png "Cette capture d’écran montre la transition animée entre les vues d’image quand TransitionFlipFromTop est utilisé")
 
 ### <a name="view-property-animations"></a>Afficher les animations de propriétés
 
-UIKit prend en charge l’animation gratuite d’une variété `UIView` de propriétés sur la classe, notamment:
+UIKit prend en charge l’animation gratuite d’une variété `UIView` de propriétés sur la classe, notamment :
 
 - Frame
 - Limites
@@ -126,11 +126,11 @@ UIView.Animate (
 );
 ```
 
-Cela entraîne l’animation d’une image en arrière-plan dans la partie supérieure de l’écran, comme indiqué ci-dessous:
+Cela entraîne l’animation d’une image en arrière-plan dans la partie supérieure de l’écran, comme indiqué ci-dessous :
 
  ![](core-animation-images/08-animate-center.png "Une image qui s’affiche en arrière et en sens horizontalement en haut de l’écran comme sortie")
 
-Comme avec la `Transition` méthode, `Animate` permet de définir la durée, ainsi que la fonction d’accélération. Cet exemple utilisait également `UIViewAnimationOptions.Autoreverse` l’option, ce qui a pour effet que l’animation s’anime de la valeur à la valeur initiale. Toutefois, le code rétablit `Center` également sa valeur initiale dans un gestionnaire d’achèvement. Tandis qu’une animation interpole les valeurs de propriété dans le temps, la valeur de modèle réelle de la propriété est toujours la valeur finale qui a été définie. Dans cet exemple, la valeur est un point près du côté droit de la SuperView. Sans définir `Center` sur le point initial, où l’animation se termine en raison de la `Autoreverse` définition, l’image s’aligne sur le côté droit une fois l’animation terminée, comme indiqué ci-dessous:
+Comme avec la `Transition` méthode, `Animate` permet de définir la durée, ainsi que la fonction d’accélération. Cet exemple utilisait également `UIViewAnimationOptions.Autoreverse` l’option, ce qui a pour effet que l’animation s’anime de la valeur à la valeur initiale. Toutefois, le code rétablit `Center` également sa valeur initiale dans un gestionnaire d’achèvement. Tandis qu’une animation interpole les valeurs de propriété dans le temps, la valeur de modèle réelle de la propriété est toujours la valeur finale qui a été définie. Dans cet exemple, la valeur est un point près du côté droit de la SuperView. Sans définir `Center` sur le point initial, où l’animation se termine en raison de la `Autoreverse` définition, l’image s’aligne sur le côté droit une fois l’animation terminée, comme indiqué ci-dessous :
 
  ![](core-animation-images/09-animation-complete.png "Sans définir le centre sur le point initial, l’image est réalignée sur le côté droit une fois l’animation terminée.")
 
@@ -148,7 +148,7 @@ Les animations de couche peuvent être implicites ou explicites. Les animations 
 
 L’une des façons d’animer les propriétés d’une couche est d’utiliser une animation implicite. `UIView`les animations créent des animations implicites. Toutefois, vous pouvez également créer des animations implicites directement sur une couche.
 
-Par exemple, le code suivant définit une couche `Contents` à partir d’une image, définit une largeur et une couleur de bordure, puis ajoute la couche en tant que sous-couche de la couche de la vue:
+Par exemple, le code suivant définit une couche `Contents` à partir d’une image, définit une largeur et une couleur de bordure, puis ajoute la couche en tant que sous-couche de la couche de la vue :
 
 ```csharp
 public override void ViewDidLoad ()
@@ -167,7 +167,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Pour ajouter une animation implicite pour la couche, encapsulez simplement les `CATransaction`modifications de propriété dans un. Cela permet d’animer des propriétés qui ne seraient pas animables avec une animation de vue, `BorderWidth` telle `BorderColor` que et comme indiqué ci-dessous:
+Pour ajouter une animation implicite pour la couche, encapsulez simplement les `CATransaction`modifications de propriété dans un. Cela permet d’animer des propriétés qui ne seraient pas animables avec une animation de vue, `BorderWidth` telle `BorderColor` que et comme indiqué ci-dessous :
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -185,11 +185,11 @@ public override void ViewDidAppear (bool animated)
 
 Ce code anime également le de `Position`la couche, qui est l’emplacement du point d’ancrage de la couche mesuré à partir du coin supérieur gauche des coordonnées de la supercouche. Le point d’ancrage d’une couche est un point normalisé dans le système de coordonnées de la couche.
 
-L’illustration suivante montre la position et le point d’ancrage:
+L’illustration suivante montre la position et le point d’ancrage :
 
  ![](core-animation-images/10-postion-anchorpt.png "Cette illustration montre la position et le point d’ancrage")
 
-Lorsque l’exemple est exécuté, le `Position` `BorderWidth` et `BorderColor` l’animent, comme indiqué dans les captures d’écran suivantes:
+Lorsque l’exemple est exécuté, le `Position` `BorderWidth` et `BorderColor` l’animent, comme indiqué dans les captures d’écran suivantes :
 
  ![](core-animation-images/11-implicit-animation.png "Lorsque l’exemple est exécuté, l’animation position, BorderWidth et BorderColor comme indiqué")
 
@@ -197,7 +197,7 @@ Lorsque l’exemple est exécuté, le `Position` `BorderWidth` et `BorderColor` 
 
 Outre les animations implicites, l’animation principale comprend une variété de classes qui héritent de qui vous permettent d' `CAAnimation` encapsuler des animations qui sont ensuite explicitement ajoutées à une couche. Ils permettent un contrôle plus précis sur les animations, telles que la modification de la valeur de début d’une animation, le regroupement d’animations et la spécification d’images clés pour autoriser les chemins non linéaires.
 
-Le code suivant montre un exemple d’animation explicite à l’aide `CAKeyframeAnimation` d’un pour la couche indiquée précédemment (dans la section animation implicite):
+Le code suivant montre un exemple d’animation explicite à l’aide `CAKeyframeAnimation` d’un pour la couche indiquée précédemment (dans la section animation implicite) :
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -230,7 +230,7 @@ public override void ViewDidAppear (bool animated)
 
 Ce code modifie le `Position` de la couche en créant un tracé qui est ensuite utilisé pour définir une animation d’image clé. Notez que la couche `Position` est définie sur la valeur finale `Position` du de l’animation. Sans cela, la couche retourne brusquement à son `Position` avant l’animation, car l’animation modifie uniquement la valeur de présentation et non la valeur de modèle réelle. En définissant la valeur de modèle sur la valeur finale de l’animation, la couche reste en place à la fin de l’animation.
 
-Les captures d’écran suivantes montrent la couche contenant l’image qui anime le chemin spécifié:
+Les captures d’écran suivantes montrent la couche contenant l’image qui anime le chemin spécifié :
 
  ![](core-animation-images/12-explicit-animation.png "Cette capture d’écran montre la couche contenant l’image qui s’anime dans le chemin spécifié")
  

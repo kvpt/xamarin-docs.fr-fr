@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser les contrôles d’image dans
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d97f914a557839a2ca1322f803894055b6156c7e
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 18e7873eede87e9bb81c1c0b304bfc87c317c27a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065341"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291516"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Contrôles d’image Watchos dans Xamarin
 
@@ -37,11 +37,11 @@ Vous pouvez utiliser les tailles de kit de surveillance (38mm et Watch 42mm) dan
 
 Le moyen le plus efficace d’afficher des images consiste à les *inclure dans le projet d’application Watch* et à `SetImage(string imageName)` les afficher à l’aide de la méthode.
 
-Par exemple, l’exemple [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/) contient un certain nombre d’images ajoutées à un catalogue de composants dans le projet d’application Watch:
+Par exemple, l’exemple [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/) contient un certain nombre d’images ajoutées à un catalogue de composants dans le projet d’application Watch :
 
 ![](image-images/asset-whale-sml.png "L’exemple WatchKitCatalog a un certain nombre d’images ajoutées à un catalogue de composants dans le projet d’application Watch")
 
-Celles-ci peuvent être chargées et affichées efficacement sur `SetImage` la montre à l’aide du paramètre de nom de chaîne:
+Celles-ci peuvent être chargées et affichées efficacement sur `SetImage` la montre à l’aide du paramètre de nom de chaîne :
 
 ```csharp
 myImageControl.SetImage("Whale");
@@ -59,11 +59,11 @@ En plus de charger les images stockées dans l’application Watch elle-même, v
 
 Pour charger des images à partir de l’extension `UIImage` Watch, créez des `SetImage` instances, `UIImage` puis appelez avec l’objet.
 
-Par exemple, l’exemple [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) contient une image nommée **Bumblebee** dans le projet d’extension Watch:
+Par exemple, l’exemple [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) contient une image nommée **Bumblebee** dans le projet d’extension Watch :
 
 ![](image-images/asset-bumblebee-sml.png "L’exemple WatchKitCatalog a une image nommée Bumblebee dans le projet d’extension Watch")
 
-Le code suivant se traduira par:
+Le code suivant se traduira par :
 
 - l’image en cours de chargement en mémoire, et
 - affichée sur la montre.
@@ -83,14 +83,14 @@ L’exemple [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-sam
 
 ![](image-images/asset-bus-animation-sml.png "L’exemple WatchKitCatalog contient une série d’images numérotées dans le projet d’application Watch avec le préfixe de bus")
 
-Pour afficher ces images sous forme d’animation, commencez par charger l' `SetImage` image à l’aide de avec le `StartAnimating`nom de préfixe, puis appelez:
+Pour afficher ces images sous forme d’animation, commencez par charger l' `SetImage` image à l’aide de avec le `StartAnimating`nom de préfixe, puis appelez :
 
 ```csharp
 animatedImage.SetImage ("Bus");
 animatedImage.StartAnimating ();
 ```
 
-Appelez `StopAnimating` sur le contrôle image pour arrêter la boucle d’animation:
+Appelez `StopAnimating` sur le contrôle image pour arrêter la boucle d’animation :
 
 ```csharp
 animatedImage.StopAnimating ();
@@ -106,7 +106,7 @@ animatedImage.StopAnimating ();
 
 Si l’application utilise à plusieurs reprises une image qui est stockée dans l’extension (ou qui a été téléchargée), il est possible de mettre en cache l’image dans le stockage de l’espion, afin d’améliorer les performances des affichages suivants.
 
-Utilisez la `WKInterfaceDevice`méthode `AddCachedImage` s pour transférer l’image vers la montre, puis utilisez `SetImage` avec le paramètre de nom d’image comme chaîne pour l’afficher:
+Utilisez la `WKInterfaceDevice`méthode `AddCachedImage` s pour transférer l’image vers la montre, puis utilisez `SetImage` avec le paramètre de nom d’image comme chaîne pour l’afficher :
 
 ```csharp
 var device = WKInterfaceDevice.CurrentDevice;

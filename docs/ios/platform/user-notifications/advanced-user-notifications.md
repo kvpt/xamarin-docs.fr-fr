@@ -4,15 +4,15 @@ description: Cet article examine en détail l’infrastructure de notifications 
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 28734af7c3d9958462e47ff6b11a0f9d0e06bcfb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a22e0d6979173ca29596687da8a0b54c6fc565a7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655410"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279050"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Notifications utilisateur avancées dans Xamarin. iOS
 
@@ -26,22 +26,22 @@ En outre, l’application ou l’extension peut recevoir (et éventuellement mod
 
 La nouvelle infrastructure d’interface utilisateur de notification utilisateur permet à une application ou à une extension d’application de personnaliser l’apparence des notifications locales et distantes quand elles sont présentées à l’utilisateur.
 
-Cette infrastructure offre les moyens suivants pour une application de remettre des notifications à un utilisateur:
+Cette infrastructure offre les moyens suivants pour une application de remettre des notifications à un utilisateur :
 
 - **Alertes visuelles** : la notification est remontée à partir du haut de l’écran sous la forme d’une bannière.
 - **Sons et vibrations** -peuvent être associés à une notification.
 - **Icône d’application badge** -où l’icône de l’application affiche un badge indiquant que le nouveau contenu est disponible. Tels que le nombre de messages électroniques non lus.
 
-En outre, selon le contexte actuel de l’utilisateur, il existe différentes façons de présenter une notification:
+En outre, selon le contexte actuel de l’utilisateur, il existe différentes façons de présenter une notification :
 
 - Si l’appareil est déverrouillé, la notification est reportée à partir du haut de l’écran sous la forme d’une bannière.
 - Si l’appareil est verrouillé, la notification s’affiche sur l’écran de verrouillage de l’utilisateur.
 - Si l’utilisateur a manqué une notification, il peut ouvrir le centre de notification et afficher toutes les notifications disponibles en attente.
 
-Une application Xamarin. iOS a deux types de notifications utilisateur qu’elle peut envoyer:
+Une application Xamarin. iOS a deux types de notifications utilisateur qu’elle peut envoyer :
 
 - **Notifications locales** : celles-ci sont envoyées par les applications installées localement sur l’appareil de l’utilisateur.
-- Les notifications distantes sont envoyées à partir d’un serveur distant et présentées à l’utilisateur ou déclenchent une mise à jour en arrière-plan du contenu de l’application.
+- Les **notifications distantes** sont envoyées à partir d’un serveur distant et présentées à l’utilisateur ou déclenchent une mise à jour en arrière-plan du contenu de l’application.
 
 Pour plus d’informations, consultez notre documentation sur les [notifications utilisateur améliorées](~/ios/platform/user-notifications/enhanced-user-notifications.md) .
 
@@ -77,13 +77,13 @@ Pour qu’une notification à distance soit modifiée par une extension de servi
 }
 ```
 
-Jetez un coup d’œil à la vue d’ensemble suivante du processus:
+Jetez un coup d’œil à la vue d’ensemble suivante du processus :
 
 [![](advanced-user-notifications-images/extension02.png "Ajout du processus de pièces jointes multimédias")](advanced-user-notifications-images/extension02.png#lightbox)
 
 Une fois que la notification à distance est remise à l’appareil (via APNs), l’extension de service peut ensuite télécharger l’image requise par le biais de `NSURLSession`l’un des moyens souhaités (par exemple,) et après avoir reçu l’image, elle peut modifier le contenu de la notification et afficher à l’utilisateur.
 
-L’exemple suivant illustre la façon dont ce processus peut être géré dans le code:
+L’exemple suivant illustre la façon dont ce processus peut être géré dans le code :
 
 ```csharp
 using System;
@@ -151,9 +151,9 @@ Pour créer une interface utilisateur personnalisée pour ses notifications util
 
 L’extension de contenu de notification permet au développeur d’ajouter ses propres affichages à l’interface utilisateur de notification et de dessiner le contenu souhaité. À compter d’iOS 12, les extensions de contenu de notification prennent en charge des contrôles d’interface utilisateur interactifs tels que les boutons et les curseurs. Pour plus d’informations, consultez la documentation [interactive notifications dans IOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md) .
 
-Pour prendre en charge l’interaction de l’utilisateur avec une notification utilisateur, des actions personnalisées doivent être créées, inscrites auprès du système et jointes à la notification avant d’être planifiée sur le système. L’extension de contenu de notification sera appelée pour gérer le traitement de ces actions. Pour plus d’informations sur les actions personnalisées, consultez la section [utilisation des actions de notification](~/ios/platform/user-notifications/enhanced-user-notifications.md) du document notifications [utilisateur améliorées](~/ios/platform/user-notifications/enhanced-user-notifications.md) .
+Pour prendre en charge l’interaction de l’utilisateur avec une notification utilisateur, des actions personnalisées doivent être créées, inscrites auprès du système et jointes à la notification avant d’être planifiée sur le système. L’extension de contenu de notification sera appelée pour gérer le traitement de ces actions. Pour plus d’informations sur les actions personnalisées, consultez la section [utilisation des actions de notification](~/ios/platform/user-notifications/enhanced-user-notifications.md) du document [notifications utilisateur améliorées](~/ios/platform/user-notifications/enhanced-user-notifications.md) .
 
-Lorsqu’une notification utilisateur avec une interface utilisateur personnalisée est présentée à l’utilisateur, elle dispose des éléments suivants:
+Lorsqu’une notification utilisateur avec une interface utilisateur personnalisée est présentée à l’utilisateur, elle dispose des éléments suivants :
 
 [![](advanced-user-notifications-images/customui01.png "Notification de l’utilisateur avec des éléments d’interface utilisateur personnalisés")](advanced-user-notifications-images/customui01.png#lightbox)
 
@@ -161,13 +161,13 @@ Si l’utilisateur interagit avec les actions personnalisées (présentées sous
 
 ### <a name="adding-a-notification-content-extension"></a>Ajout d’une extension de contenu de notification
 
-Pour implémenter une interface utilisateur de notification utilisateur personnalisée dans une application Xamarin. iOS, procédez comme suit:
+Pour implémenter une interface utilisateur de notification utilisateur personnalisée dans une application Xamarin. iOS, procédez comme suit :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Ouvrez la solution de l’application dans Visual Studio pour Mac.
 2. Cliquez avec le bouton droit sur le nom de la solution dans le **panneau solutions** puis sélectionnez **Ajouter** > **Ajouter un nouveau projet**.
-3. Sélectionnez **Extensions iOS** >  extensions de contenu de notification, puis cliquez sur le bouton suivant: >  
+3. Sélectionnez extensions **iOS** >  extensions de contenu de notification, puis cliquez sur le bouton suivant : >  
 
     [![](advanced-user-notifications-images/notify01.png "Sélectionner les extensions de contenu de notification")](advanced-user-notifications-images/notify01.png#lightbox)
 4. Entrez un **nom** pour l’extension et cliquez sur le bouton **suivant** : 
@@ -188,13 +188,13 @@ Pour implémenter une interface utilisateur de notification utilisateur personna
 
 -----
 
-Lorsque l’extension de contenu de notification est ajoutée à la solution, trois fichiers sont créés dans le projet de l’extension:
+Lorsque l’extension de contenu de notification est ajoutée à la solution, trois fichiers sont créés dans le projet de l’extension :
 
 1. `NotificationViewController.cs`-Il s’agit du contrôleur d’affichage principal pour l’extension de contenu de notification.
 2. `MainInterface.storyboard`-Où le développeur dispose de l’interface utilisateur visible pour l’extension de contenu de notification dans le concepteur iOS.
 3. `Info.plist`-Contrôle la configuration de l’extension de contenu de notification.
 
-Le fichier `NotificationViewController.cs` par défaut se présente comme suit:
+Le fichier `NotificationViewController.cs` par défaut se présente comme suit :
 
 ```csharp
 using System;
@@ -250,7 +250,7 @@ Le système doit être informé de la recherche de l’extension de contenu de n
 1. Double-cliquez sur le `Info.plist` fichier de l’extension dans le **panneau solutions** pour l’ouvrir et le modifier.
 2. Basculez en mode **source** .
 3. Développez `NSExtension` la clé.
-4. Ajoutez la `UNNotificationExtensionCategory` clé en tant que **chaîne** de type avec la valeur de la catégorie à laquelle l’extension appartient (dans cet exemple, «événement-invitation»): 
+4. Ajoutez la `UNNotificationExtensionCategory` clé en tant que **chaîne** de type avec la valeur de la catégorie à laquelle l’extension appartient (dans cet exemple, « événement-invitation ») : 
 
     [![](advanced-user-notifications-images/customui02.png "Ajouter la clé UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02.png#lightbox)
 5. Enregistrez les modifications apportées.
@@ -259,7 +259,7 @@ Le système doit être informé de la recherche de l’extension de contenu de n
 
 1. Double-cliquez sur le `Info.plist` fichier de l’extension dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Développez `NSExtension` la clé.
-3. Ajoutez la `UNNotificationExtensionCategory` clé en tant que **chaîne** de type avec la valeur de la catégorie à laquelle l’extension appartient (dans cet exemple, «événement-invitation»): 
+3. Ajoutez la `UNNotificationExtensionCategory` clé en tant que **chaîne** de type avec la valeur de la catégorie à laquelle l’extension appartient (dans cet exemple, « événement-invitation ») : 
 
     [![](advanced-user-notifications-images/customui02w.png "Ajouter la clé UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02w.png#lightbox)
 4. Enregistrez les modifications apportées.
@@ -280,7 +280,7 @@ Les catégories d’extension de`UNNotificationExtensionCategory`contenu de noti
 
 ### <a name="hiding-the-default-notification-content"></a>Masquage du contenu de notification par défaut
 
-Dans le cas où l’interface utilisateur de notification personnalisée affichera le même contenu que la notification par défaut (titre, sous-titre et corps affiché automatiquement au bas de l’interface utilisateur de notification), vous pouvez masquer ces informations par défaut en ajoutant le `UNNotificationExtensionDefaultContentHidden`paramètreclé de la `NSExtensionAttributes` clé en tant que type **booléen** avec la `YES` valeur dans le `Info.plist` fichier de l’extension:
+Dans le cas où l’interface utilisateur de notification personnalisée affichera le même contenu que la notification par défaut (titre, sous-titre et corps affiché automatiquement au bas de l’interface utilisateur de notification), vous pouvez masquer ces informations par défaut en ajoutant le `UNNotificationExtensionDefaultContentHidden`paramètreclé de la `NSExtensionAttributes` clé en tant que type **booléen** avec la `YES` valeur dans le `Info.plist` fichier de l’extension :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -377,7 +377,7 @@ Pour éliminer cet effet, modifiez le `Info.plist` fichier pour l’extension et
 
 Étant donné que les pièces jointes de média (comme indiqué dans la section [Ajout de pièces jointes multimédias](#adding-media-attachments) ci-dessus) font partie de la charge utile de notification, elles sont accessibles et affichées dans l’extension de contenu de notification de la même manière que dans l’interface utilisateur de notification par défaut.
 
-Par exemple, si l’interface utilisateur personnalisée ci- `UIImageView` dessus comprenait un C# qui était exposé au code, le code suivant pouvait être utilisé pour le remplir à partir de la pièce jointe de média:
+Par exemple, si l’interface utilisateur personnalisée ci- `UIImageView` dessus comprenait un C# qui était exposé au code, le code suivant pouvait être utilisé pour le remplir à partir de la pièce jointe de média :
 
 ```csharp
 using System;
@@ -444,9 +444,9 @@ La pièce jointe multimédia étant gérée par le système, elle est en dehors 
 
 ### <a name="adding-custom-actions-to-a-custom-ui"></a>Ajout d’actions personnalisées à une interface utilisateur personnalisée
 
-Les boutons d’action personnalisés peuvent être utilisés pour ajouter de l’interactivité à une interface utilisateur de notification personnalisée. Pour plus d’informations sur les actions personnalisées, consultez la section [utilisation des actions de notification](~/ios/platform/user-notifications/enhanced-user-notifications.md) du document notifications [utilisateur améliorées](~/ios/platform/user-notifications/enhanced-user-notifications.md) .
+Les boutons d’action personnalisés peuvent être utilisés pour ajouter de l’interactivité à une interface utilisateur de notification personnalisée. Pour plus d’informations sur les actions personnalisées, consultez la section [utilisation des actions de notification](~/ios/platform/user-notifications/enhanced-user-notifications.md) du document [notifications utilisateur améliorées](~/ios/platform/user-notifications/enhanced-user-notifications.md) .
 
-En plus des actions personnalisées, l’extension de contenu de notification peut également répondre aux actions intégrées suivantes:
+En plus des actions personnalisées, l’extension de contenu de notification peut également répondre aux actions intégrées suivantes :
 
 - **Action par défaut** : lorsque l’utilisateur clique sur une notification pour ouvrir l’application et afficher les détails de la notification donnée.
 - **Ignorer l’action** : cette action est envoyée à l’application lorsque l’utilisateur ignore une notification donnée.
@@ -677,7 +677,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-Ce code crée une action d’entrée de texte et l’ajoute à la catégorie de l’extension ( `MakeExtensionCategory`dans la méthode). Dans la `DidReceive` méthode override, il gère l’entrée de texte par l’utilisateur à l’aide du code suivant:
+Ce code crée une action d’entrée de texte et l’ajoute à la catégorie de l’extension ( `MakeExtensionCategory`dans la méthode). Dans la `DidReceive` méthode override, il gère l’entrée de texte par l’utilisateur à l’aide du code suivant :
 
 ```csharp
 // Is text input?
@@ -690,7 +690,7 @@ if (response is UNTextInputNotificationResponse) {
 }
 ```
 
-Si la conception appelle pour ajouter des boutons personnalisés au champ d’entrée de texte, ajoutez le code suivant pour les inclure:
+Si la conception appelle pour ajouter des boutons personnalisés au champ d’entrée de texte, ajoutez le code suivant pour les inclure :
 
 ```csharp
 // Allow to take input
@@ -705,7 +705,7 @@ public override UIView InputAccessoryView {
 }
 ```
 
-Lorsque l’action de commentaire est déclenchée par l’utilisateur, le contrôleur d’affichage et le champ d’entrée de texte personnalisé doivent être activés:
+Lorsque l’action de commentaire est déclenchée par l’utilisateur, le contrôleur d’affichage et le champ d’entrée de texte personnalisé doivent être activés :
 
 ```csharp
 // Update UI when the user interacts with the

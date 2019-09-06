@@ -4,19 +4,19 @@ description: Ce document décrit les différentes icônes nécessaires pour une 
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/26/2018
-ms.openlocfilehash: f65d4faa0e006517366ab6aacf3f596b18385ccb
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b3968f211ff5445e8b704bbd7897f4c46ecc2be9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120517"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292593"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>Utilisation des icônes Watchos dans Xamarin
 
-Apple Watch solutions requièrent deux ensembles d’icônes:
+Apple Watch solutions requièrent deux ensembles d’icônes :
 
 - Icônes de l’application iOS qui s’affichent sur l’iPhone.
 - Apple Watch icônes qui seront affichées dans un cercle dans le menu espion et dans les écrans de notification. L’icône d’application espion apparaît également dans l’application [Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS.
@@ -32,7 +32,7 @@ Apple Watch solutions requièrent deux ensembles d’icônes:
 
 ## <a name="configuring-your-solution"></a>Configuration de votre solution
 
-Pour vous assurer que votre application iOS et l’application Watch affichent le nom et l’icône corrects, suivez ces instructions pour chaque projet:
+Pour vous assurer que votre application iOS et l’application Watch affichent le nom et l’icône corrects, suivez ces instructions pour chaque projet :
 
 ### <a name="ios-app"></a>Application iOS
 
@@ -42,7 +42,7 @@ Reportez-vous au Guide des icônes de l' [application iOS](~/ios/app-fundamental
 
 La chaîne qui apparaît en regard de votre application Watch dans l' [application paramètres de Apple Watch](~/ios/watchos/app-fundamentals/settings.md) est configurée dans le fichier **info. plist de l’application iOS**.
 
-Vérifiez que votre fichier **info.** plist `CFBundleName` contient une clé et une valeur (Remarque: Ceci est `CFBundleDisplayName`différent du, vous pouvez avoir les deux):
+Vérifiez que votre fichier **info. plist** contient une clé et une `CFBundleName` valeur (Remarque : Ceci est différent du `CFBundleDisplayName`, vous pouvez avoir les deux) :
 
 ```xml
 <key>CFBundleName</key>
@@ -57,17 +57,17 @@ Une fois que vous avez configuré les icônes de votre [application parente](~/i
 
     ![](icons-images/newasset.png "Ajouter un catalogue de composants au projet")
 
-2. Double-cliquez sur le fichier AppIcon **. appiconset/contents. JSON**
+2. Double-cliquez sur le fichier **AppIcon. appiconset/contents. JSON**
 
     ![](icons-images/xcassets-iconset-sml.png "Contenu de l’AppIcon")
 
-3. Ajoutez toutes les images Watchos, comme illustré dans cette capture d’écran:
+3. Ajoutez toutes les images Watchos, comme illustré dans cette capture d’écran :
 
     [![](icons-images/appicons-sml.png "Ajoutez toutes les images Watchos, comme illustré dans cette capture d’écran.")](icons-images/appicons.png#lightbox)
 
     Reportez-vous aux [instructions relatives aux icônes Apple](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/) pour les tailles requises (les dimensions s’affichent également à l’écran). N’oubliez pas que ces icônes seront automatiquement découpées pour être rendues dans un cercle.
 
-    La liste des icônes doit ressembler à ceci:
+    La liste des icônes doit ressembler à ceci :
 
     ![](icons-images/xcassets-complete-sml.png "Liste des icônes dans le Explorateur de solutions")
 

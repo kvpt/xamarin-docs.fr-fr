@@ -4,15 +4,15 @@ description: Ce document présente les techniques de distribution ad hoc princip
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: efa3c8cf4d2e64c6d8bccdfe6e6fec9602d17c73
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865855"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285597"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Distribution ad hoc pour les applications Xamarin.iOS
 
@@ -51,15 +51,15 @@ La section suivante décrit comment configurer un certificat de distribution et 
 3. Cliquez sur le bouton **+** pour créer un certificat.
 4. Sous le titre *Production*, sélectionnez **In-House and Ad Hoc (Interne et ad hoc)** , ou **App Store and Ad Hoc (App Store et ad hoc)** , en fonction de votre abonnement au programme :
 
-   [![](ad-hoc-distribution-images/cert-first-small.png "Sélectionner In-House and Ad Hoc (Interne et ad hoc) ou App Store and Ad Hoc (App Store et ad hoc)")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
+   [![Sélectionnez interne et ad hoc, ou App Store et ad hoc](ad-hoc-distribution-images/cert-first-small.png)](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Cliquez sur Continue, puis suivez les instructions permettant de créer une demande de signature de certificat via Trousseaux d’accès :
 
-   [![](ad-hoc-distribution-images/createcertmanually02.png "Créer une demande de signature de certificat via l’accès au trousseau")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+   [![Créer une demande de signature de certificat via un accès au trousseau](ad-hoc-distribution-images/createcertmanually02.png)](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Une fois la demande de signature de certificat créée, cliquez sur Continue, puis chargez-la sur le Member Center :
 
-   [![](ad-hoc-distribution-images/createcertmanually03.png "Charger la demande de signature de certificat sur le Member Center")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+   [![Charger la CSR dans le Centre des membres](ad-hoc-distribution-images/createcertmanually03.png)](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Cliquez sur Generate pour créer un certificat.
 8. Pour finir, téléchargez le certificat rempli, puis double-cliquez sur le fichier pour l’installer.
@@ -67,9 +67,9 @@ La section suivante décrit comment configurer un certificat de distribution et 
 
 Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, suivez les étapes ci-dessous :
 
-1. Sélectionnez votre équipe, puis cliquez sur **Gérer les certificats…**  :  [![](ad-hoc-distribution-images/selectteam.png "Sélection de l’équipe")](ad-hoc-distribution-images/selectteam.png#lightbox)
+1. Sélectionnez votre équipe, puis cliquez sur **Gérer les certificats…**  :  [![Sélection de l’équipe](ad-hoc-distribution-images/selectteam.png)](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2. Cliquez ensuite sur le bouton **plus (+)** , puis sélectionnez **iOS App Store (App Store iOS)**  :  [![](ad-hoc-distribution-images/selectcert.png "Sélection de l’App Store iOS")](ad-hoc-distribution-images/selectcert.png#lightbox)
+2. Cliquez ensuite sur le bouton **plus (+)** , puis sélectionnez **iOS App Store (App Store iOS)**  :  [![Sélection de l’App Store iOS](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,23 +91,23 @@ Comme pour tout profil de provisionnement que vous créez, un ID d’application
 
 Une fois que vous avez les composants nécessaires pour créer un profil de distribution, suivez les étapes ci-dessous pour le créer :
 
-1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement) > Distribution** :  [![](ad-hoc-distribution-images/distribute01.png "Sélectionner Provisioning (Provisionnement) > Distribution")](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement) > Distribution** :  [![Sélectionner la distribution de > de provisionnement](ad-hoc-distribution-images/distribute01.png)](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Cliquez sur le bouton **+** et sélectionnez le type **Ad hoc** en tant que profil de distribution à créer :
 
-    [![](ad-hoc-distribution-images/distribute02.png "Créer un type de distribution ad hoc")](ad-hoc-distribution-images/distribute02.png#lightbox)
+    [![Créer un type de distribution ad hoc](ad-hoc-distribution-images/distribute02.png)](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. Cliquez sur le bouton **Continue**, puis dans la liste déroulante, sélectionnez l’ID d’application pour lequel vous souhaitez créer un profil de distribution :
 
-    [![](ad-hoc-distribution-images/distribute03.png "Sélectionner l’ID d’application dans la liste déroulante")](ad-hoc-distribution-images/distribute03.png#lightbox)
+    [![Sélectionner l’ID d’application dans la liste déroulante](ad-hoc-distribution-images/distribute03.png)](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. Cliquez sur le bouton **Continue**, puis sélectionnez le certificat de distribution nécessaire pour signer l’application :
 
-    [![](ad-hoc-distribution-images/distribute04.png "Sélectionner le certificat de distribution nécessaire pour signer l’application")](ad-hoc-distribution-images/distribute04.png#lightbox)
+    [![Sélectionner le certificat de distribution nécessaire pour signer l’application](ad-hoc-distribution-images/distribute04.png)](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 5. Cliquez sur le bouton **Continue**, puis entrez un **Name (Nom)** pour le nouveau profil de distribution :
 
-    [![](ad-hoc-distribution-images/distribute06.png "Entrer un nom pour le nouveau profil de distribution")](ad-hoc-distribution-images/distribute06.png#lightbox)
+    [![Entrer un nom pour le nouveau profil de distribution](ad-hoc-distribution-images/distribute06.png)](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 6. Cliquez sur le bouton **Generate** pour créer le profil et finaliser le processus.
 
@@ -134,13 +134,13 @@ Une fois que vous êtes prêt à effectuer une build finale d’une application 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le nom du projet pour l’ouvrir et le modifier.
 2. Sélectionnez **Signature du bundle iOS**, ainsi que le type de build dans la liste déroulante **Configuration** :
 
-    ![](ad-hoc-distribution-images/releasexs01.png "Sélectionner le type de build dans la liste déroulante Configuration")
+    ![Sélectionner le type de build dans la liste déroulante Configuration](ad-hoc-distribution-images/releasexs01.png)
 3. Dans la plupart des cas, les options **Identité de signature** et **Profil de provisionnement** peuvent garder leurs valeurs par défaut **Automatique**. Visual Studio pour Mac choisit le profil approprié en fonction de l’identificateur de bundle dans Info.plist :
 
-    ![](ad-hoc-distribution-images/releasexs02.png "Identité de signature et profil de provisionnement avec la valeur par défaut Automatique")
+    ![L’identité de signature et le profil de provisionnement sont définis sur les valeurs par défaut automatique](ad-hoc-distribution-images/releasexs02.png)
 4. Le cas échéant, sélectionnez l’identité de signature et le profil de distribution (créé ci-dessus) dans les listes déroulantes :
 
-    ![](ad-hoc-distribution-images/releasexs03.png "Sélectionner l’identité de signature et le profil de distribution")
+    ![Sélectionner l’identité de signature et le profil de distribution](ad-hoc-distribution-images/releasexs03.png)
 5. Cliquez sur le bouton **OK** pour enregistrer les changements.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -149,13 +149,13 @@ Une fois que vous êtes prêt à effectuer une build finale d’une application 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Propriétés** pour l’ouvrir et le modifier.
 2. Sélectionnez **Signature du bundle iOS**, ainsi que le type de build dans la liste déroulante **Configuration** :
 
-    ![](ad-hoc-distribution-images/releasevs01.png "Sélectionner le type de build dans la liste déroulante Configuration")
+    ![Sélectionner le type de build dans la liste déroulante Configuration](ad-hoc-distribution-images/releasevs01.png)
 3. Dans la plupart des cas, les options **Identité de signature** et **Profil de provisionnement** peuvent garder leurs valeurs par défaut **Automatique**. Visual Studio choisit le profil approprié en fonction de l’identificateur de bundle dans Info.plist :
 
-    ![](ad-hoc-distribution-images/releasevs02.png "Identité de signature et profil de provisionnement avec la valeur par défaut Automatique")
+    ![L’identité de signature et le profil de provisionnement sont définis sur les valeurs par défaut automatique](ad-hoc-distribution-images/releasevs02.png)
 4. Le cas échéant, sélectionnez l’identité de signature et le profil de distribution (créé ci-dessus) dans les listes déroulantes :
 
-    ![](ad-hoc-distribution-images/releasevs03.png "Sélectionner l’identité de signature et le profil de distribution")
+    ![Sélectionner l’identité de signature et le profil de distribution](ad-hoc-distribution-images/releasevs03.png)
 5. Enregistrez les changements apportés aux propriétés du projet.
 
 -----

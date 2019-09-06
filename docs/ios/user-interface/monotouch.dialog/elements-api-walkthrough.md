@@ -5,20 +5,20 @@ ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: lobrien
-ms.author: laobri
-ms.openlocfilehash: 88823aa2d86b7cc5db72b3949453cd6aa464bd74
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: 61f214a7e072725bd7ba6cc4a3d493c8fcb909ff
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629640"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289302"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API Elements
 
 _Cet article s’appuie sur les informations présentées dans l’article présentation de la boîte de dialogue présentation de monocontact. Il présente une procédure pas à pas qui montre comment utiliser la boîte de dialogue MonoTouch. D) API Elements pour commencer rapidement à créer une application avec MT. E._
 
-Dans cette procédure pas à pas, nous allons utiliser le MT. API D Elements pour créer un style maître/détail d’une application qui affiche une liste de tâches. Quand l’utilisateur sélectionne le **+** bouton dans la barre de navigation, une nouvelle ligne est ajoutée à la table pour la tâche. Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance, comme illustré ci-dessous:
+Dans cette procédure pas à pas, nous allons utiliser le MT. API D Elements pour créer un style maître/détail d’une application qui affiche une liste de tâches. Quand l’utilisateur sélectionne le **+** bouton dans la barre de navigation, une nouvelle ligne est ajoutée à la table pour la tâche. Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance, comme illustré ci-dessous :
 
 [![](elements-api-walkthrough-images/01-task-list-app.png "Si vous sélectionnez la ligne, vous accédez à l’écran de détails qui nous permet de mettre à jour la description de la tâche et la date d’échéance")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
@@ -28,13 +28,13 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 
 ## <a name="elements-api-walkthrough"></a>Procédure pas à pas d’API d’éléments
 
-Dans l’article présentation de la [boîte de dialogue](~/ios/user-interface/monotouch.dialog/index.md) de monocontact, nous avons acquis une bonne compréhension des différentes parties de Mt. E. Utilisons l’API Elements pour les rassembler dans une application.
+Dans l’article présentation de la [boîte de dialogue de monocontact](~/ios/user-interface/monotouch.dialog/index.md) , nous avons acquis une bonne compréhension des différentes parties de Mt. E. Utilisons l’API Elements pour les rassembler dans une application.
 
 ## <a name="setting-up-the-multi-screen-application"></a>Configuration de l’application multi-écran
 
 Pour démarrer le processus de création d’écran, la boîte de dialogue `DialogViewController`monotactile crée un, `RootElement`puis ajoute un.
 
-Pour créer une application à plusieurs écrans avec la boîte de dialogue MonoTouch, nous devons:
+Pour créer une application à plusieurs écrans avec la boîte de dialogue MonoTouch, nous devons :
 
 1. Créer un`UINavigationController.`
 1. Créer un`DialogViewController.`
@@ -44,7 +44,7 @@ Pour créer une application à plusieurs écrans avec la boîte de dialogue Mono
 
 ### <a name="using-a-uinavigationcontroller"></a>Utilisation d’un UINavigationController
 
-Pour créer une application de type navigation, `UINavigationController`nous devons créer un, puis l' `RootViewController` ajouter en tant que `AppDelegate`dans la `FinishedLaunching` méthode de. Pour effectuer le `UINavigationController` travail avec la boîte de dialogue MonoTouch., `DialogViewController` nous ajoutons un au `UINavigationController` , comme indiqué ci-dessous:
+Pour créer une application de type navigation, `UINavigationController`nous devons créer un, puis l' `RootViewController` ajouter en tant que `AppDelegate`dans la `FinishedLaunching` méthode de. Pour effectuer le `UINavigationController` travail avec la boîte de dialogue MonoTouch., `DialogViewController` nous ajoutons un au `UINavigationController` , comme indiqué ci-dessous :
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -64,7 +64,7 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 }
 ```
 
-Le code ci-dessus crée une instance `RootElement` de et la passe dans `DialogViewController`le. A toujours une `RootElement` en haut de sa hiérarchie. `DialogViewController` Dans cet exemple, le `RootElement` est créé avec la chaîne «liste des tâches», qui sert de titre dans la barre de navigation du contrôleur de navigation. À ce stade, l’exécution de l’application présente l’écran ci-dessous:
+Le code ci-dessus crée une instance `RootElement` de et la passe dans `DialogViewController`le. A toujours une `RootElement` en haut de sa hiérarchie. `DialogViewController` Dans cet exemple, le `RootElement` est créé avec la chaîne « liste des tâches », qui sert de titre dans la barre de navigation du contrôleur de navigation. À ce stade, l’exécution de l’application présente l’écran ci-dessous :
 
  [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "L’exécution de l’application présente l’écran illustré ici")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
@@ -77,14 +77,14 @@ Les sections sont constituées d’éléments, d’autres sections, voire d' `Ro
 
 ### <a name="using-dialogviewcontroller"></a>Utilisation de DialogViewController
 
-, Étant une `UITableViewController` sous-classe, a un `UITableView` comme vue. `DialogViewController` Dans cet exemple, nous souhaitons ajouter des éléments à la table chaque fois que **+** le bouton est frappé. Dans la `DialogViewController` mesure où le a `UINavigationController`été ajouté à un, `NavigationItem`nous `RightBarButton` pouvons utiliser la propriété **+** de pour ajouter le bouton, comme indiqué ci-dessous:
+, Étant une `UITableViewController` sous-classe, a un `UITableView` comme vue. `DialogViewController` Dans cet exemple, nous souhaitons ajouter des éléments à la table chaque fois que **+** le bouton est frappé. Dans la `DialogViewController` mesure où le a `UINavigationController`été ajouté à un, `NavigationItem`nous `RightBarButton` pouvons utiliser la propriété **+** de pour ajouter le bouton, comme indiqué ci-dessous :
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-Lorsque nous avons créé `RootElement` le précédent, nous lui avons passé `Section` une seule instance afin de pouvoir ajouter des éléments **+** lorsque l’utilisateur appuie sur le bouton. Pour ce faire, nous pouvons utiliser le code suivant dans le gestionnaire d’événements pour le bouton:
+Lorsque nous avons créé `RootElement` le précédent, nous lui avons passé `Section` une seule instance afin de pouvoir ajouter des éléments **+** lorsque l’utilisateur appuie sur le bouton. Pour ce faire, nous pouvons utiliser le code suivant dans le gestionnaire d’événements pour le bouton :
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                
@@ -104,7 +104,7 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-Ce code crée un nouvel `Task` objet chaque fois que le bouton est frappé. L’exemple suivant illustre l’implémentation simple de `Task` la classe:
+Ce code crée un nouvel `Task` objet chaque fois que le bouton est frappé. L’exemple suivant illustre l’implémentation simple de `Task` la classe :
 
 ```csharp
 public class Task
@@ -127,11 +127,11 @@ La propriété de `Name` la tâche est utilisée pour créer `RootElement`la lé
 
 Nous avons utilisé `RootElement` un pour que la boîte de dialogue monotactile crée automatiquement un nouvel écran pour les détails de chaque tâche et y accède lorsqu’une ligne est sélectionnée.
 
-L’écran de détail des tâches lui-même est composé de deux sections: chacune de ces sections contient un élément unique. Le premier élément est créé à partir `EntryElement` d’un pour fournir une ligne modifiable pour `Description` la propriété de la tâche. Lorsque l’élément est sélectionné, un clavier pour la modification de texte est présenté comme indiqué ci-dessous:
+L’écran de détail des tâches lui-même est composé de deux sections : chacune de ces sections contient un élément unique. Le premier élément est créé à partir `EntryElement` d’un pour fournir une ligne modifiable pour `Description` la propriété de la tâche. Lorsque l’élément est sélectionné, un clavier pour la modification de texte est présenté comme indiqué ci-dessous :
 
  [![](elements-api-walkthrough-images/03-create-task.png "Lorsque l’élément est sélectionné, un clavier pour la modification de texte est présenté comme indiqué")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
-La deuxième section contient un `DateElement` qui nous permet de gérer la propriété `DueDate` de la tâche. La sélection de la date charge automatiquement un sélecteur de dates, comme indiqué ci-dessous:
+La deuxième section contient un `DateElement` qui nous permet de gérer la propriété `DueDate` de la tâche. La sélection de la date charge automatiquement un sélecteur de dates, comme indiqué ci-dessous :
 
  [![](elements-api-walkthrough-images/04-date-picker.png "La sélection de la date charge automatiquement un sélecteur de dates en tant que")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 

@@ -4,21 +4,21 @@ description: Ce document explique comment publier une application sur l’App St
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: aaffaf3d66bb51d467c40bc3e5707a149154c0a7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528731"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282716"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publication sur l’App Store Apple TV
 
 Pour distribuer des applications à tous les appareils TV Apple, Apple requiert la publication d’applications via le magasin d’applications *Apple TV*, ce qui fait que l’application stocke l’emplacement d’achat unique pour les applications tvOS. Les développeurs de nombreux types d’applications peuvent être capitalisés sur la réussite massive de ce point de distribution unique. Apple TV App Store est une solution clé en main, qui offre aux développeurs d’applications des systèmes de distribution et de paiement.
 
-Le processus d’envoi d’une application à Apple TV App Store implique les opérations suivantes:
+Le processus d’envoi d’une application à Apple TV App Store implique les opérations suivantes :
 
 1. Création d’un *ID d’application* et sélection de *droits*
 2. Création d’un *profil de provisionnement de distribution*
@@ -33,7 +33,7 @@ Dans cet article, nous allons aborder toutes les étapes nécessaires à l’app
 ## <a name="before-you-submit-an-application"></a>Avant de soumettre une application
 
 Une fois que vous avez envoyé une application en vue de sa publication dans l’App Store d’Apple TV, elle passe par Apple pour s’assurer qu’elle respecte les instructions de qualité et de contenu d’Apple. Si votre application ne respecte pas ces recommandations, Apple la rejettera. Vous devrez alors corriger la non-conformité citée par Apple, puis soumettre à nouveau votre application.
-Ainsi, vous avez de plus grandes chances de réussir l’évaluation effectuée par Apple en vous familiarisant avec ces recommandations et en essayant d’adapter votre application à ces dernières. Les instructions d’Apple sont disponibles dans les instructions de révision de l' [App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html) et préparent [la soumission de votre application pour la nouvelle présentation Apple TV](https://developer.apple.com/tvos/submit/).
+Ainsi, vous avez de plus grandes chances de réussir l’évaluation effectuée par Apple en vous familiarisant avec ces recommandations et en essayant d’adapter votre application à ces dernières. Les instructions d’Apple sont disponibles dans les instructions de révision de l' [App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html) et [préparent la soumission de votre application pour la nouvelle présentation Apple TV](https://developer.apple.com/tvos/submit/).
 
 Voici quelques éléments à surveiller quand vous soumettez une application :
 
@@ -84,7 +84,7 @@ La création d’un ID d’application et, éventuellement, la sélection de dro
 
 En plus de sélectionner et de configurer le services d’application requis lors de la définition de votre ID d’application, vous devez également configurer l’ID d’application et les droits dans votre projet Xamarin. tvOS en `Info.plist` modifiant `Entitlements.plist` les fichiers et.
 
-Procédez comme suit dans Visual Studio pour Mac:
+Procédez comme suit dans Visual Studio pour Mac :
 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `Info.plist` pour l’ouvrir et le modifier.
 2. Dans la section **cible d’application tvOS** , indiquez un nom pour votre application et entrez l' **identificateur de Bundle** que vous avez créé lorsque vous avez défini l’ID de l’application.
@@ -107,7 +107,7 @@ Pour obtenir des instructions détaillées, consultez notre documentation [sur l
 
 ### <a name="creating-and-installing-a-distribution-profile"></a>Création et installation d’un profil de distribution
 
-tvOS utilise les *profils* de provisionnement pour contrôler la façon dont une build d’application particulière peut être déployée. Il s’agit de fichiers qui contiennent des informations sur le certificat utilisé pour signer une application, sur l’*ID de l’application* et sur l’emplacement d’installation de l’application. Pour des tâches de développement et de distribution ad hoc, le profil de provisionnement inclut également la liste des appareils autorisés sur lesquels vous pouvez déployer l’application. Toutefois, pour la distribution d’Apple TV App Store, seules les informations sur les certificats et les ID d’application sont incluses, puisque le seul mécanisme de distribution publique est d’Apple TV App Store.
+tvOS utilise les *profils de provisionnement* pour contrôler la façon dont une build d’application particulière peut être déployée. Il s’agit de fichiers qui contiennent des informations sur le certificat utilisé pour signer une application, sur l’*ID de l’application* et sur l’emplacement d’installation de l’application. Pour des tâches de développement et de distribution ad hoc, le profil de provisionnement inclut également la liste des appareils autorisés sur lesquels vous pouvez déployer l’application. Toutefois, pour la distribution d’Apple TV App Store, seules les informations sur les certificats et les ID d’application sont incluses, puisque le seul mécanisme de distribution publique est d’Apple TV App Store.
 
 Le provisionnement implique l’exécution des étapes suivantes à partir du portail web de provisionnement iOS d’Apple :
 
@@ -165,13 +165,13 @@ Il est recommandé de conserver les archives déployées auprès des clients (d�
 
 Pour signer votre application et préparer sa distribution :
 
-1. Sélectionnez **signer et distribuer...** , comme illustré ci-dessous:
+1. Sélectionnez **signer et distribuer...** , comme illustré ci-dessous :
 
     [![](app-store-publishing-images/buildxs04new.png ", Sélectionnez theSign et distribuer...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Cela entraîne l’ouverture de l’Assistant Publication. Sélectionnez le canal de distribution **App Store** pour créer un paquet, puis ouvrez Application Loader :
 
     [![](app-store-publishing-images/distribute01.png "Sélectionner le canal de distribution de l’App Store")](app-store-publishing-images/distribute01.png#lightbox)
-3. Dans l’écran Profil de provisionnement, sélectionnez votre identité de signature et le profil de configuration correspondant, ou resignez avec une autre identité:
+3. Dans l’écran Profil de provisionnement, sélectionnez votre identité de signature et le profil de configuration correspondant, ou resignez avec une autre identité :
 
     [![](app-store-publishing-images/distribute02.png "Sélectionner l’identité de signature et le profil de provisionnement correspondant")](app-store-publishing-images/distribute02.png#lightbox)
 4. Vérifiez les détails du paquet, puis cliquez sur **Publier** pour enregistrer votre paquet `.ipa` :
@@ -190,7 +190,7 @@ Une fois votre build de distribution créée et archivée, vous êtes prêt à s
 Une fois que vous avez effectué la build de distribution, vous êtes prêt à soumettre votre application iOS à Apple pour qu’elle soit évaluée et, le cas échéant, publiée sur l’App Store.
 
 
-Dans Visual Studio pour Mac, le flux de travail d’archivage ouvre automatiquement application Loader, une fois `.ipa`que vous avez enregistré:
+Dans Visual Studio pour Mac, le flux de travail d’archivage ouvre automatiquement application Loader, une fois `.ipa`que vous avez enregistré :
 
 1. Sélectionnez *Deliver Your App (Livrer votre application)* , puis cliquez sur le bouton *Choose (Choisir)*  :
 
@@ -210,13 +210,13 @@ Dans Visual Studio pour Mac, le flux de travail d’archivage ouvre automatiquem
 
 ### <a name="itunes-connect-status"></a>État dans iTunes Connect
 
-Si vous vous reconnectez à iTunes Connect et que vous sélectionnez votre application dans la liste des applications disponibles, l’État dans iTunes Connect doit maintenant indiquer qu’elle est en **attente de révision** (elle peut lire temporairement le **Téléchargement reçu** pendant son traitement):
+Si vous vous reconnectez à iTunes Connect et que vous sélectionnez votre application dans la liste des applications disponibles, l’État dans iTunes Connect doit maintenant indiquer qu’elle est en **attente de révision** (elle peut lire temporairement le **Téléchargement reçu** pendant son traitement) :
 
 [![](app-store-publishing-images/image21.png "État dans iTunes Connect, affichage en attente de la révision")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 
-## <a name="troubleshooting"></a>Résolution de problèmes
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 Si vous rencontrez des problèmes lors de l’envoi de votre application Xamarin. tvOS à Apple TV App Store, consultez notre guide de [Dépannage](~/ios/tvos/troubleshooting.md) . Il contient plusieurs problèmes connus que vous pouvez rencontrer et comment les résoudre dans Xamarin. tvOS.
 

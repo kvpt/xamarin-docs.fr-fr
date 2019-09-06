@@ -4,28 +4,28 @@ description: Ce document explique comment implémenter le glisser-déplacer dans
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/05/2017
-ms.openlocfilehash: cb982b1cd2340262101ff09bce2c37c69864b8dc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d6848c478e0704fab16a2f8cc64bb8aa80f9a174
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656470"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286612"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Glisser-déplacer dans Xamarin. iOS
 
 _Implémentation du glisser-déplacer pour iOS 11_
 
-iOS 11 comprend la prise en charge de la fonction glisser-déplacer pour copier des données entre des applications sur l’iPad. Les utilisateurs peuvent sélectionner et faire glisser tous les types de contenu à partir d’applications positionnées côte à côte, ou en faisant glisser le pointeur sur une icône d’application qui déclenche l’ouverture de l’application et autoriser la suppression des données:
+iOS 11 comprend la prise en charge de la fonction glisser-déplacer pour copier des données entre des applications sur l’iPad. Les utilisateurs peuvent sélectionner et faire glisser tous les types de contenu à partir d’applications positionnées côte à côte, ou en faisant glisser le pointeur sur une icône d’application qui déclenche l’ouverture de l’application et autoriser la suppression des données :
 
 ![Glisser-déplacer l’exemple de l’application personnalisée vers l’application notes](drag-and-drop-images/drag-drop-sml.png)
 
 > [!NOTE]
 > Le glisser-déplacer est uniquement disponible dans la même application sur iPhone.
 
-Envisagez de prendre en charge les opérations de glisser-déplacer où le contenu peut être créé ou modifié:
+Envisagez de prendre en charge les opérations de glisser-déplacer où le contenu peut être créé ou modifié :
 
 - Les contrôles de texte prennent en charge le glisser-déplacer pour toutes les applications basées sur iOS 11, sans aucun travail supplémentaire.
 - Les vues de table et les vues de collection incluent des améliorations dans iOS 11 qui simplifient l’ajout du comportement de glisser-déplacer.
@@ -43,12 +43,12 @@ Lorsque vous ajoutez la prise en charge de la fonction glisser-déplacer à vos 
 
 `UITableView`dispose d’une gestion intégrée pour les interactions de glisser-déplacer avec les lignes de table, en ne nécessitant que quelques méthodes pour activer le comportement par défaut.
 
-Il existe deux interfaces impliquées:
+Il existe deux interfaces impliquées :
 
 - `IUITableViewDragDelegate`: Les informations de packages lorsqu’un glisser est initié en mode table.
 - `IUITableViewDropDelegate`: Traite les informations quand une opération de suppression est tentée et terminée.
 
-Dans l' [exemple DragAndDropTableView](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) , ces deux interfaces sont implémentées sur `UITableViewController` la classe, avec le délégué et la source de données. Elles sont assignées `ViewDidLoad` dans la méthode:
+Dans l' [exemple DragAndDropTableView](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) , ces deux interfaces sont implémentées sur `UITableViewController` la classe, avec le délégué et la source de données. Elles sont assignées `ViewDidLoad` dans la méthode :
 
 ```csharp
 this.TableView.DragDelegate = this;
@@ -61,7 +61,7 @@ Le code requis minimal pour ces deux interfaces est expliqué ci-dessous.
 
 La seule méthode _requise_ pour prendre en charge le glissement d’une ligne d' `GetItemsForBeginningDragSession`une vue de table est. Si l’utilisateur commence à faire glisser une ligne, cette méthode est appelée.
 
-Une implémentation est illustrée ci-dessous. Il récupère les données associées à la ligne glissée, les encode et configure un `NSItemProvider` qui détermine la manière dont les applications gèrent la partie «Drop» de l’opération (par exemple, si elles peuvent gérer le type de données, `PlainText`, dans l’exemple):
+Une implémentation est illustrée ci-dessous. Il récupère les données associées à la ligne glissée, les encode et configure un `NSItemProvider` qui détermine la manière dont les applications gèrent la partie « Drop » de l’opération (par exemple, si elles peuvent gérer le type de données, `PlainText`, dans l’exemple) :
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -89,7 +89,7 @@ Il existe de nombreuses méthodes facultatives sur le délégué Drag qui peuven
 
 ### <a name="table-view-drop-delegate"></a>Liste déroulante de vue de table
 
-Les méthodes sur le délégué de dépôt sont appelées lorsqu’une opération glisser se produit sur une vue de table ou se termine au-dessus de lui. Les méthodes requises déterminent si les données sont autorisées à être supprimées, et les actions effectuées si la suppression est terminée:
+Les méthodes sur le délégué de dépôt sont appelées lorsqu’une opération glisser se produit sur une vue de table ou se termine au-dessus de lui. Les méthodes requises déterminent si les données sont autorisées à être supprimées, et les actions effectuées si la suppression est terminée :
 
 - `CanHandleDropSession`: Lorsqu’un glisser est en cours et éventuellement déposé sur l’application, cette méthode détermine si les données glissées peuvent être supprimées.
 - `DropSessionDidUpdate`– Pendant que l’opération de glisser-déplacer est en cours, cette méthode est appelée pour déterminer l’action qui est prévue. Les informations de la vue de table qui sont glissées, la session de glissement et le chemin d’accès d’index possible peuvent toutes être utilisées pour déterminer le comportement et les commentaires visuels fournis à l’utilisateur.
@@ -111,7 +111,7 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 La `DropSessionDidUpdate` méthode est appelée à plusieurs reprises pendant que l’opération glisser est en cours, afin de fournir des signaux visuels à l’utilisateur.
 
 Dans le code ci- `HasActiveDrag` dessous, est utilisé pour déterminer si l’opération provient de la vue de table actuelle. Dans ce cas, seules les lignes uniques sont autorisées à être déplacées.
-Si le glissement provient d’une autre source, une opération de copie est indiquée:
+Si le glissement provient d’une autre source, une opération de copie est indiquée :
 
 ```csharp
 public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDropSession session, NSIndexPath destinationIndexPath)
@@ -181,7 +181,7 @@ Du code supplémentaire peut être ajouté pour charger de façon asynchrone des
 ### <a name="testing-drag-and-drop"></a>Test du glisser-déplacer
 
 Vous devez utiliser un iPad pour tester l' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview).
-Ouvrez l’exemple avec une autre application (telle que des notes) et faites glisser des lignes et du texte entre eux:
+Ouvrez l’exemple avec une autre application (telle que des notes) et faites glisser des lignes et du texte entre eux :
 
 ![capture d’écran de l’opération glisser en cours](drag-and-drop-images/01-sml.png)
 

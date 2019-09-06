@@ -4,32 +4,32 @@ description: Ce document décrit comment créer des résultats de recherche bas�
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 77d526fd49ac62788bea1ab885cb1248ffc5697e
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 87037c8c3797c7c305ce2689172bda1babbc26bd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620956"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291716"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Rechercher avec le balisage Web dans Xamarin. iOS
 
 Pour les applications qui fournissent un accès à leur contenu via un site Web (non seulement à partir de l’application), le contenu Web peut être marqué avec des liens spéciaux qui seront analysés par Apple et fournir une liaison étroite à votre application sur l’appareil iOS 9 de l’utilisateur.
 
-Si votre application iOS prend déjà en charge la liaison profonde mobile et que votre site Web a présenté des liens ciblés vers du contenu au sein de votre application, le robot Web _Applebot_ d’Apple indexera ce contenu et l’ajoutera automatiquement à son index Cloud:
+Si votre application iOS prend déjà en charge la liaison profonde mobile et que votre site Web a présenté des liens ciblés vers du contenu au sein de votre application, le robot Web _Applebot_ d’Apple indexera ce contenu et l’ajoutera automatiquement à son index Cloud :
 
 [![](web-markup-images/webmarkup01.png "Présentation de l’index Cloud")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple affiche ces résultats dans la recherche Spotlight et les résultats de recherche Safari.
-Si l’utilisateur clique sur l’un de ces résultats (et que votre application est installée), il est dirigé vers le contenu de votre application:
+Si l’utilisateur clique sur l’un de ces résultats (et que votre application est installée), il est dirigé vers le contenu de votre application :
 
 [![](web-markup-images/webmarkup02.png "Liaison profonde à partir d’un site Web dans les résultats de recherche")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Activation de l’indexation de contenu Web
 
-Quatre étapes sont nécessaires pour faciliter la recherche de contenu d’application à l’aide du balisage Web:
+Quatre étapes sont nécessaires pour faciliter la recherche de contenu d’application à l’aide du balisage Web :
 
 1. Assurez-vous qu’Apple peut découvrir et indexer le site Web de votre application en le définissant comme site Web de **support** ou de **marketing** dans iTunes Connect.
 2. Assurez-vous que le site Web de votre application contient le balisage requis pour implémenter la liaison profonde mobile. Pour plus d’informations, consultez les sections ci-dessous.
@@ -44,7 +44,7 @@ Le moyen le plus simple pour que Apple recherche le site Web de votre applicatio
 
 ## <a name="using-smart-app-banners"></a>Utilisation des bannières d’application intelligente
 
-Fournissez une bannière d’application intelligente sur votre site Web pour présenter un lien clair dans votre application. Si l’application n’est pas déjà installée, Safari invite automatiquement l’utilisateur à installer votre application. Dans le cas contraire, l’utilisation peut appuyer sur le lien de la **vue** pour lancer votre application à partir du site Web. Par exemple, pour créer une bannière d’application intelligente, vous pouvez utiliser le code suivant:
+Fournissez une bannière d’application intelligente sur votre site Web pour présenter un lien clair dans votre application. Si l’application n’est pas déjà installée, Safari invite automatiquement l’utilisateur à installer votre application. Dans le cas contraire, l’utilisation peut appuyer sur le lien de la **vue** pour lancer votre application à partir du site Web. Par exemple, pour créer une bannière d’application intelligente, vous pouvez utiliser le code suivant :
 
 ```html
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
@@ -54,7 +54,7 @@ Pour plus d’informations, consultez la documentation relative [à la promotion
 
 ## <a name="using-universal-links"></a>Utilisation des liens universels
 
-Nouveauté d’iOS 9, les liens universels fournissent une meilleure alternative aux bannières d’application intelligentes ou aux modèles d’URL personnalisés existants en fournissant les éléments suivants:
+Nouveauté d’iOS 9, les liens universels fournissent une meilleure alternative aux bannières d’application intelligentes ou aux modèles d’URL personnalisés existants en fournissant les éléments suivants :
 
 - **Unique** : la même URL ne peut pas être revendiquée par plusieurs sites Web.
 - **Sécurisé** : un certificat signé est requis pour le site Web, ce qui garantit que le site Web vous appartient et qu’il est lié de manière valide à votre application.
@@ -139,7 +139,7 @@ Un autre format courant pour le balisage de données structurées est le format 
   <span itemprop="reviewCount">255** reviews
 ```
 
-Les mêmes informations peuvent être représentées au format JSON-LD de Schema. org:
+Les mêmes informations peuvent être représentées au format JSON-LD de Schema. org :
 
 ```html
 <script type="application/ld+json">
@@ -150,11 +150,11 @@ Les mêmes informations peuvent être représentées au format JSON-LD de Schema
 </script>
 ```
 
-Voici un exemple de métadonnées de votre site Web fournissant des résultats de recherche enrichis à l’utilisateur final:
+Voici un exemple de métadonnées de votre site Web fournissant des résultats de recherche enrichis à l’utilisateur final :
 
 [![](web-markup-images/deeplink01.png "Résultats de recherche enrichis via le balisage de données structurées")](web-markup-images/deeplink01.png#lightbox)
 
-Apple prend actuellement en charge les types de schémas suivants à partir de schema.org:
+Apple prend actuellement en charge les types de schémas suivants à partir de schema.org :
 
 - AggregateRating
 - ImageObject
@@ -169,13 +169,13 @@ Pour plus d’informations sur ces types de schéma, consultez [Schema.org](http
 
 ## <a name="providing-actions-with-structured-data"></a>Fournir des actions avec des données structurées
 
-Des types spécifiques de données structurées permettent à l’utilisateur final d’agir sur les résultats de la recherche. Actuellement, les actions suivantes sont prises en charge:
+Des types spécifiques de données structurées permettent à l’utilisateur final d’agir sur les résultats de la recherche. Actuellement, les actions suivantes sont prises en charge :
 
 - Numérotation d’un numéro de téléphone.
 - Obtention de la direction de la carte vers une adresse donnée.
 - Lecture d’un fichier audio ou vidéo.
 
-Par exemple, la définition d’une action pour composer un numéro de téléphone peut se présenter comme suit:
+Par exemple, la définition d’une action pour composer un numéro de téléphone peut se présenter comme suit :
 
 ```html
 <div itemscope itemtype="http://schema.org/Organization">
@@ -184,14 +184,14 @@ Par exemple, la définition d’une action pour composer un numéro de télépho
 
 Lorsque ce résultat de recherche est présenté à l’utilisateur final, une petite icône de téléphone s’affiche dans le résultat. Si l’utilisateur appuie sur l’icône, le nombre spécifié est appelé.
 
-Le code HTML suivant ajoute une action pour lire un fichier audio à partir du résultat de la recherche:
+Le code HTML suivant ajoute une action pour lire un fichier audio à partir du résultat de la recherche :
 
 ```html
 <div itemscope itemtype="http://schema.org/AudioObject">
   <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
 ```
 
-Enfin, le code HTML suivant ajoute une action pour obtenir des instructions à partir du résultat de la recherche:
+Enfin, le code HTML suivant ajoute une action pour obtenir des instructions à partir du résultat de la recherche :
 
 ```html
 <div itemscope itemtype="http://schema.org/PostalAddress">

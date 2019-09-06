@@ -4,15 +4,15 @@ description: Ce document décrit le système de comptage de références amélio
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 221c3a3bb82b5b46f4afea5ec43fcdd5c00b0556
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199329"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291874"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Nouveau système de comptage de références dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ Xamarin. iOS 9.2.1 a introduit par défaut le système de comptage de référenc
 
 À partir de Xamarin 9.2.1, le nouveau système de comptage de références est activé pour **toutes les** applications par défaut.
 
-Si vous développez une application existante, vous pouvez vérifier le fichier. csproj pour vous assurer que toutes les occurrences de `MtouchUseRefCounting` ont la `true`valeur, comme ci-dessous:
+Si vous développez une application existante, vous pouvez vérifier le fichier. csproj pour vous assurer que toutes les occurrences de `MtouchUseRefCounting` ont la `true`valeur, comme ci-dessous :
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
@@ -34,15 +34,15 @@ S’il est défini sur `false` votre application, il n’utilise pas les nouveau
 
 Xamarin. iOS 7.2.1 et versions ultérieures offre une version préliminaire améliorée de notre nouveau système de comptage de références.
 
-**API classique:**
+**API classique :**
 
-Pour activer ce nouveau système de comptage de références, activez la case à cocher **utiliser l’extension de comptage de références** située dans l’onglet **avancé** des **options de génération iOS**de votre projet, comme indiqué ci-dessous: 
+Pour activer ce nouveau système de comptage de références, activez la case à cocher **utiliser l’extension de comptage de références** située dans l’onglet **avancé** des **options de génération iOS**de votre projet, comme indiqué ci-dessous : 
 
 [![](newrefcount-images/image1.png "Activer le nouveau système de comptage de références")](newrefcount-images/image1.png#lightbox)
 
 Notez que ces options ont été supprimées dans les versions plus récentes de Visual Studio pour Mac.
 
- **[API unifiée:](~/cross-platform/macios/unified/index.md)**
+ **[API unifiée :](~/cross-platform/macios/unified/index.md)**
 
  La nouvelle extension de comptage de références est requise pour le API unifiée et doit être activée par défaut. Cette valeur n’est peut-être pas activée automatiquement pour les anciennes versions de votre IDE et vous devrez peut-être en effectuer une vérification vous-même.
 
@@ -51,11 +51,11 @@ Notez que ces options ont été supprimées dans les versions plus récentes de 
 > Une version antérieure de cette fonctionnalité a été créée depuis MonoTouch 5,2 mais n’était disponible que pour **SGen** en version préliminaire expérimentale. Cette nouvelle version améliorée est désormais également disponible pour le garbage collector **Boehm** .
 
 
-Historiquement, il y a deux types d’objets gérés par Xamarin. iOS: ceux qui étaient simplement un wrapper autour d’un objet natif (objets homologues) et ceux qui ont étendu ou incorporé de nouvelles fonctionnalités (objets dérivés), généralement en conservant un État mémoire supplémentaire. Auparavant, il était possible d’étendre un objet homologue avec l’État (par exemple, en C# ajoutant un gestionnaire d’événements), mais nous laissons l’objet non référencé, puis collecté. Cela peut entraîner un blocage ultérieur (par exemple, si le runtime objective-C a rappelé dans l’objet managé).
+Historiquement, il y a deux types d’objets gérés par Xamarin. iOS : ceux qui étaient simplement un wrapper autour d’un objet natif (objets homologues) et ceux qui ont étendu ou incorporé de nouvelles fonctionnalités (objets dérivés), généralement en conservant un État mémoire supplémentaire. Auparavant, il était possible d’étendre un objet homologue avec l’État (par exemple, en C# ajoutant un gestionnaire d’événements), mais nous laissons l’objet non référencé, puis collecté. Cela peut entraîner un blocage ultérieur (par exemple, si le runtime objective-C a rappelé dans l’objet managé).
 
 Le nouveau système met automatiquement à niveau les objets homologues dans des objets gérés par le runtime lorsqu’ils stockent des informations supplémentaires.
 
-Cela résout différents incidents qui se sont produits dans des situations telles que celle-ci:
+Cela résout différents incidents qui se sont produits dans des situations telles que celle-ci :
 
 ```csharp
 class MyTableSource : UITableViewSource {

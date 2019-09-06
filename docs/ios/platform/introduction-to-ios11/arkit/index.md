@@ -4,15 +4,15 @@ description: Ce document décrit la réalité augmentée dans iOS 11 avec ARKit.
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 47c092215afef4aa6964a39f7dcb5b685d98a4fc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9e6b5c763d620bf5ef17e4fdb613d4bed9c00279
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655736"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290912"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Présentation de ARKit dans Xamarin. iOS
 
@@ -27,7 +27,7 @@ ARKit permet un large éventail d’applications et de jeux de réalité augment
 
 ## <a name="getting-started-with-arkit"></a>Prise en main avec ARKit
 
-Pour prendre en main la réalité augmentée, les instructions suivantes vous guident dans une application simple: le positionnement d’un modèle 3D et la mise en place de ARKit pour maintenir le modèle en place avec sa fonctionnalité de suivi.
+Pour prendre en main la réalité augmentée, les instructions suivantes vous guident dans une application simple : le positionnement d’un modèle 3D et la mise en place de ARKit pour maintenir le modèle en place avec sa fonctionnalité de suivi.
 
 ![Image de caméra flottante du modèle 3D jet](images/jet-sml.png)
 
@@ -40,7 +40,7 @@ Les ressources doivent être ajoutées au projet avec l’action de génération
 
 ### <a name="2-configure-the-view"></a>2. Configurer la vue
 
-Dans la méthode du contrôleur `ViewDidLoad` d’affichage, chargez la ressource de scène `Scene` et définissez la propriété sur la vue:
+Dans la méthode du contrôleur `ViewDidLoad` d’affichage, chargez la ressource de scène `Scene` et définissez la propriété sur la vue :
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -54,7 +54,7 @@ SceneView.Scene = scene;
 
 ### <a name="3-optionally-implement-a-session-delegate"></a>3. Implémentez éventuellement un délégué de session
 
-Bien que cela ne soit pas obligatoire pour les cas simples, l’implémentation d’un délégué de session peut être utile pour déboguer l’état de la session ARKit (et dans les applications réelles, en fournissant des commentaires à l’utilisateur). Créez un délégué simple en utilisant le code ci-dessous:
+Bien que cela ne soit pas obligatoire pour les cas simples, l’implémentation d’un délégué de session peut être utile pour déboguer l’état de la session ARKit (et dans les applications réelles, en fournissant des commentaires à l’utilisateur). Créez un délégué simple en utilisant le code ci-dessous :
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -67,7 +67,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Assignez le délégué dans dans `ViewDidLoad` la méthode:
+Assignez le délégué dans dans `ViewDidLoad` la méthode :
 
 ```csharp
 // Track changes to the session
@@ -76,7 +76,7 @@ SceneView.Session.Delegate = new SessionDelegate();
 
 ### <a name="4-position-the-3d-model-in-the-world"></a>4. Positionner le modèle 3D dans le monde
 
-Dans `ViewWillAppear`, le code suivant établit une session ARKit et définit la position du modèle 3D dans l’espace relatif à l’appareil photo de l’appareil:
+Dans `ViewWillAppear`, le code suivant établit une session ARKit et définit la position du modèle 3D dans l’espace relatif à l’appareil photo de l’appareil :
 
 ```csharp
 // Create a session configuration
@@ -98,7 +98,7 @@ Chaque fois que l’application est exécutée ou reprise, le modèle 3D est pos
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. Suspendre la session de réalité augmentée
 
-Il est recommandé de suspendre la session ARKit quand le contrôleur d’affichage n’est pas visible (dans `ViewWillDisappear` la méthode:
+Il est recommandé de suspendre la session ARKit quand le contrôleur d’affichage n’est pas visible (dans `ViewWillDisappear` la méthode :
 
 ```csharp
 SceneView.Session.Pause();

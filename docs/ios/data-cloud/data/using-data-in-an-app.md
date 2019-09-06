@@ -4,27 +4,27 @@ description: Ce document décrit l’exemple DataAccess_Adv, qui montre comment 
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 9da0f48a8798a16ccd6410913d0b31c0b4444cb8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9cd93a94361c11ecaa454a804e58180a33ec08fe
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527192"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290942"
 ---
 # <a name="using-data-in-an-ios-app"></a>Utilisation des données dans une application iOS
 
-L’exemple **DataAccess_Adv** illustre une application opérationnelle qui autorise les entrées d’utilisateur et les fonctionnalités de base de données *CRUD* (création, lecture, mise à jour et suppression). L’application se compose de deux écrans: une liste et un formulaire de saisie de données. Tout le code d’accès aux données peut être réutilisé dans iOS et Android sans modification.
+L’exemple **DataAccess_Adv** illustre une application opérationnelle qui autorise les entrées d’utilisateur et les fonctionnalités de base de données *CRUD* (création, lecture, mise à jour et suppression). L’application se compose de deux écrans : une liste et un formulaire de saisie de données. Tout le code d’accès aux données peut être réutilisé dans iOS et Android sans modification.
 
-Après avoir ajouté des données, les écrans de l’application ressemblent à ce qui suit sur iOS:
+Après avoir ajouté des données, les écrans de l’application ressemblent à ce qui suit sur iOS :
 
  ![](using-data-in-an-app-images/image9.png "liste d’exemples iOS")
 
  ![](using-data-in-an-app-images/image10.png "exemple de détail iOS")
 
-Le projet iOS est illustré ci-dessous: le code présenté dans cette section est contenu dans le répertoire **ORM** :
+Le projet iOS est illustré ci-dessous : le code présenté dans cette section est contenu dans le répertoire **ORM** :
 
  ![](using-data-in-an-app-images/image13.png "arborescence de projet iOS")
 
@@ -33,13 +33,13 @@ Pour plus d’informations sur les contrôles d’interface utilisateur, reporte
 
 ## <a name="read"></a>Lecture
 
-Il existe deux opérations de lecture dans l’exemple:
+Il existe deux opérations de lecture dans l’exemple :
 
 - Lecture de la liste
 - Lecture d’enregistrements individuels
 
 
-Les deux méthodes de la `StockDatabase` classe sont:
+Les deux méthodes de la `StockDatabase` classe sont :
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -61,7 +61,7 @@ iOS effectue le rendu des données différemment sous `UITableView`la forme d’
 ## <a name="create-and-update"></a>Créer et mettre à jour
 
 Pour simplifier le code de l’application, une méthode Save unique est fournie, qui effectue une insertion ou une mise à jour selon que la valeur PrimaryKey a été définie ou non. Étant donné `Id` que la propriété est marquée `[PrimaryKey]` avec un attribut, vous ne devez pas la définir dans votre code.
-Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence:
+Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence :
 
 ```csharp
 public int SaveStock (Stock item)
@@ -99,7 +99,7 @@ public int DeleteStock(Stock stock)
 ## <a name="using-a-pre-populated-sqlite-database-file"></a>Utilisation d’un fichier de base de données SQLite pré-rempli
 
 Certaines applications sont livrées avec une base de données déjà remplie de données.
-Vous pouvez facilement effectuer cette opération dans votre application mobile en envoyant un fichier de base de données SQLite existant avec votre application et en le copiant dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard utilisé sur de nombreuses plateformes, un certain nombre d’outils sont disponibles pour créer un fichier de base de données SQLite:
+Vous pouvez facilement effectuer cette opération dans votre application mobile en envoyant un fichier de base de données SQLite existant avec votre application et en le copiant dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard utilisé sur de nombreuses plateformes, un certain nombre d’outils sont disponibles pour créer un fichier de base de données SQLite :
 
 - **Extension SQLite Manager Firefox** : fonctionne sur Mac et Windows et produit des fichiers compatibles avec iOS et Android.
 - **Ligne de commande** : consultez [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
@@ -107,7 +107,7 @@ Vous pouvez facilement effectuer cette opération dans votre application mobile 
 
 Lorsque vous créez un fichier de base de données à distribuer avec votre application, prenez soin de nommer les tables et les colonnes pour vous assurer qu’elles correspondent à ce que votre code attend, en particulier si vous utilisez des SQLite.NET C# qui s’attendent à ce que les noms correspondent à vos classes et propriétés ( ou les attributs personnalisés associés).
 
-Pour iOS, incluez le fichier SQLite dans votre application et assurez-vous **qu’il est marqué avec l’action de génération: Contenu**. Placez le code dans le `FinishedLaunching` pour copier le fichier dans un répertoire accessible en écriture *avant* d’appeler des méthodes de données. Le code suivant copie une base de données existante appelée **Data. sqlite**, uniquement si elle n’existe pas déjà.
+Pour iOS, incluez le fichier SQLite dans votre application et assurez-vous **qu’il est marqué avec l’action de génération : Contenu**. Placez le code dans le `FinishedLaunching` pour copier le fichier dans un répertoire accessible en écriture *avant* d’appeler des méthodes de données. Le code suivant copie une base de données existante appelée **Data. sqlite**, uniquement si elle n’existe pas déjà.
 
 ```csharp
 // Copy the database across (if it doesn't exist)

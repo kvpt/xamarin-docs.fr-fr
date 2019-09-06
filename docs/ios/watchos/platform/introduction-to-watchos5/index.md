@@ -1,47 +1,47 @@
 ---
 title: Introduction à watchOS 5
-description: Ce document fournit une description détaillée de certaines watchOS 5 API pour Xamarin.
+description: Ce document fournit une description de haut niveau de certaines API Watchos 5 pour Xamarin.
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e873d476e38c91bad0db805d53e2c396f4ffb9dd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61222856"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282037"
 ---
 # <a name="introduction-to-watchos-5"></a>Introduction à watchOS 5
 
-Ce document fournit une description détaillée de certaines watchOS 5 API.
+Ce document fournit une description de haut niveau de certaines API Watchos 5.
 
-Pour commencer à créer des applications watchOS 5 avec Xamarin, reportez-vous à la [guide Mise en route](~/ios/platform/introduction-to-ios12/get-started.md)
+Pour commencer à créer des applications Watchos 5 avec Xamarin, reportez-vous au [Guide de mise](~/ios/platform/introduction-to-ios12/get-started.md) en route
 
-## <a name="workout-improvements"></a>Améliorations de séances d’entraînement
+## <a name="workout-improvements"></a>Améliorations de l’entraînement
 
-L’API d’entraînement dans watchOS 5 fournit de nouvelles fonctionnalités pour la collecte de données séances d’entraînement, l’enregistrement de sommeil dans HealthKit, continuer automatiquement un entraînement après qu’une application se bloque et l’utilisation d’une série de données de la quantité connexes.
+Les API d’entraînement dans Watchos 5 fournissent de nouvelles fonctionnalités pour la collecte des données d’entraînement, l’enregistrement des exercices sur HealthKit, la poursuite automatique d’un entraînement après une panne d’application et l’utilisation d’une série de données de quantité associées.
 
-## <a name="siri-shortcuts"></a>Raccourcis de Siri
+## <a name="siri-shortcuts"></a>Siri les raccourcis
 
-Dans watchOS 5, le cadran de montre Siri présente raccourcis ce contenu de l’aire de conception d’application et les fonctionnalités aux utilisateurs au moment opportun. Siri a appris au fil du temps pour afficher les raccourcis pertinents lorsqu’ils sont plus susceptibles d’être utilisés.
+Dans Watchos 5, la face Siri Watch affiche des raccourcis qui présentent le contenu et les fonctionnalités des applications aux utilisateurs à des moments pratiques. Siri apprend au fil du temps à afficher les raccourcis pertinents lorsqu’ils sont les plus susceptibles d’être utilisés.
 
-## <a name="background-audio-mode"></a>Mode audio d’arrière-plan
+## <a name="background-audio-mode"></a>Mode audio en arrière-plan
 
-watchOS 5 rend possible pour les applications tierces lire un fichier audio en arrière-plan via l’infrastructure AV Foundation.
+Watchos 5 permet aux applications tierces de lire l’audio en arrière-plan par le biais de l’infrastructure de base AV.
 
-## <a name="movement-disorder-api"></a>Troubles de déplacement des API
+## <a name="movement-disorder-api"></a>API mouvement trouble
 
-L’API de troubles de mouvement, partie du framework CoreMotion dans watchOS 5, permet aux applications watchOS moniteur, d’enregistrement et de requête de tremblement et DYSKINESIE symptômes liés à la maladie de Parkinson.
+L’API de trouble du mouvement, qui fait partie de l’infrastructure de l’infrastructure de gestion des accès à distance, permet aux applications Watchos de surveiller, enregistrer et interroger les symptômes de tremblement et dyskinesia liés à la maladie de Parkinson.
 
-## <a name="natural-language-framework"></a>Framework de langage naturel
+## <a name="natural-language-framework"></a>Infrastructure en langage naturel
 
-L’infrastructure de langage naturel permet aux applications d’effectuer différents types d’analyse linguistique. Par exemple, il peut être utilisé pour identifier les parties du discours et de déterminer la langue représentée par un bloc de texte.
+L’infrastructure de langage naturel permet aux applications d’effectuer différents types d’analyse de langage. Par exemple, il peut être utilisé pour identifier des parties de la parole et déterminer la langue représentée par un bloc de texte.
 
 ## <a name="related-links"></a>Liens connexes
 
-- [watchOS – développeur Apple (Apple)](https://developer.apple.com/watchOS/)
-- [Quelles sont les nouveautés dans watchOS (Apple) (vidéo)](https://developer.apple.com/videos/play/wwdc2018/206/)
+- [Watchos – Apple Developer (Apple)](https://developer.apple.com/watchOS/)
+- [Nouveautés de Watchos (vidéo)](https://developer.apple.com/videos/play/wwdc2018/206/)
 - [Espion (Apple)](https://www.apple.com/watch/)

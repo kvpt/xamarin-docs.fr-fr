@@ -4,15 +4,15 @@ description: Ce guide présente en détail la création des certificats et des i
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 30731dda1007127caff84eae20696b45803b74f1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 80a54d9276159c7c1b1706b61e7bc865aca540bd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528994"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285862"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Certificats et identificateurs dans Xamarin.Mac
 
@@ -51,13 +51,13 @@ Cliquez sur le lien **Overview** situé en haut à gauche de la page pour reveni
 
 Le développeur doit inscrire un ID d’application pour chaque application écrite. Utilisez les étapes ci-dessous pour créer une entrée pour un exemple d’application de base appelée « MacWriter ».
 
-1. Entrez une valeur **App ID Description** et sélectionnez les **App Services** dont l’application a besoin : 
+1. Entrez une valeur **App ID Description** et sélectionnez les **App Services** dont l’application a besoin :
 
     [![Entrée de la description et des services d’application](certificates-identifiers-images/devcenter04.png "Entrée de la description et des services d’application")](certificates-identifiers-images/devcenter04-large.png#lightbox)
-2. Entrez une valeur **Bundle ID** pour l’application, puis cliquez sur le bouton **Continue** : 
+2. Entrez une valeur **Bundle ID** pour l’application, puis cliquez sur le bouton **Continue** :
 
     [![Entrée d’un ID de bundle](certificates-identifiers-images/devcenter05.png "Entrée d’un ID de bundle")](certificates-identifiers-images/devcenter05-large.png#lightbox)
-3. Vérifiez les informations, puis cliquez sur le bouton **Submit** : 
+3. Vérifiez les informations, puis cliquez sur le bouton **Submit** :
 
     [![Vérification des informations](certificates-identifiers-images/devcenter06.png "Vérification des informations")](certificates-identifiers-images/devcenter06-large.png#lightbox)
 
@@ -105,27 +105,27 @@ Comme mentionné précédemment, le certificat de développement d’application
 
 Effectuez les étapes suivantes pour créer un certificat de développement :
 
-1. Sélectionnez la case d’option **Mac Development**, puis cliquez sur **Continue** : 
+1. Sélectionnez la case d’option **Mac Development**, puis cliquez sur **Continue** :
 
      [![Ajout d’un certificat de développement](certificates-identifiers-images/certif02.png "Ajout d’un certificat de développement")](certificates-identifiers-images/certif02-large.png#lightbox)
-2. L’écran suivant explique comment utiliser un accès au trousseau pour créer un fichier de demande de signature de certificat à charger : 
+2. L’écran suivant explique comment utiliser un accès au trousseau pour créer un fichier de demande de signature de certificat à charger :
 
     [![L’écran de chargement de l’accès au trousseau](certificates-identifiers-images/certif03.png "L’écran de chargement de l’accès au trousseau")](certificates-identifiers-images/certif03-large.png#lightbox)
-3. Choisissez un nom commun significatif pour le certificat, afin qu’il soit facilement reconnaissable ultérieurement une fois le certificat final créé. Rappelez-vous où le fichier est enregistré, afin de pouvoir le trouver à la prochaine étape : 
+3. Choisissez un nom commun significatif pour le certificat, afin qu’il soit facilement reconnaissable ultérieurement une fois le certificat final créé. Rappelez-vous où le fichier est enregistré, afin de pouvoir le trouver à la prochaine étape :
 
-     ![Exportation d’un certificat](certificates-identifiers-images/image12.png "Exportation d’un certificat")
-4. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau), car il doit être choisi à la prochaine étape : 
+    ![Exportation d’un certificat](certificates-identifiers-images/image12.png "Exportation d’un certificat")
+4. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau), car il doit être choisi à la prochaine étape :
 
-     [![Chargement du fichier de certificat](certificates-identifiers-images/image13.png "Chargement du fichier de certificat")](certificates-identifiers-images/image13-large.png#lightbox)
-5. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau** : 
+    [![Chargement du fichier de certificat](certificates-identifiers-images/image13.png "Chargement du fichier de certificat")](certificates-identifiers-images/image13-large.png#lightbox)
+5. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau** :
 
-     [![Téléchargement d’un certificat de développement](certificates-identifiers-images/image15.png "Téléchargement d’un certificat de développement")](certificates-identifiers-images/image15-large.png#lightbox)
-6. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**. L’utilitaire **Developer Certificate Utility** affiche le certificat comme suit : 
+    [![Téléchargement d’un certificat de développement](certificates-identifiers-images/image15.png "Téléchargement d’un certificat de développement")](certificates-identifiers-images/image15-large.png#lightbox)
+6. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**. L’utilitaire **Developer Certificate Utility** affiche le certificat comme suit :
 
-     [![Developer Certificate Utility](certificates-identifiers-images/image16.png "Developer Certificate Utility")](certificates-identifiers-images/image16-large.png#lightbox)
-7. Il s’affiche également dans le **trousseau** comme suit : 
+    [![Developer Certificate Utility](certificates-identifiers-images/image16.png "Developer Certificate Utility")](certificates-identifiers-images/image16-large.png#lightbox)
+7. Il s’affiche également dans le **trousseau** comme suit :
 
-     ![Certificat dans l’accès au trousseau](certificates-identifiers-images/image17.png "Certificat dans l’accès au trousseau")
+    ![Certificat dans l’accès au trousseau](certificates-identifiers-images/image17.png "Certificat dans l’accès au trousseau")
 
 Comme mentionné précédemment, le certificat de développeur n’est pas toujours obligatoire, sauf si le développeur implémente des fonctionnalités macOS comme iCloud et les notifications Push. Il est également obligatoire pour créer un **profil de provisionnement de développement**, qui sera nécessaire pour tester les applications Mac App Store.
 
@@ -133,41 +133,41 @@ Comme mentionné précédemment, le certificat de développeur n’est pas toujo
 
 Pour publier une application sur l’App Store, le certificat **Mac App Store** qui sera utilisé pour signer l’application et le paquet d’installation Mac doit être créé.
 
-1. Sélectionnez **Mac App Store** comme type de certificat, puis cliquez sur le bouton **Continue** : 
+1. Sélectionnez **Mac App Store** comme type de certificat, puis cliquez sur le bouton **Continue** :
 
     [![Création d’un certificat App Store](certificates-identifiers-images/certif04.png "Création d’un certificat App Store")](certificates-identifiers-images/certif04-large.png#lightbox)
-2. Sélectionnez le type de certificat à créer (un de chaque type est nécessaire pour une publication sur l’App Store) : 
+2. Sélectionnez le type de certificat à créer (un de chaque type est nécessaire pour une publication sur l’App Store) :
 
     [![Sélection du type de certificat](certificates-identifiers-images/certif05.png "Sélection du type de certificat")](certificates-identifiers-images/certif05-large.png#lightbox)
-3. La page suivante explique comment utiliser l’**accès au trousseau** pour générer un fichier de demande de certificat. Suivez les instructions spécifiées : 
+3. La page suivante explique comment utiliser l’**accès au trousseau** pour générer un fichier de demande de certificat. Suivez les instructions spécifiées :
 
-     [![Génération de la demande de trousseau](certificates-identifiers-images/certif06.png "Génération de la demande de trousseau")](certificates-identifiers-images/certif06-large.png#lightbox)
-4. Choisissez un nom **Common Name** descriptif ; par exemple, utilisez le texte « Application de l’App Store » dans le nom : 
+    [![Génération de la demande de trousseau](certificates-identifiers-images/certif06.png "Génération de la demande de trousseau")](certificates-identifiers-images/certif06-large.png#lightbox)
+4. Choisissez un nom **Common Name** descriptif ; par exemple, utilisez le texte « Application de l’App Store » dans le nom :
 
-     ![Entrée d’un nom descriptif](certificates-identifiers-images/image20.png "Entrée d’un nom descriptif")
-5. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) : 
+    ![Entrée d’un nom descriptif](certificates-identifiers-images/image20.png "Entrée d’un nom descriptif")
+5. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) :
 
-     [![Enregistrement du certificat](certificates-identifiers-images/image21.png "Enregistrement du certificat")](certificates-identifiers-images/image21-large.png#lightbox)
-6. Cliquez sur **Download** pour obtenir votre certificat, puis double-cliquez dessus pour l’installer dans le **trousseau** : 
+    [![Enregistrement du certificat](certificates-identifiers-images/image21.png "Enregistrement du certificat")](certificates-identifiers-images/image21-large.png#lightbox)
+6. Cliquez sur **Download** pour obtenir votre certificat, puis double-cliquez dessus pour l’installer dans le **trousseau** :
 
-      [![Téléchargement du certificat App Store](certificates-identifiers-images/image23.png "Téléchargement du certificat App Store")](certificates-identifiers-images/image23-large.png#lightbox)
-7. Cliquez sur **Continue**, puis suivez exactement les mêmes étapes pour télécharger un autre certificat qui, cette fois, sera pour le *programme d’installation* : 
+    [![Téléchargement du certificat App Store](certificates-identifiers-images/image23.png "Téléchargement du certificat App Store")](certificates-identifiers-images/image23-large.png#lightbox)
+7. Cliquez sur **Continue**, puis suivez exactement les mêmes étapes pour télécharger un autre certificat qui, cette fois, sera pour le *programme d’installation* :
 
-     [![Sélection du programme d’installation](certificates-identifiers-images/image24.png "Sélection du programme d’installation")](certificates-identifiers-images/image24-large.png#lightbox)
-8. Choisissez un nom **Common Name** descriptif ; par exemple, utilisez le texte « Programme d’installation de l’App Store » dans le nom : 
+    [![Sélection du programme d’installation](certificates-identifiers-images/image24.png "Sélection du programme d’installation")](certificates-identifiers-images/image24-large.png#lightbox)
+8. Choisissez un nom **Common Name** descriptif ; par exemple, utilisez le texte « Programme d’installation de l’App Store » dans le nom :
 
-     ![Définition du nom du certificat](certificates-identifiers-images/image25.png "Définition du nom du certificat")
-9. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) : 
+    ![Définition du nom du certificat](certificates-identifiers-images/image25.png "Définition du nom du certificat")
+9. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) :
 
-     [![Chargement du certificat](certificates-identifiers-images/image26.png "Chargement du certificat")](certificates-identifiers-images/image26-large.png#lightbox) 
+    [![Chargement du certificat](certificates-identifiers-images/image26.png "Chargement du certificat")](certificates-identifiers-images/image26-large.png#lightbox)
 
-     [![Téléchargement du certificat de distribution](certificates-identifiers-images/image28.png "Téléchargement du certificat de distribution")](certificates-identifiers-images/image28-large.png#lightbox)
-10. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**. L’utilitaire Developer Certificate Utility affiche le certificat comme suit : 
+    [![Téléchargement du certificat de distribution](certificates-identifiers-images/image28.png "Téléchargement du certificat de distribution")](certificates-identifiers-images/image28-large.png#lightbox)
+10. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**. L’utilitaire Developer Certificate Utility affiche le certificat comme suit :
 
-     [![Developer Certificate Utility](certificates-identifiers-images/image29.png "Developer Certificate Utility")](certificates-identifiers-images/image29-large.png#lightbox)
-11. Les deux nouveaux certificats sont maintenant visibles dans le **trousseau** : 
+    [![Developer Certificate Utility](certificates-identifiers-images/image29.png "Developer Certificate Utility")](certificates-identifiers-images/image29-large.png#lightbox)
+11. Les deux nouveaux certificats sont maintenant visibles dans le **trousseau** :
 
-     [![Certificat dans l’accès au trousseau](certificates-identifiers-images/image30.png "Certificat dans l’accès au trousseau")](certificates-identifiers-images/image30-large.png#lightbox)
+    [![Certificat dans l’accès au trousseau](certificates-identifiers-images/image30.png "Certificat dans l’accès au trousseau")](certificates-identifiers-images/image30-large.png#lightbox)
 
 #### <a name="developer-id-certificates"></a>Certificats d’ID de développeur
 
@@ -175,41 +175,41 @@ Pour publier automatiquement une application Xamarin.Mac (et ne pas la publier p
 
 Effectuez les étapes suivantes :
 
-1. Dans la section **Certificates**, commencez par cliquer sur le bouton **+** , puis sélectionnez la case d’option **Developer ID** : 
+1. Dans la section **Certificates**, commencez par cliquer sur le bouton **+** , puis sélectionnez la case d’option **Developer ID** :
 
     [![Ajout d’un ID de développeur](certificates-identifiers-images/certif07.png "Ajout d’un ID de développeur")](certificates-identifiers-images/certif07-large.png#lightbox)
-2. Cliquez sur le bouton **Continue**, puis sélectionnez le type d’ID de développeur à créer : 
+2. Cliquez sur le bouton **Continue**, puis sélectionnez le type d’ID de développeur à créer :
 
     [![Sélection du type d’ID de développeur](certificates-identifiers-images/certif08.png "Sélection du type d’ID de développeur")](certificates-identifiers-images/certif08-large.png#lightbox)
 3. Il en faudra deux : un pour signer l’application elle-même et un autre pour signer le programme d’installation de l’application. Soyez prudent quand vous nommez les demandes de certificat pour ces clés : utilisez des noms descriptifs qui contiennent le texte `Application` et `Installer` afin qu’ils puissent être distingués ultérieurement.
-4. L’écran suivant fournit des instructions détaillées sur la façon de créer le certificat. Cliquez sur le bouton **Continue** : 
+4. L’écran suivant fournit des instructions détaillées sur la façon de créer le certificat. Cliquez sur le bouton **Continue** :
 
     [![Comment créer le certificat](certificates-identifiers-images/certif09.png "Comment créer le certificat")](certificates-identifiers-images/certif09-large.png#lightbox)
-5. Choisissez un nom **Common Name** descriptif ; par exemple, utilisez le texte « Application de l’ID du développeur » dans le nom : 
+5. Choisissez un **nom commun** descriptif. par exemple, utilisez le texte « application d’ID de développeur » dans le nom :
 
-     ![Entrée d’un nom pour le certificat](certificates-identifiers-images/image33.png "Entrée d’un nom pour le certificat")
-6. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur votre Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) : 
+    ![Entrée d’un nom pour le certificat](certificates-identifiers-images/image33.png "Entrée d’un nom pour le certificat")
+6. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur votre Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) :
 
-     [![Chargement du certificat](certificates-identifiers-images/certif10.png "Chargement du certificat")](certificates-identifiers-images/certif10-large.png#lightbox) 
+    [![Chargement du certificat](certificates-identifiers-images/certif10.png "Chargement du certificat")](certificates-identifiers-images/certif10-large.png#lightbox)
 
-     [![Téléchargement de l’ID de développeur](certificates-identifiers-images/certif11.png "Téléchargement de l’ID de développeur")](certificates-identifiers-images/certif11-large.png#lightbox)
+    [![Téléchargement de l’ID de développeur](certificates-identifiers-images/certif11.png "Téléchargement de l’ID de développeur")](certificates-identifiers-images/certif11-large.png#lightbox)
 7. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**.
 8. Cliquez sur **Continue**, puis suivez exactement les mêmes étapes pour télécharger un autre certificat qui, cette fois, sera pour le *programme d’installation*.
-9. Choisissez un nom **Common Name** descriptif ; par exemple, utilisez le texte « Programme d’installation de l’ID du développeur » dans le nom : 
+9. Choisissez un **nom commun** descriptif. par exemple, utilisez le texte « programme d’installation de l’ID du développeur » dans le nom :
 
-     ![Entrée d’un nom commun](certificates-identifiers-images/image38.png "Entrée d’un nom commun")
-10. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) : 
+    ![Entrée d’un nom commun](certificates-identifiers-images/image38.png "Entrée d’un nom commun")
+10. Un fichier de demande de certificat (extension `.certSigningRequest`) est enregistré localement sur le Mac. Rappelez-vous où il est enregistré (l’emplacement par défaut est le bureau) :
 
-     [![Chargement d’un certificat](certificates-identifiers-images/certif10.png "Chargement d’un certificat")](certificates-identifiers-images/certif10-large.png#lightbox)
-11. Le certificat peut alors être téléchargé : cliquez sur le bouton **Download** avant de cliquer sur **Done** : 
+    [![Chargement d’un certificat](certificates-identifiers-images/certif10.png "Chargement d’un certificat")](certificates-identifiers-images/certif10-large.png#lightbox)
+11. Le certificat peut alors être téléchargé : cliquez sur le bouton **Download** avant de cliquer sur **Done** :
 
-     [![Téléchargement d’un certificat](certificates-identifiers-images/certif11.png "Téléchargement d’un certificat")](certificates-identifiers-images/certif11-large.png#lightbox)
-12. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**. L’utilitaire **Developer Certificate Utility** affiche le certificat comme suit : 
+    [![Téléchargement d’un certificat](certificates-identifiers-images/certif11.png "Téléchargement d’un certificat")](certificates-identifiers-images/certif11-large.png#lightbox)
+12. Cliquez sur **Download** pour obtenir le certificat, puis double-cliquez dessus pour l’installer dans le **trousseau**. L’utilitaire **Developer Certificate Utility** affiche le certificat comme suit :
 
-     [![Developer Certificate Utility](certificates-identifiers-images/certif12.png "Developer Certificate Utility")](certificates-identifiers-images/certif12-large.png#lightbox)
-13. Les éléments suivants sont visibles dans le **trousseau** : 
+    [![Developer Certificate Utility](certificates-identifiers-images/certif12.png "Developer Certificate Utility")](certificates-identifiers-images/certif12-large.png#lightbox)
+13. Les éléments suivants sont visibles dans le **trousseau** :
 
-     [![Certificat dans l’accès au trousseau](certificates-identifiers-images/image43.png "Certificat dans l’accès au trousseau")](certificates-identifiers-images/image43-large.png#lightbox)
+    [![Certificat dans l’accès au trousseau](certificates-identifiers-images/image43.png "Certificat dans l’accès au trousseau")](certificates-identifiers-images/image43-large.png#lightbox)
 
 
 ## <a name="related-links"></a>Liens associés

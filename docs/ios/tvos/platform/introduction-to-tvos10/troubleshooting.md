@@ -4,19 +4,19 @@ description: Cet article fournit plusieurs conseils de dépannage pour l’utili
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 54a4bf2a6f575a55ce9dde8ec87c93e0d56acf9c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c734bfdd1baaf89cf25d687657e5f14bdbc7834c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657410"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283443"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Dépannage des applications tvOS 10 générées avec Xamarin
 
-Les sections suivantes répertorient certains problèmes connus qui peuvent se produire lors de l’utilisation de tvOS 10 avec Xamarin et la solution à ces problèmes:
+Les sections suivantes répertorient certains problèmes connus qui peuvent se produire lors de l’utilisation de tvOS 10 avec Xamarin et la solution à ces problèmes :
 
 - [App Store](#App-Store)
 - [Compatibilité binaire](#Binary-Compatibility)
@@ -57,7 +57,7 @@ La `HTTPBodyStream` propriété de la `NSMutableURLRequest` classe doit être d�
 
 ## <a name="cloudkit"></a>CloudKit
 
-Les opérations de longue durée renverront un _«vous n’êtes pas autorisé à enregistrer le fichier»._ Erreurs.
+Les opérations de longue durée renverront un _« vous n’êtes pas autorisé à enregistrer le fichier »._ Erreurs.
 
 <a name="CoreImage" />
 

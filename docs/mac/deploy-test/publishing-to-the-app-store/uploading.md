@@ -4,15 +4,15 @@ description: Ce document décrit comment utiliser iTunes Connect pour charger un
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: fa5c8a72a469f1a798cbdcfc63c07860363f6608
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: b0bb58fee1c9eaeee391b3a838b3fa2921e97a57
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109846"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284257"
 ---
 # <a name="upload-to-mac-app-store"></a>Charger sur le Mac App Store
 
@@ -102,5 +102,5 @@ Une fois l’application approuvée, elle peut être téléchargée ou achetée 
 - [Installation](~//mac/get-started/installation.md)
 - [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
-- [Guide sur les outils : Signature du code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
+- [Guide des outils : Signature de code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

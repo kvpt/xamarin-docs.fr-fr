@@ -1,25 +1,25 @@
 ---
-title: 'Partie 3: configuration d’une solution multiplateforme Xamarin'
+title: 'Partie 3 : configuration d’une solution multiplateforme Xamarin'
 description: Ce document explique comment configurer une solution multiplateforme dans Xamarin. Il aborde les différentes stratégies de partage de code, telles que les projets partagés et les .NET Standard.
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: a33c924df3da8642f4b765868f213e6e196f7866
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f8b8f13f323f404554ca73c3e75c23713e0fbe35
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526806"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288845"
 ---
-# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Partie 3: configuration d’une solution multiplateforme Xamarin
+# <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Partie 3 : configuration d’une solution multiplateforme Xamarin
 
 Quelles que soient les plateformes utilisées, les projets Xamarin utilisent tous le même format de fichier de solution (le format de fichier de Visual Studio **. sln** ). Les solutions peuvent être partagées entre les environnements de développement, même si des projets individuels ne peuvent pas être chargés (par exemple, un projet Windows dans Visual Studio pour Mac).
 
 
 
-Lors de la création d’une nouvelle application multiplateforme, la première étape consiste à créer une solution vide. Cette section explique ce qui se passe ensuite: configuration des projets pour la création d’applications mobiles multiplateforme.
+Lors de la création d’une nouvelle application multiplateforme, la première étape consiste à créer une solution vide. Cette section explique ce qui se passe ensuite : configuration des projets pour la création d’applications mobiles multiplateforme.
 
  <a name="Sharing_Code" />
 
@@ -63,10 +63,10 @@ Les bibliothèques de .NET Standard peuvent être créées et utilisées comme c
 ## <a name="populating-the-solution"></a>Remplissage de la solution
 
 Quelle que soit la méthode utilisée pour partager du code, la structure globale de la solution doit implémenter une architecture en couches qui encourage le partage de code.
-L’approche Xamarin consiste à regrouper le code en deux types de projets:
+L’approche Xamarin consiste à regrouper le code en deux types de projets :
 
 - **Projet de base** : écrivez du code réutilisable à un seul endroit, pour le partager entre différentes plateformes. Utilisez les principes de l’encapsulation pour masquer les détails de l’implémentation dans la mesure du possible.
-- **Projets d’application spécifiques** à la plateforme: consomment le code réutilisable avec le moins de couplage possible. Les fonctionnalités spécifiques à la plateforme sont ajoutées à ce niveau, basées sur les composants exposés dans le projet de base.
+- **Projets d’application spécifiques** à la plateforme : consomment le code réutilisable avec le moins de couplage possible. Les fonctionnalités spécifiques à la plateforme sont ajoutées à ce niveau, basées sur les composants exposés dans le projet de base.
 
 
  <a name="Core_Project" />
@@ -76,7 +76,7 @@ L’approche Xamarin consiste à regrouper le code en deux types de projets:
 
 Les projets de code partagé doivent uniquement faire référence à des assemblys disponibles sur toutes les plateformes, par ex. les espaces de noms Common Framework `System`, `System.Core` tels `System.Xml`que et.
 
-Les projets partagés doivent implémenter autant de fonctionnalités non-interface utilisateur que possible, qui peut inclure les couches suivantes:
+Les projets partagés doivent implémenter autant de fonctionnalités non-interface utilisateur que possible, qui peut inclure les couches suivantes :
 
 - **Couche de données** : code qui prend en charge le stockage de données physiques par exemple.  [SQLite-net](https://github.com/praeclarum/sqlite-net), une autre base de données comme [Realm.IO](https://realm.io/products/realm-mobile-database/) ou même des fichiers XML. Les classes de la couche de données sont normalement utilisées uniquement par la couche d’accès aux données.
 - **Couche d’accès aux données** : définit une API qui prend en charge les opérations de données requises pour les fonctionnalités de l’application, telles que les méthodes d’accès aux listes de données, les éléments de données individuels et également les créer, les modifier et les supprimer.
@@ -91,7 +91,7 @@ Les projets partagés doivent implémenter autant de fonctionnalités non-interf
 
 Les projets spécifiques à la plateforme doivent faire référence aux assemblys requis pour la liaison au kit de développement logiciel (SDK) de chaque plateforme (Xamarin. iOS, Xamarin. Android, Xamarin. Mac ou Windows), ainsi qu’au projet de code partagé principal.
 
-Les projets spécifiques à la plateforme doivent implémenter:
+Les projets spécifiques à la plateforme doivent implémenter :
 
 - **Couche application** : fonctionnalités spécifiques à la plateforme et liaison/conversion entre les objets de la couche métier et l’interface utilisateur.
 - **Couche d’interface utilisateur** : écrans, contrôles d’interface utilisateur personnalisés, présentation de la logique de validation.
@@ -100,13 +100,13 @@ Les projets spécifiques à la plateforme doivent implémenter:
 <a name="Example" />
 
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
-L’architecture de l’application est illustrée dans ce diagramme:
+L’architecture de l’application est illustrée dans ce diagramme :
 
  [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "L’architecture de l’application est illustrée dans ce diagramme")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
-Cette capture d’écran illustre la configuration d’une solution avec le projet de base partagé, iOS et les projets d’application Android. Le projet partagé contient le code relatif à chacune des couches architecturales (entreprise, service, données et code d’accès aux données):
+Cette capture d’écran illustre la configuration d’une solution avec le projet de base partagé, iOS et les projets d’application Android. Le projet partagé contient le code relatif à chacune des couches architecturales (entreprise, service, données et code d’accès aux données) :
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Le projet partagé contient le code relatif à chacune des couches architecturales (entreprise, service, données et code d’accès aux données)")
 
@@ -119,7 +119,7 @@ Cette capture d’écran illustre la configuration d’une solution avec le proj
 Les références de projet reflètent les dépendances d’un projet. Les projets de base limitent leurs références aux assemblys communs afin que le code soit facile à partager.
 Les projets d’application spécifiques à la plateforme référencent le code partagé, ainsi que tous les assemblys spécifiques à la plateforme dont ils ont besoin pour tirer parti de la plateforme cible.
 
-L’application projette chaque projet partagé de référence et contient le code de l’interface utilisateur requis pour présenter les fonctionnalités à l’utilisateur, comme indiqué dans les captures d’écran suivantes:
+L’application projette chaque projet partagé de référence et contient le code de l’interface utilisateur requis pour présenter les fonctionnalités à l’utilisateur, comme indiqué dans les captures d’écran suivantes :
 
 ![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Les projets de l’application de chaque référence de projet partagé") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "l’application projette chaque référence de projet partagé")
 
@@ -136,14 +136,14 @@ Des exemples spécifiques de la façon dont les projets doivent être structuré
 
 ### <a name="build-action"></a>Action de génération
 
-Il est important de définir l’action de génération correcte pour certains types de fichiers. Cette liste affiche l’action de génération pour certains types de fichiers courants:
+Il est important de définir l’action de génération correcte pour certains types de fichiers. Cette liste affiche l’action de génération pour certains types de fichiers courants :
 
-- **Tous C# les fichiers** – action de génération: Compile
-- **Images dans Xamarin. iOS & Windows** – action de génération: Contenu
-- **Fichiers XIB et Storyboard dans Xamarin. iOS** – action de génération: InterfaceDefinition
-- **Images et dispositions AXML dans Android** – action de génération: AndroidResource
-- **Fichiers XAML dans les projets Windows** – action de génération: Page
-- **Fichiers XAML Xamarin. Forms** – action de génération: EmbeddedResource
+- **Tous C# les fichiers** – action de génération : Compile
+- **Images dans Xamarin. iOS & Windows** – action de génération : Contenu
+- **Fichiers XIB et Storyboard dans Xamarin. iOS** – action de génération : InterfaceDefinition
+- **Images et dispositions AXML dans Android** – action de génération : AndroidResource
+- **Fichiers XAML dans les projets Windows** – action de génération : Page
+- **Fichiers XAML Xamarin. Forms** – action de génération : EmbeddedResource
 
 
 En général, l’IDE détecte le type de fichier et suggère l’action de génération correcte.

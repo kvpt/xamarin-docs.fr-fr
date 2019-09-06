@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser les contrôles de page tvOS d
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: decbbdab09b514bd49784f6ba45575ae845c547f
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: ec4b99fd1c8ec28f6b4bbb30695613da6c40d60c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226476"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288951"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Utilisation des contrôles de page tvOS dans Xamarin
 
@@ -22,7 +22,7 @@ Parfois, vous devrez peut-être afficher une série de pages ou d’images dans 
 
 Contrôle de page dans un élément non interactif conçu pour fournir des commentaires à l’utilisateur uniquement. Vous devrez ajouter d’autres contrôles pour modifier le numéro de page actuel (tels que les gestes ou les boutons).
 
-Apple présente les suggestions suivantes lors de l’utilisation d’un contrôle de page:
+Apple présente les suggestions suivantes lors de l’utilisation d’un contrôle de page :
 
 - **Utilisation sur les collections entières uniquement** : les contrôles de page fonctionnent mieux dans un environnement plein écran pour afficher plusieurs pages qui existent dans une collection unique.
 - **Limitez le nombre de contrôles de page de pages** au mieux pour dix (10) ou moins de pages, et un maximum de vingt (20) pages. Pour plus de vingt pages, envisagez d’utiliser une [vue de collection](~/ios/tvos/user-interface/collection-views.md) et d’afficher les pages dans une grille.
@@ -37,7 +37,7 @@ Le moyen le plus simple d’utiliser les contrôles de page dans une application
 
 
 1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue:
+1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue :
 
     [![](page-controls-images/page02.png "Contrôle de page")](page-controls-images/page02.png#lightbox)
 1. Dans l' **onglet widget** du **panneau Propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**:
@@ -54,7 +54,7 @@ Le moyen le plus simple d’utiliser les contrôles de page dans une application
 
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue:
+1. Faites glisser un **contrôle page** de la **boîte à outils** et déposez-le sur la vue :
 
     [![](page-controls-images/page02-vs.png "Contrôle de page")](page-controls-images/page02-vs.png#lightbox)
 1. Dans l' **onglet widget** de l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle de page, telles que sa **page actuelle** et le **nombre de pages**:
@@ -146,13 +146,13 @@ namespace MySingleView
 }
 ```
 
-Examinons de plus près deux propriétés du contrôle page. Tout d’abord, pour spécifier le nombre maximal de pages, utilisez ce qui suit:
+Examinons de plus près deux propriétés du contrôle page. Tout d’abord, pour spécifier le nombre maximal de pages, utilisez ce qui suit :
 
 ```csharp
 PageView.Pages = 6;
 ```
 
-Pour modifier le numéro de page actuel, utilisez le code suivant:
+Pour modifier le numéro de page actuel, utilisez le code suivant :
 
 ```csharp
 PageView.CurrentPage = PageNumber;

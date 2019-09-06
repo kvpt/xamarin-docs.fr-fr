@@ -4,15 +4,15 @@ description: Ce document explique comment lire les balises de communication en c
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: c82861a0b4ca00f7c664cd6a920f250ad937d306
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6da32e22fbdb3b5b7d96d7ee93c2f25bba84cd78
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656463"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286625"
 ---
 # <a name="core-nfc-in-xamarinios"></a>NFC principal dans Xamarin. iOS
 
@@ -22,18 +22,18 @@ CoreNFC est une nouvelle infrastructure d’iOS 11 qui fournit l’accès à la 
 
 Le lecteur de balise NFC des appareils iOS prend en charge tous les types de balise NFC 1 à 5 qui contiennent des informations sur le _format d’échange de données NFC_ (ndef).
 
-Certaines restrictions sont à prendre en compte:
+Certaines restrictions sont à prendre en compte :
 
 - CoreNFC prend uniquement en charge la lecture des balises (et non l’écriture ou la mise en forme).
 - Les analyses de balises doivent être initialisées par l’utilisateur et expirer après 60 secondes.
 - Les applications doivent être visibles au premier plan pour l’analyse.
 - CoreNFC peut uniquement être testé sur des appareils réels (pas sur le simulateur).
 
-Cette page décrit la configuration requise pour utiliser CoreNFC et montre comment utiliser l’API à l’aide de l' [exemple de code «NFCTagReader»](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader).
+Cette page décrit la configuration requise pour utiliser CoreNFC et montre comment utiliser l’API à l’aide de l' [exemple de code « NFCTagReader »](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader).
 
 ## <a name="configuration"></a>Configuration
 
-Pour activer CoreNFC, vous devez configurer trois éléments dans votre projet:
+Pour activer CoreNFC, vous devez configurer trois éléments dans votre projet :
 
 - Clé de confidentialité **info. plist** .
 - Entrée **Entitlements. plist** .
@@ -41,7 +41,7 @@ Pour activer CoreNFC, vous devez configurer trois éléments dans votre projet:
 
 ### <a name="infoplist"></a>Info.plist
 
-Ajoutez la clé de confidentialité et le texte **NFCReaderUsageDescription** , qui sont affichés à l’utilisateur pendant l’analyse. Utilisez un message approprié pour votre application (par exemple, Expliquez l’objectif de l’analyse):
+Ajoutez la clé de confidentialité et le texte **NFCReaderUsageDescription** , qui sont affichés à l’utilisateur pendant l’analyse. Utilisez un message approprié pour votre application (par exemple, Expliquez l’objectif de l’analyse) :
 
 ```xml
 <key>NFCReaderUsageDescription</key>
@@ -50,7 +50,7 @@ Ajoutez la clé de confidentialité et le texte **NFCReaderUsageDescription** , 
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-Votre application doit demander la capacité de lecture des balises de **communication en champ proche** à l’aide de la paire clé/valeur suivante dans votre fichier Entitlements **. plist**:
+Votre application doit demander la capacité de **lecture des balises de communication en champ proche** à l’aide de la paire clé/valeur suivante dans votre fichier **Entitlements. plist**:
 
 ```xml
 <key>com.apple.developer.nfc.readersession.formats</key>
@@ -61,7 +61,7 @@ Votre application doit demander la capacité de lecture des balises de **communi
 
 ### <a name="provisioning-profile"></a>Profil de provisionnement
 
-Créez un **ID d’application** et assurez-vous que le service de lecture de **balise NFC** est coché:
+Créez un **ID d’application** et assurez-vous que le service de **lecture de balise NFC** est coché :
 
 [![Portail des développeurs-page nouvel ID d’application avec la lecture de la balise NFC sélectionnée](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
@@ -69,18 +69,18 @@ Vous devez ensuite créer un profil de provisionnement pour cet ID d’applicati
 
 ## <a name="reading-a-tag"></a>Lecture d’une balise
 
-Une fois votre projet configuré, ajoutez `using CoreNFC;` au début du fichier et suivez ces trois étapes pour implémenter la fonctionnalité de lecture des balises NFC:
+Une fois votre projet configuré, ajoutez `using CoreNFC;` au début du fichier et suivez ces trois étapes pour implémenter la fonctionnalité de lecture des balises NFC :
 
 ### <a name="1-implement-infcndefreadersessiondelegate"></a>1. Applique`INFCNdefReaderSessionDelegate`
 
-L’interface possède deux méthodes à implémenter:
+L’interface possède deux méthodes à implémenter :
 
 - `DidDetect`: Appelée lorsqu’une étiquette est correctement lue.
 - `DidInvalidate`: Appelée lorsqu’une erreur se produit ou que le deuxième délai d’expiration de 60 est atteint.
 
 #### <a name="diddetect"></a>DidDetect
 
-Dans l’exemple de code, chaque message numérisé est ajouté à une vue de table:
+Dans l’exemple de code, chaque message numérisé est ajouté à une vue de table :
 
 ```csharp
 public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
@@ -100,14 +100,14 @@ Cette méthode peut être appelée plusieurs fois (et un tableau de messages peu
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
-Une invalidation peut se produire pour plusieurs raisons:
+Une invalidation peut se produire pour plusieurs raisons :
 
 - Une erreur s’est produite lors de l’analyse.
 - L’application a cessé d’être au premier plan.
 - L’utilisateur a choisi d’annuler l’analyse.
 - L’analyse a été annulée par l’application.
 
-Le code ci-dessous montre comment gérer une erreur:
+Le code ci-dessous montre comment gérer une erreur :
 
 ```csharp
 public void DidInvalidate(NFCNdefReaderSession session, NSError error)
@@ -128,27 +128,27 @@ Une fois qu’une session a été invalidée, un nouvel objet de session doit ê
 ### <a name="2-start-an-nfcndefreadersession"></a>2. Démarrer un`NFCNdefReaderSession`
 
 L’analyse doit commencer par une demande de l’utilisateur, par exemple une pression sur un bouton.
-Le code suivant crée et démarre une session d’analyse:
+Le code suivant crée et démarre une session d’analyse :
 
 ```csharp
 Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-Les paramètres `NFCNdefReaderSession` du constructeur sont les suivants:
+Les paramètres `NFCNdefReaderSession` du constructeur sont les suivants :
 
 - `delegate`: Implémentation de `INFCNdefReaderSessionDelegate`. Dans l’exemple de code, le délégué est implémenté dans le contrôleur d’affichage de `this` table. par conséquent, il est utilisé comme paramètre délégué.
 - `queue`: La file d’attente sur laquelle les rappels sont gérés. Il peut s' `null`agir de, auquel cas veillez à utiliser `DispatchQueue.MainQueue` lors de la mise à jour des contrôles de l’interface utilisateur (comme indiqué dans l’exemple).
-- `invalidateAfterFirstRead`: Quand `true`, l’analyse s’arrête après la première analyse réussie; `false` lorsque l’analyse se poursuit et que plusieurs résultats sont retournés jusqu’à ce que l’analyse soit annulée ou que le délai d’expiration de 60 est atteint.
+- `invalidateAfterFirstRead`: Quand `true`, l’analyse s’arrête après la première analyse réussie ; `false` lorsque l’analyse se poursuit et que plusieurs résultats sont retournés jusqu’à ce que l’analyse soit annulée ou que le délai d’expiration de 60 est atteint.
 
 
 ### <a name="3-cancel-the-scanning-session"></a>3. Annuler la session d’analyse
 
-L’utilisateur peut annuler la session d’analyse à l’aide d’un bouton fourni par le système dans l’interface utilisateur:
+L’utilisateur peut annuler la session d’analyse à l’aide d’un bouton fourni par le système dans l’interface utilisateur :
 
 ![Bouton Annuler lors de l’analyse](corenfc-images/scan-cancel-sml.png)
 
-L’application peut annuler l’analyse par programmation en appelant la `InvalidateSession` méthode:
+L’application peut annuler l’analyse par programmation en appelant la `InvalidateSession` méthode :
 
 ```csharp
 Session.InvalidateSession();

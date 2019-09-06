@@ -4,15 +4,15 @@ description: Cet article aborde l’utilisation du codage clé-valeur et de l’
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 893a3f76fe21bfe831ae81ffcd64c1538d9f05e1
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200171"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289121"
 ---
 # <a name="databases-in-xamarinmac"></a>Bases de données dans Xamarin. Mac
 
@@ -22,7 +22,7 @@ _Cet article aborde l’utilisation du codage clé-valeur et de l’observation 
 
 Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes bases de données SQLite auxquelles une application Xamarin. iOS ou Xamarin. Android peut accéder.
 
-Dans cet article, nous allons aborder deux façons d’accéder aux données SQLite:
+Dans cet article, nous allons aborder deux façons d’accéder aux données SQLite :
 
 1. **Accès direct** : en accédant directement à une base de données SQLite, nous pouvons utiliser les données de la base de données pour le codage et la liaison de données clé-valeur avec les éléments d’interface utilisateur créés dans le Interface Builder de Xcode. En utilisant le codage clé-valeur et les techniques de liaison de données dans votre application Xamarin. Mac, vous pouvez réduire la quantité de code que vous devez écrire et maintenir pour remplir et utiliser des éléments d’interface utilisateur. Vous avez également l’avantage de dissocier vos données de stockage (modèle de_données_) de votre interface utilisateur frontale (_Model-View-Controller_), ce qui vous permet de gérer plus facilement la conception d’applications plus souple.
 2. **SQLite.net ORM** : en utilisant le gestionnaire de relations d’objets open source [SQLite.net](http://www.sqlite.org) , nous pouvons réduire la quantité de code nécessaire pour lire et écrire des données à partir d’une base de données SQLite. Ces données peuvent ensuite être utilisées pour remplir un élément d’interface utilisateur tel qu’une vue de table.
@@ -57,7 +57,7 @@ Effectuez ce qui suit :
 
 ### <a name="modifying-the-data-model"></a>Modification du modèle de données
 
-Maintenant que nous avons ajouté la prise en charge de l’accès direct à une base de données SQLite à notre application, nous devons modifier notre objet de modèle de données pour lire et écrire des données à partir de la base de données (et fournir une liaison de données et un codage clé-valeur). Dans le cas de notre exemple d’application, nous allons modifier la classe **PersonModel.cs** et lui donner l’aspect suivant:
+Maintenant que nous avons ajouté la prise en charge de l’accès direct à une base de données SQLite à notre application, nous devons modifier notre objet de modèle de données pour lire et écrire des données à partir de la base de données (et fournir une liaison de données et un codage clé-valeur). Dans le cas de notre exemple d’application, nous allons modifier la classe **PersonModel.cs** et lui donner l’aspect suivant :
 
 ```csharp
 using System;
@@ -420,7 +420,7 @@ namespace MacDatabase
 
 Examinons les modifications en détail ci-dessous.
 
-Tout d’abord, nous avons ajouté plusieurs instructions using nécessaires à l’utilisation de SQLite et nous avons ajouté une variable pour enregistrer notre dernière connexion à la base de données SQLite:
+Tout d’abord, nous avons ajouté plusieurs instructions using nécessaires à l’utilisation de SQLite et nous avons ajouté une variable pour enregistrer notre dernière connexion à la base de données SQLite :
 
 ```csharp
 using System.Data;
@@ -431,7 +431,7 @@ using Mono.Data.Sqlite;
 private SqliteConnection _conn = null;
 ```
 
-Nous allons utiliser cette connexion enregistrée pour enregistrer automatiquement toutes les modifications apportées à l’enregistrement dans la base de données lorsque l’utilisateur modifie le contenu de l’interface utilisateur via la liaison de données:
+Nous allons utiliser cette connexion enregistrée pour enregistrer automatiquement toutes les modifications apportées à l’enregistrement dans la base de données lorsque l’utilisateur modifie le contenu de l’interface utilisateur via la liaison de données :
 
 ```csharp
 [Export("Name")]
@@ -480,7 +480,7 @@ Toutes les modifications apportées aux propriétés **Name**, **occupation** ou
 
 #### <a name="create-a-new-record"></a>Créer un nouvel enregistrement
 
-Le code suivant a été ajouté pour créer un nouvel enregistrement dans la base de données SQLite:
+Le code suivant a été ajouté pour créer un nouvel enregistrement dans la base de données SQLite :
 
 ```csharp
 public void Create(SqliteConnection conn) {
@@ -526,7 +526,7 @@ public void Create(SqliteConnection conn) {
 }
 ```
 
-Nous utilisons un `SQLiteCommand` pour créer le nouvel enregistrement dans la base de données. Nous obtenons une nouvelle commande à `SQLiteConnection` partir du (conn) que nous avons passé dans la `CreateCommand`méthode en appelant. Ensuite, nous définissons l’instruction SQL pour écrire réellement le nouvel enregistrement, en fournissant des paramètres pour les valeurs réelles:
+Nous utilisons un `SQLiteCommand` pour créer le nouvel enregistrement dans la base de données. Nous obtenons une nouvelle commande à `SQLiteConnection` partir du (conn) que nous avons passé dans la `CreateCommand`méthode en appelant. Ensuite, nous définissons l’instruction SQL pour écrire réellement le nouvel enregistrement, en fournissant des paramètres pour les valeurs réelles :
 
 ```csharp
 command.CommandText = "INSERT INTO [People] (ID, Name, Occupation, isManager, ManagerID) VALUES (@COL1, @COL2, @COL3, @COL4, @COL5)";
@@ -538,7 +538,7 @@ Plus tard, nous définissons les valeurs des paramètres `Parameters.AddWithValu
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-Enfin, dans la mesure où une personne peut être responsable et avoir une collection d’employés, nous appelons de manière récursive la `Create` méthode sur ces personnes pour les enregistrer également dans la base de données:
+Enfin, dans la mesure où une personne peut être responsable et avoir une collection d’employés, nous appelons de manière récursive la `Create` méthode sur ces personnes pour les enregistrer également dans la base de données :
 
 ```csharp
 // Save children to database as well
@@ -554,7 +554,7 @@ for (nuint n = 0; n < People.Count; ++n) {
 
 #### <a name="updating-a-record"></a>Mise à jour d’un enregistrement
 
-Le code suivant a été ajouté pour mettre à jour un enregistrement existant dans la base de données SQLite:
+Le code suivant a été ajouté pour mettre à jour un enregistrement existant dans la base de données SQLite :
 
 ```csharp
 public void Update(SqliteConnection conn) {
@@ -594,13 +594,13 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-Comme pour Create ci-dessus `SQLiteCommand` , nous obtenons `SQLiteConnection`un à partir du passé et définissons notre SQL pour mettre à jour notre enregistrement (en fournissant des paramètres):
+Comme pour **Create** ci-dessus `SQLiteCommand` , nous obtenons `SQLiteConnection`un à partir du passé et définissons notre SQL pour mettre à jour notre enregistrement (en fournissant des paramètres) :
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
 ```
 
-Nous remplissons les valeurs des paramètres (exemple `command.Parameters.AddWithValue ("@COL1", ID);`:) et de nouveau, appelons de nouveau la mise à jour de manière récursive sur tous les enregistrements enfants:
+Nous remplissons les valeurs des paramètres (exemple `command.Parameters.AddWithValue ("@COL1", ID);`:) et de nouveau, appelons de nouveau la mise à jour de manière récursive sur tous les enregistrements enfants :
 
 ```csharp
 // Save children to database as well
@@ -615,7 +615,7 @@ for (nuint n = 0; n < People.Count; ++n) {
 
 #### <a name="loading-a-record"></a>Chargement d’un enregistrement
 
-Le code suivant a été ajouté pour charger un enregistrement existant à partir de la base de données SQLite:
+Le code suivant a été ajouté pour charger un enregistrement existant à partir de la base de données SQLite :
 
 ```csharp
 public void Load(SqliteConnection conn, string id) {
@@ -681,7 +681,7 @@ public void Load(SqliteConnection conn, string id) {
 }
 ```
 
-Étant donné que la routine peut être appelée de manière récursive à partir d’un objet parent (tel qu’un objet gestionnaire chargeant son objet Employees), du code spécial a été ajouté pour gérer l’ouverture et la fermeture de la connexion à la base de données:
+Étant donné que la routine peut être appelée de manière récursive à partir d’un objet parent (tel qu’un objet gestionnaire chargeant son objet Employees), du code spécial a été ajouté pour gérer l’ouverture et la fermeture de la connexion à la base de données :
 
 ```csharp
 bool shouldClose = false;
@@ -701,7 +701,7 @@ if (shouldClose) {
 
 ```
 
-Comme toujours, nous avons défini notre SQL pour récupérer l’enregistrement et utiliser les paramètres:
+Comme toujours, nous avons défini notre SQL pour récupérer l’enregistrement et utiliser les paramètres :
 
 ```csharp
 // Create new command
@@ -711,7 +711,7 @@ command.CommandText = "SELECT ID FROM [People] WHERE ManagerID = @COL1";
 command.Parameters.AddWithValue ("@COL1", id);
 ```
 
-Enfin, nous utilisons un lecteur de données pour exécuter la requête et retourner les champs d’enregistrement (que nous copions dans l' `PersonModel` instance de la classe):
+Enfin, nous utilisons un lecteur de données pour exécuter la requête et retourner les champs d’enregistrement (que nous copions dans l' `PersonModel` instance de la classe) :
 
 ```csharp
 using (var reader = command.ExecuteReader ()) {
@@ -726,7 +726,7 @@ using (var reader = command.ExecuteReader ()) {
 }
 ```
 
-Si cette personne est responsable, nous devons également charger tous ses employés (encore une fois, en appelant de manière récursive leur `Load` méthode):
+Si cette personne est responsable, nous devons également charger tous ses employés (encore une fois, en appelant de manière récursive leur `Load` méthode) :
 
 ```csharp
 // Is this a manager?
@@ -753,7 +753,7 @@ if (isManager) {
 
 #### <a name="deleting-a-record"></a>Suppression d’un enregistrement
 
-Le code suivant a été ajouté pour supprimer un enregistrement existant de la base de données SQLite:
+Le code suivant a été ajouté pour supprimer un enregistrement existant de la base de données SQLite :
 
 ```csharp
 public void Delete(SqliteConnection conn) {
@@ -788,7 +788,7 @@ public void Delete(SqliteConnection conn) {
 }
 ```
 
-Ici, nous fournissons le SQL pour supprimer l’enregistrement des responsables et les enregistrements des employés sous ce gestionnaire (à l’aide des paramètres):
+Ici, nous fournissons le SQL pour supprimer l’enregistrement des responsables et les enregistrements des employés sous ce gestionnaire (à l’aide des paramètres) :
 
 ```csharp
 // Create new command
@@ -798,7 +798,7 @@ command.CommandText = "DELETE FROM [People] WHERE (ID = @COL1 OR ManagerID = @CO
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-Une fois l’enregistrement supprimé, nous effacons l’instance actuelle de la `PersonModel` classe:
+Une fois l’enregistrement supprimé, nous effacons l’instance actuelle de la `PersonModel` classe :
 
 ```csharp
 // Empty class
@@ -869,7 +869,7 @@ private SqliteConnection GetDatabaseConnection() {
 }
 ```
 
-Examinons plus en détail le code ci-dessus. Tout d’abord, nous choisissons un emplacement pour la nouvelle base de données (dans cet exemple, le Bureau de l’utilisateur), nous cherchons à déterminer si la base de données existe et, si ce n’est pas le cas, je la crée:
+Examinons plus en détail le code ci-dessus. Tout d’abord, nous choisissons un emplacement pour la nouvelle base de données (dans cet exemple, le Bureau de l’utilisateur), nous cherchons à déterminer si la base de données existe et, si ce n’est pas le cas, je la crée :
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
@@ -881,13 +881,13 @@ if (!exists)
     SqliteConnection.CreateFile (db);
 ```
 
-Ensuite, nous établissons la connexion à la base de données à l’aide du chemin d’accès que nous avons créé ci-dessus:
+Ensuite, nous établissons la connexion à la base de données à l’aide du chemin d’accès que nous avons créé ci-dessus :
 
 ```csharp
 var conn = new SqliteConnection("Data Source=" + db);
 ```
 
-Ensuite, nous créons toutes les tables SQL dans la base de données dont nous avons besoin:
+Ensuite, nous créons toutes les tables SQL dans la base de données dont nous avons besoin :
 
 ```csharp
 var commands = new[] {
@@ -904,7 +904,7 @@ foreach (var cmd in commands) {
 conn.Close ();
 ```
 
-Enfin, nous utilisons notre modèle de données`PersonModel`() pour créer un ensemble d’enregistrements par défaut pour la base de données la première fois que l’application est exécutée ou si la base de données est manquante:
+Enfin, nous utilisons notre modèle de données`PersonModel`() pour créer un ensemble d’enregistrements par défaut pour la base de données la première fois que l’application est exécutée ou si la base de données est manquante :
 
 ```csharp
 // Build list of employees
@@ -921,7 +921,7 @@ Larry.AddPerson (new PersonModel ("Mike Norman", "API Documentor"));
 Larry.Create (conn);
 ``` 
 
-Lorsque l’application démarre et ouvre la fenêtre principale, nous établissons une connexion à la base de données à l’aide du code que nous avons ajouté précédemment:
+Lorsque l’application démarre et ouvre la fenêtre principale, nous établissons une connexion à la base de données à l’aide du code que nous avons ajouté précédemment :
 
 ```csharp
 public override void AwakeFromNib ()
@@ -939,7 +939,7 @@ Avec tous les composants permettant d’accéder directement aux données liées
 
 #### <a name="loading-a-single-record"></a>Chargement d’un seul enregistrement
 
-Pour charger un seul enregistrement dans lequel l’ID est connu, nous pouvons utiliser le code suivant:
+Pour charger un seul enregistrement dans lequel l’ID est connu, nous pouvons utiliser le code suivant :
 
 ```csharp
 Person = new PersonModel (Conn, "0");
@@ -947,7 +947,7 @@ Person = new PersonModel (Conn, "0");
 
 #### <a name="loading-all-records"></a>Chargement de tous les enregistrements
 
-Pour charger toutes les personnes, qu’il s’agit ou non d’un responsable, utilisez le code suivant:
+Pour charger toutes les personnes, qu’il s’agit ou non d’un responsable, utilisez le code suivant :
 
 ```csharp
 // Load all employees
@@ -969,13 +969,13 @@ _conn.Close ();
 
 ```
 
-Ici, nous utilisons une surcharge du constructeur pour la `PersonModel` classe pour charger la personne en mémoire:
+Ici, nous utilisons une surcharge du constructeur pour la `PersonModel` classe pour charger la personne en mémoire :
 
 ```csharp
 var person = new PersonModel (_conn, childID);
 ```
 
-Nous appelons également la classe liée aux données pour ajouter la personne à notre collection de personnes `AddPerson (person)`. cela garantit que notre interface utilisateur reconnaît la modification et l’affiche:
+Nous appelons également la classe liée aux données pour ajouter la personne à notre collection de personnes `AddPerson (person)`. cela garantit que notre interface utilisateur reconnaît la modification et l’affiche :
 
 ```csharp
 [Export("addObject:")]
@@ -989,7 +989,7 @@ public void AddPerson(PersonModel person) {
 
 #### <a name="loading-top-level-records-only"></a>Chargement des enregistrements de niveau supérieur uniquement
 
-Pour charger uniquement les gestionnaires (par exemple, pour afficher les données dans un mode plan), nous utilisons le code suivant:
+Pour charger uniquement les gestionnaires (par exemple, pour afficher les données dans un mode plan), nous utilisons le code suivant :
 
 ```csharp
 // Load only managers employees
@@ -1018,19 +1018,19 @@ La seule différence réelle dans l’instruction SQL (qui charge uniquement les
 
 Les contrôles de menu disponibles pour macOS (tels que la zone de liste modifiable) peuvent être configurés pour remplir la liste déroulante à partir d’une liste interne (qui peut être prédéfinie dans Interface Builder ou renseignée via du code) ou en fournissant votre propre source de données externe personnalisée. Pour plus d’informations, consultez [fourniture de données de contrôle de menu](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data) .
 
-Par exemple, modifiez l’exemple de liaison simple ci-dessus dans Interface Builder, ajoutez une zone de liste déroulante et `EmployeeSelector`exposez-la à l’aide d’une prise nommée:
+Par exemple, modifiez l’exemple de liaison simple ci-dessus dans Interface Builder, ajoutez une zone de liste déroulante et `EmployeeSelector`exposez-la à l’aide d’une prise nommée :
 
-[![Exposition d’une prise de zone de liste] déroulante (databases-images/combo01.png "Exposition d’une prise de zone de liste") déroulante](databases-images/combo01-large.png#lightbox)
+[![Exposition d’une prise de zone de liste déroulante](databases-images/combo01.png "Exposition d’une prise de zone de liste déroulante")](databases-images/combo01-large.png#lightbox)
 
 Dans l' **inspecteur d’attributs**, cochez la case **saisie semi-automatique** et utiliser les propriétés de la **source de données** :
 
-![Configuration des attributs de zone de liste] déroulante (databases-images/combo02.png "Configuration des attributs de zone de liste") déroulante
+![Configuration des attributs de zone de liste déroulante](databases-images/combo02.png "Configuration des attributs de zone de liste déroulante")
 
 Enregistrez vos modifications et revenez à Visual Studio pour Mac à synchroniser.
 
 #### <a name="providing-combobox-data"></a>Fourniture de données de zone de liste modifiable
 
-Ensuite, ajoutez une nouvelle classe au projet appelé `ComboBoxDataSource` et faites-lui ressembler à ceci:
+Ensuite, ajoutez une nouvelle classe au projet appelé `ComboBoxDataSource` et faites-lui ressembler à ceci :
 
 ```csharp
 using System;
@@ -1399,7 +1399,7 @@ namespace MacDatabase
 }
 ```
 
-Dans cet exemple, nous créons un nouveau `NSComboBoxDataSource` qui peut présenter des éléments de zone de liste déroulante à partir de n’importe quelle source de données SQLite. Tout d’abord, nous définissons les propriétés suivantes:
+Dans cet exemple, nous créons un nouveau `NSComboBoxDataSource` qui peut présenter des éléments de zone de liste déroulante à partir de n’importe quelle source de données SQLite. Tout d’abord, nous définissons les propriétés suivantes :
 
 - `Conn`-Obtient ou définit une connexion à la base de données SQLite.
 - `TableName`-Obtient ou définit le nom de la table.
@@ -1407,7 +1407,7 @@ Dans cet exemple, nous créons un nouveau `NSComboBoxDataSource` qui peut prése
 - `DisplayField`-Obtient ou définit le champ affiché dans la liste déroulante.
 - `RecordCount`-Obtient le nombre d’enregistrements dans la table donnée.
 
-Lorsque nous créons une nouvelle instance de l’objet, nous passons la connexion, le nom de la table, éventuellement le champ ID et le champ d’affichage:
+Lorsque nous créons une nouvelle instance de l’objet, nous passons la connexion, le nom de la table, éventuellement le champ ID et le champ d’affichage :
 
 ```csharp
 public ComboBoxDataSource (SqliteConnection conn, string tableName, string displayField)
@@ -1419,7 +1419,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-La `GetRecordCount` méthode retourne le nombre d’enregistrements dans la table donnée:
+La `GetRecordCount` méthode retourne le nombre d’enregistrements dans la table donnée :
 
 ```csharp
 private nint GetRecordCount ()
@@ -1463,7 +1463,7 @@ private nint GetRecordCount ()
 
 Elle est appelée chaque fois que `TableName`la `IDField` valeur `DisplayField` de propriété, ou est modifiée.
 
-La `IDForIndex` méthode retourne l’ID unique (`IDField`) de l’enregistrement à l’index de l’élément de liste déroulante donné: 
+La `IDForIndex` méthode retourne l’ID unique (`IDField`) de l’enregistrement à l’index de l’élément de liste déroulante donné : 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1504,7 +1504,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-La `ValueForIndex` méthode retourne la valeur (`DisplayField`) pour l’élément à l’index de liste déroulante donné:
+La `ValueForIndex` méthode retourne la valeur (`DisplayField`) pour l’élément à l’index de liste déroulante donné :
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1545,7 +1545,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-La `IDForValue` méthode retourne l’ID unique (`IDField`) de la valeur donnée (`DisplayField`):
+La `IDForValue` méthode retourne l’ID unique (`IDField`) de la valeur donnée (`DisplayField`) :
 
 ```csharp
 public string IDForValue (string value)
@@ -1589,7 +1589,7 @@ public string IDForValue (string value)
 }
 ```
 
-Le `ItemCount` retourne le nombre d’éléments précalculés dans la liste, tel qu’il `TableName`est calculé `DisplayField` lorsque les propriétés, `IDField` ou sont modifiées:
+Le `ItemCount` retourne le nombre d’éléments précalculés dans la liste, tel qu’il `TableName`est calculé `DisplayField` lorsque les propriétés, `IDField` ou sont modifiées :
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1598,7 +1598,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-La `ObjectValueForItem` méthode fournit la valeur (`DisplayField`) pour l’index de l’élément de liste déroulante donné:
+La `ObjectValueForItem` méthode fournit la valeur (`DisplayField`) pour l’index de l’élément de liste déroulante donné :
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1641,7 +1641,7 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 
 Notez que nous utilisons les `LIMIT` instructions et `OFFSET` dans notre commande SQLite pour limiter à un enregistrement dont nous avons besoin.
 
-La `IndexOfItem` méthode retourne l’index de l’élément de liste`DisplayField`déroulante de la valeur () donnée:
+La `IndexOfItem` méthode retourne l’index de l’élément de liste`DisplayField`déroulante de la valeur () donnée :
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1693,7 +1693,7 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 
 Si la valeur est introuvable, `NSRange.NotFound` la valeur est retournée et tous les éléments sont désélectionnés dans la liste déroulante.
 
-La `CompletedString` méthode retourne la première valeur correspondante (`DisplayField`) pour une entrée partiellement typée:
+La `CompletedString` méthode retourne la première valeur correspondante (`DisplayField`) pour une entrée partiellement typée :
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1743,7 +1743,7 @@ public override string CompletedString (NSComboBox comboBox, string uncompletedS
 
 #### <a name="displaying-data-and-responding-to-events"></a>Affichage des données et réponse aux événements
 
-Pour regrouper tous les éléments, modifiez le `SubviewSimpleBindingController` et faites-le ressembler à ce qui suit:
+Pour regrouper tous les éléments, modifiez le `SubviewSimpleBindingController` et faites-le ressembler à ce qui suit :
 
 ```csharp
 using System;
@@ -1860,7 +1860,7 @@ namespace MacDatabase
 
 La `DataSource` propriété fournit un raccourci vers le `ComboBoxDataSource` (créé ci-dessus) attaché à la zone de liste déroulante.
 
-La `LoadSelectedPerson` méthode charge la personne à partir de la base de données pour l’ID unique donné:
+La `LoadSelectedPerson` méthode charge la personne à partir de la base de données pour l’ID unique donné :
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1874,13 +1874,13 @@ private void LoadSelectedPerson (string id)
 }
 ```
 
-Dans la `AwakeFromNib` substitution de méthode, nous attachons tout d’abord une instance de notre source de données de zone de liste déroulante personnalisée:
+Dans la `AwakeFromNib` substitution de méthode, nous attachons tout d’abord une instance de notre source de données de zone de liste déroulante personnalisée :
 
 ```csharp
 EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
 ```
 
-Ensuite, nous répondons à l’utilisateur qui modifie la valeur texte de la zone de liste déroulante en`IDField`recherchant l’ID unique associé () des données présentant et chargeant la personne donnée si elle est trouvée:
+Ensuite, nous répondons à l’utilisateur qui modifie la valeur texte de la zone de liste déroulante en`IDField`recherchant l’ID unique associé () des données présentant et chargeant la personne donnée si elle est trouvée :
 
 ```csharp
 EmployeeSelector.Changed += (sender, e) => {
@@ -1890,7 +1890,7 @@ EmployeeSelector.Changed += (sender, e) => {
 };
 ```
 
-Nous chargeons également une nouvelle personne si l’utilisateur sélectionne un nouvel élément dans la liste déroulante:
+Nous chargeons également une nouvelle personne si l’utilisateur sélectionne un nouvel élément dans la liste déroulante :
 
 ```csharp
 EmployeeSelector.SelectionChanged += (sender, e) => {
@@ -1900,7 +1900,7 @@ EmployeeSelector.SelectionChanged += (sender, e) => {
 };
 ```
 
-Enfin, nous remplissons automatiquement la zone de liste déroulante et la personne affichée avec le premier élément de la liste:
+Enfin, nous remplissons automatiquement la zone de liste déroulante et la personne affichée avec le premier élément de la liste :
 
 ```csharp
 // Auto select the first person
@@ -1920,7 +1920,7 @@ Dans les sections suivantes, nous allons montrer comment utiliser SQLite.Net pou
 
 SQLite.NET est présenté sous la forme d’un package NuGet que vous incluez dans votre application. Avant de pouvoir ajouter la prise en charge de base de données à l’aide de SQLite.NET, nous devons inclure ce package.
 
-Procédez comme suit pour ajouter le package:
+Procédez comme suit pour ajouter le package :
 
 1. Dans le **panneau solutions**, cliquez avec le bouton droit sur le dossier **packages** , puis sélectionnez **Ajouter des packages...**
 2. Entrez `SQLite.net` dans la **zone de recherche** et sélectionnez l’entrée **SQLite-net** :
@@ -1930,7 +1930,7 @@ Procédez comme suit pour ajouter le package:
 
 ### <a name="creating-the-data-model"></a>Création du modèle de données
 
-Nous allons ajouter une nouvelle classe au projet et appeler `OccupationModel`. Ensuite, nous allons modifier le fichier **OccupationModel.cs** et le faire ressembler à ce qui suit:
+Nous allons ajouter une nouvelle classe au projet et appeler `OccupationModel`. Ensuite, nous allons modifier le fichier **OccupationModel.cs** et le faire ressembler à ce qui suit :
 
 ```csharp
 using System;
@@ -1966,7 +1966,7 @@ namespace MacDatabase
 }
 ```
 
-Tout d’abord, nous incluons sqlite.net (`using Sqlite`), puis nous exposons plusieurs propriétés qui seront écrites dans la base de données lors de l’enregistrement de cet enregistrement. La première propriété que nous créons comme clé primaire et la définit comme suit:
+Tout d’abord, nous incluons sqlite.net (`using Sqlite`), puis nous exposons plusieurs propriétés qui seront écrites dans la base de données lors de l’enregistrement de cet enregistrement. La première propriété que nous créons comme clé primaire et la définit comme suit :
 
 ```csharp
 [PrimaryKey, AutoIncrement]
@@ -1975,7 +1975,7 @@ public int ID { get; set; }
 
 ### <a name="initializing-the-database"></a>Initialisation de la base de données
 
-Avec les modifications apportées à notre modèle de données en place pour prendre en charge la lecture et l’écriture dans la base de données, nous devons ouvrir une connexion à la base de données et l’initialiser lors de la première exécution. Nous allons ajouter le code suivant:
+Avec les modifications apportées à notre modèle de données en place pour prendre en charge la lecture et l’écriture dans la base de données, nous devons ouvrir une connexion à la base de données et l’initialiser lors de la première exécution. Nous allons ajouter le code suivant :
 
 ```csharp
 using SQLite;
@@ -2021,7 +2021,7 @@ private SQLiteConnection GetDatabaseConnection() {
 }
 ```
 
-Tout d’abord, nous obtenons un chemin d’accès à la base de données (le Bureau de l’utilisateur dans ce cas) et voyons si la base de données existe déjà:
+Tout d’abord, nous obtenons un chemin d’accès à la base de données (le Bureau de l’utilisateur dans ce cas) et voyons si la base de données existe déjà :
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
@@ -2032,13 +2032,13 @@ OccupationModel Occupation;
 bool exists = File.Exists (db);
 ```
 
-Ensuite, nous établissons une connexion à la base de données sur le chemin d’accès que nous avons créé ci-dessus:
+Ensuite, nous établissons une connexion à la base de données sur le chemin d’accès que nous avons créé ci-dessus :
 
 ```csharp
 var conn = new SQLiteConnection (db);
 ```
 
-Enfin, nous créons la table et ajoutons des enregistrements par défaut:
+Enfin, nous créons la table et ajoutons des enregistrements par défaut :
 
 ```csharp
 // Yes, build table
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 ### <a name="adding-a-table-view"></a>Ajout d’une vue de table
 
-En guise d’exemple d’utilisation, nous allons ajouter une vue de table à notre interface utilisateur dans l’interface Builder de Xcode. Nous allons exposer cette vue de table via une prise`OccupationTable`() afin que nous puissions y C# accéder par le biais du code:
+En guise d’exemple d’utilisation, nous allons ajouter une vue de table à notre interface utilisateur dans l’interface Builder de Xcode. Nous allons exposer cette vue de table via une prise`OccupationTable`() afin que nous puissions y C# accéder par le biais du code :
 
 [![Exposition d’une sortie de vue de table](databases-images/table01.png "Exposition d’une sortie de vue de table")](databases-images/table01-large.png#lightbox)
 
@@ -2071,7 +2071,7 @@ Ensuite, nous allons ajouter les classes personnalisées pour remplir cette tabl
 
 ### <a name="creating-the-table-data-source"></a>Création de la source de données de la table
 
-Nous allons créer une source de données personnalisée pour fournir les données de notre table. Tout d’abord, ajoutez une nouvelle `TableORMDatasource` classe appelée et faites-lui ressembler à ceci:
+Nous allons créer une source de données personnalisée pour fournir les données de notre table. Tout d’abord, ajoutez une nouvelle `TableORMDatasource` classe appelée et faites-lui ressembler à ceci :
 
 ```csharp
 using System;
@@ -2129,7 +2129,7 @@ Lorsque nous créons une instance de cette classe par la suite, nous transmetton
 
 ### <a name="creating-the-table-delegate"></a>Création du délégué de table
 
-La dernière classe dont nous avons besoin est un délégué de table personnalisé pour afficher les informations que nous avons chargées à partir de la base de données SQLite.NET. Nous allons ajouter un nouveau `TableORMDelegate` à notre projet et le faire ressembler à ce qui suit:
+La dernière classe dont nous avons besoin est un délégué de table personnalisé pour afficher les informations que nous avons chargées à partir de la base de données SQLite.NET. Nous allons ajouter un nouveau `TableORMDelegate` à notre projet et le faire ressembler à ce qui suit :
 
 ```csharp
 using System;
@@ -2197,7 +2197,7 @@ Ici, nous utilisons la collection de `Occupations` la source de données (que no
 
 ### <a name="populating-the-table"></a>Remplissage de la table
 
-Une fois tous les éléments en place, nous allons remplir notre table lorsqu’elle est insérée dans le fichier. XIB en remplaçant la `AwakeFromNib` méthode et en la faisant ressembler à ceci:
+Une fois tous les éléments en place, nous allons remplir notre table lorsqu’elle est insérée dans le fichier. XIB en remplaçant la `AwakeFromNib` méthode et en la faisant ressembler à ceci :
 
 ```csharp
 public override void AwakeFromNib ()

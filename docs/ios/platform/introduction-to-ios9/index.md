@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620669"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285205"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
@@ -26,9 +26,9 @@ Apple a ajouté plusieurs nouvelles API et services dans iOS 9, ainsi que de nom
 
 Nouveauté d’iOS 9 et de iPhone 6S et iPhone 6S plus, le toucher 3D ajoute des gestes sensibles à la pression à vos applications iOS. Avec l’interface tactile en 3D, une application iPhone est désormais en mesure de savoir que l’utilisateur touche l’écran de l’appareil, il peut également déterminer la pression exercée par l’utilisateur et répondre aux différents niveaux de pression.
 
-l’interface tactile 3D fournit les fonctionnalités suivantes à votre application:
+l’interface tactile 3D fournit les fonctionnalités suivantes à votre application :
 
-- **Sensibilité** à la pression: les applications peuvent désormais mesurer la clarté ou la lumière que l’utilisateur touche l’écran et tirer parti de ces informations. Par exemple, une application de peinture peut rendre une ligne plus épaisse ou plus fine en fonction de la façon dont l’utilisateur touche l’écran.
+- **Sensibilité** à la pression : les applications peuvent désormais mesurer la clarté ou la lumière que l’utilisateur touche l’écran et tirer parti de ces informations. Par exemple, une application de peinture peut rendre une ligne plus épaisse ou plus fine en fonction de la façon dont l’utilisateur touche l’écran.
 - **Aperçu et pop** : votre application peut désormais permettre à l’utilisateur d’interagir avec ses données sans avoir à quitter leur contexte actuel. En appuyant sur l’écran, les utilisateurs peuvent *lire* l’élément qui les intéresse (par exemple, afficher un message). En appuyant sur une pression plus complexe, elles peuvent *apparaître* dans l’élément.
 - **Actions rapides** : pensez à des actions rapides comme les menus contextuels qui peuvent être dépilés lorsqu’un utilisateur clique avec le bouton droit sur un élément dans une application de bureau. À l’aide des actions rapides, vous pouvez ajouter des raccourcis communs, rapides et faciles à accéder aux fonctions de votre application à partir de l’icône d’écran d’accueil sur l’appareil iOS.
 
@@ -48,7 +48,7 @@ Pour en savoir plus sur ATS, consultez notre guide de [sécurité App transport]
 
 Avec iOS 9, Apple a ajouté la prise en charge de la multitâche pour l’exécution de deux applications en même temps sur un matériel iPad spécifique. Par conséquent, vos applications Xamarin. iOS ne peuvent plus supposer qu’il s’agit de la seule application en cours d’exécution à un moment donné ou qu’elles ont accès à la totalité de l’écran ou aux ressources de l’appareil.
 
-Le multitâche pour iPad est pris en charge via les fonctionnalités suivantes:
+Le multitâche pour iPad est pris en charge via les fonctionnalités suivantes :
 
 - **Glisser-déplacer** : permet à l’utilisateur d’exécuter temporairement une deuxième application iOS dans un panneau coulissant (à droite ou à gauche de l’écran en fonction de la direction de la langue) qui couvre approximativement 25% de l’application principale en cours d’exécution. La glissement est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4.
 - **Mode fractionné** : sur le matériel iPad pris en charge (iPad air 2, iPad mini 4 et iPad Pro uniquement), l’utilisateur peut choisir une deuxième application et l’exécuter côte à côte avec l’application en cours d’exécution en mode fractionné. L’utilisateur peut contrôler le pourcentage de l’écran principal occupé par chaque application.
@@ -60,7 +60,7 @@ Pour en savoir plus sur les nouvelles capacités multitâche d’iOS 9, consulte
 
 Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, [contacts](xref:Contacts) et [ContactsUI](xref:ContactsUI), qui remplacent les infrastructures d’interface utilisateur du carnet d’adresses et du carnet d’adresses existantes utilisées par IOS 8 et versions antérieures.
 
-Ces nouvelles infrastructures orientées objet fournissent les éléments suivants:
+Ces nouvelles infrastructures orientées objet fournissent les éléments suivants :
 
 - **Contacts** : fournit un accès Xamarin. iOS aux informations de contact de l’utilisateur. Étant donné que la plupart des applications requièrent uniquement un accès en lecture seule, cette infrastructure a été optimisée pour l’accès en lecture seule thread-safe.
 - **ContactsUI** : fournit des éléments d’interface utilisateur Xamarin. IOS pour afficher, modifier, sélectionner et créer des contacts sur des appareils iOS.
@@ -74,7 +74,7 @@ La recherche a été étendue dans iOS 9 pour offrir de nouvelles façons d’ac
 
 En outre, les nouvelles API de recherche facilitent l’intégration de la recherche dans votre application sans une expérience d’implémentation de recherche antérieure. Pour cette raison, Apple prétend qu’il faut généralement quelques heures pour que le contenu d’une application iOS 9 fasse l’objet d’une recherche universelle à l’aide de la recherche d’applications.
 
-Pour plus d’informations, consultez notre documentation sur les améliorations apportées à la [recherche](~/ios/platform/search/index.md) .
+Pour plus d’informations, consultez notre documentation sur les [améliorations apportées](~/ios/platform/search/index.md) à la recherche.
 
 ## <a name="new-stack-view"></a>Nouvel affichage de la pile
 
@@ -99,7 +99,7 @@ Avec iOS 9, Apple a apporté plusieurs améliorations technologiques aux API de 
 
 Cela comprend les nuanceurs GameplayKit, ReplayKit, Model I/O, MetalKit et Metal performance, ainsi que les nouvelles fonctionnalités améliorées de metal, SceneKit et SpriteKit.
 
-Pour plus d’informations, consultez notre documentation sur les améliorations apportées aux [jeux](~/ios/platform/gaming/index.md) .
+Pour plus d’informations, consultez notre documentation sur les [améliorations apportées aux jeux](~/ios/platform/gaming/index.md) .
 
 ## <a name="homekit-framework-changes"></a>Modifications de l’infrastructure HomeKit
 
@@ -113,17 +113,17 @@ Pour plus d’informations, consultez notre [Introduction à HomeKit](~/ios/plat
 
 La remise (également appelée continuité) a été introduite par Apple dans iOS 8 et OS X Yosemite (10,10) pour que l’utilisateur démarre une activité sur l’un de ses appareils (iOS ou Mac) et continue cette même activité sur un autre de ses appareils (identifiés par le iClou de l’utilisateur). Compte d).
 
-Le transfert a été étendu dans iOS 9 pour prendre également en charge les nouvelles fonctionnalités de recherche améliorées. Pour plus d’informations, consultez notre documentation sur les améliorations apportées à la [recherche](~/ios/platform/search/index.md) . Pour plus d’informations sur l’utilisation de la remise, consultez notre introduction à la documentation relative [au transfert](~/ios/platform/handoff.md) .
+Le transfert a été étendu dans iOS 9 pour prendre également en charge les nouvelles fonctionnalités de recherche améliorées. Pour plus d’informations, consultez notre documentation sur les [améliorations apportées](~/ios/platform/search/index.md) à la recherche. Pour plus d’informations sur l’utilisation de la remise, consultez notre introduction à la documentation relative [au transfert](~/ios/platform/handoff.md) .
 
 ## <a name="new-extension-points"></a>Nouveaux points d'extension
 
 Dans iOS 8, Apple a introduit des extensions, c’est-à-dire des bibliothèques présentées par le système d’exploitation dans des contextes standard, par exemple dans le centre de notification, lorsque l’utilisateur demande un clavier ou lorsqu’il modifie une photo.
 
-Avec iOS 9, Apple étend la prise en charge des extensions en fournissant plusieurs nouveaux _points d’extension_ qui définissent des stratégies d’utilisation et fournissent des API pour travailler dans une zone donnée comme suit:
+Avec iOS 9, Apple étend la prise en charge des extensions en fournissant plusieurs nouveaux _points d’extension_ qui définissent des stratégies d’utilisation et fournissent des API pour travailler dans une zone donnée comme suit :
 
 - **Nouveau point d’extension Audio Unit** : utilisez ce point d’extension pour fournir des effets audio, des instruments de musique, des générateurs de sons, etc. à utiliser dans d’autres applications hôtes d’unités audio (telles que GarageBand). Ce point d’extension vous permet également de vendre des _unités audio_ (plug-ins audio) sur l’App Store.
 - **Nouveau point d’extension de maintenance d’index** : utilisez ce point d’extension pour prendre en charge la réindexation des données d’application sans nécessiter un redémarrage de l’application.
-- **Nouveaux points d’extension réseau** (ceux-ci requièrent une autorisation spéciale d’Apple):
+- **Nouveaux points d’extension réseau** (ceux-ci requièrent une autorisation spéciale d’Apple) :
   - **Extension du fournisseur de proxy d’application** : utilisez ce point d’extension pour implémenter un proxy réseau transparent côté client personnalisé.
   - **Filtrez l’extension du fournisseur de contrôle fournisseur de données/filtre** -utilisez ces points d’extension pour implémenter le filtrage du contenu réseau dynamique sur l’appareil.
   - **Extension de fournisseur de tunnel de paquets** : utilisez ce point d’extension pour implémenter un protocole de tunnel VPN personnalisé côté client.
@@ -135,7 +135,7 @@ Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/
 
 ## <a name="keychain-enhancements"></a>Améliorations des trousseau
 
-Dans iOS 9, Apple a amélioré le trousseau pour fournir un nouveau type de clé de chiffrement pour l’enclave sécurisée et d’autres options de protection d’élément comme suit:
+Dans iOS 9, Apple a amélioré le trousseau pour fournir un nouveau type de clé de chiffrement pour l’enclave sécurisée et d’autres options de protection d’élément comme suit :
 
 - Nouvelle contrainte Touch ID qui invalide les éléments de trousseau lorsque la base de données d’empreintes digitales est modifiée.
 - Nouvelles contraintes qui permettent de créer des entrées de liste Access Control avec Touch ID ou code secret uniquement.
@@ -160,7 +160,7 @@ Pour plus d’informations, consultez la documentation sur les [langues de droit
 
 ## <a name="additional-framework-changes"></a>Modifications supplémentaires de l’infrastructure
 
-Outre les principales modifications que nous avons abordées ci-dessus, Apple a apporté des modifications et des améliorations à plusieurs infrastructures existantes pour iOS 9, y compris les suivantes:
+Outre les principales modifications que nous avons abordées ci-dessus, Apple a apporté des modifications et des améliorations à plusieurs infrastructures existantes pour iOS 9, y compris les suivantes :
 
 - Infrastructure de Fondation AV
 - Framework AVKit
@@ -179,7 +179,7 @@ Pour plus d’informations, consultez notre documentation [supplémentaire sur l
 
 ## <a name="deprecated-apis-and-functions"></a>API et fonctions déconseillées
 
-Apple a déconseillé les API et fonctions suivantes dans iOS 9:
+Apple a déconseillé les API et fonctions suivantes dans iOS 9 :
 
 - **Carnet d’adresses & interface utilisateur du carnet d’adresses** -ces API ont été remplacées par les infrastructures d’interface utilisateur de contact et de contact. Pour plus d’informations, consultez la documentation de [l’interface utilisateur contacts et contacts](~/ios/platform/contacts.md) .
 - **CBCentralManager** -les `RetrievePeripherals` méthodes `RetrieveConnectedPeripherals` et de la `CBCentralManager` classe ont été supprimées dans iOS 9. L’appel de ces méthodes entraîne le blocage d’une application lors de l’appariement d’un accessoire ou du lancement de l’application.
@@ -190,7 +190,7 @@ Pour obtenir la liste complète des désapprobations d’API spécifiques, consu
 
 ## <a name="ios-9-sample-apps"></a>Exemples d’applications iOS 9
 
-Nous disposons de quelques [exemples spécifiques à IOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) pour commencer:
+Nous disposons de quelques [exemples spécifiques à IOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9) pour commencer :
 
 - [AstroLayout](https://github.com/xamarin/monotouch-samples/tree/master/ios9/AstroLayout)
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
@@ -201,7 +201,7 @@ Nous disposons de quelques [exemples spécifiques à IOS 9](https://docs.microso
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
-Consultez également les parties iOS de ces exemples (compléments Mac OS X versions à venir):
+Consultez également les parties iOS de ces exemples (compléments Mac OS X versions à venir) :
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)

@@ -4,21 +4,21 @@ description: Cet article traite de l’ajout et de la gestion d’une ressource 
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/23/2017
-ms.openlocfilehash: 1125b0c420d6dbd23c5539a2183d531bc0d6089f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 683587e4857ede20096be731b3cfa3b88b3a668d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643006"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282516"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Icônes de document personnalisées dans Xamarin. iOS
 
 _Cet article traite de l’ajout et de la gestion d’une ressource d’image dans une application Xamarin. iOS à utiliser comme icône de type de document personnalisé._
 
-Si une application Xamarin. iOS prend en charge le chargement d’un type de document particulier, le développeur peut fournir des icônes que le système utilisera lorsqu’il rencontre ce type de document, par exemple lorsqu’un utilisateur maintient une pièce jointe dans l' *application de messagerie* comme indiqué ici:
+Si une application Xamarin. iOS prend en charge le chargement d’un type de document particulier, le développeur peut fournir des icônes que le système utilisera lorsqu’il rencontre ce type de document, par exemple lorsqu’un utilisateur maintient une pièce jointe dans l' *application de messagerie* comme indiqué ici :
 
  [![](custom-document-types-images/17.png "Exemple d’icônes de type de document")](custom-document-types-images/17.png#lightbox)
 
@@ -27,24 +27,24 @@ Les icônes peuvent être fournies pour plusieurs tailles, optimisées pour les 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Pour affecter ces valeurs dans Visual Studio pour Mac, utilisez la section **types de documents** sous l’onglet **avancé** de `Info.plist` l’éditeur pour ajouter le type de document et lui affecter des icônes d’image. Par exemple, voici une capture d’écran montrant l’inscription de la prise en charge PDF:
+Pour affecter ces valeurs dans Visual Studio pour Mac, utilisez la section **types de documents** sous l’onglet **avancé** de `Info.plist` l’éditeur pour ajouter le type de document et lui affecter des icônes d’image. Par exemple, voici une capture d’écran montrant l’inscription de la prise en charge PDF :
 
  [![](custom-document-types-images/18.png "La section types de documents sous l’onglet avancé de l’éditeur’info. plist'")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Pour affecter ces valeurs dans Visual Studio, utilisez la section **types de documents** sous l’onglet **avancé** de `Info.plist`la:
+Pour affecter ces valeurs dans Visual Studio, utilisez la section **types de documents** sous l’onglet **avancé** de `Info.plist`la :
 
  ![](custom-document-types-images/doc01w.png "Ouvrir la section types de documents sous l’onglet avancé")
 
-Cliquez sur le bouton **Ajouter un type de document** et renseignez les champs obligatoires:
+Cliquez sur le bouton **Ajouter un type de document** et renseignez les champs obligatoires :
 
 ![](custom-document-types-images/doc02w.png "Formulaire ajouter un type de document")
 
 -----
 
 
-Pour plus d’informations sur les types de documents, consultez les rubriques de référence sur les identificateurs de [types uniformes](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) d’Apple et sur la [programmation des interactions de documents pour iOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
+Pour plus d’informations sur les types de documents, consultez les rubriques de référence sur les [identificateurs de types uniformes](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) d’Apple et sur la [programmation des interactions de documents pour iOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
 
 
 ## <a name="related-links"></a>Liens associés

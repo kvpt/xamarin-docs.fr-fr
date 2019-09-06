@@ -3,15 +3,15 @@ title: Mise à jour des applications iOS existantes
 description: Ce document décrit les étapes à suivre pour mettre à jour une application Xamarin. iOS à partir du API classique vers le API unifiée.
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b0999ff6fc3b3042827f11ae1e127ef7bb9fedfe
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: c74efef96a15a950122041eb52dc09835bb8940b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509613"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279547"
 ---
 # <a name="updating-existing-ios-apps"></a>Mise à jour des applications iOS existantes
 
@@ -35,7 +35,7 @@ Une fois les avertissements résolus, sélectionnez un projet iOS existant dans 
 
 ![](updating-ios-apps-images/beta-tool1.png "Choisissez migrer vers Xamarin. iOS API unifiée à partir du menu projet")
 
-Vous devez accepter cet avertissement avant l’exécution de la migration automatisée (évidemment, vous devez vous assurer que vous disposez de sauvegardes/contrôle de code source avant de lancer cette aventure):
+Vous devez accepter cet avertissement avant l’exécution de la migration automatisée (évidemment, vous devez vous assurer que vous disposez de sauvegardes/contrôle de code source avant de lancer cette aventure) :
 
 ![](updating-ios-apps-images/beta-tool2.png "Accepter cet avertissement avant l’exécution de la migration automatisée")
 
@@ -43,25 +43,25 @@ L’outil automatise toutes les étapes décrites dans la section **mise à jour
 
 ## <a name="steps-to-update-manually"></a>Étapes de mise à jour manuelle
 
-Là encore, une fois les avertissements résolus, procédez comme suit pour mettre à jour manuellement les applications Xamarin. iOS afin d’utiliser le nouveau API unifiée:
+Là encore, une fois les avertissements résolus, procédez comme suit pour mettre à jour manuellement les applications Xamarin. iOS afin d’utiliser le nouveau API unifiée :
 
 ### <a name="1-update-project-type--build-target"></a>1. Mettre à jour le type de projet & la cible de build
 
-Remplacez la version de projet dans  vos fichiers csproj `6BC8ED88-2882-458C-8E55-DFD12B67127B` par `FEACFBD2-3405-455C-9665-78FE426C6842`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous:
+Remplacez la version de projet dans vos fichiers csproj `6BC8ED88-2882-458C-8E55-DFD12B67127B` par `FEACFBD2-3405-455C-9665-78FE426C6842`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous :
 
 ![](updating-ios-apps-images/csproj.png "Modifiez le fichier csproj dans un éditeur de texte en remplaçant le premier élément de l’élément ProjectTypeGuids comme indiqué")
 
-Modifiez l’élément **Import** qui contient `Xamarin.MonoTouch.CSharp.targets` `Xamarin.iOS.CSharp.targets` comme indiqué ci-dessous:
+Modifiez l’élément **Import** qui contient `Xamarin.MonoTouch.CSharp.targets` `Xamarin.iOS.CSharp.targets` comme indiqué ci-dessous :
 
 ![](updating-ios-apps-images/csproj2.png "Remplacez l’élément import qui contient Xamarin. unitouch. CSharp. targets par Xamarin. iOS. CSharp. targets, comme indiqué")
 
 ### <a name="2-update-project-references"></a>2. Mettre à jour les références de projet
 
-Développez le nœud **références** du projet d’application iOS. Il affiche initialement une référence * de type **monocontact** et cassée semblable à cette capture d’écran (car nous venons de modifier le type de projet):
+Développez le nœud **références** du projet d’application iOS. Il affiche initialement une référence * de type **monocontact** et cassée semblable à cette capture d’écran (car nous venons de modifier le type de projet) :
 
 ![](updating-ios-apps-images/references.png "Il affiche initialement une référence cassée, monocontact similaire à cette capture d’écran, car le type de projet a changé")
 
-Cliquez avec le bouton droit sur le projet d’application iOS pour **modifier les références**, puis cliquez sur la référence monotactile et supprimez-la à l’aide du bouton rouge «X».
+Cliquez avec le bouton droit sur le projet d’application iOS pour **modifier les références**, puis cliquez sur la référence **monotactile** et supprimez-la à l’aide du bouton rouge « X ».
 
 ![](updating-ios-apps-images/references-delete-monotouch-sml.png "Cliquez avec le bouton droit sur le projet d’application iOS pour modifier les références, puis cliquez sur la référence monotactile et supprimez-la à l’aide du bouton X rouge.")
 
@@ -73,7 +73,7 @@ Appuyez sur **OK** pour enregistrer les modifications apportées aux référence
 
 ### <a name="3-remove-monotouch-from-namespaces"></a>3. Supprimer les monotactiles des espaces de noms
 
-Supprimez  le préfixe unitouch des espaces `using` de noms dans les instructions ou partout où un className a été qualifié complet (par exemple, `MonoTouch.UIKit`devient juste `UIKit`).
+Supprimez le préfixe **unitouch** des espaces `using` de noms dans les instructions ou partout où un className a été qualifié complet (par exemple, `MonoTouch.UIKit`devient juste `UIKit`).
 
 ### <a name="4-remap-types"></a>4. Remapper les types
 
@@ -100,7 +100,7 @@ Bien que nous ayons apporté des modifications à NuGet pour qu’il fonctionne 
 Jusqu’à ce moment-là, tout comme les composants, vous devrez basculer tout package NuGet inclus dans votre projet vers une version qui prend en charge les API unifiées et effectuer une génération propre par la suite.
 
 > [!IMPORTANT]
-> Si vous avez une erreur au format _«l’erreur 3 ne peut pas inclure à la fois «MonoTouch. dll» et «Xamarin. iOS. dll» dans le même projet Xamarin. iOS-«Xamarin. iOS. dll» est référencé explicitement, tandis que «unitouch. dll» est référencé par «xxx, version = 0.0.000, culture = neutral, PublicKeyToken = null'»_ après la conversion de votre application en API unifiées, il est généralement nécessaire de disposer d’un composant ou d’un package NuGet dans le projet qui n’a pas été mis à jour vers l’API unifiée. Vous devez supprimer le composant/NuGet existant, effectuer une mise à jour vers une version qui prend en charge les API unifiées et effectuer une génération propre.
+> Si vous avez une erreur au format _« l’erreur 3 ne peut pas inclure à la fois «MonoTouch. dll » et « Xamarin. iOS. dll » dans le même projet Xamarin. iOS-« Xamarin. iOS. dll » est référencé explicitement, tandis que « unitouch. dll » est référencé par «xxx, version = 0.0.000, culture = neutral, PublicKeyToken = null'»_ après la conversion de votre application en API unifiées, il est généralement nécessaire de disposer d’un composant ou d’un package NuGet dans le projet qui n’a pas été mis à jour vers l’API unifiée. Vous devez supprimer le composant/NuGet existant, effectuer une mise à jour vers une version qui prend en charge les API unifiées et effectuer une génération propre.
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Activation des versions 64 bits des applications Xamarin. iOS
 

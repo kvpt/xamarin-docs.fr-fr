@@ -4,15 +4,15 @@ description: Cet article traite des nouvelles API majeures introduites dans iOS 
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 962f06367542cc0e5d0d17f3261411c96f215e44
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 69f43df64ccf7de75b00e1a0b3f6e2ececc5bbb3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227476"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292014"
 ---
 # <a name="introduction-to-ios-7"></a>Introduction à iOS 7
 
@@ -26,13 +26,13 @@ iOS 7 augmente la prise en charge de l’animation dans UIKit, ce qui permet aux
 
 ### <a name="spring-animations"></a>Animations Spring
 
- `UIView`prend désormais en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la `AnimateNotify` méthode ou `AnimateNotifyAsync` , en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous:
+ `UIView`prend désormais en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la `AnimateNotify` méthode ou `AnimateNotifyAsync` , en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous :
 
 - `springWithDampingRatio`: Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
 - `initialSpringVelocity`: Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
 
 
-Le code suivant produit un effet de ressort lorsque le centre de la vue d’image change:
+Le code suivant produit un effet de ressort lorsque le centre de la vue d’image change :
 
 ```csharp
 void AnimateWithSpring ()
@@ -48,7 +48,7 @@ void AnimateWithSpring ()
 }
 ```
 
-Cet effet de ressort fait que la vue d’image semble rebondir lorsqu’elle termine son animation à un nouvel emplacement central, comme illustré ci-dessous:
+Cet effet de ressort fait que la vue d’image semble rebondir lorsqu’elle termine son animation à un nouvel emplacement central, comme illustré ci-dessous :
 
  ![](images/spring-animation.png "Cet effet de ressort amène l’affichage de l’image à rebondir lorsqu’il effectue son animation vers un nouvel emplacement central.")
 
@@ -56,7 +56,7 @@ Cet effet de ressort fait que la vue d’image semble rebondir lorsqu’elle ter
 
 La `UIView` classe comprend maintenant la `AnimateWithKeyframes` méthode permettant de créer des animations d’image `UIView`clé sur un. Cette méthode est similaire à d' `UIView` autres méthodes d’animation, sauf qu' `NSAction` une valeur supplémentaire est passée en tant que paramètre pour inclure les images clés. Dans, `NSAction`les images clés sont ajoutées en appelant. `UIView.AddKeyframeWithRelativeStartTime`
 
-Par exemple, l’extrait de code suivant crée une animation d’image clé pour animer le centre d’une vue, ainsi que pour faire pivoter l’affichage:
+Par exemple, l’extrait de code suivant crée une animation d’image clé pour animer le centre d’une vue, ainsi que pour faire pivoter l’affichage :
 
 ```csharp
 void AnimateViewWithKeyframes ()
@@ -85,7 +85,7 @@ void AnimateViewWithKeyframes ()
 
 Les deux premiers paramètres de la `AddKeyframeWithRelativeStartTime` méthode spécifient respectivement l’heure de début et la durée de l’image clé, sous la forme d’un pourcentage de la longueur totale de l’animation. L’exemple ci-dessus entraîne l’animation de la vue d’image vers son nouveau centre au cours de la première seconde, puis la rotation de 90 degrés sur la seconde suivante. Étant donné que l' `UIViewKeyframeAnimationOptions.Autoreverse` animation spécifie comme option, les deux images clés sont également animées en arrière. Enfin, les valeurs finales sont définies sur l’état initial dans le gestionnaire d’achèvement.
 
-Les captures d’écran ci-dessous illustrent l’animation combinée via les images clés:
+Les captures d’écran ci-dessous illustrent l’animation combinée via les images clés :
 
  ![](images/keyframes.png "Cette capture d’écran illustre l’animation combinée via les images clés.")
 
@@ -95,7 +95,7 @@ UIKit Dynamics est un nouvel ensemble d’API dans UIKit qui permet aux applicat
 
 L’API est déclarative par nature. Vous pouvez déclarer comment les interactions physiques se comportent en créant des objets (appelés *comportements* ) pour exprimer des concepts physiques tels que la gravité, les collisions, les ressorts, etc. Vous attachez ensuite le ou les comportements à un autre objet, appelé *animation dynamique*, qui encapsule une vue. L’animateur dynamique s’attache à appliquer les comportements physiques déclarés aux éléments *dynamiques* -éléments qui implémentent `IUIDynamicItem`, tels qu’un. `UIView`
 
-Plusieurs comportements primitifs différents sont disponibles pour déclencher des interactions complexes, notamment:
+Plusieurs comportements primitifs différents sont disponibles pour déclencher des interactions complexes, notamment :
 
 - `UIAttachmentBehavior`: Attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
 - `UICollisionBehavior`: Permet aux éléments dynamiques de participer aux collisions.
@@ -105,7 +105,7 @@ Plusieurs comportements primitifs différents sont disponibles pour déclencher 
 - `UISnapBehavior`: Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
 
 
-Bien qu’il existe de nombreuses primitives, le processus général d’ajout d’interactions physiques à une vue à l’aide de UIKit Dynamics est cohérent entre les comportements:
+Bien qu’il existe de nombreuses primitives, le processus général d’ajout d’interactions physiques à une vue à l’aide de UIKit Dynamics est cohérent entre les comportements :
 
 1. Créer un animateur dynamique.
 1. Créer un ou plusieurs comportements.
@@ -120,7 +120,7 @@ Examinons un exemple qui ajoute la gravité et une limite de collision à un `UI
 
 L’ajout de la gravité à une vue d’image suit les 3 étapes décrites ci-dessus.
 
-Nous allons utiliser la `ViewDidLoad` méthode pour cet exemple. Tout d’abord, `UIImageView` ajoutez une instance de la façon suivante:
+Nous allons utiliser la `ViewDidLoad` méthode pour cet exemple. Tout d’abord, `UIImageView` ajoutez une instance de la façon suivante :
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -132,7 +132,7 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-Cela crée une vue d’image centrée sur le bord supérieur de l’écran. Pour que l’image «chute» avec la gravité, créez une instance de `UIDynamicAnimator`:
+Cela crée une vue d’image centrée sur le bord supérieur de l’écran. Pour que l’image « chute » avec la gravité, créez une instance de `UIDynamicAnimator`:
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
@@ -140,7 +140,7 @@ dynAnimator = new UIDynamicAnimator (this.View);
 
 Prend une instance d’une référence `UIView` ou un `UICollectionViewLayout`, qui contient les éléments qui seront animés par le ou les comportements attachés. `UIDynamicAnimator`
 
-Ensuite, créez une `UIGravityBehavior` instance. Vous pouvez passer un ou plusieurs objets implémentant `IUIDynamicItem`le, comme `UIView`un:
+Ensuite, créez une `UIGravityBehavior` instance. Vous pouvez passer un ou plusieurs objets implémentant `IUIDynamicItem`le, comme `UIView`un :
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
@@ -148,13 +148,13 @@ var gravity = new UIGravityBehavior (dynItems);
 
 Le comportement reçoit un tableau de `IUIDynamicItem`qui, dans ce cas, contient l’instance unique `UIImageView` que nous animons.
 
-Enfin, ajoutez le comportement à l’animation dynamique:
+Enfin, ajoutez le comportement à l’animation dynamique :
 
 ```csharp
 dynAnimator.AddBehavior (gravity);
 ```
 
-Cela a pour effet d’animer l’image vers le bas avec la gravité, comme illustré ci-dessous:
+Cela a pour effet d’animer l’image vers le bas avec la gravité, comme illustré ci-dessous :
 
 ![](images/gravity2.png "")
 Emplacement de l’image de départ![](images/gravity3.png "de l’emplacement de fin de l’image")
@@ -165,7 +165,7 @@ Emplacement de l’image de départ![](images/gravity3.png "de l’emplacement d
 
 Nous allons commencer par créer un `UICollisionBehavior` et l’ajouter à l’animateur dynamique, comme nous l’avons fait pour `UIGravityBehavior`le.
 
-Modifiez le code de façon à `UICollisionBehavior`inclure les éléments suivants:
+Modifiez le code de façon à `UICollisionBehavior`inclure les éléments suivants :
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -202,7 +202,7 @@ Désormais, lorsque l’image s’anime vers le bas avec la gravité, elle rebon
 
 Nous pouvons mieux contrôler le comportement de la vue d’image en baisse avec des comportements supplémentaires. Par exemple, nous pourrions ajouter un `UIDynamicItemBehavior` pour augmenter l’élasticité, provoquant la rebond de la vue d’image quand elle entre en conflit avec le bas de l’écran.
 
-L’ajout `UIDynamicItemBehavior` d’un suit la même procédure que pour les autres comportements. Commencez par créer le comportement:
+L’ajout `UIDynamicItemBehavior` d’un suit la même procédure que pour les autres comportements. Commencez par créer le comportement :
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {
@@ -210,7 +210,7 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 };
 ```
 
-Ensuite, ajoutez le comportement à l’animation dynamique:
+Ensuite, ajoutez le comportement à l’animation dynamique :
 
  `dynAnimator.AddBehavior (dynBehavior);`
 
@@ -228,11 +228,11 @@ Pour plus d’informations, consultez notre [TextKit](~/ios/platform/textkit.md)
 
 ## <a name="multitasking"></a>Multitâche
 
-iOS 7 change quand et comment le travail en arrière-plan est effectué. L’achèvement des tâches dans iOS 7 ne maintient plus les applications éveillées lorsque les tâches s’exécutent en arrière-plan, et les applications sont réveillées pour le traitement en arrière-plan de manière non contiguë. iOS 7 ajoute également trois nouvelles API pour mettre à jour les applications avec le nouveau contenu en arrière-plan:
+iOS 7 change quand et comment le travail en arrière-plan est effectué. L’achèvement des tâches dans iOS 7 ne maintient plus les applications éveillées lorsque les tâches s’exécutent en arrière-plan, et les applications sont réveillées pour le traitement en arrière-plan de manière non contiguë. iOS 7 ajoute également trois nouvelles API pour mettre à jour les applications avec le nouveau contenu en arrière-plan :
 
-- Récupération en arrière-plan: permet aux applications de mettre à jour le contenu en arrière-plan à intervalles réguliers.
-- Notifications distantes: permet aux applications de mettre à jour le contenu lors de la réception d’une notification push. Les notifications peuvent être en mode silencieux ou afficher une bannière sur l’écran de verrouillage.
-- Service de transfert en arrière-plan: permet le chargement et le téléchargement de données, telles que des fichiers volumineux, sans limite de temps fixe.
+- Récupération en arrière-plan : permet aux applications de mettre à jour le contenu en arrière-plan à intervalles réguliers.
+- Notifications distantes : permet aux applications de mettre à jour le contenu lors de la réception d’une notification push. Les notifications peuvent être en mode silencieux ou afficher une bannière sur l’écran de verrouillage.
+- Service de transfert en arrière-plan : permet le chargement et le téléchargement de données, telles que des fichiers volumineux, sans limite de temps fixe.
 
 
 Pour plus d’informations sur les nouvelles fonctionnalités multitâches, consultez les sections iOS du [Guide d’arrière-plan](~/ios/app-fundamentals/backgrounding/index.md)Xamarin.

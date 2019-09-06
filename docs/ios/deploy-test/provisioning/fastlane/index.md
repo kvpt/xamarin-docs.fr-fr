@@ -4,15 +4,15 @@ description: Ce guide présente les différents outils fastlane à votre disposi
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: becf9696a13dbd1ae96693729618d70b043d1c3a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 290c90820bad2d213f8f3a978437a55f7ca6069e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527419"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285795"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Présentation de fastlane pour iOS
 
@@ -66,7 +66,7 @@ Les informations qu’il contient peuvent vous aider à bien démarrer avec la d
 
 6. Si le chemin correspond au chemin indiqué ci-dessus, vous êtes prêt à commencer.
 
-     Sinon, procédez ainsi :  Sur macOS, ouvrez `.bash_profile`, qui est un fichier texte en clair masqué dans le répertoire de base, avec la commande suivante :
+     Si ce n’est pas le cas, procédez comme suit :  Sur macOS, ouvrez `.bash_profile`, qui est un fichier texte en clair masqué dans le répertoire de base, avec la commande suivante :
 
     ```bash
     open ~/.bash_profile

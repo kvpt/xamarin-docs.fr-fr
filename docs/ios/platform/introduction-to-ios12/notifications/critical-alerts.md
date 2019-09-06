@@ -1,35 +1,35 @@
 ---
-title: Alertes critiques dans Xamarin.iOS
-description: Ce document décrit comment utiliser les alertes critiques avec Xamarin.iOS. Alertes critiques, introduites avec iOS 12, sont des notifications sans interruption qui un signal sonore quel que soit le si ne pas déranger sur ou le commutateur de sonnerie est désactivée.
+title: Alertes critiques dans Xamarin. iOS
+description: Ce document explique comment utiliser les alertes critiques avec Xamarin. iOS. Les alertes critiques, introduites avec iOS 12, sont des notifications d’interruption qui lisent un son, que la déconnexion ne soit pas activée ou que le commutateur de sonnerie soit désactivé.
 ms.prod: xamarin
 ms.assetid: 75742257-081D-44F4-B49E-FB807DF85262
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 264b1935aefe6f5ddf4bfcd17c491f6858bd4ffb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 54a214215f77b66f6a4b134dcb8d27b26c44fb6c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876103"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291291"
 ---
-# <a name="critical-alerts-in-xamarinios"></a>Alertes critiques dans Xamarin.iOS
+# <a name="critical-alerts-in-xamarinios"></a>Alertes critiques dans Xamarin. iOS
 
-Avec iOS 12, les applications peuvent envoyer des alertes critiques. Alertes critiques un signal sonore, quel que soit ou non ne pas déranger est activé ou le commutateur de sonnerie est désactivée. Ces notifications des perturbations et doivent être utilisées uniquement lorsque les utilisateurs doivent effectuer une action immédiate.
+Avec iOS 12, les applications peuvent envoyer des alertes critiques. Les alertes critiques lisent un son, que la valeur ne pas déranger soit activée ou non, ou que le commutateur de sonnerie soit désactivé. Ces notifications sont perturbatrices et ne doivent être utilisées que lorsque les utilisateurs doivent agir immédiatement.
 
-## <a name="custom-critical-alert-entitlement"></a>Droits personnalisés d’alerte critique
+## <a name="custom-critical-alert-entitlement"></a>Habilitation d’alerte critique personnalisée
 
-Pour afficher les alertes critiques dans votre application, tout d’abord [demander un droit de notifications d’alerte critique personnalisées](https://developer.apple.com/contact/request/notifications-critical-alerts-entitlement/) auprès d’Apple.
+Pour afficher les alertes critiques dans votre application, vous devez d’abord [demander un droit de notification d’alerte critique personnalisé](https://developer.apple.com/contact/request/notifications-critical-alerts-entitlement/) auprès d’Apple.
 
-Après réception de ce droit d’Apple et en suivant les instructions associées sur la configuration de votre application pour l’utiliser, ajouter personnalisé [droits](~/ios/deploy-test/provisioning/entitlements.md) à votre application **Entitlements.plist** fichier (s). Ensuite, configurez votre **signature du Bundle iOS** options à utiliser **Entitlements.plist** lors de l’inscription de l’application sur le simulateur et appareil.
+Après avoir reçu ce droit d’Apple et effectué toutes les instructions associées sur la façon de configurer votre application pour l’utiliser, ajoutez le [droit](~/ios/deploy-test/provisioning/entitlements.md) personnalisé au (x) fichier (s) de droits **. plist** de votre application. Ensuite, configurez vos options de **signature d’offre groupée iOS** pour utiliser les **. plist** lors de la signature de l’application sur le simulateur et l’appareil.
 
 ## <a name="request-authorization"></a>Demander l’autorisation
 
-Demande d’autorisation de notification d’une application invite l’utilisateur à autoriser ou interdire les notifications d’une application. Si la demande d’autorisation de notification demande l’autorisation d’envoyer des alertes critiques, l’application est également l’utilisateur une occasion pour s’abonner à des alertes critiques.
+La demande d’autorisation de notification d’une application demande à l’utilisateur d’autoriser ou d’interdire les notifications d’une application. Si la demande d’autorisation de notification demande l’autorisation d’envoyer des alertes critiques, l’application donne également à l’utilisateur la possibilité de s’abonner aux alertes critiques.
 
-Le code suivant demande l’autorisation d’envoyer des alertes critiques et notifications standards et sons en passant approprié [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
-valeurs [ `RequestAuthorization` ](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
+Le code suivant demande l’autorisation d’envoyer à la fois des alertes critiques et des notifications et des sons standard en passant le[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+valeurs à [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -45,13 +45,13 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ## <a name="local-critical-alerts"></a>Alertes critiques locales
 
-Pour envoyer une alerte critique locale, créez un [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-et définissez son `Sound` propriété :
+Pour envoyer une alerte critique locale, créez un[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+et affectez `Sound` à sa propriété la valeur :
 
 - `UNNotificationSound.DefaultCriticalSound`, qui utilise le son de notification critique par défaut.
-- `UNNotificationSound.GetCriticalSound`, qui permet de spécifier un personnalisé audio qui est fourni avec votre application et un volume.
+- `UNNotificationSound.GetCriticalSound`, qui vous permet de spécifier un son personnalisé fourni avec votre application et un volume.
 
-Ensuite, créez un `UNNotificationRequest` à partir de la notification de contenu et l’ajouter au centre de notification :
+Créez ensuite un `UNNotificationRequest` à partir du contenu de notification et ajoutez-le au centre de notifications :
 
 ```csharp
 var content = new UNMutableNotificationContent()
@@ -74,16 +74,16 @@ center.AddNotificationRequest(request, null);
 ```
 
 > [!IMPORTANT]
-> Alertes critiques n’aboutissent pas si elles ne sont pas activées pour votre application. En même temps que l’invite qui s’affiche la première fois une application demande l’autorisation pour envoyer des alertes critiques, un utilisateur peut également activer ou désactiver les alertes critiques de votre application **Notifications** section d’iOS **paramètres**application.
+> Les alertes critiques ne seront pas remises si elles ne sont pas activées pour votre application. Avec l’invite qui s’affiche la première fois qu’une application demande l’autorisation d’envoyer des alertes critiques, un utilisateur peut également activer ou désactiver les alertes critiques dans la section **notifications** de votre application de l’application **paramètres** iOS.
 
-## <a name="remote-critical-alerts"></a>Alertes critiques à distance
+## <a name="remote-critical-alerts"></a>Alertes critiques distantes
 
-Pour plus d’informations sur les alertes critiques à distance, consultez le [ce qui est nouveau dans Notifications à l’utilisateur](https://developer.apple.com/videos/play/wwdc2018/710/) session à partir de WWDC 2018 et le [générer une Notification à distance](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) document.
+Pour plus d’informations sur les alertes critiques distantes, consultez la session [Nouveautés dans les notifications utilisateur](https://developer.apple.com/videos/play/wwdc2018/710/) à partir de WWDC 2018 et [génération d’un document de notification à distance](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification) .
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Infrastructure de Notifications d’utilisateur dans Xamarin.iOS](~/ios/platform/user-notifications/index.md)
+- [Infrastructure de notifications utilisateur dans Xamarin. iOS](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [Quelles sont les nouveautés dans les Notifications à l’utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [Meilleures pratiques et quelles sont les nouveautés dans les Notifications à l’utilisateur (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [Générer une Notification à distance (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [Nouveautés des notifications utilisateur (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [Meilleures pratiques et nouveautés dans les notifications utilisateur (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [Génération d’une notification à distance (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

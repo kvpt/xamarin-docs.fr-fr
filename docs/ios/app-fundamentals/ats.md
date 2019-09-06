@@ -4,15 +4,15 @@ description: Application transport Security (ATS) applique des connexions sécur
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/13/2017
-ms.openlocfilehash: 67fbd3fb7fb9c7bf1e326404d0d63bc42a3fd8ed
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: dc435f486d0020ab339ebd8f537f749f44493fe0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227672"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289498"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Sécurité du transport d’application dans Xamarin. iOS
 
@@ -35,7 +35,7 @@ Dans la mesure où ATS est activé par défaut dans les applications conçues po
 
 ### <a name="ats-connection-requirements"></a>Configuration requise pour la connexion ATS
 
-L’ATS impose les exigences suivantes pour toutes les connexions Internet:
+L’ATS impose les exigences suivantes pour toutes les connexions Internet :
 
 - Tous les chiffrements de connexion doivent utiliser le secret de transfert. Consultez la liste des chiffrements acceptés ci-dessous.
 - Le protocole TLS (Transport Layer Security) doit avoir la version 1,2 ou une version ultérieure.
@@ -47,7 +47,7 @@ Là encore, comme ATS est activé par défaut dans iOS 9, toute tentative de con
 
 ### <a name="ats-compatible-ciphers"></a>Chiffrements compatibles avec ATS
 
-Le type de chiffrement par PFS suivant est accepté par les communications Internet sécurisées de l’ATS:
+Le type de chiffrement par PFS suivant est accepté par les communications Internet sécurisées de l’ATS :
 
 - `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
 - `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
@@ -136,7 +136,7 @@ Inconvénients
 
 ## <a name="diagnosing-ats-issues"></a>Diagnostic des problèmes ATS
 
-Lorsque vous tentez de vous connecter à Internet, soit directement, soit à partir d’une vue Web dans iOS 9, vous pouvez obtenir une erreur au format suivant:
+Lorsque vous tentez de vous connecter à Internet, soit directement, soit à partir d’une vue Web dans iOS 9, vous pouvez obtenir une erreur au format suivant :
 
 > La sécurité du transport d’application a bloqué un http://www.-the-blocked-domain.com) http en texte clair (chargement des ressources, car il n’est pas sécurisé. Les exceptions temporaires peuvent être configurées via le fichier info. plist de votre application.
 
@@ -151,7 +151,7 @@ Apple fournit également l' [exemple d’application TLSTool](https://developer.
 
 ## <a name="configuring-ats-options"></a>Configuration des options ATS
 
-Vous pouvez configurer plusieurs fonctionnalités d’ATS en définissant des valeurs pour des clés spécifiques dans le fichier **info. plist** de votre application. Les clés suivantes sont disponibles pour contrôler l’ATS (_en retrait pour montrer comment elles sont imbriquées_):
+Vous pouvez configurer plusieurs fonctionnalités d’ATS en définissant des valeurs pour des clés spécifiques dans le fichier **info. plist** de votre application. Les clés suivantes sont disponibles pour contrôler l’ATS (_en retrait pour montrer comment elles sont imbriquées_) :
 
 ```
 NSAppTransportSecurity
@@ -169,14 +169,14 @@ NSAppTransportSecurity
         NSThirdPartyExceptionAllowsInsecureHTTPLoads
 ```
 
-Chaque clé a le type et la signification suivants:
+Chaque clé a le type et la signification suivants :
 
 - **NSAppTransportSecurity** (`Dictionary`)-Contient toutes les clés et valeurs de paramètre pour ATS.
 - **NSAllowsArbitraryLoads** (`Boolean`)-Si `YES` ATS est désactivé pour un domaine **non** listé dans `NSExceptionDomains`. Pour les domaines listés, les paramètres de sécurité spécifiés sont utilisés.
 - **NSAllowsArbitraryLoadsInWebContent** (`Boolean`)-Si `YES` autorise le chargement correct des pages Web alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application.
-- **NSExceptionDomains** (`Dictionary`): Collection de domaines qui et les paramètres de sécurité que l’ATS doit utiliser pour un domaine donné.
+- **NSExceptionDomains** (`Dictionary`) : Collection de domaines qui et les paramètres de sécurité que l’ATS doit utiliser pour un domaine donné.
 - `Dictionary`  **Domain-Name-for-exception-As-String>():collectiond’exceptionspourundomaine\<** donné (par exemple, `www.xamarin.com`).
-- **NSExceptionMinimumTLSVersion** (`String`): Version TLS minimale `TLSv1.0`en tant que, `TLSv1.1` ou `TLSv1.2` (valeur par défaut).
+- **NSExceptionMinimumTLSVersion** (`String`) : Version TLS minimale `TLSv1.0`en tant que, `TLSv1.1` ou `TLSv1.2` (valeur par défaut).
 - **NSExceptionRequiresForwardSecrecy** (`Boolean`)-Si `NO` le domaine n’a pas besoin d’utiliser un chiffrement avec la sécurité de transfert. La valeur par défaut est `YES`.
 - **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`)-Si `NO` (valeur par défaut), toutes les communications avec ce domaine doivent `HTTPS` être dans le protocole.
 - **NSRequiresCertificateTransparency** (`Boolean`)-Si `YES` le protocole SSL du domaine (SSL) doit inclure des données de transparence valides. La valeur par défaut est `NO`.
@@ -191,7 +191,7 @@ Chaque clé a le type et la signification suivants:
 
 Bien qu’Apple suggère une utilisation `HTTPS` du protocole et une communication sécurisée avec les informations basées sur Internet, il peut arriver que cela ne soit pas toujours possible. Par exemple, si vous communiquez avec un service Web tiers ou si vous utilisez des publicités fournies par Internet dans votre application.
 
-Si votre application Xamarin. iOS doit effectuer une demande à un domaine non sécurisé, les modifications suivantes du fichier **info. plist** de votre application désactivent les paramètres de sécurité par défaut imposés par l’ATS pour un domaine donné:
+Si votre application Xamarin. iOS doit effectuer une demande à un domaine non sécurisé, les modifications suivantes du fichier **info. plist** de votre application désactivent les paramètres de sécurité par défaut imposés par l’ATS pour un domaine donné :
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -213,12 +213,12 @@ Si votre application Xamarin. iOS doit effectuer une demande à un domaine non s
 </dict>
 ```
 
-Dans Visual Studio pour Mac, double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions**, basculez vers la vue **source** et ajoutez les clés ci-dessus:
+Dans Visual Studio pour Mac, double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions**, basculez vers la vue **source** et ajoutez les clés ci-dessus :
 
 [![](ats-images/ats01.png "Vue source du fichier info. plist")](ats-images/ats01.png#lightbox)
 
 
-Si votre application a besoin de charger et d’afficher du contenu Web à partir de sites non sécurisés, ajoutez le code suivant au fichier **info. plist** de votre application pour que les pages Web soient correctement chargées, alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application:
+Si votre application a besoin de charger et d’afficher du contenu Web à partir de sites non sécurisés, ajoutez le code suivant au fichier **info. plist** de votre application pour que les pages Web soient correctement chargées, alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application :
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -228,7 +228,7 @@ Si votre application a besoin de charger et d’afficher du contenu Web à parti
 </dict>
 ```
 
-Si vous le souhaitez, vous pouvez apporter les modifications suivantes au fichier **info. plist** de votre application pour désactiver complètement l’ATS pour tous les domaines et la communication Internet:
+Si vous le souhaitez, vous pouvez apporter les modifications suivantes au fichier **info. plist** de votre application pour désactiver complètement l’ATS pour tous les domaines et la communication Internet :
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -238,7 +238,7 @@ Si vous le souhaitez, vous pouvez apporter les modifications suivantes au fichie
 </dict>
 ```
 
-Dans Visual Studio pour Mac, double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions**, basculez vers la vue **source** et ajoutez les clés ci-dessus:
+Dans Visual Studio pour Mac, double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions**, basculez vers la vue **source** et ajoutez les clés ci-dessus :
 
 [![](ats-images/ats02.png "Vue source du fichier info. plist")](ats-images/ats02.png#lightbox)
 
@@ -248,7 +248,7 @@ Dans Visual Studio pour Mac, double-cliquez sur `Info.plist` le fichier dans le 
 
 
 
-Là encore, la désactivation de l’ATS ne doit être utilisée qu’en dernier recours, si le basculement vers des connexions sécurisées n’est pas disponible ou n’est pas pratique.
+Là encore, la désactivation de l’ATS _ne doit être utilisée qu’en_ dernier recours, si le basculement vers des connexions sécurisées n’est pas disponible ou n’est pas pratique.
 
 <a name="Summary" />
 

@@ -4,28 +4,28 @@ description: Ce document explique comment inscrire une application Xamarin. iOS 
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 67cc2028276b6e1415c88cb8957e2cd567fa5bae
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521278"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290614"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Inscription des applications Xamarin. iOS pour une exécution en arrière-plan
 
-L’inscription de tâches individuelles pour les privilèges d’arrière-plan fonctionne pour certaines applications, mais que se passe-t-il si une application est régulièrement appelée pour exécuter des tâches importantes et longues, telles que l’obtention de directions pour l’utilisateur via GPS? Les applications telles que celles-ci doivent plutôt être inscrites en tant qu’applications requises en arrière-plan connues.
+L’inscription de tâches individuelles pour les privilèges d’arrière-plan fonctionne pour certaines applications, mais que se passe-t-il si une application est régulièrement appelée pour exécuter des tâches importantes et longues, telles que l’obtention de directions pour l’utilisateur via GPS ? Les applications telles que celles-ci doivent plutôt être inscrites en tant qu’applications requises en arrière-plan connues.
 
 L’inscription d’une application signale à iOS que l’application doit disposer de privilèges spéciaux nécessaires pour effectuer des tâches en arrière-plan.
 
 ## <a name="application-registration-categories"></a>Catégories d’inscription d’application
 
-Les applications inscrites peuvent appartenir à plusieurs catégories:
+Les applications inscrites peuvent appartenir à plusieurs catégories :
 
 - Les lecteurs **audio** -musique et autres applications qui fonctionnent avec du contenu audio peuvent être enregistrés pour continuer à jouer du son, même lorsque l’application n’est plus au premier plan. Si une application de cette catégorie tente d’effectuer autre chose que de lire un fichier audio ou de télécharger en arrière-plan, iOS l’arrête.
-- Les applications VoIP (voix sur IP) bénéficient des mêmes privilèges que ceux octroyés aux applications audio pour maintenir le traitement audio en arrière-plan. Ils sont également autorisés à répondre en fonction des besoins des services VoIP qui les alimentent pour maintenir les connexions actives.
+- Les **applications VoIP (** voix sur IP) bénéficient des mêmes privilèges que ceux octroyés aux applications audio pour maintenir le traitement audio en arrière-plan. Ils sont également autorisés à répondre en fonction des besoins des services VoIP qui les alimentent pour maintenir les connexions actives.
 - **Accessoires externes et Bluetooth** -réservés aux applications qui doivent communiquer avec des appareils Bluetooth et d’autres accessoires matériels externes, l’inscription dans ces catégories permet à l’application de rester connectée au matériel.
 - **Newsstand** : une application Newsstand peut continuer à synchroniser le contenu en arrière-plan.
 - **Emplacement** : les applications qui utilisent des données GPS ou d’emplacement réseau peuvent envoyer et recevoir des mises à jour d’emplacement en arrière-plan.
@@ -33,7 +33,7 @@ Les applications inscrites peuvent appartenir à plusieurs catégories:
 - **Notifications distantes (iOS 7 +)** : les applications peuvent s’inscrire pour recevoir des notifications d’un fournisseur et utiliser la notification pour lancer une mise à jour avant que l’utilisateur n’ouvre l’application. Les notifications peuvent se présenter sous la forme de notifications push, ou choisir de réveiller l’application en mode silencieux.
 
 
-Les applications peuvent être inscrites en définissant la propriété **modes d’arrière-plan requis** dans le fichier *info. plist*de l’application. Une application peut s’inscrire dans autant de catégories que nécessaire:
+Les applications peuvent être inscrites en définissant la propriété **modes d’arrière-plan requis** dans le fichier *info. plist*de l’application. Une application peut s’inscrire dans autant de catégories que nécessaire :
 
  [![](registering-applications-to-run-in-background-images/bgmodes.png "Définition des modes d’arrière-plan")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
@@ -41,7 +41,7 @@ Pour obtenir un guide pas à pas d’inscription d’une application pour les mi
 
 ## <a name="application-does-not-run-in-background-property"></a>L’application n’est pas exécutée dans la propriété Background
 
-Une autre propriété qui peut être définie dans *info. plist* est l' *application ne s’exécute pas en arrière-plan*, ou `UIApplicationExitsOnSuspend` propriété:
+Une autre propriété qui peut être définie dans *info. plist* est l' *application ne s’exécute pas en arrière-plan*, ou `UIApplicationExitsOnSuspend` propriété :
 
  [![](registering-applications-to-run-in-background-images/plist.png "Désactivation de l’exécution en arrière-plan")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 

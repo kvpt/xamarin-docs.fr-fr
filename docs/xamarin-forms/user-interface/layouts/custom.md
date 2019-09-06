@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526953"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292572"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>Créer une disposition personnalisée dans Xamarin. Forms
 
@@ -74,8 +74,8 @@ Le processus de création d’une disposition personnalisée est la suivante :
 1. Remplacer le [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) méthode à appeler le [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) méthode sur tous les la disposition, les enfants retour une taille demandée pour la mise en page. Pour plus d’informations, consultez [substitution de la méthode OnMeasure](#onmeasure).
 1. Remplacer le [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) méthode à appeler le [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) (méthode) sur les enfants de tous les la disposition. Échec d’appel la [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) méthode sur chaque enfant dans une disposition entraînera l’enfant reçoit jamais une taille correcte ou une position et par conséquent, l’enfant ne seront pas visible dans la page. Pour plus d’informations, consultez [substitution de la méthode LayoutChildren](#layoutchildren).
 
-  > [!NOTE]
->  Lors de l’énumération des enfants dans le [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) et [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) remplacements, ignorer tout enfant dont [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) propriété est définie sur `false`. Cela garantit que la disposition personnalisée ne laissez d’espace pour les enfants invisibles.
+    > [!NOTE]
+    > Lors de l’énumération des enfants dans le [ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) et [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) remplacements, ignorer tout enfant dont [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) propriété est définie sur `false`. Cela garantit que la disposition personnalisée ne laissez d’espace pour les enfants invisibles.
 
 1. [*facultatif*] remplacer le [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout) méthode pour être averti lorsque des enfants sont ajoutés ou supprimés à partir de la mise en page. Pour plus d’informations, consultez [substitution de la méthode InvalidateLayout](#invalidatelayout).
 1. [*facultatif*] remplacer le [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) méthode d’être averti lorsque l’une des enfants de la disposition change de taille. Pour plus d’informations, consultez [substitution de la méthode OnChildMeasureInvalidated](#onchildmeasureinvalidated).

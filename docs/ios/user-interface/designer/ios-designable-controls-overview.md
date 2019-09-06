@@ -4,15 +4,15 @@ description: Le Xamarin Designer pour iOS prend en charge le rendu des contrôle
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 3f36ef7541ea00e2a08733c9d47d252477da787a
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: e934059f5428780ea19917068503b58961ac5673
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227066"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284179"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Contrôles personnalisés dans le Xamarin Designer pour iOS
 
@@ -22,7 +22,7 @@ Le Xamarin Designer pour iOS est un outil puissant pour la visualisation de l’
 
 ## <a name="requirements"></a>Configuration requise
 
-Un contrôle qui remplit toutes les conditions suivantes sera restitué sur l’aire de conception:
+Un contrôle qui remplit toutes les conditions suivantes sera restitué sur l’aire de conception :
 
 1. Il s’agit d’une sous-classe directe ou indirecte de [UIView](xref:UIKit.UIView) ou [UIViewController](xref:UIKit.UIViewController). D’autres sous-classes [NSObject](xref:Foundation.NSObject) s’affichent sous la forme d’une icône sur l’aire de conception.
 2. Il a un [RegisterAttribute](xref:Foundation.RegisterAttribute) pour l’exposer à Objective-C.
@@ -35,7 +35,7 @@ Le concepteur ne prend pas en charge le chargement de bibliothèques objective-C
 
 ## <a name="custom-properties"></a>Propriétés personnalisées
 
-Une propriété déclarée par un contrôle personnalisé s’affiche dans le volet des propriétés si les conditions suivantes sont remplies:
+Une propriété déclarée par un contrôle personnalisé s’affiche dans le volet des propriétés si les conditions suivantes sont remplies :
 
 1. La propriété possède un accesseur get et un accesseur set publics.
 1. La propriété a un [ExportAttribute](xref:Foundation.ExportAttribute) , ainsi qu’un [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) défini sur true.
@@ -48,7 +48,7 @@ La propriété peut également être décorée avec un [DisplayNameAttribute](xr
 
 Pour `UIViewController` les sous-classes, vous devez utiliser la méthode [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) pour le code qui dépend des vues que vous avez créées dans le concepteur.
 
-Pour `UIView` et d' `NSObject` autres sous-classes, la méthode [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib) est l’emplacement recommandé pour effectuer l’initialisation de votre contrôle personnalisé après son chargement à partir du fichier de disposition. En effet, toutes les propriétés personnalisées définies dans le panneau des propriétés ne sont pas définies lors de l’exécution du constructeur du contrôle, mais elles `AwakeFromNib` sont définies avant que ne soit appelé:
+Pour `UIView` et d' `NSObject` autres sous-classes, la méthode [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib) est l’emplacement recommandé pour effectuer l’initialisation de votre contrôle personnalisé après son chargement à partir du fichier de disposition. En effet, toutes les propriétés personnalisées définies dans le panneau des propriétés ne sont pas définies lors de l’exécution du constructeur du contrôle, mais elles `AwakeFromNib` sont définies avant que ne soit appelé :
 
 
 ```csharp
@@ -64,7 +64,7 @@ public class CustomView : UIView {
 }
 ```
 
-Si le contrôle est également conçu pour être créé directement à partir du code, vous souhaiterez peut-être créer une méthode qui a un code d’initialisation commun, comme suit:
+Si le contrôle est également conçu pour être créé directement à partir du code, vous souhaiterez peut-être créer une méthode qui a un code d’initialisation commun, comme suit :
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -93,7 +93,7 @@ public class CustomView : UIView {
 
 ## <a name="property-initialization-and-awakefromnib"></a>Initialisation de propriété et AwakeFromNib
 
-Vous devez prendre soin de déterminer quand et où initialiser les propriétés concevables dans un composant personnalisé en tant que pour ne pas remplacer les valeurs qui ont été définies dans le concepteur iOS. Par exemple, prenez le code suivant:
+Vous devez prendre soin de déterminer quand et où initialiser les propriétés concevables dans un composant personnalisé en tant que pour ne pas remplacer les valeurs qui ont été définies dans le concepteur iOS. Par exemple, prenez le code suivant :
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -136,13 +136,13 @@ Pour résoudre ce problème, initialisez la `Counter` propriété ailleurs (par 
 
 ## <a name="design-mode"></a>Mode création
 
-Sur l’aire de conception, un contrôle personnalisé doit respecter quelques restrictions:
+Sur l’aire de conception, un contrôle personnalisé doit respecter quelques restrictions :
 
 - Les ressources de bundle d’applications ne sont pas disponibles en mode création. Les images sont disponibles lorsqu’elles sont chargées via les [méthodes UIImage](xref:UIKit.UIImage) .
 - Les opérations asynchrones, telles que les requêtes Web, ne doivent pas être effectuées en mode création. L’aire de conception ne prend pas en charge l’animation ou les autres mises à jour asynchrones de l’interface utilisateur du contrôle.
 
 
-Un contrôle personnalisé peut implémenter [IComponent](xref:System.ComponentModel.IComponent) et utiliser la propriété [DesignMode](xref:System.ComponentModel.ISite.DesignMode) pour vérifier s’il se trouve sur l’aire de conception. Dans cet exemple, l’étiquette affiche «mode Design» sur l’aire de conception et «Runtime» au moment de l’exécution:
+Un contrôle personnalisé peut implémenter [IComponent](xref:System.ComponentModel.IComponent) et utiliser la propriété [DesignMode](xref:System.ComponentModel.ISite.DesignMode) pour vérifier s’il se trouve sur l’aire de conception. Dans cet exemple, l’étiquette affiche « mode Design » sur l’aire de conception et « Runtime » au moment de l’exécution :
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -175,14 +175,14 @@ En mode création, `Site` est défini après l’exécution du constructeur du c
 Un contrôle qui répond aux exigences ci-dessus est affiché dans la boîte à outils et rendu sur l’aire de conception.
 Si un contrôle n’est pas rendu, vérifiez les bogues dans le contrôle ou l’une de ses dépendances.
 
-L’aire de conception peut souvent intercepter les exceptions levées par des contrôles, tout en continuant d’afficher d’autres contrôles. Le contrôle défectueux est remplacé par un espace réservé rouge et vous pouvez afficher le suivi des exceptions en cliquant sur l’icône d’exclamation:
+L’aire de conception peut souvent intercepter les exceptions levées par des contrôles, tout en continuant d’afficher d’autres contrôles. Le contrôle défectueux est remplacé par un espace réservé rouge et vous pouvez afficher le suivi des exceptions en cliquant sur l’icône d’exclamation :
 
  ![](ios-designable-controls-overview-images/exception-box.png "Un contrôle défectueux en tant qu’espace réservé rouge et les détails de l’exception")
 
 Si des symboles de débogage sont disponibles pour le contrôle, la trace aura des noms de fichiers et des numéros de ligne.
 Double-cliquez sur une ligne dans la trace de la pile pour accéder à cette ligne dans le code source.
 
-Si le concepteur ne peut pas isoler le contrôle défectueux, un message d’avertissement s’affiche en haut de l’aire de conception:
+Si le concepteur ne peut pas isoler le contrôle défectueux, un message d’avertissement s’affiche en haut de l’aire de conception :
 
  ![](ios-designable-controls-overview-images/info-bar.png "Un message d’avertissement en haut de l’aire de conception")
 

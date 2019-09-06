@@ -3,23 +3,23 @@ title: 'Partie 2 : Architecture'
 description: Ce document décrit les modèles d’architecture utiles pour créer des applications multiplateformes. Il traite des couches d’application typiques (couche de données, couche d’accès aux données, etc.) et des modèles de logiciels mobiles courants (MVVM, MVC, etc.).
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 23758e9794904e60b0ba09fe740574da8e7b830c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7657985ce14633140adb0e63a9817ddd0e48841d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526642"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284569"
 ---
 # <a name="part-2---architecture"></a>Partie 2 : Architecture
 
-Un principe clé de la création d’applications multiplateformes consiste à créer une architecture qui se prête à maximiser le partage de code entre les plateformes. L’adhésion aux principes de programmation orientés objet suivants permet de créer une application bien conçue:
+Un principe clé de la création d’applications multiplateformes consiste à créer une architecture qui se prête à maximiser le partage de code entre les plateformes. L’adhésion aux principes de programmation orientés objet suivants permet de créer une application bien conçue :
 
-- **Encapsulation** : s’assurer que les classes et même les couches architecturales exposent uniquement une API minimale qui effectue leurs fonctions requises et masque les détails d’implémentation. Au niveau de la classe, cela signifie que les objets se comportent comme des «cases noires» et que la consommation de code n’a pas besoin de savoir comment effectuer leurs tâches. Au niveau architectural, cela implique l’implémentation de modèles comme la façade qui encouragent une API simplifiée qui orchestre des interactions plus complexes pour le compte du code dans des couches plus abstraites. Cela signifie que le code de l’interface utilisateur (par exemple) doit uniquement être responsable de l’affichage des écrans et de l’acceptation de l’entrée utilisateur; et n’interagissent jamais directement avec la base de données. De même, le code d’accès aux données doit uniquement lire et écrire dans la base de données, mais ne jamais interagir directement avec des boutons ou des étiquettes.
+- **Encapsulation** : s’assurer que les classes et même les couches architecturales exposent uniquement une API minimale qui effectue leurs fonctions requises et masque les détails d’implémentation. Au niveau de la classe, cela signifie que les objets se comportent comme des « cases noires » et que la consommation de code n’a pas besoin de savoir comment effectuer leurs tâches. Au niveau architectural, cela implique l’implémentation de modèles comme la façade qui encouragent une API simplifiée qui orchestre des interactions plus complexes pour le compte du code dans des couches plus abstraites. Cela signifie que le code de l’interface utilisateur (par exemple) doit uniquement être responsable de l’affichage des écrans et de l’acceptation de l’entrée utilisateur ; et n’interagissent jamais directement avec la base de données. De même, le code d’accès aux données doit uniquement lire et écrire dans la base de données, mais ne jamais interagir directement avec des boutons ou des étiquettes.
 - **Séparation des responsabilités** : Assurez-vous que chaque composant (au niveau de l’architecture et au niveau de la classe) a un objectif clair et bien défini. Chaque composant doit effectuer uniquement ses tâches définies et exposer cette fonctionnalité via une API qui est accessible aux autres classes qui doivent l’utiliser.
-- Polymorphisme: la programmation sur une interface (ou une classe abstraite) qui prend en charge plusieurs implémentations signifie que le code de base peut être écrit et partagé entre les plateformes, tout en interagissant avec les fonctionnalités spécifiques à la plateforme.
+- **Polymorphisme** : la programmation sur une interface (ou une classe abstraite) qui prend en charge plusieurs implémentations signifie que le code de base peut être écrit et partagé entre les plateformes, tout en interagissant avec les fonctionnalités spécifiques à la plateforme.
 
 
 Le résultat naturel est une application modélisée après des entités réelles ou abstraites avec des couches logiques distinctes. La séparation du code en couches rend les applications plus faciles à comprendre, à tester et à entretenir. Il est recommandé que le code de chaque couche soit physiquement séparé (dans des répertoires ou même des projets distincts pour les applications très volumineuses), ainsi que logiquement séparé (à l’aide d’espaces de noms).
@@ -29,12 +29,12 @@ Le résultat naturel est une application modélisée après des entités réelle
 
 ## <a name="typical-application-layers"></a>Couches d’application standard
 
-Tout au long de ce document et des études de cas, nous faisons référence aux six couches d’application suivantes:
+Tout au long de ce document et des études de cas, nous faisons référence aux six couches d’application suivantes :
 
 - **Couche de données** : persistance des données non volatiles, susceptible d’être une base de données SQLite mais pouvant être implémentée avec des fichiers XML ou tout autre mécanisme approprié.
 - **Couche d’accès aux données** : wrapper autour de la couche de données qui fournit l’accès en création, lecture, mise à jour, suppression (CRUD) aux données sans exposer les détails d’implémentation à l’appelant. Par exemple, la couche DAL peut contenir des instructions SQL pour interroger ou mettre à jour les données, mais le code de référence n’a pas besoin de le connaître.
 - **Couche métier** : (parfois appelée couche de logique métier ou couche BLL) contient les définitions d’entités métier (le modèle) et la logique métier. Candidat pour le modèle de façade métier.
-- **Couche d’accès** aux services – permet d’accéder aux services dans le Cloud: à partir de services Web complexes (REST, JSON, WCF) pour une récupération simple des données et des images à partir de serveurs distants. Encapsule le comportement de mise en réseau et fournit une API simple à consommer par l’application et les couches d’interface utilisateur.
+- **Couche d’accès** aux services – permet d’accéder aux services dans le Cloud : à partir de services Web complexes (REST, JSON, WCF) pour une récupération simple des données et des images à partir de serveurs distants. Encapsule le comportement de mise en réseau et fournit une API simple à consommer par l’application et les couches d’interface utilisateur.
 - **Couche application** : code qui est généralement spécifique à la plateforme (qui n’est généralement pas partagé entre les plateformes) ou code spécifique à l’application (qui n’est généralement pas réutilisable). Un bon test pour déterminer si le code doit être placé dans la couche d’application par rapport à la couche d’interface utilisateur (a) pour déterminer si la classe a des contrôles d’affichage réels ou (b) s’il peut être partagé entre plusieurs écrans ou périphériques (par exemple, iPhone et iPad).
 - **Couche de l’interface utilisateur (IU)** : couche accessible à l’utilisateur, contenant les écrans, les widgets et les contrôleurs qui les gèrent.
 

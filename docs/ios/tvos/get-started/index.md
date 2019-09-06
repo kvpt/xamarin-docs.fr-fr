@@ -4,15 +4,15 @@ description: Ce document explique comment prendre en main la création d’appli
 ms.prod: xamarin
 ms.assetid: 1A3D8211-A689-41D9-BCFE-AF8398992031
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 1cf195438132d56d194438b9c922d1079d362f5b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0e8e8a119d619faee25a44b0462df4ac08e909b2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656013"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291599"
 ---
 # <a name="getting-started-with-tvos-in-xamarin"></a>Prise en main avec tvOS dans Xamarin
 
@@ -24,7 +24,7 @@ Pour créer des applications tvOS avec Xamarin, installez la dernière version s
 
 ## <a name="hello-tvos-quick-start-guideiostvosget-startedhello-tvosmd"></a>[Guide de démarrage rapide de Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md)
 
-Cet article fournit un guide de démarrage rapide pour le développement d’applications pour tvOS en créant une simple application «Hello, tvOS». Il aborde les principes fondamentaux de l’approvisionnement d’appareils tvOS, la création d’interface, le codage pour tvOS et le test sur le simulateur tvOS et sur le matériel tvOS réel.
+Cet article fournit un guide de démarrage rapide pour le développement d’applications pour tvOS en créant une simple application « Hello, tvOS ». Il aborde les principes fondamentaux de l’approvisionnement d’appareils tvOS, la création d’interface, le codage pour tvOS et le test sur le simulateur tvOS et sur le matériel tvOS réel.
 
 
 ## <a name="related-links"></a>Liens associés

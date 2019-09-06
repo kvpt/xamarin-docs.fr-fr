@@ -3,15 +3,15 @@ title: Mise à jour des applications Mac existantes
 description: Ce document décrit les étapes à suivre pour mettre à jour une application Xamarin. Mac à partir du API classique vers le API unifiée.
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: a6d245e60a0d163c054fd74e0fb64780225da031
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 43498c0609fdbe6dba59b9ed5926c9c58b72d4db
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197806"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280870"
 ---
 # <a name="updating-existing-mac-apps"></a>Mise à jour des applications Mac existantes
 
@@ -33,14 +33,14 @@ Une fois les avertissements résolus, sélectionnez un projet Mac existant dans 
 
 ![](updating-mac-apps-images/beta-tool1.png "Choisissez migrer vers Xamarin. Mac API unifiée à partir du menu projet")
 
-Vous devez accepter cet avertissement avant l’exécution de la migration automatisée (évidemment, vous devez vous assurer que vous disposez de sauvegardes/contrôle de code source avant de lancer cette aventure):
+Vous devez accepter cet avertissement avant l’exécution de la migration automatisée (évidemment, vous devez vous assurer que vous disposez de sauvegardes/contrôle de code source avant de lancer cette aventure) :
 
 ![](updating-mac-apps-images/migrate01.png "Accepter cet avertissement avant l’exécution de la migration automatisée")
 
-Il existe deux types de Framework cible pris en charge qui peuvent être sélectionnés lors de l’utilisation de l’API unifiée dans une application Xamarin. Mac:
+Il existe deux types de Framework cible pris en charge qui peuvent être sélectionnés lors de l’utilisation de l’API unifiée dans une application Xamarin. Mac :
 
 - **Framework mobile Xamarin. Mac** : il s’agit du même .NET Framework optimisé utilisé par Xamarin. iOS et Xamarin. Android prenant en charge un sous-ensemble de l’infrastructure de **Bureau** complète. Il s’agit de l’infrastructure recommandée, car elle fournit des binaires moyens plus petits en raison d’un comportement de liaison supérieur.
-- **Xamarin. Mac .net 4,5 Framework** : ce Framework est à nouveau un sous-ensemble de l’infrastructure de **Bureau** . Toutefois, il supprime beaucoup moins de l’infrastructure de **Bureau** complète que l’infrastructure **mobile** et doit _«fonctionner» simplement_ avec la plupart des packages NuGet ou des bibliothèques tierces. Cela permet au développeur de consommer des assemblys de **Bureau** standard tout en continuant à utiliser un Framework pris en charge, mais cette option produit des lots d’applications plus importants. Il s’agit de l’infrastructure recommandée dans laquelle les assemblys .NET tiers utilisés ne sont pas compatibles avec l' **infrastructure mobile Xamarin. Mac**. Pour obtenir la liste des assemblys pris en charge, consultez notre documentation sur les [assemblys](~/cross-platform/internals/available-assemblies.md) .
+- **Xamarin. Mac .net 4,5 Framework** : ce Framework est à nouveau un sous-ensemble de l’infrastructure de **Bureau** . Toutefois, il supprime beaucoup moins de l’infrastructure de **Bureau** complète que l’infrastructure **mobile** et doit _« fonctionner » simplement_ avec la plupart des packages NuGet ou des bibliothèques tierces. Cela permet au développeur de consommer des assemblys de **Bureau** standard tout en continuant à utiliser un Framework pris en charge, mais cette option produit des lots d’applications plus importants. Il s’agit de l’infrastructure recommandée dans laquelle les assemblys .NET tiers utilisés ne sont pas compatibles avec l' **infrastructure mobile Xamarin. Mac**. Pour obtenir la liste des assemblys pris en charge, consultez notre documentation sur les [assemblys](~/cross-platform/internals/available-assemblies.md) .
 
 Pour plus d’informations sur les frameworks cibles et les implications de la sélection d’une cible spécifique pour votre application Xamarin. Mac, consultez notre documentation sur les [frameworks cibles](~/mac/platform/target-framework.md) . 
 
@@ -48,19 +48,19 @@ L’outil automatise toutes les étapes décrites dans la section **mise à jour
 
 ## <a name="steps-to-update-manually"></a>Étapes de mise à jour manuelle
 
-Là encore, une fois les avertissements résolus, procédez comme suit pour mettre à jour manuellement les applications Xamarin. Mac afin d’utiliser le nouveau API unifiée:
+Là encore, une fois les avertissements résolus, procédez comme suit pour mettre à jour manuellement les applications Xamarin. Mac afin d’utiliser le nouveau API unifiée :
 
 ### <a name="1-update-project-type--build-target"></a>1. Mettre à jour le type de projet & la cible de build
 
-Remplacez la version de projet dans vos fichiers csproj `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` par `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous:
+Remplacez la version de projet dans vos fichiers csproj `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` par `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous :
 
 ![](updating-mac-apps-images/csproj.png "Modifiez le fichier csproj dans un éditeur de texte en remplaçant le premier élément de l’élément ProjectTypeGuids comme indiqué")
 
-Modifiez l’élément **Import** qui contient `Xamarin.Mac.targets` `Xamarin.Mac.CSharp.targets` comme indiqué ci-dessous:
+Modifiez l’élément **Import** qui contient `Xamarin.Mac.targets` `Xamarin.Mac.CSharp.targets` comme indiqué ci-dessous :
 
 ![](updating-mac-apps-images/csproj2.png "Remplacez l’élément import qui contient Xamarin. Mac. targets par Xamarin. Mac. CSharp. targets comme indiqué")
 
-Ajoutez les lignes de code suivantes après l' `<AssemblyName>` élément:
+Ajoutez les lignes de code suivantes après l' `<AssemblyName>` élément :
 
 ```xml
 <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -74,7 +74,7 @@ Exemple :
 
 ### <a name="2-update-project-references"></a>2. Mettre à jour les références de projet
 
-Développez le nœud **références** du projet d’application Mac. Elle affiche initialement une référence * **XamMac** rompue semblable à cette capture d’écran (car nous venons de modifier le type de projet):
+Développez le nœud **références** du projet d’application Mac. Elle affiche initialement une référence * **XamMac** rompue semblable à cette capture d’écran (car nous venons de modifier le type de projet) :
 
 ![](updating-mac-apps-images/references.png "Il affiche initialement une référence XamMac rompue similaire à cette capture d’écran.")
 
@@ -113,7 +113,7 @@ Bien que nous ayons apporté des modifications à NuGet pour qu’il fonctionne 
 Jusqu’à ce moment-là, tout comme les composants, vous devrez basculer tout package NuGet inclus dans votre projet vers une version qui prend en charge les API unifiées et effectuer une génération propre par la suite.
 
 > [!IMPORTANT]
-> Si vous avez une erreur au format _«l’erreur 3 ne peut pas inclure à la fois «monomac. dll» et «Xamarin. Mac. dll» dans le même projet Xamarin. Mac-«Xamarin. Mac. dll» est référencée explicitement, tandis que «monomac. dll» est référencé par «xxx, version = 0.0.000, culture = neutral, PublicKeyToken = null «»_ après la conversion de votre application en API unifiées, il est généralement nécessaire de disposer d’un composant ou d’un package NuGet dans le projet qui n’a pas été mis à jour vers l’API unifiée. Vous devez supprimer le composant/NuGet existant, effectuer une mise à jour vers une version qui prend en charge les API unifiées et effectuer une génération propre.
+> Si vous avez une erreur au format _« l’erreur 3 ne peut pas inclure à la fois «monomac. dll » et « Xamarin. Mac. dll » dans le même projet Xamarin. Mac-« Xamarin. Mac. dll » est référencée explicitement, tandis que « monomac. dll » est référencé par «xxx, version = 0.0.000, culture = neutral, PublicKeyToken = null «»_ après la conversion de votre application en API unifiées, il est généralement nécessaire de disposer d’un composant ou d’un package NuGet dans le projet qui n’a pas été mis à jour vers l’API unifiée. Vous devez supprimer le composant/NuGet existant, effectuer une mise à jour vers une version qui prend en charge les API unifiées et effectuer une génération propre.
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Activation des versions 64 bits des applications Xamarin. Mac
 

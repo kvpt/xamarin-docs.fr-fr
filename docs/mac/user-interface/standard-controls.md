@@ -4,15 +4,15 @@ description: Cet article traite de l’utilisation des contrôles AppKit standar
 ms.prod: xamarin
 ms.assetid: d2593883-d255-431f-9781-75f04d8cecea
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: e5868e2cfe9a054e84eeb67432a01c2d98b1c3e6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648349"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292236"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Contrôles standard dans Xamarin. Mac
 
@@ -36,7 +36,7 @@ macOS (anciennement Mac OS X) fournit un ensemble standard de contrôles d’int
 
 Tous les contrôles AppKit ont une apparence standard et intégrée qui convient à la plupart des utilisations, certains spécifient une autre apparence pour une utilisation dans une zone de cadre de fenêtre ou dans un contexte d' _effet vibrateur_ , par exemple dans une zone de barre latérale ou dans un centre de notifications sélection.
 
-Apple suggère les recommandations suivantes lors de l’utilisation de contrôles AppKit:
+Apple suggère les recommandations suivantes lors de l’utilisation de contrôles AppKit :
 
 - Évitez de mélanger les tailles de contrôle dans la même vue.
 - En général, évitez de redimensionner les contrôles verticalement.
@@ -49,18 +49,18 @@ Pour plus d’informations, consultez la section [à propos des contrôles et de
 
 ### <a name="using-controls-in-a-window-frame"></a>Utilisation de contrôles dans un frame de fenêtre
 
-Il existe un sous-ensemble de contrôles AppKit qui incluent un style d’affichage qui leur permet d’être inclus dans la zone Frame d’une fenêtre. Pour obtenir un exemple, consultez la barre d’outils de l’application de messagerie:
+Il existe un sous-ensemble de contrôles AppKit qui incluent un style d’affichage qui leur permet d’être inclus dans la zone Frame d’une fenêtre. Pour obtenir un exemple, consultez la barre d’outils de l’application de messagerie :
 
 [![](standard-controls-images/mailapp.png "Frame de fenêtre Mac")](standard-controls-images/mailapp.png#lightbox)
 
 - **Bouton** `NSButton` de`NSTexturedRoundedBezelStyle`texture ronde-a avec un style.
 - **Contrôle segmenté arrondi texturé** -A `NSSegmentedControl` `NSSegmentStyleTexturedRounded`avec un style.
 - **Contrôle segmenté arrondi texturé** -A `NSSegmentedControl` `NSSegmentStyleSeparated`avec un style.
-- **Menu contextuel** `NSPopUpButton` avec texture ronde-a avec un style `NSTexturedRoundedBezelStyle`.
-- **Menu déroulant** `NSPopUpButton` avec texture ronde-a avec un style `NSTexturedRoundedBezelStyle`.
+- **Menu contextuel** `NSPopUpButton` `NSTexturedRoundedBezelStyle`avec texture ronde-a avec un style.
+- **Menu déroulant** `NSPopUpButton` `NSTexturedRoundedBezelStyle`avec texture ronde-a avec un style.
 - **Barre de recherche** - `NSSearchField`A.
 
-Apple suggère les recommandations suivantes lors de l’utilisation de contrôles AppKit dans un frame de fenêtre:
+Apple suggère les recommandations suivantes lors de l’utilisation de contrôles AppKit dans un frame de fenêtre :
 
 - N’utilisez pas de styles de contrôle spécifiques à un frame de fenêtre dans le corps de la fenêtre.
 - N’utilisez pas de contrôles de corps de fenêtre ou de styles dans le frame de fenêtre.
@@ -71,11 +71,11 @@ Pour plus d’informations, consultez la section [à propos des contrôles et de
 
 ## <a name="creating-a-user-interface-in-interface-builder"></a>Création d’une interface utilisateur dans Interface Builder
 
-Lorsque vous créez une application de cacao Xamarin. Mac, vous recevez une fenêtre vide standard par défaut. Cette fenêtre est définie dans un `.storyboard` fichier inclus automatiquement dans le projet. Pour modifier votre conception Windows, dans le **Explorateur de solutions**, double-cliquez `Main.storyboard` sur le fichier:
+Lorsque vous créez une application de cacao Xamarin. Mac, vous recevez une fenêtre vide standard par défaut. Cette fenêtre est définie dans un `.storyboard` fichier inclus automatiquement dans le projet. Pour modifier votre conception Windows, dans le **Explorateur de solutions**, double-cliquez `Main.storyboard` sur le fichier :
 
 [![](standard-controls-images/edit01.png "Sélection de la table de montage séquentiel principale dans le Explorateur de solutions")](standard-controls-images/edit01.png#lightbox)
 
-Cette opération ouvre la conception de la fenêtre dans le Interface Builder de Xcode:
+Cette opération ouvre la conception de la fenêtre dans le Interface Builder de Xcode :
 
 [![](standard-controls-images/edit02.png "Modification de la table de montage séquentiel dans Xcode")](standard-controls-images/edit02.png#lightbox)
 
@@ -89,7 +89,7 @@ Pour plus d’informations sur la création d’une interface utilisateur dans I
 
 ### <a name="sizing-and-positioning"></a>Dimensionnement et positionnement
 
-Une fois qu’un contrôle a été inclus dans l’interface utilisateur, utilisez l' **éditeur de contrainte** pour définir son emplacement et sa taille en entrant des valeurs manuellement et contrôlez la position et la taille du contrôle automatiquement lorsque la fenêtre ou la vue parente est redimensionnée:
+Une fois qu’un contrôle a été inclus dans l’interface utilisateur, utilisez l' **éditeur de contrainte** pour définir son emplacement et sa taille en entrant des valeurs manuellement et contrôlez la position et la taille du contrôle automatiquement lorsque la fenêtre ou la vue parente est redimensionnée :
 
 [![](standard-controls-images/edit04.png "Définition des contraintes")](standard-controls-images/edit04.png#lightbox)
 
@@ -99,7 +99,7 @@ Utilisez les **I-poutres rouges** autour de l’extérieur de la zone **Autoresi
 
 Spécifie que le contrôle sélectionné (dans l’éditeur de l'**interface**de l' **affichage** & des hiérarchies) sera bloqué sur l’emplacement supérieur et droit de la fenêtre ou de la vue, car elle est redimensionnée ou déplacée. 
 
-Autres éléments des propriétés du contrôle de l’éditeur, telles que la hauteur et la largeur:
+Autres éléments des propriétés du contrôle de l’éditeur, telles que la hauteur et la largeur :
 
 [![](standard-controls-images/edit06.png "Définition de la hauteur")](standard-controls-images/edit06.png#lightbox)
 
@@ -114,7 +114,7 @@ Vous pouvez également contrôler l’alignement des éléments avec des contrai
 
 ### <a name="setting-a-custom-class"></a>Définition d’une classe personnalisée
 
-Il peut arriver que vous utilisiez des contrôles AppKit dont vous aurez besoin pour effectuer une sous-classe et un contrôle existant et créer une version personnalisée de cette classe. Par exemple, la définition d’une version personnalisée de la liste source:
+Il peut arriver que vous utilisiez des contrôles AppKit dont vous aurez besoin pour effectuer une sous-classe et un contrôle existant et créer une version personnalisée de cette classe. Par exemple, la définition d’une version personnalisée de la liste source :
 
 ```csharp
 using System;
@@ -193,9 +193,9 @@ namespace AppKit
 }
 ```
 
-Où l' `[Register("SourceListView")]` instruction expose la `SourceListView` classe à Objective-C afin que puisse être utilisé dans Interface Builder. Pour plus d’informations, consultez la section [exposition C# des classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du [document Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique les `Register` commandes et `Export` utilisées pour relier vos C# classes à Objets objective-C et éléments d’interface utilisateur.
+Où l' `[Register("SourceListView")]` instruction expose la `SourceListView` classe à Objective-C afin que puisse être utilisé dans Interface Builder. Pour plus d’informations, consultez la section [exposition C# des classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du [document Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique les `Register` commandes `Export` et utilisées pour relier vos C# classes à Objets objective-C et éléments d’interface utilisateur.
 
-Avec le code ci-dessus en place, vous pouvez faire glisser un contrôle AppKit du type de base que vous étendez sur l’aire de conception (dans l’exemple ci-dessous, une **liste source**), basculer vers l' **inspecteur d’identité** et définir la **classe personnalisée** sur le nom vous l’avez exposé à objective- `SourceListView`C (exemple):
+Avec le code ci-dessus en place, vous pouvez faire glisser un contrôle AppKit du type de base que vous étendez sur l’aire de conception (dans l’exemple ci-dessous, une **liste source**), basculer vers l' **inspecteur d’identité** et définir la **classe personnalisée** sur le nom vous l’avez exposé à objective- `SourceListView`C (exemple) :
 
 [![](standard-controls-images/edit10.png "Définition d’une classe personnalisée dans Xcode")](standard-controls-images/edit10.png#lightbox)
 
@@ -203,7 +203,7 @@ Avec le code ci-dessus en place, vous pouvez faire glisser un contrôle AppKit d
 
 ### <a name="exposing-outlets-and-actions"></a>Exposition des prises et des actions
 
-Pour qu’un contrôle AppKit soit accessible dans C# le code, il doit être exposé en tant que **sortie** ou **action**. Pour ce faire, sélectionnez le contrôle donné dans la **hiérarchie** de l’interface ou l’éditeur de l' **interface** et basculez vers la **vue Assistant** ( `.h` Assurez-vous que le de votre fenêtre est sélectionné pour modification):
+Pour qu’un contrôle AppKit soit accessible dans C# le code, il doit être exposé en tant que **sortie** ou **action**. Pour ce faire, sélectionnez le contrôle donné dans la **hiérarchie** de l’interface ou l’éditeur de l' **interface** et basculez vers la **vue Assistant** ( `.h` Assurez-vous que le de votre fenêtre est sélectionné pour modification) :
 
 [![](standard-controls-images/edit11.png "Sélection du fichier approprié à modifier")](standard-controls-images/edit11.png#lightbox)
 
@@ -224,11 +224,11 @@ Pour plus d’informations sur l’utilisation des **prises** et des **actions**
 
 Lorsque vous revenez à Visual Studio pour Mac à partir de Xcode, toutes les modifications que vous avez apportées à Xcode seront automatiquement synchronisées avec votre projet Xamarin. Mac.
 
-`SplitViewController.designer.cs` Si vous sélectionnez dans la **Explorateur de solutions** vous pouvez voir comment votre **sortie** et votre **action** ont été raccordées dans notre C# code:
+`SplitViewController.designer.cs` Si vous sélectionnez dans la **Explorateur de solutions** vous pouvez voir comment votre **sortie** et votre **action** ont été raccordées dans notre C# code :
 
 [![](standard-controls-images/sync01.png "Synchronisation des modifications avec Xcode")](standard-controls-images/sync01.png#lightbox)
 
-Notez comment la définition dans le `SplitViewController.designer.cs` fichier:
+Notez comment la définition dans le `SplitViewController.designer.cs` fichier :
 
 ```csharp
 [Outlet]
@@ -241,7 +241,7 @@ AppKit.NSSplitViewItem RightController { get; set; }
 AppKit.NSSplitView SplitView { get; set; }
 ```
 
-Aligner avec la définition dans le `MainWindow.h` fichier dans Xcode:
+Aligner avec la définition dans le `MainWindow.h` fichier dans Xcode :
 
 ```csharp
 @interface SplitViewController : NSSplitViewController {
@@ -272,7 +272,7 @@ AppKit fournit plusieurs types de bouton qui peuvent être utilisés dans la con
 
 [![](standard-controls-images/buttons01.png "Exemple des différents types de bouton")](standard-controls-images/buttons01.png#lightbox)
 
-Si un bouton a été exposé par le biais d’une **prise**, le code suivant répond à l’opération:
+Si un bouton a été exposé par le biais d’une **prise**, le code suivant répond à l’opération :
 
 ```csharp
 ButtonOutlet.Activated += (sender, e) => {
@@ -289,7 +289,7 @@ partial void ButtonAction (Foundation.NSObject sender) {
 }
 ```
 
-Pour les boutons qui ont un État ( **par exemple,** activé ou **désactivé**), l’État peut être vérifié ou `State` défini avec la `NSCellStateValue` propriété par rapport à l’énumération. Exemple :
+Pour les boutons qui ont un État ( **par exemple, activé ou** **désactivé**), l’État peut être vérifié ou `State` défini avec la `NSCellStateValue` propriété par rapport à l’énumération. Exemple :
 
 ```csharp
 DisclosureButton.Activated += (sender, e) => {
@@ -297,11 +297,11 @@ DisclosureButton.Activated += (sender, e) => {
 };
 ```
 
-Où `NSCellStateValue` peut être:
+Où `NSCellStateValue` peut être :
 
 - **On** -le bouton fait l’objet d’un push ou le contrôle est sélectionné (par exemple, une coche dans une case à cocher).
 - **Off** -le bouton n’a pas fait l’objet d’un push ou le contrôle n’est pas sélectionné.
-- **Mixte** : un mélange d' États activés et désactivés.
+- **Mixte** : un mélange d' **États activés et** **désactivés** .
 
 <a name="Mark-a-Button-as-Default-and-Set-Key-Equivalent" />
 
@@ -334,11 +334,11 @@ AdjustTime.Activated += (sender, e) => {
 };
 ```
 
-Où `NSCellStateValue` peut être:
+Où `NSCellStateValue` peut être :
 
 - **On** -le bouton fait l’objet d’un push ou le contrôle est sélectionné (par exemple, une coche dans une case à cocher).
 - **Off** -le bouton n’a pas fait l’objet d’un push ou le contrôle n’est pas sélectionné.
-- **Mixte** : un mélange d' États activés et désactivés.
+- **Mixte** : un mélange d' **États activés et** **désactivés** .
 
 Pour sélectionner un bouton dans un groupe de cases d’option, exposez la case d' option pour sélectionner comme `State` sortie et définissez sa propriété. Par exemple :
 
@@ -349,7 +349,7 @@ partial void SelectCar (Foundation.NSObject sender) {
 }
 ```
 
-Pour obtenir une collection de cases d’option pour agir en tant que groupe et gérer automatiquement l’état sélectionné, créez une **action** et associez-lui chaque bouton du groupe:
+Pour obtenir une collection de cases d’option pour agir en tant que groupe et gérer automatiquement l’état sélectionné, créez une **action** et associez-lui chaque bouton du groupe :
 
 ![](standard-controls-images/buttons04.png "Création d’une action")
 
@@ -357,7 +357,7 @@ Ensuite, attribuez un `Tag` unique à chaque case d’option dans l' **inspecteu
 
 ![](standard-controls-images/buttons05.png "Modification d’une balise de case d’option")
 
-Enregistrez vos modifications et revenez à Visual Studio pour Mac, ajoutez le code pour gérer l' **action** à laquelle toutes les cases d’option sont attachées:
+Enregistrez vos modifications et revenez à Visual Studio pour Mac, ajoutez le code pour gérer l' **action** à laquelle toutes les cases d’option sont attachées :
 
 ```csharp
 partial void NumberChanged(Foundation.NSObject sender)
@@ -387,7 +387,7 @@ Les contrôles de menu disponibles pour macOS peuvent être configurés pour rem
 
 #### <a name="working-with-internal-data"></a>Utilisation des données internes
 
-En plus de définir des éléments dans Interface Builder, les contrôles de menu `NSComboBox`(tels que) fournissent un ensemble complet de méthodes qui vous permettent d’ajouter, de modifier ou de supprimer les éléments de la liste interne qu’ils maintiennent:
+En plus de définir des éléments dans Interface Builder, les contrôles de menu `NSComboBox`(tels que) fournissent un ensemble complet de méthodes qui vous permettent d’ajouter, de modifier ou de supprimer les éléments de la liste interne qu’ils maintiennent :
 
 - `Add`-Ajoute un nouvel élément à la fin de la liste.
 - `GetItem`-Retourne l’élément à l’index donné.
@@ -407,7 +407,7 @@ En plus de définir des éléments dans Interface Builder, les contrôles de men
 
 Au lieu d’utiliser les données internes intégrées pour fournir les lignes pour votre contrôle de menu, vous pouvez éventuellement utiliser une source de données externe et fournir votre propre magasin de stockage pour les éléments (par exemple, une base de données SQLite).
 
-Pour utiliser une source de données externe, vous allez créer une instance de la source de données du contrôle menu`NSComboBoxDataSource` (par exemple) et remplacer plusieurs méthodes pour fournir les données nécessaires:
+Pour utiliser une source de données externe, vous allez créer une instance de la source de données du contrôle menu`NSComboBoxDataSource` (par exemple) et remplacer plusieurs méthodes pour fournir les données nécessaires :
 
 - `ItemCount`-Retourne le nombre d’éléments dans la liste.
 - `ObjectValueForItem`-Retourne la valeur de l’élément pour un index donné.
@@ -420,7 +420,7 @@ Pour plus d’informations, consultez la section [bases de données et comboboxs
 
 ### <a name="adjusting-the-lists-appearance"></a>Ajustement de l’apparence de la liste
 
-Les méthodes suivantes sont disponibles pour ajuster l’apparence du contrôle de menu:
+Les méthodes suivantes sont disponibles pour ajuster l’apparence du contrôle de menu :
 
 - `HasVerticalScroller`-Si `true`, le contrôle affichera une barre de défilement verticale. 
 - `VisibleItems`-Ajuster le nombre d’éléments affichés lorsque le contrôle est ouvert. La valeur par défaut est cinq (5).
@@ -431,7 +431,7 @@ Pour les types de liste déroulante de `NSPopupButtons`, le premier élément de
 
 [![](standard-controls-images/menu02.png "Un exemple de contrôle de menu")](standard-controls-images/menu02.png#lightbox)
 
-Pour modifier le titre, exposez cet élément en tant que **sortie** et utilisez un code similaire à ce qui suit:
+Pour modifier le titre, exposez cet élément en tant que **sortie** et utilisez un code similaire à ce qui suit :
 
 ```csharp
 DropDownSelected.Title = "Item 1";
@@ -441,7 +441,7 @@ DropDownSelected.Title = "Item 1";
 
 ### <a name="manipulating-the-selected-items"></a>Manipulation des éléments sélectionnés
 
-Les méthodes et propriétés suivantes vous permettent de manipuler les éléments sélectionnés dans la liste du contrôle Menu:
+Les méthodes et propriétés suivantes vous permettent de manipuler les éléments sélectionnés dans la liste du contrôle Menu :
 
 - `SelectItem`-Sélectionne l’élément à l’index donné.
 - `Select`-Sélectionnez la valeur de l’élément donné.
@@ -455,7 +455,7 @@ Utilisez le `ScrollItemAtIndexToTop` pour présenter l’élément à l’index 
 
 ### <a name="responding-to-events"></a>Réponse aux événements
 
-Les contrôles de menu fournissent les événements suivants pour répondre à l’interaction de l’utilisateur:
+Les contrôles de menu fournissent les événements suivants pour répondre à l’interaction de l’utilisateur :
 
 - `SelectionChanged`-Est appelé quand l’utilisateur a sélectionné une valeur dans la liste.
 - `SelectionIsChanging`-Est appelé avant que le nouvel élément sélectionné par l’utilisateur devienne la sélection active.
@@ -464,7 +464,7 @@ Les contrôles de menu fournissent les événements suivants pour répondre à l
 
 Pour `NSComboBox` les contrôles, ils incluent tous les mêmes événements `NSTextField`que, tels que l' `Changed` événement qui est appelé chaque fois que l’utilisateur modifie la valeur du texte dans la zone de liste déroulante.
 
-Si vous le souhaitez, vous pouvez répondre aux éléments de menu de données internes définis dans Interface Builder être sélectionnés en joignant l’élément à une **action** et utiliser du code semblable au suivant pour répondre à une **action** déclenchée par l’utilisateur:
+Si vous le souhaitez, vous pouvez répondre aux éléments de menu de données internes définis dans Interface Builder être sélectionnés en joignant l’élément à une **action** et utiliser du code semblable au suivant pour répondre à une **action** déclenchée par l’utilisateur :
 
 ```csharp
 partial void ItemOne (Foundation.NSObject sender) {
@@ -473,7 +473,7 @@ partial void ItemOne (Foundation.NSObject sender) {
 }
 ```
 
-Pour plus d’informations sur l’utilisation des menus et des contrôles de menu, consultez nos [menus](~/mac/user-interface/menu.md) et [boutons contextuels et](~/mac/user-interface/menu.md) la documentation des listes déroulantes.
+Pour plus d’informations sur l’utilisation des menus et des contrôles de menu, consultez nos [menus](~/mac/user-interface/menu.md) et [boutons contextuels et la documentation des listes déroulantes](~/mac/user-interface/menu.md) .
 
 <a name="Working_with_Selection_Controls" />
 
@@ -513,7 +513,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 ```
 
-Le `NSDatePicker` possède les propriétés suivantes pour travailler directement avec la date et l’heure:
+Le `NSDatePicker` possède les propriétés suivantes pour travailler directement avec la date et l’heure :
 
 - **DateValue** : la valeur de date et d' `NSDate`heure actuelle en tant que.
 - **Local** : emplacement de l’utilisateur sous la `NSLocal`forme d’un.
@@ -528,7 +528,7 @@ AppKit fournit plusieurs types de contrôles indicateur qui peuvent être utilis
 
 [![](standard-controls-images/level01.png "Exemples de contrôles d’indicateur")](standard-controls-images/level01.png#lightbox)
 
-Il existe deux façons de suivre le moment où un contrôle indicateur a une interaction avec l’utilisateur, soit en l’exposant en tant qu' **action** , soit en joignant un `Activated` **délégué** à l’événement. Exemple :
+Il existe deux façons de suivre le moment où un contrôle indicateur a une interaction avec l’utilisateur, soit en l’exposant en tant qu' **action** **, soit** en joignant un `Activated` **délégué** à l’événement. Exemple :
 
 ```csharp
 LevelIndicator.Activated += (sender, e) => {
@@ -559,7 +559,7 @@ AppKit fournit plusieurs types de contrôles de texte qui peuvent être utilisé
 
 [![](standard-controls-images/text01.png "Exemples de contrôles de texte")](standard-controls-images/text01.png#lightbox)
 
-Pour les champs de`NSTextField`texte (), les événements suivants peuvent être utilisés pour suivre l’interaction de l’utilisateur:
+Pour les champs de`NSTextField`texte (), les événements suivants peuvent être utilisés pour suivre l’interaction de l’utilisateur :
 
 - **Changed** -est déclenché chaque fois que l’utilisateur modifie la valeur du champ. Par exemple, sur chaque caractère tapé.
 - **EditingBegan** -est déclenché lorsque l’utilisateur sélectionne le champ à modifier.
@@ -587,7 +587,7 @@ Le code SourceWriter a été entièrement commenté et, le cas échéant, des li
 
 ## <a name="working-with-content-views"></a>Utilisation des vues de contenu
 
-AppKit fournit plusieurs types d’affichages de contenu qui peuvent être utilisés dans la conception de votre interface utilisateur. Pour plus d’informations, consultez la section affichages du [contenu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) des [instructions relatives à l’interface humaine OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)d’Apple.
+AppKit fournit plusieurs types d’affichages de contenu qui peuvent être utilisés dans la conception de votre interface utilisateur. Pour plus d’informations, consultez la section [affichages du contenu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) des [instructions relatives à l’interface humaine OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)d’Apple.
 
 [![](standard-controls-images/content01.png "Exemple d’affichage de contenu")](standard-controls-images/content01.png#lightbox)
 
@@ -597,7 +597,7 @@ AppKit fournit plusieurs types d’affichages de contenu qui peuvent être utili
 
 Un menu segue est un élément d’interface utilisateur temporaire qui fournit des fonctionnalités directement liées à un contrôle spécifique ou à une zone à l’écran. Un menu segue flotte au-dessus de la fenêtre qui contient le contrôle ou la zone à laquelle il est associé, et sa bordure inclut une flèche pour indiquer le point à partir duquel il est apparu.
 
-Pour créer un menu Segue, procédez comme suit:
+Pour créer un menu Segue, procédez comme suit :
 
 1. Ouvrez le `.storyboard` fichier de la fenêtre auquel vous souhaitez ajouter un menu segue en double-cliquant dessus dans le **Explorateur de solutions**
 2. Faites glisser un **contrôleur d’affichage** de l’inspecteur de **bibliothèque** vers l’éditeur d' **interface**: 
@@ -609,7 +609,7 @@ Pour créer un menu Segue, procédez comme suit:
 4. Cliquez avec le contrôle, puis faites glisser la source de la fenêtre contextuelle sur le **contrôleur d’affichage**: 
 
     [![](standard-controls-images/content05.png "Glissement pour créer un segue")](standard-controls-images/content05.png#lightbox)
-5. Sélectionnez **menu segue** dans le menu contextuel: 
+5. Sélectionnez **menu segue** dans le menu contextuel : 
 
     [![](standard-controls-images/content06.png "Définition du type segue")](standard-controls-images/content06.png#lightbox)
 6. Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectuer une synchronisation avec Xcode.
@@ -618,9 +618,9 @@ Pour créer un menu Segue, procédez comme suit:
 
 ### <a name="tab-views"></a>Vues d’onglets
 
-Les vues d’onglets se composent d’une liste d’onglets (qui ressemble à un contrôle segmenté) associée à unensemble de vues appelées volets. Lorsque l’utilisateur sélectionne un nouvel onglet, le volet qui lui est associé s’affiche. Chaque volet contient son propre ensemble de contrôles.
+Les vues d’onglets se composent d’une liste d’onglets (qui ressemble à un contrôle segmenté) associée à un ensemble de vues appelées _volets_. Lorsque l’utilisateur sélectionne un nouvel onglet, le volet qui lui est associé s’affiche. Chaque volet contient son propre ensemble de contrôles.
 
-Quand vous utilisez une vue d’onglet dans le Interface Builder de Xcode, utilisez l' **inspecteur d’attribut** pour définir le nombre d’onglets:
+Quand vous utilisez une vue d’onglet dans le Interface Builder de Xcode, utilisez l' **inspecteur d’attribut** pour définir le nombre d’onglets :
 
 [![](standard-controls-images/content08.png "Modification du nombre d’onglets")](standard-controls-images/content08.png#lightbox)
 

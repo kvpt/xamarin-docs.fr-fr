@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 1777bfe627d0dc579169c954f7799348befbf6b8
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 8cf2eaf381b0e9f87b5d91bccb6f4aa86dc68e4d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227026"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292836"
 ---
 # <a name="watchos-troubleshooting"></a>Résolution des problèmes surveilléos
 
@@ -35,12 +35,12 @@ Cette page contient des informations supplémentaires et des solutions de contou
 
 <a name="deploy" />
 
-- Les versions antérieures de Visual Studio pour Mac afficher de manière incorrecte l’une des icônes **AppleCompanionSettings** comme 88x88 pixels; ce qui entraîne une **erreur d’icône manquante** si vous tentez de l’envoyer à l’App Store.
-    Cette icône doit être 87x87 pixels (29 unités pour **@3x** les écrans de retine). Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac: modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+- Les versions antérieures de Visual Studio pour Mac afficher de manière incorrecte l’une des icônes **AppleCompanionSettings** comme 88x88 pixels ; ce qui entraîne une **erreur d’icône manquante** si vous tentez de l’envoyer à l’App Store.
+    Cette icône doit être 87x87 pixels (29 unités pour **@3x** les écrans de retine). Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Si l' **ID d’offre groupée info. plist** du projet d’Extension Watch > n’est pas [correctement défini](~/ios/watchos/get-started/project-references.md) pour correspondre à l' **ID d’offre groupée**de l’application espion, le débogueur ne parvient pas à se connecter et Visual Studio pour Mac attend le message *«en attente du débogueur se connecter»* .
 
-- Le débogage est pris en charge en mode notifications, mais peut ne pas être fiable. Une nouvelle tentative peut parfois fonctionner. Vérifiez que le fichier **info. plist** `WKCompanionAppBundleIdentifier` de l’application Watch correspond à l’identificateur de Bundle de l’application parent/conteneur iOS (par ex., celle qui s’exécute sur l’iPhone).
+- Le débogage est pris en charge en mode **notifications** , mais peut ne pas être fiable. Une nouvelle tentative peut parfois fonctionner. Vérifiez que le fichier **info. plist** `WKCompanionAppBundleIdentifier` de l’application Watch correspond à l’identificateur de Bundle de l’application parent/conteneur iOS (par ex., celle qui s’exécute sur l’iPhone).
 
 - le concepteur iOS n’affiche pas de flèches de point d’entrée pour l’aperçu ou les contrôleurs d’interface de notification.
 
@@ -49,7 +49,7 @@ Cette page contient des informations supplémentaires et des solutions de contou
 
     [![](troubleshooting-images/duplicate-id-sml.png "Ouverture du fichier de table de montage séquentiel dans un éditeur de texte et modification manuelle de l’élément ID pour qu’il soit unique")](troubleshooting-images/duplicate-id.png#lightbox)
 
-- Une erreur «l’application n’a pas été générée» peut s’afficher lors de la tentative de lancement de l’application. Cela se produit après un **nettoyage** lorsque le projet de démarrage est défini sur le projet d’extension Watch.
+- Une erreur « l’application n’a pas été générée » peut s’afficher lors de la tentative de lancement de l’application. Cela se produit après un **nettoyage** lorsque le projet de démarrage est défini sur le projet d’extension Watch.
     Le correctif consiste à sélectionner **générer > régénérer tout** , puis à relancer l’application.
 
 ### <a name="visual-studio"></a>Visual Studio
@@ -60,7 +60,7 @@ La prise en charge du concepteur iOS pour le kit de surveillance *requiert* la c
 
 ## <a name="removing-the-alpha-channel-from-icon-images"></a>Suppression du canal alpha des images d’icône
 
-Les icônes ne doivent pas contenir de canal alpha (le canal alpha définit des zones transparentes d’une image). dans le cas contraire, l’application est rejetée lors de l’envoi de l’App Store avec une erreur semblable à celle-ci:
+Les icônes ne doivent pas contenir de canal alpha (le canal alpha définit des zones transparentes d’une image). dans le cas contraire, l’application est rejetée lors de l’envoi de l’App Store avec une erreur semblable à celle-ci :
 
 ```csharp
 Invalid Icon - The watch application '...watchkitextension.appex/WatchApp.app'
@@ -76,7 +76,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
     ![](troubleshooting-images/remove-alpha-sml.png "La boîte de dialogue qui s’affiche contient une case à cocher alpha si un canal alpha est présent.")
 
-3. Décochez la case **alpha** et **Enregistrez** le fichier à l’emplacement approprié.
+3. *Décochez* la case **alpha** et **Enregistrez** le fichier à l’emplacement approprié.
 
 4. L’image d’icône doit maintenant passer les contrôles de validation d’Apple.
 
@@ -89,13 +89,13 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 > La prise en charge de WatchKit par Xamarin comprend la conception des storyboards de Watch dans le concepteur iOS (dans Visual Studio pour Mac et Visual Studio), ce qui ne nécessite pas les étapes décrites ci-dessous. Donnez simplement un nom de classe à un contrôleur d’interface dans le panneau Propriétés C# du Visual Studio pour Mac et les fichiers de code seront créés automatiquement.
 
 
-*Si* vous utilisez Xcode Interface Builder, procédez comme suit pour créer de nouveaux contrôleurs d’interface pour votre application Watch et activer la synchronisation avec Xcode afin que les prises et les C#actions soient disponibles dans:
+*Si* vous utilisez Xcode Interface Builder, procédez comme suit pour créer de nouveaux contrôleurs d’interface pour votre application Watch et activer la synchronisation avec Xcode afin que les prises et les C#actions soient disponibles dans :
 
 1. Ouvrez l’interface de l’application Watch **. Storyboard** dans **Xcode Interface Builder**.
 
     ![](troubleshooting-images/add-6.png "Ouverture de la table de montage séquentiel dans Xcode Interface Builder")
 
-2. Faites glisser un `InterfaceController` nouveau sur le Storyboard:
+2. Faites glisser un `InterfaceController` nouveau sur le Storyboard :
 
     ![](troubleshooting-images/add-1.png "Un InterfaceController")
 
@@ -103,7 +103,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
     ![](troubleshooting-images/add-2.png "Un bouton dans la disposition")
 
-4. Fermez le Storyboard et revenez à Visual Studio pour Mac. Créez un nouveau C# fichier **MyInterfaceController.cs** (ou le nom de votre choix) dans le projet d’extension de l' **application Watch** (et non l’application Watch elle-même où se trouve la table de montage séquentiel). Ajoutez le code suivant (mise à jour de l’espace de noms, ClassName et du nom du constructeur):
+4. Fermez le Storyboard et revenez à Visual Studio pour Mac. Créez un nouveau C# fichier **MyInterfaceController.cs** (ou le nom de votre choix) dans le projet d’extension de l' **application Watch** (et non l’application Watch elle-même où se trouve la table de montage séquentiel). Ajoutez le code suivant (mise à jour de l’espace de noms, ClassName et du nom du constructeur) :
 
     ```csharp
     using System;
@@ -139,7 +139,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     }
     ```
 
-5. Créez un autre C# fichier **MyInterfaceController.Designer.cs** dans le projet d’extension de l' **application Watch** et ajoutez le code ci-dessous. Veillez à mettre à jour l’espace de noms, `Register` le ClassName et l’attribut:
+5. Créez un autre C# fichier **MyInterfaceController.Designer.cs** dans le projet d’extension de l' **application Watch** et ajoutez le code ci-dessous. Veillez à mettre à jour l’espace de noms, `Register` le ClassName et l’attribut :
 
     ```csharp
     using Foundation;
@@ -158,7 +158,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     ```
 
     > [!TIP]
-    > Vous pouvez (si vous le souhaitez) faire de ce fichier un nœud enfant du premier fichier en le faisant glisser vers C# l’autre fichier dans le panneau solutions Visual Studio pour Mac. Elle s’affiche alors comme suit:
+    > Vous pouvez (si vous le souhaitez) faire de ce fichier un nœud enfant du premier fichier en le faisant glisser vers C# l’autre fichier dans le panneau solutions Visual Studio pour Mac. Elle s’affiche alors comme suit :
 
     ![](troubleshooting-images/add-5.png "Panneau solutions")
 
@@ -169,11 +169,11 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     ![](troubleshooting-images/add-6.png "Ouverture de la table de montage séquentiel dans Interface Builder")
 
 8. Sélectionnez votre nouveau contrôleur d’interface et donnez-lui le ClassName que vous avez défini ci-dessus, par exemple. `MyInterfaceController`.
-    Si tout fonctionne correctement, il doit apparaître automatiquement dans la liste déroulante **classe:** et vous pouvez le sélectionner à partir de là.
+    Si tout fonctionne correctement, il doit apparaître automatiquement dans la liste déroulante **classe :** et vous pouvez le sélectionner à partir de là.
 
     ![](troubleshooting-images/add-4.png "Définition d’une classe personnalisée")
 
-9. Choisissez la vue de l’éditeur de l' **Assistant** dans Xcode (l’icône avec deux cercles se chevauchant) pour que vous puissiez voir la table de montage séquentiel et le code côte à côte:
+9. Choisissez la vue de l’éditeur de l' **Assistant** dans Xcode (l’icône avec deux cercles se chevauchant) pour que vous puissiez voir la table de montage séquentiel et le code côte à côte :
 
     ![](troubleshooting-images/add-7.png "L’élément de barre d’outils Éditeur de l’Assistant")
 
@@ -181,11 +181,11 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
 
     ![](troubleshooting-images/add-8.png "Sélectionner MyInterfaceController")
 
-10. Vous pouvez maintenant créer des prises et des actions en appuyant sur **CTRL + déplacer** du storyboard dans le fichier d’en-tête **. h** .
+10. Vous pouvez maintenant créer des prises et des actions en **appuyant sur CTRL + déplacer** du storyboard dans le fichier d’en-tête **. h** .
 
     ![](troubleshooting-images/add-9.png "Création des sorties et des actions")
 
-    Lorsque vous relâchez le glissement, vous êtes invité à indiquer si vous souhaitez créer une sortie ou une action, et choisir son nom:
+    Lorsque vous relâchez le glissement, vous êtes invité à indiquer si vous souhaitez créer une sortie ou une action, et choisir son nom :
 
     ![](troubleshooting-images/add-a.png "Boîte de dialogue sortie et action")
 
@@ -208,7 +208,7 @@ Il est facile de supprimer le canal alpha sur Mac OS X à l’aide de l’applic
     }
     ```
 
-Vous pouvez maintenant référencer le contrôle (ou implémenter l’action C#) dans!
+Vous pouvez maintenant référencer le contrôle (ou implémenter l’action C#) dans !
 
 
 <a name="command_line" />
@@ -221,14 +221,14 @@ Vous pouvez maintenant référencer le contrôle (ou implémenter l’action C#)
 
 Vous pouvez également utiliser la ligne de commande pour contrôler le simulateur iOS. L’outil en ligne de commande utilisé pour lancer des applications de surveillance est **mTouch**.
 
-Voici un exemple complet (exécuté comme une seule ligne dans le terminal):
+Voici un exemple complet (exécuté comme une seule ligne dans le terminal) :
 
 ```bash
 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mtouch --sdkroot=/Applications/Xcode.app/Contents/Developer/ --device=:v2:runtime=com.apple.CoreSimulator.SimRuntime.iOS-8-2,devicetype=com.apple.CoreSimulator.SimDeviceType.iPhone-6
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-Le paramètre que vous devez mettre à jour pour refléter votre `launchsimwatch`application est le suivant:
+Le paramètre que vous devez mettre à jour pour refléter votre `launchsimwatch`application est le suivant :
 
 ### <a name="--launchsimwatch"></a>--launchsimwatch
 
@@ -250,7 +250,7 @@ Pour tester le mode de [ **notification** ](~/ios/watchos/platform/notifications
 
 Le paramètre de charge utile est *requis* pour le mode de notification.
 
-Par exemple, ajoutez ces arguments à la commande mTouch:
+Par exemple, ajoutez ces arguments à la commande mTouch :
 
 ```bash
 --watchlaunchmode=Notification --watchnotificationpayload=/path/to/file.json
@@ -259,7 +259,7 @@ Par exemple, ajoutez ces arguments à la commande mTouch:
 
 ## <a name="other-arguments"></a>Autres arguments
 
-Les arguments restants sont expliqués ci-dessous:
+Les arguments restants sont expliqués ci-dessous :
 
 ### <a name="--sdkroot"></a>--SDKRoot
 
@@ -275,7 +275,7 @@ Exemple :
 
 Appareil simulateur à exécuter. Cela peut être spécifié de deux façons, soit à l’aide de l’UDID d’un appareil spécifique, soit à l’aide d’une combinaison de type d’exécution et d’appareil.
 
-Les valeurs exactes varient d’un ordinateur à l’autre et peuvent être interrogées à l’aide de l’outil **simctl** d’Apple:
+Les valeurs exactes varient d’un ordinateur à l’autre et peuvent être interrogées à l’aide de l’outil **simctl** d’Apple :
 
 ```bash
 /Applications/Xcode.app/Contents/Developer/usr/bin/simctl list

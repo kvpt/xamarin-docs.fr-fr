@@ -1,64 +1,64 @@
 ---
-title: Framework cible pour Xamarin.Mac
-description: Cet article couvre les frameworks cibles (bibliothèques de classes de Base) disponibles pour Xamarin.Mac, ainsi que les implications de leur utilisation dans votre projet Xamarin.Mac.
+title: Framework cible pour Xamarin. Mac
+description: Cet article traite des frameworks cibles (bibliothèques de classes de base) disponibles pour Xamarin. Mac, ainsi que des implications de leur utilisation dans votre projet Xamarin. Mac.
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: e9e20b4966e9e6cb8a4ce3ad6724cf0ba2565c33
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4ae8834427580c387de7a38a69d711207b04821e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865863"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290885"
 ---
-# <a name="target-framework-for-xamarinmac"></a>Framework cible pour Xamarin.Mac
+# <a name="target-framework-for-xamarinmac"></a>Framework cible pour Xamarin. Mac
 
-_Cet article couvre les frameworks cibles (bibliothèques de classes de Base) disponibles pour Xamarin.Mac, ainsi que les implications de leur utilisation dans votre projet Xamarin.Mac._
+_Cet article traite des frameworks cibles (bibliothèques de classes de base) disponibles pour Xamarin. Mac, ainsi que des implications de leur utilisation dans votre projet Xamarin. Mac._
 
-![Cibler des options de framework pour Xamarin.Mac](target-framework-images/select-target.png "Target framework des options pour Xamarin.Mac")
+![Options du Framework cible pour Xamarin. Mac](target-framework-images/select-target.png "Options du Framework cible pour Xamarin. Mac")
 
 ## <a name="background"></a>Présentation
 
-Chaque programme .NET ou la bibliothèque dépend des fonctionnalités fournies par la bibliothèque de classes de Base (BCL). Cette BCL inclut des assemblys qui fournissent des fonctionnalités communes intégrée à tous les langages .NET tels que mscorlib, System, System.Net.Http et System.Xml.
+Chaque programme ou bibliothèque .NET dépend de la fonctionnalité fournie par la bibliothèque de classes de base (BCL). Ce BCL comprend des assemblys tels que mscorlib, System, System .net. http et System. XML qui fournissent les fonctionnalités communes intégrées à tous les langages .NET.
 
-Au fil des années, vous avez développé plusieurs versions différentes de cette bibliothèque BCL, optimisés pour différents cas d’usage. La BCL « bureau » inclut un ensemble plus riche de bibliothèques qui peuvent être trop lourdes pour les autres cas d’utilisation, bien que mobile se concentre sur le maintien des Qu'api sont sécurisés pour la liaison, ce qui supprime le code inutilisé pour réduire l’encombrement de l’application.
+Au fil des années, il a développé plusieurs versions différentes de ce BCL, optimisées pour différents cas d’utilisation. La BCL « Desktop » comprend un ensemble de bibliothèques plus riche qui peut être trop lourd pour d’autres cas d’usage, tandis que mobile se focalise sur la garantie d’une liaison sécurisée des API, ce qui supprime le code inutilisé pour réduire l’encombrement des applications.
 
-Une des répercussions qu’entraînerait plus importante de ces différentes infrastructures cibles, est que tous les assemblys dans un programme donné *doit* cibler des assemblys BCL compatibles. Si ce n’est pas le cas, vous pourriez avoir deux assemblys liés avec différentes versions de la **System.dll** désaccord sur la signature d’un type donné. Une bibliothèque partagée peut soit cible [.NET Standard 2](https://blog.xamarin.com/share-code-net-standard-2-0/), qui est le sous-ensemble commun des Frameworks cibles, ou un framework cible spécifique.
+L’une des répercussions les plus importantes de ces différents frameworks cibles est que tous les assemblys d’un programme donné *doivent* cibler des assemblys BCL compatibles. Si ce n’est pas le cas, vous pouvez avoir deux assemblys liés par les différentes versions de **System. dll** qui sont en désaccord avec la signature d’un type donné. Une bibliothèque partagée peut cibler [.NET standard 2](https://blog.xamarin.com/share-code-net-standard-2-0/), qui est le sous-ensemble commun des frameworks cibles, ou un Framework cible spécifique.
 
-Il existe trois options de Framework cible pour Xamarin.Mac, chacune avec différents avantages et les compromis :
+Trois options de Framework cible sont disponibles pour Xamarin. Mac, chacune présentant des avantages et des inconvénients différents :
 
-- **Modernes** (appelé Mobile dans la documentation plus ancienne) – un sous-ensemble très similaire et les puissances Xamarin.iOS, hautement optimisés pour les performances et la taille. Cette infrastructure cible est l’éditeur de liens sécurisé, ces projets peuvent avoir leur empreinte finale considérablement réduit en supprimant le code inutilisé.
+- **Moderne** (appelée mobile dans une documentation plus ancienne) : un sous-ensemble similaire à ce qui alimente Xamarin. iOS, hautement optimisé pour les performances et la taille. Ce Framework cible étant sécurisé pour l’éditeur de liens, l’encombrement final de ces projets peut être considérablement réduit en supprimant le code inutilisé.
 
-- **Complète** (appelé XM 4.5 dans la documentation plus ancienne) – un sous-ensemble très similaire à la BCL « bureau », avec quelques suppressions de petites. Comme le Framework cible est presque identique à net45 (et versions ultérieures), il peut facilement consommer nombreux packages NuGet qui ne fournit pas soit netstandard2 ou Xamarin.Mac spécifique des builds. Toutefois, en raison de l’utilisation de System.Configuration, il est incompatible avec la liaison.
+- **Plein** (appelé XM 4,5 dans une documentation plus ancienne) : sous-ensemble similaire à la BCL « Desktop », avec quelques suppressions minimes. Étant donné que la version cible de .NET Framework est presque identique à Net45 (et versions ultérieures), elle peut facilement consommer de nombreux packages NuGet qui ne fournissent pas de versions netstandard2 ou Xamarin spécifiques. Toutefois, en raison de l’utilisation de System. Configuration, il est incompatible avec la liaison.
 
-- **Non pris en charge** (appelé système dans la documentation plus ancienne) – à la place de la liaison à une BCL fournie par Xamarin.Mac, utiliser mono système installé actuel. Cela fournit l’ensemble plus complète des assemblys, notamment certaines problématiques (System.Drawing par exemple). Cette option existe uniquement a « dernier recours » et il est fortement recommandé d’épuiser les autres options avant de l’utiliser. Comme son nom l’indique, l’utilisation est pris en charge par les canaux de prise en charge officielle.
+- **Non pris en charge** (appelé système dans une documentation plus ancienne) : au lieu de lier à une BCL fournie par Xamarin. Mac, utilisez le système actuel installé mono. Cela fournit le jeu d’assemblys le plus complet, y compris certains problèmes connus (System. Drawing, par exemple). Cette option existe uniquement en dernier recours et il est fortement recommandé d’épuiser d’autres options avant de l’utiliser. Comme son nom l’indique, l’utilisation n’est pas prise en charge par les canaux de support officiels.
 
-## <a name="setting-the-target-framework"></a>Définition du framework cible
+## <a name="setting-the-target-framework"></a>Définition de la version cible du .NET Framework
 
-Pour modifier le type de Framework cible pour un projet Xamarin.Mac, procédez comme suit :
+Pour passer au type de Framework cible pour un projet Xamarin. Mac, procédez comme suit :
 
 1. Ouvrez le projet Xamarin.Mac dans Visual Studio pour Mac.
 2. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier projet pour ouvrir la boîte de dialogue **Options du projet**.
-3. À partir de la **général** , sélectionnez le type de **Framework cible** adapté aux besoins de votre application :
+3. Dans l’onglet **général** , sélectionnez le type de **Framework cible** qui répond aux besoins de votre application :
 
-    [![À l’aide de la fenêtre Options de projet pour choisir un framework cible](target-framework-images/select-target-full.png "à l’aide de la fenêtre Options de projet pour choisir un framework cible")](target-framework-images/select-target-full-large.png#lightbox)
+    [![Utilisation de la fenêtre Options de projet pour choisir une version cible de .NET Framework](target-framework-images/select-target-full.png "Utilisation de la fenêtre Options de projet pour choisir une version cible de .NET Framework")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. Cliquez sur le bouton **OK** pour enregistrer vos changements.
 
-Vous devez **Clean** , puis **reconstruire** votre projet Xamarin.Mac après avoir basculé le type de Framework cible.
+Vous devez **nettoyer** puis **régénérer** votre projet Xamarin. Mac après avoir basculé le type de Framework cible.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a présenté brièvement les différents types de Frameworks cibles (bibliothèques de classes de Base) disponible pour une application Xamarin.Mac et quand utiliser chaque type de framework.
+Cet article a brièvement abordé les différents types de frameworks cibles (bibliothèques de classes de base) disponibles pour une application Xamarin. Mac et le moment où chaque type d’infrastructure doit être utilisé.
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [iOS et le partage de code Mac](~/cross-platform/macios/index.md)
+- [partage de code iOS et Mac](~/cross-platform/macios/index.md)
 - [API unifiée](~/cross-platform/macios/unified/index.md)
 - [Bibliothèques de classes portables](~/cross-platform/app-fundamentals/pcl.md)
 - [Assemblys](~/cross-platform/internals/available-assemblies.md)
-- [La mise à jour des applications Mac existantes](~/cross-platform/macios/unified/updating-mac-apps.md)
+- [Mise à jour des applications Mac existantes](~/cross-platform/macios/unified/updating-mac-apps.md)

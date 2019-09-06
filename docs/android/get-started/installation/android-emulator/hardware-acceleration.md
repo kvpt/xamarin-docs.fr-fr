@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 6f5a5512cef6ad870f60bca397404df450775de3
-ms.sourcegitcommit: ec99e64ee346adc3c338db13e93100bafee75460
-ms.translationtype: HT
+ms.openlocfilehash: 230c72539388028aaf8f05d200d8779105102644
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56331881"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225620"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Accélération matérielle pour les performances de l’émulateur (Hyper-V et HAXM)
 
@@ -31,7 +31,7 @@ Les technologies de virtualisation suivantes sont disponibles pour accélérer l
 1. **Microsoft Hyper-V et la Plateforme de l’hyperviseur**.
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) est une fonctionnalité de virtualisation de Windows qui permet d’exécuter des systèmes informatiques virtualisés sur un ordinateur hôte physique.
 
-2. **Intel Hardware Accelerated Execution Manager (HAXM)**.
+2. **Intel Hardware Accelerated Execution Manager (HAXM)** .
    HAXM est un moteur de virtualisation pour les ordinateurs exécutant des processeurs Intel.
 
 Pour des performances optimales, il est recommandé d’utiliser Hyper-V afin d’accélérer l’émulateur Android. Si Hyper-V n’est pas disponible sur votre ordinateur, vous pouvez utiliser HAXM. L’émulateur Android utilise automatiquement l’accélération matérielle si les critères suivants sont remplis :
@@ -58,23 +58,23 @@ Hyper-V s’exécute sur la plateforme d’hyperviseur Windows. Pour permettre l
 
 - Votre matériel informatique doit répondre aux exigences suivantes :
 
-    - UC Intel ou AMD Ryzen 64 bits avec SLAT (traduction d’adresse de second niveau)
-    - Prise en charge par l’UC de l’extension du mode de supervision de machine virtuelle (VT-c sur les UC Intel)
-    - 4 Go de mémoire au minimum
+  - UC Intel ou AMD Ryzen 64 bits avec SLAT (traduction d’adresse de second niveau)
+  - Prise en charge par l’UC de l’extension du mode de supervision de machine virtuelle (VT-c sur les UC Intel)
+  - 4 Go de mémoire au minimum
 
 - Dans le BIOS de votre ordinateur, les éléments suivants doivent être activés :
 
-    - Technologie de virtualisation (peut avoir une autre appellation selon le fabricant de la carte mère).
-    - Prévention de l’exécution des données matérielle.
+  - Technologie de virtualisation (peut avoir une autre appellation selon le fabricant de la carte mère).
+  - Prévention de l’exécution des données matérielle.
 
-- Vous devez appliquer à votre ordinateur la mise à jour d’avril 2018 de Windows 10 (build 1803) ou une version ultérieure. Vous pouvez vérifier que votre version de Windows est à jour en effectuant les étapes suivantes : 
+- Vous devez appliquer à votre ordinateur la mise à jour d’avril 2018 de Windows 10 (build 1803) ou une version ultérieure. Vous pouvez vérifier que votre version de Windows est à jour en effectuant les étapes suivantes :
 
-    1. Dans la zone de recherche Windows, entrez **À propos de**. 
-    2. Sélectionnez **À propos de votre PC** dans les résultats de recherche. 
-    3. Faites défiler vers le bas la boîte de dialogue **À propos de** jusqu’à la section **Spécifications Windows**. 
-    4. Vérifiez que vous disposez au moins de la **version** 1803 :
+  1. Dans la zone de recherche Windows, entrez **À propos de**.
+  2. Sélectionnez **À propos de votre PC** dans les résultats de recherche.
+  3. Faites défiler vers le bas la boîte de dialogue **À propos de** jusqu’à la section **Spécifications Windows**.
+  4. Vérifiez que vous disposez au moins de la **version** 1803 :
 
-        [![Spécifications Windows](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
+      [![Spécifications Windows](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
 
 Pour vérifier que le matériel et les logiciels de votre ordinateur sont compatibles avec Hyper-V, ouvrez une invite de commandes et tapez la commande suivante :
 
@@ -82,7 +82,7 @@ Pour vérifier que le matériel et les logiciels de votre ordinateur sont compat
 systeminfo
 ```
 
-Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Par exemple :
+Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Par exemple :
 
 [![Exemple de sortie de systeminfo](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -122,7 +122,7 @@ Si votre matériel prend en charge HAXM, vous pouvez vérifier si HAXM est déj�
     sc query intelhaxm
     ```
 
-2. Examinez la sortie pour voir si le processus HAXM est en cours d’exécution. Si tel est le cas, vous devez voir la sortie listant l’état de `intelhaxm` comme étant `RUNNING`. Par exemple :
+2. Examinez la sortie pour voir si le processus HAXM est en cours d’exécution. Si tel est le cas, vous devez voir la sortie listant l’état de `intelhaxm` comme étant `RUNNING`. Par exemple :
 
     ![Sortie de la commande sc query quand HAXM est disponible](hardware-acceleration-images/win/05-sc_query-w158.png)
 
@@ -159,7 +159,7 @@ Les technologies de virtualisation suivantes sont disponibles pour accélérer l
 1. **Framework Hypervisor d’Apple**.
    [Hypervisor](https://developer.apple.com/documentation/hypervisor) est une fonctionnalité de macOS 10.10 et version ultérieure, qui permet d’exécuter des machines virtuelles sur un Mac.
 
-2. **Intel Hardware Accelerated Execution Manager (HAXM)**. 
+2. **Intel Hardware Accelerated Execution Manager (HAXM)** .
    [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) est un moteur de virtualisation pour les ordinateurs dotés d’UC Intel.
 
 Pour des performances optimales, il est recommandé d’utiliser le framework Hypervisor afin d’accélérer l’émulateur Android. Si le framework Hypervisor n’est pas disponible sur votre Mac, vous pouvez utiliser HAXM. L’émulateur Android utilise automatiquement l’accélération matérielle si les critères suivants sont remplis :
@@ -169,7 +169,7 @@ Pour des performances optimales, il est recommandé d’utiliser le framework Hy
 - L’émulateur exécute une image système créée pour un appareil virtuel **x86**.
 
 > [!IMPORTANT]
-> 
+>
 > Vous ne pouvez pas exécuter un émulateur accéléré par une machine virtuelle dans une autre machine virtuelle, par exemple une machine virtuelle hébergée par VirtualBox, VMWare ou Docker. Vous devez exécuter l’émulateur Android [directement sur votre matériel système](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
 Pour plus d’informations sur le lancement de l’émulateur Android, et sur le débogage à l’aide de ce dernier, consultez [Débogage sur l’émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).

@@ -4,15 +4,15 @@ description: Cet article traite de l’utilisation des alertes dans une applicat
 ms.prod: xamarin
 ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: c97006d1afb68d693e2792879788ea92907873fc
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 1e2ad12e7dc52b44bda079340638298b87ac5f65
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889545"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291218"
 ---
 # <a name="alerts-in-xamarinmac"></a>Alertes dans Xamarin. Mac
 
@@ -32,7 +32,7 @@ Dans cet article, nous allons aborder les bases de l’utilisation des alertes d
 
 Une alerte est un type spécial de dialogue qui s’affiche lorsqu’un problème sérieux se produit (par exemple, une erreur) ou en tant qu’avertissement (par exemple, la préparation de la suppression d’un fichier). Étant donné que les alertes perturbent l’utilisateur car elles doivent être rejetées avant que l’utilisateur puisse continuer à utiliser leur tâche, évitez d’afficher une alerte, sauf si elle est absolument nécessaire.
 
-Apple suggère les instructions suivantes:
+Apple suggère les instructions suivantes :
 
 - N’utilisez pas d’alerte simplement pour fournir des informations aux utilisateurs.
 - N’affiche pas d’alerte pour les actions courantes et annulables. Même si cette situation peut entraîner une perte de données.
@@ -47,7 +47,7 @@ Pour plus d’informations, consultez la section [alertes](https://developer.app
 
 ## <a name="anatomy-of-an-alert"></a>Anatomie d’une alerte
 
-Comme indiqué ci-dessus, les alertes doivent être affichées à l’utilisateur de votre application lorsqu’un problème grave se produit ou en tant qu’avertissement pour une perte de données potentielle (par exemple, la fermeture d’un fichier non enregistré). Dans Xamarin. Mac, une alerte est créée dans C# le code, par exemple:
+Comme indiqué ci-dessus, les alertes doivent être affichées à l’utilisateur de votre application lorsqu’un problème grave se produit ou en tant qu’avertissement pour une perte de données potentielle (par exemple, la fermeture d’un fichier non enregistré). Dans Xamarin. Mac, une alerte est créée dans C# le code, par exemple :
 
 ```csharp
 var alert = new NSAlert () {
@@ -62,9 +62,9 @@ Le code ci-dessus affiche une alerte avec l’icône applications superposée su
 
 [![](alert-images/alert01.png "Une alerte avec un bouton OK")](alert-images/alert01.png#lightbox)
 
-Apple fournit plusieurs propriétés qui peuvent être utilisées pour personnaliser une alerte:
+Apple fournit plusieurs propriétés qui peuvent être utilisées pour personnaliser une alerte :
 
-- **AlertStyle** définit le type d’une alerte comme l’un des éléments suivants:
+- **AlertStyle** définit le type d’une alerte comme l’un des éléments suivants :
   - **Avertissement** : permet d’avertir l’utilisateur d’un événement en cours ou imminent qui n’est pas critique. Il s’agit du style par défaut.
   - **Informatif** -utilisé pour avertir l’utilisateur de l’événement en cours ou imminent. Actuellement, il n’y a aucune différence visible entre un **Avertissement** et une **information**
   - **Critique** : permet d’avertir l’utilisateur des conséquences graves d’un événement imminent (par exemple, la suppression d’un fichier). Ce type d’alerte doit être utilisé avec modération.
@@ -80,7 +80,7 @@ Apple fournit plusieurs propriétés qui peuvent être utilisées pour personnal
 
 ## <a name="displaying-an-alert"></a>Affichage d’une alerte
 
-Il existe deux façons différentes d’afficher une alerte, à virgule flottante ou en tant que feuille. Le code suivant affiche une alerte sous forme de virgule flottante:
+Il existe deux façons différentes d’afficher une alerte, à virgule flottante ou en tant que feuille. Le code suivant affiche une alerte sous forme de virgule flottante :
 
 ```csharp
 var alert = new NSAlert () {
@@ -91,11 +91,11 @@ var alert = new NSAlert () {
 alert.RunModal ();
 ```
 
-Si ce code est exécuté, les éléments suivants s’affichent:
+Si ce code est exécuté, les éléments suivants s’affichent :
 
 [![](alert-images/alert02.png "Une alerte simple")](alert-images/alert02.png#lightbox)
 
-Le code suivant affiche la même alerte qu’une feuille:
+Le code suivant affiche la même alerte qu’une feuille :
 
 ```csharp
 var alert = new NSAlert () {
@@ -106,7 +106,7 @@ var alert = new NSAlert () {
 alert.BeginSheet (this);
 ```
 
-Si ce code est exécuté, les éléments suivants s’affichent:
+Si ce code est exécuté, les éléments suivants s’affichent :
 
 [![](alert-images/alert03.png "Une alerte affichée sous forme de feuille")](alert-images/alert03.png#lightbox)
 
@@ -129,17 +129,17 @@ alert.AddButton ("Maybe");
 var result = alert.RunModal ();
 ```
 
-Le tout premier bouton ajouté est le _bouton par défaut_ qui est activé si l’utilisateur appuie sur la touche entrée. La valeur retournée est un entier représentant le bouton sur lequel l’utilisateur a appuyé. Dans notre cas, les valeurs suivantes sont renvoyées:
+Le tout premier bouton ajouté est le _bouton par défaut_ qui est activé si l’utilisateur appuie sur la touche entrée. La valeur retournée est un entier représentant le bouton sur lequel l’utilisateur a appuyé. Dans notre cas, les valeurs suivantes sont renvoyées :
 
 - **OK** -1000.
 - **Annuler** -1001.
 - **Peut-être** -1002.
 
-Si nous exécutons le code, les éléments suivants s’affichent:
+Si nous exécutons le code, les éléments suivants s’affichent :
 
 [![](alert-images/alert04.png "Une alerte avec trois options de bouton")](alert-images/alert04.png#lightbox)
 
-Voici le code de la même alerte qu’une feuille:
+Voici le code de la même alerte qu’une feuille :
 
 ```csharp
 var alert = new NSAlert () {
@@ -155,7 +155,7 @@ alert.BeginSheetForResponse (this, (result) => {
 });
 ```
 
-Si ce code est exécuté, les éléments suivants s’affichent:
+Si ce code est exécuté, les éléments suivants s’affichent :
 
 [![](alert-images/alert05.png "Alerte à trois boutons affichée sous forme de feuille")](alert-images/alert05.png#lightbox)
 
@@ -166,7 +166,7 @@ Si ce code est exécuté, les éléments suivants s’affichent:
 
 ## <a name="showing-the-suppress-button"></a>Indication du bouton supprimer
 
-Si la propriété de `ShowSuppressButton` l’alerte `true`est, l’alerte affiche une case à cocher que l’utilisateur peut utiliser pour supprimer l’alerte pour les occurrences ultérieures de l’événement qui l’a déclenchée. Le code suivant affiche une alerte flottante libre avec un bouton supprimer:
+Si la propriété de `ShowSuppressButton` l’alerte `true`est, l’alerte affiche une case à cocher que l’utilisateur peut utiliser pour supprimer l’alerte pour les occurrences ultérieures de l’événement qui l’a déclenchée. Le code suivant affiche une alerte flottante libre avec un bouton supprimer :
 
 ```csharp
 var alert = new NSAlert () {
@@ -184,11 +184,11 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 Si la valeur de `alert.SuppressionButton.State` est `NSCellStateValue.On`, l’utilisateur a activé la case à cocher Supprimer, sinon ce n’est pas le cas.
 
-Si le code est exécuté, les éléments suivants s’affichent:
+Si le code est exécuté, les éléments suivants s’affichent :
 
 [![](alert-images/alert06.png "Alerte avec un bouton supprimer")](alert-images/alert06.png#lightbox)
 
-Voici le code de la même alerte qu’une feuille:
+Voici le code de la même alerte qu’une feuille :
 
 ```csharp
 var alert = new NSAlert () {
@@ -205,7 +205,7 @@ alert.BeginSheetForResponse (this, (result) => {
 });
 ```
 
-Si ce code est exécuté, les éléments suivants s’affichent:
+Si ce code est exécuté, les éléments suivants s’affichent :
 
 [![](alert-images/alert07.png "Une alerte avec un bouton supprimer apparaît sous forme de feuille")](alert-images/alert07.png#lightbox)
 
@@ -213,7 +213,7 @@ Si ce code est exécuté, les éléments suivants s’affichent:
 
 ## <a name="adding-a-custom-subview"></a>Ajout d’une sous-vue personnalisée
 
-Les alertes ont `AccessoryView` une propriété qui peut être utilisée pour personnaliser davantage l’alerte et ajouter des éléments comme un **champ de texte** pour l’entrée utilisateur. Le code suivant crée une alerte à virgule flottante avec un champ d’entrée de texte ajouté:
+Les alertes ont `AccessoryView` une propriété qui peut être utilisée pour personnaliser davantage l’alerte et ajouter des éléments comme un **champ de texte** pour l’entrée utilisateur. Le code suivant crée une alerte à virgule flottante avec un champ d’entrée de texte ajouté :
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -235,11 +235,11 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 Les lignes de clé ici `var input = new NSTextField (new CGRect (0, 0, 300, 20));` vous permettront de créer un **champ de texte** pour ajouter l’alerte. `alert.AccessoryView = input;`qui attache le **champ de texte** à l’alerte et l’appel à la `Layout()` méthode, qui est requis pour redimensionner l’alerte pour l’ajuster à la nouvelle sous-vue.
 
-Si nous exécutons le code, les éléments suivants s’affichent:
+Si nous exécutons le code, les éléments suivants s’affichent :
 
 [![](alert-images/alert08.png "Si nous exécutons le code, les éléments suivants s’affichent")](alert-images/alert08.png#lightbox)
 
-Voici la même alerte qu’une feuille:
+Voici la même alerte qu’une feuille :
 
 ```csharp
 var input = new NSTextField (new CGRect (0, 0, 300, 20));
@@ -260,7 +260,7 @@ alert.BeginSheetForResponse (this, (result) => {
 });
 ```
 
-Si nous exécutons ce code, les éléments suivants s’affichent:
+Si nous exécutons ce code, les éléments suivants s’affichent :
 
 [![](alert-images/alert09.png "Alerte avec un affichage personnalisé")](alert-images/alert09.png#lightbox)
 

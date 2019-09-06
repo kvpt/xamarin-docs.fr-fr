@@ -4,21 +4,21 @@ description: Ce document contient des liens vers les différents guides qui déc
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/19/2017
-ms.openlocfilehash: fa4744ba217d602dbd3134e616ac3bc4d47f7b76
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0a8963f7c6552e046aee2e75b10bcdb51fc22950
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120812"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286774"
 ---
 # <a name="introduction-to-ios-11"></a>Introduction à iOS 11
 
 ![Exemple ARKit](images/arkit.png) ![VENTES placement d’objets](images/arkit2.png) ![Exemple CoreML](images/coreml.png) ![Exemple MapKit](images/mapkit.png) ![Exemple de rectangles de vision](images/vision1.png) ![Exemple de vision des visages](images/vision2.png) ![Exemple de glisser-déplacer](images/drag-drop.png) ![Exemple de glisser-déplacer](images/drag-drop2.png) ![Exemple SiriKit](images/sirikit.png)
 
-iOS 11 comprend de nombreuses nouvelles fonctionnalités et améliorations dans diverses infrastructures:
+iOS 11 comprend de nombreuses nouvelles fonctionnalités et améliorations dans diverses infrastructures :
 
 ## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[Préparation de votre application pour iOS 11](updating-your-app/index.md)
 
@@ -59,7 +59,7 @@ Offre une variété de fonctionnalités d’analyse et de traitement d’images 
 
 ## <a name="samples"></a>Exemples
 
-Nous disposons d’un certain C# nombre d' [exemples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11) pour vous aider à démarrer:
+Nous disposons d’un certain C# nombre d' [exemples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11) pour vous aider à démarrer :
 
 - [Exemple ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
 - [ARKit placement d’objets](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4a3ba970f8ca32f0bfa2e5297e8052f3eb572ed0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: e7c8721254157565461e00657a3ee8a786e3ea00
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525720"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225765"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
@@ -20,7 +20,7 @@ _Ce document explique comment générer un fichier APK qui ciblera une interface
 
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Dans certaines situations, il peut être avantageux pour une application d’avoir plusieurs fichiers APK. Chaque fichier APK est signé avec le même magasin de clés et porte le même nom de package, mais est compilé pour une configuration d’appareil ou Android spécifique. Ce n’est pas l’approche recommandée. Il est beaucoup plus simple d’avoir un fichier APK pouvant prendre en charge plusieurs appareils et configurations. Dans certaines situations, la création de plusieurs fichiers APK peut être utile, par exemple :
 
@@ -49,17 +49,17 @@ Pour le code de version, Google recommande un algorithme particulier qui utilise
 L’extension de ce modèle de code de version à huit chiffres permet d’inclure des informations sur l’interface ABI dans le code de version, afin de garantir que Google Play distribuera le fichier APK correct à un appareil. La liste suivante explique ce format de code de version à huit chiffres (indexée de gauche à droite) :
 
 - **Index 0** (en rouge dans le diagramme ci-dessous) &ndash; Un nombre entier pour l’interface ABI :
-    - 1 &ndash; `armeabi`
-    - 2 &ndash; `armeabi-v7a`
-    - 6 &ndash; `x86`
+  - 1 &ndash; `armeabi`
+  - 2 &ndash; `armeabi-v7a`
+  - 6 &ndash; `x86`
 
 - **Index 1 à 2** (en orange dans le diagramme ci-dessous) &ndash; Le niveau d’API minimal pris en charge par l’application.
 
 - **Index 3 à 4** (en bleu dans le diagramme ci-dessous) &ndash; Les tailles d’écran prises en charge :
-    - 1 &ndash; petit
-    - 2 &ndash; normal
-    - 3 &ndash; grand
-    - 4 &ndash; très grand
+  - 1 &ndash; petit
+  - 2 &ndash; normal
+  - 3 &ndash; grand
+  - 4 &ndash; très grand
 
 - **Index 5 à 7** (en vert dans le diagramme ci-dessous) &ndash; Un nombre unique pour le code de version. 
     La version est définie par le développeur. Elle doit augmenter pour chaque version publique de l’application.

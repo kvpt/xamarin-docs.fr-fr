@@ -3,15 +3,15 @@ title: Utilisation de types natifs dans des applications multiplateformes
 description: Cet article aborde l’utilisation des nouveaux types natifs iOS API unifiée (nint, nuint, nfloat) dans une application multiplateforme dans laquelle le code est partagé avec des appareils non-iOS tels que les systèmes d’exploitation Android ou Windows Phone.
 ms.prod: xamarin
 ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/07/2016
-ms.openlocfilehash: 9018c3e3c976ef7623835055ee989dfd86dc25e1
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: dde5b2429622c967fa4419700ce8fe9860afbb10
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226232"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290849"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Utilisation de types natifs dans des applications multiplateformes
 
@@ -26,13 +26,13 @@ Ce document décrit les différentes façons d’interagir avec le API unifiée 
 
 Les API unifiées Xamarin. iOS et Xamarin. Mac incluent `int`toujours `uint` les `float` types de données, et, ainsi `RectangleF`que `SizeF` les `PointF` types, et. Ces types de données existants doivent continuer à être utilisés dans n’importe quel code multiplateforme partagé. Les nouveaux types de données natifs doivent uniquement être utilisés lors d’un appel à une API Mac ou iOS où la prise en charge des types orientés architecture est requise.
 
-En fonction de la nature du code partagé, il peut arriver que du code multiplateforme doive gérer les `nint`types de données, `nuint` et `nfloat` . Par exemple: une bibliothèque qui gère des transformations sur des données rectangulaires qui `System.Drawing.RectangleF` utilisaient précédemment pour partager des fonctionnalités entre les versions Xamarin. iOS et Xamarin. Android d’une application doit être mise à jour pour gérer les types natifs sur iOS.
+En fonction de la nature du code partagé, il peut arriver que du code multiplateforme doive gérer les `nint`types de données, `nuint` et `nfloat` . Par exemple : une bibliothèque qui gère des transformations sur des données rectangulaires qui `System.Drawing.RectangleF` utilisaient précédemment pour partager des fonctionnalités entre les versions Xamarin. iOS et Xamarin. Android d’une application doit être mise à jour pour gérer les types natifs sur iOS.
 
 La manière dont ces modifications sont gérées dépend de la taille et de la complexité de l’application et de la forme de partage de code qui a été utilisée, comme nous le verrons dans les sections suivantes.
 
 ## <a name="code-sharing-considerations"></a>Considérations sur le partage de code
 
-Comme indiqué dans le document [partage des options de code](~/cross-platform/app-fundamentals/code-sharing.md) , il existe deux façons principales de partager du code entre des projets multiplateforme: Les projets partagés et les bibliothèques de classes portables. Les deux types ayant été utilisés, limitent les options dont nous disposons lors de la gestion des types de données natifs dans le code multiplateforme.
+Comme indiqué dans le document [partage des options de code](~/cross-platform/app-fundamentals/code-sharing.md) , il existe deux façons principales de partager du code entre des projets multiplateforme : Les projets partagés et les bibliothèques de classes portables. Les deux types ayant été utilisés, limitent les options dont nous disposons lors de la gestion des types de données natifs dans le code multiplateforme.
 
 ### <a name="portable-class-library-projects"></a>Projets de bibliothèque de classes portables
 
@@ -166,7 +166,7 @@ Pour les zones où la perte de précision est un problème, une autre solution p
 #endif
 ```
 
-Pour que notre exemple de code devienne:
+Pour que notre exemple de code devienne :
 
 ```csharp
 using System;
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-Notez que nous avons ici modifié la `CalculateArea` méthode pour retourner un `nfloat` à la place de `float`la norme. Cela a été fait afin de ne pas obtenir une erreur de compilation tentant de convertir implicitement `nfloat` le résultat de notre calcul (puisque les deux valeurs multipliées sont `nfloat`de type) `float` dans une valeur de retour.
+Notez que nous avons ici modifié la `CalculateArea` méthode pour retourner un `nfloat` à la place de `float`la norme. Cela a été fait afin de ne pas obtenir une erreur de compilation tentant de convertir _implicitement_ le `nfloat` résultat de notre calcul (puisque les deux valeurs multipliées sont `nfloat`de type) `float` dans une valeur de retour.
 
 Si le code est compilé et exécuté sur un appareil non API unifiée, le `using nfloat = global::System.Single;` `nfloat` mappe à un `Single` qui effectue une conversion implicite en `float` qui permet à l’application frontale de consommer d’appeler la `CalculateArea` méthode sans modifiées.
 
@@ -231,7 +231,7 @@ En se basant sur l’architecture de notre application, nous pourrions utiliser 
 
 ## <a name="xamarinforms-applications"></a>Applications Xamarin. Forms
 
-Les éléments suivants sont nécessaires pour utiliser Xamarin. Forms pour les interfaces multiplateformes qui seront également partagées avec une application API unifiée:
+Les éléments suivants sont nécessaires pour utiliser Xamarin. Forms pour les interfaces multiplateformes qui seront également partagées avec une application API unifiée :
 
 - La solution complète doit utiliser la version 1.3.1 (ou une version ultérieure) du package NuGet Xamarin. Forms.
 - Pour tout rendu personnalisé Xamarin. iOS, utilisez les mêmes types de solutions présentées ci-dessus en fonction de la façon dont le code d’interface utilisateur a été partagé (projet partagé ou PCL).

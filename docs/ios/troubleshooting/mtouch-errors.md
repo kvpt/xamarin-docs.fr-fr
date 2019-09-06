@@ -5,19 +5,19 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9F76162B-D622-45DA-996B-2FBF8017E208
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: aa8f25af4a394b981fdc7d5dc5a8836b7ff240cc
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b8a7353ee67ee0686ad97428222c69dd095ee83a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200266"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290437"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
-## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx: messages d’erreur mTouch
+## <a name="mt0xxx-mtouch-error-messages"></a>MT0xxx : messages d’erreur mTouch
 
 Par exemple, paramètres, environnement, outils manquants.
 
@@ -30,17 +30,17 @@ Par exemple, paramètres, environnement, outils manquants.
 
 ### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MT0000: Erreur inattendue-veuillez remplir un rapport de bogue à https://github.com/xamarin/xamarin-macios/issues/new
 
-Une condition d’erreur inattendue s’est produite. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec autant d’informations que possible, notamment:
+Une condition d’erreur inattendue s’est produite. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec autant d’informations que possible, notamment :
 
 - Journaux de génération complets, avec un niveau de détail maximal `-v -v -v -v` (par exemple, dans les **arguments mTouch supplémentaires**);
-- Un cas de test minimal qui reproduit l’erreur; les
+- Un cas de test minimal qui reproduit l’erreur ; les
 - Toutes les informations sur les versions
 
 Le moyen le plus simple d’obtenir des informations de version exactes consiste à utiliser le menu **Visual Studio pour Mac** , **à propos de Visual Studio pour Mac** élément, afficher le bouton **Détails** et copier/coller la version informations (vous pouvez utiliser le bouton **copier les informations** ) .
 
 <a name="MT0001" />
 
-### <a name="mt0001--devname-was-provided-without-any-device-specific-action"></a>MT0001: «-devname» a été fourni sans action spécifique à l’appareil
+### <a name="mt0001--devname-was-provided-without-any-device-specific-action"></a>MT0001 : « -devname » a été fourni sans action spécifique à l’appareil
 
 Il s’agit d’un avertissement émis si-devname est passé à mTouch quand aucune action spécifique de l’appareil (-logdev/-installdev/-killdev/-launchdev/-listapps) n’a été demandée.
 
@@ -48,7 +48,7 @@ Il s’agit d’un avertissement émis si-devname est passé à mTouch quand auc
 
 ### <a name="mt0002-could-not-parse-the-environment-variable-"></a>MT0002: Impossible d’analyser la variable d’environnement *.
 
-Cette erreur se produit si vous tentez de définir une paire clé-valeur de variable d’environnement non valide. Le format correct est le suivant:`mtouch --setenv=VARIABLE=VALUE`
+Cette erreur se produit si vous tentez de définir une paire clé-valeur de variable d’environnement non valide. Le format correct est le suivant :`mtouch --setenv=VARIABLE=VALUE`
 
 <a name="MT0003" />
 
@@ -86,25 +86,25 @@ Xamarin. iOS ne peut pas trouver l’assembly à l’emplacement mentionné dans
 
 <a name="MT0008" />
 
-### <a name="mt0008-you-should-provide-one-root-assembly-only-found--assemblies-"></a>MT0008: Vous devez fournir un assembly racine uniquement, # Assemblies trouvés: *.
+### <a name="mt0008-you-should-provide-one-root-assembly-only-found--assemblies-"></a>MT0008: Vous devez fournir un assembly racine uniquement, # Assemblies trouvés : *.
 
 Plus d’un assembly racine a été passé à mTouch, alors qu’il ne peut y avoir qu’un seul assembly racine.
 
 <a name="MT0009" />
 
-### <a name="mt0009-error-while-loading-assemblies-"></a>MT0009: Erreur lors du chargement des assemblys: *.
+### <a name="mt0009-error-while-loading-assemblies-"></a>MT0009: Erreur lors du chargement des assemblys : *.
 
 Une erreur s’est produite lors du chargement des assemblys à partir des références d’assembly racine. Des informations supplémentaires peuvent être fournies dans la sortie de la génération.
 
 <a name="MT0010" />
 
-### <a name="mt0010-could-not-parse-the-command-line-arguments-"></a>MT0010: Impossible d’analyser les arguments de ligne de commande: *.
+### <a name="mt0010-could-not-parse-the-command-line-arguments-"></a>MT0010: Impossible d’analyser les arguments de ligne de commande : *.
 
 Une erreur s’est produite lors de l’analyse des arguments de ligne de commande. Veuillez vérifier qu’ils sont corrects.
 
 <a name="MT0011" />
 
-### <a name="mt0011--was-built-against-a-more-recent-runtime--than-monotouch-supports"></a>MT0011: * a été généré avec un Runtime plus récent (*) que le support monotactile.
+### <a name="mt0011--was-built-against-a-more-recent-runtime--than-monotouch-supports"></a>MT0011 : * a été généré avec un Runtime plus récent (*) que le support monotactile.
 
 Cet avertissement est généralement signalé, car le projet a une référence à une bibliothèque de classes qui n’a pas été créée à l’aide de la BCL Xamarin. iOS.
 
@@ -128,7 +128,7 @@ SGen (--Sgen) doit être activé si le profilage (--profilage) est activé.
 
 ### <a name="mt0014-the-ios--sdk-does-not-support-building-applications-targeting-"></a>MT0014: Le kit de développement logiciel (SDK) iOS * ne prend pas en charge la création d’applications ciblant *.
 
-Cela peut se produire dans les circonstances suivantes:
+Cela peut se produire dans les circonstances suivantes :
 
 - ARMv6 est activé et Xcode 4,5 ou version ultérieure est installé.
 - ARMv7s est activé et Xcode 4,4 ou version antérieure est installé.
@@ -137,7 +137,7 @@ Vérifiez que la version installée de Xcode prend en charge les architectures s
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: ABI non valide: *. Les Abi pris en charge sont: i386, x86_64, ARMv7, ARMv7 + LLVM, ARMv7 + LLVM + Thumb2, armv7s, armv7s + LLVM, armv7s + LLVM + Thumb2, arm64 et arm64 + LLVM.
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: ABI non valide : *. Les Abi pris en charge sont : i386, x86_64, ARMv7, ARMv7 + LLVM, ARMv7 + LLVM + Thumb2, armv7s, armv7s + LLVM, armv7s + LLVM + Thumb2, arm64 et arm64 + LLVM.
 
 Un ABI non valide a été passé à mTouch. Spécifiez un ABI valide.
 
@@ -155,7 +155,7 @@ Il est nécessaire de spécifier un assembly racine (en général, le fichier ex
 
 <a name="MT0018" />
 
-### <a name="mt0018-unknown-command-line-argument-"></a>MT0018: Argument de ligne de commande inconnu: *.
+### <a name="mt0018-unknown-command-line-argument-"></a>MT0018: Argument de ligne de commande inconnu : *.
 
 MTouch ne reconnaît pas l’argument de ligne de commande mentionné dans le message d’erreur.
 
@@ -163,7 +163,7 @@ MTouch ne reconnaît pas l’argument de ligne de commande mentionné dans le me
 
 ### <a name="mt0019-only-one---loginstallkilllaunchdev-or---launchdebugsim-option-can-be-used"></a>MT0019: Une seule option--[log | installer | Kill | Launch] dev ou--[Launch | debug] SIM peut être utilisée.
 
-Il existe plusieurs options pour mTouch qui ne peuvent pas être utilisées simultanément:
+Il existe plusieurs options pour mTouch qui ne peuvent pas être utilisées simultanément :
 
 - --logdev
 - --installdev
@@ -174,15 +174,15 @@ Il existe plusieurs options pour mTouch qui ne peuvent pas être utilisées simu
 
 <a name="MT0020" />
 
-### <a name="mt0020-the-valid-options-for--are-"></a>MT0020: Les options valides pour\*«» sont\*«».
+### <a name="mt0020-the-valid-options-for--are-"></a>MT0020: Les options valides pour\*« » sont\*« ».
 
 <a name="MT0021" />
 
-### <a name="mt0021-cannot-compile-using-gccg---use-gcc-when-using-the-static-registrar-this-is-the-default-when-compiling-for-device-either-remove-the---use-gcc-flag-or-use-the-dynamic-registrar---registrardynamic"></a>MT0021: Compilation impossible à l’aide de gcc/g + + (--Use-GCC) lors de l’utilisation du Registre statique (il s’agit de la valeur par défaut lors de la compilation pour l’appareil). Supprimez l’indicateur--Use-GCC ou utilisez le Bureau d’enregistrement dynamique (--Registrar: Dynamic).
+### <a name="mt0021-cannot-compile-using-gccg---use-gcc-when-using-the-static-registrar-this-is-the-default-when-compiling-for-device-either-remove-the---use-gcc-flag-or-use-the-dynamic-registrar---registrardynamic"></a>MT0021: Compilation impossible à l’aide de gcc/g + + (--Use-GCC) lors de l’utilisation du Registre statique (il s’agit de la valeur par défaut lors de la compilation pour l’appareil). Supprimez l’indicateur--Use-GCC ou utilisez le Bureau d’enregistrement dynamique (--Registrar : Dynamic).
 
 <a name="MT0022" />
 
-### <a name="mt0022-the-options---unsupported--enable-generics-in-registrar-and---registrar-are-not-compatible"></a>MT0022: Les options «--inpris en charge--Enable-génériques-in-Registrar» et «--Registrar» ne sont pas compatibles.
+### <a name="mt0022-the-options---unsupported--enable-generics-in-registrar-and---registrar-are-not-compatible"></a>MT0022: Les options « --inpris en charge--Enable-génériques-in-Registrar » et « --Registrar » ne sont pas compatibles.
 
 Supprimez les options `--unsupported--enable-generics-in-registrar` et `--registrar`. À compter de Xamarin. iOS 7.2.1, le Bureau d’enregistrement par défaut prend en charge les génériques.
 
@@ -204,7 +204,7 @@ Le nom de l’assembly exécutable et le nom de l’application ne peuvent pas c
 
 <a name="MT0026" />
 
-### <a name="mt0026-could-not-parse-the-command-line-argument--"></a>MT0026: Impossible d’analyser l’argument de ligne de commande' * ': *
+### <a name="mt0026-could-not-parse-the-command-line-argument--"></a>MT0026: Impossible d’analyser l’argument de ligne de commande' * ' : *
 
 <a name="MT0027" />
 
@@ -212,7 +212,7 @@ Le nom de l’assembly exécutable et le nom de l’application ne peuvent pas c
 
 <a name="MT0028" />
 
-### <a name="mt0028-cannot-enable-pie--pie-when-targeting-ios-41-or-earlier-please-disable-pie--piefalse-or-set-the-deployment-target-to-at-least-ios-42"></a>MT0028: Impossible d’activer le graphique à secteurs (-Pie) quand vous ciblez iOS 4,1 ou une version antérieure. Désactivez le graphique à secteurs (-Pie: faux) ou définissez la cible de déploiement sur au moins iOS 4,2
+### <a name="mt0028-cannot-enable-pie--pie-when-targeting-ios-41-or-earlier-please-disable-pie--piefalse-or-set-the-deployment-target-to-at-least-ios-42"></a>MT0028: Impossible d’activer le graphique à secteurs (-Pie) quand vous ciblez iOS 4,1 ou une version antérieure. Désactivez le graphique à secteurs (-Pie : faux) ou définissez la cible de déploiement sur au moins iOS 4,2
 
 <a name="MT0029" />
 
@@ -226,7 +226,7 @@ REPL est pris en charge uniquement si vous créez pour le simulateur. Cela signi
 
 Lorsque Xcode symbolicates (traduit les adresses mémoire en noms de fonction et les numéros de fichier/ligne), le processus peut échouer si l’exécutable et l’application ont des noms différents (sans l’extension).
 
-Pour résoudre ce problème, modifiez «nom de l’application» dans les options de l’application de build/iOS du projet ou modifiez «nom de l’assembly» dans les options de génération/sortie du projet.
+Pour résoudre ce problème, modifiez « nom de l’application » dans les options de l’application de build/iOS du projet ou modifiez « nom de l’assembly » dans les options de génération/sortie du projet.
 
 <a name="MT0031" />
 
@@ -252,11 +252,11 @@ Pour résoudre ce problème, modifiez «nom de l’application» dans les option
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: unitouch. dll n’est pas compatible 64 bits. Référencez Xamarin. iOS. dll ou ne générez pas pour une architecture 64 bits (ARM64 et/ou x86_64).
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037 : unitouch. dll n’est pas compatible 64 bits. Référencez Xamarin. iOS. dll ou ne générez pas pour une architecture 64 bits (ARM64 et/ou x86_64).
 
 <a name="MT0038" />
 
-### <a name="mt0038-the-old-registrars---registraroldstaticolddynamic-are-not-supported-when-referencing-xamariniosdll"></a>MT0038: Les anciens bureaux d’enregistrement (--Registrar: oldstatic | olddynamic) ne sont pas pris en charge lors du référencement de Xamarin. iOS. dll.
+### <a name="mt0038-the-old-registrars---registraroldstaticolddynamic-are-not-supported-when-referencing-xamariniosdll"></a>MT0038: Les anciens bureaux d’enregistrement (--Registrar : oldstatic | olddynamic) ne sont pas pris en charge lors du référencement de Xamarin. iOS. dll.
 
 <a name="MT0039" />
 
@@ -276,19 +276,19 @@ Pour résoudre ce problème, modifiez «nom de l’application» dans les option
 
 <a name="MT0043" />
 
-### <a name="mt0043-the-boehm-garbage-collector-is-currently-not-supported-when-referencing-xamariniosdll-the-sgen-garbage-collector-has-been-selected-instead"></a>MT0043: Le garbage collector Boehm n’est actuellement pas pris en charge lors du référencement de «Xamarin. iOS. dll». Le garbage collector SGen a été sélectionné à la place.
+### <a name="mt0043-the-boehm-garbage-collector-is-currently-not-supported-when-referencing-xamariniosdll-the-sgen-garbage-collector-has-been-selected-instead"></a>MT0043: Le garbage collector Boehm n’est actuellement pas pris en charge lors du référencement de « Xamarin. iOS. dll ». Le garbage collector SGen a été sélectionné à la place.
 
 Seul le garbage collector SGen est pris en charge avec les projets unifiés. Assurez-vous qu’il n’existe aucun indicateur mTouch supplémentaire spécifiant Boehm comme garbage collector.
 
 <a name="MT0044" />
 
-### <a name="mt0044---listsim-is-only-supported-with-xcode-60-or-later"></a>MT0044:--listsim est pris en charge uniquement avec Xcode 6,0 ou version ultérieure.
+### <a name="mt0044---listsim-is-only-supported-with-xcode-60-or-later"></a>MT0044 :--listsim est pris en charge uniquement avec Xcode 6,0 ou version ultérieure.
 
 Installez une version de Xcode plus récente.
 
 <a name="MT0045" />
 
-### <a name="mt0045---extension-is-only-supported-when-using-the-ios-80-or-later-sdk"></a>MT0045:--l’extension est prise en charge uniquement lors de l’utilisation du kit de développement logiciel (SDK) iOS 8,0 (ou version ultérieure).
+### <a name="mt0045---extension-is-only-supported-when-using-the-ios-80-or-later-sdk"></a>MT0045 :--l’extension est prise en charge uniquement lors de l’utilisation du kit de développement logiciel (SDK) iOS 8,0 (ou version ultérieure).
 
 <!-- MT0046 is not reported anymore -->
 
@@ -300,7 +300,7 @@ Installez une version de Xcode plus récente.
 
 <a name="MT0049" />
 
-### <a name="mt0049-framework-is-supported-only-if-deployment-target-is-80-or-later--features-might-not-work-correctly"></a>MT0049: *. Framework est pris en charge uniquement si la cible de déploiement est 8,0 ou une version ultérieure. * les fonctionnalités peuvent ne pas fonctionner correctement.
+### <a name="mt0049-framework-is-supported-only-if-deployment-target-is-80-or-later--features-might-not-work-correctly"></a>MT0049 : *. Framework est pris en charge uniquement si la cible de déploiement est 8,0 ou une version ultérieure. * les fonctionnalités peuvent ne pas fonctionner correctement.
 
 L’infrastructure spécifiée n’est pas prise en charge dans la version iOS à laquelle la cible de déploiement fait référence. Mettez à jour la cible de déploiement vers une version iOS plus récente ou supprimez l’utilisation du Framework spécifié de l’application.
 
@@ -322,7 +322,7 @@ Aucune action n’a été spécifiée pour mTouch.
 
 <a name="MT0054" />
 
-### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054: Impossible de rendre canonique le chemin d’accès' * ': *
+### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054: Impossible de rendre canonique le chemin d’accès' * ' : *
 
 Il s’agit d’une erreur interne. Si vous voyez cette erreur, veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -350,21 +350,21 @@ Le chemin d’accès `--sdkroot` passé à l’aide de ne spécifie pas d’appl
 
 <a name="MT0059" />
 
-### <a name="mt0059-could-not-find-the-currently-selected-xcode-on-the-system-"></a>MT0059: Impossible de trouver le Xcode actuellement sélectionné sur le système: *
+### <a name="mt0059-could-not-find-the-currently-selected-xcode-on-the-system-"></a>MT0059: Impossible de trouver le Xcode actuellement sélectionné sur le système : *
 
 <a name="MT0060" />
 
-### <a name="mt0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned--but-that-directory-does-not-exist"></a>MT0060: Impossible de trouver le Xcode actuellement sélectionné sur le système. «Xcode-Select--Print-Path» a retourné «*», mais ce répertoire n’existe pas.
+### <a name="mt0060-could-not-find-the-currently-selected-xcode-on-the-system-xcode-select---print-path-returned--but-that-directory-does-not-exist"></a>MT0060: Impossible de trouver le Xcode actuellement sélectionné sur le système. « Xcode-Select--Print-Path » a retourné « * », mais ce répertoire n’existe pas.
 
 <a name="MT0061" />
 
-### <a name="mt0061-no-xcodeapp-specified-using---sdkroot-using-the-system-xcode-as-reported-by-xcode-select---print-path-"></a>MT0061: Aucune application Xcode. app spécifiée (à l’aide de--SDKRoot) à l’aide du système Xcode comme indiqué par «Xcode-Select--Print-Path»: *
+### <a name="mt0061-no-xcodeapp-specified-using---sdkroot-using-the-system-xcode-as-reported-by-xcode-select---print-path-"></a>MT0061: Aucune application Xcode. app spécifiée (à l’aide de--SDKRoot) à l’aide du système Xcode comme indiqué par « Xcode-Select--Print-Path » : *
 
 Il s’agit d’un avertissement d’information, expliquant quel Xcode sera utilisé, car aucun n’a été spécifié.
 
 <a name="MT0062" />
 
-### <a name="mt0062-no-xcodeapp-specified-using---sdkroot-or-xcode-select---print-path-using-the-default-xcode-instead-"></a>MT0062: Aucune application Xcode. app spécifiée (à l’aide de--SDKRoot ou de «Xcode-Select--Print-Path»), en utilisant par défaut Xcode à la place: *
+### <a name="mt0062-no-xcodeapp-specified-using---sdkroot-or-xcode-select---print-path-using-the-default-xcode-instead-"></a>MT0062: Aucune application Xcode. app spécifiée (à l’aide de--SDKRoot ou de « Xcode-Select--Print-Path »), en utilisant par défaut Xcode à la place : *
 
 Il s’agit d’un avertissement d’information, expliquant quel Xcode sera utilisé, car aucun n’a été spécifié.
 
@@ -380,11 +380,11 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 ### <a name="mt0064-xamarinios-only-supports-embedded-frameworks-with-unified-projects"></a>MT0064: Xamarin. iOS prend uniquement en charge les frameworks incorporés avec des projets unifiés.
 
-Xamarin. iOS prend uniquement en charge les frameworks intégrés lors de l’utilisation de l’API unifiée; Mettez à jour votre projet pour utiliser le API unifiée.
+Xamarin. iOS prend uniquement en charge les frameworks intégrés lors de l’utilisation de l’API unifiée ; Mettez à jour votre projet pour utiliser le API unifiée.
 
 <a name="MT0065" />
 
-### <a name="mt0065-xamarinios-only-supports-embedded-frameworks-when-deployment-target-is-at-least-80-current-deployment-target--embedded-frameworks-"></a>MT0065: Xamarin. iOS prend uniquement en charge les frameworks intégrés lorsque la cible de déploiement est au moins 8,0 (cible de déploiement actuelle: * frameworks incorporés: *)
+### <a name="mt0065-xamarinios-only-supports-embedded-frameworks-when-deployment-target-is-at-least-80-current-deployment-target--embedded-frameworks-"></a>MT0065: Xamarin. iOS prend uniquement en charge les frameworks intégrés lorsque la cible de déploiement est au moins 8,0 (cible de déploiement actuelle : * frameworks incorporés : *)
 
 Xamarin. iOS prend uniquement en charge les frameworks intégrés lorsque la cible de déploiement est d’au moins 8,0 (car les versions antérieures d’iOS ne prennent pas en charge les frameworks incorporés).
 
@@ -392,19 +392,19 @@ Veuillez mettre à jour la cible de déploiement dans le fichier info. plist du 
 
 <a name="MT0066" />
 
-### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066: Assembly d’inscription de build non valide: *
+### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066: Assembly d’inscription de build non valide : *
 
 Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un cas de test.
 
 <a name="MT0067" />
 
-### <a name="mt0067-invalid-registrar-"></a>MT0067: Bureau d’enregistrement non valide: *
+### <a name="mt0067-invalid-registrar-"></a>MT0067: Bureau d’enregistrement non valide : *
 
 Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un cas de test.
 
 <a name="MT0068" />
 
-### <a name="mt0068-invalid-value-for-target-framework-"></a>MT0068: Valeur non valide pour la version cible de .NET Framework: *.
+### <a name="mt0068-invalid-value-for-target-framework-"></a>MT0068: Valeur non valide pour la version cible de .NET Framework : *.
 
 Une version cible de .NET Framework non valide a été passée à l’aide de l’argument--Target-Framework. Spécifiez un Framework cible valide.
 
@@ -414,13 +414,13 @@ Une version cible de .NET Framework non valide a été passée à l’aide de l�
 
 <a name="MT0070" />
 
-### <a name="mt0070-invalid-target-framework--valid-target-frameworks-are-"></a>MT0070: Framework cible non valide: *. Les frameworks cibles valides sont: *.
+### <a name="mt0070-invalid-target-framework--valid-target-frameworks-are-"></a>MT0070: Framework cible non valide : *. Les frameworks cibles valides sont : *.
 
 Une version cible de .NET Framework non valide a été passée à l’aide de l’argument--Target-Framework. Spécifiez un Framework cible valide.
 
 <a name="MT0071" />
 
-### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: Plateforme inconnue: *. Cela indique généralement un bogue dans Xamarin. iOS. Veuillez signaler un rapport de bogue dans http://bugzilla.xamarin.com à l’aide d’un cas de test.
+### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: Plateforme inconnue : *. Cela indique généralement un bogue dans Xamarin. iOS. Veuillez signaler un rapport de bogue dans http://bugzilla.xamarin.com à l’aide d’un cas de test.
 
 Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un cas de test.
 
@@ -448,7 +448,7 @@ Sélectionnez une cible de déploiement minimale antérieure dans le fichier inf
 
 <a name="MT0075" />
 
-### <a name="mt0075-invalid-architecture--for--projects-valid-architectures-are-"></a>MT0075: Architecture' * 'non valide pour les projets *. Les architectures valides sont les suivantes: *
+### <a name="mt0075-invalid-architecture--for--projects-valid-architectures-are-"></a>MT0075: Architecture' * 'non valide pour les projets *. Les architectures valides sont les suivantes : *
 
 Une architecture non valide a été spécifiée. Vérifiez que l’architecture est valide.
 
@@ -482,9 +482,9 @@ Mettez à niveau Xcode pour garantir un comportement optimal.
 
 <a name="MT0080" />
 
-### <a name="mt0080-disabling-newrefcount---new-refcountfalse-is-deprecated"></a>MT0080: La désactivation de NewRefCount,--New-refcount: false, est déconseillée.
+### <a name="mt0080-disabling-newrefcount---new-refcountfalse-is-deprecated"></a>MT0080: La désactivation de NewRefCount,--New-refcount : false, est déconseillée.
 
-Il s’agit d’un avertissement indiquant que la demande de désactivation du nouveau refcount (--New-refcount: false) a été ignorée.
+Il s’agit d’un avertissement indiquant que la demande de désactivation du nouveau refcount (--New-refcount : false) a été ignorée.
 
 La nouvelle fonctionnalité refcount est maintenant obligatoire pour tous les projets et il n’est donc pas possible de la désactiver.
 
@@ -498,7 +498,7 @@ La nouvelle fonctionnalité refcount est maintenant obligatoire pour tous les pr
 
 <a name="MT0083" />
 
-### <a name="mt0083-asm-only-bitcode-is-not-supported-on-watchos-use-either---bitcodemarker-or---bitcodefull"></a>MT0083: Le bitcode ASM uniquement n’est pas pris en charge sur Watchos. Utilisez soit--bitcode: Marker, soit--bitcode: Full.
+### <a name="mt0083-asm-only-bitcode-is-not-supported-on-watchos-use-either---bitcodemarker-or---bitcodefull"></a>MT0083: Le bitcode ASM uniquement n’est pas pris en charge sur Watchos. Utilisez soit--bitcode : Marker, soit--bitcode : Full.
 
 <a name="MT0084" />
 
@@ -520,7 +520,7 @@ Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème s
 
 <a name="MT0088" />
 
-### <a name="mt0088-the-gc-must-be-in-cooperative-mode-for-watchos-apps-please-remove-the---coopfalse-argument-to-mtouch"></a>MT0088: Le GC doit être en mode coopératif pour les applications Watchos. Supprimez l’argument--Coop: false dans mTouch.
+### <a name="mt0088-the-gc-must-be-in-cooperative-mode-for-watchos-apps-please-remove-the---coopfalse-argument-to-mtouch"></a>MT0088: Le GC doit être en mode coopératif pour les applications Watchos. Supprimez l’argument--Coop : false dans mTouch.
 
 <a name="MT0089" />
 
@@ -546,7 +546,7 @@ Une dernière solution consiste à utiliser une version antérieure de Xamarin. 
 
 <a name="MT0095" />
 
-### <a name="mt0095-aot-files-could-not-be-copied-to-the-destination-directory-dest-error"></a>MT0095: Les fichiers AOA n’ont pas pu être copiés dans le répertoire de destination {dest}: {Error}
+### <a name="mt0095-aot-files-could-not-be-copied-to-the-destination-directory-dest-error"></a>MT0095: Les fichiers AOA n’ont pas pu être copiés dans le répertoire de destination {dest} : {Error}
 
 <a name="MT0096" />
 
@@ -565,7 +565,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100: Cible de génération d’assembly non valide: ' * '. Veuillez signaler un rapport de bogues avec un cas http://bugzilla.xamarin.com) de test (.
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpbugzillaxamarincom"></a>MT0100: Cible de génération d’assembly non valide : ' * '. Veuillez signaler un rapport de bogues avec un cas http://bugzilla.xamarin.com) de test (.
 
 Ce message d’erreur est signalé en cas d’échec d’une vérification de cohérence interne dans Xamarin. iOS.
 
@@ -617,11 +617,11 @@ Cette erreur est signalée lorsque l’assembly mentionné dans le message d’e
 
 <a name="MT0106" />
 
-### <a name="mt0106-the-assembly-build-target-name--is-invalid-the-character--is-not-allowed"></a>MT0106: Le nom cible de la build\*de l’assembly' 'n'\*est pas valide: le caractère' 'n’est pas autorisé.
+### <a name="mt0106-the-assembly-build-target-name--is-invalid-the-character--is-not-allowed"></a>MT0106: Le nom cible de la build\*de l’assembly' 'n'\*est pas valide : le caractère' 'n’est pas autorisé.
 
 Le nom de la cible de génération de l’assembly doit être un nom de fichier valide.
 
-Par exemple, ces valeurs déclenchent cette erreur:
+Par exemple, ces valeurs déclenchent cette erreur :
 
 ```
 --assembly-build-target:Assembly1.dll=staticobject=my/path.o
@@ -639,7 +639,7 @@ car `my/path.o` n’est pas un nom de fichier valide en raison du caractère de 
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: L’assembly{0}' 'a été chargé à partir d’un chemin d’accès différent du chemin {1}d’accès fourni ( {2}chemin d’accès fourni:, chemin d’accès réel:).
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: L’assembly{0}' 'a été chargé à partir d’un chemin d’accès différent du chemin {1}d’accès fourni ( {2}chemin d’accès fourni :, chemin d’accès réel :).
 
 Il s’agit d’un avertissement indiquant qu’un assembly référencé par l’application a été chargé à partir d’un emplacement différent de celui qui a été demandé.
 
@@ -671,7 +671,7 @@ Pour plus d’informations, consultez le bogue n °[51634](https://bugzilla.xama
 
 ### <a name="mt0112-native-code-sharing-has-been-disabled-because-"></a>MT0112: Le partage de code natif a été désactivé, car *
 
-Il existe plusieurs raisons pour lesquelles le partage de code peut être désactivé:
+Il existe plusieurs raisons pour lesquelles le partage de code peut être désactivé :
 
 - étant donné que la cible de déploiement de l’application conteneur est antérieure à iOS 8,0 (*)).
 
@@ -711,7 +711,7 @@ Le partage de code natif requiert n’est pas pris en charge pour les projets qu
 
   Le partage de code natif requiert que les arguments du compilateur AOA ne diffèrent pas entre les projets qui partagent du code.
 
-  Cette condition se produit si l’opération «effectuer toutes les opérations float 32 bits en tant que valeurs float 64 bits» diffère entre les projets.
+  Cette condition se produit si l’opération « effectuer toutes les opérations float 32 bits en tant que valeurs float 64 bits » diffère entre les projets.
 
 - étant donné que LLVM n’est pas activé ou désactivé à la fois\*dans l’application conteneur (\*) et l’extension ().
 
@@ -733,13 +733,13 @@ Le partage de code natif requiert n’est pas pris en charge pour les projets qu
 
   Le partage de code natif requiert que l’application conteneur soit générée pour toutes les architectures pour lesquelles toute extension d’application est générée.
 
-  Par exemple: cette condition se produit lorsqu’une extension est générée pour ARM64 + ARMv7, mais que l’application conteneur est uniquement générée pour ARM64.
+  Par exemple : cette condition se produit lorsqu’une extension est générée pour ARM64 + ARMv7, mais que l’application conteneur est uniquement générée pour ARM64.
 
 - parce que l’application conteneur est en génération pour \*l’ABI, qui n’est pas compatible avec l’Abi\*de l’extension ().
 
   Le partage de code natif requiert que tous les projets soient générés pour la même API.
 
-  Par exemple: cette condition se produit lorsqu’une extension est générée pour ARMv7 + LLVM + Thumb2, mais que l’application conteneur est uniquement générée pour ARMv7 + LLVM.
+  Par exemple : cette condition se produit lorsqu’une extension est générée pour ARMv7 + LLVM + Thumb2, mais que l’application conteneur est uniquement générée pour ARMv7 + LLVM.
 
 - étant donné que l’application de conteneur référence l'\*assembly'\*'à partir de' ', alors que l’extension fait référence à une autre version de' * '.
 
@@ -755,7 +755,7 @@ Les projets Xamarin. iOS référencent souvent les symboles natifs de manière d
 
 Généralement, Xamarin. iOS demande à l’éditeur de liens natif de conserver ces symboles ( `-u symbol` à l’aide de l’indicateur de l’éditeur de liens), mais lors de la compilation `-u` pour bitcode, l’éditeur de liens natif n’accepte pas l’indicateur.
 
-Xamarin. iOS a implémenté une solution alternative: nous générons du code natif supplémentaire qui fait référence à ces symboles. par conséquent, l’éditeur de liens natif verra que ces symboles sont utilisés. Cette opération est effectuée automatiquement lors de la compilation sur bitcode.
+Xamarin. iOS a implémenté une solution alternative : nous générons du code natif supplémentaire qui fait référence à ces symboles. par conséquent, l’éditeur de liens natif verra que ces symboles sont utilisés. Cette opération est effectuée automatiquement lors de la compilation sur bitcode.
 
 Si `--dynamic-symbol-mode=linker` est passé à mTouch, cette solution alternative est désactivée et Xamarin. iOS tente de passer `-u` à l’éditeur de liens natif. Cela provoquera très probablement des erreurs natives de l’éditeur de liens.
 
@@ -765,7 +765,7 @@ La solution consiste à supprimer l' `--dynamic-symbol-mode=linker` argument des
 
 <a name="MT0116" />
 
-### <a name="mt0116-invalid-architecture-arch-32-bit-architectures-are-not-supported-when-deployment-target-is-11-or-later-make-sure-the-project-does-not-build-for-a-32-bit-architecture"></a>MT0116: Architecture non valide: {Arch}. les architectures 32 bits ne sont pas prises en charge lorsque le déploiement cible est 11 ou une version ultérieure. Assurez-vous que le projet n’est pas généré pour une architecture 32 bits.
+### <a name="mt0116-invalid-architecture-arch-32-bit-architectures-are-not-supported-when-deployment-target-is-11-or-later-make-sure-the-project-does-not-build-for-a-32-bit-architecture"></a>MT0116: Architecture non valide : {Arch}. les architectures 32 bits ne sont pas prises en charge lorsque le déploiement cible est 11 ou une version ultérieure. Assurez-vous que le projet n’est pas généré pour une architecture 32 bits.
 
 iOS 11 ne contient pas de prise en charge pour les applications 32 bits. il n’est donc pas possible de générer une application 32 bits lorsque la cible de déploiement est iOS 11 ou une version ultérieure.
 
@@ -777,7 +777,7 @@ Remplacez l’architecture cible des options de génération iOS du projet par a
 
 <a name="MT0118" />
 
-### <a name="mt0118-aot-files-could-not-be-found-at-the-expected-directory-msymdir"></a>MT0118: Les fichiers AOA sont introuvables dans le répertoire attendu «{msymdir}».
+### <a name="mt0118-aot-files-could-not-be-found-at-the-expected-directory-msymdir"></a>MT0118: Les fichiers AOA sont introuvables dans le répertoire attendu « {msymdir} ».
 
 <!-- 0119 - 0123: free to use -->
 
@@ -787,7 +787,7 @@ Remplacez l’architecture cible des options de génération iOS du projet par a
 
 Aucune référence à l’assembly de plateforme (Xamarin. iOS. dll/Xamarin. TVOS. dll/Xamarin. Watchos. dll) n’a été trouvée dans l’assembly exécutable.
 
-Cela se produit généralement quand aucun code dans le projet exécutable n’utilise rien de l’assembly de plateforme. par exemple, une méthode main vide (et aucun autre code) affiche l’erreur suivante:
+Cela se produit généralement quand aucun code dans le projet exécutable n’utilise rien de l’assembly de plateforme. par exemple, une méthode main vide (et aucun autre code) affiche l’erreur suivante :
 
 ```csharp
 class Program {
@@ -797,7 +797,7 @@ class Program {
 }
 ```
 
-L’utilisation d’une API à partir de l’assembly de plateforme permet de résoudre l’erreur:
+L’utilisation d’une API à partir de l’assembly de plateforme permet de résoudre l’erreur :
 
 ```csharp
 class Program {
@@ -810,7 +810,7 @@ class Program {
 
 <a name="MT0124" />
 
-### <a name="mt0124-could-not-set-the-current-language-to-lang-according-to-langlang-exception"></a>MT0124: Impossible de définir la langue actuelle sur «{lang}» (en fonction de LANG = {LANG}): {exception}
+### <a name="mt0124-could-not-set-the-current-language-to-lang-according-to-langlang-exception"></a>MT0124: Impossible de définir la langue actuelle sur « {lang} » (en fonction de LANG = {LANG}) : {exception}
 
 Il s’agit d’un avertissement indiquant que la langue actuelle n’a pas pu être définie sur la langue du message d’erreur.
 
@@ -840,11 +840,11 @@ Pour plus d’informations, consultez le bogue n °[52727](https://bugzilla.xama
 
 <a name="MT0128" />
 
-### <a name="mt0128-could-not-touch-the-file--"></a>MT0128: Impossible de toucher au fichier' * ': *
+### <a name="mt0128-could-not-touch-the-file--"></a>MT0128: Impossible de toucher au fichier' * ' : *
 
 Une erreur s’est produite lors du contact d’un fichier (qui est effectuée pour garantir que les builds partielles sont effectuées correctement).
 
-Cet avertissement peut probablement être ignoré; en cas de problème, envoyez un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) et il sera examiné.
+Cet avertissement peut probablement être ignoré ; en cas de problème, envoyez un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) et il sera examiné.
 
 <a name="MT0135" />
 
@@ -887,15 +887,15 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 <a name="MT1005" />
 
-### <a name="mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a>MT1005: Impossible de supprimer l’application'\*'sur l’appareil'\*': *-vous devrez peut-être arrêter l’application manuellement.
+### <a name="mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a>MT1005: Impossible de supprimer l’application'\*'sur l’appareil'\*' : *-vous devrez peut-être arrêter l’application manuellement.
 
 <a name="MT1006" />
 
-### <a name="mt1006-could-not-install-the-application--on-the-device--"></a>MT1006: Impossible d’installer l’application «\*» sur l’appareil «\*»: *.
+### <a name="mt1006-could-not-install-the-application--on-the-device--"></a>MT1006: Impossible d’installer l’application «\*» sur l’appareil «\*» : *.
 
 <a name="MT1007" />
 
-### <a name="mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a>MT1007: Échec du lancement de l’application\*' 'sur l’appareil\*' ': *. Vous pouvez toujours lancer l’application manuellement en appuyant dessus.
+### <a name="mt1007-failed-to-launch-the-application--on-the-device---you-can-still-launch-the-application-manually-by-tapping-on-it"></a>MT1007: Échec du lancement de l’application\*' 'sur l’appareil\*' ' : *. Vous pouvez toujours lancer l’application manuellement en appuyant dessus.
 
 <a name="MT1008" />
 
@@ -903,7 +903,7 @@ En tant que solution de dernière paille, utilisez une version antérieure de Xa
 
 Cette erreur est signalée si mTouch n’a pas pu lancer le simulateur.   Cela peut se produire parfois lorsqu’un processus simulateur obsolète ou inactif est déjà en cours d’exécution.
 
-La commande suivante émise sur la ligne de commande UNIX peut être utilisée pour supprimer les processus du simulateur bloqué:
+La commande suivante émise sur la ligne de commande UNIX peut être utilisée pour supprimer les processus du simulateur bloqué :
 
 ```bash
 $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
@@ -911,11 +911,11 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 
 <a name="MT1009" />
 
-### <a name="mt1009-could-not-copy-the-assembly--to--"></a>MT1009: Impossible de copier l’assembly\*' 'dans\*' ': *
+### <a name="mt1009-could-not-copy-the-assembly--to--"></a>MT1009: Impossible de copier l’assembly\*' 'dans\*' ' : *
 
 Il s’agit d’un problème connu dans certaines versions de Xamarin. iOS.
 
-Si cela se produit, essayez la solution de contournement suivante:
+Si cela se produit, essayez la solution de contournement suivante :
 
 ```bash
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
@@ -925,33 +925,33 @@ Toutefois, étant donné que ce problème a été résolu dans la dernière vers
 
 <a name="MT1010" />
 
-### <a name="mt1010-could-not-load-the-assembly--"></a>MT1010: Impossible de charger l’assembly' * ': *
+### <a name="mt1010-could-not-load-the-assembly--"></a>MT1010: Impossible de charger l’assembly' * ' : *
 
 <a name="MT1011" />
 
-### <a name="mt1011-could-not-add-missing-resource-file-"></a>MT1011: Impossible d’ajouter le fichier de ressources manquant: ' * '
+### <a name="mt1011-could-not-add-missing-resource-file-"></a>MT1011: Impossible d’ajouter le fichier de ressources manquant : ' * '
 
 <a name="MT1012" />
 
-### <a name="mt1012-failed-to-list-the-apps-on-the-device--"></a>MT1012: Échec de la liste des applications sur l’appareil' * ': *
+### <a name="mt1012-failed-to-list-the-apps-on-the-device--"></a>MT1012: Échec de la liste des applications sur l’appareil' * ' : *
 
 <a name="MT1013" />
 
-### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013: Erreur de suivi des dépendances: aucun fichier à comparer. Veuillez signaler un rapport de bogue dans http://bugzilla.xamarin.com à l’aide d’un cas de test.
+### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013: Erreur de suivi des dépendances : aucun fichier à comparer. Veuillez signaler un rapport de bogue dans http://bugzilla.xamarin.com à l’aide d’un cas de test.
 
 Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un cas de test.
 
 <a name="MT1014" />
 
-### <a name="mt1014-failed-to-re-use-cached-version-of--"></a>MT1014: Échec de la réutilisation de la version mise en cache de' * ': *.
+### <a name="mt1014-failed-to-re-use-cached-version-of--"></a>MT1014: Échec de la réutilisation de la version mise en cache de' * ' : *.
 
 <a name="MT1015" />
 
-### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Impossible de créer le fichier exécutable' * ': *
+### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Impossible de créer le fichier exécutable' * ' : *
 
 <a name="MT1015" />
 
-### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Impossible de créer le fichier exécutable' * ': *
+### <a name="mt1015-failed-to-create-the-executable--"></a>MT1015: Impossible de créer le fichier exécutable' * ' : *
 
 <a name="MT1016" />
 
@@ -961,15 +961,15 @@ Supprimez le `NOTICE` répertoire du projet.
 
 <a name="MT1017" />
 
-### <a name="mt1017-failed-to-create-the-notice-file-"></a>MT1017: Échec de la création du fichier d’avis: *.
+### <a name="mt1017-failed-to-create-the-notice-file-"></a>MT1017: Échec de la création du fichier d’avis : *.
 
 <a name="MT1018" />
 
-### <a name="mt1018-your-application-failed-code-signing-checks-and-could-not-be-installed-on-the-device--check-your-certificates-provisioning-profiles-and-bundle-ids-probably-your-device-is-not-part-of-the-selected-provisioning-profile-error-0xe8008015"></a>MT1018: Votre application n’a pas pu vérifier la signature du code et n’a pas pu être installée sur l’appareil' * '. Vérifiez vos certificats, les profils de provisionnement et les ID de bundle. Votre appareil ne fait probablement pas partie du profil d’approvisionnement sélectionné (erreur: 0xe8008015).
+### <a name="mt1018-your-application-failed-code-signing-checks-and-could-not-be-installed-on-the-device--check-your-certificates-provisioning-profiles-and-bundle-ids-probably-your-device-is-not-part-of-the-selected-provisioning-profile-error-0xe8008015"></a>MT1018: Votre application n’a pas pu vérifier la signature du code et n’a pas pu être installée sur l’appareil' * '. Vérifiez vos certificats, les profils de provisionnement et les ID de bundle. Votre appareil ne fait probablement pas partie du profil d’approvisionnement sélectionné (erreur : 0xe8008015).
 
 <a name="MT1019" />
 
-### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019: Votre application a des droits non pris en charge par votre profil d’approvisionnement actuel et n’a pas pu être installé sur l’appareil' * '. Consultez le journal de l’appareil iOS pour obtenir des informations plus détaillées (erreur: 0xe8008016).
+### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019: Votre application a des droits non pris en charge par votre profil d’approvisionnement actuel et n’a pas pu être installé sur l’appareil' * '. Consultez le journal de l’appareil iOS pour obtenir des informations plus détaillées (erreur : 0xe8008016).
 
 Cela peut se produire si :
 
@@ -986,27 +986,27 @@ Dans la plupart des cas, des informations supplémentaires sur l’échec sont i
 
 <a name="MT1020" />
 
-### <a name="mt1020-failed-to-launch-the-application--on-the-device--"></a>MT1020: Échec du lancement de l’application\*' 'sur l’appareil\*' ': *
+### <a name="mt1020-failed-to-launch-the-application--on-the-device--"></a>MT1020: Échec du lancement de l’application\*' 'sur l’appareil\*' ' : *
 
 <a name="MT1021" />
 
-### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021: Impossible de copier le fichier'\*'dans'\*':{2}
+### <a name="mt1021-could-not-copy-the-file--to--2"></a>MT1021: Impossible de copier le fichier'\*'dans'\*' :{2}
 
 Un fichier n’a pas pu être copié. Le message d’erreur de l’opération de copie contient plus d’informations sur l’erreur.
 
 <a name="MT1022" />
 
-### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022: Impossible de copier le répertoire «\*» dans «\*»:{2}
+### <a name="mt1022-could-not-copy-the-directory--to--2"></a>MT1022: Impossible de copier le répertoire «\*» dans «\*» :{2}
 
 Un répertoire n’a pas pu être copié. Le message d’erreur de l’opération de copie contient plus d’informations sur l’erreur.
 
 <a name="MT1023" />
 
-### <a name="mt1023-could-not-communicate-with-the-device-to-find-the-application---"></a>MT1023: Impossible de communiquer avec l’appareil pour trouver l’application' * ': *
+### <a name="mt1023-could-not-communicate-with-the-device-to-find-the-application---"></a>MT1023: Impossible de communiquer avec l’appareil pour trouver l’application' * ' : *
 
 Une erreur s’est produite lors de la tentative de recherche d’une application sur l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1015,7 +1015,7 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1024" />
 
-### <a name="mt1024-the-application-signature-could-not-be-verified-on-device--please-make-sure-that-the-provisioning-profile-is-installed-and-not-expired-error-0xe8008017"></a>MT1024: Impossible de vérifier la signature de l’application sur l’appareil' * '. Assurez-vous que le profil de provisionnement est installé et qu’il n’a pas expiré (erreur: 0xe8008017).
+### <a name="mt1024-the-application-signature-could-not-be-verified-on-device--please-make-sure-that-the-provisioning-profile-is-installed-and-not-expired-error-0xe8008017"></a>MT1024: Impossible de vérifier la signature de l’application sur l’appareil' * '. Assurez-vous que le profil de provisionnement est installé et qu’il n’a pas expiré (erreur : 0xe8008017).
 
 L’appareil a refusé l’installation de l’application, car la signature n’a pas pu être vérifiée.
 
@@ -1027,7 +1027,7 @@ Assurez-vous que le profil de provisionnement est installé et qu’il n’a pas
 
 Une erreur s’est produite lors de la tentative de liste des rapports d’incidents sur l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1041,7 +1041,7 @@ Voici ce que vous pouvez tenter de résoudre:
 
 Une erreur s’est produite lors de la tentative de téléchargement des rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1059,13 +1059,13 @@ Utilisez une version antérieure de Xcode ou appuyez sur l’application manuell
 
 <a name="MT1028" />
 
-### <a name="mt1028-invalid-device-specification--expected-ios-watchos-or-all"></a>MT1028: Spécification d’appareil non valide: ' * '. 'IOS', 'Watchos’ou’all’attendu.
+### <a name="mt1028-invalid-device-specification--expected-ios-watchos-or-all"></a>MT1028: Spécification d’appareil non valide : ' * '. 'IOS', 'Watchos’ou’all’attendu.
 
-La spécification de l’appareil passée à l’aide de--l’appareil n’est pas valide. Les valeurs valides sont: «iOS», «Watchos» ou «All».
+La spécification de l’appareil passée à l’aide de--l’appareil n’est pas valide. Les valeurs valides sont : « iOS », « Watchos » ou « All ».
 
 <a name="MT1029" />
 
-### <a name="mt1029-could-not-find-an-application-at-the-specified-directory-"></a>MT1029: Impossible de trouver une application dans le répertoire spécifié: *
+### <a name="mt1029-could-not-find-an-application-at-the-specified-directory-"></a>MT1029: Impossible de trouver une application dans le répertoire spécifié : *
 
 Le chemin d’accès de l’application passé à--launchdev n’existe pas. Spécifiez un bundle d’applications valide.
 
@@ -1087,13 +1087,13 @@ Déverrouillez l’appareil et réessayez.
 
 <a name="MT1033" />
 
-### <a name="mt1033-could-not-uninstall-the-application--from-the-device--"></a>MT1033: Impossible de désinstaller l’application\*«» de l’appareil\*«»: *
+### <a name="mt1033-could-not-uninstall-the-application--from-the-device--"></a>MT1033: Impossible de désinstaller l’application\*« » de l’appareil\*« » : *
 
 <!-- 1034 used by mmp -->
 
 <a name="MT1035" />
 
-### <a name="mt1035-cannot-include-different-versions-of-the-framework-name"></a>MT1035: Impossible d’inclure des versions différentes de l’infrastructure «{Name}»
+### <a name="mt1035-cannot-include-different-versions-of-the-framework-name"></a>MT1035: Impossible d’inclure des versions différentes de l’infrastructure « {Name} »
 
 Il n’est pas possible d’établir une liaison avec différentes versions du même Framework.
 
@@ -1103,7 +1103,7 @@ Après cette erreur, plusieurs erreurs de [MT1036](#MT1036) répertorient les ch
 
 <a name="MT1036" />
 
-### <a name="mt1036-framework-name-included-from-path-related-to-previous-error"></a>MT1036: Framework «{Name}» inclus dans: {Path} (lié à l’erreur précédente)
+### <a name="mt1036-framework-name-included-from-path-related-to-previous-error"></a>MT1036: Framework « {Name} » inclus dans : {Path} (lié à l’erreur précédente)
 
 Cette erreur est signalée uniquement avec [MT1036](#MT1036). Pour plus d’informations, consultez [MT1036](#MT1036) .
 
@@ -1119,7 +1119,7 @@ Cette erreur est signalée uniquement avec [MT1036](#MT1036). Pour plus d’info
 
 <a name="MT1102" />
 
-### <a name="mt1102-could-not-attach-to-the-app-to-kill-it-"></a>MT1102: Impossible d’attacher à l’application (pour la supprimer): *
+### <a name="mt1102-could-not-attach-to-the-app-to-kill-it-"></a>MT1102: Impossible d’attacher à l’application (pour la supprimer) : *
 
 <a name="MT1103" />
 
@@ -1127,7 +1127,7 @@ Cette erreur est signalée uniquement avec [MT1036](#MT1036). Pour plus d’info
 
 <a name="MT1104" />
 
-### <a name="mt1104-failed-to-send-packet-"></a>MT1104: Échec de l’envoi du paquet: *
+### <a name="mt1104-failed-to-send-packet-"></a>MT1104: Échec de l’envoi du paquet : *
 
 <a name="MT1105" />
 
@@ -1135,11 +1135,11 @@ Cette erreur est signalée uniquement avec [MT1036](#MT1036). Pour plus d’info
 
 <a name="MT1106" />
 
-### <a name="mt1106-could-not-get-list-of-applications-on-the-device-request-timed-out"></a>MT1106: Impossible d’accéder à la liste des applications sur l’appareil: Délai d’attente de la demande dépassé.
+### <a name="mt1106-could-not-get-list-of-applications-on-the-device-request-timed-out"></a>MT1106: Impossible d’accéder à la liste des applications sur l’appareil : Délai d’attente de la demande dépassé.
 
 <a name="MT1107" />
 
-### <a name="mt1107-application-failed-to-launch-"></a>MT1107: Échec du lancement de l’application: *
+### <a name="mt1107-application-failed-to-launch-"></a>MT1107: Échec du lancement de l’application : *
 
 Vérifiez que votre appareil est verrouillé.
 
@@ -1177,23 +1177,23 @@ Si vous déployez une application d’entreprise ou à l’aide d’un profil d�
 
 <a name="MT1201" />
 
-### <a name="mt1201-could-not-load-the-simulator-"></a>MT1201: Impossible de charger le simulateur: *
+### <a name="mt1201-could-not-load-the-simulator-"></a>MT1201: Impossible de charger le simulateur : *
 
 <a name="MT1202" />
 
-### <a name="mt1202-invalid-simulator-configuration-"></a>MT1202: Configuration de simulateur non valide: *
+### <a name="mt1202-invalid-simulator-configuration-"></a>MT1202: Configuration de simulateur non valide : *
 
 <a name="MT1203" />
 
-### <a name="mt1203-invalid-simulator-specification-"></a>MT1203: Spécification de simulateur non valide: *
+### <a name="mt1203-invalid-simulator-specification-"></a>MT1203: Spécification de simulateur non valide : *
 
 <a name="MT1204" />
 
-### <a name="mt1204-invalid-simulator-specification--runtime-not-specified"></a>MT1204: Spécification de simulateur non valide' * ': Runtime non spécifié.
+### <a name="mt1204-invalid-simulator-specification--runtime-not-specified"></a>MT1204: Spécification de simulateur non valide' * ' : Runtime non spécifié.
 
 <a name="MT1205" />
 
-### <a name="mt1205-invalid-simulator-specification--device-type-not-specified"></a>MT1205: Spécification de simulateur non valide' * ': le type de périphérique n’est pas spécifié.
+### <a name="mt1205-invalid-simulator-specification--device-type-not-specified"></a>MT1205: Spécification de simulateur non valide' * ' : le type de périphérique n’est pas spécifié.
 
 <a name="MT1206" />
 
@@ -1213,7 +1213,7 @@ Si vous déployez une application d’entreprise ou à l’aide d’un profil d�
 
 <a name="MT1210" />
 
-### <a name="mt1210-invalid-simulator-specification--unknown-key-"></a>MT1210: Spécification de simulateur \*non valide:,\*clé inconnue' '
+### <a name="mt1210-invalid-simulator-specification--unknown-key-"></a>MT1210: Spécification de simulateur \*non valide :,\*clé inconnue' '
 
 <a name="MT1211" />
 
@@ -1225,15 +1225,15 @@ Si vous déployez une application d’entreprise ou à l’aide d’un profil d�
 
 <a name="MT1213" />
 
-### <a name="mt1213-invalid-simulator-specification-for-xcode-4-"></a>MT1213: Spécification de simulateur non valide pour XCode 4: *
+### <a name="mt1213-invalid-simulator-specification-for-xcode-4-"></a>MT1213: Spécification de simulateur non valide pour XCode 4 : *
 
 <a name="MT1214" />
 
-### <a name="mt1214-invalid-simulator-specification-for-xcode-5-"></a>MT1214: Spécification de simulateur non valide pour XCode 5: *
+### <a name="mt1214-invalid-simulator-specification-for-xcode-5-"></a>MT1214: Spécification de simulateur non valide pour XCode 5 : *
 
 <a name="MT1215" />
 
-### <a name="mt1215-invalid-sdk-specified-"></a>MT1215: Kit de développement logiciel (SDK) non valide spécifié: *
+### <a name="mt1215-invalid-sdk-specified-"></a>MT1215: Kit de développement logiciel (SDK) non valide spécifié : *
 
 <a name="MT1216" />
 
@@ -1257,7 +1257,7 @@ Si vous déployez une application d’entreprise ou à l’aide d’un profil d�
 
 Cela indique généralement un problème avec Xcode.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Utilisez le simulateur une seule fois dans Xcode.
 - Passer une version explicite du SDK à l’aide \<de--SDK version >.
@@ -1287,15 +1287,15 @@ Les simulateurs de Watch peuvent être associés à des simulateurs iOS à l’a
 
 <a name="MT1303" />
 
-### <a name="mt1303-could-not-decompress-the-native-framework--from--please-review-the-build-log-for-more-information-from-the-native-zip-command"></a>MT1303: Impossible de décompresser le Framework natif\*' 'à\*partir de' '. Consultez le journal de génération pour plus d’informations à partir de la commande «zip» native.
+### <a name="mt1303-could-not-decompress-the-native-framework--from--please-review-the-build-log-for-more-information-from-the-native-zip-command"></a>MT1303: Impossible de décompresser le Framework natif\*' 'à\*partir de' '. Consultez le journal de génération pour plus d’informations à partir de la commande « zip » native.
 
 Impossible de décompresser l’infrastructure Native spécifiée à partir de la bibliothèque de liaisons.
 
-Pour plus d’informations sur cet échec, consultez le journal bulid à partir de la commande «zip» native.
+Pour plus d’informations sur cet échec, consultez le journal bulid à partir de la commande « zip » native.
 
 <a name="MT1304" />
 
-### <a name="mt1304-the-embedded-framework--in--is-invalid-it-does-not-contain-an-infoplist"></a>MT1304: Le Framework incorporé' * 'dans * n’est pas valide: il ne contient pas d’informations. plist.
+### <a name="mt1304-the-embedded-framework--in--is-invalid-it-does-not-contain-an-infoplist"></a>MT1304: Le Framework incorporé' * 'dans * n’est pas valide : il ne contient pas d’informations. plist.
 
 L’infrastructure incorporée spécifiée ne contient pas d’info. plist et n’est donc pas une infrastructure valide.
 
@@ -1317,11 +1317,11 @@ Définissez la cible de déploiement dans le fichier info. plist sur au moins 8,
 
 <a name="MT1400" />
 
-### <a name="mt1400-could-not-open-crash-report-service-afcconnectionopen-returned-"></a>MT1400: Impossible d’ouvrir le service de rapport d’incident: AFCConnectionOpen retourné *
+### <a name="mt1400-could-not-open-crash-report-service-afcconnectionopen-returned-"></a>MT1400: Impossible d’ouvrir le service de rapport d’incident : AFCConnectionOpen retourné *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1331,11 +1331,11 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1401" />
 
-### <a name="mt1401-could-not-close-crash-report-service-afcconnectionclose-returned-"></a>MT1401: Impossible de fermer le service de rapport d’incident: AFCConnectionClose retourné *
+### <a name="mt1401-could-not-close-crash-report-service-afcconnectionclose-returned-"></a>MT1401: Impossible de fermer le service de rapport d’incident : AFCConnectionClose retourné *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1345,11 +1345,11 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1402" />
 
-### <a name="mt1402-could-not-read-file-info-for--afcfileinfoopen-returned-"></a>MT1402: Impossible de lire les informations du fichier pour *: AFCFileInfoOpen retourné *
+### <a name="mt1402-could-not-read-file-info-for--afcfileinfoopen-returned-"></a>MT1402: Impossible de lire les informations du fichier pour * : AFCFileInfoOpen retourné *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1359,11 +1359,11 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1403" />
 
-### <a name="mt1403-could-not-read-crash-report-afcdirectoryopen--returned-"></a>MT1403: Impossible de lire le rapport d’incident: AFCDirectoryOpen (*) retourné: *
+### <a name="mt1403-could-not-read-crash-report-afcdirectoryopen--returned-"></a>MT1403: Impossible de lire le rapport d’incident : AFCDirectoryOpen (*) retourné : *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1373,11 +1373,11 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1404" />
 
-### <a name="mt1404-could-not-read-crash-report-afcfilerefopen--returned-"></a>MT1404: Impossible de lire le rapport d’incident: AFCFileRefOpen (*) retourné: *
+### <a name="mt1404-could-not-read-crash-report-afcfilerefopen--returned-"></a>MT1404: Impossible de lire le rapport d’incident : AFCFileRefOpen (*) retourné : *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1387,11 +1387,11 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1405" />
 
-### <a name="mt1405-could-not-read-crash-report-afcfilerefread--returned-"></a>MT1405: Impossible de lire le rapport d’incident: AFCFileRefRead (*) retourné: *
+### <a name="mt1405-could-not-read-crash-report-afcfilerefread--returned-"></a>MT1405: Impossible de lire le rapport d’incident : AFCFileRefRead (*) retourné : *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1401,11 +1401,11 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1406" />
 
-### <a name="mt1406-could-not-list-crash-reports-afcdirectoryopen--returned-"></a>MT1406: Impossible de répertorier les rapports d’incident: AFCDirectoryOpen (*) retourné: *
+### <a name="mt1406-could-not-list-crash-reports-afcdirectoryopen--returned-"></a>MT1406: Impossible de répertorier les rapports d’incident : AFCDirectoryOpen (*) retourné : *
 
 Une erreur s’est produite lors de la tentative d’accès aux rapports d’incident à partir de l’appareil.
 
-Voici ce que vous pouvez tenter de résoudre:
+Voici ce que vous pouvez tenter de résoudre :
 
 - Supprimez l’application de l’appareil et réessayez.
 - Déconnectez l’appareil et reconnectez-le.
@@ -1423,13 +1423,13 @@ Voici ce que vous pouvez tenter de résoudre:
 
 <a name="MT1600" />
 
-### <a name="mt1600-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1600: N’est pas une bibliothèque dynamique Mach-O (en-tête inconnu «0x *»): *.
+### <a name="mt1600-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1600: N’est pas une bibliothèque dynamique Mach-O (en-tête inconnu « 0x * ») : *.
 
 Une erreur s’est produite lors du traitement de la bibliothèque dynamique en question.
 
 Vérifiez que la bibliothèque dynamique est une bibliothèque dynamique Mach-O valide.
 
-Le format d’une bibliothèque peut être vérifié à l' `file` aide de la commande à partir d’un terminal:
+Le format d’une bibliothèque peut être vérifié à l' `file` aide de la commande à partir d’un terminal :
 
 ```
 file -arch all -l /path/to/library.dylib
@@ -1437,13 +1437,13 @@ file -arch all -l /path/to/library.dylib
 
 <a name="MT1601" />
 
-### <a name="mt1601-not-a-static-library-unknown-header--"></a>MT1601: N’est pas une bibliothèque statique (en-tête inconnu' * '): *.
+### <a name="mt1601-not-a-static-library-unknown-header--"></a>MT1601: N’est pas une bibliothèque statique (en-tête inconnu' * ') : *.
 
 Une erreur s’est produite lors du traitement de la bibliothèque statique en question.
 
 Vérifiez que la bibliothèque statique est une bibliothèque statique Mach-O valide.
 
-Le format d’une bibliothèque peut être vérifié à l' `file` aide de la commande à partir d’un terminal:
+Le format d’une bibliothèque peut être vérifié à l' `file` aide de la commande à partir d’un terminal :
 
 ```
 file -arch all -l /path/to/library.a
@@ -1451,13 +1451,13 @@ file -arch all -l /path/to/library.a
 
 <a name="MT1602" />
 
-### <a name="mt1602-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1602: N’est pas une bibliothèque dynamique Mach-O (en-tête inconnu «0x *»): *.
+### <a name="mt1602-not-a-mach-o-dynamic-library-unknown-header-0x-"></a>MT1602: N’est pas une bibliothèque dynamique Mach-O (en-tête inconnu « 0x * ») : *.
 
 Une erreur s’est produite lors du traitement de la bibliothèque dynamique en question.
 
 Vérifiez que la bibliothèque dynamique est une bibliothèque dynamique Mach-O valide.
 
-Le format d’une bibliothèque peut être vérifié à l' `file` aide de la commande à partir d’un terminal:
+Le format d’une bibliothèque peut être vérifié à l' `file` aide de la commande à partir d’un terminal :
 
 ```
 file -arch all -l /path/to/library.dylib
@@ -1471,7 +1471,7 @@ Une erreur s’est produite lors du traitement de l’archive FAT en question.
 
 Assurez-vous que l’archive FAT est valide.
 
-Le format d’une archive Fat peut être vérifié à l' `file` aide de la commande à partir d’un terminal:
+Le format d’une archive Fat peut être vérifié à l' `file` aide de la commande à partir d’un terminal :
 
 ```
 file -arch all -l /path/to/file
@@ -1485,7 +1485,7 @@ Une erreur s’est produite lors du traitement du fichier MachO en question.
 
 Assurez-vous que le fichier est une bibliothèque dynamique Mach-O valide.
 
-Le format d’un fichier peut être vérifié à l' `file` aide de la commande à partir d’un terminal:
+Le format d’un fichier peut être vérifié à l' `file` aide de la commande à partir d’un terminal :
 
 ```
 file -arch all -l /path/to/file
@@ -1516,7 +1516,7 @@ Il est important de signaler un rapport de bogue pour de tels problèmes. Dans l
 
 <a name="MT2002" />
 
-### <a name="mt2002-can-not-resolve-reference-"></a>MT2002: Impossible de résoudre la référence: *
+### <a name="mt2002-can-not-resolve-reference-"></a>MT2002: Impossible de résoudre la référence : *
 
 <a name="MT2003" />
 
@@ -1532,7 +1532,7 @@ Il est important de signaler un rapport de bogue pour de tels problèmes. Dans l
 
 <a name="MT2006" />
 
-### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: Impossible de charger mscorlib. dll à partir de: *. Réinstallez Xamarin. iOS.
+### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: Impossible de charger mscorlib. dll à partir de : *. Réinstallez Xamarin. iOS.
 
 Cela indique généralement qu’il y a un problème avec votre installation de Xamarin. iOS. Essayez de réinstaller Xamarin. iOS.
 
@@ -1571,7 +1571,7 @@ Pour résoudre cet avertissement, ouvrez le fichier projet dans un éditeur de t
 
 Le `legacy` fournisseur, qui était un fournisseur SSLv3/TLSv1 entièrement géré, n’est plus livré avec Xamarin. iOS. Les projets qui utilisaient cet ancien fournisseur et sont désormais générés `appletls` avec le plus récent.
 
-Pour résoudre cet avertissement, ouvrez le fichier projet dans un éditeur de texte, puis supprimez tous les nœuds «MtouchTlsProvider» du code XML.
+Pour résoudre cet avertissement, ouvrez le fichier projet dans un éditeur de texte, puis supprimez tous les nœuds « MtouchTlsProvider » du code XML.
 
 <a name="MT2017" />
 
@@ -1597,10 +1597,10 @@ L’assembly racine n’a pas pu être chargé. Vérifiez que le chemin d’acc�
 
 Une erreur inattendue s’est produite lors de la tentative d’optimisation du code de liaison généré. L’élément à l’origine du problème est nommé dans le message d’erreur. Pour résoudre ce problème, l’assembly nommé (ou contenant le type ou la méthode nommé) doit être fourni dans un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un journal de génération complet avec des commentaires activés ( `-v -v -v -v` c’est-à-dire dans les **arguments mTouch supplémentaires**).
 
-Le dernier chiffre `x` sera:
-- `0`pour un nom d’assembly;
-- `1`pour un nom de type;
-- `3`pour un nom de méthode;
+Le dernier chiffre `x` sera :
+- `0`pour un nom d’assembly ;
+- `1`pour un nom de type ;
+- `3`pour un nom de méthode ;
 
 <a name="MT2030" />
 
@@ -1610,8 +1610,8 @@ Une erreur inattendue s’est produite lors de la tentative de suppression des r
 
 Les ressources utilisateur sont des fichiers inclus dans des assemblys (en tant que ressources) qui doivent être extraits au moment de la génération pour créer l’offre groupée d’applications. notamment :
 
-- `__monotouch_content_*`et `__monotouch_pages_*` ressources; et
-- Bibliothèques natives incorporées dans un assembly de liaison;
+- `__monotouch_content_*`et `__monotouch_pages_*` ressources ; et
+- Bibliothèques natives incorporées dans un assembly de liaison ;
 
 <a name="MT2040" />
 
@@ -1669,7 +1669,7 @@ L’assembly à l’origine du problème est nommé dans le message d’erreur. 
 
 <a name="MT2102" />
 
-### <a name="mt2102-error-processing-the-method--in-the-assembly--"></a>MT2102: Erreur lors du traitement de\*la méthode' 'dans\*l’assembly' ': *
+### <a name="mt2102-error-processing-the-method--in-the-assembly--"></a>MT2102: Erreur lors du traitement de\*la méthode' 'dans\*l’assembly' ' : *
 
 Une erreur inattendue s’est produite lors de la tentative de marquage de la méthode mentionnée dans le message d’erreur.
 
@@ -1677,7 +1677,7 @@ L’assembly à l’origine du problème est nommé dans le message d’erreur. 
 
 <a name="MT2103" />
 
-### <a name="mt2103-error-processing-assembly--"></a>MT2103: Erreur lors du traitement\*de l’assembly' ': *
+### <a name="mt2103-error-processing-assembly--"></a>MT2103: Erreur lors du traitement\*de l’assembly' ' : *
 
 Une erreur inattendue s’est produite lors du traitement d’un assembly.
 
@@ -1708,7 +1708,7 @@ Il est parfois possible de contourner ce problème en désactivant les builds in
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: Restriction AOA: La méthode' * 'doit être statique, car elle est décorée avec [MonoPInvokeCallback]. Voir [developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: Restriction AOA : La méthode' * 'doit être statique, car elle est décorée avec [MonoPInvokeCallback]. Voir [developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 Ce message d’erreur provient du compilateur AOA.
 
@@ -1790,11 +1790,11 @@ Si vous pensez que Xamarin. iOS doit prendre en charge le type en question, veui
 
 ### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: Le Bureau d’enregistrement a trouvé `*` un type non valide `*`dans la signature de la méthode. Utilisez plutôt `*`.
 
-Cela se produit actuellement uniquement avec un type: System. DateTime. Utilisez à la place l’équivalent objective-C (NSDate).
+Cela se produit actuellement uniquement avec un type : System. DateTime. Utilisez à la place l’équivalent objective-C (NSDate).
 
 <a name="MT4103" />
 
-### <a name="mt4103-the-registrar-found-an-invalid-type--in-signature-for-method--the-type-implements-inativeobject-but-does-not-have-a-constructor-that-takes-two-intptr-bool-arguments"></a>MT4103: Le Bureau d’enregistrement a trouvé `*` un type non valide `*`dans la signature de la méthode: Le type implémente INativeObject, mais il n’a pas de constructeur qui accepte deux arguments (IntPtr, bool)
+### <a name="mt4103-the-registrar-found-an-invalid-type--in-signature-for-method--the-type-implements-inativeobject-but-does-not-have-a-constructor-that-takes-two-intptr-bool-arguments"></a>MT4103: Le Bureau d’enregistrement a trouvé `*` un type non valide `*`dans la signature de la méthode : Le type implémente INativeObject, mais il n’a pas de constructeur qui accepte deux arguments (IntPtr, bool)
 
 Cela se produit lorsque le Bureau d’enregistrement rencontre un type dans une signature avec les caractéristiques mentionnées. Le Bureau d’enregistrement peut avoir besoin de créer de nouvelles instances du type et, dans ce cas, il requiert un constructeur avec la signature (IntPtr, bool)-le premier argument (IntPtr) spécifie le handle managé, tandis que le second si l’appelant passe la propriété du natif handle (si cette valeur est false, 'retain’sera appelé sur l’objet).
 
@@ -1866,7 +1866,7 @@ Il s’agit toujours d’un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau
 
 <a name="MT4116" />
 
-### <a name="mt4116-could-not-register-the-assembly--"></a>MT4116: Impossible d’inscrire l’assembly' * ': *
+### <a name="mt4116-could-not-register-the-assembly--"></a>MT4116: Impossible d’inscrire l’assembly' * ' : *
 
 <a name="MT4117" />
 
@@ -1878,21 +1878,21 @@ Il s’agit toujours d’un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau
 
 <a name="MT4119" />
 
-### <a name="mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a>MT4119: Impossible d’enregistrer le sélecteur «\*» du membre «\*. *», car le sélecteur est déjà inscrit sur un autre membre.
+### <a name="mt4119-could-not-register-the-selector--of-the-member--because-the-selector-is-already-registered-on-a-different-member"></a>MT4119: Impossible d’enregistrer le sélecteur «\*» du membre «\*. * », car le sélecteur est déjà inscrit sur un autre membre.
 
 <a name="MT4120" />
 
-### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120: Le Bureau d’enregistrement a trouvé un type\*de champ inconnu «\*» dans le champ «. *». Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
+### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120: Le Bureau d’enregistrement a trouvé un type\*de champ inconnu «\*» dans le champ « . * ». Veuillez signaler un rapport de bogue à http://bugzilla.xamarin.com
 
 Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
 <a name="MT4121" />
 
-### <a name="mt4121-cannot-use-gccg-to-compile-the-generated-code-from-the-static-registrar-when-using-the-accounts-framework-the-header-files-provided-by-apple-used-during-the-compilation-require-clang-either-use-clang---compilerclang-or-the-dynamic-registrar---registrardynamic"></a>MT4121: Impossible d’utiliser GCC/G + + pour compiler le code généré à partir du Bureau d’enregistrement statique lors de l’utilisation de l’infrastructure de comptes (les fichiers d’en-tête fournis par Apple utilisés pendant la compilation nécessitent Clang). Utilisez Clang (--compiler: Clang) ou le Bureau d’enregistrement dynamique (--Registrar: Dynamic).
+### <a name="mt4121-cannot-use-gccg-to-compile-the-generated-code-from-the-static-registrar-when-using-the-accounts-framework-the-header-files-provided-by-apple-used-during-the-compilation-require-clang-either-use-clang---compilerclang-or-the-dynamic-registrar---registrardynamic"></a>MT4121: Impossible d’utiliser GCC/G + + pour compiler le code généré à partir du Bureau d’enregistrement statique lors de l’utilisation de l’infrastructure de comptes (les fichiers d’en-tête fournis par Apple utilisés pendant la compilation nécessitent Clang). Utilisez Clang (--compiler : Clang) ou le Bureau d’enregistrement dynamique (--Registrar : Dynamic).
 
 <a name="MT4122" />
 
-### <a name="mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a>MT4122: Impossible d’utiliser le compilateur Clang fourni dans le *.* SDK pour compiler le code généré à partir du Bureau d’enregistrement statique lorsque des noms de types non-ASCII (' * ') sont présents dans l’application. Utilisez GCC/G + + (--compiler: GCC | G + +), le Bureau d’enregistrement dynamique (--Registrar: Dynamic) ou un kit de développement logiciel (SDK) plus récent.
+### <a name="mt4122-cannot-use-the-clang-compiler-provided-in-the--sdk-to-compile-the-generated-code-from-the-static-registrar-when-non-ascii-type-names--are-present-in-the-application-either-use-gccg---compilergccg-the-dynamic-registrar---registrardynamic-or-a-newer-sdk"></a>MT4122: Impossible d’utiliser le compilateur Clang fourni dans le *.* SDK pour compiler le code généré à partir du Bureau d’enregistrement statique lorsque des noms de types non-ASCII (' * ') sont présents dans l’application. Utilisez GCC/G + + (--compiler : GCC | G + +), le Bureau d’enregistrement dynamique (--Registrar : Dynamic) ou un kit de développement logiciel (SDK) plus récent.
 
 <a name="MT4123" />
 
@@ -1906,7 +1906,7 @@ Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau pro
 
 <a name="MT4125" />
 
-### <a name="mt4125-the-registrar-found-an-invalid-type--in-signature-for-method--the-interface-must-have-a-protocol-attribute-specifying-its-wrapper-type"></a>MT4125: Le Bureau d’enregistrement a trouvé un\*type non valide «» dans\*la signature de la méthode «»: L’interface doit avoir un attribut de protocole spécifiant son type de wrapper.
+### <a name="mt4125-the-registrar-found-an-invalid-type--in-signature-for-method--the-interface-must-have-a-protocol-attribute-specifying-its-wrapper-type"></a>MT4125: Le Bureau d’enregistrement a trouvé un\*type non valide « » dans\*la signature de la méthode « » : L’interface doit avoir un attribut de protocole spécifiant son type de wrapper.
 
 <a name="MT4126" />
 
@@ -1942,7 +1942,7 @@ Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau pro
 
 <a name="MT4134" />
 
-### <a name="mt4134-your-application-is-using-the--framework-which-isnt-included-in-the-ios-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-ios--while-youre-building-with-the-ios--sdk-please-select-a-newer-sdk-in-your-apps-ios-build-options"></a>MT4134: Votre application utilise le Framework «*», qui n’est pas inclus dans le kit de développement logiciel (SDK) iOS que vous utilisez pour créer votre application (cette infrastructure a été introduite dans iOS *, pendant que vous créez avec le kit de développement logiciel (SDK) iOS *). Veuillez sélectionner un nouveau kit de développement logiciel (SDK) dans les options de build iOS de votre application.
+### <a name="mt4134-your-application-is-using-the--framework-which-isnt-included-in-the-ios-sdk-youre-using-to-build-your-app-this-framework-was-introduced-in-ios--while-youre-building-with-the-ios--sdk-please-select-a-newer-sdk-in-your-apps-ios-build-options"></a>MT4134: Votre application utilise le Framework « * », qui n’est pas inclus dans le kit de développement logiciel (SDK) iOS que vous utilisez pour créer votre application (cette infrastructure a été introduite dans iOS *, pendant que vous créez avec le kit de développement logiciel (SDK) iOS *). Veuillez sélectionner un nouveau kit de développement logiciel (SDK) dans les options de build iOS de votre application.
 
 <a name="MT4135" />
 
@@ -1950,7 +1950,7 @@ Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau pro
 
 <a name="MT4136" />
 
-### <a name="mt4136-the-registrar-cannot-marshal-the-parameter-type--of-the-parameter--in-the-method-"></a>MT4136: Le Bureau d’enregistrement ne peut pas marshaler le type\*de paramètre «» du paramètre «\*\*» dans la méthode «. *»
+### <a name="mt4136-the-registrar-cannot-marshal-the-parameter-type--of-the-parameter--in-the-method-"></a>MT4136: Le Bureau d’enregistrement ne peut pas marshaler le type\*de paramètre « » du paramètre «\*\*» dans la méthode « . * »
 
 <!-- MT4137 is unused -->
 
@@ -1968,9 +1968,9 @@ Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau pro
 
 <a name="MT4141" />
 
-### <a name="mt4141-cannot-register-the-selector--on-the-member--because-xamarinios-implicitly-registers-this-selector"></a>MT4141: Impossible d’enregistrer le sélecteur\*«» sur le membre\*«», car Xamarin. iOS inscrit implicitement ce sélecteur.
+### <a name="mt4141-cannot-register-the-selector--on-the-member--because-xamarinios-implicitly-registers-this-selector"></a>MT4141: Impossible d’enregistrer le sélecteur\*« » sur le membre\*« », car Xamarin. iOS inscrit implicitement ce sélecteur.
 
-Cela se produit lors de la sous-classe d’un type d’infrastructure, et lors de la tentative d’implémentation d’une méthode’retain', 'Release’ou’dealloc':
+Cela se produit lors de la sous-classe d’un type d’infrastructure, et lors de la tentative d’implémentation d’une méthode’retain', 'Release’ou’dealloc' :
 
 ```csharp
 class MyNSObject : NSObject
@@ -1986,7 +1986,7 @@ class MyNSObject : NSObject
 }
 ```
 
-Il est toutefois possible de substituer ces méthodes si la classe n’est pas la première sous-classe du type Framework:
+Il est toutefois possible de substituer ces méthodes si la classe n’est pas la première sous-classe du type Framework :
 
 ```csharp
 class MyNSObject : NSObject
@@ -2024,11 +2024,11 @@ Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème s
 
 <a name="MT4145" />
 
-### <a name="mt4145-invalid-enum--enums-with-the-native-attribute-must-have-a-underlying-enum-type-of-either-long-or-ulong"></a>MT4145: Enum' * 'non valide: les enums avec l’attribut [Native] doivent avoir un type enum sous-jacent’long’ou’ulong'.
+### <a name="mt4145-invalid-enum--enums-with-the-native-attribute-must-have-a-underlying-enum-type-of-either-long-or-ulong"></a>MT4145: Enum' * 'non valide : les enums avec l’attribut [Native] doivent avoir un type enum sous-jacent’long’ou’ulong'.
 
 <a name="MT4146" />
 
-### <a name="mt4146-the-name-parameter-of-the-registrar-attribute-on-the-class---contains-an-invalid-character--"></a>MT4146: Le paramètre Name de l’attribut Registrar sur la classe'\*' ('\*') contient un caractère non valide:\*' '\*().
+### <a name="mt4146-the-name-parameter-of-the-registrar-attribute-on-the-class---contains-an-invalid-character--"></a>MT4146: Le paramètre Name de l’attribut Registrar sur la classe'\*' ('\*') contient un caractère non valide :\*' '\*().
 
 Le nom d’une classe Objectice-C ne peut pas contenir d’espace blanc, `Register` ce qui signifie que l’attribut sur la classe `Name` managée correspondante ne peut pas contenir d’espace blanc pour les deux classes.
 
@@ -2036,11 +2036,11 @@ Vérifiez que l' `Register` attribut sur la classe managée mentionné dans le m
 
 <a name="MT4147" />
 
-### <a name="mt4147-detected-a-protocol-inheriting-from-the-jsexport-protocol-while-using-the-dynamic-registrar-it-is-not-possible-to-export-protocols-to-javascriptcore-dynamically-the-static-registrar-must-be-used-add---registrarstatic-to-the-additional-mtouch-arguments-in-the-projects-ios-build-options-to-select-the-static-registrar"></a>MT4147: Détection d’un protocole héritant du protocole JSExport lors de l’utilisation du Bureau d’enregistrement dynamique. Il n’est pas possible d’exporter des protocoles vers JavaScriptCore de manière dynamique; le Bureau d’enregistrement statique doit être utilisé (ajoutez'--Registrar: static aux arguments mTouch supplémentaires dans les options de génération iOS du projet pour sélectionner le registraire statique).
+### <a name="mt4147-detected-a-protocol-inheriting-from-the-jsexport-protocol-while-using-the-dynamic-registrar-it-is-not-possible-to-export-protocols-to-javascriptcore-dynamically-the-static-registrar-must-be-used-add---registrarstatic-to-the-additional-mtouch-arguments-in-the-projects-ios-build-options-to-select-the-static-registrar"></a>MT4147: Détection d’un protocole héritant du protocole JSExport lors de l’utilisation du Bureau d’enregistrement dynamique. Il n’est pas possible d’exporter des protocoles vers JavaScriptCore de manière dynamique ; le Bureau d’enregistrement statique doit être utilisé (ajoutez'--Registrar : static aux arguments mTouch supplémentaires dans les options de génération iOS du projet pour sélectionner le registraire statique).
 
 <a name="MT4148" />
 
-### <a name="mt4148-the-registrar-found-a-generic-protocol--exporting-generic-protocols-is-not-supported"></a>MT4148: Le Bureau d’enregistrement a trouvé un protocole générique: ' * '. L’exportation de protocoles génériques n’est pas prise en charge.
+### <a name="mt4148-the-registrar-found-a-generic-protocol--exporting-generic-protocols-is-not-supported"></a>MT4148: Le Bureau d’enregistrement a trouvé un protocole générique : ' * '. L’exportation de protocoles génériques n’est pas prise en charge.
 
 <a name="MT4149" />
 
@@ -2068,7 +2068,7 @@ Vérifiez que l' `Register` attribut sur la classe managée mentionné dans le m
 
 <a name="MT4155" />
 
-### <a name="mt4155-cannot-register-the-method--with-the-selector--as-a-category-method-on--because-the-objective-c-already-has-an-implementation-for-this-selector"></a>MT4155: Impossible d’enregistrer la méthode\*«» avec le sélecteur\*«» en tant que méthode de catégorie sur «*», car objective-C a déjà une implémentation pour ce sélecteur.
+### <a name="mt4155-cannot-register-the-method--with-the-selector--as-a-category-method-on--because-the-objective-c-already-has-an-implementation-for-this-selector"></a>MT4155: Impossible d’enregistrer la méthode\*« » avec le sélecteur\*« » en tant que méthode de catégorie sur « * », car objective-C a déjà une implémentation pour ce sélecteur.
 
 <a name="MT4156" />
 
@@ -2088,11 +2088,11 @@ Vérifiez que l' `Register` attribut sur la classe managée mentionné dans le m
 
 <a name="MT4160" />
 
-### <a name="mt4160-invalid-character---found-in-selector--for-"></a>MT4160: Caractère non valide\*«»\*() trouvé dans le\*sélecteur «»\*pour «».
+### <a name="mt4160-invalid-character---found-in-selector--for-"></a>MT4160: Caractère non valide\*« »\*() trouvé dans le\*sélecteur « »\*pour «».
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Le Bureau d’enregistrement a trouvé une structure non\*prise en charge' ': Tous les champs d’une structure doivent également être des structures (\*le champ' '{2}avec le type' 'n’est pas une structure).
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Le Bureau d’enregistrement a trouvé une structure non\*prise en charge' ' : Tous les champs d’une structure doivent également être des structures (\*le champ' '{2}avec le type' 'n’est pas une structure).
 
 Le Bureau d’enregistrement a trouvé une structure avec des champs non pris en charge.
 
@@ -2114,7 +2114,7 @@ Cette erreur indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau pro
 
 <a name="MT4164" />
 
-### <a name="mt4164-cannot-export-the-property--because-its-selector--is-an-objective-c-keyword-please-use-a-different-name"></a>MT4164: Impossible d’exporter la propriété\*«», car son\*sélecteur «» est un mot clé objective-C. Veuillez utiliser un autre nom.
+### <a name="mt4164-cannot-export-the-property--because-its-selector--is-an-objective-c-keyword-please-use-a-different-name"></a>MT4164: Impossible d’exporter la propriété\*« », car son\*sélecteur « » est un mot clé objective-C. Veuillez utiliser un autre nom.
 
 Le sélecteur de la propriété en question n’est pas un identificateur objective-C valide.
 
@@ -2140,7 +2140,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168: Impossible d’enregistrer le type «{\_Managed Name}», car son nom objective\_-c «{Export Name}» est un mot clé objective-c. Veuillez utiliser un autre nom.
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168: Impossible d’enregistrer le type « {\_Managed Name} », car son nom objective\_-c « {Export Name} » est un mot clé objective-c. Veuillez utiliser un autre nom.
 
 Le nom objective-C du type en question n’est pas un identificateur objective-C valide.
 
@@ -2148,26 +2148,26 @@ Utilisez un identificateur objective-C valide.
 
 <a name="MT4169" />
 
-### <a name="mt4169-failed-to-generate-a-pinvoke-wrapper-for-method-message"></a>MT4169: Échec de la génération d’un wrapper P/Invoke pour {Method}: {message}
+### <a name="mt4169-failed-to-generate-a-pinvoke-wrapper-for-method-message"></a>MT4169: Échec de la génération d’un wrapper P/Invoke pour {Method} : {message}
 
 Xamarin. iOS n’a pas pu générer une fonction wrapper P/Invoke pour le mentionné.
 Vérifiez le message d’erreur signalé pour la cause sous-jacente.
 
 <a name="MT4170" />
 
-### <a name="mt4170-the-registrar-cant-convert-from-managed-type-to-native-type-for-the-return-value-in-the-method-method"></a>MT4170: Le Bureau d’enregistrement ne peut pas convertir «{type managé}» en «{type natif}» pour la valeur de retour dans la méthode {Method}.
+### <a name="mt4170-the-registrar-cant-convert-from-managed-type-to-native-type-for-the-return-value-in-the-method-method"></a>MT4170: Le Bureau d’enregistrement ne peut pas convertir « {type managé} » en « {type natif} » pour la valeur de retour dans la méthode {Method}.
 
 Consultez la description de l’erreur <a href="#MT4172">MT4172</a>.
 
 <a name="MT4171" />
 
-### <a name="mt4171-the-bindas-attribute-on-the-member-member-is-invalid-the-bindas-type-type-is-different-from-the-property-type-type"></a>MT4171: L’attribut Bindas sur le membre {member} n’est pas valide: le type de Liaisonas {type} est différent du type de propriété {type}.
+### <a name="mt4171-the-bindas-attribute-on-the-member-member-is-invalid-the-bindas-type-type-is-different-from-the-property-type-type"></a>MT4171: L’attribut Bindas sur le membre {member} n’est pas valide : le type de Liaisonas {type} est différent du type de propriété {type}.
 
 Assurez-vous que le type dans l’attribut Bindas correspond au type du membre auquel il est attaché.
 
 <a name="MT4172" />
 
-### <a name="mt4172-the-registrar-cant-convert-from-native-type-to-managed-type-for-the-parameter-parameter-name-in-the-method-method"></a>MT4172: Le Bureau d’enregistrement ne peut pas convertir «{Native type}» en «{type managé}» pour le paramètre «{Name}» dans la méthode {Method}.
+### <a name="mt4172-the-registrar-cant-convert-from-native-type-to-managed-type-for-the-parameter-parameter-name-in-the-method-method"></a>MT4172: Le Bureau d’enregistrement ne peut pas convertir « {Native type} » en « {type managé} » pour le paramètre « {Name} » dans la méthode {Method}.
 
 Le Bureau d’enregistrement ne prend pas en charge la conversion entre les types mentionnés.
 
@@ -2216,7 +2216,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 <a name="MT5201" />
 
-### <a name="mt5201-native-linking-failed-please-review-the-build-log-and-the-user-flags-provided-to-gcc-"></a>MT5201: Échec de la liaison native. Consultez le journal de génération et les indicateurs utilisateur fournis à gcc: *
+### <a name="mt5201-native-linking-failed-please-review-the-build-log-and-the-user-flags-provided-to-gcc-"></a>MT5201: Échec de la liaison native. Consultez le journal de génération et les indicateurs utilisateur fournis à gcc : *
 
 <a name="MT5202" />
 
@@ -2224,22 +2224,22 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 <a name="MT5203" />
 
-### <a name="mt5203-native-linking-warning-"></a>MT5203: Avertissement de liaison Native: *
+### <a name="mt5203-native-linking-warning-"></a>MT5203: Avertissement de liaison Native : *
 
 <!--- 5204-5208 are not used -->
 
 <a name="MT5209" />
 
-### <a name="mt5209-native-linking-error-"></a>MT5209: Erreur de liaison Native: *
+### <a name="mt5209-native-linking-error-"></a>MT5209: Erreur de liaison Native : *
 
 <a name="MT5210" />
 
-### <a name="mt5210-native-linking-failed-undefined-symbol--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-are-properly-linked-in"></a>MT5210: Échec de la liaison native, symbole non défini: *. Vérifiez que toutes les infrastructures nécessaires ont été référencées et que les bibliothèques natives sont correctement liées.
+### <a name="mt5210-native-linking-failed-undefined-symbol--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-are-properly-linked-in"></a>MT5210: Échec de la liaison native, symbole non défini : *. Vérifiez que toutes les infrastructures nécessaires ont été référencées et que les bibliothèques natives sont correctement liées.
 
-Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole référencé quelque part. Cela peut se produire pour plusieurs raisons:
+Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole référencé quelque part. Cela peut se produire pour plusieurs raisons :
 
 - Une liaison tierce requiert une infrastructure, mais la liaison ne la spécifie pas dans son `[LinkWith]` attribut. Elles
-  - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut de `[LinkWith]` la liaison pour inclure l’infrastructure dont elle a besoin:
+  - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut de `[LinkWith]` la liaison pour inclure l’infrastructure dont elle a besoin :
 
     ```csharp
     [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
@@ -2251,7 +2251,7 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
     Cela se produit généralement lorsqu’une liaison a existé pendant un certain temps et que le code natif a été modifié pendant ce temps afin qu’une classe Native particulière soit supprimée ou renommée, alors que la liaison n’a pas été mise à jour.
 - Un appel P/Invoke fait référence à un symbole natif qui n’existe pas. À compter de Xamarin. iOS 7,4, une erreur <a href="#MT5214">MT5214</a> est signalée pour ce cas (pour plus d’informations, consultez MT5214).
 - Une liaison/bibliothèque tierce a été créée à l' C++aide de, mais la liaison ne la spécifie `[LinkWith]` pas dans son attribut. C’est généralement relativement facile à reconnaître, car les symboles sont décomposés C++ de symboles (un exemple `__ZNKSt9exception4whatEv`courant est).
-  - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut de `[LinkWith]` la liaison pour définir l' `IsCxx` indicateur:
+  - Si vous êtes l’auteur de la liaison tierce ou si vous avez accès à sa source, modifiez l’attribut de `[LinkWith]` la liaison pour définir l' `IsCxx` indicateur :
 
     ```csharp
     [LinkWith ("mylib.a", IsCxx = true)]
@@ -2261,12 +2261,12 @@ Cela se produit lorsque l’éditeur de liens natif ne trouve pas de symbole ré
 
 <a name="MT5211" />
 
-### <a name="mt5211-native-linking-failed-undefined-objective-c-class--the-symbol--could-not-be-found-in-any-of-the-libraries-or-frameworks-linked-with-your-application"></a>MT5211: Échec de la liaison native, classe objective-C non \*définie:. Le symbole «\*» est introuvable dans les bibliothèques ou les infrastructures liées à votre application.
+### <a name="mt5211-native-linking-failed-undefined-objective-c-class--the-symbol--could-not-be-found-in-any-of-the-libraries-or-frameworks-linked-with-your-application"></a>MT5211: Échec de la liaison native, classe objective-C non \*définie :. Le symbole «\*» est introuvable dans les bibliothèques ou les infrastructures liées à votre application.
 
-Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une classe objective-C référencée quelque part. Cela peut se produire pour plusieurs raisons: comme pour [MT5210](#MT5210) et en plus:
+Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une classe objective-C référencée quelque part. Cela peut se produire pour plusieurs raisons : comme pour [MT5210](#MT5210) et en plus :
 
 - Une liaison tierce liée à un protocole objective-C, mais ne l’a pas annotée `[Protocol]` avec l’attribut dans sa définition d’API. Elles
-  - Ajoutez l’attribut `[Protocol]` manquant:
+  - Ajoutez l’attribut `[Protocol]` manquant :
 
     ```csharp
     [BaseType (typeof (NSObject))]
@@ -2278,14 +2278,14 @@ Cela se produit lorsque l’éditeur de liens natif ne peut pas trouver une clas
 
 <a name="MT5212" />
 
-### <a name="mt5212-native-linking-failed-duplicate-symbol-"></a>MT5212: Échec de la liaison native, symbole dupliqué: *.
+### <a name="mt5212-native-linking-failed-duplicate-symbol-"></a>MT5212: Échec de la liaison native, symbole dupliqué : *.
 
-Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupliqués entre toutes les bibliothèques natives. Après cette erreur, il peut y avoir une ou plusieurs erreurs [MT5213](#MT5213) avec l’emplacement pour chaque occurrence du symbole. Raisons possibles pour cette erreur:
+Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupliqués entre toutes les bibliothèques natives. Après cette erreur, il peut y avoir une ou plusieurs erreurs [MT5213](#MT5213) avec l’emplacement pour chaque occurrence du symbole. Raisons possibles pour cette erreur :
 
 - La même bibliothèque native est incluse deux fois.
 - Deux bibliothèques natives distinctes se produisent pour définir les mêmes symboles.
 - Une bibliothèque Native n’est pas générée correctement et contient le même symbole plusieurs fois.
-  Vous pouvez le vérifier à l’aide de l’ensemble de commandes suivant à partir d’un terminal (remplacez i386 par x86_64/ARMv7/armv7s/arm64 en fonction de l’architecture que vous générez pour):
+  Vous pouvez le vérifier à l’aide de l’ensemble de commandes suivant à partir d’un terminal (remplacez i386 par x86_64/ARMv7/armv7s/arm64 en fonction de l’architecture que vous générez pour) :
 
   ```
   # Native libraries are usually fat libraries, containing binary code for
@@ -2301,7 +2301,7 @@ Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupli
   ar -t libNative.i386.a
   ```
 
-  Il existe plusieurs façons de résoudre ce problème:
+  Il existe plusieurs façons de résoudre ce problème :
 
   - Demandez que le fournisseur de la bibliothèque Native le corrige et fournisse la version mise à jour.
   - Résolvez-le vous-même en supprimant les fichiers objets supplémentaires (cela fonctionne uniquement si le problème est lié à des fichiers objets dupliqués)
@@ -2329,8 +2329,8 @@ Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupli
   lipo *.a -create -output libNative.a
   ```
 
-  - Demandez à l’éditeur de liens de supprimer le code inutilisé. Xamarin. iOS effectue cette opération automatiquement si toutes les conditions suivantes sont remplies:
-    - Tous les `[LinkWith]` attributs des liaisons tierces ont activé a:
+  - Demandez à l’éditeur de liens de supprimer le code inutilisé. Xamarin. iOS effectue cette opération automatiquement si toutes les conditions suivantes sont remplies :
+    - Tous les `[LinkWith]` attributs des liaisons tierces ont activé a :
 
       ```csharp
       [assembly: LinkWith ("libNative.a", SmartLink = true)]
@@ -2341,13 +2341,13 @@ Cela se produit lorsque l’éditeur de liens natif rencontre des symboles dupli
 
 <a name="MT5213" />
 
-### <a name="mt5213-duplicate-symbol-in--location-related-to-previous-error"></a>MT5213: Symbole dupliqué dans: * (emplacement lié à l’erreur précédente)
+### <a name="mt5213-duplicate-symbol-in--location-related-to-previous-error"></a>MT5213: Symbole dupliqué dans : * (emplacement lié à l’erreur précédente)
 
 Cette erreur est signalée uniquement avec [MT5212](#MT5212). Pour plus d’informations, consultez [MT5212](#MT5212) .
 
 <a name="MT5214" />
 
-### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: Échec de la liaison native, symbole non défini: *. Ce symbole a fait référence au membre managé *. Vérifiez que toutes les infrastructures nécessaires ont été référencées et que les bibliothèques natives sont liées.
+### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: Échec de la liaison native, symbole non défini : *. Ce symbole a fait référence au membre managé *. Vérifiez que toutes les infrastructures nécessaires ont été référencées et que les bibliothèques natives sont liées.
 
 Cette erreur est signalée lorsque le code managé contient un P/Invoke pour une méthode native qui n’existe pas. Par exemple :
 
@@ -2359,10 +2359,10 @@ class MyImports {
 }
 ```
 
-Voici quelques solutions possibles:
+Voici quelques solutions possibles :
 
 - Supprimez les P/Invoke en question du code source.
-- Activez l’éditeur de liens managé pour tous les assemblys (cette opération s’effectue dans les options de génération iOS du projet, en définissant «comportement de l’éditeur de liens» sur «tous les assemblys»). Cela a pour effet de supprimer tous les P/Invoke que vous n’utilisez pas de l’application (automatiquement, et non pas manuellement comme le point précédent). L’inconvénient est que cela rendra la génération de votre simuleur un peu plus lente et risque de perturber votre application si elle utilise la réflexion. vous trouverez des informations supplémentaires sur l’éditeur de liens [ici](~/ios/deploy-test/linker.md) .
+- Activez l’éditeur de liens managé pour tous les assemblys (cette opération s’effectue dans les options de génération iOS du projet, en définissant « comportement de l’éditeur de liens » sur « tous les assemblys »). Cela a pour effet de supprimer tous les P/Invoke que vous n’utilisez pas de l’application (automatiquement, et non pas manuellement comme le point précédent). L’inconvénient est que cela rendra la génération de votre simuleur un peu plus lente et risque de perturber votre application si elle utilise la réflexion. vous trouverez des informations supplémentaires sur l’éditeur de liens [ici](~/ios/deploy-test/linker.md) .
 - Créez une deuxième bibliothèque native qui contient les symboles natifs manquants. Notez qu’il s’agit simplement d’une solution de contournement (si vous tentez d’appeler ces fonctions, votre application se bloque).
 
 <a name="MT5215" />
@@ -2389,7 +2389,7 @@ Les projets Xamarin. iOS référencent souvent les symboles natifs de manière d
 
 Généralement, Xamarin. iOS demande à l’éditeur de liens natif de conserver ces symboles `-u symbol` à l’aide de l’indicateur de l’éditeur de liens, mais s’il existe de nombreux symboles de ce type, l’ensemble de la ligne de commande peut dépasser la longueur maximale de la ligne de commande, comme spécifié par le système d’exploitation.
 
-Il existe plusieurs sources possibles pour ces symboles dynamiques:
+Il existe plusieurs sources possibles pour ces symboles dynamiques :
 
 - P/Invoke des méthodes dans les bibliothèques liées statiquement (où le nom de la `__Internal` dll se trouve dans `[DllImport ("__Internal")]`l’attribut DllImport).
 - Références de champs aux emplacements de mémoire dans les bibliothèques liées statiquement à`[Field]` partir des projets de liaison (attributs).
@@ -2411,7 +2411,7 @@ Solutions possibles :
 
 L’argument `--ignore-dynamic-symbol=symbol` de ligne de commande a été passé, mais ce symbole n’est pas un symbole qui a été reconnu comme un symbole dynamique qui doit être préservé manuellement.
 
-Il y a deux raisons principales à cela:
+Il y a deux raisons principales à cela :
 
 - Le nom du symbole est incorrect.
   - N’ajoutez pas de trait de soulignement au nom du symbole.
@@ -2426,7 +2426,7 @@ Il y a deux raisons principales à cela:
 
 <a name="MT5301" />
 
-### <a name="mt5301-missing-strip-tool-please-install-xcode-command-line-tools-component"></a>MT5301: Outil «Strip» manquant. Installez le composant outils en ligne de commande Xcode
+### <a name="mt5301-missing-strip-tool-please-install-xcode-command-line-tools-component"></a>MT5301: Outil « Strip » manquant. Installez le composant outils en ligne de commande Xcode
 
 <a name="MT5302" />
 
@@ -2442,7 +2442,7 @@ Une erreur s’est produite lors de l’exécution de dsymutil sur le répertoir
 
 ### <a name="mt5304-failed-to-strip-the-final-binary-please-review-the-build-log"></a>MT5304: Impossible de supprimer le fichier binaire final. Consultez le journal de génération.
 
-Une erreur s’est produite lors de l’exécution de l’outil «Strip» pour supprimer les informations de débogage de l’application.
+Une erreur s’est produite lors de l’exécution de l’outil « Strip » pour supprimer les informations de débogage de l’application.
 
 <a name="MT5305" />
 
@@ -2452,19 +2452,19 @@ Une erreur s’est produite lors de l’exécution de l’outil «Strip» pour s
 
 ### <a name="mt5306-failed-to-create-the-a-fat-library-please-review-the-build-log"></a>MT5306: Échec de la création de la bibliothèque FAT. Consultez le journal de génération.
 
-Une erreur s’est produite lors de l’exécution de l’outil «LiPo». Vérifiez le journal de génération pour voir l’erreur signalée par «LiPo».
+Une erreur s’est produite lors de l’exécution de l’outil « LiPo ». Vérifiez le journal de génération pour voir l’erreur signalée par « LiPo ».
 
 <a name="MT5307" />
 
 ### <a name="mt5307-failed-to-sign-the-executable-please-review-the-build-log"></a>MT5307: Échec de la signature de l’exécutable. Consultez le journal de génération.
 
-Une erreur s’est produite lors de la signature de l’application. Vérifiez le journal de génération pour voir l’erreur signalée par «Codesign».
+Une erreur s’est produite lors de la signature de l’application. Vérifiez le journal de génération pour voir l’erreur signalée par « Codesign ».
 
 <!-- 5308 is used by mmp -->
 <!-- 5309 is used by mmp -->
 <!-- 5310 is used by mmp -->
 
-## <a name="mt6xxx-mtouch-internal-tools-error-messages"></a>MT6xxx: messages d’erreur des outils internes mTouch
+## <a name="mt6xxx-mtouch-internal-tools-error-messages"></a>MT6xxx : messages d’erreur des outils internes mTouch
 
 ### <a name="mt600x-stripper"></a>MT600x: Reformater
 
@@ -2485,7 +2485,7 @@ Une erreur s’est produite lors de la suppression du code managé (suppression 
 
 <a name="MT6003" />
 
-### <a name="mt6003-unauthorizedaccessexception-message"></a>MT6003: [UnauthorizedAccessException message]
+### <a name="mt6003-unauthorizedaccessexception-message"></a>MT6003 : [UnauthorizedAccessException message]
 
 Une erreur de sécurité s’est produite lors de la suppression des symboles de débogage de l’application.
 
@@ -2499,280 +2499,280 @@ Une erreur de sécurité s’est produite lors de la suppression des symboles de
 
 ### <a name="mt7001-could-not-resolve-host-ips-for-wifi-debugger-settings"></a>MT7001: Impossible de résoudre les adresses IP de l’hôte pour les paramètres du débogueur WiFi.
 
-*Tâche MSBuild: DetectDebugNetworkConfigurationTaskBase*
+*Tâche MSBuild : DetectDebugNetworkConfigurationTaskBase*
 
-Étapes de dépannage:
+Étapes de dépannage :
 
 - essayez d’exécuter `csharp -e 'System.Net.Dns.GetHostEntry (System.Net.Dns.GetHostName ()).AddressList'` (qui devrait vous fournir une adresse IP et non une erreur évidemment).
-- essayez d’exécuter «ping \`hostname\`», qui peut vous fournir plus d’informations, par exemple:`cannot resolve MyHost.local: Unknown host`
+- essayez d’exécuter « ping \`hostname\`», qui peut vous fournir plus d’informations, par exemple :`cannot resolve MyHost.local: Unknown host`
 
-Dans certains cas, il s’agit d’un problème de «réseau local» qui peut être résolu en ajoutant l' `127.0.0.1    MyHost.local` hôte `/etc/hosts`inconnu dans.
+Dans certains cas, il s’agit d’un problème de « réseau local » qui peut être résolu en ajoutant l' `127.0.0.1    MyHost.local` hôte `/etc/hosts`inconnu dans.
 
 <a name="MT7002" />
 
 ### <a name="mt7002-this-machine-does-not-have-any-network-adapters-this-is-required-when-debugging-or-profiling-on-device-over-wifi"></a>MT7002: Cet ordinateur n’a pas de carte réseau. Cela est nécessaire lors du débogage ou du profilage sur un appareil via WiFi.
 
-*Tâche MSBuild: DetectDebugNetworkConfigurationTaskBase*
+*Tâche MSBuild : DetectDebugNetworkConfigurationTaskBase*
 
 <a name="MT7003" />
 
 ### <a name="mt7003-the-app-extension--does-not-contain-an-infoplist"></a>MT7003: L’extension d’application' * 'ne contient pas de fichier info. plist.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7004" />
 
 ### <a name="mt7004-the-app-extension--does-not-specify-a-cfbundleidentifier"></a>MT7004: L’extension d’application' * 'ne spécifie pas de CFBundleIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7005" />
 
 ### <a name="mt7005-the-app-extension--does-not-specify-a-cfbundleexecutable"></a>MT7005: L’extension d’application' * 'ne spécifie pas de CFBundleExecutable.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7006" />
 
 ### <a name="mt7006-the-app-extension--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7006: L’extension d’application\*' 'a un CFBundleIdentifier non\*valide (), elle ne commence pas par le CFBundleIdentifier (*) du bundle d’applications principal.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7007" />
 
 ### <a name="mt7007-the-app-extension--has-a-cfbundleidentifier--that-ends-with-the-illegal-suffix-key"></a>MT7007: L’extension d’application\*' 'a un CFBundleIdentifier\*() qui se termine par le suffixe non conforme ". Key".
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7008" />
 
 ### <a name="mt7008-the-app-extension--does-not-specify-a-cfbundleshortversionstring"></a>MT7008: L’extension d’application' * 'ne spécifie pas de CFBundleShortVersionString.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7009" />
 
-### <a name="mt7009-the-app-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7009: L’extension d’application' * 'a un fichier info. plist non valide: elle ne contient pas de dictionnaire NSExtension.
+### <a name="mt7009-the-app-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7009: L’extension d’application' * 'a un fichier info. plist non valide : elle ne contient pas de dictionnaire NSExtension.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7010" />
 
-### <a name="mt7010-the-app-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionpointidentifier-value"></a>MT7010: L’extension d’application' * 'comporte un fichier info. plist non valide: le dictionnaire NSExtension ne contient pas de valeur NSExtensionPointIdentifier.
+### <a name="mt7010-the-app-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionpointidentifier-value"></a>MT7010: L’extension d’application' * 'comporte un fichier info. plist non valide : le dictionnaire NSExtension ne contient pas de valeur NSExtensionPointIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7011" />
 
-### <a name="mt7011-the-watchkit-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionattributes-dictionary"></a>MT7011: L’extension WatchKit' * 'a un fichier info. plist non valide: le dictionnaire NSExtension ne contient pas de dictionnaire NSExtensionAttributes.
+### <a name="mt7011-the-watchkit-extension--has-an-invalid-infoplist-the-nsextension-dictionary-does-not-contain-an-nsextensionattributes-dictionary"></a>MT7011: L’extension WatchKit' * 'a un fichier info. plist non valide : le dictionnaire NSExtension ne contient pas de dictionnaire NSExtensionAttributes.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7012" />
 
 ### <a name="mt7012-the-watchkit-extension--does-not-have-exactly-one-watch-app"></a>MT7012: L’extension WatchKit' * 'n’a pas exactement une application Watch.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7013" />
 
-### <a name="mt7013-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-must-contain-the-watch-companion-capability"></a>MT7013: L’extension WatchKit' * 'a un fichier info. plist non valide: UIRequiredDeviceCapabilities doit contenir la fonctionnalité «Watch-Companion».
+### <a name="mt7013-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-must-contain-the-watch-companion-capability"></a>MT7013: L’extension WatchKit' * 'a un fichier info. plist non valide : UIRequiredDeviceCapabilities doit contenir la fonctionnalité « Watch-Companion ».
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7014" />
 
 ### <a name="mt7014-the-watch-app--does-not-contain-an-infoplist"></a>MT7014: L’application Watch' * 'ne contient pas de fichier info. plist.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7015" />
 
 ### <a name="mt7015-the-watch-app--does-not-specify-a-cfbundleidentifier"></a>MT7015: L’application Watch' * 'ne spécifie pas de CFBundleIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7016" />
 
 ### <a name="mt7016-the-watch-app--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7016: L’application Watch'\*'a un CFBundleIdentifier non valide\*(), elle ne commence pas par le CFBundleIdentifier (*) du bundle d’applications principal.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7017" />
 
 ### <a name="mt7017-the-watch-app--does-not-have-a-valid-uidevicefamily-value-expected-watch-4-but-found--"></a>MT7017: L’application Watch «\*» n’a pas de valeur UIDeviceFamily valide. 'Watch (4) 'attendu, mais'\* (*) 'trouvé.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7018" />
 
 ### <a name="mt7018-the-watch-app--does-not-specify-a-cfbundleexecutable"></a>MT7018: L’application Watch' * 'ne spécifie pas de CFBundleExecutable
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7019" />
 
-### <a name="mt7019-the-watch-app--has-an-invalid-wkcompanionappbundleidentifier-value--it-does-not-match-the-main-app-bundles-cfbundleidentifier-"></a>MT7019: L’application Watch «\*» a une valeur WKCompanionAppBundleIdentifier non valide (\*«»), elle ne correspond pas à la CFBundleIdentifier («*») du bundle d’applications principal.
+### <a name="mt7019-the-watch-app--has-an-invalid-wkcompanionappbundleidentifier-value--it-does-not-match-the-main-app-bundles-cfbundleidentifier-"></a>MT7019: L’application Watch «\*» a une valeur WKCompanionAppBundleIdentifier non valide (\*« »), elle ne correspond pas à la CFBundleIdentifier («* ») du bundle d’applications principal.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7020" />
 
-### <a name="mt7020-the-watch-app--has-an-invalid-infoplist-the-wkwatchkitapp-key-must-be-present-and-have-a-value-of-true"></a>MT7020: L’application Watch' * 'possède un fichier info. plist non valide: la clé WKWatchKitApp doit être présente et avoir la valeur’true'.
+### <a name="mt7020-the-watch-app--has-an-invalid-infoplist-the-wkwatchkitapp-key-must-be-present-and-have-a-value-of-true"></a>MT7020: L’application Watch' * 'possède un fichier info. plist non valide : la clé WKWatchKitApp doit être présente et avoir la valeur’true'.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7021" />
 
-### <a name="mt7021-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7021: L’application Watch' * 'a un fichier info. plist non valide: la clé LSRequiresIPhoneOS ne doit pas être présente.
+### <a name="mt7021-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7021: L’application Watch' * 'a un fichier info. plist non valide : la clé LSRequiresIPhoneOS ne doit pas être présente.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7022" />
 
 ### <a name="mt7022-the-watch-app--does-not-contain-a-watch-extension"></a>MT7022: L’application Watch' * 'ne contient pas d’extension Watch.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7023" />
 
 ### <a name="mt7023-the-watch-extension--does-not-contain-an-infoplist"></a>MT7023: L’extension Watch' * 'ne contient pas de fichier info. plist.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7024" />
 
 ### <a name="mt7024-the-watch-extension--does-not-specify-a-cfbundleidentifier"></a>MT7024: L’extension Watch' * 'ne spécifie pas de CFBundleIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7025" />
 
 ### <a name="mt7025-the-watch-extension--does-not-specify-a-cfbundleexecutable"></a>MT7025: L’extension Watch' * 'ne spécifie pas de CFBundleExecutable.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7026" />
 
 ### <a name="mt7026-the-watch-extension--has-an-invalid-cfbundleidentifier--it-does-not-begin-with-the-main-app-bundles-cfbundleidentifier-"></a>MT7026: L’extension Watch'\*'a un CFBundleIdentifier non valide\*(), elle ne commence pas par le CFBundleIdentifier (*) du bundle d’applications principal.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7027" />
 
-### <a name="mt7027-the-watch-extension--has-a-cfbundleidentifier--that-ends-with-the-illegal-suffix-key"></a>MT7027: L’extension Watch «\*» a un CFBundleIdentifier (\*) qui se termine par le suffixe non conforme «. Key».
+### <a name="mt7027-the-watch-extension--has-a-cfbundleidentifier--that-ends-with-the-illegal-suffix-key"></a>MT7027: L’extension Watch «\*» a un CFBundleIdentifier (\*) qui se termine par le suffixe non conforme « . Key ».
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7028" />
 
-### <a name="mt7028-the-watch-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7028: L’extension Watch «*» a un fichier info. plist non valide: elle ne contient pas de dictionnaire NSExtension.
+### <a name="mt7028-the-watch-extension--has-an-invalid-infoplist-it-does-not-contain-an-nsextension-dictionary"></a>MT7028: L’extension Watch « * » a un fichier info. plist non valide : elle ne contient pas de dictionnaire NSExtension.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7029" />
 
-### <a name="mt7029-the-watch-extension--has-an-invalid-infoplist-the-nsextensionpointidentifier-must-be-comapplewatchkit"></a>MT7029: L’extension Watch' * 'a un fichier info. plist non valide: le NSExtensionPointIdentifier doit être "com. Apple. watchkit".
+### <a name="mt7029-the-watch-extension--has-an-invalid-infoplist-the-nsextensionpointidentifier-must-be-comapplewatchkit"></a>MT7029: L’extension Watch' * 'a un fichier info. plist non valide : le NSExtensionPointIdentifier doit être "com. Apple. watchkit".
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7030" />
 
-### <a name="mt7030-the-watch-extension--has-an-invalid-infoplist-the-nsextension-dictionary-must-contain-nsextensionattributes"></a>MT7030: L’extension Watch' * 'a un fichier info. plist non valide: le dictionnaire NSExtension doit contenir NSExtensionAttributes.
+### <a name="mt7030-the-watch-extension--has-an-invalid-infoplist-the-nsextension-dictionary-must-contain-nsextensionattributes"></a>MT7030: L’extension Watch' * 'a un fichier info. plist non valide : le dictionnaire NSExtension doit contenir NSExtensionAttributes.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7031" />
 
-### <a name="mt7031-the-watch-extension--has-an-invalid-infoplist-the-nsextensionattributes-dictionary-must-contain-a-wkappbundleidentifier"></a>MT7031: L’extension Watch' * 'a un fichier info. plist non valide: le dictionnaire NSExtensionAttributes doit contenir un WKAppBundleIdentifier.
+### <a name="mt7031-the-watch-extension--has-an-invalid-infoplist-the-nsextensionattributes-dictionary-must-contain-a-wkappbundleidentifier"></a>MT7031: L’extension Watch' * 'a un fichier info. plist non valide : le dictionnaire NSExtensionAttributes doit contenir un WKAppBundleIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7032" />
 
-### <a name="mt7032-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-should-not-contain-the-watch-companion-capability"></a>MT7032: L’extension WatchKit' * 'a un fichier info. plist non valide: UIRequiredDeviceCapabilities ne doit pas contenir la fonctionnalité «Watch-Companion».
+### <a name="mt7032-the-watchkit-extension--has-an-invalid-infoplist-uirequireddevicecapabilities-should-not-contain-the-watch-companion-capability"></a>MT7032: L’extension WatchKit' * 'a un fichier info. plist non valide : UIRequiredDeviceCapabilities ne doit pas contenir la fonctionnalité « Watch-Companion ».
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7033" />
 
 ### <a name="mt7033-the-watch-app--does-not-contain-an-infoplist"></a>MT7033: L’application Watch' * 'ne contient pas de fichier info. plist.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7034" />
 
 ### <a name="mt7034-the-watch-app--does-not-specify-a-cfbundleidentifier"></a>MT7034: L’application Watch' * 'ne spécifie pas de CFBundleIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7035" />
 
 ### <a name="mt7035-the-watch-app--does-not-have-a-valid-uidevicefamily-value-expected--but-found--"></a>MT7035: L’application Watch «\*» n’a pas de valeur UIDeviceFamily valide. '\*'Attendu, mais'\* (\*) 'trouvé.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7036" />
 
 ### <a name="mt7036-the-watch-app--does-not-specify-a-cfbundleexecutable"></a>MT7036: L’application Watch' * 'ne spécifie pas de CFBundleExecutable.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7037" />
 
-### <a name="mt7037-the-watchkit-extension-extensionname-has-an-invalid-wkappbundleidentifier-value--it-does-not-match-the-watch-apps-cfbundleidentifier-"></a>MT7037: L’extension WatchKit «{ExtensionName}» a une valeur WKAppBundleIdentifier non valide (\*«»), elle ne correspond pas à la CFBundleIdentifier de l’application\*espion («»).
+### <a name="mt7037-the-watchkit-extension-extensionname-has-an-invalid-wkappbundleidentifier-value--it-does-not-match-the-watch-apps-cfbundleidentifier-"></a>MT7037: L’extension WatchKit « {ExtensionName} » a une valeur WKAppBundleIdentifier non valide (\*« »), elle ne correspond pas à la CFBundleIdentifier de l’application\*espion (« »).
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7038" />
 
-### <a name="mt7038-the-watch-app--has-an-invalid-infoplist-the-wkcompanionappbundleidentifier-must-exist-and-must-match-the-main-app-bundles-cfbundleidentifier"></a>MT7038: L’application Watch «*» a un fichier info. plist non valide: le WKCompanionAppBundleIdentifier doit exister et doit correspondre au CFBundleIdentifier du bundle d’applications principal.
+### <a name="mt7038-the-watch-app--has-an-invalid-infoplist-the-wkcompanionappbundleidentifier-must-exist-and-must-match-the-main-app-bundles-cfbundleidentifier"></a>MT7038: L’application Watch « * » a un fichier info. plist non valide : le WKCompanionAppBundleIdentifier doit exister et doit correspondre au CFBundleIdentifier du bundle d’applications principal.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7039" />
 
-### <a name="mt7039-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7039: L’application Watch' * 'a un fichier info. plist non valide: la clé LSRequiresIPhoneOS ne doit pas être présente.
+### <a name="mt7039-the-watch-app--has-an-invalid-infoplist-the-lsrequiresiphoneos-key-must-not-be-present"></a>MT7039: L’application Watch' * 'a un fichier info. plist non valide : la clé LSRequiresIPhoneOS ne doit pas être présente.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7040" />
 
 ### <a name="mt7040-the-app-bundle-appbundlepath-does-not-contain-an-infoplist"></a>MT7040: L’offre groupée d’applications {AppBundlePath} ne contient pas de fichier info. plist.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7041" />
 
 ### <a name="mt7041-main-infoplist-path-does-not-specify-a-cfbundleidentifier"></a>MT7041: Le chemin d’accès principal info. plist ne spécifie pas de CFBundleIdentifier.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7042" />
 
 ### <a name="mt7042-main-infoplist-path-does-not-specify-a-cfbundleexecutable"></a>MT7042: Le chemin d’accès principal info. plist ne spécifie pas de CFBundleExecutable.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7043" />
 
 ### <a name="mt7043-main-infoplist-path-does-not-specify-a-cfbundlesupportedplatforms"></a>MT7043: Le chemin d’accès principal info. plist ne spécifie pas de CFBundleSupportedPlatforms.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7044" />
 
 ### <a name="mt7044-main-infoplist-path-does-not-specify-a-uidevicefamily"></a>MT7044: Le chemin d’accès principal info. plist ne spécifie pas de UIDeviceFamily.
 
-*Tâche MSBuild: ValidateAppBundleTaskBase*
+*Tâche MSBuild : ValidateAppBundleTaskBase*
 
 <a name="MT7045" />
 
-### <a name="mt7045-unrecognized-format-"></a>MT7045: Format non reconnu: *.
+### <a name="mt7045-unrecognized-format-"></a>MT7045: Format non reconnu : *.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
-Où * peut être:
+Où * peut être :
 
 - string
 - array
@@ -2787,133 +2787,133 @@ Où * peut être:
 
 ### <a name="mt7046-add-entry--incorrectly-specified"></a>MT7046: Ajouter Entrée, *, spécifiée de manière incorrecte.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7047" />
 
 ### <a name="mt7047-add-entry--contains-invalid-array-index"></a>MT7047: Ajouter L’entrée, *, contient un index de tableau non valide.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7048" />
 
-### <a name="mt7048-add--entry-already-exists"></a>MT7048: Add: * l’entrée existe déjà.
+### <a name="mt7048-add--entry-already-exists"></a>MT7048: Add : * l’entrée existe déjà.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7049" />
 
 ### <a name="mt7049-add-cant-add-entry--to-parent"></a>MT7049: Ajouter Impossible d’ajouter l’entrée, *, au parent.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7050" />
 
 ### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050: Supprimer : Impossible de supprimer l’entrée, *, du parent.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7051" />
 
 ### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051: Supprimer : L’entrée, *, contient un index de tableau non valide.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7052" />
 
 ### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052: Supprimer : L’entrée, *, n’existe pas.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7053" />
 
 ### <a name="mt7053-import-entry--incorrectly-specified"></a>MT7053: Port Entrée, *, spécifiée de manière incorrecte.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7054" />
 
 ### <a name="mt7054-import-entry--contains-invalid-array-index"></a>MT7054: Port L’entrée, *, contient un index de tableau non valide.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7055" />
 
-### <a name="mt7055-import-error-reading-file-"></a>MT7055: Port Erreur lors de la lecture du fichier: *.
+### <a name="mt7055-import-error-reading-file-"></a>MT7055: Port Erreur lors de la lecture du fichier : *.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7056" />
 
 ### <a name="mt7056-import-cant-add-entry--to-parent"></a>MT7056: Port Impossible d’ajouter l’entrée, *, au parent.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7057" />
 
 ### <a name="mt7057-merge-cant-add-array-entries-to-dict"></a>MT7057: Fusion Impossible d’ajouter des entrées de tableau au dictée.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7058" />
 
 ### <a name="mt7058-merge-specified-entry-must-be-a-container"></a>MT7058: Fusion L’entrée spécifiée doit être un conteneur.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7059" />
 
 ### <a name="mt7059-merge-entry--contains-invalid-array-index"></a>MT7059: Fusion L’entrée, *, contient un index de tableau non valide.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7060" />
 
 ### <a name="mt7060-merge-entry--does-not-exist"></a>MT7060: Fusion L’entrée, *, n’existe pas.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7061" />
 
-### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Fusion Erreur lors de la lecture du fichier: *.
+### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Fusion Erreur lors de la lecture du fichier : *.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7062" />
 
 ### <a name="mt7062-set-entry--incorrectly-specified"></a>MT7062: Définissez : Entrée, *, spécifiée de manière incorrecte.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7063" />
 
 ### <a name="mt7063-set-entry--contains-invalid-array-index"></a>MT7063: Définissez : L’entrée, *, contient un index de tableau non valide.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7064" />
 
 ### <a name="mt7064-set-entry--does-not-exist"></a>MT7064: Définissez : L’entrée, *, n’existe pas.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7065" />
 
-### <a name="mt7065-unknown-propertylist-editor-action-"></a>MT7065: Action de l’éditeur PropertyList inconnue: *.
+### <a name="mt7065-unknown-propertylist-editor-action-"></a>MT7065: Action de l’éditeur PropertyList inconnue : *.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7066" />
 
-### <a name="mt7066-error-loading--"></a>MT7066: Erreur lors du chargement de' * ': *.
+### <a name="mt7066-error-loading--"></a>MT7066: Erreur lors du chargement de' * ' : *.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 <a name="MT7067" />
 
-### <a name="mt7067-error-saving--"></a>MT7067: Erreur lors de l’enregistrement de' * ': *.
+### <a name="mt7067-error-saving--"></a>MT7067: Erreur lors de l’enregistrement de' * ' : *.
 
-*Tâche MSBuild: PropertyListEditorTaskBase*
+*Tâche MSBuild : PropertyListEditorTaskBase*
 
 ## <a name="mt8xxx-runtime-error-messages"></a>MT8xxx: Messages d’erreur d’exécution
 
@@ -2940,7 +2940,7 @@ Où * peut être:
 
 <a name="MT8005" />
 
-### <a name="mt8005-wrapper-type--is-missing-its-native-objectivec-class-"></a>MT8005: Le type de\*Wrapper «» ne possède pas sa classe\*ObjectiveC native «».
+### <a name="mt8005-wrapper-type--is-missing-its-native-objectivec-class-"></a>MT8005: Le type de\*Wrapper « » ne possède pas sa classe\*ObjectiveC native « ».
 
 <a name="MT8006" />
 
@@ -2994,7 +2994,7 @@ Cela indique généralement un bogue dans Xamarin. iOS. Veuillez envoyer un nouv
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: DelegateProxyAttribute non valide pour la valeur de retour de la méthode *.* : Le champ «Handler{2}» du delegateType () a la valeur null. Veuillez signaler un bogue http://bugzilla.xamarin.com dans.
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: DelegateProxyAttribute non valide pour la valeur de retour de la méthode *.* : Le champ « Handler{2}» du delegateType () a la valeur null. Veuillez signaler un bogue http://bugzilla.xamarin.com dans.
 
 L' `[DelegateProxy]` attribut de la méthode en question n’est pas valide.
 
@@ -3038,7 +3038,7 @@ Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème s
 
 <a name="MT8021" />
 
-### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021: Type de jeton implicite inconnu: *.
+### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021: Type de jeton implicite inconnu : *.
 
 Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
@@ -3050,12 +3050,12 @@ Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème s
 
 <a name="MT8023" />
 
-### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: Un objet d’instance est requis pour construire une méthode générique fermée pour la méthode générique ouverte: * (référence de jeton: *). Veuillez renseigner un rapport de http://bugzilla.xamarin.com bogue à l’adresse.
+### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: Un objet d’instance est requis pour construire une méthode générique fermée pour la méthode générique ouverte : * (référence de jeton : *). Veuillez renseigner un rapport de http://bugzilla.xamarin.com bogue à l’adresse.
 
 Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: Impossible de trouver un type d’extension valide pour l’enum intelligent «{smart_type}». Veuillez signaler un bogue https://bugzilla.xamarin.com dans.
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: Impossible de trouver un type d’extension valide pour l’enum intelligent « {smart_type} ». Veuillez signaler un bogue https://bugzilla.xamarin.com dans.
 
 Cela indique un bogue dans Xamarin. iOS. Veuillez envoyer un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new).

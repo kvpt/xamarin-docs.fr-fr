@@ -4,15 +4,15 @@ description: Ce document décrit les modifications mineures et les amélioration
 ms.prod: xamarin
 ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 620b89ba4682d65552fa5555c978b7eb5f437714
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620718"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290769"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>Modifications supplémentaires apportées à iOS 10 frameworks
 
@@ -20,7 +20,7 @@ _Cet article traite des modifications supplémentaires ou des améliorations app
 
 ## <a name="av-foundation-framework-additions"></a>Ajouts de l’infrastructure de Fondation AV
 
-L’infrastructure AVFoundation intègre les améliorations suivantes:
+L’infrastructure AVFoundation intègre les améliorations suivantes :
 
 - Dans iOS 10, le développeur n’a plus à implémenter des comportements [AVPlayerItem](xref:AVFoundation.AVPlayerItem) différents en fonction du type de contenu. Il vous suffit `Rate` de définir la propriété et AVFoundation déterminera quand un contenu suffisant sera disponible pour la lecture sans blocage.
 - La nouvelle classe [AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput) remplace la `AVCaptureStillImageOutput` classe déconseillée et fournit une méthode unifiée pour la gestion de tous les flux de travail de photographie en fournissant un contrôle et une surveillance sophistiqués du processus de capture et une prise en charge des nouvelles fonctionnalités telles que les photos en direct et le format de capture brut.
@@ -34,7 +34,7 @@ L’infrastructure AVKit comprend désormais la nouvelle `UpdatesNowPlayingInfoC
 
 ## <a name="core-data-enhancements"></a>Améliorations des données de base
 
-iOS 10 comprend les améliorations suivantes apportées à l’infrastructure de données de base:
+iOS 10 comprend les améliorations suivantes apportées à l’infrastructure de données de base :
 
 - Les objets [NSManagedObjectContext](xref:CoreData.NSManagedObjectContext) avec les banques de données sqlite dans le mode journal de Wal prennent en charge la nouvelle fonctionnalité de génération de requêtes dans laquelle les contextes d’objets managés (MOC) peuvent être épinglés à des versions de base de données spécifiques pour des transactions de récupération et de défaillance futures.
 - Les objets [NSManagedObjectContext](xref:CoreData.NSManagedObjectContext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
@@ -46,7 +46,7 @@ Pour plus d’informations, consultez Référence de l' [infrastructure de donn�
 
 ## <a name="core-image-enhancements"></a>Améliorations de l’image principale
 
-iOS 10 apporte les améliorations suivantes à l’infrastructure d’images principales:
+iOS 10 apporte les améliorations suivantes à l’infrastructure d’images principales :
 
 - Le développeur peut désormais traiter les images dans un espace de couleurs en dehors de l’espace de couleurs de travail du contexte de l’image principale en convertissant l’espace de couleurs avant et après le traitement.
 - Pour les appareils iOS qui utilisent les processeurs a8 ou A9, le format d’image RAW est désormais pris en charge. L’image principale prend désormais en charge le décodage d’images BRUTes à partir de l’appareil photo iSight intégré ou d’une caméra tierce. Utilisez les `FilterWithImageData` méthodes `FilterWithImageURL` ou de la classe [CIFilter](xref:CoreImage.CIFilter) pour traiter les images brutes.
@@ -55,7 +55,7 @@ iOS 10 apporte les améliorations suivantes à l’infrastructure d’images pri
 - Le code noyau de l’image principale peut désormais demander des formats de sortie pixel spécifiques.
 - La `ImageWithExtent` méthode de la classe [CIFilter](xref:CoreImage.CIFilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
 
-En outre, les nouveaux filtres d’image principaux suivants ont été ajoutés:
+En outre, les nouveaux filtres d’image principaux suivants ont été ajoutés :
 
 - `CINinePartTiled`
 - `CINinePartStretched`
@@ -69,7 +69,7 @@ Nouveauté d’iOS 10, l’infrastructure de mouvement de base comprend des év�
 
 ## <a name="foundation-enhancements"></a>Améliorations de base
 
-Les améliorations suivantes ont été apportées à l’infrastructure de base pour iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure de base pour iOS 10 :
 
 - Utilisez la nouvelle classe [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) pour mettre en forme les mesures localisées à afficher à l’utilisateur final.
 - Utilisez la nouvelle classe [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) pour effectuer des calculs d’intervalles de date et d’heure tels que des durées, pour comparer des intervalles et tester des intersections d’intervalle.
@@ -80,7 +80,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 
 ## <a name="gamekit-enhancements"></a>Améliorations apportées à GameKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure GameKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure GameKit dans iOS 10 :
 
 - L' **application Game Center** a été dépréciée et supprimée d’iOS. Si l’application utilise GameKit, elle _doit_ présenter sa propre interface pour afficher les fonctionnalités GameKit telles que Leaderboards, etc. 
 - Un nouveau type de compte iCloud est implémenté par la classe [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) .
@@ -88,7 +88,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure GameKit 
 
 ## <a name="gameplaykit-enhancements"></a>Améliorations apportées à GameplayKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure GameplayKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure GameplayKit dans iOS 10 :
 
 - Utilisez la nouvelle classe [GKMeshGraph](https://developer.apple.com/reference/gameplaykit/gkmeshgraph) pour fournir des chemins d’accès à hautes performances et à l’aspect naturel.
 - La génération de bruit procédurale a été ajoutée et peut être utilisée pour améliorer le réalisme des textures à l’aspect naturel, ajouter un réalisme aux mouvements de l’appareil photo et aider à générer des mondes riches en jeux.
@@ -100,7 +100,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure Gameplay
 
 ## <a name="healthkit-enhancements"></a>Améliorations apportées à HealthKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure HealthKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure HealthKit dans iOS 10 :
 
 - De nouvelles clés de métadonnées ont été ajoutées pour les types `HKWeatherConditionClear` météo `HKWeatherConditionCloudy`(tels que et) et les `HKWorkoutActivityTypeFlexibility` types `HKWorkoutActivityTypeWheelchairRunPace`d’entraînement (tels que et) ont été ajoutés.
 - La nouvelle `HKCDADocument` classe a été ajoutée pour représenter un document au format CDA (clinique document architecture).
@@ -109,7 +109,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure HealthKi
 
 ## <a name="homekit-enhancements"></a>Améliorations apportées à HomeKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure HomeKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure HomeKit dans iOS 10 :
 
 - De nouveaux services et caractéristiques ont été ajoutés.
 - Un iPad peut être configuré pour agir en tant que Hub HomeKit pour fournir un accès accessoire à distance, exécuter des déclencheurs Automation et activer des autorisations utilisateur partagées.
@@ -120,9 +120,9 @@ Pour plus d’informations, consultez notre [Introduction à](~/ios/platform/hom
 
 ## <a name="metal-enhancements"></a>Améliorations des métaux
 
-Les améliorations suivantes ont été apportées à l’infrastructure métallique dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure métallique dans iOS 10 :
 
-- les applications et les jeux 3D peuvent désormais utiliser la facettisation pour restituer efficacement des scènes et une géométrie complexes via le GPU.
+- les applications et les jeux 3D peuvent désormais utiliser la _facettisation_ pour restituer efficacement des scènes et une géométrie complexes via le GPU.
 - Fournir un contrôle affiné de l’allocation des ressources pour optimiser les performances des applications basées sur le métal à l’aide de segments de ressources et de cibles de rendu sans mémoire.
 - Utilisez la spécialisation de fonction pour créer une collection hautement optimisée de fonctions de combinaison de matériau et de lumière pour une scène.
 
@@ -130,7 +130,7 @@ Pour plus d’informations, consultez le [Guide de programmation métallique](ht
 
 ## <a name="modelio-enhancements"></a>Améliorations apportées à ModelIO
 
-Les améliorations suivantes ont été apportées à l’infrastructure ModelIO dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure ModelIO dans iOS 10 :
 
 - Le format de fichier USD est désormais pris en charge.
 - La prise en charge des champs à distance signée a été ajoutée à la classe [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray) .
@@ -139,7 +139,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure ModelIO 
 
 ## <a name="photos-enhancements"></a>Améliorations des photos
 
-Les améliorations suivantes ont été apportées à l’infrastructure des photos dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure des photos dans iOS 10 :
 
 - Utilisez les classes [CIImageProcessorInput](https://developer.apple.com/reference/coreimage/ciimageprocessorinput) et [CIImageProcessorOutput](https://developer.apple.com/reference/coreimage/ciimageprocessoroutput) pour tirer parti de la nouvelle fonctionnalité du processeur d’images principal afin d’effectuer des modifications.
 - L’édition de photos en direct est désormais disponible pour les applications qui prennent en charge l’infrastructure de photos et les extensions de modification de photos (pour une utilisation dans les photos et les applications d’appareil photo).
@@ -147,14 +147,14 @@ Les améliorations suivantes ont été apportées à l’infrastructure des phot
 
 ## <a name="replaykit-enhancements"></a>Améliorations apportées à ReplayKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure ReplayKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure ReplayKit dans iOS 10 :
 
 - Utilisez les classes [RPScreenRecorder](https://developer.apple.com/reference/replaykit/rpscreenrecorder), [RPBroadcastActivityViewController](https://developer.apple.com/reference/replaykit/rpbroadcastactivityviewcontroller) et [RPBroadcastController](https://developer.apple.com/reference/replaykit/rpbroadcastcontroller) pour prendre en charge la diffusion de médias enregistrés via des sites tiers.
 - L’interface utilisateur de diffusion et les extensions de Broadcast Upload sont requises pour prendre en charge les services de diffusion ReplayKit tiers dans l’application.
 
 ## <a name="scenekit-enhancements"></a>Améliorations apportées à SceneKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure SceneKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure SceneKit dans iOS 10 :
 
 - La classe [SCNCamera](xref:SceneKit.SCNCamera) peut fournir un réalisme plus réaliste en utilisant les fonctionnalités HDR et les effets. Utilisez l’exposition adaptative pour créer des effets automatiques ou utiliser l’vignette, la frange des couleurs et le classement des couleurs pour ajouter des effets fillmatic au jeu.
 - SceneKit comprend maintenant un nouveau système de rendu physique (PBR) pour des résultats plus réalistes avec la création de ressources plus simple.
@@ -170,7 +170,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SceneKit
 
 ## <a name="spritekit-enhancements"></a>Améliorations apportées à SpriteKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit dans iOS 10 :
 
 - Les nuanceurs personnalisés peuvent fournir des`SKAttribute`attributs () qui peuvent être configurés séparément par chaque nœud qui utilise le nuanceur en fournissant une`SKAttributeValue`valeur d’attribut ().
 - Tilemaps prennent désormais `SKTileMapMode`en charge les formes de mosaïque carrée, hexagonale et isométrique pour les jeux 2D, 2.5 d et de défilement latéral à l’aide des classes `SKTileGroupRule` , `SKTileGroup`et `SKTileSet` .
@@ -179,9 +179,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure SpriteKi
 
 ## <a name="scrollview-enhancements"></a>Améliorations apportées à ScrollView
 
-Les améliorations suivantes ont été apportées au contrôle ScrollView dans iOS 10,3:
+Les améliorations suivantes ont été apportées au contrôle ScrollView dans iOS 10,3 :
 
-- `UIScrollView`incluez maintenant `IndexDisplayMode` la propriété pour contrôler la façon dont l’index est affiché lorsque l’utilisateur fait défiler `UIScrollViewIndexDisplayMode` en tant que:
+- `UIScrollView`incluez maintenant `IndexDisplayMode` la propriété pour contrôler la façon dont l’index est affiché lorsque l’utilisateur fait défiler `UIScrollViewIndexDisplayMode` en tant que :
   - `Automatic`-L’affichage de l’index est contrôlé par le système d’exploitation.
   - `AlwaysHidden`-L’affichage de l’index est toujours masqué.
 
@@ -189,7 +189,7 @@ Consultez l' [exemple iOSTenThree](https://docs.microsoft.com/samples/xamarin/io
 
 ## <a name="uikit-enhancements"></a>Améliorations apportées à UIKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure UIKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure UIKit dans iOS 10 :
 
 - La nouvelle API [UIPasteboard](xref:UIKit.UIPasteboard) fournit de nouvelles options (telles que les limitations de durée de vie) et déclare automatiquement les types de contenu compatibles pour les types de classe courants.
 - Une nouvelle prise en charge d’animation interruptible entièrement interactive, basée sur les objets, a été ajoutée et peut être liée aux gestes. Consultez Référence du [protocole UIViewAnimating](https://developer.apple.com/reference/uikit/uiviewanimating)d’Apple, [référence de la classe UIViewPropertyAnimator](https://developer.apple.com/reference/uikit/uiviewpropertyanimator), référence du [protocole UITimingCurveProvider](https://developer.apple.com/reference/uikit/uitimingcurveprovider), référence de la [classe UICubicTimingParameters](https://developer.apple.com/reference/uikit/uicubictimingparameters) et [ Référence de la classe UISpringTimingParameter](https://developer.apple.com/reference/uikit/uispringtimingparameters) pour plus d’informations.
@@ -207,7 +207,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure UIKit da
 
 ## <a name="webkit-enhancements"></a>Améliorations apportées à WebKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure WebKit dans iOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure WebKit dans iOS 10 :
 
 - La prise en charge des aperçus et des `WKWebView` pop a été ajoutée à la classe. Utilisez la `ShouldPreviewElement` méthode pour déterminer si un affichage Web donné doit afficher un aperçu.
 

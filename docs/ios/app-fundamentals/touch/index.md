@@ -4,15 +4,15 @@ description: Ce document contient des liens vers des guides qui décrivent comme
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/23/2017
-ms.openlocfilehash: 60bd87adb56e311407280ba98f48d8c3e2160836
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121015"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282991"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Gestion des fonctions tactiles dans les applications Xamarin. iOS
 
@@ -32,7 +32,7 @@ Toutefois, il peut arriver que vous deviez utiliser le traitement tactile de bas
 - [Procédure pas à pas : Utilisation de Touch dans iOS](ios-touch-walkthrough.md)
 - [Suivi tactile multipoint](touch-tracking.md)
 
-Ce guide fait office d’introduction à Touch dans iOS. Pour plus d’informations sur l’utilisation de la fonction tactile 3D et des commentaires haptique dans iOS, qui ont été introduits dans iOS 9 et 10, consultez les guides spécifiques ci-dessous:
+Ce guide fait office d’introduction à Touch dans iOS. Pour plus d’informations sur l’utilisation de la fonction tactile 3D et des commentaires haptique dans iOS, qui ont été introduits dans iOS 9 et 10, consultez les guides spécifiques ci-dessous :
 
 - [3D Touch](~/ios/platform/3d-touch.md)
 - [Activation du retour haptique](~/ios/user-interface/ios-ui/haptic-feedback.md)

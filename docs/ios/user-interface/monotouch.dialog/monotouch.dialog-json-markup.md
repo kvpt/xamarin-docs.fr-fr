@@ -5,14 +5,14 @@ ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: lobrien
-ms.author: laobri
-ms.openlocfilehash: 08f10dc02380a09b7ab81ff1539f5da6a9d768f6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528440"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284142"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
 
@@ -75,7 +75,7 @@ Commençons par un exemple. Voici un fichier JSON complet qui peut être passé 
 }
 ```
 
-Le balisage ci-dessus produit l’interface utilisateur suivante:
+Le balisage ci-dessus produit l’interface utilisateur suivante :
 
  [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "Interface utilisateur créée par le balisage donné")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
@@ -94,7 +94,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
 ## <a name="root-element-syntax"></a>Syntaxe d’élément racine
 
-L’élément racine contient les valeurs suivantes:
+L’élément racine contient les valeurs suivantes :
 
 - `title`
 - `sections` (facultatif)
@@ -149,7 +149,7 @@ Il s’agit d’un tableau JSON avec des sections individuelles
 
 ## <a name="section-syntax"></a>Syntaxe de la section
 
-La section contient les éléments suivants:
+La section contient les éléments suivants :
 
 - `header` (facultatif)
 - `footer` (facultatif)
@@ -176,7 +176,7 @@ S’il est présent, le pied de page est affiché en bas de la section.
 ### <a name="elements"></a>éléments
 
 Il s’agit d’un tableau d’éléments. Chaque élément doit contenir au moins une clé, la `"type"` clé utilisée pour identifier le type d’élément à créer.
-Certains éléments partagent des propriétés communes telles que `"caption"` et. `"value"` Voici la liste des éléments pris en charge:
+Certains éléments partagent des propriétés communes telles que `"caption"` et. `"value"` Voici la liste des éléments pris en charge :
 
 - `string`éléments (avec et sans style)
 - `entry`lignes (régulière ou mot de passe)
@@ -190,7 +190,7 @@ Les éléments de chaîne peuvent être utilisés en tant que boutons en fournis
 
 ## <a name="rendering-elements"></a>Éléments de rendu
 
-Les éléments de rendu sont basés sur C# StringElement et StyledStringElement et peuvent restituer des informations de différentes façons et il est possible de les afficher de différentes façons. Les éléments les plus simples peuvent être créés comme suit:
+Les éléments de rendu sont basés sur C# StringElement et StyledStringElement et peuvent restituer des informations de différentes façons et il est possible de les afficher de différentes façons. Les éléments les plus simples peuvent être créés comme suit :
 
 ```json
 {
@@ -199,7 +199,7 @@ Les éléments de rendu sont basés sur C# StringElement et StyledStringElement 
 }
 ```
 
-Cette opération affiche une chaîne simple avec toutes les valeurs par défaut: police, arrière-plan, couleur de texte et décorations. Il est possible de raccorder des actions à ces éléments et de faire en sorte qu’ils se comportent comme `"onaccessorytap"` des boutons en définissant la `"ontap"` propriété ou les propriétés:
+Cette opération affiche une chaîne simple avec toutes les valeurs par défaut : police, arrière-plan, couleur de texte et décorations. Il est possible de raccorder des actions à ces éléments et de faire en sorte qu’ils se comportent comme `"onaccessorytap"` des boutons en définissant la `"ontap"` propriété ou les propriétés :
 
 ```json
 {
@@ -209,7 +209,7 @@ Cette opération affiche une chaîne simple avec toutes les valeurs par défaut:
 }
 ```
 
-Le code ci-dessus appellera la méthode «ShowPhotos» dans la classe «Acme. photolibrary». La `"onaccessorytap"` méthode est similaire, mais elle est appelée uniquement si l’utilisateur appuie sur l’accessoire au lieu de cliquer sur la cellule. Pour ce faire, vous devez également définir l’accessoire:
+Le code ci-dessus appellera la méthode « ShowPhotos » dans la classe « Acme. photolibrary ». La `"onaccessorytap"` méthode est similaire, mais elle est appelée uniquement si l’utilisateur appuie sur l’accessoire au lieu de cliquer sur la cellule. Pour ce faire, vous devez également définir l’accessoire :
 
 ```json
 {
@@ -221,7 +221,7 @@ Le code ci-dessus appellera la méthode «ShowPhotos» dans la classe «Acme. ph
 }
 ```
 
-Les éléments de rendu peuvent afficher deux chaînes à la fois, l’une est la légende et l’autre la valeur. La façon dont ces chaînes sont rendues dépend du style, vous pouvez définir cela `"style"` à l’aide de la propriété. La valeur par défaut affiche la légende à gauche et la valeur à droite. Pour plus d’informations, consultez la section relative au style. Les couleurs sont encodées à l’aide du symbole «#» suivi de nombres hexadécimaux qui représentent les valeurs des valeurs alpha, rouge, vert, bleu et peut-être. Le contenu peut être encodé sous forme abrégée (3 ou 4 chiffres hexadécimaux) qui représente des valeurs RVB ou RVBA. Ou la forme longue (6 ou 8 chiffres) qui représentent des valeurs RVB ou RVBA. La version abrégée est un raccourci pour écrire deux fois le même chiffre hexadécimal. La constante «#1bc» est donc intepreted comme rouge = 0x11, Green = 0xBB et Blue = 0xcc. Si la valeur alpha n’est pas présente, la couleur est opaque. Voici quelques exemples :
+Les éléments de rendu peuvent afficher deux chaînes à la fois, l’une est la légende et l’autre la valeur. La façon dont ces chaînes sont rendues dépend du style, vous pouvez définir cela `"style"` à l’aide de la propriété. La valeur par défaut affiche la légende à gauche et la valeur à droite. Pour plus d’informations, consultez la section relative au style. Les couleurs sont encodées à l’aide du symbole « # » suivi de nombres hexadécimaux qui représentent les valeurs des valeurs alpha, rouge, vert, bleu et peut-être. Le contenu peut être encodé sous forme abrégée (3 ou 4 chiffres hexadécimaux) qui représente des valeurs RVB ou RVBA. Ou la forme longue (6 ou 8 chiffres) qui représentent des valeurs RVB ou RVBA. La version abrégée est un raccourci pour écrire deux fois le même chiffre hexadécimal. La constante « #1bc » est donc intepreted comme rouge = 0x11, Green = 0xBB et Blue = 0xcc. Si la valeur alpha n’est pas présente, la couleur est opaque. Voici quelques exemples :
 
 ```json
 "background": "#f00"
@@ -233,7 +233,7 @@ Les éléments de rendu peuvent afficher deux chaînes à la fois, l’une est l
 
 ### <a name="accessory"></a>équipée
 
-Détermine le type d’accessoire à afficher dans votre élément de rendu, les valeurs possibles sont:
+Détermine le type d’accessoire à afficher dans votre élément de rendu, les valeurs possibles sont :
 
 - `checkmark`
 - `detail-disclosure`
@@ -269,10 +269,10 @@ Couleur à utiliser pour le texte principal ou le texte détaillé.
 ### <a name="detailfont-and-font"></a>DetailFont et police
 
 Police à utiliser pour la légende ou le texte de détail. Le format d’une spécification de police est le nom de la police, suivi éventuellement d’un tiret et de la taille du point.
-Les spécifications de police valides sont les suivantes:
+Les spécifications de police valides sont les suivantes :
 
 - Helvetica
-- «Helvetica-14»
+- « Helvetica-14 »
 
 
  <a name="linebreak" />

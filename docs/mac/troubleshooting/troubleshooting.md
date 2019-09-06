@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: dea7337702e37895d1e8dec55bd433d8ac4d64c0
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 6bc2990ef82e1bccd4f9e530eb67265eeae528a9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065617"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292154"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Conseils de dépannage de Xamarin. Mac
 
@@ -21,13 +21,13 @@ ms.locfileid: "70065617"
 
 Parfois, nous sommes tous bloqués lors de l’utilisation d’un projet, soit sur l’impossibilité d’obtenir une API pour travailler comme je le souhaite, soit pour tenter de contourner un bogue. Notre objectif de Xamarin est de vous permettre de réussir à écrire vos applications mobiles et de bureau, et nous avons fourni des ressources pour vous aider.
 
-Avec l’une de ces ressources, vous pouvez suivre certaines étapes de préparation pour les aider à résoudre rapidement votre problème:
+Avec l’une de ces ressources, vous pouvez suivre certaines étapes de préparation pour les aider à résoudre rapidement votre problème :
 
-- Déterminez la cause première du problème le mieux possible pour signaler des incidents:
+- Déterminez la cause première du problème le mieux possible pour signaler des incidents :
 
-  - «Mon application se bloque» est difficile à diagnostiquer. «Mon application se bloque quand je retourne un tableau vide à cet appel» est beaucoup plus facile à résoudre.
+  - « Mon application se bloque » est difficile à diagnostiquer. « Mon application se bloque quand je retourne un tableau vide à cet appel » est beaucoup plus facile à résoudre.
 
-  - «Je ne peux pas faire fonctionner NSTable» est moins utile que «aucune des méthodes sur mon NSTableDelegate ne semble être appelée dans ce cas».
+  - « Je ne peux pas faire fonctionner NSTable » est moins utile que « aucune des méthodes sur mon NSTableDelegate ne semble être appelée dans ce cas ».
 
 - Si possible, fournissez un petit exemple de programme qui illustre le problème. L’examen des pages du code source à la recherche du problème prend plus de temps et de travail.
 
@@ -36,7 +36,7 @@ Avec l’une de ces ressources, vous pouvez suivre certaines étapes de prépara
 
 ### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>Que faire lorsque votre application se bloque sans sortie
 
-Dans la plupart des cas, le débogueur de Visual Studio pour Mac intercepte les exceptions et les incidents dans votre application et vous aide à identifier la cause racine. Toutefois, dans certains cas, votre application rebondit sur le Dock, puis s’arrête avec peu ou pas de sortie. Il peut s’agir des éléments suivants:
+Dans la plupart des cas, le débogueur de Visual Studio pour Mac intercepte les exceptions et les incidents dans votre application et vous aide à identifier la cause racine. Toutefois, dans certains cas, votre application rebondit sur le Dock, puis s’arrête avec peu ou pas de sortie. Il peut s’agir des éléments suivants :
 
 - Problèmes de signature de code.
 - Certaines défaillances de l’exécution mono.
@@ -45,17 +45,17 @@ Dans la plupart des cas, le débogueur de Visual Studio pour Mac intercepte les 
 - Un dépassement de capacité de la pile.
 - La version macOS indiquée dans votre fichier **info. plist** est plus récente que la version MacOS actuellement installée ou n’est pas valide.
 
-Le débogage de ces programmes peut être frustrant, car la recherche des informations nécessaires peut être difficile. Voici quelques approches qui peuvent vous aider:
+Le débogage de ces programmes peut être frustrant, car la recherche des informations nécessaires peut être difficile. Voici quelques approches qui peuvent vous aider :
 
 - Assurez-vous que la version macOS indiquée dans le fichier **info. plist** est la même que la version de MacOS actuellement installée sur l’ordinateur.
 - Vérifiez la sortie de l’application Visual Studio pour Mac (**Afficher** -> les résultats de l'**application** **Pad** -> ) pour les traces de la pile ou la sortie en rouge à partir du cacao qui peut décrire la sortie.
-- Exécutez votre application à partir de la ligne de commande et examinez la sortie (dans l’application **Terminal** ) à l’aide de:
+- Exécutez votre application à partir de la ligne de commande et examinez la sortie (dans l’application **Terminal** ) à l’aide de :
 
   `MyApp.app/Contents/MacOS/MyApp`(où `MyApp` est le nom de votre application)
-- Vous pouvez augmenter la sortie en ajoutant «MONO_LOG_LEVEL» à votre commande sur la ligne de commande, par exemple:
+- Vous pouvez augmenter la sortie en ajoutant « MONO_LOG_LEVEL » à votre commande sur la ligne de commande, par exemple :
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- Vous pouvez attacher un débogueur natif (`lldb`) à votre processus pour voir s’il fournit des informations supplémentaires (cela nécessite une licence payante). Par exemple, procédez comme suit:
+- Vous pouvez attacher un débogueur natif (`lldb`) à votre processus pour voir s’il fournit des informations supplémentaires (cela nécessite une licence payante). Par exemple, procédez comme suit :
 
   1. Entrez `lldb MyApp.app/Contents/MacOS/MyApp` dans le terminal.
   2. Entrez `run` dans le terminal.
@@ -69,15 +69,15 @@ Les sections suivantes couvrent les problèmes connus et leurs solutions.
 
 ### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>Impossible de se connecter au débogueur dans les applications bac à sable (sandbox)
 
-Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie que par défaut, lorsque vous activez le sandboxing, il ne peut pas se connecter à l’application. par conséquent, si vous essayez d’exécuter l’application sans que les autorisations appropriées soient activées, vous recevez un message d’erreur *«Impossible de se connecter au débogueur».* .
+Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie que par défaut, lorsque vous activez le sandboxing, il ne peut pas se connecter à l’application. par conséquent, si vous essayez d’exécuter l’application sans que les autorisations appropriées soient activées, vous recevez un message d’erreur *« Impossible de se connecter au débogueur ».* .
 
 [![Modification des droits](troubleshooting-images/debug01.png "Modification des droits")](troubleshooting-images/debug01-large.png#lightbox)
 
 L’autorisation **autoriser les connexions réseau sortantes (client)** est celle qui est requise pour le débogueur, l’activation de celle-ci permet le débogage normal. Étant donné que vous ne pouvez pas effectuer de débogage `CompileEntitlements` sans cela `msbuild` , nous avons mis à jour la cible pour pour ajouter automatiquement cette autorisation aux droits pour toute application qui est bac à sable (sandbox) pour les versions de débogage uniquement. Les versions release doivent utiliser les droits spécifiés dans le fichier de droits, non modifié.
 
-### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException: aucune donnée n’est disponible pour l’encodage 437
+### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437
 
-Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. Mac, vous pouvez recevoir une erreur au format «System. NotSupportedException: Aucune donnée n’est disponible pour l’encodage 437» lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles `Ionic.Zip.ZipFile`que, peuvent lever cette exception pendant l’opération.
+Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. Mac, vous pouvez recevoir une erreur au format «System. NotSupportedException : Aucune donnée n’est disponible pour l’encodage 437» lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles `Ionic.Zip.ZipFile`que, peuvent lever cette exception pendant l’opération.
 
 Cela peut être résolu en ouvrant les options pour le projet Xamarin. Mac, en accédant à l'**internationalisation** de la **Build** > Mac et en vérifiant l’internationalisation de l' **Ouest** :
 
@@ -95,11 +95,11 @@ Si vous ne parvenez pas à résoudre ce problème, signalez [un bogue](#filing-a
 
 La dernière version de Visual Studio pour Mac a supprimé la section des droits de l’éditeur **info. plist** et l’a placée dans un éditeur de **droits. plist** distinct (pour une meilleure prise en charge multiplateforme avec Xamarin. IOS).
 
-Une fois le nouveau Visual Studio pour Mac installé, lorsque vous créez un projet d’application Xamarin. Mac, un fichier Entitlements **. plist** est automatiquement ajouté à l’arborescence du projet:
+Une fois le nouveau Visual Studio pour Mac installé, lorsque vous créez un projet d’application Xamarin. Mac, un fichier **Entitlements. plist** est automatiquement ajouté à l’arborescence du projet :
 
 ![Sélection de droits](troubleshooting-images/entitlements01.png "Sélection de droits")
 
-Si vous double-cliquez sur le fichier **habilitations. plist** , l’éditeur de droits s’affiche:
+Si vous double-cliquez sur le fichier **habilitations. plist** , l’éditeur de droits s’affiche :
 
 [![Modification des droits](troubleshooting-images/entitlements02.png "Modification des droits")](troubleshooting-images/entitlements02-large.png#lightbox)
 
@@ -107,7 +107,7 @@ Pour les projets Xamarin. Mac existants, vous devez créer manuellement le fichi
 
 ![Ajout d’une nouvelle liste de propriétés](troubleshooting-images/entitlements03.png "Ajout d’une nouvelle liste de propriétés")
 
-Entrez `Entitlements` pour le nom et cliquez sur le bouton **nouveau** . Si votre projet comprenait précédemment un fichier de droits, vous serez invité à l’ajouter au projet au lieu de créer un nouveau fichier:
+Entrez `Entitlements` pour le nom et cliquez sur le bouton **nouveau** . Si votre projet comprenait précédemment un fichier de droits, vous serez invité à l’ajouter au projet au lieu de créer un nouveau fichier :
 
 [![Vérification du remplacement d’un fichier](troubleshooting-images/entitlements04.png "Vérification du remplacement d’un fichier")](troubleshooting-images/entitlements04-large.png#lightbox)
 
@@ -119,7 +119,7 @@ La communauté de développeurs utilisant des produits Xamarin est incroyable et
 
 ## <a name="filing-a-bug"></a>Enregistrement d’un bogue
 
-Vos commentaires sont importants pour nous. Si vous rencontrez des problèmes avec Xamarin. Mac:
+Vos commentaires sont importants pour nous. Si vous rencontrez des problèmes avec Xamarin. Mac :
 
 - Recherchez dans le [dépôt des problèmes](https://github.com/xamarin/xamarin-macios/issues)
 - Avant de devenir des problèmes GitHub, les problèmes Xamarin étaient suivis sur [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Recherchez-y des problèmes correspondants.

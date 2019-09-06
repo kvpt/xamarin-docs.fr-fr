@@ -4,21 +4,21 @@ description: Ce document décrit la liaison dans Xamarin.Mac. La liaison est un 
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: dd42de4dda4b5d5b09156898fd7a8bab331adf88
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: 00d5d5cf9cda38fbfc09fcfe8b4dcb56d00dee5b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865904"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291426"
 ---
 # <a name="xamarinmac-linker-options"></a>Options de l’éditeur de liens Xamarin.Mac
 
 _La liaison est un puissant outil d’optimisation qui réduit la taille de votre application en supprimant le code inutilisé._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Selon le [framework cible](~/mac/platform/target-framework.md) qu’utilise votre projet, les options de l’éditeur de liens disponibles peuvent être limitées. En effet, la liaison nécessite la création d’un graphique d’objet de chaque type utilisé par votre application, ce qui est impossible avec Complet (ou Non pris en charge) en raison de System.Configuration.
 

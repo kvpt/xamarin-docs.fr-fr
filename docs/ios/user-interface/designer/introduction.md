@@ -4,15 +4,15 @@ description: Ce guide présente les Xamarin Designer pour iOS. Il montre comment
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: 2f47e655da60c05fe57e5c57b3a3236fee7cbd65
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f37905f483ad31d05276383718a3295d4a288f28
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528658"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285864"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 
@@ -32,9 +32,9 @@ Ce guide suppose que vous connaissez le contenu abordé dans les guides de [pris
 
 Cette section décrit comment le concepteur iOS facilite la création d’une interface utilisateur et son connexion au code.
 
-Le concepteur iOS permet aux développeurs de concevoir visuellement l’interface utilisateur d’une application. Comme indiqué dans le guide [Présentation](~/ios/user-interface/storyboards/index.md) des storyboards, un Storyboard décrit les écrans (contrôleurs d’affichage) qui composent une application, les éléments d’interface (vues) placés sur ces contrôleurs d’affichage et le déroulement global de navigation de l’application. 
+Le concepteur iOS permet aux développeurs de concevoir visuellement l’interface utilisateur d’une application. Comme indiqué dans le guide [Présentation des storyboards](~/ios/user-interface/storyboards/index.md) , un Storyboard décrit les écrans (contrôleurs d’affichage) qui composent une application, les éléments d’interface (vues) placés sur ces contrôleurs d’affichage et le déroulement global de navigation de l’application. 
 
-Un contrôleur d’affichage se compose de deux parties: une représentation visuelle dans le concepteur iOS C# et une classe associée:
+Un contrôleur d’affichage se compose de deux parties : une représentation visuelle dans le concepteur iOS C# et une classe associée :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -50,7 +50,7 @@ Un contrôleur d’affichage se compose de deux parties: une représentation vis
 
 -----
 
-Dans son état par défaut, un contrôleur d’affichage ne fournit aucune fonctionnalité. elle doit être remplie avec des contrôles. Ces contrôles sont placés dans l’affichage du contrôleur d’affichage, la zone rectangulaire qui contient tout le contenu de l’écran. La plupart des contrôleurs d’affichage contiennent des contrôles communs, tels que des boutons, des étiquettes et des champs de texte, comme illustré dans la capture d’écran suivante, qui montre un contrôleur d’affichage contenant un bouton: 
+Dans son état par défaut, un contrôleur d’affichage ne fournit aucune fonctionnalité. elle doit être remplie avec des contrôles. Ces contrôles sont placés dans l’affichage du contrôleur d’affichage, la zone rectangulaire qui contient tout le contenu de l’écran. La plupart des contrôleurs d’affichage contiennent des contrôles communs, tels que des boutons, des étiquettes et des champs de texte, comme illustré dans la capture d’écran suivante, qui montre un contrôleur d’affichage contenant un bouton : 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -66,37 +66,37 @@ Certains contrôles, tels que les étiquettes contenant du texte statique, peuve
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Pour pouvoir accéder et manipuler le bouton dans le code, il doit avoir un identificateur unique. Fournissez un identificateur unique en sélectionnant le bouton, en ouvrant la **panneau Propriétés**et en définissant son champ de **nom** sur une valeur telle que «submitButton»:
+Pour pouvoir accéder et manipuler le bouton dans le code, il doit avoir un identificateur unique. Fournissez un identificateur unique en sélectionnant le bouton, en ouvrant la **panneau Propriétés**et en définissant son champ de **nom** sur une valeur telle que « submitButton » :
 
 [![Définition du nom d’un bouton dans le panneau Propriétés](introduction-images/4-settingbuttonname-vsmac.png "Définition du nom d’un bouton dans le panneau Propriétés")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Pour pouvoir accéder et manipuler le bouton dans le code, il doit avoir un identificateur unique. Fournissez un identificateur unique en sélectionnant le bouton, en ouvrant la **fenêtre Propriétés**, et en définissant son champ **Name** sur une valeur telle que «submitButton»:
+Pour pouvoir accéder et manipuler le bouton dans le code, il doit avoir un identificateur unique. Fournissez un identificateur unique en sélectionnant le bouton, en ouvrant la **fenêtre Propriétés**, et en définissant son champ **Name** sur une valeur telle que « submitButton » :
 
 [![Définition du nom d’un bouton dans la fenêtre Propriétés](introduction-images/4-settingbuttonname-vs.png "Définition du nom d’un bouton dans la fenêtre Propriétés")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
 -----
 
-Maintenant que le bouton a un nom, il est accessible dans le code. Mais comment cela fonctionne-t-il?
+Maintenant que le bouton a un nom, il est accessible dans le code. Mais comment cela fonctionne-t-il ?
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 Dans l' **panneau solutions**, la navigation jusqu’à **ViewController.cs** et en cliquant sur l’indicateur de divulgation révèle que la `ViewController` définition de classe du contrôleur d’affichage s’étend sur deux fichiers, chacun contenant une définition de [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) :
 
-[![Les deux fichiers qui composent la classe ViewController: ViewController.cs et ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "les deux fichiers qui composent la classe ViewController: ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Dans le **Explorateur de solutions**, la navigation jusqu’à **ViewController.cs** et le fait de cliquer sur l’indicateur de divulgation révèle `ViewController` que la définition de classe du contrôleur d’affichage s’étend sur deux fichiers, chacun contenant une [classe partielle](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) définition
 
-[![Les deux fichiers qui composent la classe ViewController: ViewController.cs et ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "les deux fichiers qui composent la classe ViewController: ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![Les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.Designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "les deux fichiers qui composent la classe ViewController : ViewController.cs et ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
 - **ViewController.cs** doit être rempli avec un code personnalisé associé à `ViewController` la classe. Dans ce fichier, la `ViewController` classe peut répondre à différentes méthodes de cycle de vie du contrôleur d’affichage iOS, personnaliser l’interface utilisateur et répondre aux entrées de l’utilisateur, telles que les clics de bouton.
 
-- **ViewController.Designer.cs** est un fichier généré, créé par le concepteur IOS pour mapper l’interface créée visuellement au code. Étant donné que les modifications apportées à ce fichier seront remplacées, elles ne doivent pas être modifiées. Dans ce fichier, les déclarations de propriété permettent au code de `ViewController` la classe d’accéder, par **nom**, aux contrôles configurés dans le concepteur iOS. L’ouverture de **ViewController.Designer.cs** affiche le code suivant:
+- **ViewController.Designer.cs** est un fichier généré, créé par le concepteur IOS pour mapper l’interface créée visuellement au code. Étant donné que les modifications apportées à ce fichier seront remplacées, elles ne doivent pas être modifiées. Dans ce fichier, les déclarations de propriété permettent au code de `ViewController` la classe d’accéder, par **nom**, aux contrôles configurés dans le concepteur iOS. L’ouverture de **ViewController.Designer.cs** affiche le code suivant :
 
 ```csharp
 namespace Designer
@@ -161,7 +161,7 @@ La plupart des projets Xamarin. iOS créés avec Visual Studio incluent une tabl
 
 ### <a name="ios-designer-features"></a>fonctionnalités du concepteur iOS
 
-Le concepteur iOS comprend six sections principales:
+Le concepteur iOS comprend six sections principales :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -191,7 +191,7 @@ Le concepteur iOS comprend six sections principales:
 
 #### <a name="adding-a-control-to-the-interface"></a>Ajout d’un contrôle à l’interface
 
-Pour ajouter un contrôle à une interface, faites-le glisser à partir de la **boîte à outils** et déposez-le sur l’aire de conception. Lors de l’ajout ou du positionnement d’un contrôle, les instructions verticales et horizontales mettent en surbrillance les positions de disposition couramment utilisées, telles que le centre vertical, le centre horizontal et les marges:
+Pour ajouter un contrôle à une interface, faites-le glisser à partir de la **boîte à outils** et déposez-le sur l’aire de conception. Lors de l’ajout ou du positionnement d’un contrôle, les instructions verticales et horizontales mettent en surbrillance les positions de disposition couramment utilisées, telles que le centre vertical, le centre horizontal et les marges :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
  
@@ -209,7 +209,7 @@ La ligne en pointillés bleus de l’exemple ci-dessus fournit une indication ho
 
 #### <a name="context-menu-commands"></a>Commandes du menu contextuel
 
-Un menu contextuel est disponible à la fois sur l’aire de conception et dans la **structure du document**. Ce menu fournit des commandes pour le contrôle sélectionné et son parent, ce qui est utile lorsque vous utilisez des vues dans une hiérarchie imbriquée:
+Un menu contextuel est disponible à la fois sur l’aire de conception et dans la **structure du document**. Ce menu fournit des commandes pour le contrôle sélectionné et son parent, ce qui est utile lorsque vous utilisez des vues dans une hiérarchie imbriquée :
 
 [![Menu contextuel sur l’aire de conception](introduction-images/10-contextmenudesignsurface-vsmac.png "Menu contextuel sur l’aire de conception")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
@@ -229,13 +229,13 @@ Un menu contextuel est disponible à la fois sur l’aire de conception et dans 
 
 -----
 
-La barre d’outils contraintes a été mise à jour et se compose à présent de deux contrôles: le mode d’édition de frame/mode de modification de contrainte bascule et le bouton mettre à jour les contraintes/mettre à jour les frames.
+La barre d’outils contraintes a été mise à jour et se compose à présent de deux contrôles : le mode d’édition de frame/mode de modification de contrainte bascule et le bouton mettre à jour les contraintes/mettre à jour les frames.
 
 #### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Mode de modification de frame/mode de modification de contrainte
 
 Dans les versions précédentes du concepteur iOS, en cliquant sur une vue déjà sélectionnée sur l’aire de conception, basculez entre le mode de modification de l’image et le mode de modification des contraintes. À présent, un contrôle de basculement dans la barre d’outils contraintes change de mode d’édition.
 
-- Mode d’édition de frame:
+- Mode d’édition de frame :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -247,7 +247,7 @@ Dans les versions précédentes du concepteur iOS, en cliquant sur une vue déj�
 
 -----
 
-- Mode de modification des contraintes:
+- Mode de modification des contraintes :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -268,7 +268,7 @@ Le bouton mettre à jour les contraintes/mettre à jour les frames se trouve à 
 
 ### <a name="bottom-toolbar"></a>Barre d’outils inférieure
 
-La barre d’outils inférieure permet de sélectionner l’appareil, l’orientation et le zoom utilisés pour afficher un storyboard ou un fichier. XIB dans le concepteur iOS:
+La barre d’outils inférieure permet de sélectionner l’appareil, l’orientation et le zoom utilisés pour afficher un storyboard ou un fichier. XIB dans le concepteur iOS :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -296,7 +296,7 @@ Une fois développée, la barre d’outils inférieure affiche tous les périph�
 
 Notez que la sélection d’un appareil et d’une orientation modifie uniquement la manière dont le concepteur iOS affiche un aperçu de la conception. Quelle que soit la sélection actuelle, les contraintes nouvellement ajoutées sont appliquées sur l’ensemble des appareils et des orientations, sauf si le bouton **modifier les traits** a été utilisé pour spécifier un autre élément.
 
-Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton modifier les **traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Prenons les exemples suivants :
+Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) sont [activées](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), le bouton **modifier les traits** s’affiche dans la barre d’outils inférieure développée.  En cliquant sur le bouton **modifier les traits** , vous affichez les options de création d’une variante d’interface en fonction de la classe de taille représentée par l’appareil et l’orientation sélectionnés. Prenons les exemples suivants :
 
 - Si **iPhone se** / **portrait**, est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la classe compact Width, normal height. 
 - Si **iPad Pro 9,7 "**  / **mode** / **plein écran** est sélectionné, menu segue fournit des options pour créer une variation d’interface pour la largeur normale, classe de taille normale.
@@ -313,7 +313,7 @@ Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storybo
 
 #### <a name="zoom-controls"></a>Contrôles de zoom
 
-L’aire de conception prend en charge le zoom à l’aide de plusieurs contrôles:
+L’aire de conception prend en charge le zoom à l’aide de plusieurs contrôles :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
  
@@ -325,7 +325,7 @@ L’aire de conception prend en charge le zoom à l’aide de plusieurs contrôl
 
 -----
 
-Les contrôles incluent les éléments suivants:
+Les contrôles incluent les éléments suivants :
 
 1. Zoom pour ajuster
 2. Zoom arrière
@@ -338,24 +338,24 @@ Ces contrôles ajustent le zoom sur l’aire de conception. Ils n’affectent pa
 
 ### <a name="properties-pad"></a>Panneau Propriétés
 
-Utilisez la **panneau Propriétés** pour modifier l’identité, les styles visuels, l’accessibilité et le comportement d’un contrôle. La capture d’écran suivante illustre les options de **panneau Propriétés** pour un bouton:
+Utilisez la **panneau Propriétés** pour modifier l’identité, les styles visuels, l’accessibilité et le comportement d’un contrôle. La capture d’écran suivante illustre les options de **panneau Propriétés** pour un bouton :
 
 [![Panneau Propriétés d’un bouton](introduction-images/17-buttonpropertiespad-vsmac.png "Panneau Propriétés d’un bouton")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
 #### <a name="properties-pad-sections"></a>Sections Panneau Propriétés
 
-Le **panneau Propriétés** contient trois sections:
+Le **panneau Propriétés** contient trois sections :
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ### <a name="properties-window"></a>Propriétés (fenêtre)
 
-Utilisez la **fenêtre Propriétés** pour modifier l’identité, les styles visuels, l’accessibilité et le comportement d’un contrôle. La capture d’écran suivante illustre les options de la **fenêtre Propriétés** d’un bouton:
+Utilisez la **fenêtre Propriétés** pour modifier l’identité, les styles visuels, l’accessibilité et le comportement d’un contrôle. La capture d’écran suivante illustre les options de la **fenêtre Propriétés** d’un bouton :
 
 [![Fenêtre Propriétés d’un bouton](introduction-images/17-buttonpropertieswindow-vs.png "Fenêtre Propriétés d’un bouton")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
 #### <a name="properties-window-sections"></a>Sections de la fenêtre Propriétés
 
-La **fenêtre Propriétés** contient trois sections:
+La **fenêtre Propriétés** contient trois sections :
 
 -----
 
@@ -367,7 +367,7 @@ La **fenêtre Propriétés** contient trois sections:
 
 #### <a name="editing-properties-in-the-properties-pad"></a>Modification des propriétés dans le Panneau Propriétés
 
-En plus de la modification visuelle sur l’aire de conception, le concepteur iOS prend en charge la modification des propriétés dans le **panneau Propriétés**. Les propriétés disponibles changent en fonction du contrôle sélectionné, comme illustré par les captures d’écran ci-dessous:
+En plus de la modification visuelle sur l’aire de conception, le concepteur iOS prend en charge la modification des propriétés dans le **panneau Propriétés**. Les propriétés disponibles changent en fonction du contrôle sélectionné, comme illustré par les captures d’écran ci-dessous :
 
 [![Propriétés du bouton](introduction-images/18a-buttonpropertiespad-vsmac.png "Propriétés du bouton")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
@@ -377,7 +377,7 @@ En plus de la modification visuelle sur l’aire de conception, le concepteur iO
 
 #### <a name="editing-properties-in-the-properties-window"></a>Modification des propriétés dans la fenêtre Propriétés
 
-En plus de la modification visuelle sur l’aire de conception, le concepteur iOS prend en charge la modification des propriétés dans la **fenêtre Propriétés**. Les propriétés disponibles changent en fonction du contrôle sélectionné, comme illustré par les captures d’écran ci-dessous:
+En plus de la modification visuelle sur l’aire de conception, le concepteur iOS prend en charge la modification des propriétés dans la **fenêtre Propriétés**. Les propriétés disponibles changent en fonction du contrôle sélectionné, comme illustré par les captures d’écran ci-dessous :
 
 [![Propriétés du bouton](introduction-images/18a-buttonpropertieswindow-vs.png "Propriétés du bouton")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
@@ -404,19 +404,19 @@ De nombreuses propriétés de la **fenêtre Propriétés** n’affichent aucune 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **panneau Propriétés**. Par exemple, dans la capture d’écran ci `HandleClick` -dessous, une méthode gère l’événement d' **effleurement** du bouton:
+Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **panneau Propriétés**. Par exemple, dans la capture d’écran ci `HandleClick` -dessous, une méthode gère l’événement d' **effleurement** du bouton :
 
 [![Le panneau Propriétés, avec un gestionnaire d’événements défini pour un bouton](introduction-images/19-buttonpropertiespadevents-vsmac.png "Le panneau Propriétés, avec un gestionnaire d’événements défini pour un bouton")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **fenêtre Propriétés**. Par exemple, dans la capture d’écran ci `HandleClick` -dessous, une méthode gère l’événement d' **effleurement** du bouton:
+Pour spécifier des gestionnaires d’événements personnalisés pour différents événements, utilisez l’onglet **événements** de la **fenêtre Propriétés**. Par exemple, dans la capture d’écran ci `HandleClick` -dessous, une méthode gère l’événement d' **effleurement** du bouton :
 
 [![Fenêtre Propriétés, avec un gestionnaire d’événements défini pour un bouton](introduction-images/19-buttonpropertieswindowevents-vs.png "Fenêtre Propriétés, avec un gestionnaire d’événements défini pour un bouton")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
-Une fois qu’un gestionnaire d’événements a été spécifié, une méthode du même nom doit être ajoutée à la classe de contrôleur d’affichage correspondante. Dans le cas `unrecognized selector` contraire, une exception se produit lorsque le bouton est frappé:
+Une fois qu’un gestionnaire d’événements a été spécifié, une méthode du même nom doit être ajoutée à la classe de contrôleur d’affichage correspondante. Dans le cas `unrecognized selector` contraire, une exception se produit lorsque le bouton est frappé :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -434,7 +434,7 @@ Pour obtenir un exemple qui utilise des gestionnaires d’événements personnal
 
 ### <a name="outline-view"></a>vue Structure
 
-Le concepteur iOS peut également afficher la hiérarchie des contrôles d’une interface en tant que plan. Le plan est disponible en sélectionnant l’onglet **structure du document** , comme indiqué ci-dessous:
+Le concepteur iOS peut également afficher la hiérarchie des contrôles d’une interface en tant que plan. Le plan est disponible en sélectionnant l’onglet **structure du document** , comme indiqué ci-dessous :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -452,7 +452,7 @@ Le contrôle sélectionné en mode plan reste synchronisé avec le contrôle sé
 
 ## <a name="revert-to-xcode"></a>Revenir à Xcode
 
-Il est possible d’utiliser le concepteur iOS et Xcode Interface Builder de façon interchangeable. Pour ouvrir une table de montage séquentiel ou un fichier. XIB dans Xcode Interface Builder, cliquez avec le bouton droit sur le fichier et sélectionnez **Ouvrir avec > Interface Builder Xcode**, comme illustré dans la capture d’écran ci-dessous:
+Il est possible d’utiliser le concepteur iOS et Xcode Interface Builder de façon interchangeable. Pour ouvrir une table de montage séquentiel ou un fichier. XIB dans Xcode Interface Builder, cliquez avec le bouton droit sur le fichier et sélectionnez **Ouvrir avec > Interface Builder Xcode**, comme illustré dans la capture d’écran ci-dessous :
 
 [![Ouverture d’une table de montage séquentiel dans Xcode Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Ouverture d’une table de montage séquentiel dans Xcode Interface Builder")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
@@ -462,7 +462,7 @@ Après avoir apporté les modifications dans Xcode Interface Builder, enregistre
 
 ## <a name="revert-to-xcode"></a>Revenir à Xcode
 
-Il est possible d’utiliser le concepteur iOS et Xcode Interface Builder de façon interchangeable, mais Xcode Interface Builder est disponible uniquement sur Mac. Pour ouvrir une table de montage séquentiel ou un fichier. XIB dans Xcode Interface Builder sur un Mac, ouvrez la solution contenant le projet Xamarin. iOS dans [Visual Studio pour Mac](/visualstudio/mac/), cliquez avec le bouton droit sur le fichier et sélectionnez **ouvrir avec > Interface Builder Xcode**, comme illustré par la capture d’écran ci-dessous:
+Il est possible d’utiliser le concepteur iOS et Xcode Interface Builder de façon interchangeable, mais Xcode Interface Builder est disponible uniquement sur Mac. Pour ouvrir une table de montage séquentiel ou un fichier. XIB dans Xcode Interface Builder sur un Mac, ouvrez la solution contenant le projet Xamarin. iOS dans [Visual Studio pour Mac](/visualstudio/mac/), cliquez avec le bouton droit sur le fichier et sélectionnez **ouvrir avec > Interface Builder Xcode**, comme illustré par la capture d’écran ci-dessous :
 
 [![Ouverture d’une table de montage séquentiel dans Xcode Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Ouverture d’une table de montage séquentiel dans Xcode Interface Builder")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
@@ -474,15 +474,15 @@ Après avoir apporté les modifications dans Xcode Interface Builder, enregistre
 
 Le concepteur iOS prend en charge la création, la modification et la gestion des fichiers. XIB. Il s’agit de fichiers XML qui représenter une des vues personnalisées uniques qui peuvent être ajoutées à la hiérarchie d’affichage d’une application. Un fichier. XIB représente généralement l’interface pour une vue ou un écran unique dans une application, tandis qu’un Storyboard représente de nombreux écrans et les transitions entre eux.
 
-Il existe de nombreuses opinions sur la solution: les fichiers. XIB, les storyboards, ou le code, fonctionnent mieux pour la création et la gestion d’une interface utilisateur. En réalité, il n’y a pas de solution parfaite et il est toujours intéressant de prendre en compte le meilleur outil pour le travail. Cela dit, les fichiers. XIB sont généralement les plus puissants lorsqu’ils sont utilisés pour représenter une vue personnalisée nécessaire à plusieurs endroits dans une application, par exemple une cellule d’affichage de tableau personnalisée. 
+Il existe de nombreuses opinions sur la solution : les fichiers. XIB, les storyboards, ou le code, fonctionnent mieux pour la création et la gestion d’une interface utilisateur. En réalité, il n’y a pas de solution parfaite et il est toujours intéressant de prendre en compte le meilleur outil pour le travail. Cela dit, les fichiers. XIB sont généralement les plus puissants lorsqu’ils sont utilisés pour représenter une vue personnalisée nécessaire à plusieurs endroits dans une application, par exemple une cellule d’affichage de tableau personnalisée. 
 
-Vous trouverez plus de documentation sur l’utilisation des fichiers. XIB dans les recettes suivantes:
+Vous trouverez plus de documentation sur l’utilisation des fichiers. XIB dans les recettes suivantes :
 
 - [Utilisation du modèle View. XIB](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/using_the_ios_view_xib_template)
 - [Création d’un TableViewCell personnalisé à l’aide d’un. XIB](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/tables/custom-tableviewcell)
 - [Création d’un écran de lancement à l’aide d’un. XIB](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 
-Pour plus d’informations sur l’utilisation des storyboards, reportez-vous à la [Présentation](~/ios/user-interface/storyboards/index.md)des storyboards.
+Pour plus d’informations sur l’utilisation des storyboards, reportez-vous à la [Présentation des storyboards](~/ios/user-interface/storyboards/index.md).
 
 Cet exemple et d’autres guides relatifs au concepteur iOS font référence à l’utilisation des storyboards comme approche standard pour la création d’interfaces utilisateur, puisque la plupart des modèles de projet Xamarin. iOS fournissent un Storyboard par défaut.
 

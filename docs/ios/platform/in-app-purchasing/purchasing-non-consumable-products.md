@@ -4,27 +4,27 @@ description: Ce document décrit les produits non consommables dans Xamarin. iOS
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: e09d8511dc74bdf9368497ff8fe39bd87b62565c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: aa478636b4ab94ab000fd98860646bfa300e9fab
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528294"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291315"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Achat de produits non-consommables dans Xamarin. iOS
 
-Les produits non consommables sont «détenus» par le client. L’objectif est qu’ils auront toujours accès à ceux-ci, même si leur appareil est perdu/volé ou s’ils en achètent un nouveau. Ils sont utiles pour les livres, les problèmes de magazine, les niveaux de jeu, les filtres photo, les fonctionnalités Pro, etc. Une fois qu’un utilisateur a acheté un produit non utilisable, il n’a jamais à le payer à nouveau. Si votre code les laisse accidentellement essayer, StoreKit affiche un message indiquant qu’il a déjà été acheté.
+Les produits non consommables sont « détenus » par le client. L’objectif est qu’ils auront toujours accès à ceux-ci, même si leur appareil est perdu/volé ou s’ils en achètent un nouveau. Ils sont utiles pour les livres, les problèmes de magazine, les niveaux de jeu, les filtres photo, les fonctionnalités Pro, etc. Une fois qu’un utilisateur a acheté un produit non utilisable, il n’a jamais à le payer à nouveau. Si votre code les laisse accidentellement essayer, StoreKit affiche un message indiquant qu’il a déjà été acheté.
 
 ## <a name="non-consumable-products-sample"></a>Exemple de produits non consommables
 
-Le [code InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) contient un projet appelé «autres *biens*». L’exemple de code montre comment implémenter des produits non consommables à l’aide de filtres photo comme exemple. Une fois que vous avez acheté un filtre, vous pouvez l’appliquer à nouveau à la photo. Vous n’avez jamais besoin de le réacheter.   
+Le [code InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) contient un projet appelé « autres *biens*». L’exemple de code montre comment implémenter des produits non consommables à l’aide de filtres photo comme exemple. Une fois que vous avez acheté un filtre, vous pouvez l’appliquer à nouveau à la photo. Vous n’avez jamais besoin de le réacheter.   
    
    
    
- Le processus d’achat est illustré dans cette série de captures d’écran: le bouton **acheter** devient le bouton d’activation des fonctionnalités:   
+ Le processus d’achat est illustré dans cette série de captures d’écran : le bouton **acheter** devient le bouton d’activation des fonctionnalités :   
    
    
    
@@ -37,7 +37,7 @@ Le [code InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-sam
    
    
 
-Le diagramme suivant montre les interactions entre les classes et le serveur de l’App Store pour effectuer un achat de produit non consommable:   
+Le diagramme suivant montre les interactions entre les classes et le serveur de l’App Store pour effectuer un achat de produit non consommable :   
    
    
    
@@ -53,7 +53,7 @@ Votre code doit normalement masquer ou réaffecter un bouton d’achat une fois 
    
    
    
- Dans certains cas, une application ne peut pas déterminer si un produit non utilisable a déjà été acheté:
+ Dans certains cas, une application ne peut pas déterminer si un produit non utilisable a déjà été acheté :
 
 - Si une application est supprimée et réinstallée sur un appareil, tous les enregistrements d’achat sont supprimés (sauf si/jusqu’à ce que l’utilisateur effectue une restauration de sauvegarde). 
 - Si l’utilisateur a installé l’application sur deux (ou plus) appareils et effectue un achat sur l’un des appareils. Les autres appareils continuent à afficher le produit disponible à l’achat. 
@@ -61,7 +61,7 @@ Votre code doit normalement masquer ou réaffecter un bouton d’achat une fois 
    
    
    
- Le chemin de code dans ce scénario est exactement le même qu’un achat régulier, les seules différences sont les suivantes:
+ Le chemin de code dans ce scénario est exactement le même qu’un achat régulier, les seules différences sont les suivantes :
 
 - L’utilisateur n’est pas facturé à nouveau pour le produit.
 - L' `SKPaymentTransaction` objet passé à l’application aura une `OriginalTransaction` propriété qui fait référence à la transaction qui a été générée lors de l’achat initial du produit. 

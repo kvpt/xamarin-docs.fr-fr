@@ -1,17 +1,17 @@
 ---
 title: Plateforme Apple (iOS et Mac)
-description: 'Ce document décrit les différentes rubriques relatives au développement Xamarin. iOS et Xamarin. Mac: le partage de code, le API unifiée, la liaison de bibliothèques objective-C, les références natives, les types natifs, et bien plus encore.'
+description: 'Ce document décrit les différentes rubriques relatives au développement Xamarin. iOS et Xamarin. Mac : le partage de code, le API unifiée, la liaison de bibliothèques objective-C, les références natives, les types natifs, et bien plus encore.'
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 2d57e69f3cb7662b1ff6e1e7fe1645605d7861b9
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b6ac960770320ed100e8b082cabf8240efed070b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199421"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290835"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Plateforme Apple (iOS et Mac)
 
@@ -28,7 +28,7 @@ La API unifiée pour les projets iOS et Mac utilise les mêmes espaces de noms p
 ### <a name="classic-apis"></a>API classiques
 
 > [!NOTE]
-> **Désapprobation du profil classique:** À mesure que de nouvelles plates-formes sont ajoutées dans Xamarin. iOS, nous commençons à déprécier progressivement les fonctionnalités du profil classique (MonoTouch. dll). Par exemple, l’option non NRC (New-Ref-Count) a été supprimée. NRC a toujours été activé pour toutes les applications unifiées (par exemple, non-NRC n’a jamais été une option) et n’a pas de problèmes connus. Dans les versions ultérieures, vous supprimerez l’option d’utilisation de Boehm comme garbage collector. Il s’agissait également d’une option jamais disponible pour les applications unifiées. La suppression complète de la prise en charge classique est prévue pour l’automne 2016 avec la version de Xamarin. iOS 10,0.
+> **Désapprobation du profil classique :** À mesure que de nouvelles plates-formes sont ajoutées dans Xamarin. iOS, nous commençons à déprécier progressivement les fonctionnalités du profil classique (MonoTouch. dll). Par exemple, l’option non NRC (New-Ref-Count) a été supprimée. NRC a toujours été activé pour toutes les applications unifiées (par exemple, non-NRC n’a jamais été une option) et n’a pas de problèmes connus. Dans les versions ultérieures, vous supprimerez l’option d’utilisation de Boehm comme garbage collector. Il s’agissait également d’une option jamais disponible pour les applications unifiées. La suppression complète de la prise en charge classique est prévue pour l’automne 2016 avec la version de Xamarin. iOS 10,0.
 
 Les API Xamarin. iOS et Xamarin. Mac d’origine (non unifiées) ont rendu le partage de code plus difficile, car les `MonoTouch.` infrastructures `MonoMac.` natives avaient des préfixes d’espace de noms ou.  Nous avons fourni des espaces de noms vides qui permettent aux développeurs de partager `using` du code en ajoutant des instructions qui font référence à la fois à des espaces de noms MonoMac et monotoucher sur le même fichier, mais cela était un peu insupportable. Le API classique doit continuer à être utilisé uniquement dans les applications héritées qui sont distribuées en interne (la mise à niveau vers le API unifiée est recommandée).
 
@@ -39,7 +39,7 @@ Des instructions détaillées sont disponibles pour la mise à jour de toutes le
 
 ## <a name="binding-objective-c-librariesbindingindexmd"></a>[Liaison de bibliothèques Objective-C](binding/index.md)
 
-Xamarin vous permet de placer des bibliothèques natives dans vos applications avec des liaisons. Cette section explique les éléments suivants:
+Xamarin vous permet de placer des bibliothèques natives dans vos applications avec des liaisons. Cette section explique les éléments suivants :
 
 - fonctionnement des liaisons,
 - Comment créer manuellement un projet de liaison qui vous permet de placer du code Objective-C dans Xamarin, et

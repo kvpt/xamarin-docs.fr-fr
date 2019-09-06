@@ -4,15 +4,15 @@ description: Ce document décrit comment modifier des tables dans Xamarin. iOS. 
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f82057957e76ee683e2a649fdf6c2350bf282c18
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 90ef335bd3683028d5f9951cdf2ca341158209b9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528639"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284214"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Modification des tables avec Xamarin. iOS
 
@@ -25,14 +25,14 @@ La fonctionnalité de balayage à supprimer est un geste naturel dans iOS que le
 
  [![](editing-images/image10.png "Exemple de balayage à supprimer")](editing-images/image10.png#lightbox)
 
-Il existe trois remplacements de méthode qui affectent le mouvement de balayage pour afficher un bouton **supprimer** dans une cellule:
+Il existe trois remplacements de méthode qui affectent le mouvement de balayage pour afficher un bouton **supprimer** dans une cellule :
 
 - **CommitEditingStyle** : la source de la table détecte si cette méthode est substituée et active automatiquement le mouvement de balayage à supprimer. L’implémentation de la méthode doit `DeleteRows` appeler sur `UITableView` le pour provoquer la disparition des cellules et supprimer les données sous-jacentes de votre modèle (par exemple, un tableau, un dictionnaire ou une base de données). 
 - **CanEditRow** : si CommitEditingStyle est substitué, toutes les lignes sont supposées être modifiables. Si cette méthode est implémentée et retourne false (pour certaines lignes spécifiques ou pour toutes les lignes), le mouvement de balayage à supprimer n’est pas disponible dans cette cellule. 
-- **TitleForDeleteConfirmation** : spécifie éventuellement le texte du bouton **supprimer** . Si cette méthode n’est pas implémentée, le texte du bouton sera «Delete». 
+- **TitleForDeleteConfirmation** : spécifie éventuellement le texte du bouton **supprimer** . Si cette méthode n’est pas implémentée, le texte du bouton sera « Delete ». 
 
 
-Ces méthodes sont implémentées dans `TableSource` la classe suivante:
+Ces méthodes sont implémentées dans `TableSource` la classe suivante :
 
 ```csharp
 public override void CommitEditingStyle (UITableView tableView, UITableViewCellEditingStyle editingStyle, Foundation.NSIndexPath indexPath)
@@ -64,12 +64,12 @@ Pour cet exemple, `UITableViewSource` le a été mis à jour `List<TableItem>` p
 
 ## <a name="edit-mode"></a>Mode édition
 
-Quand une table est en mode édition, l’utilisateur voit un widget rouge «Stop» sur chaque ligne, ce qui affiche un bouton supprimer lorsqu’il est touché. Le tableau affiche également une icône «handle» pour indiquer que la ligne peut être glissée pour modifier l’ordre.
+Quand une table est en mode édition, l’utilisateur voit un widget rouge « Stop » sur chaque ligne, ce qui affiche un bouton supprimer lorsqu’il est touché. Le tableau affiche également une icône « handle » pour indiquer que la ligne peut être glissée pour modifier l’ordre.
 L’exemple **TableEditMode** implémente ces fonctionnalités comme indiqué.
 
  [![](editing-images/image11.png "L’exemple TableEditMode implémente ces fonctionnalités comme indiqué")](editing-images/image11.png#lightbox)
 
-Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportement du mode édition d’une table:
+Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportement du mode édition d’une table :
 
 - **CanEditRow** : indique si chaque ligne peut être modifiée. Retourne false pour empêcher la suppression et la suppression en mode édition. 
 - **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. 
@@ -94,7 +94,7 @@ public override UITableViewCellEditingStyle EditingStyleForRow (UITableView tabl
 }
 ```
 
-L' `MoveRow` implémentation est un peu plus compliquée, car elle doit modifier la structure de données sous-jacente pour qu’elle corresponde à la nouvelle commande. Comme les données sont implémentées en `List` tant que le code ci-dessous supprime l’élément de données à son ancien emplacement et l’insère au nouvel emplacement. Si les données ont été stockées dans une table de base de données SQLite avec une colonne «Order» (par exemple), cette méthode doit plutôt effectuer des opérations SQL pour réorganiser les nombres de cette colonne.
+L' `MoveRow` implémentation est un peu plus compliquée, car elle doit modifier la structure de données sous-jacente pour qu’elle corresponde à la nouvelle commande. Comme les données sont implémentées en `List` tant que le code ci-dessous supprime l’élément de données à son ancien emplacement et l’insère au nouvel emplacement. Si les données ont été stockées dans une table de base de données SQLite avec une colonne « Order » (par exemple), cette méthode doit plutôt effectuer des opérations SQL pour réorganiser les nombres de cette colonne.
 
 ```csharp
 public override void MoveRow (UITableView tableView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -122,7 +122,7 @@ Enfin, pour que la table soit en mode édition, le bouton **modifier** doit appe
 table.SetEditing (true, true);
 ```
 
-et lorsque l’utilisateur a terminé la modification, le bouton **terminé** doit désactiver le mode d’édition:
+et lorsque l’utilisateur a terminé la modification, le bouton **terminé** doit désactiver le mode d’édition :
 
 ```csharp
 table.SetEditing (false, true);
@@ -131,20 +131,20 @@ table.SetEditing (false, true);
 
 ## <a name="row-insertion-editing-style"></a>Style d’édition d’insertion de ligne
 
-L’insertion de lignes à partir de la table est une interface utilisateur rare: l’exemple principal dans les applications iOS standard est l’écran **modifier le contact** . Cette capture d’écran montre le fonctionnement de la fonctionnalité d’insertion de lignes. en mode édition, une ligne supplémentaire est insérée (lorsque l’utilisateur clique dessus) insère des lignes supplémentaires dans les données. Lorsque la modification est terminée, la ligne temporaire **(Ajouter nouveau)** est supprimée.
+L’insertion de lignes à partir de la table est une interface utilisateur rare : l’exemple principal dans les applications iOS standard est l’écran **modifier le contact** . Cette capture d’écran montre le fonctionnement de la fonctionnalité d’insertion de lignes. en mode édition, une ligne supplémentaire est insérée (lorsque l’utilisateur clique dessus) insère des lignes supplémentaires dans les données. Lorsque la modification est terminée, la ligne temporaire **(Ajouter nouveau)** est supprimée.
 
  [![](editing-images/image12.png "Lorsque la modification est terminée, la nouvelle ligne d’ajout temporaire est supprimée")](editing-images/image12.png#lightbox)
 
-Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportement du mode édition d’une table. Ces méthodes ont été implémentées comme suit dans l’exemple de code:
+Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportement du mode édition d’une table. Ces méthodes ont été implémentées comme suit dans l’exemple de code :
 
 - **EditingStyleForRow** : retourne `UITableViewCellEditingStyle.Delete` pour les lignes contenant des données et retourne `UITableViewCellEditingStyle.Insert` pour la dernière ligne (qui sera ajoutée spécifiquement pour se comporter comme un bouton d’insertion). 
-- **CustomizeMoveTarget** – pendant que l’utilisateur déplace une cellule, la valeur de retour de cette méthode facultative peut remplacer son choix d’emplacement. Cela signifie que vous pouvez les empêcher de «déposer» la cellule dans certaines positions, comme dans cet exemple, afin d’éviter qu’une ligne soit déplacée après la ligne **(Ajouter nouveau)** . 
-- **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. Dans l’exemple, la dernière ligne a le déplacement «handle» masqué, car il est destiné au serveur en tant que bouton d’insertion uniquement. 
+- **CustomizeMoveTarget** – pendant que l’utilisateur déplace une cellule, la valeur de retour de cette méthode facultative peut remplacer son choix d’emplacement. Cela signifie que vous pouvez les empêcher de « déposer » la cellule dans certaines positions, comme dans cet exemple, afin d’éviter qu’une ligne soit déplacée après la ligne **(Ajouter nouveau)** . 
+- **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. Dans l’exemple, la dernière ligne a le déplacement « handle » masqué, car il est destiné au serveur en tant que bouton d’insertion uniquement. 
 
 
-Nous allons également ajouter deux méthodes personnalisées pour ajouter la ligne «Insert», puis la supprimer quand elle n’est plus nécessaire. Elles sont appelées à partir des boutons **modifier** et **Terminer** :
+Nous allons également ajouter deux méthodes personnalisées pour ajouter la ligne « Insert », puis la supprimer quand elle n’est plus nécessaire. Elles sont appelées à partir des boutons **modifier** et **Terminer** :
 
-- **WillBeginTableEditing** : lorsque le bouton **modifier** est touché, il `SetEditing` appelle pour mettre la table en mode édition. Cela déclenche la méthode WillBeginTableEditing où nous affichons la ligne **(Ajouter nouveau)** à la fin de la table pour agir en tant que «bouton d’insertion». 
+- **WillBeginTableEditing** : lorsque le bouton **modifier** est touché, il `SetEditing` appelle pour mettre la table en mode édition. Cela déclenche la méthode WillBeginTableEditing où nous affichons la ligne **(Ajouter nouveau)** à la fin de la table pour agir en tant que « bouton d’insertion ». 
 - **DidFinishTableEditing** : lorsque le bouton terminé est touché `SetEditing` est appelé à nouveau pour désactiver le mode édition. L’exemple de code supprime la ligne **(Ajouter nouveau)** de la table lorsque la modification n’est plus nécessaire. 
 
 
@@ -175,7 +175,7 @@ public override bool CanMoveRow (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-Ces deux méthodes personnalisées sont utilisées pour ajouter et supprimer la ligne **(Ajouter nouveau)** lorsque le mode d’édition de la table est activé ou désactivé:
+Ces deux méthodes personnalisées sont utilisées pour ajouter et supprimer la ligne **(Ajouter nouveau)** lorsque le mode d’édition de la table est activé ou désactivé :
 
 ```csharp
 public void WillBeginTableEditing (UITableView tableView)
@@ -200,7 +200,7 @@ public void DidFinishTableEditing (UITableView tableView)
 }
 ```
 
-Enfin, ce code instancie les boutons **modifier** et **terminé** , avec des expressions lambda qui activent ou désactivent le mode édition lorsqu’ils sont touchés:
+Enfin, ce code instancie les boutons **modifier** et **terminé** , avec des expressions lambda qui activent ou désactivent le mode édition lorsqu’ils sont touchés :
 
 ```csharp
 done = new UIBarButtonItem(UIBarButtonSystemItem.Done, (s,e)=>{

@@ -1,35 +1,35 @@
 ---
-title: Incorporation .NET meilleures pratiques pour Objective-C
-description: Ce document décrit différentes meilleures pratiques pour l’utilisation de l’incorporation de .NET avec Objective-C. Il aborde l’exposition d’un sous-ensemble du code managé, exposer une API chunkier, d’affectation de noms et bien plus encore.
+title: Méthodes recommandées pour l’incorporation .NET pour objective-C
+description: Ce document décrit les différentes pratiques recommandées pour l’utilisation de l’incorporation .NET avec Objective-C. Il aborde l’exposition d’un sous-ensemble du code managé, l’exposition d’une API chunkier, l’attribution d’un nom et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364093"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285115"
 ---
-# <a name="net-embedding-best-practices-for-objective-c"></a>Incorporation .NET meilleures pratiques pour Objective-C
+# <a name="net-embedding-best-practices-for-objective-c"></a>Méthodes recommandées pour l’incorporation .NET pour objective-C
 
-Il s’agit d’un brouillon et ne peut pas être synchronisé avec les fonctionnalités actuellement prises en charge par l’outil. Nous espérons que ce document sera évoluer séparément et finalement correspond à l’outil finale, par exemple, nous vous suggérons les meilleures approches à long terme - solutions de contournement pas immédiats.
+Il s’agit d’un brouillon qui peut ne pas être synchronisé avec les fonctionnalités actuellement prises en charge par l’outil. Nous espérons que ce document va évoluer séparément et qu’il correspond finalement à l’outil final. par conséquent, nous vous suggérons les meilleures approches à long terme : pas de solutions immédiates.
 
-Une grande partie de ce document s’applique également à d’autres langages pris en charge. Toutefois, toutes fournies sont des exemples dans C# et Objective-C.
+Une grande partie de ce document s’applique également à d’autres langues prises en charge. Toutefois, tous les exemples fournis C# sont dans et objective-C.
 
-## <a name="exposing-a-subset-of-the-managed-code"></a>Exposer un sous-ensemble du code managé
+## <a name="exposing-a-subset-of-the-managed-code"></a>Exposition d’un sous-ensemble du code managé
 
-La bibliothèque/framework natif généré contient le code Objective-C pour appeler chacune des API managées qui sont exposés. L’API plus vous surface (rendre public) puis supérieure natif _glue_ bibliothèque deviendra.
+La bibliothèque/infrastructure native générée contient du code Objective-C pour appeler chacune des API managées exposées. Plus le nombre d’API que vous surfacez (rendre public) est élevé, plus la bibliothèque de _colles_ Native deviendra.
 
-Il peut être judicieux de créer un assembly différent et plus petit, pour exposer uniquement les API requises pour le développement natif. Cette façade vous permettra également mieux contrôler la visibilité, d’affectation de noms, vérification des erreurs... du code généré.
+Il peut être judicieux de créer un assembly différent, plus petit, pour exposer uniquement les API requises au développeur natif. Cette façade vous permettra également de mieux contrôler la visibilité, l’affectation de noms, la vérification des erreurs... du code généré.
 
-## <a name="exposing-a-chunkier-api"></a>Exposer une API chunkier
+## <a name="exposing-a-chunkier-api"></a>Exposition d’une API chunkier
 
-Il existe un prix à payer pour effectuer la transition du code natif à managé (et serveur). Par conséquent, il est préférable d’exposer _regroupée plutôt que bavard_ API pour les développeurs natifs, par exemple,
+Il y a un prix à payer pour passer du mode natif au mode managé (et inversement). Par conséquent, il est préférable d’exposer des interfaces groupées _au lieu d’API bavardes_ pour les développeurs natifs, par exemple
 
-**Chatty**
+**Bavardes**
 
 ```csharp
 public class Person {
@@ -58,17 +58,17 @@ public class Person {
 Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 ```
 
-Étant donné que le nombre de transitions est plus petit, les performances seront améliorées. Elle requiert également moins de code à générer, donc cela génère une bibliothèque native plus petits également.
+Étant donné que le nombre de transitions est plus faible, les performances seront meilleures. Il nécessite également moins de code à générer, ce qui produit une bibliothèque Native plus petite.
 
-## <a name="naming"></a>Attribution des noms
+## <a name="naming"></a>Dénomination
 
-Affectation de noms est un des deux problèmes plus difficiles en informatique, les autres étant cache erreurs invalidation et off-par-1. J’espère que l’incorporation de .NET peut vous protègent contre tout sauf d’affectation de noms.
+L’attribution d’un nom à des choses est l’un des deux problèmes les plus difficiles en informatique, les autres étant des erreurs d’invalidation et de désactivation en fonction du 1. Espérons que l’incorporation .NET peut vous protéger de tout sauf en nommant.
 
 ### <a name="types"></a>Types
 
-Objective-C ne prend pas en charge les espaces de noms. En général, ses types sont préfixés avec 2 (pour Apple) ou 3 (pour la 3e parties) comme préfixe, de caractère `UIView` pour vue de UIKit, qui dénote le framework.
+Objective-C ne prend pas en charge les espaces de noms. En général, ses types sont préfixés avec un préfixe de caractère 2 (pour Apple) ou 3 (pour les tiers `UIView` ), comme pour la vue de UIKit, qui désigne l’infrastructure.
 
-Pour les types .NET ignorer l’espace de noms n’est pas possible car elle peut introduire des noms en double, ou manque de clarté. Cela rend les types .NET existants très longs, par exemple
+Pour les types .NET, l’omission de l’espace de noms n’est pas possible, car elle peut introduire des noms en double ou confus. Cela rend les types .NET existants très longs, par exemple
 
 ```csharp
 namespace Xamarin.Xml.Configuration {
@@ -76,19 +76,19 @@ namespace Xamarin.Xml.Configuration {
 }
 ```
 
-serait utilisée comme :
+est utilisé comme :
 
 ```objc
 id reader = [[Xamarin_Xml_Configuration_Reader alloc] init];
 ```
 
-Toutefois vous pouvez ré-exposer le type en tant que :
+Toutefois, vous pouvez à nouveau exposer le type comme suit :
 
 ```csharp
 public class XAMXmlConfigReader : Xamarin.Xml.Configuration.Reader {}
 ```
 
-rend plus conviviale Objective-C à utiliser, par exemple :
+rendre l’utilisation plus conviviale de Objective-C, par exemple :
 
 ```objc
 id reader = [[XAMXmlConfigReader alloc] init];
@@ -96,20 +96,20 @@ id reader = [[XAMXmlConfigReader alloc] init];
 
 ### <a name="methods"></a>Méthodes
 
-Les noms de .NET même appropriés n’est peut-être pas idéales pour une API Objective-C.
+Même les bons noms .NET peuvent ne pas être idéaux pour une API objective-C.
 
-Conventions de nommage dans Objective-C sont différentes de .NET (casse mixte au lieu de la casse pascal, plus détaillé).
-Veuillez lire le [indications de codage pour Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF).
+Les conventions d’affectation de noms en Objective-C sont différentes de celles de .NET (casse mixte au lieu de la casse Pascal, plus détaillée).
+Veuillez lire les [instructions de codage pour le cacao](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF).
 
-À partir du point de vue d’un développeur Objective-C, une méthode avec un `Get` préfixe implique que vous ne possédez pas de l’instance, c'est-à-dire le [obtenir la règle](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
+Du point de vue du développeur objective-C, une méthode avec un `Get` préfixe implique que vous n’êtes pas propriétaire de l’instance, c’est-à-dire la [règle d’extraction](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1).
 
-Cette règle d’affectation de noms n’a aucune correspondance dans le monde du garbage collector .NET ; une méthode .NET avec un `Create` préfixe se comporte de façon identique dans .NET. Toutefois, pour les développeurs Objective-C, il normalement signifie que vous possédez l’instance retournée, c'est-à-dire le [créer règle](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
+Cette règle de nommage n’a pas de correspondance dans le monde de la GLOBALisation .NET. une méthode .net avec un `Create` préfixe se comportera de la même manière dans .net. Toutefois, pour les développeurs objective-C, cela signifie généralement que vous êtes propriétaire de l’instance retournée, c.-à-d. la [règle Create](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029).
 
 ## <a name="exceptions"></a>Exceptions
 
-Il est assez courant dans .NET d’utiliser des exceptions largement pour signaler des erreurs. Toutefois, ils sont lentes et pas tout à fait identique dans Objective-C. Chaque fois que possible vous devez les masquer par rapport au développeur Objective-C.
+Dans .NET, il est assez courant d’utiliser largement les exceptions pour signaler les erreurs. Toutefois, ils sont lents et ne sont pas tout à fait identiques en Objective-C. Dans la mesure du possible, vous devez les masquer dans le développeur objective-C.
 
-Par exemple, le .NET `Try` modèle sera beaucoup plus facile à utiliser à partir de code Objective-C :
+Par exemple, le modèle `Try` .net sera beaucoup plus facile à consommer à partir du code Objective-C :
 
 ```csharp
 public int Parse (string number)
@@ -118,7 +118,7 @@ public int Parse (string number)
 }
 ```
 
-par rapport à
+alternative
 
 ```csharp
 public bool TryParse (string number, out int value)
@@ -127,18 +127,18 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>Exceptions à l’intérieur `init*`
+### <a name="exceptions-inside-init"></a>Exceptions dans`init*`
 
-Dans .NET un constructeur doit soit réussir et de retourner un (_J’espère que_) instance valide ou lever une exception.
+Dans .NET, un constructeur doit être correctement exécuté et retourner une instance valide (avec le plus de_chance_) ou lever une exception.
 
-En revanche, Objective-C permet `init*` pour retourner `nil` lorsqu’une instance ne peut pas être créée. Il s’agit d’un modèle commun, mais pas général, utilisé dans la plupart des infrastructures de d’Apple. Dans d’autres cas un `assert` peut se produire (et arrêter le processus actuel).
+En revanche, Objective-C `init*` permet de `nil` retourner une valeur lorsqu’une instance ne peut pas être créée. Il s’agit d’un modèle commun, mais pas général, utilisé dans de nombreuses infrastructures d’Apple. Dans d’autres cas, `assert` une peut se produire (et tuer le processus en cours).
 
-Le Générateur de suivre les mêmes `return nil` de modèle pour générée `init*` méthodes. Si une exception managée est levée, elle sera imprimée (à l’aide de `NSLog`) et `nil` s’affichera à l’appelant.
+Le générateur suit le même `return nil` modèle pour les `init*` méthodes générées. Si une exception managée est levée, elle est imprimée (à l' `NSLog`aide de `nil` ) et est retournée à l’appelant.
 
 ## <a name="operators"></a>Opérateurs
 
-Objective-C n’autorise pas les opérateurs surchargée en tant que C# effectue, par conséquent, ils sont convertis en sélecteurs de classe.
+Objective-C n’autorise pas les opérateurs à être surchargés, de sorte qu' C# ils sont convertis en sélecteurs de classe.
 
-[« Convivial »](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) méthodes nommées sont générées plutôt que les surcharges d’opérateur lorsque trouvé et peuvent produire un plus facile à consommer des API.
+Les méthodes nommées [« conviviales »](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) sont générées de préférence aux surcharges d’opérateur lorsqu’elles sont trouvées, et peuvent produire une API plus facile à consommer.
 
-Les classes qui substituent les opérateurs `==` et/ou `!=` doivent substituer la méthode de Equals (Object) standard.
+Les classes qui remplacent les `==` opérateurs `!=` et/ou doivent remplacer également la méthode Equals (Object) standard.

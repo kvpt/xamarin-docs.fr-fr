@@ -3,15 +3,15 @@ title: Prise en charge des langages de programmation dans Xamarin
 description: Ce document décrit les différents langages de programmation pris en charge par Xamarin. Il traite C#des modèles F#,, des Basic.net visuels portables et des modèles Razor.
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 02/18/2018
-ms.openlocfilehash: 2ec934b2747f89e959d659615629489e86449660
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 95c63d446f961738ad71242671d632620316b879
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065141"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290898"
 ---
 # <a name="programming-language-support-in-xamarin"></a>Prise en charge des langages de programmation dans Xamarin
 
@@ -19,7 +19,7 @@ ms.locfileid: "70065141"
 
 ### <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Vue d’ensemble de la prise en charge asynchrone](~/cross-platform/platform/async.md)
 
-La version 5 C# introduit deux nouveaux mots clés pour exprimer des opérations asynchrones: Async et await. Ces mots clés vous permettent d’écrire du code simple qui utilise la bibliothèque parallèle de tâches pour exécuter des opérations de longue durée (telles que l’accès réseau) dans un autre thread et pour accéder facilement aux résultats à l’achèvement. Les dernières versions de Xamarin. iOS et Xamarin. Android prennent en charge Async et await. ce document fournit des explications et un exemple d’utilisation de la nouvelle syntaxe avec Xamarin.
+La version 5 C# introduit deux nouveaux mots clés pour exprimer des opérations asynchrones : Async et await. Ces mots clés vous permettent d’écrire du code simple qui utilise la bibliothèque parallèle de tâches pour exécuter des opérations de longue durée (telles que l’accès réseau) dans un autre thread et pour accéder facilement aux résultats à l’achèvement. Les dernières versions de Xamarin. iOS et Xamarin. Android prennent en charge Async et await. ce document fournit des explications et un exemple d’utilisation de la nouvelle syntaxe avec Xamarin.
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[Fonctionnalités du langage C# 6](~/cross-platform/platform/csharp-six.md)
 

@@ -4,15 +4,15 @@ description: Ce document décrit C# pour les développeurs Objective-C. Il compa
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: df477dc0e4708a1d309810b5b8d4f755f3c49afb
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
-ms.translationtype: HT
+ms.openlocfilehash: a55d1d9848d3f1378ccbc4a24e1748eb146a6a35
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669815"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291998"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Abécédaire du langage C# pour les développeurs Objective-C
 
@@ -94,7 +94,7 @@ namespace MyAppNamespace
 
 En outre, le mot clé de l’espace de noms dans le code ci-dessus définit l’espace de noms utilisé pour le fichier d’implémentation lui-même. Si plusieurs fichiers d’implémentation partagent le même espace de noms, il est inutile d’inclure l’espace de noms dans une directive using, car cela est implicite.
 
-### <a name="properties"></a>Propriétés
+### <a name="properties"></a>Properties
 
 Objective-C et C# incluent tous deux le concept de propriétés pour fournir une abstraction de haut niveau autour des méthodes d’accesseur. En Objective-C, la directive du compilateur @property est utilisée pour générer efficacement des méthodes d’accesseur. En revanche, C# prend en charge les propriétés dans le langage même. Une propriété C# peut être implémentée soit à l’aide d’un style plus long qui accède à un champ de stockage, soit à l’aide d’une syntaxe de propriété automatique plus courte, comme indiqué dans les exemples suivants :
 

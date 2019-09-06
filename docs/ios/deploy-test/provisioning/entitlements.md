@@ -4,15 +4,15 @@ description: Les droits sont des fonctionnalités et des autorisations de sécur
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/13/2018
-ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121322"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284802"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Utilisation des droits dans Xamarin.iOS
 
@@ -96,14 +96,14 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 - **Description** : Anciennement appelée Passbook, Wallet est une application qui stocke et gère les passes. Ces passes peuvent être des cartes bancaires, des cartes de magasin, des cartes d’embarquement ou des billets.
 
-    - **Identificateur du type de passe**
-        - **Clés** : com.apple.developer.pass-type-identifiers
-        - **Chaîne** : `$(TeamIdentifierPrefix)*`
+  - **Identificateur du type de passe**
+    - **Clés** : com.apple.developer.pass-type-identifiers
+    - **Chaîne** : `$(TeamIdentifierPrefix)*`
 
 - **Remarques** :
-    - Avec cette valeur de chaîne, votre application accepte tous les types de passes. Si vous souhaitez que votre application accepte uniquement une partie des types de passes d’équipe, définissez la chaîne à cette valeur : `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
+  - Avec cette valeur de chaîne, votre application accepte tous les types de passes. Si vous souhaitez que votre application accepte uniquement une partie des types de passes d’équipe, définissez la chaîne à cette valeur : `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
-    Où pass.$(CFBundleIdentifier) est l’ID de passe qui a été créé [plus haut](~/ios/platform/passkit.md)
+  Où pass.$(CFBundleIdentifier) est l’ID de passe qui a été créé [plus haut](~/ios/platform/passkit.md)
 
 <a name="icloud" />
 
@@ -111,17 +111,17 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 - **Description** : iCloud offre aux utilisateurs d’appareil iOS un moyen simple et pratique de stocker leur contenu et de le partager entre plusieurs appareils. Les développeurs peuvent utiliser iCloud de quatre façons différentes pour fournir un moyen de stockage à leurs utilisateurs : stockage clé-valeur, stockage UIDocument, CoreData et l’utilisation de CloudKit directement pour assurer le stockage de fichiers et répertoires individuels. Pour plus d’informations, consultez le guide Présentation d’iCloud.
 
-    - **Documents iCloud et CloudKit**
-        - **Clés** : com.apple.developer.ubiquity-container-identifiers
-        - **Chaîne** : `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
-    - **Stockage Key-value iCloud**
-        - **Clé** : com.apple.developer.ubiquity-kvstore-identifier
-        - **Chaîne** : `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **Documents iCloud et CloudKit**
+    - **Clés** : com.apple.developer.ubiquity-container-identifiers
+    - **Chaîne** : `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+  - **Stockage Key-value iCloud**
+    - **Clé** : com.apple.developer.ubiquity-kvstore-identifier
+    - **Chaîne** : `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 - **Remarques** :
-    - Pour trouver la chaîne `$(TeamIdentifierPrefix)`, connectez-vous sur le site developer.apple.com et accédez à la section **Member Center > Your Account > Developer Account Summary**, dans laquelle est indiqué votre ID d’équipe (ou l’ID individuel du développeur). Il s’agit d’une chaîne composée de dix caractères (A93A5CM278, par exemple).
-    - La chaîne `$(CFBundleIdentifier)` commence par `iCloud`. Elle est définie au moment de la création du conteneur iCloud (voir les étapes décrites dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)).
-    - Les espaces réservés $`(TeamIdentifierPrefix)` et `$(CFBundleIdentifier)` peuvent être utilisés. Ils sont remplacés par les valeurs correspondantes au moment de la génération.
+  - Pour trouver la chaîne `$(TeamIdentifierPrefix)`, connectez-vous sur le site developer.apple.com et accédez à la section **Member Center > Your Account > Developer Account Summary**, dans laquelle est indiqué votre ID d’équipe (ou l’ID individuel du développeur). Il s’agit d’une chaîne composée de dix caractères (A93A5CM278, par exemple).
+  - La chaîne `$(CFBundleIdentifier)` commence par `iCloud`. Elle est définie au moment de la création du conteneur iCloud (voir les étapes décrites dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)).
+  - Les espaces réservés $`(TeamIdentifierPrefix)` et `$(CFBundleIdentifier)` peuvent être utilisés. Ils sont remplacés par les valeurs correspondantes au moment de la génération.
 
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
@@ -130,16 +130,16 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 - **Description** : Un App Group est un groupe qui permet à différentes applications (ou à une application et ses extensions) d’accéder à un emplacement partagé du stockage de fichiers.
 
-    - **Clé** : com.apple.security.application-groups
-    - **Chaîne** : group.$(CFBundleIdentifier)
+  - **Clé** : com.apple.security.application-groups
+  - **Chaîne** : group.$(CFBundleIdentifier)
 
 <a name="apple-pay" />
 
 ### <a name="apple-pay"></a>Apple Pay
 
 - **Description** : Apple Pay permet aux utilisateurs de payer des marchandises physiques à partir de leur appareil iOS.
-    - **Clé** : com.apple.developer.in-app-payments
-    - **Chaîne** : merchant.your.mechantid
+  - **Clé** : com.apple.developer.in-app-payments
+  - **Chaîne** : merchant.your.mechantid
 
 ### <a name="push-notifications"></a>Push Notifications
 
@@ -149,7 +149,7 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 ### <a name="siri"></a>Siri
 
 - **Description** : SiriKit permet à une application iOS de fournir des services accessibles à Siri et à l’application Plans sur un appareil iOS à l’aide des extensions d’application, ainsi que des nouveaux frameworks Intents et Intents UI. Pour plus d’informations, consultez le guide Présentation de SiriKit.
-    - **Clé** : com.apple.developer.siri
+  - **Clé** : com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>VPN personnel
 
@@ -159,50 +159,50 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 ### <a name="keychain-sharing"></a>Keychain Sharing
 
 - **Description** : Keychain Sharing permet aux développeurs d’application de partager les mots de passe qui sont stockés dans le trousseau de l’appareil avec d’autres applications développées par la même équipe. Vous pouvez limiter l’accès en passant à la chaîne un identificateur de groupe d’accès au trousseau.
-    - **Clé** : keychain-access-groups
-    - **Chaîne** : $(AppIdentifierPrefix) $(CFBundleIdentifier)
+  - **Clé** : keychain-access-groups
+  - **Chaîne** : $(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Inter-App Audio
 
 - **Description** : Inter-App Audio permet aux développeurs de diffuser des flux audio en streaming entre les applications.
-    - **Clé** : inter-app-audio
-    - **Booléen** : OUI
+  - **Clé** : inter-app-audio
+  - **Booléen** : OUI
 
 ### <a name="associated-domains"></a>Associated Domains
 
 - **Description** : Associated Domains permet d’associer et de passer les domaines qui doivent être traités comme des liens universels. Vous pouvez implémenter des liens universels pour autoriser les liens profonds entre votre application et un site web. Vous devez fournir une entrée à chaque domaine pris en charge par votre application, en commençant chaque entrée par `applinks:`
-    - **Clé** : com.apple.developer.associated-domains
-    - **Chaîne** : webcredentials:example.com
+  - **Clé** : com.apple.developer.associated-domains
+  - **Chaîne** : webcredentials:example.com
 
 ### <a name="data-protection"></a>Data Protection
 
 - **Description** : Data Protection permet d’utiliser le matériel de chiffrement intégré pour stocker les données sensibles contenues dans votre application dans un format chiffré. Par défaut, le niveau de protection est défini sur une protection complète (les fichiers sont accessibles uniquement quand l’appareil est déverrouillé).
-    - **Clé** : com.apple.developer.default-data-protection
-    - **Chaîne** : NSFileProtectionComplete
+  - **Clé** : com.apple.developer.default-data-protection
+  - **Chaîne** : NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
 - **Description** : Le framework HomeKit offre une plateforme pour installer, configurer et gérer les appareils domotiques compatibles à partir d’un appareil iOS. Pour plus d’informations sur l’utilisation d’HomeKit, consultez le guide Présentation d’HomeKit.
-    - **Clé** : com.apple.developer.homekit
-    - **Booléen** : OUI
+  - **Clé** : com.apple.developer.homekit
+  - **Booléen** : OUI
 
 ### <a name="healthkit"></a>HealthKit
 
 - **Description** : Le framework HealthKit introduit dans iOS 8 fournit un stockage centralisé, coordonné et sécurisé pour les données médicales. Pour plus d’informations sur l’utilisation d’HealthKit, consultez le guide Présentation d’HealthKit.
-    - **Clé** : com.apple.developer.healthkit
-    - **Booléen** : OUI
+  - **Clé** : com.apple.developer.healthkit
+  - **Booléen** : OUI
 
 ### <a name="wireless-accessory-configuration"></a>Configuration d’accessoires sans fil
 
 - **Description** : Wireless Accessory Configuration permet à votre application de configurer des accessoires WiFi MFI
-    - **Clé** : com.apple.external-accessory.wireless-configuration
-    - **Booléen** : OUI
+  - **Clé** : com.apple.external-accessory.wireless-configuration
+  - **Booléen** : OUI
 
 ### <a name="classkit"></a>ClassKit
 
 - **Description** : ClassKit permet aux enseignants de voir la progression des étudiants sur les activités qui leur ont été affectées dans votre application.
-    - **Clé** : com.apple.developer.ClassKit-environment
-    - **Chaîne** : `development` ou `production`
+  - **Clé** : com.apple.developer.ClassKit-environment
+  - **Chaîne** : `development` ou `production`
 
 ## <a name="summary"></a>Récapitulatif
 

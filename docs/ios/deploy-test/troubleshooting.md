@@ -4,15 +4,15 @@ description: Ce document fournit des conseils de dépannage liés à la signatur
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/23/2017
-ms.openlocfilehash: a290f29707bd59a22f612f31e544a211488eba0d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: b6fbe8ca975100310922240e532b9922e76e4724
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121494"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290672"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Test et déploiement de Xamarin.iOS - Résolution des problèmes
 

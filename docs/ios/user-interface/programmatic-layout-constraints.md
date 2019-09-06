@@ -4,21 +4,21 @@ description: Ce guide présente l’utilisation des contraintes de disposition a
 ms.prod: xamarin
 ms.assetid: 119C8365-B470-4CD4-85F7-086F0A46DCBB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: c26e064a32762dcb1d088e614830a7a9632f9b1b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 1c8cc9d810a7555626cb00ab0a05dfe03896c94a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120722"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292992"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Contraintes de disposition par programmation dans Xamarin. iOS
 
 _Ce guide présente l’utilisation des contraintes de disposition automatique C# iOS dans le code au lieu de les créer dans le concepteur iOS._
 
-La disposition automatique (également appelée «disposition adaptative») est une approche de conception réactive. Contrairement au système de disposition transitoire, où l’emplacement de chaque élément est codé en dur à un point de l’écran, la disposition automatique concerne les *relations* , c’est-à-dire les positions des éléments par rapport à d’autres éléments sur l’aire de conception. Au cœur de la disposition automatique se trouve l’idée de contraintes ou de règles qui définissent le positionnement d’un élément ou d’un ensemble d’éléments dans le contexte d’autres éléments à l’écran. Étant donné que les éléments ne sont pas liés à une position particulière sur l’écran, les contraintes aident à créer une disposition adaptative qui semble correcte sur différentes tailles d’écran et orientations de périphérique.
+La disposition automatique (également appelée « disposition adaptative ») est une approche de conception réactive. Contrairement au système de disposition transitoire, où l’emplacement de chaque élément est codé en dur à un point de l’écran, la disposition automatique concerne les *relations* , c’est-à-dire les positions des éléments par rapport à d’autres éléments sur l’aire de conception. Au cœur de la disposition automatique se trouve l’idée de contraintes ou de règles qui définissent le positionnement d’un élément ou d’un ensemble d’éléments dans le contexte d’autres éléments à l’écran. Étant donné que les éléments ne sont pas liés à une position particulière sur l’écran, les contraintes aident à créer une disposition adaptative qui semble correcte sur différentes tailles d’écran et orientations de périphérique.
 
 En général, lorsque vous travaillez avec la disposition automatique dans iOS, vous utilisez le concepteur iOS pour placer graphiquement les contraintes de disposition sur vos éléments d’interface utilisateur. Toutefois, il peut arriver que vous deviez créer et appliquer des contraintes dans C# le code. Par exemple, lors de l’utilisation d’éléments d’interface utilisateur créés `UIView`dynamiquement ajoutés à un.
 
@@ -28,7 +28,7 @@ Ce guide vous montre comment créer et utiliser des contraintes à l’aide C# d
 
 ## <a name="creating-constraints-programmatically"></a>Création de contraintes par programmation
 
-Comme indiqué ci-dessus, vous utiliserez généralement des contraintes de mise en page automatique dans le concepteur iOS. Dans les cas où vous devez créer vos contraintes par programme, vous avez le choix entre trois options:
+Comme indiqué ci-dessus, vous utiliserez généralement des contraintes de mise en page automatique dans le concepteur iOS. Dans les cas où vous devez créer vos contraintes par programme, vous avez le choix entre trois options :
 
 - [Ancres de mise en page](#Layout-Anchors) : cette API fournit l’accès aux propriétés d' `TopAnchor`ancrage `BottomAnchor` ( `HeightAnchor`telles que, ou) des éléments d’interface utilisateur qui sont contraints.
 - [Contraintes de disposition](#Layout-Constraints) : vous pouvez créer des contraintes directement `NSLayoutConstraint` à l’aide de la classe.
@@ -45,7 +45,7 @@ Les sections suivantes décrivent en détail chaque option.
 > [!IMPORTANT]
 > En plus de l’ensemble standard de propriétés d’ancrage, les vues iOS incluent `LayoutMarginsGuides` également `ReadableContentGuide` les propriétés et. Ces propriétés exposent `UILayoutGuide` des objets pour travailler respectivement avec les marges et les guides de contenu lisibles de la vue.
 
-Les ancres de disposition offrent plusieurs méthodes pour créer des contraintes dans un format compact et facile à lire:
+Les ancres de disposition offrent plusieurs méthodes pour créer des contraintes dans un format compact et facile à lire :
 
 - **ConstraintEqualTo** : définit une relation où `first attribute = second attribute + [constant]` avec une valeur de décalage `constant` éventuellement fournie.
 - **ConstraintGreaterThanOrEqualTo** : définit une relation où `first attribute >= second attribute + [constant]` avec une valeur de décalage `constant` éventuellement fournie.
@@ -71,13 +71,13 @@ Une contrainte de disposition classique peut être exprimée simplement comme un
 
 [![](programmatic-layout-constraints-images/graph01.png "Contrainte de disposition exprimée sous la forme d’une expression linéaire")](programmatic-layout-constraints-images/graph01.png#lightbox)
 
-Qui serait converti en la ligne de code suivante C# à l’aide des ancres de disposition:
+Qui serait converti en la ligne de code suivante C# à l’aide des ancres de disposition :
 
 ```csharp
 PurpleView.LeadingAnchor.ConstraintEqualTo (OrangeView.TrailingAnchor, 10).Active = true; 
 ```
 
-Où les parties du C# code correspondent aux parties données de l’équation comme suit:
+Où les parties du C# code correspondent aux parties données de l’équation comme suit :
 
 |Sommaire|Code|
 |---|---|
@@ -116,7 +116,7 @@ Contrairement à l’API de disposition d’ancrage `NSLayoutConstraint` , les m
 
 ### <a name="visual-format-language"></a>Langage de format visuel
 
-Le langage de format visuel vous permet de définir des contraintes à l’aide d’une illustration ASCII, comme des chaînes qui fournissent une représentation visuelle de la contrainte créée. Cela présente les avantages et inconvénients suivants:
+Le langage de format visuel vous permet de définir des contraintes à l’aide d’une illustration ASCII, comme des chaînes qui fournissent une représentation visuelle de la contrainte créée. Cela présente les avantages et inconvénients suivants :
 
 - Le langage de format visuel applique uniquement la création de contraintes valides.
 - La disposition automatique génère des contraintes sur la console à l’aide du langage de format visuel afin que les messages de débogage ressemblent au code utilisé pour créer la contrainte.
@@ -124,7 +124,7 @@ Le langage de format visuel vous permet de définir des contraintes à l’aide 
 - Étant donné qu’il n’y a aucune validation côté compilation des chaînes de langage de format visuel, les problèmes peuvent être découverts uniquement au moment de l’exécution.
 - Étant donné que la langue du format visuel met l’accent sur l’exhaustivité, il est impossible de créer des types de contrainte avec celle-ci (par exemple, les ratios).
 
-Lorsque vous utilisez la langue de format visuel pour créer une contrainte, procédez comme suit:
+Lorsque vous utilisez la langue de format visuel pour créer une contrainte, procédez comme suit :
 
 1. Créez un `NSDictionary` qui contient les objets de vue et les repères de mise en page et une clé de chaîne qui sera utilisée lors de la définition des formats.
 2. Créez éventuellement un `NSDictionary` qui définit un jeu de clés et de valeurs (`NSNumber`) utilisé comme valeur constante pour la contrainte.
@@ -132,7 +132,7 @@ Lorsque vous utilisez la langue de format visuel pour créer une contrainte, pro
 4. Appelez la `FromVisualFormat` méthode de la `NSLayoutConstraint` classe pour générer les contraintes.
 5. Appelez la `ActivateConstraints` méthode de la `NSLayoutConstraint` classe pour activer et appliquer les contraintes.
 
-Par exemple, pour créer une contrainte de début et de fin dans la langue de format visuel, vous pouvez utiliser ce qui suit:
+Par exemple, pour créer une contrainte de début et de fin dans la langue de format visuel, vous pouvez utiliser ce qui suit :
 
 ```csharp
 // Get views being constrained

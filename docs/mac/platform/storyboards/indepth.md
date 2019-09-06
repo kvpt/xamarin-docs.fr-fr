@@ -4,15 +4,15 @@ description: Ce document décrit comment utiliser les storyboards dans Xamarin. 
 ms.prod: xamarin
 ms.assetid: DF4DF7C2-DDD7-4A32-B375-5C5446301EC5
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2f3bdc70928dc06719bf7cfb775bf70fae9695a4
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 6aca181b2942bbde854df41c8f9741106cda6776
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227864"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279309"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Utilisation des storyboards dans Xamarin. Mac
 
@@ -20,7 +20,7 @@ Une table de montage séquentiel définit la totalité de l’interface utilisat
 
 [![Une table de montage séquentiel dans le Interface Builder de Xcode](indepth-images/intro01.png)](indepth-images/intro01.png#lightbox)
 
-Le Storyboard est un fichier de ressources (avec les extensions `.storyboard`de) qui est inclus dans l’offre groupée de l’application Xamarin. Mac lorsqu’il est compilé et expédié. Pour définir le plan conceptuel de départ de votre application, modifiez `Info.plist` son fichier et sélectionnez l' **interface principale** dans la zone de liste déroulante: 
+Le Storyboard est un fichier de ressources (avec les extensions `.storyboard`de) qui est inclus dans l’offre groupée de l’application Xamarin. Mac lorsqu’il est compilé et expédié. Pour définir le plan conceptuel de départ de votre application, modifiez `Info.plist` son fichier et sélectionnez l' **interface principale** dans la zone de liste déroulante : 
 
 [![Éditeur info. plist](indepth-images/sb01.png)](indepth-images/sb01.png#lightbox)
 
@@ -28,7 +28,7 @@ Le Storyboard est un fichier de ressources (avec les extensions `.storyboard`de)
 
 ## <a name="loading-from-code"></a>Charger à partir du code
 
-Il peut arriver que vous deviez charger un Storyboard spécifique à partir du code et créer un contrôleur d’affichage manuellement. Vous pouvez utiliser le code suivant pour effectuer cette action:
+Il peut arriver que vous deviez charger un Storyboard spécifique à partir du code et créer un contrôleur d’affichage manuellement. Vous pouvez utiliser le code suivant pour effectuer cette action :
 
 ```csharp
 // Get new window
@@ -39,11 +39,11 @@ var controller = storyboard.InstantiateControllerWithIdentifier ("MainWindow") a
 controller.ShowWindow(this);
 ```
 
-Le `FromName` charge le fichier de Storyboard avec le nom donné qui a été inclus dans l’offre groupée de l’application. `InstantiateControllerWithIdentifier` Crée une instance du contrôleur d’affichage avec l’identité donnée. Vous définissez l’identité dans le Interface Builder de Xcode lors de la conception de l’interface utilisateur:
+Le `FromName` charge le fichier de Storyboard avec le nom donné qui a été inclus dans l’offre groupée de l’application. `InstantiateControllerWithIdentifier` Crée une instance du contrôleur d’affichage avec l’identité donnée. Vous définissez l’identité dans le Interface Builder de Xcode lors de la conception de l’interface utilisateur :
 
 [![Définition de l’ID de Storyboard](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
 
-Si vous le souhaitez, vous pouvez `InstantiateInitialController` utiliser la méthode pour charger le contrôleur d’affichage auquel a été attribué le contrôleur initial dans Interface Builder:
+Si vous le souhaitez, vous pouvez `InstantiateInitialController` utiliser la méthode pour charger le contrôleur d’affichage auquel a été attribué le contrôleur initial dans Interface Builder :
 
 [![Définition du contrôleur initial](indepth-images/sb03.png)](indepth-images/sb03.png#lightbox)
 
@@ -59,7 +59,7 @@ Les contrôleurs d’affichage définissent les relations entre une vue donnée 
 
 ### <a name="the-view-controller-lifecycle"></a>Cycle de vie du contrôleur d’affichage
 
-Plusieurs nouvelles méthodes ont été ajoutées à la `NSViewController` classe pour prendre en charge les storyboards dans MacOS. Plus important encore, les méthodes suivantes sont utilisées pour répondre au cycle de vie de la vue contrôlée par le contrôleur d’affichage donné:
+Plusieurs nouvelles méthodes ont été ajoutées à la `NSViewController` classe pour prendre en charge les storyboards dans MacOS. Plus important encore, les méthodes suivantes sont utilisées pour répondre au cycle de vie de la vue contrôlée par le contrôleur d’affichage donné :
 
 - `ViewDidLoad`-Cette méthode est appelée lorsque la vue est chargée à partir du fichier de table de montage séquentiel.
 - `ViewWillAppear`-Cette méthode est appelée juste avant que la vue ne s’affiche à l’écran.
@@ -74,7 +74,7 @@ Plusieurs nouvelles méthodes ont été ajoutées à la `NSViewController` class
 
 ### <a name="the-responder-chain"></a>Chaîne du répondeur
 
-En outre, `NSViewControllers` font désormais partie de la chaîne de _répondeur_de la fenêtre:
+En outre, `NSViewControllers` font désormais partie de la chaîne de _répondeur_de la fenêtre :
 
 [![Chaîne du répondeur](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
 
@@ -84,13 +84,13 @@ Et, par conséquent, ils sont reliés pour recevoir des événements tels que le
 
 ### <a name="containment"></a>Imbrication
 
-Dans les storyboards, les contrôleurs d’affichage (tels que le contrôleur d’affichage fractionné et le contrôleur d’affichage d’onglets) peuvent désormais implémenter la _relation contenant-contenu_, de sorte qu’ils peuvent «contenir» d’autres contrôleurs de sous-affichage:
+Dans les storyboards, les contrôleurs d’affichage (tels que le contrôleur d’affichage fractionné et le contrôleur d’affichage d’onglets) peuvent désormais implémenter la _relation contenant-contenu_, de sorte qu’ils peuvent « contenir » d’autres contrôleurs de sous-affichage :
 
 [![Exemple de relation contenant-contenu de contrôleur d’affichage](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
 Les contrôleurs d’affichage enfants contiennent des méthodes et des propriétés pour les lier à leur contrôleur d’affichage parent et pour utiliser l’affichage et la suppression des vues de l’écran.
 
-Tous les contrôleurs d’affichage de conteneur intégrés à macOS ont une disposition spécifique que Apple suggère de suivre si vous créez vos propres contrôleurs d’affichage de conteneur personnalisés:
+Tous les contrôleurs d’affichage de conteneur intégrés à macOS ont une disposition spécifique que Apple suggère de suivre si vous créez vos propres contrôleurs d’affichage de conteneur personnalisés :
 
 [![Disposition du contrôleur d’affichage](indepth-images/vc03.png)](indepth-images/vc03.png#lightbox)
 
@@ -108,7 +108,7 @@ Dans macOS, la plupart des applications ont tendance à regrouper leurs vues dan
 
 ### <a name="presentation-segues"></a>SEGUES de présentation
 
-En raison de l’banlieusards de Mac pour la relation contenant-contenu, il existe des situations où les _SEGUES de présentation_ sont utilisés, tels que les fenêtres modales, les vues de feuille et les popovers. macOS fournit les types de Segue intégrés suivants:
+En raison de l’banlieusards de Mac pour la relation contenant-contenu, il existe des situations où les _SEGUES de présentation_ sont utilisés, tels que les fenêtres modales, les vues de feuille et les popovers. macOS fournit les types de Segue intégrés suivants :
 
 - **Afficher** : affiche la cible du segue sous la forme d’une fenêtre non modale. Par exemple, utilisez ce type de Segue pour présenter une autre instance d’une fenêtre de document dans votre application.
 - **Modal** : affiche la cible du segue sous forme de fenêtre modale. Par exemple, utilisez ce type de Segue pour présenter la fenêtre de préférences de votre application.
@@ -122,18 +122,18 @@ Lorsque vous utilisez la SEGUES de présentation, vous pouvez `PrepareForSegue` 
 
 ### <a name="triggered-segues"></a>SEGUES déclenché
 
-Les SEGUES déclenchés vous permettent de spécifier des SEGUES nommés (par le biais de leur propriété d' **identificateur** dans Interface Builder) et de les déclencher par des événements tels que l’utilisateur qui clique sur un bouton ou en appelant la méthode dans le `PerformSegue` code:
+Les SEGUES déclenchés vous permettent de spécifier des SEGUES nommés (par le biais de leur propriété d' **identificateur** dans Interface Builder) et de les déclencher par des événements tels que l’utilisateur qui clique sur un bouton ou en appelant la méthode dans le `PerformSegue` code :
 
 ```csharp
 // Display the Scene defined by the given Segue ID
 PerformSegue("MyNamedSegue", this);
 ``` 
 
-L’ID segue est défini à l’intérieur de l’Interface Builder de Xcode quand vous disposez de l’interface utilisateur de l’application:
+L’ID segue est défini à l’intérieur de l’Interface Builder de Xcode quand vous disposez de l’interface utilisateur de l’application :
 
 [![Saisie d’un nom de Segue](indepth-images/sg02.png)](indepth-images/sg02.png#lightbox)
 
-Dans le contrôleur d’affichage qui agit en tant que source du Segue, vous devez substituer la `PrepareForSegue` méthode et effectuer toute initialisation requise avant l’exécution de Segue et le contrôleur d’affichage spécifié s’affiche:
+Dans le contrôleur d’affichage qui agit en tant que source du Segue, vous devez substituer la `PrepareForSegue` méthode et effectuer toute initialisation requise avant l’exécution de Segue et le contrôleur d’affichage spécifié s’affiche :
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -158,7 +158,7 @@ Si vous le souhaitez, vous pouvez substituer la `ShouldPerformSegue` méthode et
 
 Il peut arriver que votre application nécessite un type segue non fourni par le SEGUES de build défini dans macOS. Si c’est le cas, vous pouvez créer un segue personnalisé qui peut être affecté dans le Interface Builder de Xcode lors de la disposition de l’interface utilisateur de votre application.
 
-Par exemple, pour créer un nouveau type segue qui remplace le contrôleur d’affichage actuel dans une fenêtre (au lieu d’ouvrir la scène cible dans une nouvelle fenêtre), nous pouvons utiliser le code suivant:
+Par exemple, pour créer un nouveau type segue qui remplace le contrôleur d’affichage actuel dans une fenêtre (au lieu d’ouvrir la scène cible dans une nouvelle fenêtre), nous pouvons utiliser le code suivant :
 
 ```csharp
 using System;
@@ -206,14 +206,14 @@ namespace OnCardMac
 }
 ```
 
-Voici quelques points à noter:
+Voici quelques points à noter :
 
 - Nous utilisons l' `Register` attribut pour exposer cette classe à Objective-C/MacOS.
 - Nous remplaçons la `Perform` méthode pour exécuter en fait l’action de notre segue personnalisé.
 - Nous remplaçons le contrôleur de `ContentViewController` la fenêtre par celui défini par la cible (destination) du segue.
 - Nous supprimons le contrôleur d’affichage d’origine pour libérer de la `RemoveFromParentViewController` mémoire à l’aide de la méthode.
 
-Pour utiliser ce nouveau type segue dans le Interface Builder de Xcode, nous devons d’abord compiler l’application, puis basculer vers Xcode et ajouter un nouveau segue entre deux scènes. Définissez le **style** sur **personnalisé** et la **classe segue** sur `ReplaceViewSegue` (le nom de notre classe segue personnalisée):
+Pour utiliser ce nouveau type segue dans le Interface Builder de Xcode, nous devons d’abord compiler l’application, puis basculer vers Xcode et ajouter un nouveau segue entre deux scènes. Définissez le **style** sur **personnalisé** et la **classe segue** sur `ReplaceViewSegue` (le nom de notre classe segue personnalisée) :
 
 [![Définition de la classe segue](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
 
@@ -221,7 +221,7 @@ Pour utiliser ce nouveau type segue dans le Interface Builder de Xcode, nous dev
 
 ## <a name="window-controllers"></a>Contrôleurs de fenêtre
 
-Les contrôleurs de fenêtre contiennent et contrôlent les différents types de fenêtres que votre application macOS peut créer. Pour les storyboards, elles possèdent les fonctionnalités suivantes:
+Les contrôleurs de fenêtre contiennent et contrôlent les différents types de fenêtres que votre application macOS peut créer. Pour les storyboards, elles possèdent les fonctionnalités suivantes :
 
 1. Ils doivent fournir un contrôleur d’affichage de contenu. Il s’agit du même contrôleur d’affichage de contenu que celui de la fenêtre enfant.
 2. La `Storyboard` propriété contient le Storyboard à partir duquel le contrôleur de fenêtre a été chargé `null` , sinon si elle n’est pas chargée à partir d’une table de montage séquentiel.
@@ -229,7 +229,7 @@ Les contrôleurs de fenêtre contiennent et contrôlent les différents types de
 
 Comme les contrôleurs de vue, les `PerformSegue`contrôleurs de `ShouldPerformSegue` fenêtre implémentent, et les méthodes, `PrepareForSegue` et peuvent être utilisés comme source d’une opération segue.
 
-Le contrôleur de Windows est responsable des fonctionnalités suivantes d’une application macOS:
+Le contrôleur de Windows est responsable des fonctionnalités suivantes d’une application macOS :
 
 - Ils gèrent une fenêtre spécifique.
 - Ils gèrent la barre de titre et la barre d’outils de la fenêtre (si disponible).
@@ -247,7 +247,7 @@ En utilisant des détecteurs de mouvement, vous pouvez réduire la quantité de 
 
 Au lieu de remplacer l' `MouseDown` événement dans votre contrôleur d’affichage, vous devez utiliser un module de reconnaissance de mouvement pour gérer l’événement d’entrée utilisateur lors de l’utilisation des storyboards.
 
-Les détecteurs de mouvements suivants sont disponibles dans macOS:
+Les détecteurs de mouvements suivants sont disponibles dans macOS :
 
 - `NSClickGestureRecognizer`-Inscrivez les événements Mouse et up.
 - `NSPanGestureRecognizer`-Enregistre le bouton de la souris enfoncé, les événements de glisser-déplacer.
@@ -267,23 +267,23 @@ En outre, une référence de table de montage séquentiel peut fournir une _ancr
 
 ### <a name="referencing-an-external-storyboard"></a>Référencement d’un Storyboard externe
 
-Pour ajouter une référence à un Storyboard externe, procédez comme suit:
+Pour ajouter une référence à un Storyboard externe, procédez comme suit :
 
 1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Storyboard Mac.  >  >  Entrez un **nom** pour la nouvelle table de montage séquentiel, puis cliquez sur le bouton **nouveau** : 
 
     [![Ajout d’un nouveau Storyboard](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
 2. Dans la **Explorateur de solutions**, double-cliquez sur le nouveau nom de la table de montage séquentiel pour l’ouvrir et le modifier dans le Interface Builder de Xcode.
-3. Concevez la disposition des scènes de la nouvelle table de montage séquentiel comme vous le feriez normalement et enregistrez vos modifications: 
+3. Concevez la disposition des scènes de la nouvelle table de montage séquentiel comme vous le feriez normalement et enregistrez vos modifications : 
 
     [![Conception de l’interface](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
 4. Basculez vers le Storyboard auquel vous allez ajouter la référence dans le Interface Builder.
-5. Faites glisser une **référence de table de montage séquentiel** de la **bibliothèque d’objets** vers l’aire de conception: 
+5. Faites glisser une **référence de table de montage séquentiel** de la **bibliothèque d’objets** vers l’aire de conception : 
 
     [![Sélection d’une référence de table de montage séquentiel dans la bibliothèque](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. Dans l' **inspecteur d’attribut**, sélectionnez le nom de la **table de montage séquentiel** que vous avez créée ci-dessus: 
+6. Dans l' **inspecteur d’attribut**, sélectionnez le nom de la **table de montage séquentiel** que vous avez créée ci-dessus : 
 
     [![Configuration de la référence](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
-7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer.  Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
+7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer.  Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue : 
 
     [![Définition du type segue](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. Enregistrez vos modifications dans le Storyboard.
@@ -295,23 +295,23 @@ Lorsque l’application est exécutée et que l’utilisateur clique sur l’él
 
 ### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Référencement d’une scène spécifique dans un Storyboard externe
 
-Pour ajouter une référence à une scène spécifique, un Storyboard externe (et non le contrôleur de fenêtre initial), procédez comme suit:
+Pour ajouter une référence à une scène spécifique, un Storyboard externe (et non le contrôleur de fenêtre initial), procédez comme suit :
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur le Storyboard externe pour l’ouvrir et le modifier dans le Interface Builder de Xcode.
-2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement: 
+2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement : 
 
     [![Conception de la disposition dans Xcode](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
-3. Dans l' **inspecteur d’identité**, entrez un **ID de Storyboard** pour le contrôleur de fenêtre du nouveau décor: 
+3. Dans l' **inspecteur d’identité**, entrez un **ID de Storyboard** pour le contrôleur de fenêtre du nouveau décor : 
 
     [![Définition de l’ID de Storyboard](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
 4. Ouvrez le Storyboard auquel vous allez ajouter la référence dans Interface Builder.
-5. Faites glisser une **référence de table de montage séquentiel** de la **bibliothèque d’objets** vers l’aire de conception: 
+5. Faites glisser une **référence de table de montage séquentiel** de la **bibliothèque d’objets** vers l’aire de conception : 
 
     [![Sélection d’une référence de table de montage séquentiel dans la bibliothèque](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. Dans l' **inspecteur d’identité**, sélectionnez le nom de la **table de montage séquentiel** et l' **ID de référence** (Storyboard ID) de la scène que vous avez créée ci-dessus: 
+6. Dans l' **inspecteur d’identité**, sélectionnez le nom de la **table de montage séquentiel** et l' **ID de référence** (Storyboard ID) de la scène que vous avez créée ci-dessus : 
 
     [![Définition de l’ID de référence](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
-7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
+7. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue : 
 
     [![Définition du type segue](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. Enregistrez vos modifications dans le Storyboard.
@@ -323,22 +323,22 @@ Lorsque l’application est exécutée et que l’utilisateur clique sur l’él
 
 ### <a name="referencing-a-specific-scene-in-the-same-storyboard"></a>Référencement d’une scène spécifique dans la même table de montage séquentiel
 
-Pour ajouter une référence à une scène spécifique du même Storyboard, procédez comme suit:
+Pour ajouter une référence à une scène spécifique du même Storyboard, procédez comme suit :
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur le Storyboard pour l’ouvrir pour le modifier.
-2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement: 
+2. Ajoutez une nouvelle scène et concevez sa disposition comme vous le feriez normalement : 
 
     [![Modification de la table de montage séquentiel dans Xcode](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
-3. Dans l' **inspecteur d’identité**, entrez un **ID de Storyboard** pour le contrôleur de fenêtre du nouveau décor: 
+3. Dans l' **inspecteur d’identité**, entrez un **ID de Storyboard** pour le contrôleur de fenêtre du nouveau décor : 
 
     [![Définition de l’ID de Storyboard](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
-4. Faites glisser une **référence de Storyboard** de la **boîte à outils** vers le aire de conception: 
+4. Faites glisser une **référence de Storyboard** de la **boîte à outils** vers le aire de conception : 
 
     [![Sélection d’une référence de table de montage séquentiel dans la bibliothèque](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-5. Dans l' **inspecteur d’attribut**, sélectionnez ID de **référence** (ID de Storyboard) de la scène créée ci-dessus: 
+5. Dans l' **inspecteur d’attribut**, sélectionnez ID de **référence** (ID de Storyboard) de la scène créée ci-dessus : 
 
     [![Définition de l’ID de référence](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
-6. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue: 
+6. Cliquez avec le bouton droit sur un widget d’interface utilisateur (comme un bouton) sur une scène existante, puis créez un nouveau segue dans la **référence de table de montage séquentiel** que vous venez de créer. Dans le menu contextuel, sélectionnez **Afficher** pour terminer le segue : 
 
     [![Sélection du type de Segue](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 7. Enregistrez vos modifications dans le Storyboard.

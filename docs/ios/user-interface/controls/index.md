@@ -4,15 +4,15 @@ description: Ce document contient des liens vers des guides qui décrivent les d
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 28dc915e373ed16336551fa28fde8cbae8ee815e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657491"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289534"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Contrôles d’interface utilisateur dans Xamarin. iOS
 
@@ -32,7 +32,7 @@ Les vues de collection, disponibles `UICollectionView` dans la classe, sont un n
 
 ## <a name="imagesimagemd"></a>[Images](image.md)
 
-L’ajout d’images à votre application nécessite deux étapes: tout d’abord, ajoutez les images à votre projet. Ensuite, ajoutez des contrôles et du code pour les afficher sur un écran. Reportez-vous à l’article [utilisation d’images](~/ios/app-fundamentals/images-icons/index.md) pour obtenir une couverture plus détaillée de la gestion des images dans Xamarin. iOS.
+L’ajout d’images à votre application nécessite deux étapes : tout d’abord, ajoutez les images à votre projet. Ensuite, ajoutez des contrôles et du code pour les afficher sur un écran. Reportez-vous à l’article [utilisation d’images](~/ios/app-fundamentals/images-icons/index.md) pour obtenir une couverture plus détaillée de la gestion des images dans Xamarin. iOS.
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[Contrôles manuels de l’appareil photo](intro-to-manual-camera-controls.md)
 
@@ -54,7 +54,7 @@ Un cas utilisateur spécifique pour les sélecteurs pour définir la date et/ou 
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[Indicateurs de progression et d’activité](progress-activity-indicator.md)
 
-iOS offre deux méthodes principales pour indiquer la progression de votre application: Indicateurs d’activité (y compris un indicateur d’activité _réseau_ spécifique) et barres de progression.
+iOS offre deux méthodes principales pour indiquer la progression de votre application : Indicateurs d’activité (y compris un indicateur d’activité _réseau_ spécifique) et barres de progression.
 
 ## <a name="search-barssearchbarmd"></a>[Barres de recherche](searchbar.md)
 
@@ -82,7 +82,7 @@ les applications iOS utilisant une interface utilisateur de navigation à onglet
 
 ## <a name="web-viewsuiwebviewmd"></a>[Affichages Web](uiwebview.md)
 
-Dans cet article, nous allons explorer chacun des trois affichages Web fournis par Apple: `UIWebView`, `WKWebview`, et `SFSafariViewController`, leurs similitudes et différences, et comment ils peuvent être utilisés.
+Dans cet article, nous allons explorer chacun des trois affichages Web fournis par Apple : `UIWebView`, `WKWebview`, et `SFSafariViewController`, leurs similitudes et différences, et comment ils peuvent être utilisés.
 
 ## <a name="related-links"></a>Liens associés
 

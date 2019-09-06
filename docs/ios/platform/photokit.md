@@ -4,15 +4,15 @@ description: Ce document décrit PhotoKit, discute de ses objets Model, comment 
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 3920445c234344fe7f2a1cdd93ed7f4f6405727d
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 433e50632ce7334f7a815fb8952dda2dfc110578
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226577"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290523"
 ---
 # <a name="photokit-in-xamarinios"></a>PhotoKit dans Xamarin. iOS
 
@@ -31,7 +31,7 @@ PhotoKit facilite l’interrogation des données de modèle par le biais de dive
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-L' `PHFetchResult` instance contient alors toutes les `PHAsset` instances représentant les images. Pour obtenir les images elles-mêmes, vous `PHImageManager` utilisez (ou la `PHCachingImageManager`version de mise en cache) pour effectuer une demande pour l' `RequestImageForAsset`image en appelant. Par exemple, le code suivant récupère une image pour chaque élément multimédia d’un `PHFetchResult` à afficher dans une cellule d’affichage de collection:
+L' `PHFetchResult` instance contient alors toutes les `PHAsset` instances représentant les images. Pour obtenir les images elles-mêmes, vous `PHImageManager` utilisez (ou la `PHCachingImageManager`version de mise en cache) pour effectuer une demande pour l' `RequestImageForAsset`image en appelant. Par exemple, le code suivant récupère une image pour chaque élément multimédia d’un `PHFetchResult` à afficher dans une cellule d’affichage de collection :
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -49,13 +49,13 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-Cela génère une grille d’images comme indiqué ci-dessous:
+Cela génère une grille d’images comme indiqué ci-dessous :
 
 ![](photokit-images/image4.png "L’application en cours d’exécution affichant une grille d’images")
 
 ## <a name="saving-changes-to-the-photo-library"></a>Enregistrement des modifications apportées à la bibliothèque de photos
 
-Voilà comment gérer l’interrogation et la lecture de données. Vous pouvez également réécrire les modifications dans la bibliothèque. Étant donné que plusieurs applications intéressées sont en mesure d’interagir avec la bibliothèque de photos système, vous pouvez inscrire un observateur pour être averti des modifications à l’aide d’un PhotoLibraryObserver. Ensuite, lorsque des modifications sont apportées, votre application peut être mise à jour en conséquence. Par exemple, voici une implémentation simple pour recharger la vue de collection ci-dessus:
+Voilà comment gérer l’interrogation et la lecture de données. Vous pouvez également réécrire les modifications dans la bibliothèque. Étant donné que plusieurs applications intéressées sont en mesure d’interagir avec la bibliothèque de photos système, vous pouvez inscrire un observateur pour être averti des modifications à l’aide d’un PhotoLibraryObserver. Ensuite, lorsque des modifications sont apportées, votre application peut être mise à jour en conséquence. Par exemple, voici une implémentation simple pour recharger la vue de collection ci-dessus :
 
 ```csharp
 class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
@@ -78,13 +78,13 @@ class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
 }
 ```
 
-Pour réécrire des modifications à partir de votre application, vous créez une demande de modification. Chacune des classes de modèle est associée à une classe de demande de modification. Par exemple, pour modifier un PHAsset, vous créez un PHAssetChangeRequest. Les étapes permettant d’effectuer des modifications qui sont réécrites dans la bibliothèque de photos et envoyées à des observateurs comme celui ci-dessus sont les suivantes:
+Pour réécrire des modifications à partir de votre application, vous créez une demande de modification. Chacune des classes de modèle est associée à une classe de demande de modification. Par exemple, pour modifier un PHAsset, vous créez un PHAssetChangeRequest. Les étapes permettant d’effectuer des modifications qui sont réécrites dans la bibliothèque de photos et envoyées à des observateurs comme celui ci-dessus sont les suivantes :
 
 - Effectuez l’opération de modification.
 - Enregistrez les données d’image filtrées dans une instance PHContentEditingOutput.
 - Effectuez une demande de modification pour publier les modifications dans le résultat de la modification.
 
-Voici un exemple qui réécrit une modification apportée à une image qui applique un filtre noir d’image principale:
+Voici un exemple qui réécrit une modification apportée à une image qui applique un filtre noir d’image principale :
 
 ```csharp
 void ApplyNoirFilter (object sender, EventArgs e)
@@ -121,10 +121,10 @@ void ApplyNoirFilter (object sender, EventArgs e)
 }
 ```
 
-Lorsque l’utilisateur sélectionne le bouton, le filtre est appliqué:
+Lorsque l’utilisateur sélectionne le bouton, le filtre est appliqué :
 
 ![](photokit-images/image5.png "Exemple de filtre appliqué")
 
-Et grâce à PHPhotoLibraryChangeObserver, la modification est reflétée dans la vue de collection lorsque l’utilisateur navigue vers l’arrière:
+Et grâce à PHPhotoLibraryChangeObserver, la modification est reflétée dans la vue de collection lorsque l’utilisateur navigue vers l’arrière :
 
 ![](photokit-images/image6.png "La modification est reflétée dans la vue de collection lorsque l’utilisateur navigue vers l’arrière")

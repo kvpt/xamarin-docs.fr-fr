@@ -3,15 +3,15 @@ title: TLS (Transport Layer Security) 1,2
 description: Ce document explique comment activer TLS 1,2 pour les projets Xamarin. iOS, Xamarin. Android et Xamarin. Mac. Il montre comment procéder dans Visual Studio 2019 et Visual Studio pour Mac.
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 31069199e8ebc89da76b63e58651adea82db6882
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6175725ae3eea805680b4da81aa0458aa3f8a68c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526771"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280351"
 ---
 # <a name="transport-layer-security-tls-12"></a>TLS (Transport Layer Security) 1,2
 
@@ -93,7 +93,7 @@ Les options natives peuvent être plus rapides et offrent une meilleure sécurit
 
 ### <a name="ssltls-implementation-android"></a>Implémentation SSL/TLS (Android)
 
-Les options du projet Android vous permettent également de choisir l’implémentation SSL/TLS à prendre en charge:
+Les options du projet Android vous permettent également de choisir l’implémentation SSL/TLS à prendre en charge :
 
 - **Mono/géré** – TLS 1,1 sur Android
 - **Natif** – TLS 1,2 sur Android.
@@ -107,7 +107,7 @@ Les nouveaux projets Xamarin ont par défaut l’implémentation native qui pren
 
 ## <a name="platform-specific-details"></a>Détails spécifiques à la plateforme
 
-Le résumé ci-dessus explique les paramètres au niveau du projet pour l’implémentation de HttpClient et SSL/TLS dans les projets Xamarin. L’implémentation HttpClient peut également être définie dynamiquement dans le code. Pour plus d’informations, reportez-vous à ces guides spécifiques à la plateforme:
+Le résumé ci-dessus explique les paramètres au niveau du projet pour l’implémentation de HttpClient et SSL/TLS dans les projets Xamarin. L’implémentation HttpClient peut également être définie dynamiquement dans le code. Pour plus d’informations, reportez-vous à ces guides spécifiques à la plateforme :
 
 - [**Android**](~/android/app-fundamentals/http-stack.md)
 - [**iOS et Mac**](~/cross-platform/macios/http-stack.md)

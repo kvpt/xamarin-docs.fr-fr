@@ -3,15 +3,15 @@ title: Débogage multiprocessus
 description: Ce document décrit comment utiliser Visual Studio pour Mac afin de déboguer plusieurs processus en cours d’exécution en même temps. Cette fonctionnalité peut par exemple être utilisée pour déboguer une application mobile et un projet de service web simultanément.
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d20e6e0fd567d0aa0febe21bfe12a5237049b22a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: HT
+ms.openlocfilehash: db5d2dfcf96cdc1a89c0ecb2192b86f564e584ed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781850"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290444"
 ---
 # <a name="multi-process-debugging"></a>Débogage multiprocessus
 
@@ -56,7 +56,7 @@ Lorsque la configuration à plusieurs solutions est activée, certains panneaux 
 
 ![](multi-process-debugging-images/mpd05-xs.png "Panneau de sortie d’application pour une configuration de solution")
 
-### <a name="multiple-processes-and-the-active-thread"></a>Options Multiprocessus et _Thread actif_
+### <a name="multiple-processes-and-the-_active-thread_"></a>Options Multiprocessus et _Thread actif_
 
 Lorsque vous rencontrez un point d’arrêt dans un processus, celui-ci suspend l’exécution, pendant que les autres processus continuent de s’exécuter. Dans un scénario à processus unique, Visual Studio pour Mac peut facilement afficher des informations, telles que les threads, les variables locales et la sortie de l’application, dans un même ensemble de panneaux. Toutefois, lorsqu’il existe plusieurs processus avec plusieurs points d’arrêt et potentiellement plusieurs threads, le développeur peut se retrouver submergé par les informations d’une même session de débogage, où les informations de tous les threads et de tous les processus s’affichent en même temps.
 

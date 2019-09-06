@@ -4,21 +4,21 @@ description: Ce document décrit iCloud et son utilisation dans les applications
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: d25ad46b0d8797da8f14987f54006b63d2b8233d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 364775ae8e8874d87022b5e45bd23ea29e82382d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527578"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292420"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Utilisation de iCloud avec Xamarin. iOS
 
 L’API de stockage iCloud dans iOS 5 permet aux applications d’enregistrer des documents utilisateur et des données spécifiques à l’application dans un emplacement central et d’accéder à ces éléments à partir de tous les appareils de l’utilisateur.
 
-Quatre types de stockage sont disponibles:
+Quatre types de stockage sont disponibles :
 
 - **Stockage clé-valeur** : pour partager de petites quantités de données avec votre application sur les autres appareils d’un utilisateur.
 
@@ -43,19 +43,19 @@ Ce document aborde les deux premiers types-paires clé-valeur et sous-classes UI
 
 Les applications doivent être configurées pour utiliser iCloud dans le [portail d’approvisionnement Apple](https://developer.apple.com/account/ios/overview.action) et le projet lui-même. Avant de développer pour iCloud (ou d’essayer les exemples), suivez les étapes ci-dessous.
 
-Pour configurer correctement une application pour accéder à iCloud:
+Pour configurer correctement une application pour accéder à iCloud :
 
-- **Recherchez votre TeamID** -Connectez-vous à [Developer.Apple.com](https://developer.apple.com) et visitez le **Centre des membres > votre compte > Résumé du compte de développeur** pour obtenir votre ID d’équipe (ou un ID individuel pour les développeurs uniques). Il s’agit d’une chaîne de 10 caractères ( **A93A5CM278** , par exemple), qui fait partie de l' «identificateur de conteneur».
+- **Recherchez votre TeamID** -Connectez-vous à [Developer.Apple.com](https://developer.apple.com) et visitez le **Centre des membres > votre compte > Résumé du compte de développeur** pour obtenir votre ID d’équipe (ou un ID individuel pour les développeurs uniques). Il s’agit d’une chaîne de 10 caractères ( **A93A5CM278** , par exemple), qui fait partie de l' « identificateur de conteneur ».
 
-- **Créer un ID d’application** : pour créer un ID d’application, suivez les étapes décrites dans la [section Configuration des technologies du Windows Store du Guide de provisionnement des appareils](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)et veillez à vérifier **icloud** comme un service autorisé:
+- **Créer un ID d’application** : pour créer un ID d’application, suivez les étapes décrites dans la [section Configuration des technologies du Windows Store du Guide de provisionnement des appareils](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)et veillez à vérifier **icloud** comme un service autorisé :
 
  [![](introduction-to-icloud-images/icloud-sml.png "Vérifier iCloud en tant que service autorisé")](introduction-to-icloud-images/icloud.png#lightbox)
 
-- **Créer un profil** de provisionnement-pour créer un profil de provisionnement, suivez les étapes décrites dans le Guide de provisionnement des [appareils](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
+- **Créer un profil de provisionnement** -pour créer un profil de provisionnement, suivez les étapes décrites dans le [Guide de provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
 
-- **Ajoutez l’identificateur de conteneur au** fichier Entitlements. plist: le format de l' `TeamID.BundleID`identificateur de conteneur est. Pour plus d’informations, consultez le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
+- **Ajoutez l’identificateur de conteneur au fichier Entitlements. plist** : le format de l' `TeamID.BundleID`identificateur de conteneur est. Pour plus d’informations, consultez le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
 
-- **Configurer les propriétés du projet** -dans le fichier info. plist, vérifiez que l' **identificateur de Bundle** correspond à l' **ID de Bundle** défini lors de la [création d’un ID d’application](~/ios/deploy-test/provisioning/capabilities/index.md); La signature du bundle iOS utilise un **Profil** de provisionnement qui contient un ID d’application avec l’app service icloud et le fichier de **droits personnalisé** sélectionné. Cela peut être fait dans Visual Studio sous le volet Propriétés du projet.
+- **Configurer les propriétés du projet** -dans le fichier info. plist, vérifiez que l' **identificateur de Bundle** correspond à l' **ID de Bundle** défini lors de la [création d’un ID d’application](~/ios/deploy-test/provisioning/capabilities/index.md); La signature du bundle iOS utilise un **profil de provisionnement** qui contient un ID d’application avec l’app service icloud et le fichier de **droits personnalisé** sélectionné. Cela peut être fait dans Visual Studio sous le volet Propriétés du projet.
 
 - **Activer icloud sur votre appareil** : accédez aux **Paramètres > icloud** et assurez-vous que l’appareil est connecté.
 Sélectionnez et activez l’option **Documents & données** .
@@ -68,17 +68,17 @@ En fait, vous avez vraiment besoin d’au moins deux appareils connectés avec l
 
 Le stockage clé-valeur est conçu pour les petites quantités de données qu’un utilisateur peut souhaiter conserver sur les appareils, comme la dernière page qu’il a consultée dans un livre ou un magazine. Le stockage clé-valeur ne doit pas être utilisé pour la sauvegarde des données.
 
-Il existe certaines limitations à connaître lors de l’utilisation du stockage clé-valeur:
+Il existe certaines limitations à connaître lors de l’utilisation du stockage clé-valeur :
 
 - **Taille de clé maximale** -les noms de clé ne peuvent pas dépasser 64 octets.
 
-- **Taille maximale** de la valeur: vous ne pouvez pas stocker plus de 64 kilo-octets dans une seule valeur.
+- **Taille maximale** de la valeur : vous ne pouvez pas stocker plus de 64 kilo-octets dans une seule valeur.
 
 - **Taille maximale de la Banque de valeurs de clé pour une application** : les applications peuvent uniquement stocker jusqu’à 64 kilo-octets de données clé-valeur au total. Les tentatives de définition de clés au-delà de cette limite échouent et la valeur précédente est conservée.
 
 - **Types de données** : seuls les types de base tels que les chaînes, les nombres et les valeurs booléennes peuvent être stockés.
 
-L’exemple **iCloudKeyValue** illustre son fonctionnement. L’exemple de code crée une clé nommée pour chaque appareil: vous pouvez définir cette clé sur un appareil et observer la propagation de la valeur à d’autres utilisateurs. Il crée également une clé appelée «Shared» qui peut être modifiée sur n’importe quel appareil: Si vous modifiez sur plusieurs appareils à la fois, iCloud détermine la valeur «WINS» (à l’aide d’un horodateur sur la modification) et est propagée.
+L’exemple **iCloudKeyValue** illustre son fonctionnement. L’exemple de code crée une clé nommée pour chaque appareil : vous pouvez définir cette clé sur un appareil et observer la propagation de la valeur à d’autres utilisateurs. Il crée également une clé appelée « Shared » qui peut être modifiée sur n’importe quel appareil : Si vous modifiez sur plusieurs appareils à la fois, iCloud détermine la valeur « WINS » (à l’aide d’un horodateur sur la modification) et est propagée.
 
 Cette capture d’écran montre l’exemple en cours d’utilisation. Lorsque des notifications de modification sont reçues de iCloud, elles sont imprimées dans l’affichage de texte défilant au bas de l’écran et mis à jour dans les champs d’entrée.
 
@@ -96,20 +96,20 @@ store.SetString("testkey", "VALUE IN THE CLOUD");  // key and value
 store.Synchronize();
 ```
 
-L’appel de Synchronize garantit que la valeur est conservée uniquement dans le stockage sur disque local. La synchronisation avec iCloud se produit en arrière-plan et ne peut pas être «forcée» par le code d’application. Avec une bonne connectivité réseau, la synchronisation se produit souvent dans un délai de 5 secondes. Toutefois, si le réseau est faible (ou déconnecté), une mise à jour peut prendre plus de temps.
+L’appel de Synchronize garantit que la valeur est conservée uniquement dans le stockage sur disque local. La synchronisation avec iCloud se produit en arrière-plan et ne peut pas être « forcée » par le code d’application. Avec une bonne connectivité réseau, la synchronisation se produit souvent dans un délai de 5 secondes. Toutefois, si le réseau est faible (ou déconnecté), une mise à jour peut prendre plus de temps.
 
-Vous pouvez récupérer une valeur avec ce code:
+Vous pouvez récupérer une valeur avec ce code :
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
 display.Text = store.GetString("testkey");
 ```
 
-La valeur est extraite du magasin de données local. cette méthode ne tente pas de contacter les serveurs iCloud pour connaître la valeur «latest». iCloud met à jour la Banque de données locale en fonction de son propre calendrier.
+La valeur est extraite du magasin de données local. cette méthode ne tente pas de contacter les serveurs iCloud pour connaître la valeur « latest ». iCloud met à jour la Banque de données locale en fonction de son propre calendrier.
 
 ### <a name="deleting-data"></a>Suppression de données
 
-Pour supprimer complètement une paire clé-valeur, utilisez la méthode Remove comme suit:
+Pour supprimer complètement une paire clé-valeur, utilisez la méthode Remove comme suit :
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
@@ -120,7 +120,7 @@ store.Synchronize();
 ### <a name="observing-changes"></a>Observation des modifications
 
 Une application peut également recevoir des notifications lorsque les `NSNotificationCenter.DefaultCenter`valeurs sont modifiées par icloud en ajoutant un observateur à.
-Le code suivant de la méthode **KeyValueViewController.cs** `ViewWillAppear` montre comment écouter ces notifications et créer une liste des clés qui ont été modifiées:
+Le code suivant de la méthode **KeyValueViewController.cs** `ViewWillAppear` montre comment écouter ces notifications et créer une liste des clés qui ont été modifiées :
 
 ```csharp
 keyValueNotification =
@@ -144,13 +144,13 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 
 Votre code peut ensuite prendre une mesure avec la liste des clés modifiées, telles que la mise à jour d’une copie locale ou la mise à jour de l’interface utilisateur avec les nouvelles valeurs.
 
-Les raisons des modifications possibles sont les suivantes: ServerChange (0), InitialSyncChange (1) ou QuotaViolationChange (2). Vous pouvez accéder à la raison et effectuer un traitement différent si nécessaire (par exemple, vous devrez peut-être supprimer certaines clés à la suite d’un *QuotaViolationChange*).
+Les raisons des modifications possibles sont les suivantes : ServerChange (0), InitialSyncChange (1) ou QuotaViolationChange (2). Vous pouvez accéder à la raison et effectuer un traitement différent si nécessaire (par exemple, vous devrez peut-être supprimer certaines clés à la suite d’un *QuotaViolationChange*).
 
 ## <a name="document-storage"></a>Stockage de documents
 
 le stockage de documents iCloud est conçu pour gérer les données qui sont importantes pour votre application (et pour l’utilisateur). Il peut être utilisé pour gérer des fichiers et d’autres données que votre application doit exécuter, tout en fournissant des fonctionnalités de sauvegarde et de partage basées sur iCloud sur tous les appareils de l’utilisateur.
 
-Ce diagramme montre comment tous les éléments s’imbriquent. Chaque appareil a des données enregistrées sur le stockage local (UbiquityContainer) et le démon iCloud du système d’exploitation se charge de l’envoi et de la réception des données dans le Cloud. Tous les accès aux fichiers UbiquityContainer doivent être effectués via FilePresenter/FileCoordinator pour empêcher l’accès simultané. La `UIDocument` classe les implémente pour vous; cet exemple montre comment utiliser UIDocument.
+Ce diagramme montre comment tous les éléments s’imbriquent. Chaque appareil a des données enregistrées sur le stockage local (UbiquityContainer) et le démon iCloud du système d’exploitation se charge de l’envoi et de la réception des données dans le Cloud. Tous les accès aux fichiers UbiquityContainer doivent être effectués via FilePresenter/FileCoordinator pour empêcher l’accès simultané. La `UIDocument` classe les implémente pour vous ; cet exemple montre comment utiliser UIDocument.
 
  [![](introduction-to-icloud-images/icloud-overview.png "Vue d’ensemble du stockage de documents")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
@@ -160,7 +160,7 @@ Cette capture d’écran montre l’exemple d’application. après avoir modifi
 
  [![](introduction-to-icloud-images/iclouduidoc.png "Cette capture d’écran montre l’exemple d’application après avoir modifié le texte et appuyé sur UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
-L’exemple iCloudUIDoc comprend cinq parties:
+L’exemple iCloudUIDoc comprend cinq parties :
 
 1. **Accès au UbiquityContainer** -Déterminez si icloud est activé et, si tel est le cas, le chemin d’accès à la zone de stockage icloud de votre application.
 
@@ -172,7 +172,7 @@ L’exemple iCloudUIDoc comprend cinq parties:
 
 1. **Enregistrement de documents icloud** -Assurez-vous que les modifications apportées à l’interface utilisateur sont conservées sur disque et iCloud.
 
-Toutes les opérations iCloud s’exécutent (ou doivent être exécutées) de façon asynchrone afin qu’elles ne soient pas bloquées en attendant qu’un événement se produise. Vous verrez trois façons différentes d’effectuer cette opération dans l’exemple:
+Toutes les opérations iCloud s’exécutent (ou doivent être exécutées) de façon asynchrone afin qu’elles ne soient pas bloquées en attendant qu’un événement se produise. Vous verrez trois façons différentes d’effectuer cette opération dans l’exemple :
 
  **Threads** : `AppDelegate.FinishedLaunching` dans l’appel initial `GetUrlForUbiquityContainer` à est effectué sur un autre thread pour empêcher le blocage du thread principal.
 
@@ -182,7 +182,7 @@ Toutes les opérations iCloud s’exécutent (ou doivent être exécutées) de f
 
 ### <a name="accessing-the-ubiquitycontainer"></a>Accès au UbiquityContainer
 
-La première étape de l’utilisation du stockage de documents iCloud consiste à déterminer si iCloud est activé et, si tel est le cas, l’emplacement du «conteneur ubiquité» (le répertoire où sont stockés les fichiers compatibles iCloud sur l’appareil).
+La première étape de l’utilisation du stockage de documents iCloud consiste à déterminer si iCloud est activé et, si tel est le cas, l’emplacement du « conteneur ubiquité » (le répertoire où sont stockés les fichiers compatibles iCloud sur l’appareil).
 
 Ce code est dans la `AppDelegate.FinishedLaunching` méthode de l’exemple.
 
@@ -220,7 +220,7 @@ Bien que l’exemple ne le fasse pas, Apple recommande d’appeler GetUrlForUbiq
 Tous les fichiers et répertoires iCloud (c’est-à-dire tout ce qui est stocké dans le répertoire UbiquityContainer) doivent être gérés à l’aide de méthodes NSFileManager, en implémentant le protocole NSFilePresenter et en écrivant via un NSFileCoordinator.
 La façon la plus simple d’effectuer tout ce qui n’est pas de l’écrire vous-même, mais de sous-classe UIDocument qui fait tout cela pour vous.
 
-Il n’existe que deux méthodes que vous devez implémenter dans une sous-classe UIDocument pour travailler avec iCloud:
+Il n’existe que deux méthodes que vous devez implémenter dans une sous-classe UIDocument pour travailler avec iCloud :
 
 - **LoadFromContents** : transmet la NSData du contenu du fichier pour que vous déballez dans votre classe de modèle/es.
 
@@ -274,7 +274,7 @@ public class MonkeyDocument : UIDocument
 }
 ```
 
-Dans ce cas, le modèle de données est très simple: il s’agit d’un champ de texte unique. Votre modèle de données peut être aussi complexe que nécessaire, par exemple un document XML ou des données binaires. Le rôle principal de l’implémentation UIDocument consiste à effectuer une conversion entre vos classes de modèle et une représentation NSData qui peut être enregistrée/chargée sur le disque.
+Dans ce cas, le modèle de données est très simple : il s’agit d’un champ de texte unique. Votre modèle de données peut être aussi complexe que nécessaire, par exemple un document XML ou des données binaires. Le rôle principal de l’implémentation UIDocument consiste à effectuer une conversion entre vos classes de modèle et une représentation NSData qui peut être enregistrée/chargée sur le disque.
 
 ### <a name="finding-and-opening-icloud-documents"></a>Recherche et ouverture de documents iCloud
 
@@ -369,7 +369,7 @@ void DataReloaded (NSNotification notification)
 
 ### <a name="saving-icloud-documents"></a>Enregistrement de documents iCloud
 
-Pour ajouter un UIDocument à iCloud, vous pouvez `UIDocument.Save` appeler directement (pour les nouveaux documents uniquement) ou déplacer un fichier `NSFileManager.DefaultManager.SetUbiquitious`existant à l’aide de. L’exemple de code crée un nouveau document directement dans le conteneur ubiquité avec ce code (il y a deux gestionnaires de terminaison ici, un `Save` pour l’opération et un autre pour l’ouverture):
+Pour ajouter un UIDocument à iCloud, vous pouvez `UIDocument.Save` appeler directement (pour les nouveaux documents uniquement) ou déplacer un fichier `NSFileManager.DefaultManager.SetUbiquitious`existant à l’aide de. L’exemple de code crée un nouveau document directement dans le conteneur ubiquité avec ce code (il y a deux gestionnaires de terminaison ici, un `Save` pour l’opération et un autre pour l’ouverture) :
 
 ```csharp
 var docsFolder = Path.Combine (iCloudUrl.Path, "Documents"); // NOTE: Documents folder is user-accessible in Settings
@@ -394,7 +394,7 @@ if (saveSuccess) {
 }
 ```
 
-Les modifications ultérieures apportées au document ne sont pas directement «enregistrées» `UIDocument` . au lieu de cela `UpdateChangeCount`, nous indiquons le qu’il a modifié, et il planifiera automatiquement une opération d’enregistrement sur disque:
+Les modifications ultérieures apportées au document ne sont pas directement « enregistrées » `UIDocument` . au lieu de cela `UpdateChangeCount`, nous indiquons le qu’il a modifié, et il planifiera automatiquement une opération d’enregistrement sur disque :
 
 ```csharp
 doc.UpdateChangeCount (UIDocumentChangeKind.Done);
@@ -402,7 +402,7 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 ### <a name="managing-icloud-documents"></a>Gestion des documents iCloud
 
-Les utilisateurs peuvent gérer les documents iCloud dans le répertoire **documents** du «conteneur ubiquité» en dehors de votre application via les paramètres. ils peuvent afficher la liste des fichiers et les balayer pour les supprimer. Le code d’application doit être en mesure de gérer la situation dans laquelle les documents sont supprimés par l’utilisateur. Ne stockez pas de données d’application internes dans le répertoire **documents** .
+Les utilisateurs peuvent gérer les documents iCloud dans le répertoire **documents** du « conteneur ubiquité » en dehors de votre application via les paramètres. ils peuvent afficher la liste des fichiers et les balayer pour les supprimer. Le code d’application doit être en mesure de gérer la situation dans laquelle les documents sont supprimés par l’utilisateur. Ne stockez pas de données d’application internes dans le répertoire **documents** .
 
  [![](introduction-to-icloud-images/icloudstorage.png "Gestion du flux de travail des documents iCloud")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 

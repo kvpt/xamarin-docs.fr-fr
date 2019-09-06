@@ -1,75 +1,75 @@
 ---
-title: Large couleur dans Xamarin.iOS
-description: Ce document aborde large couleur et comment elle peut être utilisée dans une application Xamarin.iOS ou Xamarin.Mac.
+title: Couleurs larges dans Xamarin. iOS
+description: Ce document présente les couleurs larges et comment elles peuvent être utilisées dans une application Xamarin. iOS ou Xamarin. Mac.
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 523aa1a97e1c536b5afbdb66c52f605382fa338d
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: a1f5301d0c5c0674e162b3d7689c83bbb4f6ae90
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268806"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290530"
 ---
-# <a name="wide-color-in-xamarinios"></a>Large couleur dans Xamarin.iOS
+# <a name="wide-color-in-xamarinios"></a>Couleurs larges dans Xamarin. iOS
 
-_Cet article décrit la couleur de large et comment elle peut être utilisée dans une application Xamarin.iOS ou Xamarin.Mac._
+_Cet article couvre la largeur et la façon dont il peut être utilisé dans une application Xamarin. iOS ou Xamarin. Mac._
 
-iOS 10 et macOS Sierra améliore la prise en charge pour les formats de pixel de la plage étendue et des espaces d’une gamme de couleurs dans tout le système, y compris les infrastructures telles que graphismes de base, l’Image de Core, complète et AVFoundation. Prise en charge pour les appareils avec des couleurs large est davantage facilité en fournissant ce comportement dans toute la pile de graphique entière.
+iOS 10 et macOS Sierra améliorent la prise en charge des formats de pixel étendus et des espaces de couleurs à grande échelle dans le système, y compris les infrastructures telles que Core Graphics, Core image, Metal et AVFoundation. La prise en charge des appareils avec des affichages de couleurs larges est encore plus facilitée en fournissant ce comportement dans l’ensemble de la pile graphique.
 
 ## <a name="asset-catalogs"></a>Catalogues de composants
 
-### <a name="supporting-wide-color-with-asset-catalogs"></a>Large couleur avec les catalogues de composants de prise en charge
+### <a name="supporting-wide-color-with-asset-catalogs"></a>Prise en charge des couleurs larges avec les catalogues de ressources
 
-Dans iOS 10 et macOS Sierra, Apple a étendu les catalogues de composants utilisé pour inclure et classer les contenus d’image statique dans le bundle de l’application pour prendre en charge la large couleur.
+Dans iOS 10 et macOS Sierra, Apple a développé les catalogues de ressources utilisés pour inclure et catégoriser le contenu des images statiques dans l’offre groupée de l’application afin de prendre en charge une large gamme de couleurs.
 
-À l’aide de catalogues de composants offrent les avantages suivants à une application :
+L’utilisation des catalogues de ressources offre les avantages suivants à une application :
 
-- Ils fournissent la meilleure option de déploiement pour les ressources d’image statique.
-- Ils prennent en charge automatiquement des couleurs.
-- Ils prennent en charge l’optimisation de format de pixel automatique.
-- Ils prennent en charge le découpage de l’application et la réduction de l’application qui garantit que seul le contenu qui est pertinente de get livré à l’appareil de l’utilisateur final.
+- Ils fournissent la meilleure option de déploiement pour les ressources d’images statiques.
+- Ils prennent en charge la correction automatique des couleurs.
+- Ils prennent en charge l’optimisation automatique du format pixel.
+- Ils prennent en charge le découpage des applications et l’affinage des applications, ce qui garantit que seul le contenu pertinent est remis à l’appareil de l’utilisateur final.
 
-Apple a fait les améliorations suivantes pour les catalogues de composants pour la prise en charge de la couleur large :
+Apple a apporté les améliorations suivantes aux catalogues de ressources pour la prise en charge des couleurs larges :
 
-- Ils prennent en charge le contenu de la source de 16 bits (par canal de couleur).
-- Ils prennent en charge contenu catalogage par gamme d’affichage. Contenu peut être marqué pour le sRVB ou gammes de Display P3.
+- Ils prennent en charge le contenu source 16 bits (par canal de couleur).
+- Ils prennent en charge le catalogage du contenu par affichage de la gamme. Le contenu peut être balisé pour les gammes de couleurs sRVB ou d’affichage P3.
 
-Le développeur a trois options pour prendre en charge le contenu de large couleur dans leurs applications :
+Le développeur a trois options pour la prise en charge d’un contenu à couleurs larges dans ses applications :
 
-1. **Ne rien faire** -étant donné que le contenu de large couleur doit uniquement être utilisé dans les situations où l’application a besoin pour afficher les couleurs vives (où ils améliorera l’expérience utilisateur), le contenu en dehors de cette exigence doit être conservé en tant que-est. Il continue à s’afficher correctement dans toutes les situations de matériel.
-2. **Mise à niveau de contenu existant vers Display P3** -cela nécessite au développeur de remplacer le contenu d’image existant dans le catalogue de leurs ressources avec un nouveau fichier mis à niveau dans le format de P3 et marquez-la en tant que tel dans l’éditeur de ressources. Au moment de la génération, une image dérivés sRVB sera générée à partir de ces ressources.
-3. **Fournir optimisé le contenu de la ressource** -dans ce cas, le développeur fournira un sRVB de 8 bits et une vision de Display P3 16 bits de chaque image dans le catalogue de composants (avec balises correctement dans l’éditeur de ressources).
+1. **Ne rien faire** : étant donné que le contenu à couleurs larges doit uniquement être utilisé dans les situations où l’application doit afficher des couleurs vives (où elles améliorent l’expérience de l’utilisateur), le contenu en dehors de cette exigence doit être laissé tel quel. Il continuera à être rendu correctement dans toutes les situations matérielles.
+2. **Mettre à niveau le contenu existant pour afficher P3** : le développeur doit remplacer le contenu de l’image existante dans son catalogue de ressources par un nouveau fichier mis à niveau au format P3 et le baliser comme tel dans l’éditeur de ressources. Au moment de la génération, une image dérivée de sRGB sera générée à partir de ces ressources.
+3. **Fournir un contenu de ressource optimisé** : dans ce cas, le développeur fournira à la fois un sRGB 8 bits et une vision de 16 bits pour l’affichage de chaque image dans le catalogue de ressources (correctement marquée dans l’éditeur de ressources).
 
-### <a name="asset-catalog-deployment"></a>Déploiement du catalogue Asset
+### <a name="asset-catalog-deployment"></a>Déploiement du catalogue de ressources
 
-Les éléments suivants seront produit lorsque le développeur soumet une application à l’App Store avec les catalogues de composants qui incluent le contenu de l’image large couleur :
+Voici ce qui se produit lorsque le développeur soumet une application à l’App Store avec des catalogues de ressources incluant du contenu d’image en couleurs larges :
 
-- Quand l’application est déployée à l’utilisateur final, découpage de l’application garantit que la variante de contenu appropriée est remise à l’appareil de l’utilisateur.
-- Sur les appareils qui ne prennent pas en charge les couleurs étendue, il n’existe aucun coût de la charge utile pour inclure le contenu de large couleur, comme il n’est jamais renvoyé à l’appareil.
-- `NSImage` sur macOS Sierra (et versions ultérieures) sélectionne automatiquement la meilleure représentation contenue pour l’affichage de votre matériel.
-- Le contenu affiché est actualisé automatiquement lorsqu’ou si le matériel des appareils affiche la modification de caractéristiques.
+- Lorsque l’application est déployée sur l’utilisateur final, le découpage de l’application permet de garantir que seule la variante de contenu appropriée est remise à l’appareil de l’utilisateur.
+- Sur les appareils qui ne prennent pas en charge les couleurs larges, il n’y a aucun coût de charge utile pour l’ajout de contenu à couleurs larges, car il n’est jamais expédié à l’appareil.
+- `NSImage`sur macOS Sierra (et versions ultérieures) sélectionne automatiquement la meilleure représentation du contenu pour l’affichage du matériel.
+- Le contenu affiché est actualisé automatiquement quand ou si les caractéristiques de l’affichage du matériel des appareils changent.
 
-### <a name="asset-catalog-storage"></a>Stockage de catalogue Asset
+### <a name="asset-catalog-storage"></a>Stockage du catalogue de ressources
 
-Stockage de catalogue Asset a les propriétés et les implications d’une application suivantes :
+Le stockage du catalogue de ressources présente les propriétés et les implications suivantes pour une application :
 
-- Au moment de la génération, Apple tente d’optimiser le stockage de contenu de l’image par le biais de la conversion des images haute qualité.
-- 16-bits sont utilisés par le canal de couleur pour le contenu de large couleur.
-- Contenu de compression d’image dépendante est utilisée pour réduire les tailles de contenu livrable. Nouveau compressions avec « pertes » ont été ajoutées pour optimiser davantage les tailles de contenu.
+- Au moment de la génération, Apple tente d’optimiser le stockage du contenu de l’image via des conversions d’images de haute qualité.
+- 16 bits sont utilisés par canal de couleur pour le contenu de couleurs larges.
+- La compression d’images dépendantes du contenu est utilisée pour réduire les tailles de contenu livrable. De nouvelles compressions « avec perte » ont été ajoutées pour optimiser davantage la taille du contenu.
 
-## <a name="rendering-off-screen-images-in-app"></a>Rendu des Images hors écran dans une application
+## <a name="rendering-off-screen-images-in-app"></a>Rendu d’images hors écran dans l’application
 
-Selon le type d’application en cours de création, elle peut autoriser l’utilisateur à inclure le contenu de l’image qu’ils ont collectées à partir d’internet ou créer le contenu de l’image directement à l’intérieur de l’application (par exemple, un vecteur d’application de dessin par exemple).
+En fonction du type d’application créé, il peut permettre à l’utilisateur d’inclure du contenu d’image qu’il a collecté sur Internet ou de créer du contenu d’image directement à l’intérieur de l’application (comme une application de dessin vectoriel, par exemple).
 
-Dans ces deux cas, l’application peut rendre l’imagerie requise hors écran large couleur à l’aide des fonctionnalités améliorées ajoutées pour iOS et macOS.
+Dans ces deux cas, l’application peut restituer l’image requise hors écran en couleurs larges à l’aide des fonctionnalités améliorées ajoutées à iOS et macOS.
 
-### <a name="drawing-wide-color-in-ios"></a>Large couleur de dessin dans iOS
+### <a name="drawing-wide-color-in-ios"></a>Dessin de couleurs larges dans iOS
 
-Avant d’aborder la façon de dessiner correctement une image large couleur dans iOS 10, examinons le code de dessin iOS courants suivants :
+Avant de savoir comment dessiner correctement une image de couleur étendue dans iOS 10, jetez un coup d’œil au code de dessin iOS courant suivant :
 
 ```csharp
 public UIImage DrawWideColorImage ()
@@ -84,13 +84,13 @@ public UIImage DrawWideColorImage ()
     }
 ```
 
-Il existe des problèmes avec le code standard qui devront être adressés _avant_ il peut être utilisé pour dessiner une image large couleur. Le `UIGraphics.BeginImageContext (size)` méthode utilisée pour démarrer le dessin d’image iOS présente les limitations suivantes :
+Il y a des problèmes au niveau du code standard qui devront être traités _avant_ de pouvoir être utilisés pour dessiner une image de couleur étendue. La `UIGraphics.BeginImageContext (size)` méthode utilisée pour démarrer le dessin d’images iOS présente les limitations suivantes :
 
-- Il ne peut pas créer des contextes d’image avec plus de 8 bits par canal de couleur.
-- Il ne peut pas représenter des couleurs dans la plage étendue sRVB espace colorimétrique.
-- Il n’a pas la possibilité de fournir une interface pour créer des contextes dans un espace de couleurs sRVB non en raison des routines de C bas niveau qui est appelées en arrière-plan.
+- Il ne peut pas créer de contextes d’image avec plus de 8 bits par canal de couleur.
+- Il ne peut pas représenter des couleurs dans l’espace de couleurs sRVB de la plage étendue.
+- Il n’a pas la possibilité de fournir une interface pour créer des contextes dans un espace de couleurs non sRVB en raison de l’appel des routines C de bas niveau en arrière-plan.
 
-Pour gérer ces limitations et dessiner une image large couleur dans iOS 10, utilisez le code suivant à la place :
+Pour gérer ces limitations et dessiner une image de couleur étendue dans iOS 10, utilisez le code suivant à la place :
 
 ```csharp
 public UIImage DrawWideColorImage ()
@@ -118,22 +118,22 @@ public UIImage DrawWideColorImage ()
 }
 ```
 
-La nouvelle `UIGraphicsImageRenderer` classe crée un nouveau contexte de l’image qui est capable de gérer l’espace de couleurs de plage étendue sRVB et il présente les caractéristiques suivantes :
+La nouvelle `UIGraphicsImageRenderer` classe crée un nouveau contexte d’image qui est capable de gérer l’espace de couleurs sRVB de la plage étendue et présente les fonctionnalités suivantes :
 
-- Il est entièrement géré par défaut de couleur.
-- Il prend en charge la plage étendue sRVB espace de couleurs par défaut.
-- Il décide intelligemment si elle doit être rendu le sRVB ou une plage étendue sRVB espace colorimétrique basée sur les fonctionnalités de l’appareil iOS que l’application est en cours d’exécution.
-- Il gère automatiquement et entièrement le contexte de l’image (`CGContext`) durée de vie pour le développeur n’a pas à vous soucier d’appel commencent et se terminent les commandes de contexte.
-- Il est compatible avec le `UIGraphics.GetCurrentContext()` (méthode).
+- Par défaut, elle est entièrement gérée par la couleur.
+- Par défaut, il prend en charge l’espace de couleurs sRVB de la plage étendue.
+- Il détermine intelligemment s’il doit s’afficher dans l’espace de couleurs sRGB ou de plage étendue, en fonction des capacités du périphérique iOS sur lequel l’application s’exécute.
+- Il gère entièrement et automatiquement la durée de vie`CGContext`du contexte d’image (), de sorte que le développeur n’a pas à se soucier de l’appel des commandes de contexte Begin et end.
+- Elle est compatible avec la `UIGraphics.GetCurrentContext()` méthode.
 
-Le `CreateImage` méthode de la `UIGraphicsImageRenderer` classe est appelée pour créer une image de couleur large et passée avec le contexte de l’image à dessiner dans un gestionnaire d’achèvement. Tout le dessin est effectué à l’intérieur de ce gestionnaire d’achèvement comme suit :
+La `CreateImage` méthode de la `UIGraphicsImageRenderer` classe est appelée pour créer une image de couleur larges et a passé un gestionnaire d’achèvement avec le contexte d’image dans lequel dessiner. Tout le dessin est effectué à l’intérieur de ce gestionnaire d’achèvement comme suit :
 
-- Le `UIColor.FromDisplayP3` méthode crée une nouvelle couleur rouge saturée dans la gamme large espace de couleurs Display P3 et il est utilisé pour dessiner la première moitié du rectangle. 
-- La seconde moitié du rectangle est dessiné dans le sRVB normal entièrement saturé de couleur rouge pour la comparaison.
+- La `UIColor.FromDisplayP3` méthode crée une nouvelle couleur rouge entièrement saturée dans la gamme large qui affiche l’espace de couleurs P3 et est utilisée pour dessiner la première moitié du rectangle. 
+- La deuxième moitié du rectangle est dessinée dans la couleur rouge entièrement saturée de couleurs RVB pour la comparaison.
 
-### <a name="drawing-wide-color-in-macos"></a>Large couleur de dessin dans macOS
+### <a name="drawing-wide-color-in-macos"></a>Dessin de couleurs larges dans macOS
 
-Le `NSImage` classe a été développée dans macOS Sierra pour prendre en charge le dessin d’images de couleur large. Exemple :
+La `NSImage` classe a été développée dans MacOS Sierra pour prendre en charge le dessin d’images en couleurs larges. Par exemple :
 
 ```csharp
 var size = CGSize(250,250);
@@ -151,13 +151,13 @@ var wideColorImage = new NSImage(size, false, (drawRect) =>{
 });
 ```
 
-## <a name="rendering-on-screen-images-in-app"></a>À l’écran de rendu d’Images dans l’application
+## <a name="rendering-on-screen-images-in-app"></a>Rendu d’images à l’écran dans l’application
 
-Pour restituer des images couleur large à l’écran, le processus est similaire au dessin d’une image hors écran large couleur pour macOS et iOS présenté ci-dessus.
+Pour afficher des images de couleur larges à l’écran, le processus fonctionne de la même façon que pour les images en couleurs larges hors écran pour macOS et iOS présentées ci-dessus.
 
-### <a name="rendering-on-screen-in-ios"></a>Rendu à l’écran dans iOS
+### <a name="rendering-on-screen-in-ios"></a>Affichage à l’écran dans iOS
 
-Lorsque l’application doit afficher une image dans un large couleur à l’écran dans iOS, remplacer le `Draw` méthode de la `UIView` en question comme d’habitude. Exemple :
+Lorsque l’application doit restituer une image en couleurs larges à l’écran dans iOS, remplacez la `Draw` méthode `UIView` du en question comme d’habitude. Par exemple :
 
 ```csharp
 using System;
@@ -183,23 +183,23 @@ namespace MonkeyTalk
 }
 ```
 
-Comme le fait avec iOS 10 le `UIGraphicsImageRenderer` classe illustrée ci-dessus, il décide intelligemment s’il doit être rendu le sRVB ou une plage étendue sRVB espace colorimétrique basée sur les fonctionnalités de l’appareil iOS que l’application est en cours d’exécution sur le le `Draw` méthode est appelée. En outre, le `UIImageView` a été géré depuis iOS 9.3 de couleur.
+Comme iOS 10 utilise la `UIGraphicsImageRenderer` classe illustrée ci-dessus, il détermine intelligemment s’il doit afficher l’espace de couleurs sRGB ou de plage étendue en fonction des capacités du périphérique iOS sur lequel l’application s’exécute lorsque la `Draw` méthode est appelée. En outre, a `UIImageView` été géré par la couleur depuis iOS 9,3 également.
 
-Si l’application doit savoir comment rendu est effectué sur un `UIView` ou `UIViewController`, il peut vérifier le nouveau `DisplayGamut` propriété de la `UITraitCollection` classe. Cette valeur sera une `UIDisplayGamut` enum des opérations suivantes :
+Si l’application doit savoir comment le rendu est effectué sur `UIView` un ou `UIViewController`, elle peut vérifier la nouvelle `DisplayGamut` propriété de la `UITraitCollection` classe. Cette valeur sera une `UIDisplayGamut` énumération des éléments suivants :
 
 - P3
 - SRVB
 - Non spécifié
 
-Si l’application souhaite de contrôle qui espace colorimétrique est utilisé pour dessiner une image, il peut utiliser un nouveau `ContentsFormat` propriété de la `CALayer` pour spécifier l’espace de couleurs souhaité. Cette valeur peut être un `CAContentsFormat` enum des opérations suivantes :
+Si l’application souhaite contrôler l’espace colorimétrique utilisé pour dessiner une image, elle peut utiliser une nouvelle `ContentsFormat` propriété `CALayer` du pour spécifier l’espace de couleurs souhaité. Cette valeur peut être une `CAContentsFormat` énumération des éléments suivants :
 
 - Gray8Uint
 - Rgba16Float
 - Rgba8Uint
 
-### <a name="rendering-on-screen-in-macos"></a>Rendu à l’écran dans macOS
+### <a name="rendering-on-screen-in-macos"></a>Affichage à l’écran dans macOS
 
-Lorsque l’application doit afficher une image dans un large couleur à l’écran dans macOS, remplacer le `DrawRect` méthode de la `NSView` en question comme d’habitude. Exemple :
+Lorsque l’application doit afficher une image en couleurs larges à l’écran dans MacOS, remplacez la `DrawRect` méthode `NSView` du en question comme d’habitude. Par exemple :
 
 ```csharp
 using System;
@@ -226,9 +226,9 @@ namespace MonkeyTalkMac
 }
 ```
 
-Là encore, il décide intelligemment s’il doit être rendu le sRVB ou une plage étendue sRVB espace de couleurs en fonction des capacités du matériel Mac que l’application est en cours d’exécution sur le le `DrawRect` méthode est appelée.
+Là encore, il décide s’il doit s’afficher dans l’espace de couleurs sRGB ou de plage étendue, en fonction des capacités du matériel Mac sur lequel l’application s’exécute lorsque `DrawRect` la méthode est appelée.
 
-Si l’application souhaite de contrôle qui espace colorimétrique est utilisé pour dessiner une image, il peut utiliser un nouveau `DepthLimit` propriété de la `NSWindow` classe pour spécifier l’espace de couleurs souhaité. Cette valeur peut être un `NSWindowDepth` enum des opérations suivantes :
+Si l’application souhaite contrôler l’espace colorimétrique utilisé pour dessiner une image, elle peut utiliser une nouvelle `DepthLimit` propriété de la `NSWindow` classe pour spécifier l’espace de couleurs souhaité. Cette valeur peut être une `NSWindowDepth` énumération des éléments suivants :
 
 - OneHundredTwentyEightBitRgb
 - SixtyfourBitRgb

@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 1b362d91e14d85499099a0fed3637fb128474ef9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 114d00b0d79b497201b3185a1443b8c8f9699c31
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657421"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283542"
 ---
 # <a name="introduction-to-tvos-10"></a>Introduction à tvOS 10
 
@@ -24,7 +24,7 @@ Pour plus d’informations sur tvOS 10, consultez la documentation d’Apple [tv
 
 ## <a name="whats-new-in-tvos-10"></a>Nouveautés de tvOS 10
 
-Apple a ajouté plusieurs nouvelles API et services dans tvOS 10, ainsi que de nombreuses améliorations aux fonctionnalités existantes, notamment:
+Apple a ajouté plusieurs nouvelles API et services dans tvOS 10, ainsi que de nombreuses améliorations aux fonctionnalités existantes, notamment :
 
 ## <a name="new-user-interface-styles"></a>Nouveaux styles d’interface utilisateur
 
@@ -54,7 +54,7 @@ tvOS 10 étend la prise en charge des formats de pixel étendus et des espaces d
 
 En outre, `UIKit` a été modifié pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
 
-Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges:
+Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
 - `UIColor`utilise à présent l’espace de couleurs sRVB et ne pincera plus les `0.0` valeurs `1.0` à la plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour tvOS 10.
 - Si l’application effectue un rendu personnalisé `UIImages`de, utilisez la nouvelle classe [UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer) pour spécifier l’utilisation des formats de plage étendue ou standard.
@@ -65,7 +65,7 @@ Pour en savoir plus, consultez notre guide [de présentation des couleurs larges
 
 ## <a name="newly-available-existing-frameworks"></a>Nouvelles infrastructures existantes disponibles
 
-Plusieurs infrastructures disponibles sur iOS (et non tvOS) ont été mises à disposition pour tvOS 10, par exemple:
+Plusieurs infrastructures disponibles sur iOS (et non tvOS) ont été mises à disposition pour tvOS 10, par exemple :
 
 - ExternalAccessory
 - HomeKit

@@ -4,15 +4,15 @@ description: Cet article explique comment inclure une extension d’application 
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 92b16e4a802411c70bef7d5810a161dbdfedfa09
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1d6edb9107c3d6ae04c91ebcf874fb92a7f911b3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227497"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280042"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Notions de base sur l’extension d’application de message dans Xamarin. iOS
 
@@ -22,14 +22,14 @@ Nouveauté d’iOS 10, une extension d’application de message s’intègre à 
 
 ## <a name="about-message-app-extensions"></a>À propos des extensions d’application de message
 
-Comme indiqué ci-dessus, une extension d’application de message s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs. Deux types d’extension d’application de message sont disponibles:
+Comme indiqué ci-dessus, une extension d’application de message s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs. Deux types d’extension d’application de message sont disponibles :
 
-- **Vignettes** -packs: contient une collection d’autocollants que l’utilisateur peut ajouter à un message. Les packs d’autocollants peuvent être créés sans écrire de code.
+- **Vignettes-packs** : contient une collection d’autocollants que l’utilisateur peut ajouter à un message. Les packs d’autocollants peuvent être créés sans écrire de code.
 - **application IMessage** : peut présenter une interface utilisateur personnalisée dans l’application messages pour sélectionner des autocollants, entrer du texte, y compris des fichiers multimédias (avec conversions de type facultatives) et créer, modifier et envoyer des messages d’interaction.
 
-Les extensions de message Apps fournissent trois types de contenu principaux:
+Les extensions de message Apps fournissent trois types de contenu principaux :
 
-- **Messages** interactifs: type de contenu de message personnalisé généré par une application, lorsque l’utilisateur appuie sur le message, l’application est lancée au premier plan.
+- **Messages interactifs** : type de contenu de message personnalisé généré par une application, lorsque l’utilisateur appuie sur le message, l’application est lancée au premier plan.
 - **Autocollants** : images générées par l’application qui peuvent être incluses dans les messages envoyés entre les utilisateurs.
 - **Autres contenus pris en charge** : l’application peut fournir du contenu tel que des photos, des vidéos, du texte ou des liens vers tout autre type de contenu qui a toujours été pris en charge par l’application messages.
 
@@ -63,13 +63,13 @@ Même si les extensions de message apps ne sont pas incluses dans un bundle d’
 
 Les autocollants Apple sont conçus de façon à permettre aux utilisateurs de la communication en autorisant l’envoi des autocollants inline comme tout autre contenu de message ou en les joignant à des bulles de messages précédentes au cours de la conversation.
 
-Que sont les autocollants?
+Que sont les autocollants ?
 
 - Il s’agit d’images fournies par l’extension de message apps.
 - Il peut s’agir d’images animées ou statiques.
 - Ils offrent un nouveau moyen de partager du contenu d’image depuis l’intérieur d’une application.
 
-Il existe deux façons de créer des autocollants:
+Il existe deux façons de créer des autocollants :
 
 1. Vous pouvez créer des extensions d’applications de message de Pack d’autocollants à l’intérieur de Xcode sans inclure de code. Tout ce qui est nécessaire est les ressources pour les autocollants et les icônes d’application.
 2. En créant une extension de message Apps standard qui fournit des autocollants à partir du code via l’infrastructure des messages.
@@ -78,7 +78,7 @@ Il existe deux façons de créer des autocollants:
 
 Les packs d’autocollants sont créés à partir d’un modèle spécial à l’intérieur de Xcode et fournissent simplement un ensemble statique de ressources d’image qui peuvent être utilisées comme autocollants. Comme indiqué ci-dessus, ils ne nécessitent pas de code, le développeur fait simplement glisser des fichiers image dans le dossier de Pack d’autocollants à l’intérieur du catalogue de ressources autocollant.
 
-Pour qu’une image soit incluse dans un pack d’autocollants, elle doit remplir les conditions suivantes:
+Pour qu’une image soit incluse dans un pack d’autocollants, elle doit remplir les conditions suivantes :
 
 - Les images doivent être au format PNG, APNG, GIF ou JPEG. Apple suggère d’utiliser uniquement les formats PNG et APNG lorsque vous fournissez des éléments autocollants.
 - Les autocollants animés prennent uniquement en charge les formats APNG et GIF.
@@ -91,7 +91,7 @@ Pour qu’une image soit incluse dans un pack d’autocollants, elle doit rempli
 
 Apple suggère de tester les éléments de l’image de la vignette par rapport à différents arrière-plans de couleur (tels que le blanc, le noir, le rouge, le jaune et le multicolore) et sur des photos, afin de s’assurer qu’ils recherchent le meilleur dans toutes les situations possibles.
 
-Les autocollants peuvent fournir des autocollants dans l’une des trois tailles disponibles:
+Les autocollants peuvent fournir des autocollants dans l’une des trois tailles disponibles :
 
 - **Petit** -100 x 100 points.
 - **Moyenne** -136 x 136 points. Il s’agit de la taille par défaut.
@@ -105,7 +105,7 @@ Pour plus d’informations, consultez notre application [Ice CREME Builder](http
 
 Si l’application nécessite davantage de contrôle ou de flexibilité que celle fournie par un pack d’autocollants, elle peut inclure une extension d’application de message et fournir les autocollants via l’infrastructure de messages pour une expérience d’autocollant personnalisée.
 
-Quels sont les avantages de la création d’une expérience d’autocollant personnalisée?
+Quels sont les avantages de la création d’une expérience d’autocollant personnalisée ?
 
 1. Permet à l’application de personnaliser le mode d’affichage des autocollants pour les utilisateurs de l’application. Par exemple, pour présenter des autocollants dans un format autre que la disposition grille standard ou sur un arrière-plan de couleur différent.
 2. Permet de créer dynamiquement des autocollants à partir du code au lieu d’être inclus en tant que ressources d’images statiques.
@@ -113,7 +113,7 @@ Quels sont les avantages de la création d’une expérience d’autocollant per
 4. Permet d’accéder à l’appareil photo de l’appareil pour créer des autocollants à la volée.
 5. Permet des achats dans l’application afin que l’utilisateur puisse acheter plus d’autocollants à l’intérieur de l’application.
 
-Pour créer une expérience d’autocollant personnalisée, procédez comme suit:
+Pour créer une expérience d’autocollant personnalisée, procédez comme suit :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -125,7 +125,7 @@ Pour créer une expérience d’autocollant personnalisée, procédez comme suit
 4. Entrez un **nom d’extension** , puis cliquez sur le bouton **suivant** :
 
     [![](intro-to-message-app-extensions-images/message02.png "Entrer un nom d’extension")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. Cliquez sur le bouton **créer** pour générer l’extension:
+5. Cliquez sur le bouton **créer** pour générer l’extension :
 
     [![](intro-to-message-app-extensions-images/message03.png "Cliquez sur le bouton créer")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -143,7 +143,7 @@ Pour créer une expérience d’autocollant personnalisée, procédez comme suit
 
 Par défaut, le `MessagesViewController.cs` fichier est ajouté à la solution. Il s’agit du point d’entrée principal dans l’extension et il hérite `MSMessageAppViewController` de la classe.
 
-L’infrastructure de messages fournit des classes pour la présentation des autocollants disponibles à l’utilisateur:
+L’infrastructure de messages fournit des classes pour la présentation des autocollants disponibles à l’utilisateur :
 
 - `MSStickerBrowserViewController`-Contrôle la vue dans laquelle les autocollants seront présentés. Il est également conforme à l' `IMSStickerBrowserViewDataSource` interface pour retourner le nombre d’autocollants et l’autocollant pour un index de navigateur donné.
 - `MSStickerBrowserView`-Il s’agit de la vue dans laquelle les autocollants disponibles seront affichés.
@@ -173,7 +173,7 @@ Effectuez ce qui suit :
 
 -----
 
-`StickerBrowserViewController.cs` Procédez comme suit:
+`StickerBrowserViewController.cs` Procédez comme suit :
 
 ```csharp
 using System;
@@ -262,13 +262,13 @@ namespace MonkeyStickers
 }
 ```
 
-Examinez le code ci-dessus en détail. Il crée un stockage pour les autocollants fournis par l’extension:
+Examinez le code ci-dessus en détail. Il crée un stockage pour les autocollants fournis par l’extension :
 
 ```csharp
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-Et substitue deux méthodes de la `MSStickerBrowserViewController` classe pour fournir des données pour le navigateur à partir de ce magasin de données:
+Et substitue deux méthodes de la `MSStickerBrowserViewController` classe pour fournir des données pour le navigateur à partir de ce magasin de données :
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -282,7 +282,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-La `CreateSticker` méthode obtient le chemin d’accès d’une ressource d’image à partir de l’offre groupée de l’extension et l' `MSSticker` utilise pour créer une nouvelle instance d’un à partir de cette ressource, qu’elle ajoute à la collection:
+La `CreateSticker` méthode obtient le chemin d’accès d’une ressource d’image à partir de l’offre groupée de l’extension et l' `MSSticker` utilise pour créer une nouvelle instance d’un à partir de cette ressource, qu’elle ajoute à la collection :
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -311,7 +311,7 @@ private void CreateSticker (string assetName, string localizedDescription)
 
 La `LoadSticker` méthode est appelée à `ViewDidLoad` partir de pour créer un autocollant à partir de la ressource d’image nommée (incluse dans l’offre groupée de l’application) et l’ajouter à la collection d’autocollants.
 
-Pour implémenter le navigateur de vignettes personnalisé `MessagesViewController.cs` , modifiez le fichier et faites-le ressembler à ce qui suit:
+Pour implémenter le navigateur de vignettes personnalisé `MessagesViewController.cs` , modifiez le fichier et faites-le ressembler à ce qui suit :
 
 ```csharp
 using System;
@@ -354,13 +354,13 @@ namespace MonkeyStickers
 }
 ```
 
-En examinant ce code en détail, il crée un stockage pour le navigateur personnalisé:
+En examinant ce code en détail, il crée un stockage pour le navigateur personnalisé :
 
 ```csharp
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-Et dans la `ViewDidLoad` méthode, il instancie et configure un nouveau navigateur:
+Et dans la `ViewDidLoad` méthode, il instancie et configure un nouveau navigateur :
 
 ```csharp
 // Create new browser and configure it
@@ -369,7 +369,7 @@ BrowserViewController.View.Frame = View.Frame;
 BrowserViewController.ChangeBackgroundColor (UIColor.Gray);
 ```
 
-Ensuite, il ajoute le navigateur à la vue pour l’afficher:
+Ensuite, il ajoute le navigateur à la vue pour l’afficher :
 
 ```csharp
 // Add to view
@@ -380,19 +380,19 @@ View.AddSubview (BrowserViewController.View);
 
 ### <a name="further-sticker-customization"></a>Personnalisation des autocollants
 
-Il est possible de personnaliser davantage les vignettes en incluant uniquement deux classes dans l’extension de l’application de message:
+Il est possible de personnaliser davantage les vignettes en incluant uniquement deux classes dans l’extension de l’application de message :
 
 - `MSStickerView`
 - `MSSticker`
 
-À l’aide des méthodes ci-dessus, l’extension peut prendre en charge la sélection de vignettes qui ne repose pas sur la méthode de navigateur de vignettes standard. En outre, l’affichage des autocollants peut être basculé entre deux modes d’affichage différents:
+À l’aide des méthodes ci-dessus, l’extension peut prendre en charge la sélection de vignettes qui ne repose pas sur la méthode de navigateur de vignettes standard. En outre, l’affichage des autocollants peut être basculé entre deux modes d’affichage différents :
 
 - **Compact** : il s’agit du mode par défaut dans lequel la vue autocollant occupe les 25% inférieurs de la vue des messages.
 - **Développé** : la vue d’autocollant remplit l’intégralité de l’affichage des messages.
 
 Cette vue d’autocollant peut être basculée entre ces modes par l’utilisateur, par programmation ou manuellement.
 
-Jetez un coup d’œil à l’exemple suivant pour gérer le basculement entre les deux modes d’affichage. Deux contrôleurs d’affichage différents seront nécessaires pour chaque État. Le `StickerBrowserViewController` gère l’affichage **compact** et ressemble à ce qui suit:
+Jetez un coup d’œil à l’exemple suivant pour gérer le basculement entre les deux modes d’affichage. Deux contrôleurs d’affichage différents seront nécessaires pour chaque État. Le `StickerBrowserViewController` gère l’affichage **compact** et ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -493,7 +493,7 @@ namespace MessageExtension
 }
 ```
 
-Le `AddStickerViewController` gère l’affichage autocollant **développé** et se présente comme suit:
+Le `AddStickerViewController` gère l’affichage autocollant **développé** et se présente comme suit :
 
 ```csharp
 using System;
@@ -545,7 +545,7 @@ namespace MessageExtension
 }
 ```
 
-Le `MessageViewController` implémente ces contrôleurs d’affichage pour déterminer l’État demandé:
+Le `MessageViewController` implémente ces contrôleurs d’affichage pour déterminer l’État demandé :
 
 ```csharp
 using System;
@@ -672,7 +672,7 @@ Quand l’utilisateur demande à ajouter un nouvel autocollant à son regroupeme
 Request (MSMessagesAppPresentationStyle.Expanded);
 ```
 
-Lorsque l’utilisateur choisit un autocollant à ajouter, il est ajouté à sa collection disponible et la vue **compacte** est demandée:
+Lorsque l’utilisateur choisit un autocollant à ajouter, il est ajouté à sa collection disponible et la vue **compacte** est demandée :
 
 ```csharp
 public void AddStickerToCollection (MSSticker sticker)
@@ -685,7 +685,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-La `DidTransition` méthode est substituée pour gérer le basculement entre les deux modes:
+La `DidTransition` méthode est substituée pour gérer le basculement entre les deux modes :
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)

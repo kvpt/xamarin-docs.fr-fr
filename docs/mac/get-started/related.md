@@ -4,15 +4,15 @@ description: 'Ce document fournit des liens vers de la documentation pour les d�
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 2e4c2ebea7783fe2400298b03a54e951d89960fe
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
-ms.translationtype: HT
+ms.openlocfilehash: 3b0e9f87505e7537f9c8aeb6f006072feffdbd57
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329937"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278908"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac - Documentation connexe
 
@@ -30,7 +30,7 @@ Quand il utilise C# et .NET dans une application Xamarin.Mac, le développeur a 
 
 Les guides ci-dessous donnent des informations détaillées sur l’utilisation des éléments macOS dans une application Xamarin.Mac :
 
-- [Fenêtres](~/mac/user-interface/window.md)
+- [Windows](~/mac/user-interface/window.md)
 - [Boîtes de dialogue](~/mac/user-interface/dialog.md)
 - [Alertes](~/mac/user-interface/alert.md)
 - [Menus](~/mac/user-interface/menu.md)

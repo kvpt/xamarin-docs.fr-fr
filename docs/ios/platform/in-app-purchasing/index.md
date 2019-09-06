@@ -4,21 +4,21 @@ description: Ce document décrit comment vendre des produits et services numéri
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2e429002923d4bfdd2cf5ded4ef1508f8ebf20b8
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 63530595d9892ed99b7eace3d248e1bc0d0b37d4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121509"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288401"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Achats dans l’application dans Xamarin. iOS
 
 les applications iOS peuvent vendre des produits ou services numériques à l’aide de StoreKit, un ensemble d’API fournies par iOS, qui communiquent avec les serveurs d’Apple pour effectuer des transactions financières avec l’utilisateur via son IDENTIFIant Apple. Les API StoreKit concernent principalement la récupération des informations sur les produits et la réalisation des transactions. il n’existe pas de composant d’interface utilisateur. Les applications qui implémentent des achats dans l’application doivent créer leur propre interface utilisateur et effectuer le suivi des éléments achetés avec du code personnalisé pour fournir les produits ou services requis à l’utilisateur.
 
-Le fait de fournir des fonctionnalités d’achat dans une application nécessite un certain nombre d’étapes:
+Le fait de fournir des fonctionnalités d’achat dans une application nécessite un certain nombre d’étapes :
 
 - **Configuration de votre application** : le profil de provisionnement de l’application doit être configuré correctement.
 - **Création de produits** : les descriptions et les prix des produits doivent être créés dans le portail iTunes Connect.
@@ -48,7 +48,7 @@ Pour prendre en charge l’achat dans l’application, vous devez utiliser Xamar
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a introduit le concept d’achats dans l’application, a expliqué comment configurer votre application pour en tirer parti et présenté des exemples à l’aide de Xamarin. iOS. Il a abordé les sujets suivants:
+Cet article a introduit le concept d’achats dans l’application, a expliqué comment configurer votre application pour en tirer parti et présenté des exemples à l’aide de Xamarin. iOS. Il a abordé les sujets suivants :
 
 - **portail d’approvisionnement iOS** : instructions pour l’activation de la fonctionnalité d’achat dans l’application.
 - **iTunes Connect** : configuration des produits à vendre dans votre application.

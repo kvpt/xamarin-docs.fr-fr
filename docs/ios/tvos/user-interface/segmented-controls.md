@@ -4,15 +4,15 @@ description: Ce document décrit comment utiliser des contrôles segmentés tvOS
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 622960f73c96209c1a67a08a4f0abe27656331bf
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9ca931058f15c2ff6f1b46810196d9ea2bb964e0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200254"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291395"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Utilisation des contrôles segmentés tvOS dans Xamarin
 
@@ -20,9 +20,9 @@ Un contrôle segmenté fournit un ensemble d’éléments linéaires, chacun pou
 
 [![](segmented-controls-images/segment01.png "Exemples de contrôles de segment")](segmented-controls-images/segment01.png#lightbox)
 
-Apple propose les suggestions suivantes pour l’utilisation des contrôles segmentés:
+Apple propose les suggestions suivantes pour l’utilisation des contrôles segmentés :
 
-- **Fournir un espace** important: vous devez prendre suffisamment de place pour fournir un espace suffisant entre les autres éléments pouvant être [axés sur le focus](~/ios/tvos/app-fundamentals/navigation-focus.md) et un contrôle segmenté. Un segment individuel devient sélectionné lorsqu’il est actif (et non en cas de clic) et l’utilisateur peut modifier accidentellement des segments lorsqu’il souhaite sélectionner un autre élément pouvant être actif sur le segment actuel.
+- **Fournir un espace** important : vous devez prendre suffisamment de place pour fournir un espace suffisant entre les autres éléments pouvant être [axés sur le focus](~/ios/tvos/app-fundamentals/navigation-focus.md) et un contrôle segmenté. Un segment individuel devient sélectionné lorsqu’il est actif (et non en cas de clic) et l’utilisateur peut modifier accidentellement des segments lorsqu’il souhaite sélectionner un autre élément pouvant être actif sur le segment actuel.
 - **Utilisez des affichages fractionnés pour le filtrage de contenu** : les contrôles segmentés n’offrent pas de bons choix pour le filtrage de contenu, car les affichages fractionnés ont été conçus pour faciliter la navigation entre le contenu et les filtres.
 - **Limite à sept segments maximum** : vous devez essayer de conserver le nombre maximal de segments sous huit (8), car il est plus facile de les analyser dans la salle du canapé et de naviguer plus facilement.
 - **Utiliser la taille de contenu de segment cohérent** -tous les segments ont la même largeur et, si possible, vous devez essayer de conserver le contenu dans chaque segment de la même taille. Cela rend non seulement le contrôle du segment visuellement agréable, mais facilite la lecture d’un coup d’œil.
@@ -40,10 +40,10 @@ Vous ne pouvez pas mélanger à la fois du texte et des icônes sur un segment d
 
 ## <a name="segment-text"></a>Texte du segment
 
-Apple effectue les suggestions suivantes pour l’utilisation du texte de segment:
+Apple effectue les suggestions suivantes pour l’utilisation du texte de segment :
 
 - **Utilisez des noms courts et explicites** : le titre du segment doit indiquer clairement le type de contenu que l’utilisateur doit attendre lors de la sélection du segment donné. Par exemple :  Musique ou vidéos.
-- **Utiliser** la mise en majuscules de la casse-chaque mot du titre des segments doit être mis en majuscules, à l’exception des articles, des conjonctions et des prépositions de moins de quatre (4) caractères.
+- **Utiliser la mise en majuscules** de la casse-chaque mot du titre des segments doit être mis en majuscules, à l’exception des articles, des conjonctions et des prépositions de moins de quatre (4) caractères.
 - **Utilisez des titres courts et axés** : conservez les titres, courts et concentrés sur le type de contenu à attendre lorsque le segment est sélectionné.
 
 Là encore, vous ne pouvez pas mélanger à la fois du texte et des icônes sur un segment donné et vous devez éviter de mélanger des icônes et du texte dans un seul contrôle segmenté.
@@ -57,7 +57,7 @@ Le moyen le plus simple d’utiliser des contrôles de segment dans une applicat
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Faites glisser un **contrôle segment** de la **boîte à outils** et déposez-le sur la vue: 
+1. Faites glisser un **contrôle segment** de la **boîte à outils** et déposez-le sur la vue : 
 
     [![](segmented-controls-images/segment02.png "Contrôle de segment")](segmented-controls-images/segment02.png#lightbox)
 1. Dans l' **onglet widget** du **bloc de propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle segment, telles que son **style** et son **État**: 
@@ -73,7 +73,7 @@ Le moyen le plus simple d’utiliser des contrôles de segment dans une applicat
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
-1. Faites glisser un **contrôle segment** de la **boîte à outils** et déposez-le sur la vue: 
+1. Faites glisser un **contrôle segment** de la **boîte à outils** et déposez-le sur la vue : 
 
     [![](segmented-controls-images/segment02-vs.png "Contrôle de segment")](segmented-controls-images/segment02-vs.png#lightbox)
 1. Dans l' **onglet widget** de l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés du contrôle segment, telles que son **style** et son **État**: 
@@ -102,7 +102,7 @@ Vous pouvez travailler avec des contrôles segmentés dans votre application Xam
 
 ## <a name="exposed-as-names-and-events"></a>Exposés en tant que noms et événements
 
-Si vous avez créé votre contrôle de segment dans le concepteur d’interface et que vous l’avez exposé comme un contrôle nommé et un événement, vous pouvez utiliser le code suivant pour répondre au changement de segment:
+Si vous avez créé votre contrôle de segment dans le concepteur d’interface et que vous l’avez exposé comme un contrôle nommé et un événement, vous pouvez utiliser le code suivant pour répondre au changement de segment :
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {
@@ -133,7 +133,7 @@ La `SelectedSegment` propriété obtient ou définit le segment actuellement sé
 
 ## <a name="modifying-segments"></a>Modification des segments
 
-À tout moment, vous pouvez modifier à la fois le nombre et le contenu de vos contrôles segmentés. Utilisez le code suivant pour insérer un nouveau segment d’icône:
+À tout moment, vous pouvez modifier à la fois le nombre et le contenu de vos contrôles segmentés. Utilisez le code suivant pour insérer un nouveau segment d’icône :
 
 ```csharp
 // Icon Segment
@@ -145,13 +145,13 @@ SegmentedControl.InsertSegment("New Segment", 0, true);
 
 Le deuxième paramètre définit l’emplacement où le segment sera inséré à l’aide d’un index de base zéro (0). Si le dernier paramètre est `true` , l’insertion est animée.
 
-Pour supprimer un segment donné, utilisez la commande suivante:
+Pour supprimer un segment donné, utilisez la commande suivante :
 
 ```csharp
 SegmentedControl.RemoveSegmentAtIndex(0, true);
 ```
 
-Ou les éléments suivants pour supprimer tous les segments:
+Ou les éléments suivants pour supprimer tous les segments :
 
 ```csharp
 SegmentedControl.RemoveAllSegments();
@@ -159,7 +159,7 @@ SegmentedControl.RemoveAllSegments();
 
 Là encore, si le dernier paramètre `true`est, la suppression est animée. Utilisez la `NumberOfSegments` propriété pour retourner le nombre actuel de segments.
 
-Pour obtenir le **titre** ou l' **icône** d’un segment donné, utilisez ce qui suit:
+Pour obtenir le **titre** ou l' **icône** d’un segment donné, utilisez ce qui suit :
 
 ```csharp
 // Get title
@@ -169,7 +169,7 @@ var title = SegmentedControl.TitleAt(0);
 var icon = SegmentedControl.ImageAt(0);
 ```
 
-Pour modifier le **titre** ou l' **icône**, utilisez la commande suivante:
+Pour modifier le **titre** ou l' **icône**, utilisez la commande suivante :
 
 ```csharp
 // Set title
@@ -179,7 +179,7 @@ SegmentedControl.SetTitle("New Title", 0);
 SegmentedControl.SetImage(UIImage.FromFile("icon.png"), 0);
 ```
 
-Pour voir si un segment donné est **activé**, utilisez ce qui suit:
+Pour voir si un segment donné est **activé**, utilisez ce qui suit :
 
 ```csharp
 if (SegmentedControl.IsEnabled(0)) {
@@ -188,7 +188,7 @@ if (SegmentedControl.IsEnabled(0)) {
 }
 ```
 
-Pour **activer/désactiver** un segment donné, utilisez ce qui suit:
+Pour **activer/désactiver** un segment donné, utilisez ce qui suit :
 
 ```csharp
 SegmentedControl.SetEnabled(false, 0);
@@ -198,13 +198,13 @@ SegmentedControl.SetEnabled(false, 0);
 
 ## <a name="modifying-the-segmented-controls-appearance"></a>Modification de l’apparence du contrôle segmenté
 
-Vous pouvez utiliser le code suivant pour modifier l’arrière-plan d’un segment donné en image:
+Vous pouvez utiliser le code suivant pour modifier l’arrière-plan d’un segment donné en image :
 
 ```csharp
 SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-Où `UIControlState` spécifie l’état du contrôle pour lequel vous définissez l’image comme suit:
+Où `UIControlState` spécifie l’état du contrôle pour lequel vous définissez l’image comme suit :
 
 - Normale
 - Mise
@@ -212,14 +212,14 @@ Où `UIControlState` spécifie l’état du contrôle pour lequel vous définiss
 - Selected
 - Avec focus
 
-Et `UIBarMetrics` spécifie les mesures à utiliser comme suit:
+Et `UIBarMetrics` spécifie les mesures à utiliser comme suit :
 
 - Default
 - ROM
 - DefaultPrompt
 - CompactPrompt
 
-En outre, vous pouvez définir le séparateur entre les segments à l’aide de:
+En outre, vous pouvez définir le séparateur entre les segments à l’aide de :
 
 ```csharp
 SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlState.Normal, UIControlState.Normal, UIBarMetrics.Default);

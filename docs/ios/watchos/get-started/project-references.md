@@ -4,15 +4,15 @@ description: Ce document décrit la relation entre une application iOS, une appl
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 9108f83d76e07d12d70b400075142d9c73519716
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065597"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292264"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Références de projet Watchos dans Xamarin
 
@@ -22,7 +22,7 @@ Les trois projets d’une solution espionneos sont *automatiquement configurés*
 
 ## <a name="project-references"></a>Références de projets
 
-Pour afficher les références, double-cliquez sur les nœuds références de chaque projet:
+Pour afficher les références, double-cliquez sur les nœuds références de chaque projet :
 
 - l’application **iPhone** fait référence à l' **application Watch**
 
@@ -42,7 +42,7 @@ Pour afficher les références, double-cliquez sur les nœuds références de ch
 ## <a name="bundle-identifiers"></a>Identificateurs de Bundle
 
 Vous devez également vous assurer que les **identificateurs de Bundle** sont corrects.
-Les trois projets doivent avoir le *même* préfixe d’identificateur, les deux projets Watch ayant des extensions prédéfinies `watchkitextension` de `watchkitapp`et, comme suit (pour l’exemple **WatchKitCatalog** ):
+Les trois projets doivent avoir le *même* préfixe d’identificateur, les deux projets Watch ayant des extensions prédéfinies `watchkitextension` de `watchkitapp`et, comme suit (pour l’exemple **WatchKitCatalog** ) :
 
 - Projet unifié Xamarin. iOS-`com.xamarin.WatchKitCatalog`
 
@@ -50,7 +50,7 @@ Les trois projets doivent avoir le *même* préfixe d’identificateur, les deux
 
 - Projet d’application Watch-`com.xamarin.WatchKitCatalog.watchkitapp`
 
-Assurez-vous également que ces paramètres **info. plist** sont corrects:
+Assurez-vous également que ces paramètres **info. plist** sont corrects :
 
 - Le projet d' `WKCompanionAppBundleIdentifier` application Watch correspond à l’ID d’offre groupée de l’application parent/conteneur (c’est-à-dire, celui qui s’exécute sur l’iPhone).
 

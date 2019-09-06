@@ -4,16 +4,16 @@ description: Ce document décrit comment déployer sans fil une application Xama
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: ac4ae1d8b247a709307841be1ffa1fee2afbf68f
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: afa87cf98a2f9caee49c510674fe774a46e81107
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121476"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284351"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Déploiement sans fil pour les applications Xamarin.iOS et tvOS
 

@@ -4,15 +4,15 @@ description: Avec iOS 8, Apple a fourni une multitude de nouvelles infrastructur
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 592eff29e7c12741975dda0d602f5850071c1f45
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1b3c1af480db2c5642ef0b16aed795d2bb43290f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644811"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292389"
 ---
 # <a name="introduction-to-ios-8"></a>Introduction à iOS 8
 
@@ -28,7 +28,7 @@ Il existe également quelques API qui ont été dépréciées dans iOS 8, qui so
 
 ## <a name="requirements"></a>Configuration requise
 
-Les éléments suivants sont requis pour créer des applications iOS 8 dans Visual Studio pour Mac:
+Les éléments suivants sont requis pour créer des applications iOS 8 dans Visual Studio pour Mac :
 
 - **Xcode 7 et iOS 8 ou version ultérieure** : les dernières API Xcode et iOS d’Apple doivent être installées et configurées sur l’ordinateur du développeur.
 - **Visual Studio pour Mac** : la dernière version de Visual Studio pour Mac doit être installée et configurée sur l’appareil de l’utilisateur.
@@ -40,13 +40,13 @@ iOS 8 a aidé à intégrer des Apple, et l’appareil iOS directement au cœur d
 
 ## <a name="homekit"></a>HomeKit
 
-Le contrôle de vos appliances à partir de votre iPhone n’est pas une nouvelle application de technologie. de nombreux produits connectés à l’hôte peuvent être contrôlés via une application iOS. Toutefois, HomeKit va encore plus loin en promouvant un protocole commun pour les appareils domotiques, et en mettant une API publique à la disposition de certains fabricants, tels que iHome, Philips et Honeywell. Pour l’utilisateur, cela signifie qu’ils peuvent contrôler presque tous les aspects de leur foyer en toute transparence depuis l’intérieur d’une application. Il est inutile pour eux de savoir qu’ils utilisent une ampoule à teinte Philips ou une alarme d’imbrication. Les utilisateurs peuvent également chaîner de nombreux processus d’hébergement intelligents en «scènes».
+Le contrôle de vos appliances à partir de votre iPhone n’est pas une nouvelle application de technologie. de nombreux produits connectés à l’hôte peuvent être contrôlés via une application iOS. Toutefois, HomeKit va encore plus loin en promouvant un protocole commun pour les appareils domotiques, et en mettant une API publique à la disposition de certains fabricants, tels que iHome, Philips et Honeywell. Pour l’utilisateur, cela signifie qu’ils peuvent contrôler presque tous les aspects de leur foyer en toute transparence depuis l’intérieur d’une application. Il est inutile pour eux de savoir qu’ils utilisent une ampoule à teinte Philips ou une alarme d’imbrication. Les utilisateurs peuvent également chaîner de nombreux processus d’hébergement intelligents en « scènes ».
 
 Avec HomeKit, les applications tierces et Siri peuvent découvrir des accessoires et les ajouter à leur base de données de configuration personnelle personnelle, modifier et agir sur ces données, et communiquer avec les accessoires et leurs services pour effectuer une action.
 
 ### <a name="configuration"></a>Configuration
 
-Le diagramme ci-dessous montre la hiérarchie de base de la configuration des accessoires HomeKit:
+Le diagramme ci-dessous montre la hiérarchie de base de la configuration des accessoires HomeKit :
 
 ![](introduction-to-ios8-images/image1.png "Ce diagramme illustre la hiérarchie de base de la configuration des accessoires HomeKit")
  
@@ -68,11 +68,11 @@ Les extensions d’application, pour simplifier, sont un moyen pour les applicat
 
 La première étape de la création d’une extension d’application consiste à définir le point d’extension correct, ce qui est important pour garantir le comportement et la disponibilité des API appropriées. Pour créer une extension d’application dans Visual Studio pour Mac, ajoutez-la à une application existante en ajoutant un nouveau projet à votre solution.
 
-Dans la boîte de dialogue **nouveau projet** , accédez **C#**  > à **iOS** > **API unifiée** > **Extensions**, comme illustré dans la capture d’écran ci-dessous:
+Dans la boîte de dialogue **nouveau projet** , accédez **C#**  > à **iOS** > **API unifiée** > **Extensions**, comme illustré dans la capture d’écran ci-dessous :
 
 ![](introduction-to-ios8-images/image2.png "Création d’une nouvelle extension")
  
-La boîte de dialogue Nouveau projet fournit sept nouveaux modèles de projet pour la création d’extensions d’application et sont décrits ci-dessous. Notez que la plupart des extensions sont liées à d’autres nouvelles API dans iOS, telles que le sélecteur de documents:
+La boîte de dialogue Nouveau projet fournit sept nouveaux modèles de projet pour la création d’extensions d’application et sont décrits ci-dessous. Notez que la plupart des extensions sont liées à d’autres nouvelles API dans iOS, telles que le sélecteur de documents :
 
 - **Action** : permet aux développeurs de créer des boutons d’action personnalisés uniques permettant aux utilisateurs d’effectuer certaines tâches.
 - **Clavier personnalisé** : cela permet aux développeurs d’ajouter à la plage de Claviers Apple intégrés en ajoutant leur propre clavier personnalisé. Le clavier populaire, Swype l’utilise pour mettre le clavier sur iOS.
@@ -97,7 +97,7 @@ Pour plus d’informations sur Touch ID et pour savoir comment l’intégrer dan
 
 ### <a name="document-picker"></a>Sélecteur de document
 
-Le sélecteur de documents fonctionne avec un lecteur iCloud des utilisateurs pour permettre à l’utilisateur d’ouvrir des fichiers qui ont été créés dans une autre application, de les importer et de les manipuler et de les réexporter. Cela crée un flux de travail intuitif et, par conséquent, une expérience bien meilleure pour les utilisateurs. la synchronisation iCloud va encore plus loin: toutes les modifications apportées dans une application sont également reflétées de manière cohérente sur tous vos appareils.
+Le sélecteur de documents fonctionne avec un lecteur iCloud des utilisateurs pour permettre à l’utilisateur d’ouvrir des fichiers qui ont été créés dans une autre application, de les importer et de les manipuler et de les réexporter. Cela crée un flux de travail intuitif et, par conséquent, une expérience bien meilleure pour les utilisateurs. la synchronisation iCloud va encore plus loin : toutes les modifications apportées dans une application sont également reflétées de manière cohérente sur tous vos appareils.
 
 Pour en savoir plus sur le sélecteur de documents plus en détail et pour savoir comment l’intégrer dans une application Xamarin. iOS, reportez-vous à la [Présentation du Guide du sélecteur de documents](~/ios/platform/document-picker.md) .
 
@@ -110,20 +110,20 @@ Le transfert fonctionne avec iOS 8 et Yosemite, et requiert qu’un compte iClou
 Pour plus d’informations, consultez notre guide de [remise](~/ios/platform/handoff.md) .
 
 ## <a name="unified-storyboards"></a>Storyboards unifiés
-iOS 8 offre un nouveau mécanisme plus simple d’utilisation pour créer l’interface utilisateur: le Storyboard unifié. Avec une seule table de montage séquentiel pour couvrir toutes les différentes tailles d’écran matérielles, des vues rapides et réactives peuvent être créées dans un style vrai «une fois de conception, utiliser plusieurs».
+iOS 8 offre un nouveau mécanisme plus simple d’utilisation pour créer l’interface utilisateur : le Storyboard unifié. Avec une seule table de montage séquentiel pour couvrir toutes les différentes tailles d’écran matérielles, des vues rapides et réactives peuvent être créées dans un style vrai « une fois de conception, utiliser plusieurs ».
 
-Avant iOS8, les développeurs utilisaient `UIInterfaceOrientation` pour faire la distinction entre les modes portrait et paysage, et `UIInterfaceIdiom` pour faire la distinction entre les appareils iOS. Dans iOS8, il n’est plus nécessaire de créer des storyboards distincts pour les appareils iPhone et iPad: l’orientation et l’appareil sont déterminés à l’aide des *classes de taille*.
+Avant iOS8, les développeurs utilisaient `UIInterfaceOrientation` pour faire la distinction entre les modes portrait et paysage, et `UIInterfaceIdiom` pour faire la distinction entre les appareils iOS. Dans iOS8, il n’est plus nécessaire de créer des storyboards distincts pour les appareils iPhone et iPad : l’orientation et l’appareil sont déterminés à l’aide des *classes de taille*.
 
-Chaque appareil est défini par une classe de taille, à la fois dans l’axe vertical et horizontal, et il existe deux types de classes de taille dans iOS 8:
+Chaque appareil est défini par une classe de taille, à la fois dans l’axe vertical et horizontal, et il existe deux types de classes de taille dans iOS 8 :
 
 - **Normal** : il s’agit d’une grande taille d’écran (par exemple, un iPad) ou d’un gadget qui donne l’impression d’une grande taille (par exemple, un UIScrollView
 - **Compact** : pour les appareils plus petits (tels que l’iPhone). Cette taille prend en compte l’orientation de l’appareil.
 
-Si les deux concepts sont utilisés ensemble, le résultat est une grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes, comme illustré dans le diagramme suivant:
+Si les deux concepts sont utilisés ensemble, le résultat est une grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes, comme illustré dans le diagramme suivant :
 
 ![](introduction-to-ios8-images/image3.png "Diagramme représentant la grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes")
  
-Pour plus d’informations sur les classes de taille, reportez-vous à la [Présentation](~/ios/user-interface/storyboards/unified-storyboards.md)des storyboards unifiés.
+Pour plus d’informations sur les classes de taille, reportez-vous à la [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md).
 
 ## <a name="photo-kit"></a>Kit de photos
 Le kit photo est une nouvelle infrastructure qui permet aux applications d’interroger la bibliothèque d’images système et de créer des interfaces utilisateur personnalisées pour afficher et modifier son contenu. Il comprend un certain nombre de classes qui représentent les ressources d’images et de vidéos, ainsi que des collections d’éléments multimédias tels que des albums et des dossiers.
@@ -149,7 +149,7 @@ Sprite Kit, l’infrastructure de jeu 2D d’Apple, présente de nouvelles fonct
 Pour plus d’informations, consultez notre documentation [SpriteKit](~/ios/platform/gaming/spritekit.md) .
 
 ## <a name="other-changes"></a>Autres modifications
-Outre les principales modifications apportées à iOS 8 décrites ci-dessus, Apple a mis à jour en plus de nombreux Frameworks existants. Celles-ci sont détaillées ci-dessous:
+Outre les principales modifications apportées à iOS 8 décrites ci-dessus, Apple a mis à jour en plus de nombreux Frameworks existants. Celles-ci sont détaillées ci-dessous :
 
 - **[Image principale](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** : Apple s’est développée sur son infrastructure de traitement d’images en ajoutant une meilleure prise en charge de la détection des régions rectangulaires et des codes QR dans les images. Mike Bluestein explore cela dans son billet de blog [sur la détection d’images dans iOS 8](https://blog.xamarin.com/image-detection-in-ios-8/)
 
@@ -157,7 +157,7 @@ Outre les principales modifications apportées à iOS 8 décrites ci-dessus, App
 Avec toutes les améliorations apportées à iOS 8, un certain nombre d’API sont dépréciées. Certaines d’entre elles sont détaillées ci-dessous.
 
 - **[UIApplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication)** : les méthodes et les propriétés utilisées pour l’inscription des notifications distantes sont dépréciées. Il s’agit de registerForRemoteNotificationTypes et enabledRemoteNotificationTypes.
-- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)** – les classes de caractéristiques et de taille ont remplacé les méthodes et les propriétés utilisées pour décrire l’orientation de l’interface. Pour plus d’informations sur l’utilisation de ces storyboards, reportez-vous à la [Présentation](~/ios/user-interface/storyboards/unified-storyboards.md) des storyboards unifiés.
+- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)** – les classes de caractéristiques et de taille ont remplacé les méthodes et les propriétés utilisées pour décrire l’orientation de l’interface. Pour plus d’informations sur l’utilisation de ces storyboards, reportez-vous à la [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** : ce a été remplacé par UISearchController dans iOS8.
 

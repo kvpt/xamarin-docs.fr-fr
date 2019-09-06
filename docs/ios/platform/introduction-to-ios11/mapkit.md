@@ -1,22 +1,22 @@
 ---
 title: Nouvelles fonctionnalités de MapKit sur iOS 11
-description: 'Ce document décrit les nouvelles fonctionnalités MapKit dans iOS 11: regroupement des marqueurs, du bouton Compass, de la vue mise à l’échelle et du bouton suivi de l’utilisateur.'
+description: 'Ce document décrit les nouvelles fonctionnalités MapKit dans iOS 11 : regroupement des marqueurs, du bouton Compass, de la vue mise à l’échelle et du bouton suivi de l’utilisateur.'
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 0345a20e20b96e2f219218fc396b11ac508c8add
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c194f2c9f8ea974bf3d6a8798f8a12e246c7d75b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656436"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286694"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>Nouvelles fonctionnalités de MapKit sur iOS 11
 
-iOS 11 ajoute les nouvelles fonctionnalités suivantes à MapKit:
+iOS 11 ajoute les nouvelles fonctionnalités suivantes à MapKit :
 
 - [Clustering d’annotations](#clustering)
 - [Bouton Compass](#compass)
@@ -29,13 +29,13 @@ iOS 11 ajoute les nouvelles fonctionnalités suivantes à MapKit:
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>Regroupement automatique des marqueurs pendant le zoom
 
-L’exemple [MapKit «Tandm»](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) montre comment implémenter la nouvelle fonctionnalité de clustering d’annotations iOS 11.
+L’exemple [MapKit « Tandm »](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) montre comment implémenter la nouvelle fonctionnalité de clustering d’annotations iOS 11.
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. Créer une `MKPointAnnotation` sous-classe
 
 La classe d’annotation point représente chaque marqueur sur la carte. Elles peuvent être ajoutées individuellement à `MapView.AddAnnotation()` l’aide de ou à `MapView.AddAnnotations()`partir d’un tableau à l’aide de.
 
-Les classes d’annotations de point n’ont pas de représentation visuelle, elles sont uniquement requises pour représenter les données associées au marqueur ( `Coordinate` surtout, la propriété qui est sa latitude et sa longitude sur la carte) et toutes les propriétés personnalisées:
+Les classes d’annotations de point n’ont pas de représentation visuelle, elles sont uniquement requises pour représenter les données associées au marqueur ( `Coordinate` surtout, la propriété qui est sa latitude et sa longitude sur la carte) et toutes les propriétés personnalisées :
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -59,14 +59,14 @@ public class Bike : MKPointAnnotation
 
 ### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Créer une `MKMarkerAnnotationView` sous-classe pour les marqueurs uniques
 
-La vue d’annotation de marqueur est la représentation visuelle de chaque annotation et est stylisée à l’aide de propriétés telles que:
+La vue d’annotation de marqueur est la représentation visuelle de chaque annotation et est stylisée à l’aide de propriétés telles que :
 
 - **MarkerTintColor** : couleur du marqueur.
 - **GlyphText** – texte affiché dans le marqueur.
 - **GlyphImage** : définit l’image affichée dans le marqueur.
 - **DisplayPriority** : détermine l’ordre de plan (comportement d’empilement) lorsque la carte est encombrée de marqueurs. `Required`Utilisez, `DefaultHigh`ou. `DefaultLow`
 
-Pour prendre en charge le clustering automatique, vous devez également définir:
+Pour prendre en charge le clustering automatique, vous devez également définir :
 
 - **ClusteringIdentifier** : ce contrôle les marqueurs qui sont regroupés. Vous pouvez utiliser le même identificateur pour tous vos marqueurs ou utiliser des identificateurs différents pour contrôler la façon dont ils sont regroupés.
 
@@ -110,7 +110,7 @@ Alors que la vue d’annotation qui représente un cluster de marqueurs _peut_ �
 
 L' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) utilise coregraphics pour afficher le nombre de marqueurs dans le cluster, ainsi qu’une représentation sous forme de cercle de la proportion de chaque type de marqueur.
 
-Vous devez également définir:
+Vous devez également définir :
 
 - **DisplayPriority** : détermine l’ordre de plan (comportement d’empilement) lorsque la carte est encombrée de marqueurs. `Required`Utilisez, `DefaultHigh`ou. `DefaultLow`
 - **CollisionMode** – `Circle` ou `Rectangle`.
@@ -181,14 +181,14 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4. Inscrire les classes d’affichage
 
-Lorsque le contrôle de vue cartographique est créé et ajouté à une vue, enregistrez les types d’affichages d’annotation pour activer le comportement de clustering automatique, car le mappage fait l’objet d’un zoom avant et arrière:
+Lorsque le contrôle de vue cartographique est créé et ajouté à une vue, enregistrez les types d’affichages d’annotation pour activer le comportement de clustering automatique, car le mappage fait l’objet d’un zoom avant et arrière :
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
 MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReuseIdentifier);
 ```
 
-### <a name="5-render-the-map"></a>5. Restituer la carte!
+### <a name="5-render-the-map"></a>5. Restituer la carte !
 
 Lorsque le mappage est rendu, les marqueurs d’annotation sont mis en cluster ou rendus en fonction du niveau de zoom. Au fur et à mesure que le niveau de zoom change, les marqueurs animent et sortent des clusters.
 
@@ -206,7 +206,7 @@ Créez un bouton qui ressemble à une boussole (y compris une animation dynamiqu
 
 ![Bouton Compass dans la barre de navigation](mapkit-images/compass-sml.png)
 
-Le code ci-dessous crée un bouton Compass et le restitue dans la barre de navigation:
+Le code ci-dessous crée un bouton Compass et le restitue dans la barre de navigation :
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);

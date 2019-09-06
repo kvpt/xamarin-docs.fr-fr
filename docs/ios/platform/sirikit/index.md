@@ -4,15 +4,15 @@ description: Cet article explique comment utiliser SiriKit dans une application 
 ms.prod: xamarin
 ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0438ea08bbdcbf0ce3c64e15192cbb90cd835b00
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e3ef6dd857760d722fe84f98250b8db9e398ea2e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654012"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287181"
 ---
 # <a name="sirikit-in-xamarinios"></a>SiriKit dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ _Cet article explique comment utiliser SiriKit dans une application Xamarin. iOS
 
 Nouveauté d’iOS 10, SiriKit permet à une application iOS de fournir des services accessibles à l’utilisateur à l’aide de Siri et de l’application Maps sur un appareil iOS à l’aide d’extensions d’application, ainsi que **des nouvelles infrastructures** d' **interface utilisateur** intentions et intentions.
 
-Siri fonctionne avec le concept de **domaines**, de groupes d’actions connues pour les tâches associées. Chaque interaction d’une application avec Siri doit appartenir à l’un de ses domaines de service connus, comme suit:
+Siri fonctionne avec le concept de **domaines**, de groupes d’actions connues pour les tâches associées. Chaque interaction d’une application avec Siri doit appartenir à l’un de ses domaines de service connus, comme suit :
 
 - Appel audio ou vidéo.
 - Réservation d’une définition.

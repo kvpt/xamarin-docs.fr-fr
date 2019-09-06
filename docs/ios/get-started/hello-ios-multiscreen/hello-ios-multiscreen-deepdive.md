@@ -5,15 +5,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 9c7572c3d3a785264e9f26c17e74c41ee28e8af6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 8ab7f24d69e4f20cb1a732f32d220c85b178deef
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526524"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288719"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
 
@@ -56,7 +56,7 @@ Dans certains cas, la partie Model du modèle MVC peut être vide. Par exemple, 
 
 Un affichage (View) est un composant chargé du rendu de l’interface utilisateur. Dans presque toutes les plateformes qui utilisent le modèle MVC, l’interface utilisateur se compose d’une hiérarchie d’affichages. Un affichage dans le modèle MVC peut être perçu comme une hiérarchie d’affichage avec un affichage unique (appelé affichage racine) en haut de la hiérarchie et autant d’affichages enfants (appelés sous-affichages) en dessous. Dans iOS, la hiérarchie de vues de contenu d’un écran correspond au composant Vue du modèle MVC.
 
-### <a name="controller"></a>Contrôleur
+### <a name="controller"></a>Controller
 
 L’objet Controller est le composant qui relie tous les éléments ensemble et qui est représenté dans iOS par `UIViewController`. Nous pouvons le considérer comme le code de stockage d’un écran ou d’un ensemble d’affichages. L’objet Controller (ou contrôleur) est chargé d’écouter les demandes émises par l’utilisateur et de retourner la hiérarchie d’affichage appropriée. Il écoute les demandes émises à partir de l’affichage (clics de bouton, entrée de texte, etc.) et effectue le traitement, la modification de l’affichage et le rechargement de l’affichage appropriés. Le contrôleur est également responsable de la création ou de la récupération de l’objet Model à partir du magasin de données existant dans l’application et du remplissage de l’affichage avec ses données.
 

@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser les contrôles de table Watch
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: f3e991550cd58f20d52bebb208eedec4d8f7e41e
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065684"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291695"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Contrôles de table Watchos dans Xamarin
 
@@ -23,7 +23,7 @@ Le `WKInterfaceTable` contrôle Watchos est bien plus simple que son équivalent
 
 ## <a name="adding-a-table"></a>Ajout d’une table
 
-Faites glisser le contrôle **table** dans une scène. Par défaut, elle ressemble à ceci (avec une disposition de ligne non spécifiée unique):
+Faites glisser le contrôle **table** dans une scène. Par défaut, elle ressemble à ceci (avec une disposition de ligne non spécifiée unique) :
 
 [![](table-images/add-table-sml.png "Ajout d’une table")](table-images/add-table.png#lightbox)
 
@@ -69,14 +69,14 @@ for (var i = 0; i < rows.Count; i++) {
 
 ## <a name="respond-to-taps"></a>Répondre aux pressions
 
-Vous pouvez répondre à la sélection de lignes de deux manières différentes:
+Vous pouvez répondre à la sélection de lignes de deux manières différentes :
 
 - Implémentez `DidSelectRow` la méthode sur le contrôleur d’interface, ou
 - Créez un segue sur la table de montage `GetContextForSegue` séquentiel et implémentez si vous souhaitez que la sélection de ligne ouvre une autre scène.
 
 ### <a name="didselectrow"></a>DidSelectRow
 
-Pour gérer la sélection de lignes par programmation, implémentez la `DidSelectRow` méthode. Pour ouvrir une nouvelle scène, utilisez `PushController` et transmettez l’identificateur de la scène et le contexte de données à utiliser:
+Pour gérer la sélection de lignes par programmation, implémentez la `DidSelectRow` méthode. Pour ouvrir une nouvelle scène, utilisez `PushController` et transmettez l’identificateur de la scène et le contexte de données à utiliser :
 
 ```csharp
 public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
@@ -109,7 +109,7 @@ Ces données sont passées à la scène de Storyboard cible dans `Awake` sa mét
 
 ## <a name="multiple-row-types"></a>Plusieurs types de lignes
 
-Par défaut, le contrôle de table a un seul type de ligne que vous pouvez concevoir. Pour ajouter plus de lignes «modèles», utilisez la zone **lignes** dans le panneau **Propriétés** pour créer d’autres contrôleurs de ligne:
+Par défaut, le contrôle de table a un seul type de ligne que vous pouvez concevoir. Pour ajouter plus de lignes « modèles », utilisez la zone **lignes** dans le panneau **Propriétés** pour créer d’autres contrôleurs de ligne :
 
 ![](table-images/prototype-rows1.png "Définition du nombre de lignes de prototype")
 
@@ -119,13 +119,13 @@ Si vous affectez à la propriété **Rows** la valeur **3** , des espaces réser
 
 Pour remplir une table avec des types de ligne différents `SetRowTypes` , utilisez la méthode pour spécifier le type de contrôleur de ligne à utiliser pour chaque ligne de la table. Utilisez les identificateurs de la ligne pour spécifier le contrôleur de lignes à utiliser pour chaque ligne.
 
-Le nombre d’éléments de ce tableau doit correspondre au nombre de lignes attendues dans la table:
+Le nombre d’éléments de ce tableau doit correspondre au nombre de lignes attendues dans la table :
 
 ```csharp
 myTable.SetRowTypes (new [] {"type1", "default", "default", "type2", "default"});
 ```
 
-Lors du remplissage d’une table avec plusieurs contrôleurs de ligne, vous devez effectuer le suivi du type que vous attendez quand vous remplissez l’interface utilisateur:
+Lors du remplissage d’une table avec plusieurs contrôleurs de ligne, vous devez effectuer le suivi du type que vous attendez quand vous remplissez l’interface utilisateur :
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -145,7 +145,7 @@ for (var i = 0; i < rows.Count; i++) {
 
 ## <a name="vertical-detail-paging"></a>Pagination des détails verticale
 
-Watchos 3 a introduit une nouvelle fonctionnalité pour les tables: la possibilité de faire défiler les pages de détails associées à chaque ligne, sans avoir à revenir à la table et à choisir une autre ligne. Vous pouvez faire défiler les écrans de détails en effectuant un balayage vers le haut ou vers le haut, ou en utilisant le Digital Crown.
+Watchos 3 a introduit une nouvelle fonctionnalité pour les tables : la possibilité de faire défiler les pages de détails associées à chaque ligne, sans avoir à revenir à la table et à choisir une autre ligne. Vous pouvez faire défiler les écrans de détails en effectuant un balayage vers le haut ou vers le haut, ou en utilisant le Digital Crown.
 
 ![](table-images/table-scroll-sml.png "Exemple de pagination des détails verticaux")![](table-images/table-detail-sml.png)
 
@@ -164,7 +164,7 @@ Comme [expliqué par Apple](https://developer.apple.com/reference/watchkit/wkint
 
 L’IDE créera automatiquement deux fichiers de code lorsqu’un contrôleur de lignes sera créé dans le concepteur. Le code de ces fichiers générés est indiqué ci-dessous pour référence.
 
-Le premier sera nommé pour la classe, par exemple **RowController.cs**, comme suit:
+Le premier sera nommé pour la classe, par exemple **RowController.cs**, comme suit :
 
 ```csharp
 using System;
@@ -181,7 +181,7 @@ namespace WatchTablesExtension
 }
 ```
 
-L’autre fichier **. Designer.cs** est une définition de classe partielle qui contient les prises et les actions créées sur l’aire du concepteur, comme dans cet exemple avec un `WKInterfaceLabel` contrôle:
+L’autre fichier **. Designer.cs** est une définition de classe partielle qui contient les prises et les actions créées sur l’aire du concepteur, comme dans cet exemple avec un `WKInterfaceLabel` contrôle :
 
 ```csharp
 using Foundation;

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 8c55fecc8605b8bb7312e658e5edf46008f6b6ce
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cdf89b55c30b0a4e7ab247c396a870e0bad24886
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651350"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287712"
 ---
 # <a name="xamarinforms-button"></a>Bouton de Xamarin.Forms
 
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>Désactivation du bouton
 
-Parfois, une application est dans un état particulier où un particulier `Button` clic n’est pas une opération valide. Dans ce cas, le `Button` doit être désactivée en définissant son `IsEnabled` propriété `false`. L’exemple classique est un `Entry` contrôle pour un nom de fichier accompagné d’un fichier `Button`-Open: L' `Button` option doit être activée uniquement si du texte a été tapé dans `Entry`le.
+Parfois, une application est dans un état particulier où un particulier `Button` clic n’est pas une opération valide. Dans ce cas, le `Button` doit être désactivée en définissant son `IsEnabled` propriété `false`. L’exemple classique est un `Entry` contrôle pour un nom de fichier accompagné d’un fichier `Button`-Open : L' `Button` option doit être activée uniquement si du texte a été tapé dans `Entry`le.
 Vous pouvez utiliser un `DataTrigger` pour cette tâche, comme indiqué dans le [ **données déclencheurs** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) article.
 
 ## <a name="using-the-command-interface"></a>À l’aide de l’interface de commande
@@ -150,7 +150,7 @@ Il est possible pour une application répondre aux `Button` robinets sans traite
 
 Cette approche convient particulièrement dans le cadre de liaison de données et en particulier lors de l’implémentation de l’architecture Model-View-ViewModel (MVVM). Ces rubriques sont présentées dans les articles [une liaison de données](~/xamarin-forms/app-fundamentals/data-binding/index.md), [à partir des liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), et [MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 
-Dans une application MVVM, le ViewModel définit les propriétés de type `ICommand` qui sont alors connectés à le XAML `Button` éléments avec des liaisons de données. Xamarin.Forms définit également [ `Command` ]((xref:Xamarin.Forms.Command)) et [ `Command<T>` ](xref:Xamarin.Forms.Command`1) des classes qui implémentent le `ICommand` interface et faciliter le ViewModel dans la définition des propriétés de type `ICommand`.
+Dans une application MVVM, le ViewModel définit les propriétés de type `ICommand` qui sont alors connectés à le XAML `Button` éléments avec des liaisons de données. Xamarin.Forms définit également [ `Command` ](xref:Xamarin.Forms.Command) et [ `Command<T>` ](xref:Xamarin.Forms.Command`1) des classes qui implémentent le `ICommand` interface et faciliter le ViewModel dans la définition des propriétés de type `ICommand`.
 
 Exécution des commandes sont décrite plus en détail dans l’article [ **l’Interface de commande** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) mais le **commande de bouton base** page dans le [  **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos) exemple illustre l’approche de base.
 
@@ -409,7 +409,7 @@ Le résultat est que le `Label` utilise uniquement un doigt est en contact avec 
 
 [![Appuyez sur et relâchez le bouton](button-images/PressAndReleaseButton.png "appuyez et relâchez le bouton")](button-images/PressAndReleaseButton-Large.png)
 
-Ce type de comportement a des applications pour les jeux: Un doigt détenu sur un `Button` peut faire passer un objet à l’écran dans une direction particulière.
+Ce type de comportement a des applications pour les jeux : Un doigt détenu sur un `Button` peut faire passer un objet à l’écran dans une direction particulière.
 
 <a name="button-appearance" />
 
@@ -582,7 +582,7 @@ Pour plus d’informations sur les états visuels, consultez [le Gestionnaire d�
 
 ## <a name="creating-a-toggle-button"></a>Création d’un bouton bascule
 
-Il est possible d’effectuer une `Button` sous-classe afin qu’elle fonctionne comme un commutateur d’activation: Appuyez une fois sur le bouton pour activer ou désactiver le bouton, puis appuyez dessus pour le désactiver.
+Il est possible d’effectuer une `Button` sous-classe afin qu’elle fonctionne comme un commutateur d’activation : Appuyez une fois sur le bouton pour activer ou désactiver le bouton, puis appuyez dessus pour le désactiver.
 
 Ce qui suit `ToggleButton` dérive de la classe `Button` et définit un événement nommé `Toggled` et une propriété booléenne nommée `IsToggled`. Voici les deux mêmes propriétés définies par le Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
 

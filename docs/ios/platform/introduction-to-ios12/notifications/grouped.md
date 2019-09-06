@@ -4,15 +4,15 @@ description: Avec iOS 12, il est possible de regrouper les notifications dans le
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 3edaabe287bc2b37d2ec5a759ada9f59441c6d3a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 12d60a193385593bb3ec22186b54a4a809370e2d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652578"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291262"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Notifications groupées dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Par défaut, iOS 12 place toutes les notifications d’une application dans un g
 
 Les applications peuvent également regrouper les notifications par thread, ce qui permet aux utilisateurs de rechercher et d’interagir plus facilement avec les informations spécifiques qui vous intéressent.
 
-## <a name="sample-app-groupednotifications"></a>Exemple d’application: GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>Exemple d’application : GroupedNotifications
 
 Pour savoir comment utiliser des notifications groupées avec Xamarin. iOS, consultez l’exemple d’application [GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications) .
 
@@ -30,7 +30,7 @@ Les extraits de code de ce guide proviennent de cet exemple d’application.
 
 ## <a name="request-authorization-and-allow-foreground-notifications"></a>Demander l’autorisation et autoriser les notifications au premier plan
 
-Avant qu’une application puisse envoyer des notifications locales, elle doit demander l’autorisation de le faire. Dans l’exemple d' [`AppDelegate`](xref:UIKit.UIApplicationDelegate)application, la [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) méthode demande cette autorisation:
+Avant qu’une application puisse envoyer des notifications locales, elle doit demander l’autorisation de le faire. Dans l’exemple d' [`AppDelegate`](xref:UIKit.UIApplicationDelegate)application, la [`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) méthode demande cette autorisation :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-Le [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (défini ci-dessus) [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) pour un décide si une application de premier plan doit ou non afficher une notification entrante en appelant [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))le gestionnaire d’achèvement passé à:
+Le [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate) (défini ci-dessus) [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter) pour un décide si une application de premier plan doit ou non afficher une notification entrante en appelant [`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))le gestionnaire d’achèvement passé à :
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -67,7 +67,7 @@ Pour démarrer une conversation avec un autre ami, appuyez sur le bouton **chois
 
 ### <a name="threadidentifier"></a>ThreadIdentifier
 
-Chaque fois que l’exemple d’application démarre un nouveau thread, il crée un identificateur de thread unique:
+Chaque fois que l’exemple d’application démarre un nouveau thread, il crée un identificateur de thread unique :
 
 ```csharp
 void StartNewThread()
@@ -77,13 +77,13 @@ void StartNewThread()
 }
 ```
 
-Pour envoyer une notification de thread, l’exemple d’application:
+Pour envoyer une notification de thread, l’exemple d’application :
 
 - Vérifie si l’application a l’autorisation d’envoyer une notification.
 - Crée un[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
 objet pour le contenu de la notification et définit son[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
 à l’identificateur de thread créé ci-dessus.
-- Crée une demande et planifie la notification:
+- Crée une demande et planifie la notification :
 
 ```csharp
 async partial void ScheduleThreadedNotification(UIButton sender)

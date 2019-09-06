@@ -4,15 +4,15 @@ description: Ce document décrit les modifications mineures et les amélioration
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 230da58bba68b9411b67baacd53b534ae832510d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 88039da5faf911386232d2b189b27a2921f8144c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657434"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289578"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>Modifications supplémentaires apportées au Framework tvOS 10
 
@@ -22,7 +22,7 @@ Outre les modifications majeures apportées à tvOS, Apple a apporté des modifi
 
 ## <a name="avfoundation-framework-additions"></a>Ajouts du Framework AVFoundation
 
-L’infrastructure AVFoundation intègre les améliorations suivantes:
+L’infrastructure AVFoundation intègre les améliorations suivantes :
 
 - Dans tvOS 10, l’application n’implémente plus de comportements [AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem) basés sur le type de contenu. Il vous suffit `Rate` de définir la propriété et AVFoundation déterminera quand un contenu suffisant sera disponible pour la lecture sans blocage.
 - La nouvelle `AVPlayerLooper` classe facilite la boucle d’un élément multimédia donné pendant la lecture.
@@ -31,7 +31,7 @@ L’infrastructure AVFoundation intègre les améliorations suivantes:
 
 ## <a name="avkit-framework-enhancements"></a>Améliorations apportées à AVKit Framework
 
-L’infrastructure AVKit intègre les améliorations suivantes:
+L’infrastructure AVKit intègre les améliorations suivantes :
 
 - L’application contrôle désormais le comportement ignoré de [AVPlayerViewController](https://developer.apple.com/reference/avkit/avplayerviewcontroller) de sorte qu’un geste ignoré peut passer à l’élément suivant dans la sélection ou avancer dans l’élément actuel.
 
@@ -39,7 +39,7 @@ L’infrastructure AVKit intègre les améliorations suivantes:
 
 ## <a name="core-data-enhancements"></a>Améliorations des données de base
 
-tvOS 10 comprend les améliorations suivantes apportées à l’infrastructure de données de base:
+tvOS 10 comprend les améliorations suivantes apportées à l’infrastructure de données de base :
 
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
 - La classe [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) gère un pool de banques de données SQLite.
@@ -53,7 +53,7 @@ Pour plus d’informations, consultez Référence de l' [infrastructure de donn�
 
 ## <a name="core-graphics-enhancements"></a>Améliorations des graphiques de base
 
-tvOS 10 comprend les améliorations suivantes apportées à l’infrastructure graphique principale:
+tvOS 10 comprend les améliorations suivantes apportées à l’infrastructure graphique principale :
 
 - La nouvelle classe [CGColorConverterRef](https://developer.apple.com/reference/coregraphics/cgcolorconverterref) peut être utilisée pour effectuer une série de conversions de couleurs.
 
@@ -61,7 +61,7 @@ tvOS 10 comprend les améliorations suivantes apportées à l’infrastructure g
 
 ## <a name="core-image-enhancements"></a>Améliorations de l’image principale
 
-tvOS 10 apporte les améliorations suivantes à l’infrastructure d’images principales:
+tvOS 10 apporte les améliorations suivantes à l’infrastructure d’images principales :
 
 - La `ImageWithExtent` méthode de la classe [CIFilter](https://developer.apple.com/reference/coreimage/cifilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
 - L’application peut maintenant traiter les images dans un espace de couleurs en dehors de l’espace de couleurs de travail du contexte d’image principal en convertissant dans et en dehors de l’espace de couleurs avant et après le traitement.
@@ -69,7 +69,7 @@ tvOS 10 apporte les améliorations suivantes à l’infrastructure d’images pr
 - `UIImage`les objets avec une large gamme de couleurs s’affichent sous la `UIImageView` forme d’une large gamme dans des objets sur des appareils IOS qui prennent en charge la couleur large.
 - Le code noyau de l’image principale peut désormais demander des formats de sortie pixel spécifiques.
 
-En outre, les nouveaux filtres d’image principaux suivants ont été ajoutés:
+En outre, les nouveaux filtres d’image principaux suivants ont été ajoutés :
 
 - `CINinePartTiled`
 - `CINinePartStretched`
@@ -81,7 +81,7 @@ En outre, les nouveaux filtres d’image principaux suivants ont été ajoutés:
 
 ## <a name="foundation-enhancements"></a>Améliorations de base
 
-Les améliorations suivantes ont été apportées à l’infrastructure de base pour tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure de base pour tvOS 10 :
 
 - Utilisez la nouvelle classe [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) pour effectuer des calculs d’intervalles de date et d’heure tels que des durées, pour comparer des intervalles et tester des intersections d’intervalle.
 - Plusieurs nouvelles propriétés ont été ajoutées à la classe [NSLocal](https://developer.apple.com/reference/foundation/nslocale) pour obtenir des informations locales et les formats d’affichage disponibles.
@@ -93,7 +93,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 
 ## <a name="gamekit-enhancements"></a>Améliorations apportées à GameKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure GameKit dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure GameKit dans tvOS 10 :
 
 - Un nouveau type de compte iCloud est implémenté par la classe [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) .
 - La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession`gère une liste de joueurs et l’application est responsable de l’implémentation de la manière dont la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
@@ -102,7 +102,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure GameKit 
 
 ## <a name="gameplaykit-enhancements"></a>Améliorations apportées à GameplayKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure GameplayKit dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure GameplayKit dans tvOS 10 :
 
 - La génération de bruit procédurale a été ajoutée et peut être utilisée pour améliorer le réalisme des textures à l’aspect naturel, ajouter un réalisme aux mouvements de l’appareil photo et aider à générer des mondes riches en jeux.
 - Utilisez le partitionnement spatial pour partitionner les données du monde du jeu pour une recherche efficace.
@@ -116,9 +116,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure Gameplay
 
 ## <a name="metal-enhancements"></a>Améliorations des métaux
 
-Les améliorations suivantes ont été apportées à l’infrastructure métallique dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure métallique dans tvOS 10 :
 
-- les applications et les jeux 3D peuvent désormais utiliser la facettisation pour restituer efficacement des scènes et une géométrie complexes via le GPU.
+- les applications et les jeux 3D peuvent désormais utiliser la _facettisation_ pour restituer efficacement des scènes et une géométrie complexes via le GPU.
 - Utilisez la spécialisation de fonction pour créer une collection hautement optimisée de fonctions de combinaison de matériau et de lumière pour une scène.
 - Fournir un contrôle affiné de l’allocation des ressources pour optimiser les performances des applications basées sur le métal à l’aide de segments de ressources et de cibles de rendu sans mémoire.
 
@@ -128,7 +128,7 @@ Pour plus d’informations, consultez le [Guide de programmation métallique](ht
 
 ## <a name="metal-performance-shaders-enhancements"></a>Améliorations des nuanceurs de performances métalliques
 
-Les améliorations suivantes ont été apportées à l’infrastructure des nuanceurs de performances métalliques dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure des nuanceurs de performances métalliques dans tvOS 10 :
 
 - De nombreux nouveaux noyaux ont été ajoutés à l’infrastructure des nuanceurs de performances métalliques pour permettre à l’application de tirer parti des calculs en parallèle de données hautement optimisés, tels que les conversions d’espace colorimétrique et les opérations de réseau neuronal.
 
@@ -136,7 +136,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure des nuan
 
 ## <a name="modelio-enhancements"></a>Améliorations apportées à ModelIO
 
-Les améliorations suivantes ont été apportées à l’infrastructure ModelIO dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure ModelIO dans tvOS 10 :
 
 - Le format de fichier USD est désormais pris en charge.
 - Utilisez la nouvelle `MDLMaterialPropertyGraph` classe pour prendre en charge facilement les modifications du runtime pour les modèles.
@@ -147,7 +147,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure ModelIO 
 
 ## <a name="scenekit-enhancements"></a>Améliorations apportées à SceneKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure SceneKit dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure SceneKit dans tvOS 10 :
 
 - SceneKit comprend maintenant un nouveau système de rendu physique (PBR) pour des résultats plus réalistes avec la création de ressources plus simple.
 - Utilisez le nouveau modèle [SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) Shading pour produit un large éventail d’effets d’ombrage réalistes tout en exigeant uniquement trois propriétés fondamentales`Diffuse`( `Metalness` , `Roughness`et).
@@ -165,7 +165,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SceneKit
 
 ## <a name="spritekit-enhancements"></a>Améliorations apportées à SpriteKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit dans tvOS 10 :
 
 - Tilemaps prennent désormais `SKTileMapMode`en charge les formes de mosaïque carrée, hexagonale et isométrique pour les jeux 2D, 2.5 d et de défilement latéral à l’aide des classes `SKTileGroupRule` , `SKTileGroup`et `SKTileSet` .
 - Utilisez la nouvelle `SKWarpGeometry` classe pour étirer ou déformer le rendu [SKSpriteNode](https://developer.apple.com/reference/spritekit/skspritenode) ou [SKEffectNode](https://developer.apple.com/reference/spritekit/skeffectnode) . La nouvelle classe [SKAction](https://developer.apple.com/reference/spritekit/skaction) peut être utilisée pour animer des transitions entre des effets de déformation.
@@ -176,7 +176,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SpriteKi
 
 ## <a name="uikit-enhancements"></a>Améliorations apportées à UIKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure UIKit dans tvOS 10:
+Les améliorations suivantes ont été apportées à l’infrastructure UIKit dans tvOS 10 :
 
 - L’API focus a été améliorée pour prendre en charge le focus d’un élément sans vue `UIViews`en plus de. Les éléments qui prennent en charge le `IUIFocusItem` Focus doivent implémenter l’interface.
 - La nouvelle `UIGraphicsRender` classe fournit une méthode orientée objet qui permet de créer des images bitmap ou des fichiers PDF à partir du rendu UIKit ou `UIGraphicsBeginImageContext` des graphiques principaux, et remplace la méthode déconseillée.

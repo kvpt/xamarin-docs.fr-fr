@@ -4,19 +4,19 @@ description: Ce document décrit comment utiliser le thread d’interface utilis
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 6f9f11a84f9a57d699a219958883afae33824e95
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 76733d4efd4ce292da2781c97aef963fb68e3974
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655287"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287876"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Utilisation du thread d’interface utilisateur dans Xamarin. iOS
 
-Les interfaces utilisateur d’application sont toujours monothreads, même dans les appareils multithread: il n’existe qu’une seule représentation de l’écran et toute modification apportée à ce qui est affiché doit être coordonnée par un point d’accès unique. Cela empêche plusieurs threads d’essayer de mettre à jour le même pixel en même temps (par exemple).
+Les interfaces utilisateur d’application sont toujours monothreads, même dans les appareils multithread : il n’existe qu’une seule représentation de l’écran et toute modification apportée à ce qui est affiché doit être coordonnée par un point d’accès unique. Cela empêche plusieurs threads d’essayer de mettre à jour le même pixel en même temps (par exemple).
 
 Votre code doit uniquement apporter des modifications aux contrôles de l’interface utilisateur à partir du thread principal (ou de l’interface utilisateur). Les mises à jour de l’interface utilisateur qui se produisent sur un thread différent (par exemple, un rappel ou un thread d’arrière-plan) peuvent ne pas être rendues à l’écran ou peuvent même provoquer un blocage.
 
@@ -24,7 +24,7 @@ Votre code doit uniquement apporter des modifications aux contrôles de l’inte
 
 Lorsque vous créez des contrôles dans une vue ou que vous gérez un événement initié par l’utilisateur, tel qu’une fonction tactile, le code est déjà en cours d’exécution dans le contexte du thread d’interface utilisateur.
 
-Si le code s’exécute sur un thread d’arrière-plan, dans une tâche ou un rappel, il est probable qu’il ne s’exécute pas sur le thread d’interface utilisateur principal. Dans ce cas, vous devez encapsuler le code dans `InvokeOnMainThread` un `BeginInvokeOnMainThread` appel à ou comme suit:
+Si le code s’exécute sur un thread d’arrière-plan, dans une tâche ou un rappel, il est probable qu’il ne s’exécute pas sur le thread d’interface utilisateur principal. Dans ce cas, vous devez encapsuler le code dans `InvokeOnMainThread` un `BeginInvokeOnMainThread` appel à ou comme suit :
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -34,7 +34,7 @@ InvokeOnMainThread ( () => {
 
 La `InvokeOnMainThread` méthode est définie sur `NSObject` de sorte qu’elle peut être appelée à partir de méthodes définies sur tout objet UIKit (tel qu’un contrôle View ou View Controller).
 
-Lors du débogage des applications Xamarin. iOS, une erreur est levée si votre code tente d’accéder à un contrôle d’interface utilisateur à partir du mauvais thread. Cela vous permet d’identifier et de résoudre ces problèmes avec la méthode InvokeOnMainThread. Cela se produit uniquement lors du débogage et ne génère pas d’erreur dans les versions release. Le message d’erreur s’affiche comme suit:
+Lors du débogage des applications Xamarin. iOS, une erreur est levée si votre code tente d’accéder à un contrôle d’interface utilisateur à partir du mauvais thread. Cela vous permet d’identifier et de résoudre ces problèmes avec la méthode InvokeOnMainThread. Cela se produit uniquement lors du débogage et ne génère pas d’erreur dans les versions release. Le message d’erreur s’affiche comme suit :
 
  ![](ui-thread-images/image10.png "Exécution du thread d’interface utilisateur")
 
@@ -43,7 +43,7 @@ Lors du débogage des applications Xamarin. iOS, une erreur est levée si votre 
 
 ## <a name="background-thread-example"></a>Exemple de thread d’arrière-plan
 
-Voici un exemple qui tente d’accéder à un contrôle d’interface utilisateur ( `UILabel`a) à partir d’un thread d’arrière-plan à l’aide d’un thread simple:
+Voici un exemple qui tente d’accéder à un contrôle d’interface utilisateur ( `UILabel`a) à partir d’un thread d’arrière-plan à l’aide d’un thread simple :
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -51,7 +51,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-Ce code lèvera le en `UIKitThreadAccessException` cours de débogage. Pour résoudre le problème (et vérifier que le contrôle d’interface utilisateur n’est accessible qu’à partir du thread d’interface utilisateur principal), encapsulez tout `InvokeOnMainThread` code qui référence des contrôles d’interface utilisateur à l’intérieur d’une expression comme suit:
+Ce code lèvera le en `UIKitThreadAccessException` cours de débogage. Pour résoudre le problème (et vérifier que le contrôle d’interface utilisateur n’est accessible qu’à partir du thread d’interface utilisateur principal), encapsulez tout `InvokeOnMainThread` code qui référence des contrôles d’interface utilisateur à l’intérieur d’une expression comme suit :
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {

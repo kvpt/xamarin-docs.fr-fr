@@ -4,15 +4,15 @@ description: Cet article décrit les étapes nécessaires à l’installation et
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 24cf255d5cf9269a7d0d485ad8a88abe6842b07a
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865607"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283590"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Configuration d’une application dans iTunes Connect
 
@@ -200,7 +200,7 @@ Cette section de l’enregistrement d’application iTunes Connect fournit l’I
 ### <a name="app-icon"></a>Icône d’application
 
 > [!IMPORTANT]
->  Les icônes d’application ne sont plus envoyées via iTunes Connect. Vous devez les soumettre via l’image **AppIcon** définie dans le fichier **Assets.xcassets** de votre projet. Pour plus d’informations, consultez le guide [Icône de l’App Store](~/ios/app-fundamentals/images-icons/app-store-icon.md).
+> Les icônes d’application ne sont plus envoyées via iTunes Connect. Vous devez les soumettre via l’image **AppIcon** définie dans le fichier **Assets.xcassets** de votre projet. Pour plus d’informations, consultez le guide [Icône de l’App Store](~/ios/app-fundamentals/images-icons/app-store-icon.md).
 
 L’icône d’application est le visage de votre application pour les utilisateurs, elle doit donc être mémorable et s’afficher correctement à une taille réduite. Les icônes mémorables sont nettes, simples et immédiatement reconnaissables.
 
@@ -349,7 +349,7 @@ Pour plus d’informations sur l’utilisation des achats dans l’application a
 
 ## <a name="viewing-application-reviews"></a>Affichage des avis relatifs à l’application
 
-Une fois que votre application a été publiée sur l’App Store, les utilisateurs qui l’ont achetée ou téléchargée gratuitement peuvent rédiger des avis et laisser des évaluations (étoiles). Utilisez cette section pour consulter ces avis. Par exemple :
+Une fois que votre application a été publiée sur l’App Store, les utilisateurs qui l’ont achetée ou téléchargée gratuitement peuvent rédiger des avis et laisser des évaluations (étoiles). Utilisez cette section pour consulter ces avis. Par exemple :
 
 [![](itunesconnect-images/reviews01.png "Affichage des revues de l’application")](itunesconnect-images/reviews01.png#lightbox)
 

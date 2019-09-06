@@ -4,19 +4,19 @@ description: Ce document fournit une introduction générale à Watchos 4, qui d
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/07/2017
-ms.openlocfilehash: e3766815e071c190046cc5bc7d436621bcee3d29
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7f2440cfa7ac3149fd190c6752c9b2829681b602
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651551"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293021"
 ---
 # <a name="introduction-to-watchos-4"></a>Introduction à watchOS 4
 
-Accédez aux nouvelles fonctionnalités de Watchos 4 dans vos applications:
+Accédez aux nouvelles fonctionnalités de Watchos 4 dans vos applications :
 
 * Lisez les données de Altimeter barométrique dans la nouvelle série de Apple Watch 3.
 * Connectez-vous directement aux ressources réseau à l’aide de données cellulaires disponibles sur certains modèles Apple Watch série 3.
@@ -24,7 +24,7 @@ Accédez aux nouvelles fonctionnalités de Watchos 4 dans vos applications:
 * Nouveaux modes d’arrière-plan pour les applications audio et d’entraînement.
 * Nouvelles intentions SiriKit pour les [listes et les notes](~/ios/platform/introduction-to-ios11/sirikit.md).
 
-Modifications depuis Watchos 3:
+Modifications depuis Watchos 3 :
 
 * Le code d’application et l’interface utilisateur s’exécutent dans un processus unique.
 * L’autorisation d’emplacement peut être accordée sur la montre (inutile de demander à l’utilisateur d’accepter sur son téléphone).

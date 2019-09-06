@@ -4,22 +4,22 @@ description: Cet article traite de la création des images nécessaires à l’i
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 25a0a6f5f16b3035307b6b42f1c509401beb3553
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 6a4ea3950b9657e4e04c6465cc0a64ac3c1d266c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647127"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291561"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Icône d’application pour les applications Xamarin.Mac
 
 _Cet article traite de la création des images nécessaires à l’icône d’une application Xamarin.Mac, de leur regroupement dans un fichier .icns et de l’ajout de l’icône dans le projet Xamarin.Mac._
 
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Quand un développeur utilise C# et .NET dans une application Xamarin.Mac, il a accès aux mêmes outils d’image et d’icône qu’un développeur travaillant en *Objective-C* et en *Xcode*.
 

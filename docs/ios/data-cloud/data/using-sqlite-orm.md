@@ -4,40 +4,40 @@ description: La bibliothèque NuGet SQLite.NET PCL fournit un mécanisme d’acc
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 0416aed671c9675e7c2c990eb59a7a4d8cab7888
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 6711a16ba0035190d10687ef821831559c07b797
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199612"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289836"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Utilisation de SQLite.NET avec Xamarin. iOS
 
 La bibliothèque SQLite.NET que Xamarin recommande est un ORM de base qui vous permet de stocker et de récupérer des objets dans la base de données SQLite locale sur un appareil iOS.
-ORM correspond au mappage relationnel d’objet: une API qui vous permet d’enregistrer et de récupérer des «objets» à partir d’une base de données sans écrire d’instructions SQL.
+ORM correspond au mappage relationnel d’objet : une API qui vous permet d’enregistrer et de récupérer des « objets » à partir d’une base de données sans écrire d’instructions SQL.
 
 <a name="Usage"/>
 
 ## <a name="usage"></a>Usage
 
-Pour inclure la bibliothèque SQLite.NET dans une application Xamarin, ajoutez le package NuGet suivant à votre projet:
+Pour inclure la bibliothèque SQLite.NET dans une application Xamarin, ajoutez le package NuGet suivant à votre projet :
 
-- **Nom du package:** SQLite-net-PCL
+- **Nom du package :** SQLite-net-PCL
 - **Auteur :** Frank A. Krueger
 - **ID**  sqlite-net-pcl
-- **URL:** [NuGet.org/packages/SQLite-net-PCL](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **URL :** [NuGet.org/packages/SQLite-net-PCL](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![Package NuGet sqlite.net](using-sqlite-orm-images/image1a-sml.png "Package NuGet sqlite.net")](using-sqlite-orm-images/image1a.png#lightbox)
 
 > [!TIP]
-> Un certain nombre de packages SQLite différents sont disponibles: Veillez à choisir le bon (il est possible qu’il ne s’agit pas du résultat le plus élevé dans la recherche).
+> Un certain nombre de packages SQLite différents sont disponibles : Veillez à choisir le bon (il est possible qu’il ne s’agit pas du résultat le plus élevé dans la recherche).
 
-Une fois la bibliothèque SQLite.NET disponible, suivez ces trois étapes pour l’utiliser pour accéder à une base de données:
+Une fois la bibliothèque SQLite.NET disponible, suivez ces trois étapes pour l’utiliser pour accéder à une base de données :
 
-1. **Ajoutez une instruction using** : ajoutez l’instruction suivante aux C# fichiers où l’accès aux données est requis:
+1. **Ajoutez une instruction using** : ajoutez l’instruction suivante aux C# fichiers où l’accès aux données est requis :
 
     ```csharp
     using SQLite;
@@ -51,14 +51,14 @@ Une fois la bibliothèque SQLite.NET disponible, suivez ces trois étapes pour l
 
     La variable dbPath doit être déterminée conformément aux règles abordées plus haut dans ce document.
 
-1. **Enregistrer des données** -une fois que vous avez créé un objet SQLiteConnection, les commandes de base de données sont exécutées en appelant ses méthodes, telles que CreateTable et insert comme suit:
+1. **Enregistrer des données** -une fois que vous avez créé un objet SQLiteConnection, les commandes de base de données sont exécutées en appelant ses méthodes, telles que CreateTable et insert comme suit :
 
     ```csharp
     db.CreateTable<Stock> ();
     db.Insert (newStock); // after creating the newStock object
     ```
 
-1. **Récupérer des données** : pour récupérer un objet (ou une liste d’objets), utilisez la syntaxe suivante:
+1. **Récupérer des données** : pour récupérer un objet (ou une liste d’objets), utilisez la syntaxe suivante :
 
     ```csharp
     var stock = db.Get<Stock>(5); // primary key id of 5
@@ -73,13 +73,13 @@ L’exemple de code *DataAccess_Basic* pour ce document ressemble à ce qui suit
 
  [![exemple SQLite.NET iOS](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
-L’exemple de code suivant montre une interaction de base de données entière à l’aide de la bibliothèque SQLite.NET pour encapsuler l’accès à la base de données sous-jacent. Elle indique:
+L’exemple de code suivant montre une interaction de base de données entière à l’aide de la bibliothèque SQLite.NET pour encapsuler l’accès à la base de données sous-jacent. Elle indique :
 
 1. Création du fichier de base de données
 1. Insertion de données en créant des objets, puis en les enregistrant
 1. Interrogation des données
 
-Vous devez inclure les espaces de noms suivants:
+Vous devez inclure les espaces de noms suivants :
 
 ```csharp
 using SQLite; // from the github SQLite.cs class
@@ -122,17 +122,17 @@ public static void DoSomeDataAccess () {
 }
 ```
 
-Si vous `[Table]` utilisez l’attribut sans spécifier de paramètre de nom de table, la table de base de données sous-jacente aura le même nom que la classe (dans le cas présent, «stock»). Le nom réel de la table est important si vous écrivez des requêtes SQL directement sur la base de données au lieu d’utiliser les méthodes d’accès aux données ORM. De même, `[Column("_id")]` l’attribut est facultatif et, s’il est absent, une colonne est ajoutée à la table avec le même nom que la propriété dans la classe.
+Si vous `[Table]` utilisez l’attribut sans spécifier de paramètre de nom de table, la table de base de données sous-jacente aura le même nom que la classe (dans le cas présent, « stock »). Le nom réel de la table est important si vous écrivez des requêtes SQL directement sur la base de données au lieu d’utiliser les méthodes d’accès aux données ORM. De même, `[Column("_id")]` l’attribut est facultatif et, s’il est absent, une colonne est ajoutée à la table avec le même nom que la propriété dans la classe.
 
 ## <a name="sqlite-attributes"></a>Attributs SQLite
 
-Les attributs courants que vous pouvez appliquer à vos classes pour contrôler la façon dont ils sont stockés dans la base de données sous-jacente sont les suivants:
+Les attributs courants que vous pouvez appliquer à vos classes pour contrôler la façon dont ils sont stockés dans la base de données sous-jacente sont les suivants :
 
 - **[PrimaryKey]** : cet attribut peut être appliqué à une propriété de type entier pour le forcer à être la clé primaire de la table sous-jacente. Les clés primaires composites ne sont pas prises en charge.
 - **[AutoIncrement]** : cet attribut entraîne l’incrémentation automatique de la valeur d’une propriété entière pour chaque nouvel objet inséré dans la base de données.
 - **[Column (Name)]** : le fait de fournir `name` le paramètre facultatif remplace la valeur par défaut du nom de la colonne de base de données sous-jacente (qui est identique à la propriété).
 - **[Table (Name)]** : marque la classe comme pouvant être stockée dans une table SQLite sous-jacente. La spécification du paramètre de nom facultatif remplace la valeur par défaut du nom de la table de base de données sous-jacente (qui est identique au nom de la classe).
-- **[MaxLength (valeur)]** : limite la longueur d’une propriété de texte, en cas de tentative d’insertion d’une base de données. La consommation de code doit valider cela avant l’insertion de l’objet, car cet attribut est uniquement «Checked» lorsqu’une opération d’insertion ou de mise à jour de base de données est tentée.
+- **[MaxLength (valeur)]** : limite la longueur d’une propriété de texte, en cas de tentative d’insertion d’une base de données. La consommation de code doit valider cela avant l’insertion de l’objet, car cet attribut est uniquement « Checked » lorsqu’une opération d’insertion ou de mise à jour de base de données est tentée.
 - **[Ignore]** : force sqlite.net à ignorer cette propriété. Cela s’avère particulièrement utile pour les propriétés qui ont un type qui ne peut pas être stocké dans la base de données, ou les propriétés qui modélisent des collections qui ne peuvent pas être résolues automatiquement, SQLite.
 - **[Unique]** : garantit que les valeurs de la colonne de base de données sous-jacente sont uniques.
 
@@ -141,7 +141,7 @@ La plupart de ces attributs sont facultatifs, SQLite utilise les valeurs par dé
 
 ## <a name="more-complex-queries"></a>Requêtes plus complexes
 
-Les méthodes suivantes sur `SQLiteConnection` peuvent être utilisées pour effectuer d’autres opérations sur les données:
+Les méthodes suivantes sur `SQLiteConnection` peuvent être utilisées pour effectuer d’autres opérations sur les données :
 
 - **Insert** : ajoute un nouvel objet à la base de données.
 - **Obtenir\<T >** : tente de récupérer un objet à l’aide de la clé primaire.
@@ -161,7 +161,7 @@ var existingItem = db.Get<Stock>(3);
 
 ### <a name="selecting-an-object-using-linq"></a>Sélection d’un objet à l’aide de LINQ
 
-Les méthodes qui retournent\<des collections prennent en charge IEnumerable T > afin que vous puissiez utiliser LINQ pour interroger ou trier le contenu d’une table. Le code suivant montre un exemple utilisant LINQ pour filtrer toutes les entrées qui commencent par la lettre «A»:
+Les méthodes qui retournent\<des collections prennent en charge IEnumerable T > afin que vous puissiez utiliser LINQ pour interroger ou trier le contenu d’une table. Le code suivant montre un exemple utilisant LINQ pour filtrer toutes les entrées qui commencent par la lettre « A » :
 
 ```csharp
 var apple = from s in db.Table<Stock>()
@@ -172,7 +172,7 @@ Console.WriteLine ("-> " + apple.FirstOrDefault ().Symbol);
 
 ### <a name="selecting-an-object-using-sql"></a>Sélection d’un objet à l’aide de SQL
 
-Même si SQLite.Net peut fournir un accès basé sur les objets à vos données, vous pouvez parfois avoir besoin d’effectuer une requête plus complexe que LINQ n’autorise (ou vous pouvez avoir besoin de performances plus rapides). Vous pouvez utiliser des commandes SQL avec la méthode Query, comme illustré ici:
+Même si SQLite.Net peut fournir un accès basé sur les objets à vos données, vous pouvez parfois avoir besoin d’effectuer une requête plus complexe que LINQ n’autorise (ou vous pouvez avoir besoin de performances plus rapides). Vous pouvez utiliser des commandes SQL avec la méthode Query, comme illustré ici :
 
 ```csharp
 var stocksStartingWithA = db.Query<Stock>("SELECT * FROM Items WHERE Symbol = ?", "A");
@@ -186,7 +186,7 @@ foreach (var s in stocksStartingWithA) {
 
 ### <a name="deleting-an-object"></a>Suppression d’un objet
 
-La clé primaire est utilisée pour supprimer la ligne, comme illustré ici:
+La clé primaire est utilisée pour supprimer la ligne, comme illustré ici :
 
 ```csharp
 var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
@@ -196,7 +196,7 @@ Vous pouvez vérifier le `rowcount` pour confirmer le nombre de lignes affectée
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>Utilisation de SQLite.NET avec plusieurs threads
 
-SQLite prend en charge trois modes de thread différents: *Thread unique*, multithreadet *sérialisé*. Si vous souhaitez accéder à la base de données à partir de plusieurs threads sans aucune restriction, vous pouvez configurer SQLite pour utiliser le mode de thread **sérialisé** . Il est important de définir ce mode tôt dans votre application (par exemple, au début de la `OnCreate` méthode).
+SQLite prend en charge trois modes de thread différents : *Thread unique* *, multithread et* *sérialisé*. Si vous souhaitez accéder à la base de données à partir de plusieurs threads sans aucune restriction, vous pouvez configurer SQLite pour utiliser le mode de thread **sérialisé** . Il est important de définir ce mode tôt dans votre application (par exemple, au début de la `OnCreate` méthode).
 
 Pour modifier le mode de thread, appelez `SqliteConnection.SetConfig` qui se trouve dans `Mono.Data.Sqlite` l’espace de noms. Par exemple, cette ligne de code configure SQLite pour le mode **sérialisé** :
 

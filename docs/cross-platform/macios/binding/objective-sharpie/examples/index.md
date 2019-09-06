@@ -1,28 +1,28 @@
 ---
-title: Exemples d’objectifs Sharpie
-description: Ce document des liens vers des guides qui expliquent comment utiliser l’outil objectif Sharpie, qui est utilisé pour automatiser le processus de création C# liaisons au code Objective-C.
+title: Exemples d’objectifs nets
+description: Ce document contient des liens vers divers guides qui décrivent comment utiliser l’outil Sharpity objective, qui est utilisé pour automatiser le C# processus de création de liaisons au code Objective-C.
 ms.prod: xamarin
 ms.assetid: 1ACB0935-6D5F-4A5F-BE28-08DA1B675F0E
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: c3232282b788edbc401f889f5277d0227a1572b8
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b2b595187ec8d011f45e26ea5139c253beb5c453
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977738"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290697"
 ---
-# <a name="objective-sharpie-examples"></a>Exemples d’objectifs Sharpie
+# <a name="objective-sharpie-examples"></a>Exemples d’objectifs nets
 
-Suivez ces exemples pour mieux comprendre le fonctionnement de l’objectif Sharpie :
+Pour mieux comprendre le fonctionnement de la finesse de précision, suivez les exemples suivants :
 
 - [**Xcode**](xcode.md)
 - [**Cocoapod**](cocoapod.md)
-- [**Avancé (manuel)**](advanced.md)
+- [**Avancé (manuel)** ](advanced.md)
 
-Le [connaître la procédure détaillée pour iOS](~/ios/platform/binding-objective-c/walkthrough.md) fournit un ensemble plus détaillé de pas à pas d’instructions à suivre.
+La [procédure pas à pas complète pour iOS](~/ios/platform/binding-objective-c/walkthrough.md) fournit un ensemble d’instructions pas à pas détaillées à suivre.
 
-## <a name="completed-ios-bindings"></a>IOS terminée liaisons
+## <a name="completed-ios-bindings"></a>Liaisons iOS terminées
 
-Un nombre de liaisons terminés peut être affiché ou téléchargé à partir de la [référentiel monotouch-bindings](https://github.com/mono/monotouch-bindings/).
+Un certain nombre de liaisons terminées peuvent être affichées ou téléchargées à partir du [dépôt github de liaisons monotactiles](https://github.com/mono/monotouch-bindings/).

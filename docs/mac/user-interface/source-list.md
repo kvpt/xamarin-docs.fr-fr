@@ -4,15 +4,15 @@ description: Cet article traite de l’utilisation des listes de sources dans un
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 499edcb1420b311c519f1665b4d2effd9088e9e7
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 63ce931abfbe7a39108ae3f8210209b7d43827ed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065380"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278557"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Listes de sources dans Xamarin. Mac
 
@@ -52,7 +52,7 @@ Tout d’abord, nous allons créer `SourceListItem` une classe pour stocker les 
 
 [![](source-list-images/source01.png "Ajout d’une classe vide")](source-list-images/source01.png#lightbox)
 
-Faites en `SourceListItem.cs` sorte que le fichier ressemble à ce qui suit: 
+Faites en `SourceListItem.cs` sorte que le fichier ressemble à ce qui suit : 
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `SourceListDataSource` pour le **nom** et cliquez sur le bouton **nouveau** . Faites en `SourceListDataSource.cs` sorte que le fichier ressemble à ce qui suit:
+Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `SourceListDataSource` pour le **nom** et cliquez sur le bouton **nouveau** . Faites en `SourceListDataSource.cs` sorte que le fichier ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -354,7 +354,7 @@ namespace MacOutlines
 
 Cela permet de fournir les données de notre liste source.
 
-Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `SourceListDelegate` pour le **nom** et cliquez sur le bouton **nouveau** . Faites en `SourceListDelegate.cs` sorte que le fichier ressemble à ce qui suit:
+Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `SourceListDelegate` pour le **nom** et cliquez sur le bouton **nouveau** . Faites en `SourceListDelegate.cs` sorte que le fichier ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -446,7 +446,7 @@ namespace MacOutlines
 
 Cela permet de fournir le comportement de notre liste source.
 
-Enfin, dans la **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `SourceListView` pour le **nom** et cliquez sur le bouton **nouveau** . Faites en `SourceListView.cs` sorte que le fichier ressemble à ce qui suit:
+Enfin, dans la **Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **un nouveau fichier...** Sélectionnez classe **générale** > **vide**, entrez `SourceListView` pour le **nom** et cliquez sur le bouton **nouveau** . Faites en `SourceListView.cs` sorte que le fichier ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -538,11 +538,11 @@ Ensuite, faites glisser une liste source à partir de l' **inspecteur de bibliot
 
 [![](source-list-images/source02.png "Modification des contraintes")](source-list-images/source02.png#lightbox)
 
-Ensuite, basculez vers la **vue d’identité**, sélectionnez la liste source, puis remplacez sa `SourceListView`classe par:
+Ensuite, basculez vers la **vue d’identité**, sélectionnez la liste source, puis remplacez sa `SourceListView`classe par :
 
 [![](source-list-images/source03.png "Définition du nom de la classe")](source-list-images/source03.png#lightbox)
 
-Enfin, créez une **sortie** pour notre liste source appelée `SourceList` dans le `ViewController.h` fichier:
+Enfin, créez une **sortie** pour notre liste source appelée `SourceList` dans le `ViewController.h` fichier :
 
 [![](source-list-images/source04.png "Configuration d’une prise")](source-list-images/source04.png#lightbox)
 
@@ -552,7 +552,7 @@ Enregistrez vos modifications et revenez à Visual Studio pour Mac pour effectue
 
 ## <a name="populating-the-source-list"></a>Remplissage de la liste source
 
-Nous allons modifier le `RotationWindow.cs` fichier dans Visual Studio pour Mac et faire en sorte `AwakeFromNib` que sa méthode ressemble à ce qui suit:
+Nous allons modifier le `RotationWindow.cs` fichier dans Visual Studio pour Mac et faire en sorte `AwakeFromNib` que sa méthode ressemble à ce qui suit :
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-La `Initialize ()` méthode doit être appelée par rapport à la **sortie** de la liste source _avant_ l’ajout d’éléments à celle-ci. Pour chaque groupe d’éléments, nous créons un élément parent, puis ajoutons les sous-éléments à cet élément de groupe. Chaque groupe est ensuite ajouté à la collection `SourceList.AddItem (...)`de la liste source. Les deux dernières lignes chargent les données de la liste source et développent tous les groupes:
+La `Initialize ()` méthode doit être appelée par rapport à la **sortie** de la liste source _avant_ l’ajout d’éléments à celle-ci. Pour chaque groupe d’éléments, nous créons un élément parent, puis ajoutons les sous-éléments à cet élément de groupe. Chaque groupe est ensuite ajouté à la collection `SourceList.AddItem (...)`de la liste source. Les deux dernières lignes chargent les données de la liste source et développent tous les groupes :
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-Enfin, modifiez le `AppDelegate.cs` fichier et `DidFinishLaunching` faites en sorte que la méthode ressemble à ce qui suit:
+Enfin, modifiez le `AppDelegate.cs` fichier et `DidFinishLaunching` faites en sorte que la méthode ressemble à ce qui suit :
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -612,7 +612,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-Si nous exécutons notre application, les éléments suivants s’affichent:
+Si nous exécutons notre application, les éléments suivants s’affichent :
 
 [![](source-list-images/source05.png "Exemple d’exécution d’application")](source-list-images/source05.png#lightbox)
 

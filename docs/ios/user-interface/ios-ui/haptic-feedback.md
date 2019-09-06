@@ -4,15 +4,15 @@ description: Ce document décrit comment fournir des commentaires haptique dans 
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 9054135713837374dade958b3ccb35cc239bdb94
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 112ee17eab872f9265687869bec82e72f44e81da
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655873"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287089"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Fournir des commentaires haptique dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ ms.locfileid: "68655873"
 
 ## <a name="overview"></a>Présentation
 
-Sur les iPhone 7 et iPhone 7 plus, Apple a inclus de nouvelles réponses haptique qui offrent des moyens supplémentaires pour l’engagement physique de l’utilisateur. Les commentaires haptique (souvent appelés «haptiques») utilisent le sens du toucher (par force, vibration ou motion) dans la conception de l’interface utilisateur. Utilisez ces nouvelles options de commentaires tactiles pour attirer l’attention de l’utilisateur et renforcer ses actions.
+Sur les iPhone 7 et iPhone 7 plus, Apple a inclus de nouvelles réponses haptique qui offrent des moyens supplémentaires pour l’engagement physique de l’utilisateur. Les commentaires haptique (souvent appelés « haptiques ») utilisent le sens du toucher (par force, vibration ou motion) dans la conception de l’interface utilisateur. Utilisez ces nouvelles options de commentaires tactiles pour attirer l’attention de l’utilisateur et renforcer ses actions.
 
 Les rubriques suivantes sont traitées en détail :
 
@@ -35,9 +35,9 @@ Les rubriques suivantes sont traitées en détail :
 
 Plusieurs éléments d’interface utilisateur intégrés fournissent déjà des commentaires haptique tels que des sélecteurs, des commutateurs et des curseurs. iOS 10 ajoute désormais la possibilité de déclencher par programmation des haptique à l’aide d’une sous-classe `UIFeedbackGenerator` concrète de la classe.
 
-Le développeur peut utiliser l’une des sous `UIFeedbackGenerator` -classes suivantes pour déclencher par programmation des commentaires haptique:
+Le développeur peut utiliser l’une des sous `UIFeedbackGenerator` -classes suivantes pour déclencher par programmation des commentaires haptique :
 
-- `UIImpactFeedbackGenerator`-Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un «Thud» lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
+- `UIImpactFeedbackGenerator`-Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un « Thud » lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
 - `UINotificationFeedbackGenerator`-Utilisez ce générateur de commentaires pour les notifications telles qu’une action qui se termine, échoue ou tout autre type d’avertissement.
 - `UISelectionFeedbackGenerator`-Utilisez ce générateur de commentaires pour une sélection qui change activement, par exemple le choix d’un élément dans une liste.
 
@@ -45,9 +45,9 @@ Le développeur peut utiliser l’une des sous `UIFeedbackGenerator` -classes su
 
 ### <a name="uiimpactfeedbackgenerator"></a>UIImpactFeedbackGenerator
 
-Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un «Thud» lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
+Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un « Thud » lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
 
-Utilisez le code suivant pour déclencher des commentaires sur l’impact:
+Utilisez le code suivant pour déclencher des commentaires sur l’impact :
 
 ```csharp
 using UIKit;
@@ -61,7 +61,7 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-Lorsque le développeur crée une nouvelle instance de la `UIImpactFeedbackGenerator` classe, il fournit `UIImpactFeedbackStyle` une spécification de la force des commentaires comme suit:
+Lorsque le développeur crée une nouvelle instance de la `UIImpactFeedbackGenerator` classe, il fournit `UIImpactFeedbackStyle` une spécification de la force des commentaires comme suit :
 
 - `Heavy`
 - `Medium`
@@ -77,7 +77,7 @@ La `ImpactOccurred` méthode déclenche ensuite des commentaires haptique.
 
 Utilisez ce générateur de commentaires pour les notifications telles qu’une action qui se termine, échoue ou tout autre type d’avertissement.
 
-Utilisez le code suivant pour déclencher des commentaires sur les notifications:
+Utilisez le code suivant pour déclencher des commentaires sur les notifications :
 
 ```csharp
 using UIKit;
@@ -93,7 +93,7 @@ notification.NotificationOccurred (UINotificationFeedbackType.Error);
 
 Une nouvelle instance de la `UINotificationFeedbackGenerator` classe est créée et sa `Prepare` méthode est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
 
-La `NotificationOccurred` méthode est appelée pour déclencher un retour haptique avec `UINotificationFeedbackType` un donné de:
+La `NotificationOccurred` méthode est appelée pour déclencher un retour haptique avec `UINotificationFeedbackType` un donné de :
 
 - `Success`
 - `Warning`
@@ -105,7 +105,7 @@ La `NotificationOccurred` méthode est appelée pour déclencher un retour hapti
 
 Utilisez ce générateur de commentaires pour une sélection qui change activement, par exemple le choix d’un élément dans une liste.
 
-Utilisez le code suivant pour déclencher les commentaires de sélection:
+Utilisez le code suivant pour déclencher les commentaires de sélection :
 
 ```csharp
 using UIKit;

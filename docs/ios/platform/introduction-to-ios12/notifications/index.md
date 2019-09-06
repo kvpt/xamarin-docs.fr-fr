@@ -1,42 +1,42 @@
 ---
 title: Notifications dans iOS 12
-description: 'Ce document des liens vers des guides qui expliquent comment utiliser diverses fonctionnalités liées aux notifications introduites dans iOS 12 : notifications provisoires notifications groupées, notification, notifications interactives, la gestion des boutons d’action de notification dynamique alertes critiques et.'
+description: 'Ce document contient des liens vers des guides qui décrivent comment utiliser diverses fonctionnalités liées aux notifications introduites dans iOS 12 : notifications provisoires, notifications groupées, gestion des notifications, notifications interactives, boutons d’action de notification dynamique, alertes critiques et.'
 ms.prod: xamarin
 ms.assetid: 137C719D-6D97-4D5B-9877-F6F35BF85FF0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 8ee42c04c5d79bfd39c34550b5f77427af8f835d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 75a3505294b612789a2e2fc2226e6d6f811f80e9
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035117"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291257"
 ---
 # <a name="notifications-in-ios-12"></a>Notifications dans iOS 12
 
 ## <a name="critical-alertscritical-alertsmd"></a>[Alertes critiques](critical-alerts.md)
 
-iOS 12 rend possible envoyer des alertes critiques. Alertes critiques un signal sonore, quel que soit ou non ne pas déranger est activé ou le commutateur de sonnerie est désactivée.
+iOS 12 permet d’envoyer des alertes critiques. Les alertes critiques lisent un son, que la valeur ne pas déranger soit activée ou non, ou que le commutateur de sonnerie soit désactivé.
 
 ## <a name="dynamic-notification-action-buttonsdynamic-actionsmd"></a>[Boutons d’action de notification dynamique](dynamic-actions.md)
 
-Avec iOS 12, les notifications peuvent maintenant modifier leurs boutons d’action lors de l’exécution.
-Cela rend possible afficher les actions plus pertinentes pour le contenu de la notification et l’interaction utilisateur avec lui.
+Avec iOS 12, les notifications peuvent maintenant modifier leurs boutons d’action au moment de l’exécution.
+Cela permet d’afficher des actions plus pertinentes pour le contenu de la notification et l’interaction de l’utilisateur avec lui.
 
 ## <a name="grouped-notificationsgroupedmd"></a>[Notifications groupées](grouped.md)
 
-Afin d’aider les utilisateurs à gérer le nombre de notifications qu’ils reçoivent, iOS 12 peut regrouper les notifications par application ou par thread.
+Afin d’aider les utilisateurs à gérer les nombreuses notifications qu’ils reçoivent, iOS 12 peut regrouper les notifications par application ou par thread.
 
 ## <a name="interactive-notificationsinteractivemd"></a>[Notifications interactives](interactive.md)
 
-Dans iOS 12, interface d’utilisateur personnalisée d’une notification peut inclure des contrôles interactifs.
+Dans iOS 12, l’interface utilisateur personnalisée d’une notification peut inclure des contrôles interactifs.
 
 ## <a name="notification-managementmanagementmd"></a>[Gestion des notifications](management.md)
 
-iOS 12 peut lien ciblé à l’écran de gestion de notification d’une application, ce qui facilite pour les utilisateurs à activer ou désactiver les types de notifications spécifiques.
+iOS 12 peut créer des liens détaillés vers l’écran de gestion des notifications d’une application, ce qui permet aux utilisateurs d’activer ou de désactiver des types spécifiques de notifications.
 
 ## <a name="provisional-notificationsprovisionalmd"></a>[Notifications provisoires](provisional.md)
 
-Notifications provisoires permettent aux applications afficher les notifications silencieuses sans que l’utilisateur participer. Notifications quiet ne pas émettre un signal sonore et apparaissent uniquement dans le centre de Notification. Ils fournissent un moyen aux utilisateurs d’afficher un aperçu des notifications, une application envoie avant de décider s’il faut autoriser ou interdire les.
+Les notifications provisoires permettent aux applications d’afficher des notifications silencieuses sans que l’utilisateur soit obligé de s’abonner. Les notifications calmes ne lisent aucun son et apparaissent uniquement dans le centre de notifications. Ils offrent aux utilisateurs un moyen d’afficher un aperçu des notifications envoyées par une application avant de décider de les autoriser ou de les interdire.

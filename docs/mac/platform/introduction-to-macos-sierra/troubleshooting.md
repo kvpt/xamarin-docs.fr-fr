@@ -4,21 +4,21 @@ description: Ce document fournit plusieurs conseils de dépannage pour l’utili
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/22/2016
-ms.openlocfilehash: 8959527f0be7b4d5a3e0a2de5f0db4a4a25fa305
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 51276a7682599c6480c637fac385992feaf06e49
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647891"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278893"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-résolution des problèmes macOS Sierra
 
 _Cet article fournit plusieurs conseils pour la résolution des problèmes liés à l’utilisation de macOS Sierra dans les applications Xamarin. Mac._
 
-Les sections suivantes répertorient certains problèmes connus qui peuvent se produire lors de l’utilisation de macOS Sierra avec Xamarin. Mac et la solution à ces problèmes:
+Les sections suivantes répertorient certains problèmes connus qui peuvent se produire lors de l’utilisation de macOS Sierra avec Xamarin. Mac et la solution à ces problèmes :
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
@@ -66,7 +66,7 @@ La `HTTPBodyStream` propriété de la `NSMutableURLRequest` classe doit être d�
 
 ## <a name="cloudkit"></a>CloudKit
 
-Les opérations de longue durée renverront un _«vous n’êtes pas autorisé à enregistrer le fichier»._ Erreurs.
+Les opérations de longue durée renverront un _« vous n’êtes pas autorisé à enregistrer le fichier »._ Erreurs.
 
 <a name="CoreImage" />
 

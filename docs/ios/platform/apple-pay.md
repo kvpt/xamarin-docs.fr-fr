@@ -4,15 +4,15 @@ description: Ce guide explore la configuration de l’environnement Xamarin. iOS
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: cd5293e90caef81c875c0b06b9e5db06cd562655
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1cf28f83302d5035652df05aee26a6646df29fc0
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620523"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291813"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay dans Xamarin. iOS
 
@@ -24,7 +24,7 @@ Apple Pay a été introduite avec iOS 8, permettant aux utilisateurs de payer de
 
 Apple Pay n’est disponible que dans iOS 8 et versions ultérieures, et nécessite donc au minimum Xcode 6.
 
-Les éléments suivants sont également requis pour intégrer Apple Pay à votre application:
+Les éléments suivants sont également requis pour intégrer Apple Pay à votre application :
 
 - Plateforme du processeur de paiement
 - Identificateur de vendeur
@@ -35,9 +35,9 @@ Ce document examine ces éléments plus en détail.
 
 ## <a name="differences-between-apple-pay-and-iap"></a>Différences entre Apple Pay et IAP
 
-La principale différence entre les Apple Pay et les *achats dans l’application* (IAP) concerne les produits qu’ils vendent. Les biens *physiques* sont vendus par le biais de Apple Pay; les aliments, le logement et le divertissement physique (tels que les tickets de cinéma) sont tous des exemples. En revanche, les IAP vendent des biens *virtuels* , tels qu’un contenu supplémentaire ou Premium, ainsi que des abonnements, pensez à des mois supplémentaires d’un service de streaming, ou à des vies supplémentaires dans un jeu.
+La principale différence entre les Apple Pay et les *achats dans l’application* (IAP) concerne les produits qu’ils vendent. Les biens *physiques* sont vendus par le biais de Apple Pay ; les aliments, le logement et le divertissement physique (tels que les tickets de cinéma) sont tous des exemples. En revanche, les IAP vendent des biens *virtuels* , tels qu’un contenu supplémentaire ou Premium, ainsi que des abonnements, pensez à des mois supplémentaires d’un service de streaming, ou à des vies supplémentaires dans un jeu.
 
-Les frameworks utilisés sont également une différence clé; [PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) est utilisé pour Apple Pay, tandis que [STOREKIT](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) fournit l’API Framework pour l’IAP.
+Les frameworks utilisés sont également une différence clé ; [PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) est utilisé pour Apple Pay, tandis que [STOREKIT](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) fournit l’API Framework pour l’IAP.
 
 Avec Apple Pay, Apple [déclare](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) qu’il n’y a pas de frais pour les utilisateurs, les commerçants ou les développeurs à utiliser Apple Pay pour les paiements». En comparaison, l’IAP a une facturation de 30% pour chaque transaction. En outre, avec Apple Pay, la transaction ne passe pas par Apple, mais elle passe par une plateforme de paiement.
 
@@ -47,7 +47,7 @@ L’une des parties fondamentales de Apple Pay est le traitement des paiements. 
 - comme détaillé dans le [Guide de traitement des paiements](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)d’Apple.
 Les plateformes de traitement des paiements, en revanche, gèrent ces opérations pour vous, ce qui vous permet de vous concentrer sur la création de votre application.
 
-Deux options sont disponibles:
+Deux options sont disponibles :
 
 - **Stripe** -Inscrivez-vous sur [Stripe.com](https://stripe.com/) pour accéder à leurs API.
 
@@ -55,17 +55,17 @@ Deux options sont disponibles:
 
 ## <a name="provisioning-for-apple-pay"></a>Approvisionnement pour Apple Pay
 
-La configuration d’une application pour qu’elle utilise Apple Pay nécessite une configuration sur le portail des développeurs Apple et dans votre application. Vous devez suivre un certain nombre d’étapes pour configurer correctement votre application pour Apple Pay:
+La configuration d’une application pour qu’elle utilise Apple Pay nécessite une configuration sur le portail des développeurs Apple et dans votre application. Vous devez suivre un certain nombre d’étapes pour configurer correctement votre application pour Apple Pay :
 
-1. Créer un ID de marchand:
+1. Créer un ID de marchand :
     - Suivez les étapes [ci-dessous](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#merchantid) .
-2. Créez un ID d’application avec la fonction appliquer le paiement et ajoutez-y le marchand:
+2. Créez un ID d’application avec la fonction appliquer le paiement et ajoutez-y le marchand :
     - Suivez les étapes [ci-dessous](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#appid) .
-3. Générez un certificat pour l’ID de commerçant:
+3. Générez un certificat pour l’ID de commerçant :
     - Suivez les étapes [ci-dessous](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#certificate) .
-4. Générez un profil de provisionnement avec l’ID d’application nouvellement créé:
+4. Générez un profil de provisionnement avec l’ID d’application nouvellement créé :
     - Suivez les étapes [ci-dessous](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning) .
-5. Ajoutez Apple Pay droits:
+5. Ajoutez Apple Pay droits :
     - Sélectionnez Apple Pay habilitation comme détaillé [ici](~/ios/deploy-test/provisioning/entitlements.md), ou ajoutez manuellement la paire clé/valeur au fichier à partir d' [ici](~/ios/deploy-test/provisioning/entitlements.md)
 
 ## <a name="working-with-apple-pay"></a>Utilisation de Apple Pay
@@ -105,7 +105,7 @@ Pour plus d’informations, reportez-vous à la [configuration de Apple Pay](~/i
 
 Avec iOS 10, Apple a introduit un nouvel environnement de test qui permet au développeur d’approvisionner des cartes de paiement de test directement sur un appareil iOS. Ce nouvel environnement de test retourne ensuite les données de paiement de test chiffrées à l’application.
 
-Pour activer le nouvel environnement de test, procédez comme suit:
+Pour activer le nouvel environnement de test, procédez comme suit :
 
 1. Créez un nouveau compte de test iCloud dans iTunes Connect.
 2. Connectez-vous à l’appareil iOS avec le nouveau compte de test.

@@ -1,20 +1,20 @@
 ---
-title: 'Procédure pas à pas: utilisation de notifications locales dans Xamarin. iOS'
+title: 'Procédure pas à pas : utilisation de notifications locales dans Xamarin. iOS'
 description: Dans cette section, nous allons découvrir comment utiliser des notifications locales dans une application Xamarin. iOS. Il illustre les principes de base de la création et de la publication d’une notification qui contiendra une alerte lorsqu’elle sera reçue par l’application.
 ms.prod: xamarin
 ms.assetid: 32B9C6F0-2BB3-4295-99CB-A75418969A62
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 376f046769e27586d9611d634aef89811c7b3be8
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200381"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290457"
 ---
-# <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Procédure pas à pas: utilisation de notifications locales dans Xamarin. iOS
+# <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Procédure pas à pas : utilisation de notifications locales dans Xamarin. iOS
 
 _Dans cette section, nous allons découvrir comment utiliser des notifications locales dans une application Xamarin. iOS. Il illustre les principes de base de la création et de la publication d’une notification qui contiendra une alerte lorsqu’elle sera reçue par l’application._
 
@@ -27,10 +27,10 @@ Laissez-vous créer une application simple qui affichera les notifications local
 
 
 1. Dans Visual Studio pour Mac, créez une solution iOS de vue unique et appelez- `Notifications`la.
-1. Ouvrez le `Main.storyboard` fichier, puis faites glisser un bouton sur la vue. Nommez lebouton Button et donnez-lui le titre **Ajouter une notification**. Vous pouvez également définir des [contraintes](~/ios/user-interface/designer/designer-auto-layout.md) sur le bouton à ce stade: 
+1. Ouvrez le `Main.storyboard` fichier, puis faites glisser un bouton sur la vue. Nommez le **bouton Button et**donnez-lui le titre **Ajouter une notification**. Vous pouvez également définir des [contraintes](~/ios/user-interface/designer/designer-auto-layout.md) sur le bouton à ce stade : 
 
     ![](local-notifications-in-ios-walkthrough-images/image3.png "Définition de certaines contraintes sur le bouton")
-1. Modifiez la `ViewController` classe, puis ajoutez le gestionnaire d’événements suivant à la méthode ViewDidLoad:
+1. Modifiez la `ViewController` classe, puis ajoutez le gestionnaire d’événements suivant à la méthode ViewDidLoad :
 
     ```csharp
     button.TouchUpInside += (sender, e) =>
@@ -58,7 +58,7 @@ Laissez-vous créer une application simple qui affichera les notifications local
 
     Ce code crée une notification qui utilise un son, définit la valeur du badge d’icône sur 1 et affiche une alerte à l’utilisateur.
 
-1. Modifiez ensuite le fichier `AppDelegate.cs`, puis ajoutez le code suivant à la `FinishedLaunching` méthode. Nous avons vérifié que l’appareil exécute iOS 8, si c’est le cas, nous devons demander à l’utilisateur l’autorisation de recevoir des notifications:
+1. Modifiez ensuite le fichier `AppDelegate.cs`, puis ajoutez le code suivant à la `FinishedLaunching` méthode. Nous avons vérifié que l’appareil exécute iOS 8, si c’est le cas, nous devons **demander à l'** utilisateur l’autorisation de recevoir des notifications :
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -70,7 +70,7 @@ Laissez-vous créer une application simple qui affichera les notifications local
     }
     ```
 
-1. Toujours dans `AppDelegate.cs`, ajoutez la méthode suivante qui sera appelée lors de la réception d’une notification:
+1. Toujours dans `AppDelegate.cs`, ajoutez la méthode suivante qui sera appelée lors de la réception d’une notification :
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -86,7 +86,7 @@ Laissez-vous créer une application simple qui affichera les notifications local
     }
     ```
 
-1. Nous devons gérer le cas dans lequel la notification a été lancée en raison d’une notification locale. Modifiez la méthode `FinishedLaunching` dans la `AppDelegate` pour inclure l’extrait de code suivant:
+1. Nous devons gérer le cas dans lequel la notification a été lancée en raison d’une notification locale. Modifiez la méthode `FinishedLaunching` dans la `AppDelegate` pour inclure l’extrait de code suivant :
 
 
     ```csharp
@@ -112,7 +112,7 @@ Laissez-vous créer une application simple qui affichera les notifications local
     }
     ```
 
-1. Enfin, exécutez l’application. Sur iOS 8, vous êtes invité à autoriser les notifications. Cliquez sur **OK** , puis sur le bouton **Ajouter une notification** . Après une brève pause, vous devriez voir la boîte de dialogue d’alerte, comme illustré dans les captures d’écran suivantes:
+1. Enfin, exécutez l’application. Sur iOS 8, vous êtes invité à autoriser les notifications. Cliquez sur **OK** , puis sur le bouton **Ajouter une notification** . Après une brève pause, vous devriez voir la boîte de dialogue d’alerte, comme illustré dans les captures d’écran suivantes :
 
     ![](local-notifications-in-ios-walkthrough-images/image0.png "Confirmation de la capacité à envoyer des notifications") ![](local-notifications-in-ios-walkthrough-images/image1.png "bouton de l’ajouter une Notification") ![](local-notifications-in-ios-walkthrough-images/image2.png "la boîte de dialogue Alerte de notification")
 

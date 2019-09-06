@@ -4,15 +4,15 @@ description: Ce document explique comment remplacer les références de votre co
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 270d02fb5045e322b167101d82de9a61c64ce836
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 7feec9f2fa136b96d81a54e4b2650918c53b5832
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118941"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281592"
 ---
 # <a name="updating-component-references-to-nuget"></a>Mise à jour des références de composants à NuGet
 
@@ -31,17 +31,17 @@ La version 15,6 de Visual Studio et de la version 7,4 de Visual Studio pour Mac 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Si vous chargez un projet dans Visual Studio, la boîte de dialogue suivante s’affiche, expliquant que vous devez supprimer manuellement les composants de votre projet:
+Si vous chargez un projet dans Visual Studio, la boîte de dialogue suivante s’affiche, expliquant que vous devez supprimer manuellement les composants de votre projet :
 
 ![Boîte de dialogue d’alerte indiquant qu’un composant a été trouvé dans votre projet et doit être supprimé](component-nuget-images/component-alert-vs.png)
 
-Pour supprimer un composant de votre projet:
+Pour supprimer un composant de votre projet :
 
-1. Ouvrez le fichier **. csproj** . Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez décharger le **projet**. 
+1. Ouvrez le fichier **. csproj** . Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **décharger le projet**. 
 
 2. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis sélectionnez **modifier {Your-Project-Name}. csproj**.
 
-3. Recherchez dans le fichier toutes les références `XamarinComponentReference`à. Elle doit ressembler à l’exemple suivant:
+3. Recherchez dans le fichier toutes les références `XamarinComponentReference`à. Elle doit ressembler à l’exemple suivant :
 
     ```xml
     <ItemGroup>
@@ -68,15 +68,15 @@ Pour supprimer un composant de votre projet:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Si vous chargez un projet dans Visual Studio pour Mac, la boîte de dialogue suivante s’affiche, expliquant que vous devez supprimer manuellement les composants de votre projet:
+Si vous chargez un projet dans Visual Studio pour Mac, la boîte de dialogue suivante s’affiche, expliquant que vous devez supprimer manuellement les composants de votre projet :
 
 ![Boîte de dialogue d’alerte indiquant qu’un composant a été trouvé dans votre projet et doit être supprimé](component-nuget-images/component-alert.png)
 
-Pour supprimer un composant de votre projet:
+Pour supprimer un composant de votre projet :
 
 1. Ouvrez le fichier. csproj. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **outils > modifier le fichier**.
 
-2. Recherchez dans le fichier toutes les références `XamarinComponentReference`à. Elle doit ressembler à l’exemple suivant:
+2. Recherchez dans le fichier toutes les références `XamarinComponentReference`à. Elle doit ressembler à l’exemple suivant :
 
     ```xml
     <ItemGroup>
@@ -119,21 +119,21 @@ Si vous utilisez un composant qui ne semble pas avoir un package NuGet équivale
 
 De nombreux composants contiennent déjà des packages NuGet, et le chemin de migration consiste simplement à supprimer la référence de composant.
 
-Vous pouvez déterminer si le composant contient déjà un package NuGet en double-cliquant sur le composant dans la solution:
+Vous pouvez déterminer si le composant contient déjà un package NuGet en double-cliquant sur le composant dans la solution :
 
 ![Nœud composants développé](component-nuget-images/solution-sml.png)
 
-L’onglet **packages** répertorie tous les packages NuGet inclus dans le composant:
+L’onglet **packages** répertorie tous les packages NuGet inclus dans le composant :
 
 ![L’onglet packages contient NuGet](component-nuget-images/packages-tab-sml.png)
 
-Notez que l’onglet **assemblys** est vide:
+Notez que l’onglet **assemblys** est vide :
 
 ![L’onglet assemblys est vide](component-nuget-images/assemblies-tab-empty-sml.png)
 
 ### <a name="updating-the-solution"></a>Mise à jour de la solution
 
-Pour mettre à jour votre solution, supprimez l’entrée de **composant** de la solution:
+Pour mettre à jour votre solution, supprimez l’entrée de **composant** de la solution :
 
 ![Supprimer le composant](component-nuget-images/delete-component-sml.png)
 
@@ -150,7 +150,7 @@ Si l’onglet **assemblys** de la page d’informations du composant contient de
 
 ![Contient des assemblys](component-nuget-images/assemblies-tab-sml.png)
 
-Notez que l’onglet **packages** est probablement vide:
+Notez que l’onglet **packages** est probablement vide :
 
 ![](component-nuget-images/packages-tab-empty-sml.png)
 
@@ -158,14 +158,14 @@ _Il peut contenir des dépendances NuGet, mais celles-ci peuvent être ignorées
 
 Pour confirmer l’existence d’un package NuGet de remplacement, recherchez [NuGet.org](https://www.nuget.org/packages), en utilisant le nom du composant ou bien, par auteur.
 
-Par exemple, vous pouvez trouver le package **SQLite-net-PCL** populaire en recherchant:
+Par exemple, vous pouvez trouver le package **SQLite-net-PCL** populaire en recherchant :
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl): nom du produit.
 - [`praeclarum`](https://www.nuget.org/packages?q=praeclarum): profil de l’auteur.
 
 ### <a name="updating-the-solution"></a>Mise à jour de la solution
 
-Une fois que vous avez confirmé que le composant est disponible dans NuGet, procédez comme suit:
+Une fois que vous avez confirmé que le composant est disponible dans NuGet, procédez comme suit :
 
 #### <a name="delete-the-component"></a>Supprimer le composant
 
@@ -178,7 +178,7 @@ Cette opération supprime le composant et toutes les références. Cela entraîn
 #### <a name="add-the-nuget-package"></a>Ajouter le package NuGet
 
 1. Cliquez avec le bouton droit sur le nœud **packages** et choisissez **Ajouter des packages...** .
-2. Recherchez le remplacement NuGet par son nom ou son auteur:
+2. Recherchez le remplacement NuGet par son nom ou son auteur :
 
     ![](component-nuget-images/nuget-search-sml.png)
 
@@ -194,7 +194,7 @@ Cela devrait résoudre la Build. Si la génération continue d’échouer, exami
 Ne vous inquiétez pas si vous ne trouvez pas immédiatement de remplacement pour les composants utilisés dans votre application. Les composants existants continueront à fonctionner dans Visual Studio 15,5 et le nœud **composants** s’affichera dans votre solution comme d’habitude.
 
 Toutefois, les versions ultérieures de Visual Studio ne pourront _pas_ restaurer ou mettre à jour les composants.
-Cela signifie que si vous ouvrez la solution sur un nouvel ordinateur, le composant ne sera pas téléchargé et installé. et l’auteur ne sera pas en mesure de vous fournir des mises à jour. Vous devez prévoir les éléments suivants:
+Cela signifie que si vous ouvrez la solution sur un nouvel ordinateur, le composant ne sera pas téléchargé et installé. et l’auteur ne sera pas en mesure de vous fournir des mises à jour. Vous devez prévoir les éléments suivants :
 
 - Extrayez les assemblys du composant et référencez-les directement dans votre projet.
 - Contactez l’auteur du composant et demandez les plans à migrer vers NuGet.

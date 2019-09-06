@@ -4,22 +4,22 @@ description: Ce document fournit une procédure pas à pas de création d’une 
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: dba84c32390be8017952206de9e23facd58931fe
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199038"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293146"
 ---
 # <a name="hello-watchos--walkthrough"></a>Bonjour, Watchos – procédure pas à pas
 
-Après avoir créé une solution en suivant les étapes de la procédure [d’installation et d’installation](~/ios/watchos/get-started/installation.md), vous aurez 3 projets:
+Après avoir créé une solution en suivant les étapes de la procédure [d’installation et d’installation](~/ios/watchos/get-started/installation.md), vous aurez 3 projets :
 
-- L’application parent iOS utilisée pour l’installation ou d’autres tâches d’administration sur l’appareil. (Avec d’autres types d’extensions iOS, cette application est souvent appelée «conteneur».) Avec les applications Watch, les utilisateurs peuvent commencer à exécuter l’application Watch sans **jamais** exécuter l’application parente.
-- Extension Watch qui contient le code de programme de l’application Watch; les
+- L’application parent iOS utilisée pour l’installation ou d’autres tâches d’administration sur l’appareil. (Avec d’autres types d’extensions iOS, cette application est souvent appelée « conteneur ».) Avec les applications Watch, les utilisateurs peuvent commencer à exécuter l’application Watch sans **jamais** exécuter l’application parente.
+- Extension Watch qui contient le code de programme de l’application Watch ; les
 - L’application Watch, qui contient les ressources d’image et de Storyboard qui sont rendues sur la montre.
 
 Vérifiez que vos [références sont correctes](~/ios/watchos/get-started/project-references.md): que l’application parente a une référence à l’extension et que l’extension a une référence à l’application Watch.
@@ -52,7 +52,7 @@ Double-cliquez sur interface. Storyboard dans votre application Watch pour déma
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Double-cliquez sur interface. Storyboard dans votre application Watch pour effectuer des modifications à l’aide du concepteur Xamarin iOS dans Visual Studio:
+Double-cliquez sur interface. Storyboard dans votre application Watch pour effectuer des modifications à l’aide du concepteur Xamarin iOS dans Visual Studio :
 
 1. Ouvrez le volet Propriétés.
 1. Remplacez la classe par **InterfaceController**;
@@ -64,11 +64,11 @@ Double-cliquez sur interface. Storyboard dans votre application Watch pour effec
 -----
 
 
-Créez votre interface utilisateur:
+Créez votre interface utilisateur :
 
 1. À partir du panneau de la **boîte à outils** ,
 1. Glissez-déplacez un **bouton** et une **étiquette** sur la scène, puis
-1. Définissez le texte et les attributs des contrôles comme indiqué ci-dessous:
+1. Définissez le texte et les attributs des contrôles comme indiqué ci-dessous :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -127,7 +127,7 @@ partial class InterfaceController
 }
 ```
 
-Maintenant, ouvrez **InterfaceController.cs** (et*non* InterfaceController.Designer.cs) et ajoutez le code suivant:
+Maintenant, ouvrez **InterfaceController.cs** (et*non* InterfaceController.Designer.cs) et ajoutez le code suivant :
 
 ```csharp
 int clickCount = 0;
@@ -138,7 +138,7 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 }
 ```
 
-Ce code doit être assez transparent: la variable `clickCount` d’instance est incrémentée chaque fois que la fonction `OnButtonPress` est appelée. Le texte de `myLabel` est modifié pour refléter ce nombre; `myLabel`, bien sûr, est le nom de l’une des prises que vous avez créées dans Xcode. La `partial` fonction est l’implémentation de la fonction associée au nom de l’action que vous avez spécifiée.
+Ce code doit être assez transparent : la variable `clickCount` d’instance est incrémentée chaque fois que la fonction `OnButtonPress` est appelée. Le texte de `myLabel` est modifié pour refléter ce nombre ; `myLabel`, bien sûr, est le nom de l’une des prises que vous avez créées dans Xcode. La `partial` fonction est l’implémentation de la fonction associée au nom de l’action que vous avez spécifiée.
 
 S’il ne s’agit pas déjà du projet de démarrage,
 
@@ -146,12 +146,12 @@ S’il ne s’agit pas déjà du projet de démarrage,
 
 1. Définissez la cible de déploiement sur une image de simulateur compatible avec le kit espion (comme iPhone 6 iOS 8,2).
 
-1. Appuyez sur le bouton déboguer pour déclencher un lancement de build et de simulateur.
+1. Appuyez sur le bouton **Déboguer** pour déclencher un lancement de build et de simulateur.
 
     [![](hello-watch-images/readytodebug-sml.png "Éléments de l’interface Visual Studio")](hello-watch-images/readytodebug.png#lightbox)
 
 Au lancement du simulateur, appuyez sur le bouton pour incrémenter l’étiquette.
-Félicitations, vous disposez d’une application de surveillance!
+Félicitations, vous disposez d’une application de surveillance !
 
 ![](hello-watch-images/running.png "Application en cours d’exécution dans le simulateur")
 

@@ -4,15 +4,15 @@ description: Ce document contient des liens vers divers guides qui décrivent co
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/06/2016
-ms.openlocfilehash: 0dd3830b4903658d0b014eceaad9c57859963c04
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d4ad4ca7f15e20bed3cd9bb4050c5a0a9cba63a
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528630"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284167"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Utilisation des tables et des cellules dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Cette section présente les classes utilisées pour créer et afficher des table
 
 Pour ceux qui travaillent sur des applications multiplateformes avec Xamarin. Android, le contrôle UITableView est semblable à la classe ListView dans Android (et la classe UITableViewSource est semblable aux classes d’adaptateur Android).
 
-Ces articles présentent un aperçu complet de l’utilisation des tables, notamment:
+Ces articles présentent un aperçu complet de l’utilisation des tables, notamment :
 
 - **Parties de table** : présentation et explication des éléments visuels du `UITableView` contrôle. 
 - **Affichage des données dans les tables** : l’illustration de la création et du remplissage d’une table, l’utilisation de différents styles de table et de cellule et l’évitement des problèmes de mémoire en recyclant des objets Cell. 

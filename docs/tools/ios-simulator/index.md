@@ -1,69 +1,74 @@
 ---
 title: Remoted iOS Simulator pour Windows
-description: Le simulateur Remoted iOS Simulator pour Windows vous permet de tester vos applications sur un simulateur iOS affichés dans Windows en même temps que Visual Studio 2019.
+description: Le simulateur iOS distant pour Windows vous permet de tester vos applications sur un simulateur iOS affiché dans Windows à côté de Visual Studio 2019.
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
-author: lobrien
-ms.author: laobri
-ms.date: 04/02/2019
-ms.openlocfilehash: b962390d5a5a365ada93d1778e3efb65839f41c5
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+author: conceptdev
+ms.author: crdun
+ms.date: 04/26/2019
+ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61188810"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289707"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator pour Windows
 
-Le simulateur Remoted iOS Simulator pour Windows vous permet de tester vos applications sur un simulateur iOS affichés dans Windows en même temps que Visual Studio 2019 et Visual Studio 2017.
+Le simulateur iOS distant pour Windows vous permet de tester vos applications sur un simulateur iOS affiché dans Windows en même temps que Visual Studio 2019 et Visual Studio 2017.
 
-[![Simulateur iOS en cours d’exécution sur Windows](images/hero-sml.png "simulateur iOS en cours d’exécution sur Windows")](images/hero.png#lightbox)
+[![simulateur iOS exécuté sur Windows](images/hero-sml.png "simulateur iOS exécuté sur Windows")](images/hero.png#lightbox)
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
-Le simulateur iOS à distance pour Windows est installé automatiquement dans le cadre de Xamarin dans Visual Studio 2019 et Visual Studio 2017. Pour l’utiliser, procédez comme suit :
+Le simulateur iOS distant pour Windows est installé automatiquement dans le cadre de Xamarin dans Visual Studio 2019 et Visual Studio 2017. Pour l’utiliser, procédez comme suit :
 
-1. [Coupler Visual 2019 à un hôte de Build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-2. Dans Visual Studio, démarrer le débogage d’un projet iOS ou tvOS. Le simulateur iOS à distance pour Windows s’affiche sur votre ordinateur Windows.
+1. [Couplez le Visual 2019 à un hôte de build Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Dans Visual Studio, démarrez le débogage d’un projet iOS ou tvOS. Le simulateur iOS distant pour Windows s’affiche sur votre ordinateur Windows.
 
-Espion [cette vidéo](deploy.md) pour obtenir un guide pas à pas.
+Regardez [cette vidéo](deploy.md) pour un guide pas à pas.
 
 ## <a name="simulator-window"></a>Fenêtre du simulateur
 
-La barre d’outils en haut de la fenêtre du simulateur contient un nombre de boutons utiles :
+La barre d’outils en haut de la fenêtre du simulateur contient un certain nombre de boutons utiles :
 
-- **Accueil** – simule le bouton accueil sur un appareil iOS.
-- **Verrou** : verrouille le simulateur (faites défiler pour déverrouiller).
-- **Capture d’écran** – enregistre une capture d’écran du simulateur (stocké dans **Pictures\Xamarin\iOS simulateur\\**).
-- [**Paramètres** ](#settings) – affiche le clavier, emplacement et autres paramètres.
-- [**Autres options** ](#other-options) – permet d’afficher diverses options de simulateur telles que rotation, agiter mouvements et un ID tactile.
+- **Page d’hébergement** : simule le bouton de démarrage sur un appareil iOS.
+- **Lock** : verrouille le simulateur (balayer pour déverrouiller).
+- **Capture** d’écran : enregistre une capture d’écran du simulateur (stocké dans **Pictures\Xamarin\iOS Simulator\\** ).
+- [**Paramètres**](#settings) : affiche le clavier, l’emplacement et d’autres paramètres.
+- [**Autres options**](#other-options) : affiche diverses options du simulateur, telles que la rotation, les gestes de tremblement et l’id tactile.
 
-    [![Simulateur iOS mappe exemple](images/maps-app-sml.png "simulateur iOS mappe exemple")](images/maps-app.png#lightbox)
+    [![exemple de Maps de simulateur iOS](images/maps-app-sml.png "exemple de Maps de simulateur iOS")](images/maps-app.png#lightbox)
 
 ## <a name="settings"></a>Paramètres
 
-Cliquez sur icône d’engrenage de la barre d’outils pour ouvrir la **paramètres** fenêtre :
+Cliquez sur l’icône d’engrenage de la barre d’outils pour ouvrir la fenêtre des **paramètres** :
 
 [![paramètres du simulateur iOS](images/settings-sml.png "paramètres du simulateur iOS")](images/settings.png#lightbox)
 
-Ces paramètres permettent d’activer le clavier physique, choisissez un emplacement de l’appareil doit rapport (emplacements statiques et de déplacement sont tous deux pris en charge), activer Touch ID et réinitialiser le contenu et les paramètres pour le simulateur.
+Ces paramètres vous permettent d’activer le clavier matériel, de choisir un emplacement que l’appareil doit signaler (les emplacements statiques et mobiles sont tous deux pris en charge), d’activer Touch ID et de réinitialiser le contenu et les paramètres du simulateur.
 
 ## <a name="other-options"></a>Autres options
 
-Bouton de sélection de la barre d’outils, vous affichez les autres options telles que rotation, agiter mouvements et en redémarrant. Ces mêmes options peuvent être affichées sous forme de liste en double-cliquant sur n’importe où dans la fenêtre du simulateur :
+Le bouton de sélection de la barre d’outils révèle d’autres options telles que la rotation, les gestes de tremblement et le redémarrage. Ces mêmes options peuvent être affichées sous forme de liste en cliquant avec le bouton droit n’importe où dans la fenêtre du simulateur :
 
 [![paramètres supplémentaires du simulateur iOS](images/more-sml.png "paramètres supplémentaires du simulateur iOS")](images/more.png#lightbox)
 
 ## <a name="touchscreen-support"></a>Prise en charge de l’écran tactile
 
-La plupart des ordinateurs Windows disposent d’écrans tactiles. Étant donné que le simulateur Remoted iOS Simulator pour Windows prend en charge les interactions tactiles, vous pouvez tester votre application avec le même pincement, effectuez un balayage et tactiles multi doigt que vous utilisez avec les appareils iOS physiques.
+La plupart des ordinateurs Windows modernes ont des écrans tactiles. Dans la mesure où le simulateur iOS distant pour Windows prend en charge les interactions tactiles, vous pouvez tester votre application avec les mêmes gestes de pincement, de balayage et de toucher à plusieurs doigts que vous utilisez avec des appareils iOS physiques.
 
-De même, le simulateur Remoted iOS Simulator pour Windows traite entrée du stylet Windows en tant qu’entrée du crayon d’Apple.
+De même, le simulateur iOS distant pour Windows traite l’entrée du stylet Windows comme une entrée Apple crayon.
 
-## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>La désactivation de la Remoted iOS Simulator pour Windows
+## <a name="sound-handling"></a>Gestion des sons
 
-Pour désactiver le simulateur Remoted iOS Simulator pour Windows, accédez à **Outils > Options > Xamarin > Paramètres iOS** et décochez la case **Simulator à distance pour Windows**.
+Les sons joués par le simulateur proviennent des haut-parleurs Mac de l’hôte.
+les sons iOS ne sont pas audibles sur l’ordinateur Windows.
+
+## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>Désactivation du simulateur iOS distant pour Windows
+
+Pour désactiver le simulateur iOS distant pour Windows, accédez à **outils > Options > Xamarin > paramètres iOS** et décochez la case à cocher **simulateur distant vers Windows**.
 
 [![case à cocher pour utiliser le simulateur](images/options-sml.png "case à cocher pour utiliser le simulateur")](images/options.png#lightbox)
 
-Avec cette option est désactivée, le débogage s’ouvre le simulateur iOS sur le Mac connecté hôte de build.
+Si cette option est désactivée, le débogage ouvre le simulateur iOS sur l’hôte de build Mac connecté.

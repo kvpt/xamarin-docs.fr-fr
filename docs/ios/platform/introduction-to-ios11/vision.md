@@ -4,19 +4,19 @@ description: Ce document explique comment utiliser le Framework iOS 11 vision da
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: c7fd1a933ba166b7c1b708bc102b84ce407b18fd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648362"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285745"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Framework de vision dans Xamarin. iOS
 
-L’infrastructure de vision ajoute un certain nombre de nouvelles fonctionnalités de traitement d’image à iOS 11, notamment:
+L’infrastructure de vision ajoute un certain nombre de nouvelles fonctionnalités de traitement d’image à iOS 11, notamment :
 
 - [Détection de rectangles](#rectangles)
 - [Détection de visage](#faces)
@@ -39,7 +39,7 @@ L' [exemple VisionRects](https://docs.microsoft.com/samples/xamarin/ios-samples/
 
 ### <a name="1-initialize-the-vision-request"></a>1. Initialiser la demande de vision
 
-Dans `ViewDidLoad`, créez un `VNDetectRectanglesRequest` qui fait référence `HandleRectangles` à la méthode qui sera appelée à la fin de chaque requête:
+Dans `ViewDidLoad`, créez un `VNDetectRectanglesRequest` qui fait référence `HandleRectangles` à la méthode qui sera appelée à la fin de chaque requête :
 
 La `MaximumObservations` propriété doit également être définie. dans le cas contraire, sa valeur par défaut est 1 et un seul résultat est retourné.
 
@@ -50,7 +50,7 @@ RectangleRequest.MaximumObservations = 10;
 
 ### <a name="2-start-the-vision-processing"></a>2. Démarrer le traitement de la vision
 
-Le code suivant démarre le traitement de la requête. Dans l’exemple **VisionRects** , ce code s’exécute après que l’utilisateur a sélectionné une image:
+Le code suivant démarre le traitement de la requête. Dans l’exemple **VisionRects** , ce code s’exécute après que l’utilisateur a sélectionné une image :
 
 ```csharp
 // Run the rectangle detector
@@ -64,7 +64,7 @@ Ce gestionnaire transmet `ciImage` à l’infrastructure `VNDetectRectanglesRequ
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. Gérer les résultats du traitement de la vision
 
-Une fois la détection de rectangle terminée, l’infrastructure exécute la `HandleRectangles` méthode, dont un résumé est affiché ci-dessous:
+Une fois la détection de rectangle terminée, l’infrastructure exécute la `HandleRectangles` méthode, dont un résumé est affiché ci-dessous :
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,7 +88,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Afficher les résultats
 
-La `OverlayRectangles` méthode de l’exemple **VisionRectangles** a trois fonctions:
+La `OverlayRectangles` méthode de l’exemple **VisionRectangles** a trois fonctions :
 
 - Rendu de l’image source,
 - Dessin d’un rectangle pour indiquer l’emplacement où chacun a été détecté, et
@@ -119,7 +119,7 @@ FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 
 ### <a name="2-start-the-vision-processing"></a>2. Démarrer le traitement de la vision
 
-Le code suivant démarre le traitement de la requête. Dans l’exemple **VisionFaces** , ce code s’exécute après que l’utilisateur a sélectionné une image:
+Le code suivant démarre le traitement de la requête. Dans l’exemple **VisionFaces** , ce code s’exécute après que l’utilisateur a sélectionné une image :
 
 ```csharp
 // Run the face detector
@@ -133,7 +133,7 @@ Ce gestionnaire transmet `ciImage` à l’infrastructure `VNDetectFaceRectangles
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. Gérer les résultats du traitement de la vision
 
-Une fois la détection de visage terminée, le gestionnaire exécute la `HandleRectangles` méthode qui effectue la gestion des erreurs et affiche les limites des visages détectés, puis `OverlayRectangles` appelle pour dessiner des rectangles englobants sur l’image d’origine:
+Une fois la détection de visage terminée, le gestionnaire exécute la `HandleRectangles` méthode qui effectue la gestion des erreurs et affiche les limites des visages détectés, puis `OverlayRectangles` appelle pour dessiner des rectangles englobants sur l’image d’origine :
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -162,7 +162,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Afficher les résultats
 
-La `OverlayRectangles` méthode de l’exemple **VisionFaces** a trois fonctions:
+La `OverlayRectangles` méthode de l’exemple **VisionFaces** a trois fonctions :
 
 - Rendu de l’image source,
 - Dessin d’un rectangle pour chaque visage détecté, et

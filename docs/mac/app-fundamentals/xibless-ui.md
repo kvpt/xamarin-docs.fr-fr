@@ -4,15 +4,15 @@ description: Cet article explique comment créer une interface utilisateur de l�
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: d51e1b20e1409d228db2f38e6c31ad1165897654
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 5776855039120b0c856a76a31334420ded2a2d65
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226892"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283330"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. Storyboard/. XIB-conception de l’interface utilisateur moins dans Xamarin. Mac
 
@@ -32,13 +32,13 @@ Vous avez également la possibilité de créer une partie ou la totalité de l�
 
 Lorsque vous créez une application de cacao Xamarin. Mac, vous recevez une fenêtre vide standard par défaut. Cette fenêtre est définie dans un fichier **main. Storyboard** (ou traditionnellement un fichier **MainWindow. XIB**) inclus automatiquement dans le projet. Cela comprend également un fichier **ViewController.cs** qui gère la vue principale de l’application (ou encore un **MainWindow.cs** et un fichier **MainWindowController.cs** ).
 
-Pour basculer vers une fenêtre Xibless pour une application, procédez comme suit:
+Pour basculer vers une fenêtre Xibless pour une application, procédez comme suit :
 
 1. Ouvrez l’application que vous souhaitez arrêter à l' `.storyboard` aide des fichiers ou. XIB pour définir l’interface utilisateur dans Visual Studio pour Mac.
 2. Dans le **panneau solutions**, cliquez avec le bouton droit sur le fichier **main. Storyboard** ou **MainWindow. XIB** , puis sélectionnez **supprimer**:
 
     ![Suppression de la fenêtre ou du storyboard principal](xibless-ui-images/switch01.png "Suppression de la fenêtre ou du storyboard principal")
-3. Dans la **boîte de dialogue supprimer**, cliquez sur le bouton **supprimer** pour supprimer complètement le. Storyboard ou. XIB du projet:
+3. Dans la **boîte de dialogue supprimer**, cliquez sur le bouton **supprimer** pour supprimer complètement le. Storyboard ou. XIB du projet :
 
     ![Confirmation de la suppression](xibless-ui-images/switch02.png "Confirmation de la suppression")
 
@@ -49,7 +49,7 @@ Les applications Xamarin. Mac modernes qui utilisent des storyboards pour leur i
 
 ### <a name="defining-the-window-in-code"></a>Définition de la fenêtre dans le code
 
-Modifiez ensuite le fichier **MainWindow.cs** et faites en sorte qu’il ressemble à ce qui suit:
+Modifiez ensuite le fichier **MainWindow.cs** et faites en sorte qu’il ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -124,14 +124,14 @@ namespace MacXibless
 
 Passons en revue quelques-uns des éléments clés.
 
-Tout d’abord, nous avons ajouté quelques _propriétés calculées_ qui agiront comme les prises (comme si la fenêtre était créée dans un fichier. Storyboard ou. XIB):
+Tout d’abord, nous avons ajouté quelques _propriétés calculées_ qui agiront comme les prises (comme si la fenêtre était créée dans un fichier. Storyboard ou. XIB) :
 
 ```csharp
 public NSButton ClickMeButton { get; set;}
 public NSTextField ClickMeLabel { get ; set;}
 ```
 
-Celles-ci nous donnent accès aux éléments d’interface utilisateur que nous allons afficher dans la fenêtre. Étant donné que la fenêtre n’est pas augmentée d’un fichier. Storyboard ou. XIB, nous avons besoin d’un moyen de l’instancier (comme nous `MainWindowController` le verrons plus tard dans la classe). C’est ce que fait cette nouvelle méthode de constructeur:
+Celles-ci nous donnent accès aux éléments d’interface utilisateur que nous allons afficher dans la fenêtre. Étant donné que la fenêtre n’est pas augmentée d’un fichier. Storyboard ou. XIB, nous avons besoin d’un moyen de l’instancier (comme nous `MainWindowController` le verrons plus tard dans la classe). C’est ce que fait cette nouvelle méthode de constructeur :
 
 ```csharp
 public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore bufferingType, bool deferCreation): base (contentRect, aStyle,bufferingType,deferCreation) {
@@ -139,13 +139,13 @@ public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore buffe
 }
 ```
 
-C’est là que nous allons concevoir la disposition de la fenêtre et placer tous les éléments d’interface utilisateur nécessaires à la création de l’interface utilisateur requise. Avant de pouvoir ajouter des éléments d’interface utilisateur à une fenêtre, il faut qu’un _affichage de contenu_ contienne les éléments suivants:
+C’est là que nous allons concevoir la disposition de la fenêtre et placer tous les éléments d’interface utilisateur nécessaires à la création de l’interface utilisateur requise. Avant de pouvoir ajouter des éléments d’interface utilisateur à une fenêtre, il faut qu’un _affichage de contenu_ contienne les éléments suivants :
 
 ```csharp
 ContentView = new NSView (Frame);
 ```
 
-Cela crée un affichage de contenu qui remplira la fenêtre. À présent, nous ajoutons le premier élément `NSButton`de l’interface utilisateur, un, à la fenêtre:
+Cela crée un affichage de contenu qui remplira la fenêtre. À présent, nous ajoutons le premier élément `NSButton`de l’interface utilisateur, un, à la fenêtre :
 
 ```csharp
 ClickMeButton = new NSButton (new CGRect (10, Frame.Height-70, 100, 30)){
@@ -181,7 +181,7 @@ Là encore, `ContentView.AddSubview (ClickMeLabel)` la méthode ajoute `NSTextFi
 
 ### <a name="adjusting-the-window-controller"></a>Réglage du contrôleur de fenêtre
 
-Étant donné que la conception `MainWindow` du n’est plus chargée à partir d’un fichier. Storyboard ou. XIB, nous devrons apporter des ajustements au contrôleur de fenêtre. Modifiez le fichier **MainWindowController.cs** et faites en sorte qu’il ressemble à ce qui suit:
+Étant donné que la conception `MainWindow` du n’est plus chargée à partir d’un fichier. Storyboard ou. XIB, nous devrons apporter des ajustements au contrôleur de fenêtre. Modifiez le fichier **MainWindowController.cs** et faites en sorte qu’il ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -228,24 +228,24 @@ namespace MacXibless
 
 Nous allons discuter des éléments clés de cette modification.
 
-Tout d’abord, nous définissons une nouvelle `MainWindow` instance de la classe et l’affectons à la `Window` propriété du contrôleur de fenêtre de base:
+Tout d’abord, nous définissons une nouvelle `MainWindow` instance de la classe et l’affectons à la `Window` propriété du contrôleur de fenêtre de base :
 
 ```csharp
 CGRect contentRect = new CGRect (0, 0, 1000, 500);
 base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable), NSBackingStore.Buffered, false);
 ```
 
-Nous définissons l’emplacement de la fenêtre de l’écran `CGRect`avec un. Tout comme le système de coordonnées de la fenêtre, l’écran définit (0,0) comme angle inférieur gauche. Ensuite, nous définissons le style de la fenêtre à l’aide de l’opérateur **or** pour combiner `NSWindowStyle` deux fonctionnalités ou plus:
+Nous définissons l’emplacement de la fenêtre de l’écran `CGRect`avec un. Tout comme le système de coordonnées de la fenêtre, l’écran définit (0,0) comme angle inférieur gauche. Ensuite, nous définissons le style de la fenêtre à l’aide de l’opérateur **or** pour combiner `NSWindowStyle` deux fonctionnalités ou plus :
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
 ```
 
-Les fonctionnalités `NSWindowStyle` suivantes sont disponibles:
+Les fonctionnalités `NSWindowStyle` suivantes sont disponibles :
 
 - Sans **bordure** : la fenêtre n’a pas de bordure.
 - **Intitulé** : la fenêtre a une barre de titre.
-- Refermable: la fenêtre a un bouton Fermer et peut être fermée.
+- **Refermable** : la fenêtre a un bouton Fermer et peut être fermée.
 - **Miniaturizable** : la fenêtre a un bouton de la miniature et peut être réduite.
 - **Redimensionnable** : la fenêtre a un bouton redimensionner et être redimensionnable.
 - **Utilitaire** : la fenêtre est une fenêtre de style utilitaire (panneau).
@@ -260,7 +260,7 @@ Les fonctionnalités `NSWindowStyle` suivantes sont disponibles:
 
 Les deux dernières propriétés définissent le _type de mise en mémoire tampon_ pour la fenêtre et si le dessin de la fenêtre est différé. Pour plus d’informations `NSWindows`sur, consultez la [présentation d’Apple à](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1) la documentation Windows.
 
-Enfin, étant donné que la fenêtre n’est pas gonflée à partir d’un fichier. Storyboard ou. XIB, nous devons la simuler dans notre MainWindowController.cs `AwakeFromNib` en appelant la méthode Windows:
+Enfin, étant donné que la fenêtre n’est pas gonflée à partir d’un fichier. Storyboard ou. XIB, nous devons la simuler dans notre MainWindowController.cs `AwakeFromNib` en appelant la méthode Windows :
 
 ```csharp
 Window.AwakeFromNib ();
@@ -273,7 +273,7 @@ Cela vous permettra de coder la fenêtre comme une fenêtre standard chargée à
 
 Une fois le fichier. Storyboard ou. XIB supprimé et les fichiers **MainWindow.cs** et **MainWindowController.cs** modifiés, vous utiliserez la fenêtre comme vous le feriez pour n’importe quelle fenêtre normale créée dans le Interface Builder de Xcode avec un fichier. XIB.
 
-La commande suivante permet de créer une nouvelle instance de la fenêtre et de son contrôleur, et d’afficher la fenêtre à l’écran:
+La commande suivante permet de créer une nouvelle instance de la fenêtre et de son contrôleur, et d’afficher la fenêtre à l’écran :
 
 ```csharp
 private MainWindowController mainWindowController;
@@ -283,14 +283,14 @@ mainWindowController = new MainWindowController ();
 mainWindowController.Window.MakeKeyAndOrderFront (this);
 ```
 
-À ce stade, si l’application est exécutée et que le bouton a cliqué deux fois, les éléments suivants s’affichent:
+À ce stade, si l’application est exécutée et que le bouton a cliqué deux fois, les éléments suivants s’affichent :
 
 ![Exemple d’exécution d’application](xibless-ui-images/run01.png "Exemple d’exécution d’application")
 
 
 ## <a name="adding-a-code-only-window"></a>Ajout d’une fenêtre de code uniquement
 
-Si vous souhaitez ajouter un code uniquement, une fenêtre xibless à une application Xamarin. Mac existante, cliquez avec le bouton droit sur le projet dans le **panneau solutions** puis sélectionnez **Ajouter** > un**nouveau fichier.** .. Dans la boîte de dialogue **nouveau fichier** , choisissez **Xamarin. Mac** > **cacao fenêtre avec contrôleur**, comme illustré ci-dessous:
+Si vous souhaitez ajouter un code uniquement, une fenêtre xibless à une application Xamarin. Mac existante, cliquez avec le bouton droit sur le projet dans le **panneau solutions** puis sélectionnez **Ajouter** > un**nouveau fichier.** .. Dans la boîte de dialogue **nouveau fichier** , choisissez **Xamarin. Mac** > **cacao fenêtre avec contrôleur**, comme illustré ci-dessous :
 
 ![Ajout d’un nouveau contrôleur de fenêtre](xibless-ui-images/add01.png "Ajout d’un nouveau contrôleur de fenêtre")
 
@@ -315,7 +315,7 @@ Le code ci-dessus crée `NSButton` un nouveau et l’ajoute `MyWindow` à l’in
 
 En raison des limitations actuelles dans Xamarin. Mac, il n’est pas recommandé de créer la barre de menus de votre application Xamarin`NSMenuBar`. Mac – – dans le code mais de continuer à utiliser le fichier **main. Storyboard** ou **MainMenu. XIB** pour le définir. Cela dit, vous pouvez ajouter et supprimer des menus et des éléments C# de menu dans le code.
 
-Par exemple, modifiez le fichier **AppDelegate.cs** et faites en `DidFinishLaunching` sorte que la méthode ressemble à ce qui suit:
+Par exemple, modifiez le fichier **AppDelegate.cs** et faites en `DidFinishLaunching` sorte que la méthode ressemble à ce qui suit :
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)

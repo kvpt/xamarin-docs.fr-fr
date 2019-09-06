@@ -3,15 +3,15 @@ title: Erreurs d’incorporation .NET
 description: Ce document décrit les erreurs générées par l’incorporation .NET. Les erreurs sont répertoriées par code et reçoivent une description pour faciliter la résolution des problèmes.
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: e5f998105202a4143c94748efad5faae0212acba
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: be62ba212cb92e031f760ef3f267bc3eac91c748
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198778"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282153"
 ---
 # <a name="net-embedding-errors"></a>Erreurs d’incorporation .NET
 
@@ -25,7 +25,7 @@ Par exemple, paramètres, environnement
 
 ### <a name="em0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcommonoembeddinator-4000issues"></a>EM0000: Erreur inattendue-veuillez remplir un rapport de bogue à https://github.com/mono/Embeddinator-4000/issues
 
-Une condition d’erreur inattendue s’est produite. Signalez [un problème](https://github.com/mono/Embeddinator-4000/issues) avec autant d’informations que possible, notamment:
+Une condition d’erreur inattendue s’est produite. Signalez [un problème](https://github.com/mono/Embeddinator-4000/issues) avec autant d’informations que possible, notamment :
 
 * Journaux de génération complets, avec un niveau de détail maximal
 * Un cas de test minimal qui reproduit l’erreur
@@ -71,13 +71,13 @@ L’outil n’a pas pu trouver l’emplacement Xcode actuellement sélectionné 
 
 <a name="EM0007" />
 
-### <a name="em0007-could-not-get-the-sdk-version-for-sdk"></a>EM0007: Impossible d’obtenir la version du kit de développement logiciel (SDK) pour «{Sdk}».
+### <a name="em0007-could-not-get-the-sdk-version-for-sdk"></a>EM0007: Impossible d’obtenir la version du kit de développement logiciel (SDK) pour « {Sdk} ».
 
 L’outil n’a pas pu récupérer la version du `xcrun --show-sdk-version --sdk {sdk}` SDK à l’aide de la commande. Vérifiez que cette commande a été exécutée correctement et retourne la version du kit de développement logiciel (SDK).
 
 <a name="EM0008" />
 
-### <a name="em0008-the-architecture-arch-is-not-valid-for-platform-valid-architectures-for-platform-are-architectures"></a>EM0008: L’architecture «{Arch}» n’est pas valide pour {Platform}. Les architectures valides pour {Platform} sont: «{architectures}».
+### <a name="em0008-the-architecture-arch-is-not-valid-for-platform-valid-architectures-for-platform-are-architectures"></a>EM0008: L’architecture « {Arch} » n’est pas valide pour {Platform}. Les architectures valides pour {Platform} sont : « {architectures} ».
 
 L’architecture dans le message d’erreur n’est pas valide pour la plateforme ciblée. Vérifiez que l’option--Abi reçoit une architecture valide.
 
@@ -89,7 +89,7 @@ Il s’agit d’un problème connu que nous envisageons de corriger dans une ver
 
 <a name="EM0010" />
 
-### <a name="em0010-cant-merge-the-frameworks-simulatorframework-and-deviceframework-because-the-file-file-exists-in-both"></a>EM0010: Impossible de fusionner les frameworks «{simulatorFramework}» et «{deviceFramework}», car le fichier «{file}» existe dans les deux.
+### <a name="em0010-cant-merge-the-frameworks-simulatorframework-and-deviceframework-because-the-file-file-exists-in-both"></a>EM0010: Impossible de fusionner les frameworks « {simulatorFramework} » et « {deviceFramework} », car le fichier « {file} » existe dans les deux.
 
 L’outil n’a pas pu fusionner les frameworks mentionnés dans le message d’erreur, car il existe un fichier commun entre eux.
 
@@ -129,13 +129,13 @@ La dépendance mentionnée dans le message d’erreur a été détectée sur le 
 
 <a name="EM0016" />
 
-### <a name="em0016-could-not-create-symlink-file---target-error-number"></a>EM0016: Impossible de créer le lien symbolique' {file} '-> ' {target} ': erreur {Number}
+### <a name="em0016-could-not-create-symlink-file---target-error-number"></a>EM0016: Impossible de créer le lien symbolique' {file} '-> ' {target} ' : erreur {Number}
 
 Impossible de créer le lien symbolique mentionné dans le message d’erreur.
 
 <a name="EM0026" />
 
-### <a name="em0026-could-not-parse-the-command-line-argument-a-"></a>EM0026 n’a pas pu analyser l’argument de ligne de commande’A': *
+### <a name="em0026-could-not-parse-the-command-line-argument-a-"></a>EM0026 n’a pas pu analyser l’argument de ligne de commande’A' : *
 
 La syntaxe fournie pour l’option `A` de ligne de commande n’a pas pu être analysée par l’outil. Elle est probablement incorrecte. consultez la documentation ou l’aide pour obtenir la syntaxe correcte.
 
@@ -181,7 +181,7 @@ Remarque : Les fonctionnalités prises en charge vont évoluer avec les nouvell
 
 ### <a name="em1021-constructor-c-has-default-values-for-which-no-wrapper-is-generated"></a>EM1021: Le `C` constructeur a des valeurs par défaut pour lesquelles aucun wrapper n’est généré.
 
-Il s’agit d’un **Avertissement** indiquant que les paramètres `C` par défaut du constructeur ne génèrent pas de code supplémentaire. La cause la plus courante est qu’une méthode existante a déjà la même signature. Par exemple, dans .net, il est possible d’avoir:
+Il s’agit d’un **Avertissement** indiquant que les paramètres `C` par défaut du constructeur ne génèrent pas de code supplémentaire. La cause la plus courante est qu’une méthode existante a déjà la même signature. Par exemple, dans .net, il est possible d’avoir :
 
 ```csharp
 public class MyType {
@@ -216,7 +216,7 @@ Remarque : Les fonctionnalités prises en charge vont évoluer avec les nouvell
 
 ### <a name="em1032-method-m-has-default-values-for-which-no-wrapper-is-generated"></a>EM1032: La `M` méthode a des valeurs par défaut pour lesquelles aucun wrapper n’est généré.
 
-Il s’agit d’un **Avertissement** indiquant que les paramètres `M` par défaut de la méthode ne génèrent pas de code supplémentaire. La cause la plus courante est qu’une méthode existante a déjà la même signature. Par exemple, dans .net, il est possible d’avoir:
+Il s’agit d’un **Avertissement** indiquant que les paramètres `M` par défaut de la méthode ne génèrent pas de code supplémentaire. La cause la plus courante est qu’une méthode existante a déjà la même signature. Par exemple, dans .net, il est possible d’avoir :
 
 ```csharp
 public class MyType {

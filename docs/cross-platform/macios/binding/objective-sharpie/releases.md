@@ -3,15 +3,15 @@ title: Historique des versions objectivie
 description: Ce document décrit l’historique des versions d’objective Sharp, l’outil utilisé pour automatiser la création C# de liaisons au code Objective-C.
 ms.prod: xamarin
 ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: 86c9f46064b66dc31f805e830309cb061a78a2c8
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509648"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290856"
 ---
 # <a name="objective-sharpie-release-history"></a>Historique des versions objectivie
 
@@ -19,7 +19,7 @@ ms.locfileid: "68509648"
 
 [Télécharger v 3.4.0](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie-3.4.0.pkg)
 
-* Prise en charge de Xcode 9: iOS 11, macOS 10,13, tvOS 11 et Watchos 4
+* Prise en charge de Xcode 9 : iOS 11, macOS 10,13, tvOS 11 et Watchos 4
 * Les problèmes liés à SIMD et tgmath doivent maintenant être résolus
 * La télémétrie a été entièrement supprimée
 
@@ -51,7 +51,7 @@ ms.locfileid: "68509648"
 
 * Prise en charge des nouvelles fonctionnalités de langage Objective-C, notamment les génériques légers et la possibilité de valeur null, comme introduit dans Xcode 7
 * Prise en charge des derniers kits de développement logiciel (SDK) iOS et Mac.
-* Prise en charge de l’analyse et du développement de projets Xcode! Vous pouvez maintenant passer un projet XCode complet à la finesse objective et il fera de son mieux pour déterminer la bonne chose à faire (par exemple `sharpie bind Project.xcodeproj -sdk ios`,).
+* Prise en charge de l’analyse et du développement de projets Xcode ! Vous pouvez maintenant passer un projet XCode complet à la finesse objective et il fera de son mieux pour déterminer la bonne chose à faire (par exemple `sharpie bind Project.xcodeproj -sdk ios`,).
 * Prise en charge de [CocoaPods](https://cocoapods.org) ! Vous pouvez désormais configurer, générer et lier des CocoaPods directement à partir de la finesse objective `sharpie pod init ios AFNetworking && sharpie pod bind`(par exemple,).
 * Lors de la liaison d’infrastructures, les modules Clang sont activés si le Framework les prend en charge, ce qui aboutit à l’analyse la plus correcte d’une infrastructure, car la `module.modulemap`structure de l’infrastructure est définie par son.
 * Pour les projets Xcode qui génèrent un produit Framework, analysez ce produit au lieu des cibles de produit intermédiaires en tant que cibles non-Framework dans un projet XCode peut encore avoir des ambiguïtés qui ne peuvent pas être résolues automatiquement.
@@ -60,8 +60,8 @@ ms.locfileid: "68509648"
 
 [Télécharger v 2.1.6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
 
-* Liaison d’expression d’opérateur binaire fixe: la partie gauche de l’expression n’a pas été correctement remplacée par la droite (par exemple `1 << 0` , a été lié de manière incorrecte en tant que `0 << 1`). Merci à Adam Kemp de noter cela!
-* Correction d’un problème `NSInteger` avec `NSUInteger` et lié en `int` tant `uint` que et `nint` à `nuint` la place de et sur i386; est maintenant transmis à Clang pour que l' `objc/NSObjCRuntime.h` analyse fonctionne comme prévu sur i386. `-DNS_BUILD_32_LIKE_64`
+* Liaison d’expression d’opérateur binaire fixe : la partie gauche de l’expression n’a pas été correctement remplacée par la droite (par exemple `1 << 0` , a été lié de manière incorrecte en tant que `0 << 1`). Merci à Adam Kemp de noter cela !
+* Correction d’un problème `NSInteger` avec `NSUInteger` et lié en `int` tant `uint` que et `nint` à `nuint` la place de et sur i386 ; est maintenant transmis à Clang pour que l' `objc/NSObjCRuntime.h` analyse fonctionne comme prévu sur i386. `-DNS_BUILD_32_LIKE_64`
 * L’architecture par défaut des kits de développement logiciel `-sdk macosx10.10`(SDK) Mac OS X (par exemple,) `-arch` est maintenant x86_64 au lieu de i386. vous pouvez donc l’omettre, sauf si vous souhaitez remplacer la valeur par défaut.
 
 ## <a name="210-march-15-2015"></a>2.1.0 (15 mars, 2015)
@@ -113,17 +113,17 @@ Pour plus d’informations, consultez la documentation sur les [attributs](~/cro
 
 * `struct`les `union` déclarations et sont maintenant liées, à l' `[FieldOffset]` aide de la astuce pour les unions.
 
-* Les valeurs enum avec des initialiseurs d’expression constantes sont désormais correctement liées; l’expression complète est traduite C#en.
+* Les valeurs enum avec des initialiseurs d’expression constantes sont désormais correctement liées ; l’expression complète est traduite C#en.
 
 * Les méthodes et les blocs variadiques sont maintenant liés.
 
-* Les frameworks sont désormais pris en `-framework` charge via l’option. Pour plus d’informations, consultez la documentation sur la [liaison](~/cross-platform/macios/binding/objective-sharpie/index.md) de frameworks natifs.
+* Les frameworks sont désormais pris en `-framework` charge via l’option. Pour plus d’informations, consultez la documentation sur la [liaison de frameworks natifs](~/cross-platform/macios/binding/objective-sharpie/index.md) .
 
 * Le code source objective-C sera maintenant détecté automatiquement, ce qui devrait éliminer la nécessité de `-ObjC` passer `-xobjective-c` ou de Clang manuellement.
 
 * L’utilisation du module`@import`Clang () est maintenant détectée automatiquement, ce qui évite d’avoir `-fmodules` à passer à Clang manuellement pour les bibliothèques qui utilisent la nouvelle prise en charge de module dans Clang.
 
-* La API unifiée Xamarin est désormais la cible de liaison par défaut; Utilisez l' `-classic` option pour cibler le API classique 32 bits uniquement.
+* La API unifiée Xamarin est désormais la cible de liaison par défaut ; Utilisez l' `-classic` option pour cibler le API classique 32 bits uniquement.
 
 ### <a name="notable-bug-fixes"></a>Correctifs de bogues notables
 

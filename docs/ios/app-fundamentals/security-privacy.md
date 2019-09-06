@@ -4,15 +4,15 @@ description: Ce document décrit les fonctionnalités de sécurité et de confid
 ms.prod: xamarin
 ms.assetid: 718C8721-C359-4650-878A-D68E159A3F53
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 5c818cac3b26e94710a64938a80690b8d4946320
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 7847148551c20dbcf49bcc263bdc50716a6ef14e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200218"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283173"
 ---
 # <a name="ios-security-and-privacy-features"></a>Fonctionnalités de sécurité et de confidentialité iOS
 
@@ -24,7 +24,7 @@ Apple a apporté plusieurs améliorations à la sécurité et à la confidential
 
 ## <a name="general-enhancements"></a>Améliorations générales
 
-Les modifications générales suivantes ont été apportées à la sécurité et à la confidentialité dans iOS 10:
+Les modifications générales suivantes ont été apportées à la sécurité et à la confidentialité dans iOS 10 :
 
 - L’API CDSA (Common Data Security Architecture) est dépréciée et doit être remplacée par l’API SecKey pour générer des clés asymétriques.
 - La nouvelle `NSAllowsArbitraryLoadsInWebContent` clé peut être ajoutée au fichier **info. plist** d’une application et autoriser le chargement correct des pages Web, tandis que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application. Pour plus d’informations, consultez notre documentation sur la [sécurité des applications de transport](~/ios/app-fundamentals/ats.md) .
@@ -40,7 +40,7 @@ Les applications qui s’exécutent sur iOS 10 (ou version ultérieure) doivent 
 > [!IMPORTANT]
 > Les applications qui ne fournissent pas les clés requises sont arrêtées silencieusement par le système lorsqu’elles essaient d’accéder à l’une des fonctionnalités restreintes ou aux informations utilisateur, _sans erreur_. Si une application échoue de façon inattendue sur iOS 10, vérifiez que toutes les **informations requises. plist** ont été spécifiées.
 
-Les clés associées à la confidentialité suivantes sont disponibles:
+Les clés associées à la confidentialité suivantes sont disponibles :
 
 - **Confidentialité-Description de l’utilisation de Apple Music** (`NSAppleMusicUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur.
 - **Confidentialité-Description de l’utilisation du périphérique Bluetooth** (`NSBluetoothPeripheralUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à Bluetooth sur l’appareil de l’utilisateur.
@@ -68,39 +68,39 @@ Pour plus d’informations sur l’utilisation des clés **info. plist** , consu
 
 ## <a name="setting-privacy-keys"></a>Définition des clés de confidentialité
 
-Prenons l’exemple suivant d’accès à HomeKit sur iOS 10 (et versions ultérieures), le développeur doit ajouter la `NSHomeKitUsageDescription` clé au fichier **info. plist** de l’application et fournir une chaîne qui déclare pourquoi l’application souhaite accéder à la base de données HomeKit de l’utilisateur. Cette chaîne est présentée à l’utilisateur la première fois qu’il exécute l’application:
+Prenons l’exemple suivant d’accès à HomeKit sur iOS 10 (et versions ultérieures), le développeur doit ajouter la `NSHomeKitUsageDescription` clé au fichier **info. plist** de l’application et fournir une chaîne qui déclare pourquoi l’application souhaite accéder à la base de données HomeKit de l’utilisateur. Cette chaîne est présentée à l’utilisateur la première fois qu’il exécute l’application :
 
 ![Exemple d’alerte NSHomeKitUsageDescription](security-privacy-images/info01.png "Exemple d’alerte NSHomeKitUsageDescription")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Xamarin. iOS pour Visual Studio ne prend pas actuellement en charge la modification des clés de confidentialité **info. plist** dans l’éditeur de manifeste iOS par défaut. Au lieu de cela, vous devrez utiliser l’éditeur de plist générique. procédez comme suit:
+Xamarin. iOS pour Visual Studio ne prend pas actuellement en charge la modification des clés de confidentialité **info. plist** dans l’éditeur de manifeste iOS par défaut. Au lieu de cela, vous devrez utiliser l’éditeur de plist générique. procédez comme suit :
 
 1. Cliquez avec le bouton droit sur le fichier **info. plist** dans le **Explorateur de solutions** , puis sélectionnez **Ouvrir avec...** .
 2. Sélectionnez l' **éditeur plist générique** dans la liste des programmes pour ouvrir le fichier, puis cliquez sur **OK**.
 
     ![Sélectionner l’éditeur de plist générique](security-privacy-images/InfoEditorSelectionVs.png "Sélectionner l’éditeur de plist générique")
-3. Cliquez sur **+** le bouton sur la dernière ligne de l’éditeur pour ajouter une nouvelle entrée à la liste. Ce sera appelé «propriété personnalisée», avec le type défini sur `String` et une valeur vide.
+3. Cliquez sur **+** le bouton sur la dernière ligne de l’éditeur pour ajouter une nouvelle entrée à la liste. Ce sera appelé « propriété personnalisée », avec le type défini sur `String` et une valeur vide.
 4. Cliquez sur le nom de la propriété et une liste déroulante s’affiche.
-5. Dans la liste déroulante, sélectionnez une clé de confidentialité (par exemple, **confidentialité-Description de l’utilisation de HomeKit**): 
+5. Dans la liste déroulante, sélectionnez une clé de confidentialité (par exemple, **confidentialité-Description de l’utilisation de HomeKit**) : 
 
     ![Sélectionner une clé de confidentialité](security-privacy-images/InfoPListEditorSelectKey.png "Sélectionner une clé de confidentialité")
-6. Entrez une description dans la colonne valeur pour la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur: 
+6. Entrez une description dans la colonne valeur pour la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur : 
 
     ![Entrer une description](security-privacy-images/InfoPListSetValue.png "Entrer une description")
 7. Enregistrez les modifications dans le fichier.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Pour définir l’une des clés de confidentialité, procédez comme suit:
+Pour définir l’une des clés de confidentialité, procédez comme suit :
 
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Info.plist** pour l’ouvrir et le modifier.
 2. En bas de l’écran, basculez en mode **source** .
 3. Ajoutez une nouvelle **entrée** à la liste.
-4. Dans la liste déroulante, sélectionnez une clé de confidentialité (par exemple, **confidentialité-Description de l’utilisation de HomeKit**): 
+4. Dans la liste déroulante, sélectionnez une clé de confidentialité (par exemple, **confidentialité-Description de l’utilisation de HomeKit**) : 
 
     ![Sélectionner une clé de confidentialité](security-privacy-images/info02.png "Sélectionner une clé de confidentialité")
-5. Entrez une description de la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur: 
+5. Entrez une description de la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur : 
 
     ![Entrer une description](security-privacy-images/info03.png "Entrer une description")
 6. Enregistrez les modifications dans le fichier.

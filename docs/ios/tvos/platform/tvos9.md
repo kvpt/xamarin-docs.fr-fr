@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: be59ee3f51801c67277aac1a3ec274e81997ff3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657324"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290719"
 ---
 # <a name="introduction-to-tvos-9"></a>Introduction à tvOS 9
 
@@ -30,7 +30,7 @@ Ce guide vous donnera une présentation de toutes les API et fonctionnalités no
 
 ## <a name="supported-and-unsupported-capabilities"></a>Fonctionnalités prises en charge et non prises en charge
 
-les applications tvOS qui s’exécutent sur Apple TV offrent les fonctionnalités et fonctionnalités prises en charge suivantes:
+les applications tvOS qui s’exécutent sur Apple TV offrent les fonctionnalités et fonctionnalités prises en charge suivantes :
 
 - App Groups
 - Background Modes
@@ -41,7 +41,7 @@ les applications tvOS qui s’exécutent sur Apple TV offrent les fonctionnalit�
 - Achats dans l’application
 - Keychain Sharing
 
-Les fonctionnalités et les fonctionnalités suivantes ne sont pas prises en charge:
+Les fonctionnalités et les fonctionnalités suivantes ne sont pas prises en charge :
 
 - Apple Pay
 - Sandbox d’application
@@ -61,7 +61,7 @@ Pour plus d’informations, consultez nos [assemblys pris en charge](~/ios/tvos/
 
 ## <a name="apple-tv-hardware"></a>Matériel Apple TV
 
-La nouvelle TV Apple présente les spécifications matérielles suivantes:
+La nouvelle TV Apple présente les spécifications matérielles suivantes :
 
 - processeur a8 64 bits
 - 32 Go ou 64 Go de stockage
@@ -75,9 +75,9 @@ La nouvelle TV Apple présente les spécifications matérielles suivantes:
 
 ### <a name="siri-remote"></a>Siri à distance
 
-En fonction de la région, la télécommande Apple TV fournie se présente dans une configuration: Siri à distance ou Apple TV à distance.
+En fonction de la région, la télécommande Apple TV fournie se présente dans une configuration : Siri à distance ou Apple TV à distance.
 
-La télécommande Siri est actuellement disponible dans les pays suivants:
+La télécommande Siri est actuellement disponible dans les pays suivants :
 
 - Australie
 - Canada
@@ -88,7 +88,7 @@ La télécommande Siri est actuellement disponible dans les pays suivants:
 - Royaume-Uni
 - États-Unis
 
-Tous les autres pays recevront la télécommande Apple TV qui remplace le bouton Siri par un bouton de recherche qui affiche l’écran de recherche par défaut avec entrée de texte pour la recherche:
+Tous les autres pays recevront la télécommande Apple TV qui remplace le bouton Siri par un bouton de recherche qui affiche l’écran de recherche par défaut avec entrée de texte pour la recherche :
 
 [![](tvos9-images/remote02.png "Siri à distance")](tvos9-images/remote02.png#lightbox)
 
@@ -108,7 +108,7 @@ Les profils de provisionnement sont créés et installés de la même façon que
 
 ## <a name="apple-tv-apps"></a>Applications de TV Apple
 
-Le nouveau matériel Apple TV et tvOS 9 prennent en charge deux types d’applications: les applications traditionnelles et client-serveur.
+Le nouveau matériel Apple TV et tvOS 9 prennent en charge deux types d’applications : les applications traditionnelles et client-serveur.
 
 <a name="Traditional-Apps" />
 
@@ -152,7 +152,7 @@ Pour plus d’informations, consultez notre page [utilisation de la navigation e
 
 ### <a name="the-home-screen"></a>Écran d’accueil
 
-L’écran d’accueil Apple TV affiche toutes les applications installées et fournit un moyen d’accéder aux préférences de l’utilisateur:
+L’écran d’accueil Apple TV affiche toutes les applications installées et fournit un moyen d’accéder aux préférences de l’utilisateur :
 
 [![](tvos9-images/home01.png "Écran d’accueil")](tvos9-images/home01.png#lightbox)
 

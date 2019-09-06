@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: cd4bb8cae59e5d9cdcc36a58fb37e71e56d580b3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 0277a5abd4e34d092b231cd42746f9e05c91b8df
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650863"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199947"
 ---
 # <a name="implementing-a-hybridwebview"></a>Implémentation d’un HybridWebView
 
@@ -324,7 +324,7 @@ Cette fonctionnalité est obtenue comme suit :
 
 De plus, **Info.plist** doit être mis à jour pour inclure les valeurs suivantes :
 
-```
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>

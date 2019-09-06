@@ -4,21 +4,21 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/09/2018
-ms.openlocfilehash: 1e746a44deb024894a5d1f94fab21128126287e8
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: edd5a2c1ed2efdffc9bd28bb06ac19348615eefc
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198795"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292108"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>Où trouver le fichier .dSYM pour générer les symboles des journaux de plantage iOS ?
 
-Lors de la génération d’une application iOS avec Visual Studio pour Mac ou Visual Studio 2017, le fichier. dSYM nécessaire pour désigner les rapports d’incidents est placé dans la même hiérarchie de répertoires que le fichier projet de votre application (. csproj). L’emplacement exact dépend des paramètres de génération de votre projet:
+Lors de la génération d’une application iOS avec Visual Studio pour Mac ou Visual Studio 2017, le fichier. dSYM nécessaire pour désigner les rapports d’incidents est placé dans la même hiérarchie de répertoires que le fichier projet de votre application (. csproj). L’emplacement exact dépend des paramètres de génération de votre projet :
 
-- Si vous avez activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant:
+- Si vous avez activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant :
 
     **&lt;&gt;répertoire du projet&lt;/bin/&gt;configurationdela&lt; plateforme//Device-builds/appareil&lt;&lt;&gt; &gt;- version du système d’exploitation&gt;/**
 
@@ -26,7 +26,7 @@ Lors de la génération d’une application iOS avec Visual Studio pour Mac ou V
   
     **TestApp/bin/iPhone/Release/Device-builds/iPhone 8.4-11.3.1/**
 
-- Si vous n’avez pas activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant:
+- Si vous n’avez pas activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant :
 
     **&lt;configuration de&gt;la&lt;plateforme&gt;/bin/DirectoryProject/&lt;&gt;/**
 

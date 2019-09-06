@@ -4,21 +4,21 @@ description: Ce document explique comment utiliser TextKit dans Xamarin. iOS. Te
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c0ee125090a2bb817f09a18c34033a1f8a788569
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: c153e653cc57d35f125ef58ebc8df0013f77e7c1
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227282"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283010"
 ---
 # <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin. iOS
 
 TextKit est une nouvelle API qui offre de puissantes fonctionnalités de présentation et de rendu du texte. Il s’appuie sur l’infrastructure de texte de base de bas niveau, mais il est beaucoup plus facile à utiliser que le texte de base.
 
-Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles standard, plusieurs contrôles de texte iOS ont été réimplémentés pour utiliser TextKit, notamment:
+Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles standard, plusieurs contrôles de texte iOS ont été réimplémentés pour utiliser TextKit, notamment :
 
 - UITextView
 - UITextField
@@ -26,7 +26,7 @@ Pour que les fonctionnalités de TextKit soient disponibles pour les contrôles 
 
 ## <a name="architecture"></a>Architecture
 
-TextKit fournit une architecture en couches qui sépare le stockage de texte de la disposition et de l’affichage, y compris les classes suivantes:
+TextKit fournit une architecture en couches qui sépare le stockage de texte de la disposition et de l’affichage, y compris les classes suivantes :
 
 - `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
 - `NSLayoutManager`: Met du texte en forme de glyphes.
@@ -35,7 +35,7 @@ TextKit fournit une architecture en couches qui sépare le stockage de texte de 
 
 Ces trois classes sont appliquées à une vue qui restitue le texte. Les vues de gestion de texte intégrées, telles que `UITextView`, `UITextField`et `UILabel` qui les ont déjà définies, vous pouvez les créer et les appliquer également à `UIView` n’importe quelle instance.
 
-La figure suivante illustre cette architecture:
+La figure suivante illustre cette architecture :
 
  ![](textkit-images/textkitarch.png "Cette figure illustre l’architecture TextKit")
 
@@ -43,7 +43,7 @@ La figure suivante illustre cette architecture:
 
 La `NSTextStorage` classe contient le texte affiché par une vue. Il communique également toutes les modifications apportées au texte, telles que les modifications apportées aux caractères ou à leurs attributs, dans le gestionnaire de disposition pour l’affichage. `NSTextStorage`hérite de `MSMutableAttributed` String, ce qui permet de spécifier des modifications des attributs de texte dans `BeginEditing` des `EndEditing` lots entre les appels et.
 
-Par exemple, l’extrait de code suivant spécifie une modification des couleurs de premier plan et d’arrière-plan, respectivement, et cible des plages spécifiques:
+Par exemple, l’extrait de code suivant spécifie une modification des couleurs de premier plan et d’arrière-plan, respectivement, et cible des plages spécifiques :
 
 ```csharp
 textView.TextStorage.BeginEditing ();
@@ -62,7 +62,7 @@ L’ajout d’un chemin d’exclusion `ExclusionPaths` requiert la définition d
 
 ### <a name="exclusion-based-on-a-cgpath"></a>Exclusion basée sur un CGPath
 
-Examinez l' `UITextView` implémentation de sous-classe suivante:
+Examinez l' `UITextView` implémentation de sous-classe suivante :
 
 ```csharp
 public class ExclusionPathView : UITextView
@@ -146,19 +146,19 @@ Ce code ajoute la prise en charge du dessin sur l’affichage de texte à l’ai
 
 
 
-Une fois que l’utilisateur a dessiné `CGPath` l’affichage de texte, il est appliqué à une `UIBezierPath` instance en `UIBezierPath.CGPath` définissant la propriété:
+Une fois que l’utilisateur a dessiné `CGPath` l’affichage de texte, il est appliqué à une `UIBezierPath` instance en `UIBezierPath.CGPath` définissant la propriété :
 
 ```csharp
 bezierPath.CGPath = exclusionPath;
 ```
 
-La mise à jour de la ligne de code suivante rend la mise à jour de la disposition du texte autour du chemin d’accès:
+La mise à jour de la ligne de code suivante rend la mise à jour de la disposition du texte autour du chemin d’accès :
 
 ```csharp
 TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ```
 
-La capture d’écran suivante illustre la façon dont la disposition du texte change pour circuler autour du tracé dessiné:
+La capture d’écran suivante illustre la façon dont la disposition du texte change pour circuler autour du tracé dessiné :
 
 <!-- ![](textkit-images/exclusionpath1.png "This screenshot illustrates how the text layout changes to flow around the drawn path")-->
 ![](textkit-images/exclusionpath2.png "Cette capture d’écran illustre la modification de la disposition du texte autour du tracé dessiné.")

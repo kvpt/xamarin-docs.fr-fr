@@ -3,21 +3,21 @@ title: Problèmes connus & solutions de contournement
 description: Ce document décrit les problèmes connus et les solutions de contournement pour Xamarin Workbooks. Il aborde les problèmes CultureInfo, les problèmes JSON et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/30/2017
-ms.openlocfilehash: 3701a2a111c5c18f694def241b1e888fa6f4ce19
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: b7b73e214af6a5a45426b4e2d2d7e01a436b379e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120315"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292780"
 ---
 # <a name="known-issues--workarounds"></a>Problèmes connus & solutions de contournement
 
 ## <a name="persistence-of-cultureinfo-across-cells"></a>Persistance de CultureInfo sur les cellules
 
-Le `System.Threading.CurrentThread.CurrentCulture` paramètre `System.Globalization.CultureInfo.CurrentCulture` ou n’est pas conservé entre les cellules de classeur sur des classeurs mono, cibles (Mac, iOS et Android) en raison d’un bogue dans l’implémentation [de `AppContext.SetSwitch` mono][appcontext-bug] .
+Le `System.Threading.CurrentThread.CurrentCulture` paramètre `System.Globalization.CultureInfo.CurrentCulture` ou n’est pas conservé entre les cellules de classeur sur des classeurs mono, cibles (Mac, iOS et Android) en raison d’un [bogue dans l’implémentation de `AppContext.SetSwitch` mono][appcontext-bug] .
 
 ### <a name="workarounds"></a>Solutions
 

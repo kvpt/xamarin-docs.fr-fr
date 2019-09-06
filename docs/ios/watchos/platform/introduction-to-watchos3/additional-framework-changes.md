@@ -4,15 +4,15 @@ description: Ce document décrit les différentes modifications apportées à l�
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d8c1ace9972f15c3f068bda88bc21e7cb5990f25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 34f192938ac583e39232312377142015aa6d3811
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655566"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287565"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Modifications supplémentaires apportées aux infrastructures Watchos 3
 
@@ -23,7 +23,7 @@ Outre les modifications majeures apportées à iOS, Apple a apporté des modific
 
 ## <a name="core-data"></a>Données de base
 
-Les améliorations suivantes ont été apportées à l’infrastructure de données de base pour la surveillance du système d’exploitation 3:
+Les améliorations suivantes ont été apportées à l’infrastructure de données de base pour la surveillance du système d’exploitation 3 :
 
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
 - La classe [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) gère un pool de banques de données SQLite.
@@ -36,7 +36,7 @@ Pour plus d’informations, consultez Référence de l' [infrastructure de donn�
 
 ## <a name="core-motion"></a>Mouvement de base
 
-Les améliorations suivantes ont été apportées à l’infrastructure Motion Core pour le système d’exploitation Watch 3:
+Les améliorations suivantes ont été apportées à l’infrastructure Motion Core pour le système d’exploitation Watch 3 :
 
 - Le nouvel événement de mouvement d’appareil utilise l’accéléromètre et le gyroscope pour fournir des mises à jour d’orientation et de mouvement. L’application peut s’inscrire à cette mise à jour (à des tarifs allant jusqu’à 100Hz).
 - Le nouvel événement Pedometer permet des notifications rapides et en temps réel lorsque l’utilisateur s’arrête et reprend son exécution. Utilisez [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) pour vous inscrire aux événements de premier plan ou d’arrière-plan Pedometer.
@@ -44,7 +44,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure Motion C
 
 ## <a name="foundation"></a>Pierre
 
-Les améliorations suivantes ont été apportées à l’infrastructure de base pour la surveillance du système d’exploitation 3:
+Les améliorations suivantes ont été apportées à l’infrastructure de base pour la surveillance du système d’exploitation 3 :
 
 - Utilisez la nouvelle classe [NSDateInterval](https://developer.apple.com/reference/foundation/nsdateinterval) pour effectuer des calculs d’intervalles de date et d’heure tels que des durées, pour comparer des intervalles et tester des intersections d’intervalle.
 - Plusieurs nouvelles propriétés ont été ajoutées à la classe [NSLocal](https://developer.apple.com/reference/foundation/nslocale) pour obtenir des informations locales et les formats d’affichage disponibles.
@@ -55,7 +55,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 
 ## <a name="healthkit"></a>HealthKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure HealthKit pour la surveillance du système d’exploitation 3:
+Les améliorations suivantes ont été apportées à l’infrastructure HealthKit pour la surveillance du système d’exploitation 3 :
 
 - Utilisez la nouvelle classe [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) pour spécifier le `ActivityType` et `LocationType` un entraînement.
 - Le nouveau [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) et la `WheelchairUse` méthode de la classe [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) ont été ajoutés pour l’utilisation des données d’intégrité liées aux fauteuils roulants.
@@ -64,7 +64,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure HealthKi
 
 ## <a name="homekit"></a>HomeKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure HomeKit pour la surveillance du système d’exploitation 3:
+Les améliorations suivantes ont été apportées à l’infrastructure HomeKit pour la surveillance du système d’exploitation 3 :
 
 - Ajout de la possibilité d’afficher et d’interagir avec les caméras IP connectées à HomeKit.
 - Ajout de plusieurs nouveaux services et caractéristiques.
@@ -73,15 +73,15 @@ Les améliorations suivantes ont été apportées à l’infrastructure HomeKit 
 
 ## <a name="passkit"></a>PassKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure PassKit pour la surveillance du système d’exploitation 3:
+Les améliorations suivantes ont été apportées à l’infrastructure PassKit pour la surveillance du système d’exploitation 3 :
 
 - Développe l’infrastructure pour prendre en charge les paiements dans l’application sécurisés sur le Apple Watch des biens et services physiques.
-- Les classes suivantes sont désormais disponibles: [PKPayment](https://developer.apple.com/reference/passkit/pkpayment), [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod), [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest) et [PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
+- Les classes suivantes sont désormais disponibles : [PKPayment](https://developer.apple.com/reference/passkit/pkpayment), [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod), [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest) et [PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 
 ## <a name="uikit"></a>UIKit
 
-Les améliorations suivantes ont été apportées à l’infrastructure UIKit pour la surveillance du système d’exploitation 3:
+Les améliorations suivantes ont été apportées à l’infrastructure UIKit pour la surveillance du système d’exploitation 3 :
 
 - Pour prendre en charge le type dynamique dans les étiquettes, les champs de texte `PreferredFontForTextStyle` et les zones `UIFont` de texte, utilisez la nouvelle méthode de la classe.
 - La `ColorWithDisplayP3` méthode a été ajoutée pour prendre en charge la couleur étendue.

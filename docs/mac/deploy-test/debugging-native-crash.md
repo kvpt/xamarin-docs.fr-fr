@@ -4,25 +4,25 @@ description: Ce document décrit comment déboguer des exceptions qui proviennen
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: 4a80b14aeb1517bac1e0d994a606ac4e74b2a94a
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: bb33d9f85dfc1215e91caa20fab3800645e13111
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065639"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282187"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Débogage d’un plantage natif dans une application Xamarin.Mac
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Des erreurs de programmation peuvent parfois provoquer des plantages dans le runtime Objective-C natif. Contrairement aux exceptions de C#, celles-ci ne pointent pas sur une ligne spécifique de votre code que vous pouvez localiser pour la corriger. Elles peuvent parfois être faciles à trouver et à corriger, mais aussi parfois extrêmement difficiles à localiser. 
 
 Passons en revue quelques exemples de plantages natifs réels.
 
-## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
+## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
 
 Voici les quelques premières lignes d’un plantage dans une application de test simple (ces informations se trouvent dans le panneau **Sortie de l’application**) :
 
@@ -179,7 +179,7 @@ new System.Threading.Thread (() =>
 
 Ceci force votre application à exécuter le Garbage Collector toutes les secondes. Réexécutez votre application et essayez de reproduire le bogue. Si elle plante tout de suite, ou de façon cohérente et non aléatoire, vous êtes sur la bonne voie.
 
-### <a name="reporting"></a>Rapports
+### <a name="reporting"></a>Reporting
 
 L’étape suivante consiste à signaler le problème à Xamarin, pour que la liaison puisse être corrigée dans les versions futures. Si vous êtes détenteur d’une licence professionnelle ou d’entreprise, ouvrez un ticket sur 
 

@@ -1,31 +1,31 @@
 ---
-title: Fonctionnalités de l’objectif Sharpie
-description: Ce document établit un lien vers les guides pas à pas qui permettent de décrire l’objectif Sharpie, l’utilisation et la sortie qu’il génère.
+title: Caractéristiques de la finesse d’objectif
+description: Ce document contient des liens vers divers guides qui vous aident à décrire la finesse d’objectif, comment l’utiliser et la sortie qu’il génère.
 ms.prod: xamarin
 ms.assetid: 9A17A2C6-AFFD-41E2-BE9B-9BC1AA57E1E1
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: 8ce6e7d8ca432c4da19e7d60fbd98bfb4780c682
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: dfbfd443b06518bccbf3b71fcc27acac0bca7481
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977690"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279098"
 ---
-# <a name="objective-sharpie-features"></a>Fonctionnalités de l’objectif Sharpie
+# <a name="objective-sharpie-features"></a>Caractéristiques de la finesse d’objectif
 
-Lisez ces pages afin de mieux comprendre les fonctionnalités d’objectif Sharpie :
+Lisez ces pages pour mieux comprendre les caractéristiques de la finesse d’objectif :
 
 ## <a name="apidefinitionscs--structsandenumscsapidefinitions-structsandenumsmd"></a>[**ApiDefinitions.cs & StructsAndEnums.cs**](apidefinitions-structsandenums.md)
 
-Ces deux fichiers sont générés par Sharpie objectif, à inclure dans votre projet de liaison. En savoir plus sur les [ici](apidefinitions-structsandenums.md).
+Ces deux fichiers sont émis par objective Sharp, à inclure dans votre projet de liaison. En savoir plus à leur sujet [ici](apidefinitions-structsandenums.md).
 
 ## <a name="native-frameworksnative-frameworksmd"></a>[**Infrastructures natives**](native-frameworks.md)
 
-Certaines bibliothèques sont distribuées comme frameworks plutôt que comme source.
-Objectif Sharpie vous permet d’utiliser ces bibliothèques avec le `-framework` option.
+Certaines bibliothèques sont distribuées en tant que structures et non en tant que source.
+La précision objective vous permet d’utiliser ces bibliothèques `-framework` avec l’option.
 
-## <a name="verifyverifymd"></a>[**Verify**](verify.md)
+## <a name="verifyverifymd"></a>[**Confirmation**](verify.md)
 
-Objectif Sharpie ajouter `Verify` attributs pour signaler que vous devez inspecter manuellement et de mettre à jour de la liaison générée. 
+Objectivité précise ajoutez `Verify` des attributs pour signaler que vous devez inspecter et mettre à jour manuellement la liaison générée. 

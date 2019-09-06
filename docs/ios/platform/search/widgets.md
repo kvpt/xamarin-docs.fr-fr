@@ -4,15 +4,15 @@ description: Ce document décrit les améliorations apportées par Apple aux wid
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 71c58baee5e98efcfb38b75ffed2b85c90f8a131
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 47055ca61e0be9b5b54e8f5ff23719b64f1101cd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227366"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291711"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Améliorations des widgets de recherche et d’écran d’accueil dans iOS 10
 
@@ -20,20 +20,20 @@ _Cet article aborde les améliorations apportées par Apple au système widget d
 
 Apple a introduit plusieurs améliorations du système widget pour s’assurer que les widgets s’affichent parfaitement sur n’importe quel arrière-plan existant sur le nouvel écran de verrouillage iOS 10. En outre, les widgets contiennent désormais une propriété [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) qui permet au développeur de décrire la quantité de contenu disponible et permet à l’utilisateur de développer et de réduire le contenu.
 
-Les widgets (également appelés «extensions aujourd’hui») sont un type spécial d’extension iOS qui affiche une petite quantité d’informations utiles ou qui exposent les fonctionnalités spécifiques à l’application dans les délais impartis. Par exemple, l’application de News contient un widget qui affiche les principaux titres et l’application de calendrier fournit deux widgets différents: un pour afficher les événements du jour et un pour afficher les événements à venir.
+Les widgets (également appelés « extensions aujourd’hui ») sont un type spécial d’extension iOS qui affiche une petite quantité d’informations utiles ou qui exposent les fonctionnalités spécifiques à l’application dans les délais impartis. Par exemple, l’application de News contient un widget qui affiche les principaux titres et l’application de calendrier fournit deux widgets différents : un pour afficher les événements du jour et un pour afficher les événements à venir.
 
 Les widgets sont hautement personnalisables et peuvent contenir des éléments d’interface utilisateur tels que du texte, des images, des boutons, etc. En outre, le développeur peut personnaliser davantage la disposition de ses widgets.
 
 [![](widgets-images/widgets01.png "Exemples de widgets")](widgets-images/widgets01.png#lightbox)
 
-Il existe deux emplacements principaux qu’un utilisateur peut afficher et interagir avec les widgets d’une application:
+Il existe deux emplacements principaux qu’un utilisateur peut afficher et interagir avec les widgets d’une application :
 
 - **Écran de recherche** : les utilisateurs peuvent ajouter les widgets qu’ils trouvent les plus utiles à leur écran de recherche. L’écran de recherche est accessible en effectuant un balayage à droite sur les écrans Accueil et verrouillage.
 - **Écran d’accueil** -à partir de l’écran d’accueil, l’utilisateur peut utiliser la touche d’activation en 3D pour ouvrir la liste actions rapides en appliquant une pression à l’icône de l’application. Les widgets d’une application s’affichent au-dessus de la liste d’actions rapides. Pour plus d’informations, consultez notre [Introduction à la documentation 3D touch](~/ios/platform/3d-touch.md) .
 
 ## <a name="widgets-developer-suggestions"></a>Suggestions pour les développeurs de widgets
 
-Dans l’idéal, le développeur doit toujours essayer et concevoir des widgets que l’utilisateur souhaite ajouter à leurs écrans de recherche. À cette fin, Apple présente les suggestions suivantes:
+Dans l’idéal, le développeur doit toujours essayer et concevoir des widgets que l’utilisateur souhaite ajouter à leurs écrans de recherche. À cette fin, Apple présente les suggestions suivantes :
 
 - **Créez une expérience remarquable et agréable** : les widgets de l’utilisateur souhaitent obtenir des informations succinctes et rapides sur les mises à jour d’État ou les autoriser à effectuer rapidement des tâches simples. Cela permet de fournir la quantité d’informations et l’interactivité adéquates. Dans la mesure du possible, autorisez l’utilisateur à effectuer une tâche donnée avec un seul TAP. De plus, étant donné que les widgets ne prennent pas en charge le panoramique ou le défilement, vous devez les prendre en compte dans la conception du widget.
 - **Afficher rapidement le contenu** : les widgets sont conçus pour être plus rapides, de sorte que l’utilisateur ne doit jamais attendre le chargement du contenu une fois qu’un widget est affiché. Les widgets doivent mettre en cache leur contenu localement afin qu’ils puissent afficher le contenu récent pendant le chargement du contenu actualisé en arrière-plan.
@@ -41,9 +41,9 @@ Dans l’idéal, le développeur doit toujours essayer et concevoir des widgets 
 - **Utiliser des dispositions adaptables** : la largeur d’un widget varie en fonction de l’appareil sur lequel il s’exécute et de l’orientation de l’appareil. La hauteur d’un widget peut également varier en fonction de s’il est affiché dans un État réduit (par défaut) ou développé (non pris en charge par tous les widgets). Un widget réduit a une hauteur d’environ deux lignes de table iOS standard et demie. Le développeur peut demander la taille d’un widget développé, mais il doit idéalement être inférieur à la hauteur de l’écran. Dans l’État réduit, le widget doit afficher uniquement les informations essentielles et autonomes. Lorsqu’il est développé, le widget doit afficher des informations supplémentaires qui améliorent le contenu principal affiché dans l’État réduit. Les widgets affichés dans la liste d’actions rapides ne seront que dans l’État réduit.
 - **Ne personnalisez pas l’arrière-plan du widget** . les widgets sont affichés sur un arrière-plan clair et flou fourni par le système. Cela permet de promouvoir la cohérence entre les widgets et d’améliorer la lisibilité de leur contenu. Évitez d’utiliser une image comme arrière-plan du widget, car elle risque d’entrer en conflit avec les papiers peints du verrou et de l’écran d’accueil de l’utilisateur.
 - **Utilisez la police système en noir ou gris foncé** -lorsque vous affichez du texte dans un widget, la police système fonctionne mieux. La police doit être dans une couleur grise noire ou foncée pour se mettre en évidence par rapport à l’arrière-plan du widget clair et flou.
-- **Fournir l’accès à l’application lorsque** le widget doit toujours fonctionner séparément de son application. Toutefois, si des fonctionnalités plus approfondies sont requises, le widget doit être en mesure de lancer l’application pour afficher ou modifier une information spécifique. N’incluez jamais de bouton «ouvrir une application», autorisez simplement l’utilisateur à appuyer sur le contenu lui-même et à ne jamais ouvrir une application tierce.
+- **Fournir l’accès à l’application lorsque** le widget doit toujours fonctionner séparément de son application. Toutefois, si des fonctionnalités plus approfondies sont requises, le widget doit être en mesure de lancer l’application pour afficher ou modifier une information spécifique. N’incluez jamais de bouton « ouvrir une application », autorisez simplement l’utilisateur à appuyer sur le contenu lui-même et à ne jamais ouvrir une application tierce.
 - **Sélectionner un nom de widget clair et concis** : l’icône de l’application et le nom du widget sont toujours affichés sur le contenu du widget. Apple suggère d’utiliser le nom de l’application pour son widget principal et un nom clair et concis pour tous les autres éléments qu’il fournit. Lorsque vous fournissez un titre de widget personnalisé, ceux-ci doivent être précédés du nom de l’application (par exemple, Maps à proximité, cartes de restaurants, etc.).
-- **Informer lorsque l’authentification ajoute** de la valeur: si des fonctionnalités ou des informations supplémentaires sont disponibles uniquement lorsque l’utilisateur est authentifié et connecté, présentez-le à l’utilisateur. Par exemple, une application de partage des adresses peut indiquer «se connecter à la signature de livre».
+- **Informer lorsque l’authentification ajoute** de la valeur : si des fonctionnalités ou des informations supplémentaires sont disponibles uniquement lorsque l’utilisateur est authentifié et connecté, présentez-le à l’utilisateur. Par exemple, une application de partage des adresses peut indiquer « se connecter à la signature de livre ».
 - **Sélectionner un widget de liste d’actions rapides** : si l’application fournit plusieurs widgets, le développeur doit choisir celui qui doit être présent lorsque l’utilisateur fait apparaître la liste d’actions rapides en appliquant une pression à l’icône de l’application à l’aide de la fonction tactile 3D.
 
 Pour plus d’informations sur l’utilisation des widgets, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md), [Présentation de la documentation tactile 3D](~/ios/platform/3d-touch.md) et [Guide de programmation](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html)de l’extension d’application d’Apple.
@@ -77,7 +77,7 @@ Dans l’État réduit, le widget doit afficher uniquement les informations esse
 
 Les widgets affichés dans la liste d’actions rapides ne seront que dans l’État réduit. Si l’application fournit plusieurs widgets, le développeur doit choisir celui qui doit être présent lorsque l’utilisateur affiche la liste d’actions rapides en appliquant une pression à l’icône de l’application à l’aide de l’interface tactile 3D.
 
-L’exemple suivant est une simple extension Today (widget) qui gère les États réduits et développés:
+L’exemple suivant est une simple extension Today (widget) qui gère les États réduits et développés :
 
 ```csharp
 using System;
@@ -146,27 +146,27 @@ namespace MonkeyAbout
 }
 ```
 
-Examinez en détail le code spécifique du mode d’affichage du widget. Pour informer le système que ce widget prend en charge l’état développé, il utilise:
+Examinez en détail le code spécifique du mode d’affichage du widget. Pour informer le système que ce widget prend en charge l’état développé, il utilise :
 
 ```csharp
 // Tell widget it can be expanded
 ExtensionContext.SetWidgetLargestAvailableDisplayMode (NCWidgetDisplayMode.Expanded);
 ```
 
-Pour obtenir le mode d’affichage actuel du widget, il utilise:
+Pour obtenir le mode d’affichage actuel du widget, il utilise :
 
 ```csharp
 ExtensionContext.GetWidgetActiveDisplayMode()
 ```
 
-Pour obtenir la taille maximale d’un État réduit ou développé, il utilise:
+Pour obtenir la taille maximale d’un État réduit ou développé, il utilise :
 
 ```csharp
 // Get the maximum size
 var maxSize = ExtensionContext.GetWidgetMaximumSize (NCWidgetDisplayMode.Expanded);
 ```
 
-Et pour gérer le changement d’État (mode d’affichage), il utilise:
+Et pour gérer le changement d’État (mode d’affichage), il utilise :
 
 ```csharp
 [Export ("widgetActiveDisplayModeDidChange:withMaximumSize:")]

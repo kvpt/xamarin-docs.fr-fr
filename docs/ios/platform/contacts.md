@@ -4,15 +4,15 @@ description: Cet article traite de l’utilisation des nouvelles infrastructures
 ms.prod: xamarin
 ms.assetid: 7b6fb66a-5e19-4a5a-9ed2-f6b02af099af
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 8b551a17fc54ec1557cd385b4c91b33720316879
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225976"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278536"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Contacts et ContactsUI dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ _Cet article traite de l’utilisation des nouvelles infrastructures d’interfa
 
 Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, `Contacts` et `ContactsUI`, qui remplacent les infrastructures d’interface utilisateur du carnet d’adresses et du carnet d’adresses existantes utilisées par IOS 8 et les versions antérieures.
 
-Les deux nouvelles infrastructures contiennent les fonctionnalités suivantes:
+Les deux nouvelles infrastructures contiennent les fonctionnalités suivantes :
 
 - [**Contacts**](#contacts) : permet d’accéder aux données de la liste de contacts de l’utilisateur.
   Étant donné que la plupart des applications requièrent uniquement un accès en lecture seule, cette infrastructure a été optimisée pour l’accès en lecture seule thread-safe.
@@ -47,7 +47,7 @@ L’infrastructure de contacts fournit un accès Xamarin. iOS aux informations d
 
 ### <a name="contact-objects"></a>Objets contact
 
-La `CNContact` classe fournit un accès en lecture seule thread-safe aux propriétés d’un contact, telles que le nom, l’adresse ou les numéros de téléphone. `CNContact`fonctionne comme un `NSDictionary` et contient plusieurs collections de propriétés en lecture seule (telles que des adresses ou des numéros de téléphone):
+La `CNContact` classe fournit un accès en lecture seule thread-safe aux propriétés d’un contact, telles que le nom, l’adresse ou les numéros de téléphone. `CNContact`fonctionne comme un `NSDictionary` et contient plusieurs collections de propriétés en lecture seule (telles que des adresses ou des numéros de téléphone) :
 
 [![](contacts-images/contactobjects.png "Vue d’ensemble des objets contact")](contacts-images/contactobjects.png#lightbox)
 
@@ -55,7 +55,7 @@ Pour toute propriété pouvant avoir plusieurs valeurs (telles que l’adresse d
 
 Pour toute application Xamarin. IOS qui doit ajuster les valeurs d’un contact existant (ou en créer d’autres), utilisez la `NSMutableContact` version de la classe et ses sous-classes (telles `CNMutablePostalAddress`que).
 
-Par exemple, le code suivant crée un nouveau contact et l’ajoute à la collection de contacts de l’utilisateur:
+Par exemple, le code suivant crée un nouveau contact et l’ajoute à la collection de contacts de l’utilisateur :
 
 ```csharp
 // Create a new Mutable Contact (read/write)
@@ -117,7 +117,7 @@ Si ce code est exécuté sur un appareil iOS 9, un nouveau contact est ajouté a
 
 ### <a name="contact-formatting-and-localization"></a>Mise en forme et localisation des contacts
 
-L’infrastructure de contacts contient plusieurs objets et méthodes qui peuvent vous aider à mettre en forme et à localiser du contenu à l’utilisateur. Par exemple, le code suivant formate correctement un nom de contact et une adresse postale pour l’affichage:
+L’infrastructure de contacts contient plusieurs objets et méthodes qui peuvent vous aider à mettre en forme et à localiser du contenu à l’utilisateur. Par exemple, le code suivant formate correctement un nom de contact et une adresse postale pour l’affichage :
 
 ```csharp
 Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterStyle.FullName));
@@ -136,7 +136,7 @@ Console.WriteLine(CNLabeledValue<NSString>.LocalizeLabel(CNLabelKey.Home));
 
 En utilisant une instance de la `CNContactStore` classe, vous pouvez extraire les informations de contact de la base de données des contacts de l’utilisateur. `CNContactStore` Contient toutes les méthodes nécessaires à l’extraction ou à la mise à jour des contacts et des groupes à partir de la base de données. Étant donné que ces méthodes sont synchrones, il est recommandé de les exécuter sur un thread d’arrière-plan pour éviter de bloquer l’interface utilisateur.
 
-En utilisant des prédicats (générés `CNContact` à partir de la classe), vous pouvez filtrer les résultats retournés lors de l’extraction des contacts de la base de données. Pour extraire uniquement les contacts qui contiennent la `Appleseed`chaîne, utilisez le code suivant:
+En utilisant des prédicats (générés `CNContact` à partir de la classe), vous pouvez filtrer les résultats retournés lors de l’extraction des contacts de la base de données. Pour extraire uniquement les contacts qui contiennent la `Appleseed`chaîne, utilisez le code suivant :
 
 ```csharp
 // Create predicate to locate requested contact
@@ -146,14 +146,14 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 > [!IMPORTANT]
 > Les prédicats génériques et composés ne sont pas pris en charge par l’infrastructure de contacts.
 
-Par exemple, pour limiter l’extraction uniquement aux propriétés **GivenName** et **familyName** du contact, utilisez le code suivant:
+Par exemple, pour limiter l’extraction uniquement aux propriétés **GivenName** et **familyName** du contact, utilisez le code suivant :
 
 ```csharp
 // Define fields to be searched
 var fetchKeys = new NSString[] {CNContactKey.GivenName, CNContactKey.FamilyName};
 ```
 
-Enfin, pour rechercher la base de données et retourner les résultats, utilisez le code suivant:
+Enfin, pour rechercher la base de données et retourner les résultats, utilisez le code suivant :
 
 ```csharp
 // Grab matching contacts
@@ -162,7 +162,7 @@ NSError error;
 var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 ```
 
-Si ce code a été exécuté après l’exemple que nous avons créé dans la section de l' **objet contacts** ci-dessus, il retourne le contact «John Appleseed» que nous venons de créer.
+Si ce code a été exécuté après l’exemple que nous avons créé dans la section de l' **objet contacts** ci-dessus, il retourne le contact « John Appleseed » que nous venons de créer.
 
 ### <a name="contact-access-privacy"></a>Confidentialité de l’accès aux contacts
 
@@ -202,7 +202,7 @@ Ce contact unifié est une vue temporaire en mémoire des informations de contac
 
 ### <a name="creating-and-updating-contacts"></a>Création et mise à jour des contacts
 
-Comme nous l’avons vu dans la section [objets de contact](#Contact_Objects) ci- `CNContactStore` dessus, vous utilisez un `CNMutableContact` et une instance d’un pour créer des contacts qui sont ensuite écrits dans la base `CNSaveRequest`de données de contacts de l’utilisateur à l’aide d’un:
+Comme nous l’avons vu dans la section [objets de contact](#Contact_Objects) ci- `CNContactStore` dessus, vous utilisez un `CNMutableContact` et une instance d’un pour créer des contacts qui sont ensuite écrits dans la base `CNSaveRequest`de données de contacts de l’utilisateur à l’aide d’un :
 
 ```csharp
 // Create a new Mutable Contact (read/write)
@@ -326,7 +326,7 @@ namespace iOS9Contacts
 }
 ```
 
-Pour permettre à l’utilisateur de sélectionner une adresse e-mail à partir des contacts dans sa base de données, vous pouvez utiliser le code suivant:
+Pour permettre à l’utilisateur de sélectionner une adresse e-mail à partir des contacts dans sa base de données, vous pouvez utiliser le code suivant :
 
 ```csharp
 // Create a new picker

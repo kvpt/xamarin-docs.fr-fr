@@ -3,15 +3,15 @@ title: Mise à jour des applications existantes vers le API unifiée
 description: Ce document contient des liens vers les différents guides qui décrivent comment mettre à jour des applications Xamarin vers l’API unifiée. Il aborde les applications Xamarin. iOS, les applications Xamarin. Mac. Applications Xamarin. Forms, types natifs dans les applications multiplateforme et projets de liaison.
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 021139c817d2b0eb430a6c8fe09dbd07b7c17813
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 3379b9672b344e8e424f95e273683f4c5e241b71
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226156"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280800"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Mise à jour des applications existantes vers le API unifiée
 
@@ -22,7 +22,7 @@ ms.locfileid: "70226156"
 
 ## <a name="how-to-update-your-apps"></a>Comment mettre à jour vos applications
 
-Il existe trois étapes pour mettre à jour vos applications:
+Il existe trois étapes pour mettre à jour vos applications :
 
 1. Corrigez tous les avertissements du compilateur dans votre code existant, en particulier ceux qui se rapportent à des API dépréciées.
 
@@ -30,7 +30,7 @@ Il existe trois étapes pour mettre à jour vos applications:
 
 3. Corrigez les erreurs de compilateur restantes relatives aux nouveaux [types 64](~/cross-platform/macios/nativetypes.md) et aux [autres API](~/cross-platform/macios/unified/overview.md#deprecated-typos) qui ont changé. Consultez [ces conseils](~/cross-platform/macios/unified/updating-tips.md) pour obtenir des informations supplémentaires sur les mises à jour manuelles qui peuvent être nécessaires.
 
-Des guides spécifiques sont disponibles pour chaque produit pour vous aider à mettre à jour vos applications vers le API unifiée et la prise en charge de 64 bits:
+Des guides spécifiques sont disponibles pour chaque produit pour vous aider à mettre à jour vos applications vers le API unifiée et la prise en charge de 64 bits :
 
 ### <a name="xamarinios-appscross-platformmaciosunifiedupdating-ios-appsmd"></a>[Applications Xamarin. iOS](~/cross-platform/macios/unified/updating-ios-apps.md)
 

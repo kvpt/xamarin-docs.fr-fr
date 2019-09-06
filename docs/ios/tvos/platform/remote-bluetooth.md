@@ -4,25 +4,25 @@ description: Cet article explique comment utiliser les contrôleurs de jeu Siri 
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 99fafe0ae0186ac68609ebe22dabe64e588ee5e0
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226670"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290740"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Contrôleurs distants et Bluetooth Siri pour tvOS dans Xamarin
 
 Les utilisateurs de votre application Xamarin. tvOS n’interagissent pas directement avec son interface, comme avec iOS, où ils appuient sur des images sur l’écran de l’appareil, mais indirectement à travers la salle à l’aide de la [télécommande Siri](#The-Siri-Remote).
 
-Si votre application est un jeu, vous pouvez éventuellement créer une prise en charge pour les contrôleurs de [jeu Bluetooth](#Bluetooth-Game-Controllers) tiers, effectués pour iOS (IFM) dans votre application.
+Si votre application est un jeu, vous pouvez éventuellement créer une prise en charge pour les [contrôleurs de jeu Bluetooth](#Bluetooth-Game-Controllers) tiers, effectués pour iOS (IFM) dans votre application.
 
 [![](remote-bluetooth-images/intro01.png "Le contrôleur de jeu et distant Bluetooth")](remote-bluetooth-images/intro01.png#lightbox)
 
-Cet article décrit les [Siri Remote](#The-Siri-Remote), [touch surface](#Touch-Surface-Gestures) et les [boutons distants Siri](#Siri-Remote-Buttons) et montre comment les utiliser via des [mouvements et](#Gestures-and-Storyboards)des storyboards, des [gestes et du code](#Gestures-and-Code) et [une gestion des événements de bas niveau](#Low-Level-Event-Handling). Enfin, il aborde l' [utilisation des contrôleurs de jeu](#Working-with-Game-Controllers) dans une application Xamarin. tvOS.
+Cet article décrit les [Siri Remote](#The-Siri-Remote), [touch surface](#Touch-Surface-Gestures) et les [boutons distants Siri](#Siri-Remote-Buttons) et montre comment les utiliser via des [mouvements et des storyboards](#Gestures-and-Storyboards), des [gestes et du code](#Gestures-and-Code) et [une gestion des événements de bas niveau](#Low-Level-Event-Handling). Enfin, il aborde l' [utilisation des contrôleurs de jeu](#Working-with-Game-Controllers) dans une application Xamarin. tvOS.
 
 <a name="The-Siri-Remote" />
 
@@ -34,7 +34,7 @@ Votre défi en tant que développeur d’applications tvOS est la création d’
 
 [![](remote-bluetooth-images/remote01.png "Siri à distance")](remote-bluetooth-images/remote01.png#lightbox)
 
-Le Siri distant présente les fonctionnalités suivantes et les utilisations attendues dans votre application tvOS:
+Le Siri distant présente les fonctionnalités suivantes et les utilisations attendues dans votre application tvOS :
 
 |Fonctionnalité|Utilisation générale de l’application|Utilisation de l’application de jeu|
 |---|---|---|
@@ -49,18 +49,18 @@ Le Siri distant présente les fonctionnalités suivantes et les utilisations att
 
 ## <a name="touch-surface-gestures"></a>Mouvements de la surface tactile
 
-La surface tactile de la Siri distante est en mesure de détecter une variété de mouvements à un seul doigt auxquels vous pouvez répondre dans votre application Xamarin. tvOS:
+La surface tactile de la Siri distante est en mesure de détecter une variété de mouvements à un seul doigt auxquels vous pouvez répondre dans votre application Xamarin. tvOS :
 
 |Balayer|Clic|Taper|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |Déplace la sélection (Focus) entre les éléments de l’interface utilisateur à l’écran (vers le haut, vers la gauche, à droite). Le balayage peut être utilisé pour faire défiler rapidement des listes volumineuses de contenu à l’aide de l’inertie.|Active l’élément sélectionné (en focus) ou agit comme le bouton principal dans un jeu. Cliquer et maintenir peut activer des menus contextuels ou des fonctions secondaires.|Appuyer légèrement sur la surface tactile sur les bords agit comme des boutons directionnels sur un BMD, en déplaçant le focus vers le haut, vers le haut, vers la gauche ou vers la droite en fonction de la zone. En fonction de l’application, peut être utilisé pour révéler des contrôles masqués.|
 
-Apple fournit les suggestions suivantes pour l’utilisation des gestes de surface tactile:
+Apple fournit les suggestions suivantes pour l’utilisation des gestes de surface tactile :
 
 - La **distinction entre les clics et** les clics est une action intentionnelle de l’utilisateur et est bien adaptée à la sélection, à l’activation et au bouton principal d’un jeu. Le taraudage est plus subtil et doit être utilisé avec modération, car l’utilisateur maintient souvent le Siri à distance et peut facilement activer un événement TAP.
 - **Ne pas redéfinir les gestes standard** : l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques, vous ne devez pas redéfinir la signification ou la fonction de ces mouvements dans votre application. La seule exception est une application de jeu pendant le jeu actif.
-- **Définir de nouveaux gestes** avec modération, l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques. Vous devez éviter de définir des mouvements personnalisés pour effectuer des actions standard. Là encore, les jeux sont l’exception la plus courante dans laquelle les gestes personnalisés peuvent ajouter un jeu amusant et immersif au jeu.
+- **Définir de nouveaux gestes avec modération** , l’utilisateur a l’attente que des mouvements spécifiques effectuent des actions spécifiques. Vous devez éviter de définir des mouvements personnalisés pour effectuer des actions standard. Là encore, les jeux sont l’exception la plus courante dans laquelle les gestes personnalisés peuvent ajouter un jeu amusant et immersif au jeu.
 - Le **cas échéant, répondez aux pressions d-pad** -l’appui faible sur les bords de la surface tactile réagira comme un BMD sur un contrôleur de jeu en déplaçant le focus ou la direction vers le haut, vers le bas, vers la gauche ou vers la droite. Le cas échéant, vous devez répondre à ces gestes dans votre application ou votre jeu.
 
 <a name="Siri-Remote-Buttons" />
@@ -80,22 +80,22 @@ En outre, les enfonceurs de bouton de menu peuvent être détectés à l’aide 
 
 Le moyen le plus simple de travailler avec la Siri distante dans votre application Xamarin. tvOS consiste à ajouter des modules de reconnaissance de mouvement à vos vues dans le concepteur d’interface.
 
-Pour ajouter un module de reconnaissance des mouvements, procédez comme suit:
+Pour ajouter un module de reconnaissance des mouvements, procédez comme suit :
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour modifier le concepteur d’interface.
-2. Faites glisser un module de **reconnaissance de mouvement TAP** de la **bibliothèque** et déposez-le sur la vue:
+2. Faites glisser un module de **reconnaissance de mouvement TAP** de la **bibliothèque** et déposez-le sur la vue :
 
     [![](remote-bluetooth-images/storyboard01.png "Module de reconnaissance de mouvement TAP")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Cochez la case **Sélectionner** dans la section du **bouton** de l' **inspecteur d’attribut**:
 
     [![](remote-bluetooth-images/storyboard02.png "Cocher sélectionner")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Select** signifie que le geste répond à l’utilisateur en cliquant sur la **surface tactile** sur le Siri distant. Vous avez également la possibilité de répondre aux boutons **menu**, **lire/suspendre**, **monter**, **descendre**, à **gauche** et à **droite** .
-5. Ensuite, associez une **action** à partir du module de **reconnaissance de mouvement TAP** et appelez- `TouchSurfaceClicked`la:
+5. Ensuite, associez une **action** à partir du module de **reconnaissance de mouvement TAP** et appelez- `TouchSurfaceClicked`la :
 
     [![](remote-bluetooth-images/storyboard03.png "Action du module de reconnaissance de mouvement TAP")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Enregistrez vos modifications et revenez à Visual Studio pour Mac.
 
-Modifiez le fichier de votre contrôleur `FirstViewController.cs`d’affichage (exemple) et ajoutez le code suivant pour gérer le mouvement déclenché:
+Modifiez le fichier de votre contrôleur `FirstViewController.cs`d’affichage (exemple) et ajoutez le code suivant pour gérer le mouvement déclenché :
 
 ```csharp
 using System;
@@ -123,7 +123,7 @@ Pour plus d’informations sur l’utilisation des storyboards, consultez notre 
 
 ## <a name="gestures-and-code"></a>Gestes et code
 
-Si vous le souhaitez, vous pouvez créer des mouvements C# directement dans le code et les ajouter aux vues dans votre interface utilisateur. Par exemple, pour ajouter une série de modules de reconnaissance de mouvement de balayage, modifiez votre contrôleur d’affichage et ajoutez le code suivant:
+Si vous le souhaitez, vous pouvez créer des mouvements C# directement dans le code et les ajouter aux vues dans votre interface utilisateur. Par exemple, pour ajouter une série de modules de reconnaissance de mouvement de balayage, modifiez votre contrôleur d’affichage et ajoutez le code suivant :
 
 ```csharp
 using System;
@@ -192,7 +192,7 @@ Un `UIPress` événement consiste à tvOS ce qu' `UITouch` est un événement iO
 
 Pour les boutons analogiques sur des appareils tels que `UIPress` les contrôleurs de jeu Bluetooth, retourne également la quantité de force appliquée au bouton. La `Type` propriété de l' `UIPress` événement définit le bouton physique qui a changé d’État, tandis que les autres propriétés décrivent la modification qui s’est produite.
 
-Le code suivant montre un exemple de gestion des événements de `UIPress` bas niveau pour `UIView`un:
+Le code suivant montre un exemple de gestion des événements de `UIPress` bas niveau pour `UIView`un :
 
 ```csharp
 using System;
@@ -278,7 +278,7 @@ Les contrôleurs de jeu peuvent être utilisés pour améliorer le jeu et donner
 > [!IMPORTANT]
 > Les contrôleurs de jeu Bluetooth sont un achat facultatif que les utilisateurs finaux peuvent effectuer, votre application ne peut pas forcer l’utilisateur à en acheter un. Si votre application prend en charge les contrôleurs de jeu, elle doit également prendre en charge la Siri distante afin que le jeu soit utilisable par tous les utilisateurs d’Apple TV.
 
-Un contrôleur de jeu présente les fonctionnalités suivantes et les utilisations attendues au sein de votre application tvOS:
+Un contrôleur de jeu présente les fonctionnalités suivantes et les utilisations attendues au sein de votre application tvOS :
 
 |Fonctionnalité|Utilisation générale de l’application|Utilisation de l’application de jeu|
 |---|---|---|
@@ -295,7 +295,7 @@ Un contrôleur de jeu présente les fonctionnalités suivantes et les utilisatio
 |**Joystick gauche**|Parcourt les éléments d’interface utilisateur (modifie le focus).|Dépend du jeu.|
 |**Joystick droit**|N/A|Dépend du jeu.|
 
-Apple fournit les suggestions suivantes pour l’utilisation des contrôleurs de jeu:
+Apple fournit les suggestions suivantes pour l’utilisation des contrôleurs de jeu :
 
 - **Confirmer les connexions du contrôleur de jeu** : votre application tvOS peut être démarrée et arrêtée à tout moment par l’utilisateur final. Vous devez toujours vérifier la présence d’un contrôleur de jeu au moment du démarrage de l’application ou en éveil et prendre les mesures nécessaires.
 - **Assurez-vous que votre application fonctionne sur les contrôleurs distants et de jeux Siri** . les utilisateurs ne doivent pas basculer entre le Siri distant et un contrôleur de jeu pour utiliser votre application. Testez fréquemment votre application avec les deux types de contrôleurs garantissant que tout est facile à parcourir et à fonctionner comme prévu.
@@ -307,7 +307,7 @@ Apple fournit les suggestions suivantes pour l’utilisation des contrôleurs de
 
 Comme indiqué ci-dessus, en plus de la Siri distante standard fournie avec Apple TV, l’utilisateur peut éventuellement joindre un tiers, créé pour les contrôleurs de jeu Bluetooth iOS (IFM) et l’utiliser pour contrôler votre application Xamarin. tvOS.
 
-Si votre application exigeait une entrée de contrôleur de bas niveau, vous pouvez utiliser l' [infrastructure de contrôleur de jeu](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276) d’Apple, qui présente les modifications suivantes pour tvOS:
+Si votre application exigeait une entrée de contrôleur de bas niveau, vous pouvez utiliser l' [infrastructure de contrôleur de jeu](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276) d’Apple, qui présente les modifications suivantes pour tvOS :
 
 - Le profil de contrôleur de jeu`GCMicroGamepad`micro () a été ajouté pour cibler le Siri distant.
 - La nouvelle `GCEventViewController` classe peut être utilisée pour acheminer des événements de contrôleur de jeu par le biais de votre application. Pour plus d’informations, consultez la section détermination de l' [entrée du contrôleur de jeu](#determining-game-controller-input) ci-dessous.
@@ -316,7 +316,7 @@ Si votre application exigeait une entrée de contrôleur de bas niveau, vous pou
 
 ### <a name="game-controller-support-requirements"></a>Configuration requise pour le contrôleur de jeu
 
-Apple a plusieurs exigences spécifiques qui doivent être satisfaites si votre application Xamarin. tvOS prend en charge les contrôleurs de jeu:
+Apple a plusieurs exigences spécifiques qui doivent être satisfaites si votre application Xamarin. tvOS prend en charge les contrôleurs de jeu :
 
 - **Vous devez prendre en charge l’Siri à distance** . vous devez toujours prendre en charge le Siri distant. Votre jeu ne peut pas exiger que le contrôleur de jeu tiers soit lisible.
 - **Vous devez prendre en charge la disposition des contrôles étendus** . tous les contrôleurs de jeu tvOS sont des contrôleurs étendus non Formfitting.
@@ -327,11 +327,11 @@ Apple a plusieurs exigences spécifiques qui doivent être satisfaites si votre 
 
 ### <a name="enabling-game-controller-support"></a>Activation de la prise en charge des contrôleurs de jeu
 
-Pour activer la prise en charge du contrôleur de jeu dans votre application Xamarin. tvOS `Info.plist` , double-cliquez sur le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier:
+Pour activer la prise en charge du contrôleur de jeu dans votre application Xamarin. tvOS `Info.plist` , double-cliquez sur le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier :
 
 [![](remote-bluetooth-images/game02.png "Éditeur info. plist")](remote-bluetooth-images/game02.png#lightbox)
 
-Dans la section **contrôleur de jeu** , cochez la case **activer**les contrôleurs de jeu, puis cochez tous les types de contrôleurs de jeu qui seront pris en charge par l’application.
+Dans la section **contrôleur de jeu** , cochez la case **activer les contrôleurs**de jeu, puis cochez tous les types de contrôleurs de jeu qui seront pris en charge par l’application.
 
 <a name="Using-the-Siri-Remote-as-a-Game-Controller" />
 
@@ -339,7 +339,7 @@ Dans la section **contrôleur de jeu** , cochez la case **activer**les contrôle
 
 La télécommande Siri fournie avec Apple TV peut être utilisée en tant que contrôleur de jeu limité. Comme les autres contrôleurs de jeu, il s’affiche dans la structure du `GCController` contrôleur de jeu en tant `GCMotion` qu’objet `GCMicroGamepad` et prend en charge à la fois les profils et.
 
-Le Siri distant présente les caractéristiques suivantes lors de son utilisation en tant que contrôleur de jeu:
+Le Siri distant présente les caractéristiques suivantes lors de son utilisation en tant que contrôleur de jeu :
 
 - La surface tactile peut être utilisée comme un BMD qui fournit des données d’entrée analogiques.
 - La télécommande peut être utilisée dans une orientation portrait ou paysage et votre application décide si l’objet de profil doit inverser automatiquement les données d’entrée.

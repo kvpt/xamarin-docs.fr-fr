@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 989d0fe1d8fffd74ea5f64ae7bd5a13487d25c0e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 200ee3fdee3274063becec19fbc6d1504e132a88
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525736"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226643"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Gestion des appareils virtuels avec Android Device Manager
 
@@ -47,10 +47,10 @@ Pour utiliser Android Device Manager, vous devez disposer des éléments suivant
   Veillez à installer le kit Android SDK à son emplacement par défaut, s’il ne l’est pas déjà : **C:\\Program Files (x86)\\Android\\android-sdk**.
 
 - Les paquets suivants doivent être installés (via [Android SDK Manager](~/android/get-started/installation/android-sdk.md)) : 
-    - **Android SDK Tools version 26.1.1** ou version ultérieure
-    - **Android SDK Platform-Tools {27.0.1}** ou ultérieur
-    - **Android SDK Build-Tools 27.0.3** ou ultérieur 
-    - **Émulateur Android 27.2.7** ou version ultérieure. 
+  - **Android SDK Tools version 26.1.1** ou version ultérieure
+  - **Android SDK Platform-Tools {27.0.1}** ou ultérieur
+  - **Android SDK Build-Tools 27.0.3** ou ultérieur 
+  - **Émulateur Android 27.2.7** ou version ultérieure. 
 
   Ces paquets doivent être affichés avec l’état **Installé**, comme illustré dans la capture d’écran suivante :
 
@@ -217,9 +217,9 @@ Pour utiliser Android Device Manager, vous devez disposer des éléments suivant
 - Le kit Android SDK doit être installé (consultez [Configuration du kit Android SDK pour Xamarin.Android](~/android/get-started/installation/android-sdk.md)).
 
 - Les paquets suivants doivent être installés (via [Android SDK Manager](~/android/get-started/installation/android-sdk.md)) : 
-    - **SDK Tools 26.1.1** ou version ultérieure
-    - **Android SDK Platform-Tools 28.0.1** ou version ultérieure 
-    - **Android SDK Build-Tools 26.0.3** ou version ultérieure
+  - **SDK Tools 26.1.1** ou version ultérieure
+  - **Android SDK Platform-Tools 28.0.1** ou version ultérieure 
+  - **Android SDK Build-Tools 26.0.3** ou version ultérieure
 
   Ces paquets doivent être affichés avec l’état **Installé**, comme illustré dans la capture d’écran suivante :
 
@@ -391,7 +391,7 @@ Pour contourner ce problème, effectuez les étapes suivantes :
 
    ![Emplacement du fichier journal d’Android Device Manager](device-manager-images/win/30-log-files.png)
 
-2. Double-cliquez pour ouvrir l’un des fichiers journaux et recherchez le **chemin du fichier config**. Par exemple :
+2. Double-cliquez pour ouvrir l’un des fichiers journaux et recherchez le **chemin du fichier config**. Par exemple :
 
    [![Chemin du fichier config dans le fichier journal](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 

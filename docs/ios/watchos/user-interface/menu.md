@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser le mouvement de force tactile
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 7efaa80eb7fb6aecf6eae449fe1e3d06a41d9413
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 497ac23ae6fe094b8049ac1b3460d327716e4ece
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199014"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291680"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Contrôle de menu Watchos (Force Touch) dans Xamarin
 
@@ -25,7 +25,7 @@ Le kit Watch fournit un mouvement Force Touch qui déclenche un menu lorsqu’il
 
 Si un `Menu` a été implémenté pour un contrôleur d’interface, lorsqu’un utilisateur exécute une force Touch le menu s’affiche. Si aucun menu n’a été implémenté, l’écran est brièvement animé. aucune autre action ne se produit.
 
-Les touches de force ne sont pas associées à un élément particulier à l’écran; un seul menu peut être attaché à un contrôleur d’interface et il s’affiche, quel que soit l’endroit où se trouve le Force Touch sur l’écran.
+Les touches de force ne sont pas associées à un élément particulier à l’écran ; un seul menu peut être attaché à un contrôleur d’interface et il s’affiche, quel que soit l’endroit où se trouve le Force Touch sur l’écran.
 
 Il est possible de présenter entre une et quatre options de menu.
 
@@ -36,13 +36,13 @@ Un `Menu` doit être ajouté à un `InterfaceController` sur le Storyboard au mo
 
 ![](menu-images/menu-action.png "Modification d’un menu au moment du design")
 
-Vous pouvez ajouter jusqu’à quatre éléments de menu au contrôle Menu. Ils peuvent être configurés dans le panneau **Propriétés** . Les attributs suivants peuvent être définis:
+Vous pouvez ajouter jusqu’à quatre éléments de menu au contrôle Menu. Ils peuvent être configurés dans le panneau **Propriétés** . Les attributs suivants peuvent être définis :
 
 - Titre et
 - Image personnalisée ou
-- Une image système: Accepter, ajouter, bloquer, refuser, info, peut-être, plus, muet, suspendre, lire, répéter, reprendre, partager, lire en lecture seule, orateur, corbeille.
+- Une image système : Accepter, ajouter, bloquer, refuser, info, peut-être, plus, muet, suspendre, lire, répéter, reprendre, partager, lire en lecture seule, orateur, corbeille.
 
-Créez un `Action` en sélectionnant la section **événements** du panneau **Propriétés** et en tapant le nom de la méthode d’action. Une méthode partielle est créée dans le code, qui peut être implémentée dans la classe de contrôleur d’interface, comme suit:
+Créez un `Action` en sélectionnant la section **événements** du panneau **Propriétés** et en tapant le nom de la méthode d’action. Une méthode partielle est créée dans le code, qui peut être implémentée dans la classe de contrôleur d’interface, comme suit :
 
 ```csharp
 partial void MenuItemTapped ()
@@ -69,13 +69,13 @@ Menu items added the storyboard can be shown and hidden programmatically.
 ### <a name="adding-at-runtime"></a>Ajouter au moment de l’exécution
 
 Vous ne pouvez pas `Menu` faire en sorte qu’un soit ajouté à un contrôleur d’interface au moment `MenuItem`de l’exécution, même si la collection de s *peut* être modifiée par programme.
-Utilisez la `AddMenuItem` méthode comme indiqué ci-dessous:
+Utilisez la `AddMenuItem` méthode comme indiqué ci-dessous :
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-L’API du kit de surveillance Xamarin. iOS requiert `selector` actuellement un `AdMenuItem` pour la méthode, qui doit être déclarée comme suit:
+L’API du kit de surveillance Xamarin. iOS requiert `selector` actuellement un `AdMenuItem` pour la méthode, qui doit être déclarée comme suit :
 
 ```csharp
 [Export("tapped")]

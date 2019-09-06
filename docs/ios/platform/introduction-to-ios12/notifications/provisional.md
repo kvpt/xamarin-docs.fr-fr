@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser Xamarin. iOS pour travailler 
 ms.prod: xamarin
 ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 1b4cf7f2caee274f353afff89e30c2db96009c12
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d321e8061d3091abeaa3cff6a6af9172c981cb60
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652365"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291204"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Notifications provisoires dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Les notifications provisoires permettent aux applications de remettre des notifi
 
 Dans le centre de notifications, les utilisateurs peuvent spécifier qu’une application doit cesser de recevoir des notifications provisoires, continuer à les mettre en service ou commencer à les diffuser de manière plus claire.
 
-## <a name="sample-app-redgreennotifications"></a>Exemple d’application: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Exemple d’application : RedGreenNotifications
 
 Jetez un coup d’œil à l’exemple d’application [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) , qui envoie des notifications provisoires.
 

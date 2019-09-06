@@ -1,41 +1,41 @@
 ---
-title: Objectif Sharpie vérifier les attributs
-description: Ce document décrit l’attribut [Verify] généré par objectif Sharpie. L’attribut [Verify] met en surbrillance pour les développeurs où ils doivent vérifier manuellement les sortie de Sharpie objectif.
+title: Attributs de vérification de la netteté objective
+description: Ce document décrit l’attribut [VERIFY] généré par la netteté objective. L’attribut [VERIFY] met en évidence les développeurs où ils doivent vérifier manuellement la sortie de la finesse d’objectif.
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b13164b7125e04b3e92a4ae0c0c0afd428f325af
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977863"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278934"
 ---
-# <a name="objective-sharpie-verify-attributes"></a>Objectif Sharpie vérifier les attributs
+# <a name="objective-sharpie-verify-attributes"></a>Attributs de vérification de la netteté objective
 
-Vous trouverez souvent que les liaisons produites par objectif Sharpie seront annotées avec le `[Verify]` attribut. Ces attributs indiquent que vous devez _vérifier_ qu’objectif Sharpie fait la chose correcte en comparant la liaison avec la déclaration d’origine de C/Objective-C (qui vous sont fournie dans un commentaire au-dessus de la déclaration de liaison).
+Vous constaterez souvent que les liaisons produites par objective Sharp sont annotées avec l' `[Verify]` attribut. Ces attributs indiquent que vous devez _vérifier_ que la netteté objective a effectué la bonne chose en comparant la liaison avec la déclaration d’origine c/objective-c (qui sera fournie dans un commentaire au-dessus de la déclaration liée).
 
-Vérification est recommandée pour _tous les_ lié les déclarations, mais est probablement _requis_ pour les déclarations annotées avec le `[Verify]` attribut. Il s’agit, car dans de nombreuses situations, il n’est pas suffisamment de métadonnées dans le code natif source d’origine pour déduire comment mieux produire une liaison. Vous devrez peut-être faire référence à la documentation ou des commentaires de code dans les fichiers d’en-tête à prendre la bonne décision de liaison.
+La vérification est recommandée pour _toutes les_ déclarations liées, mais elle est très probablement _requise_ pour les déclarations `[Verify]` annotées avec l’attribut. En effet, dans de nombreux cas, il n’y a pas assez de métadonnées dans le code source natif d’origine pour déduire comment créer au mieux une liaison. Vous devrez peut-être référencer la documentation ou des commentaires de code dans les fichiers d’en-tête pour prendre la meilleure décision de liaison.
 
-Une fois que vous avez vérifié que la liaison est corriger ou pour qu’il soit correct, rectifiées _supprimer_ le `[Verify]` attribut à partir de la liaison.
+Une fois que vous avez vérifié que la liaison est correcte ou qu’elle a été corrigée comme `[Verify]` correcte, _supprimez_ l’attribut de la liaison.
 
 > [!IMPORTANT]
-> `[Verify]` attributs provoquent intentionnellement C# erreurs de compilation afin que vous êtes obligé de vérifier la liaison. Vous devez supprimer le `[Verify]` lorsque vous avez consulté (et éventuellement corrigé) le code d’attribut.
+> `[Verify]`les attributs provoquent C# intentionnellement des erreurs de compilation pour vous obliger à vérifier la liaison. Vous devez supprimer l' `[Verify]` attribut lorsque vous avez consulté le code (et éventuellement corrigé).
 
-## <a name="verify-hints-reference"></a>Vérifier la référence d’indicateurs
+## <a name="verify-hints-reference"></a>Vérifier la référence des indicateurs
 
-L’argument de l’indicateur fourni à l’attribut peut faire l’objet référencé avec la documentation ci-dessous. Documentation de tout produit `[Verify]` attributs seront fournies ainsi la console une fois la liaison terminée.
+L’argument Hint fourni à l’attribut peut être référencé en croix avec la documentation ci-dessous. La documentation pour tous `[Verify]` les attributs produits sera également fournie sur la console une fois la liaison terminée.
 
-|`[Verify]` indicateur|Description|
+|`[Verify]`Évit|Description|
 |---|---|
-|InferredFromPreceedingTypedef|Le nom de cette déclaration a été inféré par convention commune à partir de la précédant immédiatement `typedef` dans le code natif source d’origine. Vérifiez que le nom déduit est correct de cette convention est AMBIGUE.|
-|ConstantsInterfaceAssociation|Il n’existe aucun moyen de preuve de poisson pour déterminer quelle interface Objective-C une déclaration de variable extern peut être associée. Instances de ces sont liées en tant que `[Field]` propriétés dans une interface partielle dans une interface concrète près par pour produire une API plus intuitive, éventuellement éliminer les « constantes » de l’interface complètement.|
-|MethodToProperty|Une méthode Objective-C a été liée en tant qu’un C# propriété en raison d’une convention comme prenant pas de paramètres et retournant une valeur (retour non void). Souvent les méthodes comme ceux-ci doivent être liés en tant que propriétés d’exposer une API mieux, mais parfois, les faux positifs peuvent se produire et la liaison doit être en fait une méthode.|
-|StronglyTypedNSArray|Native `NSArray*` a été liées en tant que `NSObject[]`. Il peut être possible de taper plus fortement le tableau dans la liaison selon les attentes définie via la documentation de l’API (par exemple, les commentaires dans le fichier d’en-tête) ou en examinant le contenu du tableau et de test. Par exemple, un NSArray * contenant uniquement NSNumber * instancescan être lié comme `NSNumber[]` au lieu de `NSObject[]`.|
+|InferredFromPreceedingTypedef|Le nom de cette déclaration a été déduit par la Convention commune qui précède immédiatement `typedef` le code source natif d’origine. Vérifiez que le nom inféré est correct, car cette Convention est ambiguë.|
+|ConstantsInterfaceAssociation|Il n’existe aucun moyen de déterminer avec quelle interface Objective-C une déclaration de variable externe peut être associée. Les instances de celles-ci `[Field]` sont liées en tant que propriétés dans une interface partielle dans une interface concrète, afin de produire une API plus intuitive, en éliminant éventuellement l’interface « constantes ».|
+|MethodToProperty|Une méthode objective-C a été liée C# en tant que propriété en raison d’une Convention telle que l’absence de paramètres et le retour d’une valeur (retour non void). Les méthodes telles que celles-ci doivent souvent être liées en tant que propriétés pour mettre en surface une API plus attrayante, mais parfois des faux positifs peuvent se produire et la liaison doit en fait être une méthode.|
+|StronglyTypedNSArray|Un natif `NSArray*` a été lié `NSObject[]`en tant que. Il peut être possible de taper plus fortement le tableau dans la liaison en fonction des attentes définies via la documentation de l’API (par exemple, les commentaires dans le fichier d’en-tête) ou en examinant le contenu du tableau par le biais du test. Par exemple, un NSArray * contenant uniquement NSNumber * instancescan est lié comme `NSNumber[]` au lieu `NSObject[]`de.|
 
-Vous pouvez recevoir également rapidement de documentation pour un indicateur à l’aide de la `sharpie verify-docs` de l’outil, par exemple :
+Vous pouvez également recevoir rapidement la documentation d’un indicateur à `sharpie verify-docs` l’aide de l’outil, par exemple :
 
 ```csharp
 sharpie verify-docs InferredFromPreceedingTypedef

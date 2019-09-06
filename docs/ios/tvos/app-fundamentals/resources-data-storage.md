@@ -4,15 +4,15 @@ description: Cet article explique comment utiliser les ressources et le stockage
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4b05d3a1b3a6557fd912ac85023267499c04c262
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e9c27233e0905435e14505195b7b0e4d3283790b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645476"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283823"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Ressources tvOS et stockage des données dans Xamarin
 
@@ -52,7 +52,7 @@ Comme indiqué ci-dessus, en raison du stockage limité et non persistant des in
 
 Étant donné que le stockage sur la TV Apple est limité, non seulement un stockage local et persistant très limité, votre application n’a aucune garantie que les informations qu’elle a téléchargées précédemment seront disponibles lors de sa prochaine exécution.
 
-Par conséquent, votre application Xamarin. tvOS doit stocker toutes les données utilisateur dans un magasin de données iCloud. Apple fournit deux options de stockage de données basées sur iCloud pour vos applications tvOS:
+Par conséquent, votre application Xamarin. tvOS doit stocker toutes les données utilisateur dans un magasin de données iCloud. Apple fournit deux options de stockage de données basées sur iCloud pour vos applications tvOS :
 
 - **icloud key-value Storage (KVS)** : pour obtenir des informations de petite taille (moins de 1 Mo) dont votre application peut avoir besoin (comme les préférences de l’utilisateur), vous pouvez utiliser le stockage icloud KVS. les données KVS iCloud sont automatiquement synchronisées avec le Cloud et tous les appareils de l’utilisateur exécutent la même application. Pour plus d’informations, consultez la section relative au [stockage clé-valeur](~/ios/data-cloud/introduction-to-icloud.md) de notre [Introduction au document icloud](~/ios/data-cloud/introduction-to-icloud.md) ou à la conception d’Apple [pour les données de clé-valeur dans](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7) la documentation iCloud.
 - **CloudKit** : pour le stockage des informations plus volumineuses (supérieures à 1 Mo), utilisez l’infrastructure CloudKit d’Apple. Contrairement au stockage iCloud KVS, les données CloudKit peuvent être partagées entre tous les utilisateurs de votre application (et être privées pour un seul utilisateur). Pour plus d’informations, consultez notre [Introduction à](~/ios/data-cloud/intro-to-cloudkit.md) la documentation CloudKit ou à la [démarrage rapide CloudKit](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)d’Apple.

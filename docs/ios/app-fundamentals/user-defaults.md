@@ -4,15 +4,15 @@ description: Cet article traite de l’utilisation de NSUserDefaults pour enregi
 ms.prod: xamarin
 ms.assetid: DAE7FFC4-B8C9-4D9E-886A-9B2388452EEB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: a1bc00d69f5b00787ba0e16b7e3846d5f18a4bed
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6ff697964cbc057b4a3f905394d147d7c132d79b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655134"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281950"
 ---
 # <a name="working-with-user-defaults-in-xamarinios"></a>Utilisation des paramètres par défaut de l’utilisateur dans Xamarin. iOS
 
@@ -34,13 +34,13 @@ Lorsque votre application s’exécute pour la `NSUserDefaults` première fois, 
 > [!IMPORTANT]
 > Apple ne recommande plus que le développeur appelle la `Synchronize` méthode pour synchroniser le cache en mémoire avec la base de données directement. Au lieu de cela, il est automatiquement appelé à intervalles réguliers pour maintenir la synchronisation du cache en mémoire avec la base de données par défaut de l’utilisateur.
 
-La `NSUserDefaults` classe contient plusieurs méthodes pratiques pour la lecture et l’écriture de valeurs de préférence pour les types de données courants tels que: String, Integer, float, Boolean et URLs. D’autres types de données peuvent être archivés `NSData`à l’aide de, puis lus ou écrits dans la base de données des paramètres par défaut de l’utilisateur. Pour plus d’informations, consultez le [Guide de programmation des préférences et des paramètres](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)d’Apple.
+La `NSUserDefaults` classe contient plusieurs méthodes pratiques pour la lecture et l’écriture de valeurs de préférence pour les types de données courants tels que : String, Integer, float, Boolean et URLs. D’autres types de données peuvent être archivés `NSData`à l’aide de, puis lus ou écrits dans la base de données des paramètres par défaut de l’utilisateur. Pour plus d’informations, consultez le [Guide de programmation des préférences et des paramètres](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)d’Apple.
 
 <a name="Accessing-the-Shared-NSUserDefaults-Instance" />
 
 ## <a name="accessing-the-shared-nsuserdefaults-instance"></a>Accès à l’instance NSUserDefaults partagée 
 
-L’instance des paramètres par défaut de l’utilisateur partagé permet d’accéder aux valeurs par défaut de l’utilisateur pour l’utilisateur actuel de l’appareil. Si l’objet partagé par défaut n’existe pas, il est créé la première fois qu’il est accédé et initialisé avec les informations suivantes:
+L’instance des paramètres par défaut de l’utilisateur partagé permet d’accéder aux valeurs par défaut de l’utilisateur pour l’utilisateur actuel de l’appareil. Si l’objet partagé par défaut n’existe pas, il est créé la première fois qu’il est accédé et initialisé avec les informations suivantes :
 
 - Qui `NSArgumentDomain` se compose des valeurs par défaut analysées à partir de l’application actuelle.
 - Domaine de l’identificateur de Bundle de l’application.
@@ -48,7 +48,7 @@ L’instance des paramètres par défaut de l’utilisateur partagé permet d’
 - Un domaine distinct pour chaque langue par défaut de l’utilisateur.
 - `NSRegistrationDomain` Avec un ensemble de valeurs par défaut temporaires qui peuvent être modifiées par l’application pour garantir la réussite des recherches.
 
-Pour accéder à l’instance des paramètres par défaut des utilisateurs partagés, utilisez le code suivant:
+Pour accéder à l’instance des paramètres par défaut des utilisateurs partagés, utilisez le code suivant :
 
 ```csharp
 // Get Shared User Defaults
@@ -63,7 +63,7 @@ Comme indiqué ci-dessus, en utilisant des `NSUserDefaults` groupes d’applicat
 
 Ensuite, vos projets d’application et/ou d’extension doivent avoir l’un des ID d’application valides créés ci `Entitlements.plist` -dessus, et le fichier doit être inclus dans l’offre groupée d’applications avec les groupes d’applications activés et spécifiés.
 
-Tout cela étant en place, il est possible d’accéder aux valeurs par défaut de l’utilisateur du groupe d’applications partagé à l’aide du code suivant:
+Tout cela étant en place, il est possible d’accéder aux valeurs par défaut de l’utilisateur du groupe d’applications partagé à l’aide du code suivant :
 
 ```csharp
 // Get App Group User Defaults
@@ -76,7 +76,7 @@ Où `group.com.xamarin.todaysharing` est le groupe d’applications créé dans 
 
 ## <a name="reading-default-values"></a>Lecture des valeurs par défaut
 
-Une fois que vous avez accédé à la base de données par défaut de l’utilisateur souhaité, vous pouvez lire les valeurs par défaut à l’aide de paires clé/valeur et de plusieurs méthodes pratiques en fonction du type de données lues:
+Une fois que vous avez accédé à la base de données par défaut de l’utilisateur souhaité, vous pouvez lire les valeurs par défaut à l’aide de paires clé/valeur et de plusieurs méthodes pratiques en fonction du type de données lues :
 
 - `ArrayForKey`-Retourne un tableau de `NSObjects` pour la valeur de clé donnée.
 - `BoolForKey`-Retourne une valeur booléenne pour la clé donnée.
@@ -89,7 +89,7 @@ Une fois que vous avez accédé à la base de données par défaut de l’utilis
 - `StringForKey`-Retourne une valeur de chaîne pour la clé donnée.
 - `URLForKey`-Retourne une `NSUrl` valeur pour la clé donnée.
 
-Par exemple, le code suivant lit une valeur booléenne à partir des valeurs par défaut de l’utilisateur:
+Par exemple, le code suivant lit une valeur booléenne à partir des valeurs par défaut de l’utilisateur :
 
 ```csharp
 // Get Shared User Defaults
@@ -105,7 +105,7 @@ var useHeader = plist.BoolForKey("UseHeader");
 
 ## <a name="writing-default-values"></a>Écriture des valeurs par défaut
 
-Tout comme la lecture des valeurs ci-dessus, une fois que vous avez accédé à la base de données par défaut de l’utilisateur souhaité, vous pouvez écrire des valeurs dans les valeurs par défaut à l’aide de paires clé/valeur et plusieurs méthodes pratiques en fonction du type de données en cours d’écriture:
+Tout comme la lecture des valeurs ci-dessus, une fois que vous avez accédé à la base de données par défaut de l’utilisateur souhaité, vous pouvez écrire des valeurs dans les valeurs par défaut à l’aide de paires clé/valeur et plusieurs méthodes pratiques en fonction du type de données en cours d’écriture :
 
 - `SetBool`-Écrit la valeur booléenne donnée dans la clé donnée.
 - `SetDouble`-Écrit la valeur double donnée dans la clé donnée.
@@ -113,7 +113,7 @@ Tout comme la lecture des valeurs ci-dessus, une fois que vous avez accédé à 
 - `SetString`-Écrit la valeur de chaîne donnée dans la clé donnée.
 - `SetURL`-Écrit la valeur de l'`NSUrl`URL () donnée dans la clé donnée.
 
-Par exemple, le code suivant écrit une valeur booléenne dans les valeurs par défaut de l’utilisateur:
+Par exemple, le code suivant écrit une valeur booléenne dans les valeurs par défaut de l’utilisateur :
 
 ```csharp
 // Get Shared User Defaults

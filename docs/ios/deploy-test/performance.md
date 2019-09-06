@@ -4,15 +4,15 @@ description: Ce document décrit les techniques permettant d’améliorer les pe
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 01/29/2016
-ms.openlocfilehash: b34ba7e3285549d62e5489287be8886db80bd1af
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: b41916a65e091fb7d5198a6f06a5e91aa9d6bb81
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70064812"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292337"
 ---
 # <a name="xamarinios-performance"></a>Performances des applications Xamarin.iOS
 
@@ -213,7 +213,7 @@ class MyChild : UIView
 Pour plus d’informations sur la libération de références fortes, consultez [Libérer des ressources IDisposable](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).
 Vous trouverez aussi des informations intéressantes dans ce billet de blog : [Xamarin.iOS, the garbage collector and me](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me).
 
-### <a name="more-information"></a>Complément d'information
+### <a name="more-information"></a>Plus d’informations
 
 Pour plus d’informations, consultez [Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) sur Cocoa With Love, [Is this a bug in MonoTouch GC](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) sur StackOverflow, et [Why can’t MonoTouch GC kill managed objects with refcount > 1?](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) sur StackOverflow.
 

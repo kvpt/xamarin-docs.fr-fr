@@ -3,15 +3,15 @@ title: Désinstallation de Xamarin
 description: Ce document décrit comment désinstaller Xamarin sur Mac et Windows. Il fournit des instructions spécifiques sur la désinstallation de Mono, Xamarin.Android, Xamarin.iOS et d’autres outils.
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/08/2017
-ms.openlocfilehash: 97b870d96a2ffc599e010e049554b51b550a7311
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ff40ed55c06df41c418b694d02f7d6e9c1c5316c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521580"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291450"
 ---
 # <a name="uninstalling-xamarin"></a>Désinstallation de Xamarin
 
@@ -228,7 +228,7 @@ Xamarin est pris en charge dans :
 
 ### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 et Visual Studio 2017
 
-Xamarin est désinstallé de Visual Studio 2019 et de Visual Studio 2017 à l’aide de l’application du programme d’installation:
+Xamarin est désinstallé de Visual Studio 2019 et de Visual Studio 2017 à l’aide de l’application du programme d’installation :
 
 1. Utilisez le **menu Démarrer** pour ouvrir **Visual Studio Installer**.
 

@@ -4,15 +4,15 @@ description: Ce document fournit plusieurs conseils de dépannage utiles lors de
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 323aad42832a70bf80e7a5bf3508bb9b65e77b5a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f10fb237bca92f49ac77657778ada8a47ed69c49
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655201"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292172"
 ---
 # <a name="watchos-3-troubleshooting"></a>Dépannage de Watchos 3
 
@@ -43,7 +43,7 @@ En utilisant Watchos 3 bêta 2 (ou version ultérieure) et macOS Sierra bêta 2 
 
 ## <a name="background-refresh"></a>Actualisation en arrière-plan
 
-La violation des ressources système entraîne un blocage de l’application Watchos 3 avec les codes d’exception suivants:
+La violation des ressources système entraîne un blocage de l’application Watchos 3 avec les codes d’exception suivants :
 
 - **0xc51bad01** : l’application a consommé trop de temps processeur.
 - **0xc51bad02** : l’application a consommé trop de temps.
@@ -78,10 +78,10 @@ Toutes `NSURLConnection` les connexions utilisant des protocoles TLS plus ancien
 
 Problèmes connus :
 
-Lorsque vous utilisez `https://` des `NSURLSession` URL, `NSURLConnection` et ne prennent plus en charge les suites de chiffrement RC4 pendant la négociation TLS. L’un des codes d’erreur suivants peut être généré:
+Lorsque vous utilisez `https://` des `NSURLSession` URL, `NSURLConnection` et ne prennent plus en charge les suites de chiffrement RC4 pendant la négociation TLS. L’un des codes d’erreur suivants peut être généré :
 
 - **-1200 ou-98** -pour `NSURLErrorSecurityConnectionFailed` Erreurs SecureTransport.
-- **-1200 [3:-9824]** -échec du chargement http.
+- **-1200 [3 :-9824]** -échec du chargement http.
 - **-**  -  1200`NSURLConnection` terminé avec une erreur.
 
 À partir de Watchos 3, la sécurité des connexions SSL/TLS est strictement appliquée par Apple. Les services et applications affectés doivent mettre à jour les serveurs Web pour utiliser les versions de protocole TLS les plus récentes. Pour plus d’informations, consultez [NSURLConnection](#nsurlconnection) ci-dessus.

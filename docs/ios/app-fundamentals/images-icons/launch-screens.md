@@ -4,15 +4,15 @@ description: Cet article explique comment créer un écran de lancement d’appl
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: 43c9ee599fe96c107bf10996834d9bcf60847603
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200107"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290249"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Écrans de lancement pour les applications Xamarin. iOS
 
@@ -41,10 +41,10 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
     - Nommez le fichier **écran d’installation** ou un autre nom de votre choix.
 
-2. Configurez le projet pour utiliser le Storyboard approprié pour son écran de lancement:
+2. Configurez le projet pour utiliser le Storyboard approprié pour son écran de lancement :
 
     - Double-cliquez sur le fichier **info. plist** dans le **panneau solutions** pour l’ouvrir et le modifier.
-    - Dans la section **images de lancement** , assurez-vous que l’écran de **lancement** est défini sur le nom de la table de montage séquentiel appropriée:
+    - Dans la section **images de lancement** , assurez-vous que l’écran de **lancement** est défini sur le nom de la table de montage séquentiel appropriée :
 
     ![Sélecteur d’écran de lancement dans info. plist](launch-screens-images/launch02.png)
 
@@ -64,14 +64,14 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
     ![Vue unique avec une couleur d’arrière-plan violette](launch-screens-images/launch06.png)
 
-7. Ajoutez une **vue d’image** à l’écran de lancement et définissez son **image**source:
+7. Ajoutez une **vue d’image** à l’écran de lancement et définissez son **image**source :
 
     - Faites glisser une **vue image** du **panneau boîte à outils** vers le centre de la vue.
-    - Une fois **la vue d’image** sélectionnée, dans la section **widget** du **panneau Propriétés** définissez la propriété **image** sur l’ensemble d’images déjà ajouté au catalogue de ressources **. xcassets** . Repositionnez et redimensionnez la **vue d’image** en fonction des besoins:
+    - Une fois **la vue d’image** sélectionnée, dans la section **widget** du **panneau Propriétés** définissez la propriété **image** sur l’ensemble d’images déjà ajouté au catalogue de ressources **. xcassets** . Repositionnez et redimensionnez la **vue d’image** en fonction des besoins :
     
     ![Affichage des images avec le jeu de propriétés image](launch-screens-images/launch07.png)
 
-8. Ajoutez une **étiquette** en dessous de la **vue image** et utilisez la **panneau Propriétés** pour définir ses attributs: 
+8. Ajoutez une **étiquette** en dessous de la **vue image** et utilisez la **panneau Propriétés** pour définir ses attributs : 
 
     ![Étiquette avec le texte et la couleur définis](launch-screens-images/launch08.png)
 
@@ -79,7 +79,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
     
     ![Bouton du mode de modification des contraintes](launch-screens-images/launch09.png)
 
-10. Ajoutez des contraintes à la **vue image**, en définissant sa hauteur et sa largeur et en la recentrant horizontalement et verticalement:
+10. Ajoutez des contraintes à la **vue image**, en définissant sa hauteur et sa largeur et en la recentrant horizontalement et verticalement :
 
     ![Affichage des images avec contraintes de disposition](launch-screens-images/launch10.png)
 
@@ -89,7 +89,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
     ![Étiquette avec contraintes de disposition](launch-screens-images/launch11.png)
 
-12. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter contraintes pour des classes de taille spécifiques:
+12. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter contraintes pour des classes de taille spécifiques :
 
     ![Écran de lancement rendu sous la forme d’un iPhone X utilisant l’orientation paysage](launch-screens-images/launch12.png)
 
@@ -111,16 +111,16 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
     ![La fenêtre Ajouter un nouvel élément, avec une table de montage séquentiel vide sélectionnée](launch-screens-images/launch03.w157.png)
 
-4. Configurez le projet pour utiliser **écran d’installation. Storyboard** comme Storyboard d’écran de lancement:
+4. Configurez le projet pour utiliser **écran d’installation. Storyboard** comme Storyboard d’écran de lancement :
 
     - Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Info.plist** pour l’ouvrir et le modifier. 
     - Sous l’onglet **ressources visuelles** , définissez **écran de lancement** sur **écran d’installation**.
 
     ![Sélecteur d’écran de lancement dans info. plist](launch-screens-images/launch04-vs.png)
 
-5. Ajoutez une image à un catalogue de composants dans le projet afin qu’elle soit disponible sur l’écran de lancement:
+5. Ajoutez une image à un catalogue de composants dans le projet afin qu’elle soit disponible sur l’écran de lancement :
 
-    - Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **catalogues de ressources** , puis sélectionnez Ajouter un **catalogue de composants**. Nommez ces nouveaux **actifs**du catalogue de composants:
+    - Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur **catalogues de ressources** , puis sélectionnez Ajouter un **catalogue de composants**. Nommez ces nouveaux **actifs**du catalogue de composants :
 
     ![La fenêtre Ajouter un nouvel élément, avec le catalogue de ressources sélectionné](launch-screens-images/launch05.w157.png)
 
@@ -136,7 +136,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
 
     - Notez que la sélection d’un appareil et de l’orientation modifie uniquement la manière dont le concepteur iOS affiche un aperçu de la conception. Quelle que soit la sélection effectuée ici, les contraintes nouvellement ajoutées sont appliquées sur l’ensemble des appareils et des orientations, sauf si le bouton **modifier les traits** a été utilisé pour spécifier la valeur dans le cas contraire. 
 
-8. Ajoutez un **contrôleur d’affichage** à la table de montage séquentiel en faisant glisser l’un de la **boîte à outils** vers l’aire de conception: 
+8. Ajoutez un **contrôleur d’affichage** à la table de montage séquentiel en faisant glisser l’un de la **boîte à outils** vers l’aire de conception : 
 
     ![Un contrôleur d’affichage vide a été ajouté à l’aire de conception](launch-screens-images/launch08-vs.png)
 
@@ -144,10 +144,10 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
     
     ![Vue unique avec une couleur d’arrière-plan violette](launch-screens-images/launch09-vs.png)
 
-10. Ajoutez une **vue d’image** à l’écran de lancement et définissez son **image**source:
+10. Ajoutez une **vue d’image** à l’écran de lancement et définissez son **image**source :
 
     - Faites glisser une **vue image** de la **boîte à outils** vers le centre de la vue.
-    - Avec la **vue d’image** toujours sélectionnée, dans la section **widget** de la **fenêtre Propriétés** , définissez la propriété **image** sur l’ensemble d’images déjà ajouté au catalogue d’actifs des **ressources** . Repositionnez et redimensionnez la **vue d’image** en fonction des besoins:
+    - Avec la **vue d’image** toujours sélectionnée, dans la section **widget** de la **fenêtre Propriétés** , définissez la propriété **image** sur l’ensemble d’images déjà ajouté au catalogue d’actifs des **ressources** . Repositionnez et redimensionnez la **vue d’image** en fonction des besoins :
     
     ![Affichage des images avec le jeu de propriétés image](launch-screens-images/launch10-vs.png)
 
@@ -162,7 +162,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
     
     ![Bouton du mode de modification des contraintes](launch-screens-images/launch12-vs.png) 
 
-13. Ajoutez des contraintes à la **vue image**, en définissant sa hauteur et sa largeur et en la recentrant horizontalement et verticalement:
+13. Ajoutez des contraintes à la **vue image**, en définissant sa hauteur et sa largeur et en la recentrant horizontalement et verticalement :
 
     ![Affichage des images avec contraintes de disposition](launch-screens-images/launch13-vs.png) 
 
@@ -172,7 +172,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
     
     ![Étiquette avec contraintes de disposition](launch-screens-images/launch14-vs.png) 
 
-15. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter contraintes pour des classes de taille spécifiques:
+15. Testez les autres périphériques et orientations pour vérifier que la conception est similaire à celle prévue dans tous les scénarios. Dans les cas où des ajustements doivent être effectués pour un appareil ou une orientation spécifique, utilisez le bouton **modifier les traits** pour ajouter contraintes pour des classes de taille spécifiques :
 
     ![Écran de lancement rendu sous la forme d’un iPhone X utilisant l’orientation paysage](launch-screens-images/launch15-vs.png) 
 
@@ -198,10 +198,10 @@ Ensuite, double-cliquez sur `Info.plist` le fichier dans le **Explorateur de sol
 ![](launch-screens-images/storyboard09.png "Sélectionner le nouveau fichier de Storyboard créé ci-dessus")
 
 
-Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme suit:
+Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme suit :
 
 1. Double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
-2. Faites défiler jusqu’à la section **images de lancement universel** de l’éditeur, ouvrez la liste déroulante **lancer l’écran** et sélectionnez le nom de la table de montage séquentiel créée ci-dessus: 
+2. Faites défiler jusqu’à la section **images de lancement universel** de l’éditeur, ouvrez la liste déroulante **lancer l’écran** et sélectionnez le nom de la table de montage séquentiel créée ci-dessus : 
 
     ![](launch-screens-images/storyboard08.png "Définition de l’écran de lancement sur le Storyboard")
 
@@ -217,7 +217,7 @@ Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme su
 4. Assurez-vous que la **classe Size** a la valeur **any** , et **que la vue** est **générique**: 
 
     ![](launch-screens-images/image016.png "Assurez-vous que la classe Size a la valeur any, any et la vue Generic.")
-5. Assembly l’écran de lancement à partir de classes de taille, d' `UIImageView`éléments d’interface utilisateur simples (tels que) et d’images que vous avez inclus dans l’offre groupée de l’application: 
+5. Assembly l’écran de lancement à partir de classes de taille, d' `UIImageView`éléments d’interface utilisateur simples (tels que) et d’images que vous avez inclus dans l’offre groupée de l’application : 
 
     ![](launch-screens-images/image017.png "L’écran de lancement de l’assembly dans le concepteur iOS")
 6. Enregistrez les modifications apportées à la table de montage séquentiel.
@@ -231,4 +231,4 @@ Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme su
 - [Principes de base du concepteur iOS](~/ios/user-interface/designer/index.md)
 - [Ajout d’images à un ensemble d’images du catalogue de composants](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [Disposition automatique avec le Xamarin Designer pour iOS](~/ios/user-interface/designer/designer-auto-layout.md)
-- [Instructions relatives à l’interface humaine: Écran de lancement](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [Instructions relatives à l’interface humaine : Écran de lancement](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

@@ -3,15 +3,15 @@ title: Types natifs pour iOS et macOS
 description: Ce document décrit comment le API unifiée de Xamarin mappe les types .NET aux types natifs 32 bits et 64 bits, selon les besoins en fonction de l’architecture cible de la compilation.
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/25/2016
-ms.openlocfilehash: 6b6a7b8bb2efdd099d7fde6bb5397e6330258bcc
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f370bc816fa72f94af8dae32ac295448f858dbb8
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199388"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290790"
 ---
 # <a name="native-types-for-ios-and-macos"></a>Types natifs pour iOS et macOS
 
@@ -19,13 +19,13 @@ Les API Mac et iOS utilisent des types de données spécifiques à l’architect
 
 Par exemple, Objective-C mappe `NSInteger` le type de `int32_t` données sur sur les systèmes 32 bits `int64_t` et sur les systèmes 64 bits.
 
-Pour correspondre à ce comportement, sur notre API unifiée, nous remplaçons les utilisations `int` précédentes de (qui dans .net est définie comme `System.Int32`toujours) à un nouveau type de `System.nint`données:. Vous pouvez considérer «n» comme «native», donc le type d’entier natif de la plateforme.
+Pour correspondre à ce comportement, sur notre API unifiée, nous remplaçons les utilisations `int` précédentes de (qui dans .net est définie comme `System.Int32`toujours) à un nouveau type de `System.nint`données :. Vous pouvez considérer « n » comme « native », donc le type d’entier natif de la plateforme.
 
 Avec ces nouveaux types de données, le même code source est compilé pour les architectures 32 bits et 64 bits, en fonction de vos indicateurs de compilation.
 
 ## <a name="new-data-types"></a>Nouveaux types de données
 
-Le tableau suivant présente les modifications apportées à nos types de données pour qu’elles correspondent à ce nouveau monde 32 bits:
+Le tableau suivant présente les modifications apportées à nos types de données pour qu’elles correspondent à ce nouveau monde 32 bits :
 
 |Type natif|type de stockage 32 bits|type de stockage 64 bits|
 |--- |--- |--- |
@@ -57,7 +57,7 @@ Vous devez utiliser des conversions explicites à partir `nint`de `nuint` `long`
 
 Les types de données point, size et rectangle utilisés avec CoreGraphics utilisent des bits 32 ou 64 selon l’appareil sur lequel ils s’exécutent.  Lors de la liaison initiale des API iOS et Mac, nous avons utilisé des structures de données existantes qui correspondent aux tailles de la plateforme hôte (les `System.Drawing`types de données dans).
 
-Lors du passageà Unified, vous devrez remplacer les instances `System.Drawing` de par `CoreGraphics` leurs équivalents, comme indiqué dans le tableau suivant:
+Lors du passage à **Unified**, vous devrez remplacer les instances `System.Drawing` de par `CoreGraphics` leurs équivalents, comme indiqué dans le tableau suivant :
 
 |Ancien type dans System. Drawing|Nouveau type de données CoreGraphics|Description|
 |--- |--- |--- |

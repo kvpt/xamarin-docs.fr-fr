@@ -4,46 +4,46 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: fe267db1f83695b3d0e8f3d828f91e01b56ba8ee
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9d589af6249063add3dc9b085463fde9edd8e449
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61419663"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278432"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>Pourquoi ma build iOS échoue avec le message disant qu’aucun code iPhone valide pour signer les clés n’a été trouvé dans le trousseau ?
 
 ## <a name="cause-of-the-error"></a>Cause de l’erreur
-Ce message d’erreur se produit lorsque le projet en question a besoin d’informations d’identification de signature de code valides mais ne parvenez pas à les trouver. Signature de code est requise pour le test et de déploiements sur des appareils iOS physiques ; mais aussi Ad-hoc & application stocker les builds. 
+Ce message d’erreur se produit lorsque le projet en question recherche des informations d’identification de signature de code valides, mais ne parvient pas à les trouver. La signature de code est requise pour les tests et les déploiements sur des appareils iOS physiques ; et les builds ad hoc & App Store. 
 
 
-### <a name="provisioning-devices"></a>Approvisionnement d’appareils
-Si vous n’avez pas configuré un appareil iOS avant, le guide suivant décriront le processus pas à pas complet : [Guide de mise en service des appareils](~/ios/get-started/installation/device-provisioning/index.md)
+### <a name="provisioning-devices"></a>Configuration des appareils
+Si vous n’avez pas déjà approvisionné un appareil iOS, le guide suivant vous guide tout au long de la procédure pas à pas : [Guide de provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md)
 
 
 ## <a name="bug-when-using-ios-simulator"></a>Bogue lors de l’utilisation du simulateur iOS
 
 > [!NOTE]
-> Ce problème a été résolu dans les versions récentes de Xamarin pour Visual Studio. Toutefois, si le problème se produit sur la dernière version du logiciel, veuillez soumettre un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) avec votre contrôle de version complet intégral et les informations de générer la sortie de journal.
+> Ce problème a été résolu dans les versions récentes de Xamarin pour Visual Studio. Toutefois, si le problème se produit sur la version la plus récente du logiciel, envoyez un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) à vos informations de contrôle de version et à la sortie complète du journal de génération.
 
 
-Un bogue s’est produite dans Xamarin.Visual Studio 3.11, qui a provoqué le projet iOS dans un modèle de Xamarin.Forms pour ajouter que le fichier Entitlements.plist à simulateur codesign builds ; ce qui bloque l’utilisation du simulateur de test.
+Il y avait un bogue dans Xamarin. Visual Studio 3,11 qui a provoqué l’ajout du projet iOS dans un modèle Xamarin. Forms pour ajouter les builds. plist à la Codesign. plist au simulateur ; blocage efficace des tests à l’aide du simulateur.
 
-### <a name="how-to-fix"></a>Comment la corriger
-Vous pouvez contourner ce problème en supprimant le `<CodesignEntitlements>` indicateur dans le débogage des builds dans le fichier .csproj. Vous pouvez procéder comme suit :
+### <a name="how-to-fix"></a>Procédure de résolution
+Vous pouvez contourner le problème en supprimant l' `<CodesignEntitlements>` indicateur des versions Debug dans le fichier. csproj. Vous pouvez procéder comme suit :
 
-*Avertissement : Erreur dans les fichiers .csproj peut résilier votre projet, il est conseillé de sauvegarder vos fichiers avant de tenter cette.*
+*Avertissement : Les erreurs dans les fichiers. csproj peuvent rompre votre projet. il est donc judicieux de sauvegarder vos fichiers avant de tenter cette opération.*
 
-1. Cliquez avec le bouton droit sur le projet iOS dans le volet de la solution et sélectionnez **décharger le projet**
-2. Avec le bouton droit, cliquez sur le projet à nouveau et sélectionnez **modifier de [ProjectName] .csproj**
-3. Recherchez les éléments PropertyGroup déboguer, ils doivent démarrer avec les indicateurs ressemblent à ceci :
-   - Débogage : `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
-   - Mise en production : `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
-4. Dans chacun des builds qui utilisent le simulateur, supprimez ou commentez à la propriété suivante : `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
-5. Recharger le projet et vous pourrez déployer sur le simulateur.
+1. Cliquez avec le bouton droit sur le projet iOS dans le volet solution, puis sélectionnez **décharger le projet**
+2. Cliquez à nouveau avec le bouton droit sur le projet et sélectionnez **modifier [ProjectName]. csproj**
+3. Localisez les éléments PropertyGroup de débogage, ils doivent commencer par des indicateurs qui ressemblent à ceci :
+   - Debug`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
+   - 3/05`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
+4. Dans chacune des builds qui utilisent le simulateur, supprimez ou commentez la propriété suivante :`<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
+5. Rechargez le projet et vous devez être en mesure de le déployer dans le simulateur.
 
 ### <a name="next-steps"></a>Étapes suivantes
-Pour obtenir une assistance supplémentaire, pour nous contacter, ou si le reste de ce problème même après utilisant les informations ci-dessus, veuillez consulter [quelles options de prise en charge sont disponibles pour Xamarin ?](~/cross-platform/troubleshooting/support-options.md) pour plus d’informations sur les options de contact, des suggestions, ainsi que comment signaler un bogue nouveau si nécessaire. 
+Pour obtenir de l’aide, pour nous contacter ou, si le problème persiste même après l’utilisation des informations ci-dessus, consultez [les options de support disponibles pour Xamarin ?](~/cross-platform/troubleshooting/support-options.md) pour plus d’informations sur les options de contact, les suggestions et la façon de signaler un nouveau bogue si nécessaire. . 

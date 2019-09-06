@@ -4,15 +4,15 @@ description: Ce document décrit comment provisionner un appareil afin de pouvoi
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 477bb7289588d0ab1b1dd29909c7dc36f2b2dfac
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: 7ee3d7d9b2ce074174b676225ec934279ceb5a86
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121424"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292624"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Provisionnement d’appareil pour Xamarin.iOS
 
@@ -63,5 +63,5 @@ Apple propose une sélection de services d’application spéciaux, également a
 
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Distribution d’une application](~/ios/deploy-test/app-distribution/index.md)
-- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
+- [Dépannage](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

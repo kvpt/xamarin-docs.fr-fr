@@ -1,18 +1,18 @@
 ---
 title: Icônes d’application dans Xamarin. iOS
-description: 'Ce document explique comment utiliser diverses icônes d’application dans Xamarin. iOS: l’icône d’application elle-même, les icônes de Spotlight, les icônes de paramètres et l’illustration iTunes.'
+description: 'Ce document explique comment utiliser diverses icônes d’application dans Xamarin. iOS : l’icône d’application elle-même, les icônes de Spotlight, les icônes de paramètres et l’illustration iTunes.'
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/22/2017
-ms.openlocfilehash: dd712940ff6e7000ffd9181f808a8ab32093b38d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: a44f0921b959c6b8fd6f076fd119ea52345f821f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121463"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282651"
 ---
 # <a name="application-icons-in-xamarinios"></a>Icônes d’application dans Xamarin. iOS
 
@@ -26,7 +26,7 @@ Les rubriques suivantes sont traitées en détail :
 
 ## <a name="application-spotlight-and-settings-icons"></a>Icônes d’application, de Spotlight et de paramètres
 
-De la même façon qu’une application Xamarin. iOS peut utiliser des ressources d’image pour les contrôles d’interface utilisateur et comme icônes de document, les ressources d’image peuvent être utilisées pour fournir des icônes d’application. Les captures d’écran suivantes d’un iPad illustrent les trois utilisations des icônes dans iOS:
+De la même façon qu’une application Xamarin. iOS peut utiliser des ressources d’image pour les contrôles d’interface utilisateur et comme icônes de document, les ressources d’image peuvent être utilisées pour fournir des icônes d’application. Les captures d’écran suivantes d’un iPad illustrent les trois utilisations des icônes dans iOS :
 
 - **Icône d’application** : chaque application iOS doit définir une icône d’application. Il s’agit de l’icône sur laquelle l’utilisateur appuie sur l’écran d’accueil iOS pour lancer l’application. En outre, cette icône est utilisée par Game Center, le cas échéant. Exemple : 
 
@@ -38,11 +38,11 @@ De la même façon qu’une application Xamarin. iOS peut utiliser des ressource
 
     [![](app-icons-images/000b.png "Icône Paramètres")](app-icons-images/000b-full.png#lightbox)
 
-Les tailles et résolutions de ressource d’image suivantes seront nécessaires pour prendre en charge tous les types d’icônes requis par une application Xamarin. iOS ciblant iOS 5 via iOS 9 (ou version ultérieure):
+Les tailles et résolutions de ressource d’image suivantes seront nécessaires pour prendre en charge tous les types d’icônes requis par une application Xamarin. iOS ciblant iOS 5 via iOS 9 (ou version ultérieure) :
 
 ### <a name="iphone-icon-sizes"></a>Tailles des icônes iPhone
 
-- **iPhone: iOS 9 & 10 (iPhone 6 & 7 plus)**
+- **iPhone : iOS 9 & 10 (iPhone 6 & 7 plus)**
 
     ||3x|
     |---|---|
@@ -50,7 +50,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     |Vedette|120x120|
     |Paramètres|87x87|
 
-- **iPhone: iOS 7 & 8**
+- **iPhone : iOS 7 & 8**
 
     ||Tuner|x 2|
     |---|---|---|
@@ -58,7 +58,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     |Vedette|40x40<sup>2</sup>|80x80|
     |Paramètres|-|-|
 
-- **iPhone: iOS 5 & 6**
+- **iPhone : iOS 5 & 6**
 
     ||Tuner|x 2|
     |---|---|---|
@@ -68,7 +68,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
 
 ### <a name="ipad-icon-sizes"></a>Tailles d’icône iPad
 
-- **iPad: iOS 9 & 10**
+- **iPad : iOS 9 & 10**
 
     ||2x (iPad Pro)|
     |---|---|
@@ -76,7 +76,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     |Vedette|120x120<sup>6</sup>|
     |Paramètres|58x58<sup>5</sup>|
 
-- **iPad: iOS 7 & 8**
+- **iPad : iOS 7 & 8**
 
     ||Tuner|x 2|
     |---|---|---|
@@ -84,7 +84,7 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
     |Vedette|40 x 40|80x80|
     |Paramètres|-|-|
 
-- **iPad: iOS 5 & 6**
+- **iPad : iOS 5 & 6**
 
     ||Tuner|x 2|
     |---|---|---|
@@ -107,19 +107,19 @@ Les tailles et résolutions de ressource d’image suivantes seront nécessaires
 
 Pour les icônes, un `AppIcon` jeu d’images spécial peut être ajouté `Assets.xcassets` au fichier dans le projet de l’application. Toutes les versions de l’image nécessaires à la prise en charge de toutes les résolutions sont incluses dans le _xcasset_ et regroupées. Un éditeur spécial dans Visual Studio pour Mac permet au développeur d’inclure et de configurer ces images graphiquement.
 
-Pour utiliser un catalogue de composants, procédez comme suit:
+Pour utiliser un catalogue de composants, procédez comme suit :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
 2. Faites défiler jusqu’à la section **icônes d’application** .
-3. Dans la liste déroulante **source** , assurez-vous que l’option AppIcon est sélectionnée: 
+3. Dans la liste déroulante **source** , assurez-vous que l’option **AppIcon** est sélectionnée : 
 
     ![](app-icons-images/migrate01.png "Vérifier que l’option AppIcon est sélectionnée")
-4. À partir de la **Explorateur de solutions**, double- `Assets.xcassets` cliquez sur le fichier pour l’ouvrir et le modifier: 
+4. À partir de la **Explorateur de solutions**, double- `Assets.xcassets` cliquez sur le fichier pour l’ouvrir et le modifier : 
 
     ![](app-icons-images/asset01.png "Fichier Assets. xcassets dans le Explorateur de solutions")
-5. Sélectionnez `AppIcon` dans la liste des ressources pour `Icon Editor`afficher:
+5. Sélectionnez `AppIcon` dans la liste des ressources pour `Icon Editor`afficher :
 
     ![](app-icons-images/asset02.png "Éditeur AppIcon")
 6. Cliquez sur le type d’icône donné, puis sélectionnez un fichier image pour le type/la taille requis ou faites-le glisser dans une image à partir d’un dossier et déposez-le à la taille souhaitée.
@@ -137,7 +137,7 @@ Pour utiliser un catalogue de composants, procédez comme suit:
 3. À partir de la **Explorateur de solutions**, développez le dossier du **catalogue de composants** : 
 
     ![](app-icons-images/image009.png "Développer le dossier du catalogue de ressources")
-4. Double-cliquez sur le fichier **multimédia** pour l’ouvrir dans l’éditeur: 
+4. Double-cliquez sur le fichier **multimédia** pour l’ouvrir dans l’éditeur : 
 
     ![](app-icons-images/image010.png "Ouvrir le fichier multimédia dans l’éditeur")
 5. Dans l' **Explorateur de propriétés** , le développeur peut sélectionner les différents types et tailles d’icônes requis.
@@ -162,14 +162,14 @@ Effectuez ce qui suit :
 3. Dans la liste déroulante **source** , sélectionnez **migrer vers les catalogues de ressources**: 
 
     ![](app-icons-images/migrate02.png "Sélectionner migrer vers les catalogues de ressources")
-4. Toutes les icônes existantes définies dans `Info.plist` le fichier seront migrées vers un `AppIcons` ensemble d’images ajouté `Assets.xcassets`à: 
+4. Toutes les icônes existantes définies dans `Info.plist` le fichier seront migrées vers un `AppIcons` ensemble d’images ajouté `Assets.xcassets`à : 
 
      ![](app-icons-images/migrate03.png "Image AppIcons définie dans le. xcassets")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
-2. Cliquez sur la section icônes iPhone: 
+2. Cliquez sur la section icônes iPhone : 
 
     ![](app-icons-images/image007.png "Éditeur d’icônes iPhone clé")
 3. Faites défiler jusqu’à la section **icônes** .
@@ -190,7 +190,7 @@ Pour spécifier les illustrations iTunes, effectuez les tâches suivantes :
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier.
-2. Faites défiler jusqu’à la section **illustrations d’iTunes** de l’éditeur: 
+2. Faites défiler jusqu’à la section **illustrations d’iTunes** de l’éditeur : 
 
     ![](app-icons-images/itunes01.png "Faire défiler jusqu’à la section illustrations d’iTunes de l’éditeur")
 3. Pour toute image manquante, cliquez sur la miniature dans l’éditeur, sélectionnez le fichier image correspondant à l’illustration iTunes souhaitée dans la boîte de dialogue Ouvrir un fichier, puis cliquez sur le bouton **OK** .

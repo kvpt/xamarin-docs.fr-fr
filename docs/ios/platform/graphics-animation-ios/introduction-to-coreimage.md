@@ -4,15 +4,15 @@ description: Core image est une nouvelle infrastructure introduite avec iOS 5 po
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 6960fe3db1ddf7d6d911fe8151e49b1a42388d26
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a537926ab28bc355af5c5c4993ccff4a736b15aa
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527854"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288570"
 ---
 # <a name="core-image-in-xamarinios"></a>Image principale dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ _Core image est une nouvelle infrastructure introduite avec iOS 5 pour fournir u
 
 L’image principale est une nouvelle infrastructure introduite dans iOS 5, qui fournit un certain nombre de filtres et d’effets intégrés à appliquer aux images et aux vidéos, y compris la détection des visages.
 
-Ce document contient des exemples simples de:
+Ce document contient des exemples simples de :
 
 - Détection de visage.
 - Application de filtres à une image
@@ -35,9 +35,9 @@ Vous devez utiliser la dernière version de Xcode.
 
 ## <a name="face-detection"></a>Détection de visage
 
-La fonctionnalité de détection de visage d’image principale fait exactement ce qu’elle dit: elle tente d’identifier des visages dans une photo et retourne les coordonnées des visages qu’elle reconnaît. Ces informations peuvent être utilisées pour compter le nombre de personnes dans une image, dessiner des indicateurs sur l’image (par exemple, pour «baliser» des personnes dans une photographie, ou tout autre point que vous pouvez considérer.
+La fonctionnalité de détection de visage d’image principale fait exactement ce qu’elle dit : elle tente d’identifier des visages dans une photo et retourne les coordonnées des visages qu’elle reconnaît. Ces informations peuvent être utilisées pour compter le nombre de personnes dans une image, dessiner des indicateurs sur l’image (par exemple, pour « baliser » des personnes dans une photographie, ou tout autre point que vous pouvez considérer.
 
-Ce code de CoreImage\SampleCode.cs montre comment créer et utiliser la détection de visage sur une image incorporée:
+Ce code de CoreImage\SampleCode.cs montre comment créer et utiliser la détection de visage sur une image incorporée :
 
 ```csharp
 var image = new UIImage("photoFace.JPG");
@@ -47,17 +47,17 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-Le tableau de fonctionnalités est rempli avec `CIFaceFeature` des objets (si des visages ont été détectés). Il existe un `CIFaceFeature` pour chaque visage. `CIFaceFeature`a les propriétés suivantes:
+Le tableau de fonctionnalités est rempli avec `CIFaceFeature` des objets (si des visages ont été détectés). Il existe un `CIFaceFeature` pour chaque visage. `CIFaceFeature`a les propriétés suivantes :
 
-- HasMouthPosition: indique si une bouche a été détectée pour ce visage.
-- HasLeftEyePosition: indique si l’œil gauche a été détecté pour cette face.
-- HasRightEyePosition: indique si l’œil droit a été détecté pour cette face. 
-- MouthPosition: coordonnées de l’embouchure pour ce visage.
-- LeftEyePosition: coordonnées de l’œil gauche de cette face.
-- RightEyePosition: coordonnées de l’œil droit de cette face.
+- HasMouthPosition : indique si une bouche a été détectée pour ce visage.
+- HasLeftEyePosition : indique si l’œil gauche a été détecté pour cette face.
+- HasRightEyePosition : indique si l’œil droit a été détecté pour cette face. 
+- MouthPosition : coordonnées de l’embouchure pour ce visage.
+- LeftEyePosition : coordonnées de l’œil gauche de cette face.
+- RightEyePosition : coordonnées de l’œil droit de cette face.
 
 
-Les coordonnées de toutes ces propriétés ont leur origine dans le coin inférieur gauche, contrairement à UIKit qui utilise l’angle supérieur gauche comme origine. Lorsque vous utilisez les coordonnées `CIFaceFeature` , veillez à les «retourner». Cette vue d’image personnalisée de base dans CoreImage\CoreImageViewController.cs montre comment dessiner des triangles «indicateur de visage» sur l’image ( `FlipForBottomOrigin` Notez la méthode):
+Les coordonnées de toutes ces propriétés ont leur origine dans le coin inférieur gauche, contrairement à UIKit qui utilise l’angle supérieur gauche comme origine. Lorsque vous utilisez les coordonnées `CIFaceFeature` , veillez à les « retourner ». Cette vue d’image personnalisée de base dans CoreImage\CoreImageViewController.cs montre comment dessiner des triangles « indicateur de visage » sur l’image ( `FlipForBottomOrigin` Notez la méthode) :
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -102,7 +102,7 @@ public class FaceDetectImageView : UIView
 }
 ```
 
-Ensuite, dans le fichier SampleCode.cs, l’image et les fonctionnalités sont affectées avant le redessin de l’image:
+Ensuite, dans le fichier SampleCode.cs, l’image et les fonctionnalités sont affectées avant le redessin de l’image :
 
 ```csharp
 faceView.Image = image;
@@ -110,9 +110,9 @@ faceView.Features = features;
 faceView.SetNeedsDisplay();
 ```
 
-La capture d’écran montre l’exemple de sortie: l’emplacement des fonctionnalités du visage détectées est affiché dans un UITextView et dessiné sur l’image source à l’aide de CoreGraphics.
+La capture d’écran montre l’exemple de sortie : l’emplacement des fonctionnalités du visage détectées est affiché dans un UITextView et dessiné sur l’image source à l’aide de CoreGraphics.
 
-En raison de la façon dont la reconnaissance faciale fonctionne, elle peut parfois détecter des choses en dehors des visages humains (comme les singes de jouet!).
+En raison de la façon dont la reconnaissance faciale fonctionne, elle peut parfois détecter des choses en dehors des visages humains (comme les singes de jouet !).
 
 ## <a name="filters"></a>Filtres
 
@@ -120,7 +120,7 @@ Il existe plus de 50 filtres intégrés différents, et l’infrastructure est e
 
 ## <a name="using-filters"></a>Utilisation de filtres
 
-L’application d’un filtre à une image se compose de quatre étapes distinctes: le chargement de l’image, la création du filtre, l’application du filtre et l’enregistrement (ou l’affichage) du résultat.
+L’application d’un filtre à une image se compose de quatre étapes distinctes : le chargement de l’image, la création du filtre, l’application du filtre et l’enregistrement (ou l’affichage) du résultat.
 
 Tout d’abord, chargez une `CIImage` image dans un objet.
 
@@ -212,7 +212,7 @@ foreach (var filter in filters){
 
 La [référence de la classe CIFilter](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html) décrit les filtres intégrés 50 et leurs propriétés. À l’aide du code ci-dessus, vous pouvez interroger les classes de filtre, y compris les valeurs par défaut des paramètres et les valeurs maximales et minimales autorisées (qui peuvent être utilisées pour valider les entrées avant d’appliquer un filtre).
 
-La sortie de la liste Catégories ressemble à ceci sur le simulateur: vous pouvez faire défiler la liste pour afficher tous les filtres et leurs paramètres.
+La sortie de la liste Catégories ressemble à ceci sur le simulateur : vous pouvez faire défiler la liste pour afficher tous les filtres et leurs paramètres.
 
  [![](introduction-to-coreimage-images/coreimage05.png "La sortie de la liste des catégories ressemble à ceci sur le simulateur")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 

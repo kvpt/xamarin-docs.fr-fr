@@ -4,28 +4,28 @@ description: Cette section montre comment implémenter des notifications locales
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 7f2619010a410cabc54074e669ff4f1ea24bd0fa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eb8956e44a3148d79fff59d728cb63818b9bab60
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655495"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292747"
 ---
 # <a name="notifications-in-xamarinios"></a>Notifications dans Xamarin. iOS
 
 > [!IMPORTANT]
 > Les informations contenues dans cette section concernent iOS 9 et versions antérieures. Pour iOS 10 et versions ultérieures, consultez le Guide de l' [infrastructure de notification utilisateur](~/ios/platform/user-notifications/index.md).
 
-iOS offre trois moyens d’indiquer à l’utilisateur qu’une notification a été reçue:
+iOS offre trois moyens d’indiquer à l’utilisateur qu’une notification a été reçue :
 
 - Les **sons ou les vibrations** -iOS peuvent émettre un son pour avertir les utilisateurs. Si le son est désactivé, l’appareil peut être configuré pour vibrer.
 - **Alertes** : il est possible d’afficher une boîte de dialogue à l’écran avec des informations sur la notification.
 - **Badges** : lorsqu’une notification est publiée, un nombre peut être affiché (avec un badge) sur l’icône de l’application.
 
-iOS fournit également un *Centre de notification* qui affiche toutes les notifications, tant locales que distantes, à l’utilisateur. Les utilisateurs peuvent y accéder en effectuant un balayage vers le haut de l’écran:
+iOS fournit également un *Centre de notification* qui affiche toutes les notifications, tant locales que distantes, à l’utilisateur. Les utilisateurs peuvent y accéder en effectuant un balayage vers le haut de l’écran :
 
 ![Le centre de notifications](local-notifications-in-ios-images/image13.png "Le centre de notifications")
 
@@ -43,7 +43,7 @@ application.RegisterUserNotificationSettings(notificationSettings);
 
 [![Confirmation de la possibilité d’envoyer une notification locale](local-notifications-in-ios-images/image0-sml.png "Confirmation de la possibilité d’envoyer une notification locale")](local-notifications-in-ios-images/image0.png#lightbox)
 
-Pour planifier une notification locale, créez un `UILocalNotification` objet, définissez le `FireDate`et planifiez-le à `ScheduleLocalNotification` l’aide de `UIApplication.SharedApplication` la méthode sur l’objet. L’extrait de code suivant montre comment planifier une notification qui se déclenchera une minute à l’avenir et affichera une alerte avec un message:
+Pour planifier une notification locale, créez un `UILocalNotification` objet, définissez le `FireDate`et planifiez-le à `ScheduleLocalNotification` l’aide de `UIApplication.SharedApplication` la méthode sur l’objet. L’extrait de code suivant montre comment planifier une notification qui se déclenchera une minute à l’avenir et affichera une alerte avec un message :
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -54,19 +54,19 @@ notification.AlertBody = "Your 15 second alert has fired!";
 UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 ```
 
-La capture d’écran suivante montre à quoi ressemble cette alerte:
+La capture d’écran suivante montre à quoi ressemble cette alerte :
 
 [![](local-notifications-in-ios-images/image2-sml.png "Un exemple d’alerte")](local-notifications-in-ios-images/image2.png#lightbox)
 
 Notez que si l’utilisateur a choisi de *ne pas autoriser* les notifications, rien ne s’affiche.
 
-Si vous souhaitez appliquer un badge à l’icône de l’application avec un nombre, vous pouvez le définir comme indiqué dans le code de ligne suivant:
+Si vous souhaitez appliquer un badge à l’icône de l’application avec un nombre, vous pouvez le définir comme indiqué dans le code de ligne suivant :
 
 ```csharp
 notification.ApplicationIconBadgeNumber = 1;
 ```
 
-Dans l’ordre, lisez un son avec l’icône, définissez la propriété SoundName sur la notification comme indiqué dans l’extrait de code suivant:
+Dans l’ordre, lisez un son avec l’icône, définissez la propriété SoundName sur la notification comme indiqué dans l’extrait de code suivant :
 
 ```csharp
 notification.SoundName = UILocalNotification.DefaultSoundName;
@@ -83,7 +83,7 @@ les applications iOS gèrent les notifications locales et distantes de la même 
 
 Une application peut gérer une notification de différentes façons. Par exemple, l’application peut simplement afficher une alerte pour rappeler aux utilisateurs tout événement. Ou la notification peut être utilisée pour afficher une alerte à l’utilisateur qu’un processus est terminé, comme la synchronisation de fichiers avec un serveur.
 
-Le code suivant montre comment gérer une notification locale et afficher une alerte et réinitialiser le numéro de badge à zéro:
+Le code suivant montre comment gérer une notification locale et afficher une alerte et réinitialiser le numéro de badge à zéro :
 
 ```csharp
 public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-Si l’application n’est pas en cours d’exécution, iOS lira le son et/ou met à jour le badge d’icône selon le cas. Lorsque l’utilisateur démarre l’application associée à l’alerte, l’application se lance et la `FinishedLaunching` méthode sur le délégué d’application est appelée et les informations de notification sont transmises via le `launchOptions` paramètre. Si le dictionnaire d’options contient la `UIApplication.LaunchOptionsLocalNotificationKey`clé, le `AppDelegate` sait que l’application a été lancée à partir d’une notification locale. L’extrait de code suivant illustre ce processus:
+Si l’application n’est pas en cours d’exécution, iOS lira le son et/ou met à jour le badge d’icône selon le cas. Lorsque l’utilisateur démarre l’application associée à l’alerte, l’application se lance et la `FinishedLaunching` méthode sur le délégué d’application est appelée et les informations de notification sont transmises via le `launchOptions` paramètre. Si le dictionnaire d’options contient la `UIApplication.LaunchOptionsLocalNotificationKey`clé, le `AppDelegate` sait que l’application a été lancée à partir d’une notification locale. L’extrait de code suivant illustre ce processus :
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-Pour une notification distante, `launchOptions` dispose d’un `LaunchOptionsRemoteNotificationKey` avec `NSDictionary` un associé contenant la charge utile de notification distante. Vous pouvez extraire la charge utile de notification `alert`via `badge`les clés `sound` , et. L’extrait de code suivant montre comment recevoir des notifications distantes:
+Pour une notification distante, `launchOptions` dispose d’un `LaunchOptionsRemoteNotificationKey` avec `NSDictionary` un associé contenant la charge utile de notification distante. Vous pouvez extraire la charge utile de notification `alert`via `badge`les clés `sound` , et. L’extrait de code suivant montre comment recevoir des notifications distantes :
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];

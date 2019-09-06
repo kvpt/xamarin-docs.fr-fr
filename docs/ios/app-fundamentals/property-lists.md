@@ -4,40 +4,40 @@ description: Ce document présente l’éditeur de liste de propriétés (. plis
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ca3622e01d6c7b616dc115b89ffcccf64022b1a1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527140"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286787"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Utilisation des listes de propriétés dans Xamarin. iOS
 
 _Ce document présente l’éditeur de liste de propriétés (. plist) graphique et avancé de Visual Studio pour Mac pour l’utilisation d’info. plist et de conversions. plist. Il illustre la définition des icônes et des images de lancement pour les applications iOS dans Visual Studio pour Mac._
 
-Visual Studio pour Mac propose un éditeur Graphical. plist, qui facilite la modification des propriétés et des fonctionnalités de l’application. Visual Studio pour Mac a deux. plist: `Info.plist` pour modifier les icônes et les propriétés de `Entitlements.plist` l’application, ainsi que pour gérer les fonctionnalités de l’application. Ce guide présente le fichier info. plist et fournit une vue d’ensemble de son utilisation dans Visual Studio pour Mac. Pour plus d’informations sur habilitations. plist, consultez le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
+Visual Studio pour Mac propose un éditeur Graphical. plist, qui facilite la modification des propriétés et des fonctionnalités de l’application. Visual Studio pour Mac a deux. plist : `Info.plist` pour modifier les icônes et les propriétés de `Entitlements.plist` l’application, ainsi que pour gérer les fonctionnalités de l’application. Ce guide présente le fichier info. plist et fournit une vue d’ensemble de son utilisation dans Visual Studio pour Mac. Pour plus d’informations sur habilitations. plist, consultez le guide [utilisation des droits](~/ios/deploy-test/provisioning/entitlements.md) .
 
 ## <a name="infoplist"></a>Info.plist
 
-La liste de propriétés d' `Info.plist`informations () est un fichier iOS requis qui fournit des informations sur la configuration de votre application au système. L’éditeur personnalisé `Info.plist` de Visual Studio pour Mac présente trois panneaux contrôlés par des onglets en bas à gauche de la fenêtre de l’éditeur:
+La liste de propriétés d' `Info.plist`informations () est un fichier iOS requis qui fournit des informations sur la configuration de votre application au système. L’éditeur personnalisé `Info.plist` de Visual Studio pour Mac présente trois panneaux contrôlés par des onglets en bas à gauche de la fenêtre de l’éditeur :
 
  [![](property-lists-images/tabs.png "Onglets de l’éditeur info. plist en bas à gauche de la fenêtre de l’éditeur")](property-lists-images/tabs.png#lightbox)
 
-Chaque panneau contrôle différentes propriétés, comme indiqué ci-dessous:
+Chaque panneau contrôle différentes propriétés, comme indiqué ci-dessous :
 
-- **Panneau** de l’application: interface graphique permettant de définir des propriétés d’application courantes, ainsi que des icônes et des images de lancement. Spécifiez l’intégration des cartes et les modes d’arrière-plan.
+- **Panneau** de l’application : interface graphique permettant de définir des propriétés d’application courantes, ainsi que des icônes et des images de lancement. Spécifiez l’intégration des cartes et les modes d’arrière-plan.
 - **Panneau avancé** : le panneau avancé est l’endroit où vous pouvez spécifier les types de documents pris en charge, les UTI et les types d’URL.
-- **Panneau** source: le panneau source contrôle les propriétés moins courantes, ainsi que les propriétés personnalisées de l’application.
+- **Panneau** source : le panneau source contrôle les propriétés moins courantes, ainsi que les propriétés personnalisées de l’application.
 
 
 Les trois sections suivantes étudient plus en détail les fonctionnalités de chaque volet.
 
 ## <a name="application-panel"></a>Panneau de l’application
 
-Visual Studio pour Mac propose une interface graphique pour la modification `Info.plist` des entrées communes pour une application:
+Visual Studio pour Mac propose une interface graphique pour la modification `Info.plist` des entrées communes pour une application :
 
 1. Propriétés des applications
 1. Types d’appareils pris en charge
@@ -71,7 +71,7 @@ Les sections informations de **déploiement** de l’appareil s’affichent de m
 
 ### <a name="status-bar-styles"></a>Styles de barre d’État
 
-La section des **styles de barre d’État** est une interface graphique pour la `UIStatusBarStyle`modification d’une application:
+La section des **styles de barre d’État** est une interface graphique pour la `UIStatusBarStyle`modification d’une application :
 
  [![](property-lists-images/status.png "Styles de barre d’État")](property-lists-images/status.png#lightbox)
 
@@ -114,7 +114,7 @@ Pour plus d’informations sur la configuration de ces valeurs, reportez-vous à
 
 ## <a name="utis"></a>UTI
 
-Parfois, une application doit prendre en charge l’ouverture d’un type de fichier personnalisé. Par exemple, nous pouvons souhaiter ouvrir des fichiers image avec une extension personnalisée *. Xam*. Pour spécifier un type de fichier personnalisé, nous allons créer un identificateur de type UTI-Universal personnalisé à l' `UIExportedTypeDeclarations` aide de la clé. La capture d’écran ci-dessous montre comment créer un UTI personnalisé pour l’extension. Xam:
+Parfois, une application doit prendre en charge l’ouverture d’un type de fichier personnalisé. Par exemple, nous pouvons souhaiter ouvrir des fichiers image avec une extension personnalisée *. Xam*. Pour spécifier un type de fichier personnalisé, nous allons créer un identificateur de type UTI-Universal personnalisé à l' `UIExportedTypeDeclarations` aide de la clé. La capture d’écran ci-dessous montre comment créer un UTI personnalisé pour l’extension. Xam :
 
  [![](property-lists-images/uti.png "Éditeur UTI")](property-lists-images/uti.png#lightbox)
 
@@ -124,7 +124,7 @@ Pour plus d’informations sur l’utilisation de UTI personnalisés, reportez-v
 
 ## <a name="custom-urls"></a>URL personnalisées
 
-Un nom de schéma d’URL (également appelé protocole) est la première partie de l’URL. Par exemple, `http://` et `https://` sont des schémas d’URL courants. Vous avez la possibilité de créer un modèle d’URL personnalisé pour votre application. Les schémas d’URL personnalisés servent à communiquer et à envoyer des données avec d’autres applications. La capture d’écran suivante illustre la création d’un nouveau schéma `monkeys://`d’URL personnalisé appelé:
+Un nom de schéma d’URL (également appelé protocole) est la première partie de l’URL. Par exemple, `http://` et `https://` sont des schémas d’URL courants. Vous avez la possibilité de créer un modèle d’URL personnalisé pour votre application. Les schémas d’URL personnalisés servent à communiquer et à envoyer des données avec d’autres applications. La capture d’écran suivante illustre la création d’un nouveau schéma `monkeys://`d’URL personnalisé appelé :
 
  [![](property-lists-images/url.png "URL personnalisées")](property-lists-images/url.png#lightbox)
 
@@ -134,15 +134,15 @@ Pour plus d’informations sur l’implémentation de modèles d’URL personnal
 
 ## <a name="source-panel"></a>Panneau source
 
-L’onglet **source** du `Info.plist` fichier permet d’ajouter ou de modifier des valeurs personnalisées. Visual Studio pour Mac fournit une liste des propriétés les plus courantes:
+L’onglet **source** du `Info.plist` fichier permet d’ajouter ou de modifier des valeurs personnalisées. Visual Studio pour Mac fournit une liste des propriétés les plus courantes :
 
  [![](property-lists-images/image31.png "Ajout d’une nouvelle propriété à partir d’une liste déroulante")](property-lists-images/image31.png#lightbox)
 
-Pour les propriétés connues Visual Studio pour Mac est une liste de valeurs valides, comme l’illustre la capture d’écran suivante:
+Pour les propriétés connues Visual Studio pour Mac est une liste de valeurs valides, comme l’illustre la capture d’écran suivante :
 
  [![](property-lists-images/image32.png "Sélectionner une valeur dans une liste de valeurs connues")](property-lists-images/image32.png#lightbox)
 
-Visual Studio pour Mac détecte également le type de propriété, comme indiqué ci-dessous:
+Visual Studio pour Mac détecte également le type de propriété, comme indiqué ci-dessous :
 
  [![](property-lists-images/image33.png "Types de propriétés disponibles")](property-lists-images/image33.png#lightbox)
 

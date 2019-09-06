@@ -3,15 +3,15 @@ title: Sélecteur d’implémentation HttpClient et SSL/TLS pour iOS/macOS
 description: La pile HttpClient et le sélecteur d’implémentation SSL/TLS déterminent l’implémentation HttpClient et SSL/TLS qui sera utilisée par votre application Xamarin iOS, tvOS ou macOS.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: f00a25bbb86e9ec57ef2290c1a7e37a8891e1064
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f3c30e8edc36c6d92b6fac0bd0e199aa26e16993
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521868"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280922"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>Sélecteur d’implémentation HttpClient et SSL/TLS pour iOS/macOS
 
@@ -26,11 +26,11 @@ Les projets doivent faire référence à l’assembly **System .net. http** .
 
 ### <a name="selecting-an-httpclient-stack"></a>Sélection d’une pile HttpClient
 
-Pour ajuster le `HttpClient` utilisé par votre application:
+Pour ajuster le `HttpClient` utilisé par votre application :
 
 1. Double-cliquez sur le **nom du projet** dans la **Explorateur de solutions** pour ouvrir les options du projet.
 2. Basculez vers les paramètres de **génération** de votre projet (par exemple, **Build iOS** pour une application Xamarin. IOS).
-3. Dans la liste déroulante **implémentation httpclient** , sélectionnez le `HttpClient` type d’une des manières suivantes: **Passer** (recommandé), **cfnetwork**ou **managé**.
+3. Dans la liste déroulante **implémentation httpclient** , sélectionnez le `HttpClient` type d’une des manières suivantes : **Passer** (recommandé), **cfnetwork**ou **managé**.
 
 [![Choisir l’implémentation de HttpClient à partir de Managed, CFNetwork ou passer](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
@@ -83,7 +83,7 @@ Le gestionnaire managé est le gestionnaire HttpClient entièrement géré qui a
 
 ### <a name="programmatically-setting-the-httpmessagehandler"></a>Définition par programmation de HttpMessageHandler
 
-En plus de la configuration à l’ensemble du projet présentée ci-dessus, vous `HttpClient` pouvez également instancier `HttpMessageHandler` un et injecter le souhaité par le biais du constructeur, comme illustré dans les extraits de code suivants:
+En plus de la configuration à l’ensemble du projet présentée ci-dessus, vous `HttpClient` pouvez également instancier `HttpMessageHandler` un et injecter le souhaité par le biais du constructeur, comme illustré dans les extraits de code suivants :
 
 ```csharp
 // This will use the default message handler for the application; as
@@ -121,9 +121,9 @@ Pour en savoir plus sur ATS, consultez notre [Guide de sécurité App transport]
 
 Cette section aborde les problèmes connus liés à la prise en charge de TLS dans Xamarin. iOS.
 
-### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>Échec du chargement du projet avec l’erreur «la valeur demandée AppleTLS est introuvable»
+### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>Échec du chargement du projet avec l’erreur « la valeur demandée AppleTLS est introuvable »
 
-Xamarin. iOS 9,8 a introduit de nouveaux paramètres contenant le fichier **. csproj** pour une application Xamarin. iOS. Ces modifications peuvent entraîner des problèmes lorsque le projet est ouvert avec des versions antérieures de Xamarin. iOS. La capture d’écran suivante est un exemple de message d’erreur qui peut s’afficher dans ce scénario:
+Xamarin. iOS 9,8 a introduit de nouveaux paramètres contenant le fichier **. csproj** pour une application Xamarin. iOS. Ces modifications peuvent entraîner des problèmes lorsque le projet est ouvert avec des versions antérieures de Xamarin. iOS. La capture d’écran suivante est un exemple de message d’erreur qui peut s’afficher dans ce scénario :
 
 ![Capture d’écran de l’erreur lors de la tentative de chargement du projet, valeur demandée héritée introuvable](http-stack-images/tlserror-xs.png)
 

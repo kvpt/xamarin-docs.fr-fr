@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: c3f0130e96ae61838b9a7abcd68ccd219a327d4d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198482"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280162"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitâche pour iPad dans Xamarin. iOS
 
@@ -21,19 +21,19 @@ _iOS 9 prend en charge deux applications qui s’exécutent en même temps, en u
 
 ![](multitasking-images/about02-sml.png "Exemple d’écran de fractionner") ![](multitasking-images/about03-sml.png "d’image exemple")
 
-iOS 9 ajoute la prise en charge de la multitâche pour l’exécution de deux applications en même temps sur un matériel iPad spécifique. Le multitâche pour iPad est pris en charge via les fonctionnalités suivantes:
+iOS 9 ajoute la prise en charge de la multitâche pour l’exécution de deux applications en même temps sur un matériel iPad spécifique. Le multitâche pour iPad est pris en charge via les fonctionnalités suivantes :
 
 - [**Glisser-déplacer**](#Slide-Over) : permet à l’utilisateur d’exécuter temporairement une deuxième application iOS dans un panneau coulissant (à droite ou à gauche de l’écran en fonction de la direction de la langue) qui couvre approximativement 25% de l’application principale en cours d’exécution. La glissement est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4.
 - [**Mode fractionné**](#Split-View) : sur le matériel iPad pris en charge (iPad air 2, iPad mini 4 et iPad Pro uniquement), l’utilisateur peut choisir une deuxième application et l’exécuter côte à côte avec l’application en cours d’exécution en mode fractionné. L’utilisateur peut contrôler le pourcentage de l’écran principal occupé par chaque application.
 - [**Image dans Picture**](#Picture-in-Picture) : pour les applications qui retournent du contenu vidéo, la vidéo peut maintenant être lue dans une fenêtre déplaçable et redimensionnable qui flotte sur les autres applications en cours d’exécution sur l’appareil iOS. L’utilisateur dispose d’un contrôle total sur la taille et la position de cette fenêtre. Picture in Picture est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4.
 
-Il y a plusieurs points à prendre en compte lors [de la prise en charge de la multitâche dans votre application](#Supporting-Multitasking-in-your-App), notamment:
+Il y a plusieurs points à prendre en compte lors [de la prise en charge de la multitâche dans votre application](#Supporting-Multitasking-in-your-App), notamment :
 
 - [Taille et orientation de l’écran](#Screen-Size-Considerations)
 - [Raccourcis clavier du matériel personnalisé](#Custom-Hardware-Keyboard-Shortcuts)
 - [Gestion des ressources](#Resource-Management-Considerations)
 
-En tant que développeur d’applications, vous pouvez également refuser l’exécution [de tâches](#Opting-Out-of-Multitasking)multitâches, notamment [la désactivation de la lecture vidéo PIP](#Disabling-PIP-Video-Playback).
+En tant que développeur d’applications, vous pouvez également refuser l’exécution [de tâches multitâches](#Opting-Out-of-Multitasking), notamment [la désactivation de la lecture vidéo PIP](#Disabling-PIP-Video-Playback).
 
 Cet article décrit les étapes requises pour s’assurer que votre application Xamarin. iOS s’exécute correctement dans un environnement multitâche ou comment refuser l’exécution de tâches multitâches si elle n’est pas adaptée à votre application.
 
@@ -46,7 +46,7 @@ Cet article décrit les étapes requises pour s’assurer que votre application 
 
 ## <a name="multitasking-quickstart"></a>Démarrage rapide multitâche
 
-Pour prendre en charge le **mode** **glisser-déplacer** ou fractionner, votre application doit effectuer les opérations suivantes:
+Pour prendre en charge le mode **glisser-déplacer** ou **fractionner** , votre application doit effectuer les opérations suivantes :
 
 - Être généré sur iOS 9 (ou version ultérieure).
 - Utilisez une table de montage séquentiel pour l’écran de lancement (et non des ressources d’image).
@@ -67,12 +67,12 @@ La diapositive sur la fonctionnalité permet à l’utilisateur de choisir une d
 
 [![](multitasking-images/about01.png "Le panneau déroulant")](multitasking-images/about01.png#lightbox)
 
-L’élément principal à retenir est que l’utilisateur décide quelles applications vont s’exécuter côte à côte et que le développeur n’a aucun contrôle sur ce processus. Par conséquent, vous devrez effectuer quelques opérations pour vous assurer que votre application Xamarin. iOS s’exécute correctement dans une diapositive sur le panneau:
+L’élément principal à retenir est que l’utilisateur décide quelles applications vont s’exécuter côte à côte et que le développeur n’a aucun contrôle sur ce processus. Par conséquent, vous devrez effectuer quelques opérations pour vous assurer que votre application Xamarin. iOS s’exécute correctement dans une diapositive sur le panneau :
 
-- **Utiliser les classes de mise en page automatique et de taille** : étant donné que votre application Xamarin. iOS peut maintenant être exécutée dans le panneau latéral coulissant, vous ne pouvez plus vous fier à l’appareil, à sa taille d’écran ou à son orientation pour mettre en page votre interface utilisateur. Pour vous assurer que votre application met correctement à l’échelle son interface, vous devez utiliser les classes de mise en page automatique et de taille. Pour plus d’informations, consultez notre [Introduction à](~/ios/user-interface/storyboards/unified-storyboards.md) la documentation sur les storyboards unifiés.
+- **Utiliser les classes de mise en page automatique et de taille** : étant donné que votre application Xamarin. iOS peut maintenant être exécutée dans le panneau latéral coulissant, vous ne pouvez plus vous fier à l’appareil, à sa taille d’écran ou à son orientation pour mettre en page votre interface utilisateur. Pour vous assurer que votre application met correctement à l’échelle son interface, vous devez utiliser les classes de mise en page automatique et de taille. Pour plus d’informations, consultez notre [Introduction à la documentation sur les storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 - **Utilisation efficace des ressources** : étant donné que votre application peut désormais partager le système avec une autre application en cours d’exécution, il est essentiel que votre application utilise efficacement les ressources système. Lorsque la mémoire devient incomplète, le système arrête automatiquement l’application qui consomme la plus grande partie de la mémoire. Pour plus d’informations, consultez le Guide de l' [efficacité énergétique d’Apple pour les applications iOS](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) .
 
-La glissement est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4. Pour en savoir plus sur la préparation de votre application pour le glisser-déplacer, consultez la documentation [sur l’iPad adopter les améliorations](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) multitâches d’Apple.
+La glissement est disponible uniquement sur un iPad Pro, iPad air, iPad air 2, iPad mini 2, iPad Mini 3 ou iPad mini 4. Pour en savoir plus sur la préparation de votre application pour le glisser-déplacer, consultez la documentation [sur l’iPad adopter les améliorations multitâches](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) d’Apple.
 
 <a name="Split-View" />
 
@@ -82,12 +82,12 @@ Sur le matériel iPad pris en charge (iPad air 2, iPad mini 4 et iPad Pro unique
 
 [![](multitasking-images/about02.png "Mode fractionné")](multitasking-images/about02.png#lightbox)
 
-Comme glisser-déplacer, l’utilisateur décide quelles applications vont s’exécuter côte à côte et de nouveau, le développeur n’a aucun contrôle sur ce processus. En conséquence, le mode fractionné place des exigences similaires sur une application Xamarin. iOS:
+Comme glisser-déplacer, l’utilisateur décide quelles applications vont s’exécuter côte à côte et de nouveau, le développeur n’a aucun contrôle sur ce processus. En conséquence, le mode fractionné place des exigences similaires sur une application Xamarin. iOS :
 
-- **Utiliser les classes de mise en page automatique et de taille** : étant donné que votre application Xamarin. iOS peut maintenant être exécutée en mode fractionné à la taille spécifiée de l’utilisateur, vous ne pouvez plus vous fier à l’appareil, à sa taille d’écran ou à son orientation pour mettre en page votre interface utilisateur. Pour vous assurer que votre application met correctement à l’échelle son interface, vous devez utiliser les classes de mise en page automatique et de taille. Pour plus d’informations, consultez notre [Introduction à](~/ios/user-interface/storyboards/unified-storyboards.md) la documentation sur les storyboards unifiés.
+- **Utiliser les classes de mise en page automatique et de taille** : étant donné que votre application Xamarin. iOS peut maintenant être exécutée en mode fractionné à la taille spécifiée de l’utilisateur, vous ne pouvez plus vous fier à l’appareil, à sa taille d’écran ou à son orientation pour mettre en page votre interface utilisateur. Pour vous assurer que votre application met correctement à l’échelle son interface, vous devez utiliser les classes de mise en page automatique et de taille. Pour plus d’informations, consultez notre [Introduction à la documentation sur les storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 - **Utilisation efficace des ressources** : étant donné que votre application peut désormais partager le système avec une autre application en cours d’exécution, il est essentiel que votre application utilise efficacement les ressources système. Lorsque la mémoire devient incomplète, le système arrête automatiquement l’application qui consomme la plus grande partie de la mémoire. Pour plus d’informations, consultez le Guide de l' [efficacité énergétique d’Apple pour les applications iOS](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) .
 
-Pour en savoir plus sur la préparation de votre application pour le mode fractionné, consultez la documentation [sur l’iPad adopter les améliorations](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) multitâches d’Apple.
+Pour en savoir plus sur la préparation de votre application pour le mode fractionné, consultez la documentation [sur l’iPad adopter les améliorations multitâches](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) d’Apple.
 
 <a name="Picture-in-Picture" />
 
@@ -123,7 +123,7 @@ Avant iOS 9, vous pouviez concevoir votre application sur des tailles et des ori
 
 Sur un iPad, une application en plein écran contient des classes de taille horizontale et verticale standard. Tous les iPhone, à l’exception de iPhone 6 plus et iPhone 6S plus, ont des classes de taille compacte dans les deux sens, quelle que soit l’orientation. L’iPhone 6 plus et iPhone 6S plus en mode paysage ont une classe de taille horizontale normale et une classe de taille verticale compacte (similaire à un iPad mini).
 
-Sur iPad qui prennent en charge le mode glisser-déplacer et fractionner, vous pouvez vous retrouver avec les combinaisons suivantes:
+Sur iPad qui prennent en charge le mode glisser-déplacer et fractionner, vous pouvez vous retrouver avec les combinaisons suivantes :
 
 | **Orientation** | **Application principale** | **Application secondaire** |
 |--- |--- |--- |
@@ -131,15 +131,15 @@ Sur iPad qui prennent en charge le mode glisser-déplacer et fractionner, vous p
 | **Jardin** |75% de l’écran<br />Horizontal normal<br />Vertical normal|25% de l’écran<br />Compact horizontal<br />Vertical normal|
 | **Jardin** |50% de l’écran<br />Compact horizontal<br />Vertical normal|50% de l’écran<br />Compact horizontal<br />Vertical normal|
 
-Dans l’exemple d’application [MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask) , si elle est exécutée en mode plein écran sur un iPad en mode paysage, elle présente la liste et la vue détaillée en même temps:
+Dans l’exemple d’application [MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask) , si elle est exécutée en mode plein écran sur un iPad en mode paysage, elle présente la liste et la vue détaillée en même temps :
 
 [![](multitasking-images/sizeclasses03.png "Liste et vue détaillée présentées en même temps")](multitasking-images/sizeclasses03.png#lightbox)
 
-Si la même application est exécutée dans une diapositive sur le panneau, elle est présentée sous la forme d’une classe de taille horizontale compacte et affiche uniquement la liste:
+Si la même application est exécutée dans une diapositive sur le panneau, elle est présentée sous la forme d’une classe de taille horizontale compacte et affiche uniquement la liste :
 
 [![](multitasking-images/sizeclasses04.png "Uniquement la liste présentée lorsque l’appareil est horizontal")](multitasking-images/sizeclasses04.png#lightbox)
 
-Pour vous assurer que votre application se comporte correctement dans ces situations, vous devez adopter des collections de traits avec les classes de taille et `IUIContentContainer` respecter `IUITraitEnvironment` les interfaces et. Pour plus d’informations, consultez Référence de la [classe UITraitCollection](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) d’Apple et notre guide de [Présentation](~/ios/user-interface/storyboards/unified-storyboards.md) des storyboards unifiés.
+Pour vous assurer que votre application se comporte correctement dans ces situations, vous devez adopter des collections de traits avec les classes de taille et `IUIContentContainer` respecter `IUITraitEnvironment` les interfaces et. Pour plus d’informations, consultez Référence de la [classe UITraitCollection](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) d’Apple et notre guide de [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) .
 
 En outre, vous ne pouvez plus vous fier aux limites de l’écran appareils pour définir la zone visible de l’application, mais vous devez utiliser les limites de fenêtre de votre application à la place. Étant donné que les limites de la fenêtre sont entièrement sous le contrôle de l’utilisateur, vous ne pouvez pas les ajuster par programmation ou empêcher l’utilisateur de modifier ces limites.
 
@@ -153,17 +153,17 @@ Dans iOS 9 qui s’exécute sur un iPad, Apple offre une prise en charge étendu
 
 Désormais, avec iOS 9, les applications peuvent créer leurs propres raccourcis clavier personnalisés. En outre, certains raccourcis clavier de base sont disponibles, tels que **commande-C** (copier), **commande-X** (couper), **commande-V** (coller) et **commande-Shift-H** (début), sans qu’une application écrite spécifiquement y soit résolue.
 
-L' **onglet de commande** affiche un sélecteur d’application qui permet à l’utilisateur de basculer rapidement entre les applications à partir du clavier, de la même façon que la Mac OS:
+L' **onglet de commande** affiche un sélecteur d’application qui permet à l’utilisateur de basculer rapidement entre les applications à partir du clavier, de la même façon que la Mac OS :
 
 [![](multitasking-images/keyboard01.png "Le sélecteur d’application")](multitasking-images/keyboard01.png#lightbox)
 
-Si une application iOS 9 comprend des raccourcis clavier, l’utilisateur peut maintenir la touche enfoncée sur la **commande**, l' **option** ou les touches de **contrôle** pour les afficher dans une fenêtre contextuelle:
+Si une application iOS 9 comprend des raccourcis clavier, l’utilisateur peut maintenir la touche enfoncée sur la **commande**, l' **option** ou les touches de **contrôle** pour les afficher dans une fenêtre contextuelle :
 
 [![](multitasking-images/keyboard02.png "Menu contextuel raccourcis clavier")](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>Définition de raccourcis clavier personnalisés
 
-Si nous ajoutons le code suivant à un contrôleur d’affichage ou de vue dans notre application, quand cette vue ou ce contrôleur est visible, un raccourci clavier personnalisé est disponible:
+Si nous ajoutons le code suivant à un contrôleur d’affichage ou de vue dans notre application, quand cette vue ou ce contrôleur est visible, un raccourci clavier personnalisé est disponible :
 
 ```csharp
 #region Custom Keyboard Shortcut
@@ -193,7 +193,7 @@ Tout d’abord, nous remplaçons la `CanBecomeFirstResponder` propriété et ret
 
 Ensuite, nous remplaçons la `KeyCommands` propriété et créons un nouveau `UIKeyCommand` pour la séquence de touches **commande-N** . Lorsque la frappe de touche est activée, nous `NewEntry` appelons la méthode (que nous exposez à `Export` iOS 9 à l’aide de la commande) pour exécuter l’action demandée.
 
-Si nous exécutons cette application sur un iPad avec un clavier matériel attaché et que l’utilisateur tape **-N**, une nouvelle entrée est ajoutée à la liste. Si l’utilisateur maintient la touche de **commande** enfoncée, la liste des raccourcis s’affiche:
+Si nous exécutons cette application sur un iPad avec un clavier matériel attaché et que l’utilisateur tape **-N**, une nouvelle entrée est ajoutée à la liste. Si l’utilisateur maintient la touche de **commande** enfoncée, la liste des raccourcis s’affiche :
 
 [![](multitasking-images/keyboard03.png "Menu contextuel raccourcis clavier")](multitasking-images/keyboard03.png#lightbox)
 
@@ -207,13 +207,13 @@ Même pour les applications qui utilisent déjà les guides de conception et les
 
 Par conséquent, vous devez affiner votre application Xamarin. iOS afin d’utiliser les ressources système de manière efficace, sinon elle est confrontée à l’arrêt en cas de mémoire insuffisante. Cela est également vrai pour les applications qui refusent les tâches multitâches, car une deuxième application peut toujours être exécutée dans une diapositive sur un panneau ou une image dans une fenêtre d’image nécessitant des ressources supplémentaires ou entraînant une fréquence d’actualisation inférieure à 60 images par seconde.
 
-Tenez compte des actions utilisateur suivantes et de leurs implications:
+Tenez compte des actions utilisateur suivantes et de leurs implications :
 
 - **Saisie de texte dans une diapositive** à l’écran-même si votre application n’a pas d’entrée de texte, le clavier système peut désormais être affiché sur son interface utilisateur. Par conséquent, l’application peut avoir besoin de répondre aux notifications d’affichage du clavier (telles que l’affichage et le masquage du clavier).
-- **Exécution d’une deuxième application dans une diapositive** à l’aide du panneau: la nouvelle application s’exécute maintenant au premier plan et en concurrence avec l’application existante pour les ressources système telles que la mémoire et les cycles de processeur.
+- **Exécution d’une deuxième application dans une diapositive** à l’aide du panneau : la nouvelle application s’exécute maintenant au premier plan et en concurrence avec l’application existante pour les ressources système telles que la mémoire et les cycles de processeur.
 - **Lire une vidéo dans une fenêtre PIP** -non seulement cette fenêtre recouvre une partie de l’interface de votre application, mais l’application qui a lancé la vidéo est toujours en cours d’exécution en arrière-plan et consomme des ressources processeur et mémoire.
 
-Pour vous assurer que votre application utilise les ressources efficacement, vous devez effectuer les opérations suivantes:
+Pour vous assurer que votre application utilise les ressources efficacement, vous devez effectuer les opérations suivantes :
 
 - **Profilez l’application avec les instruments** : Vérifiez les fuites de mémoire, l’utilisation de l’UC et les zones où l’application peut bloquer le thread principal.
 - **Répondre aux méthodes de transitions d’État** : dans votre fichier **AppDelegate.cs** , remplacez et répondez aux méthodes de modification d’État telles que l’application qui entre ou retourne à partir de l’arrière-plan. Libérez les ressources inrequises, telles que les images, les données ou les vues et le contrôleur d’affichage.
@@ -240,7 +240,7 @@ Pour que votre application Xamarin. iOS ne soit pas exécutée dans un panneau d
 
 Dans la plupart des cas, votre application doit permettre à l’utilisateur de lire tout contenu vidéo qu’il affiche dans une image de la fenêtre flottante de l’image. Toutefois, il peut y avoir des situations où cela n’est peut-être pas souhaité, par exemple des vidéos de séquences Cut.
 
-Pour désactiver la lecture vidéo PIP, procédez comme suit dans votre application:
+Pour désactiver la lecture vidéo PIP, procédez comme suit dans votre application :
 
 - Si vous utilisez un `AVPlayerViewController` pour afficher la vidéo, affectez la valeur à `false`la `AllowsPictureInPicturePlayback` propriété.
 - Si vous utilisez le `AVPlayerLayer` pour afficher une vidéo, n’instanciez pas un. `AVPictureInPictureController`

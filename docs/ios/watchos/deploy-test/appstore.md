@@ -1,142 +1,142 @@
 ---
-title: Déploiement watchOS applications sur l’App Store
-description: Ce document décrit comment déployer des applications watchOS générées avec Xamarin à l’App Store. Il examine les profils de provisionnement de distribution et d’iTunes Connect, et il fournit également des conseils de dépannage.
+title: Déploiement d’applications Watchos sur l’App Store
+description: Ce document explique comment déployer des applications Watchos générées avec Xamarin dans l’App Store. Il examine les profils de provisionnement de distribution et iTunes Connect, et fournit également des conseils de dépannage.
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 92ad0353268c414a1394e98a7b2d23d23dc4df07
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865975"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285377"
 ---
-# <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement watchOS applications sur l’App Store
+# <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement d’applications Watchos sur l’App Store
 
 > [!IMPORTANT]
-> Veillez à consulter [Guide de soumission du Kit d’Apple Watch](https://developer.apple.com/app-store/watch/)et consultez le [dépannage](#troubleshooting) section pour les problèmes que vous pouvez avoir.
+> Veillez à consulter le [Guide de soumission du kit de surveillance d’Apple](https://developer.apple.com/app-store/watch/)et consultez la section [résolution](#troubleshooting) des problèmes pour tout problème que vous pouvez rencontrer.
 
-- Vérifiez que :
-  - [**Profils de provisionnement de distribution** ](#provisioning) créé pour vos projets.
-  - Le **cible de déploiement** (`MinimumOSVersion`) pour iOS parent la valeur application **8.2** ou une version antérieure (8.3 n’est pas pris en charge).
+- Vérifiez que vous disposez des éléments suivants :
+  - [**Profils de provisionnement de distribution**](#provisioning) créés pour vos projets.
+  - La **cible** de déploiement`MinimumOSVersion`() de l’application parent iOS définie à **8,2** ou une version antérieure (8,3 n’est pas prise en charge).
 
-- Dans [ **iTunes Connect**](#iTunes_Connect):
+- Dans [**iTunes Connect**](#iTunes_Connect):
 
-  - Créer votre iOS entrée de l’application (ou ajouter un **nouvelle Version** à une application existante).
-  - Ajouter des captures d’écran et icône espion.
+  - Créez votre entrée d’application iOS (ou ajoutez une **nouvelle version** à une application existante).
+  - Ajouter une icône de montre et des captures d’écran.
 
-- Ensuite, dans [Visual Studio pour Mac](#xamarin_studio) (Visual Studio n'est pas actuellement pris en charge) :
+- Ensuite, dans [Visual Studio pour Mac](#xamarin_studio) (Visual Studio n’est pas pris en charge actuellement) :
 
-  - Avec le bouton droit de l’application iOS et choisissez **définir comme projet de démarrage**.
-  - Remplacez par le **App Store** configuration.
-  - Utilisez le **Archive** fonctionnalité de créer une archive d’application.
+  - Cliquez avec le bouton droit sur l’application iOS, puis choisissez **définir comme projet de démarrage**.
+  - Passez à la configuration de l' **App Store** .
+  - Utilisez la fonctionnalité d' **archivage** créer une archive d’application.
 
 - Enfin, basculez vers [Xcode 6.2 +](#xcode)
 
-  - Accédez à la **fenêtre > organisateur** et choisissez **Archives**.
+  - Accédez à la **fenêtre > organisateur** , puis choisissez **Archives**.
   - Sélectionnez l’application et l’archive dans la liste.
-  - (Facultatif) **Valider...**  l’archive.
-  - **Envoyer...**  l’archive et suivez les étapes à charger dans iTunes connectent pour révision et approbation.
+  - Éventuellement **Valider...** Archive.
+  - **Envoyer...** l’archive et suivez les étapes pour télécharger vers iTunes Connect pour la révision et l’approbation.
 
-Lire des conseils spécifiques liés à ces éléments ci-dessous. Consultez le [dépannage](#troubleshooting) section si vous rencontrez des problèmes.
+Lisez les conseils spécifiques relatifs à ces éléments ci-dessous. Si vous rencontrez des problèmes, consultez la section [résolution des](#troubleshooting) problèmes.
 
 <a name="provisioning" />
 
 ## <a name="distribution-provisioning-profiles"></a>Profils de provisionnement de distribution
 
-Pour générer pour le déploiement d’App Store vous devez créer un **profil de provisionnement de Distribution** pour chaque ID d’application dans votre solution.
+Pour générer le déploiement de l’App Store, vous devez créer un **profil de provisionnement de distribution** pour chaque ID d’application dans votre solution.
 
-Si vous avez un ID d’application, de caractère générique *qu’un seul profil de provisionnement devront*; Toutefois, si vous avez un ID d’application distinct pour chaque projet vous aurez besoin un profil de provisionnement pour chaque ID d’application :
+Si vous avez un ID d’application générique, *un seul profil de provisionnement sera requis*; Toutefois, si vous disposez d’un ID d’application distinct pour chaque projet, vous aurez besoin d’un profil de configuration pour chaque ID d’application :
 
-![](appstore-images/provisioningprofile-distribution-sml.png "Le profil de Distribution d’applications Store")
+![](appstore-images/provisioningprofile-distribution-sml.png "Profil de distribution de l’App Store")
 
-Une fois que vous avez créé les trois profils, ceux-ci s’affichent dans la liste. N’oubliez pas de télécharger et installer chacune d’elles (en double-cliquant dessus) :
+Une fois que vous avez créé les trois profils, ceux-ci s’affichent dans la liste. N’oubliez pas de télécharger et d’installer chacun d’eux (en double-cliquant dessus) :
 
-![](appstore-images/provisioningprofiles-sml.png "La liste des profils disponibles")
+![](appstore-images/provisioningprofiles-sml.png "Liste des profils disponibles")
 
-Vous pouvez vérifier le profil de provisionnement dans le **Options du projet** en sélectionnant le **Générer > signature du Bundle iOS** écran et en sélectionnant le **AppStore | iPhone** configuration.
+Vous pouvez vérifier le profil de provisionnement dans les **Options du projet** en sélectionnant l’écran de signature de l' **offre groupée > iOS** et en sélectionnant la configuration **AppStore | iPhone** .
 
-Le **profil de provisionnement** liste affiche tous les profils correspondants : vous devez voir les profils correspondants que vous avez créée dans cette liste déroulante.
+La liste **profil de provisionnement** affiche tous les profils correspondants. vous devez voir les profils correspondants que vous avez créés dans cette liste déroulante.
 
-![](appstore-images/options-selectprofile-sml.png "La boîte de dialogue signature du Bundle iOS")
+![](appstore-images/options-selectprofile-sml.png "Boîte de dialogue de signature d’offre groupée iOS")
 
 <a name="iTunes_Connect"/>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
-Suivez le [présentation de la distribution application](~/ios/deploy-test/app-distribution/index.md), en particulier :
+Suivez la [Présentation de la distribution d’applications](~/ios/deploy-test/app-distribution/index.md), en particulier :
 
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
-Lors de la configuration de l’application dans iTunes Connect, n’oubliez pas d’ajouter l’icône espion et les captures d’écran :
+Quand vous configurez l’application dans iTunes Connect, n’oubliez pas d’ajouter l’icône de visionneuse et les captures d’écran :
 
-![](appstore-images/itunesconnect-watch-sml.png "L’icône espion et les captures d’écran dans iTunes Connect")
+![](appstore-images/itunesconnect-watch-sml.png "Icône de montre et captures d’écran dans iTunes Connect")
 
-Le fichier icône doit être de 1 024 x 1 024 pixels et aura un masque circulaire appliqué lorsqu’elle est affichée. L’icône ne doit pas avoir un canal alpha.
+Le fichier icône doit être 1024x1024 pixels et un masque circulaire lui sera appliqué lors de son affichage. L’icône ne doit pas avoir de canal alpha.
 
-Au moins une capture d’écran est nécessaire, jusqu'à cinq peut être envoyée.
-Leur 312 x 390 pixels et illustrer votre application Watch en action.
-Vous pouvez utiliser le simulateur de watch 42mm pour prendre des captures d’écran à cette taille.
+Au moins une capture d’écran est requise, jusqu’à cinq peut être envoyée.
+Ils doivent être 312x390 pixels et démontrer votre application Watch en action.
+Vous pouvez utiliser le simulateur Watch 42mm Watch pour prendre des captures d’écran à cette taille.
 
 
 <a name="xamarin_studio" />
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio pour Mac
 
-1. Assurez-vous que l’application iOS est le projet de démarrage. Si ce n’est pas le cas, avec le bouton droit pour la définir :
+1. Assurez-vous que l’application iOS est le projet de démarrage. Si ce n’est pas le cas, cliquez dessus avec le bouton droit pour le définir :
 
    ![](appstore-images/xs-startup.png "Définition du projet de démarrage")
 
-2. Choisissez le **AppStore** configuration de build :
+2. Choisissez la configuration de build **AppStore** :
 
-   ![](appstore-images/xs-appstore.png "La configuration de build App Store")
+   ![](appstore-images/xs-appstore.png "Configuration de build AppStore")
 
-3. Choisissez le **Générer > Archiver** élément de menu pour démarrer le processus d’archivage :
+3. Choisissez l’élément de menu **Build > Archive** pour démarrer le processus d’archivage :
 
-   ![](appstore-images/xs-archive.png "Le menu Générer")
+   ![](appstore-images/xs-archive.png "Menu Générer")
 
-Vous pouvez également choisir le **vue > Archives...**  élément de menu pour afficher les archives qui ont été créés précédemment.
+Vous pouvez également choisir l’élément de menu **afficher > les archives...** pour afficher les archives qui ont été créées précédemment.
 
-  ![](appstore-images/xs-archives-sml.png "La vue Archives")
+  ![](appstore-images/xs-archives-sml.png "Vue Archives")
 
 <a name="xcode" />
 
 ## <a name="xcode"></a>Xcode
 
-Xcode affiche automatiquement les archives créés dans Visual Studio pour Mac.
+Xcode affiche automatiquement les archives créées dans Visual Studio pour Mac.
 
 1. Démarrez Xcode et choisissez **fenêtre > organisateur**:
 
-   ![](appstore-images/xc-organizer.png "Le menu Fenêtre")
+   ![](appstore-images/xc-organizer.png "Menu fenêtre")
 
-2. Basculez vers le **Archives** onglet et sélectionnez l’archive a été créé avec Visual Studio pour Mac :
+2. Basculez vers l’onglet **Archives** et sélectionnez l’archive qui a été créée avec Visual Studio pour Mac :
 
-   ![](appstore-images/xc-archives.png "L’onglet Archives")
+   ![](appstore-images/xc-archives.png "Onglet Archives")
 
-3. Si vous le souhaitez **valider...**  l’archive, puis choisissez **envoyer...**  pour charger l’application à iTunes Connect.
+3. Si vous le souhaitez, **validez** l’archive..., puis choisissez **Envoyer...** pour télécharger l’application dans iTunes Connect.
 
-4. Choisissez l’équipe de développement (si vous appartenez à plusieurs), puis confirmez la soumission :
+4. Choisissez l’équipe de développement (si vous appartenez à plus d’un), puis confirmez la soumission :
 
-   ![](appstore-images/xc-submit1.png "La section d’équipe de développement")
+   ![](appstore-images/xc-submit1.png "Section de l’équipe de développement")
 
-5. Visitez iTunes Connect à nouveau pour voir le fichier binaire chargé. Accédez à la page de configuration de votre application et choisissez **la version préliminaire** dans le menu supérieur pour afficher le **génère** liste :
+5. Reportez-vous à iTunes Connect pour voir le binaire chargé. Accédez à la page de configuration de votre application, puis choisissez **version préliminaire** dans le menu supérieur pour afficher la liste des **Builds** :
 
-   [![](appstore-images/itc-prerelease-sml.png "La page de configuration des applications dans iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "Page de configuration des applications dans iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
-Vous pouvez ensuite soumettre l’application de réception sur le **Versions** page. Reportez-vous à la [présentation de la distribution iOS application](~/ios/deploy-test/app-distribution/index.md) pour plus d’informations.
+Vous pouvez ensuite soumettre l’application pour approbation sur la page **versions** . Pour plus d’informations, reportez-vous à la présentation de la [distribution d’applications iOS](~/ios/deploy-test/app-distribution/index.md) .
 
 
-## <a name="troubleshooting"></a>Résolution de problèmes
+## <a name="troubleshooting"></a>Résolution des problèmes
 
-Voici certaines erreurs que vous pouvez rencontrer lors de l’envoi à l’App Store et les étapes à que suivre pour les corriger.
+Voici quelques-unes des erreurs que vous pouvez rencontrer lors de l’envoi à l’App Store, ainsi que les étapes à suivre pour les corriger.
 
-### <a name="archive-menu-option-is-not-visible-in-visual-studio-for-mac"></a>Option de menu d’archive n’est pas visible dans Visual Studio pour Mac
+### <a name="archive-menu-option-is-not-visible-in-visual-studio-for-mac"></a>L’option de menu archive n’est pas visible dans Visual Studio pour Mac
 
-Suivez le [étapes ci-dessus](#xamarin_studio) pour configurer la solution pour l’archivage. Si vous ne pouvez pas correctement le projet de démarrage, vérifiez que la configuration de build est tout d’abord définie sur Debug ou Release avant de modifier le projet de démarrage. Réglez la configuration de build au **AppStore**.
+Suivez les [étapes ci-dessus](#xamarin_studio) pour configurer la solution pour l’archivage. Si vous ne pouvez pas définir correctement le projet de démarrage, assurez-vous que la configuration de build est définie sur Debug ou Release avant de tenter de modifier le projet de démarrage. Réaffectez ensuite la valeur **AppStore**à la configuration de Build.
 
 ### <a name="invalid-icon"></a>Icône Non valide
 
@@ -146,9 +146,9 @@ contains an icon file '...watchkitextension.appex/WatchApp.app/AppIcon27.5x27.5@
 with an alpha channel. Icons should not have an alpha channel.
 ```
 
-Suivez le [instructions pour supprimer le canal alpha](~/ios/watchos/troubleshooting.md) à partir de vos icônes.
+Suivez les [instructions pour supprimer le canal alpha](~/ios/watchos/troubleshooting.md) de vos icônes.
 
-### <a name="cfbundleversion-mismatch"></a>Incompatibilité de valeur CFBundleVersion
+### <a name="cfbundleversion-mismatch"></a>Incompatibilité valeur cfbundleversion
 
 ```csharp
 CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application
@@ -156,7 +156,7 @@ CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application
 value '1.0' of its containing iOS application `YouriOS.app`.
 ```
 
-Tous les projets de votre solution, l’application iOS, l’Extension Watch et l’application Watch - doivent utiliser le même numéro de version. Modifiez chacun **Info.plist** de fichiers afin que le numéro de version correspond à exactement.
+Tous les projets de votre solution (l’application iOS, l’extension Watch et l’application Watch) doivent utiliser le même numéro de version. Modifiez chaque fichier **info. plist** afin que le numéro de version corresponde exactement à.
 
 ### <a name="missing-icons"></a>Icônes manquantes
 
@@ -165,7 +165,7 @@ Missing Icons. No icons found for watch application '...watchkitextension.appex/
 Please make sure that its Info.plist file includes entries for CFBundleIconFiles.
 ```
 
-Suivez les instructions de la [fonctionne avec des icônes](~/ios/watchos/app-fundamentals/icons.md) pour ajouter toutes les images nécessaires au projet d’application de surveillance.
+Suivez les instructions fournies dans les [icônes utilisation](~/ios/watchos/app-fundamentals/icons.md) de pour ajouter toutes les images requises au projet d’application Watch.
 
 ### <a name="missing-icon"></a>Icône manquante
 
@@ -174,32 +174,32 @@ Missing Icon. The watch application '...watchkitextension.appex/WatchApp.app'
 is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 ```
 
-Assurez-vous d’avoir la dernière version de Visual Studio pour Mac et que votre **AppIcon.appiconset** contient un ensemble complet des images. Si cette erreur persiste, affichez la source de la **Contents.json** pour confirmer qu’il contient une entrée pour toutes les images nécessaires. Vous pouvez également, une fois que vous avez vérifié que vous utilisez la dernière version de Xamarin, supprimez et recréez le **AppIcon.appiconset**.
+Vérifiez que vous disposez de la dernière version de Visual Studio pour Mac, et que votre **AppIcon. appiconset** contient un ensemble complet d’images. Si vous continuez à voir cette erreur, consultez la source du **contenu. JSON** pour confirmer qu’elle contient une entrée pour toutes les images requises. Une fois que vous avez vérifié que vous utilisez la dernière version de Xamarin, supprimez et recréez l' **AppIcon. appiconset**.
 
 > [!IMPORTANT]
-> Il existe un bogue connu dans Visual Studio pour la prise en charge de Mac espion icône : elle attend une image de pixel de 88 x 88 pour la **29x29@3x** image (qui doit être 87 x 87 pixels).
+> Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend **29x29@3x** une image de pixel 88x88 pour l’image (qui doit être 87x87 pixels).
 
 
-Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac - modifier la ressource image dans Xcode ou modifier manuellement le **Contents.json** fichier (pour correspondre à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 
 
-### <a name="invalid-watchkit-support"></a>Prise en charge de WatchKit non valide
+### <a name="invalid-watchkit-support"></a>Prise en charge WatchKit non valide
 
 ```csharp
 Invalid WatchKit Support - The bundle contains an invalid implementation of WatchKit.
 The app may have been built or signed with non-compliant or pre-release tools.
 ```
 
-Ce message peut apparaître au cours de validation et la soumission, ou dans un message électronique automatisé d’iTunes Connect après un chargement apparemment réussi.
+Ce message peut s’afficher lors de la validation et de l’envoi, ou dans un e-mail automatisé d’iTunes Connect après un chargement apparemment réussi.
 <!--
 Ensure you are using the latest version of Xcode and Xamarin's tools.
 -->
 > [!IMPORTANT]
-> Vous devez **Archive** votre application dans Visual Studio pour Mac et basculez ensuite vers Xcode 6.2 + valider et charger dans iTunes Connect.
+> Vous devez **Archiver** votre application dans Visual Studio pour Mac puis basculer vers Xcode 6.2 + pour valider et charger iTunes Connect.
 
 
-Utilisez le canal de Xamarin Stable et Xcode 6.2 +.
+Utilisez le canal Xamarin stable et Xcode 6.2 +.
 
 
 
@@ -211,9 +211,9 @@ Invalid Provisioning Profile. The provisioning profile included in the bundle
 is invalid. [Missing code-signing certificate.]
 ```
 
-**Profils de provisionnement de distribution** doit être fourni pour les trois projets dans une solution d’application espion : l’application iOS, l’Extension Watch et l’application Watch - soit explicitement (les trois profils) ou via un profil générique unique. Vérifiez que les profils de provisionnement existent dans le centre de développement iOS et que vous avez téléchargé et ajoutés à votre Mac.
+Les **profils de provisionnement de distribution** doivent être fournis pour les trois projets dans une solution d’application Watch : l’application iOS, l’extension Watch et l’application Watch, soit explicitement (trois profils), soit via un profil générique unique. Vérifiez que les profils de provisionnement existent dans le centre de développement iOS et que vous les avez téléchargés et ajoutés à votre Mac.
 
-### <a name="invalid-code-signing-entitlements"></a>Droits de signature de Code non valide
+### <a name="invalid-code-signing-entitlements"></a>Droits de signature de code non valides
 
 ```csharp
 ITMS-90046: Invalid Code Signing Entitlements. Your application bundle's signature contains
@@ -223,7 +223,7 @@ is not supported. The value should be a string startign with your TEAMID, follow
 by a dot '.' followed by the bundle identifier.
 ```
 
-Vérifiez que vos profils de provisionnement sont configurés correctement sur le centre de développement Apple, et que vous avez téléchargé et installé les. Vérifiez également qu’ils sont définis dans Visual Studio pour la fenêtre de propriétés du Mac pour chaque projet.
+Vérifiez que vos profils de provisionnement sont correctement configurés sur le centre de développement Apple, et que vous les avez téléchargés et installés. Vérifiez également qu’ils sont définis dans la fenêtre Propriétés de Visual Studio pour Mac pour chaque projet.
 
 ### <a name="invalid-architecture"></a>Architecture non valide
 
@@ -232,19 +232,19 @@ Invalid architecture: Apps that include an app extension
 and framework must support arm64.
 ```
 
-Vous pouvez uniquement ajouter des applications cadran [API unifiée (64 bits)](~/cross-platform/macios/unified/index.md) les applications Xamarin.iOS.
-Avec le bouton droit sur le projet d’application iOS, puis accédez à **Options > Build > Build iOS > onglet Avancé** et vérifiez que le **pris en charge les Architectures** pour l’App Store-iPhone configuration inclut **ARM64** (par exemple). **ARMv7 + ARM64**).
+Vous pouvez uniquement ajouter des applications Watch [API unifiée (64 bits)](~/cross-platform/macios/unified/index.md) Xamarin. iOS.
+Cliquez avec le bouton droit sur le projet d’application iOS, accédez à **Options > générer > version ios > onglet Avancé** et assurez-vous que les **architectures prises en charge** pour la configuration AppStore-iPhone incluent **ARM64** (par exemple, **ARMv7 + ARM64**).
 
-### <a name="this-bundle-is-invalid"></a>Cette offre n’est pas valide.
+### <a name="this-bundle-is-invalid"></a>Cette offre groupée n’est pas valide.
 
 ```csharp
 ITMS-90068: This bundle is invalid. The value provided for the key
 MinimumOSVersion '8.3' is not acceptable.
 ```
 
-Votre application iOS de parent doit avoir la MinimumOSVersion définie à '8.2' ou une version antérieure.
+Le MinimumOSVersion doit être défini sur « 8,2 » ou une version antérieure pour votre application iOS parente.
 
-### <a name="non-public-api-usage"></a>Utilisation de l’API non publics
+### <a name="non-public-api-usage"></a>Utilisation d’API non publiques
 
 ```csharp
 Your app contains non-public API usage.
@@ -252,18 +252,18 @@ Please review the errors, and resubmit your application.
 ```
 
 Vérifiez que vous utilisez la dernière version des outils Xcode et Xamarin.
-Votre code ne doit pas accéder aux toutes les API non public.
+Votre code ne doit pas accéder aux API non publiques.
 
-### <a name="build-error-mt5309"></a>Générer l’erreur MT5309
+### <a name="build-error-mt5309"></a>Erreur de génération MT5309
 
 ```csharp
 Error MT5309: Native linking error: clang: error: no such file or directory:
 ```
 
-Cette erreur est probablement le résultat de votre avoir renommé de votre installation de Xcode **Xcode.app**. Par exemple, cette erreur se produit si vous renommez votre installation vers **XCode 6.2.app**.
+Cette erreur est probablement due au fait que vous avez renommé votre installation Xcode à partir de **Xcode. app**. Par exemple, cette erreur se produit si vous renommez votre installation de **Xcode 6.2. app**.
 
 
 
 ## <a name="related-links"></a>Liens associés
 
-- [Guide de présentation WatchKit Apple](https://developer.apple.com/app-store/watch/)
+- [Guide d’envoi Apple WatchKit](https://developer.apple.com/app-store/watch/)

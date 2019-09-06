@@ -4,15 +4,15 @@ description: Ce guide explique comment planifier des applications et comment uti
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: dbf8f85192f9052041fc65367eb2f6c57603b440
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
-ms.translationtype: HT
+ms.openlocfilehash: ec510d46bf1b46cf8fd70c8f4d43b3108f46a010
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831425"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284772"
 ---
 # <a name="ios-build-mechanics"></a>Mécanismes de génération d’iOS
 
@@ -113,7 +113,7 @@ Il existe plusieurs configurations de build fournies lors du déploiement d’ap
 
 - Débogage
   - Il s’agit de la configuration principale qui doit être utilisée lorsqu’une application est en cours de développement et elle doit, par conséquent, être aussi rapide que possible.
-- Édition
+- Libérer
   - Les builds de mise en production sont celles qui sont envoyées à vos utilisateurs et il est donc essentiel de se concentrer sur les performances. Lorsque vous utilisez la configuration Mise en production, vous souhaiterez peut-être utiliser le compilateur d’optimisation LLVM et optimiser les fichiers PNG.
 
  

@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: FB91DFFE-CF5E-4253-92CB-78A6371259D9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: edc585364df2e0b2129135e7bf5977c33a77a6e0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 465c8df864669ad47acd47ae380574e247a0acd6
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647421"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292862"
 ---
 # <a name="introduction-to-ios-10"></a>Introduction à iOS 10
 
@@ -22,13 +22,13 @@ Pour plus d’informations sur iOS 10, consultez la documentation sur [iOS + App
 
 ## <a name="whats-new-in-ios-10"></a>Nouveautés d’iOS 10
 
-Apple a ajouté plusieurs nouvelles API et services dans iOS 10, ainsi que de nombreuses améliorations aux fonctionnalités existantes, notamment:
+Apple a ajouté plusieurs nouvelles API et services dans iOS 10, ainsi que de nombreuses améliorations aux fonctionnalités existantes, notamment :
 
 ## <a name="adapting-to-the-true-tone-display"></a>Adapter à l’affichage du ton vrai
 
 La technologie d’affichage du vrai ton d’Apple utilise le capteur de lumière ambiante d’un appareil iOS pour ajuster dynamiquement la couleur et l’intensité de l’affichage afin qu’elles correspondent aux conditions d’éclairage actuelles. iOS 10 fournit la nouvelle clé [UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31) qui peut être ajoutée au fichier de `Info.plist` l’application et contrôle la manière dont le ton vrai applique le décalage de couleur standard. 
 
-Les valeurs suivantes sont disponibles:
+Les valeurs suivantes sont disponibles :
 
 - `UIWhitePointAdaptivityStyleStandard`**Par défaut** : utilisez l’adaptabilité des points blancs standard.
 - `UIWhitePointAdaptivityStyleReading`-Utilisé pour les applications orientées lecture.
@@ -38,7 +38,7 @@ Les valeurs suivantes sont disponibles:
 
 ## <a name="app-extensions"></a>Extensions d’application
 
-Apple a fourni plusieurs nouveaux points d’extension d’application dans iOS 10:
+Apple a fourni plusieurs nouveaux points d’extension d’application dans iOS 10 :
 
 - Répertoire des appels
 - Interface utilisateur d’intentions et d’intentions
@@ -47,20 +47,20 @@ Apple a fourni plusieurs nouveaux points d’extension d’application dans iOS 
 - Notification Services
 - Pack d’autocollants
 
-En outre, les extensions d’application de clavier tierces présentent les améliorations suivantes:
+En outre, les extensions d’application de clavier tierces présentent les améliorations suivantes :
 
 - La nouvelle `DocumentInputMode` propriété de la `UITextDocumentProxy` classe peut déterminer la langue d’entrée d’un document et permettre à l’extension de clavier de s’aligner avec cette langue.
 - La nouvelle `HandleInputModeList` méthode permet à l’extension de clavier d’afficher le menu de sélection de clavier du système en réponse à la touche de la planète qui est exploitée.
 
-Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md), [intégration d’applications de message](~/ios/platform/message-app-integration/index.md), [Présentation des suggestions](~/ios/platform/search/proactive-suggestions.md)proactives, [Présentation de SiriKit](~/ios/platform/sirikit/index.md), [Présentation des notifications utilisateur](~/ios/platform/user-notifications/index.md) et d' [Apple Guide de programmation](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)de l’extension d’application.
+Pour plus d’informations, consultez notre [Introduction aux extensions](~/ios/platform/extensions.md), [intégration d’applications de message](~/ios/platform/message-app-integration/index.md), [Présentation des suggestions proactives](~/ios/platform/search/proactive-suggestions.md), [Présentation de SiriKit](~/ios/platform/sirikit/index.md), [Présentation des notifications utilisateur](~/ios/platform/user-notifications/index.md) et d' [Apple Guide de programmation](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)de l’extension d’application.
 
 ## <a name="app-search-enhancements"></a>Améliorations de la recherche d’applications
 
-Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que:
+Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que :
 
 - **Participatives popularité des liens approfondis (avec confidentialité différentielle)** : permet de promouvoir le contenu d’application lié de manière détaillée dans les résultats de recherche.
 - **Recherche dans l’application** : utilisez la nouvelle `CSSearchQuery` classe pour fournir une fonctionnalité de recherche en vedette dans l’application similaire à la façon dont les applications de messagerie, de messages et notes fonctionnent.
-- Continuation de la **recherche** : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
+- **Continuation** de la recherche : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
 - **Visualisation des résultats de la validation** : l’outil de validation de l' [API de recherche d’applications](https://search.developer.apple.com/appsearch-validation-tool) d’Apple affiche désormais une représentation visuelle du balisage d’un site Web et des liens détaillés lors de la préformation des tests.
 - **Partage d’images d’application de message** : permet d’afficher les images courantes dans l’application fournies pour le partage des messages (via une extension de l’application de message) dans les recherches Spotlight.
 
@@ -78,7 +78,7 @@ Pour en savoir plus, consultez notre guide d’amélioration de l' [Apple Pay](~
 
 ## <a name="alternate-app-icons"></a>Autres icônes d’applications
 
-Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une application de gérer son icône:
+Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une application de gérer son icône :
 
 - `ApplicationIconBadgeNumber`-Obtient ou définit le badge de l’icône d’application dans le Springboard.
 - `SupportsAlternateIcons`-Si `true` l’application possède un autre ensemble d’icônes.
@@ -97,9 +97,9 @@ Pour en savoir plus, consultez notre guide [de présentation du Callkit](~/ios/p
 
 ## <a name="message-app-integration"></a>Intégration de l’application Messages
 
-iOS 10 permet l’inclusion d’une extension d’application de message dans la solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs. Deux types d’extension d’application de message sont disponibles:
+iOS 10 permet l’inclusion d’une extension d’application de message dans la solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs. Deux types d’extension d’application de message sont disponibles :
 
-- **Vignettes** -packs: contient une collection d’autocollants que l’utilisateur peut ajouter à un message. Les packs d’autocollants peuvent être créés sans écrire de code.
+- **Vignettes-packs** : contient une collection d’autocollants que l’utilisateur peut ajouter à un message. Les packs d’autocollants peuvent être créés sans écrire de code.
 - **application IMessage** : peut présenter une interface utilisateur personnalisée dans l’application messages pour sélectionner des autocollants, entrer du texte, y compris des fichiers multimédias (avec conversions de type facultatives) et créer, modifier et envoyer des messages d’interaction.
 
 Pour en savoir plus, consultez notre guide d' [intégration des applications de message](~/ios/platform/message-app-integration/index.md) .
@@ -118,7 +118,7 @@ Pour en savoir plus, consultez notre guide de [Commentaires haptique](~/ios/user
 
 ## <a name="proactive-suggestions"></a>Suggestions proactives
 
-iOS 10 présente de nouvelles façons de conduire des engagements à une application en permettant au système de présenter de manière proactive des informations utiles à l’utilisateur à des moments opportuns. Tout comme iOS 9 offrait la possibilité d’ajouter une recherche poussée à l’application à l’aide de suggestions Spotlight, de remise et de Siri, avec iOS 10, une application peut exposer des fonctionnalités qui peuvent être présentées à l’utilisateur par le système depuis les emplacements suivants:
+iOS 10 présente de nouvelles façons de conduire des engagements à une application en permettant au système de présenter de manière proactive des informations utiles à l’utilisateur à des moments opportuns. Tout comme iOS 9 offrait la possibilité d’ajouter une recherche poussée à l’application à l’aide de suggestions Spotlight, de remise et de Siri, avec iOS 10, une application peut exposer des fonctionnalités qui peuvent être présentées à l’utilisateur par le système depuis les emplacements suivants :
 
 - Le sélecteur d’application
 - L’écran de verrouillage
@@ -129,7 +129,7 @@ iOS 10 présente de nouvelles façons de conduire des engagements à une applica
 
 Une application expose cette fonctionnalité au système à l’aide d’une collection de technologies telles que [NSUserActivity](xref:Foundation.NSUserActivity), Web Markup, Core Spotlight, MapKit, Media Player et uikit.
 
-Pour en savoir plus, consultez notre guide [de présentation des suggestions](~/ios/platform/search/proactive-suggestions.md) proactives.
+Pour en savoir plus, consultez notre guide [de présentation des suggestions proactives](~/ios/platform/search/proactive-suggestions.md) .
 
 ## <a name="request-app-review"></a>Demander une révision d’application
 
@@ -149,7 +149,7 @@ Pour en savoir plus, consultez notre guide d’amélioration de la [sécurité e
 
 Nouveauté d’iOS 10, SiriKit permet à une application Xamarin. iOS de fournir des services qui sont accessibles à l’utilisateur à l’aide de Siri sur un appareil iOS. Cette fonctionnalité est fournie dans une ou plusieurs extensions d’application à l’aide des nouvelles infrastructures d' **interface utilisateur** **intentions** et intentions.
 
-SiriKit prend en charge les domaines de service suivants:
+SiriKit prend en charge les domaines de service suivants :
 
 - Appel audio ou vidéo.
 - Réservation d’une définition.
@@ -192,7 +192,7 @@ iOS 10 étend la prise en charge des formats de pixel étendus et des espaces de
 
 En outre, [UIKit](xref:UIKit) a été modifié pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
 
-Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges:
+Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
 - [UIColor](xref:UIKit.UIColor) utilise désormais l’espace de couleurs sRVB et ne bride plus les valeurs de `0.0` la `1.0` plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour iOS 10.
 - L’environnement de dessin sera configuré pour l’espace de couleurs sRVB lors de `UIView` l’exécution d’un dessin personnalisé sur un iPad Pro.
@@ -216,7 +216,7 @@ Pour en savoir plus, consultez notre guide [supplémentaire sur les modification
 
 ## <a name="deprecated-apis"></a>API déconseillées
 
-Les API suivantes ont été dépréciées dans iOS 10:
+Les API suivantes ont été dépréciées dans iOS 10 :
 
 - Les `CKDiscoverAllContactsOperation`classes `CKDiscoveredUserInfo` ,et`CKFetchRecordChangesOperation`ont été dépréciées dans CloudKit pour iOS 10. `CKDiscoverUserInfosOperation` Utilisez les classes [CKDiscoverAllUserIdentitiesOperation](xref:CloudKit.CKDiscoverUserIdentitiesOperation), [CKUserIdentity](xref:CloudKit.CKUserIdentity) et [CKFetchRecordZoneChangesOperation](xref:CloudKit.CKFetchRecordZoneChangesOperation) (qui prennent en charge le partage d’enregistrements) à la place.
 - Plusieurs API [CKSubscription](https://developer.apple.com/reference/cloudkit/cksubscription) , telles que les abonnements basés sur une zone et les abonnements basés sur des requêtes, ont été dépréciées. Utilisez plutôt les API [CKRecordZoneSubscription](xref:CloudKit.CKRecordZoneSubscription) et [CKQuerySubscription](xref:CloudKit.CKQuerySubscription) .

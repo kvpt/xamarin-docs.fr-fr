@@ -4,15 +4,15 @@ description: Ce document explique comment personnaliser l’apparence d’un tab
 ms.prod: xamarin
 ms.assetid: 8A83DE38-0028-CB61-66F9-0FB9DE552286
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 24f5ce0daddab090b5486af99eebc0d6e7a2b1dd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6eb942c0276bda28cb4be14fb31cdf820b9ccd5e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528671"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291356"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Personnalisation de l’apparence d’un tableau dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ Le moyen le plus simple de modifier l’apparence d’un tableau consiste à uti
 
 ## <a name="cell-styles"></a>Styles de cellules
 
-Il existe quatre styles intégrés:
+Il existe quatre styles intégrés :
 
 - **Default** : prend en `UIImageView`charge.
 - **Sous-titre** : `UIImageView` prend en charge un et un sous-titre.
@@ -28,11 +28,11 @@ Il existe quatre styles intégrés:
 - **Value2** : le titre est aligné à droite et le sous-titre est aligné à gauche (mais aucune image).
 
 
-Ces captures d’écran montrent comment chaque style s’affiche:
+Ces captures d’écran montrent comment chaque style s’affiche :
 
  [![](customizing-table-appearance-images/image7.png "Ces captures d’écran montrent comment chaque style apparaît")](customizing-table-appearance-images/image7.png#lightbox)
 
-L’exemple de **CellDefaultTable** contient le code permettant de créer ces écrans. Le style de cellule est défini dans `UITableViewCell` le constructeur, comme suit:
+L’exemple de **CellDefaultTable** contient le code permettant de créer ces écrans. Le style de cellule est défini dans `UITableViewCell` le constructeur, comme suit :
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -41,7 +41,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-Les [Propriétés prises en charge](xref:UIKit.UITableViewCell) du style de cellule peuvent ensuite être définies:
+Les [Propriétés prises en charge](xref:UIKit.UITableViewCell) du style de cellule peuvent ensuite être définies :
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;
@@ -51,7 +51,7 @@ cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].Im
 
 ## <a name="accessories"></a>Automobiles
 
-Les accessoires peuvent être ajoutés à droite de l’affichage des cellules:
+Les accessoires peuvent être ajoutés à droite de l’affichage des cellules :
 
 - **Checkmark** : peut être utilisé pour indiquer la sélection multiple dans une table.
 - **DetailButton** : répond à Touch indépendamment du reste de la cellule, ce qui lui permet d’effectuer une fonction différente pour toucher la cellule elle-même (par exemple, ouvrir une fenêtre contextuelle ou une nouvelle fenêtre `UINavigationController` qui ne fait pas partie d’une pile).
@@ -59,11 +59,11 @@ Les accessoires peuvent être ajoutés à droite de l’affichage des cellules:
 - **DetailDisclosureButton** : combinaison de `DetailButton` et `DisclosureIndicator`.
 
 
-Voici à quoi elles ressemblent:
+Voici à quoi elles ressemblent :
 
  [![](customizing-table-appearance-images/image8.png "Exemples d’accessoires")](customizing-table-appearance-images/image8.png#lightbox)
 
-Pour afficher l’un de ces accessoires, vous pouvez `Accessory` définir la propriété `GetCell` dans la méthode:
+Pour afficher l’un de ces accessoires, vous pouvez `Accessory` définir la propriété `GetCell` dans la méthode :
 
 ```csharp
 cell.Accessory = UITableViewCellAccessory.Checkmark;
@@ -96,7 +96,7 @@ TableView.SeparatorColor = UIColor.Blue;
 TableView.SeparatorStyle = UITableViewCellSeparatorStyle.DoubleLineEtched;
 ```
 
-Il est également possible d’ajouter un effet de flou ou de Vibrance au séparateur:
+Il est également possible d’ajouter un effet de flou ou de Vibrance au séparateur :
 
 ```csharp
 // blur effect
@@ -108,7 +108,7 @@ var effect = UIBlurEffect.FromStyle(UIBlurEffectStyle.Light);
 TableView.SeparatorEffect = UIVibrancyEffect.FromBlurEffect(effect);
 ```
 
-Le séparateur peut également avoir une incrustation:
+Le séparateur peut également avoir une incrustation :
 
 ```csharp
 TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
@@ -118,18 +118,18 @@ TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 
 Pour modifier le style visuel d’une table, vous devez fournir des cellules personnalisées pour qu’elle s’affiche. La cellule personnalisée peut avoir des couleurs et des dispositions de contrôle différentes.
 
-L’exemple CellCustomTable implémente une `UITableViewCell` sous-classe qui définit une disposition personnalisée `UILabel`de s et `UIImage` un avec différentes polices et couleurs. Les cellules résultantes se présentent comme suit:
+L’exemple CellCustomTable implémente une `UITableViewCell` sous-classe qui définit une disposition personnalisée `UILabel`de s et `UIImage` un avec différentes polices et couleurs. Les cellules résultantes se présentent comme suit :
 
  [![](customizing-table-appearance-images/image9.png "Dispositions de cellules personnalisées")](customizing-table-appearance-images/image9.png#lightbox)
 
-La classe de cellule personnalisée se compose uniquement de trois méthodes:
+La classe de cellule personnalisée se compose uniquement de trois méthodes :
 
 - **Constructor** : crée les contrôles d’interface utilisateur et définit les propriétés de style personnalisées (par exemple, type de police, taille et couleurs).
 - **UpdateCell** : méthode `UITableView.GetCell` à utiliser pour définir les propriétés de la cellule.
 - **LayoutSubviews** : définissez l’emplacement des contrôles de l’interface utilisateur. Dans l’exemple, chaque cellule a la même disposition, mais une cellule plus complexe (en particulier celles qui ont des tailles différentes) peut nécessiter des positions de disposition différentes selon le contenu affiché.
 
 
-L’exemple de code complet dans **CellCustomTable > CustomVegeCell.cs** est le suivant:
+L’exemple de code complet dans **CellCustomTable > CustomVegeCell.cs** est le suivant :
 
 ```csharp
 public class CustomVegeCell : UITableViewCell  {
@@ -170,7 +170,7 @@ public class CustomVegeCell : UITableViewCell  {
 }
 ```
 
-La `GetCell` méthode`UITableViewSource` de doit être modifiée pour créer la cellule personnalisée:
+La `GetCell` méthode`UITableViewSource` de doit être modifiée pour créer la cellule personnalisée :
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)

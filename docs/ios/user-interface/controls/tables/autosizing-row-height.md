@@ -4,15 +4,15 @@ description: Ce document décrit comment ajouter à la vue table des application
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 4b00efe1132f5588ee896fc2044c247acfe0723a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 00c2284a12d17e0dcd5a89cb0c39c1064665c6d7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198466"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288445"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Dimensionnement automatique de la hauteur de ligne dans Xamarin. iOS
 
@@ -26,21 +26,21 @@ Ouvrez le Storyboard de la vue de table pour laquelle vous souhaitez redimension
 
 [![](autosizing-row-height-images/table01.png "Conception du prototype de la cellule")](autosizing-row-height-images/table01.png#lightbox)
 
-Pour chaque élément du prototype, ajoutez des contraintes pour conserver les éléments à la position correcte, car la vue de table est redimensionnée pour la rotation ou des tailles d’écran d’appareil iOS différentes. Par exemple, épinglez `Title` le en haut, à gauche et à droite de l' *affichage de contenu*de la cellule:
+Pour chaque élément du prototype, ajoutez des contraintes pour conserver les éléments à la position correcte, car la vue de table est redimensionnée pour la rotation ou des tailles d’écran d’appareil iOS différentes. Par exemple, épinglez `Title` le en haut, à gauche et à droite de l' *affichage de contenu*de la cellule :
 
 [![](autosizing-row-height-images/table02.png "Épingler le titre en haut, à gauche et à droite de l’affichage de contenu des cellules")](autosizing-row-height-images/table02.png#lightbox)
 
-Dans le cas de notre exemple de tableau, la `Label` petite taille ( `Title`sous) est le champ qui peut être réduit et agrandi pour augmenter ou diminuer la hauteur de ligne. Pour obtenir cet effet, ajoutez les contraintes suivantes pour épingler les valeurs gauche, droite, haut et bas de l’étiquette:
+Dans le cas de notre exemple de tableau, la `Label` petite taille ( `Title`sous) est le champ qui peut être réduit et agrandi pour augmenter ou diminuer la hauteur de ligne. Pour obtenir cet effet, ajoutez les contraintes suivantes pour épingler les valeurs gauche, droite, haut et bas de l’étiquette :
 
 [![](autosizing-row-height-images/table03.png "Ces contraintes pour épingler la gauche, la droite, le haut et le bas de l’étiquette")](autosizing-row-height-images/table03.png#lightbox)
 
-Maintenant que nous avons entièrement restreint les éléments de la cellule, nous devons clarifier l’élément qui doit être étiré. Pour ce faire, définissez la priorité **content hugging Priority** et **content compression Priority** en fonction des besoins dans la section **disposition** de la panneau Propriétés:
+Maintenant que nous avons entièrement restreint les éléments de la cellule, nous devons clarifier l’élément qui doit être étiré. Pour ce faire, définissez la priorité **content hugging Priority** et **content compression Priority** en fonction des besoins dans la section **disposition** de la panneau Propriétés :
 
 [![](autosizing-row-height-images/table03a.png "La section disposition du Panneau Propriétés")](autosizing-row-height-images/table03a.png#lightbox)
 
 Définissez l’élément que vous souhaitez développer pour avoir une valeur de priorité de hugging **inférieure** et une valeur de priorité de compression **inférieure** .
 
-Ensuite, nous devons sélectionner le prototype de cellule et lui attribuer un **identificateur**unique:
+Ensuite, nous devons sélectionner le prototype de cellule et lui attribuer un **identificateur**unique :
 
 [![](autosizing-row-height-images/table04.png "Attribution d’un identificateur unique au prototype de cellule")](autosizing-row-height-images/table04.png#lightbox)
 
@@ -57,7 +57,7 @@ Ensuite, ajoutez une classe personnalisée pour `UITableViewController` `UITable
 
 [![](autosizing-row-height-images/table06.png "Ajout d’une classe personnalisée pour UITableViewController, UITableView et UITableCell")](autosizing-row-height-images/table06.png#lightbox)
 
-Enfin, pour vous assurer que tout le contenu attendu s’affiche dans notre étiquette, définissez la propriété Lines sur `0`:
+Enfin, pour vous assurer que tout le contenu attendu s’affiche dans notre étiquette, définissez la propriété **Lines** sur `0`:
 
 [![](autosizing-row-height-images/table06.png "La propriété Lines a la valeur 0")](autosizing-row-height-images/table06a.png#lightbox)
 

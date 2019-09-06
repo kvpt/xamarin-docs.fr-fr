@@ -4,25 +4,25 @@ description: Avec iOS 12, une extension de contenu de notification peut ajouter,
 ms.prod: xamarin
 ms.assetid: 6B34AD78-5117-42D0-B6E7-C8B4B453EAFF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 1a4380e321035b8948f9b40bdce052161025d5f3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5be233e9b07069dc7c9842a3ddd00e7d46d9c22f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652587"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291272"
 ---
 # <a name="dynamic-notification-action-buttons-in-xamarinios"></a>Boutons d’action de notification dynamiques dans Xamarin. iOS
 
 Dans iOS 12, les notifications peuvent ajouter, supprimer et mettre à jour dynamiquement leurs boutons d’action associés. Une telle personnalisation permet de fournir aux utilisateurs des actions qui sont directement pertinentes pour le contenu de la notification et l’interaction de l’utilisateur avec lui.
 
-## <a name="sample-app-redgreennotifications"></a>Exemple d’application: RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>Exemple d’application : RedGreenNotifications
 
 Les extraits de code de ce guide proviennent de l’exemple d’application [RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications) , qui montre comment utiliser Xamarin. IOS pour travailler avec des boutons d’action de notification dans IOS 12.
 
-Cet exemple d’application envoie deux types de notifications locales: rouge et vert.
+Cet exemple d’application envoie deux types de notifications locales : rouge et vert.
 Une fois que l’application a envoyé une notification, utilisez l’interface tactile en 3D pour afficher son interface utilisateur personnalisée. Ensuite, utilisez les boutons d’action de notification pour faire pivoter l’image affichée. Lorsque l’image pivote, un bouton **Réinitialiser la rotation** apparaît et disparaît si nécessaire.
 
 Les extraits de code de ce guide proviennent de cet exemple d’application.
@@ -32,7 +32,7 @@ Les extraits de code de ce guide proviennent de cet exemple d’application.
 La catégorie d’une notification détermine ses boutons d’action par défaut.
 
 Créez et enregistrez des catégories de notification lors du lancement d’une application.
-Par exemple, dans l' [exemple d’application](#sample-app-redgreennotifications), `FinishedLaunching` la méthode `AppDelegate` de effectue les opérations suivantes:
+Par exemple, dans l' [exemple d’application](#sample-app-redgreennotifications), `FinishedLaunching` la méthode `AppDelegate` de effectue les opérations suivantes :
 
 - Définit une catégorie pour les notifications rouges et une autre pour les notifications vertes
 - Inscrit ces catégories en appelant la[`SetNotificationCategories`](xref:UserNotifications.UNUserNotificationCenter.SetNotificationCategories*)
@@ -40,7 +40,7 @@ méthode de`UNUserNotificationCenter`
 - Attache une seule[`UNNotificationAction`](xref:UserNotifications.UNNotificationAction)
 à chaque catégorie
 
-L’exemple de code suivant montre comment cela fonctionne:
+L’exemple de code suivant montre comment cela fonctionne :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -75,13 +75,13 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 ```
 
 Sur la base de ce code, toute notification dont[`Content.CategoryIdentifier`](xref:UserNotifications.UNNotificationContent.CategoryIdentifier)
-est «rouge-catégorie» ou «vert-catégorie», par défaut, affiche un bouton d’action **rotation 20 °** .
+est « rouge-catégorie » ou « vert-catégorie », par défaut, affiche un bouton d’action **rotation 20 °** .
 
 ## <a name="in-app-handling-of-notification-action-buttons"></a>Gestion dans l’application des boutons d’action de notification
 
 `UNUserNotificationCenter`a une `Delegate` propriété de type [`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate).
 
-Dans l’exemple d’application `AppDelegate` , se définit lui-même en tant que délégué `FinishedLaunching`du centre de notification de l’utilisateur dans:
+Dans l’exemple d’application `AppDelegate` , se définit lui-même en tant que délégué `FinishedLaunching`du centre de notification de l’utilisateur dans :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -96,7 +96,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 ```
 
 `AppDelegate` Implémente ensuite[`DidReceiveNotificationResponse`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.DidReceiveNotificationResponse*)
-pour gérer les clics de bouton d’action:
+pour gérer les clics de bouton d’action :
 
 ```csharp
 [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -135,13 +135,13 @@ Dans l’exemple d’application, le contrôleur d’affichage de l’extension 
 >
 > Bien qu’il partage un nom avec `DidReceiveNotificationResponse` la méthode [décrite ci-dessus](#in-app-handling-of-notification-action-buttons), il s’agit d’une méthode différente.
 >
-> Lorsqu’une extension de contenu de notification termine le traitement d’un appui sur un bouton, elle peut choisir d’indiquer ou non à l’application principale de gérer le même TAP-Button. Pour ce faire, il doit passer une valeur appropriée de [UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption) à son gestionnaire d’achèvement:
+> Lorsqu’une extension de contenu de notification termine le traitement d’un appui sur un bouton, elle peut choisir d’indiquer ou non à l’application principale de gérer le même TAP-Button. Pour ce faire, il doit passer une valeur appropriée de [UNNotificationContentExtensionResponseOption](xref:UserNotificationsUI.UNNotificationContentExtensionResponseOption) à son gestionnaire d’achèvement :
 >
 > - `Dismiss`indique que l’interface de notification doit être fermée et que l’application principale n’a pas besoin de gérer le robinet de bouton.
 > - `DismissAndForwardAction`indique que l’interface de notification doit être fermée et que l’application principale doit également gérer le robinet de bouton.
 > - `DoNotDismiss`indique que l’interface de notification ne doit pas être fermée et que l’application principale n’a pas besoin de gérer le robinet de bouton.
 
-La méthode de l' `DidReceiveNotificationResponse` extension de contenu détermine le bouton d’action qui a été taraudé, fait pivoter l’image dans l’interface de la notification, puis affiche ou masque un bouton d’action de réinitialisation:
+La méthode de l' `DidReceiveNotificationResponse` extension de contenu détermine le bouton d’action qui a été taraudé, fait pivoter l’image dans l’interface de la notification, puis affiche ou masque un bouton d’action de **réinitialisation** :
 
 ```csharp
 [Export("didReceiveNotificationResponse:completionHandler:")]

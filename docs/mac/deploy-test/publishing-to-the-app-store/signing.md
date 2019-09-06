@@ -4,15 +4,15 @@ description: Ce document décrit comment signer une application Xamarin.Mac avec
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9294080f361d280bcb61ea162320da57f44a2a95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117666"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293043"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Signature d’applications Xamarin.Mac avec un ID de développeur
 
@@ -27,7 +27,7 @@ Pour générer une application en vue de la déployer directement pour les utili
  [![](signing-images/config02.png "Options de signature Mac")](signing-images/config02.png#lightbox)
 
 
-## <a name="build"></a>Générer
+## <a name="build"></a>Build
 
 Avant d’effectuer la génération, veillez à sélectionner la configuration appropriée et à sélectionner l’option permettant de créer un paquet d’installation dans les paramètres **Build Mac** :
 
@@ -48,5 +48,5 @@ Une fois l’application générée, le développeur peut cliquer avec le bouton
 - [Installation](~//mac/get-started/installation.md)
 - [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
-- [Guide sur les outils : Signature du code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
+- [Guide des outils : Signature de code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

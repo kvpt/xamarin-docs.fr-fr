@@ -4,15 +4,15 @@ description: Ce document décrit les modifications mineures et les amélioration
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1de3a0a67fb6abbd4423435b38d7712f583ab74d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620906"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284436"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Autres modifications du framework macOS Sierra
 
@@ -20,7 +20,7 @@ ms.locfileid: "69620906"
 
 ## <a name="accelerate-framework-enhancements"></a>Améliorations de l’infrastructure accélérée
 
-Les améliorations suivantes ont été apportées à l’infrastructure Accelerate pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure Accelerate pour macOS Sierra :
 
 - Ajout de quadrature (calcul intégral).
 - Ajout de fonctions de base pour la construction de réseaux neuronaux.
@@ -30,15 +30,15 @@ Les améliorations suivantes ont été apportées à l’infrastructure Accelera
 
 ## <a name="appkit-framework-enhancements"></a>Améliorations apportées à AppKit Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure AppKit pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure AppKit pour macOS Sierra :
 
 - Plusieurs améliorations apportées à `NSCollectionView` :
-  - **Sections** réductibles: permet à l’utilisateur de réduire une section de vue de collection en une seule ligne horizontale.
+  - **Sections réductibles** : permet à l’utilisateur de réduire une section de vue de collection en une seule ligne horizontale.
   - **En-têtes flottants** -les en-têtes et les pieds de page peuvent désormais être flottants (dans une mise en page fluide) à l’aide de la même API que [UICollectionView](https://developer.apple.com/reference/uikit/uicollectionview) dans iOS.
   - **Vues d’arrière-plan avec défilement** : un arrière-plan de vues de collection peut désormais être défini pour faire défiler le contenu.
 - La passe de disposition de la vue différée a été optimisée et étendue.
 - L’API glisser-déplacer comprend désormais les nouvelles `NSFilePromiseProvider` classes et `NSFilePromiseReceiver` pour prendre en charge le troupeau de glissement.
-- Plusieurs constructeurs pratiques ont été ajoutés aux contrôles existants:
+- Plusieurs constructeurs pratiques ont été ajoutés aux contrôles existants :
   - `NSButton`comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
   - `NSTextField`comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
   - `NSSegmentedControl`comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
@@ -50,7 +50,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure AppKit p
 
 ## <a name="avfoundation-framework-enhancements"></a>Améliorations apportées à AVFoundation Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure AVFoundation pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure AVFoundation pour macOS Sierra :
 
 - Dans macOS, l’application n’a plus à implémenter des comportements [AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem) différents en fonction du type de contenu. Il vous suffit `Rate` de définir la propriété et AVFoundation déterminera quand un contenu suffisant sera disponible pour la lecture sans blocage.
 - La nouvelle `AVPlayerLooper` classe facilite la boucle d’un élément multimédia donné pendant la lecture.
@@ -60,7 +60,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure AVFounda
 
 ## <a name="core-data-framework-enhancements"></a>Améliorations de l’infrastructure de données principale
 
-Les améliorations suivantes ont été apportées à l’infrastructure de données de base pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure de données de base pour macOS Sierra :
 
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
 - La classe [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) gère un pool de banques de données SQLite.
@@ -74,7 +74,7 @@ Pour plus d’informations, consultez Référence de l' [infrastructure de donn�
 
 ## <a name="core-image-framework-enhancements"></a>Améliorations de l’infrastructure d’images principales
 
-Les améliorations suivantes ont été apportées à l’infrastructure d’images principales pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure d’images principales pour macOS Sierra :
 
 - La `ImageWithExtent` méthode de la classe [CIFilter](https://developer.apple.com/reference/coreimage/cifilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
 - L’application peut maintenant traiter les images dans un espace de couleurs en dehors de l’espace de couleurs de travail du contexte d’image principal en convertissant dans et en dehors de l’espace de couleurs avant et après le traitement.
@@ -85,7 +85,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure d’imag
 
 ## <a name="foundation-framework-enhancements"></a>Améliorations de Foundation Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure de base pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure de base pour macOS Sierra :
 
 - Utilisez l’API [NSDimentions](https://developer.apple.com/reference/foundation/nsdimension) pour représenter, convertir et afficher la plupart des unités physiques les plus courantes, telles que la masse, la longueur, la vitesse, la durée et la température.
 - Utilisez la classe [NSISO8601DateFormatter](https://developer.apple.com/reference/foundation/nsiso8601dateformatter) pour l’analyse et la génération de dates au format ISO 8601.
@@ -99,7 +99,7 @@ Pour plus d’informations, consultez les notes de publication d’Apple [pour O
 
 ## <a name="gamekit-framework-enhancements"></a>Améliorations apportées à GameKit Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure GameKit pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure GameKit pour macOS Sierra :
 
 - L' **application Game Center** a été dépréciée et supprimée de MacOS. Si l’application utilise GameKit, elle _doit_ présenter sa propre interface pour afficher les fonctionnalités GameKit telles que Leaderboards, etc. 
 - Un nouveau type de compte iCloud est implémenté par la classe [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) .
@@ -109,7 +109,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure GameKit 
 
 ## <a name="gameplaykit-framework-enhancements"></a>Améliorations apportées à GamePlayKit Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure GamePlayKit pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure GamePlayKit pour macOS Sierra :
 
 - La génération de bruit procédurale a été ajoutée et peut être utilisée pour améliorer le réalisme des textures à l’aspect naturel, ajouter un réalisme aux mouvements de l’appareil photo et aider à générer des mondes riches en jeux.
 - Utilisez le partitionnement spatial pour partitionner les données du monde du jeu pour une recherche efficace.
@@ -123,9 +123,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure GamePlay
 
 ## <a name="metal-framework-enhancements"></a>Améliorations apportées à Framework métallique
 
-Les améliorations suivantes ont été apportées à l’infrastructure métallique pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure métallique pour macOS Sierra :
 
-- les applications et les jeux 3D peuvent désormais utiliser la facettisation pour restituer efficacement des scènes et une géométrie complexes via le GPU.
+- les applications et les jeux 3D peuvent désormais utiliser la _facettisation_ pour restituer efficacement des scènes et une géométrie complexes via le GPU.
 - Utilisez la spécialisation de fonction pour créer une collection hautement optimisée de fonctions de combinaison de matériau et de lumière pour une scène.
 - Fournir un contrôle affiné de l’allocation des ressources pour optimiser les performances des applications basées sur le métal à l’aide de segments de ressources et de cibles de rendu sans mémoire.
 
@@ -135,7 +135,7 @@ Pour plus d’informations, consultez le [Guide de programmation métallique](ht
 
 ## <a name="model-io-framework-enhancements"></a>Améliorations de l’infrastructure d’e/s de modèle
 
-Les améliorations suivantes ont été apportées à l’infrastructure d’e/s de modèle pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure d’e/s de modèle pour macOS Sierra :
 
 - Le format de fichier USD est désormais pris en charge.
 - Utilisez la nouvelle `MDLMaterialPropertyGraph` classe pour prendre en charge facilement les modifications du runtime pour les modèles.
@@ -146,7 +146,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure d’e/s 
 
 ## <a name="photos-framework-enhancements"></a>Améliorations de l’infrastructure des photos
 
-Les améliorations suivantes ont été apportées à l’infrastructure des photos pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure des photos pour macOS Sierra :
 
 - L’édition de photos en direct est désormais disponible pour les applications qui prennent en charge l’infrastructure de photos et les extensions de modification de photos (pour une utilisation dans les photos et les applications d’appareil photo).
 - Utilisez la nouvelle classe [PHLivePhotoEditingContext](https://developer.apple.com/reference/photos/phlivephotoeditingcontext) pour appliquer les modifications à la vidéo et au contenu toujours des photos en direct.
@@ -157,7 +157,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure des phot
 
 ## <a name="scenekit-framework-enhancements"></a>Améliorations apportées à SceneKit Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure SceneKit pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure SceneKit pour macOS Sierra :
 
 - Comprend maintenant un nouveau système de rendu physique (PBR) pour des résultats plus réalistes grâce à la création de ressources plus simples.
 - Utilisez le nouveau modèle [SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) Shading pour produit un large éventail d’effets d’ombrage réalistes tout en exigeant uniquement trois propriétés fondamentales`Diffuse`( `Metalness` , `Roughness`et).
@@ -175,7 +175,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SceneKit
 
 ## <a name="security-framework-enhancements"></a>Améliorations de l’infrastructure de sécurité
 
-Les améliorations suivantes ont été apportées à l’infrastructure de sécurité pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure de sécurité pour macOS Sierra :
 
 - L' `SecKey` interface a été moderne et unifiée sur toutes les plateformes (iOS, tvOS, Watchos et MacOS).
 
@@ -183,7 +183,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure de sécu
 
 ## <a name="spritekit-framework-enhancements"></a>Améliorations apportées à SpriteKit Framework
 
-Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit pour macOS Sierra:
+Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit pour macOS Sierra :
 
 - Tilemaps prennent désormais `SKTileMapMode`en charge les formes de mosaïque carrée, hexagonale et isométrique pour les jeux 2D, 2.5 d et de défilement latéral à l’aide des classes `SKTileGroupRule` , `SKTileGroup`et `SKTileSet` .
 - Utilisez la nouvelle `SKWarpGeometry` classe pour étirer ou déformer le rendu [SKSpriteNode](https://developer.apple.com/reference/spritekit/skspritenode) ou [SKEffectNode](https://developer.apple.com/reference/spritekit/skeffectnode) . La nouvelle classe [SKAction](https://developer.apple.com/reference/spritekit/skaction) peut être utilisée pour animer des transitions entre des effets de déformation.
@@ -194,7 +194,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SpriteKi
 
 ## <a name="new-frameworks"></a>Nouvelles infrastructures
 
-Les infrastructures suivantes ont été ajoutées à macOS Sierra:
+Les infrastructures suivantes ont été ajoutées à macOS Sierra :
 
 - **Framework intentions** : ce Framework permet à l’application d’examiner les interactions (telles que l’emplacement ou les actions de l’utilisateur) et de prendre des mesures en fonction de ces informations.
 - **Framework SafariServices** : ce Framework permet à l’application de développer des extensions d’application pour Safari (comme les bloqueurs de contenu) pour MacOS et iOS.
