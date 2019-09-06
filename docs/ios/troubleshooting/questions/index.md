@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 65E04188-185D-493D-BA3C-A89711CB6CAF
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 101e27d3ebb26295418c63c1be703976091e50d6
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 57908027c6e9215504f410c0f9c989d6fbe3adad
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869343"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290508"
 ---
 # <a name="ios-frequently-asked-questions"></a>Forum aux questions sur iOS
 
@@ -27,7 +27,7 @@ Ce guide fournit des liens pour accéder aux versions précédentes de Xcode, ai
 ### <a name="where-can-i-set-my-ios-sdk-locationsios-sdkmd"></a>[Où puis-je définir l’emplacement de mon Kit SDK iOS ?](ios-sdk.md)
 Pour la plupart des utilisateurs, ceux-ci sont automatiquement définis sur les emplacements appropriés. Ce guide répertorie les emplacements du kit de développement logiciel (SDK) par défaut et comment les modifier si nécessaire.
 
-### <a name="how-can-i-reenable-developer-options-after-updating-iosupdate-developer-optionsmd"></a>[Comment puis-je réactiver les options de développement après la mise à jour d’iOS?](update-developer-options.md)
+### <a name="how-can-i-reenable-developer-options-after-updating-iosupdate-developer-optionsmd"></a>[Comment puis-je réactiver les options de développement après la mise à jour d’iOS ?](update-developer-options.md)
 Un bogue iOS peut entraîner la disparition des options de développement après la mise à jour des versions d’iOS, ce qui a été observé lors du passage à iOS 8. x. Ce guide décrit comment les options peuvent être réactivées.
 
 ### <a name="user-location-not-working-in-ios-8ios8-user-locationmd"></a>[L’emplacement de l’utilisateur ne fonctionne ne pas dans iOS 8](ios8-user-location.md)
@@ -42,20 +42,20 @@ Si vous devez définir des variables d’environnement d’exécution pour mono,
 
 ## <a name="publishing-questions"></a>Questions sur la publication
 
-### <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submissioninvalid-bundle-bitcodemd"></a>[Erreur lors de l’envoi à l’App Store: «Bundle non valide-options non autorisées à être incorporées dans bitcode sont détectées dans la soumission»](invalid-bundle-bitcode.md)
+### <a name="error-when-submitting-to-app-store-invalid-bundle---options-not-allowed-to-be-embedded-in-bitcode-are-detected-in-the-submissioninvalid-bundle-bitcodemd"></a>[Erreur lors de l’envoi à l’App Store : « Bundle non valide-options non autorisées à être incorporées dans bitcode sont détectées dans la soumission »](invalid-bundle-bitcode.md)
 
-L’envoi d' applications nécessitant bitcode, telles que Watchos et les applications tvOS, doit être effectué avec Xcode 9.
+L’envoi d’applications _nécessitant_ bitcode, telles que Watchos et les applications tvOS, doit être effectué avec Xcode 9.
 
-### <a name="can-i-change-the-output-path-of-the-ipa-fileipa-output-pathmd"></a>[Puis-je modifier le chemin de sortie du fichier de la Loi sur la Loi?](ipa-output-path.md)
+### <a name="can-i-change-the-output-path-of-the-ipa-fileipa-output-pathmd"></a>[Puis-je modifier le chemin de sortie du fichier de la Loi sur la Loi ?](ipa-output-path.md)
 À partir de Xamarin cycle 7, vous pouvez utiliser des cibles MSBuild personnalisées pour y parvenir.
 
-### <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folderipa-tfsmd"></a>[Comment puis-je copier les fichiers de sortie de la liste de réutilisation dans le dossier de dépôt TFS?](ipa-tfs.md)
+### <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folderipa-tfsmd"></a>[Comment puis-je copier les fichiers de sortie de la liste de réutilisation dans le dossier de dépôt TFS ?](ipa-tfs.md)
 Oui, ce guide explique comment procéder.
 
-### <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studiomodify-ipamd"></a>[Puis-je ajouter ou supprimer des fichiers dans un fichier de vue de la loi après l’avoir généré dans Visual Studio?](modify-ipa.md)
+### <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studiomodify-ipamd"></a>[Puis-je ajouter ou supprimer des fichiers dans un fichier de vue de la loi après l’avoir généré dans Visual Studio ?](modify-ipa.md)
 Oui, c’est possible, mais il est généralement nécessaire de signer à nouveau le `.app` Bundle après avoir apporté la modification. Notez que la modification du `.ipa` fichier n’est pas nécessaire dans le cas d’une utilisation normale. Cet article est fourni exclusivement à titre d’information.
 
-### <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studiocreate-xcarchivemd"></a>[Est-il possible de créer une archive. xcarchive à partir de Visual Studio?](create-xcarchive.md)
+### <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studiocreate-xcarchivemd"></a>[Est-il possible de créer une archive. xcarchive à partir de Visual Studio ?](create-xcarchive.md)
 À partir de Xamarin 4, il est désormais possible de créer `.xcarchive` un à partir de Windows `ArchiveOnBuild` en affectant à `true`la propriété la valeur.
 
 ### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[Pourquoi ma soumission d’application échoue avec : « Chemins non autorisés (« iTunesMetadata.plist ») trouvés sur... » ?](itunesmetadata-disallowed-paths.md)
@@ -68,15 +68,15 @@ Cette erreur est le résultat d’une modification dans le processus de vérific
 Les erreurs `RegisterServicePort` avec et les messages d’erreur similaires comme ci-dessus sont généralement un problème avec les logiciels espions et les logiciels malveillants sur l’ordinateur. Ce guide détaille la confirmation du diagnostic et des informations sur la suppression des logiciels espions/logiciels malveillants.
 
 ### <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychainno-codesigning-keysmd"></a>[Pourquoi ma build iOS échoue-t-elle avec le message : no valid iPhone code signing keys found in keychain ?](no-codesigning-keys.md)
-Ce message d’erreur se produit lorsque le projet en question recherche des informations d’identification de signature de code valides, mais ne parvient pas à les trouver. La signature de code est requise pour les tests et les déploiements sur des appareils iOS physiques; et les builds ad hoc & App Store.
+Ce message d’erreur se produit lorsque le projet en question recherche des informations d’identification de signature de code valides, mais ne parvient pas à les trouver. La signature de code est requise pour les tests et les déploiements sur des appareils iOS physiques ; et les builds ad hoc & App Store.
 
 ### <a name="why-does-my-ios-9-app-fail-with-systemexception-failed-to-marshal-the-objective-c-objectexception-marshal-obj-cmd"></a>[Pourquoi mon application iOS 9 échoue avec : System.Exception : Impossible de marshaler l’objet Objective-C ?](exception-marshal-obj-c.md)
 Dans iOS 9, les modifications d’API requièrent l’utilisation d’un constructeur de rappel lors de l’appel de code non managé, car l’API sous-jacente l’attend à présent.
 
 ### <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loadederror-mscorlib-not-foundmd"></a>[Erreur d’exécution : l’assembly mscorlib.dll est introuvable ou ne peut pas être chargé](error-mscorlib-not-found.md)
-Ce problème se produit lorsque `.monotouch-32` les dossiers `.monotouch-64` masqués et sont absents du pour la `.xcarchive` création de la signature/la disponibilité, déclenchant l’erreur d’exécution.
+Ce problème se produit lorsque les dossiers `.monotouch-64` *masqués* `.monotouch-32` et sont absents du pour la `.xcarchive` création de la signature/la disponibilité, déclenchant l’erreur d’exécution.
 
-### <a name="compile-error-can-not-encode-offset-x-in-resulting-scattered-relocationerror-encode-offset-scattered-relocationmd"></a>[Erreur de compilation: Impossible d’encoder l’offset X dans le réadressage éparpillé résultant](error-encode-offset-scattered-relocation.md)
+### <a name="compile-error-can-not-encode-offset-x-in-resulting-scattered-relocationerror-encode-offset-scattered-relocationmd"></a>[Erreur de compilation : Impossible d’encoder l’offset X dans le réadressage éparpillé résultant](error-encode-offset-scattered-relocation.md)
 Ce problème se produit lors de la génération d’architectures 32 bits, telles que ARMv7, lorsque le fichier binaire final est trop grand pour le chaîne d’outils natif.
 
 ## <a name="deprecated"></a>Déconseillé
