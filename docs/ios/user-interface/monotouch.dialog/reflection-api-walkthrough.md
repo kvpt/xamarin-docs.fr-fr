@@ -5,14 +5,14 @@ ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
-author: lobrien
-ms.author: laobri
-ms.openlocfilehash: 6482d0626874b3f2ca5e90efb0e376be60551fd7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+author: conceptdev
+ms.author: crdun
+ms.openlocfilehash: 27f025d80b3259da32581811ae6c900358a07e4e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528449"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278514"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
 
@@ -24,20 +24,20 @@ MT. D est distribué avec Xamarin. iOS. Pour l’utiliser, cliquez avec le bouto
 
 ## <a name="getting-started-with-the-reflection-api"></a>Prise en main de l’API de réflexion
 
-L’utilisation de l’API de réflexion est aussi simple que:
+L’utilisation de l’API de réflexion est aussi simple que :
 
 1. Création d’une classe décorée avec MT. Attributs D.
 1. Création d' `BindingContext` une instance, en lui passant une instance de la classe ci-dessus. 
 1. Création d' `DialogViewController` un, en lui `BindingContext’s` passant le `RootElement` . 
 
 
-Examinons un exemple pour illustrer l’utilisation de l’API de réflexion. Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ci-dessous:
+Examinons un exemple pour illustrer l’utilisation de l’API de réflexion. Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ci-dessous :
 
  [![](reflection-api-walkthrough-images/01-expense-entry.png "Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ici")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Création d’une classe avec MT. Attributs D
 
-La première chose dont nous avons besoin pour utiliser l’API de réflexion est une classe décorée avec des attributs. Ces attributs seront utilisés par MT. D en interne pour créer des objets à partir de l’API d’éléments. Par exemple, considérez la définition de classe suivante:
+La première chose dont nous avons besoin pour utiliser l’API de réflexion est une classe décorée avec des attributs. Ces attributs seront utilisés par MT. D en interne pour créer des objets à partir de l’API d’éléments. Par exemple, considérez la définition de classe suivante :
 
 ```csharp
 public class Expense
@@ -74,7 +74,7 @@ var expense = new Expense ();
 var bctx = new BindingContext (null, expense, "Create a task");
 ```
 
-Ensuite, tout ce que nous devons faire pour créer l’interface utilisateur `BindingContext` est d' `DialogViewController` ajouter le à `RootViewController` et de le définir en tant que de la fenêtre, comme indiqué ci-dessous:
+Ensuite, tout ce que nous devons faire pour créer l’interface utilisateur `BindingContext` est d' `DialogViewController` ajouter le à `RootViewController` et de le définir en tant que de la fenêtre, comme indiqué ci-dessous :
 
 ```csharp
 UIWindow window;
@@ -98,18 +98,18 @@ L’exécution de l’application entraîne désormais l’affichage de l’écr
 
 ### <a name="adding-a-uinavigationcontroller"></a>Ajout d’un UINavigationController
 
-Notez cependant que le titre «créer une tâche» que nous avons transmise `BindingContext` à n’est pas affiché. Cela est dû au `DialogViewController` fait que ne fait pas `UINavigatonController`partie d’un. Nous allons modifier le code pour ajouter un `UINavigationController` comme pour la `RootViewController,` fenêtre et ajouter `DialogViewController` en tant que racine du `UINavigationController` comme indiqué ci-dessous:
+Notez cependant que le titre « créer une tâche » que nous avons transmise `BindingContext` à n’est pas affiché. Cela est dû au `DialogViewController` fait que ne fait pas `UINavigatonController`partie d’un. Nous allons modifier le code pour ajouter un `UINavigationController` comme pour la `RootViewController,` fenêtre et ajouter `DialogViewController` en tant que racine du `UINavigationController` comme indiqué ci-dessous :
 
 ```csharp
 nav = new UINavigationController(dvc);
 window.RootViewController = nav;
 ```
 
-Maintenant, lorsque nous exécutons l’application, le titre s' `UINavigationController’s` affiche dans la barre de navigation, comme le montre la capture d’écran ci-dessous:
+Maintenant, lorsque nous exécutons l’application, le titre s' `UINavigationController’s` affiche dans la barre de navigation, comme le montre la capture d’écran ci-dessous :
 
  [![](reflection-api-walkthrough-images/02-create-task.png "Maintenant, lorsque nous exécutons l’application, le titre s’affiche dans la barre de navigation UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
-En incluant un `UINavigationController`, nous pouvons désormais tirer parti des autres fonctionnalités de Mt. D pour laquelle la navigation est nécessaire. Par exemple, nous pouvons ajouter une énumération à `Expense` la classe pour définir la catégorie des dépenses et Mt. D crée automatiquement un écran de sélection. Pour illustrer, modifiez `Expense` la classe pour inclure `ExpenseCategory` un champ comme suit:
+En incluant un `UINavigationController`, nous pouvons désormais tirer parti des autres fonctionnalités de Mt. D pour laquelle la navigation est nécessaire. Par exemple, nous pouvons ajouter une énumération à `Expense` la classe pour définir la catégorie des dépenses et Mt. D crée automatiquement un écran de sélection. Pour illustrer, modifiez `Expense` la classe pour inclure `ExpenseCategory` un champ comme suit :
 
 ```csharp
 public enum Category
@@ -128,11 +128,11 @@ public class Expense
 }
 ```
 
-L’exécution de l’application génère désormais une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous:
+L’exécution de l’application génère désormais une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous :
 
  [![](reflection-api-walkthrough-images/03-set-details.png "L’exécution de l’application entraîne désormais la création d’une nouvelle ligne dans la table pour la catégorie, comme indiqué ci-dessous.")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
-Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération, comme indiqué ci-dessous:
+Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération, comme indiqué ci-dessous :
 
  [![](reflection-api-walkthrough-images/04-set-category.png "Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec des lignes correspondant à l’énumération")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 

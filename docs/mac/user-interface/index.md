@@ -4,15 +4,15 @@ description: Ce document contient des liens vers des guides qui décrivent diff�
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 7dfd8392abf832e53cb90d0a09990fc5ef57b0bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f1168378104fd40fa7de78297f1f683d0caa0afa
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656319"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283118"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>contrôles de l’interface utilisateur macOS dans Xamarin. Mac
 
@@ -22,7 +22,7 @@ Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous 
 
 Les guides listés ci-dessous fournissent des informations détaillées sur l’utilisation des éléments d’interface utilisateur macOS dans une application Xamarin. Mac. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. chaque article.
 
-Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) du document [Internals Xamarin. Mac](~/mac/internals/how-it-works.md) , car elle explique `Register` les attributs et `Export` utilisés pour relier vos C# classes. aux objets objective-C et aux éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) du document [Internals Xamarin. Mac](~/mac/internals/how-it-works.md) , car elle explique les `Register` attributs et `Export` utilisés pour relier vos C# classes. aux objets objective-C et aux éléments d’interface utilisateur.
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 

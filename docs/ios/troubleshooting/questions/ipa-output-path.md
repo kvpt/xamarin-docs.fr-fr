@@ -1,27 +1,27 @@
 ---
-title: Puis-je modifier le chemin de sortie du fichier de la Loi sur la Loi?
+title: Puis-je modifier le chemin de sortie du fichier de la Loi sur la Loi ?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F5E5DCC6-F7CC-48E2-89E8-709E9C269502
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 6a51529e5a8c2878e46946608455f409ece9e43a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b8006b1ffe253ac57c1ab435690c5b378cc709fb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200230"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278669"
 ---
-# <a name="can-i-change-the-output-path-of-the-ipa-file"></a>Puis-je modifier le chemin de sortie du fichier de la Loi sur la Loi?
+# <a name="can-i-change-the-output-path-of-the-ipa-file"></a>Puis-je modifier le chemin de sortie du fichier de la Loi sur la Loi ?
 
 ## <a name="for-cycle-7-and-higher"></a>Pour le cycle 7 et les versions ultérieures
 Oui, vous pouvez utiliser des cibles MSBuild personnalisées pour y parvenir. L’option la plus simple consiste probablement à `.ipa` copier le fichier après sa génération.
 
-Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de génération MSBuild sur Mac ou Windows. (Remarque: tous les projets API unifiée utilisent le moteur de génération MSBuild.)
+Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de génération MSBuild sur Mac ou Windows. (Remarque : tous les projets API unifiée utilisent le moteur de génération MSBuild.)
 
-1. Ouvrez le `.csproj` fichier pour le projet d’application iOS dans un éditeur de texte, puis ajoutez les lignes suivantes à la fin (juste avant `</Project>` la balise de fermeture):
+1. Ouvrez le `.csproj` fichier pour le projet d’application iOS dans un éditeur de texte, puis ajoutez les lignes suivantes à la fin (juste avant `</Project>` la balise de fermeture) :
 
     ```xml
     <PropertyGroup>
@@ -45,7 +45,7 @@ Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de générat
 2. Définissez DestinationFolder sur le dossier de sortie souhaité. Comme d’habitude, vous pouvez utiliser les propriétés MSBuild (telles que $ (OutputPath)) dans cet argument si vous le souhaitez.
 
 ## <a name="notes"></a>Notes
-- La `CreateIpaDependsOn` propriété est définie dans le `Xamarin.iOS.Common.targets` fichier qui fait partie de Xamarin. iOS. Il se comporte comme décrit dans la section [remplacement des cibles](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) prédéfinies de l’article [How to: Étendez le processus](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)de génération Visual Studio.
+- La `CreateIpaDependsOn` propriété est définie dans le `Xamarin.iOS.Common.targets` fichier qui fait partie de Xamarin. iOS. Il se comporte comme décrit dans la section [remplacement des cibles prédéfinies](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) de l’article [How to : Étendez le processus](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)de génération Visual Studio.
 
 - Vous pouvez utiliser une tâche de **déplacement** plutôt qu’une tâche de **copie** si vous préférez. Si vous choisissez cette option et que vous créez sur Windows, vous devez utiliser le nom `<Microsoft.Build.Tasks.Move>` de tâche complet pour éviter toute ambiguïté avec les tâches de génération XamarinVS.
 
@@ -53,7 +53,7 @@ Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de générat
 
 Oui, vous pouvez utiliser des cibles MSBuild personnalisées pour y parvenir. L’option la plus simple consiste probablement à `.ipa` copier le fichier après sa génération.
 
-Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de génération MSBuild sur Mac ou Windows. (Remarque: tous les projets API unifiée utilisent le moteur de génération MSBuild.)
+Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de génération MSBuild sur Mac ou Windows. (Remarque : tous les projets API unifiée utilisent le moteur de génération MSBuild.)
 
 1. Ouvrez le `.csproj` fichier pour le projet d’application iOS dans un éditeur de texte, puis ajoutez les lignes suivantes à la fin (juste avant `</Project>` la balise de fermeture).
 
@@ -79,6 +79,6 @@ Ces étapes fonctionnent pour tout projet iOS qui utilise le moteur de générat
 2. `DestinationFolder` Définissez sur le dossier de sortie souhaité. Comme d’habitude, vous pouvez utiliser les propriétés `$(OutputPath)`MSBuild (comme) dans cet argument si vous le souhaitez.
 
 ## <a name="notes"></a>Notes
-- La `CreateIpaDependsOn` propriété est définie dans le `Xamarin.iOS.Common.targets` fichier qui fait partie de Xamarin. iOS. t se comporte comme décrit dans la section [remplacement des cibles](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) prédéfinies de l’article [How to: Étendez le processus](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)de génération Visual Studio.
+- La `CreateIpaDependsOn` propriété est définie dans le `Xamarin.iOS.Common.targets` fichier qui fait partie de Xamarin. iOS. t se comporte comme décrit dans la section [remplacement des cibles prédéfinies](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets) de l’article [How to : Étendez le processus](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)de génération Visual Studio.
 
 - Vous pouvez utiliser une tâche de **déplacement** plutôt qu’une tâche de **copie** si vous préférez. Si vous choisissez cette option et que vous créez sur Windows, vous devez utiliser le nom `<Microsoft.Build.Tasks.Move>` de tâche complet pour éviter toute ambiguïté avec les tâches de génération XamarinVS.
