@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 28dfdbd7837f87d003e5b949ea3f7421613997f7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10f065d6e7b1cacb217cb510c57707662a196664
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288305"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768570"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Utilisation des vues de table tvOS dans Xamarin
 
@@ -952,8 +952,6 @@ Consultez l’exemple d’application [tvTables](https://docs.microsoft.com/samp
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation des vues de table au sein d’une application Xamarin. tvOS. Et a présenté un exemple de l’utilisation d’une vue de table à l’intérieur d’un mode fractionné, qui est l’utilisation classique d’une vue de table dans une application tvOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

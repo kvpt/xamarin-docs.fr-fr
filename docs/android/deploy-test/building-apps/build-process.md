@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 84910bd499aa6894d86778a9bc4eb1467f063134
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225735"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754261"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -44,7 +44,6 @@ Le *déploiement rapide* fonctionne conjointement avec le runtime partagé pour 
 Le déploiement rapide est connu pour échouer sur les appareils qui bloquent la synchronisation de `adb` pour le répertoire `/data/data/@PACKAGE_NAME@/files/.__override__`.
 
 Le déploiement rapide est activé par défaut et peut être désactivé dans les versions Debug en définissant la propriété `$(EmbedAssembliesIntoApk)` sur `True`.
-
 
 ## <a name="msbuild-projects"></a>Projets MSBuild
 
@@ -128,7 +127,6 @@ Les propriétés d’installation contrôlent le comportement des cibles `Instal
   # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
   MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
   ```
-
 
 ### <a name="packaging-properties"></a>Propriétés de packaging
 
@@ -530,7 +528,6 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   - **West** : inclut les encodages occidentaux, comme *Europe de l’Ouest (Mac)* \[macintosh, CP10000\], *Islandais (Mac)* \[x-mac-icelandic, CP10079\], *Europe centrale (Windows)* \[iso-8859-2, CP1250\], *Europe centrale (Windows)* \[iso-8859-1, CP1252\], *Grec (Windows)* \[iso-8859-7, CP1253\], *Europe centrale (ISO)* \[iso-8859-2, CP28592\], *Latin 3 (ISO)* \[iso-8859-3, CP28593\], *Grec (ISO)* \[iso-8859-7, CP28597\], *Latin 9 (ISO)* \[iso-8859-15, CP28605\], *OEM États-Unis* \[CP437\], *Europe de l’Ouest (DOS)* \[CP850\], *Portugais (DOS)* \[CP860\], *Islandais (DOS)* \[CP861\], *Français (Canada) (DOS)* \[CP863\] et *Nordique (DOS)* \[CP865\].
 
-
   ```xml
   <MandroidI18n>West</MandroidI18n>
   ```
@@ -548,7 +545,6 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
 - **AndroidClassParser** &ndash; propriété de type chaîne qui contrôle comment les fichiers `.jar` sont analysés. Les valeurs possibles sont les suivantes :
 
   - **class-parse** : utilise `class-parse.exe` pour analyser le bytecode Java directement, sans l’aide d’une machine virtuelle Java. Cette valeur est expérimentale.
-
 
   - **jar2xml** : utilisez `jar2xml.jar` pour utiliser la réflexion Java afin d’extraire des types et des membres d’un fichier `.jar`.
 
@@ -579,7 +575,6 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
     - Mise en cache de `jmethodID` pour les constructeurs de wrapper appelables par Java pour les sous-classes managées.
 
     La valeur par défaut est `XAJavaInterop1`.
-
 
 ### <a name="resource-properties"></a>Propriétés des ressources
 
@@ -680,13 +675,11 @@ Pour utiliser le magasin de clés généré ci-dessus, utilisez le groupe de pro
 
 Les *actions de génération* sont [appliquées aux fichiers](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items) du projet et contrôlent la façon dont le fichier est traité.
 
-
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
 Il est recommandé d’utiliser l’action de génération de `AndroidAarLibrary` pour référencer directement les fichiers .aar. Elle est le plus souvent utilisée par les composants Xamarin, notamment pour inclure des références à des fichiers .aar requis pour faire fonctionner Google Play et d’autres services.
 
 Les fichiers comportant cette action de génération seront traités de la même manière que les ressources des projets de la bibliothèque. Le .aar sera extrait dans le répertoire intermédiaire. Ensuite, les composants, les ressources et les fichiers .jar seront inclus dans les groupes d’articles correspondants.
-
 
 ### <a name="androidboundlayout"></a>AndroidBoundLayout
 
@@ -696,7 +689,6 @@ Indique que du code-behind doit être généré pour le fichier de disposition s
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-
 <a name="AndroidEnvironment" />
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
@@ -704,28 +696,23 @@ Indique que du code-behind doit être généré pour le fichier de disposition s
 Les fichiers avec une action de génération `AndroidEnvironment` sont utilisés pour [initialiser des variables d’environnement et des propriétés système lors du démarrage du processus](~/android/deploy-test/environment.md).
 L’action de génération `AndroidEnvironment` peut être appliquée à plusieurs fichiers : dans ce cas, ils sont évalués sans suivre un ordre particulier (ne spécifiez donc pas la même variable d’environnement ou la même propriété système dans plusieurs fichiers).
 
-
 ### <a name="androidfragmenttype"></a>AndroidFragmentType
 
 Spécifie le type complet par défaut à utiliser pour tous les éléments de disposition `<fragment>` pendant la génération du code des liaisons de disposition. Par défaut, la propriété est définie sur le type `Android.App.Fragment` Android standard.
-
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 Les fichiers avec une action de génération `AndroidJavaLibrary` sont des archives Java (des fichiers `.jar`) qui sont inclus dans le package Android final.
 
-
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 Les fichiers avec une action de génération `AndroidJavaSource` contiennent du code source Java qui est inclus dans le package Android final.
-
 
 ### <a name="androidlintconfig"></a>AndroidLintConfig
 
 L’action de génération « AndroidLintConfig » doit être utilisée conjointement avec la propriété de build `AndroidLintEnabled`. Les fichiers avec cette action de génération sont fusionnés et passés à l’outil `lint` android. Ces fichiers doivent être des fichiers XML qui contiennent des informations sur les tests à activer et désactiver.
 
 Consultez la [documentation lint](https://developer.android.com/studio/write/lint) pour plus d’informations.
-
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -738,7 +725,6 @@ Notez que comme Android prend en charge plusieurs ABI (Application Binary Interf
 
 Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi-v7a/libfoo.so` à la build, l’ABI sera « détectée » en tant que `armeabi-v7a`.
 
-
 #### <a name="item-attribute-name"></a>Nom d’attribut d’élément
 
 **Abi** &ndash; spécifie l’ABI de la bibliothèque native.
@@ -750,7 +736,6 @@ Avec la détection de chemin, le nom du répertoire parent de la bibliothèque n
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
-
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -789,18 +774,15 @@ Les utilisateurs plus expérimentés souhaitent éventuellement avoir des ressou
 </ItemGroup>
 ```
 
-
 ### <a name="content"></a>Contenu
 
 L’action de génération `Content` normale n’est pas prise en charge (comme nous n’avons pas trouvé comment la prendre en charge sans une étape de première exécution éventuellement coûteuse en ressources).
 
 À compter de Xamarin.Android 5.1, une tentative d’utilisation de l’action de génération `@(Content)` produit un avertissement `XA0101`.
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 Des fichiers avec une action de génération *LinkDescription* sont utilisés pour [contrôler le comportement de l’éditeur de liens](~/cross-platform/deploy-test/linker.md).
-
 
 <a name="ProguardConfiguration" />
 
@@ -809,7 +791,6 @@ Des fichiers avec une action de génération *LinkDescription* sont utilisés po
 Les fichiers avec une action de génération *ProguardConfiguration* contiennent des options qui permettent de contrôler le comportement de `proguard`. Pour plus d’informations sur cette action de génération, consultez [ProGuard](~/android/deploy-test/release-prep/proguard.md).
 
 Ces fichiers sont ignorés sauf si la propriété MSBuild `$(EnableProguard)` est définie sur `True`.
-
 
 ## <a name="target-definitions"></a>Définitions de cibles
 

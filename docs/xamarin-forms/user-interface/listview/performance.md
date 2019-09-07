@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f92a338b58dfb82ff5d442ed856e246f4a8a5a8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228202"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761856"
 ---
 # <a name="listview-performance"></a>Performances de ListView
 
@@ -133,7 +133,7 @@ Cela a le même effet que la définition de l’argument de stratégie de mise e
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>Définir la stratégie de mise en cache dans un ListView sous-classé
 
-Définissant le `CachingStrategy` attribut à partir de XAML sur un sous-classé [ `ListView` ](xref:Xamarin.Forms.ListView) ne produira pas le comportement souhaité, car il n’est pas `CachingStrategy` propriété sur `ListView`. En outre, si [XAMLC](~/xamarin-forms/xaml/xamlc.md) est activé, le message d’erreur suivant est généré: **Aucune propriété, propriété pouvant être liée ou événement trouvé pour’CachingStrategy'**
+Définissant le `CachingStrategy` attribut à partir de XAML sur un sous-classé [ `ListView` ](xref:Xamarin.Forms.ListView) ne produira pas le comportement souhaité, car il n’est pas `CachingStrategy` propriété sur `ListView`. En outre, si [XAMLC](~/xamarin-forms/xaml/xamlc.md) est activé, le message d’erreur suivant est généré : **Aucune propriété, propriété pouvant être liée ou événement trouvé pour’CachingStrategy'**
 
 La solution à ce problème consiste à spécifier un constructeur sur sous-classé [ `ListView` ](xref:Xamarin.Forms.ListView) qui accepte un [ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) paramètre et le transmet à la classe de base :
 
@@ -181,7 +181,6 @@ Il existe plusieurs techniques permettant d’améliorer les performances d’un
 `AbsoluteLayout` a la possibilité d’effectuer des mises en page sans un appel de la mesure unique. Cela rend très puissante pour les performances. Si `AbsoluteLayout` ne peut pas être utilisée, envisagez [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout). Si vous utilisez `RelativeLayout`, en passant directement des contraintes sera beaucoup plus rapide que l’utilisation de l’API de l’expression. C’est parce que l’API de l’expression utilise JIT et sur iOS l’arborescence doit être interprétée, qui est plus lente. L’expression API convient aux mises en page où il requis uniquement sur la disposition initiale et la rotation, mais en `ListView`, où elle est exécutée en permanence pendant le défilement, elle nuit aux performances.
 
 Création d’un convertisseur personnalisé pour un [ `ListView` ](xref:Xamarin.Forms.ListView) ou ses cellules est une approche à réduire l’effet des calculs de disposition sur les performances de défilement. Pour plus d’informations, consultez [personnalisation d’un ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) et [personnalisation d’une ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
-
 
 ## <a name="related-links"></a>Liens associés
 

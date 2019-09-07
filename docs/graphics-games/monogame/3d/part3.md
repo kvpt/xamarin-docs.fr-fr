@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 2f5e66ae58f471be62839de17fe4edd12ccef457
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680988"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763996"
 ---
 # <a name="3d-coordinates-in-monogame"></a>Coordonnées 3D en monojeu
 
@@ -21,7 +21,7 @@ Pour développer des jeux 3D, vous devez comprendre comment manipuler des objets
 
 Les concepts présentés proviennent de l’algèbre linéaire, mais nous allons adopter une approche pratique afin que n’importe quel utilisateur sans un arrière-plan mathématique fort puisse appliquer ces concepts dans leurs propres jeux.
 
-Nous allons aborder les sujets suivants:
+Nous allons aborder les sujets suivants :
 
 - Création d'un projet
 - Création d’une entité robot
@@ -30,17 +30,15 @@ Nous allons aborder les sujets suivants:
 - Création de l’entité Camera
 - Déplacement de l’appareil photo avec l’entrée
 
-Une fois que vous avez terminé, nous aurons un projet avec un robot qui se déplace dans un cercle et une caméra qui peut être contrôlé par entrée tactile:
+Une fois que vous avez terminé, nous aurons un projet avec un robot qui se déplace dans un cercle et une caméra qui peut être contrôlé par entrée tactile :
 
 ![](part3-images/image1.gif "Une fois l’opération terminée, l’application inclut un projet avec un robot qui se déplace dans un cercle et une caméra qui peut être contrôlée par l’entrée tactile")
 
-
 ## <a name="creating-a-project"></a>Création d'un projet
 
-Cette procédure pas à pas se concentre sur le déplacement d’objets dans l’espace 3D. Nous allons commencer par le projet de rendu des modèles et des tableaux de vertex [qui se trouvent ici](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/). Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que les éléments suivants doivent s’afficher:
+Cette procédure pas à pas se concentre sur le déplacement d’objets dans l’espace 3D. Nous allons commencer par le projet de rendu des modèles et des tableaux de vertex [qui se trouvent ici](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/). Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que les éléments suivants doivent s’afficher :
 
 ![](part3-images/image2.png "Une fois téléchargé, décompressez et ouvrez le projet pour vérifier qu’il s’exécute et que cette vue doit être affichée.")
-
 
 ## <a name="creating-a-robot-entity"></a>Création d’une entité robot
 
@@ -50,7 +48,7 @@ Ajoutez un nouveau fichier de classe vide à la bibliothèque de classes portabl
 
 ![](part3-images/image3.png "Nommez-le robot, puis cliquez sur nouveau")
 
-Modifiez la `Robot` classe comme suit:
+Modifiez la `Robot` classe comme suit :
 
 ```csharp
 using System;
@@ -95,7 +93,6 @@ namespace MonoGame3D
                     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
                         fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
 
-
                 }
 
                 // Now that we've assigned our properties on the effects we can
@@ -107,7 +104,7 @@ namespace MonoGame3D
 }
 ```
 
-Le `Robot` code est essentiellement le même code dans `Game1` pour dessiner un `Model`. Pour une révision `Model` du chargement et du dessin, consultez [ce guide sur l’utilisation des modèles](~/graphics-games/monogame/3d/part1.md). Nous pouvons maintenant supprimer tout le `Model` code de chargement et de rendu de `Game1`, puis le remplacer par `Robot` une instance:
+Le `Robot` code est essentiellement le même code dans `Game1` pour dessiner un `Model`. Pour une révision `Model` du chargement et du dessin, consultez [ce guide sur l’utilisation des modèles](~/graphics-games/monogame/3d/part1.md). Nous pouvons maintenant supprimer tout le `Model` code de chargement et de rendu de `Game1`, puis le remplacer par `Robot` une instance :
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -228,7 +225,7 @@ namespace MonoGame3D
 }
 ```
 
-Si nous exécutons le code maintenant, nous aurons une scène avec un seul robot dessiné principalement sous le plancher:
+Si nous exécutons le code maintenant, nous aurons une scène avec un seul robot dessiné principalement sous le plancher :
 
 ![](part3-images/image4.png "Si le code est exécuté maintenant, l’application affiche une scène avec un seul robot dessiné principalement sous le plancher")
 
@@ -238,7 +235,7 @@ Maintenant que nous avons une `Robot` classe, nous pouvons ajouter une logique d
 
 Les seules informations dont nous aurons besoin en dehors de `Robot` la classe sont l’heure actuelle du jeu. Nous allons ajouter une `Update` méthode qui prendra un `GameTime` paramètre. Ce `GameTime` paramètre sera utilisé pour incrémenter une variable d’angle que nous allons utiliser pour déterminer la position finale du robot.
 
-Tout d’abord, nous allons ajouter le champ angle `Robot` à la classe `model` sous le champ:
+Tout d’abord, nous allons ajouter le champ angle `Robot` à la classe `model` sous le champ :
 
 ```csharp
 public class Robot
@@ -250,7 +247,7 @@ public class Robot
     ...
 ```
 
- Nous pouvons à présent incrémenter cette valeur `Update` dans une fonction:
+ Nous pouvons à présent incrémenter cette valeur `Update` dans une fonction :
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -260,7 +257,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-Nous devons nous assurer que la `Update` méthode est appelée à partir de: `Game1.Update`
+Nous devons nous assurer que la `Update` méthode est appelée à partir de : `Game1.Update`
 
 ```csharp
 protected override void Update(GameTime gameTime)
@@ -270,7 +267,7 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-Bien entendu, à ce stade, le champ angle n’a aucun effet, nous devons écrire du code pour l’utiliser. Nous allons modifier la `Draw` méthode afin de pouvoir calculer le monde `Matrix` dans une méthode dédiée: 
+Bien entendu, à ce stade, le champ angle n’a aucun effet, nous devons écrire du code pour l’utiliser. Nous allons modifier la `Draw` méthode afin de pouvoir calculer le monde `Matrix` dans une méthode dédiée : 
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -303,7 +300,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 }
 ```
 
-Ensuite, nous allons implémenter `GetWorldMatrix` la méthode dans `Robot` la classe:
+Ensuite, nous allons implémenter `GetWorldMatrix` la méthode dans `Robot` la classe :
 
 ```csharp
 Matrix GetWorldMatrix()
@@ -325,7 +322,7 @@ Matrix GetWorldMatrix()
 }
 ```
 
-Le résultat de l’exécution de ce code entraîne le déplacement de l’automate dans un cercle:
+Le résultat de l’exécution de ce code entraîne le déplacement de l’automate dans un cercle :
 
 ![](part3-images/image5.gif "L’exécution de ce code entraîne le déplacement de l’automate dans un cercle")
 
@@ -333,43 +330,43 @@ Le résultat de l’exécution de ce code entraîne le déplacement de l’autom
 
 Le code ci-dessus fait pivoter le robot `Matrix` en créant `GetWorldMatrix` un dans la méthode. Le `Matrix` struct contient 16 valeurs float qui peuvent être utilisées pour traduire (définir la position), faire pivoter et mettre à l’échelle (définir la taille). Lorsque nous attribuons `effect.World` la propriété, nous indiquons au système de rendu sous-jacent comment positionner, dimensionner et orienter tout ce qui se produit `Model` pour le dessin (une géométrie ou à partir de vertex). 
 
-Heureusement, la `Matrix` structure comprend un certain nombre de méthodes qui simplifient la création de types courants de matrices. Le premier utilisé dans le code ci- `Matrix.CreateTranslation`dessus est. La *traduction* de terme mathématique fait référence à une opération qui produit un point (ou dans le cas d’un modèle) passant d’un emplacement à un autre sans aucune autre modification (telle que la rotation ou le redimensionnement). La fonction prend une valeur X, Y et Z pour la traduction. Si nous allons voir notre scène de haut en haut, `CreateTranslation` notre méthode (en isolation) effectue les opérations suivantes:
+Heureusement, la `Matrix` structure comprend un certain nombre de méthodes qui simplifient la création de types courants de matrices. Le premier utilisé dans le code ci- `Matrix.CreateTranslation`dessus est. La *traduction* de terme mathématique fait référence à une opération qui produit un point (ou dans le cas d’un modèle) passant d’un emplacement à un autre sans aucune autre modification (telle que la rotation ou le redimensionnement). La fonction prend une valeur X, Y et Z pour la traduction. Si nous allons voir notre scène de haut en haut, `CreateTranslation` notre méthode (en isolation) effectue les opérations suivantes :
 
 ![](part3-images/image6.png "La méthode CreateTranslation de l’isolation effectue cette action")
 
-La deuxième matrice que nous créons est une matrice de rotation à `CreateRotationZ` l’aide de la matrice. Il s’agit de l’une des trois méthodes qui peuvent être utilisées pour créer une rotation:
+La deuxième matrice que nous créons est une matrice de rotation à `CreateRotationZ` l’aide de la matrice. Il s’agit de l’une des trois méthodes qui peuvent être utilisées pour créer une rotation :
 
 - `CreateRotationX`
 - `CreateRoationY`
 - `CreateRotationZ`
 
-Chaque méthode crée une matrice de rotation en tournant sur un axe donné. Dans notre cas, nous allons faire pivoter autour de l’axe Z, qui pointe vers le haut. Les éléments suivants peuvent vous aider à visualiser le fonctionnement de la rotation basée sur l’axe:
+Chaque méthode crée une matrice de rotation en tournant sur un axe donné. Dans notre cas, nous allons faire pivoter autour de l’axe Z, qui pointe vers le haut. Les éléments suivants peuvent vous aider à visualiser le fonctionnement de la rotation basée sur l’axe :
 
 ![](part3-images/image7.png "Cela peut vous aider à visualiser le fonctionnement de la rotation basée sur l’axe")
 
 Nous utilisons également la `CreateRotationZ` méthode avec le champ angle, qui s’incrémente au fil du temps, en raison de l’appel de notre `Update` méthode. Le résultat est que la `CreateRotationZ` méthode fait en sorte que notre robot s’orbite autour de l’origine lorsque le temps passe.
 
-La dernière ligne de code combine les deux matrices en une seule:
+La dernière ligne de code combine les deux matrices en une seule :
 
 ```csharp
 Matrix combined = translationMatrix * rotationMatrix;
 ```
 
-C’est ce que l’on appelle la multiplication de matrice, qui fonctionne légèrement différente de la multiplication normale. La *propriété commutative de la multiplication* indique que l’ordre des nombres dans une opération de multiplication ne change pas le résultat. Autrement dit, 3 * 4 équivaut à 4 * 3. La multiplication de matrice diffère en ce qu’elle n’est pas commutative. Autrement dit, la ligne ci-dessus peut être lue comme «appliquer le translationMatrix pour déplacer le modèle, puis faire pivoter tout en appliquant le rotationMatrix». Nous pouvons visualiser la manière dont la ligne ci-dessus affecte la position et la rotation comme suit:
+C’est ce que l’on appelle la multiplication de matrice, qui fonctionne légèrement différente de la multiplication normale. La *propriété commutative de la multiplication* indique que l’ordre des nombres dans une opération de multiplication ne change pas le résultat. Autrement dit, 3 * 4 équivaut à 4 * 3. La multiplication de matrice diffère en ce qu’elle n’est pas commutative. Autrement dit, la ligne ci-dessus peut être lue comme « appliquer le translationMatrix pour déplacer le modèle, puis faire pivoter tout en appliquant le rotationMatrix ». Nous pouvons visualiser la manière dont la ligne ci-dessus affecte la position et la rotation comme suit :
 
 ![](part3-images/image8.png "Une visualisation PF la manière dont la ligne ci-dessus affecte la position et la rotation")
 
-Pour mieux comprendre comment l’ordre de multiplication des matrices peut avoir un impact sur le résultat, prenez en compte les éléments suivants, où la multiplication de la matrice est inversée:
+Pour mieux comprendre comment l’ordre de multiplication des matrices peut avoir un impact sur le résultat, prenez en compte les éléments suivants, où la multiplication de la matrice est inversée :
 
 ```csharp
 Matrix combined = rotationMatrix * translationMatrix;
 ```
 
-Le code ci-dessus commence par faire pivoter le modèle sur place, puis le traduire:
+Le code ci-dessus commence par faire pivoter le modèle sur place, puis le traduire :
 
 ![](part3-images/image9.png "Le code ci-dessus commence par faire pivoter le modèle sur place, puis le traduire")
 
-Si nous exécutons le code avec la multiplication inversée, nous remarquerons que puisque la rotation s’applique en premier, elle n’affecte que l’orientation du modèle et la position du modèle reste la même. En d’autres termes, le modèle pivote en place:
+Si nous exécutons le code avec la multiplication inversée, nous remarquerons que puisque la rotation s’applique en premier, elle n’affecte que l’orientation du modèle et la position du modèle reste la même. En d’autres termes, le modèle pivote en place :
 
 ![](part3-images/image10.gif "Le modèle pivote sur place")
 
@@ -435,7 +432,7 @@ namespace MonoGame3D
 
 Le code ci-dessus est très similaire au code `Game1` de `Robot` et qui affecte les matrices `BasicEffect`sur. 
 
-Nous pouvons maintenant intégrer la nouvelle `Camera` classe dans nos projets existants. Tout d’abord, nous allons `Robot` modifier la classe pour `Camera` prendre une instance `Draw` dans sa méthode, ce qui éliminera un grand nombre de code en double. Remplacez la `Robot.Draw` méthode par le code suivant:
+Nous pouvons maintenant intégrer la nouvelle `Camera` classe dans nos projets existants. Tout d’abord, nous allons `Robot` modifier la classe pour `Camera` prendre une instance `Draw` dans sa méthode, ce qui éliminera un grand nombre de code en double. Remplacez la `Robot.Draw` méthode par le code suivant :
 
 ```csharp
 public void Draw(Camera camera)
@@ -457,7 +454,7 @@ public void Draw(Camera camera)
 }
 ```
 
-Modifiez ensuite le `Game1.cs` fichier:
+Modifiez ensuite le `Game1.cs` fichier :
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -573,7 +570,7 @@ namespace MonoGame3D
 }
 ```
 
-Les modifications apportées à la `Game1` version précédente (qui sont identifiées par `// New camera code` ) sont les suivantes:
+Les modifications apportées à la `Game1` version précédente (qui sont identifiées par `// New camera code` ) sont les suivantes :
 
 - `Camera`champ dans`Game1`
 - `Camera`instanciation dans`Game1.Initialize`
@@ -583,7 +580,7 @@ Les modifications apportées à la `Game1` version précédente (qui sont identi
 
 ## <a name="moving-the-camera-with-input"></a>Déplacement de l’appareil photo avec l’entrée
 
-Jusqu’à présent, nous avons ajouté `Camera` une entité, mais je n’ai rien fait avec elle pour modifier le comportement du Runtime. Nous allons ajouter un comportement qui permet à l’utilisateur d’effectuer les opérations suivantes:
+Jusqu’à présent, nous avons ajouté `Camera` une entité, mais je n’ai rien fait avec elle pour modifier le comportement du Runtime. Nous allons ajouter un comportement qui permet à l’utilisateur d’effectuer les opérations suivantes :
 
 - Appuyez sur le côté gauche de l’écran pour faire pivoter l’appareil photo vers la gauche
 - Touchez le côté droit de l’écran pour activer l’appareil photo à droite
@@ -591,11 +588,11 @@ Jusqu’à présent, nous avons ajouté `Camera` une entité, mais je n’ai rie
 
 ### <a name="making-lookat-relative"></a>Réalisation d’une Lookique relative
 
-Tout d’abord, nous `Camera` allons mettre à jour `angle` la classe pour inclure un champ qui sera utilisé pour définir `Camera` la direction vers laquelle le est orienté. À l’heure `Camera` actuelle, notre détermine la direction dans laquelle il `lookAtVector`est dirigé via le local `Vector3.Zero`, qui est affecté à. En d’autres termes, `Camera` notre examine toujours l’origine. Si l’appareil photo se déplace, l’angle d’accès à l’appareil photo est également modifié:
+Tout d’abord, nous `Camera` allons mettre à jour `angle` la classe pour inclure un champ qui sera utilisé pour définir `Camera` la direction vers laquelle le est orienté. À l’heure `Camera` actuelle, notre détermine la direction dans laquelle il `lookAtVector`est dirigé via le local `Vector3.Zero`, qui est affecté à. En d’autres termes, `Camera` notre examine toujours l’origine. Si l’appareil photo se déplace, l’angle d’accès à l’appareil photo est également modifié :
 
 ![](part3-images/image11.gif "Si l’appareil se déplace, l’angle d’accès à l’appareil photo est également modifié.")
 
-Nous voulons que `Camera` le soit orienté dans la même direction, quelle que soit sa position, au moins jusqu’à ce que nous `Camera` implémentions la logique permettant de faire pivoter l’entrée à l’aide de l’entrée. La première modification consiste à ajuster la variable `lookAtVector` en fonction de l’emplacement actuel, plutôt que de regarder une position absolue:
+Nous voulons que `Camera` le soit orienté dans la même direction, quelle que soit sa position, au moins jusqu’à ce que nous `Camera` implémentions la logique permettant de faire pivoter l’entrée à l’aide de l’entrée. La première modification consiste à ajuster la variable `lookAtVector` en fonction de l’emplacement actuel, plutôt que de regarder une position absolue :
 
 ```csharp
 public class Camera
@@ -621,7 +618,7 @@ public class Camera
     ...
 ```
 
-Cela entraîne l' `Camera` affichage du monde directement. Notez que la valeur `position` initiale a été modifiée pour `(0, 20, 10)` que `Camera` soit centré sur l’axe des X. L’exécution du jeu affiche:
+Cela entraîne l' `Camera` affichage du monde directement. Notez que la valeur `position` initiale a été modifiée pour `(0, 20, 10)` que `Camera` soit centré sur l’axe des X. L’exécution du jeu affiche :
 
 ![](part3-images/image12.png "L’exécution du jeu affiche cette vue")
 
@@ -631,7 +628,7 @@ La `lookAtVector` variable contrôle l’angle que notre appareil photo visualis
 
 Dans les sections précédentes de cette procédure pas à pas, nous avons montré que les matrices peuvent être utilisées pour faire pivoter la façon dont les objets sont dessinés. Nous pouvons également utiliser des matrices pour faire pivoter des `lookAtVector` vecteurs `Vector3.Transform` comme le à l’aide de la méthode. 
 
-Ajoutez un `angle` champ et modifiez la `ViewMatrix` propriété comme suit:
+Ajoutez un `angle` champ et modifiez la `ViewMatrix` propriété comme suit :
 
 ```csharp
 public class Camera
@@ -670,13 +667,13 @@ Tout d’abord, nous obtenons l' `TouchPanel` État pour trouver l’endroit où
 
 Si l’utilisateur touche le troisième à gauche, nous allons ajuster la `angle` valeur de sorte que le `Camera` pivote vers la gauche et, si l’utilisateur touche le troisième droit, nous allons faire pivoter l’autre méthode. Si l’utilisateur touche le troisième milieu de l’écran, nous allons déplacer le curseur vers l' `Camera` avant.
 
-Tout d’abord, ajoutez une instruction using pour `TouchPanel` qualifier `TouchCollection` les classes `Camera.cs`et dans:
+Tout d’abord, ajoutez une instruction using pour `TouchPanel` qualifier `TouchCollection` les classes `Camera.cs`et dans :
 
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
-Ensuite, modifiez la `Update` méthode pour lire le panneau tactile et ajuster les `angle` variables `position` et de manière appropriée:
+Ensuite, modifiez la `Update` méthode pour lire le panneau tactile et ajuster les `angle` variables `position` et de manière appropriée :
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -714,7 +711,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-Désormais, `Camera` le répond à l’entrée tactile:
+Désormais, `Camera` le répond à l’entrée tactile :
 
 ![](part3-images/image1.gif "L’appareil photo répond alors à l’entrée tactile")
 

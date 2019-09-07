@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d001c39b2111785911d678bdeb2e83d761fba11
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7596f79119f28997cbcda6e7057e682edfd760b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287002"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756356"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>Backgrounding iOS avec des tâches
 
@@ -23,7 +23,6 @@ Les tâches en arrière-plan peuvent être réparties en trois catégories :
 1. **Tâches d’arrière-plan sécurisées** : appelées n’importe où dans l’application où vous avez une tâche que vous ne souhaitez pas interrompre si l’application entre en arrière-plan.
 1. **Tâches DidEnterBackground** -appelées au `DidEnterBackground` cours de la méthode du cycle de vie des applications pour faciliter le nettoyage et l’enregistrement de l’État.
 1. **Transferts en arrière-plan (iOS 7 +)** : type spécial de tâche d’arrière-plan utilisé pour effectuer des transferts réseau sur iOS 7. Contrairement aux tâches standard, les transferts en arrière-plan n’ont pas de limite de temps prédéfinie.
-
 
 Les tâches d’arrière `DidEnterBackground` -plan et de sécurité peuvent être utilisées en toute sécurité sur iOS 6 et iOS 7, avec quelques différences mineures. Étudions ces deux types de tâches plus en détail.
 
@@ -47,7 +46,6 @@ Le processus d’inscription couple une tâche à un identificateur unique, `tas
 > [!IMPORTANT]
 > Les tâches sécurisées en arrière-plan peuvent s’exécuter sur le thread principal ou sur un thread d’arrière-plan, selon les besoins de l’application.
 
-
 ## <a name="performing-tasks-during-didenterbackground"></a>Exécution de tâches pendant la DidEnterBackground
 
 Outre la création d’une tâche de longue durée en arrière-plan, l’inscription peut être utilisée pour lancer des tâches lorsqu’une application est placée en arrière-plan. iOS fournit une méthode d’événement dans la classe AppDelegate `DidEnterBackground` appelée qui peut être utilisée pour enregistrer l’état de l’application, enregistrer les données utilisateur et chiffrer le contenu sensible avant qu’une application n’entre en arrière-plan. Une application a environ cinq secondes pour retourner à partir de cette méthode, sinon elle sera arrêtée. Par conséquent, les tâches de nettoyage qui peuvent prendre plus de cinq secondes peuvent être appelées à `DidEnterBackground` partir de la méthode. Ces tâches doivent être appelées sur un thread distinct.
@@ -68,7 +66,6 @@ Nous commençons par substituer `DidEnterBackground` la méthode dans `AppDelega
 
 > [!IMPORTANT]
 > iOS utilise un [mécanisme de surveillance](https://developer.apple.com/library/ios/qa/qa1693/_index.html) pour garantir le maintien de la réactivité de l’interface utilisateur d’une application. Une application qui consacre trop de temps `DidEnterBackground` à ne répondra plus dans l’interface utilisateur. Le lancement des tâches à exécuter en arrière-plan `DidEnterBackground` permet de retourner en temps opportun, en conservant la réactivité de l’interface utilisateur et en empêchant la surveillance de tuer l’application.
-
 
 ## <a name="handling-background-task-time-limits"></a>Gestion des limites de temps des tâches en arrière-plan
 
@@ -133,7 +130,6 @@ L’épine dorsale des transferts en arrière-plan `NSURLSession` dans iOS 7 est
 1. Transférer du contenu via des interruptions de réseau et d’appareil.
 1. Chargez et téléchargez des fichiers volumineux ( *service de transfert en arrière-plan* ).
 
-
 Examinons de plus près la façon dont cela fonctionne.
 
 ### <a name="nsurlsession-api"></a>API passer
@@ -157,7 +153,6 @@ else {
 > [!IMPORTANT]
 > Évitez d’effectuer des appels pour mettre à jour l’interface utilisateur à partir de l’arrière-plan dans du code conforme à iOS 6, car iOS 6 ne prend pas en charge les mises à jour de l’interface utilisateur en arrière-plan et met fin à l’application.
 
-
 L' `NSURLSession` API comprend un ensemble complet de fonctionnalités permettant de gérer l’authentification, de gérer les transferts ayant échoué et de signaler les erreurs côté client, mais pas côté serveur. Il permet de combler les interruptions au cours de l’exécution des tâches introduites dans iOS 7, et prend également en charge le transfert rapide et fiable de fichiers volumineux. La section suivante explore cette deuxième fonctionnalité.
 
 ### <a name="background-transfer-service"></a>Service de transfert en arrière-plan
@@ -167,4 +162,3 @@ Avant iOS 7, le chargement ou le téléchargement de fichiers en arrière-plan n
 Les transferts initiés à l’aide du service de transfert en arrière-plan sont gérés par le système d’exploitation et fournissent des API pour gérer l’authentification et les erreurs. Étant donné que les transferts ne sont pas liés par une limite de temps arbitraire, ils peuvent être utilisés pour charger ou télécharger des fichiers volumineux, mettre à jour automatiquement le contenu en arrière-plan, et bien plus encore. Pour plus d’informations sur la façon d’implémenter le service, consultez la [procédure pas à pas relative au transfert en arrière-plan](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md) .
 
 Le service de transfert en arrière-plan est souvent associé à des notifications d’extraction en arrière-plan ou à distance pour aider les applications à actualiser le contenu en arrière-plan. Dans les deux sections suivantes, nous allons présenter le concept d’inscription d’applications entières pour qu’elles s’exécutent en arrière-plan sur iOS 6 et iOS 7.
-

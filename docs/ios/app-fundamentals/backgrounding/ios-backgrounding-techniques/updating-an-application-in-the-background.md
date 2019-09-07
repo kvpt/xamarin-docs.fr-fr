@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2e0bb4fc0468f938e7a4403513fe101db2282561
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d5a227f4acdba319eefc91b4991dead5a036eb9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286985"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756333"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>Mise à jour d’une application Xamarin. iOS en arrière-plan
 
@@ -22,7 +22,6 @@ L’actualisation en arrière-plan est le processus qui consiste à sortir une a
 1. *Extraction en arrière-plan (iOS 7 +)* : approche temporelle permettant d’actualiser le contenu *non critique* mis à jour *fréquemment* .
 1. *Notifications distantes (iOS 7 +)* : les applications qui reçoivent des notifications push peuvent utiliser les notifications pour déclencher des actualisations de contenu en arrière-plan. Cette méthode peut être utilisée pour effectuer une mise à jour avec *un contenu important qui respecte le temps,* qui est mis à jour de façon *sporadique* .
 
-
 Les sections suivantes couvrent les principes de base de ces options.
 
 ## <a name="region-monitoring-and-significant-location-changes"></a>Surveillance des régions et modifications significatives de l’emplacement
@@ -31,7 +30,6 @@ iOS fournit deux API prenant en charge l’emplacement avec des fonctionnalités
 
 1. La *surveillance* des régions est le processus de configuration de régions avec des limites et de mise en éveil de l’appareil lorsque l’utilisateur entre ou quitte une région. Les régions sont circulaires et peuvent avoir une taille variable. Lorsque l’utilisateur franchit une limite de région, l’appareil se réveille pour gérer l’événement, généralement en déclenchant une notification ou en lançant une tâche. L’analyse des régions requiert le GPS et augmente la batterie et l’utilisation des données.
 1. Le *service de changements d’emplacement significatifs* est une option plus simple pour les appareils avec des radios cellulaires. Une application écoutant des modifications d’emplacement importantes sera avertie lorsque l’appareil change de cellule Towers. Ce service peut être utilisé pour mettre en éveil une application interrompue ou arrêtée et permet de vérifier le nouveau contenu en arrière-plan. L’activité en arrière-plan est limitée à environ 10 secondes, sauf si elle est associée à une [tâche en arrière-plan](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md) .
-
 
 Une application n’a pas besoin de `UIBackgroundMode` l’emplacement pour utiliser ces API prenant en charge l’emplacement. Comme iOS ne suit pas les types de tâches qui peuvent s’exécuter quand l’appareil est en veille par des modifications à l’emplacement de l’utilisateur, ces API fournissent une solution de contournement pour la mise à jour du contenu en arrière-plan sur iOS 6. N' *oubliez pas que le déclenchement des mises à jour en arrière-plan avec des API basées sur l’emplacement dessinera sur les ressources de l’appareil et risque de tromper les utilisateurs qui ne comprennent pas pourquoi une application nécessite l’accès à leur emplacement*. Utilisez la précaution lors de l’implémentation de la surveillance des régions ou des modifications d’emplacement importantes pour le traitement en arrière-plan dans les applications qui n’utilisent pas déjà les API de localisation
 
@@ -76,12 +74,10 @@ Quand nous avons terminé la mise à jour du contenu, nous laissons le système 
 1. `UIBackgroundFetchResult.NoData`-Appelé lorsque l’extraction de nouveau contenu est passée, mais qu’aucun contenu n’est disponible.
 1. `UIBackgroundFetchResult.Failed`-Utile pour la gestion des erreurs, cette méthode est appelée lorsque l’extraction n’a pas pu traverser.
 
-
 Les applications utilisant la récupération en arrière-plan peuvent appeler pour mettre à jour l’interface utilisateur à partir de l’arrière-plan. Lorsque l’utilisateur ouvre l’application, l’interface utilisateur est à jour et affiche le nouveau contenu. Cette opération met également à jour l’instantané du sélecteur d’applications de l’application, de sorte que l’utilisateur peut voir quand l’application a un nouveau contenu.
 
 > [!IMPORTANT]
 > Une `PerformFetch` fois appelée, l’application dispose d’environ 30 secondes pour lancer le téléchargement du nouveau contenu et appeler le bloc de gestionnaire d’achèvement. Si cela prend trop de temps, l’application se termine. Envisagez d’utiliser FETCH en arrière-plan avec le _service de transfert en arrière-plan_ lors du téléchargement de médias ou d’autres fichiers volumineux.
-
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
@@ -91,13 +87,11 @@ Dans l’exemple de code ci-dessus, nous permettons au système d’exploitation
 1. `BackgroundFetchIntervalMinimum`-Laisser le système décider de la fréquence d’extraction en fonction des modèles utilisateur, de la durée de vie de la batterie, de l’utilisation des données et des besoins d’autres applications.
 1. `BackgroundFetchIntervalCustom`-Si vous connaissez la fréquence de mise à jour du contenu d’une application, vous pouvez spécifier un intervalle de « veille » après chaque extraction, pendant laquelle l’application ne peut pas récupérer de nouveau contenu. Une fois cet intervalle défini, le système détermine le moment où il doit récupérer le contenu.
 
-
 `BackgroundFetchIntervalMinimum` Et`BackgroundFetchIntervalCustom` s’appuient sur le système pour planifier des extractions. Cet intervalle est dynamique et s’adapte aux besoins de l’appareil, ainsi qu’aux habitudes de l’utilisateur individuel. Par exemple, si un utilisateur vérifie une application tous les matins, et qu’une autre vérification toutes les heures, iOS s’assure que le contenu est à jour pour les deux utilisateurs chaque fois qu’ils ouvrent l’application.
 
 La récupération en arrière-plan doit être utilisée pour les applications qui sont fréquemment mises à jour avec du contenu non critique. Pour les applications avec des mises à jour critiques, des notifications distantes doivent être utilisées. Les notifications distantes sont basées sur la récupération en arrière-plan et partagent le même gestionnaire d’achèvement. Nous allons ensuite étudier les notifications distantes.
 
  <a name="remote_notifications" />
-
 
 ## <a name="remote-notifications-ios-7-and-greater"></a>Notifications à distance (iOS 7 et versions ultérieures)
 
@@ -135,7 +129,6 @@ Les notifications distantes doivent être utilisées pour les mises à jour peu 
 > [!IMPORTANT]
 > Étant donné que le mécanisme de mise à jour dans les notifications distantes est basé sur l’extraction en arrière-plan, l’application doit lancer le téléchargement du nouveau contenu et appeler le bloc de gestionnaire d’achèvement dans les 30 secondes suivant la réception de la notification, ou iOS met fin à l’application. Envisagez de coupler les notifications à distance avec le _service de transfert en arrière-_ plan lors du téléchargement de médias ou d’autres fichiers volumineux en arrière-plan
 
-
 ### <a name="silent-remote-notifications"></a>Notifications distantes silencieuses
 
 Les notifications distantes sont un moyen simple de notifier les applications de mises à jour et de lancer la récupération de nouveau contenu, mais dans certains cas, nous n’avons pas besoin d’informer l’utilisateur de la modification d’un événement. Par exemple, si un utilisateur signale un fichier pour la synchronisation, nous n’avons pas besoin de les notifier chaque fois que le fichier est mis à jour. La synchronisation de fichiers n’est pas un événement étonnant et ne nécessite pas l’attention immédiate de l’utilisateur. Les utilisateurs s’attendent à ce que le fichier soit à jour lorsqu’il l’ouvre.
@@ -158,7 +151,6 @@ Toutefois, APNs permet aux notifications silencieuses de se superposer à une no
 
 > [!IMPORTANT]
 > Apple encourage les développeurs à envoyer des notifications push sans assistance chaque fois que l’application en a besoin, et à laisser les APNs planifier leur remise.
-
 
 Dans cette section, nous avons abordé les différentes options d’actualisation du contenu en arrière-plan pour exécuter des tâches qui ne sont pas adaptées à une catégorie d’arrière-plan. À présent, voyons quelques-unes de ces API en action.
 

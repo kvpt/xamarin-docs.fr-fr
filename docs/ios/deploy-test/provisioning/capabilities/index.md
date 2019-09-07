@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 6014bb0889c84c35edc991011bae46065d4ff8d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d7a2f14b55d9f8de2ea01bdfa5c68c5c9f8f2555
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287098"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756151"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Utilisation des fonctionnalités dans Xamarin.iOS
 
@@ -113,7 +113,6 @@ Les fonctionnalités sont ajoutées à **Entitlements.plist**. Pour ajouter des 
 
 -----
 
-
 <a name="devcenter" />
 
 ## <a name="using-the-developer-center"></a>Utilisation du Developer Center
@@ -146,7 +145,6 @@ Pour accéder au developer center, vous devez effectuer deux étapes : créer 
     ![Confirmation de l’ID d’application](images/image9.png)
 
 9. Cliquez sur **Register**, puis sur **Done**. Le nouvel ID d’application s’affiche normalement dans la liste des ID d’application iOS.
-
 
 <a name="provisioningprofile" />
 

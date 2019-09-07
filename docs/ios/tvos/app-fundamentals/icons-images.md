@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f3a0525a42a59edfe08e5b478bf6af801008ef05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7eca637e546324f9282aedcac48dacffa72bf246
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277855"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769272"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Utilisation des icônes et des images tvOS dans Xamarin
 
@@ -79,9 +79,6 @@ Les images en couche contiennent de deux (2) à cinq (5) couches distinctes qui 
 > [!IMPORTANT]
 > Les images en couches sont requises pour les icônes de votre application et sont facultatives pour d’autres éléments pouvant être mis en [focus](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (tels que l’image de l’étagère supérieure). Toutefois, Apple suggère d’utiliser des images en couche pour toutes les images pouvant être ciblées dans votre application.
 
-
-
-
 Apple effectue les suggestions suivantes pour la conception de vos images en couche :
 
 - **Rendre la couche d’arrière-plan opaque** -votre couche d’arrière-plan (couche 1) **doit** être opaque ou vous obtenez une erreur lorsque vous essayez d’utiliser l’image en couche sur Apple TV. Toutes les autres couches peuvent contenir plusieurs niveaux de transparence pour améliorer l’effet 3D.
@@ -145,9 +142,6 @@ Chaque application doit fournir une petite et une grande version de son icône d
 
 > [!IMPORTANT]
 > Les icônes de votre application doivent être fournies en tant qu' **images en couches**. Pour plus d’informations, consultez la section [image en couche](#Layered-Images) ci-dessus.
-
-
-
 
 Apple fournit les suggestions suivantes pour créer les icônes de votre application :
 

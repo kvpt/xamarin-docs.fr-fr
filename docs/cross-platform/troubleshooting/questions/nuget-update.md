@@ -6,12 +6,12 @@ ms.assetid: 40DDE713-DE80-422F-BE34-A732E40C3F81
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: bb44dc042f60d4d9de87bcb92222689b80a42527
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f487fe0f8db9fa71e8571e150e0e8afe1630cde2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288184"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765084"
 ---
 # <a name="how-can-i-update-nuget"></a>Comment mettre à jour NuGet ?
 
@@ -27,4 +27,3 @@ Notez que les mises à jour ne seront affichées dans ces menus *que* si vous n�
 
 1. Ouvrez **Visual Studio pour Mac extensions > extensions > mises à jour > extensions IDE**
 2. Sélectionner **NuGet Package Management**
-

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 54b57097c7742cb5c09f97b40c68c72b6f9c3bf1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: da0a441be9cd07af456b1600155151e48d44162c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525103"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758057"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
 _Visual Studio inclut Android SDK Manager que vous utilisez pour télécharger les outils, les plateformes et d’autres composants du kit Android SDK dont vous avez besoin pour développer des applications Xamarin.Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Ce guide explique comment utiliser Xamarin Android SDK Manager dans Visual Studio pour Mac.
 
@@ -50,7 +50,6 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
 
- 
 ## <a name="sdk-manager"></a>Gestionnaire du kit SDK 
 
 Pour démarrer le Gestionnaire du kit SDK dans Visual Studio, cliquez sur **Outils > Android  > Gestionnaire Android SDK** :
@@ -62,7 +61,6 @@ Le Gestionnaire Android SDK s’ouvre dans l’écran **Kits Android SDK et outi
 [![Capture d’écran du Gestionnaire Android SDK ouvert sous l’onglet Plateformes](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 L’écran **Kits Android SDK et outils** est décrit plus en détail dans les sections suivantes.
-
 
 ### <a name="android-sdk-location"></a>Emplacement du kit Android SDK
 
@@ -78,12 +76,10 @@ Pour définir l’emplacement du kit Android SDK, cliquez sur l’ellipse (&hell
 
 Lorsque vous cliquez sur **OK**, le Gestionnaire SDK gère le kit Android SDK qui est installé à l’emplacement sélectionné.
 
-
 ### <a name="tools-tab"></a>Onglet Outils
 
 L’onglet **Outils** affiche une liste d’_outils_ et de _bonus_. Utilisez cet onglet pour installer les outils du kit Android SDK, les outils de plateforme et les outils de génération.
 Vous pouvez également installer l’émulateur Android, le débogueur de bas niveau (LLDB), le kit NDK, l’accélération HAXM et les bibliothèques Google Play.
-
 
 Par exemple, pour télécharger le package Émulateur Android de Google, cochez la case en regard d’**Émulateur Android** et cliquez sur le bouton **Appliquer les modifications** :
 
@@ -127,7 +123,6 @@ Lorsque le référentiel Google est sélectionné, des packages supplémentaires
 
 Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 ## <a name="requirements"></a>Configuration requise
@@ -146,11 +141,11 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
- 
+
 ## <a name="sdk-manager"></a>Gestionnaire du kit SDK 
 
 Pour démarrer le Gestionnaire du kit SDK dans Visual Studio pour Mac, cliquez sur **Outils > SDK Manager** :
- 
+
 [![Emplacement de l’élément de menu Gestionnaire Android SDK](android-sdk-images/mac/01-sdk-manager-menu-item-m75-sml.png)](android-sdk-images/mac/01-sdk-manager-menu-item-m75.png#lightbox)
 
 Le **Gestionnaire Android SDK** s’ouvre dans la **fenêtre Préférences**, qui contient trois onglets, **Plateformes**, **Outils**et **Emplacements** :
@@ -158,7 +153,6 @@ Le **Gestionnaire Android SDK** s’ouvre dans la **fenêtre Préférences**, qu
 [![Capture d’écran du Gestionnaire Android SDK ouvert sous l’onglet Plateformes](android-sdk-images/mac/02-sdk-manager-platforms-m75-sml.png)](android-sdk-images/mac/02-sdk-manager-platforms-m75.png#lightbox)
 
 Les onglets du Gestionnaire Android SDK sont décrits dans les sections suivantes.
-
 
 ### <a name="locations-tab"></a>Onglet Emplacements
 
@@ -186,7 +180,6 @@ Une boîte de dialogue risque de s’afficher avec le message _Pour pouvoir inst
 [![Écran Acceptation de la licence](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
 Cliquez sur **Accepter** si vous acceptez les Conditions générales. En bas de la fenêtre, une barre de progression indique l’avancement du téléchargement et de l’installation. Une fois l’installation terminée, l’onglet **Outils** indique que les outils et bonus sélectionnés sont installés.
-
 
 ### <a name="platforms-tab"></a>Onglet Plateformes
 
@@ -222,11 +215,9 @@ Pour revenir au référentiel pris en charge de plateformes et d’outils, cliqu
 
 -----
 
- 
 ## <a name="summary"></a>Récapitulatif
 
 Dans ce guide, vous avez appris à installer et utiliser l’outil Xamarin Android SDK Manager pour Visual Studio et Visual Studio pour Mac.
-
 
 ## <a name="related-links"></a>Liens associés
 

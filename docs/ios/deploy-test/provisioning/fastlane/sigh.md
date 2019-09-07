@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f90ce8dcb8c3ab9d4fee9f684c0e53218b8440a9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285712"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762631"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane pour iOS - sigh
 
@@ -154,7 +154,6 @@ Vous pouvez utiliser les options suivantes pour bénéficier d’une assistance 
     ```
     
     Où `Amy cert` est le nom de l’identité de signature de code.
-
 
 ## <a name="related-links"></a>Liens associés
 

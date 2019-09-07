@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650496"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771788"
 ---
 # <a name="creating-the-platform-video-players"></a>Création des lecteurs vidéo de la plateforme
 
@@ -155,7 +155,6 @@ namespace FormsVideoLibrary.Droid
 
 Le remplacement de `OnElementChanged` crée à la fois le `VideoView` et le `RelativeLayout`, et définit les paramètres de disposition pour le `VideoView` afin de le centrer dans le `RelativeLayout`.
 
-
 ```csharp
 namespace FormsVideoLibrary.Droid
 {
@@ -284,7 +283,6 @@ Les deux gestionnaires d’événements sont détachés dans l’événement `Di
 Tous les lecteurs vidéo contenus dans les plateformes prennent en charge un ensemble par défaut de contrôles de transport qui incluent des boutons pour la lecture et la pause ainsi qu’une barre pour indiquer la position actuelle dans la vidéo et pour accéder à une nouvelle position.
 
 La classe `VideoPlayer` définit une propriété nommée `AreTransportControlsEnabled` et la valeur par défaut `true` :
-
 
 ```csharp
 namespace FormsVideoLibrary
@@ -463,7 +461,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 Une autre propriété supplémentaire est nécessaire pour commencer la lecture d’une vidéo : Il s’agit de la propriété `Source` cruciale qui fait référence à un fichier vidéo. L’implémentation de la propriété `Source` est décrite dans l’article suivant, [Lecture d’une vidéo web](web-videos.md).
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f38200e8274a36783ac7bd1aec4b695036f83e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280162"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769633"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Multitâche pour iPad dans Xamarin. iOS
 
@@ -40,7 +40,6 @@ Cet article décrit les étapes requises pour s’assurer que votre application 
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
 **Vidéo multitâche pour iPad**
-
 
 <a name="Multitasking-QuickStart" />
 
@@ -251,8 +250,6 @@ Pour désactiver la lecture vidéo PIP, procédez comme suit dans votre applicat
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les étapes requises pour s’assurer qu’une application Xamarin. iOS s’exécutera et se comportera correctement dans les nouvelles capacités multitâches d’iOS 9 pour iPad. En outre, le fait de ne pas être un bon choix est de ne pas convenir du multitâche pour les applications.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

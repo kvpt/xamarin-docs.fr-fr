@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 6eb942c0276bda28cb4be14fb31cdf820b9ccd5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e81504b3411674c8f8f92bf9018d617dd1c4bc4c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291356"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768913"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Personnalisation de l’apparence d’un tableau dans Xamarin. iOS
 
@@ -26,7 +26,6 @@ Il existe quatre styles intégrés :
 - **Sous-titre** : `UIImageView` prend en charge un et un sous-titre.
 - **Valeur1** – sous-titre aligné à droite `UIImageView`, prend en charge un.
 - **Value2** : le titre est aligné à droite et le sous-titre est aligné à gauche (mais aucune image).
-
 
 Ces captures d’écran montrent comment chaque style s’affiche :
 
@@ -57,7 +56,6 @@ Les accessoires peuvent être ajoutés à droite de l’affichage des cellules 
 - **DetailButton** : répond à Touch indépendamment du reste de la cellule, ce qui lui permet d’effectuer une fonction différente pour toucher la cellule elle-même (par exemple, ouvrir une fenêtre contextuelle ou une nouvelle fenêtre `UINavigationController` qui ne fait pas partie d’une pile).
 - **DisclosureIndicator** : normalement utilisé pour indiquer que le toucher à la cellule ouvre une autre vue.
 - **DetailDisclosureButton** : combinaison de `DetailButton` et `DisclosureIndicator`.
-
 
 Voici à quoi elles ressemblent :
 
@@ -128,7 +126,6 @@ La classe de cellule personnalisée se compose uniquement de trois méthodes :
 - **UpdateCell** : méthode `UITableView.GetCell` à utiliser pour définir les propriétés de la cellule.
 - **LayoutSubviews** : définissez l’emplacement des contrôles de l’interface utilisateur. Dans l’exemple, chaque cellule a la même disposition, mais une cellule plus complexe (en particulier celles qui ont des tailles différentes) peut nécessiter des positions de disposition différentes selon le contenu affiché.
 
-
 L’exemple de code complet dans **CellCustomTable > CustomVegeCell.cs** est le suivant :
 
 ```csharp
@@ -184,8 +181,6 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
     return cell;
 }
 ```
-
-
 
 ## <a name="related-links"></a>Liens associés
 

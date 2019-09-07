@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b88d6c33671f36d2d4106f45a267322320639c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280632"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765335"
 ---
 # <a name="async-support-overview"></a>Présentation de la prise en charge asynchrone
 
@@ -124,7 +124,6 @@ Notez les points suivants :
 - Le type de retour `Task<int>` est afin que le code appelant `int` puisse accéder à la valeur calculée dans cette méthode.
 - L’instruction Return `return exampleInt;` est un objet entier, le fait que la méthode retourne `Task<int>` fait partie des améliorations du langage.
 
-
 ### <a name="calling-an-async-method-1"></a>Appel d’une méthode Async 1
 
 Ce gestionnaire d’événements de clic de bouton se trouve dans l’exemple d’application Android pour appeler la méthode décrite ci-dessus :
@@ -153,7 +152,6 @@ Remarques :
 - Le code attend la variable sizeTask.  *Il* s’agit de l’emplacement où la méthode est suspendue et le contrôle est retourné au code appelant jusqu’à ce que la tâche asynchrone se termine sur son propre thread.
 - L’exécution ne s’interrompt *pas* lorsque la tâche est créée sur la première ligne de la méthode, malgré la tâche en cours de création. Le mot clé await désigne l’emplacement où l’exécution est suspendue.
 - Lorsque la tâche asynchrone se termine, intresult est défini et l’exécution se poursuit sur le thread d’origine, à partir de la ligne await.
-
 
 ### <a name="calling-an-async-method-2"></a>Appel d’une méthode Async 2
 
@@ -185,14 +183,11 @@ Quelques points importants :
 - Le code `await` s sur la `DownloadHomepage` méthode directement sur une assignation à une variable ( `intResult` ) contrairement à l’exemple précédent où nous avons utilisé `Task<int>` une variable intermédiaire pour référencer la tâche.  *Il* s’agit de l’emplacement où le contrôle est retourné à l’appelant jusqu’à ce que la méthode asynchrone soit terminée sur un autre thread.
 - Quand la méthode asynchrone se termine et retourne, l’exécution reprend à `await` , ce qui signifie que le résultat de l’entier est retourné, puis restitué dans un widget d’interface utilisateur.
 
-
 ## <a name="summary"></a>Récapitulatif
 
 L’utilisation de Async et await simplifie grandement le code requis pour générer des opérations de longue durée sur les threads d’arrière-plan sans bloquer le thread principal. Ils facilitent également l’accès aux résultats lorsque la tâche est terminée.
 
 Ce document a donné une vue d’ensemble des nouveaux mots clés de langage et des exemples pour Xamarin. iOS et Xamarin. Android.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

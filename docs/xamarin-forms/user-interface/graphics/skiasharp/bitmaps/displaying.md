@@ -7,12 +7,12 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 5235f00a28a047260a91cb708e26e262cafbad07
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9955b68346c74435a3a141c69d02e1bec5856bd3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200232"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759513"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>Afficher des bitmaps SkiaSharp
 
@@ -73,7 +73,7 @@ catch
 
 Notez que le `Stream` objet obtenu à partir de `GetStreamAsync` est copié dans un `MemoryStream`. Android n’autorise pas la `Stream` de `HttpClient` à traiter par le thread principal, sauf dans les méthodes asynchrones. 
 
-Le [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) effectue beaucoup de travail: L' `Stream` objet qui lui est passé référence un bloc de mémoire contenant l’intégralité d’une bitmap dans l’un des formats de fichier bitmap courants, généralement JPEG, png ou gif. Le `Decode` méthode doit déterminer le format et puis décoder le fichier bitmap au format de bitmap internes de SkiaSharp.
+Le [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) effectue beaucoup de travail : L' `Stream` objet qui lui est passé référence un bloc de mémoire contenant l’intégralité d’une bitmap dans l’un des formats de fichier bitmap courants, généralement JPEG, png ou gif. Le `Decode` méthode doit déterminer le format et puis décoder le fichier bitmap au format de bitmap internes de SkiaSharp.
 
 Après votre code appelle `SKBitmap.Decode`, probablement invalidera la `CanvasView` afin que le `PaintSurface` gestionnaire peut afficher l’image bitmap qui vient d’être chargé.
 
@@ -667,4 +667,3 @@ Cette source de rectangle isole la tête de la monkey, comme indiqué dans ces c
 
 - [API de SkiaSharp](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-

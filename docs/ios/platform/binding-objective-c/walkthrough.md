@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cf22f070864492e14e1865c1cbbf8cf32e0df29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285764"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753913"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Procédure pas à pas : liaison d’une bibliothèque Objective-C iOS
 
@@ -56,15 +56,11 @@ Cet article suppose que vous êtes familiarisé avec Xcode et le langage Objecti
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-
 Comme indiqué ci-dessus, nous allons utiliser les outils en ligne de `make` commande `lipo`Xcode (en particulier et) dans cette procédure pas à pas. La `make` commande est un utilitaire UNIX très courant qui automatise la compilation des programmes et des bibliothèques exécutables à l’aide d’un _Makefile_ qui spécifie la façon dont le programme doit être généré. La `lipo` commande est un utilitaire de ligne de commande OS X permettant de créer des fichiers à plusieurs architectures `.a` . elle combine plusieurs fichiers dans un seul fichier qui peut être utilisé par toutes les architectures matérielles.
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 Comme indiqué ci-dessus, nous allons utiliser les outils en ligne de commande XCode sur l’hôte `make` de `lipo` **Build Mac** (et plus particulièrement) dans cette procédure pas à pas. La `make` commande est un utilitaire UNIX très courant qui automatise la compilation des programmes et des bibliothèques exécutables à l’aide d’un _Makefile_ qui spécifie comment générer le programme. La `lipo` commande est un utilitaire de ligne de commande OS X permettant de créer des fichiers à plusieurs architectures `.a` . elle combine plusieurs fichiers dans un seul fichier qui peut être utilisé par toutes les architectures matérielles.
-
 
 -----
 
@@ -272,9 +268,7 @@ La solution est créée et deux fichiers par défaut sont inclus :
 
 ![](walkthrough-images/bind03.png "Structure de la solution dans le Explorateur de solutions")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. Démarrez Visual Studio.
 
@@ -336,7 +330,6 @@ Pour ajouter la bibliothèque, procédez comme suit :
 
 Quand le fichier **. a** est ajouté au projet, Xamarin. iOS définit automatiquement l’action de **génération** du fichier sur **ObjcBindingNativeLibrary**et crée un fichier spécial appelé `libInfColorPickerSDK.linkwith.cs`.
 
-
 Ce fichier contient l' `LinkWith` attribut qui indique à Xamarin. iOS comment gérer la bibliothèque statique que nous venons d’ajouter. Le contenu de ce fichier est illustré dans l’extrait de code suivant :
 
 ```csharp
@@ -347,7 +340,6 @@ using ObjCRuntime;
 
 L' `LinkWith` attribut identifie la bibliothèque statique pour le projet et certains indicateurs de l’éditeur de liens importants.
 
-
 Nous devons ensuite créer les définitions d’API pour le projet InfColorPicker. Dans le cadre de cette procédure pas à pas, nous allons utiliser objective Sharp pour générer le fichier **ApiDefinition.cs**.
 
 <a name="Using_Objective_Sharpie"/>
@@ -356,15 +348,11 @@ Nous devons ensuite créer les définitions d’API pour le projet InfColorPicke
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-
 La finesse d’objectif est un outil en ligne de commande (fourni par Xamarin) qui peut aider à créer les définitions requises pour lier une bibliothèque objective- C#C tierce à. Dans cette section, nous allons utiliser objective Sharp pour créer le **ApiDefinition.cs** initial pour le projet InfColorPicker.
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 La finesse d’objectif est un outil en ligne de commande (fourni par Xamarin) qui peut aider à créer les définitions requises pour lier une bibliothèque objective- C#C tierce à. Dans cette section, nous allons utiliser objective Sharp sur notre **hôte de build Mac** pour créer le **ApiDefinition.cs** initial pour le projet InfColorPicker.
-
 
 -----
 
@@ -466,17 +454,13 @@ Les fichiers **InfColorPicker.enums.cs** et **InfColorPicker.cs** seront créés
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-
 Ouvrez ces deux fichiers dans le projet de liaison que nous avons créé ci-dessus. Copiez le contenu du fichier **InfColorPicker.cs** et collez-le dans le fichier **ApiDefinition.cs** , en `namespace ...` remplaçant le bloc de code existant par le contenu du fichier **InfColorPicker.cs** (en laissant les `using` instructions intact) :
 
 ![](walkthrough-images/os07.png "Fichier InfColorPickerControllerDelegate")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 Ouvrez ces deux fichiers dans le projet de liaison que nous avons créé ci-dessus. Copiez le contenu du fichier **InfColorPicker.cs** (à partir de l' **hôte de build Mac**) et collez-le dans le fichier `namespace ...` **ApiDefinition.cs** , en remplaçant le bloc de code existant par le contenu du fichier **InfColorPicker.cs** ( laisser les `using` instructions intactes).
-
 
 -----
 
@@ -503,17 +487,13 @@ Vous pouvez également constater que objective Sharp a annoté la liaison avec d
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-
 À ce stade, notre projet de liaison doit être terminé et prêt à être généré. Nous allons créer notre projet de liaison et nous assurer que nous sommes terminés sans erreur :
 
 [Générez le projet de liaison et assurez-vous qu’il n’y a pas d’erreurs](walkthrough-images/os12.png)
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 À ce stade, notre projet de liaison doit être terminé et prêt à être généré. Nous allons créer notre projet de liaison et nous assurer que nous sommes terminés sans erreurs.
-
 
 -----
 
@@ -702,7 +682,6 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
 ```
 
 **Mettez à jour ViewDidLoad** -nous `ViewDidLoad` devons changer afin qu’il utilise le gestionnaire d’événements que nous venons de créer. Modifiez `ViewController` et modifiez `ViewDidLoad` pour ressembler à l’extrait de code suivant :
-
 
 ```csharp
 public override void ViewDidLoad ()

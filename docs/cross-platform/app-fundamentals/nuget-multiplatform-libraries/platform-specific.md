@@ -6,12 +6,12 @@ ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: d3f756b1a551c7b6bcbe48129235d537312edff6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73f44acad3e30e4301a69e5f2422cd4dd1a3dbf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282149"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766569"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>Création de projets de bibliothèque spécifiques à la plateforme pour NuGet
 
@@ -55,7 +55,6 @@ Plusieurs assemblys sont créés et générés dans un seul package NuGet. Les n
 
     ![](platform-specific-images/create-nuget-package.png "Le fichier de package NuGet sera enregistré dans le dossier bin debug ou Release, en fonction de la configuration")
 
-
 ## <a name="verifying-the-output"></a>Vérification de la sortie
 
 Les packages NuGet sont également des fichiers ZIP. il est donc possible d’inspecter la structure interne du package généré.
@@ -63,7 +62,6 @@ Les packages NuGet sont également des fichiers ZIP. il est donc possible d’in
 Cette capture d’écran montre le contenu d’un NuGet spécifique à la plateforme qui prend en charge iOS et Android, et a deux assemblys de référence sélectionnés :
 
 ![](platform-specific-images/nuget-output.png "Fichiers contenus dans le package NuGet")
-
 
 ## <a name="related-links"></a>Liens associés
 

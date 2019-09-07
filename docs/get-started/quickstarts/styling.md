@@ -9,18 +9,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: e26a71ad72b557a27841bfee1d26001126e2a2a2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654665"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756758"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Styliser une application Xamarin. Forms multiplateforme
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
-Dans ce guide de démarrage rapide, vous allez apprendre à:
+Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 - Styliser une application Xamarin. Forms à l’aide de styles XAML.
 
@@ -39,7 +39,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
 1. Lancez Visual Studio et ouvrez la solution notes.
 
-2. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **app. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+2. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **app. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -81,7 +81,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
     Enregistrez les modifications apportées à **app. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
 
-3. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+3. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -120,7 +120,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
     Enregistrez les modifications apportées à **NotesPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
 
-4. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NoteEntryPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+4. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NoteEntryPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -180,7 +180,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
 1. Lancez Visual Studio pour Mac et ouvrez le projet notes.
 
-2. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **app. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+2. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **app. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -222,7 +222,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
     Enregistrez les modifications apportées à **app. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-3. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+3. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
     Enregistrez les modifications apportées à **NotesPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-4. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NoteEntryPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+4. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NoteEntryPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -316,10 +316,9 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
 ::: zone-end
 
-
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce guide de démarrage rapide, vous avez appris à:
+Dans ce guide de démarrage rapide, vous avez appris à :
 
 - Styliser une application Xamarin. Forms à l’aide de styles XAML.
 

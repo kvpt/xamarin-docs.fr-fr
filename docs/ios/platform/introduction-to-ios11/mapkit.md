@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: c194f2c9f8ea974bf3d6a8798f8a12e246c7d75b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cef87d68c3b87697ee1f18fc85d185c1cc6d1b9a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286694"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752461"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>Nouvelles fonctionnalités de MapKit sur iOS 11
 
@@ -252,7 +252,6 @@ button.Layer.CornerRadius = 5;
 button.TranslatesAutoresizingMaskIntoConstraints = false;
 View.AddSubview(button); // constraints omitted for simplicity
 ```
-
 
 ## <a name="related-links"></a>Liens associés
 

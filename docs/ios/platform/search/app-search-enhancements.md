@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 2a2475bcc5eea48584c4aa128aafeeb326e41f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c3ea0e190bc75d771adf587f5b1bcf27d906f02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280369"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769530"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Améliorations de la recherche d’applications dans Xamarin. iOS
 
@@ -115,8 +115,6 @@ Pour plus d’informations, consultez la documentation relative à l' [intégrat
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les améliorations apportées par Apple à la recherche d’applications dans iOS 10 et comment les implémenter dans Xamarin. iOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

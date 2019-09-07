@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 638840bafd43961cdce6ebe0fa2fb6cbe8b33e16
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 960be485f6997ed8c861d47181fa89397cff9c0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291519"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753149"
 ---
 # <a name="eventkit-in-xamarinios"></a>EventKit dans Xamarin. iOS
 
@@ -24,7 +24,6 @@ Dans ce guide, nous allons aborder les éléments suivants :
 
 - **Notions de base de EventKit** : cette rubrique présente les éléments fondamentaux de EventKit via les principales classes et fournit une compréhension de leur utilisation. Cette section est nécessaire pour la lecture avant la partie suivante du document. 
 - **Tâches courantes** : la section tâches courantes est destinée à servir de référence rapide sur la façon d’effectuer des opérations courantes, telles que ; énumération des calendriers, création, enregistrement et récupération des événements de calendrier et des rappels, et utilisation des contrôleurs intégrés pour la création et la modification d’événements de calendrier. Cette section n’a pas besoin d’être lue avant-arrière, car elle est destinée à être une référence pour des tâches particulières. 
-
 
 Toutes les tâches de ce guide sont disponibles dans l’exemple d’application auxiliaire :
 
@@ -376,7 +375,6 @@ App.Current.EventStore.FetchReminders (
 ## <a name="summary"></a>Récapitulatif
 
 Ce document a fourni une vue d’ensemble des éléments importants de l’infrastructure EventKit et un certain nombre de tâches les plus courantes. Toutefois, l’infrastructure EventKit est très volumineuse et puissante, et comprend des fonctionnalités qui n’ont pas été introduites ici, telles que les mises à jour par lot, la configuration des alarmes, la configuration de la récurrence sur les événements, l’inscription et l’écoute des modifications sur la base de données du calendrier, définir des limites de géolimites, etc.  Pour plus d’informations, consultez le [Guide de programmation du calendrier et des rappels](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)d’Apple.
-
 
 ## <a name="related-links"></a>Liens associés
 

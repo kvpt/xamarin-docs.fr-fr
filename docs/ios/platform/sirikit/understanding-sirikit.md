@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 797bc4199b79944c7b2b6e9c939e2584bb21246a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292564"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769468"
 ---
 # <a name="understanding-sirikit-concepts"></a>Présentation des concepts de SiriKit
 
 _Cet article aborde les concepts clés qui seront nécessaires à l’utilisation de SiriKit dans une application Xamarin. iOS._
-
 
 Nouveauté d’iOS 10, SiriKit permet à une application Xamarin. iOS de fournir des services qui sont accessibles à l’utilisateur à l’aide de Siri et de l’application Maps sur un appareil iOS. Cette fonctionnalité est fournie dans une ou plusieurs extensions d’application à l’aide des nouvelles infrastructures d' **interface utilisateur** **intentions** et intentions.
 
@@ -119,7 +118,7 @@ L’application peut participer à la conversation de l’utilisateur avec Siri 
 2. **Logique d’application** : il s’agit des actions et des réponses que l’application prendra en fonction des intentions fournies.
 3. **Interface utilisateur** : il s’agit de l’interface utilisateur personnalisée facultative dans laquelle l’application peut fournir ses réponses.
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
 Compte tenu des informations ci-dessus, examinez comment la conversation suivante interagira avec l’application MonkeyChat :
 
@@ -461,9 +460,6 @@ Efforcez-vous que les conversations avec Siri (pour le compte de l’application
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les concepts clés nécessaires à l’utilisation de SiriKit et montre qu’il peut interagir avec les applications Xamarin. iOS pour fournir des services qui sont accessibles à l’utilisateur à l’aide de Siri et de l’application Maps sur un appareil iOS.
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

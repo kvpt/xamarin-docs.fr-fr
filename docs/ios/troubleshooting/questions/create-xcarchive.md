@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 6d35827b00a4ccc9bbe3e71444536425e4e1c3b1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1b078b8cb4d1129127997e9fabdd0b128e09c90f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288121"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769364"
 ---
 # <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>Est-il possible de créer une archive. xcarchive à partir de Visual Studio ?
 
@@ -39,4 +39,3 @@ Toutefois, il est intéressant de noter que vous n’avez `.xcarchive` pas besoi
 En fait, vous pouvez même simplement compresser `.app` l’offre groupée (signée avec un profil de distribution App Store) et soumettre `.zip` ce fichier à l’App Store.
 
 Dans les deux cas, vous pouvez utiliser l’application de chargeur d’application pour soumettre l’application (plutôt que Xcode).
-

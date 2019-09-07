@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 367f0b6a44482762f8609eb959e154c942ff14f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291818"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768489"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>Génération de code. XIB dans Xamarin. iOS
 
@@ -72,7 +72,6 @@ Les classes de concepteur contiennent des méthodes partielles correspondant à 
 
 1. Si vous tapez `partial` dans le corps de classe de la partie non de la classe de concepteur, Visual Studio pour Mac offrira la saisie semi-automatique des signatures de toutes les méthodes partielles non implémentées.
 2. Les signatures de méthode partielles ont un attribut appliqué qui les expose au monde objective-C, afin qu’ils puissent être gérés en tant qu’action correspondante.
-
 
 Si vous le souhaitez, vous pouvez ignorer la méthode partielle et implémenter l’action en appliquant l’attribut à une autre méthode, ou le laisser passer à une classe de base.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 176f41d4b7349af2cf7cc49de8ba0789ad2f8c11
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: HT
+ms.openlocfilehash: d62ba6b025b2fe9865df8279a5e98eba254bb5a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772045"
 ---
 # <a name="introduction-to-behaviors"></a>Introduction aux comportements
 
@@ -33,8 +33,6 @@ Xamarin.Forms prend en charge deux styles différents de comportements :
 - **Comportements attachés** – `static` classes avec une ou plusieurs propriétés attachées. Pour plus d’informations sur les comportements attachés, consultez [Comportements attachés](~/xamarin-forms/app-fundamentals/behaviors/attached.md).
 
 Ce guide se concentre sur les comportements Xamarin.Forms, car ils constituent l’approche recommandée pour la construction de comportements.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

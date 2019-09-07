@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290614"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757691"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Inscription des applications Xamarin. iOS pour une exécution en arrière-plan
 
@@ -31,7 +31,6 @@ Les applications inscrites peuvent appartenir à plusieurs catégories :
 - **Emplacement** : les applications qui utilisent des données GPS ou d’emplacement réseau peuvent envoyer et recevoir des mises à jour d’emplacement en arrière-plan.
 - **Fetch (iOS 7 +)** : une application inscrite pour les privilèges d’extraction en arrière-plan peut vérifier un nouveau contenu par un fournisseur à intervalles réguliers, en présentant à l’utilisateur un contenu mis à jour lorsqu’il retourne à l’application.
 - **Notifications distantes (iOS 7 +)** : les applications peuvent s’inscrire pour recevoir des notifications d’un fournisseur et utiliser la notification pour lancer une mise à jour avant que l’utilisateur n’ouvre l’application. Les notifications peuvent se présenter sous la forme de notifications push, ou choisir de réveiller l’application en mode silencieux.
-
 
 Les applications peuvent être inscrites en définissant la propriété **modes d’arrière-plan requis** dans le fichier *info. plist*de l’application. Une application peut s’inscrire dans autant de catégories que nécessaire :
 

@@ -1,24 +1,24 @@
 ---
-title: Pour les applications de Console à l’aide de liaisons de Xamarin.Mac
-description: Créer une application console sans périphérique de contrôle à l’aide de Xamarin.Mac pour accéder aux API de macOS native.
+title: Utilisation de liaisons Xamarin. Mac pour les applications console
+description: Créez une application console sans périphérique à l’aide de Xamarin. Mac pour accéder aux API macOS natives.
 ms.prod: xamarin
 ms.assetid: 9E52B4CC-F530-4B3E-984A-7F5719A6D528
 ms.technology: xamarin-mac
 author: migueldeicaza
 ms.author: miguel
 ms.date: 07/27/2018
-ms.openlocfilehash: 135ef06cd044235023c3acc970c8e7a33f144b47
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a38543d575f655a3b1b70ff94eece7fef1bf2d40
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61378274"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769897"
 ---
-# <a name="xamarinmac-bindings-in-console-apps"></a>Liaisons de Xamarin.Mac dans les applications de console
+# <a name="xamarinmac-bindings-in-console-apps"></a>Liaisons Xamarin. Mac dans les applications console
 
-Il existe certains scénarios où vous souhaitez utiliser certaines des API natives Apple dans c# pour créer une application sans affichage &ndash; qui n’a pas d’interface utilisateur &ndash; à l’aide de c#.
+Dans certains scénarios, vous pouvez utiliser certaines API natives Apple C# dans pour générer une application &ndash; headless sans interface &ndash; utilisateur qui utilise. C#
 
-Les modèles de projet pour les applications Mac incluent un appel à `NSApplication.Init()` suivie d’un appel à `NSApplication.Main(args)`, il se présente généralement comme suit :
+Les modèles de projet pour les applications Mac incluent un `NSApplication.Init()` appel à suivi d’un `NSApplication.Main(args)`appel à, ce qui se présente généralement comme suit :
 
 ```csharp
 static class MainClass {
@@ -30,45 +30,45 @@ static class MainClass {
 }
 ```
 
-L’appel à `Init` prépare le runtime de Xamarin.Mac, l’appel à `Main(args)` démarre la boucle principale d’application Cocoa, qui prépare l’application pour recevoir des événements de clavier et souris et afficher la fenêtre principale de votre application.   L’appel à `Main` tente également de localiser les ressources de Cocoa, préparer une fenêtre de niveau supérieur et attend le programme doit faire partie d’une offre groupée d’applications (programmes distribués dans un répertoire portant le `.app` extension et une mise en page très spécifique).
+L’appel à `Init` prépare le runtime Xamarin. Mac, l’appel à `Main(args)` démarre la boucle principale de l’application cacao, qui prépare l’application à recevoir des événements de clavier et de souris et à afficher la fenêtre principale de votre application.   L’appel à `Main` tente également de localiser les ressources de cacao, de préparer une fenêtre de niveau et s’attend à ce que le programme fasse partie d’un lot d’applications (programmes distribués `.app` dans un répertoire avec l’extension et une disposition très spécifique).
 
-Applications sans périphérique de contrôle ne nécessitent pas d’un utilisateur de l’interface et n’avez pas besoin de les exécuter en tant que partie d’une offre groupée d’application.
+Les applications headless n’ont pas besoin d’une interface utilisateur et n’ont pas besoin de s’exécuter dans le cadre d’un bundle d’applications.
 
-## <a name="creating-the-console-app"></a>Création de l’application de console
+## <a name="creating-the-console-app"></a>Création de l’application console
 
-Il est donc préférable de commencer avec un type de projet de Console .NET normal.
+Il est donc préférable de commencer par un type de projet de console .NET normal.
 
 Vous devez effectuer quelques opérations :
 
-- Créer un projet vide.
-- Référence de la bibliothèque de Xamarin.Mac.dll.
-- Mettre la dépendance non managée à votre projet.
+- Créez un projet vide.
+- Référencez la bibliothèque Xamarin. Mac. dll.
+- Ajoutez la dépendance non managée à votre projet.
 
 Ces étapes sont expliquées plus en détail ci-dessous :
 
-### <a name="create-an-empty-console-project"></a>Créer un projet de Console vide
+### <a name="create-an-empty-console-project"></a>Créer un projet de console vide
 
-Créer un nouveau projet de Console .NET, assurez-vous qu’il s’agit de .NET et non pas .NET Core, en tant que Xamarin.Mac.dll ne s’exécute pas sous le runtime .NET Core, elle ne s’exécute avec le runtime Mono.
+Créez un projet de console .NET, assurez-vous qu’il s’agit de .NET et non de .NET Core, car Xamarin. Mac. dll ne s’exécute pas sous le Runtime .NET Core, il s’exécute uniquement avec le runtime mono.
 
-### <a name="reference-the-xamarinmac-library"></a>Référence de la bibliothèque de Xamarin.Mac
+### <a name="reference-the-xamarinmac-library"></a>Référencer la bibliothèque Xamarin. Mac
 
-Pour compiler votre code, vous pouvez référencer le `Xamarin.Mac.dll` assembly à partir de ce répertoire : `/Library/Frameworks/Xamarin.Mac.framework/Versions/Current//lib/x86_64/full`
+Pour compiler votre code, vous pouvez référencer l' `Xamarin.Mac.dll` assembly à partir de ce répertoire :`/Library/Frameworks/Xamarin.Mac.framework/Versions/Current//lib/x86_64/full`
 
-Pour ce faire, accédez aux références du projet, sélectionnez le **Assembly .NET** onglet, puis cliquez sur le **Parcourir** pour localiser le fichier sur le système de fichiers.  Naviguez jusqu'à l’emplacement ci-dessus, puis sélectionnez le **Xamarin.Mac.dll** à partir de ce répertoire.
+Pour ce faire, accédez aux références du projet, sélectionnez l’onglet **assembly .net** , puis cliquez sur le bouton **Parcourir** pour localiser le fichier sur le système de fichiers.  Accédez au chemin d’accès ci-dessus, puis sélectionnez **Xamarin. Mac. dll** dans ce répertoire.
 
-Cela vous donnera accès aux API Cocoa au moment de la compilation.   À ce stade, vous pouvez ajouter `using AppKit` vers le haut de votre fichier et appelez le `NSApplication.Init()` (méthode).   Il existe uniquement une étape supplémentaire avant de pouvoir exécuter votre application.
+Vous obtiendrez ainsi l’accès aux API de cacao au moment de la compilation.   À ce stade, vous pouvez ajouter `using AppKit` au début de votre fichier et appeler la `NSApplication.Init()` méthode.   Il n’y a qu’une seule étape supplémentaire avant de pouvoir exécuter votre application.
 
-### <a name="bring-the-unmanaged-support-library-into-your-project"></a>Importer la bibliothèque de prise en charge non gérés dans votre projet
+### <a name="bring-the-unmanaged-support-library-into-your-project"></a>Placer la bibliothèque de prise en charge non managée dans votre projet
 
-Avant d’exécute votre application, vous devez mettre le `Xamarin.Mac` bibliothèque de prise en charge dans votre projet.   Pour ce faire, ajoutez un nouveau fichier à votre projet (dans les options du projet, sélectionnez **ajouter**, puis **ajouter un fichier existant**) et accédez à ce répertoire :
+Avant que votre application ne s’exécute, vous devez placer `Xamarin.Mac` la bibliothèque de prise en charge dans votre projet.   Pour ce faire, ajoutez un nouveau fichier à votre projet (dans options du projet, sélectionnez **Ajouter**, puis **Ajoutez le fichier existant**) et accédez à ce répertoire :
 
 `/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib`
 
-Ici, sélectionnez le fichier **libxammac.dylib**.   Vous aurez un choix de copie, de liaison ou de déplacement.   Personnellement, je préfère liaison, mais copie fonctionne aussi bien.    Vous devez sélectionner le fichier et dans le panneau de la propriété (sélectionnez **vue > panneaux > Propriétés** si le bloc de propriété n’est pas visible), accédez à la **générer** section et définissez le **copier dans la sortie Répertoire** à **Copier si plus récent**.
+Ici, sélectionnez le fichier **libxammac. dylib**.   Vous êtes invité à copier, lier ou déplacer.   Je préfère que la liaison, mais la copie fonctionne également.    Vous devez ensuite sélectionner le fichier, puis, dans le panneau des propriétés (sélectionnez **afficher > propriétés** de remplissage > si le panneau des propriétés n’est pas visible), accédez à la section **générer** et définissez le paramètre **copier dans le répertoire de sortie** sur **copier si plus récent**.
 
-Vous pouvez maintenant exécuter votre application Xamarin.Mac.
+Vous pouvez maintenant exécuter votre application Xamarin. Mac.
 
-Le résultat dans le répertoire bin doit ressembler à ceci :
+Le résultat de votre répertoire bin ressemble à ce qui suit :
 
 ```
 Xamarin.Mac.dll
@@ -78,13 +78,13 @@ consoleapp.pdb
 libxammac.dylib
 ```
 
-Pour exécuter cette application, vous devez tous les fichiers dans le même répertoire.
+Pour exécuter cette application, vous aurez besoin de tous ces fichiers dans le même répertoire.
 
 ## <a name="building-a-standalone-application-for-distribution"></a>Création d’une application autonome pour la distribution
 
-Vous pouvez souhaiter distribuer un seul exécutable à vos utilisateurs.  Pour ce faire, vous pouvez utiliser le `mkbundle` outil pour activer les différents fichiers dans un fichier exécutable autonome.
+Vous souhaiterez peut-être distribuer un seul exécutable à vos utilisateurs.  Pour ce faire, vous pouvez utiliser l' `mkbundle` outil pour convertir les différents fichiers en un fichier exécutable autonome.
 
-Tout d’abord, assurez-vous que votre application se compile et s’exécute.   Une fois que vous êtes satisfait des résultats, vous pouvez exécuter la commande suivante à partir de la ligne de commande :
+Tout d’abord, assurez-vous que votre application est compilée et exécutée.   Une fois que vous êtes satisfait des résultats, vous pouvez exécuter la commande suivante à partir de la ligne de commande :
 
 ```
 $ mkbundle --simple -o /tmp/consoleapp consoleapp.exe --library libxammac.dylib --config /Library/Frameworks/Mono.framework/Versions/Current/etc/mono/config --machine-config /Library/Frameworks/Mono.framework/Versions/Current//etc/mono/4.5/machine.config
@@ -92,13 +92,13 @@ $ mkbundle --simple -o /tmp/consoleapp consoleapp.exe --library libxammac.dylib 
 $ _
 ```
 
-Dans l’appel de ligne de commande ci-dessus, l’option `-o` est utilisé pour spécifier la sortie générée, dans ce cas, nous avons transmis `/tmp/consoleapp`.   Il s’agit désormais une application autonome que vous pouvez distribuer et n’a aucune dépendance externe sur Mono ou Xamarin.Mac, il est un fichier exécutable autonome entièrement.
+Dans l’appel de ligne de commande ci-dessus `-o` , l’option est utilisée pour spécifier la sortie générée, dans le cas `/tmp/consoleapp`présent, nous avons réussi.   Il s’agit désormais d’une application autonome que vous pouvez distribuer et qui n’a pas de dépendances externes sur mono ou Xamarin. Mac, il s’agit d’un exécutable entièrement autonome.
 
-La ligne de commande spécifiée manuellement le **machine.config** fichier à utiliser et un fichier de configuration de mappage de bibliothèque de l’échelle du système.   Ils ne sont pas nécessaires pour toutes les applications, mais il est utile de les regrouper, car ils sont utilisés lorsque vous utilisez d’autres fonctionnalités de .NET
+La ligne de commande a spécifié manuellement le fichier **machine. config** à utiliser, ainsi qu’un fichier de configuration de mappage de bibliothèque à l’ensemble du système.   Ils ne sont pas nécessaires pour toutes les applications, mais il est pratique de les regrouper, car ils sont utilisés lorsque vous utilisez plus de fonctionnalités de .NET
 
-## <a name="project-less-builds"></a>Builds de projet sans
+## <a name="project-less-builds"></a>Builds sans projet
 
-Vous n’avez pas besoin d’un projet complet pour créer une application Xamarin.Mac autonome, vous pouvez également utiliser des makefiles Unix simples pour faire leur travail.   L’exemple suivant montre comment vous pouvez configurer un makefile pour une application de ligne de commande simple :
+Vous n’avez pas besoin d’un projet complet pour créer une application Xamarin. Mac autonome. vous pouvez également utiliser des makefiles UNIX simples pour faire le travail.   L’exemple suivant montre comment vous pouvez configurer un makefile pour une application en ligne de commande simple :
 
 ```
 XAMMAC_PATH=/Library/Frameworks/Xamarin.Mac.framework/Versions/Current//lib/x86_64/full/
@@ -113,13 +113,12 @@ consoelapp.exe: consoleapp.cs Makefile
 run: consoleapp.exe
     MONO_PATH=$(XAMMAC_PATH) DYLD_LIBRARY_PATH=$(DYLD) mono --debug consoleapp.exe $(COMMAND)
 
-
 bundle: consoleapp.exe
     mkbundle --simple consoleapp.exe -o ncsharp -L $(XAMMAC_PATH) --library $(DYLD)/libxammac.dylib --config $(MONODIR)/config --machine-config $(MONODIR)/4.5/machine.config
 ```
 
-La méthode ci-dessus `Makefile` fournit trois cibles :
+Les éléments `Makefile` ci-dessus fournissent trois cibles :
 
-- `make` génère le programme
-- `make run` génération et l’exécution du programme dans le répertoire actif
-- `make bundle` Crée un fichier exécutable autonome
+- `make`génère le programme
+- `make run`générera et exécutera le programme dans le répertoire actif
+- `make bundle`va créer un exécutable autonome

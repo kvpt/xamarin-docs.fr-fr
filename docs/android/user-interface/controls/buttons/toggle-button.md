@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 91003f9a23c667b38028a9852b28dba656ba13db
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 56372bb643cab545529d6a4a89c804471f3344bc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510337"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762447"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
-Dans cette section, vous allez créer un bouton utilisé spécifiquement pour basculer entre deux États, à l' [`ToggleButton`](xref:Android.Widget.ToggleButton) aide du widget. Ce widget constitue une excellente alternative aux cases d’option si vous avez deux États simples qui s’excluent mutuellement («on» et «OFF», par exemple). Android 4,0 (API de niveau 14) a introduit une alternative au bouton bascule appelé a [`Switch`](xref:Android.Widget.Switch).
+Dans cette section, vous allez créer un bouton utilisé spécifiquement pour basculer entre deux États, à l' [`ToggleButton`](xref:Android.Widget.ToggleButton) aide du widget. Ce widget constitue une excellente alternative aux cases d’option si vous avez deux États simples qui s’excluent mutuellement (« on » et « OFF », par exemple). Android 4,0 (API de niveau 14) a introduit une alternative au bouton bascule appelé a [`Switch`](xref:Android.Widget.Switch).
 
 Un exemple de contrôle **ToggleButton** peut être affiché dans la paire d’images de gauche, tandis que la paire d’images de droite présente un exemple de **commutateur**:
 
@@ -23,7 +23,7 @@ Un exemple de contrôle **ToggleButton** peut être affiché dans la paire d’i
 
 Le contrôle utilisé par une application est une question de style. Les deux widgets sont fonctionnellement équivalents.
 
-Ouvrez le fichier Resources **/Layout/main. AXML** et [`ToggleButton`](xref:Android.Widget.ToggleButton) ajoutez l’élément ( [`LinearLayout`](xref:Android.Widget.LinearLayout)à l’intérieur du):
+Ouvrez le fichier **Resources/layout/main. AXML** et [`ToggleButton`](xref:Android.Widget.ToggleButton) ajoutez l’élément ( [`LinearLayout`](xref:Android.Widget.LinearLayout)à l’intérieur du) :
 
 Pour effectuer une opération lorsque l’État est modifié, ajoutez le code suivant à la fin de la[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 méthode
@@ -46,12 +46,10 @@ Notez que le [`ToggleButton`](xref:Android.Widget.ToggleButton) gère sa propre 
 
 Exécutez l'application.
 
-
 > [!TIP]
 > Si vous avez besoin de modifier l’état vous-même (par exemple, [`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)lors du chargement d’un enregistrement), utilisez l'[`Checked`](xref:Android.Widget.CompoundButton.Checked)
 > méthode setter de propriété ou[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > .
-
 
 ## <a name="related-links"></a>Liens associés
 

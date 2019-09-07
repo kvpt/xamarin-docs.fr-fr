@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ee2c54f2369682571520370e09d6d39c2cd86fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 31c3c629686d6c7be03b95d7bfe0740599228bbd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290592"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769399"
 ---
 # <a name="push-notifications-in-ios"></a>Notifications push dans iOS
 
@@ -35,7 +35,6 @@ La notification push doit respecter les règles suivantes qui sont dictées par 
 - **limite de messages de 256 octets** : la taille de message entière de la notification ne doit pas dépasser 256 octets.
 - **Aucune confirmation de réception** -APNs ne fournit pas à l’expéditeur une notification indiquant qu’un message l’a envoyé au destinataire prévu. Si l’appareil est inaccessible et que plusieurs notifications séquentielles sont envoyées, toutes les notifications, à l’exception de la plus récente, seront perdues. Seule la notification la plus récente sera remise à l’appareil.
 - **Chaque application requiert un certificat sécurisé : la** communication avec APNs doit être effectuée via le protocole SSL.
-
 
 ## <a name="creating-and-using-certificates"></a>Création et utilisation de certificats
 
@@ -174,7 +173,6 @@ En outre, une nouvelle `timestamp` clé de données JSON sera dans le corps de l
 ## <a name="summary"></a>Récapitulatif
 
 Cette section présente les concepts clés entourant les notifications push dans iOS. Il a expliqué le rôle du service Apple Push Notification Gateway (APNS). Il a ensuite abordé la création et l’utilisation des certificats de sécurité qui sont essentiels à APNS. Enfin, ce document s’est terminé par une discussion sur la façon dont les serveurs d’applications peuvent utiliser les *services de feedback* pour arrêter le suivi des jetons d’appareil arrivés à expiration.
-
 
 ## <a name="related-links"></a>Liens associés
 

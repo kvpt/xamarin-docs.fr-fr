@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 094f980922762ff33c19af6c9210e2e533bf5196
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ab39c79c59855c9f78184614176b1658ee0e29b2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651030"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772110"
 ---
 # <a name="attached-behaviors"></a>Comportements attachés
 
@@ -20,7 +20,7 @@ ms.locfileid: "68651030"
 
 _Les comportements attachés sont des classes avec une ou plusieurs propriétés attachées. Cet article montre comment créer et consommer des comportements attachés._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Les propriétés attachées constituent un type particulier de propriété liable. Elles sont définies dans une seule classe, mais attachées à d’autres objets. En XAML, elles sont reconnaissables car elles sont représentées sous forme d’attributs contenant un nom de classe et un nom de propriété séparés par un point.
 
@@ -128,7 +128,6 @@ Lors de l’exécution, la méthode `OnAttachBehaviorChanged` est exécutée qua
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer et consommer des comportements attachés. Les comportements attachés sont des classes `static` avec une ou plusieurs propriétés attachées.
-
 
 ## <a name="related-links"></a>Liens associés
 

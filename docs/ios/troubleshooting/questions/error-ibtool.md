@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 695410937e82b885e31827d02f5fefd138497523
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 39b522af5bdc3587e3d5aa1451ed4879c6af65f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290276"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769335"
 ---
 # <a name="ibtool-error-the-operation-couldnt-be-completed"></a>Erreur IBTool : Impossible d’effectuer l’opération.
 
@@ -63,4 +63,3 @@ Après cette modification, vous devrez mettre à jour la table de `.xib` montage
 ### <a name="next-steps"></a>Étapes suivantes
 
 Pour obtenir de l’aide, pour nous contacter ou, si le problème persiste même après l’utilisation des informations ci-dessus, consultez [les options de support disponibles pour Xamarin ?](~/cross-platform/troubleshooting/support-options.md) pour plus d’informations sur les options de contact, les suggestions et la façon de signaler un nouveau bogue si nécessaire. . 
-

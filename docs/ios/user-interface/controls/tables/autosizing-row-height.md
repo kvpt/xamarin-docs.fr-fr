@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 00c2284a12d17e0dcd5a89cb0c39c1064665c6d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03d79c93821737afb1f8e1946ebb3b6380d7a527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288445"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768434"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>Dimensionnement automatique de la hauteur de ligne dans Xamarin. iOS
 
@@ -108,7 +108,6 @@ Cette estimation ne doit pas nécessairement être exacte, juste une estimation 
 Avec ce code en place, lorsque l’application est exécutée, chaque ligne est réduite et agrandie en fonction de la hauteur de la dernière étiquette dans le prototype de cellule. Par exemple :
 
 [![](autosizing-row-height-images/table07.png "Exemple d’exécution de table")](autosizing-row-height-images/table07.png#lightbox)
-
 
 ## <a name="related-links"></a>Liens associés
 

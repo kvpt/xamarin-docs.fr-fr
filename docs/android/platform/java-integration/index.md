@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a9d239140cee9eb600414a1bfb0733c9af6488bc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524084"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761422"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Intégration de Java à Xamarin. Android
 
@@ -22,7 +22,7 @@ _L’écosystème Java comprend une collection diversifiée et immense de compos
 
 Compte tenu de l’étendue de l’écosystème Java, il est très probable que toutes les fonctionnalités requises pour une application Xamarin. Android aient déjà été codées en Java. Pour cette raison, il est attrayant d’essayer et de réutiliser ces bibliothèques existantes lors de la création d’une application Xamarin. Android.
 
-Il existe trois façons de réutiliser des bibliothèques Java dans une application Xamarin. Android: 
+Il existe trois façons de réutiliser des bibliothèques Java dans une application Xamarin. Android : 
 
 - **Créer une bibliothèque de liaisons Java** Avec cette technique, un projet Xamarin. Android est utilisé pour créer C# des wrappers autour des types Java. &ndash; Une application Xamarin. Android peut ensuite référencer C# les wrappers créés par ce projet, puis utiliser le `.jar` fichier. 
 
@@ -36,14 +36,11 @@ La première technique est une approche plus automatisée et déclarative de la 
 
 La deuxième technique, qui utilise JNI, fonctionne à un niveau nettement inférieur, mais peut offrir un contrôle et un accès plus précis aux méthodes Java qui ne seraient normalement pas accessibles par le biais d’une bibliothèque de liaisons Java. 
 
-La troisième technique est radicalement différente des deux précédentes: Portage du code de Java vers C#. Le portage du code d’un langage à un autre peut être un processus très fastidieux, mais il est possible de réduire ce travail à l’aide d’un outil appelé *net*. La netteté est un outil open source qui est un Java-C# to-Converter. 
-
-
+La troisième technique est radicalement différente des deux précédentes : Portage du code de Java vers C#. Le portage du code d’un langage à un autre peut être un processus très fastidieux, mais il est possible de réduire ce travail à l’aide d’un outil appelé *net*. La netteté est un outil open source qui est un Java-C# to-Converter. 
 
 ## <a name="summary"></a>Récapitulatif
 
 Ce document a fourni une vue d’ensemble des différentes façons dont les bibliothèques de Java peuvent être réutilisées dans une application Xamarin. Android. Il a introduit les concepts des liaisons et des wrappers pouvant être appelés et a abordé les options de Portage du code C#Java vers. 
-
 
 ## <a name="related-links"></a>Liens associés
 

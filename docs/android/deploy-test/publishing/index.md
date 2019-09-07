@@ -6,19 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b5f09413379de13aaf12e8113e8deb0f3c2bf0c3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525463"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753804"
 ---
 # <a name="publishing-an-application"></a>Publication d'une application
 
 Vous avez créé une superbe application et des personnes voudront maintenant l’utiliser. Cette section décrit les étapes de la distribution publique d’une application créée avec Xamarin.Android via des canaux comme les e-mails, un serveur web privé, Google Play ou Amazon Appstore pour Android.
 
-
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 La dernière étape du développement d’une application Xamarin.Android consiste à publier l’application. La publication est le processus de compilation d’une application Xamarin.Android afin qu’elle soit prête à être installée par les utilisateurs sur leurs appareils. Elle comprend deux tâches essentielles :
 
@@ -36,7 +35,6 @@ Comme le montre le diagramme ci-dessus, la préparation est identique quelle que
 - **Par e-mail** &ndash; les utilisateurs peuvent installer une application Xamarin.Android à partir de leur messagerie. L’application est installée lors de l’ouverture de la pièce jointe sur un appareil Android.
 - **Via une place de marché** &ndash; il existe différentes places de marché pour la distribution des applications, comme [Google Play](http://play.google.com/) ou [Amazon Appstore pour Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
 
-
 La méthode la plus courante pour publier une application consiste à passer par une place de marché connue car elle offre la plus large audience et le meilleur contrôle sur la distribution. Toutefois, cela demande un effort supplémentaire.
 
 Plusieurs canaux peuvent distribuer une application Xamarin.Android simultanément. Par exemple, une application peut être publiée sur Google Play et Amazon Appstore pour Android et être téléchargée à partir d’un serveur web.
@@ -51,7 +49,6 @@ Google Play est probablement la place de marché la plus complète et la plus po
 [![Capture d’écran de Google Play](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 Cette section montre comment charger l’application sur un App Store tel que Google Play, avec le contenu promotionnel approprié. Un vue d’ensemble conceptuelle des fichiers d’extension APK, ce qu’ils sont et comment ils fonctionnent, est proposée. Les services Google Licensing sont également décrits. Enfin, d’autres moyens de distribution sont présentés, notamment l’utilisation d’un serveur web HTTP, la distribution simple par e-mail et l’Amazon Appstore pour Android.
-
 
 ## <a name="related-links"></a>Liens associés
 

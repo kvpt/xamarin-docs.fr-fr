@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: d78363bf7d38f19a14f689c2825ea9c9934653e4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 022602c50386017b178672e20e3e352345feec0b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280251"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767205"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>Procédure pas à pas : Utilisation de Touch dans Xamarin. iOS
 
@@ -35,11 +35,9 @@ Suivez les instructions ci-dessous pour ajouter du code à la table de montage s
 
 Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez comme suit pour ajouter le code requis pour implémenter les événements tactiles :
 
-
 1. Ouvrez le projet **Touch_Start**. Exécutez d’abord le projet pour vérifier que tout est correct, puis appuyez sur le bouton d' **exemples tactiles** . Vous devez voir un écran similaire à ce qui suit (même si aucun des boutons ne fonctionne) :
 
     [![](ios-touch-walkthrough-images/image4.png "Exemple d’exécution d’application avec des boutons non fonctionnels")](ios-touch-walkthrough-images/image4.png#lightbox)
-
 
 1. Modifiez le fichier **TouchViewController.cs** et ajoutez les deux variables d’instance suivantes à la `TouchViewController`classe :
 
@@ -49,7 +47,6 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
     private bool touchStartedInside;
     #endregion
     ```
-
 
 1. Implémentez `TouchesBegan` la méthode, comme indiqué dans le code ci-dessous :
 
@@ -172,7 +169,6 @@ Dans cet exemple, nous allons présenter certaines des API tactiles. Procédez c
     [![](ios-touch-walkthrough-images/image4.png "Écran de démarrage de l’application")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "L’écran lorsque l’utilisateur fait glisser un bouton")](ios-touch-walkthrough-images/image5.png#lightbox)
- 
 
 <a name="Gesture_Recognizer_Samples" />
 
@@ -189,7 +185,6 @@ Si vous exécutez l' [exemple de code de départ](https://docs.microsoft.com/sam
  [![](ios-touch-walkthrough-images/image6.png "Cliquer sur le bouton exemples de module de reconnaissance de mouvement affiche cet écran")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 Suivez ces étapes pour implémenter des module de reconnaissance de mouvement :
-
 
 1. Modifiez le fichier **GestureViewController.cs** et ajoutez la variable d’instance suivante :
 
@@ -248,7 +243,6 @@ Notez que nous attribuons une cible au geste sous la forme de la méthode `Handl
 
     Le code ci-dessus vérifie tout d’abord l’état du module de reconnaissance de mouvement, puis déplace l’image autour de l’écran. Avec ce code en place, le contrôleur peut désormais prendre en charge le glissement d’une image à l’écran.
 
-
 1. Ajoutez un `UITapGestureRecognizer` qui modifiera l’image affichée dans DoubleTouchImage. Ajoutez la méthode suivante au `GestureViewController` contrôleur :
 
     ```csharp
@@ -304,13 +298,10 @@ Notez que nous attribuons une cible au geste sous la forme de la méthode `Handl
 
     Notez également que nous initialisant la valeur de `originalImageFrame`.
 
-
 1. Exécutez l’application et interagissez avec les deux images.
 La capture d’écran suivante est un exemple de ces interactions :
     
     [![](ios-touch-walkthrough-images/image7.png "Cette capture d’écran montre une interaction de glissement")](ios-touch-walkthrough-images/image7.png#lightbox)
-
-
 
 <a name="Custom_Gesture_Recognizer"/>
 
@@ -321,7 +312,6 @@ Dans cette section, nous allons appliquer les concepts des sections précédente
  [![](ios-touch-walkthrough-images/image8.png "L’application reconnaîtra quand l’utilisateur dessinera un « V » à l’écran")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Pour créer un module de reconnaissance de mouvement personnalisé, procédez comme suit :
-
 
 1. Ajoutez une nouvelle classe au projet nommé `CheckmarkGestureRecognizer`et faites en sorte qu’elle ressemble au code suivant :
 
@@ -441,8 +431,6 @@ Pour créer un module de reconnaissance de mouvement personnalisé, procédez co
     La méthode de réinitialisation est `State` appelée lorsque la propriété `Recognized` prend `Ended`la valeur ou. Il s’agit de la durée de réinitialisation de tout état interne défini dans le module de reconnaissance de mouvement personnalisé.
 Désormais, la classe peut démarrer la prochaine fois que l’utilisateur interagit avec l’application et être prêt à essayer à nouveau de reconnaître le geste.
 
-
-
 1. Maintenant que nous avons défini un module de reconnaissance de mouvement`CheckmarkGestureRecognizer`personnalisé (), modifiez le fichier **CustomGestureViewController.cs** et ajoutez les deux variables d’instance suivantes :
 
     ```csharp
@@ -499,11 +487,7 @@ Désormais, la classe peut démarrer la prochaine fois que l’utilisateur inter
     
     [![](ios-touch-walkthrough-images/image10.png "Bouton désactivé")](ios-touch-walkthrough-images/image10.png#lightbox)
 
-
-
 Les trois sections ci-dessus ont démontré différentes façons de répondre aux événements tactiles dans iOS : à l’aide des événements tactiles, des détecteurs de mouvement intégrés ou avec un module de reconnaissance de mouvement personnalisé.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

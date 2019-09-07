@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: eb88f7c1de12eee59ea4c2a271079e6b96c29b09
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286599"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769486"
 ---
 # <a name="search-apis-in-xamarinios"></a>Rechercher des API dans Xamarin. iOS
 
@@ -89,8 +89,6 @@ Pour en savoir plus, consultez notre guide de [suggestions proactives](~/ios/pla
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les nouvelles fonctionnalités de l’API de recherche fournies par iOS 9 pour les applications Xamarin. iOS. Il a abordé les méthodes [NSUserActivity](nsuseractivity.md), [Spotlight Core](corespotlight.md) et [Web Markup](web-markup.md) pour l’indexation du contenu. Il s’est terminé avec une brève description de l’utilisation d’une approche de recherche donnée et des types de contenu qui doivent être indexés.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

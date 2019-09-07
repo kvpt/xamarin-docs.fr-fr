@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119112"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760994"
 ---
 # <a name="localization"></a>Localisation
 
@@ -20,7 +20,7 @@ ms.locfileid: "70119112"
 
 _Vous pouvez localiser les applications Xamarin.Forms à l’aide de fichiers de ressources.NET._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Le mécanisme intégré de localisation des applications .NET utilise des [fichiers RESX](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) ainsi que les classes des espaces de noms `System.Resources` et `System.Globalization`. Les fichiers RESX contenant les chaînes traduites sont incorporés dans l’assembly Xamarin.Forms, ainsi qu’une classe générée par le compilateur qui fournit un accès fortement typé aux traductions. Vous pouvez ensuite récupérer le texte traduit dans le code.
 
@@ -77,7 +77,6 @@ Par défaut, quand des références aux chaînes fortement typées sont génér�
 
 Sélectionnez le fichier **AppResources.resx**, puis affichez le panneau **Propriétés** pour voir où cet outil de build est configuré. La capture d’écran ci-dessous montre **l’outil personnalisé : ResXFileCodeGenerator**.
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-internal-sml.png "Fenêtre Propriétés d’AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
@@ -90,7 +89,6 @@ Sélectionnez le fichier **AppResources.resx**, puis affichez le panneau **Propr
 
 Pour rendre `public` les propriétés de chaîne fortement typées, vous devez changer manuellement la configuration en **Outil personnalisé : PublicResXFileCodeGenerator**, comme indiqué dans la capture d’écran ci-dessous :
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](text-images/vs-resx-public-sml.png "Fenêtre Propriétés d’AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
@@ -98,7 +96,6 @@ Pour rendre `public` les propriétés de chaîne fortement typées, vous devez c
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 [![](text-images/xs-resx-internal-sml.png "Panneau Propriétés d’AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
-
 
 [![](text-images/xs-resx-public-sml.png "Panneau Propriétés d’AppResources.Resx")](text-images/xs-resx-public.png#lightbox)
 
@@ -580,7 +577,7 @@ Développez le nœud Propriétés du projet de bibliothèque .NET Standard, puis
 
 Cela permet d’informer le Gestionnaire des ressources de la culture par défaut de l’application. Ainsi, les chaînes définies dans le fichier RESX indépendant de la langue (**AppResources.resx**) sont correctement affichées quand l’application s’exécute avec l’un des paramètres régionaux anglais.
 
-### <a name="example"></a>Exemples
+### <a name="example"></a>Exemple
 
 Après la mise à jour des projets spécifiques à la plateforme, comme indiqué ci-dessus, et la recompilation de l’application avec les fichiers RESX traduits, les traductions mises à jour sont disponibles dans chaque application. Voici une capture d’écran de l’exemple de code traduit en chinois simplifié :
 

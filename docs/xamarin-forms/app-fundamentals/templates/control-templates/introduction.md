@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289793"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771270"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Introduction aux modèles de contrôle Xamarin.Forms
 
@@ -51,7 +51,6 @@ Le choix de l’emplacement de définition d’une instance de [`ControlTemplate
 - Les instances de [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) définies au niveau de l’application peuvent être appliquées à toutes les pages de l’application.
 
 Les modèles de contrôle qui se trouvent plus bas dans la hiérarchie d’affichage sont prioritaires sur ceux définis plus haut. Par exemple, un [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) nommé `DarkTheme` qui est défini au niveau de la page est prioritaire sur un modèle portant le même nom défini au niveau de l’application. Ainsi, un modèle de contrôle qui définit un thème à appliquer à chaque page d’une application doit être défini au niveau de l’application.
-
 
 ## <a name="related-links"></a>Liens associés
 

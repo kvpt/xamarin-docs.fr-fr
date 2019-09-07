@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: fa0a3a75a4cc2cfd04b607f17206faa822af0474
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: fad17bdda9566eeabcbe173c19c4d951bed630a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523642"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761277"
 ---
 # <a name="using-native-libraries"></a>Utilisation de bibliothèques natives
 
@@ -24,13 +24,12 @@ Pour déployer une bibliothèque native avec un projet de bibliothèque Xamarin.
 Notez que dans la mesure où Android prend en charge plusieurs interfaces binaires d’application (ABI), Xamarin. Android doit savoir à quel ABI la bibliothèque native est générée.
 Vous pouvez faire cela de deux façons :
 
-1. Chemin d’accès «détection»
+1. Chemin d’accès « détection »
 1. En utilisant un `AndroidNativeLibrary/Abi` élément dans le fichier projet
 
+Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi/libfoo.so` au projet, l’Abi sera « reniflée » comme. `armeabi`
 
-Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi/libfoo.so` au projet, l’Abi sera «reniflée» comme. `armeabi`
-
-Vous pouvez également modifier votre fichier projet pour spécifier explicitement l’ABI à utiliser:
+Vous pouvez également modifier votre fichier projet pour spécifier explicitement l’ABI à utiliser :
 
 ```xml
 <ItemGroup>
@@ -47,15 +46,13 @@ Pour plus d’informations sur l’utilisation des bibliothèques natives, consu
 Si vous utilisez *Visual studio 2019* ou *Visual Studio 2017*, vous n’êtes pas obligé de modifier vos fichiers de projet, comme décrit ci-dessus.
 Vous pouvez générer et déboguer C++ à l’intérieur de votre solution Xamarin. Android en ajoutant C++ une référence de projet à un projet de **bibliothèque partagée dynamique (Android)** .
 
-Pour déboguer du code natif C++ dans votre projet, procédez comme suit:
+Pour déboguer du code natif C++ dans votre projet, procédez comme suit :
 
 1. Double-cliquez sur **Propriétés** du projet, puis sélectionnez la page **options Android** .
-2. Faites défiler jusqu’à **options**de débogage.
-3. Dans le menu déroulant du débogueur **C++** , sélectionnez (au lieu du .NET par défaut **(Xamarin)** ).
+2. Faites défiler jusqu’à **options de débogage**.
+3. Dans le menu déroulant du **débogueur** , sélectionnez **C++** (au lieu du .NET par défaut **(Xamarin)** ).
 
-Les développeurs C++ Visual Studio peuvent voir l’exemple [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) pour essayer le débogage C++ à partir de visual studio 2019 ou Visual Studio 2017 avec Xamarin; Pour plus d’informations, consultez notre [billet de blog](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) .
-
-
+Les développeurs C++ Visual Studio peuvent voir l’exemple [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) pour essayer le débogage C++ à partir de visual studio 2019 ou Visual Studio 2017 avec Xamarin ; Pour plus d’informations, consultez notre [billet de blog](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/) .
 
 ## <a name="related-links"></a>Liens associés
 

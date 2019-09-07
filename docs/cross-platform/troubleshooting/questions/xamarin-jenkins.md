@@ -7,12 +7,12 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 4f09f4ca97dcf50891aa0a0415e47d474297c411
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8dc27574dc9959cc375a98fc0d7a18aac8bd6b7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282763"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756967"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>Pourquoi les Jenkins ne sont-ils pas pris en charge par Microsoft ?
 
@@ -36,13 +36,10 @@ Le message d’erreur de ce problème se présente comme suit :
 
 Les options de configuration de l’emplacement du kit de développement logiciel (SDK) peuvent varier en fonction du plug-in Android Jenkins que vous utilisez. pour savoir comment définir cela, consultez le Guide du plug-in. Par exemple, le [plug-in émulateur Android](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration) recherche automatiquement le kit de développement logiciel (SDK), mais s’il ne peut pas le trouver ; l’emplacement peut également être défini via la page de configuration du système Jenkins pour ce plug-in. 
 
-
 ## <a name="deprecated-errors"></a>Erreurs dépréciées
 
 > [!IMPORTANT]
 > Ce problème a été résolu dans les versions récentes de Xamarin. Toutefois, si le problème se produit sur la version la plus récente du logiciel, envoyez un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) à vos informations de contrôle de version et à la sortie complète du journal de génération.
-
-
 
 ### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins signale une licence Xamarin non valide
 Les messages d’erreur relatifs à ce problème sont généralement des éléments comme

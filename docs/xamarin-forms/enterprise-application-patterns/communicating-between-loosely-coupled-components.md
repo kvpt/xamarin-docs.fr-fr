@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 4763e73f0eafa24cc4a2fc42a6d69b457d863b8d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d4ed362fdd5587eabc028949b82682922adead0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529146"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760306"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>Communication entre les composants faiblement couplés
 
@@ -24,17 +24,17 @@ Les événements dans .NET implémentent le modèle de publication-abonnement, e
 
 La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Xamarin.Forms implémente le modèle publier-s’abonner, permettant une communication basée sur les messages entre les composants qui sont peu pratiques à lier par références d’objet et de type. Ce mécanisme permet aux éditeurs et aux abonnés de communiquer sans avoir une référence entre eux, ce qui contribue à réduire les dépendances entre les composants, tout en permettant aux composants d’être développés et testés indépendamment.
 
-La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) fournit la fonctionnalité publier-s’abonner de multidiffusion. Cela signifie qu’il peut y avoir plusieurs serveurs de publication qui publient un seul message, et il peut y avoir plusieurs abonnés qui écoutent le même message. La figure 4-1 illustre cette relation:
+La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) fournit la fonctionnalité publier-s’abonner de multidiffusion. Cela signifie qu’il peut y avoir plusieurs serveurs de publication qui publient un seul message, et il peut y avoir plusieurs abonnés qui écoutent le même message. La figure 4-1 illustre cette relation :
 
 ![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Fonctionnalité publier-s’abonner de multidiffusion")
 
-**Figure 4-1:** Fonctionnalité de publication/abonnement multidiffusion
+**Figure 4-1 :** Fonctionnalité de publication/abonnement multidiffusion
 
 Les serveurs de publication envoient des messages à l’aide de la méthode [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*), alors que les abonnés écoutent les messages à l’aide de la méthode [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*). En outre, les abonnés peuvent également se désabonner des abonnements aux messages, si nécessaire, avec la méthode [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*).
 
 En interne, la classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) utilise des références faibles. Cela signifie qu’elle ne conserve pas les objets actifs et leur permet d’être récupérés de la mémoire. Par conséquent, il ne doit être nécessaire de se désabonner d’un message que lorsqu’une classe ne souhaite plus recevoir le message.
 
-L’application mobile eShopOnContainers utilise la [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) classe pour communiquer entre les composants faiblement couplés. L’application définit trois messages:
+L’application mobile eShopOnContainers utilise la [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) classe pour communiquer entre les composants faiblement couplés. L’application définit trois messages :
 
 - Le `AddProduct` message est publié par la `CatalogViewModel` classe lorsqu’un élément est ajouté au panier d’achat. En retour, la `BasketViewModel` classe s’abonne au message et incrémente le nombre d’éléments dans le panier d’achat en réponse. En outre, la `BasketViewModel` classe se désabonne également de ce message.
 - Le `Filter` message est publié par la `CatalogViewModel` classe lorsque l’utilisateur applique un filtre ou un filtre de type aux éléments affichés à partir du catalogue. En retour, la `CatalogView` classe s’abonne au message et met à jour l’interface utilisateur afin que seuls les éléments qui correspondent aux critères de filtre soient affichés.
@@ -52,7 +52,7 @@ Pour plus d’informations [`MessagingCenter`](xref:Xamarin.Forms.MessagingCente
 
 ## <a name="defining-a-message"></a>Définition d’un message
 
-[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)les messages sont des chaînes utilisées pour identifier des messages. L’exemple de code suivant montre les messages définis dans l’application mobile eShopOnContainers:
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)les messages sont des chaînes utilisées pour identifier des messages. L’exemple de code suivant montre les messages définis dans l’application mobile eShopOnContainers :
 
 ```csharp
 public class MessengerKeys  
@@ -72,13 +72,13 @@ Dans cet exemple, les messages sont définis à l’aide de constantes. L’avan
 
 ## <a name="publishing-a-message"></a>Publication d’un message
 
-Les serveurs de publication informent les abonnés d’un message avec l’une des surcharges [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*). L’exemple de code suivant illustre la `AddProduct` publication du message:
+Les serveurs de publication informent les abonnés d’un message avec l’une des surcharges [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*). L’exemple de code suivant illustre la `AddProduct` publication du message :
 
 ```csharp
 MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 ```
 
-Dans cet exemple, la [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) méthode spécifie trois arguments:
+Dans cet exemple, la [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) méthode spécifie trois arguments :
 
 - Le premier argument spécifie la classe sender. La classe sender doit être spécifiée par tous les abonnés qui souhaitent recevoir le message.
 - Le deuxième argument spécifie le message.
@@ -91,7 +91,7 @@ La [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) méthode publiera le messa
 
 ## <a name="subscribing-to-a-message"></a>Abonnement à un message
 
-Les abonnés peuvent s’abonner pour recevoir un message à l’aide de l’une des surcharges [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*). L’exemple de code suivant montre comment l’application mobile eShopOnContainers s’abonne à, et traite `AddProduct` , le message:
+Les abonnés peuvent s’abonner pour recevoir un message à l’aide de l’une des surcharges [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*). L’exemple de code suivant montre comment l’application mobile eShopOnContainers s’abonne à, et traite `AddProduct` , le message :
 
 ```csharp
 MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
@@ -112,7 +112,7 @@ Un abonné n’a peut-être pas besoin de gérer chaque instance d’un message 
 
 ## <a name="unsubscribing-from-a-message"></a>Annulation d’un abonnement à un message
 
-Les abonnés peuvent se désinscrire des messages qu’ils ne souhaitent plus recevoir. Cela est possible avec l’une des [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) surcharges, comme illustré dans l’exemple de code suivant:
+Les abonnés peuvent se désinscrire des messages qu’ils ne souhaitent plus recevoir. Cela est possible avec l’une des [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) surcharges, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
@@ -123,7 +123,6 @@ Dans cet exemple, la [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscr
 ## <a name="summary"></a>Récapitulatif
 
 La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Xamarin.Forms implémente le modèle publier-s’abonner, permettant une communication basée sur les messages entre les composants qui sont peu pratiques à lier par références d’objet et de type. Ce mécanisme permet aux éditeurs et aux abonnés de communiquer sans avoir une référence entre eux, ce qui contribue à réduire les dépendances entre les composants, tout en permettant aux composants d’être développés et testés indépendamment.
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b79f64f154dbd7dde623d13385f111d3d5a5d3f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291735"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769549"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Présentation des suggestions proactives dans Xamarin. iOS
 
@@ -534,7 +534,6 @@ Cette section examine l’utilisation des suggestions d’emplacement directemen
 
 Lorsque l’application est démarrée avec un `MKDirectionsRequest` objet MapKit, elle doit automatiquement commencer à donner à l’utilisateur le sens de l’emplacement demandé ou présenter une interface utilisateur qui permet à l’utilisateur de commencer à obtenir des instructions plus facilement. Par exemple :
 
-
 ```csharp
 using System;
 using Foundation;
@@ -607,7 +606,6 @@ Pour les applications qui gèrent des médias, iOS prend en charge les comportem
   - Après avoir arrivé à chez vous ou au travail. 
 
 En incluant un appel d’API simple dans iOS 10, le développeur peut créer une expérience d’écran de verrouillage plus attrayante pour les utilisateurs de l’application multimédia. En utilisant la `MPPlayableContentManager` classe pour gérer la lecture du média, les contrôles multimédias complets (comme ceux présentés par l’application musique) sont présentés sur l’écran de verrouillage de l’application.
-
 
 ```csharp
 using System;
@@ -682,8 +680,6 @@ namespace MonkeyPlayer
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté des suggestions proactives et a montré comment le développeur peut les utiliser pour diriger le trafic vers l’application Xamarin. iOS. Il a abordé la marche à suivre pour implémenter des suggestions proactives et présenter des instructions d’utilisation.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

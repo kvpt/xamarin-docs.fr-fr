@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: f0caa2dd2c2b675fe85000a73e5d58ce7e277488
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e9c87b76dc6845962450b8cb6fab921ea1748832
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281467"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768325"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>Utilisation des tailles d’écran Watchos dans Xamarin
 
@@ -39,7 +39,6 @@ Utilisez le menu taille pour modifier et afficher un aperçu de votre table de m
 La taille d’écran la plus grande peut parfois afficher du contenu qui serait tronqué/masqué sur l’écran le plus petit.
 Veillez à tester les deux tailles.
 
-
 ### <a name="interface-design"></a>Conception d'interfaces
 
 Votre application doit afficher le même contenu à l’écran, quelle que soit sa taille, et doit développer ou réduire les éléments de manière appropriée. Dans le concepteur d’Visual Studio pour Mac, dans l’inspecteur d’attribut, vous devez utiliser **par rapport au conteneur** ou **taille pour ajuster le contenu** à la préférence aux tailles fixes.
@@ -48,13 +47,11 @@ Votre application doit afficher le même contenu à l’écran, quelle que soit 
 
 Étant donné que l’écran Watch est entouré d’un cadre noir, il n’est pas recommandé de fournir un remplissage autour de votre interface. Laissez les éléments reposer sur le bord de l’écran et laissez le cadre former une bordure naturelle autour de l’application.
 
-
 ## <a name="watchos-simulator"></a>Simulateur Watchos
 
 Lors du test sur le simulateur, vous pouvez facilement basculer entre les deux tailles d’écran à l’aide du menu **matériel > périphérique** .
 
 ![](screen-sizes-images/simulator.png "Le simulateur peut basculer entre les deux tailles d’écran à l’aide du menu périphérique matériel.")
-
 
 ## <a name="image-resources"></a>Ressources d’image
 
@@ -80,8 +77,6 @@ using (var image = UIImage.FromBundle (large ? "42mm-Walkway" : "38mm-Walkway"))
 ```
 
 En savoir plus sur l’utilisation du [contrôle image](~/ios/watchos/user-interface/image.md).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

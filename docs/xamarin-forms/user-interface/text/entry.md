@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 040d01dceaa6c5dd785d2423c72247ee602b98db
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227981"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767717"
 ---
 # <a name="xamarinforms-entry"></a>Entrée de Xamarin.Forms
 
@@ -377,7 +377,6 @@ et C# :
 var entry = new Entry ();
 entry.TextChanged += Entry_TextChanged;
 ```
-
 
 ## <a name="related-links"></a>Liens associés
 

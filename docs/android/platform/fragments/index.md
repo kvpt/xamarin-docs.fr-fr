@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b04ecf0685e78b73346ea5af815ed46f98b5da0f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f25c587f6a51a6b196f201c1b5060ff401f8cad2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524356"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761862"
 ---
 # <a name="fragments"></a>Fragments
 
@@ -32,7 +32,7 @@ Par exemple, l’image ci-dessous montre comment une application unique utilise 
 
 *Fragment a* contient une liste, tandis que *fragment B* contient les détails d’un élément sélectionné dans cette liste. Lorsque l’application est exécutée sur une tablette, elle peut afficher les deux fragments sur la même activité. Lorsque la même application est exécutée sur un téléphone (avec sa plus petite taille d’écran), les fragments sont hébergés dans deux activités distinctes. Les fragments A et B sont identiques sur les deux facteurs de forme, mais les activités qui les hébergent sont différentes.
 
-Pour aider à coordonner une activité et gérer tous ces fragments, Android a introduit une nouvelle classe appelée *FragmentManager*. Chaque activité possède sa propre instance de `FragmentManager` pour l’ajout, la suppression et la recherche de fragments hébergés. Le diagramme suivant illustre la relation entre les fragments et les activités:
+Pour aider à coordonner une activité et gérer tous ces fragments, Android a introduit une nouvelle classe appelée *FragmentManager*. Chaque activité possède sa propre instance de `FragmentManager` pour l’ajout, la suppression et la recherche de fragments hébergés. Le diagramme suivant illustre la relation entre les fragments et les activités :
 
 [![Diagramme illustrant les relations entre l’activité, le gestionnaire de fragment et les fragments](images/01.png)](images/01.png#lightbox)
 
@@ -40,29 +40,27 @@ Pour aider à coordonner une activité et gérer tous ces fragments, Android a i
 
 Alors que l’activité est un hôte vers un ou plusieurs fragments, elle n’est pas directement consciente des fragments eux-mêmes. De même, les fragments ne sont pas directement informés des autres fragments de l’activité d’hébergement. Toutefois, les fragments et les activités prennent en `FragmentManager` compte le dans leur activité. À l’aide `FragmentManager`de, il est possible pour une activité ou un fragment d’obtenir une référence à une instance spécifique d’un fragment, puis d’appeler des méthodes sur cette instance. De cette façon, l’activité ou les fragments peuvent communiquer et interagir avec d’autres fragments.
 
-Ce guide contient une couverture complète de l’utilisation des fragments, notamment:
+Ce guide contient une couverture complète de l’utilisation des fragments, notamment :
 
-- **Création** de fragments: comment créer un fragment et des méthodes de clé de base qui doivent être implémentés.
+- **Création de fragments** : comment créer un fragment et des méthodes de clé de base qui doivent être implémentés.
 - **Gestion des fragments et transactions** : comment manipuler des fragments au moment de l’exécution.
 - **Package de support Android** : comment utiliser les bibliothèques qui permettent l’utilisation de fragments sur des versions antérieures d’Android.
 
-
 ## <a name="requirements"></a>Configuration requise
 
-Les fragments sont disponibles dans le Android SDK commençant par le niveau d’API 11 (Android 3,0), comme illustré dans la capture d’écran suivante:
+Les fragments sont disponibles dans le Android SDK commençant par le niveau d’API 11 (Android 3,0), comme illustré dans la capture d’écran suivante :
 
 [![Sélection du niveau d’API dans le gestionnaire de Android SDK](images/02.png)](images/02.png#lightbox)
 
-Les fragments sont disponibles dans Xamarin. Android 4,0 et versions ultérieures. Une application Xamarin. Android doit cibler au moins le niveau d’API 11 (Android 3,0) ou une version ultérieure pour pouvoir utiliser des fragments. La version cible de .NET Framework peut être définie dans les propriétés du projet, comme indiqué ci-dessous:
+Les fragments sont disponibles dans Xamarin. Android 4,0 et versions ultérieures. Une application Xamarin. Android doit cibler au moins le niveau d’API 11 (Android 3,0) ou une version ultérieure pour pouvoir utiliser des fragments. La version cible de .NET Framework peut être définie dans les propriétés du projet, comme indiqué ci-dessous :
 
 [![Définition du niveau de l’API du Framework cible dans les options du projet](images/03-sml.png)](images/03.png#lightbox)
 
 Il est possible d’utiliser des fragments dans les versions antérieures d’Android en utilisant le package de support Android et Xamarin. Android 4,2 ou une version ultérieure. La procédure à suivre est décrite plus en détail dans les documents de cette section.
-
 
 ## <a name="related-links"></a>Liens associés
 
 - [Galerie d’abeilles (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/honeycombgallery)
 - [Fragments](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Package de support](https://developer.android.com/sdk/compatibility-library.html)
-- [Webinaire MOTODEV: Présentation des fragments](http://motodev.adobeconnect.com/p9h1aqk3ttn/)
+- [Webinaire MOTODEV : Présentation des fragments](http://motodev.adobeconnect.com/p9h1aqk3ttn/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a537926ab28bc355af5c5c4993ccff4a736b15aa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ffaa6553830a64589818c991e8f729ff7232e367
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288570"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752831"
 ---
 # <a name="core-image-in-xamarinios"></a>Image principale dans Xamarin. iOS
 
@@ -25,7 +25,6 @@ Ce document contient des exemples simples de :
 - Détection de visage.
 - Application de filtres à une image
 - Liste des filtres disponibles.
-
 
 Ces exemples doivent vous aider à commencer à incorporer des fonctionnalités d’image principales dans vos applications Xamarin. iOS.
 
@@ -55,7 +54,6 @@ Le tableau de fonctionnalités est rempli avec `CIFaceFeature` des objets (si de
 - MouthPosition : coordonnées de l’embouchure pour ce visage.
 - LeftEyePosition : coordonnées de l’œil gauche de cette face.
 - RightEyePosition : coordonnées de l’œil droit de cette face.
-
 
 Les coordonnées de toutes ces propriétés ont leur origine dans le coin inférieur gauche, contrairement à UIKit qui utilise l’angle supérieur gauche comme origine. Lorsque vous utilisez les coordonnées `CIFaceFeature` , veillez à les « retourner ». Cette vue d’image personnalisée de base dans CoreImage\CoreImageViewController.cs montre comment dessiner des triangles « indicateur de visage » sur l’image ( `FlipForBottomOrigin` Notez la méthode) :
 

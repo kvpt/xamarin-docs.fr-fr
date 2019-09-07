@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: dfda8b1ec3e7cfbdec3fe313d305d78422487f08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d2466de4891c289f4686c37bc9fe73c24a5a48ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289312"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753061"
 ---
 # <a name="spritekit-in-xamarinios"></a>SpriteKit dans Xamarin. iOS
 
@@ -26,7 +26,7 @@ SpriteKit comprend une API physique de corps rigide et 2D. Chaque sprite est ass
 SpriteKit prend désormais en charge la dérivation du corps physique d’un sprite à partir de sa texture. Il est ainsi plus facile d’implémenter des collisions qui semblent plus naturelles.
 
 Par exemple, Notez dans le cas suivant comment la banane et le singe entrent en conflit presque à la surface de chaque image :
- 
+
 ![](spritekit-images/image13.png "La banane et le singe sont en conflit presque à la surface de chaque image")
 
 SpriteKit permet de créer un corps physique de ce type possible avec une seule ligne de code. Appelez `SKPhysicsBody.Create` simplement avec la texture et la taille : Sprite. PhysicsBody = SKPhysicsBody. Create (Sprite. Texture, Sprite. Taille);
@@ -44,7 +44,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 L’effet de la modification du seuil alpha comme celui-ci ajuste la collision précédente, de telle sorte que le singe passe en collision avec la banane :
 
 ![](spritekit-images/image14.png "Le singe passe en collision avec la banane")
- 
+
 ## <a name="physics-fields"></a>Champs de physique
 
 La nouvelle prise en charge du champ physique constitue un autre excellent ajout à SpriteKit. Elles vous permettent d’ajouter des éléments tels que des champs Vortex, des champs de gravité radiaux et des champs Spring pour n’en nommer que quelques-uns.
@@ -86,7 +86,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 Cela amène les bananes à osciller comme un ressort autour du nœud Field :
 
 ![](spritekit-images/image15.png "Les bananes oscillent comme un ressort autour du nœud de champ")
- 
+
 ## <a name="radial-gravity-field"></a>Champ gravité radiale
 
 L’ajout d’un autre champ est similaire. Par exemple, le code suivant crée un champ de gravité radiale :

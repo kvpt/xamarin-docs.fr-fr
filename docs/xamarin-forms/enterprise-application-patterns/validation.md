@@ -1,36 +1,36 @@
 ---
 title: Validation dans les applications d’entreprise
-description: Ce chapitre explique comment l’application mobile eShopOnContainers effectue la validation des entrées d’utilisateur. Cela inclut en spécifiant des règles de validation, déclencher la validation et l’affichage des erreurs de validation.
+description: Ce chapitre explique comment l’application mobile eShopOnContainers effectue la validation des entrées d’utilisateur. Cela comprend la spécification des règles de validation, le déclenchement de la validation et l’affichage des erreurs de validation.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 22b5fe703486f0ded3a5b91241e3fe5ce41bbc98
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: de5728710a408b8e0c7c68dc89c7e6484cbcc3ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61298940"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760161"
 ---
 # <a name="validation-in-enterprise-apps"></a>Validation dans les applications d’entreprise
 
-N’importe quelle application qui accepte les entrées d’utilisateurs doit garantir que l’entrée est valide. Une application peut, par exemple, recherchez d’entrée qui contienne uniquement des caractères dans une plage particulière, est d’une certaine longueur ou correspond à un format particulier. Sans validation, un utilisateur peut fournir des données d’origine de l’application en échec. Validation applique des règles d’entreprise et empêche une personne malveillante d’injecter des données malveillantes.
+Toute application qui accepte les entrées d’utilisateurs doit s’assurer que l’entrée est valide. Une application peut, par exemple, Rechercher des entrées qui contiennent uniquement des caractères dans une plage particulière, qui est d’une certaine longueur ou qui correspond à un format particulier. Sans validation, un utilisateur peut fournir des données qui provoquent l’échec de l’application. La validation applique des règles d’entreprise et empêche une personne malveillante d’injecter des données malveillantes.
 
-Dans le contexte de Model-View-ViewModel (MVVM) de modèle, un modèle de vue ou modèle souvent devront effectuer la validation de données et de signaler des erreurs de validation à la vue afin que l’utilisateur pour les corriger. L’application mobile eShopOnContainers effectue la validation côté client synchrone d’afficher les propriétés de modèle et informe l’utilisateur des éventuelles erreurs de validation en surbrillance le contrôle qui contient les données non valides et en affichant des messages d’erreur qui informent l’utilisateur de la raison pour laquelle les données ne sont pas valides. Figure 6-1 montre les classes impliquées dans la validation dans l’application mobile eShopOnContainers.
+Dans le contexte du modèle MVVM (Model-View-ViewModel), un modèle de vue ou un modèle est souvent requis pour effectuer la validation des données et signaler toutes les erreurs de validation à la vue afin que l’utilisateur puisse les corriger. L’application mobile eShopOnContainers effectue une validation synchrone côté client des propriétés de modèle de vue et avertit l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides et en affichant les messages d’erreur qui informent l’utilisateur. la raison pour laquelle les données ne sont pas valides. La figure 6-1 montre les classes impliquées dans l’exécution de la validation dans l’application mobile eShopOnContainers.
 
-[![](validation-images/validation.png "Classes de validation dans l’application mobile eShopOnContainers")](validation-images/validation-large.png#lightbox "classes de Validation dans l’application mobile eShopOnContainers")
+[Classes de validation dans l’application mobile eShopOnContainers ![(validation-images/validation.png " ")]] (validation-images/validation-large.png#lightbox "Classes de validation dans l’application mobile eShopOnContainers")
 
 **Figure 6-1**: Classes de validation dans l’application mobile eShopOnContainers
 
-Afficher les propriétés de modèle qui nécessite une validation sont de type `ValidatableObject<T>`et chaque `ValidatableObject<T>` instance a des règles de validation ajoutés à son `Validations` propriété. Validation est appelée à partir du modèle de vue en appelant le `Validate` méthode de la `ValidatableObject<T>` instance, qui Récupère la validation des règles et les exécute sur le `ValidatableObject<T>` `Value` propriété. Des erreurs de validation sont placés dans le `Errors` propriété de la `ValidatableObject<T>` instance et le `IsValid` propriété de la `ValidatableObject<T>` instance est mise à jour pour indiquer si la validation a réussi ou échoué.
+Les propriétés de modèle de vue qui nécessitent une `ValidatableObject<T>`validation sont de `ValidatableObject<T>` type, et chaque instance a des `Validations` règles de validation ajoutées à sa propriété. La validation est appelée à partir du modèle de vue en `Validate` appelant la méthode `ValidatableObject<T>` de l’instance, qui récupère les règles de validation et les exécute sur `ValidatableObject<T>` la `Value` propriété. Toutes les erreurs de validation `Errors` sont placées dans la `ValidatableObject<T>` propriété de l’instance `IsValid` et la propriété `ValidatableObject<T>` de l’instance est mise à jour pour indiquer si la validation a réussi ou échoué.
 
-Notification de modification de propriété est fournie par le `ExtendedBindableObject` (classe) et donc un [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle peut être lié à la `IsValid` propriété de `ValidatableObject<T>` instance dans la classe de modèle de vue d’être averti des ou non les données entrées sont valides.
+La notification de modification de propriété est `ExtendedBindableObject` fournie par la classe, [`Entry`](xref:Xamarin.Forms.Entry) ce qui signifie qu’un contrôle peut `ValidatableObject<T>` effectuer une liaison à la `IsValid` propriété de l’instance dans la classe de modèle de vue pour être informé de la validité ou non des données entrées.
 
-## <a name="specifying-validation-rules"></a>Spécification des règles de Validation
+## <a name="specifying-validation-rules"></a>Spécification des règles de validation
 
-Règles de validation sont spécifiés en créant une classe qui dérive de la `IValidationRule<T>` interface, ce qui est indiqué dans l’exemple de code suivant :
+Les règles de validation sont spécifiées en créant une classe qui dérive de l' `IValidationRule<T>` interface, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
 public interface IValidationRule<T>  
@@ -40,9 +40,9 @@ public interface IValidationRule<T>
 }
 ```
 
-Cette interface spécifie qu’une classe de règle de validation doit fournir un `boolean` `Check` méthode qui est utilisé pour effectuer l’opération de validation requise, et un `ValidationMessage` propriété dont la valeur est le message d’erreur de validation qui s’affichera si la validation échoue.
+Cette interface spécifie qu’une classe de règles de validation `boolean` doit fournir une `Check` méthode utilisée pour effectuer la validation requise, et `ValidationMessage` une propriété dont la valeur est le message d’erreur de validation qui s’affiche si la validation échoue.
 
-Le code suivant montre l’exemple le `IsNotNullOrEmptyRule<T>` règle de validation, qui est utilisé pour effectuer la validation du nom d’utilisateur et mot de passe entré par l’utilisateur le `LoginView` lors de l’utilisation des services fictifs dans l’application mobile eShopOnContainers :
+L’exemple de code suivant montre `IsNotNullOrEmptyRule<T>` la règle de validation, qui est utilisée pour effectuer la validation du nom d’utilisateur et du mot de `LoginView` passe entrés par l’utilisateur lors de l’utilisation de services fictifs dans l’application mobile eShopOnContainers :
 
 ```csharp
 public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
@@ -62,9 +62,9 @@ public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
 }
 ```
 
-Le `Check` méthode retourne un `boolean` indiquant si l’argument de valeur est `null`, vide ou se compose uniquement d’espaces blancs.
+La `Check` méthode retourne une `boolean` valeur qui indique si l’argument `null`de valeur est, vide ou se compose uniquement de caractères d’espace blanc.
 
-Bien que ne pas utilisée par l’application mobile eShopOnContainers, l’exemple de code suivant montre une règle de validation pour valider les adresses de messagerie :
+Bien qu’il ne soit pas utilisé par l’application mobile eShopOnContainers, l’exemple de code suivant montre une règle de validation pour la validation des adresses de messagerie :
 
 ```csharp
 public class EmailRule<T> : IValidationRule<T>  
@@ -87,14 +87,14 @@ public class EmailRule<T> : IValidationRule<T>
 }
 ```
 
-Le `Check` méthode retourne un `boolean` indiquant si l’argument de valeur est une adresse e-mail valide. Pour cela en recherchant l’argument de valeur pour la première occurrence d’un modèle d’expression régulière spécifié dans le `Regex` constructeur. Si le modèle d’expression régulière a été trouvé dans la chaîne d’entrée peut être déterminé en vérifiant la valeur de la `Match` l’objet `Success` propriété.
+La `Check` méthode retourne une `boolean` valeur indiquant si l’argument de valeur est une adresse de messagerie valide. Pour cela, il faut Rechercher l’argument de valeur pour la première occurrence du modèle d’expression régulière spécifié `Regex` dans le constructeur. Vous pouvez déterminer si le modèle d’expression régulière a été trouvé dans la chaîne d’entrée en vérifiant la `Match` valeur de `Success` la propriété de l’objet.
 
 > [!NOTE]
-> Validation de propriété permettre impliquent parfois des propriétés dépendantes. Voici un exemple de propriétés dépendantes : le jeu de valeurs valides pour la propriété A dépend de la valeur particulière qui a été définie dans la propriété B. Pour vérifier que la valeur de propriété A est une des valeurs autorisées impliquerait la récupération de la valeur de propriété B. En outre, lorsque la valeur de propriété B change, la propriété A doit être revalidé.
+> La validation de propriété peut impliquer parfois des propriétés dépendantes. Un exemple de propriétés dépendantes est lorsque l’ensemble de valeurs valides pour la propriété A dépend de la valeur particulière qui a été définie dans la propriété B. Pour vérifier que la valeur de la propriété A est l’une des valeurs autorisées implique la récupération de la valeur de la propriété B. En outre, lorsque la valeur de la propriété B change, la propriété A doit être revalidée.
 
-## <a name="adding-validation-rules-to-a-property"></a>Ajout de règles de Validation à une propriété
+## <a name="adding-validation-rules-to-a-property"></a>Ajout de règles de validation à une propriété
 
-Dans l’application mobile eShopOnContainers, afficher les propriétés de modèle qui nécessite une validation sont déclarées comme étant de type `ValidatableObject<T>`, où `T` est le type de données à valider. L’exemple de code suivant montre un exemple de deux de ces propriétés :
+Dans l’application mobile eShopOnContainers, les propriétés de modèle qui nécessitent une validation sont déclarées comme `ValidatableObject<T>`étant de `T` type, où est le type des données à valider. L’exemple de code suivant montre deux propriétés de ce type :
 
 ```csharp
 public ValidatableObject<string> UserName  
@@ -124,7 +124,7 @@ public ValidatableObject<string> Password
 }
 ```
 
-Pour la validation se produise, les règles de validation doivent être ajoutés à la `Validations` collection de chaque `ValidatableObject<T>` de l’instance, comme illustré dans l’exemple de code suivant :
+Pour que la validation se produise, des règles de validation `Validations` doivent être ajoutées `ValidatableObject<T>` à la collection de chaque instance, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 private void AddValidations()  
@@ -140,15 +140,15 @@ private void AddValidations()
 }
 ```
 
-Cette méthode ajoute la `IsNotNullOrEmptyRule<T>` règle de validation pour le `Validations` collection de chaque `ValidatableObject<T>` instance, en spécifiant des valeurs pour la règle de validation `ValidationMessage` propriété qui spécifie le message d’erreur de validation qui s’affichera si la validation échoue.
+Cette méthode ajoute la `IsNotNullOrEmptyRule<T>` règle de validation à `Validations` la collection de `ValidatableObject<T>` chaque instance, en spécifiant des valeurs pour `ValidationMessage` la propriété de la règle de validation, qui spécifie le message d’erreur de validation qui s’affichera si la validation échoue.
 
-## <a name="triggering-validation"></a>Déclencher la Validation
+## <a name="triggering-validation"></a>Déclenchement de la validation
 
-L’approche de validation utilisée dans l’application mobile eShopOnContainers permettre déclencher manuellement la validation d’une propriété et automatiquement la validation de déclencheur lorsqu’une propriété change.
+L’approche de validation utilisée dans l’application mobile eShopOnContainers peut déclencher manuellement la validation d’une propriété et déclencher automatiquement la validation lorsqu’une propriété change.
 
-### <a name="triggering-validation-manually"></a>Déclencher manuellement la Validation
+### <a name="triggering-validation-manually"></a>Déclenchement manuel de la validation
 
-La validation peut être déclenchée manuellement pour une propriété de modèle de vue. Par exemple, cela se produit dans l’application mobile eShopOnContainers le lorsque l’utilisateur actionne le **connexion** situé dans le `LoginView`, lorsque vous utilisez des services fictifs. La commande délégué appelle le `MockSignInAsync` méthode dans le `LoginViewModel`, qui appelle la validation en exécutant la `Validate` (méthode), ce qui est illustré dans l’exemple de code suivant :
+La validation peut être déclenchée manuellement pour une propriété de modèle de vue. Par exemple, cela se produit dans l’application mobile eShopOnContainers quand l’utilisateur appuie sur le bouton de `LoginView`connexion sur le, lors de l’utilisation de services fictifs. Le délégué de commande appelle `MockSignInAsync` la méthode dans `LoginViewModel`le, qui appelle la validation en exécutant la `Validate` méthode, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
 private bool Validate()  
@@ -169,7 +169,7 @@ private bool ValidatePassword()
 }
 ```
 
-Le `Validate` méthode effectue la validation du nom d’utilisateur et mot de passe entré par l’utilisateur le `LoginView`, en appelant la méthode Validate sur chaque `ValidatableObject<T>` instance. L’exemple de code suivant montre la méthode Validate de la `ValidatableObject<T>` classe :
+La `Validate` méthode effectue la validation du nom d’utilisateur et du mot de passe entrés par l’utilisateur sur le `LoginView`, en appelant `ValidatableObject<T>` la méthode Validate sur chaque instance. L’exemple de code suivant montre la méthode Validate `ValidatableObject<T>` de la classe :
 
 ```csharp
 public bool Validate()  
@@ -187,11 +187,11 @@ public bool Validate()
 }
 ```
 
-Cette méthode efface le `Errors` collection, puis récupère aucune validation des règles qui ont été ajoutés à l’objet `Validations` collection. Le `Check` méthode pour chaque règle de validation récupéré est exécutée et le `ValidationMessage` valeur de propriété pour une règle de validation qui ne parvient pas à valider les données est ajoutée à la `Errors` collection de la `ValidatableObject<T>` instance. Enfin, le `IsValid` propriété est définie, et sa valeur est retournée à la méthode appelante, indiquant si la validation a réussi ou échoué.
+Cette méthode efface la `Errors` collection, puis récupère toutes les règles de validation qui ont été ajoutées à la collection `Validations` de l’objet. La `Check` méthode pour chaque règle de validation Récupérée est exécutée, `ValidationMessage` et la valeur de la propriété pour toute règle de validation qui ne parvient pas `Errors` à valider les `ValidatableObject<T>` données est ajoutée à la collection de l’instance. Enfin, la `IsValid` propriété est définie et sa valeur est retournée à la méthode d’appel, indiquant si la validation a réussi ou échoué.
 
-### <a name="triggering-validation-when-properties-change"></a>Déclencher la Validation lors de la modification des propriétés
+### <a name="triggering-validation-when-properties-change"></a>Déclenchement de la validation lors de la modification des propriétés
 
-Validation peut également être déclenchée chaque fois qu’une propriété liée change. Par exemple, lorsqu’une liaison bidirectionnelle dans le `LoginView` définit le `UserName` ou `Password` propriété, la validation est déclenchée. L’exemple de code suivant montre comment cela se produit :
+La validation peut également être déclenchée chaque fois qu’une propriété liée change. Par exemple, lorsqu’une liaison bidirectionnelle dans le `LoginView` définit la `UserName` propriété `Password` ou, la validation est déclenchée. L’exemple de code suivant montre comment cela se produit :
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -204,23 +204,23 @@ Validation peut également être déclenchée chaque fois qu’une propriété l
 </Entry>
 ```
 
-Le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle se lie le `UserName.Value` propriété de la `ValidatableObject<T>` instance et du contrôle `Behaviors` collection a un `EventToCommandBehavior` instance ajouté à ce dernier. Ce comportement s’exécute le `ValidateUserNameCommand` en réponse à la [`TextChanged`] événement déclenché sur le `Entry`, qui est déclenché lorsque le texte dans le `Entry` modifications. À son tour, le `ValidateUserNameCommand` délégué exécute le `ValidateUserName` (méthode), qui exécute le `Validate` méthode sur le `ValidatableObject<T>` instance. Par conséquent, chaque fois que l’utilisateur entre un caractère dans la `Entry` contrôle pour le nom d’utilisateur, la validation des données entrées est effectuée.
+Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle est lié à la `UserName.Value` propriété de l' `ValidatableObject<T>` instance et une `EventToCommandBehavior` instance est ajoutée `Behaviors` à la collection du contrôle. Ce `ValidateUserNameCommand` comportement exécute le en réponse au déclenchement de l’événement [`TextChanged`] sur le `Entry`, `Entry` qui est déclenché lorsque le texte du est modifié. Le `ValidateUserNameCommand` délégué exécute ensuite la `ValidateUserName` méthode, qui exécute la `Validate` méthode sur l' `ValidatableObject<T>` instance de. Par conséquent, chaque fois que l’utilisateur entre un caractère `Entry` dans le contrôle pour le nom d’utilisateur, la validation des données entrées est effectuée.
 
-Pour plus d’informations sur les comportements, consultez [mise en œuvre des comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
+Pour plus d’informations sur les comportements, consultez [implémentation de comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
 
 <a name="displaying_validation_errors" />
 
-## <a name="displaying-validation-errors"></a>Affichage des erreurs de Validation
+## <a name="displaying-validation-errors"></a>Affichage des erreurs de validation
 
-L’application mobile eShopOnContainers informe l’utilisateur des éventuelles erreurs de validation en surbrillance le contrôle qui contient les données non valides d’une ligne rouge et en affichant un message d’erreur qui informe l’utilisateur pourquoi les données ne sont pas valides sous le contrôle contenant le données non valides. Lorsque les données non valides sont résolues, la ligne devient noire et le message d’erreur est supprimé. Figure 6-2 montre la vue de connexion dans l’application mobile eShopOnContainers lorsque des erreurs de validation sont présentes.
+L’application mobile eShopOnContainers informe l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides avec une ligne rouge et en affichant un message d’erreur qui informe l’utilisateur pourquoi les données ne sont pas valides sous le contrôle contenant données non valides. Lorsque les données non valides sont corrigées, la ligne devient noire et le message d’erreur est supprimé. La figure 6-2 montre le LoginView dans l’application mobile eShopOnContainers lorsque des erreurs de validation sont présentes.
 
-![](validation-images/validation-login.png "Affichage des erreurs de validation lors de la connexion")
+![](validation-images/validation-login.png "Affichage des erreurs de validation pendant la connexion")
 
-**Figure 6-2 :** Affichage des erreurs de validation lors de la connexion
+**Figure 6-2 :** Affichage des erreurs de validation pendant la connexion
 
 ### <a name="highlighting-a-control-that-contains-invalid-data"></a>Mise en surbrillance d’un contrôle qui contient des données non valides
 
-Le `LineColorBehavior` comportement attaché est utilisé pour mettre en surbrillance [ `Entry` ](xref:Xamarin.Forms.Entry) contrôles où les erreurs de validation se sont produites. Le code suivant montre l’exemple comment la `LineColorBehavior` comportement attachée est attaché à un `Entry` contrôle :
+Le `LineColorBehavior` comportement attaché est utilisé pour mettre [`Entry`](xref:Xamarin.Forms.Entry) en surbrillance des contrôles où des erreurs de validation se sont produites. L’exemple de code suivant montre comment `LineColorBehavior` le comportement attaché est attaché à `Entry` un contrôle :
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">
@@ -234,7 +234,7 @@ Le `LineColorBehavior` comportement attaché est utilisé pour mettre en surbril
 </Entry>
 ```
 
-Le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle consomme un style explicite, ce qui est illustré dans l’exemple de code suivant :
+Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle consomme un style explicite, qui est illustré dans l’exemple de code suivant :
 
 ```xaml
 <Style x:Key="EntryStyle"  
@@ -248,9 +248,9 @@ Le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle consomme un style explicite, 
 </Style>
 ```
 
-Ce style définit la `ApplyLineColor` et `LineColor` joint les propriétés de la `LineColorBehavior` attaché comportement sur le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle. Pour plus d’informations sur les styles, consultez [Styles](~/xamarin-forms/user-interface/styles/index.md).
+Ce style définit les `ApplyLineColor` propriétés `LineColor` jointes et du `LineColorBehavior` comportement attaché sur le [`Entry`](xref:Xamarin.Forms.Entry) contrôle. Pour plus d’informations sur les styles, consultez [Styles](~/xamarin-forms/user-interface/styles/index.md).
 
-Lorsque la valeur de la `ApplyLineColor` propriété jointe est l’ensemble ou modifications, la `LineColorBehavior` comportement attaché exécute le `OnApplyLineColorChanged` (méthode), ce qui est illustré dans l’exemple de code suivant :
+Lorsque la valeur de la `ApplyLineColor` propriété jointe est définie, ou change, `LineColorBehavior` le comportement attaché exécute la `OnApplyLineColorChanged` méthode, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
 public static class LineColorBehavior  
@@ -283,9 +283,9 @@ public static class LineColorBehavior
 }
 ```
 
-Les paramètres de cette méthode fournissent l’instance du contrôle auquel le comportement est attaché au et les valeurs anciennes et nouvelles de la `ApplyLineColor` propriété jointe. Le `EntryLineColorEffect` classe est ajoutée pour le contrôle [ `Effects` ](xref:Xamarin.Forms.Element.Effects) collection si la `ApplyLineColor` propriété jointe est `true`, sinon il est supprimé à partir du contrôle `Effects` collection. Pour plus d’informations sur les comportements, consultez [mise en œuvre des comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
+Les paramètres de cette méthode fournissent l’instance du contrôle auquel le comportement est attaché, ainsi que les anciennes et nouvelles valeurs de la `ApplyLineColor` propriété jointe. La `EntryLineColorEffect` classe est ajoutée à la collection du [`Effects`](xref:Xamarin.Forms.Element.Effects) contrôle si la `ApplyLineColor` propriété jointe `true`est, sinon elle est supprimée de la `Effects` collection du contrôle. Pour plus d’informations sur les comportements, consultez [implémentation de comportements](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
 
-Le `EntryLineColorEffect` sous-classes le [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) classe et est illustré dans l’exemple de code suivant :
+La `EntryLineColorEffect` sous-classe la [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe et est illustrée dans l’exemple de code suivant :
 
 ```csharp
 public class EntryLineColorEffect : RoutingEffect  
@@ -296,9 +296,9 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-Le [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) classe représente un effet indépendant de la plateforme qui encapsule un effet interne qui est spécifique à la plateforme. Cela simplifie le processus de suppression de l’effet, car il n’y a pas d’accès au moment de la compilation aux informations de type pour un effet propre à la plateforme. Le `EntryLineColorEffect` appelle le constructeur de classe de base, en passant un paramètre comportant une concaténation de la résolution de nom de groupe et l’ID unique qui est spécifiée sur chaque classe de l’effet de spécifique à la plateforme.
+La [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) classe représente un effet indépendant de la plateforme qui encapsule un effet interne qui est spécifique à la plateforme. Cela simplifie le processus de suppression de l’effet, car il n’y a pas d’accès au moment de la compilation aux informations de type pour un effet propre à la plateforme. Le `EntryLineColorEffect` appelle le constructeur de classe de base, en passant un paramètre qui se compose d’une concaténation du nom du groupe de résolutions et de l’ID unique spécifié sur chaque classe d’effet spécifique à la plateforme.
 
-Le code suivant montre l’exemple le `eShopOnContainers.EntryLineColorEffect` implémentation pour iOS :
+L’exemple de code suivant montre `eShopOnContainers.EntryLineColorEffect` l’implémentation pour iOS :
 
 ```csharp
 [assembly: ResolutionGroupName("eShopOnContainers")]  
@@ -374,15 +374,15 @@ namespace eShopOnContainers.iOS.Effects
 }
 ```
 
-Le `OnAttached` méthode récupère le contrôle natif pour le Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) contrôler et met à jour de la couleur de ligne en appelant le `UpdateLineColor` (méthode). Le `OnElementPropertyChanged` remplacement répond aux modifications de propriété pouvant être liée sur le `Entry` contrôle en mettant à jour la couleur de ligne si le fichier joint `LineColor` des modifications de propriété, ou la [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) propriété de la `Entry`modifications. Pour plus d’informations sur les effets, consultez [Effets](~/xamarin-forms/app-fundamentals/effects/index.md).
+La `OnAttached` méthode récupère le contrôle natif pour le contrôle Xamarin. Forms [`Entry`](xref:Xamarin.Forms.Entry) et met à jour la couleur de ligne en appelant la `UpdateLineColor` méthode. Le `OnElementPropertyChanged` remplacement répond aux modifications de propriétés pouvant être liées sur `Entry` le contrôle en mettant à jour la couleur de ligne `LineColor` si la propriété jointe [`Height`](xref:Xamarin.Forms.VisualElement.Height) change ou la `Entry` propriété de la modification. Pour plus d’informations sur les effets, consultez [Effets](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-Lorsque les données valides sont entrées dans le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle, il appliquera une ligne noire vers le bas du contrôle, pour indiquer qu’il n’existe aucune erreur de validation. Figure 6-3 montre un exemple.
+Quand des données valides sont entrées [`Entry`](xref:Xamarin.Forms.Entry) dans le contrôle, elles appliquent une ligne noire en bas du contrôle, pour indiquer qu’il n’y a aucune erreur de validation. La figure 6-3 illustre un exemple.
 
-![](validation-images/validation-blackline.png "Ligne noire n’indiquant aucune erreur de validation")
+![](validation-images/validation-blackline.png "Ligne noire indiquant l’absence d’erreur de validation")
 
-**Figure 6-3**: Ligne noire n’indiquant aucune erreur de validation
+**Figure 6-3**: Ligne noire indiquant l’absence d’erreur de validation
 
-Le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle possède également un [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger) ajouté à son [ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers) collection. Le code suivant montre l’exemple le `DataTrigger`:
+Le [`Entry`](xref:Xamarin.Forms.Entry) contrôle a également un [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) ajouté à sa [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) collection. L’exemple de code suivant montre `DataTrigger`les éléments suivants :
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -399,35 +399,34 @@ Le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle possède également un [ `Dat
 </Entry>
 ```
 
-Cela [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger) surveille le `UserName.IsValid` propriété et s’il s’agit de valeur devient `false`, il exécute le [ `Setter` ](xref:Xamarin.Forms.Setter), quelles modifications le `LineColor` attaché propriété de la `LineColorBehavior` attaché comportement en rouge. Figure 6-4 montre un exemple.
+Cela [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) surveille la `UserName.IsValid` propriété et, `false`si elle est valeur, elle exécute le [`Setter`](xref:Xamarin.Forms.Setter), qui modifie la `LineColor` propriété jointe du `LineColorBehavior` comportement attaché en rouge. La figure 6-4 illustre un exemple.
 
-![](validation-images/validation-redline.png "Ligne rouge indiquant l’erreur de validation")
+![](validation-images/validation-redline.png "Ligne rouge indiquant une erreur de validation")
 
-**Figure 6-4**: Ligne rouge indiquant l’erreur de validation
+**Figure 6-4**: Ligne rouge indiquant une erreur de validation
 
-La ligne dans le [ `Entry` ](xref:Xamarin.Forms.Entry) contrôle reste rouge, tandis que les données entrées ne sont pas valides, sinon elle deviendra noir pour indiquer que les données entrées sont valides.
+La ligne dans le [`Entry`](xref:Xamarin.Forms.Entry) contrôle reste en rouge alors que les données entrées ne sont pas valides. dans le cas contraire, elle devient noire pour indiquer que les données entrées sont valides.
 
 Pour plus d’informations sur les déclencheurs, consultez [déclencheurs](~/xamarin-forms/app-fundamentals/triggers.md).
 
-### <a name="displaying-error-messages"></a>Affichage des Messages d’erreur
+### <a name="displaying-error-messages"></a>Affichage des messages d’erreur
 
-L’interface utilisateur affiche les messages d’erreur de validation dans les contrôles Label sous chaque contrôle dont les données d’échec de la validation. Le code suivant montre l’exemple le [ `Label` ](xref:Xamarin.Forms.Label) qui affiche un message d’erreur de validation si l’utilisateur n’a pas entré un nom d’utilisateur valide :
+L’interface utilisateur affiche les messages d’erreur de validation dans les contrôles Label situés sous chaque contrôle dont les données n’ont pas été validées. L’exemple [`Label`](xref:Xamarin.Forms.Label) de code suivant affiche un message d’erreur de validation si l’utilisateur n’a pas entré un nom d’utilisateur valide :
 
 ```xaml
 <Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
-Chaque [ `Label` ](xref:Xamarin.Forms.Label) lie à la `Errors` propriété de l’objet de modèle de vue qui est en cours de validation. Le `Errors` propriété est fournie par le `ValidatableObject<T>` classe et est de type `List<string>`. Étant donné que le `Errors` propriété peut contenir plusieurs erreurs de validation, le `FirstValidationErrorConverter` instance est utilisée pour récupérer la première erreur de la collection pour l’affichage.
+Chaque [`Label`](xref:Xamarin.Forms.Label) lie à la `Errors` propriété de l’objet de modèle de vue qui est en cours de validation. La `Errors` propriété est fournie par la `ValidatableObject<T>` classe et est de type `List<string>`. Étant donné `Errors` que la propriété peut contenir plusieurs erreurs de `FirstValidationErrorConverter` validation, l’instance est utilisée pour récupérer la première erreur de la collection en vue de son affichage.
 
 ## <a name="summary"></a>Récapitulatif
 
-L’application mobile eShopOnContainers effectue la validation côté client synchrone d’afficher les propriétés de modèle et informe l’utilisateur des éventuelles erreurs de validation en surbrillance le contrôle qui contient les données non valides et en affichant des messages d’erreur qui informent l’utilisateur Pourquoi les données ne sont pas valides.
+L’application mobile eShopOnContainers effectue une validation synchrone côté client des propriétés de modèle de vue et avertit l’utilisateur des erreurs de validation en mettant en surbrillance le contrôle qui contient les données non valides et en affichant les messages d’erreur qui informent l’utilisateur. raison pour laquelle les données ne sont pas valides.
 
-Afficher les propriétés de modèle qui nécessite une validation sont de type `ValidatableObject<T>`et chaque `ValidatableObject<T>` instance a des règles de validation ajoutés à son `Validations` propriété. Validation est appelée à partir du modèle de vue en appelant le `Validate` méthode de la `ValidatableObject<T>` instance, qui Récupère la validation des règles et les exécute sur le `ValidatableObject<T>` `Value` propriété. Des erreurs de validation sont placés dans le `Errors` propriété de la `ValidatableObject<T>`instance et le `IsValid` propriété de la `ValidatableObject<T>` instance est mise à jour pour indiquer si la validation a réussi ou échoué.
-
+Les propriétés de modèle de vue qui nécessitent une `ValidatableObject<T>`validation sont de `ValidatableObject<T>` type, et chaque instance a des `Validations` règles de validation ajoutées à sa propriété. La validation est appelée à partir du modèle de vue en `Validate` appelant la méthode `ValidatableObject<T>` de l’instance, qui récupère les règles de validation et les exécute sur `ValidatableObject<T>` la `Value` propriété. Toutes les erreurs de validation `Errors` sont placées dans la `ValidatableObject<T>`propriété de l’instance `IsValid` et la propriété `ValidatableObject<T>` de l’instance est mise à jour pour indiquer si la validation a réussi ou échoué.
 
 ## <a name="related-links"></a>Liens associés
 
-- [Téléchargez le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) (sample)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Télécharger le livre électronique (PDF de 2 Mo)](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers (GitHub) (exemple)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18ce7eb4dcd68596027f739579fd5a4b70497829
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292236"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772702"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Contrôles standard dans Xamarin. Mac
 
@@ -215,7 +215,6 @@ Sélectionnez le type d’exposition à créer et donnez un **nom**à la **sorti
 
 [![](standard-controls-images/edit13.png "Configuration de la sortie ou de l’action")](standard-controls-images/edit13.png#lightbox)
 
-
 Pour plus d’informations sur l’utilisation des **prises** et des **actions**, consultez la section [sorties et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) de notre [Introduction à Xcode et à](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) la documentation de Interface Builder.
 
 <a name="Synchronizing_Changes_with_Xcode" />
@@ -324,7 +323,6 @@ Lorsque l’application est exécutée et que la fenêtre avec le bouton est cl�
 AppKit fournit plusieurs types de cases à cocher et de groupes de cases d’option qui peuvent être utilisés dans la conception de votre interface utilisateur. Pour plus d’informations, consultez la section des [boutons](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) des instructions de l' [interface utilisateur d’Apple OS X](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
 [![](standard-controls-images/buttons02.png "Exemple des types de cases à cocher disponibles")](standard-controls-images/buttons02.png#lightbox)
-
 
 Les cases à cocher et les cases d’option (exposées via **des** **prises**) ont un État (par exemple, activé ou **désactivé**), l’état `State` peut être vérifié `NSCellStateValue` ou défini avec la propriété par rapport à l’énumération. Exemple :
 
@@ -637,7 +635,6 @@ En utilisant le codage clé-valeur et les techniques de liaison de données dans
 Le codage de clé-valeur (KVC) est un mécanisme permettant d’accéder indirectement aux propriétés d’un objet, à l’aide de clés (chaînes spécialement mises en forme) pour identifier les propriétés au lieu d'`get/set`y accéder via des variables d’instance ou des méthodes d’accesseur (). En implémentant des accesseurs conformes de codage de clé-valeur dans votre application Xamarin. Mac, vous accédez à d’autres fonctionnalités macOS telles que l’observation de la valeur clé (KVO), la liaison de données, les données de base, les liaisons de cacao et la scriptabilité.
 
 Pour plus d’informations, consultez la section [liaison de données simple](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding) de notre documentation sur la [liaison de données et le codage de clé-valeur](~/mac/app-fundamentals/databinding.md) .
-
 
 <a name="Summary" />
 

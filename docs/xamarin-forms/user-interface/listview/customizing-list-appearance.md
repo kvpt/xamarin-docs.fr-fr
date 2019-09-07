@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 1355f65a192cf8f7f119a2ee77f334c115650578
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: fc0664ff32e63af5d0c80f69ff69f4992ad0c708
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121635"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770305"
 ---
 # <a name="customizing-listview-appearance"></a>Personnaliser l’apparence de ListView
 
@@ -203,7 +203,7 @@ Pour créer un en-tête personnalisé et le pied de page, définissez les vues d
 
 ## <a name="scrollbar-visibility"></a>Visibilité de la barre de défilement
 
-[`ListView`](xref:Xamarin.Forms.ListView)possède `HorizontalScrollBarVisibility` les `VerticalScrollBarVisibility` propriétés et, qui obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur qui représente le moment où la barre de défilement horizontale ou verticale est visible. Les deux propriétés peuvent être définies avec les valeurs suivantes:
+[`ListView`](xref:Xamarin.Forms.ListView)possède `HorizontalScrollBarVisibility` les `VerticalScrollBarVisibility` propriétés et, qui obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur qui représente le moment où la barre de défilement horizontale ou verticale est visible. Les deux propriétés peuvent être définies avec les valeurs suivantes :
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)indique le comportement par défaut de la barre de défilement pour la plateforme, et est la `HorizontalScrollBarVisibility` valeur `VerticalScrollBarVisibility` par défaut pour les propriétés et.
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
@@ -294,12 +294,10 @@ XAML :
 
 ![](customizing-list-appearance-images/height-custom.png "ListView avec la hauteur de ligne fixe")
 
-
 ### <a name="uneven-rows"></a>Lignes inégale
 
 Si vous souhaitez disposer de différentes hauteurs des lignes individuelles, vous pouvez définir le `HasUnevenRows` propriété `true`.
 Notez que les hauteurs de lignes ne doivent être défini manuellement une fois `HasUnevenRows` a été défini sur `true`, étant donné que les hauteurs seront calculées automatiquement par Xamarin.Forms.
-
 
 C# :
 
@@ -337,8 +335,6 @@ Le `OnImageTapped` Gestionnaire d’événements est exécuté en réponse à un
 ![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView avec redimensionnement de la ligne de Runtime")
 
 Notez qu’il existe un fort risque de dégradation des performances si cette fonctionnalité est utilisée de manière excessive.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

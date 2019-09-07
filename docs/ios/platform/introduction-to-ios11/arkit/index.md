@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 9e6b5c763d620bf5ef17e4fdb613d4bed9c00279
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290912"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752595"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Présentation de ARKit dans Xamarin. iOS
 
@@ -36,7 +36,6 @@ Pour prendre en main la réalité augmentée, les instructions suivantes vous gu
 Les ressources doivent être ajoutées au projet avec l’action de génération **SceneKitAsset** .
 
 ![SceneKit des ressources dans un projet](images/scene-assets.png)
-
 
 ### <a name="2-configure-the-view"></a>2. Configurer la vue
 
@@ -109,7 +108,6 @@ SceneView.Session.Pause();
 Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la `IARSCNViewDelegate`session de réalité augmentée à implémenter et que des méthodes supplémentaires soient implémentées.
 
 ARKit fournit un grand nombre de fonctionnalités plus sophistiquées, telles que le suivi des surfaces et l’interaction avec l’utilisateur. Pour obtenir un exemple de combinaison de suivi ARKit avec UrhoSharp, consultez la [démonstration UrhoSharp](urhosharp.md) .
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 15. L’interface interactive
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 15. L’interface interactive'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 15. L’interface interactive'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 974ef2a141ec7175c2306d4af63f534a5c77ecb2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1c30f87b9173d2ca4de0b2d91ad13145031e9b0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61335300"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760754"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Résumé du chapitre 15. L’interface interactive
 
@@ -49,7 +49,7 @@ Les vues de six restants sont traités dans les chapitres suivants :
 - `ListView`: [**Chapitre 19. Vues de collection**](chapter19.md)
 - `TableView`: [**Chapitre 19. Vues de collection**](chapter19.md)
 - `Map`: [**Chapitre 28. Emplacement et mappages**](chapter28.md)
-- `OpenGLView`: Non couvert dans ce livre (et aucune prise en charge pour les plateformes Windows)
+- `OpenGLView`: Non couverts dans ce manuel (et aucune prise en charge des plateformes Windows)
 
 ## <a name="slider-and-stepper"></a>Curseur et l’exécution pas à pas
 
@@ -94,7 +94,7 @@ Le [ `Stepper` ](xref:Xamarin.Forms.Stepper) définit les propriétés et les é
 
 - [`Increment`](xref:Xamarin.Forms.Stepper.Increment) de type `double`, initialisé à 1
 
-Visuellement, la `Stepper` se compose de deux boutons nommés **&ndash;** et **+**. En appuyant sur **&ndash;** diminue `Value` par `Increment` à un minimum de `Minimum`. En appuyant sur **+** augmente `Value` par `Increment` à un maximum de `Maximum`.
+Visuellement, la `Stepper` se compose de deux boutons nommés **&ndash;** et **+** . En appuyant sur **&ndash;** diminue `Value` par `Increment` à un minimum de `Minimum`. En appuyant sur **+** augmente `Value` par `Increment` à un maximum de `Maximum`.
 
 Cela est illustré par la [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) exemple.
 
@@ -238,8 +238,6 @@ Le [ **DaysBetweenDates** ](https://github.com/xamarin/xamarin-forms-book-sample
 Le [ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) programme montre comment utiliser le `TimePicker` pour spécifier une heure d’une minuterie. Le programme ne fonctionne que si vous le conservez au premier plan.
 
 **SetTimer** montre également comment utiliser le [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) méthode de `Page` pour afficher un message d’alerte.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

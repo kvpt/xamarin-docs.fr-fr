@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 3be55c2149aa58bf6d8462e5c1ff24166078355f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755900"
 ---
 # <a name="manually-signing-the-apk"></a>Signature manuelle de l’APK
-
 
 Une fois l’application générée pour sa mise en production, l’APK doit être signé avant distribution afin de pouvoir être exécuté sur un appareil Android. Ce processus est généralement géré par l’environnement IDE. Toutefois, dans certaines situations, il est nécessaire de signer l’APK manuellement au niveau de la ligne de commande. La signature d’un APK met en œuvre les étapes suivantes :
 
@@ -27,15 +26,11 @@ Une fois l’application générée pour sa mise en production, l’APK doit êt
 
 L’ordre des étapes est important et dépend de l’outil utilisé pour signer l’APK. Si vous utilisez **apksigner**, il est important de commencer par compresser l’application dans un fichier **zipalign**, puis de le signer avec **apksigner**.  Si **jarsigner** doit être utilisé pour signer l’APK, il est important de commencer par signer l’APK, puis d’exécuter **zipalign**. 
 
-
-
 ## <a name="prerequisites"></a>Prérequis
 
 Ce guide met l’accent sur l’utilisation de l’utilitaire **apksigner** disponible dans les outils de génération du kit Android SDK v24.0.3 ou version supérieure. Il est supposé qu’un APK a déjà été généré.
 
 Les applications qui sont générées à l’aide d’une version antérieure des outils de génération du kit Android SDK doivent utiliser **jarsigner** comme décrit dans [Signer l’APK avec jarsigner](#Sign_the_APK_with_jarsigner) ci-dessous.
-
-
 
 ## <a name="create-a-private-keystore"></a>Créer un magasin de clés privé
 
@@ -48,8 +43,6 @@ Pour cette raison, un magasin de clés privé doit être créé et utilisé pour
 
 Il est important de protéger ce magasin de clés. S’il est perdu, il ne sera pas possible de publier des mises à jour de l’application sur Google Play.
 En cas de perte d’un magasin de clés, la seule solution est de créer un nouveau magasin de clés, de resigner l’APK avec la nouvelle clé, puis de soumettre une nouvelle application. L’ancienne application devra ensuite être supprimée de Google Play. De même, si ce nouveau magasin de clés est compromis ou distribué publiquement, des versions non officielles ou malveillantes d’une application peuvent alors être distribuées.
-
-
 
 ### <a name="create-a-new-keystore"></a>Créer un magasin de clés
 
@@ -95,7 +88,6 @@ Pour afficher la liste des clés qui sont stockées dans un magasin de clés, ut
 $ keytool -list -keystore xample.keystore
 ```
 
-
 ## <a name="zipalign-the-apk"></a>Compresser l’APK dans un fichier zipalign
 
 Avant de signer un APK avec **apksigner**, il est important de commencer par optimiser le fichier à l’aide de l’outil **zipalign** du SDK Android. **zipalign** va restructurer les ressources d’un APK sur des limites de 4 octets. Cette alignement permet à Android de charger rapidement les ressources de l’APK, augmentant ainsi les performances de l’application et réduisant potentiellement l’utilisation de la mémoire. Xamarin.Android effectuera une vérification au moment de l’exécution pour déterminer si le fichier APK a été compressé dans un fichier zipalign. Si l’APK n’a pas été compressé dans un fichier zipalign, l’application ne fonctionnera pas.
@@ -105,7 +97,6 @@ La commande suivante utilise l’APK signé et produit un APK compressé dans un
 ```shell
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
-
 
 ## <a name="sign-the-apk"></a>Signer l’APK
 
@@ -129,7 +120,6 @@ Consultez la [documentation de Google](https://developer.android.com/studio/comm
 > [!NOTE]
 > D’après [problème 62696222 signalé dans Google Issue Tracker](https://issuetracker.google.com/issues/62696222), **apksigner** est absent du kit Android SDK. La solution consiste à installer les outils de génération du kit Android SDK v25.0.3 et d’utiliser cette version de l’outil **apksigner**.  
 
-
 <a name="Sign_the_APK_with_jarsigner" />
 
 ### <a name="sign-the-apk-with-jarsigner"></a>Signer l’APK avec jarsigner
@@ -147,8 +137,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 
 > [!NOTE]
 > Lorsque vous utilisez **jarsigner**, il est important de _commencer par_ signer l’APK, puis d’utiliser **zipalign**.  
-
-
 
 ## <a name="related-links"></a>Liens associés
 

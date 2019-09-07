@@ -6,24 +6,23 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: f8a542b58fa891b63f43d1c87dea911b83e01949
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e3b7ccf74773e5a391b8f133ccc241ca0e18bfcb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509319"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755154"
 ---
 # <a name="using-android-assets"></a>Utilisation de ressources Android
 
-Les _ressources_ permettent d’inclure des fichiers arbitraires tels que du texte, du XML, des polices, de la musique et des vidéos dans votre application. Si vous essayez d’inclure ces fichiers en tant que «ressources», Android les traite dans son système de ressources et vous ne pouvez pas récupérer les données brutes. Si vous souhaitez accéder aux données détouchées, les ressources sont un moyen d’y parvenir.
+Les _ressources_ permettent d’inclure des fichiers arbitraires tels que du texte, du XML, des polices, de la musique et des vidéos dans votre application. Si vous essayez d’inclure ces fichiers en tant que « ressources », Android les traite dans son système de ressources et vous ne pouvez pas récupérer les données brutes. Si vous souhaitez accéder aux données détouchées, les ressources sont un moyen d’y parvenir.
 
 Les ressources ajoutées à votre projet s’affichent comme un système de fichiers que vous pouvez lire à partir de votre application à l’aide de [AssetManager](xref:Android.Content.Res.AssetManager).
 Dans cette démonstration simple, nous allons ajouter une ressource de fichier texte à notre projet, la lire à l' `AssetManager`aide de et l’afficher dans un TextView.
 
-
 ## <a name="add-asset-to-project"></a>Ajouter un élément multimédia au projet
 
-Les éléments multimédias `Assets` sont insérés dans le dossier de votre projet. Ajoutez un nouveau fichier texte à ce dossier appelé `read_asset.txt`. Placez-y du texte tel que «je provienne d’un élément multimédia!».
+Les éléments multimédias `Assets` sont insérés dans le dossier de votre projet. Ajoutez un nouveau fichier texte à ce dossier appelé `read_asset.txt`. Placez-y du texte tel que « je provienne d’un élément multimédia ! ».
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -40,7 +39,6 @@ Visual Studio pour Mac devez avoir défini l' **action de génération** pour ce
 -----
 
 La sélection de l’option **BuildAction** correcte permet de s’assurer que le fichier sera empaqueté dans le apk au moment de la compilation.
-
 
 ## <a name="reading-assets"></a>Lecture des ressources
 
@@ -69,13 +67,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-
 ## <a name="running-the-application"></a>Exécution de l'application
 
-Exécutez l’application et les éléments suivants doivent s’afficher:
+Exécutez l’application et les éléments suivants doivent s’afficher :
 
 ![Exemple de capture d’écran](android-assets-images/screenshot.png)
-
 
 ## <a name="related-links"></a>Liens associés
 

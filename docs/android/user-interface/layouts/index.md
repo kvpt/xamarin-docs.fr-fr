@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/18/2017
-ms.openlocfilehash: 79183963e59a7ca167ffbc3c0cc4b3628595389e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 60752760415bd416d339cc2a3729075b4fca0d32
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522651"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764475"
 ---
 # <a name="xamarinandroid-layouts"></a>Dispositions Xamarin. Android
 
@@ -46,7 +46,6 @@ Les dispositions permettent d’organiser les éléments qui composent l’inter
 
     ![Exemple de disposition de grille](images/grid-layout.png)
 
-- Les [dispositions](~/android/user-interface/layouts/tab-layout/index.md) avec onglets sont un modèle d’interface utilisateur populaire dans les applications mobiles, en raison de leur simplicité et de leur convivialité. Ils offrent un moyen cohérent et facile de naviguer entre les différents écrans d’une application.
+- Les [dispositions avec onglets](~/android/user-interface/layouts/tab-layout/index.md) sont un modèle d’interface utilisateur populaire dans les applications mobiles, en raison de leur simplicité et de leur convivialité. Ils offrent un moyen cohérent et facile de naviguer entre les différents écrans d’une application.
 
     ![Exemple de disposition avec onglets](images/tabbed-layout.png)
- 

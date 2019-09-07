@@ -7,12 +7,12 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: 09f2c2c0367b50146a564b370f555a1ed804371e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 49888dd32ee1cbfed6f9c9268c8dc7a106bec83e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642547"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770587"
 ---
 # <a name="skiasharp-curves-and-paths"></a>Chemins d’accès et des courbes de SkiaSharp
 
@@ -51,7 +51,6 @@ Explorez l’intersection des chemins d’accès et du texte
 ## <a name="path-information-and-enumerationinformationmd"></a>[Informations de chemin et énumération](information.md)
 
 Obtenir des informations sur les chemins d’accès et d’énumérer le contenu
-
 
 ## <a name="related-links"></a>Liens associés
 

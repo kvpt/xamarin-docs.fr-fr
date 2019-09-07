@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 1c477f030dc69394ba601b31d71a772f5037af48
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522297"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758398"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin. Android TableLayout
 
@@ -21,7 +21,7 @@ qui affiche l’enfant[`View`](xref:Android.Views.View)
 
 Démarrez un nouveau projet nommé **HelloTableLayout**.
 
-Ouvrez le fichier Resources **/Layout/main. AXML** et insérez ce qui suit:
+Ouvrez le fichier **Resources/layout/main. AXML** et insérez ce qui suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,7 +103,7 @@ Ouvrez le fichier Resources **/Layout/main. AXML** et insérez ce qui suit:
 ```
 
 Notez que cela ressemble à la structure d’une table HTML. La[`TableLayout`](xref:Android.Widget.TableLayout)
-l’élément est semblable à `<table>` l’élément HTML;[`TableRow`](xref:Android.Widget.TableRow)
+l’élément est semblable à `<table>` l’élément HTML ;[`TableRow`](xref:Android.Widget.TableRow)
 est semblable à `<tr>` un élément, mais pour les cellules, vous pouvez utiliser n’importe [`View`](xref:Android.Views.View) quel type d’élément. Dans cet exemple, un[`TextView`](xref:Android.Widget.TextView)
 est utilisé pour chaque cellule. Entre certaines lignes, il y a également un de base [`View`](xref:Android.Views.View), qui est utilisé pour dessiner une ligne horizontale.
 
@@ -118,13 +118,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-La [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)méthode) charge le fichier de disposition pour [`Activity`](xref:Android.App.Activity)le, spécifié par l’ID &mdash; `Resource.Layout.Main` de ressource, fait référence au fichier de disposition Resources **/Layout/main. AXML** .
+La [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)méthode) charge le fichier de disposition pour [`Activity`](xref:Android.App.Activity)le, spécifié par l’ID &mdash; `Resource.Layout.Main` de ressource, fait référence au fichier de disposition **Resources/layout/main. AXML** .
 
-Exécutez l'application. Les éléments suivants doivent s’afficher:
+Exécutez l'application. Les éléments suivants doivent s’afficher :
 
 [![Exemple de capture d’écran de l’application TableLayout affichant plusieurs lignes de table](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
-
-
 
 ## <a name="references"></a>Références
 

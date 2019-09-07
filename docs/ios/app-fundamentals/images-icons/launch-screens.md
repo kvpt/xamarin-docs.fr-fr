@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18d33dfcef109fd29f32969b9bdd15b8a2dc475a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290249"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764055"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Écrans de lancement pour les applications Xamarin. iOS
 
@@ -131,7 +131,7 @@ Dans iOS 8 (et versions ultérieures), le développeur peut créer une table de 
     - Pour modifier un fichier de table de montage séquentiel, Visual Studio a besoin d’une connexion active à un hôte de build Mac. Pour plus d’informations, consultez le guide [connexion au Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) .
 
 7. Choisissez un appareil et une orientation sur lesquels afficher un aperçu de la table de montage séquentiel d’écran de lancement dans le concepteur iOS. Ouvrez le panneau de sélection de l’appareil dans la barre d’outils inférieure, puis sélectionnez **iPhone** et **portrait**: 
- 
+
     ![Barre d’outils sélection d’appareil](launch-screens-images/launch07-vs.png)
 
     - Notez que la sélection d’un appareil et de l’orientation modifie uniquement la manière dont le concepteur iOS affiche un aperçu de la conception. Quelle que soit la sélection effectuée ici, les contraintes nouvellement ajoutées sont appliquées sur l’ensemble des appareils et des orientations, sauf si le bouton **modifier les traits** a été utilisé pour spécifier la valeur dans le cas contraire. 
@@ -196,7 +196,6 @@ Quand vous mettez à jour une application existante pour utiliser des storyboard
 Ensuite, double-cliquez sur `Info.plist` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier. Sous **écran de lancement**, sélectionnez le nouveau fichier de Storyboard créé ci-dessus.
 
 ![](launch-screens-images/storyboard09.png "Sélectionner le nouveau fichier de Storyboard créé ci-dessus")
-
 
 Pour utiliser le nouvel Storyboard comme écran de lancement, procédez comme suit :
 

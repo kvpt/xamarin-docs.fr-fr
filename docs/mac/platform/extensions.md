@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 13b19d60569884f244f2ea9c79aaa6989838d0d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290707"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770040"
 ---
 # <a name="xamarinmac-extension-support"></a>Prise en charge de l’extension Xamarin.Mac
 
@@ -45,7 +45,6 @@ Les conseils suivants peuvent être utiles lors de l’utilisation d’extension
     [![](extensions-images/extension02.png "Journal système")](extensions-images/extension02.png#lightbox)
 - Comme indiqué ci-dessus, l’exécution de l’application hôte d’extension l’inscrit auprès du système. Suppression de l’ensemble d’applications avec annulation de son inscription. 
 - Si les versions « isolées » des extensions d’une application sont inscrites, utilisez la commande suivante pour les localiser (afin qu’elles puissent être supprimées) :`plugin kit -mv`
-
 
 <a name="Walkthrough-and-Sample-App" />
 

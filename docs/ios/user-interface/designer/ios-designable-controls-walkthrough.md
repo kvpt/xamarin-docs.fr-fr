@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 9104d1c7c92ac9de9cb6ae44197b4f16851563bb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 651df247e3b5616a3baa38e85159c6a6d5247807
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287307"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768802"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>utilisation de contrôles personnalisés avec le concepteur iOS
 
@@ -26,7 +26,6 @@ Ce guide suppose que vous connaissez le contenu abordé dans les guides de [pris
 
 > [!IMPORTANT]
 > À partir de Xamarin. Studio 5,5, la façon dont les contrôles personnalisés sont créés est légèrement différente de celle des versions antérieures. Pour créer un contrôle personnalisé, soit l' `IComponent` interface est requise (avec les méthodes d’implémentation associées), soit la classe peut être annotée avec. `[DesignTimeVisible(true)]` La dernière méthode est utilisée dans l’exemple de procédure pas à pas suivant.
-
 
 1. Créez une nouvelle solution à partir de l’application **iOS > > modèle d' C# application à affichage unique >** , nommez- `ScratchTicket`la et poursuivez avec l’Assistant Nouveau projet :
 
@@ -157,23 +156,19 @@ Ce guide suppose que vous connaissez le contenu abordé dans les guides de [pris
     }
     ```
 
-
 1. Ajoutez les `FillTexture.png`fichiers `FillTexture2.png` , `Monkey.png` et (disponibles [à partir de GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) au dossier **Resources** .
 
 1. Double-cliquez sur `Main.storyboard` le fichier pour l’ouvrir dans le concepteur :
 
     [![](ios-designable-controls-walkthrough-images/03new.png "Le concepteur iOS")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
-
 1. Glissez-déplacez une **vue d’image** de la **boîte à outils** vers la vue dans le Storyboard.
 
     [![](ios-designable-controls-walkthrough-images/04new.png "Vue d’image ajoutée à la disposition")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-
 1. Sélectionnez la **vue image** et définissez sa propriété **image** sur `Monkey.png`.
 
     [![](ios-designable-controls-walkthrough-images/05new.png "Définition de la propriété image de la vue image sur singe. png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
-
 
 1. Comme nous utilisons des classes de taille, nous devrons contraindre cette vue d’image. Cliquez deux fois sur l’image pour la placer en mode de contrainte. Nous allons la contraindre au centre en cliquant sur la poignée centrale et en l’alignant à la fois verticalement et horizontalement :
 
@@ -183,16 +178,13 @@ Ce guide suppose que vous connaissez le contenu abordé dans les guides de [pris
 
     [![](ios-designable-controls-walkthrough-images/07new.png "Ajout de contraintes")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
-
 1. Mettez à jour le frame en fonction des contraintes en cliquant sur le bouton mettre à jour dans la barre d’outils :
 
     [![](ios-designable-controls-walkthrough-images/08new.png "Barre d’outils contraintes")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
-
 1. Ensuite, générez le projet afin que la **vue de ticket Scratch** s’affiche sous **composants personnalisés** dans la boîte à outils :
 
     [![](ios-designable-controls-walkthrough-images/09new.png "Boîte à outils des composants personnalisés")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
-
 
 1. Faites glisser et déposez une **vue de ticket Scratch** pour qu’elle apparaisse sur l’image de singe. Ajustez les poignées de glissement pour que l’affichage du ticket Scratch couvre complètement le singe, comme indiqué ci-dessous :
 
@@ -201,7 +193,6 @@ Ce guide suppose que vous connaissez le contenu abordé dans les guides de [pris
 1. Limitez la vue de ticket scratch à la vue image en dessinant un rectangle englobant pour sélectionner les deux vues. Sélectionnez les options pour les contraindre à la largeur, à la hauteur, au centre et au milieu, et mettez à jour les frames en fonction des contraintes, comme indiqué ci-dessous :
 
     [![](ios-designable-controls-walkthrough-images/11new.png "Centrage et ajout de contraintes")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
-
 
 1. Exécutez l’application et « éraflure » de l’image pour révéler le singe.
 
@@ -272,8 +263,6 @@ L’inclusion `ExportAttribute` d’un `BrowsableAttribute` et d’un avec l' `t
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons parcouru la création d’un contrôle personnalisé, ainsi que son utilisation dans une application iOS à l’aide du concepteur iOS. Nous avons vu comment créer et générer le contrôle pour le rendre disponible pour une application dans la **boîte à outils**du concepteur. En outre, nous avons vu comment implémenter le contrôle de sorte qu’il s’affiche correctement à la fois au moment du design et au moment de l’exécution, et comment exposer des propriétés de contrôle personnalisées dans le concepteur.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

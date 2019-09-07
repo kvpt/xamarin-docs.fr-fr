@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 114d00b0d79b497201b3185a1443b8c8f9699c31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c338f8a5b2f1d41b1ea0f61778a1c14eb84ce08
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283542"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769153"
 ---
 # <a name="introduction-to-tvos-10"></a>Introduction à tvOS 10
 
@@ -83,8 +83,6 @@ Pour en savoir plus, consultez notre guide [supplémentaire sur les modification
 ## <a name="deprecated-apis"></a>API déconseillées
 
 Aucune API ou infrastructure n’a été déconseillée par tvOS 10. Pour obtenir la liste complète des modifications d’API, consultez la documentation sur les différences de l’API d’Apple [tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/tvOS10APIDiffs/index.html) .
-
-
 
 ## <a name="related-links"></a>Liens associés
 

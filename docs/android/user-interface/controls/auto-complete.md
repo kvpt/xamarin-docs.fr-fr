@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 186dab1d48d928426d223c8961ce21846c351107
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 575235569351d0856c7fbffbf38a981ede1a35ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523080"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762438"
 ---
 # <a name="auto-complete-for-xamarinandroid"></a>Saisie semi-automatique pour Xamarin. Android
 
@@ -48,12 +48,11 @@ widget qui fournit des suggestions pour un nom de pays.
 Le [`TextView`](xref:Android.Widget.TextView) est une étiquette qui introduit le[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 sélection.
 
-
 ## <a name="tutorial"></a>Didacticiel
 
 Démarrez un nouveau projet nommé *HelloAutoComplete*.
 
-Créez un fichier XML nommé `list_item.xml` et enregistrez-le dans le dossier **ressources/mise en page** . Définissez l’action de génération de ce fichier `AndroidResource`sur. Modifiez le fichier pour qu’il ressemble à ceci:
+Créez un fichier XML nommé `list_item.xml` et enregistrez-le dans le dossier **ressources/mise en page** . Définissez l’action de génération de ce fichier `AndroidResource`sur. Modifiez le fichier pour qu’il ressemble à ceci :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -69,7 +68,7 @@ Créez un fichier XML nommé `list_item.xml` et enregistrez-le dans le dossier *
 
 Ce fichier définit un simple [`TextView`](xref:Android.Widget.TextView) qui sera utilisé pour chaque élément qui apparaît dans la liste de suggestions.
 
-Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit:
+Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -111,7 +110,7 @@ Une fois que l’affichage du contenu est `main.xml` défini sur la disposition,
 le widget est capturé à partir de [`FindViewById`](xref:Android.App.Activity.FindViewById*)la disposition avec. Un nouveau [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) est ensuite initialisé pour lier la `list_item.xml` disposition à chaque élément de liste dans le `COUNTRIES` tableau de chaînes (défini à l’étape suivante). Enfin, `SetAdapter()` est appelé pour associer le [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) à[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 widget afin que le tableau de chaînes renseigne la liste des suggestions.
 
-À l' `MainActivity` intérieur de la classe, ajoutez le tableau de chaînes:
+À l' `MainActivity` intérieur de la classe, ajoutez le tableau de chaînes :
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -162,11 +161,9 @@ static string[] COUNTRIES = new string[] {
 Il s’agit de la liste des suggestions qui seront fournies dans une liste déroulante lorsque l’utilisateur tape dans la[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 sélection.
 
-Exécutez l'application. À mesure que vous tapez, vous devriez voir ce qui suit:
+Exécutez l'application. À mesure que vous tapez, vous devriez voir ce qui suit :
 
-[![Exemple de capture d’écran de saisie semi-automatique des noms contenant «ca»](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
-
-
+[![Exemple de capture d’écran de saisie semi-automatique des noms contenant « ca »](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 ## <a name="more-information"></a>Informations complémentaires
 
@@ -189,13 +186,12 @@ sélection. Au lieu de cela, votre application doit déclarer ces tableaux de ch
 ```
 
 Pour utiliser ces chaînes de ressources pour [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)le, remplacez l’original[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
-ligne du constructeur avec les éléments suivants:
+ligne du constructeur avec les éléments suivants :
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
 var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countries);
 ```
-
 
 ### <a name="references"></a>Références
 

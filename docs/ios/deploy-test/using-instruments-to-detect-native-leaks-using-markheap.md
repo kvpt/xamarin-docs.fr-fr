@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9492c90274e28f14dee0e8cbcb2aaa1a55de2420
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 866ebd2a66557cda5372c5bc3d7a909e18c762d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282748"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756091"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profilage d’applications Xamarin.iOS avec Instruments
 
@@ -32,7 +32,6 @@ Sélectionnez l’appareil et exécutez l’application Instruments :
 3. Connectez un appareil iOS à l’ordinateur.
 4. Dans le menu **Exécuter**, sélectionnez **Charger sur l’appareil**. L’application est ensuite générée et chargée sur l’appareil.
 5. Dans le menu **Outils**, sélectionnez **Lancer Instruments**.
-
 
 Instruments s’ouvre et affiche la boîte de dialogue suivante :
 

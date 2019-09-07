@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa2e287775e6669bd8bdf2728d9c676c451af69b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278536"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753294"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Contacts et ContactsUI dans Xamarin. iOS
 
@@ -31,9 +31,6 @@ Les deux nouvelles infrastructures contiennent les fonctionnalités suivantes :
 
 > [!IMPORTANT]
 > Les infrastructures `AddressBook` et `AddressBookUI` existantes utilisées par IOS 8 (et les versions antérieures) ont été dépréciées dans iOS 9 et doivent être remplacées `Contacts` par `ContactsUI` les nouvelles et nouvelles infrastructures le plus rapidement possible pour toute application Xamarin. iOS existante. Les nouvelles applications doivent être écrites sur les nouvelles infrastructures.
-
-
-
 
 Dans les sections suivantes, nous allons examiner ces nouvelles infrastructures et comment les implémenter dans une application Xamarin. iOS.
 
@@ -359,7 +356,6 @@ PresentViewController(view, true, null);
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des frameworks d’interface utilisateur contact et contact dans une application Xamarin. iOS. Tout d’abord, il a abordé les différents types d’objets que l’infrastructure de contact fournit et comment vous les utilisez pour créer des contacts existants ou y accéder. Il a également examiné l’infrastructure de l’interface utilisateur de contact pour sélectionner les contacts existants et afficher les informations de contact.
-
 
 ## <a name="related-links"></a>Liens associés
 

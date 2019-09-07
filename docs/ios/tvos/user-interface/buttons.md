@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/07/2017
-ms.openlocfilehash: aa1dd0b503dd59a89f526fef53d7d7756a3883de
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291107"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769975"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Utilisation des boutons tvOS dans Xamarin
 
@@ -63,7 +63,6 @@ Le moyen le plus simple d’utiliser des boutons dans une application Xamarin. t
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
 1. Faites glisser un **bouton** à partir de la **bibliothèque** et déposez-le sur la vue : 
 
@@ -82,7 +81,6 @@ Le moyen le plus simple d’utiliser des boutons dans une application Xamarin. t
     [![](buttons-images/storyboard05.png "Éditeur de code")](buttons-images/storyboard05.png#lightbox)
 1. Enregistrez les modifications apportées à tous les fichiers.
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
@@ -97,10 +95,7 @@ Le moyen le plus simple d’utiliser des boutons dans une application Xamarin. t
     [![](buttons-images/storyboard03vs.png "Onglet événements")](buttons-images/storyboard03vs.png#lightbox)
 1. Enregistrez les modifications apportées à tous les fichiers.
 
-
-
 Modifiez le fichier de votre contrôleur `ViewController.cs`d’affichage (exemple) et ajoutez le code suivant pour gérer le bouton sélectionné :
-
 
 ```
 
@@ -128,9 +123,6 @@ Tant que la propriété d' `Enabled` un bouton a `true` la valeur et qu’elle n
 
 > [!IMPORTANT]
 > Bien qu’il soit possible d’assigner `TouchUpInside` `UIButton` des actions telles que à dans le concepteur iOS lors de la création d’un **Gestionnaire d’événements**, il ne sera jamais appelé, car Apple TV n’a pas d’écran tactile ou de prise en charge des événements tactiles. Vous devez toujours utiliser le **type d’action** par défaut lors de la création d' **actions** pour les éléments de l’interface utilisateur tvOS.
-
-
-
 
 Pour plus d’informations sur l’utilisation des storyboards, consultez notre [Guide de démarrage rapide Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md).
 
@@ -189,9 +181,6 @@ View.AddSubview (button);
 
 > [!IMPORTANT]
 > Bien qu’il soit possible d’assigner `TouchUpInside` des actions `UIButton`telles que à un, il ne sera jamais appelé, car Apple TV ne dispose pas d’un écran tactile ou de la prise en charge des événements tactiles. Vous devez toujours utiliser des événements tels que **AllEvents** ou **PrimaryActionTriggered**.
-
-
-
 
 <a name="Styling-a-Button" />
 
@@ -262,8 +251,6 @@ Utilisez la `TintColor` propriété pour définir une teinte de couleur appliqu�
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation de boutons à l’intérieur d’une application Xamarin. tvOS. Il a montré comment utiliser les boutons dans le concepteur iOS et comment créer des boutons dans C# le code. Enfin, il a montré comment modifier le titre d’un bouton et modifier son style et son apparence.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

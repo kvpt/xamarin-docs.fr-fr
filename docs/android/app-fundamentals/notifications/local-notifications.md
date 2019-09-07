@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 3ff6bc9c603360232b22a36dadb42b6caf31cada
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0d5cde38c9bb9ef4771ec17ef34ebf7e1b8cf74c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522396"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755510"
 ---
 # <a name="local-notifications-on-android"></a>Notifications locales sur Android
 
@@ -20,15 +20,15 @@ _Cette section montre comment implémenter des notifications locales dans Xamari
 
 ## <a name="local-notifications-overview"></a>Vue d’ensemble des notifications locales
 
-Android fournit deux zones contrôlées par le système pour l’affichage des icônes de notification et des informations de notification à l’utilisateur. Lorsqu’une notification est publiée pour la première fois, son icône s’affiche dans la *zone de notification*, comme illustré dans la capture d’écran suivante:
+Android fournit deux zones contrôlées par le système pour l’affichage des icônes de notification et des informations de notification à l’utilisateur. Lorsqu’une notification est publiée pour la première fois, son icône s’affiche dans la *zone de notification*, comme illustré dans la capture d’écran suivante :
 
 ![Exemple de zone de notification sur un appareil](local-notifications-images/01-notification-shade.png)
 
-Pour obtenir des informations détaillées sur la notification, l’utilisateur peut ouvrir le tiroir de notification (qui développe chaque icône de notification pour afficher le contenu de la notification) et effectuer toutes les actions associées aux notifications. La capture d’écran suivante montre un *tiroir de notification* qui correspond à la zone de notification affichée ci-dessus:
+Pour obtenir des informations détaillées sur la notification, l’utilisateur peut ouvrir le tiroir de notification (qui développe chaque icône de notification pour afficher le contenu de la notification) et effectuer toutes les actions associées aux notifications. La capture d’écran suivante montre un *tiroir de notification* qui correspond à la zone de notification affichée ci-dessus :
 
 [![Exemple de tiroir de notification affichant trois notifications](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
-Les notifications Android utilisent deux types de dispositions:
+Les notifications Android utilisent deux types de dispositions :
 
 - ***Disposition de base*** &ndash; format de présentation compact et fixe.
 
@@ -41,7 +41,7 @@ Chacun de ces types de dispositions (et comment les créer) est expliqué dans l
 
 ### <a name="base-layout"></a>Disposition de base
 
-Toutes les notifications Android sont basées sur le format de disposition de base, qui, au minimum, comprend les éléments suivants:
+Toutes les notifications Android sont basées sur le format de disposition de base, qui, au minimum, comprend les éléments suivants :
 
 1. Une *icône de notification*, qui représente l’application d’origine, ou le type de notification si l’application prend en charge différents types de notifications.
 
@@ -51,29 +51,29 @@ Toutes les notifications Android sont basées sur le format de disposition de ba
 
 4. *Horodateur*.
 
-Ces éléments sont affichés comme illustré dans le diagramme suivant:
+Ces éléments sont affichés comme illustré dans le diagramme suivant :
 
 [![Emplacement des éléments de notification](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png#lightbox)
 
 Les dispositions de base sont limitées à la hauteur de 64 pixels indépendants (DP). Android crée ce style de notification de base par défaut.
 
-Les notifications peuvent éventuellement afficher une grande icône qui représente l’application ou la photo de l’expéditeur. Quand une grande icône est utilisée dans une notification dans Android 5,0 et versions ultérieures, la petite icône de notification s’affiche sous la forme d’un badge sur la grande icône:
+Les notifications peuvent éventuellement afficher une grande icône qui représente l’application ou la photo de l’expéditeur. Quand une grande icône est utilisée dans une notification dans Android 5,0 et versions ultérieures, la petite icône de notification s’affiche sous la forme d’un badge sur la grande icône :
 
 ![Photo de notification simple](local-notifications-images/04-simple-notification-photo.png)
 
-À partir d’Android 5,0, les notifications peuvent également apparaître sur l’écran de verrouillage:
+À partir d’Android 5,0, les notifications peuvent également apparaître sur l’écran de verrouillage :
 
 [![Exemple de notification de l’écran de verrouillage](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
 L’utilisateur peut double-cliquer sur la notification de verrouillage de l’écran pour déverrouiller l’appareil et accéder à l’application à l’origine de cette notification, ou faire glisser pour fermer la notification. Les applications peuvent définir le niveau de visibilité d’une notification pour contrôler ce qui est affiché sur l’écran de verrouillage, et les utilisateurs peuvent choisir d’autoriser ou non le contenu sensible à être affiché dans les notifications de verrouillage de l’écran.
 
-Android 5,0 a introduit un format de présentation de notification haute priorité appelé *TETE-up*. Les notifications de niveau supérieur s’affichent en haut de l’écran pendant quelques secondes, puis se replacent dans la zone de notification:
+Android 5,0 a introduit un format de présentation de notification haute priorité appelé *TETE-up*. Les notifications de niveau supérieur s’affichent en haut de l’écran pendant quelques secondes, puis se replacent dans la zone de notification :
 
 [![Exemple de notification de tête](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
 Les notifications par tête permettent à l’interface utilisateur du système de placer des informations importantes devant l’utilisateur sans interrompre l’état de l’activité en cours d’exécution.
 
-Android prend en charge les métadonnées de notification afin que les notifications puissent être triées et affichées intelligemment. Les métadonnées de notification contrôlent également la manière dont les notifications sont présentées sur l’écran de verrouillage et au format en tête. Les applications peuvent définir les types de métadonnées de notification suivants:
+Android prend en charge les métadonnées de notification afin que les notifications puissent être triées et affichées intelligemment. Les métadonnées de notification contrôlent également la manière dont les notifications sont présentées sur l’écran de verrouillage et au format en tête. Les applications peuvent définir les types de métadonnées de notification suivants :
 
 - **Priorité** &ndash; Le niveau de priorité détermine comment et quand les notifications sont présentées. Par exemple, dans Android 5,0, les notifications de haute priorité s’affichent sous la forme de notifications principales.
 
@@ -84,18 +84,17 @@ Android prend en charge les métadonnées de notification afin que les notificat
 > [!NOTE]
 > La **visibilité** et la **catégorie** ont été introduites dans Android 5,0 et ne sont pas disponibles dans les versions antérieures d’Android. À partir d’Android 8,0, les [canaux de notification](#notif-chan) sont utilisés pour contrôler la façon dont les notifications sont présentées à l’utilisateur.
 
-
 ### <a name="expanded-layouts"></a>Mises en page étendues
 
-À compter d’Android 4,1, les notifications peuvent être configurées avec des styles de disposition développés qui permettent à l’utilisateur de développer la hauteur de la notification pour afficher davantage de contenu. Par exemple, l’exemple suivant illustre une notification de disposition développée en mode contractuel:
+À compter d’Android 4,1, les notifications peuvent être configurées avec des styles de disposition développés qui permettent à l’utilisateur de développer la hauteur de la notification pour afficher davantage de contenu. Par exemple, l’exemple suivant illustre une notification de disposition développée en mode contractuel :
 
 ![Notification contractée](local-notifications-images/07-contracted-notification.png)
 
-Lorsque cette notification est développée, elle révèle l’intégralité du message:
+Lorsque cette notification est développée, elle révèle l’intégralité du message :
 
 ![Notification développée](local-notifications-images/08-expanded-notification.png)
 
-Android prend en charge trois styles de disposition développés pour les notifications d’événements uniques:
+Android prend en charge trois styles de disposition développés pour les notifications d’événements uniques :
 
 - ***Texte volumineux*** &ndash; En mode contractuel, affiche un extrait de la première ligne du message, suivi de deux points. En mode développé, affiche l’intégralité du message (comme indiqué dans l’exemple ci-dessus).
 
@@ -109,17 +108,17 @@ Android prend en charge trois styles de disposition développés pour les notifi
 <a name="notification-channels"></a>
 ## <a name="notification-channels"></a>Canaux de notification
 
-À partir d’Android 8,0 (Oreo), vous pouvez utiliser la fonctionnalité *canaux de notification* pour créer un canal personnalisable par l’utilisateur pour chaque type de notification que vous souhaitez afficher. Les canaux de notification vous permettent de regrouper des notifications afin que toutes les notifications publiées sur un canal présentent le même comportement. Par exemple, vous pouvez avoir un canal de notification destiné aux notifications qui requièrent une attention immédiate et un canal «plus silencieux» distinct qui est utilisé pour les messages d’information.
+À partir d’Android 8,0 (Oreo), vous pouvez utiliser la fonctionnalité *canaux de notification* pour créer un canal personnalisable par l’utilisateur pour chaque type de notification que vous souhaitez afficher. Les canaux de notification vous permettent de regrouper des notifications afin que toutes les notifications publiées sur un canal présentent le même comportement. Par exemple, vous pouvez avoir un canal de notification destiné aux notifications qui requièrent une attention immédiate et un canal « plus silencieux » distinct qui est utilisé pour les messages d’information.
 
-L’application **YouTube** installée avec Android Oreo répertorie deux catégories de notification: **Notifications de téléchargement** et **notifications générales**:
+L’application **YouTube** installée avec Android Oreo répertorie deux catégories de notification : **Notifications de téléchargement** et **notifications générales**:
 
 [![Écrans de notification pour YouTube dans Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
-Chacune de ces catégories correspond à un canal de notification. L’application YouTube implémente un canal de notifications de **Téléchargement** et un canal de **notifications générales** . L’utilisateur peut appuyer sur **Télécharger**les notifications, ce qui affiche l’écran des paramètres pour le canal des notifications de téléchargement de l’application:
+Chacune de ces catégories correspond à un canal de notification. L’application YouTube implémente un canal de **notifications de téléchargement** et un canal de **notifications générales** . L’utilisateur peut appuyer sur **Télécharger les notifications**, ce qui affiche l’écran des paramètres pour le canal des notifications de téléchargement de l’application :
 
 [![Écran de téléchargement des notifications pour l’application YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
-Dans cet écran, l’utilisateur peut modifier le comportement du canal de notifications de **Téléchargement** en procédant comme suit:
+Dans cet écran, l’utilisateur peut modifier le comportement du canal de notifications de **Téléchargement** en procédant comme suit :
 
 - Définissez le niveau d’importance sur **urgent**, **élevé**, **moyen**ou **faible**, ce qui permet de configurer le niveau d’interruption sonore et visuel.
 
@@ -129,9 +128,9 @@ Dans cet écran, l’utilisateur peut modifier le comportement du canal de notif
 
 - Affichez ou masquez les notifications sur l’écran de verrouillage.
 
-- Remplacez le paramètre **ne pas** déranger.
+- Remplacez le paramètre **ne pas déranger** .
 
-Le canal **des notifications générales a des** paramètres similaires:
+Le canal **des notifications générales a des** paramètres similaires :
 
 [![Écran des notifications générales pour l’application YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
 
@@ -142,15 +141,15 @@ Notez que vous ne disposez pas d’un contrôle absolu sur la façon dont vos ca
 Pour créer une notification dans Android, vous utilisez la classe [NotificationCompat. Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder) du package NuGet [Xamarin. Android. support. v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) . Cette classe permet de créer et de publier des notifications sur des versions antérieures d’Android.
 `NotificationCompat.Builder`est également abordé.
 
-`NotificationCompat.Builder`fournit des méthodes pour définir les différentes options dans une notification, par exemple:
+`NotificationCompat.Builder`fournit des méthodes pour définir les différentes options dans une notification, par exemple :
 
 - Contenu, y compris le titre, le texte du message et l’icône de notification.
 
 - Style de la notification, tel que le *texte volumineux*, la *boîte de réception*ou le style d' *image* .
 
-- Priorité de la notification: minimale, faible, par défaut, haute ou maximale. Sur Android 8,0 et versions ultérieures, la priorité est définie via un [_canal de notification_](#notification-channels).
+- Priorité de la notification : minimale, faible, par défaut, haute ou maximale. Sur Android 8,0 et versions ultérieures, la priorité est définie via un [_canal de notification_](#notification-channels).
 
-- Visibilité de la notification sur l’écran de verrouillage: public, privé ou secret.
+- Visibilité de la notification sur l’écran de verrouillage : public, privé ou secret.
 
 - Métadonnées de catégorie qui permettent à Android de classifier et de filtrer la notification.
 
@@ -158,18 +157,18 @@ Pour créer une notification dans Android, vous utilisez la classe [Notification
 
 - ID du canal de notification sur lequel la notification sera publiée (Android 8,0 et versions ultérieures).
 
-Une fois que vous avez défini ces options dans le générateur, vous générez un objet de notification qui contient les paramètres. Pour publier la notification, vous transmettez cet objet de notification au *Gestionnaire*de notifications. Android fournit la classe [notificationmanager](xref:Android.App.NotificationManager) , qui est responsable de la publication des notifications et de leur affichage pour l’utilisateur. Une référence à cette classe peut être obtenue à partir de n’importe quel contexte, tel qu’une activité ou un service.
+Une fois que vous avez défini ces options dans le générateur, vous générez un objet de notification qui contient les paramètres. Pour publier la notification, vous transmettez cet objet de notification au *Gestionnaire de notifications*. Android fournit la classe [notificationmanager](xref:Android.App.NotificationManager) , qui est responsable de la publication des notifications et de leur affichage pour l’utilisateur. Une référence à cette classe peut être obtenue à partir de n’importe quel contexte, tel qu’une activité ou un service.
 
 ### <a name="creating-a-notification-channel"></a>Création d’un canal de notification
 
-Les applications qui s’exécutent sur Android 8,0 doivent créer un canal de notification pour leurs notifications. Un canal de notification requiert les trois éléments d’information suivants:
+Les applications qui s’exécutent sur Android 8,0 doivent créer un canal de notification pour leurs notifications. Un canal de notification requiert les trois éléments d’information suivants :
 
 - Chaîne d’ID qui est unique pour le package qui identifiera le canal.
 - Nom du canal qui sera affiché à l’utilisateur.  Le nom doit être compris entre 1 et 40 caractères.
 - Importance du canal.
 
 Les applications devront vérifier la version d’Android qu’elles exécutent.
-Les appareils exécutant des versions antérieures à Android 8,0 ne doivent pas créer un canal de notification. La méthode suivante est un exemple de création d’un canal de notification dans une activité:
+Les appareils exécutant des versions antérieures à Android 8,0 ne doivent pas créer un canal de notification. La méthode suivante est un exemple de création d’un canal de notification dans une activité :
 
 ```csharp
 void CreateNotificationChannel()
@@ -198,7 +197,7 @@ Le canal de notification doit être créé chaque fois que l’activité est cr�
 
 ### <a name="creating-and-publishing-a-notification"></a>Création et publication d’une notification
 
-Pour générer une notification dans Android, procédez comme suit:
+Pour générer une notification dans Android, procédez comme suit :
 
 1. Instanciez `NotificationCompat.Builder` un objet.
 
@@ -208,7 +207,7 @@ Pour générer une notification dans Android, procédez comme suit:
 
 4. Appelez la méthode [Notify](xref:Android.App.NotificationManager.Notify*) du gestionnaire de notifications pour publier la notification.
 
-Vous devez fournir au moins les informations suivantes pour chaque notification:
+Vous devez fournir au moins les informations suivantes pour chaque notification :
 
 - Petite icône (24x24 DP en taille)
 
@@ -216,7 +215,7 @@ Vous devez fournir au moins les informations suivantes pour chaque notification:
 
 - Texte de la notification
 
-L’exemple de code suivant illustre l’utilisation `NotificationCompat.Builder` de pour générer une notification de base. Notez que `NotificationCompat.Builder` les méthodes prennent en charge le [chaînage de méthode](https://en.wikipedia.org/wiki/Method_chaining); autrement dit, chaque méthode retourne l’objet générateur afin que vous puissiez utiliser le résultat du dernier appel de méthode pour appeler l’appel de méthode suivant:
+L’exemple de code suivant illustre l’utilisation `NotificationCompat.Builder` de pour générer une notification de base. Notez que `NotificationCompat.Builder` les méthodes prennent en charge le [chaînage de méthode](https://en.wikipedia.org/wiki/Method_chaining); autrement dit, chaque méthode retourne l’objet générateur afin que vous puissiez utiliser le résultat du dernier appel de méthode pour appeler l’appel de méthode suivant :
 
 ```csharp
 // Instantiate the builder and set notification elements:
@@ -239,15 +238,15 @@ notificationManager.Notify (notificationId, notification);
 
 Dans cet exemple, un nouvel `NotificationCompat.Builder` objet appelé `builder` est instancié, avec l’ID du canal de notification à utiliser. Le titre et le texte de la notification sont définis, et l’icône de notification est chargée à partir de **ressources/dessinable/ic_notification. png**. L’appel à la méthode du `Build` générateur de notification crée un objet de notification avec ces paramètres. L’étape suivante consiste à appeler la `Notify` méthode du gestionnaire de notifications. Pour rechercher le gestionnaire de notifications, `GetSystemService`vous appelez, comme indiqué ci-dessus.
 
-La `Notify` méthode accepte deux paramètres: l’identificateur de notification et l’objet de notification. L’identificateur de notification est un entier unique qui identifie la notification à votre application. Dans cet exemple, l’identificateur de notification est défini sur zéro (0); Toutefois, dans une application de production, vous voudrez attribuer un identificateur unique à chaque notification. La réutilisation de la valeur d’identificateur précédente dans un `Notify` appel à entraîne le remplacement de la dernière notification.
+La `Notify` méthode accepte deux paramètres : l’identificateur de notification et l’objet de notification. L’identificateur de notification est un entier unique qui identifie la notification à votre application. Dans cet exemple, l’identificateur de notification est défini sur zéro (0); Toutefois, dans une application de production, vous voudrez attribuer un identificateur unique à chaque notification. La réutilisation de la valeur d’identificateur précédente dans un `Notify` appel à entraîne le remplacement de la dernière notification.
 
-Lorsque ce code s’exécute sur un appareil Android 5,0, il génère une notification qui ressemble à l’exemple suivant:
+Lorsque ce code s’exécute sur un appareil Android 5,0, il génère une notification qui ressemble à l’exemple suivant :
 
 ![Résultat de la notification pour l’exemple de code](local-notifications-images/09-hello-world.png)
 
 L’icône de notification s’affiche sur le côté gauche de la notification &ndash; cette image d’un &ldquo;cercle i&rdquo; possède un canal alpha, ce qui permet à Android de dessiner un arrière-plan de cercle gris derrière. Vous pouvez également fournir une icône sans canal alpha. Pour afficher une image photographique sous forme d’icône, consultez [format grande icône](#large-icon-format) plus loin dans cette rubrique.
 
-L’horodateur est défini automatiquement, mais vous pouvez remplacer ce paramètre en appelant la méthode [SetWhen](xref:Android.App.Notification.Builder.SetWhen*) du générateur de notifications. Par exemple, l’exemple de code suivant définit l’horodatage sur l’heure actuelle:
+L’horodateur est défini automatiquement, mais vous pouvez remplacer ce paramètre en appelant la méthode [SetWhen](xref:Android.App.Notification.Builder.SetWhen*) du générateur de notifications. Par exemple, l’exemple de code suivant définit l’horodatage sur l’heure actuelle :
 
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
@@ -255,7 +254,7 @@ builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 
 ### <a name="enabling-sound-and-vibration"></a>Activation du son et des vibrations
 
-Si vous souhaitez que votre notification émette également un son, vous pouvez appeler la méthode [SetDefaults](xref:Android.App.Notification.Builder.SetDefaults*) du générateur de notifications et transmettre `NotificationDefaults.Sound` l’indicateur:
+Si vous souhaitez que votre notification émette également un son, vous pouvez appeler la méthode [SetDefaults](xref:Android.App.Notification.Builder.SetDefaults*) du générateur de notifications et transmettre `NotificationDefaults.Sound` l’indicateur :
 
 ```csharp
 // Instantiate the notification builder and enable sound:
@@ -266,7 +265,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNE
     .SetSmallIcon (Resource.Drawable.ic_notification);
 ```
 
-Cet appel à `SetDefaults` entraîne la lecture d’un son par l’appareil lors de la publication de la notification. Si vous souhaitez que l’appareil vibre au lieu de lire un son, vous pouvez `NotificationDefaults.Vibrate` passer `SetDefaults.` à si vous souhaitez que l’appareil lise un son et vibre l’appareil, vous pouvez transmettre les deux `SetDefaults`indicateurs à:
+Cet appel à `SetDefaults` entraîne la lecture d’un son par l’appareil lors de la publication de la notification. Si vous souhaitez que l’appareil vibre au lieu de lire un son, vous pouvez `NotificationDefaults.Vibrate` passer `SetDefaults.` à si vous souhaitez que l’appareil lise un son et vibre l’appareil, vous pouvez transmettre les deux `SetDefaults`indicateurs à :
 
 ```csharp
 builder.SetDefaults (NotificationDefaults.Sound | NotificationDefaults.Vibrate);
@@ -278,13 +277,13 @@ Si vous activez le son sans spécifier de son à lire, Android utilise le son de
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Alarm));
 ```
 
-Vous pouvez également utiliser le son de sonnerie par défaut du système pour votre notification:
+Vous pouvez également utiliser le son de sonnerie par défaut du système pour votre notification :
 
 ```csharp
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Ringtone));
 ```
 
-Une fois que vous avez créé un objet de notification, il est possible de définir des propriétés de notification sur l’objet de notification ( `NotificationCompat.Builder` au lieu de les configurer à l’avance par le biais des méthodes). Par exemple, au lieu d’appeler `SetDefaults` la méthode pour activer les vibrations sur une notification, vous pouvez modifier directement l’indicateur de bit de la propriété [par défaut](xref:Android.App.Notification.Defaults) de la notification:
+Une fois que vous avez créé un objet de notification, il est possible de définir des propriétés de notification sur l’objet de notification ( `NotificationCompat.Builder` au lieu de les configurer à l’avance par le biais des méthodes). Par exemple, au lieu d’appeler `SetDefaults` la méthode pour activer les vibrations sur une notification, vous pouvez modifier directement l’indicateur de bit de la propriété [par défaut](xref:Android.App.Notification.Defaults) de la notification :
 
 ```csharp
 // Build the notification:
@@ -313,13 +312,13 @@ notificationManager.Notify (notificationId, notification);
 ```
 
 Dans cet exemple, l’objet `NotificationCompat.Builder` existant est utilisé pour créer un nouvel objet de notification avec un titre et un message différents.
-Le nouvel objet de notification est publié à l’aide de l’identificateur de la notification précédente, ce qui met à jour le contenu de la notification précédemment publiée:
+Le nouvel objet de notification est publié à l’aide de l’identificateur de la notification précédente, ce qui met à jour le contenu de la notification précédemment publiée :
 
 ![Notification mise à jour](local-notifications-images/12-updated-notification.png)
 
-Le corps de la notification précédente est réutilisé &ndash; uniquement le titre et le texte de la notification change pendant que la notification est affichée dans le tiroir de notification. Le texte du titre passe de «exemple de notification» à «notification mise à jour» et le texte du message est remplacé par «Hello World! C’est ma première notification!» «Remplacé par ce message».
+Le corps de la notification précédente est réutilisé &ndash; uniquement le titre et le texte de la notification change pendant que la notification est affichée dans le tiroir de notification. Le texte du titre passe de « exemple de notification » à « notification mise à jour » et le texte du message est remplacé par «Hello World ! C’est ma première notification !» « Remplacé par ce message ».
 
-Une notification reste visible jusqu’à ce que l’un des trois événements suivants se produise:
+Une notification reste visible jusqu’à ce que l’un des trois événements suivants se produise :
 
 - L’utilisateur ignore la notification (ou clique sur *Effacer tout*).
 
@@ -329,12 +328,11 @@ Une notification reste visible jusqu’à ce que l’un des trois événements s
 
 Pour plus d’informations sur la mise à jour des notifications Android, consultez [modifier une notification](https://developer.android.com/training/notify-user/managing.html#Updating).
 
-
 ### <a name="starting-an-activity-from-a-notification"></a>Démarrage d’une activité à partir d’une notification
 
 Dans Android, il est courant qu’une notification soit associée à une *action* &ndash; qui est lancée quand l’utilisateur appuie sur la notification. Cette activité peut résider dans une autre application ou même dans une autre tâche. Pour ajouter une action à une notification, vous créez un objet [PendingIntent](xref:Android.App.PendingIntent) et associez `PendingIntent` à la notification. Un `PendingIntent` est un type spécial d’intention qui permet à l’application destinataire d’exécuter un morceau de code prédéfini avec les autorisations de l’application émettrice. Quand l’utilisateur appuie sur la notification, Android démarre l’activité spécifiée par le `PendingIntent`.
 
-L’extrait de code suivant montre comment créer une notification avec un `PendingIntent` qui lance l’activité de l' `MainActivity`application d’origine:
+L’extrait de code suivant montre comment créer une notification avec un `PendingIntent` qui lance l’activité de l' `MainActivity`application d’origine :
 
 ```csharp
 // Set up an intent so that tapping the notifications returns to this app:
@@ -364,7 +362,7 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-Ce code est très similaire au code de notification de la section précédente, à ceci près `PendingIntent` qu’un est ajouté à l’objet de notification. Dans cet exemple, le `PendingIntent` est associé à l’activité de l’application d’origine avant d’être passée à la méthode [SetContentIntent](xref:Android.App.Notification.Builder.SetContentIntent*) du générateur de notifications. L' `PendingIntentFlags.OneShot` indicateur est passé à la `PendingIntent.GetActivity` méthode afin que le `PendingIntent` ne soit utilisé qu’une seule fois. Lorsque ce code s’exécute, la notification suivante s’affiche:
+Ce code est très similaire au code de notification de la section précédente, à ceci près `PendingIntent` qu’un est ajouté à l’objet de notification. Dans cet exemple, le `PendingIntent` est associé à l’activité de l’application d’origine avant d’être passée à la méthode [SetContentIntent](xref:Android.App.Notification.Builder.SetContentIntent*) du générateur de notifications. L' `PendingIntentFlags.OneShot` indicateur est passé à la `PendingIntent.GetActivity` méthode afin que le `PendingIntent` ne soit utilisé qu’une seule fois. Lorsque ce code s’exécute, la notification suivante s’affiche :
 
 ![Première notification d’action](local-notifications-images/10-first-action-notification.png)
 
@@ -375,7 +373,7 @@ Dans la plupart des cas, la navigation vers l’arrière de l’activité de not
 
 Un autre aspect réel est que l’activité d’origine peut avoir besoin d’envoyer des données à l’activité de notification. Par exemple, la notification peut indiquer qu’un message texte est arrivé, et l’activité de notification (un écran d’affichage des messages), requiert l’ID du message pour afficher le message à l’utilisateur. L’activité qui crée le `PendingIntent` peut utiliser la méthode [intentionnelle. PutExtra](xref:Android.Content.Intent.PutExtra*) pour ajouter des données (par exemple, une chaîne) à l’intention afin que ces données soient passées à l’activité de notification.
 
-L’exemple de code suivant montre comment utiliser `TaskStackBuilder` pour gérer la pile de retour, et fournit un exemple d’envoi d’une chaîne de message unique à une activité de notification appelée: `SecondActivity`
+L’exemple de code suivant montre comment utiliser `TaskStackBuilder` pour gérer la pile de retour, et fournit un exemple d’envoi d’une chaîne de message unique à une activité de notification appelée : `SecondActivity`
 
 ```csharp
 // Setup an intent for SecondActivity:
@@ -419,18 +417,18 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-Dans cet exemple de code, l’application se compose de deux `MainActivity` activités: (qui contient le code de notification ci `SecondActivity`-dessus) et, l’écran que l’utilisateur voit après avoir appuyé sur la notification. Quand ce code est exécuté, une simple notification (semblable à l’exemple précédent) est présentée. Le fait de cliquer sur la notification amène l' `SecondActivity` utilisateur à l’écran:
+Dans cet exemple de code, l’application se compose de deux `MainActivity` activités : (qui contient le code de notification ci `SecondActivity`-dessus) et, l’écran que l’utilisateur voit après avoir appuyé sur la notification. Quand ce code est exécuté, une simple notification (semblable à l’exemple précédent) est présentée. Le fait de cliquer sur la notification amène l' `SecondActivity` utilisateur à l’écran :
 
 ![Capture d’écran de la deuxième activité](local-notifications-images/11-second-activity.png)
 
-Le message de type chaîne (passé dans la `PutExtra` méthode de l’intention) `SecondActivity` est récupéré dans via cette ligne de code:
+Le message de type chaîne (passé dans la `PutExtra` méthode de l’intention) `SecondActivity` est récupéré dans via cette ligne de code :
 
 ```csharp
 // Get the message from the intent:
 string message = Intent.Extras.GetString ("message", "");
 ```
 
-Ce message extrait, «Greetings from MainActivity!», s’affiche à `SecondActivity` l’écran, comme indiqué dans la capture d’écran ci-dessus. Quand l’utilisateur appuie sur le bouton **précédent** alors qu' `SecondActivity`il se trouve dans, la navigation en sort de l’application et revient à l’écran précédant le lancement de l’application.
+Ce message extrait, « Greetings from MainActivity ! », s’affiche à `SecondActivity` l’écran, comme indiqué dans la capture d’écran ci-dessus. Quand l’utilisateur appuie sur le bouton **précédent** alors qu' `SecondActivity`il se trouve dans, la navigation en sort de l’application et revient à l’écran précédant le lancement de l’application.
 
 Pour plus d’informations sur la création d’intentions en attente, consultez [PendingIntent](xref:Android.App.PendingIntent).
 
@@ -446,11 +444,11 @@ Par défaut, les notifications ont un format de disposition de base simple dans 
 
 Les notifications Android affichent généralement l’icône de l’application d’origine (sur le côté gauche de la notification). Toutefois, les notifications peuvent afficher une image ou une photo (une *grande icône*) au lieu de la petite icône standard. Par exemple, une application de messagerie peut afficher une photo de l’expéditeur plutôt que l’icône de l’application.
 
-Voici un exemple de notification &ndash; Android 5,0 de base. elle affiche uniquement la petite icône d’application:
+Voici un exemple de notification &ndash; Android 5,0 de base. elle affiche uniquement la petite icône d’application :
 
 ![Exemple de notification normale](local-notifications-images/13-sample-notification.png)
 
-Et voici une capture d’écran de la notification après l’avoir modifiée pour afficher une grande &ndash; icône. elle utilise une icône créée à partir d’une image d’un singe de code Xamarin:
+Et voici une capture d’écran de la notification après l’avoir modifiée pour afficher une grande &ndash; icône. elle utilise une icône créée à partir d’une image d’un singe de code Xamarin :
 
 ![Exemple de notification de grande icône](local-notifications-images/14-large-icon-sample.png)
 
@@ -466,11 +464,11 @@ Cet exemple de code ouvre le fichier image à l’adresse **ressources/dessinabl
 
 ### <a name="big-text-style"></a>Style de texte Big
 
-Le style *Big Text* est un modèle de mise en page développé que vous utilisez pour afficher les messages longs dans les notifications. Comme toutes les notifications de mise en page étendues, la notification Big Text est initialement affichée dans un format de présentation compact:
+Le style *Big Text* est un modèle de mise en page développé que vous utilisez pour afficher les messages longs dans les notifications. Comme toutes les notifications de mise en page étendues, la notification Big Text est initialement affichée dans un format de présentation compact :
 
 ![Exemple de notification de grand texte](local-notifications-images/15-big-text-notification.png)
 
-Dans ce format, seul un extrait du message est affiché, se terminant par deux points. Lorsque l’utilisateur fait glisser vers le niveau de la notification, il se développe pour afficher l’intégralité du message de notification:
+Dans ce format, seul un extrait du message est affiché, se terminant par deux points. Lorsque l’utilisateur fait glisser vers le niveau de la notification, il se développe pour afficher l’intégralité du message de notification :
 
 ![Notification de Big Text développée](local-notifications-images/16-big-text-expanded.png)
 
@@ -503,11 +501,11 @@ Dans cet exemple, le texte du message et le texte de synthèse sont `BigTextStyl
 
 Le style d' *image* (également appelé style d' *image Big* ) est un format de notification développé que vous pouvez utiliser pour afficher une image dans le corps d’une notification. Par exemple, une application de capture d’écran ou une application photo peut utiliser le style de notification d' *image* pour fournir à l’utilisateur une notification de la dernière image capturée. Notez que la hauteur maximale de la notification d' *image* est de &ndash; 256 DP le redimensionnement de l’image pour s’ajuster à cette restriction de hauteur maximale, dans les limites de la mémoire disponible.
 
-Comme toutes les notifications de mise en page étendues, les notifications d' *image* sont d’abord affichées dans un format compact qui affiche un extrait du texte du message d’accompagnement:
+Comme toutes les notifications de mise en page étendues, les notifications d' *image* sont d’abord affichées dans un format compact qui affiche un extrait du texte du message d’accompagnement :
 
 ![La notification d’image compacte n’affiche aucune image](local-notifications-images/17-image-compact.png)
 
-Lorsque l’utilisateur fait glisser vers le niveau de la notification d' *image* , il se développe pour afficher une image. Par exemple, voici la version développée de la notification précédente:
+Lorsque l’utilisateur fait glisser vers le niveau de la notification d' *image* , il se développe pour afficher une image. Par exemple, voici la version développée de la notification précédente :
 
 ![La notification d’image développée révèle une image](local-notifications-images/18-image-expanded.png)
 
@@ -554,7 +552,7 @@ builder.SetStyle (picStyle);
 // Create notification and publish it ...
 ```
 
-Dans cet exemple, le fichier image situé dans **/sdcard/pictures/My-Tshirt.jpg** est chargé, redimensionné à la moitié de sa taille d’origine, puis converti en bitmap en vue de son utilisation dans la notification:
+Dans cet exemple, le fichier image situé dans **/sdcard/pictures/My-Tshirt.jpg** est chargé, redimensionné à la moitié de sa taille d’origine, puis converti en bitmap en vue de son utilisation dans la notification :
 
 ![Exemple d’image T-Shirt dans la notification](local-notifications-images/19-tshirt-notification.png)
 
@@ -564,11 +562,11 @@ Pour plus d’informations sur le chargement et le décodage d’images bitmap v
 
 ### <a name="inbox-style"></a>Style de la boîte de réception
 
-Le format de la *boîte de réception* est un modèle de mise en page développé destiné à l’affichage de lignes de texte distinctes (par exemple, un résumé de la boîte de réception de courrier électronique) dans le corps de la notification. La notification de format de *boîte de réception* est d’abord affichée dans un format compact:
+Le format de la *boîte de réception* est un modèle de mise en page développé destiné à l’affichage de lignes de texte distinctes (par exemple, un résumé de la boîte de réception de courrier électronique) dans le corps de la notification. La notification de format de *boîte de réception* est d’abord affichée dans un format compact :
 
 ![Exemple de notification de boîte de réception compacte](local-notifications-images/20-inbox-compact.png)
 
-Lorsque l’utilisateur fait glisser vers le bas sur la notification, il se développe pour afficher un résumé des e-mails comme indiqué dans la capture d’écran ci-dessous:
+Lorsque l’utilisateur fait glisser vers le bas sur la notification, il se développe pour afficher un résumé des e-mails comme indiqué dans la capture d’écran ci-dessous :
 
 ![Exemple de notification de boîte de réception développée](local-notifications-images/21-inbox-expanded.png)
 
@@ -602,14 +600,14 @@ Vous pouvez également utiliser le style de la *boîte de réception* pour toute
 
 ### <a name="priority-settings"></a>Paramètres de priorité
 
-Les applications qui s’exécutent sur Android 7,1 et les versions inférieures doivent définir la priorité directement sur la notification elle-même. Le paramètre de priorité d’une notification détermine deux résultats lors de la publication de la notification:
+Les applications qui s’exécutent sur Android 7,1 et les versions inférieures doivent définir la priorité directement sur la notification elle-même. Le paramètre de priorité d’une notification détermine deux résultats lors de la publication de la notification :
 
 - Où la notification s’affiche par rapport à d’autres notifications.
     Par exemple, les notifications de priorité élevée sont présentées au-dessus des notifications de priorité inférieure dans le tiroir notifications, quel que soit le moment où chaque notification a été publiée.
 
 - Indique si la notification est affichée dans le format de notification de tête (Android 5,0 et versions ultérieures). Seules les notifications de priorité *élevée* et *maximale* sont affichées sous forme de notifications de niveau supérieur.
 
-Xamarin. Android définit les énumérations suivantes pour la définition de la priorité de notification:
+Xamarin. Android définit les énumérations suivantes pour la définition de la priorité de notification :
 
 - `NotificationPriority.Max`&ndash; Avertit l’utilisateur d’une condition urgente ou critique (par exemple, un appel entrant, une direction de marche par tour ou une alerte d’urgence). Sur les appareils Android 5,0 et versions ultérieures, les notifications de priorité maximale sont affichées au format en tête.
 
@@ -627,19 +625,19 @@ Pour définir la priorité d’une notification, appelez la méthode [SetPriorit
 builder.SetPriority (NotificationPriority.High);
 ```
 
-Dans l’exemple suivant, la notification de priorité élevée, «un message important!» apparaît en haut du tiroir de notification:
+Dans l’exemple suivant, la notification de priorité élevée, « un message important ! » apparaît en haut du tiroir de notification :
 
 ![Exemple de notification de priorité élevée](local-notifications-images/22-hi-priority-drawer.png)
 
-Étant donné qu’il s’agit d’une notification de priorité élevée, elle est également affichée sous forme de notification de tête au-dessus de l’écran d’activité actuel de l’utilisateur dans Android 5,0:
+Étant donné qu’il s’agit d’une notification de priorité élevée, elle est également affichée sous forme de notification de tête au-dessus de l’écran d’activité actuel de l’utilisateur dans Android 5,0 :
 
 ![Exemple de notification de tête](local-notifications-images/23-heads-up-example.png)
 
-Dans l’exemple suivant, la notification de faible priorité «pensée pour la journée» s’affiche sous une notification de niveau de batterie de priorité plus élevée:
+Dans l’exemple suivant, la notification de faible priorité « pensée pour la journée » s’affiche sous une notification de niveau de batterie de priorité plus élevée :
 
 ![Exemple de notification de faible priorité](local-notifications-images/24-lo-priority-drawer.png)
 
-Étant donné que la notification «pensée pour la journée» est une notification de faible priorité, Android ne l’affiche pas dans le format de tête.
+Étant donné que la notification « pensée pour la journée » est une notification de faible priorité, Android ne l’affiche pas dans le format de tête.
 
 > [!NOTE]
 > Sur Android 8,0 et versions ultérieures, la priorité du canal de notification et des paramètres utilisateur déterminera la priorité de la notification.
@@ -647,7 +645,7 @@ Dans l’exemple suivant, la notification de faible priorité «pensée pour la 
 ### <a name="visibility-settings"></a>Paramètres de visibilité
 
 À compter d’Android 5,0, le paramètre de *visibilité* est disponible pour contrôler la quantité de contenu de notification qui s’affiche sur l’écran verrouillage sécurisé.
-Xamarin. Android définit les énumérations suivantes pour la définition de la visibilité des notifications:
+Xamarin. Android définit les énumérations suivantes pour la définition de la visibilité des notifications :
 
 - `NotificationVisibility.Public`&ndash; Le contenu complet de la notification s’affiche sur l’écran verrouillage sécurisé.
 
@@ -661,7 +659,7 @@ Pour définir la visibilité d’une notification, les applications appellent `S
 builder.SetVisibility (NotificationVisibility.Private);
 ```
 
-Lorsqu’une `Private` notification est publiée, seul le nom et l’icône de l’application s’affichent sur l’écran verrouillage sécurisé. Au lieu du message de notification, l’utilisateur voit «déverrouiller votre appareil pour voir cette notification»:
+Lorsqu’une `Private` notification est publiée, seul le nom et l’icône de l’application s’affichent sur l’écran verrouillage sécurisé. Au lieu du message de notification, l’utilisateur voit « déverrouiller votre appareil pour voir cette notification » :
 
 ![Déverrouiller le message de notification de votre appareil](local-notifications-images/25-lockscreen-private.png)
 
@@ -669,7 +667,7 @@ Dans cet exemple, **NotificationsLab** est le nom de l’application d’origine
 
 ### <a name="category-settings"></a>Paramètres de catégorie
 
-À partir d’Android 5,0, les catégories prédéfinies sont disponibles pour le classement et le filtrage des notifications. Xamarin. Android fournit les énumérations suivantes pour ces catégories:
+À partir d’Android 5,0, les catégories prédéfinies sont disponibles pour le classement et le filtrage des notifications. Xamarin. Android fournit les énumérations suivantes pour ces catégories :
 
 - `Notification.CategoryCall`&ndash; Appel téléphonique entrant.
 
@@ -705,11 +703,11 @@ Lorsque les notifications sont triées, la priorité de la notification est prio
 builder.SetCategory (Notification.CategoryCall);
 ```
 
-La fonctionnalité *ne pas* déranger (nouveauté d’Android 5,0) filtre les notifications en fonction des catégories. Par exemple, l’écran *ne pas* déranger des **paramètres** permet à l’utilisateur d’exempter les notifications pour les appels téléphoniques et les messages:
+La fonctionnalité *ne pas déranger* (nouveauté d’Android 5,0) filtre les notifications en fonction des catégories. Par exemple, l’écran *ne pas déranger* des **paramètres** permet à l’utilisateur d’exempter les notifications pour les appels téléphoniques et les messages :
 
 ![Ne pas déranger les commutateurs d’écran](local-notifications-images/26-do-not-disturb.png)
 
-Lorsque l’utilisateur configure l’option *ne pas* déranger pour bloquer toutes les interruptions à l’exception des appels téléphoniques (comme illustré dans la capture d’écran ci-dessus `Notification.CategoryCall` ), Android autorise les notifications avec un paramètre de catégorie de à être présenté lorsque l’appareil est dans *ne pas* mode de perturbation. Notez que `Notification.CategoryAlarm` les notifications ne sont jamais bloquées en mode *ne pas* déranger.
+Lorsque l’utilisateur configure l’option *ne pas déranger* pour bloquer toutes les interruptions à l’exception des appels téléphoniques (comme illustré dans la capture d’écran ci-dessus `Notification.CategoryCall` ), Android autorise les notifications avec un paramètre de catégorie de à être présenté lorsque l’appareil est dans *ne pas mode de perturbation* . Notez que `Notification.CategoryAlarm` les notifications ne sont jamais bloquées en mode *ne pas déranger* .
 
 L’exemple [LocalNotifications](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications) montre comment utiliser `NotificationCompat.Builder` pour lancer une deuxième activité à partir d’une notification. Cet exemple de code est expliqué dans la procédure pas [à pas utilisation de notifications locales dans Xamarin. Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) .
 
@@ -730,7 +728,7 @@ De même, votre application peut utiliser `NotificationCompat.InboxStyle` et `No
 
 `NotificationCompat.Builder`prend en `SetPriority` charge la méthode (disponible à partir d’Android 4,1). Toutefois, la `SetCategory` méthode n’est *pas* prise `NotificationCompat.Builder` en charge par car les catégories font partie du nouveau système de métadonnées de notification introduit dans Android 5,0.
 
-Pour prendre en charge les versions antérieures d' `SetCategory` Android, où n’est pas disponible, votre code peut vérifier le niveau d’API au `SetCategory` moment de l’exécution pour appeler de manière conditionnelle lorsque le niveau d’API est supérieur ou égal à Android 5,0 (niveau d’API 21):
+Pour prendre en charge les versions antérieures d' `SetCategory` Android, où n’est pas disponible, votre code peut vérifier le niveau d’API au `SetCategory` moment de l’exécution pour appeler de manière conditionnelle lorsque le niveau d’API est supérieur ou égal à Android 5,0 (niveau d’API 21) :
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
@@ -742,7 +740,7 @@ Dans cet exemple, le **Framework cible** de l’application est défini sur Andr
 
 ### <a name="lock-screen-visibility"></a>Visibilité de l’écran de verrouillage
 
-Android ne prenant pas en charge les notifications de verrouillage de l’écran avant Android 5,0 `NotificationCompat.Builder` (niveau d’API `SetVisibility` 21), ne prend pas en charge la méthode. Comme expliqué ci- `SetCategory`dessus, votre code peut vérifier le niveau d’API au moment `SetVisiblity` de l’exécution et appeler uniquement lorsqu’il est disponible:
+Android ne prenant pas en charge les notifications de verrouillage de l’écran avant Android 5,0 `NotificationCompat.Builder` (niveau d’API `SetVisibility` 21), ne prend pas en charge la méthode. Comme expliqué ci- `SetCategory`dessus, votre code peut vérifier le niveau d’API au moment `SetVisiblity` de l’exécution et appeler uniquement lorsqu’il est disponible :
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {

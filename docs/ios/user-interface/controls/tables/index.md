@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/06/2016
-ms.openlocfilehash: 7d4ad4ca7f15e20bed3cd9bb4050c5a0a9cba63a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284167"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768401"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Utilisation des tables et des cellules dans Xamarin. iOS
 
@@ -36,11 +36,11 @@ Ces articles présentent un aperçu complet de l’utilisation des tables, notam
  [Personnalisation de l’apparence d’un tableau](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
  [Modification](~/ios/user-interface/controls/tables/editing.md)
- 
+
  [Actions de ligne](~/ios/user-interface/controls/tables/row-action.md)
 
  [Création de tables dans une table de montage séquentiel](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
- 
+
  [Redimensionnement automatique de la hauteur de ligne](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 ## <a name="related-links"></a>Liens associés

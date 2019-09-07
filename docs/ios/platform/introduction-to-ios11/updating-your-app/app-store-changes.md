@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: fa44ba260a62a6e0bd036c08c62371734b38d82d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286584"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752326"
 ---
 # <a name="app-store-changes-in-ios-11"></a>Modifications de l’App Store dans iOS 11
 
@@ -33,7 +33,6 @@ L’App Store repensé contient les sections suivantes :
 Les icônes de stockage (ou les icônes marketing) ne sont plus gérées dans iTunes Connect. elles doivent plutôt être contenues en tant que [catalogue de composants](~/ios/app-fundamentals/images-icons/app-icons.md) dans votre fichier binaire d’application, comme les icônes d’application. Une icône de magasin 1024 x 1024 au format PNG doit être incluse dans un catalogue de composants pour pouvoir être envoyée correctement pour les applications iOS 11.
 
 L’affinage de l’application permet de s’assurer que ce catalogue de ressources supplémentaire n’augmente pas la taille de l’application.
-
 
 ## <a name="in-app-purchases-promoted-in-the-app-store"></a>Achats dans l’application promus dans l’App Store
 
@@ -96,7 +95,6 @@ Les mises en production échelonnées sont activées dans iTunes Connect. Clique
 ![Option d’indication de la mise en sortie échelonnée des mises à jour automatiques](app-store-changes-images/image6.png)
 
 Votre mise à jour est disponible immédiatement au téléchargement dans l’onglet mises à jour de l’App Store. Les mises en production échelonnées sont uniquement disponibles pour les utilisateurs qui ont sélectionné les téléchargements automatiques.
-
 
 ## <a name="related-links"></a>Liens associés
 

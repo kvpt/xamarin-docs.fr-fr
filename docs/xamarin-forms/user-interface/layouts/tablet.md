@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 7455e9b8f8e164dd5733b44db4aaac8a93133a05
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 87d99c62f20e6cfd23605d1917a577ac0d95038f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121595"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772463"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de bureau et tablette
 
-Xamarin. Forms prend en charge tous les types d’appareils disponibles sur les plateformes prises en charge. ainsi, en plus des téléphones, les applications peuvent également s’exécuter sur:
+Xamarin. Forms prend en charge tous les types d’appareils disponibles sur les plateformes prises en charge. ainsi, en plus des téléphones, les applications peuvent également s’exécuter sur :
 
 - iPad
 - Tablettes Android,
 - Tablettes et ordinateurs de bureau Windows (exécutant Windows 10).
 
-Cette page présente brièvement les éléments suivants:
+Cette page présente brièvement les éléments suivants :
 
 - les [types d’appareils](#Device_Types)pris en charge, et
 - [optimisation](#optimize) des dispositions pour les tablettes et les téléphones.
@@ -35,14 +35,14 @@ Des appareils à écran plus volumineux sont disponibles pour toutes les platefo
 
 ### <a name="ipads-ios"></a>iPads (iOS)
 
-Le modèle Xamarin. Forms comprend automatiquement la prise en charge de iPad en configurant le paramètre **info. plist >** Devices sur **Universal** (ce qui signifie que iPhone et iPad sont pris en charge).
+Le modèle Xamarin. Forms comprend automatiquement la prise en charge de iPad en configurant le paramètre **info. plist > Devices** sur **Universal** (ce qui signifie que iPhone et iPad sont pris en charge).
 
 Pour fournir une expérience de démarrage agréable et garantir que la résolution plein écran est utilisée sur tous les appareils, vous devez vous assurer qu’un [écran de lancement spécifique à iPad](~/ios/app-fundamentals/images-icons/launch-screens.md) (à l’aide d’un Storyboard) est fourni. Cela garantit l’affichage correct de l’application sur les appareils iPad mini, iPad et iPad Pro.
 
-Avant iOS 9, toutes les applications remontent en mode plein écran sur l’appareil, mais certains iPad peuvent désormais effectuer des [tâches](~/ios/platform/multitasking.md)multitâches fractionnées.
+Avant iOS 9, toutes les applications remontent en mode plein écran sur l’appareil, mais certains iPad peuvent désormais effectuer des [tâches multitâches fractionnées](~/ios/platform/multitasking.md).
 Cela signifie que votre application peut utiliser simplement une colonne fine sur le côté de l’écran, 50% de la largeur de l’écran ou l’écran entier.
 
-exemple d’écran de fractionnement iPad [ ![(tablet-images/ipad-sml.png " ")]] (tablet-images/ipad.png#lightbox "exemple d’écran de fractionnement iPad")
+[exemple d’écran de fractionnement iPad ![(tablet-images/ipad-sml.png " ")]] (tablet-images/ipad.png#lightbox "exemple d’écran de fractionnement iPad")
 
 La fonctionnalité de fractionnement d’écran signifie que vous devez concevoir votre application pour qu’elle fonctionne correctement avec un minimum de 320 pixels de largeur, ou jusqu’à 1366 pixels de largeur.
 
@@ -61,13 +61,11 @@ Les applications qui s’exécutent sur des tablettes et des postes de travail W
 
 [Exemple d’écran fractionné Windows ![(tablet-images/splitscreen-sml.png " ")]] (tablet-images/splitscreen.png#lightbox "Exemple d’écran fractionné Windows")
 
-
 <a name="optimize" />
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>Optimisation pour tablette et bureau
 
 Vous pouvez ajuster votre interface utilisateur Xamarin. Forms selon que vous utilisez un téléphone ou une tablette/ordinateur de bureau. Cela signifie que vous pouvez optimiser l’expérience utilisateur pour les appareils à écran large tels que les tablettes et les ordinateurs de bureau.
-
 
 ### <a name="deviceidiom"></a>Device.Idiom
 
@@ -89,8 +87,6 @@ Cette approche peut être développée pour apporter des modifications significa
 Le [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) est idéal pour les écrans plus grands, en particulier sur l’iPad où [`UISplitViewController`](xref:UIKit.UISplitViewController) il utilise le pour fournir une expérience iOS native.
 
 Consultez [ce billet de blog Xamarin](https://blog.xamarin.com/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les `MasterDetailPage`écrans plus grands puissent utiliser une autre (avec).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

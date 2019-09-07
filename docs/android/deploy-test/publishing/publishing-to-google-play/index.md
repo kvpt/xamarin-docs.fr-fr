@@ -6,19 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119807"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755966"
 ---
 # <a name="publishing-to-google-play"></a>Publication sur Google Play
 
 Même s’il existe de nombreux marchés pour la distribution d’une application, Google Play est sans nul doute le magasin le plus grand et le plus visité dans le monde des applications Android. Google Play offre une plateforme unique pour la distribution, la promotion, la vente et l’analyse des ventes d’une application Android.
 
 Cette section aborde des rubriques spécifiques à Google Play, comme l’inscription en vue de devenir un éditeur, la collecte des ressources pour aider Google Play à promouvoir et publier votre application, des recommandations pour évaluer votre application sur Google Play et l’utilisation de filtres pour limiter le déploiement d’une application à certains appareils.
-
 
 ## <a name="requirements"></a>Configuration requise
 
@@ -29,8 +28,6 @@ Toutes les applications doivent être signées avec une clé de chiffrement qui 
 La taille maximale d’un APK publié sur Google Play est de 100 Mo. Si une application dépasse cette taille, Google Play autorise la publication de ressources supplémentaires via les *fichiers d’extension d’APK*. Les fichiers d’extension Android permettent à l’APK d’avoir deux fichiers supplémentaires, dont la taille maximale de chacun est de 2 Go. Google Play héberge et distribuer ces fichiers sans frais. Nous aborderons les fichiers d’extension dans une autre section.
 
 Google Play n’est pas disponible dans le monde entier. Il est possible que certains pays ne soient pas pris en charge pour la distribution d’applications.
-
-
 
 ## <a name="becoming-a-publisher"></a>Devenir un éditeur
 
@@ -43,20 +40,15 @@ Pour publier des applications sur Google play, il est nécessaire de disposer d�
 1. Confirmez la vérification par e-mail.
 1. Une fois le compte créé, il est possible de publier des applications à l’aide de Google Play.
 
-
 Google Play ne prend pas en charge tous les pays dans le monde. Vous trouverez les listes de pays les plus récentes dans les liens suivants :
 
 1. [Pays où l'inscription en tant que développeur ou marchand est possible](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) &ndash; Il s’agit d’une liste de tous les pays où les développeurs peuvent s’inscrire en tant que marchands et vendre des applications payantes.
 
 1. [Pays où la distribution de contenus aux utilisateurs de Google Play est possible](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Il s’agit d’une liste de tous les pays où les applications peuvent être distribuées.
 
-
-
 ### <a name="preparing-promotional-assets"></a>Préparation des ressources promotionnelles
 
 Pour assurer efficacement la promotion et la publicité d’une application sur Google Play, Google autorise les développeurs à soumettre des ressources promotionnelles telles que des captures d’écran, des graphiques et des vidéos. Google Play utilisera ensuite ces ressources pour assurer la publicité et la promotion de l’application.
-
-
 
 #### <a name="launcher-icons"></a>Icônes de lancement
 
@@ -66,7 +58,6 @@ Une *icône de lancement* est un graphique qui représente une application. Chaq
 - **mdpi** (160 dpi) &ndash; 48 x 48 pixels
 - **hdpi** (240 dpi) &ndash; 72 x 72 pixels
 - **xhdpi** (320 dpi) &ndash; 96 x 96 pixels
-
 
 Les icônes de lancement sont la première chose que l’utilisateur voit sur Google Play. Une attention particulière doit donc être donnée à ces icônes qui doivent être visuellement attrayantes et explicites.
 
@@ -78,8 +69,6 @@ Conseils pour les icônes de lancement :
 
 1. **Utilisez le canal alpha**&ndash; Les icônes doivent utiliser le canal alpha et ne doivent pas être entièrement encadrées.
 
-
-
 #### <a name="high-resolution-application-icons"></a>Icônes d’application haute résolution
 
 Les applications présentes sur Google Play doivent avoir une version haute fidélité de l’icône d’application. Cette icône haute résolution est utilisée uniquement par Google Play et ne se substitue pas à l’icône de lancement de l’application. Les spécifications de l’icône haute résolution sont les suivantes :
@@ -90,8 +79,6 @@ Les applications présentes sur Google Play doivent avoir une version haute fid�
 
 [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) est un outil très utile pour créer les icônes de lancement et l’icône d’application haute résolution.
 
-
-
 #### <a name="screen-shots"></a>Captures d’écran
 
 Google Play requiert un minimum de deux et un maximum de huit captures d’écran pour une application. Ces captures seront affichées sur la page de détails d’une application dans Google Play.
@@ -101,16 +88,12 @@ Les spécifications pour les captures d’écran sont les suivantes :
 1. PNG ou JPG 24 bits sans canal alpha
 1. 320 x 480 pixels ou 480 x 800 pixels ou 480 x 854 pixels (largeur x hauteur). Les images au format paysage seront rognées.
 
-
-
 #### <a name="promotional-graphic"></a>Image promotionnelle
 
 Il s’agit d’une image facultative utilisée par Google Play :
 
 1. PNG ou JPG 24 bits sans canal alpha de 180 x 120 pixels (largeur x hauteur).
 1. Aucune bordure.
-
-
 
 #### <a name="feature-graphic"></a>Image de présentation
 
@@ -120,13 +103,9 @@ Utilisée dans la section de présentation de Google Play. Cette image peut êtr
 1. Tout le contenu important doit tenir dans un cadre de 924 x 500 pixels. Les pixels en dehors de ce cadre peuvent être rognés pour des raisons de style.
 1. Cette image peut être réduite : utilisez des grandes polices et faites en sorte que l’image reste simple.
 
-
-
 #### <a name="video-link"></a>Lien vidéo
 
 Il s’agit d’une URL vers une vidéo YouTube de présentation de l’application. Proposez une vidéo de 30 secondes à 2 minutes présentant les fonctionnalités les plus intéressantes de votre application.
-
-
 
 ### <a name="publishing-to-google-play"></a>Publication sur Google Play
 
@@ -186,7 +165,6 @@ La section suivante explique comment créer un nouveau projet d’API Google et 
 
 -----
 
-
 #### <a name="create-a-google-api-project"></a>Créer un projet d’API Google
 
 Tout d’abord, connectez-vous à votre [compte de développeur Google Play](https://play.google.com/apps/publish).
@@ -224,7 +202,6 @@ Cliquez sur **Save** pour enregistrer les modifications. Vous revenez alors à l
 
 Ce fichier JSON contient l’ID client et la Clé secrète client que vous pouvez couper et coller dans la boîte de dialogue **Signer et distribuer** à l’étape suivante.
 
-
 #### <a name="register-google-api-access"></a>Inscrire l'accès à l'API Google
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -238,7 +215,7 @@ Cliquez sur **Autoriser** pour autoriser l’application :
 
 [![Boîte de dialogue Autoriser l’application](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png#lightbox)
 
-#### <a name="publish"></a>Publier
+#### <a name="publish"></a>Publish
 
 Après avoir cliqué sur **Autoriser**, le navigateur indique _Code de vérification reçu. Fermeture en cours..._  et l’application est ajoutée à la liste des comptes Google Play dans Visual Studio. Dans la boîte de dialogue **Comptes Google Play**, cliquez sur **Continuer** :
 
@@ -269,7 +246,6 @@ Le **Gestionnaire d’archives** affiche la progression du chargement :
 Lorsque le chargement est terminé, l’état d’achèvement est indiqué dans le coin inférieur gauche de Visual Studio :
 
 [![Message Publication du projet terminée](images/vs/11-published-sml.png)](images/vs/11-published.png#lightbox)
-
 
 ### <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -322,7 +298,7 @@ Notez qu’un APK doit déjà avoir été soumis à Google Play Store pour que *
 
 > _Google Play exige que vous chargiez manuellement votre premier fichier APK pour cette application. À cette fin, vous pouvez utiliser un APK spécifique._
 
-ou
+ou Gestionnaire de configuration
 
 > _Aucune application n’a été trouvée pour le nom de package donné. [404]_
 

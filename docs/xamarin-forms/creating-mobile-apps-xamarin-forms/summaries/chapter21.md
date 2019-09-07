@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 21. Transformations
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 21. Transformations'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 21. Transformations'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513020"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760582"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Résumé du chapitre 21. Transformations
 
@@ -122,8 +122,6 @@ Le `AnchorX` propriété affecte `RotationY` mais pas `RotationX`. Le `AnchorY` 
 Le système de coordonnées 3D impliqué par Xamarin.Forms est gaucher. Si vous pointez le pouce de votre main gauche dans la direction de l’augmentation de X coordonnées coordonnées (à droite) et votre doigt intermédiaire dans la direction de croissant Y (points vers le bas), puis votre curseur dans le sens d’augmentation de coordonnées Z (hors de l’écran).
 
 En outre, pour tous les trois axes, si vous pointez votre curseur gauche dans la direction de l’augmentation des valeurs, puis la courbe de vos doigts indique la direction de rotation des angles de rotation positives.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 46db28dab32f14fa476b9fbb42b788feb669aa74
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3a0737a5a28ced1ec55246d0586d4cfe28363f3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291862"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753450"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Présentation de l’interface tactile 3D dans Xamarin. iOS
 
@@ -66,9 +66,6 @@ La `MaximumPossibleForce` propriété retourne la valeur la plus élevée possib
 
 > [!IMPORTANT]
 > Les modifications de pression entraînent `TouchesMoved` le déclenchement de l’événement, même si les coordonnées X/Y n’ont pas changé. En raison de ce changement de comportement, vos applications iOS doivent être préparées `TouchesMoved` pour que l’événement soit appelé plus souvent et que les coordonnées X/Y soient identiques à celles du dernier `TouchesMoved` appel.
-
-
-
 
 Pour plus d’informations, consultez TouchCanvas d' [Apple : Utilisation d’un](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/) exemple d’application et d’une [référence de classe UITouch](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)de UITouch de manière efficace.
 
@@ -210,7 +207,6 @@ Comme indiqué ci-dessus, vous pouvez envisager des actions rapides comme les me
 
 [![](3d-touch-images/quickactions01.png "Exemple de menu actions rapides")](3d-touch-images/quickactions01.png#lightbox)
 
-
 ### <a name="defining-static-quick-actions"></a>Définition des actions rapides statiques
 
 Si une ou plusieurs des actions rapides requises par votre application sont statiques et n’ont pas besoin d’être modifiées, vous pouvez les définir dans le `Info.plist` fichier de l’application. Modifiez ce fichier dans un éditeur externe et ajoutez les clés suivantes :
@@ -282,10 +278,6 @@ Ici, nous définissons deux éléments d’action rapide statiques avec les clé
 
 > [!IMPORTANT]
 > Les éléments de raccourci d’action rapide définis dans `Info.plist` le fichier ne sont pas accessibles `Application.ShortcutItems` avec la propriété. Elles sont uniquement transmises au gestionnaire d' `HandleShortcutItem` événements.
-
-
-
-
 
 ### <a name="identifying-quick-action-items"></a>Identification des éléments d’action rapide
 
@@ -387,7 +379,6 @@ Ensuite, nous remplaçons la `OnActivated` méthode et transmettons tout éléme
 
 Enfin, si votre application était déjà en cours d' `PerformActionForShortcutItem` exécution, la méthode serait appelée pour gérer l’élément d’action rapide, afin que nous ayons besoin de `HandleShortcutItem` la remplacer et d’appeler notre méthode ici également.
 
-
 ### <a name="creating-dynamic-quick-action-items"></a>Création d’éléments d’action rapide dynamiques
 
 En plus de définir des éléments d’action rapide statiques dans `Info.plist` le fichier de votre application, vous pouvez créer des actions rapides dynamiques à la volée. Pour définir deux nouvelles actions rapides dynamiques, modifiez à `AppDelegate.cs` nouveau votre fichier et modifiez `FinishedLaunching` la méthode pour qu’elle ressemble à ce qui suit :
@@ -446,8 +437,6 @@ Une fois cette fonctionnalité activée, vous pouvez appuyer sur le pavé tactil
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a introduit les nouvelles API tactiles 3D disponibles dans iOS 9 pour iPhone 6S et iPhone 6S plus. Il a abordé l’ajout de sensibilité à la pression à une application. utilisation de Peek et pop pour afficher rapidement les informations dans l’application à partir du contexte actuel sans navigation ; et l’utilisation des actions rapides pour fournir des raccourcis vers les fonctionnalités les plus couramment utilisées de votre application.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

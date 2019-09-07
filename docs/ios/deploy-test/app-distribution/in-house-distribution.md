@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289886"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763062"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Distribution interne pour les applications Xamarin.iOS
 
@@ -94,7 +94,6 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 
 Comme pour tout profil de provisionnement que vous créez, un ID d’application est nécessaire pour identifier l’application que vous allez distribuer sur l’appareil de l’utilisateur. Si vous ne l’avez pas déjà créé, suivez les étapes ci-dessous pour en créer un :
 
-
 1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
 2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
 3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé, par exemple : **Explicite** : com.[DomainName].[AppName] **Caractère générique** : com.[DomainName].*
@@ -150,13 +149,11 @@ Vous distribuez votre application de manière sécurisée à l’aide de différ
 
 Pour distribuer votre application selon l’une de ces méthodes, vous devez d’abord créer un fichier IPA, comme expliqué dans la section suivante.
 
-
 ### <a name="creating-an-ipa-for-in-house-deployment"></a>Création d’un fichier IPA pour un déploiement interne
 
 Une fois les applications provisionnées, elles peuvent être placées dans un paquet appelé fichier *IPA*. Il s’agit d’un fichier zip qui contient l’application, ainsi que des métadonnées et des icônes supplémentaires. Le fichier IPA permet d’ajouter une application localement à iTunes pour qu’elle puisse être synchronisée directement sur un appareil inclus dans le profil de provisionnement.
 
 Pour plus d’informations sur la création d’un fichier IPA, consultez le guide [Prise en charge de fichier IPA](~/ios/deploy-test/app-distribution/ipa-support.md).
-
 
 ## <a name="summary"></a>Récapitulatif
 

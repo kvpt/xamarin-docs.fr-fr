@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 1b3c1af480db2c5642ef0b16aed795d2bb43290f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292389"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752014"
 ---
 # <a name="introduction-to-ios-8"></a>Introduction à iOS 8
 
@@ -49,7 +49,7 @@ Avec HomeKit, les applications tierces et Siri peuvent découvrir des accessoire
 Le diagramme ci-dessous montre la hiérarchie de base de la configuration des accessoires HomeKit :
 
 ![](introduction-to-ios8-images/image1.png "Ce diagramme illustre la hiérarchie de base de la configuration des accessoires HomeKit")
- 
+
 Pour commencer à utiliser HomeKit, les développeurs doivent s’assurer que le service HomeKit est sélectionné pour le profil de configuration. Apple a également fourni aux développeurs un complément HomeKit Simulator pour Xcode. Vous pouvez le trouver dans le [Centre de développement Apple](https://developer.apple.com/downloads/index.action), `Hardware IO Tools for Xcode`sous. 
 
 Pour plus d’informations, consultez notre guide [HomeKit](~/ios/platform/homekit.md) .
@@ -71,7 +71,7 @@ La première étape de la création d’une extension d’application consiste �
 Dans la boîte de dialogue **nouveau projet** , accédez **C#**  > à **iOS** > **API unifiée** > **Extensions**, comme illustré dans la capture d’écran ci-dessous :
 
 ![](introduction-to-ios8-images/image2.png "Création d’une nouvelle extension")
- 
+
 La boîte de dialogue Nouveau projet fournit sept nouveaux modèles de projet pour la création d’extensions d’application et sont décrits ci-dessous. Notez que la plupart des extensions sont liées à d’autres nouvelles API dans iOS, telles que le sélecteur de documents :
 
 - **Action** : permet aux développeurs de créer des boutons d’action personnalisés uniques permettant aux utilisateurs d’effectuer certaines tâches.
@@ -122,7 +122,7 @@ Chaque appareil est défini par une classe de taille, à la fois dans l’axe ve
 Si les deux concepts sont utilisés ensemble, le résultat est une grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes, comme illustré dans le diagramme suivant :
 
 ![](introduction-to-ios8-images/image3.png "Diagramme représentant la grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes")
- 
+
 Pour plus d’informations sur les classes de taille, reportez-vous à la [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md).
 
 ## <a name="photo-kit"></a>Kit de photos
@@ -163,8 +163,6 @@ Avec toutes les améliorations apportées à iOS 8, un certain nombre d’API so
 
 ## <a name="summary"></a>Récapitulatif
 Dans cet article, nous avons abordé certaines des nouvelles fonctionnalités introduites par Apple dans iOS 8.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

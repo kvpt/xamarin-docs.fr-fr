@@ -7,48 +7,47 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2018
-ms.openlocfilehash: 04a07d5b7f37222515136e5592f31a4583b02fe3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bd0f2a7704e5d666f6b32d4ccc489e069ec6ade6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61157362"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757250"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Quels packages Android SDK installer ?
 
-L’installation du Kit Android SDK n’inclut pas automatiquement tous les packages requis minimales pour le développement. Bien que les développeurs individuels doivent varient, les packages suivants généralement seront nécessaires pour le développement avec Xamarin.Android :
+L’installation du Android SDK n’inclut pas automatiquement tous les packages minimaux requis pour le développement. Bien que les besoins individuels des développeurs varient, les packages suivants sont généralement requis pour le développement avec Xamarin. Android :
 
 ## <a name="tools"></a>Outils
 
-Installez les derniers outils à partir du dossier Outils dans le Gestionnaire du Kit de développement logiciel :
+Installez les outils les plus récents à partir du dossier Tools du gestionnaire du kit de développement logiciel (SDK) :
 
 - Android SDK Tools
-- Outils de plateforme du Kit Android SDK
-- Outils de génération du Kit Android SDK
+- Plateforme Android SDK-outils
+- Outils de génération Android SDK
 
-## <a name="android-platforms"></a>Plateformes Android
+## <a name="android-platforms"></a>Plateforme (s) Android
 
-Installez la « plate-forme SDK » pour les versions Android que vous avez défini en tant que cible & minimum. 
+Installez la « plateforme SDK » pour les versions Android que vous avez définies au minimum & cible. 
 
 Exemples :
 
-- API 23 cible
-- API minimal 23
+- API cible 23
+- API minimale 23
 
-Devez uniquement installer le Kit de développement logiciel Platform pour API 23
+Vous devez uniquement installer la plateforme SDK pour l’API 23
 
-- API 23 cible
-- API minimal 15
+- API cible 23
+- API 15 minimum
 
-Devez installer des plateformes SDK pour API 15 et 23. Notez que vous n’avez pas besoin d’installer les niveaux d’API entre les valeurs minimale et la cible (même si vous êtes backporting à ces niveaux d’API).
+Vous devez installer les plateformes du kit de développement logiciel pour les API 15 et 23. Notez que vous n’avez pas besoin d’installer les niveaux d’API entre la valeur minimale et la cible (même si vous effectuez un portage vers ces niveaux d’API).
 
-## <a name="system-images"></a>Images du système
+## <a name="system-images"></a>Images système
 
-Elles sont uniquement requis si vous souhaitez utiliser les émulateurs Android out-of-the-box à partir de Google. Pour plus d’informations, consultez [configuration de l’émulateur Android](~/android/get-started/installation/android-emulator/index.md)
+Ces derniers sont requis uniquement si vous souhaitez utiliser les émulateurs Android prêts à l’emploi de Google. Pour plus d’informations, consultez [configuration de émulateur Android](~/android/get-started/installation/android-emulator/index.md)
 
 ## <a name="extras"></a>Suppléments
-Android SDK Extras ne sont généralement pas requis ; mais il est utile de connaître les dans la mesure où elles peuvent être requises en fonction de votre cas d’utilisation.
+Les Android SDK supplémentaires ne sont généralement pas requis. Toutefois, il est utile de les connaître, car ils peuvent être nécessaires en fonction de votre cas d’utilisation.
 
 ## <a name="further-reading"></a>informations supplémentaires
-Le guide suivant décrit ces options et approfondit sur les différents packages du SDK manager est disponible : [Guide de configuration du Kit Android SDK Manager](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)
-
+Le guide suivant présente ces options et décrit plus en détail les différents packages que le gestionnaire du kit de développement logiciel (SDK) est disponible : [Guide d’installation de Android SDK Manager](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)

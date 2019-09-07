@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 3fb479321686e4b956fc6ffee90dd5b0b2c16d9c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f54edead87459282ccd6a44225269542fad9d0e4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291184"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769103"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Dépannage des applications tvOS générées avec Xamarin
 
@@ -146,7 +146,6 @@ Les contrôleurs de jeu peuvent être utilisés pour améliorer le jeu et donner
 
 Si vous soumettez une application Xamarin. tvOS avec prise en charge du contrôleur de jeu à Apple TV App Store et que vous recevez un message d’erreur sous la forme :
 
-
 _Nous avons découvert un ou plusieurs problèmes liés à la livraison récente de « nom de l’application ». Votre remise a réussi, mais vous souhaiterez peut-être corriger les problèmes suivants dans votre prochaine livraison :_
 
 _Bundle non valide : une application qui prend en charge les contrôleurs de jeu doit également prendre en charge la télécommande Apple TV._
@@ -200,8 +199,6 @@ Au chemin d’accès suivant :
 Notez que le numéro de profil dans le chemin d’accès doit correspondre au numéro de profil de la bibliothèque de classes portable.
 
 Ce fichier étant en place, vous devez être en mesure d’ajouter le fichier PCL au projet Xamarin. tvOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

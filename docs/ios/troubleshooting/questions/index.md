@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 57908027c6e9215504f410c0f9c989d6fbe3adad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8549e03c96a5e21f7a235064ebd72fc671cf2b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290508"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769282"
 ---
 # <a name="ios-frequently-asked-questions"></a>Forum aux questions sur iOS
 
@@ -35,7 +35,6 @@ Ce guide vous explique comment modifier le fichier info. plist pour activer l’
 
 ### <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logssymbolicate-ios-crashmd"></a>[Où puis-je trouver le fichier .dSYM pour générer les symboles des rapports d'incidents iOS ?](symbolicate-ios-crash.md)
 Ce guide décrit les étapes de base des journaux d’incidents symbolicating iOS pour vous aider à diagnostiquer les incidents. Il contient également des liens vers des ressources supplémentaires pour des techniques de symboles plus avancées & des informations sur l’interprétation des journaux d’incidents iOS.
-
 
 ### <a name="how-do-i-set-mono-runtime-environment-variables-for-ios-projects-in-xamarin-studioxs-mono-runtimemd"></a>[Comment définir des variables d’environnement Mono Runtime pour des projets iOS dans Xamarin Studio ?](xs-mono-runtime.md)
 Si vous devez définir des variables d’environnement d’exécution pour mono, vous pouvez les définir dans les **options de projet > page exécuter > général** .
@@ -61,7 +60,6 @@ Oui, c’est possible, mais il est généralement nécessaire de signer à nouve
 ### <a name="why-does-my-app-submission-fail-with-disallowed-paths--itunesmetadataplist--found-at--itunesmetadata-disallowed-pathsmd"></a>[Pourquoi ma soumission d’application échoue avec : « Chemins non autorisés (« iTunesMetadata.plist ») trouvés sur... » ?](itunesmetadata-disallowed-paths.md)
 Cette erreur est le résultat d’une modification dans le processus de vérification de l’App Store d’Apple. Cette erreur spécifique n’est _pas_ liée à la version particulière de Xamarin que vous avez installée. par conséquent, la rétrogradation n’est _pas_ utile. Ce guide fournit des liens vers des informations supplémentaires sur la façon de résoudre le problème.
 
-
 ## <a name="diagnosing-specific-error-messages"></a>Diagnostic de messages d’erreur spécifiques
 
 ### <a name="ios-designer-error-with-registerserviceporterror-registerserviceportmd"></a>[Erreur de concepteur iOS avec RegisterServicePort](error-registerserviceport.md)
@@ -83,8 +81,6 @@ Ce problème se produit lors de la génération d’architectures 32 bits, telle
 
 > [!IMPORTANT]
 > Les articles ci-dessous s’appliquent aux problèmes qui ont été résolus dans les versions récentes de Xamarin. Toutefois, si le problème se produit sur la version la plus récente du logiciel, envoyez un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) à vos informations de contrôle de version et à la sortie complète du journal de génération.
-
-
 
 ### <a name="ipa-file-is-0-bytesipa-zero-bytesmd"></a>[Le fichier IPA contient 0 octet](ipa-zero-bytes.md)
 Certains problèmes connus dans les versions précédentes de Xamarin pouvaient entraîner la présence de 0 octets dans le fichier de la Loi d’accès aux fichiers sur Windows.

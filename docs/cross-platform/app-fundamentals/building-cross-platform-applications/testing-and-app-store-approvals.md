@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 049f01d47d303f07edd57c659361d9a123993ede
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288654"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761979"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Partie 6 : Test et approbations de l’App Store
 
@@ -39,7 +39,6 @@ Lors du test d’applications au sein de votre organisation ou de la gestion d�
 
 - **Distribution** : gestion du processus d’approvisionnement (en particulier pour les appareils IOS) et obtention des versions mises à jour des logiciels aux testeurs.
 - **Commentaires** : collecte des informations sur l’utilisation des applications et des informations détaillées sur les erreurs qui peuvent se produire.
-
 
 Il existe un certain nombre de services qui permettent de résoudre ces problèmes en fournissant une infrastructure intégrée à votre application pour collecter et signaler l’utilisation et les erreurs, et rationaliser le processus d’approvisionnement pour vous aider à inscrire et gérer des testeurs et leurs appareils .
 

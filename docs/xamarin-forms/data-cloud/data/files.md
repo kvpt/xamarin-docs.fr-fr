@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529229"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760562"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Gestion des fichiers dans Xamarin.Forms
 
@@ -118,7 +118,6 @@ Il existe deux solutions à ce problème de projet partagé :
 - **Synchroniser les projets** : modifiez les propriétés du projet pour que chaque plateforme utilise les **mêmes** nom d’assembly et espace de noms par défaut. Cette valeur peut ensuite être « codée en dur » comme préfixe pour les ID de ressource incorporée dans le projet partagé.
 - **Directives de compilateur #if** : utilisez des directives de compilateur pour définir le préfixe d’ID de ressource approprié, et utilisez cette valeur pour construire de façon dynamique l’ID de ressource approprié.
 
-
 Voici le code qui illustre la deuxième option : Les directives de compilateur sont utilisées pour sélectionner le préfixe de ressource codé en dur (qui est normalement le même que l’espace de noms par défaut du projet de référence). La variable `resourcePrefix` est ensuite utilisée pour créer un ID de ressource valide, en le concaténant avec le nom de fichier de la ressource incorporée.
 
 ```csharp
@@ -169,4 +168,3 @@ Cet article vous a montré certaines opérations de fichier simples pour enregis
 - [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Exemples Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)
 - [Utilisation du système de fichiers dans Xamarin.iOS](~/ios/app-fundamentals/file-system.md)
-

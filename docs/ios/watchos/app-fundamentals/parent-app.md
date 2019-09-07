@@ -7,18 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 0049d69caabce545b2813dbd2b3905fe96f28fed
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f3e56ab90d5205318539994bae7f4db153bb163
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292739"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768087"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
 
 > [!IMPORTANT]
 > Accéder à l’application parent à l’aide uniquement des exemples ci-dessous fonctionne sur les applications de cadran watchOS 1.
-
 
 Il existe différentes façons de communiquer entre l’application de surveillance et de l’application iOS qui il est fourni avec :
 
@@ -30,7 +29,6 @@ Il existe différentes façons de communiquer entre l’application de surveilla
 
 L’application parente est également parfois appelée l’application de conteneur.
 
-
 <a name="code" />
 
 ## <a name="run-code"></a>Exécuter du Code
@@ -39,8 +37,6 @@ Communication entre une extension watch et l’application iPhone parent est ill
 Votre extension watch peut demander l’application iOS de parent à procéder à un traitement sur son nom à l’aide de la `OpenParentApplication` (méthode).
 
 Cela est particulièrement utile pour longues tâches (y compris les demandes réseau) - uniquement le parent application iOS peuvent tirer parti du traitement en arrière-plan pour effectuer ces tâches et enregistrez les données récupérées dans un emplacement accessible à l’extension watch.
-
-
 
 ### <a name="watch-kit-app-extension"></a>Regardez le Kit d’Extension d’application
 
@@ -57,12 +53,10 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 });
 ```
 
-
 ### <a name="ios-app"></a>Application iOS
 
 Tous les appels à partir d’une extension d’application espion sont routées via l’application iPhone `HandleWatchKitExtensionRequest` (méthode).
 Si que vous apportez aux différentes demandes de l’application Apple watch, cette méthode devez interroger le `userInfo` dictionnaire pour déterminer comment traiter la demande.
-
 
 ```csharp
 [Register ("AppDelegate")]
@@ -81,7 +75,6 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 }
 ```
-
 
 <a name="storage" />
 
@@ -142,8 +135,6 @@ wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
 Téléchargez le C# version [WormHoleSharp](https://github.com/Clancey/WormHoleSharp).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

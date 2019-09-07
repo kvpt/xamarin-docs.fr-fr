@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 14be0fec50138aed7b2b3e8d48d49cad86abbb2b
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119414"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754040"
 ---
 # <a name="xamarinandroid-environment"></a>Environnement de Xamarin.Android
 
@@ -41,7 +41,6 @@ Si la *clé* commence par une lettre en minuscules, la *clé* est alors traitée
 ## <a name="xamarinandroid-environment-variables"></a>Variables d’environnement Xamarin.Android
 
 Xamarin.Android prend en charge la variable `XA_HTTP_CLIENT_HANDLER_TYPE`, qui peut être définie via `adb shell setprop debug.mono.env` ou via l’action de génération `$(AndroidEnvironment)`.
-
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
@@ -95,11 +94,10 @@ Il s’agit d’une chaîne séparée par des virgules (`,`), qui contient l’u
 - `gc`: imprimer les messages associés au GC.
 - `gref`: imprimer les messages de référence globale JNI.
 - `lref`: imprimer les messages de référence locale JNI.  
-    *Remarque* : ceci spammera *vraiment* `adb logcat`.  
+    *Remarque*: ceci spammera *vraiment* `adb logcat`.  
     Dans Xamarin.Android 5.1, ceci créera également un fichier `.__override__/lrefs.txt`, qui peut être *énorme*.  
     Éviter.
 - `timing`: imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
-
 
 ### `debug.mono.max_grefc`
 
@@ -151,13 +149,11 @@ XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
 > L’appareil Android sous-jacent doit prendre en charge TLS 1.2.
 Android 5.0 et les versions ultérieures prennent en charge TLS 1.2
 
-
 ## <a name="example"></a>Exemples
 
 ```shell
 ## Comments are lines which start with '#'
 ## Blank lines are ignored.
-
 
 ## Enable GREF messages to `adb logcat`
 debug.mono.log=gref
@@ -165,8 +161,6 @@ debug.mono.log=gref
 ## Clear out a Mono environment variable to decrease logging
 MONO_LOG_LEVEL=
 ```
-
-
 
 ## <a name="related-links"></a>Liens associés
 

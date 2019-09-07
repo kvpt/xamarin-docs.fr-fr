@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: a7e98f64672788f13b247aa6cbba8adca84bb319
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0b30a0167b72ebeb4c53481c6d2d9d9344296894
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121550"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767359"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Principes de base XAML de Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-XAML (eXtensible Application Markup Language) : permet aux développeurs de définir des interfaces utilisateur dans les applications Xamarin.Forms à l’aide d’un balisage au lieu de code. XAML n’est jamais nécessaire dans un programme de Xamarin.Forms, mais il est souvent plus concise et plus visuelle cohérente à code équivalent et potentiellement compatible avec les outils. XAML est particulièrement bien adapté pour une utilisation avec l’architecture de l’application MVVM (Model-View-ViewModel) populaire: XAML définit la vue liée au code ViewModel par le biais de liaisons de données XAML.
+XAML (eXtensible Application Markup Language) : permet aux développeurs de définir des interfaces utilisateur dans les applications Xamarin.Forms à l’aide d’un balisage au lieu de code. XAML n’est jamais nécessaire dans un programme de Xamarin.Forms, mais il est souvent plus concise et plus visuelle cohérente à code équivalent et potentiellement compatible avec les outils. XAML est particulièrement bien adapté pour une utilisation avec l’architecture de l’application MVVM (Model-View-ViewModel) populaire : XAML définit la vue liée au code ViewModel par le biais de liaisons de données XAML.
 
 ## <a name="xaml-basics-contents"></a>Contenu de principes de base XAML
 
@@ -34,7 +34,6 @@ En plus de ces articles principes fondamentaux de XAML, vous pouvez télécharge
 [![](images/cover-sml.png "Couverture de livre")](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 
 Les rubriques XAML sont traitées plus en détail dans de nombreux chapitres du livre, y compris :
-
 
 | Chapitre | Téléchargement | Récapitulatif |
 |---------|---------|---------|

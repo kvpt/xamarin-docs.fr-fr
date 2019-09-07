@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: cf79f586e5b0ff71c109ea9664d3cb7a6aa91a02
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e0c27502c10fe3522d80c6345a847ca424d49f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292375"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762788"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Fonctionnalités App Group dans Xamarin.iOS
 
@@ -73,7 +73,7 @@ Effectuez ce qui suit :
 12. Répétez ces étapes pour chaque application (ou extension) devant utiliser l’App Group.
 
 ## <a name="next-steps"></a>Étapes suivantes
- 
+
 S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.

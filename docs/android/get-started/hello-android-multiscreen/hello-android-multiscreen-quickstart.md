@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: aab10d434461521825fd633369ffa3c6331e905b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: d1a4d73242e9701ff9ffcfc58791986bca89a095
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643961"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755847"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android multi-écran : Démarrage rapide
 
@@ -215,7 +215,6 @@ Ajoutez le nom de chaîne `translationHistory` et sa valeur au fichier **Strings
 Le texte du bouton **Historique de traduction** doit se mettre à jour pour refléter la nouvelle valeur de chaîne :
 
 [![Le bouton reflète la nouvelle valeur de chaîne](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
-
 
 Sélectionnez le bouton **Historique de traduction** sur l’aire de conception, placez-vous sous l’onglet **Comportement** dans le **Panneau Propriétés**, puis double-cliquez sur la case à cocher **Activé** pour désactiver le bouton. Le bouton devient alors plus sombre sur l’aire de conception :
 

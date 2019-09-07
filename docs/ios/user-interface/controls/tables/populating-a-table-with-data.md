@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: d409787661491a6922434a12157c494851644412
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291628"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768866"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Remplissage d’une table avec des données dans Xamarin. iOS
 
@@ -25,7 +25,6 @@ Ce guide couvre les sujets suivants :
 - Ajout d’un index
 - Ajout d’en-têtes et de pieds de page
 
-
 <a name="Subclassing_UITableViewSource" />
 
 ## <a name="subclassing-uitableviewsource"></a>Sous-classe UITableViewSource
@@ -36,7 +35,6 @@ Il n’y a que deux méthodes obligatoires requises pour créer une table à par
 
 - **RowsInSection** : retourne [`nint`](~/cross-platform/macios/nativetypes.md) le nombre total de lignes de données que la table doit afficher.
 - **GetCell** : retourne un `UITableCellView` rempli avec les données de l’index de ligne correspondant passé à la méthode.
-
 
 L’exemple de fichier BasicTable **TableSource.cs** a l’implémentation la plus simple `UITableViewSource`possible de. Dans l’extrait de code ci-dessous, vous pouvez voir qu’il accepte un tableau de chaînes à afficher dans la table et qu’il retourne un style de cellule par défaut contenant chaque chaîne :
 
@@ -139,13 +137,9 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-
 L’utilisateur peut maintenant toucher une ligne et une alerte s’affiche :
 
-
-
  [![](populating-a-table-with-data-images/image4.png "Alerte de ligne sélectionnée")](populating-a-table-with-data-images/image4.png#lightbox)
-
 
 ## <a name="cell-reuse"></a>Réutilisation des cellules
 
@@ -246,7 +240,6 @@ La `UITableViewSource` sous-classe nécessite ensuite l’ajout ou la modificati
 - **RowsInSection** : retourne le nombre de lignes dans une section donnée.
 - **SectionIndexTitles** : retourne le tableau de chaînes qui sera utilisé pour afficher l’index. L’exemple de code retourne un tableau de lettres.
 
-
 Les méthodes mises à jour dans l’exemple de fichier **BasicTableIndex/TableSource. cs** se présentent comme suit :
 
 ```csharp
@@ -266,7 +259,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 Les index sont généralement utilisés uniquement avec le style de table simple.
 
-
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>Ajout d’en-têtes et de pieds de page
@@ -280,7 +272,6 @@ Pour afficher les en-têtes et les `UITableViewSource` pieds de page, la sous-cl
 
 - **TitleForHeader** : retourne le texte à utiliser comme en-tête
 - **TitleForFooter** : retourne le texte à utiliser comme pied de page.
-
 
 Les méthodes mises à jour dans l’exemple de fichier **BasicTableHeaderFooter/code/TableSource. cs** se présentent comme suit :
 
@@ -296,7 +287,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 ```
 
 Vous pouvez personnaliser davantage l’apparence de l’en-tête et du pied de page avec un objet `GetViewForHeader` de `GetViewForFooter` vue, à l’aide `UITableViewSource`des substitutions de méthode et sur.
-
 
 ## <a name="related-links"></a>Liens associés
 

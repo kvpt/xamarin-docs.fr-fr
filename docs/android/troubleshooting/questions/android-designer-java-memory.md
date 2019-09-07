@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: 05d72c2b9cea3972a8173ea0656f5a84c2b3d51c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4a3f3849725f0d3b8e8bc8d43c1cd3f87f044616
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523491"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761046"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>Réglage des paramètres de mémoire Java pour le concepteur Android
 
@@ -30,7 +30,6 @@ Les noms de propriété suivants correspondent à l' [option de ligne de command
 
 - **AndroidDesignerJavaRendererPermSize** -XX:MaxPermSize
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Ouvrez votre solution dans Visual Studio.
@@ -43,7 +42,7 @@ Les noms de propriété suivants correspondent à l' [option de ligne de command
 
 5. Modifiez chaque `.csproj.user` fichier dans un éditeur de texte.
 
-6. Ajoutez tout ou partie des nouvelles propriétés de mémoire du concepteur Android dans `<PropertyGroup>` un élément. Vous pouvez utiliser un existant `<PropertyGroup>` ou en créer un nouveau. Voici un exemple `.csproj.user` de fichier complet qui comprend les 3 attributs définis sur leurs valeurs par défaut:
+6. Ajoutez tout ou partie des nouvelles propriétés de mémoire du concepteur Android dans `<PropertyGroup>` un élément. Vous pouvez utiliser un existant `<PropertyGroup>` ou en créer un nouveau. Voici un exemple `.csproj.user` de fichier complet qui comprend les 3 attributs définis sur leurs valeurs par défaut :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -73,15 +72,15 @@ Les noms de propriété suivants correspondent à l' [option de ligne de command
 
 4. Modifiez le `.userprefs` fichier dans un éditeur de texte.
 
-5. Localisez l’élément XML existant au format suivant. La dernière partie du nom de cet élément correspondra au nom de votre projet: «AndroidApplication1» dans cet exemple:
+5. Localisez l’élément XML existant au format suivant. La dernière partie du nom de cet élément correspondra au nom de votre projet : « AndroidApplication1 » dans cet exemple :
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >
     ```
 
-6. Si l' `<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >` élément n’existe pas, créez-le n’importe où dans `<Properties>` l’élément englobant. Veillez à remplacer «AndroidApplication1» par le nom de votre projet.
+6. Si l' `<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >` élément n’existe pas, créez-le n’importe où dans `<Properties>` l’élément englobant. Veillez à remplacer « AndroidApplication1 » par le nom de votre projet.
 
-7. Ajoutez tout ou partie des nouvelles propriétés de mémoire du concepteur Android comme attributs sur l’élément. Voici un exemple `.userprefs` de fichier complet qui comprend les 3 attributs définis sur leurs valeurs par défaut:
+7. Ajoutez tout ou partie des nouvelles propriétés de mémoire du concepteur Android comme attributs sur l’élément. Voici un exemple `.userprefs` de fichier complet qui comprend les 3 attributs définis sur leurs valeurs par défaut :
 
     ```xml
     <Properties StartupItem="AndroidApplication1\AndroidApplication1.csproj">
@@ -102,4 +101,3 @@ Les noms de propriété suivants correspondent à l' [option de ligne de command
 10. Redémarrez Visual Studio pour Mac et rouvrez votre solution.
 
 -----
-

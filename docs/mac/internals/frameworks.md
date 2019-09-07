@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: 6b9927b7f6887d7be1a586c854b3bde6cad883b9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a95288000f73f69be56dee990a2a37b9b4dbcd98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292874"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770080"
 ---
 # <a name="xamarinmac-frameworks"></a>Frameworks Xamarin. Mac
 
@@ -63,4 +63,3 @@ Les frameworks macOS suivants sont pris en charge par Xamarin. Mac :
 - StoreKit 
 - VideoToolbox
 - WebKit
-

@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: a58242e89033d6cd2652495f9466379f63f498f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119524"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761245"
 ---
 # <a name="fingerprint-authentication"></a>Authentification par empreinte digitale
 
 _Ce guide explique comment ajouter l’authentification par empreinte digitale, introduite dans Android 6,0, à une application Xamarin. Android._
-
 
 ## <a name="fingerprint-authentication-overview"></a>Vue d’ensemble de l’authentification par empreinte digitale
 
@@ -25,13 +24,13 @@ L’arrivée des scanneurs d’empreintes digitales sur les appareils Android of
 
 Les API FingerprintManager ciblent les appareils avec un scanneur d’empreintes digitales et exécutent le niveau d’API 23 (Android 6,0) ou une version ultérieure. Les API se trouvent dans l' `Android.Hardware.Fingerprints` espace de noms. La bibliothèque de prise en charge Android fournit des versions des API d’empreintes digitales destinées aux versions antérieures d’Android. Les API de compatibilité se trouvent dans `Android.Support.v4.Hardware.Fingerprint` l’espace de noms, sont distribuées via le [package NuGet Xamarin. Android. support. v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/).
 
-Le [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (et son équivalent de la bibliothèque de prise en charge, [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) est la classe principale pour l’utilisation du matériel de numérisation d’empreintes digitales. Cette classe est un wrapper Android SDK autour du service au niveau du système qui gère les interactions avec le matériel lui-même. Il est responsable du démarrage du scanneur d’empreintes digitales et de la réponse aux commentaires du scanneur. Cette classe a une interface relativement simple avec seulement trois membres:
+Le [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (et son équivalent de la bibliothèque de prise en charge, [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) est la classe principale pour l’utilisation du matériel de numérisation d’empreintes digitales. Cette classe est un wrapper Android SDK autour du service au niveau du système qui gère les interactions avec le matériel lui-même. Il est responsable du démarrage du scanneur d’empreintes digitales et de la réponse aux commentaires du scanneur. Cette classe a une interface relativement simple avec seulement trois membres :
 
 - **`Authenticate`** &ndash; Cette méthode initialise le scanneur matériel et démarre le service en arrière-plan, en attendant que l’utilisateur analyse son empreinte digitale.
 - **`EnrolledFingerprints`** Cette propriété retourne `true` si l’utilisateur a inscrit une ou plusieurs empreintes digitales avec l’appareil. &ndash;
 - **`HardwareDetected`** &ndash; Cette propriété est utilisée pour déterminer si l’appareil prend en charge l’analyse par empreinte digitale.
 
-La `FingerprintManager.Authenticate` méthode est utilisée par une application Android pour démarrer le scanneur d’empreintes digitales. L’extrait de code suivant montre comment l’appeler à l’aide des API de compatibilité de la bibliothèque de prise en charge:
+La `FingerprintManager.Authenticate` méthode est utilisée par une application Android pour démarrer le scanneur d’empreintes digitales. L’extrait de code suivant montre comment l’appeler à l’aide des API de compatibilité de la bibliothèque de prise en charge :
 
 ```csharp
 // context is any Android.Content.Context instance, typically the Activity 
@@ -51,11 +50,6 @@ Ce guide explique comment utiliser les `FingerprintManager` API pour améliorer 
 L’authentification par empreinte digitale nécessite Android 6,0 (niveau d’API 23) ou supérieur et un appareil avec un scanneur d’empreintes digitales. 
 
 Une empreinte digitale doit déjà être inscrite auprès de l’appareil pour chaque utilisateur qui doit être authentifié. Cela implique la configuration d’un verrouillage d’écran qui utilise un mot de passe, un code confidentiel, un modèle de balayage ou une reconnaissance faciale. Il est possible de simuler certaines fonctionnalités d’authentification par empreinte digitale dans une Émulateur Android.  Pour plus d’informations sur ces deux rubriques, consultez la section [inscription d’une empreinte digitale](enrolling-fingerprint.md) . 
-
-
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

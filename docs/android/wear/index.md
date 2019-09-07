@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2018
-ms.openlocfilehash: 13a9a02984828781cc6402e982a4b5151c077c52
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5768a8fb402304d399e619ddb111aea24d975daf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648333"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758329"
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -42,8 +42,6 @@ Explique comment déployer votre application Android usure sur un appareil Andro
 
 Le site de développement Android fournit des informations détaillées sur les API clé d’usure, telles que l' [activité portable](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html), les [intentions](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html), [l’authentification](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html), les [complications](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html), le [rendu des complications](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html), les [notifications](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html), [ Views](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)et [WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html).
 
-
-
 ## <a name="samples"></a>Exemples
 
 Vous pouvez trouver un certain nombre d' [exemples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear) utilisant Android usure (ou accéder directement à [GitHub](https://github.com/xamarin/monodroid-samples/tree/master/wear)).
@@ -51,23 +49,21 @@ Vous pouvez trouver un certain nombre d' [exemples](https://docs.microsoft.com/s
 |Exemple|Description|Capture d'écran|
 |--- |--- |--- |
 |[SkeletonWear](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-skeletonwear)|Exemple simple des principes de base des projets à porter, y compris GridViewPager et les notifications interactives.|![Capture d’écran de Skeletonwear](images/skeleton.png)|
-|[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)|Démonstration simple du contrôle WatchViewStub qui détecte la forme d’écran et charge automatiquement la disposition correcte. Consultez fonctionnement de WatchViewStub dans la disposition Resources **/Layout/main_activity. xml** .|![Capture d’écran de WatchViewStub](images/watchview.png)|
+|[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)|Démonstration simple du contrôle WatchViewStub qui détecte la forme d’écran et charge automatiquement la disposition correcte. Consultez fonctionnement de WatchViewStub dans la disposition **Resources/layout/main_activity. xml** .|![Capture d’écran de WatchViewStub](images/watchview.png)|
 |[RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant)|Démonstration des pages de notification d’usure, sous forme d’étapes de recette. Les notifications sont créées dans RecipeService.cs.|![Capture d’écran de RecipeAssistant](images/recipeassist.png)|
-|[ElizaChat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-elizachat)|Exemple amusant d’interaction avec un «assistant personnel» appelé Eliza, en utilisant des notifications interactives pour créer une conversation à l’aide de réponses préparées.|![Capture d’écran de ElizaChat](images/eliza.png)|
+|[ElizaChat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-elizachat)|Exemple amusant d’interaction avec un « assistant personnel » appelé Eliza, en utilisant des notifications interactives pour créer une conversation à l’aide de réponses préparées.|![Capture d’écran de ElizaChat](images/eliza.png)|
 |[GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)|GridViewPager implémente le modèle de navigation 2D, où l’utilisateur fait défiler verticalement, puis horizontalement pour parcourir les options et le contenu.|![Capture d’écran de GridViewPager](images/gridviewpager.png)|
 |[WatchFace](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchface)|WatchFace est un visage de montre personnalisé avec des mains d’heures, de minutes et de secondes de style analogique. Cet exemple montre comment créer un service de facette Watch qui dessine l’heure actuelle et gère les événements de modification de la visibilité et du mode ambiant. Il comprend un récepteur de diffusion qui écoute les modifications de fuseau horaire et met à jour automatiquement le temps en conséquence.|![Capture d’écran de WatchFace](images/gridviewpager.png)|
 
-
 ## <a name="videos"></a>Vidéos
 
-Consultez ces liens vidéo qui décrivent Xamarin. Android avec prise en charge de l’usure:
+Consultez ces liens vidéo qui décrivent Xamarin. Android avec prise en charge de l’usure :
 
 |Description|Capture d'écran|
 |--- |--- |
 |[Android L et bien plus encore](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L developer preview a introduit une multitude de nouvelles API qui permettent aux développeurs de tirer parti de, y compris la conception de matériaux, les notifications et les nouvelles animations, pour n’en nommer que quelques-uns.|![Capture vidéo de la présentation](images/video-android-l.png)|
-|[C#est dans mes oreilles et dans mes yeux: Google Glass et Android](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; s’intéressent à l’informatique à l’avenir (ou un épisode de gadget inspecteur), mais de nombreuses personnes adoptent déjà le futur aujourd’hui. C#les développeurs connaissent ce point et disposent déjà des outils et des compétences nécessaires pour tirer parti de la puissance des appareils mobiles (de l’évolution de 2014).|![Capture vidéo de la présentation](images/video-eyes-ears.png)|
-|[Nouveautés de Xamarin. Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android usure, Android TV, Android auto, Material Design et art, qu’est-ce que cela signifie comme développeur Xamarin? de évoluer 2014.|![Capture vidéo de la présentation](Images/video-whats-new.png)|
-
+|[C#est dans mes oreilles et dans mes yeux : Google Glass et Android](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; s’intéressent à l’informatique à l’avenir (ou un épisode de gadget inspecteur), mais de nombreuses personnes adoptent déjà le futur aujourd’hui. C#les développeurs connaissent ce point et disposent déjà des outils et des compétences nécessaires pour tirer parti de la puissance des appareils mobiles (de l’évolution de 2014).|![Capture vidéo de la présentation](images/video-eyes-ears.png)|
+|[Nouveautés de Xamarin. Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android usure, Android TV, Android auto, Material Design et art, qu’est-ce que cela signifie comme développeur Xamarin ? de évoluer 2014.|![Capture vidéo de la présentation](Images/video-whats-new.png)|
 
 <!--
 

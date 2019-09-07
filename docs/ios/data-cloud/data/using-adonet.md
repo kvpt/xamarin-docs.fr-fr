@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3526ee254a3986e1ff59288adeb95a49129b8b60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a9df85a405bc086f86dae73fea615581bf9d28d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290966"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767385"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Utilisation de ADO.NET avec Xamarin. iOS
 
@@ -37,7 +37,6 @@ Cliquez avec le bouton droit sur **références > modifier les références...**
 ## <a name="about-monodatasqlite"></a>À propos de mono. Data. sqlite
 
 Nous allons utiliser la `Mono.Data.Sqlite.SqliteConnection` classe pour créer un fichier de base de données vide, `SqliteCommand` puis pour instancier des objets que nous pouvons utiliser pour exécuter des instructions SQL sur la base de données.
-
 
 1. **Création d’une base de données vide** -appelez la `CreateFile` méthode avec un chemin d’accès valide (c’est-à-dire, accessible en écriture). Vous devez vérifier si le fichier existe déjà avant d’appeler cette méthode. dans le cas contraire, une nouvelle base de données (vide) sera créée en haut de l’ancienne, et les données de l’ancien fichier seront perdues :
 
@@ -153,7 +152,6 @@ public static string DoSomeDataAccess ()
 - **ExecuteReader** : utilisé quand une collection de lignes doit être retournée en `SqlDataReader` tant que.
 - **ExecuteScalar** : récupère une valeur unique (par exemple, un agrégat).
 
-
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
 Les instructions INSERT, UPDATE et DELETE retournent le nombre de lignes affectées. Toutes les autres instructions SQL retournent-1.
@@ -199,7 +197,6 @@ La méthode ExecuteReader retourne un objet SqliteDataReader. En plus de la mét
 - **RowsAffected** : nombre de lignes affectées par la requête.
 - **HasRows** : indique si des lignes ont été retournées.
 
-
 ### <a name="executescalar"></a>EXECUTESCALAR
 
 Utilisez cette option pour les instructions SELECT qui retournent une valeur unique (par exemple, un agrégat).
@@ -212,7 +209,6 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 Le `ExecuteScalar` type de retour de la `object` méthode est : vous devez effectuer un cast du résultat en fonction de la requête de base de données. Le résultat peut être un entier à partir d’une requête de nombre ou une chaîne d’une requête SELECT de colonne unique. Notez que cela est différent pour les autres méthodes d’exécution qui retournent un objet lecteur ou le nombre de lignes affectées.
-
 
 ## <a name="related-links"></a>Liens associés
 

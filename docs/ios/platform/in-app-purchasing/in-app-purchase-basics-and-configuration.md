@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 9347a801c939fd715101253c6953eeec840af47d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fc76a642c27b7a2c7f3483911be596f8d6cdd1ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288591"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752861"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Notions de base et configuration des achats dans l’application dans Xamarin. iOS
 
@@ -26,7 +26,6 @@ L’utilisation de l’App Store pour fournir des achats dans l’application re
 - **portail d’approvisionnement iOS** : création d’un identificateur de Bundle et activation de l’accès au magasin d’applications pour votre application.
 - **Kit de magasin** : ajout de code à votre application pour afficher des produits, acheter des produits et restaurer des transactions.
 - **Code personnalisé** : permet d’effectuer le suivi des achats effectués par les clients et de fournir les produits ou services qu’ils ont achetés. Vous pouvez également avoir besoin d’implémenter un processus côté serveur pour valider les accusés de réception si vos produits consistent en un téléchargement de contenu à partir d’un serveur (par exemple, des livres et des problèmes de magazines).
-
 
 Il existe deux « environnements de serveurs » du kit de stockage :
 
@@ -54,7 +53,6 @@ Ces trois étapes doivent être effectuées avant d’écrire du code :
 - **portail d’approvisionnement iOS** : Assurez-vous que votre application possède un ID d’application valide (et non un caractère générique avec un astérisque *) et que l’achat d’applications est activé.
 - **iTunes Connect application Management** – ajoutez des produits à votre application.
 
-
 ### <a name="apple-developer-account"></a>Compte de développeur Apple
 
 La création et la distribution d’applications gratuites nécessitent très peu de configuration dans [iTunes Connect](https://itunesconnect.apple.com). Toutefois, pour vendre des applications payantes ou des achats dans l’application, vous devez fournir à Apple des informations bancaires et fiscales. Cliquez sur **accords, fiscaux et bancaires** dans le menu principal illustré ici :
@@ -70,7 +68,6 @@ Vous ne pouvez pas tester les fonctionnalités de StoreKit tant que vous n’ave
 ### <a name="ios-provisioning-portal"></a>Portail de provisionnement iOS
 
 Les nouvelles applications sont configurées dans la section **ID d’application** du **portail de provisionnement iOS**. Pour créer un nouvel ID d’application, accédez au [Centre des membres du portail d’approvisionnement iOS](https://developer.apple.com/membercenter/index.action), accédez à la section **certificats, identificateurs et profils** du portail, puis cliquez sur **identificateurs** sous *applications iOS*. Ensuite, cliquez sur le signe « + » en haut à droite pour générer un nouvel ID d’application.
-
 
 Formulaire de création de nouveaux **ID d’application**
 
@@ -114,7 +111,6 @@ Le processus d’ajout de nouveaux produits comporte deux étapes :
 
 Les champs requis pour chaque produit d’achat dans l’application sont décrits ci-dessous :
 
-
 ### <a name="reference-name"></a>Nom de la référence
 
 Le nom de référence n’est pas affiché à vos utilisateurs ; Il est destiné à un usage interne et n’apparaît que dans iTunes Connect.
@@ -148,7 +144,6 @@ Vous pouvez proposer cinq types de produits d’achat dans l’application :
 1. **Abonnement gratuit** : cette option est disponible uniquement dans les applications Newsstand et permet au client d’accéder au contenu de l’abonnement sur tous ses appareils. Les abonnements gratuits n’expirent jamais.
 1. **Abonnement qui n’est pas renouvelé** : doit être utilisé pour vendre un accès limité au temps au contenu statique, par exemple l’accès d’un mois à une archive photo.
 
-
  *Ce document couvre actuellement uniquement les deux premiers types de produits (consommables et non consommables).*
 
  <a name="Price_Tiers" />
@@ -176,10 +171,8 @@ Bien qu’Apple ait fourni une option d’abonnement gratuit spéciale pour les 
 Dans iTunes Connect, vous pouvez entrer un nom et un texte de description différents pour un nombre quelconque de langues prises en charge. Chaque langue peut être ajoutée/modifiée dans via une fenêtre contextuelle :
 
  [![](in-app-purchase-basics-and-configuration-images/image12.png "Chaque langue peut être ajoutée/modifiée dans via une fenêtre contextuelle")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
-   
-   
-   
- Lorsque vous affichez des informations sur les produits dans votre application, vous pouvez afficher le texte localisé à l’aide de StoreKit. L’affichage de la devise doit également être localisé pour afficher le symbole correct et la mise en forme décimale. cette mise en forme est traitée plus loin dans le document.
+
+Lorsque vous affichez des informations sur les produits dans votre application, vous pouvez afficher le texte localisé à l’aide de StoreKit. L’affichage de la devise doit également être localisé pour afficher le symbole correct et la mise en forme décimale. cette mise en forme est traitée plus loin dans le document.
 
 ### <a name="app-store-review"></a>Revue de l’App Store
 
@@ -188,10 +181,8 @@ Comme pour les applications : chaque produit est revu par Apple avant d’être
 La première fois qu’une application est soumise avec l’achat dans l’application activée (qu’il s’agisse d’une nouvelle application ou que la fonctionnalité a été ajoutée à une application existante), vous devez également choisir certains produits à envoyer avec celle-ci. Le portail iTunes Connect vous invite à le faire, comme illustré dans cette capture d’écran :
 
  [![](in-app-purchase-basics-and-configuration-images/image13.png "Le portail iTunes Connect vous invitera à envoyer certains produits également.")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
-   
-   
-   
- L’application et les achats dans l’application seront revus ensemble, de sorte qu’ils soient tous approuvés simultanément (afin que l’application ne passe pas dans le magasin sans aucun produit approuvé !).
+
+L’application et les achats dans l’application seront revus ensemble, de sorte qu’ils soient tous approuvés simultanément (afin que l’application ne passe pas dans le magasin sans aucun produit approuvé !).
 
 Une fois que votre première version avec la fonctionnalité d’achat dans l’application a été approuvée, vous pouvez ajouter d’autres produits et les soumettre à des fins de révision à tout moment. Vous pouvez également choisir d’envoyer une nouvelle version avec des produits d’achat spécifiques dans l’application, à l’aide de la page de détails de la **version** , comme le suggère l’invite.
 

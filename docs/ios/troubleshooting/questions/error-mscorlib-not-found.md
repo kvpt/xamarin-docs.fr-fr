@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 4a8e3827deadd5c5d183c61c53cbe8346949759b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a1c6c5357c62d0421376930ea04c4755fae59d04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290503"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769355"
 ---
 # <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>Erreur d’exécution : l’assembly mscorlib.dll est introuvable ou ne peut pas être chargé
 
@@ -23,4 +23,3 @@ ms.locfileid: "70290503"
 ```
 
 Ce problème se produit lorsque les dossiers `.monotouch-64` *masqués* `.monotouch-32` et sont absents du pour la `.xcarchive` création de la signature/la disponibilité, déclenchant l’erreur d’exécution.
-

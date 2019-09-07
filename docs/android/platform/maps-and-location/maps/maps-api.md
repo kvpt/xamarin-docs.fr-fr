@@ -1,105 +1,102 @@
 ---
-title: À l’aide de l’API de cartes Google dans votre Application
-description: Guide pratique pour implémenter des fonctionnalités de v2 de l’API Google Maps dans votre application Xamarin.Android.
+title: Utilisation de l’API Google Maps dans votre application
+description: Comment implémenter les fonctionnalités de l’API de Google Maps v2 dans votre application Xamarin. Android.
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 1889154a12a701fb4ce57ef8644699dd978f768e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a640e1d6accdfa9184a29127bf4b3c7eeefe9b64
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61186234"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761828"
 ---
-# <a name="using-the-google-maps-api-in-your-application"></a>À l’aide de l’API de cartes Google dans votre application
+# <a name="using-the-google-maps-api-in-your-application"></a>Utilisation de l’API Google Maps dans votre application
 
-À l’aide de l’application Maps est très utile, mais parfois vous souhaitez inclure des cartes directement dans votre application. Outre l’intégrée mappe application, Google propose également un [API de mappage native pour Android](https://developers.google.com/maps/documentation/android-sdk/intro).
-L’API de cartes est approprié pour les cas où vous souhaitez conserver davantage de contrôle sur l’expérience de mappage. Les choses sont possibles avec l’API de cartes sont les suivantes :
+L’utilisation de l’application Maps est très intéressante, mais parfois vous souhaitez inclure des cartes directement dans votre application. En plus de l’application Maps intégrée, Google offre également une [API de mappage native pour Android](https://developers.google.com/maps/documentation/android-sdk/intro).
+L’API Maps est adaptée aux cas où vous souhaitez maintenir un contrôle accru sur l’expérience de mappage. Les éléments possibles avec l’API Maps sont les suivants :
 
--  Modification par programmation le point de vue de la carte.
--  Ajout et la personnalisation des marqueurs.
--  Annoter un mappage avec des superpositions.
+- Modification par programmation du point de vue de la carte.
+- Ajout et personnalisation des marqueurs.
+- Annotation d’une carte avec des superpositions.
 
-Contrairement à la v1 de l’API Android de Google Maps désormais dépréciée, API Android de Google Maps v2 est la partie [Google Play Services](https://developers.google.com/android/guides/overview).
-Une application Xamarin.Android doit respecter certaines conditions préalables requises obligatoires avant qu’il soit possible d’utiliser l’API Android de Google Maps.
-
+Contrairement à l’API Android de Google Maps actuellement dépréciée v1, l’API Android de Google Maps v2 fait partie des [Google Play services](https://developers.google.com/android/guides/overview).
+Une application Xamarin. Android doit respecter certaines conditions préalables obligatoires avant de pouvoir utiliser l’API Android de Google Maps.
 
 ## <a name="google-maps-api-prerequisites"></a>Conditions préalables de l’API Google Maps
 
-Plusieurs étapes doivent être effectuées avant de pouvoir utiliser l’API de Maps, y compris :
+Vous devez effectuer plusieurs étapes avant de pouvoir utiliser l’API Maps, notamment :
 
--  [Obtenir une clé API cartes](#obtain-maps-key)
--  [Installer les Kit de développement logiciel de Services Google Play](#install-gps-sdk)
--  [Installer le package Xamarin.GooglePlayServices.Maps à partir de NuGet](#install-gpsmaps-nuget)
--  [Spécifier les autorisations requises](#declare-permissions)
--  [Si vous le souhaitez, créer un émulateur avec les APIs Google](#create-emulator-with-google-api)
+- [Obtenir une clé API Maps](#obtain-maps-key)
+- [Installer le kit de développement logiciel (SDK) Google Play Services](#install-gps-sdk)
+- [Installer le package Xamarin. GooglePlayServices. Maps à partir de NuGet](#install-gpsmaps-nuget)
+- [Spécifier les autorisations requises](#declare-permissions)
+- [Si vous le souhaitez, créez un émulateur avec les API Google](#create-emulator-with-google-api)
 
+### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Obtenir une clé API Google Maps
 
-### <a name="a-nameobtain-maps-key-obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Obtenir une clé d’API Google Maps
+La première étape consiste à obtenir une clé API Google Maps (Notez que vous ne pouvez pas réutiliser une clé API à partir de l’API Google Maps v1 héritée). Pour plus d’informations sur l’obtention et l’utilisation de la clé API avec Xamarin. Android, consultez [obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-La première étape consiste à obtenir une clé de l’API Google Maps (Notez que vous ne pouvez pas réutiliser une clé API à partir de l’API de v1 Google Maps héritée). Pour plus d’informations sur la façon d’obtenir et d’utiliser la clé d’API avec Xamarin.Android, consultez [obtention A Google Maps, clé d’API](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" />Installer le kit de développement logiciel (SDK) Google Play Services
 
+Google Play Services est une technologie de Google qui permet aux applications Android de tirer parti de diverses fonctionnalités de Google, telles que Google +, facturation In-App et Maps. Ces fonctionnalités sont accessibles sur les appareils Android en tant que services d’arrière-plan, qui sont contenus dans le [Google Play services apk](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
 
-### <a name="a-nameinstall-gps-sdk--install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Installer les Kit de développement logiciel de Services Google Play
+Les applications Android interagissent avec Google Play Services via la bibliothèque cliente Google Play Services. Cette bibliothèque contient les interfaces et les classes pour les services individuels, tels que les mappages. Le diagramme suivant montre la relation entre une application Android et Google Play Services :
 
-Google Play Services est une technologie à partir de Google qui permet aux applications Android tirer parti des diverses fonctionnalités de Google, Google + dans l’application de facturation et cartes. Ces fonctionnalités sont accessibles sur les appareils Android en tant que services d’arrière-plan, qui sont contenus dans le [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en).
+![Diagramme illustrant le Google Play Store la mise à jour de la Google Play Services APK](maps-api-images/play-services-diagram.png)
 
-Applications Android interagissent avec les Services Google Play via la bibliothèque de client Google Play Services. Cette bibliothèque contient les interfaces et classes pour les services individuels tels que des cartes. Le diagramme suivant montre la relation entre une application Android et les Services Google Play :
+L’API des cartes Android est fournie dans le cadre de Google Play Services.
+Pour qu’une application Xamarin. Android puisse utiliser l’API Maps, le kit de développement logiciel (SDK) Google Play Services doit être installé à l’aide du [Gestionnaire de Android SDK](~/android/get-started/installation/android-sdk.md). La capture d’écran suivante montre où se trouvent dans le gestionnaire de Android SDK le client Google Play services :
 
-![Diagramme illustrant le Store Play Google la mise à jour le fichier APK Google Play Services](maps-api-images/play-services-diagram.png)
-
-L’API de cartes Android est fournie dans le cadre des Services Google Play.
-Avant une application Xamarin.Android peut utiliser l’API de cartes, le kit SDK Google Play Services doit être installé à l’aide de la [Gestionnaire Android SDK](~/android/get-started/installation/android-sdk.md). La capture d’écran suivante indique où dans le gestionnaire Android SDK vous pouvez trouver le client des services Google Play :
-
-![Google Play Services apparaît sous fonctionnalités supplémentaires dans le Gestionnaire de kit de développement logiciel Android.](maps-api-images/image01.png)
+![Google Play Services s’affiche sous Extras dans le gestionnaire de Android SDK](maps-api-images/image01.png)
 
 > [!NOTE]
-> Les services Google Play APK est un produit sous licence ne peut pas être présent sur tous les appareils. S’il n’est pas installé, Google Maps ne fonctionne pas sur l’appareil.
+> Le APK de services Google Play est un produit sous licence qui peut ne pas être présent sur tous les appareils. S’il n’est pas installé, Google Maps ne fonctionnera pas sur l’appareil.
 
-### <a name="a-nameinstall-gpsmaps-nuget--install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" /> Installer le package Xamarin.GooglePlayServices.Maps à partir de NuGet
+### <a name="a-nameinstall-gpsmaps-nuget--install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" />Installer le package Xamarin. GooglePlayServices. Maps à partir de NuGet
 
-Le [Xamarin.GooglePlayServices.Maps package](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Maps) contient les liaisons de Xamarin.Android pour l’API de cartes Google Play Services.
-Pour ajouter le package de la correspondance entre les Services Google Play, cliquez sur le **références** dossier de votre projet dans l’Explorateur de solutions et cliquez sur **gérer les Packages NuGet...** :
+Le [package Xamarin. GooglePlayServices. Maps](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Maps) contient les liaisons Xamarin. Android pour l’API Google Play services Maps.
+Pour ajouter le package de la carte Google Play Services, cliquez avec le bouton droit sur le dossier **références** de votre projet dans le Explorateur de solutions puis cliquez sur **gérer les packages NuGet...** :
 
-![Élément de menu de contexte de gérer les Packages NuGet Explorateur de solutions affichant sous références](maps-api-images/image02.png)
+![Explorateur de solutions de l’élément de menu contextuel gérer les packages NuGet sous Références](maps-api-images/image02.png)
 
-Cette opération ouvre le **Gestionnaire de Package NuGet**. Cliquez sur **Parcourir** et entrez **Xamarin Google Play Services Maps** dans le champ de recherche. Sélectionnez **Xamarin.GooglePlayServices.Maps** et cliquez sur **installer**. (Si ce package a été installé précédemment, cliquez sur **mise à jour**.) :
+Le gestionnaire de **package NuGet**s’ouvre. Cliquez sur **Parcourir** et entrez **Xamarin Google Play services Maps** dans le champ de recherche. Sélectionnez **Xamarin. GooglePlayServices. Maps** , puis cliquez sur **installer**. (Si ce package a déjà été installé, cliquez sur **mettre à jour**.) :
 
-[![Gestionnaire de Package NuGet avec package Xamarin.GooglePlayServices.Maps sélectionné](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
+[![Package du gestionnaire de package NuGet avec Xamarin. GooglePlayServices. Maps sélectionné](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
 
-Notez que les packages de dépendance suivants sont également installés :
+Notez que les packages de dépendances suivants sont également installés :
 
--   **Xamarin.GooglePlayServices.Base**
--   **Xamarin.GooglePlayServices.Basement**
--   **Xamarin.GooglePlayServices.Tasks**
+- **Xamarin.GooglePlayServices.Base**
+- **Xamarin.GooglePlayServices.Basement**
+- **Xamarin.GooglePlayServices.Tasks**
 
-### <a name="a-namedeclare-permissions--specify-the-required-permissions"></a><a name="declare-permissions" /> Spécifier les autorisations requises
+### <a name="a-namedeclare-permissions--specify-the-required-permissions"></a><a name="declare-permissions" />Spécifier les autorisations requises
 
-Les applications doivent identifier les exigences matérielles et d’autorisation pour pouvoir utiliser l’API de cartes Google.  Certaines autorisations sont accordées automatiquement par le SDK des Services Google Play, et il n’est pas nécessaire pour un développeur pour les ajouter explicitement **AndroidManfest.XML**:
+Les applications doivent identifier le matériel et les autorisations requises pour pouvoir utiliser l’API Google Maps.  Certaines autorisations sont accordées automatiquement par le kit de développement logiciel (SDK) Google Play Services, et il n’est pas nécessaire pour un développeur de les ajouter explicitement à **AndroidManfest. xml**:
 
--  **Accès à l’état du réseau** &ndash; l’API de cartes doit être en mesure de vérifier s’il peut télécharger les mosaïques.
+- **Accès à l’état du réseau** &ndash; L’API Maps doit être en mesure de vérifier si elle peut télécharger les vignettes de la carte.
 
--  **Accès à Internet** &ndash; accès à Internet est nécessaire pour télécharger les mosaïques et communiquer avec les serveurs de lire de Google pour l’accès à l’API.
+- **Accès à Internet** &ndash; L’accès à Internet est nécessaire pour télécharger les vignettes de carte et communiquer avec les serveurs de Google Play pour l’accès aux API.
 
-Les autorisations et les fonctionnalités suivantes doivent être spécifiées dans le **AndroidManifest.XML** pour l’API Android de Google Maps :
+Les autorisations et les fonctionnalités suivantes doivent être spécifiées dans le **fichier fichier AndroidManifest. xml** pour l’API Android de Google Maps :
 
--  **OpenGL ES v2** &ndash; l’application doit déclarer l’exigence OpenGL ES v2.
+- **OpenGL es v2** &ndash; L’application doit déclarer la configuration requise pour OpenGL es v2.
 
--  **Clé d’API Google Maps** &ndash; clé de l’API est utilisée pour vérifier que l’application est inscrit et autorisée à utiliser les Services Google Play. Consultez [obtention d’une clé d’API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md) pour plus d’informations sur cette clé.
+- **Clé API Google Maps** &ndash; La clé API est utilisée pour confirmer que l’application est inscrite et autorisée à utiliser Google Play services. Pour plus d’informations sur cette clé, consultez [obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md) .
 
-- **Demander l’ancien client d’Apache HTTP** &ndash; les applications qui ciblent Android 9.0 (niveau d’API 28) ou version ultérieure doit spécifier que le client HTTP Apache hérité est une bibliothèque facultative à utiliser.
+- **Demander l’ancien client Apache http** &ndash; Les applications qui ciblent Android 9,0 (niveau d’API 28) ou version ultérieure doivent spécifier que le client Apache http hérité est une bibliothèque facultative à utiliser.
 
--  **Accès aux Services Web de Google-based** &ndash; l’application doit être autorisé à accéder aux services web de Google qui soutiennent les API de cartes Android.
+- **Accès aux services Web Google** &ndash; L’application a besoin d’autorisations pour accéder aux services Web de Google qui renvoient l’API Android Maps.
 
--  **Autorisations pour les Notifications de Services Google Play** &ndash; l’application doit être autorisée à recevoir des notifications à distance à partir de Google Play Services.
+- **Autorisations pour les notifications de Google Play services** &ndash; L’application doit disposer de l’autorisation de recevoir des notifications distantes de Google Play services.
 
--  **Accès aux fournisseurs de localisation** &ndash; il s’agit des autorisations facultatives.
-   Ils permettent la `GoogleMap` classe pour afficher l’emplacement de l’appareil sur la carte.
+- **Accès aux fournisseurs d’emplacement** &ndash; Il s’agit d’autorisations facultatives.
+   Ils permettront à la `GoogleMap` classe d’afficher l’emplacement de l’appareil sur la carte.
 
-En outre, 9 Android a supprimé la bibliothèque de client HTTP Apache à partir de la bootclasspath, et par conséquent, il n’est pas disponible pour les applications qui ciblent des API 28 ou une version ultérieure. La ligne suivante doit être ajoutée à la `application` nœud de votre **AndroidManifest.xml** fichier pour continuer à utiliser le client HTTP Apache dans les applications qui ciblent des API 28 ou une version ultérieure :
+En outre, Android 9 a supprimé la bibliothèque cliente Apache HTTP du bootclasspath et n’est donc pas disponible pour les applications qui ciblent l’API 28 ou une version ultérieure. La ligne suivante doit être ajoutée au `application` nœud de votre fichier **fichier AndroidManifest. xml** pour continuer à utiliser le client HTTP Apache dans les applications qui ciblent l’API 28 ou une version ultérieure :
 
 ```xml
 <application ...>
@@ -109,9 +106,9 @@ En outre, 9 Android a supprimé la bibliothèque de client HTTP Apache à partir
 ```
 
 > [!NOTE]
-> Très anciennes versions du SDK Google Play nécessitaient à une application de demander la `WRITE_EXTERNAL_STORAGE` autorisation. Cette exigence n’est plus nécessaire avec les liaisons Xamarin récentes pour les Services Google Play.
+> Les versions très anciennes du kit de développement logiciel (SDK) Google Play `WRITE_EXTERNAL_STORAGE` nécessitaient une application pour demander l’autorisation. Cette exigence n’est plus nécessaire avec les liaisons Xamarin récentes pour Google Play Services.
 
-L’extrait de code suivant est un exemple des paramètres qui doivent être ajoutées à **AndroidManifest.XML**:
+L’extrait de code suivant est un exemple des paramètres qui doivent être ajoutés à **fichier AndroidManifest. xml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -124,7 +121,6 @@ L’extrait de code suivant est un exemple des paramètres qui doivent être ajo
     <!-- Necessary for apps that target Android 9.0 or higher -->
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
-
     <!-- Permission to receive remote notifications from Google Play Services -->
     <!-- Notice here that we have the package name of our application as a prefix on the permissions. -->
     <uses-permission android:name="<PACKAGE NAME>.permission.MAPS_RECEIVE" />
@@ -133,7 +129,6 @@ L’extrait de code suivant est un exemple des paramètres qui doivent être ajo
     <!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
 
     <application android:label="@string/app_name">
         <!-- Put your Google Maps V2 API Key here. -->
@@ -145,44 +140,42 @@ L’extrait de code suivant est un exemple des paramètres qui doivent être ajo
 </manifest>
 ```
 
-En plus de la demande les autorisations **AndroidManifest.XML**, une application doit également effectuer des vérifications d’autorisation de runtime pour la `ACCESS_COARSE_LOCATION` et `ACCESS_FINE_LOCATION` autorisations. Consultez le [Xamarin.Android autorisations](~/android/app-fundamentals/permissions.md) guide pour plus d’informations sur l’exécution des vérifications d’autorisations d’exécution.
-
+En plus de demander les autorisations **fichier AndroidManifest. xml**, une application doit également effectuer des vérifications d’autorisation d' `ACCESS_COARSE_LOCATION` exécution pour `ACCESS_FINE_LOCATION` les autorisations et. Consultez le guide des [autorisations Xamarin. Android](~/android/app-fundamentals/permissions.md) pour plus d’informations sur l’exécution de contrôles d’autorisation au moment de l’exécution.
 
 ### <a name="a-namecreate-emulator-with-google-api-create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Créer un émulateur avec les API Google
 
-Dans le cas où un appareil Android physique avec Google Play services n’est pas installé, il est possible de créer une image d’émulateur pour le développement. Pour plus d’informations, consultez le [Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
-
+Dans le cas où un appareil Android physique avec Google Play services n’est pas installé, il est possible de créer une image d’émulateur pour le développement. Pour plus d’informations, consultez la [Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 
 ## <a name="the-googlemap-class"></a>La classe GoogleMap
 
-Une fois que les conditions préalables sont remplies, il est temps de commencer à développer l’application et utiliser l’API Android de Maps. Le [GoogleMap](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap) classe est l’API principale une application Xamarin.Android utilisera pour afficher et interagir avec un Google Maps pour Android. Cette classe responsabilités est les suivantes :
+Une fois les conditions préalables satisfaites, il est temps de commencer à développer l’application et à utiliser l’API des cartes Android. La classe [GoogleMap](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap) est l’API principale qu’une application Xamarin. Android utilisera pour afficher et interagir avec Google Maps pour Android. Cette classe a les responsabilités suivantes :
 
--  Interaction avec les services Google Play pour autoriser l’application avec le service web de Google.
+- L’interaction avec les services de Google Play pour autoriser l’application avec le service Web de Google.
 
--  Téléchargement, la mise en cache et afficher les vignettes de carte.
+- Téléchargement, mise en cache et affichage des vignettes de carte.
 
--  Affichage des contrôles d’interface utilisateur tels que panoramique et zoom à l’utilisateur.
+- Affichage des contrôles d’interface utilisateur tels que le panoramique et le zoom.
 
--  Marqueurs de dessin et formes géométriques sur les cartes.
+- Dessin des marqueurs et des formes géométriques sur les cartes.
 
-Le `GoogleMap` est ajouté à une activité de deux manières :
+Le `GoogleMap` est ajouté à une activité de l’une des deux manières suivantes :
 
--  **MapFragment** - le [MapFragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) est un Fragment spécialisé qui agit en tant qu’hôte pour le `GoogleMap` objet. Le `MapFragment` nécessite le niveau d’API Android 12 ou une version ultérieure.
-   Les versions antérieures d’Android peuvent utiliser le [SupportMapFragment](https://developers.google.com/android/reference/com/google/android/gms/maps/SupportMapFragment).  Ce guide met l’accent sur l’utilisation de la `MapFragment` classe.
+- **MapFragment** : le [MapFragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) est un fragment spécialisé qui agit en tant qu’hôte `GoogleMap` pour l’objet. Le `MapFragment` requiert l’API Android de niveau 12 ou version ultérieure.
+   Les versions antérieures d’Android peuvent utiliser [SupportMapFragment](https://developers.google.com/android/reference/com/google/android/gms/maps/SupportMapFragment).  Ce guide se concentre sur l' `MapFragment` utilisation de la classe.
 
--  **MapView** - le [MapView](https://developers.google.com/android/reference/com/google/android/gms/maps/MapView) est une sous-classe spécialisée de la vue, qui peut agir comme un hôte pour un `GoogleMap` objet. Les utilisateurs de cette classe doivent transférer toutes les méthodes de cycle de vie d’activité à la `MapView` classe.
+- **MapView** : le [MapView](https://developers.google.com/android/reference/com/google/android/gms/maps/MapView) est une sous-classe de vue spécialisée, qui peut agir en tant qu' `GoogleMap` hôte pour un objet. Les utilisateurs de cette classe doivent transférer toutes les méthodes de cycle de vie `MapView` de l’activité à la classe.
 
-Chacun de ces conteneurs expose un `Map` propriété qui retourne une instance de `GoogleMap`. Préférence doit être accordée à la [MapFragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) classe, comme c’est une API plus simple qui permet de réduire le code réutilisable quantité qu’un développeur doit implémenter manuellement.
+Chacun de ces conteneurs expose une `Map` propriété qui retourne une instance de `GoogleMap`. La préférence doit être donnée à la classe [MapFragment](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment) , car il s’agit d’une API plus simple qui réduit le code réutilisable qu’un développeur doit implémenter manuellement.
 
 ### <a name="adding-a-mapfragment-to-an-activity"></a>Ajout d’un MapFragment à une activité
 
-La capture d’écran suivante est un exemple d’une simple `MapFragment`:
+La capture d’écran suivante est un exemple de `MapFragment`simple :
 
-[![Capture d’écran d’un appareil qui affiche un fragment de mappage de Google](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
+[![Capture d’écran d’un appareil affichant un fragment Google Map](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
-Similaire à d’autres classes de Fragment, il existe deux façons d’ajouter un `MapFragment` à une activité :
+À l’instar des autres classes de fragments, il existe `MapFragment` deux façons d’ajouter un à une activité :
 
--   **Manière déclarative** - le `MapFragment` peuvent être ajoutés via le fichier de disposition XML pour l’activité. L’extrait de code XML suivant montre un exemple montrant comment utiliser le `fragment` élément :
+- De **manière déclarative** , le `MapFragment` peut être ajouté par le biais du fichier de disposition XML pour l’activité. L’extrait de code XML suivant montre un exemple d’utilisation de `fragment` l’élément :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -193,7 +186,7 @@ Similaire à d’autres classes de Fragment, il existe deux façons d’ajouter 
               class="com.google.android.gms.maps.MapFragment" />
     ```
 
--   **Par programmation** - le `MapFragment` peuvent être instanciés par programmation à l’aide de la [ `MapFragment.NewInstance` ](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) (méthode), puis ajouté à une activité. Cet extrait de code montre la façon la plus simple pour instancier un `MapFragment` de l’objet et l’ajouter à une activité :
+- **Par programmation** : `MapFragment` peut être instancié par programme à l’aide de la [`MapFragment.NewInstance`](https://developers.google.com/android/reference/com/google/android/gms/maps/MapFragment.html#newInstance()) méthode, puis ajouté à une activité. Cet extrait de code montre la méthode la plus simple `MapFragment` pour instancier un objet et l’ajouter à une activité :
 
     ```csharp
         var mapFrag = MapFragment.NewInstance();
@@ -203,11 +196,12 @@ Similaire à d’autres classes de Fragment, il existe deux façons d’ajouter 
 
     ```
 
-    Il est possible de configurer le `MapFragment` en passant un [ `GoogleMapOptions` ](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) objet `NewInstance`. Ce sujet est abordé dans la section [GoogleMap propriétés](#googlemap_object) qui s’affiche par la suite dans ce guide.
+    Il est possible de configurer l' `MapFragment` objet en passant un [`GoogleMapOptions`](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) objet à `NewInstance`. Ce sujet est abordé dans la section [Propriétés de GoogleMap](#googlemap_object) qui s’affichent plus loin dans ce guide.
 
-Le `MapFragment.GetMapAsync` méthode est utilisée pour initialiser le [ `GoogleMap` ](#googlemap_object) qui est hébergé par le fragment et obtenir une référence à l’objet de mappage qui est hébergé par le `MapFragment`. Cette méthode prend un objet qui implémente le `IOnMapReadyCallback` interface.
+La `MapFragment.GetMapAsync` méthode est utilisée pour initialiser le [`GoogleMap`](#googlemap_object) qui est hébergé par le fragment et obtenir une référence à l’objet de mappage qui est hébergé par `MapFragment`le. Cette méthode prend un objet qui implémente l' `IOnMapReadyCallback` interface.
 
-Cette interface a une méthode unique, `IMapReadyCallback.OnMapReady(MapFragment map)` qui seront invoqués lorsqu’il est possible que l’application d’interagir avec le `GoogleMap` objet. L’extrait de code suivant montre comment une activité Android peut initialiser un `MapFragment` et implémenter la `IOnMapReadyCallback` interface :
+Cette interface a une méthode unique, `IMapReadyCallback.OnMapReady(MapFragment map)` qui sera appelée lorsqu’il est possible que l’application interagisse avec l' `GoogleMap` objet. L’extrait de code suivant montre comment une activité Android peut initialiser `MapFragment` un et implémenter l' `IOnMapReadyCallback` interface :
+
 ```csharp
 public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 {
@@ -229,26 +223,25 @@ public class MapWithMarkersActivity : AppCompatActivity, IOnMapReadyCallback
 }
 ```
 
-### <a name="map-types"></a>Mapper des types
+### <a name="map-types"></a>Types de cartes
 
-Il existe cinq types de cartes disponibles à partir de l’API mappe de Google :
+Il existe cinq types différents de cartes disponibles à partir de l’API Google Maps :
 
--  **Normal** -il s’agit du type de mappage par défaut. Il montre les routes et importantes fonctionnalités naturelles, ainsi que des points artificiels qui vous intéresse (par exemple, des bâtiments et des ponts).
+- **Normal** : il s’agit du type de carte par défaut. Il présente les routes et les caractéristiques naturelles importantes, ainsi que certains points d’intérêt artificiels (tels que les bâtiments et les ponts).
 
--  **Satellite** -cette carte affiche des photographies satellite.
+- **Satellite** : cette carte illustre la photographie du satellite.
 
--  **Hybride** : cette carte affiche des photographies satellite et road mappe.
+- **Hybride** : cette carte illustre la photographie et les cartes routières du satellite.
 
--  **Terrain** -Voici principalement topographiques fonctionnalités avec certaines routes.
+- **Terrain** : présente principalement des caractéristiques topographiques avec des routes.
 
--  **Aucun** -ce mappage ne charge pas les vignettes, il est restitué sous la forme d’une grille vide.
+- **Aucun** : ce mappage ne charge pas de vignettes, il est rendu sous la forme d’une grille vide.
 
+L’image ci-dessous montre trois des différents types de cartes, de gauche à droite (normal, hybride, terrain) :
 
-L’image ci-dessous illustre trois des différents types de cartes, de gauche à droite (normal, hybride, un terrain) :
+[![Captures d’écran de trois exemples de cartes : Normal, hybride et terrain](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
-[![Trois carte captures d’écran : Normal, hybrides et le Terrain](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
-
-Le `GoogleMap.MapType` propriété est utilisée pour définir ou modifier le type de carte s’affiche. L’extrait de code suivant montre comment afficher une carte satellite.
+La `GoogleMap.MapType` propriété est utilisée pour définir ou modifier le type de carte à afficher. L’extrait de code suivant montre comment afficher une carte satellite.
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -257,10 +250,9 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
+### <a name="a-namegooglemap_object-googlemap-properties"></a><a name="googlemap_object" />Propriétés GoogleMap
 
-### <a name="a-namegooglemapobject-googlemap-properties"></a><a name="googlemap_object" />Propriétés de GoogleMap
-
-`GoogleMap` définit plusieurs propriétés qui peuvent contrôler les fonctionnalités et l’apparence de la carte. Une façon de configurer l’état initial d’un `GoogleMap` consiste à passer un [GoogleMapOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) lors de la création de l’objet une `MapFragment`. L’extrait de code suivant est un exemple d’utilisation une `GoogleMapOptions` lors de la création de l’objet une `MapFragment`:
+`GoogleMap`définit plusieurs propriétés qui peuvent contrôler les fonctionnalités et l’apparence de la carte. Une façon de configurer l’état initial d’un `GoogleMap` consiste à passer un objet [GoogleMapOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) lors de la `MapFragment`création d’un. L’extrait de code suivant est un exemple d’utilisation `GoogleMapOptions` d’un objet lors `MapFragment`de la création d’un :
 
 ```csharp
 GoogleMapOptions mapOptions = new GoogleMapOptions()
@@ -274,7 +266,7 @@ fragTx.Add(Resource.Id.map, mapFragment, "map");
 fragTx.Commit();
 ```
 
-L’autre méthode permettant de configurer un `GoogleMap` est en manipulant des propriétés sur le [UiSettings](https://developers.google.com/android/reference/com/google/android/gms/maps/UiSettings) de l’objet map. L’exemple de code suivant montre comment configurer un `GoogleMap` pour afficher les contrôles de zoom et une boussole :
+L’autre façon de configurer un `GoogleMap` consiste à manipuler des propriétés sur le [UiSettings](https://developers.google.com/android/reference/com/google/android/gms/maps/UiSettings) de l’objet Map. L’exemple de code suivant montre comment configurer un `GoogleMap` pour afficher les contrôles de zoom et une boussole :
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -286,15 +278,15 @@ public void OnMapReady(GoogleMap map)
 
 ## <a name="interacting-with-the-googlemap"></a>Interaction avec le GoogleMap
 
-L’API de cartes Android fournit des API qui autorisent une activité à modifier le point de vue, ajouter des marqueurs, placer des superpositions personnalisées ou dessiner des formes géométriques. Cette section explique comment accomplir certaines de ces tâches dans Xamarin.Android.
+L’API des cartes Android fournit des API qui permettent à une activité de modifier le point de vue, d’ajouter des marqueurs, de placer des superpositions personnalisées ou de dessiner des formes géométriques. Cette section explique comment accomplir certaines de ces tâches dans Xamarin. Android.
 
-### <a name="changing-the-viewpoint"></a>Modifier le point de vue
+### <a name="changing-the-viewpoint"></a>Modification du point de vue
 
-Mappages sont modélisées en tant qu’un plan plat sur l’écran, en fonction de la projection Mercator. La vue cartographique est celle d’un *caméra* qualité directement vers le bas sur ce plan. La position de l’appareil photo peut être contrôlée en modifiant l’emplacement, le zoom, l’inclinaison, incidence. Le [CameraUpdate](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdate) classe est utilisée pour déplacer l’emplacement de l’appareil photo. `CameraUpdate` les objets ne sont pas instanciés directement, à la place l’API Maps fournit le [CameraUpdateFactory](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdateFactory) classe.
+Les mappages sont modelés comme un plan plat sur l’écran, en fonction de la projection Mercator. La vue cartographique est celle d’une *caméra* qui regarde directement sur ce plan. La position de l’appareil photo peut être contrôlée en modifiant l’emplacement, le zoom, l’inclinaison et le palier. La classe [CameraUpdate](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdate) est utilisée pour déplacer l’emplacement de l’appareil photo. `CameraUpdate`les objets ne sont pas directement instanciés, à la place l’API Maps fournit la classe [CameraUpdateFactory](https://developers.google.com/android/reference/com/google/android/gms/maps/CameraUpdateFactory) .
 
-Une fois un `CameraUpdate` objet a été créé, il est passé en tant que paramètre à un le [GoogleMap.MoveCamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#moveCamera(com.google.android.gms.maps.CameraUpdate)) ou [GoogleMap.AnimateCamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#animateCamera(com.google.android.gms.maps.CameraUpdate)) méthodes. Le `MoveCamera` méthode met à jour la carte instantanément lors de la `AnimateCamera` méthode fournit une transition sans heurts, des animation.
+Une fois `CameraUpdate` qu’un objet a été créé, il est passé en tant que paramètre aux méthodes [googlemap. MoveCamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#moveCamera(com.google.android.gms.maps.CameraUpdate)) ou [googlemap. AnimateCamera](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap#animateCamera(com.google.android.gms.maps.CameraUpdate)) . La `MoveCamera` méthode met à jour la carte instantanément, tandis que la `AnimateCamera` méthode fournit une transition lisse et animée.
 
-Cet extrait de code est un exemple simple d’utilisation le `CameraUpdateFactory` pour créer un `CameraUpdate` qui incrémente le niveau de zoom de la carte par niveau de zoom d’un :
+Cet extrait de code est un exemple simple d’utilisation `CameraUpdateFactory` de pour créer un `CameraUpdate` qui incrémente le niveau de zoom de la carte d’un niveau de zoom à un autre :
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -307,8 +299,8 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-L’API Maps fournit un [CameraPosition](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) qui regroupera toutes les valeurs possibles pour la position de la caméra. Une instance de cette classe peut être fournie à la [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) méthode qui retournera un `CameraUpdate` objet. L’API de cartes inclut également le [CameraPosition.Builder](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) classe qui fournit une API fluent création `CameraPosition` objets.
-L’extrait de code suivant montre un exemple de création un `CameraUpdate` à partir d’un `CameraPosition` et son utilisation pour modifier la position de la caméra sur un `GoogleMap`:
+L’API Maps fournit un [CameraPosition](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) qui regroupe toutes les valeurs possibles de la position de la caméra. Une instance de cette classe peut être fournie à la méthode [CameraUpdateFactory. NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) , qui retourne un `CameraUpdate` objet. L’API Maps inclut également la classe [CameraPosition. Builder](https://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) qui fournit une API Fluent pour la `CameraPosition` création d’objets.
+L’extrait de code suivant montre un exemple de création `CameraUpdate` d’un `CameraPosition` à partir de et de l’utilisation de celui- `GoogleMap`ci pour modifier la position de la caméra sur un :
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -329,30 +321,27 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-Dans l’extrait de code précédent, un emplacement spécifique sur la carte est représenté par le [LatLng](https://developers.google.com/android/reference/com/google/android/gms/maps/model/LatLng) classe. Le niveau de zoom est défini à 18, qui est une mesure arbitraire de zoom utilisé par Google Maps. L’incidence est la boussole mesure dans le sens horaire depuis le nord. La propriété inclinaison contrôle l’angle de vue et spécifie un angle de 25 degrés à la verticale. La capture d’écran suivante montre le `GoogleMap` après avoir exécuté le code précédent :
+Dans l’extrait de code précédent, un emplacement spécifique sur le mappage est représenté par la classe [LatLng](https://developers.google.com/android/reference/com/google/android/gms/maps/model/LatLng) . Le niveau de zoom est défini sur 18, qui est une mesure arbitraire du zoom utilisé par Google Maps. Le palier est la mesure de la boussole dans le sens des aiguilles d’une montre. La propriété Tilt contrôle l’angle de visualisation et spécifie un angle de 25 degrés par rapport à la verticale. La capture d’écran suivante `GoogleMap` montre la suite de l’exécution du code précédent :
 
-[![Exemple de mappage de Google montrant un emplacement spécifié avec un texte incliné angle d’affichage](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
-
+[![Exemple de carte Google affichant un emplacement spécifié avec un angle d’affichage incliné](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
 
 ### <a name="drawing-on-the-map"></a>Dessin sur la carte
 
-L’API de cartes Android fournit de l’API de dessin des éléments suivants sur une carte :
+L’API des cartes Android fournit des API pour dessiner les éléments suivants sur une carte :
 
--  **Marqueurs** -il s’agit des icônes spéciales qui sont utilisés pour identifier un emplacement unique sur une carte.
+- **Marqueurs** : il s’agit d’icônes spéciales utilisées pour identifier un emplacement unique sur une carte.
 
--  **Superpositions** -il s’agit d’une image qui peut être utilisée pour identifier une collection d’emplacements ou de la zone sur la carte.
+- **Superpositions** : il s’agit d’une image qui peut être utilisée pour identifier une collection d’emplacements ou de zones sur la carte.
 
--  **Lignes, des polygones et des cercles** -il s’agit des API qui permettent des activités à ajouter des formes à un mappage.
-
+- **Lignes, polygones et cercles** : il s’agit d’API qui permettent aux activités d’ajouter des formes à une carte.
 
 #### <a name="markers"></a>Markers
 
-L’API Maps fournit un [marqueur](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker) classe qui encapsule toutes les données relatives à un emplacement unique sur une carte. Par défaut, le marqueur de la classe utilise une icône standard fournie par Google Maps. Il est possible de personnaliser l’apparence d’un marqueur et pour répondre aux clics de l’utilisateur.
-
+L’API Maps fournit une classe de [marqueur](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker) qui encapsule toutes les données relatives à un emplacement unique sur une carte. Par défaut, la classe de marqueur utilise une icône standard fournie par Google Maps. Il est possible de personnaliser l’apparence d’un marqueur et de répondre aux clics de l’utilisateur.
 
 ##### <a name="adding-a-marker"></a>Ajout d’un marqueur
 
-Pour ajouter un marqueur à un mappage, il convient de créer un nouveau [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) de l’objet, puis appelez le [AddMarker](https://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) méthode sur un `GoogleMap` instance. Cette méthode retournera un [marqueur](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker) objet.
+Pour ajouter un marqueur à un mappage, il est nécessaire de créer un nouvel objet [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) , puis d’appeler la méthode `GoogleMap` [AddMarker](https://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) sur une instance. Cette méthode retourne un objet [marqueur](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker) .
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -365,27 +354,26 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-Le titre du marqueur s’affichera dans un *fenêtre info* lorsque l’utilisateur appuie sur le marqueur. La capture d’écran suivante montre à quoi ressemble ce marqueur :
+Le titre du marqueur s’affiche dans une *fenêtre d’info* quand l’utilisateur appuie sur le marqueur. La capture d’écran suivante montre à quoi ressemble ce marqueur :
 
-[![Exemple de mappage de Google avec un marqueur et une fenêtre d’information pour Vimy Ridge](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
-
+[![Exemple de table Google avec un marqueur et une fenêtre d’informations pour la saillie Vimy](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
 
 ##### <a name="customizing-a-marker"></a>Personnalisation d’un marqueur
 
-Il est possible de personnaliser l’icône utilisée par le marqueur en appelant le `MarkerOptions.InvokeIcon` méthode lorsque vous ajoutez le marqueur à la carte.
-Cette méthode prend un [BitmapDescriptor](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptor) objet contenant les données nécessaires à l’affichage de l’icône. Le [BitmapDescriptorFactory](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptorFactory) classe fournit des méthodes d’assistance pour simplifier la création d’un `BitmapDescriptor`. La liste suivante présente certaines de ces méthodes :
+Il est possible de personnaliser l’icône utilisée par le marqueur en appelant `MarkerOptions.InvokeIcon` la méthode lors de l’ajout du marqueur à la carte.
+Cette méthode prend un objet [BitmapDescriptor](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptor) contenant les données nécessaires pour restituer l’icône. La classe [BitmapDescriptorFactory](https://developers.google.com/android/reference/com/google/android/gms/maps/model/BitmapDescriptorFactory) fournit des méthodes d’assistance pour simplifier la création d’un `BitmapDescriptor`. La liste suivante présente quelques-unes de ces méthodes :
 
--   `DefaultMarker(float colour)` &ndash; Utilisez le marqueur de Google Maps par défaut, mais changer la couleur.
+- `DefaultMarker(float colour)`&ndash; Utilisez le marqueur Google Maps par défaut, mais modifiez la couleur.
 
--   `FromAsset(string assetName)` &ndash; Utiliser une icône personnalisée à partir du fichier spécifié dans le dossier de ressources.
+- `FromAsset(string assetName)`&ndash; Utilisez une icône personnalisée à partir du fichier spécifié dans le dossier composants.
 
--   `FromBitmap(Bitmap image)` &ndash; Utilisez la bitmap spécifiée en tant que l’icône.
+- `FromBitmap(Bitmap image)`&ndash; Utilisez la bitmap spécifiée comme icône.
 
--   `FromFile(string fileName)` &ndash; Créer l’icône personnalisée à partir du fichier dans le chemin spécifié.
+- `FromFile(string fileName)`&ndash; Créez l’icône personnalisée à partir du fichier au chemin d’accès spécifié.
 
--   `FromResource(int resourceId)` &ndash; Créer une icône personnalisée à partir de la ressource spécifiée.
+- `FromResource(int resourceId)`&ndash; Créer une icône personnalisée à partir de la ressource spécifiée.
 
-L’extrait de code suivant montre un exemple de création d’un marqueur de valeur par défaut de couleur cyan :
+L’extrait de code suivant montre un exemple de création d’un marqueur par défaut cyan coloré :
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -401,29 +389,29 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-#### <a name="info-windows"></a>Fenêtres d’informations
+#### <a name="info-windows"></a>Info (fenêtres)
 
-*Fenêtres d’informations* sont spéciales windows ce menu contextuel pour afficher des informations à l’utilisateur quand ils appuient sur un marqueur spécifique. Par défaut, la fenêtre d’info affichera le contenu du titre du marqueur. Si le titre n’a pas été attribué, aucun fenêtre info ne s’affiche. Qu’une seule fenêtre informations peut-être s’afficher à la fois.
+Les *fenêtres info* sont des fenêtres spéciales qui permettent d’afficher des informations à l’utilisateur lorsqu’il appuie sur un marqueur spécifique. Par défaut, la fenêtre info affiche le contenu du titre du marqueur. Si le titre n’a pas été attribué, aucune fenêtre d’informations ne s’affiche. Une seule fenêtre d’information peut être affichée à la fois.
 
-Il est possible de personnaliser la fenêtre d’information en implémentant la [GoogleMap.IInfoWindowAdapter](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.InfoWindowAdapter) interface. Il existe deux méthodes importantes sur cette interface :
+Il est possible de personnaliser la fenêtre d’informations en implémentant l’interface [googlemap. IInfoWindowAdapter](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.InfoWindowAdapter) . Il existe deux méthodes importantes sur cette interface :
 
--  `public View GetInfoWindow(Marker marker)` &ndash; Cette méthode est appelée pour obtenir une fenêtre d’informations personnalisé pour un marqueur. Si elle retourne `null` , le rendu de fenêtre par défaut sera utilisée. Si cette méthode retourne une vue, cette vue sera placée dans le frame de fenêtre d’informations.
+- `public View GetInfoWindow(Marker marker)`&ndash; Cette méthode est appelée pour obtenir une fenêtre d’informations personnalisée pour un marqueur. Si elle retourne `null` , le rendu de fenêtre par défaut sera utilisé. Si cette méthode retourne une vue, cette vue est placée dans le cadre de la fenêtre info.
 
--  `public View GetInfoContents(Marker marker)` &ndash; Cette méthode est uniquement être appelée si GetInfoWindow retourne `null` . Cette méthode peut retourner un `null` valeur si le rendu par défaut, le contenu de la fenêtre informations doit être utilisé. Sinon, cette méthode doit retourner une vue avec le contenu de la fenêtre d’informations.
+- `public View GetInfoContents(Marker marker)`Cette méthode sera appelée uniquement si GetInfoWindow retourne `null`. &ndash; Cette méthode peut retourner une `null` valeur si le rendu par défaut du contenu de la fenêtre d’informations doit être utilisé. Sinon, cette méthode doit retourner une vue avec le contenu de la fenêtre info.
 
-Une fenêtre d’info n’est pas un affichage en temps réel, à la place Android sera convertir la vue d’une image bitmap statique et de les afficher sur l’image. Cela signifie qu’une fenêtre d’info ne peut pas répondre aux événements tactiles ni de mouvements, ni il actualise automatiquement lui-même. Pour mettre à jour d’une fenêtre d’informations, il est nécessaire d’appeler le [GoogleMap.ShowInfoWindow](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker.html#showInfoWindow()) (méthode).
+Une fenêtre d’informations n’est pas une vue en direct. Android convertit la vue en image bitmap statique et l’affiche sur l’image. Cela signifie qu’une fenêtre d’informations ne peut pas répondre aux événements tactiles ou aux gestes, et ne se met pas à jour automatiquement. Pour mettre à jour une fenêtre d’informations, il est nécessaire d’appeler la méthode [googlemap. ShowInfoWindow](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker.html#showInfoWindow()) .
 
-L’illustration suivante montre quelques exemples de certaines fenêtres d’informations personnalisé. L’image sur la gauche a son contenu personnalisé, alors que l’image de droite a sa fenêtre et son contenu personnalisé avec des angles arrondis est utilisée :
+L’illustration suivante montre quelques exemples de certaines fenêtres d’informations personnalisées. Le contenu de l’image sur la gauche est personnalisé, tandis que l’image à droite a sa fenêtre et son contenu personnalisés avec des angles arrondis :
 
-![Exemple les fenêtres de marqueur pour Melbourne, y compris l’icône et la population. La fenêtre de droite a des angles arrondis.](maps-api-images/marker-infowindows.png)
+![Exemples de fenêtres de marquage pour Melbourne, y compris l’icône et le remplissage. La fenêtre de droite a des angles arrondis.](maps-api-images/marker-infowindows.png)
 
 #### <a name="groundoverlays"></a>GroundOverlays
 
-Contrairement aux marqueurs, ce qui permet d’identifier un emplacement spécifique sur une carte, une [GroundOverlay](https://developers.google.com/android/reference/com/google/android/gms/maps/model/GroundOverlay) est une image qui est utilisée pour identifier une collection d’emplacements ou d’une zone sur la carte.
+Contrairement aux marqueurs, qui identifient un emplacement spécifique sur une carte, un [GroundOverlay](https://developers.google.com/android/reference/com/google/android/gms/maps/model/GroundOverlay) est une image qui est utilisée pour identifier une collection d’emplacements ou une zone sur la carte.
 
 ##### <a name="adding-a-groundoverlay"></a>Ajout d’un GroundOverlay
 
-Ajout d’un segment de recouvrement de bout en bout à un mappage est similaire à l’ajout d’un marqueur à un mappage. Tout d’abord, un [GroundOverlayOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/GroundOverlayOptions) objet est créé. Cet objet est ensuite transmis en tant que paramètre à la [ `GoogleMap.AddGroundOverlay` ](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addGroundOverlay(com.google.android.gms.maps.model.GroundOverlayOptions)) (méthode), qui retournera un `GroundOverlay` objet. Cet extrait de code est un exemple d’ajout d’un segment de recouvrement de bout en bout à une carte :
+L’ajout d’une superposition de sol à une carte est semblable à l’ajout d’un marqueur à une carte. Tout d’abord, un objet [GroundOverlayOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/GroundOverlayOptions) est créé. Cet objet est ensuite passé comme paramètre à la [`GoogleMap.AddGroundOverlay`](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addGroundOverlay(com.google.android.gms.maps.model.GroundOverlayOptions)) méthode, qui retourne un `GroundOverlay` objet. Cet extrait de code est un exemple d’ajout d’une superposition de sol à une carte :
 
 ```csharp
 BitmapDescriptor image = BitmapDescriptorFactory.FromResource(Resource.Drawable.polarbear);
@@ -435,23 +423,21 @@ GroundOverlay myOverlay = googleMap.AddGroundOverlay(groundOverlayOptions);
 
 La capture d’écran suivante montre cette superposition sur une carte :
 
-[![Exemple de mappage avec une image superposée d’un ours polaires](maps-api-images/image09-sml.png)](maps-api-images/image09.png#lightbox)
+[![Exemple de carte avec une image superposée d’un support polaire](maps-api-images/image09-sml.png)](maps-api-images/image09.png#lightbox)
 
+#### <a name="lines-circles-and-polygons"></a>Lignes, cercles et polygones
 
-#### <a name="lines-circles-and-polygons"></a>Lignes, des cercles et des polygones
+Il existe trois types simples de chiffres géométriques qui peuvent être ajoutés à une carte :
 
-Il existe trois types simples de figures géométriques qui peuvent être ajoutées à une carte :
+- **Polyline** : il s’agit d’une série de segments de ligne connectés. Il peut marquer un tracé sur une carte ou créer une forme géométrique.
 
--  **Polyline** -il s’agit d’une série de segments de ligne connectés. Il peut marquer un chemin d’accès sur une carte ou créer une forme géométrique.
+- **Circle** : dessine un cercle sur la carte.
 
--  **Cercle** -il dessine un cercle sur la carte.
-
--  **Polygone** -il s’agit d’une forme fermée pour le marquage des zones sur une carte.
-
+- **Polygon** : il s’agit d’une forme fermée pour le marquage de zones sur une carte.
 
 ##### <a name="polylines"></a>Polylignes
 
-Un [polyligne](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Polyline) est une liste de consécutifs `LatLng` objets qui spécifient les sommets de chaque segment de ligne. Une polyligne est créée en créant d’abord un `PolylineOptions` objet et ajouter les points à celle-ci. Le `PolylineOption` objet est ensuite passé à un `GoogleMap` objet en appelant le `AddPolyline` (méthode).
+Une [polyligne](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Polyline) est une liste d' `LatLng` objets consécutifs qui spécifient les vertex de chaque segment de ligne. Une polyligne est créée en créant d' `PolylineOptions` abord un objet et en y ajoutant les points. L' `PolylineOption` objet est ensuite passé à un `GoogleMap` objet en appelant la `AddPolyline` méthode.
 
 ```csharp
 PolylineOption rectOptions = new PolylineOption();
@@ -464,9 +450,9 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 googleMap.AddPolyline(rectOptions);
 ```
 
-##### <a name="circles"></a>Cercles
+##### <a name="circles"></a>Still
 
-Cercles sont créés par instanciation premier un [CircleOption](https://developers.google.com/android/reference/com/google/android/gms/maps/model/CircleOptions) objet que vous spécifierez le centre et le rayon du cercle en mètres. Le cercle est dessiné sur la carte en appelant [GoogleMap.AddCircle](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addCircle(com.google.android.gms.maps.model.CircleOptions)).
+Pour créer des cercles, vous devez d’abord instancier un objet [CircleOption](https://developers.google.com/android/reference/com/google/android/gms/maps/model/CircleOptions) qui spécifie le centre et le rayon du cercle, en mètres. Le cercle est dessiné sur la carte en appelant [googlemap. AddCircle](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addCircle(com.google.android.gms.maps.model.CircleOptions)).
 L’extrait de code suivant montre comment dessiner un cercle :
 
 ```csharp
@@ -477,13 +463,12 @@ circleOptions.InvokeRadius (1000);
 googleMap.AddCircle (circleOptions);
 ```
 
-
 ##### <a name="polygons"></a>Polygones
 
-`Polygon`Control sont similaires aux `Polyline`s, mais ils ne sont pas ouverts terminée. `Polygon`sont une boucle fermée, ont leur intérieur renseigné.
-`Polygon`s sont créés dans la même manière en tant qu’un `Polyline`, sauf le [GoogleMap.AddPolygon](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addPolygon(com.google.android.gms.maps.model.PolygonOptions)) méthode appelée.
+`Polygon`les s sont similaires `Polyline`à s, mais ils ne sont pas ouverts. `Polygon`les s sont une boucle fermée et leur intérieur est rempli.
+`Polygon`les s sont créées exactement de la même manière qu' `Polyline`un, à l’exception de la méthode [googlemap. AddPolygon](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addPolygon(com.google.android.gms.maps.model.PolygonOptions)) appelée.
 
-Contrairement à un `Polyline`, un `Polygon` est à fermeture automatique. Le polygone est fermé par le `AddPolygon` méthode en dessinant une ligne qui connecte le premier et dernier point. L’extrait de code suivant crée un rectangle plein sur la même zone que l’extrait de code précédent dans le `Polyline` exemple.
+Contrairement à `Polyline`un, `Polygon` un est auto-fermé. Le polygone est fermé par la `AddPolygon` méthode en dessinant une ligne qui connecte le premier et le dernier point. L’extrait de code suivant crée un rectangle plein sur la même zone que l’extrait de code précédent dans `Polyline` l’exemple.
 
 ```csharp
 PolygonOptions rectOptions = new PolygonOptions();
@@ -496,30 +481,27 @@ rectOptions.Add(new LatLng(37.35, -122.2));
 googleMap.AddPolygon(rectOptions);
 ```
 
+## <a name="responding-to-user-events"></a>Réponse aux événements utilisateur
 
-## <a name="responding-to-user-events"></a>Répondre aux événements utilisateur
+Il existe trois types d’interactions qu’un utilisateur peut avoir avec une carte :
 
-Il existe trois types d’interactions de qu'un utilisateur peut avoir avec une carte :
+- **Clic sur un marqueur** -l’utilisateur clique sur un marqueur.
 
--  **Cliquez sur le marqueur** -l’utilisateur clique sur un marqueur.
+- **Glisser-déplacer** -l’utilisateur a long-cliqué sur un mparger
 
--  **Faites glisser le marqueur** -l’utilisateur a long-cliqué sur un mparger
-
--  **Cliquez sur la fenêtre Info** -l’utilisateur a cliqué sur une fenêtre d’informations.
+- **Clic sur la fenêtre info** -l’utilisateur a cliqué sur une fenêtre d’informations.
 
 Chacun de ces événements sera abordé plus en détail ci-dessous.
 
-
 ### <a name="marker-click-events"></a>Événements de clic de marqueur
 
-Le `MarkerClicked` événement est déclenché lorsque l’utilisateur appuie sur un marqueur. Cet événement accepte un `GoogleMap.MarkerClickEventArgs` objet en tant que paramètre. Cette classe contient deux propriétés :
+L' `MarkerClicked` événement est déclenché lorsque l’utilisateur appuie sur un marqueur. Cet événement accepte un `GoogleMap.MarkerClickEventArgs` objet en tant que paramètre. Cette classe contient deux propriétés :
 
--  `GoogleMap.MarkerClickEventArgs.Handled` &ndash; Cette propriété doit être définie sur `true` pour indiquer que le Gestionnaire d’événements a utilisé l’événement. Si cela est défini sur `false` le comportement par défaut se produit en plus du comportement personnalisé du Gestionnaire d’événements.
+- `GoogleMap.MarkerClickEventArgs.Handled`Cette propriété doit avoir la `true` valeur pour indiquer que le gestionnaire d’événements a consommé l’événement. &ndash; Si ce paramètre a la `false` valeur, le comportement par défaut se produit en plus du comportement personnalisé du gestionnaire d’événements.
 
--  `Marker` &ndash; Cette propriété est une référence à la marque qui a déclenché le `MarkerClick` événement.
+- `Marker`Cette propriété est une référence au marqueur qui a déclenché `MarkerClick` l’événement. &ndash;
 
-
-Cet extrait de code montre un exemple d’un `MarkerClick` qui modifie la position de la caméra vers un nouvel emplacement sur la carte :
+Cet extrait de code montre un exemple de `MarkerClick` qui modifie la position de la caméra à un nouvel emplacement sur la carte :
 
 ```csharp
 void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs markerClickEventArgs)
@@ -545,27 +527,25 @@ void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs markerClickE
 }
 ```
 
+### <a name="marker-drag-events"></a>Événements glisser des marqueurs
 
-### <a name="marker-drag-events"></a>Événements de glisser de marqueur
+Cet événement est déclenché lorsque l’utilisateur souhaite faire glisser le marqueur. Par défaut, les marqueurs ne peuvent pas être déplacés. Un marqueur peut être défini comme pouvant être glissé en `Marker.Draggable` affectant `true` à la propriété la valeur `MarkerOptions.Draggable` ou en `true` appelant la méthode avec comme paramètre.
 
-Cet événement est déclenché lorsque l’utilisateur souhaite faire glisser le marqueur. Par défaut, les marqueurs ne sont pas déplaçables. Un marqueur peut être défini comme déplaçable en définissant le `Marker.Draggable` propriété `true` ou en appelant le `MarkerOptions.Draggable` méthode avec `true` en tant que paramètre.
+Pour faire glisser le marqueur, l’utilisateur doit d’abord cliquer longuement sur le marqueur, puis le doigt doit rester sur la carte. Lorsque le doigt de l’utilisateur est glissé sur l’écran, le marqueur se déplace. Lorsque le doigt de l’utilisateur est levé hors de l’écran, le marqueur reste en place.
 
-Pour faire glisser le marqueur, l’utilisateur doit tout d’abord long, cliquez sur le marqueur et ensuite leurs doigts doit rester sur la carte. Lorsque le doigt de l’utilisateur est déplacé autour de l’écran, le marqueur déplace. Lorsque les doigts de l’utilisateur soulève le visage, le marqueur reste en place.
+La liste suivante décrit les différents événements qui seront déclenchés pour un marqueur pouvant être glissé :
 
-La liste suivante décrit les différents événements qui seront déclenchés pour un marqueur peut être déplacé :
+- `GoogleMap.MarkerDragStart(object sender, GoogleMap.MarkerDragStartEventArgs e)`&ndash; Cet événement est déclenché lorsque l’utilisateur fait glisser pour la première fois le marqueur.
 
--   `GoogleMap.MarkerDragStart(object sender, GoogleMap.MarkerDragStartEventArgs e)` &ndash; Cet événement est déclenché lorsque l’utilisateur fait tout d’abord glisser le marqueur.
+- `GoogleMap.MarkerDrag(object sender, GoogleMap.MarkerDragEventArgs e)`&ndash; Cet événement est déclenché lorsque le marqueur est glissé.
 
--   `GoogleMap.MarkerDrag(object sender, GoogleMap.MarkerDragEventArgs e)` &ndash; Cet événement est déclenché comme le marqueur est glissé.
+- `GoogleMap.MarkerDragEnd(object sender, GoogleMap.MarkerDragEndEventArgs e)`&ndash; Cet événement est déclenché lorsque l’utilisateur a terminé de faire glisser le marqueur.
 
--   `GoogleMap.MarkerDragEnd(object sender, GoogleMap.MarkerDragEndEventArgs e)` &ndash; Cet événement est déclenché lorsque l’utilisateur est terminé en faisant glisser le marqueur.
+Chacun des `EventArgs` contient une propriété unique appelée `P0` qui est une référence à l' `Marker` objet qui est glissé.
 
-Chacun de la `EventArgs` contient une propriété unique appelée `P0` qui est une référence à la `Marker` de l’objet glissé.
+### <a name="info-window-click-events"></a>Événements Click de la fenêtre Info
 
-
-### <a name="info-window-click-events"></a>Événements de fenêtre, cliquez sur informations
-
-Qu’une seule fenêtre d’info peut être affichée à la fois. Lorsque l’utilisateur clique sur une fenêtre d’informations dans un mappage, l’objet map déclenchera une `InfoWindowClick` événement. L’extrait de code suivant montre comment associer un gestionnaire pour l’événement :
+Une seule fenêtre d’informations peut être affichée à la fois. Quand l’utilisateur clique sur une fenêtre d’info dans une carte, l’objet Map déclenche `InfoWindowClick` un événement. L’extrait de code suivant montre comment associer un gestionnaire à l’événement :
 
 ```csharp
 public void OnMapReady(GoogleMap map)
@@ -580,15 +560,14 @@ private void MapOnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEvent
 }
 ```
 
-Rappelez-vous qu’une fenêtre d’info est statique `View` est restituée en tant qu’image sur la carte. Les widgets tels que des boutons, des cases à cocher ou des vues de texte qui sont placés à l’intérieur de la fenêtre d’info seront inertes et ne peut pas répondre à certaines de leurs événements utilisateur intégraux.
-
+Rappelez-vous qu’une fenêtre d' `View` informations est une fenêtre statique qui est rendue sous la forme d’une image sur la carte. Les widgets, tels que les boutons, les cases à cocher ou les affichages de texte placés à l’intérieur de la fenêtre d’informations sont inertes et ne peuvent pas répondre à l’un de leurs événements d’utilisateur intégral.
 
 ## <a name="related-links"></a>Liens associés
 
 - [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo)
-- [Services Google Play](https://developers.google.com/android/guides/overview)
-- [Mappe les Google Android API v2](https://developers.google.com/maps/documentation/android-sdk/intro)
-- [Services de Google Play APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
-- [Obtention d’une clé de l’API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element)
+- [Google Play Services](https://developers.google.com/android/guides/overview)
+- [API Android de Google Maps v2](https://developers.google.com/maps/documentation/android-sdk/intro)
+- [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
+- [Obtention d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
+- [utilise-Library](https://developer.android.com/guide/topics/manifest/uses-library-element)
 - [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element)

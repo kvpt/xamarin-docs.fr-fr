@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
-ms.openlocfilehash: 06b4764570205a39734d38e3e118b7dc1fa35d18
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2da2af2a57fb0ec737927024d497530c2a3aac5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888732"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759880"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
@@ -52,7 +52,7 @@ Le `WidthRequest` et `HeightRequest` propriétés uniquement jouent un rôle que
 
 Le `WidthRequest` et `HeightRequest` propriétés sont ignorées si le `BoxView` est *contraint* dans la mise en page, dans lequel cas le conteneur de disposition impose son propre taille sur le `BoxView`.
 
-Un `BoxView` peut être limité dans une dimension et sans contraintes dans l’autre. Par exemple, si le `BoxView` est un enfant d’une verticale `StackLayout`, la dimension verticale de la `BoxView` est sans contrainte et sa dimension horizontale est généralement limitée. Toutefois, il existe des exceptions pour cette dimension horizontale: Si la `BoxView` `HorizontalOptions` propriété de a une valeur autre que `LayoutOptions.Fill`, la dimension horizontale est également sans contrainte. Il est également possible pour le `StackLayout` lui-même pour avoir une dimension horizontale sans contrainte, auquel cas la `BoxView` sera également horizontalement sans contrainte.
+Un `BoxView` peut être limité dans une dimension et sans contraintes dans l’autre. Par exemple, si le `BoxView` est un enfant d’une verticale `StackLayout`, la dimension verticale de la `BoxView` est sans contrainte et sa dimension horizontale est généralement limitée. Toutefois, il existe des exceptions pour cette dimension horizontale : Si la `BoxView` `HorizontalOptions` propriété de a une valeur autre que `LayoutOptions.Fill`, la dimension horizontale est également sans contrainte. Il est également possible pour le `StackLayout` lui-même pour avoir une dimension horizontale sans contrainte, auquel cas la `BoxView` sera également horizontalement sans contrainte.
 
 Le [ **BasicBoxView** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview) exemple affiche un carré de pouce de celui sans contrainte `BoxView` dans le centre de sa page :
 
@@ -778,12 +778,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-La deuxième main est traitée un peu différemment: Une fonction d’accélération d’animation est appliquée pour que le mouvement semble mécanique plutôt que lisse. À chaque graduation, la seconde aiguille extrait revenez un peu et puis dès sa destination. Ce petit bout de code ajoute beaucoup au réalisme du mouvement.
+La deuxième main est traitée un peu différemment : Une fonction d’accélération d’animation est appliquée pour que le mouvement semble mécanique plutôt que lisse. À chaque graduation, la seconde aiguille extrait revenez un peu et puis dès sa destination. Ce petit bout de code ajoute beaucoup au réalisme du mouvement.
 
 ## <a name="conclusion"></a>Conclusion
 
 Le `BoxView` peut sembler simple au début, mais comme vous l’avez vu, il peut s’agir d’une grande polyvalence et pouvant presque reproduire des éléments visuels qui sont normalement uniquement possibles avec graphismes vectoriels. Pour les graphiques plus sophistiquées, consultez [à l’aide de SkiaSharp dans Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
-
 
 ## <a name="related-links"></a>Liens associés
 

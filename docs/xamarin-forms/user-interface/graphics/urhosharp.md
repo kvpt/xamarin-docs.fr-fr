@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675272"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772934"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Utilisation de UrhoSharp dans Xamarin.Forms
 
@@ -43,7 +43,7 @@ Le package NuGet de UrhoSharp.Forms sera ajouté au projet :
 
 Répétez les étapes ci-dessus pour les projets spécifiques à la plateforme (par exemple, iOS et Android).
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>Procédure pas à pas : Ajout de UrhoSharp à une application Xamarin.Forms
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>Procédure pas à pas : Ajout de UrhoSharp à une application Xamarin. Forms
 
 Ces étapes décrivent le code dans l’exemple de Xamarin.Forms UrhoSharp :
 
@@ -223,7 +223,6 @@ Les animations à le [supérieur de la page](#what-is-urhosharp) afficher l’ex
 ## <a name="summary"></a>Récapitulatif
 
 Cette page illustre l’utilisation des UrhoSharp pour ajouter la visualisation des données 3D à Xamarin.Forms. Lire le [UrhoSharp documentation](~/graphics-games/urhosharp/index.md) pour plus d’informations sur la création des scènes Urho qui peuvent être inclus dans les applications Xamarin.Forms à l’aide de la méthode illustrée ci-dessus.
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2ce4b0366e85580b6d9d816bd91f9ced93997b63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2ccf6966e85eddaa10b5651e1b0b48dec9203b28
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291485"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772203"
 ---
 # <a name="inspecting-live-applications"></a>Inspection des applications Live
 
@@ -52,4 +52,3 @@ L’arborescence d’éléments visuels dynamique est également très utile. Il
 - La modification de la grille des propriétés n’est pas disponible pour Mac, et sur Windows est limité à quelques types de données. Utilisez REPL pour une modification plus puissante.
 - Tant que le complément ou l’extension Inspector est installé et activé dans votre IDE, nous injectons du code dans votre application chaque fois qu’il démarre en mode débogage. Si vous constatez un comportement étrange dans votre application, veuillez essayer de désactiver ou de désinstaller le complément ou l’extension Inspector, de redémarrer l’IDE et de revérifier. Nous vous invitons à nous signaler les [bogues](~/tools/inspector/install.md#reporting-bugs) .
 - Si l’inspection d’un élément de l’interface utilisateur entraîne une modification de tout de même, faites-le [nous savoir](~/tools/inspector/install.md#reporting-bugs), car cela peut indiquer un bogue.
-

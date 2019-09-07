@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 37403b9e33ccd54baac4fd36afbe50504e0380f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528953"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772103"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Créer des comportements Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "69528953"
 
 _Les comportements Xamarin.Forms sont créés par dérivation de la classe Behavior ou Behavior&lt;T&gt;. Cet article montre comment créer et consommer des comportements Xamarin.Forms._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Le processus de création d’un comportement Xamarin.Forms est le suivant :
 
@@ -207,7 +207,6 @@ De plus, notez que les comportements ne sont pas supprimés implicitement des co
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer et consommer des comportements Xamarin.Forms. Les comportements Xamarin.Forms sont créés en dérivant de la classe [`Behavior`](xref:Xamarin.Forms.Behavior) ou [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1).
-
 
 ## <a name="related-links"></a>Liens associés
 

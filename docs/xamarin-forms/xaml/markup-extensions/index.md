@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b135f916225f896680cfb73175ba0568928be06
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 40a50ecf93c8b77577e8e74df2e134b0ce3f80b6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655757"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767536"
 ---
 # <a name="xaml-markup-extensions"></a>Extensions de balisage XAML
 
@@ -36,7 +36,7 @@ Dans les deux cas, la chaîne de texte la valeur est la `Color` attribut est con
 
 Vous préférerez peut-être à la place définir le `Color` attribut à partir d’une valeur stockée dans un dictionnaire de ressources, ou à partir de la valeur d’une propriété statique d’une classe que vous avez créée ou à partir d’une propriété de type `Color` d’un autre élément dans la page, ou il est construit à partir de Séparez les valeurs de teinte, saturation et de luminosité.
 
-Toutes ces options sont possibles à l’aide des extensions de balisage XAML. Mais ne laissez pas l’expression «extensions de balisage» vous effrayant: Les extensions de balisage XAML ne sont *pas* des extensions à XML. Même avec les extensions de balisage XAML, XAML est toujours XML juridique.
+Toutes ces options sont possibles à l’aide des extensions de balisage XAML. Mais ne laissez pas l’expression « extensions de balisage » vous effrayant : Les extensions de balisage XAML ne sont *pas* des extensions à XML. Même avec les extensions de balisage XAML, XAML est toujours XML juridique.
 
 Une extension de balisage est simplement un moyen différent pour exprimer un attribut d’un élément. Extensions de balisage XAML sont généralement identifiables par un paramètre d’attribut qui est placé entre accolades :
 
@@ -55,8 +55,6 @@ Utilisez les extensions de balisage XAML définies dans Xamarin.Forms.
 ## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Création d’extensions de balisage XAML](creating.md)
 
 Écrire vos propres extensions de balisage XAML personnalisées.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0b11f5c290f07debb61d511bdd27ad1a7ad0b0b0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526082"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754719"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Toucher et gestes dans Xamarin. Android
 
@@ -28,7 +28,7 @@ En plus de capturer les données tactiles, iOS et Android offrent à la fois des
 
 Que vous travailliez sur Android ou iOS, le choix entre les touches de contact et les reconnaissances de mouvement peut être une opération confuse. Ce guide recommande que, en général, la préférence soit donnée aux détecteurs de mouvement. Les module de reconnaissance de mouvement sont implémentés en tant que classes discrètes, ce qui permet une plus grande séparation des préoccupations et une meilleure encapsulation. Cela facilite le partage de la logique entre différentes vues, ce qui réduit la quantité de code écrite.
 
-Ce guide suit un format similaire pour chaque système d’exploitation: tout d’abord, les API tactiles de la plateforme sont introduites et expliquées, car il s’agit de la base sur laquelle les interactions tactiles sont créées. Ensuite, nous plongeons dans le monde des détecteurs de mouvement: tout d’abord en explorant certains mouvements courants et en terminant par la création de mouvements personnalisés pour les applications. Enfin, vous verrez comment suivre des doigts individuels à l’aide d’un suivi tactile de bas niveau pour créer un programme de peinture par doigt.
+Ce guide suit un format similaire pour chaque système d’exploitation : tout d’abord, les API tactiles de la plateforme sont introduites et expliquées, car il s’agit de la base sur laquelle les interactions tactiles sont créées. Ensuite, nous plongeons dans le monde des détecteurs de mouvement : tout d’abord en explorant certains mouvements courants et en terminant par la création de mouvements personnalisés pour les applications. Enfin, vous verrez comment suivre des doigts individuels à l’aide d’un suivi tactile de bas niveau pour créer un programme de peinture par doigt.
 
 ## <a name="sections"></a>Sections
 
@@ -39,8 +39,6 @@ Ce guide suit un format similaire pour chaque système d’exploitation: tout d�
 ## <a name="summary"></a>Récapitulatif
 
 Dans ce guide, nous avons examiné Touch dans Android. Pour les deux systèmes d’exploitation, nous avons appris à activer touch et à répondre aux événements tactiles. Ensuite, nous avons appris les gestes et certains des détecteurs de mouvement fournis par Android et iOS pour gérer certains des scénarios les plus courants. Nous avons examiné comment créer des mouvements personnalisés et les implémenter dans des applications. Une procédure pas à pas A montré les concepts et les API pour chaque système d’exploitation en action, et vous avez également vu comment suivre des doigts individuels.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

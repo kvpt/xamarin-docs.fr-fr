@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 20. E/s de fichier et asynchrone
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 20. E/s de fichier et asynchrone'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 20. E/s de fichier et asynchrone'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650461"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771039"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Résumé du chapitre 20. E/s de fichier et asynchrone
 
@@ -166,8 +166,6 @@ Le [ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tr
 ## <a name="back-to-the-web"></a>Dans le web
 
 Le [ `WebRequest` ](xref:System.Net.WebRequest) classe utilisée dans certains exemples utilise un ancienne protocole asynchrone appelé modèle de programmation asynchrone ou APM. Vous pouvez convertir une telle classe au protocole TAP modern à l’aide d’un de le `FromAsync` méthodes dans le [ `TaskFactory` ](xref:System.Threading.Tasks.TaskFactory`1) classe. Le [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap) illustre cela.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -1,51 +1,49 @@
 ---
-title: Déboguer Android Wear sur un émulateur
-description: Ces articles expliquent comment déboguer une application Xamarin.Android usure sur un émulateur.
+title: Déboguer l’usure Android sur un émulateur
+description: Ces articles expliquent comment déboguer une application Xamarin. Android usure sur un émulateur.
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/21/2018
-ms.openlocfilehash: 699fb3cc3a5730e8ab2c677feb7cdfbdcf106aeb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f085aaffbedb2965222b98a22cf6a4bb2393642b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61308248"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764041"
 ---
-# <a name="debug-android-wear-on-an-emulator"></a>Déboguer Android Wear sur un émulateur
+# <a name="debug-android-wear-on-an-emulator"></a>Déboguer l’usure Android sur un émulateur
 
-_Ces articles expliquent comment déboguer une application Xamarin.Android usure sur un émulateur._
+_Ces articles expliquent comment déboguer une application Xamarin. Android usure sur un émulateur._
 
-## <a name="debug-wear-on-emulator-overview"></a>Déboguer l’usure de présentation de l’émulateur
+## <a name="debug-wear-on-emulator-overview"></a>Présentation du débogage de l’usure sur l’émulateur
 
-Développement d’applications Android Wear nécessite l’exécution de l’application, soit sur du matériel physique ou à l’aide d’un émulateur ou simulateur. L’utilisation de matériel est la meilleure approche, mais elle n’est pas toujours la plus pratique. Dans de nombreux cas, il peut être plus simple et plus rentable de simuler/émuler le matériel Android Wear à l’aide d’un émulateur comme décrit ci-dessous. Si vous n’êtes pas encore familiarisé avec le processus de déploiement et l’exécution d’applications de Android Wear, consultez [Wear Hello,](~/android/wear/get-started/hello-wear.md).
+Le développement d’applications Android usure requiert l’exécution de l’application, soit sur un matériel physique, soit à l’aide d’un émulateur ou d’un simulateur. L’utilisation de matériel est la meilleure approche, mais elle n’est pas toujours la plus pratique. Dans de nombreux cas, il peut être plus simple et plus économique de simuler/émuler le matériel d’usure Android à l’aide d’un émulateur, comme décrit ci-dessous. Si vous n’êtes pas encore familiarisé avec le processus de déploiement et d’exécution d’applications Android, consultez [Hello, usure](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-android-emulator"></a>Configurer l’émulateur Android
+## <a name="configure-the-android-emulator"></a>Configurer le Émulateur Android
 
-Pour exécuter votre application Wear sur un émulateur, vous devez installer l’émulateur Android SDK Android et configurez-le pour Android Wear. Pour global émulateur du Kit Android installation et configuration d’informations, consultez [configuration de l’émulateur Android](~/android/get-started/installation/android-emulator/index.md).
+Pour exécuter votre application d’usure sur un émulateur, vous devez installer le Android SDK Émulateur Android et le configurer pour l’usure Android. Pour obtenir des informations générales sur l’installation et la configuration de l’émulateur Android SDK, consultez [émulateur Android Setup](~/android/get-started/installation/android-emulator/index.md).
 
-Lorsque vous créez un appareil virtuel usure, sélectionnez un profil d’appareil Android Wear (tel que **Android Wear carré**). Pour améliorer les performances, utilisez l’usure **x86** CPU/ABI comme indiqué dans cet exemple :
+Lorsque vous créez un appareil virtuel d’usure, sélectionnez un profil d’appareil Android d’usure (par exemple, un **carré d’usure Android**). Pour améliorer les performances, utilisez l’UC **x86** /Abi comme indiqué dans cet exemple :
 
-[![Exemple de configuration de périphérique virtuel Wear](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
+[![Exemple d’usure de la configuration des appareils virtuels](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
+## <a name="launch-the-wear-virtual-device"></a>Lancer l’appareil virtuel usure 
 
-## <a name="launch-the-wear-virtual-device"></a>Lancer l’appareil virtuel Wear 
+Une fois que vous avez créé un appareil virtuel Android usure, vous pouvez le choisir dans le menu déroulant de l’appareil dans l’IDE avant de commencer le débogage. Si votre appareil virtuel n’est pas disponible dans la liste déroulante des appareils, vérifiez que votre projet est un projet d’application Android d' *usure* (pas un projet d’application Android) et que son niveau d’API cible est défini sur le même niveau d’API que l’appareil virtuel. Par exemple :
 
-Une fois que vous avez créé un appareil virtuel Android Wear, vous pouvez le choisir dans le menu déroulant de périphérique dans l’IDE avant de commencer le débogage. Si votre appareil virtuel n’est pas disponible dans le menu déroulant du périphérique, vérifiez que votre projet est un Android *Wear* de niveau projet d’application (pas un projet d’application Android) et que son niveau d’API cible est définie sur la même API que l’appareil virtuel. Exemple :
+[![Choix d’une usure dans le menu de périphérique Visual Studio](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
-[![En choisissant un AVD Wear dans le menu de périphérique de Visual Studio](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
+Après le démarrage de l’émulateur Android, Xamarin. Android déploie l’application usure sur l’émulateur. L’émulateur exécute l’application avec l’image d’appareil virtuel configurée.
 
-Après le démarrage de l’émulateur Android, Xamarin.Android déploiera l’application Wear à l’émulateur. L’émulateur exécute l’application avec l’image d’appareil virtuel configurée.
+Ne soyez pas surpris si vous voyez cela (ou un autre écran interstitiel) au début. Le démarrage de l’émulateur Watch peut prendre un certain temps : 
 
-Ne soyez pas surpris si vous voyez ce (ou un autre écran INTERSTITIEL) dans un premier temps. L’émulateur espion peut prendre un certain temps à démarrer : 
-
-![Regardez l’émulateur affiche une minute...](debug-on-emulator-images/please-wait.png)
+![L’émulateur Watch affiche une minute...](debug-on-emulator-images/please-wait.png)
 
 Il est possible de laisser l’émulateur s’exécuter ; il n’est pas nécessaire de le fermer et de le redémarrer chaque fois que l’application est exécutée.
 
- 
 ## <a name="summary"></a>Récapitulatif
- 
-Ce guide a expliqué comment configurer l’émulateur Android pour le développement de l’usure et lancer un appareil virtuel usure pour le débogage.
+
+Ce guide explique comment configurer les Émulateur Android pour le développement d’usure et comment lancer un appareil virtuel d’usure pour le débogage.

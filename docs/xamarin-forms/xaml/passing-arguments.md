@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 80f332e45d6c46ad49543923e85cbb2eceadb378
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228091"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767594"
 ---
 # <a name="passing-arguments-in-xaml"></a>Passage des Arguments dans XAML
 
@@ -91,7 +91,7 @@ Le nombre d’éléments dans le `x:Arguments` balise et les types de ces élém
 
 Les captures d’écran suivantes affichent le résultat de l’appel de chaque [ `Color` ](xref:Xamarin.Forms.Color) constructeur avec les valeurs d’argument spécifié :
 
-![BoxView. Color spécifié avec x:Arguments](passing-arguments-images/passing-arguments.png)
+![BoxView. Color spécifié avec x :Arguments](passing-arguments-images/passing-arguments.png)
 
 <a name="factory_methods" />
 
@@ -141,7 +141,7 @@ Le nombre d’éléments dans le `x:Arguments` balise et les types de ces élém
 
 Les captures d’écran suivantes affichent le résultat de l’appel de chaque [ `Color` ](xref:Xamarin.Forms.Color) méthode de fabrique avec les valeurs d’argument spécifié :
 
-![BoxView. Color spécifié avec x:FactoryMethod et x:Arguments](passing-arguments-images/factory-methods.png)
+![BoxView. Color spécifié avec x :FactoryMethod et x :Arguments](passing-arguments-images/factory-methods.png)
 
 <a name="generic_type_arguments" />
 
@@ -168,7 +168,6 @@ Le [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) classe est une classe gén�
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré en utilisant les attributs XAML qui peuvent être utilisées pour passer des arguments aux constructeurs non définis par défaut, pour appeler des méthodes de fabrique et pour spécifier le type d’un argument générique.
-
 
 ## <a name="related-links"></a>Liens associés
 

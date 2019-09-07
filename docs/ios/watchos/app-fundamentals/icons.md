@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/26/2018
-ms.openlocfilehash: b3968f211ff5445e8b704bbd7897f4c46ecc2be9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e0bf9ec1553e6638398695157a11242b9885b168
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292593"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768095"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>Utilisation des icônes Watchos dans Xamarin
 
@@ -82,7 +82,6 @@ Vous pouvez vérifier que les icônes sont configurées correctement en vérifia
 
 > [!NOTE]
 > Les icônes ne peuvent pas avoir de canal alpha (l’application est rejetée lors de l’envoi de l’App Store si un canal alpha est présent). Vous pouvez vérifier s’il existe un canal alpha et [le supprimer à l’aide de l’application Preview sur Mac OS X](~/ios/watchos/troubleshooting.md#noalpha).
-
 
 ## <a name="related-links"></a>Liens associés
 

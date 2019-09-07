@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 07bf50bdee9243141d1f266a88f82770d9503969
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529098"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760221"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
 
-Quelle que soit la plateforme, les développeurs d’applications d’entreprise sont confrontés à plusieurs défis:
+Quelle que soit la plateforme, les développeurs d’applications d’entreprise sont confrontés à plusieurs défis :
 
 - Spécifications de l’application qui peuvent changer au fil du temps.
 - Nouvelles opportunités commerciales et défis.
@@ -26,9 +26,9 @@ Quelle que soit la plateforme, les développeurs d’applications d’entreprise
 
 De nombreuses applications d’entreprise sont suffisamment complexes pour nécessiter plus d’un développeur. Il peut s’agir d’un défi important à prendre pour décider comment concevoir une application afin que plusieurs développeurs puissent travailler de manière efficace sur différentes parties de l’application, tout en veillant à ce que les pièces s’intègrent de manière transparente lorsqu’elles sont intégrées à l’application.
 
-L’approche traditionnelle de la conception et de la création d’une application est la même que celle d’une application monolithique, où les composants sont étroitement couplés sans séparation claire entre eux. En règle générale, cette approche monolithique génère des applications qui sont difficiles et inefficaces à gérer, car il peut être difficile de résoudre les bogues sans endommager les autres composants de l’application, et il peut être difficile d’ajouter de nouvelles fonctionnalités ou de remplacer des fonctionnalités existantes.
+L’approche traditionnelle de la conception et de la création d’une application est la même que celle d’une application *monolithique* , où les composants sont étroitement couplés sans séparation claire entre eux. En règle générale, cette approche monolithique génère des applications qui sont difficiles et inefficaces à gérer, car il peut être difficile de résoudre les bogues sans endommager les autres composants de l’application, et il peut être difficile d’ajouter de nouvelles fonctionnalités ou de remplacer des fonctionnalités existantes.
 
-Une solution efficace pour relever ces défis consiste à partitionner une application en composants discrets et faiblement couplés qui peuvent être facilement intégrés dans une application. Une telle approche offre plusieurs avantages:
+Une solution efficace pour relever ces défis consiste à partitionner une application en composants discrets et faiblement couplés qui peuvent être facilement intégrés dans une application. Une telle approche offre plusieurs avantages :
 
 - Il permet de développer, de tester, d’étendre et de maintenir des fonctionnalités individuelles par différentes personnes ou équipes.
 - Il encourage la réutilisation et une séparation nette des préoccupations entre les fonctions horizontales de l’application, telles que l’authentification et l’accès aux données, ainsi que les fonctionnalités verticales, telles que les fonctionnalités métier spécifiques aux applications. Cela permet de gérer plus facilement les dépendances et les interactions entre les composants de l’application.
@@ -37,19 +37,19 @@ Une solution efficace pour relever ces défis consiste à partitionner une appli
 Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. Elles incluent notamment :
 
 - Déterminer comment fournir une séparation nette des problèmes entre les contrôles d’interface utilisateur et leur logique. L’une des décisions les plus importantes lors de la création d’une application d’entreprise Xamarin. Forms consiste à déterminer si la logique métier doit être placée dans les fichiers code-behind ou si une séparation nette des préoccupations entre les contrôles de l’interface utilisateur et leur logique doit être créée pour rendre l’application plus gérable et testable. Pour plus d’informations, consultez [Model-View-ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
-- Détermination de l’utilisation ou non d’un conteneur d’injection de dépendances. Les conteneurs d’injection de dépendances réduisent le couplage des dépendances entre les objets en fournissant une fonctionnalité permettant de construire des instances de classes avec leurs dépendances injectées, et de gérer leur durée de vie en fonction de la configuration du conteneur. Pour plus d’informations, consultez [injection](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)de dépendances.
+- Détermination de l’utilisation ou non d’un conteneur d’injection de dépendances. Les conteneurs d’injection de dépendances réduisent le couplage des dépendances entre les objets en fournissant une fonctionnalité permettant de construire des instances de classes avec leurs dépendances injectées, et de gérer leur durée de vie en fonction de la configuration du conteneur. Pour plus d’informations, consultez [injection de dépendances](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 - Choix entre les événements fournis par la plateforme et la communication faiblement couplée basée sur les messages entre les composants qui sont peu pratiques à lier par objet et les références de type. Pour plus d’informations, consultez Introduction à la [communication entre les composants faiblement couplés](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md).
 - Choix du mode de navigation entre les pages, y compris l’appel de la navigation et l’emplacement de la logique de navigation. Pour plus d’informations, consultez [Navigation](~/xamarin-forms/enterprise-application-patterns/navigation.md).
 - Détermination de la façon dont les entrées d’utilisateur sont validées pour l’exactitude. La décision doit comprendre comment valider les entrées d’utilisateur et comment informer l’utilisateur des erreurs de validation. Pour plus d’informations, consultez [validation](~/xamarin-forms/enterprise-application-patterns/validation.md).
 - Choix de l’authentification et de la protection des ressources avec autorisation. Pour plus d’informations, consultez [authentification et autorisation](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md).
-- Déterminer comment accéder aux données distantes à partir de services Web, notamment comment récupérer des données de manière fiable et comment mettre en cache des données. Pour plus d’informations, consultez [accès aux données](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)distantes.
+- Déterminer comment accéder aux données distantes à partir de services Web, notamment comment récupérer des données de manière fiable et comment mettre en cache des données. Pour plus d’informations, consultez [accès aux données distantes](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md).
 - Choix du mode de test de l’application. Pour plus d’informations, consultez [tests unitaires](~/xamarin-forms/enterprise-application-patterns/unit-testing.md).
 
 Ce guide fournit des conseils sur ces problèmes et se concentre sur les modèles et l’architecture de base pour la création d’une application d’entreprise multiplateforme à l’aide de Xamarin. Forms. L’aide vise à produire du code adaptable, gérable et testable, en traitant les scénarios courants de développement d’applications d’entreprise Xamarin. Forms et en séparant les problèmes de présentation, la logique de présentation et les entités grâce à la prise en charge de Modèle MVVM (Model-View-ViewModel).
 
 ## <a name="sample-application"></a>Exemple d’application
 
-Ce guide comprend un exemple d’application, eShopOnContainers, qui est un magasin en ligne qui comprend les fonctionnalités suivantes:
+Ce guide comprend un exemple d’application, eShopOnContainers, qui est un magasin en ligne qui comprend les fonctionnalités suivantes :
 
 - Authentification et autorisation sur un service principal.
 - Navigation dans un catalogue de maillots, de tasses à café et autres éléments marketing.
@@ -66,7 +66,7 @@ La figure 1-1 fournit une vue d’ensemble de l’architecture de l’exemple d�
 
 **Figure 1-1**: architecture de haut niveau eShopOnContainers
 
-L’exemple d’application est fourni avec trois applications clientes:
+L’exemple d’application est fourni avec trois applications clientes :
 
 - Une application MVC développée avec ASP.NET Core.
 - Une application à page unique (SPA) développée avec l’angle 2 et la machine à écrire. Cette approche pour les applications Web évite d’effectuer un aller-retour sur le serveur avec chaque opération.
@@ -74,16 +74,16 @@ L’exemple d’application est fourni avec trois applications clientes:
 
 Pour plus d’informations sur les applications Web, consultez [conception et développement d’applications Web modernes avec ASP.net Core et Microsoft Azure](https://aka.ms/WebAppEbook).
 
-L’exemple d’application comprend les services principaux suivants:
+L’exemple d’application comprend les services principaux suivants :
 
 - Un microservice d’identité, qui utilise ASP.NET Core Identity et IdentityServer.
 - Un microservice de catalogue, qui est un service de création, de lecture, de mise à jour, de suppression (CRUD) piloté par les données qui consomme une base de données SQL Server à l’aide d’EntityFramework Core.
 - Un microservice de commande, qui est un service piloté par domaine qui utilise des modèles de conception pilotés par domaine.
 - Un microservice de panier, qui est un service CRUD piloté par les données qui utilise le cache Redims.
 
-Ces services principaux sont implémentés en tant que microservices à l’aide d’ASP.NET Core MVC et sont déployés en tant que conteneurs uniques au sein d’un seul hôte Dockr. Collectivement, ces services principaux sont appelés l’application de référence eShopOnContainers. Les applications clientes communiquent avec les services principaux via une interface Web REST. Pour plus d’informations sur les microservices et l’arrimeur, consultez microservices en [conteneur](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md).
+Ces services principaux sont implémentés en tant que microservices à l’aide d’ASP.NET Core MVC et sont déployés en tant que conteneurs uniques au sein d’un seul hôte Dockr. Collectivement, ces services principaux sont appelés l’application de référence eShopOnContainers. Les applications clientes communiquent avec les services principaux via une interface Web REST. Pour plus d’informations sur les microservices et l’arrimeur, consultez [microservices en conteneur](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md).
 
-Pour plus d’informations sur l’implémentation des services principaux, [consultez microservices .net: Architecture pour les applications .NET en conteneurs](https://aka.ms/microservicesebook).
+Pour plus d’informations sur l’implémentation des services principaux, [consultez microservices .net : Architecture pour les applications .NET en conteneurs](https://aka.ms/microservicesebook).
 
 ### <a name="mobile-app"></a>Application mobile
 
@@ -95,7 +95,7 @@ Ce guide se concentre sur la création d’applications d’entreprise multiplat
 
 L’application mobile consomme les services principaux fournis par l’application de référence eShopOnContainers. Toutefois, il peut être configuré pour consommer des données de services fictifs pour ceux qui souhaitent éviter de déployer les services principaux.
 
-L’application mobile eShopOnContainers exerce la fonctionnalité Xamarin. Forms suivante:
+L’application mobile eShopOnContainers exerce la fonctionnalité Xamarin. Forms suivante :
 
 - XAML
 - Contrôles
@@ -117,7 +117,7 @@ En outre, des tests unitaires sont fournis pour certaines des classes de l’app
 
 #### <a name="mobile-app-solution"></a>Solution d’application mobile
 
-La solution d’application mobile eShopOnContainers organise le code source et d’autres ressources en projets. Tous les projets utilisent des dossiers pour organiser le code source et d’autres ressources en catégories. Le tableau suivant présente les projets qui composent l’application mobile eShopOnContainers:
+La solution d’application mobile eShopOnContainers organise le code source et d’autres ressources en projets. Tous les projets utilisent des dossiers pour organiser le code source et d’autres ressources en catégories. Le tableau suivant présente les projets qui composent l’application mobile eShopOnContainers :
 
 |Projet|Description|
 |--- |--- |
@@ -134,7 +134,7 @@ Les classes de l’application mobile eShopOnContainers peuvent être réutilis�
 
 ##### <a name="eshoponcontainerscore-project"></a>Projet eShopOnContainers. Core
 
-Le projet PCL eShopOnContainers. Core contient les dossiers suivants:
+Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 
 |Dossier|Description|
 |--- |--- |
@@ -163,7 +163,6 @@ Les projets de plateforme contiennent des implémentations d’effet, des implé
 Les plateformes et outils de développement d’applications mobiles multiplateforme de Xamarin offrent une solution complète pour les applications clientes mobiles B2E, B2B et B2C, offrant ainsi la possibilité de partager du code sur toutes les plateformes cibles (iOS, Android et Windows) et de réduire le coût total de possession. Les applications peuvent partager l’interface utilisateur et le code de la logique de l’application, tout en conservant l’apparence native de la plateforme.
 
 Les développeurs d’applications d’entreprise font face à plusieurs défis qui peuvent altérer l’architecture de l’application pendant le développement. Par conséquent, il est important de créer une application afin qu’elle puisse être modifiée ou étendue au fil du temps. La conception pour une telle adaptation peut être difficile, mais implique généralement le partitionnement d’une application en composants discrets et faiblement couplés qui peuvent être facilement intégrés ensemble dans une application.
-
 
 ## <a name="related-links"></a>Liens associés
 

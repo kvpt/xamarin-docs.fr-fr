@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 53dce7cc6cc614cde252aa34248fa299c89fafa3
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: e96f9a0ce4d1eec9bf853faceeb85a2acb4840af
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887709"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761020"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Comment automatiser un projet de test Android NUnit ?
 
@@ -20,13 +20,13 @@ ms.locfileid: "69887709"
 > Ce guide explique comment automatiser un projet de test Android NUnit, et non un projet Xamarin. UITest. Vous trouverez les guides Xamarin. UITest [ici](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
 
 Lorsque vous créez un projet d' **application de test unitaire (Android)** dans Visual Studio (ou un projet de **test unitaire Android** dans Visual Studio pour Mac), ce projet n’exécute pas automatiquement vos tests par défaut.
-Pour exécuter des tests NUnit sur un appareil cible, vous pouvez créer une sous-classe [Android. app. Instrumentation](xref:Android.App.Instrumentation) qui est démarrée à l’aide de la commande suivante: 
+Pour exécuter des tests NUnit sur un appareil cible, vous pouvez créer une sous-classe [Android. app. Instrumentation](xref:Android.App.Instrumentation) qui est démarrée à l’aide de la commande suivante : 
 
 ```shell
 adb shell am instrument 
 ```
 
-Les étapes suivantes expliquent ce processus:
+Les étapes suivantes expliquent ce processus :
 
 1. Créez un nouveau fichier appelé **TestInstrumentation.cs**: 
 
@@ -75,13 +75,13 @@ Les étapes suivantes expliquent ce processus:
     </Project>
     ```
 
-4. Utilisez la commande suivante pour exécuter les tests unitaires. Remplacez `PACKAGE_NAME` par le nom du package de l’application (le nom du package se trouve dans l' `/manifest/@package` attribut de l’application situé dans **fichier AndroidManifest. xml**):
+4. Utilisez la commande suivante pour exécuter les tests unitaires. Remplacez `PACKAGE_NAME` par le nom du package de l’application (le nom du package se trouve dans l' `/manifest/@package` attribut de l’application situé dans **fichier AndroidManifest. xml**) :
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5. Si vous le souhaitez, vous pouvez `.csproj` modifier le fichier pour `RunTests` ajouter la cible MSBuild. Cela permet d’appeler les tests unitaires à l’aide d’une commande telle que la suivante:
+5. Si vous le souhaitez, vous pouvez `.csproj` modifier le fichier pour `RunTests` ajouter la cible MSBuild. Cela permet d’appeler les tests unitaires à l’aide d’une commande telle que la suivante :
 
     ```shell
     msbuild /t:RunTests Project.csproj
@@ -91,10 +91,8 @@ Les étapes suivantes expliquent ce processus:
 
 Pour plus d’informations sur l' `adb shell am instrument` utilisation de la commande pour exécuter des tests unitaires, consultez la rubrique développeurs Android [exécutant des tests avec ADB](https://developer.android.com/studio/test/command-line.html#RunTestsDevice) .
 
-
 > [!NOTE]
 > Avec la version [Xamarin. Android 5,0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming) , les noms de package par défaut pour les wrappers pouvant être appelés Android seront basés sur le md5sum du nom qualifié d’assembly du type en cours d’exportation. Cela permet de fournir le même nom qualifié complet à partir de deux assemblys différents et de ne pas obtenir d’erreur de Packaging. Veillez donc à utiliser la `Name` propriété sur l' `Instrumentation` attribut pour générer un nom de ACW/classe lisible.
 
 _Le nom ACW doit être utilisé dans la `adb` commande ci-dessus_.
 Le renommage ou la refactorisation de la C# classe nécessitera donc `RunTests` la modification de la commande pour utiliser le nom de ACW correct.
-

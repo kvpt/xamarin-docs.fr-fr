@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: 3171a89678e88a924198c3921d197c0f0378d29b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14e9b352a309de94a374b52141e3fd61715d8f75
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522623"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764380"
 ---
 # <a name="xamarinandroid-linearlayout"></a>Xamarin. Android élément LinearLayout
 
@@ -25,7 +25,7 @@ qu'.
 
 Démarrez un nouveau projet nommé **HelloLinearLayout**.
 
-Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit:
+Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -109,7 +109,7 @@ qui utilise une orientation horizontale et le deuxième enfant est un[`LinearLay
 qui utilise une orientation verticale. Chacun de ces [`LinearLayout`](xref:Android.Widget.LinearLayout)s imbriqués contient plusieurs[`TextView`](xref:Android.Widget.TextView)
 éléments, qui sont orientés les uns avec les autres de la manière définie [`LinearLayout`](xref:Android.Widget.LinearLayout)par leur parent.
 
-Ouvrez maintenant **HelloLinearLayout.cs** et assurez-vous qu’il charge la disposition Resources **/Layout/main. AXML** dans le[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Ouvrez maintenant **HelloLinearLayout.cs** et assurez-vous qu’il charge la disposition **Resources/layout/main. AXML** dans le[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 méthode
 
 ```csharp
@@ -120,15 +120,14 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-La [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)méthode) charge le fichier de disposition pour [`Activity`](xref:Android.App.Activity)le, spécifié par l’ID &ndash; `Resources.Layout.Main` de ressource, fait référence au fichier de disposition Resources **/Layout/main. AXML** .
+La [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)méthode) charge le fichier de disposition pour [`Activity`](xref:Android.App.Activity)le, spécifié par l’ID &ndash; `Resources.Layout.Main` de ressource, fait référence au fichier de disposition **Resources/layout/main. AXML** .
 
-Exécutez l'application. Les éléments suivants doivent s’afficher:
+Exécutez l'application. Les éléments suivants doivent s’afficher :
 
 [![Capture d’écran de l’application First élément LinearLayout organisée horizontalement, en secondes verticalement](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
 Notez comment les attributs XML définissent le comportement de chaque vue. Essayez d’expérimenter avec différentes valeurs pour `android:layout_weight` voir comment la surface de l’écran est distribuée en fonction de la pondération de chaque élément. Pour plus d’informations sur la façon de procéder, consultez le document [objets de mise en page courants](https://developer.android.com/guide/topics/ui/declaring-layout.html)[`LinearLayout`](xref:Android.Widget.LinearLayout)
 gère l' `android:layout_weight` attribut.
-
 
 ## <a name="references"></a>Références
 

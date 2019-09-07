@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647729"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758315"
 ---
 # <a name="working-with-screen-sizes"></a>Utilisation des tailles d’écran
 
@@ -29,7 +29,7 @@ N’oubliez pas que certains des autres contrôles de bibliothèque de prise en 
 
 Consultez l’exemple [WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub) pour voir comment détecter le type d’écran et afficher une disposition différente pour chaque type.
 
-Le fichier de disposition principal contient `android.support.wearable.view.WatchViewStub` un qui référence différentes dispositions pour les écrans rectangulaires et arrondis `app:roundLayout` `app:rectLayout` à l’aide des attributs et:
+Le fichier de disposition principal contient `android.support.wearable.view.WatchViewStub` un qui référence différentes dispositions pour les écrans rectangulaires et arrondis `app:roundLayout` `app:rectLayout` à l’aide des attributs et :
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -41,10 +41,9 @@ Le fichier de disposition principal contient `android.support.wearable.view.Watc
   app:roundLayout="@layout/round_layout" />
 ```
 
-La solution contient différentes dispositions pour chaque style qui sera sélectionné au moment de l’exécution:
+La solution contient différentes dispositions pour chaque style qui sera sélectionné au moment de l’exécution :
 
 ![Fichiers affichés sous ressources/mise en page](screen-sizes-images/solution.png)
-
 
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
@@ -52,21 +51,19 @@ Au lieu de créer des dispositions différentes pour chaque type d’écran, vou
 
 Cet [exemple Google](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) montre comment utiliser `BoxInsetLayout` pour utiliser la même disposition sur des écrans rectangulaires et ronds.
 
-
 ## <a name="wear-ui-designer"></a>Générateur d’interface utilisateur d’usure
 
-Xamarin Android Designer prend en charge les écrans rectangulaires et arrondis:
+Xamarin Android Designer prend en charge les écrans rectangulaires et arrondis :
 
 ![Sélection de l’écran carré d’usure Android dans le Android Designer Xamarin](screen-sizes-images/design-screen-type.png)
 
-L’aire de conception dans un style rectangulaire est illustrée ici:
+L’aire de conception dans un style rectangulaire est illustrée ici :
 
 ![Aire de conception dans un style rectangulaire](screen-sizes-images/design-rect.png) 
 
-L’aire de conception dans le style Round est illustrée ici:
+L’aire de conception dans le style Round est illustrée ici :
 
 ![Aire de conception dans un style rond](screen-sizes-images/design-round.png)
-
 
 ## <a name="wear-simulator"></a>Simulateur d’usure
 
@@ -74,15 +71,14 @@ Le **Gestionnaire d’émulateur Google** contient des définitions d’appareil
 
 ![Usure des définitions d’appareils affichées dans le gestionnaire d’émulateur Google](screen-sizes-images/emulator-devices.png)
 
-L’émulateur s’affiche comme suit pour un écran rectangulaire:
+L’émulateur s’affiche comme suit pour un écran rectangulaire :
 
 ![Affichage de l’émulateur d’un écran rectangulaire](screen-sizes-images/recipe-2.png) 
 
-Elle s’affiche comme suit pour un écran rond:
+Elle s’affiche comme suit pour un écran rond :
 
 ![Affichage de l’émulateur d’un écran rond](screen-sizes-images/recipe-2-round.png)
 
 ## <a name="video"></a>Vidéo
 
 [Applications plein écran pour Android](https://www.youtube.com/watch?v=naf_WbtFAlY) à partir de [Developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw).
-

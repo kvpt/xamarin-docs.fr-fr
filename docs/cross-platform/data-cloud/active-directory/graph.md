@@ -6,12 +6,12 @@ ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 96e0991bb0805e61dfbf91e8479cbf1c9943f212
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fd3d94731f1a2a083be5f0e2f8ab541bc702a521
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287758"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766301"
 ---
 # <a name="accessing-the-graph-api"></a>Accès à l’API Graph
 
@@ -27,7 +27,6 @@ Veillez à sélectionner **afficher les packages** en préversion pour inclure c
 
 > [!IMPORTANT]
 > Remarque : Azure ADAL 3,0 est actuellement une version préliminaire et il peut y avoir des modifications avec rupture avant la publication de la version finale. 
-
 
 ![](graph-images/06.-adal-nuget-package.jpg "Ajouter une référence à Azure Active Directory bibliothèque d’authentification (Azure ADAL)")
 
@@ -71,7 +70,6 @@ Dans le cas d’Android ou d’iOS, nous `this` passons `AuthorizationParameters
 ### <a name="handle-continuation-for-android"></a>Gestion de la continuation pour Android
 
 Une fois l’authentification terminée, le Flow doit revenir à l’application. Dans le cas d’Android, il est géré par le code suivant, qui doit être ajouté à **MainActivity.cs**:
-
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -118,4 +116,3 @@ request.Headers.Authorization =
 var response = await client.SendAsync(request);
 var content = await response.Content.ReadAsStringAsync();
 ```
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbe1b374b97f64e0c28b2f89ca9f6d510511b74d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282428"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768845"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Présentation de la boîte de dialogue MonoTouch. Xamarin. iOS
 
@@ -57,7 +57,6 @@ MT. D simplifie cela en encapsulant tout ce code dans une API générique pour l
 - **API d’éléments de bas niveau** : l' *API Elements* est basée sur la création d’une arborescence d’éléments qui représentent des écrans et leurs composants. L’API Elements offre aux développeurs le plus de flexibilité et de contrôle dans la création d’interfaces utilisateur. En outre, l’API Elements a une prise en charge avancée de la définition déclarative via JSON, ce qui permet une déclaration extrêmement rapide, ainsi qu’une génération dynamique d’interface utilisateur à partir d’un serveur. 
 - **API de réflexion de haut niveau** : également connu sous le *liaison* *API* , dans les classes sont annotées avec des indications d’interface utilisateur, puis le serveur cible maître. D automatiquement crée des écrans basés sur les objets et fournit une liaison entre ce qui est affichée (et éventuellement modifiée) sur l’écran, et l’objet sous-jacent sauvegarde. L’exemple ci-dessus illustre l’utilisation de l’API de réflexion. Cette API ne fournit pas le contrôle affiné que fait l’API Elements, mais elle réduit encore davantage la complexité en générant automatiquement la hiérarchie d’éléments en fonction des attributs de classe. 
 
-
 MT. D est compressé avec un grand nombre d’éléments d’interface utilisateur intégrés pour la création d’écran, mais il reconnaît également la nécessité d’éléments personnalisés et de dispositions d’écran avancées. Par conséquent, l’extensibilité est une première classe intégrée à l’API. Les développeurs peuvent étendre les éléments existants ou en créer de nouveaux, puis s’intégrer en toute transparence.
 
 En outre, MT. D possède un certain nombre de fonctionnalités d’expérience utilisateur iOS communes intégrées, telles que la prise en charge de l’extraction vers l’actualisation, le chargement d’images asynchrones et la prise en charge de la recherche.
@@ -82,7 +81,6 @@ MT. D génère des écrans à l’aide des quatre parties suivantes :
 - **RootElement**
 - **Section**
 - **Élément**
-
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
@@ -249,7 +247,6 @@ Elle est initialisée avec trois valeurs :
 - Texte d’espace réservé (il s’agit du texte grisé qui fournit une indication à l’utilisateur). 
 - Valeur du texte.
 
-
 L’espace réservé et la valeur peuvent être null. Toutefois, la légende est requise.
 
 À tout moment, l’accès à sa propriété Value peut récupérer la valeur de `EntryElement`.
@@ -260,7 +257,6 @@ En outre, `KeyboardType` la propriété peut être définie au moment de la cré
 - Phone
 - URL
 - Messagerie
-
 
 ### <a name="boolean-element"></a>Élément booléen
 
@@ -427,7 +423,6 @@ La recherche va modifier le contenu de la vue au fur et à mesure que l’utilis
 - `FinishSearch`
 - `PerformFilter`
 
-
 Le système étant extensible, vous pouvez modifier ce comportement si vous le souhaitez.
 
 ### <a name="background-image-loading"></a>Chargement de l’image d’arrière-plan
@@ -575,7 +570,6 @@ La façon dont vous informez l’utilisateur d’une erreur est spécifique à l
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a traité de nombreuses informations sur les dialogues monotactiles. Il a abordé les principes de base du fonctionnement de l’MT. D fonctionne et traite des différents composants qui composent le MT. E. Elle a également montré la vaste gamme d’éléments et de personnalisations de table prise en charge par MT. D et a abordé la manière dont MT. D peut être étendu avec des éléments personnalisés. En outre, il a expliqué la prise en charge de JSON dans MT. D, qui permet de créer dynamiquement des éléments à partir de JSON.
-
 
 ## <a name="related-links"></a>Liens associés
 

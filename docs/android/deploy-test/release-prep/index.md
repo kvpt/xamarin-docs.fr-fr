@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: b3e34022af4e83b172b7ae7cedfb13e95e92beba
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119632"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756118"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
@@ -92,7 +92,6 @@ Ces valeurs peuvent être définies dans la section **Générer > Application A
 ## <a name="shrink-the-apk"></a>Réduire l’APK
 
 La taille des APK Xamarin.Android peut être réduite par une combinaison de l’éditeur de liens Xamarin.Android, qui supprime le code *managé* inutile, et l’outil *ProGuard* du kit Android SDK, qui supprime le *bytecode Java* non utilisé. Le processus de génération commence par utiliser l’éditeur de liens Xamarin.Android pour optimiser l’application au niveau du code managé (C#), puis il utilise ProGuard (s’il est activé) pour optimiser l’APK au niveau du bytecode Java.
-
 
 ### <a name="configure-the-linker"></a>Configurer l'éditeur de liens
 
@@ -229,7 +228,6 @@ L’option **Compilation AOT** requiert une licence Entreprise ou supérieure. *
 
 Le _compilateur d’optimisation LLVM_ crée du code compilé plus petit et plus rapide et convertit en code natif les assembys compilés en AOT, mais au détriment de la vitesse de génération qui est plus lente. Le compilateur LLVM est désactivé par défaut. Pour utiliser le compilateur LLVM, l’option **Compilation AOT** doit être activée au préalable (sur la page [Propriétés de création de packages](#Set_Packaging_Properties)).
 
-
 > [!NOTE]
 > L’option **Compilateur d’optimisation LLVM** requiert une licence Entreprise.  
 
@@ -364,7 +362,6 @@ Dans cet exemple, le **Gestionnaire d’archives** répertorie une seule applica
 Vous pouvez y sélectionner le canal de distribution :
 
 - **Ad-Hoc** &ndash; Enregistre un APK signé sur disque de manière à pouvoir en charger une version test sur des appareils Android. Poursuivez avec [Signature du paquet d’application](~/android/deploy-test/signing/index.md) pour apprendre à créer une identité de signature Android, à créer un certificat de signature pour les applications Android et à publier une version &ldquo;ad hoc&rdquo; de l’application sur disque. Il s’agit d’un bon moyen de créer un APK de test.
-
 
 - **Google Play** &ndash; Publie un APK signé sur Google Play.
     Poursuivez avec [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md) pour apprendre comment signer et publier un APK sur Google Play Store.

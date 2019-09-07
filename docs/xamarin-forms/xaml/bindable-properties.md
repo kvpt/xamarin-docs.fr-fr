@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: 59ec82c222208ff0e73b0b7b5226d416d3a53398
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 50efd6b37d70fa835436c28c73b3d4f9fc6c7c83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656599"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758095"
 ---
 # <a name="bindable-properties"></a>Propriétés pouvant être liées
 
@@ -221,7 +221,6 @@ Le `defaultValueCreator` paramètre est défini sur un `Func` qui appelle le [ `
 ## <a name="summary"></a>Récapitulatif
 
 Cet article propose une introduction à propriétés pouvant être liées et vous a montré comment créer et de les consommer. Une propriété est un type spécial de propriété, où la valeur de propriété est suivie par le système de propriétés de Xamarin.Forms.
-
 
 ## <a name="related-links"></a>Liens associés
 

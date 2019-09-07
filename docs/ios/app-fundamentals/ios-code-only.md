@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d1464ca3accf53a9362d00e279ff9e158d7e34d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b829cf3f440b1c94c5232d258c86b6ea4b0f181
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281635"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767512"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Création d’interfaces utilisateur iOS dans le code dans Xamarin.iOS
 
@@ -59,16 +59,13 @@ Le modèle de projet vide ajoute 4 fichiers au projet :
 1. **Info.plist** -fichier de liste de propriétés qui contient des informations de configuration d’application.
 1. **Entitlements.plist** – fichier de liste de propriétés qui contient des informations sur les fonctionnalités et les autorisations de l’application.
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>modèles d’iOS
 
-
 Visual Studio pour Mac ne fournit pas d’un modèle vide. Tous les modèles sont fournis avec une prise en charge de table de montage séquentiel, qui recommande d’Apple en tant que le principal moyen de créer une interface utilisateur. Toutefois, il est possible de créer votre interface utilisateur entièrement en code.
 
 Les étapes ci-dessous vous guident lors de la suppression de la table de montage séquentiel à partir d’une application :
-
 
 1. Utilisez le modèle d’application avec affichage unique pour créer un nouveau projet d’iOS :
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: adabf66e008dc2f49d7787d62ebad8aadf263ac7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ec63162a21333d0ff831ded1ab17a3d8bb0efaa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290574"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769378"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Notifications utilisateur améliorées dans Xamarin. iOS
 
@@ -360,7 +360,6 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 Pour mettre à jour une notification existante, il vous suffit de créer une nouvelle notification avec les paramètres souhaités modifiés (par exemple, une nouvelle heure de déclenchement) et de l’ajouter au système avec le même identificateur de demande que la notification qui doit être modifiée. Exemple :
 
-
 ```csharp
 using UserNotifications;
 ...
@@ -664,8 +663,6 @@ Ce code déchiffre le contenu chiffré à partir de `encrypted-content` la clé,
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé tous les modes d’amélioration de la notification des utilisateurs par iOS 10. Il a présenté la nouvelle infrastructure de notification utilisateur et comment l’utiliser dans une application Xamarin. iOS ou une extension d’application.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

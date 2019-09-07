@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eb944b062f75ceec8ca8dbe22cde64b0fdd15625
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288670"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752952"
 ---
 # <a name="healthkit-in-xamarinios"></a>HealthKit dans Xamarin. iOS
 
@@ -43,9 +43,6 @@ Les éléments suivants sont requis pour effectuer les étapes présentées dans
 > [!IMPORTANT]
 > Le kit de contrôle d’intégrité a été introduit dans iOS 8. Actuellement, le kit de contrôle d’intégrité n’est pas disponible sur le simulateur iOS et le débogage nécessite une connexion à un appareil iOS physique.
 
-
-
-
 ## <a name="creating-and-provisioning-a-health-kit-app"></a>Création et configuration d’une application de kit de contrôle d’intégrité
 Pour qu’une application Xamarin iOS 8 puisse utiliser l’API HealthKit, elle doit être correctement configurée et approvisionnée. Cette section décrit les étapes nécessaires à la configuration correcte de votre application Xamarin.
 
@@ -66,16 +63,14 @@ Pour plus d’informations sur la configuration d’une application iOS, consult
 La création d’un **ID d’application** explicite et d’un **profil de provisionnement** approprié s’effectue dans le centre de [développement iOS](https://developer.apple.com/devcenter/ios/index.action)d’Apple. 
 
 Vos **ID d’application** actuels sont répertoriés dans la section [certificats, identificateurs & profils](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) du centre de développement. Souvent, cette liste indique les valeurs d’ID `*`de, indiquant que le**nom** de l' **ID** - d’application peut être utilisé avec un nombre quelconque de suffixes. Ces *ID d’application générique* ne peuvent pas être utilisés avec le kit de contrôle d’intégrité.
- 
-Pour créer un **ID d’application**explicite, cliquez **+** sur le bouton en haut à droite pour ouvrir la page **inscrire l’ID d’application iOS** :
 
+Pour créer un **ID d’application**explicite, cliquez **+** sur le bouton en haut à droite pour ouvrir la page **inscrire l’ID d’application iOS** :
 
 [![](healthkit-images/image02.png "Inscription d’une application sur le portail des développeurs Apple")](healthkit-images/image02.png#lightbox)
 
 Comme indiqué dans l’image ci-dessus, après avoir créé une description d’application, utilisez la section **ID d’application explicite** pour créer un ID pour votre application. Dans la section **app services** , cochez **Health Kit** dans la section **activer les services** .
 
 Lorsque vous avez terminé, appuyez sur le bouton **Continuer** pour enregistrer l' **ID d’application** dans votre compte. Vous serez redirigé vers la page **certificats, identificateurs et profils** . Cliquez sur **Configuration des profils** pour afficher la liste de vos profils de provisionnement actuels, puis cliquez sur le **+** bouton situé dans l’angle supérieur droit pour vous connecter à la page Ajouter un profil d' **approvisionnement iOS** . Sélectionnez l’option **développement d’applications iOS** , puis cliquez sur **Continuer** pour accéder à la page Sélectionner l’ID de l' **application** . Ici, sélectionnez l' **ID d’application** explicite que vous avez spécifié précédemment :
-
 
 [![](healthkit-images/image03.png "Sélectionner l’ID d’application explicite")](healthkit-images/image03.png#lightbox)
 
@@ -171,7 +166,6 @@ Plus tard, l’utilisateur peut modifier les autorisations à l’aide de la bo�
 ### <a name="permissions-walkthrough"></a>Procédure pas à pas
 
 Dans votre projet approvisionné par le kit d’intégrité, ouvrez le `AppDelegate.cs` fichier. Remarquez l' `HealthKit`instruction à l’aide de ; en haut du fichier.
-
 
 Le code suivant est relatif aux autorisations du kit de contrôle d’intégrité :
 
@@ -410,11 +404,9 @@ Attachez un appareil de développement iOS 8 correctement approvisionné à votr
 
 En supposant que les provisions ont été correctement définies, votre application démarre. Lorsqu’il atteint sa `OnActivated` méthode, il demande l’autorisation du kit de contrôle d’intégrité. La première fois que cette opération est rencontrée par le système d’exploitation, l’utilisateur reçoit la boîte de dialogue suivante :
 
-
 [![](healthkit-images/image12.png "Cette boîte de dialogue s’affiche pour l’utilisateur")](healthkit-images/image12.png#lightbox)
 
 Activez votre application pour mettre à jour les données de fréquence cardiaque et votre application réapparaîtra. Le `ReactToHealthCarePermissions` rappel est activé de façon asynchrone. La `HeartRateModel’s` `EnabledChanged` `HKPermissionsViewController.OnEnabledChanged()` `StoreData` propriété est alors modifiée, ce qui déclenche l’événement, ce qui entraîne l’exécution du gestionnaire d’événements, ce qui active le bouton. `Enabled` Le diagramme suivant illustre la séquence :
-
 
 [![](healthkit-images/image13.png "Ce diagramme illustre la séquence d’événements")](healthkit-images/image13.png#lightbox)
 

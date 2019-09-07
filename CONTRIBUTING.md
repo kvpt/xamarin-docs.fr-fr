@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118912"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751921"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -32,10 +32,8 @@ Pour apporter des corrections et des mises à jour mineures, vous pouvez cliquer
 
 6. Les personnes chargées de la maintenance fusionneront votre demande de tirage une fois que les commentaires auront été appliqués et que votre modification sera correcte. Elle apparaîtra sur docs.microsoft.com peu après.
 
-
 > [!NOTE]
 > Si votre demande de tirage répond à un problème existant, ajoutez le mot clé `Fixes #Issue_Number` au message de validation ou à la description de la demande de tirage. Le problème pourra ainsi être clôturé automatiquement dès que la demande de tirage aura été fusionnée. Pour plus d’informations, consultez [Closing issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
-
 
 ### <a name="big-changes-or-new-content"></a>Changements importants ou nouveau contenu
 
@@ -80,5 +78,3 @@ Voici une courte liste de règles directrices que vous devez garder à l’espri
 
 > [!NOTE]
 > Vous remarquerez peut-être que certaines rubriques ne respectent pas toutes les recommandations spécifiées ici et dans le [guide de style](contributing-guidelines/template.md). Nous travaillons actuellement à une cohérence globale du site. 
-
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 92ad0353268c414a1394e98a7b2d23d23dc4df07
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b80573a728e1868254b5a89254ebc385b3baa12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285377"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768074"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement d’applications Watchos sur l’App Store
 
@@ -82,7 +82,6 @@ Au moins une capture d’écran est requise, jusqu’à cinq peut être envoyée
 Ils doivent être 312x390 pixels et démontrer votre application Watch en action.
 Vous pouvez utiliser le simulateur Watch 42mm Watch pour prendre des captures d’écran à cette taille.
 
-
 <a name="xamarin_studio" />
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio pour Mac
@@ -128,7 +127,6 @@ Xcode affiche automatiquement les archives créées dans Visual Studio pour Mac.
    [![](appstore-images/itc-prerelease-sml.png "Page de configuration des applications dans iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 Vous pouvez ensuite soumettre l’application pour approbation sur la page **versions** . Pour plus d’informations, reportez-vous à la présentation de la [distribution d’applications iOS](~/ios/deploy-test/app-distribution/index.md) .
-
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -179,10 +177,7 @@ Vérifiez que vous disposez de la dernière version de Visual Studio pour Mac, e
 > [!IMPORTANT]
 > Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend **29x29@3x** une image de pixel 88x88 pour l’image (qui doit être 87x87 pixels).
 
-
 Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
-
-
 
 ### <a name="invalid-watchkit-support"></a>Prise en charge WatchKit non valide
 
@@ -198,10 +193,7 @@ Ensure you are using the latest version of Xcode and Xamarin's tools.
 > [!IMPORTANT]
 > Vous devez **Archiver** votre application dans Visual Studio pour Mac puis basculer vers Xcode 6.2 + pour valider et charger iTunes Connect.
 
-
 Utilisez le canal Xamarin stable et Xcode 6.2 +.
-
-
 
 ### <a name="invalid-provisioning-profile"></a>Profil d’approvisionnement non valide
 
@@ -261,8 +253,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 ```
 
 Cette erreur est probablement due au fait que vous avez renommé votre installation Xcode à partir de **Xcode. app**. Par exemple, cette erreur se produit si vous renommez votre installation de **Xcode 6.2. app**.
-
-
 
 ## <a name="related-links"></a>Liens associés
 
