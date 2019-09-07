@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b84150c8fdca04a9b21c28d126d221d2a9bc5a3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291572"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769257"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>Utilisation de la navigation tvOS et focus dans Xamarin
 
 _Cet article traite du concept de focus et de la façon dont il est utilisé pour présenter et gérer la navigation à l’intérieur d’une application Xamarin. tvOS._
-
 
 Cet article traite du concept de [focus](#Focus-and-Selection) et de la façon dont il est utilisé pour gérer la [navigation](#Navigation) dans une interface utilisateur de l’application Xamarin. tvOS. Nous allons examiner comment les contrôles de navigation tvOS intégrés utilisent le focus, la mise en surbrillance et la sélection pour fournir la navigation de l’interface utilisateur de votre application Xamarin. tvOS.
 
@@ -125,9 +124,6 @@ Pour demander que le moteur de focus repasse le focus `PreferredFocusedView` à 
 > [!IMPORTANT]
 > L' `SetNeedsUpdateFocus` appel à n’a d’effet que si le contrôleur d’affichage sur lequel il est appelé contient la vue qui a actuellement le focus.
 
-
-
-
 <a name="Working-with-Focus-Guides" />
 
 ### <a name="working-with-focus-guides"></a>Utilisation des repères de focus
@@ -139,7 +135,7 @@ Toutefois, il peut y avoir des cas, en raison de la nécessité de la conception
 Pour obtenir un exemple, prenez la disposition d’interface utilisateur suivante :
 
  [![](navigation-focus-images/guide01.png "Exemple d’utilisation de repères de focus")](navigation-focus-images/guide01.png#lightbox)
- 
+
 Étant donné que le bouton **plus d’informations** ne se trouve pas sur une grille horizontale et verticale avec le bouton **acheter** , il n’est pas accessible à l’utilisateur. Toutefois, cela peut être facilement corrigé à l’aide d’un _repère de focalisation_ pour fournir des indications de déplacement au moteur de focalisation. 
 
 Un guide de focus`UIFocusGuide`() expose une zone non visible de la vue comme pouvant se concentrer sur le moteur de focus, ce qui permet de rediriger le focus vers une autre vue.
@@ -277,9 +273,6 @@ Si cette propriété a la `true`valeur, la vue d’image obtiendra automatiqueme
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé le concept de focus et la façon dont il est utilisé pour gérer la navigation dans une interface utilisateur de l’application Xamarin. tvOS. Il examine comment les contrôles de navigation tvOS intégrés utilisent le focus, la mise en surbrillance et la sélection pour assurer la navigation. Ensuite, il a vu comment le focus peut être utilisé avec la parallaxe et les images superposées pour fournir des indices visuels pour l’état de navigation actuel à l’utilisateur final. Enfin, il a examiné l’utilisation du focus, le focus des mises à jour, le focus dans les collections et l’activation de la parallaxe.
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

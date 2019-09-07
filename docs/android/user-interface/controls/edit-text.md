@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: a937de27fc032b0d88dfdf717339b47e0df8e58d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e8ffe337e1f5c74bc348b9600a466f1232f40b0b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644635"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758832"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-modifier le texte
 
@@ -52,20 +52,19 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-En outre, ajoutez l’instruction `using` suivante en haut de **MainActivity.cs** si elle n’est pas déjà présente:
+En outre, ajoutez l’instruction `using` suivante en haut de **MainActivity.cs** si elle n’est pas déjà présente :
 
 ```csharp
 using Android.Views;
 ```
 
-Cet exemple de code montre l’élément [EDITTEXT](xref:Android.Widget.EditText) de la disposition et [ajoute un gestionnaire](xref:Android.Views.View.KeyPress) d’activation de clé qui définit l’action à effectuer lorsqu’une touche est enfoncée alors que le widget a le focus. Dans ce cas, la méthode est définie pour écouter la touche **entrée** (lorsqu’elle est exploitée), puis afficher un message [Toast](xref:Android.Widget.Toast) avec le texte entré. Notez que la propriété [gérée](xref:Android.Views.View.KeyEventArgs.Handled) doit toujours être `true` si l’événement a été géré. Cela est nécessaire pour empêcher la propagation de l’événement (ce qui entraînerait un retour chariot dans le champ de texte).
+Cet exemple de code montre l’élément [EDITTEXT](xref:Android.Widget.EditText) de la disposition et [ajoute un gestionnaire d’activation de clé](xref:Android.Views.View.KeyPress) qui définit l’action à effectuer lorsqu’une touche est enfoncée alors que le widget a le focus. Dans ce cas, la méthode est définie pour écouter la touche **entrée** (lorsqu’elle est exploitée), puis afficher un message [Toast](xref:Android.Widget.Toast) avec le texte entré. Notez que la propriété [gérée](xref:Android.Views.View.KeyEventArgs.Handled) doit toujours être `true` si l’événement a été géré. Cela est nécessaire pour empêcher la propagation de l’événement (ce qui entraînerait un retour chariot dans le champ de texte).
 
-Exécutez l’application et entrez du texte dans le champ de texte. Lorsque vous appuyez sur la touche **entrée** , le Toast s’affiche comme indiqué sur la droite:
+Exécutez l’application et entrez du texte dans le champ de texte. Lorsque vous appuyez sur la touche **entrée** , le Toast s’affiche comme indiqué sur la droite :
 
 [![Exemples d’entrée de texte dans EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
 *Certaines parties de cette page sont des modifications basées sur le travail créé et* [*partagé par le projet open source Android*](http://code.google.com/policies.html) *et utilisés conformément aux termes décrits dans le* [*Licence d’attribution Creative-2,5*](http://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le* [*didacticiel de formulaire Android*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
-
 
 ## <a name="related-links"></a>Liens associés
 

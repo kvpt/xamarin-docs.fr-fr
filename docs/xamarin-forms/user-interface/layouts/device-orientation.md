@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d988be9163c0a6e12735425a139c03d9641fa95c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656789"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772766"
 ---
 # <a name="device-orientation"></a>Orientation de l’appareil
 
@@ -225,7 +225,6 @@ Notez les points suivants :
 
 - `outerStack` est ajustée pour présenter l’image et les contrôles comme une pile horizontale ou verticale en fonction de l’orientation, pour tirer le meilleur parti de l’espace disponible.
 
-
 ### <a name="absolutelayout"></a>DispositionAbsolue
 
 Tenez compte de l’application suivante, affichée en portrait :
@@ -277,7 +276,6 @@ Notez les points suivants :
 
 - En raison de la façon dont la page a été disposée, il est inutile pour le code de procédure pour introduire la réactivité.
 - Le `ScrollView` est utilisé pour permettre à l’étiquette soit visible, même lorsque la hauteur de l’écran est inférieure à la somme des hauteurs des boutons et l’image fixes.
-
 
 ### <a name="relativelayout"></a>RelativeLayout
 
@@ -471,7 +469,6 @@ protected override void OnSizeAllocated (double width, double height){
 Notez les points suivants :
 
 - En raison de la façon dont la page a été disposée, il existe une méthode pour modifier la position de grille des contrôles.
-
 
 ## <a name="related-links"></a>Liens associés
 

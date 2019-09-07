@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 63530595d9892ed99b7eace3d248e1bc0d0b37d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f0cc04896b5c6e9b620b24c84d5c9d2a09b9cf4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288401"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752635"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Achats dans l’application dans Xamarin. iOS
 
@@ -55,7 +55,6 @@ Cet article a introduit le concept d’achats dans l’application, a expliqué 
 - **Kit de magasin** : explication des classes utilisées pour générer des fonctionnalités d’achat dans l’application.
 - **Codage de votre application pour l’achat** – exemples de création d’un achat dans l’application dans une application Xamarin. iOS.
 - **Création de rapports** : vue d’ensemble des statistiques disponibles via iTunes Connect.
-
 
 ## <a name="related-links"></a>Liens associés
 

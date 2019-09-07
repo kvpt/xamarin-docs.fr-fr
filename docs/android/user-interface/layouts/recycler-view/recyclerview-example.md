@@ -7,39 +7,38 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: ca80dc9a064e81d9b81b1cd53237df818d409576
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 0c6568f9283491f0e55c79c77fb8efb2ae75f33c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887542"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758618"
 ---
 # <a name="a-basic-recyclerview-example"></a>Exemple de RecyclerView de base
 
-Pour comprendre comment `RecyclerView` fonctionne dans une application classique, cette rubrique explore l’exemple d’application [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer) , un exemple de code simple `RecyclerView` qui utilise pour afficher une grande collection de photos: 
+Pour comprendre comment `RecyclerView` fonctionne dans une application classique, cette rubrique explore l’exemple d’application [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer) , un exemple de code simple `RecyclerView` qui utilise pour afficher une grande collection de photos : 
 
 [![Deux captures d’écran d’une application RecyclerView qui utilise CardViews pour afficher des photos](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
 **RecyclerViewer** utilise [CardView](~/android/user-interface/controls/card-view.md) pour implémenter chaque élément photo dans `RecyclerView` la disposition. En raison `RecyclerView`des avantages en termes de performances de, cet exemple d’application est en mesure de faire défiler rapidement une grande collection de photos et sans retards perceptibles.
 
-
 ### <a name="an-example-data-source"></a>Exemple de source de données
 
-Dans cet exemple d’application, une source de données «album photo» (représentée `PhotoAlbum` par la classe `RecyclerView` ) fournit le contenu de l’élément.
-`PhotoAlbum`est une collection de photos avec des légendes; Lorsque vous l’instanciez, vous bénéficiez d’une collection de photos 32 prête à l’emploi:
+Dans cet exemple d’application, une source de données « album photo » (représentée `PhotoAlbum` par la classe `RecyclerView` ) fournit le contenu de l’élément.
+`PhotoAlbum`est une collection de photos avec des légendes ; Lorsque vous l’instanciez, vous bénéficiez d’une collection de photos 32 prête à l’emploi :
 
 ```csharp
 PhotoAlbum mPhotoAlbum = new PhotoAlbum ();
 ```
 
-Chaque instance de photo `PhotoAlbum` dans expose des propriétés qui vous permettent de lire son ID de `PhotoID`ressource d’image,, et `Caption`sa chaîne de légende,. La collection de photos est organisée de telle sorte que chaque photo est accessible par un indexeur. Par exemple, les lignes de code suivantes accèdent à l’ID de ressource d’image et à la légende de la dixième photo dans la collection:
+Chaque instance de photo `PhotoAlbum` dans expose des propriétés qui vous permettent de lire son ID de `PhotoID`ressource d’image,, et `Caption`sa chaîne de légende,. La collection de photos est organisée de telle sorte que chaque photo est accessible par un indexeur. Par exemple, les lignes de code suivantes accèdent à l’ID de ressource d’image et à la légende de la dixième photo dans la collection :
 
 ```csharp
 int imageId = mPhotoAlbum[9].ImageId;
 string caption = mPhotoAlbum[9].Caption;
 ```
 
-`PhotoAlbum`fournit également une `RandomSwap` méthode que vous pouvez appeler pour permuter la première photo de la collection avec une photo choisie de manière aléatoire ailleurs dans la collection:
+`PhotoAlbum`fournit également une `RandomSwap` méthode que vous pouvez appeler pour permuter la première photo de la collection avec une photo choisie de manière aléatoire ailleurs dans la collection :
 
 ```csharp
 mPhotoAlbum.RandomSwap ();
@@ -47,10 +46,9 @@ mPhotoAlbum.RandomSwap ();
 
 Étant donné que les détails `PhotoAlbum` d’implémentation de ne sont `RecyclerView`pas pertinents `PhotoAlbum` pour la compréhension, le code source n’est pas présenté ici. Le code `PhotoAlbum` source est disponible sur [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) dans l’exemple d’application [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer) .
 
-
 ### <a name="layout-and-initialization"></a>Disposition et initialisation
 
-Le fichier de disposition, **main. AXML**, se compose d' `RecyclerView` un unique `LinearLayout`dans un:
+Le fichier de disposition, **main. AXML**, se compose d' `RecyclerView` un unique `LinearLayout`dans un :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +64,7 @@ Le fichier de disposition, **main. AXML**, se compose d' `RecyclerView` un uniqu
 </LinearLayout>
 ```
 
-Notez que vous devez utiliser le nom complet **Android. support. v7. widget. RecyclerView** , car `RecyclerView` est empaqueté dans une bibliothèque de prise en charge. La `OnCreate` méthode d' `MainActivity` initialise cette disposition, instancie l’adaptateur et prépare la source de données sous-jacente:
+Notez que vous devez utiliser le nom complet **Android. support. v7. widget. RecyclerView** , car `RecyclerView` est empaqueté dans une bibliothèque de prise en charge. La `OnCreate` méthode d' `MainActivity` initialise cette disposition, instancie l’adaptateur et prépare la source de données sous-jacente :
 
 ```csharp
 public class MainActivity : Activity
@@ -96,7 +94,7 @@ public class MainActivity : Activity
         mRecyclerView.SetAdapter (mAdapter);
 ```
 
-Ce code effectue les opérations suivantes:
+Ce code effectue les opérations suivantes :
 
 1. Instancie la `PhotoAlbum` source de données.
 
@@ -109,7 +107,7 @@ Ce code effectue les opérations suivantes:
 
 ### <a name="layout-manager"></a>Gestionnaire de disposition
 
-Chaque élément de la `RecyclerView` est constitué d’un `CardView` qui contient une image de photo et une légende de photo (les détails sont couverts dans la section [afficher le détenteur](#view-holder) ci-dessous). Le prédéfini `LinearLayoutManager` est utilisé pour disposer chaque `CardView` dans une disposition de défilement vertical:
+Chaque élément de la `RecyclerView` est constitué d’un `CardView` qui contient une image de photo et une légende de photo (les détails sont couverts dans la section [afficher le détenteur](#view-holder) ci-dessous). Le prédéfini `LinearLayoutManager` est utilisé pour disposer chaque `CardView` dans une disposition de défilement vertical :
 
 ```csharp
 mLayoutManager = new LinearLayoutManager (this);
@@ -124,12 +122,12 @@ Au lieu d’utiliser la prédéfinie `LinearLayoutManager`, vous pouvez intégre
 
 ### <a name="view-holder"></a>Afficher le détenteur
 
-La classe du détenteur de la `PhotoViewHolder`vue est appelée. Chaque `PhotoViewHolder` instance contient des références à `ImageView` l' `TextView` objet et d’un élément de ligne associé, qui est présenté `CardView` dans un comme diagramme ici:
+La classe du détenteur de la `PhotoViewHolder`vue est appelée. Chaque `PhotoViewHolder` instance contient des références à `ImageView` l' `TextView` objet et d’un élément de ligne associé, qui est présenté `CardView` dans un comme diagramme ici :
 
 [![Diagramme de CardView contenant un ImageView et un TextView](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
 `PhotoViewHolder`dérive de `RecyclerView.ViewHolder` et contient des propriétés pour stocker les `ImageView` références à `TextView` et affichées dans la disposition ci-dessus.
-`PhotoViewHolder`se compose de deux propriétés et d’un constructeur:
+`PhotoViewHolder`se compose de deux propriétés et d’un constructeur :
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -150,12 +148,11 @@ Dans cet exemple de code, `PhotoViewHolder` une référence à la vue de l’él
 
 Pour plus d’informations `RecyclerView.ViewHolder`sur, consultez la référence de la [classe RecyclerView. ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
-
 ### <a name="adapter"></a>Adaptateur
 
 L’adaptateur charge chaque `RecyclerView` ligne avec des données pour une photographie particulière. Pour une photographie donnée à la position de ligne *p*, par exemple, l’adaptateur localise les données associées à la position *p* dans la source de données et copie ces données vers l’élément de ligne à la position *p* dans la `RecyclerView` collection. L’adaptateur utilise le détenteur de la vue pour rechercher les références `ImageView` de `TextView` et à cette position afin qu’il n’ait pas à `FindViewById` appeler à plusieurs reprises pour ces vues lorsque l’utilisateur fait défiler la collection de photos et réutilise les vues.
 
-Dans **RecyclerViewer**, une classe d’adaptateur est dérivée `RecyclerView.Adapter` de `PhotoAlbumAdapter`pour créer:
+Dans **RecyclerViewer**, une classe d’adaptateur est dérivée `RecyclerView.Adapter` de `PhotoAlbumAdapter`pour créer :
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -170,7 +167,7 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-Le `mPhotoAlbum` membre contient la source de données (l’album photo) qui est passée dans le constructeur; le constructeur copie l’album photo dans cette variable membre. Les méthodes requises `RecyclerView.Adapter` suivantes sont implémentées:
+Le `mPhotoAlbum` membre contient la source de données (l’album photo) qui est passée dans le constructeur ; le constructeur copie l’album photo dans cette variable membre. Les méthodes requises `RecyclerView.Adapter` suivantes sont implémentées :
 
 - **`OnCreateViewHolder`** &ndash; Instancie le fichier de disposition de l’élément et le détenteur de l’affichage.
 
@@ -179,7 +176,6 @@ Le `mPhotoAlbum` membre contient la source de données (l’album photo) qui est
 - **`ItemCount`** &ndash; Retourne le nombre d’éléments dans la source de données.
 
 Le gestionnaire de disposition appelle ces méthodes pendant qu’il positionne des éléments `RecyclerView`dans le. L’implémentation de ces méthodes est examinée dans les sections suivantes.
-
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
@@ -224,7 +220,7 @@ Chaque élément de ligne est représenté par `CardView` un qui contient `Image
 ```
 
 Cette disposition représente un élément de ligne unique dans `RecyclerView`. La `OnBindViewHolder` méthode (décrite ci-dessous) copie les données de la source `ImageView` de `TextView` données dans et de cette disposition.
-`OnCreateViewHolder`déflate cette disposition pour un emplacement de photo donné dans `RecyclerView` et instancie une nouvelle `PhotoViewHolder` instance (qui localise et met en cache les `ImageView` références aux `TextView` vues enfants et dans la `CardView` mise en page associée):
+`OnCreateViewHolder`déflate cette disposition pour un emplacement de photo donné dans `RecyclerView` et instancie une nouvelle `PhotoViewHolder` instance (qui localise et met en cache les `ImageView` références aux `TextView` vues enfants et dans la `CardView` mise en page associée) :
 
 ```csharp
 public override RecyclerView.ViewHolder
@@ -243,10 +239,9 @@ public override RecyclerView.ViewHolder
 
 L’instance de conteneur d’affichage `vh`résultante,, est retournée à l’appelant (le gestionnaire de disposition).
 
-
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
-Quand le gestionnaire de disposition est prêt à afficher une vue particulière dans `RecyclerView`la zone visible de l’écran, il appelle la `OnBindViewHolder` méthode de l’adaptateur pour remplir l’élément à la position de ligne spécifiée avec le contenu de la source de données. `OnBindViewHolder`Obtient les informations de photo pour la position de ligne spécifiée (la ressource image de la photo et la chaîne pour la légende de la photo) et copie ces données dans les vues associées. Les vues sont localisées à l’aide de références stockées dans l’objet de conteneur d’affichage `holder` (qui est transmis par le biais du paramètre):
+Quand le gestionnaire de disposition est prêt à afficher une vue particulière dans `RecyclerView`la zone visible de l’écran, il appelle la `OnBindViewHolder` méthode de l’adaptateur pour remplir l’élément à la position de ligne spécifiée avec le contenu de la source de données. `OnBindViewHolder`Obtient les informations de photo pour la position de ligne spécifiée (la ressource image de la photo et la chaîne pour la légende de la photo) et copie ces données dans les vues associées. Les vues sont localisées à l’aide de références stockées dans l’objet de conteneur d’affichage `holder` (qui est transmis par le biais du paramètre) :
 
 ```csharp
 public override void
@@ -267,10 +262,9 @@ L’adaptateur charge la ressource d’image dans la vue référencée par la pr
 
 Notez que `OnBindViewHolder` est le code qui traite directement la structure des données. Dans ce cas, `OnBindViewHolder` comprend comment mapper la position `RecyclerView` de l’élément à l’élément de données qui lui est associé dans la source de données. Dans ce cas, le mappage est simple, car la position peut être utilisée comme index de tableau dans l’album photo. Toutefois, des sources de données plus complexes peuvent nécessiter du code supplémentaire pour établir un tel mappage.
 
-
 #### <a name="itemcount"></a>ItemCount
 
-La `ItemCount` méthode retourne le nombre d’éléments dans la collection de données. Dans l’exemple d’application de visionneuse photo, le nombre d’éléments est le nombre de photos dans l’album photo:
+La `ItemCount` méthode retourne le nombre d’éléments dans la collection de données. Dans l’exemple d’application de visionneuse photo, le nombre d’éléments est le nombre de photos dans l’album photo :
 
 ```csharp
 public override int ItemCount
@@ -281,10 +275,9 @@ public override int ItemCount
 
 Pour plus d’informations `RecyclerView.Adapter`sur, consultez la [référence de classe RecyclerView. adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
 
-
 ### <a name="putting-it-all-together"></a>Ensemble
 
-L’implémentation `RecyclerView` obtenue pour l’exemple d’application photo est `MainActivity` constituée de code qui crée la source de données, le gestionnaire de présentation et l’adaptateur. `MainActivity`crée l' `mRecyclerView` instance, instancie la source de données et l’adaptateur, et se connecte au gestionnaire de disposition et à l’adaptateur:
+L’implémentation `RecyclerView` obtenue pour l’exemple d’application photo est `MainActivity` constituée de code qui crée la source de données, le gestionnaire de présentation et l’adaptateur. `MainActivity`crée l' `mRecyclerView` instance, instancie la source de données et l’adaptateur, et se connecte au gestionnaire de disposition et à l’adaptateur :
 
 ```csharp
 public class MainActivity : Activity
@@ -313,7 +306,7 @@ public class MainActivity : Activity
 
 ```
 
-`PhotoViewHolder`localise et met en cache les références de vue:
+`PhotoViewHolder`localise et met en cache les références de vue :
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -330,7 +323,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-`PhotoAlbumAdapter`implémente les trois remplacements de méthode requis:
+`PhotoAlbumAdapter`implémente les trois remplacements de méthode requis :
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -365,11 +358,11 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-Lorsque ce code est compilé et exécuté, il crée l’application de visionnage de photos de base, comme illustré dans les captures d’écran suivantes:
+Lorsque ce code est compilé et exécuté, il crée l’application de visionnage de photos de base, comme illustré dans les captures d’écran suivantes :
 
 [![Deux captures d’écran de l’application d’affichage photo avec défilement vertical des cartes photo](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
-Si les ombres ne sont pas dessinées (comme indiqué dans la capture d’écran ci-dessus), modifiez **Properties/fichier AndroidManifest. xml** et `<application>` ajoutez le paramètre d’attribut suivant à l’élément:
+Si les ombres ne sont pas dessinées (comme indiqué dans la capture d’écran ci-dessus), modifiez **Properties/fichier AndroidManifest. xml** et `<application>` ajoutez le paramètre d’attribut suivant à l’élément :
 
 ```xml
 android:hardwareAccelerated="true"
@@ -377,18 +370,15 @@ android:hardwareAccelerated="true"
 
 Cette application de base ne prend en charge que l’exploration de l’album photo. Elle ne répond pas aux événements d’élément tactile et ne gère pas les modifications apportées aux données sous-jacentes. Cette fonctionnalité est ajoutée à [l’extension de l’exemple RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
 
-
-
-
 ### <a name="changing-the-layoutmanager"></a>Modification du LayoutManager
 
-En raison `RecyclerView`de la flexibilité de, il est facile de modifier l’application pour utiliser un autre gestionnaire de disposition. Dans l’exemple suivant, il est modifié pour afficher l’album photo avec une disposition en grille qui fait défiler horizontalement plutôt qu’avec une disposition linéaire verticale. Pour ce faire, l’instanciation du gestionnaire de disposition est modifiée `GridLayoutManager` pour utiliser le comme suit:
+En raison `RecyclerView`de la flexibilité de, il est facile de modifier l’application pour utiliser un autre gestionnaire de disposition. Dans l’exemple suivant, il est modifié pour afficher l’album photo avec une disposition en grille qui fait défiler horizontalement plutôt qu’avec une disposition linéaire verticale. Pour ce faire, l’instanciation du gestionnaire de disposition est modifiée `GridLayoutManager` pour utiliser le comme suit :
 
 ```csharp
 mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, false);
 ```
 
-Cette modification du code remplace la `LinearLayoutManager` verticale par `GridLayoutManager` un qui présente une grille composée de deux lignes qui défilent dans le sens horizontal. Quand vous compilez et exécutez à nouveau l’application, vous verrez que les photographies sont affichées dans une grille et que le défilement est horizontal plutôt que vertical:
+Cette modification du code remplace la `LinearLayoutManager` verticale par `GridLayoutManager` un qui présente une grille composée de deux lignes qui défilent dans le sens horizontal. Quand vous compilez et exécutez à nouveau l’application, vous verrez que les photographies sont affichées dans une grille et que le défilement est horizontal plutôt que vertical :
 
 [![Exemple de capture d’écran d’une application avec défilement horizontal des photos dans une grille](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
@@ -396,8 +386,6 @@ En ne modifiant qu’une seule ligne de code, il est possible de modifier l’ap
 Notez que ni le code de l’adaptateur ni le XML de disposition ne devaient être modifiés pour modifier le style de disposition. 
 
 Dans la rubrique suivante, [extension de l’exemple RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md), cet exemple d’application de base est étendu pour gérer les événements de `RecyclerView` clic d’élément et mettre à jour lorsque la source de données sous-jacente est modifiée.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

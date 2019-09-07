@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 366932e32443a7284f15f51a7a9a437d4b177438
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 730359824ec5a51a53261fbfc9519ac8560a77f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286250"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753071"
 ---
 # <a name="core-animation-in-xamarinios"></a>Animation principale dans Xamarin. iOS
 
@@ -44,7 +44,6 @@ Cette section traite des fonctionnalités d’animation UIKit, notamment :
 - Transitions entre les vues
 - Afficher l’animation des propriétés
 
-
 ### <a name="view-controller-transitions"></a>Transitions du contrôleur d’affichage
 
  `UIViewController`fournit la prise en charge intégrée pour la transition entre les contrôleurs `PresentViewController` d’affichage via la méthode. Lors de `PresentViewController`l’utilisation de, la transition vers le deuxième contrôleur peut éventuellement être animée.
@@ -62,7 +61,6 @@ Dans ce cas, `PartialCurl` une animation est utilisée, bien que plusieurs autre
 - `CoverVertical`: Diapositives à partir du bas de l’écran
 - `CrossDissolve`: L’ancienne vue disparaît en fondu & la nouvelle vue apparaît en fondu
 - `FlipHorizontal`-Retournement horizontal de droite à gauche. En cas de disparition, la transition s’inverse de gauche à droite.
-
 
 Pour animer la transition, `true` passez comme deuxième argument à `PresentViewController`:
 
@@ -106,7 +104,6 @@ UIKit prend en charge l’animation gratuite d’une variété `UIView` de propr
 - Alpha
 - Transformer
 - Color
-
 
 Ces animations se produisent implicitement en spécifiant des modifications `NSAction` de propriétés dans un délégué `UIView.Animate` passé à la méthode statique. Par exemple, le code suivant anime le point central d’un `UIImageView`:
 
@@ -233,7 +230,7 @@ Ce code modifie le `Position` de la couche en créant un tracé qui est ensuite 
 Les captures d’écran suivantes montrent la couche contenant l’image qui anime le chemin spécifié :
 
  ![](core-animation-images/12-explicit-animation.png "Cette capture d’écran montre la couche contenant l’image qui s’anime dans le chemin spécifié")
- 
+
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons examiné les fonctionnalités d’animation fournies par le biais des frameworks d' *animation centraux* . Nous avons examiné l’animation principale, en illustrant la façon dont elle alimente les animations dans UIKit et comment elle peut être utilisée directement pour le contrôle d’animation de niveau inférieur.

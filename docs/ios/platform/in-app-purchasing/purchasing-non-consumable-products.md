@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: aa478636b4ab94ab000fd98860646bfa300e9fab
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 50b26e1b37000df3e6cd96c8a3cd2f424dd4f1f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291315"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752661"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Achat de produits non-consommables dans Xamarin. iOS
 
@@ -21,47 +21,30 @@ Les produits non consommables sont « détenus » par le client. L’objectif 
 ## <a name="non-consumable-products-sample"></a>Exemple de produits non consommables
 
 Le [code InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit) contient un projet appelé « autres *biens*». L’exemple de code montre comment implémenter des produits non consommables à l’aide de filtres photo comme exemple. Une fois que vous avez acheté un filtre, vous pouvez l’appliquer à nouveau à la photo. Vous n’avez jamais besoin de le réacheter.   
-   
-   
-   
- Le processus d’achat est illustré dans cette série de captures d’écran : le bouton **acheter** devient le bouton d’activation des fonctionnalités :   
-   
-   
-   
+
+Le processus d’achat est illustré dans cette série de captures d’écran : le bouton **acheter** devient le bouton d’activation des fonctionnalités :   
+
  [![](purchasing-non-consumable-products-images/image34.png "Le processus d’achat est illustré dans cette série de captures d’écran")](purchasing-non-consumable-products-images/image34.png#lightbox)   
-   
-   
-   
- Le processus d’achat est identique à celui d’un produit consommable. la principale différence réside dans la façon dont l’achat est suivi dans le code de l’application. Dans cet exemple, le bouton acheter est disponible uniquement si le produit n’a pas déjà été acheté. sinon, le bouton active la fonctionnalité elle-même.   
-   
-   
-   
+
+Le processus d’achat est identique à celui d’un produit consommable. la principale différence réside dans la façon dont l’achat est suivi dans le code de l’application. Dans cet exemple, le bouton acheter est disponible uniquement si le produit n’a pas déjà été acheté. sinon, le bouton active la fonctionnalité elle-même.   
 
 Le diagramme suivant montre les interactions entre les classes et le serveur de l’App Store pour effectuer un achat de produit non consommable :   
-   
-   
-   
+
  [![](purchasing-non-consumable-products-images/image35.png "Interactions entre les classes et le serveur App Store pour effectuer un achat de produit non consommable")](purchasing-non-consumable-products-images/image35.png#lightbox)   
-   
-   
-   
- La principale différence par rapport à l’exemple consommable est que, une fois l’achat terminé, l’interface utilisateur est mise à jour pour empêcher la réachat. Dans cet exemple, la notification d’une transaction réussie met à jour l’interface utilisateur, de sorte que le bouton **acheter** est converti en un bouton qui active la fonctionnalité elle-même.
+
+La principale différence par rapport à l’exemple consommable est que, une fois l’achat terminé, l’interface utilisateur est mise à jour pour empêcher la réachat. Dans cet exemple, la notification d’une transaction réussie met à jour l’interface utilisateur, de sorte que le bouton **acheter** est converti en un bouton qui active la fonctionnalité elle-même.
 
 ## <a name="re-purchasing-non-consumable-products"></a>Réachat de produits non consommables
 
 Votre code doit normalement masquer ou réaffecter un bouton d’achat une fois que le produit a été acheté avec succès, afin d’empêcher l’utilisateur d’essayer d’acheter le produit. L’exemple d’application effectue cette opération en remplaçant le bouton **acheter** par le bouton qui permet de faire fonctionner l’exemple de filtre de photos.   
-   
-   
-   
- Dans certains cas, une application ne peut pas déterminer si un produit non utilisable a déjà été acheté :
+
+Dans certains cas, une application ne peut pas déterminer si un produit non utilisable a déjà été acheté :
 
 - Si une application est supprimée et réinstallée sur un appareil, tous les enregistrements d’achat sont supprimés (sauf si/jusqu’à ce que l’utilisateur effectue une restauration de sauvegarde). 
 - Si l’utilisateur a installé l’application sur deux (ou plus) appareils et effectue un achat sur l’un des appareils. Les autres appareils continuent à afficher le produit disponible à l’achat. 
 - Si un client tente de réacheter un produit non consommable dans ce cas, l’App Store réexécutera le produit sans frais. L’interface utilisateur s’affiche initialement pour effectuer un achat (par exemple, une alerte de confirmation s’affiche et l’ID Apple est requis). Toutefois, l’utilisateur voit un message le avertissant que le produit a déjà été acheté.  
-   
-   
-   
- Le chemin de code dans ce scénario est exactement le même qu’un achat régulier, les seules différences sont les suivantes :
+
+Le chemin de code dans ce scénario est exactement le même qu’un achat régulier, les seules différences sont les suivantes :
 
 - L’utilisateur n’est pas facturé à nouveau pour le produit.
 - L' `SKPaymentTransaction` objet passé à l’application aura une `OriginalTransaction` propriété qui fait référence à la transaction qui a été générée lors de l’achat initial du produit. 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: bd505e97ce4fcca2197f6c7da2de8411931900ab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525382"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753774"
 ---
 # <a name="publishing-independently"></a>Publication indépendante
 
@@ -29,18 +29,14 @@ Un nombre de licences est disponible pour le développement, le déploiement et 
 
 Visitez le site [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) pour télécharger l’édition Community ou pour en savoir plus sur l’achat des éditions Professional et Enterprise.
 
-
 ## <a name="allow-installation-from-unknown-sources"></a>Autoriser l'installation pour les sources inconnues
 
 Par défaut, Android empêche les utilisateurs de télécharger et d’installer des applications à partir d’emplacements autres que Google Play. Pour autoriser l’installation à partir de sources autres que des places de marché, un utilisateur doit activer le paramètre *Sources inconnues* sur un appareil avant d’installer une application. Ce paramètre peut se trouver sous **Paramètres > Sécurité**, comme illustré dans la capture d’écran suivante :
 
 [![Écran Paramètres de sécurité](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
-
 > [!IMPORTANT]
 > Certains fournisseurs réseau peuvent empêcher l’installation d’applications provenant de sources inconnues, indépendamment de ce paramètre.
-
-
 
 ## <a name="publishing-by-e-mail"></a>Publication par e-mail
 
@@ -50,11 +46,9 @@ Joindre l’APK de mise en production à un e-mail est un moyen simple et rapide
 
 Certes simple, la distribution par e-mail n’offre qu’une faible protection contre le piratage ou la distribution non autorisée. Elle doit être réservée aux situations dans lesquelles les destinataires de l’application sont peu nombreux et dignes de confiance pour ne pas distribuer l’application.
 
-
 ## <a name="publishing-by-web"></a>Publication par le web
 
 Il est possible de distribuer une application par un serveur web. L’application est chargée sur le serveur web, puis le lien de téléchargement est fourni aux utilisateurs. Quand un appareil Android accède à un lien, puis télécharge l’application, celle-ci est automatiquement installée une fois le téléchargement terminé.
-
 
 ## <a name="manually-installing-an-apk"></a>Installation manuelle d’un APK
 

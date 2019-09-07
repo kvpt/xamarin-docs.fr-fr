@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 106cadc6fef43c06597cf1e3b846bd48cecb6fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287051"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768308"
 ---
 # <a name="user-interfaces-in-ios"></a>Interfaces utilisateur dans iOS
 
@@ -35,7 +35,3 @@ Cet article aborde les nouveaux types de commentaires haptique disponibles dans 
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[Utilisation du thread d’interface utilisateur](~/ios/user-interface/ios-ui/ui-thread.md)
 
 Votre code doit uniquement apporter des modifications aux contrôles de l’interface utilisateur à partir du thread principal (ou de l’interface utilisateur). Les mises à jour de l’interface utilisateur qui se produisent sur un thread différent (par exemple, un rappel ou un thread d’arrière-plan) peuvent ne pas être rendues à l’écran ou peuvent même provoquer un blocage.
-
-
-
-

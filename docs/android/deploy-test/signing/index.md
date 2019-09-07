@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: 5bdd95409e71955b4f1549eece42b15cee38131a
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
-ms.translationtype: HT
+ms.openlocfilehash: 0a60031481f16a3a600cca090d39ec47cbb8ca9a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58506991"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756057"
 ---
 # <a name="signing-the-android-application-package"></a>Signature du paquet d’application Android
 
@@ -85,7 +85,6 @@ Par exemple, la procédure ci-dessus crée une nouvelle clé de signature à l�
 
 **~/Library/Developer/Xamarin/Keystore/chimp/chimp.keystore**
 
-
 > [!NOTE]
 > Veillez à sauvegarder le fichier du magasin de clés résultant et le mot de passe en lieu sûr, car ils ne sont pas inclus dans la solution. Si vous perdez votre fichier de magasin de clés (par exemple, suite à un changement d’ordinateur ou à la réinstallation de macOS), vous ne pourrez pas signer votre application avec le même certificat que les versions précédentes.
 
@@ -121,7 +120,6 @@ La capture d’écran suivante affiche un exemple de l’application prête à �
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-
 Comme nous le voyons ici, un nouveau certificat a été ajouté au magasin de clés. Pour publier une application sur Google Play, cliquez sur **Annuler** et accédez à la rubrique [Publication sur Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md).
 Sinon, cliquez sur **Suivant** pour publier l’application *ad-hoc* (en vue de sa distribution indépendante) comme illustré dans cet exemple :
 
@@ -150,8 +148,6 @@ Le Finder s’ouvre alors à l’emplacement du fichier APK signé :
 L’APK est prêt à être copié à partir du Finder et à être envoyé vers sa destination finale. Il est conseillé d’installer l’APK sur un appareil Android et de le tester avant sa distribution. Voir [Publication indépendante](~/android/deploy-test/publishing/publishing-independently.md) pour plus d’informations sur la publication d’un APK *ad-hoc*.
 
 -----
-
-
 
 ## <a name="next-steps"></a>Étapes suivantes
 

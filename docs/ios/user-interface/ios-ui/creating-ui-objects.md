@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: a153c6115605ca2a58df233186fa45d200d8b99f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287295"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768792"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Création d’objets d’interface utilisateur dans Xamarin. iOS
 
@@ -43,11 +43,11 @@ Pour commencer à créer votre interface utilisateur dans le concepteur iOS, dou
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
  [![](creating-ui-objects-images/image2b.png "Boîte à outils")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  [![](creating-ui-objects-images/image2b-vs.png "Panneau boîte à outils-Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 -----
 
 Lorsqu’un contrôle est sélectionné sur l’aire de conception, le **panneau Propriétés** affiche les attributs de ce contrôle. Le **Widget >** le champ nom de l’identité >, qui est renseigné dans la capture d’écran ci-dessous, est utilisé comme nom de *sortie* . Voici comment vous pouvez référencer le contrôle dans C#:
@@ -65,7 +65,7 @@ Pour ouvrir une table de montage séquentiel dans Xcode, cliquez avec le bouton 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
  [![](creating-ui-objects-images/imagexcode.png "Menu contextuel de Storyboard-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](creating-ui-objects-images/imagexcode-vs.png "Menu contextuel de Storyboard-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
@@ -168,8 +168,6 @@ Ces éléments de la classe partielle permettent à votre code de référencer l
 Le `designer.cs` fichier ne doit pas être modifié manuellement : l’IDE (Visual Studio pour Mac ou Visual Studio) est responsable de sa synchronisation avec le Storyboard.
 
 Lorsque des objets d’interface utilisateur sont ajoutés par programmation à `View` un `ViewController`ou à, vous instanciez et gérez les références de l’objet vous-même, et aucun fichier de concepteur n’est donc requis.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

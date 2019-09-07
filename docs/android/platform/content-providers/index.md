@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 2533ad80571e2c8fe94cb4a2dcb0ec0ff0dd68cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3dd321840c4be0729b843897ad51cf5bd2b61196
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643585"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758919"
 ---
 # <a name="intro-to-contentproviders"></a>Présentation de ContentProvider
 
 _Le système d’exploitation Android utilise des fournisseurs de contenu pour faciliter l’accès aux données partagées, telles que les fichiers multimédias, les contacts et les informations de calendrier. Cet article présente la classe ContentProvider et fournit deux exemples montrant comment l’utiliser._
-
 
 ## <a name="content-providers-overview"></a>Vue d’ensemble des fournisseurs de contenu
 
@@ -25,7 +24,7 @@ Un *ContentProvider* encapsule un référentiel de données et fournit une API p
 
 Une `ContentProvider` est également requise pour que votre application fournisse des suggestions de recherche personnalisées, ou si vous souhaitez fournir la possibilité de copier des données complexes à partir de votre application pour les coller dans d’autres applications. Ce document montre comment accéder à et générer `ContentProviders` avec Xamarin. Android.
 
-La structure de cette section est la suivante:
+La structure de cette section est la suivante :
 
 - **Fonctionnement** Vue d’ensemble de la `ContentProvider` conception de et de son fonctionnement. &ndash;
 
@@ -33,15 +32,13 @@ La structure de cette section est la suivante:
 
 - **Utilisation de ContentProvider pour partager des données** Écriture et utilisation d’un `ContentProvider` dans la même application. &ndash;
 
-`ContentProviders`et les curseurs qui fonctionnent sur leurs données sont souvent utilisés pour remplir des ListView. Pour plus d’informations sur l’utilisation de ces classes, reportez-vous au [Guide des ListViews et](~/android/user-interface/layouts/list-view/index.md) des adaptateurs.
+`ContentProviders`et les curseurs qui fonctionnent sur leurs données sont souvent utilisés pour remplir des ListView. Pour plus d’informations sur l’utilisation de ces classes, reportez-vous au [Guide des ListViews et des adaptateurs](~/android/user-interface/layouts/list-view/index.md) .
 
 `ContentProviders`exposée par Android (ou d’autres applications) est un moyen simple d’inclure des données provenant d’autres sources dans votre application. Elles vous permettent d’accéder à des données, telles que la liste de contacts, les photos ou les événements de calendrier et de les présenter à partir de votre application, et de permettre à l’utilisateur d’interagir avec ces données.
 
 Personnalisé `ContentProviders` sont un moyen pratique pour empaqueter vos données à utiliser dans votre propre application, ou pour une utilisation par d’autres applications (y compris des utilisations spéciales telles que la recherche personnalisée et le copier/coller).
 
 Les rubriques de cette section fournissent des exemples simples de consommation et d’écriture `ContentProvider` de code.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

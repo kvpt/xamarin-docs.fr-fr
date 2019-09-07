@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289121"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769914"
 ---
 # <a name="databases-in-xamarinmac"></a>Bases de données dans Xamarin. Mac
 
@@ -2221,8 +2221,6 @@ Tout d’abord, nous obtenons l’accès à notre base de données SQLite.NET, e
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation de la liaison de données et du codage clé-valeur avec les bases de données SQLite dans une application Xamarin. Mac. Tout d’abord, il s’est penché sur l’exposition d’une C# classe à Objective-C à l’aide du codage clé-valeur (KVC) et de l’observation clé-valeur (KVO). Ensuite, il a montré comment utiliser une classe conforme à KVO et lier les données aux éléments d’interface utilisateur du Interface Builder de Xcode. L’article traite également de l’utilisation des données SQLite via l’ORM SQLite.NET et de l’affichage de ces données dans une vue table.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

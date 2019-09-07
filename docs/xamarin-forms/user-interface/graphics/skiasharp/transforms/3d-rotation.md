@@ -7,12 +7,12 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: c6a600b7ae05df626d4315796c7a5e425639e2f8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 60f09b2e60708df6b1e6b68be7ce0792bc8cd9b0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652795"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759187"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>Rotations 3D dans SkiaSharp
 
@@ -534,7 +534,6 @@ public class AnimatedRotation3DPage : ContentPage
 Cette rotation 3D est entourée de plusieurs transformations 2D pour déplacer le centre de rotation vers le centre de l’écran et à l’échelle la taille de la chaîne de texte afin qu’il soit la même largeur que l’écran :
 
 [![](3d-rotation-images/animatedrotation3d-small.png "Capture d’écran triple de la page 3D animés de Rotation")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple capture d’écran de la page 3D animés de Rotation")
-
 
 ## <a name="related-links"></a>Liens associés
 

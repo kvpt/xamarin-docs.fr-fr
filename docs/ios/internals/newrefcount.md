@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291874"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753341"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Nouveau système de comptage de références dans Xamarin. iOS
 
@@ -46,10 +46,8 @@ Notez que ces options ont été supprimées dans les versions plus récentes de 
 
  La nouvelle extension de comptage de références est requise pour le API unifiée et doit être activée par défaut. Cette valeur n’est peut-être pas activée automatiquement pour les anciennes versions de votre IDE et vous devrez peut-être en effectuer une vérification vous-même.
 
-
 > [!IMPORTANT]
 > Une version antérieure de cette fonctionnalité a été créée depuis MonoTouch 5,2 mais n’était disponible que pour **SGen** en version préliminaire expérimentale. Cette nouvelle version améliorée est désormais également disponible pour le garbage collector **Boehm** .
-
 
 Historiquement, il y a deux types d’objets gérés par Xamarin. iOS : ceux qui étaient simplement un wrapper autour d’un objet natif (objets homologues) et ceux qui ont étendu ou incorporé de nouvelles fonctionnalités (objets dérivés), généralement en conservant un État mémoire supplémentaire. Auparavant, il était possible d’étendre un objet homologue avec l’État (par exemple, en C# ajoutant un gestionnaire d’événements), mais nous laissons l’objet non référencé, puis collecté. Cela peut entraîner un blocage ultérieur (par exemple, si le runtime objective-C a rappelé dans l’objet managé).
 

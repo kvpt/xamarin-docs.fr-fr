@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 18e7873eede87e9bb81c1c0b304bfc87c317c27a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291516"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769960"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Contrôles d’image Watchos dans Xamarin
 
@@ -32,7 +32,6 @@ Vous pouvez utiliser les tailles de kit de surveillance (38mm et Watch 42mm) dan
 
 ![](image-images/asset-watch-sml.png "Vous pouvez utiliser les tailles du kit Watch 38mm et Watch 42mm dans une image du catalogue de ressources pour spécifier différentes images pour chaque taille d’affichage.")
 
-
 ## <a name="images-on-the-watch"></a>Images sur la montre
 
 Le moyen le plus efficace d’afficher des images consiste à les *inclure dans le projet d’application Watch* et à `SetImage(string imageName)` les afficher à l’aide de la méthode.
@@ -51,7 +50,6 @@ myOtherImageControl.SetImage("Worry");
 ### <a name="background-images"></a>Images d'arrière-plan
 
 La même logique s’applique à `SetBackgroundImage (string imageName)` sur les `Button`classes `Group`, et `InterfaceController` . Les meilleures performances sont obtenues en stockant les images dans l’application Watch elle-même.
-
 
 ## <a name="images-in-the-watch-extension"></a>Images dans l’extension Watch
 
@@ -74,7 +72,6 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-
 ## <a name="animations"></a>Animations
 
 Pour animer un ensemble d’images, elles doivent toutes commencer par le même préfixe et avoir un suffixe numérique.
@@ -95,7 +92,6 @@ Appelez `StopAnimating` sur le contrôle image pour arrêter la boucle d’anima
 ```csharp
 animatedImage.StopAnimating ();
 ```
-
 
 <a name="cache" />
 
@@ -122,12 +118,9 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 Vous pouvez interroger le contenu du cache d’images dans le `WKInterfaceDevice.CurrentDevice.WeakCachedImages`code à l’aide de.
 
-
 ### <a name="managing-the-cache"></a>Gestion du cache
 
 La taille du cache est d’environ 20 Mo. Il est conservé entre les redémarrages d’application et, lorsqu’il est rempli, il vous incombe de supprimer des `RemoveCachedImage` fichiers `RemoveAllCachedImages` à l’aide `WKInterfaceDevice.CurrentDevice` des méthodes ou sur l’objet.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

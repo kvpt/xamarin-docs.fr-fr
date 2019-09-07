@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a6cdd5ccec0d2c60eba18418327fd786201f11b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285630"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753674"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Résolution des problèmes de connexion pour un hôte de build Xamarin.iOS
 
@@ -25,11 +25,9 @@ _Ce guide fournit des étapes de résolution des problèmes qui peuvent être re
 
 Les fichiers journaux peuvent être localisés en accédant à **Aide &gt; Xamarin &gt; Journaux Zip** dans Visual Studio.
 
-
 ## <a name="wheres-the-xamarin-build-host-app"></a>Où se trouve l’application hôte de build Xamarin ?
 
 L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus nécessaire. Visual Studio déploie maintenant automatiquement l’agent sur une session à distance et l’exécute en arrière-plan. Aucune application supplémentaire n’est exécutée sur le Mac ou les ordinateurs Windows.
-
 
 ## <a name="troubleshooting-remote-login"></a>Résolution des problèmes de sessions à distance
 
@@ -64,7 +62,6 @@ L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus
     Par exemple, dans la capture d’écran ci-dessous, le nom du compte sera **amyb** et non **Amy Burns** :
 
     [![](troubleshooting-images/troubleshooting-image5a.png "Obtenir le nom du compte à partir de l’application Terminal")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
-
 
 6. Vérifiez que l’adresse IP que vous utilisez pour le Mac est correcte. Vous trouverez l’adresse IP sous **Préférences Système > Partage > Session à distance** sur le Mac.
 
@@ -373,7 +370,6 @@ Si vous résolvez un problème de génération et que vous voulez être certain 
 2. Cliquez sur le dossier **mtbs** en maintenant la touche Ctrl enfoncée, puis sélectionnez **Placer dans la Corbeille** :
 
     [![](troubleshooting-images/troubleshooting-image9.png "Placer le dossier mtbs dans la Corbeille")](troubleshooting-images/troubleshooting-image9.png#lightbox)
-
 
 ## <a name="related-links"></a>Liens associés
 

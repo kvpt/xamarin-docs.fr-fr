@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e129a8c37e6b8780a57636730c072b230354b8b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288382"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758106"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Vue d’ensemble de la création d’applications multiplateformes
 
@@ -45,11 +45,9 @@ Pour augmenter la quantité de code à réutiliser, vous pouvez adopter des comp
 1. Les [packages NuGet](https://nuget.org) compatibles avec les projets Xamarin, tels que [JSON.net](https://www.nuget.org/packages/Newtonsoft.Json/),
 1. Utilisation des fonctionnalités du .NET Framework pour la mise en réseau, les services Web, les e/s et bien plus encore.
 
-
 Certains de ces composants sont implémentés dans l’étude de cas *Tasky* .
 
  <a name="Separate_Reusable_Code_into_a_Core_Library" />
-
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>Séparer le code réutilisable dans une bibliothèque principale
 
@@ -58,7 +56,6 @@ En suivant le principe de séparation de responsabilité en baparant l’archite
  ![](overview-images/layers2.png "En suivant le principe de séparation de responsabilité en baparant l’architecture de votre application, puis en déplaçant les fonctionnalités principales indépendantes des plateformes dans une bibliothèque principale réutilisable, vous pouvez maximiser le partage du code entre les plateformes")
 
  <a name="Case_Studies" />
-
 
 ## <a name="case-studies"></a>Études de cas
 

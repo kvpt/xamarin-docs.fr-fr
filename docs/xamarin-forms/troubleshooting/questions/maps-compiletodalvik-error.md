@@ -1,5 +1,5 @@
 ---
-title: Pourquoi mon projet Android Xamarin. Forms. Maps échoue-t-il avec COMPILETODALVIK erreur inattendue de niveau supérieur?
+title: Pourquoi mon projet Android Xamarin. Forms. Maps échoue-t-il avec COMPILETODALVIK erreur inattendue de niveau supérieur ?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: efa21d3547167996e1a7dcc533caa00e0b1262e6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2872cc7b54e26d07b388f08d650048e8d3861930
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529032"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759970"
 ---
-# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>Pourquoi mon projet Android Xamarin. Forms. Maps échoue-t-il avec COMPILETODALVIK erreur inattendue de niveau supérieur?
+# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>Pourquoi mon projet Android Xamarin. Forms. Maps échoue-t-il avec COMPILETODALVIK erreur inattendue de niveau supérieur ?
 
 Cette erreur peut se produire dans le bloc d’erreurs de Visual Studio pour Mac ou dans la fenêtre sortie de la génération de Visual Studio. dans les projets Android utilisant Xamarin. Forms. Maps.
 
-Cela est généralement résolu en accroissant la taille du tas Java pour votre projet Xamarin. Android. Pour augmenter la taille du tas, procédez comme suit:
+Cela est généralement résolu en accroissant la taille du tas Java pour votre projet Xamarin. Android. Pour augmenter la taille du tas, procédez comme suit :
 
 ## <a name="visual-studio"></a>Visual Studio
 
@@ -37,4 +37,3 @@ Cela est généralement résolu en accroissant la taille du tas Java pour votre 
 4. Regénérez le projet.  
 
 ![Capture d’écran des options du projet Visual Studio pour Mac](maps-compiletodalvik-error-images/xsjavaheap.png "Options de génération Android dans Visual Studio pour Mac")
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/26/2017
-ms.openlocfilehash: b6bf2aa8925e29ed5120de5cc2d3146704259d87
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e0b899e69405874f381c3ab6f9a9200a856d7402
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282405"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767312"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>Icônes App Store dans Xamarin. iOS
 
@@ -49,9 +49,6 @@ Pour ajouter une icône App Store, procédez comme suit :
     ![Icône App Store](app-store-icon-images/image2.png)
 
 3. Cliquez sur l’icône et recherchez votre image 1024 x 1024 pixels. Enregistrez le catalogue de ressources.
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

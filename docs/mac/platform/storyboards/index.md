@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 722e09cc292bad682a49ee0cba4ff0ca0f39a844
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291641"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770046"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Présentation des storyboards dans Xamarin. Mac
 
@@ -111,7 +111,6 @@ Le code SourceWriter a été entièrement commenté et, le cas échéant, des li
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a fait un aperçu rapide de l’utilisation des storyboards dans une application Xamarin. Mac. Nous avons vu comment créer une nouvelle application à l’aide de storyboards et comment définir une interface utilisateur. Nous avons également vu comment naviguer entre les différentes fenêtres et les États d’affichage à l’aide de SEGUES.
-
 
 ## <a name="related-links"></a>Liens associés
 

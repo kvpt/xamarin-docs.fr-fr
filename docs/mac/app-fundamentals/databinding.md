@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: ab5355459f12c8b3cb7fa5f262f015bfd64d3e08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290157"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770002"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Liaison de données et codage de clé-valeur dans Xamarin. Mac
 
@@ -888,7 +888,6 @@ Cette ligne indique que la clé `Title` n’existe pas sur l’objet auquel nous
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation de la liaison de données et du codage clé-valeur dans une application Xamarin. Mac. Tout d’abord, il s’est penché sur l’exposition d’une C# classe à Objective-C à l’aide du codage clé-valeur (KVC) et de l’observation clé-valeur (KVO). Ensuite, il a montré comment utiliser une classe conforme à KVO et lier les données aux éléments d’interface utilisateur du Interface Builder de Xcode. Enfin, elle affichait une liaison de données complexe à l’aide des **contrôleurs de tableau** et des **contrôleurs d’arborescence**.
-
 
 ## <a name="related-links"></a>Liens associés
 

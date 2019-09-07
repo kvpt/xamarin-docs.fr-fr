@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4be5670829b2b8c1a5a73f564b4c031b6a26bd54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291466"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769856"
 ---
 # <a name="building-modern-macos-apps"></a>Création d’applications macOS modernes
 
@@ -951,8 +951,6 @@ Apple a inclus plusieurs fonctionnalités accessibles aux utilisateurs dans macO
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté plusieurs conseils, fonctionnalités et techniques que les développeurs peuvent utiliser pour créer une application macOS moderne dans Xamarin. Mac.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

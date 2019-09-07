@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 2d62651f85aab49c8e28b54053aba4882961c35b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6dbd0b3e7d14307a3b9e7de552e2d59e0fbbcaa4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292502"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768556"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Utilisation des champs de recherche et de texte tvOS dans Xamarin
 
@@ -781,8 +781,6 @@ Lorsque l’utilisateur commence à entrer un terme de recherche, la liste des r
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation de texte et de champs de recherche à l’intérieur d’une application Xamarin. tvOS. Il a montré comment créer du texte et rechercher du contenu de collection dans le concepteur d’interface et qu’il a démontré deux façons différentes de présenter un champ de recherche à l’utilisateur dans tvOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

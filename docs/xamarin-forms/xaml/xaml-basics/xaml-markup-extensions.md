@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 620a986ea9c5a6792d321b0c89dae936ffa256da
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 3eb02dbc4e77fcd8b237b85e21e577d0c4566794
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227925"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772725"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Partie 3. Extensions de balisage XAML
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 Notez que le mot clé `clr-namespace` est suivi par un signe deux-points, puis le nom d’espace de noms de .NET, suivi par un point-virgule, le mot clé `assembly`, un signe égal et le nom de l’assembly.
 
-Oui, un signe deux-points suit `clr-namespace` mais signe égal suit `assembly`. La syntaxe a été définie de cette façon délibérée: La plupart des déclarations d’espaces de noms XML référencent un URI qui commence `http`un nom de modèle d’URI tel que, qui est toujours suivi d’un signe deux-points. Le `clr-namespace` partie de cette chaîne est destiné à reproduire cette convention.
+Oui, un signe deux-points suit `clr-namespace` mais signe égal suit `assembly`. La syntaxe a été définie de cette façon délibérée : La plupart des déclarations d’espaces de noms XML référencent un URI qui commence `http`un nom de modèle d’URI tel que, qui est toujours suivi d’un signe deux-points. Le `clr-namespace` partie de cette chaîne est destiné à reproduire cette convention.
 
 Les deux ces déclarations d’espace de noms sont incluses dans le **StaticConstantsPage** exemple. Notez que le `BoxView` dimensions sont définies pour `Math.PI` et `Math.E`, mais à l’échelle par un facteur de 100 :
 
@@ -435,7 +435,7 @@ Les deux ces déclarations d’espace de noms sont incluses dans le **StaticCons
 
 La taille de la résultante `BoxView` par rapport à l’écran est dépendante de la plateforme :
 
-[![Contrôles utilisant l’extension de balisage x:Static](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
+[![Contrôles utilisant l’extension de balisage x :Static](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
 
 ## <a name="other-standard-markup-extensions"></a>Autres Extensions de balisage Standard
 
@@ -547,7 +547,7 @@ Voici un exemple :
 </ContentPage>
 ```
 
-La leçon la plus importante que vous devez suivre à partir de cet exemple est la syntaxe de l’extension de balisage: Aucun guillemet ne doit apparaître entre les accolades d’une extension de balisage. Lorsque vous tapez l’extension de balisage dans un fichier XAML, il est naturel de délimiter les valeurs des propriétés entre guillemets. Résistez à la tentation !
+La leçon la plus importante que vous devez suivre à partir de cet exemple est la syntaxe de l’extension de balisage : Aucun guillemet ne doit apparaître entre les accolades d’une extension de balisage. Lorsque vous tapez l’extension de balisage dans un fichier XAML, il est naturel de délimiter les valeurs des propriétés entre guillemets. Résistez à la tentation !
 
 Voici le programme en cours d’exécution :
 
@@ -556,8 +556,6 @@ Voici le programme en cours d’exécution :
 ## <a name="summary"></a>Récapitulatif
 
 Les extensions de balisage XAML illustrées ici important prennent en charge les fichiers XAML. Mais l’extension de balisage XAML plus précieuse est sans doute `Binding`, qui est abordé dans la partie suivante de cette série, [partie 4. Liaison des bases de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

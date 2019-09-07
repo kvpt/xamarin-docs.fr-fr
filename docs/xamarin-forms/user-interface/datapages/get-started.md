@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e6f26fb96c0a538543c8e0b0574461ea99709631
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c6534067388b59c1e191426011fd0e6b8560348f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119488"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759737"
 ---
 # <a name="getting-started-with-datapages"></a>Mise en route avec les pages de données
 
@@ -21,7 +21,7 @@ ms.locfileid: "70119488"
 ![](~/media/shared/preview.png "Cette API est actuellement en version préliminaire")
 
 > [!IMPORTANT]
-> DataPages requiert une référence de thème Xamarin. Forms à restituer. Cela implique d’installer le package NuGet [Xamarin. Forms](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) . Theme. base dans votre projet, suivi des packages NuGet [Xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [Xamarin. Forms](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . Theme. Dark.
+> DataPages requiert une référence de thème Xamarin. Forms à restituer. Cela implique d’installer le package NuGet [Xamarin. Forms. Theme. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) dans votre projet, suivi des packages NuGet [Xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [Xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
 
 Pour commencer la création d’une page simple piloté par les données à l’aide de l’aperçu de pages de données, suivez les étapes ci-dessous. Ce utilise démonstration un style codée en dur (« événements ») dans la version préliminaire de builds qui fonctionne uniquement avec le format JSON spécifique dans le code.
 
@@ -52,7 +52,6 @@ Dans le **App.xaml** , ajoutez un personnalisé `xmlns:mytheme` pour le thème e
 
 > [!IMPORTANT]
 > Vous devez également suivre les étapes de [chargement des assemblys de thème (ci-dessous)](#loadtheme) en ajoutant du code `AppDelegate` réutilisable aux appareils iOS et Android. `MainActivity` Cela sera améliorée dans une version de la prochaine version d’évaluation.
-
 
 ## <a name="3-add-a-xaml-page"></a>3. Ajouter une Page XAML
 
@@ -175,9 +174,7 @@ Les développeurs qui préfèrent c# pour XAML peuvent créer des données de so
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
-
 Il s’agit d’un peu plus de travail pour créer des thèmes de toutes pièces, mais les futures versions préliminaires faciliteront cette tâche.
-
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -206,8 +203,6 @@ var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
 x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
-
-
 
 ## <a name="related-links"></a>Liens associés
 

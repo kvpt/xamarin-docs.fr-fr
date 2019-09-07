@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a0719dce3b7f5484168dc5679237b01286f5de78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6aa5eede658f13a36220398f92192eefa2473bab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286755"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768591"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Techniques d’interaction rapide pour Watchos 3 dans Xamarin
 
@@ -98,7 +98,7 @@ Apple suggère les éléments suivants lorsque vous utilisez des détecteurs de 
 - Certains mouvements sont prioritaires sur les autres types de mouvements, par exemple :
   - Défilement
   - Force Touch
- 
+
 ### <a name="digital-crown-rotation"></a>Rotation Digital Crown
 
 En implémentant la prise en charge Digital Crown dans les applications Watchos 3, un développeur peut fournir une vitesse de navigation accrue et des interactions de précision pour ses utilisateurs.
@@ -169,7 +169,6 @@ Apple l’a laissé au développeur pour déterminer comment le nombre de rotati
 Le signe (`+/-`) du delta de rotation indique la direction dans laquelle l’utilisateur active l’Digital Crown :
 
 [![](quick-interaction-techniques-images/quick03.png "Le signe du delta de rotation indique la direction dans laquelle l’utilisateur active l’Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
-
 
 Si l’utilisateur fait défiler vers le haut, WatchKit retourne des deltas positifs et, si vous faites défiler vers le haut, les deltas négatifs sont retournés, quelle que soit l’orientation dans laquelle l’utilisateur porte la montre.
 

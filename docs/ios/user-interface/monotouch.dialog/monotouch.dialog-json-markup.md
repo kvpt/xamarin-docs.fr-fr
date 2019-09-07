@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d9174e9b2d6c056c94b405033a25eeb787c92f9f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284142"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768763"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
 
@@ -91,7 +91,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="Root_Element_Syntax" />
 
-
 ## <a name="root-element-syntax"></a>Syntaxe d’élément racine
 
 L’élément racine contient les valeurs suivantes :
@@ -99,11 +98,9 @@ L’élément racine contient les valeurs suivantes :
 - `title`
 - `sections` (facultatif)
 
-
 L’élément racine peut apparaître à l’intérieur d’une section en tant qu’élément pour créer un contrôleur imbriqué. Dans ce cas, la propriété `"type"` supplémentaire doit avoir la valeur`"root"`
 
  <a name="url" />
-
 
 ### <a name="url"></a>url
 
@@ -111,13 +108,11 @@ Si la `"url"` propriété est définie, si l’utilisateur appuie sur ce RootEle
 
  <a name="group" />
 
-
 ### <a name="group"></a>groupe
 
 Si cette valeur est définie, le GroupName de l’élément racine est défini. Les noms de groupes sont utilisés pour choisir un résumé affiché en tant que valeur de l’élément racine à partir de l’un des éléments imbriqués dans l’élément. Il s’agit de la valeur d’une case à cocher ou de la valeur d’une case d’option.
 
  <a name="radioselected" />
-
 
 ### <a name="radioselected"></a>radiosélectionné
 
@@ -125,13 +120,11 @@ Identifie l’élément radio sélectionné dans les éléments imbriqués
 
  <a name="title" />
 
-
 ### <a name="title"></a>title
 
 S’il est présent, il s’agit du titre utilisé pour le RootElement
 
  <a name="type" />
-
 
 ### <a name="type"></a>type
 
@@ -139,13 +132,11 @@ Doit avoir la valeur `"root"` lorsque ce apparaît dans une section (utilisé po
 
  <a name="sections" />
 
-
 ### <a name="sections"></a>sections
 
 Il s’agit d’un tableau JSON avec des sections individuelles
 
  <a name="Section_Syntax" />
-
 
 ## <a name="section-syntax"></a>Syntaxe de la section
 
@@ -155,9 +146,7 @@ La section contient les éléments suivants :
 - `footer` (facultatif)
 - Tableau `elements`
 
-
  <a name="header" />
-
 
 ### <a name="header"></a>en-tête
 
@@ -165,13 +154,11 @@ S’il est présent, le texte d’en-tête est affiché sous la forme d’une l�
 
  <a name="footer" />
 
-
 ### <a name="footer"></a>pied
 
 S’il est présent, le pied de page est affiché en bas de la section.
 
  <a name="elements" />
-
 
 ### <a name="elements"></a>éléments
 
@@ -182,11 +169,9 @@ Certains éléments partagent des propriétés communes telles que `"caption"` e
 - `entry`lignes (régulière ou mot de passe)
 - `boolean`valeurs (à l’aide de commutateurs ou d’images)
 
-
 Les éléments de chaîne peuvent être utilisés en tant que boutons en fournissant une méthode à appeler lorsque l’utilisateur appuie sur la cellule ou sur l’accessoire.
 
  <a name="Rendering_Elements" />
-
 
 ## <a name="rendering-elements"></a>Éléments de rendu
 
@@ -230,7 +215,6 @@ Les éléments de rendu peuvent afficher deux chaînes à la fois, l’une est l
 
  <a name="accessory" />
 
-
 ### <a name="accessory"></a>équipée
 
 Détermine le type d’accessoire à afficher dans votre élément de rendu, les valeurs possibles sont :
@@ -239,11 +223,9 @@ Détermine le type d’accessoire à afficher dans votre élément de rendu, les
 - `detail-disclosure`
 - `disclosure-indicator`
 
-
 Si la valeur n’est pas présente, aucun accessoire n’est affiché
 
  <a name="background" />
-
 
 ### <a name="background"></a>arrière-plan
 
@@ -251,20 +233,17 @@ La propriété Background définit la couleur d’arrière-plan de la cellule. L
 
  <a name="caption" />
 
-
 ### <a name="caption"></a>-
 
 Chaîne principale à afficher sur l’élément de rendu. La police et la couleur peuvent être personnalisées en `"textcolor"` définissant les propriétés et `"font"` . Le style de rendu est déterminé par `"style"` la propriété.
 
  <a name="color_and_detailcolor" />
 
-
 ### <a name="color-and-detailcolor"></a>Color et detailcolor
 
 Couleur à utiliser pour le texte principal ou le texte détaillé.
 
  <a name="detailfont_and_font" />
-
 
 ### <a name="detailfont-and-font"></a>DetailFont et police
 
@@ -274,9 +253,7 @@ Les spécifications de police valides sont les suivantes :
 - Helvetica
 - « Helvetica-14 »
 
-
  <a name="linebreak" />
-
 
 ### <a name="linebreak"></a>saut
 
@@ -289,11 +266,9 @@ Détermine la façon dont les lignes sont réparties. Les valeurs possibles sont
 - `tail-truncation`
 - `word-wrap`
 
-
 Et peuvent être utilisés avec la `"lines"` propriété définie sur zéro pour transformer l’élément de rendu en élément à plusieurs lignes. `word-wrap` `character-wrap`
 
  <a name="ontap_and_onaccessorytap" />
-
 
 ### <a name="ontap-and-onaccessorytap"></a>ONTAP et onaccessorytap
 
@@ -316,13 +291,11 @@ class Foo {
 
  <a name="lines" />
 
-
 ### <a name="lines"></a>lignes
 
 Si la valeur est égale à zéro, l’élément est automatiquement redimensionné en fonction du contenu des chaînes contenues. Pour que cela fonctionne, vous devez également affecter à `"linebreak"` `"character-wrap"` la propriété la `"word-wrap"`valeur ou.
 
  <a name="style" />
-
 
 ### <a name="style"></a>style
 
@@ -334,9 +307,7 @@ Les valeurs possibles sont :
 - `"value2"`
 - `"subtitle"`: texte avec un sous-titre.
 
-
  <a name="subtitle" />
-
 
 ### <a name="subtitle"></a>apparaître
 
@@ -345,20 +316,17 @@ Cela se fait avec une seule entrée.
 
  <a name="textcolor" />
 
-
 ### <a name="textcolor"></a>TextColor
 
 Couleur à utiliser pour le texte.
 
  <a name="value" />
 
-
 ### <a name="value"></a>value
 
 Valeur secondaire à afficher sur l’élément de rendu. La disposition de ce est affectée par le `"style"` paramètre. La police et la couleur peuvent être personnalisées en `"detailfont"` définissant les paramètres et `"detailcolor"`.
 
  <a name="Boolean_Elements" />
-
 
 ## <a name="boolean-elements"></a>Éléments booléens
 
@@ -382,13 +350,11 @@ Les éléments booléens doivent définir le `"bool"`type avec la valeur `"capti
 
  <a name="type" />
 
-
 ### <a name="type"></a>type
 
 Le type peut être défini sur `"boolean"` ou `"checkbox"`. Si la valeur est booléenne, elle utilise un UISlider ou des images ( `"on"` si `"off"` et sont tous les deux définis). Si la valeur est, elle utilise une case à cocher. La `"group"` propriété peut être utilisée pour baliser un élément booléen comme appartenant à un groupe particulier. Cela est utile si la racine contenante a également `"group"` une propriété, car la racine résume les résultats avec le nombre de tous les booléens (ou cases à cocher) qui appartiennent au même groupe.
 
  <a name="Entry_Elements" />
-
 
 ## <a name="entry-elements"></a>Éléments d’entrée
 
@@ -423,13 +389,11 @@ Vous utilisez des éléments d’entrée pour permettre à l’utilisateur d’e
 
  <a name="autocorrect" />
 
-
 ### <a name="autocorrect"></a>correction automatique
 
 Détermine le style de correction automatique à utiliser pour l’entrée. Les valeurs possibles sont true ou false (ou les `"yes"` chaînes `"no"`et).
 
  <a name="capitalization" />
-
 
 ### <a name="capitalization"></a>mise en majuscules
 
@@ -440,16 +404,13 @@ Style de mise en majuscules à utiliser pour l’entrée. Les valeurs possibles 
 - `sentences`
 - `words`
 
-
  <a name="caption" />
-
 
 ### <a name="caption"></a>-
 
 Légende à utiliser pour l’entrée
 
  <a name="keyboard" />
-
 
 ### <a name="keyboard"></a>clavier
 
@@ -465,16 +426,13 @@ Type de clavier à utiliser pour l’entrée de données. Les valeurs possibles 
 - `twitter`
 - `url`
 
-
  <a name="placeholder" />
-
 
 ### <a name="placeholder"></a>espace réservé
 
 Texte d’indication qui s’affiche lorsque l’entrée a une valeur vide.
 
  <a name="return-key" />
-
 
 ### <a name="return-key"></a>clé de retour
 
@@ -492,9 +450,7 @@ Texte d’indication qui s’affiche lorsque l’entrée a une valeur vide.
 - `send`
 - `yahoo`
 
-
  <a name="value" />
-
 
 ### <a name="value"></a>value
 
@@ -502,14 +458,12 @@ Valeur initiale de l’entrée.
 
  <a name="Radio_Elements" />
 
-
 ## <a name="radio-elements"></a>Éléments radio
 
 Les éléments radio ont `"radio"`le type. L’élément sélectionné est choisi par la `radioselected` propriété sur son élément racine conteneur.
 En outre, si une valeur est définie pour la `"group"` propriété, cette case d’option appartient à ce groupe.
 
  <a name="Date_and_Time_Elements" />
-
 
 ## <a name="date-and-time-elements"></a>Éléments de date et d’heure
 
@@ -535,7 +489,6 @@ Les types `"datetime"`d’éléments `"date"` , `"time"` et sont utilisés pour 
 ```
 
  <a name="Html/Web_Element" />
-
 
 ## <a name="htmlweb-element"></a>Élément HTML/Web
 

@@ -7,19 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9dc34f412549c4be6099b373ddae7cbd2e8d21c8
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 1dc62066b71842e1d3b07495912fa35a549c0f1e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980772"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759680"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms, DataPages
 
 ![](~/media/shared/preview.png "Cette API est actuellement en version préliminaire")
 
 > [!IMPORTANT]
-> DataPages requiert une référence de thème Xamarin. Forms à restituer. Cela implique d’installer le package NuGet [Xamarin. Forms](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) . Theme. base dans votre projet, suivi des packages NuGet [Xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [Xamarin. Forms](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . Theme. Dark.
+> DataPages requiert une référence de thème Xamarin. Forms à restituer. Cela implique d’installer le package NuGet [Xamarin. Forms. Theme. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) dans votre projet, suivi des packages NuGet [Xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [Xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
 
 Xamarin. Forms DataPages ont été annoncés à l’évolution de 2016 et sont disponibles en version préliminaire pour que les clients essaient et fournissent des commentaires.
 
@@ -37,7 +37,7 @@ Les DataPages sont ajoutées à une application Xamarin. Forms en incluant le pa
 
 ### <a name="data-sources"></a>Data Sources
 
-La version préliminaire contient des sources de données prédéfinies pouvant être utilisées:
+La version préliminaire contient des sources de données prédéfinies pouvant être utilisées :
 
 * **JsonDataSource**
 * **AzureDataSource** (NuGet distinct)
@@ -45,10 +45,9 @@ La version préliminaire contient des sources de données prédéfinies pouvant 
 
 Pour obtenir un exemple d’utilisation d’un `JsonDataSource`, consultez le [Guide de mise en route](get-started.md).
 
-
 ### <a name="pages--controls"></a>Pages & contrôles
 
-Les pages et les contrôles suivants sont inclus pour permettre une liaison facile avec les sources de données fournies:
+Les pages et les contrôles suivants sont inclus pour permettre une liaison facile avec les sources de données fournies :
 
 * **ListDataPage** : consultez l' [exemple de prise](get-started.md)en main.
 * **DirectoryPage** : liste dans laquelle le regroupement est activé.
@@ -60,13 +59,11 @@ Les pages et les contrôles suivants sont inclus pour permettre une liaison faci
 
 Consultez les informations de référence sur les [contrôles DataPages](controls.md) pour obtenir des exemples.
 
-
-
 ### <a name="under-the-hood"></a>En coulisses
 
 Une source de données Xamarin. Forms adhère à `IDataSource` l’interface.
 
-L’infrastructure Xamarin. Forms interagit avec une source de données par le biais des propriétés suivantes:
+L’infrastructure Xamarin. Forms interagit avec une source de données par le biais des propriétés suivantes :
 
 * `Data`: liste en lecture seule d’éléments de données qui peuvent être affichés.
 * `IsLoading`: valeur booléenne qui indique si les données sont chargées et disponibles pour le rendu.

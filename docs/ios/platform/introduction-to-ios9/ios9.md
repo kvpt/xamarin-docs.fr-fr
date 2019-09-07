@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f46b60a0567a5486a5c22a6ff36561e976d07b47
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246653cee7917141ddd0f911a7c4d1b21f945360
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292900"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751974"
 ---
 # <a name="ios-9-compatibility"></a>Compatibilité iOS 9
 
@@ -32,13 +32,10 @@ La mise à jour de votre installation Xamarin vers la dernière version de canal
 
 _Même si vous n’envisagez pas de mettre à jour votre application avec les fonctionnalités iOS 9 immédiatement, nous vous recommandons de recréer la version la plus récente de Xamarin et de la soumettre à nouveau à l’App Store_.
 
-
-
 Cela permet de s’assurer que votre application s’exécutera sur iOS 9 après la mise à niveau de vos clients.
 Vous pouvez continuer à prendre en charge iOS 8-la reconstruction avec la dernière version n’affecte pas la version cible de l’application.
 
 Si vous rencontrez d’autres problèmes lors du test de vos applications existantes sur iOS 9, consultez la section amélioration de la [compatibilité](#compat) ci-dessous.
-
 
 ### <a name="updating-with-visual-studio"></a>Mise à jour avec Visual Studio
 
@@ -50,7 +47,6 @@ Vous n’avez **pas** besoin d’attendre les nouvelles versions des composants 
 Ces problèmes sont résolus simplement en reconstruisant votre application avec la dernière version stable de Xamarin. iOS.
 
 De même, les fournisseurs de composants et les créateurs NuGet ne sont **pas** tenus d’envoyer de nouvelles builds uniquement pour résoudre les deux problèmes mentionnés ci-dessus. Toutefois, si un composant ou NuGet utilise `UICollectionView` ou charge des vues à partir de fichiers **XIB** , une mise à jour *peut* être nécessaire pour résoudre les problèmes de compatibilité iOS 9 mentionnés ci-dessous.
-
 
 <a name="compat" />
 
@@ -74,8 +70,6 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 Exemples connexes : [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb), [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
-
-
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>UIView ne parvient pas à initialiser avec le codeur lors du chargement d’une vue à partir d’un XIB/d’un bec
 
 **Donc** Le `initWithCoder:` constructeur est celui appelé lors du chargement d’une vue à partir d’un fichier Interface Builder XIB. Si ce constructeur n’est pas exporté, le code non managé ne peut pas appeler notre version managée de celui-ci. Précédemment (par exemple, dans iOS 8), `IntPtr` le constructeur a été appelé pour initialiser la vue.
@@ -92,7 +86,6 @@ public YourClassName (NSCoder coder) : base (coder)
 
 Exemple connexe : [Mode](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-
 ### <a name="dyld-message-no-cache-image-with-name"></a>Message dyld : aucune image du cache avec le nom...
 
 Vous pouvez rencontrer un incident avec les informations suivantes dans le journal :
@@ -105,8 +98,6 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 **Donc** Il s’agit d’un bogue dans l’éditeur de liens natif d’Apple, qui se produit quand un Framework privé est public (JavaScriptCore a été rendu public dans iOS 7, avant qu’il ne s’agisse d’une infrastructure privée) et que la cible de déploiement de l’application soit pour une version iOS lorsque l’infrastructure était privée. Dans ce cas, l’éditeur de liens d’Apple crée un lien avec la version privée du Framework au lieu de la version publique.
 
 **Résoudre** Ce problème sera résolu pour iOS 9, mais il existe une solution de contournement simple que vous pouvez vous appliquer en attendant : ciblez une version iOS ultérieure dans votre projet (vous pouvez essayer iOS 7 dans ce cas). D’autres infrastructures peuvent présenter des problèmes similaires, par exemple l’infrastructure WebKit a été rendue publique dans iOS 8 (et, par conséquent, le ciblage d’iOS 7 entraînera cette erreur ; vous devez cibler iOS 8 pour utiliser WebKit dans votre application).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -6,19 +6,19 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: de34dcdd194bd3777214d23fded7e5f42ec5141c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287543"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765503"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>Références natives dans les projets iOS, Mac et Bindings
 
 _Les références natives vous permettent d’incorporer un Framework natif dans un projet ou un projet de liaison Xamarin. iOS ou Xamarin. Mac._
 
 Depuis iOS 8,0, il était possible de créer une infrastructure intégrée pour partager du code entre les extensions d’application et l’application principale dans Xcode. À l’aide de la fonctionnalité de référence native, il sera possible d’utiliser ces frameworks intégrés (créés avec Xcode) dans Xamarin. iOS.
- 
+
 > [!IMPORTANT]
 > Il n’est pas possible de créer des frameworks incorporés à partir de tout type de projet Xamarin. iOS ou Xamarin. Mac, les références natives autorisent uniquement la consommation des infrastructures natives (objective-C) existantes.
 
@@ -98,4 +98,3 @@ Applications qui n’ont pas d’extensions et d’applications qui ciblent iOS
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’intégration d’une infrastructure native dans une application Xamarin. iOS ou Xamarin. Mac.
-

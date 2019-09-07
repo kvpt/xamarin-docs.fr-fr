@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: ef9067f3a0694c66d21d6614277e8543aebbc299
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f47ebdd8c1ba220229c6e652af99e8fa3ae2960
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279343"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768817"
 ---
 # <a name="text-input-in-xamarinios"></a>Entrée de texte dans Xamarin. iOS
 
@@ -27,7 +27,6 @@ Les captures d’écran ci-dessous montrent les icônes de ces contrôles, situ�
 Une fois que vous avez nommé la sortie et enregistré le fichier de table de montage `.designer.cs` séquentiel, Visual Studio pour Mac met à jour C# la classe partielle et vous pouvez ajouter du code qui référence le contrôle à votre fichier de classe. Chaque contrôle possède ses propres propriétés et événements uniques qui sont accessibles dans votre C# code.
 
  <a name="UITextField" />
-
 
 ## <a name="uitextfield"></a>UITextField
 
@@ -46,7 +45,6 @@ Ces contrôles sont expliqués ci-dessous :
 - **Apparence** : contrôle le style d’apparence du clavier et est sombre ou clair.
 - **Clé de retour** : modifiez l’étiquette sur la clé de retour pour mieux refléter l’action qui sera entreprise. Les valeurs prises en charge sont les suivantes : Go, Join, Next, route, Done et Search.
 - **Secure** : indique si l’entrée est masquée (par exemple, pour une entrée de mot de passe).
-
 
 Si un champ UITextField appelé `textfield1` a été ajouté à un écran avec le concepteur, vous pouvez définir ou modifier ses propriétés dans C# comme suit :
 
@@ -72,7 +70,6 @@ View.Add(textfield1);
 
  <a name="UITextView" />
 
-
 ## <a name="uitextview"></a>UITextView
 
 Le `UITextView` contrôle peut être utilisé pour afficher du texte en lecture seule ou pour accepter une entrée de texte sur plusieurs lignes. Il possède un grand nombre des mêmes options que `UITextField` le (par exemple, la mise en majuscules, la correction, etc.).
@@ -84,7 +81,6 @@ Les propriétés spécifiques sont les suivantes :
 - **Comportement** : indique si le texte est modifiable ou en lecture seule.
 - **Détection** : détecte et convertit les données entrées en éléments interactives, tels que les numéros de téléphone qui peuvent déclencher un appel, les adresses qui deviennent des liens vers les mappages, les URL qui s’ouvrent dans Safari ou les dates et heures qui deviennent des événements dans le calendrier.
 
-
 Si un UITextView a été ajouté à un écran avec le concepteur, vous pouvez définir ou modifier ses propriétés comme suit :
 
 ```csharp
@@ -92,8 +88,6 @@ textview1.Text = "Lorem ipsum..."; // lots of text can go here
 textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 72c233dc492fe1c93546121bc9103e666c2127ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65ccbe397093833e3af58d1165bc1dad8287ba5d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286260"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752944"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Core Graphics dans Xamarin. iOS
 
@@ -28,7 +28,6 @@ Core Graphics prend en charge le dessin dans plusieurs scénarios, notamment :
 - [Dessin d’images en mémoire ou à l’écran](#Drawing_Images_and_Text).
 - Création et dessin dans un fichier PDF.
 - Lecture et dessin d’un fichier PDF existant.
-
 
 ## <a name="geometric-space"></a>Espace géométrique
 
@@ -276,7 +275,6 @@ En plus de dessiner dans le contexte graphique d’une vue, Core Graphics prend 
 - Obtention de l’image à partir du contexte
 - Suppression du contexte
 
-
 Contrairement à `Draw` la méthode, où le contexte est fourni par la vue, dans ce cas, vous créez le contexte de l’une des deux manières suivantes :
 
 1. En appelant `UIGraphics.BeginImageContext` (ou `BeginImageContextWithOptions`)
@@ -422,7 +420,6 @@ UIGraphics.EndPDFContent ();
 ```
 
 Le texte obtenu est dessiné dans le fichier PDF, qui est ensuite contenu dans `NSData` un qui peut être enregistré, téléchargé, envoyé par courrier électronique, etc.
-
 
 ## <a name="summary"></a>Récapitulatif
 

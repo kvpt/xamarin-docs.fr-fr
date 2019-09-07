@@ -6,18 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 3852e2a1460cb5659cf5a00dcc17fb9a6e9c26a8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525302"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756066"
 ---
 # <a name="manually-uploading-the-apk"></a>Chargement manuel de l’APK
 
-
 La première fois qu’un APK est soumis à Google Play (ou si une version préliminaire de Xamarin.Android est utilisée), l’APK doit être téléchargé manuellement via la [Console développeur de Google Play](https://play.google.com/apps/publish). Ce guide explique les étapes requises pour ce processus. 
-
 
 ## <a name="google-play-developer-console"></a>Console développeur de Google Play
 
@@ -54,13 +52,11 @@ Pour plus d’informations sur le test de l’application, consultez le guide [C
 
 Une fois chargé, l’APK est enregistré en tant que brouillon. Il ne peut pas être publié tant que vous n’avez pas fourni à Google Play des détails supplémentaires comme décrit ci-après.
 
-
 ## <a name="store-listing"></a>Description dans le Store
 
 Cliquez sur **Store Listing** dans la **Console développeur de Google Play** pour entrer les informations que Google Play affichera aux utilisateurs potentiels de l’application : 
 
 [![Boîte de dialogue Store Listing](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
-
 
 ### <a name="graphics-assets"></a>Ressources graphiques
 
@@ -70,7 +66,6 @@ Faites défiler la page **Store Listing** jusqu'à la section **GRAPHICS ASSETS*
 
 Toutes les ressources promotionnelles préparées précédemment sont chargées dans cette section. Des indications relatives aux ressources promotionnelles qui doivent être fournies et dans quel format sont fournies.
 
-
 ### <a name="categorization"></a>Catégorisation
 
 Dans la section **CATEGORIZATION** qui vient après la section **GRAPHICS ASSETS**, sélectionnez le type d’application et sa catégorie :
@@ -79,7 +74,6 @@ Dans la section **CATEGORIZATION** qui vient après la section **GRAPHICS ASSETS
 
 La classification du contenu est abordée après la section suivante.
 
-
 ### <a name="contact-details"></a>Informations de contact
 
 La dernière section de cette page est **CONTACT DETAILS**. Cette section permet pour de collecter les informations de contact du développeur de l’application :
@@ -87,7 +81,6 @@ La dernière section de cette page est **CONTACT DETAILS**. Cette section permet
 [![Section Contact Details](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
 Il est possible de fournir une URL pour la politique de confidentialité de l’application dans la section **PRIVACY POLICY**, comme indiqué ci-dessus.
-
 
 ## <a name="content-rating"></a>Classification du contenu
 
@@ -111,7 +104,6 @@ La liste qui suit répertorie les quatre niveaux définis dans le système de cl
 
 Les éléments de la liste Maturité moyenne sont subjectifs, en tant que tel, il est possible qu’une indication semblant dicter une classification en Maturité moyenne soit suffisamment intense pour mériter la classification en Maturité élevée. 
 
-
 ## <a name="pricing-amp-distribution"></a>Prix &amp; distribution
 
 Cliquez sur **Pricing and Distribution** dans la **Console développeur Google Play**. Dans cette page, définissez un prix si l’application est une application payante.
@@ -122,13 +114,11 @@ Un compte de marchand est nécessaire pour pouvoir publier une application payan
 
 [![Boîte de dialogue Pricing and Distribution](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
-
 ### <a name="manage-countries"></a>Gérer les pays
 
 La section suivante, **Manage Countries**, permet de contrôler les pays dans lesquels une application peut être distribuée :
 
 [![Boîte de dialogue Manage countries](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
-
 
 ### <a name="other-information"></a>Autres informations
 
@@ -137,7 +127,6 @@ Descendez plus bas pour indiquer si l’application contient des publicités. En
 [![Section Contains Ads](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
 À la suite de cette section, des options supplémentaires peuvent être sélectionnées, comme opter pour **Conçu pour les familles** et distribuer l’application via Google Play pour l’éducation.
-
 
 ### <a name="consent"></a>Consentement
 
@@ -148,8 +137,6 @@ Cette section est obligatoire. Elle permet de déclarer que l’application est 
 
 Il y aurait tant d’autres choses à dire sur la publication d’une application Xamarin.Android. Mais ce guide ne peut pas tout couvrir.
 Pour plus d’informations sur la publication de votre application dans Google Play, consultez [Bienvenue dans le Centre d'aide Console Google Play](https://support.google.com/googleplay/android-developer#topic=3450769).
-
-
 
 ## <a name="google-play-filters"></a>Filtres Google Play
 
@@ -169,13 +156,13 @@ Il est possible d’ajouter des éléments au manifeste de l’application pour 
 
 - [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; Cet élément de manifeste déclare les fonctionnalités matérielles ou logicielles qui doit avoir un appareil pour que l’application fonctionne. Cet attribut est informatif uniquement. Google Play n’affiche pas l’application sur les appareils qui ne répondent pas à ce filtre. Il est toujours possible d’installer l’application par d’autres moyens (manuellement ou par téléchargement). Cet élément doit être ajouté manuellement à **AndroidManifest.xml**. 
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Cet élément spécifie que certaines bibliothèques partagées doivent être présentes sur l’appareil, par exemple Google Maps. Cet élément peut également être spécifié avec `Android.App.UsesLibraryAttribute`. Par exemple : 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Cet élément spécifie que certaines bibliothèques partagées doivent être présentes sur l’appareil, par exemple Google Maps. Cet élément peut également être spécifié avec `Android.App.UsesLibraryAttribute`. Par exemple : 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; Cet élément est utilisé pour déduire certaines fonctionnalités matérielles qui sont requises pour exécuter l’application et qui peuvent ne pas avoir été correctement déclarées avec un élément `<uses-feature>`. Par exemple, si une application demande l’autorisation d’utiliser l’appareil photo, Google Play suppose que les appareils doivent disposer d’un appareil photo, même si aucun élément `<uses-feature>` ne déclare l’appareil photo. Cet élément peut être défini avec `Android.App.UsesPermissionsAttribute`. Par exemple : 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; Cet élément est utilisé pour déduire certaines fonctionnalités matérielles qui sont requises pour exécuter l’application et qui peuvent ne pas avoir été correctement déclarées avec un élément `<uses-feature>`. Par exemple, si une application demande l’autorisation d’utiliser l’appareil photo, Google Play suppose que les appareils doivent disposer d’un appareil photo, même si aucun élément `<uses-feature>` ne déclare l’appareil photo. Cet élément peut être défini avec `Android.App.UsesPermissionsAttribute`. Par exemple : 
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: e5f494c2f41500b660bf333e7c63f0120536f52a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525420"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753838"
 ---
 # <a name="linking-on-android"></a>Liaison sur Android
 
@@ -25,8 +25,6 @@ Par exemple, [Hello, Android](https://docs.microsoft.com/samples/xamarin/monodro
 |Version avec liaison :|4,2 Mo|2,9 Mo|
 
 La liaison produit un package qui est de 30 % de la taille du package d’origine (non lié) dans 1.2.0 et de 18 % du package non lié dans 4.0.1.
-
-
 
 ## <a name="control"></a>Contrôle
 
@@ -50,7 +48,6 @@ public class MyActivity {
 }
 ```
 
-
 ### <a name="linker-behavior"></a>Comportement de l'éditeur de liens
 
 Le principal mécanisme de contrôle de l’éditeur de liens est la liste déroulante **Comportement de l’éditeur de liens** (*Liaison* dans Visual Studio) dans la boîte de dialogue **Options du projet**. Vous avez trois options :
@@ -58,7 +55,6 @@ Le principal mécanisme de contrôle de l’éditeur de liens est la liste déro
 1. **Ne pas lier** (*Aucune* dans Visual Studio)
 1. **Lier les assemblys du SDK** (*Uniquement les assemblys du SDK*)
 1. **Lier tous les assemblys** (*Assemblys utilisateur et du SDK*)
-
 
 L’option **Ne pas lier** désactive l’éditeur de liens ; l’exemple de taille des applications « Version sans liaison » ci-dessus utilisait ce comportement. Cela est utile pour la résolution des échecs d’exécution, pour déterminer si l’éditeur de liens est responsable. Ce paramètre n’est généralement pas recommandé pour les versions de production.
 
@@ -87,10 +83,9 @@ E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (Int
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
 
-
 ### <a name="preserving-code"></a>Conservation du code
 
-L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Par exemple :
+L’éditeur de liens supprimera parfois du code que vous souhaitez conserver. Par exemple :
 
 - Vous pouvez obtenir le code que vous appelez dynamiquement via `System.Reflection.MemberInfo.Invoke`.
 
@@ -149,8 +144,6 @@ namespace Android.Runtime
 
 Dans les exemples ci-dessus, l’attribut `Preserve` est déclaré dans l’espace de noms `Android.Runtime`. Toutefois, vous pouvez utiliser l’attribut `Preserve` dans n’importe quel espace de noms, car l’éditeur de liens le recherche par nom de type.
 
-
-
 ### <a name="falseflag"></a>falseflag
 
 Si l’attribut [Preserve] ne peut pas être utilisé, il est souvent utile de fournir un bloc de code afin que l’éditeur de liens pense que le type est utilisé, tout en empêchant le bloc de code d’être exécuté lors de l’exécution. Pour utiliser cette technique, nous pouvons procéder ainsi :
@@ -173,8 +166,6 @@ class MyActivity {
 }
 ```
 
-
-
 ### <a name="linkskip"></a>linkskip
 
 Il est possible de spécifier qu’un jeu d’assemblys fourni par l’utilisateur ne doit pas être lié du tout, tout en permettant aux autres assemblys utilisateur d’être ignorés en cliquant sur le comportement *Lier les assemblys du SDK* à l’aide de la [propriété MSBuild AndroidLinkSkip](~/android/deploy-test/building-apps/build-process.md) :
@@ -185,14 +176,11 @@ Il est possible de spécifier qu’un jeu d’assemblys fourni par l’utilisate
 </PropertyGroup>
 ```
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 [`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md)
 **L’action de génération de build** peut être utilisée sur les fichiers qui peuvent contenir un [Fichier de configuration d’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md).
 .edmx. Des fichiers de configuration d’éditeur de liens personnalisés peuvent être nécessaires pour conserver les membres `internal` ou `private` qui doivent l’être.
-
-
 
 ### <a name="custom-attributes"></a>Attributs personnalisés
 
@@ -207,7 +195,6 @@ Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants s
 - System.MonoTODOAttribute
 - System.Xml.MonoFIXAttribute
 
-
 Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants sont supprimés de tous les membres dans les builds de production :
 
 - System.Diagnostics.DebuggableAttribute
@@ -219,7 +206,6 @@ Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants s
 - System.Diagnostics.DebuggerStepThroughAttribute
 - System.Diagnostics.DebuggerTypeProxyAttribute
 - System.Diagnostics.DebuggerVisualizerAttribute
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: bb33d9f85dfc1215e91caa20fab3800645e13111
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282187"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769883"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Débogage d’un plantage natif dans une application Xamarin.Mac
 
@@ -251,4 +251,3 @@ N’autorisez jamais une exception C# à « laisser échapper » du code managé
 Sans trop entrer dans les raisons techniques, la configuration de l’infrastructure pour intercepter les exceptions managées à chaque limite managée/native est coûteuse en ressources, et il existe par ailleurs _beaucoup_ de transitions qui se produisent dans de nombreuses opérations courantes. De nombreuses opérations, en particulier celles qui impliquent le thread d’interface utilisateur, doivent se terminer rapidement, sans quoi votre application risque de fonctionner par à-coup et avoir des performances inacceptables. Beaucoup de ces rappels font des choses très simples qui ont rarement la possibilité de lever des exceptions : ce surcroît de charge serait à la fois coûteux et inutile dans ces cas.
 
 Ainsi, nous n’allons pas configurer ces instructions try/catch pour vous. Là où votre code fait des choses non triviales (disons, plus que retourner un booléen ou un calcul simple), vous pouvez essayer d’intercepter les exceptions vous-même. 
-

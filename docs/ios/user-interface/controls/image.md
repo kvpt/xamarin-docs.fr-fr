@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 191d037d12d27e2c6ab475467853023f440c71d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291363"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768989"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Affichage d’images avec Xamarin. iOS
 
@@ -50,7 +50,6 @@ Les fichiers placés dans le répertoire **Resources** sont traités différemme
 
 - Stockage des images configurées dans les propriétés de l’application, telles que les images de démarrage par défaut et les icônes d’application.
 - Le stockage d’autres images et fichiers séparément du code, afin qu’ils soient plus faciles à gérer (les sous-répertoires sont conservés lors de la copie du contenu du répertoire des ressources).
-
 
 Le répertoire **Resources** est particulièrement utile dans un projet de bibliothèque, étant donné que le code peut supposer que ces images seront copiées à la racine de l’application consommatrice, ce qui facilitera l’écriture de bibliothèques de code partagé qui nécessitent une image, un son, une vidéo, XML ou autres fichiers.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281180"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770118"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Regroupement pour le Mac App Store
 
@@ -42,7 +42,6 @@ Avant d’effectuer la génération, vérifiez que la configuration **Release** 
 Une fois l’application générée, le développeur peut cliquer avec le bouton droit sur le projet, puis choisir **Ouvrir le dossier conteneur** pour rechercher le fichier de paquet (dans le répertoire `bin/x86/AppStore` dans l’exemple présenté ci-dessous).  Ce fichier de paquet inclut un programme d’installation pour l’application. Il peut être envoyé à Apple pour être ajouté dans le Mac App Store.
 
  ![Sélection du package de build dans le Finder](bundling-images/image64.png "Sélection du package de build dans le Finder")
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
-ms.translationtype: HT
+ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486012"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771459"
 ---
 # <a name="introduction-to-effects"></a>Présentation des effets
 
@@ -58,7 +58,6 @@ Chaque classe `PlatformEffect` spécifique à une plateforme expose les méthode
 - [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) : appelée quand un effet est détaché d’un contrôle Xamarin.Forms. Une version remplacée de cette méthode, dans la classe d’effet spécifique à chaque plateforme, est l’endroit où effectuer le nettoyage de l’effet, comme désinscrire un gestionnaire d’événements.
 
 En outre, `PlatformEffect` expose la méthode [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)), qui peut également être remplacée. Cette méthode est appelée quand une propriété de l’élément a changé. Une version remplacée de cette méthode, dans la classe d’effet spécifique à chaque plateforme, est l’endroit où répondre aux changements des propriétés pouvant être liées sur le contrôle Xamarin.Forms. Une vérification de la propriété changée doit toujours être effectuée, car ce remplacement peut être appelé plusieurs fois.
-
 
 ## <a name="related-links"></a>Liens associés
 
