@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d59a295961c25ecfcc99bb54fdc188c957cf3ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291954"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768536"
 ---
 # <a name="ios-app-architecture"></a>Architecture des applications iOS
 
@@ -93,7 +93,6 @@ L’attribut `[Export]` required contient une chaîne, qui est le sélecteur uti
 
 Il existe deux types d’bureaux d’enregistrement utilisés dans Xamarin. iOS : dynamique et statique :
 
-
 - Registraires **dynamiques** : le Bureau d’enregistrement dynamique procède à l’inscription de tous les types de votre assembly au moment de l’exécution. Pour ce faire, il utilise les fonctions fournies par l' [API Runtime objective-C](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/). Le Bureau d’enregistrement dynamique a donc un démarrage plus lent, mais une génération plus rapide. Il s’agit de la valeur par défaut pour le simulateur iOS. Les fonctions natives (généralement en C), appelées trampolines, sont utilisées en tant qu’implémentations de méthode lors de l’utilisation des registres dynamiques. Ils varient en fonction des différentes architectures.
 
 - **Bureaux d’enregistrement statiques** : le Bureau d’enregistrement statique génère du code Objective-C pendant la génération, qui est ensuite compilé dans une bibliothèque statique et lié à l’exécutable. Cela permet un démarrage plus rapide, mais prend plus de temps pendant la génération. Cela est utilisé par défaut pour les builds d’appareils. Le Bureau d’enregistrement statique peut également être utilisé avec le simulateur `--registrar:static` IOS en `mtouch` passant en tant qu’attribut dans les options de génération de votre projet, comme indiqué ci-dessous :
@@ -114,7 +113,6 @@ En fonction du type de projet, les opérations suivantes sont effectuées :
 Toute cette séquence de lancement est compilée dans une bibliothèque statique, qui est ensuite liée à votre exécutable final pour que votre application sache comment sortir du sol.
 
 À ce stade, notre application a démarré, mono est en cours d’exécution, nous sommes en code géré et nous savons comment appeler du code natif et être rappelé. La prochaine chose à faire est de commencer à ajouter des contrôles et à rendre l’application interactive.
-
 
 ## <a name="generator"></a>Générateur
 
@@ -165,7 +163,6 @@ Une fois le fichier Xamarin. iOS. dll créé, mTouch regroupe tous les composant
 - Si la liaison est activée, exécutez l’éditeur de liens managé pour optimiser vos assemblys en extrayant les parties inutilisées.
 - Compilation AOA.
 - Créez un exécutable natif, qui génère une série de bibliothèques statiques (une pour chaque assembly) qui sont liées à l’exécutable natif, afin que l’exécutable natif se compose du code du lanceur, du code d’inscription (si statique) et de toutes les sorties de l’AOA. compiler
-
 
 Pour plus d’informations sur l’éditeur de liens et son utilisation, reportez-vous au Guide de l' [éditeur de liens](~/ios/deploy-test/linker.md) .
 

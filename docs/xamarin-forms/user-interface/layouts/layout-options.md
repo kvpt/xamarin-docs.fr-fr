@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: 2e4fa5f1fb96077b0237dbeac9074006e761bc09
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 63c8cb285c51d7c10e2109c9d0b7cffbd0fb0898
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655302"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770343"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Options de disposition dans Xamarin.Forms
 
@@ -155,8 +155,6 @@ Chaque [ `Label` ](xref:Xamarin.Forms.Label) occupe la même quantité d’espac
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué l’effet que chaque [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) valeur de la structure a sur l’alignement et l’expansion d’une vue, par rapport à son parent. Le `Start`, `Center`, `End`, et `Fill` champs sont utilisés pour définir l’alignement de la vue dans la disposition du parent et le `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, et `FillAndExpand` champs servent à définir la préférence d’alignement et pour déterminer si la vue occupe davantage d’espace, s’il est disponible, au sein d’un [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

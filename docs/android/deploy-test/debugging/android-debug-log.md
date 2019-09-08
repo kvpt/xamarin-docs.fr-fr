@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: ef3ba27b9056e1de92aabb87f86416b2985d6e1d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525710"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754222"
 ---
 # <a name="android-debug-log"></a>Journal de débogage Android
 
@@ -29,7 +29,6 @@ L’outil **Journal de débogage** fournit un moyen d’afficher la sortie du jo
 > L’outil **Journal de débogage** ne fonctionne pas avec Xamarin Live Player.
 
 Le **Journal de débogage** n’affiche pas de messages du journal générés pendant l’exécution de l’application en mode autonome sur l’appareil (par exemple, pendant qu’il est déconnecté de Visual Studio).
-
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Accès au Journal de débogage à partir de Visual Studio
 
@@ -60,13 +59,11 @@ La capture d’écran suivante illustre les différentes parties de la fenêtre 
 
 - **Zone de recherche** &ndash; entrez les chaînes de recherche dans cette zone pour filtrer un sous-ensemble d’entrées du journal.
 
-
 Lorsque la fenêtre de l’outil **Journal de débogage** s’affiche, utilisez le menu déroulant de l’appareil pour sélectionner l’appareil Android à analyser :
 
 [![Emplacement du Sélecteur d’appareils](android-debug-log-images/vswin-02-devices-combo-sml.png)](android-debug-log-images/vswin-02-devices-combo.png#lightbox)
 
 Une fois l’appareil sélectionné, l’outil **Journal de l’appareil** ajoute automatiquement des entrées du journal à partir d’une application en cours d’exécution. Ces entrées de journal sont affichées dans la table des entrées de journal. Le basculement entre des appareils arrête et démarre la journalisation des appareils. Notez qu’un projet Android doit être chargé avant l’affichage des appareils dans le sélecteur d’appareils. Si l’appareil n’apparaît pas dans le sélecteur d’appareils, vérifiez qu’il est disponible dans le menu déroulant des appareils Visual Studio à côté du bouton **Démarrer**.
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -104,7 +101,6 @@ Une fois l’appareil sélectionné, l’outil **Journal de l’appareil** ajout
 
 -----
 
-
 ## <a name="accessing-from-the-command-line"></a>Accès à partir de la ligne de commande
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -129,16 +125,14 @@ $ ./adb logcat
 
 -----
 
-
 Si plusieurs appareils sont joints, l’appareil doit être identifié explicitement. Par exemple, **adb -d logcat** affiche le journal de l’unique appareil physique connecté, tandis que **adb -e logcat** affiche le journal de l’unique émulateur en cours d’exécution.
 
 Plusieurs commandes sont accessibles en entrant **adb** et en lisant les messages d’aide.
 
-
 ## <a name="writing-to-the-debug-log"></a>Écriture dans le journal de débogage
 
 Des messages peuvent être écrits dans le **Journal de débogage** en utilisant les méthodes de la classe [Android.Util.Log](xref:Android.Util.Log).
-Par exemple : 
+Par exemple : 
 
 ```csharp
 string tag = "myapp";

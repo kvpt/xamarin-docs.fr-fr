@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b15b39460b40bc2c9f993b3b0d9bca3275ac7644
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d391c57c2c63cd4e371bd97ba455962aa053f9ed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286804"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767352"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Autres icônes d’application dans Xamarin. iOS
 
@@ -169,8 +169,6 @@ Si l’utilisateur revient à l’icône principale, une alerte semblable à la 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé l’ajout d’icônes d’application alternatives à un projet Xamarin. iOS et son utilisation dans l’application.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769118"
 ---
 # <a name="introduction-to-tvos-9"></a>Introduction à tvOS 9
 
@@ -175,11 +175,6 @@ L’image de l’étagère supérieure peut être fournie sous la forme `.png` d
 Au lieu d’afficher une image de rayon supérieure statique, elle peut contenir une ligne dynamique ou des éléments pouvant être activés ou un ensemble dynamique de bannières de défilement. Ces deux styles dynamiques vous permettent de mettre en surbrillance le contenu fourni par votre application ou d’accéder à ses fonctionnalités les plus utilisées.
 
 Pour plus d’informations, consultez notre documentation sur l' [utilisation des icônes et des images](~/ios/tvos/app-fundamentals/icons-images.md) et informations de référence sur l' [infrastructure TVServices](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) d’Apple pour plus d’informations sur l’ajout d’une extension d’étagère supérieure à votre application afin de fournir un contenu dynamique supérieur.
-
-
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

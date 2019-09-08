@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 5398d99a64e7f6b75c8b9e418da252852aff1322
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: af2b8cd39d5fb1b0ce6c12f7d6ad87e245b9a594
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288676"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761968"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>Partie 1 : comprendre la plate-forme mobile Xamarin
 
@@ -36,7 +36,6 @@ La C# source fait de son sens dans une application native de manière très diff
 - **Android** : C# est compilé en il et empaqueté avec MonoVM + JIT’ing. Les classes inutilisées dans le Framework sont supprimées lors de la liaison. L’application s’exécute côte à côte avec Java/ART (Runtime Android) et interagit avec les types natifs via JNI (consultez [limitations de Xamarin. Android](~/android/internals/limitations.md) ).
 - **Windows** : C# est compilé en il et exécuté par le runtime intégré, et ne requiert pas d’outils Xamarin. La conception d’applications Windows après l’aide de Xamarin simplifie la réutilisation du code sur iOS et Android.
   Notez que le plateforme Windows universelle a également une option **.net Native** qui se comporte de la même façon que la compilation AOA de Xamarin. iOS.
-
 
 La documentation de l’éditeur de liens pour [Xamarin. iOS](~/ios/deploy-test/linker.md) et [Xamarin. Android](~/android/deploy-test/linker.md) fournit plus d’informations sur cette partie du processus de compilation.
 

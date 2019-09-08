@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: c81cc7ff176ab4863498a03169a2c6a3711a0ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: b505f4a4f7a8f50a6044d01a327eef76a7b1ce3b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525088"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758046"
 ---
-|Property|Description|Options|
+|Propriété|Description|Options|
 |--- |--- |--- |
 |`abi.type`|**Type d’ABI** &ndash; Spécifie le type d’ABI (interface binaire d’application) de l’appareil émulé. L’option **x86** est destinée au jeu d’instructions communément appelé « x86 » ou « IA-32 ». L’option **x86_64** concerne le jeu d’instructions x86 64 bits. L’option **armeabi-v7a** est destinée au jeu d’instructions ARM avec les extensions ARM v7-a. L’option **arm64-v8a** est destinée au jeu d’instructions ARM qui prend en charge AArch64.|x86, x86_64, armeabi-v7a, arm64-v8a|
 |`disk.cachePartition`|**Partition de cache** &ndash; Détermine si l’appareil émulé doit utiliser une partition **/cache** sur l’appareil. La partition **/cache** (initialement vide) est l’emplacement où Android stocke les données fréquemment consultées et les composants de l’application. Si l’option est définie sur **no**, l’émulateur n’utilise pas de partition **/cache** et les autres paramètres `disk.cache` sont ignorés.|yes, no|
@@ -65,4 +65,3 @@ ms.locfileid: "69525088"
 |`skin.name`|**Nom de l’apparence** &ndash; Nom d’une apparence d’émulateur Android. Une apparence est une collection de fichiers qui définit les éléments visuels et de contrôle d’un affichage de l’émulateur ; elle décrit l’aspect de la fenêtre de l’appareil virtuel Android sur votre ordinateur de développement. Une apparence décrit la taille, les boutons et la conception générale de l’écran, mais elle n’affecte pas le fonctionnement de votre application.||
 |`skin.path`|**Chemin de l’apparence** &ndash; Chemin du répertoire qui contient les fichiers d’apparence de l’émulateur spécifiés dans skin.name. Ce répertoire contient les fichiers de disposition hardware.ini et les fichiers image des éléments d’affichage de l’apparence.||
 |`skin.dynamic`|**Apparence dynamique** &ndash; Indique si l’apparence est dynamique ou non. L’apparence de l’émulateur est une apparence dynamique si l’émulateur consiste à construire une apparence d’une taille donnée, selon une largeur et une hauteur spécifiées.|Non|
-

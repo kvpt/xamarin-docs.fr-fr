@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 7f455d2164573d68db0a9c764f2b2cef5cc6d739
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284041"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752677"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements et rapports dans Xamarin. iOS
 
@@ -28,7 +28,6 @@ Principales différences entre les abonnements qui ne sont pas renouvelés et d�
 - Vue d’ensemble de l’implémentation
 - Les abonnements qui ne sont pas renouvelés doivent normalement être implémentés à l’aide du flux de travail fourni par le serveur et de produits consommables managés. 
 
-
 ## <a name="about-free-subscriptions"></a>À propos des abonnements gratuits
 
 Les abonnements gratuits permettent aux développeurs de placer du contenu gratuit dans les applications Newsstand (ils ne peuvent pas être utilisés dans des applications non-Newsstand). Une fois qu’un abonnement gratuit est démarré, il est disponible sur tous les appareils de l’utilisateur. Les abonnements gratuits n’expirent jamais ; ils se terminent uniquement lorsque l’application est désinstallée.
@@ -36,7 +35,6 @@ Les abonnements gratuits permettent aux développeurs de placer du contenu gratu
 ### <a name="implementation-overview"></a>Vue d’ensemble de l’implémentation
 
 Les abonnements gratuits se comportent comme des abonnements renouvelés automatiquement. L’application doit disposer d’un produit d’abonnement gratuit disponible pour l’achat dans iTunes Connect. Une fois acheté par l’utilisateur, l’achat d’abonnement gratuit doit être validé comme un produit d’abonnement auto-renouvelable. Les transactions d’abonnement gratuites peuvent être restaurées.
-
 
 ## <a name="about-auto-renewable-subscriptions"></a>À propos des abonnements renouvelés automatiquement
 
@@ -53,7 +51,7 @@ Le secret partagé de l’achat dans l’application doit être utilisé dans la
 Dans la page d’hébergement iTunes Connect, sélectionnez **mes applications**:   
    
  [![](subscriptions-and-reporting-images/image2.png "Sélectionner Mes apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
- 
+
 Sélectionnez une application, puis cliquez sur l’onglet **achats dans l’application** :
 
 [![](subscriptions-and-reporting-images/image6.png "Cliquer sur l’onglet achats dans l’application")](subscriptions-and-reporting-images/image6.png#lightbox)
@@ -63,10 +61,8 @@ En bas de la page, sélectionnez **afficher ou générer un secret partagé**:
  [![](subscriptions-and-reporting-images/image40.png "Sélectionnez Afficher ou générer un secret partagé")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Générer un secret partagé")](subscriptions-and-reporting-images/image41.png#lightbox)   
-   
-   
-   
- Pour utiliser le secret partagé, incluez-le dans la charge utile JSON envoyée aux serveurs d’Apple lors de la validation d’un accusé de réception d’achat dans l’application pour un abonnement renouvelable automatiquement, comme suit :
+
+Pour utiliser le secret partagé, incluez-le dans la charge utile JSON envoyée aux serveurs d’Apple lors de la validation d’un accusé de réception d’achat dans l’application pour un abonnement renouvelable automatiquement, comme suit :
 
 ```csharp
 {
@@ -95,10 +91,8 @@ Si l’État est égal à zéro, l’abonnement est toujours valide et les autre
 #### <a name="restoring-auto-renewable-subscriptions"></a>Restauration des abonnements auto-renouvelés
 
 Vous bénéficiez de plusieurs transactions : la transaction d’achat d’origine et une transaction distincte pour chaque période de temps pendant laquelle l’abonnement a été renouvelé. Vous devez suivre les dates et les termes de début pour comprendre la période de validité.   
-   
-   
-   
- L’objet SKPaymentTransaction n’inclut pas le terme d’abonnement : vous devez utiliser un ID de produit différent pour chaque terme et écrire du code qui peut extrapoler la période d’abonnement à partir de la date d’achat de la transaction.
+
+L’objet SKPaymentTransaction n’inclut pas le terme d’abonnement : vous devez utiliser un ID de produit différent pour chaque terme et écrire du code qui peut extrapoler la période d’abonnement à partir de la date d’achat de la transaction.
 
 #### <a name="testing-auto-renewal"></a>Test de renouvellement automatique
 

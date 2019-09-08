@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 68ba09ce74f161c728f0a58276a0b0d98fec7d8c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281286"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767774"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Suggestions proactives Watchos dans Xamarin
 
 _Cet article explique comment utiliser des suggestions proactives dans une application Watchos 3 pour conduire un engagement en permettant au système de présenter de manière proactive des informations utiles à l’utilisateur._
 
-
 Nouveauté de Watchos 3, les suggestions proactives présentent de nouvelles méthodes permettant aux utilisateurs de s’associer à une application Xamarin. iOS en présentant de manière proactive les informations utiles automatiquement à l’utilisateur à des moments opportuns.
-
 
 ## <a name="about-proactive-suggestions"></a>À propos des suggestions proactives
 
@@ -300,7 +298,6 @@ Cette section examine l’utilisation des suggestions d’emplacement directemen
 
 Lorsque l’application est démarrée avec un `MKDirectionsRequest` objet MapKit, elle doit automatiquement commencer à donner à l’utilisateur le sens de l’emplacement demandé ou présenter une interface utilisateur qui permet à l’utilisateur de commencer à obtenir des instructions plus facilement. Par exemple :
 
-
 ```csharp
 using System;
 using Foundation;
@@ -362,7 +359,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté des suggestions proactives et a montré comment le développeur peut les utiliser pour diriger le trafic vers une application Xamarin. iOS pour Watchos. Il a abordé la marche à suivre pour implémenter des suggestions proactives et présenter des instructions d’utilisation.
-
 
 ## <a name="related-links"></a>Liens associés
 

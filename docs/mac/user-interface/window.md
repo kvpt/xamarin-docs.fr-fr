@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291531"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772639"
 ---
 # <a name="windows-in-xamarinmac"></a>Windows dans Xamarin. Mac
 
@@ -747,7 +747,6 @@ Dans l' **inspecteur d’attributs**, vous disposez des options suivantes spéci
 - **Style** : vous permet d’ajuster le style du panneau à partir de : Panneau normal (qui ressemble à une fenêtre standard), un panneau utilitaire (avec une barre de titre plus petite), un panneau HUD (translucide et la barre de titre fait partie de l’arrière-plan).
 - **Non activé** : détermine dans le panneau qui devient la fenêtre clé.
 - **Document modal** : si le document est modal, le panneau flotte uniquement au-dessus des fenêtres de l’application, sinon il flotte au-dessus de tout.
-
 
 Pour ajouter un nouveau panneau, procédez comme suit :
 

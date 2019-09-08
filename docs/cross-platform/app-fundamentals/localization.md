@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 8ecc0cf0ed1fe77f55044d44ecdfc43d6cb6b448
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b7dfeee92020be2fb40cfdfc5eb1b97d065b97e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289102"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758178"
 ---
 # <a name="localization"></a>Localisation
 
@@ -44,7 +44,6 @@ Lors de la conception et de la création d’une application, les éléments que
 - Tri des données.
 
 Quelles que soient les plateformes mobiles ciblées par votre application, ces conseils vous aideront à créer une application localisée de haute qualité.
-
 
 ## <a name="design-considerations"></a>Considérations de design
 
@@ -85,7 +84,6 @@ Certaines ressources ont un sens de localiser, par exemple :
 - Icônes : certains iconographie peuvent être spécifiques à une culture et vous pouvez rendre votre application plus facile à utiliser en localisant l’image pour refléter la compréhension locale.
 - Couleurs : certaines cultures comprennent les couleurs différemment : le rouge peut signifier un avertissement dans une région, mais bonne chance dans une autre. Vérifiez avec les orateurs natifs lors de la conception de votre application pour déterminer si vous devez créer un mécanisme pour localiser les couleurs.
 
-
 ### <a name="videos-and-sound"></a>Vidéos et sons
 
 Les vidéos et le son présentent des défis particuliers lors de la localisation d’une application. en effet, bien qu’il soit relativement facile d’utiliser des chaînes traduites, l’enregistrement de plusieurs pistes VoiceOver ou clips vidéo peut être coûteux et difficile.
@@ -93,7 +91,6 @@ Les vidéos et le son présentent des défis particuliers lors de la localisatio
 Plusieurs copies de fichiers vidéo et audio peuvent également augmenter considérablement la taille de votre application (surtout si vous êtes en local dans un grand nombre de langues ou si vous avez beaucoup de fichiers multimédias). Vous pouvez envisager de télécharger uniquement les ressources de langue requises une fois que l’utilisateur a installé votre application, mais cela peut également entraîner une mauvaise expérience utilisateur sur les réseaux lents.
 
 Il existe souvent plusieurs façons de résoudre les problèmes de localisation : l’élément le plus important consiste à les considérer comme devant et à s’assurer que votre application est conçue pour s’en occuper.
-
 
 ### <a name="dates-times-numbers-and-currency"></a>Dates, heures, nombres et devises
 
@@ -144,7 +141,6 @@ Veillez à écrire et tester votre algorithme de recherche avec plusieurs langue
 - Recherche de radical : Si votre recherche est conçue pour rechercher des mots similaires, des racines de mots et d’autres optimisations de recherche, les optimisations sont-elles générées pour toutes les langues prises en charge ?
 - Tri : Assurez-vous que les résultats sont triés correctement (voir ci-dessus).
 
-
 ### <a name="data-from-external-sources"></a>Données provenant de sources externes
 
 De nombreuses applications téléchargent des données à partir de sources externes, des flux Twitter et RSS aux cours météorologiques, d’actualité ou d’actions. Quand vous l’affichez à un utilisateur, vous devez prendre en compte la possibilité d’afficher un écran d’informations non pertinentes ou illisibles.
@@ -157,7 +153,6 @@ Il existe peu de stratégies que vous pouvez utiliser pour essayer de vérifier 
 
 Cela peut également affecter des liens externes vers des pistes audio ou des vidéos : lors de la conception de votre application, veillez à planifier le contenu traduit ou à vous assurer que les utilisateurs sont correctement informés par l’interface utilisateur lorsque le contenu ne sera pas présenté dans leur sous.
 
-
 ### <a name="dont-over-translate"></a>Ne pas dépasser la traduction
 
 Certaines chaînes de votre application n’ont peut-être pas besoin d’être traduites, ou au moins une attention particulière doit être prise en considération par le traducteur. Les exemples peuvent inclure :
@@ -169,20 +164,15 @@ Certaines chaînes de votre application n’ont peut-être pas besoin d’être 
 
 Enfin, veillez à inclure des instructions détaillées pour le traducteur si certaines chaînes nécessitent un traitement spécial.
 
-
 ### <a name="formatted-text"></a>Texte mis en forme
 
 Ce n’est généralement pas un problème avec les applications mobiles, car les chaînes ne sont généralement pas formatées de manière riche. Toutefois, si du texte enrichi (par exemple, une mise en forme en gras ou en italique) est requis dans votre application, assurez-vous que le traducteur sait comment entrer la mise en forme, que vos fichiers de chaînes le stockent correctement et qu’il est correctement mis en forme avant d’être affiché à l’utilisateur (IE). ne laissez pas accidentellement les codes de mise en forme sont eux-mêmes présentés à l’utilisateur).
-
-
 
 ## <a name="translation-tips"></a>Conseils de traduction
 
 La traduction des chaînes utilisées par une application est considérée comme faisant partie du processus de localisation. En général, cette tâche est externalisée sur un service de traduction et effectuée par un personnel multilingue qui peut ne pas connaître votre application ou votre entreprise.
 
 Les conseils suivants vous aideront à créer des chaînes plus faciles à traduire correctement et à améliorer la qualité de vos applications localisées.
-
-
 
 ### <a name="localize-complete-strings-not-words"></a>Localiser des chaînes complètes, et non des mots
 
@@ -208,7 +198,6 @@ puis essayez de créer l’expression correcte à la volée dans le code à l’
 
 **Cela est déconseillé** , car il ne fonctionnera pas nécessairement pour tous les langages et sera difficile pour le traducteur de comprendre le contexte de chaque segment. Cela entraîne également la réutilisation de chaînes traduites, ce qui peut entraîner des problèmes ultérieurement s’ils sont utilisés dans des contextes différents (puis sont mis à jour).
 
-
 ### <a name="allow-for-parameter-re-ordering"></a>Autoriser le réordonnancement des paramètres
 
 Certains langages de programmation requièrent une syntaxe supplémentaire pour spécifier l’ordre des paramètres dans une chaîne. Toutefois, .NET prend déjà en charge le concept d’espaces réservés numérotés, donc
@@ -227,7 +216,6 @@ peut être traduite comme suit (où la position et l’ordre des espaces réserv
 
 et les jetons sont classés comme étant le traducteur prévu. Veillez à inclure une explication de ce que contient chaque espace réservé lors de l’envoi de la chaîne à un traducteur.
 
-
 ### <a name="use-multiple-strings-for-cardinality"></a>Utiliser plusieurs chaînes pour la cardinalité
 
 Évitez les chaînes `"You have {0} message/s."` comme utiliser des chaînes spécifiques pour chaque État afin de fournir une meilleure expérience utilisateur :
@@ -242,7 +230,6 @@ et les jetons sont classés comme étant le traducteur prévu. Veillez à inclur
 ```
 
 Vous devrez écrire du code dans votre application pour évaluer le nombre affiché et choisir la chaîne appropriée. Certaines plateformes (y compris iOS et Android) disposent de fonctionnalités intégrées pour choisir automatiquement la chaîne la mieux adaptée en fonction des préférences de la langue/des paramètres régionaux actuels.
-
 
 ### <a name="allowing-for-gender"></a>Autorisation pour le sexe
 
@@ -294,7 +281,6 @@ Il existe également des services de traduction professionnels qui prennent vos 
 
 L’un des meilleurs services connus est [Lionbridge](http://www.lionbridge.com/). La plupart des services professionnels prennent en charge tous les types de fichiers courants, y compris les chaînes, XML, RESX et POT/PO.
 
-
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté certains des concepts avec lesquels vous devez être familiarisé avant l’internationalisation de votre application, puis la localisation de vos ressources, ainsi que la modification des préférences linguistiques pour chaque plateforme.
@@ -306,8 +292,6 @@ Continuez à lire les détails techniques de la plateforme qui vous intéresse 
 - Localisation multiplateforme [Xamarin. Forms](~/xamarin-forms/app-fundamentals/localization/index.md) à l’aide de fichiers resx.
 - Localisation de plateforme native [Xamarin. iOS](~/ios/app-fundamentals/localization/index.md) .
 - Localisation de la plateforme native [Xamarin. Android](~/android/app-fundamentals/localization.md) .
-
-
 
 ## <a name="related-links"></a>Liens associés
 

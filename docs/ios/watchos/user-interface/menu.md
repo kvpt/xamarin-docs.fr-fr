@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ac23ae6fe094b8049ac1b3460d327716e4ece
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291680"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766800"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Contrôle de menu Watchos (Force Touch) dans Xamarin
 
@@ -28,7 +28,6 @@ Si un `Menu` a été implémenté pour un contrôleur d’interface, lorsqu’un
 Les touches de force ne sont pas associées à un élément particulier à l’écran ; un seul menu peut être attaché à un contrôleur d’interface et il s’affiche, quel que soit l’endroit où se trouve le Force Touch sur l’écran.
 
 Il est possible de présenter entre une et quatre options de menu.
-
 
 ## <a name="adding-a-menu"></a>Ajout d’un menu
 
@@ -56,7 +55,6 @@ partial void MenuItemTapped ()
 Comme pour les images avec onglets dans iOS, les images d’élément de menu requièrent un modèle opaque avec un canal alpha qui permet d’afficher l’arrière-plan.
 
 Pour des performances optimales, vous devez ajouter les images utilisées pour le menu au projet d’application Watch (et non au projet d’extension de l’application Watch).
-
 
 ## <a name="changing-the-menu-items"></a>Modification des éléments de menu
 
@@ -90,8 +88,6 @@ void MenuItemTapped ()
 La `ClearAllMenuItems` méthode peut être appelée pour supprimer tous les éléments de menu *ajoutés par programmation* .
 
 Impossible d’effacer les éléments de menu configurés dans la table de montage séquentiel.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2017
-ms.openlocfilehash: 683587e4857ede20096be731b3cfa3b88b3a668d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 25b4e5a564c8dabf4cb44881c25e0a10ade47350
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282516"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767739"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Icônes de document personnalisées dans Xamarin. iOS
 
@@ -30,7 +30,7 @@ Les icônes peuvent être fournies pour plusieurs tailles, optimisées pour les 
 Pour affecter ces valeurs dans Visual Studio pour Mac, utilisez la section **types de documents** sous l’onglet **avancé** de `Info.plist` l’éditeur pour ajouter le type de document et lui affecter des icônes d’image. Par exemple, voici une capture d’écran montrant l’inscription de la prise en charge PDF :
 
  [![](custom-document-types-images/18.png "La section types de documents sous l’onglet avancé de l’éditeur’info. plist'")](custom-document-types-images/18.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Pour affecter ces valeurs dans Visual Studio, utilisez la section **types de documents** sous l’onglet **avancé** de `Info.plist`la :
@@ -43,9 +43,7 @@ Cliquez sur le bouton **Ajouter un type de document** et renseignez les champs o
 
 -----
 
-
 Pour plus d’informations sur les types de documents, consultez les rubriques de référence sur les [identificateurs de types uniformes](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) d’Apple et sur la [programmation des interactions de documents pour iOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html).
-
 
 ## <a name="related-links"></a>Liens associés
 

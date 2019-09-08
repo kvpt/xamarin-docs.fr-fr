@@ -6,12 +6,12 @@ ms.assetid: 8A355636-DE60-45BC-B988-1967755FDD28
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: ed9521916a9610ee8fbd06ac8a6497d28d744d90
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0b4a36d1dca9c96a33398f58dcd46490218b82f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280579"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765195"
 ---
 # <a name="f-samples-for-xamarin"></a>F#Exemples pour Xamarin
 
@@ -36,4 +36,3 @@ Un certain nombre d’exemples pour le [livre Xamarin. Forms](~/xamarin-forms/cr
 - [Chapitre 6. Clics de bouton](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
 - [Chapitre 7. XAML et code](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
 - [Chapitre 8. Code et XAML en harmonie](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
-

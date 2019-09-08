@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: ec93083ee3d99dbf748309b23248e982b793ce13
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524854"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756688"
 ---
 # <a name="architecture"></a>Architecture
 
@@ -20,7 +20,7 @@ Cet environnement d’exécution s’exécute côte à côte avec la machine vir
 
 Vous pouvez utiliser le [système](xref:System), [System.IO](xref:System.IO), [System.net](xref:System.Net) et les autres bibliothèques de classes .net pour accéder aux installations du système d’exploitation Linux sous-jacent.
 
-Sur Android, la plupart des fonctionnalités système telles que l’audio, les graphiques, OpenGL et la téléphonie ne sont pas disponibles directement pour les applications natives, elles sont uniquement exposées via les API Java Android Runtime résidant dans l’un des espaces de noms [java](xref:Java.Lang). * ou [Android ](xref:Android). * espaces de noms. L’architecture ressemble à peu près à ce qui suit:
+Sur Android, la plupart des fonctionnalités système telles que l’audio, les graphiques, OpenGL et la téléphonie ne sont pas disponibles directement pour les applications natives, elles sont uniquement exposées via les API Java Android Runtime résidant dans l’un des espaces de noms [java](xref:Java.Lang). * ou [Android ](xref:Android). * espaces de noms. L’architecture ressemble à peu près à ce qui suit :
 
 [![Diagramme de mono et ART au-dessus du noyau et des liaisons .NET/Java +](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
@@ -28,26 +28,20 @@ Les développeurs Xamarin. Android accèdent aux différentes fonctionnalités d
 
 Pour plus d’informations sur la façon dont les classes Android communiquent avec les classes d’exécution Android, consultez le document de [conception d’API](~/android/internals/api-design.md) .
 
-
 ## <a name="application-packages"></a>Packages d’application
 
-Les packages d’application Android sont des conteneurs ZIP avec une extension de fichier *. apk* . Les packages d’application Xamarin. Android ont la même structure et la même disposition que les packages Android normaux, avec les ajouts suivants:
+Les packages d’application Android sont des conteneurs ZIP avec une extension de fichier *. apk* . Les packages d’application Xamarin. Android ont la même structure et la même disposition que les packages Android normaux, avec les ajouts suivants :
 
 - Les assemblys d’application (contenant le langage intermédiaire) sont *stockés* non compressés dans le dossier d' *assemblys* . Lors du démarrage du processus dans les versions release, le *. apk* est *mmap ()* ed dans le processus et les assemblys sont chargés à partir de la mémoire. Cela permet un démarrage plus rapide des applications, car les assemblys n’ont pas besoin d’être extraits avant l’exécution.  
-- *Remarque :* Les informations d’emplacement de l’assembly, telles que [assembly. Location](xref:System.Reflection.Assembly.Location) et [assembly.](xref:System.Reflection.Assembly.CodeBase) CodeBase, *ne peuvent pas être reposées sur* dans les versions release. Ils n’existent pas en tant qu’entrées distinctes du système de fichiers et n’ont pas d’emplacement utilisable.
-
+- *Remarque :* Les informations d’emplacement de l’assembly, telles que [assembly. Location](xref:System.Reflection.Assembly.Location) et [assembly. CodeBase](xref:System.Reflection.Assembly.CodeBase) , *ne peuvent pas être reposées sur* dans les versions release. Ils n’existent pas en tant qu’entrées distinctes du système de fichiers et n’ont pas d’emplacement utilisable.
 
 - Les bibliothèques natives contenant le runtime mono sont présentes dans le *. apk* . Une application Xamarin. Android doit contenir des bibliothèques natives pour les architectures Android souhaitées/ciblées, par exemple, *ARMEABI* , *ARMEABI-V7A* , *x86* . Les applications Xamarin. Android ne peuvent pas s’exécuter sur une plateforme, sauf si elle contient les bibliothèques d’exécution appropriées.
 
-
 Les applications Xamarin. Android contiennent également des *wrappers pouvant être appelés* par Android pour permettre à Android d’appeler du code managé.
-
-
 
 ## <a name="android-callable-wrappers"></a>Wrappers pouvant être appelés par Android
 
 - Les **wrappers Android** pouvant être appelés sont un pont [JNI](https://en.wikipedia.org/wiki/Java_Native_Interface) utilisé chaque fois que le runtime Android doit appeler du code managé. Les wrappers pouvant être appelés par Android sont la manière dont les méthodes virtuelles peuvent être substituées et les interfaces Java peuvent être implémentées. Pour plus d’informations, consultez le document [vue d’ensemble de l’intégration Java](~/android/platform/java-integration/index.md) .
-
 
 <a name="Managed_Callable_Wrappers" />
 
@@ -56,33 +50,30 @@ Les applications Xamarin. Android contiennent également des *wrappers pouvant �
 Les wrappers pouvant être appelés sont un pont JNI qui est utilisé chaque fois que du code managé doit appeler du Code Android et prendre en charge la substitution de méthodes virtuelles et l’implémentation d’interfaces Java. L’ensemble des espaces de noms [Android](xref:Android). * et associés sont des wrappers pouvant être appelés managés générés via une [liaison. jar](~/android/platform/binding-java-library/index.md).
 Les wrappers pouvant être appelés sont chargés de la conversion entre les types managés et Android et d’appeler les méthodes de plateforme Android sous-jacentes via JNI.
 
-Chaque Wrapper pouvant être appelé managé contient une référence globale Java, accessible via la propriété [Android. Runtime. IJavaObject. handle](xref:Android.Runtime.IJavaObject.Handle) . Les références globales sont utilisées pour fournir le mappage entre les instances Java et les instances managées. Les références globales sont une ressource limitée: les émulateurs autorisent uniquement l’existence de 2000 références globales à la fois, tandis que la plupart du matériel autorise l’existence de plus de 52 000 références globales à la fois.
+Chaque Wrapper pouvant être appelé managé contient une référence globale Java, accessible via la propriété [Android. Runtime. IJavaObject. handle](xref:Android.Runtime.IJavaObject.Handle) . Les références globales sont utilisées pour fournir le mappage entre les instances Java et les instances managées. Les références globales sont une ressource limitée : les émulateurs autorisent uniquement l’existence de 2000 références globales à la fois, tandis que la plupart du matériel autorise l’existence de plus de 52 000 références globales à la fois.
 
 Pour suivre le moment où les références globales sont créées et détruites, vous pouvez définir la propriété système [Debug. mono. log](~/android/troubleshooting/index.md) de sorte qu’elle contienne [Gref](~/android/troubleshooting/index.md).
 
 Les références globales peuvent être libérées explicitement en appelant [java. lang. Object. Dispose ()](xref:Java.Lang.Object.Dispose) sur le wrapper managé pouvant être appelé. Cela supprimera le mappage entre l’instance Java et l’instance gérée et autorisera la collecte de l’instance java. Si l’instance Java est à nouveau accessible à partir du code managé, un nouveau wrapper managé pouvant être appelé sera créé pour celle-ci.
 
-Soyez vigilant lorsque vous supprimez des wrappers pouvant être appelés si l’instance peut être partagée par inadvertance entre les threads, car la suppression de l’instance aura un impact sur les références de tous les autres threads. Pour une sécurité maximale, `Dispose()` seules les instances qui ont été allouées via `new` des méthodes *ou* à partir de sont toujours allouées aux nouvelles instances et non mises en cache, ce qui peut entraîner un partage d’instance accidentel entre thèmes.
-
-
+Soyez vigilant lorsque vous supprimez des wrappers pouvant être appelés si l’instance peut être partagée par inadvertance entre les threads, car la suppression de l’instance aura un impact sur les références de tous les autres threads. Pour une sécurité maximale, `Dispose()` seules les instances qui ont été allouées via `new` des méthodes *ou* à partir de *sont toujours* allouées aux nouvelles instances et non mises en cache, ce qui peut entraîner un partage d’instance accidentel entre thèmes.
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Sous-classes de wrappers pouvant être appelées managées
 
-Les sous-classes de wrappers pouvant être appelées sont là où toute la logique propre à l’application «intéressante» peut être active. Celles-ci incluent des sous-classes [Android. app. Activity](xref:Android.App.Activity) personnalisées (telles que le type [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) dans le modèle de projet par défaut). (En particulier, il s’agit des sous-classes *java. lang. Object* qui ne contiennent *pas* d’attribut personnalisé [RegisterAttribute](xref:Android.Runtime.RegisterAttribute) ou [RegisterAttribute. DoNotGenerateAcw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) a la valeur *false*, qui est la valeur par défaut).
+Les sous-classes de wrappers pouvant être appelées sont là où toute la logique propre à l’application « intéressante » peut être active. Celles-ci incluent des sous-classes [Android. app. Activity](xref:Android.App.Activity) personnalisées (telles que le type [Activity1](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) dans le modèle de projet par défaut). (En particulier, il s’agit des sous-classes *java. lang. Object* qui ne contiennent *pas* d’attribut personnalisé [RegisterAttribute](xref:Android.Runtime.RegisterAttribute) ou [RegisterAttribute. DoNotGenerateAcw](xref:Android.Runtime.RegisterAttribute.DoNotGenerateAcw) a la valeur *false*, qui est la valeur par défaut).
 
 À l’instar des wrappers pouvant être appelés, les sous-classes de wrappers pouvant être appelés managées contiennent également une référence globale, accessible via la propriété [java. lang. Object. handle](xref:Java.Lang.Object.Handle) . Tout comme avec les wrappers pouvant être appelés, les références globales peuvent être libérées explicitement en appelant [java. lang. Object. Dispose ()](xref:Java.Lang.Object.Dispose).
 Contrairement aux wrappers managés pouvant être appelés, il convient de *veiller* à la suppression de ces instances, car *dispose ()* -Ing de l’instance interrompt le mappage entre l’instance java (une instance d’un wrapper Android Callable) et le managé instancié.
-
 
 ### <a name="java-activation"></a>Activation Java
 
 Lorsqu’un [Wrapper Android](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) est créé à partir de Java, le constructeur ACW entraîne l’appel du C# constructeur correspondant. Par exemple, le ACW pour *MainActivity* contient un constructeur par défaut qui appellera le constructeur par défaut de *MainActivity*. (Cette opération s’effectue par le biais de l’appel *TypeManager. Activate ()* dans les constructeurs ACW.)
 
-Il existe une autre signature de constructeur de la conséquence: le constructeur *(IntPtr, JniHandleOwnership)* . Le constructeur *(IntPtr, JniHandleOwnership)* est appelé chaque fois qu’un objet Java est exposé au code managé et qu’un wrapper pouvant être appelé managé doit être construit pour gérer le descripteur JNI. Cette opération est généralement effectuée automatiquement.
+Il existe une autre signature de constructeur de la conséquence : le constructeur *(IntPtr, JniHandleOwnership)* . Le constructeur *(IntPtr, JniHandleOwnership)* est appelé chaque fois qu’un objet Java est exposé au code managé et qu’un wrapper pouvant être appelé managé doit être construit pour gérer le descripteur JNI. Cette opération est généralement effectuée automatiquement.
 
-Il existe deux scénarios dans lesquels le constructeur *(IntPtr, JniHandleOwnership)* doit être fourni manuellement sur une sous-classe de wrappers pouvant être appelés managés:
+Il existe deux scénarios dans lesquels le constructeur *(IntPtr, JniHandleOwnership)* doit être fourni manuellement sur une sous-classe de wrappers pouvant être appelés managés :
 
-1. [Android. app. application](xref:Android.App.Application) est sous-classé. L' *application* est spéciale; le constructeur *application* par défaut ne sera *jamais* appelé et le [constructeur (IntPtr, JniHandleOwnership) doit être fourni à la place](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105).
+1. [Android. app. application](xref:Android.App.Application) est sous-classé. L' *application* est spéciale ; le constructeur *application* par défaut ne sera *jamais* appelé et le [constructeur (IntPtr, JniHandleOwnership) doit être fourni à la place](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/SanityTests/Hello.cs#L105).
 
 2. Appel de méthode virtuelle à partir d’un constructeur de classe de base.
 
@@ -91,7 +82,7 @@ Par conséquent, si un [LogTextBox](https://github.com/xamarin/monodroid-samples
 
 Cela est pris en charge en instanciant une instance LogTextBox par le biais du constructeur [LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28) lorsque l’instance ACW LogTextBox entre en première place dans le code managé, puis en appelant le [LogTextBox (Context, IAttributeSet, int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41) *sur la même instance* lorsque le constructeur ACW s’exécute.
 
-Ordre des événements:
+Ordre des événements :
 
 1. La disposition XML est chargée dans un [ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41).
 
@@ -103,7 +94,7 @@ Ordre des événements:
 
 5. *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* appelle *LogTextBox. n_getDefaultMovementMethod ()* , qui appelle *TextView. n_getDefaultMovementMethod ()* , qui appelle [java. lang. Object. GetObject&lt; TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
 
-6. *Java. lang. Object. GetObject&lt;TextView&gt;()* vérifie s’il existe déjà une instance correspondante C# pour descripteur. Si c’est le cas, il est retourné. Dans ce scénario, ce n’est pas le cas, donc *Object. GetObject&lt;&gt;t ()* doit en créer un.
+6. *Java. lang. Object. GetObject&lt;TextView&gt;()* vérifie s’il existe déjà une instance correspondante C# pour *descripteur* . Si c’est le cas, il est retourné. Dans ce scénario, ce n’est pas le cas, donc *Object. GetObject&lt;&gt;t ()* doit en créer un.
 
 7. *Object. GetObject&lt;T&gt;()* recherche le constructeur *LogTextBox (IntPtr, JniHandleOwneship)* , l’appelle, crée un mappage entre *handle* et l’instance créée et retourne l’instance créée.
 
@@ -115,7 +106,7 @@ Ordre des événements:
 
 11. Le constructeur *LogTextBox (Context, IAttributeSet, int)* s’exécute *sur la même instance créée dans (7)* .
 
-12. Si le constructeur (IntPtr, JniHandleOwnership) est introuvable, une exception System. MissingMethodException] (XREF: System. MissingMethodException) est levée.
+12. Si le constructeur (IntPtr, JniHandleOwnership) est introuvable, une exception System. MissingMethodException] (XREF : System. MissingMethodException) est levée.
 
 <a name="Premature_Dispose_Calls" />
 
@@ -123,7 +114,7 @@ Ordre des événements:
 
 Il existe un mappage entre un handle JNI et l’instance C# correspondante. Java. lang. Object. Dispose () interrompt ce mappage. Si un handle JNI entre dans du code managé après la rupture du mappage, il ressemble à l’activation Java et le constructeur *(IntPtr, JniHandleOwnership)* est vérifié et appelé. Si le constructeur n’existe pas, une exception est levée.
 
-Par exemple, à partir de la sous-classe d’encapsulage pouvant être appelée par Managed suivante:
+Par exemple, à partir de la sous-classe d’encapsulage pouvant être appelée par Managed suivante :
 
 ```csharp
 class ManagedValue : Java.Lang.Object {
@@ -142,7 +133,7 @@ class ManagedValue : Java.Lang.Object {
 }
 ```
 
-Si nous créons une instance, dispose () de celle-ci et que vous recréez le wrapper pouvant être appelé managé:
+Si nous créons une instance, dispose () de celle-ci et que vous recréez le wrapper pouvant être appelé managé :
 
 ```csharp
 var list = new JavaList<IJavaObject>();
@@ -151,7 +142,7 @@ list [0].Dispose ();
 Console.WriteLine (list [0].ToString ());
 ```
 
-Le programme va s’exécuter:
+Le programme va s’exécuter :
 
 ```shell
 E/mono    ( 2906): Unhandled Exception: System.NotSupportedException: Unable to activate instance of type Scratch.PrematureDispose.ManagedValue from native handle 4051c8c8 --->
@@ -164,15 +155,13 @@ E/mono    ( 2906):   at Java.Lang.Object.GetObject (IntPtr handle, JniHandleOwne
 E/mono    ( 2906):   at Java.Lang.Object._GetObject[IJavaObject] (IntPtr handle, JniHandleOwnership transfer) [0x00000
 ```
 
-Si la sous-classe contient un constructeur *(IntPtr, JniHandleOwnership)* , une *nouvelle* instance du type sera créée. Par conséquent, l’instance semble «perdre» toutes les données d’instance, car il s’agit d’une nouvelle instance. (Notez que la valeur est null.)
+Si la sous-classe contient un constructeur *(IntPtr, JniHandleOwnership)* , une *nouvelle* instance du type sera créée. Par conséquent, l’instance semble « perdre » toutes les données d’instance, car il s’agit d’une nouvelle instance. (Notez que la valeur est null.)
 
 ```shell
 I/mono-stdout( 2993): [Managed: Value=]
 ```
 
 *Dispose* uniquement des sous-classes de wrappers pouvant être appelées managées lorsque vous savez que l’objet Java ne sera plus utilisé, ou que la sous-classe ne contient pas de données d’instance et qu’un constructeur *(IntPtr, JniHandleOwnership)* a été fourni.
-
-
 
 ## <a name="application-startup"></a>Démarrage de l'application
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228065"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772886"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Partie 2. Syntaxe XAML essentielle
 
@@ -86,7 +86,6 @@ Avec cette nouvelle syntaxe, définit la terminologie pratique peut être introd
 - `Text`, `VerticalOptions`, `FontAttributes` et `FontSize` sont *les attributs de propriété*. Elles sont Xamarin.Forms exprimée sous la forme d’attributs XML.
 - Dans cet extrait de code final, `TextColor` est devenu un *élément property*. C’est une propriété de Xamarin.Forms, mais il est désormais un élément XML.
 
-
 La définition de propriété éléments peuvent à tout d’abord sembler comme une violation de la syntaxe XML, mais il n’est pas. La période n’a aucune signification spéciale dans XML. Pour un décodeur XML, `Label.TextColor` est simplement un élément enfant normal.
 
 Dans XAML, toutefois, cette syntaxe est très spéciale. Une des règles pour les éléments de propriété est que rien d’autre peut apparaître dans le `Label.TextColor` balise. La valeur de la propriété est toujours définie en tant que contenu entre les balises de fin et le début de l’élément de propriété.
@@ -143,7 +142,7 @@ Toutefois, la syntaxe d’élément de propriété devient essentiel lorsque la 
 </Label>
 ```
 
-Autre exemple: A deux propriétés nommées `RowDefinitions` et `ColumnDefinitions`. `Grid` Ces deux propriétés sont de type `RowDefinitionCollection` et `ColumnDefinitionCollection`, qui sont des collections de `RowDefinition` et `ColumnDefinition` objets. Vous devez utiliser la syntaxe d’élément de propriété pour définir ces collections.
+Autre exemple : A deux propriétés nommées `RowDefinitions` et `ColumnDefinitions`. `Grid` Ces deux propriétés sont de type `RowDefinitionCollection` et `ColumnDefinitionCollection`, qui sont des collections de `RowDefinition` et `ColumnDefinition` objets. Vous devez utiliser la syntaxe d’élément de propriété pour définir ces collections.
 
 Voici le début du fichier XAML pour un `GridDemoPage` (classe), montrant les balises d’élément de propriété pour le `RowDefinitions` et `ColumnDefinitions` collections :
 
@@ -351,7 +350,7 @@ Vous pouvez inclure certainement le `Content` et `Children` propriétés en tant
 </ContentPage>
 ```
 
-La question réelle est la suivante: Pourquoi ces éléments de propriété *ne* sont-ils pas requis dans le fichier XAML?
+La question réelle est la suivante : Pourquoi ces éléments de propriété *ne* sont-ils pas requis dans le fichier XAML ?
 
 Les éléments définis dans Xamarin.Forms pour une utilisation dans XAML peuvent avoir une propriété signalée dans le `ContentProperty` attribut sur la classe. Si vous recherchez la `ContentPage` classe dans la documentation en ligne de Xamarin.Forms, vous verrez cet attribut :
 

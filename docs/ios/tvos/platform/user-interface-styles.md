@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 89756d5b897b39dd0cf45074474189a4a0a8ada8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290680"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769987"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Styles de l’interface utilisateur tvOS dans Xamarin
 
@@ -101,9 +101,6 @@ En outre, les collections de traits présentent les fonctionnalités suivantes d
 
 > [!IMPORTANT]
 > La version préliminaire préliminaire de Xamarin. tvOS pour tvOS 10 n' `UIUserInterfaceStyle` est `UITraitCollection` pas encore prise en charge pour le moment. Une prise en charge complète sera ajoutée dans une version ultérieure.
-
-
-
 
 <a name="Customizing-Appearance-Based-on-Theme" />
 
@@ -209,8 +206,6 @@ En outre, le simulateur tvOS dispose désormais d’un raccourci clavier pour pe
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les thèmes de l’interface utilisateur Light et Dark qu’Apple a ajoutés à tvOS 10 et comment les implémenter dans une application Xamarin. tvOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

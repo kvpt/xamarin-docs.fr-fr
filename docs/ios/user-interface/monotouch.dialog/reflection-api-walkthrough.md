@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 27f025d80b3259da32581811ae6c900358a07e4e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7acd43597d033b4c6daac59016a9bdf41ade6f68
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278514"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768139"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Création d’une application Xamarin. iOS à l’aide de l’API de réflexion
 
@@ -29,7 +29,6 @@ L’utilisation de l’API de réflexion est aussi simple que :
 1. Création d’une classe décorée avec MT. Attributs D.
 1. Création d' `BindingContext` une instance, en lui passant une instance de la classe ci-dessus. 
 1. Création d' `DialogViewController` un, en lui `BindingContext’s` passant le `RootElement` . 
-
 
 Examinons un exemple pour illustrer l’utilisation de l’API de réflexion. Dans cet exemple, nous allons créer un écran d’entrée de données simple comme indiqué ci-dessous :
 
@@ -138,11 +137,9 @@ Si vous sélectionnez la ligne, l’application accède à un nouvel écran avec
 
  <a name="Summary" />
 
-
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté une procédure pas à pas de l’API de réflexion. Nous avons montré comment ajouter des attributs à une classe pour contrôler ce qui est affiché. Nous avons également expliqué comment utiliser un `BindingContext` pour lier les données d’une classe à la hiérarchie d’éléments créée, ainsi que l’utilisation de Mt. D avec un `UINavigationController`.
-
 
 ## <a name="related-links"></a>Liens connexes
 

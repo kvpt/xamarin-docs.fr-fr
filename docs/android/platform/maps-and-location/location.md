@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61532eb1e31db6a862275180394b2b5ba9b05f8e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280606"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761725"
 ---
 # <a name="location-services-on-android"></a>Services d’emplacement sur Android
 
@@ -75,11 +75,10 @@ else
 
 Les applications doivent être tolérantes au scénario dans lequel l’utilisateur n’accorde pas d’autorisation (ou a révoqué l’autorisation) et a la possibilité de traiter en douceur cette situation. Pour plus d’informations sur l’implémentation des vérifications des autorisations au moment de l’exécution dans Xamarin. Android, consultez le [Guide des autorisations](~/android/app-fundamentals/permissions.md) .
 
-
 ## <a name="using-the-fused-location-provider"></a>Utilisation du fournisseur de localisation fusion
 
 Le fournisseur de localisation fusible est le meilleur moyen pour les applications Android de recevoir des mises à jour d’emplacement à partir de l’appareil, car il permet de sélectionner efficacement le fournisseur d’emplacement au moment de l’exécution pour fournir les meilleures informations d’emplacement de manière économe en batterie. Par exemple, un utilisateur qui parcourt à travers l’extérieur obtient l’emplacement le plus approprié pour la lecture avec GPS. Si l’utilisateur parcourt les portes, où le GPS fonctionne mal (le cas échéant), le fournisseur de localisation fusible peut automatiquement basculer vers WiFi, qui fonctionne mieux avec les portes.
- 
+
 L’API du fournisseur d’emplacement fusible fournit un large éventail d’autres outils permettant d’offrir des applications prenant en charge l’emplacement, y compris les opérations de clôture et de suivi des activités. Dans cette section, nous allons nous concentrer sur les principes fondamentaux de la configuration du `LocationClient`, de l’établissement des fournisseurs et de l’obtention de l’emplacement de l’utilisateur.
 
 Le fournisseur de localisation fusible fait partie de [Google Play services](https://developer.android.com/google/play-services/index.html).

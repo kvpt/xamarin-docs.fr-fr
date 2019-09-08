@@ -6,12 +6,12 @@ ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2019
-ms.openlocfilehash: d725cb0687cce85f10dbf6915e4eeec785c0ae54
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d4cf596d70be746e85f21bace3e5ddf662076e6d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290211"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772324"
 ---
 # <a name="xamarin-live-player-app"></a>Application Xamarin Live Player
 
@@ -96,4 +96,3 @@ Si vous rencontrez des problèmes [, consultez Limitations et résolution des](~
 ## <a name="related-links"></a>Liens associés
 
 - [Dépannage](~/tools/live-player/troubleshooting.md)
-

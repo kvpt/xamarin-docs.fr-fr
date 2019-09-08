@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: e2d3a3590e8006c745d28026f3a359350f7ce940
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: a759569f9faf7c8e13768a68b203a8221d3b31cb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621076"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770712"
 ---
 # <a name="native-views-in-c"></a>Vues natives en C\#
 
@@ -319,7 +319,6 @@ Cette méthode utilise la largeur fournie par le `CustomControl.ArrangeOverride`
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment ajouter des vues natives à une disposition de Xamarin.Forms créée à l’aide de c# et comment remplacer la disposition des vues personnalisées pour corriger leur utilisation de l’API de mesure.
-
 
 ## <a name="related-links"></a>Liens associés
 

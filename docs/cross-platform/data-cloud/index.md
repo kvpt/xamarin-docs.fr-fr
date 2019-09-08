@@ -6,12 +6,12 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: conceptdev
 ms.author: crdun
 ms.date: 10/09/2017
-ms.openlocfilehash: 0979a0b65cc3d5b4944dadaf67aaa14cf1b3cf73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287600"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766099"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure et Xamarin
 
@@ -40,7 +40,6 @@ Les applications peuvent ensuite accéder à des services supplémentaires, comm
 L’API Web de Microsoft expose une interface de type REST qui peut facilement être utilisée par les applications Xamarin.
 Vous pouvez facilement créer un [site Web Azure](https://trywebsites.azurewebsites.net/) et créer une application basée sur WebAPI pour vous connecter aux applications Xamarin.
 
-
 ### <a name="introduction-to-web-servicescross-platformdata-cloudweb-servicesindexmd"></a>[Présentation des services Web](~/cross-platform/data-cloud/web-services/index.md)
 
 Ce didacticiel explique comment intégrer les technologies de service Web REST, WCF et SOAP avec les applications mobiles Xamarin. Il examine diverses implémentations de service, évalue les outils et bibliothèques disponibles pour les intégrer et fournit des exemples de modèles pour l’utilisation des données de service. Enfin, il fournit une vue d’ensemble de base de la création d’un service Web RESTful pour une utilisation avec une application mobile Xamarin.
@@ -56,7 +55,6 @@ Outre les exemples de [documentation](https://github.com/xamarin/mobile-samples/
 
 - [eShop](https://github.com/dotnet-architecture/eShopOnContainers) -Sample pour la [série](https://www.microsoft.com/net/learn/architecture) d’ouvrages sur l’architecture.
 - [MyDriving](https://azure.microsoft.com/campaigns/mydriving/) – exemple Azure + IOT à partir de la build 2016.
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 80a54d9276159c7c1b1706b61e7bc865aca540bd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a39c40bb6f63427f1a4aeedea10e90aef4df91e8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285862"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770262"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Certificats et identificateurs dans Xamarin.Mac
 
@@ -210,7 +210,6 @@ Effectuez les étapes suivantes :
 13. Les éléments suivants sont visibles dans le **trousseau** :
 
     [![Certificat dans l’accès au trousseau](certificates-identifiers-images/image43.png "Certificat dans l’accès au trousseau")](certificates-identifiers-images/image43-large.png#lightbox)
-
 
 ## <a name="related-links"></a>Liens associés
 

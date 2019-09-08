@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: 8cec67ec582edad506aecb0945257b9baae3da90
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650347"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771717"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Liaisons de base Xamarin.Forms
 
@@ -328,7 +328,6 @@ La propriété `BindingContext` de `StackLayout` est définie sur l’élément 
 [![Binding Context Inheritance](basic-bindings-images/bindingcontextinheritance-small.png "Binding Context Inheritance")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Binding Context Inheritance")
 
 Dans le [prochain article](binding-mode.md), vous verrez comment le *mode de liaison* peut modifier le flux de données entre les objets cible et source.
-
 
 ## <a name="related-links"></a>Liens associés
 

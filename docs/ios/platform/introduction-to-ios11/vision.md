@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285745"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752274"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Framework de vision dans Xamarin. iOS
 
@@ -102,7 +102,6 @@ Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/io
 
 La détection de rectangle est souvent simplement la première étape d’une chaîne d’opérations, comme avec [cet exemple CoreMLVision](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision), où les rectangles sont passés à un modèle CoreML pour analyser des chiffres manuscrits.
 
-
 <a name="faces" />
 
 ## <a name="face-detection"></a>Détection de visage
@@ -175,7 +174,6 @@ Affichez la source de l' [exemple](https://docs.microsoft.com/samples/xamarin/io
 ### <a name="5-further-processing"></a>5. Traitement supplémentaire
 
 L’infrastructure de vision comprend des fonctionnalités supplémentaires pour détecter les caractéristiques du visage, telles que les yeux et la bouche. Utilisez le `VNDetectFaceLandmarksRequest` type, qui retournera `VNFaceObservation` les résultats à l’étape 3 ci-dessus `VNFaceLandmark` , mais avec des données supplémentaires.
-
 
 ## <a name="related-links"></a>Liens associés
 

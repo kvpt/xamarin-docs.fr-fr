@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/10/2018
-ms.openlocfilehash: 056ab7a9fe4bcb7f07a9a7cd7c841a3d9f7574b6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4c3c0e51348d2435ce5042485b214e6e5fe159b2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758421"
 ---
 # <a name="hello-wear"></a>Hello, Wear
 
@@ -22,7 +22,7 @@ _Créez votre première application Android usure et exécutez-la sur un émulat
 
 ## <a name="your-first-wear-app"></a>Votre première application d’usure
 
-Procédez comme suit pour créer votre première application Xamarin. Android usure:
+Procédez comme suit pour créer votre première application Xamarin. Android usure :
 
 ### <a name="1-create-a-new-android-project"></a>1. Créer un nouveau projet Android
 
@@ -38,20 +38,19 @@ Créer une **application Android usure**:
 
 -----
 
-
 Ce modèle comprend automatiquement la **bibliothèque Xamarin Android portable** NuGet (et les dépendances) afin que vous ayez accès aux widgets spécifiques à l’usure. Si vous ne voyez pas le modèle d’usure, consultez le guide [d’installation et de configuration](~/android/wear/get-started/installation.md) pour vérifier que vous avez installé un Android SDK pris en charge. 
 
 ### <a name="2-choose-the-correct-target-framework"></a>2. Choisir le **Framework cible** approprié
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Assurez-vous que le **nombre minimal d’Android à cibler** est défini sur **Android 5,0 (lollipop)** ou version ultérieure: 
+Assurez-vous que le **nombre minimal d’Android à cibler** est défini sur **Android 5,0 (lollipop)** ou version ultérieure : 
 
 [![Définition de la version cible de .NET Framework sur Android 5,0 dans Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Vérifiez que la version cible de .NET Framework est définie sur **Android 5,0 (lollipop)** ou version ultérieure:
+Vérifiez que la version cible de .NET Framework est définie sur **Android 5,0 (lollipop)** ou version ultérieure :
 
 [![Définition de la version cible de .NET Framework sur Android 5,0 dans Visual Studio pour Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
@@ -59,10 +58,9 @@ Vérifiez que la version cible de .NET Framework est définie sur **Android 5,0 
 
 Pour plus d’informations sur la définition de la version cible du .NET Framework, consultez [fonctionnement des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
 
-
 ### <a name="3-edit-the-mainaxml-layout"></a>3. Modifier la disposition **main. AXML**
 
-Configurez la disposition pour `TextView` qu’elle `Button` contienne un et un pour l’exemple: 
+Configurez la disposition pour `TextView` qu’elle `Button` contienne un et un pour l’exemple : 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -105,7 +103,7 @@ android:layout_height="match_parent">
 
 ### <a name="4-edit-the-mainactivitycs-source"></a>4. Modifier la source **MainActivity.cs**
 
-Ajoutez le code pour incrémenter un compteur et l’afficher à chaque clic sur le bouton: 
+Ajoutez le code pour incrémenter un compteur et l’afficher à chaque clic sur le bouton : 
 
 ```csharp
 [Activity (Label = "WearTest", MainLauncher = true, Icon = "@drawable/icon")]
@@ -133,10 +131,9 @@ public class MainActivity : Activity
 
 L’étape suivante consiste à configurer un émulateur ou un appareil pour déployer et exécuter l’application. Si vous n’êtes pas encore familiarisé avec le processus de déploiement et d’exécution d’applications Xamarin. Android en général, consultez le Guide de [démarrage rapide de Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).
 
-Si vous n’avez pas d’appareil Android, tel qu’un SmartWatch d’usure Android, vous pouvez exécuter l’application sur un émulateur. Pour plus d’informations sur le débogage des applications d’usure sur un émulateur, consultez déboguer [l’usure Android sur un émulateur](~/android/wear/deploy-test/debug-on-emulator.md).
+Si vous n’avez pas d’appareil Android, tel qu’un SmartWatch d’usure Android, vous pouvez exécuter l’application sur un émulateur. Pour plus d’informations sur le débogage des applications d’usure sur un émulateur, consultez [déboguer l’usure Android sur un émulateur](~/android/wear/deploy-test/debug-on-emulator.md).
 
-Si vous avez un appareil Android d’usure comme un SmartWatch Android, vous pouvez exécuter l’application sur l’appareil au lieu d’utiliser un émulateur. Pour plus d’informations sur le débogage sur un appareil d’usure, consultez déboguer [sur un appareil d’usure](~/android/wear/deploy-test/debug-on-device.md).
-
+Si vous avez un appareil Android d’usure comme un SmartWatch Android, vous pouvez exécuter l’application sur l’appareil au lieu d’utiliser un émulateur. Pour plus d’informations sur le débogage sur un appareil d’usure, consultez [Déboguer sur un appareil d’usure](~/android/wear/deploy-test/debug-on-device.md).
 
 ### <a name="6-run-the-android-wear-app"></a>6. Exécuter l’application Android usure
 
@@ -152,27 +149,25 @@ L’appareil Android usure doit apparaître dans le menu déroulant de l’appar
 
 -----
 
-Vous pouvez voir un message **juste un minute.** .. (ou un autre écran interstitiel) au début: 
+Vous pouvez voir un message **juste un minute.** .. (ou un autre écran interstitiel) au début : 
 
 ![L’émulateur Watch affiche une minute...](hello-wear-images/please-wait.png)
 
 Si vous utilisez un émulateur Watch, le démarrage de l’application peut prendre un certain temps. Lorsque vous utilisez Bluetooth, il faut plus de temps pour déployer l’application que sur USB. (Par exemple, il faut environ 5 minutes pour déployer cette application sur une montre LG G qui est connectée à Bluetooth à un téléphone de connexion 5.)
 
-Une fois l’application déployée, l’écran de l’appareil d’usure doit afficher un écran semblable à ce qui suit:
+Une fois l’application déployée, l’écran de l’appareil d’usure doit afficher un écran semblable à ce qui suit :
 
 [![Écran initial de l’application d’usure](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
-Appuyez **sur le clic!** sur la face du dispositif d’usure et regardez l’incrément de nombre de chaque pression:
+Appuyez **sur le clic !** sur la face du dispositif d’usure et regardez l’incrément de nombre de chaque pression :
 
 [![Capture d’écran de l’application d’usure après 3 clics](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
-
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 Découvrez les [exemples d’usure](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android+wear) , notamment les applications Android avec des applications de téléphone auxiliaires.
 
-Lorsque vous êtes prêt à distribuer votre application, consultez [utilisation de](~/android/wear/deploy-test/packaging.md)l’empaquetage.
-
+Lorsque vous êtes prêt à distribuer votre application, consultez [utilisation de l’empaquetage](~/android/wear/deploy-test/packaging.md).
 
 ## <a name="related-links"></a>Liens associés
 

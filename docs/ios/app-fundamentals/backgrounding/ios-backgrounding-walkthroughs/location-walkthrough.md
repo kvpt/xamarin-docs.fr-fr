@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: b95f60676a1c58463fc6e384ea3738122a1c76fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f4708b56b8cf8a243785816440c63b743059cf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286823"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756276"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Procédure pas à pas-emplacement en arrière-plan dans Xamarin. iOS
 
@@ -21,7 +21,6 @@ Dans cet exemple, nous allons créer une application d’emplacement iOS qui imp
 Cette procédure pas à pas explique certains concepts fondamentaux de l’arrière-plan, notamment l’inscription d’une application en tant qu’application requise en arrière-plan, la suspension des mises à jour `WillEnterBackground` de `WillEnterForeground` l’interface utilisateur quand l’application est en arrière-plan et l’utilisation des méthodes et `AppDelegate` . .
 
 ## <a name="application-set-up"></a>Configuration de l’application
-
 
 1. Tout d’abord, créez une **application de > iOS > application avecC#affichage unique ()** . Appelez- _le,_ puis vérifiez que iPad et iPhone ont été sélectionnés.
 
@@ -84,7 +83,6 @@ Cette procédure pas à pas explique certains concepts fondamentaux de l’arri�
 1. Ajoutez une clé `NSLocationAlwaysUsageDescription` ou `NSLocationWhenInUseUsageDescription` une chaîne qui sera affichée à l’utilisateur dans l’alerte qui demande l’accès aux données d’emplacement.
 
 1. iOS 9 requiert que, lors `AllowsBackgroundLocationUpdates` de l’utilisation du fichier **info. plist** , `location`la clé `UIBackgroundModes` avec la valeur est incluse. Si vous avez terminé l’étape 2 de cette procédure pas à pas, vous devez déjà avoir dans votre fichier info. plist.
-
 
 1. À l' `LocationManager` intérieur de la classe, créez `StartLocationUpdates` une méthode appelée avec le code suivant. Ce code montre comment démarrer la réception des mises à jour de l’emplacement `CLLocationManager`à partir du :
 
@@ -202,7 +200,6 @@ public override void ViewDidLoad ()
 }
 ```
 
-
 Désormais, lorsque l’application est exécutée, elle doit ressembler à ceci :
 
 [![](location-walkthrough-images/image5.png "Exemple d’exécution d’application")](location-walkthrough-images/image5.png#lightbox)
@@ -278,7 +275,6 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 Désormais, l’interface utilisateur commence à se mettre à jour lorsque l’application est démarrée pour la première fois et reprend la mise à jour à chaque fois que l’application revient au premier plan.
 
 Dans cette procédure pas à pas, nous avons créé une application iOS avec prise en charge bien comprise qui imprime les données de localisation à la fois sur l’écran et dans la fenêtre de sortie de l’application.
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -1,21 +1,21 @@
 ---
 title: "Xamarin.Essentials: Informations de l'application"
-description: Ce document décrit la classe AppInfo de Xamarin.Essentials, qui fournit des informations sur votre application. Par exemple, il expose le nom et la version de l’application.
+description: La classe **AppInfo** fournit des informations générales sur votre application. Par exemple, il expose le nom de l’application et la version. Par exemple, il expose le nom et la version de l’application.
 ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
-ms.openlocfilehash: fa6910c380545527f930f340536f47b548b74b12
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: HT
+ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233209"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756990"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials: Informations de l'application
 
-La classe **AppInfo** fournit des informations sur votre application.
+La classe **AppInfo** fournit des informations générales sur votre application.
 
 ## <a name="get-started"></a>Prise en main
 
@@ -29,7 +29,7 @@ Ajoutez une référence à Xamarin.Essentials dans votre classe :
 using Xamarin.Essentials;
 ```
 
-## <a name="obtaining-application-information"></a>Obtention d’informations sur l’application :
+## <a name="obtaining-application-information"></a>Obtenir des informations sur l’application
 
 Les informations suivantes sont exposées via l’API :
 
@@ -47,9 +47,9 @@ var version = AppInfo.VersionString;
 var build = AppInfo.BuildString;
 ```
 
-## <a name="displaying-application-settings"></a>Affichage des paramètres de l’application
+## <a name="displaying-application-settings"></a>Afficher les paramètres de l'application
 
-La classe **AppInfo** peut également afficher une page de paramètres gérés par le système d’exploitation pour l’application :
+La classe **AppInfo** peut également afficher la page des paramètres systèmes gérés par le système d’exploitation spécifiquement pour l’application :
 
 ```csharp
 // Display settings page
@@ -86,7 +86,6 @@ Les informations d’application sont tirées de `Package.appxmanifest` pour les
 - **Name** - `DisplayName` sur le nœud `Properties`
 - **PackageName** : `Name` sur le nœud `Identity`
 - **VersionString** – `Version` sur le nœud `Identity`
-
 
 --------------
 

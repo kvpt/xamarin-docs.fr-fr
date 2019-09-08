@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 82755a6a87ec0a47c10aac7078beeab6e14c218d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228242"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759380"
 ---
 # <a name="path-effects-in-skiasharp"></a>Effets de chemin d’accès dans SkiaSharp
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-Si vous examinez attentivement les résultats, vous verrez que les lignes de hachurage rouge et bleu ne sont pas limités précisément le rectangle à coins arrondis. (Cela est apparemment une caractéristique du code sous-jacent Skia.) Si ce n’est pas satisfaisant, une autre approche est indiquée pour les hachures diagonales en vert: Le rectangle arrondi est utilisé comme tracé de détourage et les lignes de hachurage sont dessinées sur la page entière.
+Si vous examinez attentivement les résultats, vous verrez que les lignes de hachurage rouge et bleu ne sont pas limités précisément le rectangle à coins arrondis. (Cela est apparemment une caractéristique du code sous-jacent Skia.) Si ce n’est pas satisfaisant, une autre approche est indiquée pour les hachures diagonales en vert : Le rectangle arrondi est utilisé comme tracé de détourage et les lignes de hachurage sont dessinées sur la page entière.
 
 Le `PaintSurface` gestionnaire se termine par un appel à simplement rayer le rectangle à coins arrondis, afin de voir la différence avec les lignes de hachurage rouge et bleu :
 
 [![Capture d’écran triple de la page remplissage de hachurage](effects-images/hatchfill-small.png)](effects-images/hatchfill-large.png#lightbox)
 
-L’écran Android ne ressemble pas vraiment à ce qui suit: La mise à l’échelle de la capture d’écran a entraîné la consolidation des lignes rouges fines et des espaces fins dans des lignes rouges apparemment plus larges et des espaces plus larges.
+L’écran Android ne ressemble pas vraiment à ce qui suit : La mise à l’échelle de la capture d’écran a entraîné la consolidation des lignes rouges fines et des espaces fins dans des lignes rouges apparemment plus larges et des espaces plus larges.
 
 ## <a name="filling-with-a-path"></a>Remplir avec un chemin d’accès
 
@@ -942,7 +942,6 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 Vous pouvez utiliser cet effet de chemin d’accès pour le contour ou remplir. Lignes sont divisées en segments connectés, dont la longueur approximative est spécifiée par `segLength` — et étendre dans différentes directions. L’étendue de l’écart par rapport à la ligne d’origine est spécifié par `deviation`.
 
 Le dernier argument est une valeur initiale utilisée pour générer la séquence pseudo-aléatoire utilisée pour l’effet. L’effet d’instabilité aura un aspect un peu différent pour différentes valeurs de départ. L’argument a une valeur par défaut de zéro, ce qui signifie que l’effet est identique à chaque fois que vous exécutez le programme. Si vous souhaitez instabilité différents chaque fois que l’écran est redessiné, vous pouvez définir la valeur de départ le `Millisecond` propriété d’un `DataTime.Now` valeur (par exemple).
-
 
 Le **instabilité faire des essais** page vous permet de faire des essais avec différentes valeurs dans le contour d’un rectangle :
 
@@ -1086,7 +1085,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 Seuls les deux premiers arguments sont requis. La méthode accède au chemin d’accès référencé par le `src` argument, modifie les données de chemin d’accès basées sur les propriétés de trait dans le `SKPaint` objet (y compris le `PathEffect` propriété), puis écrit les résultats dans le `dst` chemin d’accès. Le `resScale` paramètre permet de réduire la précision pour créer un chemin d’accès de destination plus petits et le `cullRect` argument peut éliminer les contours en dehors d’un rectangle.
 
-Une utilisation de base de cette méthode n’implique pas du tout des effets de chemin d’accès: Si la `SKPaint` `Style` propriété de l’objet a la `SKPaintStyle.Stroke`valeur `PathEffect`etqu' il n’a *pas* son ensemble, créeunchemind’accèsquireprésenteuncontourduchemind’accèssourcecommes’ilavaitétérayé`GetFillPath` par le Propriétés de la peinture.
+Une utilisation de base de cette méthode n’implique pas du tout des effets de chemin d’accès : Si la `SKPaint` `Style` propriété de l’objet a la `SKPaintStyle.Stroke`valeur `PathEffect`etqu' il n’a *pas* son ensemble, créeunchemind’accèsquireprésenteuncontourduchemind’accèssourcecommes’ilavaitétérayé`GetFillPath` par le Propriétés de la peinture.
 
 Par exemple, si le `src` chemin d’accès est un cercle de rayon 500, simple et le `SKPaint` objet spécifie une épaisseur de contour de 100, puis le `dst` chemin d’accès devient deux cercles concentriques, l’autre avec un rayon de 450 et l’autre avec un rayon de 550. La méthode est appelée `GetFillPath` car remplissant ce `dst` chemin d’accès est le même que le contour du `src` chemin d’accès. Mais vous pouvez également tracer le `dst` chemin d’accès pour afficher les contours du chemin d’accès.
 
@@ -1412,8 +1411,6 @@ Comme vous l’avez déjà découverts, les lignes de hachurage ne sont pas pré
 [![Capture d’écran triple de la page lignes de hachures en pointillés](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 Maintenant que vous avez vu les effets de chemin d’accès allant de simples points et tirets à des combinaisons étranges, utilisez votre imagination et voir ce que vous pouvez créer.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

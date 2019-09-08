@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289520"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766747"
 ---
 # <a name="accessibility-on-ios"></a>Accessibilité sur iOS
 
@@ -74,7 +74,6 @@ UIAccessibility.PostNotification (
     someControl);  // someControl gets focus
 ```
 
-
 ## <a name="accessibility-and-localization"></a>Accessibilité et localisation
 
 Les propriétés d’accessibilité telles que l’étiquette et l’indicateur peuvent être localisées comme tout autre texte dans l’interface utilisateur.
@@ -122,7 +121,6 @@ L’écran **accessibilité** fournit également des paramètres pour les option
 
 Suivez ces [instructions VoiceOver](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) pour tester l’accessibilité sur des appareils iOS.
 
-
 ## <a name="simulator-testing"></a>Test du simulateur
 
 Lors du test dans le simulateur, l' **inspecteur d’accessibilité** est disponible pour vous aider à vérifier que les propriétés et les événements d’accessibilité sont correctement configurés. Activez l’inspecteur dans l’application **paramètres** en accédant à **général > accessibilité > l’inspecteur d’accessibilité**:
@@ -135,8 +133,6 @@ Voici un exemple de sortie lorsqu’une ligne de la vue table est sélectionnée
 ![](accessibility-images/tableview-a11y-sml.png "Utilisation de l’inspecteur d’accessibilité")
 
 Lorsque l’inspecteur est visible, utilisez l’icône « X » en haut à gauche pour afficher et masquer temporairement la superposition et activer/désactiver les paramètres d’accessibilité.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

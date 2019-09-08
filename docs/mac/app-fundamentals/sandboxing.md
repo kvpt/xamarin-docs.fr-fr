@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290315"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770301"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Bac à sable (sandbox) d’une application Xamarin. Mac
 
@@ -562,8 +562,6 @@ Si vous publiez une nouvelle version bac à sable (sandbox) d’une application 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail la mise en sandbox d’une application Xamarin. Mac. Tout d’abord, nous avons créé une application Xamarin. Mac simple pour afficher les bases du bac à sable (sandbox) de l’application. Nous avons ensuite montré comment résoudre les violations du bac à sable (sandbox). Ensuite, nous avons examiné en profondeur le bac à sable (sandbox) de l’application et enfin, nous avons examiné la conception d’une application Xamarin. Mac pour le bac à sable de l’application.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

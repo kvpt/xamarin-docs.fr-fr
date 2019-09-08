@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 45a85c8ac2f40e92078d46f5765aaf2af1518b77
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 103d4f40a1c368f576276c4cdcbdc585d2a1536a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650744"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771886"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>Mise en surbrillance d’une région sur une carte
 
@@ -20,7 +20,7 @@ ms.locfileid: "68650744"
 
 _Cet article explique comment ajouter une superposition polygonale à une carte afin de mettre en surbrillance une région de la carte. Les polygones sont une forme fermée dont l’intérieur est plein._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Une superposition est une forme graphique posée sur une carte. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. Les captures d’écran suivantes montrent le résultat de l’ajout d’une superposition polygonale sur une carte :
 
@@ -304,7 +304,6 @@ Cette méthode procède aux opérations suivantes, sous réserve que le renderer
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment ajouter une superposition polygonale à une carte afin de mettre en surbrillance une région de la carte. Les polygones sont une forme fermée dont l’intérieur est plein.
-
 
 ## <a name="related-links"></a>Liens associés
 

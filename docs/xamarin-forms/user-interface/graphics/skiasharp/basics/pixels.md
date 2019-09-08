@@ -7,12 +7,12 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: e2bf493a5d8a4197fbc59044edf126761b41cf8d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d6011175a735eb81f83a023f7d32fccd6feadd47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649727"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759471"
 ---
 # <a name="pixels-and-device-independent-units"></a>Unités indépendantes de l’appareil et pixels
 
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-Si vous spécifiez la chaîne de texte, les coordonnées X et Y où le texte doit commencer et un `SKPaint` objet. La coordonnée X spécifie le positionnement du côté gauche du texte, mais observez les éléments suivants: La coordonnée Y spécifie la position de la *ligne de base* du texte. Si vous avez déjà écrit à la main sur papier, la ligne de base est la ligne sur le site de caractères, et en dessous descendent lesquelles jambages (telles que celles sur les lettres g, p, q et y).
+Si vous spécifiez la chaîne de texte, les coordonnées X et Y où le texte doit commencer et un `SKPaint` objet. La coordonnée X spécifie le positionnement du côté gauche du texte, mais observez les éléments suivants : La coordonnée Y spécifie la position de la *ligne de base* du texte. Si vous avez déjà écrit à la main sur papier, la ligne de base est la ligne sur le site de caractères, et en dessous descendent lesquelles jambages (telles que celles sur les lettres g, p, q et y).
 
 Le `SKPaint` objet vous permet de spécifier la couleur du texte, la famille de polices et la taille du texte. Par défaut, le [ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize) propriété a la valeur 12, ce qui entraîne un texte minuscule sur les appareils tels que les téléphones haute résolution. Dans des déploiements autres que les applications la plus simple, vous devez également des informations sur la taille du texte que vous affichez. Le `SKPaint` classe définit un [ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics) propriété et plusieurs [ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String)) méthodes, mais moins fantaisistes aux besoins de, la [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing) propriété attribue une valeur recommandée pour l’espacement des lignes successives de texte.
 
@@ -162,7 +162,6 @@ SKRect rect = new SKRect(strokeWidth / 2,
                          info.Height - strokeWidth / 2);
 canvas.DrawOval(rect, paint);
 ```
-
 
 ## <a name="related-links"></a>Liens associés
 

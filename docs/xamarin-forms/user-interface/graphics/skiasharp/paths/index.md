@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 14b92bb576679dee3408c5805c6b698addd9bd8a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f9964d68e33e84dff789a4ad34443782f22ea821
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657444"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759160"
 ---
 # <a name="skiasharp-lines-and-paths"></a>Chemins d’accès et des lignes de SkiaSharp
 
@@ -49,7 +49,6 @@ Maîtrisez les complexités de dessiner des lignes en pointillés et dans SkiaSh
 ## <a name="finger-paintingfinger-paintmd"></a>[Peinture au doigt](finger-paint.md)
 
 Utilisez vos doigts pour peindre sur le canevas.
-
 
 ## <a name="related-links"></a>Liens associés
 

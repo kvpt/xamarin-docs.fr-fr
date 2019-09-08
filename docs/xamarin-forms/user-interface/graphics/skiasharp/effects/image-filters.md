@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 10b61a7279964e8e1fb76a88be4f253e96b59908
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199199"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770534"
 ---
 # <a name="skiasharp-image-filters"></a>Filtres d’image SkiaSharp
 
@@ -28,7 +28,7 @@ Cet article montre également à l’aide d’un filtre d’image pour créer un
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>Flou des graphiques vectoriels et des bitmaps
 
-L’effet de flou créé par [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) la méthode statique présente un avantage significatif par rapport aux méthodes de [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) flou de la classe: Le filtre d’image peut rendre floue l’intégralité d’une bitmap. La méthode a la syntaxe suivante :
+L’effet de flou créé par [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) la méthode statique présente un avantage significatif par rapport aux méthodes de [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) flou de la classe : Le filtre d’image peut rendre floue l’intégralité d’une bitmap. La méthode a la syntaxe suivante :
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -76,7 +76,6 @@ Le **Image flou expérimenter** page dans le [ **SkiaSharpFormsDemos** ](https:/
 ```
 
 Le fichier code-behind utilise les deux `Slider` valeurs appeler `SKImageFilter.CreateBlur` pour le `SKPaint` objet utilisé pour afficher du texte et une image bitmap :
-
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -427,7 +426,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-Le premier argument de `SKImageFilter.CreateDistantLitDiffuse` est la direction de la lumière. Positif X et Y coordonnées indiquent que la lumière est pointe vers la droite et vers le bas. Point de coordonnées Z positif dans l’écran. Le fichier XAML vous permet de sélectionner des valeurs Z négatives, mais ce n’est que pour vous permettre de voir ce qui se passe: Conceptuellement, les coordonnées Z négatives provoquent le pointage de la lumière hors de l’écran. Pour tout autres puis petites valeurs négatives, l’effet d’éclairage cesse de fonctionner.
+Le premier argument de `SKImageFilter.CreateDistantLitDiffuse` est la direction de la lumière. Positif X et Y coordonnées indiquent que la lumière est pointe vers la droite et vers le bas. Point de coordonnées Z positif dans l’écran. Le fichier XAML vous permet de sélectionner des valeurs Z négatives, mais ce n’est que pour vous permettre de voir ce qui se passe : Conceptuellement, les coordonnées Z négatives provoquent le pointage de la lumière hors de l’écran. Pour tout autres puis petites valeurs négatives, l’effet d’éclairage cesse de fonctionner.
 
 Le `surfaceScale` argument peut varier de -1 à 1. (Les valeurs supérieures ou inférieures n’ont aucun effet.) Il s’agit des valeurs relatives de l’axe Z qui indiquent le déplacement de l’objet de graphique (dans ce cas, il s’agit de la chaîne de texte) à partir de la surface de la zone de dessin. Utilisez les valeurs négatives pour déclencher la chaîne de texte au-dessus de la surface de dessin et les valeurs positives à appuyer sur dans la zone de dessin.
 

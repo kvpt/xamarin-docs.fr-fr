@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290637"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769788"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implémentation de SiriKit dans Xamarin. iOS
 
@@ -50,7 +50,6 @@ Elles incluent notamment :
 3. **Application** : fournit l’application avec des vocabulaires spécifiques à l’utilisateur pour aider Siri à l’utiliser. 
 
 Tous ces éléments et les étapes permettant de les inclure dans l’application sont traités en détail dans les sections ci-dessous.
-
 
 ## <a name="preparing-the-app"></a>Préparation de l’application
 
@@ -156,7 +155,6 @@ Si vous choisissez de créer une extension d’intention distincte pour chaque i
 Pour choisir entre les deux options, regardez si l’une des intentions appartient naturellement. Par exemple, une application qui a effectué des appels audio et vidéo peut souhaiter inclure ces deux intentions dans une extension d’intention unique, car elles gèrent des tâches similaires et peuvent fournir la plus grande réutilisation de code.
 
 Pour toute intention ou groupe d’intentions qui ne rentre pas dans un groupe existant, créez une nouvelle extension d’intention dans la solution de l’application pour les contenir.
-
 
 ### <a name="setting-the-required-entitlements"></a>Définition des droits requis
 
@@ -266,7 +264,6 @@ Modifiez le fichier de `Info.plist` l’application et ajoutez `NSSiriUsageDescr
 
 Appelez la `RequestSiriAuthorization` méthode de la `INPreferences` classe lors du premier démarrage de l’application. Modifiez la `AppDelegate.cs` classe et faites en `FinishedLaunching` sorte que la méthode ressemble à ce qui suit :
 
-
 ```csharp
 using Intents;
 ...
@@ -288,7 +285,6 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
             break;
         }
     });
-
 
     return true;
 }
@@ -684,7 +680,6 @@ Si l’application exige éventuellement que l’utilisateur soit connecté à l
 
 -----
 
-
 Pour obtenir la liste complète des domaines d’intention disponibles, consultez la [référence](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)sur les domaines d’intention d’Apple.
 
 ### <a name="configuring-the-main-class"></a>Configuration de la classe principale
@@ -743,7 +738,6 @@ Dans le cas de l’exemple d’application MonkeyChat, l’extension d’intenti
 En outre, MonkeyChat requiert du contenu pour le corps du message. Si l’utilisateur ne l’a pas fourni, Siri doit inviter l’utilisateur à entrer son contenu.
 
 L’extension d’intention devra gérer harmonieusement chacun de ces cas.
-
 
 ```csharp
 [Export ("resolveRecipientsForSearchForMessages:withCompletion:")]
@@ -810,7 +804,6 @@ Pour plus d’informations, consultez [la référence de l’étape de confirmat
 ### <a name="processing-the-intent"></a>Traitement de l’intention
 
 C’est là que l’extension d’intention effectue réellement la tâche pour répondre à la demande de l’utilisateur et renvoie les résultats à Siri pour que l’utilisateur puisse être informé.
-
 
 ```csharp
 public void HandleSendMessage (INSendMessageIntent intent, Action<INSendMessageIntentResponse> completion)
@@ -1064,9 +1057,6 @@ Apple suggère que le développeur prend en compte les points suivants lors de l
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé SiriKit et montre comment il peut être ajouté aux applications Xamarin. iOS pour fournir des services accessibles à l’utilisateur à l’aide de Siri et de l’application Maps sur un appareil iOS.
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

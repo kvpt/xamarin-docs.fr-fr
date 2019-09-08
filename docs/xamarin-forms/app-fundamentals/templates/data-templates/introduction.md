@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 7308222e64d64efdbad218186bb9a6e4dca3b26e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651921"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771280"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Introduction aux modèles de données Xamarin.Forms
 
@@ -133,7 +133,6 @@ Un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) placé en tant qu’enfant 
 - Un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) défini au niveau de l’application peut être appliqué aux contrôles valides dans toute l’application.
 
 Les modèles de données situés plus bas dans la hiérarchie de vues sont prioritaires par rapport à ceux définis plus haut quand ils partagent des attributs `x:Key`. Par exemple, un modèle de données au niveau de l’application est remplacé par un modèle de données au niveau de la page, et un modèle de données au niveau de la page est remplacé par un modèle de données au niveau du contrôle ou par un modèle de données inline.
-
 
 ## <a name="related-links"></a>Liens associés
 

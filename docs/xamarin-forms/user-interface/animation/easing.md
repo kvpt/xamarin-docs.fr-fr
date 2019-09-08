@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 0be72e29ebfed9a3f43d96fd66b7f4597459a834
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ad22bfb4370dceb25fd229c7d5cfb38c386fbd84
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656767"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759807"
 ---
 # <a name="easing-functions-in-xamarinforms"></a>Fonctions d’accélération dans Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
 _Xamarin.Forms inclut une classe d’accélération qui vous permet de spécifier une fonction de transfert qui contrôle comment les animations accélèrent ou ralentissent car ils s’exécutent. Cet article montre comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées._
-
 
 Le [ `Easing` ](xref:Xamarin.Forms.Easing) classe définit un nombre de fonctions d’accélération qui peuvent être consommées par des animations :
 
@@ -106,8 +105,6 @@ La fonction d’accélération personnalisée est spécifiée comme un argument 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser les fonctions d’accélération prédéfinies et comment créer des fonctions d’accélération personnalisées. Xamarin.Forms inclut un [ `Easing` ](xref:Xamarin.Forms.Easing) classe qui vous permet de spécifier une fonction de transfert qui contrôle comment animations accélèrent ou ralentir car ils s’exécutent.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

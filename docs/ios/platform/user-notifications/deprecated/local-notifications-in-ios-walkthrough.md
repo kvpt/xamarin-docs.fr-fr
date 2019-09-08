@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad0200d083f7b190184f631de51483f4f651d17
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290457"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769750"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Procédure pas à pas : utilisation de notifications locales dans Xamarin. iOS
 
@@ -24,7 +24,6 @@ _Dans cette section, nous allons découvrir comment utiliser des notifications l
 ## <a name="walkthrough"></a>Procédure pas à pas
 
 Laissez-vous créer une application simple qui affichera les notifications locales en action. Cette application n’a qu’un seul bouton. Lorsque nous cliquons sur le bouton, une notification locale est créée. Une fois que la période spécifiée s’est écoulée, la notification s’affiche.
-
 
 1. Dans Visual Studio pour Mac, créez une solution iOS de vue unique et appelez- `Notifications`la.
 1. Ouvrez le `Main.storyboard` fichier, puis faites glisser un bouton sur la vue. Nommez le **bouton Button et**donnez-lui le titre **Ajouter une notification**. Vous pouvez également définir des [contraintes](~/ios/user-interface/designer/designer-auto-layout.md) sur le bouton à ce stade : 
@@ -88,7 +87,6 @@ Laissez-vous créer une application simple qui affichera les notifications local
 
 1. Nous devons gérer le cas dans lequel la notification a été lancée en raison d’une notification locale. Modifiez la méthode `FinishedLaunching` dans la `AppDelegate` pour inclure l’extrait de code suivant :
 
-
     ```csharp
     // check for a notification
 
@@ -119,7 +117,6 @@ Laissez-vous créer une application simple qui affichera les notifications local
 ## <a name="summary"></a>Récapitulatif
 
 Cette procédure pas à pas a montré comment utiliser les différentes API pour créer et publier des notifications dans iOS. Elle a également montré comment mettre à jour l’icône de l’application avec un badge pour fournir des commentaires spécifiques à l’application à l’utilisateur.
-
 
 ## <a name="related-links"></a>Liens associés
 

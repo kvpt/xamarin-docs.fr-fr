@@ -1,18 +1,18 @@
 ---
 title: ListView de Xamarin.Forms
-description: Ce guide présente le ListView Xamarin.Forms, qui peut être utilisé pour présenter des données dans les listes de belles et interactives.
+description: Ce guide présente le ListView Xamarin. Forms, qui peut être utilisé pour présenter des données dans des listes interactives.
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/14/2015
-ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.date: 09/04/2019
+ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228026"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770219"
 ---
 # <a name="xamarinforms-listview"></a>ListView de Xamarin.Forms
 
@@ -25,42 +25,58 @@ ms.locfileid: "70228026"
 
 ## <a name="use-cases"></a>Cas d’usage
 
-Assurez-vous que ListView est le contrôle approprié pour vos besoins. ListView peut être utilisé dans n’importe quelle situation où vous affichez les listes permettant le défilement de données. ListView prend en charge la liaison de données et des actions contextuelles.
+Un `ListView` contrôle peut être utilisé dans toutes les situations où vous affichez des listes de données avec défilement. La `ListView` classe prend en charge les actions de contexte et la liaison de données.
 
-ListView ne doit pas être confondu avec [TableView](~/xamarin-forms/user-interface/tableview.md). Le contrôle TableView constitue une meilleure option chaque fois que vous avez une liste non liées à des options ou des données. Par exemple, l’application de paramètres iOS qui a un ensemble d’options principalement prédéfini, est mieux adaptée à utiliser TableView que ListView.
+Le `ListView` contrôle ne doit pas être confondu [`TableView`](~/xamarin-forms/user-interface/tableview.md) avec le contrôle. Le `TableView` contrôle est une meilleure option chaque fois que vous disposez d’une liste non liée d’options ou de données, car elle permet de spécifier des options prédéfinies en XAML. Par exemple, l’application paramètres iOS, qui possède un ensemble d’options prédéfinies, est mieux adaptée à l’utilisation d' `TableView` un `ListView`.
 
-Notez qu’un ListView est préférable également adapté aux données homogènes &ndash; , autrement dit, toutes les données doivent être du même type. Il s’agit, car le seul type de cellule peut être utilisé pour chaque ligne dans la liste. TableViews peut prendre en charge plusieurs types de cellules, afin qu’ils soient une meilleure option lorsque vous avez besoin de combiner des vues.
+La `ListView` classe ne prend pas en charge la définition d’éléments de liste en `ItemsSource` XAML, vous devez utiliser la `ItemTemplate` propriété ou la liaison de données avec un pour définir des éléments dans la liste.
+
+Un `ListView` est mieux adapté à une collection composée d’un type de données unique. Cette exigence est due au fait qu’un seul type de cellule peut être utilisé pour chaque ligne de la liste. Le `TableView` contrôle peut prendre en charge plusieurs types de cellules. il s’agit donc d’une meilleure option lorsque vous devez afficher plusieurs types de données.
+
+Pour plus d’informations sur la liaison de `ListView` données à une instance, consultez [sources de données ListView](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
 ## <a name="components"></a>Composants
-ListView comportant des composants disponibles pour tester la fonctionnalité native de chaque plateforme. Chacun de ces composants est décrit ci-dessous :
+Le `ListView` contrôle a un certain nombre de composants disponibles pour tester les fonctionnalités natives de chaque plateforme. Ces composants sont définis dans les sections suivantes.
 
-- **[En-têtes et pieds de page](customizing-list-appearance.md#Headers_and_Footers)**  &ndash; texte ou une vue à afficher au début et à la fin d’une liste, séparer les données de la liste. En-têtes et pieds de page peuvent être liés à une source de données indépendamment à partir de la source de données de la ListView.
-- **[Groupes](customizing-list-appearance.md#Grouping)**  &ndash; les données dans un ListView peuvent être regroupées pour faciliter la navigation. Les groupes sont généralement liés aux données :
+### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[En-têtes et pieds de page](customizing-list-appearance.md#headers-and-footers)
 
-![](images/grouping-depth.png "ListView avec des données regroupées")
+Les composants d’en-tête et de pied de page s’affichent au début et à la fin d’une liste, séparés des données de la liste. Les en-têtes et les pieds de page peuvent être liés à une source de données distincte de la source de données de ListView.
 
-- **[Cellules](customizing-cell-appearance.md)**  &ndash; les données dans un ListView sont présentées dans les cellules. Chaque cellule correspond à une ligne de données. Les cellules intégrées à choisir à partir de, ou vous pouvez définir votre propre cellule personnalisée. Cellules intégrées et personnalisées peuvent être utilisé/définis dans XAML ou du code.
-  - **[Intégrés](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; intégrées dans des cellules, en particulier TextCell et ImageCell, peut être améliorer sensiblement les performances, car elles correspondent aux contrôles natifs sur chaque plateforme.
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; affiche une chaîne de texte, éventuellement avec le texte de détail. Texte de détail est restitué sous la forme d’une deuxième ligne dans une police plus petite avec une couleur d’accentuation.
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; affiche une image avec du texte. Apparaît sous la forme d’un TextCell avec une image sur la gauche.
-  - **[Cellules personnalisés](customizing-cell-appearance.md#customcells)**  &ndash; les cellules personnalisées sont idéales lorsque vous avez besoin présenter des données complexes. Par exemple, une vue personnalisée peut servir à présenter une liste de chansons, y compris l’album et artiste :
+### <a name="groupscustomizing-list-appearancemdgrouping"></a>[Ceux](customizing-list-appearance.md#grouping)
 
-![](images/image-cell-default.png "ListView avec ImageCells")
+Les données d' `ListView` un peuvent être regroupées pour faciliter la navigation. Les groupes sont généralement liés aux données. La capture d’écran suivante `ListView` montre un avec des données groupées :
 
-Pour en savoir plus sur la personnalisation des cellules dans un ListView, consultez [personnalisation une apparence de cellule ListView](customizing-cell-appearance.md).
+[« Données groupées dans un ListView » données groupées dans un ListView ![](images/grouping-depth-cropped.png)](images/grouping-depth.png#lightbox "")
 
-## <a name="functionality"></a>Fonctionnalité
-ListView prend en charge un nombre de styles d’interaction, y compris :
+### <a name="cellscustomizing-cell-appearancemd"></a>[Cellules](customizing-cell-appearance.md)
 
-- **[Extraire pour actualiser](interactivity.md#Pull_to_Refresh)**  &ndash; ListView prend en charge l’actualisation de l’extraction sur chaque plateforme.
-- **[Actions contextuelles](interactivity.md#Context_Actions)**  &ndash; ListView prend en charge agir en conséquence sur des éléments individuels dans une liste. Par exemple, vous pouvez implémenter le passage à l’action sur iOS, ou appuyez longuement sur les actions sur Android.
-- **[Sélection](interactivity.md#selectiontaps)**  &ndash; vous pouvez écouter les sélections et désélections non contiguës action à effectuer lors de l’appui sur une ligne.
+Les éléments de données `ListView` dans un sont appelés des cellules. Chaque cellule correspond à une ligne de données. Les cellules intégrées à choisir à partir de, ou vous pouvez définir votre propre cellule personnalisée. Cellules intégrées et personnalisées peuvent être utilisé/définis dans XAML ou du code.
 
-![](images/context-default.png "ListView avec des Actions contextuelles")
+- `ImageCell`Les `TextCell` [cellules intégrées](customizing-cell-appearance.md#built-in-cells), telles que et, correspondent aux contrôles natifs et sont particulièrement performants.
+  - Un [`TextCell`](customizing-cell-appearance.md#textcell) affiche une chaîne de texte, éventuellement avec un texte de détail. Texte de détail est restitué sous la forme d’une deuxième ligne dans une police plus petite avec une couleur d’accentuation.
+  - Un [`ImageCell`](customizing-cell-appearance.md#imagecell) affiche une image avec du texte. Apparaît en tant `TextCell` que avec une image sur la gauche.
+- Les [cellules personnalisées](customizing-cell-appearance.md#customcells) sont utilisées pour présenter des données complexes. Par exemple, une cellule personnalisée peut être utilisée pour présenter une liste de chansons incluant l’album et l’artiste.
 
-Pour en savoir plus sur les fonctionnalités d’interactivité de ListView, consultez [Actions & interactivité avec ListView](interactivity.md).
+La capture d’écran suivante `ListView` montre un avec des éléments ImageCell :
 
-## <a name="related-links"></a>Liens associés
+Éléments de ImageCell [« ImageCell in a ListView » dans un ListView ![](images/image-cell-default-cropped.png)](images/image-cell-default.png#lightbox "")
+
+Pour en savoir plus sur la personnalisation des cellules `ListView`dans un, consultez Personnalisation de l' [apparence des cellules ListView](customizing-cell-appearance.md).
+
+## <a name="functionality"></a>Fonctionnalités
+La `ListView` classe prend en charge un certain nombre de styles d’interaction.
+
+- L' [extraction à l’actualisation](interactivity.md#pull-to-refresh) permet à l’utilisateur d’extraire `ListView` le contenu pour actualiser le contenu.
+- Les [actions de contexte](interactivity.md#context-actions) permettent au développeur de spécifier des actions personnalisées sur des éléments de liste individuels. Par exemple, vous pouvez implémenter le passage à l’action sur iOS, ou appuyez longuement sur les actions sur Android.
+- [Sélection](interactivity.md#selectiontaps) permet au développeur d’associer des fonctionnalités à des événements de sélection et de désélection sur des éléments de liste.
+
+La capture d’écran suivante `ListView` montre une avec des actions de contexte :
+
+Actions de contexte [« actions de contexte dans un ListView » dans un ListView ![](images/context-default-cropped.png)](images/context-default.png#lightbox "")
+
+Pour en savoir plus sur les fonctionnalités d’interactivité de `ListView`, consultez [actions & interactivité avec ListView](interactivity.md).
+
+## <a name="related-links"></a>Liens connexes
 
 - [Utilisation avec ListView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 - [Liaison bidirectionnelle (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 8ab7f24d69e4f20cb1a732f32d220c85b178deef
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e421e088a582e4d2de1cf830a0978cca9f45c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762639"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
 
@@ -76,11 +76,9 @@ Le contrôleur de navigation remplit trois fonctions principales :
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "Ce diagramme illustre la navigation sous forme de pile de cartes")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
-
 - **Il fournit éventuellement un bouton Précédent** : Quand nous envoyons un nouvel élément dans la pile de navigation, la barre de titre peut afficher automatiquement un *bouton Précédent* qui permet à l’utilisateur de revenir en arrière. En appuyant sur le bouton Précédent, le contrôleur de vue actif est *retiré* de la pile de navigation, et la précédente hiérarchie de vues de contenu se charge dans la fenêtre :  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "Ce diagramme illustre le retrait d’une carte de la pile")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
-
 
 - **Il fournit une barre de titre** : la partie supérieure du contrôleur de navigation est appelée *barre de titre*. Elle est chargée d’afficher le titre du contrôleur de vue, comme l’illustre le diagramme ci-dessous :  
 

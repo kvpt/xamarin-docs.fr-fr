@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f0d51d9aa5cde17498124b74cc35011a6d942fae
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 230fe0f168b5718c2bc91cff6dbdc078b0e6834d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284841"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765933"
 ---
 # <a name="custom-linker-configuration"></a>Configuration personnalisée de l’éditeur de liens
 
@@ -26,7 +26,6 @@ Une fois que vous avez ce fichier de description de l’éditeur de liens, ajout
 
 - **Pour Android** : définissez  **Action de génération** sur **LinkDescription**
 - **Pour iOS** : définissez **Action de génération** sur **LinkDescription**
-
 
 L’exemple suivant montre à quoi ressemble le fichier XML :
 
@@ -60,8 +59,6 @@ Notez que les noms de la méthode getter et/ou setter doivent être utilisés ta
 La seconde section, pour `My.Own.Assembly.dll`, permet de garantir que le type `Foo` conserve tous ses champs (par ex. l’attribut `preserve="fields"`) et tous ses constructeurs (par ex. toutes les méthodes nommées `.ctor` dans IL). Le type `Bar` conserve des signatures spécifiques (pas de noms) pour un constructeur (qui accepte un paramètre de chaîne unique) et pour un champ de chaîne spécifique `_blah`.
 L’espace de noms `My.Own.Namespace` permet de conserver tous les types qu’il contient.
 Enfin, n’importe quel type dont le nom complet (y compris l’espace de noms) correspond au modèle de caractère générique « My.Other\* » conserve tous ses champs et toutes ses méthodes. Le caractère générique `*` peut être inclus plusieurs fois dans un modèle de « nom complet de type ».
-
-
 
 ## <a name="related-links"></a>Liens associés
 

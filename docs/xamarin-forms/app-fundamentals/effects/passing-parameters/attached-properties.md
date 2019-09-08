@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 2fcfbfa8a1780a9da4e9bfe187dc99a5172e95f0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645369"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771480"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Passer des paramètres d’effet en tant que propriétés jointes
 
@@ -432,7 +432,6 @@ La méthode `OnElementPropertyChanged` met à jour la couleur ou le décalage de
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit comment utiliser des propriétés jointes pour passer des paramètres à un effet et comment changer un paramètre au moment de l’exécution. Les propriétés jointes permettent de définir des paramètres d’effet qui répondent aux changements apportés aux propriétés au moment de l’exécution.
-
 
 ## <a name="related-links"></a>Liens associés
 

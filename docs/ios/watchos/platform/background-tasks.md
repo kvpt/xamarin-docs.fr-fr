@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2017
-ms.openlocfilehash: b01fbbe813b778d3c2e1cabeba620ed48a46ecac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e0336e65532c4487e3ec8c1984b132544b5b547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287154"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768662"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>Tâches en arrière-plan Watchos dans Xamarin
 
@@ -109,7 +109,6 @@ Ces tâches sont traitées en détail dans les sections ci-dessous.
 
 Dans le cadre de l’exécution de la tâche, l’application peut effectuer n’importe quel type de traitement local, par exemple mettre à jour une chronologie de `NSUrlSession`complication ou extraire les données requises avec un.
 
-
 <a name="WKURLSessionRefreshBackgroundTask" />
 
 ### <a name="wkurlsessionrefreshbackgroundtask"></a>WKURLSessionRefreshBackgroundTask
@@ -142,9 +141,6 @@ Lorsque l’application marque le `WKSnapshotRefreshBackgroundTask` terminé, le
 
 > [!IMPORTANT]
 > Il est important de toujours planifier un `WKSnapshotRefreshBackgroundTask` après que l’application a reçu de nouvelles données et mis à jour son interface utilisateur, ou que l’utilisateur ne voit pas les informations modifiées.
-
-
-
 
 En outre, lorsque l’utilisateur reçoit une notification de l’application et l’appuie pour amener l’application au premier plan, l’instantané doit être à jour puisqu’il agit également comme écran de lancement :
 
@@ -700,8 +696,6 @@ Apple présente les suggestions suivantes :
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé les améliorations apportées par Apple et la façon dont elles peuvent être utilisées pour tenir à jour une application de surveillance. Tout d’abord, la nouvelle tâche en arrière-plan Apple a été ajoutée à Watchos 3. Il a ensuite abordé le cycle de vie de l’API en arrière-plan et comment implémenter des tâches en arrière-plan dans une application Xamarin Watchos. Enfin, il a abordé le fonctionnement de la planification et a donné quelques meilleures pratiques.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

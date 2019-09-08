@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 45eda150b0cff9462cfe5f09be4b04ea64ec391d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5508636905acbb513aec4c6e065e9296293310d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284559"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768673"
 ---
 # <a name="hello-ios--quickstart"></a>Hello.iOS - Démarrage rapide
 
@@ -329,7 +329,6 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 
     ![](hello-ios-quickstart-images/vs-image14.png "Ajuster la largeur de sorte que le bouton soit aussi large que le champ de texte et l’étiquette")
 
-
 1. Avec le **bouton** sélectionné dans l’aire de conception, affectez à la propriété **Nom** dans la section **Identité** des **propriétés** la valeur `TranslateButton`. Remplacez la propriété **Titre** par « Convertir » :
 
     ![](hello-ios-quickstart-images/vs-image15.png "Remplacer la propriété Titre par Convertir")
@@ -424,7 +423,6 @@ Cette procédure pas à pas décrit comment créer une application nommée Phone
 1. Double-cliquez sur **ViewController.cs** dans l’**Explorateur de solutions** pour l’ouvrir et ajouter une logique aux interactions de poignée avec les boutons :
 
     ![](hello-ios-quickstart-images/vs-image20.png "Logique ajoutée aux interactions de poignée avec les boutons")
-
 
 1. Commencez par associer le `TranslateButton`. Dans la classe **ViewController**, recherchez la méthode `ViewDidLoad`. Ajoutez le code de bouton suivant dans `ViewDidLoad`, l’appel à `base.ViewDidLoad()` :
 

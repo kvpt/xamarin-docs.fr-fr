@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: f12efdbc0d5bf43a7515603a67fedd180cd87587
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5ebafa70239305210da631c3e9c34278f83b272b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649650"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754662"
 ---
 # <a name="configuration"></a>Configuration
 
-Pour utiliser SQLite dans votre application Xamarin.Android, vous devrez déterminer l’emplacement de fichier approprié pour votre fichier de base de données.
+Pour utiliser SQLite dans votre application Xamarin. Android, vous devez déterminer l’emplacement de fichier approprié pour votre fichier de base de données.
 
-## <a name="database-file-path"></a>Chemin d’accès du fichier de base de données
+## <a name="database-file-path"></a>Chemin du fichier de base de données
 
-Quelle que soit la méthode accès aux données utilisée, vous devez créer un fichier de base de données avant que les données peuvent être stockées avec SQLite. En fonction de la plateforme que vous ciblez l’emplacement du fichier sera différent. Pour Android, vous pouvez utiliser classe Environment pour construire un chemin d’accès valide, comme indiqué dans l’extrait de code suivant :
+Quelle que soit la méthode d’accès aux données que vous utilisez, vous devez créer un fichier de base de données pour que les données puissent être stockées avec SQLite. Selon la plateforme que vous ciblez, l’emplacement des fichiers sera différent. Pour Android, vous pouvez utiliser la classe d’environnement pour construire un chemin d’accès valide, comme illustré dans l’extrait de code suivant :
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Autres éléments sont à prendre en considération lorsque vous décidez où stocker le fichier de base de données. Par exemple, sur Android, vous pouvez choisir s’il faut utiliser le stockage interne ou externe.
+Il y a d’autres éléments à prendre en considération lorsque vous décidez de l’emplacement de stockage du fichier de base de données. Par exemple, sur Android, vous pouvez choisir d’utiliser le stockage interne ou externe.
 
-Si vous souhaitez utiliser un emplacement différent sur chaque plateforme dans votre application inter-plateformes vous pouvez utiliser une directive de compilateur comme indiqué pour générer un autre chemin d’accès pour chaque plateforme :
+Si vous souhaitez utiliser un emplacement différent sur chaque plateforme de votre application multiplateforme, vous pouvez utiliser une directive de compilateur comme indiqué pour générer un chemin d’accès différent pour chaque plateforme :
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Pour obtenir des conseils sur l’utilisation du système de fichiers dans Android, reportez-vous à la [parcourir les fichiers](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) Recipe (Recette). Consultez le [création d’Applications Cross-Platform](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) document pour plus d’informations sur l’utilisation de directives de compilateur pour écrire du code spécifique à chaque plateforme.
+Pour obtenir des conseils sur l’utilisation du système de fichiers dans Android, reportez-vous à la recette [Parcourir les fichiers](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) . Pour plus d’informations sur l’utilisation des directives de compilateur pour écrire du code spécifique à chaque plateforme, consultez le document [Building Cross Platform applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) .
 
 ## <a name="threading"></a>Thread
 
-Vous ne devez pas utiliser la même connexion de base de données SQLite sur plusieurs threads. Veillez à ouvrir, utiliser et fermez les connexions que vous créez sur le même thread.
+Vous ne devez pas utiliser la même connexion de base de données SQLite sur plusieurs threads. Veillez à ouvrir, à utiliser, puis à fermer toutes les connexions que vous créez sur le même thread.
 
-Pour vous assurer que votre code n’essaie pas à accéder à la base de données SQLite à partir de plusieurs threads en même temps, mettre manuellement un verrou chaque fois que vous vous apprêtez à accéder à la base de données, comme suit :
+Pour vous assurer que votre code n’essaie pas d’accéder à la base de données SQLite à partir de plusieurs threads en même temps, prenez manuellement un verrou chaque fois que vous accédez à la base de données, comme suit :
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,11 @@ lock (locker){
 }
 ```
 
-Tous les accès de base de données (lectures, écritures, les mises à jour, etc.) doivent être encapsulées avec le même verrou. Doit veiller à éviter une situation de blocage en vérifiant que le travail à l’intérieur de la clause de verrou est intentionnellement simple et n’appelle pas à d’autres méthodes qui peuvent également prendre un verrou !
-
+Tous les accès aux bases de données (lectures, écritures, mises à jour, etc.) doivent être encapsulés avec le même verrou. Vous devez veiller à éviter une situation de blocage en veillant à ce que le travail à l’intérieur de la clause Lock soit simple et ne fasse pas appel à d’autres méthodes qui peuvent également prendre un verrou !
 
 ## <a name="related-links"></a>Liens associés
 
-- [DataAccess Basic (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess de base (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [DataAccess avancé (exemple)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Recettes de données Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Accès aux données de Xamarin.Forms](~/xamarin-forms/data-cloud/data/databases.md)
+- [Accès aux données Xamarin. Forms](~/xamarin-forms/data-cloud/data/databases.md)

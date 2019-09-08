@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 1f9cd0acd201f124f4a4577fec23dce52aee627d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 684bdb21309028e02362dcc6bfd8c91c539430bd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657506"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770179"
 ---
 # <a name="xamarinforms-editor"></a>Éditeur de Xamarin.Forms
 
@@ -191,7 +191,7 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 La `IsTextPredictionEnabled` propriété contrôle si la prédiction de texte et la correction de texte automatique sont activées. Par défaut, la propriété est définie `true`. Comme l’utilisateur entre du texte, des prédictions de word sont présentées.
 
-Toutefois, pour certains scénarios de saisie de texte, tels que l’entrée d’un nom d’utilisateur, la prédiction de texte et la correction automatique de texte, `IsTextPredictionEnabled` doivent être `false`désactivées en affectant à la propriété la valeur:
+Toutefois, pour certains scénarios de saisie de texte, tels que l’entrée d’un nom d’utilisateur, la prédiction de texte et la correction automatique de texte, `IsTextPredictionEnabled` doivent être `false`désactivées en affectant à la propriété la valeur :
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -356,7 +356,6 @@ Title="Editor Demo">
     </ContentPage.Content>
 </ContentPage>
 ```
-
 
 ## <a name="related-links"></a>Liens associés
 

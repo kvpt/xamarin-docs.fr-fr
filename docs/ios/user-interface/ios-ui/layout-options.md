@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: eb20c73ab66af5ca07bf2efb31d631d9fa9776dc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 335c385b5be77736f0e19852eb71f2a2329eb9a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287039"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768258"
 ---
 # <a name="layout-options-in-xamarinios"></a>Options de disposition dans Xamarin. iOS
 
@@ -40,7 +40,6 @@ textfield1.Frame = new RectangleF(15, 277, 79, 27);
 textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
 ```
 
-
 Pour tester les paramètres de redimensionnement automatique, activez les différentes **orientations d’appareils prises en charge** dans les options du projet :
 
  [![](layout-options-images/image43a.png "Paramètres de redimensionnement automatique")](layout-options-images/image43a.png#lightbox)
@@ -53,7 +52,6 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin;
 ```
 
-
 Nous pouvons également ajuster les contrôles à l’aide du concepteur. Si vous sélectionnez les jambes comme indiqué ci-dessous, l’image reste alignée à droite sans être rognée en bas de la vue :
 
  [![](layout-options-images/autoresize.png "Rotation")](layout-options-images/autoresize.png#lightbox)
@@ -63,10 +61,6 @@ Ces captures d’écran montrent comment les contrôles sont redimensionnés ou 
  [![](layout-options-images/image44a.png "Rotation")](layout-options-images/image44a.png#lightbox)
 
 Notez que l’affichage de texte et le champ de texte sont étirés pour conserver les mêmes marges de gauche `FlexibleWidth` et de droite, en raison du paramètre. La marge supérieure et gauche de l’image est flexible, ce qui signifie qu’elle conserve les marges inférieure et droite, ce qui permet d’afficher l’image lors de la rotation de l’écran. Les dispositions complexes requièrent généralement une combinaison de ces paramètres sur chaque contrôle visible pour maintenir la cohérence de l’interface utilisateur et empêcher le chevauchement des contrôles lorsque les limites de la vue changent (en raison de la rotation ou d’un autre événement de redimensionnement).
-
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

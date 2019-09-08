@@ -5,12 +5,12 @@ description: Ce document compare les similitudes et les différences entre le cy
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d1c207672baf37c91d39fca1d9f628d85971577
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290375"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765903"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF et Cycle de vie des applications Xamarin.Forms
 
@@ -87,7 +87,6 @@ Xamarin. Forms est principalement axé sur les scénarios mobiles. Par conséque
 |Suspendre/perdre le focus|Window.OnDeactivated|Page. OnSleep|
 |Focus activé/reçu|Fenêtre. OnActivated|Page.OnResume|
 |Closed|Window. OnClosing + Window. OnClosed|N/A|
-
 
 Les deux prennent en charge le masquage/l’affichage des contrôles enfants, dans WPF, il `IsVisible` s’agit d’une propriété à trois États (visible, masquée et réduite). Dans Xamarin. Forms, il est simplement visible ou masqué par `IsVisible` la propriété.
 

@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 9629d775b45951279178dffa3600e7cd5073dd38
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290630"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766121"
 ---
 # <a name="apple-account-management"></a>Gestion des comptes Apple
 
@@ -55,7 +55,7 @@ Pour utiliser cette fonctionnalité, vous devez disposer d’un compte de dével
     ![boîte de dialogue Fastlane.](apple-account-management-images/image2.png)
 
 3. Entrez votre ID Apple et votre mot de passe, puis cliquez sur le bouton **se connecter** . Cela permet d’enregistrer vos informations d’identification dans le trousseau sécurisé sur cet ordinateur. [Fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) est utilisé pour gérer vos informations d’identification en toute sécurité et les transmettre au portail des développeurs d’Apple.
- 
+
 4. Sélectionnez **toujours autoriser** dans la boîte de dialogue d’alerte pour permettre à Visual Studio d’utiliser vos informations d’identification :
 
     ![Toujours autoriser la boîte de dialogue d’alerte](apple-account-management-images/image4.png)
@@ -81,13 +81,12 @@ Pour utiliser cette fonctionnalité, vous devez disposer d’un compte de dével
     ![boîte de dialogue nom d’utilisateur et mot de passe](apple-account-management-images/prov1a.png)
 
 1. Une fois que votre compte a été ajouté avec succès, vous voyez votre ID Apple et toutes les équipes dont votre ID Apple fait partie.
- 
+
 1. Sélectionnez une équipe et appuyez sur **afficher les détails...** disproportionnée. Cette opération affiche une liste de toutes les identités de signature et des profils de provisionnement installés sur votre ordinateur :
 
     ![boîte de dialogue nom d’utilisateur et mot de passe](apple-account-management-images/prov2.png)
 
 -----
-
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>Gestion des identités de signature et des profils de provisionnement
 

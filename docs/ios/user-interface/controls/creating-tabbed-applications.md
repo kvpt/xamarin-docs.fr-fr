@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd9d93572ac10622345b1dff4145b737baf8aaae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292986"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769009"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Barres d’onglets et contrôleurs de barre d’onglets dans Xamarin.iOS
 
@@ -28,7 +28,6 @@ Le `UITabBarController` prend en charge avec onglet développement d’applicati
 
 - Autorise plusieurs contrôleurs à ajouter à ce dernier.
 - En fournissant une interface utilisateur à onglets, via le `UITabBar` (classe), pour autoriser un utilisateur de basculer entre les contrôleurs et leurs points de vue. 
-
 
 Contrôleurs sont ajoutés à la `UITabBarController` via son `ViewControllers` propriété, qui est un `UIViewController` tableau. Le `UITabBarController` lui-même gère le chargement du contrôleur approprié et à la présentation de sa vue en fonction de l’onglet sélectionné.
 
@@ -46,7 +45,6 @@ Bien qu’il existe déjà un modèle d’application avec onglets disponibles d
 
  <a name="Creating_the_Application" />
 
-
 ### <a name="creating-the-application"></a>Création de l’application
 
 Nous allons commencer en créant une nouvelle application.
@@ -56,8 +54,6 @@ Sélectionnez le **fichier > Nouveau > Solution** élément de menu dans Visual 
 [![](creating-tabbed-applications-images/newsolution1.png "Sélectionnez le modèle de projet vide")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
 [![](creating-tabbed-applications-images/newsolution2.png "Nommez le projet TabbedApplication")](creating-tabbed-applications-images/newsolution2.png#lightbox)
-
-
 
 ### <a name="adding-the-uitabbarcontroller"></a>Ajout de la UITabBarController
 
@@ -72,7 +68,6 @@ Pour implémenter le `UITabBarController` nous devons effectuer les opérations 
 1. Définir la classe de base de `TabController` à `UITabBarController` . 
 1. Créer `UIViewController` instances à ajouter à la `TabController` . 
 1. Ajouter le `UIViewController` instances dans un tableau assigné à la `ViewControllers` propriété de la `TabController` . 
-
 
 Ajoutez le code suivant à la `TabController` classe pour atteindre ces étapes :
 
@@ -146,13 +141,11 @@ Si nous exécutons l’application maintenant, le `UITabBarController` sera char
 
  <a name="Modifying_TabBarItems" />
 
-
 ### <a name="modifying-tabbaritems"></a>Modification TabBarItems
 
 Maintenant que nous avons une exécution onglet application, nous allons modifier le `TabBarItem` pour modifier l’image et le texte qui s’affiche, ainsi que pour ajouter un badge à un des onglets.
 
  <a name="Setting_a_System_Item" />
-
 
 #### <a name="setting-a-system-item"></a>Définition d’un élément du système
 
@@ -167,7 +160,6 @@ Lorsque vous créez le `UITabBarItem` à l’aide un `UITabBarSystemItem`, le ti
  ![](creating-tabbed-applications-images/04a-tabimage.png "Le premier onglet avec une icône représentant une étoile")
 
  <a name="Setting_the_Title_and_Image" />
-
 
 #### <a name="setting-the-title-and-image"></a>Définir le titre et l’Image
 
@@ -201,7 +193,6 @@ Lorsque nous exécutons l’application maintenant, le deuxième onglet affiche 
 
  <a name="Setting_the_Badge_Value" />
 
-
 #### <a name="setting-the-badge-value"></a>Définition de la valeur de Badge
 
 Un onglet peut également afficher un badge. Par exemple, ajoutez la ligne suivante de code pour définir un badge sur le troisième onglet :
@@ -222,13 +213,11 @@ tab3.TabBarItem.BadgeValue = null;
 
  <a name="Tabs_in_Non-RootViewController_Scenarios" />
 
-
 ## <a name="tabs-in-non-rootviewcontroller-scenarios"></a>Onglets dans les scénarios Non RootViewController
 
 Dans l’exemple ci-dessus, nous vous avons montré comment travailler avec un `UITabBarController` lorsqu’il se trouve le `RootViewController` de la fenêtre. Dans cet exemple, nous allons examiner comment utiliser un `UITabBarController` quand il n’est pas le `RootViewController` et afficher cette création d’utiliser les Storyboards.
 
  <a name="Initial_Screen_Example" />
-
 
 ### <a name="initial-screen-example"></a>Écran initial de l’exemple
 
@@ -237,7 +226,6 @@ Pour ce scénario, l’écran initial est chargé à partir d’un contrôleur q
 [![](creating-tabbed-applications-images/inital-screen-application.png "Cette capture d’écran montre le flux d’application")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 Nous allons démarrer une nouvelle application pour cet exemple. Là encore, nous allons utiliser le **iPhone > application > projet vide (C#)** modèle, cette fois le projet d’affectation de noms `InitialScreenDemo`.
-
 
 Dans cet exemple nous avons besoin d’une table de montage séquentiel pour contenir notre contrôleurs d’affichage. Pour ajouter une table de montage séquentiel :
 
@@ -251,7 +239,6 @@ Appelons cette table de montage séquentiel **MainStoryboard** , comme illustré
 
 Il existe quelques étapes importantes à noter lors de l’ajout d’une table de montage vers un fichier précédemment non-table de montage séquentiel, qui font l’objet dans le [Introduction aux Storyboards](~/ios/user-interface/storyboards/index.md) guide. Ces équivalents sont :
 
- 
 1. Ajoutez votre nom de la table de montage séquentiel à la **Interface principale** section de la `Info.plist`:
 
     [![](creating-tabbed-applications-images/project-options.png "La valeur de l’Interface principale MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
@@ -276,7 +263,6 @@ Visual Studio pour Mac génère automatiquement les classes et les fichiers de c
 
  <a name="Creating_the_UI" />
 
-
 #### <a name="creating-the-ui"></a>Création de l’interface utilisateur
 
 Ensuite, nous allons créer une interface utilisateur simple pour chacune des vues de ViewController, à l’aide du Concepteur de Xamarin iOS.
@@ -285,7 +271,6 @@ Nous souhaitons faire glisser un `Label` et un `Button` sur ViewController1 à p
 
 - **Étiquette** : `Text` = **Un**
 - **Bouton** : `Title` = **L’utilisateur effectue une action initiale**
-
 
 Nous contrôlera la visibilité de notre bouton dans un `TouchUpInside` événement et nous devons y faire référence dans le code-behind. Nous allons identifier avec le **nom** `aButton` dans le panneau Propriétés, comme illustré dans la capture d’écran suivante :
 
@@ -329,7 +314,7 @@ Supprimer ces nouveaux contrôleurs de vue en sélectionnant la barre noire situ
 Dans notre table de montage séquentiel, nous pouvons utiliser Segues pour gérer les transitions entre le TabBarController et nos contrôleurs d’affichage. Après l’interaction avec la vue initiale, nous souhaitons charger dans le TabBarController présenté à l’utilisateur. Nous allons configurer cela dans le concepteur.
 
 **CTRL + clic** et **glisser** à partir du bouton à la TabBarController. Sur le trajet de souris, un menu contextuel s’affiche. Nous souhaitons utiliser un segue modal. 
- 
+
 Pour configurer chacun de nos onglets, **Ctrl + clic** à partir de la TabBarController à chacun de nos contrôleurs d’affichage dans l’ordre d’un à trois, puis sélectionnez la relation **onglet** dans le menu contextuel, comme illustré ci-dessous :
 
 [![](creating-tabbed-applications-images/context-menu.png "Sélectionnez l’onglet relation")](creating-tabbed-applications-images/context-menu.png#lightbox)
@@ -366,7 +351,6 @@ Lorsque l’application s’exécute et l’utilisateur appuie sur le bouton sur
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé comment utiliser un `UITabBarController` dans une application. Nous avons présenté comment charger des contrôleurs dans chaque onglet, ainsi que comment définir des propriétés sur les onglets ce titre, image et badge. Nous avons examiné puis, à l’aide de storyboards, comment charger un `UITabBarController` lors de l’exécution lorsqu’il n’est pas le `RootViewController` de la fenêtre.
-
 
 ## <a name="related-links"></a>Liens associés
 

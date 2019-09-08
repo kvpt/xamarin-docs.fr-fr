@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 18. MVVM
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 18. MVVM'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 18. MVVM'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 6379bafb8c879237171951756441d1227f65b825
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334583"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771074"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>Résumé du chapitre 18. MVVM
 
@@ -92,8 +92,6 @@ Le [ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/t
 ## <a name="viewmodels-and-the-application-lifecycle"></a>ViewModels et le cycle de vie d’application
 
 Le `AdderViewModel` utilisé dans le **AddingMachine** exemple définit également deux méthodes nommées `SaveState` et `RestoreState`. Ces méthodes sont appelées à partir de l’application lorsqu’elle se met en veille et lorsqu’il démarre à nouveau.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

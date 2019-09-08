@@ -6,16 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: e0fb6c1ced4953fd03939f56eb4011d956dfcca6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 10c66e0972c51bba04638706586793a848949980
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525600"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754194"
 ---
 # <a name="debuggable-attribute"></a>Attribut débogable
-
-
 
 Pour permettre le débogage, Android prend en charge Java Debug Wire Protocol (JDWP). Cette technologie permet à des outils tels qu’ADB de communiquer avec une machine virtuelle Java. JDWP est important pendant le développement, mais il doit être désactivé avant la publication de l’application.
 
@@ -24,13 +22,11 @@ JDWP peut être la valeur de l’attribut `android:debuggable` dans une applicat
 1. Création d’un fichier `AndroidManifext.xml` et définition de l’attribut `android:debuggable` dans ce dernier.
 2. Inclusion de `ApplicationAttribute` dans un fichier `.CS`  comme suit : `[assembly: Application(Debuggable=false)]`.
 
-
 Si `AndroidManifest.xml` et `ApplicationAttribute` sont tous deux présents, le contenu de `AndroidManifest.xml` est prioritaire devant ce qui est spécifié par `ApplicationAttribute`.
 
 Si ni `AndroidManifest.xml` ni `ApplicationAttribute` ne sont présents, la valeur par défaut de l’attribut `android:debuggable` dépend de la génération ou non de symboles de débogage. S’il y a des symboles de débogage, Xamarin.Android définira l’attribut `android:debuggable` sur `true`.
 
 Notez que la valeur des attributs `android:debuggable` ne dépend PAS nécessairement de la configuration de build. Il est possible que l’attribut `android:debuggable` des versions release soit défini sur true.
-
 
 ## <a name="related-links"></a>Liens associés
 

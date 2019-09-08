@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0067a9e576e695a308e4326955b540be2ff46f61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b073e0233fb9c5511593ed80313f402c888c811
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657226"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771011"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Authentifier les utilisateurs avec une base de données de documents Azure Cosmos DB et Xamarin. Forms
 
@@ -267,7 +267,6 @@ Pour plus d’informations sur la suppression d’un document à partir d’une 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment combiner de contrôle d’accès avec les collections partitionnées, afin qu’un utilisateur peut accéder uniquement à leurs propres documents de base de données de document dans une application Xamarin.Forms. Spécification de l’identité de l’utilisateur comme clé de partition garantit qu’une collection partitionnée peut stocker uniquement des documents pour cet utilisateur.
-
 
 ## <a name="related-links"></a>Liens associés
 

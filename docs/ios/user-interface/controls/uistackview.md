@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: a3adbf18e18e4f2a42ed3c89162455040a9fe699
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bde76891b4b01800384ee0579e3fbe14987c5420
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282688"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768385"
 ---
 # <a name="stack-views-in-xamarinios"></a>Affichages de la pile dans Xamarin. iOS
 
@@ -270,8 +270,6 @@ La plupart des propriétés de la vue de la pile peuvent être spécifiées à l
 
 Cet article a abordé le nouveau `UIStackView` contrôle (pour iOS 9) à gérer un ensemble de sous-affichages dans une pile horizontale ou verticale dans une application Xamarin. iOS.
 Il a commencé par un exemple simple d’utilisation d’affichages de pile pour créer une interface utilisateur, et a terminé avec une vue plus détaillée des vues de pile et leurs propriétés et fonctionnalités.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

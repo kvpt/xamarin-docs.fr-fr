@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: e8277ff92c2ac1891c60b8da385a904af1bd299d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a1f2016af3bcac338f47b7315a26fe50ae76fee7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526293"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755088"
 ---
 # <a name="default-resources"></a>Ressources par défaut
 
-Les ressources par défaut sont des éléments qui ne sont pas spécifiques à un appareil ou un facteur de forme particulier, et sont par conséquent le choix par défaut par le système d’exploitation Android si aucune ressource spécifique n’est trouvée. Par conséquent, il s’agit du type de ressource le plus courant à créer. Ils sont organisés dans des sous-répertoires du répertoire Resources en fonction de leur type de ressource:
+Les ressources par défaut sont des éléments qui ne sont pas spécifiques à un appareil ou un facteur de forme particulier, et sont par conséquent le choix par défaut par le système d’exploitation Android si aucune ressource spécifique n’est trouvée. Par conséquent, il s’agit du type de ressource le plus courant à créer. Ils sont organisés dans des sous-répertoires du répertoire **Resources** en fonction de leur type de ressource :
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -23,7 +23,7 @@ Les ressources par défaut sont des éléments qui ne sont pas spécifiques à u
 
 Dans l’image ci-dessus, le projet a des valeurs par défaut pour les ressources, les mises en page et les valeurs pouvant être dessinées (fichiers XML qui contiennent des valeurs simples).
 
-La liste complète des types de ressources est fournie ci-dessous:
+La liste complète des types de ressources est fournie ci-dessous :
 
 - **animateur** &ndash; Fichiers XML qui décrivent les animations de propriété.
    Les animations de propriété ont été introduites dans le niveau d’API 11 (Android 3,0) et fournissent l’animation des propriétés sur un objet. Les animations de propriétés sont un moyen plus souple et plus puissant de décrire des animations sur tout type d’objet.
@@ -34,11 +34,11 @@ La liste complète des types de ressources est fournie ci-dessous:
    Il peut avoir des États différents, par exemple enfoncé ou désactivé, et le bouton peut changer de couleur à chaque modification de l’État. La liste est exprimée dans une liste d’États.
 
 - **dessinable** &ndash; Les ressources pouvant être dessinées sont un concept général pour les graphiques qui peuvent être compilés dans l’application, puis accessibles par des appels d’API ou référencés par d’autres ressources XML.
-   Voici quelques exemples de drawables: fichiers bitmap (. png,. gif,. jpg), images bitmap redimensionnables spéciales appelées [neuf correctifs](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), listes d’États, formes génériques définies dans XML, etc.
- 
+   Voici quelques exemples de drawables : fichiers bitmap (. png,. gif,. jpg), images bitmap redimensionnables spéciales appelées [neuf correctifs](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), listes d’États, formes génériques définies dans XML, etc.
+
 - **disposition** &ndash; Fichiers XML qui décrivent une disposition d’interface utilisateur, telle qu’une activité ou une ligne d’une liste.
 
-- **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus*contextuels et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
+- **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus contextuels*et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
 
 - **brut** &ndash; Fichiers arbitraires enregistrés sous leur forme binaire brute. Ces fichiers sont compilés dans une application Android dans un format binaire.
 
@@ -46,14 +46,13 @@ La liste complète des types de ressources est fournie ci-dessous:
 
 - fichiers XML XML qui fonctionnent de la même façon que les fichiers de configuration .net. &ndash; Il s’agit de données XML arbitraires qui peuvent être lues au moment de l’exécution par l’application.
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 ![Fichiers de ressources par défaut](default-resources-images/01-resource-files-xs.png)
 
 Dans l’image ci-dessus, le projet a des valeurs par défaut pour les ressources, les mises en page et les valeurs pouvant être dessinées (fichiers XML qui contiennent des valeurs simples).
 
-La liste complète des types de ressources est fournie ci-dessous:
+La liste complète des types de ressources est fournie ci-dessous :
 
 - **animateur** &ndash; Fichiers XML qui décrivent les animations de propriété.
    Les animations de propriété ont été introduites dans le niveau d’API 11 (Android 3,0) et fournissent l’animation des propriétés sur un objet. Les animations de propriétés sont un moyen plus souple et plus puissant de décrire des animations sur tout type d’objet.
@@ -66,11 +65,11 @@ La liste complète des types de ressources est fournie ci-dessous:
 - **police** &ndash; À partir de l’API de niveau 26, il est possible d’incorporer des polices en tant que ressource dans une application Android. La bibliothèque de prise en charge 26 va rétroporter les polices au niveau d’API 14. L’incorporation de polices permet aux applications de charger des polices personnalisées directement à partir de dispositions XML sans avoir à les importer en tant que ressources avant de les utiliser.
 
 - **mipmap** &ndash; Les ressources pouvant être dessinées sont un concept général pour les graphiques qui peuvent être compilés dans l’application, puis accessibles par des appels d’API ou référencés par d’autres ressources XML.
-   Voici quelques exemples de drawables: fichiers bitmap (. png,. gif,. jpg), images bitmap redimensionnables spéciales appelées [neuf correctifs](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), listes d’États, formes génériques définies dans XML, etc.
+   Voici quelques exemples de drawables : fichiers bitmap (. png,. gif,. jpg), images bitmap redimensionnables spéciales appelées [neuf correctifs](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), listes d’États, formes génériques définies dans XML, etc.
 
 - **disposition** &ndash; Fichiers XML qui décrivent une disposition d’interface utilisateur, telle qu’une activité ou une ligne d’une liste.
 
-- **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus*contextuels et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
+- **menu** Fichiers XML qui décrivent des menus d’application tels que des *menus d’options*, des *menus contextuels*et des *sous-menus.* &ndash; Pour obtenir un exemple de menus, consultez la [démonstration du menu contextuel](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo) ou l’exemple de [contrôles standard](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/) .
 
 - **brut** &ndash; Fichiers arbitraires enregistrés sous leur forme binaire brute. Ces fichiers sont compilés dans une application Android dans un format binaire.
 

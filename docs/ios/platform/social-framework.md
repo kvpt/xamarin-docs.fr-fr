@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292668"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769443"
 ---
 # <a name="social-framework-in-xamarinios"></a>Infrastructure sociale dans Xamarin. iOS
 
@@ -58,7 +58,6 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 - `SetInitialText`: Ajoute le texte initial à afficher dans le tweet.
 - `AddUrl`: Ajoute une URL au tweet.
 - `AddImage`: Ajoute une image au tweet.
-
 
 Une fois initialisé, l' `PresentVIewController` appel de affiche la vue créée `SLComposeViewController`par le. L’utilisateur peut ensuite éventuellement modifier et envoyer le tweet, ou annuler son envoi. Dans les deux cas, le contrôleur doit être rejeté dans `CompletionHandler`le, où le résultat peut également être vérifié pour voir si le tweet a été envoyé ou annulé, comme indiqué ci-dessous :
 
@@ -473,7 +472,6 @@ Si vous ne définissez pas cette option (ou si vous utilisez une clé non valide
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment utiliser l’infrastructure sociale pour interagir avec Twitter et Facebook. Il a montré comment configurer des comptes pour chaque réseau social dans les paramètres de l’appareil. Elle a également expliqué comment utiliser le `SLComposeViewController` pour présenter une vue unifiée pour la publication sur des réseaux sociaux. En outre, il a examiné `SLRequest` la classe utilisée pour appeler l’API de chaque réseau social.
-
 
 ## <a name="related-links"></a>Liens associés
 

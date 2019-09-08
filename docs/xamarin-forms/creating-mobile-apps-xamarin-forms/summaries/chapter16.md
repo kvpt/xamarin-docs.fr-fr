@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 16. Liaison de données
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 16. Liaison de données'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 16. Liaison de données'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: df3cee3fe71553b63bf4b050cad141b66ad98a06
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334204"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771104"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Résumé du chapitre 16. Liaison de données
 
@@ -138,8 +138,6 @@ Vous pouvez simplifier les contrôles personnalisés à l’aide de liaisons de 
 À la place la [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml) fichier contient tout le balisage pour les visuels du contrôle par le biais des liaisons de données sur le `Label` les éléments basés sur les propriétés définies dans le fichier code-behind.
 
 Le [ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo) exemple illustre la `NewCheckBox` contrôle personnalisé.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285205"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751993"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
@@ -67,7 +67,6 @@ Ces nouvelles infrastructures orientées objet fournissent les éléments suivan
 
 Pour plus d’informations, consultez la documentation de [l’interface utilisateur contacts et contacts](~/ios/platform/contacts.md) .
 
-
 ## <a name="new-search-apis"></a>Nouvelles API de recherche
 
 La recherche a été étendue dans iOS 9 pour offrir de nouvelles façons d’accéder à des informations à l’intérieur de votre application Xamarin. iOS. À l’aide des nouvelles API de recherche, vous pouvez faire en sorte que le contenu de votre application puisse faire l’objet de recherches par le biais des résultats de recherche Spotlight et Safari, de la remise et des rappels Siri et des suggestions. Cela permet aux utilisateurs d’accéder rapidement aux activités et aux informations contenues dans votre application.
@@ -83,7 +82,6 @@ Le contrôle d’affichage de la pile ([UIStackView](xref:UIKit.UIStackView) tir
 En utilisant le contrôle d’affichage de la pile, la quantité de travail nécessaire à la mise en page d’une interface utilisateur est très réduite. La disposition de tous les sous-affichages attachés à un affichage de la pile est gérée automatiquement en fonction des propriétés définies par le développeur, telles que l’axe, la distribution, l’alignement et l’espacement.
 
 Pour plus d’informations, consultez notre [Introduction à la documentation de l’affichage de pile](~/ios/user-interface/controls/uistackview.md) .
-
 
 ## <a name="collection-view-changes"></a>Modifications de la vue de collection
 
@@ -145,7 +143,6 @@ Dans iOS 9, Apple a amélioré le trousseau pour fournir un nouveau type de clé
 
 Pour plus d’informations, consultez notre [Introduction à la documentation Touch ID](~/ios/platform/touchid.md) .
 
-
 ## <a name="right-to-left-language-support"></a>Prise en charge des langues de droite à gauche
 
 Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Notamment :
@@ -155,8 +152,6 @@ Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que j
 - La possibilité de retourner une image par programmation à l’aide de la propriété [FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection) de la classe [UIImage](xref:UIKit.UIImage) .
 
 Pour plus d’informations, consultez la documentation sur les [langues de droite à gauche prises en charge](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17) par Apple.
-
-
 
 ## <a name="additional-framework-changes"></a>Modifications supplémentaires de l’infrastructure
 
@@ -205,8 +200,6 @@ Consultez également les parties iOS de ces exemples (compléments Mac OS X vers
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
-
-
 
 ## <a name="related-links"></a>Liens associés
 

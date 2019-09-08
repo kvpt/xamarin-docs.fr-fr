@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: c631ca73d69ea630592920a32804512f89d5baaf
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0fb63c650e73bce5a08b204f942f0c19583e4899
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529072"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770689"
 ---
 # <a name="unit-testing-enterprise-apps"></a>Tests unitaires d’applications d’entreprise
 
@@ -25,17 +25,17 @@ Les tests unitaires ont l’effet le plus important sur la qualité du code lors
 > [!NOTE]
 > Les tests unitaires sont très efficaces par rapport à la régression, c’est-à-dire les fonctionnalités utilisées pour fonctionner, mais qui ont été perturbées par une mise à jour défectueuse.
 
-Les tests unitaires utilisent généralement le modèle arrange-Act-Assert:
+Les tests unitaires utilisent généralement le modèle arrange-Act-Assert :
 
 - La section *organiser* de la méthode de test unitaire initialise les objets et définit la valeur des données passées à la méthode testée.
 - La section *Act* appelle la méthode testée avec les arguments requis.
-- La section Assert vérifie que l’action de la méthode testée se comporte comme prévu.
+- La section *Assert* vérifie que l’action de la méthode testée se comporte comme prévu.
 
 Le respect de ce modèle permet de s’assurer que les tests unitaires sont lisibles et cohérents.
 
 ## <a name="dependency-injection-and-unit-testing"></a>Injection de dépendances et tests unitaires
 
-L’une des motivations pour adopter une architecture faiblement couplée est qu’elle facilite les tests unitaires. L’un des types inscrits avec Autofac est la `OrderService` classe. L’exemple de code suivant illustre une structure de cette classe:
+L’une des motivations pour adopter une architecture faiblement couplée est qu’elle facilite les tests unitaires. L’un des types inscrits avec Autofac est la `OrderService` classe. L’exemple de code suivant illustre une structure de cette classe :
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -54,7 +54,7 @@ La `OrderDetailViewModel` classe a une dépendance sur le `IOrderService` type q
 
 ![](unit-testing-images/unittesting.png "Classes qui implémentent l’interface IOrderService")
 
-**Figure 10-1:** Classes qui implémentent l’interface IOrderService
+**Figure 10-1 :** Classes qui implémentent l’interface IOrderService
 
 Cette approche permet à `OrderService` l’objet d’être passé dans `OrderDetailViewModel` la classe au moment de l’exécution, et dans l’intérêt de la testabilité, il permet à la `OrderDetailViewModel` `OrderMockService` classe d’être passée dans la classe au moment du test. Le principal avantage de cette approche est qu’elle permet l’exécution de tests unitaires sans nécessiter de ressources peu maniables, telles que des services Web ou des bases de données.
 
@@ -65,7 +65,7 @@ Les modèles de test et les modèles de vue des applications MVVM sont identique
 > [!TIP]
 > Testez une chose avec chaque test unitaire. Ne vous inquiétez pas de faire en sorte qu’un test unitaire exerce plus d’un aspect du comportement de l’unité. Cela amène à des tests difficiles à lire et à mettre à jour. Cela peut également entraîner une confusion lors de l’interprétation d’une défaillance.
 
-L’application mobile eShopOnContainers utilise [xUnit](https://xunit.github.io/) pour effectuer des tests unitaires, qui prend en charge deux types différents de tests unitaires:
+L’application mobile eShopOnContainers utilise [xUnit](https://xunit.github.io/) pour effectuer des tests unitaires, qui prend en charge deux types différents de tests unitaires :
 
 - Les faits sont des tests qui ont toujours la valeur true, qui testent les conditions d’invariant.
 - Les théories sont des tests qui ne sont vrais que pour un jeu de données particulier.
@@ -77,7 +77,7 @@ Les tests unitaires inclus avec l’application mobile eShopOnContainers sont de
 
 ### <a name="testing-asynchronous-functionality"></a>Test des fonctionnalités asynchrones
 
-Lors de l’implémentation du modèle MVVM, les modèles de vue appellent généralement des opérations sur les services, souvent de manière asynchrone. Les tests pour le code qui appelle ces opérations utilisent généralement des simulacres comme remplacements pour les services réels. L’exemple de code suivant illustre le test des fonctionnalités asynchrones en passant un service factice dans un modèle de vue:
+Lors de l’implémentation du modèle MVVM, les modèles de vue appellent généralement des opérations sur les services, souvent de manière asynchrone. Les tests pour le code qui appelle ces opérations utilisent généralement des simulacres comme remplacements pour les services réels. L’exemple de code suivant illustre le test des fonctionnalités asynchrones en passant un service factice dans un modèle de vue :
 
 ```csharp
 [Fact]  
@@ -101,7 +101,7 @@ Lorsque l' `OrderDetailViewModel` instance est créée, elle s’attend à `Orde
 
 L’implémentation `INotifyPropertyChanged` de l’interface permet aux vues de réagir aux modifications provenant des modèles de vue et des modèles. Ces modifications ne sont pas limitées aux données affichées dans les contrôles. elles sont également utilisées pour contrôler la vue, par exemple les États du modèle d’affichage qui entraînent le démarrage des animations ou la désactivation des contrôles.
 
-Les propriétés qui peuvent être mises à jour directement par le test unitaire peuvent être testées en attachant un gestionnaire `PropertyChanged` d’événements à l’événement et en vérifiant si l’événement est déclenché après la définition d’une nouvelle valeur pour la propriété. L’exemple de code suivant illustre ce type de test:
+Les propriétés qui peuvent être mises à jour directement par le test unitaire peuvent être testées en attachant un gestionnaire `PropertyChanged` d’événements à l’événement et en vérifiant si l’événement est déclenché après la définition d’une nouvelle valeur pour la propriété. L’exemple de code suivant illustre ce type de test :
 
 ```csharp
 [Fact]  
@@ -127,7 +127,7 @@ Ce test unitaire appelle la `InitializeAsync` méthode de la `OrderViewModel` cl
 
 ### <a name="testing-message-based-communication"></a>Test de la communication basée sur les messages
 
-Les modèles de vue qui [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) utilisent la classe pour communiquer entre des classes faiblement couplées peuvent être testés par unité en s’abonnant au message envoyé par le code testé, comme illustré dans l’exemple de code suivant:
+Les modèles de vue qui [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) utilisent la classe pour communiquer entre des classes faiblement couplées peuvent être testés par unité en s’abonnant au message envoyé par le code testé, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 [Fact]  
@@ -152,7 +152,7 @@ Ce test unitaire vérifie que le `CatalogViewModel` publie le `AddProduct` messa
 
 ### <a name="testing-exception-handling"></a>Test de la gestion des exceptions
 
-Il est également possible d’écrire des tests unitaires qui vérifient que des exceptions spécifiques sont levées pour des actions ou des entrées non valides, comme illustré dans l’exemple de code suivant:
+Il est également possible d’écrire des tests unitaires qui vérifient que des exceptions spécifiques sont levées pour des actions ou des entrées non valides, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 [Fact]  
@@ -175,9 +175,9 @@ Ce test unitaire lèvera une exception, car le [`ListView`](xref:Xamarin.Forms.L
 
 ### <a name="testing-validation"></a>Test de la validation
 
-Il existe deux aspects du test de l’implémentation de validation: le test de l’implémentation correcte des règles de validation et `ValidatableObject<T>` le test de l’exécution de la classe comme prévu.
+Il existe deux aspects du test de l’implémentation de validation : le test de l’implémentation correcte des règles de validation et `ValidatableObject<T>` le test de l’exécution de la classe comme prévu.
 
-La logique de validation est généralement simple à tester, car il s’agit généralement d’un processus autonome dans lequel la sortie dépend de l’entrée. Il doit y avoir des tests sur les résultats de l' `Validate` appel de la méthode sur chaque propriété qui possède au moins une règle de validation associée, comme illustré dans l’exemple de code suivant:
+La logique de validation est généralement simple à tester, car il s’agit généralement d’un processus autonome dans lequel la sortie dépend de l’entrée. Il doit y avoir des tests sur les résultats de l' `Validate` appel de la méthode sur chaque propriété qui possède au moins une règle de validation associée, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 [Fact]  
@@ -195,7 +195,7 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 
 Ce test unitaire vérifie que la validation s’effectue correctement lorsque `ValidatableObject<T>` les deux propriétés `MockViewModel` de l’instance contiennent des données.
 
-En plus de vérifier que la validation est réussie, les tests unitaires de validation doivent également vérifier `Value`les `IsValid`valeurs de `Errors` la propriété, `ValidatableObject<T>` et de chaque instance, afin de vérifier que la classe s’exécute comme prévu. L’exemple de code suivant illustre un test unitaire qui effectue ce qui suit:
+En plus de vérifier que la validation est réussie, les tests unitaires de validation doivent également vérifier `Value`les `IsValid`valeurs de `Errors` la propriété, `ValidatableObject<T>` et de chaque instance, afin de vérifier que la classe s’exécute comme prévu. L’exemple de code suivant illustre un test unitaire qui effectue ce qui suit :
 
 ```csharp
 [Fact]  
@@ -225,7 +225,6 @@ Un test unitaire prend une petite unité de l’application, généralement une 
 Le comportement d’un objet testé peut être isolé en remplaçant les objets dépendants par des objets fictifs qui simulent le comportement des objets dépendants. Cela permet l’exécution de tests unitaires sans nécessiter de ressources peu maniables, telles que des services Web ou des bases de données.
 
 Le test de modèles et de vues à partir d’applications MVVM est identique au test de toute autre classe, et les mêmes outils et techniques peuvent être utilisés.
-
 
 ## <a name="related-links"></a>Liens associés
 

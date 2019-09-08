@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/19/2016
-ms.openlocfilehash: cebacf6d845affe017e289fe4522a3b7c76d2942
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7ac96bce706d42d4334004e62762ff21231f0162
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291778"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766864"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>Contrôles de l’interface utilisateur Watchos dans Xamarin
 
@@ -39,7 +39,6 @@ Les noms de programmation de tous les contrôles ont pour préfixe (par `WKInter
 |Entrée de texte|Utilisez `PresentTextInputController` et l' `WKTextInputMode` énumération.<br />[Documentation d’entrée de texte](~/ios/watchos/user-interface/text-input.md)<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |Digital Crown|La Digital Crown peut être utilisée pour piloter un sélecteur, ou sa rotation peut être suivie dans le code.<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
 |Mouvements|Quatre types de reconnaissance de mouvement peuvent être ajoutés à une scène : TAP, balayer, Pan et LongPress.<br />[Code du catalogue](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
-
 
 ## <a name="related-links"></a>Liens associés
 

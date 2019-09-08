@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290188"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765942"
 ---
 # <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
 
@@ -173,7 +173,6 @@ Le champ `handler` conserve la référence à la méthode anonyme, et est utilis
 
 L’initialisation tardive peut être utilisée pour retarder la création d’un objet jusqu’à sa première utilisation. Cette technique est principalement utilisée pour améliorer les performances, éviter les calculs et réduire les besoins en mémoire.
 
-
 Vous pouvez utiliser l’initialisation tardive pour les objets dont la création est coûteuse dans ces deux scénarios :
 
 - L’application ne va pas utiliser l’objet.
@@ -246,8 +245,6 @@ Les opérations de longue durée doivent également prendre en charge l’annula
 
 > [!IMPORTANT]
 > La classe `CancellationTokenSource` implémente l’interface `IDisposable`, ainsi, la méthode `CancellationTokenSource.Dispose` doit être appelée une fois l’utilisation de l’instance `CancellationTokenSource` terminée.
-
-
 
 Pour plus d’informations, consultez [Présentation de la prise en charge asynchrone](~/cross-platform/platform/async.md).
 

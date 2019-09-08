@@ -7,12 +7,12 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4fae33f7de8c6022b2298c462ea510ec8ed623f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6e108852b2978903fb74686ad60cf419bbe4e3c0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657204"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772963"
 ---
 # <a name="the-translate-transform"></a>La transformation de traduction
 
@@ -136,7 +136,7 @@ Le premier exemple appelle simplement `Translate` là encore, mais avec des vale
 
 Le deuxième exemple appelle [ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix). Par conséquent, toutes les transformations revenir à leur état par défaut.
 
-Le troisième exemple enregistre l’état de la `SKCanvas` objet avec un appel à [ `Save` ](xref:SkiaSharp.SKCanvas.Save) puis restaure l’état avec un appel à [ `Restore` ](xref:SkiaSharp.SKCanvas.Restore). Il s’agit de la façon la plus polyvalente pour manipuler des transformations pour une série d’opérations de dessin. Ces `Save` fonctions `Restore` et appellent une fonction comme une pile: Vous pouvez appeler `Save` plusieurs fois, puis appeler `Restore` en séquence inverse pour revenir aux États précédents. Le `Save` méthode retourne un entier, et vous pouvez passer cet entier à [ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*) efficacement appeler `Restore` plusieurs fois. Le [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount) propriété retourne le nombre d’états actuellement enregistrés sur la pile.
+Le troisième exemple enregistre l’état de la `SKCanvas` objet avec un appel à [ `Save` ](xref:SkiaSharp.SKCanvas.Save) puis restaure l’état avec un appel à [ `Restore` ](xref:SkiaSharp.SKCanvas.Restore). Il s’agit de la façon la plus polyvalente pour manipuler des transformations pour une série d’opérations de dessin. Ces `Save` fonctions `Restore` et appellent une fonction comme une pile : Vous pouvez appeler `Save` plusieurs fois, puis appeler `Restore` en séquence inverse pour revenir aux États précédents. Le `Save` méthode retourne un entier, et vous pouvez passer cet entier à [ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*) efficacement appeler `Restore` plusieurs fois. Le [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount) propriété retourne le nombre d’états actuellement enregistrés sur la pile.
 
 Vous pouvez également utiliser le [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore) classe permettant de restaurer l’état de la zone de dessin. Le constructeur de cette classe est destiné à être appelée un `using` instruction ; la zone de dessin état est restauré automatiquement à la fin de la `using` bloc. 
 
@@ -302,7 +302,6 @@ Le `PaintSurface` appels du gestionnaire le `Translate` méthode à deux reprise
 [![](translate-images/hendecagramanimation-small.png "Capture d’écran triple de la page de l’Animation Hendecagram")](translate-images/hendecagramanimation-large.png#lightbox "Triple capture d’écran de la page de l’Animation Hendecagram")
 
 Notez que l’étoile conserve l’orientation même comme il tourne autour du centre de la page. Il ne pivote pas du tout. Est un outil idéal pour une transformation de rotation.
-
 
 ## <a name="related-links"></a>Liens associés
 

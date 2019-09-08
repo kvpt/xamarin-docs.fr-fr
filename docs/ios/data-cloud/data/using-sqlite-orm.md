@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6711a16ba0035190d10687ef821831559c07b797
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289836"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763142"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Utilisation de SQLite.NET avec Xamarin. iOS
 
@@ -136,7 +136,6 @@ Les attributs courants que vous pouvez appliquer à vos classes pour contrôler 
 - **[Ignore]** : force sqlite.net à ignorer cette propriété. Cela s’avère particulièrement utile pour les propriétés qui ont un type qui ne peut pas être stocké dans la base de données, ou les propriétés qui modélisent des collections qui ne peuvent pas être résolues automatiquement, SQLite.
 - **[Unique]** : garantit que les valeurs de la colonne de base de données sous-jacente sont uniques.
 
-
 La plupart de ces attributs sont facultatifs, SQLite utilise les valeurs par défaut pour les noms de table et de colonne. Vous devez toujours spécifier une clé primaire entière pour que les requêtes de sélection et de suppression puissent être effectuées efficacement sur vos données.
 
 ## <a name="more-complex-queries"></a>Requêtes plus complexes
@@ -149,7 +148,6 @@ Les méthodes suivantes sur `SQLiteConnection` peuvent être utilisées pour eff
 - **Delete** : supprime un objet à l’aide de sa clé primaire.
 - **Query\<T >** -exécute une requête SQL qui retourne un nombre de lignes (sous la forme d’objets).
 - **Execute** : utilisez cette méthode (et `Query` non pas) lorsque vous ne vous attendez pas à revenir sur les lignes de SQL (comme les instructions INSERT, Update et Delete).
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>Obtention d’un objet à l’aide de la clé primaire
 

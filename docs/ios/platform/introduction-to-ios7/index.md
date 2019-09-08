@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69f43df64ccf7de75b00e1a0b3f6e2ececc5bbb3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292014"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752058"
 ---
 # <a name="introduction-to-ios-7"></a>Introduction à iOS 7
 
@@ -30,7 +30,6 @@ iOS 7 augmente la prise en charge de l’animation dans UIKit, ce qui permet aux
 
 - `springWithDampingRatio`: Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
 - `initialSpringVelocity`: Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
-
 
 Le code suivant produit un effet de ressort lorsque le centre de la vue d’image change :
 
@@ -104,13 +103,11 @@ Plusieurs comportements primitifs différents sont disponibles pour déclencher 
 - `UIPushBehavior`: Applique la force à un élément dynamique.
 - `UISnapBehavior`: Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
 
-
 Bien qu’il existe de nombreuses primitives, le processus général d’ajout d’interactions physiques à une vue à l’aide de UIKit Dynamics est cohérent entre les comportements :
 
 1. Créer un animateur dynamique.
 1. Créer un ou plusieurs comportements.
 1. Ajoutez des comportements à l’animateur dynamique.
-
 
 ### <a name="dynamics-example"></a>Exemple Dynamics
 
@@ -233,7 +230,6 @@ iOS 7 change quand et comment le travail en arrière-plan est effectué. L’ach
 - Récupération en arrière-plan : permet aux applications de mettre à jour le contenu en arrière-plan à intervalles réguliers.
 - Notifications distantes : permet aux applications de mettre à jour le contenu lors de la réception d’une notification push. Les notifications peuvent être en mode silencieux ou afficher une bannière sur l’écran de verrouillage.
 - Service de transfert en arrière-plan : permet le chargement et le téléchargement de données, telles que des fichiers volumineux, sans limite de temps fixe.
-
 
 Pour plus d’informations sur les nouvelles fonctionnalités multitâches, consultez les sections iOS du [Guide d’arrière-plan](~/ios/app-fundamentals/backgrounding/index.md)Xamarin.
 

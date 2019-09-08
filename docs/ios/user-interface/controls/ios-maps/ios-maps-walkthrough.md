@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2091e710352b25167b740e409955787ffec99e1c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286284"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768962"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Annotations et superpositions dans Xamarin. iOS
 
@@ -25,7 +25,6 @@ Vous trouverez le code complet dans l' [exemple de procédure pas à pas Maps](h
 Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertinent. Nous allons commencer par ajouter du code à notre contrôleur d’affichage pour afficher MapView, puis créer des classes pour notre MapDelegate et les annotations personnalisées. Suivez les étapes ci-dessous pour y parvenir :
 
 ## <a name="viewcontroller"></a>ViewController
-
 
 1. Ajoutez les espaces de noms suivants au `ViewController`:
 
@@ -110,9 +109,7 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
 
     `Maps Walkthrough Docs Sample`.
 
-
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs : classe pour les annotations personnalisées
-
 
 1. Nous allons utiliser une classe personnalisée pour l’annotation appelée `ConferenceAnnotation`. Ajoutez la classe suivante au projet :
 
@@ -180,7 +177,6 @@ Commençons par créer un nouveau **projet iOS vide**et lui donner un nom pertin
     ```
 
 Cela termine le code dans `ViewDidLoad`. Nous devons à présent implémenter `MapDelegate` notre classe pour gérer la création des vues d’annotation et de superposition, respectivement.
-
 
 ## <a name="mapdelegate"></a>MapDelegate
 
@@ -287,7 +283,6 @@ Exécutez l'application. Nous disposons maintenant d’une carte interactive ave
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons vu comment ajouter une annotation à une carte et comment ajouter une superposition pour un polygone spécifié. Nous avons également démontré comment ajouter une prise en charge tactile à l’annotation pour animer une image sur une carte.
-
 
 ## <a name="related-links"></a>Liens associés
 

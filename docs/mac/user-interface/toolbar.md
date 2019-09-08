@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: de0db40fb678bf88a18c6be42d89644d41583b99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280103"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772720"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Barres d’outils dans Xamarin. Mac
 
@@ -357,7 +357,6 @@ Exécutez l’application et notez que l’élément **Corbeille** est maintenan
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des barres d’outils et des éléments de barre d’outils dans une application Xamarin. Mac. Il a décrit comment créer et gérer des barres d’outils dans les Interface Builder de Xcode, comment certains contrôles d’interface utilisateur fonctionnent automatiquement avec des éléments de barre d' C# outils, comment utiliser des barres d’outils dans le code et comment activer et désactiver des éléments de barre d’outils.
-
 
 ## <a name="related-links"></a>Liens associés
 

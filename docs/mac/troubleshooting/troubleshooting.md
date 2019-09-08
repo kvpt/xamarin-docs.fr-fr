@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6bc2990ef82e1bccd4f9e530eb67265eeae528a9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6fd6484e547f22f1dc7f27578834b5292d6d2d2a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292154"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770006"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Conseils de dépannage de Xamarin. Mac
 
@@ -32,7 +32,6 @@ Avec l’une de ces ressources, vous pouvez suivre certaines étapes de prépara
 - Si possible, fournissez un petit exemple de programme qui illustre le problème. L’examen des pages du code source à la recherche du problème prend plus de temps et de travail.
 
 - Le fait de connaître les modifications que vous avez apportées à votre application pour faire apparaître un problème peut rapidement limiter la source du problème. Notez si vous avez récemment mis à niveau des versions de Xamarin. Mac, si vous avez tronqué les sections de votre application pour trouver la partie à l’origine du problème, ou si vous testez les builds précédentes pour trouver la modification introduite par le problème, il peut être très utile.
-
 
 ### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>Que faire lorsque votre application se bloque sans sortie
 

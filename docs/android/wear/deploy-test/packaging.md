@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 4301022ae665498eaf90ca1e1786afbd6d19094a
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198396"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763967"
 ---
 # <a name="packaging-wear-apps"></a>Empaqueter des applications d’usure
 
@@ -19,7 +19,7 @@ Les applications d’usure Android sont empaquetées avec une application Androi
 
 ## <a name="automatic-packaging"></a>Empaquetage automatique
 
-À compter de Xamarin Android 5,0, votre application d’usure est automatiquement empaquetée en tant que ressource dans votre application de poche lorsque vous créez une référence de projet à partir du projet de poche vers le projet d’usure. Pour créer cette association, vous pouvez utiliser les étapes suivantes: 
+À compter de Xamarin Android 5,0, votre application d’usure est automatiquement empaquetée en tant que ressource dans votre application de poche lorsque vous créez une référence de projet à partir du projet de poche vers le projet d’usure. Pour créer cette association, vous pouvez utiliser les étapes suivantes : 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -47,7 +47,6 @@ Les applications d’usure Android sont empaquetées avec une application Androi
 
 -----
 
-
 Notez que vous obtiendrez une erreur **XA5211** si le nom du package de l’application d’usure ne correspond pas au nom du package de l’application de poche. Par exemple :
 
 ```shell
@@ -59,7 +58,7 @@ Pour corriger cette erreur, modifiez le nom du package de l’application usure 
 
 Lorsque vous cliquez sur **générer > générer tout**, cette association déclenche l’empaquetage automatique du projet d’usure dans le projet de poche (téléphone) principal. L’application d’usure est automatiquement créée et incluse en tant que ressource dans l’application de poche.
 
-L’assembly généré par le projet d’application d’usure n’est pas utilisé comme référence d’assembly dans le projet de poche (téléphone). Au lieu de cela, le processus de génération effectue les opérations suivantes:
+L’assembly généré par le projet d’application d’usure n’est pas utilisé comme référence d’assembly dans le projet de poche (téléphone). Au lieu de cela, le processus de génération effectue les opérations suivantes :
 
 - Vérifie que les noms de packages correspondent. 
 
@@ -76,18 +75,17 @@ L’assembly généré par le projet d’application d’usure n’est pas utili
 
 - Ajoute l’application usure en tant que ressource **brute** au projet de poche. 
 
-
 ## <a name="manual-packaging"></a>Empaquetage manuel
 
-Vous pouvez écrire des applications d’usure Android dans Xamarin. Android avant la version 5,0, mais vous devez suivre ces instructions de Packaging manuel pour distribuer l’application: 
+Vous pouvez écrire des applications d’usure Android dans Xamarin. Android avant la version 5,0, mais vous devez suivre ces instructions de Packaging manuel pour distribuer l’application : 
 
 1. Assurez-vous que votre projet portable et les projets de poche (téléphone) ont le même numéro de version et le même nom de package.
 
 2. Générez manuellement le projet portable comme une **version Release** .
 
-3. Ajoutez manuellement la version **. APK** de l’étape (2) dans le répertoire Resources **/RAW** du projet de portable (téléphone).
+3. Ajoutez manuellement la version **. APK** de l’étape (2) dans le répertoire **Resources/RAW** du projet de portable (téléphone).
 
-4. Ajoutez manuellement une nouvelle ressource de ressources XML **/XML/wearable_app_desc. xml** dans le projet de poche, qui fait référence à un **apk** portable de l’étape (3):
+4. Ajoutez manuellement une nouvelle ressource de ressources XML **/XML/wearable_app_desc. xml** dans le projet de poche, qui fait référence à un **apk** portable de l’étape (3) :
 
     ```xml
     <wearableApp package="wearable.app.package.name">
@@ -97,7 +95,7 @@ Vous pouvez écrire des applications d’usure Android dans Xamarin. Android ava
     </wearableApp>
     ```
 
-5. Ajoutez manuellement un `<meta-data />` élément à l’élément **fichier AndroidManifest. xml** `<application>` du projet mobile qui fait référence à la nouvelle ressource XML:
+5. Ajoutez manuellement un `<meta-data />` élément à l’élément **fichier AndroidManifest. xml** `<application>` du projet mobile qui fait référence à la nouvelle ressource XML :
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"
@@ -105,4 +103,3 @@ Vous pouvez écrire des applications d’usure Android dans Xamarin. Android ava
     ```
 
 Consultez également les [instructions packging manuelles](https://developer.android.com/training/wearables/apps/packaging.html#PackageManually)du site du développeur Android.
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: aa99d50295e214b7926d0655ea434c851b3ba099
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bd3adf5d01be0cdb709c752e1ace131b8b3e8d83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286322"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752255"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>Mises à jour de la conception visuelle dans iOS 11
 
@@ -113,11 +113,9 @@ iOS 11 a étendu les fonctionnalités des actions de ligne. `UISwipeActionsConfi
 
 Les vues de table prennent en charge le glisser-déplacer dans iOS 11. Pour plus d’informations, consultez le Guide de [glisser-déplacer](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview) .
 
-
 ## <a name="related-links"></a>Liens associés
 
 - [Nouveautés d’iOS 11 (Apple)](https://developer.apple.com/ios/)
 - [Page produit App Store mise à jour (Apple)](https://developer.apple.com/app-store/product-page/)
 - [Conception pour iPhone X (Apple) (vidéo)](https://developer.apple.com/videos/play/fall2017/801/)
 - [Mise à jour de votre application pour iOS 11 (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/204/)
-

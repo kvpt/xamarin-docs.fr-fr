@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1daf4822dd7debe98aabd58d42cb6ed29f95b90d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228258"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759357"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Détourage avec tracés et régions
 
@@ -24,7 +24,7 @@ Il est parfois nécessaire de limiter le rendu des graphiques pour une zone part
 
 ![Singe à travers un Keyhole](clipping-images/clippingsample.png)
 
-Le *zone de découpage* correspond à la zone de l’écran dans lequel les graphiques sont rendus. Tout ce qui s’affiche en dehors de la zone de découpage n’est pas rendu. La zone de découpage est généralement définie par un rectangle ou un [ `SKPath` ](xref:SkiaSharp.SKPath) objet, mais vous pouvez également définir une zone de découpage à l’aide un [ `SKRegion` ](xref:SkiaSharp.SKRegion) objet. Ces deux types d’objets à paraître connexes, car vous pouvez créer une zone à partir d’un chemin d’accès. Toutefois, vous ne pouvez pas créer un chemin d’accès à partir d’une région et ils sont très différents en interne: Un chemin d’accès comprend une série de lignes et de courbes, tandis qu’une région est définie par une série de lignes de balayage horizontales.
+Le *zone de découpage* correspond à la zone de l’écran dans lequel les graphiques sont rendus. Tout ce qui s’affiche en dehors de la zone de découpage n’est pas rendu. La zone de découpage est généralement définie par un rectangle ou un [ `SKPath` ](xref:SkiaSharp.SKPath) objet, mais vous pouvez également définir une zone de découpage à l’aide un [ `SKRegion` ](xref:SkiaSharp.SKRegion) objet. Ces deux types d’objets à paraître connexes, car vous pouvez créer une zone à partir d’un chemin d’accès. Toutefois, vous ne pouvez pas créer un chemin d’accès à partir d’une région et ils sont très différents en interne : Un chemin d’accès comprend une série de lignes et de courbes, tandis qu’une région est définie par une série de lignes de balayage horizontales.
 
 L’image ci-dessus a été créé par le **Monkey via masque** page. Le [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) classe définit un chemin d’accès à l’aide des données SVG et utilise le constructeur pour charger une bitmap à partir des ressources du programme :
 
@@ -56,7 +56,6 @@ public class MonkeyThroughKeyholePage : ContentPage
 ```
 
 Bien que le `keyholePath` objet décrit le contour d’un masque, les coordonnées sont totalement aléatoires et reflètent ce qui s’avère pratique lorsque les données de chemin d’accès a été conçues. Pour cette raison, le `PaintSurface` gestionnaire obtient les limites de ce chemin d’accès et d’appels `Translate` et `Scale` pour déplacer le chemin d’accès au centre de l’écran et s’il presque toute la hauteur de l’écran :
-
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -366,7 +365,7 @@ Pour comprendre les fondements de cette différence, il est utile de comprendre 
 
 Ce travail est considérablement simplifié si chaque chemin d’accès est réduite à une série de lignes de balayage horizontales, telles que celles de l’ancienne tube à vide téléviseurs. Chaque ligne de numérisation est simplement une ligne horizontale avec un point de départ et un point de terminaison. Par exemple, un cercle avec un rayon de 10 pixels peut être décomposé en 20 lignes de balayage horizontal, chacun d’eux commence à la partie gauche du cercle et se termine à la partie droite. Combinaison de deux cercles à toute opération de région devient très simple car il s’agit simplement d’examiner les coordonnées de début et de fin de chaque paire correspondante de lignes de numérisation.
 
-Voici ce qu’est une région: Série de lignes de balayage horizontal qui définissent une zone.
+Voici ce qu’est une région : Série de lignes de balayage horizontal qui définissent une zone.
 
 Toutefois, quand une zone est réduite à une série d’analyse les lignes, ces lignes sont basées sur une dimension de pixel particulier d’analyse. À proprement parler, la région n’est pas un objet de graphique vectoriel. Il est plus en détail dans la nature d’une bitmap monochrome compressée à un chemin d’accès. Par conséquent, les régions ne peut pas être mis à l’échelle ou pivotées sans perdre la fidélité et c’est pourquoi qu'ils ne sont pas transformés lorsqu’il est utilisé pour les zones de découpage.
 
@@ -510,7 +509,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 Il ne ressemble pas vraiment à un sommes très heureux quatre –, mais il est une image qui seraient sinon difficile à effectuer le rendu sans découpage :
 
 [![Capture d’écran triple de la page de trèfle à quatre feuilles](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 14. Disposition absolue
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 14. Disposition absolue'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 14. Disposition absolue'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 7371f134944d7492e51aa2d02247c0ab48345a47
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c489bf244396cf180ed8e1272308048a14b67300
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334416"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771129"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Résumé du chapitre 14. Disposition absolue
 
@@ -98,8 +98,6 @@ Le [ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/
 [![Capture d’écran triple d’horloge de la matrice de points](images/ch14fg08-small.png "matricielle horloge")](images/ch14fg08-large.png#lightbox "matricielle horloge")
 
 Le [ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) programme anime deux `Label` objets à rebondit horizontalement et verticalement sur l’écran.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

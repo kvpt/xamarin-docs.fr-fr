@@ -8,23 +8,22 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: 36069bc20a5341b87d55b60f83466e89f263b2ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646127"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771558"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexation d’applications et liens ciblés
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _L’indexation d’applications permet aux applications, qui sinon auraient été oubliées après quelques utilisations, de rester pertinentes en apparaissant dans les résultats de recherche. Les liens ciblés permettent aux applications de répondre à un résultat de recherche qui contient des données d’application, généralement en parcourant une page référencée à partir d’un lien ciblé. Cet article explique comment utiliser l’indexation d’applications et les liens ciblés pour qu’il soit possible de rechercher du contenu d’application Xamarin.Forms sur les appareils iOS et Android._
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
 **Vidéo sur la création de liens ciblés avec Xamarin.Forms et Azure**
-
 
 L’indexation d’applications et les liens ciblés Xamarin.Forms fournissent une API servant à publier des métadonnées pour l’indexation d’applications quand les utilisateurs parcourent les applications. Le contenu indexé peut alors être recherché dans Spotlight Search, dans Google Search ou dans une recherche web. Le fait d’appuyer sur un résultat de recherche qui contient un lien ciblé déclenche un événement qui peut être géré par une application et qui est généralement utilisé pour accéder à la page référencée à partir du lien ciblé.
 

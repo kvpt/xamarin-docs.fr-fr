@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 35de496d0684473fe3f6bc4ebadddc471b6b0cfe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ac50c665955f9bf234c46b3d4082fb628b61a33d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292890"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770024"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Messages d’erreur Xamarin. Mac (MMP)
 
@@ -616,7 +616,7 @@ Une solution de contournement possible consiste à désactiver `register-protoco
 <a name="MM8026" />
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>MM8026 : * n’est pas pris en charge lorsque le Bureau d’enregistrement dynamique a été lié.
- 
+
 Cela indique généralement un bogue dans Xamarin. Mac, car le Bureau d’enregistrement dynamique ne doit pas être lié s’il est nécessaire. Veuillez signaler un bogue [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)dans.
- 
+
 Il est possible de forcer l’éditeur de liens à conserver le Bureau d’enregistrement `--optimize=-remove-dynamic-registrar` dynamique en ajoutant aux arguments MMP supplémentaires dans les options de build Mac du projet.

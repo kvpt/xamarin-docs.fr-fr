@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: dcee5c6d5324be11f424739a20ba673817553e36
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: da877cc10829c4067596263b2a3676413103282d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287380"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765423"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrer une liaison vers l’API unifiée
 
@@ -134,7 +134,6 @@ Avec toutes les modifications de code actuellement en place, nous devons modifie
 
 Comme dernière étape de la mise à jour de notre projet de liaison pour utiliser les API unifiées, nous devons `MakeFile` soit modifier le que nous utilisons pour générer le projet, soit le type de projet Xamarin (si nous créons une liaison à partir de Visual Studio pour Mac) et ordonner à _btouch_ de se lier contre les API unifiées au lieu des API classiques.
 
-
 ### <a name="updating-a-makefile"></a>Mise à jour d’un MakeFile
 
 Si nous utilisons un makefile pour générer notre projet de liaison dans un Xamarin. DLL, vous devez inclure l' `--new-style` option de ligne de commande et appeler `btouch-native` au lieu de. `btouch`
@@ -149,7 +148,6 @@ PROJECT_ROOT=XMBindingLibrarySample
 PROJECT=$(PROJECT_ROOT)/XMBindingLibrarySample.xcodeproj
 TARGET=XMBindingLibrarySample
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch
-
 
 all: XMBindingLibrary.dll
 
@@ -214,8 +212,6 @@ Une fois toutes ces modifications en place, vous pouvez créer la nouvelle versi
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons présenté les modifications qui doivent être apportées à un projet de liaison Xamarin existant pour prendre en charge les nouvelles API unifiées et les périphériques 64 bits, ainsi que les étapes requises pour créer la nouvelle version compatible 64 bits d’une API.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

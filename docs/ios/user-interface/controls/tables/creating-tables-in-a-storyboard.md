@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 58e57f9406642a3bb0ff108bffa89d77c3f2cebb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a4d6144ad48b9e2f263137fb2474bc9eb278d93f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291375"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768975"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Utilisation des tableaux dans le concepteur iOS
 
@@ -28,13 +28,11 @@ Une `UITableView` avec un contenu de prototype est généralement destiné à af
 
  <a name="Static_Content" />
 
-
 ## <a name="static-content"></a>Contenu statique
 
 `UITableView`les s avec du contenu statique permettent de concevoir des tables directement sur l’aire de conception. Vous pouvez faire glisser des cellules dans la table et les personnaliser en modifiant les propriétés et en ajoutant des contrôles.
 
  <a name="Creating_a_Storyboard-driven_app" />
-
 
 ## <a name="creating-a-storyboard-driven-app"></a>Création d’une application pilotée par Storyboard
 
@@ -62,7 +60,6 @@ Le Storyboard sera modifié en trois étapes :
 - Ensuite, créez votre interface utilisateur en faisant glisser et en déposant des objets sur votre affichage
 - Enfin, ajoutez la classe UIKit requise à chaque vue et donnez un nom à différents contrôles afin qu’ils puissent être référencés dans le code.
 
-
 Une fois la table de montage séquentiel terminée, du code peut être ajouté pour faire tout le travail.
 
 <a name="Layout_The_View_Controllers" />
@@ -85,7 +82,6 @@ La première modification apportée à la table de montage séquentiel consiste 
 
 7. Remplacez le nouveau **UITableViewController** par **content : Cellules**statiques. 
 
-
 8. Le nom de classe et l’identificateur de la nouvelle UITableViewController doivent être définis. Sélectionnez le contrôleur d’affichage et tapez _TaskDetailViewController_ pour la **classe** dans le **panneau Propriétés** – cela créera un `TaskDetailViewController.cs` nouveau fichier dans le panneau solutions. Entrez le **StoryboardID** en tant que _détail_, comme illustré dans l’exemple ci-dessous. Ce sera utilisé ultérieurement pour charger cette vue dans C# le code :  
 
     [![Définition de l’ID de Storyboard](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
@@ -93,8 +89,6 @@ La première modification apportée à la table de montage séquentiel consiste 
 9. L’aire de conception de la table de montage séquentiel doit maintenant ressembler à ceci (le titre de l’élément de navigation du contrôleur d’affichage racine a été remplacé par « damier ») :
 
     [![Aire de conception](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
-
-
 
 <a name="Create_the_UI" />
 
@@ -118,7 +112,6 @@ Effectuez ce qui suit :
 - Dans le **panneau Propriétés**, sous l' **élément bouton** de **la barre, sélectionnez Identificateur : Ajoutez** (pour en faire un *+* bouton plus). 
 - Donnez-lui un nom afin qu’il puisse être identifié dans le code à un moment ultérieur. Notez que vous devrez donner au contrôleur d’affichage racine un nom de classe (par exemple, **ItemViewController**) pour vous permettre de définir le nom de l’élément de bouton de barre.
 
-
 #### <a name="taskdetail-view-controller"></a>Contrôleur d’affichage TaskDetail
 
 La vue détaillée nécessite beaucoup plus de travail. Les cellules de l’affichage de tableau doivent être déplacées sur la vue, puis remplies avec des étiquettes, des affichages de texte et des boutons. La capture d’écran ci-dessous montre l’interface utilisateur finie avec deux sections. Une section comporte trois cellules, trois étiquettes, deux champs de texte et un commutateur, tandis que la deuxième section contient une cellule avec deux boutons :
@@ -136,7 +129,6 @@ Sélectionnez la vue de table et ouvrez le panneau des **Propriétés**. Mettez 
 
 Sélectionnez la section supérieure, puis sous **propriétés > section vue** de la table, modifiez les **lignes** en _3_, comme illustré ci-dessous :
 
-
  [![définition de la section supérieure sur trois lignes](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Pour chaque cellule, ouvrez le **panneau Propriétés** et définissez :
@@ -144,7 +136,6 @@ Pour chaque cellule, ouvrez le **panneau Propriétés** et définissez :
 - **Style**:  _Personnalisée_
 - **Identificateur** : Choisissez un identificateur unique pour chaque cellule (par exemple, «_title_», «_Notes_», «_done_»).
 - Faites glisser les contrôles requis pour produire la disposition indiquée dans la capture d’écran (placez **UILabel**, **champ UITextField** et **UISwitch** sur les cellules appropriées, puis définissez les étiquettes de manière appropriée, IE. Titre, remarques et terminées).
-
 
 Dans la deuxième section, définissez **lignes** sur _1_ et saisissez la poignée de redimensionnement inférieure de la cellule pour la rendre plus grande.
 
@@ -165,7 +156,6 @@ Il existe quelques étapes finales pour créer notre Storyboard. Tout d’abord,
 - **UISwitch** : _DoneSwitch_
 - **Supprimer UIButton** : _DeleteButton_
 - **Enregistrer UIButton** : _SaveButton_
-
 
 <a name="Adding_Code" />
 
@@ -350,8 +340,6 @@ L’exemple montre :
 - Création d’une table avec un contenu statique pour créer un formulaire d’entrée. Cela inclut la modification du style de tableau et l’ajout de sections, de cellules et de contrôles d’interface utilisateur. 
 - Comment créer un segue et substituer la `PrepareForSegue` méthode pour notifier la vue cible des paramètres dont elle a besoin. 
 - Chargement direct des affichages de `Storyboard.InstantiateViewController` plan conceptuel avec la méthode.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: bcb719451529cd5a9ca829b8693c425d752cc93b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 743e6550f75ff8319ba1c880da7ef43408f0d318
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283220"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768715"
 ---
 # <a name="working-with-watchos-settings-in-xamarin"></a>Utilisation des paramètres Watchos dans Xamarin
 
@@ -43,7 +43,6 @@ Dans l' **application iPhone** de votre solution (*pas* l’application ou l’e
 
   [![](settings-images/rootplist-sml.png "Modifier Settings-Watch. Bundle/root. plist")](settings-images/rootplist.png#lightbox)
 
-
 ## <a name="use-settings-in-the-watch-app"></a>Utiliser les paramètres de l’application Watch
 
 Pour accéder aux valeurs sélectionnées par l’utilisateur, créez une `NSUserDefaults` instance à l’aide du groupe d' `NSUserDefaultsType.SuiteName`applications et spécifiez :
@@ -64,8 +63,6 @@ var userName = shared.StringForKey ("name_preference");
 Les utilisateurs interagissent avec les paramètres via la nouvelle application **Apple Watch** sur leur iPhone. Cette application permet à l’utilisateur d’afficher ou de masquer des applications sur la montre, ainsi que de modifier les paramètres exposés à l’aide du **paramètre-Watch. Bundle**.
 
 ![](settings-images/applewatch-1.png "Exemple de paramètres d’application") ![](settings-images/applewatch-2.png "exemple de paramètres d’application")
-
-
 
 ## <a name="related-links"></a>Liens associés
 

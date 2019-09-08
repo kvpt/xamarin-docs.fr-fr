@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: edc5ec51499116fc2fabeb03327b32a689dc0c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279326"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768352"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Parties et fonctionnalités de table dans Xamarin. iOS
 
@@ -67,7 +67,6 @@ Deux fonctions d’édition différentes sont disponibles :
 - Insertion de nouvelles cellules (avec animation).
 
 Le reste de ce document montre comment implémenter toutes ces fonctionnalités UITableView avec Xamarin. iOS.
-
 
 ## <a name="classes-overview"></a>Vue d’ensemble des classes
 

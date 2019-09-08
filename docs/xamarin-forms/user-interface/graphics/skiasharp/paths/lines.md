@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: ed423a19eabd9c7f1d91457cc1834f28d62b2121
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cc62ca4656a845a261c56424aa1ea1331c994994
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647301"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759216"
 ---
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
@@ -30,7 +30,7 @@ Pour dessiner des lignes uniques, `SKCanvas` définit une simple [ `DrawLine` ](
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-Par défaut, le [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) propriété de nouvellement instancié `SKPaint` objet est 0, ce qui a le même effet en tant que valeur de 1 lors du rendu d’une ligne d’un pixel d’épaisseur. Cela semble très léger sur les appareils haute résolution tels que les téléphones, vous devez donc probablement définir le `StrokeWidth` d’une valeur supérieure. Toutefois, une fois que vous avez commencé à dessiner des lignes d’épaisseur dimensionnable, cela soulève un autre problème: Comment les début et fin de ces lignes épaisses doivent-ils être rendus?
+Par défaut, le [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) propriété de nouvellement instancié `SKPaint` objet est 0, ce qui a le même effet en tant que valeur de 1 lors du rendu d’une ligne d’un pixel d’épaisseur. Cela semble très léger sur les appareils haute résolution tels que les téléphones, vous devez donc probablement définir le `StrokeWidth` d’une valeur supérieure. Toutefois, une fois que vous avez commencé à dessiner des lignes d’épaisseur dimensionnable, cela soulève un autre problème : Comment les début et fin de ces lignes épaisses doivent-ils être rendus ?
 
 L’apparence du démarre et la fin des lignes est appelé un *embout de ligne* ou Skia, un *extrémité de trait*. Le mot « limite » dans ce contexte fait référence à un type de hat &mdash; quelque chose qui se trouve sur la fin de la ligne. Vous définissez le [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) propriété de la `SKPaint` objet à un des membres suivants de la [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) énumération :
 
@@ -237,7 +237,6 @@ Lorsque vous utilisez à la place `SKPointMode.Lines`, comme indiqué dans l’�
 La capture d’écran UWP montre le résultat de la `SKPointMode.Polygon` valeur. Une ligne est dessinée entre les points consécutifs dans le tableau, mais si vous examinez très attentivement, vous verrez que ces lignes ne sont pas connectés. Chacune de ces lignes distinctes démarre et se termine par l’embout de ligne spécifié. Si vous sélectionnez le `Round` Cap, les lignes peuvent sembler être connecté, mais elles sont vraiment pas connectées.
 
 Si les lignes sont connectés ou non connectés est un aspect essentiel de l’utilisation de chemins d’accès de graphiques.
-
 
 ## <a name="related-links"></a>Liens associés
 

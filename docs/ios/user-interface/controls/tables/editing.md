@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90ef335bd3683028d5f9951cdf2ca341158209b9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9960167e2f71531e5ffeaecac94aede5d5ea3340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284214"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768890"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Modification des tables avec Xamarin. iOS
 
@@ -30,7 +30,6 @@ Il existe trois remplacements de méthode qui affectent le mouvement de balayage
 - **CommitEditingStyle** : la source de la table détecte si cette méthode est substituée et active automatiquement le mouvement de balayage à supprimer. L’implémentation de la méthode doit `DeleteRows` appeler sur `UITableView` le pour provoquer la disparition des cellules et supprimer les données sous-jacentes de votre modèle (par exemple, un tableau, un dictionnaire ou une base de données). 
 - **CanEditRow** : si CommitEditingStyle est substitué, toutes les lignes sont supposées être modifiables. Si cette méthode est implémentée et retourne false (pour certaines lignes spécifiques ou pour toutes les lignes), le mouvement de balayage à supprimer n’est pas disponible dans cette cellule. 
 - **TitleForDeleteConfirmation** : spécifie éventuellement le texte du bouton **supprimer** . Si cette méthode n’est pas implémentée, le texte du bouton sera « Delete ». 
-
 
 Ces méthodes sont implémentées dans `TableSource` la classe suivante :
 
@@ -61,7 +60,6 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 Pour cet exemple, `UITableViewSource` le a été mis à jour `List<TableItem>` pour utiliser un (au lieu d’un tableau de chaînes) comme source de données, car il prend en charge l’ajout et la suppression d’éléments de la collection.
 
-
 ## <a name="edit-mode"></a>Mode édition
 
 Quand une table est en mode édition, l’utilisateur voit un widget rouge « Stop » sur chaque ligne, ce qui affiche un bouton supprimer lorsqu’il est touché. Le tableau affiche également une icône « handle » pour indiquer que la ligne peut être glissée pour modifier l’ordre.
@@ -75,7 +73,6 @@ Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportem
 - **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. 
 - **EditingStyleForRow** : lorsque la table est en mode édition, la valeur de retour de cette méthode détermine si la cellule affiche l’icône de suppression rouge ou l’icône d’ajout verte. Retourne `UITableViewCellEditingStyle.None` si la ligne ne doit pas être modifiable. 
 - **MoveRow** : appelée lorsqu’une ligne est déplacée afin que la structure de données sous-jacente puisse être modifiée pour correspondre aux données telles qu’elles sont affichées dans la table. 
-
 
 L’implémentation pour les trois premières méthodes est relativement simple, à moins que vous souhaitiez utiliser `indexPath` pour modifier le comportement de lignes spécifiques, il suffit de coder en dur les valeurs de retour pour la table entière.
 
@@ -128,7 +125,6 @@ et lorsque l’utilisateur a terminé la modification, le bouton **terminé** do
 table.SetEditing (false, true);
 ```
 
-
 ## <a name="row-insertion-editing-style"></a>Style d’édition d’insertion de ligne
 
 L’insertion de lignes à partir de la table est une interface utilisateur rare : l’exemple principal dans les applications iOS standard est l’écran **modifier le contact** . Cette capture d’écran montre le fonctionnement de la fonctionnalité d’insertion de lignes. en mode édition, une ligne supplémentaire est insérée (lorsque l’utilisateur clique dessus) insère des lignes supplémentaires dans les données. Lorsque la modification est terminée, la ligne temporaire **(Ajouter nouveau)** est supprimée.
@@ -141,12 +137,10 @@ Il existe plusieurs méthodes sur `UITableViewSource` qui affectent le comportem
 - **CustomizeMoveTarget** – pendant que l’utilisateur déplace une cellule, la valeur de retour de cette méthode facultative peut remplacer son choix d’emplacement. Cela signifie que vous pouvez les empêcher de « déposer » la cellule dans certaines positions, comme dans cet exemple, afin d’éviter qu’une ligne soit déplacée après la ligne **(Ajouter nouveau)** . 
 - **CanMoveRow** : retourne la valeur true pour activer le déplacement’handle’ou false pour empêcher le déplacement. Dans l’exemple, la dernière ligne a le déplacement « handle » masqué, car il est destiné au serveur en tant que bouton d’insertion uniquement. 
 
-
 Nous allons également ajouter deux méthodes personnalisées pour ajouter la ligne « Insert », puis la supprimer quand elle n’est plus nécessaire. Elles sont appelées à partir des boutons **modifier** et **Terminer** :
 
 - **WillBeginTableEditing** : lorsque le bouton **modifier** est touché, il `SetEditing` appelle pour mettre la table en mode édition. Cela déclenche la méthode WillBeginTableEditing où nous affichons la ligne **(Ajouter nouveau)** à la fin de la table pour agir en tant que « bouton d’insertion ». 
 - **DidFinishTableEditing** : lorsque le bouton terminé est touché `SetEditing` est appelé à nouveau pour désactiver le mode édition. L’exemple de code supprime la ligne **(Ajouter nouveau)** de la table lorsque la modification n’est plus nécessaire. 
-
 
 Ces substitutions de méthode sont implémentées dans l’exemple de fichier **TableEditModeAdd/code/TableSource. cs**:
 
@@ -219,7 +213,6 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 ```
 
 Ce modèle d’interface utilisateur d’insertion de ligne n’est pas utilisé très souvent. Toutefois `UITableView.BeginUpdates` , `EndUpdates` vous pouvez également utiliser les méthodes et pour animer l’insertion ou la suppression de cellules dans n’importe quelle table. La règle d’utilisation de ces méthodes est que la `RowsInSection` différence de valeur retournée par entre `EndUpdates` les `BeginUpdates` appels et doit correspondre au nombre net de cellules ajoutées/supprimées `DeleteRows` avec les `InsertRows` méthodes et. Si la source de source sous-jacente n’est pas modifiée pour correspondre aux insertions/suppressions sur la table, une erreur se produit.
-
 
 ## <a name="related-links"></a>Liens associés
 

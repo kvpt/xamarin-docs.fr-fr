@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/30/2019
-ms.openlocfilehash: 49370813f50e3b5f1a9193c542b9f5f13d65a8e1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
-ms.translationtype: HT
+ms.openlocfilehash: f24fdb768cc0c4e12fdc58f6e5386edd0db98527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829954"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753942"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Appareils multicœurs et Xamarin.Android
 
 _Android peut s’exécuter sur plusieurs architectures d’ordinateur différentes. Ce document décrit les différentes architectures d’UC qui peuvent être employées pour une application Xamarin.Android. Ce document explique également comment les applications Android sont empaquetées pour prendre en charge des architectures d’UC différentes. Nous présenterons l’interface binaire d’application (ABI), et fournirons des conseils concernant les ABI à utiliser dans une application de Xamarin.Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Android permet la création de « binaires FAT », un seul fichier `.apk` qui contient une version compilée de l’application pour chaque architecture de processeur. Cela est accompli en associant chaque partie du code machine avec une *Interface binaire d’application*. L’ABI sert à contrôler le code exécuté sur un appareil spécifique. Par exemple, pour une application Android qui s’exécute sur un appareil x86, il est nécessaire d’inclure la prise en charge des ABI x86 lors de la compilation de l’application.
 
@@ -79,7 +79,7 @@ C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d�
 > [!NOTE]
 > Google TV, bien qu’il s’exécute sur x86, n’est pas pris en charge par Android NDK.
 
-#### <a name="x8664"></a>x86_64
+#### <a name="x86_64"></a>x86_64
 
 C’est le nom d’une ABI pour les processeurs qui prennent en charge le jeu d’instructions x86 64 bits couramment nommé *x64* ou *AMD64*. Xamarin.Android 5.1 a inauguré la prise en charge de cette architecture (pour plus d’informations, consultez [Prise en charge du runtime 64 bits](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#64-bit-runtime-support)).
 
@@ -191,7 +191,6 @@ En outre, même si les deux ABI `armeabi` et `armeabi-v7a` sont spécifiées (co
 ```
 
 Par conséquent, `armeabi` `libmonodroid.so` est trouvé en premier dans le fichier `.apk`. C’est donc `armeabi` `libmonodroid.so` qui est extrait, même si `armeabi-v7a` `libmonodroid.so` est présent et optimisé pour la cible. Cela peut également entraîner des erreurs d’exécution obscures, car `armeabi` n’est pas SMP-safe.
-
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>Installation des bibliothèques natives : Android 4.0.4 et ultérieur
 

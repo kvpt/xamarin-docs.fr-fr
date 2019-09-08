@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/22/2018
-ms.openlocfilehash: 17995f61d92856a88769e2cd7ac8ed7445cf9782
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 36779446a132dc696f28903c3f0b27329bcd4aaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281129"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752116"
 ---
 # <a name="arkit-2-in-xamarinios"></a>ARKit 2 dans Xamarin. iOS
 
@@ -319,7 +319,6 @@ var configuration = new ARWorldTrackingConfiguration
 ```
 
 Bien que la texture parfaite réfléchie apparaissant dans l’extrait de code précédent soit amusante dans un exemple, la texturation environnementale est probablement mieux utilisée avec la restriction de restriction. elle déclenche une réponse « unformy Valley » (la texture n’est qu’une estimation basée sur l’appareil photo enregistré).
-
 
 ### <a name="shared-and-persistent-ar-experiences"></a>Expériences AR partagées et persistantes
 

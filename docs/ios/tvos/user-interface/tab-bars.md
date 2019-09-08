@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df19dcf542bd3a62a696c0d7d533b4e14390336e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283975"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768993"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Utilisation des contrôleurs de barre d’onglets tvOS dans Xamarin
 
@@ -121,7 +121,6 @@ Pour plus d’informations sur l’utilisation des storyboards, consultez notre 
 
 Utilisez la `Items` propriété `UITabBar` du `UITabBarItems` pour accéder à la collection qu’il contient comme un tableau indexé zéro (0). La `SelectedItem` propriété retourne l’onglet actuellement sélectionné (catégorie) `UITabBarItem`en tant que.
 
-
 <a name="Working-with-Tab-Bar-Items" />
 
 ## <a name="working-with-tab-bar-items"></a>Utilisation des éléments de barre d’onglets
@@ -144,9 +143,6 @@ Utilisez la `Title` propriété `UITabBarItem` du pour modifier le titre et la `
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation du contrôleur de barre d’onglets à l’intérieur d’une application Xamarin. tvOS.
-
-
-
 
 ## <a name="related-links"></a>Liens associés
 

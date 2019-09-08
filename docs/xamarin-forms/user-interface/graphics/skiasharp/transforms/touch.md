@@ -7,12 +7,12 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/14/2018
-ms.openlocfilehash: 407fe78618c5e5fcd8732d9ff3cea50561ca78f3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4e51c1a201ce91b2b376b802f0f45e8aad4b712f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655550"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772979"
 ---
 # <a name="touch-manipulations"></a>Manipulations tactiles
 
@@ -273,7 +273,7 @@ Le **pivoter Bitmap** page vous permet d’utiliser deux doigts pour la rotation
 
 La première grande différence dans ce programme est la logique de test d’atteinte. Les programmes précédentes utilisés le `Contains` méthode de `SKRect` pour déterminer si le point tactile est dans le rectangle transformé qui correspond à l’image bitmap. Mais comme l’utilisateur manipule la bitmap, l’image bitmap peut être pivoté, et `SKRect` ne peut pas représenter correctement un rectangle pivoté. Vous pouvez la peur que la logique de test de positionnement doit implémenter plutôt complexe géométrie analytique dans ce cas.
 
-Toutefois, un raccourci est disponible: Déterminer si un point se trouve dans les limites d’un rectangle transformé revient à déterminer si un point transformé inverse se trouve dans les limites du rectangle non transformé. C’est un calcul plus facile de quantité et la logique peut continuer à utiliser le pratique `Contains` méthode :
+Toutefois, un raccourci est disponible : Déterminer si un point se trouve dans les limites d’un rectangle transformé revient à déterminer si un point transformé inverse se trouve dans les limites du rectangle non transformé. C’est un calcul plus facile de quantité et la logique peut continuer à utiliser le pratique `Contains` méthode :
 
 ```csharp
 public partial class BitmapRotationPage : ContentPage
@@ -757,7 +757,6 @@ class TouchManipulationManager
     ...
 }
 ```
-
 
 Toutefois, vous souhaiterez probablement éviter le `AnisotropicScale` option. Il est très facile avec cette option pour manipuler le bitmap afin qu’un des facteurs d’échelle devient égal à zéro. Ainsi, l’image bitmap disparaissent de la vue, jamais à retourner. Si vous avez véritablement besoin ANISOTROPIQUE de mise à l’échelle, vous souhaitez améliorer la logique pour éviter des résultats indésirables.
 

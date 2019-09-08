@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: db666fc6a547e3fa089475ba5912774c1af3be0d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650746"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771911"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Mise en surbrillance d’une zone circulaire sur une carte
 
@@ -20,7 +20,7 @@ ms.locfileid: "68650746"
 
 _Cet article explique comment ajouter une superposition circulaire à une carte afin de mettre en surbrillance une zone circulaire de la carte._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Une superposition est une forme graphique posée sur une carte. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. Les captures d’écran suivantes montrent le résultat de l’ajout d’une superposition circulaire sur une carte :
 
@@ -305,7 +305,6 @@ Cette méthode procède aux opérations suivantes, sous réserve que le renderer
 - Le cercle est créé en instanciant un objet `MapPolygon`. La classe `MapPolygon` est utilisée pour afficher une forme multipoint sur la carte en définissant sa propriété `Path` sur un objet `Geopath` qui contient les coordonnées de la forme.
 - Le cercle est rendu sur la carte en l’ajoutant à la collection `MapControl.MapElements`.
 
-
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
 {
@@ -331,7 +330,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a expliqué comment ajouter une superposition circulaire à une carte afin de mettre en surbrillance une zone circulaire de la carte.
-
 
 ## <a name="related-links"></a>Liens associés
 

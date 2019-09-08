@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4e488f43f966ca8efd58de4d2bb8f16997d1322e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bf6853ef94ff0be5382bab02192070a20884c31e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290958"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769681"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Extensions des applications de message avancées dans Xamarin. iOS
 
 _Cet article présente des techniques avancées pour l’utilisation des extensions d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application messages et présente de nouvelles fonctionnalités à l’utilisateur._
-
 
 Nouveauté d’iOS 10, une extension d’application de message s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur. L’extension peut envoyer du texte, des autocollants, des fichiers multimédias et des messages interactifs.
 
@@ -55,7 +54,6 @@ Les messages interactifs présentent une bulle de message personnalisée et sont
 L’utilisateur récepteur peut répondre à un message interactif en appuyant sur sa bulle de message dans l’historique des messages pour charger l’extension de l’application de message qui l’a créé. L’extension est lancée en mode plein écran et permet à l’utilisateur de composer une réponse et de la renvoyer à l’utilisateur d’origine.
 
 [![](advanced-message-app-extensions-images/interactive02.png "L’extension a été lancée en mode plein écran")](advanced-message-app-extensions-images/interactive02.png#lightbox)
-
 
 Les rubriques suivantes sont traitées en détail ci-dessous :
 
@@ -427,7 +425,6 @@ using Foundation;
 using Messages;
 using UIKit;
 
-
 namespace MessageExtension
 {
     public partial class MessagesViewController : MSMessagesAppViewController
@@ -605,7 +602,6 @@ Ils seront remis dans un format de secours sous forme de deux messages distincts
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté des techniques avancées pour l’utilisation des extensions d’application de message dans une solution Xamarin. iOS qui s’intègre à l’application **messages** et présente de nouvelles fonctionnalités à l’utilisateur.
-
 
 ## <a name="related-links"></a>Liens associés
 

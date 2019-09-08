@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 60bf25d7d88a1772e8b742a336a5faaebdf964fa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1a91b92cc3e82bad02d630dde8ced1d1ba63e3fd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290812"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768473"
 ---
 # <a name="maps-in-xamarinios"></a>Cartes dans Xamarin. iOS
 
@@ -52,7 +52,6 @@ La capture d’écran suivante montre les différents styles de carte disponible
 
 - Zoom à l’aide d’un geste de pincement
 - Panoramique via un mouvement panoramique
-
 
 Ces fonctionnalités peuvent être activées ou désactivées en `ZoomEnabled` définissant simplement les `MKMapView` propriétés et `ScrollEnabled` de l’instance, où la valeur par défaut est true pour les deux. Par exemple, pour afficher une carte statique, définissez simplement les propriétés appropriées sur false :
 
@@ -100,7 +99,6 @@ Une annotation elle-même se compose de deux parties :
 
 - `MKAnnotation` Objet, qui comprend les données de modèle relatives à l’annotation, telles que le titre et l’emplacement de l’annotation.
 - `MKAnnotationView` , Qui contient l’image à afficher et éventuellement une légende qui s’affiche lorsque l’utilisateur appuie sur l’annotation.
-
 
 Le kit de cartes utilise le modèle de délégation IOS pour ajouter des annotations à `Delegate` une carte, `MKMapView` où la propriété du est définie sur `MKMapViewDelegate`une instance d’un. Il s’agit de l’implémentation de ce délégué qui est chargée `MKAnnotationView` de retourner le pour une annotation.
 
@@ -183,7 +181,6 @@ Une autre façon de superposer des graphiques sur une carte consiste à utiliser
 - Polylignes, souvent affichées lors de l’affichage d’un itinéraire.
 - Cercles-utilisé pour mettre en surbrillance une zone circulaire d’une carte.
 
-
 En outre, des superpositions personnalisées peuvent être créées pour afficher des géométries arbitraires avec un code de dessin granulaire et personnalisé. Par exemple, le radar météo est un bon candidat pour une superposition personnalisée.
 
 #### <a name="adding-an-overlay"></a>Ajout d’une superposition
@@ -192,7 +189,6 @@ Comme pour les annotations, l’ajout d’une superposition implique deux partie
 
 - Création d’un objet de modèle pour la superposition et ajout `MKMapView` de celui-ci à.
 - Création d’une vue pour la superposition `MKMapViewDelegate` dans le.
-
 
 Le modèle de la superposition peut être `MKShape` n’importe quelle sous-classe. Xamarin. iOS comprend `MKShape` des sous-classes pour les polygones, `MKPolyline` les polylignes et `MKPolygon`les cercles `MKCircle` , par le biais des classes et respectivement.
 
@@ -231,7 +227,6 @@ Pour effectuer une recherche locale, une application doit suivre les étapes sui
 1. Créez un `MKLocalSearch` objet à partir `MKLocalSearchRequest` du.
 1. Appelez la `Start` méthode sur l' `MKLocalSearch` objet.
 1. Récupérez `MKLocalSearchResponse` l’objet dans un rappel.
-
 
 L’API recherche locale elle-même ne fournit pas d’interface utilisateur. Il n’a même pas besoin d’utiliser un mappage. Toutefois, pour faciliter l’utilisation de la recherche locale, une application doit fournir un moyen de spécifier une requête de recherche et d’afficher les résultats. En outre, étant donné que les résultats contiendront des données d’emplacement, il est souvent judicieux de les afficher sur une carte.
 
@@ -279,8 +274,6 @@ Nous verrons comment implémenter à la fois le `searchResultsController` et le 
 Cela entraîne l’affichage d’une barre de recherche sur la carte, comme indiqué ci-dessous :
 
  ![](images/07-searchbar.png "Barre de recherche affichée sur la carte")
-
-
 
 ### <a name="displaying-the-search-results"></a>Affichage des résultats de la recherche
 
@@ -351,7 +344,6 @@ public class SearchResultsViewController : UITableViewController
             }
         });
 
-
     }
 }
 ```
@@ -382,7 +374,6 @@ public void Search (string forSearchString)
         }
     });
 
-
 }
 ```
 
@@ -406,8 +397,6 @@ L’implémentation ci-dessus ajoute une annotation à la carte lorsqu’un él�
 
 > [!IMPORTANT]
 > `UISearchController`a été implémenté dans iOS 8. Si vous souhaitez prendre en charge des appareils antérieurs à cette version, vous devez `UISearchDisplayController`utiliser.
-
-
 
 ## <a name="summary"></a>Récapitulatif
 

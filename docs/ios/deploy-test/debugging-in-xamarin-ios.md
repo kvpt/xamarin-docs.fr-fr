@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: a307641b466eae680c8eb43c1b8fff7623195cde
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8a1a110bf1ff021c3280e19dea777180d71dba1a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283093"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763357"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
 _Vous pouvez déboguer les applications Xamarin.iOS à l’aide du débogueur intégré de Visual Studio pour Mac ou Visual Studio._
 
 Utilisez la prise en charge du débogage natif de Visual Studio pour Mac afin de déboguer le code C# et celui d’autres langages managés. Utilisez [LLDB](http://lldb.llvm.org/tutorial.html) quand vous devez déboguer du code C, C++ ou Objective-C lié à votre projet Xamarin.iOS.
-
 
 > [!NOTE]
 > Lorsque vous compilez des applications en mode débogage, Xamarin.iOS génère des applications plus lentes et beaucoup plus volumineuses, car chaque ligne de code doit être instrumentée. Avant la mise en production, veillez à effectuer une build de mise en production.
@@ -49,13 +48,13 @@ Vous pouvez afficher tous les points d’arrêt définis dans votre code en acc�
 [![](debugging-in-xamarin-ios-images/image0a.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Si le panneau Points d’arrêt ne s’affiche pas automatiquement, vous pouvez le rendre visible en sélectionnant _Affichage > Fenêtres de débogage > Points d’arrêt_
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Si le panneau Points d’arrêt ne s’affiche pas automatiquement, vous pouvez le rendre visible en sélectionnant _Débogage > Fenêtres > Points d’arrêt_
- 
+
 -----
 
 Avant de déboguer une application, vérifiez toujours que la configuration est de type **Débogage**, car elle contient un ensemble d’outils utiles au débogage, par exemple la définition des points d’arrêt, l’utilisation des visualiseurs de données et l’affichage de la pile des appels :
@@ -85,8 +84,6 @@ Pour démarrer le débogage, sélectionnez l’appareil cible ou un appareil sim
 
 -----
 
-
-
 Déployez ensuite votre application en appuyant sur le bouton **Lecture**.
 
 Quand vous atteignez un point d’arrêt, le code est mis en surbrillance en jaune :
@@ -105,7 +102,6 @@ Vous pouvez également définir des règles qui dictent les circonstances dans l
 
 Pour définir un point d’arrêt conditionnel, accédez à la **fenêtre Propriétés de point d’arrêt**, ce que vous pouvez faire de deux façons :
 
-
 - Pour ajouter un nouveau point d’arrêt conditionnel, cliquez avec le bouton droit sur la marge de l’éditeur, à gauche du numéro de la ligne de code pour laquelle vous voulez définir un point d’arrêt, et sélectionnez Nouveau point d’arrêt :
 
   [![](debugging-in-xamarin-ios-images/image4.png "Sélectionner un nouveau point d’arrêt")](debugging-in-xamarin-ios-images/image4.png#lightbox)
@@ -113,7 +109,6 @@ Pour définir un point d’arrêt conditionnel, accédez à la **fenêtre Propri
 - Pour ajouter une condition à un point d’arrêt existant, cliquez avec le bouton droit sur le point d’arrêt, puis sélectionnez **Propriétés de point d’arrêt** ou dans le **Panneau Points d’arrêt**, sélectionnez le bouton de propriétés illustré ci-dessous :
 
   [![](debugging-in-xamarin-ios-images/image5.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image5.png#lightbox)
-
 
 Vous pouvez ensuite entrer la condition de déclenchement du point d’arrêt :
 
@@ -199,7 +194,6 @@ Ce débogueur Soft nécessite un schéma de débogage coopératif quand il s’e
 
 <a name="Accessing_the_Console" />
 
-
 ## <a name="accessing-the-console"></a>Accès à la console
 
 Les journaux d’incidents et la sortie de la classe Console sont envoyés à la console de l’iPhone. Vous pouvez accéder à cette console avec Xcode en utilisant l’organisateur, et en sélectionnant votre appareil dans l’organisateur.
@@ -212,7 +206,6 @@ Pour les utilisateurs de Visual Studio, certains journaux sont disponibles dans 
 
 <a name="Debugging_Mono's_Class_Libraries" />
 
-
 ## <a name="debugging-monos-class-libraries"></a>Débogage des bibliothèques de classes de Mono
 
 Xamarin.iOS est livré avec le code source des bibliothèques de classes de Mono. Vous pouvez vous en servir pour effectuer un pas à pas détaillé à partir du débogueur afin d’examiner la façon dont les choses se déroulent en arrière-plan.
@@ -220,7 +213,6 @@ Xamarin.iOS est livré avec le code source des bibliothèques de classes de Mono
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 Comme cette fonctionnalité consomme plus de mémoire durant le débogage, elle est désactivée par défaut.
-
 
 Pour activer cette fonctionnalité, vérifiez que l’option **Déboguer uniquement le code du projet ; ignorer le code du framework** est désélectionnée sous le menu _Visual Studio pour Mac > Préférences > Débogueur_ comme illustré ci-dessous :
 
@@ -235,7 +227,6 @@ Pour déboguer les bibliothèques de classes dans Visual Studio, vous devez dés
 -----
 
 Ensuite, vous pouvez démarrer votre application et effectuer un pas à pas détaillé dans les bibliothèques de classes principales de Mono.
-
 
 ## <a name="related-links"></a>Liens associés
 

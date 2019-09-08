@@ -7,23 +7,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 9b3e4177d6be5854e80952d091aa78787d9645bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8a808e6ea49338de5b6bd1618fc2227e6cf5f0b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644923"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764885"
 ---
 # <a name="xamarinandroid-popup-menu"></a>Menu contextuel Xamarin. Android
 
-Le [menu](xref:Android.Widget.PopupMenu) contextuel (également appelé _menu contextuel_) est un menu ancré à une vue particulière. Dans l’exemple suivant, une activité unique contient un bouton. Quand l’utilisateur appuie sur le bouton, un menu contextuel à trois éléments s’affiche:
+Le [menu](xref:Android.Widget.PopupMenu) contextuel (également appelé _menu contextuel_) est un menu ancré à une vue particulière. Dans l’exemple suivant, une activité unique contient un bouton. Quand l’utilisateur appuie sur le bouton, un menu contextuel à trois éléments s’affiche :
 
 [![Exemple d’application avec un bouton et un menu contextuel à trois éléments](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
-
 ## <a name="creating-a-popup-menu"></a>Création d’un menu contextuel
 
-La première étape consiste à créer un fichier de ressources de menu pour le menu et à le placer dans **ressources/menu**. Par exemple, le code XML suivant est le code du menu à trois éléments affiché dans la capture d’écran précédente, Resources **/menu/popup_menu. xml**:
+La première étape consiste à créer un fichier de ressources de menu pour le menu et à le placer dans **ressources/menu**. Par exemple, le code XML suivant est le code du menu à trois éléments affiché dans la capture d’écran précédente, **Resources/menu/popup_menu. xml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -39,7 +38,7 @@ La première étape consiste à créer un fichier de ressources de menu pour le 
 
 Ensuite, créez une instance de `PopupMenu` et Ancrez-la à sa vue. Quand vous créez une instance de `PopupMenu`, vous transmettez `Context` à son constructeur une référence à, ainsi que la vue à laquelle le menu sera attaché. Par conséquent, le menu contextuel est ancré à cette vue pendant sa construction.
 
-Dans l’exemple suivant, le `PopupMenu` est créé dans le gestionnaire d’événements Click pour le bouton (qui est `showPopupMenu`nommé). Ce bouton est également l’affichage auquel le `PopupMenu` est ancré, comme illustré dans l’exemple de code suivant:
+Dans l’exemple suivant, le `PopupMenu` est créé dans le gestionnaire d’événements Click pour le bouton (qui est `showPopupMenu`nommé). Ce bouton est également l’affichage auquel le `PopupMenu` est ancré, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -47,7 +46,7 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-Enfin, le menu contextuel doit être *gonflé* à la ressource de menu créée précédemment. Dans l’exemple suivant, l’appel à la méthode [gonflé](xref:Android.Views.LayoutInflater.Inflate*) du menu est ajouté et sa méthode [Show](xref:Android.Widget.PopupMenu.Show) est appelée pour l’afficher:
+Enfin, le menu contextuel doit être *gonflé* à la ressource de menu créée précédemment. Dans l’exemple suivant, l’appel à la méthode [gonflé](xref:Android.Views.LayoutInflater.Inflate*) du menu est ajouté et sa méthode [Show](xref:Android.Widget.PopupMenu.Show) est appelée pour l’afficher :
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -57,10 +56,9 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-
 ## <a name="handling-menu-events"></a>Gestion des événements de menu
 
-Lorsque l’utilisateur sélectionne un élément de menu, l’événement [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) Click est déclenché et le menu est fermé. Si vous appuyez n’importe où en dehors du menu, vous le faites simplement disparaître. Dans les deux cas, lorsque le menu est fermé, son [DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) est déclenché. Le code suivant ajoute des gestionnaires d’événements pour les `MenuItemClick` événements `DismissEvent` et:
+Lorsque l’utilisateur sélectionne un élément de menu, l’événement [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) Click est déclenché et le menu est fermé. Si vous appuyez n’importe où en dehors du menu, vous le faites simplement disparaître. Dans les deux cas, lorsque le menu est fermé, son [DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) est déclenché. Le code suivant ajoute des gestionnaires d’événements pour les `MenuItemClick` événements `DismissEvent` et :
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -77,8 +75,6 @@ showPopupMenu.Click += (s, arg) => {
     menu.Show ();
 };
 ```
-
-
 
 ## <a name="related-links"></a>Liens associés
 

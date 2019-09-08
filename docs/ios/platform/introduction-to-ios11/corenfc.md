@@ -7,12 +7,12 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: 6da32e22fbdb3b5b7d96d7ee93c2f25bba84cd78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286625"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752427"
 ---
 # <a name="core-nfc-in-xamarinios"></a>NFC principal dans Xamarin. iOS
 
@@ -141,7 +141,6 @@ Les paramètres `NFCNdefReaderSession` du constructeur sont les suivants :
 - `queue`: La file d’attente sur laquelle les rappels sont gérés. Il peut s' `null`agir de, auquel cas veillez à utiliser `DispatchQueue.MainQueue` lors de la mise à jour des contrôles de l’interface utilisateur (comme indiqué dans l’exemple).
 - `invalidateAfterFirstRead`: Quand `true`, l’analyse s’arrête après la première analyse réussie ; `false` lorsque l’analyse se poursuit et que plusieurs résultats sont retournés jusqu’à ce que l’analyse soit annulée ou que le délai d’expiration de 60 est atteint.
 
-
 ### <a name="3-cancel-the-scanning-session"></a>3. Annuler la session d’analyse
 
 L’utilisateur peut annuler la session d’analyse à l’aide d’un bouton fourni par le système dans l’interface utilisateur :
@@ -159,7 +158,6 @@ Dans les deux cas, la méthode `DidInvalidate` du délégué sera appelée.
 ## <a name="summary"></a>Récapitulatif
 
 CoreNFC permet à votre application de lire des données à partir de balises NFC. Il prend en charge la lecture d’un grand nombre de formats d’étiquette (types NDEF 1 à 5), mais ne prend pas en charge l’écriture ou la mise en forme.
-
 
 ## <a name="related-links"></a>Liens associés
 

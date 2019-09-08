@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 9f3ac33df34f5046fad6d392a6b7edf8a9a7f23f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1b7bed0fc6dba1d9f80524ac3429b7fdcb751ab9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644141"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755068"
 ---
 # <a name="started-services-with-xamarinandroid"></a>Services démarrés avec Xamarin. Android
 
@@ -19,14 +19,14 @@ ms.locfileid: "68644141"
 
 Les services démarrés exécutent généralement une unité de travail sans fournir de commentaires directs ou de résultats au client. Un exemple d’unité de travail est un service qui charge un fichier sur un serveur. Le client envoie une demande à un service pour télécharger un fichier à partir de l’appareil vers un site Web. Le service charge le fichier en mode silencieux (même si l’application n’a pas d’activités au premier plan) et se termine une fois le téléchargement terminé. Il est important de comprendre qu’un service démarré s’exécutera sur le thread d’interface utilisateur d’une application. Cela signifie que si un service doit effectuer un travail qui bloquera le thread d’interface utilisateur, il doit créer et supprimer des threads si nécessaire.
 
-Contrairement à un service lié, aucun canal de communication n’est présent entre un service «pur» démarré et ses clients. Cela signifie qu’un service démarré implémente des méthodes de cycle de vie différentes par rapport à un service lié. La liste suivante met en évidence les méthodes de cycle de vie courantes dans un service démarré:
+Contrairement à un service lié, aucun canal de communication n’est présent entre un service « pur » démarré et ses clients. Cela signifie qu’un service démarré implémente des méthodes de cycle de vie différentes par rapport à un service lié. La liste suivante met en évidence les méthodes de cycle de vie courantes dans un service démarré :
 
 - `OnCreate`&ndash; Appelée une fois lorsque le service est démarré pour la première fois. C’est là que le code d’initialisation doit être implémenté.
 - `OnBind`&ndash; Cette méthode doit être implémentée par toutes les classes de service, mais un service démarré n’a généralement pas de client associé. Pour cette raison, un service démarré retourne `null`simplement. En revanche, un service hybride (qui est la combinaison d’un service lié et d’un service démarré) doit implémenter et retourner `Binder` un pour le client.
 - `OnStartCommand`Appelé pour chaque demande de démarrage du service, en réponse à un appel à `StartService` ou à un redémarrage par le système. &ndash; C’est là que le service peut commencer toute tâche de longue durée. La méthode retourne une `StartCommandResult` valeur qui indique comment ou si le système doit gérer le redémarrage du service après un arrêt en raison d’une mémoire insuffisante. Cet appel a lieu sur le thread principal. Cette méthode est décrite plus en détail ci-dessous.
 - `OnDestroy`&ndash; Cette méthode est appelée lorsque le service est en cours de destruction. Il est utilisé pour exécuter tout nettoyage final requis.
 
-La méthode la plus importante pour un service démarré `OnStartCommand` est la méthode. Elle est appelée chaque fois que le service reçoit une demande de travail. L’extrait de code suivant est un exemple `OnStartCommand`de: 
+La méthode la plus importante pour un service démarré `OnStartCommand` est la méthode. Elle est appelée chaque fois que le service reçoit une demande de travail. L’extrait de code suivant est un exemple `OnStartCommand`de : 
 
 ```csharp
 public override StartCommandResult OnStartCommand (Android.Content.Intent intent, StartCommandFlags flags, int startId)
@@ -38,11 +38,11 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 }
 ```
 
-Le premier paramètre est un `Intent` objet contenant les métadonnées relatives au travail à effectuer. Le deuxième paramètre contient une `StartCommandFlags` valeur qui fournit des informations sur l’appel de la méthode. Ce paramètre a l’une des deux valeurs possibles:
+Le premier paramètre est un `Intent` objet contenant les métadonnées relatives au travail à effectuer. Le deuxième paramètre contient une `StartCommandFlags` valeur qui fournit des informations sur l’appel de la méthode. Ce paramètre a l’une des deux valeurs possibles :
 
 - `StartCommandFlag.Redelivery`Cela signifie que est une nouvelle remise d’un précédent `Intent`. `Intent` &ndash; Cette valeur est fournie lorsque le service a été `StartCommandResult.RedeliverIntent` retourné mais a été arrêté avant d’être correctement arrêté.
 -`StartCommandFlag.Retry`Cette valeur est reçue lorsqu’un appel `OnStartCommand` précédent a échoué et que Android tente de redémarrer le service avec le même objectif que la tentative précédente qui a échoué. &dash;
- 
+
 Enfin, le troisième paramètre est une valeur entière qui est unique pour l’application qui identifie la demande. Il est possible que plusieurs appelants puissent appeler le même objet de service. Cette valeur est utilisée pour associer une demande d’arrêt d’un service avec une demande donnée pour démarrer un service. Il sera abordé plus en détail dans la section [arrêt du service](#Stopping_the_Service). 
 
 La valeur `StartCommandResult` est retournée par le service sous forme de suggestion à Android sur la marche à suivre si le service est arrêté en raison de contraintes de ressources. Il existe trois valeurs possibles pour `StartCommandResult`:
@@ -53,7 +53,7 @@ La valeur `StartCommandResult` est retournée par le service sous forme de sugge
 
 Il existe une quatrième valeur pour `StartCommandResult`. &ndash; `StartCommandResult.ContinuationMask` Cette valeur est retournée `OnStartCommand` par et elle décrit comment Android va continuer le service qu’il a supprimé. Cette valeur n’est généralement pas utilisée pour démarrer un service.
 
-Les événements de cycle de vie des clés d’un service démarré sont présentés dans ce diagramme: 
+Les événements de cycle de vie des clés d’un service démarré sont présentés dans ce diagramme : 
 
 ![Diagramme montrant l’ordre dans lequel les méthodes de cycle de vie sont appelées](started-services-images/started-service-01.png "Diagramme montrant l’ordre dans lequel les méthodes de cycle de vie sont appelées.")
 
@@ -61,15 +61,15 @@ Les événements de cycle de vie des clés d’un service démarré sont présen
 
 ## <a name="stopping-the-service"></a>Arrêt du service
 
-Un service démarré continue de s’exécuter indéfiniment. Android conservera le service s’exécuter tant qu’il y a suffisamment de ressources système. Soit le client doit arrêter le service, soit le service peut s’arrêter lorsqu’il a terminé son travail. Il existe deux façons d’arrêter un service: 
+Un service démarré continue de s’exécuter indéfiniment. Android conservera le service s’exécuter tant qu’il y a suffisamment de ressources système. Soit le client doit arrêter le service, soit le service peut s’arrêter lorsqu’il a terminé son travail. Il existe deux façons d’arrêter un service : 
 
-- **[Android. Content. Context. StopService ()](xref:Android.Content.Context.StopService*)** Un client (tel qu’une activité) peut demander l’arrêt d’un service en `StopService` appelant la méthode: &ndash;
+- **[Android. Content. Context. StopService ()](xref:Android.Content.Context.StopService*)** Un client (tel qu’une activité) peut demander l’arrêt d’un service en `StopService` appelant la méthode : &ndash;
 
     ```csharp
     StopService(new Intent(this, typeof(DemoService));
     ```
 
-- **[Android. app. service. StopSelf ()](xref:Android.App.Service.StopSelf*)** Un service peut s’arrêter de lui-même en `StopSelf`appelant le: &ndash;
+- **[Android. app. service. StopSelf ()](xref:Android.App.Service.StopSelf*)** Un service peut s’arrêter de lui-même en `StopSelf`appelant le : &ndash;
 
     ```csharp
     StopSelf();

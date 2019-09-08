@@ -7,19 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 6ce8f633cdc0fd4616673eb047d640a8703b3a30
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: cb8dc64a8c40496aaf2ea23a834effb58436618a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102527"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759085"
 ---
 # <a name="android-emulator-setup"></a>Configuration de l’émulateur Android
 
 _Ce guide explique comment préparer l’émulateur Android pour tester votre application._
 
-
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Vous pouvez exécuter l’émulateur Android dans diverses configurations pour simuler différents appareils. Chaque configuration est appelée _appareil virtuel_. Quand vous déployez et testez votre application sur l’émulateur, vous sélectionnez un appareil virtuel préconfiguré ou personnalisé qui simule un appareil physique Android tel qu’un téléphone Nexus ou Pixel.
 
@@ -45,7 +44,5 @@ Cet article décrit les problèmes et les messages d’avertissement les plus co
 
 Après avoir configuré l’émulateur Android, consultez [Débogage avec l’émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md) pour plus d’informations sur le lancement de l’émulateur et son utilisation afin de tester et déboguer votre application.
 
-
 > [!NOTE]
 > À compter de la version **26.0.1** d’Android SDK Tools, Google ne prend plus en charge les gestionnaires d’AVD/de SDK, au profit de ses nouveaux outils d’interface de ligne de commande (CLI). En raison de ce changement, les Gestionnaires d’appareils/de SDK Xamarin sont dorénavant utilisés à la place des Gestionnaires d’appareils/de SDK Google pour Android Tools 26.0.1 et versions ultérieures. Pour plus d’informations sur Xamarin SDK Manager, consultez [Installation du kit Android SDK pour Xamarin.Android](~/android/get-started/installation/android-sdk.md).
-

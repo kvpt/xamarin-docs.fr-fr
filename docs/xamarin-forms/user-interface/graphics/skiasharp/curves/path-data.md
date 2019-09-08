@@ -7,12 +7,12 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 467863dba2f5757e0590ccf64927ae2af292f285
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647403"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770575"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>Données de chemin SVG dans SkiaSharp
 
@@ -361,7 +361,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Le [ **points et tirets** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) article décrit comment vous pouvez utiliser la [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) méthode pour créer une ligne en pointillés. Le premier argument est un `float` tableau qui a généralement deux éléments: Le premier élément est la longueur des tirets, et le deuxième élément est l’intervalle entre les tirets. Lorsque le `StrokeCap` propriété est définie sur `SKStrokeCap.Round`, puis les terminaisons arrondis du tiret allonger efficacement la longueur du tiret par la largeur de trait des deux côtés du tiret. Par conséquent, définissant le premier élément du tableau sur 0 crée une ligne en pointillés.
+Le [ **points et tirets** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) article décrit comment vous pouvez utiliser la [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*) méthode pour créer une ligne en pointillés. Le premier argument est un `float` tableau qui a généralement deux éléments : Le premier élément est la longueur des tirets, et le deuxième élément est l’intervalle entre les tirets. Lorsque le `StrokeCap` propriété est définie sur `SKStrokeCap.Round`, puis les terminaisons arrondis du tiret allonger efficacement la longueur du tiret par la largeur de trait des deux côtés du tiret. Par conséquent, définissant le premier élément du tableau sur 0 crée une ligne en pointillés.
 
 La distance entre ces points est régie par le deuxième élément du tableau. Comme vous le verrez bientôt, ces deux `SKPaint` objets sont utilisés pour dessiner les cercles avec un rayon de 90 unités. Par conséquent, la circonférence de ce cercle est 180π, ce qui signifie que les marques de 60 minutes doivent apparaître toutes les unités 3pi, qui est la deuxième valeur de la `float` de tableau dans `minuteMarkPaint`. Les marques de 12 heures doivent apparaître toutes les unités 15π, qui est la valeur de la seconde `float` tableau.
 
@@ -428,7 +428,6 @@ public class PrettyAnalogClockPage : ContentPage
 Quelque chose de spécial est effectuée avec la seconde aiguille, toutefois. Étant donné que l’horloge est mise à jour toutes les 16 millisecondes, le `Millisecond` propriété de la `DateTime` valeur peut potentiellement être utilisée pour animer un balayage ensuite manuellement plutôt qu’un seul qui déplace les sauts discrets à partir de la seconde à la seconde. Mais ce code n’autorise pas le déplacement à être lisse. Au lieu de cela, il utilise le Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) et [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) animation fonctions pour un autre type de déplacement d’accélération. Ces fonctions d’accélération provoquent la seconde aiguille déplacer de manière plus rapide &mdash; extraire un peu avant son déplacement, puis légèrement investissements sa destination, un effet qui malheureusement ne peut pas être reproduit dans ces captures d’écran statiques :
 
 [![](path-data-images/prettyanalogclock-small.png "Capture d’écran triple de la page de l’horloge analogique assez")](path-data-images/prettyanalogclock-large.png#lightbox "Triple capture d’écran de la page de l’horloge analogique assez")
-
 
 ## <a name="related-links"></a>Liens associés
 

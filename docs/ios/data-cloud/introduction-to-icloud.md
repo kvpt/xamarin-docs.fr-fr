@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: 364775ae8e8874d87022b5e45bd23ea29e82382d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292420"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763109"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Utilisation de iCloud avec Xamarin. iOS
 
@@ -63,7 +63,6 @@ Sélectionnez et activez l’option **Documents & données** .
 - **Vous devez utiliser un appareil pour tester icloud** ; il ne fonctionnera pas sur le simulateur.
 En fait, vous avez vraiment besoin d’au moins deux appareils connectés avec le même ID Apple pour voir iCloud en action.
 
-
 ## <a name="key-value-storage"></a>Stockage clé-valeur
 
 Le stockage clé-valeur est conçu pour les petites quantités de données qu’un utilisateur peut souhaiter conserver sur les appareils, comme la dernière page qu’il a consultée dans un livre ou un magazine. Le stockage clé-valeur ne doit pas être utilisé pour la sauvegarde des données.
@@ -81,8 +80,6 @@ Il existe certaines limitations à connaître lors de l’utilisation du stockag
 L’exemple **iCloudKeyValue** illustre son fonctionnement. L’exemple de code crée une clé nommée pour chaque appareil : vous pouvez définir cette clé sur un appareil et observer la propagation de la valeur à d’autres utilisateurs. Il crée également une clé appelée « Shared » qui peut être modifiée sur n’importe quel appareil : Si vous modifiez sur plusieurs appareils à la fois, iCloud détermine la valeur « WINS » (à l’aide d’un horodateur sur la modification) et est propagée.
 
 Cette capture d’écran montre l’exemple en cours d’utilisation. Lorsque des notifications de modification sont reçues de iCloud, elles sont imprimées dans l’affichage de texte défilant au bas de l’écran et mis à jour dans les champs d’entrée.
-
-
 
  [![](introduction-to-icloud-images/icloud-kv-arrows.png "Le flow des messages entre les appareils")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
@@ -406,8 +403,6 @@ Les utilisateurs peuvent gérer les documents iCloud dans le répertoire **docum
 
  [![](introduction-to-icloud-images/icloudstorage.png "Gestion du flux de travail des documents iCloud")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
-
-
 Les utilisateurs recevront également différents avertissements lorsqu’ils tenteront de supprimer une application iCloud de leur appareil pour les informer de l’état des documents iCloud associés à cette application.
 
  [![](introduction-to-icloud-images/icloud-delete1.png "Exemple de boîte de dialogue lorsque l’utilisateur tente de supprimer une application iCloud de son appareil")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
@@ -430,8 +425,6 @@ Cet article a introduit la nouvelle fonctionnalité iCloud incluse dans iOS 5. I
 L’exemple de stockage clé-valeur démontre comment iCloud peut être utilisé pour stocker une petite quantité de données similaire à la façon dont les NSUserPreferences sont stockés. L’exemple UIDocument a montré comment des données plus complexes peuvent être stockées et synchronisées sur plusieurs appareils via iCloud.
 
 Enfin, elle comprenait une brève discussion sur la façon dont l’ajout de la sauvegarde iCloud doit influencer la conception de votre application.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

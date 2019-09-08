@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: af7dbad29c156964f154053dac00255b1b32e4ff
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289092"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767212"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Images et icônes dans Xamarin. iOS
 
@@ -33,7 +33,6 @@ Il existe plusieurs façons d’utiliser des ressources d’image dans une appli
 
 Il convient de tenir compte de plusieurs considérations lors de la création de ressources d’image pour une application iOS, ainsi que de plusieurs emplacements où ces ressources seront utilisées. Chacun de ces éléments a un impact sur le nombre de ressources d’image nécessaires, mais sur la façon dont ces ressources sont créées. Les rubriques suivantes traitent des types de ressources d’images qui seront nécessaires, de la façon dont ces ressources sont incluses dans l’offre groupée de l’application et de la façon dont les ressources d’image sont consommées pour fournir les fonctionnalités requises :
 
-
 ## <a name="displaying-an-imageiosapp-fundamentalsimages-iconsdisplaying-an-imagemd"></a>[Affichage d'une image](~/ios/app-fundamentals/images-icons/displaying-an-image.md)
 
 Cet article aborde l’inclusion d’une ressource d’image dans une application Xamarin. iOS et l’affichage C# de cette image en utilisant du code ou en l’affectant à un contrôle dans le concepteur iOS.
@@ -51,7 +50,6 @@ Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une appli
 - `AlternateIconName`-Retourne le nom de l’autre icône actuellement sélectionnée ou `null` si vous utilisez l’icône principale.
 - `SetAlternameIconName`-Utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
 
-
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[Écrans de lancement](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 Cet article décrit l’utilisation d’un type spécial de table de montage séquentiel pour fournir un écran de lancement universel pour chaque taille et résolution de l’appareil iOS.
@@ -59,8 +57,6 @@ Cet article décrit l’utilisation d’un type spécial de table de montage sé
 ## <a name="custom-document-typesiosapp-fundamentalsimages-iconscustom-document-typesmd"></a>[Types de document personnalisé](~/ios/app-fundamentals/images-icons/custom-document-types.md)
 
 Cet article traite de l’ajout et de la gestion d’une ressource d’image dans une application Xamarin. iOS à utiliser comme icône de type de document personnalisé.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

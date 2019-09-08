@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 688b2b431ca385e8e5bc4ae721e3eaf4049a193d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e95d7a01b2743db119f7982db1f9ed34bc4d02a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283654"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769619"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Présentation de tvOS dans Xamarin
 
@@ -71,7 +71,6 @@ En outre, Apple fournit les exemples d’applications suivants qui peuvent être
 Si vous rencontrez des problèmes lors de la création de tvOS avec Xamarin, consultez les [notes de publication](https://docs.microsoft.com/xamarin/ios/release-notes/), les [Forums Xamarin. iOS](https://forums.xamarin.com/categories/ios), [Xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)et [GitHub](https://github.com/xamarin/xamarin-macios/issues) pour les problèmes existants.
 
 Signalez les nouveaux problèmes et suggestions [sur GitHub](https://github.com/xamarin/xamarin-macios/issues).
-
 
 ## <a name="related-links"></a>Liens associés
 

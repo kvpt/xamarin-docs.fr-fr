@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: cd29e284c45bfe59633dde924e27d8022e8416ba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645932"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760826"
 ---
 # <a name="xamarinforms-modal-pages"></a>Pages modales Xamarin.Forms
 
@@ -25,7 +25,7 @@ Cet article traite des sujets suivants :
 - [Navigation](#Performing_Navigation) - Envoi (push) des pages vers la pile modale, dépilation des pages de la pile modale, désactivation du bouton Précédent et animation des transitions de page.
 - [Passage de données durant la navigation](#Passing_Data_when_Navigating) - Passage de données via un constructeur de page et via `BindingContext`.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Une page modale peut correspondre à l’un des types [Page](~/xamarin-forms/user-interface/controls/pages.md) pris en charge par Xamarin.Forms. Pour afficher une page modale, l’application l’envoie vers la pile modale, où elle devient la page active, comme indiqué dans le diagramme suivant :
 
@@ -257,7 +257,6 @@ Pour plus d’informations sur la liaison de données, consultez [Notions de bas
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment accéder aux pages modales. Une page modale encourage les utilisateurs à effectuer une tâche autonome et ne peut pas être quittée tant que la tâche n’est pas terminée ou annulée.
-
 
 ## <a name="related-links"></a>Liens associés
 

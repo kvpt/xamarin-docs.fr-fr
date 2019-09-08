@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 3. Détails du texte
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 3. Détails du texte'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 3. Détails du texte'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e37175240825c0fed350589649469c99f1bbf69a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334660"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771222"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Résumé du chapitre 3. Détails du texte
 
@@ -28,7 +28,7 @@ Lorsque le [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) et
 
 Lorsque le `HorizontalOptions` et `VerticalOptions` propriétés sont définies sur les valeurs autres que `LayoutOptions.Fill`, la taille de la `Label` est régie par l’espace nécessaire pour restituer le texte, jusqu'à la taille de son conteneur rend disponible pour le `Label`. Le `Label` est dite *sans contrainte* et détermine sa taille.
 
-(Remarque : Les termes du contrat *contraint* et *sans contrainte* peut-être absurdes, une vue sans contrainte est généralement inférieure à une vue contrainte. En outre, ces termes ne sont pas utilisés régulièrement dans les premiers chapitres du livre.)
+(Remarque : Les termes *contrainte* et sans *contrainte* peuvent être exintuitifs, car une vue non contrainte est généralement plus petite qu’une vue contrainte. En outre, ces termes ne sont pas utilisés régulièrement dans les premiers chapitres du livre.)
 
 Une vue comme un `Label` peut être limité dans une dimension et sans contraintes dans l’autre. Un `Label` sera uniquement habiller le texte sur plusieurs lignes si elle est contrainte horizontalement.
 
@@ -99,9 +99,9 @@ Enfin, deux propriétés statiques en lecture seule définissent la valeur de co
 
 `Color.Default` Permet d’appliquer le modèle de couleurs de la plateforme, et par conséquent a une signification différente dans différents contextes sur différentes plateformes. Par défaut, les jeux de couleurs de plateforme sont :
 
-- iOS : Texte sombre sur un arrière-plan clair
-- Android : Texte sur un arrière-plan foncé (dans le livre) ou texte sombre sur un arrière-plan clair de lumière (pour Material Design via AppCompat dans le **master** branche de l’exemple de référentiel de code)
-- UWP : Texte sombre sur un arrière-plan clair
+- Libéré Texte foncé sur un arrière-plan clair
+- Tablette Texte clair sur un arrière-plan sombre (dans le livre) ou texte foncé sur un arrière-plan clair (pour la conception de matériau via AppCompat dans la branche **maître** de l’exemple de référentiel de code)
+- UWP Texte foncé sur un arrière-plan clair
 
 Le `Color.Accent` valeur les résultats dans une couleur spécifique à la plateforme (et parfois sélectionnables par l’utilisateur) qui est visible sur un arrière-plan sombre ou clair.
 
@@ -134,8 +134,6 @@ Le [ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-s
 [![Capture d’écran triple de variable mise en forme de paragraphe](images/ch03fg06-small.png "Variable au format texte d’étiquette")](images/ch03fg06-large.png#lightbox "Variable au format texte d’étiquette")
 
 Le [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) programme utilise un seul `Label` et un `FormattedString` objet pour afficher toutes les tailles de police nommé pour chaque plateforme.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

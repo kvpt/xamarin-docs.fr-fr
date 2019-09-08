@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f81a9d232e1702d112e837a80d35403162e3adca
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 116225165b8ee27b896d3de8598f8fbf39400f52
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529328"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767530"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Partie 5. Liaisons de données à MVVM
 
@@ -35,7 +35,7 @@ Le programme peut utiliser `x:Static` pour obtenir la date et heure actuelles à
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext`est une propriété très spéciale: Quand vous définissez la `BindingContext` sur un élément, elle est héritée par tous les enfants de cet élément. Cela signifie que tous les enfants de la `StackLayout` ont cette même `BindingContext`, et elles peuvent contenir des liaisons simples aux propriétés de cet objet.
+`BindingContext`est une propriété très spéciale : Quand vous définissez la `BindingContext` sur un élément, elle est héritée par tous les enfants de cet élément. Cela signifie que tous les enfants de la `StackLayout` ont cette même `BindingContext`, et elles peuvent contenir des liaisons simples aux propriétés de cet objet.
 
 Dans le **One-Shot DateTime** programme, deux des enfants contiennent des liaisons aux propriétés de le `DateTime` valeur, mais les deux autres enfants contiennent des liaisons qui semblent avoir disparu un chemin de liaison. Cela signifie que le `DateTime` valeur lui-même est utilisée pour le `StringFormat`:
 
@@ -298,7 +298,7 @@ La liaison sur chaque `Label` est la valeur par défaut `OneWay`. Il doit unique
 
 ## <a name="commanding-with-viewmodels"></a>Exécution de commandes avec les ViewModels
 
-Dans de nombreux cas, le modèle MVVM est limité à la manipulation d’éléments de données: Objets de l’interface utilisateur dans la vue Parallel Data Objects dans le ViewModel.
+Dans de nombreux cas, le modèle MVVM est limité à la manipulation d’éléments de données : Objets de l’interface utilisateur dans la vue Parallel Data Objects dans le ViewModel.
 
 Toutefois, la vue doit parfois contenir des boutons qui déclenchent des actions différentes dans le ViewModel. Mais le ViewModel ne doit pas contenir `Clicked` gestionnaires pour les boutons, car qui serait lier le ViewModel à un modèle d’interface utilisateur particulier.
 
@@ -702,12 +702,11 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin évoluer 2016: MVVM simplifié avec Xamarin. Forms et Prism**
+**Xamarin évoluer 2016 : MVVM simplifié avec Xamarin. Forms et Prism**
 
 ## <a name="summary"></a>Récapitulatif
 
 XAML est un outil puissant pour la définition des interfaces utilisateur dans les applications Xamarin.Forms, particulièrement lors de la liaison de données et MVVM sont utilisés. Le résultat est une représentation propre, élégante et potentiellement compatible avec les outils de l’interface utilisateur tout en arrière-plan prend en charge le code.
-
 
 ## <a name="related-links"></a>Liens associés
 

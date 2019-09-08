@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285597"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763206"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Distribution ad hoc pour les applications Xamarin.iOS
 
@@ -44,7 +44,6 @@ La section suivante décrit comment configurer un certificat de distribution et 
 <a name="createcertificate" />
 
 ## <a name="create-a-distribution-certificate"></a>Créer un certificat de distribution
-
 
 1. Accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils) du Member Center du programme Developer d’Apple.
 2. Sous *Certificates*, sélectionnez **Production**.
@@ -79,7 +78,6 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 
 ### <a name="create-an-app-id"></a>Créer un ID d’application
 Comme pour tout profil de provisionnement que vous créez, un ID d’application est nécessaire pour identifier l’application à distribuer sur l’appareil de l’utilisateur. Si vous ne l’avez pas déjà créé, suivez les étapes ci-dessous pour en créer un :
-
 
 1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
 2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
@@ -179,7 +177,6 @@ Pour plus d’informations sur la création d’un fichier IPA, consultez le gui
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit les mécanismes de distribution ad hoc, lesquels sont nécessaires au test des applications Xamarin.iOS.
-
 
 ## <a name="related-links"></a>Liens associés
 

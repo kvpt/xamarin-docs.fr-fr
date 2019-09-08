@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 17. Maîtrise de la grille
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 17. Maîtrise de la grille'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 17. Maîtrise de la grille'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333740"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760626"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Résumé du chapitre 17. Maîtrise de la grille
 
@@ -101,8 +101,6 @@ Le [ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree
 Le `Grid` peut aider à structurer un programme pour répondre aux changements d’orientation. Le [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders) exemple illustre une technique qui déplace un élément entre une deuxième ligne d’un téléphone orienté en mode portrait et la deuxième colonne d’un téléphone en mode paysage.
 
 Initialise le programme `Slider` éléments à une plage de 0 à 255 et utilise les liaisons de données pour afficher la valeur des curseurs au format hexadécimal. Étant donné que le `Slider` valeurs sont virgule flottante et la mise en forme de chaîne de format hexadécimal fonctionne uniquement avec des entiers, de .NET un [ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs) classe dans le [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) bibliothèque est utile.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

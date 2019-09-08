@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293146"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768687"
 ---
 # <a name="hello-watchos--walkthrough"></a>Bonjour, Watchos – procédure pas à pas
 
@@ -42,7 +42,6 @@ Vous devriez pouvoir exécuter votre application Watch maintenant, mais étant d
 
 Double-cliquez sur interface. Storyboard dans votre application Watch pour démarrer le concepteur iOS Xamarin (si vous êtes sur un Mac, vous pouvez également cliquer avec le bouton droit et **Ouvrir avec > Xcode Interface Builder**)
 
-
 1. Vérifiez que les panneaux **boîte à outils** et **Propriétés** sont visibles,
 1. Cliquez pour sélectionner le contrôleur d’interface.
 1. Définissez l’identificateur et le titre du contrôleur d’interface sur **interfaceController** et **AIM Watch**.
@@ -62,7 +61,6 @@ Double-cliquez sur interface. Storyboard dans votre application Watch pour effec
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "Définir l’identificateur et le titre du contrôleur d’interface sur interfaceController et AIM Watch")
 
 -----
-
 
 Créez votre interface utilisateur :
 
@@ -154,7 +152,6 @@ Au lancement du simulateur, appuyez sur le bouton pour incrémenter l’étiquet
 Félicitations, vous disposez d’une application de surveillance !
 
 ![](hello-watch-images/running.png "Application en cours d’exécution dans le simulateur")
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: 0592f80b7d7352463ba22d7d371cc1b18ac3e0be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bfc1bec06c773039529cd85aac604a9a9031cb54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655581"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773020"
 ---
 # <a name="the-skew-transform"></a>La transformation d’inclinaison
 
@@ -249,7 +249,6 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 L’ombre s’étend maintenant en bas de ces descendants :
 
 [![](skew-images/skewshadowtext3-small.png "Capture d’écran triple de la page de texte de clichés instantanés incliner avec ajustements pour hampes")](skew-images/skewshadowtext3-large.png#lightbox "Triple capture d’écran de la page de texte de clichés instantanés incliner avec ajustements pour hampes")
-
 
 ## <a name="related-links"></a>Liens associés
 

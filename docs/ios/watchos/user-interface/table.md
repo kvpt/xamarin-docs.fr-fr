@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291695"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766955"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Contrôles de table Watchos dans Xamarin
 
@@ -39,9 +39,6 @@ Pour définir la **classe** du contrôleur de ligne, sélectionnez la ligne dans
 
 Une fois que la classe du contrôleur de la ligne est définie, l’IDE crée un C# fichier correspondant dans le projet. Faites glisser des contrôles (tels que des étiquettes) sur la ligne et attribuez-leur des noms pour qu’ils puissent être référencés dans le code.
 
-
-
-
 ## <a name="create-and-populate-rows"></a>Créer et remplir des lignes
 
 `SetNumberOfRows`crée les classes de contrôleur de ligne pour chaque ligne, `Identifier` à l’aide de pour sélectionner le bon. Si vous avez donné un personnalisé `Identifier`à votre contrôleur de ligne, remplacez la **valeur par défaut** dans l’extrait de code ci-dessous par l’identificateur que vous avez utilisé. Le `RowController` *de chaque ligne* est créé lorsque `SetNumberOfRows` est appelé et que la table est affichée.
@@ -65,7 +62,6 @@ for (var i = 0; i < rows.Count; i++) {
 
 > [!IMPORTANT]
 > L' `SetNumberOfRows` utilisation de, puis la boucle `GetRowController` à l’aide de entraîne l’envoi de la table entière à la montre. Dans les vues suivantes de la table, si vous devez ajouter ou supprimer des lignes spécifiques `InsertRowsAt` , `RemoveRowsAt` utilisez et pour obtenir de meilleures performances.
-
 
 ## <a name="respond-to-taps"></a>Répondre aux pressions
 
@@ -142,7 +138,6 @@ for (var i = 0; i < rows.Count; i++) {
 }
 ```
 
-
 ## <a name="vertical-detail-paging"></a>Pagination des détails verticale
 
 Watchos 3 a introduit une nouvelle fonctionnalité pour les tables : la possibilité de faire défiler les pages de détails associées à chaque ligne, sans avoir à revenir à la table et à choisir une autre ligne. Vous pouvez faire défiler les écrans de détails en effectuant un balayage vers le haut ou vers le haut, ou en utilisant le Digital Crown.
@@ -210,8 +205,6 @@ namespace WatchTables.OnWatchExtension
 ```
 
 Les prises et les actions déclarées ici peuvent ensuite être référencées dans le code. Toutefois, le fichier **. Designer.cs** ne doit pas être modifié directement.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

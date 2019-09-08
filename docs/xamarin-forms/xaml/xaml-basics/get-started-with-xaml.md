@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227955"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772798"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
 
@@ -203,9 +203,9 @@ Le `ContentPage.Content` balises sont appelés *élément property* balises. `Co
 
 Notez également qu’un `Title` attribut a été défini sur la balise racine.
 
-À ce stade, la relation entre les classes, les propriétés et le XML doit être évidente: Une classe Xamarin. Forms (telle `ContentPage` que `Label`ou) apparaît dans le fichier XAML sous la forme d’un élément XML. Propriétés de la classe, y compris `Title` sur `ContentPage` et sept propriétés de `Label`— apparaissent généralement sous la forme d’attributs XML.
+À ce stade, la relation entre les classes, les propriétés et le XML doit être évidente : Une classe Xamarin. Forms (telle `ContentPage` que `Label`ou) apparaît dans le fichier XAML sous la forme d’un élément XML. Propriétés de la classe, y compris `Title` sur `ContentPage` et sept propriétés de `Label`— apparaissent généralement sous la forme d’attributs XML.
 
-Il existe de nombreux raccourcis pour définir les valeurs de ces propriétés. Certaines propriétés sont des types de données de base: Par exemple, les `Title` propriétés `Text` et sont de type `String`, `Rotation` est de type `Double`, et `IsVisible` (qui est `true` par défaut et qui est défini ici uniquement pour l’illustration) est de type `Boolean`.
+Il existe de nombreux raccourcis pour définir les valeurs de ces propriétés. Certaines propriétés sont des types de données de base : Par exemple, les `Title` propriétés `Text` et sont de type `String`, `Rotation` est de type `Double`, et `IsVisible` (qui est `true` par défaut et qui est défini ici uniquement pour l’illustration) est de type `Boolean`.
 
 Le `HorizontalTextAlignment` propriété est de type `TextAlignment`, qui est une énumération. Pour une propriété de n’importe quel type d’énumération, il vous suffit d’approvisionnement est un nom de membre.
 
@@ -448,8 +448,6 @@ N’hésitez pas. Il s’agit votre page et XAML est uniquement un outil permett
 ## <a name="summary"></a>Récapitulatif
 
 Avec cette présentation, vous avez vu comment un fichier XAML et le fichier de code contribuent à une définition de classe, et comment les fichiers XAML et code interagissent. Mais XAML possède également ses propres fonctionnalités syntaxiques uniques qui lui permettent d’être utilisé de manière très souple. Vous pouvez commencer à Explorer dans [partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

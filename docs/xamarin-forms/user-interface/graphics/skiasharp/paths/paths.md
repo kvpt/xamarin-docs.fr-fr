@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 370fec5b9323187f6345d3e6bf9d3e38145cedff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eee338461593ad131f679d32cadf63fe3b1a4c40
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652786"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759343"
 ---
 # <a name="path-basics-in-skiasharp"></a>Principes fondamentaux de chemin d’accès dans SkiaSharp
 
@@ -194,7 +194,6 @@ Voici le programme en cours d’exécution :
 [![](paths-images/strokejoins-small.png "Triple capture d’écran de la page Stroke joint")](paths-images/strokejoins-large.png#lightbox "Triple capture d’écran de la page joint de trait")
 
 Joint d’angle se compose d’un point aigu où les lignes de se connectent. Lorsque vous participez à deux lignes à un petit angle, la jointure de pointe peut devenir assez longue. Pour empêcher excessivement longs que les jointures, la longueur de la jointure de pointe est limitée par la valeur de la [ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter) propriété du `SKPaint`. Une jointure de pointe qui dépasse cette longueur est coupée en joint biseauté.
-
 
 ## <a name="related-links"></a>Liens associés
 

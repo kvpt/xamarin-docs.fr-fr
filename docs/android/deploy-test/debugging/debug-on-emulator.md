@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 133550bab03c4d2e3826ea59cf231ac3d85f29cc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 761b1a8b2c3fd97ca3f1560b79b042e0fd89da92
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525655"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754182"
 ---
 # <a name="debugging-on-the-android-emulator"></a>Débogage sur l’émulateur Android
 
 _Dans ce guide, vous allez découvrir comment lancer un appareil virtuel dans l’émulateur Android pour déboguer et tester votre application._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 L’émulateur Android (installé avec la charge de travail **Développement mobile avec .NET**) peut être exécuté dans diverses configurations pour simuler différents appareils Android. Chacune de ces configurations est créée comme _appareil virtuel_. Dans ce guide, vous allez découvrir comment lancer l’émulateur à partir de Visual Studio et exécuter votre application dans un appareil virtuel. Pour plus d’informations sur la configuration de l’émulateur Android et la création de nouveaux appareils virtuels, consultez [Configuration de l’émulateur Android](~/android/get-started/installation/android-emulator/index.md).
-
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Utilisation d’un appareil virtuel préconfiguré
 
@@ -65,7 +64,6 @@ En règle générale, vous sélectionnez l’appareil virtuel **Android\_Acceler
 ## <a name="editing-virtual-devices"></a>Modification d’appareils virtuels
 
 Pour modifier des appareils virtuels (ou en créer de nouveaux), vous devez utiliser [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
-
 
 <a name="launching" />
 
@@ -113,11 +111,9 @@ Les démarrages ultérieurs de l’appareil virtuel sont beaucoup plus rapides, 
 
 ![Chargement de l’état lors du redémarrage](debug-on-emulator-images/loading-state.png)
 
-
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
 Pour des conseils et des solutions de contournement aux problèmes courants d’émulateur, consultez [Résolution des problèmes d’émulateur Android](~/android/get-started/installation/android-emulator/troubleshooting.md).
-
 
 ## <a name="summary"></a>Récapitulatif
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 6475cd0f27e41321902b57dd28f59bfb250e0c8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511454"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757461"
 ---
 # <a name="android-pie-features"></a>Fonctionnalités du graphique Android
 
@@ -28,7 +28,7 @@ Xamarin. Android 9,0 fournit la prise en charge d’Android Pie. Pour plus d’i
 
 ## <a name="requirements"></a>Configuration requise
 
-La liste suivante est requise pour utiliser les fonctionnalités en secteurs Android dans les applications Xamarin:
+La liste suivante est requise pour utiliser les fonctionnalités en secteurs Android dans les applications Xamarin :
 
 - **Visual Studio** &ndash; Visual Studio 2019 est recommandé.
     Si vous utilisez Visual Studio 2017, sur Windows Update pour Visual Studio 2017 version 15,8 ou ultérieure. Sur macOS, mettez à jour vers Visual Studio 2017 pour Mac version 7,6 ou ultérieure.
@@ -41,7 +41,7 @@ La liste suivante est requise pour utiliser les fonctionnalités en secteurs And
 
 ## <a name="getting-started"></a>Prise en main
 
-Pour commencer à développer des applications en secteurs Android avec Xamarin. Android, vous devez télécharger et installer les derniers outils et packages du kit de développement logiciel (SDK) avant de pouvoir créer votre premier projet Android en secteurs:
+Pour commencer à développer des applications en secteurs Android avec Xamarin. Android, vous devez télécharger et installer les derniers outils et packages du kit de développement logiciel (SDK) avant de pouvoir créer votre premier projet Android en secteurs :
 
 1. Visual Studio 2019 est recommandé. Si vous utilisez Visual Studio 2017, mettez à jour vers [Visual studio 2017 version 15,8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) ou ultérieure. Si vous utilisez Visual Studio pour Mac, mettez à jour vers [Visual Studio 2017 pour Mac version 7,6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) ou ultérieure.
 
@@ -51,7 +51,7 @@ Pour commencer à développer des applications en secteurs Android avec Xamarin.
 
 4. Configurez un émulateur ou un appareil pour tester des applications en secteurs Android.
 
-Chacune de ces étapes est expliquée dans les sections suivantes:
+Chacune de ces étapes est expliquée dans les sections suivantes :
 
 ### <a name="update-visual-studio"></a>Mettre à jour Visual Studio 2017
 
@@ -69,7 +69,7 @@ Pour créer un projet avec Xamarin. Android 9,0, vous devez d’abord utiliser l
 
     [![Définition du référentiel sur Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
-3. Installer les packages du kit de développement logiciel (SDK) **Android Pie** , répertoriés comme **Android SDK plateforme 28** dans l’onglet **plateformes** (pour plus d’informations sur l’utilisation du gestionnaire du kit de développement logiciel (SDK), consultez [Android SDK le programme d’installation](~/android/get-started/installation/android-sdk.md)):
+3. Installer les packages du kit de développement logiciel (SDK) **Android Pie** , répertoriés comme **Android SDK plateforme 28** dans l’onglet **plateformes** (pour plus d’informations sur l’utilisation du gestionnaire du kit de développement logiciel (SDK), consultez [Android SDK le programme d’installation](~/android/get-started/installation/android-sdk.md)) :
 
     [![Installation des packages Android Pie](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
@@ -81,7 +81,6 @@ Créez un projet Xamarin. Android. Si vous débutez avec le développement Andro
 
 Lorsque vous créez un projet Android, vous devez configurer les paramètres de version pour cibler Android 9,0 ou une version ultérieure. Par exemple, pour cibler votre projet pour le secteur Android, vous devez configurer le niveau d’API Android cible de votre projet sur **android 9,0** (API 28). Nous vous recommandons également de définir le niveau de votre infrastructure cible sur l’API 28 ou une version ultérieure. Pour plus d’informations sur la configuration des niveaux d’API Android, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
 
-
 ### <a name="configure-a-device-or-emulator"></a>Configurer un appareil ou un émulateur
 
 Si vous utilisez un appareil physique, tel qu’un périphérique de passerelle ou un pixel, vous pouvez mettre à jour votre appareil vers un graphique Android en suivant les instructions fournies dans [images d’usine pour les appareils de type passerelle et pixel](https://developers.google.com/android/images).
@@ -89,37 +88,34 @@ Si vous utilisez un appareil physique, tel qu’un périphérique de passerelle 
 Si vous utilisez un émulateur, créez un appareil virtuel pour le niveau d’API 28 et sélectionnez une image x86. Pour plus d’informations sur l’utilisation de la Android Device Manager pour créer et gérer des appareils virtuels, consultez [gestion des appareils virtuels avec le Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md).
 Pour plus d’informations sur l’utilisation de l’émulateur Android à des fins de test et de débogage, consultez [débogage sur le émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
-
-
 ## <a name="new-features"></a>Nouvelles fonctionnalités
 
-Android Pie introduit une variété de nouvelles fonctionnalités. Certaines de ces nouvelles fonctionnalités sont destinées à tirer parti des nouvelles capacités matérielles offertes par les derniers appareils Android, tandis que d’autres sont conçues pour améliorer l’expérience des utilisateurs Android:
+Android Pie introduit une variété de nouvelles fonctionnalités. Certaines de ces nouvelles fonctionnalités sont destinées à tirer parti des nouvelles capacités matérielles offertes par les derniers appareils Android, tandis que d’autres sont conçues pour améliorer l’expérience des utilisateurs Android :
 
--   **Afficher la prise en charge** du découpage Fournit des API pour Rechercher l’emplacement et la forme du découpage en haut de l’écran sur les appareils Android plus récents. &ndash;
+- **Afficher la prise en charge du découpage** Fournit des API pour Rechercher l’emplacement et la forme du _découpage_ en haut de l’écran sur les appareils Android plus récents. &ndash;
 
--   **Améliorations** des notifications Les messages de notification peuvent désormais afficher des images, `Person` et une nouvelle classe est utilisée pour simplifier les participants aux conversations. &ndash;
+- **Améliorations des notifications** Les messages de notification peuvent désormais afficher des images, `Person` et une nouvelle classe est utilisée pour simplifier les participants aux conversations. &ndash;
 
--   **Positionnement intérieur** &ndash; Prise en charge de la plateforme pour le protocole WiFi aller-retour, ce qui permet aux applications d’utiliser des périphériques WiFi pour la navigation dans les paramètres intérieurs.
+- **Positionnement intérieur** &ndash; Prise en charge de la plateforme pour le protocole WiFi aller-retour, ce qui permet aux applications d’utiliser des périphériques WiFi pour la navigation dans les paramètres intérieurs.
 
--   **Prise en charge de plusieurs caméras** &ndash; Offre la possibilité d’accéder aux flux simultanément à partir de plusieurs caméras physiques (par exemple, les caméras à double avant et à deux arrière-plan).
-
+- **Prise en charge de plusieurs caméras** &ndash; Offre la possibilité d’accéder aux flux simultanément à partir de plusieurs caméras physiques (par exemple, les caméras à double avant et à deux arrière-plan).
 
 Les sections suivantes mettent en évidence ces fonctionnalités et fournissent de brefs exemples de code pour vous aider à commencer à les utiliser dans votre application.
 
 ### <a name="display-cutout-support"></a>Afficher la prise en charge du découpage
 
-De nombreux appareils Android plus récents avec des écrans de périphérie à bord ont un découpage d' *affichage* (ou «encoche») en haut de l’écran de l’appareil photo et de l’orateur.
-La capture d’écran suivante fournit un exemple d’émulateur d’un découpage:
+De nombreux appareils Android plus récents avec des écrans de périphérie à bord ont un *découpage d’affichage* (ou « encoche ») en haut de l’écran de l’appareil photo et de l’orateur.
+La capture d’écran suivante fournit un exemple d’émulateur d’un découpage :
 
 [![Émulateur Android simulant un découpage](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
-Pour gérer la façon dont votre fenêtre d’application affiche son contenu sur les appareils dotés d’un découpage d’affichage, Android Pie a ajouté un nouvel attribut de disposition de fenêtre [LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) . Cet attribut peut être défini sur l’une des valeurs suivantes:
+Pour gérer la façon dont votre fenêtre d’application affiche son contenu sur les appareils dotés d’un découpage d’affichage, Android Pie a ajouté un nouvel attribut de disposition de fenêtre [LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode) . Cet attribut peut être défini sur l’une des valeurs suivantes :
 
--   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; La fenêtre n’est jamais autorisée à chevaucher la zone de découpage.
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; La fenêtre n’est jamais autorisée à chevaucher la zone de découpage.
 
--   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; La fenêtre est autorisée à s’étendre dans la zone de découpage, mais uniquement sur les bords courts de l’écran. 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; La fenêtre est autorisée à s’étendre dans la zone de découpage, mais uniquement sur les bords courts de l’écran. 
 
--   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; La fenêtre est autorisée à s’étendre dans la zone de découpage si le découpage est contenu dans une barre système.
+- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; La fenêtre est autorisée à s’étendre dans la zone de découpage si le découpage est contenu dans une barre système.
 
 Par exemple, pour empêcher la fenêtre d’application de se chevaucher avec la zone de découpage, définissez le mode de découpage disposition sur *jamais*: 
 
@@ -128,7 +124,7 @@ Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-Les exemples suivants fournissent des exemples de ces modes de découpage. La première capture d’écran de gauche correspond à l’application en mode non plein écran. Dans la capture d’écran du centre, l’application s' `LayoutInDisplayCutoutMode` `LayoutInDisplayCutoutModeShortEdges`affiche en plein écran avec la valeur. Notez que l’arrière-plan blanc de l’application s’étend dans la zone de découpage de l’affichage:
+Les exemples suivants fournissent des exemples de ces modes de découpage. La première capture d’écran de gauche correspond à l’application en mode non plein écran. Dans la capture d’écran du centre, l’application s' `LayoutInDisplayCutoutMode` `LayoutInDisplayCutoutModeShortEdges`affiche en plein écran avec la valeur. Notez que l’arrière-plan blanc de l’application s’étend dans la zone de découpage de l’affichage :
 
 [![Exemple d’affichage des modes de découpage dans l’émulateur](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
@@ -137,29 +133,27 @@ Notez que l’arrière-plan blanc de l’application n’est pas autorisé à s�
 
 Si vous avez besoin d’informations plus détaillées sur la zone de découpage sur l’appareil, vous pouvez utiliser la nouvelle classe [DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html) . `DisplayCutout`représente la zone de l’affichage qui ne peut pas être utilisée pour afficher le contenu. Vous pouvez utiliser ces informations pour récupérer l’emplacement et la forme du découpage afin que votre application n’essaie pas d’afficher le contenu dans cette zone non fonctionnelle.
 
-Pour plus d’informations sur les nouvelles fonctionnalités de découpage dans Android P, consultez [afficher la prise en charge](https://developer.android.com/about/versions/pie/android-9.0#cutout)du découpage.
-
-
+Pour plus d’informations sur les nouvelles fonctionnalités de découpage dans Android P, consultez [afficher la prise en charge du découpage](https://developer.android.com/about/versions/pie/android-9.0#cutout).
 
 ### <a name="notifications-enhancements"></a>Améliorations des notifications
 
-Android Pie introduit les améliorations suivantes pour améliorer l’expérience de messagerie:
+Android Pie introduit les améliorations suivantes pour améliorer l’expérience de messagerie :
 
--   Les canaux de notification (introduits dans [Android Oreo](~/android/platform/oreo.md)) prennent désormais en charge le blocage des groupes de canaux.
+- Les canaux de notification (introduits dans [Android Oreo](~/android/platform/oreo.md)) prennent désormais en charge le blocage des groupes de canaux.
 
--   Le système de notification comporte trois nouvelles catégories de do-not-perturbation (hiérarchisation des alarmes, des sons système et des sources multimédias). En outre, il existe sept nouveaux modes de do-not-balancement qui peuvent être utilisés pour supprimer des interruptions visuelles (telles que les badges, les indicateurs de notification, les apparences de la barre d’État et le lancement d’activités plein écran).
+- Le système de notification comporte trois nouvelles catégories de do-not-perturbation (hiérarchisation des alarmes, des sons système et des sources multimédias). En outre, il existe sept nouveaux modes de do-not-balancement qui peuvent être utilisés pour supprimer des interruptions visuelles (telles que les badges, les indicateurs de notification, les apparences de la barre d’État et le lancement d’activités plein écran).
 
--   Une nouvelle classe [Person](https://developer.android.com/reference/android/app/Person.html) a été ajoutée pour représenter l’expéditeur d’un message. L’utilisation de cette classe permet d’optimiser le rendu de chaque notification en identifiant les personnes impliquées dans une conversation (y compris leurs avatars et URI).
+- Une nouvelle classe [Person](https://developer.android.com/reference/android/app/Person.html) a été ajoutée pour représenter l’expéditeur d’un message. L’utilisation de cette classe permet d’optimiser le rendu de chaque notification en identifiant les personnes impliquées dans une conversation (y compris leurs avatars et URI).
 
--   Les notifications peuvent maintenant afficher des images. 
+- Les notifications peuvent maintenant afficher des images. 
 
-L’exemple suivant montre comment utiliser les nouvelles API pour générer une notification qui contient une image. Dans les captures d’écran suivantes, une notification texte est publiée et est suivie d’une notification avec une image incorporée. Lorsque les notifications sont développées (comme vu à droite), le texte de la première notification s’affiche et l’image incorporée dans la deuxième notification est agrandie:
+L’exemple suivant montre comment utiliser les nouvelles API pour générer une notification qui contient une image. Dans les captures d’écran suivantes, une notification texte est publiée et est suivie d’une notification avec une image incorporée. Lorsque les notifications sont développées (comme vu à droite), le texte de la première notification s’affiche et l’image incorporée dans la deuxième notification est agrandie :
 
 [![Exemple de notification avec image](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-L’exemple suivant illustre l’inclusion d’une image dans une notification de secteur Android et montre l’utilisation de la nouvelle `Person` classe:
+L’exemple suivant illustre l’inclusion d’une image dans une notification de secteur Android et montre l’utilisation de la nouvelle `Person` classe :
 
-1. Créez un `Person` objet qui représente l’expéditeur. Par exemple, le nom et l’icône de l’expéditeur sont inclus `fromPerson`dans:
+1. Créez un `Person` objet qui représente l’expéditeur. Par exemple, le nom et l’icône de l’expéditeur sont inclus `fromPerson`dans :
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -206,15 +200,13 @@ L’exemple suivant illustre l’inclusion d’une image dans une notification d
 
 Pour plus d’informations sur la création de notifications, consultez [notifications locales](~/android/app-fundamentals/notifications/local-notifications.md).
 
-
 ### <a name="indoor-positioning"></a>Positionnement intérieur
 
-Android Pie assure la prise en charge de la norme IEEE 802.11 MC (également connue sous le nom d' _aller-retour WiFi_ ou _WiFi RTT_), ce qui permet aux applications de détecter la distance à un ou plusieurs points d’accès Wi-Fi. À l’aide de ces informations, votre application peut tirer parti du *positionnement intérieur* avec une précision d’un à deux mètres. Sur les appareils Android qui fournissent une prise en charge matérielle pour IEEE 801.11 MC, votre application peut proposer des fonctionnalités de navigation telles que le contrôle de l’emplacement des appareils intelligents ou les instructions de tour-de-main dans un magasin:
+Android Pie assure la prise en charge de la norme IEEE 802.11 MC (également connue sous le nom d' _aller-retour WiFi_ ou _WiFi RTT_), ce qui permet aux applications de détecter la distance à un ou plusieurs points d’accès Wi-Fi. À l’aide de ces informations, votre application peut tirer parti du *positionnement intérieur* avec une précision d’un à deux mètres. Sur les appareils Android qui fournissent une prise en charge matérielle pour IEEE 801.11 MC, votre application peut proposer des fonctionnalités de navigation telles que le contrôle de l’emplacement des appareils intelligents ou les instructions de tour-de-main dans un magasin :
 
 [![Exemple de navigation intérieure utilisant un RTT WiFi](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 La nouvelle classe [WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager) et plusieurs classes d’assistance fournissent les moyens de mesurer la distance aux périphériques Wi-Fi. Pour plus d’informations sur les API de positionnement intérieur introduites dans Android P, consultez [Android .net. WiFi. RTT](https://developer.android.com/reference/android/net/wifi/rtt/package-summary).
-
 
 ### <a name="multi-camera-support"></a>Prise en charge de plusieurs caméras
 
@@ -225,45 +217,40 @@ Android Pie comprend également une nouvelle classe [configurationsession](https
 
 Pour plus d’informations sur la prise en charge de plusieurs caméras dans Android P, consultez [prise en charge de plusieurs caméras et mises à jour de l’appareil photo](https://developer.android.com/about/versions/pie/android-9.0#camera).
 
-
 ### <a name="other-features"></a>Autres fonctionnalités
 
-En outre, Android Pie prend en charge plusieurs autres nouvelles fonctionnalités:
+En outre, Android Pie prend en charge plusieurs autres nouvelles fonctionnalités :
 
--   La nouvelle classe [AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) , qui peut être utilisée pour dessiner et afficher des images animées.
+- La nouvelle classe [AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html) , qui peut être utilisée pour dessiner et afficher des images animées.
 
--   Nouvelle classe [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) qui remplace `BitmapFactory`. `ImageDecoder`peut être utilisé pour décoder `AnimatedImageDrawable`un.
+- Nouvelle classe [ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html) qui remplace `BitmapFactory`. `ImageDecoder`peut être utilisé pour décoder `AnimatedImageDrawable`un.
 
--   Prise en charge des images HDR (haute dynamique Range) Video et HEIF (High EFFICACITE image file format).
+- Prise en charge des images HDR (haute dynamique Range) Video et HEIF (High EFFICACITE image file format).
 
--   Le [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html) a été amélioré pour gérer plus intelligemment les tâches liées au réseau. La nouvelle méthode [GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29) de la classe [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters) renvoie le meilleur réseau pour effectuer toutes les demandes réseau pour un travail donné.
+- Le [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html) a été amélioré pour gérer plus intelligemment les tâches liées au réseau. La nouvelle méthode [GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29) de la classe [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters) renvoie le meilleur réseau pour effectuer toutes les demandes réseau pour un travail donné.
 
 Pour plus d’informations sur les fonctionnalités les plus récentes du secteur Android, consultez [fonctionnalités et API Android 9](https://developer.android.com/about/versions/pie/android-9.0).
 
-
 ## <a name="behavior-changes"></a>Changements de comportement
 
-Lorsque la version d’Android cible est définie sur le niveau d’API 28, plusieurs modifications de plateforme peuvent affecter le comportement de votre application, même si vous n’implémentez pas les nouvelles fonctionnalités décrites ci-dessus. La liste suivante est un bref résumé de ces modifications:
+Lorsque la version d’Android cible est définie sur le niveau d’API 28, plusieurs modifications de plateforme peuvent affecter le comportement de votre application, même si vous n’implémentez pas les nouvelles fonctionnalités décrites ci-dessus. La liste suivante est un bref résumé de ces modifications :
 
--  Les applications doivent maintenant demander une autorisation de premier plan avant d’utiliser les services de premier plan.
+- Les applications doivent maintenant demander une autorisation de premier plan avant d’utiliser les services de premier plan.
 
--  Si votre application a plusieurs processus, elle ne peut pas partager un répertoire de données [WebView](xref:Android.Webkit.WebView) unique entre les processus.
+- Si votre application a plusieurs processus, elle ne peut pas partager un répertoire de données [WebView](xref:Android.Webkit.WebView) unique entre les processus.
 
--  L’accès direct au répertoire de données d’une autre application par chemin d’accès n’est plus autorisé.
+- L’accès direct au répertoire de données d’une autre application par chemin d’accès n’est plus autorisé.
 
 Pour plus d’informations sur les changements de comportement pour les applications ciblant Android P, consultez [changements de comportement](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps).
-
 
 ## <a name="sample-code"></a>Exemple de code
 
 [AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo) est un exemple d’application Xamarin. Android pour le secteur Android qui montre comment définir des modes de découpage d’affichage `Person` , comment utiliser la nouvelle classe et comment envoyer une notification incluant une image.
 
-
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté le secteur Android et a expliqué comment installer et configurer les outils et packages les plus récents pour le développement Xamarin. Android avec Android Pie. Il a fourni une vue d’ensemble des fonctionnalités clés disponibles dans Android Pie, avec un exemple de code source pour plusieurs de ces fonctionnalités.
 Elle contient des liens vers des rubriques de documentation sur les API et des développeurs Android qui vous aideront à créer des applications pour Android Pie. Elle a également mis en évidence les modifications de comportement les plus importantes du secteur Android susceptibles d’avoir un impact sur les applications existantes.
-
 
 ## <a name="related-links"></a>Liens connexes
 

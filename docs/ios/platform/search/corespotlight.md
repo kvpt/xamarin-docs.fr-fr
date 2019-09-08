@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 845257bc11d24865a01a992e99d39ad6c578b42c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00a973e670ff5100a44ba158fe50f134781a97e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291460"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769506"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>Rechercher avec Spotlight Core dans Xamarin. iOS
 
@@ -132,8 +132,6 @@ Core Spotlight offre les fonctionnalités suivantes qui permettent de conserver 
 - **Prise en charge des mises à jour par lot** : Si votre application doit créer ou modifier un grand groupe d’index simultanément, le lot entier peut être envoyé à `Index` la méthode de `CSSearchableIndex` la classe en un seul appel.
 - **Répondre aux modifications d’index** : l' `CSSearchableIndexDelegate` utilisation de votre application peut répondre aux modifications et aux notifications à partir de l’index pouvant faire l’objet d’une recherche.
 - **Appliquer la protection des données** : à l’aide des classes de protection des données, vous pouvez implémenter la sécurité sur les éléments que vous ajoutez à l’index pouvant faire l’objet d’une recherche à l’aide de Core Spotlight.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

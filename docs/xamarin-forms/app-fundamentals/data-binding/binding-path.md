@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b9658aa0a4222fb9d257299ea3c6fd69016abdb4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ca27b0ba0f9e434809250a78047f3bd503f80b50
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646747"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771642"
 ---
 # <a name="xamarinforms-binding-path"></a>Liaison de données Xamarin.Forms
 
@@ -162,8 +162,6 @@ Le type de la propriété `Content` est désormais révélé comme `Xamarin.Form
 Lorsque Xamarin.Forms traite le chemin de liaison, il installe un gestionnaire `PropertyChanged` sur n’importe quel objet dans le chemin qui implémente l’interface `INotifyPropertyChanged`. Par exemple, la liaison finale réagit à une modification dans le premier objet `Label`, car la propriété `Text` change.
 
 Si une propriété dans le chemin de liaison n’implémente pas `INotifyPropertyChanged`, toutes les modifications apportées à cette propriété sont ignorées. Certaines modifications pourraient invalider entièrement le chemin de liaison et vous devriez utiliser cette technique uniquement lorsque la chaîne des propriétés et les sous-propriétés ne deviennent jamais non valides.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

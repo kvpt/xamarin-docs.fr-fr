@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 6ff697964cbc057b4a3f905394d147d7c132d79b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4db5718394c3835861f3dfa8b99a4bac70e26981
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281950"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767015"
 ---
 # <a name="working-with-user-defaults-in-xamarinios"></a>Utilisation des paramètres par défaut de l’utilisateur dans Xamarin. iOS
 
 _Cet article traite de l’utilisation de NSUserDefault pour enregistrer les paramètres par défaut dans une application ou une extension Xamarin. iOS._
-
 
 La `NSUserDefaults` classe permet aux applications et extensions iOS d’interagir par programmation avec le système par défaut à l’ensemble du système. En utilisant le système par défaut, l’utilisateur peut configurer le comportement ou le style d’une application pour qu’elle réponde à ses préférences (en fonction de la conception de l’application). Par exemple, pour présenter des données dans les mesures métriques vs impériales ou sélectionner un thème d’interface utilisateur donné.
 
@@ -129,14 +128,11 @@ plist.SetBool(useHeader, "UseHeader");
 > [!IMPORTANT]
 > Lorsque votre application s’exécute pour la `NSUserDefaults` première fois, lit les clés et les valeurs de la base de données par défaut de l’utilisateur de l’application et les met en cache dans la mémoire pour éviter d’ouvrir et de lire la base de données chaque fois qu’une valeur est requise.
 
-
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la `NSUserDefaults` classe et comment elle peut être utilisée pour fournir un ensemble d’options que l’utilisateur final peut utiliser pour configurer votre application Xamarin. iOS. En outre, il a abordé l’utilisation des groupes d’applications pour communiquer entre une extension et son application parente ou entre les applications d’un groupe.
-
 
 ## <a name="related-links"></a>Liens associés
 

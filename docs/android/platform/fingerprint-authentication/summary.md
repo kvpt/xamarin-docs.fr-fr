@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 08738a751fd630c6a413b1c7393f8007f5c97060
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4d406b492e2f55604daf8a1c6b4be32f23b63f54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643548"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761231"
 ---
 # <a name="fingerprint-authentication-guidance"></a>Aide sur l’authentification par empreinte digitale
 
@@ -21,7 +21,7 @@ Maintenant que nous avons vu les concepts et les API entourant l’authentificat
 
 1. **Utiliser les API de compatibilité v4 de la bibliothèque de prise en charge Android** &ndash; Cela simplifie le code de l’application en supprimant la vérification de l’API du code et en permettant à une application de cibler le plus grand nombre d’appareils possible.
 2. **Fournir des alternatives à l’authentification par empreinte digitale** &ndash; L’authentification par empreinte digitale est un moyen formidable et rapide pour une application d’authentifier un utilisateur. Toutefois, il ne peut pas être supposé qu’elle fonctionnera toujours ou sera disponible. Il est possible que le scanneur d’empreintes digitales échoue, que l’objectif soit incorrect, que l’utilisateur n’ait pas configuré l’appareil pour utiliser l’authentification par empreinte digitale, ou que les empreintes digitales n’aient pas disparu. Il est également possible que l’utilisateur ne souhaite pas utiliser l’authentification par empreinte digitale avec votre application. Pour ces raisons, une application Android doit fournir un autre processus d’authentification, tel que le nom d’utilisateur et le mot de passe.
-3. **Utiliser l’icône d’empreintes de Google** &ndash; Toutes les applications doivent utiliser la même icône d’empreinte digitale fournie par Google. L’utilisation d’une icône standard permet aux utilisateurs Android de reconnaître facilement où l’authentification par empreinte digitale des applications est utilisée: 
+3. **Utiliser l’icône d’empreintes de Google** &ndash; Toutes les applications doivent utiliser la même icône d’empreinte digitale fournie par Google. L’utilisation d’une icône standard permet aux utilisateurs Android de reconnaître facilement où l’authentification par empreinte digitale des applications est utilisée : 
     
     ![Icône d’empreinte digitale Android](summary-images/ic-fp-40px.png)
     
@@ -34,8 +34,6 @@ L’authentification par empreinte digitale est un excellent moyen d’autoriser
 Tout d’abord, nous avons abordé les API `FingerprintManager` d’empreintes digitales, (et `FingerprintManagerCompat`). Nous avons examiné comment `FingerprintManager.AuthenticationCallbacks` la classe abstraite doit être étendue par une application et utilisée comme intermédiaire entre le matériel d’empreinte digitale et l’application elle-même. Ensuite, nous avons examiné comment vérifier l’intégrité des résultats de l’analyseur d' `Cipher` empreintes digitales à l’aide d’un objet Java. Enfin, nous avons abordé un peu sur les tests en décrivant comment inscrire une empreinte digitale sur un appareil et en utilisant **ADB** pour simuler un balayage par empreinte digitale sur un émulateur. 
 
 Si vous ne l’avez pas déjà fait, consultez l' [exemple d’application](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide) qui accompagne ce guide. L' [exemple de boîte de dialogue empreinte digitale](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog) a été porté de Java vers Xamarin. Android et fournit un autre exemple sur l’ajout de l’authentification par empreinte digitale à une application Android.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

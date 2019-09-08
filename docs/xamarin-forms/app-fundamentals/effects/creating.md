@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: f1c18c30a2da019fb9d1c09fac17c9f095dafedc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.openlocfilehash: c07848b808d023439c88117924e69c336984630b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739343"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771512"
 ---
 # <a name="creating-an-effect"></a>Création d’un effet
 
@@ -265,7 +265,6 @@ public HomePageCS ()
 ## <a name="summary"></a>Récapitulatif
 
 Cet article montre comment créer un effet qui change la couleur d’arrière-plan du contrôle [`Entry`](xref:Xamarin.Forms.Entry) quand le contrôle obtient le focus.
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650636"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771826"
 ---
 # <a name="custom-video-transport-controls"></a>Contrôles de transport vidéo personnalisés
 
@@ -522,7 +522,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>Boutons de lecture, de pause et d’arrêt
 
-L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces équivalents sont :
+L’utilisation de caractères Unicode pour les images **Lecture**, **Pause** et **Arrêt** symboliques est problématique. La section [Divers technique](https://unicode-table.com/en/blocks/miscellaneous-technical/) de la convention Unicode Standard définit trois symboles apparemment appropriés à cet effet. Ces règles sont les suivantes :
 
 - 0x23F5 (triangle noir moyen pointant vers la droite) ou &#x23F5; pour **Lecture**
 - 0x23F8 (double barre verticale) ou &#x23F8; pour **Pause**
@@ -656,7 +656,6 @@ Toutefois, sur Android et UWP, le bouton de **lecture** semble très différent 
 [![Transport personnalisé en pause](custom-transport-images/customtransportpaused-small.png "Transport personnalisé en pause")](custom-transport-images/customtransportpaused-large.png#lightbox "Transport personnalisé en pause")
 
 Dans une application de production, vous voudrez probablement utiliser vos propres images bitmap pour les boutons afin d’obtenir une uniformité visuelle.
-
 
 ## <a name="related-links"></a>Liens associés
 

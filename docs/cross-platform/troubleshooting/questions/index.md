@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 3b940199a1384540bcc9f7134dabf8b69ac3767e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285016"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765109"
 ---
 # <a name="general-frequently-asked-questions"></a>Forum aux questions (FAQ)
 
@@ -42,7 +42,6 @@ Il s’agissait de plusieurs composants Google Play Services et de packages NuGe
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[Où sont stockés les composants sur ma machine ?](component-storage.md)
 Chaque fois que vous installez un composant Xamarin dans un projet d’application, il est placé aux deux emplacements listés dans ce guide.
 
-
 ## <a name="troubleshooting"></a>Résolution des problèmes
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[Où trouver les informations sur ma version et les journaux ?](version-logs.md)
 Ce guide explique comment trouver la plupart des informations de diagnostic qui peuvent être utilisées pour résoudre les problèmes liés à Xamarin.
@@ -55,4 +54,3 @@ Jenkins est une suite d’intégration open source. en raison de ce nombre de pr
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[Quels sont les paramètres de projet requis pour le débogueur ?](debugger-settings.md)
 Pour que le débogueur fonctionne comme prévu (points d’arrêt atteints, afficher les journaux de débogage, etc.), l’affichage des informations de débogage et l’instrumentation du développeur doivent être activés. Ce guide explique en détail comment rechercher et activer ces paramètres.
-

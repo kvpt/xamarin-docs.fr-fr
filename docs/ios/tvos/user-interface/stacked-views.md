@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: a48e7bd780783a7b33008a5d86011f5497b042d5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 194f1a260adc49083a8d4365a310447acbcc96f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287976"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769018"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Utilisation des vues empilées tvOS dans Xamarin
 
@@ -74,9 +74,6 @@ Si la `BaselineRelativeArrangement` propriété est `true`, les sous-affichages 
 
 > [!IMPORTANT]
 > L’alignement de la ligne de base ne fonctionne pas sur les tailles de sous-affichage étirées ou compressées, car la ligne de base est calculée à la mauvaise position. Pour l’alignement de ligne de base, vérifiez que la **hauteur** de la sous-vue correspond à la **hauteur**de l’affichage de contenu intrinsèque.
-
-
-
 
 <a name="Common-Stack-View-Uses" />
 
@@ -309,8 +306,6 @@ La plupart des propriétés de la vue de la pile peuvent être spécifiées à l
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation de la vue empilée dans une application Xamarin. tvOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

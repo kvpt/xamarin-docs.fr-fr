@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 3e5ce4496b4a2deb86bb2b7dd6d36e5e9b3f446c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f914a158135d34b59fa3d1b95972c988a44dd36b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287574"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765980"
 ---
 # <a name="introduction-to-web-services"></a>Introduction aux services web
 
@@ -181,7 +181,6 @@ client.GetAsync<CustomersResponse>("",
 
 > [!IMPORTANT]
 > Bien que les outils tels que ServiceStack et RestSharp facilitent l’appel et l’utilisation des services REST, il est parfois difficile de consommer du code XML ou JSON qui n’est pas conforme aux conventions de sérialisation _DataContract_ standard. Si nécessaire, appelez la demande et gérez explicitement la sérialisation appropriée à l’aide de la bibliothèque ServiceStack. Text présentée ci-dessous.
-
 
 <a name="Options_for_consuming_RESTful_data" />
 

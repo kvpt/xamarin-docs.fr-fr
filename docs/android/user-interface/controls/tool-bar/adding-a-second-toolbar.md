@@ -6,24 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9fb5c696e830710e6ad99140477eedcbfe0e8823
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522877"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764690"
 ---
 # <a name="adding-a-second-toolbar"></a>Ajout d’une seconde barre d’outils
-
 
 ## <a name="overview"></a>Présentation 
 
 Le `Toolbar` peut faire plus que remplacer la barre &ndash; d’action il peut être utilisé plusieurs fois dans une activité, il peut être personnalisé pour un positionnement n’importe où sur l’écran et il peut être configuré pour couvrir uniquement une largeur partielle de l’écran. Les exemples ci-dessous montrent comment créer une `Toolbar` seconde et la placer au bas de l’écran. Cela `Toolbar` implémente les éléments de menu **copier**, **couper**et **coller** . 
 
-
 ## <a name="define-the-second-toolbar"></a>Définir la deuxième barre d’outils 
 
-Modifiez le fichier de disposition **main. AXML** et remplacez son contenu par le code XML suivant:
+Modifiez le fichier de disposition **main. AXML** et remplacez son contenu par le code XML suivant :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -54,13 +52,13 @@ Modifiez le fichier de disposition **main. AXML** et remplacez son contenu par l
 </RelativeLayout>
 ```
 
-Ce code XML ajoute une `Toolbar` seconde au bas de l’écran avec un remplissage `ImageView` vide au milieu de l’écran. La hauteur de ce `Toolbar` est définie sur la hauteur d’une barre d’action: 
+Ce code XML ajoute une `Toolbar` seconde au bas de l’écran avec un remplissage `ImageView` vide au milieu de l’écran. La hauteur de ce `Toolbar` est définie sur la hauteur d’une barre d’action : 
 
 ```xml
 android:minHeight="?android:attr/actionBarSize"
 ```
 
-La couleur d’arrière- `Toolbar` plan de ce est définie sur une couleur d’accentuation qui sera définie ensuite:
+La couleur d’arrière- `Toolbar` plan de ce est définie sur une couleur d’accentuation qui sera définie ensuite :
 
 ```xml
 android:background="?android:attr/colorAccent
@@ -68,23 +66,21 @@ android:background="?android:attr/colorAccent
 
 Notez que cela `Toolbar` est basé sur un autre thème (**ThemeOverlay. Material. Dark. barre**) que celui utilisé par le `Toolbar` créé lors du [remplacement de l’barre d’action](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md) &ndash; il n’est pas lié à la fenêtre décor de l’activité ou à Thème utilisé dans le premier `Toolbar`.
 
-Modifiez les **ressources/valeurs/styles. xml** et ajoutez la couleur d’accentuation suivante à la définition de style: 
+Modifiez les **ressources/valeurs/styles. xml** et ajoutez la couleur d’accentuation suivante à la définition de style : 
 
 ```xml
 <item name="android:colorAccent">#C7A935</item>
 ```
 
-Cela donne à la barre d’outils inférieure une couleur orange foncée. La génération et l’exécution de l’application affichent une deuxième barre d’outils vide au bas de l’écran: 
+Cela donne à la barre d’outils inférieure une couleur orange foncée. La génération et l’exécution de l’application affichent une deuxième barre d’outils vide au bas de l’écran : 
 
 [![Capture d’écran de l’application avec une deuxième barre d’outils jaune en bas de l’écran](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
-
- 
 ## <a name="add-edit-menu-items"></a>Ajouter des éléments de menu Edition 
 
 Cette section explique comment ajouter des éléments de menu Edition en bas `Toolbar`. 
 
-Pour ajouter des éléments de menu à `Toolbar`un réplica secondaire: 
+Pour ajouter des éléments de menu à `Toolbar`un réplica secondaire : 
 
 1. Ajoutez des icônes de menu `mipmap-` aux dossiers du projet d’application (si nécessaire).
 
@@ -94,13 +90,11 @@ Pour ajouter des éléments de menu à `Toolbar`un réplica secondaire:
 
 4. Implémentez un gestionnaire de `OnCreate` clic dans pour les nouveaux éléments de menu. 
 
-Les sections suivantes illustrent ce processus en détail: Les éléments de menu **couper**, **copier**et **coller** sont ajoutés en bas `Toolbar`. 
-
-
+Les sections suivantes illustrent ce processus en détail : Les éléments de menu **couper**, **copier**et **coller** sont ajoutés en bas `Toolbar`. 
 
 ### <a name="define-the-edit-menu-resource"></a>Définir la ressource du menu Edition
 
-Dans le sous-répertoire **ressources/menu** , créez un nouveau fichier XML appelé **edit_menus. xml** et remplacez le contenu par le code XML suivant:
+Dans le sous-répertoire **ressources/menu** , créez un nouveau fichier XML appelé **edit_menus. xml** et remplacez le contenu par le code XML suivant :
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -125,11 +119,9 @@ Dans le sous-répertoire **ressources/menu** , créez un nouveau fichier XML app
 
 Ce code XML crée les éléments de menu **couper**, **copier**et **coller** (à l’aide des icônes `mipmap-` qui ont été ajoutées aux dossiers lors du [remplacement du barre d’action](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
-
-
 ### <a name="inflate-the-menus"></a>Gonfler les menus
 
-À la fin de la `OnCreate` méthode dans **MainActivity.cs**, ajoutez les lignes de code suivantes: 
+À la fin de la `OnCreate` méthode dans **MainActivity.cs**, ajoutez les lignes de code suivantes : 
 
 ```csharp
 var editToolbar = FindViewById<Toolbar>(Resource.Id.edit_toolbar);
@@ -140,28 +132,26 @@ editToolbar.MenuItemClick += (sender, e) => {
 };
 ```
 
-Ce code localise la `edit_toolbar` vue définie dans **main. AXML**, affecte à son titrela valeur Editing et déflate ses éléments de menu (définis dans **edit_menus. xml**). Il définit un gestionnaire de clic de menu qui affiche un toast pour indiquer l’icône de modification qui a été exploitée. 
+Ce code localise la `edit_toolbar` vue définie dans **main. AXML**, affecte à son titre la valeur **Editing**et déflate ses éléments de menu (définis dans **edit_menus. xml**). Il définit un gestionnaire de clic de menu qui affiche un toast pour indiquer l’icône de modification qui a été exploitée. 
 
-Générez et exécutez l’application. Lorsque l’application s’exécute, le texte et les icônes ajoutés ci-dessus s’affichent comme indiqué ici: 
+Générez et exécutez l’application. Lorsque l’application s’exécute, le texte et les icônes ajoutés ci-dessus s’affichent comme indiqué ici : 
 
 [![Diagramme de la barre d’outils inférieure avec les icônes couper, copier et coller](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
-Si vous appuyez sur l’icône de menu **couper** , le Toast suivant s’affiche: 
+Si vous appuyez sur l’icône de menu **couper** , le Toast suivant s’affiche : 
 
 [![Capture d’écran de Toast indiquant que l’icône de menu couper a été frappée](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
-Le fait de cliquer sur les éléments de menu de l’une des barres d’outils affiche les toasts résultants: 
+Le fait de cliquer sur les éléments de menu de l’une des barres d’outils affiche les toasts résultants : 
 
 [![Captures d’écran de toasts pour les éléments de menu enregistrer, copier et coller faisant l’objet d’un clic](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
-
-
 
 ## <a name="the-up-button"></a>Bouton haut 
 
 La plupart des applications Android s’appuient sur le bouton **précédent** pour la navigation dans les applications. le fait d’appuyer sur le bouton **précédent** amène l’utilisateur à l’écran précédent.
 Toutefois, vous pouvez également fournir un bouton **haut** qui permet aux utilisateurs de naviguer facilement vers l’écran principal de l’application. Lorsque l’utilisateur sélectionne le bouton **haut** , l’utilisateur passe à un niveau supérieur dans la hiérarchie &ndash; de l’application, qui est, l’application dépile l’utilisateur de plusieurs activités dans la pile de retour plutôt que de revenir à l’activité précédemment visitée. 
 
-Pour activer le bouton **haut** dans une deuxième activité qui utilise un `Toolbar` comme barre d’action, appelez les `SetDisplayHomeAsUpEnabled` méthodes `SetHomeButtonEnabled` et dans la méthode de `OnCreate` la deuxième activité:
+Pour activer le bouton **haut** dans une deuxième activité qui utilise un `Toolbar` comme barre d’action, appelez les `SetDisplayHomeAsUpEnabled` méthodes `SetHomeButtonEnabled` et dans la méthode de `OnCreate` la deuxième activité :
 
 ```csharp
 SetActionBar (toolbar);
@@ -170,7 +160,7 @@ ActionBar.SetDisplayHomeAsUpEnabled (true);
 ActionBar.SetHomeButtonEnabled (true);
 ```
 
-L’exemple de code de la [barre d’outils support v7](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar) illustre le bouton **haut** en action. Cet exemple (qui utilise la bibliothèque AppCompat décrite ci-après) implémente une deuxième activité qui utilise le bouton **haut** de la barre d’outils pour la navigation hiérarchique vers l’activité précédente. Dans cet exemple, le `DetailActivity` bouton d’origine active le bouton **haut** en effectuant `SupportActionBar` les appels de méthode suivants: 
+L’exemple de code de la [barre d’outils support v7](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar) illustre le bouton **haut** en action. Cet exemple (qui utilise la bibliothèque AppCompat décrite ci-après) implémente une deuxième activité qui utilise le bouton **haut** de la barre d’outils pour la navigation hiérarchique vers l’activité précédente. Dans cet exemple, le `DetailActivity` bouton d’origine active le bouton **haut** en effectuant `SupportActionBar` les appels de méthode suivants : 
 
 ```csharp
 SetSupportActionBar (toolbar);
@@ -179,13 +169,11 @@ SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 SupportActionBar.SetHomeButtonEnabled (true);
 ```
 
-Quand l’utilisateur navigue de `MainActivity` vers `DetailActivity`, le `DetailActivity` affiche un bouton vers le **haut** (flèche pointant vers la gauche) comme indiqué dans la capture d’écran:
+Quand l’utilisateur navigue de `MainActivity` vers `DetailActivity`, le `DetailActivity` affiche un bouton vers le **haut** (flèche pointant vers la gauche) comme indiqué dans la capture d’écran :
 
 [![Capture d’écran exemple de flèche gauche dans la barre d’outils](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
-Si vous Appuyez sur ce bouton, l’application retourne `MainActivity`à. Dans une application plus complexe avec plusieurs niveaux de hiérarchie, le fait d’appuyer sur ce bouton permet de ramener l’utilisateur au niveau le plus élevé suivant dans l’application plutôt qu’à l’écran précédent. 
-
-
+Si vous appuyez **sur ce bouton** , l’application retourne `MainActivity`à. Dans une application plus complexe avec plusieurs niveaux de hiérarchie, le fait d’appuyer sur ce bouton permet de ramener l’utilisateur au niveau le plus élevé suivant dans l’application plutôt qu’à l’écran précédent. 
 
 ## <a name="related-links"></a>Liens associés
 

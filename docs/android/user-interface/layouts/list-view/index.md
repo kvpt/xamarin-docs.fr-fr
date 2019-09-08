@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: c40d21a95db564d0fdcbea5772a88e94446c07ce
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5c9a11073a7e65d90e0776d0b43c9e3bd100a10d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887525"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758638"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin. Android ListView
 
@@ -38,7 +38,7 @@ Dans ce didacticiel, vous allez créer une liste déroulante de noms de pays qui
 
 Démarrez un nouveau projet nommé **HelloListView**.
 
-Créez un fichier XML nommé **list_item. xml** et enregistrez-le dans le dossier Resources **/Layout/** . Insérez ce qui suit:
+Créez un fichier XML nommé **list_item. xml** et enregistrez-le dans le dossier **Resources/layout/** . Insérez ce qui suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -52,14 +52,14 @@ Créez un fichier XML nommé **list_item. xml** et enregistrez-le dans le dossie
 
 Ce fichier définit la disposition de chaque élément qui sera placé dans le [`ListView`](xref:Android.Widget.ListView).
 
-Ouvrez `MainActivity.cs` et modifiez la classe pour étendre [`ListActivity`](xref:Android.App.ListActivity) (au lieu [`Activity`](xref:Android.App.Activity)de):
+Ouvrez `MainActivity.cs` et modifiez la classe pour étendre [`ListActivity`](xref:Android.App.ListActivity) (au lieu [`Activity`](xref:Android.App.Activity)de) :
 
 ```csharp
 public class MainActivity : ListActivity
 {
 ```
 
-Insérez le code suivant pour la [`OnCreate()`](xref:Android.App.Activity.OnCreate*)méthode):
+Insérez le code suivant pour la [`OnCreate()`](xref:Android.App.Activity.OnCreate*)méthode) :
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -104,7 +104,7 @@ Ajoutez l'instruction `using` suivante :
 using System;
 ```
 
-Ensuite, ajoutez le tableau de chaînes suivant en tant que `MainActivity`membre de:
+Ensuite, ajoutez le tableau de chaînes suivant en tant que `MainActivity`membre de :
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -159,7 +159,7 @@ Exécutez l'application. Vous pouvez faire défiler la liste ou taper pour la fi
 [![Exemple de capture d’écran de ListView avec les noms de pays](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 Notez que l’utilisation d’un tableau de chaînes codées en dur n’est pas la meilleure pratique de conception. L’un est utilisé dans ce didacticiel pour des raisons de simplicité, afin d’illustrer le[`ListView`](xref:Android.Widget.ListView)
-sélection. La meilleure pratique consiste à référencer un tableau de chaînes défini par une ressource externe, par exemple `string-array` avec une ressource dans le fichier Resources **/values/Strings. xml** du projet. Par exemple :
+sélection. La meilleure pratique consiste à référencer un tableau de chaînes défini par une ressource externe, par exemple `string-array` avec une ressource dans le fichier **Resources/values/Strings. xml** du projet. Par exemple :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -178,7 +178,7 @@ sélection. La meilleure pratique consiste à référencer un tableau de chaîne
 ```
 
 Pour utiliser ces chaînes de ressources pour [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)le, remplacez l’original[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
-ligne avec les éléments suivants:
+ligne avec les éléments suivants :
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
@@ -214,11 +214,9 @@ La discussion (divisée en six parties) commence par une vue d' `ListView` ensem
 - [Utilisation d’un ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
 - [ListView et le cycle de vie des activités](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
-
 ## <a name="summary"></a>Récapitulatif
 
 Cet ensemble de rubriques a `ListView` présenté et fourni des exemples d’utilisation des fonctionnalités intégrées `ListActivity`de. Il a abordé les implémentations `ListView` personnalisées de qui étaient autorisées pour les dispositions colorées et l’utilisation d’une base de données SQLite, et elle a rapidement `ListView` touché la pertinence du cycle de vie de l’activité sur votre implémentation.
-
 
 ## <a name="related-links"></a>Liens associés
 

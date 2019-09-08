@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: e934dd0f35b7c734228d637fe646d0e2c20e9dad
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522541"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758622"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Remplissage d’un ListView Xamarin. Android avec des données
 
@@ -21,7 +21,7 @@ Les adaptateurs intégrés prennent un ID de ressource de vue en tant que param�
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>Utilisation de la chaîne&lt;ListActivity et ArrayAdapter&gt;
 
-L’exemple **BasicTable/homescreen. cs** montre comment utiliser ces classes pour afficher un `ListView` en seulement quelques lignes de code:
+L’exemple **BasicTable/homescreen. cs** montre comment utiliser ces classes pour afficher un `ListView` en seulement quelques lignes de code :
 
 ```csharp
 [Activity(Label = "BasicTable", MainLauncher = true, Icon = "@drawable/icon")]
@@ -37,10 +37,9 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-
 ### <a name="handling-row-clicks"></a>Gestion des clics de ligne
 
-En général `ListView` , un permet également à l’utilisateur de toucher une ligne pour effectuer une action (par exemple, la diffusion d’une chanson, l’appel d’un contact ou l’affichage d’un autre écran). Pour répondre aux touches de l’utilisateur, il doit y avoir une autre méthode `ListActivity` implémentée de &ndash; la `OnListItemClick` &ndash; manière suivante:
+En général `ListView` , un permet également à l’utilisateur de toucher une ligne pour effectuer une action (par exemple, la diffusion d’une chanson, l’appel d’un contact ou l’affichage d’un autre écran). Pour répondre aux touches de l’utilisateur, il doit y avoir une autre méthode `ListActivity` implémentée de &ndash; la `OnListItemClick` &ndash; manière suivante :
 
 [![Capture d’écran d’un SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
@@ -52,15 +51,14 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 }
 ```
 
-L’utilisateur peut maintenant toucher une ligne et une `Toast` alerte s’affiche:
+L’utilisateur peut maintenant toucher une ligne et une `Toast` alerte s’affiche :
 
 [![Capture d’écran du Toast qui apparaît lorsqu’une ligne est touchée](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
-
 
 ## <a name="implementing-a-listadapter"></a>Implémentation d’un ListAdapter
 
 `ArrayAdapter<string>`est parfait en raison de sa simplicité, mais il est extrêmement limité. Toutefois, il arrive souvent que vous ayez une collection d’entités métier, plutôt que simplement des chaînes que vous souhaitez lier.
-Par exemple, si vos données se composent d’une collection de classes Employee, vous souhaiterez peut-être que la liste affiche simplement les noms de chaque employé. Pour personnaliser le comportement d’un `ListView` objet afin de contrôler les données affichées, vous devez implémenter une `BaseAdapter` sous-classe de remplacement des quatre éléments suivants:
+Par exemple, si vos données se composent d’une collection de classes Employee, vous souhaiterez peut-être que la liste affiche simplement les noms de chaque employé. Pour personnaliser le comportement d’un `ListView` objet afin de contrôler les données affichées, vous devez implémenter une `BaseAdapter` sous-classe de remplacement des quatre éléments suivants :
 
 - **Nombre** &ndash; Pour indiquer au contrôle le nombre de lignes dans les données.
 
@@ -71,7 +69,7 @@ Par exemple, si vos données se composent d’une collection de classes Employee
 
 - Cet indexeur &ndash; **[int]** retourne les données associées à un numéro de ligne particulier.
 
-L’exemple de code dans **BasicTableAdapter/HomeScreenAdapter. cs** montre comment effectuer une `BaseAdapter`sous-classe:
+L’exemple de code dans **BasicTableAdapter/HomeScreenAdapter. cs** montre comment effectuer une `BaseAdapter`sous-classe :
 
 ```csharp
 public class HomeScreenAdapter : BaseAdapter<string> {
@@ -102,10 +100,9 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-
 ### <a name="using-a-custom-adapter"></a>Utilisation d’un adaptateur personnalisé
 
-L’utilisation de l’adaptateur personnalisé est similaire à celle intégrée `ArrayAdapter`, en passant un `context` et les `string[]` valeurs de à afficher:
+L’utilisation de l’adaptateur personnalisé est similaire à celle intégrée `ArrayAdapter`, en passant un `context` et les `string[]` valeurs de à afficher :
 
 ```csharp
 ListAdapter = new HomeScreenAdapter(this, items);
@@ -113,12 +110,11 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 Étant donné que cet exemple utilise la même disposition`SimpleListItem1`de ligne (), l’application obtenue sera identique à l’exemple précédent.
 
-
 ### <a name="row-view-re-use"></a>Réutilisation de la vue de ligne
 
 Dans cet exemple, il n’y a que six éléments. Étant donné que l’écran peut contenir huit, aucune réutilisation de ligne n’est requise. Toutefois, lors de l’affichage de centaines ou de milliers de lignes, il s’agit d’un gaspillage de mémoire `View` pour créer des centaines ou des milliers d’objets lorsque seulement huit s’adaptent à l’écran à la fois. Pour éviter cette situation, lorsqu’une ligne disparaît de l’écran, sa vue est placée dans une file d’attente en vue de sa réutilisation. Au fur et à mesure que l' `ListView` utilisateur `GetView` fait défiler, les &ndash; appels pour demander de nouvelles vues s’affichent s' `convertView` ils sont disponibles et passent une vue inutilisée dans le paramètre. Si cette valeur est null, votre code doit créer une nouvelle instance de vue, sinon vous pouvez redéfinir les propriétés de cet objet et le réutiliser.
 
-La `GetView` méthode doit suivre ce modèle pour réutiliser les vues de lignes:
+La `GetView` méthode doit suivre ce modèle pour réutiliser les vues de lignes :
 
 ```csharp
 public override View GetView(int position, View convertView, ViewGroup parent)
@@ -137,34 +133,31 @@ Les implémentations d’adaptateur personnalisées doivent *toujours* réutilis
 
 Certaines implémentations d’adaptateur (telles que `CursorAdapter`) n’ont pas `GetView` de méthode, mais elles nécessitent deux méthodes `NewView` différentes `BindView` et qui appliquent la réutilisation de lignes en séparant `GetView` les responsabilités de en deux leurs. Un `CursorAdapter` exemple se trouve plus loin dans le document.
 
-
 ## <a name="enabling-fast-scrolling"></a>Activation du défilement rapide
 
-Le défilement rapide aide l’utilisateur à faire défiler les longues listes en fournissant un «handle» supplémentaire qui agit comme une barre de défilement pour accéder directement à une partie de la liste. Cette capture d’écran montre la poignée de défilement rapide:
+Le défilement rapide aide l’utilisateur à faire défiler les longues listes en fournissant un « handle » supplémentaire qui agit comme une barre de défilement pour accéder directement à une partie de la liste. Cette capture d’écran montre la poignée de défilement rapide :
 
 [![Capture d’écran du défilement rapide avec une poignée de défilement](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
-L’affichage de la poignée de défilement rapide est aussi simple que l’affectation `FastScrollEnabled` de la `true`valeur à la propriété:
+L’affichage de la poignée de défilement rapide est aussi simple que l’affectation `FastScrollEnabled` de la `true`valeur à la propriété :
 
 ```csharp
 ListView.FastScrollEnabled = true;
 ```
 
-
 ### <a name="adding-a-section-index"></a>Ajout d’un index de section
 
-Un index de section fournit des commentaires supplémentaires aux utilisateurs lorsqu’ils défilent rapidement dans une longue &ndash; liste, il affiche la «section» vers laquelle ils ont fait défiler. Pour que l’index de section apparaisse, la sous-classe d' `ISectionIndexer` adaptateur doit implémenter l’interface pour fournir le texte de l’index en fonction des lignes affichées:
+Un index de section fournit des commentaires supplémentaires aux utilisateurs lorsqu’ils défilent rapidement dans une longue &ndash; liste, il affiche la « section » vers laquelle ils ont fait défiler. Pour que l’index de section apparaisse, la sous-classe d' `ISectionIndexer` adaptateur doit implémenter l’interface pour fournir le texte de l’index en fonction des lignes affichées :
 
 [![Capture d’écran de l’affichage de la section ci-dessus commençant par H](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
-Pour implémenter `ISectionIndexer` , vous devez ajouter trois méthodes à un adaptateur:
+Pour implémenter `ISectionIndexer` , vous devez ajouter trois méthodes à un adaptateur :
 
 - **GetSections** &ndash; Fournit la liste complète des titres d’index de section qui peuvent être affichés. Cette méthode nécessite un tableau d’objets Java afin que le code doive créer un `Java.Lang.Object[]` à partir d’une collection .net. Dans notre exemple, elle retourne une liste des caractères initiaux de la liste `Java.Lang.String` sous la forme.
 
 - **GetPositionForSection** &ndash; Retourne la position de la première ligne d’un index de section donné.
 
 - **GetSectionForPosition** &ndash; Retourne l’index de la section à afficher pour une ligne donnée.
-
 
 L’exemple `SectionIndex/HomeScreenAdapter.cs` de fichier implémente ces méthodes, ainsi que du code supplémentaire dans le constructeur. Le constructeur génère l’index de section en effectuant une boucle sur chaque ligne et en extrayant le premier caractère du titre (les éléments doivent déjà être triés pour que cela fonctionne).
 
@@ -185,7 +178,7 @@ for (int i = 0; i < sections.Length; i++) {
 }
 ```
 
-Avec les structures de données créées, `ISectionIndexer` les méthodes sont très simples:
+Avec les structures de données créées, `ISectionIndexer` les méthodes sont très simples :
 
 ```csharp
 public Java.Lang.Object[] GetSections()
@@ -212,9 +205,7 @@ public int GetSectionForPosition(int position)
 ```
 
 Vos titres d’index de section n’ont pas besoin de mapper 1:1 à vos sections réelles. C’est la raison `GetPositionForSection` pour laquelle la méthode existe.
-`GetPositionForSection`vous donne la possibilité de mapper tous les index de votre liste d’index vers les sections qui sont en mode liste. Par exemple, vous pouvez avoir un «z» dans votre index, mais vous ne disposez peut-être pas d’une section de table pour chaque lettre. par conséquent, au lieu de mapper «z» à 26, il peut être mappé à 25 ou 24, ou à tout index de section «z».
-
-
+`GetPositionForSection`vous donne la possibilité de mapper tous les index de votre liste d’index vers les sections qui sont en mode liste. Par exemple, vous pouvez avoir un « z » dans votre index, mais vous ne disposez peut-être pas d’une section de table pour chaque lettre. par conséquent, au lieu de mapper « z » à 26, il peut être mappé à 25 ou 24, ou à tout index de section « z ».
 
 ## <a name="related-links"></a>Liens associés
 

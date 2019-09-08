@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 97aa8c321362ebccc954a79f99b7bc69b5a0ad63
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 453da8c1b943591c331950ecb433bf0055faf85d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657076"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770363"
 ---
 # <a name="layout-compression"></a>Compression des dispositions
 
@@ -117,7 +117,6 @@ L’exemple d’application contient une page extraite à partir d’une applica
 ## <a name="summary"></a>Récapitulatif
 
 La compression des dispositions supprime les dispositions spécifiées à partir de l’arborescence visuelle dans le but d’améliorer les performances de rendu de page. Les avantages en matière de performances de cette technique varient selon la complexité d’une page, la version du système d’exploitation utilisé et l’appareil sur lequel l’application est en cours d’exécution. Toutefois, les gains en termes de performances les plus importants seront visibles sur les appareils les plus anciens.
-
 
 ## <a name="related-links"></a>Liens associés
 

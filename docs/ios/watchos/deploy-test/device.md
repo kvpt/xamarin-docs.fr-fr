@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 4b1e232259d7b1816e64298b5c0b8853d8385c20
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283854"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768698"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Test sur des appareils Apple Watch
 
@@ -64,7 +64,6 @@ La liste **profil de provisionnement** affiche tous les profils correspondants. 
 
 ![](device-images/options-selectprofile.png "Liste des profils d’approvisionnement")
 
-
 <a name="testing" />
 
 ## <a name="testing-on-a-watch-device"></a>Test sur un appareil Watch
@@ -88,7 +87,6 @@ Une fois que vous avez configuré votre appareil, les ID d’application et les 
 
 8. Si l’application Watch est correctement installée, l’icône reste sur l’écran Watch. Touchez-la pour commencer à tester votre application !
 
-
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
 Si une erreur se produit pendant le déploiement, utilisez la **vue > pad > journal** de l’appareil pour afficher plus d’informations sur l’erreur. Certaines erreurs et leurs causes sont répertoriées ci-dessous :
@@ -103,11 +101,9 @@ Pour contourner ce problème *temporairement* , désactivez les **Builds incrém
 
 Ce problème sera résolu dans une version ultérieure, après quoi les builds incrémentielles pourront être réactivées pour tirer parti des temps de génération plus rapides.
 
-
 ### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>L’application espion ne parvient pas à démarrer lors du débogage sur l’appareil
 
 Lorsque vous tentez de déboguer une application espion sur un appareil physique, seule l’icône & le chargement du compteur s’affiche (et éventuellement le délai d’attente). Cela sera résolu dans une version ultérieure ; une solution de contournement consiste à exécuter une version RELEASE (qui n’autorise pas le débogage).
-
 
 ### <a name="invalid-application-executable-or-application-verification-failed"></a>L’exécutable de l’application ou la vérification de l’application n’est pas valide
 
@@ -131,8 +127,6 @@ Si ces messages s’affichent *sur l’écran Watch* après une tentative d’in
 
 - L' **ID d’application** de l’application espion a incorrectement un droit activé (par exemple, des groupes d’applications) dans le centre de développement.
 
-
-
 ### <a name="install-never-finished"></a>Installation jamais terminée
 
 ```csharp
@@ -142,7 +136,6 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 Cette erreur peut indiquer des clés inutiles (et non valides) dans le fichier **info. plist** de l’application Watch. Vous ne devez pas inclure de clés destinées à l’extension d’application ou de visionneuse iOS dans l’application Watch.
 
 <!--eg. NSLocationAlwaysUsageDescription -->
-
 
 ### <a name="waiting-for-debugger-to-connect"></a>« en attente de la connexion du débogueur »
 
@@ -156,4 +149,3 @@ Vérifiez si l’un des packages NuGet inclus dans votre projet a une dépendanc
 
 Le fichier **Microsoft. BCL. Build. targets** ajouté au fichier **. csproj** peut interférer avec l’empaquetage des extensions iOS au cours du déploiement. Vous pouvez suivre le [bogue](https://bugzilla.xamarin.com/show_bug.cgi?id=29912).
 Une solution de contournement possible consiste à modifier le fichier. csproj et à déplacer manuellement le fichier **Microsoft. BCL. Build. targets** pour qu’il soit le dernier élément.
-

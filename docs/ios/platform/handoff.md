@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52ee92eca5fa0b3108b2ef96ef81bfb939e61a6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290759"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752921"
 ---
 # <a name="handoff-in-xamarinios"></a>Transfert dans Xamarin. iOS
 
@@ -626,8 +626,6 @@ Lorsque l’activité de l’utilisateur a été correctement envoyée à un aut
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a donné une introduction à l’infrastructure de transfert utilisée pour poursuivre une activité utilisateur entre plusieurs des appareils Apple de l’utilisateur. Ensuite, il a montré comment activer et implémenter la remise dans une application Xamarin. iOS. Enfin, il a abordé les différents types de continuation de transfert disponibles et les meilleures pratiques de remise.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

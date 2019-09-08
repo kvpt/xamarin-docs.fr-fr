@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 78270ee181f56f4b82637ed74a10a916d8fa4a77
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9d0ffbd0da99134dfae3e42fe8baf4111c80935f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285447"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762991"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Fonctionnalités Apple Pay dans Xamarin.iOS
 
@@ -35,7 +35,7 @@ Pour créer les éléments nécessaires, suivez les procédures pas à pas ci-de
 Un ID de marchand permet à Apple Pay de savoir que vous acceptez les paiements. Cet ID est passé à la méthode `PaymentRequest` de PassKit et est utilisé dans le droit Apple Pay :
 
 1. Accédez au [developer center d’Apple](https://developer.apple.com/account/) et sélectionnez la section « Certificates, Identifiers & Profiles » : 
- 
+
     ![Sélection de l’ID de marchand dans le developer center](apple-pay-capabilities-images/image57.png)
 
 2. Sous **Identifiers**, sélectionnez **Merchant IDs**, puis sélectionnez le bouton **+** pour créer un ID de marchand :  
@@ -149,7 +149,7 @@ Pour plus d’informations sur l’utilisation d’Apple Pay, consultez le guide
 * [Présentation d’Apple Pay](~/ios/platform/apple-pay.md)
 
 ## <a name="next-steps"></a>Étapes suivantes
- 
+
 S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.

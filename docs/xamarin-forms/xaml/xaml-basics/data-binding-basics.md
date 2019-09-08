@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227931"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767618"
 ---
 # <a name="part-4-data-binding-basics"></a>Partie 4. Principes fondamentaux de liaison de données
 
@@ -22,7 +22,7 @@ _Liaisons de données permettent les propriétés de deux objets à lier afin qu
 
 ## <a name="data-bindings"></a>Liaisons de données
 
-Liaisons de données connectent des propriétés de deux objets, appelés le *source* et *cible*. Dans le code, deux étapes sont requises: La propriété de l’objet cible doit être définie sur l’objet source et la `SetBinding` méthode (souvent utilisée conjointement avec la `Binding` classe) doit être appelée sur l’objet cible pour lier une propriété de cet objet à une propriété de la source. `BindingContext` dessin.
+Liaisons de données connectent des propriétés de deux objets, appelés le *source* et *cible*. Dans le code, deux étapes sont requises : La propriété de l’objet cible doit être définie sur l’objet source et la `SetBinding` méthode (souvent utilisée conjointement avec la `Binding` classe) doit être appelée sur l’objet cible pour lier une propriété de cet objet à une propriété de la source. `BindingContext` dessin.
 
 La propriété cible doit être une propriété pouvant être liée, ce qui signifie que l’objet cible doit dériver de `BindableObject`. La documentation en ligne de Xamarin.Forms indique quelles propriétés sont des propriétés pouvant être liées. Une propriété de `Label` comme `Text` est associé à la propriété peut être liée `TextProperty`.
 
@@ -118,7 +118,7 @@ La solution à ces informations et autres problèmes implique le `Mode` proprié
 
 Le programme suivant montre une utilisation courante de la `OneWayToSource` et `TwoWay` modes de liaison. Quatre `Slider` vues sont destinées au contrôle de la `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés d’un `Label`. Dans un premier temps, il semble que si ces quatre propriétés de la `Label` doit être des cibles de liaison de données, car chacun est définie un `Slider`. Toutefois, le `BindingContext` de `Label` peut être qu’un seul objet, et il existe quatre curseurs différents.
 
-Pour cette raison, toutes les liaisons sont définies de manière apparemment en arrière: Le `BindingContext` de chacun des quatre curseurs a la `Label`valeur, et les liaisons sont définies sur les `Value` propriétés des curseurs. À l’aide de la `OneWayToSource` et `TwoWay` modes, ces `Value` propriétés peuvent définir les propriétés de la source, qui sont le `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés de la `Label`:
+Pour cette raison, toutes les liaisons sont définies de manière apparemment en arrière : Le `BindingContext` de chacun des quatre curseurs a la `Label`valeur, et les liaisons sont définies sur les `Value` propriétés des curseurs. À l’aide de la `OneWayToSource` et `TwoWay` modes, ces `Value` propriétés peuvent définir les propriétés de la source, qui sont le `Scale`, `Rotate`, `RotateX`, et `RotateY` propriétés de la `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -405,8 +405,6 @@ Si les propriétés des éléments eux-mêmes changent pendant l’exécution, l
 ## <a name="summary"></a>Récapitulatif
 
 Liaisons de données fournissent un mécanisme puissant pour la liaison des propriétés entre deux objets dans une page, ou entre des objets visuels et des données sous-jacentes. Mais lorsque l’application commence à fonctionner avec des sources de données, un modèle d’application populaires architecture commence à émerger comme un paradigme utile. Cela est couvert dans [partie 5. Liaisons de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 57d9d6a91f88d117f0889a8dba9e6198ec6b7f62
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7f98f2f75a106ad3a9f62256a7145ac746c4b1c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524770"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757782"
 ---
 # <a name="limitations"></a>Limites
 
 Étant donné que les applications sur Android requièrent la génération de types de proxy Java pendant le processus de génération, il n’est pas possible de générer tout le code au moment de l’exécution.
 
-Il s’agit des limitations de Xamarin. Android par rapport à l’ordinateur de bureau mono:
+Il s’agit des limitations de Xamarin. Android par rapport à l’ordinateur de bureau mono :
 
 ## <a name="limited-dynamic-language-support"></a>Prise en charge du langage dynamique limité
 
- Les [wrappers pouvant être appelés Android](~/android/platform/java-integration/android-callable-wrappers.md) sont nécessaires chaque fois que le runtime Android doit appeler du code managé. Les wrappers Android pouvant être appelés sont générés au moment de la compilation, en fonction de l’analyse statique de l’IL. Résultat net: vous *ne pouvez pas* utiliser les langages dynamiques (IronPython, IronRuby, etc.) dans tout scénario où la sous-classe des types Java est requise (y compris le sous-Class indirect), car il n’existe aucun moyen d’extraire ces types dynamiques au moment de la compilation vers Générez les wrappers Android pouvant être appelés.
+ Les [wrappers pouvant être appelés Android](~/android/platform/java-integration/android-callable-wrappers.md) sont nécessaires chaque fois que le runtime Android doit appeler du code managé. Les wrappers Android pouvant être appelés sont générés au moment de la compilation, en fonction de l’analyse statique de l’IL. Résultat net : vous *ne pouvez pas* utiliser les langages dynamiques (IronPython, IronRuby, etc.) dans tout scénario où la sous-classe des types Java est requise (y compris le sous-Class indirect), car il n’existe aucun moyen d’extraire ces types dynamiques au moment de la compilation vers Générez les wrappers Android pouvant être appelés.
 
 ## <a name="limited-java-generation-support"></a>Prise en charge limitée de la génération Java
 
@@ -31,10 +31,10 @@ Avant la version 4,1, aucune autre méthode n’a pu être déclarée. Avec la v
 
 ### <a name="missing-constructors"></a>Constructeurs manquants
 
-Les constructeurs restent délicats, [`ExportAttribute`](xref:Java.Interop.ExportAttribute) sauf si est utilisé. L’algorithme pour générer des constructeurs de wrapper Android pouvant être appelés est qu’un constructeur Java sera émis dans les cas suivants:
+Les constructeurs restent délicats, [`ExportAttribute`](xref:Java.Interop.ExportAttribute) sauf si est utilisé. L’algorithme pour générer des constructeurs de wrapper Android pouvant être appelés est qu’un constructeur Java sera émis dans les cas suivants :
 
 1. Il existe un mappage Java pour tous les types de paramètres
-2. La classe de base déclare le même constructeur &ndash; , ce qui est nécessaire, car le wrapper Android Callable *doit* appeler le constructeur de classe de base correspondant; aucun argument par défaut ne peut être utilisé (car il n’existe aucun moyen simple de déterminer les valeurs doit être utilisé dans Java).
+2. La classe de base déclare le même constructeur &ndash; , ce qui est nécessaire, car le wrapper Android Callable *doit* appeler le constructeur de classe de base correspondant ; aucun argument par défaut ne peut être utilisé (car il n’existe aucun moyen simple de déterminer les valeurs doit être utilisé dans Java).
 
 Par exemple, considérons la classe suivante :
 
@@ -47,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-Bien que cela semble parfaitement logique, le wrapper Android pouvant être appelé *dans les versions release* ne contient pas de constructeur par défaut. Par conséquent, si vous tentez de démarrer ce service ( [`Context.StartService`](xref:Android.Content.Context.StartService*)par exemple, l’opération échouera:
+Bien que cela semble parfaitement logique, le wrapper Android pouvant être appelé *dans les versions release* ne contient pas de constructeur par défaut. Par conséquent, si vous tentez de démarrer ce service ( [`Context.StartService`](xref:Android.Content.Context.StartService*)par exemple, l’opération échouera :
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -70,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-La solution de contournement consiste à déclarer un constructeur par défaut, à `ExportAttribute`l’orner avec [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)le et à définir le: 
+La solution de contournement consiste à déclarer un constructeur par défaut, à `ExportAttribute`l’orner avec [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)le et à définir le : 
 
 ```csharp
 [Service]
@@ -84,11 +84,9 @@ class MyIntentService : IntentService {
 }
 ```
 
-
 ### <a name="generic-c-classes"></a>Classes C# génériques
 
-Les C# classes génériques ne sont que partiellement prises en charge. Les limitations suivantes existent:
-
+Les C# classes génériques ne sont que partiellement prises en charge. Les limitations suivantes existent :
 
 - Les types génériques ne peuvent `[Export]` pas `[ExportField`utiliser ou]. Si vous tentez de le faire `XA4207` , une erreur est générée.
 
@@ -103,7 +101,7 @@ Les C# classes génériques ne sont que partiellement prises en charge. Les limi
     }
     ```
 
-- Les méthodes génériques ne peuvent `[Export]` pas `[ExportField]`utiliser ou:
+- Les méthodes génériques ne peuvent `[Export]` pas `[ExportField]`utiliser ou :
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -118,7 +116,7 @@ Les C# classes génériques ne sont que partiellement prises en charge. Les limi
     }
     ```
 
-- `[ExportField]`ne peut pas être utilisé sur les méthodes `void`qui retournent:
+- `[ExportField]`ne peut pas être utilisé sur les méthodes `void`qui retournent :
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -132,7 +130,7 @@ Les C# classes génériques ne sont que partiellement prises en charge. Les limi
     ```
 
 - Les instances de types génériques _ne doivent pas_ être créées à partir du code Java.
-    Ils peuvent uniquement être créés en toute sécurité à partir du code managé:
+    Ils peuvent uniquement être créés en toute sécurité à partir du code managé :
 
     ```csharp
     [Activity (Label="Die!", MainLauncher=true)]

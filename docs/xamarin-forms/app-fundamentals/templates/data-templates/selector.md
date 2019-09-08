@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 684820a646527b382b1dbb936b9256fd4457803e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651895"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771255"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Création d’un DataTemplateSelector Xamarin.Forms
 
@@ -43,7 +43,7 @@ La méthode `OnSelectTemplate` retourne le modèle approprié en fonction de la 
 
 Vous pouvez ensuite affecter une instance de la classe de sélecteur de modèle de données à des propriétés de contrôle Xamarin.Forms telles que [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1). Pour obtenir la liste des propriétés valides, consultez [Création d’un DataTemplate](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md).
 
-### <a name="limitations"></a>Limitations
+### <a name="limitations"></a>Limites
 
 Les instances de [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ont les limitations suivantes :
 
@@ -133,7 +133,6 @@ L’instance de `PersonDataTemplateSelector` affecte aux propriétés `ValidTemp
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a montré comment créer et consommer [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector). Vous pouvez utiliser un `DataTemplateSelector` pour choisir un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) au moment de l’exécution, en fonction de la valeur d’une propriété liée aux données. Cela permet d’appliquer plusieurs instances de `DataTemplate` au même type d’objet, pour personnaliser l’apparence d’objets particuliers.
-
 
 ## <a name="related-links"></a>Liens associés
 

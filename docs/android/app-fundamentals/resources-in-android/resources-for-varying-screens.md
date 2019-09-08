@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 49e0de909e2255d850211e51596efdaa43f293ae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509368"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755054"
 ---
 # <a name="creating-resources-for-varying-screens"></a>Création de ressources pour différents écrans
 
 Android s’exécute sur de nombreux appareils différents, chacun d’entre eux ayant une grande variété de résolutions, de tailles d’écran et de densités d’écran. Android effectue la mise à l’échelle et le redimensionnement pour que votre application fonctionne sur ces appareils, mais cela peut entraîner une expérience utilisateur sous-optimale. Par exemple, les images peuvent apparaître floues ou peuvent être positionnées comme prévu sur une vue.
-
 
 ## <a name="concepts"></a>Concepts
 
@@ -28,7 +27,7 @@ Il est important de comprendre quelques termes et concepts pour prendre en charg
 
 - **Résolution** &ndash; Nombre total de pixels sur l’écran. Lors du développement d’applications, la résolution n’est pas aussi importante que la taille et la densité de l’écran.
 
-- **Densité-pixel indépendant (DP)** &ndash; Unité virtuelle de mesure permettant de concevoir des dispositions indépendantes de la densité. Cette formule est utilisée pour convertir DP en pixels d’écran:
+- **Densité-pixel indépendant (DP)** &ndash; Unité virtuelle de mesure permettant de concevoir des dispositions indépendantes de la densité. Cette formule est utilisée pour convertir DP en pixels d’écran :
 
     PX &equals; DP &times; PPP 160&divide;
 
@@ -38,7 +37,6 @@ Notez que les trois premiers concepts sont liés &ndash; par l’augmentation de
 
 Pour vous aider à gérer cette complexité, l’infrastructure Android préfère utiliser les *pixels indépendants de la densité (DP)* pour les dispositions d’écran. En utilisant des pixels indépendants de la densité, les éléments de l’interface utilisateur s’affichent pour que l’utilisateur ait la même taille physique sur les écrans avec des densités différentes.
 
-
 ## <a name="supporting-various-screen-sizes-and-densities"></a>Prise en charge de différentes tailles et densités d’écran
 
 Android gère la plupart du travail pour restituer correctement les dispositions pour chaque configuration d’écran. Toutefois, certaines actions peuvent être effectuées pour aider le système à sortir.
@@ -47,12 +45,11 @@ L’utilisation de pixels indépendants de la densité plutôt que les pixels r�
 Android mettra à l’échelle le drawables au moment de l’exécution en fonction de la taille appropriée.
 Toutefois, il est possible que la mise à l’échelle entraîne l’affichage d’une image bitmap floue. Pour contourner ce problème, fournissez d’autres ressources pour les différentes densités. Lorsque vous concevez des appareils pour plusieurs résolutions et densités d’écran, il est plus facile de commencer avec les images de haute résolution ou de densité, puis de les réduire.
 
-
 ### <a name="declare-the-supported-screen-size"></a>Déclarer la taille d’écran prise en charge
 
 La déclaration de la taille de l’écran garantit que seuls les appareils pris en charge peuvent télécharger l’application. Pour ce faire, vous devez définir l’élément [supports-screens](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) dans le fichier **fichier AndroidManifest. xml** . Cet élément est utilisé pour spécifier les tailles d’écran prises en charge par l’application. Un écran donné est considéré comme pris en charge si l’application peut placer correctement ses dispositions sur l’écran de remplissage. À l’aide de cet élément de manifeste, l’application n’apparaît pas dans [*Google Play*](https://play.google.com/) pour les appareils qui ne respectent pas les spécifications de l’écran. Toutefois, l’application s’exécute toujours sur les appareils avec des écrans non pris en charge, mais les dispositions peuvent apparaître floues et pixellisée.
 
-Les sixes d’écran pris en charge sont déclarés dans le fichier **/fichier AndroidManifest. xml** de la solution:
+Les sixes d’écran pris en charge sont déclarés dans le fichier **/fichier AndroidManifest. xml** de la solution :
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -87,7 +84,6 @@ Modifiez **fichier AndroidManifest. xml** de façon à inclure [supports-screens
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>Fournir d’autres dispositions pour différentes tailles d’écran
 
-
 Les autres dispositions permettent de personnaliser une vue pour une taille d’écran spécifique, en modifiant la position ou la taille des éléments de l’interface utilisateur du composant.
 
 À partir de l’API de niveau 13 (Android 3,2), les tailles d’écran sont dépréciées en faveur de l’utilisation du qualificateur SW*N*DP. Ce nouveau qualificateur déclare la quantité d’espace nécessaire à une disposition donnée. Il est recommandé que les applications conçues pour s’exécuter sur Android 3,2 ou une version ultérieure doivent utiliser ces qualificateurs plus récents.
@@ -104,18 +100,17 @@ Par exemple, si une disposition nécessitait un DP minimum de 700 de largeur d�
 
 -----
 
+En règle générale, voici quelques nombres pour différents appareils :
 
-En règle générale, voici quelques nombres pour différents appareils:
+- **Téléphone classique** &ndash; 320 DP : téléphone classique
 
-- **Téléphone classique** &ndash; 320 DP: téléphone classique
+- **Appareil 5 « tablette/ » « interpolateur** » &ndash; 480 DP : comme la note Samsung
 
-- **Appareil 5 «tablette/»** «interpolateur» &ndash; 480 DP: comme la note Samsung
+- **Une tablette 7 "** 600 DP : comme Barnes &amp; noble Nook &ndash;
 
-- **Une tablette 7 "** 600 DP: comme Barnes &amp; noble Nook &ndash;
+- **Une tablette 10** &ndash; 720 DP : par exemple, Motorola Xoom
 
-- **Une tablette 10** &ndash; 720 DP: par exemple, Motorola Xoom
-
-Pour les applications qui ciblent des niveaux d’API allant jusqu’à 12 (Android 3,1), les dispositions doivent se trouver dans les répertoires qui utilisent les qualificateurs **Small**/normal**large**/**normal**/**XLarge** comme généralisations de différentes tailles d’écran disponibles sur la plupart des appareils. Par exemple, dans l’image ci-dessous, il existe d’autres ressources pour les quatre tailles d’écran différentes:
+Pour les applications qui ciblent des niveaux d’API allant jusqu’à 12 (Android 3,1), les dispositions doivent se trouver dans les répertoires qui utilisent les qualificateurs **Small**/normal**large**/**normal**/**XLarge** comme généralisations de différentes tailles d’écran disponibles sur la plupart des appareils. Par exemple, dans l’image ci-dessous, il existe d’autres ressources pour les quatre tailles d’écran différentes :
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -127,7 +122,7 @@ Pour les applications qui ciblent des niveaux d’API allant jusqu’à 12 (Andr
 
 -----
 
-Vous trouverez ci-dessous une comparaison de la façon dont les qualificateurs de taille d’écran antérieurs au niveau d’API 13 sont comparés aux pixels indépendants de la densité:
+Vous trouverez ci-dessous une comparaison de la façon dont les qualificateurs de taille d’écran antérieurs au niveau d’API 13 sont comparés aux pixels indépendants de la densité :
 
 - 426 DP x 320 DP est **petit**
 
@@ -138,7 +133,7 @@ Vous trouverez ci-dessous une comparaison de la façon dont les qualificateurs d
 - 960 DP x 720 DP est **XLarge**
 
 Les qualificateurs de taille d’écran plus récents dans les API de niveau 13 et supérieur ont une priorité supérieure à celle des qualificateurs d’écran les plus anciens des niveaux d’API 12 et inférieurs.
-Pour les applications qui s’étendent sur les anciens et les nouveaux niveaux d’API, il peut être nécessaire de créer d’autres ressources à l’aide des deux ensembles de qualificateurs, comme indiqué dans la capture d’écran suivante:
+Pour les applications qui s’étendent sur les anciens et les nouveaux niveaux d’API, il peut être nécessaire de créer d’autres ressources à l’aide des deux ensembles de qualificateurs, comme indiqué dans la capture d’écran suivante :
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -150,20 +145,17 @@ Pour les applications qui s’étendent sur les anciens et les nouveaux niveaux 
 
 -----
 
-
-
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>Fournir différentes bitmaps pour différentes densités d’écran
 
-Bien qu’Android met à l’échelle les bitmaps en fonction des besoins d’un appareil, les bitmaps elles-mêmes peuvent ne pas évoluer de manière élégante: elles peuvent devenir floues ou floues. Le fait de fournir des bitmaps adaptés à la densité de l’écran atténue ce problème.
+Bien qu’Android met à l’échelle les bitmaps en fonction des besoins d’un appareil, les bitmaps elles-mêmes peuvent ne pas évoluer de manière élégante : elles peuvent devenir floues ou floues. Le fait de fournir des bitmaps adaptés à la densité de l’écran atténue ce problème.
 
 Par exemple, l’image ci-dessous est un exemple de problèmes de mise en page et d’apparence qui peuvent se produire lorsque la densité-spécifiez des ressources non fournies.
 
 ![Captures d’écran sans ressources de densité](resources-for-varying-screens-images/06-density-not-provided.png)
 
-Comparez cela à une disposition conçue avec des ressources spécifiques à la densité:
+Comparez cela à une disposition conçue avec des ressources spécifiques à la densité :
 
 ![Captures d’écran avec ressources spécifiques à la densité](resources-for-varying-screens-images/07-density-specific-resources.png)
-
 
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Créer des ressources à densité variable avec Android Asset Studio
 
@@ -173,10 +165,9 @@ La création de ces bitmaps de différentes densités peut être un peu fastidie
 
 Ce site Web permet de créer des bitmaps qui ciblent les quatre densités d’écran courantes en fournissant une image. Android Asset Studio crée ensuite les bitmaps avec certaines personnalisations, puis les autorise à être téléchargé sous forme de fichier zip.
 
-
 ## <a name="tips-for-multiple-screens"></a>Conseils pour plusieurs écrans
 
-Android s’exécute sur un nombre inventés d’appareils, et la combinaison des tailles d’écran et des densités d’écran peut paraître insurmontable. Les conseils suivants peuvent vous aider à réduire les efforts nécessaires à la prise en charge de différents appareils:
+Android s’exécute sur un nombre inventés d’appareils, et la combinaison des tailles d’écran et des densités d’écran peut paraître insurmontable. Les conseils suivants peuvent vous aider à réduire les efforts nécessaires à la prise en charge de différents appareils :
 
 - **Conception et développement uniquement pour ce dont vous avez besoin** &ndash; Il y a de nombreux appareils différents, mais certains présentent des facteurs de forme rares qui peuvent nécessiter des efforts considérables pour concevoir et développer pour. Le tableau de bord [**taille et densité**](https://developer.android.com/resources/dashboard/screens.html) de l’écran est une page fournie par Google, qui fournit des données sur la répartition de la taille d’écran/matrice de densité d’écran. Cette répartition fournit des informations sur l’effort de développement sur les écrans de prise en charge.
 
@@ -185,10 +176,9 @@ Android s’exécute sur un nombre inventés d’appareils, et la combinaison de
 - **Éviter** [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) Dans la mesure du **possible** &ndash; , il est déconseillé au niveau de l’API 3 (Android 1,5) et se traduira par des dispositions fragiles. 
    Elle ne doit pas être utilisée. Essayez plutôt d’utiliser des widgets de mise en page plus flexibles tels que [**élément LinearLayout**](xref:Android.Widget.LinearLayout), [**RelativeLayout**](xref:Android.Widget.RelativeLayout)ou la nouvelle [**GridLayout**](xref:Android.Widget.GridLayout).
 
-- **Choisir une orientation de disposition par défaut**    Par exemple, au lieu de fournir les ressources alternatives layout-Land et Layout-port, placez les ressources pour le paysage dans la disposition et les ressources pour portrait dans layout-port. &ndash;
+- **Choisir une orientation de disposition par défaut**Par exemple, au lieu de fournir les ressources alternatives layout-Land et Layout-port, placez les ressources pour le paysage dans la disposition et les ressources pour portrait dans layout-port. &ndash;
 
 - **Utiliser LayoutParams pour la hauteur et la largeur** : lors de la définition d’éléments d’interface utilisateur dans un fichier de disposition XML, une application Android utilisant les valeurs **wrap_content** et **fill_parent** aura plus de succès garantissant une bonne présentation des différents appareils. utilisation d’unités indépendantes du pixel ou de la densité. Ces valeurs de dimension obligent Android à mettre à l’échelle les ressources bitmap selon le cas. Pour cette même raison, il est préférable de réserver les unités indépendantes de la densité lors de la spécification des marges et du remplissage des éléments d’interface utilisateur.
-
 
 ## <a name="testing-multiple-screens"></a>Test de plusieurs écrans
 

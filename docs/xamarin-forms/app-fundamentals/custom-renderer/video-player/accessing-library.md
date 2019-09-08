@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 219f6498dc1349d32c8f0b247a187df75f2a523a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650701"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771850"
 ---
 # <a name="accessing-the-devices-video-library"></a>Accès à la vidéothèque de l’appareil
 
@@ -385,8 +385,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 Pour chaque plateforme, la lecture de la vidéo débute presque immédiatement après la définition de la source vidéo, car le fichier se trouve sur l’appareil et n’a pas besoin d’être téléchargé.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

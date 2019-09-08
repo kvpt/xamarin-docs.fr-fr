@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 34f192938ac583e39232312377142015aa6d3811
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd4bc8dbc02a44807ec197d39349971d8f9cd6f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287565"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768579"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Modifications supplémentaires apportées aux infrastructures Watchos 3
 
 _Cet article traite des modifications supplémentaires ou des améliorations apportées aux infrastructures existantes pour Watchos 3._
 
 Outre les modifications majeures apportées à iOS, Apple a apporté des modifications et des améliorations à plusieurs infrastructures existantes dans Watchos 3.
-
 
 ## <a name="core-data"></a>Données de base
 
@@ -33,14 +32,12 @@ Les améliorations suivantes ont été apportées à l’infrastructure de donn�
 
 Pour plus d’informations, consultez Référence de l' [infrastructure de données de base](https://developer.apple.com/reference/coredata)d’Apple.
 
-
 ## <a name="core-motion"></a>Mouvement de base
 
 Les améliorations suivantes ont été apportées à l’infrastructure Motion Core pour le système d’exploitation Watch 3 :
 
 - Le nouvel événement de mouvement d’appareil utilise l’accéléromètre et le gyroscope pour fournir des mises à jour d’orientation et de mouvement. L’application peut s’inscrire à cette mise à jour (à des tarifs allant jusqu’à 100Hz).
 - Le nouvel événement Pedometer permet des notifications rapides et en temps réel lorsque l’utilisateur s’arrête et reprend son exécution. Utilisez [CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer) pour vous inscrire aux événements de premier plan ou d’arrière-plan Pedometer.
-
 
 ## <a name="foundation"></a>Pierre
 
@@ -52,7 +49,6 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 - Utilisez la nouvelle classe [NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter) pour mettre en forme les mesures localisées à afficher à l’utilisateur final.
 - Utilisez les nouvelles classes [NSUnit](https://developer.apple.com/reference/foundation/nsunit) et [NSDimension](https://developer.apple.com/reference/foundation/nsdimension) pour représenter des UOMs spécifiques.
 
-
 ## <a name="healthkit"></a>HealthKit
 
 Les améliorations suivantes ont été apportées à l’infrastructure HealthKit pour la surveillance du système d’exploitation 3 :
@@ -60,7 +56,6 @@ Les améliorations suivantes ont été apportées à l’infrastructure HealthKi
 - Utilisez la nouvelle classe [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) pour spécifier le `ActivityType` et `LocationType` un entraînement.
 - Le nouveau [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) et la `WheelchairUse` méthode de la classe [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) ont été ajoutés pour l’utilisation des données d’intégrité liées aux fauteuils roulants.
 - De nouvelles clés de métadonnées ont été ajoutées pour les types `HKWeatherConditionClear` météo `HKWeatherConditionCloudy`(tels que et) et les `HKWorkoutActivityTypeFlexibility` types `HKWorkoutActivityTypeWheelchairRunPace`d’entraînement (tels que et) ont été ajoutés.
-
 
 ## <a name="homekit"></a>HomeKit
 
@@ -70,7 +65,6 @@ Les améliorations suivantes ont été apportées à l’infrastructure HomeKit 
 - Ajout de plusieurs nouveaux services et caractéristiques.
 - Ajout du contexte et de la configuration supplémentaires des accessoires des services principaux et des services de liaison.
 
-
 ## <a name="passkit"></a>PassKit
 
 Les améliorations suivantes ont été apportées à l’infrastructure PassKit pour la surveillance du système d’exploitation 3 :
@@ -78,14 +72,12 @@ Les améliorations suivantes ont été apportées à l’infrastructure PassKit 
 - Développe l’infrastructure pour prendre en charge les paiements dans l’application sécurisés sur le Apple Watch des biens et services physiques.
 - Les classes suivantes sont désormais disponibles : [PKPayment](https://developer.apple.com/reference/passkit/pkpayment), [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod), [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest) et [PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
-
 ## <a name="uikit"></a>UIKit
 
 Les améliorations suivantes ont été apportées à l’infrastructure UIKit pour la surveillance du système d’exploitation 3 :
 
 - Pour prendre en charge le type dynamique dans les étiquettes, les champs de texte `PreferredFontForTextStyle` et les zones `UIFont` de texte, utilisez la nouvelle méthode de la classe.
 - La `ColorWithDisplayP3` méthode a été ajoutée pour prendre en charge la couleur étendue.
-
 
 ## <a name="related-links"></a>Liens associés
 

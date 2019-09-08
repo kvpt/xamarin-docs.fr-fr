@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 71a1b4df1d57d489efd7f3171a8c36aac1017cca
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281717"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767016"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Présentation du stockage de données dans les applications Xamarin. iOS
 
@@ -25,7 +25,6 @@ Tandis que les capacités de stockage et de traitement des appareils mobiles son
 - **Fichiers de données sérialisés** : les objets peuvent être rendus persistants au format XML ou JSON sur le système de fichiers. Le .NET Framework comprend des bibliothèques qui facilitent la sérialisation et la désérialisation des objets. Utilisez les noms appropriés pour organiser les fichiers de données.
 - **Base de** données – le moteur de base de données SQLite est disponible iOS et est utile pour stocker des données structurées que vous devez interroger, trier ou manipuler. Le stockage de base de données est adapté aux listes de données avec de nombreuses propriétés.
 - **Fichiers image** : bien qu’il soit possible de stocker des données binaires dans la base de données sur un appareil mobile, il est recommandé de les stocker directement dans le système de fichiers. Si nécessaire, vous pouvez stocker les noms de fichiers dans une base de données pour associer l’image à d’autres données. Lors du traitement d’images volumineuses ou de nombreuses images, il est recommandé de planifier une stratégie de mise en cache qui supprime les fichiers dont vous n’avez plus besoin pour éviter de consommer tout l’espace de stockage de l’utilisateur.
-
 
 Si une base de données est le mécanisme de stockage adapté à votre application, le reste de ce document explique comment utiliser SQLite sur la plateforme Xamarin.
 
@@ -40,7 +39,6 @@ L’utilisation d’une base de données SQL dans votre application mobile prés
 - Les développeurs possédant des compétences de base de données existantes peuvent utiliser leurs connaissances pour concevoir la base de données et le code d’accès aux données.
 - Le modèle de données du composant serveur d’une application connectée peut être réutilisé (en totalité ou en partie) dans l’application mobile.
 
-
 ## <a name="sqlite-database-engine"></a>SQLite Moteur de base de données
 
 SQLite est un moteur de base de données Open source qui a été adopté par Apple pour sa plateforme mobile. Le moteur de base de données SQLite est intégré à iOS, donc aucun travail supplémentaire n’est nécessaire pour les développeurs. SQLite est bien adapté au développement mobile multiplateforme, car :
@@ -50,13 +48,11 @@ SQLite est un moteur de base de données Open source qui a été adopté par App
 - Le format de fichier est facile à utiliser sur les plateformes : qu’il s’agisse de systèmes 32-ou 64 bits, et de systèmes Big-endian ou Little-endian.
 - Il implémente la plupart des SQL92 standard.
 
-
 Étant donné que SQLite est conçu pour être petit et rapide, il y a quelques inconvénients à son utilisation :
 
 - Une syntaxe de jointure externe n’est pas prise en charge.
 - Seules les tables Rename et ADDCOLUMN sont prises en charge. Vous ne pouvez pas effectuer d’autres modifications dans votre schéma.
 - Les vues sont en lecture seule.
-
 
 Vous pouvez en savoir plus sur SQLite sur le site Web- [SQLite.org](http://SQLite.org) . Toutefois, toutes les informations dont vous avez besoin pour utiliser SQLite avec Xamarin sont contenues dans ce document et les exemples associés. Le moteur de base de données SQLite est intégré à toutes les versions d’iOS.
 Bien que cela ne soit pas abordé dans ce chapitre, SQLite est également disponible pour une utilisation sur les applications Windows Phone et Windows.
@@ -65,8 +61,6 @@ Bien que cela ne soit pas abordé dans ce chapitre, SQLite est également dispon
 
 SQLite peut également être utilisé sur les plateformes Windows, bien que ces plateformes ne soient pas abordées dans ce document.
 Pour en savoir plus, consultez les études de cas [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md) et [Tasky Pro](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/case_study%3A_tasky) et consultez le [blog de Tim Heuer](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx).
-
-
 
 ## <a name="related-links"></a>Liens associés
 

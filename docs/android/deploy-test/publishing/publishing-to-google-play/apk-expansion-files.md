@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: ccdf1e3fc0c42f8af8f9219a8b472827048a90dc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: e542336cfd3bf1eac50c343a3edfeb0efa414d0c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525230"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753604"
 ---
 # <a name="apk-expansion-files"></a>Fichiers d’extension d’APK
 
@@ -29,10 +29,8 @@ Les fichiers d’extension sont traités comme des fichiers *obb (opaque binary 
 - **Extension principale** &ndash; ce fichier est le fichier d’extension principal pour les ressources et les composants qui dépassent la limite de taille de l’APK. Le fichier d’extension principal doit contenir les principaux composants dont une application a besoin et doit rarement être mis à jour.
 - **Extension corrective** &ndash; ce fichier est conçu pour les petites mises à jour du fichier d’extension principal. Ce fichier peut être mis à jour. L’application est responsable d’effectuer les correctifs ou mises à jour nécessaires à partir de ce fichier.
 
-
 Les fichiers d’extension doivent être chargés en même temps que l’APK.
 Google Play n’autorise pas le chargement d’un fichier d’extension sur un APK existant ou pour des APK existants à mettre à jour. Si un fichier d’extension doit être mis à jour, un nouvel APK doit être chargé avec le `versionCode` mis à jour.
-
 
 ## <a name="expansion-file-storage"></a>Stockage des fichiers d’extension
 
@@ -41,7 +39,6 @@ Lorsque les fichiers sont téléchargés sur un appareil, ils sont stockés à l
 - **_shared-store_** &ndash; Il s’agit du répertoire spécifié par `Android.OS.Environment.ExternalStorageDirectory` .
 - **_package-name_** &ndash; Il s’agit du nom de paquet Java de l’application.
 
-
 Une fois téléchargés, les fichiers d’extension ne doivent pas être déplacés, modifiés, renommés ou supprimés de leur emplacement sur l’appareil. S’ils le sont, les fichiers d’extension sont à nouveau téléchargés et les anciens fichiers sont supprimés. En outre, le répertoire des fichiers d’extension ne doit contenir que les fichiers du pack d’extension.
 
 Les fichiers d’extension n’offrent aucune sécurité ni protection de leur contenu&ndash; D’autres applications ou utilisateurs peuvent accéder à tous les fichiers enregistrés sur le stockage partagé.
@@ -49,7 +46,6 @@ Les fichiers d’extension n’offrent aucune sécurité ni protection de leur c
 Si un fichier d’extension doit être décompressé, les fichiers décompressés doivent être stockés dans un répertoire différent, par exemple dans `Android.OS.Environment.ExternalStorageDirectory`.
 
 Plutôt que d’extraire les fichiers d’un fichier d’extension, vous avez également la possibilité de lire les composants ou les ressources directement à partir du fichier d’extension. Un fichier d’extension n’est rien de plus qu’un fichier zip qui peut être utilisé avec un `ContentProvider` approprié. [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) contient un assembly, [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip), qui inclut un `ContentProvider` qui autorise l’accès direct aux fichiers pour certains fichiers multimédias. Si les fichiers multimédias sont regroupés dans un fichier zip, les appels de lecture multimédias peuvent utiliser directement les fichiers du fichier zip sans avoir à le décompresser. Les fichiers multimédias ne doivent pas être compressés quand ils sont ajoutés dans le fichier zip. 
-
 
 ### <a name="filename-format"></a>Format de nom de fichier
 
@@ -65,9 +61,7 @@ Les trois composants de ce schéma sont :
 - `<expansion-version>` &ndash; entier qui correspond au `versionCode` de l’APK avec lequel le fichier a été associé en premier lieu.
 - `<package-name>` &ndash; il s’agit du nom de paquet Java de l’application.
 
-
 Par exemple, si la version de l’APK est 21 et le nom du paquet est `mono.samples.helloworld`, le fichier d’extension principale est nommé **main.21.mono.samples.helloworld**.
-
 
 ## <a name="download-process"></a>Processus de téléchargement
 
@@ -81,7 +75,6 @@ Lorsqu’une application démarre, elle doit vérifier que les fichiers d’exte
 - **Noms de fichiers** &ndash; il s’agit du nom de fichier (sur l’appareil en cours) sous lequel les packs d’extension doivent être enregistrés.
 - **URL de téléchargement** &ndash; URL qui doit être utilisée pour télécharger les packs d’extension. Elle est unique pour chaque téléchargement et expire quelques instants après avoir été fournie.
 
-
 Une fois la vérification LVL effectuée, l’application doit télécharger les fichiers d’extension, en prenant en compte les points suivants :
 
 - L’appareil ne dispose peut-être pas de suffisamment d’espace pour stocker les fichiers d’extension.
@@ -89,8 +82,6 @@ Une fois la vérification LVL effectuée, l’application doit télécharger les
 - Les fichiers d’extension sont téléchargées en arrière-plan pour éviter de bloquer les interactions de l’utilisateur.
 - Pendant le téléchargement en arrière-plan, un indicateur de progression doit être affiché.
 - Les erreurs qui se produisent pendant le téléchargement sont gérées et récupérées.
-
-
 
 ## <a name="architectural-overview"></a>Vue d'ensemble de l'architecture
 
@@ -103,6 +94,5 @@ Pour faciliter l’intégration des fichiers d’extension dans une application,
 - **Bibliothèque du téléchargeur** &ndash; il s’agit d’une bibliothèque qui facilite l’intégration des fichiers d’extension dans une application. Cette bibliothèque télécharge les fichiers d’extension dans un service en arrière-plan, affiche les notifications utilisateur, gère les problèmes de connectivité réseau, reprend les téléchargements, etc.
 - **Bibliothèque de vérification de licence** &ndash; bibliothèque utilisée pour passer les appels aux services Application Licensing et les traiter. Elle peut également être utilisée pour vérifier les licences afin de savoir si l’utilisation de l’application est autorisée sur l’appareil.
 - **Bibliothèque de fichiers zip d’extension d’APK (facultatif)**  &ndash; si les fichiers d’extension sont regroupés dans un fichier zip, cette bibliothèque joue le rôle de fournisseur de contenu en permettant à une application de lire les ressources et les composants directement à partir de l’archive zip sans avoir à la décompresser.
-
 
 Ces bibliothèques ont été portées vers C# et sont disponibles dans le cadre de la licence Apache 2.0. Pour intégrer rapidement les fichiers d’extension dans une application existante, ces bibliothèques peuvent être ajoutées à une application Xamarin.Android existante. Le code est disponible sur la page [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) de GitHub.

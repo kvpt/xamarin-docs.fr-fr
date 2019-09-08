@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 7657985ce14633140adb0e63a9817ddd0e48841d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284569"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762118"
 ---
 # <a name="part-2---architecture"></a>Partie 2 : Architecture
 
@@ -21,11 +21,9 @@ Un principe clé de la création d’applications multiplateformes consiste à c
 - **Séparation des responsabilités** : Assurez-vous que chaque composant (au niveau de l’architecture et au niveau de la classe) a un objectif clair et bien défini. Chaque composant doit effectuer uniquement ses tâches définies et exposer cette fonctionnalité via une API qui est accessible aux autres classes qui doivent l’utiliser.
 - **Polymorphisme** : la programmation sur une interface (ou une classe abstraite) qui prend en charge plusieurs implémentations signifie que le code de base peut être écrit et partagé entre les plateformes, tout en interagissant avec les fonctionnalités spécifiques à la plateforme.
 
-
 Le résultat naturel est une application modélisée après des entités réelles ou abstraites avec des couches logiques distinctes. La séparation du code en couches rend les applications plus faciles à comprendre, à tester et à entretenir. Il est recommandé que le code de chaque couche soit physiquement séparé (dans des répertoires ou même des projets distincts pour les applications très volumineuses), ainsi que logiquement séparé (à l’aide d’espaces de noms).
 
  <a name="Typical_Application_Layers" />
-
 
 ## <a name="typical-application-layers"></a>Couches d’application standard
 
@@ -38,11 +36,9 @@ Tout au long de ce document et des études de cas, nous faisons référence aux 
 - **Couche application** : code qui est généralement spécifique à la plateforme (qui n’est généralement pas partagé entre les plateformes) ou code spécifique à l’application (qui n’est généralement pas réutilisable). Un bon test pour déterminer si le code doit être placé dans la couche d’application par rapport à la couche d’interface utilisateur (a) pour déterminer si la classe a des contrôles d’affichage réels ou (b) s’il peut être partagé entre plusieurs écrans ou périphériques (par exemple, iPhone et iPad).
 - **Couche de l’interface utilisateur (IU)** : couche accessible à l’utilisateur, contenant les écrans, les widgets et les contrôleurs qui les gèrent.
 
-
 Une application ne doit pas nécessairement contenir toutes les couches, par exemple la couche d’accès au service n’existe pas dans une application qui n’accède pas aux ressources du réseau. Une application très simple peut fusionner la couche de données et la couche d’accès aux données, car les opérations sont extrêmement basiques.
 
  <a name="Common_Mobile_Software_Patterns" />
-
 
 ## <a name="common-mobile-software-patterns"></a>Modèles courants de logiciels mobiles
 
@@ -54,6 +50,5 @@ Les modèles sont un moyen établi pour capturer des solutions récurrentes à d
 - **Singleton** : le modèle Singleton fournit un moyen dans lequel une seule instance d’un objet particulier peut exister. Par exemple, lors de l’utilisation de SQLite dans les applications mobiles, vous ne voulez jamais qu’une seule instance de la base de données. L’utilisation du modèle Singleton est un moyen simple de s’en assurer.
 - **Fournisseur** : modèle inventé par Microsoft (sans doute similaire à la stratégie ou à l’injection de dépendances de base) pour encourager la réutilisation de code dans les applications Silverlight, WPF et WinForms. Le code partagé peut être écrit par rapport à une interface ou une classe abstraite, et les implémentations concrètes spécifiques à la plateforme sont écrites et transmises lorsque le code est utilisé.
 - **Async** : à ne pas confondre avec le mot clé Async, le modèle asynchrone est utilisé lorsque le travail de longue durée doit être exécuté sans l’interface utilisateur ou le traitement actuel. Dans sa forme la plus simple, le modèle asynchrone décrit simplement que les tâches longues doivent être lancées dans un autre thread (ou abstraction de threads similaire, par exemple, une tâche) tandis que le thread actuel continue à traiter et à écouter une réponse du processus en arrière-plan. , puis met à jour l’interface utilisateur lorsque les données et l’État sont retournés.
-
 
 Chacun des modèles sera examiné plus en détail dans la mesure où son utilisation pratique est illustrée dans les études de cas. Wikipedia présente des descriptions plus détaillées des modèles [MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel), [MVC](https://en.wikipedia.org/wiki/Model–view–controller), [facade](https://en.wikipedia.org/wiki/Facade_pattern), [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern), [Strategy](https://en.wikipedia.org/wiki/Strategy_pattern) et [Provider](https://en.wikipedia.org/wiki/Provider_model) (et des [modèles de conception](https://en.wikipedia.org/wiki/Design_Patterns) en général).

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: aabbbb706d4b6fcd022e30f726696b5d4f46167f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f15d586a0ca209fec088fc48ca975efae4ab8fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279517"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768366"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Utilisation des actions de ligne dans Xamarin. iOS
 
@@ -26,7 +26,6 @@ iOS offre deux façons d’effectuer des actions sur une table `UISwipeActionsCo
 
 La `UITableViewRowAction` classe est utilisée pour définir une action qui se produit lorsque l’utilisateur fait défiler horizontalement la ligne d’une vue de table vers la gauche.
 Par exemple, lors de la modification d’une table, le balayage à gauche d’une ligne affiche un bouton **supprimer** par défaut. En attachant plusieurs instances de la `UITableViewRowAction` classe à un `UITableView`, plusieurs actions personnalisées peuvent être définies, chacune avec son propre texte, sa mise en forme et son propre comportement.
-
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
@@ -43,7 +42,6 @@ Celles-ci sont expliquées plus en détail dans les sections suivantes.
 `UITableViewController``UITableViewSource` (et `UITableViewDelegate`) contiennent deux méthodes : `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration`, qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de vue de table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
 
 L’exemple suivant (de l’exemple [TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) ) illustre l’implémentation de la configuration de balayage de début. Deux actions sont créées à partir des actions contextuelles, qui sont expliquées [ci-dessous](#create-uicontextualaction). Ces actions sont ensuite transmises à un récemment initialisé [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations), qui est utilisé comme valeur de retour.
-
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -180,8 +178,6 @@ Lorsque le code ci-dessus est exécuté et que l’utilisateur fait défiler la 
 [![](row-action-images/action01.png "Bouton AIM affiché à la place du bouton supprimer")](row-action-images/action01.png#lightbox)
 
 Si l’utilisateur appuie sur le bouton AIM `Hello World!` , est écrit sur la console dans Visual Studio pour Mac ou Visual Studio lorsque l’application est exécutée en mode débogage.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

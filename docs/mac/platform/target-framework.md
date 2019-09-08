@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 4ae8834427580c387de7a38a69d711207b04821e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a612c2c23ceff13ea1d602465573514547628e55
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290885"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769808"
 ---
 # <a name="target-framework-for-xamarinmac"></a>Framework cible pour Xamarin. Mac
 
@@ -53,7 +53,6 @@ Vous devez **nettoyer** puis **régénérer** votre projet Xamarin. Mac après a
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a brièvement abordé les différents types de frameworks cibles (bibliothèques de classes de base) disponibles pour une application Xamarin. Mac et le moment où chaque type d’infrastructure doit être utilisé.
-
 
 ## <a name="related-links"></a>Liens associés
 

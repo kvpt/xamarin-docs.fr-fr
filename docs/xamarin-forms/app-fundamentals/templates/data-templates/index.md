@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 6cb828f59505159c972d40905f22995055f207df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 5d130a6644af4e5831263c6de137513c021e0b6a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646855"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760802"
 ---
 # <a name="xamarinforms-data-templates"></a>Modèles de données Xamarin.Forms
 
@@ -31,7 +31,6 @@ Les modèles de données peuvent être créés inline, dans un [`ResourceDiction
 ## <a name="creating-a-datatemplateselectorselectormd"></a>[Création d’un DataTemplateSelector](selector.md)
 
 Un [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) peut être utilisé pour choisir un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) au moment de l’exécution selon la valeur d’une propriété liée aux données. Cela permet d’appliquer plusieurs instances de `DataTemplate` au même type d’objet, pour personnaliser l’apparence d’objets en particulier. Cet article montre comment créer et utiliser un `DataTemplateSelector`.
-
 
 ## <a name="related-links"></a>Liens associés
 

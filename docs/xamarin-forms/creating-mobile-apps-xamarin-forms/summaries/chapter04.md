@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 4. Défilement de la pile
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 4. Défilement de la pile'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 4. Défilement de la pile'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 66e4f52e87a4398dd2e09d2d128f43de9a71a665
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334601"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760838"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Résumé du chapitre 4. Défilement de la pile
 
@@ -110,8 +110,6 @@ Placer un `StackLayout` dans un `ScrollView` est commun, mais en ajoutant un `Sc
 L’astuce consiste à donner le `ScrollView` enfant de la `StackLayout` un `VerticalOptions` paramètre `FillAndExpand`. Cela est illustré dans le [ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) exemple.
 
 Le **BlackCat** exemple montre également comment définir et accéder aux ressources de programme qui sont incorporés dans la bibliothèque partagée. Cela est également possible avec les projets de ressource partagé (SAP) mais le processus est un peu plus compliqué, comme le [ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) montre des exemples.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

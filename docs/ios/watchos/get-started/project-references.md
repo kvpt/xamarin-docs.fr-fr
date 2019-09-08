@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dcadb5146df39aa4887e28b65078acc9454f3d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292264"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767986"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Références de projet Watchos dans Xamarin
 
@@ -32,12 +32,9 @@ Pour afficher les références, double-cliquez sur les nœuds références de ch
 
   ![](project-references-images/catalog-reference2.png "l’application iPhone fait référence à l’application Watch")
 
-
 - L' **extension de l’application Watch** ne fait pas référence à l’un des autres projets
 
   ![](project-references-images/catalog-reference3.png "L’extension de l’application Watch ne fait pas référence aux autres projets")
-
-
 
 ## <a name="bundle-identifiers"></a>Identificateurs de Bundle
 
@@ -76,4 +73,3 @@ La version actuelle du **système d’exploitation** est 8,2. la **cible de dép
 ![](project-references-images/infoplist-watchapp.png "Fichier info. plist Watch")
 
 La cible de déploiement de l’application Watch peut être différente de l’extension Watch et de l’application iOS.
-

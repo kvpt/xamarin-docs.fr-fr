@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: a5430407798dd556532b2cacf592439acc7c02be
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c8e82f9261601db48ec48092a5f3f81394a86eec
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290139"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763411"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Encodages d’internationalisation dans Xamarin. iOS
 
@@ -35,9 +35,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 - Sud Langues latines, Pâques et Europe occidentale
 - all
 
-
  <a name="cjk" />
-
 
 ## <a name="cjk"></a>cjk
 
@@ -48,9 +46,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 - CP950
 - CP54936
 
-
  <a name="mideast" />
-
 
 ## <a name="mideast"></a>mideast
 
@@ -62,9 +58,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 - CP28599
 - CP38598
 
-
  <a name="other" />
-
 
 ## <a name="other"></a>other
 
@@ -78,9 +72,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 - CP57002
 - CP874
 
-
  <a name="rare" />
-
 
 ## <a name="rare"></a>rares
 
@@ -122,9 +114,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 - CP870
 - CP875
 
-
  <a name="west" />
-
 
 ## <a name="west"></a>Sud
 
@@ -143,4 +133,3 @@ Vous pouvez sélectionner l’un des éléments suivants :
 - CP861
 - CP863
 - CP865
-

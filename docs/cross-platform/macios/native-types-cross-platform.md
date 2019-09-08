@@ -6,17 +6,16 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: conceptdev
 ms.author: crdun
 ms.date: 04/07/2016
-ms.openlocfilehash: dde5b2429622c967fa4419700ce8fe9860afbb10
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 273b7f2eb40f1fa8495e0a0e8e18fa947241f389
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290849"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765415"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Utilisation de types natifs dans des applications multiplateformes
 
 _Cet article aborde l’utilisation des nouveaux types natifs iOS API unifiée (nint, nuint, nfloat) dans une application multiplateforme dans laquelle le code est partagé avec des appareils non-iOS tels que les systèmes d’exploitation Android ou Windows Phone._
-
 
 Les types natifs de types 64 fonctionnent avec les API iOS et Mac. Si vous écrivez du code partagé qui s’exécute également sur Android ou Windows, vous devez gérer la conversion des types unifiés en types .NET standard que vous pouvez partager.
 
@@ -211,7 +210,6 @@ Notez que nous avons ici modifié la `CalculateArea` méthode pour retourner un 
 
 Si le code est compilé et exécuté sur un appareil non API unifiée, le `using nfloat = global::System.Single;` `nfloat` mappe à un `Single` qui effectue une conversion implicite en `float` qui permet à l’application frontale de consommer d’appeler la `CalculateArea` méthode sans modifiées.
 
-
 #### <a name="using-type-conversions-in-the-front-end-app"></a>Utilisation des conversions de type dans l’application frontale
 
 Si vos applications frontales ne font qu’un petit nombre d’appels à votre bibliothèque de code partagée, une autre solution consisterait à conserver la bibliothèque inchangée et à effectuer une conversion de type dans l’application Xamarin. iOS ou Xamarin. Mac lors de l’appel de la routine existante. Par exemple :
@@ -228,7 +226,6 @@ Si l’application consommatrice effectue des centaines d’appels à la bibliot
 
 En se basant sur l’architecture de notre application, nous pourrions utiliser une ou plusieurs des solutions ci-dessus pour prendre en charge les types de données natifs (si nécessaire) dans notre code multiplateforme.
 
-
 ## <a name="xamarinforms-applications"></a>Applications Xamarin. Forms
 
 Les éléments suivants sont nécessaires pour utiliser Xamarin. Forms pour les interfaces multiplateformes qui seront également partagées avec une application API unifiée :
@@ -243,8 +240,6 @@ Pour plus d’informations, consultez notre documentation sur la [mise à jour d
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, nous avons vu quand utiliser les types de données natifs dans une application API unifiée et leurs implications interplateformes. Nous avons présenté plusieurs solutions qui peuvent être utilisées dans les situations où les nouveaux types de données natifs doivent être utilisés dans les bibliothèques multiplateformes. Nous avons également vu un guide rapide sur la prise en charge des API unifiées dans Xamarin. Forms applications multiplateformes.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

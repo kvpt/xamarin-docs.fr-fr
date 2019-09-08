@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: f37905f483ad31d05276383718a3295d4a288f28
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285864"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768938"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 
@@ -194,7 +194,7 @@ Le concepteur iOS comprend six sections principales :
 Pour ajouter un contrôle à une interface, faites-le glisser à partir de la **boîte à outils** et déposez-le sur l’aire de conception. Lors de l’ajout ou du positionnement d’un contrôle, les instructions verticales et horizontales mettent en surbrillance les positions de disposition couramment utilisées, telles que le centre vertical, le centre horizontal et les marges :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
- 
+
 ![Sur l’aire de conception, les directives mettent en évidence les positions de disposition couramment utilisées](introduction-images/9-layoutguides-vsmac.png "Sur l’aire de conception, les directives mettent en évidence les positions de disposition couramment utilisées")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -220,7 +220,7 @@ Un menu contextuel est disponible à la fois sur l’aire de conception et dans 
 ### <a name="constraints-toolbar"></a>Barre d’outils contraintes
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
- 
+
 [![Barre d’outils contraintes](introduction-images/11-constraintstoolbar-vsmac.png "Barre d’outils contraintes")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -316,7 +316,7 @@ Lorsque les [classes de taille](~/ios/user-interface/storyboards/unified-storybo
 L’aire de conception prend en charge le zoom à l’aide de plusieurs contrôles :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
- 
+
 ![Contrôles de zoom dans la barre d’outils inférieure](introduction-images/16-zoomcontrols-vsmac.png "Contrôles de zoom dans la barre d’outils inférieure")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)

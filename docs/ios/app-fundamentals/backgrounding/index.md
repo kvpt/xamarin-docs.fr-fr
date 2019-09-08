@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 161fda52002e8bb757db23c9b2a20a6befd132f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5afb87eb3f84e00427072ef6c4e2c19b46de0186
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289337"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766579"
 ---
 # <a name="backgrounding-in-xamarinios"></a>Arrière-plan dans Xamarin. iOS
 
@@ -35,8 +35,6 @@ Dans ce guide et les procédures pas à pas connexes, nous allons apprendre à e
 ## <a name="summary"></a>Récapitulatif
 
 Dans ce guide, nous avons présenté les différentes façons de procéder au traitement en arrière-plan dans iOS. Nous avons abordé les États de l’application iOS et examiné le rôle joué par l’arrière-plan dans le cycle de vie de l’application iOS. En outre, nous avons appris comment nous pourrions inscrire des tâches individuelles ou des applications entières pour qu’elles fonctionnent en arrière-plan dans iOS. Enfin, nous avons renforcé notre compréhension de l’arrière-plan sur iOS en créant des applications qui effectuent des mises à jour en arrière-plan.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

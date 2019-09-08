@@ -7,28 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 85045967f5c63eb39c45f917b957d2a393a3a068
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8be3f1b8803aa7e052ebc89af51dad3b659f95f5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945559"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757331"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Quels pilotes USB sont nécessaires pour déboguer Android sur Windows ?
 
 ## <a name="finding-usb-drivers"></a>Recherche de pilotes USB
 
-Pour déboguer sur un appareil Android lors du développement de Windows ; Vous devez installer un pilote USB compatible. Le gestionnaire Android SDK inclut « Google USB Driver » par défaut, ce qui ajoute la prise en charge pour les périphériques Nexus comme décrit ici : [https://developer.android.com/sdk/win-usb.html](https://developer.android.com/sdk/win-usb.html)
+Pour déboguer sur un appareil Android lors du développement dans Windows ; vous devez installer un pilote USB compatible. Le gestionnaire de Android SDK inclut par défaut le « pilote USB Google », qui ajoute la prise en charge des appareils de lien comme décrit ici :[https://developer.android.com/sdk/win-usb.html](https://developer.android.com/sdk/win-usb.html)
 
-Autres périphériques nécessitent des pilotes USB spécifiquement publiés par le fabricant du périphérique. Certains liens correspondant aux fabricants plus courantes sont incluses dans ce guide : [https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
+D’autres appareils nécessitent des pilotes USB spécifiquement publiés par le fabricant de l’appareil. Certains liens pour les fabricants les plus courants sont inclus dans ce guide :[https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
 
-## <a name="alternatives"></a>Alternatives
+## <a name="alternatives"></a>Autres solutions
 
-Selon le manfacturer, il peut être difficile à localiser le pilote USB exact nécessité. Des alternatives pour tester des applications Android développement dans Windows, y compris à l’aide d’un émulateur Android ou à l’aide des services de tests externes. Certaines interfaces incluent :
+En fonction du manfacturer, il peut être difficile de détecter le pilote USB exact requis. Certaines alternatives pour tester des applications Android développées dans Windows, notamment l’utilisation d’un émulateur Android ou l’utilisation de services de test externes. entres autres :
 
-- [Application Center Test](https://docs.microsoft.com/appcenter/test-cloud/) - Cloud services s’exécutent sur des centaines d’appareils Android réels de test.
+- Les services de test-Cloud de [App Center](https://docs.microsoft.com/appcenter/test-cloud/) s’exécutent sur des centaines d’appareils Android réels.
 
 - [Émulateur Visual Studio pour Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/)
 
 - [Débogage sur l’émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md)
-

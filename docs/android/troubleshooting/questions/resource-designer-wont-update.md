@@ -7,31 +7,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
-ms.openlocfilehash: 65f7c6d8a573501ffec4aa1b8eaf28ff1e6479e8
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: c175c533e437736849eac6be1f4a90a783123812
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864220"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757148"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>Mon fichier Android Resource.designer.cs ne se met pas à jour
 
 > [!NOTE]
-> Ce problème a été résolu dans Xamarin Studio 5.1.4 et versions ultérieures. Toutefois, si le problème se produit dans Visual Studio pour Mac, veuillez soumettre un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) avec votre contrôle de version complet intégral et les informations de générer la sortie de journal.
+> Ce problème a été résolu dans Xamarin Studio 5.1.4 et versions ultérieures. Toutefois, si le problème se produit dans Visual Studio pour Mac, veuillez envoyer un [nouveau bogue](~/cross-platform/troubleshooting/questions/howto-file-bug.md) à vos informations de contrôle de version et à la sortie complète du journal de génération.
 
-Un bogue dans Xamarin.Studio 5.1 endommagé précédemment fichiers .csproj en partiellement ou totalement supprimant le code xml dans le fichier .csproj. Cela entraînerait important système (par exemple, la mise à jour de l’Android Resource.designer.cs) de génération de parties de l’Android échec. À compter de la 5.1.4 stable libérer le 15 juillet, ce bogue a été résolu ; mais dans de nombreux cas le fichier projet doit être réparée manuellement, comme décrit ci-dessous.
+Un bogue dans Xamarin. Studio 5,1 A précédemment endommagé des fichiers. csproj en supprimant partiellement ou complètement le code XML dans le fichier. csproj. Cela entraînerait l’échec des parties importantes du système de génération Android (telles que la mise à jour du Resource.designer.cs Android). À compter de la publication stable de 5.1.4 le 15 juillet, ce bogue a été corrigé. Toutefois, dans de nombreux cas, le fichier projet doit être réparé manuellement, comme décrit ci-dessous.
 
+## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>Deux approches possibles pour corriger le fichier projet
 
-## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>Deux approches possibles pour résoudre le fichier de projet
+**Mode**
 
-**Soit :**
-
-1. Créer un tout nouveau projet d’application Xamarin.Android, définir toutes les propriétés de projet pour faire correspondre votre ancien projet et ajouter toutes vos ressources, fichiers sources, etc. dans le projet.
+1. Créez un nouveau projet d’application Xamarin. Android, définissez toutes les propriétés du projet pour qu’elles correspondent à votre ancien projet et ajoutez toutes vos ressources, fichiers sources, etc. dans le projet.
 
    **OU**
 
-2. Faites une copie de sauvegarde de fichier .csproj du votre projet d’origine, puis ouvrez-le dans un éditeur de texte et ajouter dans les éléments manquants à partir d’un fichier .csproj correctement généré.
+2. Effectuez une copie de sauvegarde du fichier. csproj du projet d’origine, ouvrez-le dans un éditeur de texte, puis rajoutez les éléments manquants à partir d’un fichier. csproj correctement généré.
 
 ### <a name="if-this-does-not-solve-the-problem"></a>Si cela ne résout pas le problème
 
-Après avoir expérimenté avec ces éléments, vous pouvez remarquer qu’après l’ajout d’éléments et régénérer le projet, le fichier Resource.designer.cs voulez-vous mettre à jour, mais ensuite vous pourriez toujours devoir fermez et rouvrez la solution pour obtenir la saisie semi-automatique de code pour reconnaître les nouveaux types contenus dans Resource.designer.cs. 
+Après avoir expérimenté ces éléments, vous pouvez remarquer qu’après avoir ajouté les éléments et reconstruit le projet, le fichier Resource.designer.cs est mis à jour, mais vous devrez peut-être encore fermer et rouvrir la solution pour que le code se termine. nouveaux types contenus dans Resource.designer.cs. 

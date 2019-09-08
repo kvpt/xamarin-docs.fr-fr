@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 876379a1d515517054d9e0fa2657e8bc10dc749f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888517"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759541"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Dessiner un cercle Simple dans SkiaSharp
 
@@ -154,10 +154,9 @@ Un `SKPaint` objet n’est guère plus qu’une collection de propriétés de de
 > [!NOTE]
 > Le `SKPaint` classe définit un [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) pour activer l’anticrénelage pour le rendu de votre graphique. L’anticrénelage génère en général visuellement plus lisses, vous devez donc probablement définir cette propriété sur `true` dans la plupart de vos `SKPaint` objets. Pour des raisons de simplicité, cette propriété est _pas_ définie dans la plupart des exemples de pages.
 
-Bien que la largeur du contour du cercle soit définie sur 25 pixels &mdash; ou sur un quart du rayon du cercle &mdash; , il semble plus mince et il y a une bonne raison pour cela: La moitié de la largeur de la ligne est obscurcie par le cercle bleu. Les arguments de la `DrawCircle` méthode définissent les coordonnées géométriques abstraites d’un cercle. L’intérieur de bleu est dimensionné à cette dimension au pixel le plus proche, mais le contour de 25 pixels de large rapproche du cercle géométrique &mdash; la moitié de l’intérieur et l’autre moitié à l’extérieur.
+Bien que la largeur du contour du cercle soit définie sur 25 pixels &mdash; ou sur un quart du rayon du cercle &mdash; , il semble plus mince et il y a une bonne raison pour cela : La moitié de la largeur de la ligne est obscurcie par le cercle bleu. Les arguments de la `DrawCircle` méthode définissent les coordonnées géométriques abstraites d’un cercle. L’intérieur de bleu est dimensionné à cette dimension au pixel le plus proche, mais le contour de 25 pixels de large rapproche du cercle géométrique &mdash; la moitié de l’intérieur et l’autre moitié à l’extérieur.
 
 L’exemple suivant dans le [l’intégration avec Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) article montre visuellement.
-
 
 ## <a name="related-links"></a>Liens associés
 

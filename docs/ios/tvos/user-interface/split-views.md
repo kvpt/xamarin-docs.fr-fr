@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f770eaf3fcb68c17a7692e5b6433081234951e6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5c147b43caf3018cde8870adb25bb73cb08f53ee
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286375"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768508"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Utilisation des contrôleurs tvOS Split View dans Xamarin
 
@@ -171,8 +171,6 @@ Pour obtenir l’état actuel de la présentation, `DisplayMode` utilisez la pro
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation des contrôleurs de vue fractionnée à l’intérieur d’une application Xamarin. tvOS.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

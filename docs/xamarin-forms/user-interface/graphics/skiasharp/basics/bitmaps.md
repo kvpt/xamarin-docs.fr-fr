@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 80f2b686e9802a93b0cf32420ccaef3e8877727c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738895"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759552"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Principes fondamentaux de la bitmap dans SkiaSharp
 
@@ -69,7 +69,6 @@ Lorsque vous utilisez `HttpClient` avec les applications iOS et Android, vous vo
 
 Car il est plus pratique d’utiliser le `await` opérateur avec `HttpClient`, le code ne peut pas être exécuté dans le `BasicBitmapsPage` constructeur. Au lieu de cela, il fait partie de la `OnAppearing` remplacer. Ici l’URL pointe vers une zone sur le site web de Xamarin avec des bitmaps d’exemple. Un package sur le site web permet d’ajouter une spécification pour le redimensionnement de la bitmap à une largeur spécifique :
 
-
 ```csharp
 protected override async void OnAppearing()
 {
@@ -104,7 +103,7 @@ La méthode statique `SKBitmap.Decode` méthode est chargée de décodage des fi
 
 En termes de code, l’approche la plus simple pour charger des bitmaps est y compris une ressource bitmap directement dans votre application. Le **SkiaSharpFormsDemos** programme inclut un dossier nommé **Media** contenant plusieurs fichiers, dont un nommé de bitmap **monkey.png**. Pour les bitmaps stockés en tant que ressources de programme, vous devez utiliser le **propriétés** boîte de dialogue pour donner au fichier un **Action de génération** de **ressource incorporée**!
 
-Chaque ressource incorporée possède un *ID de ressource* qui se compose du nom du projet, du dossier et du nom de fichier, tous connectés par périodes: **SkiaSharpFormsDemos.Media.monkey.png**. Vous pouvez accéder à cette ressource en spécifiant cette ressource ID en tant qu’argument à la [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) méthode de la [ `Assembly` ](xref:System.Reflection.Assembly) classe :
+Chaque ressource incorporée possède un *ID de ressource* qui se compose du nom du projet, du dossier et du nom de fichier, tous connectés par périodes : **SkiaSharpFormsDemos.Media.monkey.png**. Vous pouvez accéder à cette ressource en spécifiant cette ressource ID en tant qu’argument à la [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) méthode de la [ `Assembly` ](xref:System.Reflection.Assembly) classe :
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

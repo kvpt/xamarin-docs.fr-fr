@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b6ac960770320ed100e8b082cabf8240efed070b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10ab9b379344ab6c514eba84f1ef3fd9c7400b73
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290835"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765534"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Plateforme Apple (iOS et Mac)
 
@@ -31,7 +31,6 @@ La API unifiée pour les projets iOS et Mac utilise les mêmes espaces de noms p
 > **Désapprobation du profil classique :** À mesure que de nouvelles plates-formes sont ajoutées dans Xamarin. iOS, nous commençons à déprécier progressivement les fonctionnalités du profil classique (MonoTouch. dll). Par exemple, l’option non NRC (New-Ref-Count) a été supprimée. NRC a toujours été activé pour toutes les applications unifiées (par exemple, non-NRC n’a jamais été une option) et n’a pas de problèmes connus. Dans les versions ultérieures, vous supprimerez l’option d’utilisation de Boehm comme garbage collector. Il s’agissait également d’une option jamais disponible pour les applications unifiées. La suppression complète de la prise en charge classique est prévue pour l’automne 2016 avec la version de Xamarin. iOS 10,0.
 
 Les API Xamarin. iOS et Xamarin. Mac d’origine (non unifiées) ont rendu le partage de code plus difficile, car les `MonoTouch.` infrastructures `MonoMac.` natives avaient des préfixes d’espace de noms ou.  Nous avons fourni des espaces de noms vides qui permettent aux développeurs de partager `using` du code en ajoutant des instructions qui font référence à la fois à des espaces de noms MonoMac et monotoucher sur le même fichier, mais cela était un peu insupportable. Le API classique doit continuer à être utilisé uniquement dans les applications héritées qui sont distribuées en interne (la mise à niveau vers le API unifiée est recommandée).
-
 
 ### <a name="updating-from-classic-to-the-unified-api"></a>Mise à jour de Classic vers le API unifiée
 

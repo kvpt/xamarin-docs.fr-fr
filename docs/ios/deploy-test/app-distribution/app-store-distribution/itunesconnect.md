@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 01e6ae4362c902c0982f7b93cc1f65b003db1020
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283590"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763240"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Configuration d’une application dans iTunes Connect
 
@@ -304,7 +304,6 @@ Effectuez ce qui suit dans [iTunes Connect](https://itunesconnect.apple.com/WebO
 
     [![](itunesconnect-images/review02.png "Modification des informations relatives à la publication dans iTunes Connect")](itunesconnect-images/review02.png#lightbox)
 7. Cliquez sur le bouton **Save (Enregistrer)** en haut de l’écran pour enregistrer vos changements.
-
 
 ## <a name="maintaining-pricing-information"></a>Gestion des informations relatives à la tarification
 

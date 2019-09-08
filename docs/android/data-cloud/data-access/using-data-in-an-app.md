@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 62e3e6944118e82cbd7712a80eb8098f3c6541fc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525986"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754460"
 ---
 # <a name="using-data-in-an-app"></a>Utilisation de données dans une application
 
-L’exemple **DataAccess_Adv** illustre une application opérationnelle qui autorise les entrées d’utilisateur et les fonctionnalités de base de données CRUD (création, lecture, mise à jour et suppression). L’application se compose de deux écrans: une liste et un formulaire de saisie de données. Tout le code d’accès aux données peut être réutilisé dans iOS et Android sans modification.
+L’exemple **DataAccess_Adv** illustre une application opérationnelle qui autorise les entrées d’utilisateur et les fonctionnalités de base de données CRUD (création, lecture, mise à jour et suppression). L’application se compose de deux écrans : une liste et un formulaire de saisie de données. Tout le code d’accès aux données peut être réutilisé dans iOS et Android sans modification.
 
-Après avoir ajouté des données, les écrans de l’application ressemblent à ce qui suit sur Android:
+Après avoir ajouté des données, les écrans de l’application ressemblent à ce qui suit sur Android :
 
 ![Liste d’exemples Android](using-data-in-an-app-images/image11.png "Liste d’exemples Android")
 
@@ -31,12 +31,12 @@ Le code d’interface utilisateur natif pour les activités dans Android est hor
 
 ## <a name="read"></a>Lecture
 
-Il existe deux opérations de lecture dans l’exemple:
+Il existe deux opérations de lecture dans l’exemple :
 
 - Lecture de la liste
 - Lecture d’enregistrements individuels
 
-Les deux méthodes de la `StockDatabase` classe sont:
+Les deux méthodes de la `StockDatabase` classe sont :
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -57,7 +57,7 @@ Android restitue les données sous la `ListView`forme d’un.
 
 ## <a name="create-and-update"></a>Créer et mettre à jour
 
-Pour simplifier le code de l’application, une méthode Save unique est fournie, qui effectue une insertion ou une mise à jour selon que la valeur PrimaryKey a été définie ou non. Étant donné `Id` que la propriété est marquée `[PrimaryKey]` avec un attribut, vous ne devez pas la définir dans votre code. Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence:
+Pour simplifier le code de l’application, une méthode Save unique est fournie, qui effectue une insertion ou une mise à jour selon que la valeur PrimaryKey a été définie ou non. Étant donné `Id` que la propriété est marquée `[PrimaryKey]` avec un attribut, vous ne devez pas la définir dans votre code. Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence :
 
 ```csharp
 public int SaveStock (Stock item)
@@ -90,7 +90,7 @@ public int DeleteStock(Stock stock)
 
 ## <a name="using-a-pre-populated-sqlite-database-file"></a>Utilisation d’un fichier de base de données SQLite pré-rempli
 
-Certaines applications sont livrées avec une base de données déjà remplie de données. Vous pouvez facilement effectuer cette opération dans votre application mobile en envoyant un fichier de base de données SQLite existant avec votre application et en le copiant dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard utilisé sur de nombreuses plateformes, un certain nombre d’outils sont disponibles pour créer un fichier de base de données SQLite:
+Certaines applications sont livrées avec une base de données déjà remplie de données. Vous pouvez facilement effectuer cette opération dans votre application mobile en envoyant un fichier de base de données SQLite existant avec votre application et en le copiant dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard utilisé sur de nombreuses plateformes, un certain nombre d’outils sont disponibles pour créer un fichier de base de données SQLite :
 
 - **Extension SQLite Manager Firefox** &ndash; Fonctionne sur Mac et Windows et produit des fichiers compatibles avec iOS et Android.
 
@@ -133,7 +133,6 @@ public class YourAndroidApp : Application {
     }
 }
 ```
-
 
 ## <a name="related-links"></a>Liens associés
 

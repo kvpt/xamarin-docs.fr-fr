@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 27eb5679bbc4825ab2bf0e1990b00d97ab207619
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292437"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770987"
 ---
 # <a name="menus-in-xamarinmac"></a>Menus dans Xamarin. Mac
 
@@ -1071,7 +1071,6 @@ Vous pouvez créer et utiliser des listes déroulantes exactement de la même fa
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation des menus et des éléments de menu dans une application Xamarin. Mac. Tout d’abord, nous avons examiné la barre de menus de l’application, puis nous avons examiné la création de menus contextuels. ensuite, nous avons examiné les menus de barre d’État et les menus d’ancrage personnalisés. Enfin, nous avons abordé les menus contextuels et les listes déroulantes.
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d7d6bf128d3814917633bdd69e3c9c54c8d6a20c
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 88e1acecdc96af596a0151bbd3f64dc4547d4cce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197510"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753821"
 ---
 # <a name="xamarinandroid-performance"></a>Performances des applications Xamarin.Android
 
@@ -34,7 +34,6 @@ De nombreuses techniques permettent d’accroître les performances des applicat
 - [Supprimer les ressources d’images non utilisées](#disposeimages)
 - [Éviter l’arithmétique à virgule flottante](#avoidfloats)
 - [Faire disparaître les boîtes de dialogue](#dismissdialogs)
-
 
 > [!NOTE]
 > Avant de lire cet article, lisez d’abord [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques spécifiques indépendantes des plateformes qui permettent d’améliorer l’utilisation de la mémoire et le niveau de performance des applications générées à l’aide de la plateforme Xamarin.
@@ -246,7 +245,6 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 Pour plus d’informations sur la libération des ressources pouvant être supprimées, consultez [Libérer des ressources IDisposable](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).  
 
-
 <a name="avoidfloats" />
 
 ## <a name="avoid-floating-point-arithmetic"></a>Éviter l’arithmétique à virgule flottante
@@ -265,7 +263,6 @@ Lorsque vous utilisez la classe [`ProgressDialog`](xref:Android.App.ProgressDial
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, vous avez découvert les techniques qui permettent d’accroître les performances des applications générées avec Xamarin.Android. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
-
 
 ## <a name="related-links"></a>Liens associés
 

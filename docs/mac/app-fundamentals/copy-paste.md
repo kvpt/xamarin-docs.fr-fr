@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 42ac6c9c729498ad4b70e1e209d63c1ec2e11f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291223"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769937"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Copier et coller dans Xamarin. Mac
 
@@ -603,7 +603,7 @@ namespace MacCopyPaste
 Là encore, nous obtenons la fenêtre actuelle en haut et utilisons `ImageDocument` son instance de classe pour voir si les données d’image requises existent. Ensuite, nous utilisons `MenuWillHighlightItem` la méthode pour activer ou désactiver chaque élément en fonction de cet État.
 
 Modifiez le fichier **AppDelegate.cs** et faites en `DidFinishLaunching` sorte que la méthode ressemble à ce qui suit :
- 
+
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
 {
@@ -1275,8 +1275,6 @@ if (ok) {
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit en détail l’utilisation du collage dans une application Xamarin. Mac pour prendre en charge les opérations de copie et de collage. Tout d’abord, il a introduit un exemple simple pour vous familiariser avec les opérations pasteboards standard. Ensuite, il a vu un aperçu détaillé du montage et de la lecture et de l’écriture de données à partir de celui-ci. Enfin, il a étudié l’utilisation d’un type de données personnalisé pour prendre en charge la copie et le collage de types de données complexes dans une application.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

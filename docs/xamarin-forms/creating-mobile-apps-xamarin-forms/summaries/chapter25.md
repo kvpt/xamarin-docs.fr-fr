@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 25. Types de page
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 25. Types de page'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 25. Types de page'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b86f2d7216a6344b14fc4d8c538ea68871eda5ae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331809"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760536"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Résumé du chapitre 25. Types de page
 
@@ -111,8 +111,6 @@ Le [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tr
 Le [ **MultiTabbedColor** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors) exemple utilise le [ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) classe dans le [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) bibliothèque. Le [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml) fichier définit les `DataTemplate` propriété de `TabbedPage` vers un début de l’arborescence d’éléments visuels avec `ContentPage` qui contient des liaisons aux propriétés de `NamedColor` (y compris une liaison à la `Title` propriété).
 
 Toutefois, cela peut être problématique sur iOS. Quelques-uns des éléments peuvent être affichées, et il n’existe aucun bon moyen de leur donner des icônes.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

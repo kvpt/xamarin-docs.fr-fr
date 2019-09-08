@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282716"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769250"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publication sur l’App Store Apple TV
 
@@ -24,7 +24,6 @@ Le processus d’envoi d’une application à Apple TV App Store implique les op
 2. Création d’un *profil de provisionnement de distribution*
 3. Utilisation de ce profil pour générer votre application.
 4. Envoi de votre application via *iTunes Connect*.
-
 
 Dans cet article, nous allons aborder toutes les étapes nécessaires à l’approvisionnement, à la création et à l’envoi d’une application pour la distribution Apple TV App Store.
 
@@ -39,7 +38,6 @@ Voici quelques éléments à surveiller quand vous soumettez une application :
 
 1. Assurez-vous que la description de l’application correspond à la fonctionnalité incluse dans l’application.
 2. Vérifiez que l’application ne plante pas dans des conditions d’utilisation normales. Cela comprend l’utilisation sur chaque appareil TV Apple que vous prenez en charge.
-
 
 Apple gère également une liste des conseils d’envoi d’Apple TV App Store. Vous pouvez les lire sur la page décrivant la [distribution d’applications sur l’App Store](https://developer.apple.com/appstore/resources/submission/tips.html).
 
@@ -121,7 +119,6 @@ Le provisionnement implique l’exécution des étapes suivantes à partir du po
 
 Pour obtenir des instructions détaillées, consultez [Création d’un profil de distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#creatingprofile) et [Sélection d’un profil de distribution dans un projet Xamarin.iOS](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile). Là encore, ces deux documents sont spécifiques à iOS, mais la même technique est utilisée pour les applications tvOS.
 
-
 <a name="Setting_the_Build_Configuration_for_your_Application" />
 
 ### <a name="setting-the-build-configuration-for-your-application"></a>Définition de la configuration de build pour votre application
@@ -137,7 +134,6 @@ Effectuez ce qui suit :
 5. Apple exige également que les applications tvOS utilisent bitcode. Là encore, dans la configuration Release `--bitcode=asmonly` , ajoutez à la zone **arguments mTouch supplémentaires** .
 6. La case à cocher **optimiser les fichiers image png pour iOS** doit être vérifiée, car cela vous aidera à réduire davantage la taille du livrable de votre application.
 7. Le débogage ne doit *pas* être activé, car il rend la build inutilement plus grande.
-
 
 <a name="Building_and_Submitting_the_Distributable" />
 
@@ -189,7 +185,6 @@ Une fois votre build de distribution créée et archivée, vous êtes prêt à s
 
 Une fois que vous avez effectué la build de distribution, vous êtes prêt à soumettre votre application iOS à Apple pour qu’elle soit évaluée et, le cas échéant, publiée sur l’App Store.
 
-
 Dans Visual Studio pour Mac, le flux de travail d’archivage ouvre automatiquement application Loader, une fois `.ipa`que vous avez enregistré :
 
 1. Sélectionnez *Deliver Your App (Livrer votre application)* , puis cliquez sur le bouton *Choose (Choisir)*  :
@@ -225,7 +220,6 @@ Si vous rencontrez des problèmes lors de l’envoi de votre application Xamarin
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a présenté un guide pas à pas pour la configuration, la création et l’envoi d’une application pour la publication Apple TV App Store. Tout d’abord, il a décrit les étapes nécessaires pour créer et installer un profil de provisionnement de distribution. Ensuite, il explique comment utiliser Visual Studio pour Mac pour créer une build de distribution. Enfin, il vous a montré comment utiliser iTunes Connect et l’outil d’archivage Xcode pour soumettre une application à Apple TV App Store.
-
 
 ## <a name="related-links"></a>Liens associés
 

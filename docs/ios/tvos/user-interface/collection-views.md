@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: c9980dff866a176d4a4a1f1f6bc1bd8c92bd7097
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8fcedd4f7dca4527b37c6b83fbd205014cffcaaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280217"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769134"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Utilisation des vues de collection tvOS dans Xamarin
 
@@ -96,7 +96,6 @@ Procédez comme suit :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-    
 1. Démarrez une nouvelle **application TvOS View** dans Visual Studio pour Mac.
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le dans le concepteur iOS.
 1. Ajoutez une vue d’image, une étiquette et un bouton à la vue existante et configurez-les de façon à ce qu’elle ressemble à ce qui suit : 
@@ -132,11 +131,9 @@ Procédez comme suit :
 
     [![](collection-views-images/collection11.png "Définir l’identité sur CityCell")](collection-views-images/collection11.png#lightbox)
 1. Enregistrez les modifications apportées.
-    
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
 1. Démarrez une nouvelle **vue tvOS** dans Visual Studio.
 1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le dans le concepteur iOS.
 1. Ajoutez une vue d’image, une étiquette et un bouton à la vue existante et configurez-les de façon à ce qu’elle ressemble à ce qui suit : 
@@ -170,7 +167,6 @@ Procédez comme suit :
 
     [![](collection-views-images/collection11vs.png "Définir l’identité sur CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. Enregistrez les modifications apportées.
-    
 
 -----
 
@@ -286,7 +282,6 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
 Pour plus d’informations sur la navigation et le focus, consultez notre section consacrée [à la navigation et au focus](~/ios/tvos/app-fundamentals/navigation-focus.md) et à la documentation sur les [contrôleurs Bluetooth et Siri distants](~/ios/tvos/platform/remote-bluetooth.md) .
-
 
 <a name="The-Collection-View-Data-Provider" />
 
@@ -469,7 +464,6 @@ Cela définit la propriété et définit la ville par défaut qui sera affichée
 ### <a name="the-collection-view-delegate"></a>Délégué de la vue de collection
 
 Ensuite, ajoutez une nouvelle `CityViewDelegate` classe au projet et faites en sorte qu’elle ressemble à ce qui suit :
-
 
 ```csharp
 using System;
@@ -684,7 +678,6 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 Nous définissons la transparence de l’élément précédent qui perd le focus sur zéro (0) et la transparence de l’élément suivant gagne le focus sur 100%. Ces transitions sont également animées.
 
-
 ## <a name="configuring-the-collection-view-controller"></a>Configuration du contrôleur d’affichage de collection
 
 À présent, nous devons effectuer la configuration finale sur notre vue de collection et autoriser le contrôleur à définir la propriété que nous avons définie afin que la vue de collection puisse être fermée une fois que l’utilisateur a fait une sélection.
@@ -824,14 +817,11 @@ L’une des principales fonctionnalités de l’utilisation d’une vue de colle
 
 Récemment ajoutés aux vues de collection pour iOS 9 était la possibilité d’autoriser facilement la réorganisation des éléments dans la collection. Là encore, étant donné que tvOS 9 est un sous-ensemble d’iOS 9, cette opération est effectuée de la même façon. Pour plus d’informations, consultez notre document sur [les modifications](~/ios/user-interface/controls/uicollectionview.md) de la vue de collection.
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la conception et l’utilisation des vues de collection au sein d’une application Xamarin. tvOS. Tout d’abord, elle a abordé tous les éléments qui composent la vue de collection. Ensuite, il a montré comment concevoir et implémenter une vue de collection à l’aide d’une table de montage séquentiel. Enfin, fournit des liens vers des informations sur la création de dispositions personnalisées et la réorganisation des éléments.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

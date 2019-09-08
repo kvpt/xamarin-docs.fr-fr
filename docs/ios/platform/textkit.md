@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c153e653cc57d35f125ef58ebc8df0013f77e7c1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dba65eb11b6ae22a51610804e3a6a73549f4565b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283010"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769767"
 ---
 # <a name="textkit-in-xamarinios"></a>TextKit dans Xamarin. iOS
 
@@ -31,7 +31,6 @@ TextKit fournit une architecture en couches qui sépare le stockage de texte de 
 - `NSTextContainer`: Fournit le système de coordonnées et la géométrie utilisés pour mettre en forme le texte.
 - `NSLayoutManager`: Met du texte en forme de glyphes.
 - `NSTextStorage`: Contient les données texte, ainsi que les mises à jour des propriétés de texte par lots. Toutes les mises à jour par lots sont transmises au gestionnaire de disposition pour le traitement réel des modifications, telles que le recalcul de la disposition et le redessin du texte.
-
 
 Ces trois classes sont appliquées à une vue qui restitue le texte. Les vues de gestion de texte intégrées, telles que `UITextView`, `UITextField`et `UILabel` qui les ont déjà définies, vous pouvez les créer et les appliquer également à `UIView` n’importe quelle instance.
 
@@ -144,8 +143,6 @@ Ce code ajoute la prise en charge du dessin sur l’affichage de texte à l’ai
 > [!IMPORTANT]
 > Cet exemple sous-classe `UITextView` pour ajouter la prise en charge du dessin tactile. Le sous- `UITextView` classement n’est pas nécessaire pour bénéficier des fonctionnalités de TextKit.
 
-
-
 Une fois que l’utilisateur a dessiné `CGPath` l’affichage de texte, il est appliqué à une `UIBezierPath` instance en `UIBezierPath.CGPath` définissant la propriété :
 
 ```csharp
@@ -164,7 +161,6 @@ La capture d’écran suivante illustre la façon dont la disposition du texte c
 ![](textkit-images/exclusionpath2.png "Cette capture d’écran illustre la modification de la disposition du texte autour du tracé dessiné.")
 
 Notez que la propriété du `AllowsNonContiguousLayout` gestionnaire de présentation est définie sur false dans ce cas. Cela entraîne le recalcul de la disposition pour tous les cas où le texte change. Si vous affectez la valeur true, vous pouvez bénéficier des performances en évitant une actualisation de la mise en page complète, en particulier dans le cas de documents volumineux. Toutefois, l' `AllowsNonContiguousLayout` affectation de la valeur true empêche le chemin d’exclusion de mettre à jour la disposition dans certains cas, par exemple, si du texte est entré au moment de l’exécution sans retour chariot de fin avant la définition du chemin d’accès.
-
 
 ## <a name="related-links"></a>Liens associés
 

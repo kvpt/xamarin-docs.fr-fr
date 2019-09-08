@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/09/2018
-ms.openlocfilehash: 1d6f4dc20a32810bb218ce3aa2281fa1355a584d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291902"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753334"
 ---
 # <a name="limitations-of-xamarinios"></a>Limitations de Xamarin. iOS
 
@@ -21,7 +21,6 @@ ms.locfileid: "70291902"
 Il s’agit des limitations de Xamarin. iOS comparées à l’ordinateur de bureau mono :
 
  <a name="Limited_Generics_Support" />
-
 
 ## <a name="limited-generics-support"></a>Prise en charge des génériques limités
 
@@ -32,7 +31,6 @@ La technologie [AOA complète](https://www.mono-project.com/docs/advanced/aot/#f
 Parmi les problèmes courants rencontrés par les développeurs, citons :
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
-
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Les sous-classes génériques de NSObjects sont limitées
 
@@ -47,9 +45,7 @@ class Foo<T> : UIView {
 > [!NOTE]
 > Alors que les sous-classes génériques de NSObjects sont possibles, il existe quelques limitations. Pour plus d’informations, consultez les [sous-classes génériques du document NSObject](~/ios/internals/api-design/nsobject-generics.md) .
 
-
  <a name="No_Dynamic_Code_Generation" />
-
 
 ## <a name="no-dynamic-code-generation"></a>Aucune génération de code dynamique
 
@@ -60,10 +56,7 @@ class Foo<T> : UIView {
 - Aucune prise en charge de la création dynamique de types (sans type. GetType ("MyType' 1")), bien que la recherche de types existants (type. GetType ("System. String") par exemple, fonctionne parfaitement).
 - Les rappels inverses doivent être inscrits auprès du Runtime au moment de la compilation.
 
-
-
  <a name="System.Reflection.Emit" />
-
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
@@ -72,7 +65,6 @@ L’absence de System. Reflection. L' **émission** signifie qu’aucun code dé
 - Le Dynamic Language Runtime.
 - Tous les langages reposant sur le Dynamic Language Runtime.
 - La valeur TransparentProxy de communication à distance ou tout autre qui obligerait le runtime à générer du code dynamiquement.
-
 
   > [!IMPORTANT]
   > Ne confondez pas la **réflexion. Emit** avec **réflexion**. La réflexion. Emit concerne la génération dynamique du code et l’compilées et la compilation du code en code natif. En raison des limitations relatives à iOS (aucune compilation JIT), cela n’est pas pris en charge.
@@ -94,7 +86,6 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
  <a name="Reverse_Callbacks" />
 
-
 ### <a name="reverse-callbacks"></a>Rappels inverses
 
 En mono standard, il est possible de C# passer des instances de délégué au code non managé à la place d’un pointeur de fonction. Le Runtime transforme généralement ces pointeurs fonction en un petit thunk qui permet au code non managé de rappeler le code managé.
@@ -110,9 +101,7 @@ Dans mono, ces ponts sont implémentés par le compilateur juste-à-temps. Lorsq
 
 La pile de communication à distance n’est pas disponible sur Xamarin. iOS.
 
-
  <a name="Runtime_Disabled_Features" />
-
 
 ## <a name="runtime-disabled-features"></a>Fonctionnalités désactivées du Runtime
 
@@ -125,14 +114,10 @@ Les fonctionnalités suivantes ont été désactivées dans le runtime iOS de mo
 - Le moteur JIT
 - Vérificateur de métadonnées (dans la mesure où il n’y a pas de JIT)
 
-
  <a name=".NET_API_Limitations" />
-
 
 ## <a name="net-api-limitations"></a>Limitations de l’API .NET
 
 L’API .NET exposée est un sous-ensemble de l’infrastructure complète, car tous les éléments ne sont pas disponibles dans iOS. Consultez le Forum aux questions pour obtenir la [liste des assemblys actuellement pris en charge](~/cross-platform/internals/available-assemblies.md).
-
-
 
 En particulier, le profil d’API utilisé par Xamarin. iOS n’inclut pas System. Configuration. il n’est donc pas possible d’utiliser des fichiers XML externes pour configurer le comportement du Runtime.

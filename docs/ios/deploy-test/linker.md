@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 23022351b6ac2da59550be668cb9ed4fe84904dd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2cda4d53ae3f5f5716d53fd8862ca9cf000003e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284763"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762842"
 ---
 # <a name="linking-xamarinios-apps"></a>Liaison d’applications Xamarin.iOS
 
@@ -49,7 +49,6 @@ Effectuez ce qui suit :
 -----
 
 Les trois options principales proposées sont décrites ci-dessous :
-
 
 ### <a name="dont-link"></a>Ne pas lier
 
@@ -165,7 +164,6 @@ class LinkerSafeAttribute : System.Attribute {}
 ## <a name="custom-linker-configuration"></a>Configuration personnalisée de l’éditeur de liens
 
 Suivez les [instructions pour la création d’un fichier de configuration de l’éditeur de liens](~/cross-platform/deploy-test/linker.md).
-
 
 ## <a name="related-links"></a>Liens associés
 

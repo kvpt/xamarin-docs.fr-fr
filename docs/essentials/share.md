@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.custom: video
-ms.openlocfilehash: b889573c0cefbd692b1e879c1612a143d4bb7c99
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: ade1baa90f8a3b6a35e89d53de6d5f9b841c8f9e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120747"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764966"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials: Partager
 
@@ -81,7 +81,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-- La propriété `Subject` permet d’indiquer l’objet souhaité du message.
+- La propriété `Subject` sera utilisée pour l’objet d’un message.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -90,11 +90,10 @@ await Share.RequestAsync(new ShareFileRequest
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-- `Title` correspond par défaut au nom de l’application, si aucune valeur n’est définie.
+- Si `Title` n'est pas défini, il prendra pour valeur par défaut le nom de l'application.
 - `Subject` ne sera pas utilisé.
 
 -----
-
 
 ## <a name="api"></a>API
 

@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa50ae16b69436936f0a7a8a5cf0aeaa54dfedfb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290856"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765673"
 ---
 # <a name="objective-sharpie-release-history"></a>Historique des versions objectivie
 
@@ -142,4 +142,3 @@ Correctifs de bogues mineurs.
 [Télécharger v 1.1.1](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
 
 1.1.1 était la première version majeure après 1,5 ans d’utilisation et de développement internes à Xamarin, à la suite de la préversion initiale de la finesse objective en avril 2013. Cette version est la première à être considérée comme stable et utilisable pour une grande variété de bibliothèques natives, avec un nouveau backend Clang.
-

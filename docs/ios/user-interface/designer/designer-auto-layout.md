@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: f931397f50b6b7aece099efb775a6dda560bf0eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280002"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768413"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Disposition automatique avec le Xamarin Designer pour iOS
 
@@ -47,7 +47,6 @@ Le mode de contrainte est activé pour la configuration du concepteur iOS par d�
 
     ![](designer-auto-layout-images/image01.png "La case à cocher utiliser la disposition automatique dans le volet des propriétés")
 
-
 Par défaut, aucune contrainte n’est créée ou visible sur l’aire de conception. Au lieu de cela, ils sont déduits automatiquement à partir des informations de frame au moment de la compilation. Pour ajouter des contraintes, nous devons sélectionner un élément sur l’aire de conception et lui ajouter des contraintes. Nous pouvons le faire à l’aide de la **barre d’outils contrainte**.
 
 ## <a name="constraints-toolbar"></a>Barre d’outils contraintes
@@ -63,7 +62,6 @@ La barre d’outils contraintes a été mise à jour et se compose maintenant de
 - **Un bouton « mettre à jour les contraintes » :** Il est important de noter que les modifications dépendent de si vous êtes en mode de modification des contraintes.
   - En mode de modification de contrainte, ce bouton ajuste les contraintes pour qu’elles correspondent au frame d’élément.
   - En mode d’édition de frame, ce bouton ajuste le frame d’élément pour qu’il corresponde à la position que les contraintes définissent.
-
 
 ## <a name="surface-based-constraint-editing"></a>Modification des contraintes basées sur une surface
 
@@ -87,8 +85,6 @@ Notez les trois lignes vertes en pointillés sur les deux autres boutons. Les li
 
 > [!IMPORTANT]
 > Les repères de mise en page sont des types spéciaux de cibles de contrainte qui nous permettent de créer des contraintes Top et Bottom qui prennent en compte la présence de barres système, telles que les barres d’État ou les barres d’outils. L’une des principales utilisations consiste à avoir une application compatible entre iOS 6 et iOS 7, puisque la version la plus récente dispose d’une vue de conteneur qui s’étend sous la barre d’État. Pour plus d’informations sur le Guide de disposition supérieur, reportez-vous à la [documentation Apple](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
-
-
 
 Les trois sections suivantes présentent l’utilisation de différents types de contraintes.
 
@@ -129,7 +125,6 @@ Plusieurs types de problèmes peuvent survenir lors de l’utilisation de contra
 - **Contraintes en conflit** : cela se produit lorsque plusieurs contraintes forcent l’élément à avoir des valeurs en conflit pour un attribut et que le moteur de contrainte ne peut pas les réconcilier.
 - **Éléments sous-restreints** : les propriétés d’un élément (emplacement + taille) doivent être entièrement couvertes par son ensemble de contraintes et de tailles intrinsèques pour que les contraintes soient valides. Si ces valeurs sont ambiguës, l’élément est dit comme étant sous-contraint.
 - Inversion de **trame** : cela se produit lorsque le frame d’un élément et son ensemble de contraintes définissent deux rectangles résultants différents.
-
 
 Cette section décrit les trois problèmes listés ci-dessus et fournit des détails sur la façon de les gérer.
 

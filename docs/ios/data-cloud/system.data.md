@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290118"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766535"
 ---
 # <a name="systemdata-in-xamarinios"></a>System. Data dans Xamarin. iOS
 
@@ -26,7 +26,7 @@ Xamarin. iOS 8,10 ajoute la prise en charge de [System. Data](xref:System.Data),
 
 <a name="Example" />
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Le programme suivant crée une base de `Documents/mydb.db3`données dans, et si la base de données n’existe pas déjà, elle est remplie avec des exemples de données. La base de données est ensuite interrogée, avec la sortie `stderr`écrite.
 
@@ -110,7 +110,6 @@ class Demo {
 > [!IMPORTANT]
 > Comme mentionné dans l’exemple de code ci-dessus, il est déconseillé d’incorporer des chaînes dans les commandes SQL, car cela rend votre code vulnérable à l' [injection SQL](https://en.wikipedia.org/wiki/SQL_injection).
 
-
 ### <a name="using-command-parameters"></a>Utilisation des paramètres de commande
 
 Le code suivant montre comment utiliser les paramètres de commande pour insérer en toute sécurité du texte entré par l’utilisateur dans la base de données (même si le texte contient des caractères SQL spéciaux comme une apostrophe) :
@@ -149,7 +148,6 @@ Les fonctionnalités manquantes dans **System. Data. dll** sont constituées des
 - [System.Data.Odbc](xref:System.Data.Odbc)
 - La `System.EnterpriseServices.dll` dépendance a été *supprimée* de `System.Data.dll` , ce qui a entraîné la suppression de la méthode [SqlConnection. EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) .
 
-
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
@@ -170,4 +168,3 @@ Les problèmes les plus courants semblent liés à l’interrogation des schéma
 ## <a name="data-binding"></a>Liaison de données
 
 La liaison de données n’est pas prise en charge pour l’instant.
-

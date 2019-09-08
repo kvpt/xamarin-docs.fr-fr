@@ -7,12 +7,12 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649286"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770451"
 ---
 # <a name="the-scale-transform"></a>La transformation d’échelle
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Vous vous demandez peut-être: Comment les facteurs de mise à l’échelle affectent-ils la `MeasureText` valeur retournée par la méthode de? `SKPaint` La réponse est la suivante: Pas du tout. `Scale` est une méthode de `SKCanvas`. Il n’affecte pas tout ce que vous le faites avec un `SKPaint` jusqu'à ce que cet objet vous permet de restituer un élément de la zone de dessin de l’objet.
+Vous vous demandez peut-être : Comment les facteurs de mise à l’échelle affectent-ils la `MeasureText` valeur retournée par la méthode de ? `SKPaint` La réponse est la suivante : Pas du tout. `Scale` est une méthode de `SKCanvas`. Il n’affecte pas tout ce que vous le faites avec un `SKPaint` jusqu'à ce que cet objet vous permet de restituer un élément de la zone de dessin de l’objet.
 
 Comme vous pouvez le voir, tous les éléments dessinés après le `Scale` appeler augmente proportionnellement :
 
@@ -251,7 +251,7 @@ Le `pathBounds` rectangle est obtenu au début de ce code et ensuite utilisé av
 
 [![](scale-images/anisotropicscaling-small.png "Capture d’écran triple de la page de mise à l’échelle ANISOTROPIQUE")](scale-images/anisotropicscaling-large.png#lightbox "Triple capture d’écran de la page de mise à l’échelle ANISOTROPIQUE")
 
-Une autre façon de penser `Scale` aux appels et `Translate` consiste à déterminer l’effet en séquence inverse: L' `Translate` appel décale le chemin d’accès pour qu’il devienne complètement visible mais orienté dans le coin supérieur gauche du canevas. Le `Scale` méthode rend ensuite cette étoile supérieure par rapport à l’angle supérieur gauche.
+Une autre façon de penser `Scale` aux appels et `Translate` consiste à déterminer l’effet en séquence inverse : L' `Translate` appel décale le chemin d’accès pour qu’il devienne complètement visible mais orienté dans le coin supérieur gauche du canevas. Le `Scale` méthode rend ensuite cette étoile supérieure par rapport à l’angle supérieur gauche.
 
 En fait, il apparaît que l’étoile est légèrement supérieure à la zone de dessin. Le problème est la largeur du trait. Le `Bounds` propriété du `SKPath` indique les dimensions des coordonnées encodées dans le chemin d’accès, et qui est utilisé par le programme à l’échelle. Lorsque le chemin d’accès est affiché avec une largeur de trait particulier, le chemin d’accès affiché est supérieure à la zone de dessin.
 
@@ -342,7 +342,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 Le code affiche également l’étoile 10 fois de plus, chaque fois que la diminution de la mise à l’échelle du facteur de 10 et progressivement en modifiant la couleur du rouge au bleu :
 
 [![](scale-images/isotropicscaling-small.png "Capture d’écran triple de la page de mise à l’échelle isotropes")](scale-images/isotropicscaling-large.png#lightbox "Triple capture d’écran de la page de mise à l’échelle isotropes")
-
 
 ## <a name="related-links"></a>Liens associés
 

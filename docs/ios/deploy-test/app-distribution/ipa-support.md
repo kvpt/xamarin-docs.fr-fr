@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 58621701d832660b125d7589762cc033811eb69b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9982f9102166aa6892be0819615f329a65fffbb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281840"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756427"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Prise en charge d’IPA dans Xamarin.iOS
 
@@ -66,7 +66,6 @@ Avant de commencer à créer un fichier IPA pour une solution multiplateforme, v
 
 Pour générer un fichier IPA, nous devons créer une _archive_ d’une build de mise en production de notre application. Cette archive contient notre application et les informations d’identification correspondantes.
 
-
 1. Sélectionnez la configuration **Mise en production | Appareil** dans Visual Studio pour Mac :
 
     ![](ipa-support-images/buildxs01new.png "Sélectionner la configuration Mise en production | Appareil")
@@ -79,7 +78,6 @@ Pour générer un fichier IPA, nous devons créer une _archive_ d’une build de
 
     ![](ipa-support-images/buildxs03new.png "L’affichage Archives est présenté")
 
-
 ### <a name="sign-and-distribute-your-app"></a>Signer et distribuer votre application
 
 Chaque fois que vous générez votre application pour qu’elle soit archivée, l’**affichage Archives** s’ouvre automatiquement, ce qui entraîne l’affichage de tous les projets archivés, regroupés par solution. Par défaut, cet affichage montre uniquement la solution actuelle, ouverte. Pour afficher toutes les solutions ayant des archives, cliquez sur l’option **Afficher toutes les archives**.
@@ -89,7 +87,6 @@ Il est recommandé de conserver les archives déployées auprès des clients (d�
 Notez que pour les builds non liées à l’App Store, le fichier **iTunesMetadata.plist** et les illustrations iTunes sont automatiquement inclus dans votre fichier IPA, s’ils se trouvent dans l’archive.
 
 Pour signer votre application et préparer sa distribution :
-
 
 1. Cliquez sur le bouton **Signer et distribuer**, comme indiqué dans l’illustration ci-dessous :
 
@@ -111,11 +108,9 @@ Pour signer votre application et préparer sa distribution :
 
     ![](ipa-support-images/distribute04.png "Enregistrer le fichier IPA sur l’ordinateur")
 
-
 ### <a name="building-via-the-command-line-on-mac"></a>Génération via la ligne de commande (sur Mac)
 
 Dans certains cas, par exemple dans un environnement d’intégration continue (CI), vous devez créer le fichier IPA via la ligne de commande. Suivez les étapes ci-dessous pour y parvenir :
-
 
 1. Vérifiez que la case **Options du projet > Options IPA iOS > Inclure les images iTunesArtwork** est cochée, et que la case **Générer un paquet ad-hoc/enterprise (IPA)** est cochée :
 
@@ -251,7 +246,6 @@ L’utilisateur peut à présent synchroniser son appareil avec iTunes pour inst
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a décrit les étapes nécessaires à la préparation d’une application Xamarin.iOS pour une build non liée à l’App Store. Il a montré comment créer un paquet IPA et comment installer l’application iOS qui en résulte sur l’appareil iOS de l’utilisateur final à des fins de test ou de distribution en interne.
-
 
 ## <a name="related-links"></a>Liens associés
 

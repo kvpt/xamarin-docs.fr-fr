@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292125"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753764"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Appairer avec un Mac pour le développement Xamarin.iOS
 
@@ -30,7 +30,7 @@ Avec Appairer avec un Mac, le flux de travail de développement est le suivant :
 
 - Visual Studio 2019 ouvre une connexion réseau à un hôte de build Mac et utilise les outils de génération sur cet ordinateur pour compiler et signer l’application iOS.
 
-- Il est inutile d’exécuter une application distincte sur le Mac : Visual Studio 2017 appelle les builds Mac de manière sécurisée via SSH.
+- Il n’est pas nécessaire d’exécuter une application distincte sur le Mac : Visual Studio 2019 appelle les builds Mac en toute sécurité via SSH.
 
 - Visual Studio 2019 est averti des modifications dès qu’elles se produisent. Par exemple, quand un appareil iOS est branché sur le Mac ou devient disponible sur le réseau, la barre d’outils iOS est instantanément mise à jour.
 

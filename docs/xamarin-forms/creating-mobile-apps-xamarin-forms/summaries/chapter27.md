@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 27. Renderers personnalisés
-description: 'Création d’Mobile Apps avec Xamarin. Forms: Résumé du chapitre 27. Renderers personnalisés'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 27. Renderers personnalisés'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 985510caa78733d1a53aceb41371839f544daa73
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd4014fa4db4e90596c100d454cf0467512240a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511650"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760502"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Résumé du chapitre 27. Renderers personnalisés
 
@@ -113,8 +113,6 @@ Les convertisseurs de trois sont :
 Les convertisseurs de détecter les modifications apportées au contrôle natif, puis appelez `SetValueFromRenderer`, qui fait référence à une propriété définie dans le `StepSlider`, une modification apportée à ce qui conduit le `StepSlider` pour déclencher un `ValueChanged` événement.
 
 Le [ **StepSliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/StepSliderDemo) exemple illustre ce nouveau curseur.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

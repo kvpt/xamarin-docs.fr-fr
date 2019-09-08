@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 5bdff0aee39375d8de296849056660f69a7d907f
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: ff054b1bd9607dd0dade874453a6ddf99ea4fd77
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198539"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758210"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
@@ -21,7 +21,7 @@ L’exemple [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid
 
 Tout d’abord, ajoutez le package NuGet de [prise en charge de l’usure Xamarin Android](https://www.nuget.org/packages/Xamarin.Android.Wear/) à votre projet.
 
-Le XML de disposition se présente comme suit:
+Le XML de disposition se présente comme suit :
 
 ```xml
 <android.support.wearable.view.GridViewPager xmlns:android="http://schemas.android.com/apk/res/android"
@@ -37,13 +37,11 @@ pour fournir des vues à afficher lorsque l’utilisateur navigue.
 
 L' [exemple d’adaptateur](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs) montre comment implémenter les méthodes requises, y compris les substitutions `GetColumnCount`pour `GetBackground` `RowCount`,, et.`GetFragment`
 
-Connectez l’adaptateur comme indiqué ci-dessous:
+Connectez l’adaptateur comme indiqué ci-dessous :
 
 ```csharp
 pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 ```
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -6,30 +6,26 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: f8b8f13f323f404554ca73c3e75c23713e0fbe35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288845"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758144"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Partie 3 : configuration d’une solution multiplateforme Xamarin
 
 Quelles que soient les plateformes utilisées, les projets Xamarin utilisent tous le même format de fichier de solution (le format de fichier de Visual Studio **. sln** ). Les solutions peuvent être partagées entre les environnements de développement, même si des projets individuels ne peuvent pas être chargés (par exemple, un projet Windows dans Visual Studio pour Mac).
 
-
-
 Lors de la création d’une nouvelle application multiplateforme, la première étape consiste à créer une solution vide. Cette section explique ce qui se passe ensuite : configuration des projets pour la création d’applications mobiles multiplateforme.
 
  <a name="Sharing_Code" />
-
 
 ## <a name="sharing-code"></a>Partage de code
 
 Reportez-vous au document [options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md) pour obtenir une description détaillée de l’implémentation du partage de code entre les plateformes.
 
  <a name="Shared_Asset_Projects" />
-
 
 ### <a name="shared-projects"></a>Projets partagés
 
@@ -39,7 +35,6 @@ Cette méthode vous permet de partager le même code entre différents projets d
 
  <a name="Portable_Class_Libraries" />
 
-
 ### <a name="portable-class-libraries-pcl"></a>Bibliothèques de classes portables (PCL)
 
 Historiquement, un fichier projet .NET (et l’assembly qui en résulte) a été ciblé sur une version de Framework spécifique. Cela empêche le projet ou l’assembly d’être partagé par différents frameworks.
@@ -48,17 +43,13 @@ Une bibliothèque de classes portables (PCL) est un type spécial de projet qui 
 
 Vous pouvez en savoir plus sur la [prise en charge de Xamarin pour les bibliothèques de classes portables](~/cross-platform/app-fundamentals/pcl.md) et suivre les instructions qui s’affichent pour voir comment fonctionne l' [exemple TaskyPortable](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable) .
 
-
 ### <a name="net-standard"></a>.NET Standard
 
 Introduite dans 2016, les projets [.NET standard](~/cross-platform/app-fundamentals/net-standard.md) offrent un moyen simple de partager du code entre les plateformes et de produire des assemblys qui peuvent être utilisés sur Windows, les plateformes Xamarin (iOS, Android, Mac) et Linux.
 
 Les bibliothèques de .NET Standard peuvent être créées et utilisées comme classes portables, à ceci près que les API disponibles dans chaque version (de 1,0 à 1,6) sont plus faciles à découvrir et que chaque version offre une compatibilité descendante avec des numéros de version inférieurs.
 
-
-
  <a name="Populating_the_Solution" />
-
 
 ## <a name="populating-the-solution"></a>Remplissage de la solution
 
@@ -68,9 +59,7 @@ L’approche Xamarin consiste à regrouper le code en deux types de projets :
 - **Projet de base** : écrivez du code réutilisable à un seul endroit, pour le partager entre différentes plateformes. Utilisez les principes de l’encapsulation pour masquer les détails de l’implémentation dans la mesure du possible.
 - **Projets d’application spécifiques** à la plateforme : consomment le code réutilisable avec le moins de couplage possible. Les fonctionnalités spécifiques à la plateforme sont ajoutées à ce niveau, basées sur les composants exposés dans le projet de base.
 
-
  <a name="Core_Project" />
-
 
 ### <a name="core-project"></a>Projet de base
 
@@ -83,9 +72,7 @@ Les projets partagés doivent implémenter autant de fonctionnalités non-interf
 - **Couche d’accès aux services** : couche facultative permettant de fournir des services Cloud à l’application. Contient le code qui accède aux ressources réseau distantes (services Web, téléchargements d’images, etc.) et éventuellement à la mise en cache des résultats.
 - **Couche métier** : définition des classes de modèle et des classes facade ou Manager qui exposent les fonctionnalités aux applications spécifiques à la plateforme.
 
-
  <a name="Platform-Specific_Application_Projects" />
-
 
 ### <a name="platform-specific-application-projects"></a>Projets d’application spécifiques à la plateforme
 
@@ -96,11 +83,9 @@ Les projets spécifiques à la plateforme doivent implémenter :
 - **Couche application** : fonctionnalités spécifiques à la plateforme et liaison/conversion entre les objets de la couche métier et l’interface utilisateur.
 - **Couche d’interface utilisateur** : écrans, contrôles d’interface utilisateur personnalisés, présentation de la logique de validation.
 
-
 <a name="Example" />
 
-
-### <a name="example"></a>Exemples
+### <a name="example"></a>Exemple
 
 L’architecture de l’application est illustrée dans ce diagramme :
 
@@ -110,9 +95,7 @@ Cette capture d’écran illustre la configuration d’une solution avec le proj
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Le projet partagé contient le code relatif à chacune des couches architecturales (entreprise, service, données et code d’accès aux données)")
 
-
  <a name="Project_References" />
-
 
 ## <a name="project-references"></a>Références de projets
 
@@ -123,16 +106,13 @@ L’application projette chaque projet partagé de référence et contient le co
 
 ![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Les projets de l’application de chaque référence de projet partagé") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "l’application projette chaque référence de projet partagé")
 
-
 Des exemples spécifiques de la façon dont les projets doivent être structurés sont fournis dans les études de cas.
 
  <a name="Adding_Files" />
 
-
 ## <a name="adding-files"></a>Ajout de fichiers
 
  <a name="Build_Action" />
-
 
 ### <a name="build-action"></a>Action de génération
 
@@ -145,11 +125,9 @@ Il est important de définir l’action de génération correcte pour certains t
 - **Fichiers XAML dans les projets Windows** – action de génération : Page
 - **Fichiers XAML Xamarin. Forms** – action de génération : EmbeddedResource
 
-
 En général, l’IDE détecte le type de fichier et suggère l’action de génération correcte.
 
  <a name="Case_Sensitivity" />
-
 
 ### <a name="case-sensitivity"></a>Respect de la casse
 

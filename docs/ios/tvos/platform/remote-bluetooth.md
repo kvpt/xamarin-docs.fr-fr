@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290740"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769178"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Contrôleurs distants et Bluetooth Siri pour tvOS dans Xamarin
 
@@ -364,8 +364,6 @@ Pour plus d’informations sur l’implémentation de la prise en charge des con
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a abordé la nouvelle télécommande Siri fournie avec la TV Apple, les gestes de surface tactile et les boutons distants Siri. Ensuite, il a abordé l’utilisation des mouvements et des storyboards, des gestes et du code et des événements de bas niveau. Enfin, si vous avez abordé l’utilisation des contrôleurs de jeu.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

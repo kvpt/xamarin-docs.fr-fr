@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 6979b4d3e0d750ee962346a94dd832c86c92d995
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: f8f2fc489c10d404b5864ea13c438e3e5508eabe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652955"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771358"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Page à onglets Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "68652955"
 
 _Le TabbedPage de Xamarin.Forms se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails. Cet article montre comment utiliser un TabbedPage pour parcourir une collection de pages._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Les captures d’écran suivantes montrent un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) sur chaque plateforme :
 
@@ -257,7 +257,6 @@ Pour plus d’informations sur [`TabbedPage`](xref:Xamarin.Forms.TabbedPage), co
 ## <a name="summary"></a>Récapitulatif
 
 Dans cet article, vous avez vu comment utiliser un TabbedPage pour parcourir une collection de pages. Le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) de Xamarin.Forms se compose d’une liste d’onglets et d’une zone de détails plus grande, chaque onglet chargeant du contenu dans la zone de détails.
-
 
 ## <a name="related-links"></a>Liens associés
 

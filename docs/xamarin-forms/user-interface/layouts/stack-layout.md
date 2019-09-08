@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: 28a4fc6527a8c6990c47cdbbdc3163fc9350db83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560279"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770275"
 ---
 # <a name="xamarinforms-stacklayout"></a>StackLayout de Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout) organise les vues en une ligne unidimensionnelle («Stack»), horizontalement ou verticalement. Vues dans un `StackLayout` peut être dimensionnée en fonction de l’espace dans la disposition à l’aide des options de disposition. Positionnement est déterminé par l’ordre des vues ont été ajoutées à la disposition et les options de disposition des vues.
+[StackLayout](xref:Xamarin.Forms.StackLayout) organise les vues en une ligne unidimensionnelle (« Stack »), horizontalement ou verticalement. Vues dans un `StackLayout` peut être dimensionnée en fonction de l’espace dans la disposition à l’aide des options de disposition. Positionnement est déterminé par l’ordre des vues ont été ajoutées à la disposition et les options de disposition des vues.
 
 [![](stack-layout-images/layouts-sml.png "Dispositions Xamarin.Forms")](stack-layout-images/layouts.png#lightbox "dispositions Xamarin.Forms")
 
@@ -220,8 +220,6 @@ Le code ci-dessus génère la disposition suivante :
 ![](stack-layout-images/stack.png "StackLayout complexe")
 
 Notez que le `StackLayouts` sont imbriqués car, dans certains cas, l’imbrication des dispositions peut être plus facile que la présentation de tous les éléments dans la même disposition. Notez également que, étant donné que `StackLayout` ne gère pas les éléments qui se chevauchent, la page n’ont des fonctionnalités très utiles de disposition trouvés dans les pages pour les autres dispositions.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

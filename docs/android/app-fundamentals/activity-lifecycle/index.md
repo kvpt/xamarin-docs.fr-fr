@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 91e49c387818ca4d7472325efa665a5c2bfd9e64
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8ebc52936dfdcb6b5262424eba5652de0b8908e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522040"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755597"
 ---
 # <a name="activity-lifecycle"></a>Cycle de vie des activités
 
@@ -20,19 +20,18 @@ _Les activités sont un bloc de construction fondamental des applications Androi
 
 ## <a name="activity-lifecycle-overview"></a>Présentation du cycle de vie des activités
 
-Les activités sont un concept de programmation inhabituel spécifique à Android. Dans le développement d’applications traditionnel, il y a généralement une méthode main statique, qui est exécutée pour lancer l’application. Avec Android, toutefois, les choses sont différentes; Les applications Android peuvent être lancées par le biais d’une activité enregistrée au sein d’une application. Dans la pratique, la plupart des applications n’ont qu’une activité spécifique qui est spécifiée comme point d’entrée de l’application. Toutefois, si une application se bloque ou est arrêtée par le système d’exploitation, le système d’exploitation peut essayer de redémarrer l’application à la dernière activité ouverte ou n’importe où dans la pile d’activité précédente.
+Les activités sont un concept de programmation inhabituel spécifique à Android. Dans le développement d’applications traditionnel, il y a généralement une méthode main statique, qui est exécutée pour lancer l’application. Avec Android, toutefois, les choses sont différentes ; Les applications Android peuvent être lancées par le biais d’une activité enregistrée au sein d’une application. Dans la pratique, la plupart des applications n’ont qu’une activité spécifique qui est spécifiée comme point d’entrée de l’application. Toutefois, si une application se bloque ou est arrêtée par le système d’exploitation, le système d’exploitation peut essayer de redémarrer l’application à la dernière activité ouverte ou n’importe où dans la pile d’activité précédente.
 En outre, le système d’exploitation peut suspendre les activités lorsqu’elles ne sont pas actives et les récupérer si la mémoire est insuffisante. Une attention particulière doit être prise pour permettre à l’application de restaurer correctement son état dans le cas où une activité est redémarrée, en particulier si cette activité dépend de données d’activités précédentes.
 
 Le cycle de vie de l’activité est implémenté sous la forme d’une collection de méthodes que le système d’exploitation appelle tout au long du cycle de vie d’une activité. Ces méthodes permettent aux développeurs d’implémenter les fonctionnalités nécessaires pour répondre aux exigences de gestion des ressources et de l’état de leurs applications.
 
 Il est extrêmement important pour le développeur d’applications d’analyser les exigences de chaque activité afin de déterminer les méthodes exposées par le cycle de vie de l’activité qui doivent être implémentées. Si vous ne le faites pas, vous risquez de provoquer une instabilité de l’application, des pannes, une augmentation des ressources et éventuellement une instabilité sous-jacente du système d’exploitation.
 
-Ce chapitre examine en détail le cycle de vie de l’activité, notamment:
+Ce chapitre examine en détail le cycle de vie de l’activité, notamment :
 
 - États de l’activité
 - Méthodes de cycle de vie
 - Conservation de l’état d’une application
-
 
 Cette section comprend également une [procédure pas à pas](~/android/app-fundamentals/activity-lifecycle/saving-state.md) qui fournit des exemples pratiques sur l’enregistrement efficace de l’État pendant le cycle de vie de l’activité. À la fin de ce chapitre, vous devez comprendre le cycle de vie de l’activité et savoir comment la prendre en charge dans une application Android.
 
@@ -42,11 +41,11 @@ Le cycle de vie des activités Android comprend un ensemble de méthodes exposé
 
 ### <a name="activity-states"></a>États de l’activité
 
-Le système d’exploitation Android arbitre les activités en fonction de leur état. Cela permet à Android d’identifier les activités qui ne sont plus utilisées, ce qui permet au système d’exploitation de récupérer la mémoire et les ressources. Le diagramme suivant illustre les États qu’une activité peut traverser pendant sa durée de vie:
+Le système d’exploitation Android arbitre les activités en fonction de leur état. Cela permet à Android d’identifier les activités qui ne sont plus utilisées, ce qui permet au système d’exploitation de récupérer la mémoire et les ressources. Le diagramme suivant illustre les États qu’une activité peut traverser pendant sa durée de vie :
 
 [![Diagramme des États d’activité](images/image1-sml.png)](images/image1.png#lightbox)
 
-Ces États peuvent être divisés en 4 groupes principaux, comme suit:
+Ces États peuvent être divisés en 4 groupes principaux, comme suit :
 
 1. *Actif ou en cours d’exécution* &ndash; Les activités sont considérées comme actives ou en cours d’exécution si elles sont au premier plan, également appelées haut de la pile d’activité. Cette activité est considérée comme la priorité la plus élevée dans Android. par conséquent, elle n’est supprimée que par le système d’exploitation dans des situations extrêmes, par exemple si l’activité tente d’utiliser plus de mémoire que ce qui est disponible sur l’appareil, car cela peut provoquer le blocage de l’interface utilisateur.
 
@@ -57,7 +56,6 @@ Ces États peuvent être divisés en 4 groupes principaux, comme suit:
 
 1. *Redémarré* &ndash; Il est possible pour une activité qui n’est pas en pause de s’arrêter dans le cycle de vie d’être supprimée de la mémoire par Android. Si l’utilisateur revient à l’activité, il doit être redémarré, restauré à son état enregistré précédemment, puis affiché à l’utilisateur.
 
-
 ### <a name="activity-re-creation-in-response-to-configuration-changes"></a>Recréation d’activité en réponse à des modifications de configuration
 
 Pour compliquer les choses, Android lève une clé supplémentaire dans la combinaison appelée modifications de configuration. Les modifications de configuration sont des cycles de destruction ou de recréation d’activité rapides qui se produisent lorsque la configuration d’une activité change, par exemple lorsque l’appareil est [pivoté](~/android/app-fundamentals/handling-rotation.md) (et que l’activité doit être reconstruite en mode paysage ou en mode portrait), lorsque le clavier est affiché (et l’activité est présentée avec la possibilité de se redimensionner), ou lorsque l’appareil est placé dans une station d’accueil, entre autres.
@@ -67,24 +65,24 @@ Nous aborderons cela plus loin dans la section [gestion de l’État dans le cyc
 
 ### <a name="activity-lifecycle-methods"></a>Méthodes de cycle de vie des activités
 
-La Android SDK et, par extension, l’infrastructure Xamarin. Android fournissent un modèle puissant pour gérer l’état des activités au sein d’une application. Lorsque l’état d’une activité change, l’activité est notifiée par le système d’exploitation, qui appelle des méthodes spécifiques sur cette activité. Le diagramme suivant illustre ces méthodes par rapport au cycle de vie de l’activité:
+La Android SDK et, par extension, l’infrastructure Xamarin. Android fournissent un modèle puissant pour gérer l’état des activités au sein d’une application. Lorsque l’état d’une activité change, l’activité est notifiée par le système d’exploitation, qui appelle des méthodes spécifiques sur cette activité. Le diagramme suivant illustre ces méthodes par rapport au cycle de vie de l’activité :
 
 [![Organigramme du cycle de vie des activités](images/image2-sml.png)](images/image2.png#lightbox)
 
 En tant que développeur, vous pouvez gérer les modifications d’État en substituant ces méthodes dans une activité. Toutefois, il est important de noter que toutes les méthodes de cycle de vie sont appelées sur le thread d’interface utilisateur et empêchent le système d’exploitation d’effectuer la partie suivante du travail d’interface utilisateur, comme le masquage de l’activité en cours, l’affichage d’une nouvelle activité, etc. Ainsi, le code de ces méthodes doit être le plus court possible pour que l’application fonctionne correctement. Toutes les tâches de longue durée doivent être exécutées sur un thread d’arrière-plan.
 
-Examinons chacune de ces méthodes de cycle de vie et leur utilisation:
+Examinons chacune de ces méthodes de cycle de vie et leur utilisation :
 
 #### <a name="oncreate"></a>OnCreate
 
 [OnCreate](xref:Android.App.Activity.OnCreate*) est la première méthode à appeler lors de la création d’une activité.
-`OnCreate`est toujours substitué pour effectuer toutes les initialisations de démarrage qui peuvent être requises par une activité telle que:
+`OnCreate`est toujours substitué pour effectuer toutes les initialisations de démarrage qui peuvent être requises par une activité telle que :
 
 - Création d’affichages
 - Initialiser des variables
 - Liaison de données statiques à des listes
 
-`OnCreate`prend un paramètre [Bundle](xref:Android.OS.Bundle) , qui est un dictionnaire pour stocker et transmettre des informations d’État et des objets entre les activités si le bundle n’est pas null, cela indique que l’activité est en cours de redémarrage et qu’elle doit restaurer son état à partir de l’instance précédente. Le code suivant montre comment récupérer des valeurs à partir du bundle:
+`OnCreate`prend un paramètre [Bundle](xref:Android.OS.Bundle) , qui est un dictionnaire pour stocker et transmettre des informations d’État et des objets entre les activités si le bundle n’est pas null, cela indique que l’activité est en cours de redémarrage et qu’elle doit restaurer son état à partir de l’instance précédente. Le code suivant montre comment récupérer des valeurs à partir du bundle :
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -114,7 +112,7 @@ La méthode [OnStart](xref:Android.App.Activity.OnStart) est toujours appelée p
 #### <a name="onresume"></a>OnResume
 
 Le système appelle [OnResume](xref:Android.App.Activity.OnResume) quand l’activité est prête à démarrer l’interaction avec l’utilisateur.
-Les activités doivent remplacer cette méthode pour effectuer des tâches telles que:
+Les activités doivent remplacer cette méthode pour effectuer des tâches telles que :
 
 - Accélération des fréquences d’images (tâche courante dans le développement de jeux)
 - Démarrage d’animations
@@ -122,8 +120,7 @@ Les activités doivent remplacer cette méthode pour effectuer des tâches telle
 - Afficher les alertes ou les boîtes de dialogue pertinentes
 - Associer des gestionnaires d’événements externes
 
-
-À titre d’exemple, l’extrait de code suivant montre comment initialiser l’appareil photo:
+À titre d’exemple, l’extrait de code suivant montre comment initialiser l’appareil photo :
 
 ```csharp
 public void OnResume()
@@ -141,7 +138,7 @@ public void OnResume()
 
 #### <a name="onpause"></a>OnPause
 
-[OnPause](xref:Android.App.Activity.OnPause) est appelé quand le système est sur le paragraphe de placer l’activité dans l’arrière-plan ou lorsque l’activité devient partiellement masquée. Les activités doivent remplacer cette méthode s’ils ont besoin d’effectuer les opérations suivantes:
+[OnPause](xref:Android.App.Activity.OnPause) est appelé quand le système est sur le paragraphe de placer l’activité dans l’arrière-plan ou lorsque l’activité devient partiellement masquée. Les activités doivent remplacer cette méthode s’ils ont besoin d’effectuer les opérations suivantes :
 
 - Valider les modifications non enregistrées dans les données persistantes
 
@@ -153,7 +150,7 @@ public void OnResume()
 
 - De même, si l’activité a affiché des boîtes de dialogue ou des alertes, elles doivent être nettoyées avec la `.Dismiss()` méthode.
 
-Par exemple, l’extrait de code suivant libère l’appareil photo, car l’activité ne peut pas l’utiliser pendant la suspension:
+Par exemple, l’extrait de code suivant libère l’appareil photo, car l’activité ne peut pas l’utiliser pendant la suspension :
 
 ```csharp
 public void OnPause()
@@ -169,20 +166,18 @@ public void OnPause()
 }
 ```
 
-Il existe deux méthodes de cycle de vie possibles qui seront `OnPause`appelées après:
+Il existe deux méthodes de cycle de vie possibles qui seront `OnPause`appelées après :
 
 1. `OnResume`est appelé si l’activité doit être retournée au premier plan.
 1. `OnStop`est appelé si l’activité est placée en arrière-plan.
 
-
 #### <a name="onstop"></a>OnStop
 
-[OnStop](xref:Android.App.Activity.OnStop) est appelé lorsque l’activité n’est plus visible par l’utilisateur. Cela se produit lorsque l’un des événements suivants se produit:
+[OnStop](xref:Android.App.Activity.OnStop) est appelé lorsque l’activité n’est plus visible par l’utilisateur. Cela se produit lorsque l’un des événements suivants se produit :
 
 - Une nouvelle activité est en cours de démarrage et couvre cette activité.
 - Une activité existante est placée au premier plan.
 - L’activité est en cours de destruction.
-
 
 `OnStop`ne peut pas toujours être appelé dans des situations de mémoire insuffisante, par exemple quand Android est privé de ressources et ne peut pas être correctement en arrière-plan de l’activité. Pour cette raison, il est préférable de ne pas s' `OnStop` appuyer sur l’appel de la méthode lors de la préparation d’une activité pour la destruction. Les méthodes de cycle de vie suivantes peuvent être appelées après celle `OnDestroy` -ci si l’activité est en cours `OnRestart` , ou si l’activité est à nouveau en interaction avec l’utilisateur.
 
@@ -202,7 +197,7 @@ La méthode de cycle de vie `OnRestart` suivante appelée `OnStart`après sera.
 
 ### <a name="back-vs-home"></a>En arrière-plan et Dossier de base
 
-De nombreux appareils Android possèdent deux boutons distincts: un bouton «précédent» et un bouton «démarrage». Vous pouvez voir un exemple dans la capture d’écran suivante d’Android 4.0.3:
+De nombreux appareils Android possèdent deux boutons distincts : un bouton « précédent » et un bouton « démarrage ». Vous pouvez voir un exemple dans la capture d’écran suivante d’Android 4.0.3 :
 
 [![Boutons précédent et privé](images/image4-sml.png)](images/image4.png#lightbox)
 
@@ -213,7 +208,7 @@ Il existe une différence subtile entre les deux boutons, même s’ils semblent
 ## <a name="managing-state-throughout-the-lifecycle"></a>Gestion de l’État tout au long du cycle de vie
 
 Lorsqu’une activité est arrêtée ou détruite, le système offre la possibilité d’enregistrer l’état de l’activité pour une réalimentation ultérieure.
-Cet état enregistré est appelé état de l’instance. Android offre trois options pour le stockage de l’état de l’instance pendant le cycle de vie de l’activité:
+Cet état enregistré est appelé état de l’instance. Android offre trois options pour le stockage de l’état de l’instance pendant le cycle de vie de l’activité :
 
 1. Stockage des valeurs primitives `Dictionary` dans un [groupe](xref:Android.OS.Bundle) connu qui sera utilisé par Android pour enregistrer l’État.
 
@@ -228,13 +223,13 @@ Ce guide couvre les deux premières options.
 L’option principale d’enregistrement de l’état de l’instance consiste à utiliser un objet de dictionnaire de clé/valeur appelé [Bundle](xref:Android.OS.Bundle).
 Rappelez-vous que, lors de la `OnCreate` création d’une activité, une offre groupée en tant que paramètre est passée à la méthode, cette offre groupée peut être utilisée pour restaurer l’état de l’instance. Il n’est pas recommandé d’utiliser un bundle pour des données plus complexes qui ne peuvent pas être sérialisées rapidement ou facilement en paires clé/valeur (telles que des bitmaps); au lieu de cela, elle doit être utilisée pour des valeurs simples comme les chaînes.
 
-Une activité fournit des méthodes pour faciliter l’enregistrement et la récupération de l’état de l’instance dans le bundle:
+Une activité fournit des méthodes pour faciliter l’enregistrement et la récupération de l’état de l’instance dans le bundle :
 
 - [OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*) &ndash; Ce code est appelé par Android lorsque l’activité est détruite. Les activités peuvent implémenter cette méthode si elles doivent rendre persistantes les éléments d’état de clé/valeur.
 
 - [OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*) Elle est appelée une fois `OnCreate` la méthode terminée et offre une autre possibilité pour une activité de restaurer son état une fois l’initialisation terminée. &ndash;
 
-Le diagramme suivant illustre l’utilisation de ces méthodes:
+Le diagramme suivant illustre l’utilisation de ces méthodes :
 
 [![Organigramme des États du bundle](images/image3-sml.png)](images/image3.png#lightbox)
 
@@ -269,11 +264,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Le code ci-dessus incrémente un `c` entier nommé lorsqu’un `incrementCounter` clic est effectué sur un bouton, affichant le `TextView` résultat `output`dans un nommé. En cas de modification de la configuration (par exemple, lors de la rotation de l’appareil), le code ci- `c` dessus perd `bundle` la valeur `null`de, comme illustré dans la figure ci-dessous:
+Le code ci-dessus incrémente un `c` entier nommé lorsqu’un `incrementCounter` clic est effectué sur un bouton, affichant le `TextView` résultat `output`dans un nommé. En cas de modification de la configuration (par exemple, lors de la rotation de l’appareil), le code ci- `c` dessus perd `bundle` la valeur `null`de, comme illustré dans la figure ci-dessous :
 
 [![L’affichage n’affiche pas la valeur précédente](images/07-sml.png)](images/07.png#lightbox)
 
-Pour conserver la valeur de `c` dans cet exemple, l’activité peut remplacer `OnSaveInstanceState`, en enregistrant la valeur dans le bundle comme indiqué ci-dessous:
+Pour conserver la valeur de `c` dans cet exemple, l’activité peut remplacer `OnSaveInstanceState`, en enregistrant la valeur dans le bundle comme indiqué ci-dessous :
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -283,7 +278,7 @@ protected override void OnSaveInstanceState (Bundle outState)
 }
 ```
 
-Désormais, lorsque l’appareil passe à une nouvelle orientation, l’entier est enregistré dans le bundle et est récupéré avec la ligne suivante:
+Désormais, lorsque l’appareil passe à une nouvelle orientation, l’entier est enregistré dans le bundle et est récupéré avec la ligne suivante :
 
 ```csharp
 c = bundle.GetInt ("counter", -1);
@@ -294,7 +289,7 @@ c = bundle.GetInt ("counter", -1);
 
 ##### <a name="view-state"></a>État d’affichage
 
-La substitution `OnSaveInstanceState` est un mécanisme approprié pour enregistrer des données temporaires dans une activité à travers des changements d’orientation, tels que le compteur dans l’exemple ci-dessus. Toutefois, l’implémentation par défaut `OnSaveInstanceState` de s’occupe de l’enregistrement des données temporaires dans l’interface utilisateur pour chaque vue, tant que l’ID de chaque vue est affecté. Par exemple, imaginons qu’une application `EditText` possède un élément défini en XML comme suit:
+La substitution `OnSaveInstanceState` est un mécanisme approprié pour enregistrer des données temporaires dans une activité à travers des changements d’orientation, tels que le compteur dans l’exemple ci-dessus. Toutefois, l’implémentation par défaut `OnSaveInstanceState` de s’occupe de l’enregistrement des données temporaires dans l’interface utilisateur pour chaque vue, tant que l’ID de chaque vue est affecté. Par exemple, imaginons qu’une application `EditText` possède un élément défini en XML comme suit :
 
 ```xml
 <EditText android:id="@+id/myText"
@@ -302,7 +297,7 @@ La substitution `OnSaveInstanceState` est un mécanisme approprié pour enregist
   android:layout_height="wrap_content"/>
 ```
 
-Étant donné `EditText` que le contrôle `id` a un affecté, lorsque l’utilisateur entre des données et fait pivoter l’appareil, les données sont toujours affichées, comme indiqué ci-dessous:
+Étant donné `EditText` que le contrôle `id` a un affecté, lorsque l’utilisateur entre des données et fait pivoter l’appareil, les données sont toujours affichées, comme indiqué ci-dessous :
 
 [![Les données sont conservées en mode paysage](images/08-sml.png)](images/08.png#lightbox)
 
@@ -310,7 +305,7 @@ La substitution `OnSaveInstanceState` est un mécanisme approprié pour enregist
 
 [OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*) sera appelé après `OnStart`. Elle offre à l’activité la possibilité de restaurer tout état précédemment enregistré dans un bundle au cours de la `OnSaveInstanceState`précédente. Toutefois, il s’agit du même regroupement que `OnCreate`celui qui est fourni à.
 
-Le code suivant illustre la façon dont l’État peut `OnRestoreInstanceState`être restauré dans:
+Le code suivant illustre la façon dont l’État peut `OnRestoreInstanceState`être restauré dans :
 
 ```csharp
 protected override void OnRestoreInstanceState(Bundle savedState)
@@ -323,12 +318,11 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 Cette méthode permet d’offrir une certaine flexibilité lorsque l’État doit être restauré. Parfois, il est plus approprié d’attendre que toutes les initialisations soient effectuées avant de restaurer l’état de l’instance. En outre, une sous-classe d’une activité existante peut uniquement restaurer certaines valeurs à partir de l’état de l’instance. Dans de nombreux cas, il n’est pas nécessaire de `OnRestoreInstanceState`remplacer, car la plupart des activités peuvent restaurer l’État à `OnCreate`l’aide du bundle fourni à.
 
-Pour obtenir un exemple d’enregistrement d’état `Bundle`à l’aide d’un, consultez la [procédure pas à pas: enregistrement de l’état de l’activité](saving-state.md).
-
+Pour obtenir un exemple d’enregistrement d’état `Bundle`à l’aide d’un, consultez la [procédure pas à pas : enregistrement de l’état de l’activité](saving-state.md).
 
 #### <a name="bundle-limitations"></a>Limitations de Bundle
 
-Bien `OnSaveInstanceState` que permette d’enregistrer facilement des données temporaires, il présente certaines limitations:
+Bien `OnSaveInstanceState` que permette d’enregistrer facilement des données temporaires, il présente certaines limitations :
 
 - Elle n’est pas appelée dans tous les cas. Par exemple, si vous appuyez sur la touche **début** ou **précédent** pour quitter une `OnSaveInstanceState` activité, l’appel de n’est pas effectué.
 
@@ -338,16 +332,15 @@ Bien `OnSaveInstanceState` que permette d’enregistrer facilement des données 
 
 L’état de regroupement est utile pour les données simples qui n’utilisent pas beaucoup de mémoire, alors que les *données d’instance non-configuration* sont utiles pour les données plus complexes, ou les données qui sont coûteuses à récupérer, par exemple à partir d’un appel de service Web ou d’une requête de base de données complexe. Les données d’instance non-configuration sont enregistrées dans un objet en fonction des besoins. La section suivante présente `OnRetainNonConfigurationInstance` un moyen de conserver des types de données plus complexes grâce à des modifications de configuration.
 
-
 ### <a name="persisting-complex-data"></a>Persistance des données complexes
 
-En plus de rendre les données persistantes dans le bundle, Android prend également en charge l'enregistrement des données en substituant [OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) et en retournant une instance d’un `Java.Lang.Object` qui contient les données à conserver. L’utilisation de pour enregistrer l' `OnRetainNonConfigurationInstance` état présente deux avantages principaux:
+En plus de rendre les données persistantes dans le bundle, Android prend également en charge l'enregistrement des données en substituant [OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance) et en retournant une instance d’un `Java.Lang.Object` qui contient les données à conserver. L’utilisation de pour enregistrer l' `OnRetainNonConfigurationInstance` état présente deux avantages principaux :
 
 - L’objet retourné `OnRetainNonConfigurationInstance` par s’exécute correctement avec des types de données plus grands et plus complexes, car la mémoire conserve cet objet.
 
 - La `OnRetainNonConfigurationInstance` méthode est appelée à la demande et uniquement lorsque cela est nécessaire. Cela est plus économique que l’utilisation d’un cache manuel.
 
-L' `OnRetainNonConfigurationInstance` utilisation de est adaptée aux scénarios dans lesquels il est coûteux de récupérer les données plusieurs fois, par exemple dans les appels de service Web. Par exemple, considérez le code suivant qui recherche Twitter:
+L' `OnRetainNonConfigurationInstance` utilisation de est adaptée aux scénarios dans lesquels il est coûteux de récupérer les données plusieurs fois, par exemple dans les appels de service Web. Par exemple, considérez le code suivant qui recherche Twitter :
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -394,11 +387,11 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-Ce code récupère les résultats du Web au format JSON, les analyse, puis présente les résultats dans une liste, comme illustré dans la capture d’écran suivante:
+Ce code récupère les résultats du Web au format JSON, les analyse, puis présente les résultats dans une liste, comme illustré dans la capture d’écran suivante :
 
 [![Résultats affichés à l’écran](images/06-sml.png)](images/06.png#lightbox)
 
-Quand une modification de configuration se produit (par exemple, lors de la rotation d’un appareil), le code répète le processus. Pour réutiliser les résultats récupérés à l’origine et ne pas avoir besoin d’appels réseau redondants, nous pouvons utiliser `OnRetainNonconfigurationInstance` pour enregistrer les résultats, comme indiqué ci-dessous:
+Quand une modification de configuration se produit (par exemple, lors de la rotation d’un appareil), le code répète le processus. Pour réutiliser les résultats récupérés à l’origine et ne pas avoir besoin d’appels réseau redondants, nous pouvons utiliser `OnRetainNonconfigurationInstance` pour enregistrer les résultats, comme indiqué ci-dessous :
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -433,7 +426,7 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-Désormais, lorsque l’appareil pivote, les résultats d’origine sont récupérés `LastNonConfiguartionInstance` à partir de la propriété. Dans cet exemple, les résultats se composent d’un `string[]` Tweet contenant. Étant `OnRetainNonConfigurationInstance` donné que exige `Java.Lang.Object` qu’un soit retourné `string[]` , le est `Java.Lang.Object`encapsulé dans une classe qui sous-classe, comme indiqué ci-dessous:
+Désormais, lorsque l’appareil pivote, les résultats d’origine sont récupérés `LastNonConfiguartionInstance` à partir de la propriété. Dans cet exemple, les résultats se composent d’un `string[]` Tweet contenant. Étant `OnRetainNonConfigurationInstance` donné que exige `Java.Lang.Object` qu’un soit retourné `string[]` , le est `Java.Lang.Object`encapsulé dans une classe qui sous-classe, comme indiqué ci-dessous :
 
 ```csharp
 class TweetListWrapper : Java.Lang.Object
@@ -442,7 +435,7 @@ class TweetListWrapper : Java.Lang.Object
 }
 ```
 
-Par exemple, si `TextView` `OnRetainNonConfigurationInstance` vous tentez d’utiliser un comme l’objet retourné par, l’activité est perdue, comme le montre le code ci-dessous:
+Par exemple, si `TextView` `OnRetainNonConfigurationInstance` vous tentez d’utiliser un comme l’objet retourné par, l’activité est perdue, comme le montre le code ci-dessous :
 
 ```csharp
 TextView _textView;
@@ -477,7 +470,6 @@ Dans cette section, nous avons appris à conserver les données d’État simple
 ## <a name="summary"></a>Récapitulatif
 
 Le cycle de vie des activités Android fournit une infrastructure puissante pour la gestion de l’état des activités dans une application, mais il peut être difficile de comprendre et d’implémenter. Ce chapitre présente les différents États qu’une activité peut franchir pendant sa durée de vie, ainsi que les méthodes de cycle de vie associées à ces États. Ensuite, vous trouverez des conseils sur le type de logique qui doit être exécuté dans chacune de ces méthodes.
-
 
 ## <a name="related-links"></a>Liens associés
 

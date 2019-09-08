@@ -1,18 +1,18 @@
 ---
 title: Résumé du chapitre 5. Gestion des tailles
-description: 'Création d’applications mobiles avec Xamarin.Forms : Résumé du chapitre 5. Gestion des tailles'
+description: 'Création d’Mobile Apps avec Xamarin. Forms : Résumé du chapitre 5. Gestion des tailles'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: fd6694de756938ff564bed0923427fe62153116a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334398"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771139"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Résumé du chapitre 5. Gestion des tailles
 
@@ -80,15 +80,13 @@ Le [ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/
 
 ## <a name="accessibility-issues"></a>Problèmes d’accessibilité
 
-Le **EstimatedFontSize** programme et le **FitToSizeClock** programme les deux contiennent un subtil défaut : Si l’utilisateur modifie les paramètres d’accessibilité du téléphone sur Android ou Windows 10 Mobile, le programme n’est plus peut estimer la taille du texte est rendu en fonction de la taille de police. Le [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) exemple illustre ce problème.
+Le programme **EstimatedFontSize** et le programme **FitToSizeClock** contiennent tous les deux un défaut subtil : Si l’utilisateur modifie les paramètres d’accessibilité du téléphone sur Android ou Windows 10 mobile, le programme ne peut plus estimer l’ampleur du rendu du texte en fonction de la taille de la police. Le [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) exemple illustre ce problème.
 
 ## <a name="empirically-fitting-text"></a>Ajustement empirique de texte
 
 Un autre en fonction du texte à un rectangle consiste à empirique calculer la taille du rendu de texte et l’ajuster vers le haut ou vers le bas. Le programme dans les appels de livre [ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) sur un élément visuel pour obtenir la taille souhaitée de l’élément. Méthode a été déconseillée et les programmes doivent appeler à la place [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)).
 
 Pour un `Label`, le premier argument doit être de la largeur du conteneur (pour permettre le retour à la ligne), tandis que le second argument doit être défini à `Double.PositiveInfinity` pour que la hauteur sans contrainte. Le [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) exemple illustre cette technique.
-
-
 
 ## <a name="related-links"></a>Liens connexes
 

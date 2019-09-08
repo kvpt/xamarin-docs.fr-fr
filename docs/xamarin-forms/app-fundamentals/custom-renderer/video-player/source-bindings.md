@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650458"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771765"
 ---
 # <a name="binding-video-sources-to-the-player"></a>Liaison de sources vidéo au lecteur
 
@@ -138,7 +138,6 @@ Le `ListView` dans le fichier **BindToVideoPlayer.xaml** contient un tableau de 
 La propriété `Source` de `VideoPlayer` est liée au `ListView`. Le `Path` de la liaison est spécifié en tant que `SelectedItem.VideoSource`, qui est un tracé composite constitué de deux propriétés : `SelectedItem` est une propriété de `ListView`. L’élément sélectionné est de type `VideoInfo`, qui a une propriété `VideoSource`.
 
 Comme avec la première page **Sélectionner une vidéo web**, aucun élément n’est sélectionné initialement à partir du `ListView` de sorte que vous devez sélectionner l’une des vidéos avant le début de la lecture.
-
 
 ## <a name="related-links"></a>Liens associés
 

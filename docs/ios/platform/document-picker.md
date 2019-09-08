@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 67ee8f1ef7f254eb77cfb186a478993b6fd3847c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 11c022298cbac60b86f4ef549e30cef3aa4d4660
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753406"
 ---
 # <a name="document-picker-in-xamarinios"></a>Sélecteur de documents dans Xamarin. iOS
 
@@ -202,7 +202,6 @@ Dans le diagramme ci-dessus :
 1. L’application crée un nouveau fichier dans le conteneur d’application.
 1. Il y a un délai `NSMetadataQuery` avant de voir la modification du conteneur d’application et de `NSMetadata` créer l’enregistrement requis.
 
-
 En raison du délai de création de l' `NSMetadata` enregistrement, deux sources de données doivent être ouvertes pour l’application : une pour les modifications de fichiers locaux et une pour les modifications basées sur le Cloud.
 
 ### <a name="stitching"></a>Assemblage
@@ -218,14 +217,10 @@ Dans iOS 8, `NSMetadataQuery` est plus facile à utiliser directement avec une n
 1. Un hook dans le conteneur d’application voit la modification et `NSMetadataQuery` les appels pour créer `NSMetadata` l’enregistrement requis.
 1. L' `NSMetadata` enregistrement est créé directement après le fichier et mis à la disposition de l’application.
 
-
 En utilisant la fonction de combinaison, l’application n’a plus à ouvrir de source de données pour surveiller les modifications de fichiers locales et sur le Cloud. Désormais, l’application peut s' `NSMetadataQuery` appuyer directement sur.
 
 > [!IMPORTANT]
 > La combinaison fonctionne uniquement si l’application utilise la coordination de fichiers comme indiqué dans la section ci-dessus. Si la coordination de fichiers n’est pas utilisée, les API utilisent par défaut le comportement pré-iOS 8 existant.
-
-
-
 
 ### <a name="new-ios-8-metadata-features"></a>Nouvelles fonctionnalités de métadonnées iOS 8
 
@@ -236,12 +231,10 @@ Les nouvelles fonctionnalités suivantes ont été ajoutées à `NSMetadataQuery
 - Il existe une nouvelle `NSUrl_PromisedItems` API qui permet d’accéder aux attributs de fichier des fichiers dont le contenu peut être disponible localement ou non.
 - Utilisez la `GetPromisedItemResourceValue` méthode pour obtenir des informations sur un fichier donné ou utilisez `GetPromisedItemResourceValues` la méthode pour obtenir des informations sur plusieurs fichiers à la fois.
 
-
 Deux nouveaux indicateurs de coordination de fichiers ont été ajoutés pour traiter les métadonnées :
 
 - `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 - `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
-
 
 Avec les indicateurs ci-dessus, le contenu du fichier de document n’a pas besoin d’être disponible localement pour pouvoir être utilisé.
 
@@ -256,7 +249,6 @@ using Foundation;
 using UIKit;
 using ObjCRuntime;
 using System.IO;
-
 
 #region Static Properties
 public const string TestFilename = "test.txt"; 
@@ -439,7 +431,6 @@ Le moyen le plus simple d’enregistrer une miniature consiste `UIDocument`à ut
 
 Avec les bases de l’utilisation des documents iCloud en place, ainsi que les modifications apportées à l’API existante, nous sommes prêts à implémenter le contrôleur d’affichage du sélecteur de documents dans une application mobile Xamarin iOS 8.
 
-
 ## <a name="enabling-icloud-in-xamarin"></a>Activation de iCloud dans Xamarin
 
 Avant de pouvoir utiliser le sélecteur de document dans une application Xamarin. iOS, vous devez activer la prise en charge de iCloud dans votre application et via Apple. 
@@ -451,8 +442,6 @@ Les étapes suivantes guident pas à pas le processus de configuration de iCloud
 3. Créez un profil de provisionnement qui comprend cet ID d’application.
 
 Le guide [utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) vous guide dans les deux premières étapes. Pour créer un profil de provisionnement, suivez les étapes décrites dans le Guide de [profil de provisionnement](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
-
-
 
 Les étapes suivantes déprocédurent le processus de configuration de votre application pour iCloud :
 
@@ -539,7 +528,6 @@ namespace DocPicker
             Query.StartQuery ();
             Console.WriteLine ("Querying: {0}", Query.IsGathering);
         }
-
 
         [Export("queryDidFinishGathering:")]
         public void DidFinishGathering (NSNotification notification) {
@@ -833,7 +821,6 @@ Jetons un coup d’œil à l’accès à un document externe avant iOS 8 :
 1. Le document est sélectionné et le `UIDocumentInteractionController` est utilisé pour envoyer le document à la nouvelle application.
 1. Enfin, une copie du document d’origine est placée dans le conteneur de la nouvelle application.
 
-
 À partir de là, le document est disponible pour la deuxième application et l’ouvrir et le modifier.
 
 ### <a name="discovering-documents-outside-of-an-apps-container"></a>Découverte de documents en dehors du conteneur d’une application
@@ -910,20 +897,19 @@ if (presentationPopover!=null) {
 Voici un exemple de la façon dont le code ci-dessus affiche un sélecteur de document lorsqu’il est exécuté sur un appareil iPhone :
 
 1. L’utilisateur démarre l’application et l’interface principale s’affiche :   
- 
+
     [![](document-picker-images/image33.png "L’interface principale est affichée.")](document-picker-images/image33.png#lightbox)
 1. L’utilisateur clique sur le bouton d' **action** en haut de l’écran et est invité à sélectionner un **fournisseur de documents** dans la liste des fournisseurs disponibles :   
- 
+
     [![](document-picker-images/image34.png "Sélectionner un fournisseur de documents dans la liste des fournisseurs disponibles")](document-picker-images/image34.png#lightbox)
 1. Le **contrôleur d’affichage du sélecteur de documents** s’affiche pour le **fournisseur de documents**sélectionné :   
- 
+
     [![](document-picker-images/image35.png "Le contrôleur d’affichage du sélecteur de documents s’affiche")](document-picker-images/image35.png#lightbox)
 1. L’utilisateur appuie sur un **dossier de documents** pour afficher son contenu :   
- 
+
     [![](document-picker-images/image36.png "Contenu du dossier du document")](document-picker-images/image36.png#lightbox)
 1. L’utilisateur sélectionne un **document** et le **Sélecteur de document** est fermé.
 1. L’interface principale est réaffichée, le **document** est chargé à partir du conteneur externe et son contenu est affiché.
-
 
 L’affichage réel du contrôleur d’affichage du sélecteur de documents dépend des fournisseurs de documents que l’utilisateur a installés sur l’appareil et du mode de sélection de document qui a été implémenté. L’exemple ci-dessus utilise le mode Open, les autres types de mode sont présentés en détail ci-dessous.
 
@@ -1021,13 +1007,12 @@ if (Bookmark != null) {
 Le contrôleur d’affichage du sélecteur de documents comporte deux modes de fonctionnement :
 
 1. **Mode d’ouverture** : dans ce mode, lorsque l’utilisateur sélectionne un document externe, le sélecteur de document crée un signet d’étendue de sécurité dans le conteneur d’application.   
- 
+
     [![](document-picker-images/image37.png "Signet d’étendue de sécurité dans le conteneur d’application")](document-picker-images/image37.png#lightbox)
 1. **Mode d’importation** : dans ce mode, lorsque l’utilisateur sélectionne un document externe, le sélecteur de document ne crée pas de signet, mais copie le fichier dans un emplacement temporaire et fournit à l’application l’accès au document à l’emplacement suivant :   
- 
+
     [![](document-picker-images/image38.png "Le sélecteur de documents copie le fichier dans un emplacement temporaire et fournit à l’application l’accès au document à cet emplacement.")](document-picker-images/image38.png#lightbox)   
  Une fois que l’application s’arrête pour une raison quelconque, l’emplacement temporaire est vidé et le fichier est supprimé. Si l’application doit conserver l’accès au fichier, elle doit en faire une copie et la placer dans son conteneur d’application.
-
 
 Le mode d’ouverture est utile lorsque l’application souhaite collaborer avec une autre application et partager toutes les modifications apportées au document avec cette application. Le mode d’importation est utilisé lorsque l’application ne souhaite pas partager ses modifications dans un document avec d’autres applications.
 
@@ -1042,7 +1027,6 @@ Pour déplacer un document vers un emplacement externe, procédez comme suit :
 1. Ouvrez un nouveau contrôleur d’affichage du sélecteur de documents et `NSUrl` transmettez-lui `MoveToService` le avec le mode. 
 1. Une fois que l’utilisateur choisit un nouvel emplacement, le document est déplacé de son emplacement actuel vers le nouvel emplacement.
 1. Un document de référence est écrit dans le conteneur d’application de l’application afin que l’application de création puisse toujours y accéder.
-
 
 Vous pouvez utiliser le code suivant pour déplacer un document vers un emplacement externe :`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
@@ -1067,7 +1051,6 @@ Elle est implémentée à l’aide de deux extensions différentes :
 - **Extension de sélecteur de documents** : `UIViewController` fournit une sous-classe qui fournit une interface graphique permettant à l’utilisateur de choisir un document à partir d’un autre emplacement de stockage. Cette sous-classe sera affichée dans le cadre du contrôleur d’affichage du sélecteur de documents.
 - **Extension de fichier fournie** : il s’agit d’une extension non-interface utilisateur qui traite réellement le contenu des fichiers. Ces extensions sont fournies par le biais de `NSFileCoordinator` la coordination des fichiers (). Il s’agit d’un autre cas important où la coordination des fichiers est requise.
 
-
 Le diagramme suivant illustre le workflow de données classique lors de l’utilisation des extensions de fournisseur de documents :
 
  [![](document-picker-images/image39.png "Ce diagramme illustre le workflow type de données lors de l’utilisation des extensions de fournisseur de documents")](document-picker-images/image39.png#lightbox)
@@ -1082,7 +1065,6 @@ Le processus suivant se produit :
 1. Le coordinateur de fichiers appelle l’extension de fournisseur de fichiers personnalisée pour récupérer le fichier.
 1. Le contenu du fichier est retourné au coordinateur de fichiers.
 1. Le contenu du fichier est renvoyé à l’application.
-
 
 ### <a name="security-and-bookmarks"></a>Sécurité et signets
 
@@ -1108,7 +1090,6 @@ Le processus suivant se produit :
 1. `NSUrl`appelle l’extension du fournisseur de fichiers avec l’URL du fichier.
 1. Le fournisseur d’extension de fichier accède au fichier et retourne l’emplacement du fichier à `NSUrl` .
 1. L’emplacement du fichier est fourni avec les informations de sécurité et retourné à l’application.
-
 
 À partir de là, l’application peut accéder au fichier et l’utiliser comme d’habitude.
 

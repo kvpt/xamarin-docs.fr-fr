@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 5272921cade2b9dadd24a4c917e6251ac591e178
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292320"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768749"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>Utilisation de watchOS disposition dans Xamarin
 
@@ -34,7 +34,6 @@ Le point essentiel est : rendre votre interface utilisateur lisible et utilisab
 
 - Utilisez le [ `Menu` contrôle](~/ios/watchos/user-interface/menu.md) aux fonctionnalités exposent moins fréquemment utilisé pour conserver votre conception d’applications claire et concise.
 
-
 ## <a name="implementation"></a>Implémentation
 
 Regardez le que kit inclut les contrôles suivants pour vous aider à créer des dispositions d’application attrayante espion :
@@ -55,7 +54,6 @@ Quand la taille est définie sur **relatif au conteneur** vous pouvez fournir un
 
 ![](layout-images/button-attributes.png "Fournir une valeur proportionnelle et un ajustement de décalage")
 
-
 ### <a name="group"></a>Regrouper
 
 `WKInterfaceGroup` est un conteneur de disposition simple qui peut être configuré pour la pile contrôle verticalement ou horizontalement. Il inclut l’espacement entre chaque contrôle par défaut, mais vous pouvez modifier l’espacement (et encarts) dans le **attributs** inspecteur.
@@ -65,7 +63,6 @@ Quand la taille est définie sur **relatif au conteneur** vous pouvez fournir un
 Groupes peuvent eux-mêmes être dimensionnés et positionnés par rapport à des contrôles autour d’elles, et les groupes peuvent être imbriqués pour créer des dispositions complexes.
 
 ![](layout-images/group-scene.png "Les groupes peuvent être imbriqués pour créer des dispositions complexes")
-
 
 ### <a name="separator"></a>Séparateur
 
@@ -79,8 +76,6 @@ Notez les séparateurs bleues et vertes qui n’utilisent pas la largeur totale 
 
 Aucune disposition ne serait complète sans le `Label`, `Image`, `Button`, `Switch`, `Slider`, `Map`, et [autres contrôles](~/ios/watchos/user-interface/index.md).
 Il peuvent être positionnés dans vos dispositions à l’aide de **groupes** ou les paramètres de position et la taille de chaque contrôle.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

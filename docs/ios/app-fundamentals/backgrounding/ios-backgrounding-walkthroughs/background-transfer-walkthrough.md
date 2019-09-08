@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3e27cffa9e2605c3697536f226fe87fbbf1bfbbd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 47a07959bcfabc0980ccb90f2ae7a489e5e71223
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286878"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756230"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Transfert en arrière-plan et passer dans Xamarin. iOS
 
@@ -56,12 +56,10 @@ Un `NSUrlSessionDelegate` fournit les méthodes de base suivantes pour vérifier
 - *DidReceiveChallenge* : appelée pour demander des informations d’identification lorsque l’autorisation est requise.
 - *DidBecomeInvalidWithError* -appelée si le `NSURLSession` devient invalidée.
 
-
 Les sessions en arrière-plan requièrent des délégués plus spécialisés en fonction des types de tâches en cours d’exécution. Les sessions en arrière-plan sont limitées à deux types de tâches :
 
 - *Charger des tâches* -les tâches `NSUrlSessionUploadTask` de type `NSUrlSessionTaskDelegate` utilisent le, qui hérite de `NSUrlSessionDelegate` . Ce délégué fournit des méthodes supplémentaires pour suivre la progression du téléchargement, gérer la redirection HTTP, et bien plus encore.
 - *Tâches de téléchargement* -tâches de `NSUrlSessionDownloadTask` type utilisez `NSUrlSessionDownloadDelegate` le, qui hérite `NSUrlSessionTaskDelegate` de. Ce délégué fournit toutes les méthodes pour les tâches de téléchargement, ainsi que des méthodes spécifiques au téléchargement pour suivre la progression du téléchargement et déterminer quand une tâche de téléchargement a repris ou est terminée.
-
 
 Le code suivant définit une tâche qui peut être utilisée pour télécharger une image à partir d’une URL. Nous commençons la tâche en appelant `CreateDownloadTask` sur notre session en arrière-plan et en transmettant la requête d’URL :
 
@@ -96,7 +94,6 @@ L’API de délégué de session fournit une large boîte à outils pour interag
 
 > [!IMPORTANT]
 > Les sessions en arrière-plan sont démarrées sur un thread d’arrière-plan, de sorte que tous les appels pour mettre à `InvokeOnMainThread` jour l’interface utilisateur doivent être explicitement exécutés sur le thread d’interface utilisateur en appelant pour éviter que IOS termine l’application. 
-
 
 ## <a name="handling-transfer-completion"></a>Gestion de l’achèvement du transfert
 
@@ -141,8 +138,6 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 ```
 
 Dans cette procédure pas à pas, nous avons abordé les étapes de base pour implémenter le service de transfert en arrière-plan dans iOS 7.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

@@ -1,30 +1,30 @@
 ---
-title: Restituer les contrôles personnalisés dans le Générateur d’aperçu XAML
-description: Cet article décrit comment afficher vos contrôles personnalisés dans le Générateur d’aperçu XAML.
+title: Restituer des contrôles personnalisés dans le générateur d’aperçu XAML
+description: Cet article explique comment afficher vos contrôles personnalisés dans le générateur d’aperçu XAML.
 ms.prod: xamarin
 ms.assetid: 4D795372-CB8F-48F4-B63D-845E44B261F7
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 977c29312e0be8b92f216c224414f9bd03f8562d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5b87c631574f159230e1dc23285b9087bcc94255
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60875975"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767315"
 ---
-# <a name="render-custom-controls-in-the-xaml-previewer"></a>Restituer les contrôles personnalisés dans le Générateur d’aperçu XAML
+# <a name="render-custom-controls-in-the-xaml-previewer"></a>Restituer des contrôles personnalisés dans le générateur d’aperçu XAML
 
-_Contrôles personnalisés ne fonctionnent parfois pas comme prévu dans le Générateur d’aperçu XAML. Utilisez les instructions dans cet article pour comprendre les limitations de l’aperçu de vos contrôles personnalisés._
+_Parfois, les contrôles personnalisés ne fonctionnent pas comme prévu dans le générateur d’aperçu XAML. Utilisez les instructions de cet article pour comprendre les limitations de l’aperçu de vos contrôles personnalisés._
 
-## <a name="basic-preview-mode"></a>Base mode Aperçu
+## <a name="basic-preview-mode"></a>Mode aperçu de base
 
-Même si vous n’avez pas créé votre projet, le Générateur d’aperçu XAML affichera vos pages. Jusqu'à ce que vous générez, n’importe quel contrôle qui s’appuie sur le code-behind affiche son type de base Xamarin.Forms. Lorsque votre projet est généré, le Générateur d’aperçu XAML tente d’afficher des contrôles personnalisés avec le rendu au moment du design est activé. Si le rendu échoue, il indique le type de base Xamarin.Forms.
+Même si vous n’avez pas généré votre projet, le générateur d’aperçu XAML affiche vos pages. Jusqu’à ce que vous génériez, tout contrôle qui s’appuie sur du code-behind affiche son type Xamarin. Forms de base. Quand votre projet est généré, le générateur d’aperçu XAML essaie d’afficher des contrôles personnalisés avec le rendu au moment du design activé. Si le rendu échoue, le type Xamarin. Forms de base est affiché.
 
 ## <a name="enable-design-time-rendering-for-custom-controls"></a>Activer le rendu au moment du design pour les contrôles personnalisés
 
-Si vous faites vos propres contrôles personnalisés, ou que vous utilisez des contrôles à partir d’une bibliothèque tierce, le Générateur d’aperçu peut-être les afficher correctement. Contrôles personnalisés doivent s’abonner à concevoir le temps de rendu qui s’affiche dans le Générateur d’aperçu, si vous avez écrit le contrôle ou importée à partir d’une bibliothèque. Avec les contrôles que vous avez créé, ajoutez le [ `[DesignTimeVisible(true)]` ](xref:System.ComponentModel.DesignTimeVisibleAttribute) à la classe de votre contrôle à afficher dans le Générateur d’aperçu :
+Si vous créez vos propres contrôles personnalisés ou utilisez des contrôles à partir d’une bibliothèque tierce, le générateur d’aperçu peut les afficher de manière incorrecte. Les contrôles personnalisés doivent accepter le rendu au moment du design pour apparaître dans le générateur d’aperçu, que vous ayez écrit le contrôle ou importé à partir d’une bibliothèque. Avec les contrôles que vous avez créés, [`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute) ajoutez à la classe de votre contrôle pour l’afficher dans le générateur d’aperçu :
 
 ```csharp
 namespace MyProject
@@ -38,22 +38,21 @@ namespace MyProject
 }
 ```
 
-Utilisez [classe de base de ImageCirclePlugin de James Montemagno](https://github.com/jamesmontemagno/ImageCirclePlugin/blob/master/src/ImageCircle/CircleImage.shared.cs) comme exemple.
+Utilisez [la classe de base ImageCirclePlugin’s de James Montemagno](https://github.com/jamesmontemagno/ImageCirclePlugin/blob/master/src/ImageCircle/CircleImage.shared.cs) comme exemple.
 
+## <a name="skiasharp-controls"></a>Contrôles SkiaSharp
 
-## <a name="skiasharp-controls"></a>Contrôles de SkiaSharp
-
-Actuellement, SkiaSharp contrôles sont uniquement pris en charge lorsque vous prévisualisez sur iOS. Ils ne sont pas restituer sur la version préliminaire Android.
+Actuellement, les contrôles SkiaSharp sont uniquement pris en charge lorsque vous affichez un aperçu sur iOS. Ils ne s’afficheront pas dans la version préliminaire d’Android.
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
-### <a name="check-your-xamarinforms-version"></a>Vérifier votre version de Xamarin.Forms
-Vérifiez que vous disposez au moins 3.6 Xamarin.Forms installé. Vous pouvez mettre à jour votre version de Xamarin.Forms sur NuGet.
+### <a name="check-your-xamarinforms-version"></a>Vérifier la version de Xamarin. Forms
+Vérifiez que vous avez au moins Xamarin. Forms 3,6 installé. Vous pouvez mettre à jour votre version de Xamarin. Forms sur NuGet.
 
-### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>Même avec `[DesignTimeVisible(true)]`, mon contrôle personnalisé n’est pas rendu correctement.
-Les contrôles personnalisés qui s’appuient sur les données de code-behind ou back-end ne fonctionnent pas toujours dans le Générateur d’aperçu XAML. Vous pouvez essayer :
-* Déplacer le contrôle afin qu’il n’initialise pas si [en mode Création est activé.](index.md#detect-design-mode)
-* Configuration de [données au moment de la conception](design-time-data.md) pour afficher des données fictives à partir du serveur principal
+### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>Même avec `[DesignTimeVisible(true)]`, mon contrôle personnalisé ne s’affichera pas correctement.
+Les contrôles personnalisés qui s’appuient fortement sur des données code-behind ou backend ne fonctionnent pas toujours dans le générateur d’aperçu XAML. Vous pouvez essayer :
+* Déplacer le contrôle afin qu’il ne s’initialise pas si le [mode création est activé](index.md#detect-design-mode)
+* Configuration de [données au moment](design-time-data.md) de la conception pour afficher des données factices à partir du serveur principal
 
-### <a name="the-xaml-previewer-shows-the-error-custom-controls-arent-rendering-properly"></a>Le Générateur d’aperçu XAML affiche l’erreur « Les contrôles personnalisés ne sont pas rendu correctement »
-Essayez de nettoyage et régénérer votre projet, ou la clôture et rouvrir le fichier XAML.
+### <a name="the-xaml-previewer-shows-the-error-custom-controls-arent-rendering-properly"></a>Le générateur d’aperçu XAML affiche l’erreur « les contrôles personnalisés ne sont pas correctement restitués »
+Essayez de nettoyer et de reconstruire votre projet, ou fermez et rouvrez le fichier XAML.

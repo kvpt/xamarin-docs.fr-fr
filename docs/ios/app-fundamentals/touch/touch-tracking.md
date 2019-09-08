@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 00fa1a65d2a73220675d8142e70ac904a93e3042
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eca8a1bdc3c60ae4dbaabf022a9dbe91f7e30402
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281973"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767035"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Suivi des doigts multipoint dans Xamarin. iOS
 
@@ -41,7 +41,6 @@ class FingerPaintPolyline
 ```
 
 Chaque polyligne a une couleur, une largeur de trait et un objet [`CGPath`](xref:CoreGraphics.CGPath) graphique IOS pour accumuler et afficher plusieurs points de la ligne lorsqu’elle est dessinée.
-
 
 Tout le reste du code présenté ci-dessous est contenu dans `UIView` une dérivée nommée. `FingerPaintCanvasView` Cette classe gère un dictionnaire d’objets de type `FingerPaintPolyline` pendant la durée pendant laquelle ils sont activement dessinés par un ou plusieurs doigts :
 
@@ -187,8 +186,6 @@ Ensemble, ce traitement permet au programme [FingerPaint](https://docs.microsoft
 [![](touch-tracking-images/image01.png "Suivi des doigts individuels et dessin des résultats à l’écran")](touch-tracking-images/image01.png#lightbox)
 
 Vous avez maintenant vu comment vous pouvez suivre des doigts individuels sur l’écran et les distinguer.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

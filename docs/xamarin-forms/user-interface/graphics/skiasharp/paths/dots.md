@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9e12e901a4224580f72a4b92a4319e02a60efe46
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2d02e79ff51468572250d1a7ce7c6d3da103c03a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643023"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770526"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>Points et tirets dans SkiaSharp
 
@@ -26,7 +26,7 @@ SkiaSharp vous permet de dessiner des lignes qui ne sont pas correctes, mais au 
 
 Cela avec une *effet*, qui est une instance de la [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect) classe que vous définissez pour le [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect) propriété de `SKPaint`. Vous pouvez créer un chemin d’accès (ou les combiner chemin effets) en utilisant l’une des méthodes de création statiques définies par `SKPathEffect`. (`SKPathEffect` est un des six effets pris en charge par SkiaSharp ; les autres sont décrits dans la section [ **SkiaSharp effet**](../effects/index.md).)
 
-Pour dessiner des lignes en pointillés ou en pointillés, utilisez le [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) méthode statique. Il existe deux arguments: C’est tout d’abord un `float` tableau de valeurs qui indiquent les longueurs des points et des tirets et la longueur des espaces entre eux. Ce tableau doit avoir un nombre pair d’éléments, et il doit y avoir au moins deux éléments. (Il peut être zéro élément dans le tableau mais qui se traduit par un trait plein.) S’il existe deux éléments, la première est la longueur d’un point ou un tiret et le second est la longueur de l’espacement avant le prochain point ou tiret. S’il existe plus de deux éléments, ils se trouvent dans cet ordre : tiret de longueur, longueur de l’intervalle, longueur du tiret, longueur de l’intervalle et ainsi de suite.
+Pour dessiner des lignes en pointillés ou en pointillés, utilisez le [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) méthode statique. Il existe deux arguments : C’est tout d’abord un `float` tableau de valeurs qui indiquent les longueurs des points et des tirets et la longueur des espaces entre eux. Ce tableau doit avoir un nombre pair d’éléments, et il doit y avoir au moins deux éléments. (Il peut être zéro élément dans le tableau mais qui se traduit par un trait plein.) S’il existe deux éléments, la première est la longueur d’un point ou un tiret et le second est la longueur de l’espacement avant le prochain point ou tiret. S’il existe plus de deux éléments, ils se trouvent dans cet ordre : tiret de longueur, longueur de l’intervalle, longueur du tiret, longueur de l’intervalle et ainsi de suite.
 
 En règle générale, vous souhaitez rendre les longueurs de dash et gap un multiple de la largeur du trait. Si la largeur du trait est 10 pixels, par exemple, puis le tableau {10, 10} Dessine une ligne en pointillés où les points et les espaces sont la même longueur que l’épaisseur du trait.
 
@@ -165,7 +165,6 @@ Limite de l’écran affiche UWP qui séparée par des points et tirets de ligne
 Jusqu'à présent, aucune mention n’a été effectuée du deuxième paramètre à la `SKPathEffect.CreateDash` (méthode). Ce paramètre est nommé `phase` et il fait référence à un offset dans le modèle de point-tiret au début de la ligne. Par exemple, si le tableau dash est {10, 10} et le `phase` est 10, la ligne commence par un écart plutôt que d’un point.
 
 Une application intéressante de la `phase` paramètre figure dans une animation. Le **spirale animée** page est similaire à la **Archimède spirale** page, à ceci près que le [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) classe anime le `phase` à l’aide du paramètre le Xamarin.Forms `Device.Timer` méthode :
-
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage

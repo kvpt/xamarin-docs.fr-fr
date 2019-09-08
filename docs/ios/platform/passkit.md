@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277870"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769582"
 ---
 # <a name="passkit-in-xamarinios"></a>PassKit dans Xamarin. iOS
 
@@ -74,7 +74,6 @@ Actuellement, cinq types sont pris en charge, qui peuvent être distingués dans
 - **Carte de stockage** : arrondi à la partie supérieure, comme une carte de crédit ou de débit.
 - **Coupon** : perforé en haut.
 - **Générique** : identique à la carte de magasin, arrondie à la partie supérieure.
-
 
 Les cinq types de tests sont affichés dans cette capture d’écran (dans l’ordre : coupon, générique, carte de stockage, passe de carte et ticket d’événement) :
 
@@ -204,10 +203,8 @@ Les passes sont signées avec un certificat privé que vous générez dans le po
 1. Utilisez le certificat pour signer le `manifest.json` fichier et écrire le résultat dans un fichier appelé `signature` .
 1. Compressez tout le contenu et donnez à l' `.pkpass` extension de fichier le fichier résultant.
 
-
 Étant donné que votre clé privée est nécessaire pour signer la passe, ce processus ne doit être effectué que sur un serveur sécurisé que vous contrôlez. NE distribuez pas vos clés pour essayer de générer des passes dans une application.
 
- 
 ## <a name="configuration-and-setup"></a>Configuration et configuration
 
 Cette section contient des instructions pour vous aider à configurer les détails de votre approvisionnement et à créer votre premier passage.
@@ -229,7 +226,6 @@ La première étape consiste à configurer un ID de type de passe pour chaque _t
 
 2. Fournissez une **Description** (nom) et un **identificateur** (chaîne unique) pour la passe. Notez que tous les ID de type de passe doivent commencer `pass.` par la chaîne dans cet `pass.com.xamarin.coupon.banana` exemple nous utilisons : [![](passkit-images/register.png "Fournir une description et un identificateur")](passkit-images/register.png#lightbox)
 
-
 3. Confirmez l’ID de test en appuyant sur le bouton **Register** .
 
 #### <a name="generate-a-certificate"></a>Générer un certificat
@@ -242,13 +238,11 @@ Pour créer un nouveau certificat pour cet ID de type de passe, procédez comme 
 
     [![](passkit-images/cert-dist.png "Sélectionner créer un certificat")](passkit-images/cert-dist.png#lightbox)
 
-
 2. Suivez les étapes pour créer une demande de signature de certificat (CSR).
   
 3. Appuyez sur le bouton **Continuer** sur le portail des développeurs et chargez la CSR pour générer votre certificat.
 
 4. Téléchargez le certificat et double-cliquez dessus pour l’installer dans votre trousseau.
-
 
 Maintenant que nous avons créé un certificat pour cet ID de type de passe, la section suivante explique comment générer un pass manuellement.
 
@@ -264,7 +258,6 @@ Maintenant que nous avons créé le type de passe, nous pouvons créer manuellem
 - Calculez les hachages SHA1 pour chaque fichier dans le dossier, puis écrivez dans le fichier manifest. JSON.
 - Signez manifest. JSON avec le fichier. P12 de certificat téléchargé.
 - Compressez le contenu du répertoire et renommez-le avec l’extension. pkpass.
-
 
 L' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article contient des fichiers sources qui peuvent être utilisés pour générer une passe. Utilisez les fichiers dans le `CouponBanana.raw` répertoire du répertoire CreateAPassManually. Les fichiers suivants sont présents :
 
@@ -338,7 +331,6 @@ Les applications de canalisation sont des applications intermédiaires qui peuve
 - **Safari** : reconnaît le type de contenu Pass quand l’utilisateur clique sur un lien de test d’URL.
 - **Autres applications personnalisées** : toute application qui reçoit des pièces jointes ou des liens ouverts (clients de réseaux sociaux, lecteurs de messagerie, etc.).
 
-
 Cette capture d’écran montre comment le **courrier électronique** dans iOS 6 reconnaît une pièce jointe de réussite et (lorsqu’il est touché) permet de l' **Ajouter** à Wallet.
 
  [![](passkit-images/image22.png "Cette capture d’écran montre comment le courrier dans iOS 6 reconnaît une pièce jointe de réussite")](passkit-images/image22.png#lightbox)
@@ -350,7 +342,6 @@ Si vous créez une application qui peut être un conduit pour les passes, elle p
 - **Extension de fichier** -. pkpass
 - **Type MIME** -application/vnd. Apple. pkpass
 - **UTI** – com. Apple. pkpass
-
 
 Le fonctionnement de base d’une application de canalisation consiste à récupérer le fichier Pass et `PKAddPassesViewController` à appeler PassKit pour permettre à l’utilisateur d’ajouter la passe à son portefeuille. L’implémentation de ce contrôleur d’affichage est traitée dans la section suivante sur les **applications auxiliaires**.
 
@@ -383,7 +374,6 @@ Double-cliquez sur le fichier **habilitations. plist** dans le panneau solutions
 Sous la section Wallet, sélectionnez l’option **activer Wallet**
 
 ![](passkit-images/image32.png "Activer le droit portefeuille")
-
 
 L’option par défaut permet à votre application d’autoriser tous les types de passe. Toutefois, il est possible de restreindre votre application et d’autoriser uniquement un sous-ensemble de types de passes d’équipe. Pour activer cette option, sélectionnez **autoriser le sous-ensemble de types de passe d’équipe** et entrez l’identificateur de type de passe du sous-ensemble que vous souhaitez autoriser.
 
@@ -424,7 +414,7 @@ Les classes PassKit suivantes sont disponibles pour les applications à accéder
 - **PKAddPassesViewController** : permet d’afficher un test permettant à l’utilisateur de s’enregistrer dans son portefeuille.
 - **PKAddPassesViewControllerDelegate** – Xamarin. iOS développeurs
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Reportez-vous au projet PassLibrary dans l' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article. Il illustre les fonctions courantes suivantes qui seraient nécessaires dans une application de portefeuille :
 

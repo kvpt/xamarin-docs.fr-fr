@@ -7,22 +7,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 6d391bd804e1c59d06d78dd7cffe3f11f9276468
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525783"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754634"
 ---
 # <a name="application-package-size"></a>Taille des packages d'application
 
 _Cet article examine les éléments constitutifs des packages d’application Xamarin.Android, ainsi que les stratégies associées permettant de les déployer avec efficacité au cours des phases de débogage et de mise en production._
 
-
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Présentation
 
 Xamarin.Android utilise une variété de mécanismes pour réduire la taille des package tout en conservant un débogage et un processus de déploiement de mise en production efficaces. Dans cet article, nous examinons la mise en production de Xamarin.Android et le flux de travail du déploiement de débogage, ainsi que la façon dont la plateforme Xamarin.Android assure la création et la mise en production par nos soins de petits packages d’application.
-
 
 ## <a name="release-packages"></a>Mettre des packages en production
 
@@ -41,7 +39,6 @@ Nous voyons que cette opération supprime une quantité non négligeable de la b
 ![taille du package ApiDemo après l’éditeur de liens](app-package-size-images/api-demo-package-size-after-linker.png)
 
 Comme vous le voyez ici, taille de votre package d’application sera généralement d’environ 2,9 Mo de plus que celle de votre application et de ses dépendances.
-
 
 ## <a name="debug-packages"></a>Déboguer des Packages
 
@@ -75,11 +72,9 @@ Pour activer *le déploiement d’assembly rapide*, procédez comme suit :
 
 4. Cliquez sur le bouton **OK** pour enregistrer les modifications et fermez la boîte de dialogue Options du projet.
 
-
 La prochaine fois que l’application sera générée pour le débogage, les assemblys seront installés directement sur l’appareil (s’ils ne l’ont pas déjà été) et un plus petit package d’application (qui n’inclut pas les assemblys) sera installé sur l’appareil. Cela réduit le temps nécessaire pour que les modifications apportées à l’application s’exécutent pour le test.
 
 Après avoir surmonté le premier déploiement long du runtime partagé et de la plateforme partagée, à chaque fois que nous modifions l’application, nous pouvons déployer rapidement et facilement la nouvelle version, ce qui nous permet de bénéficier d’un cycle rapide de modification/de déploiement/d’exécution.
-
 
 ## <a name="summary"></a>Récapitulatif
 

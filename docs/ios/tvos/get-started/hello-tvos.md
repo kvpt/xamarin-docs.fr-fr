@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 30fcf586a280688834e1ae9af61630c2611964a5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9ad1c63dae312546315406d40858ce24802c6a58
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281819"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769309"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS Guide de démarrage rapide
 
@@ -489,7 +489,6 @@ Si vous rencontrez des problèmes lors de l’utilisation de Xamarin. tvOS, cons
 ## <a name="summary"></a>Récapitulatif
 
 Cet article a fourni un démarrage rapide du développement d’applications pour tvOS avec Visual Studio pour Mac en créant une simple application Hello, tvOS. Il a abordé les principes de base de l’approvisionnement d’appareils tvOS, de la création d’interface, du codage pour tvOS et des tests sur le simulateur tvOS.
-
 
 ## <a name="related-links"></a>Liens associés
 

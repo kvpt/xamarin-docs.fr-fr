@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 145c616cc0af8156f10b9db1d3fa36264cecd18b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284328"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768877"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Présentation des storyboards dans Xamarin. iOS
 
@@ -21,7 +21,6 @@ Dans ce guide, nous allons expliquer ce qu’est une table de montage séquentie
 Avant que le format de fichier de Storyboard ait été introduit par Apple comme représentation visuelle de l’interface utilisateur d’une application iOS, les développeurs créaient des fichiers XIB pour chaque contrôleur d’affichage et ont programmé la navigation entre chaque vue manuellement.  L’utilisation d’un Storyboard permet au développeur de définir à la fois les contrôleurs d’affichage et la navigation entre eux sur une aire de conception et offre une modification WYSIWYG de l’interface utilisateur de l’application.
 
 Une table de montage séquentiel peut être créée, ouverte et modifiée à l’aide du concepteur iOS Xamarin. Ce guide explique également comment utiliser le concepteur pour créer vos storyboards lors de l’utilisation C# de pour programmer la navigation.
-
 
 ## <a name="requirements"></a>Spécifications
 
@@ -77,7 +76,7 @@ Il existe différents types de transitions, chacun donnant le contrôle de la pr
 ### <a name="adaptive-segue-types"></a>Types segue adaptatifs
 
  iOS 8 a introduit des [classes de taille](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) pour permettre à un fichier de Storyboard iOS de fonctionner avec toutes les tailles d’écran disponibles, ce qui permet aux développeurs de créer une interface utilisateur pour tous les appareils iOS. Par défaut, toutes les nouvelles applications Xamarin. iOS utilisent des classes de taille. Pour utiliser les classes de taille d’un ancien projet, reportez-vous au guide [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md) . 
- 
+
 Toute application utilisant des classes de taille utilisera également la nouvelle [*SEGUES adaptative*](~/ios/user-interface/storyboards/unified-storyboards.md). Lorsque vous utilisez des classes de taille, n’oubliez pas que nous ne spécifions pas directement si nous utilisons un iPhone ou un iPad. En d’autres termes, nous créons une interface utilisateur qui aura toujours le même aspect, quelle que soit la quantité réelle d’espace de travail. Les SEGUES adaptatifs fonctionnent en déterminant l’environnement et en déterminant la meilleure façon de présenter le contenu. Les SEGUES adaptatifs sont affichés ci-dessous : 
 
 [![](images/adaptivesegue.png "Liste déroulante SEGUES adaptatif")](images/adaptivesegue.png#lightbox)
@@ -92,7 +91,6 @@ Toute application utilisant des classes de taille utilisera également la nouvel
 ### <a name="transferring-data-with-segues"></a>Transfert de données avec SEGUES
 
 Les avantages d’un segue ne se terminent pas par des transitions. Elles peuvent également être utilisées pour gérer le transfert de données entre les contrôleurs d’affichage. Cela est possible en remplaçant la `PrepareForSegue` méthode sur le contrôleur d’affichage initial et en gérant les données. Lorsque le segue est déclenché, par exemple avec une pression sur un bouton, l’application appellera cette méthode, en fournissant la possibilité de préparer le nouveau contrôleur d’affichage *avant* toute navigation. Le code ci-dessous, extrait de l’exemple [Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) , illustre ce qui suit : 
-
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, 
@@ -252,7 +250,6 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-
 Lorsque vous créez une table de montage séquentiel à l’aide du concepteur, l’IDE ajoute automatiquement l’attribut [[register]](xref:Foundation.RegisterAttribute) en haut de la `designer.cs` classe et passe un identificateur de chaîne, identique à l’ID de Storyboard spécifié à l’étape précédente. Cela permet de lier C# le à la scène appropriée dans le Storyboard.
 
 À un moment donné, vous souhaiterez peut-être ajouter une classe existante qui n’a **pas** été créée dans le concepteur. Dans ce cas, vous devez enregistrer cette classe comme d’habitude :
@@ -340,7 +337,6 @@ Avant de commencer, suivez les étapes 1 à 8 ci-dessus. Dans ces étapes, nous 
 3. Cliquez sur segue et donnez-lui l' *identificateur* `SegueToPink`:
 
     [![](images/namesegue.png "Cliquez sur segue et donnez-lui l’identificateur SegueToPink")](images/namesegue.png#lightbox)  
-    
 
 4. Enfin, ajoutez la méthode ShouldPerformSegue suivante à la `MainViewController` classe :
 
@@ -489,8 +485,6 @@ Lorsque l’application est exécutée et que l’utilisateur clique sur l’él
 ## <a name="summary"></a>Récapitulatif
 
 Cet article présente le concept de storyboards et la façon dont ils peuvent être bénéfiques au développement d’applications iOS. Il aborde les scènes, les contrôleurs d’affichage, les vues et les hiérarchies de vues, ainsi que la façon dont les scènes sont liées avec différents types de SEGUES.  Il explore également l’instanciation manuelle des contrôleurs d’affichage à partir d’une table de montage séquentiel et la création de SEGUES conditionnelles.
-
-
 
 ## <a name="related-links"></a>Liens associés
 

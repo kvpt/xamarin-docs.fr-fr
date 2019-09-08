@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b5d1ddc4cf3a6817851d22aba920abb29d9f746f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644799"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767650"
 ---
 # <a name="attached-properties"></a>Propriétés jointes
 
@@ -141,7 +141,6 @@ Lorsque vous créez une propriété jointe, il existe un nombre de paramètres f
 ## <a name="summary"></a>Récapitulatif
 
 Cet article propose une introduction à des propriétés jointes et vous a montré comment créer et de les consommer. Une propriété jointe est un type spécial de propriété pouvant être liée, définie dans une classe mais jointe à d’autres objets et reconnaissable dans XAML en tant qu’attributs qui contiennent une classe et un nom de propriété séparés par un point.
-
 
 ## <a name="related-links"></a>Liens associés
 
