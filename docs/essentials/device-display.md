@@ -1,16 +1,16 @@
 ---
 title: 'Xamarin.Essentials: Informations d’affichage de l’appareil'
-description: Ce document décrit la classe DeviceDisplay de Xamarin.Essentials, qui fournit les métriques d’écran de l’appareil sur lequel l’application s’exécute.
+description: La classe DeviceDisplay fournit des informations à propos de l’écran de l’appareil.
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 9c0eb4f856dbbb05e891a07326f40528a4e99bea
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: 77af173bc3297ac9ccdef22dccbeab054895f772
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120099"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756905"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials: Informations d’affichage de l’appareil
 
@@ -20,7 +20,7 @@ La classe **DeviceDisplay** fournit des informations sur les métriques d’écr
 
 [!include[](~/essentials/includes/get-started.md)]
 
-## <a name="using-devicedisplay"></a>Utilisation de DeviceDisplay
+## <a name="using-devicedisplay"></a>Utilisation de **DeviceDisplay**
 
 Ajoutez une référence à Xamarin.Essentials dans votre classe :
 
@@ -52,7 +52,7 @@ var height = mainDisplayInfo.Height;
 var density = mainDisplayInfo.Density;
 ```
 
-La classe **DeviceDisplay** expose également un événement auquel il est possible de s’abonner, et qui se déclenche chaque fois qu’une métrique d’écran change :
+La classe **DeviceDisplay** expose également un événement auquel il est possible de s'inscrire et qui se déclenche à chaque fois qu'une information de l'écran est modifiée :
 
 ```csharp
 public class DisplayInfoTest
@@ -98,7 +98,6 @@ Aucune différence.
 Aucune différence.
 
 --------------
-
 
 ## <a name="api"></a>API
 
