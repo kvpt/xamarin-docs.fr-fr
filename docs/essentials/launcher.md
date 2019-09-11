@@ -5,12 +5,12 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: c1c9fc4ce7e7a1dc4ab9573d29407f081e2ad8a1
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 3e49e12faac1fc93816d9a51646f639046c200c5
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199850"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887372"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Lanceur
 
@@ -58,7 +58,7 @@ public class LauncherTest
 
 Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ouvert.
 
-Voici un exemple d’écriture de texte sur le disque et de demande d’ouverture du fichier :
+Voici un exemple d’écriture de texte sur disque et de demande d’ouverture :
 
 ```csharp
 var fn = "File.txt";

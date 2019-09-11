@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: eb1358f039cc5d5a200f929fcc7dfa71ca863d2a
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 77cc414cd9b15f99f95d4a54f7af5ce6f028c41a
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121316"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887446"
 ---
 # <a name="xamarinforms-device-class"></a>Classe de périphérique de Xamarin.Forms
 
@@ -114,7 +114,7 @@ Vous pouvez également le `OnIdiom` extension de balisage peut être utilisée d
 Le [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) valeur récupère un [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) valeur d’énumération qui représente le sens du flux actuel utilisé par l’appareil. Le sens du flux est la direction dans laquelle les éléments d’interface utilisateur sur la page sont analysés par l’œil. Ces valeurs sont les suivantes :
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 Dans XAML, le [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) valeur peut être récupérée à l’aide de la `x:Static` extension de balisage :
@@ -186,18 +186,18 @@ La plupart des systèmes d’exploitation, y compris iOS, Android et le platefor
 
 Les applications utilisent parfois des threads d’arrière-plan pour exécuter des opérations potentiellement longues, telles que la récupération de données à partir d’un service Web. Si le code qui s’exécute sur un thread d’arrière-plan doit accéder aux éléments de l’interface utilisateur, il doit exécuter ce code sur le thread principal.
 
-La `Device` classe comprend les méthodes `static` suivantes qui peuvent être utilisées pour interagir avec des éléments d’interface utilisateur à partir de threads d’arrière-plan:
+La `Device` classe comprend les méthodes `static` suivantes qui peuvent être utilisées pour interagir avec des éléments d’interface utilisateur à partir de threads d’arrière-plan :
 
-| Méthode | Arguments | Returns (Retours) | Objectif |
+| Méthode | Arguments | Valeur renvoyée | Objectif |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | Appelle un `Action` sur le thread principal et n’attend pas qu’il se termine. |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Appelle un `Func<T>` sur le thread principal et attend qu’il se termine. |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | Appelle un `Action` sur le thread principal et attend qu’il se termine. |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Appelle un `Func<Task<T>>` sur le thread principal et attend qu’il se termine. |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Appelle un `Func<Task>` sur le thread principal et attend qu’il se termine. |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | Appelle un `Func<T>` sur le thread principal, puis attend qu’il se termine. |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | Appelle un `Action` sur le thread principal, puis attend qu’il se termine. |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | Appelle un `Func<Task<T>>` sur le thread principal, puis attend qu’il se termine. |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | Appelle un `Func<Task>` sur le thread principal, puis attend qu’il se termine. |
 | `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | Retourne le `SynchronizationContext` pour le thread principal. |
 
-Le code suivant illustre un exemple d’utilisation de `BeginInvokeOnMainThread` la méthode:
+Le code suivant illustre un exemple d’utilisation de `BeginInvokeOnMainThread` la méthode :
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
