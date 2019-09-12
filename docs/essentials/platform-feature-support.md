@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: de6540249f957c7173fa7a3ef3acecbe5a3ad93f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b12606317fd6cbc9a6a0f59364270595f1250abf
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756767"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887345"
 ---
 # <a name="platform-support"></a>Prise en charge de plateforme
 
