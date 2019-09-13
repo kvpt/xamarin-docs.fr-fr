@@ -1,58 +1,56 @@
 ---
-title: Prise en mainF#
-description: Ce document explique comment apprendre F# et utilisez-le pour créer des applications Xamarin avec Visual Studio 2019 et Visual Studio pour Mac.
+title: Prise en main avecF#
+description: Ce document explique comment l’apprendre F# et l’utiliser pour générer des applications Xamarin avec Visual Studio 2019 et Visual Studio pour Mac.
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 2f67983addd03a065383a2940d6e6dfc7076f2be
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 074670045a8e0d02b719e4c361b1bf351759f335
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036439"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765450"
 ---
-# <a name="getting-started-with-f35"></a>Bien démarrer avec F&#35;
+# <a name="getting-started-with-f35"></a>Prise en main avec F&#35;
 
 ## <a name="requirements"></a>Configuration requise
 
 F#est inclus par défaut dans Visual Studio pour Mac.
 
-Sur Windows, vous devez installer autonome F# outils du compilateur, selon les instructions sur [le site FSharp.org](http://fsharp.org/use/windows/).
+Sur Windows, vous devez installer les F# outils du compilateur autonomes, conformément aux instructions du [site FSharp.org](http://fsharp.org/use/windows/).
 
-## <a name="creating-an-f35-project"></a>Création d’un F&#35; projet
+## <a name="creating-an-f35-project"></a>Création d’un&#35; projet F
 
-Création d’un nouveau F# application s’effectue dans le même **nouveau projet** fenêtre utilisée pour C#.
+La création d' F# une nouvelle application s’effectue dans la même fenêtre de **projet** que celle utilisée pour C#.
 
-Dans Visual Studio pour Mac, choisissez **fichier > Nouvelle Solution**. Dans le **nouveau projet** boîte de dialogue, sélectionnez un modèle de projet. Utilisez la liste déroulante à droite du modèle à choisir la langue que vous souhaitez utiliser :
+Dans Visual Studio pour Mac choisissez **fichier > nouvelle solution**. Dans la boîte de dialogue **nouveau projet** , sélectionnez un modèle de projet. Utilisez la liste déroulante à droite du modèle pour choisir la langue que vous souhaitez utiliser :
 
- [![](overview-images/choosefsharp.png "Utilisez la liste déroulante à droite du modèle à choisir la langue que vous souhaitez utiliser")](overview-images/choosefsharp.png#lightbox)
+ [![](overview-images/choosefsharp.png "Utilisez la liste déroulante à droite du modèle pour choisir la langue que vous souhaitez utiliser.")](overview-images/choosefsharp.png#lightbox)
 
-Sélectionnez votre type de projet et cliquez sur **suivant** pour nommer et de le créer.
+Sélectionnez le type de votre projet, puis cliquez sur **suivant** pour le nommer et le créer.
 
+Vous êtes maintenant prêt à commencer à créer des F# applications exceptionnelles !
 
-Vous êtes maintenant prêt à commencer à créer de formidables F# applications !
+## <a name="learning-to-use-f35"></a>En savoir plus sur l’utilisation de F&#35;
 
-## <a name="learning-to-use-f35"></a>Apprendre à utiliser F&#35;
+Un F# didacticiel peut également être créé à partir de la boîte de dialogue **nouvelle solution** dans Visual Studio pour Mac. Accédez à **autres > didacticiel .net F# >** , comme indiqué dans l’image ci-dessous :
 
-Un F# didacticiel permettre également être créé dans le **nouvelle Solution** boîte de dialogue dans Visual Studio pour Mac. Accédez à **autres > .NET > F# didacticiel**, comme indiqué dans l’image ci-dessous :
+ [![](overview-images/fsharptutorial.png "Accédez à autre/.NET/ F# didacticiel")](overview-images/fsharptutorial.png#lightbox)
 
- [![](overview-images/fsharptutorial.png "Accédez à d’autres / .NET / F# didacticiel")](overview-images/fsharptutorial.png#lightbox)
+Une nouvelle solution interactive s’ouvre. L’exploration de cette approche est un excellent moyen de se familiariser avec les concepts de base du langage.
 
-Cette opération ouvre une nouvelle solution interactive. Cette exploration est un excellent moyen de vous préoccuper les principes fondamentaux du langage.
+ [![](overview-images/newtutorial-sml.png "L’exploration de cette approche est un excellent moyen de se familiariser avec les concepts de base du langage")](overview-images/newtutorial.png#lightbox)
 
- [![](overview-images/newtutorial-sml.png "Cette exploration est un excellent moyen de vous préoccuper les principes fondamentaux du langage")](overview-images/newtutorial.png#lightbox)
-
-Découvrez le [liste d’exemples de](~/cross-platform/platform/fsharp/samples.md) pour voir F# en action.
+Consultez la [liste des exemples](~/cross-platform/platform/fsharp/samples.md) pour voir F# en action.
 
 ## <a name="references"></a>Références
 
-Il existe une multitude d’informations en ligne pour l’obtention de se familiariser avec le F# language, couvrant tous les proficiencies. Vous trouverez ci-dessous quelques-unes de nos recommandations :
+Il existe une multitude d’informations en ligne pour vous familiariser avec la F# langue, couvrant toutes les compétences. Voici quelques-unes de nos recommandations :
 
--  [F# Software Foundation](http://fsharp.org)
--  [Visual F# portail de développement](http://go.microsoft.com/fwlink/?LinkID=234174)
--  [Visual F# galerie de Code](http://go.microsoft.com/fwlink/?LinkID=124614)
--  [Visual F# programmation mathématique/Stats](http://go.microsoft.com/fwlink/?LinkId=235173)
--  [Visual F# graphiques](http://go.microsoft.com/fwlink/?LinkId=235176)
-
+- [F# Software Foundation](http://fsharp.org)
+- [Portail F# de développement visuel](http://go.microsoft.com/fwlink/?LinkID=234174)
+- [Galerie F# de code visuel](http://go.microsoft.com/fwlink/?LinkID=124614)
+- [Programmation F# Visual Math/stats](http://go.microsoft.com/fwlink/?LinkId=235173)
+- [Graphiques F# visuels](http://go.microsoft.com/fwlink/?LinkId=235176)
