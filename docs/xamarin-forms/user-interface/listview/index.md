@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/04/2019
-ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9d7dd98b98c7722d6fcdcb49c10e326732fa9f0b
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770219"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997983"
 ---
 # <a name="xamarinforms-listview"></a>ListView de Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
 [`ListView`](xref:Xamarin.Forms.ListView)est une vue pour la présentation de listes de données, en particulier les longues listes nécessitant un défilement.
 
@@ -36,6 +36,7 @@ Un `ListView` est mieux adapté à une collection composée d’un type de donn�
 Pour plus d’informations sur la liaison de `ListView` données à une instance, consultez [sources de données ListView](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
 ## <a name="components"></a>Composants
+
 Le `ListView` contrôle a un certain nombre de composants disponibles pour tester les fonctionnalités natives de chaque plateforme. Ces composants sont définis dans les sections suivantes.
 
 ### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[En-têtes et pieds de page](customizing-list-appearance.md#headers-and-footers)
@@ -55,7 +56,7 @@ Les éléments de données `ListView` dans un sont appelés des cellules. Chaque
 - `ImageCell`Les `TextCell` [cellules intégrées](customizing-cell-appearance.md#built-in-cells), telles que et, correspondent aux contrôles natifs et sont particulièrement performants.
   - Un [`TextCell`](customizing-cell-appearance.md#textcell) affiche une chaîne de texte, éventuellement avec un texte de détail. Texte de détail est restitué sous la forme d’une deuxième ligne dans une police plus petite avec une couleur d’accentuation.
   - Un [`ImageCell`](customizing-cell-appearance.md#imagecell) affiche une image avec du texte. Apparaît en tant `TextCell` que avec une image sur la gauche.
-- Les [cellules personnalisées](customizing-cell-appearance.md#customcells) sont utilisées pour présenter des données complexes. Par exemple, une cellule personnalisée peut être utilisée pour présenter une liste de chansons incluant l’album et l’artiste.
+- Les [cellules personnalisées](customizing-cell-appearance.md#custom-cells) sont utilisées pour présenter des données complexes. Par exemple, une cellule personnalisée peut être utilisée pour présenter une liste de chansons incluant l’album et l’artiste.
 
 La capture d’écran suivante `ListView` montre un avec des éléments ImageCell :
 
@@ -63,12 +64,13 @@ La capture d’écran suivante `ListView` montre un avec des éléments ImageCel
 
 Pour en savoir plus sur la personnalisation des cellules `ListView`dans un, consultez Personnalisation de l' [apparence des cellules ListView](customizing-cell-appearance.md).
 
-## <a name="functionality"></a>Fonctionnalités
+## <a name="functionality"></a>Fonctionnalité
+
 La `ListView` classe prend en charge un certain nombre de styles d’interaction.
 
 - L' [extraction à l’actualisation](interactivity.md#pull-to-refresh) permet à l’utilisateur d’extraire `ListView` le contenu pour actualiser le contenu.
 - Les [actions de contexte](interactivity.md#context-actions) permettent au développeur de spécifier des actions personnalisées sur des éléments de liste individuels. Par exemple, vous pouvez implémenter le passage à l’action sur iOS, ou appuyez longuement sur les actions sur Android.
-- [Sélection](interactivity.md#selectiontaps) permet au développeur d’associer des fonctionnalités à des événements de sélection et de désélection sur des éléments de liste.
+- [Sélection](interactivity.md#selection-and-taps) permet au développeur d’associer des fonctionnalités à des événements de sélection et de désélection sur des éléments de liste.
 
 La capture d’écran suivante `ListView` montre une avec des actions de contexte :
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 406d65145017e4c82743bc920ff19696a90afc33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771704"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998055"
 ---
 # <a name="customizing-a-viewcell"></a>Personnalisation d’une ViewCell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Une ViewCell Xamarin.Forms est une cellule qui peut être ajoutée à une ListView ou TableView, qui contient une vue définie par le développeur. Cet article montre comment créer un renderer personnalisé pour une ViewCell hébergée à l’intérieur d’un contrôle ListView Xamarin.Forms. Cela empêche les appels répétés des calculs de disposition Xamarin.Forms pendant le défilement de ListView._
 
@@ -146,7 +146,7 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Un contrôle [`ListView`](xref:Xamarin.Forms.ListView) Xamarin.Forms est utilisé pour afficher une liste de données, qui est remplie par le biais de la propriété [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource). La stratégie de mise en cache [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) tente de réduire la vitesse d’exécution et l’empreinte mémoire de `ListView` en recyclant les cellules de la liste. Pour plus d’informations, consultez [Stratégie de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Un contrôle [`ListView`](xref:Xamarin.Forms.ListView) Xamarin.Forms est utilisé pour afficher une liste de données, qui est remplie par le biais de la propriété [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource). La stratégie de mise en cache [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) tente de réduire la vitesse d’exécution et l’empreinte mémoire de `ListView` en recyclant les cellules de la liste. Pour plus d’informations, consultez [Stratégie de mise en cache](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy).
 
 Chaque ligne dans la liste contient trois éléments de données : un nom, une catégorie et un nom de fichier image. La disposition de chaque ligne dans la liste est définie par le `DataTemplate` qui est référencé par le biais de la propriété [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) pouvant être liée. Le `DataTemplate` définit que chaque ligne de données dans la liste est un `NativeCell` qui affiche ses propriétés `Name`, `Category` et `ImageFilename` par le biais de la liaison de données. Pour plus d’informations sur le contrôle `ListView`, consultez [ListView](~/xamarin-forms/user-interface/listview/index.md).
 

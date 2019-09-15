@@ -1,5 +1,5 @@
 ---
-title: Personnaliser l’apparence de ListView
+title: Apparence de ListView
 description: Cet article explique comment personnaliser les ListViews dans les applications Xamarin.Forms à l’aide des en-têtes, des pieds de page, des groupes et des cellules de hauteur variable.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
@@ -7,23 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: fc0664ff32e63af5d0c80f69ff69f4992ad0c708
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 62073f624c37a48baa49453d7bdd1e0b849013cd
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770305"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998169"
 ---
-# <a name="customizing-listview-appearance"></a>Personnaliser l’apparence de ListView
+# <a name="listview-appearance"></a>Apparence de ListView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-[`ListView`](xref:Xamarin.Forms.ListView)peut contrôler la présentation de la liste, en plus [`ViewCell`](xref:Xamarin.Forms.ViewCell) des instances de chaque ligne de la liste.
-
-<a name="Grouping" />
+Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView) vous permet de personnaliser la présentation de la liste, en plus [`ViewCell`](xref:Xamarin.Forms.ViewCell) des instances de chaque ligne de la liste.
 
 ## <a name="grouping"></a>Regroupement
-Souvent, les jeux de données volumineux peut devenir complexe lorsque présentée dans une liste déroulante en permanence. L’activation de regroupement peut améliorer l’expérience utilisateur dans ces cas en mieux organiser le contenu et en activant des contrôles spécifiques à la plateforme qui facilitent la navigation des données.
+
+Les jeux de données volumineux peuvent devenir difficiles à manier lorsqu’ils sont présentés dans une liste de défilement continue. L’activation de regroupement peut améliorer l’expérience utilisateur dans ces cas en mieux organiser le contenu et en activant des contrôles spécifiques à la plateforme qui facilitent la navigation des données.
 
 Lorsque le regroupement est activé pour un `ListView`, une ligne d’en-tête est ajoutée pour chaque groupe.
 
@@ -61,7 +60,7 @@ Dans le code ci-dessus, `All` est la liste qui sera accordée à notre ListView 
 static PageTypeGroup()
 {
     List<PageTypeGroup> Groups = new List<PageTypeGroup> {
-            new PageTypeGroup ("Alfa", "A"){
+            new PageTypeGroup ("Alpha", "A"){
                 new PageModel("Amelia", "Cedar", new switchCellPage(),""),
                 new PageModel("Alfie", "Spruce", new switchCellPage(), "grapefruit.jpg"),
                 new PageModel("Ava", "Pine", new switchCellPage(), "grapefruit.jpg"),
@@ -78,24 +77,24 @@ static PageTypeGroup()
 }
 ```
 
-Dans le code ci-dessus, nous pouvons `Add` également appeler sur `groups`des éléments de, qui sont `PageTypeGroup`des instances de type. Cela est possible, car `PageTypeGroup` hérite `List<PageModel>`. Il s’agit d’un exemple de la liste du modèle de listes indiqué ci-dessus.
+Dans le code ci-dessus, nous pouvons `Add` également appeler sur `Groups`des éléments de, qui sont `PageTypeGroup`des instances de type. Cette méthode est possible, `PageTypeGroup` car hérite `List<PageModel>`de.
 
 Voici le XAML pour l’affichage de la liste groupée :
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="DemoListView.GroupingViewPage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoListView.GroupingViewPage"
     <ContentPage.Content>
         <ListView  x:Name="GroupedView"
-        GroupDisplayBinding="{Binding Title}"
-        GroupShortNameBinding="{Binding ShortName}"
-        IsGroupingEnabled="true">
+                   GroupDisplayBinding="{Binding Title}"
+                   GroupShortNameBinding="{Binding ShortName}"
+                   IsGroupingEnabled="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Title}"
-                     Detail="{Binding Subtitle}" />
+                              Detail="{Binding Subtitle}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
@@ -103,18 +102,18 @@ x:Class="DemoListView.GroupingViewPage"
 </ContentPage>
 ```
 
-Voici le résultat :
-
-![](customizing-list-appearance-images/grouping-depth.png "Exemple de regroupement de ListView")
-
-Notez que nous avons :
+Ce code XAML effectue les actions suivantes :
 
 - Définissez `GroupShortNameBinding` à la `ShortName` propriété définie dans notre classe de groupe
 - Définissez `GroupDisplayBinding` à la `Title` propriété définie dans notre classe de groupe
 - Définissez `IsGroupingEnabled` sur true
 - Modifié le `ListView`de `ItemsSource` à la liste groupée
 
-### <a name="customizing-grouping"></a>Personnalisation de regroupement
+La capture d’écran suivante montre l’interface utilisateur obtenue :
+
+![](customizing-list-appearance-images/grouping-depth.png "Exemple de regroupement de ListView")
+
+### <a name="customizing-grouping"></a>Personnalisation du regroupement
 
 Si le regroupement a été activé dans la liste, l’en-tête de groupe peut également être personnalisé.
 
@@ -125,28 +124,28 @@ Voici un exemple de personnalisation de l’en-tête de groupe dans XAML :
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="DemoListView.GroupingViewPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoListView.GroupingViewPage">
     <ContentPage.Content>
         <ListView x:Name="GroupedView"
-         GroupDisplayBinding="{Binding Title}"
-         GroupShortNameBinding="{Binding ShortName}"
-         IsGroupingEnabled="true">
+                  GroupDisplayBinding="{Binding Title}"
+                  GroupShortNameBinding="{Binding ShortName}"
+                  IsGroupingEnabled="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Title}"
-                    Detail="{Binding Subtitle}"
-                    TextColor="#f35e20"
-                    DetailColor="#503026" />
+                              Detail="{Binding Subtitle}"
+                              TextColor="#f35e20"
+                              DetailColor="#503026" />
                 </DataTemplate>
             </ListView.ItemTemplate>
             <!-- Group Header Customization-->
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Title}"
-                    Detail="{Binding ShortName}"
-                    TextColor="#f35e20"
-                    DetailColor="#503026" />
+                              Detail="{Binding ShortName}"
+                              TextColor="#f35e20"
+                              DetailColor="#503026" />
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
             <!-- End Group Header Customization -->
@@ -155,27 +154,30 @@ x:Class="DemoListView.GroupingViewPage">
 </ContentPage>
 ```
 
-<a name="Headers_and_Footers" />
-
 ## <a name="headers-and-footers"></a>En-têtes et pieds de page
-Il est possible pour un ListView permet de présenter un en-tête et pied de page que faire défiler les éléments de la liste. L’en-tête et le pied de page peuvent être des chaînes de texte ou une mise en page plus complexe. Notez que ceci est distinct de [section groupes](#Grouping).
 
-Vous pouvez définir le `Header` et/ou `Footer` une chaîne simple valeur, ou vous pouvez les définir à une mise en page plus complexe.
-Il existe également `HeaderTemplate` et `FooterTemplate` propriétés qui vous permettent de créent des dispositions plus complexes pour l’en-tête et le pied de page cette prise en charge la liaison de données.
+Il est possible pour un ListView permet de présenter un en-tête et pied de page que faire défiler les éléments de la liste. L’en-tête et le pied de page peuvent être des chaînes de texte ou une mise en page plus complexe. Ce comportement est indépendant des [groupes de sections](#grouping).
 
-Pour créer un en-tête/pied de page simple, venez de définir les propriétés d’en-tête ou pied de page pour le texte que vous souhaitez afficher. En code :
+Vous pouvez définir les `Header` valeurs et/ `Footer` ou sur `string` une valeur, ou vous pouvez les définir sur une disposition plus complexe. Il existe également `HeaderTemplate` et `FooterTemplate` propriétés qui vous permettent de créent des dispositions plus complexes pour l’en-tête et le pied de page cette prise en charge la liaison de données.
+
+Pour créer un en-tête/pied de page de base, il vous suffit de définir les propriétés d’en-tête ou de pied de page sur le texte que vous souhaitez afficher. En code :
 
 ```csharp
-ListView HeaderList = new ListView() {
+ListView HeaderList = new ListView()
+{
     Header = "Header",
     Footer = "Footer"
-    };
+};
 ```
 
 Dans XAML :
 
 ```xaml
-<ListView  x:Name="HeaderList"  Header="Header" Footer="Footer"></ListView>
+<ListView x:Name="HeaderList" 
+          Header="Header"
+          Footer="Footer">
+    ...
+</ListView>
 ```
 
 ![](customizing-list-appearance-images/header-default.png "ListView avec en-tête et pied de page")
@@ -186,15 +188,15 @@ Pour créer un en-tête personnalisé et le pied de page, définissez les vues d
 <ListView.Header>
     <StackLayout Orientation="Horizontal">
         <Label Text="Header"
-        TextColor="Olive"
-        BackgroundColor="Red" />
+               TextColor="Olive"
+               BackgroundColor="Red" />
     </StackLayout>
 </ListView.Header>
 <ListView.Footer>
     <StackLayout Orientation="Horizontal">
         <Label Text="Footer"
-        TextColor="Gray"
-        BackgroundColor="Blue" />
+               TextColor="Gray"
+               BackgroundColor="Blue" />
     </StackLayout>
 </ListView.Footer>
 ```
@@ -203,15 +205,14 @@ Pour créer un en-tête personnalisé et le pied de page, définissez les vues d
 
 ## <a name="scrollbar-visibility"></a>Visibilité de la barre de défilement
 
-[`ListView`](xref:Xamarin.Forms.ListView)possède `HorizontalScrollBarVisibility` les `VerticalScrollBarVisibility` propriétés et, qui obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur qui représente le moment où la barre de défilement horizontale ou verticale est visible. Les deux propriétés peuvent être définies avec les valeurs suivantes :
+La [`ListView`](xref:Xamarin.Forms.ListView) classe possède `HorizontalScrollBarVisibility` des `VerticalScrollBarVisibility` propriétés et, qui obtiennent ou définissent une [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) valeur qui représente le moment où la barre de défilement horizontale ou verticale est visible. Les deux propriétés peuvent être définies avec les valeurs suivantes :
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)indique le comportement par défaut de la barre de défilement pour la plateforme, et est la `HorizontalScrollBarVisibility` valeur `VerticalScrollBarVisibility` par défaut pour les propriétés et.
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
 - [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
 
-<a name="Row_Separators" />
-
 ## <a name="row-separators"></a>Séparateurs de lignes
+
 Lignes du séparateur sont affichés entre `ListView` éléments par défaut sur iOS et Android. Si vous préférez masquer les lignes du séparateur sur iOS et Android, définissez le `SeparatorVisibility` propriété sur votre ListView. Les options de `SeparatorVisibility` sont :
 
 - **Par défaut** -affiche une ligne de séparation sur iOS et Android.
@@ -222,7 +223,7 @@ Visibilité par défaut :
 C# :
 
 ```csharp
-SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
+SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
 ```
 
 XAML :
@@ -238,7 +239,7 @@ None :
 C# :
 
 ```csharp
-SepratorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
+SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
 ```
 
 XAML :
@@ -254,7 +255,7 @@ Vous pouvez également définir la couleur de la ligne de séparation via le `Se
 C# :
 
 ```csharp
-SepratorDemoListView.SeparatorColor = Color.Green;
+SeparatorDemoListView.SeparatorColor = Color.Green;
 ```
 
 XAML :
@@ -268,9 +269,8 @@ XAML :
 > [!NOTE]
 > Définition d’une de ces propriétés sur Android après le chargement du `ListView` entraîne une baisse des performances.
 
-<a name="Row_Heights" />
+## <a name="row-height"></a>Hauteur de ligne
 
-## <a name="row-heights"></a>Les hauteurs de ligne
 Toutes les lignes dans un ListView ont la même hauteur par défaut. ListView a deux propriétés qui peuvent être utilisées pour modifier ce comportement :
 
 - `HasUnevenRows` &ndash; `true`/`false` valeur, les lignes ont des hauteurs variables si la valeur `true`. La valeur par défaut est `false`.
@@ -278,7 +278,7 @@ Toutes les lignes dans un ListView ont la même hauteur par défaut. ListView a 
 
 Vous pouvez définir la hauteur de toutes les lignes en définissant le `RowHeight` propriété sur le `ListView`.
 
-### <a name="custom-fixed-row-height"></a>Hauteur de ligne fixe personnalisé
+### <a name="custom-fixed-row-height"></a>Hauteur de ligne fixe personnalisée
 
 C# :
 
@@ -294,10 +294,9 @@ XAML :
 
 ![](customizing-list-appearance-images/height-custom.png "ListView avec la hauteur de ligne fixe")
 
-### <a name="uneven-rows"></a>Lignes inégale
+### <a name="uneven-rows"></a>Lignes irrégulières
 
-Si vous souhaitez disposer de différentes hauteurs des lignes individuelles, vous pouvez définir le `HasUnevenRows` propriété `true`.
-Notez que les hauteurs de lignes ne doivent être défini manuellement une fois `HasUnevenRows` a été défini sur `true`, étant donné que les hauteurs seront calculées automatiquement par Xamarin.Forms.
+Si vous souhaitez disposer de différentes hauteurs des lignes individuelles, vous pouvez définir le `HasUnevenRows` propriété `true`. Les hauteurs de lignes n’ont pas besoin `HasUnevenRows` d’être définies manuellement `true`une fois définie sur, car les hauteurs seront automatiquement calculées par Xamarin. Forms.
 
 C# :
 
@@ -313,7 +312,7 @@ XAML :
 
 ![](customizing-list-appearance-images/height-uneven.png "ListView avec des lignes inégale")
 
-### <a name="runtime-resizing-of-rows"></a>Runtime redimensionnement des lignes
+### <a name="resize-rows-at-runtime"></a>Redimensionner les lignes au moment de l’exécution
 
 Individuels `ListView` lignes peuvent être redimensionnées par programme lors de l’exécution, à condition que le `HasUnevenRows` propriété est définie sur `true`. Le [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) méthode met à jour taille d’une cellule, même lorsqu’il n’est pas actuellement visible, comme illustré dans l’exemple de code suivant :
 
@@ -334,9 +333,10 @@ Le `OnImageTapped` Gestionnaire d’événements est exécuté en réponse à un
 
 ![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView avec redimensionnement de la ligne de Runtime")
 
-Notez qu’il existe un fort risque de dégradation des performances si cette fonctionnalité est utilisée de manière excessive.
+> [!WARNING]
+> Une utilisation abusive du redimensionnement des lignes du runtime peut entraîner une dégradation des performances.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Regroupement (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 - [Affichage de convertisseur personnalisé (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
