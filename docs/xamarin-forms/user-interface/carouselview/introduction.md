@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: pauldipietro
 ms.author: padipi
 ms.date: 09/09/2019
-ms.openlocfilehash: 244582d579780a962dfcb25c1a081d768b42acd3
-ms.sourcegitcommit: e83035c746f165ee6d03f2e9fd0066ee4f20a9fb
+ms.openlocfilehash: 7979f6ed362c580d9cf80f19b3bc0ea7550ca70c
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70908288"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985970"
 ---
 # <a name="xamarinforms-carouselview-introduction"></a>Introduction à Xamarin. Forms CarouselView
 
 ![](~/media/shared/preview.png "Cette API est actuellement en préversion")
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)est une vue pour la présentation d’informations d’une manière similaire à un carrousel.
-
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)est disponible dans Xamarin. Forms 4,3. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante `AppDelegate` à votre classe sur iOS, ou `MainActivity` à votre classe sur Android, `Forms.Init`avant d’appeler :
 

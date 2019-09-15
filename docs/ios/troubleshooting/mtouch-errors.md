@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: b8a7353ee67ee0686ad97428222c69dd095ee83a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290437"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985964"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -854,7 +854,7 @@ Pour générer votre application, Xamarin. iOS doit être lié à des bibliothè
 
 La méthode recommandée pour corriger cette erreur consiste à mettre à niveau Xcode pour récupérer le kit de développement logiciel (SDK) nécessaire. Si plusieurs versions de Xcode sont installées ou si vous souhaitez utiliser un Xcode à un emplacement autre que celui par défaut, veillez à définir l’emplacement Xcode correct dans les préférences de votre IDE.
 
-Vous pouvez également activer l' [éditeur de liens](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/linker) managé pour supprimer les API inutilisées, y compris (dans la plupart des cas) celles qui nécessitent la bibliothèque spécifiée. Toutefois, cela ne fonctionnera pas si votre projet nécessite des API introduites dans un SDK plus récent que celui fourni par Xcode.
+Vous pouvez également activer l' [éditeur de liens](https://docs.microsoft.com/xamarin/ios/deploy-test/linker) managé pour supprimer les API inutilisées, y compris (dans la plupart des cas) celles qui nécessitent la bibliothèque spécifiée. Toutefois, cela ne fonctionnera pas si votre projet nécessite des API introduites dans un SDK plus récent que celui fourni par Xcode.
 
 En tant que solution de dernière paille, utilisez une version antérieure de Xamarin. iOS qui ne requiert pas que ces nouveaux kits de développement logiciel (SDK) soient présents pendant le processus de génération.
 

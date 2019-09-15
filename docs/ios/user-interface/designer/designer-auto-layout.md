@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a2f637677620f9bfb2bd26a5af55fb9fb56a7af9
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768413"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985708"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Disposition automatique avec le Xamarin Designer pour iOS
 
@@ -63,9 +63,23 @@ La barre d’outils contraintes a été mise à jour et se compose maintenant de
   - En mode de modification de contrainte, ce bouton ajuste les contraintes pour qu’elles correspondent au frame d’élément.
   - En mode d’édition de frame, ce bouton ajuste le frame d’élément pour qu’il corresponde à la position que les contraintes définissent.
 
+## <a name="constraints-editing-popover"></a>Contraintes de modification de menu segue
+
+Le menu contextuel de l’éditeur de contraintes vous permet d’ajouter et de mettre à jour plusieurs contraintes à la fois pour une vue Select. Nous pouvons créer plusieurs contraintes d’espacement, de proportions et d’alignement, telles que l’alignement d’une vue sur les bords gauches de deux vues.
+
+Pour modifier des contraintes sur la vue sélectionnée, cliquez sur les points de suspension pour ![afficher menu segue : contraintes modification menu segue](designer-auto-layout-images/constraints-popup.png)
+
+Lors de l’ouverture des contraintes menu Segue, il affiche toutes les contraintes prédéfinies sur la vue. Nous pouvons définir toutes les contraintes d’espacement en sélectionnant **tous les côtés** de la zone de liste déroulante dans le coin supérieur droit, puis sélectionner **Effacer tout** pour les supprimer. 
+
+Le **W** définira la largeur et **H** définira la contrainte de hauteur. Lorsque **vous vérifiez les proportions**, la hauteur et la largeur des vues sont contrôlées sur différentes tailles d’écran, la largeur de la vue est utilisée comme numérateur pour la ration et la hauteur comme dénominateur.
+
+![espacement des contraintes](designer-auto-layout-images/constraints-spacing.png)
+
+Quatre zones de liste déroulante pour les contraintes d’espacement répertorie les vues voisines pour ancrer la contrainte
+
 ## <a name="surface-based-constraint-editing"></a>Modification des contraintes basées sur une surface
 
-Dans la section précédente, nous avons appris à ajouter des contraintes DEFAULT et à supprimer des contraintes à l’aide de la barre d’outils contraintes. Pour une modification plus fine des contraintes, nous pouvons interagir avec les contraintes directement sur l’aire de conception. Cette section présente les principes fondamentaux de la modification des contraintes basée sur la surface, y compris les contrôles d’espacement des épingles, les zones de dépôt et l’utilisation de différents types de contraintes.
+Pour une modification plus fine des contraintes, nous pouvons interagir avec les contraintes directement sur l’aire de conception. Cette section présente les principes fondamentaux de la modification des contraintes basée sur la surface, y compris les contrôles d’espacement des épingles, les zones de dépôt et l’utilisation de différents types de contraintes.
 
 ### <a name="creating-constraints"></a>Création de contraintes
 
