@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c33db7de63a585cb6fb47aa1145aa724c9eb790f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037475"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71004145"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -43,7 +43,7 @@ ms.locfileid: "61037475"
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements et appuyez sur les éléments dans la [`ListView`](xref:Xamarin.Forms.ListView). Notez que l’événement [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) se déclenche lorsqu’un nouvel élément est sélectionné dans la [`ListView`](xref:Xamarin.Forms.ListView), tandis que l’événement [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) se déclenche chaque fois que l’utilisateur appuie sur un élément.
 
-    Pour plus d’informations sur la sélection d’éléments par un clic ou par une pression, consultez la rubrique [Sélection par clic ou par pression](~/xamarin-forms/user-interface/listview/interactivity.md#selection--taps) dans le guide [Interactivité de ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
+    Pour plus d’informations sur la sélection d’éléments par un clic ou par une pression, consultez la rubrique [Sélection par clic ou par pression](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps) dans le guide [Interactivité de ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
@@ -82,4 +82,4 @@ ms.locfileid: "61037475"
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements et appuyez sur les éléments dans la [`ListView`](xref:Xamarin.Forms.ListView). Notez que l’événement [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) se déclenche lorsqu’un nouvel élément est sélectionné dans la [`ListView`](xref:Xamarin.Forms.ListView), tandis que l’événement [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) se déclenche chaque fois que l’utilisateur appuie sur un élément.
 
-    Pour plus d’informations sur la sélection d’éléments par un clic ou par une pression, consultez la rubrique [Sélection par clic ou par pression](~/xamarin-forms/user-interface/listview/interactivity.md#selection--taps) dans le guide [Interactivité de ListView](~/xamarin-forms/user-interface/listview/interactivity.md).
+    Pour plus d’informations sur la sélection d’éléments par clic ou par pression, consultez [Sélection par clic ou par pression(~/xamarin-forms/user-interface/listview/interactivity.md#selection-and
