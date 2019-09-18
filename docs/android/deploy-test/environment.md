@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754040"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021179"
 ---
 # <a name="xamarinandroid-environment"></a>Environnement de Xamarin.Android
 
@@ -93,10 +93,11 @@ Il s’agit d’une chaîne séparée par des virgules (`,`), qui contient l’u
 - `assembly`: imprimer les fichiers `.apk` et les messages analyse d’assembly.
 - `gc`: imprimer les messages associés au GC.
 - `gref`: imprimer les messages de référence globale JNI.
-- `lref`: imprimer les messages de référence locale JNI.  
-    *Remarque*: ceci spammera *vraiment* `adb logcat`.  
-    Dans Xamarin.Android 5.1, ceci créera également un fichier `.__override__/lrefs.txt`, qui peut être *énorme*.  
-    Éviter.
+- `lref`: imprimer les messages de référence locale JNI.
+  > [!NOTE]
+  > ceci spammera `adb logcat`vraiment* .
+  > Dans Xamarin.Android 5.1, ceci créera également un fichier `.__override__/lrefs.txt`, qui peut être *énorme*.
+  > Éviter.
 - `timing`: imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
 
 ### `debug.mono.max_grefc`
@@ -130,7 +131,7 @@ Cependant, elle permet *parfois* d’effectuer des recherches supplémentaires..
 La propriété système `debug.mono.wref` permet de remplacer le mécanisme à faible référence JNI par défaut détecté. Deux valeurs sont prises en charge :
 
 - `jni`: utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
-- `java`: utilisez les références globales JNI qui référencent des instances `java.lang.WeakReference`.
+- `java`: Utilisez des références globales JNI `java.lang.WeakReference` qui référencent des instances.
 
 `java` est utilisé, par défaut, jusqu'à l’API-7 et sur l’API-19 (Kit Kat) où ART est activé. (API-8 a ajouté des références `jni` et ART a *rompu* des références `jni`.)
 
@@ -149,7 +150,7 @@ XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
 > L’appareil Android sous-jacent doit prendre en charge TLS 1.2.
 Android 5.0 et les versions ultérieures prennent en charge TLS 1.2
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 ```shell
 ## Comments are lines which start with '#'

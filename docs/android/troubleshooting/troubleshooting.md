@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b750dd4eebb4e181e3a1d3a33c6505bb58b3848b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a80410ecc3557f00755ebb60ab48781740fa928d
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757087"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021148"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
 
@@ -83,15 +83,17 @@ Xamarin. Android prend en charge les propriétés système suivantes :
 
 - *Debug. mono. env*: Séparées par une barre verticale (\« *|* ') liste des variables d’environnement à exporter pendant le démarrage de l’application, *avant* mono a été initialisé. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
 
-  - *Remarque*: Dans la mesure où la valeur est *|* '-séparés, la valeur doit avoir un niveau supplémentaire de guillemets, comme le \`*interpréteur de commandes adb*\` commande supprime un jeu de guillemets.
+  > [!NOTE]
+  > Dans la mesure où la valeur est *\` *'-séparés, la valeur doit avoir un niveau supplémentaire de guillemets, comme le* \`interpréteur de commandes adb commande supprime un jeu de guillemets.
 
-  - *Remarque*: Les valeurs de propriété du système Android ne peuvent pas dépasser 92 caractères.
+  > [!NOTE]
+  > Les valeurs de propriété du système Android ne peuvent pas dépasser 92 caractères.
 
-  - Exemple :
+  Exemple :
 
-    ```
-    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-    ```
+  ```
+  adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+  ```
 
 - *Debug. mono. log*: Une virgule ( *,* ') liste des composants qui doit afficher des messages supplémentaires dans le journal de débogage Android. Par défaut, rien n’est défini. Les composants sont les suivants :
 
@@ -100,7 +102,8 @@ Xamarin. Android prend en charge les propriétés système suivantes :
   - *Gref*: Affichez les messages d’allocation de référence et de désallocation (faibles, globaux).
   - *lref*: Affichez les messages d’allocation et de désallocation des références locales.
 
-  *Remarque*: ces éléments sont *extrêmement* détaillés. N’activez pas, sauf si vous en avez vraiment besoin.
+  > [!NOTE]
+  > Ils sont *extrêmement* détaillés. N’activez pas, sauf si vous en avez vraiment besoin.
 
 - *Debug. mono. trace*: Permet de définir le paramètre [mono--trace](http://docs.go-mono.com/?link=man%3amono(1)) `=PROPERTY_VALUE` .
 
@@ -176,7 +179,8 @@ Xamarin. Android utilise des références internationales Android pour fournir d
 
 Malheureusement, les émulateurs Android n’autorisent l’existence que de 2000 références globales à la fois. Le matériel a une limite plus élevée de 52000 références globales. La limite inférieure peut être problématique lors de l’exécution d’applications sur l’émulateur. par conséquent, il peut être très utile *de connaître l’origine de* l’instance.
 
- *Remarque*: le décompte de références global est interne à Xamarin. Android et n’inclut pas (et ne peut pas) les références globales extraites par d’autres bibliothèques natives chargées dans le processus. Utilisez le nombre de références global comme estimation.
+> [!NOTE]
+> Le décompte de références global est interne à Xamarin. Android et n’inclut pas (et ne peut pas) les références globales extraites par d’autres bibliothèques natives chargées dans le processus. Utilisez le nombre de références global comme estimation.
 
 ```shell
 I/monodroid-gref(12405): +g+ grefc 108 gwrefc 0 obj-handle 0x40517468/L -> new-handle 0x40517468/L from    at Java.Lang.Object.RegisterInstance(IJavaObject instance, IntPtr value, JniHandleOwnership transfer)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27adc8aa2ed0fec09fe38b9ea31834ea6e75f845
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752393"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033087"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>Mises à jour de SiriKit dans iOS 11
 
@@ -147,6 +147,7 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 La classe doit hériter `INExtension`de, et comme l’exemple va gérer des listes et des intentions de notes, elle `IINNotebookDomainHandling`implémente également.
 
 > [!NOTE]
+>
 > - Il existe une Convention dans .net pour les interfaces qui doivent être précédées `I`d’un capital, auquel Xamarin adhère lors de la liaison de protocoles à partir du kit de développement logiciel (SDK) iOS.
 > - Xamarin conserve également les noms de types d’iOS et Apple utilise les deux premiers caractères dans les noms de types pour refléter l’infrastructure à laquelle un type appartient.
 > - Pour le `Intents` Framework, les types ont pour préfixe (par `IN*` exemple, `INExtension`), mais ce ne sont _pas_ des interfaces.

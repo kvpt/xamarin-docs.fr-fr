@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 45d57f818fc6d90cb712b9f43ef815d44059ea68
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754261"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021370"
 ---
 # <a name="build-process"></a>Processus de génération
 
@@ -294,10 +294,12 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
     Cela correspond à l’option **Managé** dans les pages de propriétés de Visual Studio.
 
-  *Remarque*: Si la prise en charge de TLS 1.2 est requise sur les versions d’Android antérieures à 5.0, *ou* qu’elle est nécessaire avec `System.Net.WebClient` et les API associées, il faut utiliser `$(AndroidTlsProvider)`.
+  > [!NOTE]
+  > Si la prise en charge de TLS 1.2 est requise sur les versions d’Android antérieures à 5.0, `System.Net.WebClient`ou`$(AndroidTlsProvider)` qu’elle est nécessaire avec  et les API associées, il faut utiliser .
 
-  *Remarque*: La prise en charge de cette propriété passe par la définition de la [variable d’environnement `XA_HTTP_CLIENT_HANDLER_TYPE`](~/android/deploy-test/environment.md).
-  Une valeur `$XA_HTTP_CLIENT_HANDLER_TYPE` trouvée dans un fichier avec l’action de génération `@(AndroidEnvironment)` sera prioritaire.
+  > [!NOTE]
+  > La prise en charge de cette propriété passe par la définition de la ](~/android/deploy-test/environment.md)variable d’environnement `XA_HTTP_CLIENT_HANDLER_TYPE`.
+  > Une valeur `$XA_HTTP_CLIENT_HANDLER_TYPE` trouvée dans un fichier avec l’action de génération `@(AndroidEnvironment)` sera prioritaire.
 
   Ajouté dans Xamarin.Android 6.1.
 

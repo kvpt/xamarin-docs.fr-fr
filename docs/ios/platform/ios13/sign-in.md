@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: ae4cccc900396c7ebd6e737160e38c5e9dcdc74e
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: a8ea06d81fcc79a24f155a1562818daea3ba982a
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986057"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021402"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Se connecter avec Apple dans Xamarin. iOS
 
@@ -25,10 +25,11 @@ Ce document explique comment vous pouvez ajouter la connexion avec Apple aux app
 ## <a name="requirements"></a>Configuration requise
 
 Cette fonctionnalité nécessite les éléments suivants :
+
 * iOS 13
 * Xamarin. iOS 12,99
-* Visual Studio 2019 ou Visual Studio 2019 pour Mac avec la prise en charge de Xcode 11. 
- 
+* Visual Studio 2019 ou Visual Studio 2019 pour Mac avec la prise en charge de Xcode 11.
+
 Pour plus d’informations, consultez la page [prise en main](get-started.md) .
 
 ## <a name="apple-developer-setup"></a>Installation d’Apple Developer
@@ -218,7 +219,7 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a introduit la connexion avec Apple pour iOS. 
+Cet article a introduit la connexion avec Apple pour iOS.
 
 ## <a name="related-links"></a>Liens connexes
 
