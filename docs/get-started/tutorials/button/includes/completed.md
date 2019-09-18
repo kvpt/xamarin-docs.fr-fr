@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: d1aa70c5cfeeccbbb29d600c4ac92aff0d5aacfd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 95067df17424d5b9367578e675d747317a827de9
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669626"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059643"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
+>
 > - Créer un [`Button`](xref:Xamarin.Forms.Button) Xamarin.Forms en XAML.
 > - Répondre à une activation du `Button` par pression.
 > - Modifier l’apparence du `Button`.

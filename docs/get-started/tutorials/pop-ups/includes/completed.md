@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 030321c63b9c3494027fc79d010c8b5888871822
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e01d661d5481c59175b5a9f747b2a11cb4a6301a
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669636"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059651"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
+>
 > - Afficher une alerte pour demander à l’utilisateur de faire un choix.
 > - Afficher une feuille d’action pour guider l’utilisateur tout au long d’une tâche.
 

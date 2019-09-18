@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9143b65b2e7cb9b85195e3c20695e3034295b2d2
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277213"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059648"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
 
@@ -15,6 +15,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
+>
 > - Répondre au démarrage, à la mise en veille ou à la sortie de veille d’une application.
 > - Conserver les données quelle que soit l’évolution de leur état pendant leur cycle de vie.
 
