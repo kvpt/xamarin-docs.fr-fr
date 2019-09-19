@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9bda76a477973bb06eb018abbf4ad53dc3e8c1e7
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 85404d5aceb525a77c98bf2d86ebc4b464f5796f
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277208"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107223"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
 
@@ -14,6 +14,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
+>
 > - Créer un élément [`Image`](xref:Xamarin.Forms.Image) Xamarin.Forms en XAML.
 > - Personnaliser l’apparence de l’élément `Image`.
 > - Afficher un fichier d’image local à partir de chaque projet de plateforme.

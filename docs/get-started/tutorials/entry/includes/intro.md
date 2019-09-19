@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ce6714014db66dff3a87e50c73dc77afb962cc5c
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: e05a20149d33eed58918382371e8bc333d4a5f8d
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277209"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107227"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
 
@@ -14,6 +14,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
+>
 > - Créer un élément [`Entry`](xref:Xamarin.Forms.Entry) Xamarin.Forms en XAML.
 > - Répondre au texte dans la variable `Entry`.
 > - Personnaliser le comportement de l’élément `Entry`.

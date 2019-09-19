@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 666632ce879440fd05269e86ed05c2813a2d96af
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: ff3a0477c6b8a2bf30693ff05a4a992ad053d2b9
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277211"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107229"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
 
@@ -14,6 +14,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
+>
 > - Créer un élément [`Label`](xref:Xamarin.Forms.Label) Xamarin.Forms en XAML.
 > - Modifier l’apparence de l’élément `Label`.
 > - Présenter du texte dans un seul `Label` qui possède plusieurs formats.

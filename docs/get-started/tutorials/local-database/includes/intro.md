@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 004d7df72103ef332f802bd0019d2a99c6cc11a2
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277222"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107230"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
 
@@ -17,6 +17,7 @@ Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiel
 Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
+>
 > - Utiliser le Gestionnaire de package NuGet pour ajouter un package SQLite.NET à un projet Xamarin.Forms.
 > - Créer les classes d’accès aux données.
 > - Utiliser les classes d’accès aux données.
