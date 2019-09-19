@@ -6,17 +6,18 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 3379b9672b344e8e424f95e273683f4c5e241b71
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280800"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106060"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Mise à jour des applications existantes vers le API unifiée
 
 > [!IMPORTANT]
 > Le API classique Xamarin, qui précédait le API unifiée, est déconseillé.
+>
 > - La dernière version de Xamarin. iOS pour la prise en charge de l’API classique (unitouch. dll) était Xamarin. iOS 9,10.
 > - Xamarin. Mac prend toujours en charge le API classique, mais il n’est plus mis à jour. Étant donné qu’il est déconseillé, les développeurs doivent déplacer leurs applications vers le API unifiée.
 

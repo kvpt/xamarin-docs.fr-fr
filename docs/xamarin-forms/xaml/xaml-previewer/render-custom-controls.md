@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 5b87c631574f159230e1dc23285b9087bcc94255
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 57c0fd540ef42c18462b4f989b21bac5ed05dc04
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767315"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105999"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>Restituer des contrôles personnalisés dans le générateur d’aperçu XAML
 
@@ -51,6 +51,7 @@ Vérifiez que vous avez au moins Xamarin. Forms 3,6 installé. Vous pouvez mettr
 
 ### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>Même avec `[DesignTimeVisible(true)]`, mon contrôle personnalisé ne s’affichera pas correctement.
 Les contrôles personnalisés qui s’appuient fortement sur des données code-behind ou backend ne fonctionnent pas toujours dans le générateur d’aperçu XAML. Vous pouvez essayer :
+
 * Déplacer le contrôle afin qu’il ne s’initialise pas si le [mode création est activé](index.md#detect-design-mode)
 * Configuration de [données au moment](design-time-data.md) de la conception pour afficher des données factices à partir du serveur principal
 

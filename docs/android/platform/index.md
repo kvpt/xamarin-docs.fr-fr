@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 40fa2d93b7fd756c284727566e8043f5084bd483
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757490"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119232"
 ---
 # <a name="platform-features"></a>Fonctionnalités de la plateforme
 
@@ -41,6 +41,10 @@ Android 3,0 a introduit des fragments, qui montrent comment prendre en charge de
 ## <a name="app-linkingandroidplatformapp-linkingmd"></a>[Liaison d’applications](~/android/platform/app-linking.md)
 
 Ce guide explique comment Android 6,0 prend en charge la _liaison d’applications_, une technique qui permet aux applications mobiles de répondre aux URL sur les sites Web. Il explique comment implémenter la liaison d’application dans une application Android 6,0 et comment configurer un site Web pour accorder des autorisations à l’application mobile afin de gérer des liens d’application pour le domaine.
+
+## <a name="android-10androidplatformandroid-10md"></a>[Android 10](~/android/platform/android-10.md)
+
+Cet article présente les nouvelles fonctionnalités d’Android 10, explique comment préparer Xamarin. Android pour le développement Android 10 et fournit des liens vers des exemples d’applications qui illustrent comment utiliser les fonctionnalités Android Oreo dans les applications Xamarin. Android.
 
 ## <a name="android-9-pieandroidplatformpiemd"></a>[Secteurs Android 9](~/android/platform/pie.md)
 

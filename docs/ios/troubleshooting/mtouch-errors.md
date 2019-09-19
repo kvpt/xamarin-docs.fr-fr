@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: e001f22759ac70bbf81a10bf5e56790497dab767
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985964"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105986"
 ---
 # <a name="xamarinios-errors"></a>Erreurs Xamarin. iOS
 
@@ -1598,6 +1598,7 @@ L’assembly racine n’a pas pu être chargé. Vérifiez que le chemin d’acc�
 Une erreur inattendue s’est produite lors de la tentative d’optimisation du code de liaison généré. L’élément à l’origine du problème est nommé dans le message d’erreur. Pour résoudre ce problème, l’assembly nommé (ou contenant le type ou la méthode nommé) doit être fourni dans un nouveau problème sur [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) avec un journal de génération complet avec des commentaires activés ( `-v -v -v -v` c’est-à-dire dans les **arguments mTouch supplémentaires**).
 
 Le dernier chiffre `x` sera :
+
 - `0`pour un nom d’assembly ;
 - `1`pour un nom de type ;
 - `3`pour un nom de méthode ;

@@ -5,12 +5,12 @@ description: Ce document compare et contraste WPF avec Xamarin. Forms. Il traite
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290406"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106029"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF et Xamarin. Forms : Similarités & différences
 
@@ -65,6 +65,7 @@ L’un des concepts de base reportés est une infrastructure de liaison de donn�
 ### <a name="defining-bindable-properties"></a>Définition des propriétés pouvant être liées
 
 La définition d’une propriété pouvant être liée dans Xamarin. Forms est la même que WPF :
+
 1. L’objet doit dériver `BindableObject`de.
 2. Un champ statique public de type `BindableProperty` doit être déclaré pour définir la clé de stockage de stockage pour la propriété.
 3. Il doit y avoir un wrapper de propriété d’instance `GetValue` publique `SetValue` qui utilise et pour récupérer et modifier la valeur des propriétés.

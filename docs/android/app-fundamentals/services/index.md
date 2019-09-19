@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 7123d7d491bb32a8a506b308cac5ecb6458a1add
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 042878fa8d30acb55de68f63e3491aacb5dbdfb5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754872"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105876"
 ---
 # <a name="creating-android-services"></a>Création de services Android
 
@@ -66,6 +66,7 @@ Il est également possible d’exécuter un service dans son propre processus su
 * Une autre application est au premier plan et utilise des composants d’une application qui seraient autrement en arrière-plan. C’est le cas, par exemple, si l’application A, qui est au premier plan, est liée à un service fourni par l’application B. l’application B est alors également considérée au premier plan et n’est pas terminée par Android pour être en arrière-plan.
 
 Dans certains cas, même si une application est en arrière-plan, Android met l’application en éveil et assouplit ces restrictions pendant quelques minutes, ce qui permet à l’application d’effectuer des tâches :
+
 * Un message de Cloud Firebase de priorité élevée est reçu par l’application.
 * L’application reçoit une diffusion. 
 * L’application reçoit et exécute un `PendingIntent` en réponse à une notification.

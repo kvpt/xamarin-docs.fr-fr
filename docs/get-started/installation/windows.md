@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 92ddbfb48131bdaf8ba12cef86e09e4c575200e9
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865616"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119257"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Installation de Xamarin dans Visual Studio 2019
 
@@ -21,21 +21,21 @@ Vérifiez la [configuration requise](~/cross-platform/get-started/requirements.m
 
 ## <a name="installation"></a>Installation
 
-[!include[](~/cross-platform/includes/install-xamarin-windows.md)]
+[!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-Dans Visual Studio 2019, vérifiez que Xamarin est installé en cliquant sur le **aide** menu. Si Xamarin est installé, vous devriez voir l’élément de menu **Xamarin**, comme dans cette capture d’écran :
+Dans Visual Studio 2019, vérifiez que Xamarin est installé en cliquant sur le menu **aide** . Si Xamarin est installé, vous devriez voir l’élément de menu **Xamarin**, comme dans cette capture d’écran :
 
 ![Élément de menu Xamarin dans le menu Aide](windows-images/12-xamarin-menu-item.png "Élément de menu Xamarin dans le menu Aide")
 
 Vous pouvez cliquer sur **Aide > À propos de Microsoft Visual Studio**, puis faire défiler la liste des produits installés pour voir si Xamarin y figure :
 
-![Visual Studio 2019 installé écran products](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 installé écran products")
+![Écran de produits installés pour Visual Studio 2019](windows-images/13-xamarin-is-installed.png "Écran de produits installés pour Visual Studio 2019")
 
 Pour savoir où trouver les informations de version, consultez [Où trouver les informations de version et les journaux ?](~/cross-platform/troubleshooting/questions/version-logs.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Installation de Xamarin dans Visual Studio 2019 vous permet de commencer l’écriture de code pour vos applications, mais nécessite une configuration supplémentaire pour générer et déployer vos applications dans le simulateur, émulateur ou un périphérique. Consultez les guides suivants pour terminer l’installation et commencer la création d’applications multiplateformes.
+L’installation de Xamarin dans Visual Studio 2019 vous permet de commencer à écrire du code pour vos applications, mais requiert une configuration supplémentaire pour la génération et le déploiement de vos applications sur le simulateur, l’émulateur et l’appareil. Consultez les guides suivants pour terminer l’installation et commencer la création d’applications multiplateformes.
 
 ### <a name="ios"></a>iOS
 
