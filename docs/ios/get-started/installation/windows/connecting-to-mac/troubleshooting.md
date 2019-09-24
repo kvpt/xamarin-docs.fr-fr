@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ae8095ed0ef0ba8d0bfaf8295832bbef006d1627
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753674"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198528"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Résolution des problèmes de connexion pour un hôte de build Xamarin.iOS
 
@@ -33,6 +33,7 @@ L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus
 
 > [!IMPORTANT]
 > Ces étapes de résolution de problèmes s’appliquent principalement aux problèmes qui se produisent pendant la configuration initiale sur un nouveau système.  Si vous avez déjà utilisé la connexion avec succès dans un environnement particulier et que celle-ci ne fonctionne plus soudainement ou par intermittence, vous pouvez, dans la plupart des cas, passer directement à vérifier si l’un des points suivants peut vous aider à résoudre le problème : 
+>
 > - Arrêtez les processus restants comme décrit ci-dessous dans la section [Erreurs dues à des processus hôtes de build existants](#errors). 
 > - Désactivez les agents, comme indiqué dans la section [Désactivation des agents Broker, IDB, de build et Designer](#clearing), puis utilisez une connexion Internet câblée et connectez-vous directement via l’adresse IP, comme indiqué dans la section [Connexion impossible à MacBuildHost.local. Veuillez réessayer.](#tryagain).  
 > Si aucune de ces options ne résout le problème, suivez les instructions de l’[étape 9](#stepnine) pour envoyer un nouveau rapport de bogues.

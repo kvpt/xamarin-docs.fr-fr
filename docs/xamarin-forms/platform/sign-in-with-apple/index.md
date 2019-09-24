@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: f188350ff441ec16a333035c78ee0082b320d8ff
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: 1e436cf96367141873f16a09d8c818be4265226b
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985994"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206506"
 ---
 # <a name="sign-in-with-apple-in-xamarinforms"></a>Se connecter avec Apple dans Xamarin. Forms
-
-![Cette API est actuellement en version préliminaire](~/media/shared/preview.png)
 
 La connexion avec Apple introduit un nouveau service qui fournit la protection des identités pour les utilisateurs. À compter d’iOS 13 Apple, les applications utilisant des fournisseurs d’authentification tiers doivent également se connecter avec Apple. Pour obtenir des instructions sur l’utilisation de cette offre avec Xamarin. iOS, [consultez la rubrique](~/ios/platform/ios13/sign-in.md)suivante.
 
@@ -30,6 +28,6 @@ Ce guide vous guide tout au long du processus d’installation nécessaire pour 
 
 Ce guide vous guide tout au long du processus d’installation nécessaire pour activer la connexion avec Apple pour les applications non-iOS, notamment Xamarin. Forms Android et UWP.
 
-## <a name="use-sign-in-with-appleandroid-ios-sign-inmd"></a>[Utiliser la connexion avec Apple](android-ios-sign-in.md)
+## <a name="use-sign-in-with-appleandroid-ios-sign-inmd"></a>[Utiliser Connexion avec Apple](android-ios-sign-in.md)
 
 Avec quelques services, vous pouvez prendre en charge la connexion avec Apple dans vos applications Xamarin. Forms multiplateforme. Ce guide décrit les étapes nécessaires.

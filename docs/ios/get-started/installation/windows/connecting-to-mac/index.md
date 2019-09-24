@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753764"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198542"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Appairer avec un Mac pour le développement Xamarin.iOS
 
 _Ce guide explique comment utiliser Appairer avec un Mac pour connecter Visual Studio 2019 à un hôte de build Mac. Les mêmes instructions s’appliquent à Visual Studio 2017._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 La génération d’applications iOS natives nécessite l’accès aux outils de génération d’Apple, qui s’exécutent seulement sur un Mac. Pour cette raison, Visual Studio 2019 doit se connecter à un Mac accessible par le biais du réseau pour générer des applications Xamarin.iOS.
 
@@ -86,7 +86,7 @@ Maintenant que la session à distance est activée, connectez Visual Studio 201
 
       ![Boîte de dialogue Appairer avec un Mac](images/pairtomac.png "Boîte de dialogue Appairer avec un Mac")
 
-3. Sélectionnez un Mac dans la liste. Cliquez sur **Connecter**.
+3. Sélectionnez un Mac dans la liste. Cliquez sur **Connexion**.
 
 4. Entrez vos nom d’utilisateur et mot de passe.
 
@@ -163,6 +163,7 @@ Si vous ne voyez pas un Mac particulier répertorié dans la boîte de dialogue 
 À compter de [Visual Studio 2019 version 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning), Appairer avec un Mac provisionne automatiquement un Mac avec les logiciels nécessaires pour générer des applications Xamarin.iOS : Mono, Xamarin.iOS (le framework logiciel, pas l’IDE Visual Studio pour Mac) et divers outils Xcode (mais pas Xcode lui-même).
 
 > [!IMPORTANT]
+>
 > - Appairer avec un Mac ne peut pas installer Xcode ; vous devez l’installer manuellement sur l’hôte de build Mac. Il est requis pour le développement Xamarin.iOS.
 > - Le provisionnement Mac automatique nécessite que la session à distance soit activée sur le Mac, et le Mac doit être accessible via le réseau à l’ordinateur Windows. Pour plus d’informations, consultez [Activer la session à distance sur le Mac](#enable-remote-login-on-the-mac).
 > - Le provisionnement Mac automatique nécessite 3 Go d’espace libre sur le Mac pour l’installation de Xamarin.iOS.
@@ -185,6 +186,7 @@ Appairer avec un Mac met à niveau Xamarin.iOS sur le Mac pour correspondre à l
 
 > [!IMPORTANT]
 > Appairer avec un Mac ne rétrograde pas Xamarin.iOS sur le Mac de la version alpha/bêta à la version stable. Si Visual Studio pour Mac est installé, définissez votre [canal des versions](https://docs.microsoft.com/visualstudio/mac/update) comme suit :
+>
 > - Si vous utilisez Visual Studio 2019, sélectionnez le canal des mises à jour **Stable** dans Visual Studio pour Mac.
 > - Si vous utilisez Visual Studio 2019 Preview, sélectionnez le canal des mises à jour **Alpha** dans Visual Studio pour Mac.
 
@@ -202,7 +204,7 @@ Appairer avec un Mac vérifie également si Xcode a été installé et sa licenc
 |---|---|---|
 |Xcode|[![Installation de Xcode manquante](images/xcode-missing.png "Installation de Xcode manquante")](images/xcode-missing-large.png#lightbox)|[![Licence Xcode](images/xcode-license.png "Licence Xcode")](images/xcode-license-large.png#lightbox)|
 
-En outre, Appairer avec un Mac installe ou met à jour différents packages distribués avec Xcode. Par exemple :
+En outre, Appairer avec un Mac installe ou met à jour différents packages distribués avec Xcode. Par exemple :
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -220,7 +222,7 @@ Si vous rencontrez des problèmes d’utilisation du provisionnement Mac automat
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>Générer des applications iOS à partir de la ligne de commande Windows
 
-Appairer avec un Mac prend en charge la génération d’applications Xamarin.iOS à partir de la ligne de commande. Par exemple :
+Appairer avec un Mac prend en charge la génération d’applications Xamarin.iOS à partir de la ligne de commande. Par exemple :
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword

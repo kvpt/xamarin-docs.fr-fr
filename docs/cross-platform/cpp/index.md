@@ -5,12 +5,12 @@ description: Visual Studio pour Mac peut être utilisé pour créer et intégrer
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: 685d4f5de197c6b3664d63306fa206bea17409e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a10d63e8ed152fae3c9e87cbae7bacb25a0d019c
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766364"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206378"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>Utiliser C/C++ Libraries avec Xamarin
 
@@ -43,7 +43,7 @@ Les 4 étapes sont les suivantes :
 3. Empaquetage et push d’un package NuGet pour le wrapper .NET.
 4. Consommation du package NuGet à partir d’une application Xamarin.
 
-### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>Étape 1 : Compilation du code CC++ /source en bibliothèques natives spécifiques à la plateforme
+### <a name="stage-1-compiling-the-cc-source-code-into-platform-specific-native-libraries"></a>Étape 1 : Compilation du code CC++ /source en bibliothèques natives spécifiques à la plateforme
 
 L’objectif de cette étape est de créer des bibliothèques natives qui peuvent être appelées par le C# wrapper. Cela peut être utile en fonction de votre situation. Les nombreux outils et processus qu’il est possible d’introduire dans ce scénario courant n’entrent pas dans le cadre de cet article. Les principales considérations sont le maintien deC++ la synchronisation de la base de code C/code avec tout code wrapper natif, un test unitaire suffisant et l’automatisation de la génération. 
 
@@ -51,7 +51,7 @@ Les bibliothèques de la procédure pas à pas ont été créées à l’aide de
 
 Par souci de simplicité, la procédure pas à pas cible uniquement un sous-ensemble d’architectures. Pour iOS, il utilise l’utilitaire LiPo pour créer un seul binaire Fat à partir des fichiers binaires propres à l’architecture individuels. Android utilise des binaires dynamiques avec une extension. so et iOS utilise un binaire Fat statique avec une extension. a. 
 
-### <a name="stage-2-wrapping-the-native-libraries-with-a-visual-studio-solution"></a>Étape 2 : Encapsulation des bibliothèques natives avec une solution Visual Studio
+### <a name="stage-2-wrapping-the-native-libraries-with-a-visual-studio-solution"></a>Étape 2 : Encapsulation des bibliothèques natives avec une solution Visual Studio
 
 L’étape suivante consiste à encapsuler les bibliothèques natives afin qu’elles soient facilement utilisées à partir de .NET. Pour ce faire, vous disposez d’une solution Visual Studio avec quatre projets. Un projet partagé contient le code commun. Les projets ciblant chacun des Xamarin. Android, Xamarin. iOS et .NET Standard permettent de référencer la bibliothèque de manière indépendante de la plateforme.
 
@@ -132,7 +132,7 @@ Il s’agira des fonctions wrapper utilisées côté [Xamarin](https://visualstu
 
 ## <a name="wrapping-the-native-library-stage-2"></a>Encapsulation de la bibliothèque native (étape 2)
 
-Cette étape nécessite les [bibliothèques précompilées](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) décrites dans la [section précédente](##creating-the-native-libraries-stage-1).
+Cette étape nécessite les [bibliothèques précompilées](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts) décrites dans la [section précédente](#creating-the-native-libraries-stage-1).
 
 ### <a name="creating-the-visual-studio-solution"></a>Création de la solution Visual Studio
 
@@ -480,7 +480,7 @@ Pour que la bibliothèque soit empaquetée et distribuée via NuGet, la solution
 1. **Ctrl + clic** sur la solution **MathFuncs**, puis choisissez **Ajouter un dossier de solution** dans le menu **Ajouter** attribution de nom **SolutionItems**.
 2. **Ctrl + clic** sur le dossier **SolutionItems** , puis choisissez **nouveau fichier...** dans le menu **Ajouter** .
 3. Choisissez **fichier XML vide** dans la fenêtre **nouveau fichier** , nommez-le **MathFuncs. NuSpec** , puis cliquez sur **nouveau**.
-4. Mettez à jour **MathFuncs. NuSpec** avec les métadonnées de package de base à afficher au consommateur **NuGet** . Exemple :
+4. Mettez à jour **MathFuncs. NuSpec** avec les métadonnées de package de base à afficher au consommateur **NuGet** . Par exemple :
 
     ```xml
     <?xml version="1.0"?>
@@ -588,7 +588,7 @@ La forme la plus simple du flux NuGet est un répertoire local :
 
 1. Définissez la **configuration de build** sur **Release**, puis exécutez une génération à l’aide de la **commande + B**.
 2. Ouvrez le **Terminal** et accédez au répertoire contenant le fichier **NuSpec** .
-3. Dans **Terminal**, exécutez la commande du **Pack NuGet** en spécifiant le fichier **NuSpec** , la **version** (par exemple, 1.0.0) et le **outputDirectory** à l’aide du dossier créé à l' [étape précédente](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed), autrement dit,  **local-NuGet-Feed**. Exemple :
+3. Dans **Terminal**, exécutez la commande du **Pack NuGet** en spécifiant le fichier **NuSpec** , la **version** (par exemple, 1.0.0) et le **outputDirectory** à l’aide du dossier créé à l' [étape précédente](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed), autrement dit,  **local-NuGet-Feed**. Par exemple :
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed

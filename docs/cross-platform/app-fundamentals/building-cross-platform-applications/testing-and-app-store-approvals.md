@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761979"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198422"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Partie 6 : Test et approbations de l’App Store
 
@@ -100,7 +100,7 @@ La liste suivante est un bon point de départ pour vérifier les cas de périph�
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Les recommandations sont plus qu’un simple « guide »
 
-Apple est célèbre pour être rigoureux quant à l’adhérence à ses directives en matière d’interface humaine, car l’un des principaux atouts de la plateforme est la cohérence (et l’augmentation perçue de la convivialité). Microsoft a adopté une approche similaire avec les applications Windows qui implémentent l’interface utilisateur de style Metro. Le processus d’approbation pour les deux plateformes implique que votre application est évaluée pour son adhésion à la philosophie de conception appropriée.
+Apple est célèbre pour être rigoureux quant à l’adhérence à ses directives en matière d’interface humaine, car l’un des principaux atouts de la plateforme est la cohérence (et l’augmentation perçue de la convivialité). Microsoft a adopté une approche similaire avec les applications Windows qui implémentent le [système de conception Fluent](https://microsoft.com/design/fluent). Le processus d’approbation pour les deux plateformes implique que votre application est évaluée pour son adhésion à la philosophie de conception appropriée.
 
 Cela ne signifie pas que l’innovation de l’interface utilisateur n’est pas prise en charge ou encouragée, mais que vous n’êtes pas sûr de ne pas l’utiliser ou que votre application est rejetée.
 

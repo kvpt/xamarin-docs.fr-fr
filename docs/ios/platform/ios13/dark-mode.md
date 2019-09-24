@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/28/2019
-ms.openlocfilehash: d21afcc7d7b130528e9cceac47840acd49b91f59
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be487ab839e2fb4d21b85719a56dc34303317a5f
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70129971"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206389"
 ---
 # <a name="dark-mode-in-xamarinios"></a>Mode sombre dans Xamarin. iOS
-
-![Cette API est actuellement en version préliminaire](~/media/shared/preview.png)
 
 Le mode Dark est une option à l’ensemble du système pour les thèmes clairs et foncés. les utilisateurs d’iOS peuvent désormais choisir le thème ou autoriser iOS à modifier l’apparence de manière dynamique en fonction de l’environnement et de l’heure de la journée.
 
@@ -28,19 +26,19 @@ Le mode Dark requiert iOS 13 et Xcode 11, Xamarin. iOS 12,99 et Visual Studio 20
 
 ## <a name="turning-on-dark-mode"></a>Activation du mode sombre
 
-Apple fournit un menu Développeur dans iOS 13 pour basculer entre les modes sombre et clair. Dans le simulateur iOS 13, ouvrez **paramètres** et choisissez la section **développeur** , puis faites défiler jusqu’au commutateur d' **apparence sombre** . La modification sera reflétée dans l’ensemble de l’environnement du simulateur:
+Apple fournit un menu Développeur dans iOS 13 pour basculer entre les modes sombre et clair. Dans le simulateur iOS 13, ouvrez **paramètres** et choisissez la section **développeur** , puis faites défiler jusqu’au commutateur d' **apparence sombre** . La modification sera reflétée dans l’ensemble de l’environnement du simulateur :
 
 ![Activation du mode sombre](dark-mode-images/LightAndDark_DeveloperSetting.png)
 
 ## <a name="assets-for-light-and-dark-modes"></a>Ressources pour les modes Light et Dark
 
-Le catalogue de ressources dans Visual Studio prend désormais en charge les images et les couleurs facultatives pour chaque mode d’apparence: Universal, Dark et Light. Quand vous définissez vos images et couleurs de cette manière, iOS choisit automatiquement l’image et la couleur appropriées.
+Le catalogue de ressources dans Visual Studio prend désormais en charge les images et les couleurs facultatives pour chaque mode d’apparence : Universal, Dark et Light. Quand vous définissez vos images et couleurs de cette manière, iOS choisit automatiquement l’image et la couleur appropriées.
 
-Ouvrez votre fichier **Assets. xcassets** dans votre projet iOS et ajoutez un nouvel ensemble d’images. Notez que vous pouvez spécifier des images universelles, sombres et légères à n’importe quelle résolution cible. Dans la capture d’écran ci-dessous, il existe une image pour Dark et pour Light avec le nom «MicrosoftLogo»:
+Ouvrez votre fichier **Assets. xcassets** dans votre projet iOS et ajoutez un nouvel ensemble d’images. Notez que vous pouvez spécifier des images universelles, sombres et légères à n’importe quelle résolution cible. Dans la capture d’écran ci-dessous, il existe une image pour Dark et pour Light avec le nom « MicrosoftLogo » :
 
 ![Ressources pour les modes Light et Dark](dark-mode-images/LightAndDark_AssetCatalog2.png)
 
-**Assets. xcassets** contient également des entrées pour **backgroundColor** et **TitleColor**, qui sont des définitions de couleurs. Ces couleurs sont désormais disponibles par nom à utiliser dans toute l’application. **BackgroundColor** a été assigné à l’arrière-plan de la vue, et **TitleColor** à l’étiquette, comme illustré dans cette capture d’écran:
+**Assets. xcassets** contient également des entrées pour **backgroundColor** et **TitleColor**, qui sont des définitions de couleurs. Ces couleurs sont désormais disponibles par nom à utiliser dans toute l’application. **BackgroundColor** a été assigné à l’arrière-plan de la vue, et **TitleColor** à l’étiquette, comme illustré dans cette capture d’écran :
 
 ![Ressources pour les modes Light et Dark](dark-mode-images/LightAndDark_01.png)
 

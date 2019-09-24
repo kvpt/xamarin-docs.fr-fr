@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 31dfcc26121b0683db476b0c4be9a420efe5b66f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771236"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198565"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
@@ -144,7 +144,7 @@ Une implémentation d’action de déclencheur doit :
 
 - Remplacer la méthode `Invoke` qui est appelée chaque fois que les critères de déclenchement sont remplis.
 
-- Si vous le souhaitez, vous pouvez exposer des propriétés qui peuvent être définies dans le code XAML lorsque le déclencheur est déclaré (comme `Anchor`, `Scale` et `Length` dans cet exemple).
+- Exposez éventuellement des propriétés qui peuvent être définies dans le XAML lorsque le déclencheur est déclaré. Pour obtenir un exemple, consultez la `VisualElementPopTriggerAction` classe dans l’exemple d’application associé.
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -158,7 +158,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-Les propriétés exposées par l’action du déclencheur peuvent être définies dans la déclaration XAML de la façon suivante :
+Le déclencheur d’événements peut ensuite être consommé à partir de XAML :
 
 ```xaml
 <EventTrigger Event="TextChanged">
