@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: conceptdev
 ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: 745c59ad50f0e8ad50a8ec56549d99b7b5e72228
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b567985fcfd9e133587c5c285e17d21465fda659
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772474"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250077"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -50,6 +50,8 @@ Le profilage est utile dans tous les types de développement, mais il est partic
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Le Xamarin Profiler offre aux développeurs un moyen de profiler des applications depuis Visual Studio pour Mac ou Visual Studio. Le profileur collecte et affiche des informations sur l’application, qui peuvent ensuite être utilisées par le développeur pour analyser le comportement d’une application. Il existe plusieurs façons de profiler une application avec l’Xamarin Profiler, à savoir le profilage de la mémoire et l’échantillonnage statistique. Celles-ci sont effectuées par le biais des instruments allocations et Time Profiler, respectivement.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

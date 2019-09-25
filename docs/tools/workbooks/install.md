@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 4638d599d72ea2a6375aa2afff5974ef8c09308d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6fc204e8524d53820407b2efd3ab0de6af28c669
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772119"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249907"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Installation et configuration requise des classeurs
 
@@ -19,7 +19,9 @@ ms.locfileid: "70772119"
 
 ## <a name="download-and-install"></a>Télécharger et installer
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+<!-- markdownlint-disable MD001 -->
+
+# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
 1. Vérifiez la [Configuration requise](#requirements) ci-dessous.
 2. Téléchargez et installez [Xamarin Workbooks pour Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
@@ -35,7 +37,7 @@ ms.locfileid: "70772119"
 
 ## <a name="requirements"></a>Configuration requise
 
-#### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
+#### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -110,7 +112,7 @@ Si vous rencontrez des problèmes de connexion à votre classeur iOS ou Android 
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
-## <a name="uninstall"></a>Désinstaller l’interface
+## <a name="uninstall"></a>Désinstaller
 
 ### <a name="windows"></a>Windows
 

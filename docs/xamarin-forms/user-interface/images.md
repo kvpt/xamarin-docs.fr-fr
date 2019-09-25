@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 96d2fe0b03ad7067d6fece072742ea2796224f8b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527075"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250122"
 ---
 # <a name="images-in-xamarinforms"></a>Images dans Xamarin.Forms
 
@@ -53,11 +53,11 @@ Fichiers image peuvent être ajoutées à chaque projet d’application et réf�
 Pour utiliser une image unique dans toutes les applications, *le même nom de fichier doit être utilisé sur toutes les plateformes*, et il doit être un nom de ressource Android valide (ie. uniquement des lettres minuscules, des chiffres, le trait de soulignement et la période sont autorisées).
 
 - **iOS** - le moyen de gérer et prendre en charge les images étant iOS 9 à utiliser de préférence **ensembles d’images catalogue Asset**, qui doit contenir toutes les versions d’une image qui sont nécessaires pour prendre en charge de divers périphériques et facteurs de mise à l’échelle un application. Pour plus d’informations, consultez [Ajout d’Images à une ressource catalogue Image défini](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
-- **Android** : Placez les images dans le répertoire Resources **/Drawable** avec **l’action de génération: AndroidResource**. Versions haute et basse résolution d’une image peuvent également être fournies (dans correctement nommé **ressources** sous-répertoires comme **drawable ldpi**, **drawable hdpi**et **drawable xhdpi**).
-- **Plateforme Windows universelle (UWP)** : Placez les images dans le répertoire racine de l' **application avec l’action de génération: Contenu**.
+- **Android** : Placez les images dans le répertoire **Resources/Drawable** avec **l’action de génération : AndroidResource**. Versions haute et basse résolution d’une image peuvent également être fournies (dans correctement nommé **ressources** sous-répertoires comme **drawable ldpi**, **drawable hdpi**et **drawable xhdpi**).
+- **Plateforme Windows universelle (UWP)** : Placez les images dans le répertoire racine de l' **application avec l’action de génération : Contenu**.
 
 > [!IMPORTANT]
-> Avant iOS 9, les images étaient généralement placées dans le dossier Resources avec l’action de **génération: BundleResource**. Toutefois, cette méthode d’utilisation des images dans une application iOS a été déconseillée par Apple. Pour plus d’informations, consultez [tailles d’Image et les noms de fichiers](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+> Avant iOS 9, les images étaient généralement placées dans le dossier **Resources** avec l’action de **génération : BundleResource**. Toutefois, cette méthode d’utilisation des images dans une application iOS a été déconseillée par Apple. Pour plus d’informations, consultez [tailles d’Image et les noms de fichiers](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 Adhérant à ces règles de dénomination des fichiers et le positionnement permet le XAML suivant charger et afficher l’image sur toutes les plateformes :
 
@@ -65,7 +65,7 @@ Adhérant à ces règles de dénomination des fichiers et le positionnement perm
 <Image Source="waterfront.jpg" />
 ```
 
-Le code C# équivalent est comme suit :
+Le code c# équivalent est comme suit :
 
 ```csharp
 var image = new Image { Source = "waterfront.jpg" };
@@ -73,7 +73,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image locale sur chaque plateforme :
 
-[![ImageSource local](images-images/local-sml.png "exemple d’Application affichant une Image locale")](images-images/local.png#lightbox "exemple d’Application affichant une Image locale")
+[![ImageSource local](images-images/local-sml.png "Exemple d’application affichant une image locale")](images-images/local.png#lightbox "Exemple d’application affichant une image locale")
 
 Pour plus de souplesse la `Device.RuntimePlatform` propriété peut être utilisée pour sélectionner un autre fichier image ou un chemin d’accès pour certains ou l’ensemble des plateformes, comme illustré dans cet exemple de code :
 
@@ -94,7 +94,7 @@ Avant d’iOS 9, versions rétine de l’image peut être placées dans le **res
 
 Les images Android autre résolution doivent être placés dans [répertoires spécialement nommée](https://developer.android.com/guide/practices/screens_support.html) dans le projet Android, comme indiqué dans la capture d’écran suivante :
 
-[![Emplacement de l’Image de résolutions multiples Android](images-images/xs-highdpisolution-sml.png "emplacement de l’Image de résolutions multiples Android")](images-images/xs-highdpisolution.png#lightbox "emplacement de l’Image de résolutions multiples Android")
+[![Emplacement d’image à résolution multiple Android](images-images/xs-highdpisolution-sml.png "Emplacement d’image à résolution multiple Android")](images-images/xs-highdpisolution.png#lightbox "Emplacement d’image à résolution multiple Android")
 
 Noms de fichiers image UWP [peut être suivi du suffixe `.scale-xxx` avant l’extension de fichier](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), où `xxx` est le pourcentage de mise à l’échelle appliquée à la ressource, par exemple, **myimage.scale-200.png**. Images peuvent ensuite faire référence dans le code ou XAML sans le modificateur de mise à l’échelle, par exemple, simplement **myimage.png**. La plateforme sélectionnera le plus proche actifs approprié mise à l’échelle en fonction de la résolution actuelle de l’affichage.
 
@@ -114,11 +114,13 @@ Certains contrôles ont des propriétés qui affichent une image, tels que :
 
 Images incorporées sont également inclus dans une application (comme les images locales), mais au lieu d’avoir une copie de l’image dans la structure de fichiers de chaque application l’image fichier est incorporé dans l’assembly en tant que ressource. Cette méthode de distribution d’images est recommandée lorsque les images identiques sont utilisées sur chaque plateforme et est particulièrement adaptée à la création de composants, comme l’image est fourni avec le code.
 
-Pour incorporer une image dans un projet, avec le bouton droit pour ajouter de nouveaux éléments et sélectionnez l’image/s que vous souhaitez ajouter. Par défaut, l’image a **une action de génération: Aucun**; cela doit être défini sur action **de génération: EmbeddedResource**.
+Pour incorporer une image dans un projet, avec le bouton droit pour ajouter de nouveaux éléments et sélectionnez l’image/s que vous souhaitez ajouter. Par défaut, l’image a **une action de génération : Aucun**; cela doit être défini sur action **de génération : EmbeddedResource**.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](images-images/vs-buildaction.png "Définir l’action de génération: EmbeddedResource")
+![](images-images/vs-buildaction.png "Définir l’action de génération : EmbeddedResource")
 
 Le **Action de génération** peuvent être affichées et modifiées dans le **propriétés** fenêtre pour un fichier.
 
@@ -128,7 +130,7 @@ L’IDE a généré ce comportement par défaut en concaténant le **par défaut
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "Définir l’action de génération: EmbeddedResource")
+![](images-images/xs-buildaction.png "Définir l’action de génération : EmbeddedResource")
 
 **Action de génération** peuvent également être affichées et modifiées dans le **propriétés** remplissage pour un fichier.
 Ce panneau affiche les **ID de ressource** qui est utilisé pour référencer la ressource dans le code. Dans la capture d’écran ci-dessous, le **ID de ressource** est **WorkingWithImages.beach.jpg**.
@@ -154,7 +156,7 @@ Actuellement, il n’existe aucune conversion implicite pour les identificateurs
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image incorporée sur chaque plateforme :
 
-[![ResourceImageSource](images-images/resource-sml.png "exemple d’Application affichant une Image incorporée")](images-images/resource.png#lightbox "exemple d’Application affichant une Image incorporée")
+[![ResourceImageSource](images-images/resource-sml.png "Exemple d’application affichant une image incorporée")](images-images/resource.png#lightbox "Exemple d’application affichant une image incorporée")
 
 ### <a name="using-xaml"></a>À l’aide de XAML
 
@@ -244,7 +246,7 @@ Les images peuvent être téléchargés automatiquement pour l’affichage, comm
 </ContentPage>
 ```
 
-Le code C# équivalent est comme suit :
+Le code c# équivalent est comme suit :
 
 ```csharp
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
@@ -260,7 +262,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image à distance sur chaque plateforme :
 
-[![Téléchargé ImageSource](images-images/download-sml.png "exemple d’Application affichant une Image téléchargée")](images-images/download.png#lightbox "exemple d’Application affichant une Image téléchargée")
+[![ImageSource téléchargé](images-images/download-sml.png "Exemple d’application affichant une image téléchargée")](images-images/download.png#lightbox "Exemple d’application affichant une image téléchargée")
 
 ### <a name="downloaded-image-caching"></a>La mise en cache de l’Image téléchargée
 

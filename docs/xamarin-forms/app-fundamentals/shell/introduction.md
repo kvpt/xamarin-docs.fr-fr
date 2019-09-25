@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
 ms.openlocfilehash: dd1dc9b679a46dc082de1fe9b3c5f10b6757c0d8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739283"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Présentation de Xamarin.Forms Shell
@@ -34,22 +34,22 @@ En outre, les applications Shell bénéficient d’une vitesse de rendu accrue e
 
 Shell fournit une expérience de navigation robuste, basée sur des menus volants et des onglets. Le niveau de navigation supérieur dans une application Shell est un menu volant ou une barre d’onglets en bas, selon les besoins de l’application en matière de navigation. L’exemple suivant montre une application où le niveau supérieur de navigation est un menu volant :
 
-[![Capture d’écran d’un menu volant Shell sur iOS et Android](introduction-images/flyout.png "Menu volant Shell")](introduction-images/flyout-large.png#lightbox "Menu volant Shell")
+[![Capture d’écran d’un menu volant Shell, sur iOS et Android](introduction-images/flyout.png "Menu volant Shell")](introduction-images/flyout-large.png#lightbox "Menu volant Shell")
 
 La sélection d’un élément de menu volant permet de sélectionner et d’afficher cet élément dans un onglet en bas de l’écran :
 
-[![Capture d’écran des onglets Shell inférieurs sur iOS et Android](introduction-images/monkeys.png "Onglets Shell inférieurs")](introduction-images/monkeys-large.png#lightbox "Onglets Shell inférieurs")
+[![Capture d’écran des onglets en bas de l’interpréteur de commandes, sur iOS et Android](introduction-images/monkeys.png "Onglets du bas du shell")](introduction-images/monkeys-large.png#lightbox "Onglets du bas du shell")
 
 > [!NOTE]
 > Lorsque le menu volant n’est pas ouvert, la barre d’onglets du bas représente le niveau supérieur de navigation dans l’application.
 
 Chaque onglet affiche une [`ContentPage`](xref:Xamarin.Forms.ContentPage). Toutefois, si un onglet inférieur contient plusieurs pages, les pages sont accessibles via la barre d’onglets supérieure :
 
-[![Capture d’écran des onglets Shell supérieurs sur iOS et Android](introduction-images/cats.png "Onglets Shell supérieurs")](introduction-images/cats-large.png#lightbox "Onglets Shell supérieurs")
+[![Capture d’écran des principaux onglets de Shell, sur iOS et Android](introduction-images/cats.png "Onglets principaux de l’interpréteur") de commandes](introduction-images/cats-large.png#lightbox "Onglets principaux de l’interpréteur de commandes")
 
 Chaque onglet permet d’accéder à des objets [`ContentPage`](xref:Xamarin.Forms.ContentPage) supplémentaires :
 
-[![Capture d’écran de la navigation dans une page Shell sur iOS et Android](introduction-images/cat-details.png "Navigation dans une application Shell")](introduction-images/cat-details-large.png#lightbox "Navigation dans une application Shell")
+[![Capture d’écran de la navigation entre les pages Shell, sur iOS et Android](introduction-images/cat-details.png "Navigation dans l’application Shell")](introduction-images/cat-details-large.png#lightbox "Navigation dans l’application Shell")
 
 ## <a name="related-links"></a>Liens connexes
 

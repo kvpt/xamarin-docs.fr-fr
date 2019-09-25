@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
 ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68656640"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Présentation des services Web Xamarin. Forms
@@ -38,7 +38,7 @@ Chaque rubrique de ce guide fournit un lien de téléchargement vers un *différ
 
 ## <a name="understand-the-application-anatomy"></a>Comprendre l’anatomie des applications
 
-Le projet de code partagé pour chaque exemple d’application se compose de trois dossiers principaux:
+Le projet de code partagé pour chaque exemple d’application se compose de trois dossiers principaux :
 
 |Dossier|Objectif|
 |--- |--- |
@@ -46,7 +46,7 @@ Le projet de code partagé pour chaque exemple d’application se compose de tro
 |Modèles|Contient les classes de modèle de données pour l’application. Au minimum, cela inclut le `TodoItem` (classe), qui modélise un seul élément de données utilisées par l’application. Le dossier peut également inclure les classes supplémentaires utilisées pour modéliser les données utilisateur.|
 |Affichages|Contient les pages de l’application. Il s’agit généralement de la `TodoListPage` et `TodoItemPage` classes et les classes supplémentaires utilisés à des fins d’authentification.|
 
-Le projet de code partagé pour chaque application se compose également d’un certain nombre de fichiers importants:
+Le projet de code partagé pour chaque application se compose également d’un certain nombre de fichiers importants :
 
 |Fichier|Objectif|
 |--- |--- |

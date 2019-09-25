@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769937"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Copier et coller dans Xamarin. Mac
@@ -541,7 +541,7 @@ Pour chaque élément de menu, nous obtenons la fenêtre de clé actuelle, la pl
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-À partir de là, `ImageDocument` nous appelons l’instance de classe de cette fenêtre pour gérer les actions de copie et de collage. Exemple : 
+À partir de là, `ImageDocument` nous appelons l’instance de classe de cette fenêtre pour gérer les actions de copie et de collage. Par exemple : 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -703,7 +703,7 @@ Utilisez les `ChangeCount` méthodes `ClearContents` et de la `NSPasteboard` cla
 
 Pour effectuer une opération de copie, vous devez tout d’abord accéder à une copie, effacer tout contenu existant et écrire autant de représentations des données que nécessaire dans le cadre du collage.
 
-Exemple :
+Par exemple :
 
 ```csharp
 // Get the standard pasteboard
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-La classe doit également être exposée à Objective-C `Register` à l’aide de la directive et elle doit exposer toutes `Export`les propriétés ou méthodes requises à l’aide de. Exemple :
+La classe doit également être exposée à Objective-C `Register` à l’aide de la directive et elle doit exposer toutes `Export`les propriétés ou méthodes requises à l’aide de. Par exemple :
 
 ```csharp
 [Export("name")]

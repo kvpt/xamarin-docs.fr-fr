@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68652309"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Présentation de Xamarin. Forms et d’Azure Cognitive Services
@@ -52,7 +52,7 @@ Le `RateAppPage` permet à l’utilisateur à prendre une photo de leur visage, 
 
 ## <a name="understand-the-application-anatomy"></a>Comprendre l’anatomie des applications
 
-Le projet de code partagé pour l’exemple d’application se compose de cinq dossiers principaux:
+Le projet de code partagé pour l’exemple d’application se compose de cinq dossiers principaux :
 
 |Dossier|Objectif|
 |--- |--- |
@@ -62,7 +62,7 @@ Le projet de code partagé pour l’exemple d’application se compose de cinq d
 |Utils|Contient le `Timer` (classe), qui est utilisé par le `AuthenticationService` classe pour renouveler un jeton d’accès JWT 9 minutes.|
 |Affichages|Contient les pages de l’application.|
 
-Le projet de code partagé contient également des fichiers importants:
+Le projet de code partagé contient également des fichiers importants :
 
 |Fichier|Objectif|
 |--- |--- |

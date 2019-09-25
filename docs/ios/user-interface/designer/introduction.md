@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768938"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250152"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 
@@ -20,7 +20,7 @@ _Ce guide présente les Xamarin Designer pour iOS. Il montre comment utiliser le
 
 Le Xamarin Designer pour iOS est un concepteur d’interface visuel semblable au Interface Builder de Xcode et le Android Designer. Certaines de ses nombreuses fonctionnalités incluent une intégration transparente à Visual Studio pour Windows et Mac, la modification par glisser-déplacer, une interface pour la configuration des gestionnaires d’événements et la possibilité de restituer des contrôles personnalisés.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Le concepteur iOS est disponible dans Visual Studio pour Mac et Visual Studio 2017 et versions ultérieures sur Windows. Dans Visual Studio pour Windows, le concepteur iOS requiert une connexion à un hôte de build Mac correctement configuré, même si Xcode n’a pas besoin d’être en cours d’exécution.
 
@@ -35,6 +35,8 @@ Cette section décrit comment le concepteur iOS facilite la création d’une in
 Le concepteur iOS permet aux développeurs de concevoir visuellement l’interface utilisateur d’une application. Comme indiqué dans le guide [Présentation des storyboards](~/ios/user-interface/storyboards/index.md) , un Storyboard décrit les écrans (contrôleurs d’affichage) qui composent une application, les éléments d’interface (vues) placés sur ces contrôleurs d’affichage et le déroulement global de navigation de l’application. 
 
 Un contrôleur d’affichage se compose de deux parties : une représentation visuelle dans le concepteur iOS C# et une classe associée :
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

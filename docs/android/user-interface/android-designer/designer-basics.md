@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
 ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70761406"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Notions de base de Xamarin. Android Designer
@@ -222,7 +222,7 @@ Les propriétés *booléennes* sont normalement sélectionnées en tant que case
 
 Le Android Designer prend en charge la modification directe de certaines propriétés sur le **aire de conception** (vous n’avez donc pas besoin de rechercher ces propriétés dans la liste de propriétés). Les propriétés qui peuvent être modifiées directement incluent le texte, la marge et la taille.
 
-### <a name="text"></a>Text
+### <a name="text"></a>Texte
 
 Les propriétés de texte de certains widgets (tels `Button` que `TextView`et) peuvent être modifiées directement sur le **aire de conception**. Le fait de double-cliquer sur un widget le met en mode édition, comme indiqué ci-dessous :
 
@@ -248,7 +248,7 @@ Si une marge a déjà été définie, des lignes en pointillés sont affichées,
 
 ![Exemple de lignes en pointillés marquant un espace autour d’un bouton](designer-basics-images/vs/16-margins-set.png)
 
-### <a name="size"></a>Taille
+### <a name="size"></a>Size
 
 Comme mentionné précédemment, vous pouvez basculer en mode d’édition de taille en cliquant sur un widget alors qu’il est déjà sélectionné. Cliquez sur la poignée triangulaire pour définir la taille de la dimension indiquée `wrap_content`sur :
 
@@ -446,7 +446,7 @@ Certains widgets ont des propriétés à valeurs multiples regroupées ( `Paddin
 
 Le Android Designer prend en charge la modification directe de certaines propriétés sur le Aire de conception (vous n’avez donc pas besoin de rechercher ces propriétés dans la liste de propriétés). Les propriétés qui peuvent être modifiées directement incluent le texte, la marge et la taille.
 
-### <a name="text"></a>Text
+### <a name="text"></a>Texte
 
 Les propriétés de texte de certains widgets (tels `Button` que `TextView`et) peuvent être modifiées directement sur le aire de conception. Le fait de double-cliquer sur un widget le met en mode édition, comme indiqué ci-dessous :
 
@@ -472,7 +472,7 @@ Si une marge a déjà été définie, des lignes en pointillés sont affichées,
 
 [![Exemple de lignes en pointillés marquant un espace autour d’un bouton](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
-### <a name="size"></a>Taille
+### <a name="size"></a>Size
 
 Comme mentionné précédemment, vous pouvez basculer en mode d’édition de taille en cliquant sur un widget alors qu’il est déjà sélectionné. Cliquez sur la poignée triangulaire pour définir la taille de la dimension indiquée `wrap_content`sur :
 

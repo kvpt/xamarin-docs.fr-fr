@@ -9,10 +9,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70290600"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>extensions iOS dans Xamarin. iOS
@@ -29,16 +29,16 @@ Toutes les extensions sont installées conjointement avec une application conten
 
 |Type|Description|Point d’extension|Application hôte|
 |--- |--- |--- |--- |
-|Action|Éditeur ou visionneuse spécialisé pour un type de média particulier|`com.apple.ui-services`|Quelconque|
+|Action|Éditeur ou visionneuse spécialisé pour un type de média particulier|`com.apple.ui-services`|Any|
 |Fournisseur de documents|Permet à l’application d’utiliser un magasin de documents distant|`com.apple.fileprovider-ui`|Applications utilisant un [UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)|
-|Clavier|Autres claviers|`com.apple.keyboard-service`|Quelconque|
+|Clavier|Autres claviers|`com.apple.keyboard-service`|Any|
 |Édition photo|Manipulation et modification de photos|`com.apple.photo-editing`|Éditeur de photos. app|
-|Partager|Partage des données avec les réseaux sociaux, les services de messagerie, etc.|`com.apple.share-services`|Quelconque|
+|Partager|Partage des données avec les réseaux sociaux, les services de messagerie, etc.|`com.apple.share-services`|Any|
 |Aujourd'hui|« Widgets » apparaissant sur l’écran Today ou le centre de notifications|`com.apple.widget-extensions`|Aujourd’hui et le centre de notifications|
 
 [Des points d’extension supplémentaires](~/ios/platform/introduction-to-ios10/index.md#app-extensions) ont été ajoutés dans iOS 10.
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 Les extensions présentent un certain nombre de limitations, dont certaines sont universelles pour tous les types (par exemple, aucun type d’extension ne peut accéder aux appareils photo ou aux micros), tandis que les autres types d’extension peuvent avoir des limitations spécifiques à leur utilisation (par exemple, les claviers personnalisés ne peut pas être utilisé pour les champs d’entrée de données sécurisés, tels que pour les mots de passe). 
 
@@ -432,7 +432,7 @@ La `MobileCoreServices.UTType` classe statique définit les propriétés d’ass
 - `kUTTypeXPCService` - `XPCService`
 - `kUTTypeZipArchive` - `ZipArchive`
 
-Voir l’exemple suivant :
+Consultez l’exemple suivant :
 
 ```csharp
 using MobileCoreServices;

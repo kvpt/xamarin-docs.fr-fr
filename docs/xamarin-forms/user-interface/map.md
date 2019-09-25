@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 242673efb38931eb678432a28f24db0ad9b8cb7d
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70228217"
 ---
 # <a name="xamarinforms-map"></a>Mappage de Xamarin.Forms
@@ -25,7 +25,7 @@ Une fois configuré, le `Map` contrôler fonctionne exactement comme tout autre 
 
 Le contrôle de carte a été utilisé dans le [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps) exemple, qui est indiqué ci-dessous.
 
- [![Cartes dans l’exemple MobileCRM](map-images/maps-zoom-sml.png "exemple de contrôle de carte")](map-images/maps-zoom.png#lightbox "exemple de contrôle de carte")
+ [![Mappages dans l’exemple MobileCRM](map-images/maps-zoom-sml.png "Exemple de Map Control")](map-images/maps-zoom.png#lightbox "Exemple de Map Control")
 
 Fonctionnalité de carte peut encore être améliorée en créant un [mapper convertisseur personnalisé](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
@@ -189,7 +189,7 @@ Comme indiqué dans l’extrait de code ci-dessus, en fournissant un `MapSpan` i
 - **MapSpan.FromCenterAndRadius()** -méthode statique pour créer une étendue d’un `Position` et en spécifiant un `Distance` .
 - **nouvelle MapSpan ()** -constructeur qui utilise un `Position` et les degrés de latitude et longitude à afficher.
 
-Le `MoveToRegion` méthode sur la classe map peut ensuite être utilisée pour modifier le niveau de zoom ou de la position de la carte. Pour modifier le niveau de zoom de la carte sans modifier l’emplacement, créez un nouveau `MapSpan` à l’aide de l’emplacement actuel à partir de la `VisibleRegion.Center` propriété du contrôle de carte. Un `Slider` peut être utilisé pour contrôler le zoom de la carte comme suit (Toutefois, le zoom direct dans le contrôle Map ne peut pas mettre à jour actuellement la valeur du curseur):
+Le `MoveToRegion` méthode sur la classe map peut ensuite être utilisée pour modifier le niveau de zoom ou de la position de la carte. Pour modifier le niveau de zoom de la carte sans modifier l’emplacement, créez un nouveau `MapSpan` à l’aide de l’emplacement actuel à partir de la `VisibleRegion.Center` propriété du contrôle de carte. Un `Slider` peut être utilisé pour contrôler le zoom de la carte comme suit (Toutefois, le zoom direct dans le contrôle Map ne peut pas mettre à jour actuellement la valeur du curseur) :
 
 ```csharp
 Slider slider = new Slider (1, 18, 1);
@@ -201,9 +201,9 @@ slider.ValueChanged += (sender, e) =>
 };
 ```
 
-[![Mappages avec zoom](map-images/maps-zoom-sml.png "effectuer un zoom avant du contrôle de carte")](map-images/maps-zoom.png#lightbox "effectuer un zoom avant du contrôle de carte")
+[![Cartes avec zoom](map-images/maps-zoom-sml.png "Zoom Map Control")](map-images/maps-zoom.png#lightbox "Zoom Map Control")
 
-En outre, la [`Map`](xref:Xamarin.Forms.Maps.Map) classe a une `MoveToLastRegionOnLayoutChange` propriété de type `bool`, qui est stockée par une propriété pouvant être liée. Par défaut, cette propriété `true`a la valeur, qui indique que la zone de mappage affichée passe de sa région actuelle à sa zone définie précédemment quand une modification de disposition se produit, par exemple lors de la rotation de l’appareil. Quand cette propriété a la valeur `false`, la zone de mappage affichée reste centrée en cas de modification de la disposition. L’exemple suivant illustre la définition de cette propriété:
+En outre, la [`Map`](xref:Xamarin.Forms.Maps.Map) classe a une `MoveToLastRegionOnLayoutChange` propriété de type `bool`, qui est stockée par une propriété pouvant être liée. Par défaut, cette propriété `true`a la valeur, qui indique que la zone de mappage affichée passe de sa région actuelle à sa zone définie précédemment quand une modification de disposition se produit, par exemple lors de la rotation de l’appareil. Quand cette propriété a la valeur `false`, la zone de mappage affichée reste centrée en cas de modification de la disposition. L’exemple suivant illustre la définition de cette propriété :
 
 ```csharp
 map.MoveToLastRegionOnLayoutChange = false;
@@ -226,7 +226,7 @@ map.Pins.Add(pin);
 
 `PinType`peut être défini sur l’une des valeurs suivantes, qui peut affecter la façon dont le code confidentiel est rendu (selon la plateforme):
 
-- Générique
+- Generic
 - Sur place
 - SavedPin
 - Résultats de la recherche
@@ -324,7 +324,7 @@ L’apparence de chaque élément de la `IEnumerable` collection est définie en
 
 Les captures d’écran suivantes [`Map`](xref:Xamarin.Forms.Maps.Map) montrent comment [`Pin`](xref:Xamarin.Forms.Maps.Pin) afficher une collection à l’aide de la liaison de données:
 
-[ ![Capture d’écran de la carte avec des broches liées aux données, sur iOS et sur]une(map-images/pins-itemssource.png "carte Android avec des codes confidentiels liés aux données") ] (map-images/pins-itemssource-large.png#lightbox "Mapper avec des codes confidentiels liés aux données")
+[![Capture d’écran de la carte avec des broches liées aux données, sur iOS et Android](map-images/pins-itemssource.png "Mapper avec des codes confidentiels liés aux données")](map-images/pins-itemssource-large.png#lightbox "Mapper avec des codes confidentiels liés aux données")
 
 ### <a name="choose-item-appearance-at-runtime"></a>Choisir l’apparence des éléments au moment de l’exécution
 

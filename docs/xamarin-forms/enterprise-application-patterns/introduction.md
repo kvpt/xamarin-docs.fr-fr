@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70760221"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
@@ -89,7 +89,7 @@ Pour plus d’informations sur l’implémentation des services principaux, [con
 
 Ce guide se concentre sur la création d’applications d’entreprise multiplateforme à l’aide de Xamarin. Forms et utilise l’application mobile eShopOnContainers comme exemple. La figure 1-2 montre les pages de l’application mobile eShopOnContainers qui fournissent les fonctionnalités décrites précédemment.
 
-[ ![(introduction-images/screenshots.png " ")]Application mobile eShopOnContainers] (introduction-images/screenshots-large.png#lightbox "Application mobile eShopOnContainers")
+[![](introduction-images/screenshots.png "Application mobile eShopOnContainers")](introduction-images/screenshots-large.png#lightbox "Application mobile eShopOnContainers")
 
 **Figure 1-2**: Application mobile eShopOnContainers
 
@@ -147,7 +147,7 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 |Extensions|Contient des méthodes d’extension `VisualElement` pour `IEnumerable` les classes et.|
 |Helpers|Contient des classes d’assistance pour l’application.|
 |Modèles|Contient les classes de modèle pour l’application.|
-|Properties|Contient `AssemblyInfo.cs`un fichier de métadonnées d’assembly .net.|
+|Propriétés|Contient `AssemblyInfo.cs`un fichier de métadonnées d’assembly .net.|
 |Services|Contient des interfaces et des classes qui implémentent des services fournis à l’application.|
 |Déclencheurs|Contient le `BeginAnimation` déclencheur, qui est utilisé pour appeler une animation en XAML.|
 |Validations|Contient les classes impliquées dans la validation de l’entrée de données.|

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887900"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Utilisation des Extensions de balisage XAML
@@ -86,7 +86,7 @@ L’analyseur XAML permet également la `StaticExtension` classe sera abrégé e
 </Label>
 ```
 
-Cela peut encore être simplifié, mais la modification introduit une nouvelle syntaxe: Il consiste à placer la `StaticExtension` classe et le paramètre de membre entre accolades. L’expression résultante est définie directement à la `FontSize` attribut :
+Cela peut encore être simplifié, mais la modification introduit une nouvelle syntaxe : Il consiste à placer la `StaticExtension` classe et le paramètre de membre entre accolades. L’expression résultante est définie directement à la `FontSize` attribut :
 
 ```xaml
 <Label Text="Label No. 3"
@@ -143,7 +143,7 @@ Le dernier exemple affiche la `Device.RuntimePlatform` valeur. Le `Environment.N
 
 Voici l’exemple en cours d’exécution :
 
-[![Démonstration de x : Static](consuming-images/staticdemo-small.png "x : Static démonstration")](consuming-images/staticdemo-large.png#lightbox "démonstration de x : Static")
+[![démonstration de x :static](consuming-images/staticdemo-small.png "démonstration de x :static")](consuming-images/staticdemo-large.png#lightbox "Démonstration de x :Static")
 
 <a name="reference" />
 
@@ -187,13 +187,13 @@ Le **x : Reference démonstration** page montre deux utilisations de `x:Referen
 
 Les deux `x:Reference` expressions utilisent la version abrégée de le `ReferenceExtension` nom de la classe et d’éliminer le `Name=` dans le cadre de l’expression. Dans le premier exemple, le `x:Reference` extension de balisage est incorporée dans le `Binding` extension de balisage. Notez que le `Source` et `StringFormat` paramètres sont séparés par des virgules. Voici le programme en cours d’exécution :
 
-[![Démonstration de x : Reference](consuming-images/referencedemo-small.png "démonstration de x : Reference")](consuming-images/referencedemo-large.png#lightbox "démonstration de x : Reference")
+[![démonstration] de la x :Reference (consuming-images/referencedemo-small.png "démonstration") de la x :Reference](consuming-images/referencedemo-large.png#lightbox "Démonstration de la x :Reference")
 
 <a name="type" />
 
 ## <a name="xtype-markup-extension"></a>x:Type, extension de balisage
 
-Le `x:Type` extension de balisage est l’équivalent XAML du langage C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) mot clé. Il est pris en charge par le [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) (classe), qui définit une propriété nommée [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` dont la valeur est un nom de classe ou structure. Le `x:Type` markup extension retourne le [ `System.Type` ](xref:System.Type) objet de cette classe ou structure. `TypeName` est la propriété de contenu de `TypeExtension`, de sorte que `TypeName=` n’est pas requis quand `x:Type` s’affiche avec des accolades.
+Le `x:Type` extension de balisage est l’équivalent XAML du langage c# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) mot clé. Il est pris en charge par le [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) (classe), qui définit une propriété nommée [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` dont la valeur est un nom de classe ou structure. Le `x:Type` markup extension retourne le [ `System.Type` ](xref:System.Type) objet de cette classe ou structure. `TypeName` est la propriété de contenu de `TypeExtension`, de sorte que `TypeName=` n’est pas requis quand `x:Type` s’affiche avec des accolades.
 
 Dans Xamarin.Forms, il existe plusieurs propriétés qui ont des arguments de type `Type`. Exemples incluent la [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) propriété de `Style`et le [x : TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) attribut utilisé pour spécifier des arguments dans les classes génériques. Toutefois, l’analyseur XAML effectue le `typeof` opération automatiquement et le `x:Type` extension de balisage n’est pas utilisée dans ces cas.
 
@@ -242,7 +242,7 @@ C’est comment le menu de navigation dans `MainPage` dans le **Extensions de ba
 
 Voici la page d’accueil principale **Extensions de balisage**:
 
-[![Principale Page](consuming-images/mainpage-small.png "Main Page")](consuming-images/mainpage-large.png#lightbox "Main Page")
+[![Page principale](consuming-images/mainpage-small.png "Page principale")](consuming-images/mainpage-large.png#lightbox "Page principale")
 
 Chaque `CommandParameter` propriété est définie sur une `x:Type` extension de balisage qui fait référence à un des autres pages. Le `Command` propriété est liée à une propriété nommée `NavigateCommand`. Cette propriété est définie dans le `MainPage` fichier code-behind :
 
@@ -325,7 +325,7 @@ public partial class TypeDemoPage : ContentPage
 
 La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle instance de l’argument, définit son `VerticalOptions` propriété et l’ajoute à la `StackLayout`. Les trois `Button` éléments partagent ensuite la page avec les vues créées dynamiquement :
 
-[![Démonstration de x : Type](consuming-images/typedemo-small.png "x : Type démonstration")](consuming-images/typedemo-large.png#lightbox "démonstration de x : Type")
+[![démonstration de x :type](consuming-images/typedemo-small.png "démonstration de x :type")](consuming-images/typedemo-large.png#lightbox "Démonstration de x :Type")
 
 <a name="array" />
 
@@ -382,7 +382,7 @@ Le **x : Array démonstration** page montre comment utiliser `x:Array` pour ajo
 
 Le `ViewCell` crée un simple `BoxView` pour chaque entrée de couleur :
 
-[![Démonstration de x : Array](consuming-images/arraydemo-small.png "x : Array démonstration")](consuming-images/arraydemo-large.png#lightbox "x : Array, démonstration")
+[![démo x :Array](consuming-images/arraydemo-small.png "démo x :Array")](consuming-images/arraydemo-large.png#lightbox "Démo x :Array")
 
 Il existe plusieurs façons de spécifier la personne `Color` éléments de ce tableau. Vous pouvez utiliser un `x:Static` extension de balisage :
 
@@ -408,7 +408,7 @@ Lorsque vous définissez des tableaux de types courants tels que des chaînes ou
 
 ## <a name="xnull-markup-extension"></a>x:Null, extension de balisage
 
-Le `x:Null` extension de balisage est prise en charge par le [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) classe. Il ne possède aucune propriété et est simplement l’équivalent XAML du langage C# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) mot clé.
+Le `x:Null` extension de balisage est prise en charge par le [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) classe. Il ne possède aucune propriété et est simplement l’équivalent XAML du langage c# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) mot clé.
 
 Le `x:Null` extension de balisage est rarement nécessaire et rarement utilisée, mais si vous ne trouvez pas une nécessité de ce dernier, vous serez féliciterez de l’avoir elle existe.
 
@@ -455,7 +455,7 @@ Puis vous découvrez que pour l’une de la `Label` éléments, vous voulez tous
 
 Voici le programme en cours d’exécution :
 
-[![Démonstration de x : Null](consuming-images/nulldemo-small.png "x : Null démonstration")](consuming-images/nulldemo-large.png#lightbox "démonstration de x : Null")
+[![démonstration de x :null](consuming-images/nulldemo-small.png "démonstration de x :null")](consuming-images/nulldemo-large.png#lightbox "Démonstration de x :Null")
 
 Remarquez que quatre de la `Label` éléments ont une police sans serif, mais le centre `Label` a la police sans serif par défaut.
 
@@ -499,7 +499,7 @@ Dans cet exemple, les trois `OnPlatform` expressions utilisent la version abrég
 
 Voici le programme en cours d’exécution :
 
-[![Démonstration de OnPlatform](consuming-images/onplatformdemo-small.png "OnPlatform démonstration")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform démonstration")
+[![Démonstration OnPlatform](consuming-images/onplatformdemo-small.png "Démonstration OnPlatform")](consuming-images/onplatformdemo-large.png#lightbox "Démonstration OnPlatform")
 
 <a name="onidiom" />
 
@@ -537,7 +537,7 @@ Dans cet exemple, les trois `OnIdiom` expressions utilisent la version abrégée
 
 Voici le programme en cours d’exécution :
 
-[![Démonstration de OnIdiom](consuming-images/onidiomdemo-small.png "OnIdiom démonstration")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom démonstration")
+[![Démonstration OnIdiom](consuming-images/onidiomdemo-small.png "Démonstration OnIdiom")](consuming-images/onidiomdemo-large.png#lightbox "Démonstration OnIdiom")
 
 ## <a name="datatemplate-markup-extension"></a>DataTemplate (extension de balisage)
 
@@ -546,7 +546,7 @@ L' `DataTemplate` extension de balisage vous permet de convertir un type [`DataT
 > [!NOTE]
 > L’analyseur XAML permet à `DataTemplateExtension` la classe d’être abrégée `DataTemplate`comme.
 
-Une utilisation classique de cette extension de balisage se trouve dans une application d’environnement, comme illustré dans l’exemple suivant:
+Une utilisation classique de cette extension de balisage se trouve dans une application d’environnement, comme illustré dans l’exemple suivant :
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -562,7 +562,7 @@ Pour plus d’informations sur les applications de l’interpréteur de commande
 
 L' `FontImage` extension de balisage vous permet d’afficher une icône de police dans n’importe quelle `ImageSource`vue pouvant afficher un. Il fournit les mêmes fonctionnalités que la `FontImageSource` classe, mais avec une représentation plus concise.
 
-L' `FontImage` extension de balisage est prise `FontImageExtension` en charge par la classe, qui définit les propriétés suivantes:
+L' `FontImage` extension de balisage est prise `FontImageExtension` en charge par la classe, qui définit les propriétés suivantes :
 
 - `FontFamily`de type `string`, la famille de polices à laquelle appartient l’icône de police.
 - `Glyph`de type `string`, la valeur de caractère Unicode de l’icône de police.
@@ -574,7 +574,7 @@ L' `FontImage` extension de balisage est prise `FontImageExtension` en charge pa
 
 Le `Glyph` propriété est la propriété de contenu de `FontImageExtension`. Par conséquent, pour les expressions de balisage XAML exprimées avec des accolades, vous pouvez éliminer le `Glyph=` dans le cadre de l’expression de condition qu’il soit le premier argument.
 
-La page de **démonstration FontImage** montre comment utiliser l' `FontImage` extension de balisage:
+La page de **démonstration FontImage** montre comment utiliser l' `FontImage` extension de balisage :
 
 ```xaml
 <Image BackgroundColor="#D1D1D1"
@@ -585,7 +585,7 @@ Dans cet exemple, la version abrégée du nom `FontImageExtension` de la classe 
 
 Voici le programme en cours d’exécution :
 
-[ ![Capture d’écran de la démonstration de l’extension de balisage FontImage](consuming-images/fontimagedemo.png "FontImage") ] (consuming-images/fontimagedemo-large.png#lightbox "Démonstration FontImage")
+[![Capture d’écran de l’extension de balisage FontImage](consuming-images/fontimagedemo.png "Démonstration FontImage")](consuming-images/fontimagedemo-large.png#lightbox "Démonstration FontImage")
 
 Pour plus d’informations sur l’affichage des icônes de police en spécifiant `FontImageSource` les données d’icône de police dans un objet, consultez [afficher les icônes de police](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons).
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 813bb59cf11f35f69620c30e8ba12281df08df75
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a59f824e1d97966d8d0af92bc9bbcc8d80fcfa4d
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754501"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249928"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Notifications distantes avec Google Cloud Messaging
 
@@ -312,7 +312,7 @@ public RegistrationIntentService() : base ("RegistrationIntentService") { }
 
 La fonctionnalité principale de `RegistrationIntentService` réside dans la `OnHandleIntent` méthode. Passons en revue ce code pour voir comment il inscrit notre application avec GCM.
 
-##### <a name="request-a-registration-token"></a>Demander un jeton d’inscription
+#### <a name="request-a-registration-token"></a>Demander un jeton d’inscription
 
 `OnHandleIntent`appelle d’abord la méthode [InstanceID. GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;) de Google pour demander un jeton d’inscription à GCM. Nous encapsulent ce code `lock` dans un pour vous prémunir contre la possibilité d’avoir plusieurs &ndash; intentions `lock` d’inscription simultanément, ce qui garantit que ces intentions sont traitées de manière séquentielle. Si nous ne parvenons pas à obtenir un jeton d’inscription, une exception est levée et l’erreur est journalisée. Si l’inscription réussit, `token` est défini sur le jeton d’inscription que nous avons reçu de GCM : 
 
@@ -334,7 +334,7 @@ catch (Exception e)
     Log.Debug ...
 ```
 
-##### <a name="forward-the-registration-token-to-the-app-server"></a>Transférer le jeton d’inscription au serveur d’applications
+#### <a name="forward-the-registration-token-to-the-app-server"></a>Transférer le jeton d’inscription au serveur d’applications
 
 Si nous obtenons un jeton d’inscription (autrement dit, si aucune exception n’a été `SendRegistrationToAppServer` levée), nous appelons pour associer le jeton d’inscription de l’utilisateur au compte côté serveur (le cas échéant) qui est géré par notre application. Comme cette implémentation dépend de la conception du serveur d’applications, une méthode vide est fournie ici : 
 
@@ -347,7 +347,7 @@ void SendRegistrationToAppServer (string token)
 
 Dans certains cas, le serveur d’applications n’a pas besoin du jeton d’inscription de l’utilisateur. dans ce cas, cette méthode peut être omise. Lorsqu’un jeton d’inscription est envoyé au serveur d’applications `SendRegistrationToAppServer` , doit conserver une valeur booléenne pour indiquer si le jeton a été envoyé au serveur. Si cette valeur booléenne est false, `SendRegistrationToAppServer` envoie le jeton au serveur &ndash; d’applications dans le cas contraire, le jeton a déjà été envoyé au serveur d’applications lors d’un appel précédent. 
 
-##### <a name="subscribe-to-the-notification-topic"></a>S’abonner à la rubrique de notification
+#### <a name="subscribe-to-the-notification-topic"></a>S’abonner à la rubrique de notification
 
 Ensuite, nous appelons notre `Subscribe` méthode pour indiquer à GCM que nous voulons s’abonner à une rubrique de notification. Dans `Subscribe`, nous appelons l’API [GcmPubSub. Subscribe](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) pour abonner notre application cliente à tous `/topics/global`les messages sous :
 
@@ -398,7 +398,7 @@ La `OnTokenRefresh` méthode de notre service `RegistrationIntentService` démar
 
 #### <a name="test-registration-with-gcm"></a>Tester l’inscription avec GCM
 
-Régénérez et exécutez complètement l’application. Si vous recevez correctement un jeton d’inscription de GCM, le jeton d’inscription doit s’afficher dans la fenêtre sortie. Par exemple : 
+Régénérez et exécutez complètement l’application. Si vous recevez correctement un jeton d’inscription de GCM, le jeton d’inscription doit s’afficher dans la fenêtre sortie. Par exemple : 
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2

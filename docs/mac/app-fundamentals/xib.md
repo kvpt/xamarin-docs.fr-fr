@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770354"
 ---
 # <a name="xib-files-in-xamarinmac"></a>fichiers. XIB dans Xamarin. Mac
@@ -557,7 +557,7 @@ Pour afficher un nouvel affichage, utilisez le code suivant :
 DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 ```
 
-Cela crée une nouvelle instance du contrôleur d’affichage pour la nouvelle vue à afficher, définit son type (comme spécifié par l’énumération ajoutée au projet) et utilise la `DisplaySubview` méthode ajoutée à la classe de la fenêtre pour afficher réellement la vue. Exemple :
+Cela crée une nouvelle instance du contrôleur d’affichage pour la nouvelle vue à afficher, définit son type (comme spécifié par l’énumération ajoutée au projet) et utilise la `DisplaySubview` méthode ajoutée à la classe de la fenêtre pour afficher réellement la vue. Par exemple :
 
 [![Exécution de l’exemple d’application](xib-images/view04.png "Exécution de l’exemple d’application")](xib-images/view04-large.png#lightbox)
 
@@ -571,7 +571,7 @@ Cet article a décrit en détail l’utilisation des fichiers. XIB dans une appl
 
 - [MacImages (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
-- [Windows](~/mac/user-interface/window.md)
+- [Fenêtres](~/mac/user-interface/window.md)
 - [Menus](~/mac/user-interface/menu.md)
 - [Boîtes de dialogue](~/mac/user-interface/dialog.md)
 - [Utilisation des images](~/mac/app-fundamentals/image.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 6e2e4cd854e60f6147104b6b1361d0ab7b234370
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fba49e21ac75ec1ebb00614f3891bebaa57a3ed5
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755801"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249760"
 ---
 # <a name="understanding-android-api-levels"></a>Présentation des niveaux d’API Android
 
@@ -33,6 +33,8 @@ Avant de pouvoir configurer un niveau d’API pour votre projet, vous devez inst
 > [!NOTE]
 > À compter du 2018 août, la console Google Play nécessitera que les nouvelles applications ciblent le niveau d’API 26 (Android 8,0) ou une version ultérieure.
 Les applications existantes seront nécessaires pour cibler le niveau d’API 26 ou supérieur à partir du 2018 novembre. Pour plus d’informations, consultez amélioration de la [sécurité et des performances des applications sur Google Play pour les années à venir](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -215,7 +217,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
 
 Dans cet exemple, le Framework cible de notre application est défini sur **android 5,0 (niveau d’API 21)** et sa version Android minimale est définie sur **Android 4,1 (niveau d’API 16)** . Étant `SetCategory` donné que est disponible au `Android.OS.BuildVersionCodes.Lollipop` niveau de l’API et versions ultérieures `SetCategory` , cet exemple de code appellera &ndash; uniquement lorsqu' il est disponible. `SetCategory` il ne tente pas d’appeler lorsque le niveau d’API est 16, 17, 18, 19 ou 20. La fonctionnalité est réduite sur ces versions d’Android antérieures uniquement dans la mesure où les notifications ne sont pas triées correctement (car elles ne sont pas classées par type), mais les notifications sont toujours publiées pour alerter l’utilisateur. Notre application fonctionne toujours, mais ses fonctionnalités sont légèrement amoindries.
 
-En général, la vérification de la version de build permet à votre code de décider au moment de l’exécution de passer d’une méthode à l’autre. Par exemple :
+En général, la vérification de la version de build permet à votre code de décider au moment de l’exécution de passer d’une méthode à l’autre. Par exemple :
 
 ```csharp
 if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)

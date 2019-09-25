@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70758499"
 ---
 # <a name="introduction-to-android-wear"></a>Introduction à Android Wear
 
 _Avec l’introduction de l’usure de Google, vous n’êtes plus limité aux téléphones et tablettes lorsqu’il s’agit de développer de superbes applications Android. La prise en charge d’Android par Xamarin. Android vous permet d’exécuter C# du code sur votre poignet ! Cette introduction fournit une vue d’ensemble de base de l’usure d’Android, décrit ses principales fonctionnalités et offre une vue d’ensemble des fonctionnalités disponibles dans Android usure 2,0. Il répertorie certains des appareils Android d’usure les plus populaires et fournit des liens vers la documentation de Google Android usure essentielle pour une meilleure lecture._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Android s’exécute sur un large éventail d’appareils, notamment la première génération de Motorola 360, le espion G de LG et le rapport Samsung en direct. Une deuxième génération, y compris la SmartWatch 3 de Sony, a également été publiée avec des fonctionnalités supplémentaires, notamment le GPS intégré et la lecture de musique hors connexion. Pour Android usure 2,0, Google s’est associé à LG pour deux nouvelles observations : the LG Watch Sports and the LG Watch style.
 

@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770154"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. Storyboard/. XIB-conception de l’interface utilisateur moins dans Xamarin. Mac
 
 _Cet article explique comment créer une interface utilisateur de l’application Xamarin. Mac C# directement à partir du code, sans fichiers. Storyboard, fichiers. xib ou Interface Builder._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous avez accès aux mêmes éléments d’interface utilisateur et aux mêmes outils que ceux d’un développeur qui travaille en *objective-C* et *Xcode* . En général, lors de la création d’une application Xamarin. Mac, vous utiliserez Interface Builder de Xcode avec des fichiers. Storyboard ou. XIB pour créer et gérer l’interface utilisateur de votre application.
 
@@ -294,7 +294,7 @@ Comme précédemment, nous allons supprimer le fichier. Storyboard ou. XIB par d
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>Ajout d’un élément d’interface utilisateur à une fenêtre dans le code
 
-Si une fenêtre a été créée dans le code ou chargée à partir d’un fichier. Storyboard ou. XIB, il peut arriver que vous souhaitiez ajouter un élément d’interface utilisateur à une fenêtre à partir du code. Par exemple :
+Si une fenêtre a été créée dans le code ou chargée à partir d’un fichier. Storyboard ou. XIB, il peut arriver que vous souhaitiez ajouter un élément d’interface utilisateur à une fenêtre à partir du code. Par exemple :
 
 ```csharp
 var ClickMeButton = new NSButton (new CGRect (10, 10, 100, 30)){
@@ -360,7 +360,7 @@ Cet article a décrit en détail la création d’une interface utilisateur de l
 ## <a name="related-links"></a>Liens associés
 
 - [MacXibless (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/macxibless)
-- [Windows](~/mac/user-interface/window.md)
+- [Fenêtres](~/mac/user-interface/window.md)
 - [Menus](~/mac/user-interface/menu.md)
 - [Human Interface Guidelines pour macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
 - [Présentation de Windows](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/WinPanel/Introduction.html)

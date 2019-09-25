@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e5c8e02397e778cf3e71a0c8b4aa544074521cac
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b85289d9dbd60d5ee0238540e67773ed9085b672
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755939"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249967"
 ---
 # <a name="proguard"></a>ProGuard
 
 _Xamarin.Android ProGuard est un réducteur, un optimiseur et un prévérificateur de fichiers de classe Java. Il détecte et supprime le code non utilisé, et analyse et optimise le bytecode. Ce guide explique le fonctionnement de ProGuard, comment l’activer dans votre projet et comment le configurer. Il fournit également plusieurs exemples de configuration de ProGuard._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 ProGuard détecte et supprime les classes, champs, méthodes et attributs non utilisés de votre application packagée. Il peut faire de même pour les bibliothèques référencées (ce qui peut vous éviter de dépasser la limite de 64K références). L’outil ProGuard du kit Android SDK optimise aussi le bytecode et supprime les instructions de code non utilisé. ProGuard lit les fichiers **JAR d’entrée**, puis les réduit, les optimise et les pré-vérifie. Il écrit les résultats dans un ou plusieurs fichiers **JAR de sortie**. 
 
@@ -313,6 +313,8 @@ Unknown option '-keep' in line 1 of file 'proguard.cfg'
 ```
 
 Ce problème se produit en général sur Windows, car le fichier `.cfg` utilise un codage incorrect. ProGuard ne peut pas gérer la _marque d’ordre d’octet_ (BOM, byte order mark) susceptible d’être présente dans les fichiers texte. En présence d’une marque d’ordre d’octet, ProGuard quitte avec l’erreur ci-dessus. 
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

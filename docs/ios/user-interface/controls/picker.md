@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/14/2018
 ms.openlocfilehash: 9eec99ffe244ffdc290050bd54f083ad6582151d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70286387"
 ---
 # <a name="picker-control-in-xamarinios"></a>Contrôle Picker dans Xamarin. iOS
@@ -260,7 +260,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 Pour mettre en `NSDate`forme un, [`NSDateFormatter`](xref:Foundation.NSDateFormatter)utilisez un.
 
-Pour utiliser un `NSDateFormatter`, appelez sa [`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate)) méthode. Par exemple :
+Pour utiliser un `NSDateFormatter`, appelez sa [`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate)) méthode. Par exemple :
 
 ```csharp
 var date = NSDate.Now;

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b17a1177abafe4e605263664038842863302ac3b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760994"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249686"
 ---
 # <a name="localization"></a>Localisation
 
@@ -20,7 +20,7 @@ ms.locfileid: "70760994"
 
 _Vous pouvez localiser les applications Xamarin.Forms à l’aide de fichiers de ressources.NET._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Le mécanisme intégré de localisation des applications .NET utilise des [fichiers RESX](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) ainsi que les classes des espaces de noms `System.Resources` et `System.Globalization`. Les fichiers RESX contenant les chaînes traduites sont incorporés dans l’assembly Xamarin.Forms, ainsi qu’une classe générée par le compilateur qui fournit un accès fortement typé aux traductions. Vous pouvez ensuite récupérer le texte traduit dans le code.
 
@@ -60,7 +60,7 @@ Le fichier de ressources de base (RESX) contient les chaînes de langue par déf
 
 Choisissez un nom explicite, par exemple **AppResources**, puis appuyez sur **OK**.
 
-[![Ajouter un fichier de ressources](text-images/resx-new-file-sml.png "Boîte de dialogue Nouveau fichier")](text-images/resx-new-file.png#lightbox "Boîte de dialogue Nouveau fichier")
+[![Ajouter un fichier de ressources](text-images/resx-new-file-sml.png "Boîte de dialogue nouveau fichier")](text-images/resx-new-file.png#lightbox "Boîte de dialogue nouveau fichier")
 
 Deux fichiers sont ajoutés au projet :
 
@@ -76,6 +76,8 @@ L’arborescence de la solution montre les fichiers liés. Vous *devez* modifier
 Par défaut, quand des références aux chaînes fortement typées sont générées, elles sont `internal` pour l’assembly. En effet, l’outil de build par défaut pour les fichiers RESX génère le fichier **.designer.cs** avec des propriétés `internal`.
 
 Sélectionnez le fichier **AppResources.resx**, puis affichez le panneau **Propriétés** pour voir où cet outil de build est configuré. La capture d’écran ci-dessous montre **l’outil personnalisé : ResXFileCodeGenerator**.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

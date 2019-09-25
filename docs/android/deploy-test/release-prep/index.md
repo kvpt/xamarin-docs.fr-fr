@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: b3e34022af4e83b172b7ae7cedfb13e95e92beba
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5113255d8776987783ad5e8f023e7b2b30924ea4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756118"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250002"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
@@ -40,6 +40,8 @@ Chacune de ces étapes est décrite ci-dessous plus en détail.
 ## <a name="specify-the-application-icon"></a>Spécifier l’icône de l'application
 
 Il est fortement recommandé de spécifier une icône d’application pour chaque application Xamarin.Android. Certaines places de marché d’applications n’autorisent pas la publication d’une application Android qui n’en aurait pas. La propriété `Icon` de l’attribut `Application` est utilisée pour spécifier l’icône d’application d’un projet Xamarin.Android.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

@@ -10,17 +10,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68653794"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>Effectuer la navigation dans une application Xamarin. Forms à plusieurs pages
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
-Dans ce guide de démarrage rapide, vous allez apprendre à:
+Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 - Ajoutez des pages supplémentaires à une solution Xamarin. Forms.
 - Effectuer une navigation entre les pages.
@@ -28,8 +28,8 @@ Dans ce guide de démarrage rapide, vous allez apprendre à:
 
 Le Guide de démarrage rapide vous explique comment transformer une application Xamarin. Forms multiplateforme à une seule page, qui est en mesure de stocker une seule note dans une application à plusieurs pages, afin de stocker plusieurs notes. L’application finale est indiquée ci-dessous :
 
-[ ![(multi-page-images/screenshots1-sml.png " ")]Page de notes] (multi-page-images/screenshots1.png#lightbox "Page de notes") (multi-page-images/screenshots2.png#lightbox "Page d'") entrée note page d’entrée de note [ ![(multi-page-images/screenshots2-sml.png " ")]] 
-
+[![](multi-page-images/screenshots1-sml.png "")Page de commentaires](multi-page-images/screenshots1.png#lightbox "Page de notes")page entrée Note
+[(multi-page-images/screenshots2-sml.png "") ![]](multi-page-images/screenshots2.png#lightbox "Page d’entrée de note")
 
 ### <a name="prerequisites"></a>Prérequis
 
@@ -39,7 +39,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
 ## <a name="update-the-app-with-visual-studio"></a>Mettre à jour l’application avec Visual Studio
 
-1. Lancez Visual Studio. Dans la fenêtre Démarrer, cliquez sur la solution **Notes** dans la liste projets/solutions récents, ou cliquez sur **ouvrir un projet ou une solution**, puis dans la boîte de dialogue **ouvrir un projet/une solution** , sélectionnez le fichier solution pour le projet Notes:
+1. Lancez Visual Studio. Dans la fenêtre Démarrer, cliquez sur la solution **Notes** dans la liste projets/solutions récents, ou cliquez sur **ouvrir un projet ou une solution**, puis dans la boîte de dialogue **ouvrir un projet/une solution** , sélectionnez le fichier solution pour le projet Notes :
 
     ![](multi-page-images/vs/open-solution.png "Ouvrir un projet")
 
@@ -51,7 +51,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     ![](multi-page-images/vs/name-folder.png "Dossier Models")
 
-4. Dans **Explorateur de solutions**, sélectionnez le dossier Models, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouvel élément...** :
+4. Dans **Explorateur de solutions**, sélectionnez le dossier **Models** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouvel élément...** :
 
     ![](multi-page-images/vs/add-new-models-file.png "Ajouter un nouveau fichier")
 
@@ -61,7 +61,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     Cette opération ajoute une classe nommée **note** au dossier **Models** du projet **Notes** .
 
-6. Dans **note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+6. Dans **note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -87,7 +87,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     Cette opération ajoute une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page sera la deuxième page de l’application.
 
-8. Dans **NoteEntryPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+8. Dans **NoteEntryPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
       ```xaml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -118,7 +118,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
       Enregistrez les modifications apportées à **NoteEntryPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
 
-9. Dans **NoteEntryPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+9. Dans **NoteEntryPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
       ```csharp
       using System;
@@ -180,7 +180,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
       Cette opération ajoute une page nommée **NotesPage** au dossier racine du projet. Cette page sera la page racine de l’application.
 
-11. Dans **NotesPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+11. Dans **NotesPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -209,7 +209,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     Enregistrez les modifications apportées à **NotesPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
 
-12. Dans **NotesPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+12. Dans **NotesPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -279,7 +279,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-13. Dans **Explorateur de solutions**, double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+13. Dans **Explorateur de solutions**, double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```csharp
     using System;
@@ -322,7 +322,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Mettre à jour l’application avec Visual Studio pour Mac
 
-1. Lancez Visual Studio pour Mac. Dans la fenêtre Démarrer, cliquez sur **ouvrir**, puis dans la boîte de dialogue, sélectionnez le fichier solution pour le projet Notes:
+1. Lancez Visual Studio pour Mac. Dans la fenêtre Démarrer, cliquez sur **ouvrir**, puis dans la boîte de dialogue, sélectionnez le fichier solution pour le projet Notes :
 
     ![](multi-page-images/vsmac/open-solution.png "Ouvrir une solution")
 
@@ -334,7 +334,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     ![](multi-page-images/vsmac/name-folder.png "Dossier Models")
 
-4. Dans le **panneau solutions**, sélectionnez le dossier Models, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...** :
+4. Dans le **panneau solutions**, sélectionnez le dossier **Models** , cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouveau fichier...** :
 
     ![](multi-page-images/vsmac/add-new-models-file.png "Ajouter un nouveau fichier")
 
@@ -344,7 +344,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     Cette opération ajoute une classe nommée **note** au dossier **Models** du projet **Notes** .
 
-6. Dans **note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+6. Dans **note.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -370,7 +370,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     Cette opération ajoute une nouvelle page nommée **NoteEntryPage** au dossier racine du projet. Cette page sera la deuxième page de l’application.
 
-8. Dans **NoteEntryPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+8. Dans **NoteEntryPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
       ```xaml
       <?xml version="1.0" encoding="UTF-8"?>
@@ -401,7 +401,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
       Enregistrez les modifications apportées à **NoteEntryPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-9. Dans **NoteEntryPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+9. Dans **NoteEntryPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
       ```csharp
       using System;
@@ -463,7 +463,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
       Cette opération ajoute une page nommée **NotesPage** au dossier racine du projet. Cette page sera la page racine de l’application.
 
-11. Dans **NotesPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+11. Dans **NotesPage. Xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -492,7 +492,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
 
     Enregistrez les modifications apportées à **NotesPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
-12. Dans **NotesPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant:
+12. Dans **NotesPage.Xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
     ```csharp
     using System;
@@ -562,7 +562,7 @@ Vous devez réussir le [démarrage rapide précédent](single-page.md) avant d�
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-13. Dans la **panneau solutions**, double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+13. Dans la **panneau solutions**, double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```csharp
     using System;

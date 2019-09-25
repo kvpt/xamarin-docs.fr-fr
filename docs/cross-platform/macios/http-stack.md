@@ -6,12 +6,12 @@ ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: f3c30e8edc36c6d92b6fac0bd0e199aa26e16993
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 305c0c939d99207e39a469f7e8c5370cc5555d38
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280922"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249976"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>Sélecteur d’implémentation HttpClient et SSL/TLS pour iOS/macOS
 
@@ -24,7 +24,7 @@ Les projets doivent faire référence à l’assembly **System .net. http** .
 >
 > Pour vous assurer que vos applications continuent de fonctionner avec ces serveurs et services, **vous devez mettre à jour vos projets Xamarin `NSUrlSession` avec le paramètre indiqué ci-dessous, puis recréer et redéployer vos applications** pour vos utilisateurs.
 
-### <a name="selecting-an-httpclient-stack"></a>Sélection d’une pile HttpClient
+## <a name="selecting-an-httpclient-stack"></a>Sélection d’une pile HttpClient
 
 Pour ajuster le `HttpClient` utilisé par votre application :
 
@@ -42,7 +42,7 @@ Pour ajuster le `HttpClient` utilisé par votre application :
 Le `NSURLSession`gestionnaire basé sur est basé sur le Framework `NSURLSession` natif disponible dans iOS 7 et versions ultérieures. 
 **Il s’agit du paramètre recommandé.**
 
-#### <a name="pros"></a>Avantages
+#### <a name="pros"></a>Professionnels
 
 - Il utilise des API natives pour de meilleures performances et une taille d’exécutable réduite.
 - Prise en charge des normes les plus récentes, telles que TLS 1,2.
@@ -56,7 +56,7 @@ Le `NSURLSession`gestionnaire basé sur est basé sur le Framework `NSURLSession
 
 Le `CFNetwork`gestionnaire basé sur est basé sur le Framework `CFNetwork` natif disponible dans iOS 6 et versions ultérieures.
 
-#### <a name="pros"></a>Avantages
+#### <a name="pros"></a>Professionnels
 
 - Il utilise des API natives pour de meilleures performances et une taille d’exécutable réduite.
 - Prise en charge de normes plus récentes telles que TLS 1,2.
@@ -71,7 +71,7 @@ Le `CFNetwork`gestionnaire basé sur est basé sur le Framework `CFNetwork` nati
 
 Le gestionnaire managé est le gestionnaire HttpClient entièrement géré qui a été livré avec la version précédente de Xamarin.
 
-#### <a name="pros"></a>Avantages
+#### <a name="pros"></a>Professionnels
 
 - Il possède le jeu de fonctionnalités le plus compatible avec Microsoft .NET et les versions antérieures de Xamarin.
 

@@ -6,12 +6,12 @@ ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7f41d65c8981d4ef6ffcf1b812fbbbb7e72e7719
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509745"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249793"
 ---
 # <a name="3264-bit-platform-considerations"></a>Considérations sur les plateformes 32 bits et 64 bits
 
@@ -32,17 +32,19 @@ Les API classique (`XamMac.dll` et `monotouch.dll`) de Xamarin ne prenait en cha
 > [!WARNING]
 > Cette section est incluse pour des raisons historiques et pour vous aider à déplacer des projets Xamarin. iOS plus anciens vers le API unifiée et prendre en charge 64 bits. Tous les nouveaux projets Xamarin. iOS utilisent le API unifiée et ciblent 64 bits par défaut.
 
-Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifiée, les développeurs doivent mettre à jour manuellement les paramètres de build pour cibler 64 bits:
+Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifiée, les développeurs doivent mettre à jour manuellement les paramètres de build pour cibler 64 bits :
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 1. Dans la **panneau solutions**, double-cliquez sur le projet de l’application pour ouvrir la fenêtre **Options du projet** .
 2. Sélectionnez **Build iOS**.
-3. Pour le simulateur iPhone, dans la liste déroulante **architectures prises en charge** , sélectionnez **\_x86 64** ou **i386\_+ x86 64**:
+3. Pour le simulateur iPhone, dans la liste déroulante **architectures prises en charge** , sélectionnez **x86\_64** ou **i386\_+ x86 64**:
 
    [![Définition des architectures prises en\_charge sur x86 64 ou\_i386 + x86 64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
-4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles:
+4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles :
 
    [![Définition des architectures prises en charge sur l’une des combinaisons ARM64](Images/Image02.png "Définition des architectures prises en charge sur l’une des combinaisons ARM64")](Images/Image02-large.png#lightbox)
 
@@ -53,11 +55,11 @@ Pour les applications mobiles Xamarin. iOS qui ont été converties en API unifi
 
 1. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de l’application, puis sélectionnez **Propriétés**.
 2. Sélectionnez **Build iOS**.
-3. Pour le simulateur iPhone, définissez les **architectures prises en charge** sur **\_x86 64** ou **i386\_+ x86 64**: 
+3. Pour le simulateur iPhone, définissez les **architectures prises en charge** sur **x86\_64** ou **i386\_+ x86 64**: 
 
    [![Définition des architectures prises en charge sur x86_64 ou\_i386 + x86 64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
-4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles:
+4. Pour les appareils physiques, sélectionnez l’une des combinaisons **ARM64** disponibles :
     
    [![Définition des architectures prises en charge sur l’une des combinaisons ARM64](Images/VS01.png "Définition des architectures prises en charge sur l’une des combinaisons ARM64")](Images/VS01-large.png#lightbox)
 
@@ -79,7 +81,7 @@ Pendant la transition d’Apple de 32 bits à 64 bits, les applications iOS doiv
 Le ciblage des architectures 32 bits et 64 bits augmentera considérablement la taille d’une application. Toutefois, cela permettra à des appareils plus récents d’exécuter du code optimisé tout en prenant en charge les appareils plus anciens.
 
 > [!IMPORTANT]
-> Si vous recevez le message suivant lors de l’envoi d’une application iOS à l’app _Store iTunes, «avertissement iTMS-9000: Prise en charge de 64 bits manquante. À partir du 1er février 2015, les nouvelles applications iOS téléchargées vers l’App Store doivent inclure la prise en charge de 64 bits et être générées avec le kit de développement logiciel (SDK) iOS 8, inclus dans Xcode 6 ou version ultérieure. Pour activer 64 bits dans votre projet, nous vous recommandons d’utiliser le paramètre de build Xcode par défaut «architectures standard» pour générer un seul fichier binaire avec le code 32 bits et 64 bits.»_ Vous devez faire basculer les architectures prises en charge vers l’une des combinaisons **ARM64** disponibles (comme indiqué ci-dessus), recompiler et renvoyer.
+> Si vous recevez le message suivant lors de l’envoi d’une application iOS à l’app _Store iTunes, «avertissement iTMS-9000 : Prise en charge de 64 bits manquante. À partir du 1er février 2015, les nouvelles applications iOS téléchargées vers l’App Store doivent inclure la prise en charge de 64 bits et être générées avec le kit de développement logiciel (SDK) iOS 8, inclus dans Xcode 6 ou version ultérieure. Pour activer 64 bits dans votre projet, nous vous recommandons d’utiliser le paramètre de build Xcode par défaut « architectures standard » pour générer un seul fichier binaire avec le code 32 bits et 64 bits.»_ Vous devez faire basculer les architectures prises en charge vers l’une des combinaisons **ARM64** disponibles (comme indiqué ci-dessus), recompiler et renvoyer.
 
 ## <a name="mac"></a>Mac
 
@@ -90,7 +92,7 @@ La plupart des ordinateurs Mac modernes prennent en charge les applications 32 b
 
 Contrairement à iOS, un grand nombre des nouveaux frameworks introduits dans les versions récentes de macOS sont pris en charge uniquement en mode 64 bits (CloudKit, EventKit, GameController, LocalAuthentication, MediaLibrary, MultipeerConnectivity, NotificationCenter, GLKit, SpriteKit, social, et MapKit, entre autres).
 
-Les API unifiée permettent aux développeurs de choisir le type d’applications qu’ils souhaitent produire: 32 bits ou 64 bits.
+Les API unifiée permettent aux développeurs de choisir le type d’applications qu’ils souhaitent produire : 32 bits ou 64 bits.
 
 les **applications 32 bits** s’exécutent sur des ordinateurs Mac 32 bits et 64 bits, disposent d’un espace d’adressage limité à 32 bits et requièrent que toutes les bibliothèques soient de 32 bits.
 

@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/21/2018
 ms.openlocfilehash: d76b5eefcaf0edeb12f128c60e9b8fffff8bcf3b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68644707"
 ---
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>Schémas d’espace de noms personnalisé XAML dans Xamarin. Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
-Les types d’une bibliothèque peuvent être référencés en XAML en déclarant un espace de noms XAML pour la bibliothèque, avec la déclaration d’espace de noms qui spécifie le nom de l’espace de noms CLR (Common Language Runtime) et un nom d’assembly:
+Les types d’une bibliothèque peuvent être référencés en XAML en déclarant un espace de noms XAML pour la bibliothèque, avec la déclaration d’espace de noms qui spécifie le nom de l’espace de noms CLR (Common Language Runtime) et un nom d’assembly :
 
 ```xaml
 <ContentPage ...
@@ -35,7 +35,7 @@ Pour plus d’informations sur les espaces de noms XAML, consultez [espaces de n
 
 ## <a name="defining-a-custom-namespace-schema"></a>Définition d’un schéma d’espace de noms personnalisé
 
-L’exemple d’application contient une bibliothèque qui expose des contrôles simples, tels `CircleButton`que:
+L’exemple d’application contient une bibliothèque qui expose des contrôles simples, tels `CircleButton`que :
 
 ```csharp
 using Xamarin.Forms;
@@ -51,12 +51,12 @@ namespace MyCompany.Controls
 
 Tous les contrôles de la bibliothèque résident dans l' `MyCompany.Controls` espace de noms. Ces contrôles peuvent être exposés à un assembly appelant par le biais d’un schéma d’espace de noms personnalisé.
 
-Un schéma d’espace de noms personnalisé est `XmlnsDefinitionAttribute` défini avec la classe, qui spécifie le mappage entre un espace de noms XAML et un ou plusieurs espaces de noms CLR. `XmlnsDefinitionAttribute` Accepte deux arguments: le nom de l’espace de noms XAML et le nom de l’espace de noms CLR. Le nom de l’espace de noms XAML `XmlnsDefinitionAttribute.XmlNamespace` est stocké dans la propriété, et le nom de `XmlnsDefinitionAttribute.ClrNamespace` l’espace de noms CLR est stocké dans la propriété.
+Un schéma d’espace de noms personnalisé est `XmlnsDefinitionAttribute` défini avec la classe, qui spécifie le mappage entre un espace de noms XAML et un ou plusieurs espaces de noms CLR. `XmlnsDefinitionAttribute` Accepte deux arguments : le nom de l’espace de noms XAML et le nom de l’espace de noms CLR. Le nom de l’espace de noms XAML `XmlnsDefinitionAttribute.XmlNamespace` est stocké dans la propriété, et le nom de `XmlnsDefinitionAttribute.ClrNamespace` l’espace de noms CLR est stocké dans la propriété.
 
 > [!NOTE]
 > La `XmlnsDefinitionAttribute` classe a également une propriété nommée `AssemblyName`, qui peut être définie éventuellement sur le nom de l’assembly. Cela est requis uniquement lorsqu’un espace de noms CLR référencé à `XmlnsDefinitionAttribute` partir d’un est dans un assembly externe.
 
-`XmlnsDefinitionAttribute` Doit être défini au niveau de l’assembly dans le projet qui contient les espaces de noms CLR qui seront mappés dans le schéma d’espace de noms personnalisé. L’exemple suivant montre le fichier **AssemblyInfo.cs** de l’exemple d’application:
+`XmlnsDefinitionAttribute` Doit être défini au niveau de l’assembly dans le projet qui contient les espaces de noms CLR qui seront mappés dans le schéma d’espace de noms personnalisé. L’exemple suivant montre le fichier **AssemblyInfo.cs** de l’exemple d’application :
 
 ```csharp
 using Xamarin.Forms;
@@ -75,7 +75,7 @@ Le schéma d’espace de noms personnalisé peut ensuite être utilisé pour la 
 
 ## <a name="consuming-a-custom-namespace-schema"></a>Utilisation d’un schéma d’espace de noms personnalisé
 
-Pour consommer des types à partir du schéma d’espace de noms personnalisé, le compilateur XAML requiert une référence de code de l’assembly qui utilise les types, à l’assembly qui définit les types. Pour ce faire, vous pouvez ajouter une classe contenant `Init` une méthode à l’assembly qui définit les types qui seront utilisés par le XAML:
+Pour consommer des types à partir du schéma d’espace de noms personnalisé, le compilateur XAML requiert une référence de code de l’assembly qui utilise les types, à l’assembly qui définit les types. Pour ce faire, vous pouvez ajouter une classe contenant `Init` une méthode à l’assembly qui définit les types qui seront utilisés par le XAML :
 
 ```csharp
 namespace MyCompany.Controls
@@ -89,7 +89,7 @@ namespace MyCompany.Controls
 }
 ```
 
-La `Init` méthode peut ensuite être appelée à partir de l’assembly qui consomme les types du schéma d’espace de noms personnalisé:
+La `Init` méthode peut ensuite être appelée à partir de l’assembly qui consomme les types du schéma d’espace de noms personnalisé :
 
 ```csharp
 using Xamarin.Forms;
@@ -111,7 +111,7 @@ namespace CustomNamespaceSchemaDemo
 > [!WARNING]
 > Si vous n’incluez pas une telle référence de code, le compilateur XAML ne pourra pas localiser l’assembly contenant les types de schéma d’espace de noms personnalisé.
 
-Pour utiliser le `CircleButton` contrôle, un espace de noms XAML est déclaré, avec la déclaration d’espace de noms qui spécifie l’URL du schéma d’espace de noms personnalisé:
+Pour utiliser le `CircleButton` contrôle, un espace de noms XAML est déclaré, avec la déclaration d’espace de noms qui spécifie l’URL du schéma d’espace de noms personnalisé :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -137,7 +137,7 @@ Pour utiliser le `CircleButton` contrôle, un espace de noms XAML est déclaré,
 
 Pour rechercher les types de schémas d’espace de noms personnalisés, Xamarin. Forms recherche `XmlnsDefinitionAttribute` les instances référencées dans les assemblys. Si l' `xmlns` attribut d’un élément dans un fichier XAML correspond à `XmlNamespace` la valeur de propriété `XmlnsDefinitionAttribute`dans un, Xamarin. Forms tentera `XmlnsDefinitionAttribute.ClrNamespace` d’utiliser la valeur de propriété pour la résolution du type. Si la résolution de type échoue, Xamarin. Forms continue d’essayer la résolution de type en `XmlnsDefinitionAttribute` fonction de toutes les instances correspondantes supplémentaires.
 
-Le résultat est que deux `CircleButton` instances sont affichées:
+Le résultat est que deux `CircleButton` instances sont affichées :
 
 ![Boutons de cercle](custom-namespace-schemas-images/circle-buttons.png "Boutons de cercle")
 

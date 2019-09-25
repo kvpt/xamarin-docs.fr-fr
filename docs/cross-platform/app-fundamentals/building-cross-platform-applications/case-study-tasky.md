@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281212"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249788"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Étude de cas d’application multiplateforme : Tasky
 
@@ -25,7 +25,7 @@ Il est recommandé de créer un plan routier pour ce que vous souhaitez obtenir 
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>Spécifications
+### <a name="requirements"></a>Configuration requise
 
 La première étape de la conception d’une application consiste à identifier les fonctionnalités souhaitées. Il peut s’agir d’objectifs de haut niveau ou de cas d’usage détaillés. Tasky a des exigences fonctionnelles simples :
 
@@ -475,7 +475,7 @@ Les applications qui en résultent ressemblent à ceci sur chaque plateforme :
 
  <a name="iOS" />
 
-#### <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 L’application utilise la conception d’interface utilisateur standard iOS, telle que le bouton « Ajouter » placé dans la barre de navigation et l’utilisation de l’icône **plus (+)** intégrée. Il utilise également le comportement `UINavigationController` par défaut du bouton « précédent » et prend en charge l’opération « balayer-supprimer » dans la table.
 
@@ -483,7 +483,7 @@ L’application utilise la conception d’interface utilisateur standard iOS, te
 
  <a name="Android" />
 
-#### <a name="android"></a>Android
+### <a name="android"></a>Android
 
 L’application Android utilise des contrôles intégrés, notamment la mise en page intégrée pour les lignes qui nécessitent l’affichage d’un « Tick ». Le comportement de retour matériel/système est pris en charge en plus du bouton de retour à l’écran.
 
@@ -491,7 +491,7 @@ L’application Android utilise des contrôles intégrés, notamment la mise en 
 
  <a name="Windows_Phone" />
 
-#### <a name="windows-phone"></a>Windows Phone
+### <a name="windows-phone"></a>Windows Phone
 
 L’application Windows Phone utilise la disposition standard, en remplissant la barre de l’application en bas de l’écran au lieu d’une barre de navigation en haut.
 

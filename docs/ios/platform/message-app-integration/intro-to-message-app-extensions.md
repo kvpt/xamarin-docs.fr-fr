@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769663"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250135"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Notions de base sur l’extension d’application de message dans Xamarin. iOS
 
@@ -37,7 +37,7 @@ Nouveauté d’iOS 10, l’application message intègre désormais son propre Ap
 
 Également nouveau dans iOS 10, Apple a ajouté l’attribution d’application inline qui permet à l’utilisateur de découvrir facilement une application. Par exemple, si un utilisateur envoie du contenu à un autre à partir d’une application que le 2e utilisateur n’a pas installée (comme un autocollant par exemple), le nom de l’application émettrice est listé sous le contenu de l’historique des messages. Si l’utilisateur appuie sur le nom de l’application, le message Store de l’application s’ouvre et l’application est sélectionnée dans le Store.
 
-Les extensions de message apps sont similaires aux applications iOS existantes que le développeur est familiarisé avec la création et qu’elles ont accès à tous les frameworks et fonctionnalités standard d’une application iOS standard. Par exemple :
+Les extensions de message apps sont similaires aux applications iOS existantes que le développeur est familiarisé avec la création et qu’elles ont accès à tous les frameworks et fonctionnalités standard d’une application iOS standard. Par exemple :
 
 - Ils ont accès à l’achat dans l’application.
 - Ils ont accès à Apple Pay.
@@ -114,6 +114,8 @@ Quels sont les avantages de la création d’une expérience d’autocollant per
 5. Permet des achats dans l’application afin que l’utilisateur puisse acheter plus d’autocollants à l’intérieur de l’application.
 
 Pour créer une expérience d’autocollant personnalisée, procédez comme suit :
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

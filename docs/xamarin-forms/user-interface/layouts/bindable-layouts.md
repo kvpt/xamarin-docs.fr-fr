@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
 ms.openlocfilehash: a824c892d21df9264b772bed09a4aef893f3b949
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68647905"
 ---
 # <a name="bindable-layouts-in-xamarinforms"></a>Dispositions pouvant être liées dans Xamarin. Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
-Les dispositions pouvant être liées activent toute classe de disposition qui dérive de la [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classe pour générer son contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un. [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Les dispositions pouvant être liées sont fournies par `BindableLayout` la classe, qui expose les propriétés jointes suivantes:
+Les dispositions pouvant être liées activent toute classe de disposition qui dérive de la [`Layout<T>`](xref:Xamarin.Forms.Layout`1) classe pour générer son contenu en liant à une collection d’éléments, avec l’option permettant de définir l’apparence de chaque élément avec un. [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) Les dispositions pouvant être liées sont fournies par `BindableLayout` la classe, qui expose les propriétés jointes suivantes :
 
 - `ItemsSource`: spécifie la collection `IEnumerable` d’éléments à afficher par la disposition.
 - `ItemTemplate`: spécifie [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) le à appliquer à chaque élément de la collection d’éléments affichés par la disposition.
@@ -38,7 +38,7 @@ Les dispositions pouvant être liées doivent être utilisées uniquement lorsqu
 
 ## <a name="populating-a-bindable-layout-with-data"></a>Remplissage d’une disposition pouvant être liée à l’aide de données
 
-Une disposition pouvant être liée est remplie avec des données en `ItemsSource` affectant à sa propriété une collection `IEnumerable`qui implémente, et en l' [`Layout<T>`](xref:Xamarin.Forms.Layout`1)attachant à une classe dérivée de:
+Une disposition pouvant être liée est remplie avec des données en `ItemsSource` affectant à sa propriété une collection `IEnumerable`qui implémente, et en l' [`Layout<T>`](xref:Xamarin.Forms.Layout`1)attachant à une classe dérivée de :
 
 ```xaml
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
@@ -56,7 +56,7 @@ Quand la `BindableLayout.ItemsSource` propriété jointe est définie sur une di
 
 ## <a name="defining-item-appearance"></a>Définition de l’apparence des éléments
 
-L’apparence de chaque élément dans la disposition pouvant être liée peut être définie en affectant `BindableLayout.ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)à la propriété jointe:
+L’apparence de chaque élément dans la disposition pouvant être liée peut être définie en affectant `BindableLayout.ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)à la propriété jointe :
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding User.TopFollowers}"
@@ -91,7 +91,7 @@ Pour plus d’informations sur les modèles de données, consultez [Modèles de 
 
 ## <a name="choosing-item-appearance-at-runtime"></a>Choix de l’apparence des éléments au moment de l’exécution
 
-L’apparence de chaque élément dans la disposition pouvant être liée peut être choisie au moment de l’exécution, en fonction de la valeur `BindableLayout.ItemTemplateSelector` de l’élément, [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)en affectant à la propriété jointe:
+L’apparence de chaque élément dans la disposition pouvant être liée peut être choisie au moment de l’exécution, en fonction de la valeur `BindableLayout.ItemTemplateSelector` de l’élément, [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)en affectant à la propriété jointe :
 
 ```xaml
 <FlexLayout BindableLayout.ItemsSource="{Binding User.FavoriteTech}"
@@ -108,7 +108,7 @@ BindableLayout.SetItemsSource(flexLayout, viewModel.User.FavoriteTech);
 BindableLayout.SetItemTemplateSelector(flexLayout, dataTemplateSelector);
 ```
 
-Le [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) utilisé dans l’exemple d’application est illustré dans l’exemple suivant:
+Le [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) utilisé dans l’exemple d’application est illustré dans l’exemple suivant :
 
 ```csharp
 public class TechItemTemplateSelector : DataTemplateSelector
@@ -123,7 +123,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-La `TechItemTemplateSelector` classe définit `DefaultTemplate` et `XamarinFormsTemplate` [lespropriétésquisontdéfiniessurdesmodèles`DataTemplate`](xref:Xamarin.Forms.DataTemplate) de données différents. La `OnSelectTemplate` méthode retourne le `XamarinFormsTemplate`, qui affiche un élément en rouge foncé avec un cœur à côté de celui-ci, lorsque l’élément est égal à «Xamarin. Forms». Lorsque l’élément n’est pas égal à «Xamarin. Forms `OnSelectTemplate` », la `DefaultTemplate`méthode retourne le, qui affiche un élément à l’aide [`Label`](xref:Xamarin.Forms.Label)de la couleur par défaut d’un:
+La `TechItemTemplateSelector` classe définit `DefaultTemplate` et `XamarinFormsTemplate` [lespropriétésquisontdéfiniessurdesmodèles`DataTemplate`](xref:Xamarin.Forms.DataTemplate) de données différents. La `OnSelectTemplate` méthode retourne le `XamarinFormsTemplate`, qui affiche un élément en rouge foncé avec un cœur à côté de celui-ci, lorsque l’élément est égal à « Xamarin. Forms ». Lorsque l’élément n’est pas égal à « Xamarin. Forms `OnSelectTemplate` », la `DefaultTemplate`méthode retourne le, qui affiche un élément à l’aide [`Label`](xref:Xamarin.Forms.Label)de la couleur par défaut d’un :
 
 ![Disposition pouvant être liée avec un DataTemplateSelector](bindable-layouts-images/favorite-tech.png "Disposition pouvant être liée avec un sélecteur de modèle de données")
 

@@ -1,16 +1,16 @@
 ---
 title: Utiliser des projets partagés pour partager du code
-description: Les projets partagés vous permettent d’écrire du code commun qui est référencé par un certain nombre de projets d’application différents. Le code est compilé dans le cadre de chaque projet de référence et peut inclure des directives de compilateur pour incorporer les fonctionnalités spécifiques à la plateforme dans la base de code partagée.
+description: Les projets partagés vous permettent d’écrire du code commun qui est référencé par un certain nombre de projets d’application différents. Le code est compilé dans chacun des projets qui le référencent et peut inclure des directives de compilateur permettant d’incorporer des fonctionnalités propres à la plateforme dans la base de code partagée.
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
 ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739056"
 ---
 # <a name="shared-projects-code-sharing"></a>Partage de code des projets partagés
@@ -23,9 +23,9 @@ Ils prennent en charge les directives de compilateur pour vous permettre d’inc
 
 Si vous avez utilisé la liaison de fichiers dans le passé pour partager du code entre des projets, les projets partagés fonctionnent de la même manière, mais avec une prise en charge améliorée de l’IDE.
 
-## <a name="what-is-a-shared-project"></a>Qu’est-ce qu’un projet partagé?
+## <a name="what-is-a-shared-project"></a>Qu’est-ce qu’un projet partagé ?
 
-Contrairement à la plupart des autres types de projets, un projet partagé n’a pas de sortie (sous forme de DLL). au lieu de cela, le code est compilé dans chaque projet qui le référence. Cela est illustré dans le diagramme ci-dessous, de manière conceptuelle, le contenu entier du projet partagé est «copié dans» chaque projet de référencement et compilé comme s’il s’agissait d’une partie d’entre eux.
+Contrairement à la plupart des autres types de projets, un projet partagé n’a pas de sortie (sous forme de DLL). au lieu de cela, le code est compilé dans chaque projet qui le référence. Cela est illustré dans le diagramme ci-dessous, de manière conceptuelle, le contenu entier du projet partagé est « copié dans » chaque projet de référencement et compilé comme s’il s’agissait d’une partie d’entre eux.
 
 ![](shared-projects-images/sharedassetproject.png "Architecture de projet partagé")
 
@@ -43,13 +43,13 @@ Cette section explique comment créer et utiliser un projet partagé à l’aide
 
 ## <a name="creating-a-shared-project"></a>Création d’un projet partagé
 
-Pour créer un nouveau projet partagé, accédez à **fichier > nouvelle solution...** (ou cliquez avec le bouton droit sur une solution existante et choisissez **ajouter > ajouter un nouveau projet...** ):
+Pour créer un nouveau projet partagé, accédez à **fichier > nouvelle solution...** (ou cliquez avec le bouton droit sur une solution existante et choisissez **ajouter > ajouter un nouveau projet...** ) :
 
 [![Nouveau projet partagé](shared-projects-images/xs-newsolution-sml.png "Nouvelle solution")](shared-projects-images/xs-newsolution.png#lightbox)
 
 Dans l’écran suivant, choisissez le nom du projet, puis cliquez sur **créer**.
 
-Un nouveau projet partagé est illustré ci-dessous-Notez qu’il n’y a aucune référence ni aucun nœud de composant; celles-ci ne sont pas prises en charge pour les projets partagés.
+Un nouveau projet partagé est illustré ci-dessous-Notez qu’il n’y a aucune référence ni aucun nœud de composant ; celles-ci ne sont pas prises en charge pour les projets partagés.
 
 ![Projet partagé vide](shared-projects-images/xs-empty.png "Projet partagé vide")
 
@@ -65,7 +65,7 @@ Une fois que le projet partagé est référencé par une autre bibliothèque ou 
 
 Lorsque vous cliquez avec le bouton droit sur un projet partagé et choisissez **options** , il y a moins de paramètres que d’autres types de projets. Étant donné que les projets partagés ne sont pas compilés (seuls), vous ne pouvez pas définir les options de sortie ou de compilateur, les configurations de projet, la signature d’assembly ou les commandes personnalisées. Le code d’un projet partagé hérite effectivement de ces valeurs de ce qui y fait référence.
 
-L’écran d' **options** est illustré ci-dessous: le **nom** du projet et l' **espace de noms par défaut** sont les deux seuls paramètres que vous allez généralement modifier.
+L’écran d' **options** est illustré ci-dessous : le **nom** du projet et l' **espace de noms par défaut** sont les deux seuls paramètres que vous allez généralement modifier.
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Options de projet partagé")
 
@@ -85,7 +85,7 @@ Dans Visual Studio 2017, sélectionnez le modèle de **projet partagé** , puis 
 
 ![Modèle de projet partagé dans Visual Studio 2017](shared-projects-images/vs-newsolution.png)
 
-Vous pouvez également ajouter un nouveau projet partagé à une solution existante en cliquant avec le bouton droit sur le fichier de solution et en choisissant **ajouter > nouveau projet**. Un nouveau projet partagé apparaît comme indiqué ci-dessous (après l’ajout d’un fichier de classe). Notez qu’il n’existe aucune référence ni aucun nœud de composant; celles-ci ne sont pas prises en charge pour les projets partagés.
+Vous pouvez également ajouter un nouveau projet partagé à une solution existante en cliquant avec le bouton droit sur le fichier de solution et en choisissant **ajouter > nouveau projet**. Un nouveau projet partagé apparaît comme indiqué ci-dessous (après l’ajout d’un fichier de classe). Notez qu’il n’existe aucune référence ni aucun nœud de composant ; celles-ci ne sont pas prises en charge pour les projets partagés.
 
 ![](shared-projects-images/vs-empty.png "Projet partagé vide")
 
@@ -101,7 +101,7 @@ Une fois que le projet partagé est référencé par une autre bibliothèque ou 
 
 Lorsque vous sélectionnez un projet partagé, il y a moins de paramètres dans le volet Propriétés que d’autres types de projets. Étant donné que les projets partagés ne sont pas compilés (seuls), vous ne pouvez pas définir les options de sortie ou de compilateur, les configurations de projet, la signature d’assembly ou les commandes personnalisées. Le code d’un projet partagé hérite effectivement de ces valeurs de ce qui y fait référence.
 
-Le volet **Propriétés** est indiqué ci-dessous: l' **espace de noms racine** est le seul paramètre que vous pouvez modifier.
+Le volet **Propriétés** est indiqué ci-dessous : l' **espace de noms racine** est le seul paramètre que vous pouvez modifier.
 
 ![](shared-projects-images/vs-sharedprojectproperties.png "Propriétés du projet partagé")
 
@@ -113,7 +113,7 @@ Le volet **Propriétés** est indiqué ci-dessous: l' **espace de noms racine** 
 
 L' exemple [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) utilise un projet partagé pour contenir le code commun utilisé par les applications iOS, Android et Windows Phone. Les `SQLite.cs` fichiers de `TaskRepository.cs` code source et utilisent les directives de compilateur (par exemple, `#if __ANDROID__`) pour produire différentes sorties pour chacune des applications qui les référencent.
 
-La structure complète de la solution est illustrée ci-dessous (dans Visual Studio pour Mac et Visual Studio, respectivement):
+La structure complète de la solution est illustrée ci-dessous (dans Visual Studio pour Mac et Visual Studio, respectivement) :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -127,7 +127,7 @@ La structure complète de la solution est illustrée ci-dessous (dans Visual Stu
 
 Le projet Windows Phone peut être parcouru à partir d’Visual Studio pour Mac, même si ce type de projet n’est pas pris en charge pour la compilation dans Visual Studio pour Mac.
 
-Les applications en cours d’exécution sont présentées ci-dessous:
+Les applications en cours d’exécution sont présentées ci-dessous :
 
 ![](shared-projects-images/example.png "exemples iOS, Android, Windows Phone")
 

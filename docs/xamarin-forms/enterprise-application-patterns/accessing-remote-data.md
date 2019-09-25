@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9c793f4d5f0cda5bff2dedef5e4e5e5bdfca69e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770801"
 ---
 # <a name="accessing-remote-data"></a>Accès aux données distantes
@@ -53,7 +53,7 @@ La `CatalogService` classe est utilisée pour gérer le processus de récupérat
 
 La figure 10-1 montre l’interaction des classes qui lisent les données de catalogue à partir du microservice `CatalogView`de catalogue pour les afficher par le.
 
-[Récupération de données à partir du microservice de catalogue ![(accessing-remote-data-images/catalogdata.png " ")]] (accessing-remote-data-images/catalogdata-large.png#lightbox "Récupération de données à partir du microservice de catalogue")
+[![](accessing-remote-data-images/catalogdata.png "Récupération de données à partir du microservice de catalogue")](accessing-remote-data-images/catalogdata-large.png#lightbox "Récupération de données à partir du microservice de catalogue")
 
 **Figure 10-1**: Récupération de données à partir du microservice de catalogue
 
@@ -158,7 +158,7 @@ La `BasketService` classe est utilisée pour gérer la récupération des donné
 
 La figure 10-2 montre l’interaction des classes qui envoient les données du `BasketView`panier affichées par le, au microservice du panier.
 
-[Envoi de données au microservice de panier ![(accessing-remote-data-images/basketdata.png " ")]] (accessing-remote-data-images/basketdata-large.png#lightbox "Envoi de données au microservice de panier")
+[![](accessing-remote-data-images/basketdata.png "Envoi de données au microservice de panier")](accessing-remote-data-images/basketdata-large.png#lightbox "Envoi de données au microservice de panier")
 
 **Figure 10-2**: Envoi de données au microservice de panier
 

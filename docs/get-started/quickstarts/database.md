@@ -9,28 +9,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: ff07af00e1e647255ac56318c0685552823f510c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653510"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249677"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
-Dans ce guide de démarrage rapide, vous allez apprendre à:
+Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 - Utilisez le gestionnaire de package NuGet pour ajouter un package NuGet à un projet.
 - Stockez les données localement dans une base de données SQLite.NET.
 
 Le Guide de démarrage rapide explique comment stocker des données dans une base de données SQLite.NET locale. L’application finale est indiquée ci-dessous :
 
-[ ![(database-images/screenshots1-sml.png " ")]Page de notes] (database-images/screenshots1.png#lightbox "Page de notes") (database-images/screenshots2.png#lightbox "Page d'") entrée note page d’entrée de note [ ![(database-images/screenshots2-sml.png " ")]] 
+[![](database-images/screenshots1-sml.png "")Page de commentaires](database-images/screenshots1.png#lightbox "Page de notes")page entrée Note
+[(database-images/screenshots2-sml.png "") ![]](database-images/screenshots2.png#lightbox "Page d’entrée de note")
 
-
-### <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’essayer ce guide de démarrage rapide. Vous pouvez également télécharger l' [exemple de démarrage rapide précédent](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/) et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
@@ -58,7 +58,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
     Ce package sera utilisé pour incorporer les opérations de base de données dans l’application.
 
-4. Dans **Explorateur de solutions**, dans le projet **Notes** , ouvrez **note.cs** dans le dossier **Models** et remplacez le code existant par le code suivant:
+4. Dans **Explorateur de solutions**, dans le projet **Notes** , ouvrez **note.cs** dans le dossier **Models** et remplacez le code existant par le code suivant :
 
     ```csharp
     using System;
@@ -87,7 +87,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
 6. Dans **Explorateur de solutions**, dans le projet **Notes** , ajoutez une nouvelle classe nommée **NoteDatabase** au dossier de **données** .
 
-7. Dans **NoteDatabase.cs**, remplacez le code existant par le code suivant:
+7. Dans **NoteDatabase.cs**, remplacez le code existant par le code suivant :
 
     ```csharp
     using System.Collections.Generic;
@@ -146,7 +146,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-8. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+8. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```csharp
     using System;
@@ -203,7 +203,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-9. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la `OnAppearing` méthode par le code suivant:
+9. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la `OnAppearing` méthode par le code suivant :
 
     ```csharp
     protected override async void OnAppearing()
@@ -221,7 +221,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-10. Dans **Explorateur de solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les `OnSaveButtonClicked` méthodes `OnDeleteButtonClicked` et par le code suivant:
+10. Dans **Explorateur de solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les `OnSaveButtonClicked` méthodes `OnDeleteButtonClicked` et par le code suivant :
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -275,7 +275,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
     Ce package sera utilisé pour incorporer les opérations de base de données dans l’application.
 
-4. Dans le **panneau solutions**, dans le projet **Notes** , ouvrez **note.cs** dans le dossier **Models** et remplacez le code existant par le code suivant:
+4. Dans le **panneau solutions**, dans le projet **Notes** , ouvrez **note.cs** dans le dossier **Models** et remplacez le code existant par le code suivant :
 
     ```csharp
     using System;
@@ -304,7 +304,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
 6. Dans le **panneau solutions**, dans le projet **Notes** , ajoutez une nouvelle classe nommée **NoteDatabase** au dossier de **données** .
 
-7. Dans **NoteDatabase.cs**, remplacez le code existant par le code suivant:
+7. Dans **NoteDatabase.cs**, remplacez le code existant par le code suivant :
 
     ```csharp
     using System.Collections.Generic;
@@ -363,7 +363,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-8. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant:
+8. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **app.Xaml.cs** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```csharp
     using System;
@@ -420,7 +420,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-9. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la `OnAppearing` méthode par le code suivant:
+9. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la `OnAppearing` méthode par le code suivant :
 
     ```csharp
     protected override async void OnAppearing()
@@ -438,7 +438,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-10. Dans la **panneau solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les `OnSaveButtonClicked` méthodes `OnDeleteButtonClicked` et par le code suivant:
+10. Dans la **panneau solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les `OnSaveButtonClicked` méthodes `OnDeleteButtonClicked` et par le code suivant :
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)

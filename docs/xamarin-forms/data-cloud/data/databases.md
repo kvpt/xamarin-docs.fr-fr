@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
 ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739181"
 ---
 # <a name="xamarinforms-local-databases"></a>Bases de données locales Xamarin.Forms
@@ -20,13 +20,13 @@ ms.locfileid: "68739181"
 
 _Xamarin.Forms prend en charge les applications pilotées par base de données à l’aide du moteur de base de données SQLite, ce qui permet de charger et d’enregistrer des objets dans du code partagé. Cet article explique comment les applications Xamarin.Forms peuvent lire et écrire des données dans une base de données SQLite locale à l’aide de SQLite.Net._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Les applications Xamarin.Forms peuvent utiliser le package [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) pour incorporer des opérations de base de données dans du code partagé, en référençant les classes `SQLite` fournies avec le package NuGet. Les opérations de base de données peuvent être définies dans le projet de bibliothèque .NET Standard de la solution Xamarin.Forms.
 
 L’[exemple d’application](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo) qui l’accompagne est une simple application de liste de tâches. Les captures d’écran suivantes montrent comment l’exemple s’affiche sur chaque plateforme :
 
-[![Captures d’écran de l’exemple de base de données Xamarin.Forms](databases-images/todo-list-sml.png "Captures d’écran de la première page de la liste de tâches")](databases-images/todo-list.png#lightbox "Captures d’écran de la première page de la liste de tâches") [![Captures d’écran de l’exemple de base de données Xamarin.Forms](databases-images/todo-list-sml.png "Captures d’écran de la première page de la liste de tâches")](databases-images/todo-list.png#lightbox "Captures d’écran de la première page de la liste de tâches")
+[![Captures d’écran d’exemples de bases de données Xamarin. Forms](databases-images/todo-list-sml.png "Captures d’écran de la première page ToDoList") ](databases-images/todo-list.png#lightbox "Captures d’écran de la première page TodoList") [ ![Captures d’écran de l’exemple de base de données Xamarin. Forms](databases-images/todo-list-sml.png "ToDoList captures d’écran des premières pages") ](databases-images/todo-list.png#lightbox "Captures d’écran de la première page TodoList")
 
 <a name="Using_SQLite_with_PCL" />
 

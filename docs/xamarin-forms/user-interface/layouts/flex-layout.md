@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 187befd88c115133a92aa90a711438e7754518d5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68648803"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Le Xamarin.Forms FlexLayout
@@ -388,7 +388,7 @@ Vous pouvez expérimenter avec cinq restant des propriétés pouvant être liée
 
 Lorsque le programme démarre, cinq `Picker` vues affichent les valeurs par défaut de ces cinq `FlexLayout` propriétés. Le `FlexLayout` vers le bas de l’écran contient trois enfants :
 
-[![La page de l’expérience: Page]d’expérimentation par défaut(flex-layout-images/ExperimentDefault.png "-par défaut")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![La page de l’expérience : Page]d'(flex-layout-images/ExperimentDefault.png "expérimentation par défaut-par défaut")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 Chacun de la `Label` vues a un arrière-plan gris qui affiche l’espace alloué à cette `Label` au sein de la `FlexLayout`. L’arrière-plan de la `FlexLayout` lui-même est bleu Alice. Il occupe la zone entière en bas de la page à l’exception d’une petite marge à gauche et à droite.
 
@@ -407,7 +407,7 @@ Dans XAML, vous pouvez spécifier la valeur de cette propriété en utilisant le
 
 Voici le **expérience** page indiquant (de gauche à droite), le `Row` direction, `Column` direction, et `ColumnReverse` direction :
 
-[![La page de l’expérience: Direction]de la direction de(flex-layout-images/ExperimentDirection.png "la page") d’expérimentation](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![La page de l’expérience : Direction]de la direction de(flex-layout-images/ExperimentDirection.png "la page d’expérimentation")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
 Notez que pour la `Reverse` options, les éléments démarrent au droit ou inférieur.
 
@@ -423,7 +423,7 @@ Le [ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) propriété est de type [ `Fle
 
 De gauche à droite, ces écrans montrent le `NoWrap`, `Wrap` et `Reverse` options pour les enfants de 12 :
 
-[![La page de l’expérience: Encapsuler](flex-layout-images/ExperimentWrap.png "la page") d’expérimentation](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![La page de l’expérience : Encapsuler](flex-layout-images/ExperimentWrap.png "la page d’expérimentation")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 Lorsque le `Wrap` propriété est définie sur `NoWrap` l’axe principal est limitée (comme dans ce programme) et l’axe principal n’est pas large ou assez haut pour tous les enfants, le `FlexLayout` tente de créer les éléments plus petits, comme la capture d’écran d’iOS montre. Vous pouvez contrôler le shrinkness des éléments de la [ `Shrink` ](#shrink) attaché de propriété pouvant être liée.
 
@@ -442,7 +442,7 @@ Le [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) propriét�
 
 Cette propriété spécifie la façon dont les éléments sont espacées sur l’axe principal, qui est l’axe horizontal dans cet exemple :
 
-[![La page de l’expérience: Justifier le]contenu(flex-layout-images/ExperimentJustifyContent.png "de la page d’expérimentation-justifier le contenu")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![La page de l’expérience : Justifier le]contenu(flex-layout-images/ExperimentJustifyContent.png "de la page d’expérimentation-justifier le contenu")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 Dans tous les trois captures d’écran, le `Wrap` propriété est définie sur `Wrap`. Le `Start` par défaut est indiqué dans la capture d’écran précédente Android. La capture d’écran iOS ici montre la `Center` option : tous les éléments sont déplacés vers le centre. Les trois autres options commence par le mot `Space` allouer l’espace supplémentaire ne pas occupée par les éléments. `SpaceBetween` alloue de l’espace de manière égale entre les éléments ; `SpaceAround` puts égal espace autour de chaque élément, tandis que `SpaceEvenly` puts égal espace entre chaque élément et avant le premier élément et après le dernier élément sur la ligne.
 
@@ -459,7 +459,7 @@ Le [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) propriété est de
 
 Il s’agit d’une des deux propriétés (l’autre étant [ `AlignContent` ](#align-content)) qui indique la façon dont les enfants sont alignés sur l’axe transversal. Dans chaque ligne, les enfants sont étirés (comme indiqué dans la capture d’écran précédente) ou alignés sur le début, le centre ou la fin de chaque élément, comme indiqué dans les captures d’écran suivantes trois :
 
-[![La page de l’expérience: Aligner les]éléments(flex-layout-images/ExperimentAlignItems.png "sur la page d’expérience-aligner les éléments")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![La page de l’expérience : Aligner les]éléments(flex-layout-images/ExperimentAlignItems.png "sur la page d’expérience-aligner les éléments")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 Dans la capture d’écran iOS, les parties supérieures de tous les enfants sont alignés. Dans les captures d’écran Android, les éléments sont centrés verticalement en fonction de l’enfant plus haut. Dans la capture d’écran UWP, le bas de tous les éléments sont aligné.
 
@@ -481,11 +481,11 @@ Le [ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent) propriété es
 
 Comme `AlignItems`, le `AlignContent` propriété également aligne enfants sur l’axe transversal, mais affecte des lignes entières ou des colonnes :
 
-[![La page de l’expérience: Aligner le]contenu(flex-layout-images/ExperimentAlignContent.png "sur la page d’expérience-aligner le contenu")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![La page de l’expérience : Aligner le]contenu(flex-layout-images/ExperimentAlignContent.png "sur la page d’expérience-aligner le contenu")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 Dans la capture d’écran iOS, les deux lignes figurent en haut ; dans la capture d’écran Android, ils sont dans le centre ; et dans la capture d’écran UWP ils en bas. Les lignes peuvent également être espacés de différentes manières :
 
-[![La page de l’expérience:  Aligner le contenu]2(flex-layout-images/ExperimentAlignContent2.png "sur la page expérience-aligner le contenu 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![La page de l’expérience :  Aligner le contenu]2(flex-layout-images/ExperimentAlignContent2.png "sur la page expérience-aligner le contenu 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 Le `AlignContent` n’a aucun effet lorsqu’il n'existe qu’une seule ligne ou colonne.
 
@@ -575,7 +575,7 @@ Le **base expérimenter** page de la **[FlexLayoutDemos](https://docs.microsoft.
 
 [![La base de l’expérience Page](flex-layout-images/BasisExperiment.png "la base de l’expérience de Page")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-La capture d’écran d’iOS à gauche montre les deux `Label` éléments en cours donnés hauteurs en unités indépendantes du périphérique. L’écran Android montre les hauteurs sont une fraction de la hauteur totale de l’occasion du `FlexLayout`. Si le `Basis` est défini à 100%, l’enfant est la hauteur `FlexLayout`du et est renvoyé à la colonne suivante et occupe toute la hauteur de cette colonne, comme le montre la capture d’écran UWP: Il semble que les cinq enfants soient disposés sur une ligne, mais ils sont en fait organisés en cinq colonnes.
+La capture d’écran d’iOS à gauche montre les deux `Label` éléments en cours donnés hauteurs en unités indépendantes du périphérique. L’écran Android montre les hauteurs sont une fraction de la hauteur totale de l’occasion du `FlexLayout`. Si le `Basis` est défini à 100%, l’enfant est la hauteur `FlexLayout`du et est renvoyé à la colonne suivante et occupe toute la hauteur de cette colonne, comme le montre la capture d’écran UWP : Il semble que les cinq enfants soient disposés sur une ligne, mais ils sont en fait organisés en cinq colonnes.
 
 ### <a name="the-grow-property"></a>La propriété de la croissance
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
 ms.openlocfilehash: f78ca9d2cf7a9e57b81c5d923c64b36a7982c4b0
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68739144"
 ---
 # <a name="xamarinforms-checkbox"></a>Xamarin. Forms, case à cocher
@@ -35,21 +35,21 @@ L’exemple suivant montre comment instancier un `CheckBox` dans XAML :
 <CheckBox />
 ```
 
-Ce code XAML produit l’apparence indiquée dans les captures d’écran suivantes:
+Ce code XAML produit l’apparence indiquée dans les captures d’écran suivantes :
 
 ![Capture d’écran d’une case à cocher vide sur iOS et Android](checkbox-images/checkbox-empty.png "Case à cocher vide")
 
-Par défaut, `CheckBox` est vide. Peut `CheckBox` être vérifié par la manipulation de l’utilisateur, ou en `IsChecked` affectant `true`à la propriété la valeur:
+Par défaut, `CheckBox` est vide. Peut `CheckBox` être vérifié par la manipulation de l’utilisateur, ou en `IsChecked` affectant `true`à la propriété la valeur :
 
 ```xaml
 <CheckBox IsChecked="true" />
 ```
 
-Ce code XAML produit l’apparence indiquée dans les captures d’écran suivantes:
+Ce code XAML produit l’apparence indiquée dans les captures d’écran suivantes :
 
 ![Capture d’écran d’une case à cocher activée sur iOS et Android](checkbox-images/checkbox-checked.png "Case à cocher activée")
 
-Vous pouvez également créer `CheckBox` un dans le code:
+Vous pouvez également créer `CheckBox` un dans le code :
 
 ```csharp
 CheckBox checkBox = new CheckBox { IsChecked = true };
@@ -57,7 +57,7 @@ CheckBox checkBox = new CheckBox { IsChecked = true };
 
 ## <a name="respond-to-a-checkbox-changing-state"></a>Répondre à un état de modification de case à cocher
 
-Lorsque la `IsChecked` propriété change, soit par manipulation de l’utilisateur, soit quand une `IsChecked` application définit la `CheckedChanged` propriété, l’événement se déclenche. Un gestionnaire d’événements pour cet événement peut être enregistré pour répondre à la modification:
+Lorsque la `IsChecked` propriété change, soit par manipulation de l’utilisateur, soit quand une `IsChecked` application définit la `CheckedChanged` propriété, l’événement se déclenche. Un gestionnaire d’événements pour cet événement peut être enregistré pour répondre à la modification :
 
 ```xaml
 <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" />
@@ -74,7 +74,7 @@ void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
 
 Le `sender` argument est le `CheckBox` responsable de cet événement. Vous pouvez l’utiliser pour accéder à la `CheckBox` objet, ou faire la distinction entre plusieurs `CheckBox` objets partagent la même `CheckedChanged` événement.
 
-Un gestionnaire d’événements pour l’événement peut `CheckedChanged` également être enregistré dans le code:
+Un gestionnaire d’événements pour l’événement peut `CheckedChanged` également être enregistré dans le code :
 
 ```csharp
 CheckBox checkBox = new CheckBox { ... };
@@ -86,7 +86,7 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="data-bind-a-checkbox"></a>Case à cocher lier aux données
 
-Le `CheckedChanged` gestionnaire d’événements peut être éliminé à l’aide de la liaison de données et des `CheckBox` déclencheurs pour répondre à un en cours de vérification ou de vidage:
+Le `CheckedChanged` gestionnaire d’événements peut être éliminé à l’aide de la liaison de données et des `CheckBox` déclencheurs pour répondre à un en cours de vérification ou de vidage :
 
 ```xaml
 <CheckBox x:Name="checkBox" />
@@ -106,9 +106,9 @@ Le `CheckedChanged` gestionnaire d’événements peut être éliminé à l’ai
 
 Dans cet exemple, le [`Label`](xref:Xamarin.Forms.Label) utilise une expression de liaison dans un déclencheur de données `IsChecked` pour surveiller la `CheckBox`propriété de. Lorsque cette propriété devient `true`, les `FontAttributes` propriétés `FontSize` et de la `Label` modification. Lorsque la `IsChecked` propriété retourne à `false`, `FontAttributes` lespropriétés`FontSize` et de sontrétabliesàleurétatinitial.`Label`
 
-Dans les captures d’écran suivantes, la capture d' [`Label`](xref:Xamarin.Forms.Label) écran iOS affiche la `CheckBox` mise en forme lorsque le est vide, tandis que la capture `CheckBox` d’écran Android affiche la `Label` mise en forme lorsque le est activé:
+Dans les captures d’écran suivantes, la capture d' [`Label`](xref:Xamarin.Forms.Label) écran iOS affiche la `CheckBox` mise en forme lorsque le est vide, tandis que la capture `CheckBox` d’écran Android affiche la `Label` mise en forme lorsque le est activé :
 
-[ ![Capture d’écran d’une case à cocher liée aux données, sur iOS et sur les](checkbox-images/checkbox-databinding.png "données") Android] (checkbox-images/checkbox-databinding-large.png#lightbox "Case à cocher lié aux données")
+[![Capture d’écran d’une case à cocher liée aux données, sur iOS et Android](checkbox-images/checkbox-databinding.png "Case à cocher lié aux données")](checkbox-images/checkbox-databinding-large.png#lightbox "Case à cocher lié aux données")
 
 Pour plus d’informations sur les déclencheurs, consultez [déclencheurs Xamarin. Forms](~/xamarin-forms/app-fundamentals/triggers.md).
 
@@ -124,7 +124,7 @@ En plus des `CheckBox` propriétés qui héritent de la [`View`](xref:Xamarin.Fo
 <CheckBox Color="Red" />
 ```
 
-Les captures d’écran suivantes montrent une série `CheckBox` d’objets cochés, où la `Color` propriété de chaque objet a [`Color`](xref:Xamarin.Forms.Color)la valeur différent:
+Les captures d’écran suivantes montrent une série `CheckBox` d’objets cochés, où la `Color` propriété de chaque objet a [`Color`](xref:Xamarin.Forms.Color)la valeur différent :
 
 ![Capture d’écran des cases à cocher en couleur, sur iOS et Android](checkbox-images/checkbox-colors.png "Case à cocher en couleur")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27bf22403c9411d300e67bfdaef4aa4dfe74f6e0
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769788"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250180"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>Implémentation de SiriKit dans Xamarin. iOS
 
@@ -66,6 +66,8 @@ En déplaçant ce code commun dans un projet partagé, PCL ou une bibliothèque 
 Dans le cas de l’exemple d’application MonkeyChat, les modèles de données et le code de traitement, tels que l’accès au réseau et à la base de données, sont déplacés dans une bibliothèque native.
 
 Effectuez ce qui suit :
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -296,7 +298,7 @@ La première fois que cette méthode est appelée, une alerte s’affiche pour i
 
 ### <a name="localization-and-siri"></a>Localisation et Siri
 
-Sur un appareil iOS, l’utilisateur est en mesure de sélectionner une langue pour Siri différente de la valeur système par défaut. Lorsque vous utilisez des données localisées, l’application doit utiliser la `SiriLanguageCode` méthode de la `INPreferences` classe pour récupérer le code de langue à partir de Siri. Par exemple :
+Sur un appareil iOS, l’utilisateur est en mesure de sélectionner une langue pour Siri différente de la valeur système par défaut. Lorsque vous utilisez des données localisées, l’application doit utiliser la `SiriLanguageCode` méthode de la `INPreferences` classe pour récupérer le code de langue à partir de Siri. Par exemple :
 
 ```csharp
 var language = INPreferences.SiriLanguageCode();
@@ -320,7 +322,7 @@ Le vocabulaire spécifique à l’utilisateur doit appartenir à l’une des cat
 
 Lorsque vous sélectionnez la terminologie à inscrire en tant que vocabulaire personnalisé, choisissez uniquement les termes qui peuvent être mal compris par une personne qui ne connaît pas l’application. N’inscrivez jamais des termes courants tels que « mon entraînement » ou « mon album ». Par exemple, l’application MonkeyChat enregistre les surnoms associés à chaque contact dans le carnet d’adresses de l’utilisateur.
 
-L’application fournit le vocabulaire spécifique à l’utilisateur en `SetVocabularyStrings` appelant la méthode `INVocabulary` de la classe et en `NSOrderedSet` passant une collection à partir de l’application principale. L’application doit toujours appeler la `RemoveAllVocabularyStrings` méthode en premier, pour supprimer les termes existants avant d’en ajouter d’autres. Par exemple :
+L’application fournit le vocabulaire spécifique à l’utilisateur en `SetVocabularyStrings` appelant la méthode `INVocabulary` de la classe et en `NSOrderedSet` passant une collection à partir de l’application principale. L’application doit toujours appeler la `RemoveAllVocabularyStrings` méthode en premier, pour supprimer les termes existants avant d’en ajouter d’autres. Par exemple :
 
 ```csharp
 using System;
@@ -684,7 +686,7 @@ Pour obtenir la liste complète des domaines d’intention disponibles, consulte
 
 ### <a name="configuring-the-main-class"></a>Configuration de la classe principale
 
-Ensuite, le développeur doit configurer la classe principale qui agit comme point d’entrée principal pour l’extension d’intention dans Siri. Il doit s’agir d’une sous `INExtension` -classe de qui est conforme `IINIntentHandler` au délégué. Par exemple :
+Ensuite, le développeur doit configurer la classe principale qui agit comme point d’entrée principal pour l’extension d’intention dans Siri. Il doit s’agir d’une sous `INExtension` -classe de qui est conforme `IINIntentHandler` au délégué. Par exemple :
 
 ```csharp
 using System;
@@ -928,7 +930,7 @@ Pour obtenir la liste complète des domaines d’intention disponibles, consulte
 
 ### <a name="configuring-the-main-class"></a>Configuration de la classe principale
 
-Configurez la classe principale qui agit comme point d’entrée principal pour l’extension d’interface utilisateur intentionnelle dans Siri. Il doit s’agir d’une sous `UIViewController` -classe de qui est conforme `IINUIHostedViewController` à l’interface. Par exemple :
+Configurez la classe principale qui agit comme point d’entrée principal pour l’extension d’interface utilisateur intentionnelle dans Siri. Il doit s’agir d’une sous `UIViewController` -classe de qui est conforme `IINUIHostedViewController` à l’interface. Par exemple :
 
 ```csharp
 using System;
@@ -1046,7 +1048,7 @@ public bool DisplaysMessage {
 }
 ```
 
-### <a name="considerations"></a>Considérations
+### <a name="considerations"></a>Éléments à prendre en considération
 
 Apple suggère que le développeur prend en compte les points suivants lors de la conception et de l’implémentation des extensions de l’interface utilisateur intentionnelle :
 

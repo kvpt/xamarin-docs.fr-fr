@@ -8,10 +8,10 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
 ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887857"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données au moment du design avec le générateur d’aperçu XAML
@@ -20,7 +20,7 @@ _Certaines dispositions sont difficiles à visualiser sans données. Utilisez ce
 
 ## <a name="design-time-data-basics"></a>Notions de base des données au moment du design
 
-Les données au moment de la conception sont des données factices que vous définissez pour faciliter la visualisation de vos contrôles dans le générateur d’aperçu XAML. Pour commencer, ajoutez les lignes de code suivantes à l’en-tête de votre page XAML:
+Les données au moment de la conception sont des données factices que vous définissez pour faciliter la visualisation de vos contrôles dans le générateur d’aperçu XAML. Pour commencer, ajoutez les lignes de code suivantes à l’en-tête de votre page XAML :
 
 ```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -38,9 +38,9 @@ Par exemple, vous pouvez ajouter du texte à une étiquette qui est généraleme
 
 [![Données au moment de la conception avec du texte dans une étiquette](xaml-previewer-images/designtimedata-label-sm.png "Données au moment de la conception avec texte d’une étiquette")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-Dans cet exemple, sans `d:Text`, le générateur d’aperçu XAML n’affichera rien pour l’étiquette. Au lieu de cela, il affiche «Name!» où l’étiquette aura des données réelles au moment de l’exécution.
+Dans cet exemple, sans `d:Text`, le générateur d’aperçu XAML n’affichera rien pour l’étiquette. Au lieu de cela, il affiche « Name ! » où l’étiquette aura des données réelles au moment de l’exécution.
 
-Vous pouvez utiliser `d:` avec n’importe quel attribut pour un contrôle Xamarin. Forms, comme les couleurs, les tailles de police et l’espacement. Vous pouvez même l’ajouter au contrôle lui-même:
+Vous pouvez utiliser `d:` avec n’importe quel attribut pour un contrôle Xamarin. Forms, comme les couleurs, les tailles de police et l’espacement. Vous pouvez même l’ajouter au contrôle lui-même :
 
 ```xaml
 <d:Button Text="Design Time Button" />
@@ -52,7 +52,7 @@ Dans cet exemple, le bouton s’affiche uniquement au moment du Design. Utilisez
 
 ## <a name="preview-images-at-design-time"></a>Aperçu des images au moment du design
 
-Vous pouvez définir une source au moment de la conception pour les images qui sont liées à la page ou chargées dans dynamiquement. Dans votre projet Android, ajoutez l’image que vous souhaitez afficher dans le générateur d’aperçu XAML aux **ressources >** dossier dessinable. Dans votre projet iOS, ajoutez l’image au dossier Resources. Vous pouvez ensuite afficher cette image dans le générateur d’aperçu XAML au moment de la conception:
+Vous pouvez définir une source au moment de la conception pour les images qui sont liées à la page ou chargées dans dynamiquement. Dans votre projet Android, ajoutez l’image que vous souhaitez afficher dans le générateur d’aperçu XAML aux **ressources > dossier dessinable** . Dans votre projet iOS, ajoutez l’image au dossier **Resources** . Vous pouvez ensuite afficher cette image dans le générateur d’aperçu XAML au moment de la conception :
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />

@@ -7,19 +7,19 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
 ms.openlocfilehash: 6f3427641ba4ace3b640fcc970fd33f55087a9c8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68644109"
 ---
 # <a name="foreground-services"></a>Services de premier plan
 
-Un service de premier plan est un type spécial d’un service lié ou d’un service démarré. Parfois, les services effectuent des tâches que les utilisateurs doivent connaître activement, ces services sont appelés _services de premier plan_. Un exemple de service de premier plan est une application qui fournit à l’utilisateur des instructions pour la conduite ou la marche. Même si l’application est en arrière-plan, il est toujours important que le service dispose de suffisamment de ressources pour fonctionner correctement et que l’utilisateur dispose d’un moyen rapide et pratique d’accéder à l’application. Pour une application Android, cela signifie qu’un service de premier plan doit recevoir une priorité plus élevée qu’un service «normal» et un service `Notification` de premier plan doit fournir un que Android affichera tant que le service est en cours d’exécution.
+Un service de premier plan est un type spécial d’un service lié ou d’un service démarré. Parfois, les services effectuent des tâches que les utilisateurs doivent connaître activement, ces services sont appelés _services de premier plan_. Un exemple de service de premier plan est une application qui fournit à l’utilisateur des instructions pour la conduite ou la marche. Même si l’application est en arrière-plan, il est toujours important que le service dispose de suffisamment de ressources pour fonctionner correctement et que l’utilisateur dispose d’un moyen rapide et pratique d’accéder à l’application. Pour une application Android, cela signifie qu’un service de premier plan doit recevoir une priorité plus élevée qu’un service « normal » et un service `Notification` de premier plan doit fournir un que Android affichera tant que le service est en cours d’exécution.
 
 Pour démarrer un service de premier plan, l’application doit distribuer un objectif qui indique à Android de démarrer le service. Ensuite, le service doit s’inscrire lui-même en tant que service de premier plan avec Android. Les applications qui s’exécutent sur Android 8,0 (ou version ultérieure) `Context.StartForegroundService` doivent utiliser la méthode pour démarrer le service, tandis que les applications qui s’exécutent sur des appareils avec une version antérieure d’Android doivent utiliser`Context.StartService`
 
-Cette C# méthode d’extension est un exemple de démarrage d’un service de premier plan. Sur Android 8,0 et versions ultérieures, il `StartForegroundService` utilisera la méthode; `StartService` sinon, l’ancienne méthode sera utilisée.
+Cette C# méthode d’extension est un exemple de démarrage d’un service de premier plan. Sur Android 8,0 et versions ultérieures, il `StartForegroundService` utilisera la méthode ; `StartService` sinon, l’ancienne méthode sera utilisée.
 
 ```csharp
 public static void StartForegroundServiceCompat<T>(this Context context, Bundle args = null) where T : Service
@@ -45,14 +45,14 @@ public static void StartForegroundServiceCompat<T>(this Context context, Bundle 
 
 Une fois qu’un service de premier plan a démarré, il doit s’inscrire auprès d' [`StartForeground`](xref:Android.App.Service.StartForeground*)Android en appelant le. Si le service est démarré avec la `Service.StartForegroundService` méthode mais ne s’inscrit pas, Android arrête le service et marque l’application comme non réactive.
 
-`StartForeground`prend deux paramètres, tous deux obligatoires:
+`StartForeground`prend deux paramètres, tous deux obligatoires :
 
 - Valeur entière qui est unique dans l’application pour identifier le service.
 - `Notification` Objet qu’Android affiche dans la barre d’état aussi longtemps que le service est en cours d’exécution.
 
 Android affiche la notification dans la barre d’État pour tant que le service est en cours d’exécution. La notification, au minimum, fournira à l’utilisateur un signal visuel indiquant que le service est en cours d’exécution. Dans l’idéal, la notification doit fournir à l’utilisateur un raccourci vers l’application ou éventuellement des boutons d’action pour contrôler l’application. Par exemple, un lecteur &ndash; de musique, la notification qui s’affiche peut comporter des boutons pour suspendre/écouter de la musique, pour revenir à la chanson précédente ou pour passer à la chanson suivante. 
 
-Cet extrait de code est un exemple d’inscription d’un service en tant que service de premier plan:   
+Cet extrait de code est un exemple d’inscription d’un service en tant que service de premier plan :   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -78,11 +78,11 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-La notification précédente affiche une notification de barre d’état semblable à la suivante:
+La notification précédente affiche une notification de barre d’état semblable à la suivante :
 
 ![Image représentant la notification dans la barre d’État](foreground-services-images/foreground-services-01.png "Image représentant la notification dans la barre d’État")
 
-Cette capture d’écran montre la notification étendue dans le tiroir de notification avec deux actions qui permettent à l’utilisateur de contrôler le service:
+Cette capture d’écran montre la notification étendue dans le tiroir de notification avec deux actions qui permettent à l’utilisateur de contrôler le service :
 
 ![Image représentant la notification développée](foreground-services-images/foreground-services-02.png "Image représentant la notification développée.")
 
@@ -92,7 +92,7 @@ Vous trouverez plus d’informations sur les notifications dans la section [noti
 
 Un service peut se délister lui-même en tant que service de `StopForeground`premier plan en appelant la méthode. `StopForeground`n’arrête pas le service, mais supprime l’icône de notification et signale à Android que ce service peut être arrêté si nécessaire.
 
-La notification de la barre d’État qui s’affiche peut également être `true` supprimée en passant à la méthode: 
+La notification de la barre d’État qui s’affiche peut également être `true` supprimée en passant à la méthode : 
 
 ```csharp
 StopForeground(true);

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 656b74bce10d30ddd463486c5103d65c6ba5eb97
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755966"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250021"
 ---
 # <a name="publishing-to-google-play"></a>Publication sur Google Play
 
@@ -108,6 +108,8 @@ Utilisée dans la section de présentation de Google Play. Cette image peut êtr
 Il s’agit d’une URL vers une vidéo YouTube de présentation de l’application. Proposez une vidéo de 30 secondes à 2 minutes présentant les fonctionnalités les plus intéressantes de votre application.
 
 ### <a name="publishing-to-google-play"></a>Publication sur Google Play
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -215,7 +217,7 @@ Cliquez sur **Autoriser** pour autoriser l’application :
 
 [![Boîte de dialogue Autoriser l’application](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png#lightbox)
 
-#### <a name="publish"></a>Publish
+#### <a name="publish"></a>Publier
 
 Après avoir cliqué sur **Autoriser**, le navigateur indique _Code de vérification reçu. Fermeture en cours..._  et l’application est ajoutée à la liste des comptes Google Play dans Visual Studio. Dans la boîte de dialogue **Comptes Google Play**, cliquez sur **Continuer** :
 
@@ -298,7 +300,7 @@ Notez qu’un APK doit déjà avoir été soumis à Google Play Store pour que *
 
 > _Google Play exige que vous chargiez manuellement votre premier fichier APK pour cette application. À cette fin, vous pouvez utiliser un APK spécifique._
 
-ou Gestionnaire de configuration
+ou
 
 > _Aucune application n’a été trouvée pour le nom de package donné. [404]_
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770987"
 ---
 # <a name="menus-in-xamarinmac"></a>Menus dans Xamarin. Mac
@@ -80,7 +80,7 @@ Si vous sélectionnez le **premier répondeur** dans la **hiérarchie d’interf
 
 [![Affichage de toutes les actions attachées](menu-images/defaultbar04.png "Affichage de toutes les actions attachées")](menu-images/defaultbar04-large.png#lightbox) 
 
-Pourquoi est-ce important ? Dans la section suivante, vous verrez comment ces actions définies automatiquement fonctionnent avec d’autres éléments de l’interface utilisateur de cacao pour activer et désactiver automatiquement des éléments de menu, ainsi que pour fournir des fonctionnalités intégrées pour les éléments.
+Pourquoi est-ce important? Dans la section suivante, vous verrez comment ces actions définies automatiquement fonctionnent avec d’autres éléments de l’interface utilisateur de cacao pour activer et désactiver automatiquement des éléments de menu, ainsi que pour fournir des fonctionnalités intégrées pour les éléments.
 
 Plus tard, nous allons utiliser ces actions intégrées pour activer et désactiver des éléments à partir du code et fournir nos propres fonctionnalités lorsqu’elles sont sélectionnées.
 
@@ -226,7 +226,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 Même si votre application n' `NSDocuments`utilise pas, vous utilisez toujours le `NSDocumentController` pour gérer le menu **ouvert récent** en envoyant un `NSUrl` avec `SharedDocumentController`l’emplacement du fichier à la `NoteNewRecentDocumentURL` méthode de.
 
-Ensuite, vous devez remplacer la `OpenFile` méthode du délégué d’application pour ouvrir n’importe quel fichier que l’utilisateur sélectionne dans le menu **ouvrir récemment** . Exemple :
+Ensuite, vous devez remplacer la `OpenFile` méthode du délégué d’application pour ouvrir n’importe quel fichier que l’utilisateur sélectionne dans le menu **ouvrir récemment** . Par exemple :
 
 ```csharp
 public override bool OpenFile (NSApplication sender, string filename)
@@ -425,7 +425,7 @@ NSDocumentController.SharedDocumentController.NoteNewRecentDocumentURL(url);
 
 À l’instar des premières actions de **répondeur** intégrées qui sont pré-câblées aux éléments de menu standard, vous pouvez créer de nouvelles actions personnalisées et les relier aux éléments de menu dans Interface Builder.
 
-Tout d’abord, définissez une action personnalisée sur l’un des contrôleurs de fenêtre de votre application. Exemple :
+Tout d’abord, définissez une action personnalisée sur l’un des contrôleurs de fenêtre de votre application. Par exemple :
 
 ```csharp
 [Action("defineKeyword:")]

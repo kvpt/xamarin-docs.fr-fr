@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70756758"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>Styliser une application Xamarin. Forms multiplateforme
@@ -26,8 +26,8 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 Le Guide de démarrage rapide explique comment styliser une application Xamarin. Forms multiplateforme à l’aide de styles XAML. L’application finale est indiquée ci-dessous :
 
-[ ![(styling-images/screenshots1-sml.png " ")]Page de notes] (styling-images/screenshots1.png#lightbox "Page de notes") (styling-images/screenshots2.png#lightbox "Page d'") entrée note page d’entrée de note [ ![(styling-images/screenshots2-sml.png " ")]] 
-
+[![](styling-images/screenshots1-sml.png "")Page de commentaires](styling-images/screenshots1.png#lightbox "Page de notes")page entrée Note
+[(styling-images/screenshots2-sml.png "") ![]](styling-images/screenshots2.png#lightbox "Page d’entrée de note")
 
 ### <a name="prerequisites"></a>Prérequis
 
@@ -318,7 +318,7 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce guide de démarrage rapide, vous avez appris à :
+Dans ce guide de démarrage rapide, vous avez appris à:
 
 - Styliser une application Xamarin. Forms à l’aide de styles XAML.
 

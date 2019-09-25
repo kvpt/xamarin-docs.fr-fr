@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: bea058a1f275d6f02fe4cbdf70f8e47a11d1cf8e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7aa2cae4c8ca1ef9bb0412a4a62dc619af97b57f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764120"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249773"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>Composants et fonctionnalités RecyclerView
 
@@ -52,7 +52,7 @@ Si vous n’étendez `ItemDecoration` pas `ItemAnimator`et `RecyclerView` , util
 
 <a name="recycling" />
 
-### <a name="how-view-recycling-works"></a>Fonctionnement de l’affichage du recyclage
+## <a name="how-view-recycling-works"></a>Fonctionnement de l’affichage du recyclage
 
 `RecyclerView`n’alloue pas d’affichage d’élément pour chaque élément de votre source de données. Au lieu de cela, il alloue uniquement le nombre de vues d’éléments qui s’ajustent à l’écran et réutilise ces dispositions d’éléments à mesure que l’utilisateur fait défiler. Lorsque la vue défile tout d’abord, elle passe par le processus de recyclage illustré dans la figure suivante :
 
@@ -73,7 +73,7 @@ Si vous n’étendez `ItemDecoration` pas `ItemAnimator`et `RecyclerView` , util
 
 En plus de la réutilisation de l' `RecyclerView` affichage des éléments, utilise également une autre optimisation de l’efficacité : afficher les détenteurs. Un *détenteur de vue* est une classe simple qui met en cache les références de vue. Chaque fois que l’adaptateur déflate un fichier de disposition d’élément, il crée également un détenteur de vue correspondant. Le détenteur de la `FindViewById` vue utilise pour obtenir des références aux vues à l’intérieur du fichier de disposition des éléments gonflé. Ces références sont utilisées pour charger les nouvelles données dans les vues chaque fois que la disposition est recyclée pour afficher les nouvelles données.
 
-### <a name="the-layout-manager"></a>Gestionnaire de disposition
+## <a name="the-layout-manager"></a>Gestionnaire de disposition
 
 Le gestionnaire de disposition est chargé de positionner les éléments `RecyclerView` dans l’affichage ; il détermine le type de présentation (une liste ou une grille), l’orientation (si les éléments sont affichés verticalement ou horizontalement) et les éléments de direction à afficher. (dans l’ordre normal ou dans l’ordre inverse). Le gestionnaire de disposition est également responsable du calcul de la taille et de la position de chaque élément dans l’affichage **RecycleView** .
 
@@ -92,7 +92,7 @@ Pour spécifier le gestionnaire de disposition, instanciez le gestionnaire de pr
 
 Pour plus d’informations sur le gestionnaire de disposition, consultez la référence de la [classe RecyclerView. LayoutManager](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
 
-### <a name="the-view-holder"></a>Le détenteur de la vue
+## <a name="the-view-holder"></a>Le détenteur de la vue
 
 Le détenteur de la vue est une classe que vous définissez pour la mise en cache des références de vue. L’adaptateur utilise ces références de vue pour lier chaque vue à son contenu. Chaque élément du `RecyclerView` a une instance de conteneur de vue associée qui met en cache les références de vue pour cet élément. Pour créer un détenteur de vue, procédez comme suit pour définir une classe qui contiendra le jeu de vues exact par élément :
 
@@ -103,7 +103,7 @@ Le détenteur de la vue est une classe que vous définissez pour la mise en cach
 Un exemple détaillé d' `ViewHolder` implémentation est présenté dans [un exemple de base RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
 Pour plus d’informations `RecyclerView.ViewHolder`sur, consultez la référence de la [classe RecyclerView. ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
-### <a name="the-adapter"></a>L’adaptateur
+## <a name="the-adapter"></a>L’adaptateur
 
 La majeure partie du « gros-levage » du `RecyclerView` code d’intégration a lieu dans l’adaptateur. `RecyclerView`requiert que vous fournissiez un adaptateur dérivé de `RecyclerView.Adapter` pour accéder à votre source de données et remplir chaque élément avec le contenu de la source de données.
 Étant donné que la source de données est spécifique à l’application, vous devez implémenter les fonctionnalités de l’adaptateur qui comprennent comment accéder à vos données. L’adaptateur extrait des informations de la source de données et les charge dans chaque élément de `RecyclerView` la collection.
@@ -123,9 +123,9 @@ Lorsque vous implémentez un adaptateur, vous devez substituer les `RecyclerView
 
 - **`ItemCount`** &ndash; Retourne le nombre d’éléments dans la source de données.
 
-Le gestionnaire de disposition appelle ces méthodes pendant qu’il positionne des éléments `RecyclerView`dans le. 
+Le gestionnaire de disposition appelle ces méthodes pendant qu’il positionne des éléments `RecyclerView`dans le.
 
-### <a name="notifying-recyclerview-of-data-changes"></a>Notification de la RecyclerView des modifications de données
+## <a name="notifying-recyclerview-of-data-changes"></a>Notification de la RecyclerView des modifications de données
 
 `RecyclerView`ne met pas automatiquement à jour son affichage lorsque le contenu de sa source de données change ; l’adaptateur doit avertir `RecyclerView` en cas de modification dans le jeu de données. Le jeu de données peut changer de nombreuses façons ; par exemple, le contenu d’un élément peut changer ou la structure globale des données peut être modifiée.
 `RecyclerView.Adapter`fournit un certain nombre de méthodes que vous pouvez appeler pour `RecyclerView` répondre aux modifications de données de la manière la plus efficace :

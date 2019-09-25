@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770002"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Liaison de données et codage de clé-valeur dans Xamarin. Mac
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 Tout d’abord `[Register("PersonModel")]` , l’attribut inscrit la classe et l’expose à Objective-C. Ensuite, la classe doit hériter de `NSObject` (ou d’une sous-classe qui hérite de `NSObject`), cela ajoute plusieurs méthodes de base permettant à la classe d’être conforme KVC. Ensuite, l' `[Export("Name")]` attribut expose la `Name` propriété et définit la valeur de clé qui sera utilisée ultérieurement pour accéder à la propriété via les techniques KVC et KVO.
 
-Enfin, pour être en mesure de modifier la valeur de la propriété, l’accesseur doit encapsuler les modifications apportées à `WillChangeValue` sa `DidChangeValue` valeur dans et les appels de méthode (en `Export` spécifiant la même clé que l’attribut).  Exemple :
+Enfin, pour être en mesure de modifier la valeur de la propriété, l’accesseur doit encapsuler les modifications apportées à `WillChangeValue` sa `DidChangeValue` valeur dans et les appels de méthode (en `Export` spécifiant la même clé que l’attribut).  Par exemple :
 
 ```csharp
 set {
@@ -159,7 +159,7 @@ Modifie la valeur de la `Name` propriété en. `Jane Doe`
 
 ### <a name="observing-value-changes"></a>Observation des modifications de valeur
 
-En observant la valeur Key-value (KVO), vous pouvez attacher un observateur à une clé spécifique d’une classe conforme à KVC et recevoir une notification chaque fois que la valeur de cette clé est modifiée (à l’aide de techniques KVC ou C# d’un accès direct à la propriété donnée dans le code). Exemple :
+En observant la valeur Key-value (KVO), vous pouvez attacher un observateur à une clé spécifique d’une classe conforme à KVC et recevoir une notification chaque fois que la valeur de cette clé est modifiée (à l’aide de techniques KVC ou C# d’un accès direct à la propriété donnée dans le code). Par exemple :
 
 ```csharp
 // Watch for the name value changing

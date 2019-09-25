@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761451"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249987"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>Utilisation de Xamarin. Android Designer
 
 _Cet article est une procédure pas à pas de Xamarin. Android Designer. Il montre comment créer une interface utilisateur pour une petite application d’Explorateur de couleurs ; Cette interface utilisateur est entièrement créée dans le concepteur._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Les interfaces utilisateur Android peuvent être créées de façon déclarative à l’aide de fichiers XML ou par programme en écrivant du code. Xamarin. Android Designer permet aux développeurs de créer et de modifier visuellement des dispositions déclaratives, sans devoir modifier manuellement les fichiers XML. Le concepteur fournit également des commentaires en temps réel qui permettent au développeur d’évaluer les modifications de l’interface utilisateur sans avoir à redéployer l’application sur un appareil ou un émulateur. Ces fonctionnalités de concepteur peuvent accélérer considérablement le développement de l’interface utilisateur Android.
 Cet article explique comment utiliser Xamarin. Android Designer pour créer visuellement une interface utilisateur.
@@ -31,6 +31,8 @@ Cet article explique comment utiliser Xamarin. Android Designer pour créer visu
 ## <a name="walkthrough"></a>Procédure pas à pas
 
 L’objectif de cette procédure pas à pas est d’utiliser la Android Designer pour créer une interface utilisateur pour un exemple d’application de navigateur couleur. L’application de l’Explorateur de couleurs présente une liste de couleurs, leurs noms et leurs valeurs RVB. Vous allez apprendre à ajouter des widgets au **aire de conception** , ainsi qu’à la disposition visuelle de ces widgets. Après cela, vous apprendrez à modifier les widgets de manière interactive sur la **aire de conception** ou à l’aide du volet **Propriétés** du concepteur. Enfin, vous verrez comment la conception se présente quand l’application s’exécute sur un appareil ou un émulateur.
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

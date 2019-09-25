@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2019
 ms.openlocfilehash: 3e0f508a9c980c02681f1be581846f9f2f25e2d0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69529280"
 ---
 # <a name="theming-a-xamarinforms-application"></a>Thèmes d’une application Xamarin. Forms
@@ -20,23 +20,23 @@ ms.locfileid: "69529280"
 
 Les applications Xamarin. Forms peuvent répondre de manière dynamique aux modifications de style au `DynamicResource` moment de l’exécution à l’aide de l’extension de balisage. Cette extension de balisage est similaire `StaticResource` à l’extension de balisage, dans le sens où les deux utilisent une clé [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)de dictionnaire pour extraire une valeur d’un. Toutefois, si l' `StaticResource` extension de balisage effectue une recherche dans un `DynamicResource` dictionnaire unique, l’extension de balisage maintient un lien vers la clé du dictionnaire. Par conséquent, si la valeur associée à la clé est remplacée, la modification est appliquée à [`VisualElement`](xref:Xamarin.Forms.VisualElement). Cela permet d’implémenter les thèmes d’exécution dans les applications Xamarin. Forms.
 
-Le processus d’implémentation de la mise en œuvre du runtime dans une application Xamarin. Forms se présente comme suit:
+Le processus d’implémentation de la mise en œuvre du runtime dans une application Xamarin. Forms se présente comme suit :
 
 1. Définissez les ressources pour chaque thème dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary).
 1. Consommez les ressources de thème dans l' `DynamicResource` application, à l’aide de l’extension de balisage.
 1. Définissez un thème par défaut dans le fichier **app. Xaml** de l’application.
 1. Ajoutez du code pour charger un thème au moment de l’exécution.
 
-Les captures d’écran suivantes illustrent les pages à thème, avec l’application iOS utilisant un thème clair et l’application Android à l’aide d’un thème sombre:
+Les captures d’écran suivantes illustrent les pages à thème, avec l’application iOS utilisant un thème clair et l’application Android à l’aide d’un thème sombre :
 
-[![Capture d’écran de la page principale d’une application à thème, sur iOS et Android] (theming-images/main-page-both-themes.png "Page principale de l’application à thème") ] (theming-images/main-page-both-themes-large.png#lightbox "Page principale de l’application à thème") Capture d' [ ![écran de la page de détails d’une application à thème, sur iOS et Android](theming-images/detail-page-both-themes.png "page de détails de l’application")]à l'(theming-images/detail-page-both-themes-large.png#lightbox "écran") 
+[![Capture d’écran de la page principale d’une application à thème, sur iOS et Android] (theming-images/main-page-both-themes.png "Page principale de l’application à thème") ](theming-images/main-page-both-themes-large.png#lightbox "Page principale de l’application à thème") Capture d' [ ![écran de la page de détails d’une application à thème, sur iOS et]une(theming-images/detail-page-both-themes.png "page de détails Android de l’application à thème") ](theming-images/detail-page-both-themes-large.png#lightbox "Page de détails de l’application à thème") 
 
 
 ## <a name="define-themes"></a>Définir des thèmes
 
 Un thème est défini comme une collection d’objets de ressource stockés dans [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)un.
 
-L’exemple suivant montre le `LightTheme` à partir de l’exemple d’application:
+L’exemple suivant montre le `LightTheme` à partir de l’exemple d’application :
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -53,7 +53,7 @@ L’exemple suivant montre le `LightTheme` à partir de l’exemple d’applicat
 </ResourceDictionary>
 ```
 
-L’exemple suivant montre le `DarkTheme` à partir de l’exemple d’application:
+L’exemple suivant montre le `DarkTheme` à partir de l’exemple d’application :
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,13 +89,13 @@ Une application requiert un thème par défaut, afin que les contrôles aient de
 </Application>
 ```
 
-Pour plus d’informations sur la fusion des dictionnaires de ressources, consultez Dictionnaires de [ressources fusionnés](~/xamarin-forms/xaml/resource-dictionaries.md#merged-resource-dictionaries).
+Pour plus d’informations sur la fusion des dictionnaires de ressources, consultez [dictionnaires de ressources fusionnés](~/xamarin-forms/xaml/resource-dictionaries.md#merged-resource-dictionaries).
 
 ## <a name="consume-theme-resources"></a>Consommer des ressources de thème
 
 Quand une application souhaite consommer une ressource stockée dans un [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) qui représente un thème, elle doit le faire avec l' `DynamicResource` extension de balisage. Cela garantit que si un autre thème est sélectionné lors de l’exécution, les valeurs du nouveau thème seront appliquées.
 
-L’exemple suivant montre trois styles de l’exemple d’application qui peuvent être appliqués [`Label`](xref:Xamarin.Forms.Label) aux objets:
+L’exemple suivant montre trois styles de l’exemple d’application qui peuvent être appliqués [`Label`](xref:Xamarin.Forms.Label) aux objets :
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,7 +133,7 @@ L’exemple suivant montre trois styles de l’exemple d’application qui peuve
 
 Ces styles sont définis dans le dictionnaire de ressources de niveau application, afin qu’ils puissent être utilisés par plusieurs pages. Chaque style consomme des ressources de thème `DynamicResource` avec l’extension de balisage.
 
-Ces styles sont ensuite consommés par les pages:
+Ces styles sont ensuite consommés par les pages :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,14 +180,14 @@ Pour plus d’informations sur les styles, consultez application d’un [style a
 
 ## <a name="load-a-theme-at-runtime"></a>Charger un thème au moment de l’exécution
 
-Quand un thème est sélectionné lors de l’exécution, l’application doit:
+Quand un thème est sélectionné lors de l’exécution, l’application doit :
 
 1. Supprimer le thème actuel de l’application. Pour ce faire, vous devez [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) effacer la propriété du niveau [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)de l’application.
 2. Charge le thème sélectionné. Pour ce faire, vous devez ajouter une instance du thème sélectionné à `MergedDictionaries` la propriété du niveau `ResourceDictionary`de l’application.
 
 Tous [`VisualElement`](xref:Xamarin.Forms.VisualElement) les objets qui définissent `DynamicResource` des propriétés avec l’extension de balisage appliquent ensuite les nouvelles valeurs de thème. Cela est dû au `DynamicResource` fait que l’extension de balisage maintient un lien vers les clés de dictionnaire. Par conséquent, lorsque les valeurs associées aux clés sont remplacées, les modifications sont appliquées `VisualElement` aux objets.
 
-Dans l’exemple d’application, un thème est sélectionné à l’aide d’une page [`Picker`](xref:Xamarin.Forms.Picker)modale qui contient un. Le code suivant montre la `OnPickerSelectionChanged` méthode, qui est exécutée lorsque le thème sélectionné change:
+Dans l’exemple d’application, un thème est sélectionné à l’aide d’une page [`Picker`](xref:Xamarin.Forms.Picker)modale qui contient un. Le code suivant montre la `OnPickerSelectionChanged` méthode, qui est exécutée lorsque le thème sélectionné change :
 
 ```csharp
 void OnPickerSelectionChanged(object sender, EventArgs e)

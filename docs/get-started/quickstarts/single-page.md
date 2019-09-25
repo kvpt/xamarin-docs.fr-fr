@@ -10,17 +10,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68655006"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une application Xamarin. Forms à page unique
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
-Dans ce guide de démarrage rapide, vous allez apprendre à:
+Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 - Créer une application Xamarin. Forms multiplateforme.
 - Définissez l’interface utilisateur d’une page à l’aide du langage XAML (eXtensible Application Markup Language).
@@ -28,7 +28,7 @@ Dans ce guide de démarrage rapide, vous allez apprendre à:
 
 Le Guide de démarrage rapide vous guide dans la création d’une application Xamarin. Forms multiplateforme, qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil. L’application finale est indiquée ci-dessous :
 
-[![](single-page-images/screenshots-sml.png "Application Notes")](single-page-images/screenshots.png#lightbox "Application Notes")
+[![](single-page-images/screenshots-sml.png "Application notes")](single-page-images/screenshots.png#lightbox "Application notes")
 
 ::: zone pivot="windows"
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 ## <a name="get-started-with-visual-studio-2019"></a>Prise en main de Visual Studio 2019
 
-1. Lancez Visual Studio 2019, puis dans la fenêtre Démarrer, cliquez sur **créer un nouveau projet** pour créer un nouveau projet:
+1. Lancez Visual Studio 2019, puis dans la fenêtre Démarrer, cliquez sur **créer un nouveau projet** pour créer un nouveau projet :
 
     ![](single-page-images/vs/new-solution-2019.png "Nouveau projet")
 
@@ -177,7 +177,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
     ![](single-page-images/vs/ios-start.png "Barre d’outils iOS Visual Studio")
 
-    [Notes dans le simulateur iOS ![(single-page-images/vs/notes-ios.png " ")]] (single-page-images/vs/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
+    [![](single-page-images/vs/notes-ios.png "Notes dans le simulateur iOS")](single-page-images/vs/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -196,7 +196,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 ## <a name="get-started-with-visual-studio-2017"></a>Prise en main de Visual Studio 2017
 
-1. Lancez Visual Studio 2017, puis dans la page de démarrage, cliquez sur **créer un nouveau projet...** pour créer un nouveau projet:
+1. Lancez Visual Studio 2017, puis dans la page de démarrage, cliquez sur **créer un nouveau projet...** pour créer un nouveau projet :
 
     ![](single-page-images/vs/new-solution.png "Nouveau projet")
 
@@ -327,7 +327,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
     ![](single-page-images/vs/ios-start.png "Barre d’outils iOS Visual Studio")
 
-    [Notes dans le simulateur iOS ![(single-page-images/vs/notes-ios.png " ")]] (single-page-images/vs/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
+    [![](single-page-images/vs/notes-ios.png "Notes dans le simulateur iOS")](single-page-images/vs/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -346,7 +346,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 ## <a name="get-started-with-visual-studio-for-mac"></a>Bien démarrer avec Visual Studio pour Mac
 
-1. Lancez Visual Studio pour Mac, puis dans la fenêtre de démarrage, cliquez sur **nouveau** pour créer un nouveau projet:
+1. Lancez Visual Studio pour Mac, puis dans la fenêtre de démarrage, cliquez sur **nouveau** pour créer un nouveau projet :
 
     ![](single-page-images/vsmac/new-project.png "Nouvelle solution")
 
@@ -468,7 +468,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
       ![](single-page-images/vsmac/start.png "Barre d’outils Visual Studio pour Mac")
 
-      [Notes dans le simulateur iOS ![(single-page-images/vsmac/notes-ios.png " ")]] (single-page-images/vsmac/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
+      [![](single-page-images/vsmac/notes-ios.png "Notes dans le simulateur iOS")](single-page-images/vsmac/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 

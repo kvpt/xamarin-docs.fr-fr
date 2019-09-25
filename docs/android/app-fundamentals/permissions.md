@@ -6,16 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 550883de571951bb05f0634632fd6b7688e1ab8c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d3513dc086998306ae79855a2c4d8c1a3060ac47
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755282"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249710"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Autorisations dans Xamarin. Android
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Les applications Android s’exécutent dans leur propre bac à sable (sandbox) et, pour des raisons de sécurité, n’ont pas accès à certaines ressources système ou matériel sur l’appareil. L’utilisateur doit explicitement accorder une autorisation à l’application avant de pouvoir utiliser ces ressources. Par exemple, une application ne peut pas accéder au GPS sur un appareil sans autorisation explicite de l’utilisateur. Android lève une `Java.Lang.SecurityException` si une application tente d’accéder à une ressource protégée sans autorisation.
 
@@ -72,6 +72,8 @@ Les autorisations sont ajoutées à **fichier AndroidManifest. xml** avec l' `us
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

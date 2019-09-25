@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2019
 ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69888542"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Données CollectionView Xamarin. Forms
@@ -20,7 +20,7 @@ ms.locfileid: "69888542"
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes qui définissent les données à afficher et leur apparence:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes qui définissent les données à afficher et leur apparence :
 
 - [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource), de type `IEnumerable`, spécifie la collection d’éléments à afficher et a une valeur par défaut de `null`.
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate), de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), spécifie le modèle à appliquer à chaque élément de la collection d’éléments à afficher.
@@ -34,7 +34,7 @@ Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.
 
 ## <a name="populate-a-collectionview-with-data"></a>Remplir un CollectionView avec des données
 
-Un [`CollectionView`](xref:Xamarin.Forms.CollectionView) est rempli avec des données en affectant à sa [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) propriété `IEnumerable`une collection qui implémente. Les éléments peuvent être ajoutés en XAML en initialisant la `ItemsSource` propriété à partir d’un tableau de chaînes:
+Un [`CollectionView`](xref:Xamarin.Forms.CollectionView) est rempli avec des données en affectant à sa [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) propriété `IEnumerable`une collection qui implémente. Les éléments peuvent être ajoutés en XAML en initialisant la `ItemsSource` propriété à partir d’un tableau de chaînes :
 
 ```xaml
 <CollectionView>
@@ -74,15 +74,15 @@ collectionView.ItemsSource = new string[]
 > [!IMPORTANT]
 > Si est [`CollectionView`](xref:Xamarin.Forms.CollectionView) requis pour l’actualisation à mesure que des éléments sont ajoutés, supprimés ou modifiés dans la collection sous-jacente, la collection `IEnumerable` sous-jacente doit être une collection qui envoie `ObservableCollection`des notifications de modification de propriété, telles que.
 
-Par défaut, [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les éléments dans une liste verticale, comme illustré dans les captures d’écran suivantes:
+Par défaut, [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les éléments dans une liste verticale, comme illustré dans les captures d’écran suivantes :
 
-[ ![Capture d’écran de CollectionView contenant des éléments de texte, sur les éléments de texte iOS et Android](populate-data-images/text.png "dans un CollectionView") ] (populate-data-images/text-large.png#lightbox "Éléments de texte dans un CollectionView")
+[![Capture d’écran de CollectionView contenant des éléments de texte, sur iOS et Android](populate-data-images/text.png "Éléments de texte dans un CollectionView")](populate-data-images/text-large.png#lightbox "Éléments de texte dans un CollectionView")
 
 Pour plus d’informations sur la façon [`CollectionView`](xref:Xamarin.Forms.CollectionView) de modifier la disposition, consultez [spécifier une disposition](layout.md). Pour plus d’informations sur la façon de définir l’apparence de chaque `CollectionView`élément dans, consultez [définir l’apparence des éléments](#define-item-appearance).
 
 ### <a name="data-binding"></a>Liaison de données
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)peut être rempli de données à l’aide d’une liaison de [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) données pour lier `IEnumerable` sa propriété à une collection. En XAML, cela est accompli avec l' `Binding` extension de balisage:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)peut être rempli de données à l’aide d’une liaison de [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) données pour lier `IEnumerable` sa propriété à une collection. En XAML, cela est accompli avec l' `Binding` extension de balisage :
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}" />
@@ -104,7 +104,7 @@ Pour plus d’informations sur la liaison de données, consultez la page [Liaiso
 
 ## <a name="define-item-appearance"></a>Définir l’apparence des éléments
 
-L’apparence de chaque élément dans [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être définie en affectant à [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)la propriété la valeur:
+L’apparence de chaque élément dans [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être définie en affectant à [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)la propriété la valeur :
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -172,7 +172,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-Les éléments spécifiés dans [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) définissent l’apparence de chaque élément de la liste. Dans l’exemple, la disposition dans `DataTemplate` le est gérée [`Grid`](xref:Xamarin.Forms.Grid)par un. Le `Grid` contient un [`Image`](xref:Xamarin.Forms.Image) objet, et deux [`Label`](xref:Xamarin.Forms.Label) objets, qui sont tous liés aux propriétés de `Monkey` la classe:
+Les éléments spécifiés dans [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) définissent l’apparence de chaque élément de la liste. Dans l’exemple, la disposition dans `DataTemplate` le est gérée [`Grid`](xref:Xamarin.Forms.Grid)par un. Le `Grid` contient un [`Image`](xref:Xamarin.Forms.Image) objet, et deux [`Label`](xref:Xamarin.Forms.Label) objets, qui sont tous liés aux propriétés de `Monkey` la classe :
 
 ```csharp
 public class Monkey
@@ -184,15 +184,15 @@ public class Monkey
 }
 ```
 
-Les captures d’écran suivantes montrent le résultat de la création de modèles pour chaque élément de la liste:
+Les captures d’écran suivantes montrent le résultat de la création de modèles pour chaque élément de la liste :
 
-[ ![Capture d’écran de CollectionView où chaque élément est basé sur un modèle, sur des éléments de modèle iOS et Android](populate-data-images/datatemplate.png "dans un CollectionView") ] (populate-data-images/datatemplate-large.png#lightbox "Éléments basés sur un modèle dans un CollectionView")
+[![Capture d’écran de CollectionView où chaque élément est basé sur un modèle, sur iOS et Android](populate-data-images/datatemplate.png "Éléments basés sur un modèle dans un CollectionView")](populate-data-images/datatemplate-large.png#lightbox "Éléments basés sur un modèle dans un CollectionView")
 
 Pour plus d’informations sur les modèles de données, consultez [Modèles de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
 ## <a name="choose-item-appearance-at-runtime"></a>Choisir l’apparence des éléments au moment de l’exécution
 
-L’apparence de chaque élément dans [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être choisie au moment de l’exécution, en fonction de la valeur de l’élément, en affectant à la [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) propriété un [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) objet:
+L’apparence de chaque élément dans [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être choisie au moment de l’exécution, en fonction de la valeur de l’élément, en affectant à la [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) propriété un [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) objet :
 
 ```xaml
 <ContentPage ...
@@ -241,9 +241,9 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-La `MonkeyDataTemplateSelector` classe définit `AmericanMonkey` et `OtherMonkey` [lespropriétésquisontdéfiniessurdesmodèles`DataTemplate`](xref:Xamarin.Forms.DataTemplate) de données différents. La `OnSelectTemplate` substitution retourne le `AmericanMonkey` modèle, qui affiche le nom et l’emplacement du singe en bleu vert, lorsque le nom du singe contient «America». Lorsque le nom du singe ne contient pas «America» `OnSelectTemplate` , le remplacement retourne `OtherMonkey` le modèle, qui affiche le nom du singe et l’emplacement en argent:
+La `MonkeyDataTemplateSelector` classe définit `AmericanMonkey` et `OtherMonkey` [lespropriétésquisontdéfiniessurdesmodèles`DataTemplate`](xref:Xamarin.Forms.DataTemplate) de données différents. La `OnSelectTemplate` substitution retourne le `AmericanMonkey` modèle, qui affiche le nom et l’emplacement du singe en bleu vert, lorsque le nom du singe contient « America ». Lorsque le nom du singe ne contient pas « America » `OnSelectTemplate` , le remplacement retourne `OtherMonkey` le modèle, qui affiche le nom du singe et l’emplacement en argent :
 
-[ ![Capture d’écran de la sélection du modèle d’élément d’exécution CollectionView, sur iOS et Android](populate-data-images/datatemplateselector.png "modèle d’élément de Runtime dans un CollectionView") ] (populate-data-images/datatemplateselector-large.png#lightbox "Sélection du modèle d’élément d’exécution dans un CollectionView")
+[![Capture d’écran de la sélection du modèle d’élément d’exécution CollectionView, sur iOS et Android](populate-data-images/datatemplateselector.png "Sélection du modèle d’élément d’exécution dans un CollectionView")](populate-data-images/datatemplateselector-large.png#lightbox "Sélection du modèle d’élément d’exécution dans un CollectionView")
 
 Pour plus d’informations sur les sélecteurs de modèle de données, consultez [Create a Xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
@@ -254,7 +254,7 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)prend en charge le chargement incrémentiel des données au fur et à mesure que les utilisateurs parcourent les éléments. Cela permet des scénarios tels que le chargement asynchrone d’une page de données à partir d’un service Web, lorsque l’utilisateur fait défiler. En outre, le point auquel des données supplémentaires sont chargées est configurable afin que les utilisateurs ne voient pas d’espace vide ou ne soient plus défilant.
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes pour contrôler le chargement incrémentiel des données:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)définit les propriétés suivantes pour contrôler le chargement incrémentiel des données :
 
 - `RemainingItemsThreshold`, de type `int`, le seuil d’éléments qui ne sont pas encore visibles dans la liste `RemainingItemsThresholdReached` à laquelle l’événement est déclenché.
 - `RemainingItemsThresholdReachedCommand`, de type `ICommand`, qui est exécuté `RemainingItemsThreshold` lorsque est atteint.
@@ -267,7 +267,7 @@ La valeur par défaut de `RemainingItemsThreshold` la propriété est-1, ce qui 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)valide la `RemainingItemsThreshold` propriété afin que sa valeur soit toujours supérieure ou égale à-1.
 
-L’exemple de code XAML suivant [`CollectionView`](xref:Xamarin.Forms.CollectionView) montre un qui charge des données de façon incrémentielle:
+L’exemple de code XAML suivant [`CollectionView`](xref:Xamarin.Forms.CollectionView) montre un qui charge des données de façon incrémentielle :
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -288,7 +288,7 @@ collectionView.RemainingItemsThresholdReached += OnCollectionViewRemainingItemsT
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 ```
 
-Dans cet exemple de code, `RemainingItemsThresholdReached` l’événement se déclenche lorsque 5 éléments n’ont pas encore fait l’objet d’un défilement, et `OnCollectionViewRemainingItemsThresholdReached` en réponse exécute le gestionnaire d’événements:
+Dans cet exemple de code, `RemainingItemsThresholdReached` l’événement se déclenche lorsque 5 éléments n’ont pas encore fait l’objet d’un défilement, et `OnCollectionViewRemainingItemsThresholdReached` en réponse exécute le gestionnaire d’événements :
 
 ```csharp
 void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)

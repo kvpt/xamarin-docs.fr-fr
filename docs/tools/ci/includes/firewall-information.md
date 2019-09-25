@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: d46968f9c53314abe561e7f4871cfbf6e07b7002
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "61047607"
 ---
 ## <a name="firewall-configuration"></a>Configuration du pare-feu
 
-Dans l’ordre pour les tests à être envoyées à Xamarin Test Cloud, l’ordinateur envoyant les tests doit être en mesure de communiquer avec les serveurs de Test Cloud. Pare-feu doivent être configurés pour autoriser le trafic réseau vers et depuis les serveurs situés dans **testcloud.xamarin.com** sur les ports 80 et 443. Ce point de terminaison est géré par le système DNS et l’adresse IP est susceptible de changer. 
+Pour que les tests soient soumis à Xamarin Test Cloud, l’ordinateur qui envoie les tests doit être en mesure de communiquer avec les serveurs Test Cloud. Les pare-feu doivent être configurés pour autoriser le trafic réseau vers et depuis les serveurs situés dans **testcloud.xamarin.com** sur les ports 80 et 443. Ce point de terminaison est géré par DNS et l’adresse IP est sujette à modification. 
 
-Dans certaines situations, un test (ou un appareil exécutant le test) doit communiquer avec des serveurs web protégés par un pare-feu. Dans ce scénario, le pare-feu doit être configuré pour autoriser le trafic provenant des adresses IP suivantes :
+Dans certains cas, un test (ou un appareil exécutant le test) doit communiquer avec les serveurs Web protégés par un pare-feu. Dans ce scénario, le pare-feu doit être configuré pour autoriser le trafic à partir des adresses IP suivantes :
 
 * **195.249.159.238**
 * **195.249.159.239**

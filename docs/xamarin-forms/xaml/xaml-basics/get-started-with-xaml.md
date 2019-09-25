@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 32f809c5b21e56497328ce00bf49a7337ac0270a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772798"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250041"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
 
@@ -25,6 +25,8 @@ Le fichier code-behind prend en charge de code pour le balisage. Ensemble, ces d
 ## <a name="creating-the-solution"></a>Création de la solution
 
 Pour commencer à modifier votre premier fichier XAML, utilisez Visual Studio ou Visual Studio pour Mac pour créer une solution Xamarin.Forms. (Sélectionnez l’onglet ci-dessous correspondant à votre environnement.)
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

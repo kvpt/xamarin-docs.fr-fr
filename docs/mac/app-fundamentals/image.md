@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
 ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770322"
 ---
 # <a name="images-in-xamarinmac"></a>Images dans Xamarin. Mac
@@ -243,7 +243,7 @@ MyIcon.Image = ImageTintedWithColor (MyIcon.Image, NSColor.Red);
 
 ## <a name="using-images-with-table-views"></a>Utilisation d’images avec des vues de table
 
-Pour inclure une image en tant que partie de la cellule `NSTableView`dans un, vous devez modifier la façon dont les données sont retournées par `NSTableViewDelegate's` la méthode de `GetViewForItem` la `NSTableCellView` vue table pour utiliser `NSTextField`un au lieu du type standard. Exemple :
+Pour inclure une image en tant que partie de la cellule `NSTableView`dans un, vous devez modifier la façon dont les données sont retournées par `NSTableViewDelegate's` la méthode de `GetViewForItem` la `NSTableCellView` vue table pour utiliser `NSTextField`un au lieu du type standard. Par exemple :
 
 ```csharp
 public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tableColumn, nint row)
@@ -341,7 +341,7 @@ Pour plus d’informations sur l’utilisation des vues de table, consultez notr
 
 ## <a name="using-images-with-outline-views"></a>Utilisation d’images avec des vues en mode plan
 
-Pour inclure une image en tant que partie de la cellule `NSOutlineView`dans un, vous devez modifier la façon dont les données sont retournées par `NSTableViewDelegate's` la méthode du `GetView` mode `NSTableCellView` plan pour utiliser un `NSTextField`au lieu du type standard. Exemple :
+Pour inclure une image en tant que partie de la cellule `NSOutlineView`dans un, vous devez modifier la façon dont les données sont retournées par `NSTableViewDelegate's` la méthode du `GetView` mode `NSTableCellView` plan pour utiliser un `NSTextField`au lieu du type standard. Par exemple :
 
 ```csharp
 public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableColumn, NSObject item) {

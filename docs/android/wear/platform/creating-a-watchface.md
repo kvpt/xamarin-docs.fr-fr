@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2018
 ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70758513"
 ---
 # <a name="creating-a-watch-face"></a>Création d’un cadran de montre
 
 _Ce guide explique comment implémenter un service de visage de montre personnalisé pour Android usure 1,0. Des instructions pas à pas sont fournies pour créer un service de facette numérique supprimé, suivi de davantage de code pour créer un visage de type analogique._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Dans cette procédure pas à pas, un service de visage Watch de base est créé pour illustrer les bases de la création d’un visage Android personnalisé 1,0 Watch.
 Le service de visage de la montre initiale affiche un simple espion numérique qui affiche l’heure actuelle en heures et minutes :

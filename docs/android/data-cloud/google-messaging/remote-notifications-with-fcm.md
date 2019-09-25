@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ece503ee305fc1319e766ee5ad52ad86cee122bc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754677"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249939"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Notifications distantes avec Firebase Cloud Messaging
 
@@ -51,6 +51,8 @@ Une fois la nouvelle application créée, l’étape suivante consiste à défin
 ### <a name="set-the-package-name"></a>Définir le nom du package
 
 Dans [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md), vous avez spécifié un nom de package pour l’application prenant en charge FCM. Ce nom de package sert également d' [*ID d’application*](./firebase-cloud-messaging.md#fcm-in-action-app-id) associé à la [clé API](firebase-cloud-messaging.md#fcm-in-action-api-key). Configurez l’application pour qu’elle utilise ce nom de package :
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -762,7 +764,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-Pour annuler complètement l’inscription de l’appareil dans FCM, supprimez l’ID d’instance en appelant la méthode [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) sur la classe [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) . Par exemple :
+Pour annuler complètement l’inscription de l’appareil dans FCM, supprimez l’ID d’instance en appelant la méthode [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) sur la classe [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) . Par exemple :
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();

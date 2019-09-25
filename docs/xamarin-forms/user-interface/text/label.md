@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
 ms.openlocfilehash: 19cc24c3937921f4f4d95584e1cd656c37b4155f
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "71105967"
 ---
 # <a name="xamarinforms-label"></a>Étiquette de Xamarin.Forms
@@ -38,7 +38,7 @@ L’exemple XAML suivant montre comment définir le `Label.TextDecorations` prop
 <Label Text="This is underlined text with strikethrough." TextDecorations="Underline, Strikethrough" />
 ```
 
-Le code C# équivalent est :
+Le code c# équivalent est :
 
 ```csharp
 var underlineLabel = new Label { Text = "This is underlined text.", TextDecorations = TextDecorations.Underline };
@@ -72,7 +72,7 @@ L’exemple XAML suivant définit la couleur du texte d’un `Label`:
 </ContentPage>
 ```
 
-Le code C# équivalent est :
+Le code c# équivalent est :
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -128,7 +128,7 @@ L’exemple XAML suivant montre comment définir le `MaxLines` propriété sur u
        MaxLines="2" />
 ```
 
-Le code C# équivalent est :
+Le code c# équivalent est :
 
 ```csharp
 var label =
@@ -193,7 +193,7 @@ L’exemple XAML suivant montre un `FormattedText` propriété se compose de tro
 </ContentPage>
 ```
 
-Le code C# équivalent est :
+Le code c# équivalent est :
 
 ```csharp
 public class LabelPageCode : ContentPage
@@ -243,7 +243,7 @@ L’exemple XAML suivant montre comment définir le [ `LineHeight` ](xref:Xamari
        LineHeight="1.8" />
 ```
 
-Le code C# équivalent est :
+Le code c# équivalent est :
 
 ```csharp
 var label =
@@ -272,7 +272,7 @@ L’exemple XAML suivant montre comment définir le [ `LineHeight` ](xref:Xamari
 </Label>
 ```
 
-Le code C# équivalent est :
+Le code c# équivalent est :
 
 ```csharp
 var formattedString = new FormattedString();
