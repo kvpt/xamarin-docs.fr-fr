@@ -244,7 +244,7 @@
       items:
         - name: Vue d'ensemble
           href: platform/index.md
-        - name: iOS 13 préversion
+        - name: iOS 13
           items:
             - name: "Présentation d’iOS\_13"
               href: platform/ios13/index.md
@@ -254,6 +254,8 @@
               href: platform/ios13/dark-mode.md
             - name: Connexion avec Apple
               href: platform/ios13/sign-in.md
+            - name: Plusieurs fenêtres pour iPad
+              href: platform/ios13/multi-window-ipad.md
             - name: Résolution des problèmes
               href: platform/ios13/troubleshooting/index.md
         - name: iOS 12

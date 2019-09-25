@@ -9,8 +9,6 @@
         - name: Configuration requise
           displayName: System requirements
           href: get-started/requirements.md
-        - name: "Qu’est-ce que Xamarin\_?"
-          href: get-started/introduction-to-mobile-development.md
         - name: Cycle de vie du développement de logiciel mobile
           href: get-started/introduction-to-mobile-sdlc.md
         - name: Procédure pas à pas pour créer une application multiplateforme
