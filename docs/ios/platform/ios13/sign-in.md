@@ -7,14 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 5c5191a6a7490ec0301bdea7b7f5aa2217b80c96
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: d8c458ad30d7e281427dad0e29092c55fede7347
+ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206366"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319526"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Se connecter avec Apple dans Xamarin. iOS
+
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
 
 La connexion avec Apple est un nouveau service qui assure la protection des identités des utilisateurs de services d’authentification tiers. À compter d’iOS 13, Apple exige que toute nouvelle application utilisant des services d’authentification tiers fournisse également la connexion avec Apple. Les applications existantes mises à jour n’ont pas besoin d’ajouter une connexion avec Apple jusqu’au 2020 avril.
 
@@ -204,10 +206,6 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 #endregion
 ```
-
-## <a name="summary"></a>Récapitulatif
-
-Cet article a introduit la connexion avec Apple pour iOS.
 
 ## <a name="related-links"></a>Liens connexes
 
