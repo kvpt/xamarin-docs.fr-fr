@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
+ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888969"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674569"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Navigation dans Xamarin.Forms Shell
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell inclut une expérience de navigation basée sur URI qui utilise des itinéraires pour accéder à n’importe quelle page dans l’application, sans avoir à suivre une hiérarchie de navigation définie. De plus, l’utilisateur peut revenir en arrière sans avoir à visiter toutes les pages de la pile de navigation.
 
@@ -211,7 +211,7 @@ La classe `Tab` définit une propriété `Stack` de type `IReadOnlyList<Page>` q
 
 La classe `Shell` définit un événement `Navigating` déclenché quand la navigation est sur le point d’être effectuée, en raison de la navigation par programmation ou d’une intervention de l’utilisateur. L’objet `ShellNavigatingEventArgs` qui accompagne l’événement `Navigating` fournit les propriétés suivantes :
 
-| Property | Type | Description |
+| Propriété | Type | Description |
 |---|---|---|
 | `Current` | `ShellNavigationState` | URI de la page actuelle. |
 | `Source` | `ShellNavigationSource` | Le type de navigation qui s’est produit. |
@@ -226,7 +226,7 @@ En outre, la classe `ShellNavigatingEventArgs` fournit une méthode `Cancel` qui
 
 La classe `Shell` définit également un événement `Navigated` déclenché quand la navigation est terminée. L’objet `ShellNavigatedEventArgs` qui accompagne l’événement `Navigating` fournit les propriétés suivantes :
 
-| Property | Type | Description |
+| Propriété | Type | Description |
 |---|---|---|
 | `Current` | `ShellNavigationState` | URI de la page actuelle. |
 | `Previous`| `ShellNavigationState` | URI de la page précédente. |
@@ -302,7 +302,7 @@ La classe `BackButtonBehavior` définit les propriétés suivantes, qui contrôl
 
 - `Command`, de type `ICommand` : exécuté lorsque l’utilisateur appuie sur le bouton Précédent.
 - `CommandParameter`, de type `object` : paramètre passé à la commande `Command`.
-- `IconOveride`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) : icône utilisée pour le bouton Précédent.
+- `IconOverride`, de type [`ImageSource`](xref:Xamarin.Forms.ImageSource) : icône utilisée pour le bouton Précédent.
 - `IsEnabled`, de type `boolean` : indique si le bouton Précédent est activé. La valeur par défaut est `true`.
 - `TextOverride`, de type `string` : texte utilisé pour le bouton Précédent.
 
@@ -335,7 +335,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 La propriété `Command` est définie sur un élément `ICommand` à exécuter lorsque le bouton Précédent est enfoncé, et la propriété `IconOverride` est définie sur l’icône utilisée pour le bouton Précédent :
 
-[![Capture d’écran du remplacement d’une icône de bouton Précédent dans Shell, sur iOS et Android](navigation-images/back-button.png "Remplacement de l’icône du bouton Précédent dans Shell")](navigation-images/back-button-large.png#lightbox "Remplacement de l’icône du bouton Précédent dans Shell")
+[![Capture d’écran du remplacement de l’icône du bouton précédent de l’interpréteur de commandes, sur iOS et Android Shell du](navigation-images/back-button.png "bouton précédent")](navigation-images/back-button-large.png#lightbox "Remplacement de l’icône du bouton précédent de l’interpréteur de commandes")
 
 ## <a name="related-links"></a>Liens connexes
 
