@@ -6,13 +6,13 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: 32f809c5b21e56497328ce00bf49a7337ac0270a
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.date: 09/30/2019
+ms.openlocfilehash: a35a3750957073168bca4903e1cef79ed53a3de9
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250041"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679973"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
 
@@ -30,17 +30,19 @@ Pour commencer à modifier votre premier fichier XAML, utilisez Visual Studio ou
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Dans Windows, utilisez Visual Studio pour sélectionner **fichier > Nouveau > projet** à partir du menu. Dans le **nouveau projet** boîte de dialogue, sélectionnez **Visual C# > multiplateforme** à gauche, puis **Mobile App (Xamarin.Forms)** à partir de la liste dans le centre.
+Dans Windows, lancez Visual Studio 2019, puis dans la fenêtre Démarrer, cliquez sur **créer un nouveau projet** pour créer un nouveau projet :
 
-![Boîte de dialogue Nouveau projet](get-started-with-xaml-images/win/newprojectdialog.w157.png)
+![Nouvelle fenêtre de solution](get-started-with-xaml-images/win/new-solution-2019.png)
 
-Sélectionnez un emplacement pour la solution, donnez-lui un nom de **XamlSamples** (ou ce que vous préférez), puis appuyez sur **OK**.
+Dans la fenêtre **créer un nouveau projet** , sélectionnez **mobile** dans la liste déroulante **type de projet** , sélectionnez le modèle **application mobile (Xamarin. Forms)** , puis cliquez sur le bouton **suivant** :
 
-Dans l’écran suivant, sélectionnez le **application vide** modèle et le **.NET Standard** stratégie de partage de code :
+![Fenêtre nouveau projet](get-started-with-xaml-images/win/new-project-2019.png)
 
-![Boîte de dialogue nouvelle application](get-started-with-xaml-images/win/newcrossplatformapp.png)
+Dans la fenêtre **configurer votre nouveau projet** , définissez le **nom du projet** sur **XamlSamples** (ou sur votre choix), puis cliquez sur le bouton **créer** .
 
-Appuyez sur **OK**.
+Dans la boîte de dialogue **nouvelle application multiplateforme** , cliquez sur **vide**, puis cliquez sur le bouton **OK** :
+
+![Boîte de dialogue nouvelle application](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
 Quatre projets sont créés dans la solution : le **XamlSamples** bibliothèque .NET Standard, **XamlSamples.Android**, **XamlSamples.iOS**et la plateforme Windows universelle solution, **XamlSamples.UWP**.
 
@@ -151,9 +153,9 @@ Pour les éléments visuels plus intéressants, il vous suffit est plus intéres
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Pour ajouter d’autres XAML en fonction du `ContentPage` classes à votre projet, sélectionnez le **XamlSamples** bibliothèque .NET Standard de projet et d’appeler le **projet > Ajouter un nouvel élément** élément de menu. À gauche de la **ajouter un nouvel élément** boîte de dialogue, sélectionnez **Visual C#**  et **Xamarin.Forms**. Dans la liste Sélectionnez **Page de contenu** (pas **Page de contenu (C#)** , ce qui crée une page de code uniquement, ou **affichage du contenu**, qui n’est pas une page). Nommez la page, par exemple, **HelloXamlPage.xaml**:
+Pour ajouter d’autres classes @no__t XAML-0 à votre projet, sélectionnez le projet de bibliothèque **XamlSamples** .NET standard, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouvel élément...** . Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez  **C# éléments visuels > Xamarin. Forms > page de contenu** (et non pas la page de **contenu (C#)** , qui crée une page de code uniquement, ou un affichage de **contenu**, qui n’est pas une page). Nommez la page, par exemple, **HelloXamlPage**:
 
-![Boîte de dialogue Ajouter un nouvel élément](get-started-with-xaml-images/win/addnewitemdialog.w157.png)
+![Boîte de dialogue Ajouter un nouvel élément](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 

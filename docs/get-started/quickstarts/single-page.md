@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "68655006"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679987"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une application Xamarin. Forms à page unique
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -46,7 +46,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
     ![](single-page-images/vs/new-solution-2019.png "Nouveau projet")
 
-2. Dans la fenêtre **créer un nouveau projet** , sélectionnez **mobile** dans la liste déroulante **type de projet** , sélectionnez l' **application mobile (modèle Xamarin. Forms** ), puis cliquez sur le bouton **suivant** :
+2. Dans la fenêtre **créer un nouveau projet** , sélectionnez **mobile** dans la liste déroulante **type de projet** , sélectionnez le modèle **application mobile (Xamarin. Forms)** , puis cliquez sur le bouton **suivant** :
 
     ![](single-page-images/vs/new-project-2019.png "Modèles de projet multiplateforme")
 
