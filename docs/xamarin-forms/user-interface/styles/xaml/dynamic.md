@@ -84,8 +84,8 @@ public partial class DynamicStylesPage : ContentPage
 
 Lorsque le `OnButtonClicked` Gestionnaire d’événements est exécuté, `searchBarStyle` bascule entre `blueSearchBarStyle` et `greenSearchBarStyle`. Cela donne l’affichage illustré dans les captures d’écran suivantes :
 
-[![](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)Exemple de style dynamique bleu-exemple de style dynamique vert
-[![](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
+[![Exemple de style dynamique bleu-](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
+[![exemple de style dynamique vert](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
 L’exemple de code suivant montre la page équivalente dans C# :
 
@@ -163,8 +163,8 @@ Le [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) instances utilisation le `Stati
 
 Dans le fichier code-behind, le constructeur crée un [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) entrée avec la clé `searchBarStyle`, selon l’exemple précédent qui a démontré styles dynamiques. Lorsque le `OnButtonClicked` Gestionnaire d’événements est exécuté, `searchBarStyle` bascule entre `blueSearchBarStyle` et `greenSearchBarStyle`. Cela donne l’affichage illustré dans les captures d’écran suivantes :
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
-Exemple d’héritage[destyledynamiquebleuexempled’héritagedestyledynamiquevert![](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
+[![Exemple d’héritage](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
+[![destyledynamiquebleuexempled’héritagedestyledynamiquevert](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
 L’exemple de code suivant montre la page équivalente dans C# :
 
