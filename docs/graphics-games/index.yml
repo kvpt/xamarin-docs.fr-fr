@@ -45,8 +45,8 @@ sections:
         className: cardsD
         items:
           - title: Xamarin.Forms
-            href: ~/xamarin-forms/index.md
-            html: <p><a href="~/get-started/quickstarts/index.md">Bien démarrer</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Principes de base de l’application</a><br /><a href="~/xamarin-forms/user-interface/index.md">Interface utilisateur</a><br /><a href="~/xamarin-forms/platform/index.md">Fonctionnalités de la plateforme</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Déploiement et test</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Données et Azure Cloud Services</a><br /><a href="~/xamarin-forms/internals/index.yml">Concepts avancés et éléments internes</a></p>
+            href: ~/xamarin-forms/index.yml
+            html: <p><a href="~/get-started/quickstarts/index.yml">Bien démarrer</a><br /><a href="~/xamarin-forms/app-fundamentals/index.yml">Principes de base de l’application</a><br /><a href="~/xamarin-forms/user-interface/index.yml">Interface utilisateur</a><br /><a href="~/xamarin-forms/platform/index.yml">Fonctionnalités de la plateforme</a><br /><a href="~/xamarin-forms/deploy-test/index.yml">Déploiement et test</a><br /><a href="~/xamarin-forms/xaml/index.yml">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.yml">Données et Azure Cloud Services</a><br /><a href="~/xamarin-forms/internals/index.yml">Concepts avancés et éléments internes</a></p>
           - title: Android
             href: ~/android/index.md
             html: <p><a href="~/android/get-started/index.md">Bien démarrer</a><br /><a href="~/android/app-fundamentals/index.md">Principes de base de l’application</a><br /><a href="~/android/user-interface/index.md">Interface utilisateur</a><br /><a href="~/android/platform/index.md">Fonctionnalités de la plateforme</a><br /><a href="~/android/deploy-test/index.md">Déploiement et test</a><br /><a href="~/android/data-cloud/index.md">Services de données et cloud</a><br /><a href="~/android/internals/index.md">Concepts avancés et éléments internes</a></p>
