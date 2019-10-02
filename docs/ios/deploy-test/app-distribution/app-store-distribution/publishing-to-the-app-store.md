@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 8b0b74a1db314f5241f965207ac898316a8276e0
-ms.sourcegitcommit: f9cbec7a1a0553da1e60ff371fda2b3c717f941b
+ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
+ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71312351"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71811180"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publication d’applications Xamarin.iOS sur l’App Store
 
@@ -211,7 +211,6 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
 2. Dans le menu **Générer**, sélectionnez **Archiver pour publication**.
 3. Une fois l’archive créée, la vue **Archives** s’affiche. Cliquez sur **Signer et distribuer...**  pour ouvrir l’Assistant de publication.
 
-
     ![Capture d’écran de l’emplacement du bouton signer et distribuer dans la vue Archives.](publishing-to-the-app-store-images/archives-mac.png "Capture d’écran de l’emplacement du bouton signer et distribuer dans la vue Archives.")
 
     > [!NOTE]
@@ -288,7 +287,7 @@ Avec vos paramètres de build correctement configurés et iTunes Connect en atte
 
     > [!TIP]
     >
-    > Les étapes suivantes ne sont valides que si vous utilisez Xcode 10 et que vous créez pour iOS 12 et versions antérieures. 
+    > Les étapes suivantes ne sont valides que si vous utilisez Xcode 10 et que vous créez pour iOS 12 et versions antérieures.
     >
     > Pour effectuer un déploiement sur l’App Store à l’aide de Xcode 11 (pour iOS 13), vous devez [utiliser Visual Studio pour Mac](?tabs=macos#build-and-submit-your-app) pour générer et charger votre application. Le **chargeur d’application** ne sera pas disponible pour XCode 11.
 
