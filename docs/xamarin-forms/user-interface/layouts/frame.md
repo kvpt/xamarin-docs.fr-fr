@@ -22,7 +22,7 @@ La classe Xamarin. [`Frame`](xref:Xamarin.Forms.Frame) Forms est une disposition
 
 La capture d’écran `Frame` suivante montre les contrôles sur iOS et Android:
 
-Exemples de frames [sur iOS et Android sur iOS et Android ![](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "")
+Exemples de frames [![sur iOS et Android sur iOS et Android](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "sur iOS et Android sur iOS et Android")
 
 La `Frame` classe définit les propriétés suivantes:
 
@@ -141,7 +141,7 @@ Frame cardFrame = new Frame
 
 La `CornerRadius` propriété`Frame` du contrôle peut être utilisée pour créer une image de cercle. La capture d’écran suivante montre un exemple d’image ronde créée à l' `Frame` aide d’un objet:
 
-Capture d’écran d’une image de(frame-images/circle-image-cropped.png)](frame-images/frame-full.png#lightbox "") [cercle créée à l’aide d’un cadre ![]
+[![cercle créée à l’aide d’un cadre ](frame-images/circle-image-cropped.png)](frame-images/frame-full.png#lightbox "Capture d’écran d’une image de")
 
 Le code XAML suivant montre comment créer une image de cercle en XAML:
 
