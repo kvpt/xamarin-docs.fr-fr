@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/24/2018
-ms.openlocfilehash: 8e06b03e0acb129f1eb0c3c793d0b4a05c11ce2b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eaef454de77387ea2a6732fa00797a6a4f0e3cd1
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282376"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975879"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Affichage d’une image dans Xamarin. iOS
 
@@ -32,7 +32,7 @@ Pour créer un ensemble d’images et y ajouter des images, procédez comme suit
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Dans la **Explorateur de solutions**, double-cliquez sur `Assets.xcassets` le fichier pour l’ouvrir et le modifier :
+1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier `Assets.xcassets` pour l’ouvrir et le modifier :
 
     ![](displaying-an-image-images/imageset01.png "Ressources. xcassets dans le Explorateur de solutions")
 2. Cliquez avec le bouton droit sur la **liste ressources** et sélectionnez **nouvel ensemble d’images**:
@@ -75,18 +75,18 @@ Pour renommer un ensemble d’images, procédez comme suit :
 
 -----
 
-Quand vous utilisez un **ensemble d’images** dans le code, référencez-le `FromBundle` par nom en `UIImage` appelant la méthode de la classe. Par exemple :
+Quand vous utilisez un **ensemble d’images** dans le code, référencez-le par nom en appelant la méthode `FromBundle` de la classe `UIImage`. Par exemple :
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> Si les images affectées à un ensemble d’images ne s’illustrent pas correctement, assurez-vous que le nom `FromBundle` de fichier correct est utilisé avec la méthode (l' **ensemble d’images** et non le nom du **catalogue de ressources** parent). Pour les images PNG, `.png` l’extension peut être omise. Pour les autres formats d’image, l’extension est requise (par exemple, `PurpleMonkey.jpg`).
+> Si les images affectées à un ensemble d’images ne s’illustrent pas correctement, assurez-vous que le nom de fichier correct est utilisé avec la méthode `FromBundle` (le **jeu d’images** et non le nom du **catalogue de ressources** parent). Pour les images PNG, l’extension `.png` peut être omise. Pour les autres formats d’image, l’extension est requise (par exemple, `PurpleMonkey.jpg`).
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>Utilisation d’images vectorielles dans des catalogues de ressources
 
-À compter d’iOS 8, une classe **vectorielle** spéciale, ajoutée aux **jeux d’images** , permet au développeur d’inclure une image vectorielle au format **PDF** dans la cassette, en incluant des fichiers bitmap individuels aux différentes résolutions. À l’aide de cette méthode, fournissez un fichier `@1x` de vecteur unique pour la résolution (sous forme de fichier `@2x` PDF `@3x` vectoriel) et les versions et du fichier seront générées au moment de la compilation et incluses dans l’offre groupée de l’application.
+À compter d’iOS 8, une classe **Vector** spéciale a été ajoutée aux **jeux d’images** qui permet au développeur d’inclure une image vectorielle au format **PDF** dans la cassette, à la place de fichiers bitmap individuels aux différentes résolutions. À l’aide de cette méthode, fournissez un fichier de vecteur unique pour la résolution @no__t 0 (au format de fichier PDF vectoriel) et les versions `@2x` et `@3x` du fichier seront générées au moment de la compilation et incluses dans l’offre groupée de l’application.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -98,11 +98,11 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 -----
 
-Par exemple, si le développeur inclut un `MonkeyIcon.pdf` fichier comme vecteur d’un catalogue de composants avec une résolution de 150 px x 150 px, les ressources bitmap suivantes sont incluses dans l’ensemble d’applications final lors de la compilation :
+Par exemple, si le développeur inclut un fichier `MonkeyIcon.pdf` comme vecteur d’un catalogue de composants avec une résolution de 150 px x 150 px, les ressources bitmap suivantes sont incluses dans l’ensemble d’applications final lors de sa compilation :
 
-- `MonkeyIcon@1x.png`-150 px x 150 px résolution.
-- `MonkeyIcon@2x.png`-300 pixels x 300 pixels résolution.
-- `MonkeyIcon@3x.png`-450px x 450px résolution.
+- `MonkeyIcon@1x.png`-150 px x 150 px.
+- `MonkeyIcon@2x.png`-300 pixels x 300 pixels.
+- `MonkeyIcon@3x.png`-450px x 450px.
 
 Les éléments suivants doivent être pris en considération lors de l’utilisation d’images vectorielles PDF dans des catalogues de ressources :
 
@@ -155,24 +155,24 @@ if (MyIcon.Image != null) {
 }
 ```
 
-Étant donné `RenderMode` que la propriété `UIImage` d’un est en lecture seule `ImageWithRenderingMode` , utilisez la méthode pour créer une nouvelle instance de l’image avec le paramètre de mode de rendu souhaité.
+Étant donné que la propriété `RenderMode` d’une `UIImage` est en lecture seule, utilisez la méthode `ImageWithRenderingMode` pour créer une nouvelle instance de l’image avec le paramètre de mode de rendu souhaité.
 
-Il existe trois paramètres possibles pour `UIImage.RenderMode` via l' `UIImageRenderingMode` énumération :
+Il existe trois paramètres possibles pour `UIImage.RenderMode` via l’énumération `UIImageRenderingMode` :
 
-- `AlwaysOriginal`: Force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
-- `AlwaysTemplate`: Force le rendu de l’image en tant qu’image de modèle en coloriant les pixels avec `Tint` la couleur spécifiée.
-- `Automatic`: Effectue le rendu de l’image en tant que modèle ou original en fonction de l’environnement dans lequel elle est utilisée. Par exemple, si l’image est utilisée dans un `UIToolBar` `UITabBar` , `UINavigationBar`ou `UISegmentControl` si elle est traitée comme un modèle.
+- `AlwaysOriginal`-force le rendu de l’image en tant que fichier image source d’origine sans aucune modification.
+- `AlwaysTemplate`-force l’image à être rendue sous la forme d’une image de modèle en coloriant les pixels avec la couleur `Tint` spécifiée.
+- `Automatic` : effectue le rendu de l’image en tant que modèle ou original en fonction de l’environnement dans lequel elle est utilisée. Par exemple, si l’image est utilisée dans un `UIToolBar`, `UINavigationBar`, `UITabBar` ou `UISegmentControl`, elle sera traitée comme un modèle.
 
 ## <a name="adding-new-assets-collections"></a>Ajout de nouveaux regroupements de ressources
 
-Lorsque vous utilisez des images dans des catalogues de ressources, il peut arriver qu’une nouvelle collection soit requise, au lieu d’ajouter toutes les images de l’application `Assets.xcassets` à la collection. Par exemple, lors de la conception de ressources à la demande.
+Lorsque vous utilisez des images dans des catalogues de ressources, il peut arriver qu’une nouvelle collection soit requise, au lieu d’ajouter toutes les images de l’application au regroupement `Assets.xcassets`. Par exemple, lors de la conception de ressources à la demande.
 
 Pour ajouter un nouveau catalogue de ressources au projet :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Cliquez avec le bouton droit sur le **nom du projet** dans le **Explorateur de solutions** puis sélectionnez **Ajouter** > **un nouveau fichier...**
-2. Sélectionnez**catalogue de ressources** **iOS** > , entrez un **nom** pour le regroupement, puis cliquez sur le bouton **nouveau** :
+1. Cliquez avec le bouton droit sur le **nom du projet** dans le **Explorateur de solutions** puis sélectionnez **Ajouter** > **nouveau fichier...**
+2. Sélectionnez **iOS** > **catalogue de ressources**, entrez un **nom** pour le regroupement, puis cliquez sur le bouton **nouveau** :
 
     ![](displaying-an-image-images/asset01.png "Création d’un catalogue de ressources")
 
@@ -185,23 +185,23 @@ Pour ajouter un nouveau catalogue de ressources au projet :
 
 -----
 
-À partir de là, la collection peut être utilisée de la même façon que la `Assets.xcassets` collection par défaut incluse automatiquement dans le projet.
+À partir de là, la collection peut être utilisée de la même façon que la collection `Assets.xcassets` par défaut automatiquement incluse dans le projet.
 
 ## <a name="using-images-with-controls"></a>Utilisation d’images avec des contrôles
 
-En plus d’utiliser des images pour prendre en charge une application, iOS utilise également des images avec des types de contrôle d’application tels que des barres d’onglets, des barres d’outils, des barres de navigation, des tables et des boutons. Un moyen simple de faire apparaître une image sur un contrôle consiste à assigner une `UIImage` instance à la propriété du `Image` contrôle.
+En plus d’utiliser des images pour prendre en charge une application, iOS utilise également des images avec des types de contrôle d’application tels que des barres d’onglets, des barres d’outils, des barres de navigation, des tables et des boutons. Un moyen simple de faire apparaître une image sur un contrôle consiste à assigner une instance `UIImage` à la propriété `Image` du contrôle.
 
 ### <a name="frombundle"></a>FromBundle
 
-L' `FromBundle` appel de méthode est un appel synchrone (bloquant) qui a un certain nombre de fonctionnalités de chargement et de gestion d’image intégrées, telles que la prise en charge de la mise en cache et la gestion automatique des fichiers image pour diverses résolutions.
+L’appel de méthode `FromBundle` est un appel synchrone (blocage) qui a un certain nombre de fonctionnalités de chargement et de gestion d’image intégrées, telles que la prise en charge de la mise en cache et la gestion automatique des fichiers image pour diverses résolutions.
 
-L’exemple suivant montre comment définir l’image d’un `UITabBarItem` sur un : `UITabBar`
+L’exemple suivant montre comment définir l’image d’un `UITabBarItem` sur un `UITabBar` :
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-En supposant `MyImage` que est le nom d’une ressource d’image ajoutée à un catalogue de ressources ci-dessus. Lorsque vous travaillez sur des images du catalogue de ressources, spécifiez simplement le nom `FromBundle` de l’ensemble d’images dans la méthode pour les images au format **png** :
+En supposant que `MyImage` est le nom d’une ressource d’image ajoutée à un catalogue de ressources ci-dessus. Lorsque vous travaillez sur des images du catalogue de ressources, spécifiez simplement le nom de l’ensemble d’images dans la méthode `FromBundle` pour les images au format **png** :
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
@@ -217,7 +217,7 @@ Pour plus d’informations sur les icônes et les images, consultez la documenta
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>Affichage d’une image dans des storyboards
 
-Une fois qu’une image a été ajoutée à un projet Xamarin. IOS à l’aide de catalogues de ressources, elle peut être facilement affichée sur `UIImageView` une table de montage séquentiel à l’aide d’un dans le concepteur iOS. Par exemple, si la ressource d’image suivante a été ajoutée :
+Une fois qu’une image a été ajoutée à un projet Xamarin. iOS à l’aide de catalogues de ressources, elle peut être facilement affichée sur une table de montage séquentiel à l’aide d’un `UIImageView` dans le concepteur iOS. Par exemple, si la ressource d’image suivante a été ajoutée :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -225,7 +225,7 @@ Une fois qu’une image a été ajoutée à un projet Xamarin. IOS à l’aide d
 
 Procédez comme suit pour l’afficher sur une table de montage séquentiel :
 
-1. Double-cliquez sur `Main.storyboard` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS.
+1. Double-cliquez sur le fichier `Main.storyboard` dans la **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS.
 2. Sélectionnez une **vue d’image** à partir de la **boîte à outils**:
 
      ![](displaying-an-image-images/display02.png "Sélectionner une vue d’image à partir de la boîte à outils")
@@ -248,7 +248,7 @@ Procédez comme suit pour l’afficher sur une table de montage séquentiel :
 
 Procédez comme suit pour l’afficher sur une table de montage séquentiel :
 
-1. Double-cliquez sur `Main.storyboard` le fichier dans le **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS.
+1. Double-cliquez sur le fichier `Main.storyboard` dans la **Explorateur de solutions** pour l’ouvrir et le modifier dans le concepteur iOS.
 2. Sélectionnez une **vue d’image** à partir de la **boîte à outils**:
 
      ![](displaying-an-image-images/display02vs.png "Sélectionner une vue d’image à partir de la boîte à outils")
@@ -285,7 +285,7 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-Ce code crée un nouveau `UIImageView` et lui attribue une taille et une position initiales. Ensuite, il charge l’image à partir d’une ressource d’image ajoutée au projet `UIImageView` et ajoute le `UIView` au parent pour l’afficher.
+Ce code crée une nouvelle `UIImageView` et lui attribue une taille et une position initiales. Ensuite, il charge l’image à partir d’une ressource d’image ajoutée au projet et ajoute le `UIImageView` au @no__t parent-1 pour l’afficher.
 
 ## <a name="related-links"></a>Liens connexes
 
