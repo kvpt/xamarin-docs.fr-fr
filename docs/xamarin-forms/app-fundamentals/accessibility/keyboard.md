@@ -1,18 +1,18 @@
 ---
 title: Accessibilité du clavier
-description: Plutôt que d’utiliser la séquence des tabulations par défaut, il est parfois nécessaire de paramétrer l’accessibilité de votre interface utilisateur en spécifiant la séquence des tabulations avec une combinaison des propriétés TabIndex et IsTapStop.
+description: Au lieu d’utiliser la séquence d’onglets par défaut, il est parfois nécessaire de régler l’accessibilité de votre interface utilisateur en spécifiant la séquence d’onglets avec une combinaison des propriétés TabIndex et IsTabStop.
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 4bca8de32ec0dfa6a273b784333e99c5bbfe968d
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975868"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997106"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Accessibilité du clavier dans Xamarin.Forms
 
@@ -125,7 +125,7 @@ Toutefois, il peut être nécessaire d’exclure des contrôles de l’ordre de 
 
 ## <a name="supported-controls"></a>Contrôles pris en charge
 
-Les propriétés `TabIndex` et `IsTapStop` sont prises en charge sur les contrôles suivants, qui acceptent une entrée au clavier sur une ou plusieurs plateformes :
+Les propriétés `TabIndex` et `IsTabStop` sont prises en charge sur les contrôles suivants, qui acceptent une entrée au clavier sur une ou plusieurs plateformes :
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`DatePicker`](xref:Xamarin.Forms.DatePicker)

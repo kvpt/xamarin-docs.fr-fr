@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198565"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997153"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés.
 
@@ -144,7 +144,7 @@ Une implémentation d’action de déclencheur doit :
 
 - Remplacer la méthode `Invoke` qui est appelée chaque fois que les critères de déclenchement sont remplis.
 
-- Exposez éventuellement des propriétés qui peuvent être définies dans le XAML lorsque le déclencheur est déclaré. Pour obtenir un exemple, consultez la `VisualElementPopTriggerAction` classe dans l’exemple d’application associé.
+- Exposez éventuellement des propriétés qui peuvent être définies dans le XAML lorsque le déclencheur est déclaré. Pour obtenir un exemple, consultez la classe `VisualElementPopTriggerAction` dans l’exemple d’application associé.
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -278,7 +278,12 @@ Dans la partie inférieure de l’écran, le bouton **Login** (Connexion) reste 
 
 Une autre façon d’implémenter des modifications lorsqu’un déclencheur est activé est d’ajouter des collections `EnterActions` et `ExitActions`, et de spécifier des implémentations `TriggerAction<T>`.
 
-Vous pouvez fournir *à la fois* `EnterActions` et `ExitActions` ainsi que des `Setter` dans un déclencheur. Sachez toutefois que les `Setter` sont appelés immédiatement (ils n’attendent pas la fin de `EnterAction` ou de `ExitAction`). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
+La collection [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) est utilisée pour définir un `IList` d’objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) qui seront appelés lorsque la condition de déclenchement sera remplie. La collection [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) est utilisée pour définir un `IList` d’objets `TriggerAction` qui seront appelés une fois que la condition de déclencheur n’est plus remplie.
+
+> [!NOTE]
+> Les objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) définis dans les collections `EnterActions` et `ExitActions` sont ignorés par la classe [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) .    
+
+Vous pouvez fournir à la *fois* `EnterActions` et `ExitActions` ainsi que `Setter`S dans un déclencheur, mais sachez que le  est appelé immédiatement (ils n’attendent pas que le `EnterAction` ou `ExitAction` se termine). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -292,7 +297,7 @@ Vous pouvez fournir *à la fois* `EnterActions` et `ExitActions` ainsi que des `
             <Trigger.ExitActions>
                 <local:FadeTriggerAction StartsFrom="1" />
             </Trigger.ExitActions>
-                        <!-- You can use both Enter/Exit and Setter together if required -->
+            <!-- You can use both Enter/Exit and Setter together if required -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -327,8 +332,6 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
-
-Remarque : `EnterActions` et `ExitActions` sont ignorés par les **déclencheurs d’événements**.
 
 ## <a name="related-links"></a>Liens associés
 

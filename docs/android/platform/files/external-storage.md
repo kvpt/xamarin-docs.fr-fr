@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 5992be5963c315c4f93fc4e03c24e3776087d418
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: c67f58a4b1886d3f89f7bd1639e1cd687d329869
+ms.sourcegitcommit: 4ff181101d76f048b949c9613b2c72cf02618f8b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975797"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71994816"
 ---
 # <a name="external-storage"></a>Stockage externe
 
@@ -78,7 +78,7 @@ Les fichiers publics sont des fichiers qui existent sur un stockage externe qui 
 
 Ce document fait référence au répertoire de stockage des fichiers publics sur le stockage externe en tant que _public @ no__t-1EXTERNAL @ no__t-2STORAGE_.
 
-Android prend également en charge le concept de répertoires d’applications sur _public @ no__t-1EXTERNAL @ no__t-2STORAGE_. Ces répertoires sont exactement les mêmes que les répertoires d’application pour `_PRIVATE\_EXTERNAL\_STORAGE_` et sont décrits dans le tableau de la section précédente. La méthode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` retourne un objet `Java.IO.File` qui correspond à un répertoire d’application public. Le paramètre `directoryType` est un paramètre obligatoire et ne peut pas être `null`.
+Android prend également en charge le concept de répertoires d’applications sur _public @ no__t-1EXTERNAL @ no__t-2STORAGE_. Ces répertoires sont exactement les mêmes que les répertoires d’application pour `PRIVATE_EXTERNAL_STORAGE` et sont décrits dans le tableau de la section précédente. La méthode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` retourne un objet `Java.IO.File` qui correspond à un répertoire d’application public. Le paramètre `directoryType` est un paramètre obligatoire et ne peut pas être `null`.
 
 Par exemple, l’appel de `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` retourne une chaîne qui ressemble à ce qui suit :
 
