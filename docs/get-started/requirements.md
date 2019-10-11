@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: a79f22fa96c4c34d2a9704e9aa3be3825895a15b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4584867e457661b2dfaa43fcbde7b1adcabeb85
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291595"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273106"
 ---
 # <a name="xamarinforms-requirements"></a>Configuration requise pour Xamarin.Forms
 
@@ -24,9 +24,11 @@ Reportez-vous à l’article [Installation](installation/index.md) pour obtenir 
 
 Les applications Xamarin.Forms peuvent être écrites pour les systèmes d’exploitation suivants :
 
-- iOS 8 ou ultérieur
-- Android 5,0 (API 21) ou version ultérieure ([plus de détails](#android))
+- iOS 9 ou version ultérieure
+- Android 4.4 (API 19) ou version ultérieure ([plus d’informations](#android))
 - Plateforme Windows universelle Windows 10 ([plus de détails](#windows10))
+
+Toutefois, Android 5,0 (API 21) est recommandé comme API minimale. Cela garantit une compatibilité complète avec toutes les bibliothèques de support Android, tout en ciblant toujours la majorité des appareils Android.
 
 Il est supposé que les développeurs se familiarisent avec [.NET standard](~/cross-platform/app-fundamentals/net-standard.md).
 

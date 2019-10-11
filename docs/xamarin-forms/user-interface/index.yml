@@ -102,7 +102,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: layouts/index.md
-            title: Dispositions
+            title: Mises en forme
           - href: listview/index.md
             html: Découvrez comment présenter des listes de données à l’aide du contrôle ListView.
             image:
@@ -114,7 +114,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: map.md
-            title: Maps
+            title: Cartes
           - href: menuitem.md
             html: Découvrez comment utiliser la classe MenuItem pour ajouter des éléments au menu contextuel des cellules ListView.
             image:
@@ -145,6 +145,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: slider.md
             title: Curseur
+          - href: splashscreen.md
+            html: Découvrez comment créer des écrans de démarrage pour les applications Xamarin.Forms.
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: splashscreen.md
+            title: Écran de démarrage
           - href: stepper.md
             html: Découvrez comment autoriser un utilisateur à sélectionner une valeur numérique dans une plage de valeurs avec le contrôle Stepper.
             image:
@@ -162,7 +168,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: switch.md
-            title: Basculer
+            title: Switch
           - href: tableview.md
             html: 'Découvrez comment utiliser TableView pour afficher des listes déroulantes de données ou de choix, les lignes ne partageant pas le même modèle.'
             image:

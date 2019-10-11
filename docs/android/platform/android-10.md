@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: 293fc8e3f8965e3109a0a549897dd23c34c46917
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: df9fa43d2071d273104edafbe6b880a97afb3f96
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198462"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273139"
 ---
 # <a name="android-10-with-xamarin"></a>Android 10 avec Xamarin
 
@@ -57,7 +57,7 @@ Si vous utilisez Visual Studio 2019, mettez à jour vers Visual Studio 2019 vers
 
 ### <a name="install-the-android-sdk"></a>Installer le Android SDK
 
-Pour créer un projet avec Xamarin. Android 10,0, vous devez d’abord utiliser le gestionnaire de Android SDK pour installer la plateforme SDK pour **Android 10 (niveau d’API 29)** .
+Pour créer un projet avec Xamarin. Android 10,0, vous devez d’abord utiliser le gestionnaire de Android SDK pour installer la plateforme SDK pour **Android 10 (niveau d’API 29)**.
 
 1. Démarrez le gestionnaire du kit SDK. Dans Visual Studio, cliquez sur **outils > Android > gestionnaire de Android SDK.** Dans Visual Studio pour Mac, cliquez sur **outils > gestionnaire du kit de développement logiciel (SDK).**
 2. Dans le coin inférieur droit, cliquez sur l’icône d’engrenage et sélectionnez **dépôt > Google (non pris en charge) :**
@@ -72,13 +72,13 @@ Pour créer un projet avec Xamarin. Android 10,0, vous devez d’abord utiliser 
 
 Créez un projet Xamarin. Android. Si vous débutez avec le développement Android avec Xamarin, consultez [Hello, Android](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/index) pour en savoir plus sur la création de projets Xamarin. Android.
 
-Lorsque vous créez un projet Android, vous devez configurer les paramètres de version pour cibler Android 10,0 ou une version ultérieure. Par exemple, pour cibler votre projet pour Android 10, vous devez configurer le niveau d’API Android cible de votre projet sur **android 10,0 (API 29)** . Cela comprend la version **cible de .NET Framework** et la **version de Android SDK cible** vers l’API 29 ou ultérieure. Pour plus d’informations sur la configuration des niveaux d’API Android, consultez [Présentation des niveaux d’API Android.](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/android-api-levels)
+Lorsque vous créez un projet Android, vous devez configurer les paramètres de version pour cibler Android 10,0 ou une version ultérieure. Par exemple, pour cibler votre projet pour Android 10, vous devez configurer le niveau d’API Android cible de votre projet sur **android 10,0 (API 29)**. Cela comprend la version **cible de .NET Framework** et la **version de Android SDK cible** vers l’API 29 ou ultérieure. Pour plus d’informations sur la configuration des niveaux d’API Android, consultez [Présentation des niveaux d’API Android.](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/android-api-levels)
 
 ![Framework cible Xamarin. Android](~/android/platform/android-10-images/targetframework.png)
 
 ### <a name="configure-a-device-or-emulator"></a>Configurer un appareil ou un émulateur
 
-Si vous utilisez un appareil physique tel qu’un pixel, vous pouvez télécharger la mise à jour Android 10 en accédant `System` au dans les  >   >  `System update` `Check for update` paramètres de votre téléphone. Si vous préférez flasher votre appareil, consultez les instructions sur le clignotement d’une image de [fabrique](https://developers.google.com/android/ota) ou d’une [image OTA](https://developers.google.com/android/ota) sur votre appareil.
+Si vous utilisez un appareil physique tel qu’un pixel, vous pouvez télécharger la mise à jour Android 10 en accédant au `System` @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 dans les paramètres de votre téléphone. Si vous préférez flasher votre appareil, consultez les instructions sur le clignotement d’une image de [fabrique](https://developers.google.com/android/images) ou d’une [image OTA](https://developers.google.com/android/ota) sur votre appareil.
 
 Si vous utilisez un émulateur, créez un appareil virtuel pour le niveau d’API 29 et sélectionnez une image x86. Pour plus d’informations sur l’utilisation de la Android Device Manager pour créer et gérer des appareils virtuels, consultez [gestion des appareils virtuels avec le Android Device Manager.](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-emulator/device-manager) Pour plus d’informations sur l’utilisation de l’Émulateur Android à des fins de test et de débogage, consultez [débogage sur le émulateur Android.](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
@@ -88,29 +88,29 @@ Android 10 introduit une variété de nouvelles fonctionnalités. Certaines de c
 
 ## <a name="enhance-your-app-with-android-10-features-and-apis"></a>Améliorez votre application avec des fonctionnalités et des API Android 10
 
-Ensuite, lorsque vous êtes prêt, explorez Android 10 et découvrez les [nouvelles fonctionnalités et API](https://developer.android.com/preview/api-overview.html) que vous pouvez utiliser. Voici quelques-unes des principales fonctionnalités de prise en main de.
+Ensuite, lorsque vous êtes prêt, explorez Android 10 et découvrez les [nouvelles fonctionnalités et api](https://developer.android.com/preview/api-overview.html)@no__t 1 que que vous pouvez utiliser. Voici quelques-unes des principales fonctionnalités de prise en main de.
 
 Ces fonctionnalités sont recommandées pour chaque application :
 
-- **Thème sombre :**  garantissez une expérience cohérente aux utilisateurs qui activent un thème sombre à l’ensemble du système en ajoutant un [thème](https://developer.android.com/preview/features/darktheme) foncé ou en activant la [force sombre](https://developer.android.com/preview/features/darktheme#force_dark).
+- **Thème sombre :** Ensure une expérience cohérente pour les utilisateurs qui activent un thème sombre à l’ensemble du système en ajoutant un [thème sombre](https://developer.android.com/preview/features/darktheme) Or activant [force Dark](https://developer.android.com/preview/features/darktheme#force_dark).
 
 ![Thème foncé](~/android/platform/android-10-images/darktheme.png)
 
-- **Prenez en charge la [navigation](https://developer.android.com/preview/features/gesturalnav)**  Gestural dans votre application en passant de la périphérie à la périphérie et en vous assurant que vos mouvements personnalisés sont complémentaires aux gestes de navigation système.
+- **Prenez en charge la [navigation Gestural](https://developer.android.com/preview/features/gesturalnav)** in votre application en passant de la périphérie à la périphérie et en vous assurant que vos mouvements personnalisés sont complémentaires aux gestes de navigation système.
 
 ![Navigation dans les gestes](~/android/platform/android-10-images/gesturenavigation.png)
 
-- **Optimisez pour les appareils pliables :**  offrez des expériences de périphérie vers le bord et des appareils innovateurs à l’heure actuelle en [optimisant les éléments pliables](https://developer.android.com/preview/features/foldables).
+- **Optimisez pour les appareils pliants :** les expériences de périphérie et de périphérie @no__t 1Delivers sur les appareils novateurs d’aujourd’hui en [optimisant les éléments pliables](https://developer.android.com/preview/features/foldables).
 
 ![Repli](~/android/platform/android-10-images/foldable.png)
 
 Ces fonctionnalités sont recommandées si elles s’appliquent à votre application :
 
-- **Plus de notifications interactives :**  si vos notifications incluent des messages, activez les [réponses et les actions suggérées dans les notifications](https://developer.android.com/preview/features#smart-suggestions) pour impliquer les utilisateurs et leur permettre de prendre des mesures instantanément.
-- **Meilleure biométrie :**  si vous utilisez l’authentification biométrique, passez à [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt), la meilleure façon de prendre en charge l’authentification par empreinte digitale sur les appareils modernes.
-- **Enregistrement enrichi :**  pour prendre en charge le sous-titrage ou l’enregistrement de jeu, activez [la capture de lecture audio](https://developer.android.com/preview/features/playback-capture). C’est un excellent moyen d’atteindre davantage d’utilisateurs et rendre votre application plus accessible.
-- **Meilleurs codecs :**  pour les applications multimédias, essayez [AV1](https://en.wikipedia.org/wiki/AV1) pour la diffusion vidéo et [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) pour une vidéo à plage dynamique élevée. Pour la diffusion vocale et musicale, vous pouvez utiliser l’encodage [opus](http://opus-codec.org/) , et pour les musiciens, une  [API midi Native](https://developer.android.com/preview/features/midi)est disponible.
-- **Meilleures API réseau :**  si votre application gère des appareils IOT via Wi-Fi, essayez les nouvelles [API](https://developer.android.com/preview/features#peer2peer) de connexion réseau pour les fonctions telles que la configuration, le téléchargement ou l’impression.
+- **Plus de notifications interactives :** Si vos notifications incluent des messages, activer des [réponses et des actions suggérées dans les notifications](https://developer.android.com/preview/features#smart-suggestions) Pour impliquer les utilisateurs et leur permettre de prendre des mesures instantanément.
+- **Meilleure biométrie :** Si vous utilisez l’authentification biométrique, passez à [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt), la meilleure façon de prendre en charge l’authentification par empreinte digitale sur les appareils modernes.
+- **Enregistrement enrichi :** Pour prendre en charge l’enregistrement de sous-titres ou de jeu, activer [la capture de lecture audio](https://developer.android.com/preview/features/playback-capture). C’est un excellent moyen d’atteindre davantage d’utilisateurs et rendre votre application plus accessible.
+- **Meilleurs codecs :** pour les applications multimédias, essayez [AV1](https://en.wikipedia.org/wiki/AV1) For vidéo streaming et [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) for vidéo à plage dynamique élevée. Pour la diffusion vocale et musicale, vous pouvez utiliser l’encodage [opus](http://opus-codec.org/) , et pour les musiciens, une [API midi Native](https://developer.android.com/preview/features/midi) is disponible.
+- **Meilleures API réseau :** Si votre application gère les appareils IOT via Wi-Fi, essayez les nouvelles [API de connexion réseau](https://developer.android.com/preview/features#peer2peer) for fonctions, telles que la configuration, le téléchargement ou l’impression.
 
 Il ne s’agit là que de quelques-unes des nombreuses nouvelles fonctionnalités et API d’Android 10. Pour tous les voir, visitez le [site Android 10 pour les développeurs](https://developer.android.com/about/versions/10/highlights).
 
@@ -121,7 +121,7 @@ Lorsque la version d’Android cible est définie sur le niveau d’API 29, plus
 - [Pour garantir la stabilité et la compatibilité de l’application, la plateforme Android restreint désormais les interfaces qui ne sont pas des kits de développement logiciel (SDK) que votre application peut utiliser dans Android 10](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions).
 - La [mémoire partagée a changé](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory).
 - Le [Runtime Android & l’exactitude](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)de l’AOA.
-- [Les autorisations pour les intentions fullscreen doivent demander `USE_FULL_SCREEN_INTENT` ](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents).
+- [Les autorisations pour les intentions fullscreen doivent demander `USE_FULL_SCREEN_INTENT`](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents).
 - [Prise en charge des pliables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables).
 
 ## <a name="summary"></a>Récapitulatif

@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "70293136"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273127"
 ---
 # <a name="using-team-city-with-xamarin"></a>Utilisation de City Team avec Xamarin
 
@@ -134,7 +134,7 @@ Notez que pour compiler l’application Xamarin Android **xbuild** utilise le pr
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>Envoi de Xamarin. tests UITest à Test Cloud
 
-Les tests UITest sont envoyés à `test-cloud.exe` l’aide de l’application, comme illustré dans l’extrait de code suivant :
+Les tests UITest sont envoyés à l’aide de l’application `test-cloud.exe`, comme illustré dans l’extrait de code suivant :
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -142,11 +142,11 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 Lorsque le test est exécuté, les résultats des tests sont retournés sous la forme d’un fichier XML de style NUnit nommé **Report. xml**. TeamCity affiche les informations dans le journal de génération.
 
-Pour plus d’informations sur la façon d’envoyer des tests UITest à des Test Cloud, consultez ce guide sur la [préparation de Xamarin. tests UITest pour le téléchargement](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/).
+Pour plus d’informations sur la façon d’envoyer des tests UITest à des Test Cloud, consultez [préparation des applications Xamarin. Android](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest) ou [préparation des applications Xamarin. iOS](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest).
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>Envoi de tests Calabash à Test Cloud
 
-Les tests Calabash sont envoyés à `test-cloud` l’aide de la gemme, comme illustré dans l’extrait de code suivant :
+Les tests Calabash sont soumis à l’aide de la gemme `test-cloud`, comme illustré dans l’extrait de code suivant :
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -167,35 +167,35 @@ Une fois TeamCity installé et Visual Studio pour Mac pouvez générer votre pro
 
 1. Démarré en se connectant à TeamCity via le navigateur Web. Accédez au projet racine :
 
-    ![Accéder au projet racine](teamcity-images/image2.png "Accéder au projet racine") Sous le projet racine, créez un sous-projet :
+    ![Accédez au projet racine]et(teamcity-images/image2.png "accédez au projet racine") sous le projet racine, puis créez un sous-projet :
 
-    ![Accédez au projet racine sous le projet racine, puis créez un sous-projet] . (teamcity-images/image3.png "Accédez au projet racine sous le projet racine, puis créez un sous-projet") .
+    ![Accédez au projet racine sous le projet racine, créez un nouveau sous-projet](teamcity-images/image3.png "accédez au projet racine sous le projet racine, puis créez un sous-projet") .
 2. Une fois le sous-projet créé, ajoutez une nouvelle configuration de build :
 
-    ![Une fois le sous-projet créé, ajoutez une nouvelle configuration de build](teamcity-images/image5.png "Une fois le sous-projet créé, ajoutez une nouvelle configuration de build")
+    ![Une fois le sous-projet créé, ajoutez une nouvelle configuration de build]une(teamcity-images/image5.png "fois le sous-projet créé, ajoutez une nouvelle configuration de build") .
 3. Attachez un projet VCS à la configuration de Build. Cette opération s’effectue via l’écran de paramètre de contrôle de version :
 
-    ![Cette opération s’effectue à l’aide de l’écran paramètre de contrôle de version](teamcity-images/image6.png "Cette opération s’effectue à l’aide de l’écran paramètre de contrôle de version")
+    Pour cela, vous avez besoin ![de l’écran de paramétrage de contrôle de version]à(teamcity-images/image6.png "l’aide de l’écran paramètre de contrôle de version") .
 
     Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la nouvelle page racine du VCS, comme indiqué ci-dessous :
 
-    ![Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la nouvelle page racine du VCS] . (teamcity-images/image7.png "Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la nouvelle page racine du VCS") .
+    ![Si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la page racine du nouveau VCS](teamcity-images/image7.png "si aucun projet VCS n’est créé, vous avez la possibilité d’en créer un à partir de la page racine du nouveau VCS")
 
     Une fois la racine du VCS attachée, TeamCity extrait le projet et tente de détecter automatiquement les étapes de génération. Si vous êtes familiarisé avec TeamCity, vous pouvez sélectionner l’une des étapes de build détectées. Il est possible d’ignorer en toute sécurité les étapes de génération détectées pour le moment.
 
 4. Ensuite, configurez un déclencheur de Build. Cela met en file d’attente une build lorsque certaines conditions sont remplies, par exemple lorsqu’un utilisateur valide du code dans le référentiel. La capture d’écran suivante montre comment ajouter un déclencheur de build :
 
-    ![Cette capture d’écran montre comment ajouter un déclencheur de build](teamcity-images/image8.png "Cette capture d’écran montre comment ajouter un déclencheur de build") Vous trouverez un exemple de configuration d’un déclencheur de build dans la capture d’écran suivante :
+    ![Cette capture d’écran montre comment ajouter un déclencheur de build].(teamcity-images/image8.png "cette capture d’écran montre comment ajouter un déclencheur") de Build. un exemple de configuration d’un déclencheur de génération peut être affiché dans la capture d’écran suivante :
 
-    Vous ![pouvez voir un exemple de configuration d’un déclencheur de build dans cette capture d’écran] . Vous (teamcity-images/image9.png "pouvez voir un exemple de configuration d’un déclencheur de build dans cette capture d’écran") .
+    Vous trouverez un exemple de ![configuration d’un déclencheur de build dans cette capture d’écran].(teamcity-images/image9.png "un exemple de configuration d’un déclencheur de génération peut être affiché dans cette") capture d’écran.
 
 5. La section précédente, paramétrage du script de génération, suggérant le stockage de certaines valeurs en tant que variables d’environnement. Ces variables peuvent être ajoutées à la configuration de build via l’écran Paramètres. Ajoutez les variables pour la clé API Test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android, comme indiqué dans la capture d’écran ci-dessous :
 
-    ![Ajoutez les variables pour la clé API test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android] . (teamcity-images/image11.png "Ajoutez les variables pour la clé API test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android") .
+    ![Ajoutez les variables pour la clé api test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android](teamcity-images/image11.png "Ajouter les variables pour la clé d’API test Cloud, l’ID d’appareil iOS et l’ID d’appareil Android") .
 
 6. La dernière étape consiste à ajouter une étape de génération qui appellera le script de compilation pour compiler l’application et mettre l’application en file d’attente pour Test Cloud. La capture d’écran suivante est un exemple d’une étape de génération qui utilise un Rakefile pour créer une application :
 
-    ![Cette capture d’écran est un exemple d’une étape de génération qui utilise un Rakefile pour générer une application](teamcity-images/image12.png "Cette capture d’écran est un exemple d’une étape de génération qui utilise un Rakefile pour générer une application")
+    ![Cette capture d’écran est un exemple d’une étape de génération qui utilise un Rakefile pour générer une application].(teamcity-images/image12.png "cette capture d’écran est un exemple d’une étape de génération qui utilise un Rakefile pour générer une application")
 
 7. À ce stade, la configuration de build est terminée. Il est judicieux de déclencher une build pour confirmer que le projet est correctement configuré. Une bonne façon de procéder est de valider une modification minime et non significative dans le référentiel. TeamCity doit détecter la validation et démarrer une build.
 
@@ -209,5 +209,6 @@ Nous avons ensuite abordé la création d’un projet dans TeamCity qui met en f
 
 ## <a name="related-links"></a>Liens associés
 
-- [Préparation de Xamarin. tests UITest par upload](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [Préparation des applications Xamarin. Android](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
+- [Préparation des applications Xamarin. iOS](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
 - [Installation et configuration de TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

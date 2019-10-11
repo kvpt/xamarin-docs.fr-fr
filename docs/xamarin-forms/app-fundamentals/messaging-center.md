@@ -6,19 +6,21 @@ ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2019
-ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
-ms.translationtype: HT
+ms.date: 10/08/2019
+ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
+ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821015"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170961"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Centre de messagerie Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 Le modèle publier-s’abonner est un modèle de messagerie dans lequel les serveurs de publication envoient des messages sans avoir connaissance des destinataires, appelés des abonnés. De même, les abonnés écoutent des messages spécifiques, sans avoir connaissance des serveurs de publication.
+
+Les événements dans .NET implémentent le modèle de publication-abonnement, et constituent l’approche la plus simple et directe pour une couche de communication entre des composants si le couplage faible n’est pas requis, tel qu’un contrôle et la page qui le contient. Toutefois, les durées de vie du serveur de publication et de l’abonné sont associées par des références d’objet les unes aux autres, et le type d’abonné doit avoir une référence au type de serveur de publication. Cela peut créer des problèmes de gestion de la mémoire, en particulier lorsqu’il existe des objets éphémères qui s’abonnent à un événement d’un objet statique ou à long terme. Si le gestionnaire d’événements n’est pas supprimé, l’abonné est maintenu actif par la référence à celui-ci dans le serveur de publication, ce qui empêchera ou retarder la garbage collection de l’abonné.
 
 La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Xamarin.Forms implémente le modèle publier-s’abonner, permettant une communication basée sur les messages entre les composants qui sont peu pratiques à lier par références d’objet et de type. Ce mécanisme permet aux serveurs de publication et aux abonnés de communiquer sans référence entre eux, ce qui contribue à réduire les dépendances entre eux.
 

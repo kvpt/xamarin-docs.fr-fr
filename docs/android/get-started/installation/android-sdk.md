@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: da0a441be9cd07af456b1600155151e48d44162c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9bdc7b57cee74a91cc3abf69a216ea9913482c94
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758057"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273153"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
 _Visual Studio inclut Android SDK Manager que vous utilisez pour télécharger les outils, les plateformes et d’autres composants du kit Android SDK dont vous avez besoin pour développer des applications Xamarin.Android._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Ce guide explique comment utiliser Xamarin Android SDK Manager dans Visual Studio pour Mac.
 
@@ -45,7 +45,7 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 - Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
-- Si vous utilisez Visual Studio 15.8 Preview 5 ou ultérieur, vous pouvez essayer d’utiliser la [distribution Mobile OpenJDK de Microsoft](openjdk.md) (en préversion) au lieu du kit JDK 8.
+- Si vous utilisez Visual Studio 15,8 Preview 5 ou une version ultérieure, vous pouvez essayer [d’utiliser la distribution mobile openjdk de Microsoft](openjdk.md) plutôt que JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -121,7 +121,7 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -137,7 +137,7 @@ Le Gestionnaire Xamarin Android SDK requiert également le Kit de développemen
 
 - Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
-- Si vous utilisez Visual Studio pour Mac 7.7 ou ultérieur, vous pouvez essayer d’utiliser la [distribution Mobile OpenJDK de Microsoft](openjdk.md) (en préversion) au lieu du kit JDK 8.
+- Si vous utilisez Visual Studio pour Mac 7,7 ou une version ultérieure, vous pouvez essayer [d’utiliser la distribution openjdk de Microsoft Mobile](openjdk.md) au lieu de JDK 8.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.
@@ -211,7 +211,7 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 -----
 

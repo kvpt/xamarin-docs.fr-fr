@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
+ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759541"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72032586"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>Dessiner un cercle Simple dans SkiaSharp
 
@@ -26,7 +26,7 @@ Le [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamari
 
 ![](circle-images/circleexample.png "Un cercle bleu surlignée en rouge")
 
-Le [ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) dérive de la classe de page `ContentPage` et contient deux `using` directives pour les espaces de noms SkiaSharp :
+Le [ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) dérive de la classe de page `ContentPage` et contient deux `using` directives pour les espaces de noms SkiaSharp :
 
 ```csharp
 using SkiaSharp;
@@ -143,7 +143,7 @@ Cette fois-ci, le `DrawCircle` appel remplit le cercle à l’aide des nouvelles
 
 Voici le programme en cours d’exécution sur iOS, Android et la plateforme Windows universelle :
 
-[![](circle-images/simplecircle-small.png "Capture d’écran triple de la page Simple cercle")](circle-images/simplecircle-large.png#lightbox "Triple capture d’écran de la page de cercle Simple")
+[![](circle-images/simplecircle-small.png "Capture d’écran triple de la page de cercle simple")](circle-images/simplecircle-large.png#lightbox "Capture d’écran triple de la page de cercle simple")
 
 Lorsque vous exécutez le programme vous-même, vous pouvez activer le téléphone ou le simulateur sur le côté pour voir comment le graphique est redessiné. Chaque fois que le graphique doit être redessiné, le `PaintSurface` Gestionnaire d’événements est appelé à nouveau.
 
@@ -154,7 +154,7 @@ Un `SKPaint` objet n’est guère plus qu’une collection de propriétés de de
 > [!NOTE]
 > Le `SKPaint` classe définit un [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias) pour activer l’anticrénelage pour le rendu de votre graphique. L’anticrénelage génère en général visuellement plus lisses, vous devez donc probablement définir cette propriété sur `true` dans la plupart de vos `SKPaint` objets. Pour des raisons de simplicité, cette propriété est _pas_ définie dans la plupart des exemples de pages.
 
-Bien que la largeur du contour du cercle soit définie sur 25 pixels &mdash; ou sur un quart du rayon du cercle &mdash; , il semble plus mince et il y a une bonne raison pour cela : La moitié de la largeur de la ligne est obscurcie par le cercle bleu. Les arguments de la `DrawCircle` méthode définissent les coordonnées géométriques abstraites d’un cercle. L’intérieur de bleu est dimensionné à cette dimension au pixel le plus proche, mais le contour de 25 pixels de large rapproche du cercle géométrique &mdash; la moitié de l’intérieur et l’autre moitié à l’extérieur.
+Bien que la largeur du contour du cercle soit de 25 pixels &mdash; ou un quart du rayon du cercle &mdash; il semble être plus fin et il y a une bonne raison pour cela : La moitié de la largeur de la ligne est obscurcie par le cercle bleu. Les arguments de la `DrawCircle` méthode définissent les coordonnées géométriques abstraites d’un cercle. L’intérieur de bleu est dimensionné à cette dimension au pixel le plus proche, mais le contour de 25 pixels de large rapproche du cercle géométrique &mdash; la moitié de l’intérieur et l’autre moitié à l’extérieur.
 
 L’exemple suivant dans le [l’intégration avec Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) article montre visuellement.
 
