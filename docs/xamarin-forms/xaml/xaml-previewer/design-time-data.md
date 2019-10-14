@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
+ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69887857"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303243"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>Utiliser des données au moment du design avec le générateur d’aperçu XAML
 
-_Certaines dispositions sont difficiles à visualiser sans données. Utilisez ces conseils pour tirer le meilleur parti de l’aperçu de vos pages à données volumineuses dans le générateur d’aperçu XAML._
+les dispositions de _Some sont difficiles à visualiser sans les données. Utilisez ces conseils pour tirer le meilleur parti de l’aperçu de vos pages à données volumineuses dans le générateur d’aperçu XAML._
 
 ## <a name="design-time-data-basics"></a>Notions de base des données au moment du design
 
@@ -28,7 +28,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-Après avoir ajouté les espaces de noms, vous `d:` pouvez placer devant un attribut ou un contrôle pour l’afficher dans le générateur d’aperçu XAML. Les éléments `d:` avec ne sont pas affichés au moment de l’exécution.
+Après avoir ajouté les espaces de noms, vous pouvez placer `d:` devant un attribut ou un contrôle pour l’afficher dans le générateur d’aperçu XAML. Les éléments avec `d:` ne sont pas affichés au moment de l’exécution.
 
 Par exemple, vous pouvez ajouter du texte à une étiquette qui est généralement liée à des données.
 
@@ -36,7 +36,7 @@ Par exemple, vous pouvez ajouter du texte à une étiquette qui est généraleme
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![Données au moment de la conception avec du texte dans une étiquette](xaml-previewer-images/designtimedata-label-sm.png "Données au moment de la conception avec texte d’une étiquette")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![Données au moment de la conception avec du texte dans une étiquette données au](xaml-previewer-images/designtimedata-label-sm.png "moment de la conception avec texte d’une étiquette")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
 Dans cet exemple, sans `d:Text`, le générateur d’aperçu XAML n’affichera rien pour l’étiquette. Au lieu de cela, il affiche « Name ! » où l’étiquette aura des données réelles au moment de l’exécution.
 
@@ -46,7 +46,7 @@ Vous pouvez utiliser `d:` avec n’importe quel attribut pour un contrôle Xamar
 <d:Button Text="Design Time Button" />
 ```
 
-[![Données au moment du design avec un contrôle Button](xaml-previewer-images/designtimedata-controls-sm.png "Données au moment du design avec un contrôle Button")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![Données au moment du design avec un bouton contrôle]des(xaml-previewer-images/designtimedata-controls-sm.png "données au moment du design avec un contrôle Button")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 Dans cet exemple, le bouton s’affiche uniquement au moment du Design. Utilisez cette méthode pour placer un espace réservé dans pour un [contrôle personnalisé non pris en charge par le générateur d’aperçu XAML](render-custom-controls.md).
 
@@ -58,7 +58,7 @@ Vous pouvez définir une source au moment de la conception pour les images qui s
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 
-[![Données au moment de la conception avec des images](xaml-previewer-images/designtimedata-image-sm.png "Données au moment de la conception avec iamges")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![Données au moment de la conception avec des images]au(xaml-previewer-images/designtimedata-image-sm.png "moment de la conception des données avec iamges")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Données au moment de la conception pour les ListView
 
@@ -84,15 +84,54 @@ Les ListViews sont un moyen couramment utilisé pour afficher des données dans 
 </StackLayout>
 ```
 
-[![Données au moment de la conception avec un ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "Données au moment de la conception avec un ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![Données au moment de la conception avec des](xaml-previewer-images/designtimedata-itemssource-sm.png "données au moment du design ListView avec un ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-Cet exemple affiche une liste de trois TextCells dans le générateur d’aperçu XAML. Vous pouvez passer `x:String` à un modèle de données existant dans votre projet.
+Cet exemple affiche une liste de trois TextCells dans le générateur d’aperçu XAML. Vous pouvez remplacer `x:String` par un modèle de données existant dans votre projet.
 
-Reportez-vous à [l’application Hanselman. Forms de James Montemagno](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47) pour obtenir un exemple plus complexe.
+Vous pouvez également créer un tableau d’objets de données. Par exemple, les propriétés publiques d’un objet de données `Monkey` peuvent être construites en tant que données au moment de la conception :
+
+```csharp
+namespace Monkeys.Models
+{
+    public class Monkey
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+    }
+}
+```
+
+Pour utiliser la classe dans XAML, vous devez importer l’espace de noms dans le nœud racine :
+
+```xaml
+xmlns:models="clr-namespace:Monkeys.Models"
+```
+
+```xaml
+<StackLayout>
+    <ListView ItemsSource="{Binding Items}">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type models:Monkey}">
+                <models:Monkey Name="Baboon" Location="Africa and Asia"/>
+                <models:Monkey Name="Capuchin Monkey" Location="Central and South America"/>
+                <models:Monkey Name="Blue Monkey" Location="Central and East Africa"/>
+            </x:Array>
+        </d:ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Monkey">
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Location}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>
+```
+
+L’avantage est que vous pouvez lier le modèle réel que vous prévoyez d’utiliser.
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>Prix Coder en dur un ViewModel statique
 
-Si vous ne souhaitez pas ajouter de données au moment de la conception à des contrôles individuels, vous pouvez configurer un magasin de données factices à lier à votre page. Reportez-vous au billet de blog de James Montemagno [sur l’ajout de données au moment](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) de la conception pour voir comment établir une liaison à un ViewModel statique en XAML.
+Si vous ne souhaitez pas ajouter de données au moment de la conception à des contrôles individuels, vous pouvez configurer un magasin de données factices à lier à votre page. Reportez-vous au billet de blog de James Montemagno [sur l’ajout de données au moment](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/) de la conception pour voir comment établir une liaison à un ViewModel statique en XAML.
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
