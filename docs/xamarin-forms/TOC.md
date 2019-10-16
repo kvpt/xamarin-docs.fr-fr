@@ -101,6 +101,7 @@
 #### [Pincer](app-fundamentals/gestures/pinch.md)
 #### [Panoramique](app-fundamentals/gestures/pan.md)
 #### [Balayer](app-fundamentals/gestures/swipe.md)
+### [Notifications locales](app-fundamentals/local-notifications.md)
 ### [Localisation](app-fundamentals/localization/index.md)
 #### [Localisation de chaînes et d’images](app-fundamentals/localization/text.md)
 #### [Localisation de droite à gauche](app-fundamentals/localization/right-to-left.md)
