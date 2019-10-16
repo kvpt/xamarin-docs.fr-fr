@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771911"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424866"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Mise en surbrillance d’une zone circulaire sur une carte
 
@@ -20,7 +20,7 @@ ms.locfileid: "70771911"
 
 _Cet article explique comment ajouter une superposition circulaire à une carte afin de mettre en surbrillance une zone circulaire de la carte._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Une superposition est une forme graphique posée sur une carte. Les superpositions prennent en charge le tracé de contenu graphique qui s’ajuste à la carte quand celle-ci est zoomée. Les captures d’écran suivantes montrent le résultat de l’ajout d’une superposition circulaire sur une carte :
 
@@ -229,7 +229,6 @@ namespace MapOverlay.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 circle = formsMap.Circle;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -250,7 +249,7 @@ namespace MapOverlay.Droid
 }
 ```
 
-La méthode `OnElementChanged` appelle la méthode `MapView.GetMapAsync`, qui obtient la `GoogleMap` sous-jacente qui est liée à la vue, sous réserve que le renderer personnalisé soit attaché à un nouvel élément Xamarin.Forms. Une fois que l’instance `GoogleMap` est disponible, la méthode `OnMapReady` est appelée, où le cercle est créé en instanciant un objet `CircleOptions` qui spécifie le centre du cercle et le rayon du cercle en mètres. Le cercle est ensuite ajouté à la carte en appelant la méthode `NativeMap.AddCircle`.
+La méthode `OnElementChanged` récupère les données de cercle personnalisées, à condition que le convertisseur personnalisé soit attaché à un nouvel élément Xamarin. Forms. Une fois que l’instance `GoogleMap` est disponible, la méthode `OnMapReady` est appelée, où le cercle est créé en instanciant un objet `CircleOptions` qui spécifie le centre du cercle et le rayon du cercle en mètres. Le cercle est ensuite ajouté à la carte en appelant la méthode `NativeMap.AddCircle`.
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Création du renderer personnalisé sur la plateforme Windows universelle
 
@@ -303,7 +302,7 @@ Cette méthode procède aux opérations suivantes, sous réserve que le renderer
 - La position et le rayon du cercle sont récupérés dans la propriété `CustomMap.Circle` et passés à la méthode `GenerateCircleCoordinates`, qui génère les coordonnées de latitude et de longitude du périmètre du cercle. Le code de cette méthode d’assistance est indiqué ci-dessous.
 - Les coordonnées du périmètre du cercle sont converties en `List` de coordonnées `BasicGeoposition`.
 - Le cercle est créé en instanciant un objet `MapPolygon`. La classe `MapPolygon` est utilisée pour afficher une forme multipoint sur la carte en définissant sa propriété `Path` sur un objet `Geopath` qui contient les coordonnées de la forme.
-- Le cercle est rendu sur la carte en l’ajoutant à la collection `MapControl.MapElements`.
+- Le polygone est rendu sur la carte en l’ajoutant à la collection `MapControl.MapElements`.
 
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
