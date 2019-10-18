@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 204bf087a51132fdd204990c3b92453ecce96a53
+ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768792"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72426579"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Création d’objets d’interface utilisateur dans Xamarin. iOS
 
-Apple regroupe des fonctionnalités connexes dans des « frameworks » qui correspondent à des espaces de noms Xamarin. iOS. `UIKit`est l’espace de noms qui contient tous les contrôles d’interface utilisateur pour iOS.
+Apple regroupe des fonctionnalités connexes dans des « frameworks » qui correspondent à des espaces de noms Xamarin. iOS. `UIKit` est l’espace de noms qui contient tous les contrôles d’interface utilisateur pour iOS.
 
 Chaque fois que votre code doit faire référence à un contrôle d’interface utilisateur, tel qu’une étiquette ou un bouton, n’oubliez pas d’inclure l’instruction using suivante :
 
@@ -24,7 +24,7 @@ Chaque fois que votre code doit faire référence à un contrôle d’interface 
 using UIKit;
 ```
 
-Tous les contrôles présentés dans ce chapitre se trouvent dans l’espace de noms UIKit, et chaque nom de classe `UI` de contrôle utilisateur a le préfixe.
+Tous les contrôles présentés dans ce chapitre se trouvent dans l’espace de noms UIKit, et chaque nom de classe de contrôle utilisateur a le préfixe `UI`.
 
 Vous pouvez modifier les mises en page et les contrôles de l’interface utilisateur de trois façons :
 
@@ -42,17 +42,17 @@ Pour commencer à créer votre interface utilisateur dans le concepteur iOS, dou
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Boîte à outils")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Panneau boîte à outils-Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 Lorsqu’un contrôle est sélectionné sur l’aire de conception, le **panneau Propriétés** affiche les attributs de ce contrôle. Le **Widget >** le champ nom de l’identité >, qui est renseigné dans la capture d’écran ci-dessous, est utilisé comme nom de *sortie* . Voici comment vous pouvez référencer le contrôle dans C#:
 
- [![](creating-ui-objects-images/image3b.png "Bloc widget propriétés")](creating-ui-objects-images/image3b.png#lightbox)
+ [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
 
 Pour approfondir votre connaissance de l’utilisation du concepteur iOS, reportez-vous au guide [d’introduction au concepteur iOS](~/ios/user-interface/designer/introduction.md) .
 
@@ -64,37 +64,37 @@ Pour ouvrir une table de montage séquentiel dans Xcode, cliquez avec le bouton 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "Menu contextuel de Storyboard-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "Menu contextuel de Storyboard-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Vous pouvez faire glisser les contrôles sur le Aire de conception à partir de la **bibliothèque d’objets** illustrée ci-dessous :
 
- [![](creating-ui-objects-images/image5a.png "Bibliothèque d’objets Xcode")](creating-ui-objects-images/image5a.png#lightbox)
+ [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
 
 Lorsque vous concevez votre interface utilisateur avec Interface Builder vous devez créer une **sortie** pour chaque contrôle que vous souhaitez référencer C#. Pour ce faire, vous activez l' **éditeur** de l’Assistant à l’aide du **bouton centrer** de la barre d’outils Xcode :
 
- [![](creating-ui-objects-images/image6a.png "Bouton de l’éditeur de l’Assistant")](creating-ui-objects-images/image6a.png#lightbox)
+ [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
 
-Cliquez sur un objet d’interface utilisateur. Ensuite, le **contrôle fait glisser** dans le fichier. h. Pour **contrôler le glissement**, maintenez la touche CTRL enfoncée, puis cliquez et maintenez le pointeur sur l’objet d’interface utilisateur pour lequel vous créez la sortie (ou action). Maintenez la touche CTRL enfoncée pendant que vous faites glisser le fichier d’en-tête. Terminez le glissement `@interface` sous la définition. Une ligne bleue doit apparaître avec une légende insérer une sortie ou une collection de sortie, comme illustré dans la capture d’écran ci-dessous.
+Cliquez sur un objet d’interface utilisateur. Ensuite, le **contrôle fait glisser** dans le fichier. h. Pour **contrôler le glissement**, maintenez la touche CTRL enfoncée, puis cliquez et maintenez le pointeur sur l’objet d’interface utilisateur pour lequel vous créez la sortie (ou action). Maintenez la touche CTRL enfoncée pendant que vous faites glisser le fichier d’en-tête. Terminez le glissement sous la définition de `@interface`. Une ligne bleue doit apparaître avec une légende insérer une sortie ou une collection de sortie, comme illustré dans la capture d’écran ci-dessous.
 
 Quand vous relâchez le clic, vous êtes invité à fournir un nom pour la prise, qui sera utilisé pour créer une C# propriété qui peut être référencée dans le code :
 
- [![](creating-ui-objects-images/image8a.png "Création d’une sortie")](creating-ui-objects-images/image8a.png#lightbox)
+ [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
 
 Pour plus d’informations sur l’intégration de l’Interface Builder de Xcode à Visual Studio pour Mac, consultez le document de [génération de code XIB](~/ios/internals/xib-code-generation.md#generated) .
 
-## <a name="using-c"></a>Utilisation de C\#
+## <a name="using-c"></a>Utilisation de C \#
 
 Si vous décidez de créer par programmation un objet d’interface utilisateur à C# l’aide de (dans un contrôleur de vue ou de vue, par exemple), procédez comme suit :
 
-- Déclarez un champ au niveau de la classe pour l’objet d’interface utilisateur. Créez le contrôle lui-même une `ViewDidLoad` seule fois, par exemple. L’objet peut ensuite être référencé dans toutes les méthodes de cycle de vie du contrôleur d’affichage (par exemple,
+- Déclarez un champ au niveau de la classe pour l’objet d’interface utilisateur. Créez le contrôle une seule fois, dans `ViewDidLoad` par exemple. L’objet peut ensuite être référencé dans toutes les méthodes de cycle de vie du contrôleur d’affichage (par exemple,
 `ViewWillAppear`).
-- Créez un `CGRect` qui définit le frame du contrôle (ses coordonnées X et Y sur l’écran, ainsi que sa largeur et sa hauteur). Vous devez vous assurer que vous disposez d’une `using CoreGraphics` directive pour ce.
+- Créez un `CGRect` qui définit le frame du contrôle (ses coordonnées X et Y sur l’écran, ainsi que sa largeur et sa hauteur). Vous devez vous assurer que vous disposez d’une directive de `using CoreGraphics` pour cela.
 - Appelez le constructeur pour créer et assigner le contrôle.
 - Définissez des propriétés ou des gestionnaires d’événements.
 - Appelez `Add()` pour ajouter le contrôle à la hiérarchie d’affichage.
@@ -118,11 +118,11 @@ public override void ViewDidLoad () {
 
 Lorsque des contrôleurs d’affichage sont ajoutés au Aire de conception, C# deux fichiers correspondants sont créés dans le projet. Dans cet exemple, `ControlsViewController.cs` et `ControlsViewController.designer.cs` ont été créés automatiquement :
 
- [![](creating-ui-objects-images/image9b.png "Classe partielle ViewController")](creating-ui-objects-images/image9b.png#lightbox)
+ [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
 
-Le `MainViewController.cs` fichier est destiné à *votre code*. C’est là que `View` les méthodes de cycle `ViewDidLoad` de `ViewWillAppear` vie telles que et sont implémentées, et où vous pouvez ajouter vos propres propriétés, champs et méthodes.
+Le fichier `ControlsViewController.cs` est destiné à *votre code*. C’est là que les méthodes de cycle de vie `View` telles que `ViewDidLoad` et `ViewWillAppear` sont implémentées et que vous pouvez ajouter vos propres propriétés, champs et méthodes.
 
-Le `ControlsViewController.designer.cs` code généré contient une classe partielle. Lorsque vous nommez un contrôle sur l’aire de conception dans Visual Studio pour Mac, ou créez une sortie ou une action dans Xcode, une propriété correspondante, ou une méthode partielle, est ajoutée au fichier du concepteur (designer.cs). Le code ci-dessous montre un exemple de code généré pour deux boutons et un affichage de texte, où l’un des boutons `TouchUpInside` a également un événement.
+Le `ControlsViewController.designer.cs` est un code généré contenant une classe partielle. Lorsque vous nommez un contrôle sur l’aire de conception dans Visual Studio pour Mac, ou créez une sortie ou une action dans Xcode, une propriété correspondante, ou une méthode partielle, est ajoutée au fichier du concepteur (designer.cs). Le code ci-dessous montre un exemple de code généré pour deux boutons et un affichage de texte, où l’un des boutons a également un événement `TouchUpInside`.
 
 Ces éléments de la classe partielle permettent à votre code de référencer les contrôles et de répondre aux actions déclarées sur l’aire de conception :
 
@@ -165,9 +165,9 @@ Ces éléments de la classe partielle permettent à votre code de référencer l
 }
 ```
 
-Le `designer.cs` fichier ne doit pas être modifié manuellement : l’IDE (Visual Studio pour Mac ou Visual Studio) est responsable de sa synchronisation avec le Storyboard.
+Le fichier `designer.cs` ne doit pas être modifié manuellement : l’IDE (Visual Studio pour Mac ou Visual Studio) est responsable de sa synchronisation avec le Storyboard.
 
-Lorsque des objets d’interface utilisateur sont ajoutés par programmation à `View` un `ViewController`ou à, vous instanciez et gérez les références de l’objet vous-même, et aucun fichier de concepteur n’est donc requis.
+Lorsque des objets d’interface utilisateur sont ajoutés par programmation à un `View` ou `ViewController`, vous instanciez et gérez les références d’objet vous-même, et aucun fichier de concepteur n’est donc requis.
 
 ## <a name="related-links"></a>Liens associés
 
