@@ -6,13 +6,13 @@ ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
-ms.date: 10/05/2018
-ms.openlocfilehash: 8b73ec7e3429f3c4ddf53be6196772c51df888e1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.date: 10/16/2019
+ms.openlocfilehash: ce37fa50440f6b35536f1225d7540baea182f9f5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289651"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584294"
 ---
 # <a name="xamarinios-installation"></a>Installation de Xamarin.iOS
 
@@ -20,13 +20,16 @@ ms.locfileid: "70289651"
 
 Pour générer avec Xamarin.iOS, les composants suivants sont nécessaires :
 
+- la dernière version de Visual Studio
 - Dernière version du kit iOS SDK
 - Dernière version de Xcode
-- macOS High Sierra (10.13) et version ultérieure
+- version minimale de macOS requise par Xcode
+
+Pour obtenir des exigences spécifiques en matière de version, consultez les [dernières notes de publication de Xamarin. iOS](/xamarin/ios/release-notes/).
 
 Il est possible de télécharger la dernière version de Xcode à partir du [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) (connexion nécessaire) ou du Mac App Store :
 
-![Capture d’écran de la page de liste Xcode dans le Mac App Store](images/xcode.png "Xcode dans le Mac App Store")
+![Capture d’écran de la page de liste de Xcode dans Mac App Store](images/xcode.png "Xcode dans le Mac App Store")
 
 ## <a name="mac-installation"></a>Installation sur Mac
 
