@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
 ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70283357"
 ---
 # <a name="search-bars-in-xamarinios"></a>Rechercher des barres dans Xamarin. iOS
@@ -57,7 +57,7 @@ Définition des propriétés dans la barre de recherche :
 
 ![Propriétés de la barre de recherche](searchbar-images/image6.png)
 
-Déclenchez `SearchButtonClicked` l’événement lorsque le bouton de recherche est enfoncé. Cela appellera votre logique de recherche :
+Déclenchez l’événement `SearchButtonClicked` lorsque vous appuyez sur le bouton de recherche. Cela appellera votre logique de recherche :
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -88,7 +88,7 @@ Ces propriétés sont expliquées ci-dessous :
   - Affiche le bouton résultats de la recherche/signets – affiche les résultats de la recherche ou l’icône de signets dans la barre de recherche
   - Affiche le bouton Annuler : permet aux utilisateurs de quitter la fonction de recherche. Il est recommandé de sélectionner cette option.
   - Affiche la barre d’étendue : permet aux utilisateurs de limiter l’étendue de leur recherche. Par exemple, lors de la recherche dans l’application musique, l’utilisateur peut choisir s’il souhaite effectuer une recherche dans Apple Music ou dans sa bibliothèque pour obtenir une chanson ou un artiste particulier. Pour afficher différentes options, ajoutez un tableau de titres à la propriété **ScopeBarTitles** .
-  ![Titres de l’étendue de la barre de recherche](searchbar-images/image4.png)
+  titres de l’étendue de la barre de ![Search ](searchbar-images/image4.png)
 
 - **Comportement du texte** : ces options sont utilisées pour traiter la manière dont l’entrée utilisateur est mise en forme lors de la saisie. La mise en majuscules définit le début de chaque mot ou phrase, ou chaque caractère en majuscules. Correction et vérification de l’orthographe avec invite l’utilisateur à saisir l’orthographe suggérée des mots au fur et à mesure de leur saisie.
 - **Clavier** : contrôle le style de clavier affiché pour l’entrée et, par conséquent, les touches disponibles sur le clavier. Cela comprend le pavé numérique, le pavé téléphonique, l’adresse de messagerie et l’URL, ainsi que d’autres options.

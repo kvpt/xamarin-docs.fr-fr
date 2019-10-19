@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70758499"
 ---
 # <a name="introduction-to-android-wear"></a>Introduction à Android Wear
@@ -36,7 +36,7 @@ La première version de Android usure était principalement axée sur l’extens
 
 #### <a name="wearable-notifications"></a>Notifications à porter
 
-La façon la plus simple de prendre en charge l’usure Android est de tirer parti de la nature partagée des notifications entre le portable et l’appareil portable. À l’aide de l’API de notification v4 `WearableExtender` de prise en charge et de la classe (disponible dans la [bibliothèque de prise en charge Xamarin Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), vous pouvez exploiter les fonctionnalités natives de la plateforme, telles que les cartes de style de la boîte de réception ou l’entrée vocale. L’exemple [RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant) fournit un exemple de code qui montre comment envoyer une liste de notifications à un appareil Android d’usure. 
+La façon la plus simple de prendre en charge l’usure Android est de tirer parti de la nature partagée des notifications entre le portable et l’appareil portable. À l’aide de l’API de notification v4 de prise en charge et de la classe `WearableExtender` (disponible dans la [bibliothèque de prise en charge Xamarin Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), vous pouvez exploiter les fonctionnalités natives de la plateforme, telles que les cartes de style de la boîte de réception ou l’entrée vocale. L’exemple [RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant) fournit un exemple de code qui montre comment envoyer une liste de notifications à un appareil Android d’usure. 
 
 #### <a name="companion-applications"></a>Applications auxiliaires
 
@@ -44,7 +44,7 @@ Une autre stratégie consiste à créer une application complète qui s’exécu
 
 ### <a name="user-interface"></a>Interface utilisateur
 
-Le modèle de navigation principal pour l’usure est une série de cartes organisées verticalement. Chacune de ces cartes peut avoir des actions associées qui sont superposées sur la même ligne. La `GridViewPager` classe fournit cette fonctionnalité ; elle adhère au même concept d’adaptateur que `ListView`. En général, vous `GridViewPager` associez `FragmentGridPagerAdaptor` à un `GridPagerAdaptor`(ou) qui vous permet de `Fragment`représenter chaque ligne et chaque cellule de colonne en tant que : 
+Le modèle de navigation principal pour l’usure est une série de cartes organisées verticalement. Chacune de ces cartes peut avoir des actions associées qui sont superposées sur la même ligne. La classe `GridViewPager` fournit cette fonctionnalité. il adhère au même concept d’adaptateur que `ListView`. En général, vous associez le `GridViewPager` à un `FragmentGridPagerAdaptor` (ou `GridPagerAdaptor`) qui vous permet de représenter chaque cellule de ligne et de colonne sous la forme d’un `Fragment` : 
 
 [![Navigation usure](intro-to-wear-images/2d-picker-sml.png "Navigation usure")](intro-to-wear-images/2d-picker.png#lightbox)
 
@@ -56,15 +56,15 @@ Android usure 2,0 ajoute un tiroir de navigation, un tiroir d’action et des bo
 
 Android usure fournit deux API de communication différentes pour faciliter la communication entre les applications mobiles et les applications de poche auxiliaires : 
 
-**API de données** &ndash; Cette API est similaire à une banque de données synchronisée entre l’appareil portable et l’appareil mobile. Android s’occupe de la propagation des modifications entre les ordinateurs portables et les périphériques de poche lorsqu’il est optimal de le faire. Lorsque le portable est hors limites, il met la synchronisation en file d’attente pour une date ultérieure. Le point d’entrée principal pour cette API `WearableClass.DataApi`est. Pour plus d’informations sur cette API, consultez la rubrique [éléments de données de synchronisation](https://developer.android.com/training/wearables/data-layer/data-items.html) Android. 
+L' **API de données** &ndash; cette API est similaire à une banque de données synchronisée entre l’appareil portable et l’appareil mobile. Android s’occupe de la propagation des modifications entre les ordinateurs portables et les périphériques de poche lorsqu’il est optimal de le faire. Lorsque le portable est hors limites, il met la synchronisation en file d’attente pour une date ultérieure. Le point d’entrée principal pour cette API est `WearableClass.DataApi`. Pour plus d’informations sur cette API, consultez la rubrique [éléments de données de synchronisation](https://developer.android.com/training/wearables/data-layer/data-items.html) Android. 
 
-**API de message** &ndash; Grâce à cette API, vous pouvez utiliser un chemin de communication de niveau inférieur : une petite charge utile est envoyée à sens unique sans synchronisation entre les applications de poche et portable.
-Le point d’entrée principal pour cette API `WearableClass.MessageApi`est.
+L' **API de Message** &ndash; cette API vous permet d’utiliser un chemin de communication de niveau inférieur : une petite charge utile est envoyée à sens unique sans synchronisation entre les applications de poche et portable.
+Le point d’entrée principal pour cette API est `WearableClass.MessageApi`.
 Pour plus d’informations sur cette API, consultez la rubrique [messages d’envoi et de réception](https://developer.android.com/training/wearables/data-layer/messages.html) Android.
 
 Vous pouvez choisir d’enregistrer les rappels pour recevoir ces messages via chacune des interfaces d’écouteur d’API ou, également, implémenter un service dans votre application qui dérive de `WearableListenerService`.
 Ce service sera automatiquement instancié par Android.
-L’exemple [FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample) illustre l’implémentation d’un `WearableListenerService`.
+L’exemple [FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample) montre comment implémenter un `WearableListenerService`.
 
 ### <a name="deployment"></a>Déploiement
 
@@ -126,11 +126,11 @@ Pour plus d’informations sur ces deux nouveaux tiroirs interactifs, consultez 
 
 #### <a name="curved-layouts"></a>Dispositions courbées 
 
-L’usure 2,0 introduit de nouvelles fonctionnalités permettant d’afficher des dispositions courbées sur des appareils à usure ronde. Plus précisément, la `WearableRecyclerView` nouvelle classe est optimisée pour afficher une liste d’éléments verticaux sur les affichages arrondis : 
+L’usure 2,0 introduit de nouvelles fonctionnalités permettant d’afficher des dispositions courbées sur des appareils à usure ronde. Plus précisément, la nouvelle classe `WearableRecyclerView` est optimisée pour afficher une liste d’éléments verticaux sur les affichages arrondis : 
 
 ![Exemple de disposition courbée](intro-to-wear-images/curved-layout.png "Exemple de disposition courbée")
 
-`WearableRecyclerView`étend la `RecyclerView` classe pour prendre en charge les dispositions courbées et les gestes de défilement circulaires. Pour plus d’informations, consultez la documentation de l’API [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) Android. 
+`WearableRecyclerView` étend la classe `RecyclerView` pour prendre en charge les dispositions courbées et les gestes de défilement circulaires. Pour plus d’informations, consultez la documentation de l’API [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) Android. 
 
 #### <a name="standalone-apps"></a>Applications autonomes 
 
@@ -138,7 +138,7 @@ Android usure 2,0 les applications peuvent fonctionner indépendamment des appli
 
 #### <a name="wrist-gestures"></a>Gestes de poignet 
 
-Les gestes de poignet permettent aux utilisateurs d’interagir avec votre application sans utiliser l’écran &ndash; tactile. les utilisateurs peuvent répondre à l’application à l’aide d’une seule main. Deux gestes de poignet sont pris en charge : 
+Les gestes de poignet permettent aux utilisateurs d’interagir avec votre application sans utiliser l’écran tactile &ndash; les utilisateurs peuvent répondre à l’application à l’aide d’une seule main. Deux gestes de poignet sont pris en charge : 
 
 - Poignet de scintillement
 - Poignet de scintillement
@@ -174,4 +174,4 @@ Cette introduction a fourni une vue d’ensemble de l’usure d’Android. Il a 
 ## <a name="related-links"></a>Liens associés
 
 - [Installation et configuration](~/android/wear/get-started/installation.md)
-- [Prise en main](~/android/wear/get-started/index.md)
+- [Bien démarrer](~/android/wear/get-started/index.md)

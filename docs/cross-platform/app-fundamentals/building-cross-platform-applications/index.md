@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/28/2016
 ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70288055"
 ---
 # <a name="building-cross-platform-applications"></a>Création d’applications multiplateformes
 
-Il existe deux options pour partager du code entre des applications mobiles multiplateformes : Les projets de ressources partagées et les bibliothèques de classes portables. Ces options sont [décrites ici](~/cross-platform/app-fundamentals/code-sharing.md). des informations supplémentaires sur les [bibliothèques de classes portables](~/cross-platform/app-fundamentals/pcl.md) et les [projets partagés](~/cross-platform/app-fundamentals/shared-projects.md) sont également disponibles.
+Il existe deux options pour partager du code entre des applications mobiles multiplateformes : les projets de ressources partagées et les bibliothèques de classes portables. Ces options sont [décrites ici](~/cross-platform/app-fundamentals/code-sharing.md). des informations supplémentaires sur les [bibliothèques de classes portables](~/cross-platform/app-fundamentals/pcl.md) et les [projets partagés](~/cross-platform/app-fundamentals/shared-projects.md) sont également disponibles.
 
 <a name="Sections" />
 
@@ -46,7 +46,7 @@ Les principes énoncés dans ce document sont mis en pratique dans l’exemple d
 Tasky est une application de liste de tâches simple pour iOS, Android et Windows Phone.
 Il montre les principes fondamentaux de la création d’une application multiplateforme avec Xamarin et utilise une base de données SQLite locale.
 
- [![tasky list](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![tasky list](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
+ Liste des listes de [![tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![tasky](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 Lisez l' [étude de cas Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
@@ -63,8 +63,8 @@ Enfin, il aborde brièvement les tests et fournit des références à une étude
 ## <a name="related-links"></a>Liens associés
 
 - [Options de partage de code](~/cross-platform/app-fundamentals/code-sharing.md)
-- [Étude de cas : Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [Étude de cas : Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Application d’exemple Tasky (GitHub)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Développement d’applications mobiles Xamarin : Notions de base C# sur les plateformes multiplateforme et Xamarin. Forms (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Développement d’applications mobiles Xamarin : notions de C# base sur les plateformes et les Xamarin. Forms (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Développement mobile avec C# Greg-manilles (O’Reilly)](http://shop.oreilly.com/product/0636920024002.do)
 - [Développement professionnel multiplateforme pour appareils mobiles dans C# par Scott Olson, John Hunter, Ben Horgen, Kenny goers (Wrox)](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)
