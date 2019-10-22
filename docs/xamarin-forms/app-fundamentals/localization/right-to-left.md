@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656979"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678839"
 ---
 # <a name="right-to-left-localization"></a>Localisation de droite à gauche
 
@@ -32,7 +32,7 @@ La direction de flux est la direction dans laquelle les éléments d’IU sur la
 
 L’affectation à la propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) de la valeur [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) pour un élément permet généralement de définir l’alignement à droite, l’ordre de lecture de droite à gauche et la direction de flux du contrôle de droite à gauche :
 
-[![TodoItemPage en arabe avec une direction de flux de droite à gauche](rtl-images/TodoItemPage-Arabic.png "TodoItemPage en arabe avec une direction de flux de droite à gauche")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage en arabe avec une direction de flux de droite à gauche")
+[![TodoItemPage en arabe avec sens du déroulement de droite à gauche](rtl-images/TodoItemPage-Arabic.png "TodoItemPage en arabe avec sens du déroulement de droite à gauche")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage en arabe avec sens du déroulement de droite à gauche")
 
 > [!TIP]
 > Vous devez uniquement définir la propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) pour la disposition initiale. Si vous changez cette valeur au moment de l’exécution, cela alourdit le processus de disposition et affecte le niveau de performance.
@@ -72,7 +72,7 @@ Les paramètres régionaux de droite à gauche nécessaires doivent être ajout�
 </array>
 ```
 
-![Langues prises en charge par Info.plist](rtl-images/ios-locales.png "Langues prises en charge par Info.plist")
+![Informations sur les langues prises en charge par info. plist](rtl-images/ios-locales.png "Informations sur les langues prises en charge par info. plist")
 
 Pour plus d’informations, consultez les [Principes de base de la localisation dans iOS](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios).
 
@@ -145,6 +145,46 @@ La localisation de droite à gauche de Xamarin.Forms présente un certain nombre
 - L’alignement du texte de [`Editor`](xref:Xamarin.Forms.Editor) est contrôlé par les paramètres régionaux de l’appareil, et non par la propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection).
 - La propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) n’est pas héritée par les enfants de [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage).
 - L’alignement du texte de [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) est contrôlé par les paramètres régionaux de l’appareil, et non par la propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection).
+
+## <a name="force-right-to-left-layout"></a>Forcer la mise en page de droite à gauche
+
+Les applications Xamarin. iOS et Xamarin. Android peuvent être forcées à toujours utiliser une disposition de droite à gauche, quels que soient les paramètres de l’appareil, en modifiant les projets de plateforme respectifs.
+
+### <a name="ios"></a>iOS
+
+Les applications Xamarin. iOS peuvent être forcées à toujours utiliser une disposition de droite à gauche en modifiant la classe **AppDelegate** comme suit :
+
+1. Déclarez la fonction `IntPtr_objc_msgSend` en tant que première ligne de votre classe `AppDelegate` :
+
+   ```csharp
+   [System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
+   internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
+   ```
+
+1. Appelez la fonction `IntPtr_objc_msgSend` à partir de la méthode `FinishedLaunching`, avant de retourner la méthode `FinshedLaunching` :
+
+   ```csharp
+   bool result = base.FinishedLaunching(app, options);
+
+   ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
+   IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, UISemanticContentAttribute.ForceRightToLeft);
+
+   return result;
+   ```
+
+Cette approche est utile pour les applications qui requièrent toujours une disposition de droite à gauche et supprime la nécessité de définir la propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) .
+
+Pour plus d’informations sur la méthode `IntrPtr_objc_msgSend`, consultez [sélecteurs objective-C dans Xamarin. iOS](~/ios/internals/objective-c-selectors.md).
+
+### <a name="android"></a>Android
+
+Les applications Xamarin. Android peuvent être forcées à toujours utiliser une disposition de droite à gauche en modifiant la classe **MainActivity** pour inclure la ligne suivante :
+
+```csharp
+Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
+```
+
+Cette approche est utile pour les applications qui requièrent toujours une disposition de droite à gauche et supprime la nécessité de définir la propriété [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) .
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Prise en charge linguistique de droite à gauche avec Xamarin.University
 

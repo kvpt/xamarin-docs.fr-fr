@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
 ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71198521"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Présentation de Xamarin.Forms DependencyService
@@ -29,7 +29,7 @@ Le processus d’utilisation de [`DependencyService`](xref:Xamarin.Forms.Depende
 
 Le diagramme suivant montre comment les fonctionnalités natives d’une plateforme sont appelées dans une application Xamarin.Forms :
 
-![Vue d’ensemble de l’emplacement du service avec la classe Xamarin.Forms DependencyService](introduction-images/dependency-service.png "Emplacement du service DependencyService")
+![Vue d’ensemble de l’emplacement du service à l’aide de la classe Xamarin. Forms DependencyService](introduction-images/dependency-service.png "Emplacement du service DependencyService")
 
 ## <a name="create-an-interface"></a>Créer une interface
 

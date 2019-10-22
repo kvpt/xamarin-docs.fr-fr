@@ -10,10 +10,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71249677"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>Stocker des données dans une base de données SQLite.NET locale
@@ -27,10 +27,10 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 Le Guide de démarrage rapide explique comment stocker des données dans une base de données SQLite.NET locale. L’application finale est indiquée ci-dessous :
 
-[![](database-images/screenshots1-sml.png "")Page de commentaires](database-images/screenshots1.png#lightbox "Page de notes")page entrée Note
-[(database-images/screenshots2-sml.png "") ![]](database-images/screenshots2.png#lightbox "Page d’entrée de note")
+[![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
+[![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’essayer ce guide de démarrage rapide. Vous pouvez également télécharger l' [exemple de démarrage rapide précédent](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/) et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
@@ -42,15 +42,15 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
 2. Dans **Explorateur de solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit et sélectionnez **gérer les packages NuGet...** :
 
-    ![](database-images/vs/add-nuget-packages.png "Ajouter les paquets NuGet")    
+    ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
 
 3. Dans le **Gestionnaire de package NuGet**, sélectionnez l’onglet **Parcourir**, recherchez et sélectionnez le package NuGet **sqlite-net-pcl**, puis cliquez sur le bouton **Installer** pour l’ajouter au projet :
 
-    ![](database-images/vs/add-package.png "Ajouter un package")
+    ![](database-images/vs/add-package.png "Add Package")
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Author(s) :** Frank A. Krueger
+    > - **Auteur (s) :** Frank A. Krueger
     > - **ID**  sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -76,7 +76,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```
 
-    Cette classe définit un `Note` modèle qui stocke les données relatives à chaque note dans l’application. La `ID` propriété est marquée avec `PrimaryKey` les `AutoIncrement` attributs et pour garantir que `Note` chaque instance de la base de données SQLite.net aura un ID unique fourni par sqlite.net.
+    Cette classe définit un modèle de `Note` qui stocke les données relatives à chaque note dans l’application. La propriété `ID` est marquée avec des attributs `PrimaryKey` et `AutoIncrement` pour garantir que chaque instance de `Note` dans la base de données SQLite.NET aura un ID unique fourni par SQLite.NET.
 
     Enregistrez les modifications apportées à **note.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
@@ -139,7 +139,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```
 
-    Cette classe contient le code permettant de créer la base de données, de lire des données, d’y écrire des données et de supprimer des données de celle-ci. Le code utilise des API SQLite.NET asynchrones qui déplacent les opérations de base de données vers les threads d’arrière-plan. De plus, le constructeur `NoteDatabase` prend le chemin du fichier de base de données en tant qu’argument. Ce chemin d’accès est fourni par `App` la classe à l’étape suivante.
+    Cette classe contient le code permettant de créer la base de données, de lire des données, d’y écrire des données et de supprimer des données de celle-ci. Le code utilise des API SQLite.NET asynchrones qui déplacent les opérations de base de données vers les threads d’arrière-plan. De plus, le constructeur `NoteDatabase` prend le chemin du fichier de base de données en tant qu’argument. Ce chemin d’accès est fourni par la classe `App` à l’étape suivante.
 
     Enregistrez les modifications apportées à **NoteDatabase.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
@@ -196,14 +196,14 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```
 
-    Ce code définit une `Database` propriété qui crée `NoteDatabase` une instance en tant que singleton, en passant le nom de fichier de la base de données `NoteDatabase` en tant qu’argument au constructeur. Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
+    Ce code définit une propriété `Database` qui crée une instance de `NoteDatabase` en tant que singleton, en passant le nom de fichier de la base de données comme argument au constructeur `NoteDatabase`. Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
 
     Enregistrez les modifications apportées à **App.xaml.cs** en appuyant sur **Ctrl+S** et fermez le fichier.
 
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-9. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la `OnAppearing` méthode par le code suivant :
+9. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la méthode `OnAppearing` par le code suivant :
 
     ```csharp
     protected override async void OnAppearing()
@@ -214,14 +214,14 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```    
 
-    Ce code remplit la [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les notes stockées dans la base de données.
+    Ce code remplit la [`ListView`](xref:Xamarin.Forms.ListView) avec les notes stockées dans la base de données.
 
     Enregistrez les modifications apportées à **NotesPage.Xaml.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-10. Dans **Explorateur de solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les `OnSaveButtonClicked` méthodes `OnDeleteButtonClicked` et par le code suivant :
+10. Dans **Explorateur de solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les méthodes `OnSaveButtonClicked` et `OnDeleteButtonClicked` par le code suivant :
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -240,13 +240,13 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
       }
       ```    
 
-      Stocke une `Note` instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. `NoteEntryPage` Lorsque le `OnSaveButtonClicked` gestionnaire d’événements est exécuté, `Note` l’instance est enregistrée dans la base de données et l’application revient à la page précédente. Lorsque le `OnDeleteButtonClicked` gestionnaire d’événements est exécuté, `Note` l’instance est supprimée de la base de données et l’application revient à la page précédente.
+      L' `NoteEntryPage` stocke une `Note` instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Lorsque le gestionnaire d’événements `OnSaveButtonClicked` est exécuté, l’instance `Note` est enregistrée dans la base de données et l’application accède à la page précédente. Lorsque le gestionnaire d’événements `OnDeleteButtonClicked` est exécuté, l’instance `Note` est supprimée de la base de données et l’application accède à la page précédente.
 
       Enregistrez les modifications apportées à **NoteEntryPage.Xaml.cs** en appuyant sur **CTRL + S**et fermez le fichier.
 
 11. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [génération du démarrage rapide](single-page.md#building-the-quickstart).
 
-    Sur le **NotesPage** , appuyez **+** sur le bouton pour accéder au **NoteEntryPage** et entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
+    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder au **NoteEntryPage** et entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
 
     Entrez un nombre de notes, de longueur variable, pour observer le comportement de l’application.
 
@@ -259,15 +259,15 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
 2. Dans le **panneau solutions**, sélectionnez le projet **Notes** , cliquez avec le bouton droit et sélectionnez **Ajouter > ajouter des packages NuGet...** :
 
-    ![](database-images/vsmac/add-nuget-packages.png "Ajouter les paquets NuGet")    
+    ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
 
 3. Dans la fenêtre **Ajouter des packages**, recherchez et sélectionnez le package NuGet **sqlite-net-pcl**, puis cliquez sur le bouton **Ajouter un package** pour l’ajouter au projet :
 
-    ![](database-images/vsmac/add-package.png "Ajouter un package")
+    ![](database-images/vsmac/add-package.png "Add Package")
 
     > [!NOTE]
     > Il existe plusieurs packages NuGet portant des noms similaires. Le package correct possède ces attributs :
-    > - **Author :** Frank A. Krueger
+    > - **Auteur :** Frank A. Krueger
     > - **ID**  sqlite-net-pcl
     > - **Lien NuGet :** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -293,7 +293,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```
 
-    Cette classe définit un `Note` modèle qui stocke les données relatives à chaque note dans l’application. La `ID` propriété est marquée avec `PrimaryKey` les `AutoIncrement` attributs et pour garantir que `Note` chaque instance de la base de données SQLite.net aura un ID unique fourni par sqlite.net.
+    Cette classe définit un modèle de `Note` qui stocke les données relatives à chaque note dans l’application. La propriété `ID` est marquée avec des attributs `PrimaryKey` et `AutoIncrement` pour garantir que chaque instance de `Note` dans la base de données SQLite.NET aura un ID unique fourni par SQLite.NET.
 
     Enregistrez les modifications apportées à **note.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
@@ -356,7 +356,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```
 
-    Cette classe contient le code permettant de créer la base de données, de lire des données, d’y écrire des données et de supprimer des données de celle-ci. Le code utilise des API SQLite.NET asynchrones qui déplacent les opérations de base de données vers les threads d’arrière-plan. De plus, le constructeur `NoteDatabase` prend le chemin du fichier de base de données en tant qu’argument. Ce chemin d’accès est fourni par `App` la classe à l’étape suivante.
+    Cette classe contient le code permettant de créer la base de données, de lire des données, d’y écrire des données et de supprimer des données de celle-ci. Le code utilise des API SQLite.NET asynchrones qui déplacent les opérations de base de données vers les threads d’arrière-plan. De plus, le constructeur `NoteDatabase` prend le chemin du fichier de base de données en tant qu’argument. Ce chemin d’accès est fourni par la classe `App` à l’étape suivante.
 
     Enregistrez les modifications apportées à **NoteDatabase.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
@@ -413,14 +413,14 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```
 
-    Ce code définit une `Database` propriété qui crée `NoteDatabase` une instance en tant que singleton, en passant le nom de fichier de la base de données `NoteDatabase` en tant qu’argument au constructeur. Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
+    Ce code définit une propriété `Database` qui crée une instance de `NoteDatabase` en tant que singleton, en passant le nom de fichier de la base de données comme argument au constructeur `NoteDatabase`. Lorsque vous exposez la base de données comme un singleton, une connexion de base de données unique est créée et reste ouverte lors de l’exécution de l’application. Ainsi, vous évitez les dépenses liées à l’ouverture et à la fermeture du fichier de base de données chaque fois qu’une opération de base de données est effectuée.
 
     Enregistrez les modifications apportées à **App.xaml.cs** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
 
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-9. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la `OnAppearing` méthode par le code suivant :
+9. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite la méthode `OnAppearing` par le code suivant :
 
     ```csharp
     protected override async void OnAppearing()
@@ -431,14 +431,14 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
     }
     ```    
 
-    Ce code remplit la [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les notes stockées dans la base de données.
+    Ce code remplit la [`ListView`](xref:Xamarin.Forms.ListView) avec les notes stockées dans la base de données.
 
     Enregistrez les modifications apportées à **NotesPage.Xaml.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
     > [!WARNING]
     > Toute tentative de génération de l’application à ce stade entraînera des erreurs qui seront corrigées dans les étapes suivantes.
 
-10. Dans la **panneau solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les `OnSaveButtonClicked` méthodes `OnDeleteButtonClicked` et par le code suivant :
+10. Dans la **panneau solutions**, double-cliquez sur **NoteEntryPage.Xaml.cs** pour l’ouvrir. Remplacez ensuite les méthodes `OnSaveButtonClicked` et `OnDeleteButtonClicked` par le code suivant :
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -457,13 +457,13 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
       }
       ```    
 
-      Stocke une `Note` instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. `NoteEntryPage` Lorsque le `OnSaveButtonClicked` gestionnaire d’événements est exécuté, `Note` l’instance est enregistrée dans la base de données et l’application revient à la page précédente. Lorsque le `OnDeleteButtonClicked` gestionnaire d’événements est exécuté, `Note` l’instance est supprimée de la base de données et l’application revient à la page précédente.
+      L' `NoteEntryPage` stocke une `Note` instance, qui représente une seule note dans le [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de la page. Lorsque le gestionnaire d’événements `OnSaveButtonClicked` est exécuté, l’instance `Note` est enregistrée dans la base de données et l’application accède à la page précédente. Lorsque le gestionnaire d’événements `OnDeleteButtonClicked` est exécuté, l’instance `Note` est supprimée de la base de données et l’application accède à la page précédente.
 
       Enregistrez les modifications apportées à **NoteEntryPage.Xaml.cs** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
 
 11. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [génération du démarrage rapide](single-page.md#building-the-quickstart).
 
-    Sur le **NotesPage** , appuyez **+** sur le bouton pour accéder au **NoteEntryPage** et entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
+    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder au **NoteEntryPage** et entrez une note. Une fois que vous avez enregistré la note, l’application revient à **NotesPage**.
 
     Entrez un nombre de notes, de longueur variable, pour observer le comportement de l’application.
 
@@ -471,7 +471,7 @@ Vous devez réussir le [démarrage rapide précédent](multi-page.md) avant d’
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce guide de démarrage rapide, vous avez appris à:
+Dans ce guide de démarrage rapide, vous avez appris à :
 
 - Utilisez le gestionnaire de package NuGet pour ajouter un package NuGet à un projet.
 - Stockez les données localement dans une base de données SQLite.NET.
@@ -479,7 +479,7 @@ Dans ce guide de démarrage rapide, vous avez appris à:
 Pour styliser l’application à l’aide de styles XAML, passez au démarrage rapide suivant.
 
 > [!div class="nextstepaction"]
-> [Next](styling.md)
+> [Suivant](styling.md)
 
 ## <a name="related-links"></a>Liens connexes
 

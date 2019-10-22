@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771876"
 ---
 # <a name="introduction-to-custom-renderers"></a>Présentation des renderers personnalisés
 
-_Les renderers personnalisés fournissent une approche puissante pour personnaliser l’apparence et le comportement des contrôles Xamarin.Forms. Ils peuvent être utilisés aussi bien pour les petits changements de style que pour la personnalisation sophistiquée de la disposition et du comportement d’une plateforme. Cet article présente les renderers personnalisés et décrit leur processus de création._
+_Les convertisseurs personnalisés fournissent une approche puissante pour personnaliser l’apparence et le comportement des contrôles Xamarin. Forms. Ils peuvent être utilisés pour des modifications de style réduites ou une personnalisation sophistiquée de la disposition et du comportement des plateformes. Cet article fournit une introduction aux convertisseurs personnalisés et décrit le processus de création d’un convertisseur personnalisé._
 
 Les [pages, dispositions et contrôles](~/xamarin-forms/user-interface/controls/index.md) Xamarin.Forms présentent une API commune pour décrire des interfaces utilisateur mobiles multiplateformes. Chaque page, disposition et contrôle est restitué différemment sur chaque plateforme avec une classe `Renderer` qui crée à son tour un contrôle natif (correspondant à la représentation de Xamarin.Forms), le dispose sur l’écran et ajoute le comportement spécifié dans le code partagé.
 
@@ -56,7 +56,7 @@ Le préfixe d’espace de noms `local` peut varier. Toutefois, les valeurs `name
 
 Le contrôle personnalisé `MyEntry` est ensuite restitué sur chaque plateforme, avec un arrière-plan de couleur grise, comme le montrent les captures d’écran suivantes :
 
-![](introduction-images/screenshots.png "Contrôle personnalisé MyEntry sur chaque plateforme")
+![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
 
 Pour changer la couleur d’arrière-plan du contrôle sur chaque plateforme, nous avons recouru exclusivement à une sous-classe du contrôle. Le champ d’action de cette technique est toutefois limité, car il n’est pas possible de tirer parti des améliorations et des personnalisations spécifiques à la plateforme. Quand ils sont nécessaires, des renderers personnalisés doivent être implémentés.
 

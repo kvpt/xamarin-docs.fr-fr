@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770301"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Bac à sable (sandbox) d’une application Xamarin. Mac
@@ -26,7 +26,7 @@ Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous 
 
 Dans cet article, nous allons aborder les bases de l’utilisation de la mise en sandbox dans une application Xamarin. Mac et tous les éléments qui entrent dans le sandboxing : répertoires de conteneurs, droits, autorisations déterminées par l’utilisateur, séparation des privilèges et application du noyau. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. Cet article.
 
-Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les `Register` attributs `Export` et utilisés pour associer vos C# classes à Objets objective-C et éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les attributs `Register` et `Export` utilisés pour associer vos C# classes à objective-c. objets et éléments d’interface utilisateur.
 
 ## <a name="about-the-app-sandbox"></a>À propos du bac à sable (sandbox) d’application
 
@@ -68,10 +68,10 @@ Nous allons vérifier que l’application est en fait bac à sable (sandbox) et 
 Procédez comme suit pour créer notre exemple de projet :
 
 1. Démarrez Visual Studio pour Mac, puis cliquez sur la **nouvelle solution.** compte.
-2. Dans la boîte de dialogue **nouveau projet** , > sélectionnez application > Mac application**cacao**:
+2. Dans la boîte de dialogue **nouveau projet** , sélectionnez **Mac**  > **application**  > **cacao application**:
 
     [![Création d’une application de cacao](sandboxing-images/sample01.png "Création d’une application de cacao")](sandboxing-images/sample01-large.png#lightbox)
-3. Cliquez sur le bouton **suivant** , `MacSandbox` entrez pour le nom du projet et cliquez sur le bouton **créer** :
+3. Cliquez sur le bouton **suivant** , entrez `MacSandbox` pour le nom du projet, puis cliquez sur le bouton **créer** :
 
     [![Saisie du nom de l’application](sandboxing-images/sample02.png "Saisie du nom de l’application")](sandboxing-images/sample02-large.png#lightbox)
 4. Dans la **panneau solutions**, double-cliquez sur le fichier **main. Storyboard** pour l’ouvrir en vue de le modifier dans Xcode :
@@ -80,12 +80,12 @@ Procédez comme suit pour créer notre exemple de projet :
 5. Faites glisser une **vue Web** dans la fenêtre, dimensionnez-la pour remplir la zone de contenu, puis définissez-la sur agrandir et réduire avec la fenêtre :
 
     [![Ajout d’une vue Web](sandboxing-images/sample04.png "Ajout d’une vue Web")](sandboxing-images/sample04-large.png#lightbox)
-6. Créez une prise pour l’affichage Web appelée `webView`:
+6. Créez un orifice pour l’affichage Web appelé `webView` :
 
     [![Création d’une nouvelle prise](sandboxing-images/sample05.png "Création d’une nouvelle prise")](sandboxing-images/sample05-large.png#lightbox)
 7. Revenez à Visual Studio pour Mac et double-cliquez sur le fichier **ViewController.cs** dans le **panneau solutions** pour l’ouvrir et le modifier.
-8. Ajoutez l’instruction using suivante :`using WebKit;`
-9. Faites en `ViewDidLoad` sorte que la méthode ressemble à ce qui suit :
+8. Ajoutez l’instruction using suivante : `using WebKit;`
+9. Faites en sorte que la méthode `ViewDidLoad` ressemble à ce qui suit :
 
     ```csharp
     public override void AwakeFromNib ()
@@ -99,7 +99,7 @@ Procédez comme suit pour créer notre exemple de projet :
 
 Exécutez votre application et assurez-vous que le site Web Apple est affiché dans la fenêtre comme suit :
 
-[Présentation ![d’un exemple d’exécution d’application] Présentation (sandboxing-images/sample06.png "d’un exemple d’exécution d’application")](sandboxing-images/sample06-large.png#lightbox)
+[![Présentation d’un exemple d’exécution d’application](sandboxing-images/sample06.png "Présentation d’un exemple d’exécution d’application")](sandboxing-images/sample06-large.png#lightbox)
 
 <a name="Signing_and_Provisioning_the_App" />
 
@@ -114,7 +114,7 @@ Procédez comme suit :
     [![Connexion au portail des développeurs Apple](sandboxing-images/sign01.png "Connexion au portail des développeurs Apple")](sandboxing-images/sign01-large.png#lightbox)
 2. Sélectionnez **certificats, identificateurs & profils**:
 
-    [![Sélection de certificats, d’identificateurs et de profils](sandboxing-images/sign02.png "Sélection de certificats, d’identificateurs et de profils")](sandboxing-images/sign02-large.png#lightbox)
+    [![Sélection de certificats, identificateurs & profils](sandboxing-images/sign02.png "Sélection de certificats, identificateurs & profils")](sandboxing-images/sign02-large.png#lightbox)
 3. Sous **applications Mac**, sélectionnez **identificateurs**:
 
     [![Sélection des identificateurs](sandboxing-images/sign03.png "Sélection des identificateurs")](sandboxing-images/sign03-large.png#lightbox)
@@ -158,10 +158,10 @@ Ensuite, nous devons charger le nouvel ID d’application et le nouveau profil s
 Ensuite, nous devons sélectionner le nouvel ID d’application et le profil de provisionnement dans notre projet Xamarin. Mac. Procédez comme suit :
 
 1. Dans la **panneau solutions**, double-cliquez sur le fichier **info. plist** pour l’ouvrir et le modifier.
-2. Assurez-vous que l' **identificateur de Bundle** correspond à l’ID d’application que `com.appracatappra.MacSandbox`nous avons créé ci-dessus (exemple :):
+2. Assurez-vous que l' **identificateur de Bundle** correspond à l’ID d’application que nous avons créé ci-dessus (exemple : `com.appracatappra.MacSandbox`) :
 
     [![Modification de l’identificateur de Bundle](sandboxing-images/sign13.png "Modification de l’identificateur de Bundle")](sandboxing-images/sign13-large.png#lightbox)
-3. Ensuite, double-cliquez sur le fichier **habilitations. plist** et vérifiez que notre **magasin clé-valeur icloud** et que les **conteneurs icloud** correspondent tous à notre ID d’application que `com.appracatappra.MacSandbox`nous avons créé ci-dessus (exemple :):
+3. Ensuite, double-cliquez sur le fichier **habilitations. plist** et vérifiez que notre **magasin clé-valeur icloud** et que les **conteneurs icloud** correspondent tous à notre ID d’application créé ci-dessus (exemple : `com.appracatappra.MacSandbox`) :
 
     [![Modification du fichier habilitations. plist](sandboxing-images/sign17.png "Modification du fichier habilitations. plist")](sandboxing-images/sign17-large.png#lightbox)
 4. Enregistrez les modifications apportées.
@@ -208,19 +208,19 @@ Vous activez le bac à sable (sandbox) de l’application en activant une case �
 
 Hormis le comportement de blocage des ressources, il existe trois façons de savoir si une application Xamarin. Mac a été correctement bac à sable (sandbox) :
 
-1. Dans Finder, vérifiez le contenu du `~/Library/Containers/` dossier : si l’application est bac à sable (sandbox), il y aura un dossier nommé comme l’identificateur de Bundle de votre application (exemple : `com.appracatappra.MacSandbox`) :
+1. Dans Finder, vérifiez le contenu du dossier `~/Library/Containers/`-si l’application est bac à sable (sandbox), il y aura un dossier nommé comme l’identificateur de Bundle de votre application (exemple : `com.appracatappra.MacSandbox`) :
 
     [![Ouverture de l’offre groupée de l’application](sandboxing-images/sample09.png "Ouverture de l’offre groupée de l’application")](sandboxing-images/sample09-large.png#lightbox)
 2. Le système voit l’application comme bac à sable (sandbox) dans le moniteur d’activité :
-    - Lancez le moniteur d’activité `/Applications/Utilities`(sous).
-    - Choisissez **Afficher** > les**colonnes** et vérifiez que l’option de menu **sandbox** est cochée.
-    - Assurez-vous que la `Yes` colonne sandbox lit pour votre application :
+    - Lancez le moniteur d’activité (sous `/Applications/Utilities`).
+    - Choisissez **Afficher** les**colonnes** de  >  et vérifiez que l’option de menu **sandbox** est cochée.
+    - Assurez-vous que la colonne sandbox lit `Yes` pour votre application :
 
     [![Vérification de l’application dans le moniteur d’activité](sandboxing-images/sample10.png "Vérification de l’application dans le moniteur d’activité")](sandboxing-images/sample10-large.png#lightbox)
 3. Vérifiez que le fichier binaire de l’application est en mode bac à sable (sandbox) :
     - Démarrez l’application Terminal.
-    - Accédez au répertoire des `bin` applications.
-    - Exécutez cette commande : `codesign -dvvv --entitlements :- executable_path` (où `executable_path` est le chemin d’accès à votre application) :
+    - Accédez au répertoire des applications `bin`.
+    - Exécutez la commande suivante : `codesign -dvvv --entitlements :- executable_path` (où `executable_path` est le chemin d’accès à votre application) :
 
     [![Vérification de l’application sur la ligne de commande](sandboxing-images/sample11.png "Vérification de l’application sur la ligne de commande")](sandboxing-images/sample11-large.png#lightbox)
 
@@ -230,7 +230,7 @@ Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie
 
 [![Définition des options requises](sandboxing-images/debug01.png "Définition des options requises")](sandboxing-images/debug01-large.png#lightbox)
 
-L’autorisation **autoriser les connexions réseau sortantes (client)** est celle qui est requise pour le débogueur, l’activation de celle-ci permet le débogage normal. Étant donné que vous ne pouvez pas effectuer de débogage `CompileEntitlements` sans cela `msbuild` , nous avons mis à jour la cible pour pour ajouter automatiquement cette autorisation aux droits pour toute application qui est bac à sable (sandbox) pour les versions de débogage uniquement. Les versions release doivent utiliser les droits spécifiés dans le fichier de droits, non modifié.
+L’autorisation **autoriser les connexions réseau sortantes (client)** est celle qui est requise pour le débogueur, l’activation de celle-ci permet le débogage normal. Étant donné que vous ne pouvez pas effectuer de débogage sans cela, nous avons mis à jour la cible de `CompileEntitlements` pour `msbuild` pour ajouter automatiquement cette autorisation aux droits pour toute application qui est bac à sable (sandbox) pour les versions de débogage uniquement. Les versions release doivent utiliser les droits spécifiés dans le fichier de droits, non modifié.
 
 ### <a name="resolving-an-app-sandbox-violation"></a>Résolution d’une violation de bac à sable (sandbox) d’application
 
@@ -245,12 +245,12 @@ Si vous pensez qu’une violation du bac à sable (sandbox) d’application se p
 Effectuez ce qui suit :
 
 1. Compilez l’application en question et exécutez-la à partir de Visual Studio pour Mac.
-2. Ouvrez l’application **console** (à `/Applications/Utilties/`partir de).
-3. Sélectionnez **tous les messages** dans la barre latérale `sandbox` , puis entrez dans la recherche :
+2. Ouvrez l’application **console** (à partir de `/Applications/Utilties/`).
+3. Sélectionnez **tous les messages** dans la barre latérale et entrez `sandbox` dans la recherche :
 
     [![Exemple de problème de sandbox dans la console](sandboxing-images/resolve01.png "Exemple de problème de sandbox dans la console")](sandboxing-images/resolve01-large.png#lightbox)
 
-Pour notre exemple d’application ci-dessus, vous pouvez voir que le crénage bloque le `network-outbound` trafic en raison du bac à sable (sandbox) de l’application, puisque nous n’avons pas demandé ce droit.
+Pour notre exemple d’application ci-dessus, vous pouvez voir que le crénage bloque le trafic `network-outbound` en raison du bac à sable (sandbox) de l’application, puisque nous n’avons pas demandé ce droit.
 
 #### <a name="fixing-app-sandbox-violations-with-entitlements"></a>Correction des violations du bac à sable (sandbox) d’application avec les droits
 
@@ -293,22 +293,22 @@ Lorsque votre application Xamarin. Mac adopte le bac à sable (sandbox) de l’a
 - **Le répertoire du conteneur d’application** : lors de la première exécution, le système d’exploitation crée un _Répertoire de conteneur_ spécial dans lequel toutes ses ressources vont, auxquelles seul il peut accéder. L’application dispose d’un accès complet en lecture/écriture à ce répertoire.
 - **Répertoires de conteneur du groupe d’applications** : votre application peut être autorisée à accéder à un ou plusieurs _conteneurs de groupe_ partagés entre les applications du même groupe.
 - **Fichiers spécifiés** par l’utilisateur : votre application obtient automatiquement l’accès aux fichiers qui sont explicitement ouverts ou déplacés vers l’application par l’utilisateur.
-- **Éléments connexes** : avec les droits appropriés, votre application peut avoir accès à un fichier portant le même nom, mais avec une extension différente. Par exemple, un document qui a été enregistré en tant que `.txt` fichier `.pdf`et.
+- **Éléments connexes** : avec les droits appropriés, votre application peut avoir accès à un fichier portant le même nom, mais avec une extension différente. Par exemple, un document qui a été enregistré en tant que fichier `.txt` et `.pdf`.
 - **Répertoires temporaires, répertoires d’outils en ligne de commande et emplacements lisibles spécifiques** : votre application dispose de différents degrés d’accès aux fichiers dans d’autres emplacements bien définis, comme spécifié par le système.
 
 #### <a name="the-app-container-directory"></a>Répertoire du conteneur d’application
 
 Le répertoire du conteneur d’applications d’une application Xamarin. Mac présente les caractéristiques suivantes :
 
-- Il se trouve dans un emplacement masqué dans le répertoire de démarrage de l' `~Library/Containers`utilisateur (généralement) et est accessible `NSHomeDirectory` à l’aide de la fonction (voir ci-dessous) dans votre application. Étant donné qu’il se trouve dans le répertoire de départ, chaque utilisateur obtient son propre conteneur pour l’application.
+- Il se trouve dans un emplacement masqué dans le répertoire de démarrage de l’utilisateur (généralement `~Library/Containers`) et est accessible à l’aide de la fonction `NSHomeDirectory` (voir ci-dessous) dans votre application. Étant donné qu’il se trouve dans le répertoire de départ, chaque utilisateur obtient son propre conteneur pour l’application.
 - L’application dispose d’un accès illimité en lecture/écriture au répertoire du conteneur et à tous ses sous-répertoires et fichiers qu’il contient.
-- La plupart des API de recherche de chemins d’accès macOS sont relatives au conteneur de l’application. Par exemple, le conteneur aura sa propre **bibliothèque** (accessible via `NSLibraryDirectory`), les sous-répertoires de **prise en charge des applications** et de **Préférences** .
+- La plupart des API de recherche de chemins d’accès macOS sont relatives au conteneur de l’application. Par exemple, le conteneur aura sa propre **bibliothèque** (accessible via `NSLibraryDirectory`), les sous-répertoires de **prise en charge** de l’application et de **Préférences** .
 - macOS établit et applique la connexion entre et l’application et son conteneur via la signature de code. Même si une autre application tente d’usurper l’application à l’aide de son **identificateur de Bundle**, elle ne pourra pas accéder au conteneur en raison de la signature de code.
 - Le conteneur n’est pas destiné aux fichiers générés par l’utilisateur. Au lieu de cela, il s’agit des fichiers que votre application utilise, tels que des bases de données, des caches ou d’autres types de données spécifiques.
 - Pour les types d’applications _Shoebox_ (comme l’application photo d’Apple), le contenu de l’utilisateur sera placé dans le conteneur.
 
 > [!IMPORTANT]
-> Malheureusement, Xamarin. Mac ne dispose pas encore d’une couverture d’API de 100% (contrairement à Xamarin. IOS) `NSHomeDirectory` . par conséquent, l’API n’a pas été mappée dans la version actuelle de Xamarin. Mac.
+> Malheureusement, Xamarin. Mac ne dispose pas encore d’une couverture d’API de 100% (contrairement à Xamarin. iOS). par conséquent, l’API `NSHomeDirectory` n’a pas été mappée dans la version actuelle de Xamarin. Mac.
 
 En guise de solution de contournement temporaire, vous pouvez utiliser le code suivant :
 
@@ -325,9 +325,9 @@ public static string ContainerDirectory {
 
 #### <a name="the-app-group-container-directory"></a>Répertoire du conteneur du groupe d’applications
 
-À partir de Mac MacOS 10.7.5 (et versions ultérieures), une application `com.apple.security.application-groups` peut utiliser le droit d’accéder à un conteneur partagé qui est commun à toutes les applications du groupe. Vous pouvez utiliser ce conteneur partagé pour le contenu non-utilisateur, tel que la base de données ou d’autres types de fichiers de prise en charge (tels que les caches).
+À partir de Mac macOS 10.7.5 (et versions ultérieures), une application peut utiliser le `com.apple.security.application-groups` droit d’accéder à un conteneur partagé qui est commun à toutes les applications du groupe. Vous pouvez utiliser ce conteneur partagé pour le contenu non-utilisateur, tel que la base de données ou d’autres types de fichiers de prise en charge (tels que les caches).
 
-Les conteneurs de groupe sont automatiquement ajoutés au conteneur sandbox de chaque application (s’ils font partie d’un groupe) et sont stockés `~/Library/Group Containers/<application-group-id>`dans. L’ID de groupe _doit_ commencer par l’ID de votre équipe de développement et un point, par exemple :
+Les conteneurs de groupe sont automatiquement ajoutés au conteneur du bac à sable (sandbox) de chaque application (s’ils font partie d’un groupe) et sont stockés dans `~/Library/Group Containers/<application-group-id>`. L’ID de groupe _doit_ commencer par l’ID de votre équipe de développement et un point, par exemple :
 
 ```plist
 <team-id>.com.company.<group-name>
@@ -340,10 +340,10 @@ Pour plus d’informations, consultez Ajout d' [une application à un groupe d�
 Une application Xamarin. Mac bac à sable (sandbox) peut accéder aux emplacements du système de fichiers en dehors de son conteneur des manières suivantes :
 
 - À la direction spécifique de l’utilisateur (par le biais de boîtes de dialogue d’ouverture et d’enregistrement ou d’autres méthodes telles que le glisser-déplacer).
-- En utilisant des droits pour des emplacements spécifiques du système de fichiers ( `/bin` tels `/usr/lib`que ou).
+- En utilisant des droits pour des emplacements spécifiques du système de fichiers (par exemple, `/bin` ou `/usr/lib`).
 - Lorsque l’emplacement du système de fichiers se trouve dans certains répertoires accessibles au monde entier (par exemple, le partage).
 
-_Powerbox_ est la technologie de sécurité MacOS qui interagit avec l’utilisateur pour étendre les droits d’accès aux fichiers de votre application Xamarin. Mac en mode bac à sable (sandbox). Powerbox n’a pas d’API, mais est activé de `NSOpenPanel` manière transparente quand l’application appelle ou. `NSSavePanel` L’accès à Powerbox est activé via les droits que vous définissez pour votre application Xamarin. Mac.
+_Powerbox_ est la technologie de sécurité MacOS qui interagit avec l’utilisateur pour étendre les droits d’accès aux fichiers de votre application Xamarin. Mac en mode bac à sable (sandbox). Powerbox n’a pas d’API, mais est activé de manière transparente quand l’application appelle une `NSOpenPanel` ou `NSSavePanel`. L’accès à Powerbox est activé via les droits que vous définissez pour votre application Xamarin. Mac.
 
 Quand une application bac à sable (sandbox) affiche une boîte de dialogue Ouvrir ou enregistrer, la fenêtre est présentée par Powerbox (et non AppKit) et a donc accès aux fichiers ou répertoires auxquels l’utilisateur a accès.
 
@@ -363,33 +363,33 @@ En outre, le système autorise automatiquement les éléments suivants dans une 
   - `/usr/sbin`
   - `/usr/share`
   - `/System`
-- Lire et écrire des fichiers dans les répertoires `NSTemporaryDirectory`créés par.
+- Lire et écrire des fichiers dans les répertoires créés par `NSTemporaryDirectory`.
 
 Par défaut, les fichiers ouverts ou enregistrés par une application Xamarin. Mac bac à sable (sandbox) restent accessibles jusqu’à ce que l’application se termine (à moins que le fichier ne soit encore ouvert à la fermeture de l’application). Les fichiers ouverts sont automatiquement restaurés dans le bac à sable (sandbox) de l’application via la fonctionnalité de reprise macOS lors du prochain démarrage de l’application.
 
 Pour assurer la persistance aux fichiers situés en dehors du conteneur d’une application Xamarin. Mac, utilisez des signets de portée de sécurité (voir ci-dessous).
 
-#### <a name="related-items"></a>Éléments connexes
+#### <a name="related-items"></a>Éléments associés
 
-Le bac à sable de l’application permet à une application d’accéder à des éléments associés portant le même nom de fichier, mais avec des extensions différentes. La fonctionnalité comporte deux parties : a) une liste d’extensions associées dans le fichier de `Info.plst` l’application, b) pour indiquer au bac à sable (sandbox) ce que l’application fera avec ces fichiers.
+Le bac à sable de l’application permet à une application d’accéder à des éléments associés portant le même nom de fichier, mais avec des extensions différentes. La fonctionnalité comporte deux parties : a) une liste d’extensions associées dans le fichier `Info.plst`, b) de l’application, pour indiquer au bac à sable (sandbox) ce que l’application fera avec ces fichiers.
 
 Il existe deux scénarios dans lesquels cela est logique :
 
-1. L’application doit être en mesure d’enregistrer une version différente du fichier (avec une nouvelle extension). Par exemple, l’exportation `.txt` d’un fichier `.pdf` dans un fichier. Pour gérer cette situation, vous devez utiliser un `NSFileCoordinator` pour accéder au fichier. Vous devez d’abord `WillMove(fromURL, toURL)` appeler la méthode, déplacer le fichier vers la nouvelle extension, puis `ItemMoved(fromURL, toURL)`appeler.
-2. L’application doit ouvrir un fichier principal avec une extension et plusieurs fichiers de prise en charge avec des extensions différentes. Par exemple, un film et un fichier de sous-titre. Utilisez un `NSFilePresenter` pour accéder au fichier secondaire. Fournissez le fichier principal à `PrimaryPresentedItemURL` la propriété et le fichier secondaire à `PresentedItemURL` la propriété. Lorsque le fichier principal est ouvert, appelez la `AddFilePresenter` méthode de la `NSFileCoordinator` classe pour inscrire le fichier secondaire.
+1. L’application doit être en mesure d’enregistrer une version différente du fichier (avec une nouvelle extension). Par exemple, l’exportation d’un fichier de `.txt` dans un fichier `.pdf`. Pour gérer cette situation, vous devez utiliser une `NSFileCoordinator` pour accéder au fichier. Vous devez d’abord appeler la méthode `WillMove(fromURL, toURL)`, déplacer le fichier vers la nouvelle extension, puis appeler `ItemMoved(fromURL, toURL)`.
+2. L’application doit ouvrir un fichier principal avec une extension et plusieurs fichiers de prise en charge avec des extensions différentes. Par exemple, un film et un fichier de sous-titre. Utilisez un `NSFilePresenter` pour accéder au fichier secondaire. Fournissez le fichier principal à la propriété `PrimaryPresentedItemURL` et le fichier secondaire à la propriété `PresentedItemURL`. Lorsque le fichier principal est ouvert, appelez la méthode `AddFilePresenter` de la classe `NSFileCoordinator` pour inscrire le fichier secondaire.
 
-Dans les deux scénarios, le fichier **info. plist** de l’application doit déclarer les types de documents que l’application peut ouvrir. Pour tout type de fichier, ajoutez `NSIsRelatedItemType` (avec une valeur de `YES`) à son entrée dans le `CFBundleDocumentTypes` tableau.
+Dans les deux scénarios, le fichier **info. plist** de l’application doit déclarer les types de documents que l’application peut ouvrir. Pour tout type de fichier, ajoutez la `NSIsRelatedItemType` (avec une valeur de `YES`) à son entrée dans le tableau `CFBundleDocumentTypes`.
 
 #### <a name="open-and-save-dialog-behavior-with-sandboxed-apps"></a>Ouvrir et enregistrer le comportement de la boîte de dialogue avec les applications sandbox
 
-Les limites suivantes sont placées sur `NSOpenPanel` et `NSSavePanel` lors de leur appel à partir d’une application Xamarin. Mac bac à sable (sandbox) :
+Les limites suivantes sont placées sur le `NSOpenPanel` et `NSSavePanel` lors de leur appel à partir d’une application Xamarin. Mac bac à sable (sandbox) :
 
 - Vous ne pouvez pas appeler par programmation le bouton **OK** .
-- Vous ne pouvez pas modifier par programmation la sélection d’un utilisateur `NSOpenSavePanelDelegate`dans un.
+- Vous ne pouvez pas modifier par programmation la sélection d’un utilisateur dans un `NSOpenSavePanelDelegate`.
 
 En outre, les modifications d’héritage suivantes sont en place :
 
-- **Application non bac à sable (sandbox)**  -  `NSOpenPanel``NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
+- @No__t_2 d' **application  -  non bac à sable (sandbox)** `NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
 
 ### <a name="security-scoped-bookmarks-and-persistent-resource-access"></a>Signets avec étendue de sécurité et accès aux ressources persistant
 
@@ -403,27 +403,27 @@ Lorsque vous travaillez avec des signets de portée de sécurité et un accès p
 
 - **Un signet à portée d’application fournit un accès permanent à un fichier ou à un dossier spécifié par l’utilisateur.**
 
-    Par exemple, si l’application Xamarin. Mac bac à sable (sandbox) autorise à utiliser pour ouvrir un document externe en `NSOpenPanel`vue de sa modification (à l’aide d’un), l’application peut créer un signet à portée d’application afin qu’elle puisse à nouveau accéder au même fichier.
+    Par exemple, si l’application Xamarin. Mac bac à sable (sandbox) autorise l’utilisation de pour ouvrir un document externe en vue de sa modification (à l’aide d’un `NSOpenPanel`), l’application peut créer un signet à portée d’application afin qu’il puisse à nouveau accéder au même fichier à l’avenir.
 - **Un signet d’étendue de document fournit un accès permanent à un document spécifique à un sous-fichier.**
 
 Par exemple, une application de modification vidéo qui crée un fichier projet qui a accès aux images individuelles, aux clips vidéo et aux fichiers audio qui seront ultérieurement combinés en un seul film.
 
-Lorsque l’utilisateur importe un fichier de ressources dans le projet (via `NSOpenPanel`un), l’application crée un signet d’étendue de document pour l’élément stocké dans le projet, afin que le fichier soit toujours accessible à l’application.
+Lorsque l’utilisateur importe un fichier de ressources dans le projet (via un `NSOpenPanel`), l’application crée un signet d’étendue de document pour l’élément stocké dans le projet, afin que le fichier soit toujours accessible à l’application.
 
 Un signet d’étendue de document peut être résolu par toute application qui peut ouvrir les données de signet et le document lui-même. Cela prend en charge la portabilité, permettant à l’utilisateur d’envoyer les fichiers projet à un autre utilisateur et de faire en sorte que tous les signets fonctionnent également pour eux.
 
 > [!IMPORTANT]
-> Un signet d’étendue de document ne peut pointer _que_ vers un seul fichier et non un dossier, et ce fichier ne peut pas se trouver dans un emplacement utilisé `/private` par `/Library`le système (tel que ou).
+> Un signet d’étendue de document ne peut pointer _que_ vers un seul fichier et non un dossier, et ce fichier ne peut pas se trouver à un emplacement utilisé par le système (par exemple, `/private` ou `/Library`).
 
 #### <a name="using-security-scoped-bookmarks"></a>Utilisation des signets de portée de sécurité
 
 À l’aide de l’un des deux types de signets de sécurité, vous devez effectuer les étapes suivantes :
 
-1. **Définir les droits appropriés dans l’application Xamarin. Mac qui doit utiliser des signets de sécurité** -pour les signets de portée application, définissez la `com.apple.security.files.bookmarks.app-scope` clé d’habilitation sur. `true` Pour les signets d’étendue de document, affectez la valeur `true`à la `com.apple.security.files.bookmarks.document-scope` clé habilitation.
-2. **Créer un signet d’étendue de sécurité** : pour tout fichier ou dossier auquel l’utilisateur a donné l’accès ( `NSOpenPanel` par exemple, par exemple), l’application doit disposer d’un accès permanent à. Utilisez la `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` méthode de la `NSUrl` classe pour créer le signet.
-3. **Résoudre le signet d’étendue de sécurité** -lorsque l’application a besoin d’accéder à nouveau à la ressource (par exemple, après le redémarrage), elle doit résoudre le signet en une URL d’étendue de sécurité. Utilisez la `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` méthode de la `NSUrl` classe pour résoudre le signet.
-4. **Informez explicitement le système auquel vous souhaitez accéder au fichier à partir de l’URL d’étendue de sécurité** -cette étape doit être effectuée immédiatement après avoir obtenu l’URL d’étendue de sécurité ci-dessus ou, lorsque vous souhaitez ultérieurement accéder à nouveau à la ressource après avoir vous avez libéré votre accès. Appelez la `StartAccessingSecurityScopedResource ()` méthode de la `NSUrl` classe pour commencer à accéder à une URL d’étendue de sécurité.
-5. Informez **explicitement le système que vous avez fini d’accéder au fichier à partir de l’URL d’étendue de sécurité** -dès que possible, vous devez informer le système lorsque l’application n’a plus besoin d’accéder au fichier (par exemple, si l’utilisateur la ferme). Appelez la `StopAccessingSecurityScopedResource ()` méthode de la `NSUrl` classe pour arrêter d’accéder à une URL d’étendue de sécurité.
+1. **Définir les droits appropriés dans l’application Xamarin. Mac qui doit utiliser des signets de portée de sécurité** : pour les signets de portée application, définissez la clé `com.apple.security.files.bookmarks.app-scope` habilitation sur `true`. Pour les signets d’étendue de document, affectez à la clé `com.apple.security.files.bookmarks.document-scope` habilitation la valeur `true`.
+2. **Créer un signet d’étendue de sécurité** : pour tout fichier ou dossier auquel l’utilisateur a donné l’accès (par exemple, par `NSOpenPanel`), l’application doit disposer d’un accès permanent à. Utilisez la méthode `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` de la classe `NSUrl` pour créer le signet.
+3. **Résoudre le signet d’étendue de sécurité** -lorsque l’application a besoin d’accéder à nouveau à la ressource (par exemple, après le redémarrage), elle doit résoudre le signet en une URL d’étendue de sécurité. Utilisez la méthode `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` de la classe `NSUrl` pour résoudre le signet.
+4. **Informez explicitement le système auquel vous souhaitez accéder au fichier à partir de l’URL d’étendue de sécurité** -cette étape doit être effectuée immédiatement après avoir obtenu l’URL d’étendue de sécurité ci-dessus ou, lorsque vous souhaitez ultérieurement accéder à nouveau à la ressource après avoir vous avez libéré votre accès. Appelez la méthode `StartAccessingSecurityScopedResource ()` de la classe `NSUrl` pour commencer à accéder à une URL d’étendue de sécurité.
+5. Informez **explicitement le système que vous avez fini d’accéder au fichier à partir de l’URL d’étendue de sécurité** -dès que possible, vous devez informer le système lorsque l’application n’a plus besoin d’accéder au fichier (par exemple, si l’utilisateur la ferme). Appelez la méthode `StopAccessingSecurityScopedResource ()` de la classe `NSUrl` pour arrêter d’accéder à une URL d’étendue de sécurité.
 
 Une fois que vous avez libéré l’accès à une ressource, vous devez repasser à l’étape 4 pour rétablir l’accès. Si l’application Xamarin. Mac est redémarrée, vous devez revenir à l’étape 3 et résoudre à nouveau le signet.
 
@@ -475,7 +475,7 @@ Vous pouvez afficher la liste des spécifications du code dans la liste de contr
 2. Tapez `asctl container acl list -bundle <container-name>`.
 3. Appuyez sur **entrée** pour exécuter la commande.
 
-`<container-name>` Est généralement l’identificateur de Bundle pour l’application Xamarin. Mac.
+Le `<container-name>` est généralement l’identificateur de Bundle pour l’application Xamarin. Mac.
 
 ## <a name="designing-a-xamarinmac-app-for-the-app-sandbox"></a>Conception d’une application Xamarin. Mac pour le bac à sable de l’application
 
@@ -512,12 +512,12 @@ Si votre application requiert l’un des comportements suivants, elle est incomp
 - **Services d’autorisation** : avec le bac à sable de l’application, vous ne pouvez pas utiliser les fonctions décrites dans informations de référence sur les [services d’autorisation C](https://developer.apple.com/library/prerelease/mac/documentation/Security/Reference/authorization_ref/index.html#//apple_ref/doc/uid/TP30000826).
 - **API d’accessibilité** : vous ne pouvez pas Sandboxer des applications d’assistance telles que des lecteurs d’écran ou des applications qui contrôlent d’autres applications.
 - **Envoyer des événements Apple à des applications arbitraires** : si l’application requiert l’envoi d’événements Apple à une application inconnue et arbitraire, elle ne peut pas être bac à sable (sandbox). Pour obtenir une liste connue des applications appelées, l’application peut toujours être bac à sable (sandbox) et les droits doivent inclure la liste des applications appelées.
-- **Envoyer des dictionnaires d’informations utilisateur dans des notifications distribuées à d’autres tâches** : avec le bac `userInfo` à sable (sandbox) `NSDistributedNotificationCenter` de l’application, vous ne pouvez pas inclure un dictionnaire lors de la publication dans un objet pour d’autres tâches de messagerie.
+- **Envoyer des dictionnaires d’informations utilisateur dans des notifications distribuées à d’autres tâches** : avec le bac à sable (sandbox) de l’application, vous ne pouvez pas inclure un dictionnaire `userInfo` lors de la publication dans un objet `NSDistributedNotificationCenter` pour la messagerie d’autres tâches.
 - **Charger les extensions du noyau** : le chargement des extensions du noyau est interdit par le bac à sable (sandbox) de l’application.
 - **Simulation de l’entrée d’utilisateur dans les boîtes de dialogue Ouvrir et enregistrer** -la manipulation par programmation de boîtes de dialogue d’ouverture ou d’enregistrement pour simuler ou modifier une entrée utilisateur est interdite par le bac à sable de l’application.
 - L' **accès ou la définition des préférences sur d’autres applications** -la manipulation des paramètres d’autres applications est interdite par le bac à sable de l’application.
 - **Configuration des paramètres réseau** -la manipulation des paramètres réseau est interdite par le bac à sable (sandbox) de l’application.
-- **Arrêt d’autres applications** : le bac à sable de l' `NSRunningApplication` application interdit l’utilisation de pour mettre fin à d’autres applications.
+- **Arrêt d’autres applications** : le bac à sable de l’application interdit l’utilisation de `NSRunningApplication` pour mettre fin à d’autres applications.
 
 ### <a name="resolving-api-incompatibilities"></a>Résolution des incompatibilités d’API
 
@@ -525,10 +525,10 @@ Lors de la conception d’une application Xamarin. Mac pour le bac à sable de l
 
 Voici quelques problèmes courants que vous pouvez effectuer pour les résoudre :
 
-- **Ouverture, enregistrement et suivi de documents** : Si vous gérez des documents à l’aide d' `NSDocument`une technologie autre que, vous devez basculer vers celui-ci en raison de la prise en charge intégrée du bac à sable (sandbox) de l’application. `NSDocument`fonctionne automatiquement avec PowerBox et prend en charge la conservation de documents dans votre bac à sable (sandbox) si l’utilisateur les déplace dans Finder.
+- **Ouverture, enregistrement et suivi de documents** : Si vous gérez des documents à l’aide d’une technologie autre que `NSDocument`, vous devez basculer vers celui-ci en raison de la prise en charge intégrée du bac à sable (sandbox) de l’application. `NSDocument` fonctionne automatiquement avec PowerBox et prend en charge la conservation de documents dans votre bac à sable (sandbox) si l’utilisateur les déplace dans Finder.
 - **Conserver l’accès aux ressources du système de fichiers** : si l’application Xamarin. Mac dépend de l’accès permanent aux ressources en dehors de son conteneur, utilisez des signets de portée sécurité pour conserver l’accès.
-- **Créer un élément de connexion pour une application** : avec le bac à sable (sandbox) de l’application `LSSharedFileList` , vous ne pouvez pas créer un élément de connexion `LSRegisterURL`à l’aide de ni manipuler l’état des services de lancement à l’aide de. Utilisez la `SMLoginItemSetEnabled` fonction comme décrit dans apples, [Ajout d’éléments de connexion à l’aide de la documentation de service Management Framework](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1) .
-- **Accès aux données utilisateur** -si vous utilisez des fonctions POSIX, telles `getpwuid` que pour obtenir le répertoire de base de l’utilisateur à partir des services d’annuaire, envisagez `NSHomeDirectory`d’utiliser des symboles de cacao ou Core Foundation tels que.
+- **Créer un élément de connexion pour une application** : avec le bac à sable (sandbox) de l’application, vous ne pouvez pas créer un élément de connexion à l’aide de `LSSharedFileList` ni manipuler l’état des services de lancement à l’aide de `LSRegisterURL`. Utilisez la fonction `SMLoginItemSetEnabled` comme décrit dans apples, [Ajout d’éléments de connexion à l’aide de la documentation de l’infrastructure de gestion des services](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1) .
+- **Accès aux données utilisateur** : Si vous utilisez des fonctions POSIX telles que `getpwuid` pour obtenir le répertoire de base de l’utilisateur à partir des services d’annuaire, envisagez d’utiliser des symboles de cacao ou de base, tels que des `NSHomeDirectory`.
 - **Accès aux préférences d’autres applications** : étant donné que le bac à sable (sandbox) de l’application dirige les API de recherche de chemin vers le conteneur de l’application, la modification des préférences s’effectue dans ce conteneur et l’accès aux autres préférences des applications n’est pas autorisé.
 - **Utilisation d’une vidéo HTML5 incorporée dans les vues Web** : si l’application Xamarin. Mac utilise WebKit pour lire des vidéos HTML5 incorporées, vous devez également lier l’application à l’infrastructure de Fondation av. Le bac à sable de l’application empêchera le coremédier de lire ces vidéos dans le cas contraire.
 
@@ -542,10 +542,10 @@ Pour déterminer les droits requis par une application Xamarin. Mac, procédez c
 
 1. Activez le bac à sable (sandbox) de l’application et exécutez l’application Xamarin. Mac.
 2. Exécutez les fonctionnalités de l’application.
-3. Ouvrez l’application console (disponible dans `/Applications/Utilities`) et `sandboxd` recherchez violations dans le journal **tous les messages** .
-4. Pour chaque `sandboxd` violation, résolvez le problème à l’aide du conteneur d’application au lieu d’autres emplacements de système de fichiers ou appliquez des droits d’application sandbox pour permettre l’accès aux fonctionnalités de système d’exploitation limitées.
+3. Ouvrez l’application console (disponible dans `/Applications/Utilities`) et recherchez `sandboxd` violations dans le journal **tous les messages** .
+4. Pour chaque violation de `sandboxd`, résolvez le problème à l’aide du conteneur d’application au lieu d’autres emplacements de système de fichiers ou appliquez des droits d’application sandbox pour permettre l’accès aux fonctionnalités de système d’exploitation limitées.
 5. Réexécutez et testez à nouveau toutes les fonctionnalités de l’application Xamarin. Mac.
-6. Répétez l' `sandboxd` opération jusqu’à ce que toutes les violations aient été résolues.
+6. Répétez l’opération jusqu’à ce que toutes les violations de `sandboxd` aient été résolues.
 
 ### <a name="add-privilege-separation-using-xpc"></a>Ajouter une séparation des privilèges à l’aide de XPC
 
