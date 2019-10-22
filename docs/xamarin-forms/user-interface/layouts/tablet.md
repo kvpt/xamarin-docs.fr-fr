@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
 ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "72273111"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Mise en page pour les applications de bureau et tablette
@@ -33,7 +33,7 @@ Cette page présente brièvement les éléments suivants :
 
 Des appareils à écran plus volumineux sont disponibles pour toutes les plateformes prises en charge par Xamarin. Forms.
 
-### <a name="ipads-ios"></a>iPads (iOS)
+### <a name="ipads-ios"></a>iPad (iOS)
 
 Le modèle Xamarin. Forms comprend automatiquement la prise en charge de iPad en configurant le paramètre **info. plist > Devices** sur **Universal** (ce qui signifie que iPhone et iPad sont pris en charge).
 
@@ -42,7 +42,7 @@ Pour fournir une expérience de démarrage agréable et garantir que la résolut
 Avant iOS 9, toutes les applications remontent en mode plein écran sur l’appareil, mais certains iPad peuvent désormais effectuer des [tâches multitâches fractionnées](~/ios/platform/multitasking.md).
 Cela signifie que votre application peut utiliser simplement une colonne fine sur le côté de l’écran, 50% de la largeur de l’écran ou l’écran entier.
 
-[![](tablet-images/ipad-sml.png "Exemple d’écran de fractionnement iPad")](tablet-images/ipad.png#lightbox "Exemple d’écran de fractionnement iPad")
+[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
 
 La fonctionnalité de fractionnement d’écran signifie que vous devez concevoir votre application pour qu’elle fonctionne correctement avec un minimum de 320 pixels de largeur, ou jusqu’à 1366 pixels de largeur.
 
@@ -59,7 +59,7 @@ Pour prendre en charge les tablettes et les ordinateurs de bureau exécutant Win
 
 Les applications qui s’exécutent sur des tablettes et des postes de travail Windows peuvent être redimensionnées en dimensions arbitraires, en plus de s’exécuter en mode plein écran.
 
-[![](tablet-images/splitscreen-sml.png "Exemple d’écran fractionné Windows")](tablet-images/splitscreen.png#lightbox "Exemple d’écran fractionné Windows")
+[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
 <a name="optimize" />
 
@@ -67,7 +67,7 @@ Les applications qui s’exécutent sur des tablettes et des postes de travail W
 
 Vous pouvez ajuster votre interface utilisateur Xamarin. Forms selon que vous utilisez un téléphone ou une tablette/ordinateur de bureau. Cela signifie que vous pouvez optimiser l’expérience utilisateur pour les appareils à écran large tels que les tablettes et les ordinateurs de bureau.
 
-### <a name="deviceidiom"></a>Device.Idiom
+### <a name="deviceidiom"></a>Appareil. idiome
 
 Vous pouvez utiliser la classe [`Device`](~/xamarin-forms/platform/device.md) pour modifier le comportement de votre application ou de votre interface utilisateur. À l’aide de l’énumération `Device.Idiom`, vous pouvez
 
@@ -86,7 +86,7 @@ Cette approche peut être développée pour apporter des modifications significa
 
 Le [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) est idéal pour les écrans plus grands, en particulier sur l’iPad où il utilise le [`UISplitViewController`](xref:UIKit.UISplitViewController) pour fournir une expérience iOS native.
 
-Consultez [ce billet de blog Xamarin](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les écrans plus grands puissent en utiliser une autre (avec le `MasterDetailPage`).
+Consultez [ce billet de blog Xamarin](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/) pour découvrir comment adapter votre interface utilisateur afin que les téléphones utilisent une disposition et les écrans plus grands puissent utiliser une autre (avec le `MasterDetailPage`).
 
 ## <a name="related-links"></a>Liens associés
 

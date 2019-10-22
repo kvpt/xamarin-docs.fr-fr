@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2019
 ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289707"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator pour Windows
@@ -19,7 +19,7 @@ Le simulateur iOS distant pour Windows vous permet de tester vos applications su
 
 [![simulateur iOS exécuté sur Windows](images/hero-sml.png "simulateur iOS exécuté sur Windows")](images/hero.png#lightbox)
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Bien démarrer
 
 Le simulateur iOS distant pour Windows est installé automatiquement dans le cadre de Xamarin dans Visual Studio 2019 et Visual Studio 2017. Pour l’utiliser, procédez comme suit :
 
@@ -34,7 +34,7 @@ La barre d’outils en haut de la fenêtre du simulateur contient un certain nom
 
 - **Page d’hébergement** : simule le bouton de démarrage sur un appareil iOS.
 - **Lock** : verrouille le simulateur (balayer pour déverrouiller).
-- **Capture** d’écran : enregistre une capture d’écran du simulateur (stocké dans **Pictures\Xamarin\iOS Simulator\\** ).
+- **Capture** d’écran : enregistre une capture d’écran du simulateur (stocké dans **Pictures\Xamarin\iOS Simulator \\** ).
 - [**Paramètres**](#settings) : affiche le clavier, l’emplacement et d’autres paramètres.
 - [**Autres options**](#other-options) : affiche diverses options du simulateur, telles que la rotation, les gestes de tremblement et l’id tactile.
 

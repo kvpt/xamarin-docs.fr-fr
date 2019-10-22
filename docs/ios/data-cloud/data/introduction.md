@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70767016"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Présentation du stockage de données dans les applications Xamarin. iOS
 
 ## <a name="when-to-use-a-database"></a>Quand utiliser une base de données
 
-Tandis que les capacités de stockage et de traitement des appareils mobiles sont accrues, les téléphones et &amp; les tablettes sont toujours en retard par rapport aux équivalents des ordinateurs portables. Pour cette raison, il est judicieux de prendre un certain temps pour planifier l’architecture de stockage des données de votre application, plutôt que de supposer qu’une base de données est la réponse à tout moment. Il existe plusieurs options qui répondent à différentes exigences, telles que :
+Tandis que les capacités de stockage et de traitement des appareils mobiles sont accrues, les téléphones et les tablettes se décalent toujours derrière leur ordinateur de bureau &amp; leurs homologues. Pour cette raison, il est judicieux de prendre un certain temps pour planifier l’architecture de stockage des données de votre application, plutôt que de supposer qu’une base de données est la réponse à tout moment. Il existe plusieurs options qui répondent à différentes exigences, telles que :
 
 - **Préférences** – iOS offre un mécanisme intégré pour stocker des paires clé-valeur de données simples. Si vous stockez des paramètres utilisateur simples ou des petites portions de données (telles que des informations de personnalisation), utilisez les fonctionnalités natives de la plateforme pour stocker ce type d’informations. Pour iOS, vous pouvez également tirer parti de la synchronisation iCloud pour ces données, à la fois pour la sauvegarde et la synchronisation pour les utilisateurs avec plusieurs appareils.
 - **Fichiers texte** : entrée de l’utilisateur ou caches du contenu téléchargé (par exemple, HTML) peut être stocké directement dans le système de fichiers. Utilisez une convention d’affectation de noms de fichiers appropriée pour vous aider à organiser les fichiers et à rechercher des données.

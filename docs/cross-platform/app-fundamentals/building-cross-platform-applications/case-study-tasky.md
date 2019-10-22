@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
 ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71249788"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Étude de cas d’application multiplateforme : Tasky
 
-*Tâche* *Portable* est une application de liste de tâches simple. Ce document explique comment il a été conçu et créé, en suivant les instructions du document [Building multiplateforme applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) . La discussion couvre les sujets suivants :
+La *tâche* *portable* est une application de liste de tâches simple. Ce document explique comment il a été conçu et créé, en suivant les instructions du document [Building multiplateforme applications](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) . La discussion couvre les sujets suivants :
 
 <a name="Design_Process" />
 
@@ -25,7 +25,7 @@ Il est recommandé de créer un plan routier pour ce que vous souhaitez obtenir 
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>Configuration requise
+### <a name="requirements"></a>spécifications
 
 La première étape de la conception d’une application consiste à identifier les fonctionnalités souhaitées. Il peut s’agir d’objectifs de haut niveau ou de cas d’usage détaillés. Tasky a des exigences fonctionnelles simples :
 
@@ -39,10 +39,10 @@ Vous devez prendre en compte votre utilisation des fonctionnalités spécifiques
 
 ### <a name="user-interface-design"></a>Conception de l'interface utilisateur
 
-Commencez avec une conception de haut niveau qui peut être implémentée sur les plateformes cibles. Prenez soin de noter les contraintes de l’interface utilisateur de la plateforme spécifique. Par exemple, un `TabBarController` dans iOS peut afficher plus de cinq boutons, tandis que le Windows Phone équivalent peut afficher jusqu’à quatre.
+Commencez avec une conception de haut niveau qui peut être implémentée sur les plateformes cibles. Prenez soin de noter les contraintes de l’interface utilisateur de la plateforme spécifique. Par exemple, un `TabBarController` dans iOS peut afficher plus de cinq boutons, alors que l’équivalent Windows Phone peut afficher jusqu’à quatre.
 Dessinez le bord de l’écran à l’aide de l’outil de votre choix (papier Works).
 
- [![](case-study-tasky-images/taskydesign.png "Dessinez le circuit d’écran à l’aide de l’outil de votre document Choice Works")](case-study-tasky-images/taskydesign.png#lightbox)
+ [![](case-study-tasky-images/taskydesign.png "Draw the screen-flow using the tool of your choice paper works")](case-study-tasky-images/taskydesign.png#lightbox)
 
  <a name="Data_Model" />
 
@@ -79,7 +79,7 @@ Une fois que la conception de l’application a été approuvée, réfléchissez
 - **Code commun** : projet courant contenant du code réutilisable pour stocker les données de tâche. exposer une classe de modèle et une API pour gérer l’enregistrement et le chargement des données.
 - **Code spécifique** à la plateforme : projets spécifiques à la plateforme qui implémentent une interface utilisateur native pour chaque système d’exploitation, en utilisant le code commun comme « back end ».
 
-[![](case-study-tasky-images/taskypro-architecture.png "Les projets spécifiques à la plateforme implémentent une interface utilisateur native pour chaque système d’exploitation, en utilisant le code commun comme back end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![](case-study-tasky-images/taskypro-architecture.png "Platform-specific projects implement a native UI for each operating system, utilizing the common code as the back end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 Ces deux parties sont décrites dans les sections suivantes.
 
@@ -93,21 +93,21 @@ Tout le code commun, y compris la couche d’accès aux données, le code de bas
 
 Le projet PCL complet est illustré ci-dessous. Tout le code de la bibliothèque portable est compatible avec chaque plateforme ciblée. Une fois déployée, chaque application native fait référence à cette bibliothèque.
 
-![](case-study-tasky-images/portable-project.png "Une fois déployée, chaque application native fait référence à cette bibliothèque.")
+![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
 
-Le diagramme de classes ci-dessous montre les classes regroupées par couche. La `SQLiteConnection` classe est un code réutilisable à partir du package SQLite-net. Le reste des classes est du code personnalisé pour Tasky. Les `TaskItemManager` classes `TaskItem` et représentent l’API exposée aux applications spécifiques à la plateforme.
+Le diagramme de classes ci-dessous montre les classes regroupées par couche. La classe `SQLiteConnection` est un code réutilisable à partir du package SQLite-NET. Le reste des classes est du code personnalisé pour Tasky. Les classes `TaskItemManager` et `TaskItem` représentent l’API exposée aux applications spécifiques à la plateforme.
 
- [![](case-study-tasky-images/classdiagram-core.png "Les classes TaskItemManager et TaskItem représentent l’API exposée aux applications spécifiques à la plateforme.")](case-study-tasky-images/classdiagram-core.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
 
-L’utilisation d’espaces de noms pour séparer les couches permet de gérer les références entre chaque couche. Les projets spécifiques à la plateforme doivent uniquement inclure une `using` instruction pour la couche métier. La couche d’accès aux données et la couche de données doivent être encapsulées par l’API `TaskItemManager` exposée par dans la couche métier.
+L’utilisation d’espaces de noms pour séparer les couches permet de gérer les références entre chaque couche. Les projets spécifiques à la plateforme doivent uniquement inclure une instruction `using` pour la couche métier. La couche d’accès aux données et la couche de données doivent être encapsulées par l’API exposée par `TaskItemManager` dans la couche métier.
 
  <a name="References" />
 
 ### <a name="references"></a>Références
 
-Les bibliothèques de classes portables doivent être utilisables sur plusieurs plateformes, chacune avec différents niveaux de prise en charge pour les fonctionnalités de plateforme et de Framework. Pour cette raison, il existe des limitations sur les packages et les bibliothèques d’infrastructure qui peuvent être utilisés. Par exemple, Xamarin. iOS ne prend pas en charge `dynamic` le mot clé c#. une bibliothèque de classes portable ne peut donc pas utiliser un package qui dépend du code dynamique, même si ce code fonctionne sur Android. Visual Studio pour Mac vous empêchera d’ajouter des packages et des références incompatibles, mais vous souhaiterez garder les limites à l’esprit afin d’éviter les surprises plus tard.
+Les bibliothèques de classes portables doivent être utilisables sur plusieurs plateformes, chacune avec différents niveaux de prise en charge pour les fonctionnalités de plateforme et de Framework. Pour cette raison, il existe des limitations sur les packages et les bibliothèques d’infrastructure qui peuvent être utilisés. Par exemple, Xamarin. iOS ne prend pas en charge le mot clé c# `dynamic`, de sorte qu’une bibliothèque de classes portable ne peut utiliser aucun package dépendant du code dynamique, même si ce code fonctionne sur Android. Visual Studio pour Mac vous empêchera d’ajouter des packages et des références incompatibles, mais vous souhaiterez garder les limites à l’esprit afin d’éviter les surprises plus tard.
 
-Remarque : Vous verrez que vos projets référencent les bibliothèques d’infrastructure que vous n’avez pas utilisées. Ces références sont incluses dans les modèles de projet Xamarin. Lorsque les applications sont compilées, le processus de liaison supprime le code non référencé, donc `System.Xml` même si a été référencé, il ne sera pas inclus dans l’application finale, car nous n’utilisons pas de fonctions XML.
+Remarque : vous verrez que vos projets référencent les bibliothèques d’infrastructure que vous n’avez pas utilisées. Ces références sont incluses dans les modèles de projet Xamarin. Lorsque les applications sont compilées, le processus de liaison supprime le code non référencé, donc même si `System.Xml` a été référencé, il ne sera pas inclus dans l’application finale, car nous n’utilisons pas de fonctions XML.
 
  <a name="Data_Layer_(DL)" />
 
@@ -115,9 +115,9 @@ Remarque : Vous verrez que vos projets référencent les bibliothèques d’inf
 
 La couche de données contient le code qui effectue le stockage physique des données, qu’il s’agisse d’une base de données, de fichiers plats ou d’un autre mécanisme. La couche de données Tasky se compose de deux parties : la bibliothèque SQLite-NET et le code personnalisé ajouté pour l’associer.
 
-Tasky s’appuie sur le package NuGet SQLite-net (publié par Frank Kreuger) pour incorporer le code SQLite-NET qui fournit une interface de base de données de mappage relationnel objet (ORM). La `TaskItemDatabase` classe hérite de `SQLiteConnection` et ajoute les méthodes de création, de lecture, de mise à jour, de suppression (CRUD) requises pour lire et écrire des données dans sqlite. Il s’agit d’une implémentation simple et standard de méthodes CRUD génériques qui pourraient être réutilisées dans d’autres projets.
+Tasky s’appuie sur le package NuGet SQLite-net (publié par Frank Kreuger) pour incorporer le code SQLite-NET qui fournit une interface de base de données de mappage relationnel objet (ORM). La classe `TaskItemDatabase` hérite de `SQLiteConnection` et ajoute les méthodes de création, de lecture, de mise à jour, de suppression (CRUD) requises pour lire et écrire des données dans SQLite. Il s’agit d’une implémentation simple et standard de méthodes CRUD génériques qui pourraient être réutilisées dans d’autres projets.
 
-`TaskItemDatabase` Est un singleton, garantissant que tous les accès sont exécutés sur la même instance. Un verrou est utilisé pour empêcher l’accès simultané à partir de plusieurs threads.
+Le `TaskItemDatabase` est un singleton, garantissant que tous les accès sont exécutés sur la même instance. Un verrou est utilisé pour empêcher l’accès simultané à partir de plusieurs threads.
 
  <a name="SQLite_on_WIndows_Phone" />
 
@@ -129,7 +129,7 @@ Tandis que iOS et Android sont livrés avec SQLite dans le cadre du système d�
 
 #### <a name="using-an-interface-to-generalize-data-access"></a>Utilisation d’une interface pour généraliser l’accès aux données
 
-La couche de données dépend de afin `BL.Contracts.IBusinessIdentity` de pouvoir implémenter des méthodes d’accès abstraites aux données qui requièrent une clé primaire. Toute classe de couche métier qui implémente l’interface peut ensuite être rendue persistante dans la couche de données.
+La couche de données dépend de `BL.Contracts.IBusinessIdentity` pour pouvoir implémenter des méthodes d’accès abstraites aux données qui requièrent une clé primaire. Toute classe de couche métier qui implémente l’interface peut ensuite être rendue persistante dans la couche de données.
 
 L’interface spécifie simplement une propriété entière pour agir en tant que clé primaire :
 
@@ -149,7 +149,7 @@ public abstract class BusinessEntityBase : IBusinessEntity {
 }
 ```
 
-Voici un exemple des méthodes génériques dans la couche de données qui utilisent l’interface `GetItem<T>` :
+Voici un exemple des méthodes génériques dans la couche de données qui utilisent l' `GetItem<T>` interface :
 
 ```csharp
 public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
@@ -164,7 +164,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>Verrouillage pour empêcher l’accès simultané
 
-Un [verrou](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx) est implémenté dans la `TaskItemDatabase` classe pour empêcher l’accès simultané à la base de données. Cela permet de garantir que l’accès simultané à partir de différents threads est sérialisé (sinon, un composant d’interface utilisateur peut tenter de lire la base de données en même temps qu’un thread d’arrière-plan qui le met à jour). Vous trouverez ci-dessous un exemple de la façon dont le verrou est implémenté :
+Un [verrou](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx) est implémenté dans la classe `TaskItemDatabase` pour empêcher l’accès simultané à la base de données. Cela permet de garantir que l’accès simultané à partir de différents threads est sérialisé (sinon, un composant d’interface utilisateur peut tenter de lire la base de données en même temps qu’un thread d’arrière-plan qui le met à jour). Vous trouverez ci-dessous un exemple de la façon dont le verrou est implémenté :
 
 ```csharp
 static object locker = new object ();
@@ -182,13 +182,13 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 }
 ```
 
-La majeure partie du code de la couche de données peut être réutilisée dans d’autres projets. Le seul code spécifique à l’application dans la couche est `CreateTable<TaskItem>` l’appel dans `TaskItemDatabase` le constructeur.
+La majeure partie du code de la couche de données peut être réutilisée dans d’autres projets. Le seul code spécifique à l’application dans la couche est l’appel `CreateTable<TaskItem>` dans le constructeur `TaskItemDatabase`.
 
  <a name="Data_Access_Layer_(DAL)" />
 
 ### <a name="data-access-layer-dal"></a>Couche d’accès aux données (DAL)
 
-La `TaskItemRepository` classe encapsule le mécanisme de stockage des données avec une API fortement typée `TaskItem` qui permet la création, la suppression, la récupération et la mise à jour des objets.
+La classe `TaskItemRepository` encapsule le mécanisme de stockage des données avec une API fortement typée qui permet de créer, de supprimer, de récupérer et de mettre à jour des objets `TaskItem`.
 
  <a name="Using_Conditional_Compilation" />
 
@@ -220,20 +220,20 @@ public static string DatabaseFilePath {
 }
 ```
 
-Selon la plateforme, la sortie sera «<app
-path>/Library/TaskDB.db3 » pour iOS, «<app
-path>/documents/TaskDB.db3 » pour Android ou simplement « TaskDB. » pour les Windows Phone.
+En fonction de la plateforme, la sortie est « <app
+path>/Library/TaskDB.db3 » pour iOS, « <app
+path>/Documents/TaskDB.db3 » pour Android ou simplement « TaskDB. début » pour Windows Phone.
 
 ### <a name="business-layer-bl"></a>Couche métier (BL)
 
 La couche métier implémente les classes de modèle et une façade pour les gérer.
-Dans Tasky, le modèle est `TaskItem` la classe `TaskItemManager` et implémente le modèle de façade pour fournir une API `TaskItems`pour la gestion.
+Dans Tasky, le modèle est la classe `TaskItem` et `TaskItemManager` implémente le modèle Facade pour fournir une API pour la gestion des `TaskItems`.
 
  <a name="Façade" />
 
-#### <a name="faade"></a>Façade
+#### <a name="faade"></a>Facade
 
- `TaskItemManager`encapsule le `DAL.TaskItemRepository` pour fournir les méthodes d’extraction, d’enregistrement et de suppression qui seront référencées par l’application et les couches d’interface utilisateur.
+ `TaskItemManager` encapsule le `DAL.TaskItemRepository` pour fournir les méthodes d’extraction, d’enregistrement et de suppression qui seront référencées par l’application et les couches d’interface utilisateur.
 
 Les règles d’entreprise et la logique seraient placées ici si nécessaire (par exemple, toutes les règles de validation qui doivent être satisfaites avant l’enregistrement d’un objet).
 
@@ -241,9 +241,9 @@ Les règles d’entreprise et la logique seraient placées ici si nécessaire (p
 
 ### <a name="api-for-platform-specific-code"></a>API pour le code spécifique à la plateforme
 
-Une fois le code commun écrit, l’interface utilisateur doit être créée pour collecter et afficher les données exposées par celui-ci. La `TaskItemManager` classe implémente le modèle de façade pour fournir une API simple à laquelle le code de l’application doit accéder.
+Une fois le code commun écrit, l’interface utilisateur doit être créée pour collecter et afficher les données exposées par celui-ci. La classe `TaskItemManager` implémente le modèle de façade pour fournir une API simple à laquelle le code de l’application doit accéder.
 
-Le code écrit dans chaque projet spécifique à la plateforme est généralement étroitement couplé au kit de développement logiciel (SDK) natif de cet appareil et accède uniquement au code commun à l’aide `TaskItemManager`de l’API définie par le. Cela comprend les méthodes et les classes métier qu’il expose, `TaskItem`telles que.
+Le code écrit dans chaque projet spécifique à la plateforme est généralement étroitement couplé au kit de développement logiciel (SDK) natif de cet appareil et accède uniquement au code commun à l’aide de l’API définie par le `TaskItemManager`. Cela comprend les méthodes et les classes métier qu’elle expose, par exemple `TaskItem`.
 
 Les images ne sont pas partagées entre les plateformes, mais ajoutées indépendamment à chaque projet. C’est important, car chaque plateforme gère les images différemment, en utilisant des noms de fichiers, des répertoires et des résolutions différents.
 
@@ -255,11 +255,11 @@ Les sections restantes traitent des détails d’implémentation spécifiques à
 
 Il n’existe qu’une poignée de classes requises pour implémenter l’application Tasky iOS à l’aide du projet PCL commun pour stocker et récupérer des données. Le projet iOS Xamarin. iOS complet est illustré ci-dessous :
 
- ![](case-study-tasky-images/taskyios-solution.png "le projet iOS est présenté ici")
+ ![](case-study-tasky-images/taskyios-solution.png "iOS project is shown here")
 
 Les classes sont présentées dans ce diagramme, regroupées en couches.
 
- [![](case-study-tasky-images/classdiagram-android.png "Les classes sont présentées dans ce diagramme, regroupées en couches")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-android.png "The classes are shown in this diagram, grouped into layers")](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References" />
 
@@ -267,10 +267,10 @@ Les classes sont présentées dans ce diagramme, regroupées en couches.
 
 L’application iOS fait référence aux bibliothèques du kit de développement logiciel (SDK) spécifiques à la plateforme, par exemple Xamarin. iOS et MonoTouch. boîte de dialogue-1.
 
-Il doit également référencer `TaskyPortableLibrary` le projet PCL.
+Il doit également référencer le projet `TaskyPortableLibrary` PCL.
 La liste Références est présentée ici :
 
- ![](case-study-tasky-images/taskyios-references.png "La liste Références est présentée ici")
+ ![](case-study-tasky-images/taskyios-references.png "The references list is shown here")
 
 La couche application et la couche d’interface utilisateur sont implémentées dans ce projet à l’aide de ces références.
 
@@ -280,10 +280,10 @@ La couche application et la couche d’interface utilisateur sont implémentées
 
 La couche application contient des classes spécifiques à la plateforme requises pour « lier » les objets exposés par la bibliothèque de classes portable à l’interface utilisateur. L’application spécifique à iOS a deux classes pour faciliter l’affichage des tâches :
 
-- **EditingSource** : cette classe permet de lier des listes de tâches à l’interface utilisateur. Étant `MonoTouch.Dialog` donné que a été utilisé pour la liste des tâches, nous devons implémenter cette application d’assistance pour activer la fonctionnalité de `UITableView` balayage à la suppression dans le. L’opération de balayage à la suppression est courante sur iOS, mais pas sur Android ou Windows Phone. par conséquent, le projet spécifique iOS est le seul qui l’implémente.
-- **TaskDialog** : cette classe est utilisée pour lier une tâche unique à l’interface utilisateur. Elle utilise l' `MonoTouch.Dialog` API de réflexion pour « encapsuler » l' `TaskItem` objet avec une classe qui contient les attributs corrects pour permettre au format correct de l’écran de saisie.
+- **EditingSource** : cette classe permet de lier des listes de tâches à l’interface utilisateur. Étant donné que `MonoTouch.Dialog` a été utilisé pour la liste des tâches, nous devons implémenter cette application d’assistance pour activer la fonctionnalité de glisser-supprimer dans le `UITableView`. L’opération de balayage à la suppression est courante sur iOS, mais pas sur Android ou Windows Phone. par conséquent, le projet spécifique iOS est le seul qui l’implémente.
+- **TaskDialog** : cette classe est utilisée pour lier une tâche unique à l’interface utilisateur. Elle utilise l’API de réflexion `MonoTouch.Dialog` pour « encapsuler » l’objet `TaskItem` avec une classe qui contient les attributs corrects pour permettre au format correct de l’écran de saisie.
 
-La `TaskDialog` classe utilise `MonoTouch.Dialog` des attributs pour créer un écran basé sur les propriétés d’une classe. La classe se présente comme suit :
+La classe `TaskDialog` utilise des attributs `MonoTouch.Dialog` pour créer un écran basé sur les propriétés d’une classe. La classe se présente comme suit :
 
 ```csharp
 public class TaskDialog {
@@ -310,7 +310,7 @@ public class TaskDialog {
 }
 ```
 
-Notez que `OnTap` les attributs requièrent un nom de méthode : ces méthodes doivent exister dans la `MonoTouch.Dialog.BindingContext` classe où est créé (dans ce cas `HomeScreen` , la classe décrite dans la section suivante).
+Notez que les attributs `OnTap` requièrent un nom de méthode ; ces méthodes doivent exister dans la classe où la `MonoTouch.Dialog.BindingContext` est créée (dans ce cas, la classe `HomeScreen` abordée dans la section suivante).
 
  <a name="User_Interface_Layer_(UI)" />
 
@@ -318,21 +318,21 @@ Notez que `OnTap` les attributs requièrent un nom de méthode : ces méthodes 
 
 La couche interface utilisateur est constituée des classes suivantes :
 
-1. **AppDelegate** – contient des appels à l’API Appearance pour appliquer un style aux polices et couleurs utilisées dans l’application. Tasky est une application simple, de sorte qu’aucune autre tâche d’initialisation ne `FinishedLaunching` s’exécute dans.
-2. **Écrans** : sous-classes de `UIViewController` qui définissent chaque écran et son comportement. Les écrans lient l’interface utilisateur avec les classes de couche d’application et `TaskItemManager` l’API commune (). Dans cet exemple, les écrans sont créés dans le code, mais ils peuvent avoir été conçus à l’aide de l’Interface Builder de Xcode ou du concepteur de storyboards.
+1. **AppDelegate** – contient des appels à l’API Appearance pour appliquer un style aux polices et couleurs utilisées dans l’application. Tasky est une application simple. il n’y a donc aucune autre tâche d’initialisation s’exécutant dans `FinishedLaunching`.
+2. **Écrans** : sous-classes de `UIViewController` qui définissent chaque écran et son comportement. Les écrans lient l’interface utilisateur avec les classes de couche d’application et l’API commune (`TaskItemManager`). Dans cet exemple, les écrans sont créés dans le code, mais ils peuvent avoir été conçus à l’aide de l’Interface Builder de Xcode ou du concepteur de storyboards.
 3. **Images** : les éléments visuels constituent une partie importante de chaque application. Tasky contient des images d’écran de démarrage et d’icône qui, pour iOS, doivent être fournies dans une résolution normale et retine.
 
  <a name="Home_Screen" />
 
 #### <a name="home-screen"></a>Écran d’accueil
 
-L’écran d’accueil est `MonoTouch.Dialog` un écran qui affiche la liste des tâches de la base de données SQLite. Il hérite de `DialogViewController` et implémente le code pour définir `Root` le pour qu’il contienne une collection d' `TaskItem` objets à afficher.
+L’écran d’accueil est un `MonoTouch.Dialog` écran qui affiche la liste des tâches de la base de données SQLite. Elle hérite de `DialogViewController` et implémente le code pour définir la `Root` pour contenir une collection d’objets `TaskItem` à afficher.
 
- [![](case-study-tasky-images/ios-taskylist.png "Elle hérite de DialogViewController et implémente le code pour définir la racine afin qu’elle contienne une collection d’objets TaskItem à afficher.")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "It inherits from DialogViewController and implements code to set the Root to contain a collection of TaskItem objects for display")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
 Les deux principales méthodes relatives à l’affichage et à l’interaction avec la liste des tâches sont les suivantes :
 
-1. **PopulateTable** : utilise la `TaskManager.GetTasks` méthode de la couche métier pour récupérer une collection `TaskItem` d’objets à afficher.
+1. **PopulateTable** : utilise la méthode `TaskManager.GetTasks` de la couche métier pour récupérer une collection d’objets `TaskItem` à afficher.
 2. **Sélectionné** : lorsqu’une ligne est touchée, affiche la tâche dans un nouvel écran.
 
  <a name="Task_Details_Screen" />
@@ -341,17 +341,17 @@ Les deux principales méthodes relatives à l’affichage et à l’interaction 
 
 Les détails de la tâche sont un écran d’entrée qui permet de modifier ou de supprimer des tâches.
 
-L’API de `MonoTouch.Dialog`réflexion de utilise Tasky pour afficher l’écran, il n' `UIViewController` y a donc aucune implémentation. Au lieu de `HomeScreen` cela, la classe instancie `DialogViewController` et affiche `TaskDialog` une à l’aide de la classe de la couche application.
+Tasky utilise l’API de réflexion de `MonoTouch.Dialog` pour afficher l’écran, ce qui signifie qu’il n’y a pas d’implémentation `UIViewController`. Au lieu de cela, la classe `HomeScreen` instancie et affiche une `DialogViewController` à l’aide de la classe `TaskDialog` de la couche application.
 
-Cette capture d’écran montre un écran vide qui `Entry` montre l’attribut définissant le texte de filigrane dans les champs **nom** et **Remarques** :
+Cette capture d’écran montre un écran vide qui montre l’attribut `Entry` définissant le texte de filigrane dans les champs **nom** et **Remarques** :
 
- [![](case-study-tasky-images/ios-taskydetail.png "Cette capture d’écran montre un écran vide qui montre l’attribut d’entrée définissant le texte de filigrane dans les champs nom et remarques.")](case-study-tasky-images/ios-taskydetail.png#lightbox)
+ [![](case-study-tasky-images/ios-taskydetail.png "This screenshot shows an empty screen that demonstrates the Entry attribute setting the watermark text in the Name and Notes fields")](case-study-tasky-images/ios-taskydetail.png#lightbox)
 
-La fonctionnalité de l’écran détails de la **tâche** (par exemple, l’enregistrement ou la suppression d’une tâche `HomeScreen` ) doit être implémentée dans la `MonoTouch.Dialog.BindingContext` classe, car il s’agit de l’emplacement où est créé. Les méthodes `HomeScreen` suivantes prennent en charge l’écran détails de la tâche :
+La fonctionnalité de l’écran détails de la **tâche** (par exemple, l’enregistrement ou la suppression d’une tâche) doit être implémentée dans la classe `HomeScreen`, car il s’agit de l’emplacement où la `MonoTouch.Dialog.BindingContext` est créée. Les méthodes de `HomeScreen` suivantes prennent en charge l’écran détails de la tâche :
 
-1. **ShowTaskDetails** : crée un `MonoTouch.Dialog.BindingContext` pour afficher un écran. Il crée l’écran d’entrée à l’aide de la réflexion pour récupérer les `TaskDialog` noms et les types de propriété de la classe. Des informations supplémentaires, telles que le texte de filigrane pour les zones de saisie, sont implémentées avec des attributs sur les propriétés.
-2. **SaveTask** : cette méthode est référencée dans la `TaskDialog` classe via un `OnTap` attribut. Elle est appelée lorsque l’utilisateur clique sur l’enregistrement `MonoTouch.Dialog.BindingContext` et utilise un pour récupérer les données entrées par l’utilisateur avant `TaskItemManager` d’enregistrer les modifications à l’aide de.
-3. **DeleteTask** : cette méthode est référencée dans la `TaskDialog` classe via un `OnTap` attribut. Elle utilise `TaskItemManager` pour supprimer les données à l’aide de la clé primaire (propriété ID).
+1. **ShowTaskDetails** : crée un `MonoTouch.Dialog.BindingContext` pour afficher un écran. Il crée l’écran d’entrée à l’aide de la réflexion pour récupérer les noms et les types de propriété de la classe `TaskDialog`. Des informations supplémentaires, telles que le texte de filigrane pour les zones de saisie, sont implémentées avec des attributs sur les propriétés.
+2. **SaveTask** : cette méthode est référencée dans la classe `TaskDialog` via un attribut `OnTap`. Elle est appelée lorsque l’utilisateur appuie sur **Enregistrer** et utilise une `MonoTouch.Dialog.BindingContext` pour récupérer les données entrées par l’utilisateur avant d’enregistrer les modifications à l’aide de `TaskItemManager`.
+3. **DeleteTask** : cette méthode est référencée dans la classe `TaskDialog` via un attribut `OnTap`. Elle utilise `TaskItemManager` pour supprimer les données à l’aide de la clé primaire (propriété ID).
 
  <a name="Android_App" />
 
@@ -359,11 +359,11 @@ La fonctionnalité de l’écran détails de la **tâche** (par exemple, l’enr
 
 Le projet Xamarin. Android complet est illustré ci-dessous :
 
- ![](case-study-tasky-images/taskyandroid-solution.png "Image du projet Android ici")
+ ![](case-study-tasky-images/taskyandroid-solution.png "Android project is pictured here")
 
 Le diagramme de classes, avec les classes regroupées par couche :
 
- [![](case-study-tasky-images/classdiagram-android.png "Diagramme de classes, avec les classes regroupées par couche")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-android.png "The class diagram, with classes grouped by layer")](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References" />
 
@@ -373,7 +373,7 @@ Le projet d’application Android doit référencer l’assembly Xamarin. Androi
 
 Il doit également référencer le projet PCL (par exemple, TaskyPortableLibrary) pour accéder au code de la couche données et métier courantes.
 
- ![](case-study-tasky-images/taskyandroid-references.png "TaskyPortableLibrary pour accéder au code de couche métier et aux données courantes")
+ ![](case-study-tasky-images/taskyandroid-references.png "TaskyPortableLibrary to access the common data and business layer code")
 
  <a name="Application_Layer_(AL)" />
 
@@ -381,7 +381,7 @@ Il doit également référencer le projet PCL (par exemple, TaskyPortableLibrary
 
 À l’instar de la version d’iOS que nous avons examinée précédemment, la couche application dans la version Android contient des classes spécifiques à la plateforme requises pour « lier » les objets exposés par le noyau à l’interface utilisateur.
 
- **TaskListAdapter** : pour afficher une liste\<T > d’objets dont nous avons besoin pour mettre en œuvre un adaptateur afin d' `ListView`afficher des objets personnalisés dans un. L’adaptateur contrôle la disposition utilisée pour chaque élément de la liste. dans ce cas, le code utilise une disposition `SimpleListItemChecked`intégrée Android.
+ **TaskListAdapter** : pour afficher une liste \<T > d’objets, il est nécessaire d’implémenter un adaptateur pour afficher des objets personnalisés dans un `ListView`. L’adaptateur contrôle la disposition utilisée pour chaque élément de la liste. dans ce cas, le code utilise une disposition intégrée Android `SimpleListItemChecked`.
 
  <a name="User_Interface_(UI)" />
 
@@ -391,48 +391,48 @@ La couche d’interface utilisateur de l’application Android est une combinais
 
 - **Ressources/disposition** : dispositions d’écran et conception de cellule de ligne implémentées en tant que fichiers AXML. Le AXML peut être écrit manuellement ou disposé visuellement à l’aide du concepteur d’interface utilisateur Xamarin pour Android.
 - **Ressources/dessinables** – images (icônes) et bouton personnalisé.
-- **Écrans** : sous-classes d’activité qui définissent chaque écran et son comportement. Associe l’interface utilisateur avec les classes de couche d’application et`TaskItemManager`l’API commune ().
+- **Écrans** : sous-classes d’activité qui définissent chaque écran et son comportement. Associe l’interface utilisateur avec les classes de couche d’application et l’API commune (`TaskItemManager`).
 
  <a name="Home_Screen" />
 
 #### <a name="home-screen"></a>Écran d’accueil
 
-L’écran d’accueil se compose d’une sous `HomeScreen` -classe `HomeScreen.axml` d’activité et du fichier qui définit la disposition (position du bouton et de la liste des tâches). L’écran se présente comme suit :
+L’écran d’accueil se compose d’une sous-classe d’activité `HomeScreen` et du fichier `HomeScreen.axml` qui définit la disposition (position du bouton et de la liste des tâches). L’écran se présente comme suit :
 
- [![](case-study-tasky-images/android-taskylist.png "L’écran se présente comme suit")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![](case-study-tasky-images/android-taskylist.png "The screen looks like this")](case-study-tasky-images/android-taskylist.png#lightbox)
 
-Le code d’écran d’accueil définit les gestionnaires pour cliquer sur le bouton et cliquer sur les éléments de la liste, ainsi que remplir la `OnResume` liste dans la méthode (afin qu’elle reflète les modifications apportées dans l’écran détails de la tâche). Les données sont chargées à l’aide `TaskItemManager` des couches `TaskListAdapter` métier et de la couche application.
+Le code d’écran d’accueil définit les gestionnaires pour cliquer sur le bouton et cliquer sur les éléments de la liste, ainsi que remplir la liste dans la méthode `OnResume` (afin qu’elle reflète les modifications apportées dans l’écran détails de la tâche). Les données sont chargées à l’aide du `TaskItemManager` de la couche métier et des `TaskListAdapter` à partir de la couche application.
 
  <a name="Task_Details_Screen" />
 
 #### <a name="task-details-screen"></a>Écran détails de la tâche
 
-L’écran détails de la tâche se compose `Activity` également d’une sous-classe et d’un fichier de disposition AXML. La disposition détermine l’emplacement des contrôles d’entrée et la C# classe définit le comportement de chargement et d' `TaskItem` enregistrement des objets.
+L’écran détails de la tâche se compose également d’une sous-classe `Activity` et d’un fichier de disposition AXML. La disposition détermine l’emplacement des contrôles d’entrée et la C# classe définit le comportement de chargement et d’enregistrement des objets `TaskItem`.
 
- [![](case-study-tasky-images/android-taskydetail.png "La classe définit le comportement de chargement et d’enregistrement des objets TaskItem")](case-study-tasky-images/android-taskydetail.png#lightbox)
+ [![](case-study-tasky-images/android-taskydetail.png "The class defines the behavior to load and save TaskItem objects")](case-study-tasky-images/android-taskydetail.png#lightbox)
 
-Toutes les références à la bibliothèque PCL s’effectuent via la `TaskItemManager` classe.
+Toutes les références à la bibliothèque PCL s’effectuent via la classe `TaskItemManager`.
 
  <a name="Windows_Phone_App" />
 
 ## <a name="windows-phone-app"></a>Application Windows Phone
 Le projet Windows Phone complet :
 
- ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone l’application Windows Phone projet complet")
+ ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone App The complete Windows Phone project")
 
 Le diagramme ci-dessous présente les classes regroupées en couches :
 
- [![](case-study-tasky-images/classdiagram-wp7.png "Ce diagramme présente les classes regroupées en couches.")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-wp7.png "This diagram presents the classes grouped into layers")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
 
  <a name="References" />
 
 ### <a name="references"></a>Références
 
-Le projet spécifique à la plateforme doit faire référence aux bibliothèques requises spécifiques à la plateforme `Microsoft.Phone` ( `System.Windows`telles que et) pour créer une application de Windows Phone valide.
+Le projet spécifique à la plateforme doit faire référence aux bibliothèques requises spécifiques à la plateforme (telles que `Microsoft.Phone` et `System.Windows`) pour créer une application de Windows Phone valide.
 
-Il doit également référencer le projet PCL (par exemple, `TaskyPortableLibrary`) pour utiliser la `TaskItem` classe et la base de données.
+Il doit également référencer le projet PCL (par exemple, `TaskyPortableLibrary`) pour utiliser la classe `TaskItem` et la base de données.
 
- ![](case-study-tasky-images/taskywp7-references.png "TaskyPortableLibrary pour utiliser la classe TaskItem et la base de données")
+ ![](case-study-tasky-images/taskywp7-references.png "TaskyPortableLibrary to utilize the TaskItem class and database")
 
  <a name="Application_Layer_(AL)" />
 
@@ -444,7 +444,7 @@ Là encore, comme avec les versions iOS et Android, la couche d’application se
 
 #### <a name="viewmodels"></a>ViewModels
 
-ViewModels encapsule les données de la `TaskItemManager`bibliothèque de classes portable () et les présente de manière utilisable par la liaison de données Silverlight/XAML. Il s’agit d’un exemple de comportement spécifique à la plateforme (comme indiqué dans le document applications multiplateformes).
+ViewModels encapsule les données de la bibliothèque de classes portable (`TaskItemManager`) et les présente de manière utilisable par la liaison de données Silverlight/XAML. Il s’agit d’un exemple de comportement spécifique à la plateforme (comme indiqué dans le document applications multiplateformes).
 
  <a name="User_Interface_(UI)" />
 
@@ -459,13 +459,13 @@ XAML dispose d’une fonctionnalité de liaison de données unique qui peut êtr
 
 #### <a name="mainpage"></a>MainPage
 
-La classe MainPage utilise le `TaskListViewModel` pour afficher des données à l’aide des fonctionnalités de liaison de données du langage XAML. La page `DataContext` est définie sur le modèle de vue, qui est rempli de façon asynchrone. La `{Binding}` syntaxe dans le code XAML détermine la façon dont les données sont affichées.
+La classe MainPage utilise la `TaskListViewModel` pour afficher les données à l’aide des fonctionnalités de liaison de données du langage XAML. Le `DataContext` de la page est défini sur le modèle de vue, qui est rempli de façon asynchrone. La syntaxe de `{Binding}` dans le code XAML détermine la façon dont les données sont affichées.
 
  <a name="TaskDetailsPage" />
 
 #### <a name="taskdetailspage"></a>TaskDetailsPage
 
-Chaque tâche est affichée en liant le `TaskViewModel` au XAML défini dans TaskDetailsPage. Xaml. Les données de la tâche sont récupérées par le biais du `TaskItemManager` dans la couche métier.
+Chaque tâche est affichée en liant la `TaskViewModel` au XAML défini dans TaskDetailsPage. Xaml. Les données de la tâche sont récupérées via la `TaskItemManager` dans la couche métier.
 
  <a name="Results" />
 
@@ -477,9 +477,9 @@ Les applications qui en résultent ressemblent à ceci sur chaque plateforme :
 
 ### <a name="ios"></a>iOS
 
-L’application utilise la conception d’interface utilisateur standard iOS, telle que le bouton « Ajouter » placé dans la barre de navigation et l’utilisation de l’icône **plus (+)** intégrée. Il utilise également le comportement `UINavigationController` par défaut du bouton « précédent » et prend en charge l’opération « balayer-supprimer » dans la table.
+L’application utilise la conception d’interface utilisateur standard iOS, telle que le bouton « Ajouter » placé dans la barre de navigation et l’utilisation de l’icône **plus (+)** intégrée. Il utilise également le comportement par défaut du bouton « précédent » de `UINavigationController` et prend en charge l’opération de glisser-supprimer dans la table.
 
- [![](case-study-tasky-images/ios-taskylist.png "Il utilise le comportement du bouton précédent de UINavigationController par défaut et prend en charge le balayage à supprimer dans la table d’également")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "il utilise également la valeur par défaut UINavigationController sauvegarder le comportement du bouton et prend en charge le balayage à supprimer dans la table")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "Il utilise également le comportement du bouton précédent par défaut UINavigationController et prend en charge l’opération de balayage à supprimer dans la table.")](case-study-tasky-images/ios-taskylist.png#lightbox)[![](case-study-tasky-images/ios-taskylist.png "Il utilise également le comportement du bouton précédent par défaut UINavigationController et prend en charge l’opération de balayage à supprimer dans la table.")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -487,7 +487,7 @@ L’application utilise la conception d’interface utilisateur standard iOS, te
 
 L’application Android utilise des contrôles intégrés, notamment la mise en page intégrée pour les lignes qui nécessitent l’affichage d’un « Tick ». Le comportement de retour matériel/système est pris en charge en plus du bouton de retour à l’écran.
 
- [![](case-study-tasky-images/android-taskylist.png "Le comportement de retour matériel/système est pris en charge en plus du bouton")](case-study-tasky-images/android-taskylist.png#lightbox)[![]de retour à l’écran.(case-study-tasky-images/android-taskylist.png "le comportement du matériel ou du système est pris en charge en plus du bouton de retour à l’écran") .](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)
 
  <a name="Windows_Phone" />
 
@@ -495,7 +495,7 @@ L’application Android utilise des contrôles intégrés, notamment la mise en 
 
 L’application Windows Phone utilise la disposition standard, en remplissant la barre de l’application en bas de l’écran au lieu d’une barre de navigation en haut.
 
- [![](case-study-tasky-images/wp-taskylist.png "L’application Windows Phone utilise la mise en page standard, remplissage de la barre des applications au bas de l’écran au lieu d’une barre de navigation en haut")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "de Windows Phone l’application utilise le standard mise en page, remplissage de la barre des applications au bas de l’écran au lieu d’une barre de navigation en haut")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "L’application Windows Phone utilise la disposition standard, en remplissant la barre de l’application en bas de l’écran au lieu d’une barre de navigation en haut")](case-study-tasky-images/wp-taskylist.png#lightbox)[![](case-study-tasky-images/wp-taskylist.png "L’application Windows Phone utilise la disposition standard, en remplissant la barre de l’application en bas de l’écran au lieu d’une barre de navigation en haut")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 
@@ -503,7 +503,7 @@ L’application Windows Phone utilise la disposition standard, en remplissant la
 
 Ce document vous a fourni une explication détaillée de la façon dont les principes de conception d’applications en couches ont été appliqués à une application simple pour faciliter la réutilisation du code sur trois plateformes mobiles : iOS, Android et Windows Phone.
 
-Il a décrit le processus utilisé pour concevoir les couches d’application et décrit les &amp; fonctionnalités de code qui ont été implémentées dans chaque couche.
+Il a décrit le processus utilisé pour concevoir les couches d’application et décrit les fonctionnalités de &amp; de code qui ont été implémentées dans chaque couche.
 
 Le code peut être téléchargé à partir de [GitHub](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable).
 

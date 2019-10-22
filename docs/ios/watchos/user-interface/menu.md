@@ -8,22 +8,22 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766800"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Contrôle de menu Watchos (Force Touch) dans Xamarin
 
 Le kit Watch fournit un mouvement Force Touch qui déclenche un menu lorsqu’il est implémenté sur un écran d’application Watch.
 
-![](menu-images/menu.png "Apple Watch avec un menu")
+![](menu-images/menu.png "Apple Watch showing a menu")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="responding-to-force-touch"></a>Réponse aux Force Touch
 
-Si un `Menu` a été implémenté pour un contrôleur d’interface, lorsqu’un utilisateur exécute une force Touch le menu s’affiche. Si aucun menu n’a été implémenté, l’écran est brièvement animé. aucune autre action ne se produit.
+Si un `Menu` a été implémenté pour un contrôleur d’interface, lorsqu’un utilisateur exécute une Force Touch le menu s’affiche. Si aucun menu n’a été implémenté, l’écran est brièvement animé. aucune autre action ne se produit.
 
 Les touches de force ne sont pas associées à un élément particulier à l’écran ; un seul menu peut être attaché à un contrôleur d’interface et il s’affiche, quel que soit l’endroit où se trouve le Force Touch sur l’écran.
 
@@ -33,13 +33,13 @@ Il est possible de présenter entre une et quatre options de menu.
 
 Un `Menu` doit être ajouté à un `InterfaceController` sur le Storyboard au moment du Design. Lorsqu’un contrôle de menu est glissé sur un contrôleur d’interface, il n’existe aucune indication visuelle sur l’aperçu de la table de montage séquentiel, mais le **menu** s’affiche dans le bloc de **structure du document** :
 
-![](menu-images/menu-action.png "Modification d’un menu au moment du design")
+![](menu-images/menu-action.png "Editing a menu at design time")
 
 Vous pouvez ajouter jusqu’à quatre éléments de menu au contrôle Menu. Ils peuvent être configurés dans le panneau **Propriétés** . Les attributs suivants peuvent être définis :
 
 - Titre et
 - Image personnalisée ou
-- Une image système : Accepter, ajouter, bloquer, refuser, info, peut-être, plus, muet, suspendre, lire, répéter, reprendre, partager, lire en lecture seule, orateur, corbeille.
+- Une image système : accepter, ajouter, bloquer, refuser, info, peut-être, plus, muet, suspendre, lire, répéter, reprendre, partager, lire en lecture seule, orateur, corbeille.
 
 Créez un `Action` en sélectionnant la section **événements** du panneau **Propriétés** et en tapant le nom de la méthode d’action. Une méthode partielle est créée dans le code, qui peut être implémentée dans la classe de contrôleur d’interface, comme suit :
 
@@ -66,14 +66,14 @@ Menu items added the storyboard can be shown and hidden programmatically.
 
 ### <a name="adding-at-runtime"></a>Ajouter au moment de l’exécution
 
-Vous ne pouvez pas `Menu` faire en sorte qu’un soit ajouté à un contrôleur d’interface au moment `MenuItem`de l’exécution, même si la collection de s *peut* être modifiée par programme.
-Utilisez la `AddMenuItem` méthode comme indiqué ci-dessous :
+Vous ne pouvez pas provoquer l’ajout d’un `Menu` à un contrôleur d’interface au moment de l’exécution, même si la collection de `MenuItem`s *peut* être modifiée par programme.
+Utilisez la méthode `AddMenuItem` comme indiqué ci-dessous :
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-L’API du kit de surveillance Xamarin. iOS requiert `selector` actuellement un `AdMenuItem` pour la méthode, qui doit être déclarée comme suit :
+L’API du kit de surveillance Xamarin. iOS requiert actuellement une `selector` pour la méthode `AdMenuItem`, qui doit être déclarée comme suit :
 
 ```csharp
 [Export("tapped")]
@@ -85,7 +85,7 @@ void MenuItemTapped ()
 
 ### <a name="removing-at-runtime"></a>Supprimer au moment de l’exécution
 
-La `ClearAllMenuItems` méthode peut être appelée pour supprimer tous les éléments de menu *ajoutés par programmation* .
+La méthode `ClearAllMenuItems` peut être appelée pour supprimer tous les éléments de menu *ajoutés par programmation* .
 
 Impossible d’effacer les éléments de menu configurés dans la table de montage séquentiel.
 

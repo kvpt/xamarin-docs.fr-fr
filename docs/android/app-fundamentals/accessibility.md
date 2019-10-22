@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
 ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70755683"
 ---
 # <a name="accessibility-on-android"></a>Accessibilité sur Android
@@ -20,7 +20,7 @@ Reportez-vous aux pages d’accessibilité [iOS](~/ios/app-fundamentals/accessib
 
 ## <a name="describing-ui-elements"></a>Description des éléments d’interface utilisateur
 
-Android fournit une `ContentDescription` propriété qui est utilisée par les API de lecture d’écran pour fournir une description accessible de l’objectif du contrôle.
+Android fournit une propriété de `ContentDescription` qui est utilisée par les API de lecture d’écran pour fournir une description accessible de l’objectif du contrôle.
 
 La description du contenu peut être définie dans C# ou dans le fichier de disposition AXML.
 
@@ -34,7 +34,7 @@ saveButton.ContentDescription = "Save data";
 
 **Disposition AXML**
 
-Dans les dispositions XML, utilisez `android:contentDescription` l’attribut :
+Dans les dispositions XML, utilisez l’attribut `android:contentDescription` :
 
 ```xml
 <ImageButton
@@ -45,12 +45,12 @@ Dans les dispositions XML, utilisez `android:contentDescription` l’attribut :
 
 ### <a name="use-hint-for-textview"></a>Utiliser l’indicateur pour TextView
 
-Pour `EditText` les `TextView` contrôles et pour l’entrée de données `Hint` , utilisez la propriété pour fournir une description de l’entrée attendue `ContentDescription`(au lieu de).
+Pour les contrôles `EditText` et `TextView` pour l’entrée de données, utilisez la propriété `Hint` pour fournir une description de l’entrée attendue (au lieu de `ContentDescription`).
 Quand un texte est entré, le texte lui-même est lu à la place de l’indicateur.
 
 **C#**
 
-Définissez la `Hint` propriété dans le code :
+Définissez la propriété `Hint` dans le code :
 
 ```csharp
 someText.Hint = "Enter some text"; // displays (and is "read") when control is empty
@@ -58,7 +58,7 @@ someText.Hint = "Enter some text"; // displays (and is "read") when control is e
 
 **Disposition AXML**
 
-Dans les fichiers de disposition XML `android:hint` , utilisez l’attribut :
+Dans les fichiers de disposition XML, utilisez l’attribut `android:hint` :
 
 ```xml
 <EditText
@@ -68,11 +68,11 @@ Dans les fichiers de disposition XML `android:hint` , utilisez l’attribut :
 
 ### <a name="labelfor-links-input-fields-with-labels"></a>LabelFor lie les champs d’entrée aux étiquettes
 
-Pour associer une étiquette à un contrôle d’entrée de données, `LabelFor` utilisez la propriété pour
+Pour associer une étiquette à un contrôle d’entrée de données, utilisez la propriété `LabelFor` pour
 
 **C#**
 
-Dans C#, affectez `LabelFor` à la propriété l’ID de ressource du contrôle que ce contenu décrit (en général, cette propriété est définie sur une étiquette et fait référence à un autre contrôle d’entrée) :
+Dans C#, affectez à la propriété `LabelFor` l’ID de ressource du contrôle que ce contenu décrit (en général, cette propriété est définie sur une étiquette et fait référence à un autre contrôle d’entrée) :
 
 ```csharp
 EditText edit = FindViewById<EditText> (Resource.Id.editFirstName);
@@ -82,7 +82,7 @@ tv.LabelFor = Resource.Id.editFirstName;
 
 **Disposition AXML**
 
-Dans la disposition XML, `android:labelFor` utilisez la propriété pour faire référence à l’identificateur d’un autre contrôle :
+Dans la disposition XML, utilisez la propriété `android:labelFor` pour référencer l’identificateur d’un autre contrôle :
 
 ```xml
 <TextView
@@ -96,9 +96,9 @@ Dans la disposition XML, `android:labelFor` utilisez la propriété pour faire r
 
 ### <a name="announce-for-accessibility"></a>Annoncer l’accessibilité
 
-Utilisez la `AnnounceForAccessibility` méthode sur n’importe quel contrôle d’affichage pour communiquer un événement ou une modification d’État aux utilisateurs lorsque l’accessibilité est activée. Cette méthode n’est pas obligatoire pour la plupart des opérations où le discours intégré fournit des commentaires suffisants, mais doit être utilisé lorsque des informations supplémentaires sont utiles pour l’utilisateur.
+Utilisez la méthode `AnnounceForAccessibility` sur n’importe quel contrôle d’affichage pour communiquer un événement ou une modification d’État aux utilisateurs lorsque l’accessibilité est activée. Cette méthode n’est pas obligatoire pour la plupart des opérations où le discours intégré fournit des commentaires suffisants, mais doit être utilisé lorsque des informations supplémentaires sont utiles pour l’utilisateur.
 
-Le code ci-dessous montre un exemple `AnnounceForAccessibility`simple appelant :
+Le code ci-dessous montre un exemple simple appelant `AnnounceForAccessibility` :
 
 ```csharp
 button.Click += delegate {
@@ -109,11 +109,11 @@ button.Click += delegate {
 
 ## <a name="changing-focus-settings"></a>Modification des paramètres de focus
 
-La navigation accessible s’appuie sur les contrôles qui ont le focus pour aider l’utilisateur à comprendre quelles opérations sont disponibles. Android fournit une `Focusable` propriété qui peut baliser les contrôles en vue de leur permettre de recevoir le focus pendant la navigation.
+La navigation accessible s’appuie sur les contrôles qui ont le focus pour aider l’utilisateur à comprendre quelles opérations sont disponibles. Android fournit une propriété `Focusable` qui peut baliser des contrôles en vue de leur permettre de recevoir le focus lors de la navigation.
 
 **C#**
 
-Pour empêcher un contrôle d’accéder au focus avec C#, affectez `Focusable` à `false`la propriété la valeur :
+Pour empêcher un contrôle de se concentrer sur C#, affectez à la propriété `Focusable` la valeur `false` :
 
 ```csharp
 label.Focusable = false;
@@ -121,13 +121,13 @@ label.Focusable = false;
 
 **Disposition AXML**
 
-Dans disposition des fichiers XML, `android:focusable` définissez l’attribut :
+Dans disposition des fichiers XML, définissez l’attribut `android:focusable` :
 
 ```xml
 <android:focusable="false" />
 ```
 
-Vous pouvez également contrôler l’ordre de focus `nextFocusDown`avec `nextFocusLeft`les attributs `nextFocusUp` ,, `nextFocusRight`, généralement définis dans la disposition AXML. Utilisez ces attributs pour vous assurer que l’utilisateur peut naviguer facilement dans les contrôles à l’écran.
+Vous pouvez également contrôler l’ordre de focus avec les attributs `nextFocusDown`, `nextFocusLeft`, `nextFocusRight` `nextFocusUp`, généralement définis dans la disposition AXML. Utilisez ces attributs pour vous assurer que l’utilisateur peut naviguer facilement dans les contrôles à l’écran.
 
 ## <a name="accessibility-and-localization"></a>Accessibilité et localisation
 
@@ -145,7 +145,7 @@ L’utilisation de texte à partir d’un fichier de C# chaînes est illustrée 
 
 **C#**
 
-Au lieu d’utiliser des littéraux de chaîne dans le code, recherchez les valeurs traduites dans les fichiers de chaînes avec `Resources.GetText`:
+Au lieu d’utiliser des littéraux de chaîne dans le code, recherchez les valeurs traduites à partir de fichiers de chaînes avec `Resources.GetText` :
 
 ```csharp
 someText.Hint = Resources.GetText (Resource.String.enter_info);
@@ -154,7 +154,7 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 **AXML**
 
-Dans Layout, les attributs d' `hint` accessibilité `contentDescription` XML comme et peuvent être définis sur un identificateur de chaîne :
+Dans disposition, les attributs d’accessibilité XML comme `hint` et `contentDescription` peuvent être définis sur un identificateur de chaîne :
 
 ```xml
 <TextView

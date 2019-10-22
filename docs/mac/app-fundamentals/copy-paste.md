@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769937"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Copier et coller dans Xamarin. Mac
@@ -31,7 +31,7 @@ Dans cet article, nous allons aborder les deux principales façons d’utiliser 
 
 Dans cet article, nous allons aborder les bases de l’utilisation de la copie dans une application Xamarin. Mac pour prendre en charge les opérations de copie et de collage. Nous vous recommandons vivement d’utiliser l’article [Hello, Mac](~/mac/get-started/hello-mac.md) , en particulier la [Présentation de Xcode et Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) et les sections [actions et actions](~/mac/get-started/hello-mac.md#outlets-and-actions) , car il aborde les concepts et les techniques clés que nous allons utiliser dans. Cet article.
 
-Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les `Register` attributs `Export` et utilisés pour associer vos C# classes à Objets objective-C et éléments d’interface utilisateur.
+Vous pouvez également jeter un coup d’œil à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) du document [Internals Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique également les attributs `Register` et `Export` utilisés pour associer vos C# classes à objective-c. objets et éléments d’interface utilisateur.
 
 ## <a name="getting-started-with-the-pasteboard"></a>Prise en main du collage
 
@@ -48,7 +48,7 @@ Tout d’abord, nous allons créer une nouvelle application Xamarin. Mac basée 
 Effectuez ce qui suit :
 
 1. Démarrez Visual Studio pour Mac, puis cliquez sur le lien **nouveau projet** ....
-2. Sélectionnez l'**application de cacao**de l'**application** >  **Mac** > , puis cliquez sur le bouton **suivant** : 
+2. Sélectionnez **Mac**  > **application**  > **cacao application**, puis cliquez sur le bouton **suivant** : 
 
     [![Création d’un projet d’application de cacao](copy-paste-images/sample01.png "Création d’un projet d’application de cacao")](copy-paste-images/sample01-large.png#lightbox)
 3. Entrez `MacCopyPaste` pour le **nom du projet** et conservez tout le reste comme valeur par défaut. Cliquez sur suivant : 
@@ -61,9 +61,9 @@ Effectuez ce qui suit :
 
 ### <a name="add-an-nsdocument"></a>Ajouter un NSDocument
 
-Ensuite, nous ajouterons `NSDocument` une classe personnalisée qui servira de stockage en arrière-plan pour l’interface utilisateur de l’application. Il contient une vue d’image unique et vous indique comment copier une image de la vue dans le tableau de montage par défaut et comment prendre une image à partir du tableau de montage par défaut et l’afficher dans la vue d’image.
+Ensuite, nous ajouterons une classe de `NSDocument` personnalisée qui agira comme stockage en arrière-plan de l’interface utilisateur de l’application. Il contient une vue d’image unique et vous indique comment copier une image de la vue dans le tableau de montage par défaut et comment prendre une image à partir du tableau de montage par défaut et l’afficher dans la vue d’image.
 
-Cliquez avec le bouton droit sur le projet Xamarin. Mac dans le **panneau solutions** puis sélectionnez **Ajouter** > **un nouveau fichier..** :
+Cliquez avec le bouton droit sur le projet Xamarin. Mac dans le **panneau solutions** puis sélectionnez **Ajouter**  > **nouveau fichier..** :
 
 ![Ajout d’un NSDocument au projet](copy-paste-images/sample03.png "Ajout d’un NSDocument au projet")
 
@@ -174,7 +174,7 @@ namespace MacCopyPaste
 
 Jetons un coup d’œil à certains codes en détail ci-dessous.
 
-Le code suivant fournit une propriété permettant de tester l’existence de données image sur la copie par défaut, si une image est disponible, `true` est `false`retournée :
+Le code suivant fournit une propriété pour tester l’existence de données image sur la copie par défaut, si une image est disponible, `true` est retourné, sinon `false` :
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -397,7 +397,7 @@ namespace MacCopyPaste
 
 Examinons ce code en détail ci-dessous.
 
-Tout d’abord, nous exposons une `ImageDocument` instance de la classe que nous avons créée ci-dessus :
+Tout d’abord, nous exposons une instance de la classe `ImageDocument` que nous avons créée ci-dessus :
 
 ```csharp
 private ImageDocument _document;
@@ -414,7 +414,7 @@ public ImageDocument Document {
 }
 ```
 
-À l' `Export`aide `WillChangeValue` de `DidChangeValue`, et, nous avons `Document` configuré la propriété pour autoriser le codage clé-valeur et la liaison de données dans Xcode.
+En utilisant `Export`, `WillChangeValue` et `DidChangeValue`, nous avons configuré la propriété `Document` pour autoriser le codage clé-valeur et la liaison de données dans Xcode.
 
 Nous exposerons également l’image à partir de l’image que nous avons ajoutée à notre interface utilisateur dans Xcode avec la propriété suivante :
 
@@ -433,7 +433,7 @@ public NSImage Image {
 }
 ```
 
-Quand la fenêtre principale est chargée et affichée, nous créons une instance de notre `ImageDocument` classe et nous attachons bien l’image de l’interface utilisateur avec le code suivant :
+Lorsque la fenêtre principale est chargée et affichée, nous créons une instance de notre classe `ImageDocument` et nous attachons bien l’image de l’interface utilisateur avec le code suivant :
 
 ```csharp
 public override void AwakeFromNib ()
@@ -448,7 +448,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-Enfin, en réponse à l’utilisateur qui clique sur les éléments de barre d’outils copier et coller, nous `ImageDocument` appelons l’instance de la classe pour effectuer le travail réel :
+Enfin, en réponse à l’utilisateur qui clique sur les éléments de barre d’outils copier et coller, nous appelons l’instance de la classe `ImageDocument` pour effectuer le travail réel :
 
 ```csharp
 partial void CopyImage (NSObject sender) {
@@ -535,13 +535,13 @@ void PasteImage (NSObject sender)
 }
 ```
 
-Pour chaque élément de menu, nous obtenons la fenêtre de clé actuelle, la plus en haut, `ImageWindow` et nous la transmettons à notre classe :
+Pour chaque élément de menu, nous obtenons la fenêtre de clé actuelle, la plus en haut, et nous la transmettons à notre classe `ImageWindow` :
 
 ```csharp
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-À partir de là, `ImageDocument` nous appelons l’instance de classe de cette fenêtre pour gérer les actions de copie et de collage. Par exemple : 
+À partir de là, nous appelons l’instance de classe `ImageDocument` de cette fenêtre pour gérer les actions de copie et de collage. Exemple : 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -600,9 +600,9 @@ namespace MacCopyPaste
 }
 ```
 
-Là encore, nous obtenons la fenêtre actuelle en haut et utilisons `ImageDocument` son instance de classe pour voir si les données d’image requises existent. Ensuite, nous utilisons `MenuWillHighlightItem` la méthode pour activer ou désactiver chaque élément en fonction de cet État.
+Là encore, nous obtenons la fenêtre actuelle en haut et utilisons son instance de classe `ImageDocument` pour voir si les données d’image requises existent. Nous utilisons ensuite la méthode `MenuWillHighlightItem` pour activer ou désactiver chaque élément en fonction de cet État.
 
-Modifiez le fichier **AppDelegate.cs** et faites en `DidFinishLaunching` sorte que la méthode ressemble à ce qui suit :
+Modifiez le fichier **AppDelegate.cs** et faites en sorte que la méthode `DidFinishLaunching` ressemble à ce qui suit :
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -613,7 +613,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-Tout d’abord, nous désactivons l’activation automatique et la désactivation des éléments de menu dans le menu Edition. Ensuite, nous attachons une instance de `EditMenuDelegate` la classe que nous avons créée ci-dessus.
+Tout d’abord, nous désactivons l’activation automatique et la désactivation des éléments de menu dans le menu Edition. Ensuite, nous attachons une instance de la classe `EditMenuDelegate` que nous avons créée ci-dessus.
 
 Pour plus d’informations, consultez notre documentation sur les [menus](~/mac/user-interface/menu.md) .
 
@@ -639,11 +639,11 @@ Dans les sections suivantes, nous examinerons en détail l’utilisation de la c
 
 ## <a name="about-the-pasteboard"></a>À propos du montage
 
-Dans MacOS (anciennement OS X), le montage (`NSPasteboard`) assure la prise en charge de plusieurs processus serveur, tels que copier & coller, faire glisser & déposer et services d’application. Dans les sections suivantes, nous examinerons de plus près plusieurs concepts de collage clés.
+Dans macOS (anciennement OS X), le montage (`NSPasteboard`) assure la prise en charge de plusieurs processus serveur, tels que copier & coller, faire glisser & déposer et Services d’application. Dans les sections suivantes, nous examinerons de plus près plusieurs concepts de collage clés.
 
 ### <a name="what-is-a-pasteboard"></a>Qu’est-ce qu’un collage ?
 
-La `NSPasteboard` classe fournit un mécanisme standardisé pour l’échange d’informations entre des applications ou au sein d’une application donnée. La fonction principale d’une opération de collage consiste à gérer les opérations de copie et de collage :
+La classe `NSPasteboard` fournit un mécanisme standardisé pour l’échange d’informations entre des applications ou au sein d’une application donnée. La fonction principale d’une opération de collage consiste à gérer les opérations de copie et de collage :
 
 1. Lorsque l’utilisateur sélectionne un élément dans une application et utilise l’élément de menu **couper** ou **copier** , une ou plusieurs représentations de l’élément sélectionné sont placées sur le tableau de montage.
 2. Lorsque l’utilisateur utilise l’élément de menu **coller** (dans la même application ou une autre), la version des données qu’il peut gérer est copiée à partir du montage et ajoutée à l’application.
@@ -659,15 +659,15 @@ Dans leur forme la plus simple, les pasteboards sont utilisés pour déplacer de
 
 Un tableau de montage peut être public ou privé et peut être utilisé à diverses fins dans une application ou entre plusieurs applications. macOS fournit plusieurs pasteboards standard, chacun avec une utilisation spécifique et bien définie :
 
-- `NSGeneralPboard`: Collage par défaut pour les opérations **couper**, **copier** et **coller** .
-- `NSRulerPboard`-Prend en charge les opérations **couper**, **copier** et **coller** sur les **règles**.
-- `NSFontPboard`-Prend en charge les opérations **couper**, copier `NSFont` et **coller** sur les objets.
-- `NSFindPboard`-Prend en charge des panneaux de recherche spécifiques à l’application qui peuvent partager le texte recherché.
-- `NSDragPboard`-Prend en charge les opérations **glisser-déplacer &** .
+- `NSGeneralPboard` : le collage par défaut pour les opérations **couper**, **copier** et **coller** .
+- `NSRulerPboard`-prend en charge les opérations **couper**, **copier** et **coller** sur les **règles**.
+- `NSFontPboard`-prend en charge les opérations **couper**, **copier** et **coller** sur les objets `NSFont`.
+- `NSFindPboard`-prend en charge des panneaux de recherche spécifiques à l’application qui peuvent partager le texte recherché.
+- `NSDragPboard`-prend en charge les opérations **glisser-déplacer &** .
 
-Dans la plupart des cas, vous utiliserez l’un des pasteboards définis par le système. Toutefois, il peut y avoir des situations qui nécessitent la création de vos propres pasteboards. Dans ces situations, vous pouvez utiliser la `FromName (string name)` méthode de la `NSPasteboard` classe pour créer une copie personnalisée avec le nom donné.
+Dans la plupart des cas, vous utiliserez l’un des pasteboards définis par le système. Toutefois, il peut y avoir des situations qui nécessitent la création de vos propres pasteboards. Dans ces situations, vous pouvez utiliser la méthode `FromName (string name)` de la classe `NSPasteboard` pour créer un collage personnalisé avec le nom donné.
 
-Si vous le souhaitez, vous pouvez `CreateWithUniqueName` appeler la méthode `NSPasteboard` de la classe pour créer un montage nommé de façon unique.
+Si vous le souhaitez, vous pouvez appeler la méthode `CreateWithUniqueName` de la classe `NSPasteboard` pour créer un montage nommé de façon unique.
 
 ### <a name="pasteboard-items"></a>Éléments de collage
 
@@ -691,19 +691,19 @@ En général, vous devez fournir autant de représentations des données copiée
 
 Dans ce cas, vous pouvez placer la première représentation des données sur le montage et l’application réceptrice peut demander une autre représentation, qui peut être générée à la volée juste avant l’opération de collage.
 
-Lorsque vous placez l’élément initial dans le tableau de montage, vous spécifiez qu’une ou plusieurs des autres représentations disponibles sont fournies par un objet conforme à l' `NSPasteboardItemDataProvider` interface. Ces objets fourniront des représentations supplémentaires à la demande, comme demandé par l’application réceptrice.
+Lorsque vous placez l’élément initial dans le tableau de montage, vous spécifiez qu’une ou plusieurs des autres représentations disponibles sont fournies par un objet conforme à l’interface `NSPasteboardItemDataProvider`. Ces objets fourniront des représentations supplémentaires à la demande, comme demandé par l’application réceptrice.
 
 ### <a name="change-count"></a>Nombre de modifications
 
 Chaque copieur conserve un _nombre de modifications_ qui s’incrémente chaque fois qu’un nouveau propriétaire est déclaré. Une application peut déterminer si le contenu de la copie a changé depuis la dernière fois qu’il l’a examiné en vérifiant la valeur du nombre de modifications.
 
-Utilisez les `ChangeCount` méthodes `ClearContents` et de la `NSPasteboard` classe pour modifier le nombre de modifications d’un montage donné.
+Utilisez les méthodes `ChangeCount` et `ClearContents` de la classe `NSPasteboard` pour modifier le nombre de modifications d’un montage donné.
 
 ## <a name="copying-data-to-a-pasteboard"></a>Copie de données dans un montage
 
 Pour effectuer une opération de copie, vous devez tout d’abord accéder à une copie, effacer tout contenu existant et écrire autant de représentations des données que nécessaire dans le cadre du collage.
 
-Par exemple :
+Exemple :
 
 ```csharp
 // Get the standard pasteboard
@@ -716,9 +716,9 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-En règle générale, vous allez simplement écrire dans la copie générale, comme nous l’avons fait dans l’exemple ci-dessus. Tout objet que vous envoyez à la `WriteObjects` méthode *doit* être conforme à `INSPasteboardWriting` l’interface. Plusieurs classes intégrées (telles que `NSString` `NSURL`, `NSImage` `NSColor`,,, et `NSPasteboardItem`) sont automatiquement conformes à cette interface. `NSAttributedString`
+En règle générale, vous allez simplement écrire dans la copie générale, comme nous l’avons fait dans l’exemple ci-dessus. Tout objet que vous envoyez à la méthode `WriteObjects` *doit* se conformer à l’interface `INSPasteboardWriting`. Plusieurs classes intégrées (telles que `NSString`, `NSImage`, `NSURL`, `NSColor`, `NSAttributedString` et `NSPasteboardItem`) sont automatiquement conformes à cette interface.
 
-Si vous écrivez une classe de données personnalisée dans le tableau de montage, elle doit se `INSPasteboardWriting` conformer à l’interface ou être incluse `NSPasteboardItem` dans un wrapper dans une instance de la classe (consultez la section [types de données personnalisés](#Custom_Data_Types) ci-dessous).
+Si vous écrivez une classe de données personnalisée dans le tableau de montage, elle doit se conformer à l’interface `INSPasteboardWriting` ou être encapsulée dans une instance de la classe `NSPasteboardItem` (consultez la section [types de données personnalisés](#Custom_Data_Types) ci-dessous).
 
 ## <a name="reading-data-from-a-pasteboard"></a>Lecture de données à partir d’un montage
 
@@ -726,14 +726,14 @@ Comme indiqué ci-dessus, pour optimiser le potentiel de partage de données ent
 
 ### <a name="simple-paste-operation"></a>Opération de collage simple
 
-Vous lisez des données à partir du montage à `ReadObjectsForClasses` l’aide de la méthode. Deux paramètres sont nécessaires :
+Vous lisez des données à partir du montage à l’aide de la méthode `ReadObjectsForClasses`. Deux paramètres sont nécessaires :
 
-1. Tableau de types `NSObject` de classes basés que vous souhaitez lire à partir du tableau de montage. Vous devez tout d’abord le classer avec le type de données le plus souhaité, avec tous les types restants dans la préférence décroissante.
+1. Tableau de types de classe basés sur `NSObject` que vous souhaitez lire à partir du tableau de montage. Vous devez tout d’abord le classer avec le type de données le plus souhaité, avec tous les types restants dans la préférence décroissante.
 2. Dictionnaire contenant des contraintes supplémentaires (par exemple, limitation à des types de contenu d’URL spécifiques) ou un dictionnaire vide si aucune autre contrainte n’est requise.
 
 La méthode retourne un tableau d’éléments qui répondent aux critères que nous avons transmis et qui, par conséquent, contient au plus le même nombre de types de données demandés. Il est également possible qu’aucun des types demandés ne soit présent et qu’un tableau vide soit retourné.
 
-Par exemple, le code suivant vérifie si un existe dans `NSImage` le tableau de collage général et l’affiche dans une image bien, le cas échéant :
+Par exemple, le code suivant vérifie si un `NSImage` existe dans le tableau de montage général et l’affiche dans une image, le cas échéant :
 
 ```csharp
 [Export("PasteImage:")]
@@ -767,8 +767,8 @@ public void PasteImage(NSObject sender) {
 
 En fonction du type d’application Xamarin. Mac créé, il peut être en mesure de gérer plusieurs représentations des données collées. Dans ce cas, il existe deux scénarios pour la récupération des données à partir du montage :
 
-1. Effectuez un appel unique à la `ReadObjectsForClasses` méthode et fournissez un tableau de toutes les représentations que vous souhaitez (dans l’ordre par défaut).
-2. Effectuer plusieurs appels à la `ReadObjectsForClasses` méthode qui demande un tableau de types différent à chaque fois.
+1. Effectuez un appel unique à la méthode `ReadObjectsForClasses` et fournissez un tableau de toutes les représentations que vous souhaitez (dans l’ordre par défaut).
+2. Effectuez plusieurs appels à la méthode `ReadObjectsForClasses` en demandant chaque fois un tableau de types différent.
 
 Pour plus d’informations sur la récupération de données à partir d’un montage, consultez la section **opération de collage simple** ci-dessus.
 
@@ -776,9 +776,9 @@ Pour plus d’informations sur la récupération de données à partir d’un mo
 
 Il peut arriver que vous souhaitiez vérifier si une opération de collage contient une représentation de données donnée sans réellement lire les données à partir de la copie (comme l’activation de l’élément de menu **coller** uniquement lorsque des données valides existent).
 
-Appelez la `CanReadObjectForClasses` méthode de la vue de la copie pour voir si elle contient un type donné.
+Appelez la méthode `CanReadObjectForClasses` de la vue de la copie pour voir si elle contient un type donné.
 
-Par exemple, le code suivant détermine si la vue de collage générale contient `NSImage` une instance :
+Par exemple, le code suivant détermine si la vue de collage générale contient une `NSImage` instance :
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -795,7 +795,7 @@ public bool ImageAvailableOnPasteboard {
 
 ### <a name="reading-urls-from-the-pasteboard"></a>Lecture des URL à partir du montage
 
-En fonction de la fonction d’une application Xamarin. Mac donnée, il peut être nécessaire de lire des URL à partir d’un fichier de copie, mais uniquement si elles répondent à un ensemble de critères donné (par exemple, en pointant vers des fichiers ou des URL d’un type de données spécifique). Dans ce cas, vous pouvez spécifier des critères de recherche supplémentaires à l’aide du `CanReadObjectForClasses` deuxième `ReadObjectsForClasses` paramètre des méthodes ou.
+En fonction de la fonction d’une application Xamarin. Mac donnée, il peut être nécessaire de lire des URL à partir d’un fichier de copie, mais uniquement si elles répondent à un ensemble de critères donné (par exemple, en pointant vers des fichiers ou des URL d’un type de données spécifique). Dans ce cas, vous pouvez spécifier des critères de recherche supplémentaires à l’aide du deuxième paramètre des méthodes `CanReadObjectForClasses` ou `ReadObjectsForClasses`.
 
 <a name="Custom_Data_Types" />
 
@@ -803,7 +803,7 @@ En fonction de la fonction d’une application Xamarin. Mac donnée, il peut êt
 
 Il peut arriver que vous ayez besoin d’enregistrer vos propres types personnalisés dans le fichier de copie à partir d’une application Xamarin. Mac. Par exemple, une application de dessin vectoriel qui permet à l’utilisateur de copier et coller des objets de dessin.
 
-Dans ce cas, vous devez concevoir votre classe de données personnalisée de sorte qu’elle hérite de `NSObject` et qu’elle soit conforme à quelques interfaces `INSPasteboardWriting` (`INSCoding`et `INSPasteboardReading`). Si vous le souhaitez, vous pouvez `NSPasteboardItem` utiliser un pour encapsuler les données à copier ou à coller.
+Dans ce cas, vous devez concevoir votre classe de données personnalisée de sorte qu’elle hérite de `NSObject` et qu’elle soit conforme à quelques interfaces (`INSCoding`, `INSPasteboardWriting` et `INSPasteboardReading`). Si vous le souhaitez, vous pouvez utiliser un `NSPasteboardItem` pour encapsuler les données à copier ou à coller.
 
 Ces deux options sont décrites en détail ci-dessous.
 
@@ -929,7 +929,7 @@ Dans les sections suivantes, nous allons examiner en détail cette classe.
 
 #### <a name="inheritance-and-interfaces"></a>Héritage et interfaces
 
-Pour qu’une classe de données personnalisée puisse être écrite ou lue à partir d’une copie, elle doit se `INSPastebaordWriting` conformer aux interfaces et `INSPasteboardReading` . En outre, il doit hériter `NSObject` de et se conformer à l' `INSCoding` interface :
+Pour qu’une classe de données personnalisée puisse être écrite ou lue à partir d’une copie, elle doit se conformer aux interfaces `INSPastebaordWriting` et `INSPasteboardReading`. En outre, il doit hériter de `NSObject` et se conformer à l’interface `INSCoding` :
 
 ```csharp
 [Register("ImageInfo")]
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-La classe doit également être exposée à Objective-C `Register` à l’aide de la directive et elle doit exposer toutes `Export`les propriétés ou méthodes requises à l’aide de. Par exemple :
+La classe doit également être exposée à Objective-C à l’aide de la directive `Register` et elle doit exposer toutes les propriétés ou méthodes requises à l’aide de `Export`. Exemple :
 
 ```csharp
 [Export("name")]
@@ -949,7 +949,7 @@ public string ImageType { get; set; }
 
 Nous exposons les deux champs de données que cette classe contiendra : le nom de l’image et son type (jpg, png, etc.). 
 
-Pour plus d’informations, reportez-vous à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) de la documentation [interne Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique les `Register` attributs et `Export` utilisés pour associer vos C# classes à Objets objective-C et éléments d’interface utilisateur.
+Pour plus d’informations, reportez-vous à la section [exposition des C# classes/méthodes à Objective-C](~/mac/internals/how-it-works.md) de la documentation [interne Xamarin. Mac.](~/mac/internals/how-it-works.md) elle explique les attributs `Register` et C# `Export` utilisés pour associer vos classes à objective-c. objets et éléments d’interface utilisateur.
 
 #### <a name="constructors"></a>Constructeurs
 
@@ -974,15 +974,15 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-Tout d’abord, nous exposons le constructeur _vide_ sous la méthode objective `init`-C par défaut de.
+Tout d’abord, nous exposons le constructeur _vide_ sous la méthode objective-C par défaut de `init`.
 
-Ensuite, nous exposons `NSCoding` un constructeur conforme qui sera utilisé pour créer une nouvelle instance de l’objet à partir du collage lors du collage sous le nom exporté de. `initWithCoder`
+Ensuite, nous exposons un constructeur `NSCoding` conforme qui sera utilisé pour créer une nouvelle instance de l’objet à partir du collage lors du collage sous le nom exporté de `initWithCoder`.
 
-Ce constructeur prend un `NSCoder` (tel qu’il est `NSKeyedArchiver` créé par un lorsqu’il est écrit dans le tableau de montage), extrait les données de paires clé/valeur et les enregistre dans les champs de propriété de la classe de données.
+Ce constructeur prend une `NSCoder` (telle qu’elle est créée par un `NSKeyedArchiver` en cas d’écriture dans le tableau de montage), extrait les données de paires clé/valeur et les enregistre dans les champs de propriété de la classe de données.
 
 #### <a name="writing-to-the-pasteboard"></a>Écriture dans le montage
 
-En se conformant à `INSPasteboardWriting` l’interface, nous devons exposer deux méthodes, et éventuellement une troisième méthode, afin que la classe puisse être écrite dans le collage.
+En se conformant à l’interface `INSPasteboardWriting`, nous devons exposer deux méthodes, et éventuellement une troisième méthode, afin que la classe puisse être écrite dans le collage.
 
 Tout d’abord, nous devons indiquer au collage la représentation des types de données dans laquelle la classe personnalisée peut être écrite :
 
@@ -996,7 +996,7 @@ public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) 
 
 Chaque représentation est identifiée à l’aide d’un identificateur de type uniforme (UTI), qui n’est rien de plus qu’une simple chaîne qui identifie de façon unique le type de données présenté (pour plus d’informations, consultez [vue d’ensemble des identificateurs de type uniformes](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) d’Apple). documentation).
 
-Pour notre format personnalisé, nous créons notre propre UTI : « com. xamarin. image-info » (Notez que est en notation inverse comme un identificateur d’application). Notre classe est également en charge de l’écriture d’une chaîne standard dans le`public.text`collage (). 
+Pour notre format personnalisé, nous créons notre propre UTI : « com. xamarin. image-info » (Notez que est en notation inverse comme un identificateur d’application). Notre classe est également en charge de l’écriture d’une chaîne standard dans le collage (`public.text`). 
 
 Ensuite, nous devons créer l’objet dans le format demandé qui est réellement écrit dans le montage :
 
@@ -1017,7 +1017,7 @@ public virtual NSObject GetPasteboardPropertyListForType (string type) {
 }
 ```
 
-Pour le `public.text` type, nous revenons un objet mis en `NSString` forme simple. Pour le type `com.xamarin.image-info` personnalisé, nous utilisons un `NSKeyedArchiver` et l' `NSCoder` interface pour encoder la classe de données personnalisée en une archive paire clé/valeur. Nous devons implémenter la méthode suivante pour gérer l’encodage :
+Pour le type de `public.text`, nous revenons à un objet `NSString` mis en forme simple. Pour le type de `com.xamarin.image-info` personnalisé, nous utilisons un `NSKeyedArchiver` et l’interface `NSCoder` pour encoder la classe de données personnalisée en archive paire clé/valeur. Nous devons implémenter la méthode suivante pour gérer l’encodage :
 
 ```csharp
 [Export ("encodeWithCoder:")]
@@ -1040,7 +1040,7 @@ public virtual NSPasteboardWritingOptions GetWritingOptionsForType (string type,
 }
 ```
 
-Actuellement, seule `WritingPromised` l’option est disponible et doit être utilisée lorsqu’un type donné est uniquement promis et qu’il n’est pas réellement écrit dans le collage. Pour plus d’informations, consultez la section [données promises](#Promised_Data) ci-dessus.
+Actuellement, seule l’option `WritingPromised` est disponible et doit être utilisée lorsqu’un type donné est uniquement promis et n’est pas réellement écrit dans le collage. Pour plus d’informations, consultez la section [données promises](#Promised_Data) ci-dessus.
 
 Une fois ces méthodes en place, le code suivant peut être utilisé pour écrire notre classe personnalisée sur le montage :
 
@@ -1057,7 +1057,7 @@ pasteboard.WriteObjects (new ImageInfo[] { Info });
 
 #### <a name="reading-from-the-pasteboard"></a>Lire à partir du montage
 
-En se conformant à `INSPasteboardReading` l’interface, nous devons exposer trois méthodes afin que la classe de données personnalisée puisse être lue à partir du montage.
+En se conformant à l’interface `INSPasteboardReading`, nous devons exposer trois méthodes afin que la classe de données personnalisée puisse être lue à partir du montage.
 
 Tout d’abord, nous devons indiquer au collage la représentation des types de données que la classe personnalisée peut lire à partir du presse-papiers :
 
@@ -1090,7 +1090,7 @@ public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, 
 }
 ```
 
-Pour le `com.xamarin.image-info` type, nous indiquons au collage de décoder la paire clé/valeur que nous avons créée avec `NSKeyedArchiver` le lors de l’écriture de la classe dans la copie `initWithCoder:` en appelant le constructeur que nous avons ajouté à la classe.
+Pour le type de `com.xamarin.image-info`, nous indiquons au collage de décoder la paire clé/valeur que nous avons créée avec la `NSKeyedArchiver` lors de l’écriture de la classe dans la copie en appelant le constructeur `initWithCoder:` que nous avons ajouté à la classe.
 
 Enfin, nous devons ajouter la méthode suivante pour lire les autres représentations de données UTI à partir de la copie :
 
@@ -1133,11 +1133,11 @@ if (ok) {
 
 Il peut arriver que vous deviez écrire des éléments personnalisés dans le cadre de la copie qui ne justifient pas la création d’une classe personnalisée ou que vous souhaitiez fournir des données dans un format commun, uniquement si nécessaire. Dans ce cas, vous pouvez utiliser un `NSPasteboardItem`.
 
-Un `NSPasteboardItem` fournit un contrôle affiné sur les données écrites dans le panneau de collage et est conçu pour un accès temporaire. il doit être supprimé après avoir été écrit dans le panneau de collage.
+Un `NSPasteboardItem` fournit un contrôle affiné sur les données écrites dans le panneau de montage et est conçu pour un accès temporaire. il doit être supprimé après avoir été écrit dans le panneau de collage.
 
 #### <a name="writing-data"></a>Écriture de données
 
-Pour écrire vos données personnalisées dans `NSPasteboardItem` un, vous devez fournir un personnalisé `NSPasteboardItemDataProvider`. Ajoutez une nouvelle classe au projet et appelez-la **ImageInfoDataProvider.cs**. Modifiez le fichier et faites en sorte qu’il ressemble à ce qui suit :
+Pour écrire vos données personnalisées dans un `NSPasteboardItem` vous devez fournir un `NSPasteboardItemDataProvider` personnalisé. Ajoutez une nouvelle classe au projet et appelez-la **ImageInfoDataProvider.cs**. Modifiez le fichier et faites en sorte qu’il ressemble à ce qui suit :
 
 ```csharp
 using System;
@@ -1200,9 +1200,9 @@ namespace MacCopyPaste
 }
 ```
 
-Comme nous l’avons fait avec la classe de données personnalisée, nous avons `Register` besoin `Export` d’utiliser les directives et pour l’exposer à Objective-C. La classe doit hériter `NSPasteboardItemDataProvider` de et doit implémenter `ProvideDataForType` les `FinishedWithDataProvider` méthodes et.
+Comme nous l’avons fait avec la classe de données personnalisée, nous avons besoin d’utiliser les directives `Register` et `Export` pour l’exposer à Objective-C. La classe doit hériter de `NSPasteboardItemDataProvider` et doit implémenter les méthodes `FinishedWithDataProvider` et `ProvideDataForType`.
 
-Utilisez la `ProvideDataForType` méthode pour fournir les données qui seront encapsulées dans le `NSPasteboardItem` comme suit :
+Utilisez la méthode `ProvideDataForType` pour fournir les données qui seront encapsulées dans le `NSPasteboardItem` comme suit :
 
 ```csharp
 [Export ("pasteboard:item:provideDataForType:")]
@@ -1278,7 +1278,7 @@ Cet article a décrit en détail l’utilisation du collage dans une application
 
 ## <a name="related-links"></a>Liens associés
 
-- [MacCopyPaste (sample)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccopypaste)
+- [MacCopyPaste (exemple)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccopypaste)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Guide de programmation de la copie](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [Human Interface Guidelines pour macOS](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

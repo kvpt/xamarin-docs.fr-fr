@@ -8,24 +8,24 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2019
 ms.openlocfilehash: f08146d4439ff1fc22edea71ab1cbb337f64c037
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68984391"
 ---
 # <a name="xamarinforms-controls-class-hierarchy"></a>Hiérarchie des classes des contrôles Xamarin. Forms
 
-Xamarin. Forms est constitué de centaines de types, sur plusieurs espaces de noms. Les développeurs doivent se familiariser avec la hiérarchie des types utilisée pour créer l’interface utilisateur d’une application Xamarin. Forms, qui réside dans `Xamarin.Forms` l’espace de noms.
+Xamarin. Forms est constitué de centaines de types, sur plusieurs espaces de noms. Les développeurs doivent être plus familiarisés avec la hiérarchie de types utilisée pour créer l’interface utilisateur d’une application Xamarin. Forms, qui réside dans l’espace de noms `Xamarin.Forms`.
 
-Ces types peuvent être divisés en pages, dispositions, vues et cellules. Une page Xamarin. Forms occupe généralement la totalité de l’écran, et tous les types de [`Page`](xref:Xamarin.Forms.Page) pages dérivent de la classe. Les pages contiennent généralement une disposition, et tous les types de disposition dérivent de la [`Layout`](xref:Xamarin.Forms.Layout) classe. Une disposition contient généralement des vues et éventuellement d’autres dispositions, et tous les types d’affichages [`View`](xref:Xamarin.Forms.View) dérivent de la classe. Enfin, les cellules sont des contrôles spécialisés qui sont utilisés dans les [`TableView`](xref:Xamarin.Forms.TableView) données d’affichage des contrôles et. [`ListView`](xref:Xamarin.Forms.ListView) Les pages, les dispositions, les vues et les cellules sont finalement dérivés [`Element`](xref:Xamarin.Forms.Element) de la classe.
+Ces types peuvent être divisés en pages, dispositions, vues et cellules. Une page Xamarin. Forms occupe généralement la totalité de l’écran, et tous les types de pages dérivent de la classe [`Page`](xref:Xamarin.Forms.Page) . Les pages contiennent généralement une disposition, et tous les types de disposition dérivent de la classe [`Layout`](xref:Xamarin.Forms.Layout) . Une disposition contient généralement des vues et éventuellement d’autres dispositions, et tous les types d’affichages dérivent de la classe [`View`](xref:Xamarin.Forms.View) . Enfin, les cellules sont des contrôles spécialisés qui sont utilisés dans l’affichage des données dans les contrôles [`TableView`](xref:Xamarin.Forms.TableView) et [`ListView`](xref:Xamarin.Forms.ListView) . Les pages, les dispositions, les vues et les cellules sont toutes dérivées de la classe [`Element`](xref:Xamarin.Forms.Element) .
 
 Le diagramme de classes suivant illustre la hiérarchie des types généralement utilisés pour créer une interface utilisateur dans Xamarin. Forms :
 
 [![Diagramme de classes des contrôles Xamarin. Forms](class-hierarchy-images/class-diagram.png "Diagramme de classes des contrôles Xamarin. Forms")](class-hierarchy-images/class-diagram-large.png#lightbox "Diagramme de classes des contrôles Xamarin. Forms")
 
 > [!NOTE]
-> Une version haute résolution du diagramme de classes peut être téléchargée à partir d' [ici](class-hierarchy-images/class-diagram-high-resolution.png). Toutefois, Notez que le diagramme n’affiche pas les types `CarouselView` et `CollectionView` pour le moment. Celles-ci sont ajoutées une fois que les contrôles ne sont plus en préversion. En outre, le diagramme n’affiche qu’un seul type d’interpréteur de commandes.
+> Une version haute résolution du diagramme de classes peut être téléchargée à partir d' [ici](class-hierarchy-images/class-diagram-high-resolution.png). Toutefois, Notez que le diagramme n’affiche pas les types `CarouselView` et `CollectionView`. Celles-ci sont ajoutées une fois que les contrôles ne sont plus en préversion. En outre, le diagramme n’affiche qu’un seul type d’interpréteur de commandes.
 
 ## <a name="related-links"></a>Liens connexes
 

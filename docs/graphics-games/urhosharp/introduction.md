@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "67832542"
 ---
 # <a name="introduction-to-urhosharp"></a>Présentation de UrhoSharp
@@ -68,7 +68,7 @@ Tandis que les autres exemples affichent les propriétés individuelles de chaqu
 
 ## <a name="basic-structure"></a>Structure de base
 
-Votre jeu doit sous-définir `Application` la classe, c’est là que vous allez configurer votre jeu ( `Setup` sur la méthode) et démarrer votre jeu ( `Start` dans la méthode).  Vous construisez ensuite votre interface utilisateur principale.  Nous allons examiner un petit exemple qui illustre les API permettant de configurer une scène 3D, certains éléments d’interface utilisateur et de lui associer un comportement simple.
+Votre jeu doit sous-définir la classe `Application`, c’est là que vous allez configurer votre jeu (sur la méthode `Setup`) et démarrer votre jeu (dans la méthode `Start`).  Vous construisez ensuite votre interface utilisateur principale.  Nous allons examiner un petit exemple qui illustre les API permettant de configurer une scène 3D, certains éléments d’interface utilisateur et de lui associer un comportement simple.
 
 ```csharp
 class MySample : Application {
@@ -135,9 +135,9 @@ Pour lancer votre application, vous appelez la fonction d’initialisation du mo
 new MySample().Run();
 ```
 
-Le runtime appellera les `Setup` méthodes et `Start` pour vous.  Si vous remplacez `Setup` , vous pouvez configurer les paramètres du moteur (non affiché dans cet exemple).
+Le runtime appellera les méthodes `Setup` et `Start`.  Si vous remplacez `Setup` vous pouvez configurer les paramètres du moteur (non affiché dans cet exemple).
 
-Vous devez remplacer `Start` par le lancement de votre jeu.  Dans cette méthode, vous chargez vos ressources, connectez les gestionnaires d’événements, configurez votre scène et démarrez les actions que vous souhaitez.  Dans notre exemple, nous créons tous deux un peu d’interface utilisateur à afficher à l’utilisateur, ainsi que la configuration d’une scène 3D.
+Vous devez remplacer `Start`, car cette opération lance votre jeu.  Dans cette méthode, vous chargez vos ressources, connectez les gestionnaires d’événements, configurez votre scène et démarrez les actions que vous souhaitez.  Dans notre exemple, nous créons tous deux un peu d’interface utilisateur à afficher à l’utilisateur, ainsi que la configuration d’une scène 3D.
 
 Le morceau de code suivant utilise l’infrastructure de l’interface utilisateur pour créer un élément de texte et l’ajouter à votre application :
 
@@ -156,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-L’infrastructure d’interface utilisateur est là pour fournir une interface utilisateur de jeu très simple et fonctionne en ajoutant de nouveaux nœuds au `UI.Root` nœud.
+L’infrastructure d’interface utilisateur est là pour fournir une interface utilisateur de jeu très simple et fonctionne en ajoutant de nouveaux nœuds au nœud `UI.Root`.
 
 La deuxième partie de notre exemple installe la scène principale.  Cela implique un certain nombre d’étapes, la création d’une scène 3D, la création d’une zone 3D dans l’écran, l’ajout d’une lumière, d’une caméra et d’une fenêtre d’affichage.  Celles-ci sont explorées plus en détail dans la section [scène, nœuds, composants et appareils photo](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras).
 
-La troisième partie de notre exemple déclenche quelques actions.  Les actions sont des recettes qui décrivent un effet particulier. une fois créées, elles peuvent être exécutées par un nœud `RunActionAsync` à la demande `Node`en appelant la méthode sur un.
+La troisième partie de notre exemple déclenche quelques actions.  Les actions sont des recettes qui décrivent un effet particulier. une fois créées, elles peuvent être exécutées par un nœud à la demande en appelant la méthode `RunActionAsync` sur une `Node`.
 
 La première action met à l’échelle la zone avec un effet de rebond et la seconde fait pivoter la boîte de façon infinie :
 
@@ -169,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-L’illustration ci-dessus montre comment la première action que nous `ScaleTo` créons est une action, il s’agit simplement d’une recette qui indique que vous souhaitez effectuer une mise à l’échelle d’une seconde vers la valeur d’une propriété Scale d’un nœud.  Cette action est ensuite encapsulée autour d’une action d’accélération `EaseBounceOut` , l’action.  Les actions d’accélération déforment l’exécution linéaire d’une action et appliquent un effet. dans ce cas, elle fournit l’effet de rebond.
+L’illustration ci-dessus montre comment la première action que nous créons est une action `ScaleTo`, il s’agit simplement d’une recette qui indique que vous souhaitez mettre à l’échelle d’une seconde vers la valeur d’une propriété Scale d’un nœud.  Cette action est entourée d’une action d’accélération, le `EaseBounceOut` action.  Les actions d’accélération déforment l’exécution linéaire d’une action et appliquent un effet. dans ce cas, elle fournit l’effet de rebond.
 Notre recette peut donc être écrite de la façon suivante :
 
 ```csharp

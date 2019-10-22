@@ -1,6 +1,6 @@
 ---
 title: Couleur d’arrière-plan de cellule sur iOS
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la couleur d’arrière-plan par défaut des cellules sur iOS.
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme iOS qui définit la couleur d’arrière-plan par défaut des cellules sur iOS.
 ms.prod: xamarin
 ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
 ms.technology: xamarin-forms
@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
 ms.openlocfilehash: 24276dce97e4935ba41d7012cf6a9aa8fa2658a8
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68651378"
 ---
 # <a name="cell-background-color-on-ios"></a>Couleur d’arrière-plan de cellule sur iOS
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce paramètre spécifique à la plateforme iOS définit la couleur d' [`Cell`](xref:Xamarin.Forms.Cell) arrière-plan par défaut des instances. Il est consommé en XAML en affectant `Cell.DefaultBackgroundColor` [`Color`](xref:Xamarin.Forms.Color)à la propriété pouvant être liée la valeur :
+Ce paramètre spécifique à la plateforme iOS définit la couleur d’arrière-plan par défaut des instances [`Cell`](xref:Xamarin.Forms.Cell) . Il est consommé en XAML en affectant à la `Cell.DefaultBackgroundColor` propriété pouvant être liée un [`Color`](xref:Xamarin.Forms.Color):
 
 ```xaml
 <ContentPage ...
@@ -41,7 +41,7 @@ Ce paramètre spécifique à la plateforme iOS définit la couleur d' [`Cell`](x
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de c# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -52,9 +52,9 @@ var viewCell = new ViewCell { View = ... };
 viewCell.On<iOS>().SetDefaultBackgroundColor(Color.Teal);
 ```
 
-Le `ListView.On<iOS>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur iOS. La `Cell.SetDefaultBackgroundColor` méthode, dans l' [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) espace de noms, définit la couleur d’arrière- [`Color`](xref:Xamarin.Forms.Color)plan de la cellule sur un spécifié. En outre, la `Cell.DefaultBackgroundColor` méthode peut être utilisée pour récupérer la couleur d’arrière-plan de la cellule active.
+La méthode `ListView.On<iOS>` spécifie que ce spécifique à la plateforme s’exécutera uniquement sur iOS. La méthode `Cell.SetDefaultBackgroundColor`, dans l’espace de noms [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) , définit la couleur d’arrière-plan de la cellule sur un [`Color`](xref:Xamarin.Forms.Color)spécifié. En outre, la méthode `Cell.DefaultBackgroundColor` peut être utilisée pour récupérer la couleur d’arrière-plan de la cellule active.
 
-Le résultat est que la couleur d’arrière- [`Cell`](xref:Xamarin.Forms.Cell) plan dans un peut être définie [`Color`](xref:Xamarin.Forms.Color)sur un spécifique :
+Le résultat est que la couleur d’arrière-plan d’un [`Cell`](xref:Xamarin.Forms.Cell) peut être définie sur un [`Color`](xref:Xamarin.Forms.Color)spécifique :
 
 [![Capture d’écran des cellules d’en-tête de groupe bleu-vert, sur iOS](cell-background-color-images/group-header-cell-color.png "ListView avec cellules d’en-tête de groupe bleu-vert")](cell-background-color-images/group-header-cell-color-large.png#lightbox "ListView avec cellules d’en-tête de groupe bleu-vert")
 

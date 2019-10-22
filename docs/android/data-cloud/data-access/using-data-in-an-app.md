@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
 ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70754460"
 ---
 # <a name="using-data-in-an-app"></a>Utilisation de données dans une application
@@ -23,7 +23,7 @@ Après avoir ajouté des données, les écrans de l’application ressemblent à
 
 ![Exemple de détail Android](using-data-in-an-app-images/image12.png "Exemple de détail Android")
 
-Le projet Android est affiché sous &ndash; le code présenté dans cette section est contenu dans le répertoire **ORM** :
+Le projet Android est illustré ci-dessous &ndash; le code présenté dans cette section est contenu dans le répertoire **ORM** :
 
 ![Arborescence de projet Android](using-data-in-an-app-images/image14.png "Arborescence de projet Android")
 
@@ -36,7 +36,7 @@ Il existe deux opérations de lecture dans l’exemple :
 - Lecture de la liste
 - Lecture d’enregistrements individuels
 
-Les deux méthodes de la `StockDatabase` classe sont :
+Les deux méthodes de la classe `StockDatabase` sont les suivantes :
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android restitue les données sous la `ListView`forme d’un.
+Android restitue les données sous la forme d’un `ListView`.
 
 ## <a name="create-and-update"></a>Créer et mettre à jour
 
-Pour simplifier le code de l’application, une méthode Save unique est fournie, qui effectue une insertion ou une mise à jour selon que la valeur PrimaryKey a été définie ou non. Étant donné `Id` que la propriété est marquée `[PrimaryKey]` avec un attribut, vous ne devez pas la définir dans votre code. Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence :
+Pour simplifier le code de l’application, une méthode Save unique est fournie, qui effectue une insertion ou une mise à jour selon que la valeur PrimaryKey a été définie ou non. Étant donné que la propriété `Id` est marquée avec un attribut `[PrimaryKey]` vous ne devez pas la définir dans votre code. Cette méthode détecte si la valeur a été enregistrée précédemment (en vérifiant la propriété de clé primaire) et insère ou met à jour l’objet en conséquence :
 
 ```csharp
 public int SaveStock (Stock item)
@@ -77,7 +77,7 @@ Les applications réelles nécessitent généralement une validation (par exempl
 
 ## <a name="delete"></a>Supprimer
 
-Contrairement aux méthodes `Update` `Delete<T>` et, la méthode peut uniquement accepter la valeur de clé primaire plutôt qu’un objet complet `Stock`. `Insert` Dans cet exemple, `Stock` un objet est passé dans la méthode, mais seule la propriété ID est passée à `Delete<T>` la méthode.
+Contrairement aux méthodes `Insert` et `Update`, la méthode `Delete<T>` peut uniquement accepter la valeur de clé primaire plutôt qu’un objet `Stock` complet. Dans cet exemple, un objet `Stock` est passé dans la méthode, mais seule la propriété ID est transmise à la méthode `Delete<T>`.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -92,13 +92,13 @@ public int DeleteStock(Stock stock)
 
 Certaines applications sont livrées avec une base de données déjà remplie de données. Vous pouvez facilement effectuer cette opération dans votre application mobile en envoyant un fichier de base de données SQLite existant avec votre application et en le copiant dans un répertoire accessible en écriture avant d’y accéder. Étant donné que SQLite est un format de fichier standard utilisé sur de nombreuses plateformes, un certain nombre d’outils sont disponibles pour créer un fichier de base de données SQLite :
 
-- **Extension SQLite Manager Firefox** &ndash; Fonctionne sur Mac et Windows et produit des fichiers compatibles avec iOS et Android.
+- L' **extension SQLite Manager Firefox** &ndash; fonctionne sur Mac et Windows et produit des fichiers compatibles avec iOS et Android.
 
-- **Ligne de commande** Consultez [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) . &ndash;
+- **Ligne de commande** &ndash; consultez [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
 Lorsque vous créez un fichier de base de données à distribuer avec votre application, prenez soin de nommer les tables et les colonnes pour vous assurer qu’elles correspondent à ce que votre code attend, en particulier si vous utilisez des SQLite.NET C# qui s’attendent à ce que les noms correspondent à vos classes et propriétés ( ou les attributs personnalisés associés).
 
-Pour vous assurer que du code s’exécute avant toute autre chose dans votre application Android, vous pouvez le placer dans la première activité à charger ou vous `Application` pouvez créer une sous-classe qui est chargée avant toute activité. Le code ci-dessous `Application` montre une sous-classe qui copie un fichier de base de données existant **Data. sqlite** en dehors du répertoire **/Resources/RAW/** .
+Pour vous assurer que du code s’exécute avant toute autre chose dans votre application Android, vous pouvez le placer dans la première activité à charger ou vous pouvez créer une sous-classe `Application` qui est chargée avant toute activité. Le code ci-dessous montre une sous-classe `Application` qui copie un fichier de base de données existant **Data. sqlite** en dehors du répertoire **/Resources/RAW/** .
 
 ```csharp
 [Application]

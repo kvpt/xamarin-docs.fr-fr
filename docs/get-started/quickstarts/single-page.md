@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71679987"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>Créer une application Xamarin. Forms à page unique
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
@@ -28,11 +28,11 @@ Dans ce guide de démarrage rapide, vous allez apprendre à :
 
 Le Guide de démarrage rapide vous guide dans la création d’une application Xamarin. Forms multiplateforme, qui vous permet d’entrer une note et de la conserver dans le stockage de l’appareil. L’application finale est indiquée ci-dessous :
 
-[![](single-page-images/screenshots-sml.png "Application notes")](single-page-images/screenshots.png#lightbox "Application notes")
+[![](single-page-images/screenshots-sml.png "Notes Application")](single-page-images/screenshots.png#lightbox "Notes Application")
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Configuration requise
 
 - Visual Studio 2019 (dernière version), avec la charge de travail **développement mobile avec .net** installée.
 - Connaissance de C#.
@@ -44,28 +44,28 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 1. Lancez Visual Studio 2019, puis dans la fenêtre Démarrer, cliquez sur **créer un nouveau projet** pour créer un nouveau projet :
 
-    ![](single-page-images/vs/new-solution-2019.png "Nouveau projet")
+    ![](single-page-images/vs/new-solution-2019.png "New Project")
 
 2. Dans la fenêtre **créer un nouveau projet** , sélectionnez **mobile** dans la liste déroulante **type de projet** , sélectionnez le modèle **application mobile (Xamarin. Forms)** , puis cliquez sur le bouton **suivant** :
 
-    ![](single-page-images/vs/new-project-2019.png "Modèles de projet multiplateforme")
+    ![](single-page-images/vs/new-project-2019.png "Cross-Platform Project Templates")
 
 3. Dans la fenêtre **configurer votre nouveau projet** , définissez le **nom du projet** sur **Notes**, choisissez un emplacement approprié pour le projet, puis cliquez sur le bouton **créer** :
 
-    ![](single-page-images/vs/configure-project.png "Configurer votre projet")
+    ![](single-page-images/vs/configure-project.png "Configure your Project")
 
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce guide de démarrage rapide, la solution doit se nommer **Notes**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce guide de démarrage rapide dans la solution.
 
 4. Dans la boîte de dialogue **nouvelle application multiplateforme** , cliquez sur **application vide**, puis cliquez sur le bouton **OK** :
 
-    ![](single-page-images/vs/new-app-2019.png "Nouvelle application multiplateforme")
+    ![](single-page-images/vs/new-app-2019.png "New Cross-Platform App")
 
     Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](deepdive.md#anatomy-of-a-xamarinforms-application) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](deepdive.md).
 
 5. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
-    ![](single-page-images/vs/open-mainpage-xaml-2019.png "Ouvrir MainPage.xaml")
+    ![](single-page-images/vs/open-mainpage-xaml-2019.png "Open MainPage.xaml")
 
 6. Dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -96,13 +96,13 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`Label`](xref:Xamarin.Forms.Label) compose d’un pour afficher [`Editor`](xref:Xamarin.Forms.Editor) du texte, d’une entrée [`Button`](xref:Xamarin.Forms.Button) de texte et de deux instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux instances `Button` sont disposées horizontalement dans une [`Grid`](xref:Xamarin.Forms.Grid), tandis que `Label`, `Editor` et `Grid` sont disposés verticalement dans une [`StackLayout`](xref:Xamarin.Forms.StackLayout). Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, une [`Editor`](xref:Xamarin.Forms.Editor) pour l’entrée de texte et deux instances [`Button`](xref:Xamarin.Forms.Button) qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux instances `Button` sont disposées horizontalement dans une [`Grid`](xref:Xamarin.Forms.Grid), tandis que `Label`, `Editor` et `Grid` sont disposés verticalement dans une [`StackLayout`](xref:Xamarin.Forms.StackLayout). Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml** en appuyant sur **Ctrl+S** et fermez le fichier.
 
 7. Dans l’**Explorateur de solutions**, dans le projet **Notes**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
 
-    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "Ouvrir MainPage.xaml.cs")
+    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "Open MainPage.xaml.cs")
 
 8. Dans **MainPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -152,15 +152,15 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 1. Dans Visual Studio, sélectionnez l’élément de menu **Générer > Générer la solution** (ou appuyez sur F6). La solution est générée et un message de réussite s’affiche dans la barre d’état Visual Studio :
 
-      ![](single-page-images/vs/build-succeeded.png "Build réussie")
+      ![](single-page-images/vs/build-succeeded.png "Build Succeeded")
 
     En cas d’erreurs, répétez les étapes précédentes et corrigez les erreurs éventuelles jusqu’à ce que la solution soit générée.
 
 2. Dans la barre d’outils de Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton Lire) pour lancer l’application dans l’émulateur Android de votre choix :
 
-    ![](single-page-images/vs/android-start.png "Barre d’outils Android de Visual Studio")
+    ![](single-page-images/vs/android-start.png "Visual Studio Android Toolbar")
 
-    [![](single-page-images/vs/notes-android.png "Notes dans le Émulateur Android")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Notes in the Android Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -171,13 +171,13 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS**, puis sélectionnez **Définir comme projet de démarrage**.
 
-      ![](single-page-images/vs/set-as-startup-project-ios.png "Définir iOS comme projet de démarrage")
+      ![](single-page-images/vs/set-as-startup-project-ios.png "Set iOS as Startup Project")
 
 4. Dans la barre d’outils de Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton Lire) pour lancer l’application dans le [simulateur distant iOS](~/tools/ios-simulator/index.md) de votre choix :
 
-    ![](single-page-images/vs/ios-start.png "Barre d’outils iOS Visual Studio")
+    ![](single-page-images/vs/ios-start.png "Visual Studio iOS Toolbar")
 
-    [![](single-page-images/vs/notes-ios.png "Notes dans le simulateur iOS")](single-page-images/vs/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
+    [![](single-page-images/vs/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -186,7 +186,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Configuration requise
 
 - Visual Studio 2017, avec la charge de travail **développement mobile avec .net** installée.
 - Connaissance de C#.
@@ -198,24 +198,24 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 1. Lancez Visual Studio 2017, puis dans la page de démarrage, cliquez sur **créer un nouveau projet...** pour créer un nouveau projet :
 
-    ![](single-page-images/vs/new-solution.png "Nouveau projet")
+    ![](single-page-images/vs/new-solution.png "New Project")
 
 2. Dans la boîte de dialogue **Nouveau projet**, cliquez sur **Multiplateforme**, sélectionnez le modèle **Application mobile (Xamarin.Forms)** , définissez le Nom **Notes**, choisissez l’emplacement du projet et cliquez sur le bouton **OK** :
 
-    ![](single-page-images/vs/new-project.png "Modèles de projet multiplateforme")
+    ![](single-page-images/vs/new-project.png "Cross-Platform Project Templates")
 
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce guide de démarrage rapide, la solution doit se nommer **Notes**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce guide de démarrage rapide dans la solution.
 
 3. Dans la boîte de dialogue **Nouvelle application multiplateforme**, cliquez sur **Application vide**, sélectionnez **.NET Standard** comme stratégie de partage de code et cliquez sur le bouton **OK** :
 
-    ![](single-page-images/vs/new-app.png "Nouvelle application multiplateforme")
+    ![](single-page-images/vs/new-app.png "New Cross-Platform App")
 
     Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](deepdive.md#anatomy-of-a-xamarinforms-application) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](deepdive.md).
 
 4. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **MainPage.xaml** pour l’ouvrir :
 
-    ![](single-page-images/vs/open-mainpage-xaml.png "Ouvrir MainPage.xaml")
+    ![](single-page-images/vs/open-mainpage-xaml.png "Open MainPage.xaml")
 
 5. Dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -246,13 +246,13 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`Label`](xref:Xamarin.Forms.Label) compose d’un pour afficher [`Editor`](xref:Xamarin.Forms.Editor) du texte, d’une entrée [`Button`](xref:Xamarin.Forms.Button) de texte et de deux instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux instances `Button` sont disposées horizontalement dans une [`Grid`](xref:Xamarin.Forms.Grid), tandis que `Label`, `Editor` et `Grid` sont disposés verticalement dans une [`StackLayout`](xref:Xamarin.Forms.StackLayout). Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, une [`Editor`](xref:Xamarin.Forms.Editor) pour l’entrée de texte et deux instances [`Button`](xref:Xamarin.Forms.Button) qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux instances `Button` sont disposées horizontalement dans une [`Grid`](xref:Xamarin.Forms.Grid), tandis que `Label`, `Editor` et `Grid` sont disposés verticalement dans une [`StackLayout`](xref:Xamarin.Forms.StackLayout). Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml** en appuyant sur **Ctrl+S** et fermez le fichier.
 
 6. Dans l’**Explorateur de solutions**, dans le projet **Notes**, développez **MainPage.xaml**, puis double-cliquez sur **MainPage.xaml.cs** pour l’ouvrir :
 
-    ![](single-page-images/vs/open-mainpage-codebehind.png "Ouvrir MainPage.xaml.cs")
+    ![](single-page-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
 7. Dans **MainPage.xaml.cs**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -302,15 +302,15 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 1. Dans Visual Studio, sélectionnez l’élément de menu **Générer > Générer la solution** (ou appuyez sur F6). La solution est générée et un message de réussite s’affiche dans la barre d’état Visual Studio :
 
-      ![](single-page-images/vs/build-succeeded.png "Build réussie")
+      ![](single-page-images/vs/build-succeeded.png "Build Succeeded")
 
     En cas d’erreurs, répétez les étapes précédentes et corrigez les erreurs éventuelles jusqu’à ce que la solution soit générée.
 
 2. Dans la barre d’outils de Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton Lire) pour lancer l’application dans l’émulateur Android de votre choix :
 
-    ![](single-page-images/vs/android-start.png "Barre d’outils Android de Visual Studio")
+    ![](single-page-images/vs/android-start.png "Visual Studio Android Toolbar")
 
-    [![](single-page-images/vs/notes-android.png "Notes dans le Émulateur Android")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![](single-page-images/vs/notes-android.png "Notes in the Android Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -321,13 +321,13 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 3. Dans la barre d’outils Visual Studio, cliquez avec le bouton droit sur le projet **Notes.iOS**, puis sélectionnez **Définir comme projet de démarrage**.
 
-      ![](single-page-images/vs/set-as-startup-project-ios.png "Définir iOS comme projet de démarrage")
+      ![](single-page-images/vs/set-as-startup-project-ios.png "Set iOS as Startup Project")
 
 4. Dans la barre d’outils de Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton Lire) pour lancer l’application dans le [simulateur distant iOS](~/tools/ios-simulator/index.md) de votre choix :
 
-    ![](single-page-images/vs/ios-start.png "Barre d’outils iOS Visual Studio")
+    ![](single-page-images/vs/ios-start.png "Visual Studio iOS Toolbar")
 
-    [![](single-page-images/vs/notes-ios.png "Notes dans le simulateur iOS")](single-page-images/vs/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
+    [![](single-page-images/vs/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -336,7 +336,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Prérequis
+### <a name="prerequisites"></a>Configuration requise
 
 - Visual Studio pour Mac (dernière version), avec la prise en charge des plateformes iOS et Android installée.
 - Xcode (dernière version).
@@ -348,19 +348,19 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 1. Lancez Visual Studio pour Mac, puis dans la fenêtre de démarrage, cliquez sur **nouveau** pour créer un nouveau projet :
 
-    ![](single-page-images/vsmac/new-project.png "Nouvelle solution")
+    ![](single-page-images/vsmac/new-project.png "New Solution")
 
 2. Dans la boîte de dialogue **Choisir un modèle pour votre nouveau projet**, cliquez sur **Multiplateforme > Application**, sélectionnez le modèle **Application Forms vide**, puis cliquez sur le bouton **Suivant** :
 
-    ![](single-page-images/vsmac/choose-template.png "Choisir un modèle")
+    ![](single-page-images/vsmac/choose-template.png "Choose a Template")
 
 3. Dans la boîte de dialogue **Configurer une application Forms vide**, nommez la nouvelle application **Notes**, vérifiez que la case d’option **Utiliser .NET Standard** est sélectionnée, puis cliquez sur le bouton **Suivant** :    
 
-    ![](single-page-images/vsmac/configure-app.png "Configurer l’application Formulaires")
+    ![](single-page-images/vsmac/configure-app.png "Configure the Forms Application")
 
 4. Dans la boîte de dialogue **Configurer votre nouvelle application Forms vide**, laissez **Notes** comme noms de la solution et du projet, choisissez un emplacement approprié pour le projet, puis cliquez sur le bouton **Créer** pour créer le projet :
 
-    ![](single-page-images/vsmac/configure-project.png "Configurer le projet Formulaires")
+    ![](single-page-images/vsmac/configure-project.png "Configure the Forms Project")
 
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce guide de démarrage rapide, la solution et le projet doivent se nommer **Notes**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce guide de démarrage rapide dans le projet.
@@ -400,7 +400,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se [`Label`](xref:Xamarin.Forms.Label) compose d’un pour afficher [`Editor`](xref:Xamarin.Forms.Editor) du texte, d’une entrée [`Button`](xref:Xamarin.Forms.Button) de texte et de deux instances qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux instances `Button` sont disposées horizontalement dans une [`Grid`](xref:Xamarin.Forms.Grid), tandis que `Label`, `Editor` et `Grid` sont disposés verticalement dans une [`StackLayout`](xref:Xamarin.Forms.StackLayout). Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui se compose d’un [`Label`](xref:Xamarin.Forms.Label) pour afficher du texte, une [`Editor`](xref:Xamarin.Forms.Editor) pour l’entrée de texte et deux instances [`Button`](xref:Xamarin.Forms.Button) qui indiquent à l’application d’enregistrer ou de supprimer un fichier. Les deux instances `Button` sont disposées horizontalement dans une [`Grid`](xref:Xamarin.Forms.Grid), tandis que `Label`, `Editor` et `Grid` sont disposés verticalement dans une [`StackLayout`](xref:Xamarin.Forms.StackLayout). Pour plus d’informations sur la création de l’interface utilisateur, consultez [interface utilisateur](deepdive.md#user-interface) dans la présentation [approfondie de démarrage rapide Xamarin. Forms](deepdive.md).
 
     Enregistrez les modifications apportées à **MainPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**) et fermez le fichier.
 
@@ -456,19 +456,19 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 1. Dans Visual Studio pour Mac, sélectionnez l’élément de menu **Générer > Générer tout** (ou appuyez sur **&#8984;+B**). Les projets sont générés et un message de réussite s’affiche dans la barre d’outils Visual Studio pour Mac.
 
-      ![](single-page-images/vsmac/build-successful.png "Génération réussie")
+      ![](single-page-images/vsmac/build-successful.png "Build Successful")
 
     En cas d’erreurs, répétez les étapes précédentes et corrigez les erreurs éventuelles jusqu’à ce que les projets soient générés.
 
 2. Dans le **panneau solutions**, sélectionnez le projet **Notes. iOS** , cliquez avec le bouton droit, puis sélectionnez **définir comme projet de démarrage**:
 
-      ![](single-page-images/vsmac/set-startup-project-ios.png "Définir iOS comme projet de démarrage")
+      ![](single-page-images/vsmac/set-startup-project-ios.png "Set iOS as Startup Project")
 
 3. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton Lire) pour lancer l’application dans le simulateur iOS de votre choix :
 
-      ![](single-page-images/vsmac/start.png "Barre d’outils Visual Studio pour Mac")
+      ![](single-page-images/vsmac/start.png "Visual Studio for Mac Toolbar")
 
-      [![](single-page-images/vsmac/notes-ios.png "Notes dans le simulateur iOS")](single-page-images/vsmac/notes-ios-large.png#lightbox "Notes dans le simulateur iOS")
+      [![](single-page-images/vsmac/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vsmac/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -476,11 +476,11 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 4. Dans le **panneau solutions**, sélectionnez le projet **Notes. Droid** , cliquez avec le bouton droit, puis sélectionnez **définir comme projet de démarrage**:
 
-      ![](single-page-images/vsmac/set-startup-project-android.png "Définir Android comme projet de démarrage")
+      ![](single-page-images/vsmac/set-startup-project-android.png "Set Android as Startup Project")
 
 5. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton Lire) pour lancer l’application dans l’émulateur Android de votre choix :
 
-      [![](single-page-images/vsmac/notes-android.png "Notes dans le Émulateur Android")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![](single-page-images/vsmac/notes-android.png "Notes in the Android Emulator")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
 
     Entrez une note et appuyez sur le bouton **Enregistrer**.
 
@@ -490,7 +490,7 @@ Pour plus d’informations sur ces conditions préalables, consultez [installati
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce guide de démarrage rapide, vous avez appris à:
+Dans ce guide de démarrage rapide, vous avez appris à :
 
 - Créer une application Xamarin. Forms multiplateforme.
 - Définissez l’interface utilisateur d’une page à l’aide du langage XAML (eXtensible Application Markup Language).
@@ -499,7 +499,7 @@ Dans ce guide de démarrage rapide, vous avez appris à:
 Pour transformer cette application à page unique en application à plusieurs pages, passez au démarrage rapide suivant.
 
 > [!div class="nextstepaction"]
-> [Next](multi-page.md)
+> [Suivant](multi-page.md)
 
 ## <a name="related-links"></a>Liens connexes
 

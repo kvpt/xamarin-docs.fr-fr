@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
 ms.openlocfilehash: dd1dc9b679a46dc082de1fe9b3c5f10b6757c0d8
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
-ms.translationtype: MT
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68739283"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Présentation de Xamarin.Forms Shell
@@ -45,7 +45,7 @@ La sélection d’un élément de menu volant permet de sélectionner et d’aff
 
 Chaque onglet affiche une [`ContentPage`](xref:Xamarin.Forms.ContentPage). Toutefois, si un onglet inférieur contient plusieurs pages, les pages sont accessibles via la barre d’onglets supérieure :
 
-[![Capture d’écran des principaux onglets de Shell, sur iOS et Android](introduction-images/cats.png "Onglets principaux de l’interpréteur") de commandes](introduction-images/cats-large.png#lightbox "Onglets principaux de l’interpréteur de commandes")
+[![Capture d’écran des principaux onglets de Shell, sur iOS et Android](introduction-images/cats.png "Onglets principaux de l’interpréteur de commandes")](introduction-images/cats-large.png#lightbox "Onglets principaux de l’interpréteur de commandes")
 
 Chaque onglet permet d’accéder à des objets [`ContentPage`](xref:Xamarin.Forms.ContentPage) supplémentaires :
 

@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70768989"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Affichage d’images avec Xamarin. iOS
@@ -26,7 +26,7 @@ Visual Studio pour Mac prend également en charge un répertoire spécial appel�
 
 Cette capture d’écran montre les options d' **action de génération** qui s’affichent lorsque vous cliquez avec le bouton droit sur un fichier :
 
- [![](image-images/image30a.png "Menu action de génération")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
 
 En général, Visual Studio pour Mac choisit automatiquement l' **action de génération** correcte, mais vous devez être conscient de ces paramètres, en particulier si vous déplacez des fichiers dans votre projet.
 
@@ -34,15 +34,15 @@ En général, Visual Studio pour Mac choisit automatiquement l' **action de gén
 
 Pour ajouter un fichier image à votre projet, commencez par cliquer avec le bouton droit sur le projet et choisissez **Ajouter des fichiers...**
 
- [![](image-images/image31a.png "Ajouter des fichiers... menus")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
 
 Sélectionnez l’image (ou les images) que vous souhaitez inclure dans la boîte de dialogue fichier standard. L’action de génération par défaut pour les images sera **BundleResource** -ne pas remplacer cette valeur à moins que vous n’ayez une raison spécifique.
 
- [![](image-images/image32a.png "Boîte de dialogue Ajouter des fichiers")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
 
 L’image sera ajoutée à votre projet et disponible pour être chargée et affichée dans le code. Cette capture d’écran montre une image ajoutée à un projet d’application iOS :
 
- [![](image-images/image33a.png "Image dans le projet")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Qu’est-ce que le répertoire des ressources ?
 
@@ -59,11 +59,11 @@ Le répertoire **Resources** doit être nommé, et l’action de génération do
 
 Dans le concepteur iOS, utilisez une **vue d’image** pour afficher une image ou une série animée d’images. L’icône d' **affichage d’image** de la boîte à outils est illustrée ci-dessous :
 
- [![](image-images/image35a.png "ImageView dans la boîte à outils")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
 
 Faites glisser la **vue image** de la **boîte à outils** vers le contrôleur d’affichage. Ensuite, sous **vue d’image > image** , la liste déroulante fournit la liste de tous les fichiers image disponibles dans votre projet. Sélectionnez l’un d’entre eux pour l’ajouter à votre vue d’image.
 
- [![](image-images/image36a.png "ImageView dans la boîte à outils")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Affichage de l’image par programmation
 

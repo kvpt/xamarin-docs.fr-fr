@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
 ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "64749924"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>Exemples indépendants de la plateforme SkiaSharp
@@ -36,9 +36,9 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>Dessin sur SKCanvas
 
-`SKCanvas` Utilise un modèle de dessin similaire à l’esprit pour d’autres modèles de dessin que vous connaissez peut-être, il utilise des couleurs avec un canal de transparence facultatif et peut dessiner des lignes, des arcs, du texte et des images.
+Le `SKCanvas` utilise un modèle de dessin similaire à l’esprit pour d’autres modèles de dessin que vous connaissez peut-être, il utilise des couleurs avec un canal de transparence facultatif et peut dessiner des lignes, des arcs, du texte et des images.
 
-Voici quelques-unes des nombreuses opérations qui peuvent être effectuées avec SkiaSharp.  Dans les exemples ci-dessous `canvas` , la variable est de type SKCanvas.
+Voici quelques-unes des nombreuses opérations qui peuvent être effectuées avec SkiaSharp.  Dans les exemples ci-dessous, la variable `canvas` est de type SKCanvas.
 
 ### <a name="drawing-xamagon"></a>Xamagon de dessin
 
@@ -133,6 +133,6 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-## <a name="more-information"></a>Complément d'information
+## <a name="more-information"></a>Plus d'informations
 
 Vous trouverez plus d’informations sur l’utilisation de SkiaSharp dans la documentation de l' [API](https://docs.microsoft.com/dotnet/api/skiasharp) .

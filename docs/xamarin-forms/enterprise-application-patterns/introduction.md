@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70760221"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>Présentation du développement d’applications d’entreprise
@@ -34,7 +34,7 @@ Une solution efficace pour relever ces défis consiste à partitionner une appli
 - Il encourage la réutilisation et une séparation nette des préoccupations entre les fonctions horizontales de l’application, telles que l’authentification et l’accès aux données, ainsi que les fonctionnalités verticales, telles que les fonctionnalités métier spécifiques aux applications. Cela permet de gérer plus facilement les dépendances et les interactions entre les composants de l’application.
 - Il permet de conserver une séparation des rôles en permettant à différentes personnes ou équipes de se concentrer sur une tâche ou une fonctionnalité spécifique, en fonction de leur expertise. En particulier, il fournit une séparation plus propre entre l’interface utilisateur et la logique métier de l’application.
 
-Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. Elles incluent notamment :
+Toutefois, il existe de nombreux problèmes qui doivent être résolus lors du partitionnement d’une application en composants discrets et faiblement couplés. Elles incluent notamment les suivantes :
 
 - Déterminer comment fournir une séparation nette des problèmes entre les contrôles d’interface utilisateur et leur logique. L’une des décisions les plus importantes lors de la création d’une application d’entreprise Xamarin. Forms consiste à déterminer si la logique métier doit être placée dans les fichiers code-behind ou si une séparation nette des préoccupations entre les contrôles de l’interface utilisateur et leur logique doit être créée pour rendre l’application plus gérable et testable. Pour plus d’informations, consultez [Model-View-ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md).
 - Détermination de l’utilisation ou non d’un conteneur d’injection de dépendances. Les conteneurs d’injection de dépendances réduisent le couplage des dépendances entre les objets en fournissant une fonctionnalité permettant de construire des instances de classes avec leurs dépendances injectées, et de gérer leur durée de vie en fonction de la configuration du conteneur. Pour plus d’informations, consultez [injection de dépendances](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
@@ -62,7 +62,7 @@ Ce guide comprend un exemple d’application, eShopOnContainers, qui est un maga
 
 La figure 1-1 fournit une vue d’ensemble de l’architecture de l’exemple d’application.
 
-![](introduction-images/architecture.png "architecture de haut niveau eShopOnContainers")
+![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
 
 **Figure 1-1**: architecture de haut niveau eShopOnContainers
 
@@ -83,15 +83,15 @@ L’exemple d’application comprend les services principaux suivants :
 
 Ces services principaux sont implémentés en tant que microservices à l’aide d’ASP.NET Core MVC et sont déployés en tant que conteneurs uniques au sein d’un seul hôte Dockr. Collectivement, ces services principaux sont appelés l’application de référence eShopOnContainers. Les applications clientes communiquent avec les services principaux via une interface Web REST. Pour plus d’informations sur les microservices et l’arrimeur, consultez [microservices en conteneur](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md).
 
-Pour plus d’informations sur l’implémentation des services principaux, [consultez microservices .net : Architecture pour les applications .NET en conteneurs](https://aka.ms/microservicesebook).
+Pour plus d’informations sur l’implémentation des services principaux, consultez [microservices .net : architecture pour les applications .net en conteneur](https://aka.ms/microservicesebook).
 
 ### <a name="mobile-app"></a>Application mobile
 
 Ce guide se concentre sur la création d’applications d’entreprise multiplateforme à l’aide de Xamarin. Forms et utilise l’application mobile eShopOnContainers comme exemple. La figure 1-2 montre les pages de l’application mobile eShopOnContainers qui fournissent les fonctionnalités décrites précédemment.
 
-[![](introduction-images/screenshots.png "Application mobile eShopOnContainers")](introduction-images/screenshots-large.png#lightbox "Application mobile eShopOnContainers")
+[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
 
-**Figure 1-2**: Application mobile eShopOnContainers
+**Figure 1-2**: application mobile eShopOnContainers
 
 L’application mobile consomme les services principaux fournis par l’application de référence eShopOnContainers. Toutefois, il peut être configuré pour consommer des données de services fictifs pour ceux qui souhaitent éviter de déployer les services principaux.
 
@@ -121,14 +121,14 @@ La solution d’application mobile eShopOnContainers organise le code source et 
 
 |Projet|Description|
 |--- |--- |
-|eShopOnContainers.Core|Ce projet est le projet de bibliothèque de classes portable (PCL) qui contient le code partagé et l’interface utilisateur partagée.|
-|eShopOnContainers.Droid|Ce projet contient le code spécifique à Android et constitue le point d’entrée de l’application Android.|
-|eShopOnContainers.iOS|Ce projet contient du code spécifique à iOS et constitue le point d’entrée de l’application iOS.|
-|eShopOnContainers.UWP|Ce projet contient le code spécifique plateforme Windows universelle (UWP) et est le point d’entrée de l’application Windows.|
-|eShopOnContainers.TestRunner.Droid|Ce projet est le test Runner Android pour le projet eShopOnContainers. UnitTests.|
-|eShopOnContainers.TestRunner.iOS|Ce projet est le test Runner iOS pour le projet eShopOnContainers. UnitTests.|
-|eShopOnContainers.TestRunner.Windows|Ce projet est le plateforme Windows universelle Test Runner pour le projet eShopOnContainers. UnitTests.|
-|eShopOnContainers.UnitTests|Ce projet contient des tests unitaires pour le projet eShopOnContainers. Core.|
+|eShopOnContainers. Core|Ce projet est le projet de bibliothèque de classes portable (PCL) qui contient le code partagé et l’interface utilisateur partagée.|
+|eShopOnContainers. Droid|Ce projet contient le code spécifique à Android et constitue le point d’entrée de l’application Android.|
+|eShopOnContainers. iOS|Ce projet contient du code spécifique à iOS et constitue le point d’entrée de l’application iOS.|
+|eShopOnContainers. UWP|Ce projet contient le code spécifique plateforme Windows universelle (UWP) et est le point d’entrée de l’application Windows.|
+|eShopOnContainers. TestRunner. Droid|Ce projet est le test Runner Android pour le projet eShopOnContainers. UnitTests.|
+|eShopOnContainers. TestRunner. iOS|Ce projet est le test Runner iOS pour le projet eShopOnContainers. UnitTests.|
+|eShopOnContainers. TestRunner. Windows|Ce projet est le plateforme Windows universelle Test Runner pour le projet eShopOnContainers. UnitTests.|
+|eShopOnContainers. UnitTests|Ce projet contient des tests unitaires pour le projet eShopOnContainers. Core.|
 
 Les classes de l’application mobile eShopOnContainers peuvent être réutilisées dans n’importe quelle application Xamarin. Forms avec peu ou pas de modifications.
 
@@ -142,14 +142,14 @@ Le projet PCL eShopOnContainers. Core contient les dossiers suivants :
 |comportements|Contient les comportements exposés aux classes d’affichage.|
 |Contrôles|Contient des contrôles personnalisés utilisés par l’application.|
 |Convertisseurs|Contient des convertisseurs de valeurs qui appliquent une logique personnalisée à une liaison.|
-|Effects (Effets)|Contient la `EntryLineColorEffect` classe, qui est utilisée pour modifier la couleur de bordure de `Entry` contrôles spécifiques.|
-|Exceptions|Contient le personnalisé `ServiceAuthenticationException`.|
-|Extensions|Contient des méthodes d’extension `VisualElement` pour `IEnumerable` les classes et.|
+|Effects (Effets)|Contient la classe `EntryLineColorEffect`, qui est utilisée pour modifier la couleur de bordure de contrôles `Entry` spécifiques.|
+|Exceptions|Contient le `ServiceAuthenticationException` personnalisé.|
+|Extensions|Contient des méthodes d’extension pour les classes `VisualElement` et `IEnumerable`.|
 |Helpers|Contient des classes d’assistance pour l’application.|
 |Modèles|Contient les classes de modèle pour l’application.|
-|Propriétés|Contient `AssemblyInfo.cs`un fichier de métadonnées d’assembly .net.|
+|Propriétés|Contient `AssemblyInfo.cs`, un fichier de métadonnées de l’assembly .NET.|
 |Services|Contient des interfaces et des classes qui implémentent des services fournis à l’application.|
-|Déclencheurs|Contient le `BeginAnimation` déclencheur, qui est utilisé pour appeler une animation en XAML.|
+|Déclencheurs|Contient le déclencheur `BeginAnimation`, qui est utilisé pour appeler une animation en XAML.|
 |Validations|Contient les classes impliquées dans la validation de l’entrée de données.|
 |ViewModels|Contient la logique d’application exposée aux pages.|
 |Affichages|Contient les pages de l’application.|

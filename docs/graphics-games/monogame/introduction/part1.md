@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: d72c428bb4b8c88365180c5c3c50b107eed2b21d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68978447"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>Partie 1 : création d’un monojeu multiplateforme
@@ -28,11 +28,11 @@ Une fois l’opération terminée, le projet dispose de la structure appropriée
 > [!IMPORTANT]
 > Le monojeu n’est pas installé par défaut dans Visual Studio 2019 ou Visual Studio pour Mac.
 >
-> Vous devez télécharger et installer manuellement la version la plus http://www.monogame.net/downloads/ récente à partir de, puis exécuter le programme d’installation. Vous devrez peut-être redémarrer Visual Studio pour que les modèles s’affichent.
+> Vous devez télécharger et installer manuellement la version la plus récente à partir de http://www.monogame.net/downloads/ puis exécuter le programme d’installation. Vous devrez peut-être redémarrer Visual Studio pour que les modèles s’affichent.
 >
 > La section **développement de jeux** doit alors apparaître dans le **Gestionnaire de compléments**.
 
-Pour activer le complément monojeu pour Visual Studio pour Mac, sélectionnez **Visual Studio pour Mac** > **Gestionnaire de compléments...** . Pour Visual Studio 2019 sur Windows, sélectionnez **Outils** > **Gestionnaire de compléments...** . Sélectionnez l’onglet **Galerie** , développez la catégorie **développement de jeu** et sélectionnez **complément monojeu**, puis cliquez sur **installer...** :
+Pour activer le complément monojeu pour Visual Studio pour Mac, sélectionnez **Visual Studio pour Mac**  > **Gestionnaire de compléments...** . Pour Visual Studio 2019 sur Windows, sélectionnez **outils**  > **Gestionnaire de compléments...** . Sélectionnez l’onglet **Galerie** , développez la catégorie **développement de jeu** et sélectionnez **complément monojeu**, puis cliquez sur **installer...** :
 
 ![Galerie d’extensions de Visual Studio pour Mac sélection d’un monojeu](part1-images/image2.png)
 
@@ -54,7 +54,7 @@ Nommez le projet WalkingGame, puis cliquez sur créer :
 
 ## <a name="fixing-android-compile-errors"></a>Correction des erreurs de compilation Android
 
-La version actuelle des modèles de monojeu comprend quelques erreurs de syntaxe dans le `Activity1.cs` fichier Android. Pour résoudre ces problèmes, remplacez la `OnCreate` fonction par le code suivant :
+La version actuelle des modèles de monojeu comprend quelques erreurs de syntaxe dans le fichier `Activity1.cs` d’Android. Pour résoudre ces problèmes, remplacez la fonction `OnCreate` par le code suivant :
 
 ```csharp
 protected override void OnCreate (Bundle bundle)

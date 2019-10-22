@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/18/2018
 ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68739056"
 ---
 # <a name="shared-projects-code-sharing"></a>Partage de code des projets partagés
@@ -27,7 +27,7 @@ Si vous avez utilisé la liaison de fichiers dans le passé pour partager du cod
 
 Contrairement à la plupart des autres types de projets, un projet partagé n’a pas de sortie (sous forme de DLL). au lieu de cela, le code est compilé dans chaque projet qui le référence. Cela est illustré dans le diagramme ci-dessous, de manière conceptuelle, le contenu entier du projet partagé est « copié dans » chaque projet de référencement et compilé comme s’il s’agissait d’une partie d’entre eux.
 
-![](shared-projects-images/sharedassetproject.png "Architecture de projet partagé")
+![](shared-projects-images/sharedassetproject.png "Shared Project architecture")
 
 Le code d’un projet partagé peut contenir des directives de compilateur qui activent ou désactivent des sections de code selon le projet d’application qui utilise le code, ce qui est suggéré par les zones de plateforme de couleur dans le diagramme.
 
@@ -43,7 +43,7 @@ Cette section explique comment créer et utiliser un projet partagé à l’aide
 
 ## <a name="creating-a-shared-project"></a>Création d’un projet partagé
 
-Pour créer un nouveau projet partagé, accédez à **fichier > nouvelle solution...** (ou cliquez avec le bouton droit sur une solution existante et choisissez **ajouter > ajouter un nouveau projet...** ) :
+Pour créer un nouveau projet partagé, accédez à **fichier > nouvelle solution...** (ou cliquez avec le bouton droit sur une solution existante, puis choisissez **Ajouter > ajouter un nouveau projet...** ) :
 
 [![Nouveau projet partagé](shared-projects-images/xs-newsolution-sml.png "Nouvelle solution")](shared-projects-images/xs-newsolution.png#lightbox)
 
@@ -57,7 +57,7 @@ Pour qu’un projet partagé soit utile, il doit être référencé par au moins
 
 L’ajout d’une référence à un projet partagé s’effectue de la même façon que le référencement d’un projet de bibliothèque standard. Cette capture d’écran montre un projet Xamarin. iOS référençant un projet partagé.
 
-![](shared-projects-images/xs-reference.png "Référence de projet au projet partagé")
+![](shared-projects-images/xs-reference.png "Project reference to Shared Project")
 
 Une fois que le projet partagé est référencé par une autre bibliothèque ou application, vous pouvez générer la solution et afficher toutes les erreurs dans le code. Quand le projet partagé est référencé par _deux ou plusieurs_ autres projets, un menu s’affiche dans l’angle supérieur gauche de l’éditeur de code source qui montre le choix des projets qui font référence à ce fichier.
 
@@ -67,7 +67,7 @@ Lorsque vous cliquez avec le bouton droit sur un projet partagé et choisissez *
 
 L’écran d' **options** est illustré ci-dessous : le **nom** du projet et l' **espace de noms par défaut** sont les deux seuls paramètres que vous allez généralement modifier.
 
-![](shared-projects-images/xs-sharedprojectoptions.png "Options de projet partagé")
+![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -77,7 +77,7 @@ Cette section explique comment créer et utiliser un projet partagé à l’aide
 
 ### <a name="creating-a-shared-project"></a>Création d’un projet partagé
 
-Pour créer un projet partagé, accédez à **fichier** > **nouveau** > **projet**.
+Pour créer un projet partagé, accédez à **fichier**  > **nouveau** **projet** > .
 
 Dans Visual Studio 2019, entrez **Shared** dans la zone de recherche de la page **créer un nouveau projet** . Sélectionnez le modèle de **projet partagé** , puis cliquez sur **suivant**. Entrez un nom pour le projet, puis sélectionnez **créer**.
 
@@ -87,13 +87,13 @@ Dans Visual Studio 2017, sélectionnez le modèle de **projet partagé** , puis 
 
 Vous pouvez également ajouter un nouveau projet partagé à une solution existante en cliquant avec le bouton droit sur le fichier de solution et en choisissant **ajouter > nouveau projet**. Un nouveau projet partagé apparaît comme indiqué ci-dessous (après l’ajout d’un fichier de classe). Notez qu’il n’existe aucune référence ni aucun nœud de composant ; celles-ci ne sont pas prises en charge pour les projets partagés.
 
-![](shared-projects-images/vs-empty.png "Projet partagé vide")
+![](shared-projects-images/vs-empty.png "Empty Shared Project")
 
 Pour qu’un projet partagé soit utile, il doit être référencé par au moins un projet de génération (par exemple, une bibliothèque ou une application iOS ou Android, ou un projet PCL). Un projet partagé n’est pas compilé lorsqu’il ne fait pas référence à celui-ci. par conséquent, la syntaxe (ou toute autre erreur) n’est pas mise en surbrillance tant qu’il n’a pas été référencé par autre chose.
 
 L’ajout d’une référence à un projet partagé s’effectue de la même façon que le référencement d’un projet de bibliothèque standard. Cette capture d’écran montre un projet Xamarin. iOS référençant un projet partagé.
 
-![](shared-projects-images/vs-reference.png "Référence de projet au projet partagé")
+![](shared-projects-images/vs-reference.png "Project reference to Shared Project")
 
 Une fois que le projet partagé est référencé par une autre bibliothèque ou application, vous pouvez générer la solution et afficher toutes les erreurs dans le code. Quand le projet partagé est référencé par _deux ou plusieurs_ autres projets, un menu s’affiche dans l’angle supérieur gauche de l’éditeur de code source pour voir quels projets font référence au fichier de code actuel.
 
@@ -103,7 +103,7 @@ Lorsque vous sélectionnez un projet partagé, il y a moins de paramètres dans 
 
 Le volet **Propriétés** est indiqué ci-dessous : l' **espace de noms racine** est le seul paramètre que vous pouvez modifier.
 
-![](shared-projects-images/vs-sharedprojectproperties.png "Propriétés du projet partagé")
+![](shared-projects-images/vs-sharedprojectproperties.png "Shared Project Properties")
 
 -----
 
@@ -111,17 +111,17 @@ Le volet **Propriétés** est indiqué ci-dessous : l' **espace de noms racine*
 
 ## <a name="shared-project-example"></a>Exemple de projet partagé
 
-L' exemple [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) utilise un projet partagé pour contenir le code commun utilisé par les applications iOS, Android et Windows Phone. Les `SQLite.cs` fichiers de `TaskRepository.cs` code source et utilisent les directives de compilateur (par exemple, `#if __ANDROID__`) pour produire différentes sorties pour chacune des applications qui les référencent.
+L’exemple [Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky) utilise un projet partagé pour contenir le code commun utilisé par les applications iOS, Android et Windows Phone. Les fichiers de code source `SQLite.cs` et `TaskRepository.cs` utilisent les directives de compilateur (par exemple, `#if __ANDROID__`) pour produire une sortie différente pour chacune des applications qui les référencent.
 
 La structure complète de la solution est illustrée ci-dessous (dans Visual Studio pour Mac et Visual Studio, respectivement) :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![](shared-projects-images/xs-examplesolution.png "Solution Visual Studio pour Mac")
+![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](shared-projects-images/vs-examplesolution.png "Solution Visual Studio")
+![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
 
 -----
 
@@ -129,7 +129,7 @@ Le projet Windows Phone peut être parcouru à partir d’Visual Studio pour Mac
 
 Les applications en cours d’exécution sont présentées ci-dessous :
 
-![](shared-projects-images/example.png "exemples iOS, Android, Windows Phone")
+![](shared-projects-images/example.png "iOS, Android, Windows Phone examples")
 
 ## <a name="summary"></a>Récapitulatif
 
