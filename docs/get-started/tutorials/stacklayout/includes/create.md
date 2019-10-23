@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ea10a3cc4eca0708d1de1aee68bed74c960cbc2
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: 80688c0796a112bcb444a15cd96a6b176b8c16e0
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67559992"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72715233"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -15,7 +15,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     > [!IMPORTANT]
     > Pour les extraits C# et XAML de ce didacticiel, la solution doit se nommer **StackLayoutTutorial**. L’utilisation d’un autre nom entraîne des erreurs de build quand vous copiez le code à partir de ce didacticiel dans la solution.
 
-    Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](~/get-started/first-app/index.md) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](~/get-started/first-app/index.md).
+    Pour plus d’informations sur la bibliothèque .NET Standard créée, consultez la rubrique [Anatomie d’une application Xamarin.Forms](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application) dans l’article [Immersion dans Xamarin.Forms - démarrage rapide](~/get-started/quickstarts/deepdive.md).
 
 1. Dans **l’Explorateur de solutions**, dans le projet **StackLayoutTutorial**, double-cliquez sur **MainPage.xaml** pour l’ouvrir. Puis, dans **MainPage.xaml**, supprimez tout le code du modèle et remplacez-le par le code suivant :
 
@@ -39,7 +39,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’affichages enfants dans un StackLayout, sur iOS et Android](../images/create-stacklayout.png "StackLayout contenant des instances d’étiquette")](../images/create-stacklayout-large.png#lightbox "StackLayout contenant des instances d’étiquette")
+    [![Capture d’écran de vues enfants dans une StackLayout, sur iOS et Android](../images/create-stacklayout.png "StackLayout contenant des instances d’étiquette")](../images/create-stacklayout-large.png#lightbox "StackLayout contenant des instances d’étiquette")
 
     Pour plus d’informations sur [`StackLayout`](xref:Xamarin.Forms.StackLayout), consultez [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 
@@ -76,7 +76,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’affichages enfants dans un StackLayout, sur iOS et Android](../images/create-stacklayout.png "StackLayout contenant des instances d’étiquette")](../images/create-stacklayout-large.png#lightbox "StackLayout contenant des instances d’étiquette")
+    [![Capture d’écran de vues enfants dans une StackLayout, sur iOS et Android](../images/create-stacklayout.png "StackLayout contenant des instances d’étiquette")](../images/create-stacklayout-large.png#lightbox "StackLayout contenant des instances d’étiquette")
 
     Pour plus d’informations sur [`StackLayout`](xref:Xamarin.Forms.StackLayout), consultez [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 
