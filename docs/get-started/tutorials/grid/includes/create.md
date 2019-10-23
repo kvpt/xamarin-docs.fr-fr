@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 807f0b7b2969d9f1039beb1a7ec7d535be5c84dc
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
+ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277218"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678717"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -33,7 +33,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`Label`](xref:Xamarin.Forms.Label) dans [`Grid`](xref:Xamarin.Forms.Grid). Par défaut, l’élément `Grid` positionne ses vues enfants dans un emplacement unique. Par conséquent, lorsqu’il contient plusieurs enfants, un élément `Grid` doit spécifier des colonnes et des lignes. Nous aborderons ce sujet dans l’exercice suivant. En outre, la propriété [`Margin`](xref:Xamarin.Forms.View.Margin) indique la position de rendu de l’élément `Grid` dans [`ContentPage`](xref:Xamarin.Forms.ContentPage).
 
     > [!NOTE]
-    > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), la propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) peut également être définie sur [`Grid`](xref:Xamarin.Forms.Grid). La valeur de propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les vues dans l’élément `Grid`. Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+    > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), la propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) peut également être définie sur [`Grid`](xref:Xamarin.Forms.Grid). La valeur de la propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les limites de la `Grid` et ses enfants. Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 

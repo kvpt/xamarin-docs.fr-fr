@@ -43,6 +43,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: button.md
             title: Bouton
+          - href: carouselview/index.md
+            html: Découvrez comment utiliser une CarouselView pour présenter des données dans une disposition de carrousel linéaire.
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CarouselView
           - href: checkbox.md
             html: Découvrez comment définir une valeur booléenne à l’aide d’un CheckBox.
             image:
@@ -74,7 +80,7 @@ sections:
               href: datepicker.md
             title: DatePicker
           - href: pop-ups.md
-            html: Découvrez comment afficher des boîtes de dialogue qui posent aux utilisateurs des questions simples et les guident tout au long de tâches spécifiques.
+            html: 'Découvrez comment afficher des boîtes de dialogue qui posent aux utilisateurs des questions simples, les guident dans leurs tâches et affichent des invites.'
             image:
               src: ~/media/icons/i_user-interface.svg
               href: pop-ups.md
@@ -102,19 +108,19 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: layouts/index.md
-            title: Mises en forme
+            title: Dispositions
           - href: listview/index.md
             html: Découvrez comment présenter des listes de données à l’aide du contrôle ListView.
             image:
               src: ~/media/icons/i_user-interface.svg
               href: listview/index.md
             title: Affichage de liste
-          - href: map.md
+          - href: map/index.md
             html: 'Découvrez comment utiliser le contrôle Map, notamment la configuration de la plateforme requise et le remplissage de la carte avec des épingles.'
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: map.md
-            title: Cartes
+              href: map/index.md
+            title: Maps
           - href: menuitem.md
             html: Découvrez comment utiliser la classe MenuItem pour ajouter des éléments au menu contextuel des cellules ListView.
             image:
@@ -133,6 +139,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: progressbar.md
             title: Barre de progression
+          - href: refreshview.md
+            html: Découvrez comment utiliser une RefreshView pour fournir une fonctionnalité Extraire pour actualiser pour le contenu à défilement.
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: refreshview.md
+            title: RefreshView
           - href: searchbar.md
             html: Découvrez comment lancer une recherche à l’aide du contrôle SearchBar.
             image:
@@ -168,7 +180,7 @@ sections:
             image:
               src: ~/media/icons/i_user-interface.svg
               href: switch.md
-            title: Switch
+            title: Basculer
           - href: tableview.md
             html: 'Découvrez comment utiliser TableView pour afficher des listes déroulantes de données ou de choix, les lignes ne partageant pas le même modèle.'
             image:
