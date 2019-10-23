@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.openlocfilehash: 4deeab1b2792675033372ccfe2bf343c08794955
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "69658035"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696429"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
@@ -25,10 +25,12 @@ Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) est un contrôle d’
 La classe `SearchBar` définit les propriétés suivantes :
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor) est un `Color` qui définit la couleur du bouton Annuler.
+* `CharacterSpacing`, de type `double`, est l’espacement entre les caractères du texte de `SearchBar`.
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes) est une valeur d’énumération `FontAttributes` qui détermine si la police `SearchBar` est en gras, en italique ou aucune.
 * [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily) est un `string` qui détermine la famille de polices utilisée par le `SearchBar`.
 * [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize) peut être une valeur d’énumération `NamedSize` ou une valeur `double` qui représente des tailles de police spécifiques sur plusieurs plateformes.
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment) est une valeur d’énumération `TextAlignment` qui définit l’alignement horizontal du texte de la requête.
+* `VerticalTextAlignment` est une valeur d’énumération `TextAlignment` qui définit l’alignement vertical du texte de la requête.
 * [`Placeholder`](xref:Xamarin.Forms.SearchBar.Placeholder) est un `string` qui définit le texte de l’espace réservé, par exemple « Search... ».
 * [`PlaceholderColor`](xref:Xamarin.Forms.SearchBar.PlaceholderColor) est un `Color` qui définit la couleur du texte de l’espace réservé.
 * [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) est un `ICommand` qui permet de lier des actions de l’utilisateur, telles que des clics ou clics, à des commandes définies sur un ViewModel.

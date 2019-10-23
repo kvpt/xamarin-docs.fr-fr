@@ -8,24 +8,24 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766955"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Contrôles de table Watchos dans Xamarin
 
-Le `WKInterfaceTable` contrôle Watchos est bien plus simple que son équivalent iOS, mais il joue un rôle similaire. Il crée une liste déroulante de lignes qui peuvent avoir des dispositions personnalisées et qui répondent aux événements tactiles.
+Le contrôle `WKInterfaceTable` Watchos est bien plus simple que son équivalent iOS, mais il joue un rôle similaire. Il crée une liste déroulante de lignes qui peuvent avoir des dispositions personnalisées et qui répondent aux événements tactiles.
 
-![](table-images/table-list-sml.png "Liste des tables de surveillance")![](table-images/table-detail-sml.png)
+![](table-images/table-list-sml.png "Liste des tables de surveillance") ![](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>Ajout d’une table
 
 Faites glisser le contrôle **table** dans une scène. Par défaut, elle ressemble à ceci (avec une disposition de ligne non spécifiée unique) :
 
-[![](table-images/add-table-sml.png "Ajout d’une table")](table-images/add-table.png#lightbox)
+[![](table-images/add-table-sml.png "Adding a table")](table-images/add-table.png#lightbox)
 
 Donnez un nom à la table dans la zone **nom** du panneau **Propriétés** , afin qu’elle puisse être référencée dans le code.
 
@@ -35,13 +35,13 @@ La table inclut automatiquement une seule ligne, représentée par un contrôleu
 
 Pour définir la **classe** du contrôleur de ligne, sélectionnez la ligne dans la **structure du document** et tapez un nom de classe dans le panneau **Propriétés** :
 
-[![](table-images/add-row-controller-sml.png "Saisie d’un nom de classe dans le panneau Propriétés")](table-images/add-row-controller.png#lightbox)
+[![](table-images/add-row-controller-sml.png "Entering a class name in the Properties pad")](table-images/add-row-controller.png#lightbox)
 
 Une fois que la classe du contrôleur de la ligne est définie, l’IDE crée un C# fichier correspondant dans le projet. Faites glisser des contrôles (tels que des étiquettes) sur la ligne et attribuez-leur des noms pour qu’ils puissent être référencés dans le code.
 
 ## <a name="create-and-populate-rows"></a>Créer et remplir des lignes
 
-`SetNumberOfRows`crée les classes de contrôleur de ligne pour chaque ligne, `Identifier` à l’aide de pour sélectionner le bon. Si vous avez donné un personnalisé `Identifier`à votre contrôleur de ligne, remplacez la **valeur par défaut** dans l’extrait de code ci-dessous par l’identificateur que vous avez utilisé. Le `RowController` *de chaque ligne* est créé lorsque `SetNumberOfRows` est appelé et que la table est affichée.
+`SetNumberOfRows` crée les classes de contrôleur de ligne pour chaque ligne, à l’aide de la `Identifier` pour sélectionner la classe appropriée. Si vous avez donné à votre contrôleur de ligne une `Identifier` personnalisée, remplacez la **valeur par défaut** dans l’extrait de code ci-dessous par l’identificateur que vous avez utilisé. La `RowController` *pour chaque ligne* est créée lorsque `SetNumberOfRows` est appelée et que la table est affichée.
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
@@ -51,7 +51,7 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 > [!IMPORTANT]
 > Les lignes de table ne sont pas virtualisées comme elles le sont dans iOS. Essayez de limiter le nombre de lignes (la commande Apple recommande moins de 20).
 
-Une fois les lignes créées, vous devez remplir chaque cellule (comme `GetCell` dans IOS). Cet extrait de code de l' [exemple WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) met à jour l’étiquette dans chaque ligne
+Une fois les lignes créées, vous devez remplir chaque cellule (comme `GetCell` dans iOS). Cet extrait de code de l' [exemple WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) met à jour l’étiquette dans chaque ligne
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -61,18 +61,18 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> L' `SetNumberOfRows` utilisation de, puis la boucle `GetRowController` à l’aide de entraîne l’envoi de la table entière à la montre. Dans les vues suivantes de la table, si vous devez ajouter ou supprimer des lignes spécifiques `InsertRowsAt` , `RemoveRowsAt` utilisez et pour obtenir de meilleures performances.
+> L’utilisation de `SetNumberOfRows` puis la boucle à l’aide de `GetRowController` entraîne l’envoi de la table entière à la montre. Dans les vues suivantes de la table, si vous devez ajouter ou supprimer des lignes spécifiques, utilisez `InsertRowsAt` et `RemoveRowsAt` pour obtenir de meilleures performances.
 
 ## <a name="respond-to-taps"></a>Répondre aux pressions
 
 Vous pouvez répondre à la sélection de lignes de deux manières différentes :
 
-- Implémentez `DidSelectRow` la méthode sur le contrôleur d’interface, ou
-- Créez un segue sur la table de montage `GetContextForSegue` séquentiel et implémentez si vous souhaitez que la sélection de ligne ouvre une autre scène.
+- Implémentez la méthode `DidSelectRow` sur le contrôleur d’interface, ou
+- Créez un segue sur le Storyboard et implémentez `GetContextForSegue` si vous souhaitez que la sélection de ligne ouvre une autre scène.
 
 ### <a name="didselectrow"></a>DidSelectRow
 
-Pour gérer la sélection de lignes par programmation, implémentez la `DidSelectRow` méthode. Pour ouvrir une nouvelle scène, utilisez `PushController` et transmettez l’identificateur de la scène et le contexte de données à utiliser :
+Pour gérer la sélection de lignes par programmation, implémentez la méthode `DidSelectRow`. Pour ouvrir une nouvelle scène, utilisez `PushController` et transmettez l’identificateur de la scène et le contexte de données à utiliser :
 
 ```csharp
 public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
@@ -87,9 +87,9 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 ### <a name="getcontextforsegue"></a>GetContextForSegue
 
 Faites glisser un segue sur le Storyboard de la ligne de votre table vers une autre scène (maintenez la touche **CTRL** enfoncée tout en faisant glisser).
-Veillez à sélectionner segue et donnez-lui un identificateur dans le panneau **Propriétés** (comme `secondLevel` dans l’exemple ci-dessous).
+Veillez à sélectionner segue et donnez-lui un identificateur dans le panneau **Propriétés** (par exemple, `secondLevel` dans l’exemple ci-dessous).
 
-Dans le contrôleur d’interface, implémentez la `GetContextForSegue` méthode et retournez le contexte de données qui doit être fourni à la scène présentée par le segue.
+Dans le contrôleur d’interface, implémentez la méthode `GetContextForSegue` et retournez le contexte de données qui doit être fourni à la scène présentée par le segue.
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier, WKInterfaceTable table, nint rowIndex)
@@ -101,19 +101,19 @@ public override NSObject GetContextForSegue (string segueIdentifier, WKInterface
 }
 ```
 
-Ces données sont passées à la scène de Storyboard cible dans `Awake` sa méthode.
+Ces données sont passées à la scène de Storyboard cible dans sa méthode `Awake`.
 
 ## <a name="multiple-row-types"></a>Plusieurs types de lignes
 
 Par défaut, le contrôle de table a un seul type de ligne que vous pouvez concevoir. Pour ajouter plus de lignes « modèles », utilisez la zone **lignes** dans le panneau **Propriétés** pour créer d’autres contrôleurs de ligne :
 
-![](table-images/prototype-rows1.png "Définition du nombre de lignes de prototype")
+![](table-images/prototype-rows1.png "Setting the number of Prototype rows")
 
 Si vous affectez à la propriété **Rows** la valeur **3** , des espaces réservés de ligne supplémentaires sont créés pour vous faire glisser des contrôles. Pour chaque ligne, définissez le nom de la **classe** dans le panneau **Propriétés** pour vous assurer que la classe du contrôleur de ligne est créée.
 
-![](table-images/prototype-rows2.png "Lignes de prototype dans le concepteur")
+![](table-images/prototype-rows2.png "The prototype rows in the designer")
 
-Pour remplir une table avec des types de ligne différents `SetRowTypes` , utilisez la méthode pour spécifier le type de contrôleur de ligne à utiliser pour chaque ligne de la table. Utilisez les identificateurs de la ligne pour spécifier le contrôleur de lignes à utiliser pour chaque ligne.
+Pour remplir une table avec des types de ligne différents, utilisez la méthode `SetRowTypes` pour spécifier le type de contrôleur de ligne à utiliser pour chaque ligne de la table. Utilisez les identificateurs de la ligne pour spécifier le contrôleur de lignes à utiliser pour chaque ligne.
 
 Le nombre d’éléments de ce tableau doit correspondre au nombre de lignes attendues dans la table :
 
@@ -142,20 +142,20 @@ for (var i = 0; i < rows.Count; i++) {
 
 Watchos 3 a introduit une nouvelle fonctionnalité pour les tables : la possibilité de faire défiler les pages de détails associées à chaque ligne, sans avoir à revenir à la table et à choisir une autre ligne. Vous pouvez faire défiler les écrans de détails en effectuant un balayage vers le haut ou vers le haut, ou en utilisant le Digital Crown.
 
-![](table-images/table-scroll-sml.png "Exemple de pagination des détails verticaux")![](table-images/table-detail-sml.png)
+![](table-images/table-scroll-sml.png "Exemple de pagination des détails verticaux") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > Cette fonctionnalité n’est actuellement disponible qu’en modifiant le Storyboard dans Xcode Interface Builder.
 
-Pour activer cette fonctionnalité, sélectionnez `WKInterfaceTable` dans l’aire de conception et cochez l’option de **pagination détails verticaux** :
+Pour activer cette fonctionnalité, sélectionnez la `WKInterfaceTable` sur l’aire de conception et cochez l’option de **pagination détails verticales** :
 
-![](table-images/vertical-detail-paging-sml.png "Sélection de l’option de pagination détails verticale")
+![](table-images/vertical-detail-paging-sml.png "Selecting the Vertical Detail Paging option")
 
 Comme [expliqué par Apple](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023) , la navigation dans les tables doit utiliser SEGUES pour que la fonctionnalité de pagination fonctionne. Réécrivez le code existant qui utilise `PushController` pour utiliser SEGUES à la place.
 
 <a name="add_row_controller" />
 
-## <a name="appendix-row-controller-code-example"></a>Annexe : Exemple de code de contrôleur de ligne
+## <a name="appendix-row-controller-code-example"></a>Annexe : exemple de code de contrôleur de ligne
 
 L’IDE créera automatiquement deux fichiers de code lorsqu’un contrôleur de lignes sera créé dans le concepteur. Le code de ces fichiers générés est indiqué ci-dessous pour référence.
 
@@ -176,7 +176,7 @@ namespace WatchTablesExtension
 }
 ```
 
-L’autre fichier **. Designer.cs** est une définition de classe partielle qui contient les prises et les actions créées sur l’aire du concepteur, comme dans cet exemple avec un `WKInterfaceLabel` contrôle :
+L’autre fichier **. Designer.cs** est une définition de classe partielle qui contient les prises et les actions créées sur l’aire du concepteur, comme dans cet exemple avec un contrôle de `WKInterfaceLabel` :
 
 ```csharp
 using Foundation;

@@ -6,21 +6,19 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/13/2019
-ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: HT
+ms.date: 09/20/2019
+ms.openlocfilehash: 5afdaa9afa4c5ced39498a1cb45de07fe4bf4195
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/21/2019
-ms.locfileid: "69888542"
+ms.locfileid: "72696705"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Données CollectionView Xamarin. Forms
 
-![](~/media/shared/preview.png "This API is currently pre-release")
-
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) définit les propriétés suivantes qui définissent les données à afficher et leur apparence :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) comprend les propriétés suivantes qui définissent les données à afficher et leur apparence :
 
 - [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource), de type `IEnumerable`, spécifie la collection d’éléments à afficher et a une valeur par défaut de `null`.
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate), de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), spécifie le modèle à appliquer à chaque élément de la collection d’éléments à afficher.
@@ -78,7 +76,7 @@ Par défaut, [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les �
 
 [![Capture d’écran de CollectionView contenant des éléments de texte, sur iOS et Android](populate-data-images/text.png "Éléments de texte dans un CollectionView")](populate-data-images/text-large.png#lightbox "Éléments de texte dans un CollectionView")
 
-Pour plus d’informations sur la modification de la disposition de [`CollectionView`](xref:Xamarin.Forms.CollectionView) , consultez [spécifier une disposition](layout.md). Pour plus d’informations sur la façon de définir l’apparence de chaque élément dans le `CollectionView`, consultez [définir l’apparence des éléments](#define-item-appearance).
+Pour plus d’informations sur la modification de la disposition de [`CollectionView`](xref:Xamarin.Forms.CollectionView) , consultez [disposition du CollectionView Xamarin. Forms](layout.md). Pour plus d’informations sur la façon de définir l’apparence de chaque élément dans le `CollectionView`, consultez [définir l’apparence des éléments](#define-item-appearance).
 
 ### <a name="data-binding"></a>Liaison de données
 
@@ -250,6 +248,45 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 > [!IMPORTANT]
 > Lorsque vous utilisez [`CollectionView`](xref:Xamarin.Forms.CollectionView), ne définissez jamais l’élément racine de vos objets [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) sur un `ViewCell`. Cela entraîne la levée d’une exception, car `CollectionView` n’a pas de concept de cellule.
 
+## <a name="pull-to-refresh"></a>Extraire pour actualiser
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge la fonctionnalité d’actualisation de l’extraction par le biais du `RefreshView`, ce qui permet d’afficher les données affichées pour les actualiser en faisant défiler la liste des éléments. Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser à son enfant, à condition que l’enfant prenne en charge le contenu défilant. Par conséquent, l’extraction vers l’actualisation est implémentée pour une `CollectionView` en la définissant comme enfant d’un `RefreshView` :
+
+```xaml
+<RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding RefreshCommand}">
+    <CollectionView ItemsSource="{Binding Animals}">
+        ...
+    </CollectionView>
+</RefreshView>
+```
+
+Le code C# équivalent est :
+
+```csharp
+RefreshView refreshView = new RefreshView();
+ICommand refreshCommand = new Command(() =>
+{
+    // IsRefreshing is true
+    // Refresh data here
+    refreshView.IsRefreshing = false;
+});
+refreshView.Command = refreshCommand;
+
+CollectionView collectionView = new CollectionView();
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
+refreshView.Content = collectionView;
+// ...
+```
+
+Lorsque l’utilisateur lance une actualisation, la `ICommand` définie par la propriété `Command` est exécutée, ce qui doit actualiser les éléments affichés. Une visualisation d’actualisation s’affiche pendant l’actualisation, qui se compose d’un cercle de progression animé :
+
+[![Capture d’écran de l’extraction CollectionView pour iOS et Android](populate-data-images/pull-to-refresh.png "CollectionView extraction à l’actualisation")](populate-data-images/pull-to-refresh-large.png#lightbox "CollectionView extraction à l’actualisation")
+
+La valeur de la propriété `RefreshView.IsRefreshing` indique l’état actuel du `RefreshView`. Lorsqu’une actualisation est déclenchée par l’utilisateur, cette propriété effectue automatiquement la transition vers `true`. Une fois l’actualisation terminée, vous devez réinitialiser la propriété à `false`.
+
+Pour plus d’informations sur `RefreshView`, consultez [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md).
+
 ## <a name="load-data-incrementally"></a>Charger les données de façon incrémentielle
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge le chargement incrémentiel des données à mesure que les utilisateurs parcourent les éléments. Cela permet des scénarios tels que le chargement asynchrone d’une page de données à partir d’un service Web, lorsque l’utilisateur fait défiler. En outre, le point auquel des données supplémentaires sont chargées est configurable afin que les utilisateurs ne voient pas d’espace vide ou ne soient plus défilant.
@@ -303,6 +340,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 ## <a name="related-links"></a>Liens connexes
 
 - [CollectionView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Modèles de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Créer un DataTemplateSelector Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

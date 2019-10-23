@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70291404"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>Utilisation des indicateurs de progression tvOS dans Xamarin
@@ -77,8 +77,8 @@ Le moyen le plus simple d’utiliser un indicateur de progression dans une appli
 
 2. Faites glisser un **indicateur d’activité** de la **boîte à outils** et déposez-le sur la vue : 
 
-    ![](progress-indicators-images/activity01-vs.png
-    "Indicateur d’activité indicateur d’activité")
+    ![Indicateur d’activité](progress-indicators-images/activity01-vs.png
+    "Indicateur d’activité")
 
 3. Dans l’onglet **widget** de l' **Explorateur de propriétés**, vous pouvez ajuster plusieurs propriétés de l’indicateur d’activité, telles que son **style**, son **comportement**et son **nom**: 
 
@@ -106,7 +106,7 @@ Pour plus d’informations sur l’utilisation des storyboards, consultez notre 
 
 Comme indiqué ci-dessus, les indicateurs d’activité doivent s’afficher lorsque votre application exécute un processus long de longueur indéterminée.
 
-À tout moment, vous pouvez voir si un indicateur d’activité est en train d’être `IsAnimating` animé en vérifiant sa propriété. Si la `HidesWhenStopped` propriété est `true`, l’indicateur d’activité sera automatiquement masqué lorsque son animation sera arrêtée.
+À tout moment, vous pouvez voir si un indicateur d’activité est en train d’être animé en vérifiant sa propriété `IsAnimating`. Si la propriété `HidesWhenStopped` est `true`, l’indicateur d’activité est automatiquement masqué lorsque son animation est arrêtée.
 
 Vous pouvez utiliser le code suivant pour démarrer l’animation : 
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 Là encore, une barre de progression doit être utilisée chaque fois que votre application exécute une tâche longue d’une durée connue. 
 
-La `Progress` propriété est utilisée pour définir la valeur de la tâche qui est terminée de 0% à 100% (0,0 à 1,0). Utilisez la `ProgressTintColor` propriété pour définir la couleur de la barre quantité terminée et la `TrackTintColor` propriété pour définir la couleur d’arrière-plan (quantité incomplète).
+La propriété `Progress` permet de définir la valeur de la tâche qui est terminée de 0% à 100% (0,0 à 1,0). Utilisez la propriété `ProgressTintColor` pour définir la couleur de la barre quantité terminée et la propriété `TrackTintColor` pour définir la couleur d’arrière-plan (quantité incomplète).
 
 ## <a name="summary"></a>Récapitulatif
 

@@ -6,17 +6,15 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/24/2019
-ms.openlocfilehash: 89afb0f2bfe93a5f78b0cd162f2a65e585b54b4b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: HT
+ms.date: 09/20/2019
+ms.openlocfilehash: 274a2a99445a77a2b8c1f68e823c753bc16b673a
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/21/2019
-ms.locfileid: "72303237"
+ms.locfileid: "72696669"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Introduction à Xamarin. Forms CollectionView
-
-![Cette API est actuellement en version préliminaire](~/media/shared/preview.png)
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
@@ -24,11 +22,7 @@ ms.locfileid: "72303237"
 
 [![Capture d’écran d’une disposition de grille verticale CollectionView, sur iOS et Android](introduction-images/verticalgrid-multipleselection.png "Disposition de grille verticale CollectionView avec sélection multiple")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "Disposition de grille verticale CollectionView avec sélection multiple")
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) est disponible dans Xamarin. forms 4,0. Toutefois, il est actuellement expérimental et ne peut être utilisé qu’en ajoutant la ligne de code suivante à votre classe `AppDelegate` sur iOS, ou à votre classe `MainActivity` sur Android, ou à votre `App.xaml.cs` sur UWP avant d’appeler `Forms.Init` :
-
-```csharp
-Forms.SetFlags("CollectionView_Experimental");
-```
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) est disponible à partir de Xamarin. forms 4,3.
 
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) est disponible sur iOS et Android, mais n’est [disponible que partiellement](https://gist.github.com/hartez/7d0edd4182dbc7de65cebc6c67f72e14) sur le plateforme Windows universelle.
@@ -59,7 +53,7 @@ Bien que les API [`CollectionView`](xref:Xamarin.Forms.CollectionView) et [`List
 | Mise en cache | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) utilise automatiquement la virtualisation fournie par les contrôles natifs sous-jacents. |
 | En-têtes et pieds de page | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) pouvez présenter un en-tête et un pied de page qui défilent avec les éléments de la liste, via les propriétés `Header`, `Footer`, `HeaderTemplate` et `FooterTemplate`. Pour plus d’informations, consultez [en-têtes et pieds de page](layout.md#headers-and-footers). |
 | Regroupement | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les données regroupées correctement en affectant à sa propriété `IsGrouped` la valeur `true`. Les en-têtes de groupe et les pieds de page de groupe peuvent être personnalisés en définissant les propriétés `GroupHeaderTemplate` et `GroupFooterTemplate` sur [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) objets. Pour plus d’informations, consultez [Xamarin. Forms CollectionView GROUPING](grouping.md). |
-| Extraire pour actualiser | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | L’extraction vers l’actualisation n’est pas prise en charge actuellement dans `CollectionView`, mais sera ajoutée dans une version ultérieure. |
+| Extraire pour actualiser | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | La fonctionnalité d’extraction vers l’actualisation est prise en charge en définissant un [`CollectionView`](xref:Xamarin.Forms.CollectionView) en tant qu’enfant d’un `RefreshView`. Pour plus d’informations, consultez [Extraire pour actualiser](populate-data.md#pull-to-refresh). |
 | Actions contextuelles | `ContextActions` | Les actions de contexte ne sont actuellement pas prises en charge dans `CollectionView`, mais seront ajoutées dans une version ultérieure. |
 | Défilement | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit `ScrollTo` méthodes, qui défilent les éléments dans la vue. Pour plus d’informations, consultez [défilement](scrolling.md). |
 

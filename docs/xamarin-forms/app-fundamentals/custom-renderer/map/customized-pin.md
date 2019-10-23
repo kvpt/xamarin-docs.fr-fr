@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 98def647c38f69ec4f942a06e2187841c4e04459
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424847"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697165"
 ---
 # <a name="customizing-a-map-pin"></a>Personnalisation d’une épingle de carte
 
@@ -35,7 +35,7 @@ Il est possible d’utiliser le processus de rendu pour implémenter des personn
 Nous allons maintenant aborder chaque élément tour à tour pour implémenter un renderer `CustomMap` qui affiche une carte native avec une épingle personnalisée et une vue personnalisée des données de l’épingle sur chaque plateforme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) doit être initialisé et configuré avant utilisation. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) doit être initialisé et configuré avant utilisation. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map/index.md).
 
 <a name="Creating_the_Custom_Map" />
 
@@ -654,7 +654,7 @@ Pour plus d’informations sur la personnalisation d’une instance `MapControl`
 
 ## <a name="related-links"></a>Liens associés
 
-- [Contrôle Maps](~/xamarin-forms/user-interface/map.md)
+- [Contrôle Maps](~/xamarin-forms/user-interface/map/index.md)
 - [Cartes iOS](~/ios/user-interface/controls/ios-maps/index.md)
 - [API Cartes](~/android/platform/maps-and-location/maps/maps-api.md)
 - [Épingle personnalisée (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

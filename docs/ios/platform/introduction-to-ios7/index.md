@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
 ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70752058"
 ---
 # <a name="introduction-to-ios-7"></a>Introduction à iOS 7
@@ -22,14 +22,14 @@ iOS 7 est une mise à jour majeure de iOS. Il introduit une conception d’inter
 
 ## <a name="uiview-animation-enhancements"></a>Améliorations apportées à l’animation UIView
 
-iOS 7 augmente la prise en charge de l’animation dans UIKit, ce qui permet aux applications d’effectuer des opérations qui nécessitaient auparavant la suppression directe de l’infrastructure d’animation principale. Par exemple, `UIView` peut à présent effectuer des animations de ressort et des animations d’image clé, `CAKeyframeAnimation` précédemment appliquées à `CALayer`un.
+iOS 7 augmente la prise en charge de l’animation dans UIKit, ce qui permet aux applications d’effectuer des opérations qui nécessitaient auparavant la suppression directe de l’infrastructure d’animation principale. Par exemple, `UIView` pouvez à présent effectuer des animations de ressort et des animations d’image clé, ce qui était auparavant une `CAKeyframeAnimation` appliquée à un `CALayer`.
 
 ### <a name="spring-animations"></a>Animations Spring
 
- `UIView`prend désormais en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la `AnimateNotify` méthode ou `AnimateNotifyAsync` , en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous :
+ `UIView` prend maintenant en charge l’animation des modifications de propriété avec un effet de ressort. Pour ajouter cela, appelez la méthode `AnimateNotify` ou `AnimateNotifyAsync`, en transmettant des valeurs pour le taux d’amortissement des ressorts et la vélocité initiale du ressort, comme décrit ci-dessous :
 
-- `springWithDampingRatio`: Valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
-- `initialSpringVelocity`: Vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
+- `springWithDampingRatio` : valeur comprise entre 0 et 1, où l’oscillation augmente pour une valeur plus petite.
+- `initialSpringVelocity` : vitesse du ressort initial sous la forme d’un pourcentage de la distance totale de l’animation par seconde.
 
 Le code suivant produit un effet de ressort lorsque le centre de la vue d’image change :
 
@@ -49,11 +49,11 @@ void AnimateWithSpring ()
 
 Cet effet de ressort fait que la vue d’image semble rebondir lorsqu’elle termine son animation à un nouvel emplacement central, comme illustré ci-dessous :
 
- ![](images/spring-animation.png "Cet effet de ressort amène l’affichage de l’image à rebondir lorsqu’il effectue son animation vers un nouvel emplacement central.")
+ ![](images/spring-animation.png "This spring effect causes the image view to appear to bounce as it completes its animation to a new center location")
 
 ### <a name="keyframe-animations"></a>Animations d’images clés
 
-La `UIView` classe comprend maintenant la `AnimateWithKeyframes` méthode permettant de créer des animations d’image `UIView`clé sur un. Cette méthode est similaire à d' `UIView` autres méthodes d’animation, sauf qu' `NSAction` une valeur supplémentaire est passée en tant que paramètre pour inclure les images clés. Dans, `NSAction`les images clés sont ajoutées en appelant. `UIView.AddKeyframeWithRelativeStartTime`
+La classe `UIView` comprend maintenant la méthode `AnimateWithKeyframes` pour créer des animations KeyFrame sur un `UIView`. Cette méthode est similaire à d’autres méthodes d’animation `UIView`, à ceci près qu’une `NSAction` supplémentaire est passée en tant que paramètre pour inclure les images clés. Dans le `NSAction`, les images clés sont ajoutées en appelant `UIView.AddKeyframeWithRelativeStartTime`.
 
 Par exemple, l’extrait de code suivant crée une animation d’image clé pour animer le centre d’une vue, ainsi que pour faire pivoter l’affichage :
 
@@ -82,26 +82,26 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-Les deux premiers paramètres de la `AddKeyframeWithRelativeStartTime` méthode spécifient respectivement l’heure de début et la durée de l’image clé, sous la forme d’un pourcentage de la longueur totale de l’animation. L’exemple ci-dessus entraîne l’animation de la vue d’image vers son nouveau centre au cours de la première seconde, puis la rotation de 90 degrés sur la seconde suivante. Étant donné que l' `UIViewKeyframeAnimationOptions.Autoreverse` animation spécifie comme option, les deux images clés sont également animées en arrière. Enfin, les valeurs finales sont définies sur l’état initial dans le gestionnaire d’achèvement.
+Les deux premiers paramètres de la méthode `AddKeyframeWithRelativeStartTime` spécifient respectivement l’heure de début et la durée de l’image clé, sous la forme d’un pourcentage de la longueur totale de l’animation. L’exemple ci-dessus entraîne l’animation de la vue d’image vers son nouveau centre au cours de la première seconde, puis la rotation de 90 degrés sur la seconde suivante. Étant donné que l’animation spécifie `UIViewKeyframeAnimationOptions.Autoreverse` en tant qu’option, les deux images clés sont également animées en arrière. Enfin, les valeurs finales sont définies sur l’état initial dans le gestionnaire d’achèvement.
 
 Les captures d’écran ci-dessous illustrent l’animation combinée via les images clés :
 
- ![](images/keyframes.png "Cette capture d’écran illustre l’animation combinée via les images clés.")
+ ![](images/keyframes.png "This screenshots illustrates the combined animation through the keyframes")
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
 UIKit Dynamics est un nouvel ensemble d’API dans UIKit qui permet aux applications de créer des interactions animées basées sur la physique. UIKit Dynamics encapsule un moteur physique 2D pour rendre cela possible.
 
-L’API est déclarative par nature. Vous pouvez déclarer comment les interactions physiques se comportent en créant des objets (appelés *comportements* ) pour exprimer des concepts physiques tels que la gravité, les collisions, les ressorts, etc. Vous attachez ensuite le ou les comportements à un autre objet, appelé *animation dynamique*, qui encapsule une vue. L’animateur dynamique s’attache à appliquer les comportements physiques déclarés aux éléments *dynamiques* -éléments qui implémentent `IUIDynamicItem`, tels qu’un. `UIView`
+L’API est déclarative par nature. Vous pouvez déclarer comment les interactions physiques se comportent en créant des objets (appelés *comportements* ) pour exprimer des concepts physiques tels que la gravité, les collisions, les ressorts, etc. Vous attachez ensuite le ou les comportements à un autre objet, appelé *animation dynamique*, qui encapsule une vue. L’animateur dynamique s’attache à appliquer les comportements physiques déclarés aux *éléments dynamiques* -éléments qui implémentent `IUIDynamicItem`, tel qu’une `UIView`.
 
 Plusieurs comportements primitifs différents sont disponibles pour déclencher des interactions complexes, notamment :
 
-- `UIAttachmentBehavior`: Attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
-- `UICollisionBehavior`: Permet aux éléments dynamiques de participer aux collisions.
-- `UIDynamicItemBehavior`: Spécifie un ensemble général de propriétés à appliquer aux éléments dynamiques, tels que l’élasticité, la densité et le frottement.
-- `UIGravityBehavior`: Applique la gravité à un élément dynamique, ce qui entraîne l’accélération des éléments dans la direction de la gravité.
-- `UIPushBehavior`: Applique la force à un élément dynamique.
-- `UISnapBehavior`: Permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
+- `UIAttachmentBehavior` : attache deux éléments dynamiques de sorte qu’ils se déplacent ensemble ou attache un élément dynamique à un point d’attache.
+- `UICollisionBehavior` : permet aux éléments dynamiques de participer aux collisions.
+- `UIDynamicItemBehavior` : spécifie un ensemble général de propriétés à appliquer aux éléments dynamiques, tels que l’élasticité, la densité et le frottement.
+- `UIGravityBehavior` : applique la gravité à un élément dynamique, ce qui amène les éléments à accélérer dans la direction de la gravité.
+- `UIPushBehavior` : applique la force à un élément dynamique.
+- `UISnapBehavior` : permet à un élément dynamique de s’aligner sur une position avec un effet de ressort.
 
 Bien qu’il existe de nombreuses primitives, le processus général d’ajout d’interactions physiques à une vue à l’aide de UIKit Dynamics est cohérent entre les comportements :
 
@@ -117,7 +117,7 @@ Examinons un exemple qui ajoute la gravité et une limite de collision à un `UI
 
 L’ajout de la gravité à une vue d’image suit les 3 étapes décrites ci-dessus.
 
-Nous allons utiliser la `ViewDidLoad` méthode pour cet exemple. Tout d’abord, `UIImageView` ajoutez une instance de la façon suivante :
+Nous allons travailler dans la méthode `ViewDidLoad` pour cet exemple. Tout d’abord, ajoutez une instance de `UIImageView` comme suit :
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -129,21 +129,21 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-Cela crée une vue d’image centrée sur le bord supérieur de l’écran. Pour que l’image « chute » avec la gravité, créez une instance de `UIDynamicAnimator`:
+Cela crée une vue d’image centrée sur le bord supérieur de l’écran. Pour que l’image soit « chute » avec la gravité, créez une instance d’une `UIDynamicAnimator` :
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-Prend une instance d’une référence `UIView` ou un `UICollectionViewLayout`, qui contient les éléments qui seront animés par le ou les comportements attachés. `UIDynamicAnimator`
+L' `UIDynamicAnimator` prend une instance d’une référence `UIView` ou d’un `UICollectionViewLayout`, qui contient les éléments qui seront animés selon le ou les comportements attachés.
 
-Ensuite, créez une `UIGravityBehavior` instance. Vous pouvez passer un ou plusieurs objets implémentant `IUIDynamicItem`le, comme `UIView`un :
+Créez ensuite une instance de `UIGravityBehavior`. Vous pouvez passer un ou plusieurs objets implémentant le `IUIDynamicItem`, comme un `UIView` :
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-Le comportement reçoit un tableau de `IUIDynamicItem`qui, dans ce cas, contient l’instance unique `UIImageView` que nous animons.
+Le comportement reçoit un tableau de `IUIDynamicItem`, qui dans ce cas contient l’instance `UIImageView` unique que nous animons.
 
 Enfin, ajoutez le comportement à l’animation dynamique :
 
@@ -153,16 +153,16 @@ dynAnimator.AddBehavior (gravity);
 
 Cela a pour effet d’animer l’image vers le bas avec la gravité, comme illustré ci-dessous :
 
-![](images/gravity2.png "")
-Emplacement de l’image de départ![](images/gravity3.png "de l’emplacement de fin de l’image")
+![](images/gravity2.png "The starting image location")
+![](images/gravity3.png "The ending image location")
 
-Étant donné qu’il n’y a rien de contraindre les limites de l’écran, la vue d’image se trouve simplement en bas. Pour contraindre la vue afin que l’image soit en conflit avec les bords de l’écran, nous pouvons ajouter `UICollisionBehavior`un. Nous aborderons cela dans la section suivante.
+Étant donné qu’il n’y a rien de contraindre les limites de l’écran, la vue d’image se trouve simplement en bas. Pour contraindre la vue afin que l’image soit en conflit avec les bords de l’écran, nous pouvons ajouter une `UICollisionBehavior`. Nous aborderons cela dans la section suivante.
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-Nous allons commencer par créer un `UICollisionBehavior` et l’ajouter à l’animateur dynamique, comme nous l’avons fait pour `UIGravityBehavior`le.
+Nous allons commencer par créer une `UICollisionBehavior` et l’ajouter à l’animateur dynamique, comme nous l’avons fait pour le `UIGravityBehavior`.
 
-Modifiez le code de façon à `UICollisionBehavior`inclure les éléments suivants :
+Modifiez le code de façon à inclure les `UICollisionBehavior` :
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -187,7 +187,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-A une propriété appelée `TranslatesReferenceBoundsIntoBoundry`. `UICollisionBehavior` L’affectation de `true` la valeur à cette option entraîne l’utilisation des limites de la vue de référence comme limite de collision.
+La `UICollisionBehavior` a une propriété appelée `TranslatesReferenceBoundsIntoBoundry`. Si vous affectez la valeur `true`, les limites de la vue de référence sont utilisées comme limite de collision.
 
 Désormais, lorsque l’image s’anime vers le bas avec la gravité, elle rebondit légèrement en bas de l’écran avant de se régler pour y reposer.
 
@@ -199,7 +199,7 @@ Désormais, lorsque l’image s’anime vers le bas avec la gravité, elle rebon
 
 Nous pouvons mieux contrôler le comportement de la vue d’image en baisse avec des comportements supplémentaires. Par exemple, nous pourrions ajouter un `UIDynamicItemBehavior` pour augmenter l’élasticité, provoquant la rebond de la vue d’image quand elle entre en conflit avec le bas de l’écran.
 
-L’ajout `UIDynamicItemBehavior` d’un suit la même procédure que pour les autres comportements. Commencez par créer le comportement :
+L’ajout d’un `UIDynamicItemBehavior` suit la même procédure que pour les autres comportements. Commencez par créer le comportement :
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {

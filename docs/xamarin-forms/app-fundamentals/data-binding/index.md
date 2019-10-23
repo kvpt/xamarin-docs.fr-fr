@@ -6,19 +6,19 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/23/2018
-ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.date: 09/27/2019
+ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653367"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697141"
 ---
 # <a name="xamarinforms-data-binding"></a>Liaison de données Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-_La liaison de données est la technique qui permet de lier les propriétés de deux objets afin que les changements d’une propriété soient automatiquement répercutés sur l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application modèle-vue-vue modèle (MVVM)._
+_La liaison de données est la technique de liaison des propriétés de deux objets afin que les modifications apportées à une propriété soient répercutées automatiquement dans l’autre propriété. La liaison de données fait partie intégrante de l’architecture d’application MVVM (Model-View-ViewModel)._
 
 ## <a name="the-data-linking-problem"></a>Problème de la liaison de données
 
@@ -28,14 +28,14 @@ Pour gérer correctement cette tâche, le programme doit être averti des change
 
 ## <a name="the-data-binding-solution"></a>Solution de la liaison de données
 
-La liaison de données automatise ce travail et affiche les gestionnaires d’événements inutiles. (Les événements sont, en revanche, toujours nécessaires, parce que l’infrastructure de liaison de données les utilise.) Les liaisons de données peuvent être implémentées dans du code ou en XAML, mais elles sont beaucoup plus courantes en XAML, car elles permettent ainsi de réduire la taille du fichier code-behind. En remplaçant le code procédural dans les gestionnaires d’événements par du code déclaratif ou des balises, l’application est simplifiée et clarifiée.
+La liaison de données automatise ce travail et affiche les gestionnaires d’événements inutiles. (Toutefois, les événements sont toujours nécessaires, car l’infrastructure de liaison de données les utilise.) Les liaisons de données peuvent être implémentées dans le code ou en XAML, mais elles sont bien plus courantes en XAML où elles aident à réduire la taille du fichier code-behind. En remplaçant le code procédural dans les gestionnaires d’événements par du code déclaratif ou des balises, l’application est simplifiée et clarifiée.
 
 Un des deux objets impliqués dans une liaison de données est presque toujours un élément qui dérive de `View` et constitue une partie de l’interface visuelle d’une page. L’autre objet peut être :
 
 - Un autre `View` dérivé, généralement dans la même page.
 - Un objet dans un fichier de code.
 
-Dans les programmes de démonstration comme ceux de l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), les liaisons de données entre deux `View` dérivées sont souvent montrées pour plus de clarté et de simplicité. Toutefois, les mêmes principes peuvent être appliqués aux liaisons de données entre un `View` et d’autres objets. Quand une application est créée à l’aide de l’architecture modèle-vue-vue modèle (MVVM), la classe avec les données sous-jacentes est souvent appelée ViewModel.
+Dans les programmes de démonstration comme ceux de l’exemple [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos), les liaisons de données entre deux `View` dérivées sont souvent montrées pour plus de clarté et de simplicité. Toutefois, les mêmes principes peuvent être appliqués aux liaisons de données entre un `View` et d’autres objets. Quand une application est créée à l’aide de l’architecture MVVM (Model-View-ViewModel), la classe avec les données sous-jacentes est souvent appelée ViewModel.
 
 Les liaisons de données sont décrites dans la série d’articles suivante :
 
@@ -59,6 +59,10 @@ Explorez plus en détail la propriété `Path` de la liaison de données pour ac
 
 Utilisez des convertisseurs de valeur de liaison pour modifier les valeurs dans la liaison de données.
 
+## <a name="relative-bindingsrelative-bindingsmd"></a>[Liaisons relatives](relative-bindings.md)
+
+Utilisez des liaisons relatives pour définir la source de liaison par rapport à la position de la cible de liaison.
+
 ## <a name="binding-fallbacksbinding-fallbacksmd"></a>[Valeurs de repli pour les liaisons](binding-fallbacks.md)
 
 Renforcez les liaisons de données en définissant les valeurs de secours à utiliser en cas d’échec du processus de liaison.
@@ -71,7 +75,7 @@ Implémentez la propriété `Command` avec des liaisons de données.
 
 Utilisez des liaisons compilées pour améliorer les performances de liaison de données.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Chapitre sur les liaisons de données dans la documentation de Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

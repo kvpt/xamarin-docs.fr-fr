@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
 ms.openlocfilehash: 7847148551c20dbcf49bcc263bdc50716a6ef14e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70283173"
 ---
 # <a name="ios-security-and-privacy-features"></a>Fonctionnalités de sécurité et de confidentialité iOS
@@ -27,7 +27,7 @@ Apple a apporté plusieurs améliorations à la sécurité et à la confidential
 Les modifications générales suivantes ont été apportées à la sécurité et à la confidentialité dans iOS 10 :
 
 - L’API CDSA (Common Data Security Architecture) est dépréciée et doit être remplacée par l’API SecKey pour générer des clés asymétriques.
-- La nouvelle `NSAllowsArbitraryLoadsInWebContent` clé peut être ajoutée au fichier **info. plist** d’une application et autoriser le chargement correct des pages Web, tandis que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application. Pour plus d’informations, consultez notre documentation sur la [sécurité des applications de transport](~/ios/app-fundamentals/ats.md) .
+- La nouvelle clé de `NSAllowsArbitraryLoadsInWebContent` peut être ajoutée au fichier **info. plist** d’une application et autorisera le chargement correct des pages Web, alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application. Pour plus d’informations, consultez notre documentation sur la [sécurité des applications de transport](~/ios/app-fundamentals/ats.md) .
 - Étant donné que le nouveau presse-papiers dans iOS 10 et macOS Sierra permet à l’utilisateur de copier et coller entre les appareils, l’API a été développée pour permettre à un presse-papiers d’être limité à un appareil spécifique et être mis en cache pour être effacé automatiquement à un point donné. En outre, les pasteboards nommés ne sont plus persistants et doivent être remplacés par les conteneurs de collage partagés.
 - Pour toutes les connexions SSL/TLS, le chiffrement symétrique RC4 est maintenant désactivé par défaut. En outre, l’API de transport sécurisé ne prend plus en charge SSLv3 et il est recommandé que le développeur cesse d’utiliser le chiffrement SHA-1 et 3DES le plus rapidement possible.
 
@@ -42,25 +42,25 @@ Les applications qui s’exécutent sur iOS 10 (ou version ultérieure) doivent 
 
 Les clés associées à la confidentialité suivantes sont disponibles :
 
-- **Confidentialité-Description de l’utilisation de Apple Music** (`NSAppleMusicUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur.
-- **Confidentialité-Description de l’utilisation du périphérique Bluetooth** (`NSBluetoothPeripheralUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à Bluetooth sur l’appareil de l’utilisateur.
-- **Confidentialité-Description de l’utilisation des calendriers** (`NSCalendarsUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au calendrier de l’utilisateur.
-- **Confidentialité-Description de l’utilisation de l’appareil photo** (`NSCameraUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’appareil photo de l’appareil.
-- **Confidentialité-Description de l’utilisation des contacts** (`NSContactsUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux contacts de l’utilisateur.
-- **Confidentialité-Description de l’utilisation du partage de santé** (`NSHealthShareUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux données d’intégrité de l’utilisateur. Pour plus d’informations, consultez Référence de la [classe HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)d’Apple.
-- **Confidentialité-Description de l’utilisation des mises à jour de santé** (`NSHealthUpdateUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite modifier les données d’intégrité de l’utilisateur. Pour plus d’informations, consultez Référence de la [classe HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)d’Apple.
-- **Confidentialité-Description de l’utilisation de HomeKit** (`NSHomeKitUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux données de configuration HomeKit de l’utilisateur.
-- **Confidentialité-Description de l’utilisation systématique de l’emplacement** (`NSLocationAlwaysUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite toujours avoir accès à l’emplacement de l’utilisateur.
-- Déconseillé **Confidentialité-Description de l’utilisation de l’emplacement** (`NSLocationUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur. *REMARQUE : Cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez `NSLocationAlwaysUsageDescription` ou`NSLocationWhenInUseUsageDescription` à la place.*
-- **Confidentialité-emplacement d’utilisation-Description de l’utilisation** (`NSLocationWhenInUseUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur pendant qu’elle est en cours d’exécution.
-- Déconseillé **Confidentialité-Description de l’utilisation de la bibliothèque multimédia** : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur. *REMARQUE : Cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez `NSAppleMusicUsageDescription` à la place.*
-- **Confidentialité-Description de l’utilisation du microphone** (`NSMicrophoneUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au microphone des appareils.
-- **Confidentialité-Description de l’utilisation du mouvement** (`NSMotionUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’accéléromètre de l’appareil.
-- **Confidentialité-Description de l’utilisation de la bibliothèque de photos** (`NSPhotoLibraryUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque de photos de l’utilisateur.
-- **Confidentialité-Description de l’utilisation des rappels** (`NSRemindersUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux rappels de l’utilisateur.
-- **Confidentialité-Description de l’utilisation de Siri** (`NSSiriUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite envoyer des données utilisateur à Siri.
-- **Confidentialité-Description de l’utilisation de la reconnaissance vocale** (`NSSpeechRecognitionUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite envoyer des données utilisateur aux serveurs de reconnaissance vocale d’Apple.
-- **Confidentialité-Description de l’utilisation du fournisseur TV** (`NSVideoSubscriberAccountUsageDescription`)-Permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au compte du fournisseur TV de l’utilisateur.
+- **Confidentialité-Description de l’utilisation de Apple Music** (`NSAppleMusicUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur.
+- **Confidentialité-Description de l’utilisation du périphérique Bluetooth** (`NSBluetoothPeripheralUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à Bluetooth sur l’appareil de l’utilisateur.
+- **Confidentialité-Description de l’utilisation des calendriers** (`NSCalendarsUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au calendrier de l’utilisateur.
+- **Confidentialité-Description de l’utilisation de l’appareil photo** (`NSCameraUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’appareil photo de l’appareil.
+- **Confidentialité-Description de l’utilisation des contacts** (`NSContactsUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux contacts de l’utilisateur.
+- **Confidentialité-Description de l’utilisation du partage d’intégrité** (`NSHealthShareUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux données d’intégrité de l’utilisateur. Pour plus d’informations, consultez Référence de la [classe HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)d’Apple.
+- **Confidentialité-Description de l’utilisation de la mise à jour de l’intégrité** (`NSHealthUpdateUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite modifier les données d’intégrité de l’utilisateur. Pour plus d’informations, consultez Référence de la [classe HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)d’Apple.
+- **Confidentialité-Description de l’utilisation de HomeKit** (`NSHomeKitUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux données de configuration HomeKit de l’utilisateur.
+- **Confidentialité-Description de l’utilisation toujours** de l’emplacement (`NSLocationAlwaysUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite toujours avoir accès à l’emplacement de l’utilisateur.
+- Déconseillé **Confidentialité-Description de l’utilisation** de l’emplacement (`NSLocationUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur. *Remarque : cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez à la place `NSLocationAlwaysUsageDescription` ou `NSLocationWhenInUseUsageDescription`.*
+- **Confidentialité-emplacement de la description de l’utilisation en cours d’utilisation** (`NSLocationWhenInUseUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’emplacement de l’utilisateur pendant son exécution.
+- Déconseillé **Confidentialité-Description de l’utilisation de la bibliothèque multimédia** : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque multimédia de l’utilisateur. *Remarque : cette clé a été dépréciée dans iOS 8 (et versions ultérieures). Utilisez à la place `NSAppleMusicUsageDescription`.*
+- **Confidentialité-Description de l’utilisation du microphone** (`NSMicrophoneUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au microphone des appareils.
+- **Confidentialité-Description de l’utilisation du mouvement** (`NSMotionUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à l’accéléromètre de l’appareil.
+- **Confidentialité-Description de l’utilisation de la bibliothèque photo** (`NSPhotoLibraryUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder à la bibliothèque de photos de l’utilisateur.
+- **Confidentialité-Description de l’utilisation des rappels** (`NSRemindersUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder aux rappels de l’utilisateur.
+- **Confidentialité-Description de l’utilisation de Siri** (`NSSiriUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite envoyer des données utilisateur à Siri.
+- **Confidentialité-Description de l’utilisation de la reconnaissance vocale** (`NSSpeechRecognitionUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite envoyer des données utilisateur aux serveurs de reconnaissance vocale d’Apple.
+- **Confidentialité-Description de l’utilisation du fournisseur TV** (`NSVideoSubscriberAccountUsageDescription`) : permet au développeur de décrire la raison pour laquelle l’application souhaite accéder au compte du fournisseur TV de l’utilisateur.
 
 Pour plus d’informations sur l’utilisation des clés **info. plist** , consultez [référence des clés de liste de propriétés d’informations](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009248-SW1)d’Apple.
 
@@ -68,7 +68,7 @@ Pour plus d’informations sur l’utilisation des clés **info. plist** , consu
 
 ## <a name="setting-privacy-keys"></a>Définition des clés de confidentialité
 
-Prenons l’exemple suivant d’accès à HomeKit sur iOS 10 (et versions ultérieures), le développeur doit ajouter la `NSHomeKitUsageDescription` clé au fichier **info. plist** de l’application et fournir une chaîne qui déclare pourquoi l’application souhaite accéder à la base de données HomeKit de l’utilisateur. Cette chaîne est présentée à l’utilisateur la première fois qu’il exécute l’application :
+Prenons l’exemple suivant d’accès à HomeKit sur iOS 10 (et versions ultérieures), le développeur doit ajouter la clé de `NSHomeKitUsageDescription` au fichier **info. plist** de l’application et fournir une chaîne qui déclare pourquoi l’application souhaite accéder à la base de données HomeKit de l’utilisateur. Cette chaîne est présentée à l’utilisateur la première fois qu’il exécute l’application :
 
 ![Exemple d’alerte NSHomeKitUsageDescription](security-privacy-images/info01.png "Exemple d’alerte NSHomeKitUsageDescription")
 
@@ -80,14 +80,14 @@ Xamarin. iOS pour Visual Studio ne prend pas actuellement en charge la modificat
 2. Sélectionnez l' **éditeur plist générique** dans la liste des programmes pour ouvrir le fichier, puis cliquez sur **OK**.
 
     ![Sélectionner l’éditeur de plist générique](security-privacy-images/InfoEditorSelectionVs.png "Sélectionner l’éditeur de plist générique")
-3. Cliquez sur **+** le bouton sur la dernière ligne de l’éditeur pour ajouter une nouvelle entrée à la liste. Ce sera appelé « propriété personnalisée », avec le type défini sur `String` et une valeur vide.
+3. Cliquez sur le bouton **+** sur la dernière ligne de l’éditeur pour ajouter une nouvelle entrée à la liste. Ce sera appelé « propriété personnalisée », avec le type défini sur `String` et une valeur vide.
 4. Cliquez sur le nom de la propriété et une liste déroulante s’affiche.
 5. Dans la liste déroulante, sélectionnez une clé de confidentialité (par exemple, **confidentialité-Description de l’utilisation de HomeKit**) : 
 
     ![Sélectionner une clé de confidentialité](security-privacy-images/InfoPListEditorSelectKey.png "Sélectionner une clé de confidentialité")
 6. Entrez une description dans la colonne valeur pour la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur : 
 
-    ![Entrer une description](security-privacy-images/InfoPListSetValue.png "Entrer une description")
+    ![Entrer une description](security-privacy-images/InfoPListSetValue.png "Entrez une description")
 7. Enregistrez les modifications dans le fichier.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
@@ -102,13 +102,13 @@ Pour définir l’une des clés de confidentialité, procédez comme suit :
     ![Sélectionner une clé de confidentialité](security-privacy-images/info02.png "Sélectionner une clé de confidentialité")
 5. Entrez une description de la raison pour laquelle l’application souhaite accéder aux informations sur la fonctionnalité donnée ou l’utilisateur : 
 
-    ![Entrer une description](security-privacy-images/info03.png "Entrer une description")
+    ![Entrer une description](security-privacy-images/info03.png "Entrez une description")
 6. Enregistrez les modifications dans le fichier.
 
 -----
 
 > [!IMPORTANT]
-> Dans l’exemple ci-dessus, l’échec de `NSHomeKitUsageDescription` définition de la clé dans le fichier **info. plist** entraînerait l’échec _silencieux_ de l’application (en cours de fermeture par le système lors de l’exécution) sans erreur lorsqu’elle est exécutée dans iOS 10 (ou version ultérieure).
+> Dans l’exemple ci-dessus, l’échec de définition de la clé de `NSHomeKitUsageDescription` dans le fichier **info. plist** entraînerait l’échec _silencieux_ de l’application (en cours de fermeture par le système lors de l’exécution) sans erreur lorsqu’elle est exécutée dans iOS 10 (ou version ultérieure).
 
 <a name="Summary" />
 

@@ -7,30 +7,33 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a243acc0273931c963a586fbfda29586623b612e
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889170"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696442"
 ---
 # <a name="xamarinforms-carousel-page"></a>Page carrousel Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
-_Le CarouselPage Xamarin.Forms est une page que les utilisateurs peuvent balayer pour parcourir les pages de contenu, comme une galerie. Cet article montre comment utiliser un CarouselPage pour parcourir une collection de pages._
+_Xamarin. Forms CarouselPage est une page que les utilisateurs peuvent balayer de côté à côté pour naviguer dans les pages de contenu, comme une galerie. Cet article montre comment utiliser un CarouselPage pour naviguer dans une collection de pages._
+
+> [!IMPORTANT]
+> La [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) a été remplacée par le [`CarouselView`](xref:Xamarin.Forms.CarouselView), qui fournit une disposition avec défilement où les utilisateurs peuvent faire glisser pour parcourir une collection d’éléments. Pour plus d’informations sur la `CarouselView`, consultez [Xamarin. Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md).
 
 Les captures d’écran suivantes montrent un [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) sur chaque plateforme :
 
-![](carousel-page-images/thirdpage.png "Troisième élément CarouselPage")
+![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
 
 La disposition d’un [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) est identique sur chaque plateforme. Les pages peuvent être parcourues en balayant de droite à gauche pour naviguer vers l’avant dans la collection, et en balayant de gauche à droite pour naviguer en arrière dans la collection. Les captures d’écran suivantes montrent la première page dans une instance de [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) :
 
-![](carousel-page-images/firstpage.png "Premier élément CarouselPage")
+![](carousel-page-images/firstpage.png "CarouselPage First Item")
 
 Un balayage de droite à gauche permet d’accéder à la deuxième page, comme illustré dans les captures d’écran suivantes :
 
-![](carousel-page-images/secondpage.png "Deuxième élément CarouselPage")
+![](carousel-page-images/secondpage.png "CarouselPage Second Item")
 
 Un nouveau balayage de droite à gauche permet d’accéder à la troisième page, tandis qu’un balayage de gauche à droite permet de revenir à la page précédente.
 
@@ -40,11 +43,6 @@ Un nouveau balayage de droite à gauche permet d’accéder à la troisième pag
 Si un [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) est incorporé dans la page [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) d’un [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage), la valeur `false` doit être affectée à la propriété [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) afin d’éviter les conflits de mouvement entre `CarouselPage` et `MasterDetailPage`.
 
 Pour plus d’informations sur [`CarouselPage`](xref:Xamarin.Forms.CarouselPage), consultez le [chapitre 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) de l’ouvrage de Charles Petzold sur Xamarin.Forms.
-
-<!--
-> [!NOTE]
-> The [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](xref:Xamarin.Forms.CarouselView) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
--->
 
 ## <a name="create-a-carouselpage"></a>Créer un CarouselPage
 

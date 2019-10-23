@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/25/2019
-ms.openlocfilehash: c008cc29d2ceae073459766597040af653329d71
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: 2ed51763b5866c15e91d88a6a1a58c7285fb5973
+ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69893955"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72749766"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Cycle de vie Shell Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Les applications Shell respectent le cycle de vie Xamarin.Forms. Un événement `Appearing` est déclenché lorsqu’une page est sur le point d'apparaître sur l’écran, tandis qu’un événement `Disappearing` est déclenché lorsqu’une page est sur le point de disparaître de l’écran. Ces événements sont propagés aux pages et peuvent être gérés en remplaçant les méthodes [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) ou [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) sur la page.
 
@@ -39,6 +39,6 @@ Pour plus d’informations sur la navigation modale, consultez [Pages modales Xa
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Xaminals (exemple)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/Xaminals/)
+- [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Cycle de vie des applications Xamarin.Forms](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
 - [Pages modales Xamarin.Forms](~/xamarin-forms/app-fundamentals/navigation/modal.md)

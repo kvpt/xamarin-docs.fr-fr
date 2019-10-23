@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: 9e3acf1c5b101f021b0071947e91f0c9fc3dafcb
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.date: 09/25/2019
+ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739253"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695934"
 ---
 # <a name="xamarinforms-shell-search"></a>Recherche dans Xamarin.Forms Shell
 
@@ -20,11 +20,11 @@ ms.locfileid: "68739253"
 
 Xamarin.Forms Shell inclut une fonctionnalité de recherche intégrée, fournie par la classe `SearchHandler`. Une fonction de recherche peut être ajoutée à une page en définissant la propriété jointe `Shell.SearchHandler` sur un objet `SearchHandler` sous-classé. Une zone de recherche est alors ajoutée en haut de la page :
 
-[![Capture d’écran d’un élément SearchHandler Shell sur iOS et Android](search-images/searchhandler.png "SearchHandler Shell")](search-images/searchhandler-large.png#lightbox "SearchHandler Shell")
+[![Capture d’écran d’un shell SearchHandler, sur iOS et Android](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
 
 Lorsque vous saisissez une requête dans la zone de recherche, la propriété `Query` est mise à jour et la méthode `OnQueryChanged` est exécutée à chaque mise à jour. Cette méthode peut être substituée pour remplir la zone des suggestions de recherche avec des données :
 
-[![Capture d’écran des résultats d’une recherche dans un SearchHandler Shell sur iOS et Android](search-images/search-suggestions.png "Résultats d’une recherche dans un SearchHandler Shell")](search-images/search-suggestions-large.png#lightbox "Résultats d’une recherche dans un SearchHandler Shell")
+[![Capture d’écran des résultats de la recherche dans un shell SearchHandler, sur iOS et Android](search-images/search-suggestions.png "Résultats de la recherche dans le shell SearchHandler")](search-images/search-suggestions-large.png#lightbox "Résultats de la recherche dans le shell SearchHandler")
 
 Ensuite, lorsqu’un résultat est sélectionné dans la zone des suggestions de recherche, la méthode `OnItemSelected` est exécutée. Cette méthode peut être substituée pour réagir de façon appropriée, par exemple, en accédant à une page de détail.
 
@@ -63,7 +63,7 @@ public class MonkeySearchHandler : SearchHandler
 
 La substitution `OnQueryChanged` a deux arguments : `oldValue`, qui contient la requête de recherche précédente, et `newValue`, qui contient la requête de recherche actuelle. La zone des suggestions de recherche peut être mise à jour en définissant la propriété `SearchHandler.ItemsSource` sur une collection `IEnumerable` contenant les éléments qui correspondent à la requête de recherche actuelle.
 
-Lorsqu’un résultat de recherche est sélectionné par l’utilisateur, la substitution `OnItemSelected` est exécutée et la propriété `SelectedItem` est définie. Dans cet exemple, la méthode accède à une autre page qui affiche des données concernant l’élément `Animal` sélectionné. Pour plus d’informations sur la navigation, consultez [Navigation dans Xamarin.Forms Shell](navigation.md).
+Lorsqu’un résultat de recherche est sélectionné par l’utilisateur, la substitution `OnItemSelected` est exécutée et la propriété `SelectedItem` est définie. Dans cet exemple, la méthode accède à une autre page qui affiche des données concernant l’élément `Animal` sélectionné. Pour plus d’informations sur la navigation, voir [Navigation Shell Xamarin.Forms](navigation.md).
 
 > [!NOTE]
 > Des propriétés `SearchHandler` supplémentaires peuvent être définies pour contrôler l’apparence de la zone de recherche.
@@ -99,15 +99,15 @@ La méthode `MonkeySearchHandler.OnQueryChanged` retourne un `List` des objets `
 
 La propriété `ShowsResults` est définie sur `true`, de sorte que les suggestions de recherche sont affichées lorsque l’utilisateur saisit une requête de recherche :
 
-[![Capture d’écran des résultats de la recherche dans un SearchHandler Shell sur iOS et Android](search-images/search-results.png "Résultats de la recherche dans un SearchHandler Shell")](search-images/search-results-large.png#lightbox "Résultats de la recherche dans un SearchHandler Shell")
+[![Capture d’écran des résultats de la recherche dans un shell SearchHandler, sur iOS et Android](search-images/search-results.png "Résultats de la recherche dans le shell SearchHandler")](search-images/search-results-large.png#lightbox "Résultats de la recherche dans le shell SearchHandler")
 
 À chaque changement de la requête de recherche, la zone de suggestions est mise à jour :
 
-[![Capture d’écran des résultats de la recherche dans un SearchHandler Shell sur iOS et Android](search-images/search-results-change.png "Résultats de la recherche dans un SearchHandler Shell")](search-images/search-results-change-large.png#lightbox "Résultats de la recherche dans un SearchHandler Shell")
+[![Capture d’écran des résultats de la recherche dans un shell SearchHandler, sur iOS et Android](search-images/search-results-change.png "Résultats de la recherche dans le shell SearchHandler")](search-images/search-results-change-large.png#lightbox "Résultats de la recherche dans le shell SearchHandler")
 
 Lorsqu’un résultat de recherche est sélectionné, la page `MonkeyDetailPage` s’affiche, et les données relatives au singe sélectionné apparaissent :
 
-[![Capture d’écran des détails du singe sur iOS et Android](search-images/detailpage.png "Détails du singe")](search-images/detailpage-large.png#lightbox "Détails du singe")
+[![Capture d’écran des détails du singe, sur iOS et Android](search-images/detailpage.png "Détails du singe")](search-images/detailpage-large.png#lightbox "Détails du singe")
 
 ## <a name="define-search-results-item-appearance"></a>Définir l’apparence d’un élément des résultats de la recherche
 
@@ -172,7 +172,7 @@ Les éléments spécifiés dans le [`DataTemplate`](xref:Xamarin.Forms.DataTempl
 
 Les captures d’écran suivantes montrent le résultat de la création d’un modèle pour chaque élément de la zone de suggestions :
 
-[![Capture d’écran d’un modèle de résultat de recherche dans un SearchHandler Shell sur iOS et Android](search-images/search-results-template.png "Modèle de résultat de recherche dans un SearchHandler Shell")](search-images/search-results-template-large.png#lightbox "Modèle de résultat de recherche dans un SearchHandler Shell")
+[![Capture d’écran des résultats de recherche basés sur un modèle dans un shell SearchHandler, sur iOS et Android](search-images/search-results-template.png "Résultats de recherche basés sur un modèle de Shell SearchHandler")](search-images/search-results-template-large.png#lightbox "Résultats de recherche basés sur un modèle de Shell SearchHandler")
 
 Pour plus d’informations sur les modèles de données, consultez [Modèles de données Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md).
 
@@ -211,12 +211,14 @@ La classe `SearchHandler` définit les propriétés suivantes destinées à modi
 
 - `BackgroundColor`, de type `Color` : couleur d’arrière-plan pour le texte de la zone recherche.
 - `CancelButtonColor`, de type `Color` : couleur du bouton Annuler.
+- `CharacterSpacing`, de type `double`, est l’espacement entre les caractères du texte de `SearchHandler`.
 - `FontAttributes`, de type `FontAttributes` : indique si le texte de la zone de recherche est en italique ou en gras.
 - `FontFamily`, de type `string` : famille de polices utilisée pour le texte de la zone de recherche.
 - `FontSize`, de type `double` : taille du texte de la zone de recherche.
 - `HorizontalTextAlignment`, de type `TextAlignment` : alignement horizontal du texte de la zone de recherche.
 - `PlaceholderColor`, de type `Color` : couleur pour l’espace réservé du texte de la zone de recherche.
 - `TextColor`, de type `Color` : couleur pour le texte de la zone de recherche.
+- `VerticalTextAlignment`, de type `TextAlignment`, est l’alignement vertical du texte de la zone de recherche.
 
 ## <a name="searchhandler-keyboard"></a>Clavier SearchHandler
 
@@ -327,4 +329,4 @@ En outre, la classe `SearchHandler` fournit les méthodes substituables suivante
 ## <a name="related-links"></a>Liens connexes
 
 - [Xaminals (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [Navigation dans Xamarin.Forms Shell](navigation.md)
+- [Navigation Shell Xamarin.Forms](navigation.md)
