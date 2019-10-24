@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/18/2019
-ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.date: 09/27/2019
+ms.openlocfilehash: a8698975d2609599e1404fbb9c87c617a54f23d7
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "69887900"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696347"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
@@ -32,16 +32,17 @@ Les extensions de balisage XAML aident à améliorer la puissance et la flexibil
 
 Des extensions de balisage XAML supplémentaires ont été prises en charge par d’autres implémentations XAML, et sont également prises en charge par Xamarin. Forms. Celles-ci sont décrites plus en détail dans d’autres articles :
 
-- `StaticResource` &ndash; des objets de référence à partir d’un dictionnaire de ressources, comme décrit dans l’article [**dictionnaires de ressources**](~/xamarin-forms/xaml/resource-dictionaries.md).
-- `DynamicResource` &ndash; répondre aux modifications apportées aux objets dans un dictionnaire de ressources, comme décrit dans l’article [**styles dynamiques**](~/xamarin-forms/user-interface/styles/dynamic.md).
-- `Binding` &ndash; établir un lien entre les propriétés de deux objets, comme décrit dans l’article [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [**liaison à partir d’un modèle de contrôle**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md).
+- `StaticResource`-référencer des objets à partir d’un dictionnaire de ressources, comme décrit dans l’article [**dictionnaires de ressources**](~/xamarin-forms/xaml/resource-dictionaries.md).
+- `DynamicResource`-répondez aux modifications des objets dans un dictionnaire de ressources, comme décrit dans l’article [**styles dynamiques**](~/xamarin-forms/user-interface/styles/dynamic.md).
+- `Binding` : établissez un lien entre les propriétés de deux objets, comme décrit dans l’article [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+- `TemplateBinding` : effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [**liaison à partir d’un modèle de contrôle**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md).
+- `RelativeSource` : définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans les [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)de l’article.
 
 La disposition [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) utilise l’extension de balisage personnalisée [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression). Cette extension de balisage est décrite dans l’article [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
 <a name="static" />
 
-## <a name="xstatic-markup-extension"></a>x:Static, extension de balisage
+## <a name="xstatic-markup-extension"></a>x:Static (extension de balisage)
 
 L’extension de balisage `x:Static` est prise en charge par la classe [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension) . La classe a une propriété unique nommée [`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member) de type `string` que vous définissez sur le nom d’une constante publique, d’une propriété statique, d’un champ statique ou d’un membre d’énumération.
 
@@ -147,7 +148,7 @@ Voici l’exemple en cours d’exécution :
 
 <a name="reference" />
 
-## <a name="xreference-markup-extension"></a>x:Référence, extension de balisage
+## <a name="xreference-markup-extension"></a>x :Reference (extension de balisage)
 
 L’extension de balisage `x:Reference` est prise en charge par la classe [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) . La classe a une propriété unique nommée [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) de type `string` que vous définissez sur le nom d’un élément de la page qui a reçu un nom avec `x:Name`. Cette propriété de `Name` est la propriété de contenu de `ReferenceExtension`, donc `Name=` n’est pas nécessaire quand `x:Reference` apparaît entre accolades.
 
@@ -191,7 +192,7 @@ Les deux expressions `x:Reference` utilisent la version abrégée du nom de la c
 
 <a name="type" />
 
-## <a name="xtype-markup-extension"></a>x:Type, extension de balisage
+## <a name="xtype-markup-extension"></a>x:Type (extension de balisage)
 
 L’extension de balisage `x:Type` est l’équivalent XAML C# du mot clé [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) . Il est pris en charge par la classe [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) , qui définit une propriété nommée [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) de type `string` qui a pour valeur un nom de classe ou de structure. L’extension de balisage `x:Type` retourne l’objet [`System.Type`](xref:System.Type) de cette classe ou structure. `TypeName` est la propriété de contenu de `TypeExtension`, donc `TypeName=` n’est pas nécessaire lorsque `x:Type` apparaît avec des accolades.
 
@@ -329,7 +330,7 @@ La méthode qui est exécutée quand un `Button` est enfoncé crée une nouvelle
 
 <a name="array" />
 
-## <a name="xarray-markup-extension"></a>x:Array, extension de balisage
+## <a name="xarray-markup-extension"></a>x:Array (extension de balisage)
 
 L’extension de balisage `x:Array` vous permet de définir un tableau dans le balisage. Il est pris en charge par la classe [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) , qui définit deux propriétés :
 
@@ -406,7 +407,7 @@ Quand vous définissez des tableaux de types communs tels que des chaînes ou de
 
 <a name="null" />
 
-## <a name="xnull-markup-extension"></a>x:Null, extension de balisage
+## <a name="xnull-markup-extension"></a>x:Null (extension de balisage)
 
 L’extension de balisage `x:Null` est prise en charge par la classe [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension) . Il n’a pas de propriétés et est simplement l’équivalent XAML C# du mot clé [`null`](/dotnet/csharp/language-reference/keywords/null/) .
 
@@ -481,7 +482,7 @@ L’extension de balisage `OnPlatform` est prise en charge par la classe [`OnPla
 > [!NOTE]
 > L’analyseur XAML permet à la classe [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) d’être abrégée en `OnPlatform`.
 
-La propriété de `Default` est la propriété de contenu de `OnPlatformExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Default=` partie de l’expression à condition qu’il s’agisse du premier argument.
+La propriété de `Default` est la propriété de contenu de `OnPlatformExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Default=` partie de l’expression à condition qu’il s’agisse du premier argument. Si la propriété `Default` n’est pas définie, elle prend par défaut la valeur de la propriété [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) , à condition que l’extension de balisage cible un [`BindableProperty`](xref:Xamarin.Forms.BindableProperty).
 
 > [!IMPORTANT]
 > L’analyseur XAML s’attend à ce que les valeurs du type correct soient fournies aux propriétés utilisant l’extension de balisage `OnPlatform`. Si la conversion de type est nécessaire, l’extension de balisage `OnPlatform` tente de l’exécuter à l’aide des convertisseurs par défaut fournis par Xamarin. Forms. Toutefois, certaines conversions de type ne peuvent pas être effectuées par les convertisseurs par défaut et, dans ce cas, la propriété `Converter` doit être définie sur une implémentation de `IValueConverter`.

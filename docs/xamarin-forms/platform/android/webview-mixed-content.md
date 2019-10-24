@@ -1,24 +1,24 @@
 ---
 title: Contenu mixte WebView sur Android
-description: Caractéristiques de la plateforme vous autorisons à utiliser les fonctionnalités qui est disponible uniquement sur une plateforme spécifique, sans avoir à implémenter des convertisseurs personnalisés ou des effets. Cet article explique comment utiliser la plateforme Android spécifique qui affichait du contenu mixte dans une WebView dans des applications qui ciblent l’API 21 ou une version ultérieure.
+description: Les spécificités des plateformes vous permettent d’utiliser des fonctionnalités uniquement disponibles sur une plateforme spécifique, sans implémenter de convertisseurs ou d’effets personnalisés. Cet article explique comment utiliser le spécifique à la plateforme Android qui affiche du contenu mixte dans une WebView dans des applications qui ciblent l’API 21 ou une version ultérieure.
 ms.prod: xamarin
 ms.assetid: 68F908F3-04C5-4B91-B6E5-B7E8357B4154
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 286a7dceead327d727110d4ebbcecbc2341345b3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f9b4a12d3049cea37235cc04805a7411a9bdb236
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656069"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696490"
 ---
 # <a name="webview-mixed-content-on-android"></a>Contenu mixte WebView sur Android
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Ce contrôle spécifique à la plateforme Android indique [`WebView`](xref:Xamarin.Forms.WebView) si un peut afficher du contenu mixte dans les applications qui ciblent l’API 21 ou une version ultérieure. Contenu mixte est un contenu qui sont initialement chargée sur une connexion HTTPS, mais qui charge des ressources (telles que des images, audio, vidéo, feuilles de style, scripts) via une connexion HTTP. Elle est consommée dans XAML en définissant le [ `WebView.MixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) propriété attachée à une valeur de la [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) énumération :
+Ce contrôle spécifique à la plateforme Android indique si une [`WebView`](xref:Xamarin.Forms.WebView) peut afficher du contenu mixte dans les applications qui ciblent l’API 21 ou une version ultérieure. Le contenu mixte est un contenu qui est initialement chargé sur une connexion HTTPs, mais qui charge des ressources (telles que des images, des fichiers audio, des vidéos, des feuilles de style, des scripts) sur une connexion HTTP. Il est consommé en XAML en affectant à la propriété jointe [`WebView.MixedContentMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) la valeur de l’énumération [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) :
 
 ```xaml
 <ContentPage ...
@@ -27,7 +27,7 @@ Ce contrôle spécifique à la plateforme Android indique [`WebView`](xref:Xamar
 </ContentPage>
 ```
 
-Vous pouvez également, il peut être consommé à partir de C# à l’aide de l’API fluent :
+Elle peut également être utilisée à partir de C# l’API Fluent :
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -37,15 +37,15 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 ```
 
-Le `WebView.On<Android>` méthode spécifie que cette plateforme spécifique s’exécute uniquement sur Android. Le [ `WebView.SetMixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)) (méthode), dans le [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) espace de noms, est utilisé pour contrôler si le contenu mixte peut être affiché, avec le [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) énumération en fournissant trois valeurs possibles :
+La méthode `WebView.On<Android>` spécifie que ce spécifique à la plateforme s’exécutera uniquement sur Android. La méthode [`WebView.SetMixedContentMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)) , dans l’espace de noms [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) , est utilisée pour contrôler si le contenu mixte peut être affiché, avec l’énumération [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) qui fournit trois valeurs possibles :
 
-- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) – Indique que le [ `WebView` ](xref:Xamarin.Forms.WebView) permettra une origine HTTPS charger le contenu à partir d’une origine HTTP.
-- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) – Indique que le [ `WebView` ](xref:Xamarin.Forms.WebView) n’autorise pas une origine HTTPS charger le contenu à partir d’une origine HTTP.
-- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) – Indique que le [ `WebView` ](xref:Xamarin.Forms.WebView) tentera d’être compatible avec l’approche de la dernière version du navigateur web appareil. Partie du contenu HTTP peut-être être autorisé à être chargés par une entité origin HTTPS et autres types de contenu seront bloqués. Les types de contenu qui sont bloqués ou autorisés peuvent changer avec chaque version de système d’exploitation.
+- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) : indique que le [`WebView`](xref:Xamarin.Forms.WebView) permettra à une origine https de charger le contenu à partir d’une origine http.
+- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) : indique que le [`WebView`](xref:Xamarin.Forms.WebView) n’autorise pas une origine HTTPS à charger le contenu à partir d’une origine http.
+- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) : indique que le [`WebView`](xref:Xamarin.Forms.WebView) essaiera d’être compatible avec l’approche du dernier navigateur Web de l’appareil. Certains contenus HTTP peuvent être autorisés à être chargés par une origine HTTPs et d’autres types de contenu seront bloqués. Les types de contenu bloqués ou autorisés peuvent changer avec chaque version du système d’exploitation.
 
-Le résultat qui est spécifié [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) valeur est appliquée à la [ `WebView` ](xref:Xamarin.Forms.WebView), qui contrôle si le contenu mixte peut s’afficher :
+Le résultat est qu’une valeur de [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) spécifiée est appliquée au [`WebView`](xref:Xamarin.Forms.WebView), qui contrôle si le contenu mixte peut être affiché :
 
-[![WebView mixte de gestion de contenu spécifique à la plateforme](webview-mixed-content-images/webview-mixedcontent.png "WebView mixte de gestion de contenu spécifique à la plateforme")](webview-mixed-content-images/webview-mixedcontent-large.png#lightbox "WebView mixte de gestion de contenu spécifique à la plateforme")
+[![WebView gestion du contenu mixte spécifique à la plateforme](webview-mixed-content-images/webview-mixedcontent.png "WebView gestion du contenu mixte spécifique à la plateforme")](webview-mixed-content-images/webview-mixedcontent-large.png#lightbox "WebView gestion du contenu mixte spécifique à la plateforme")
 
 ## <a name="related-links"></a>Liens connexes
 

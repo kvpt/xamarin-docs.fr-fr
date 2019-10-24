@@ -1,22 +1,22 @@
 ---
 title: Classes de base de renderer et contrôles natifs
-description: Chaque contrôle Xamarin.Forms est accompagné d’un renderer pour chaque plateforme qui crée une instance d’un contrôle natif. Cet article liste les classes de renderer et de contrôle natif qui implémentent chaque page, disposition, vue et cellule Xamarin.Forms.
+description: Chaque contrôle Xamarin.Forms est accompagné d’un convertisseur pour chaque plateforme qui crée une instance de contrôle natif. Cet article liste les classes de renderer et de contrôle natif qui implémentent chaque page, disposition, vue et cellule Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/11/2019
-ms.openlocfilehash: 014ee5ae312e2dc4e8cf662a790d5fbe4b880f0f
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
-ms.translationtype: HT
+ms.date: 10/11/2019
+ms.openlocfilehash: cf9c5d7aa018a6d12a6c4788dc1e8114088d056c
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513027"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697134"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Classes de base de renderer et contrôles natifs
 
-_Chaque contrôle Xamarin.Forms est accompagné d’un renderer pour chaque plateforme qui crée une instance d’un contrôle natif. Cet article liste les classes de renderer et de contrôle natif qui implémentent chaque page, disposition, vue et cellule Xamarin.Forms._
+_Chaque contrôle Xamarin. Forms a un convertisseur associé pour chaque plateforme qui crée une instance d’un contrôle natif. Cet article répertorie les classes de convertisseur et de contrôle natif qui implémentent chaque page Xamarin. Forms, la disposition, la vue et la cellule._
 
 À l’exception de la classe `MapRenderer`, les renderers spécifiques à la plateforme se trouvent dans les espaces de noms suivants :
 
@@ -72,19 +72,21 @@ Le tableau suivant liste les classes de renderer et de contrôle natif qui impl�
 |--- |--- |--- |--- |--- |--- |
 |[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|Barre de progression||Barre de progression|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS et Android), BoxViewRenderer (UWP)|UIView|ViewGroup||Rectangle|
-|[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Bouton|AppCompatButton|Bouton|
+|[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Button|AppCompatButton|Button|
+|[`CarouselView`](xref:Xamarin.Forms.CarouselView)|CarouselViewRenderer|UICollectionView||RecyclerView|ListViewBase|
 |`CheckBox`|CheckBoxRenderer|UIButton||AppCompatCheckBox|Case à cocher|
-|[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView||
+|[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView|ListViewBase|
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||TextBox|
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
 |[`Image`](xref:Xamarin.Forms.Image)|ImageRenderer|UIImageView|ImageView||Image|
-|[`ImageButton`](xref:Xamarin.Forms.ImageButton)|ImageButtonRenderer|UIButton||AppCompatImageButton|Bouton|
+|[`ImageButton`](xref:Xamarin.Forms.ImageButton)|ImageButtonRenderer|UIButton||AppCompatImageButton|Button|
 |[`Label`](xref:Xamarin.Forms.Label)|LabelRenderer|UILabel|TextView||TextBlock|
 |[`ListView`](xref:Xamarin.Forms.ListView)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|Affichage de liste||Affichage de liste|
 |[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MKMapView||MapControl|
 |[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|ComboBox|
 |[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|Barre de progression||Barre de progression|
+|`RefreshView`|RefreshViewRenderer|UIView||SwipeRefreshLayout|RefreshContainer|
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
 |[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||Curseur|
 |[`Stepper`](xref:Xamarin.Forms.Stepper)|StepperRenderer|UIStepper|LinearLayout||Contrôle|
@@ -107,4 +109,4 @@ Le tableau suivant liste les classes de renderer et de contrôle natif qui impl�
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans cet article, nous avons listé les classes de renderer et de contrôle natif qui implémentent chaque page, disposition, vue et cellule Xamarin.Forms. Chaque contrôle Xamarin.Forms est accompagné d’un renderer pour chaque plateforme qui crée une instance d’un contrôle natif.
+Dans cet article, nous avons listé les classes de renderer et de contrôle natif qui implémentent chaque page, disposition, vue et cellule Xamarin.Forms. Chaque contrôle Xamarin.Forms est accompagné d’un convertisseur pour chaque plateforme qui crée une instance de contrôle natif.

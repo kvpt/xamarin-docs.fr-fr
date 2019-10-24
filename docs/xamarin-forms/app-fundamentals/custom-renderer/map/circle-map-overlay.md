@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ecc4686e9966de7a184730589c44a951e4daddb2
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 1fe2611e26d357d910cc85800355b42d11e1104b
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424866"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697185"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Mise en surbrillance d’une zone circulaire sur une carte
 
@@ -33,7 +33,7 @@ Quand un contrôle [`Map`](xref:Xamarin.Forms.Maps.Map) est restitué par une ap
 1. [Personnalisez](#Customizing_the_Map) la carte en créant un renderer personnalisé pour la carte sur chaque plateforme.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) doit être initialisé et configuré avant utilisation. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) doit être initialisé et configuré avant utilisation. Pour plus d’informations, consultez [`Maps Control`](~/xamarin-forms/user-interface/map/index.md).
 
 Pour plus d’informations sur la personnalisation d’une carte à l’aide d’un renderer personnalisé, consultez [Personnalisation d’une épingle de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
