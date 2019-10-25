@@ -7,52 +7,54 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: b361bc988b66d38fc33ceb866a2c5ec83153f8d0
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 0812347e85b0ccb6aa0bbb16649a89bb4d961c9b
+ms.sourcegitcommit: a14edebf00f3e0f8944e59042ca7aa5c42173e30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200013"
+ms.lasthandoff: 10/22/2019
+ms.locfileid: "72780351"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms, ToolbarItem
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
-La classe Xamarin. [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) Forms est un type spécial de bouton qui peut être ajouté à `Page` la collection `ToolbarItems` d’un objet. Chaque `ToolbarItem` objet apparaît sous la forme d’un bouton dans la barre de navigation de l’application. Une `ToolbarItem` instance peut avoir une icône et apparaître en tant qu’élément de menu principal ou secondaire. La `ToolbarItem` classe hérite de [`MenuItem`](xref:Xamarin.Forms.MenuItem).
+La classe Xamarin. Forms [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) est un type spécial de bouton qui peut être ajouté à la collection `ToolbarItems` d’un objet `Page`. Chaque objet `ToolbarItem` s’affiche sous la forme d’un bouton dans la barre de navigation de l’application. Une instance `ToolbarItem` peut avoir une icône et apparaître en tant qu’élément de menu principal ou secondaire. La classe `ToolbarItem` hérite de [`MenuItem`](xref:Xamarin.Forms.MenuItem).
 
-Les captures d’écran `ToolbarItem` suivantes montrent des objets dans la barre de navigation sur iOS et Android:
+Les captures d’écran suivantes montrent des objets `ToolbarItem` dans la barre de navigation sur iOS et Android :
 
 ![Capture d’écran de démonstration de ToolbarItem sur Android et iOS](toolbaritem-images/toolbaritem-device-screenshot.png "Capture d’écran de démonstration de ToolbarItem sur Android et iOS")
 
-La `ToolbarItem` classe définit les propriétés suivantes:
+La classe `ToolbarItem` définit les propriétés suivantes :
 
-* [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)valeur enum qui détermine si l' `ToolbarItem` instance s’affiche dans le menu principal ou secondaire. `ToolbarItemOrder`
-* [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)valeur qui détermine l’ordre d’affichage des éléments dans la collection `Page` d' `ToolbarItems` un objet. `integer`
+* [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) est une valeur d’énumération `ToolbarItemOrder` qui détermine si l’instance `ToolbarItem` s’affiche dans le menu principal ou secondaire.
+* [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority) est une valeur `integer` qui détermine l’ordre d’affichage des éléments dans la collection `ToolbarItems` d’un objet `Page`.
 
-La `ToolbarItem` classe hérite des propriétés suivantes utilisées en général de la `MenuItem` classe:
+La classe `ToolbarItem` hérite des propriétés utilisées en général suivantes de la classe `MenuItem` :
 
-* [`Command`](xref:Xamarin.Forms.MenuItem.Command)est un `ICommand` qui permet de lier des actions d’utilisateur, telles que des clics de doigt ou des clics, aux commandes définies sur un ViewModel.
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)est un `object` qui spécifie le paramètre qui doit être passé à `Command`l'.
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)est une `ImageSource` valeur qui détermine l’icône d’affichage sur `ToolbarItem` un objet.
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)est un `string` qui détermine le texte affiché sur un `ToolbarItem` objet.
+* [`Command`](xref:Xamarin.Forms.MenuItem.Command) est un `ICommand` qui permet de lier des actions de l’utilisateur, telles que des clics ou clics, à des commandes définies sur un ViewModel.
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) est un `object` qui spécifie le paramètre qui doit être passé au `Command`.
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) est une valeur `ImageSource` qui détermine l’icône d’affichage sur un objet `ToolbarItem`.
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text) est un `string` qui détermine le texte à afficher sur un objet `ToolbarItem`.
 
-Ces propriétés sont sauvegardées par [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) des objets, `ToolbarItem` ce qui signifie qu’une instance peut être la cible des liaisons de données.
+Ces propriétés sont sauvegardées par des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , de sorte qu’une instance `ToolbarItem` peut être la cible des liaisons de données.
 
 > [!NOTE]
-> Une alternative à la création d’une [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) barre d’outils à partir [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) d’objets consiste à définir la propriété jointe sur une classe de disposition qui contient plusieurs vues. Pour plus d’informations, consultez [affichage des affichages dans la barre de navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar).
+> Une alternative à la création d’une barre d’outils à partir d' [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) objets consiste à définir la [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) propriété jointe à une classe de disposition qui contient plusieurs vues. Pour plus d’informations, consultez [affichage des affichages dans la barre de navigation](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar).
 
 ## <a name="create-a-toolbaritem"></a>Créer un ToolbarItem
 
-Un `ToolbarItem` objet peut être instancié en XAML. Les `Text` propriétés `IconImageSource` et peuvent être définies pour déterminer le mode d’affichage du bouton dans la barre de navigation. L’exemple suivant montre comment instancier un `ToolbarItem` avec des propriétés communes définies:
+Un objet `ToolbarItem` peut être instancié en XAML. Les propriétés `Text` et `IconImageSource` peuvent être définies pour déterminer le mode d’affichage du bouton dans la barre de navigation. L’exemple suivant montre comment instancier un `ToolbarItem` avec des propriétés communes définies, et l’ajouter à la collection de `ToolbarItems` d’un `ContentPage`:
 
 ```xaml
-<ToolbarItem Text="Example Item"
-             IconImageSource="example_icon.png"
-             Order="Primary"
-             Priority="0" />
+<ContentPage.ToolbarItems>
+    <ToolbarItem Text="Example Item"
+                 IconImageSource="example_icon.png"
+                 Order="Primary"
+                 Priority="0" />
+</ContentPage.ToolbarItems>
 ```
 
-Cet exemple génère un `ToolbarItem` objet qui contient du texte, une icône et s’affiche en premier dans la zone de la barre de navigation principale. Un `ToolbarItem` peut également être créé dans le code et ajouté à `ToolbarItems` la collection:
+Cet exemple génère un objet `ToolbarItem` contenant du texte, une icône et s’affiche en premier dans la zone de la barre de navigation principale. Une `ToolbarItem` peut également être créée dans le code et ajoutée à la collection de `ToolbarItems` :
 
 ```csharp
 ToolbarItem item = new ToolbarItem
@@ -67,28 +69,28 @@ ToolbarItem item = new ToolbarItem
 this.ToolbarItems.Add(item);
 ```
 
-Le fichier représenté par le `string`, fourni `IconImageSource` en tant que propriété, doit exister dans chaque projet de plateforme.
+Le fichier représenté par le `string`, fourni comme `IconImageSource` propriété, doit exister dans chaque projet de plateforme.
 
 > [!NOTE]
-> Les ressources d’image sont gérées différemment sur chaque plateforme. Un `ImageSource` peut provenir de sources, notamment d’un fichier local ou d’une ressource incorporée, d’un URI ou d’un flux. Pour plus d’informations sur la `IconImageSource` définition de la propriété et des images dans Xamarin. Forms, consultez [images dans Xamarin. Forms](~/xamarin-forms/user-interface/images.md).
+> Les ressources d’image sont gérées différemment sur chaque plateforme. Une `ImageSource` peut provenir de sources, notamment d’un fichier local ou d’une ressource incorporée, d’un URI ou d’un flux. Pour plus d’informations sur la définition de la propriété `IconImageSource` et des images dans Xamarin. Forms, consultez [images dans Xamarin. Forms](~/xamarin-forms/user-interface/images.md).
 
 ## <a name="define-button-behavior"></a>Définir le comportement du bouton
 
-La `ToolbarItem` classe hérite `Clicked` de l’événement de `MenuItem` la classe. Un gestionnaire d’événements peut être attaché à `Clicked` l’événement pour réagir à des clics ou `ToolbarItem` des clics sur des instances en XAML:
+La classe `ToolbarItem` hérite de l’événement `Clicked` de la classe `MenuItem`. Un gestionnaire d’événements peut être attaché à l’événement `Clicked` pour réagir à des pressions ou des clics sur des instances de `ToolbarItem` en XAML :
 
 ```xaml
 <ToolbarItem ...
              Clicked="OnItemClicked" />
 ```
 
-Un gestionnaire d’événements peut également être joint dans le code:
+Un gestionnaire d’événements peut également être joint dans le code :
 
 ```csharp
 ToolbarItem item = new ToolbarItem { ... }
 item.Clicked += OnItemClicked;
 ```
 
-Les exemples précédents référençaient `OnItemClicked` un gestionnaire d’événements. Le code suivant illustre un exemple d’implémentation:
+Les exemples précédents référençaient un gestionnaire d’événements `OnItemClicked`. Le code suivant illustre un exemple d’implémentation :
 
 ```csharp
 void OnItemClicked(object sender, EventArgs e)
@@ -98,22 +100,22 @@ void OnItemClicked(object sender, EventArgs e)
 }
 ```
 
-`ToolbarItem`les objets peuvent également utiliser `Command` les `CommandParameter` propriétés et pour réagir à l’entrée d’utilisateur sans gestionnaires d’événements. Pour plus d’informations sur `ICommand` l’interface et la liaison de données MVVM, consultez [comportement du MVVM Xamarin. Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm).
+les objets `ToolbarItem` peuvent également utiliser les propriétés `Command` et `CommandParameter` pour réagir aux entrées d’utilisateur sans gestionnaires d’événements. Pour plus d’informations sur l’interface `ICommand` et la liaison de données MVVM, consultez [comportement de Xamarin. Forms MenuItem MVVM](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm).
 
 ## <a name="primary-and-secondary-menus"></a>Menus principal et secondaire
 
-L' `ToolbarItemOrder` énumération `Default`a `Primary`des valeurs `Secondary` , et.
+L’énumération `ToolbarItemOrder` a des valeurs `Default`, `Primary`et `Secondary`.
 
-Lorsque la `Order` propriété a la `Primary`valeur, l' `ToolbarItem` objet s’affiche dans la barre de navigation principale sur toutes les plateformes. `ToolbarItem`les objets sont classés par ordre de priorité sur le titre de la page, qui sera tronqué pour libérer de l’espace pour les éléments. Les captures d’écran `ToolbarItem` suivantes montrent des objets dans le menu principal sur iOS et Android:
+Lorsque la propriété `Order` est définie sur `Primary`, l’objet `ToolbarItem` apparaît dans la barre de navigation principale sur toutes les plateformes. `ToolbarItem` objets sont classés par ordre de priorité sur le titre de la page, qui sera tronqué pour libérer de l’espace pour les éléments. Les captures d’écran suivantes montrent `ToolbarItem` objets dans le menu principal sur iOS et Android :
 
 ![Capture d’écran du menu principal de ToolbarItem Android et iOS](toolbaritem-images/toolbaritem-primary-menu.png "Capture d’écran du menu principal de ToolbarItem sur Android et iOS")
 
-Lorsque la `Order` propriété a la valeur `Secondary`, le comportement varie d’une plateforme à l’autre. Sur UWP et Android, le `Secondary` menu éléments apparaît sous la forme de trois points qui peuvent être activés ou sur lesquels vous pouvez cliquer pour afficher des éléments dans une liste verticale. Sur iOS, le `Secondary` menu éléments s’affiche sous la barre de navigation sous la forme d’une liste horizontale. Les captures d’écran suivantes montrent un menu secondaire sur iOS et Android:
+Lorsque la propriété `Order` est définie sur `Secondary`, le comportement varie d’une plateforme à l’autre. Sur UWP et Android, le menu `Secondary` éléments s’affiche sous la forme de trois points qui peuvent être frappés ou cliqués pour afficher des éléments dans une liste verticale. Sur iOS, le menu `Secondary` éléments s’affiche sous la barre de navigation sous la forme d’une liste horizontale. Les captures d’écran suivantes montrent un menu secondaire sur iOS et Android :
 
 ![Capture d’écran du menu secondaire de ToolbarItem Android et iOS](toolbaritem-images/toolbaritem-secondary-menu.png "Capture d’écran du menu secondaire de ToolbarItem sur Android et iOS")
 
 > [!WARNING]
-> Le comportement de `ToolbarItem` l’icône dans les `Order` objets dont la `Secondary` propriété a la valeur est incohérent entre les plateformes. Évitez de définir `IconImageSource` la propriété sur les éléments qui s’affichent dans le menu secondaire.
+> Comportement des icônes dans `ToolbarItem` objets dont la propriété `Order` a la valeur `Secondary` n’est pas cohérente entre les plateformes. Évitez de définir la propriété `IconImageSource` sur les éléments qui s’affichent dans le menu secondaire.
 
 ## <a name="related-links"></a>Liens connexes
 
