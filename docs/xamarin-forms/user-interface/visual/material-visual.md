@@ -1,18 +1,18 @@
 ---
 title: Élément visuel Xamarin. Forms
-description: L’élément visuel Xamarin. Forms peut être utilisé pour créer des applications Xamarin. Forms qui semblent identiques, ou en grande partie, sur iOS et Android.
+description: L’élément visuel Xamarin. Forms peut être utilisé pour créer des applications Xamarin. Forms qui semblent quasiment identiques sur iOS et Android.
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/12/2019
-ms.openlocfilehash: b735541d51321231775b025745e68c54552697d3
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.date: 10/18/2019
+ms.openlocfilehash: b447bd255270eb87f6139ddacadb9d31348ab7d7
+ms.sourcegitcommit: db2cf1b54125499d5320636927484707810c8e27
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71198495"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72850494"
 ---
 # <a name="xamarinforms-material-visual"></a>Élément visuel Xamarin. Forms
 
@@ -20,36 +20,38 @@ ms.locfileid: "71198495"
 
 La [conception de matériau](https://material.io) est un système de conception consignes strictes créé par Google, qui régit la taille, la couleur, l’espacement et d’autres aspects liés à l’apparence et au comportement des vues et des dispositions.
 
-L’élément visuel Xamarin. Forms peut être utilisé pour appliquer des règles de conception de matériau aux applications Xamarin. Forms, créant ainsi des applications identiques ou largement identiques, sur iOS et Android. Lorsque l’élément visuel matériel est activé, les vues prises en charge adoptent la même conception multiplateforme, créant ainsi une apparence unifiée. Cela est possible avec les convertisseurs de matériau, qui appliquent les règles de conception de matériau.
+L’élément visuel Xamarin. Forms peut être utilisé pour appliquer des règles de conception de matériau aux applications Xamarin. Forms, créant ainsi des applications qui semblent quasiment identiques sur iOS et Android. Lorsque l’élément visuel matériel est activé, les vues prises en charge adoptent la même conception multiplateforme, créant ainsi une apparence unifiée.
+
+[captures d’écran de l’élément visuel![](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
 
 Le processus d’activation de l’élément visuel Xamarin. Forms dans votre application est le suivant :
 
 1. Ajoutez le package NuGet [Xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) à vos projets de plateforme iOS et Android. Ce package NuGet fournit des convertisseurs de conception de matériau optimisés sur iOS et Android. Sur iOS, le package fournit la dépendance transitive à [Xamarin. iOS. MaterialComponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents), qui est une C# liaison avec les composants de la documentation de Google [pour iOS](https://material.io/develop/ios/). Sur Android, le package fournit des cibles de génération pour s’assurer que la configuration de TargetFramework est correctement configurée.
-1. Initialisez les convertisseurs de matériau dans chaque projet de plateforme. Pour plus d’informations, consultez [initialiser les convertisseurs de matériau](#initialize-material-renderers).
-1. Consommez les convertisseurs de matériau en affectant à la propriété [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) la valeur `Material` sur les pages qui doivent adopter les règles de conception de matériau. Pour plus d’informations, consultez [utiliser des convertisseurs de matériau](#consume-material-renderers).
-1. facultatif Personnaliser les convertisseurs de matériau. Pour plus d’informations, consultez [personnaliser les convertisseurs de matériau](#customize-material-renderers).
+1. Initialisez le visuel de matériau dans chaque projet de plateforme. Pour plus d’informations, consultez [initialiser un élément visuel](#initialize-material-visual).
+1. Créez des contrôles visuels de matériau en affectant à la propriété [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) la valeur `Material` sur les pages qui doivent adopter les règles de conception de matériau. Pour plus d’informations, consultez [utiliser des convertisseurs de matériau](#apply-material-visual).
+1. facultatif Personnaliser les contrôles de matériau. Pour plus d’informations, consultez [personnaliser les contrôles de matériau](#customize-material-visual).
 
 > [!IMPORTANT]
-> Sur Android, les convertisseurs de matériau requièrent une version minimale de 5,0 (API 21) ou supérieure, et un TargetFramework de version 9,0 (API 28). En outre, votre projet de plateforme requiert des bibliothèques de prise en charge Android 28.0.0 ou une version ultérieure, et son thème doit hériter d’un thème de composants de matériau ou continuer d’hériter d’un thème AppCompat. Pour plus d’informations, consultez [prise en main des composants de matériau pour Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md).
+> Sur Android, le visuel matériau requiert une version minimale de 5,0 (API 21) ou supérieure, et une valeur de la version 9,0 (API 28). En outre, votre projet de plateforme requiert des bibliothèques de prise en charge Android 28.0.0 ou une version ultérieure, et son thème doit hériter d’un thème de composants de matériau ou continuer d’hériter d’un thème AppCompat. Pour plus d’informations, consultez [prise en main des composants de matériau pour Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md).
 
-Les convertisseurs de matériaux sont actuellement inclus dans le package NuGet [Xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) pour les vues suivantes :
+Le visuel matériau prend actuellement en charge les contrôles suivants :
 
+- [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
 - [`Button`](xref:Xamarin.Forms.Button)
 - `CheckBox`
+- [`DatePicker`](xref:Xamarin.Forms.DatePicker)
+- [`Editor`](xref:Xamarin.Forms.Editor)
 - [`Entry`](xref:Xamarin.Forms.Entry)
 - [`Frame`](xref:Xamarin.Forms.Frame)
-- [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
-- [`DatePicker`](xref:Xamarin.Forms.DatePicker)
-- [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 - [`Picker`](xref:Xamarin.Forms.Picker)
-- [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
-- [`Editor`](xref:Xamarin.Forms.Editor)
+- [`ProgressBar`](xref:Xamarin.Forms.ProgressBar)
 - [`Slider`](xref:Xamarin.Forms.Slider)
 - [`Stepper`](xref:Xamarin.Forms.Stepper)
+- [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 
-Fonctionnellement, les convertisseurs de matériau ne sont pas différents des convertisseurs par défaut.
+Les contrôles de matériau sont réalisés par les convertisseurs de matériau, qui appliquent les règles de conception de matériau. Fonctionnellement, les convertisseurs de matériaux ne sont pas différents des convertisseurs par défaut. Pour plus d’informations, consultez [personnaliser un élément visuel](#customize-material-visual).
 
-## <a name="initialize-material-renderers"></a>Initialiser les convertisseurs de matériau
+## <a name="initialize-material-visual"></a>Initialiser un élément visuel
 
 Après l’installation du package NuGet [Xamarin. Forms. Visual. Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) , les convertisseurs de matériau doivent être initialisés dans chaque projet de plateforme.
 
@@ -67,9 +69,9 @@ global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 ```
 
-## <a name="consume-material-renderers"></a>Utiliser des convertisseurs de matériaux
+## <a name="apply-material-visual"></a>Appliquer un élément visuel de matériau
 
-Les applications peuvent choisir d’utiliser les convertisseurs de matériau en définissant la propriété [`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual) sur une page, une disposition ou une vue, pour `Material` :
+Les applications peuvent activer le visuel matériau en définissant la propriété [`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual) sur une page, une disposition ou une vue, sur `Material`:
 
 ```xaml
 <ContentPage Visual="Material"
@@ -85,7 +87,7 @@ ContentPage contentPage = new ContentPage();
 contentPage.Visual = VisualMarker.Material;
 ```
 
-La propriété [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) peut être définie sur tout type qui implémente `IVisual`, avec la classe [`VisualMarker`](xref:Xamarin.Forms.VisualMarker) fournissant les propriétés de `IVisual` suivantes :
+L’affectation de la valeur `Material` à la propriété `VisualElement.Visual` indique à votre application d’utiliser les convertisseurs visuels Material à la place des convertisseurs par défaut. La propriété [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) peut être définie sur tout type qui implémente `IVisual`, avec la classe [`VisualMarker`](xref:Xamarin.Forms.VisualMarker) fournissant les propriétés de `IVisual` suivantes :
 
 - `Default` : indique que la vue doit être restituée à l’aide du convertisseur par défaut.
 - `MatchParent` : indique que la vue doit utiliser le même convertisseur que son parent direct.
@@ -107,9 +109,13 @@ Les principales différences visibles entre les convertisseurs par défaut et le
 > [!NOTE]
 > Les composants de conception de matériau adhèrent étroitement aux recommandations de Google. Par conséquent, les convertisseurs de conception de matériau sont influencés par le dimensionnement et le comportement. Lorsque vous avez besoin d’un meilleur contrôle des styles ou du comportement, vous pouvez toujours créer votre propre [effet](~/xamarin-forms/app-fundamentals/effects/index.md), [comportement](~/xamarin-forms/app-fundamentals/behaviors/index.md)ou [convertisseur personnalisé](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) pour obtenir les détails dont vous avez besoin.
 
-## <a name="customize-material-renderers"></a>Personnaliser les convertisseurs de matériau
+## <a name="customize-material-visual"></a>Personnaliser l’élément visuel de matériau
 
-Les convertisseurs de matériau peuvent éventuellement être personnalisés, comme les convertisseurs par défaut, via les classes de base suivantes :
+Le package NuGet de matériau visuel est une collection de convertisseurs qui réalisent les contrôles Xamarin. Forms. La personnalisation des contrôles visuels de matériaux est identique à la personnalisation des contrôles par défaut.
+
+Les effets sont la technique recommandée lorsque l’objectif est de personnaliser un contrôle existant. Si un convertisseur visuel de matériau existe, il est moins pratique de personnaliser le contrôle avec un effet qu’il ne doit sous-traiter le convertisseur. Pour plus d’informations sur les effets, consultez [effets Xamarin. Forms](~/xamarin-forms/app-fundamentals/effects/index.md).
+
+Les convertisseurs personnalisés sont la technique recommandée lorsqu’un convertisseur de matériau n’existe pas. Les classes de convertisseur suivantes sont incluses avec l’élément visuel Material :
 
 - `MaterialButtonRenderer`
 - `MaterialCheckBoxRenderer`
@@ -124,7 +130,7 @@ Les convertisseurs de matériau peuvent éventuellement être personnalisés, co
 - `MaterialSliderRenderer`
 - `MaterialStepperRenderer`
 
-Le code suivant montre un exemple de personnalisation de la classe `MaterialProgressBarRenderer` :
+La sous-classe d’un convertisseur de matériau est presque identique aux convertisseurs non matériels. Toutefois, lors de l’exportation d’un convertisseur qui sous-classe un convertisseur de matériau, vous devez fournir un troisième argument à l’attribut `ExportRenderer` qui spécifie le type de `VisualMarker.MaterialVisual` :
 
 ```csharp
 using Xamarin.Forms.Material.Android;
@@ -134,7 +140,7 @@ namespace MyApp.Android
 {
     public class CustomMaterialProgressBarRenderer : MaterialProgressBarRenderer
     {
-        ...
+        //...
     }
 }
 ```
@@ -150,4 +156,5 @@ Pour plus d’informations sur les convertisseurs personnalisés, consultez [con
 
 - [Élément visuel (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 - [Créer un convertisseur visuel Xamarin. Forms](create.md)
+- [Effets Xamarin. Forms](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

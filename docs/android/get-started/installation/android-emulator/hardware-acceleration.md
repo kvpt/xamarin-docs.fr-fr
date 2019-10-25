@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 6060f7c7e31c52a122c5ccb7a7e7be8dfe58051a
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105906"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810541"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>Accélération matérielle pour les performances de l’émulateur (Hyper-V et HAXM)
 
@@ -24,11 +24,11 @@ Toutefois, l’émulateur Android s’exécute trop lentement si l’accélérat
 
 | Scénario    | HAXM        | WHPX       | Hyperviseur. Framework |
 | ----------- | ----------- | -----------| ----------- |
-| Vous disposez d’un processeur Intel | X | X | X |
-| Vous disposez d’un processeur AMD   |   | X |   |
-| Vous souhaitez prendre en charge Hyper-V |   | X |   |
+| Vous disposez d’un processeur Intel | x | x | x |
+| Vous disposez d’un processeur AMD   |   | x |   |
+| Vous souhaitez prendre en charge Hyper-V |   | x |   |
 | Vous souhaitez prendre en charge la virtualisation imbriquée |   | Limité |   |
-| Vous souhaitez utiliser des technologies telles que la station d’accueil  |   | X | X |
+| Vous souhaitez utiliser des technologies telles que la station d’accueil  |   | x | x |
 
 ::: zone pivot="windows"
 
@@ -57,7 +57,6 @@ Pour plus d’informations sur le lancement de l’émulateur Android, et sur le
 
 ## <a name="accelerating-with-hyper-v"></a>Accélération avec Hyper-V
 
-Il est recommandé d’utiliser Hyper-V pour accélérer l’émulateur Android.
 Avant d’activer Hyper-V, lisez la section suivante pour vérifier que votre ordinateur prend en charge Hyper-V.
 
 ### <a name="verifying-support-for-hyper-v"></a>Vérification de la prise en charge d’Hyper-V
@@ -90,7 +89,7 @@ Pour vérifier que le matériel et les logiciels de votre ordinateur sont compat
 systeminfo
 ```
 
-Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Par exemple :
+Si toutes les exigences listées relatives à Hyper-V ont la valeur **Oui**, votre ordinateur peut prendre en charge Hyper-V. Exemple :
 
 [![Exemple de sortie de systeminfo](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -127,7 +126,7 @@ Si votre matériel prend en charge HAXM, vous pouvez vérifier si HAXM est déj�
     sc query intelhaxm
     ```
 
-2. Examinez la sortie pour voir si le processus HAXM est en cours d’exécution. Si tel est le cas, vous devez voir la sortie listant l’état de `intelhaxm` comme étant `RUNNING`. Par exemple :
+2. Examinez la sortie pour voir si le processus HAXM est en cours d’exécution. Si tel est le cas, vous devez voir la sortie listant l’état de `intelhaxm` comme étant `RUNNING`. Exemple :
 
     ![Sortie de la commande sc query quand HAXM est disponible](hardware-acceleration-images/win/05-sc_query-w158.png)
 

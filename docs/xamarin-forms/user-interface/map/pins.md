@@ -4,61 +4,183 @@ description: Cet article explique comment créer des codes confidentiels sur une
 ms.prod: xamarin
 ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
 ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/23/2019
-ms.openlocfilehash: 76535f9c31a9dc138e132a3e582b986daf89bdb0
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: HT
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/23/2019
+ms.openlocfilehash: a2fb0ba2036dfe34e85c7bebab6ecb55cd868ad5
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697338"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810506"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. Forms, épingles
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-Le contrôle Xamarin. Forms `Maps` permet aux emplacements d’être marqués avec des objets `Pin`. Un `Pin` est un marqueur de carte qui ouvre une fenêtre d’informations lorsque l’utilisateur clique dessus ou appuie dessus.
+Le contrôle Xamarin. Forms [`Map`](xref:Xamarin.Forms.Maps.Map) permet aux emplacements d’être marqués avec des objets [`Pin`](xref:Xamarin.Forms.Maps.Pin) . Un `Pin` est un marqueur de carte qui ouvre une fenêtre d’informations lorsqu’il est frappé :
 
-La classe `Pin` a les propriétés suivantes:
+[![Capture d’écran d’un code confidentiel de carte et de sa fenêtre d’informations, sur iOS et Android](pins-images/pin-and-information-window.png "Mapper le code confidentiel avec la fenêtre d’informations")](pins-images/pin-and-information-window-large.png#lightbox "Mapper le code confidentiel avec la fenêtre d’informations")
 
-- `Type` est une valeur d’énumération `PinType` : Generic, place, SavedPin ou SearchResult.
-- `Position` est une `Position` instance contenant la latitude et la longitude du code confidentiel.
-- `Label` est un `string` généralement affiché en tant que titre du pin.
-- `Address` est un `string` qui s’affiche dans la fenêtre info. Il peut s’agir de n’importe quel contenu `string`, pas seulement d’une adresse.
+Lorsqu’un objet [`Pin`](xref:Xamarin.Forms.Maps.Pin) est ajouté à la collection [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) , le code PIN est rendu sur la carte.
 
-Ces propriétés sont sauvegardées par des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , ce qui signifie que les `Pin` peuvent être la cible des liaisons de données. Pour plus d’informations, consultez [créer des broches avec la liaison de données](#create-pins-with-data-binding).
+La classe [`Pin`](xref:Xamarin.Forms.Maps.Pin) a les propriétés suivantes :
 
-## <a name="create-map-pins"></a>Créer des codes confidentiels de carte
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address), de type `string`, qui représente généralement l’adresse de l’emplacement du pin. Toutefois, il peut s’agir de n’importe quel contenu `string`, pas seulement d’une adresse.
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label), de type `string`, qui représente généralement le titre du pin.
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position), de type [`Position`](xref:Xamarin.Forms.Maps.Position), qui représente la latitude et la longitude du code confidentiel.
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type), de type [`PinType`](xref:Xamarin.Forms.Maps.PinType), qui représente le type de pin.
 
-Une instance de `Pin` peut être créée dans le code et ajoutée à un mappage :
+Ces propriétés sont sauvegardées par des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) , ce qui signifie qu’un `Pin` peut être la cible des liaisons de données. Pour plus d’informations sur la liaison de données `Pin` les objets, consultez [afficher une collection de codes confidentiels](#display-a-pin-collection).
 
-```csharp
-Pin pin1 = new Pin
-{
-    Type = PinType.Place,
-    Position = new Position(47.6368678, -122.137305),
-    Label = "Example Pin 1",
-    Address = "Example custom details..."
-};
-map.Pins.Add(pin1);
+En outre, la classe [`Pin`](xref:Xamarin.Forms.Maps.Pin) définit les événements `MarkerClicked` et `InfoWindowClicked`. L’événement `MarkerClicked` est déclenché lorsqu’un code PIN est activé et que l’événement `InfoWindowClicked` est déclenché lorsque la fenêtre d’informations est frappée. L’objet `PinClickedEventArgs` qui accompagne les deux événements a une seule propriété `HideInfoWindow`, de type `bool`.
+
+## <a name="display-a-pin"></a>Afficher un code confidentiel
+
+Un [`Pin`](xref:Xamarin.Forms.Maps.Pin) peut être ajouté à un [`Map`](xref:Xamarin.Forms.Maps.Map) en XAML :
+
+```xaml
+<ContentPage ...
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+     <maps:Map x:Name="map"
+               IsShowingUser="True"
+               MoveToLastRegionOnLayoutChange="False"
+               HeightRequest="100"                  
+               WidthRequest="960"
+               VerticalOptions="FillAndExpand">
+         <x:Arguments>
+             <maps:MapSpan>
+                 <x:Arguments>
+                     <maps:Position>
+                         <x:Arguments>
+                             <x:Double>36.9628066</x:Double>
+                             <x:Double>-122.0194722</x:Double>
+                         </x:Arguments>
+                     </maps:Position>
+                     <x:Double>0.01</x:Double>
+                     <x:Double>0.01</x:Double>
+                 </x:Arguments>
+             </maps:MapSpan>
+         </x:Arguments>
+         <maps:Map.Pins>
+             <maps:Pin Label="Santa Cruz"
+                       Address="The city with a boardwalk"
+                       Type="Place">
+                 <maps:Pin.Position>
+                     <maps:Position>
+                         <x:Arguments>
+                             <x:Double>36.9628066</x:Double>
+                             <x:Double>-122.0194722</x:Double>
+                         </x:Arguments>
+                     </maps:Position>
+                 </maps:Pin.Position>
+             </maps:Pin>
+         </maps:Map.Pins>
+     </maps:Map>
+</ContentPage>
 ```
 
-> [!NOTE]
-> La valeur `PinType` affecte le mode de rendu des codes confidentiels en fonction de la plateforme. Pour personnaliser l’apparence d’un code confidentiel, vous devez créer un convertisseur personnalisé. Pour plus d’informations, consultez [Personnalisation d’un code confidentiel de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
-
-## <a name="create-pins-with-data-binding"></a>Créer des broches avec la liaison de données
-
-La classe [`Map`](xref:Xamarin.Forms.Maps.Map) expose les propriétés suivantes :
-
-- `ItemsSource` : spécifie la collection d’éléments de `IEnumerable` à afficher.
-- `ItemTemplate` : spécifie le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à appliquer à chaque élément de la collection d’éléments affichés.
-- `ItemTemplateSelector` : spécifie le [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) qui sera utilisé pour choisir un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) pour un élément au moment de l’exécution.
+Ce code XAML crée un objet [`Map`](xref:Xamarin.Forms.Maps.Map) qui affiche la zone spécifiée par l’objet [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) . L’objet `MapSpan` est centré sur la latitude et la longitude représentées par un objet [`Position`](xref:Xamarin.Forms.Maps.Position) , qui étend 0,01 de latitude et des degrés de longitude. Un objet [`Pin`](xref:Xamarin.Forms.Maps.Pin) est ajouté à la collection [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) et dessiné sur le `Map` à l’emplacement spécifié par sa propriété [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) . Pour plus d’informations sur le passage d’arguments en XAML aux objets qui n’ont pas de constructeurs par défaut, consultez [passage d’arguments en XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
 > [!NOTE]
-> La propriété `ItemTemplate` est prioritaire lorsque les propriétés `ItemTemplate` et `ItemTemplateSelector` sont définies.
+> Le struct [`Position`](xref:Xamarin.Forms.Maps.Position) définit les propriétés de [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude) et de [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude) en lecture seule, à la fois de type `double`. Lors de la création d’un objet `Position` par le biais de son constructeur, la valeur de latitude est ancrée entre-90,0 et 90,0, et la valeur de longitude est ancrée entre-180,0 et 180,0.
 
-Une [`Map`](xref:Xamarin.Forms.Maps.Map) peut être remplie avec des données à l’aide de la liaison de données pour lier sa propriété `ItemsSource` à une collection `IEnumerable` :
+Le code C# équivalent est :
+
+```csharp
+using Xamarin.Forms.Maps;
+// ...
+Map map = new Map
+{
+  // ...
+};
+Pin pin = new Pin
+{
+  Label = "Santa Cruz",
+  Address = "The city with a boardwalk",
+  Type = PinType.Place,
+  Position = new Position(36.9628066, -122.0194722)
+};
+map.Pins.Add(pin);
+```
+
+> [!WARNING]
+> Si vous ne définissez pas la propriété [`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label) , une `ArgumentException` est levée lors de l’ajout de la [`Pin`](xref:Xamarin.Forms.Maps.Pin) à un [`Map`](xref:Xamarin.Forms.Maps.Map).
+
+Cet exemple de code entraîne le rendu d’un seul code confidentiel sur une carte :
+
+[![Capture d’écran d’un code confidentiel de carte, sur iOS et Android](pins-images/pin-only.png "Code confidentiel de la carte")](pins-images/pin-only-large.png#lightbox "Code confidentiel de la carte")
+
+## <a name="interact-with-a-pin"></a>Interagir avec un code confidentiel
+
+Par défaut, lorsqu’un [`Pin`](xref:Xamarin.Forms.Maps.Pin) est frappé, sa fenêtre d’informations s’affiche :
+
+[![Capture d’écran d’un code confidentiel de carte et de sa fenêtre d’informations, sur iOS et Android](pins-images/pin-and-information-window.png "Mapper le code confidentiel avec la fenêtre d’informations")](pins-images/pin-and-information-window-large.png#lightbox "Mapper le code confidentiel avec la fenêtre d’informations")
+
+En appuyant ailleurs sur la carte, vous fermez la fenêtre d’informations.
+
+La classe [`Pin`](xref:Xamarin.Forms.Maps.Pin) définit un événement `MarkerClicked`, qui est déclenché lorsqu’un `Pin` est frappé. Il n’est pas nécessaire de gérer cet événement pour afficher la fenêtre d’informations. Au lieu de cela, cet événement doit être géré uniquement lorsqu’il est nécessaire de notifier qu’un code confidentiel spécifique a été frappé.
+
+La classe [`Pin`](xref:Xamarin.Forms.Maps.Pin) définit également un événement `InfoWindowClicked` qui est déclenché lorsqu’une fenêtre d’informations est frappée. Cet événement doit être traité lorsqu’il est nécessaire de notifier qu’une fenêtre d’informations spécifique a été exploitée.
+
+Le code suivant montre un exemple de gestion de ces événements :
+
+```csharp
+using Xamarin.Forms.Maps;
+// ...
+Pin boardwalkPin = new Pin
+{
+    Position = new Position(36.9641949, -122.0177232),
+    Label = "Boardwalk",
+    Address = "Santa Cruz",
+    Type = PinType.Place
+};
+boardwalkPin.MarkerClicked += async (s, args) =>
+{
+    args.HideInfoWindow = true;
+    string pinName = ((Pin)s).Label;
+    await DisplayAlert("Pin Clicked", $"{pinName} was clicked.", "Ok");
+};
+
+Pin wharfPin = new Pin
+{
+    Position = new Position(36.9571571, -122.0173544),
+    Label = "Wharf",
+    Address = "Santa Cruz",
+    Type = PinType.Place
+};
+wharfPin.InfoWindowClicked += async (s, args) =>
+{
+    string pinName = ((Pin)s).Label;
+    await DisplayAlert("Info Window Clicked", $"The info window was clicked for {pinName}.", "Ok");
+};
+```
+
+L’objet `PinClickedEventArgs` qui accompagne les deux événements a une seule propriété `HideInfoWindow`, de type `bool`. Quand cette propriété a la valeur `true` à l’intérieur d’un gestionnaire d’événements, la fenêtre d’informations est masquée.
+
+## <a name="pin-types"></a>Types de code confidentiel
+
+les objets [`Pin`](xref:Xamarin.Forms.Maps.Pin) incluent une propriété [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) , de type [`PinType`](xref:Xamarin.Forms.Maps.PinType), qui représente le type de pin. L’énumération `PinType` définit les membres suivants :
+
+- `Generic`, représente un code confidentiel générique.
+- `Place`, représente un code confidentiel pour un lieu.
+- `SavedPin`, représente un code confidentiel pour un emplacement enregistré.
+- `SearchResult`, représente un code confidentiel pour un résultat de recherche.
+
+Toutefois, la définition de la propriété [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) sur n’importe quel membre [`PinType`](xref:Xamarin.Forms.Maps.PinType) ne modifie pas l’apparence du code PIN rendu. Au lieu de cela, vous devez créer un convertisseur personnalisé pour personnaliser l’apparence du pin. Pour plus d’informations, consultez [Personnalisation d’un code confidentiel de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+
+## <a name="display-a-pin-collection"></a>Afficher une collection de codes confidentiels
+
+La classe [`Map`](xref:Xamarin.Forms.Maps.Map) définit les propriétés suivantes :
+
+- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource), de type `IEnumerable`, qui spécifie la collection d’éléments `IEnumerable` à afficher.
+- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate), de type [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), qui spécifie le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) à appliquer à chaque élément de la collection d’éléments affichés.
+- `ItemTemplateSelector`, de type [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector), qui spécifie le [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) qui sera utilisé pour choisir un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) pour un élément au moment de l’exécution.
+
+> [!IMPORTANT]
+> La propriété [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) est prioritaire lorsque les propriétés `ItemTemplate` et `ItemTemplateSelector` sont définies.
+
+Une [`Map`](xref:Xamarin.Forms.Maps.Map) peut être remplie avec des codes confidentiels à l’aide de la liaison de données pour lier sa propriété [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) à une collection `IEnumerable` :
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -83,9 +205,9 @@ Une [`Map`](xref:Xamarin.Forms.Maps.Map) peut être remplie avec des données à
 </ContentPage>
 ```
 
-Les données de la propriété `ItemsSource` sont liées à la propriété `Locations` du modèle de vue connecté, qui retourne un `ObservableCollection` d' `Location` objets, qui est un type personnalisé. Chaque objet `Location` définit des propriétés `Address` et `Description`, de type `string` et une propriété `Position`, de type [`Position`](xref:Xamarin.Forms.Maps.Position).
+Les données de la propriété [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) sont liées à la propriété `Locations` du ViewModel connecté, qui retourne un `ObservableCollection` d' `Location` objets, qui est un type personnalisé. Chaque objet `Location` définit des propriétés `Address` et `Description`, de type `string` et une propriété `Position`, de type [`Position`](xref:Xamarin.Forms.Maps.Position).
 
-L’apparence de chaque élément de la collection `IEnumerable` est définie en affectant à la propriété `ItemTemplate` la valeur d’un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui contient un objet [`Pin`](xref:Xamarin.Forms.Maps.Pin) dont les données sont liées aux propriétés appropriées.
+L’apparence de chaque élément de la collection `IEnumerable` est définie en affectant à la propriété [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) la valeur d’un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui contient un objet [`Pin`](xref:Xamarin.Forms.Maps.Pin) dont les données sont liées aux propriétés appropriées.
 
 Les captures d’écran suivantes montrent un [`Map`](xref:Xamarin.Forms.Maps.Map) affichant une collection [`Pin`](xref:Xamarin.Forms.Maps.Pin) à l’aide de la liaison de données :
 
@@ -147,42 +269,9 @@ La classe `MapItemTemplateSelector` définit les propriétés de `DefaultTemplat
 
 Pour plus d’informations sur les sélecteurs de modèle de données, consultez [création d’un Xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md).
 
-## <a name="pin-events"></a>Épingler les événements
-
-La classe `Pin` fournit deux événements :
-
-- `MarkerClicked` est déclenché lorsque l’utilisateur clique ou appuie sur le code PIN.
-- `InfoWindowClicked` est déclenché lors d’un clic ou d’un appui sur la fenêtre info.
-
-Les gestionnaires d’événements peuvent être attachés à un code confidentiel dans le code :
-
-```csharp
-public class PinEvents: ContentPage
-{
-    public PinEvents()
-    {
-        // ...
-
-        pin1.MarkerClicked += OnMarkerClickedAsync;
-        pin1.InfoWindowClicked += OnInfoWindowClickedAsync;
-    }
-
-    async void OnMarkerClickedAsync(object sender, PinClickedEventArgs e)
-    {
-        string pinName = ((Pin)sender).Label;
-        await DisplayAlert("Pin Clicked", $"{pinName} was clicked.", "Ok");
-    }
-
-    async void OnInfoWindowClickedAsync(object sender, PinClickedEventArgs e)
-    {
-        string pinName = ((Pin)sender).Label;
-        await DisplayAlert("Info Window Clicked", $"The info window was clicked for {pinName}.", "Ok");
-    }
-}
-```
-
 ## <a name="related-links"></a>Liens connexes
 
 - [Exemple Maps](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Convertisseur personnalisé de carte](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [Passage d’arguments en XAML](~/xamarin-forms/xaml/passing-arguments.md)
 - [Création d’un Xamarin. Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
