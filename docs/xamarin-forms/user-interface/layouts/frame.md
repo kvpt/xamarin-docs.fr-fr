@@ -22,7 +22,7 @@ La classe Xamarin. Forms [`Frame`](xref:Xamarin.Forms.Frame) est une disposition
 
 La capture d’écran suivante montre les contrôles de `Frame` sur iOS et Android :
 
-[exemples de cadre ![ sur iOS et Android](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "Exemples de frames sur iOS et Android")
+[![exemples de cadre sur iOS et Android](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "Exemples de frames sur iOS et Android")
 
 La classe `Frame` définit les propriétés suivantes :
 
@@ -84,7 +84,7 @@ La classe `Frame` hérite de `ContentView`, ce qui signifie qu’elle peut conte
 
 La combinaison d’un objet `Frame` avec un objet `Layout` tel qu’un objet `StackLayout` permet la création d’une interface utilisateur plus complexe. La capture d’écran suivante montre un exemple de carte créée à l’aide d’un objet `Frame` :
 
-[![ « capture d’écran d’une carte créée à l’aide d’un cadre »](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "Capture d’écran d’une carte créée à l’aide d’un frame")
+[![capture d’écran d’une carte créée à l’aide d’un cadre](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "Capture d’écran d’une carte créée à l’aide d’un frame")
 
 Le code XAML suivant montre comment créer une carte avec la classe `Frame` :
 
