@@ -1,64 +1,52 @@
 ---
-title: Visual Basic.NET dans Xamarin iOS et Android
-description: Cette procédure pas à pas montre comment créer des applications natives Xamarin.iOS et Xamarin.Android qui utilisent une logique métier écrite en Visual Basic.NET.
+title: Visual Basic dans Xamarin. Android et Xamarin. iOS
+description: Cette procédure pas à pas montre comment générer des applications Xamarin. iOS et Xamarin. Android natives qui utilisent une logique métier écrite en Visual Basic.NET.
 ms.prod: xamarin
 ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
-author: asb3993
-ms.author: amburns
-ms.date: 03/23/2017
-ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+author: conceptdev
+ms.author: crdun
+ms.date: 04/24/2019
+ms.openlocfilehash: ea4dc91b262c2ae153088f6e1a8416cc01cb0fa9
+ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61163298"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72959126"
 ---
-# <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET dans Xamarin iOS et Android
+# <a name="visual-basic-in-xamarin-android-and-ios"></a>Visual Basic dans Xamarin Android et iOS
 
-Le [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) exemple d’application montre comment code Visual Basic compilé dans une bibliothèque de classes Portable peut être utilisé avec Xamarin. Voici quelques captures d’écran des applications qui en résulte en cours d’exécution sur iOS, Android et Windows Phone :
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
 
- [![](native-apps-images/image5.png "une application générée avec Visual Basic en cours d’exécution les téléphones iOS, Android et Windows")](native-apps-images/image5.png#lightbox)
+L’exemple d’application [TaskyVB](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/) montre comment Visual Basic code compilé dans une bibliothèque de .NET standard peut être utilisé avec Xamarin. Voici quelques captures d’écran des applications qui s’exécutent sur Android et iOS :
 
-IOS, Android et Windows Phone tous les projets dans l’exemple sont écrits dans C#. L’interface utilisateur pour chaque application est générée avec les technologies natives (Storyboards, Xml et Xaml, respectivement), tandis que le `TodoItem` management est fournie par la bibliothèque de classes Portable Visual Basic à l’aide un `IXmlStorage` implémentation fournie par le projet natif.
+ [![Android et iOS exécutant une application générée avec Visual Basic](native-apps-images/simulators-sml.png)](native-apps-images/simulators.png#lightbox)
 
-## <a name="sample-walkthrough"></a>Procédure pas à pas d'exemple
+Les projets Android et iOS de l’exemple sont tous écrits dans C#. L’interface utilisateur de chaque application est générée avec des technologies natives, tandis que la gestion des `TodoItem` est assurée par la bibliothèque Visual Basic .NET Standard à l’aide d’un fichier XML (à des fins de démonstration, et non comme une base de données complète).
 
-Ce guide décrit comment Visual Basic a été implémenté dans le [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) exemple Xamarin pour iOS et Android.
+## <a name="sample-walkthrough"></a>Exemple de procédure pas à pas
+
+Ce guide explique comment Visual Basic a été implémenté dans l’exemple [TaskyVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB) Xamarin pour iOS et Android.
 
 > [!NOTE]
-> Passez en revue les instructions de [Portable Visual Basic.NET](index.md) avant de continuer avec ce guide.
+> Avant de poursuivre ce guide, passez en revue les instructions sur [Visual Basic et .NET standard](index.md) .
+>
+> Reportez-vous à [Xamarin. Forms à l’aide](xamarin-forms.md) des instructions Visual Basic pour savoir comment créer une application avec du code Visual Basic de l’interface utilisateur partagée.
 
-## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
+## <a name="visualbasicnetstandard"></a>VisualBasicNetStandard
 
-Les bibliothèques de classes portables Visual Basic peuvent être créés uniquement dans Visual Studio.
-L’exemple de bibliothèque contient les principes fondamentaux de notre application dans quatre fichiers Visual Basic :
+Visual Basic bibliothèques de .NET Standard ne peuvent être créées que dans Visual Studio sur Windows.
+L’exemple de bibliothèque contient les principes fondamentaux de notre application dans les fichiers Visual Basic suivants :
 
--  IXmlStorage.vb
--  TodoItem.vb
--  TodoItemManager.vb
--  TodoItemRepositoryXML.vb
+- TodoItem. vb
+- TodoItemManager. vb
+- TodoItemRepositoryXML. vb
+- XmlStorage. vb
 
+### <a name="todoitemvb"></a>TodoItem. vb
 
-### <a name="ixmlstoragevb"></a>IXmlStorage.vb
+Cette classe contient l’objet métier à utiliser dans toute l’application. Elle sera définie dans Visual Basic et partagée avec les projets Android et iOS écrits dans C#.
 
-Étant donné que les comportements d’accès de fichier varient considérablement entre les plateformes, les bibliothèques de classes portables ne fournissent pas `System.IO` API dans n’importe quel profil de stockage de fichiers. Cela signifie que si vous souhaitez interagir directement avec le système de fichiers dans notre code portable, nous devons effectuer un rappel vers notre projets natifs sur chaque plateforme.  En écrivant de notre code de Visual Basic par rapport à une interface simple qui peut être implémentée dans C# sur chaque plateforme, nous pouvons avoir partageable code Visual Basic qui a toujours accès au système de fichiers.
-
-L’exemple de code utilise cette interface très simple qui contient seulement deux méthodes : pour lire et écrire un fichier Xml sérialisé.
-
-```vb
-Public Interface IXmlStorage
-    Function ReadXml(filename As String) As List(Of TodoItem)
-    Sub WriteXml(tasks As List(Of TodoItem), filename As String)
-End Interface
-```
-
-iOS, Android et Windows Phone des implémentations de cette interface seront affichera plus loin dans le guide.
-
-### <a name="todoitemvb"></a>TodoItem.vb
-
-Cette classe contient l’objet métier utilisé dans l’application. Il doit être définie dans Visual Basic et avec iOS, Android et Windows Phone de projets partagés qui sont écrits en C#.
-
-La définition de classe est indiquée ici :
+La définition de la classe est illustrée ici :
 
 ```vb
 Public Class TodoItem
@@ -69,16 +57,16 @@ Public Class TodoItem
 End Class
 ```
 
-L’exemple utilise la sérialisation XML et la désérialisation pour charger et enregistrer les objets TodoItem.
+L’exemple utilise la sérialisation et la désérialisation XML pour charger et enregistrer les objets TodoItem.
 
-### <a name="todoitemmanagervb"></a>TodoItemManager.vb
+### <a name="todoitemmanagervb"></a>TodoItemManager. vb
 
-La classe de gestionnaire présente l’API pour le code portable. Il fournit des opérations CRUD de base pour la `TodoItem` classe, mais aucune implémentation de ces opérations.
+La classe Manager présente l’API pour le code portable. Il fournit des opérations CRUD de base pour la classe `TodoItem`, mais aucune implémentation de ces opérations.
 
 ```vb
 Public Class TodoItemManager
     Private _repository As TodoItemRepositoryXML
-    Public Sub New(filename As String, storage As IXmlStorage)
+    Public Sub New(filename As String)
         _repository = New TodoItemRepositoryXML(filename, storage)
     End Sub
     Public Function GetTask(id As Integer) As TodoItem
@@ -96,11 +84,11 @@ Public Class TodoItemManager
 End Class
 ```
 
-Le constructeur prend une instance de IXmlStorage en tant que paramètre. Ainsi, chaque plateforme pour fournir sa propre implémentation de travail tout en laissant le code portable décrivent d’autres fonctionnalités qui peuvent être partagées.
+Le constructeur prend une instance de IXmlStorage en tant que paramètre. Cela permet à chaque plateforme de fournir sa propre implémentation de travail tout en laissant le code portable décrire d’autres fonctionnalités qui peuvent être partagées.
 
-### <a name="todoitemrepositoryvb"></a>TodoItemRepository.vb
+### <a name="todoitemrepositoryvb"></a>TodoItemRepository. vb
 
-La classe de référentiel contient la logique de gestion de la liste des objets TodoItem. Le code complet est indiqué ci-dessous, la logique existe principalement pour gérer une valeur d’ID unique sur les TodoItems comme ils sont ajoutés et supprimés de la collection.
+La classe de référentiel contient la logique de gestion de la liste des objets TodoItem. Le code complet est présenté ci-dessous : la logique existe principalement pour gérer une valeur d’ID unique sur les TodoItems à mesure qu’elles sont ajoutées et supprimées de la collection.
 
 ```vb
 Public Class TodoItemRepositoryXML
@@ -109,9 +97,9 @@ Public Class TodoItemRepositoryXML
     Private _tasks As List(Of TodoItem)
 
     ''' <summary>Constructor</summary>
-    Public Sub New(filename As String, storage As IXmlStorage)
+    Public Sub New(filename As String)
         _filename = filename
-        _storage = storage
+        _storage = New XmlStorage
         _tasks = _storage.ReadXml(filename)
     End Sub
     ''' <summary>Inefficient search for a Task by ID</summary>
@@ -159,168 +147,52 @@ End Class
 ```
 
 > [!NOTE]
-> Ce code est un exemple d’un mécanisme de stockage de données très basique.
-> Il est fourni pour illustrer comment une bibliothèque de classes Portable utiliser pour coder une interface pour accéder aux fonctionnalités spécifiques à la plateforme (dans ce cas, le chargement et enregistrement d’un fichier Xml). Il elle pas destinée à être une alternative de base de données de qualité de production.
+> Ce code est un exemple de mécanisme de stockage de données très basique.
+> Il est fourni pour illustrer comment une bibliothèque .NET Standard peut coder par rapport à une interface pour accéder aux fonctionnalités spécifiques à la plateforme (dans ce cas, charger et enregistrer un fichier XML). Il ne s’agit pas d’une base de données de qualité production.
 
-## <a name="ios-android-and-windows-phone-application-projects"></a>iOS, Android et les projets d’Application Windows Phone
+## <a name="android-and-ios-application-projects"></a>Projets d’application Android et iOS
 
-Cette section contient les implémentations spécifiques à la plateforme pour l’interface IXmlStorage et montre comment il est utilisé dans chaque application. Les projets d’application sont écrits C#.
+### <a name="ios"></a>iOS
 
-### <a name="ios-and-android-ixmlstorage"></a>iOS et Android IXmlStorage
-
-Xamarin.iOS et Xamarin.Android fournissent complète `System.IO` fonctionnalités afin de pouvoir facilement charger et enregistrer le fichier Xml à l’aide de la classe suivante :
-
-```csharp
-public class XmlStorageImplementation : IXmlStorage
-{
-    public XmlStorageImplementation(){}
-    public List<TodoItem> ReadXml(string filename)
-    {
-        if (File.Exists(filename))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItem>));
-            using (var stream = new FileStream(filename, FileMode.Open))
-            {
-                return (List<TodoItem>)serializer.Deserialize(stream);
-            }
-        }
-        return new List<TodoItem>();
-    }
-    public void WriteXml(List<TodoItem> tasks, string filename)
-    {
-        var serializer = new XmlSerializer(typeof(List<TodoItem>));
-        using (var writer = new StreamWriter(filename))
-        {
-            serializer.Serialize(writer, tasks);
-        }
-    }
-}
-```
-
-Dans l’application iOS le `TodoItemManager` et `XmlStorageImplementation` sont créés dans le **AppDelegate.cs** fichier comme indiqué dans cet extrait de code. Les quatre premières lignes sont à la construction le chemin d’accès au fichier dans lequel les données seront stockées ; les deux dernières lignes indiquent les deux classes en cours d’instanciation.
+Dans l’application iOS, les `TodoItemManager` et les `XmlStorageImplementation` sont créés dans le fichier **AppDelegate.cs** , comme indiqué dans cet extrait de code. Les quatre premières lignes génèrent simplement le chemin d’accès au fichier dans lequel les données seront stockées ; les deux dernières lignes affichent les deux classes qui sont instanciées.
 
 ```csharp
 var xmlFilename = "TodoList.xml";
 string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
 string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
 var path = Path.Combine(libraryPath, xmlFilename);
-var xmlStorage = new XmlStorageImplementation();
-TaskMgr = new TodoItemManager(path, xmlStorage);
+
+TaskMgr = new TodoItemManager(path);
 ```
 
-Dans l’application Android le `TodoItemManager` et `XmlStorageImplementation` sont créés dans le **Application.cs** fichier comme indiqué dans cet extrait de code. Les trois premières lignes sont à la construction le chemin d’accès au fichier dans lequel les données seront stockées ; les deux dernières lignes indiquent les deux classes en cours d’instanciation.
+### <a name="android"></a>Android
+
+Dans l’application Android, les `TodoItemManager` et les `XmlStorageImplementation` sont créés dans le fichier **application.cs** , comme indiqué dans cet extrait de code. Les trois premières lignes génèrent simplement le chemin d’accès au fichier dans lequel les données seront stockées ; les deux dernières lignes affichent les deux classes qui sont instanciées.
 
 ```csharp
 var xmlFilename = "TodoList.xml";
 string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 var path = Path.Combine(libraryPath, xmlFilename);
-var xmlStorage = new AndroidTodo.XmlStorageImplementation();
-TaskMgr = new TodoItemManager(path, xmlStorage);
+
+TaskMgr = new TodoItemManager(path);
 ```
 
-Le reste du code d’application est principalement concerné avec l’interface utilisateur et que vous utilisez le `TaskMgr` classe pour charger et enregistrer `TodoItem` classes.
+Le reste du code d’application s’intéresse principalement à l’interface utilisateur et à l’utilisation de la classe `TaskMgr` pour charger et enregistrer des classes `TodoItem`.
 
-### <a name="windows-phone-ixmlstorage"></a>Windows Phone IXmlStorage
+## <a name="visual-studio-2019-for-mac"></a>Visual Studio 2019 pour Mac
 
-Windows Phone ne fournit pas de l’accès complet au système de fichiers de l’appareil, exposition à la place de l’API d’IsolatedStorage. Le `IXmlStorage` implémentation pour Windows Phone se présente comme suit :
+> [!WARNING]
+> Visual Studio pour Mac ne prend pas en charge la modification de la langue Visual Basic : il n’existe aucun élément de menu pour la création de projets ou de fichiers Visual Basic. Si vous ouvrez un **. vb** , aucune syntaxe de langage n’est mise en surbrillance, saisie semi-automatique ou IntelliSense.
 
-```csharp
-public class XmlStorageImplementation : IXmlStorage
-{
-    public XmlStorageImplementation(){}
-    public List<TodoItem> ReadXml(string filename)
-    {
-        IsolatedStorageFile fileStorage = IsolatedStorageFile.GetUserStoreForApplication();
-        if (fileStorage.FileExists(filename))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItem>));
-            using (var stream = new StreamReader(new IsolatedStorageFileStream(filename, FileMode.Open, fileStorage)))
-            {
-                return (List<TodoItem>)serializer.Deserialize(stream);
-            }
-        }
-        return new List<TodoItem>();
-    }
-    public void WriteXml(List<TodoItem> tasks, string filename)
-    {
-        IsolatedStorageFile fileStorage = IsolatedStorageFile.GetUserStoreForApplication();
-        var serializer = new XmlSerializer(typeof(List<TodoItem>));
-        using (var writer = new StreamWriter(new IsolatedStorageFileStream(filename, FileMode.OpenOrCreate, fileStorage)))
-        {
-            serializer.Serialize(writer, tasks);
-        }
-    }
-}
-```
+Visual Studio 2019 pour Mac _permet_ de compiler des projets visual studio .NET standard créés sur Windows, de sorte que les applications iOS peuvent référencer ces projets.
 
-Le `TodoItemManager` et `XmlStorageImplementation` sont créés dans le **App.xaml.cs** fichier comme indiqué dans cet extrait de code.
-
-```csharp
-var filename = "TodoList.xml";
-var xmlStorage = new XmlStorageImplementation();
-TodoMgr = new TodoItemManager(filename, xmlStorage);
-```
-
-Le reste de l’application Windows Phone se compose de Xaml et C# pour créer l’interface utilisateur et utiliser le `TodoMgr` classe pour charger et enregistrer `TodoItem` objets.
-
-## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL dans Visual Studio pour Mac
-
-Visual Studio pour Mac ne prend pas en charge le langage Visual Basic : Impossible de créer ou de compiler les projets Visual Basic avec Visual Studio pour Mac.
-
-Visual Studio pour la prise en charge de Mac pour les bibliothèques de classes portables signifie qu’il puisse référencer les assemblys de bibliothèque de classes portable qui ont été créés à partir de Visual Basic.
-
-Cette section explique comment compiler un assembly de bibliothèque de classes portable dans Visual Studio, puis assurez-vous qu’il sera stocké dans un système de contrôle de version et référencé par d’autres projets.
-
-### <a name="keeping-the-pcl-output-from-visual-studio"></a>Conserver la sortie de la bibliothèque de classes portable à partir de Visual Studio
-
-Par défaut, la plupart des systèmes de contrôle de version (y compris TFS et Git) sera configuré pour ignorer le **/bin/** directory, ce qui signifie que l’assembly compilé de la bibliothèque de classes portable n’est pas stocké. Cela signifie que vous devez copier manuellement dans tous les ordinateurs exécutant Visual Studio pour Mac ajouter une référence à celui-ci.
-
-Pour garantir que votre système de contrôle de version peut stocker la sortie d’assembly de bibliothèque de classes portable, vous pouvez créer un script de post-build qui copie dans la racine du projet. Cette étape post-build permet de vous assurer de l’assembly peut être facilement ajouté au contrôle de code source et partagée avec d’autres projets.
-
-#### <a name="visual-studio-2017"></a>Visual Studio 2017
-
-1. Avec le bouton droit sur le projet et choisissez le **Propriétés > événements de Build** section.
-
-2. Ajouter un _post-build_ script copie la DLL de sortie à partir de ce projet dans le répertoire racine du projet (qui est en dehors de **/bin/**). Selon votre configuration de contrôle de version, la DLL doit maintenant être en mesure d’être ajouté au contrôle de code source.
-
-  [![](native-apps-images/image6-vs-sml.png "Événements de build post script de build pour copier la DLL VB")](native-apps-images/image6-vs.png#lightbox)
-
-Prochaine fois que vous générez le projet, l’assembly de bibliothèque de classes Portable est copié à la racine du projet, et lorsque vous vérifiez dans/validation/push vos modifications de la DLL sera stocké (afin qu’il peut être téléchargé sur un Mac avec Visual Studio pour Mac).
-
-  [![](native-apps-images/image8-sml.png "Emplacement du fichier d’assembly de base Visual de sortie")](native-apps-images/image8.png#lightbox)
-
-
-Cet assembly peut ensuite être ajouté aux projets Xamarin dans Visual Studio pour Mac, même si le langage Visual Basic lui-même n’est pas pris en charge dans Xamarin iOS ou Android projets.
-
-### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Faisant référence à la bibliothèque de classes portable dans Visual Studio pour Mac
-
-Étant donné que Xamarin ne prend pas en charge Visual Basic Il est impossible de charger le projet de bibliothèque de classes portable (ni l’application Windows Phone) comme indiqué dans cette capture d’écran :
-
- [![](native-apps-images/image9.png "Visual Studio pour la solution de Mac")](native-apps-images/image9.png#lightbox)
-
-Nous pouvons toujours inclure le DLL d’assembly de bibliothèque de classes portable Visual Basic dans les projets Xamarin.iOS et Xamarin.Android :
-
-1.  Avec le bouton droit sur le **références** nœud et sélectionnez **modifier les références...**
-
-    [![](native-apps-images/image10.png "Menu de références de projet Edition")](native-apps-images/image10.png#lightbox)
-
-1.  Sélectionnez le **.Net Assembly** onglet et accédez à la DLL de sortie dans le répertoire du projet Visual Basic. Même si Visual Studio pour Mac ne peut pas ouvrir le projet, tous les fichiers doivent être il à partir du contrôle de code source. Cliquez sur **ajouter** puis **OK** pour ajouter cet assembly pour les applications iOS et Android.
-
-    [![](native-apps-images/image11-sml.png "Cliquez sur Ajouter puis sur OK pour ajouter cet assembly pour les applications iOS et Android")](native-apps-images/image11.png#lightbox)
-
-1.  Les applications iOS et Android peuvent maintenant inclure la logique d’application fournie par la bibliothèque de classes Portable de Visual Basic. Cette capture d’écran montre une application iOS qui fait référence à la bibliothèque PCL Visual Basic et comporte du code qui utilise la fonctionnalité à partir de cette bibliothèque.
-
-    [![](native-apps-images/image12-sml.png "Modifier les références d’ajouter la fenêtre d’assembly .NET")](native-apps-images/image12.png#lightbox)
-
-
-Si des modifications sont apportées au projet Visual Basic dans Visual Studio, n’oubliez pas de générer le projet, la DLL d’assembly résultant dans le contrôle de code source et ensuite extraire ce nouveau fichier DLL du contrôle de source sur votre Mac afin que Visual Studio pour Mac génère contiennent la dernière version fonctionnalité.
-
+Visual Studio 2017 _ne peut pas_ générer des projets Visual Basic.
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a montré comment utiliser le code Visual Basic dans les applications Xamarin à l’aide de Visual Studio et les bibliothèques de classes portables. Même si Xamarin ne prend pas en charge directement les Visual Basic, compilation Visual Basic dans une bibliothèque de classes portable permet au code écrit avec Visual Basic à inclure dans les applications iOS et Android.
+Cet article a montré comment utiliser Visual Basic code dans des applications Xamarin à l’aide de Visual Studio et des bibliothèques de .NET Standard. Même si Xamarin ne prend pas en charge directement Visual Basic, la compilation des Visual Basic dans une bibliothèque de .NET Standard permet d’inclure du code écrit avec Visual Basic dans des applications iOS et Android.
 
 ## <a name="related-links"></a>Liens associés
 
-- [TaskyPortableVB (exemple)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
-- [Le développement multiplateforme avec le Kit de développement .NET Framework (Microsoft)](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)
+- [TaskyVB (exemple .NET Standard)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB)
+- [Nouveautés de .NET Standard](https://docs.microsoft.com/dotnet/standard/whats-new/whats-new-in-dotnet-standard?tabs=csharp)

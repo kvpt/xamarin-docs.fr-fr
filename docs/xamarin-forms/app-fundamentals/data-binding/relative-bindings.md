@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/30/2019
-ms.openlocfilehash: 24879b1ffcac97acdba27c32a22e43bfb6e80459
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
+ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749778"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72959138"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Liaisons relatives Xamarin. Forms
 
@@ -31,10 +31,10 @@ L’extension de balisage `RelativeSource` est prise en charge par la classe `Re
 
 La propriété `Mode` doit être définie sur l’un des membres de l’énumération `RelativeBindingSourceMode` :
 
-- `TemplatedParent` indique l’élément auquel le modèle, dans lequel se trouve l’élément lié, est appliqué. Pour plus d’informations, consultez [liaison à un parent basé sur un modèle](#bind-to-a-templated-parent).
-- `Self` indique l’élément sur lequel la liaison est définie, ce qui vous permet de lier une propriété de cet élément à une autre propriété sur le même élément. Pour plus d’informations, consultez [liaison à Self](#bind-to-self).
-- `FindAncestor` indique l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison à un contrôle ancêtre représenté par la propriété `AncestorType`. Pour plus d’informations, consultez [liaison à un ancêtre](#bind-to-an-ancestor).
-- `FindAncestorBindingContext` indique la `BindingContext` de l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison avec l' `BindingContext` d’un ancêtre représenté par la propriété `AncestorType`. Pour plus d’informations, consultez [liaison à un ancêtre](#bind-to-an-ancestor).
+- `TemplatedParent` indique l’élément auquel le modèle, dans lequel se trouve l’élément lié, est appliqué. Pour plus d’informations, consultez [lier à un parent basé sur un modèle](#bind-to-a-templated-parent).
+- `Self` indique l’élément sur lequel la liaison est définie, ce qui vous permet de lier une propriété de cet élément à une autre propriété sur le même élément. Pour plus d’informations, consultez [lier à soi-même](#bind-to-self).
+- `FindAncestor` indique l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison à un contrôle ancêtre représenté par la propriété `AncestorType`. Pour plus d’informations, consultez [lier à un ancêtre](#bind-to-an-ancestor).
+- `FindAncestorBindingContext` indique la `BindingContext` de l’ancêtre dans l’arborescence d’éléments visuels de l’élément lié. Ce mode doit être utilisé pour établir une liaison avec l' `BindingContext` d’un ancêtre représenté par la propriété `AncestorType`. Pour plus d’informations, consultez [lier à un ancêtre](#bind-to-an-ancestor).
 
 La propriété `Mode` est la propriété de contenu de la classe `RelativeSourceExtension`. Par conséquent, pour les expressions de balisage XAML exprimées à l’aide d’accolades, vous pouvez éliminer la `Mode=` partie de l’expression.
 
