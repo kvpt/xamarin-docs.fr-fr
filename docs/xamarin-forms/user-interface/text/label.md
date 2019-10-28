@@ -6,13 +6,13 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/26/2019
-ms.openlocfilehash: 6ea8195d422da3c64175b164c5fbf2885eb234ab
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 10/28/2019
+ms.openlocfilehash: d51ecc728ef6d22391f1cbc682aa204a3ce44b8a
+ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696393"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72971230"
 ---
 # <a name="xamarinforms-label"></a>Étiquette Xamarin. Forms
 
@@ -69,32 +69,6 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 ```
 
 Le résultat est que les caractères du texte affiché par le [`Label`](xref:Xamarin.Forms.Label) sont espacés `CharacterSpacing` des unités indépendantes du périphérique.
-
-## <a name="padding"></a>Padding
-
-Le remplissage représente l’espace entre un élément et ses éléments enfants, et est utilisé pour séparer l’élément de son propre contenu. Le remplissage peut être appliqué aux instances de [`Label`](xref:Xamarin.Forms.Label) en affectant à la propriété `Label.Padding` une valeur [`Thickness`](xref:Xamarin.Forms.Thickness) :
-
-```xaml
-<Label Text="Padded text"
-       Padding="20" />
-```
-
-Le code C# équivalent est :
-
-```csharp
-Label label = new Label
-{
-    Text = "Padded text",
-    Padding = new Thickness(20)
-};
-```
-
-> [!IMPORTANT]
-> Sur iOS, lors de la création d’un [`Label`](xref:Xamarin.Forms.Label) qui définit la propriété `Padding`, le remplissage est appliqué et la valeur de remplissage peut être mise à jour ultérieurement. Toutefois, lors de la création d’un `Label` qui ne définit pas la propriété `Padding`, toute tentative de sa définition ultérieure n’aura aucun effet.
->
-> Sur Android et le plateforme Windows universelle, la valeur de la propriété `Padding` peut être spécifiée lors de la création du `Label`, ou version ultérieure.
-
-Pour plus d’informations sur le remplissage, consultez [marges et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 ## <a name="colors"></a>Couleurs
 
@@ -390,6 +364,48 @@ var label = new Label
 Les captures d’écran suivantes montrent le résultat de la définition de la propriété [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) sur 1,8 :
 
 ![Exemple d’étendue de LineHeight](label-images/span-lineheight.png)
+
+## <a name="padding"></a>Padding
+
+Le remplissage représente l’espace entre un élément et ses éléments enfants, et est utilisé pour séparer l’élément de son propre contenu. Le remplissage peut être appliqué aux instances de [`Label`](xref:Xamarin.Forms.Label) en affectant à la propriété `Label.Padding` une valeur [`Thickness`](xref:Xamarin.Forms.Thickness) :
+
+```xaml
+<Label Padding="10">
+    <Label.FormattedText>
+        <FormattedString>
+            <Span Text="Lorem ipsum" />
+            <Span Text="dolor sit amet." />
+        </FormattedString>
+    </Label.FormattedText>
+</Label>
+```
+
+Le code C# équivalent est :
+
+```csharp
+FormattedString formattedString = new FormattedString();
+formattedString.Spans.Add(new Span
+{
+  Text = "Lorem ipsum"
+});
+formattedString.Spans.Add(new Span
+{
+  Text = "dolor sit amet."
+});
+Label label = new Label
+{
+    FormattedText = formattedString,
+    Padding = new Thickness(20)
+};
+```
+
+> [!IMPORTANT]
+> Sur iOS, lors de la création d’un [`Label`](xref:Xamarin.Forms.Label) qui définit la propriété `Padding`, le remplissage est appliqué et la valeur de remplissage peut être mise à jour ultérieurement. Toutefois, lors de la création d’un `Label` qui ne définit pas la propriété `Padding`, toute tentative de sa définition ultérieure n’aura aucun effet.
+>
+> Sur Android et le plateforme Windows universelle, la valeur de la propriété `Padding` peut être spécifiée lors de la création du `Label`, ou version ultérieure.
+
+Pour plus d’informations sur le remplissage, consultez [marges et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+
 
 ## <a name="hyperlinks"></a>Liens hypertexte
 
