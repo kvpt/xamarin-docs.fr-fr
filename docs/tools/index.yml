@@ -3,8 +3,8 @@ documentType: LandingData
 title: Outils Xamarin
 metadata:
   description: Outils conçus pour améliorer votre expérience de développement Xamarin.
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 08/08/2018
   ms.topic: landing-page
 abstract:
