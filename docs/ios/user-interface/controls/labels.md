@@ -4,23 +4,23 @@ description: Ce document explique comment utiliser des étiquettes dans Xamarin.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 275acd02e6cece0842344d8e5833c23af1014a0f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768945"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022018"
 ---
 # <a name="labels-in-xamarinios"></a>Étiquettes dans Xamarin. iOS
 
-Le `UILabel` contrôle est utilisé pour afficher du texte en lecture seule et multiligne.
+Le contrôle `UILabel` est utilisé pour afficher du texte en lecture seule et multiligne.
 
 ## <a name="implementing-a-label"></a>Implémentation d’une étiquette
 
-Une nouvelle étiquette est créée en instanciant [`UILabel`](xref:UIKit.UILabel)un :
+Une nouvelle étiquette est créée en instanciant une [`UILabel`](xref:UIKit.UILabel):
 
 ```csharp
 UILabel label = new UILabel();
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Pour plus d’informations sur le style du `NSAttributedString` texte à l’aide de, consultez la recette du [style de texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) .
+Pour plus d’informations sur le style du texte à l’aide de `NSAttributedString` consultez la recette du [style de texte](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) .
 
-Par défaut, les étiquettes `Enabled` ont la valeur true, mais il est possible de lui affecter la valeur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé :
+Par défaut, les `Enabled` ont la valeur true, mais il est possible de la définir sur Disabled pour indiquer à l’utilisateur qu’un contrôle spécifique est désactivé :
 
 ```csharp
 label.Enabled = false;

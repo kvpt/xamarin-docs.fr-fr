@@ -3,15 +3,15 @@ title: Azure Active Directory
 description: Ce document décrit les étapes à suivre pour permettre à une application mobile de s’authentifier auprès de Azure Active Directory.
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: b28fcea37d991879df0231609d09eeb2eca49505
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 18604ffa4980d47149d8feed257460e782f30bee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766348"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016644"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
@@ -29,8 +29,8 @@ Les deux premières étapes sont généralement les mêmes, quels que soient les
 Voici quelques exemples de différents services auxquels vous pouvez accéder :
 
 - [API Graph](~/cross-platform/data-cloud/active-directory/graph.md)
-- API Web
-- office365
+- API web
+- 365
 
 ## <a name="conclusion"></a>Conclusion
 

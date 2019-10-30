@@ -4,15 +4,15 @@ description: Cette rubrique explique comment définir des ressources qui seront 
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 6ae10e73c3f41226560beb8cf8c50608fc6adf3f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: ccac795333dff52d35a66e8cd205c7b5bbd1bb2c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70762623"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029412"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Qualificateurs de ressources et options de visualisation
 
@@ -24,7 +24,7 @@ _Cette rubrique explique comment définir des ressources qui seront utilisées u
 
 Vous pouvez accéder aux **Options du qualificateur de ressource** en cliquant sur l’icône représentant des points de suspension à droite du bouton en mode **paysage** :
 
-[Options du qualificateur ![Resource](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[Options du qualificateur de ressource ![](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 Cette boîte de dialogue présente des menus déroulants pour les qualificateurs de ressources suivants :
 
@@ -38,7 +38,7 @@ Chacun de ces menus déroulants ouvre de nouvelles boîtes de dialogue où vous 
 
 Le menu déroulant **langue** répertorie uniquement les langues dont les ressources sont définies (ou **toutes les langues**, qui est la valeur par défaut). Toutefois, il existe également une option **Ajouter une langue/région..** . qui vous permet d’ajouter une nouvelle langue à la liste :
 
-[langue/région de ![Add](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![ajouter une langue/région](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 Lorsque vous cliquez sur **Ajouter une langue/région...** , la boîte de dialogue **Sélectionner une langue** s’ouvre et affiche les listes déroulantes des langues et régions disponibles :
 
@@ -54,7 +54,7 @@ Notez que si vous ajoutez une nouvelle langue, mais que vous ne créez pas de re
 
 Lorsque vous cliquez sur le menu déroulant mode de l' **interface utilisateur** , une liste de modes s’affiche, par exemple **normal**, **station d’accueil automobile**, **station d’accueil de bureau**, **télévision**, **appareil**et **Espion**:
 
-[menu mode ![UI](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
+[menu ![mode de l’interface utilisateur](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 Sous cette liste se trouvent les modes nuit **non nocturne** et **nuit**, suivis des directions de disposition de **gauche à droite** et de **droite à gauche** (pour plus d’informations sur les options de **gauche à droite** et de droite **à gauche** , consultez [ LayoutDirection](xref:Android.Util.LayoutDirection)).
 Les derniers éléments de la boîte de dialogue **Options du qualificateur de ressource** sont les **écrans ronds** (pour une utilisation avec Android usure) ou **pas les écrans arrondis**.
@@ -69,7 +69,7 @@ L’icône Paramètres de la **barre d’action** est disponible à gauche de l�
 
 Cette icône ouvre un menu segue de dialogue qui permet de sélectionner l’un des trois modes d’Barre d’action :
 
-- @No__t_1 **standard** est constitué soit d’un logo, soit d’une icône et d’un texte de titre avec un sous-titre facultatif.
+- &ndash; **standard** est constitué soit d’un logo, soit d’une icône et d’un texte de titre avec un sous-titre facultatif.
 
 - **Liste** &ndash; mode de navigation de la liste. Au lieu d’un texte de titre statique, ce mode présente un menu de liste pour la navigation au sein de l’activité (autrement dit, il peut être présenté à l’utilisateur sous la forme d’une liste déroulante).
 
@@ -103,7 +103,7 @@ Pour plus d’informations sur les types de ressources, consultez [ressources An
 
 Vous pouvez accéder aux **Options du qualificateur de ressource** en cliquant sur l’icône représentant des points de suspension à droite du bouton en mode **paysage** :
 
-[options du qualificateur ![Resource](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
+[options du qualificateur de ressource ![](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
 
 Cette boîte de dialogue présente des menus déroulants pour les qualificateurs de ressources suivants :
 
@@ -117,15 +117,15 @@ Chacun de ces menus déroulants ouvre de nouvelles boîtes de dialogue où vous 
 
 Le menu déroulant **langue** répertorie uniquement les langues dont les ressources sont définies (ou **toutes les langues**, qui est la valeur par défaut). Toutefois, il existe également une option **Ajouter une langue/région..** . qui vous permet d’ajouter une nouvelle langue à la liste :
 
-[langue/région de ![Add](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
+[![ajouter une langue/région](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
 
 Lorsque vous cliquez sur **Ajouter une langue/région...** , la boîte de dialogue **Sélectionner une langue** s’ouvre et affiche les listes déroulantes des langues et régions disponibles :
 
-[![List de langues](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
+[![la liste des langues](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
 Dans cet exemple, nous avons choisi **fr (français)** comme langue et **être** (Belgique) pour le dialecte régional du français. Notez que le champ **région** est facultatif, car de nombreuses langues peuvent être spécifiées sans tenir compte des régions spécifiques. Lorsque le menu déroulant **langue** s’ouvre à nouveau, il affiche la ressource langue/région nouvellement ajoutée :
 
-[![Language et région choisies](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
+[Langue et région de ![choisies](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
 Notez que si vous ajoutez une nouvelle langue, mais que vous ne créez pas de ressources pour celle-ci, la langue ajoutée ne s’affichera plus la prochaine fois que vous ouvrirez le projet.
 
@@ -133,7 +133,7 @@ Notez que si vous ajoutez une nouvelle langue, mais que vous ne créez pas de re
 
 Lorsque vous cliquez sur le menu déroulant mode de l' **interface utilisateur** , une liste de modes s’affiche, par exemple **normal**, **station d’accueil automobile**, **station d’accueil de bureau**, **télévision**, **appareil**et **Espion**:
 
-[menu mode ![UI](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
+[menu ![mode de l’interface utilisateur](resource-qualifiers-images/xs/12-ui-mode-m75-sml.png)](resource-qualifiers-images/xs/12-ui-mode-m75.png#lightbox)
 
 Sous cette liste se trouvent les modes nuit **non nocturne** et **nuit**, suivis des directions de disposition de **gauche à droite** et **de droite à gauche**. La dernière paire d’options vous permet de sélectionner des **écrans ronds** ou **rectangulaires** (utiles pour les appareils Android d’usure).
 
@@ -144,7 +144,7 @@ Pour plus d’informations sur les options de **gauche à droite** et **de droit
 
 L’icône Paramètres de la **barre d’action** est disponible à gauche de l’icône pinceau (éditeur de thème) :
 
-[paramètres de la barre de ![Action](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
+[paramètres de Barre d’action ![](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
 
 Cette icône ouvre un menu segue de dialogue qui permet de sélectionner l’un des trois modes d’Barre d’action :
 
@@ -158,17 +158,17 @@ Cette icône ouvre un menu segue de dialogue qui permet de sélectionner l’un 
 
 Le menu déroulant **thème** affiche tous les thèmes définis dans le projet. Le fait de sélectionner **plus de thèmes** ouvre une boîte de dialogue contenant la liste de tous les thèmes disponibles à partir de la Android SDK installée, comme indiqué ci-dessous :
 
-[Liste des thèmes ![More](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
+[![plus de liste de thèmes](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
 Quand un thème est sélectionné, le Aire de conception est mis à jour pour afficher l’effet du nouveau thème. Notez que cette modification est rendue permanente uniquement si l’utilisateur clique sur le bouton **OK** dans la boîte de dialogue **thème** . Une fois qu’un thème a été sélectionné, il est inclus dans le menu déroulant **thème** , comme indiqué ci-dessous :
 
-[![Light thème est désormais disponible](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
+[![thème clair est désormais disponible](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
 ## <a name="android-version"></a>Version d’Android
 
 Le sélecteur de **version** Android définit la version d’Android qui est utilisée pour afficher la disposition dans le concepteur. Le sélecteur affiche toutes les versions qui sont compatibles avec la version cible du .NET Framework du projet :
 
-[![List des versions d’Android](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
+[![liste des versions d’Android](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
 La version cible du .NET Framework peut être définie dans les paramètres du projet sous la section **Options du projet > générer > général** . Pour plus d’informations sur la version cible de .NET Framework, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).
 

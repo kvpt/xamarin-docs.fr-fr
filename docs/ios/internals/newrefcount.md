@@ -4,15 +4,15 @@ description: Ce document décrit le système de comptage de références amélio
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753341"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022302"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Nouveau système de comptage de références dans Xamarin. iOS
 
@@ -22,27 +22,27 @@ Xamarin. iOS 9.2.1 a introduit par défaut le système de comptage de référenc
 
 À partir de Xamarin 9.2.1, le nouveau système de comptage de références est activé pour **toutes les** applications par défaut.
 
-Si vous développez une application existante, vous pouvez vérifier le fichier. csproj pour vous assurer que toutes les occurrences de `MtouchUseRefCounting` ont la `true`valeur, comme ci-dessous :
+Si vous développez une application existante, vous pouvez vérifier le fichier. csproj pour vous assurer que toutes les occurrences de `MtouchUseRefCounting` sont définies sur `true`, comme ci-dessous :
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-S’il est défini sur `false` votre application, il n’utilise pas les nouveaux outils.
+S’il est défini sur `false` votre application n’utilisera pas les nouveaux outils.
 
 ### <a name="using-older-versions-of-xamarin"></a>Utilisation de versions antérieures de Xamarin
 
 Xamarin. iOS 7.2.1 et versions ultérieures offre une version préliminaire améliorée de notre nouveau système de comptage de références.
 
-**API classique :**
+**API classique:**
 
 Pour activer ce nouveau système de comptage de références, activez la case à cocher **utiliser l’extension de comptage de références** située dans l’onglet **avancé** des **options de génération iOS**de votre projet, comme indiqué ci-dessous : 
 
-[![](newrefcount-images/image1.png "Activer le nouveau système de comptage de références")](newrefcount-images/image1.png#lightbox)
+[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
 
 Notez que ces options ont été supprimées dans les versions plus récentes de Visual Studio pour Mac.
 
- **[API unifiée :](~/cross-platform/macios/unified/index.md)**
+ **[API unifiée:](~/cross-platform/macios/unified/index.md)**
 
  La nouvelle extension de comptage de références est requise pour le API unifiée et doit être activée par défaut. Cette valeur n’est peut-être pas activée automatiquement pour les anciennes versions de votre IDE et vous devrez peut-être en effectuer une vérification vous-même.
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-Sans l’extension du décompte de références, ce `cell` code se bloquerait parce qu' `TouchDown` il est collecté, et donc son délégué, qui se traduira par un pointeur non résolu.
+Sans l’extension du décompte de références, ce code se bloquerait, car `cell` devient l’objets pouvant être collectés, et donc son `TouchDown` délégué, qui se traduira par un pointeur non résolu.
 
 L’extension de décompte de références garantit que l’objet managé reste actif et empêche sa collection, à condition que l’objet natif soit conservé par le code natif.
 

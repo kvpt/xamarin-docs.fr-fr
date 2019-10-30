@@ -4,15 +4,15 @@ description: Ce document présente les techniques de distribution ad hoc princip
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 74e258eeca78260fbfe3811e1dc6d8051e68e5f2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763206"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030254"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Distribution ad hoc pour les applications Xamarin.iOS
 
@@ -50,25 +50,25 @@ La section suivante décrit comment configurer un certificat de distribution et 
 3. Cliquez sur le bouton **+** pour créer un certificat.
 4. Sous le titre *Production*, sélectionnez **In-House and Ad Hoc (Interne et ad hoc)** , ou **App Store and Ad Hoc (App Store et ad hoc)** , en fonction de votre abonnement au programme :
 
-   [![Sélectionnez interne et ad hoc, ou App Store et ad hoc](ad-hoc-distribution-images/cert-first-small.png)](ad-hoc-distribution-images/cert-first-large.png#lightbox)
+   [![sélectionnez interne et ad hoc, ou App Store et ad hoc](ad-hoc-distribution-images/cert-first-small.png)](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Cliquez sur Continue, puis suivez les instructions permettant de créer une demande de signature de certificat via Trousseaux d’accès :
 
-   [![Créer une demande de signature de certificat via un accès au trousseau](ad-hoc-distribution-images/createcertmanually02.png)](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+   [![créer une demande de signature de certificat via un accès au trousseau](ad-hoc-distribution-images/createcertmanually02.png)](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Une fois la demande de signature de certificat créée, cliquez sur Continue, puis chargez-la sur le Member Center :
 
-   [![Charger la CSR dans le Centre des membres](ad-hoc-distribution-images/createcertmanually03.png)](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
+   [![charger la CSR dans le Centre des membres](ad-hoc-distribution-images/createcertmanually03.png)](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Cliquez sur Generate pour créer un certificat.
 8. Pour finir, téléchargez le certificat rempli, puis double-cliquez sur le fichier pour l’installer.
 9. À ce stade, le certificat doit être installé sur la machine, mais vous devrez peut-être [actualiser vos profils](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download) pour vérifier qu’ils sont visibles dans Xcode.
 
-Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, suivez les étapes ci-dessous :
+Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour cela, effectuez les étapes suivantes :
 
-1. Sélectionnez votre équipe, puis cliquez sur **Gérer les certificats…**  :  [![Sélection de l’équipe](ad-hoc-distribution-images/selectteam.png)](ad-hoc-distribution-images/selectteam.png#lightbox)
+1. Sélectionnez votre équipe, puis cliquez sur **gérer les certificats...** : [![la sélection de l’équipe](ad-hoc-distribution-images/selectteam.png)](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2. Cliquez ensuite sur le bouton **plus (+)** , puis sélectionnez **iOS App Store (App Store iOS)**  :  [![Sélection de l’App Store iOS](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
+2. Ensuite, cliquez sur le bouton **plus (+)** et sélectionnez **iOS app store**: [![sélection de l’App Store iOS](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox) .
 
 <a name="createprofile" />
 
@@ -79,7 +79,7 @@ Sinon, il est possible de demander un certificat via la boîte de dialogue Prefe
 ### <a name="create-an-app-id"></a>Créer un ID d’application
 Comme pour tout profil de provisionnement que vous créez, un ID d’application est nécessaire pour identifier l’application à distribuer sur l’appareil de l’utilisateur. Si vous ne l’avez pas déjà créé, suivez les étapes ci-dessous pour en créer un :
 
-1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **App IDs** sous **Identifiers**.
+1. Dans [Apple Developer Center](https://developer.apple.com/account/overview.action), accédez à la section *Certificates, Identifiers & Profiles* (Certificats, identificateurs et profils). Sélectionnez **ID d’application** sous **Identificateurs**.
 2. Cliquez sur le bouton **+** , puis indiquez un **Name (Nom)** qui identifie l’application sur le portail.
 3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé, par exemple :
     - **Explicite** : `com.[DomainName].[AppName]`
@@ -89,23 +89,23 @@ Comme pour tout profil de provisionnement que vous créez, un ID d’application
 
 Une fois que vous avez les composants nécessaires pour créer un profil de distribution, suivez les étapes ci-dessous pour le créer :
 
-1. Retournez au portail de provisionnement Apple, puis sélectionnez **Provisioning (Provisionnement) > Distribution** :  [![Sélectionner la distribution de > de provisionnement](ad-hoc-distribution-images/distribute01.png)](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. Revenez au portail de provisionnement Apple et sélectionnez **approvisionnement > distribution**: [![sélectionnez approvisionnement > distribution](ad-hoc-distribution-images/distribute01.png)](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Cliquez sur le bouton **+** et sélectionnez le type **Ad hoc** en tant que profil de distribution à créer :
 
-    [![Créer un type de distribution ad hoc](ad-hoc-distribution-images/distribute02.png)](ad-hoc-distribution-images/distribute02.png#lightbox)
+    [![créer un type de distribution ad hoc](ad-hoc-distribution-images/distribute02.png)](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. Cliquez sur le bouton **Continue**, puis dans la liste déroulante, sélectionnez l’ID d’application pour lequel vous souhaitez créer un profil de distribution :
 
-    [![Sélectionner l’ID d’application dans la liste déroulante](ad-hoc-distribution-images/distribute03.png)](ad-hoc-distribution-images/distribute03.png#lightbox)
+    [![sélectionner l’ID d’application dans la liste déroulante](ad-hoc-distribution-images/distribute03.png)](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. Cliquez sur le bouton **Continue**, puis sélectionnez le certificat de distribution nécessaire pour signer l’application :
 
-    [![Sélectionner le certificat de distribution nécessaire pour signer l’application](ad-hoc-distribution-images/distribute04.png)](ad-hoc-distribution-images/distribute04.png#lightbox)
+    [![sélectionnez le certificat de distribution nécessaire pour signer l’application](ad-hoc-distribution-images/distribute04.png)](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 5. Cliquez sur le bouton **Continue**, puis entrez un **Name (Nom)** pour le nouveau profil de distribution :
 
-    [![Entrer un nom pour le nouveau profil de distribution](ad-hoc-distribution-images/distribute06.png)](ad-hoc-distribution-images/distribute06.png#lightbox)
+    [![entrez un nom pour le nouveau profil de distribution](ad-hoc-distribution-images/distribute06.png)](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 6. Cliquez sur le bouton **Generate** pour créer le profil et finaliser le processus.
 

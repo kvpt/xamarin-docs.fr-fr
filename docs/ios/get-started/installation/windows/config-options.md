@@ -4,15 +4,15 @@ description: Cet article décrit comment configurer Visual Studio 2019 pour le 
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: b3910bd096f2a8dd301a9ba6e200028d3121c8df
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279222"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022534"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>Configuration de Visual Studio pour le développement iOS
 
@@ -54,7 +54,7 @@ Pour vous assurer que ce menu déroulant est visible dans la barre d’outils st
 - Choisissez **Ajouter/supprimer des boutons** 
 - Vérifiez que l’élément **Plateformes solution** est coché :
 
-![Activation du menu déroulant Plateformes solution](config-options-images/solution-platforms-enable.png "Activation du menu déroulant Plateformes solution")
+![Activation du menu déroulant plateformes de solution](config-options-images/solution-platforms-enable.png "Activation du menu déroulant plateformes de solution")
 
 Avec un projet iOS ouvert, les barres d’outils **standard** et **iOS** doivent maintenant ressembler à la capture d’écran suivante :
 

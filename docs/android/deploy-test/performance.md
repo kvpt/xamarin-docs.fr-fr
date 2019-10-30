@@ -1,26 +1,26 @@
 ---
 title: Performances des applications Xamarin.Android
-description: De nombreuses techniques permettent d’accroître les performances des applications générées avec Xamarin.Android. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application. Cet article décrit et explique ces techniques.
+description: De nombreuses techniques permettent d’accroître les performances des applications générées avec Xamarin.Android. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application. Cet article aborde ces techniques.
 ms.prod: xamarin
 ms.assetid: dc2e27f2-7f71-4d57-9cf9-165528276613
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 88e1acecdc96af596a0151bbd3f64dc4547d4cce
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 620a7edd4467a5a2bae60bbd82d0e1460c9f0040
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753821"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021413"
 ---
 # <a name="xamarinandroid-performance"></a>Performances des applications Xamarin.Android
 
-_De nombreuses techniques permettent d’accroître les performances des applications générées avec Xamarin.Android. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application. Cet article décrit et explique ces techniques._
+_Il existe de nombreuses techniques pour améliorer les performances des applications générées avec Xamarin. Android. Collectivement, ces techniques peuvent réduire de façon considérable la quantité de travail effectuée par un processeur et la quantité de mémoire consommée par une application. Cet article décrit et explique ces techniques._
 
 ## <a name="performance-overview"></a>Vue d'ensemble des performances
 
-Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
+Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
 
 De nombreuses techniques permettent d’accroître les performances des applications générées avec Xamarin.Android (y compris du point de vue de l’utilisateur). Elles comprennent :
 
@@ -36,7 +36,7 @@ De nombreuses techniques permettent d’accroître les performances des applicat
 - [Faire disparaître les boîtes de dialogue](#dismissdialogs)
 
 > [!NOTE]
-> Avant de lire cet article, lisez d’abord [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques spécifiques indépendantes des plateformes qui permettent d’améliorer l’utilisation de la mémoire et le niveau de performance des applications générées à l’aide de la plateforme Xamarin.
+> Avant de lire cet article, lisez d’abord [Performances multiplateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques indépendantes des plateformes permettant améliorer l’utilisation de la mémoire et les performances des applications générées avec la plateforme Xamarin.
 
 <a name="optimizelayout" />
 
@@ -224,7 +224,7 @@ Pour recevoir une notification lorsque l’utilisateur quitte l’interface util
 
 ## <a name="optimize-image-resources"></a>Optimiser les ressources d’images
 
-Les images font partie des ressources les plus lourdes utilisées par les applications, et sont souvent capturées à des résolutions élevées. Par conséquent, affichez les images à la résolution requise pour l’écran de l’appareil. Si la résolution de l’image est supérieure à celle de l’écran, elle doit être réduite.
+Les images font partie des ressources les plus coûteuses qui sont utilisées par les applications, et sont souvent capturées en haute résolution. Par conséquent, affichez les images à la résolution requise pour l’écran de l’appareil. Si la résolution de l’image est supérieure à celle de l’écran, elle doit être réduite.
 
 Pour plus d’informations, consultez [Optimiser les ressources d’images](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) dans le guide [Performances entre plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md).
 
@@ -262,7 +262,7 @@ Lorsque vous utilisez la classe [`ProgressDialog`](xref:Android.App.ProgressDial
 
 ## <a name="summary"></a>Récapitulatif
 
-Dans cet article, vous avez découvert les techniques qui permettent d’accroître les performances des applications générées avec Xamarin.Android. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+Dans cet article, vous avez découvert les techniques qui permettent d’accroître les performances des applications générées avec Xamarin.Android. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 
 ## <a name="related-links"></a>Liens associés
 

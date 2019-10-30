@@ -4,15 +4,15 @@ description: Ce document contient des liens vers divers guides qui décrivent co
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/06/2016
-ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7f5af84a8dfb9f774822e28e50cf8bbca9acf94b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768401"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021891"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Utilisation des tables et des cellules dans Xamarin. iOS
 
@@ -22,14 +22,14 @@ Pour ceux qui travaillent sur des applications multiplateformes avec Xamarin. An
 
 Ces articles présentent un aperçu complet de l’utilisation des tables, notamment :
 
-- **Parties de table** : présentation et explication des éléments visuels du `UITableView` contrôle. 
+- **Parties de table** : présentation et explication des éléments visuels du contrôle `UITableView`. 
 - **Affichage des données dans les tables** : l’illustration de la création et du remplissage d’une table, l’utilisation de différents styles de table et de cellule et l’évitement des problèmes de mémoire en recyclant des objets Cell. 
 - **Utilisation avancée** : génération de cellules personnalisées et utilisation des fonctionnalités de modification de la classe UITableView. 
 - **Création visuelle d’une table** : à l’aide de l’Xamarin Designer pour IOS pour créer une interface pilotée par table avec une table de montage séquentiel. 
 
-## <a name="contents"></a>Sommaire
+## <a name="contents"></a>Contenu
 
- [Fonctionnalités des &amp; composants de la table](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
+ [Fonctionnalités de &amp; des composants de table](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
  [Remplissage d’un tableau avec des données](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 

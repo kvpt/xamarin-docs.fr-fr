@@ -3,15 +3,15 @@ title: Prise en main de macOS
 description: Ce document décrit la prise en main de l’intégration de .NET avec macOS. Il traite des exigences et présente un exemple d’application pour montrer comment lier l’assembly managé et utiliser la sortie générée dans un projet XCode.
 ms.prod: xamarin
 ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: e7f1bac95e9e812c0e47b55b85f72f34ba76e68e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d081795ecfcc5d0aa2559b866fcc57076fe8248b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290265"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007022"
 ---
 # <a name="getting-started-with-macos"></a>Prise en main de macOS
 

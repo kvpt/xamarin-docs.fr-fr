@@ -4,19 +4,19 @@ description: Ce document décrit C# pour les développeurs Objective-C. Il compa
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: a55d1d9848d3f1378ccbc4a24e1748eb146a6a35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b84d959ce7976fc51cbdfee99cbceec560e8e8e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291998"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022431"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Abécédaire du langage C# pour les développeurs Objective-C
 
-_Xamarin.iOS permet de partager entre les plateformes du code écrit en C# indépendant de la plateforme. Toutefois, vous souhaitez peut-être que les applications iOS existantes tirent parti du code Objective-C qui a déjà été créé. Cet article est un court manuel de démarrage pour les développeurs Objective-C qui souhaitent passer à Xamarin et au langage C#._
+_Xamarin. iOS permet de partager du code de plateforme C# agnostique écrit dans plusieurs plateformes. Toutefois, les applications iOS existantes peuvent souhaiter tirer parti du code Objective-C qui a déjà été créé. Cet article sert de brève introduction pour les développeurs objective-C qui souhaitent passer à Xamarin et au C# langage._
 
 Les applications iOS et OS X développées en Objective-C peuvent bénéficier de Xamarin en utilisant C# là où aucun code spécifique de la plateforme n’est pas nécessaire, ce qui permet d’utiliser ce code sur des appareils autres qu’Apple. Les éléments tels que les services web, l’analyse JSON et XML, ainsi que les algorithmes personnalisés, peuvent ensuite être utilisés à travers les différentes plateformes.
 
@@ -36,11 +36,11 @@ Objective-C et C# sont deux langages très différents d’un point de vue de la
 
 Ceci dit, plusieurs fonctionnalités de langage d’Objective-C et de C# sont similaires au niveau du fonctionnement. Durant la création d’une liaison au code Objective-C à partir de C# ou quand vous transférez Objective-C vers C#, comprendre ces ressemblances s’avère utile.
 
-### <a name="protocols-vs-interfaces"></a>Protocoles et Interfaces
+### <a name="protocols-vs-interfaces"></a>Protocoles et interfaces
 
 Objective-C et C# sont tous deux des langages à héritage simple. Toutefois, les deux langages prennent en charge l’implémentation d’interfaces multiples dans une classe donnée. En Objective-C, ces interfaces logiques sont appelées des *protocoles* tandis qu’en C#, elles sont appelées des *interfaces*. Au niveau de l’implémentation, la principale différence entre une interface C# et un protocole Objective-C est que ce dernier peut avoir des méthodes facultatives. Pour plus d’informations, consultez l’article [Événements, délégués et protocoles](~/ios/app-fundamentals/delegates-protocols-and-events.md).
 
-### <a name="categories-vs-extension-methods"></a>Catégories et Méthodes d’extension
+### <a name="categories-vs-extension-methods"></a>Catégories et méthodes d’extension
 
 Objective-C permet d’ajouter des méthodes à une classe pour laquelle vous n’avez peut-être pas le code d’implémentation à l’aide de *catégories*. En C#, un concept similaire est disponible à travers ce que l'on appelle des *méthodes d’extension*.
 
@@ -58,11 +58,11 @@ public static class UITextViewExtensions
 
 Ainsi, quand une instance d’un argument `UITextView` sera créée dans le code, la méthode sera disponible dans la liste de saisie semi-automatique, comme indiqué ci-dessous :
 
- ![](primer-images/01-extensionmethodintellisense.png "Méthode disponible dans la saisie semi-automatique")
+ ![](primer-images/01-extensionmethodintellisense.png "The method available in the autocomplete")
 
 Quand la méthode d’extension est appelée, l’instance est passée à l’argument, tel que `textView` dans cet exemple.
 
-### <a name="frameworks-vs-assemblies"></a>Frameworks et Assemblys
+### <a name="frameworks-vs-assemblies"></a>Frameworks et assemblys
 
 Objective-C empaquette des classes associées dans des répertoires spéciaux appelés des frameworks. Toutefois, en C# et en .NET, les assemblys sont utilisés pour fournir des bits réutilisables de code précompilé. Dans les environnements en dehors d’iOS, les assemblys contiennent le code de langage intermédiaire (IL) qui est compilé « juste-à-temps » (JIT) au moment de l’exécution. Toutefois, Apple n’autorise pas JIT dans les applications iOS. Par conséquent, le code C# ciblant iOS avec Xamarin est compilé en avance (AOT), produisant ainsi un seul exécutable Unix et les fichiers de métadonnées qui sont inclus dans l’ensemble d’applications.
 
@@ -94,7 +94,7 @@ namespace MyAppNamespace
 
 En outre, le mot clé de l’espace de noms dans le code ci-dessus définit l’espace de noms utilisé pour le fichier d’implémentation lui-même. Si plusieurs fichiers d’implémentation partagent le même espace de noms, il est inutile d’inclure l’espace de noms dans une directive using, car cela est implicite.
 
-### <a name="properties"></a>Properties
+### <a name="properties"></a>Propriétés
 
 Objective-C et C# incluent tous deux le concept de propriétés pour fournir une abstraction de haut niveau autour des méthodes d’accesseur. En Objective-C, la directive du compilateur @property est utilisée pour générer efficacement des méthodes d’accesseur. En revanche, C# prend en charge les propriétés dans le langage même. Une propriété C# peut être implémentée soit à l’aide d’un style plus long qui accède à un champ de stockage, soit à l’aide d’une syntaxe de propriété automatique plus courte, comme indiqué dans les exemples suivants :
 
@@ -123,7 +123,7 @@ Quand le mot clé static est appliqué à une variable en Objective-C, la variab
 
 C# possède également un mot clé static. Quand il est appliqué à une méthode, il effectue efficacement la même chose que le modificateur `+` en Objectif-C, à savoir qu’il crée une méthode de classe. De même, quand il est appliqué à d’autres constructions telles que des champs, des propriétés ou des événements, il inclut ces derniers dans le type dans lequel ils sont déclarés plutôt qu’avec une instance quelconque de ce type. Vous pouvez également rendre une classe statique, dans laquelle toutes les méthodes définies doivent également être statiques.
 
-### <a name="nsarray-vs-list-initialization"></a>NSArray et Initialisation de liste
+### <a name="nsarray-vs-list-initialization"></a>NSArray et initialisation de liste
 
 Objective-C inclut désormais la syntaxe de littéral à utiliser avec `NSArray`, ce qui simplifie son initialisation. C# a toutefois un type plus riche appelé un `List`, qui est *générique*, ce qui signifie que le type contenu par la liste peut être fourni par le code qui crée la liste (comme les modèles en C++). En outre, les listes prennent en charge la syntaxe d’initialisation d’automatique comme indiqué ci-dessous :
 
@@ -133,7 +133,7 @@ MyClass object2 = new MyClass ();
 List<MyClass> myList = new List<MyClass>{ object1, object2 };
 ```
 
-### <a name="blocks-vs-lambda-expressions"></a>Blocs et Expressions lambda
+### <a name="blocks-vs-lambda-expressions"></a>Blocs et expressions lambda
 
 Objective-C utilise des *blocs* pour créer des fermetures qui vous permettent de créer une fonction inline pouvant utiliser l’état dans lequel elle est confinée. C# a un concept similaire à travers l’utilisation d’expressions lambda. En C#, les expressions lambda sont créées avec l’opérateur `=>`, comme indiqué ci-dessous :
 

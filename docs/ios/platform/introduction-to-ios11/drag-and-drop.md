@@ -4,15 +4,15 @@ description: Ce document explique comment implémenter le glisser-déplacer dans
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2017
-ms.openlocfilehash: 8f1e9cabb78152374ee3eede80dcfc5dcba8dde1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752373"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032174"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Glisser-déplacer dans Xamarin. iOS
 
@@ -35,20 +35,20 @@ Lorsque vous ajoutez la prise en charge de la fonction glisser-déplacer à vos 
 
 ## <a name="drag-and-drop-with-text-controls"></a>Glisser-déplacer avec les contrôles de texte
 
-`UITextView`et `UITextField` prennent automatiquement en charge le glissement du texte sélectionné et la suppression du contenu de texte dans.
+`UITextView` et `UITextField` prennent automatiquement en charge le glissement du texte sélectionné et la suppression du contenu de texte dans.
 
 <a name="uitableview" />
 
 ## <a name="drag-and-drop-with-uitableview"></a>Glisser-déplacer avec UITableView
 
-`UITableView`dispose d’une gestion intégrée pour les interactions de glisser-déplacer avec les lignes de table, en ne nécessitant que quelques méthodes pour activer le comportement par défaut.
+`UITableView` a intégré la gestion des interactions de glisser-déplacer avec les lignes de table, ce qui ne nécessite que quelques méthodes pour activer le comportement par défaut.
 
 Il existe deux interfaces impliquées :
 
-- `IUITableViewDragDelegate`: Les informations de packages lorsqu’un glisser est initié en mode table.
-- `IUITableViewDropDelegate`: Traite les informations quand une opération de suppression est tentée et terminée.
+- `IUITableViewDragDelegate` : les informations de packages lorsqu’un glisser est initié dans la vue table.
+- `IUITableViewDropDelegate` : traite les informations quand une opération de suppression est tentée et terminée.
 
-Dans l' [exemple DragAndDropTableView](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) , ces deux interfaces sont implémentées sur `UITableViewController` la classe, avec le délégué et la source de données. Elles sont assignées `ViewDidLoad` dans la méthode :
+Dans l' [exemple DragAndDropTableView](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview) , ces deux interfaces sont implémentées sur la classe `UITableViewController`, ainsi que le délégué et la source de données. Elles sont affectées dans la méthode `ViewDidLoad` :
 
 ```csharp
 this.TableView.DragDelegate = this;
@@ -59,9 +59,9 @@ Le code requis minimal pour ces deux interfaces est expliqué ci-dessous.
 
 ### <a name="table-view-drag-delegate"></a>Vue de table faire glisser un délégué
 
-La seule méthode _requise_ pour prendre en charge le glissement d’une ligne d' `GetItemsForBeginningDragSession`une vue de table est. Si l’utilisateur commence à faire glisser une ligne, cette méthode est appelée.
+La seule méthode _requise_ pour prendre en charge le glissement d’une ligne à partir d’une vue de table est `GetItemsForBeginningDragSession`. Si l’utilisateur commence à faire glisser une ligne, cette méthode est appelée.
 
-Une implémentation est illustrée ci-dessous. Il récupère les données associées à la ligne glissée, les encode et configure un `NSItemProvider` qui détermine la manière dont les applications gèrent la partie « Drop » de l’opération (par exemple, si elles peuvent gérer le type de données, `PlainText`, dans l’exemple) :
+Une implémentation est illustrée ci-dessous. Il récupère les données associées à la ligne glissée, les encode et configure un `NSItemProvider` qui détermine la manière dont les applications gèrent la partie « Drop » de l’opération (par exemple, si elles peuvent gérer le type de données, `PlainText`dans l’exemple) :
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -91,13 +91,13 @@ Il existe de nombreuses méthodes facultatives sur le délégué Drag qui peuven
 
 Les méthodes sur le délégué de dépôt sont appelées lorsqu’une opération glisser se produit sur une vue de table ou se termine au-dessus de lui. Les méthodes requises déterminent si les données sont autorisées à être supprimées, et les actions effectuées si la suppression est terminée :
 
-- `CanHandleDropSession`: Lorsqu’un glisser est en cours et éventuellement déposé sur l’application, cette méthode détermine si les données glissées peuvent être supprimées.
-- `DropSessionDidUpdate`– Pendant que l’opération de glisser-déplacer est en cours, cette méthode est appelée pour déterminer l’action qui est prévue. Les informations de la vue de table qui sont glissées, la session de glissement et le chemin d’accès d’index possible peuvent toutes être utilisées pour déterminer le comportement et les commentaires visuels fournis à l’utilisateur.
-- `PerformDrop`: Lorsque l’utilisateur termine la suppression (en retirant son doigt), cette méthode extrait les données glissées et modifie la vue de table pour ajouter les données dans une ou de nouvelles lignes.
+- `CanHandleDropSession` : lorsqu’une opération de glisser-déplacer est en cours et éventuellement supprimée de l’application, cette méthode détermine si les données glissées peuvent être supprimées.
+- `DropSessionDidUpdate` : pendant que l’opération de glisser-déplacer est en cours, cette méthode est appelée pour déterminer l’action qui est prévue. Les informations de la vue de table qui sont glissées, la session de glissement et le chemin d’accès d’index possible peuvent toutes être utilisées pour déterminer le comportement et les commentaires visuels fournis à l’utilisateur.
+- `PerformDrop` : lorsque l’utilisateur termine la suppression (en retirant son doigt), cette méthode extrait les données glissées et modifie la vue de table pour ajouter les données dans une ou de nouvelles lignes.
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession`indique si la vue table peut accepter les données glissées. Dans cet extrait de code `CanLoadObjects` , est utilisé pour confirmer que cette vue de table peut accepter des données de chaîne.
+`CanHandleDropSession` indique si la vue de table peut accepter les données glissées. Dans cet extrait de code, `CanLoadObjects` est utilisé pour confirmer que cette vue de table peut accepter des données de chaîne.
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,9 +108,9 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-La `DropSessionDidUpdate` méthode est appelée à plusieurs reprises pendant que l’opération glisser est en cours, afin de fournir des signaux visuels à l’utilisateur.
+La méthode `DropSessionDidUpdate` est appelée à plusieurs reprises pendant que l’opération glisser est en cours, afin de fournir des signaux visuels à l’utilisateur.
 
-Dans le code ci- `HasActiveDrag` dessous, est utilisé pour déterminer si l’opération provient de la vue de table actuelle. Dans ce cas, seules les lignes uniques sont autorisées à être déplacées.
+Dans le code ci-dessous, `HasActiveDrag` est utilisé pour déterminer si l’opération provient de la vue de table actuelle. Dans ce cas, seules les lignes uniques sont autorisées à être déplacées.
 Si le glissement provient d’une autre source, une opération de copie est indiquée :
 
 ```csharp
@@ -137,7 +137,7 @@ L’intention de déposer peut être d’insérer une nouvelle ligne ou d’ajou
 
 #### <a name="performdrop"></a>PerformDrop
 
-La `PerformDrop` méthode est appelée lorsque l’utilisateur termine l’opération et modifie la vue de table et la source de données pour refléter les données déplacées.
+La méthode `PerformDrop` est appelée lorsque l’utilisateur termine l’opération et modifie la vue table et la source de données pour refléter les données déplacées.
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)

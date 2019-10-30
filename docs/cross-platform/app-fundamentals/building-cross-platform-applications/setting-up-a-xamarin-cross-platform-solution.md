@@ -3,15 +3,15 @@ title: 'Partie 3 : configuration d’une solution multiplateforme Xamarin'
 description: Ce document explique comment configurer une solution multiplateforme dans Xamarin. Il aborde les différentes stratégies de partage de code, telles que les projets partagés et les .NET Standard.
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 843887282c9a5af671d46699ae2f601fd32902e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758144"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016870"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>Partie 3 : configuration d’une solution multiplateforme Xamarin
 
@@ -63,7 +63,7 @@ L’approche Xamarin consiste à regrouper le code en deux types de projets :
 
 ### <a name="core-project"></a>Projet de base
 
-Les projets de code partagé doivent uniquement faire référence à des assemblys disponibles sur toutes les plateformes, par ex. les espaces de noms Common Framework `System`, `System.Core` tels `System.Xml`que et.
+Les projets de code partagé doivent uniquement faire référence à des assemblys disponibles sur toutes les plateformes, par ex. les espaces de noms Common Framework, comme `System`, `System.Core` et `System.Xml`.
 
 Les projets partagés doivent implémenter autant de fonctionnalités non-interface utilisateur que possible, qui peut inclure les couches suivantes :
 
@@ -89,11 +89,11 @@ Les projets spécifiques à la plateforme doivent implémenter :
 
 L’architecture de l’application est illustrée dans ce diagramme :
 
- [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "L’architecture de l’application est illustrée dans ce diagramme")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "The application architecture is illustrated in this diagram")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 Cette capture d’écran illustre la configuration d’une solution avec le projet de base partagé, iOS et les projets d’application Android. Le projet partagé contient le code relatif à chacune des couches architecturales (entreprise, service, données et code d’accès aux données) :
 
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "Le projet partagé contient le code relatif à chacune des couches architecturales (entreprise, service, données et code d’accès aux données)")
+ ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "The Shared Project contains code relating to each of the architectural layers (Business, Service, Data and Data Access code)")
 
  <a name="Project_References" />
 
@@ -104,7 +104,7 @@ Les projets d’application spécifiques à la plateforme référencent le code 
 
 L’application projette chaque projet partagé de référence et contient le code de l’interface utilisateur requis pour présenter les fonctionnalités à l’utilisateur, comme indiqué dans les captures d’écran suivantes :
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Les projets de l’application de chaque référence de projet partagé") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "l’application projette chaque référence de projet partagé")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "L’application projette chaque projet partagé de référence") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "L’application projette chaque projet partagé de référence")
 
 Des exemples spécifiques de la façon dont les projets doivent être structurés sont fournis dans les études de cas.
 
@@ -118,11 +118,11 @@ Des exemples spécifiques de la façon dont les projets doivent être structuré
 
 Il est important de définir l’action de génération correcte pour certains types de fichiers. Cette liste affiche l’action de génération pour certains types de fichiers courants :
 
-- **Tous C# les fichiers** – action de génération : Compile
-- **Images dans Xamarin. iOS & Windows** – action de génération : Contenu
+- **Tous C# les fichiers** -action de génération : compiler
+- **Images dans Xamarin. iOS & Windows** – action de génération : contenu
 - **Fichiers XIB et Storyboard dans Xamarin. iOS** – action de génération : InterfaceDefinition
 - **Images et dispositions AXML dans Android** – action de génération : AndroidResource
-- **Fichiers XAML dans les projets Windows** – action de génération : Page
+- **Fichiers XAML dans les projets Windows** – action de génération : page
 - **Fichiers XAML Xamarin. Forms** – action de génération : EmbeddedResource
 
 En général, l’IDE détecte le type de fichier et suggère l’action de génération correcte.

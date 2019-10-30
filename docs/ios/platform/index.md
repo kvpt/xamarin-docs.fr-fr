@@ -4,15 +4,15 @@ description: Ce document contient des liens vers divers guides qui décrivent le
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206305"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032274"
 ---
 # <a name="ios-platform-features-overview"></a>vue d’ensemble des fonctionnalités de la plateforme iOS
 
@@ -41,7 +41,7 @@ La nouvelle API CallKit dans iOS 10 permet aux applications VOIP de s’intégre
 
 ## <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[Contacts et ContactsUI](~/ios/platform/contacts.md)
 
-Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, `Contacts` et `ContactsUI`, qui remplacent les infrastructures d’interface utilisateur du carnet d’adresses et du carnet d’adresses existantes utilisées par IOS 8 et les versions antérieures.
+Avec l’introduction d’iOS 9, Apple a publié deux nouveaux frameworks, `Contacts` et `ContactsUI`, qui remplacent les infrastructures d’interface utilisateur du carnet d’adresses et du carnet d’adresses existantes utilisées par iOS 8 et les versions antérieures.
 
 ## <a name="document-pickeriosplatformdocument-pickermd"></a>[Sélecteur de document](~/ios/platform/document-picker.md)
 
@@ -49,11 +49,11 @@ Le sélecteur de documents permet de partager des documents entre les applicatio
 
 ## <a name="eventkitiosplatformeventkitmd"></a>[EventKit](~/ios/platform/eventkit.md)
 
-iOS a deux applications liées au calendrier intégrées : l’application de calendrier et l’application de rappels. Il est assez simple de comprendre comment l’application de calendrier gère les données de calendrier, mais l’application de rappels est moins évidente. Des rappels peuvent avoir réellement des dates qui s’y rapportent en termes de lorsqu’ils sont en raison, quand elles sont traitées, etc. Par conséquent, iOS stocke toutes les données de calendrier, qu’il s’agisse d’événements de calendrier ou de rappels, à un seul emplacement, appelé *base de données de calendrier*.
+iOS a deux applications liées au calendrier intégrées : l’application de calendrier et l’application de rappels. Il est assez simple de comprendre comment l’application de calendrier gère les données de calendrier, mais l’application de rappels est moins évidente. Les rappels peuvent en fait être associés à des dates lorsqu’ils sont échus, quand ils sont terminés, etc. Par conséquent, iOS stocke toutes les données de calendrier, qu’il s’agisse d’événements de calendrier ou de rappels, à un seul emplacement, appelé *base de données de calendrier*.
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[extensions iOS](~/ios/platform/extensions.md)
 
-Les extensions, telles qu’introduites dans iOS 8 `UIViewControllers` , sont spécialisées, présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, en tant que types de clavier personnalisés demandés par l’utilisateur pour effectuer une entrée spécialisée ou d’autres contextes. à l’instar de la modification d’une photo dans laquelle l’extension peut fournir des filtres d’effet spéciaux.
+Les extensions, telles qu’introduites dans iOS 8, sont des `UIViewControllers` spécialisées présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, lorsque les types de clavier personnalisés demandés par l’utilisateur exécutent une entrée spécialisée ou d’autres contextes tels que modification d’une photo dans laquelle l’extension peut fournir des filtres d’effet spéciaux.
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[Graphiques et animation dans iOS](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -85,7 +85,7 @@ Nouveauté d’iOS 10, une extension d’application de message s’intègre à 
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[Multitâche pour iPad](~/ios/platform/multitasking.md)
 
-iOS 9 ajoute la prise en charge de la multitâche pour l’exécution de deux applications en même temps sur un matériel iPad spécifique. Le multitâche pour iPad est pris en charge via les fonctionnalités suivantes : Glisser-déplacer, mode fractionné & image dans l’image.
+iOS 9 ajoute la prise en charge de la multitâche pour l’exécution de deux applications en même temps sur un matériel iPad spécifique. Le multitâche pour iPad est pris en charge via les fonctionnalités suivantes : glisser-déplacer, mode fractionné & image dans l’image.
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 
@@ -99,7 +99,7 @@ Le kit photo est une nouvelle infrastructure qui permet aux applications d’int
 
 ## <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[Demander une révision de l’application](~/ios/platform/request-app-review.md)
 
-Nouveauté d’iOS 10,3, la `RequestReview()` méthode permet à une application iOS de demander à l’utilisateur de la noter ou de la passer en revue. Lorsque cette méthode est appelée dans une application d’expédition que l’utilisateur a installée à partir de l’App Store, iOS 10 gère l’intégralité du processus d’évaluation et de révision pour le développeur. Étant donné que ce processus est régi par la stratégie App Store, une alerte peut être affichée ou non.
+Nouveauté d’iOS 10,3, la méthode `RequestReview()` permet à une application iOS de demander à l’utilisateur de la noter ou de la passer en revue. Lorsque cette méthode est appelée dans une application d’expédition que l’utilisateur a installée à partir de l’App Store, iOS 10 gère l’intégralité du processus d’évaluation et de révision pour le développeur. Étant donné que ce processus est régi par la stratégie App Store, une alerte peut être affichée ou non.
 
 ## <a name="search-apisiosplatformsearchindexmd"></a>[API de recherche](~/ios/platform/search/index.md)
 

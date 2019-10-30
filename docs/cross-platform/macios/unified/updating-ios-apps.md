@@ -3,15 +3,15 @@ title: Mise à jour des applications iOS existantes
 description: Ce document décrit les étapes à suivre pour mettre à jour une application Xamarin. iOS à partir du API classique vers le API unifiée.
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74efef96a15a950122041eb52dc09835bb8940b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b531bd095781c80c5f3418725d57f8f6bbb06fd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279547"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015032"
 ---
 # <a name="updating-existing-ios-apps"></a>Mise à jour des applications iOS existantes
 
@@ -31,13 +31,13 @@ Avant de mettre à jour votre code existant vers le API unifiée, il est forteme
 
 ## <a name="automated-updating"></a>Mise à jour automatisée
 
-Une fois les avertissements résolus, sélectionnez un projet iOS existant dans Visual Studio pour Mac ou Visual Studio, puis choisissez **migrer vers Xamarin. iOS API unifiée** à partir du menu **projet** . Par exemple :
+Une fois les avertissements résolus, sélectionnez un projet iOS existant dans Visual Studio pour Mac ou Visual Studio, puis choisissez **migrer vers Xamarin. iOS API unifiée** à partir du menu **projet** . Exemple :
 
-![](updating-ios-apps-images/beta-tool1.png "Choisissez migrer vers Xamarin. iOS API unifiée à partir du menu projet")
+![](updating-ios-apps-images/beta-tool1.png "Choose Migrate to Xamarin.iOS Unified API from the Project menu")
 
 Vous devez accepter cet avertissement avant l’exécution de la migration automatisée (évidemment, vous devez vous assurer que vous disposez de sauvegardes/contrôle de code source avant de lancer cette aventure) :
 
-![](updating-ios-apps-images/beta-tool2.png "Accepter cet avertissement avant l’exécution de la migration automatisée")
+![](updating-ios-apps-images/beta-tool2.png "Agree to this warning before the automated migration will run")
 
 L’outil automatise toutes les étapes décrites dans la section **mise à jour manuelle** présentée ci-dessous. il s’agit de la méthode suggérée pour convertir un projet Xamarin. iOS existant en API unifiée.
 
@@ -45,47 +45,47 @@ L’outil automatise toutes les étapes décrites dans la section **mise à jour
 
 Là encore, une fois les avertissements résolus, procédez comme suit pour mettre à jour manuellement les applications Xamarin. iOS afin d’utiliser le nouveau API unifiée :
 
-### <a name="1-update-project-type--build-target"></a>1. Mettre à jour le type de projet & la cible de build
+### <a name="1-update-project-type--build-target"></a>1. mettre à jour le type de projet & cible de génération
 
-Remplacez la version de projet dans vos fichiers csproj `6BC8ED88-2882-458C-8E55-DFD12B67127B` par `FEACFBD2-3405-455C-9665-78FE426C6842`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous :
+Remplacez la version de projet dans vos fichiers **csproj** `6BC8ED88-2882-458C-8E55-DFD12B67127B` par `FEACFBD2-3405-455C-9665-78FE426C6842`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de l’élément `<ProjectTypeGuids>` comme indiqué ci-dessous :
 
-![](updating-ios-apps-images/csproj.png "Modifiez le fichier csproj dans un éditeur de texte en remplaçant le premier élément de l’élément ProjectTypeGuids comme indiqué")
+![](updating-ios-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
 
-Modifiez l’élément **Import** qui contient `Xamarin.MonoTouch.CSharp.targets` `Xamarin.iOS.CSharp.targets` comme indiqué ci-dessous :
+Remplacez l’élément **Import** qui contient `Xamarin.MonoTouch.CSharp.targets` par `Xamarin.iOS.CSharp.targets` comme indiqué ci-dessous :
 
-![](updating-ios-apps-images/csproj2.png "Remplacez l’élément import qui contient Xamarin. unitouch. CSharp. targets par Xamarin. iOS. CSharp. targets, comme indiqué")
+![](updating-ios-apps-images/csproj2.png "Change the Import element that contains Xamarin.MonoTouch.CSharp.targets to Xamarin.iOS.CSharp.targets as shown")
 
-### <a name="2-update-project-references"></a>2. Mettre à jour les références de projet
+### <a name="2-update-project-references"></a>2. mettre à jour les références de projet
 
 Développez le nœud **références** du projet d’application iOS. Il affiche initialement une référence * de type **monocontact** et cassée semblable à cette capture d’écran (car nous venons de modifier le type de projet) :
 
-![](updating-ios-apps-images/references.png "Il affiche initialement une référence cassée, monocontact similaire à cette capture d’écran, car le type de projet a changé")
+![](updating-ios-apps-images/references.png "It will initially show a broken- monotouch reference similar to this screenshot because the project type changed")
 
 Cliquez avec le bouton droit sur le projet d’application iOS pour **modifier les références**, puis cliquez sur la référence **monotactile** et supprimez-la à l’aide du bouton rouge « X ».
 
-![](updating-ios-apps-images/references-delete-monotouch-sml.png "Cliquez avec le bouton droit sur le projet d’application iOS pour modifier les références, puis cliquez sur la référence monotactile et supprimez-la à l’aide du bouton X rouge.")
+![](updating-ios-apps-images/references-delete-monotouch-sml.png "Right-click on the iOS application project to Edit References, then click on the monotouch reference and delete it using the red X button")
 
 À présent, faites défiler jusqu’à la fin de la liste des références et cochez l’assembly **Xamarin. iOS** .
 
-![](updating-ios-apps-images/references-add-xamarinios-sml.png "À présent, faites défiler jusqu’à la fin de la liste des références et cochez l’assembly Xamarin. iOS.")
+![](updating-ios-apps-images/references-add-xamarinios-sml.png "Now scroll to the end of the references list and tick the Xamarin.iOS assembly")
 
 Appuyez sur **OK** pour enregistrer les modifications apportées aux références du projet.
 
-### <a name="3-remove-monotouch-from-namespaces"></a>3. Supprimer les monotactiles des espaces de noms
+### <a name="3-remove-monotouch-from-namespaces"></a>3. supprimer les monotactiles des espaces de noms
 
-Supprimez le préfixe **unitouch** des espaces `using` de noms dans les instructions ou partout où un className a été qualifié complet (par exemple, `MonoTouch.UIKit`devient juste `UIKit`).
+Supprimez le préfixe **unitouch** des espaces de noms dans les instructions `using` ou partout où un className a été qualifié complet (par exemple, `MonoTouch.UIKit` devient simplement `UIKit`).
 
-### <a name="4-remap-types"></a>4. Remapper les types
+### <a name="4-remap-types"></a>4. remapper les types
 
-Des [types natifs](~/cross-platform/macios/nativetypes.md) ont été introduits, qui remplacent certains types précédemment utilisés, tels `System.Drawing.RectangleF` que `CoreGraphics.CGRect` les instances de avec (par exemple). La liste complète des types se trouve dans la page [types natifs](~/cross-platform/macios/nativetypes.md) .
+Des [types natifs](~/cross-platform/macios/nativetypes.md) ont été introduits, qui remplacent certains types précédemment utilisés, tels que les instances de `System.Drawing.RectangleF` avec `CoreGraphics.CGRect` (par exemple). La liste complète des types se trouve dans la page [types natifs](~/cross-platform/macios/nativetypes.md) .
 
-### <a name="5-fix-method-overrides"></a>5. Remplacements de la méthode Fix
+### <a name="5-fix-method-overrides"></a>5. corriger les remplacements de la méthode
 
-La `UIKit` signature de certaines méthodes a été modifiée pour utiliser les nouveaux [types natifs](~/cross-platform/macios/nativetypes.md) ( `nint`tels que). Si les sous-classes personnalisées remplacent ces méthodes, les signatures ne correspondent plus et génèrent des erreurs. Corrigez ces substitutions de méthode en modifiant la sous-classe pour qu’elle corresponde à la nouvelle signature à l’aide des types natifs.
+Certaines méthodes `UIKit` ont été modifiées pour utiliser les nouveaux [types natifs](~/cross-platform/macios/nativetypes.md) (tels que `nint`). Si les sous-classes personnalisées remplacent ces méthodes, les signatures ne correspondent plus et génèrent des erreurs. Corrigez ces substitutions de méthode en modifiant la sous-classe pour qu’elle corresponde à la nouvelle signature à l’aide des types natifs.
 
-Les exemples incluent `public override int NumberOfSections (UITableView tableView)` la modification `nint` pour retourner et le changement du type de retour `public override int RowsInSection (UITableView tableView, int section)` `nint`et des types de paramètres dans.
+Les exemples incluent la modification des `public override int NumberOfSections (UITableView tableView)` pour retourner des `nint` et la modification du type de retour et des types de paramètres dans `public override int RowsInSection (UITableView tableView, int section)` en `nint`.
 
-## <a name="considerations"></a>Considérations
+## <a name="considerations"></a>Éléments à prendre en considération
 
 Les considérations suivantes doivent être prises en compte lors de la conversion d’un projet Xamarin. iOS existant du API classique au nouveau API unifiée si cette application s’appuie sur un ou plusieurs composants ou un package NuGet.
 

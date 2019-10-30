@@ -4,15 +4,15 @@ description: Cet article présente le fichier iTunesMetadata.plist, qui permet d
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 47b2428ddca47f554fea675a9d2e70374679688f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281161"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026506"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Fichier iTunesMetadata.plist dans les applications Xamarin.iOS
 
@@ -108,7 +108,7 @@ Les valeurs des clés individuelles sont détaillées ci-dessous.
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-La clé `UIRequiredDeviceCapabilities` permet à iTunes de connaître les fonctionnalités spécifiques qu’une application iOS doit avoir pour pouvoir être installée sur un appareil iOS donné. Elle est fournie sous la forme d’un dictionnaire (`<dict>...</dict>`) de fonctionnalités (`<key>...</key>`) et d’une valeur booléenne pour chaque fonctionnalité. Si la valeur d’une fonctionnalité est `true`, cette fonctionnalité doit être présente. Si la valeur est `false`, la fonctionnalité ne doit pas être présente sur l’appareil. Par exemple :
+La clé `UIRequiredDeviceCapabilities` permet à iTunes de connaître les fonctionnalités spécifiques qu’une application iOS doit avoir pour pouvoir être installée sur un appareil iOS donné. Elle est fournie sous la forme d’un dictionnaire (`<dict>...</dict>`) de fonctionnalités (`<key>...</key>`) et d’une valeur booléenne pour chaque fonctionnalité. Si la valeur d’une fonctionnalité est `true`, cette fonctionnalité doit être présente. Si la valeur est `false`, la fonctionnalité ne doit pas être présente sur l’appareil. Exemple :
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -124,7 +124,7 @@ Spécifie que l’appareil iOS doit prendre en charge le jeu d’instructions AR
 
 ### <a name="artistname-and-playlistartistname"></a>artistName et playlistArtistName
 
-Utilisez les clés `artistName` et `playlistArtistName` pour définir le nom de l’entreprise qui a créé l’application iOS à afficher dans iTunes. Exemple :
+Utilisez les clés `artistName` et `playlistArtistName` pour définir le nom de l’entreprise qui a créé l’application iOS à afficher dans iTunes. Exemple :
 
 ```xml
 <key>artistName</key>
@@ -136,7 +136,7 @@ Utilisez les clés `artistName` et `playlistArtistName` pour définir le nom de 
 
 ### <a name="bundledisplayname-itemname-and-playlistname"></a>bundleDisplayName, itemName et playlistName
 
-Utilisez les clés `bundleDisplayName`, `itemName` et `playlistName` pour définir le nom de l’application iOS à afficher dans iTunes. Exemple :
+Utilisez les clés `bundleDisplayName`, `itemName` et `playlistName` pour définir le nom de l’application iOS à afficher dans iTunes. Exemple :
 
 ```xml
 <key>bundleDisplayName</key>
@@ -151,7 +151,7 @@ Utilisez les clés `bundleDisplayName`, `itemName` et `playlistName` pour défin
 
 ### <a name="bundleshortversionstring-and-bundleversion"></a>bundleShortVersionString et bundleVersion
 
-Utilisez les clés `bundleShortVersionString` et `bundleVersion` pour définir le numéro de version de l’application iOS à afficher dans iTunes. Exemple :
+Utilisez les clés `bundleShortVersionString` et `bundleVersion` pour définir le numéro de version de l’application iOS à afficher dans iTunes. Exemple :
 
 ```xml
 <key>bundleShortVersionString</key>
@@ -162,7 +162,7 @@ Utilisez les clés `bundleShortVersionString` et `bundleVersion` pour définir l
 
 ### <a name="softwareversionbundleid"></a>softwareVersionBundleId
 
-Utilisez la clé `softwareVersionBundleId` pour spécifier l’ID de bundle de l’application iOS. Exemple :
+Utilisez la clé `softwareVersionBundleId` pour spécifier l’ID de bundle de l’application iOS. Exemple :
 
 ```xml
 <key>softwareVersionBundleId</key>
@@ -171,7 +171,7 @@ Utilisez la clé `softwareVersionBundleId` pour spécifier l’ID de bundle de l
 
 ### <a name="copyright"></a>copyright
 
-Utilisez la clé `copyright` pour définir le copyright affiché dans iTunes. Exemple :
+Utilisez la clé `copyright` pour définir le copyright affiché dans iTunes. Exemple :
 
 ```xml
 <key>copyright</key>
@@ -180,7 +180,7 @@ Utilisez la clé `copyright` pour définir le copyright affiché dans iTunes. Ex
 
 ### <a name="releasedate"></a>releaseDate
 
-Utilisez la clé `releaseDate` pour indiquer la date de sortie de l’application iOS à afficher dans iTunes. Exemple :
+Utilisez la clé `releaseDate` pour indiquer la date de sortie de l’application iOS à afficher dans iTunes. Exemple :
 
 ```xml
 <key>releaseDate</key>
@@ -189,7 +189,7 @@ Utilisez la clé `releaseDate` pour indiquer la date de sortie de l’applicatio
 
 ### <a name="softwareiconneedsshine"></a>softwareIconNeedsShine
 
-Utilisez la clé `softwareIconNeedsShine` pour indiquer à iTunes si l’icône de l’application iOS nécessite une _mise en surbrillance_ pour iOS 6 (et les versions antérieures). Exemple :
+Utilisez la clé `softwareIconNeedsShine` pour indiquer à iTunes si l’icône de l’application iOS nécessite une _mise en surbrillance_ pour iOS 6 (et les versions antérieures). Exemple :
 
 ```xml
 <key>softwareIconNeedsShine</key>
@@ -198,7 +198,7 @@ Utilisez la clé `softwareIconNeedsShine` pour indiquer à iTunes si l’icône 
 
 ### <a name="gamecenterenabled-and-gamecentereverenabled"></a>gameCenterEnabled et gameCenterEverEnabled
 
-Utilisez les clés `gameCenterEnabled` et `gameCenterEverEnabled` pour indiquer à iTunes si l’application iOS prend en charge le Game Center d’Apple. Exemple :
+Utilisez les clés `gameCenterEnabled` et `gameCenterEverEnabled` pour indiquer à iTunes si l’application iOS prend en charge le Game Center d’Apple. Exemple :
 
 ```xml
 <key>gameCenterEnabled</key>
@@ -209,7 +209,7 @@ Utilisez les clés `gameCenterEnabled` et `gameCenterEverEnabled` pour indiquer 
 
 ### <a name="genre-genreid-and-subgenres"></a>genre, genreId et subgenres
 
-Utilisez les clés `genre` et `genreId` pour indiquer à iTunes le genre auquel appartient l’application iOS. Exemple :
+Utilisez les clés `genre` et `genreId` pour indiquer à iTunes le genre auquel appartient l’application iOS. Exemple :
 
 ```xml
 <key>genre</key>
@@ -218,7 +218,7 @@ Utilisez les clés `genre` et `genreId` pour indiquer à iTunes le genre auquel 
 <integer>6014</integer>
 ```
 
-Éventuellement, vous pouvez utiliser la clé `subgenres` afin de préciser deux sous-genres au maximum pour l’application iOS. Exemple :
+Éventuellement, vous pouvez utiliser la clé `subgenres` afin de préciser deux sous-genres au maximum pour l’application iOS. Exemple :
 
 ```xml
 <key>subgenres</key>
@@ -242,11 +242,11 @@ Pour les applications iOS, Apple définit les genres et ID de genres suivants :
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-Pour plus d’informations, consultez la documentation d’Apple sur l’[annexe des ID de genres](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html).
+Pour plus d’informations, consultez la documentation d’Apple sur l’[annexe des ID de genres](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html).
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
-Utilisez la clé `softwareSupportedDeviceIds` pour indiquer à iTunes les appareils iOS pris en charge par l’application iOS. Exemple :
+Utilisez la clé `softwareSupportedDeviceIds` pour indiquer à iTunes les appareils iOS pris en charge par l’application iOS. Exemple :
 
 ```xml
 <key>softwareSupportedDeviceIds</key>
@@ -302,26 +302,26 @@ Effectuez ce qui suit :
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier projet Xamarin.iOS, puis sélectionnez **Ajouter** > **Nouveau fichier...**
 2. Dans la boîte de dialogue Nouveau fichier, sélectionnez **iOS** > **Property List** (Liste de propriétés iOS) :
 
-    ![](itunesmetadata-images/image01.png "Sélectionner la liste de propriétés iOS")
+    ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. Entrez `iTunesMetadata` comme **Nom**, puis cliquez sur le bouton **Nouveau**.
 4. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier `iTunesMetadata.plist` pour l’ouvrir et le modifier :
 
-    ![](itunesmetadata-images/image02.png "Éditeur iTunesMetadata.plist")
+    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
 5. Cliquez sur le **+** de couleur verte pour créer une entrée, puis entrez le nom de clé `UIRequiredDeviceCapabilities` :
 
-    ![](itunesmetadata-images/image03.png "Créer une entrée et entrer le nom de clé UIRequiredDeviceCapabilities")
+    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. Cliquez sur le type valeur **Chaîne**, puis sélectionnez **Dictionnaire** dans la liste déroulante :
 
-    ![](itunesmetadata-images/image04.png "Sélectionner Dictionnaire dans la liste déroulante")
+    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
 7. Cliquez sur la flèche vers le bas située à gauche du nom de la propriété pour afficher les entrées du dictionnaire :
 
-    ![](itunesmetadata-images/image05.png "Révéler les entrées du dictionnaire")
+    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
 8. Cliquez sur le texte **Ajouter une nouvelle entrée**, puis sur le **+** de couleur verte pour ajouter une entrée au dictionnaire :
 
-    ![](itunesmetadata-images/image06.png "Ajouter une entrée au dictionnaire")
+    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
 9. Entrez le nom de clé `armv7`, sélectionnez le type **Booléen**, puis entrez la valeur **Oui** :
 
-    ![](itunesmetadata-images/image07.png "Entrer le nom de clé armv7, sélectionner le type Booléen, puis entrer la valeur Oui")
+    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
 10. Répétez les étapes ci-dessus jusqu’à ce que vous ayez rempli le fichier `iTunesMetadata.plist` avec toutes les paires clé/valeur nécessaires (pour plus d’informations, consultez la section [Contenu d’iTunesMetadata.plist](#iTunesMetadata_contents) ci-dessus).
 
 11. Enregistrez les changements dans le fichier plist.
@@ -366,6 +366,6 @@ Cet article a présenté le fichier `iTunesMetadata.plist`, qui permet d’infor
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Prise en charge IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
-- [Dépannage](~/ios/deploy-test/troubleshooting.md)
+- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)

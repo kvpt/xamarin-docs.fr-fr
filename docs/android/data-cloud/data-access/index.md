@@ -4,15 +4,15 @@ description: La plupart des applications ont besoin d’enregistrer des données
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 2343603199661ea39b1f0af172ce0ccf48a2cd66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9906e617b7072ebf7b1213a7278d117dc4f560ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754588"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023857"
 ---
 # <a name="xamarinandroid-data-access"></a>Accès aux données Xamarin. Android
 
@@ -29,9 +29,9 @@ Xamarin. Android prend en charge les API d’accès aux bases de données telles
 
 La majeure partie du code de cette section est entièrement multiplateforme et s’exécute sur iOS ou Android sans modification. Deux exemples d’applications sont abordés :
 
-- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; Les opérations de données simples écrivent les résultats dans un contrôle d’affichage de texte.
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; opérations de données simples écrit les résultats dans un contrôle d’affichage de texte.
 
-- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; Intègre des opérations de données dans une petite application opérationnelle qui répertorie et modifie une structure de données simple.
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; intègre les opérations de données dans une petite application opérationnelle qui répertorie et modifie une structure de données simple.
 
 Les deux exemples de solutions contiennent des exemples de projets d’application iOS et Android.
 

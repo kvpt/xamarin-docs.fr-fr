@@ -4,15 +4,15 @@ description: Visual Studio inclut Android SDK Manager que vous utilisez pour té
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 9bdc7b57cee74a91cc3abf69a216ea9913482c94
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.openlocfilehash: 9d8b3e68aa626890fdce5c004928541ece263703
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273153"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020804"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Configuration du kit Android SDK pour Xamarin.Android
 
@@ -29,7 +29,7 @@ Xamarin Android SDK Manager (installé avec la charge de travail du**développem
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
@@ -119,13 +119,13 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 [![Sélection du référentiel Google](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
-Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
+Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK plateforme 28** a été ajoutée en basculant sur le référentiel Google.) Gardez à l’esprit que l’utilisation du référentiel Google n’est pas prise en charge et n’est donc pas recommandée pour le développement quotidien.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser le Gestionnaire Xamarin Android SDK, vous avez besoin des éléments suivants :
 
@@ -209,9 +209,9 @@ Par défaut, le Gestionnaire Android SDK télécharge les composants et les outi
 
 [![Sélection du référentiel Google](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
-Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK Platform 28** a été ajouté en basculant vers le référentiel Google.) N’oubliez pas que l’utilisation du référentiel Google n’est pas prise en charge et qu’elle n’est donc pas recommandée pour le développement de tous les jours.
+Lorsque le référentiel Google est sélectionné, des packages supplémentaires peuvent apparaître sous l’onglet **Plateformes**, qui n’étaient pas disponibles précédemment. (Dans la capture d’écran ci-dessus, **Android SDK plateforme 28** a été ajoutée en basculant sur le référentiel Google.) Gardez à l’esprit que l’utilisation du référentiel Google n’est pas prise en charge et n’est donc pas recommandée pour le développement quotidien.
 
-Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)**. Cette opération restaure la liste des packages et des outils à la sélection par défaut.
+Pour revenir au référentiel pris en charge de plateformes et d’outils, cliquez sur **Microsoft (recommandé)** . Cette opération restaure la liste des packages et des outils à la sélection par défaut.
 
 -----
 
@@ -222,4 +222,4 @@ Dans ce guide, vous avez appris à installer et utiliser l’outil Xamarin Andro
 ## <a name="related-links"></a>Liens associés
 
 - [Présentation des niveaux d’API d’Android](~/android/app-fundamentals/android-api-levels.md)
-- [Modifications des outils Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+- [Modifications des outils du kit Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)

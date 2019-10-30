@@ -3,21 +3,21 @@ title: Wrappers Android pouvant être appelés pour Xamarin. Android
 ms.prod: xamarin
 ms.assetid: C33E15FA-1E2B-819A-C656-CA588D611492
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b55cffc19eec5ae95a0a0aba8053bdaaa49e7747
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761475"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020155"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Wrappers Android pouvant être appelés pour Xamarin. Android
 
-Les wrappers à appel Android (ACWs) sont requis chaque fois que le runtime Android appelle du code managé. Ces wrappers sont requis, car il n’existe aucun moyen d’inscrire des classes avec l’ART (Runtime Android) au moment de l’exécution. (En particulier, la [fonction JNI defineClass ()](http://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp15986) n’est pas prise en charge par le runtime Android.} Les wrappers pouvant être appelés par Android comportent l’absence de prise en charge de l’inscription du type d’exécution. 
+Les wrappers à appel Android (ACWs) sont requis chaque fois que le runtime Android appelle du code managé. Ces wrappers sont requis, car il n’existe aucun moyen d’inscrire des classes avec l’ART (Runtime Android) au moment de l’exécution. (En particulier, la [fonction JNI defineClass ()](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp15986) n’est pas prise en charge par le runtime Android.} Les wrappers pouvant être appelés par Android comportent l’absence de prise en charge de l’inscription du type d’exécution. 
 
-À *chaque fois* Le code Android doit exécuter une `virtual` méthode d’interface ou qui `overridden` est ou qui est implémentée en code managé, Xamarin. Android doit fournir un proxy Java afin que cette méthode soit distribuée au type managé approprié. Ces types de proxy Java sont du code Java qui a la « même » classe de base et la même liste d’interfaces Java que le type managé, implémentant les mêmes constructeurs et déclarant toutes les classes de base et les méthodes d’interface substituées. 
+À *chaque fois* Le code Android doit exécuter une `virtual` ou une méthode d’interface qui est `overridden` ou implémentée en code managé, Xamarin. Android doit fournir un proxy Java afin que cette méthode soit distribuée au type managé approprié. Ces types de proxy Java sont du code Java qui a la « même » classe de base et la même liste d’interfaces Java que le type managé, implémentant les mêmes constructeurs et déclarant toutes les classes de base et les méthodes d’interface substituées. 
 
 Les wrappers pouvant être appelés par Android sont générés par le programme **monodroid. exe** pendant le [processus de génération](~/android/deploy-test/building-apps/build-process.md): ils sont générés pour tous les types qui héritent de [java. lang. Object](xref:Java.Lang.Object)(directement ou indirectement). 
 
@@ -25,7 +25,7 @@ Les wrappers pouvant être appelés par Android sont générés par le programme
 
 Les noms de packages pour les wrappers pouvant être appelés Android sont basés sur le MD5SUM du nom qualifié d’assembly du type en cours d’exportation. Grâce à cette technique de nommage, le même nom de type qualifié complet peut être mis à disposition par différents assemblys sans introduire d’erreur de Packaging. 
 
-En raison de ce schéma de nommage MD5SUM, vous ne pouvez pas accéder directement à vos types par nom. Par exemple, la commande `adb` suivante ne fonctionne pas, car le nom `my.ActivityType` du type n’est pas généré par défaut : 
+En raison de ce schéma de nommage MD5SUM, vous ne pouvez pas accéder directement à vos types par nom. Par exemple, la commande `adb` suivante ne fonctionne pas, car le nom de type `my.ActivityType` n’est pas généré par défaut : 
 
 ```shell
 adb shell am start -n My.Package.Name/my.ActivityType
@@ -38,7 +38,7 @@ java.lang.ClassNotFoundException: Didn't find class "com.company.app.MainActivit
 on path: DexPathList[[zip file "/data/app/com.company.App-1.apk"] ...
 ```
 
-Si vous *avez besoin d'* accéder aux types par nom, vous pouvez déclarer un nom pour ce type dans une déclaration d’attribut. Par exemple, voici le code qui déclare une activité avec le nom `My.ActivityType`complet :
+Si vous *avez besoin d'* accéder aux types par nom, vous pouvez déclarer un nom pour ce type dans une déclaration d’attribut. Par exemple, voici le code qui déclare une activité avec le nom complet `My.ActivityType`:
 
 ```csharp
 namespace My {
@@ -49,7 +49,7 @@ namespace My {
 }
 ```
 
-La `ActivityAttribute.Name` propriété peut être définie pour déclarer explicitement le nom de cette activité : 
+La propriété `ActivityAttribute.Name` peut être définie de façon à déclarer explicitement le nom de cette activité : 
 
 ```csharp
 namespace My {
@@ -60,7 +60,7 @@ namespace My {
 }
 ```
 
-Une fois ce paramètre de propriété ajouté `my.ActivityType` , il est possible d’y accéder par nom à `adb` partir de code externe et de scripts. L' `Name` attribut peut être défini pour de nombreux types différents `Activity`, `Application`notamment `Service`, `BroadcastReceiver`,, `ContentProvider`et : 
+Une fois ce paramètre de propriété ajouté, `my.ActivityType` est accessible par son nom à partir du code externe et à partir de scripts de `adb`. L’attribut `Name` peut être défini pour de nombreux types différents, notamment `Activity`, `Application`, `Service`, `BroadcastReceiver`et `ContentProvider`: 
 
 - [ActivityAttribute.Name](xref:Android.App.ActivityAttribute.Name)
 - [ApplicationAttribute.Name](xref:Android.App.ApplicationAttribute.Name)
@@ -72,9 +72,9 @@ L’attribution d’un nom ACW basé sur MD5SUM a été introduite dans Xamarin.
 
 ## <a name="implementing-interfaces"></a>Implémentation des interfaces
 
-Il peut arriver que vous deviez implémenter une interface Android, par exemple [Android. Content. IComponentCallbacks](xref:Android.Content.IComponentCallbacks). Dans la mesure où toutes les classes et interfaces Android étendent l’interface [Android. Runtime. IJavaObject](xref:Android.Runtime.IJavaObject) , la question se `IJavaObject`pose : comment implémenter ? 
+Il peut arriver que vous deviez implémenter une interface Android, par exemple [Android. Content. IComponentCallbacks](xref:Android.Content.IComponentCallbacks). Dans la mesure où toutes les classes et interfaces Android étendent l’interface [Android. Runtime. IJavaObject](xref:Android.Runtime.IJavaObject) , la question se pose : comment implémenter `IJavaObject`? 
 
-Nous avons répondu à la question ci-dessus : la raison pour laquelle `IJavaObject` tous les types Android doivent être implémentés est de sorte que Xamarin. Android dispose d’un wrapper Android pouvant être appelé pour Android, c.-à-d. un proxy Java pour le type donné. Étant donné que **monodroid. exe** recherche `Java.Lang.Object` uniquement `IJavaObject,` les sous-classes `Java.Lang.Object` et que l’implémentation de la réponse est évidente `Java.Lang.Object`: Subclass : 
+Nous avons répondu à la question ci-dessus : la raison pour laquelle tous les types Android doivent implémenter `IJavaObject` est de sorte que Xamarin. Android dispose d’un wrapper Android pouvant être appelé pour Android, c.-à-d. un proxy Java pour le type donné. Étant donné que **monodroid. exe** recherche uniquement les sous-classes `Java.Lang.Object`, et que `Java.Lang.Object` implémente `IJavaObject,` la réponse est évidente : sous-classe `Java.Lang.Object`: 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -150,4 +150,4 @@ public class HelloAndroid
 }
 ```
 
-Notez que la classe de base est conservée `native` , et les déclarations de méthode sont fournies pour chaque méthode substituée dans le code managé. 
+Notez que la classe de base est conservée et `native` déclarations de méthode sont fournies pour chaque méthode substituée dans du code managé. 

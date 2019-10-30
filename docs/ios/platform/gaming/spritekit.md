@@ -4,15 +4,15 @@ description: Ce document décrit SpriteKit, l’infrastructure graphique 2D d’
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: d2466de4891c289f4686c37bc9fe73c24a5a48ca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8829211ebf06eea224eade3f1b9d836207cdd64
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753061"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032472"
 ---
 # <a name="spritekit-in-xamarinios"></a>SpriteKit dans Xamarin. iOS
 
@@ -20,20 +20,20 @@ SpriteKit, l’infrastructure graphique 2D d’Apple, présente de nouvelles fon
 
 ## <a name="physics-bodies"></a>Corps physiques
 
-SpriteKit comprend une API physique de corps rigide et 2D. Chaque sprite est associé à un corps physique`SKPhysicsBody`() qui définit les propriétés physiques telles que la masse et la friction, ainsi que la géométrie du corps dans le monde physique.
+SpriteKit comprend une API physique de corps rigide et 2D. Chaque sprite est associé à un corps physique (`SKPhysicsBody`) qui définit les propriétés physiques telles que la masse et le frottement, ainsi que la géométrie du corps dans le monde physique.
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>Création d’un corps physique à partir d’une texture
 SpriteKit prend désormais en charge la dérivation du corps physique d’un sprite à partir de sa texture. Il est ainsi plus facile d’implémenter des collisions qui semblent plus naturelles.
 
 Par exemple, Notez dans le cas suivant comment la banane et le singe entrent en conflit presque à la surface de chaque image :
 
-![](spritekit-images/image13.png "La banane et le singe sont en conflit presque à la surface de chaque image")
+![](spritekit-images/image13.png "The banana and monkey collide nearly at the surface of each image")
 
-SpriteKit permet de créer un corps physique de ce type possible avec une seule ligne de code. Appelez `SKPhysicsBody.Create` simplement avec la texture et la taille : Sprite. PhysicsBody = SKPhysicsBody. Create (Sprite. Texture, Sprite. Taille);
+SpriteKit permet de créer un corps physique de ce type possible avec une seule ligne de code. Appelez simplement `SKPhysicsBody.Create` avec la texture et la taille : Sprite. PhysicsBody = SKPhysicsBody. Create (Sprite. Texture, Sprite. Taille);
 
 ## <a name="alpha-threshold"></a>Seuil alpha
 
-En plus de définir simplement la `PhysicsBody` propriété directement dans la géométrie dérivée de la texture, les applications peuvent définir et le seuil alpha pour contrôler la façon dont la géométrie est dérivée. 
+En plus de définir simplement la propriété `PhysicsBody` directement sur la géométrie dérivée de la texture, les applications peuvent définir et le seuil alpha pour contrôler la façon dont la géométrie est dérivée. 
 
 Le seuil alpha définit la valeur alpha minimale qu’un pixel doit avoir pour être inclus dans le corps physique résultant. Par exemple, le code suivant produit un corps physique légèrement différent :
 
@@ -43,15 +43,15 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 
 L’effet de la modification du seuil alpha comme celui-ci ajuste la collision précédente, de telle sorte que le singe passe en collision avec la banane :
 
-![](spritekit-images/image14.png "Le singe passe en collision avec la banane")
+![](spritekit-images/image14.png "The monkey falls over when colliding with the banana")
 
 ## <a name="physics-fields"></a>Champs de physique
 
 La nouvelle prise en charge du champ physique constitue un autre excellent ajout à SpriteKit. Elles vous permettent d’ajouter des éléments tels que des champs Vortex, des champs de gravité radiaux et des champs Spring pour n’en nommer que quelques-uns.
 
-Les champs physiques sont créés à l’aide de la classe SKFieldNode, qui est ajoutée à une scène `SKNode`comme n’importe quelle autre. Il existe plusieurs méthodes de fabrique sur `SKFieldNode` pour créer différents champs de physique. Vous pouvez créer un champ Spring en appelant `SKFieldNode.CreateSpringField()`, un champ de gravité radiale en appelant `SKFieldNode.CreateRadialGravityField()`, et ainsi de suite.
+Les champs physiques sont créés à l’aide de la classe SKFieldNode, qui est ajoutée à une scène comme tout autre `SKNode`. Il existe plusieurs méthodes de fabrique sur `SKFieldNode` pour créer des champs de physique différents. Vous pouvez créer un champ Spring en appelant `SKFieldNode.CreateSpringField()`, un champ de gravité radiale en appelant `SKFieldNode.CreateRadialGravityField()`, et ainsi de suite.
 
-`SKFieldNode`possède également des propriétés pour contrôler les attributs de champ tels que l’intensité de champ, la région de champ et l’atténuation des forces de champ.
+`SKFieldNode` possède également des propriétés pour contrôler les attributs de champ tels que l’intensité de champ, la région de champ et l’atténuation des forces de champ.
 
 ## <a name="spring-field"></a>Champ Spring
 
@@ -66,7 +66,7 @@ fieldNode.Region = new SKRegion(Frame.Size);
 AddChild (fieldNode);
 ```
 
-Vous pouvez ensuite ajouter des sprites et définir leurs `PhysicsBody` propriétés afin que le champ physique affecte les sprites, comme le montre le code suivant lorsque l’utilisateur touche l’écran :
+Vous pouvez ensuite ajouter des sprites et définir leurs propriétés de `PhysicsBody` afin que le champ physique affecte les sprites, comme le montre le code suivant lorsque l’utilisateur touche l’écran :
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -85,7 +85,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 Cela amène les bananes à osciller comme un ressort autour du nœud Field :
 
-![](spritekit-images/image15.png "Les bananes oscillent comme un ressort autour du nœud de champ")
+![](spritekit-images/image15.png "The bananas oscillate like a spring around the field node")
 
 ## <a name="radial-gravity-field"></a>Champ gravité radiale
 
@@ -101,4 +101,4 @@ fieldNode.Falloff = 1.0f;
 
 Cela génère un champ de force différent, où les bananes sont extraites de façon radiale à propos du champ :
 
-![](spritekit-images/image16.png "Les bananes sont extraites de façon radiale autour du champ")
+![](spritekit-images/image16.png "The bananas are pulled radially around the field")

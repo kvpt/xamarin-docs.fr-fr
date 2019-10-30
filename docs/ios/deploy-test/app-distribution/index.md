@@ -4,15 +4,15 @@ description: Ce document présente les techniques de distribution disponibles po
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a261d1fc86fac16cf48575616359b083daebf47
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8d4be4b06c051386afa0358856a6df49abb6653
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756546"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026469"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Vue d’ensemble de la distribution d’applications Xamarin.iOS
 
@@ -20,7 +20,7 @@ _Ce document offre une vue d’ensemble des techniques de distribution disponibl
 
 Une fois l’application Xamarin.iOS développée, la prochaine étape du cycle de vie du développement du logiciel consiste à la distribuer aux utilisateurs, comme indiqué dans la section en surbrillance du diagramme ci-dessous :
 
-[![](images/publishingdiagram.png "Une fois l’application iOS développée, la prochaine étape consiste à la distribuer aux utilisateurs, comme indiqué dans la section en surbrillance de ce diagramme")](images/publishingdiagram.png#lightbox)
+[![](images/publishingdiagram.png "After the iOS app has been developed, the next step is to distribute the app to users, as shown in the highlighted section of this diagram")](images/publishingdiagram.png#lightbox)
 
 Apple propose les méthodes suivantes (prises en charge par Xamarin.iOS) pour distribuer une application iOS :
 
@@ -72,7 +72,7 @@ Cet article a fourni une brève présentation des mécanismes de distribution di
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Fichier iTunesMetadata.plist](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [Prise en charge IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
-- [Dépannage](~/ios/deploy-test/troubleshooting.md)
+- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)

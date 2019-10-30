@@ -1,24 +1,24 @@
 ---
-title: 'Hello, Android : Immersion'
+title: Hello, Android - En profondeur
 description: Dans ce guide en deux parties, vous allez créer votre première application Xamarin.Android, et approfondir votre compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. Vous y découvrirez les différents outils, concepts et étapes qui sont nécessaires à la création et au déploiement d’une application Xamarin.Android.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756718"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028005"
 ---
-# <a name="hello-android-deep-dive"></a>Hello, Android : Immersion
+# <a name="hello-android-deep-dive"></a>Hello, Android - En profondeur
 
-_Dans ce guide en deux parties, vous allez créer votre première application Xamarin.Android, et approfondir votre compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. Vous y découvrirez les différents outils, concepts et étapes qui sont nécessaires à la création et au déploiement d’une application Xamarin.Android._
+_Dans ce guide en deux parties, vous allez créer votre première application Xamarin. Android et développer une compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. En cours de route, vous allez découvrir les outils, les concepts et les étapes nécessaires à la création et au déploiement d’une application Xamarin. Android._
 
 Dans [Hello, Android - Démarrage rapide](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), vous avez créé et exécuté votre première application Xamarin.Android. Maintenant, vous allez approfondir votre connaissance du fonctionnement des applications Android, en vue de créer des programmes plus complexes. Ce guide passe en revue les étapes que vous avez suivies dans la procédure pas à pas « Hello, Android », pour que vous puissiez analyser ce que vous avez fait et comprendre les bases du développement d’applications Android.
 
@@ -61,7 +61,7 @@ Ce guide a pour but de vous aider à développer les compétences et les connais
 
 ## <a name="introduction-to-visual-studio"></a>Introduction à Visual Studio
 
-Visual Studio est un environnement IDE puissant, développé par Microsoft. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Dans ce guide, vous allez apprendre à utiliser certaines fonctionnalités de base de Visual Studio avec le plug-in Xamarin.
+Visual Studio est un puissant environnement de développement intégré (IDE) édité par Microsoft. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Dans ce guide, vous allez apprendre à utiliser certaines fonctionnalités de base de Visual Studio avec le plug-in Xamarin.
 
 Visual Studio organise le code en _solutions_ et en _projets_. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application **Phoneword**, vous avez ajouté un nouveau projet Android (à l’aide du modèle **Application Android**) à la solution **Phoneword** que vous avez créée avec le guide [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).
 
@@ -165,7 +165,7 @@ Les sections qui suivent explorent les relations entre les différents composant
 
 Dans l’application **Phoneword**, l’ID de **TranslateButton** a la valeur `@+id/TranslateButton` :
 
-[![Attribution d’une valeur à l’ID de TranslateButton](hello-android-deepdive-images/vs/04-translatebutton-sml.png "Attribution d’une valeur à l’ID de TranslateButton")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
+[![Paramètre TranslateButton ID](hello-android-deepdive-images/vs/04-translatebutton-sml.png "Paramètre TranslateButton ID")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -197,7 +197,7 @@ Tous les éléments définis dans l’aire de conception sont traduits en code 
 
 ::: zone-end
 
-Ce code source XML doit contenir quatre éléments de contrôle : deux éléments **TextView**, un élément **EditText** et un élément **Button**. Pour une présentation plus approfondie d’Android Designer, reportez-vous au guide Xamarin Android [Android Designer](~/android/user-interface/android-designer/index.md).
+Ce code source XML doit contenir quatre éléments de contrôle : deux **TextView**s, un élément **EDITTEXT** et un élément **Button** . Pour une présentation plus approfondie d’Android Designer, reportez-vous au guide Xamarin Android [Android Designer](~/android/user-interface/android-designer/index.md).
 
 Nous venons de voir les outils et les concepts utilisés pour la partie visuelle de l’interface utilisateur. À présent, il est temps de passer au code qui gère l’interface utilisateur.
 
@@ -273,7 +273,7 @@ Quand `MainActivity` démarre, il crée une vue basée sur le contenu du fichier
 ::: zone-end
 ::: zone pivot="macos"
 
-Dans l’application **Phoneword**, la première chose à faire dans `OnCreate` est de charger l’interface utilisateur créée dans Android Designer. Pour charger l’interface utilisateur, appelez `SetContentView`, puis passez-lui le *nom de la disposition de ressource* pour le fichier de disposition : **Main.axml**. La disposition est située dans `Resource.Layout.Main`:
+Dans l’application **Phoneword**, la première chose à faire dans `OnCreate` est de charger l’interface utilisateur créée dans Android Designer. Pour charger l’IU, appelez `SetContentView`, puis passez-lui le *nom de la disposition de ressource* pour le fichier de disposition : **Main.axml**. La disposition est située dans `Resource.Layout.Main`:
 
 ```csharp
 SetContentView (Resource.Layout.Main);
@@ -332,7 +332,7 @@ Pour qu’un appareil Android puisse être utilisé pour tester des applications
 
 Une fois l’appareil configuré, vous pouvez y déployer des applications. Pour cela, connectez-le à un ordinateur, sélectionnez-le dans la boîte de dialogue **Sélectionner un appareil**, puis démarrez l’application :
 
-![Sélection d’un appareil pour le débogage](hello-android-deepdive-images/vs/06-select-device.png "Sélection d’un appareil pour le débogage")
+![Sélectionner le périphérique de débogage](hello-android-deepdive-images/vs/06-select-device.png "Sélectionner le périphérique de débogage")
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -357,7 +357,7 @@ Pour éviter cela, il est recommandé d’ajouter des icônes de différentes r�
 
 ::: zone pivot="windows"
 
-![Dossiers mipmap](hello-android-deepdive-images/vs/07-mipmap-folders.png "Dossiers mipmap")
+![dossiers mipmap](hello-android-deepdive-images/vs/07-mipmap-folders.png "dossiers mipmap")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -372,30 +372,30 @@ Android choisira l’icône ayant une densité adaptée :
 
 ### <a name="generate-custom-icons"></a>Générer des icônes personnalisées
 
-Tout le monde ne dispose pas d’un concepteur pour créer des icônes personnalisées et lancer les images dont a besoin une application pour se démarquer des autres. Voici plusieurs méthodes que vous pouvez utiliser pour générer des graphiques d’application personnalisés :
+Tout le monde n’a pas de concepteur disponible pour créer les icônes personnalisées et les images de lancement qu’une application doit mettre en attente. Voici plusieurs autres approches de génération d’une illustration d’application personnalisée :
 
 ::: zone pivot="windows"
 
-- [Android Studio Asset](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Générateur web dans le navigateur pour tous les types d’icônes Android, comprenant des liens vers d’autres outils de la communauté. Son fonctionnement est optimal dans Google Chrome.
+- [Android Studio Asset](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Générateur web dans le navigateur pour tous les types d’icônes Android, comprenant des liens vers d’autres outils de la communauté. Son fonctionnement est optimal dans Google Chrome.
 
 - Visual Studio &ndash; Vous pouvez l’utiliser afin de créer un ensemble d’icônes simple pour votre application, directement dans l’IDE.
 
-- [Glyphish](http://www.glyphish.com/) &ndash; Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
+- [Glyphish](https://www.glyphish.com/) &ndash; Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
 
-- [Fiverr](http://www.fiverr.com/) &ndash; Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
+- [Fiverr](https://www.fiverr.com/) &ndash; Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Studio Asset](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Générateur web dans le navigateur pour tous les types d’icônes Android, comprenant des liens vers d’autres outils de la communauté. Son fonctionnement est optimal dans Google Chrome.
+- [Android Studio Asset](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Générateur web dans le navigateur pour tous les types d’icônes Android, comprenant des liens vers d’autres outils de la communauté. Son fonctionnement est optimal dans Google Chrome.
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch est une application Mac pour la conception d’interfaces utilisateur, d’icônes et bien plus encore. Il s’agit de l’application qui a été utilisée pour créer l’ensemble d’icônes d’application et d’images de lancement Xamarin. Sketch 3 est disponible sur l’App Store et coûte environ 80 $. Vous pouvez aussi essayer gratuitement l’outil [Sketch Tool](http://bohemiancoding.com/sketch/tool/).
+- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch est une application Mac pour la conception d’interfaces utilisateur, d’icônes et bien plus encore. Il s’agit de l’application qui a été utilisée pour créer l’ensemble d’icônes d’application et d’images de lancement Xamarin. Sketch 3 est disponible sur l’App Store et coûte environ 80 $. Vous pouvez aussi essayer gratuitement l’outil [Sketch Tool](https://bohemiancoding.com/sketch/tool/).
 
-- [Pixelmator](http://www.pixelmator.com/) &ndash; Application polyvalente de modification d’image pour Mac. Coûte environ 30 $.
+- [Pixelmator](https://www.pixelmator.com/) &ndash; Application polyvalente de modification d’image pour Mac. Coûte environ 30 $.
 
-- [Glyphish](http://www.glyphish.com/) &ndash; Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
+- [Glyphish](https://www.glyphish.com/) &ndash; Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
 
-- [Fiverr](http://www.fiverr.com/) &ndash; Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
+- [Fiverr](https://www.fiverr.com/) &ndash; Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
 
 ::: zone-end
 

@@ -4,15 +4,15 @@ description: Ce guide présente les Xamarin Designer pour iOS. Il montre comment
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71250152"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004571"
 ---
 # <a name="ios-designer-basics"></a>notions de base du concepteur iOS
 

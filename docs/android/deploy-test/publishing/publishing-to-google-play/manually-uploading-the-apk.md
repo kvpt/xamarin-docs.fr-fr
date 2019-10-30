@@ -3,15 +3,15 @@ title: Chargement manuel de l’APK
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756066"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021254"
 ---
 # <a name="manually-uploading-the-apk"></a>Chargement manuel de l’APK
 
@@ -88,7 +88,7 @@ Cliquez sur **Content Rating** dans la **Console développeur de Google Play**. 
 
 [![Section Content Rating](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
-Toutes les applications sur Google Play doivent être évaluées selon le système de classification Google Play. Outre la classification du contenu, toutes les applications doivent respecter le [Règlement du programme Google Play (pour les développeurs)](http://www.android.com/us/developer-content-policy.html).
+Toutes les applications sur Google Play doivent être évaluées selon le système de classification Google Play. Outre la classification du contenu, toutes les applications doivent respecter le [Règlement du programme Google Play (pour les développeurs)](https://www.android.com/us/developer-content-policy.html).
 
 La liste qui suit répertorie les quatre niveaux définis dans le système de classification de contenu de Google Play et donne des indications sur les fonctionnalités ou le contenu qui astreignent à chaque niveau de classification : 
 
@@ -131,7 +131,7 @@ Descendez plus bas pour indiquer si l’application contient des publicités. En
 ### <a name="consent"></a>Consentement
 
 En bas de la page **Pricing &amp; Distribution** se trouve la section **CONSENT**.
-Cette section est obligatoire. Elle permet de déclarer que l’application est conforme aux [Règles de contenu Android](http://www.android.com/market/terms/developer-content-policy.html#hl=us) et de reconnaître que l’application est soumise à la réglementation américaine relative à l’exportation :
+Cette section est obligatoire. Elle permet de déclarer que l’application est conforme aux [Règles de contenu Android](https://www.android.com/market/terms/developer-content-policy.html#hl=us) et de reconnaître que l’application est soumise à la réglementation américaine relative à l’exportation :
 
 [![Section Consent](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
@@ -152,17 +152,17 @@ Il est possible d’ajouter des éléments au manifeste de l’application pour 
 - [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play utilise les attributs pour déterminer si une application peut être déployée sur un appareil en fonction de la taille de l’écran. 
     Google Play suppose qu’Android peut adapter des dispositions plus petites à des écrans plus grands, mais pas l’inverse. Ainsi, une application qui déclare prendre en charge les écrans normaux apparaît dans les recherches de grands écrans, mais pas de petits écrans. Si une application Xamarin.Android ne fournit pas d’élément `<supports-screen>` dans le fichier manifeste, Google Play suppose que tous les attributs ont la valeur true et que l’application prend en charge toutes les tailles d’écran. Cet élément doit être ajouté manuellement à **AndroidManifest.xml**. 
 
-- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; Cet élément de manifeste est utilisé pour demander certaines fonctionnalités matérielles, comme le type de clavier, les appareils de navigation, un écran tactile, etc. Cet élément doit être ajouté manuellement à **AndroidManifest.xml**. 
+- [utilise-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; cet élément de manifeste est utilisé pour demander certaines fonctionnalités matérielles, telles que le type de clavier, les périphériques de navigation, un écran tactile, etc. Cet élément doit être ajouté manuellement à **fichier AndroidManifest. xml** . 
 
 - [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; Cet élément de manifeste déclare les fonctionnalités matérielles ou logicielles qui doit avoir un appareil pour que l’application fonctionne. Cet attribut est informatif uniquement. Google Play n’affiche pas l’application sur les appareils qui ne répondent pas à ce filtre. Il est toujours possible d’installer l’application par d’autres moyens (manuellement ou par téléchargement). Cet élément doit être ajouté manuellement à **AndroidManifest.xml**. 
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Cet élément spécifie que certaines bibliothèques partagées doivent être présentes sur l’appareil, par exemple Google Maps. Cet élément peut également être spécifié avec `Android.App.UsesLibraryAttribute`. Par exemple : 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Cet élément spécifie que certaines bibliothèques partagées doivent être présentes sur l’appareil, par exemple Google Maps. Cet élément peut également être spécifié avec `Android.App.UsesLibraryAttribute`. Exemple : 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; Cet élément est utilisé pour déduire certaines fonctionnalités matérielles qui sont requises pour exécuter l’application et qui peuvent ne pas avoir été correctement déclarées avec un élément `<uses-feature>`. Par exemple, si une application demande l’autorisation d’utiliser l’appareil photo, Google Play suppose que les appareils doivent disposer d’un appareil photo, même si aucun élément `<uses-feature>` ne déclare l’appareil photo. Cet élément peut être défini avec `Android.App.UsesPermissionsAttribute`. Par exemple : 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; Cet élément est utilisé pour déduire certaines fonctionnalités matérielles qui sont requises pour exécuter l’application et qui peuvent ne pas avoir été correctement déclarées avec un élément `<uses-feature>`. Par exemple, si une application demande l’autorisation d’utiliser l’appareil photo, Google Play suppose que les appareils doivent disposer d’un appareil photo, même si aucun élément `<uses-feature>` ne déclare l’appareil photo. Cet élément peut être défini avec `Android.App.UsesPermissionsAttribute`. Exemple : 
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
@@ -172,6 +172,6 @@ Il est possible d’ajouter des éléments au manifeste de l’application pour 
 
 - [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; Cet élément est utilisé pour filtrer les applications qui ne correspondent pas à la taille de l’écran et la densité spécifiés par cet élément. La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application. L’attribut `<support-screen>` mentionné plus haut est préféré. 
 
-- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; Cet élément est utilisé pour déclarer les formations de compression de texture GL requises par l’application. La plupart des La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application. 
+- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; Cet élément est utilisé pour déclarer les formations de compression de texture GL requises par l’application. La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application. 
 
 Pour plus d’informations sur la configuration du manifeste d’application, consultez la rubrique [Manifeste d’application](https://developer.android.com/guide/topics/manifest/manifest-intro.html) Android.

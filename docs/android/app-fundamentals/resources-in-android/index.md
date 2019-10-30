@@ -4,21 +4,21 @@ description: Cet article présente le concept de ressources Android dans Xamarin
 ms.prod: xamarin
 ms.assetid: C0DCC856-FA36-04CD-443F-68D26075649E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/01/2018
-ms.openlocfilehash: ec1cb6fcce320ed5ea9154b42d0a5361940c1015
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1ff4d9d896aaa5f290402a49aa4b4bd1f1e00aaf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025063"
 ---
 # <a name="android-resources"></a>Ressources Android
 
 _Cet article présente le concept de ressources Android dans Xamarin. Android et explique comment les utiliser. Il explique comment utiliser des ressources dans votre application Android pour prendre en charge la localisation d’applications et plusieurs appareils, y compris des tailles d’écran et des densités différentes._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Une application Android est rarement simplement le code source. Il existe souvent de nombreux autres fichiers qui composent une application : des vidéos, des images, des polices et des fichiers audio, juste pour n’en nommer que quelques-uns. Collectivement, ces fichiers de code non source sont considérés comme des ressources et sont compilés (avec le code source) pendant le processus de génération et empaquetés en tant que APK pour la distribution et l’installation sur les appareils :
 
@@ -26,11 +26,11 @@ Une application Android est rarement simplement le code source. Il existe souven
 
 Les ressources offrent plusieurs avantages pour une application Android :
 
-- **Séparation de code** &ndash; Sépare le code source des images, des chaînes, des menus, des animations, des couleurs, etc. Ces ressources peuvent vous aider considérablement lors de la localisation.
+- La **séparation de code** &ndash; sépare le code source des images, des chaînes, des menus, des animations, des couleurs, etc. Ces ressources peuvent vous aider considérablement lors de la localisation.
 
-- **Cibler plusieurs appareils** &ndash; Fournit une prise en charge plus simple de différentes configurations d’appareil sans modification du code.
+- **Cibler plusieurs appareils** &ndash; fournit une prise en charge plus simple de différentes configurations d’appareils sans modification du code.
 
-- **Vérification au moment de la compilation** &ndash; Les ressources sont statiques et compilées dans l’application. Cela permet de vérifier l’utilisation des ressources au moment de la compilation, lorsqu’il est facile de détecter et de corriger les erreurs, par opposition à l’exécution lorsqu’il est plus difficile à localiser et coûteux à corriger.
+- La **vérification au moment de la compilation** &ndash; ressources sont statiques et compilées dans l’application. Cela permet de vérifier l’utilisation des ressources au moment de la compilation, lorsqu’il est facile de détecter et de corriger les erreurs, par opposition à l’exécution lorsqu’il est plus difficile à localiser et coûteux à corriger.
 
 Lorsqu’un nouveau projet Xamarin. Android est démarré, un répertoire spécial appelé ressources est créé, ainsi que certains sous-répertoires :
 
@@ -60,15 +60,15 @@ Par exemple, les **ressources/dessinables-de** spécifient les images pour les a
 
 Cet article aborde l’utilisation des ressources et aborde les sujets suivants :
 
-- **Notions de base des ressources Android** &ndash; Utilisation des ressources par défaut par programmation et déclarative, ajout de types de ressources tels que des images et des polices à une application.
+- Les **concepts de base des ressources Android** &ndash; l’utilisation des ressources par défaut par programmation et de manière déclarative, en ajoutant des types de ressources tels que des images et des polices à une application.
 
-- **Configurations spécifiques** à l’appareil &ndash; Prise en charge des différentes résolutions et densités d’écran dans une application.
+- Les **configurations spécifiques** à l’appareil &ndash; prendre en charge les différentes résolutions et densités d’écran dans une application.
 
-- **Localisation** &ndash; Utilisation de ressources pour prendre en charge les différentes régions une application peut être utilisée.
+- La **localisation** &ndash; à l’aide de ressources pour prendre en charge les différentes régions dans lesquelles une application peut être utilisée.
 
 ## <a name="related-links"></a>Liens associés
 
 - [Utilisation de ressources Android](~/android/app-fundamentals/resources-in-android/android-assets.md)
-- [Notions de base des applications](https://developer.android.com/guide/topics/fundamentals.html)
+- [Notions de base de l’application](https://developer.android.com/guide/topics/fundamentals.html)
 - [Ressources d'application](https://developer.android.com/guide/topics/resources/index.html)
 - [Prise en charge de plusieurs écrans](https://developer.android.com/guide/practices/screens_support.html)

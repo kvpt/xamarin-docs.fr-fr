@@ -3,15 +3,15 @@ title: Présentation de la prise en charge asynchrone
 description: Ce document décrit la programmation avec Async et await, les concepts C# introduits dans 5 pour faciliter l’écriture de code asynchrone.
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 8b88d6c33671f36d2d4106f45a267322320639c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ae84dadf4c405f7f8075cedc0f16ca845fea6fdb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765335"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014904"
 ---
 # <a name="async-support-overview"></a>Présentation de la prise en charge asynchrone
 
@@ -19,7 +19,7 @@ _C#5 a introduit deux mots clés pour simplifier les programmations asynchrones�
 
 La prise en charge asynchrone de Xamarin est basée sur la Fondation mono 3,0 et met à niveau le profil d’API à partir d’une version conviviale de Silverlight pour être une version mobile de .NET 4,5.
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Ce document présente les nouveaux mots clés Async et await, puis décrit quelques exemples simples qui implémentent des méthodes asynchrones dans Xamarin. iOS et Xamarin. Android.
 
@@ -27,39 +27,39 @@ Pour une description plus complète des nouvelles fonctionnalités asynchrones d
 
 L’exemple d’application effectue une requête Web asynchrone simple (sans bloquer le thread principal), puis met à jour l’interface utilisateur avec le code HTML et le nombre de caractères téléchargés.
 
- [![](async-images/AsyncAwait_427x368.png "L’exemple d’application effectue une requête Web asynchrone simple sans bloquer le thread principal, puis met à jour l’interface utilisateur avec le code HTML et le nombre de caractères téléchargés")](async-images/AsyncAwait.png#lightbox)
+ [![](async-images/AsyncAwait_427x368.png "The sample application makes a simple asynchronous web request without blocking the main thread then updates the UI with the downloaded html and character count")](async-images/AsyncAwait.png#lightbox)
 
 La prise en charge asynchrone de Xamarin est basée sur la Fondation mono 3,0 et met à niveau le profil d’API à partir d’une version conviviale de Silverlight pour être une version mobile de .NET 4,5.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 C#5 les fonctionnalités requièrent mono 3,0 qui est inclus dans Xamarin. iOS 6,4 et Xamarin. Android 4,8. Vous serez invité à mettre à niveau vos mono, Xamarin. iOS, Xamarin. Android et Xamarin. Mac pour en tirer parti.
 
-## <a name="using-async-amp-await"></a>Utilisation d' &amp; await Async
+## <a name="using-async-amp-await"></a>Utilisation d' &amp; Async await
 
- `async`et `await` sont de C# nouvelles fonctionnalités de langage qui fonctionnent conjointement avec la bibliothèque parallèle de tâches pour faciliter l’écriture de code thread afin d’effectuer des tâches de longue durée sans bloquer le thread principal de votre application.
+ `async` et `await` sont de C# nouvelles fonctionnalités de langage qui fonctionnent conjointement avec la bibliothèque parallèle de tâches pour faciliter l’écriture de code thread afin d’effectuer des tâches de longue durée sans bloquer le thread principal de votre application.
 
 ## <a name="async"></a>async
 
 ### <a name="declaration"></a>Déclaration
 
-Le `async` mot clé est placé dans une déclaration de méthode (ou sur une méthode lambda ou anonyme) pour indiquer qu’il contient du code qui peut s’exécuter de façon asynchrone, c’est-à-dire qu’il ne bloque pas le thread de l’appelant.
+Le mot clé `async` est placé dans une déclaration de méthode (ou sur une méthode lambda ou anonyme) pour indiquer qu’il contient du code qui peut s’exécuter de façon asynchrone, par ex. ne bloque pas le thread de l’appelant.
 
-Une méthode marquée avec `async` doit contenir au moins une expression ou une instruction await. Si aucun `await`s n’est présent dans la méthode, il s’exécutera de façon synchrone (comme s’il n' `async` existait aucun modificateur). Cela entraîne également un avertissement du compilateur (mais pas une erreur).
+Une méthode marquée avec `async` doit contenir au moins une expression ou une instruction await. Si aucun `await`n’est présent dans la méthode, il s’exécutera de façon synchrone (comme s’il n’existait aucun modificateur `async`). Cela entraîne également un avertissement du compilateur (mais pas une erreur).
 
 ### <a name="return-types"></a>Types de retours
 
 Une méthode Async doit retourner un `Task`, `Task<TResult>` ou `void`.
 
-Spécifiez `Task` le type de retour si la méthode ne retourne aucune autre valeur.
+Spécifiez le type de retour `Task` si la méthode ne retourne aucune autre valeur.
 
-Spécifiez `Task<TResult>` si la méthode doit retourner une valeur, où `TResult` est le type `int`retourné (par exemple,, par exemple).
+Spécifiez `Task<TResult>` si la méthode doit retourner une valeur, où `TResult` est le type retourné (par exemple, un `int`, par exemple).
 
-Le `void` type de retour est utilisé principalement pour les gestionnaires d’événements qui l’exigent. Le code qui appelle des méthodes asynchrones qui `await` retournent void ne peut pas être sur le résultat.
+Le type de retour `void` est principalement utilisé pour les gestionnaires d’événements qui l’exigent. Le code qui appelle des méthodes asynchrones qui retournent void ne peut pas `await` sur le résultat.
 
 ### <a name="parameters"></a>Paramètres
 
-Les méthodes asynchrones `ref` ne `out` peuvent pas déclarer des paramètres ou.
+Les méthodes asynchrones ne peuvent pas déclarer des paramètres `ref` ou `out`.
 
 ## <a name="await"></a>await
 
@@ -73,34 +73,34 @@ En savoir plus sur [await](https://docs.microsoft.com/dotnet/csharp/language-ref
 
 ## <a name="exception-handling"></a>Gestion des exceptions
 
-Les exceptions qui se produisent à l’intérieur d’une méthode Async sont stockées dans la tâche et `await`levées lorsque la tâche est ed. Ces exceptions peuvent être interceptées et gérées à l’intérieur d’un bloc try-catch.
+Les exceptions qui se produisent à l’intérieur d’une méthode Async sont stockées dans la tâche et levées lorsque la tâche est `await`Ed. Ces exceptions peuvent être interceptées et gérées à l’intérieur d’un bloc try-catch.
 
 ## <a name="cancellation"></a>Annulation
 
 Les méthodes asynchrones qui prennent beaucoup de temps à se terminer doivent prendre en charge l’annulation. En règle générale, l’annulation est appelée comme suit :
 
-- Un `CancellationTokenSource` objet est créé.
-- L' `CancellationTokenSource.Token` instance est passée à une méthode asynchrone annulable.
-- L’annulation est demandée en appelant `CancellationTokenSource.Cancel` la méthode.
+- Un objet `CancellationTokenSource` est créé.
+- L’instance `CancellationTokenSource.Token` est passée à une méthode asynchrone annulable.
+- L’annulation est demandée en appelant la méthode `CancellationTokenSource.Cancel`.
 
 La tâche est ensuite annulée et accuse réception de l’annulation.
 
 Pour plus d’informations sur l’annulation, consultez [Réglage de votre application Async (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-Téléchargez l' [exemple de solution Xamarin](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/) (pour iOS et Android) pour voir un exemple fonctionnel de `async` et `await` dans les applications mobiles. L’exemple de code est abordé plus en détail dans cette section.
+Téléchargez l' [exemple de solution Xamarin](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/) (pour iOS et Android) pour voir un exemple fonctionnel de `async` et `await` dans Mobile Apps. L’exemple de code est abordé plus en détail dans cette section.
 
 ### <a name="writing-an-async-method"></a>Écriture d’une méthode Async
 
-La méthode suivante montre comment coder une `async` méthode avec une `await`tâche Ed :
+La méthode suivante montre comment coder une méthode `async` avec une tâche `await`Ed :
 
 ```csharp
 public async Task<int> DownloadHomepage()
 {
     var httpClient = new HttpClient(); // Xamarin supports HttpClient!
 
-    Task<string> contentsTask = httpClient.GetStringAsync("http://xamarin.com"); // async method!
+    Task<string> contentsTask = httpClient.GetStringAsync("https://visualstudio.microsoft.com/xamarin"); // async method!
 
     // await! control returns to the caller and the task continues to run on another thread
     string contents = await contentsTask;
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 Notez les points suivants :
 
-- La déclaration de méthode comprend `async` le mot clé.
-- Le type de retour `Task<int>` est afin que le code appelant `int` puisse accéder à la valeur calculée dans cette méthode.
-- L’instruction Return `return exampleInt;` est un objet entier, le fait que la méthode retourne `Task<int>` fait partie des améliorations du langage.
+- La déclaration de méthode comprend le mot clé `async`.
+- Le type de retour est `Task<int>`, de sorte que le code appelant peut accéder à la valeur `int` calculée dans cette méthode.
+- L’instruction return est `return exampleInt;` qui est un objet entier, le fait que la méthode retourne `Task<int>` fait partie des améliorations du langage.
 
 ### <a name="calling-an-async-method-1"></a>Appel d’une méthode Async 1
 
@@ -155,7 +155,7 @@ Remarques :
 
 ### <a name="calling-an-async-method-2"></a>Appel d’une méthode Async 2
 
-Dans l’exemple d’application iOS, l’exemple est écrit légèrement différemment pour illustrer une autre approche. Au lieu d’utiliser un délégué anonyme, cet exemple déclare `async` un gestionnaire d’événements qui est assigné comme un gestionnaire d’événements standard :
+Dans l’exemple d’application iOS, l’exemple est écrit légèrement différemment pour illustrer une autre approche. Au lieu d’utiliser un délégué anonyme, cet exemple déclare un gestionnaire d’événements `async` qui est assigné comme un gestionnaire d’événements standard :
 
 ```csharp
 GetButton.TouchUpInside += HandleTouchUpInside;
@@ -179,9 +179,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 Quelques points importants :
 
-- La méthode est marquée comme `async` , mais `void` retourne. Cela s’effectue généralement uniquement pour les gestionnaires d’événements (sinon, vous retournez `Task` un `Task<TResult>` ou).
-- Le code `await` s sur la `DownloadHomepage` méthode directement sur une assignation à une variable ( `intResult` ) contrairement à l’exemple précédent où nous avons utilisé `Task<int>` une variable intermédiaire pour référencer la tâche.  *Il* s’agit de l’emplacement où le contrôle est retourné à l’appelant jusqu’à ce que la méthode asynchrone soit terminée sur un autre thread.
-- Quand la méthode asynchrone se termine et retourne, l’exécution reprend à `await` , ce qui signifie que le résultat de l’entier est retourné, puis restitué dans un widget d’interface utilisateur.
+- La méthode est marquée comme `async` mais retourne `void`. Cela s’effectue généralement uniquement pour les gestionnaires d’événements (sinon, vous retournez une `Task` ou `Task<TResult>`).
+- Le code `await` sur la méthode `DownloadHomepage` directement sur une assignation à une variable (`intResult`) contrairement à l’exemple précédent où nous avons utilisé une variable `Task<int>` intermédiaire pour référencer la tâche.  *Il* s’agit de l’emplacement où le contrôle est retourné à l’appelant jusqu’à ce que la méthode asynchrone soit terminée sur un autre thread.
+- Quand la méthode asynchrone se termine et retourne, l’exécution reprend au `await`, ce qui signifie que le résultat de l’entier est retourné, puis restitué dans un widget d’interface utilisateur.
 
 ## <a name="summary"></a>Récapitulatif
 
@@ -201,4 +201,4 @@ Ce document a donné une vue d’ensemble des nouveaux mots clés de langage et 
 - [Await, et l’interface utilisateur et les blocages ! Mon Dieu!](https://devblogs.microsoft.com/pfxteam/await-and-ui-and-deadlocks-oh-my/)
 - [Traitement des tâches au fur et à mesure de leur exécution)](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)
 - [Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)](https://msdn.microsoft.com/library/hh873175.aspx)
-- [Asynchronie dans C# 5 (blog de Eric Lippert) : à propos de l’introduction des mots clés](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)
+- [Asynchronie dans C# 5 (blog de Eric Lippert) : à propos de l’introduction des mots clés](https://blogs.msdn.microsoft.com/ericlippert/2010/11/11/asynchrony-in-c-5-part-six-whither-async/)

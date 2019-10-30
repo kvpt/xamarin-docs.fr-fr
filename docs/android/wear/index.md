@@ -4,21 +4,21 @@ description: Création d’applications pour les appareils Android Android.
 ms.prod: xamarin
 ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2018
-ms.openlocfilehash: 5768a8fb402304d399e619ddb111aea24d975daf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 63fb9c3b1484026cb390a8a475c711562dfd0771
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758329"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028591"
 ---
 # <a name="android-wear"></a>Android Wear
 
 Android usure est une version d’Android conçue pour des appareils mobiles tels que des espions intelligents. Cette section contient des instructions sur la façon d’installer et de configurer les outils requis pour l’usure du développement, une procédure pas à pas pour la création de votre premier appareil d’usure, ainsi qu’une liste d’exemples auxquels vous pouvez vous référer pour créer vos propres applications d’usure.
 
-## <a name="getting-startedandroidwearget-startedindexmd"></a>[Prise en main](~/android/wear/get-started/index.md)
+## <a name="getting-startedandroidwearget-startedindexmd"></a>[Bien démarrer](~/android/wear/get-started/index.md)
 
 Présente l’usure d’Android, explique comment installer et configurer votre ordinateur pour le développement de l’usure et fournit des étapes pour vous aider à créer et exécuter votre première application Android d’usure sur un émulateur ou un appareil d’usure.
 
@@ -30,7 +30,7 @@ Explique les contrôles spécifiques à Android usure et fournit des liens vers 
 
 Les documents de cette section couvrent les fonctionnalités spécifiques à Android usure. Vous trouverez ici une rubrique qui décrit comment créer un WatchFace.
 
-## <a name="screen-sizesandroidwearscreen-sizesmd"></a>[Tailles d’écran](~/android/wear/screen-sizes.md)
+## <a name="screen-sizesandroidwearscreen-sizesmd"></a>[Tailles d'écran](~/android/wear/screen-sizes.md)
 
 Affichez l’aperçu et optimisez votre interface utilisateur pour les tailles d’écran disponibles.
 
@@ -61,9 +61,9 @@ Consultez ces liens vidéo qui décrivent Xamarin. Android avec prise en charge 
 
 |Description|Capture d'écran|
 |--- |--- |
-|[Android L et bien plus encore](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; Android L developer preview a introduit une multitude de nouvelles API qui permettent aux développeurs de tirer parti de, y compris la conception de matériaux, les notifications et les nouvelles animations, pour n’en nommer que quelques-uns.|![Capture vidéo de la présentation](images/video-android-l.png)|
-|[C#est dans mes oreilles et dans mes yeux : Google Glass et Android](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash; s’intéressent à l’informatique à l’avenir (ou un épisode de gadget inspecteur), mais de nombreuses personnes adoptent déjà le futur aujourd’hui. C#les développeurs connaissent ce point et disposent déjà des outils et des compétences nécessaires pour tirer parti de la puissance des appareils mobiles (de l’évolution de 2014).|![Capture vidéo de la présentation](images/video-eyes-ears.png)|
-|[Nouveautés de Xamarin. Android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android usure, Android TV, Android auto, Material Design et art, qu’est-ce que cela signifie comme développeur Xamarin ? de évoluer 2014.|![Capture vidéo de la présentation](Images/video-whats-new.png)|
+|[Android l et bien plus encore](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/) &ndash; la version préliminaire des développeurs Android a introduit une multitude de nouvelles API qui permettent aux développeurs de tirer parti de, y compris la conception de matériaux, les notifications et les nouvelles animations, pour n’en nommer que quelques-uns.|![Capture vidéo de la présentation](images/video-android-l.png)|
+|[est dans mes oreilles et dans mes yeux : Google Glass et Android usure&ndash;l’informatique portable peut paraître un peu comme un exemple du futur (ou un épisode de gadget inspecteur), mais de nombreuses personnes adoptent déjà le futur aujourd’hui. C# ](https://www.youtube.com/watch?v=80H8tXByZQc) C#les développeurs connaissent ce point et disposent déjà des outils et des compétences nécessaires pour tirer parti de la puissance des appareils mobiles (de l’évolution de 2014).|![Capture vidéo de la présentation](images/video-eyes-ears.png)|
+|[Nouveautés de Xamarin. android](https://www.youtube.com/watch?v=Gpqc2XZIQfU) &ndash; Android L, Android usure, Android TV, Android auto, Material Design et art ; qu’est-ce que cela signifie pour vous en tant que développeur Xamarin ? de l’évolution de 2014.|![Capture vidéo de la présentation](Images/video-whats-new.png)|
 
 <!--
 

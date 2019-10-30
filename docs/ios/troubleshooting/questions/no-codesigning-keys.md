@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: e10a04627b903c02140a6a2ead5c379c1e8bdcf6
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 0c777b8d5326963e959d8bb13d81d7058caa6bde
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021387"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030947"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>Pourquoi ma build iOS échoue avec le message disant qu’aucun code iPhone valide pour signer les clés n’a été trouvé dans le trousseau ?
 
@@ -31,9 +31,9 @@ Si vous n’avez pas déjà approvisionné un appareil iOS, le guide suivant vou
 
 Il y avait un bogue dans Xamarin. Visual Studio 3,11 qui a provoqué l’ajout du projet iOS dans un modèle Xamarin. Forms pour ajouter les builds. plist à la Codesign. plist au simulateur ; blocage efficace des tests à l’aide du simulateur.
 
-### <a name="how-to-fix"></a>Procédure de résolution
+### <a name="how-to-fix"></a>Comment résoudre le problème
 
-Vous pouvez contourner le problème en supprimant l' `<CodesignEntitlements>` indicateur des versions Debug dans le fichier. csproj. Vous pouvez procéder comme suit :
+Vous pouvez contourner le problème en supprimant l’indicateur `<CodesignEntitlements>` des versions Debug dans le fichier. csproj. Vous pouvez procéder comme suit :
 
 > [!WARNING]
 > Les erreurs dans les fichiers. csproj peuvent rompre votre projet. il est donc judicieux de sauvegarder vos fichiers avant de tenter cette opération.
@@ -41,9 +41,9 @@ Vous pouvez contourner le problème en supprimant l' `<CodesignEntitlements>` in
 1. Cliquez avec le bouton droit sur le projet iOS dans le volet solution, puis sélectionnez **décharger le projet**
 2. Cliquez à nouveau avec le bouton droit sur le projet et sélectionnez **modifier [ProjectName]. csproj**
 3. Localisez les éléments PropertyGroup de débogage, ils doivent commencer par des indicateurs qui ressemblent à ceci :
-   - Debug`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
-   - 3/05`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
-4. Dans chacune des builds qui utilisent le simulateur, supprimez ou commentez la propriété suivante :`<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
+   - Débogage : `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
+   - Version : `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
+4. Dans chacune des builds qui utilisent le simulateur, supprimez ou commentez la propriété suivante : `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
 5. Rechargez le projet et vous devez être en mesure de le déployer dans le simulateur.
 
 ### <a name="next-steps"></a>Étapes suivantes

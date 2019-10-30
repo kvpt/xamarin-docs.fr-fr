@@ -4,19 +4,19 @@ description: Comment signer le paquet d’application Android (APK) pour la publ
 ms.prod: xamarin
 ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: 0a60031481f16a3a600cca090d39ec47cbb8ca9a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b646893d8bbe63aa537c973c90552e0367735e47
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756057"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021220"
 ---
 # <a name="signing-the-android-application-package"></a>Signature du paquet d’application Android
 
-Dans [Préparation d’une application pour sa mise en production](~/android/deploy-test/release-prep/index.md), le **Gestionnaire d’archives** a été utilisé pour générer l’application et la placer dans une archive en vue de sa signature et de sa publication. Cette section explique comment créer une identité de signature Android et un nouveau certificat de signature pour les applications Android et comment publier l’application archivée *ad hoc* sur disque. Le fichier APK ainsi créé peut être chargé de façon indépendante (sideloaded) sur les appareils Android sans passer par un App Store.
+Dans [Préparation d’une application pour sa mise en production](~/android/deploy-test/release-prep/index.md), le **Gestionnaire d’archives** a été utilisé pour générer l’application et la placer dans une archive en vue de sa signature et de sa publication. Cette section explique comment créer une identité de signature Android et un nouveau certificat de signature pour les applications Android et comment publier l’application archivée *ad hoc* sur disque. Le fichier APK ainsi créé peut être chargé de façon indépendante (sideloaded) dans les appareils Android sans passer par un App Store.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

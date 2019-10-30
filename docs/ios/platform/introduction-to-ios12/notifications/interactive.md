@@ -4,15 +4,15 @@ description: Avec iOS 12, il est possible de créer des interfaces utilisateur i
 ms.prod: xamarin
 ms.assetid: E3562E1B-E0EF-4C99-9F51-59DE22AFDE46
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 572b369755e37f123fbfdf5850a635e7ada12a9b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e629cd8f481558991d02c7fb879502ebd54753bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291238"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031938"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Interfaces utilisateur des notifications interactives dans Xamarin. iOS
 
@@ -58,15 +58,15 @@ Dans l’exemple d’application, le fichier **info. plist** du projet **RedGree
 
 Notez les caractéristiques suivantes :
 
-- Le `UNNotificationExtensionCategory` tableau spécifie le type des catégories de notification gérées par l’extension de contenu.
-- Afin de prendre en charge le contenu interactif, l’extension de contenu `UNNotificationExtensionUserInteractionEnabled` de notification `true`affecte la valeur à la clé.
-- La `UNNotificationExtensionInitialContentSizeRatio` clé spécifie le rapport hauteur/largeur initial pour l’interface de l’extension de contenu.
+- Le tableau `UNNotificationExtensionCategory` spécifie le type des catégories de notification gérées par l’extension de contenu.
+- Afin de prendre en charge le contenu interactif, l’extension de contenu de notification définit la clé de `UNNotificationExtensionUserInteractionEnabled` sur `true`.
+- La clé de `UNNotificationExtensionInitialContentSizeRatio` spécifie le rapport hauteur/largeur initial pour l’interface de l’extension de contenu.
 
 ## <a name="interactive-interface"></a>Interface interactive
 
-**MainInterface. Storyboard**, qui définit l’interface d’une extension de contenu de notification, est un storyboard standard contenant un contrôleur d’affichage unique. Dans l’exemple d’application, le contrôleur d’affichage est `NotificationViewController`de type et contient une vue d’image, trois boutons et un curseur. La table de montage séquentiel associe ces contrôles aux gestionnaires définis dans **NotificationViewController.cs**:
+**MainInterface. Storyboard**, qui définit l’interface d’une extension de contenu de notification, est un storyboard standard contenant un contrôleur d’affichage unique. Dans l’exemple d’application, le contrôleur d’affichage est de type `NotificationViewController`et contient une vue d’image, trois boutons et un curseur. La table de montage séquentiel associe ces contrôles aux gestionnaires définis dans **NotificationViewController.cs**:
 
-- Le gestionnaire de bouton **lancer** l’application `PerformNotificationDefaultAction` appelle la méthode `ExtensionContext`d’action sur, qui lance l’application :
+- Le gestionnaire de bouton **lancer l’application** appelle la méthode d’action `PerformNotificationDefaultAction` sur `ExtensionContext`, qui lance l’application :
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ Notez les caractéristiques suivantes :
     }
     ```
 
-    Dans l’application, le centre `Delegate` de notification de l’utilisateur (dans l’exemple d’application `AppDelegate`) peut répondre à l’interaction dans `DidReceiveNotificationResponse` la méthode :
+    Dans l’application, le `Delegate` du centre de notification de l’utilisateur (dans l’exemple d’application, le `AppDelegate`) peut répondre à l’interaction dans la méthode `DidReceiveNotificationResponse` :
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ Notez les caractéristiques suivantes :
             // ...
     ```
 
-- Le gestionnaire de bouton **Fermer** la `DismissNotificationContentExtension` notification `ExtensionContext`appelle sur, qui ferme la notification :
+- Le gestionnaire de bouton **Fermer la notification** appelle `DismissNotificationContentExtension` sur `ExtensionContext`, ce qui ferme la notification :
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)

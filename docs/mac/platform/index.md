@@ -4,15 +4,15 @@ description: 'Ce document contient des liens vers des guides qui décrivent les 
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 9587548becf840a06c0cbf198c0afe716a7156a2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 174ab8493203268cefb6eb638c77c6c96c38c0c0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284456"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029887"
 ---
 # <a name="macos-platform-features"></a>fonctionnalités de la plateforme macOS
 

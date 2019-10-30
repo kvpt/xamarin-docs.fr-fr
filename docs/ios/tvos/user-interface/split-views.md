@@ -4,21 +4,21 @@ description: Ce document décrit comment utiliser les vues fractionnées tvOS da
 ms.prod: xamarin
 ms.assetid: 21248CFB-5A94-4C19-B223-C72E0DC5F1D5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 5c147b43caf3018cde8870adb25bb73cb08f53ee
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e42912add9dd94b9cce16d725a456b1b4da30e35
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768508"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022209"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Utilisation des contrôleurs tvOS Split View dans Xamarin
 
 Un contrôleur d’affichage fractionné présente et gère un contrôleur d’affichage maître et détaillé côte à côte, à l’écran en même temps. Les contrôleurs de vue fractionnée sont utilisés pour présenter le contenu permanent et pouvant être actif dans la vue principale (la plus petite section à gauche) et les détails connexes dans la vue détaillée (la plus grande section à droite).
 
-[![](split-views-images/intro01.png "Exemple d’affichage fractionné")](split-views-images/intro01.png#lightbox)
+[![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -28,7 +28,7 @@ Comme indiqué ci-dessus, un contrôleur de vue fractionnée gère un contrôleu
 
 En outre, le contrôleur d’affichage maître peut être masqué ou affiché comme requis : 
 
-[![](split-views-images/intro02.png "Contrôleur d’affichage maître masqué")](split-views-images/intro02.png#lightbox)
+[![](split-views-images/intro02.png "The Master View Controller hidden")](split-views-images/intro02.png#lightbox)
 
 Les contrôleurs de vues fractionnées sont souvent utilisés pour présenter une liste de contenu filtrable, avec les catégories dans la vue principale et les résultats filtrés dans la vue détaillée. Elle est généralement présentée sous la forme d’une vue de table à gauche et d’une [vue de collection](~/ios/tvos/user-interface/collection-views.md) à droite.
 
@@ -48,41 +48,41 @@ Le moyen le plus simple de travailler avec les contrôleurs de vue fractionnée 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
+1. Dans la **panneau solutions**, double-cliquez sur le fichier `Main.storyboard` et ouvrez-le pour le modifier.
 1. Faites glisser les **contrôleurs de vue fractionnée** à partir de la **boîte à outils** et déposez-les sur la vue : 
 
-    [![](split-views-images/activity01.png "Un contrôleur d’affichage fractionné")](split-views-images/activity01.png#lightbox)
+    [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
 1. Par défaut, le concepteur iOS installe un contrôleur de navigation et un contrôleur d’affichage dans la vue maître. Si cela ne répond pas aux exigences de votre application, il vous suffit de les supprimer.
 1. Si vous supprimez le mode maître par défaut, faites glisser un nouveau contrôleur d’affichage sur l’aire de conception : 
 
-    [![](split-views-images/activity02.png "Un contrôleur d’affichage")](split-views-images/activity02.png#lightbox)
+    [![](split-views-images/activity02.png "A View Controller")](split-views-images/activity02.png#lightbox)
 1. Cliquez avec le contrôle sur le contrôleur du mode fractionné et faites-le glisser vers le nouveau contrôleur d’affichage principal. 
 1. Sélectionnez **Master** dans le **menu contextuel**: 
 
-    [![](split-views-images/activity03.png "Sélectionner master dans le menu contextuel")](split-views-images/activity03.png#lightbox)
+    [![](split-views-images/activity03.png "Select Master from the Popup Menu")](split-views-images/activity03.png#lightbox)
 1. Concevez le contenu des vues principales et détaillées : 
 
-    [![](split-views-images/activity04.png "Exemple de disposition")](split-views-images/activity04.png#lightbox)
+    [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
 1. Affectez des **noms** sous l' **onglet widget** du **panneau Propriétés** pour utiliser vos contrôles d’interface C# utilisateur dans le code.
 1. Enregistrez vos modifications et revenez à Visual Studio pour Mac.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` le fichier et ouvrez-le pour le modifier.
+1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier `Main.storyboard` et ouvrez-le pour le modifier.
 1. Faites glisser les **contrôleurs de vue fractionnée** à partir de la **boîte à outils** et déposez-les sur la vue : 
 
-    [![](split-views-images/activity01-vs.png "Un contrôleur d’affichage fractionné")](split-views-images/activity01-vs.png#lightbox)
+    [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
 1. Par défaut, le concepteur iOS ajoute un contrôleur de navigation et un contrôleur d’affichage dans la vue maître. Si cela ne répond pas aux exigences de votre application, il vous suffit de les supprimer.
 1. Si vous supprimez le mode maître par défaut, faites glisser un nouveau contrôleur d’affichage sur l’aire de conception : 
 
-    [![](split-views-images/activity02-vs.png "Un contrôleur d’affichage")](split-views-images/activity02-vs.png#lightbox)
+    [![](split-views-images/activity02-vs.png "A View Controller")](split-views-images/activity02-vs.png#lightbox)
 1. Cliquez avec le contrôle sur le contrôleur du mode fractionné et faites-le glisser vers le nouveau contrôleur d’affichage principal. 
 1. Sélectionnez **Master** dans le **menu contextuel**: 
 
-    [![](split-views-images/activity03-vs.png "Sélectionner master dans le menu contextuel")](split-views-images/activity03-vs.png#lightbox)
+    [![](split-views-images/activity03-vs.png "Select Master from the Popup Menu")](split-views-images/activity03-vs.png#lightbox)
 1. Concevez le contenu des vues principales et détaillées : 
 
-    [![](split-views-images/activity04.png "Disposition du contenu")](split-views-images/activity04.png#lightbox)
+    [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
 1. Affectez des **noms** sous l' **onglet widget** de l' **Explorateur de propriétés** pour travailler avec vos C# contrôles d’interface utilisateur dans le code.
 1. Enregistrez les modifications apportées.
 
@@ -100,7 +100,7 @@ Comme indiqué ci-dessus, un contrôleur de vue fractionnée est souvent utilis�
 
 ### <a name="accessing-master-and-detail"></a>Accès au maître et au détail
 
-Si vous devez accéder aux contrôleurs d’affichage maître et détail par programme, utilisez la `ViewControllers` propriété du contrôleur d’affichage fractionné. Par exemple :
+Si vous devez accéder aux contrôleurs d’affichage maître et détail par programme, utilisez la propriété `ViewControllers` du contrôleur d’affichage fractionné. Exemple :
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -122,7 +122,7 @@ Le moyen le plus simple consiste à exposer une propriété sur votre classe de 
 public DetailViewController DetailController { get; set;}
 ```
 
-Dans le contrôleur d’affichage fractionné, remplacez la `ViewDidLoad` méthode et liez les deux vues ensemble. Par exemple :
+Dans le contrôleur d’affichage fractionné, remplacez la méthode `ViewDidLoad` et liez les deux vues ensemble. Exemple :
 
 ```csharp
 public override void ViewDidLoad ()
@@ -146,7 +146,7 @@ Vous pouvez exposer des propriétés et des méthodes sur votre contrôleur d’
 
 ### <a name="showing-and-hiding-master"></a>Représentation et masquage du maître
 
-Si vous le souhaitez, vous pouvez afficher et masquer le contrôleur d’affichage `PreferredDisplayMode` principal à l’aide de la propriété du contrôleur d’affichage fractionné. Par exemple :
+Si vous le souhaitez, vous pouvez afficher et masquer le contrôleur d’affichage principal à l’aide de la propriété `PreferredDisplayMode` du contrôleur d’affichage fractionné. Exemple :
 
 ```csharp
 // Show hide split view
@@ -157,14 +157,14 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 }
 ```
 
-L' `UISplitViewControllerDisplayMode` énumération définit la manière dont le contrôleur d’affichage principal sera présenté comme l’un des éléments suivants :
+L’énumération `UISplitViewControllerDisplayMode` définit la manière dont le contrôleur d’affichage maître sera présenté comme l’un des éléments suivants :
 
 - **Automatique** -tvOS contrôle la présentation des vues maître et détail.
 - **PrimaryHidden** : masque le contrôleur d’affichage principal.
 - **AllVisible** : affiche les contrôleurs principaux et détaillés côte à côte. Il s’agit de la présentation normale par défaut.
 - **PrimaryOverlay** : le contrôleur d’affichage détaillé s’étend sous et est couvert par le maître.
 
-Pour obtenir l’état actuel de la présentation, `DisplayMode` utilisez la propriété du contrôleur d’affichage fractionné.
+Pour obtenir l’état actuel de la présentation, utilisez la propriété `DisplayMode` du contrôleur d’affichage fractionné.
 
 <a name="Summary" />
 

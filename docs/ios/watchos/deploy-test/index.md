@@ -4,15 +4,15 @@ description: Ce document décrit comment déployer et tester des applications Wa
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: af6d32808e2847c99c4f8a2d90e7dc2d3955ae03
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284674"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028338"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Déploiement et test d’applications Watchos avec Xamarin
 
@@ -60,7 +60,7 @@ Vous devrez créer un profil de provisionnement de distribution pour chaque ID d
 
 ### <a name="wildcard-app-id"></a>ID d’application générique
 
-Vous pouvez également créer un **ID d’application** générique qui correspond aux trois projets, tels que `com.xamarin.*`.
+Vous pouvez également créer un **ID d’application** générique qui correspond à l’ensemble des trois projets, par exemple `com.xamarin.*`.
 
 Notez que certaines fonctionnalités ne peuvent pas être utilisées avec un ID d’application générique (par exemple, les notifications push). Si votre application nécessite ces fonctionnalités, vous devez créer des ID d’application explicites.
 
@@ -78,7 +78,7 @@ Vous pouvez utiliser un groupe d’applications pour partager des données entre
 
 ### <a name="certificates-identifiers--profiles"></a>Certificats, identificateurs & profils
 
-Pour utiliser un groupe d’applications, créez une entrée dans l’écran **groupes d’applications** . Dans l’exemple ci-dessous, le nom du groupe est identique à celui de DNS inversé couramment utilisé pour les ID d’application, `group.` mais avec le préfixe (qui est requis) :
+Pour utiliser un groupe d’applications, créez une entrée dans l’écran **groupes d’applications** . Dans l’exemple ci-dessous, le nom du groupe est identique à celui du DNS inversé couramment utilisé pour les ID d’application, mais avec le préfixe `group.` (ce qui est requis) :
 
 ![Identificateur](images/appgroups-new-sml.png)
 

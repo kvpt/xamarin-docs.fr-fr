@@ -3,21 +3,21 @@ title: Installation et configuration de l’inspecteur
 description: Ce document explique comment installer le Xamarin Inspector et présente les plateformes de système d’exploitation, IDE et d’application prises en charge.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292301"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029693"
 ---
 # <a name="inspector-installation-and-requirements"></a>Installation et configuration de l’inspecteur
 
 ## <a name="download-and-installation"></a>Téléchargement et installation
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
 1. Téléchargez et installez [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) et sélectionnez le **développement mobile avec** la charge de travail .net.
 1. [Connectez-vous](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) pour activer votre abonnement Enterprise.
@@ -31,9 +31,9 @@ ms.locfileid: "70292301"
 
 -----
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
-### <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
+### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10,11 ou version ultérieure
 - **Windows** -Windows 7 ou version ultérieure (avec Internet Explorer 11 ou version ultérieure et .net 4.6.1 ou version ultérieure)
@@ -86,7 +86,7 @@ Attachez toujours les fichiers journaux des clients IDE et Inspector.
 
 Client de l’inspecteur
 
-- Macintosh`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac : `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 1.4. x offre également la possibilité de sélectionner le fichier journal dans Finder (macOS) ou Explorer (Windows) directement à partir du menu principal :
@@ -114,8 +114,8 @@ Pour Android et iOS, il est vital que nous sachions l’appareil sur lequel vous
 
 - Nom de l’appareil tel qu’il apparaît dans votre IDE
 - Version du système d’exploitation de votre appareil
-- Tablette Vérifier que vous utilisez un émulateur x86
-- Tablette Quelle plateforme d’émulateur utilisez-vous ? Émulateur Google ? Visual Studio Émulateur Android ? Xamarin Android Player ?
+- Android : Vérifiez que vous utilisez un émulateur x86
+- Android : quelle plateforme d’émulateur utilisez-vous ? Émulateur Google ? Visual Studio Émulateur Android ? Xamarin Android Player?
 - L’application que vous déboguez correctement s’affiche-t-elle et fonctionne-t-elle dans l’appareil ?
 - L’appareil dispose-t-il d’une connectivité réseau (Vérifiez via le navigateur Web) ?
 

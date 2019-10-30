@@ -3,15 +3,15 @@ title: Application Xamarin Live Player
 description: Ce document décrit l’application Xamarin Live Player, qui peut être utilisée pour afficher un aperçu des modifications du code en direct sur l’appareil. Il traite de l’installation, des exemples, des journaux, des paramètres, de la gestion des appareils et bien plus encore.
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: d4cf596d70be746e85f21bace3e5ddf662076e6d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1d3adfad3b9d2a64990ff11f81bf3a1a39825bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772324"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029656"
 ---
 # <a name="xamarin-live-player-app"></a>Application Xamarin Live Player
 
@@ -39,9 +39,9 @@ Si la connexion réussit, le code doit s’exécuter presque immédiatement sur 
 
 Appuyez sur le bouton informations **(i)** en bas de l’application pour afficher le menu **options** :
 
-[![Capture d’écran du menu options](player-images/options-sml.png)](player-images/options.png#lightbox)
+[Capture d’écran![du menu options](player-images/options-sml.png)](player-images/options.png#lightbox)
 
-### <a name="logs"></a>Journaux d’activité
+### <a name="logs"></a>Journaux
 
 Affichez les journaux pour diagnostiquer les problèmes.
 
@@ -51,7 +51,7 @@ Affichez les journaux pour diagnostiquer les problèmes.
 - Informations sur la version.
 - Envoyer des commentaires.
 
-[![Capture d’écran des paramètres](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[Capture d’écran![des paramètres](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Gestion des appareils
 
@@ -95,4 +95,4 @@ Si vous rencontrez des problèmes [, consultez Limitations et résolution des](~
 
 ## <a name="related-links"></a>Liens associés
 
-- [Dépannage](~/tools/live-player/troubleshooting.md)
+- [Résolution des problèmes](~/tools/live-player/troubleshooting.md)

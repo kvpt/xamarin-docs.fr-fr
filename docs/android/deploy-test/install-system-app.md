@@ -4,19 +4,19 @@ description: Ce guide traite des différences entre une application système et 
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754001"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028056"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Installation de Xamarin.Android comme application système
 
-_Ce guide traite des différences entre une application système et une application utilisateur et indique comment installer une application Xamarin.Android comme application système. Ce guide s’applique aux auteurs d’images ROM Android personnalisées. Il n’explique pas comment créer un ROM personnalisé._
+_Ce guide présente les différences entre une application système et une application utilisateur, et explique comment installer une application Xamarin. Android en tant qu’application système. Ce guide s’applique aux auteurs d’images ROM Android personnalisées. Elle n’explique pas comment créer une ROM personnalisée._
 
 ## <a name="system-app"></a>Application système
 
@@ -61,6 +61,6 @@ Ce guide traite de la différence entre une _application système_ et une _appli
 ## <a name="related-links"></a>Liens associés
 
 - [Publication d’une application](~/android/deploy-test/publishing/index.md)
-- [Architectures de processeur](~/android/app-fundamentals/cpu-architectures.md)
+- [Architectures d’UC](~/android/app-fundamentals/cpu-architectures.md)
 - [BLUETOOTH_PRIVILEGED](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED)
 - [Gestion de l’ABI](https://developer.android.com/ndk~/abis.html)

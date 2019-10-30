@@ -3,15 +3,15 @@ title: Visual Basic et .NET Standard
 description: Ce guide explique comment vous pouvez utiliser Visual Basic pour écrire des projets .NET Standard qui peuvent être utilisés dans des solutions ciblant Xamarin. iOS et Xamarin. Android.
 ms.prod: xamarin
 ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 1e58dd4d7310c7f903433ce0b84123c39fbb5c8e
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.openlocfilehash: 594f7584e914b7bd8f4d7b72b3c82c42bb2fb73e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959115"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014570"
 ---
 # <a name="visual-basic-and-net-standard"></a>Visual Basic et .NET Standard
 

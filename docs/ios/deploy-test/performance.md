@@ -4,24 +4,24 @@ description: Ce document décrit les techniques permettant d’améliorer les pe
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/29/2016
-ms.openlocfilehash: b41916a65e091fb7d5198a6f06a5e91aa9d6bb81
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bfa8c2cdcdcd6305618c0cd8e9cb69bde59b4f0b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292337"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030202"
 ---
 # <a name="xamarinios-performance"></a>Performances des applications Xamarin.iOS
 
-Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
+Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
 
 Ce document décrit les techniques permettant d’améliorer les performances et l’utilisation de la mémoire dans les applications Xamarin.iOS.
 
 > [!NOTE]
-> Avant de lire cet article, lisez d’abord [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques spécifiques indépendantes des plateformes qui permettent d’améliorer l’utilisation de la mémoire et le niveau de performance des applications générées à l’aide de la plateforme Xamarin.
+> Avant de lire cet article, lisez d’abord [Performances multiplateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques indépendantes des plateformes permettant améliorer l’utilisation de la mémoire et les performances des applications générées avec la plateforme Xamarin.
 
 ## <a name="avoid-strong-circular-references"></a>Éviter les références circulaires fortes
 
@@ -211,15 +211,15 @@ class MyChild : UIView
 ```
 
 Pour plus d’informations sur la libération de références fortes, consultez [Libérer des ressources IDisposable](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).
-Vous trouverez aussi des informations intéressantes dans ce billet de blog : [Xamarin.iOS, the garbage collector and me](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me).
+Il existe également des informations intéressantes dans ce billet de blog : [Xamarin.iOS, the garbage collector and me](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me).
 
-### <a name="more-information"></a>Plus d’informations
+### <a name="more-information"></a>Plus d'informations
 
-Pour plus d’informations, consultez [Rules to Avoid Retain Cycles](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) sur Cocoa With Love, [Is this a bug in MonoTouch GC](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) sur StackOverflow, et [Why can’t MonoTouch GC kill managed objects with refcount > 1?](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) sur StackOverflow.
+Pour plus d’informations, consultez [Rules to Avoid Retain Cycles](https://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) sur Cocoa With Love, [Is this a bug in MonoTouch GC](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) sur StackOverflow, et [Why can’t MonoTouch GC kill managed objects with refcount > 1?](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) sur StackOverflow.
 
 ## <a name="optimize-table-views"></a>Optimiser les vues de tableaux
 
-Les utilisateurs attendent un défilement fluide et des temps de chargement rapides pour les instances de [`UITableView`](xref:UIKit.UITableView). Toutefois, le niveau de performance du défilement peut se dégrader quand les cellules contiennent des hiérarchies d’affichages profondément imbriquées, ou quand elles contiennent des dispositions complexes. Toutefois, vous pouvez utiliser certaines techniques pour éviter une dégradation du niveau de performance de `UITableView` :
+Les utilisateurs attendent un défilement régulier et des temps de chargement rapides pour les instances de [`UITableView`](xref:UIKit.UITableView). Toutefois, le niveau de performance du défilement peut se dégrader quand les cellules contiennent des hiérarchies d’affichages profondément imbriquées, ou quand elles contiennent des dispositions complexes. Toutefois, différentes techniques permettent d’éviter la dégradation des performances de `UITableView` :
 
 - Réutilisez les cellules. Pour plus d’informations, consultez [Réutiliser les cellules](#reuse-cells).
 - Réduisez le nombre de sous-affichages.
@@ -228,11 +228,11 @@ Les utilisateurs attendent un défilement fluide et des temps de chargement rapi
 - Rendez la cellule et les autres affichages opaques.
 - Évitez la mise à l’échelle et les dégradés d’images.
 
-Utilisées conjointement, ces techniques peuvent vous aider à conserver la fluidité du défilement des instances de [`UITableView`](xref:UIKit.UITableView).
+Utilisées conjointement, ces techniques peuvent contribuer au défilement régulier des instances de [`UITableView`](xref:UIKit.UITableView).
 
 ### <a name="reuse-cells"></a>Réutiliser les cellules
 
-Quand des centaines de lignes s’affichent dans [`UITableView`](xref:UIKit.UITableView), ne gaspillez pas de la mémoire en créant des centaines d’objets [`UITableViewCell`](xref:UIKit.UITableViewCell), alors qu’un petit nombre d’entre eux s’affichent en même temps à l’écran. À la place, seules les cellules visibles à l’écran peuvent être chargées en mémoire, le **contenu** étant chargé dans les cellules réutilisées. Cela empêche l’instanciation de centaines d’objets supplémentaires, ce qui se traduit par un gain de temps et une économie de mémoire.
+Lorsque des centaines de lignes d’un [`UITableView`](xref:UIKit.UITableView) sont affichées, le fait de créer des centaines d’objets [`UITableViewCell`](xref:UIKit.UITableViewCell) utiliserait inutilement de la mémoire, alors que seulement un petit nombre d'entre eux sont affichés simultanément sur l’écran. À la place, seules les cellules visibles à l’écran peuvent être chargées en mémoire, le **contenu** étant chargé dans les cellules réutilisées. Cela évite l’instanciation de centaines d’objets supplémentaires et permet d’économiser à la fois du temps et de la mémoire.
 
 Ainsi, quand une cellule disparaît de l’écran, son affichage peut être placé en file d’attente de réutilisation, comme indiqué dans l’exemple de code suivant :
 
@@ -264,9 +264,9 @@ Bien que les XIB aient été largement remplacés par les storyboards, il existe
 
 ## <a name="optimize-image-resources"></a>Optimiser les ressources d’images
 
-Les images font partie des ressources les plus lourdes utilisées par les applications, et sont souvent capturées à des résolutions élevées. Ainsi, quand vous affichez une image provenant du bundle de l’application dans [`UIImageView`](xref:UIKit.UIImageView), vérifiez que l’image et `UIImageView` sont de taille identique. La mise à l’échelle des images au moment de l’exécution peut être une opération lourde, en particulier si `UIImageView` est incorporé dans [`UIScrollView`](xref:UIKit.UIScrollView).
+Les images font partie des ressources les plus coûteuses qui sont utilisées par les applications, et sont souvent capturées en haute résolution. Ainsi, quand vous affichez une image provenant du bundle de l’application dans [`UIImageView`](xref:UIKit.UIImageView), vérifiez que l’image et `UIImageView` sont de taille identique. La mise à l’échelle des images au moment de l’exécution peut être une opération lourde, en particulier si `UIImageView` est incorporé dans [`UIScrollView`](xref:UIKit.UIScrollView).
 
-Pour plus d’informations, consultez [Optimiser les ressources d’images](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) dans le guide [Niveau de performance multiplateforme](~/cross-platform/deploy-test/memory-perf-best-practices.md).
+Pour plus d’informations, consultez [Optimiser les ressources d’images](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) dans le guide [Performances entre plateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md).
 
 ## <a name="test-on-devices"></a>Tester sur des appareils
 
@@ -290,7 +290,7 @@ Vous devez éviter de générer du code de manière dynamique avec `System.Refle
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a décrit et expliqué les techniques permettant d’accroître le niveau de performance des applications générées avec Xamarin.iOS. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+Cet article a décrit et expliqué les techniques permettant d’accroître le niveau de performance des applications générées avec Xamarin.iOS. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 
 ## <a name="related-links"></a>Liens connexes
 

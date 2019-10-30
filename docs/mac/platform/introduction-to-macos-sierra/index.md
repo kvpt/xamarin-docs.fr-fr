@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: 71A8A737-F310-4320-BD23-743AA1E9033C
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b452d4b0a75a64349692c633a8c1bee6a8770256
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 31aa4d1fb8b77b88fc6b6790147409ff8ec13145
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290922"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029838"
 ---
 # <a name="introduction-to-macos-sierra"></a>Introduction à macOS Sierra
 
@@ -52,7 +52,7 @@ Pour plus d’informations, consultez la référence du [Framework APPLEPAY js](
 
 Les applications macOS modernes telles que le navigateur Web Safari d’Apple, le processeur de texte de pages et les numéros d’une feuille étendue utilisent de nombreuses nouvelles technologies pour présenter une interface utilisateur unifiée et sensible au contexte qui s’éloigne avec les éléments d’interface utilisateur traditionnels tels que les panneaux flottants et les fenêtres ouvertes Windows.
 
-[![Exemple de fenêtre Mac avec onglets](images/content08.png)](images/content08.png#lightbox)
+[![un exemple de fenêtre Mac avec onglets](images/content08.png)](images/content08.png#lightbox)
 
 Notre guide de [création d’applications MacOS modernes](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md) couvre plusieurs conseils, fonctionnalités et techniques que les développeurs peuvent utiliser pour créer une application MacOS moderne dans Xamarin. Mac.
 
@@ -83,15 +83,15 @@ Pour plus d’informations, consultez le Guide de programmation de l' [extension
 
 Apple a apporté plusieurs améliorations à la sécurité et à la confidentialité dans macOS Sierra, ce qui permet à l’application d’améliorer la sécurité de l’application et de garantir la confidentialité de l’utilisateur final, y compris les éléments suivants :
 
-- La nouvelle `NSAllowsArbitraryLoadsInWebContent` clé peut être ajoutée au fichier de `Info.plist` l’application et autoriser le chargement correct des pages Web, tandis que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application.
+- La nouvelle clé de `NSAllowsArbitraryLoadsInWebContent` peut être ajoutée au fichier de `Info.plist` de l’application et autoriser le chargement correct des pages Web, alors que la protection d’Apple transport Security (ATS) est toujours activée pour le reste de l’application.
 - L’API CDSA (Common Data Security Architecture) est dépréciée et doit être remplacée par l’API SecKey pour générer des clés asymétriques.
 - Pour toutes les connexions SSL/TLS, le chiffrement symétrique RC4 est maintenant désactivé par défaut. En outre, l’API de transport sécurisé ne prend plus en charge SSLv3 et il est recommandé que l’application cesse d’utiliser le chiffrement SHA-1 et 3DES le plus rapidement possible.
 - Étant donné que le nouveau presse-papiers dans iOS 10 et macOS Sierra permet à l’utilisateur de copier et coller entre les appareils, l’API a été développée pour permettre à un presse-papiers d’être limité à un appareil spécifique et être mis en cache pour être effacé automatiquement à un point donné. En outre, les pasteboards nommés ne sont plus persistants et doivent être remplacés par les conteneurs de collage partagés.
-- Si l’application accède à des données protégées (telles que le calendrier de l’utilisateur), elle _doit_ déclarer cette intention avec la clé de valeur de chaîne `Info.plist` d’objectif`NSCalendarUsageDescription` correcte dans son fichier (dans le cas du calendrier).
+- Si l’application accède à des données protégées (telles que le calendrier de l’utilisateur), elle _doit_ déclarer cette intention avec la clé de valeur de chaîne d’objectif correcte dans son fichier `Info.plist` (`NSCalendarUsageDescription` dans le cas du calendrier).
 - Les applications signées par le développeur qui ne sont pas fournies via le Mac App Store peuvent désormais tirer parti de CloudKit, du trousseau iCloud, du lecteur iCloud, des notifications push à distance, des MapKit et des droits VPN.
 - macOS Sierra ne prend plus en charge la diffusion de code ou de données externes avec l’application de signataire de code dans son archive zip ou l’image de disque non signée, car le chemin d’accès au moment de l’exécution n’est pas connu avant le Runtime.
 
-En outre, les applications qui s’exécutent sur MacOS Sierra (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en `Info.plist` entrant une ou plusieurs clés spécifiques à la confidentialité dans leurs fichiers qui expliquent à l’utilisateur pourquoi l’application souhaite gagner accéder.
+En outre, les applications qui s’exécutent sur macOS Sierra (ou version ultérieure) doivent déclarer de manière statique leur intention d’accéder à des fonctionnalités ou des informations utilisateur spécifiques en entrant une ou plusieurs clés spécifiques à la confidentialité dans leurs fichiers `Info.plist` qui expliquent à l’utilisateur pourquoi l’application souhaite accéder .
 
 Étant donné que macOS Sierra partage ces modifications avec iOS 10, consultez notre guide d’amélioration de la [sécurité et](~/ios/app-fundamentals/security-privacy.md) de la confidentialité d’iOS 10 pour plus d’informations.
 
@@ -99,7 +99,7 @@ En outre, les applications qui s’exécutent sur MacOS Sierra (ou version ulté
 
 ### <a name="smart-card-driver-extension-support"></a>Prise en charge de l’extension du pilote de carte à puce
 
-Avec MacOS Sierra, l’application peut créer `NSExtension` des pilotes de carte à puce basés sur des cartes à puce, qui autorisent l’accès en lecture seule au contenu à partir de certains types de cartes à puce. Ces informations sont ensuite présentées dans le trousseau du système (en remplaçant la méthode Common Data Security architecture déconseillée).
+Avec macOS Sierra, l’application peut créer des pilotes de carte à puce basés sur `NSExtension` qui autorisent l’accès en lecture seule au contenu à partir de certains types de cartes à puce. Ces informations sont ensuite présentées dans le trousseau du système (en remplaçant la méthode Common Data Security architecture déconseillée).
 
 Pour plus d’informations, consultez le Guide de référence de l' [infrastructure CryptoTokenKit](https://developer.apple.com/reference/cryptotokenkit)d’Apple.
 
@@ -123,11 +123,11 @@ Pour plus d’informations, consultez les informations de référence sur la [jo
 
 macOS Sierra étend la prise en charge des formats de pixel étendus et des espaces de couleurs à grande échelle dans le système, y compris les infrastructures telles que Core Graphics, Core image, Metal et AVFoundation. La prise en charge des appareils avec des affichages de couleurs larges est encore plus facilitée en fournissant ce comportement dans l’ensemble de la pile graphique.
 
-En outre, `AppKit` a été modifié pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
+En outre, `AppKit` a été modifiée pour fonctionner dans le nouveau colorspace **sRVB** étendu, ce qui facilite le mixage des couleurs dans des gammes de couleurs larges sans perte de performances significative.
 
 Apple offre les meilleures pratiques suivantes lorsque vous travaillez avec des couleurs larges :
 
-- `NSColor`utilise à présent l’espace de couleurs sRVB et ne pincera plus les `0.0` valeurs `1.0` à la plage à. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour macOS Sierra.
+- `NSColor` utilise à présent l’espace de couleurs sRVB et ne pincera plus les valeurs à la `0.0` pour `1.0` plage. Si l’application s’appuie sur le comportement de verrouillage précédent, elle doit être modifiée pour macOS Sierra.
 - Lorsque vous utilisez une API de bas niveau, telle que des graphiques de base ou du métal, pour fournir un traitement d’image, l’application doit utiliser un espace de couleurs de plage étendue et un format de pixel qui prend en charge les valeurs à virgule flottante 16 bits. Le cas échéant, l’application devra fixer manuellement les valeurs des composants de couleur.
 - Core Graphics, Core image et Metal performance Nuancers fournissent de nouvelles méthodes pour la conversion entre les deux espaces de couleurs.
 

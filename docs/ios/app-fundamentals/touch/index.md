@@ -4,21 +4,21 @@ description: Ce document contient des liens vers des guides qui décrivent comme
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282991"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009358"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Gestion des fonctions tactiles dans les applications Xamarin. iOS
 
 Comme les autres plateformes mobiles, iOS offre plusieurs moyens de gérer les fonctions tactiles. Il peut prendre en charge la fonctionnalité multipoint (plusieurs points de contact sur l’écran) et des mouvements complexes. Ce guide présente certains des concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et des gestes sur iOS.
 
-iOS encapsule des données tactiles `UITouch` dans la classe, qui sont mises à la disposition des applications `UIResponder` par le biais d’une série de méthodes. Les applications peuvent substituer ces méthodes dans `UIView` `UIResponder`les sous-classes `UIViewController`de et, qui héritent toutes les deux de.
+iOS encapsule les données tactiles dans la classe `UITouch`, qui est mise à la disposition des applications par le biais d’une série de méthodes `UIResponder`. Les applications peuvent substituer ces méthodes dans les sous-classes de `UIView` et `UIViewController`, qui héritent toutes deux de `UIResponder`.
 
 En plus de capturer des données tactiles, iOS offre des moyens d’interpréter les séquences de touches en gestes. Ces détecteurs de mouvement peuvent à leur tour être utilisés pour interpréter des commandes spécifiques à l’application, telles que la rotation d’une image ou l’activation d’une page. iOS fournit une collection complète de classes pour gérer les gestes courants avec un code ajouté minimal.
 
@@ -30,7 +30,7 @@ Toutefois, il peut arriver que vous deviez utiliser le traitement tactile de bas
 
 - [Touch dans iOS](touch-in-ios.md)
 - [Procédure pas à pas : Utilisation de Touch dans iOS](ios-touch-walkthrough.md)
-- [Suivi tactile multipoint](touch-tracking.md)
+- [Suivi multipoint](touch-tracking.md)
 
 Ce guide fait office d’introduction à Touch dans iOS. Pour plus d’informations sur l’utilisation de la fonction tactile 3D et des commentaires haptique dans iOS, qui ont été introduits dans iOS 9 et 10, consultez les guides spécifiques ci-dessous :
 

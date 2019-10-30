@@ -4,21 +4,21 @@ description: Ce document décrit comment fournir des commentaires haptique dans 
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 112ee17eab872f9265687869bec82e72f44e81da
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 156af7a5336ac091c0202e38a3a59a32846e281a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287089"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003349"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Fournir des commentaires haptique dans Xamarin. iOS
 
 <a name="Overview" />
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Sur les iPhone 7 et iPhone 7 plus, Apple a inclus de nouvelles réponses haptique qui offrent des moyens supplémentaires pour l’engagement physique de l’utilisateur. Les commentaires haptique (souvent appelés « haptiques ») utilisent le sens du toucher (par force, vibration ou motion) dans la conception de l’interface utilisateur. Utilisez ces nouvelles options de commentaires tactiles pour attirer l’attention de l’utilisateur et renforcer ses actions.
 
@@ -33,13 +33,13 @@ Les rubriques suivantes sont traitées en détail :
 
 ## <a name="about-haptic-feedback"></a>À propos des commentaires haptique
 
-Plusieurs éléments d’interface utilisateur intégrés fournissent déjà des commentaires haptique tels que des sélecteurs, des commutateurs et des curseurs. iOS 10 ajoute désormais la possibilité de déclencher par programmation des haptique à l’aide d’une sous-classe `UIFeedbackGenerator` concrète de la classe.
+Plusieurs éléments d’interface utilisateur intégrés fournissent déjà des commentaires haptique tels que des sélecteurs, des commutateurs et des curseurs. iOS 10 ajoute désormais la possibilité de déclencher par programmation des haptique à l’aide d’une sous-classe concrète de la classe `UIFeedbackGenerator`.
 
-Le développeur peut utiliser l’une des sous `UIFeedbackGenerator` -classes suivantes pour déclencher par programmation des commentaires haptique :
+Le développeur peut utiliser l’une des sous-classes `UIFeedbackGenerator` suivantes pour déclencher par programmation des commentaires haptique :
 
-- `UIImpactFeedbackGenerator`-Utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un « Thud » lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
-- `UINotificationFeedbackGenerator`-Utilisez ce générateur de commentaires pour les notifications telles qu’une action qui se termine, échoue ou tout autre type d’avertissement.
-- `UISelectionFeedbackGenerator`-Utilisez ce générateur de commentaires pour une sélection qui change activement, par exemple le choix d’un élément dans une liste.
+- `UIImpactFeedbackGenerator` : utilisez ce générateur de commentaires pour compléter une action ou une tâche telle que la présentation d’un « Thud » lorsqu’une vue est en place ou si deux objets à l’écran sont en conflit.
+- `UINotificationFeedbackGenerator` : utilisez ce générateur de commentaires pour les notifications telles qu’une action qui se termine, échoue ou tout autre type d’avertissement.
+- `UISelectionFeedbackGenerator`-utiliser ce générateur de commentaires pour une sélection qui change activement, par exemple en sélectionnant un élément dans une liste.
 
 <a name="UIImpactFeedbackGenerator" />
 
@@ -61,15 +61,15 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-Lorsque le développeur crée une nouvelle instance de la `UIImpactFeedbackGenerator` classe, il fournit `UIImpactFeedbackStyle` une spécification de la force des commentaires comme suit :
+Lorsque le développeur crée une nouvelle instance de la classe `UIImpactFeedbackGenerator`, il fournit une `UIImpactFeedbackStyle` spécifiant la puissance des commentaires comme suit :
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-La `Prepare` méthode`UIImpactFeedbackGenerator` de est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
+La méthode `Prepare` de la `UIImpactFeedbackGenerator` est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
 
-La `ImpactOccurred` méthode déclenche ensuite des commentaires haptique.
+La méthode `ImpactOccurred` déclenche alors des commentaires haptique.
 
 <a name="UINotificationFeedbackGenerator" />
 
@@ -91,9 +91,9 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-Une nouvelle instance de la `UINotificationFeedbackGenerator` classe est créée et sa `Prepare` méthode est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
+Une nouvelle instance de la classe `UINotificationFeedbackGenerator` est créée et sa méthode `Prepare` est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
 
-La `NotificationOccurred` méthode est appelée pour déclencher un retour haptique avec `UINotificationFeedbackType` un donné de :
+Le `NotificationOccurred` est appelé pour déclencher des commentaires haptique avec un `UINotificationFeedbackType` donné de :
 
 - `Success`
 - `Warning`
@@ -119,9 +119,9 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-Une nouvelle instance de la `UISelectionFeedbackGenerator` classe est créée et sa `Prepare` méthode est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
+Une nouvelle instance de la classe `UISelectionFeedbackGenerator` est créée et sa méthode `Prepare` est appelée pour informer le système que les commentaires haptique sont sur le lieu de se produire pour réduire la latence.
 
-La `SelectionChanged` méthode déclenche ensuite des commentaires haptique.
+La méthode `SelectionChanged` déclenche alors des commentaires haptique.
 
 ## <a name="summary"></a>Récapitulatif
 

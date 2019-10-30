@@ -3,15 +3,15 @@ title: Vue d’ensemble des liaisons objective-C
 description: Ce document fournit une vue d’ensemble des différentes façons C# de créer des liaisons pour du code Objective-C, notamment des liaisons de ligne de commande, des projets de liaison et une netteté objective. Il aborde également le fonctionnement de la liaison.
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765595"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015878"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Vue d’ensemble des liaisons objective-C
 
@@ -19,7 +19,7 @@ _Détails sur le fonctionnement du processus de liaison_
 
 La liaison d’une bibliothèque objective-C pour une utilisation avec Xamarin s’effectue en trois étapes :
 
-1. Écrivez une C# « définition d’API » pour décrire comment l’API native est exposée dans .net et comment elle est mappée à l’Objective-C sous-jacent. Pour ce faire, utilisez C# des constructions standard `interface` comme et différents **attributs** de liaison (consultez cet [exemple simple](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
+1. Écrivez une C# « définition d’API » pour décrire comment l’API native est exposée dans .net et comment elle est mappée à l’Objective-C sous-jacent. Pour ce faire, utilisez C# des constructions standard comme `interface` et divers **attributs** de liaison (consultez cet [exemple simple](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)).
 
 2. Une fois que vous avez écrit la « définition de C#l’API » dans, vous la compilez pour produire un assembly de « liaison ». Cela peut être fait sur la [**ligne de commande**](#commandline) ou à l’aide d’un [**projet de liaison**](#bindingproject) dans Visual Studio pour Mac ou Visual Studio.
 
@@ -35,7 +35,7 @@ Vous pouvez également lire des détails techniques supplémentaires sur [son fo
 
 ## <a name="command-line-bindings"></a>Liaisons de ligne de commande
 
-Vous pouvez utiliser le `btouch-native` pour Xamarin. iOS (ou `bmac-native` si vous utilisez Xamarin. Mac) pour créer des liaisons directement. Il fonctionne en passant les C# définitions d’API que vous avez créées manuellement (ou à l’aide de la finesse objective) à l'`btouch-native` outil en ligne `bmac-native` de commande (pour iOS ou pour Mac).
+Vous pouvez utiliser la `btouch-native` pour Xamarin. iOS (ou `bmac-native` si vous utilisez Xamarin. Mac) pour créer des liaisons directement. Il fonctionne en passant les C# définitions d’API que vous avez créées manuellement (ou à l’aide de la finesse objective) à l’outil en ligne de commande (`btouch-native` pour iOS ou `bmac-native` pour Mac).
 
 La syntaxe générale pour l’appel de ces outils est la suivante :
 
@@ -49,7 +49,7 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-La commande ci-dessus génère le `cocos2d.dll` fichier dans le répertoire actif et contiendra la bibliothèque entièrement liée que vous pouvez utiliser dans votre projet. Il s’agit de l’outil que Visual Studio pour Mac utilise pour créer vos liaisons si vous utilisez un projet de liaison (décrit [ci-dessous](#bindingproject)).
+La commande ci-dessus génère le fichier `cocos2d.dll` dans le répertoire actif et contiendra la bibliothèque entièrement liée que vous pouvez utiliser dans votre projet. Il s’agit de l’outil que Visual Studio pour Mac utilise pour créer vos liaisons si vous utilisez un projet de liaison (décrit [ci-dessous](#bindingproject)).
 
 <a name="bindingproject" />
 
@@ -75,7 +75,7 @@ Il est possible d’utiliser l’attribut [[register]](xref:Foundation.RegisterA
 
 Tout d’abord, recherchez un type que vous souhaitez lier. À des fins de discussion (et de simplicité), nous allons lier le type [NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html) (qui a déjà été lié dans [Foundation. NSEnumerator](xref:Foundation.NSEnumerator); l’implémentation ci-dessous n’est qu’à titre d’exemple).
 
-Ensuite, nous devons créer le C# type. Nous voulons probablement placer cela dans un espace de noms. comme objective-c ne prend pas en charge les espaces de noms, `[Register]` nous devrons utiliser l’attribut pour modifier le nom de type que Xamarin. iOS inscrira avec le runtime objective-C. Le C# type doit également hériter de [Foundation. NSObject](xref:Foundation.NSObject):
+Ensuite, nous devons créer le C# type. Nous voulons probablement placer cela dans un espace de noms. comme objective-C ne prend pas en charge les espaces de noms, nous devrons utiliser l’attribut `[Register]` pour modifier le nom du type que Xamarin. iOS inscrira avec le runtime objective-C. Le C# type doit également hériter de [Foundation. NSObject](xref:Foundation.NSObject):
 
 ```csharp
 namespace Example.Binding {
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-Quatrièmement, votre type devra fournir des constructeurs. Vous *devez* chaîner l’appel de votre constructeur au constructeur de classe de base. Les `[Export]` attributs permettent au code Objective-C d’appeler les constructeurs avec le nom de sélecteur spécifié :
+Quatrièmement, votre type devra fournir des constructeurs. Vous *devez* chaîner l’appel de votre constructeur au constructeur de classe de base. Les attributs `[Export]` permettent au code Objective-C d’appeler les constructeurs avec le nom de sélecteur spécifié :
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Cinquième, fournissez des méthodes pour chacun des sélecteurs déclarés à l’étape 3. Celles-ci `objc_msgSend()` utilisent pour appeler le sélecteur sur l’objet natif. Notez l’utilisation de [Runtime. GetNSObject ()](xref:ObjCRuntime.Runtime.GetNSObject*) pour convertir un `IntPtr` en type (sous- `NSObject` ) typé approprié. Si vous souhaitez que la méthode soit appelée à partir du code Objective-C, le membre *doit* être **virtuel**.
+Cinquième, fournissez des méthodes pour chacun des sélecteurs déclarés à l’étape 3. Celles-ci utiliseront `objc_msgSend()` pour appeler le sélecteur sur l’objet natif. Notez l’utilisation de [Runtime. GetNSObject ()](xref:ObjCRuntime.Runtime.GetNSObject*) pour convertir un `IntPtr` en un type de `NSObject` (sous-) typé de manière appropriée. Si vous souhaitez que la méthode soit appelée à partir du code Objective-C, le membre *doit* être **virtuel**.
 
 ```csharp
 [Export("nextObject")]

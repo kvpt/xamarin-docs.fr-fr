@@ -4,21 +4,21 @@ description: Ce document décrit la liaison dans Xamarin.Mac. La liaison est un 
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f4ab94c4eede4a122ac834e075270a375bca0807
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770127"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030007"
 ---
 # <a name="xamarinmac-linker-options"></a>Options de l’éditeur de liens Xamarin.Mac
 
 _La liaison est un puissant outil d’optimisation qui réduit la taille de votre application en supprimant le code inutilisé._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Selon le [framework cible](~/mac/platform/target-framework.md) qu’utilise votre projet, les options de l’éditeur de liens disponibles peuvent être limitées. En effet, la liaison nécessite la création d’un graphique d’objet de chaque type utilisé par votre application, ce qui est impossible avec Complet (ou Non pris en charge) en raison de System.Configuration.
 
@@ -49,7 +49,7 @@ Pour modifier la configuration de l’éditeur de liens pour un projet Xamarin.M
 2. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier projet pour ouvrir la boîte de dialogue **Options du projet**.
 3. Dans l’onglet **Build Mac**, sélectionnez le type de **comportement de l’éditeur de liens** adapté aux besoins de votre application :
 
-    ![Sélection du comportement de l’éditeur de liens à utiliser](linker-images/link-behavior.png "Sélection du comportement de l’éditeur de liens à utiliser")
+    ![Choisir le comportement de l’éditeur de liens à utiliser](linker-images/link-behavior.png "Choisir le comportement de l’éditeur de liens à utiliser")
 
 4. La liaison de plateforme pour les frameworks cibles Complet sera intégrée dans l’IDE dans une prochaine mise à jour. En attendant, ajoutez `--linkplatform` aux **arguments mmp supplémentaires** à la place.
 5. Cliquez sur le bouton **OK** pour enregistrer vos changements.

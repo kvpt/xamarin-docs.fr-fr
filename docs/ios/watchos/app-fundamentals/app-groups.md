@@ -4,15 +4,15 @@ description: Ce document décrit les groupes d’applications et leur utilisatio
 ms.prod: xamarin
 ms.technology: xamarin-ios
 ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: fec6cef22ddbc47aca0027aa026e0524b38bec4e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e117fce77e9cdc8d9e9dc8b9ed7b3aa22eca4e39
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768060"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001714"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Utilisation des groupes d’applications Watchos dans Xamarin
 
@@ -26,25 +26,25 @@ Un App Group est un groupe qui permet à différentes applications (ou à une a
 
 L’emplacement partagé est configuré à l’aide d’un [groupe d’applications](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19), qui est configuré dans la section **certificats, identificateurs & profils** du [Centre de développement iOS](https://developer.apple.com/devcenter/ios/). Cette valeur doit également être référencée dans les **droits. plist**de chaque projet.
 
-### <a name="provisioning"></a>Approvisionnement
+### <a name="provisioning"></a>Provisionnement
 
-Le groupe d’applications aura un identificateur, qui est généralement votre ID d’offre groupée `group.` avec un préfixe. Par exemple, nous pourrions utiliser l’ID `com.xamarin.WatchSettings` d’offre groupée et le groupe `group.com.xamarin.WatchSettings`d’applications.
+Le groupe d’applications aura un identificateur, qui est généralement votre ID d’offre groupée avec un préfixe `group.`. Par exemple, nous pourrions utiliser l’ID de Bundle `com.xamarin.WatchSettings` et le groupe d’applications `group.com.xamarin.WatchSettings`.
 
-[![](app-groups-images/app-group-sml.png "Utilisez l’ID de Bundle com. xamarin. WatchSettings et le groupe d’applications. com. xamarin. WatchSettings")](app-groups-images/app-group.png#lightbox)
+[![](app-groups-images/app-group-sml.png "Use the Bundle ID com.xamarin.WatchSettings and the app group   group.com.xamarin.WatchSettings")](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 Vous pouvez également configurer le profil de provisionnement, **activer des groupes d’applications** dans les **droits. plist** et entrer l’ID que vous avez choisi :
 
-[![](app-groups-images/entitlements-sml.png "Configurez les plist et entrez l’ID")](app-groups-images/entitlements.png#lightbox)
+[![](app-groups-images/entitlements-sml.png "Configure the plist and enter the ID")](app-groups-images/entitlements.png#lightbox)
 
 ### <a name="deployment"></a>Déploiement
 
 Veillez à configurer correctement le groupe d’applications dans votre approvisionnement de [déploiement](~/ios/watchos/deploy-test/index.md#App_Groups) .
 
-Pour plus d’informations, consultez le [application groupe fonctionnalités](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) documentation.
+Pour plus d’informations, consultez la documentation sur les [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
 
 ## <a name="related-links"></a>Liens associés
 
-- [Apple partage de données avec votre application de conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Partager des données avec votre application conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
 - [Doc du groupe d’applications Apple](https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)

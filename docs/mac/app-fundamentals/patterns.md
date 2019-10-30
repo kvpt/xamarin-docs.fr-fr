@@ -4,15 +4,15 @@ description: Ce document décrit les modèles de conception courants utilisés l
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/17/2016
-ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b508cc12f468e5b9dfef91718585f61bfd633816
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770166"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030057"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Modèles courants et idiomes dans Xamarin. Mac
 
@@ -37,21 +37,21 @@ Vous trouverez plus de détails ici :
 
 ## <a name="data-source--delegate--subclassing"></a>Source de données/délégué/sous-classe
 
-Un autre modèle très courant de cacao traite de la fourniture de données aux éléments d’interface utilisateur et de la réaction aux interactions de l’utilisateur. À `NSTableView` l’aide de comme exemple, vous devez fournir des données pour chaque ligne, un ensemble d’éléments d’interface utilisateur qui représentent cette ligne, un ensemble de comportements pour réagir aux interactions de l’utilisateur, et éventuellement un certain nombre de personnalisations. Les modèles de source de données et de délégué vous permettent de gérer la plupart des cas sans avoir `NSTableView` recours à la sous-classe.
+Un autre modèle très courant de cacao traite de la fourniture de données aux éléments d’interface utilisateur et de la réaction aux interactions de l’utilisateur. À l’aide de `NSTableView` comme exemple, vous devez fournir des données pour chaque ligne, un ensemble d’éléments d’interface utilisateur qui représentent cette ligne, un ensemble de comportements pour réagir aux interactions de l’utilisateur, et éventuellement un certain nombre de personnalisations. Les modèles de source de données et de délégué vous permettent de gérer la plupart des cas sans avoir recours à la sous-classe `NSTableView` vous-même.
 
-- Une `DataSource` instance d’une sous-classe personnalisée de `NSTableViewDataSource` qui est appelée pour remplir la table avec des données (via `GetRowCount` et `GetObjectValue`) est assignée à la propriété.
+- La propriété `DataSource` est assignée à une instance d’une sous-classe personnalisée de `NSTableViewDataSource` qui est appelée pour remplir la table avec des données (via `GetRowCount` et `GetObjectValue`).
 
-- Une `Delegate` instance d’une sous-classe personnalisée de `NSTableViewDelegate` qui fournit la vue d’un objet de modèle donné (via `GetViewForItem`) et gère les interactions de l’interface utilisateur `DidClickTableColumn`( `MouseDownInHeaderOfTableColumn`via,, etc.) est assignée à la propriété.
+- La propriété `Delegate` est assignée à une instance d’une sous-classe personnalisée de `NSTableViewDelegate` qui fournit la vue d’un objet de modèle donné (via `GetViewForItem`) et gère les interactions de l’interface utilisateur (via `DidClickTableColumn`, `MouseDownInHeaderOfTableColumn`, etc.).
 
 Dans certains cas, vous souhaiterez personnaliser un contrôle d’une manière au-delà des raccordements fournis dans le délégué ou la source de données, et vous pouvez sous-définir la vue directement. Toutefois, dans de nombreux cas, si vous remplacez le comportement par défaut, vous devrez alors gérer tout ce comportement vous-même (la personnalisation du comportement de sélection peut vous obliger à implémenter tous les comportements de sélection vous-même).
 
-Dans Xamarin. iOS, certaines API, telles que `UITableView` , ont été étendues avec une propriété qui implémente à la fois le délégué et`UITableViewSource`la source de données (). Cela permet de contourner la limitation courante qu’une seule C# classe ne peut avoir qu’une seule classe de base, et que notre surface de protocoles s’effectue via des classes de base.
+Dans Xamarin. iOS, certaines API, telles que `UITableView` ont été étendues avec une propriété qui implémente à la fois le délégué et la source de données (`UITableViewSource`). Cela permet de contourner la limitation courante qu’une seule C# classe ne peut avoir qu’une seule classe de base, et que notre surface de protocoles s’effectue via des classes de base.
 
 Pour plus d’informations sur l’utilisation des vues de table dans une application Xamarin. Mac, consultez notre documentation sur la [vue table](~/mac/user-interface/table-view.md) .
 
 ## <a name="protocols"></a>Protocoles
 
-Les protocoles en Objective-C peuvent être comparés C#aux interfaces dans, et dans de nombreux cas, ils sont utilisés dans des situations similaires. Par exemple `NSTableView` , l’exemple ci-dessus, le délégué et la source de données sont en fait des protocoles. Xamarin. Mac les expose en tant que classes de base avec des méthodes virtuelles que vous pouvez substituer. La principale différence entre C# les interfaces et les protocoles objective-C est que certaines méthodes d’un protocole peuvent être facultatives pour implémenter. Vous devez examiner la documentation et/ou la définition d’une API pour déterminer ce qui est facultatif.
+Les protocoles en Objective-C peuvent être comparés C#aux interfaces dans, et dans de nombreux cas, ils sont utilisés dans des situations similaires. Par exemple, le `NSTableView` exemple ci-dessus, le délégué et la source de données sont en fait des protocoles. Xamarin. Mac les expose en tant que classes de base avec des méthodes virtuelles que vous pouvez substituer. La principale différence entre C# les interfaces et les protocoles objective-C est que certaines méthodes d’un protocole peuvent être facultatives pour implémenter. Vous devez examiner la documentation et/ou la définition d’une API pour déterminer ce qui est facultatif.
 
 Pour plus d’informations, consultez notre documentation sur [les délégués, les protocoles et les événements](~/ios/app-fundamentals/delegates-protocols-and-events.md) .
 

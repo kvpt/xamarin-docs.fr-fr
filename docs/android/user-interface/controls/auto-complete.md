@@ -3,28 +3,28 @@ title: Saisie semi-automatique pour Xamarin. Android
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/31/2018
-ms.openlocfilehash: 575235569351d0856c7fbffbf38a981ede1a35ce
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5a11ab06321b890d8f1f5a35a8456b06a900fbcc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762438"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029367"
 ---
 # <a name="auto-complete-for-xamarinandroid"></a>Saisie semi-automatique pour Xamarin. Android
 
-`AutoCompleteTextView`est un élément d’affichage de texte modifiable qui affiche automatiquement les suggestions de saisie semi-automatique pendant que l’utilisateur tape. La liste de suggestions s’affiche dans un menu déroulant dans lequel l’utilisateur peut choisir un élément pour remplacer le contenu de la zone d’édition par.
+`AutoCompleteTextView` est un élément d’affichage de texte modifiable qui affiche automatiquement les suggestions de saisie semi-automatique pendant que l’utilisateur tape. La liste de suggestions s’affiche dans un menu déroulant dans lequel l’utilisateur peut choisir un élément pour remplacer le contenu de la zone d’édition par.
 
 ![Exemple de saisie semi-automatique](images/auto-complete.png)
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
-Pour créer un widget d’entrée de texte qui fournit des suggestions de saisie semi-automatique, utilisez l’option[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-sélection. Des suggestions sont reçues à partir d’une collection de chaînes associée au widget [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)via un.
+Pour créer un widget d’entrée de texte qui fournit des suggestions de saisie semi-automatique, utilisez la [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+sélection. Des suggestions sont reçues à partir d’une collection de chaînes associée au widget via un [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter).
 
-Dans ce didacticiel, vous allez créer un[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Dans ce didacticiel, vous allez créer un [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 widget qui fournit des suggestions pour un nom de pays.
 
 ```xml
@@ -45,14 +45,14 @@ widget qui fournit des suggestions pour un nom de pays.
 </LinearLayout>
 ```
 
-Le [`TextView`](xref:Android.Widget.TextView) est une étiquette qui introduit le[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Le [`TextView`](xref:Android.Widget.TextView) est une étiquette qui introduit le [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 sélection.
 
 ## <a name="tutorial"></a>Didacticiel
 
 Démarrez un nouveau projet nommé *HelloAutoComplete*.
 
-Créez un fichier XML nommé `list_item.xml` et enregistrez-le dans le dossier **ressources/mise en page** . Définissez l’action de génération de ce fichier `AndroidResource`sur. Modifiez le fichier pour qu’il ressemble à ceci :
+Créez un fichier XML nommé `list_item.xml` et enregistrez-le dans le dossier **ressources/mise en page** . Définissez l’action de génération de ce fichier sur `AndroidResource`. Modifiez le fichier pour qu’il ressemble à ceci :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +66,7 @@ Créez un fichier XML nommé `list_item.xml` et enregistrez-le dans le dossier *
 </TextView> 
 ```
 
-Ce fichier définit un simple [`TextView`](xref:Android.Widget.TextView) qui sera utilisé pour chaque élément qui apparaît dans la liste de suggestions.
+Ce fichier définit un [`TextView`](xref:Android.Widget.TextView) simple qui sera utilisé pour chaque élément qui apparaît dans la liste de suggestions.
 
 Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit :
 
@@ -88,7 +88,7 @@ Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit :
 </LinearLayout>
 ```
 
-Ouvrez **MainActivity.cs** et insérez le code suivant pour le[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Ouvrez **MainActivity.cs** et insérez le code suivant pour le [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 méthode
 
 ```csharp
@@ -106,11 +106,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Une fois que l’affichage du contenu est `main.xml` défini sur la disposition, le[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-le widget est capturé à partir de [`FindViewById`](xref:Android.App.Activity.FindViewById*)la disposition avec. Un nouveau [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) est ensuite initialisé pour lier la `list_item.xml` disposition à chaque élément de liste dans le `COUNTRIES` tableau de chaînes (défini à l’étape suivante). Enfin, `SetAdapter()` est appelé pour associer le [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) à[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Une fois que l’affichage du contenu est défini sur la disposition `main.xml`, le [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+le widget est capturé à partir de la disposition avec [`FindViewById`](xref:Android.App.Activity.FindViewById*). Une nouvelle [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) est ensuite initialisée pour lier la disposition `list_item.xml` à chaque élément de liste dans le tableau de chaînes `COUNTRIES` (défini à l’étape suivante). Enfin, `SetAdapter()` est appelé pour associer le [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) à l' [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 widget afin que le tableau de chaînes renseigne la liste des suggestions.
 
-À l' `MainActivity` intérieur de la classe, ajoutez le tableau de chaînes :
+À l’intérieur de la classe `MainActivity`, ajoutez le tableau de chaînes :
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -158,17 +158,17 @@ static string[] COUNTRIES = new string[] {
 };
 ```
 
-Il s’agit de la liste des suggestions qui seront fournies dans une liste déroulante lorsque l’utilisateur tape dans la[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+Il s’agit de la liste des suggestions qui seront fournies dans une liste déroulante lorsque l’utilisateur tape dans le [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 sélection.
 
 Exécutez l'application. À mesure que vous tapez, vous devriez voir ce qui suit :
 
-[![Exemple de capture d’écran de saisie semi-automatique des noms contenant « ca »](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
+[![exemple de capture d’écran indiquant la saisie semi-automatique des noms contenant « ca »](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 ## <a name="more-information"></a>Informations complémentaires
 
-Notez que l’utilisation d’un tableau de chaînes codé en dur n’est pas une pratique de conception recommandée, car votre code d’application doit se concentrer sur le comportement, et non sur le contenu. Le contenu de l’application, tel que les chaînes, doit être externalisé à partir du code pour faciliter les modifications du contenu et faciliter la localisation du contenu. Les chaînes codées en dur sont utilisées dans ce didacticiel uniquement pour simplifier et se concentrer sur le[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-sélection. Au lieu de cela, votre application doit déclarer ces tableaux de chaînes dans un fichier XML. Pour ce faire, vous pouvez `<string-array>` utiliser une ressource dans `res/values/strings.xml` votre fichier projet. Par exemple :
+Notez que l’utilisation d’un tableau de chaînes codé en dur n’est pas une pratique de conception recommandée, car votre code d’application doit se concentrer sur le comportement, et non sur le contenu. Le contenu de l’application, tel que les chaînes, doit être externalisé à partir du code pour faciliter les modifications du contenu et faciliter la localisation du contenu. Les chaînes codées en dur sont utilisées dans ce didacticiel uniquement pour simplifier et se concentrer sur les [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+sélection. Au lieu de cela, votre application doit déclarer ces tableaux de chaînes dans un fichier XML. Pour ce faire, vous pouvez utiliser une ressource `<string-array>` dans votre fichier de `res/values/strings.xml` de projet. Exemple :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -185,7 +185,7 @@ sélection. Au lieu de cela, votre application doit déclarer ces tableaux de ch
 </resources>
 ```
 
-Pour utiliser ces chaînes de ressources pour [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)le, remplacez l’original[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+Pour utiliser ces chaînes de ressources pour le [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter), remplacez le [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) d’origine
 ligne du constructeur avec les éléments suivants :
 
 ```csharp
@@ -195,8 +195,8 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 ### <a name="references"></a>Références
 
-- [Recette AutoCompleteTextView](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) &ndash; Exemple de projet Xamarin. Android pour le`AutoCompleteTextView`
+- [AutoCompleteTextView Recipe](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) &ndash; Xamarin. Android exemple de projet pour le `AutoCompleteTextView`
 - [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
 - [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 
-_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](http://creativecommons.org/licenses/by/2.5/). Ce didacticiel est basé sur le [didacticiel de saisie semi-automatique Android *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)._
+_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](https://creativecommons.org/licenses/by/2.5/). Ce didacticiel est basé sur le [didacticiel de saisie semi-automatique Android *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)._

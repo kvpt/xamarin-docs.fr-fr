@@ -4,15 +4,15 @@ description: Ce document contient des liens vers des guides qui décrivent comme
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 325898b3c934e25ae1610a3437f787476dcd22cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768308"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003339"
 ---
 # <a name="user-interfaces-in-ios"></a>Interfaces utilisateur dans iOS
 
@@ -22,11 +22,11 @@ iOS permet à de nombreux attributs visuels des contrôles de l’interface util
 
 ## <a name="creating-user-interface-objectsiosuser-interfaceios-uicreating-ui-objectsmd"></a>[Création des objets de l’interface utilisateur](~/ios/user-interface/ios-ui/creating-ui-objects.md)
 
-Apple regroupe des fonctionnalités connexes dans des « frameworks » qui correspondent à des espaces de noms Xamarin. iOS. `UIKit`est l’espace de noms qui contient tous les contrôles d’interface utilisateur pour iOS.
+Apple regroupe des fonctionnalités connexes dans des « frameworks » qui correspondent à des espaces de noms Xamarin. iOS. `UIKit` est l’espace de noms qui contient tous les contrôles d’interface utilisateur pour iOS.
 
 ## <a name="layout-optionsiosuser-interfaceios-uilayout-optionsmd"></a>[Options de disposition](~/ios/user-interface/ios-ui/layout-options.md)
 
-Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée : Redimensionnement automatique et mise en page automatique.
+Il existe deux mécanismes différents pour contrôler la disposition lorsqu’une vue est redimensionnée ou pivotée : redimensionnement automatique et mise en forme automatique.
 
 ## <a name="providing-haptic-feedbackiosuser-interfaceios-uihaptic-feedbackmd"></a>[Activation du retour haptique](~/ios/user-interface/ios-ui/haptic-feedback.md)
 

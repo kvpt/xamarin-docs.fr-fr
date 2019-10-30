@@ -4,15 +4,15 @@ description: Ce document fournit des liens vers des guides qui décrivent le pro
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/18/2017
-ms.openlocfilehash: 6af12373a8704351d77a09ba9a55da3845686828
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3d0bad306c421070aaa23561f6ffa9398fb38559
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281483"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028471"
 ---
 # <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Signature de code et provisionnement pour les applications Xamarin.iOS
 

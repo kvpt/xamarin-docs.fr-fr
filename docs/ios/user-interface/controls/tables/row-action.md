@@ -4,15 +4,15 @@ description: Ce guide montre comment créer des actions de balayage personnalis�
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 9f15d586a0ca209fec088fc48ca975efae4ab8fc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 542ae6696bae8fccfa6d5ed9842bce126760da37
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768366"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021868"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Utilisation des actions de ligne dans Xamarin. iOS
 
@@ -20,28 +20,28 @@ _Ce guide montre comment créer des actions de balayage personnalisées pour les
 
 ![Démonstration des actions de balayage sur les lignes](row-action-images/action02.png)
 
-iOS offre deux façons d’effectuer des actions sur une table `UISwipeActionsConfiguration` : `UITableViewRowAction`et.
+iOS offre deux façons d’effectuer des actions sur une table : `UISwipeActionsConfiguration` et `UITableViewRowAction`.
 
-`UISwipeActionsConfiguration`a été introduit dans iOS 11 et est utilisé pour définir un ensemble d’actions qui doivent se produire lorsque l’utilisateur effectue un glissement _dans l’une ou l’autre des directions_ sur une ligne dans une vue de table. Ce comportement est similaire à celui de l’application de messagerie native.
+`UISwipeActionsConfiguration` a été introduite dans iOS 11 et est utilisée pour définir un ensemble d’actions qui doivent se produire lorsque l’utilisateur fait défiler _dans les deux sens_ sur une ligne d’une vue de table. Ce comportement est similaire à celui de l’application de messagerie native.
 
-La `UITableViewRowAction` classe est utilisée pour définir une action qui se produit lorsque l’utilisateur fait défiler horizontalement la ligne d’une vue de table vers la gauche.
-Par exemple, lors de la modification d’une table, le balayage à gauche d’une ligne affiche un bouton **supprimer** par défaut. En attachant plusieurs instances de la `UITableViewRowAction` classe à un `UITableView`, plusieurs actions personnalisées peuvent être définies, chacune avec son propre texte, sa mise en forme et son propre comportement.
+La classe `UITableViewRowAction` est utilisée pour définir une action qui se produit lorsque l’utilisateur fait défiler horizontalement la ligne d’une vue de table vers la gauche.
+Par exemple, lors de la modification d’une table, le balayage à gauche d’une ligne affiche un bouton **supprimer** par défaut. En attachant plusieurs instances de la classe `UITableViewRowAction` à un `UITableView`, plusieurs actions personnalisées peuvent être définies, chacune avec son propre texte, sa mise en forme et son propre comportement.
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
-Trois étapes sont nécessaires pour implémenter des actions de balayage `UISwipeActionsConfiguration`avec :
+Trois étapes sont nécessaires pour implémenter des actions de balayage avec `UISwipeActionsConfiguration`:
 
-1. Substituez `GetLeadingSwipeActionsConfiguration` les méthodes et `GetTrailingSwipeActionsConfiguration` /ou. Ces méthodes retournent un `UISwipeActionsConfiguration`.
-2. Instanciez `UISwipeActionsConfiguration` le à retourner. Cette classe prend un tableau de `UIContextualAction`.
+1. Substituez les méthodes de `GetLeadingSwipeActionsConfiguration` et/ou de `GetTrailingSwipeActionsConfiguration`. Ces méthodes retournent un `UISwipeActionsConfiguration`.
+2. Instanciez le `UISwipeActionsConfiguration` à retourner. Cette classe prend un tableau de `UIContextualAction`.
 3. Créer un `UIContextualAction`.
 
 Celles-ci sont expliquées plus en détail dans les sections suivantes.
 
-### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. Implémentation des méthodes SwipeActionsConfigurations
+### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. implémentation des méthodes SwipeActionsConfigurations
 
-`UITableViewController``UITableViewSource` (et `UITableViewDelegate`) contiennent deux méthodes : `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration`, qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de vue de table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
+`UITableViewController` (et également `UITableViewSource` et `UITableViewDelegate`) contiennent deux méthodes : `GetLeadingSwipeActionsConfiguration` et `GetTrailingSwipeActionsConfiguration`, qui sont utilisées pour implémenter un jeu d’actions de balayage sur une ligne de la vue table. L’action de balayage de début fait référence à un balayage de la partie gauche de l’écran dans une langue de gauche à droite et de la partie droite de l’écran dans une langue de droite à gauche.
 
-L’exemple suivant (de l’exemple [TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) ) illustre l’implémentation de la configuration de balayage de début. Deux actions sont créées à partir des actions contextuelles, qui sont expliquées [ci-dessous](#create-uicontextualaction). Ces actions sont ensuite transmises à un récemment initialisé [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations), qui est utilisé comme valeur de retour.
+L’exemple suivant (de l’exemple [TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions) ) illustre l’implémentation de la configuration de balayage de début. Deux actions sont créées à partir des actions contextuelles, qui sont expliquées [ci-dessous](#create-uicontextualaction). Ces actions sont ensuite transmises à un [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)récemment initialisé, qui est utilisé comme valeur de retour.
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -61,9 +61,9 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 <a name="create-uiswipeactionsconfigurations" />
 
-### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. Instancier un`UISwipeActionsConfiguration`
+### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. instancier un `UISwipeActionsConfiguration`
 
-Instanciez `UISwipeActionsConfiguration` un à l' `FromActions` aide de la méthode pour ajouter un `UIContextualAction`nouveau tableau de s, comme indiqué dans l’extrait de code suivant :
+Instanciez une `UISwipeActionsConfiguration` à l’aide de la méthode `FromActions` pour ajouter un nouveau tableau de `UIContextualAction`s, comme indiqué dans l’extrait de code suivant :
 
 ```csharp
 var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction })
@@ -79,15 +79,15 @@ Pour les balayages de fin, les actions sont affichées comme illustré dans l’
 
 ![Actions de balayage à droite affichées sur une ligne de tableau](row-action-images/action04.png)
 
-Cet extrait de code utilise également la nouvelle `PerformsFirstActionWithFullSwipe` propriété. Par défaut, cette propriété a la valeur true, ce qui signifie que la première action du tableau se produit lorsqu’un utilisateur fait défiler entièrement une ligne. Si vous avez une action qui n’est pas destructrice (par exemple, « Delete », cela peut ne pas être idéal et vous devez donc la `false`définir sur.
+Cet extrait de code utilise également la nouvelle propriété `PerformsFirstActionWithFullSwipe`. Par défaut, cette propriété a la valeur true, ce qui signifie que la première action du tableau se produit lorsqu’un utilisateur fait défiler entièrement une ligne. Si vous avez une action qui n’est pas destructrice (par exemple, « Delete », cela peut ne pas être idéal et vous devez donc la définir sur `false`.
 
 <a name="create-uicontextualaction" />
 
-### <a name="create-a-uicontextualaction"></a>Créer un`UIContextualAction`
+### <a name="create-a-uicontextualaction"></a>Créer un `UIContextualAction`
 
 L’action contextuelle consiste à créer l’action qui sera affichée lorsque l’utilisateur fait glisser une ligne de tableau.
 
-Pour initialiser une action, vous devez fournir `UIContextualActionStyle`un, un titre et un `UIContextualActionHandler`. Le `UIContextualActionHandler` prend trois paramètres : une action, la vue dans laquelle l’action a été affichée et un gestionnaire d’achèvement :
+Pour initialiser une action, vous devez fournir un `UIContextualActionStyle`, un titre et un `UIContextualActionHandler`. L' `UIContextualActionHandler` prend trois paramètres : une action, la vue dans laquelle l’action a été affichée et un gestionnaire d’achèvement :
 
 ```csharp
 public UIContextualAction ContextualFlagAction(int row)
@@ -113,11 +113,11 @@ public UIContextualAction ContextualFlagAction(int row)
 
 Diverses propriétés visuelles, telles que la couleur d’arrière-plan ou l’image de l’action, peuvent être modifiées. L’extrait de code ci-dessus montre comment ajouter une image à l’action et définir sa couleur d’arrière-plan sur bleu.
 
-Une fois les actions contextuelles créées, elles peuvent utiliser pour initialiser `UISwipeActionsConfiguration` le dans `GetLeadingSwipeActionsConfiguration` la méthode.
+Une fois les actions contextuelles créées, elles peuvent utiliser pour initialiser la `UISwipeActionsConfiguration` dans la méthode `GetLeadingSwipeActionsConfiguration`.
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-Pour définir une ou plusieurs actions de ligne personnalisées `UITableView`pour un, vous devez créer une instance de la `UITableViewDelegate` classe et substituer la `EditActionsForRow` méthode. Par exemple :
+Pour définir une ou plusieurs actions de ligne personnalisées pour un `UITableView`, vous devez créer une instance de la classe `UITableViewDelegate` et substituer la méthode `EditActionsForRow`. Exemple :
 
 ```csharp
 using System;
@@ -161,7 +161,7 @@ namespace BasicTable
 }
 ```
 
-La méthode `UITableViewRowAction.Create` statique est utilisée pour créer un nouveau `UITableViewRowAction` qui affichera un bouton **haut** lorsque l’utilisateur fait défiler horizontalement la ligne de la table vers la gauche. Ultérieurement, une nouvelle instance de `TableDelegate` est créée et attachée `UITableView`à. Par exemple :
+La méthode `UITableViewRowAction.Create` statique est utilisée pour créer un `UITableViewRowAction` qui affichera un bouton **haut** lorsque l’utilisateur fait défiler horizontalement la ligne de la table vers la gauche. Plus tard, une nouvelle instance du `TableDelegate` est créée et attachée au `UITableView`. Exemple :
 
 ```csharp
 TableDelegate tableDelegate;
@@ -175,11 +175,11 @@ table.Delegate = tableDelegate;
 
 Lorsque le code ci-dessus est exécuté et que l’utilisateur fait défiler la ligne vers la gauche, le bouton **haut** s’affiche à la place du bouton **supprimer** qui s’affiche par défaut :
 
-[![](row-action-images/action01.png "Bouton AIM affiché à la place du bouton supprimer")](row-action-images/action01.png#lightbox)
+[![](row-action-images/action01.png "The Hi button being displayed instead of the Delete button")](row-action-images/action01.png#lightbox)
 
-Si l’utilisateur appuie sur le bouton AIM `Hello World!` , est écrit sur la console dans Visual Studio pour Mac ou Visual Studio lorsque l’application est exécutée en mode débogage.
+Si l’utilisateur appuie sur le bouton **AIM** , `Hello World!` est écrit sur la console dans Visual Studio pour Mac ou Visual Studio lorsque l’application est exécutée en mode débogage.
 
 ## <a name="related-links"></a>Liens associés
 
-- [TableSwipeActions (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
+- [TableSwipeActions (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
 - [WorkingWithTables (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

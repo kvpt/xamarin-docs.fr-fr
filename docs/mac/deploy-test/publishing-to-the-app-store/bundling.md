@@ -4,15 +4,15 @@ description: Ce document décrit comment créer un bundle d’une application Xa
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04ca9c98abbd97cd9e5d1f7694264b8316a7f151
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770118"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001553"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Regroupement pour le Mac App Store
 
@@ -31,7 +31,7 @@ Vérifiez que l’option permettant de créer un paquet d’installation a été
 
 [![Modification des options de build](bundling-images/config03.png "Modification des options de build")](bundling-images/config03-large.png#lightbox)
 
-## <a name="build"></a>Build
+## <a name="build"></a>Générer
 
 Avant d’effectuer la génération, vérifiez que la configuration **Release** a été sélectionnée. Quand le développeur génère l’application, il est invité à utiliser les deux certificats :
 
@@ -46,6 +46,6 @@ Une fois l’application générée, le développeur peut cliquer avec le bouton
 ## <a name="related-links"></a>Liens associés
 
 - [Installation](/visualstudio/mac/installation/)
-- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

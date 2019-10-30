@@ -4,21 +4,21 @@ description: Comment ajouter un menu contextuel qui est ancré à une vue partic
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 8a808e6ea49338de5b6bd1618fc2227e6cf5f0b1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a5370cfb8a5c4950b361e5f58b253c63f4f1e240
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764885"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029174"
 ---
 # <a name="xamarinandroid-popup-menu"></a>Menu contextuel Xamarin. Android
 
 Le [menu](xref:Android.Widget.PopupMenu) contextuel (également appelé _menu contextuel_) est un menu ancré à une vue particulière. Dans l’exemple suivant, une activité unique contient un bouton. Quand l’utilisateur appuie sur le bouton, un menu contextuel à trois éléments s’affiche :
 
-[![Exemple d’application avec un bouton et un menu contextuel à trois éléments](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
+[![exemple d’une application avec un bouton et un menu contextuel à trois éléments](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 ## <a name="creating-a-popup-menu"></a>Création d’un menu contextuel
 
@@ -36,9 +36,9 @@ La première étape consiste à créer un fichier de ressources de menu pour le 
 </menu>
 ```
 
-Ensuite, créez une instance de `PopupMenu` et Ancrez-la à sa vue. Quand vous créez une instance de `PopupMenu`, vous transmettez `Context` à son constructeur une référence à, ainsi que la vue à laquelle le menu sera attaché. Par conséquent, le menu contextuel est ancré à cette vue pendant sa construction.
+Ensuite, créez une instance de `PopupMenu` et Ancrez-la à sa vue. Quand vous créez une instance de `PopupMenu`, vous transmettez à son constructeur une référence à l' `Context` ainsi que la vue à laquelle le menu sera attaché. Par conséquent, le menu contextuel est ancré à cette vue pendant sa construction.
 
-Dans l’exemple suivant, le `PopupMenu` est créé dans le gestionnaire d’événements Click pour le bouton (qui est `showPopupMenu`nommé). Ce bouton est également l’affichage auquel le `PopupMenu` est ancré, comme illustré dans l’exemple de code suivant :
+Dans l’exemple suivant, le `PopupMenu` est créé dans le gestionnaire d’événements Click pour le bouton (qui est nommé `showPopupMenu`). Ce bouton est également la vue à laquelle le `PopupMenu` est ancré, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -58,7 +58,7 @@ showPopupMenu.Click += (s, arg) => {
 
 ## <a name="handling-menu-events"></a>Gestion des événements de menu
 
-Lorsque l’utilisateur sélectionne un élément de menu, l’événement [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) Click est déclenché et le menu est fermé. Si vous appuyez n’importe où en dehors du menu, vous le faites simplement disparaître. Dans les deux cas, lorsque le menu est fermé, son [DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) est déclenché. Le code suivant ajoute des gestionnaires d’événements pour les `MenuItemClick` événements `DismissEvent` et :
+Lorsque l’utilisateur sélectionne un élément de menu, l’événement [MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) Click est déclenché et le menu est fermé. Si vous appuyez n’importe où en dehors du menu, vous le faites simplement disparaître. Dans les deux cas, lorsque le menu est fermé, son [DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) est déclenché. Le code suivant ajoute des gestionnaires d’événements pour les événements `MenuItemClick` et `DismissEvent` :
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,4 +78,4 @@ showPopupMenu.Click += (s, arg) => {
 
 ## <a name="related-links"></a>Liens associés
 
-- [PopupMenuDemo (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)
+- [PopupMenuDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)

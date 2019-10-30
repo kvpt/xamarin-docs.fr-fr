@@ -4,15 +4,15 @@ description: Ce guide aborde l’accès aux fichiers sur le stockage externe dan
 ms.prod: xamarin
 ms.assetid: 40da10b2-a207-4f9c-a2dd-165d9b662f33
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: c67f58a4b1886d3f89f7bd1639e1cd687d329869
-ms.sourcegitcommit: 4ff181101d76f048b949c9613b2c72cf02618f8b
+ms.openlocfilehash: 96b0d6a00c7825939b1f89ed63e3e5559ca4ef59
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71994816"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020483"
 ---
 # <a name="external-storage"></a>Stockage externe
 
@@ -40,30 +40,30 @@ Les différences entre ces fichiers sont principalement conceptuelles. Les fichi
 
 Les fichiers externes privés sont considérés comme spécifiques à une application (similaire aux fichiers internes), mais ils sont conservés sur le stockage externe pour plusieurs raisons (par exemple, trop volumineuses pour le stockage interne). À l’instar des fichiers internes, ces fichiers sont supprimés lorsque l’application est désinstallée par l’utilisateur.
 
-L’emplacement principal des fichiers externes privés est trouvé en appelant la méthode `Android.Content.Context.GetExternalFilesDir(string type)`. Cette méthode retourne un objet `Java.IO.File` qui représente le répertoire de stockage externe privé de l’application. Le fait de passer `null` à cette méthode retourne le chemin d’accès au répertoire de stockage de l’utilisateur pour l’application. Par exemple, pour une application avec le nom de package `com.companyname.app`, le répertoire « racine » des fichiers externes privés serait :
+L’emplacement principal des fichiers externes privés est trouvé en appelant la méthode `Android.Content.Context.GetExternalFilesDir(string type)`. Cette méthode retourne un objet `Java.IO.File` qui représente le répertoire de stockage externe privé de l’application. Le passage de `null` à cette méthode retourne le chemin d’accès au répertoire de stockage de l’utilisateur pour l’application. Par exemple, pour une application avec le nom du package `com.companyname.app`, le répertoire « racine » des fichiers externes privés est le suivant :
 
 ```bash
 /storage/emulated/0/Android/data/com.companyname.app/files/
 ```
 
-Ce document fait référence au répertoire de stockage pour les fichiers privés sur le stockage externe en tant que _Private @ no__t-1EXTERNAL @ no__t-2STORAGE_.
+Ce document fait référence au répertoire de stockage pour les fichiers privés sur le stockage externe en tant que _stockage privé\_\_externe_.
 
 Le paramètre de `GetExternalFilesDir()` est une chaîne qui spécifie un _répertoire d’application_. Il s’agit d’un répertoire destiné à fournir un emplacement standard pour une organisation logique de fichiers. Les valeurs de chaîne sont disponibles par le biais des constantes de la classe `Android.OS.Environment` :
 
 | `Android.OS.Environment` | Répertoire |
 |-|-|
-| DirectoryAlarms | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/Alarms** |
-| DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |
-| DirectoryDownloads | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/Download** |
-| DirectoryDocuments | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/documents** |
-| DirectoryMovies | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/movies** |
-| DirectoryMusic | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/Music** |
-| DirectoryNotifications | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/notifications** |
-| DirectoryPodcasts | **_PRIVATE\_EXTERNAL\_STORAGE_/Podcasts** |
-| DirectoryRingtones | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/Ringtones** |
-| DirectoryPictures | **_Private @ no__t-2EXTERNAL @ no__t-3STORAGE_/Pictures** |
+| DirectoryAlarms | **/Alarms _\_privé\_stockage externe_** |
+| DirectoryDcim | **/DCIM _\_privé\_stockage externe_** |
+| DirectoryDownloads | **/Download _\_privé\_stockage externe_** |
+| DirectoryDocuments | **/Documents _\_privé\_stockage externe_** |
+| DirectoryMovies | **/Movies _\_privé\_stockage externe_** |
+| DirectoryMusic | **/Music _\_privé\_stockage externe_** |
+| DirectoryNotifications | **/Notifications _\_privé\_stockage externe_** |
+| DirectoryPodcasts | **/Podcasts _\_privé\_stockage externe_** |
+| DirectoryRingtones | **/Ringtones _\_privé\_stockage externe_** |
+| DirectoryPictures | **/Pictures _\_privé\_stockage externe_** |
 
-Pour les appareils qui ont plusieurs partitions de stockage externe, chaque partition aura un répertoire destiné aux fichiers privés. La méthode `Android.Content.Context.GetExternalFilesDirs(string type)` retourne un tableau de `Java.IO.Files`. Chaque objet représente un répertoire privé propre à l’application sur tous les périphériques de stockage partagés/externes, où l’application peut placer les fichiers qu’elle possède.
+Pour les appareils qui ont plusieurs partitions de stockage externe, chaque partition aura un répertoire destiné aux fichiers privés. La `Android.Content.Context.GetExternalFilesDirs(string type)` de la méthode retourne un tableau de `Java.IO.Files`. Chaque objet représente un répertoire privé propre à l’application sur tous les périphériques de stockage partagés/externes, où l’application peut placer les fichiers qu’elle possède.
 
 > [!IMPORTANT]
 > Le chemin d’accès exact au répertoire de stockage externe privé peut varier d’un appareil à l’autre et entre les versions d’Android. Pour cette raison, les applications ne doivent pas coder en dur le chemin d’accès à ce répertoire et utiliser à la place les API Xamarin. Android, telles que `Android.Content.Context.GetExternalFilesDir()`.
@@ -76,9 +76,9 @@ Les fichiers publics sont des fichiers qui existent sur un stockage externe qui 
 /storage/emulated/0/
 ```
 
-Ce document fait référence au répertoire de stockage des fichiers publics sur le stockage externe en tant que _public @ no__t-1EXTERNAL @ no__t-2STORAGE_.
+Ce document fait référence au répertoire de stockage pour les fichiers publics sur le stockage externe en tant que _stockage public\_externe\__ .
 
-Android prend également en charge le concept de répertoires d’applications sur _public @ no__t-1EXTERNAL @ no__t-2STORAGE_. Ces répertoires sont exactement les mêmes que les répertoires d’application pour `PRIVATE_EXTERNAL_STORAGE` et sont décrits dans le tableau de la section précédente. La méthode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` retourne un objet `Java.IO.File` qui correspond à un répertoire d’application public. Le paramètre `directoryType` est un paramètre obligatoire et ne peut pas être `null`.
+Android prend également en charge le concept de répertoires d’application sur le _\_PUBLIC\_le stockage externe_. Ces répertoires sont exactement les mêmes que les répertoires d’application pour `PRIVATE_EXTERNAL_STORAGE` et sont décrits dans le tableau de la section précédente. La méthode `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` renverra un objet `Java.IO.File` qui correspond à un répertoire d’application public. Le paramètre `directoryType` est un paramètre obligatoire et ne peut pas être `null`.
 
 Par exemple, l’appel de `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` retourne une chaîne qui ressemble à ce qui suit :
 
@@ -93,14 +93,14 @@ Par exemple, l’appel de `Environment.GetExternalStoragePublicDirectory(Environ
 
 Une fois qu’une application Xamarin. Android a obtenu le chemin d’accès complet à un fichier, elle doit utiliser l’une des API .NET standard pour créer, lire, écrire ou supprimer des fichiers. Cela optimise la quantité de code compatible multiplateforme pour une application. Toutefois, avant de tenter d’accéder à un fichier, une application Xamarin. Android doit s’assurer qu’il est possible d’accéder à ce fichier.
 
-1. **Vérifier le stockage externe** &ndash; en fonction de la nature du stockage externe, il est possible qu’il ne soit pas monté et utilisable par l’application. Toutes les applications doivent vérifier l’état du stockage externe avant de tenter de l’utiliser.
-2. **Effectuer une vérification des autorisations d’exécution** &ndash; une application Android doit demander l’autorisation à l’utilisateur pour accéder au stockage externe. Cela signifie qu’une demande d’autorisation au moment de l’exécution doit être exécutée avant tout accès aux fichiers. Les autorisations du guide [dans Xamarin. Android](~/android/app-fundamentals/permissions.md) contiennent plus de détails sur les autorisations Android.
+1. **Vérifier le stockage externe** &ndash; selon la nature du stockage externe, il est possible qu’il ne soit pas monté et utilisable par l’application. Toutes les applications doivent vérifier l’état du stockage externe avant de tenter de l’utiliser.
+2. **Effectuer une vérification d’autorisation d’exécution** &ndash; une application Android doit demander l’autorisation à l’utilisateur pour accéder au stockage externe. Cela signifie qu’une demande d’autorisation au moment de l’exécution doit être exécutée avant tout accès aux fichiers. Les autorisations du guide [dans Xamarin. Android](~/android/app-fundamentals/permissions.md) contiennent plus de détails sur les autorisations Android.
 
 Chacune de ces deux tâches est décrite ci-dessous.
 
 ### <a name="verifying-that-external-storage-is-available"></a>Vérification de la disponibilité du stockage externe
 
-La première étape avant d’écrire dans un stockage externe consiste à vérifier qu’elle est accessible en lecture ou en écriture. La propriété `Android.OS.Environment.ExternalStorageState` contient une chaîne qui identifie l’état du stockage externe. Cette propriété retourne une chaîne qui représente l’État. Cette table est une liste des valeurs `ExternalStorageState` qui peuvent être retournées par `Environment.ExternalStorageState` :
+La première étape avant d’écrire dans un stockage externe consiste à vérifier qu’elle est accessible en lecture ou en écriture. La propriété `Android.OS.Environment.ExternalStorageState` contient une chaîne qui identifie l’état du stockage externe. Cette propriété retourne une chaîne qui représente l’État. Cette table est une liste des valeurs `ExternalStorageState` qui peuvent être retournées par `Environment.ExternalStorageState`:
 
 | ExternalStorageState | Description  |
 |----------------------|---|
@@ -127,7 +127,7 @@ bool isWriteable = Environment.MediaMounted.Equals(Environment.ExternalStorageSt
 
 Android considère que l’accès au stockage externe est une _autorisation dangereuse_, ce qui oblige généralement l’utilisateur à accorder son autorisation d’accès à la ressource. L’utilisateur peut révoquer cette autorisation à tout moment.  Cela signifie qu’une demande d’autorisation au moment de l’exécution doit être exécutée avant tout accès aux fichiers. Les autorisations sont automatiquement accordées aux applications pour lire et écrire leurs propres fichiers privés. Il est possible pour les applications de lire et d’écrire les fichiers privés qui appartiennent à d’autres applications après avoir [reçu l’autorisation](~/android/app-fundamentals/permissions.md) de l’utilisateur.
 
-Toutes les applications Android doivent déclarer l’une des deux autorisations pour le stockage externe dans le **fichier AndroidManifest. xml** . Pour identifier les autorisations, l’un des deux éléments suivants `uses-permission` doit être ajouté à **fichier AndroidManifest. xml**:
+Toutes les applications Android doivent déclarer l’une des deux autorisations pour le stockage externe dans le **fichier AndroidManifest. xml** . Pour identifier les autorisations, l’un des deux éléments `uses-permission` suivants doit être ajouté à **fichier AndroidManifest. xml**:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -147,7 +147,7 @@ Les autorisations peuvent également être ajoutées à l’aide de l’onglet *
 
 Les autorisations peuvent également être ajoutées à l’aide de l’onglet **manifeste Android** du panneau Propriétés de la **solution**:
 
-[Bloc ![Solution-autorisations requises pour Visual Studio pour Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
+[![Panneau Solutions-autorisations requises pour Visual Studio pour Mac](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
 -----
 
@@ -169,7 +169,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>Suppression de fichiers
 
-Toutes les API standard C# peuvent être utilisées pour supprimer un fichier du stockage externe, par exemple [`System.IO.File.Delete`](xref:System.IO.File.Delete*). Il est également possible d’utiliser les API Java au détriment de la portabilité du code. Exemple :
+Toutes les API standard C# peuvent être utilisées pour supprimer un fichier du stockage externe, par exemple [`System.IO.File.Delete`](xref:System.IO.File.Delete*). Il est également possible d’utiliser les API Java au détriment de la portabilité du code. Exemple :
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");

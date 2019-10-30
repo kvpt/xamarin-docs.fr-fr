@@ -4,21 +4,21 @@ description: Une application Android prend un certain temps pour démarrer, en p
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 4633811b2c0b001ab220f5fedaf116b1b269344a
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032554"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028720"
 ---
 # <a name="splash-screen"></a>Écran de démarrage
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
 
-l’application Android @no__t 0An prend un certain temps pour démarrer, en particulier lorsque l’application est lancée pour la première fois sur un appareil. Un écran de démarrage peut afficher la progression du démarrage pour l’utilisateur ou pour indiquer la personnalisation. _
+_Une application Android prend un certain temps pour démarrer, en particulier lorsque l’application est lancée pour la première fois sur un appareil. Un écran de démarrage peut afficher la progression du démarrage pour l’utilisateur ou pour indiquer la personnalisation._
 
 ## <a name="overview"></a>Vue d'ensemble
 
@@ -32,9 +32,9 @@ Ce guide décrit une technique permettant d’implémenter un écran de démarra
 
 3. Ajout d’une nouvelle activité à l’application qui sera utilisée comme écran de démarrage défini par le thème créé à l’étape précédente.
 
-[![Example-écran d’accueil du logo Xamarin suivi de l’écran de l’application](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
+[![exemple écran de démarrage du logo Xamarin suivi d’un écran d’application](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Ce guide part du principe que l’application cible le niveau d’API Android 21 ou ultérieur. L’application doit également disposer des packages NuGet **Xamarin. Android. support. v4** et **Xamarin. Android. support. v7. AppCompat** ajoutés au projet.
 
@@ -67,7 +67,7 @@ L’exemple d’application définit un dessinable appelé **splash_screen. xml*
 </layer-list>
 ```
 
-Cette `layer-list` Centre l’image de démarrage sur une couleur d’arrière-plan spécifiée par la ressource `@color/splash_background`. L’exemple d’application définit cette couleur dans le fichier **Resources/values/Color. xml** :
+Ce `layer-list` Centre l’image de démarrage sur une couleur d’arrière-plan spécifiée par la ressource `@color/splash_background`. L’exemple d’application définit cette couleur dans le fichier **Resources/values/Color. xml** :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -101,7 +101,7 @@ Pour créer un thème personnalisé pour l’activité de l’écran de démarra
 </resources>
 ```
 
-**Mytheme. Splash** est très Spartan &ndash; il déclare l’arrière-plan de la fenêtre, supprime explicitement la barre de titre de la fenêtre et déclare qu’il s’agit d’un plein écran. Si vous souhaitez créer un écran de démarrage qui émule l’interface utilisateur de votre application avant que celle-ci ne redimensionne la première disposition, vous pouvez utiliser `windowContentOverlay` plutôt que `windowBackground` dans votre définition de style. Dans ce cas, vous devez également modifier le dessin **splash_screen. xml** pour qu’il affiche une émulation de votre interface utilisateur.
+**Mytheme. Splash** est très Spartan &ndash; il déclare l’arrière-plan de la fenêtre, supprime explicitement la barre de titre de la fenêtre et déclare qu’il s’agit d’un plein écran. Si vous souhaitez créer un écran de démarrage qui émule l’interface utilisateur de votre application avant que celle-ci n’augmente la première disposition, vous pouvez utiliser `windowContentOverlay` plutôt que `windowBackground` dans votre définition de style. Dans ce cas, vous devez également modifier le dessin **splash_screen. xml** pour qu’il affiche une émulation de votre interface utilisateur.
 
 ### <a name="create-a-splash-activity"></a>Créer une activité de démarrage
 
@@ -139,17 +139,17 @@ public class SplashActivity : AppCompatActivity
 ```
 
 `SplashActivity` utilise explicitement le thème qui a été créé dans la section précédente, remplaçant le thème par défaut de l’application.
-Il n’est pas nécessaire de charger une disposition dans `OnCreate`, car le thème déclare un dessinable comme arrière-plan.
+Il n’est pas nécessaire de charger une disposition dans `OnCreate` car le thème déclare un dessinable comme arrière-plan.
 
-Il est important de définir l’attribut `NoHistory=true` afin que l’activité soit supprimée de la pile de retour. Pour empêcher le bouton précédent d’annuler le processus de démarrage, vous pouvez également substituer `OnBackPressed` et faire en sorte qu’il ne fasse rien :
+Il est important de définir l’attribut `NoHistory=true` afin que l’activité soit supprimée de la pile Back. Pour empêcher le bouton précédent d’annuler le processus de démarrage, vous pouvez également substituer `OnBackPressed` et le faire ne rien faire :
 
 ```csharp
 public override void OnBackPressed() { }
 ```
 
-Le travail de démarrage est exécuté de façon asynchrone dans `OnResume`. Cela est nécessaire pour que le travail de démarrage ne ralentisse pas ou ne retarde pas l’apparence de l’écran de lancement. Une fois le travail terminé, `SplashActivity` lance `MainActivity` et l’utilisateur peut commencer à interagir avec l’application.
+Le travail de démarrage est exécuté de façon asynchrone dans `OnResume`. Cela est nécessaire pour que le travail de démarrage ne ralentisse pas ou ne retarde pas l’apparence de l’écran de lancement. Une fois le travail terminé, `SplashActivity` démarre `MainActivity` et l’utilisateur peut commencer à interagir avec l’application.
 
-Ce nouvel `SplashActivity` est défini en tant qu’activité de lancement de l’application en affectant à l’attribut `MainLauncher` la valeur `true`. Étant donné que `SplashActivity` est maintenant l’activité du lanceur, vous devez modifier `MainActivity.cs` et supprimer l’attribut `MainLauncher` de `MainActivity` :
+Cette nouvelle `SplashActivity` est définie en tant qu’activité de lancement de l’application en affectant à l’attribut `MainLauncher` la valeur `true`. Étant donné que `SplashActivity` est désormais l’activité du lanceur, vous devez modifier `MainActivity.cs`et supprimer l’attribut `MainLauncher` de `MainActivity`:
 
 ```csharp
 [Activity(Label = "@string/ApplicationName")]
@@ -167,7 +167,7 @@ Pour ajouter un écran de démarrage en mode paysage, procédez comme suit :
 
 1. Dans le dossier **ressources/dessinable** , ajoutez la version paysage de l’image de l’écran de démarrage que vous souhaitez utiliser. Dans cet exemple, **splash_logo_land. png** est la version paysage du logo qui a été utilisée dans les exemples ci-dessus (il utilise les lettres blanches au lieu du bleu).
 
-2. Dans le dossier **ressources/dessinable** , créez une version paysage du `layer-list` qui a été défini précédemment (par exemple, **splash_screen_land. xml**). Dans ce fichier, définissez le chemin d’accès de l’image bitmap sur la version paysage de l’image de l’écran de démarrage. Dans l’exemple suivant, **splash_screen_land. xml** utilise **splash_logo_land. png**:
+2. Dans le dossier **ressources/dessinable** , créez une version paysage du `layer-list` dessinable qui a été défini précédemment (par exemple, **splash_screen_land. xml**). Dans ce fichier, définissez le chemin d’accès de l’image bitmap sur la version paysage de l’image de l’écran de démarrage. Dans l’exemple suivant, **splash_screen_land. xml** utilise **splash_logo_land. png**:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -221,9 +221,9 @@ Pour ajouter un écran de démarrage en mode paysage, procédez comme suit :
 
 7. Générez et exécutez à nouveau l’application. Faire pivoter l’appareil en mode paysage lorsque l’écran de démarrage est toujours affiché. L’écran de démarrage passe à la version paysage :
 
-    [@no__t 1Rotation de l’écran de démarrage en mode paysage](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [![rotation de l’écran de démarrage en mode paysage](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
-Notez que l’utilisation d’un écran de démarrage en mode paysage ne fournit pas toujours une expérience transparente. Par défaut, Android lance l’application en mode portrait et la passe en mode paysage même si l’appareil est déjà en mode paysage. Par conséquent, si l’application est lancée alors que l’appareil est en mode paysage, l’appareil présente brièvement l’écran de démarrage portrait, puis anime la rotation du portrait vers l’écran de démarrage paysage. Malheureusement, cette transition initiale de portrait à paysage a lieu même si `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` est spécifié dans les indicateurs de l’activité de démarrage. La meilleure façon de contourner cette limitation consiste à créer une seule image d’écran de démarrage qui s’affiche correctement en mode portrait et paysage.
+Notez que l’utilisation d’un écran de démarrage en mode paysage ne fournit pas toujours une expérience transparente. Par défaut, Android lance l’application en mode portrait et la passe en mode paysage même si l’appareil est déjà en mode paysage. Par conséquent, si l’application est lancée alors que l’appareil est en mode paysage, l’appareil présente brièvement l’écran de démarrage portrait, puis anime la rotation du portrait vers l’écran de démarrage paysage. Malheureusement, cette transition initiale portrait-à-paysage a lieu même si `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` est spécifié dans les indicateurs de l’activité de démarrage. La meilleure façon de contourner cette limitation consiste à créer une seule image d’écran de démarrage qui s’affiche correctement en mode portrait et paysage.
 
 ## <a name="summary"></a>Récapitulatif
 

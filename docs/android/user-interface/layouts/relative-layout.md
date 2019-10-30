@@ -4,28 +4,28 @@ description: Utilisation de RelativeLayout dans une application Xamarin. Android
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/29/2018
-ms.openlocfilehash: af74ae3c7c87f501bff519bcfa361264205ca3f1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6cac771f46242cc0475be0a7ec0d475950f4b4e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522382"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028794"
 ---
 # <a name="xamarinandroid-relativelayout"></a>Xamarin. Android RelativeLayout
 
-[`RelativeLayout`](xref:Android.Widget.RelativeLayout)est un [`ViewGroup`](xref:Android.Views.ViewGroup) qui affiche l’enfant[`View`](xref:Android.Views.View)
-éléments en positions relatives. La position d’un [`View`](xref:Android.Views.View) peut être spécifiée par rapport aux éléments frères (par exemple, à gauche ou en dessous d’un élément donné) ou aux positions relatives au[`RelativeLayout`](xref:Android.Widget.RelativeLayout)
+[`RelativeLayout`](xref:Android.Widget.RelativeLayout) est un [`ViewGroup`](xref:Android.Views.ViewGroup) qui affiche des [`View`](xref:Android.Views.View) enfants
+éléments en positions relatives. La position d’un [`View`](xref:Android.Views.View) peut être spécifiée par rapport à des éléments frères (par exemple, à gauche ou en dessous d’un élément donné) ou à des positions relatives à la [`RelativeLayout`](xref:Android.Widget.RelativeLayout)
 zone (par exemple, alignée en bas à gauche du centre).
 
-Un [`RelativeLayout`](xref:Android.Widget.RelativeLayout) est un utilitaire très puissant pour la conception d’une interface utilisateur, car il peut [`ViewGroup`](xref:Android.Views.ViewGroup)éliminer les s imbriquées. Si vous utilisez plusieurs[`LinearLayout`](xref:Android.Widget.LinearLayout)
-les groupes, vous pourrez peut-être les remplacer par un [`RelativeLayout`](xref:Android.Widget.RelativeLayout)seul.
+Un [`RelativeLayout`](xref:Android.Widget.RelativeLayout) est un utilitaire très puissant pour la conception d’une interface utilisateur, car il permet d’éliminer les [`ViewGroup`s ](xref:Android.Views.ViewGroup)imbriqués. Si vous utilisez plusieurs [`LinearLayout`](xref:Android.Widget.LinearLayout) imbriquées
+les groupes, vous pourrez peut-être les remplacer par une seule [`RelativeLayout`](xref:Android.Widget.RelativeLayout).
 
 Démarrez un nouveau projet nommé **HelloRelativeLayout**.
 
-Ouvrez le fichier Resources **/Layout/main. AXML** et insérez ce qui suit:
+Ouvrez le fichier **Resources/layout/main. AXML** et insérez ce qui suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -60,12 +60,12 @@ Ouvrez le fichier Resources **/Layout/main. AXML** et insérez ce qui suit:
 </RelativeLayout>
 ```
 
-Notez chacun des `android:layout_*` attributs, tels que `layout_below`, `layout_alignParentRight`et `layout_toLeftOf`.
-Lorsque vous utilisez [`RelativeLayout`](xref:Android.Widget.RelativeLayout)un, vous pouvez utiliser ces attributs pour décrire la façon dont vous souhaitez [`View`](xref:Android.Views.View)positionner chacun d’entre eux. Chacun de ces attributs définit un autre type de position relative. Certains attributs utilisent l’ID de ressource d’un [`View`](xref:Android.Views.View) frère pour définir sa propre position relative. Par exemple, la dernière [`Button`](xref:Android.Widget.Button) valeur est définie pour se trouver à gauche et alignée-with-the-Top- [`View`](xref:Android.Views.View) du identifié par l’ID `ok` (qui est le précédent [`Button`](xref:Android.Widget.Button)).
+Notez chaque attribut `android:layout_*`, tel que `layout_below`, `layout_alignParentRight`et `layout_toLeftOf`.
+Lorsque vous utilisez un [`RelativeLayout`](xref:Android.Widget.RelativeLayout), vous pouvez utiliser ces attributs pour décrire la façon dont vous souhaitez positionner chaque [`View`](xref:Android.Views.View). Chacun de ces attributs définit un autre type de position relative. Certains attributs utilisent l’ID de ressource d’un [`View`](xref:Android.Views.View) frère pour définir sa propre position relative. Par exemple, la dernière [`Button`](xref:Android.Widget.Button) est définie pour se trouver à gauche et alignée-with-the-top du [`View`](xref:Android.Views.View) identifié par l’ID `ok` (qui est le [`Button`](xref:Android.Widget.Button)précédent).
 
 Tous les attributs de disposition disponibles sont définis dans [`RelativeLayout.LayoutParams`](xref:Android.Widget.RelativeLayout.LayoutParams).
 
-Veillez à charger cette disposition dans la[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Veillez à charger cette disposition dans le [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 méthode
 
 ```csharp
@@ -76,11 +76,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-La [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*) méthode charge le fichier de disposition pour [`Activity`](xref:Android.App.Activity)le, spécifié par l’ID &mdash; `Resource.Layout.Main` de ressource, fait référence au fichier de disposition Resources **/Layout/main. AXML** .
+La méthode [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*) charge le fichier de disposition pour l' [`Activity`](xref:Android.App.Activity), spécifié par l’ID de ressource &mdash; `Resource.Layout.Main` fait référence au fichier de disposition **Resources/layout/main. AXML** .
 
-Exécutez l'application. Vous devez voir la disposition suivante:
+Exécutez l'application. Vous devez voir la disposition suivante :
 
-[![Capture d’écran d’une disposition relative avec TextView, EditText et deux boutons](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
+[Capture d’écran ![d’une disposition relative avec TextView, EditText et deux boutons](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
 
 ## <a name="resources"></a>Ressources
 
@@ -90,4 +90,4 @@ Exécutez l'application. Vous devez voir la disposition suivante:
 - [`EditText`](xref:Android.Widget.EditText)
 - [`Button`](xref:Android.Widget.Button)
 
-_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](http://creativecommons.org/licenses/by/2.5/)._
+_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](https://creativecommons.org/licenses/by/2.5/)._

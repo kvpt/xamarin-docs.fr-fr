@@ -4,15 +4,15 @@ description: Cet article explique comment configurer un appareil Android et le c
 ms.prod: xamarin
 ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: a2b69152ab616e74761d9acf6a74d30144fe43b3
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
-ms.translationtype: HT
+ms.openlocfilehash: f5b92bc202cbf9765a63219ad653442152c3eb24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925051"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020717"
 ---
 # <a name="set-up-device-for-development"></a>Configurer un appareil pour le développement
 
@@ -71,7 +71,7 @@ Exécutez l’application **android.bat** dans le répertoire **[chemin d’inst
 
 ### <a name="download-the-usb-drivers"></a>Télécharger les pilotes USB
 
-Les appareils Google Nexus (à l’exception du Galaxy Nexus) nécessitent le pilote Google USB. Le pilote dont vous avez besoin pour le Galaxy Nexus est [distribué par Samsung](http://www.samsung.com/us/support/downloads/).
+Les appareils Google Nexus (à l’exception du Galaxy Nexus) nécessitent le pilote Google USB. Le pilote dont vous avez besoin pour le Galaxy Nexus est [distribué par Samsung](https://www.samsung.com/us/support/downloads/).
 Pour tous les autres appareils Android, vous devez utiliser le [pilote USB fourni par le fabricant](https://developer.android.com/tools/extras/oem-usb.html#Drivers).
 
 Pour installer le paquet **Google USB Driver**, démarrez le Gestionnaire Android SDK, puis développez le dossier **Extras**, comme indiqué dans la capture d’écran suivante :
@@ -183,7 +183,7 @@ Vous venez de voir comment configurer un appareil Android pour le développement
 
 - [Android Debug Bridge](https://developer.android.com/tools/help/adb.html)
 - [Utilisation des périphériques matériels](https://developer.android.com/tools/device.html)
-- [Téléchargements des pilotes Samsung](http://www.samsung.com/us/support/downloads/)
+- [Téléchargements des pilotes Samsung](https://www.samsung.com/us/support/downloads/)
 - [Pilotes USB OEM](https://developer.android.com/tools/extras/oem-usb.html#Drivers)
 - [Pilote USB Google](https://developer.android.com/sdk/win-usb.html)
-- [Développeurs XDA : Windows 8 - Problème de pilote ADB/Fastboot résolu](http://forum.xda-developers.com/showthread.php?t=1583801)
+- [Développeurs XDA : Windows 8 - Problème de pilote ADB/Fastboot résolu](https://forum.xda-developers.com/showthread.php?t=1583801)

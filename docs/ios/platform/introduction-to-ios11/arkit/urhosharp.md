@@ -4,15 +4,15 @@ description: Ce document explique comment configurer une application ARKit dans 
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/01/2017
-ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 67ee62fe18385f3a79f4afcb26299990f4666763
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752544"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032239"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Utilisation de ARKit avec UrhoSharp dans Xamarin. iOS
 
@@ -36,26 +36,26 @@ De cette façon, lorsque vous placez un objet dans l’espace 3D et que l’util
 
 ### <a name="ios-application-launch"></a>Lancement de l’application iOS
 
-Votre application iOS doit créer et lancer votre contenu 3D. pour cela, vous devez créer un qui implémente une sous- `Urho.Application` classe du et fournir votre code d’installation en `Start` remplaçant la méthode.  C’est là que votre scène est remplie avec des données, que les gestionnaires d’événements sont configurés, et ainsi de suite.
+Votre application iOS doit créer et lancer votre contenu 3D. pour cela, vous devez créer une sous-classe d’implémentation de la `Urho.Application` et fournir votre code d’installation en remplaçant la méthode `Start`.  C’est là que votre scène est remplie avec des données, que les gestionnaires d’événements sont configurés, et ainsi de suite.
 
-Nous avons introduit une `Urho.ArkitApp` classe qui sous- `Urho.Application` classe et sur sa `Start` méthode fait le gros du levage.   Tout ce que vous devez faire pour votre application Urho existante est de changer la classe de base en `Urho.ArkitApp` type et vous avez une application qui exécutera votre scène Urho dans le monde entier.
+Nous avons introduit une classe `Urho.ArkitApp` qui sous-classe `Urho.Application` et sur sa méthode `Start` fait le gros du levage.   Tout ce que vous devez faire pour votre application Urho existante est de modifier la classe de base pour qu’elle soit de type `Urho.ArkitApp` et que vous ayez une application qui exécutera votre scène Urho dans le monde.
 
 ### <a name="the-arkitapp-class"></a>La classe ArkitApp
 
 Cette classe fournit un ensemble de valeurs par défaut pratiques, à la fois une scène avec certains objets clés et le traitement des événements ARKit tels qu’ils sont fournis par le système d’exploitation.
 
-L’installation a lieu dans la `Start` méthode virtuelle.   Lorsque vous substituez cette méthode sur votre sous-classe, vous devez vous assurer de chaîner à votre parent en `base.Start()` utilisant sur votre propre implémentation.
+Le programme d’installation a lieu dans la méthode virtuelle `Start`.   Lorsque vous substituez cette méthode sur votre sous-classe, vous devez vous assurer de chaîner à votre parent à l’aide d' `base.Start()` de votre propre implémentation.
 
-La `Start` méthode Configure la scène, la fenêtre d’affichage, l’appareil photo et un éclairage directionnel, et les fait apparaître en tant que propriétés publiques :
+La méthode `Start` définit la scène, la fenêtre d’affichage, l’appareil photo et un éclairage directionnel, et les surface en tant que propriétés publiques :
 
-- `Scene` pour stocker vos objets,
-- directionnel `Light` avec des ombres et dont l’emplacement est disponible via `LightNode` la propriété
+- un `Scene` pour contenir vos objets,
+- `Light` directionnel avec des ombres et dont l’emplacement est disponible via la propriété `LightNode`
 - `Camera` dont les composants sont mis à jour quand ARKit fournit une mise à jour de l’application et
 - `ViewPort` affichant les résultats.
 
 ### <a name="your-code"></a>Votre code
 
-Vous devez ensuite sous-définir la `ArkitApp` classe et substituer la `Start` méthode.   La première chose que votre méthode doit faire est d' `ArkitApp.Start` enchaîner au en appelant. `base.Start()`  Après cela, vous pouvez utiliser l’une des propriétés du programme d’installation de ArkitApp pour ajouter vos objets à la scène, personnaliser les lumières, les ombres ou les événements que vous souhaitez gérer.
+Vous devez ensuite sous-définir la classe `ArkitApp` et remplacer la méthode `Start`.   La première chose que votre méthode doit faire est d’enchaîner au `ArkitApp.Start` en appelant `base.Start()`.  Après cela, vous pouvez utiliser l’une des propriétés du programme d’installation de ArkitApp pour ajouter vos objets à la scène, personnaliser les lumières, les ombres ou les événements que vous souhaitez gérer.
 
 L’exemple ARKit/UrhoSharp charge un caractère animé avec des textures et lit l’animation, avec l’implémentation suivante :
 
@@ -102,15 +102,15 @@ L’API ARKit est assez simple, mais vous créez et configurez un objet [ARSessi
 
 Nous allons composer les images fournies par la caméra avec notre contenu 3D et ajuster l’appareil photo dans UrhoSharp pour qu’il corresponde à l’emplacement et à la position de l’appareil.
 
-Le diagramme suivant montre ce qui se produit dans la `ArkitApp` classe :
+Le diagramme suivant montre ce qui se produit dans la classe `ArkitApp` :
 
-[![Diagramme des classes et des écrans dans le ArkitApp](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
+[![diagramme des classes et des écrans dans ArkitApp](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>Rendu des frames
 
 L’idée est simple et combinez la vidéo de l’appareil photo avec nos graphiques 3D pour produire l’image combinée.     Nous recevrons une série de ces images capturées en séquence, et nous allons mélanger cette entrée à la scène Urho.
 
-La méthode la plus simple consiste à insérer un `RenderPathCommand` dans le principal. `RenderPath`  Il s’agit d’un ensemble de commandes qui sont effectuées pour dessiner une seule image.  Cette commande remplit la fenêtre d’affichage avec les textures que nous lui transmettons.    Nous l’avons configurée sur la première image qui est en cours de traitement et la définition réelle est effectuée dans le fichier **ARRenderPath. xml** qui est chargé à ce stade.
+La méthode la plus simple consiste à insérer un `RenderPathCommand` dans le `RenderPath`principal.  Il s’agit d’un ensemble de commandes qui sont effectuées pour dessiner une seule image.  Cette commande remplit la fenêtre d’affichage avec les textures que nous lui transmettons.    Nous l’avons configurée sur la première image qui est en cours de traitement et la définition réelle est effectuée dans le fichier **ARRenderPath. xml** qui est chargé à ce stade.
 
 Toutefois, nous sommes confrontés à deux problèmes pour combiner ces deux mondes :
 
@@ -151,7 +151,7 @@ Nous sommes donc en mesure de restituer les images capturées en tant qu’arri�
 
 ### <a name="adjusting-the-camera"></a>Réglage de l’appareil photo
 
-Les `ARFrame` objets contiennent également la position estimée de l’appareil.  Nous devons maintenant déplacer l’appareil photo de jeu ARFrame-Before ARKit il n’était pas important de suivre l’orientation des appareils (Roll, tangage et lacet) et d’afficher un hologramme épinglé en plus de la vidéo, mais si vous déplacez votre appareil, les hologrammes seront déplacés.
+Les objets `ARFrame` contiennent également la position estimée de l’appareil.  Nous devons maintenant déplacer l’appareil photo de jeu ARFrame-Before ARKit il n’était pas important de suivre l’orientation des appareils (Roll, tangage et lacet) et d’afficher un hologramme épinglé en plus de la vidéo, mais si vous déplacez votre appareil, les hologrammes seront déplacés.
 
 Cela se produit parce que les capteurs intégrés tels que les gyroscopes ne sont pas en mesure de suivre les mouvements, ils peuvent uniquement s’accélérer.  ARKit analyse chaque cadre et extrait les points de fonctionnalité à suivre et peut donc nous fournir une matrice de transformation exacte contenant les données de mouvement et de rotation.
 
@@ -162,7 +162,7 @@ var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-Nous utilisons `-row.Z` car ARKit utilise un système de coordonnées droitier.
+Nous utilisons `-row.Z`, car ARKit utilise un système de coordonnées droitier.
 
 ### <a name="plane-detection"></a>Détection de plan
 

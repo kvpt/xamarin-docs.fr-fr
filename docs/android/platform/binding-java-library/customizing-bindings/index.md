@@ -4,27 +4,27 @@ description: Vous pouvez personnaliser une liaison Xamarin. Android en modifiant
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 37e91070ea10defedbeebdbb06220fabbd2554fc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04f3720d8684129476c955819390e91330a7800a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756638"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020656"
 ---
 # <a name="customizing-bindings"></a>Personnalisation des liaisons
 
 _Vous pouvez personnaliser une liaison Xamarin. Android en modifiant les métadonnées qui contrôlent le processus de liaison. Ces modifications manuelles sont souvent nécessaires pour résoudre les erreurs de build et pour mettre en forme l’API résultante afin qu' C#elle soit plus cohérente avec/.net. Ces guides expliquent la structure de ces métadonnées, la façon de modifier les métadonnées et l’utilisation de JavaDoc pour récupérer les noms des paramètres de la méthode._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Xamarin. Android automatise une grande partie du processus de liaison. Toutefois, dans certains cas, une modification manuelle est nécessaire pour résoudre les problèmes suivants :
 
 - Résolution des erreurs de build provoquées par les types manquants, les types obscurcis, les noms dupliqués, les problèmes de visibilité des classes et d’autres situations qui ne peuvent pas être résolues par les outils Xamarin. Android. 
 
-- Modification du mappage utilisé par Xamarin. Android pour lier l’API Android à différents types dans C# (par exemple, de nombreux développeurs préfèrent mapper des `int` constantes Java C# `enum` à des constantes).
+- Modification du mappage utilisé par Xamarin. Android pour lier l’API Android à différents types dans C# (par exemple, de nombreux développeurs préfèrent mapper des constantes de `int` C# Java à des constantes `enum`).
 
 - Suppression des types inutilisés qui n’ont pas besoin d’être liés. 
 

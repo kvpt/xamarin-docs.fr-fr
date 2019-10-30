@@ -4,15 +4,15 @@ description: Ce guide présente les différents outils fastlane à votre disposi
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c26d912a4684f6ddbee46ae953ce5cf1a3db67bd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0af85c1c27d2b329d81cc680a0fc4c075d4a86dd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762721"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028606"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Présentation de fastlane pour iOS
 
@@ -50,13 +50,13 @@ Les informations qu’il contient peuvent vous aider à bien démarrer avec la d
 3. Installez fastlane en décompressant le fichier et en double-cliquant sur l’exécutable `install`. Si vous obtenez une erreur indiquant que le fichier ne peut pas être ouvert, car il provient d’un développeur non identifié, appuyez sur OK et procédez comme suit :
     - Maintenez enfoncée la touche Ctrl en cliquant sur l’exécutable `install`. La boîte de dialogue ci-dessous s’affiche :
 
-     ![](images/fastlane-image12.png "Boîte de dialogue d’installation")
+     ![](images/fastlane-image12.png "The install dialog")
 
     - Appuyez sur OK pour démarrer l’installation des outils fastlane.
 
 4. Le terminal affiche la boîte de dialogue illustrée ci-dessous. Appuyez sur `y` :
 
-   ![](images/fastlane-image13.png "Invite du terminal")
+   ![](images/fastlane-image13.png "The Terminal prompt")
 
 5. Exécutez `which fastlane` avant d’utiliser fastlane pour la première fois. Le chemin retourné doit être similaire à ceci : 
 
@@ -66,7 +66,7 @@ Les informations qu’il contient peuvent vous aider à bien démarrer avec la d
 
 6. Si le chemin correspond au chemin indiqué ci-dessus, vous êtes prêt à commencer.
 
-     Si ce n’est pas le cas, procédez comme suit :  Sur macOS, ouvrez `.bash_profile`, qui est un fichier texte en clair masqué dans le répertoire de base, avec la commande suivante :
+     Sinon, effectuez l’action suivante : sur macOS, ouvrez `.bash_profile`, qui est un fichier texte en clair masqué dans le répertoire de base, avec la commande suivante :
 
     ```bash
     open ~/.bash_profile
@@ -84,13 +84,13 @@ Les informations qu’il contient peuvent vous aider à bien démarrer avec la d
 
 fastlane est un projet open source très actif qui envoie (push) régulièrement de nouvelles versions. Quand une nouvelle version de fastlane est disponible, vous en êtes averti dès que vous exécutez une commande fastlane :
 
-[![](images/fastlane-image0.png "Invite de mise à jour de fastlane")](images/fastlane-image0.png#lightbox)
+[![](images/fastlane-image0.png "The fast lane update prompt")](images/fastlane-image0.png#lightbox)
 
 Pour mettre à jour votre version avec une nouvelle version de fastlane, téléchargez le dernier paquet [ici](https://download.fastlane.tools) et double-cliquez sur le paquet d’installation pour l’exécuter :
 
-[![](images/fastlane-image0a.png "Exécution des packages d’installation")](images/fastlane-image0a.png#lightbox)
+[![](images/fastlane-image0a.png "Running the install package")](images/fastlane-image0a.png#lightbox)
 
-## <a name="contents"></a>Sommaire
+## <a name="contents"></a>Contenu
 
 Cette série de guides présente quelques-uns des outils que fastlane utilise pour signer le code d’une application iOS préalablement à son développement ou sa distribution. Les guides couvrent les outils suivants :
 
@@ -106,7 +106,7 @@ Une fois que vous avez créé une identité de signature et des profils de provi
 
 Pour définir les options de signature de code pour une application Xamarin.iOS, cliquez avec le bouton droit sur le nom du projet, sélectionnez **Options du projet > Build > Signature du bundle iOS** et définissez explicitement les options Identité de signature et Profil de provisionnement, comme illustré ci-dessous :
 
-[![](images/fastlane-image11.png "Définir explicitement les options Identité de signature et Profil de provisionnement")](images/fastlane-image11.png#lightbox)
+[![](images/fastlane-image11.png "Set the Signing Identity and Provisioning Profile explicitly")](images/fastlane-image11.png#lightbox)
 
 ## <a name="related-links"></a>Liens associés
 

@@ -4,15 +4,15 @@ description: Ce document décrit l’éditeur de liens Xamarin.iOS, qui sert à 
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 2cda4d53ae3f5f5716d53fd8862ca9cf000003e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762842"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030227"
 ---
 # <a name="linking-xamarinios-apps"></a>Liaison d’applications Xamarin.iOS
 
@@ -30,7 +30,7 @@ L’éditeur de liens utilise l’analyse statique pour déterminer les différe
 
 Le processus de liaison peut être personnalisé via le menu déroulant du comportement de l’éditeur de liens dans **Options du projet**. Pour accéder à ce processus, double-cliquez sur le projet iOS et accédez à **Build iOS > Options de l’éditeur de liens**, comme illustré ci-dessous :
 
-[![](linker-images/image1.png "Options de l’éditeur de liens")](linker-images/image1.png#lightbox)
+[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ Effectuez ce qui suit :
 
 1. Cliquez avec le bouton de droite sur le **Nom du projet** dans **l’Explorateur de solutions** et sélectionnez **Propriétés** :
 
-    ![](linker-images/linking01w.png "Cliquez avec le bouton de droite sur le Nom du projet dans l’Explorateur de solutions et sélectionnez Propriétés")
+    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. Dans les **Propriétés du projet**, sélectionnez **Build IOS** :
 
-    ![](linker-images/linking02w.png "Sélectionner le build IOS")
+    ![](linker-images/linking02w.png "Select IOS Build")
 3. Suivez les instructions ci-dessous pour modifier les options de liaison.
 
 -----

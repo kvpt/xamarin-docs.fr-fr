@@ -4,24 +4,24 @@ description: Ce guide décrit les étapes d’installation de Xamarin.Android po
 ms.prod: xamarin
 ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 315cb8e58b0b9f29c06e4d0af2b8cf9adffb06e3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758529"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020699"
 ---
 # <a name="windows-installation"></a>Installation sur un système Windows
 
 _Ce guide décrit les étapes d’installation de Xamarin.Android pour Visual Studio sur un système Windows, et explique comment configurer Xamarin.Android pour créer votre première application Xamarin.Android._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Étant donné que Xamarin est désormais inclus gratuitement dans toutes les éditions de Visual Studio et ne nécessite pas de licence supplémentaire, vous pouvez utiliser le programme d’installation de Visual Studio pour télécharger et installer les outils Xamarin.Android
-(l’installation manuelle et la gestion des licences qui étaient nécessaires pour les versions antérieures de Xamarin.Android ne le sont plus pour cette version). Dans ce guide, vous apprendrez à :
+(Les étapes manuelles d’installation et de gestion des licences requises pour les versions antérieures de Xamarin. Android ne sont plus nécessaires.) Dans ce guide, vous allez apprendre ce qui suit :
 
 - Configurer des emplacements personnalisés pour le Java Development Kit, le kit Android SDK et le kit Android NDK
 
@@ -45,7 +45,7 @@ Xamarin.Android utilise le JDK Java et Android SDK pour créer des application
 
 Pour la plupart des utilisateurs, ces emplacements par défaut fonctionnent sans nécessiter de modifications. Toutefois, vous pouvez souhaiter configurer des emplacements personnalisés pour ces outils dans Visual Studio (par exemple, si vous avez installé le JDK Java, Android SDK ou le NDK dans un autre emplacement). Cliquez sur **Modifier** en regard du chemin que vous souhaitez modifier, puis accédez au nouvel emplacement.
 
-Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 et niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24). Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
+Xamarin.Android utilise [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), qui est nécessaire si vous développez des applications pour le niveau d’API 24 ou des niveaux supérieurs (JDK 8 prend également en charge les niveaux d’API antérieurs au niveau 24). Vous pouvez continuer d’utiliser [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez des applications spécifiquement pour le niveau d’API 23 ou des niveaux antérieurs.
 
 > [!IMPORTANT]
 > Xamarin.Android ne prend pas en charge JDK 9.

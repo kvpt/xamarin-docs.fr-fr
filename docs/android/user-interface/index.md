@@ -4,15 +4,15 @@ description: Création d’interfaces utilisateur pour les applications Xamarin.
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 405fb0e30881ee64514d3984842ac820d5663382
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a881629c63ea2991b8ea4673811311076fcaabe9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764482"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028993"
 ---
 # <a name="user-interface"></a>Interface utilisateur
 
@@ -37,7 +37,7 @@ Une application Android prend un certain temps pour démarrer, en particulier lo
 ## <a name="layoutsandroiduser-interfacelayoutsindexmd"></a>[Dispositions](~/android/user-interface/layouts/index.md)
 
 Les dispositions sont utilisées pour définir la structure visuelle d’une interface utilisateur.
-Les dispositions telles que `ListView` et `RecyclerView` sont les blocs de construction les plus fondamentaux des applications Android. En règle générale, une disposition utilise `Adapter` un objet pour jouer le rôle de pont entre la disposition et les données sous-jacentes utilisées pour remplir les éléments de données dans la disposition. Cette section explique comment utiliser des dispositions telles que `LinearLayout`, `RelativeLayout`, `TableLayout` `RecyclerView`, et `GridView`.
+Les dispositions telles que `ListView` et `RecyclerView` sont les blocs de construction les plus fondamentaux des applications Android. En règle générale, une disposition utilise un `Adapter` pour agir comme un pont entre la disposition et les données sous-jacentes utilisées pour remplir les éléments de données dans la disposition. Cette section explique comment utiliser des dispositions telles que `LinearLayout`, `RelativeLayout`, `TableLayout`, `RecyclerView`et `GridView`.
 
 ## <a name="controlsandroiduser-interfacecontrolsindexmd"></a>[Contrôles](~/android/user-interface/controls/index.md)
 

@@ -4,15 +4,15 @@ description: Comment utiliser le widget EditText pour accepter les entrées d’
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: e8ffe337e1f5c74bc348b9600a466f1232f40b0b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 62859e19c533d7b200833996b44a65cb275805c6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758832"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029248"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin. Android-modifier le texte
 
@@ -35,8 +35,8 @@ Ouvrez **Resources/layout/activity_main. AXML** et ajoutez l’élément [EDITTE
 </LinearLayout>
 ```
 
-Dans cet exemple de code, `EditText` l' `android:imeOptions` attribut a la `actionGo`valeur. Ce paramètre remplace l’action [effectuée](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) par défaut par l’action [atteindre](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) afin que le fait d’appuyer sur la `KeyPress` touche **entrée** déclenche le gestionnaire d’entrée.
-(En général `actionGo` , est utilisé afin que la touche **entrée** dirige l’utilisateur vers la cible d’une URL qui est tapée dans.)
+Dans cet exemple de code, l’attribut `EditText` `android:imeOptions` a la valeur `actionGo`. Ce paramètre remplace l’action [effectuée](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) par défaut par l’action [atteindre](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) afin que le fait d’appuyer sur la touche **entrée** déclenche le gestionnaire d’entrée `KeyPress`.
+(En général, `actionGo` est utilisé pour que la touche **entrée** dirige l’utilisateur vers la cible d’une URL qui est tapée dans.)
 
 Pour gérer l’entrée de texte de l’utilisateur, ajoutez le code suivant à la fin de la méthode [OnCreate](xref:Android.App.Activity.OnCreate*) dans **MainActivity.cs**:
 
@@ -52,7 +52,7 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-En outre, ajoutez l’instruction `using` suivante en haut de **MainActivity.cs** si elle n’est pas déjà présente :
+En outre, ajoutez l’instruction `using` suivante au début de **MainActivity.cs** si elle n’est pas déjà présente :
 
 ```csharp
 using Android.Views;
@@ -62,9 +62,9 @@ Cet exemple de code montre l’élément [EDITTEXT](xref:Android.Widget.EditText
 
 Exécutez l’application et entrez du texte dans le champ de texte. Lorsque vous appuyez sur la touche **entrée** , le Toast s’affiche comme indiqué sur la droite :
 
-[![Exemples d’entrée de texte dans EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+[![des exemples d’entrée de texte dans EditText](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*Certaines parties de cette page sont des modifications basées sur le travail créé et* [*partagé par le projet open source Android*](http://code.google.com/policies.html) *et utilisés conformément aux termes décrits dans le* [*Licence d’attribution Creative-2,5*](http://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le* [*didacticiel de formulaire Android*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
+*Certaines parties de cette page sont des modifications basées sur le travail créé et* [*partagé par le projet open source Android*](https://code.google.com/policies.html) *et utilisées conformément aux termes décrits dans la licence d'* [*attribution de Creative-2,5*](https://creativecommons.org/licenses/by/2.5/) *. Ce didacticiel est basé sur le didacticiel de* [*formulaire Android*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
 ## <a name="related-links"></a>Liens associés
 

@@ -4,24 +4,24 @@ description: Ce document décrit comment déployer sans fil une application Xama
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: afa87cf98a2f9caee49c510674fe774a46e81107
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b0eb471bd41bb38d62ced38ed66cfa0dfee37bbf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284351"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023421"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Déploiement sans fil pour les applications Xamarin.iOS et tvOS
 
-Une part importante du workflow du développeur consiste au déploiement sur un appareil. Xcode 9 a introduit une option de déploiement sur un appareil iOS ou Apple TV via un réseau, ce qui évite d’avoir à raccorder les appareils à chaque fois que vous désirez déployer et déboguer votre application. Cette fonctionnalité a été introduite dans les versions Visual Studio pour Mac 7.4 et Visual Studio 15.6.
+Une part importante du workflow du développeur consiste au déploiement sur un appareil. Xcode 9 a introduit une option de déploiement sur un appareil iOS ou sur Apple TV via un réseau, ce qui évite d’avoir à raccorder les appareils pour pouvoir déployer et déboguer une application. Cette fonctionnalité a été introduite dans les versions Visual Studio pour Mac 7.4 et Visual Studio 15.6.
 
 Ce guide détaille comment coupler et déployer sur un appareil sur le réseau.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 La fonctionnalité de déploiement sans fil est disponible à la fois dans Visual Studio pour Mac et dans Visual Studio.
 
@@ -59,7 +59,7 @@ Le processus de couplage suivant ne doit se produire qu’une seule fois par app
 
 1. Ouvrez Xcode et allez à **Fenêtre > Appareils et simulateurs**.
 2. Branchez votre appareil iOS sur votre Mac à l’aide d’un câble Lightning. Vous devrez peut-être sélectionner **Faire confiance à cet ordinateur** sur votre appareil.
-3. Sélectionnez votre appareil, puis cochez la case **Se connecter via le réseau** pour coupler votre appareil :  ![Fenêtre Appareil et simulateur affichant l’option Se connecter via le réseau](wireless-deployment-images/image2.png)
+3. Sélectionnez votre appareil, puis cochez la case **Connexion via réseau** pour coupler votre appareil :  ![Fenêtre Appareil et simulateur affichant l’option Connexion via réseau](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>Couplage d’un Apple TV avec Xcode
 

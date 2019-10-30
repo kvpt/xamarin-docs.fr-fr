@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: CB8607B9-FFDA-4617-8210-8E43EC512588
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/09/2018
-ms.openlocfilehash: cc681e94187530c5442ad4fb12557017b92b2bb4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 418a0196849099da03983085aca9ceed2077207b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769216"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030921"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>Où trouver le fichier .dSYM pour générer les symboles des journaux de plantage iOS ?
 
@@ -20,17 +20,17 @@ Lors de la génération d’une application iOS avec Visual Studio pour Mac ou V
 
 - Si vous avez activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant :
 
-    **&lt;&gt;répertoire du projet&lt;/bin/&gt;configurationdela&lt; plateforme//Device-builds/appareil&lt;&lt;&gt; &gt;- version du système d’exploitation&gt;/**
+    **&lt;répertoire du projet&gt;/bin/&lt;Platform&gt;/&lt;configuration&gt;/Device-builds/&lt;&gt;-&lt;&gt;**
 
-    Par exemple :
+    Exemple :
   
     **TestApp/bin/iPhone/Release/Device-builds/iPhone 8.4-11.3.1/**
 
 - Si vous n’avez pas activé les builds spécifiques à l’appareil, le. dSYM se trouve dans le répertoire suivant :
 
-    **&lt;configuration de&gt;la&lt;plateforme&gt;/bin/DirectoryProject/&lt;&gt;/**
+    **&lt;répertoire du projet&gt;/bin/&lt;de la plateforme&gt;/&lt;de configuration&gt;/**
 
-    Par exemple :
+    Exemple :
 
     **TestApp/bin/iPhone/mise en version/**
 

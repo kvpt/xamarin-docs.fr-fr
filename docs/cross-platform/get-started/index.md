@@ -4,15 +4,15 @@ description: Ce document fournit des liens vers des guides qui décrivent commen
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/10/2017
-ms.openlocfilehash: ae4704c2b1ab97b3e0f396b2402005366e97fe92
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
-ms.translationtype: HT
+ms.openlocfilehash: bc7a5217f3260eb36e45a683b5520347c22641b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290129"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016381"
 ---
 # <a name="building-mobile-apps"></a>Création d’applications mobiles
 
@@ -38,7 +38,7 @@ Ce document fournit une présentation générale du *fonctionnement de Xamarin*,
 
 ### <a name="mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[Cycle de vie du développement de logiciel mobile](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
-Cet article décrit le cycle de vie du développement de logiciels pour les applications mobiles et présente certaines des considérations nécessaires lors de la création de projets pour mobiles. Les développeurs qui veulent passer directement à la création d’applications peuvent dans un premier temps ne pas lire ce guide, puis y revenir plus tard pour mieux comprendre le développement d’applications mobiles.
+Cet article décrit le cycle de vie du développement de logiciels pour les applications mobiles et présente certaines des considérations nécessaires lors de la création de projets pour mobiles. Les développeurs qui veulent passer directement à la création d’applications peuvent dans un premier temps ne pas lire ce guide, puis y revenir plus tard pour mieux comprendre le développement des applications mobiles.
 
 ## <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Création d’applications multiplateformes](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 

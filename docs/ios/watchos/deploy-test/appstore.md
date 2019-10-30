@@ -4,15 +4,15 @@ description: Ce document explique comment déployer des applications Watchos gé
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 7b80573a728e1868254b5a89254ebc385b3baa12
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bbf580007f4d149501efe424f0e36178a49f6aa5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768074"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028370"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>Déploiement d’applications Watchos sur l’App Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "70768074"
 
 - Vérifiez que vous disposez des éléments suivants :
   - [**Profils de provisionnement de distribution**](#provisioning) créés pour vos projets.
-  - La **cible** de déploiement`MinimumOSVersion`() de l’application parent iOS définie à **8,2** ou une version antérieure (8,3 n’est pas prise en charge).
+  - La **cible de déploiement** (`MinimumOSVersion`) pour l’application parent iOS définie à **8,2** ou une version antérieure (8,3 n’est pas prise en charge).
 
 - Dans [**iTunes Connect**](#iTunes_Connect):
 
@@ -51,17 +51,17 @@ Pour générer le déploiement de l’App Store, vous devez créer un **profil d
 
 Si vous avez un ID d’application générique, *un seul profil de provisionnement sera requis*; Toutefois, si vous disposez d’un ID d’application distinct pour chaque projet, vous aurez besoin d’un profil de configuration pour chaque ID d’application :
 
-![](appstore-images/provisioningprofile-distribution-sml.png "Profil de distribution de l’App Store")
+![](appstore-images/provisioningprofile-distribution-sml.png "The App Store Distribution profile")
 
 Une fois que vous avez créé les trois profils, ceux-ci s’affichent dans la liste. N’oubliez pas de télécharger et d’installer chacun d’eux (en double-cliquant dessus) :
 
-![](appstore-images/provisioningprofiles-sml.png "Liste des profils disponibles")
+![](appstore-images/provisioningprofiles-sml.png "The list of available profiles")
 
 Vous pouvez vérifier le profil de provisionnement dans les **Options du projet** en sélectionnant l’écran de signature de l' **offre groupée > iOS** et en sélectionnant la configuration **AppStore | iPhone** .
 
 La liste **profil de provisionnement** affiche tous les profils correspondants. vous devez voir les profils correspondants que vous avez créés dans cette liste déroulante.
 
-![](appstore-images/options-selectprofile-sml.png "Boîte de dialogue de signature d’offre groupée iOS")
+![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
 
 <a name="iTunes_Connect"/>
 
@@ -74,7 +74,7 @@ Suivez la [Présentation de la distribution d’applications](~/ios/deploy-test/
 
 Quand vous configurez l’application dans iTunes Connect, n’oubliez pas d’ajouter l’icône de visionneuse et les captures d’écran :
 
-![](appstore-images/itunesconnect-watch-sml.png "Icône de montre et captures d’écran dans iTunes Connect")
+![](appstore-images/itunesconnect-watch-sml.png "The Watch icon and screenshots in iTunes Connect")
 
 Le fichier icône doit être 1024x1024 pixels et un masque circulaire lui sera appliqué lors de son affichage. L’icône ne doit pas avoir de canal alpha.
 
@@ -88,19 +88,19 @@ Vous pouvez utiliser le simulateur Watch 42mm Watch pour prendre des captures d�
 
 1. Assurez-vous que l’application iOS est le projet de démarrage. Si ce n’est pas le cas, cliquez dessus avec le bouton droit pour le définir :
 
-   ![](appstore-images/xs-startup.png "Définition du projet de démarrage")
+   ![](appstore-images/xs-startup.png "Setting the startup project")
 
 2. Choisissez la configuration de build **AppStore** :
 
-   ![](appstore-images/xs-appstore.png "Configuration de build AppStore")
+   ![](appstore-images/xs-appstore.png "The AppStore build configuration")
 
 3. Choisissez l’élément de menu **Build > Archive** pour démarrer le processus d’archivage :
 
-   ![](appstore-images/xs-archive.png "Menu Générer")
+   ![](appstore-images/xs-archive.png "The Build menu")
 
 Vous pouvez également choisir l’élément de menu **afficher > les archives...** pour afficher les archives qui ont été créées précédemment.
 
-  ![](appstore-images/xs-archives-sml.png "Vue Archives")
+  ![](appstore-images/xs-archives-sml.png "The Archives view")
 
 <a name="xcode" />
 
@@ -110,21 +110,21 @@ Xcode affiche automatiquement les archives créées dans Visual Studio pour Mac.
 
 1. Démarrez Xcode et choisissez **fenêtre > organisateur**:
 
-   ![](appstore-images/xc-organizer.png "Menu fenêtre")
+   ![](appstore-images/xc-organizer.png "The Window menu")
 
 2. Basculez vers l’onglet **Archives** et sélectionnez l’archive qui a été créée avec Visual Studio pour Mac :
 
-   ![](appstore-images/xc-archives.png "Onglet Archives")
+   ![](appstore-images/xc-archives.png "The Archives tab")
 
 3. Si vous le souhaitez, **validez** l’archive..., puis choisissez **Envoyer...** pour télécharger l’application dans iTunes Connect.
 
 4. Choisissez l’équipe de développement (si vous appartenez à plus d’un), puis confirmez la soumission :
 
-   ![](appstore-images/xc-submit1.png "Section de l’équipe de développement")
+   ![](appstore-images/xc-submit1.png "The development team section")
 
 5. Reportez-vous à iTunes Connect pour voir le binaire chargé. Accédez à la page de configuration de votre application, puis choisissez **version préliminaire** dans le menu supérieur pour afficher la liste des **Builds** :
 
-   [![](appstore-images/itc-prerelease-sml.png "Page de configuration des applications dans iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "The apps configuration page in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
 Vous pouvez ensuite soumettre l’application pour approbation sur la page **versions** . Pour plus d’informations, reportez-vous à la présentation de la [distribution d’applications iOS](~/ios/deploy-test/app-distribution/index.md) .
 
@@ -175,7 +175,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Vérifiez que vous disposez de la dernière version de Visual Studio pour Mac, et que votre **AppIcon. appiconset** contient un ensemble complet d’images. Si vous continuez à voir cette erreur, consultez la source du **contenu. JSON** pour confirmer qu’elle contient une entrée pour toutes les images requises. Une fois que vous avez vérifié que vous utilisez la dernière version de Xamarin, supprimez et recréez l' **AppIcon. appiconset**.
 
 > [!IMPORTANT]
-> Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend **29x29@3x** une image de pixel 88x88 pour l’image (qui doit être 87x87 pixels).
+> Il existe un bogue connu dans la prise en charge de l’icône de surveillance de Visual Studio pour Mac : elle attend une image de pixel 88x88 pour l’image **29x29@3x** (qui doit être 87x87 pixels).
 
 Vous ne pouvez pas résoudre ce problème dans Visual Studio pour Mac : modifiez la ressource d’image dans Xcode ou modifiez manuellement le fichier **Contents. JSON** (pour qu’il corresponde à [cet exemple](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 

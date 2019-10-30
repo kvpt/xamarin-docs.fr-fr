@@ -1,24 +1,24 @@
 ---
-title: 'Hello, Android multi-écran : Démarrage rapide'
+title: Hello, Android multi-écran - Démarrage rapide
 description: Ce guide en deux parties étend l’application Phoneword de manière à gérer un second écran. Vous allez également y découvrir les composants des applications Android et plonger au cœur de l’architecture Android.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: d1a4d73242e9701ff9ffcfc58791986bca89a095
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 114373b6c4b194fe6e566255eb09eb82a8208312
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755847"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020966"
 ---
-# <a name="hello-android-multiscreen-quickstart"></a>Hello, Android multi-écran : Démarrage rapide
+# <a name="hello-android-multiscreen-quickstart"></a>Hello, Android multi-écran - Démarrage rapide
 
-_Ce guide en deux parties étend l’application Phoneword de manière à gérer un second écran. Vous allez également y découvrir les composants des applications Android et plonger au cœur de l’architecture Android._
+_Ce guide en deux parties étend l’application Phoneword pour gérer un deuxième écran. En cours de route, les blocs de construction d’applications Android de base sont introduits dans une étude plus approfondie de l’architecture Android._
 
 Dans la partie de ce guide présentant la procédure pas à pas, vous allez ajouter un second écran à l’application [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) de manière à suivre l’historique des numéros appelés à partir de l’application. L’[application finale](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen) proposera un second écran qui affichera les numéros qui ont été «traduits », comme illustré dans la capture d’écran de droite :
 
@@ -26,7 +26,7 @@ Dans la partie de ce guide présentant la procédure pas à pas, vous allez ajou
 
 La seconde partie, [En profondeur](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md), examine ce que vous avez généré et décrit l’architecture, la navigation et d’autres nouveaux concepts Android que vous avez rencontrés en chemin.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Ce guide reprenant là où [Hello, Android](~/android/get-started/hello-android/index.md) s’est arrêté, vous devez avoir terminé [Hello, Android - Démarrage rapide](~/android/get-started/hello-android/hello-android-quickstart.md).
 Si vous souhaitez accéder directement à la procédure pas à pas ci-dessous, vous pouvez télécharger la version complète de [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) (à partir de Hello, Android - Démarrage rapide) et l’utiliser pour démarrer la procédure pas à pas.

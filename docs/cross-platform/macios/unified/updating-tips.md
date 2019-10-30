@@ -4,14 +4,14 @@ description: Ce document traite des erreurs courantes et divers conseils utiles 
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
-author: conceptdev
-ms.author: crdun
-ms.openlocfilehash: 0d1f09f8318f1292f6c9b65627d9b659f8fc466b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+author: davidortinau
+ms.author: daortin
+ms.openlocfilehash: ee207ffc83f887e9c86c650b6f93fc2ff9f5b69c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280788"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014996"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Conseils pour la mise à jour du code vers l’API unifiée
 
@@ -39,7 +39,7 @@ Dans ce fichier, vous devez rechercher la déclaration cible suivante :
         Outputs = "@(_BundleResourceWithLogicalName -> '$(_AppBundlePath)%(LogicalName)')" >
 ```
 
-Et y ajouter `DependsOnTargets="_CollectBundleResources"` l’attribut. Comme ceci :
+Et y ajouter l’attribut `DependsOnTargets="_CollectBundleResources"`. Comme ceci :
 
 ```xml
 <Target Name="_CopyContentToBundle"
@@ -55,75 +55,75 @@ Enregistrez le fichier, redémarrez Visual Studio pour Mac et effectuez une nouv
 Après l’utilisation de l’outil de migration, vous pouvez toujours recevoir des erreurs de compilateur nécessitant une intervention manuelle.
 Voici quelques éléments que vous devrez peut-être corriger manuellement :
 
-- La `enum`Comparaison de peut nécessiter un `(int)` cast.
+- La comparaison de `enum`peut nécessiter un cast `(int)`.
 
-- `NSDictionary.IntValue`retourne maintenant un `nint`, `Int32Value` qui peut être utilisé à la place.
+- `NSDictionary.IntValue` retourne maintenant un `nint`, il existe un `Int32Value` qui peut être utilisé à la place.
 
-- `nfloat`les `nint` types et ne peuvent `const`pas être marqués ; `static readonly nint` est une alternative raisonnable.
+- les types `nfloat` et `nint` ne peuvent pas être marqués `const`; `static readonly nint` est une alternative raisonnable.
 
-- Les éléments qui étaient utilisés directement dans l' `MonoTouch.` espace de noms se trouvent désormais `ObjCRuntime.` dans l’espace de noms `MonoTouch.Constants.Version` (par `ObjCRuntime.Constants.Version`exemple : est maintenant).
+- Les choses qui étaient utilisées directement dans l’espace de noms `MonoTouch.` sont désormais généralement dans l’espace de noms `ObjCRuntime.` (par exemple : `MonoTouch.Constants.Version` est désormais `ObjCRuntime.Constants.Version`).
 
-- Le code qui sérialise `nint` les objets peut s’arrêter lors de la tentative de sérialisation et `nfloat` de types. Veillez à vérifier que votre code de sérialisation fonctionne comme prévu après la migration.
+- Le code qui sérialise les objets peut s’arrêter lors de la tentative de sérialisation des types `nint` et `nfloat`. Veillez à vérifier que votre code de sérialisation fonctionne comme prévu après la migration.
 
-- Parfois, l’outil automatisé ignore `#if #else` le code dans les directives de compilateur conditionnel. Dans ce cas, vous devez effectuer les corrections manuellement (voir les erreurs courantes ci-dessous).
+- Parfois, l’outil automatisé ignore le code dans `#if #else` directives de compilateur conditionnelles. Dans ce cas, vous devez effectuer les corrections manuellement (voir les erreurs courantes ci-dessous).
 
-- Les méthodes exportées manuellement à l’aide `[Export]` de ne peuvent pas être corrigées automatiquement par l’outil de migration, par exemple dans ce code snippert vous devez mettre à jour manuellement le type de retour en : `nfloat`
+- Les méthodes exportées manuellement à l’aide de `[Export]` ne peuvent pas être corrigées automatiquement par l’outil de migration, par exemple dans ce code snippert vous devez mettre à jour manuellement le type de retour en `nfloat`:
 
   ```csharp
   [Export("tableView:heightForRowAtIndexPath:")]
   public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
   ```
 
-- Le API unifiée ne fournit pas de conversion implicite entre NSDate et .NET DateTime, car il ne s’agit pas d’une conversion sans perte. Pour éviter les erreurs liées `DateTimeKind.Unspecified` à la conversion `DateTime` de .net en locale ou UTC avant `NSDate`d’effectuer un cast en.
+- Le API unifiée ne fournit pas de conversion implicite entre NSDate et .NET DateTime, car il ne s’agit pas d’une conversion sans perte. Pour éviter les erreurs liées à `DateTimeKind.Unspecified` convertir le `DateTime` .NET en local ou UTC avant d’effectuer un cast en `NSDate`.
 
-- Les méthodes de catégorie objective-C sont maintenant générées comme méthodes d’extension dans l’API unifiée. Par exemple, le code utilisé `UIView.DrawString` précédemment fait désormais référence `NSString.DrawString` à la API unifiée.
+- Les méthodes de catégorie objective-C sont maintenant générées comme méthodes d’extension dans l’API unifiée. Par exemple, le code qui utilisait précédemment `UIView.DrawString` référencerait à présent `NSString.DrawString` dans le API unifiée.
 
-- Le code qui utilise les `VideoSettings` classes AVFoundation avec doit changer `WeakVideoSettings` pour utiliser la propriété. Cela nécessite un `Dictionary`, qui est disponible en tant que propriété sur les classes de paramètres, par exemple :
+- Le code qui utilise des classes AVFoundation avec `VideoSettings` doit changer pour utiliser la propriété `WeakVideoSettings`. Cela nécessite une `Dictionary`, qui est disponible en tant que propriété sur les classes de paramètres, par exemple :
 
   ```csharp
   vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
   ```
 
-- Le constructeur `.ctor(IntPtr)` NSObject a été modifié de public en protected ([pour empêcher une utilisation incorrecte](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
+- Le constructeur de `.ctor(IntPtr)` NSObject a été modifié de public en protected ([pour empêcher une utilisation incorrecte](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
 
-- `NSAction`a été [remplacé](~/cross-platform/macios/unified/overview.md#NSAction) par le .NET `Action`standard. Certains délégués simples (paramètre unique) ont également été remplacés par `Action<T>`.
+- `NSAction` a été [remplacé](~/cross-platform/macios/unified/overview.md#NSAction) par le `Action`.NET standard. Certains délégués simples (à paramètre unique) ont également été remplacés par `Action<T>`.
 
 Enfin, reportez-vous aux [différences de API unifiée Classic v](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) pour rechercher les modifications apportées aux API dans votre code. La recherche de [cette page](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md) permet de trouver des API classiques et leurs mises à jour.
 
 > [!NOTE]
-> L' `MonoTouch.Dialog` espace de noms reste le même après la migration. Si votre code utilise des **boîtes de dialogue monotactiles** , vous devez continuer à utiliser cet espace de `Dialog`noms-ne *pas* changer `MonoTouch.Dialog` en !
+> L’espace de noms `MonoTouch.Dialog` reste le même après la migration. Si votre code utilise des **boîtes de dialogue Monotactiles** , vous devez continuer à utiliser cet espace de noms : ne modifiez *pas* `MonoTouch.Dialog` en `Dialog`!
 
 ## <a name="common-compiler-errors"></a>Erreurs courantes du compilateur
 
 D’autres exemples d’erreurs courantes sont répertoriés ci-dessous, ainsi que la solution :
 
-**Erreur CS0012 : Le type « MonoTouch. UIKit. UIView » est défini dans un assembly qui n’est pas référencé.**
+**Erreur CS0012 : le type « MonoTouch. UIKit. UIView » est défini dans un assembly qui n’est pas référencé.**
 
-Correctif : Cela signifie généralement que le projet fait référence à un composant ou à un package NuGet qui n’a pas été généré avec le API unifiée. Vous devez supprimer et rajouter tous les composants et les packages NuGet. Si cela ne corrige pas l’erreur, il se peut que la bibliothèque externe ne prenne pas encore en charge le API unifiée.
+Correctif : cela signifie généralement que le projet fait référence à un composant ou à un package NuGet qui n’a pas été généré avec le API unifiée. Vous devez supprimer et rajouter tous les composants et les packages NuGet. Si cela ne corrige pas l’erreur, il se peut que la bibliothèque externe ne prenne pas encore en charge le API unifiée.
 
-**Erreur MT0034 : Impossible d’inclure à la fois’unitouch. dll’et’Xamarin. iOS. dll’dans le même projet Xamarin. iOS-'Xamarin. iOS. dll’est référencé explicitement, tandis que’unitouch. dll’est référencé par’Xamarin. mobile, version = 0.6.3.0, culture = neutral, PublicKeyToken = null'.**
+**Erreur MT0034 : impossible d’inclure à la fois’unitouch. dll’et’Xamarin. iOS. dll’dans le même projet Xamarin. iOS-'Xamarin. iOS. dll’est référencé explicitement, tandis que’unitouch. dll’est référencé par’Xamarin. mobile, version = 0.6.3.0, culture = neutral, PublicKeyToken = null'.**
 
-Correctif : Supprimez le composant à l’origine de cette erreur et rajoutez-le au projet.
+Correctif : supprimez le composant à l’origine de cette erreur et rajoutez-le au projet.
 
-**Erreur CS0234 : Le type ou le nom d’espace de noms’Foundation’n’existe pas dans l’espace de noms’MonoTouch'. Manque-t-il une référence d’assembly ?**
+**Erreur CS0234 : le nom de type ou d’espace de noms’Foundation’n’existe pas dans l’espace de noms’MonoTouch'. Manque-t-il une référence d’assembly ?**
 
-Correctif : L’outil de migration automatisée de Visual Studio pour Mac doit `MonoTouch.Foundation` mettre à `Foundation`jour toutes les références à, mais dans certains cas, ceux-ci doivent être mis à jour manuellement. Des erreurs similaires peuvent apparaître pour les autres espaces de noms précédemment `MonoTouch`contenus dans, `UIKit`tels que.
+Correctif : l’outil de migration automatisée de Visual Studio pour Mac *doit* mettre à jour toutes les références de `MonoTouch.Foundation` à `Foundation`. Toutefois, dans certains cas, ceux-ci doivent être mis à jour manuellement. Des erreurs similaires peuvent apparaître pour les autres espaces de noms précédemment contenus dans `MonoTouch`, comme `UIKit`.
 
-**Erreur CS0266 : Impossible de convertir implicitement le type’double’en’System. float'**
+**Erreur CS0266 : impossible de convertir implicitement le type’double’en’System. float'**
 
-Correctif : modifiez le type et effectuez `nfloat`un cast en. Cette erreur peut également se produire pour les autres types avec des équivalents 64 bits (tels `nint`que,)
+Correctif : modifiez le type et effectuez un cast en `nfloat`. Cette erreur peut également se produire pour les autres types avec des équivalents 64 bits (tels que `nint`,)
 
 ```csharp
 nfloat scale = (nfloat)Math.Min(rect.Width, rect.Height);
 ```
 
-**Erreur CS0266 : Impossible de convertir implicitement le type’CoreGraphics. CGRect’en’System. Drawing. RectangleF'. Une conversion explicite existe (un cast est-il manquant ?)**
+**Erreur CS0266 : impossible de convertir implicitement le type’CoreGraphics. CGRect’en’System. Drawing. RectangleF'. Une conversion explicite existe (un cast est-il manquant ?)**
 
-Correctif : Remplacez les instances `RectangleF` `CGRect` de`SizeF`par , et`PointF` par. `CGPoint` `CGSize` L’espace `using System.Drawing;` de noms doit être `using CoreGraphics;` remplacé par (s’il n’est pas déjà présent).
+Correctif : modifiez les instances pour `RectangleF` en `CGRect`, `SizeF` à `CGSize`et `PointF` à `CGPoint`. L’espace de noms `using System.Drawing;` doit être remplacé par `using CoreGraphics;` (s’il n’est pas déjà présent).
 
-**erreur CS1502 : La méthode surchargée correspondant le mieux à’CoreGraphics. CGContext. SetLineDash (System. nfloat, System. nfloat []) 'contient des arguments non valides**
+**erreur CS1502 : la méthode surchargée correspondant le mieux à’CoreGraphics. CGContext. SetLineDash (System. nfloat, System. nfloat []) 'contient des arguments non valides**
 
-Correctif : Modifiez le type de `nfloat[]` tableau en et `Math.PI`effectuez un cast explicite.
+Correctif : remplacez le type tableau par `nfloat[]` et effectuez un cast explicite `Math.PI`.
 
 ```csharp
 grphc.SetLineDash (0, new nfloat[] { 0, 3 * (nfloat)Math.PI });
@@ -131,15 +131,15 @@ grphc.SetLineDash (0, new nfloat[] { 0, 3 * (nfloat)Math.PI });
 
 **Erreur CS0115 : 'WordsTableSource. RowsInSection (UIKit. UITableView, int) 'est marqué comme remplacement, mais aucune méthode appropriée n’a été trouvée pour la substitution**
 
-Correctif : Remplacez la valeur de retour et les types `nint`de paramètres par. Cela se produit généralement dans les substitutions de méthode, telles `UITableViewSource`que celles `RowsInSection`sur `NumberOfSections`, notamment `TitleForHeader`, `GetViewForHeader` `GetHeightForRow`,,,, etc.
+Correctif : remplacez la valeur de retour et les types de paramètres par `nint`. Cela se produit généralement dans les substitutions de méthode, telles que celles sur `UITableViewSource`, y compris `RowsInSection`, `NumberOfSections`, `GetHeightForRow`, `TitleForHeader`, `GetViewForHeader`, etc.
 
 ```csharp
 public override nint RowsInSection (UITableView tableview, nint section) {
 ```
 
-**Erreur CS0508 : `WordsTableSource.NumberOfSections(UIKit.UITableView)`: le type de retour doit être’System. nint’pour correspondre au membre substitué`UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
+**Erreur CS0508 : `WordsTableSource.NumberOfSections(UIKit.UITableView)`: le type de retour doit être’System. nint’pour correspondre au membre substitué `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)`**
 
-Correctif : Lorsque le type de retour est modifié `nint`en, effectuez un cast de `nint`la valeur de retour en.
+Correctif : lorsque le type de retour est remplacé par `nint`, effectuez un cast de la valeur de retour en `nint`.
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -148,9 +148,9 @@ public override nint NumberOfSections (UITableView tableView)
 }
 ```
 
-**Erreur CS1061 : Le type’CoreGraphics. CGPath’ne contient pas de définition pour’AddElipseInRect'**
+**Erreur CS1061 : le type’CoreGraphics. CGPath’ne contient pas de définition pour’AddElipseInRect'**
 
-Correctif : Corriger l’orthographe en `AddEllipseInRect`. Les autres modifications de nom sont les suivantes :
+Correctif : corrigez l’orthographe pour `AddEllipseInRect`. Les autres modifications de nom sont les suivantes :
 
 - Remplacez « Color. Black » par `NSColor.Black`.
 - Remplacez MapKit « AddAnnotation » par `AddAnnotations`.

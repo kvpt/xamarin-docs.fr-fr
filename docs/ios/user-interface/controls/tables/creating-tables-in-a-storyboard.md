@@ -4,33 +4,33 @@ description: Dans les sections précédentes, nous avons exploré le développem
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: a4d6144ad48b9e2f263137fb2474bc9eb278d93f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7eff434c21b5e2330d320f2eb85174dc6fe65b34
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768975"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021942"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Utilisation des tableaux dans le concepteur iOS
 
 Les storyboards sont un moyen WYSIWYG de créer des applications iOS et sont pris en charge dans Visual Studio sur Mac et Windows. Pour plus d’informations sur les storyboards, reportez-vous au document [Présentation des storyboards](~/ios/user-interface/storyboards/index.md) . Les storyboards vous permettent également de modifier les dispositions *des cellules dans* le tableau, ce qui simplifie le développement avec des tables et des cellules
 
-Quand vous configurez les propriétés d’une vue de table dans le concepteur iOS, vous pouvez choisir entre deux types de contenu de cellule : Contenu de prototype **dynamique** ou **statique** .
+Quand vous configurez les propriétés d’une vue de table dans le concepteur iOS, vous avez le choix entre deux types de contenu de cellule : le contenu de prototype **dynamique** ou **statique** .
 
 <a name="Prototype_Content" />
 
 ## <a name="dynamic-prototype-content"></a>Contenu de prototype dynamique
 
-Une `UITableView` avec un contenu de prototype est généralement destiné à afficher une liste de données dans laquelle la cellule du prototype (ou les cellules, comme vous pouvez en définir plusieurs) sont réutilisées pour chaque élément de la liste. Les cellules n’ont pas besoin d’être instanciées, elles sont obtenues `GetView` dans la méthode en `DequeueReusableCell` appelant la méthode `UITableViewSource`de son.
+Une `UITableView` avec le contenu du prototype est généralement conçue pour afficher une liste de données dans laquelle la cellule du prototype (ou les cellules, comme vous pouvez en définir plusieurs) sont réutilisées pour chaque élément de la liste. Les cellules n’ont pas besoin d’être instanciées, elles sont obtenues dans la méthode `GetView` en appelant la méthode `DequeueReusableCell` de son `UITableViewSource`.
 
  <a name="Static_Content" />
 
 ## <a name="static-content"></a>Contenu statique
 
-`UITableView`les s avec du contenu statique permettent de concevoir des tables directement sur l’aire de conception. Vous pouvez faire glisser des cellules dans la table et les personnaliser en modifiant les propriétés et en ajoutant des contrôles.
+`UITableView`s avec du contenu statique permettent de concevoir des tables directement sur l’aire de conception. Vous pouvez faire glisser des cellules dans la table et les personnaliser en modifiant les propriétés et en ajoutant des contrôles.
 
  <a name="Creating_a_Storyboard-driven_app" />
 
@@ -38,7 +38,7 @@ Une `UITableView` avec un contenu de prototype est généralement destiné à af
 
 L’exemple StoryboardTable contient une simple application maître/détail qui utilise les deux types de UITableView dans une table de montage séquentiel. Le reste de cette section décrit comment créer un exemple de liste de tâches de petite taille qui ressemble à ceci quand vous effectuez l’opération :
 
- [![Exemples d’écrans](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
+ [écrans d’exemples de ![](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 L’interface utilisateur est générée avec un Storyboard, et les deux écrans utilisent un UITableView. L’écran principal utilise le *contenu du prototype* pour mettre la ligne en page, et l’écran de détails utilise du *contenu statique* pour créer un formulaire de saisie de données à l’aide de dispositions de cellules personnalisées.
 
@@ -46,9 +46,9 @@ L’interface utilisateur est générée avec un Storyboard, et les deux écrans
 
 Créer une nouvelle solution dans Visual Studio à l’aide de **(créer) un nouveau projet... > Application avec affichage uniqueC#()** et appelez-la _StoryboardTables_.
 
- [![Boîte de dialogue créer un nouveau projet](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
+ [![boîte de dialogue créer un nouveau projet](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
-La solution s’ouvre avec certains C# fichiers et un `Main.storyboard` fichier a déjà été créé. Double-cliquez sur `Main.storyboard` le fichier pour l’ouvrir dans le concepteur iOS.
+La solution s’ouvre avec certains C# fichiers et un fichier `Main.storyboard` déjà créé. Double-cliquez sur le fichier `Main.storyboard` pour l’ouvrir dans le concepteur iOS.
 
 <a name="Modifying_the_Storyboard" />
 
@@ -72,23 +72,23 @@ La première modification apportée à la table de montage séquentiel consiste 
 2. Faites glisser un contrôleur de **navigation** et un **contrôleur d’affichage de table** sur le Storyboard à partir de la boîte à outils. 
 3. Créez un segue à partir du contrôleur d’affichage racine vers le deuxième contrôleur d’affichage de table qui vient d’être ajouté. Pour créer le Segue, vous pouvez le faire glisser à *partir de la cellule de détail* vers le UITableViewController que vous venez d’ajouter. Choisissez l’option **Afficher** sous **segue Selection**. 
 4. Sélectionnez le nouveau segue que vous avez créé et donnez-lui un identificateur pour référencer ce segue dans le code. Cliquez sur segue et entrez `TaskSegue` pour l' **identificateur** dans le **panneau Propriétés**, comme suit :    
-  [![Attribution d’un nom à segue dans le panneau des propriétés](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
+  [![l’attribution d’un nom à segue dans le panneau des propriétés](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. Ensuite, configurez les deux vues de table en les sélectionnant et en utilisant le Panneau Propriétés. Veillez à sélectionner Afficher et ne pas afficher le contrôleur : vous pouvez utiliser la structure du document pour faciliter la sélection.
 
-6. Remplacez le contrôleur d’affichage racine par **le contenu : Prototypes** dynamiques (la vue sur le aire de conception sera intitulée **contenu du prototype** ) :
+6. Remplacez le contrôleur d’affichage racine par **contenu : prototypes dynamiques** (la vue sur le aire de conception sera intitulée **contenu du prototype** ) :
 
-    [![Définition de la propriété de contenu sur les prototypes dynamiques](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
+    [![de la définition de la propriété de contenu sur les prototypes dynamiques](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7. Remplacez le nouveau **UITableViewController** par **content : Cellules**statiques. 
+7. Remplacez le nouveau **UITableViewController** par **contenu : cellules statiques**. 
 
-8. Le nom de classe et l’identificateur de la nouvelle UITableViewController doivent être définis. Sélectionnez le contrôleur d’affichage et tapez _TaskDetailViewController_ pour la **classe** dans le **panneau Propriétés** – cela créera un `TaskDetailViewController.cs` nouveau fichier dans le panneau solutions. Entrez le **StoryboardID** en tant que _détail_, comme illustré dans l’exemple ci-dessous. Ce sera utilisé ultérieurement pour charger cette vue dans C# le code :  
+8. Le nom de classe et l’identificateur de la nouvelle UITableViewController doivent être définis. Sélectionnez le contrôleur d’affichage et tapez _TaskDetailViewController_ pour la **classe** dans le **panneau Propriétés** – cela créera un nouveau fichier `TaskDetailViewController.cs` dans le panneau solutions. Entrez le **StoryboardID** en tant que _détail_, comme illustré dans l’exemple ci-dessous. Ce sera utilisé ultérieurement pour charger cette vue dans C# le code :  
 
-    [![Définition de l’ID de Storyboard](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
+    [![de la définition de l’ID de Storyboard](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. L’aire de conception de la table de montage séquentiel doit maintenant ressembler à ceci (le titre de l’élément de navigation du contrôleur d’affichage racine a été remplacé par « damier ») :
 
-    [![Aire de conception](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
+    [![l’aire de conception](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 <a name="Create_the_UI" />
 
@@ -100,50 +100,50 @@ Maintenant que les vues et les SEGUES sont configurées, les éléments de l’i
 
 Tout d’abord, sélectionnez la cellule prototype dans le contrôleur d’affichage maître et définissez l' **identificateur** en tant que _taskcell_, comme illustré ci-dessous. Cela sera utilisé ultérieurement dans le code pour récupérer une instance de ce UITableViewCell :
 
- [![définition de l’identificateur de cellule](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
+ [![de la définition de l’identificateur de cellule](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 Ensuite, vous devez créer un bouton qui ajoutera de nouvelles tâches, comme illustré ci-dessous :
 
-[![élément de bouton de barre dans la barre de navigation](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
+[élément de bouton de barre d' ![dans la barre de navigation](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 Effectuez ce qui suit : 
 
 - Faites glisser un **élément de bouton de barre** de la boîte à outils vers le _côté droit de la barre de navigation_.
-- Dans le **panneau Propriétés**, sous l' **élément bouton** de **la barre, sélectionnez Identificateur : Ajoutez** (pour en faire un *+* bouton plus). 
+- Dans le **panneau Propriétés**, sous l' **élément bouton** de la barre, sélectionnez **identificateur : Ajouter** (pour en faire un *+* bouton plus). 
 - Donnez-lui un nom afin qu’il puisse être identifié dans le code à un moment ultérieur. Notez que vous devrez donner au contrôleur d’affichage racine un nom de classe (par exemple, **ItemViewController**) pour vous permettre de définir le nom de l’élément de bouton de barre.
 
 #### <a name="taskdetail-view-controller"></a>Contrôleur d’affichage TaskDetail
 
 La vue détaillée nécessite beaucoup plus de travail. Les cellules de l’affichage de tableau doivent être déplacées sur la vue, puis remplies avec des étiquettes, des affichages de texte et des boutons. La capture d’écran ci-dessous montre l’interface utilisateur finie avec deux sections. Une section comporte trois cellules, trois étiquettes, deux champs de texte et un commutateur, tandis que la deuxième section contient une cellule avec deux boutons :
 
- [![disposition de vue détaillée](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
+ [![la disposition de vue détaillée](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 Les étapes permettant de générer la disposition complète sont les suivantes :
 
 Sélectionnez la vue de table et ouvrez le panneau des **Propriétés**. Mettez à jour les propriétés suivantes :
 
 - **Sections**: _2_ 
-- **Style**: _Regroupés_
-- **Séparateur**: _None_
-- **Sélection**: _Aucune sélection_
+- **Style**: _groupé_
+- **Séparateur**: _aucun_
+- **Sélection**: _aucune sélection_
 
 Sélectionnez la section supérieure, puis sous **propriétés > section vue** de la table, modifiez les **lignes** en _3_, comme illustré ci-dessous :
 
- [![définition de la section supérieure sur trois lignes](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
+ [![la définition de la section supérieure sur trois lignes](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Pour chaque cellule, ouvrez le **panneau Propriétés** et définissez :
 
-- **Style**:  _Personnalisée_
-- **Identificateur** : Choisissez un identificateur unique pour chaque cellule (par exemple, «_title_», «_Notes_», «_done_»).
+- **Style**: _personnalisé_
+- **Identificateur**: choisissez un identificateur unique pour chaque cellule (par exemple, «_title_», «_Notes_», «_done_»).
 - Faites glisser les contrôles requis pour produire la disposition indiquée dans la capture d’écran (placez **UILabel**, **champ UITextField** et **UISwitch** sur les cellules appropriées, puis définissez les étiquettes de manière appropriée, IE. Titre, remarques et terminées).
 
 Dans la deuxième section, définissez **lignes** sur _1_ et saisissez la poignée de redimensionnement inférieure de la cellule pour la rendre plus grande.
 
 - **Définissez l’identificateur**: sur une valeur unique (par exemple, « Enregistrer »). 
-- **Définissez l’arrière-plan**:  _Effacer la couleur_ .
+- **Définissez l’arrière-plan**: _effacer la couleur_ .
 - Faites glisser deux boutons sur la cellule et définissez leurs titres de manière appropriée (par exemple, _Save_ et _Delete_), comme illustré ci-dessous :
 
-   [![définition de deux boutons dans la section inférieure](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
+   [![de deux boutons dans la section inférieure](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 À ce stade, vous pouvez également définir des contraintes sur vos cellules et contrôles pour garantir une disposition adaptative.
 
@@ -151,7 +151,7 @@ Dans la deuxième section, définissez **lignes** sur _1_ et saisissez la poign�
 
 Il existe quelques étapes finales pour créer notre Storyboard. Tout d’abord, nous devons attribuer à chacun de nos contrôles un nom sous **identity > Name** , afin qu’ils puissent être utilisés ultérieurement dans le code. Nommez-les comme suit :
 
-- **Titre champ UITextField** : _Text_
+- **Titre champ UITextField** : _TitleText_
 - **Notes champ UITextField** : _NotesText_
 - **UISwitch** : _DoneSwitch_
 - **Supprimer UIButton** : _DeleteButton_
@@ -163,9 +163,9 @@ Il existe quelques étapes finales pour créer notre Storyboard. Tout d’abord,
 
 Le reste du travail sera effectué dans Visual Studio sur Mac ou Windows avec C#. Notez que les noms de propriété utilisés dans le code reflètent ceux définis dans la procédure pas à pas ci-dessus.
 
-Tout d’abord, nous souhaitons `Chores` créer une classe, qui permet d’obtenir et de définir la valeur d’ID, de nom, de notes et la valeur booléenne Done, afin que nous puissions utiliser ces valeurs dans toute l’application.
+Tout d’abord, nous souhaitons créer une classe `Chores`, qui permet d’obtenir et de définir la valeur ID, Name, notes et la valeur booléenne Done, afin de pouvoir utiliser ces valeurs dans toute l’application.
 
-Dans votre `Chores` classe, ajoutez le code suivant :
+Dans votre classe `Chores`, ajoutez le code suivant :
 
 ```csharp
 public class Chores {
@@ -176,11 +176,11 @@ public class Chores {
   }
 ```
 
-Ensuite, créez une `RootTableSource` classe qui hérite de `UITableViewSource`. 
+Ensuite, créez une classe `RootTableSource` qui hérite de `UITableViewSource`. 
 
-La différence entre cette vue de table non-Storyboard est que la méthode `GetView` n’a pas besoin d’instancier de `theDequeueReusableCell` cellules. la méthode retourne toujours une instance de la cellule prototype (avec l’identificateur correspondant).
+La différence entre cette vue de table non-Storyboard est que la méthode `GetView` n’a pas besoin d’instancier de cellules, `theDequeueReusableCell` méthode retourne toujours une instance de la cellule prototype (avec l’identificateur correspondant).
 
-Le code ci-dessous `RootTableSource.cs` provient du fichier :
+Le code ci-dessous provient du fichier `RootTableSource.cs` :
 
 ```csharp
 public class RootTableSource : UITableViewSource
@@ -217,7 +217,7 @@ public Chores GetItem(int id)
 }
 ```
 
-Pour utiliser la `RootTableSource` classe, créez une nouvelle collection dans le `ItemViewController`constructeur de :
+Pour utiliser la classe `RootTableSource`, créez une nouvelle collection dans le constructeur du `ItemViewController`:
 
 ```csharp
 chores = new List<Chore> {
@@ -226,7 +226,7 @@ chores = new List<Chore> {
     };
 ```
 
-Dans `ViewWillAppear` , transmettez la collection à la source et assignez-la à la vue table :
+Dans `ViewWillAppear` passer la collection à la source et l’assigner à la vue table :
 
 ```csharp
 public override void ViewWillAppear(bool animated)
@@ -239,7 +239,7 @@ public override void ViewWillAppear(bool animated)
 
 Si vous exécutez l’application maintenant, l’écran principal se chargera à présent de charger et d’afficher une liste de deux tâches. Quand une tâche est touchée, le segue défini par le Storyboard entraîne l’affichage de l’écran de détails, mais elle n’affiche aucune donnée pour le moment.
 
-Pour « envoyer un paramètre » dans un Segue, substituez la `PrepareForSegue` méthode et définissez les propriétés `DestinationViewController` sur ( `TaskDetailViewController` dans cet exemple). La classe de contrôleur d’affichage de destination a été instanciée mais n’est pas encore affichée à l’utilisateur, ce qui signifie que vous pouvez définir des propriétés sur la classe, mais pas modifier les contrôles d’interface utilisateur :
+Pour « envoyer un paramètre » dans un Segue, substituez la méthode `PrepareForSegue` et définissez les propriétés sur le `DestinationViewController` (le `TaskDetailViewController` dans cet exemple). La classe de contrôleur d’affichage de destination a été instanciée mais n’est pas encore affichée à l’utilisateur, ce qui signifie que vous pouvez définir des propriétés sur la classe, mais pas modifier les contrôles d’interface utilisateur :
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -256,7 +256,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
     }
 ```
 
-Dans `TaskDetailViewController` , `SetTask` la méthode affecte ses paramètres aux propriétés afin qu’elles puissent être référencées dans ViewWillAppear. Les propriétés du contrôle ne peuvent pas `SetTask` être modifiées dans, car `PrepareForSegue` peut ne pas exister lorsque est appelé :
+Dans `TaskDetailViewController` la méthode `SetTask` affecte ses paramètres aux propriétés afin qu’elles puissent être référencées dans ViewWillAppear. Impossible de modifier les propriétés du contrôle dans `SetTask`, car n’existe pas lorsque `PrepareForSegue` est appelé :
 
 ```csharp
 Chore currentTask {get;set;}
@@ -294,7 +294,7 @@ public void DeleteTask(Chores chore)
 }
 ```
 
-Ensuite, vous devez ajouter le gestionnaire d’événements du `TouchUpInside` bouton à la `ViewDidLoad` méthode de **TaskDetailViewController.cs**. La `Delegate` référence `SaveTask` `DeleteTask`de propriété à aétécrééespécifiquementpourquenouspuissionsappeleret,cequiapoureffetdefermercettevuedanslecadredesonfonctionnement:`ItemViewController`
+Ensuite, vous devez ajouter le gestionnaire d’événements `TouchUpInside` du bouton à la méthode `ViewDidLoad` de **TaskDetailViewController.cs**. La référence de propriété `Delegate` à la `ItemViewController` a été créée spécifiquement afin que nous puissions appeler `SaveTask` et `DeleteTask`, ce qui a pour effet de fermer cette vue dans le cadre de son fonctionnement :
 
 ```csharp
 SaveButton.TouchUpInside += (sender, e) => {
@@ -307,7 +307,7 @@ SaveButton.TouchUpInside += (sender, e) => {
 DeleteButton.TouchUpInside += (sender, e) => Delegate.DeleteTask(currentTask);
 ```
 
-Le dernier élément de fonctionnalité restant à générer est la création de nouvelles tâches. Dans **ItemViewController.cs** , ajoutez une méthode qui crée des tâches et ouvre la vue détaillée. Pour instancier une vue à partir d’une `InstantiateViewController` table de montage `Identifier` séquentiel, utilisez la méthode avec le pour cette vue, dans cet exemple, qui sera « detail » :
+Le dernier élément de fonctionnalité restant à générer est la création de nouvelles tâches. Dans **ItemViewController.cs** , ajoutez une méthode qui crée des tâches et ouvre la vue détaillée. Pour instancier une vue à partir d’une table de montage séquentiel, utilisez la méthode `InstantiateViewController` avec la `Identifier` pour cette vue, dans cet exemple, qui sera « detail » :
 
 ```csharp
 public void CreateTask () 
@@ -324,7 +324,7 @@ public void CreateTask ()
     }
 ```
 
-Enfin, connectez le bouton dans la barre de navigation dela `ViewDidLoad` méthode de ItemViewController.cs pour l’appeler :
+Enfin, connectez le bouton dans la barre de navigation de la méthode `ViewDidLoad` de **ItemViewController.cs**pour l’appeler :
 
 ```csharp
 AddButton.Clicked += (sender, e) => CreateTask ();
@@ -332,14 +332,14 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 Cela termine l’exemple de Storyboard : l’application terminée ressemble à ceci :
 
-[![Application terminée](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
+[application ![terminée](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 L’exemple montre :
 
 - Création d’une table avec du contenu de prototype dans laquelle les cellules sont définies pour être réutilisées pour afficher des listes de données. 
 - Création d’une table avec un contenu statique pour créer un formulaire d’entrée. Cela inclut la modification du style de tableau et l’ajout de sections, de cellules et de contrôles d’interface utilisateur. 
-- Comment créer un segue et substituer la `PrepareForSegue` méthode pour notifier la vue cible des paramètres dont elle a besoin. 
-- Chargement direct des affichages de `Storyboard.InstantiateViewController` plan conceptuel avec la méthode.
+- Comment créer un segue et substituer la méthode `PrepareForSegue` pour notifier l’affichage cible de tous les paramètres dont il a besoin. 
+- Chargement direct des affichages de plan conceptuel avec la méthode `Storyboard.InstantiateViewController`.
 
 ## <a name="related-links"></a>Liens associés
 

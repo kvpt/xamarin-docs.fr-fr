@@ -3,15 +3,15 @@ title: Gestion des comptes Apple
 description: Ce document explique comment utiliser les fonctionnalités de gestion des comptes Apple dans Visual Studio pour Mac et Visual Studio 2019.
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766121"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016342"
 ---
 # <a name="apple-account-management"></a>Gestion des comptes Apple
 
@@ -31,7 +31,7 @@ Pour plus d’informations sur la procédure à suivre, voir ce guide.
 
 Vous pouvez également utiliser les outils d’approvisionnement automatique iOS pour créer et gérer automatiquement vos identités de signature, ID d’application et profils de provisionnement. Pour plus d’informations sur l’utilisation de ces fonctionnalités, reportez-vous au Guide de [provisionnement des appareils](~/ios/get-started/installation/device-provisioning/index.md) .
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 La gestion des comptes Apple est disponible sur Visual Studio pour Mac, Visual Studio 2019 et Visual Studio 2017 (version 15,7 et ultérieure).
 
@@ -39,7 +39,7 @@ Pour utiliser cette fonctionnalité, vous devez disposer d’un compte de dével
 
 - Vérifiez que vous êtes connecté à Internet. Cela est dû au fait que Fastlane communique directement avec le portail des développeurs Apple.
 - Vérifiez que les [Outils Fastlane sont installés](~/ios/deploy-test/provisioning/fastlane/index.md#Installation).
-- Vérifiez que vous disposez des derniers outils Fastlane [https://download.fastlane.tools](https://download.fastlane.tools)de.
+- Vérifiez que vous disposez des derniers outils FastLane de [https://download.fastlane.tools](https://download.fastlane.tools).
 - Avant de commencer, veillez à accepter tous les contrats de licence utilisateur dans le [portail des développeurs](https://developer.apple.com/account/).
 
 ## <a name="adding-an-apple-developer-account"></a>Ajout d’un compte de développeur Apple
@@ -50,7 +50,7 @@ Pour utiliser cette fonctionnalité, vous devez disposer d’un compte de dével
 
     ![Options du compte de développeur Apple](apple-account-management-images/image1.png)
 
-2. Appuyez sur **+** le bouton pour afficher la boîte de dialogue de connexion, comme illustré ci-dessous : 
+2. Appuyez sur le bouton **+** pour afficher la boîte de dialogue de connexion, comme illustré ci-dessous : 
 
     ![boîte de dialogue Fastlane.](apple-account-management-images/image2.png)
 
@@ -144,7 +144,7 @@ Il s’agit actuellement d’un problème connu, relatif au bogue [#53906](https
 
 ### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>Si vous rencontrez des problèmes de journalisation dans votre compte, veuillez essayer les éléments suivants :
 
-- Ouvrez l’application Trousseau et, sous catégorie, sélectionnez *mots de passe*. `deliver.`Recherchez et supprimez toutes les entrées.
+- Ouvrez l’application Trousseau et, sous catégorie, sélectionnez *mots de passe*. Recherchez `deliver.`et supprimez toutes les entrées.
 
 ### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>«Erreur lors de l’ajout du compte. Connectez-vous avec un mot de passe spécifique à l’application»
 

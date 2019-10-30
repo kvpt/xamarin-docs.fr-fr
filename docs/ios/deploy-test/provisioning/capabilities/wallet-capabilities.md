@@ -4,19 +4,19 @@ description: L’ajout de fonctionnalités à une application nécessite souvent
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 658184203c81079af9b4946c4da18dfb98381b0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762740"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028552"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Fonctionnalités Wallet dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration plus poussée de l’approvisionnement. Ce guide explique la configuration requise pour les fonctionnalités Wallet._
+_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de Wallet._
 
 Wallet est une application qui stocke et affiche les codes-barres et autres contenus permettant aux utilisateurs de présenter leurs billets, cartes d’embarquement et coupons directement à partir de leur appareil. Ces informations sont stockées dans un _passe_. Par exemple, une carte d’embarquement ou un billet constitue chacun un passe. 
 

@@ -3,15 +3,15 @@ title: Prise en main d’Android
 description: Ce document explique comment prendre en main l’intégration de .NET à Android. Il traite de l’installation de l’incorporation .NET, de la création d’un projet de bibliothèque Android, de l’utilisation de la sortie générée dans un projet de Android Studio et d’autres considérations.
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 9b0da6f5b195ecef5fd4e5e2b4585b660573a5be
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcda03d41cb3bafcfb3ee4b92046014cc5b0c119
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278560"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029772"
 ---
 # <a name="getting-started-with-android"></a>Prise en main d’Android
 
@@ -33,7 +33,7 @@ Ouvrez Visual Studio pour Windows ou Mac, créez un projet de bibliothèque de c
 
 Ajoutez une nouvelle activité Android nommée **HelloActivity.cs**, suivie d’une disposition Android sur **Resource/layout/Hello. AXML**.
 
-Ajoutez un nouveau `TextView` à votre disposition et remplacez le texte par un texte agréable.
+Ajoutez un nouveau `TextView` à votre disposition, puis remplacez le texte par un texte agréable.
 
 Votre source de disposition doit ressembler à ceci :
 
@@ -53,7 +53,7 @@ Votre source de disposition doit ressembler à ceci :
 </LinearLayout>
 ```
 
-Dans votre activité, assurez-vous que `SetContentView` vous appelez avec votre nouvelle disposition :
+Dans votre activité, assurez-vous que vous appelez `SetContentView` avec votre nouvelle disposition :
 
 ```csharp
 [Activity(Label = "HelloActivity"),
@@ -70,7 +70,7 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> N’oubliez pas `[Register]` l’attribut. Pour plus d’informations, consultez [limitations](#current-limitations-on-android).
+> N’oubliez pas l’attribut `[Register]`. Pour plus d’informations, consultez [limitations](#current-limitations-on-android).
 
 Générez le projet. L’assembly résultant sera enregistré dans `bin/Debug/hello-from-csharp.dll`.
 
@@ -111,7 +111,7 @@ Pour utiliser le nouveau module à partir de votre **application**, cliquez avec
 
 ![Dépendances de Android Studio](android-images/androidstudiodependencies.png)
 
-Dans votre activité, ajoutez une nouvelle `onResume` méthode et utilisez le code suivant pour lancer l' C# activité :
+Dans votre activité, ajoutez une nouvelle méthode `onResume` et utilisez le code suivant pour lancer l' C# activité :
 
 ```java
 import hello_from_csharp.*;
@@ -151,7 +151,7 @@ Si vous ne disposez pas de ce programme d’installation, l’application se blo
 com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavailable>'. Assuming this is part of Fast Deployment. Exiting...
 ```
 
-## <a name="run-the-app"></a>Exécution de l'application
+## <a name="run-the-app"></a>Exécuter l'application
 
 Lors du lancement de votre application :
 
@@ -159,7 +159,7 @@ Lors du lancement de votre application :
 
 Notez ce qui s’est produit ici :
 
-- Nous avons une C# classe, `HelloActivity`, qui sous-classe Java
+- Nous avons une C# classe,`HelloActivity`, qui sous-classe Java
 - Nous avons des fichiers de ressources Android
 - Nous les avons utilisées à partir de Java dans Android Studio
 
@@ -169,7 +169,7 @@ Pour que cet exemple fonctionne, tous les éléments suivants sont configurés d
 - Assemblys .NET inclus dans les **ressources/assemblys**
 - Modifications apportées à **fichier AndroidManifest. xml** pour vos C# activités, etc.
 - Ressources et ressources Android à partir des bibliothèques .NET
-- [Wrappers Android pouvant être appelés](~/android/platform/java-integration/android-callable-wrappers.md) pour `Java.Lang.Object` une sous-classe
+- [Wrappers Android pouvant être appelés](~/android/platform/java-integration/android-callable-wrappers.md) pour toute `Java.Lang.Object` sous-classe
 
 Si vous recherchez une procédure pas à pas supplémentaire, consultez la vidéo suivante, qui illustre l’incorporation de la [démonstration FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) de Charles Petzold dans un projet Android Studio :
 
@@ -207,7 +207,7 @@ android {
 
 ## <a name="current-limitations-on-android"></a>Limitations actuelles sur Android
 
-Pour le moment, si vous sous `Java.Lang.Object`-classez, Xamarin. Android génère le stub Java (wrapper Android pouvant être appelé) au lieu de l’incorporation .net. Pour cette raison, vous devez suivre les mêmes règles pour l' C# exportation vers Java en tant que Xamarin. Android. Par exemple :
+Pour le moment, si vous sous-classez `Java.Lang.Object`, Xamarin. Android génère le stub Java (wrapper Android pouvant être appelé) au lieu de l’incorporation .NET. Pour cette raison, vous devez suivre les mêmes règles pour l' C# exportation vers Java en tant que Xamarin. Android. Exemple :
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,8 +223,8 @@ public class ViewSubclass : TextView
 }
 ```
 
-- `[Register]`est requis pour mapper à un nom de package Java souhaité
-- `[Export]`est requis pour rendre une méthode visible pour Java
+- `[Register]` est requis pour mapper à un nom de package Java souhaité
+- `[Export]` est requis pour rendre une méthode visible pour Java
 
 Nous pouvons utiliser `ViewSubclass` dans Java comme suit :
 
@@ -275,7 +275,7 @@ dependencies {
 }
 ```
 
-## <a name="further-reading"></a>Informations supplémentaires
+## <a name="further-reading"></a>Compléments de lecture
 
 - [Rappels sur Android](~/tools/dotnet-embedding/android/callbacks.md)
 - [Recherche Android préliminaire](~/tools/dotnet-embedding/android/index.md)

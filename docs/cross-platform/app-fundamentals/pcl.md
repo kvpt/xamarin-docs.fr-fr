@@ -3,15 +3,15 @@ title: Présentation des bibliothèques de classes portables (PCL)
 description: Cet article présente les projets de bibliothèque de classes portables (PCL) et vous guide dans la création et l’utilisation de projets PCL dans Visual Studio pour Mac et Visual Studio.
 ms.prod: xamarin
 ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: a4ee81f7d59c9fb680dfd371a7aaba7660fb3343
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 1684bddaf5b418f63abc7ee528f646f7795396d8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68681070"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016728"
 ---
 # <a name="portable-class-libraries-pcl"></a>Bibliothèques de classes portables (PCL)
 
@@ -54,7 +54,7 @@ Cela comprend les profils qui sont des combinaisons de :
 - Windows Phone 8
 - Applications UWP
 
-Pour en savoir plus sur les différentes fonctionnalités de profil sur le [site Web de Microsoft](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) , consultez le [Résumé du profil PCL](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) d’un autre membre de la Communauté, qui comprend des informations sur le Framework prises en charge et d’autres remarques.
+Pour en savoir plus sur les différentes fonctionnalités de profil sur le [site Web de Microsoft](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx) , consultez le [Résumé du profil PCL](https://portablelibraryprofiles.stephencleary.com/) d’un autre membre de la Communauté, qui comprend des informations sur le Framework prises en charge et d’autres remarques.
 
 **Avantages**
 
@@ -100,7 +100,7 @@ La bibliothèque PCL est maintenant prête pour l’ajout de code. Elle peut ég
 
 Pour afficher et modifier les paramètres PCL de ce projet, cliquez avec le bouton droit sur le projet, puis choisissez **Options > générer > général** pour voir l’écran illustré ici :
 
-[![PCL les options de projet pour définir le profil](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
+[![les options de projet PCL pour définir le profil](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
 
 Cliquez sur **modifier** pour modifier le profil cible de cette bibliothèque de classes portable.
 
@@ -110,11 +110,11 @@ Si le profil est modifié une fois que le code a déjà été ajouté à la bibl
 
 Lorsque le code est écrit dans une bibliothèque PCL, l’éditeur de Visual Studio pour Mac reconnaît les limitations du profil sélectionné et ajuste les options de saisie semi-automatique en conséquence. Par exemple, cette capture d’écran montre les options de saisie semi-automatique pour System.IO à l’aide du profil par défaut (Profile136) utilisé dans Visual Studio pour Mac – Notez la barre de défilement qui indique la moitié des classes disponibles sont affichées (en fait, il n’y a que 14 classes disponibles).
 
-[![Intellisense liste de 14 classes dans la classe System.IO d’une bibliothèque de classes portable](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
+[![liste IntelliSense des 14 classes de la classe System.IO d’une bibliothèque de classes portable](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
 
 Comparez-le à la saisie semi-automatique System.IO dans un projet Xamarin. iOS ou Xamarin. Android. 40 classes sont disponibles, y compris des classes couramment utilisées comme `File` et `Directory` qui ne sont pas dans un profil PCL.
 
-[![Intellisense liste des classes 40 dans .NET Framework espace de noms System.IO](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
+[![liste IntelliSense des classes 40 dans .NET Framework espace de noms System.IO](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
 
 Cela reflète le compromis sous-jacent de l’utilisation de la bibliothèque de classes portable : la possibilité de partager du code en toute transparence sur de nombreuses plateformes, car certaines API ne sont pas disponibles car elles n’ont pas d’implémentations comparables sur toutes les plateformes possibles.
 
@@ -122,11 +122,11 @@ Cela reflète le compromis sous-jacent de l’utilisation de la bibliothèque de
 
 Une fois qu’un projet PCL a été créé, vous pouvez y ajouter une référence à partir de n’importe quel projet d’application ou de bibliothèque compatible, de la même façon que vous ajoutez normalement des références. Dans Visual Studio pour Mac, cliquez avec le bouton droit sur le nœud Références, puis choisissez **modifier les références..** ., puis basculez vers l’onglet **projets** comme indiqué :
 
-[![Add une référence à une bibliothèque de classes portable par le biais de l’option modifier les références](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
+[![ajouter une référence à une bibliothèque de classes portable par le biais de l’option modifier les références](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
 
 La capture d’écran suivante montre le panneau solution de l’exemple d’application TaskyPortable, affichant la bibliothèque PCL en bas et une référence à cette bibliothèque PCL dans le projet Xamarin. iOS.
 
-[exemple de solution ![TaskyPortable présentant un projet PCL](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
+[exemple de solution ![TaskyPortable avec un projet PCL](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
 
 La sortie d’une bibliothèque de classes portable (c’est-à-dire, la DLL d’assembly qui en résulte) peut également être ajoutée en tant que référence à la plupart des projets. La méthode PCL est ainsi idéale pour envoyer des composants et des bibliothèques multiplateforme.
 
@@ -159,7 +159,7 @@ La bibliothèque PCL est maintenant prête pour l’ajout de code. Il peut égal
 
 Les paramètres PCL peuvent être affichés et modifiés en cliquant avec le bouton droit sur le projet et en sélectionnant **propriétés > bibliothèque** , comme illustré dans cette capture d’écran :
 
-[![Edit les cibles de la plateforme](pcl-images/image13-sml.png)](pcl-images/image13.png#lightbox)
+[![modifier les cibles de la plateforme](pcl-images/image13-sml.png)](pcl-images/image13.png#lightbox)
 
 Si le profil est modifié une fois que le code a déjà été ajouté à la bibliothèque PCL, il est possible que la bibliothèque ne soit plus compilée si le code fait référence à des fonctionnalités qui ne font pas partie du profil nouvellement sélectionné.
 
@@ -170,11 +170,11 @@ Si le profil est modifié une fois que le code a déjà été ajouté à la bibl
 
 Lorsque le code est écrit dans une bibliothèque PCL, Visual Studio reconnaît les limites du profil sélectionné et ajuste les options IntelliSense en conséquence. Par exemple, cette capture d’écran montre les options de saisie semi-automatique pour System.IO à l’aide du profil par défaut (Profile136). Notez la barre de défilement qui indique que la moitié des classes disponibles sont affichées (en fait, seules 14 classes sont disponibles).
 
-[nombre ![Reduced de classes d’e/s disponibles dans une bibliothèque de classes portable](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
+[![réduit le nombre de classes d’e/s disponibles dans une bibliothèque de classes portable](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
 
 Comparez-le à la saisie semi-automatique System.IO dans un projet normal : il existe 40 classes disponibles, notamment des classes couramment utilisées comme `File` et `Directory` qui ne sont pas dans un profil PCL.
 
-[![Many plusieurs classes d’e/s disponibles dans le .NET Framework](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
+[![plusieurs classes d’e/s supplémentaires disponibles dans le .NET Framework](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
 
 Cela reflète le compromis sous-jacent de l’utilisation de la bibliothèque de classes portable : la possibilité de partager du code en toute transparence sur de nombreuses plateformes, car certaines API ne sont pas disponibles car elles n’ont pas d’implémentations comparables sur toutes les plateformes possibles.
 
@@ -185,7 +185,7 @@ Cela reflète le compromis sous-jacent de l’utilisation de la bibliothèque de
 
 Une fois qu’un projet PCL a été créé, vous pouvez y ajouter une référence à partir de n’importe quel projet d’application ou de bibliothèque compatible, de la même façon que vous ajoutez normalement des références. Dans Visual Studio, cliquez avec le bouton droit sur le nœud Références, puis choisissez `Add Reference...` puis basculez vers l’onglet **Solution > projets** comme indiqué ci-dessous :
 
-[![Add une référence à une bibliothèque de classes portable via l’onglet ajouter des projets de référence](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
+[![ajouter une référence à une bibliothèque de classes portable via l’onglet ajouter des projets de référence](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
 
 La capture d’écran suivante montre le volet solution pour l’exemple d’application TaskyPortable, en affichant la bibliothèque PCL en bas et une référence à cette bibliothèque PCL dans le projet Xamarin. iOS.
 

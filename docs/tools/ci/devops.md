@@ -1,18 +1,18 @@
 ---
 title: DevOps avec Xamarin
 ms.assetid: ff978cc2-5a25-46d6-921b-e51adaa65992
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 manager: crdun
 ms.workload:
 - xamarin
 ms.date: 10/23/2018
-ms.openlocfilehash: de7cb0d3cce97f251fe6d9625fb1373e6aac7a67
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 57e3444ebcbd87607da248ecacca5e76a44f1577
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293685"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007447"
 ---
 # <a name="devops-with-xamarin"></a>DevOps avec Xamarin
 
@@ -26,11 +26,11 @@ Les tableaux suivants identifient les fonctionnalités DevOps de Visual Studio q
 
 ## <a name="agile-tools"></a>Outils agiles
 
-Lien de référence : **[Sur les outils Agile et de gestion de projet Agile](/azure/devops/boards/backlogs/overview?view=vsts)**
+Lien de référence : **[À propos des outils agiles et de la gestion de projet agile](/azure/devops/boards/backlogs/overview?view=vsts)**
 
 Commentaire général : toutes les fonctionnalités de planification et de suivi sont indépendantes du type de projet et des langages de codage.
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |Gérer les backlogs et les sprints|Oui||
 |Suivi du travail|Oui||
@@ -40,11 +40,11 @@ Commentaire général : toutes les fonctionnalités de planification et de suiv
 
 ## <a name="modeling"></a>Modélisation
 
-Lien de référence : **[Analyser et modéliser l’architecture](/visualstudio/modeling/analyze-and-model-your-architecture)**
+Lien de référence : **[Analyser et modéliser l’architecture](/visualstudio/modeling/analyze-and-model-your-architecture)**
 
 Les fonctionnalités de conception sont indépendantes du langage de codage ou fonctionnent avec les langages .NET tels que C#. Voir [Rôles de l’architecture et des diagrammes de structure dans le développement logiciel](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools) pour connaître les aspects liés au code.
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |Diagrammes de séquence|Oui||
 |Graphiques de dépendance|Oui||
@@ -57,19 +57,19 @@ Les fonctionnalités de conception sont indépendantes du langage de codage ou f
 
 ## <a name="code"></a>Code
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |[Utiliser Team Foundation Version Control (TFVC)](/azure/devops/repos/tfvc/overview?view=vsts) ou Azure Repos|Oui||
 |[Bien démarrer avec Git dans Azure Repos](/azure/devops/repos/git/gitquickstart?view=vsts&tabs=visual-studio)|Oui||
 |[Améliorer la qualité du code](/visualstudio/test/improve-code-quality)|Oui||
 |[Rechercher les modifications de code et d’autres historiques](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|Oui|Sauf au-delà des limites spécifiques de la plateforme où l’implémentation n’est résolue qu’au moment de l’exécution.|
-|[Utiliser des cartes de code pour déboguer vos applications](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|Oui||
+|[Utiliser des cartes du code pour déboguer vos applications](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|Oui||
 
-## <a name="build"></a>Build
+## <a name="build"></a>Générer
 
-Lien de référence : **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
+Lien de référence :  **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |Serveur TFS local|Oui|Xamarin doit être installé sur les machines de build. Celles-ci peuvent être liées à un ordinateur OSX afin de générer des applications pour iOS. Consultez [Utiliser TFVC](/azure/devops/repos/tfvc/overview?view=vsts)|
 |Serveur de builds local lié à Azure Pipelines|Oui|Pour obtenir des instructions, consultez [Agents de build et de mise en production](/azure/devops/pipelines/agents/agents?view=vsts).|
@@ -79,7 +79,7 @@ Lien de référence : **[Azure Pipelines](/azure/devops/pipelines/index?view=vs
 
 ## <a name="test"></a>Tester
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |Planification de tests, création de cas de test et organisation de suites de tests|Oui||
 |Test manuel|Oui||
@@ -90,21 +90,21 @@ Lien de référence : **[Azure Pipelines](/azure/devops/pipelines/index?view=vs
 
 ## <a name="improve-code-quality"></a>Améliorer la qualité du code
 
-Lien de référence : **[Améliorer la qualité du Code](/visualstudio/test/improve-code-quality)**
+Lien de référence : **[Améliorer la qualité du code](/visualstudio/test/improve-code-quality)**
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |[Analyser la qualité du code managé](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|Oui||
 |[Rechercher du code dupliqué à l’aide de la détection de clone de code](https://msdn.microsoft.com/library/hh205279.aspx)|Oui||
 |[Mesurer la complexité et la facilité de maintenance du code managé](/visualstudio/code-quality/measuring-complexity-and-maintainability-of-managed-code)|Oui||
-|[Explorateur de performances](/visualstudio/profiling/performance-explorer)|Non|Utilisez le [Xamarin Profiler](/xamarin/tools/profiler/) via Visual Studio pour Mac à la place. Notez que Xamarin Profiler est actuellement disponible en version préliminaire et qu'il ne fonctionne pas pour le moment avec les cibles Windows.|
+|[Explorateur de performances](/visualstudio/profiling/performance-explorer)|Non|Utilisez à la place le [Xamarin Profiler](/xamarin/tools/profiler/) via Visual Studio pour Mac. Notez que Xamarin Profiler est actuellement disponible en version préliminaire et qu'il ne fonctionne pas pour le moment avec les cibles Windows.|
 |[Analyser les problèmes de mémoire liés au .NET Framework](https://msdn.microsoft.com/library/dn342825.aspx)|Non|Visual Studio Tools n’a pas de hook au framework Mono pour le profilage.|
 
 ## <a name="release-management"></a>Gestion des versions
 
-Lien de référence : **[Build et de publication dans les Pipelines Azure et TFS](/azure/devops/pipelines/overview?view=vsts)**
+Lien de référence : **[Générer et mettre en production dans Azure Pipelines et TFS](/azure/devops/pipelines/overview?view=vsts)**
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |Gérer les processus de publication des versions|Oui||
 |Déploiement sur des serveurs pour le chargement de version test via des scripts|Oui||
@@ -114,6 +114,6 @@ Lien de référence : **[Build et de publication dans les Pipelines Azure et TF
 
 Lien de référence : **[Analyser avec HockeyApp](https://www.hockeyapp.net/features/)**
 
-|Fonctionnalité|Prise en charge par Xamarin|Commentaires supplémentaires|
+|Fonction|Prise en charge par Xamarin|Commentaires supplémentaires|
 |-------------|----------------------------|-------------------------|
 |Analyse des incidents, télémétrie et distribution des bêta|Oui||

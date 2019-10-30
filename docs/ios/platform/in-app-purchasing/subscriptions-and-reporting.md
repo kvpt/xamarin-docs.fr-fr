@@ -4,15 +4,15 @@ description: Ce document décrit les abonnements qui ne sont pas renouvelés, le
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752677"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032304"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Abonnements et rapports dans Xamarin. iOS
 
@@ -50,17 +50,17 @@ Le secret partagé de l’achat dans l’application doit être utilisé dans la
 
 Dans la page d’hébergement iTunes Connect, sélectionnez **mes applications**:   
    
- [![](subscriptions-and-reporting-images/image2.png "Sélectionner Mes apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
+ [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 Sélectionnez une application, puis cliquez sur l’onglet **achats dans l’application** :
 
-[![](subscriptions-and-reporting-images/image6.png "Cliquer sur l’onglet achats dans l’application")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 En bas de la page, sélectionnez **afficher ou générer un secret partagé**:
    
- [![](subscriptions-and-reporting-images/image40.png "Sélectionnez Afficher ou générer un secret partagé")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "Générer un secret partagé")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
 
 Pour utiliser le secret partagé, incluez-le dans la charge utile JSON envoyée aux serveurs d’Apple lors de la validation d’un accusé de réception d’achat dans l’application pour un abonnement renouvelable automatiquement, comme suit :
 
@@ -98,9 +98,9 @@ L’objet SKPaymentTransaction n’inclut pas le terme d’abonnement : vous de
 
 Pour faciliter le test des abonnements, leurs durées sont compressées lors des tests dans le bac à sable (sandbox). les abonnements d’une semaine sont renouvelés toutes les 3 minutes, les abonnements de 1 an par heure. Les abonnements sont renouvelés automatiquement un maximum de 6 fois lors du test dans le bac à sable (sandbox).
 
-## <a name="reporting"></a>Reporting
+## <a name="reporting"></a>Rapports
 
-iTunes Connect ( [iTunesConnect.Apple.com](http://itunesconnect.apple.com)) fournit les éléments suivants :   
+iTunes Connect ( [iTunesConnect.Apple.com](https://itunesconnect.apple.com)) fournit les éléments suivants :   
    
  **Ventes et tendances** : affiche les détails des téléchargements d’applications, des mises à jour et des achats dans l’application.   
    
@@ -108,9 +108,9 @@ iTunes Connect ( [iTunesConnect.Apple.com](http://itunesconnect.apple.com)) four
 
 Vous trouverez ci-dessous un exemple de rapport sur les ventes et les tendances :   
 
- [![](subscriptions-and-reporting-images/image42.png "Exemple de rapport de ventes et de tendances")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
- Il y a également une [application mobile iOS de l' **ITC Connect**(lien iTunes)](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
+ Il y a également une [application mobile iOS de l' **ITC Connect**(lien iTunes)](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8).
 les captures d’écran iPhone pour certaines des statistiques disponibles sont indiquées ici :   
    
- [![](subscriptions-and-reporting-images/image43.png "captures d’écran iPhone pour certaines des statistiques disponibles")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

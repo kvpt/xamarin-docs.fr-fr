@@ -4,15 +4,15 @@ description: Les services liés sont des services Android qui fournissent une in
 ms.prod: xamarin
 ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/04/2018
-ms.openlocfilehash: 584f523446584192cfa882697c0f76865ce78a10
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a3b0e8499d208f209de481163a236e5241c83ee6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754925"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024991"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Services liés dans Xamarin. Android
 
@@ -36,7 +36,7 @@ Ce diagramme illustre comment l’activité, la connexion de service, le Binder 
 
 Ce guide explique comment étendre la classe `Service` pour implémenter un service lié. Il aborde également l’implémentation de `IServiceConnection` et l’extension de `Binder` pour permettre à un client de communiquer avec le service. Un exemple d’application accompagne ce guide, qui contient une solution avec un seul projet Xamarin. Android appelé **[BoundServiceDemo](https://github.com/xamarin/monodroid-samples/tree/master/ApplicationFundamentals/ServiceSamples/BoundServiceDemo)** . Il s’agit d’une application de base qui montre comment implémenter un service et comment y lier une activité. Le service lié a une API très simple avec une seule méthode, `GetFormattedTimestamp`, qui retourne une chaîne qui indique à l’utilisateur quand le service a démarré et combien de temps il a été exécuté. L’application permet également à l’utilisateur de se dissocier manuellement et de se lier au service.
 
-[![Screenshot de l’application en cours d’exécution sur un téléphone Android](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
+[Capture d’écran ![de l’application exécutée sur un téléphone Android](bound-services-images/bound-services-03-sml.png)](bound-services-images/bound-services-03.png#lightbox)
 
 ## <a name="implementing-and-consuming-a-bound-service"></a>Implémentation et utilisation d’un service lié
 

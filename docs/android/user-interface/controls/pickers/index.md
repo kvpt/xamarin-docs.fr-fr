@@ -4,19 +4,19 @@ description: Utilisation de boîtes de dialogue Android intégrées pour interro
 ms.prod: xamarin
 ms.assetid: 57C86933-3F04-47DD-9839-72D522D73330
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: aeb8d647c08b81d5bc36932a888410c7961928a0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d2f458fd5433ce195c568bfd5f0b8014e3d787e7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510243"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029189"
 ---
 # <a name="picker-controls-for-xamarinandroid"></a>Contrôles de sélecteur pour Xamarin. Android
 
-Les sélecteurs sont des éléments d’interface utilisateur qui permettent à l’utilisateur de choisir une date ou une heure à l’aide des boîtes de dialogue fournies par Android:
+Les *sélecteurs* sont des éléments d’interface utilisateur qui permettent à l’utilisateur de choisir une date ou une heure à l’aide des boîtes de dialogue fournies par Android :
 
 - Le [Sélecteur de dates](~/android/user-interface/controls/pickers/date-picker.md) est utilisé pour sélectionner une date (année, mois et jour).
 

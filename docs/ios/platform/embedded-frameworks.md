@@ -4,15 +4,15 @@ description: Ce document décrit comment partager du code avec des infrastructur
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753241"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032535"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Frameworks intégrés dans Xamarin. iOS
 
@@ -38,13 +38,13 @@ Il existe deux façons de consommer des frameworks dans Xamarin. iOS :
 
 Cliquez avec le bouton droit sur le projet et accédez à ajouter des références natives
 
-![](embedded-frameworks-images/xam-native-refs.png "Sélectionnez Ajouter des références natives dans Visual Studio pour Mac")
+![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Cliquez avec le bouton droit sur le projet et accédez à ajouter des références natives
 
-![](embedded-frameworks-images/vs-native-refs.png "Sélectionnez Ajouter des références natives dans Visual Studio")
+![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
 
 -----
 
@@ -54,7 +54,7 @@ Dans les versions ultérieures de Visual Studio pour Mac et des outils Xamarin p
 
 Quelques exemples de projets se trouvent sur [GitHub](https://github.com/rolfbjarne/embedded-frameworks)
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 - Les frameworks incorporés sont uniquement pris en charge dans les projets [unifiés](~/cross-platform/macios/unified/index.md) .
 - Les frameworks incorporés sont uniquement pris en charge dans les projets avec une cible de déploiement d’au moins iOS 8,0.
@@ -70,7 +70,7 @@ Les applications sans extensions continuent de lien avec le runtime mono de mani
 
 Ce comportement peut être remplacé par le développeur de l’application, en ajoutant le code suivant comme argument mTouch supplémentaire dans les options de génération iOS du projet :
 
-- `--mono:static`: Liens avec le runtime mono statiquement.
-- `--mono:framework`: Liens avec le runtime mono en tant qu’infrastructure.
+- `--mono:static`: liens avec le runtime mono statiquement.
+- `--mono:framework`: liens avec le runtime mono en tant qu’infrastructure.
 
 Un scénario de liaison avec le runtime mono en tant qu’infrastructure même pour les applications sans extensions consiste à réduire la taille de l’exécutable, afin de surmonter les restrictions de taille qu’Apple applique sur le fichier exécutable. Pour référence, le runtime mono ajoute approximativement 1.7 Mo par architecture (à partir de Xamarin. iOS 8,12, mais son variation entre les versions, et même entre les applications). L’infrastructure mono ajoute approximativement 2,3 Mo par architecture, ce qui signifie que pour une application à architecture unique sans extensions, le fait que le lien de l’application avec le runtime mono en tant qu’infrastructure réduit la taille de l’exécutable d’environ 1.7 Mo, mais ajoute un Framework ~ 2.3 Mo, résultant dans un aucune d’application ~ 0,6 Mo plus grand.

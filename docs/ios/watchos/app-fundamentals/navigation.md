@@ -1,83 +1,83 @@
 ---
-title: Utilisation de watchOS Navigation dans Xamarin
-description: Ce document décrit comment travailler avec la navigation dans une application watchOS. Il aborde les interfaces modales, la navigation hiérarchique et interfaces basées sur la page.
+title: Utilisation de la navigation Watchos dans Xamarin
+description: Ce document explique comment utiliser la navigation dans une application Watchos. Il traite des interfaces modales, de la navigation hiérarchique et des interfaces basées sur des pages.
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 05da84949f6613bce24f103df4d86f1bdcd30764
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d3565e359ccbad9f7b779969f4273a8cbae4d438
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768720"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021746"
 ---
-# <a name="working-with-watchos-navigation-in-xamarin"></a>Utilisation de watchOS Navigation dans Xamarin
+# <a name="working-with-watchos-navigation-in-xamarin"></a>Utilisation de la navigation Watchos dans Xamarin
 
-L’option navigation le plus simple disponible sur l’observation est une simple [contextuelle modale](#modal) qui apparaît au-dessus de la scène actuelle.
+L’option de navigation la plus simple disponible sur la montre est un simple [message modal](#modal) qui apparaît en haut de la scène actuelle.
 
-Pour les applications de scène multi espion il sont deux paradigmes de navigation disponibles :
+Pour les applications Watch à plusieurs scènes, deux paradigmes de navigation sont disponibles :
 
 - [Navigation hiérarchique](#Hierarchical_Navigation)
-- [Interfaces basées sur la page](#Page-Based_Interfaces)
+- [Interfaces basées sur des pages](#Page-Based_Interfaces)
 
 <a name="modal"/>
 
 ## <a name="modal-interfaces"></a>Interfaces modales
 
-Utilisez le `PresentController` méthode pour ouvrir un contrôleur d’interface de façon modale. Le contrôleur d’interface doit déjà être défini dans le **Interface.storyboard**.
+Utilisez la méthode `PresentController` pour ouvrir un contrôleur d’interface de façon modale. Le contrôleur d’interface doit déjà être défini dans l' **interface. Storyboard**.
 
 ```csharp
 PresentController ("pageController","some context info");
 ```
 
-Contrôleurs présentées de façon modale utilisent tout l’écran (couvrant la scène précédente). Par défaut, le titre est défini **Annuler** et en appuyant dessus fait disparaître le contrôleur.
+Les contrôleurs présentés de façon modale utilisent la totalité de l’écran (qui couvre la scène précédente). Par défaut, le titre est défini sur Annuler et son appui sur le contrôleur est **abandonné** .
 
-Pour fermer par programmation le contrôleur présentées de façon modale, appelez `DismissController`.
+Pour fermer par programmation le contrôleur présenté de façon modale, appelez `DismissController`.
 
 ```csharp
 DismissController();
 ```
 
-Écrans modales peuvent être une scène unique ou utiliser une disposition basée sur des pages.
+Les écrans modaux peuvent être une seule scène ou utiliser une disposition basée sur une page.
 
 <a name="Hierarchical_Navigation"/>
 
 ## <a name="hierarchical-navigation"></a>Navigation hiérarchique
 
-Présente les scènes comme une pile qui peut être navigué via, similaire à la façon dont `UINavigationController` fonctionne sur iOS. Arrière-plan peut être placé sur la pile de navigation et dépilés (par programmation ou par la sélection de l’utilisateur).
+Présente des scènes comme une pile qui peut être parcourue de nouveau, de la même façon que `UINavigationController` fonctionne sur iOS. Les scènes peuvent faire l’objet d’un push dans la pile de navigation et dépilés (par programmation ou par sélection de l’utilisateur).
 
-![](navigation-images/hierarchy-1.png "En arrière-plan peut être placé sur la pile de navigation") ![](navigation-images/hierarchy-2.png "en arrière-plan peut être dépilée navigation")
+![](navigation-images/hierarchy-1.png "Les scènes peuvent faire l’objet d’un push dans la pile de navigation") ![](navigation-images/hierarchy-2.png "Les scènes peuvent être dépilées de la pile de navigation")
 
-Comme avec iOS, un balayage de bord de gauche navigue vers le contrôleur parent dans une pile de navigation hiérarchique.
+Comme avec iOS, un balayage de bord gauche revient au contrôleur parent dans une pile de navigation hiérarchique.
 
-Les deux le [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) et [WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) exemples incluent la navigation hiérarchique.
+Les exemples [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) et [WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables) incluent la navigation hiérarchique.
 
-### <a name="pushing-and-popping-in-code"></a>Poussant et en dépilant dans le Code
+### <a name="pushing-and-popping-in-code"></a>Push et dépilé dans le code
 
-Regardez Kit ne nécessite pas un ailleurs « contrôleur de navigation » doit être créé comme le fait d’iOS - simplement transmettre un contrôleur à l’aide de la `PushController` (méthode) et une pile de navigation seront créés automatiquement.
+Le kit Watch ne nécessite pas la création d’un « contrôleur de navigation » trop arching comme iOS. il effectue simplement un push d’un contrôleur à l’aide de la méthode `PushController` et une pile de navigation est créée automatiquement.
 
 ```csharp
 PushController("secondPageController","some context info");
 ```
 
-Écran de la surveillance inclura un **retour** bouton dans le coin supérieur gauche, mais vous pouvez supprimer par programme une scène à partir de la pile de navigation avec `PopController`.
+L’écran de l’espion inclut un bouton **précédent** dans l’angle supérieur gauche, mais vous pouvez également supprimer par programmation une scène de la pile de navigation à l’aide de `PopController`.
 
 ```csharp
 PopController();
 ```
 
-Comme avec iOS, il est également possible de revenir à la racine de la pile de navigation avec `PopToRootController`.
+Comme avec iOS, il est également possible de revenir à la racine de la pile de navigation à l’aide de `PopToRootController`.
 
 ```csharp
 PopToRootController();
 ```
 
-### <a name="using-segues"></a>À l’aide de Segues
+### <a name="using-segues"></a>Utilisation de SEGUES
 
-Enchaînements peuvent être créés entre les scènes dans la table de montage séquentiel pour définir la navigation hiérarchique. Pour obtenir le contexte de la scène cible, les appels de système d’exploitation `GetContextForSegue` pour initialiser le nouveau contrôleur d’interface.
+SEGUES peut être créé entre des scènes dans le Storyboard pour définir la navigation hiérarchique. Pour obtenir le contexte de la scène cible, le système d’exploitation appelle `GetContextForSegue` pour initialiser le nouveau contrôleur d’interface.
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier)
@@ -91,13 +91,13 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 <a name="Page-Based_Interfaces"/>
 
-## <a name="page-based-interfaces"></a>Interfaces basées sur la page
+## <a name="page-based-interfaces"></a>Interfaces basées sur des pages
 
-Interfaces basées sur la page balayez vers la gauche à droite, similaire à la façon dont `UIPageViewController` fonctionne sur iOS. Points d’indicateur sont affichés dans la partie inférieure de l’écran pour afficher la page actuellement affichée.
+Les interfaces basées sur des pages sont balayées de gauche à droite, de la même façon que `UIPageViewController` fonctionne sur iOS. Les points d’indicateur s’affichent le long du bord inférieur de l’écran pour indiquer la page actuellement affichée.
 
-![](navigation-images/paged-1.png "Exemple de première page") ![](navigation-images/paged-2.png "deuxième exemple de page") ![](navigation-images/paged-5.png "cinquième page d’exemples")
+![](navigation-images/paged-1.png "Exemple de première page")![](navigation-images/paged-2.png "Exemple de deuxième page")![](navigation-images/paged-5.png "Exemple de cinquième page")
 
-Pour rendre une interface basée sur la page de l’interface utilisateur principale pour votre application Apple watch, utilisez `ReloadRootControllers` avec un tableau de contrôleurs d’interface et les contextes :
+Pour faire d’une interface basée sur une page l’interface utilisateur principale de votre application Watch, utilisez `ReloadRootControllers` avec un tableau de contextes et de contrôleurs d’interface :
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -105,7 +105,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 ReloadRootControllers (controllerNames, contexts);
 ```
 
-Vous pouvez également présenter un contrôleur de page qui n’est pas la racine à l’aide de `PresentController` parmi les autres scènes dans une application.
+Vous pouvez également présenter un contrôleur basé sur une page qui n’est pas la racine à l’aide de `PresentController` de l’une des autres scènes dans une application.
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };

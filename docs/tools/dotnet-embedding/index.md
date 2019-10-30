@@ -3,19 +3,19 @@ title: Incorporation .NET
 description: L’incorporation .net permet à votre code .net existantC#( F#,, et autres) d’être consommé par du code écrit dans d’autres langages de programmation.
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: af068e5a09cc11eec33508a4f2eb33186168aae6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5a0e7eeaee9b3189de63d0b82a3822cc68023505
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290225"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006949"
 ---
 # <a name="net-embedding"></a>Incorporation .NET
 
-![Preview](~/media/shared/preview.png)
+![Aperçu](~/media/shared/preview.png)
 
 L’incorporation .net permet à votre code .net existantC#( F#,, et autres) d’être consommé à partir d’autres langages de programmation et dans différents environnements.
 
@@ -35,7 +35,7 @@ Il prend en charge plusieurs consommateurs de langage. il est donc destiné au c
 
 D’autres langues seront fournies plus tard.
 
-## <a name="getting-started"></a>Prise en main
+## <a name="getting-started"></a>Commencer
 
 Pour commencer, consultez l’un de nos guides pour chacune des langues actuellement prises en charge :
 

@@ -4,15 +4,15 @@ description: Ce document contient des liens vers des guides qui décrivent les d
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289534"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022043"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Contrôles d’interface utilisateur dans Xamarin. iOS
 
@@ -28,7 +28,7 @@ La classe UIButton est utilisée pour représenter différents styles de bouton 
 
 ## <a name="collection-viewsuicollectionviewmd"></a>[Vues de collection](uicollectionview.md)
 
-Les vues de collection, disponibles `UICollectionView` dans la classe, sont un nouveau concept dans iOS 6 qui introduit la présentation de plusieurs éléments à l’écran à l’aide de dispositions. Les modèles permettant de fournir des données `UICollectionView` à un pour créer des éléments et interagir avec ces éléments suivent les mêmes modèles de délégation et de source de données que ceux utilisés couramment dans le développement iOS.
+Les vues de collection, disponibles dans la classe `UICollectionView`, sont un nouveau concept dans iOS 6 qui introduit la présentation de plusieurs éléments à l’écran à l’aide de dispositions. Les modèles permettant de fournir des données à un `UICollectionView` pour créer des éléments et interagir avec ces éléments suivent les mêmes modèles de délégation et de source de données que ceux utilisés dans le développement iOS.
 
 ## <a name="imagesimagemd"></a>[Images](image.md)
 
@@ -36,15 +36,15 @@ L’ajout d’images à votre application nécessite deux étapes : tout d’ab
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[Contrôles manuels de l’appareil photo](intro-to-manual-camera-controls.md)
 
-Les contrôles manuels de l’appareil photo, `AVFoundation Framework` fournis par le dans iOS 8, permettent à une application mobile de prendre le contrôle total de l’appareil photo d’un appareil iOS. Ce niveau de contrôle affiné peut être utilisé pour créer des applications d’appareil photo de niveau professionnel et fournir des compositions d’artistes en modifiant les paramètres de l’appareil photo tout en utilisant une image ou une vidéo continue.
+Les contrôles manuels de l’appareil photo, fournis par le `AVFoundation Framework` dans iOS 8, permettent à une application mobile de prendre le contrôle total de l’appareil photo d’un appareil iOS. Ce niveau de contrôle affiné peut être utilisé pour créer des applications d’appareil photo de niveau professionnel et fournir des compositions d’artistes en modifiant les paramètres de l’appareil photo tout en utilisant une image ou une vidéo continue.
 
-## <a name="mapsios-mapsindexmd"></a>[Cartes](ios-maps/index.md)
+## <a name="mapsios-mapsindexmd"></a>[Plans](ios-maps/index.md)
 
 Les mappages sont une fonctionnalité commune à tous les systèmes d’exploitation mobiles modernes. iOS offre une prise en charge du mappage en mode natif via l’infrastructure du kit de cartes. Avec le kit de cartes, les applications peuvent facilement ajouter des cartes riches et interactives. Ces cartes peuvent être personnalisées de différentes façons, telles que l’ajout d’annotations pour marquer les emplacements sur une carte et la superposition de graphiques de formes arbitraires. Le kit de cartes offre une prise en charge intégrée pour l’indication de l’emplacement actuel d’un appareil.
 
 ## <a name="labelslabelsmd"></a>[Étiquettes](labels.md)
 
-Le `UILabel` contrôle est utilisé pour afficher du texte en lecture seule et multiligne.
+Le contrôle `UILabel` est utilisé pour afficher du texte en lecture seule et multiligne.
 
 ## <a name="pickers-and-date-pickerspickermd"></a>[Sélecteurs et sélecteurs de dates](picker.md)
 
@@ -54,7 +54,7 @@ Un cas utilisateur spécifique pour les sélecteurs pour définir la date et/ou 
 
 ## <a name="progress-and-activity-indicatorsprogress-activity-indicatormd"></a>[Indicateurs de progression et d’activité](progress-activity-indicator.md)
 
-iOS offre deux méthodes principales pour indiquer la progression de votre application : Indicateurs d’activité (y compris un indicateur d’activité _réseau_ spécifique) et barres de progression.
+iOS offre deux méthodes principales pour indiquer la progression de votre application : les indicateurs d’activité (y compris un indicateur d’activité _réseau_ spécifique) et les barres de progression.
 
 ## <a name="search-barssearchbarmd"></a>[Barres de recherche](searchbar.md)
 
@@ -62,11 +62,11 @@ Le UISearchBar est utilisé pour effectuer une recherche dans une liste de valeu
 
 ## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[Curseurs, commutateurs et contrôles segmentés](slider-switch-segmented-controls.md)
 
-Le contrôle Slider permet une sélection simple d’une valeur numérique dans une plage. iOS utilise `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. Un contrôle segmenté est un moyen organisé pour permettre aux utilisateurs d’interagir avec un petit nombre d’options.
+Le contrôle Slider permet une sélection simple d’une valeur numérique dans une plage. iOS utilise le `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. Un contrôle segmenté est un moyen organisé pour permettre aux utilisateurs d’interagir avec un petit nombre d’options.
 
 ## <a name="stack-viewuistackviewmd"></a>[Vue en pile](uistackview.md)
 
-Le contrôle d’affichage de`UIStackView`la pile () tire parti de la puissance des classes de mise en page et de taille automatiques pour gérer une pile de sous-vues, horizontale ou verticale, qui répond de manière dynamique à l’orientation et à la taille de l’écran de l’appareil iOS.
+Le contrôle d’affichage de la pile (`UIStackView`) tire parti de la puissance des classes de mise en page et de taille automatiques pour gérer une pile de sous-vues, horizontale ou verticale, qui répond de manière dynamique à l’orientation et à la taille de l’écran de l’appareil iOS.
 
 ## <a name="tables-and-cellstablesindexmd"></a>[Tableaux et cellules](tables/index.md)
 
@@ -74,7 +74,7 @@ Cette section présente les classes utilisées pour créer et afficher des table
 
 ## <a name="text-inputtext-inputmd"></a>[Entrée de texte](text-input.md)
 
-L’acceptation de l’entrée de texte de `UITextField` l’utilisateur est effectuée avec le pour les entrées sur une seule ligne et UITextView pour le texte modifiable sur plusieurs lignes. Vous pouvez faire glisser l’un de ces contrôles sur un écran et double-cliquer pour définir le texte initial.
+L’acceptation de l’entrée de texte de l’utilisateur est effectuée avec la `UITextField` pour les entrées sur une seule ligne et UITextView pour le texte modifiable sur plusieurs lignes. Vous pouvez faire glisser l’un de ces contrôles sur un écran et double-cliquer pour définir le texte initial.
 
 ## <a name="tab-bars-and-tab-bar-controllerscreating-tabbed-applicationsmd"></a>[Barres d’onglets et contrôleurs de barre d’onglets](creating-tabbed-applications.md)
 
@@ -82,7 +82,7 @@ les applications iOS utilisant une interface utilisateur de navigation à onglet
 
 ## <a name="web-viewsuiwebviewmd"></a>[Affichages Web](uiwebview.md)
 
-Dans cet article, nous allons explorer chacun des trois affichages Web fournis par Apple : `UIWebView`, `WKWebview`, et `SFSafariViewController`, leurs similitudes et différences, et comment ils peuvent être utilisés.
+Dans cet article, nous allons explorer chacun des trois affichages Web fournis par Apple : `UIWebView`, `WKWebview`et `SFSafariViewController`, leurs similitudes et leurs différences, et comment ils peuvent être utilisés.
 
 ## <a name="related-links"></a>Liens associés
 

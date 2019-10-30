@@ -4,21 +4,21 @@ description: Ce document décrit comment utiliser le débogueur dans Visual Stud
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a1a110bf1ff021c3280e19dea777180d71dba1a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ae140f7ea75c1631c6c96170af738f3fac04dcdb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763357"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026518"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
 _Vous pouvez déboguer les applications Xamarin.iOS à l’aide du débogueur intégré de Visual Studio pour Mac ou Visual Studio._
 
-Utilisez la prise en charge du débogage natif de Visual Studio pour Mac afin de déboguer le code C# et celui d’autres langages managés. Utilisez [LLDB](http://lldb.llvm.org/tutorial.html) quand vous devez déboguer du code C, C++ ou Objective-C lié à votre projet Xamarin.iOS.
+Utilisez la prise en charge du débogage natif de Visual Studio pour Mac afin de déboguer le code C# et celui d’autres langages managés. Utilisez [LLDB](https://lldb.llvm.org/tutorial.html) quand vous devez déboguer du code C, C++ ou Objective-C lié à votre projet Xamarin.iOS.
 
 > [!NOTE]
 > Lorsque vous compilez des applications en mode débogage, Xamarin.iOS génère des applications plus lentes et beaucoup plus volumineuses, car chaque ligne de code doit être instrumentée. Avant la mise en production, veillez à effectuer une build de mise en production.
@@ -33,11 +33,11 @@ Quand vous êtes prêt à déboguer votre application, la première étape consi
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging1.png "Définition de points d’arrêt")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging1.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging1a.png "Définition de points d’arrêt")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -45,13 +45,13 @@ Vous pouvez afficher tous les points d’arrêt définis dans votre code en acc�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/image0a.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image0a.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Si le panneau Points d’arrêt ne s’affiche pas automatiquement, vous pouvez le rendre visible en sélectionnant _Affichage > Fenêtres de débogage > Points d’arrêt_
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/image0.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image0.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image0.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Si le panneau Points d’arrêt ne s’affiche pas automatiquement, vous pouvez le rendre visible en sélectionnant _Débogage > Fenêtres > Points d’arrêt_
 
@@ -61,13 +61,13 @@ Avant de déboguer une application, vérifiez toujours que la configuration est 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7.png "Débogage sur le simulateur")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
-[ ![](debugging-in-xamarin-ios-images/debugging7a.png "Débogage sur un appareil physique")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7a.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7c.png "Débogage sur le simulateur")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
-[ ![](debugging-in-xamarin-ios-images/debugging7d.png "Débogage sur un appareil physique")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7c.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7d.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -76,11 +76,11 @@ Pour démarrer le débogage, sélectionnez l’appareil cible ou un appareil sim
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7b.png "Sélectionner l’appareil cible")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7e.png "Sélectionner l’appareil cible")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -88,11 +88,11 @@ Déployez ensuite votre application en appuyant sur le bouton **Lecture**.
 
 Quand vous atteignez un point d’arrêt, le code est mis en surbrillance en jaune :
 
-[![](debugging-in-xamarin-ios-images/image2.png "Le code est mis en surbrillance en jaune")](debugging-in-xamarin-ios-images/image2.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image2.png "The code will be highlighted yellow")](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 À ce stade, vous pouvez utiliser les outils de débogage tels que l’inspection des valeurs des objets, pour obtenir des informations supplémentaires sur ce qui se passe dans votre code :
 
-[![](debugging-in-xamarin-ios-images/image3.png "Affichage d’une valeur de couleur")](debugging-in-xamarin-ios-images/image3.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image3.png "Displaying a color value")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Points d'arrêt conditionnels
 
@@ -104,25 +104,25 @@ Pour définir un point d’arrêt conditionnel, accédez à la **fenêtre Propri
 
 - Pour ajouter un nouveau point d’arrêt conditionnel, cliquez avec le bouton droit sur la marge de l’éditeur, à gauche du numéro de la ligne de code pour laquelle vous voulez définir un point d’arrêt, et sélectionnez Nouveau point d’arrêt :
 
-  [![](debugging-in-xamarin-ios-images/image4.png "Sélectionner un nouveau point d’arrêt")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+  [![](debugging-in-xamarin-ios-images/image4.png "Select New Breakpoint")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Pour ajouter une condition à un point d’arrêt existant, cliquez avec le bouton droit sur le point d’arrêt, puis sélectionnez **Propriétés de point d’arrêt** ou dans le **Panneau Points d’arrêt**, sélectionnez le bouton de propriétés illustré ci-dessous :
 
-  [![](debugging-in-xamarin-ios-images/image5.png "Panneau Points d’arrêt")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+  [![](debugging-in-xamarin-ios-images/image5.png "The Breakpoints Pad")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 Vous pouvez ensuite entrer la condition de déclenchement du point d’arrêt :
 
-[![](debugging-in-xamarin-ios-images/image6.png "Entrer la condition pour que le point d’arrêt se produise")](debugging-in-xamarin-ios-images/image6.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image6.png "Enter the condition for the breakpoint to occur")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Pour définir un point d’arrêt conditionnel dans Visual Studio, commencez par [définir un point d’arrêt classique](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Cliquez avec le bouton droit sur le point d’arrêt pour afficher son menu contextuel :
 
- [![](debugging-in-xamarin-ios-images/image4vs.png "Menu contextuel du point d’arrêt")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
+ [![](debugging-in-xamarin-ios-images/image4vs.png "The breakpoint context menu")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 Sélectionnez **Conditions...** pour afficher le menu _Paramètres de point d’arrêt_ :
 
- [![](debugging-in-xamarin-ios-images/image6vs.png "Menu Paramètres de point d’arrêt")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
+ [![](debugging-in-xamarin-ios-images/image6vs.png "The Breakpoint Settings menu")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 Ici, vous pouvez entrer les conditions de déclenchement du point d’arrêt
 
@@ -138,9 +138,9 @@ Quand un point d’arrêt a été atteint, les outils de débogage vous permette
 
 Dans Visual Studio pour Mac, ils se présentent comme ceci :
 
- [![](debugging-in-xamarin-ios-images/image7.png "Les outils de débogage permettent au développeur de contrôler l’exécution du programme")](debugging-in-xamarin-ios-images/image7.png#lightbox)
+ [![](debugging-in-xamarin-ios-images/image7.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-Ces règles sont les suivantes :
+Ces équivalents sont :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal** - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
@@ -151,9 +151,9 @@ Ces règles sont les suivantes :
 
 Dans Visual Studio, ils se présentent comme ceci :
 
-[![](debugging-in-xamarin-ios-images/image7vs.png "Les outils de débogage permettent au développeur de contrôler l’exécution du programme")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image7vs.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-Ces règles sont les suivantes :
+Ces équivalents sont :
 
 - **Lecture/Arrêt** - Permet de démarrer/d’arrêter l’exécution du code, jusqu’au point d’arrêt suivant.
 - **Pas à pas principal (F11)**  - Permet d’exécuter la ligne de code suivante. Si la ligne suivante est un appel de fonction, l’opération Pas à pas principal exécute la fonction et s’arrête à la ligne de code suivante située _après_ la fonction.
@@ -198,7 +198,7 @@ Ce débogueur Soft nécessite un schéma de débogage coopératif quand il s’e
 
 Les journaux d’incidents et la sortie de la classe Console sont envoyés à la console de l’iPhone. Vous pouvez accéder à cette console avec Xcode en utilisant l’organisateur, et en sélectionnant votre appareil dans l’organisateur.
 
-Si vous ne souhaitez pas démarrer Xcode, vous pouvez utiliser le [iPhone Configuration Utility (Utilitaire de configuration iPhone)](http://www.apple.com/support/iphone/enterprise/) d’Apple pour accéder directement à la console. En prime, vous pouvez accéder aux journaux de la console à partir d’une machine Windows, si vous déboguez un problème sur le terrain.
+Si vous ne souhaitez pas démarrer Xcode, vous pouvez utiliser le [iPhone Configuration Utility (Utilitaire de configuration iPhone)](https://www.apple.com/support/iphone/enterprise/) d’Apple pour accéder directement à la console. En prime, vous pouvez accéder aux journaux de la console à partir d’une machine Windows, si vous déboguez un problème sur le terrain.
 
 Pour les utilisateurs de Visual Studio, certains journaux sont disponibles dans la fenêtre Sortie. Toutefois, passez sur un Mac pour obtenir des journaux plus complets et plus détaillés.
 
@@ -216,13 +216,13 @@ Comme cette fonctionnalité consomme plus de mémoire durant le débogage, elle 
 
 Pour activer cette fonctionnalité, vérifiez que l’option **Déboguer uniquement le code du projet ; ignorer le code du framework** est désélectionnée sous le menu _Visual Studio pour Mac > Préférences > Débogueur_ comme illustré ci-dessous :
 
-[![](debugging-in-xamarin-ios-images/debugging6.png "Débogage des bibliothèques de classes de Mono")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 Pour déboguer les bibliothèques de classes dans Visual Studio, vous devez désactiver **Uniquement mon code** sous le menu _Déboguer > Options_. Dans le nœud _Débogage > Général_, décochez la case **Activer Uniquement mon code** :
 
-[![](debugging-in-xamarin-ios-images/debugging6vs.png "Débogage des bibliothèques de classes de Mono")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

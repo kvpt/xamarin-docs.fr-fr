@@ -4,15 +4,15 @@ description: Ce document décrit les storyboards unifiés dans Xamarin. iOS. Les
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 07a61eb9d0c16f82d6c367cefc9e3050ca8dfc25
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768834"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001825"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Storyboards unifiés dans Xamarin. iOS
 
@@ -28,12 +28,12 @@ Avant iOS 8, le développeur a utilisé `UIInterfaceOrientation` et `UIInterface
 
 Les appareils sont définis par des classes de taille, à la fois dans les axes vertical et horizontal, et il existe deux types de classes de taille dans iOS 8 :
 
-- **Normal** : soit pour une grande taille d’écran (par exemple, un iPad), soit pour un gadget qui donne l’impression d’une grande taille (par exemple, un`UIScrollView`
+- **Normal** : soit pour une grande taille d’écran (par exemple, un iPad), soit pour un gadget qui donne l’impression d’une grande taille (par exemple, un `UIScrollView`
 - **Compact** : il s’agit des appareils plus petits (tels qu’un iPhone). Cette taille prend en compte l’orientation de l’appareil.
 
 Si les deux concepts sont utilisés ensemble, le résultat est une grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes, comme illustré dans le diagramme suivant :
 
- [![](unified-storyboards-images/sizeclassgrid.png "Grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les orientations standard et compactes")](unified-storyboards-images/sizeclassgrid.png#lightbox)
+ [![](unified-storyboards-images/sizeclassgrid.png "A 2 x 2 grid that defines the different possible sizes that can be used in Regular and Compact orientations")](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
 Le développeur peut créer un contrôleur d’affichage qui utilise l’une des quatre possibilités qui aboutirait à des dispositions différentes (comme indiqué dans les graphiques ci-dessus).
 
@@ -41,13 +41,13 @@ Le développeur peut créer un contrôleur d’affichage qui utilise l’une des
 
 L’iPad, en raison de la taille, a une taille de classe **normale** pour les deux orientations.
 
- [![](unified-storyboards-images/image1.png "Classes de taille iPad")](unified-storyboards-images/image1.png#lightbox)
+ [![](unified-storyboards-images/image1.png "iPad Size Classes")](unified-storyboards-images/image1.png#lightbox)
 
 ### <a name="iphone-size-classes"></a>Classes de taille iPhone
 
 L’iPhone a des classes de taille différentes en fonction de l’orientation de l’appareil :
 
- [![](unified-storyboards-images/iphonesizeclasses.png "Classes de taille iPhone")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
+ [![](unified-storyboards-images/iphonesizeclasses.png "iPhone Size Classes")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
 - Lorsque l’appareil est en mode portrait, l’écran a une classe **compacte** horizontalement **et** verticalement
 - Lorsque l’appareil est en mode paysage, les classes d’écran sont inversées en mode portrait.
@@ -56,7 +56,7 @@ L’iPhone a des classes de taille différentes en fonction de l’orientation d
 
 Les tailles sont les mêmes que les iPhone antérieurs lorsqu’elles sont en orientation portrait, mais différentes en mode paysage :
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "Classes de taille de iPhone 6 plus")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
+[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus Size Classes")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
 Étant donné que l’écran iPhone 6 plus est suffisamment grand, il peut avoir une classe de taille de largeur normale en mode paysage.
 
@@ -64,13 +64,13 @@ Les tailles sont les mêmes que les iPhone antérieurs lorsqu’elles sont en or
 
 L’iPhone 6 plus utilise un nouvel affichage HD à l’écran avec un facteur d’échelle d’écran de 3,0 (trois fois la résolution d’écran de l’iPhone d’origine). Pour offrir la meilleure expérience possible sur ces appareils, incluez de nouvelles illustrations conçues pour cette échelle à l’écran. Dans Xcode 6 et versions ultérieures, les catalogues de ressources peuvent inclure des images à des tailles 1x, 2x et 3x. Ajoutez simplement les nouvelles ressources d’image et iOS choisira les ressources appropriées lors de l’exécution sur un iPhone 6 plus.
 
-Le comportement de chargement d’image dans iOS reconnaît `@3x` également un suffixe sur les fichiers image. Par exemple, si le développeur comprend une ressource d’image (à des résolutions différentes) dans le bundle de l’application avec les noms `MonkeyIcon.png`de `MonkeyIcon@2x.png`fichiers suivants `MonkeyIcon@3x.png`:, et. Sur l’iPhone 6 plus l' `MonkeyIcon@3x.png` image sera utilisée automatiquement si le développeur charge une image à l’aide du code suivant :
+Le comportement de chargement d’image dans iOS reconnaît également un suffixe de `@3x` sur les fichiers image. Par exemple, si le développeur comprend une ressource d’image (à des résolutions différentes) dans le bundle de l’application avec les noms de fichiers suivants : `MonkeyIcon.png`, `MonkeyIcon@2x.png`et `MonkeyIcon@3x.png`. Sur l’iPhone 6 plus l’image `MonkeyIcon@3x.png` sera utilisée automatiquement si le développeur charge une image à l’aide du code suivant :
 
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
 
-Ou, s’ils affectent l’image à un élément d’interface utilisateur à l' `MonkeyIcon.png`aide du `MonkeyIcon@3x.png` concepteur IOS en tant que, le sera utilisé, de nouveau automatiquement, sur l’iPhone 6 plus.
+Ou, s’ils affectent l’image à un élément d’interface utilisateur à l’aide du concepteur iOS comme `MonkeyIcon.png`, le `MonkeyIcon@3x.png` sera utilisé, de nouveau automatiquement, sur l’iPhone 6 plus.
 
 <a name="dynamic-launch-screens" />
 
@@ -78,33 +78,33 @@ Ou, s’ils affectent l’image à un élément d’interface utilisateur à l' 
 
 Le fichier d’écran de lancement s’affiche sous la forme d’un écran de démarrage lorsqu’une application iOS est lancée pour fournir des commentaires à l’utilisateur que l’application est en train de démarrer. Avant iOS 8, le développeur devait inclure plusieurs `Default.png` ressources d’image pour chaque type d’appareil, l’orientation et la résolution d’écran sur lesquels l’application s’exécutait.
 
-Nouveauté d’iOS 8, le développeur peut créer un seul fichier atomique `.xib` dans Xcode qui utilise des classes de mise en page et de taille automatiques pour créer un *écran de lancement dynamique* qui fonctionnera pour chaque appareil, résolution et orientation. Cela réduit non seulement la quantité de travail requise du développeur pour créer et gérer toutes les ressources d’image requises, mais elle réduit la taille de l’offre groupée installée de l’application.
+Nouveauté d’iOS 8, le développeur peut créer un seul fichier `.xib` atomique dans Xcode qui utilise des classes de mise en page et de taille automatiques pour créer un *écran de lancement dynamique* qui fonctionnera pour chaque appareil, résolution et orientation. Cela réduit non seulement la quantité de travail requise du développeur pour créer et gérer toutes les ressources d’image requises, mais elle réduit la taille de l’offre groupée installée de l’application.
 
 ## <a name="traits"></a>Caractéristiques
 
-Les caractéristiques sont des propriétés qui peuvent être utilisées pour déterminer la façon dont une disposition change en fonction de l’évolution de son environnement. Ils se composent d’un ensemble de `HorizontalSizeClass` propriétés `VerticalSizeClass` (et `UIUserInterfaceSizeClass`basées sur), ainsi que de l’interface `UIUserInterfaceIdiom`idiome () et de l’échelle d’affichage.
+Les caractéristiques sont des propriétés qui peuvent être utilisées pour déterminer la façon dont une disposition change en fonction de l’évolution de son environnement. Ils se composent d’un ensemble de propriétés (`HorizontalSizeClass` et `VerticalSizeClass` basées sur `UIUserInterfaceSizeClass`), ainsi que de l’idiome d’interface (`UIUserInterfaceIdiom`) et de l’échelle d’affichage.
 
-Tous les États ci-dessus sont encapsulés dans un conteneur auquel Apple fait référence en tant que collection `UITraitCollection`de caractéristiques (), qui contient non seulement les propriétés mais également leurs valeurs.
+Tous les États ci-dessus sont encapsulés dans un conteneur auquel Apple fait référence en tant que collection de traits (`UITraitCollection`), qui contient non seulement les propriétés mais également leurs valeurs.
 
 ## <a name="trait-environment"></a>Environnement de trait
 
 Les environnements de caractéristiques sont une nouvelle interface dans iOS 8 et peuvent retourner une collection de traits pour les objets suivants :
 
-- Écrans ( `UIScreens` ).
-- Windows ( `UIWindows` ).
-- Contrôleurs d' `UIViewController` affichage ().
-- Views ( `UIView` ).
-- Contrôleur de présentation `UIPresentationController` ().
+- Écrans (`UIScreens`).
+- Windows (`UIWindows`).
+- Contrôleurs d’affichage (`UIViewController`).
+- Vues (`UIView`).
+- Contrôleur de présentation (`UIPresentationController`).
 
 Le développeur utilise la collection de traits retournée par un environnement de trait pour déterminer la façon dont une interface utilisateur doit être présentée.
 
 Tous les environnements de caractéristiques forment une hiérarchie comme indiqué dans le diagramme suivant :
 
- [![](unified-storyboards-images/viewhierarchy.png "Diagramme de la hiérarchie des environnements de caractéristiques")](unified-storyboards-images/viewhierarchy.png#lightbox)
+ [![](unified-storyboards-images/viewhierarchy.png "The Trait Environments hierarchy diagram")](unified-storyboards-images/viewhierarchy.png#lightbox)
 
 La collection de traits que chacun des environnements de caractéristiques ci-dessus est en passe, par défaut, du parent à l’environnement enfant.
 
-Outre l’obtention de la collection de caractéristiques actuelle, l’environnement de trait `TraitCollectionDidChange` a une méthode, qui peut être substituée dans les sous-classes d’affichage ou de contrôleur d’affichage. Le développeur peut utiliser cette méthode pour modifier tous les éléments d’interface utilisateur qui dépendent des traits lorsque ces traits ont changé.
+Outre l’obtention de la collection de caractéristiques actuelle, l’environnement de trait a une méthode `TraitCollectionDidChange`, qui peut être substituée dans les sous-classes d’affichage ou de contrôleur d’affichage. Le développeur peut utiliser cette méthode pour modifier tous les éléments d’interface utilisateur qui dépendent des traits lorsque ces traits ont changé.
 
 ## <a name="typical-trait-collections"></a>Collections de caractéristiques typiques
 
@@ -112,18 +112,18 @@ Cette section couvre les types typiques de collections de traits que l’utilisa
 
 Voici une collection de caractéristiques typique que le développeur peut voir sur un iPhone :
 
-|Propriété|`Value`|
+|Property|valeur|
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
-|`VerticalSizeClass`|Normal|
+|`VerticalSizeClass`|Normale|
 |`UserInterfaceIdom`|Phone|
-|`DisplayScale`|2.0|
+|`DisplayScale`|2,0|
 
 L’ensemble ci-dessus représente une collection de traits complète, car elle contient des valeurs pour toutes ses propriétés de trait.
 
 Il est également possible de disposer d’une collection de caractéristiques qui ne contient pas certaines de ses valeurs (dont Apple fait référence à une valeur *non spécifiée*) :
 
-|Propriété|Valeur|
+|Property|valeur|
 |--- |--- |
 |`HorizontalSizeClass`|ROM|
 |`VerticalSizeClass`|Non spécifié|
@@ -134,11 +134,11 @@ En règle générale, toutefois, lorsque le développeur demande l’environneme
 
 Si un environnement de trait (comme un affichage ou un contrôleur d’affichage) n’est pas à l’intérieur de la hiérarchie d’affichage actuelle, le développeur peut récupérer des valeurs non spécifiées pour une ou plusieurs des propriétés de trait.
 
-Le développeur obtient également une collection de traits partiellement qualifiée s’ils utilisent l’une des méthodes de création fournies par Apple, `UITraitCollection.FromHorizontalSizeClass`telles que, pour créer une collection.
+Le développeur obtient également une collection de traits partiellement qualifiée s’ils utilisent l’une des méthodes de création fournies par Apple, telles que `UITraitCollection.FromHorizontalSizeClass`, pour créer une nouvelle collection.
 
 Une opération qui peut être effectuée sur plusieurs collections de caractéristiques consiste à les comparer les unes aux autres, ce qui implique de demander une collection de caractéristiques si elle en contient une autre. Ce qui est prévu par la *relation contenant-contenu* est que, pour toute caractéristique spécifiée dans la deuxième collection, la valeur doit correspondre exactement à la valeur de la première collection.
 
-Pour tester deux caractéristiques, utilisez la `Contains` méthode `UITraitCollection` du passage de la valeur de la caractéristique à tester.
+Pour tester deux caractéristiques, utilisez la méthode `Contains` du `UITraitCollection` en passant la valeur de la caractéristique à tester.
 
 Le développeur peut effectuer manuellement les comparaisons dans le code pour déterminer comment mettre en page les vues ou les contrôleurs d’affichage. Toutefois, `UIKit` utilise cette méthode en interne pour fournir certaines de ses fonctionnalités, comme dans le proxy d’apparence, par exemple.
 
@@ -146,21 +146,21 @@ Le développeur peut effectuer manuellement les comparaisons dans le code pour d
 
 Le proxy d’apparence a été introduit dans les versions antérieures d’iOS pour permettre aux développeurs de personnaliser les propriétés de leurs vues. Il a été étendu dans iOS 8 pour prendre en charge les collections de caractéristiques.
 
-Les proxys d’apparence incluent désormais une nouvelle `AppearanceForTraitCollection`méthode,, qui retourne un nouveau proxy d’apparence pour la collection de traits donnée qui a été passée. Toutes les personnalisations effectuées par le développeur sur ce proxy d’apparence prennent effet uniquement sur les vues qui se conforment à la collection de traits spécifiée.
+Les proxys d’apparence incluent désormais une nouvelle méthode, `AppearanceForTraitCollection`, qui retourne un nouveau proxy d’apparence pour la collection de traits donnée qui a été passée. Toutes les personnalisations effectuées par le développeur sur ce proxy d’apparence prennent effet uniquement sur les vues qui se conforment à la collection de traits spécifiée.
 
-En général, le développeur transmet une collection de traits partiellement spécifiée à `AppearanceForTraitCollection` la méthode, telle que celle qui vient de spécifier une classe de taille horizontale, afin qu’elle puisse personnaliser toute vue de l’application qui est compacte horizontalement.
+En général, le développeur transmet une collection de traits partiellement spécifiée à la méthode `AppearanceForTraitCollection`, telle que celle qui vient de spécifier une classe de taille horizontale, afin qu’elle puisse personnaliser toute vue de l’application compacte horizontalement.
 
 ## <a name="uiimage"></a>UIImage
 
-Une autre classe à laquelle Apple a ajouté la collection `UIImage`de caractéristiques est. Dans le passé, le développeur devait spécifier une @1X version @2x et de n’importe quelle ressource graphique bitmap qu’il allait inclure dans l’application (par exemple, une icône).
+Une autre classe à laquelle Apple a ajouté la collection de traits est `UIImage`. Dans le passé, le développeur devait spécifier une @1X et @2x version de n’importe quelle ressource graphique bitmap qu’il devait inclure dans l’application (par exemple, une icône).
 
 iOS 8 a été développé pour permettre au développeur d’inclure plusieurs versions d’une image dans un catalogue d’images basé sur une collection de traits. Par exemple, le développeur peut inclure une image plus petite pour travailler avec une classe de caractéristiques compacte et une image de taille complète pour n’importe quelle autre collection.
 
-Quand l’une des images est utilisée à l’intérieur `UIImageView` d’une classe, la vue d’image affiche automatiquement la version correcte de l’image pour sa collection de caractéristiques. Si l’environnement de trait change (par exemple lorsque l’utilisateur bascule l’appareil du portrait au mode paysage), la vue image sélectionne automatiquement la nouvelle taille d’image pour correspondre à la nouvelle collection de caractéristiques et modifie sa taille pour qu’elle corresponde à celle de la version actuelle de l’image présentés.
+Quand l’une des images est utilisée à l’intérieur d’une classe `UIImageView`, la vue image affiche automatiquement la version correcte de l’image pour sa collection de caractéristiques. Si l’environnement de trait change (par exemple lorsque l’utilisateur bascule l’appareil du portrait au mode paysage), la vue image sélectionne automatiquement la nouvelle taille d’image pour correspondre à la nouvelle collection de caractéristiques et modifie sa taille pour qu’elle corresponde à celle de la version actuelle de l’image présentés.
 
 ## <a name="uiimageasset"></a>UIImageAsset
 
-Apple a ajouté une nouvelle classe à IOS 8, `UIImageAsset` appelée pour offrir au développeur encore plus de contrôle sur la sélection d’images.
+Apple a ajouté une nouvelle classe à iOS 8, appelée `UIImageAsset` pour offrir au développeur encore plus de contrôle sur la sélection d’images.
 
 Une ressource d’image encapsule toutes les différentes versions d’une image et permet au développeur de demander une image spécifique qui correspond à une collection de traits qui a été transmise. Les images peuvent être ajoutées ou supprimées d’une ressource d’image à la volée.
 
@@ -168,7 +168,7 @@ Pour plus d’informations sur les ressources d’image, consultez la documentat
 
 ## <a name="combining-trait-collections"></a>Combinaison de collections de traits
 
-Une autre fonction qu’un développeur peut effectuer sur les collections de traits consiste à en ajouter deux ensemble qui entraînent la collection combinée, où les valeurs non spécifiées d’une collection sont remplacées par les valeurs spécifiées dans une seconde. Pour ce faire, utilisez `FromTraitsFromCollections` la méthode de `UITraitCollection` la classe.
+Une autre fonction qu’un développeur peut effectuer sur les collections de traits consiste à en ajouter deux ensemble qui entraînent la collection combinée, où les valeurs non spécifiées d’une collection sont remplacées par les valeurs spécifiées dans une seconde. Pour ce faire, utilisez la méthode `FromTraitsFromCollections` de la classe `UITraitCollection`.
 
 Comme indiqué ci-dessus, si l’une des caractéristiques n’est pas spécifiée dans l’une des collections de traits et est spécifiée dans une autre, la valeur sera définie sur la version spécifiée. Toutefois, si plusieurs versions d’une valeur donnée sont spécifiées, la valeur de la dernière collection de traits correspond à la valeur utilisée.
 
@@ -178,9 +178,9 @@ Cette section explique en détail comment la vue iOS et les contrôleurs d’aff
 
 ### <a name="split-view-controller"></a>Contrôleur d’affichage fractionné
 
-L’une des classes de contrôleur d’affichage qui a changé le plus dans iOS 8 `UISplitViewController` est la classe. Dans le passé, le développeur utiliserait souvent un contrôleur de vue fractionnée sur la version iPad de l’application, puis il devait fournir une version totalement différente de sa hiérarchie d’affichage pour la version iPhone de l’application.
+L’une des classes de contrôleur d’affichage qui a changé le plus dans iOS 8 est la classe `UISplitViewController`. Dans le passé, le développeur utiliserait souvent un contrôleur de vue fractionnée sur la version iPad de l’application, puis il devait fournir une version totalement différente de sa hiérarchie d’affichage pour la version iPhone de l’application.
 
-Dans iOS 8, la `UISplitViewController` classe est disponible sur les deux plateformes (iPad et iPhone), ce qui permet au développeur de créer une hiérarchie de contrôleur d’affichage qui fonctionnera à la fois pour iPhone et iPad.
+Dans iOS 8, la classe `UISplitViewController` est disponible sur les deux plateformes (iPad et iPhone), ce qui permet au développeur de créer une hiérarchie de contrôleur d’affichage qui fonctionnera à la fois pour iPhone et iPad.
 
 Quand un iPhone est en mode paysage, le contrôleur du mode fractionné présente ses affichages côte à côte, exactement comme s’il était affiché sur un iPad.
 
@@ -188,27 +188,27 @@ Quand un iPhone est en mode paysage, le contrôleur du mode fractionné présent
 
 Les environnements de caractéristiques sont en cascade à partir du conteneur parent jusqu’aux conteneurs enfants, comme dans le graphique suivant présentant un contrôleur d’affichage fractionné sur un iPad dans l’orientation paysage :
 
- [![](unified-storyboards-images/cascadingclasses01.png "Contrôleur de mode fractionné sur un iPad dans l’orientation paysage")](unified-storyboards-images/cascadingclasses01.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses01.png "A Split View Controller on an iPad in the landscape orientation")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
 Étant donné que l’iPad a une classe de taille normale dans les orientations horizontale et verticale, le mode fractionné affiche les vues maître et détail.
 
 Sur un iPhone, où la classe Size est compacte dans les deux orientations, le contrôleur de mode fractionné affiche uniquement la vue détaillée, comme indiqué ci-dessous :
 
- [![](unified-storyboards-images/cascadingclasses02.png "Le contrôleur de mode fractionné affiche uniquement la vue détaillée")](unified-storyboards-images/cascadingclasses02.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses02.png "The Split View Controller only displays the detail view")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
 Dans une application où le développeur souhaite afficher les vues maître et détail sur un iPhone dans l’orientation paysage, le développeur doit insérer un conteneur parent pour le contrôleur d’affichage fractionné et remplacer la collection de traits. Comme indiqué dans le graphique ci-dessous :
 
- [![](unified-storyboards-images/cascadingclasses03.png "Le développeur doit insérer un conteneur parent pour le contrôleur d’affichage fractionné et remplacer la collection de traits")](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![](unified-storyboards-images/cascadingclasses03.png "The developer must insert a parent container for the Split View Controller and override the Trait Collection")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
-Un `UIView` est défini en tant que parent du contrôleur d’affichage fractionné et `SetOverrideTraitCollection` la méthode est appelée sur la vue en passant dans une nouvelle collection de traits et en ciblant le contrôleur d’affichage fractionné. La nouvelle collection de caractéristiques remplace le `HorizontalSizeClass`, en `Regular`lui affectant la valeur, afin que le contrôleur du mode fractionné affiche à la fois les vues maître et détail sur un iPhone dans l’orientation paysage.
+Une `UIView` est définie en tant que parent du contrôleur d’affichage fractionné et la méthode `SetOverrideTraitCollection` est appelée sur la vue en passant une nouvelle collection de traits et en ciblant le contrôleur d’affichage fractionné. La nouvelle collection de caractéristiques remplace la `HorizontalSizeClass`, en la définissant sur `Regular`, afin que le contrôleur du mode fractionné affiche à la fois les vues maître et détail sur un iPhone dans l’orientation paysage.
 
-Notez que a `VerticalSizeClass` la `unspecified`valeur, ce qui permet d’ajouter la nouvelle collection de traits à la collection de traits sur le parent, ce qui `Compact VerticalSizeClass` génère un pour le contrôleur d’affichage fractionné enfant.
+Notez que la `VerticalSizeClass` a été définie sur `unspecified`, ce qui permet d’ajouter la nouvelle collection de traits à la collection de traits sur le parent, ce qui génère une `Compact VerticalSizeClass` pour le contrôleur d’affichage fractionné enfant.
 
 ### <a name="trait-changes"></a>Modifications de caractéristiques
 
 Cette section présente en détail le mode de transition des collections de traits lorsque l’environnement de trait change. Par exemple, lorsque l’appareil passe du portrait au paysage.
 
- [![](unified-storyboards-images/traittransitions01.png "Vue d’ensemble des modifications de caractéristiques portrait en paysage")](unified-storyboards-images/traittransitions01.png#lightbox)
+ [![](unified-storyboards-images/traittransitions01.png "The portrait to landscape Trait Changes overview")](unified-storyboards-images/traittransitions01.png#lightbox)
 
 En premier lieu, iOS 8 effectue une certaine configuration pour préparer la transition. Ensuite, le système anime l’état de transition. Enfin, iOS 8 nettoie tous les États temporaires requis pendant la transition.
 
@@ -217,62 +217,62 @@ iOS 8 fournit plusieurs rappels que le développeur peut utiliser pour participe
 |Phase|Rappel|Description|
 |--- |--- |--- |
 |Installation|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Cette méthode est appelée au début d’une modification de trait avant qu’une collection de traits soit définie sur sa nouvelle valeur.</li><li>La méthode est appelée lorsque la valeur de la collection de traits a changé mais avant qu’une animation ait lieu.</li></ul>|
-|Animation|`WillTransitionToTraitCollection`|Le coordinateur de transition qui est passé à cette méthode `AnimateAlongside` a une propriété qui permet au développeur d’ajouter des animations qui seront exécutées en même temps que les animations par défaut.|
-|Nettoyage|`WillTransitionToTraitCollection`|Fournit une méthode permettant aux développeurs d’inclure leur propre code de nettoyage une fois la transition effectuée.|
+|Animation|`WillTransitionToTraitCollection`|Le coordinateur de transition qui est passé à cette méthode a une propriété `AnimateAlongside` qui permet au développeur d’ajouter des animations qui seront exécutées en même temps que les animations par défaut.|
+|Nettoyer|`WillTransitionToTraitCollection`|Fournit une méthode permettant aux développeurs d’inclure leur propre code de nettoyage une fois la transition effectuée.|
 
-La `WillTransitionToTraitCollection` méthode est idéale pour animer des contrôleurs d’affichage avec les modifications apportées à la collection de traits. La `WillTransitionToTraitCollection` méthode est uniquement disponible sur les contrôleurs `UIViewController`d’affichage () et non sur d’autres `UIViews`environnements de caractéristiques, comme.
+La méthode `WillTransitionToTraitCollection` est idéale pour animer des contrôleurs d’affichage avec les modifications apportées à la collection de traits. La méthode `WillTransitionToTraitCollection` est disponible uniquement sur les contrôleurs d’affichage (`UIViewController`) et non sur d’autres environnements de caractéristiques, comme `UIViews`.
 
-Est parfait pour travailler avec la `UIView` classe, où le développeur souhaite mettre à jour l’interface utilisateur au fur et à mesure que les caractéristiques changent. `TraitCollectionDidChange`
+Le `TraitCollectionDidChange` est idéal pour travailler avec la classe `UIView`, où le développeur souhaite mettre à jour l’interface utilisateur à mesure que les caractéristiques changent.
 
 ### <a name="collapsing-the-split-view-controllers"></a>Réduction des contrôleurs d’affichage fractionné
 
 Examinons à présent de plus près ce qui se passe lorsqu’un contrôleur de vue fractionnée réduit d’une colonne à une vue d’une colonne. Dans le cadre de cette modification, il existe deux processus qui doivent se produire :
 
-- Par défaut, le contrôleur du mode fractionné utilise le contrôleur d’affichage principal comme vue une fois la réduction effectuée. Le développeur peut substituer ce comportement en substituant la `GetPrimaryViewControllerForCollapsingSplitViewController` méthode `UISplitViewControllerDelegate` du et en fournissant un contrôleur d’affichage qu’il souhaite afficher dans l’État réduit.
-- Le contrôleur d’affichage secondaire doit être fusionné dans le contrôleur d’affichage principal. En général, le développeur n’a pas besoin d’entreprendre aucune action pour cette étape. le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Toutefois, il peut y avoir des cas particuliers où le développeur souhaite interagir avec cette modification. L’appel `CollapseSecondViewController` `UISplitViewControllerDelegate` de la méthode du permet l’affichage du contrôleur d’affichage principal lorsque la réduction se produit, au lieu du mode Détails.
+- Par défaut, le contrôleur du mode fractionné utilise le contrôleur d’affichage principal comme vue une fois la réduction effectuée. Le développeur peut substituer ce comportement en substituant la méthode `GetPrimaryViewControllerForCollapsingSplitViewController` du `UISplitViewControllerDelegate` et en fournissant un contrôleur d’affichage qu’il souhaite afficher dans l’État réduit.
+- Le contrôleur d’affichage secondaire doit être fusionné dans le contrôleur d’affichage principal. En général, le développeur n’a pas besoin d’entreprendre aucune action pour cette étape. le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Toutefois, il peut y avoir des cas particuliers où le développeur souhaite interagir avec cette modification. L’appel de la méthode `CollapseSecondViewController` de l' `UISplitViewControllerDelegate` permet l’affichage du contrôleur d’affichage principal lorsque la réduction se produit, au lieu du mode Détails.
 
 ### <a name="expanding-the-split-view-controller"></a>Développement du contrôleur d’affichage fractionné
 
 Examinons à présent de plus près ce qui se passe lorsqu’un contrôleur d’affichage fractionné est développé à partir d’un État réduit. Là encore, il y a deux étapes qui doivent se produire :
 
-- Tout d’abord, définissez le nouveau contrôleur d’affichage principal. Par défaut, le contrôleur du mode fractionné utilise automatiquement le contrôleur d’affichage principal à partir de l’affichage réduit. Là encore, le développeur peut substituer ce comportement à `GetPrimaryViewControllerForExpandingSplitViewController` l’aide `UISplitViewControllerDelegate` de la méthode de.
-- Une fois que le contrôleur d’affichage principal a été choisi, le contrôleur d’affichage secondaire doit être recréé. Là encore, le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Le développeur peut substituer ce comportement en appelant la `SeparateSecondaryViewController` méthode `UISplitViewControllerDelegate` de.
+- Tout d’abord, définissez le nouveau contrôleur d’affichage principal. Par défaut, le contrôleur du mode fractionné utilise automatiquement le contrôleur d’affichage principal à partir de l’affichage réduit. Là encore, le développeur peut remplacer ce comportement à l’aide de la méthode `GetPrimaryViewControllerForExpandingSplitViewController` de l' `UISplitViewControllerDelegate`.
+- Une fois que le contrôleur d’affichage principal a été choisi, le contrôleur d’affichage secondaire doit être recréé. Là encore, le contrôleur de vue fractionnée prend en charge la gestion automatique de cette phase en fonction du périphérique matériel. Le développeur peut substituer ce comportement en appelant la méthode `SeparateSecondaryViewController` de l' `UISplitViewControllerDelegate`.
 
-Dans un contrôleur d’affichage fractionné, le contrôleur d’affichage principal joue un rôle dans le développement et la réduction des vues en implémentant `CollapseSecondViewController` les `SeparateSecondaryViewController` méthodes et du `UISplitViewControllerDelegate`. `UINavigationController`implémente ces méthodes pour pousser et dépiler automatiquement le contrôleur d’affichage secondaire.
+Dans un contrôleur d’affichage fractionné, le contrôleur d’affichage principal joue un rôle dans le développement et la réduction des vues en implémentant les méthodes `CollapseSecondViewController` et `SeparateSecondaryViewController` de l' `UISplitViewControllerDelegate`. `UINavigationController` implémente ces méthodes pour pousser et dépiler automatiquement le contrôleur d’affichage secondaire.
 
 ### <a name="showing-view-controllers"></a>Affichage des contrôleurs d’affichage
 
-Une autre modification apportée par Apple à iOS 8 est la façon dont le développeur affiche les contrôleurs d’affichage. Dans le passé, si l’application disposait d’un contrôleur d’affichage feuille (tel qu’un contrôleur d’affichage de table), et que le développeur affichait un autre (par exemple, en réponse à l’utilisateur tape sur une cellule), l’application atteindrait la hiérarchie du contrôleur au Contrôleur d’affichage de navigation et `PushViewController` appelez la méthode pour afficher la nouvelle vue.
+Une autre modification apportée par Apple à iOS 8 est la façon dont le développeur affiche les contrôleurs d’affichage. Dans le passé, si l’application disposait d’un contrôleur d’affichage feuille (tel qu’un contrôleur d’affichage de table), et que le développeur affichait un autre (par exemple, en réponse à l’utilisateur tape sur une cellule), l’application atteindrait la hiérarchie du contrôleur au Contrôleur d’affichage de navigation et appelez la méthode `PushViewController` pour afficher la nouvelle vue.
 
 Cela présentait un couplage très étroit entre le contrôleur de navigation et l’environnement dans lequel il s’exécutait. Dans iOS 8, Apple l’a découplée en fournissant deux nouvelles méthodes :
 
-- `ShowViewController`– S’adapte pour afficher le nouveau contrôleur d’affichage en fonction de son environnement. Par exemple, dans `UINavigationController` , il envoie simplement la nouvelle vue sur la pile. Dans un contrôleur d’affichage fractionné, le nouveau contrôleur d’affichage sera présenté sur le côté gauche en tant que nouveau contrôleur d’affichage principal. Si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
-- `ShowDetailViewController`: Fonctionne de façon similaire à `ShowViewController`, mais est implémenté sur un contrôleur d’affichage fractionné pour remplacer le mode Détails par le nouveau contrôleur d’affichage passé. Si le contrôleur du mode fractionné est réduit (comme dans le cas d’une application iPhone), l’appel est redirigé vers la `ShowViewController` méthode et la nouvelle vue est affichée en tant que contrôleur d’affichage principal. Là encore, si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
+- `ShowViewController` : s’adapte pour afficher le nouveau contrôleur d’affichage en fonction de son environnement. Par exemple, dans une `UINavigationController` il envoie simplement la nouvelle vue sur la pile. Dans un contrôleur d’affichage fractionné, le nouveau contrôleur d’affichage sera présenté sur le côté gauche en tant que nouveau contrôleur d’affichage principal. Si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
+- `ShowDetailViewController` : fonctionne de manière similaire à `ShowViewController`, mais est implémenté sur un contrôleur d’affichage fractionné pour remplacer le mode Détails par le nouveau contrôleur d’affichage passé. Si le contrôleur du mode fractionné est réduit (comme dans le cas d’une application iPhone), l’appel est redirigé vers la méthode `ShowViewController` et la nouvelle vue est affichée en tant que contrôleur d’affichage principal. Là encore, si aucun contrôleur d’affichage de conteneur n’est présent, la nouvelle vue sera affichée en tant que contrôleur d’affichage modal.
 
 Ces méthodes fonctionnent en démarrant au contrôleur d’affichage feuille et parcourent la hiérarchie d’affichage jusqu’à ce qu’elles trouvent le contrôleur d’affichage de conteneur approprié pour gérer l’affichage de la nouvelle vue.
 
-Les développeurs peuvent `ShowViewController` implémenter et `ShowDetailViewController` dans leurs propres contrôleurs d’affichage personnalisés pour obtenir les `UINavigationController` `UISplitViewController` mêmes fonctionnalités automatisées que celles fournies par.
+Les développeurs peuvent implémenter `ShowViewController` et `ShowDetailViewController` dans leurs propres contrôleurs d’affichage personnalisés pour obtenir les mêmes fonctionnalités automatisées que celles fournies par `UINavigationController` et `UISplitViewController`.
 
 ### <a name="how-it-works"></a>Fonctionnement
 
 Dans cette section, nous allons voir comment ces méthodes sont réellement implémentées dans iOS 8. Examinons tout d’abord la nouvelle `GetTargetForAction` méthode :
 
- [![](unified-storyboards-images/gettargetforaction.png "Nouvelle méthode GetTargetForAction")](unified-storyboards-images/gettargetforaction.png#lightbox)
+ [![](unified-storyboards-images/gettargetforaction.png "The new GetTargetForAction method")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-Cette méthode parcourt la chaîne de hiérarchie jusqu’à ce que le contrôleur d’affichage de conteneur correct soit trouvé. Par exemple :
+Cette méthode parcourt la chaîne de hiérarchie jusqu’à ce que le contrôleur d’affichage de conteneur correct soit trouvé. Exemple :
 
-1. Si une `ShowViewController` méthode est appelée, le premier contrôleur d’affichage de la chaîne qui implémente cette méthode est le contrôleur de navigation. il est donc utilisé comme parent de la nouvelle vue.
-1. Si une `ShowDetailViewController` méthode a été appelée à la place, le contrôleur de vue fractionnée est le premier contrôleur d’affichage à l’implémenter, donc il est utilisé comme parent.
+1. Si une méthode `ShowViewController` est appelée, le premier contrôleur d’affichage de la chaîne qui implémente cette méthode est le contrôleur de navigation. il est donc utilisé comme parent de la nouvelle vue.
+1. Si une méthode `ShowDetailViewController` a été appelée à la place, le contrôleur de vue fractionnée est le premier contrôleur d’affichage à implémenter, donc il est utilisé comme parent.
 
-La `GetTargetForAction` méthode fonctionne en localisant un contrôleur d’affichage qui implémente une action donnée, puis demande ce contrôleur d’affichage s’il souhaite recevoir cette action. Étant donné que cette méthode est publique, les développeurs peuvent créer leurs propres méthodes personnalisées qui fonctionnent de `ShowViewController` la `ShowDetailViewController` même façon que les méthodes et intégrées.
+La méthode `GetTargetForAction` fonctionne en localisant un contrôleur d’affichage qui implémente une action donnée, puis demande ce contrôleur d’affichage s’il souhaite recevoir cette action. Étant donné que cette méthode est publique, les développeurs peuvent créer leurs propres méthodes personnalisées qui fonctionnent exactement comme les méthodes intégrées `ShowViewController` et `ShowDetailViewController`.
 
 ## <a name="adaptive-presentation"></a>Présentation adaptative
 
-Dans iOS 8, Apple a également fait des présentations `UIPopoverPresentationController`menu segue () adaptative. Par conséquent, un contrôleur d’affichage de présentation menu segue présente automatiquement une vue menu segue normale dans une classe de taille normale, mais l’affiche en plein écran dans une classe de taille horizontale (par exemple, sur un iPhone).
+Dans iOS 8, Apple a également fait des présentations menu segue (`UIPopoverPresentationController`) Adaptive. Par conséquent, un contrôleur d’affichage de présentation menu segue présente automatiquement une vue menu segue normale dans une classe de taille normale, mais l’affiche en plein écran dans une classe de taille horizontale (par exemple, sur un iPhone).
 
-Pour tenir compte des modifications au sein du système de plan conceptuel unifié, un nouvel objet contrôleur a été créé pour gérer les `UIPresentationController`contrôleurs d’affichage présentés. Ce contrôleur est créé à partir du moment où le contrôleur d’affichage est présenté jusqu’à ce qu’il soit fermé. Comme il s’agit d’une classe de gestion, il peut être considéré comme une superclasse sur le contrôleur d’affichage, car il répond aux modifications de l’appareil qui affectent le contrôleur d’affichage (par exemple, l’orientation) qui sont ensuite renvoyées dans le contrôleur d’affichage des contrôles du contrôleur de présentation.
+Pour tenir compte des modifications au sein du système de plan conceptuel unifié, un nouvel objet contrôleur a été créé pour gérer les contrôleurs d’affichage présentés, `UIPresentationController`. Ce contrôleur est créé à partir du moment où le contrôleur d’affichage est présenté jusqu’à ce qu’il soit fermé. Comme il s’agit d’une classe de gestion, il peut être considéré comme une superclasse sur le contrôleur d’affichage, car il répond aux modifications de l’appareil qui affectent le contrôleur d’affichage (par exemple, l’orientation) qui sont ensuite renvoyées dans le contrôleur d’affichage des contrôles du contrôleur de présentation.
 
-Lorsque le développeur présente un contrôleur d’affichage à `PresentViewController` l’aide de la méthode, la gestion du processus de `UIKit`présentation est transremise à. UIKit gère, entre autres choses, le contrôleur approprié pour le style en cours de création, à la seule exception près lorsqu’un contrôleur d’affichage a le `UIModalPresentationCustom`style défini sur. Ici, l’application peut fournir sa propre PresentationController au lieu d’utiliser le `UIKit` contrôleur.
+Lorsque le développeur présente un contrôleur d’affichage à l’aide de la méthode `PresentViewController`, la gestion du processus de présentation est remise à `UIKit`. UIKit gère, entre autres choses, le contrôleur approprié pour le style en cours de création, à la seule exception près quand le style d’un contrôleur d’affichage est défini sur `UIModalPresentationCustom`. Ici, l’application peut fournir sa propre PresentationController au lieu d’utiliser le contrôleur `UIKit`.
 
 ### <a name="custom-presentation-styles"></a>Styles de présentation personnalisés
 
@@ -292,9 +292,9 @@ Examinons à présent de plus près la façon dont le projet de photos adaptativ
 
 Lors de l’exécution de l’application images adaptatives sur un iPhone, lorsque l’utilisateur fait pivoter l’appareil du portrait au paysage, le contrôleur du mode fractionné affiche à la fois le mode maître et le mode Détails :
 
- [![](unified-storyboards-images/rotation.png "Le contrôleur du mode fractionné affiche à la fois le mode maître et le mode Détails comme indiqué ici")](unified-storyboards-images/rotation.png#lightbox)
+ [![](unified-storyboards-images/rotation.png "The Split View Controller will display both the master and details view as seen here")](unified-storyboards-images/rotation.png#lightbox)
 
-Pour ce faire, vous devez substituer la `UpdateConstraintsForTraitCollection` méthode du contrôleur d’affichage et ajuster les contraintes en fonction de la valeur `VerticalSizeClass`de. Par exemple :
+Pour ce faire, vous devez substituer la méthode `UpdateConstraintsForTraitCollection` du contrôleur d’affichage et ajuster les contraintes en fonction de la valeur du `VerticalSizeClass`. Exemple :
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -350,7 +350,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>Ajout d’animations de transition
 
-Lorsque le contrôleur du mode fractionné de l’application images adaptatives passe de réduit à développé, les animations sont ajoutées aux animations par défaut en substituant `WillTransitionToTraitCollection` la méthode du contrôleur d’affichage. Par exemple :
+Lorsque le contrôleur du mode fractionné de l’application images adaptatives passe de réduit à développé, les animations sont ajoutées aux animations par défaut en remplaçant la méthode `WillTransitionToTraitCollection` du contrôleur d’affichage. Exemple :
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -405,7 +405,7 @@ public void UpdateForcedTraitCollection ()
 
 ### <a name="expanding-and-collapsing-the-split-view-controller"></a>Développement et réduction du contrôleur d’affichage fractionné
 
-Examinons ensuite comment le développement et la réduction du comportement du contrôleur d’affichage fractionné ont été implémentés dans Xamarin. `AppDelegate`Dans, lorsque le contrôleur de vue fractionnée est créé, son délégué est assigné pour gérer ces modifications :
+Examinons ensuite comment le développement et la réduction du comportement du contrôleur d’affichage fractionné ont été implémentés dans Xamarin. Dans le `AppDelegate`, quand le contrôleur de vue fractionnée est créé, son délégué est assigné pour gérer ces modifications :
 
 ```csharp
 public class SplitViewControllerDelegate : UISplitViewControllerDelegate
@@ -454,13 +454,13 @@ public class SplitViewControllerDelegate : UISplitViewControllerDelegate
 }
 ```
 
-La `SeparateSecondaryViewController` méthode effectue un test pour déterminer si une photo est affichée et prend une mesure en fonction de cet État. Si aucune photo n’est affichée, elle réduit le contrôleur d’affichage secondaire afin que le contrôleur d’affichage principal soit affiché.
+La méthode `SeparateSecondaryViewController` teste pour déterminer si une photo est affichée et prend une mesure en fonction de cet État. Si aucune photo n’est affichée, elle réduit le contrôleur d’affichage secondaire afin que le contrôleur d’affichage principal soit affiché.
 
-La `CollapseSecondViewController` méthode est utilisée lors du développement du contrôleur d’affichage fractionné pour voir si des photos existent sur la pile, si elle est réduite à cette vue.
+La méthode `CollapseSecondViewController` est utilisée lors du développement du contrôleur du mode fractionné pour voir si des photos existent sur la pile, si tel est le cas, elle est réduite à cette vue.
 
 ### <a name="moving-between-view-controllers"></a>Déplacement entre les contrôleurs d’affichage
 
-Voyons ensuite comment l’application de photos adaptatives se déplace entre les contrôleurs d’affichage. Dans la `AAPLConversationViewController` classe, lorsque l’utilisateur sélectionne une cellule dans le tableau, `ShowDetailViewController` la méthode est appelée pour afficher le mode Détails :
+Voyons ensuite comment l’application de photos adaptatives se déplace entre les contrôleurs d’affichage. Dans la classe `AAPLConversationViewController` lorsque l’utilisateur sélectionne une cellule dans le tableau, la méthode `ShowDetailViewController` est appelée pour afficher le mode Détails :
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -510,7 +510,7 @@ public bool Aapl_willShowingDetailViewControllerPushWithSender ()
 }
 ```
 
-Celles-ci sont implémentées à l’aide de la `GetTargetViewControllerForAction` méthode décrite en détail ci-dessus.
+Celles-ci sont implémentées à l’aide de la méthode `GetTargetViewControllerForAction` décrite en détail ci-dessus.
 
 Lorsqu’un contrôleur d’affichage de table affiche des données, il utilise les méthodes implémentées ci-dessus pour voir si un push va se produire, et s’il faut ou non afficher ou masquer l’indicateur de divulgation en conséquence :
 
@@ -527,9 +527,9 @@ public override void WillDisplay (UITableView tableView, UITableViewCell cell, N
 }
 ```
 
-### <a name="new-showdetailtargetdidchangenotification-type"></a>Nouveau `ShowDetailTargetDidChangeNotification` type
+### <a name="new-showdetailtargetdidchangenotification-type"></a>Nouveau type de `ShowDetailTargetDidChangeNotification`
 
-Apple a ajouté un nouveau type de notification pour travailler avec des classes de taille et des environnements de trait à partir `ShowDetailTargetDidChangeNotification`d’un contrôleur d’affichage fractionné,. Cette notification est envoyée chaque fois que la vue détaillée de la cible d’un contrôleur d’affichage fractionné change, par exemple lorsque le contrôleur est développé ou réduit.
+Apple a ajouté un nouveau type de notification pour travailler avec des classes de taille et des environnements de trait à partir d’un contrôleur d’affichage fractionné, `ShowDetailTargetDidChangeNotification`. Cette notification est envoyée chaque fois que la vue détaillée de la cible d’un contrôleur d’affichage fractionné change, par exemple lorsque le contrôleur est développé ou réduit.
 
 L’application images adaptatives utilise cette notification pour mettre à jour l’état de l’indicateur de divulgation lorsque le contrôleur d’affichage détaillé change :
 
@@ -566,11 +566,11 @@ Par défaut, tout nouveau projet Xamarin. iOS nous redimensionnera les classes. 
 
 Pour ce faire, ouvrez le Storyboard à convertir dans le concepteur iOS et activez la case à cocher **utiliser les classes de taille** :
 
- [![](unified-storyboards-images/sizeclass01.png "La case à cocher utiliser les classes de taille")](unified-storyboards-images/sizeclass01.png#lightbox)
+ [![](unified-storyboards-images/sizeclass01.png "The Use Size Classes check box")](unified-storyboards-images/sizeclass01.png#lightbox)
 
 Le concepteur iOS confirme que le développeur souhaite convertir le format de la table de montage séquentiel pour utiliser les classes de taille :
 
- [![](unified-storyboards-images/sizeclass02.png "Alerte d’utilisation des classes de taille")](unified-storyboards-images/sizeclass02.png#lightbox)
+ [![](unified-storyboards-images/sizeclass02.png "The use Size Classes alert")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
 > La mise en page automatique doit également être vérifiée pour que les classes de taille fonctionnent correctement.
@@ -579,117 +579,117 @@ Le concepteur iOS confirme que le développeur souhaite convertir le format de l
 
 Une fois que la table de montage séquentiel a été convertie pour utiliser des classes de taille, elle est réaffichée dans le Aire de conception et la **vue en tant que** périphérique est générique :
 
- [![](unified-storyboards-images/sizeclass03.png "Afficher en tant que type d’appareil générique")](unified-storyboards-images/sizeclass03.png#lightbox)
+ [![](unified-storyboards-images/sizeclass03.png "View as a Generic device type")](unified-storyboards-images/sizeclass03.png#lightbox)
 
 Lorsque le type d’appareil générique est sélectionné, tous les contrôleurs d’affichage sont redimensionnés en carré 600 x 600. Ce carré représente les tailles de toute largeur et de toute hauteur. Quand le concepteur iOS est dans ce mode, toutes les modifications s’appliquent à toutes les classes de taille.
 
 Le développeur a également la possibilité d’afficher l’aire de conception en tant qu’iPhone :
 
- [![](unified-storyboards-images/sizeclass04.png "Affichage de l’aire de conception en tant qu’iPhone")](unified-storyboards-images/sizeclass04.png#lightbox)
+ [![](unified-storyboards-images/sizeclass04.png "Viewing the design surface as an iPhone")](unified-storyboards-images/sizeclass04.png#lightbox)
 
 Ou l’afficher en tant qu’iPad :
 
- [![](unified-storyboards-images/sizeclass05.png "Affichage de l’aire de conception en tant qu’iPad")](unified-storyboards-images/sizeclass05.png#lightbox)
+ [![](unified-storyboards-images/sizeclass05.png "Viewing the design surface as an iPad")](unified-storyboards-images/sizeclass05.png#lightbox)
 
 ### <a name="select-a-size-class"></a>Sélectionner une classe de taille
 
 Le bouton de sélection de la classe taille se trouve dans le coin supérieur gauche du Aire de conception (près de la vue en tant que liste déroulante). Elle permet au développeur de sélectionner les classes de taille en cours de modification :
 
- [![](unified-storyboards-images/sizeclass06.png "Sélectionner une classe de taille")](unified-storyboards-images/sizeclass06.png#lightbox)
+ [![](unified-storyboards-images/sizeclass06.png "Select a Size Class")](unified-storyboards-images/sizeclass06.png#lightbox)
 
 Le sélecteur présente la sélection de la classe taille sous la forme d’une grille 3 x 3. Chacun des carrés de la grille représente une combinaison d’une classe Width et d’une classe Height. Le carré central sélectionne la classe toute largeur/toute taille de hauteur (qui est la vue par défaut pour un Storyboard unifié). Lorsque ce carré est sélectionné, le développeur modifie la disposition par défaut, qui est héritée par toutes les autres configurations.
 
 Le carré dans le coin supérieur gauche de la grille représente la classe de taille compacte/hauteur compacte :
 
- [![](unified-storyboards-images/sizeclass07.png "Classe compact largeur/hauteur compacte")](unified-storyboards-images/sizeclass07.png#lightbox)
+ [![](unified-storyboards-images/sizeclass07.png "The Compact Width/Compact Height Size Class")](unified-storyboards-images/sizeclass07.png#lightbox)
 
 Ce mode correspond à un iPhone dans l’orientation paysage. Le carré dans le coin inférieur droit de la grille représente la classe de taille normale de largeur/hauteur normale, qui représente un iPad :
 
- [![](unified-storyboards-images/sizeclass08.png "Classe de taille normale de largeur/hauteur normale")](unified-storyboards-images/sizeclass08.png#lightbox)
+ [![](unified-storyboards-images/sizeclass08.png "The Regular Width/Regular Height Size Class")](unified-storyboards-images/sizeclass08.png#lightbox)
 
 Pour modifier la disposition d’un iPhone dans l’orientation portrait, sélectionnez le carré dans le coin inférieur gauche. Il s’agit de la classe compact largeur/taille normale :
 
- [![](unified-storyboards-images/sizeclass09.png "Classe compact largeur/taille normale")](unified-storyboards-images/sizeclass09.png#lightbox)
+ [![](unified-storyboards-images/sizeclass09.png "The Compact Width/Regular Height Size Class")](unified-storyboards-images/sizeclass09.png#lightbox)
 
 Cliquez sur le carré pour le sélectionner et la Aire de conception modifiera la taille des contrôleurs d’affichage pour qu’ils correspondent à la nouvelle sélection :
 
- [![](unified-storyboards-images/sizeclass10.png "La Aire de conception modifiera la taille des contrôleurs d’affichage pour qu’ils correspondent à la nouvelle sélection comme indiqué")](unified-storyboards-images/sizeclass10.png#lightbox)
+ [![](unified-storyboards-images/sizeclass10.png "The Design Surface will change the size of the View Controllers to match the new selection as shown")](unified-storyboards-images/sizeclass10.png#lightbox)
 
 Reportez-vous à la section taille de la classe de cet article pour plus d’informations sur les classes de taille et sur la manière dont elles affectent la disposition des iPhone et des iPad.
 
 ### <a name="adaptive-segue-types"></a>Types segue adaptatifs
 
-Si le développeur a déjà utilisé des storyboards, il connaîtra les types segue de **Push**, **modal** et **menu segue**existants. Lorsque les classes de taille sont activées sur un fichier de Storyboard unifié, les types adaptatifs segue suivants (qui correspondent à la nouvelle API de contrôleur d’affichage décrite ci-dessus) sont rendus disponibles : **Afficher** et **afficher les détails**.
+Si le développeur a déjà utilisé des storyboards, il connaîtra les types segue de **Push**, **modal** et **menu segue**existants. Lorsque les classes de taille sont activées sur un fichier de Storyboard unifié, les types adaptatifs segue suivants (qui correspondent à la nouvelle API de contrôleur d’affichage décrite ci-dessus) sont disponibles : **Afficher** et **afficher les détails**.
 
 > [!IMPORTANT]
 > Lorsque les classes de taille sont activées, les SEGUES existants sont convertis en nouveaux types.
 
 Prenons l’exemple d’une application iOS 8 qui utilise une table de montage séquentiel unifiée avec un contrôleur d’affichage fractionné avec un menu de navigation de jeu simple dans la vue maître. Si l’utilisateur clique sur un bouton de menu, le contrôleur d’affichage de l’élément sélectionné doit s’afficher dans la section des détails du contrôleur d’affichage fractionné lors de l’exécution sur un iPad. Sur un iPhone, le contrôleur d’affichage de l’élément doit faire l’objet d’un push dans la pile de navigation.
 
-Pour obtenir cet effet, dans le contrôle du concepteur iOS, cliquez sur le bouton, puis faites glisser une ligne vers le contrôleur d’affichage à afficher. Lorsque le bouton de la souris est relâché `Show Detail` , sélectionnez dans le menu contextuel type de segue :
+Pour obtenir cet effet, dans le contrôle du concepteur iOS, cliquez sur le bouton, puis faites glisser une ligne vers le contrôleur d’affichage à afficher. Lorsque le bouton de la souris est relâché, sélectionnez `Show Detail` dans le menu contextuel du type segue :
 
- [![](unified-storyboards-images/segue01.png "Sélectionnez Afficher les détails dans le menu contextuel type de Segue")](unified-storyboards-images/segue01.png#lightbox)
+ [![](unified-storyboards-images/segue01.png "Select Show Detail from the Segue Type Popup menu")](unified-storyboards-images/segue01.png#lightbox)
 
 Le nouveau segue sera créé entre le bouton et le contrôleur d’affichage. À présent, exécutez l’application dans le simulateur iPhone et le menu principal s’affiche :
 
- [![](unified-storyboards-images/segue02.png "Menu principal")](unified-storyboards-images/segue02.png#lightbox)
+ [![](unified-storyboards-images/segue02.png "The Main Menu")](unified-storyboards-images/segue02.png#lightbox)
 
 Cliquez sur le bouton **Sélectionner un jeu** et le contrôleur d’affichage de l’élément fait l’objet d’un push dans la pile de navigation :
 
- [![](unified-storyboards-images/segue03.png "Le contrôleur d’affichage des éléments fait l’objet d’un push dans la pile de navigation comme indiqué")](unified-storyboards-images/segue03.png#lightbox)
+ [![](unified-storyboards-images/segue03.png "The items View Controller will be pushed onto the Navigation Stack as shown")](unified-storyboards-images/segue03.png#lightbox)
 
 Arrêtez le simulateur iPhone et exécutez l’application dans le simulateur iPad. Basculez vers l’orientation paysage et le menu principal s’affiche à nouveau :
 
- [![](unified-storyboards-images/segue04.png "Menu principal affiché")](unified-storyboards-images/segue04.png#lightbox)
+ [![](unified-storyboards-images/segue04.png "The main menu displayed")](unified-storyboards-images/segue04.png#lightbox)
 
 Là encore, cliquez sur le bouton **Sélectionner un jeu** et le contrôleur d’affichage de l’élément s’affiche dans la section Détails du contrôleur du mode fractionné :
 
- [![](unified-storyboards-images/segue05.png "Le contrôleur d’affichage des éléments affiché dans la section des détails du contrôleur d’affichage fractionné")](unified-storyboards-images/segue05.png#lightbox)
+ [![](unified-storyboards-images/segue05.png "The items View Controller shown in the Details section of the Split View Controller")](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>Exclusion d’un élément d’une classe Size
 
 Il peut arriver qu’un élément donné (tel qu’une vue, un contrôle ou une contrainte) ne soit pas obligatoire dans une classe de taille spécifique. Pour exclure un élément d’une classe Size, sélectionnez l’élément souhaité à exclure dans le **aire de conception**. Faites défiler vers le bas de l' **Explorateur de propriétés** , puis cliquez sur le menu déroulant **engrenage** . Sélectionnez la combinaison de **largeur** et de **hauteur** pour exclure l’élément :
 
-[![](unified-storyboards-images/exclude-a.png "Sélectionner la combinaison de largeur et de hauteur")](unified-storyboards-images/exclude-a.png#lightbox)
+[![](unified-storyboards-images/exclude-a.png "Select the combination of Width and Height")](unified-storyboards-images/exclude-a.png#lightbox)
 
 Un nouveau *cas d’exclusion* sera ajouté à l’élément dans le bas de l' **Explorateur de propriétés**. Ensuite, désactivez la case à cocher **installé** pour la classe de taille donnée :
 
-[![](unified-storyboards-images/exclude-b.png "Désactivez la case à cocher installé")](unified-storyboards-images/exclude-b.png#lightbox)
+[![](unified-storyboards-images/exclude-b.png "Uncheck the Installed checkbox")](unified-storyboards-images/exclude-b.png#lightbox)
 
 Basculer la Aire de conception sur la largeur et la hauteur à partir desquelles l’élément a été exclu, elle a été supprimée de la classe de taille donnée, mais pas de la conception de l’interface utilisateur entière :
 
- [![](unified-storyboards-images/exclude02.png "Faire passer le Aire de conception à la largeur et à la hauteur à laquelle l’élément a été exclu")](unified-storyboards-images/exclude02.png#lightbox)
+ [![](unified-storyboards-images/exclude02.png "Switch the Design Surface to the Width and Height that the item was excluded from")](unified-storyboards-images/exclude02.png#lightbox)
 
 Revenir à la classe de taille n’importe quelle largeur/toute hauteur et l’élément est toujours en place :
 
- [![](unified-storyboards-images/exclude03.png "Retour à la classe n’importe quelle largeur/n’importe quelle taille de hauteur")](unified-storyboards-images/exclude03.png#lightbox)
+ [![](unified-storyboards-images/exclude03.png "Switching back to the Any Width/Any Height size class")](unified-storyboards-images/exclude03.png#lightbox)
 
 Lorsque l’application est exécutée dans le simulateur iPad, l’élément s’affiche :
 
- [![](unified-storyboards-images/exclude04.png "Élément affiché lorsque l’application en cours d’exécution dans le simulateur iPad")](unified-storyboards-images/exclude04.png#lightbox)
+ [![](unified-storyboards-images/exclude04.png "The element shown when the running app in the iPad Simulator")](unified-storyboards-images/exclude04.png#lightbox)
 
 Et lorsque l’application est exécutée sur le simulateur iPhone, l’élément est manquant :
 
- [![](unified-storyboards-images/exclude05.png "Élément manquant lors de l’exécution de l’application dans le simulateur iPhone")](unified-storyboards-images/exclude05.png#lightbox)
+ [![](unified-storyboards-images/exclude05.png "The element missing when the running app in the iPhone Simulator")](unified-storyboards-images/exclude05.png#lightbox)
 
-Pour supprimer un cas d’exclusion d’un élément, sélectionnez simplement l’élément dans le **aire de conception**, faites défiler vers le bas de l’Explorateur **-** de **Propriétés** et cliquez sur le bouton en regard du cas à supprimer.
+Pour supprimer un cas d’exclusion d’un élément, sélectionnez simplement l’élément dans le **aire de conception**, faites défiler vers le bas de l' **Explorateur de propriétés** , puis cliquez sur le bouton **-** en regard du cas à supprimer.
 
-Pour voir une implémentation des storyboards unifiés, consultez l' `UnifiedStoryboard` exemple d’application Xamarin iOS 8 jointe à ce document.
+Pour voir une implémentation des storyboards unifiés, consultez l’exemple d’application `UnifiedStoryboard` iOS 8 Xamarin joint à ce document.
 
 ## <a name="dynamic-launch-screens"></a>Écrans de lancement dynamique
 
-Le fichier d’écran de lancement s’affiche sous la forme d’un écran de démarrage lorsqu’une application iOS est lancée pour fournir des commentaires à l’utilisateur que l’application est en train de démarrer. Avant iOS 8, le développeur devait inclure plusieurs `Default.png` ressources d’image pour chaque type d’appareil, l’orientation et la résolution d’écran sur lesquels l’application s’exécutait. Par exemple `Default@2x.png` `Default-Landscape@2x~ipad.png` ,,`Default-Portrait@2x~ipad.png`,, etc.
+Le fichier d’écran de lancement s’affiche sous la forme d’un écran de démarrage lorsqu’une application iOS est lancée pour fournir des commentaires à l’utilisateur que l’application est en train de démarrer. Avant iOS 8, le développeur devait inclure plusieurs `Default.png` ressources d’image pour chaque type d’appareil, l’orientation et la résolution d’écran sur lesquels l’application s’exécutait. Par exemple, `Default@2x.png`, `Default-Landscape@2x~ipad.png`, `Default-Portrait@2x~ipad.png`, etc.
 
-La factorisation des nouveaux appareils iPhone 6 et iPhone 6 plus (et de la prochaine Apple Watch) avec tous les appareils iPhone et iPad existants représente un grand nombre de tailles, d’orientations et de résolutions variables des ressources `Default.png` d’images d’écran de démarrage qui doivent être créé et maintenu. En outre, ces fichiers peuvent être très volumineux et « grossir » le bundle d’applications livrable, ce qui augmente le temps nécessaire pour télécharger l’application à partir de l’App Store iTunes (ce qui peut éventuellement empêcher sa remise sur un réseau cellulaire) et l’amélioration de la quantité de stockage requise sur l’appareil de l’utilisateur final.
+En prenant en compte les appareils iPhone 6 et iPhone 6 plus (ainsi que les Apple Watch à venir) avec tous les appareils iPhone et iPad existants, cela représente un grand nombre de tailles, d’orientations et de résolutions variables de `Default.png` ressources d’images d’écran de démarrage qui doivent être créé et géré. En outre, ces fichiers peuvent être très volumineux et « grossir » le bundle d’applications livrable, ce qui augmente le temps nécessaire pour télécharger l’application à partir de l’App Store iTunes (ce qui peut éventuellement empêcher sa remise sur un réseau cellulaire) et l’amélioration de la quantité de stockage requise sur l’appareil de l’utilisateur final.
 
-Nouveauté d’iOS 8, le développeur peut créer un seul fichier atomique `.xib` dans Xcode qui utilise des classes de mise en page et de taille automatiques pour créer un *écran de lancement dynamique* qui fonctionnera pour chaque appareil, résolution et orientation. Cela réduit non seulement la quantité de travail requise du développeur pour créer et gérer toutes les ressources d’image requises, mais elle réduit considérablement la taille de l’offre groupée installée de l’application.
+Nouveauté d’iOS 8, le développeur peut créer un seul fichier `.xib` atomique dans Xcode qui utilise des classes de mise en page et de taille automatiques pour créer un *écran de lancement dynamique* qui fonctionnera pour chaque appareil, résolution et orientation. Cela réduit non seulement la quantité de travail requise du développeur pour créer et gérer toutes les ressources d’image requises, mais elle réduit considérablement la taille de l’offre groupée installée de l’application.
 
 Les écrans de lancement dynamiques présentent les limitations et les considérations suivantes :
 
-- Utilisez uniquement `UIKit` des classes.
-- Utilisez un affichage racine unique qui est un `UIView` objet `UIViewController` ou.
+- Utilisez uniquement des classes `UIKit`.
+- Utilisez un affichage racine unique qui est un objet `UIView` ou `UIViewController`.
 - N’établissez aucune connexion au code de l’application (n’ajoutez pas d' **actions** ou de **prises de sortie**).
-- N’ajoutez `UIWebView` pas d’objets.
+- N’ajoutez pas d’objets `UIWebView`.
 - N’utilisez pas de classes personnalisées.
 - N’utilisez pas d’attributs d’exécution.
 
@@ -698,56 +698,56 @@ Avec les instructions ci-dessus à l’esprit, examinons l’ajout d’un écran
 Effectuez ce qui suit :
 
 1. Ouvrez **Visual Studio pour Mac** et chargez la **solution** pour ajouter l’écran de lancement dynamique à.
-2. Dans le **Explorateur de solutions**, cliquez avec le bouton `MainStoryboard.storyboard` droit sur le fichier, puis sélectionnez **Ouvrir avec** > **Xcode Interface Builder**:
+2. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le fichier `MainStoryboard.storyboard` et sélectionnez **ouvrir avec** > **Interface Builder Xcode**:
 
-    [![](unified-storyboards-images/dls01.png "Ouvrir avec Xcode Interface Builder")](unified-storyboards-images/dls01.png#lightbox)
-3. Dans Xcode, sélectionnez **fichier** > **nouveau** > **fichier...** :
+    [![](unified-storyboards-images/dls01.png "Open With Xcode Interface Builder")](unified-storyboards-images/dls01.png#lightbox)
+3. Dans Xcode, sélectionnez **fichier** > **nouveau fichier de** >  **...** :
 
-    [![](unified-storyboards-images/dls02.png "Sélectionner un fichier/nouveau")](unified-storyboards-images/dls02.png#lightbox)
-4. Sélectionnez l'**écran de lancement** de l'**interface** > utilisateur **iOS** > , puis cliquez sur le bouton **suivant** :
+    [![](unified-storyboards-images/dls02.png "Select File / New")](unified-storyboards-images/dls02.png#lightbox)
+4. Sélectionnez **iOS** > **interface utilisateur** > **écran de lancement** , puis cliquez sur le bouton **suivant** :
 
-    [![](unified-storyboards-images/dls03.png "Sélectionnez iOS/interface utilisateur/lancer l’écran")](unified-storyboards-images/dls03.png#lightbox)
-5. Nommez le `LaunchScreen.xib` fichier, puis cliquez sur le bouton **créer** :
+    [![](unified-storyboards-images/dls03.png "Select iOS / User Interface / Launch Screen")](unified-storyboards-images/dls03.png#lightbox)
+5. Nommez le fichier `LaunchScreen.xib`, puis cliquez sur le bouton **créer** :
 
-    [![](unified-storyboards-images/dls04.png "Nommez le fichier écran d’installation. XIB")](unified-storyboards-images/dls04.png#lightbox)
+    [![](unified-storyboards-images/dls04.png "Name the file LaunchScreen.xib")](unified-storyboards-images/dls04.png#lightbox)
 6. Modifiez la conception de l’écran de lancement en ajoutant des éléments graphiques et en utilisant des contraintes de disposition pour les positionner pour les périphériques, les orientations et les tailles d’écran spécifiés :
 
-    [![](unified-storyboards-images/dls05.png "Modification de la conception de l’écran de lancement")](unified-storyboards-images/dls05.png#lightbox)
+    [![](unified-storyboards-images/dls05.png "Editing the design of the launch screen")](unified-storyboards-images/dls05.png#lightbox)
 7. Enregistrez les modifications apportées à `LaunchScreen.xib`.
 8. Sélectionnez la **cible applications** et l’onglet **général** :
 
-    [![](unified-storyboards-images/dls06.png "Sélectionnez la cible applications et l’onglet général")](unified-storyboards-images/dls06.png#lightbox)
-9. Cliquez sur le bouton **Choose info. plist** , sélectionnez le `Info.plist` pour l’application Xamarin, puis cliquez sur le bouton **choisir** :
+    [![](unified-storyboards-images/dls06.png "Select the Applications Target and the General tab")](unified-storyboards-images/dls06.png#lightbox)
+9. Cliquez sur le bouton **Choose info. plist** , sélectionnez le `Info.plist` de l’application Xamarin, puis cliquez sur le bouton **choisir** :
 
-    [![](unified-storyboards-images/dls07.png "Sélectionnez le fichier info. plist pour l’application Xamarin")](unified-storyboards-images/dls07.png#lightbox)
-10. Dans la section **icônes d’application et images de lancement** , ouvrez la liste déroulante démarrer le fichier d' **écran** , puis choisissez le `LaunchScreen.xib` créé ci-dessus :
+    [![](unified-storyboards-images/dls07.png "Select the Info.plist for the Xamarin app")](unified-storyboards-images/dls07.png#lightbox)
+10. Dans la section **icônes d’application et images de lancement** , ouvrez la liste déroulante lancer le fichier d' **écran** , puis choisissez le `LaunchScreen.xib` créé ci-dessus :
 
-    [![](unified-storyboards-images/dls08.png "Choisissez écran d’installation. XIB")](unified-storyboards-images/dls08.png#lightbox)
+    [![](unified-storyboards-images/dls08.png "Choose the LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
 11. Enregistrez les modifications apportées au fichier et revenez à Visual Studio pour Mac.
 12. Attendez que Visual Studio pour Mac termine la synchronisation des modifications avec Xcode.
 13. Dans le **Explorateur de solutions**, cliquez avec le bouton droit sur le dossier de **ressources** , puis sélectionnez **Ajouter** > **Ajouter des fichiers...** :
 
-    [![](unified-storyboards-images/dls09.png "Sélectionnez Ajouter/Ajouter des fichiers...")](unified-storyboards-images/dls09.png#lightbox)
-14. Sélectionnez le `LaunchScreen.xib` fichier créé ci-dessus, puis cliquez sur le bouton **ouvrir** :
+    [![](unified-storyboards-images/dls09.png "Select Add / Add Files...")](unified-storyboards-images/dls09.png#lightbox)
+14. Sélectionnez le fichier `LaunchScreen.xib` créé ci-dessus, puis cliquez sur le bouton **ouvrir** :
 
-    [![](unified-storyboards-images/dls10.png "Sélectionner le fichier écran d’installation. XIB")](unified-storyboards-images/dls10.png#lightbox)
+    [![](unified-storyboards-images/dls10.png "Select the LaunchScreen.xib file")](unified-storyboards-images/dls10.png#lightbox)
 15. Générez l'application.
 
 ### <a name="testing-the-dynamic-launch-screen"></a>Test de l’écran de lancement dynamique
 
 Dans Visual Studio pour Mac, sélectionnez le simulateur iPhone 4 et exécutez l’application. L’écran de lancement dynamique s’affiche au format et à l’orientation appropriés :
 
-[![](unified-storyboards-images/dls11.png "Écran de lancement dynamique affiché dans l’orientation verticale")](unified-storyboards-images/dls11.png#lightbox)
+[![](unified-storyboards-images/dls11.png "The Dynamic Launch Screen displayed in the vertical orientation")](unified-storyboards-images/dls11.png#lightbox)
 
 Arrêtez l’application dans Visual Studio pour Mac et sélectionnez un appareil iPad iOS 8. Exécutez l’application et l’écran de lancement sera correctement mis en forme pour cet appareil et cette orientation :
 
-[![](unified-storyboards-images/dls12.png "Écran de lancement dynamique affiché dans l’orientation horizontale")](unified-storyboards-images/dls12.png#lightbox)
+[![](unified-storyboards-images/dls12.png "The Dynamic Launch Screen displayed in the horizontal orientation")](unified-storyboards-images/dls12.png#lightbox)
 
 Revenez à Visual Studio pour Mac et arrêtez l’exécution de l’application.
 
 ### <a name="working-with-ios-7"></a>Utilisation d’iOS 7
 
-Pour assurer la compatibilité descendante avec iOS 7, il vous `Default.png` suffit d’inclure les ressources d’image habituelles dans l’application iOS 8. iOS retourne au comportement précédent et utilise ces fichiers comme écran de démarrage lors de l’exécution sur un appareil iOS 7.
+Pour assurer la compatibilité descendante avec iOS 7, il vous suffit d’inclure les ressources d’image de `Default.png` habituelles dans l’application iOS 8. iOS retourne au comportement précédent et utilise ces fichiers comme écran de démarrage lors de l’exécution sur un appareil iOS 7.
 
 Pour afficher l’implémentation d’un écran de lancement dynamique dans Xamarin, consultez l’exemple d’application d' [écrans de lancement dynamique](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen) , iOS 8 joint à ce document.
 
@@ -762,6 +762,6 @@ Enfin, cet article a abordé les principes de base de la création de storyboard
 - [Photos adaptatives (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
 - [Écrans de lancement dynamique (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [Introduction à iOS 8](~/ios/platform/introduction-to-ios8.md)
-- [Dispositions dynamiques dans iOS8-évolution de 2014 (vidéo)](http://youtu.be/f3mMGlS-lM4)
+- [Dispositions dynamiques dans iOS8-évolution de 2014 (vidéo)](https://youtu.be/f3mMGlS-lM4)
 - [UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)
 - [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)

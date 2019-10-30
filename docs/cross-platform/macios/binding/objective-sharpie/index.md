@@ -3,29 +3,29 @@ title: Création de liaisons avec une netteté objective
 description: Cette section fournit une introduction à l’outil de ligne de commande Xamarin, utilisé pour automatiser le processus de création d’une liaison à une bibliothèque objective-C.
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: d5b9fa1edc09b831dbc69ab092dfb5270942e67a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4d6ab6cf48c5c365a4d8d05ef108a4d3a5d16134
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765712"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016191"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>Création de liaisons avec une netteté objective
 
 _Cette section fournit une introduction à l’outil de ligne de commande Xamarin, utilisé pour automatiser le processus de création d’une liaison à une bibliothèque objective-C._
 
--  & [Historique](#history) de [présentation](#overview)
-- [Prise en main](get-started.md)
+- [Vue d’ensemble](#overview) & [historique](#history)
+- [Bien démarrer](get-started.md)
 - [Outils et commandes](tools.md)
 - [Fonctionnalités](platform/index.md)
 - [Exemples](examples/index.md)
 - [Exécuter la procédure pas à pas](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Historique des versions](releases.md)
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 La finesse d’objectif est un outil en ligne de commande qui permet de démarrer le premier passage d’une liaison.
 Il fonctionne en analysant les fichiers d’en-tête d’une bibliothèque native pour mapper l’API publique dans la [définition de liaison](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) (un processus qui a été précédemment effectué manuellement).
@@ -44,7 +44,7 @@ Toutefois, objective Sharp est un outil très avancé qui nécessite une connais
 ## <a name="related-links"></a>Liens associés
 
 - [Téléchargement d’objective](https://aka.ms/objective-sharpie)
-- [Procédure pas à pas : Liaison d’une bibliothèque objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
+- [Procédure pas à pas : liaison d’une bibliothèque objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
 - [Liaison de bibliothèques Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [Détails de la liaison](~/cross-platform/macios/binding/overview.md)
 - [Guide de référence des types de liaison](~/cross-platform/macios/binding/binding-types-reference.md)

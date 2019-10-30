@@ -3,19 +3,19 @@ title: Préparation d’une application pour la mise en production
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 5113255d8776987783ad5e8f023e7b2b30924ea4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250002"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021202"
 ---
 # <a name="preparing-an-application-for-release"></a>Préparation d’une application pour la mise en production
 
-Une fois qu’une application a été codée et testée, il est nécessaire de préparer un paquet pour la distribution. La première tâche de préparation de ce package consiste à générer l’application à mettre en production, ce qui implique principalement de définir différents attributs d’application.
+Une fois qu’une application a été codée et testée, il est nécessaire de préparer un paquet pour la distribution. La première tâche de préparation de ce paquet consiste à générer l’application pour sa mise en production, ce qui implique principalement de définir quelques attributs d’application.
 
 Effectuez les étapes suivantes pour générer l’application à mettre en production :
 
@@ -373,7 +373,7 @@ Vous pouvez y sélectionner le canal de distribution :
 ## <a name="related-links"></a>Liens associés
 
 - [Appareils multicœurs et Xamarin.Android](~/android/deploy-test/multicore-devices.md)
-- [Architectures de processeur](~/android/app-fundamentals/cpu-architectures.md)
-- [AOT](https://www.mono-project.com/docs/advanced/aot/)
+- [Architectures d’UC](~/android/app-fundamentals/cpu-architectures.md)
+- [AOA](https://www.mono-project.com/docs/advanced/aot/)
 - [Réduire le code et les ressources](https://developer.android.com/tools/help/proguard.html)
 - [Configurer des applications avec plus de 64 000 méthodes](https://developer.android.com/tools/building/multidex.html)

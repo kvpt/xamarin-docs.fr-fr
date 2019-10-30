@@ -3,15 +3,15 @@ title: Déployer des cases à cocher désactivées dans le Gestionnaire de Confi
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: aaf675cd-d885-4dac-9754-77dbcaea3be9
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 82ff1a684ffad75a301f0db6b0f8e3116be6746d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: edf471f1d9a2ee4adc11f09e0c7b7ad3cf6f78f1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285067"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014252"
 ---
 # <a name="deploy-checkboxes-disabled-in-configuration-manager"></a>Déployer des cases à cocher désactivées dans le Gestionnaire de Configuration
 
@@ -19,8 +19,8 @@ Depuis la Xamarin 3,5, les projets Xamarin. iOS sont déployés automatiquement 
 
 Pour cette raison, les cases à cocher **déployer** sont intentionnellement désactivées dans Visual Studio Configuration Manager pour les projets Xamarin. iOS :
 
-![](deploy-checkboxes-images/configuration.png "Configuration Manager Visual Studio présentant la case à cocher « déployer » désactivée pour un projet Xamarin. iOS dans Xamarin 3,5")
+![](deploy-checkboxes-images/configuration.png "Visual Studio Configuration Manager showing the 'Deploy' checkbox disabled for a Xamarin.iOS project in Xamarin 3.5")
 
 Cette modification élimine une erreur qui peut s’afficher dans les versions antérieures de Xamarin (version 3,3 et versions antérieures) lorsque le projet d’application Xamarin. iOS n’a pas été défini sur Deploy :
 
-![](deploy-checkboxes-images/error.png "Boîte de dialogue d’erreur : Le projet iPhoneApp1 doit être déployé avant de pouvoir être démarré. Vérifiez que le projet est sélectionné pour être déployé dans le Configuration Manager de la solution.")
+![](deploy-checkboxes-images/error.png "Error dialog: The project iPhoneApp1 needs to be deployed before it can be started. Verify the project is selected to be deployed in the Solution Configuration Manager.")

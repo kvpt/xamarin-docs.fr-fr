@@ -4,19 +4,19 @@ description: Ce document décrit la compilation d’avance dans Xamarin. Mac. Il
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 6797428596fddb0361fb307240bf8237a1e8554d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: dac98ba74f389bec9016e52fa7a3f2f34ec71f0a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769829"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029969"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Compilation anticipée de Xamarin. Mac
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 La compilation à l’avance (AOA) est une technique d’optimisation puissante pour améliorer les performances de démarrage. Toutefois, cela affecte également le temps de génération, la taille de l’application et l’exécution du programme de manière profonde. Pour comprendre les compromis qu’il impose, nous allons explorer un peu la compilation et l’exécution d’une application.
 
@@ -29,7 +29,7 @@ Ce traitement peut être effectué de deux points :
 
 Chaque option présente un certain nombre d’avantages et de compromis :
 
-- **JIT**
+- **TRAITÉE**
   - **Heure de démarrage** : la compilation JIT doit être effectuée au démarrage. Pour la plupart des applications, il s’agit de l’ordre de 100 $, mais pour les applications volumineuses, cette durée peut être beaucoup plus importante.
   - **Exécution** : comme le code JIT peut être optimisé pour le processeur utilisé, un code légèrement meilleur peut être généré. Dans la plupart des applications, il s’agit de quelques points de pourcentage plus rapides.
 - **AOA**

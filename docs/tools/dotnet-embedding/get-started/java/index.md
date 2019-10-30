@@ -3,21 +3,21 @@ title: Prise en main de Java
 description: Ce document explique comment commencer à utiliser l’incorporation .NET avec Java. Il aborde la configuration système requise, l’installation et les plateformes prises en charge.
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 09ea33724c2b1184654ce7768ea1cb2525b62c28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278408"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007376"
 ---
 # <a name="getting-started-with-java"></a>Prise en main de Java
 
 Il s’agit de la page de prise en main de Java, qui couvre les principes de base de toutes les plateformes prises en charge.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser l’incorporation .NET avec Java, vous avez besoin des éléments suivants :
 
@@ -59,7 +59,7 @@ En outre, vous pouvez créer une incorporation .NET à partir de la source, cons
 
 Java est actuellement dans un état d’aperçu pour macOS, Windows et Android.
 
-La plateforme est sélectionnée en passant l' `--platform=<platform>` argument de ligne de commande à l’outil d’incorporation .net. Actuellement `macOS`, `Windows`, et`Android` sont pris en charge.
+La plateforme est sélectionnée en passant l' `--platform=<platform>` argument de ligne de commande à l’outil d’incorporation .NET. Actuellement `macOS`, `Windows`et `Android` sont pris en charge.
 
 ### <a name="macos-and-windows"></a>macOS et Windows
 
@@ -71,7 +71,7 @@ Assurez-vous que vous êtes déjà configuré pour développer des applications 
 
 Android Studio est recommandé pour le développement, mais d’autres IDE devraient fonctionner tant qu’il existe une prise en charge du [format de fichier AAR](https://developer.android.com/studio/projects/android-library.html).
 
-## <a name="further-reading"></a>Informations supplémentaires
+## <a name="further-reading"></a>Compléments de lecture
 
 * [Prise en main sur Android](~/tools/dotnet-embedding/get-started/java/android.md)
 * [Rappels sur Android](~/tools/dotnet-embedding/android/callbacks.md)

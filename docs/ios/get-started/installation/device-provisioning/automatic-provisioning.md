@@ -1,25 +1,25 @@
 ---
 title: Provisionnement automatique pour Xamarin.iOS
-description: Après l’installation de Xamarin.iOS, l’étape suivante dans le développement iOS consiste à provisionner votre appareil iOS. Ce guide décrit l’utilisation de la signature automatique pour demander des certificats et profils de développement.
+description: Après l’installation de Xamarin.iOS, l’étape suivante dans le développement iOS est de provisionner votre appareil iOS. Ce guide décrit l’utilisation de la signature automatique pour demander des certificats et profils de développement.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: bb8a969a930f2e169d19738ddaafab04a4e8a057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c65a8d4cf47fdec582b46370b6a8dbc1ddd55a1e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287356"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022783"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Provisionnement automatique pour Xamarin.iOS
 
-_Une fois Xamarin.iOS installé avec succès, l’étape suivante du développement iOS consiste à configurer l’appareil iOS. Ce guide décrit l’utilisation de la signature automatique pour demander des certificats et profils de développement._
+_Une fois Xamarin. iOS installé avec succès, l’étape suivante du développement iOS consiste à approvisionner votre appareil iOS. Ce guide explore l’utilisation de la signature automatique pour demander des profils et des certificats de développement._
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -50,7 +50,7 @@ Avant de commencer le processus de signature automatique, vous devez vérifier q
 > }
 > ```
 >
-> ou Gestionnaire de configuration
+> or
 >
 > ```
 > Authentication Service Is Unavailable
@@ -125,7 +125,7 @@ Dans certains cas, les droits d’une application nécessitent un ID d’applica
 - Multipath
 - NFC
 - VPN personnel
-- Notifications Push
+- Push Notifications
 - Configuration d’accessoires sans fil
 
 Si votre application utilise l’un de ces droits, Visual Studio pour Mac tente de créer un ID d’application explicite (au lieu d’un ID d’application générique).
@@ -137,7 +137,7 @@ Si votre application utilise l’un de ces droits, Visual Studio pour Mac tente 
 
 - [Provisionnement libre](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [Distribution d’une application](~/ios/deploy-test/app-distribution/index.md)
-- [Dépannage](~/ios/deploy-test/troubleshooting.md)
+- [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)
 - [Apple - Guide de distribution d’applications](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 
 ## <a name="related-video"></a>Vidéo associée

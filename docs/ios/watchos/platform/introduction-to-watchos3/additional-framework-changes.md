@@ -4,15 +4,15 @@ description: Ce document décrit les différentes modifications apportées à l�
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cd4bc8dbc02a44807ec197d39349971d8f9cd6f9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 628d2c8efe9459378c64c55d653eac14c55e0815
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768579"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028280"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>Modifications supplémentaires apportées aux infrastructures Watchos 3
 
@@ -27,8 +27,8 @@ Les améliorations suivantes ont été apportées à l’infrastructure de donn�
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
 - La classe [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) gère un pool de banques de données SQLite.
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) avec les banques de données sqlite dans le mode journal de Wal prennent en charge la nouvelle fonctionnalité de génération de requêtes dans laquelle les contextes d’objets managés (MOC) peuvent être épinglés à des versions de base de données spécifiques pour des transactions de récupération et de défaillance futures.
-- Utilisation du niveau `NSPersistenceContainer` élevé pour référencer les `NSPersistentStoreCoordinator`ressources de configuration de données principales, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) et autres.
-- Plusieurs nouvelles méthodes pratiques ont été ajoutées pour `NSManagedObject` faciliter l’exécution des extractions et la création de sous-classes.
+- Utilisation du `NSPersistenceContainer` de haut niveau pour référencer les ressources de configuration de `NSPersistentStoreCoordinator`, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) et autres données de base.
+- Plusieurs nouvelles méthodes pratiques ont été ajoutées à `NSManagedObject` ce qui facilite l’exécution d’extractions et la création de sous-classes.
 
 Pour plus d’informations, consultez Référence de l' [infrastructure de données de base](https://developer.apple.com/reference/coredata)d’Apple.
 
@@ -53,9 +53,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure de base 
 
 Les améliorations suivantes ont été apportées à l’infrastructure HealthKit pour la surveillance du système d’exploitation 3 :
 
-- Utilisez la nouvelle classe [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) pour spécifier le `ActivityType` et `LocationType` un entraînement.
-- Le nouveau [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) et la `WheelchairUse` méthode de la classe [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) ont été ajoutés pour l’utilisation des données d’intégrité liées aux fauteuils roulants.
-- De nouvelles clés de métadonnées ont été ajoutées pour les types `HKWeatherConditionClear` météo `HKWeatherConditionCloudy`(tels que et) et les `HKWorkoutActivityTypeFlexibility` types `HKWorkoutActivityTypeWheelchairRunPace`d’entraînement (tels que et) ont été ajoutés.
+- Utilisez la nouvelle classe [HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration) pour spécifier les `ActivityType` et les `LocationType` d’une entraînement.
+- La nouvelle [HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject) et la méthode `WheelchairUse` de la classe [HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore) ont été ajoutées pour l’utilisation des données d’intégrité liées aux fauteuils roulants.
+- De nouvelles clés de métadonnées ont été ajoutées pour les types météo (tels que `HKWeatherConditionClear` et `HKWeatherConditionCloudy`) et les types d’entraînement (tels que `HKWorkoutActivityTypeFlexibility` et `HKWorkoutActivityTypeWheelchairRunPace`) ont été ajoutés.
 
 ## <a name="homekit"></a>HomeKit
 
@@ -76,8 +76,8 @@ Les améliorations suivantes ont été apportées à l’infrastructure PassKit 
 
 Les améliorations suivantes ont été apportées à l’infrastructure UIKit pour la surveillance du système d’exploitation 3 :
 
-- Pour prendre en charge le type dynamique dans les étiquettes, les champs de texte `PreferredFontForTextStyle` et les zones `UIFont` de texte, utilisez la nouvelle méthode de la classe.
-- La `ColorWithDisplayP3` méthode a été ajoutée pour prendre en charge la couleur étendue.
+- Pour prendre en charge le type dynamique dans les étiquettes, les champs de texte et les zones de texte, utilisez la nouvelle méthode `PreferredFontForTextStyle` de la classe `UIFont`.
+- La méthode `ColorWithDisplayP3` a été ajoutée pour prendre en charge la couleur étendue.
 
 ## <a name="related-links"></a>Liens associés
 

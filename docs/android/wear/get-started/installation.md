@@ -4,31 +4,31 @@ description: Cet article vous guide tout au long des étapes d’installation et
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 190e38e525288dbc2b7f6bd9e785c723c80c6271
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 83ec214ae1838959355e99322ce5a809ead004fa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762225"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028730"
 ---
 # <a name="setup-and-installation"></a>Installation et configuration
 
 _Cet article vous guide tout au long des étapes d’installation et des détails de configuration nécessaires à la préparation de votre ordinateur et de vos appareils au développement Android. À la fin de cet article, vous disposerez d’une installation Xamarin. Android d’usure intégrée dans Visual Studio pour Mac et/ou Microsoft Visual Studio, et vous serez prêt à commencer à créer votre première application Xamarin. Android usure._
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Les éléments suivants sont requis pour créer des applications d’usure Android basées sur Xamarin :
 
-- **Visual Studio ou Visual Studio pour Mac** &ndash; La Communauté Visual Studio 2017 ou une version ultérieure est requise.
+- **Visual Studio ou Visual Studio pour Mac** &ndash; visual studio 2017 ou version ultérieure est requis.
 
-- **Xamarin. Android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
+- **Xamarin. android** &ndash; Xamarin. Android 4,17 ou version ultérieure doit être installé et configuré à l’aide de Visual Studio ou de Visual Studio pour Mac.
 
 - **Android SDK** -Android SDK 5.0.1 (API 21) ou version ultérieure doit être installé via le gestionnaire de Android SDK.
 
-- **Kit de développement Java** Le développement Xamarin Android requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24). &ndash;
+- **Java Developer Kit** &ndash; Xamarin Android Development requiert [JDK 1,8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) si vous développez pour l’API de niveau 24 ou supérieur (JDK 1,8 prend également en charge les niveaux d’API antérieurs à 24).
 
 Vous pouvez continuer à utiliser [JDK 1,7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) si vous développez spécifiquement pour l’API de niveau 23 ou antérieur.
 
@@ -65,7 +65,7 @@ Assurez-vous que les Android SDK et les outils suivants sont installés :
 - Android 4.4 W (API20) ou
 - Android 5.0.1 (API21) ou version ultérieure.
 
-Si le kit de développement logiciel (SDK) et les outils les plus récents ne sont pas installés, téléchargez les outils requis du kit de développement logiciel (SDK) &ndash; et les bits d’API (vous devrez peut-être faire défiler un peu pour les trouver dans la sélection de l’API) : 
+Si le kit de développement logiciel (SDK) et les outils les plus récents ne sont pas installés, téléchargez les outils requis du kit de développement logiciel (SDK) *et* les bits d’API (vous devrez peut-être faire défiler un bit pour les trouver &ndash; la sélection de l’API est indiquée ci-dessous 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

@@ -3,15 +3,15 @@ title: 'Partie 6 : Test et approbations de l’App Store'
 description: Ce document décrit comment tester une application multiplateforme sur un appareil, gérer des cas de test, automatiser des tests, exécuter des tests unitaires et utiliser le processus de soumission d’application.
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198422"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016855"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>Partie 6 : Test et approbations de l’App Store
 
@@ -56,9 +56,9 @@ Xamarin. iOS comprend une infrastructure de tests unitaires appelée Touch. Unit
 
 Pour plus d’informations sur l’écriture de tests et l’exécution de Touch. Unit, consultez la documentation sur [les tests unitaires avec Xamarin. iOS](~/ios/deploy-test/touch.unit.md) .
 
-### <a name="andrunit"></a>Andr.Unit
+### <a name="andrunit"></a>Andr. Unit
 
-Il existe un équivalent Open source de Touch. Unit pour Android appelé Andr. Unit. Vous pouvez le télécharger à partir de [GitHub](https://github.com/spouliot/Andr.Unit) et en savoir plus sur le [ @spouliotblog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)de l’outil sur.
+Il existe un équivalent Open source de Touch. Unit pour Android appelé Andr. Unit. Vous pouvez le télécharger à partir de [GitHub](https://github.com/spouliot/Andr.Unit) et en savoir plus sur l’outil sur le [blog de@spouliot](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 
 ## <a name="app-store-approvals"></a>Approbations de l’App Store
 
@@ -129,7 +129,7 @@ En plus des problèmes techniques évidents pouvant entraîner le rejet d’une 
 
 Placez le plus d’effort dans les métadonnées de l’application en tant que développement et test. Les applications sont rejetées pour des violations mineures dans les métadonnées. il est donc judicieux de prendre le temps de le faire.
 
-### <a name="app-stores-not-for-everyone"></a>Magasins d’applications : Non pour tout le monde
+### <a name="app-stores-not-for-everyone"></a>Magasins d’applications : pas pour tout le monde
 
 L’objectif principal des magasins sur chaque plateforme est la distribution des consommateurs, c’est-à-dire la capacité à atteindre le plus grand nombre de clients possible. Toutefois, toutes les applications ne sont pas destinées aux consommateurs, mais il existe une base rapide d’applications internes et extranet qui nécessitent une distribution limitée aux employés, fournisseurs ou clients. Ces applications ne sont pas « à la vente » et n’ont pas besoin d’être approuvées, dans la mesure où le développeur contrôle la distribution à un groupe d’utilisateurs fermé.
 La prise en charge de ce type de déploiement varie selon la plateforme.

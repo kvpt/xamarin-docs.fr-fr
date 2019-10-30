@@ -3,29 +3,29 @@ title: Xamarin. Android
 ms.prod: xamarin
 ms.assetid: 004089E9-7C1D-2285-765A-B69143091F2A
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 2c7f0de2347e614b8c24de32bf3f88362a212a94
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: ba4a83eb997b879e8a2398f9857e2fd80221f8ef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510409"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029164"
 ---
 # <a name="xamarinandroid-spinner"></a>Xamarin. Android
 
-[`Spinner`](xref:Android.Widget.Spinner)est un widget qui présente une liste déroulante permettant de sélectionner des éléments. Ce guide explique comment créer une application simple qui affiche une liste de choix dans un compteur, suivi par des modifications qui affichent d’autres valeurs associées au choix sélectionné.
+[`Spinner`](xref:Android.Widget.Spinner) est un widget qui présente une liste déroulante permettant de sélectionner des éléments. Ce guide explique comment créer une application simple qui affiche une liste de choix dans un compteur, suivi par des modifications qui affichent d’autres valeurs associées au choix sélectionné.
 
 ## <a name="basic-spinner"></a>Compteur de base
 
-Dans la première partie de ce didacticiel, vous allez créer un widget de compteur simple qui affiche une liste de planètes. Quand une planète est sélectionnée, un message Toast affiche l’élément sélectionné:
+Dans la première partie de ce didacticiel, vous allez créer un widget de compteur simple qui affiche une liste de planètes. Quand une planète est sélectionnée, un message Toast affiche l’élément sélectionné :
 
-[![Exemples de captures d’écran de l’application HelloSpinner](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[![des exemples de captures d’écran de l’application HelloSpinner](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 Démarrez un nouveau projet nommé **HelloSpinner**.
 
-Ouvrez **ressources/mise en page/main. AXML** et insérez le code XML suivant:
+Ouvrez **ressources/mise en page/main. AXML** et insérez le code XML suivant :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,9 +49,9 @@ Ouvrez **ressources/mise en page/main. AXML** et insérez le code XML suivant:
 </LinearLayout>
 ```
 
-Notez que l' [`TextView`](xref:Android.Widget.TextView)attribut `android:text` de et l' [`Spinner`](xref:Android.Widget.Spinner)attribut `android:prompt` de font tous deux référence à la même ressource de chaîne. Ce texte se comporte comme un titre pour le widget. Lorsqu’il est appliqué [`Spinner`](xref:Android.Widget.Spinner)au, le texte du titre s’affiche dans la boîte de dialogue de sélection qui apparaît lors de la sélection du widget.
+Notez que l’attribut de `android:text` de l' [`TextView`](xref:Android.Widget.TextView)et l’attribut de `android:prompt` de l' [`Spinner`](xref:Android.Widget.Spinner)référencent la même ressource de chaîne. Ce texte se comporte comme un titre pour le widget. Lorsqu’il est appliqué à la [`Spinner`](xref:Android.Widget.Spinner), le texte du titre s’affiche dans la boîte de dialogue de sélection qui s’affiche lors de la sélection du widget.
 
-Modifiez le fichier Resources **/values/Strings. xml** , puis modifiez le fichier pour qu’il ressemble à ceci:
+Modifiez le fichier **Resources/values/Strings. xml** , puis modifiez le fichier pour qu’il ressemble à ceci :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,16 +71,16 @@ Modifiez le fichier Resources **/values/Strings. xml** , puis modifiez le fichie
 </resources>
 ```
 
-Le deuxième `<string>` élément définit la chaîne de titre référencée [`TextView`](xref:Android.Widget.TextView) par et [`Spinner`](xref:Android.Widget.Spinner) dans la disposition ci-dessus.
-L' `<string-array>` élément définit la liste des chaînes qui seront affichées comme liste dans le [`Spinner`](xref:Android.Widget.Spinner) widget.
+Le deuxième élément `<string>` définit la chaîne de titre référencée par le [`TextView`](xref:Android.Widget.TextView) et [`Spinner`](xref:Android.Widget.Spinner) dans la disposition ci-dessus.
+L’élément `<string-array>` définit la liste des chaînes qui seront affichées comme liste dans le widget [`Spinner`](xref:Android.Widget.Spinner) .
 
-À présent, ouvrez **MainActivity.cs** et ajoutez `using` l’instruction suivante:
+À présent, ouvrez **MainActivity.cs** et ajoutez l’instruction `using` suivante :
 
 ```csharp
 using System;
 ```
 
-Ensuite, insérez le code suivant pour la [`OnCreate()`](xref:Android.App.Activity.OnCreate*)méthode):
+Ensuite, insérez le code suivant pour la méthode [`OnCreate()`](xref:Android.App.Activity.OnCreate*)) :
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -101,13 +101,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Une fois `Main.axml` que la disposition est définie en tant qu’affichage [`Spinner`](xref:Android.Widget.Spinner) du contenu, le widget est capturé [`FindViewById<>(int)`](xref:Android.App.Activity.FindViewById*)à partir de la disposition avec.
-La[`CreateFromResource()`](xref:Android.Widget.ArrayAdapter.CreateFromResource*)
-la méthode crée ensuite un [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)objet, qui lie chaque élément du tableau de chaînes à l’apparence initiale de l [`Spinner`](xref:Android.Widget.Spinner) ' (qui correspond à la façon dont chaque élément apparaîtra dans le compteur lorsque celui-ci est sélectionné). L' `Resource.Array.planets_array` ID fait référence `string-array` à la définie ci `Android.Resource.Layout.SimpleSpinnerItem` -dessus et l’ID fait référence à une disposition pour l’apparence du compteur standard, définie par la plateforme.
+Une fois que la disposition `Main.axml` est définie en tant qu’affichage du contenu, le widget [`Spinner`](xref:Android.Widget.Spinner) est capturé à partir de la disposition avec [`FindViewById<>(int)`](xref:Android.App.Activity.FindViewById*).
+[`CreateFromResource()`](xref:Android.Widget.ArrayAdapter.CreateFromResource*)
+la méthode crée ensuite un [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter), qui lie chaque élément du tableau de chaînes à l’apparence initiale du [`Spinner`](xref:Android.Widget.Spinner) (c’est-à-dire comment chaque élément apparaîtra dans le compteur lorsqu’il est sélectionné). L’ID de `Resource.Array.planets_array` fait référence à la `string-array` définie ci-dessus et l’ID de `Android.Resource.Layout.SimpleSpinnerItem` référence une disposition pour l’apparence du compteur standard, définie par la plateforme.
 [`SetDropDownViewResource`](xref:Android.Widget.ArrayAdapter.SetDropDownViewResource*)
-est appelé pour définir l’apparence de chaque élément lorsque le widget est ouvert. Enfin, [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) est défini pour associer tous ses éléments [`Spinner`](xref:Android.Widget.Spinner) au en définissant la [`Adapter`](xref:Android.Widget.ArrayAdapter) propriété.
+est appelé pour définir l’apparence de chaque élément lorsque le widget est ouvert. Enfin, l' [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter) est définie pour associer tous ses éléments à la [`Spinner`](xref:Android.Widget.Spinner) en définissant la propriété [`Adapter`](xref:Android.Widget.ArrayAdapter) .
 
-À présent, fournissez une méthode de rappel qui notifie l’application lorsqu’un élément a [`Spinner`](xref:Android.Widget.Spinner)été sélectionné dans le. Voici à quoi doit ressembler cette méthode:
+À présent, fournissez une méthode de rappel qui notifie l’application lorsqu’un élément a été sélectionné à partir de la [`Spinner`](xref:Android.Widget.Spinner). Voici à quoi doit ressembler cette méthode :
 
 ```csharp
 private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
@@ -118,17 +118,17 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 }
 ```
 
-Lorsqu’un élément est sélectionné, l’expéditeur est converti en un [`Spinner`](xref:Android.Widget.Spinner) afin que les éléments soient accessibles. À l' `Position` aide de la `ItemEventArgs`propriété sur le, vous pouvez rechercher le texte de l’objet sélectionné et l’utiliser pour afficher [`Toast`](xref:Android.Widget.Toast)un.
+Lorsqu’un élément est sélectionné, l’expéditeur est converti en [`Spinner`](xref:Android.Widget.Spinner) afin que les éléments soient accessibles. À l’aide de la propriété `Position` sur l' `ItemEventArgs`, vous pouvez rechercher le texte de l’objet sélectionné et l’utiliser pour afficher un [`Toast`](xref:Android.Widget.Toast).
 
-Exécutez l’application. le résultat doit ressembler à ceci:
+Exécutez l’application. le résultat doit ressembler à ceci :
 
-[![Capture d’écran exemple de compteur avec mars sélectionné comme planète](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
+[Capture d’écran ![exemple de compteur avec mars sélectionné comme planète](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>Compteur utilisant des paires clé/valeur
 
-Il est souvent nécessaire d’utiliser `Spinner` pour afficher les valeurs de clés associées à un type de données utilisé par votre application. Étant `Spinner` donné que ne fonctionne pas directement avec les paires clé/valeur, vous devez stocker la paire clé/valeur séparément `Spinner` , remplir avec les valeurs de clé, puis utiliser la position de la clé sélectionnée dans le compteur pour rechercher la valeur de données associée. 
+Il est souvent nécessaire d’utiliser `Spinner` pour afficher les valeurs de clés associées à un type de données utilisé par votre application. Étant donné que `Spinner` ne fonctionne pas directement avec les paires clé/valeur, vous devez stocker la paire clé/valeur séparément, remplir le `Spinner` avec les valeurs de clé, puis utiliser la position de la clé sélectionnée dans le compteur pour rechercher la valeur de données associée. 
 
-Dans les étapes suivantes, l’application **HelloSpinner** est modifiée pour afficher la température moyenne de la planète sélectionnée:
+Dans les étapes suivantes, l’application **HelloSpinner** est modifiée pour afficher la température moyenne de la planète sélectionnée :
 
 Ajoutez l’instruction `using` suivante à **MainActivity.cs**:
 
@@ -136,14 +136,14 @@ Ajoutez l’instruction `using` suivante à **MainActivity.cs**:
 using System.Collections.Generic;
 ```
 
-Ajoutez la variable d’instance suivante à `MainActivity` la classe.
-Cette liste contient les paires clé/valeur pour les planètes et leurs températures moyennes:
+Ajoutez la variable d’instance suivante à la classe `MainActivity`.
+Cette liste contient les paires clé/valeur pour les planètes et leurs températures moyennes :
 
 ```csharp
 private List<KeyValuePair<string, string>> planets;
 ```
 
-Dans la `OnCreate` méthode, ajoutez le code suivant avant `adapter` que soit déclaré:
+Dans la méthode `OnCreate`, ajoutez le code suivant avant que `adapter` soit déclaré :
 
 ```csharp
 planets = new List<KeyValuePair<string, string>>
@@ -161,7 +161,7 @@ planets = new List<KeyValuePair<string, string>>
 
 Ce code crée un magasin simple pour les planètes et leurs températures moyennes associées. (Dans une application réelle, une base de données est généralement utilisée pour stocker des clés et leurs données associées.)
 
-Juste après le code ci-dessus, ajoutez les lignes suivantes pour extraire les clés et les placer dans une liste (dans l’ordre):
+Juste après le code ci-dessus, ajoutez les lignes suivantes pour extraire les clés et les placer dans une liste (dans l’ordre) :
 
 ```csharp
 List<string> planetNames = new List<string>();
@@ -169,14 +169,14 @@ foreach (var item in planets)
     planetNames.Add (item.Key);
 ```
 
-Transmettez cette liste au `ArrayAdapter` constructeur (au lieu de `planets_array` la ressource):
+Transmettez cette liste au constructeur `ArrayAdapter` (au lieu de la ressource `planets_array`) :
 
 ```csharp
 var adapter = new ArrayAdapter<string>(this,
     Android.Resource.Layout.SimpleSpinnerItem, planetNames);
 ```
 
-Modifiez `spinner_ItemSelected` afin que la position sélectionnée soit utilisée pour rechercher la valeur (la température) associée à la planète sélectionnée:
+Modifiez `spinner_ItemSelected` afin que la position sélectionnée soit utilisée pour rechercher la valeur (la température) associée à la planète sélectionnée :
 
 ```csharp
 private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
@@ -188,9 +188,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 }
 ```
 
-Exécutez l’application. le Toast doit se présenter comme suit:
+Exécutez l’application. le Toast doit se présenter comme suit :
 
-[![Exemple de sélection de la planète affichant la température](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
+[![exemple de la sélection de la planète affichant la température](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
 
 ## <a name="resources"></a>Ressources
 
@@ -199,4 +199,4 @@ Exécutez l’application. le Toast doit se présenter comme suit:
 - [`Spinner`](xref:Android.Widget.Spinner)
 
 *Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la*
-[*licence d’attribution de Creative-2,5*](http://creativecommons.org/licenses/by/2.5/).
+[*licence d’attribution de Creative-2,5*](https://creativecommons.org/licenses/by/2.5/).

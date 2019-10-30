@@ -3,15 +3,15 @@ title: Modification des métadonnées NuGet
 description: Ce document décrit comment utiliser les options de projet pour modifier les métadonnées NuGet pour les bibliothèques multiplateformes. Il aborde les métadonnées obligatoires et facultatives.
 ms.prod: xamarin
 ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 125412ec229f07c4515f42e4df7996d90f87a67b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5965b3f78bfc086b1cc6030a02f1cabafaae29d3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766559"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016745"
 ---
 # <a name="editing-nuget-metadata"></a>Modification des métadonnées NuGet
 
@@ -25,7 +25,7 @@ La section **Metadata** configure les valeurs utilisées dans le [fichier manife
 
 L’onglet **général** contient quatre champs qui doivent être entrés pour générer un package NuGet :
 
-[![](metadata-images/metadata-general-sml.png "Fenêtre métadonnées requises du package NuGet")](metadata-images/metadata-general.png#lightbox)
+[![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
 
 - **ID** : identificateur du package, qui doit être unique au sein de NuGet.org (ou à l’emplacement où le package sera distribué). Suivez ces [instructions](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) et utilisez uniquement des caractères qui sont valides dans une URL (sans espaces, et évitez la plupart des caractères spéciaux).
 - **Version** : choisissez un numéro de version cohérent avec les [règles de contrôle de version de NuGet](https://docs.microsoft.com/nuget/create-packages/dependency-versions).
@@ -38,13 +38,13 @@ L’onglet **général** contient quatre champs qui doivent être entrés pour g
 Pour plus d’informations, consultez la documentation sur les [éléments requis](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements) pour plus d’informations, ainsi que ces instructions détaillées sur le [choix d’un identificateur de package unique et la définition du numéro de version et la](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) [définition d’un type de package](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type).
 
 > [!IMPORTANT]
-> Tous les champs de cet onglet doivent être entrés. dans le cas contraire, un message d’erreur s’affiche : _«Le projet n’a pas de métadonnées NuGet, de sorte qu’aucun package NuGet ne sera créé. Les métadonnées du package NuGet peuvent être spécifiées dans la section métadonnées des options du projet._
+> Tous les champs de cet onglet doivent être entrés. dans le cas contraire, un message d’erreur s’affiche : _«le projet n’a pas de métadonnées NuGet, de sorte qu’aucun package NuGet ne sera créé. Les métadonnées du package NuGet peuvent être spécifiées dans la section métadonnées des options du projet_ .
 
 ## <a name="optional-metadata"></a>Métadonnées facultatives
 
 L’onglet **Détails** contient des champs facultatifs à inclure dans le fichier manifeste du package NuGet.
 
-[![](metadata-images/metadata-detail-sml.png "Fenêtre des métadonnées facultatives du package NuGet")](metadata-images/metadata-detail.png#lightbox)
+[![](metadata-images/metadata-detail-sml.png "NuGet package optional metadata window")](metadata-images/metadata-detail.png#lightbox)
 
 Pour plus d’informations sur les champs obligatoires et facultatifs, reportez-vous à la [référence des éléments facultatifs](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements) .
 

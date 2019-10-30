@@ -4,15 +4,15 @@ description: Ce document contient des liens vers divers guides qui décrivent le
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 3f331c38d470ba77de7b3fc4ef0143bb673683e8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 81d863b12aa7748acc6876929fb5d6361a20b507
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286339"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032114"
 ---
 # <a name="updating-your-app-to-ios-11"></a>Mise à jour de votre application avec iOS 11
 

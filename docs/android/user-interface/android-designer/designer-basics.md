@@ -4,15 +4,15 @@ description: Cette rubrique présente les fonctionnalités de Xamarin. Android D
 ms.prod: xamarin
 ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 2d5f20326de56bca77dd8fdd742515e003f996e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70761406"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029517"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Notions de base de Xamarin. Android Designer
 
@@ -24,11 +24,11 @@ _Cette rubrique présente les fonctionnalités de Xamarin. Android Designer, exp
 
 Le concepteur est lancé automatiquement quand une disposition est créée, ou il peut être lancé en double-cliquant sur un fichier de disposition existant. Par exemple, si vous double-cliquez sur **activity_main. AXML** dans le dossier **ressources > Layout** , le concepteur est chargé comme indiqué dans cette capture d’écran :
 
-[![Designer écran dans Visual Studio](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
+[écran Concepteur de ![dans Visual Studio](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 De même, vous pouvez ajouter une nouvelle disposition en cliquant avec le bouton droit sur le dossier de **disposition** dans le **Explorateur de solutions** et en sélectionnant **Ajouter > nouvel élément... > La disposition Android**:
 
-[boîte de dialogue ![Add un nouvel élément](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
+[![boîte de dialogue Ajouter un nouvel élément](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 Cela crée un fichier de disposition **. AXML** et le charge dans le concepteur.
 
@@ -41,7 +41,7 @@ Cela crée un fichier de disposition **. AXML** et le charge dans le concepteur.
 
 Le concepteur est composé de plusieurs sections qui prennent en charge ses diverses fonctionnalités, comme illustré dans la capture d’écran suivante :
 
-[![Diagram des volets du concepteur](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
+[Diagramme de ![des volets du concepteur](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonctionnalités suivantes pour créer et mettre en forme votre conception :
 
@@ -61,7 +61,7 @@ Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonc
 
 Le concepteur vous permet de glisser-déplacer des widgets de la boîte à outils vers le **aire de conception**. Lorsque vous interagissez avec des widgets dans le concepteur (soit en ajoutant de nouveaux widgets, soit en repositionnant des widgets existants), des lignes verticales et horizontales sont affichées pour marquer les points d’insertion disponibles. Dans l’exemple suivant, un nouveau widget de `Button` est déplacé vers le **aire de conception**:
 
-[![Example les lignes d’insertion sur Aire de conception](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
+[![des exemples de lignes d’insertion sur Aire de conception](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 En outre, les widgets peuvent être copiés : vous pouvez utiliser copier et coller pour copier un widget, ou vous pouvez glisser-déplacer un widget existant tout en appuyant sur la touche <kbd>CTRL</kbd> .
 
@@ -69,7 +69,7 @@ En outre, les widgets peuvent être copiés : vous pouvez utiliser copier et co
 
 La **barre d’outils du concepteur** (positionnée au-dessus du **aire de conception**) présente les sélecteurs de configuration et les menus outils :
 
-[![Diagram de la barre d’outils du concepteur](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
+[Diagramme de ![de la barre d’outils du concepteur](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 La **barre d’outils du concepteur** permet d’accéder aux fonctionnalités suivantes :
 
@@ -103,7 +103,7 @@ Chacune de ces fonctionnalités est expliquée plus en détail dans les rubrique
 
 Un menu contextuel est disponible à la fois dans le **aire de conception** et dans la **structure du document**. Ce menu affiche les commandes disponibles pour le widget sélectionné et son conteneur, ce qui facilite l’exécution d’opérations sur les conteneurs (qui ne sont pas toujours faciles à sélectionner sur le **aire de conception**). Voici un exemple de menu contextuel :
 
-[![Example menu contextuel quand vous cliquez avec le bouton droit sur le Aire de conception](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
+[![exemple de menu contextuel lorsque vous cliquez avec le bouton droit sur le Aire de conception](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 Dans cet exemple, si vous cliquez avec le bouton droit sur un `TextView`, un menu contextuel proposant plusieurs options s’affiche :
 
@@ -115,7 +115,7 @@ Dans cet exemple, si vous cliquez avec le bouton droit sur un `TextView`, un men
 
 Le **aire de conception** prend en charge le zoom à l’aide de plusieurs contrôles, comme indiqué ci-dessous :
 
-[![Diagram des contrôles de zoom Aire de conception](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
+[![diagramme des contrôles de zoom Aire de conception](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 Ces contrôles permettent de voir plus facilement certaines zones de l’interface utilisateur dans le concepteur :
 
@@ -135,7 +135,7 @@ Notez que le paramètre de zoom choisi n’affecte pas l’interface utilisateur
 
 Dans la bande centrale entre les volets **conception** et **source** , plusieurs boutons sont utilisés pour modifier l’affichage des volets **conception** et **source** :
 
-[emplacements des boutons d’affichage ![Pane](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
+[emplacements des boutons d’affichage du volet![](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
 
 Ces boutons effectuent les opérations suivantes :
 
@@ -158,7 +158,7 @@ Lorsque l’utilisateur clique sur le **volet réduire** , seul le volet de **co
 
 Le volet **source** affiche la source XML sous-jacente de la conception affichée sur la **aire de conception**. Étant donné que les deux vues sont disponibles en même temps, il est possible de créer une conception d’interface utilisateur en passant d’une représentation visuelle de la conception à la source XML sous-jacente pour la conception :
 
-[![Example source XML dans le volet source](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
+[![exemple de source XML dans le volet source](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
 
 Les modifications apportées à la source XML sont immédiatement rendues sur le **aire de conception**; les modifications apportées à la **aire de conception** provoquent la mise à jour de la source XML affichée dans le volet **source** en conséquence. Lorsque vous apportez des modifications au code XML dans le volet **source** , les fonctionnalités de saisie semi-automatique et IntelliSense sont disponibles pour accélérer le développement de l’interface utilisateur XML, comme expliqué ci-après.
 
@@ -168,7 +168,7 @@ Pour une plus grande facilité de navigation lors de l’utilisation de longs fi
 
 Lorsque vous commencez à taper le nom d’un attribut pour un widget, vous pouvez appuyer sur <kbd>Ctrl + Espace</kbd> pour afficher une liste des saisies semi-automatiques possibles. Par exemple, après avoir entré `android:lay` dans l’exemple suivant (suivi de l’entrée <kbd>Ctrl + Espace</kbd>), la liste suivante s’affiche :
 
-[![Autocompletion de l’attribut Layout](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
+[![la saisie semi-automatique de l’attribut Layout](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
 
 Appuyez sur <kbd>entrée</kbd> pour accepter la première saisie semi-automatique, ou utilisez les touches de direction pour faire défiler le contenu jusqu’à la fin souhaitée, puis appuyez sur <kbd>entrée</kbd>. Vous pouvez également utiliser la souris pour faire défiler vers et cliquer sur l’achèvement souhaité.
 
@@ -176,7 +176,7 @@ Appuyez sur <kbd>entrée</kbd> pour accepter la première saisie semi-automatiqu
 
 Une fois que vous avez entré un nouvel attribut pour un widget et que vous commencez à lui assigner une valeur, IntelliSense s’affiche après la saisie d’un caractère de déclenchement et fournit une liste de valeurs valides à utiliser pour cet attribut. Par exemple, une fois que le premier guillemet double est entré pour `android:layout_width` dans l’exemple suivant, un sélecteur de saisie semi-automatique s’affiche pour fournir la liste des choix valides pour cette largeur :
 
-[exemple de ![IntelliSense pour la largeur de disposition](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
+[![exemple IntelliSense pour la largeur de disposition](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
 
 En bas de cette fenêtre contextuelle se trouvent deux boutons (comme indiqué en rouge dans la capture d’écran ci-dessus). Le fait de cliquer sur le bouton **ressources du projet** sur la gauche restreint la liste aux ressources qui font partie du projet d’application, tandis que le fait de cliquer sur le bouton ressources de l' **infrastructure** à droite restreint la liste pour afficher les ressources disponibles dans l’infrastructure.
 Ces boutons sont activés ou désactivés : vous pouvez les cliquer de nouveau pour désactiver l’action de filtrage fournie par chacun.
@@ -200,15 +200,15 @@ Certaines propriétés peuvent faire référence à des ressources qui sont déf
 
 Par exemple, la capture d’écran suivante montre les options disponibles lorsque vous cliquez sur le carré assombri à droite du champ de texte d’un widget de `Text` dans la fenêtre **Propriétés** :
 
-[![Example liste des options de texte](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
+[![exemple de liste d’options de texte](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
 
 Quand l’utilisateur clique sur la **ressource...** , la boîte de dialogue **Sélectionner une ressource** s’affiche :
 
-[capture d’écran des ressources de ![Example avec plusieurs ressources listées](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
+[capture d’écran![exemples de ressources avec plusieurs ressources listées](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
 
 Dans cette liste, vous pouvez sélectionner une ressource texte à utiliser pour ce widget au lieu de coder en dur le texte dans le volet **Propriétés** . L’exemple suivant illustre le sélecteur de ressources pour la propriété `Src` d’un `ImageView` :
 
-[icône de liste de ![Resource sélecteur pour une ressource ImageView](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
+[![icône de liste de sélecteur de ressources pour un ImageView](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 En cliquant sur le carré vide à droite de la propriété `Src`, vous ouvrez la boîte de dialogue **Sélectionner une ressource** avec une liste de ressources allant des couleurs (comme indiqué ci-dessus) à drawables.
 
@@ -250,13 +250,13 @@ Si une marge a déjà été définie, des lignes en pointillés sont affichées,
 
 ### <a name="size"></a>Size
 
-Comme mentionné précédemment, vous pouvez basculer en mode d’édition de taille en cliquant sur un widget alors qu’il est déjà sélectionné. Cliquez sur la poignée triangulaire pour définir la taille de la dimension indiquée sur `wrap_content` :
+Comme mentionné précédemment, vous pouvez basculer en mode d’édition de taille en cliquant sur un widget alors qu’il est déjà sélectionné. Cliquez sur la poignée triangulaire pour définir la taille de la dimension indiquée sur `wrap_content`:
 
 ![Encapsuler le contenu et les poignées de redimensionnement](designer-basics-images/vs/17-wrap-content.png)
 
 Le fait de cliquer sur le handle de **contenu de retour** à la ligne réduit le widget dans cette dimension afin qu’il ne soit pas plus grand que nécessaire pour encapsuler le contenu délimité. Dans cet exemple, le texte du bouton est réduit horizontalement, comme indiqué dans la capture d’écran suivante.
 
-Lorsque la valeur size est définie sur **Wrap content**, le concepteur affiche une poignée triangulaire qui pointe dans la direction opposée pour la modification de la taille en `match_parent` :
+Lorsque la valeur size est définie sur **Wrap content**, le concepteur affiche une poignée triangulaire qui pointe dans la direction opposée pour la modification de la taille en `match_parent`:
 
 ![Trouver le handle parent](designer-basics-images/vs/18-match-parent.png)
 
@@ -287,11 +287,11 @@ La **structure du document** prend en charge le copier-coller, ou vous pouvez ut
 
 Le concepteur est lancé automatiquement quand une disposition est créée, ou il peut être lancé en double-cliquant sur un fichier. AXML existant. Par exemple, le fait de double-cliquer sur **main. AXML** dans le dossier **resources > Layout** charge le concepteur comme indiqué ci-dessous :
 
-[![Designer écran dans Visual Studio pour Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
+[![écran concepteur dans Visual Studio pour Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 De même, vous pouvez ajouter une nouvelle disposition en cliquant avec le bouton droit sur le dossier de **disposition** dans le **panneau solutions** et en sélectionnant **Ajouter > nouveau fichier > disposition de > Android**:
 
-[boîte de dialogue ![Add un nouveau fichier](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
+[![boîte de dialogue Ajouter un nouveau fichier](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 Cela crée un nouveau fichier. AXML et le charge sur le Aire de conception.
 
@@ -304,7 +304,7 @@ Cela crée un nouveau fichier. AXML et le charge sur le Aire de conception.
 
 Le concepteur est composé de plusieurs sections qui prennent en charge ses diverses fonctionnalités, comme illustré dans la capture d’écran suivante :
 
-[![Diagram des volets du concepteur](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
+[Diagramme de![des volets du concepteur](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonctionnalités suivantes pour créer et mettre en forme votre conception :
 
@@ -314,7 +314,7 @@ Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonc
 
 - La **boîte à outils** &ndash; fournit une liste de widgets et de mises en page que vous pouvez glisser-déplacer sur le aire de conception.
 
-- @No__t_1 du **tableau de propriétés** répertorie les propriétés du widget sélectionné pour l’affichage et la modification.
+- &ndash; du **tableau de propriétés** répertorie les propriétés du widget sélectionné pour l’affichage et la modification.
 
 - **Structure du Document** &ndash; affiche l’arborescence des widgets qui composent la disposition. Vous pouvez cliquer sur un élément dans l’arborescence pour le faire sélectionner dans le concepteur. En outre, le fait de cliquer sur un élément de l’arborescence charge les propriétés de l’élément dans le panneau des propriétés.
 
@@ -322,7 +322,7 @@ Lorsque vous modifiez une disposition dans le concepteur, vous utilisez les fonc
 
 La barre d’outils (positionnée au-dessus du Aire de conception) présente les sélecteurs de configuration et les menus outils :
 
-[![Diagram de la barre d’outils du concepteur](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
+[Diagramme de![de la barre d’outils du concepteur](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 La barre d’outils permet d’accéder aux fonctionnalités suivantes :
 
@@ -356,7 +356,7 @@ Les [fonctionnalités de conception de matériau](~/android/user-interface/andro
 
 Le concepteur vous permet de glisser-déplacer des widgets de la boîte à outils vers le Aire de conception. Lorsque vous interagissez avec des widgets dans le concepteur (soit en ajoutant de nouveaux widgets, soit en repositionnant des widgets existants), des lignes verticales et horizontales sont affichées pour marquer les points d’insertion disponibles. Dans l’exemple suivant, un nouveau widget de `Button` est déplacé vers le Aire de conception :
 
-[![Example les lignes d’insertion sur Aire de conception](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
+[![des exemples de lignes d’insertion sur Aire de conception](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 En outre, les widgets peuvent être copiés : vous pouvez utiliser copier et coller pour copier un widget, ou vous pouvez glisser-déplacer un widget existant tout en appuyant sur la touche <kbd>CTRL</kbd> .
 
@@ -364,7 +364,7 @@ En outre, les widgets peuvent être copiés : vous pouvez utiliser copier et co
 
 Un menu contextuel est disponible à la fois dans le Aire de conception et dans la structure du document. Ce menu affiche les commandes disponibles pour le widget sélectionné et son conteneur, ce qui facilite l’exécution d’opérations sur les conteneurs (qui ne sont pas toujours faciles à sélectionner sur le Aire de conception). Voici un exemple de menu contextuel :
 
-[![Example menu contextuel quand vous cliquez avec le bouton droit sur le Aire de conception](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
+[![exemple de menu contextuel lorsque vous cliquez avec le bouton droit sur le Aire de conception](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 Dans cet exemple, si vous cliquez avec le bouton droit sur un `Button`, un menu contextuel proposant plusieurs options s’affiche :
 
@@ -376,7 +376,7 @@ Dans cet exemple, si vous cliquez avec le bouton droit sur un `Button`, un menu 
 
 Le Aire de conception prend en charge le zoom à l’aide de plusieurs contrôles, comme indiqué ci-dessous :
 
-[![Diagram des contrôles de zoom Aire de conception](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
+[![diagramme des contrôles de zoom Aire de conception](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 Ces contrôles permettent de voir plus facilement certaines zones de l’interface utilisateur dans le concepteur :
 
@@ -396,7 +396,7 @@ Notez que le paramètre de zoom choisi n’affecte pas l’interface utilisateur
 
 Le concepteur prend en charge la modification des propriétés des widgets via le panneau des **Propriétés**. Les propriétés figurant dans le panneau des propriétés changent en fonction du widget sélectionné dans l’aire du concepteur. Lorsque le `Button` de l’exemple précédent est sélectionné, les propriétés de ce widget `Button` sont affichées :
 
-[![Screenshot du panneau des propriétés](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
+[Capture d’écran![du panneau des propriétés](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 ## <a name="property-pad-sections"></a>Sections du panneau des propriétés
 
@@ -424,23 +424,23 @@ Lorsque vous cliquez dessus, ce bouton ouvre un sélecteur de ressources.
 
 Par exemple, la capture d’écran suivante montre les ressources disponibles lorsque vous cliquez sur les points de suspension à droite du champ de texte d’un widget de `Button` dans le panneau des **Propriétés**:
 
-[capture d’écran des ressources de ![Example avec deux ressources listées](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
+[capture d’écran ![exemples de ressources avec deux ressources listées](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 L’exemple suivant illustre le sélecteur de ressources pour la propriété `Src` d’un `ImageView` :
 
-[icône de liste de ![Resource sélecteur pour une ressource ImageView](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
+[![icône de liste de sélecteur de ressources pour un ImageView](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 ### <a name="boolean-property-references"></a>Références de propriété booléennes
 
 Les propriétés *booléennes* sont normalement affichées sous la forme d’une case à cocher dans le panneau des propriétés. Quand une propriété `Boolean` prend en charge les références de ressource, une petite case à cocher s’affiche en regard de la propriété. Une case à cocher activée signifie `true` et une zone vide signifie `false`. Vous pouvez également entrer directement une valeur telle que `true` ou `false`. Placez le curseur de la souris sur l’entrée pour faire apparaître une petite icône de champ de texte. Vous pouvez cliquer dessus si vous souhaitez entrer la valeur manuellement.
 
-[![Example de la définition des propriétés booléennes](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
+[![exemple de définition de propriétés booléennes](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
 ## <a name="grouped-properties"></a>Propriétés groupées
 
 Certains widgets ont des propriétés à valeurs multiples regroupées (par exemple, `Padding`). Ces valeurs de propriété sont répertoriées dans le **tableau de propriétés** dans une ligne unique et extensible. Certaines de ces propriétés peuvent être modifiées directement dans la ligne groupée, par exemple la propriété `Padding` illustrée ci-dessous :
 
-[![Example les paramètres de la propriété Padding](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
+[![des exemples de paramètres pour la propriété Padding](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 ## <a name="editing-properties-inline"></a>Modification des propriétés Inline
 
@@ -450,11 +450,11 @@ Le Android Designer prend en charge la modification directe de certaines propri�
 
 Les propriétés de texte de certains widgets (tels que `Button` et `TextView`) peuvent être modifiées directement sur le Aire de conception. Le fait de double-cliquer sur un widget le met en mode édition, comme indiqué ci-dessous :
 
-[![Text ressource pour la chaîne Hello](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
+[ressource texte ![pour la chaîne Hello](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 Vous pouvez entrer une nouvelle valeur de texte ou vous pouvez entrer une nouvelle chaîne de ressource. Dans l’exemple suivant, la ressource `@string/hello` est remplacée par le texte, `CLICK THIS BUTTON` :
 
-[![Shift + entrée pour lier automatiquement le texte à une nouvelle ressource](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
+[![Maj + Entrée pour lier automatiquement le texte à une nouvelle ressource](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 Cette modification est stockée dans la propriété `text` du widget. elle ne modifie pas la valeur assignée à la ressource `@string/hello`.
 Lorsque vous entrez une nouvelle chaîne de texte, vous pouvez appuyer sur <kbd>maj</kbd>  +
@@ -466,40 +466,40 @@ Lorsque vous sélectionnez un widget, le concepteur affiche des poignées qui vo
 
 Lorsque vous cliquez sur un widget pour la première fois, des poignées de marge sont affichées. Si vous déplacez la souris sur l’une des poignées, le concepteur affiche la propriété que le descripteur modifiera (comme indiqué ci-dessous pour la propriété `layout_marginLeft`) :
 
-[![Screenshot l’indication des poignées des marges dans le concepteur](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
+[Capture d’écran![montrant des poignées de marge dans le concepteur](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 Si une marge a déjà été définie, des lignes en pointillés sont affichées, ce qui indique l’espace occupé par la marge :
 
-[![Example de lignes en pointillés marquant l’espace autour d’un bouton](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
+[![exemple de lignes en pointillés marquant un espace autour d’un bouton](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 ### <a name="size"></a>Size
 
-Comme mentionné précédemment, vous pouvez basculer en mode d’édition de taille en cliquant sur un widget alors qu’il est déjà sélectionné. Cliquez sur la poignée triangulaire pour définir la taille de la dimension indiquée sur `wrap_content` :
+Comme mentionné précédemment, vous pouvez basculer en mode d’édition de taille en cliquant sur un widget alors qu’il est déjà sélectionné. Cliquez sur la poignée triangulaire pour définir la taille de la dimension indiquée sur `wrap_content`:
 
-[![Wrap le contenu et les poignées de redimensionnement](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
+[![encapsuler le contenu et les poignées de redimensionnement](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 Le fait de cliquer sur le descripteur de **contenu encapsulé** réduit le widget dans cette dimension afin que ne soit pas plus grand que nécessaire pour encapsuler le contenu délimité. Dans cet exemple, le texte du bouton est réduit horizontalement, comme indiqué dans la capture d’écran suivante.
 
-Lorsque la valeur size est définie sur **Wrap content**, le concepteur affiche une poignée triangulaire qui pointe dans la direction opposée pour la modification de la taille en `match_parent` :
+Lorsque la valeur size est définie sur **Wrap content**, le concepteur affiche une poignée triangulaire qui pointe dans la direction opposée pour la modification de la taille en `match_parent`:
 
-[handle parent ![Match](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
+[![correspondre au handle parent](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 Le fait de cliquer sur le handle de **correspondance parent** restaure la taille de cette dimension pour qu’elle soit identique au widget parent.
 
 Vous pouvez également faire glisser la poignée de redimensionnement circulaire (comme indiqué dans les captures d’écran ci-dessus) pour redimensionner le widget à une valeur de `dp` arbitraire. Lorsque vous procédez ainsi, le **contenu du wrapper et la** correspondance des handles **parents** sont présentés pour cette dimension :
 
-[poignées de redimensionnement ![Circular](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
+[![les poignées de redimensionnement circulaire](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 Tous les conteneurs n’autorisent pas la modification de la `Size` d’un widget. Par exemple, remarquez que dans la capture d’écran ci-dessous, le `LinearLayout` sélectionné, les poignées de redimensionnement n’apparaissent pas :
 
-[poignées de redimensionnement ![No](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
+[![aucune poignée de redimensionnement](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 ## <a name="document-outline"></a>Structure du document
 
 La **structure du document** affiche la hiérarchie des widgets de la disposition.
 Dans l’exemple suivant, le widget contenant `LinearLayout` est sélectionné :
 
-[plan de ![Document](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
+[structure du document![](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 Le contour du widget sélectionné (dans ce cas, un `LinearLayout`) est également mis en surbrillance sur la Aire de conception. Le widget sélectionné dans la structure du document reste synchronisé avec son homologue sur le Aire de conception. Cela est utile pour sélectionner des groupes de vues, qui ne sont pas toujours faciles à sélectionner sur le Aire de conception.
 

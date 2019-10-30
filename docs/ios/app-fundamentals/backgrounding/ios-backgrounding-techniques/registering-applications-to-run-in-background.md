@@ -4,15 +4,15 @@ description: Ce document explique comment inscrire une application Xamarin. iOS 
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 61b7926f28253acbcc45bc204c466d76a00c72b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757691"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010833"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Inscription des applications Xamarin. iOS pour une exécution en arrière-plan
 
@@ -34,7 +34,7 @@ Les applications inscrites peuvent appartenir à plusieurs catégories :
 
 Les applications peuvent être inscrites en définissant la propriété **modes d’arrière-plan requis** dans le fichier *info. plist*de l’application. Une application peut s’inscrire dans autant de catégories que nécessaire :
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "Définition des modes d’arrière-plan")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Setting the background modes")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 Pour obtenir un guide pas à pas d’inscription d’une application pour les mises à jour de l’emplacement en arrière-plan, consultez la procédure pas à pas relative à l' [emplacement en arrière-plan](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
@@ -42,7 +42,7 @@ Pour obtenir un guide pas à pas d’inscription d’une application pour les mi
 
 Une autre propriété qui peut être définie dans *info. plist* est l' *application ne s’exécute pas en arrière-plan*, ou `UIApplicationExitsOnSuspend` propriété :
 
- [![](registering-applications-to-run-in-background-images/plist.png "Désactivation de l’exécution en arrière-plan")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "Disabling Background Running")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 Cela revient exactement à définir le paramètre d’actualisation de l’application en arrière-plan sur désactivé dans iOS 7 +, sauf qu’il ne peut être modifié que côté développeur et est disponible pour iOS 4 et versions ultérieures. L’application est suspendue immédiatement après avoir entré l’arrière-plan et ne peut pas effectuer de traitement.
 

@@ -3,19 +3,19 @@ title: 'Partie 4 : Utilisation de plusieurs plateformes'
 description: Ce document explique comment gérer la divergence des applications en fonction de la plateforme ou de la fonctionnalité. Il aborde la taille de l’écran, les métaphores de navigation, les fonctions tactiles et les gestes, les notifications push et les paradigmes d’interface tels que les listes et les onglets.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fb01d0ca56365fa95aa563ca99394dea39dc7d31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555723e689a9ba076ee34d49b93cf7141e542832
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288879"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016891"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>Partie 4 : Utilisation de plusieurs plateformes
 
-## <a name="handling-platform-divergence-amp-features"></a>Gestion des fonctionnalités &amp; de divergence de plateforme
+## <a name="handling-platform-divergence-amp-features"></a>Gestion des fonctionnalités de divergence de plateforme &amp;
 
 La divergence n’est pas simplement un problème « multiplateforme ». les appareils sur la plateforme « identique » ont des fonctionnalités différentes (notamment la grande variété de périphériques Android disponibles). La taille d’écran la plus évidente et la plus simple, mais les autres attributs d’appareil peuvent varier et obliger une application à vérifier certaines fonctionnalités et à se comporter différemment en fonction de leur présence (ou absence).
 
@@ -108,7 +108,7 @@ Ces bibliothèques proposent également des fonctionnalités multiplateforme pou
 
 Dans certains cas, votre code partagé doit toujours fonctionner différemment sur chaque plateforme, en accédant éventuellement à des classes ou des fonctionnalités qui se comportent différemment. La compilation conditionnelle fonctionne mieux avec les projets d’actifs partagés, où le même fichier source est référencé dans plusieurs projets qui ont des symboles différents définis.
 
-Les projets Xamarin définissent `__MOBILE__` toujours la valeur true pour les projets d’application iOS et Android (Notez le double-trait de soulignement avant et après correction de ces symboles).
+Les projets Xamarin définissent toujours `__MOBILE__` ce qui est vrai pour les projets d’application iOS et Android (Notez le double-trait de soulignement avant et après correction de ces symboles).
 
 ```csharp
 #if __MOBILE__
@@ -118,7 +118,7 @@ Les projets Xamarin définissent `__MOBILE__` toujours la valeur true pour les p
 
 #### <a name="ios"></a>iOS
 
-Xamarin. iOS définit `__IOS__` ce que vous pouvez utiliser pour détecter les appareils iOS.
+Xamarin. iOS définit `__IOS__` que vous pouvez utiliser pour détecter les appareils iOS.
 
 ```csharp
 #if __IOS__
@@ -148,7 +148,7 @@ Le code qui doit être compilé uniquement dans les applications Xamarin. Androi
 #endif
 ```
 
-Chaque version d’API définit également une nouvelle directive de compilateur, de sorte que le code comme celui-ci vous permet d’ajouter des fonctionnalités si des API plus récentes sont ciblées. Chaque niveau d’API comprend tous les symboles de niveau « inférieur ». Cette fonctionnalité n’est pas vraiment utile pour la prise en charge de plusieurs plateformes. en général `__ANDROID__` , le symbole est suffisant.
+Chaque version d’API définit également une nouvelle directive de compilateur, de sorte que le code comme celui-ci vous permet d’ajouter des fonctionnalités si des API plus récentes sont ciblées. Chaque niveau d’API comprend tous les symboles de niveau « inférieur ». Cette fonctionnalité n’est pas vraiment utile pour la prise en charge de plusieurs plateformes. en général, le symbole de `__ANDROID__` est suffisant.
 
 ```csharp
 #if __ANDROID_11__
@@ -158,7 +158,7 @@ Chaque version d’API définit également une nouvelle directive de compilateur
 
 #### <a name="mac"></a>Mac
 
-Il n’existe actuellement aucun symbole intégré pour Xamarin. Mac, mais vous pouvez ajouter les vôtres dans les options du projet de l’application Mac **> générer > compiler** dans la zone **définir les symboles** , ou modifier le fichier **. csproj** et y ajouter `__MAC__`(par exemple)
+Il n’existe actuellement aucun symbole intégré pour Xamarin. Mac, mais vous pouvez ajouter les vôtres dans les options de projet de l’application Mac **> générer > compilateur** dans la zone **définir les symboles** , ou modifier le fichier **. csproj** et l’ajouter (par exemple `__MAC__`)
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -179,11 +179,11 @@ Utilisez `WINDOWS_UWP`. Il n’y a aucun trait de soulignement entourant la cha�
 Un exemple simple d’étude de cas de compilation conditionnelle consiste à définir l’emplacement du fichier de base de données SQLite. Les trois plateformes ont des exigences légèrement différentes pour spécifier l’emplacement du fichier :
 
 - **iOS** : Apple préfère placer les données non-utilisateur dans un emplacement spécifique (le répertoire de bibliothèque), mais il n’existe aucune constante système pour ce répertoire. Du code spécifique à la plateforme est requis pour générer le chemin d’accès correct.
-- **Android** : le chemin d’accès système `Environment.SpecialFolder.Personal` retourné par est un emplacement acceptable pour stocker le fichier de base de données.
+- **Android** : le chemin d’accès système retourné par `Environment.SpecialFolder.Personal` est un emplacement acceptable pour stocker le fichier de base de données.
 - **Windows Phone** : le mécanisme de stockage isolé ne permet pas de spécifier un chemin d’accès complet, juste un chemin d’accès relatif et un nom de fichier.
-- **Plateforme Windows universelle** : utilise `Windows.Storage` des API.
+- **Plateforme Windows universelle** : utilise des API `Windows.Storage`.
 
-Le code suivant utilise la compilation conditionnelle pour garantir `DatabaseFilePath` que le est correct pour chaque plateforme :
+Le code suivant utilise la compilation conditionnelle pour s’assurer que la `DatabaseFilePath` est correcte pour chaque plateforme :
 
 ```csharp
 public static string DatabaseFilePath {

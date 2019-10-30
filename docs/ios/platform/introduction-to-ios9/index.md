@@ -4,21 +4,21 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751993"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031783"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
 _Cet article présente toutes les API et fonctionnalités nouvelles et modifiées disponibles dans iOS 9 pour les développeurs Xamarin. iOS._
 
-![](images/ios9-sml.png "Logo iOS 9")
+![](images/ios9-sml.png "The iOS 9 logo")
 
 Apple a ajouté plusieurs nouvelles API et services dans iOS 9, ainsi que de nombreuses améliorations apportées aux fonctionnalités existantes.
 
@@ -137,15 +137,15 @@ Dans iOS 9, Apple a amélioré le trousseau pour fournir un nouveau type de clé
 
 - Nouvelle contrainte Touch ID qui invalide les éléments de trousseau lorsque la base de données d’empreintes digitales est modifiée.
 - Nouvelles contraintes qui permettent de créer des entrées de liste Access Control avec Touch ID ou code secret uniquement.
-- Nouveau contexte d’authentification qui vous permet d’appeler l’authentification séparément `SecItem` des appels.
+- Nouveau contexte d’authentification qui vous permet d’appeler l’authentification séparément des appels de `SecItem`.
 - Access Control entropie de liste (à l’aide de l’option de mot de passe d’application) pour le chiffrement d’élément de trousseau fourni par l’application.
-- Prise en charge de la génération et de l’utilisation de clés à `kSecAttrTokenIDSecureEnclave` l’intérieur de l’enclave sécurisée (via l’attribut).
+- Prise en charge de la génération et de l’utilisation de clés à l’intérieur de l’enclave sécurisée (via l’attribut `kSecAttrTokenIDSecureEnclave`).
 
 Pour plus d’informations, consultez notre [Introduction à la documentation Touch ID](~/ios/platform/touchid.md) .
 
 ## <a name="right-to-left-language-support"></a>Prise en charge des langues de droite à gauche
 
-Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Notamment :
+Dans iOS 9, Apple a rendu une interface utilisateur retournée plus facile que jamais en fournissant une prise en charge complète des langues de droite à gauche. Ce dernier est détaillé ci-après :
 
 - Les contrôles [UIKit](xref:UIKit) standard sont automatiquement retournés de droite à gauche selon les paramètres régionaux et linguistiques des appareils iOS.
 - La classe [UIView](xref:UIKit.UIView) fournit des attributs qui vous permettent de définir la manière dont une vue donnée doit apparaître lorsqu’elle est retournée de droite à gauche.
@@ -177,8 +177,8 @@ Pour plus d’informations, consultez notre documentation [supplémentaire sur l
 Apple a déconseillé les API et fonctions suivantes dans iOS 9 :
 
 - **Carnet d’adresses & interface utilisateur du carnet d’adresses** -ces API ont été remplacées par les infrastructures d’interface utilisateur de contact et de contact. Pour plus d’informations, consultez la documentation de [l’interface utilisateur contacts et contacts](~/ios/platform/contacts.md) .
-- **CBCentralManager** -les `RetrievePeripherals` méthodes `RetrieveConnectedPeripherals` et de la `CBCentralManager` classe ont été supprimées dans iOS 9. L’appel de ces méthodes entraîne le blocage d’une application lors de l’appariement d’un accessoire ou du lancement de l’application.
-- **FetchAllChanges** : la `FetchAllChanges` de la `CKFetchRecordChangesOperation` classe a été amortie et sera supprimée dans iOS 9.
+- **CBCentralManager** : les méthodes `RetrievePeripherals` et `RetrieveConnectedPeripherals` de la classe `CBCentralManager` ont été supprimées dans iOS 9. L’appel de ces méthodes entraîne le blocage d’une application lors de l’appariement d’un accessoire ou du lancement de l’application.
+- **FetchAllChanges** : l' `FetchAllChanges` de la classe `CKFetchRecordChangesOperation` a été amortie et sera supprimée dans iOS 9.
 - **Lecteur multimédia** : l’infrastructure de lecteur multimédia est dépréciée dans iOS 9. Utilisez des API AVKit ou AV Foundation à la place.
 
 Pour obtenir la liste complète des désapprobations d’API spécifiques, consultez la documentation relative aux [différences d’API iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222) d’Apple.
@@ -191,7 +191,7 @@ Nous disposons de quelques [exemples spécifiques à IOS 9](https://docs.microso
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
 - [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
-- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [Photoprogression](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
@@ -215,7 +215,7 @@ Consultez également les parties iOS de ces exemples (compléments Mac OS X vers
 - [Présentation de HomeKit](~/ios/platform/homekit.md)
 - [Présentation du transfert](~/ios/platform/handoff.md)
 - [Modifications supplémentaires apportées à l’infrastructure iOS 9](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
-- [Dépannage](~/ios/platform/introduction-to-ios9/troubleshooting.md)
+- [Résolution des problèmes](~/ios/platform/introduction-to-ios9/troubleshooting.md)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
 - [Nouveautés d’iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Mise à jour de vos applications Xamarin. iOS vers iOS9 (vidéo)](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

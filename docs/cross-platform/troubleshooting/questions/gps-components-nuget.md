@@ -3,15 +3,15 @@ title: Unification des composants de Google Play Services et de NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 8a7fd77a3f6460f0edbd76f8a4ccf45b32b3ed87
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 100ef7ffd7e05db0ed8b2af6b9990fc3a0ac1fa9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284988"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014149"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Unification des composants de Google Play Services et de NuGet
 
@@ -30,17 +30,17 @@ Google ne fournit en fait que deux fichiers. jar pour Google Play Services :
 - `google-play-services-froyo.jar`
 - `google-play-services.jar`
 
-L’écart était dû au fait que nos outils n’indiquaient `aapt.exe` pas correctement le niveau d’API de ressource maximal à utiliser pour une application donnée. Cela signifiait que nous ayons reçu des erreurs de compilation si nous avons essayé d’utiliser la liaison Google Play Services (KitKat) sur un niveau d’API inférieur comme Gingerbread.
+L’écart était dû au fait que nos outils n’indiquaient pas correctement `aapt.exe` ce que le niveau d’API de ressource maximal était utilisé pour une application donnée. Cela signifiait que nous ayons reçu des erreurs de compilation si nous avons essayé d’utiliser la liaison Google Play Services (KitKat) sur un niveau d’API inférieur comme Gingerbread.
 
 ## <a name="unifying-google-play-services"></a>Unification des Google Play Services
 
-Dans les versions les plus récentes de Xamarin. Android, nous `aapt.exe` indiquons maintenant la version de ressource maximale à utiliser. ce problème est donc absent pour nous.
+Dans les versions les plus récentes de Xamarin. Android, nous indiquons à présent `aapt.exe` la version de ressource maximale à utiliser. ce problème est donc absent pour nous.
 
 Cela signifie qu’il n’existe aucune véritable raison d’avoir des packages distincts pour Gingerbread/ICS/JellyBean/KitKat (Toutefois, nous avons besoin d’une liaison distincte pour Froyo, car il s’agit d’un fichier. jar différent).
 
 Pour faciliter les choses pour les développeurs, nous avons à présent unifié nos composants et les packages NuGet en deux :
 
-- Google Play Services (Froyo) (Bindings `google-play-services-froyo.jar`)
+- Google Play Services (Froyo) (liaisons `google-play-services-froyo.jar`)
 - Google Play Services (liaisons `google-play-services.jar`)
 
 ### <a name="which-one-should-be-used"></a>Lequel doit être utilisé ?
@@ -49,7 +49,7 @@ Dans presque tous les cas, Google Play Services doit être utilisé. La seule ra
 
 ### <a name="note-about-gingerbread"></a>Remarque à propos de Gingerbread
 
-Gingerbread n’a pas de prise en charge de fragment par défaut, et pour cette raison, certaines des classes de la liaison ne seront pas utilisables dans une application au moment de l’exécution sur un appareil Gingerbread. Les classes `MapFragment` telles que ne fonctionnent pas sur Gingerbread et leur variante de prise en charge `SupportMapFragment`doit être utilisée à la place. C’est au développeur de savoir laquelle utiliser. Cette incompatibilité est indiquée par Google dans la documentation de Google Play Services.
+Gingerbread n’a pas de prise en charge de fragment par défaut, et pour cette raison, certaines des classes de la liaison ne seront pas utilisables dans une application au moment de l’exécution sur un appareil Gingerbread. Les classes comme `MapFragment` ne fonctionneront pas sur Gingerbread et leur variante de prise en charge doit être utilisée à la place `SupportMapFragment`. C’est au développeur de savoir laquelle utiliser. Cette incompatibilité est indiquée par Google dans la documentation de Google Play Services.
 
 ### <a name="what-happens-to-the-old-componentsnugets"></a>Qu’advient-il des anciens composants/NuGet ?
 

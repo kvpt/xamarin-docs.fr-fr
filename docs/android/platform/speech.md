@@ -4,15 +4,15 @@ description: Cet article décrit les principes fondamentaux de l’utilisation d
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/02/2018
-ms.openlocfilehash: 14cce06399b804ba8fd982a40347fb3146b281c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757418"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019765"
 ---
 # <a name="android-speech"></a>Reconnaissance vocale Android
 
@@ -24,15 +24,15 @@ Le fait de disposer d’un système, qui « comprend » la voix humaine et dic
 
 Par exemple, avec la désactivation de l’utilisation du téléphone mobile pendant la conduite, les utilisateurs veulent un moyen gratuit de faire fonctionner leurs appareils. La multitude de facteurs de forme Android différents, tels que l’usure Android, et l’inclusion toujours étendue de ceux qui peuvent utiliser des appareils Android (tels que les tablettes et les tablettes de notes), ont créé une plus grande focalisation sur les applications de synthèse vocale.
 
-Google offre au développeur un ensemble complet d’API dans l’espace de noms Android. Speech pour couvrir la plupart des instances de prise en charge vocale d’un appareil (par exemple, logiciel conçu pour les aveugles).  L’espace de noms comprend la fonctionnalité qui permet de traduire le texte en `Android.Speech.Tts`discours, le contrôle du moteur utilisé pour effectuer la traduction, ainsi qu’un certain nombre `RecognizerIntent`de s qui autorisent la conversion de la parole en texte.
+Google offre au développeur un ensemble complet d’API dans l’espace de noms Android. Speech pour couvrir la plupart des instances de prise en charge vocale d’un appareil (par exemple, logiciel conçu pour les aveugles).  L’espace de noms comprend la fonctionnalité qui permet de traduire le texte en discours en `Android.Speech.Tts`, le contrôle du moteur utilisé pour effectuer la traduction, ainsi qu’un certain nombre de `RecognizerIntent`s qui permettent de convertir la parole en texte.
 
 Bien que les fonctionnalités de reconnaissance vocale soient compréhensibles, il existe des limitations en fonction du matériel utilisé. Il est peu probable que l’appareil interprète correctement tout ce qui est parlé dans chaque langue disponible.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Il n’existe aucune exigence particulière pour ce guide, autre que votre appareil avec un microphone et un orateur.
 
-Le cœur d’un appareil Android qui interprète la parole est l’utilisation d' `Intent` un avec un `OnActivityResult`correspondant.
+Le cœur d’un appareil Android qui interprète la parole est l’utilisation d’un `Intent` avec un `OnActivityResult`correspondant.
 Toutefois, il est important de reconnaître que la parole n’est pas comprise, mais interprétée comme du texte. La différence est importante.
 
 ### <a name="the-difference-between-understanding-and-interpreting"></a>Différence entre la compréhension et l’interprétation
@@ -69,7 +69,7 @@ if (rec != "android.hardware.microphone")
 
 ### <a name="creating-the-intent"></a>Création de l’intention
 
-L’objectif du système vocal utilise un type particulier d’intention appelé `RecognizerIntent`. Cette intention contrôle un grand nombre de paramètres, y compris la durée d’attente avec un silence jusqu’à ce que l’enregistrement soit pris en compte, les autres langages à reconnaître et les sorties `Intent`, et tout texte à inclure dans la boîte de dialogue modale de l’instruction. Dans cet extrait de `VOICE` code, `readonly int` est utilisé pour la `OnActivityResult`reconnaissance dans.
+L’objectif du système vocal utilise un type particulier d’intention appelé le `RecognizerIntent`. Cet objectif contrôle un grand nombre de paramètres, notamment la durée d’attente avec un silence jusqu’à ce que l’enregistrement soit pris en compte, les autres langages à reconnaître et les sorties, et tout texte à inclure dans la boîte de dialogue modale du `Intent`comme moyen d’instruction. Dans cet extrait de code, `VOICE` est un `readonly int` utilisé pour la reconnaissance dans `OnActivityResult`.
 
 ```csharp
 var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
@@ -85,11 +85,11 @@ StartActivityForResult(voiceIntent, VOICE);
 
 ### <a name="conversion-of-the-speech"></a>Conversion de la reconnaissance vocale
 
-Le texte interprété à partir de la reconnaissance vocale est remis `Intent`dans le, qui est retourné lorsque l’activité est terminée et est accessible `GetStringArrayListExtra(RecognizerIntent.ExtraResults)`via. Cela retourne un `IList<string>`, dont l’index peut être utilisé et affiché, en fonction du nombre de langages demandés dans l’intention de l’appelant (et spécifiés `RecognizerIntent.ExtraMaxResults`dans le). Comme pour n’importe quelle liste, il est préférable de vérifier qu’il y a des données à afficher.
+Le texte interprété à partir de la parole est remis dans le `Intent`, qui est retourné lorsque l’activité est terminée et accessible via `GetStringArrayListExtra(RecognizerIntent.ExtraResults)`. Cela retourne un `IList<string>`, dont l’index peut être utilisé et affiché, en fonction du nombre de langues demandées dans l’intention de l’appelant (et spécifié dans le `RecognizerIntent.ExtraMaxResults`). Comme pour n’importe quelle liste, il est préférable de vérifier qu’il y a des données à afficher.
 
-Lors de l’écoute de la valeur de `StartActivityForResult`retour d' `OnActivityResult` un, la méthode doit être fournie.
+Lors de l’écoute de la valeur de retour d’un `StartActivityForResult`, la méthode `OnActivityResult` doit être fournie.
 
-Dans l’exemple ci- `textBox` dessous, `TextBox` est utilisé pour sortir ce qui a été dicté. Il peut également être utilisé pour transmettre le texte à une certaine forme d’interpréteur et à partir de là, l’application peut comparer le texte et la branche à une autre partie de l’application.
+Dans l’exemple ci-dessous, `textBox` est un `TextBox` utilisé pour sortir ce qui a été dicté. Il peut également être utilisé pour transmettre le texte à une certaine forme d’interpréteur et à partir de là, l’application peut comparer le texte et la branche à une autre partie de l’application.
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultVal, Intent data)
@@ -131,13 +131,13 @@ En grande partie, les appareils Android sont fournis avec le service Google TTS 
 
 ### <a name="step-1---instantiating-texttospeech"></a>Étape 1 : instanciation de TextToSpeech
 
-`TextToSpeech`peut prendre jusqu’à 3 paramètres, les deux premiers sont requis avec le troisième étant facultatif (`AppContext`, `IOnInitListener`, `engine`). L’écouteur est utilisé pour effectuer une liaison au service et pour tester l’échec avec le moteur qui est un nombre quelconque de moteurs de reconnaissance vocale et de texte Android disponibles. Au minimum, l’appareil aura son propre moteur Google.
+`TextToSpeech` peut prendre jusqu’à 3 paramètres, les deux premiers sont requis avec le troisième étant facultatif (`AppContext`, `IOnInitListener`, `engine`). L’écouteur est utilisé pour effectuer une liaison au service et pour tester l’échec avec le moteur qui est un nombre quelconque de moteurs de reconnaissance vocale et de texte Android disponibles. Au minimum, l’appareil aura son propre moteur Google.
 
 ### <a name="step-2---finding-the-languages-available"></a>Étape 2 : recherche des langues disponibles
 
-La `Java.Util.Locale` classe contient une méthode utile appelée `GetAvailableLocales()`. Cette liste de langues prises en charge par le moteur de reconnaissance vocale peut ensuite être testée par rapport aux langues installées.
+La classe `Java.Util.Locale` contient une méthode utile appelée `GetAvailableLocales()`. Cette liste de langues prises en charge par le moteur de reconnaissance vocale peut ensuite être testée par rapport aux langues installées.
 
-Il est important de générer la liste des langages « compriss ». Il y aura toujours une langue par défaut (la langue définie par l’utilisateur lors de la première configuration de son appareil). par conséquent `List<string>` , dans cet exemple, le a la valeur « default » comme premier paramètre, le reste de la liste est rempli en `textToSpeech.IsLanguageAvailable(locale)`fonction du résultat de l’opération.
+Il est important de générer la liste des langages « compriss ». Il y aura toujours une langue par défaut (la langue définie par l’utilisateur lors de la première définition de son appareil). par conséquent, dans cet exemple, le `List<string>` a « default » comme premier paramètre, le reste de la liste sera rempli en fonction du résultat de l' `textToSpeech.IsLanguageAvailable(locale)`.
 
 ```csharp
 var langAvailable = new List<string>{ "Default" };
@@ -162,17 +162,17 @@ langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
 Ce code appelle [TextToSpeech. IsLanguageAvailable](xref:Android.Speech.Tts.TextToSpeech.IsLanguageAvailable*) pour vérifier si le package de langage pour les paramètres régionaux spécifiés est déjà présent sur l’appareil.
-Cette méthode retourne un [LanguageAvailableResult](xref:Android.Speech.Tts.LanguageAvailableResult), qui indique si la langue des paramètres régionaux passés est disponible. Si `LanguageAvailableResult` indique que la langue est `NotSupported`, aucun package vocal n’est disponible (même pour le téléchargement) pour cette langue. Si `LanguageAvailableResult` a la `MissingData`valeur, il est possible de télécharger un nouveau package de langue, comme expliqué ci-dessous à l’étape 4.
+Cette méthode retourne un [LanguageAvailableResult](xref:Android.Speech.Tts.LanguageAvailableResult), qui indique si la langue des paramètres régionaux passés est disponible. Si `LanguageAvailableResult` indique que la langue est `NotSupported`, aucun package vocal n’est disponible (même pour le téléchargement) pour cette langue. Si `LanguageAvailableResult` est défini sur `MissingData`, il est possible de télécharger un nouveau package de langue, comme expliqué ci-dessous à l’étape 4.
 
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Étape 3 : définition de la vitesse et du pas
 
-Android permet à l’utilisateur de modifier le son de la parole en modifiant le `SpeechRate` et `Pitch` (le taux de vitesse et le ton de la parole). Cela va de 0 à 1, la parole « normal » étant 1 pour les deux.
+Android permet à l’utilisateur de modifier le son de la parole en modifiant le `SpeechRate` et le `Pitch` (vitesse et tonalité de la parole). Cela va de 0 à 1, la parole « normal » étant 1 pour les deux.
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>Étape 4 : test et chargement de nouvelles langues
 
-Le téléchargement d’une nouvelle langue s’effectue à `Intent`l’aide d’un. Le résultat de cette intention entraîne l’appel de la méthode [OnActivityResult](xref:Android.App.Activity.OnActivityResult*) . Contrairement à l’exemple de reconnaissance vocale (qui utilisait le [RecognizerIntent](xref:Android.Speech.RecognizerIntent) en tant `PutExtra` que paramètre de `Intent`), les tests et les `Intent`chargements `Action`sont basés sur :
+Le téléchargement d’une nouvelle langue s’effectue à l’aide d’un `Intent`. Le résultat de cette intention entraîne l’appel de la méthode [OnActivityResult](xref:Android.App.Activity.OnActivityResult*) . Contrairement à l’exemple de reconnaissance vocale (qui utilisait le [RecognizerIntent](xref:Android.Speech.RecognizerIntent) en tant que paramètre `PutExtra` de la `Intent`), les `Intent`de test et de chargement sont basés sur `Action`:
 
-- [TextToSpeech. Engine. ActionCheckTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) &ndash; démarre une activité à partir du `TextToSpeech` moteur de plateforme pour vérifier l’installation et la disponibilité des ressources de langue sur l’appareil.
+- [TextToSpeech. Engine. ActionCheckTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionCheckTtsData) &ndash; démarre une activité à partir du moteur de `TextToSpeech` de plateforme pour vérifier l’installation et la disponibilité des ressources de langue sur l’appareil.
 
 - [TextToSpeech. Engine. ActionInstallTtsData](xref:Android.Speech.Tts.TextToSpeech.Engine.ActionInstallTtsData) &ndash; démarre une activité qui invite l’utilisateur à télécharger les langues nécessaires.
 
@@ -194,9 +194,9 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 }
 ```
 
-`TextToSpeech.Engine.ActionCheckTtsData`teste la disponibilité des ressources de langue. `OnActivityResult`est appelé lorsque ce test est terminé. Si les ressources de langue doivent être téléchargées, `OnActivityResult` déclenche l' `TextToSpeech.Engine.ActionInstallTtsData` action pour démarrer une activité qui permet à l’utilisateur de télécharger les langues nécessaires. Notez que cette `OnActivityResult` implémentation ne vérifie pas le `Result` code car, dans cet exemple simplifié, la détermination a déjà été effectuée pour que le package de langage doive être téléchargé.
+`TextToSpeech.Engine.ActionCheckTtsData` teste la disponibilité des ressources de langue. `OnActivityResult` est appelée lorsque ce test est terminé. Si les ressources de langue doivent être téléchargées, `OnActivityResult` déclenche l’action `TextToSpeech.Engine.ActionInstallTtsData` pour démarrer une activité qui permet à l’utilisateur de télécharger les langues nécessaires. Notez que cette implémentation de `OnActivityResult` ne vérifie pas le code `Result`, car, dans cet exemple simplifié, la détermination a déjà été effectuée pour que le package de langue doive être téléchargé.
 
-L' `TextToSpeech.Engine.ActionInstallTtsData` action entraîne la présentation de l’activité **données vocales Google TTS** à l’utilisateur pour le choix des langues à télécharger :
+L’action `TextToSpeech.Engine.ActionInstallTtsData` provoque la présentation de l’activité de **données vocales Google TTS** à l’utilisateur pour choisir les langues à télécharger :
 
 ![Activité de données vocales Google TTS](speech-images/01-google-tts-voice-data.png)
 
@@ -208,9 +208,9 @@ L’installation de ces données se produit automatiquement une fois le téléch
 
 ### <a name="step-5---the-ioninitlistener"></a>Étape 5-IOnInitListener
 
-Pour qu’une activité puisse convertir le texte en parole, la méthode `OnInit` d’interface doit être implémentée (il s’agit du deuxième paramètre spécifié pour l’instanciation de la `TextToSpeech` classe). Cela initialise l’écouteur et teste le résultat.
+Pour qu’une activité puisse convertir le texte en parole, la méthode d’interface `OnInit` doit être implémentée (il s’agit du deuxième paramètre spécifié pour l’instanciation de la classe `TextToSpeech`). Cela initialise l’écouteur et teste le résultat.
 
-L’écouteur doit tester à la `OperationResult.Success` fois `OperationResult.Failure` et au minimum.
+L’écouteur doit tester à la fois les `OperationResult.Success` et les `OperationResult.Failure` au minimum.
 L’exemple suivant montre simplement ce qui suit :
 
 ```csharp

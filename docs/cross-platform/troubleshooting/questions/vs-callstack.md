@@ -3,15 +3,15 @@ title: Comment collecter les piles d’appels du processus Visual Studio ?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: f07bc4437293bdc49e4811c0104fd7245ccf9738
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9ed79b2273758b8051a96169d4c9b53870de1fb1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282956"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013022"
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>Comment collecter les piles d’appels du processus Visual Studio ?
 
@@ -23,20 +23,20 @@ Lorsque l’interface utilisateur graphique se bloque (se bloque) dans Visual St
 
 3. Sélectionnez **Déboguer > Attacher au processus**.
 
-   ![](vs-callstack-images/image1.png "Sélectionnez Déboguer > attacher au processus")
+   ![](vs-callstack-images/image1.png "Select Debug > Attach to Process")
 
-4. Sélectionnez l’instance bloquée d' `devenv.exe` origine de dans la liste des **processus disponibles**.
+4. Sélectionnez l’instance bloquée d’origine de `devenv.exe` dans la liste des **processus disponibles**.
 
 5. Sélectionnez **Déboguer > arrêter tout**.
 
-   ![](vs-callstack-images/image2.png "Sélectionner Déboguer > arrêter tout")
+   ![](vs-callstack-images/image2.png "Select Debug > Break All")
 
 6. Sélectionnez **Déboguer > enregistrer le dump sous**.
 
-   ![](vs-callstack-images/image3.png "Sélectionnez Déboguer > enregistrer le dump sous")
+   ![](vs-callstack-images/image3.png "Select Debug > Save Dump As")
 
-7. Remplacez le **type de fichier** par **Minidump\*(. DMP)** . Cela génère un fichier bien plus petit que **Minidump avec segment de mémoire**, et le segment de mémoire n’est généralement pas pertinent pour le diagnostic des gèles.
+7. Remplacez le **type de fichier** par **minidump (\*. DMP)** . Cela génère un fichier bien plus petit que **Minidump avec segment de mémoire**, et le segment de mémoire n’est généralement pas pertinent pour le diagnostic des gèles.
 
-   ![](vs-callstack-images/image4.png "Cela génère un fichier bien plus petit que Minidump avec segment de mémoire, et le segment de mémoire n’est généralement pas pertinent pour le diagnostic des gèles")
+   ![](vs-callstack-images/image4.png "This will produce a much smaller file than Minidump with Heap, and the heap is usually not relevant for diagnosing freezes")
 
 8. Enregistrez le fichier dump. Si vous envoyez le fichier en ligne, vous pouvez le compresser pour réduire sa taille.

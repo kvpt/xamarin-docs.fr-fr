@@ -4,15 +4,15 @@ description: Ce document fournit des liens vers différents guides qui décriven
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8ce601bff478cfc75d209b0d3e6ec3f6a48dbeee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f3f5e27e97b7b62ade66ea2dc50a79ac03d51f90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288962"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026453"
 ---
 # <a name="deploying-and-testing-xamarinios-apps"></a>Déploiement et test des applications Xamarin.iOS
 
@@ -40,7 +40,7 @@ Cet ensemble de guides aborde les bases de la signature de code et du provisionn
 
 ## <a name="testflightiosdeploy-testtestflightmd"></a>[TestFlight](~/ios/deploy-test/testflight.md)
 
-TestFlight est un outil racheté par Apple. Il constitue le principal moyen de tester les versions bêta de vos applications Xamarin.iOS. Cet article vous guide à travers toutes les étapes du processus TestFlight, depuis le chargement de votre application jusqu’à l’utilisation d’iTunes Connect.
+TestFlight est un outil racheté par Apple. Il constitue le principal moyen de tester les versions bêta de vos applications Xamarin.iOS. Cet article va vous guider à travers toutes les étapes du processus TestFlight, depuis le chargement de votre application jusqu’à l’utilisation d’iTunes Connect.
 
 ## <a name="debugging-in-xamariniosiosdeploy-testdebugging-in-xamarin-iosmd"></a>[Débogage dans Xamarin.iOS](~/ios/deploy-test/debugging-in-xamarin-ios.md)
 
@@ -65,7 +65,7 @@ Explique comment fonctionne l’éditeur de liens pour produire le package d’a
 
 ## <a name="xamarinios-performanceperformancemd"></a>[Performances des applications Xamarin.iOS](performance.md)
 
-Il existe plusieurs techniques permettant d’accroître les performances des applications conçues avec Xamarin.iOS. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+Il existe plusieurs techniques permettant d’accroître les performances des applications conçues avec Xamarin.iOS. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 
 ## <a name="mtouchmtouchmd"></a>[mtouch](mtouch.md)
 

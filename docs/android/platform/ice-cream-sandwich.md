@@ -4,28 +4,28 @@ description: Cet article décrit plusieurs des nouvelles fonctionnalités dispon
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 382315f755102d7111db1a5c0f71d43bdea97a10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761464"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020183"
 ---
 # <a name="ice-cream-sandwich-features"></a>Caractéristiques du sandwich glace
 
 _Cet article décrit plusieurs des nouvelles fonctionnalités disponibles pour les développeurs d’applications avec l’API Android 4-Ice Ice. Il couvre plusieurs nouvelles technologies d’interface utilisateur, puis examine une série de nouvelles fonctionnalités offertes par Android 4 pour le partage de données entre les applications et entre les appareils._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Le système d’exploitation Android version 4,0 (niveau d’API 14) représente un retravail majeur du système d’exploitation Android et inclut un certain nombre de modifications et de mises à niveau importantes, notamment :
 
-- **Interface utilisateur mise à jour** : plusieurs nouvelles fonctionnalités de l’interface utilisateur offrent aux développeurs plus de puissance et de flexibilité lorsqu’ils créent des interfaces utilisateur d’application. Ces nouvelles fonctionnalités sont notamment `GridLayout` : `PopupMenu` , `Switch` , widget et `TextureView` . 
+- **Interface utilisateur mise à jour** : plusieurs nouvelles fonctionnalités de l’interface utilisateur offrent aux développeurs plus de puissance et de flexibilité lorsqu’ils créent des interfaces utilisateur d’application. Ces nouvelles fonctionnalités sont les suivantes : `GridLayout`, `PopupMenu`, `Switch` widget et `TextureView`. 
 - **Meilleure accélération matérielle** : le rendu 2D s’effectue désormais sur le GPU pour tous les contrôles Android. En outre, l’accélération matérielle est activée, par défaut, dans toutes les applications développées pour Android 4,0. 
 - **Nouvelles API de données** : il existe un nouvel accès aux données qui n’étaient pas auparavant officiellement accessibles, telles que les données de calendrier et le profil utilisateur du propriétaire de l’appareil. 
-- **Partage de données d’application** : le partage de données entre les applications et les appareils est désormais plus facile `ShareActionProvider` que jamais via des technologies telles que, ce qui facilite la création d’une action de partage à partir d’un barre d’action et d’un *faisceau Android* pour *le terrain proche Communications (NFC)* , qui en fait un composant logiciel enfichable pour partager des données entre les appareils à proximité l’un de l’autre. 
+- **Partage de données d’application** : le partage de données entre les applications et les appareils est désormais plus facile que jamais via des technologies telles que le `ShareActionProvider`, ce qui facilite la création d’une action de partage à partir d’un barre d’action et d’un *faisceau Android* pour les *communications en champ proche ( NFC)* , ce qui en fait un composant logiciel enfichable pour partager des données entre les appareils à proximité l’un de l’autre. 
 
 Dans cet article, nous allons explorer ces fonctionnalités et d’autres modifications apportées à l’API Android 4,0, et nous expliquerons comment utiliser chaque fonctionnalité avec Xamarin. Android.
 

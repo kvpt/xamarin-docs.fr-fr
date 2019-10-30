@@ -4,19 +4,19 @@ description: L’ajout de fonctionnalités à une application nécessite souvent
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: d7a2f14b55d9f8de2ea01bdfa5c68c5c9f8f2555
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756151"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028564"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Utilisation des fonctionnalités dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration plus poussée de l’approvisionnement. Ce guide explique les paramètres requis par les différentes fonctionnalités._
+_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour toutes les fonctionnalités de._
 
 Apple fournit aux développeurs diverses _fonctionnalités_, souvent appelées _services d’application_, qui leur permettent de proposer des applications iOS plus complètes et dotées de capacités étendues. Les développeurs peuvent mieux intégrer les fonctionnalités de la plateforme à leurs applications, par exemple, des transactions monétaires lancées à partir de l’application, des services d’appareil supplémentaires comme Siri, et bien plus encore.
 Ces fonctionnalités sont compatibles avec les projets Xamarin.iOS. Voici la liste complète des services :
@@ -140,7 +140,7 @@ Pour accéder au developer center, vous devez effectuer deux étapes : créer 
     ![Page de sélection des services d’application](images/image8.png)
 
 7. Appuyez sur **Continue**.
-8. Confirmez votre ID d’application. Chaque service sera dans l’un des états suivants : **Enabled**, **Disabled** ou **Configurable**, comme illustré ci-dessous. S’il a l’état **Enabled**, il est prêt à être utilisé dans un profil de provisionnement. S’il a l’état **Configurable**, une configuration supplémentaire est requise pour cette fonctionnalité. Ces étapes supplémentaires seront décrites plus en détail dans des sections ultérieures.
+8. Confirmez votre ID d’application. Chaque service peut avoir l’un des états suivants : **Enabled**, **Disabled** ou **Configurable**, comme illustré ci-dessous. S’il a l’état **Enabled**, il est prêt à être utilisé dans un profil de provisionnement. S’il a l’état **Configurable**, une configuration supplémentaire est requise pour cette fonctionnalité. Ces étapes supplémentaires seront décrites plus en détail dans des sections ultérieures.
 
     ![Confirmation de l’ID d’application](images/image9.png)
 
@@ -195,7 +195,7 @@ Maintenant, créez un profil de provisionnement qui contient cet ID d’applicat
 Une fois que vous avez ajouté une fonctionnalité côté serveur, il vous reste quelques étapes à effectuer pour permettre à votre application d’utiliser la fonctionnalité. S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 - Utilisez l’espace de noms de framework dans votre application.
-- Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+- Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits requis et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 
 <a name="troubleshooting" />
 

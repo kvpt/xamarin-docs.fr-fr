@@ -4,15 +4,15 @@ description: Ce document décrit la réalité augmentée dans iOS 11 avec ARKit.
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752595"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032248"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Présentation de ARKit dans Xamarin. iOS
 
@@ -37,9 +37,9 @@ Les ressources doivent être ajoutées au projet avec l’action de génération
 
 ![SceneKit des ressources dans un projet](images/scene-assets.png)
 
-### <a name="2-configure-the-view"></a>2. Configurer la vue
+### <a name="2-configure-the-view"></a>2. configurer la vue
 
-Dans la méthode du contrôleur `ViewDidLoad` d’affichage, chargez la ressource de scène `Scene` et définissez la propriété sur la vue :
+Dans la méthode `ViewDidLoad` du contrôleur d’affichage, chargez la ressource de scène et définissez la propriété `Scene` sur la vue :
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -51,7 +51,7 @@ var scene = SCNScene.FromFile("art.scnassets/ship");
 SceneView.Scene = scene;
 ```
 
-### <a name="3-optionally-implement-a-session-delegate"></a>3. Implémentez éventuellement un délégué de session
+### <a name="3-optionally-implement-a-session-delegate"></a>3. implémentez éventuellement un délégué de session
 
 Bien que cela ne soit pas obligatoire pour les cas simples, l’implémentation d’un délégué de session peut être utile pour déboguer l’état de la session ARKit (et dans les applications réelles, en fournissant des commentaires à l’utilisateur). Créez un délégué simple en utilisant le code ci-dessous :
 
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Assignez le délégué dans dans `ViewDidLoad` la méthode :
+Assignez le délégué dans la méthode `ViewDidLoad` :
 
 ```csharp
 // Track changes to the session
@@ -95,9 +95,9 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 
 Chaque fois que l’application est exécutée ou reprise, le modèle 3D est positionné devant l’appareil photo. Une fois le modèle positionné, déplacez l’appareil photo et regardez en ARKit pour maintenir le modèle positionné.
 
-### <a name="5-pause-the-augmented-reality-session"></a>5. Suspendre la session de réalité augmentée
+### <a name="5-pause-the-augmented-reality-session"></a>5. suspendre la session de réalité augmentée
 
-Il est recommandé de suspendre la session ARKit quand le contrôleur d’affichage n’est pas visible (dans `ViewWillDisappear` la méthode :
+Il est recommandé de suspendre la session ARKit quand le contrôleur d’affichage n’est pas visible (dans la méthode `ViewWillDisappear` :
 
 ```csharp
 SceneView.Session.Pause();
@@ -105,7 +105,7 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>Récapitulatif
 
-Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la `IARSCNViewDelegate`session de réalité augmentée à implémenter et que des méthodes supplémentaires soient implémentées.
+Le code ci-dessus génère une application ARKit simple. Des exemples plus complexes s’attendent à ce que le contrôleur d’affichage hébergeant la session de réalité augmentée pour implémenter `IARSCNViewDelegate`, et que des méthodes supplémentaires soient implémentées.
 
 ARKit fournit un grand nombre de fonctionnalités plus sophistiquées, telles que le suivi des surfaces et l’interaction avec l’utilisateur. Pour obtenir un exemple de combinaison de suivi ARKit avec UrhoSharp, consultez la [démonstration UrhoSharp](urhosharp.md) .
 

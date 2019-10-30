@@ -4,15 +4,15 @@ description: Ce document explore les modifications apportées à l’App Store d
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752326"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032133"
 ---
 # <a name="app-store-changes-in-ios-11"></a>Modifications de l’App Store dans iOS 11
 
@@ -50,7 +50,7 @@ Pour que vos achats dans l’application soient disponibles pour la promotion, o
 
 ![Section promotion de l’App Store dans iTunes Connect](app-store-changes-images/image4.png)
 
-Vous devez également ajouter la `ShouldAddStorePayment` méthode `SKPaymentTransactionObserver` au protocole dans votre application.
+Vous devez également ajouter la méthode `ShouldAddStorePayment` au protocole `SKPaymentTransactionObserver` dans votre application.
 
 Pour plus d’informations sur les promotions relatives aux achats dans l’application, consultez la page [promotion des achats dans l’application](https://developer.apple.com/app-store/promoting-in-app-purchases/) d’Apple.
 

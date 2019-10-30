@@ -3,21 +3,21 @@ title: Publication d'une application
 ms.prod: xamarin
 ms.assetid: 51E19000-040A-2B74-C462-EC57C617085C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753804"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021378"
 ---
 # <a name="publishing-an-application"></a>Publication d'une application
 
 Vous avez créé une superbe application et des personnes voudront maintenant l’utiliser. Cette section décrit les étapes de la distribution publique d’une application créée avec Xamarin.Android via des canaux comme les e-mails, un serveur web privé, Google Play ou Amazon Appstore pour Android.
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 La dernière étape du développement d’une application Xamarin.Android consiste à publier l’application. La publication est le processus de compilation d’une application Xamarin.Android afin qu’elle soit prête à être installée par les utilisateurs sur leurs appareils. Elle comprend deux tâches essentielles :
 
@@ -33,7 +33,7 @@ Comme le montre le diagramme ci-dessus, la préparation est identique quelle que
 
 - **Via un site web** &ndash; une application Xamarin.Android peut être proposée au téléchargement sur un site web. Les utilisateurs peuvent alors cliquer sur un lien pour l’installer.
 - **Par e-mail** &ndash; les utilisateurs peuvent installer une application Xamarin.Android à partir de leur messagerie. L’application est installée lors de l’ouverture de la pièce jointe sur un appareil Android.
-- **Via une place de marché** &ndash; il existe différentes places de marché pour la distribution des applications, comme [Google Play](http://play.google.com/) ou [Amazon Appstore pour Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
+- **Via une place de marché** &ndash; il existe différentes places de marché pour la distribution des applications, comme [Google Play](https://play.google.com/) ou [Amazon Appstore pour Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011).
 
 La méthode la plus courante pour publier une application consiste à passer par une place de marché connue car elle offre la plus large audience et le meilleur contrôle sur la distribution. Toutefois, cela demande un effort supplémentaire.
 
@@ -53,7 +53,7 @@ Cette section montre comment charger l’application sur un App Store tel que Go
 ## <a name="related-links"></a>Liens associés
 
 - [HelloWorldPublishing (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
-- [Processus de création](~/android/deploy-test/building-apps/build-process.md)
+- [Processus de génération](~/android/deploy-test/building-apps/build-process.md)
 - [Liaison](~/android/deploy-test/linker.md)
 - [Récupération d’une clé API Google Maps](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
 - [Signature d’application](https://source.android.com/security/apksigning/)

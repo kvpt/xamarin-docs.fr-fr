@@ -3,15 +3,15 @@ title: Forum aux questions (FAQ)
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0e49ef8fa0bf00d5ed41f3411393ffaf4891c1b8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765109"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013990"
 ---
 # <a name="general-frequently-asked-questions"></a>Forum aux questions (FAQ)
 
@@ -23,8 +23,8 @@ Ce guide répertorie les ressources et les méthodes permettant de déterminer s
 ### <a name="pcl-reflection-apipcl-reflectionmd"></a>[API de réflexion de bibliothèque de classes portable](pcl-reflection.md)
 Microsoft a développé une nouvelle API de réflexion à utiliser dans les bibliothèques de classes portables. Si vous avez un code de réflexion existant que vous souhaitez déplacer vers une bibliothèque de classes portable, il peut ne pas fonctionner.
 
-### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[Étude de cas PCL : Comment puis-je résoudre les problèmes liés à System. Diagnostics. Tracing pour le package NuGet de flux de données Microsoft TPL ?](pcl-case-study.md)
-Xamarin. iOS et Xamarin. Android n’implémentent pas 100% de chaque profil PCL qu’ils autorisent en tant que références. Pour des raisons pratiques dans Visual Studio pour Mac, Visual Studio et le gestionnaire de package NuGet, les projets Xamarin autorisent l’utilisation de plusieurs profils qui n’ont que des implémentations incomplètes. Par exemple, ni Xamarin. iOS ni Xamarin. Android n’incluent actuellement une implémentation complète des types dans l' `System.Diagnostics.Tracing` espace de noms PCL. Vous pouvez contourner ce contournement en basculant le projet d’application pour référencer la version portable-Net45 + WIN8 + wp8 + wpa81 de la bibliothèque de flux de données TPL.
+### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[Étude de cas de bibliothèque de classes portable : Comment résoudre des problèmes liés à System.Diagnostics.Tracing pour le package NuGet Microsoft TPL Dataflow ?](pcl-case-study.md)
+Xamarin. iOS et Xamarin. Android n’implémentent pas 100% de chaque profil PCL qu’ils autorisent en tant que références. Pour des raisons pratiques dans Visual Studio pour Mac, Visual Studio et le gestionnaire de package NuGet, les projets Xamarin autorisent l’utilisation de plusieurs profils qui n’ont que des implémentations incomplètes. Par exemple, ni Xamarin. iOS ni Xamarin. Android n’incluent actuellement une implémentation complète des types dans l’espace de noms PCL `System.Diagnostics.Tracing`. Vous pouvez contourner ce contournement en basculant le projet d’application pour référencer la version portable-Net45 + WIN8 + wp8 + wpa81 de la bibliothèque de flux de données TPL.
 
 ## <a name="nuget-packages--xamarin-components"></a>Packages NuGet & composants Xamarin
 ### <a name="how-can-i-update-nugetnuget-updatemd"></a>[Comment mettre à jour NuGet ?](nuget-update.md)

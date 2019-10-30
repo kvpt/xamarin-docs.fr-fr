@@ -3,15 +3,15 @@ title: Présentation de l’intégration continue avec Xamarin
 description: Ce document contient des liens vers des guides qui décrivent l’intégration continue avec Xamarin. Contenu lié fournit une vue d’ensemble de l’intégration continue et décrit App Center Build, TeamCity et Jenkins.
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/23/2018
-ms.openlocfilehash: 6e1d90152fa47fef0638c93777f1e7179e97e387
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c59667213f7ecbe5603e638c4b19d54ffdf6dd01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292549"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029827"
 ---
 # <a name="continuous-integration-with-xamarin"></a>Intégration continue avec Xamarin
 

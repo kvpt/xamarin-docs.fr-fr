@@ -4,15 +4,15 @@ description: Ce document décrit les encodages d’internationalisation dans Xam
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c8e82f9261601db48ec48092a5f3f81394a86eec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d204aeac18fc08bf6eb2221b6f64ecbbded8121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763411"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010001"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Encodages d’internationalisation dans Xamarin. iOS
 
@@ -22,18 +22,18 @@ Pour réduire la taille de l’application, Xamarin. iOS n’inclut pas d’enco
 
 Pour ce faire, sélectionnez les encodages supplémentaires à partir du volet Build/avancé iOS dans Visual Studio pour Mac ou Visual Studio :
 
- [![](encodings-images/00.png "Sélection des encodages supplémentaires")](encodings-images/00.png#lightbox)
+ [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "Sélection des encodages supplémentaires")](encodings-images/00a.png#lightbox)
+ [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
 
 Vous pouvez sélectionner l’un des éléments suivants :
 
 - CJC : pour Chineese, japonais et coréen
-- mideast: Arabe, hébreu, turc et Latin5.
-- autres Cyrillique, balte, vietnamien, ukrainien et thaï
-- rares Encodages EBCDIC et autres pages de codes rares
-- Sud Langues latines, Pâques et Europe occidentale
-- all
+- Mideast : arabe, hébreu, turc et Latin5.
+- autre : cyrillique, balte, vietnamien, ukrainien et thaï
+- rare : encodages EBCDIC et autres pages de codes rares
+- Ouest : langues latines, Pâques et Europe occidentale
+- toutes les
 
  <a name="cjk" />
 
@@ -62,7 +62,7 @@ Vous pouvez sélectionner l’un des éléments suivants :
 
 ## <a name="other"></a>other
 
-- CP1251
+- Cp1251 correspond À
 - CP1257
 - CP1258
 - CP20866

@@ -3,15 +3,15 @@ title: Mise à jour des applications Mac existantes
 description: Ce document décrit les étapes à suivre pour mettre à jour une application Xamarin. Mac à partir du API classique vers le API unifiée.
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 43498c0609fdbe6dba59b9ed5926c9c58b72d4db
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4590e5d987acbb5bd97b41477e6aafa7c17d7778
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280870"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015321"
 ---
 # <a name="updating-existing-mac-apps"></a>Mise à jour des applications Mac existantes
 
@@ -29,13 +29,13 @@ Avant de mettre à jour votre code existant vers le API unifiée, il est forteme
 
 ## <a name="automated-updating"></a>Mise à jour automatisée
 
-Une fois les avertissements résolus, sélectionnez un projet Mac existant dans Visual Studio pour Mac ou Visual Studio, puis choisissez **migrer vers Xamarin. Mac API unifiée** à partir du menu **projet** . Par exemple :
+Une fois les avertissements résolus, sélectionnez un projet Mac existant dans Visual Studio pour Mac ou Visual Studio, puis choisissez **migrer vers Xamarin. Mac API unifiée** à partir du menu **projet** . Exemple :
 
-![](updating-mac-apps-images/beta-tool1.png "Choisissez migrer vers Xamarin. Mac API unifiée à partir du menu projet")
+![](updating-mac-apps-images/beta-tool1.png "Choose Migrate to Xamarin.Mac Unified API from the Project menu")
 
 Vous devez accepter cet avertissement avant l’exécution de la migration automatisée (évidemment, vous devez vous assurer que vous disposez de sauvegardes/contrôle de code source avant de lancer cette aventure) :
 
-![](updating-mac-apps-images/migrate01.png "Accepter cet avertissement avant l’exécution de la migration automatisée")
+![](updating-mac-apps-images/migrate01.png "Agree to this warning before the automated migration will run")
 
 Il existe deux types de Framework cible pris en charge qui peuvent être sélectionnés lors de l’utilisation de l’API unifiée dans une application Xamarin. Mac :
 
@@ -50,17 +50,17 @@ L’outil automatise toutes les étapes décrites dans la section **mise à jour
 
 Là encore, une fois les avertissements résolus, procédez comme suit pour mettre à jour manuellement les applications Xamarin. Mac afin d’utiliser le nouveau API unifiée :
 
-### <a name="1-update-project-type--build-target"></a>1. Mettre à jour le type de projet & la cible de build
+### <a name="1-update-project-type--build-target"></a>1. mettre à jour le type de projet & cible de génération
 
-Remplacez la version de projet dans vos fichiers csproj `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` par `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de `<ProjectTypeGuids>` l’élément comme indiqué ci-dessous :
+Remplacez la version de projet dans vos fichiers **csproj** `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` par `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Modifiez le fichier **csproj** dans un éditeur de texte en remplaçant le premier élément de l’élément `<ProjectTypeGuids>` comme indiqué ci-dessous :
 
-![](updating-mac-apps-images/csproj.png "Modifiez le fichier csproj dans un éditeur de texte en remplaçant le premier élément de l’élément ProjectTypeGuids comme indiqué")
+![](updating-mac-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
 
-Modifiez l’élément **Import** qui contient `Xamarin.Mac.targets` `Xamarin.Mac.CSharp.targets` comme indiqué ci-dessous :
+Remplacez l’élément **Import** qui contient `Xamarin.Mac.targets` par `Xamarin.Mac.CSharp.targets` comme indiqué ci-dessous :
 
-![](updating-mac-apps-images/csproj2.png "Remplacez l’élément import qui contient Xamarin. Mac. targets par Xamarin. Mac. CSharp. targets comme indiqué")
+![](updating-mac-apps-images/csproj2.png "Change the Import element that contains Xamarin.Mac.targets to Xamarin.Mac.CSharp.targets as shown")
 
-Ajoutez les lignes de code suivantes après l' `<AssemblyName>` élément :
+Ajoutez les lignes de code suivantes après l’élément `<AssemblyName>` :
 
 ```xml
 <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -68,37 +68,37 @@ Ajoutez les lignes de code suivantes après l' `<AssemblyName>` élément :
 
 ```
 
-Exemple :
+Exemple :
 
-![Ajoutez ces lignes de code après l' \<élément AssemblyName >](updating-mac-apps-images/csproj3.png)
+![Ajoutez ces lignes de code après l’élément \<AssemblyName >](updating-mac-apps-images/csproj3.png)
 
-### <a name="2-update-project-references"></a>2. Mettre à jour les références de projet
+### <a name="2-update-project-references"></a>2. mettre à jour les références de projet
 
 Développez le nœud **références** du projet d’application Mac. Elle affiche initialement une référence * **XamMac** rompue semblable à cette capture d’écran (car nous venons de modifier le type de projet) :
 
-![](updating-mac-apps-images/references.png "Il affiche initialement une référence XamMac rompue similaire à cette capture d’écran.")
+![](updating-mac-apps-images/references.png "It will initially show a broken- XamMac reference similar to this screenshot")
 
 Cliquez sur l' **icône d’engrenage** en regard de l’entrée **XamMac** , puis sélectionnez **supprimer** pour supprimer la référence incorrecte.
 
 Ensuite, cliquez avec le bouton droit sur le dossier **références** dans le **Explorateur de solutions** , puis sélectionnez **modifier les références**. Faites défiler vers le bas de la liste des références et cochez la case en regard de **Xamarin. Mac**.
 
-![](updating-mac-apps-images/references2.png "Faites défiler vers le bas de la liste des références et cochez la case en regard de Xamarin. Mac")
+![](updating-mac-apps-images/references2.png "Scroll to the bottom of the list of references and place a check besides Xamarin.Mac")
 
 Appuyez sur **OK** pour enregistrer les modifications apportées aux références du projet.
 
-### <a name="3-remove-monomac-from-namespaces"></a>3. Supprimer MonoMac des espaces de noms
+### <a name="3-remove-monomac-from-namespaces"></a>3. supprimer MonoMac des espaces de noms
 
-Supprimez le préfixe **MonoMac** des espaces `using` de noms dans les instructions ou partout où un className a été qualifié complet (par exemple, `MonoMac.AppKit`devient juste `AppKit`).
+Supprimez le préfixe **MonoMac** des espaces de noms dans les instructions `using` ou partout où un className a été qualifié complet (par exemple, `MonoMac.AppKit` devient simplement `AppKit`).
 
-### <a name="4-remap-types"></a>4. Remapper les types
+### <a name="4-remap-types"></a>4. remapper les types
 
-Des [types natifs](~/cross-platform/macios/nativetypes.md) ont été introduits, qui remplacent certains types précédemment utilisés, tels `System.Drawing.RectangleF` que `CoreGraphics.CGRect` les instances de avec (par exemple). La liste complète des types se trouve dans la page [types natifs](~/cross-platform/macios/nativetypes.md) .
+Des [types natifs](~/cross-platform/macios/nativetypes.md) ont été introduits, qui remplacent certains types précédemment utilisés, tels que les instances de `System.Drawing.RectangleF` avec `CoreGraphics.CGRect` (par exemple). La liste complète des types se trouve dans la page [types natifs](~/cross-platform/macios/nativetypes.md) .
 
-### <a name="5-fix-method-overrides"></a>5. Remplacements de la méthode Fix
+### <a name="5-fix-method-overrides"></a>5. corriger les remplacements de la méthode
 
-La `AppKit` signature de certaines méthodes a été modifiée pour utiliser les nouveaux [types natifs](~/cross-platform/macios/nativetypes.md) ( `nint`tels que). Si les sous-classes personnalisées remplacent ces méthodes, les signatures ne correspondent plus et génèrent des erreurs. Corrigez ces substitutions de méthode en modifiant la sous-classe pour qu’elle corresponde à la nouvelle signature à l’aide des types natifs. 
+Certaines méthodes `AppKit` ont été modifiées pour utiliser les nouveaux [types natifs](~/cross-platform/macios/nativetypes.md) (tels que `nint`). Si les sous-classes personnalisées remplacent ces méthodes, les signatures ne correspondent plus et génèrent des erreurs. Corrigez ces substitutions de méthode en modifiant la sous-classe pour qu’elle corresponde à la nouvelle signature à l’aide des types natifs. 
 
-## <a name="considerations"></a>Considérations
+## <a name="considerations"></a>Éléments à prendre en considération
 
 Les considérations suivantes doivent être prises en compte lors de la conversion d’un projet Xamarin. Mac existant du API classique au nouveau API unifiée si cette application s’appuie sur un ou plusieurs composants ou un package NuGet. 
 

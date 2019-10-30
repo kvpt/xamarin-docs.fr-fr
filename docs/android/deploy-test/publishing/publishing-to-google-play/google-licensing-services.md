@@ -3,15 +3,15 @@ title: Services Google Licensing
 ms.prod: xamarin
 ms.assetid: E96BDCC3-454A-A797-5819-905E2BB1AC41
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/20/2017
-ms.openlocfilehash: 934cc5124c71f631def0d534420cf75a12ee4079
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4cc7f3b36c43d9c9bb611b7d669f8304aab05820
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753602"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021264"
 ---
 # <a name="google-licensing-services"></a>Services Google Licensing
 
@@ -36,7 +36,7 @@ Le diagramme ci-dessus illustre ce workflow :
 
 Le service Google Licensing est également un composant essentiel des fichiers d’extension d’APK (qui sont décrits plus loin dans ce document). Les fichiers d’extension d’APK utilisent les services Google Licensing pour obtenir l’URL des fichiers d’extension qui seront téléchargés.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Les applications qui ne sont pas achetées via Google Play ne bénéficient d’aucun avantage des services Google Licensing. Même si Google Play n’est pas installé sur un appareil, les applications qui utilisent les services de gestion des licences continuent de fonctionner normalement sur cet appareil.
 

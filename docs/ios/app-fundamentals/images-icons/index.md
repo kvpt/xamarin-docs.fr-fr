@@ -4,26 +4,26 @@ description: Cette section inclut un grand nombre d’articles qui traitent de l
 ms.prod: xamarin
 ms.assetid: 0AB8CC07-11E4-0D75-4119-AED1A1252424
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6940e07c51dbc19615454e0c51188152db22c63f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 08698fab2bdd1528e7f532dc02c86219f98fd611
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767212"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010202"
 ---
 # <a name="images-and-icons-in-xamarinios"></a>Images et icônes dans Xamarin. iOS
 
 _Cette section inclut un grand nombre d’articles qui traitent de l’utilisation d’images dans une application Xamarin. iOS, telles que leur utilisation en tant qu’icônes, les écrans de lancement ou leur inclusion dans des contrôles et la fourniture d’icônes pour les types de documents personnalisés._
 
-Il existe plusieurs façons d’utiliser des ressources d’image dans une application iOS. De simplement afficher une image dans le cadre de l’interface utilisateur d’une application à, en l’assignant à un `UIButton` contrôle `UIImageView`d’interface utilisateur tel qu’un ou, pour fournir des icônes et des écrans de lancement, Xamarin. iOS permet d’ajouter facilement de superbes illustrations à une application iOS de l’une des manières suivantes : 
+Il existe plusieurs façons d’utiliser des ressources d’image dans une application iOS. De simplement afficher une image dans le cadre de l’interface utilisateur d’une application à, en l’assignant à un contrôle d’interface utilisateur tel qu’une `UIButton` ou une `UIImageView`, pour fournir des icônes et des écrans de lancement, Xamarin. iOS vous permet d’ajouter facilement de superbes illustrations à une application iOS de l’une des manières suivantes : : 
 
 - **Images indépendantes** de la résolution : utilisez la prise en charge intégrée d’IOS pour travailler avec des images sur différents types et résolutions d’appareils (iPhone, iPad, etc.).
 - **Jeux d’images du catalogue de composants** : utilisez les **ensembles d’images du catalogue de composants** pour gérer et regrouper toute la version d’une ressource d’image donnée requise par une application.
 - **Images dans le concepteur iOS** : utilisez le concepteur IOS pour définir des images pour les contrôles.
-- **Images dans le code** : utilisez `UIImage` les méthodes de la classe pour charger et utiliser des ressources d’image et les assigner aux contrôles d’interface utilisateur dans C# le code.
+- **Images dans le code** : utilisez les méthodes de la classe `UIImage` pour charger et utiliser des ressources d’image et les assigner aux contrôles d’interface utilisateur dans C# le code.
 - **Icône d’application** : définissez l’icône d’application requise par chaque application iOS. Il s’agit de l’icône sur laquelle l’utilisateur appuie sur l’écran d’accueil iOS pour lancer l’application. En outre, cette icône est utilisée par Game Center, le cas échéant.
 - **Icône Spotlight** : définissez l’icône Spotlight de l’application. Chaque fois que l’utilisateur entre le nom d’une application dans une recherche Spotlight, cette icône s’affiche.
 - **Icône Paramètres** : définissez l’icône **paramètres** de l’application. Si l’utilisateur entre l’application **paramètres** sur son appareil iOS, cette icône s’affiche à la fin de la liste des paramètres de l’application. 
@@ -45,10 +45,10 @@ Cet article traite de l’ajout et de la gestion d’une ressource d’image dan
 
 Apple a ajouté plusieurs améliorations à iOS 10,3 qui permettent à une application de gérer son icône :
 
-- `ApplicationIconBadgeNumber`-Obtient ou définit le badge de l’icône d’application dans le Springboard.
-- `SupportsAlternateIcons`-Si `true` l’application possède un autre ensemble d’icônes.
-- `AlternateIconName`-Retourne le nom de l’autre icône actuellement sélectionnée ou `null` si vous utilisez l’icône principale.
-- `SetAlternameIconName`-Utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
+- `ApplicationIconBadgeNumber` : Obtient ou définit le badge de l’icône de l’application dans le Springboard.
+- `SupportsAlternateIcons`-si `true` l’application possède un autre ensemble d’icônes.
+- `AlternateIconName` : retourne le nom de l’autre icône actuellement sélectionnée ou `null` si l’icône principale est utilisée.
+- `SetAlternameIconName` : utilisez cette méthode pour faire passer l’icône de l’application à l’autre icône donnée.
 
 ## <a name="launch-screensiosapp-fundamentalsimages-iconslaunch-screensmd"></a>[Écrans de lancement](~/ios/app-fundamentals/images-icons/launch-screens.md)
 

@@ -4,15 +4,15 @@ description: Comment configurer un verrouillage d’écran et inscrire une empre
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f52be16a81f3c8047997e1f4a88e13f6b940db14
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c0290dfa3b4aa301a07a589f78577899e8282158
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756417"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027591"
 ---
 # <a name="enrolling-a-fingerprint"></a>Inscription d’une empreinte digitale
 
@@ -20,7 +20,7 @@ ms.locfileid: "70756417"
 
 Il est uniquement possible pour une application Android de tirer parti de l’authentification par empreinte digitale si l’appareil a déjà été configuré avec l’authentification par empreinte digitale. Ce guide explique comment inscrire une empreinte digitale sur un appareil ou un émulateur Android. Les émulateurs n’ont pas le matériel réel pour effectuer une analyse d’empreintes digitales, mais il est possible de simuler une analyse d’empreintes digitales avec l’aide de la Android Debug Bridge (décrite ci-dessous).  Ce guide explique comment activer le verrouillage d’écran sur un appareil Android et inscrire une empreinte digitale pour l’authentification.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour inscrire une empreinte digitale, vous devez avoir un appareil Android ou un émulateur exécutant l’API de niveau 23 (Android 6,0).
 
@@ -46,7 +46,7 @@ Pour configurer un verrouillage d’écran, procédez comme suit :
 
 4. À partir de là, suivez la séquence pour ajouter une empreinte digitale à l’appareil :
 
-    [![Séquence de captures d’écran pour l’ajout d’une empreinte digitale à l’appareil](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
+    [![séquence de captures d’écran pour l’ajout d’une empreinte digitale à l’appareil](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
 5. Dans le dernier écran, vous êtes invité à placer votre doigt sur le scanneur d’empreintes digitales : 
 
@@ -56,13 +56,13 @@ Pour configurer un verrouillage d’écran, procédez comme suit :
 
 ### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>Simulation d’une analyse d’empreintes digitales sur l’émulateur
 
-Sur un émulateur Android, il est possible de simuler une analyse d’empreintes digitales à l’aide de l’Android Debug Bridge. Sur OS X, démarrez une session Terminal Server alors que sur Windows, démarrez une invite de commandes ou `adb`une session PowerShell et exécutez la commande suivante :
+Sur un émulateur Android, il est possible de simuler une analyse d’empreintes digitales à l’aide de l’Android Debug Bridge. Sur OS X, démarrez une session Terminal Server alors que sur Windows, démarrez une invite de commandes ou une session PowerShell et exécutez `adb`:
 
 ```shell
 $ adb -e emu finger touch 1
 ```
 
-La valeur **1** est l' _\_ID_ du doigt qui a été « numérisé ». Il s’agit d’un entier unique que vous attribuez à chaque empreinte digitale virtuelle. À l’avenir, lorsque l’application s’exécute, vous pouvez exécuter cette même commande ADB chaque fois que l’émulateur vous invite à entrer une empreinte digitale, `adb` vous pouvez exécuter la commande et lui transmettre l' _ID du doigt\__ pour simuler l’analyse d’empreintes digitales.
+La valeur **1** est l' _ID de\_Finger_ pour le doigt qui a été « numérisé ». Il s’agit d’un entier unique que vous attribuez à chaque empreinte digitale virtuelle. À l’avenir, lorsque l’application s’exécute, vous pouvez exécuter cette même commande ADB chaque fois que l’émulateur vous invite à entrer une empreinte digitale, vous pouvez exécuter la commande `adb` et lui transmettre l' _ID de\_Finger_ pour simuler l’analyse par empreinte digitale.
 
 Une fois l’analyse d’empreintes digitales terminée, Android vous avertit que l’empreinte digitale a été ajoutée :  
 

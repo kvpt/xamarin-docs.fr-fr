@@ -3,20 +3,20 @@ title: Xamarin. Android TableLayout
 ms.prod: xamarin
 ms.assetid: 0C7B9C95-5E5F-A069-BA37-984E49F7DCAD
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 0e09bf2364df9b672a9612829eaa7a8ba343b0e9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4175b1fa62b2bc0e4209d13934c2bdbdd1e2a085
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758398"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028747"
 ---
 # <a name="xamarinandroid-tablelayout"></a>Xamarin. Android TableLayout
 
-[`TableLayout`](xref:Android.Widget.TableLayout)est un[`ViewGroup`](xref:Android.Views.ViewGroup)
-qui affiche l’enfant[`View`](xref:Android.Views.View)
+[`TableLayout`](xref:Android.Widget.TableLayout) est un [`ViewGroup`](xref:Android.Views.ViewGroup)
+qui affiche les [`View`](xref:Android.Views.View) enfants
 éléments dans les lignes et les colonnes.
 
 Démarrez un nouveau projet nommé **HelloTableLayout**.
@@ -102,12 +102,12 @@ Ouvrez le fichier **Resources/layout/main. AXML** et insérez ce qui suit :
 </TableLayout>
 ```
 
-Notez que cela ressemble à la structure d’une table HTML. La[`TableLayout`](xref:Android.Widget.TableLayout)
-l’élément est semblable à `<table>` l’élément HTML ;[`TableRow`](xref:Android.Widget.TableRow)
-est semblable à `<tr>` un élément, mais pour les cellules, vous pouvez utiliser n’importe [`View`](xref:Android.Views.View) quel type d’élément. Dans cet exemple, un[`TextView`](xref:Android.Widget.TextView)
-est utilisé pour chaque cellule. Entre certaines lignes, il y a également un de base [`View`](xref:Android.Views.View), qui est utilisé pour dessiner une ligne horizontale.
+Notez que cela ressemble à la structure d’une table HTML. [`TableLayout`](xref:Android.Widget.TableLayout)
+l’élément est semblable à l’élément de `<table>` HTML ; [`TableRow`](xref:Android.Widget.TableRow)
+est semblable à un élément `<tr>` ; Toutefois, pour les cellules, vous pouvez utiliser n’importe quel type d’élément [`View`](xref:Android.Views.View) . Dans cet exemple, un [`TextView`](xref:Android.Widget.TextView)
+est utilisé pour chaque cellule. Entre certaines lignes, il y a également un [`View`](xref:Android.Views.View)de base, qui est utilisé pour dessiner une ligne horizontale.
 
-Assurez-vous que votre activité **HelloTableLayout** charge cette disposition dans la[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Assurez-vous que votre activité **HelloTableLayout** charge cette disposition dans le [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 méthode
 
 ```csharp
@@ -118,11 +118,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-La [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)méthode) charge le fichier de disposition pour [`Activity`](xref:Android.App.Activity)le, spécifié par l’ID &mdash; `Resource.Layout.Main` de ressource, fait référence au fichier de disposition **Resources/layout/main. AXML** .
+La méthode [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)) charge le fichier de disposition pour l' [`Activity`](xref:Android.App.Activity), spécifié par l’ID de ressource &mdash; `Resource.Layout.Main` fait référence au fichier de disposition **Resources/layout/main. AXML** .
 
 Exécutez l'application. Les éléments suivants doivent s’afficher :
 
-[![Exemple de capture d’écran de l’application TableLayout affichant plusieurs lignes de table](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
+[![exemple de capture d’écran de l’application TableLayout affichant plusieurs lignes de table](table-layout-images/helloviews3.png)](table-layout-images/helloviews3.png#lightbox)
 
 ## <a name="references"></a>Références
 
@@ -130,4 +130,4 @@ Exécutez l'application. Les éléments suivants doivent s’afficher :
 - [`TableRow`](xref:Android.Widget.TableRow)
 - [`TextView`](xref:Android.Widget.TextView)
 
-_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](http://creativecommons.org/licenses/by/2.5/)._
+_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](https://creativecommons.org/licenses/by/2.5/)._

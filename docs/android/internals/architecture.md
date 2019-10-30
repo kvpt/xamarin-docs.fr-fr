@@ -3,15 +3,15 @@ title: Architecture
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe0903eca5c907fc104728ca0ad7c676a45a5180
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756688"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027912"
 ---
 # <a name="architecture"></a>Architecture
 
@@ -22,7 +22,7 @@ Vous pouvez utiliser le [système](xref:System), [System.IO](xref:System.IO), [S
 
 Sur Android, la plupart des fonctionnalités système telles que l’audio, les graphiques, OpenGL et la téléphonie ne sont pas disponibles directement pour les applications natives, elles sont uniquement exposées via les API Java Android Runtime résidant dans l’un des espaces de noms [java](xref:Java.Lang). * ou [Android ](xref:Android). * espaces de noms. L’architecture ressemble à peu près à ce qui suit :
 
-[![Diagramme de mono et ART au-dessus du noyau et des liaisons .NET/Java +](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
+[![diagramme de mono et ART au-dessus du noyau et des liaisons .NET/Java + antérieures](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Les développeurs Xamarin. Android accèdent aux différentes fonctionnalités du système d’exploitation en appelant les API .NET qu’ils savent (pour un accès de bas niveau) ou en utilisant les classes exposées dans les espaces de noms Android qui fournissent un pont aux API Java exposées par le runtime Android.
 
@@ -56,7 +56,7 @@ Pour suivre le moment où les références globales sont créées et détruites,
 
 Les références globales peuvent être libérées explicitement en appelant [java. lang. Object. Dispose ()](xref:Java.Lang.Object.Dispose) sur le wrapper managé pouvant être appelé. Cela supprimera le mappage entre l’instance Java et l’instance gérée et autorisera la collecte de l’instance java. Si l’instance Java est à nouveau accessible à partir du code managé, un nouveau wrapper managé pouvant être appelé sera créé pour celle-ci.
 
-Soyez vigilant lorsque vous supprimez des wrappers pouvant être appelés si l’instance peut être partagée par inadvertance entre les threads, car la suppression de l’instance aura un impact sur les références de tous les autres threads. Pour une sécurité maximale, `Dispose()` seules les instances qui ont été allouées via `new` des méthodes *ou* à partir de *sont toujours* allouées aux nouvelles instances et non mises en cache, ce qui peut entraîner un partage d’instance accidentel entre thèmes.
+Soyez vigilant lorsque vous supprimez des wrappers pouvant être appelés si l’instance peut être partagée par inadvertance entre les threads, car la suppression de l’instance aura un impact sur les références de tous les autres threads. Pour une sécurité maximale, seuls `Dispose()` d’instances qui ont été allouées via `new` *ou* à partir de méthodes que vous *connaissez* allouez systématiquement de nouvelles instances et non des instances mises en cache, ce qui peut entraîner un partage d’instance accidentel entre les threads.
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Sous-classes de wrappers pouvant être appelées managées
 
@@ -92,11 +92,11 @@ Ordre des événements :
 
 4. Le constructeur *TextView* appelle *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* .
 
-5. *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* appelle *LogTextBox. n_getDefaultMovementMethod ()* , qui appelle *TextView. n_getDefaultMovementMethod ()* , qui appelle [java. lang. Object. GetObject&lt; TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
+5. *monodroid. apidemo. LogTextBox. getDefaultMovementMethod ()* appelle *LogTextBox. n_getDefaultMovementMethod ()* , qui appelle *TextView. n_getDefaultMovementMethod ()* , qui appelle [Java. lang. Object. GetObject @no_ _t_4_ TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) .
 
-6. *Java. lang. Object. GetObject&lt;TextView&gt;()* vérifie s’il existe déjà une instance correspondante C# pour *descripteur* . Si c’est le cas, il est retourné. Dans ce scénario, ce n’est pas le cas, donc *Object. GetObject&lt;&gt;t ()* doit en créer un.
+6. *Java. lang. Object. GetObject&lt;TextView&gt;()* vérifie s’il existe déjà une instance correspondante C# pour *descripteur* . Si c’est le cas, il est retourné. Dans ce scénario, ce n’est pas le cas, donc *Object. GetObject&lt;t&gt;()* doit en créer un.
 
-7. *Object. GetObject&lt;T&gt;()* recherche le constructeur *LogTextBox (IntPtr, JniHandleOwneship)* , l’appelle, crée un mappage entre *handle* et l’instance créée et retourne l’instance créée.
+7. *Object. GetObject&lt;t&gt;()* recherche le constructeur *LogTextBox (IntPtr, JniHandleOwneship)* , l’appelle, crée un mappage entre *handle* et l’instance créée et retourne l’instance créée.
 
 8. *TextView. n_GetDefaultMovementMethod ()* appelle l’accesseur Get de la propriété *LogTextBox. DefaultMovementMethod* .
 
@@ -165,8 +165,8 @@ I/mono-stdout( 2993): [Managed: Value=]
 
 ## <a name="application-startup"></a>Démarrage de l'application
 
-Lorsqu’une activité, un service, etc. est lancé, Android vérifie d’abord si un processus est déjà en cours d’exécution pour héberger l’activité/le service, etc. Si aucun processus de ce type n’existe, un nouveau processus est créé, [fichier AndroidManifest. xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) est lu et le type spécifié dans l' [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm) attribut est chargé et instancié. Ensuite, tous les types spécifiés [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm) par les valeurs d’attribut sont instanciés et la méthode [ContentProvider. attachInfo% 28)](xref:Android.Content.ContentProvider.AttachInfo*) est appelée. Xamarin. Android s’attache à cela en ajoutant un *mono. MonoRuntimeProvider* *ContentProvider* à fichier AndroidManifest. xml pendant le processus de génération. *Mono. La méthode MonoRuntimeProvider. attachInfo ()* est chargée du chargement du runtime mono dans le processus.
-Toute tentative d’utilisation de mono avant ce point échoue. ( *Remarque*: C’est la raison pour laquelle les types de sous-classes [Android. app. application](xref:Android.App.Application) doivent fournir un [constructeur (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103), car l’instance de l’application est créée avant que mono puisse être initialisé.)
+Lorsqu’une activité, un service, etc. est lancé, Android vérifie d’abord si un processus est déjà en cours d’exécution pour héberger l’activité/le service, etc. Si aucun processus de ce type n’existe, un nouveau processus est créé, [fichier AndroidManifest. xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) est lu et le type spécifié dans l’attribut [/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm) est chargé et instancié. Ensuite, tous les types spécifiés par les valeurs d’attribut [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm) sont instanciés et la méthode [ContentProvider. attachInfo %28)](xref:Android.Content.ContentProvider.AttachInfo*) est appelée. Xamarin. Android s’attache à cela en ajoutant un *mono. MonoRuntimeProvider* *ContentProvider* à fichier AndroidManifest. xml pendant le processus de génération. *Mono. La méthode MonoRuntimeProvider. attachInfo ()* est chargée du chargement du runtime mono dans le processus.
+Toute tentative d’utilisation de mono avant ce point échoue. ( *Remarque*: c’est la raison pour laquelle les types de sous-classes [Android. app. application](xref:Android.App.Application) doivent fournir un [constructeur (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103), car l’instance de l’application est créée avant que mono puisse être initialisé.)
 
-Une fois l’initialisation du processus terminée `AndroidManifest.xml` , est consulté pour trouver le nom de la classe de l’activité/du service, etc. à lancer. Par exemple, l' [ /manifest/application/activity/@android:name attribut](https://developer.android.com/guide/topics/manifest/activity-element.html#nm) est utilisé pour déterminer le nom d’une activité à charger. Pour les activités, ce type doit hériter d' [Android. app. Activity](xref:Android.App.Activity).
+Une fois l’initialisation du processus terminée, `AndroidManifest.xml` est consulté pour trouver le nom de la classe de l’activité/du service, etc. à lancer. Par exemple, l' [attribut/manifest/application/activity/@android:name](https://developer.android.com/guide/topics/manifest/activity-element.html#nm) est utilisé pour déterminer le nom d’une activité à charger. Pour les activités, ce type doit hériter d' [Android. app. Activity](xref:Android.App.Activity).
 Le type spécifié est chargé via [Class. forName ()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String)) (ce qui nécessite que le type soit un type Java, par conséquent, les wrappers pouvant être appelés Android), puis instanciés. La création d’une instance de wrapper Android pouvant être appelé déclenchera la création d’une C# instance du type correspondant. Android appellera ensuite [Activity. OnCreate (Bundle)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) , ce qui entraîne l’appel de l' [activité correspondante. OnCreate (Bundle)](xref:Android.App.Activity.OnCreate*) et vous êtes sur les courses.

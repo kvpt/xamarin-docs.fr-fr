@@ -4,15 +4,15 @@ description: Ce document décrit mtouch, un outil qui facilite la plupart des é
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762770"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026285"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Utilisation de mtouch pour grouper des applications Xamarin.iOS
 
@@ -41,7 +41,7 @@ export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 > [!WARNING]
 > Pour utiliser `mtouch`, ne comptez pas sur l’existence de **/Developer/MonoTouch/usr/bin**, un lien symbolique qui pointe vers **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**. Ce lien symbolique existe uniquement pour maintenir la compatibilité avec les anciennes mises en production MonoTouch qui n’étaient pas installées dans **/Library/Frameworks/...**  et il peut disparaître dans une mise en production ultérieure.
 
-## <a name="building"></a>Génération
+## <a name="building"></a>Génération en cours
 
 La commande `mtouch` peut compiler votre code de trois façons différentes :
 
@@ -65,7 +65,7 @@ Pour générer des logiciels pour l’appareil, générez votre application à l
 $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 ```
 
-Dans ce cas particulier, nous utilisons le certificat « Développeur iPhone : Miguel de Icaza » pour signer l’application. Cette étape est très importante, sinon l’unité physique refuse de charger l’application.
+Dans ce cas particulier, nous utilisons le certificat « Développeur iPhone : Miguel de Icaza » pour nous connecter à l’application. Cette étape est très importante, sinon l’unité physique refuse de charger l’application.
 
  <a name="Running_your_Application" />
 
@@ -81,7 +81,7 @@ $ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app
 
 Si l’indicateur `--sdkroot` n’est pas défini, il s’affiche par défaut sur xcode-sélectionner le chemin d’accès et devient l’avertissement suivant :
 
-> par exemple : avertissement MT0061 : aucun Xcode.app spécifié (utilisation de --sdkroot), à l’aide du Xcode système comme indiqué par 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> par exemple : avertissement MT0061 : aucun Xcode.app spécifié (utilisation de --sdkroot), à l’aide du système Xcode comme indiqué par ''xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
 
 La ligne de commande ci-dessus génère une sortie comme suit :
 
@@ -112,14 +112,11 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 Si l’indicateur `--sdkroot` n’est pas défini, il s’affiche par défaut sur xcode-sélectionner le chemin d’accès et devient l’avertissement suivant :
 
-> par exemple : avertissement MT0061 : aucun Xcode.app spécifié (utilisation de --sdkroot), à l’aide du Xcode système comme indiqué par 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
+> par exemple : avertissement MT0061 : aucun Xcode.app spécifié (utilisation de --sdkroot), à l’aide du système Xcode comme indiqué par ''xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
 
 Ces étapes sont généralement effectuées par Visual Studio pour Mac.
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Reference
 
 Consultez la page du manuel [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) pour plus d’informations sur les autres options de ligne de commande.
 
-## <a name="related-links"></a>Liens associés
-
-- [mtouch(1)](http://iosapi.xamarin.com/?link=man%3amtouch(1))

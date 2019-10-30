@@ -4,19 +4,19 @@ description: L’ajout de fonctionnalités à une application nécessite souvent
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 9d0ffbd0da99134dfae3e42fe8baf4111c80935f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4406ff3ce67ddf4787d155794258faa1a172eec1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762991"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016960"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Fonctionnalités Apple Pay dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration plus poussée de l’approvisionnement. Ce guide explique la configuration requise pour les fonctionnalités Apple Pay._
+_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de Apple Pay._
 
 Apple Pay permet aux utilisateurs de payer des marchandises physiques à partir de leur appareil iOS. Cette section décrit comment créer tous les composants nécessaires pour Apple Pay dans le developer center d’Apple.
 
@@ -89,7 +89,7 @@ Un ID de marchand permet à Apple Pay de savoir que vous acceptez les paiements.
     
     ![Écran de confirmation](apple-pay-capabilities-images/image41.png)
 
-Cet ID d’application peut maintenant être utilisé pour générer ou regénérer un nouveau profil de provisionnement, comme cela est décrit dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md). 
+Cet ID d’application peut maintenant être utilisé pour générer ou regénérer un nouveau profil de provisionnement, comme décrit dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md). 
 
 <a name="certificate" />
 
@@ -154,6 +154,6 @@ S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
 * Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
-* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Il ne s’agit  _pas_ du paramètre par défaut pour les builds Debug et iOS Simulator.
+* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds de débogage et de simulateur iOS.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

@@ -4,15 +4,15 @@ description: L’application Wallet permet aux utilisateurs d’iOS de stocker d
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2018
-ms.openlocfilehash: ec44e32c3eb0d0d436a497ddb14c86af1de8d703
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.openlocfilehash: a51ab165d8eac2e3c881871bc71456c8279c5461
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273163"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031682"
 ---
 # <a name="passkit-in-xamarinios"></a>PassKit dans Xamarin. iOS
 
@@ -21,13 +21,13 @@ Ces tests sont générés par les commerçants et envoyés au client par courrie
 
 Ce document présente Wallet et utilise l’API PassKit avec Xamarin. iOS.
 
- [![](passkit-images/image1.png "Le portefeuille stocke et organise tous les passages sur un téléphone")](passkit-images/image1.png#lightbox)
+ [![](passkit-images/image1.png "The Wallet stores and organizes all the passes on a phone")](passkit-images/image1.png#lightbox)
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Les fonctionnalités PassKit présentées dans ce document requièrent iOS 6 et Xcode 4,5, ainsi que Xamarin. iOS 6,0.
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 Le problème clé que PassKit résout est la distribution et la gestion des codes-barres. Voici quelques exemples concrets de la façon dont les codes-barres sont actuellement utilisés :
 
@@ -49,7 +49,7 @@ PassKit offre un moyen simple et pratique de stocker et d’afficher des codes-b
 
 PassKit n’est pas simplement une API dans CocoaTouch, il fait plutôt partie d’un plus grand écosystème d’applications, de données et de services qui facilitent le partage et la gestion sécurisés de codes-barres et d’autres données. Ce diagramme de haut niveau montre les différentes entités qui peuvent être impliquées dans la création et l’utilisation de passes :
 
- [![](passkit-images/image2.png "Ce diagramme de haut niveau montre les entités impliquées dans la création et l’utilisation de passes.")](passkit-images/image2.png#lightbox)
+ [![](passkit-images/image2.png "This high level diagram shows the entities involved in creating and using passes")](passkit-images/image2.png#lightbox)
 
 Chaque partie de l’écosystème a un rôle clairement défini :
 
@@ -77,7 +77,7 @@ Actuellement, cinq types sont pris en charge, qui peuvent être distingués dans
 
 Les cinq types de tests sont affichés dans cette capture d’écran (dans l’ordre : coupon, générique, carte de stockage, passe de carte et ticket d’événement) :
 
- [![](passkit-images/image3.png "Les cinq types de passes sont affichés dans cette capture d’écran.")](passkit-images/image3.png#lightbox)
+ [![](passkit-images/image3.png "The five pass types are shown in this screenshot")](passkit-images/image3.png#lightbox)
 
 ### <a name="file-structure"></a>Structure de fichier
 
@@ -93,7 +93,7 @@ Un fichier Pass est en fait une archive ZIP avec une extension **. pkpass** , co
 
 La structure de répertoires d’un fichier Pass est indiquée ci-dessous (il s’agit du contenu de l’archive ZIP) :
 
- [![](passkit-images/image4.png "La structure de répertoires d’un fichier Pass est présentée ici")](passkit-images/image4.png#lightbox)
+ [![](passkit-images/image4.png "Directory structure of a pass file is shown here")](passkit-images/image4.png#lightbox)
 
 ### <a name="passjson"></a>Pass. JSON
 
@@ -192,14 +192,14 @@ Peut être mis à jour via l’API push ou via l’API PassKit, de sorte que la 
 
 ### <a name="localization"></a>Localisation
 
-La traduction d’un passage en plusieurs langues est similaire à la localisation d’une application iOS : créez des répertoires spécifiques à la langue avec l’extension `.lproj` et placez les éléments localisés dans. Les traductions de texte doivent être entrées dans un fichier `pass.strings`, tandis que les images localisées doivent avoir le même nom que l’image qu’elles remplacent dans la racine de réussite.
+La traduction d’un passage en plusieurs langues est similaire à la localisation d’une application iOS : créer des répertoires spécifiques à la langue avec l’extension de `.lproj` et placer les éléments localisés dans. Les traductions de texte doivent être entrées dans un fichier de `pass.strings`, tandis que les images localisées doivent avoir le même nom que l’image qu’elles remplacent dans la racine de réussite.
 
 ## <a name="security"></a>Sécurité
 
 Les passes sont signées avec un certificat privé que vous générez dans le portail d’approvisionnement iOS. Les étapes à suivre pour signer la passe sont les suivantes :
 
-1. Calculez un hachage SHA1 pour chaque fichier dans le répertoire de réussite (n’incluez pas le fichier `manifest.json` ou `signature`, aucune des deux qui doit néanmoins exister à ce niveau).
-1. Écrivez `manifest.json` en tant que liste de clés/valeurs JSON de chaque nom de fichier avec son hachage.
+1. Calculez un hachage SHA1 pour chaque fichier dans le répertoire de réussite (n’incluez pas le fichier `manifest.json` ou `signature`, aucun d’entre eux ne doit malgré tout exister à ce niveau).
+1. Écrivez `manifest.json` sous la forme d’une liste de clés/valeurs JSON de chaque nom de fichier avec son hachage.
 1. Utilisez le certificat pour signer le fichier `manifest.json` et écrire le résultat dans un fichier nommé `signature`.
 1. Compressez tout le contenu et attribuez au fichier résultant une extension de fichier `.pkpass`.
 
@@ -222,9 +222,9 @@ Pour créer un ID de type de passe, procédez comme suit.
 
 La première étape consiste à configurer un ID de type de passe pour chaque _type_ de passe à prendre en charge. L’ID de passage (ou l’identificateur de type de passe) crée un identificateur unique pour la passe. Nous utiliserons cet ID pour lier la passe à votre compte de développeur à l’aide d’un certificat.
 
-1. Dans la [section certificats, identificateurs et profils du portail d’approvisionnement iOS](https://developer.apple.com/account/overview.action), accédez à **identificateurs** , puis sélectionnez ID de **type de passe** . Sélectionnez ensuite le bouton **+** pour créer un type de passe : [![](passkit-images/passid.png "Créer un type de passe")](passkit-images/passid.png#lightbox)
+1. Dans la [section certificats, identificateurs et profils du portail d’approvisionnement iOS](https://developer.apple.com/account/overview.action), accédez à **identificateurs** , puis sélectionnez ID de **type de passe** . Sélectionnez ensuite le bouton **+** pour créer un type de passe :[![](passkit-images/passid.png "Créer un type de passe")](passkit-images/passid.png#lightbox)
 
-2. Fournissez une **Description** (nom) et un **identificateur** (chaîne unique) pour la passe. Notez que tous les ID de type de passe doivent commencer par la chaîne `pass.` dans cet exemple nous utilisons `pass.com.xamarin.coupon.banana` : [![](passkit-images/register.png "Fournir une description et un identificateur")](passkit-images/register.png#lightbox)
+2. Fournissez une **Description** (nom) et un **identificateur** (chaîne unique) pour la passe. Notez que tous les ID de type de passe doivent commencer par la chaîne `pass.` dans cet exemple, nous utilisons `pass.com.xamarin.coupon.banana` :[![](passkit-images/register.png "Fournir une description et un identificateur")](passkit-images/register.png#lightbox)
 
 3. Confirmez l’ID de test en appuyant sur le bouton **Register** .
 
@@ -232,11 +232,11 @@ La première étape consiste à configurer un ID de type de passe pour chaque _t
 
 Pour créer un nouveau certificat pour cet ID de type de passe, procédez comme suit :
 
-1. Sélectionnez l’ID de passe nouvellement créé dans la liste, puis cliquez sur **modifier** : [![](passkit-images/pass-done.png "Sélectionner le nouvel ID de test dans la liste")](passkit-images/pass-done.png#lightbox)
+1. Sélectionnez l’ID de passe nouvellement créé dans la liste, puis cliquez sur **modifier** :[![](passkit-images/pass-done.png "Sélectionner le nouvel ID de test dans la liste")](passkit-images/pass-done.png#lightbox)
 
     Ensuite, sélectionnez **créer un certificat...** :
 
-    [![](passkit-images/cert-dist.png "Sélectionner créer un certificat")](passkit-images/cert-dist.png#lightbox)
+    [![](passkit-images/cert-dist.png "Select Create Certificate")](passkit-images/cert-dist.png#lightbox)
 
 2. Suivez les étapes pour créer une demande de signature de certificat (CSR).
   
@@ -259,9 +259,9 @@ Maintenant que nous avons créé le type de passe, nous pouvons créer manuellem
 - Signez manifest. JSON avec le fichier. P12 de certificat téléchargé.
 - Compressez le contenu du répertoire et renommez-le avec l’extension. pkpass.
 
-L' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article contient des fichiers sources qui peuvent être utilisés pour générer une passe. Utilisez les fichiers du répertoire `CouponBanana.raw` du répertoire CreateAPassManually. Les fichiers suivants sont présents :
+L' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) de cet article contient des fichiers sources qui peuvent être utilisés pour générer une passe. Utilisez les fichiers dans le répertoire `CouponBanana.raw` du répertoire CreateAPassManually. Les fichiers suivants sont présents :
 
- [![](passkit-images/image18.png "Ces fichiers sont présents")](passkit-images/image18.png#lightbox)
+ [![](passkit-images/image18.png "These files are present")](passkit-images/image18.png#lightbox)
 
 Ouvrez Pass. JSON et modifiez le JSON. Vous devez au moins mettre à jour les `passTypeIdentifier` et `teamIdentifer` pour qu’ils correspondent à votre compte de développeur Apple.
 
@@ -292,11 +292,11 @@ Téléchargez les **documents du support technique Wallet** sur le site de [tél
 
 Si vous devez examiner la sortie de ces outils (en définissant le nom de fichier sur. zip et en l’ouvrant), vous verrez les fichiers suivants (Notez l’ajout des fichiers `manifest.json` et `signature`) :
 
- [![](passkit-images/image19.png "Examen de la sortie de ces outils")](passkit-images/image19.png#lightbox)
+ [![](passkit-images/image19.png "Examining the output of these tools")](passkit-images/image19.png#lightbox)
 
 Une fois que vous avez signé, compressé et renommé le fichier (par exemple, pour `BananaCoupon.pkpass`), vous pouvez le faire glisser dans le simulateur pour le tester, ou l’envoyer par courrier électronique à vous-même pour le récupérer sur un appareil réel. Vous devez voir un écran pour **Ajouter** la passe, comme suit :
 
- [![](passkit-images/image20.png "Ajouter l’écran de réussite")](passkit-images/image20.png#lightbox)
+ [![](passkit-images/image20.png "Add the pass screen")](passkit-images/image20.png#lightbox)
 
 Normalement, le processus est automatisé sur un serveur, mais la création manuelle de passe peut être une option pour les petites entreprises qui créent uniquement des coupons qui ne nécessitent pas la prise en charge d’un serveur principal.
 
@@ -304,7 +304,7 @@ Normalement, le processus est automatisé sur un serveur, mais la création manu
 
 Wallet est le composant central de l’écosystème PassKit. Cette capture d’écran montre le portefeuille vide et l’aspect de la liste de tests et des passages individuels :
 
- [![](passkit-images/image21.png "Cette capture d’écran montre le portefeuille vide et l’apparence de la liste de tests et des passages individuels")](passkit-images/image21.png#lightbox)
+ [![](passkit-images/image21.png "This screenshot shows the empty Wallet, and how the pass list and individual passes look")](passkit-images/image21.png#lightbox)
 
 Les fonctionnalités de Wallet sont les suivantes :
 
@@ -333,9 +333,9 @@ Les applications de canalisation sont des applications intermédiaires qui peuve
 
 Cette capture d’écran montre comment le **courrier électronique** dans iOS 6 reconnaît une pièce jointe de réussite et (lorsqu’il est touché) permet de l' **Ajouter** à Wallet.
 
- [![](passkit-images/image22.png "Cette capture d’écran montre comment le courrier dans iOS 6 reconnaît une pièce jointe de réussite")](passkit-images/image22.png#lightbox)
+ [![](passkit-images/image22.png "This screenshot shows how Mail in iOS 6 recognizes a pass attachment")](passkit-images/image22.png#lightbox)
 
- [![](passkit-images/image23.png "Cette capture d’écran montre comment les courriers électroniques permettent d’ajouter une pièce jointe à Wallet")](passkit-images/image23.png#lightbox)
+ [![](passkit-images/image23.png "This screenshot shows how Mail offers to add a pass attachment to Wallet")](passkit-images/image23.png#lightbox)
 
 Si vous créez une application qui peut être un conduit pour les passes, elle peut être reconnue par :
 
@@ -369,11 +369,11 @@ Pour définir les droits, procédez comme suit :
 
 Double-cliquez sur le fichier **habilitations. plist** dans le panneau solutions pour ouvrir l’éditeur de droits. plist :
 
-![](passkit-images/image31.png "Éditeur de droits. plst")
+![](passkit-images/image31.png "Entitlements.plst editor")
 
 Sous la section Wallet, sélectionnez l’option **activer Wallet**
 
-![](passkit-images/image32.png "Activer le droit portefeuille")
+![](passkit-images/image32.png "Enable wallet entitlement")
 
 L’option par défaut permet à votre application d’autoriser tous les types de passe. Toutefois, il est possible de restreindre votre application et d’autoriser uniquement un sous-ensemble de types de passes d’équipe. Pour activer cette option, sélectionnez **autoriser le sous-ensemble de types de passe d’équipe** et entrez l’identificateur de type de passe du sous-ensemble que vous souhaitez autoriser.
 
@@ -381,9 +381,9 @@ L’option par défaut permet à votre application d’autoriser tous les types 
 
 Double-cliquez sur le fichier **Entitlements. plist** pour ouvrir le fichier source XML.
 
-Pour ajouter le droit Wallet, affectez à la **propriété** la valeur `Passbook Identifiers` dans la liste déroulante, ce qui aura pour valeur automatiquement le **type** `Array`. Ensuite, définissez la **valeur** de chaîne sur `$(TeamIdentifierPrefix)*` :
+Pour ajouter le droit Wallet, affectez à la **propriété** la valeur `Passbook Identifiers` dans la liste déroulante, ce qui définit automatiquement le **type** `Array`. Ensuite, définissez la **valeur** de chaîne sur `$(TeamIdentifierPrefix)*`:
 
-![](passkit-images/image33.png "Activer le droit portefeuille")
+![](passkit-images/image33.png "Enable wallet entitlement")
 
 Avec cette valeur de chaîne, votre application accepte tous les types de passes. Pour restreindre votre application et autoriser uniquement un sous-ensemble de types de passes d’équipe, définissez la valeur de chaîne sur :
 
@@ -449,7 +449,7 @@ var passes = library.GetPasses ();  // returns PKPass[]
 
 Notez que le simulateur ne filtre pas la liste des passes retournées. cette méthode doit donc toujours être testée sur les appareils réels. Cette liste peut être affichée dans un UITableView. L' [exemple d’application](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit) ressemble à ceci après que deux coupons ont été ajoutés :
 
- [![](passkit-images/image29.png "L’exemple d’application ressemble à ce qui suit deux coupons ajoutés")](passkit-images/image29.png#lightbox)
+ [![](passkit-images/image29.png "The sample app look like this after two coupons have been added")](passkit-images/image29.png#lightbox)
 
 ### <a name="displaying-passes"></a>Affichage des passes
 
@@ -470,7 +470,7 @@ string passInfo =
 
 Cette chaîne est affichée sous la forme d’une alerte dans l' [exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit):
 
- [![](passkit-images/image30.png "Alerte de coupon sélectionnée dans l’exemple")](passkit-images/image30.png#lightbox)
+ [![](passkit-images/image30.png "The Coupon Selected alert in the sample")](passkit-images/image30.png#lightbox)
 
 Vous pouvez également utiliser la méthode `LocalizedValueForFieldKey()` pour récupérer des données à partir de champs dans les passes que vous avez conçues (puisque vous saurez quels champs doivent être présents). L’exemple de code ne montre pas cela.
 
@@ -491,7 +491,7 @@ NavigationController.PresentModalViewController (pkapvc, true);
 
 La réussite est présentée avec des options d' **Ajout** et d' **annulation** :
 
- [![](passkit-images/image20.png "Le passage présenté avec des options d’ajout et d’annulation")](passkit-images/image20.png#lightbox)
+ [![](passkit-images/image20.png "The pass presented with Add and Cancel options")](passkit-images/image20.png#lightbox)
 
 ### <a name="replace-an-existing-pass"></a>Remplacer une passe existante
 
@@ -519,7 +519,7 @@ Comme indiqué précédemment, seul Wallet peut afficher une passe pour l’anal
 
 ### <a name="receiving-notifications-of-changes"></a>Réception des notifications de modifications
 
-Les applications peuvent écouter les modifications apportées à la bibliothèque de tests à l’aide de la `PKPassLibraryDidChangeNotification`. Des modifications peuvent être provoquées par des notifications déclenchant des mises à jour en arrière-plan. il est donc conseillé de les écouter dans votre application.
+Les applications peuvent écouter les modifications apportées à la bibliothèque de tests à l’aide de l' `PKPassLibraryDidChangeNotification`. Des modifications peuvent être provoquées par des notifications déclenchant des mises à jour en arrière-plan. il est donc conseillé de les écouter dans votre application.
 
 ```csharp
 noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidChangeNotification, (not) => {
@@ -541,7 +541,7 @@ La présentation détaillée de la création d’une application serveur pour la
 
 Consultez le code côté serveur Open C# source [dotnet-](https://github.com/tomasmcguinness/dotnet-passbook) encodé.
 
-## <a name="push-notifications"></a>Notifications Push
+## <a name="push-notifications"></a>Push Notifications
 
 La présentation détaillée de l’utilisation de notifications push pour les passes de mise à jour n’entre pas dans le cadre de cet article de présentation.
 

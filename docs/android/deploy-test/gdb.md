@@ -3,19 +3,19 @@ title: GDB
 ms.prod: xamarin
 ms.assetid: CD0BE462-FA38-4881-B481-82AD05B3B8FE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 0599b2374addf461e59948a1926de06e6e1e746a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754054"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021483"
 ---
 # <a name="gdb"></a>GDB
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Xamarin.Android 4.10 a introduit la prise en charge partielle de l’utilisation de `gdb` à l’aide de la cible MSBuild `_Gdb`. 
 
@@ -57,7 +57,7 @@ La `_Gdb` cible lancera une activité de lanceur arbitraire déclarée dans votr
 La cible `_Gdb` créera un répertoire `gdb-symbols` où elle copiera le contenu des répertoires `/system/lib` et `$APPDIR/lib` de votre cible.
 
 > [!NOTE]
-> Le contenu du répertoire `gdb-symbols` est lié à la cible Android sur laquelle vous avez déployé et ne sera pas automatiquement remplacé si vous changez la cible. (Considérez qu’il s’agit d’un bogue.) Si vous modifiez les appareils Android cibles, vous devrez supprimer manuellement ce répertoire.
+> Le contenu du répertoire `gdb-symbols` est lié à la cible Android sur laquelle vous avez déployé et ne sera pas automatiquement remplacé si vous changez la cible. (Considérez ce problème comme un bogue.) Si vous modifiez des appareils cibles Android, vous devrez supprimer manuellement ce répertoire.
 
 Pour finir, copiez la commande `gdb` générée et exécutez-la dans votre interpréteur de commandes :
 

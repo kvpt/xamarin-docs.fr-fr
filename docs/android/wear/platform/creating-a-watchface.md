@@ -4,15 +4,15 @@ description: Ce guide explique comment implémenter un service de visage de mont
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2018
-ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 38123e2b1ef20144606bcc77ad33af572aa3707a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758513"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030386"
 ---
 # <a name="creating-a-watch-face"></a>Création d’un cadran de montre
 

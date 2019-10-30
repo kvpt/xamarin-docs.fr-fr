@@ -3,15 +3,15 @@ title: Localisation d’applications et ressources de type chaîne
 ms.prod: xamarin
 ms.assetid: 374A9DA6-1853-8B98-6954-7FE3F591C07C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 45fe5c783e737fb913730082841e0dfafc555684
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7191c37e81da728dfda21da2eaecc95f7b58a401
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755131"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025077"
 ---
 # <a name="application-localization-and-string-resources"></a>Localisation d’applications et ressources de type chaîne
 
@@ -19,7 +19,7 @@ La localisation d’applications consiste à fournir des ressources alternatives
 
 Par exemple, l’image ci-dessous montre la même application s’exécutant dans trois paramètres régionaux d’appareil différents, mais le texte affiché dans chaque bouton est spécifique aux paramètres régionaux définis pour chaque appareil :
 
-[![Exemples de trois paramètres régionaux différents](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
+[![des exemples de trois paramètres régionaux différents](application-localization-images/01-click-me-sml.png)](application-localization-images/01-click-me.png#lightbox)
 
 Dans cet exemple, le contenu d’un fichier de disposition, **main. AXML** , se présente comme suit :
 

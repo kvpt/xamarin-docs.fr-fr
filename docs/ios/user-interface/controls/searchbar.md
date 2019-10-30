@@ -4,15 +4,15 @@ description: Ce document explique comment utiliser les barres de recherche dans 
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 8b129e0e70bf3ded787094d1b1f740e73a8cbca1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70283357"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021979"
 ---
 # <a name="search-bars-in-xamarinios"></a>Rechercher des barres dans Xamarin. iOS
 
@@ -88,7 +88,7 @@ Ces propriétés sont expliquées ci-dessous :
   - Affiche le bouton résultats de la recherche/signets – affiche les résultats de la recherche ou l’icône de signets dans la barre de recherche
   - Affiche le bouton Annuler : permet aux utilisateurs de quitter la fonction de recherche. Il est recommandé de sélectionner cette option.
   - Affiche la barre d’étendue : permet aux utilisateurs de limiter l’étendue de leur recherche. Par exemple, lors de la recherche dans l’application musique, l’utilisateur peut choisir s’il souhaite effectuer une recherche dans Apple Music ou dans sa bibliothèque pour obtenir une chanson ou un artiste particulier. Pour afficher différentes options, ajoutez un tableau de titres à la propriété **ScopeBarTitles** .
-  titres de l’étendue de la barre de ![Search ](searchbar-images/image4.png)
+  ![titres de l’étendue de la barre de recherche](searchbar-images/image4.png)
 
 - **Comportement du texte** : ces options sont utilisées pour traiter la manière dont l’entrée utilisateur est mise en forme lors de la saisie. La mise en majuscules définit le début de chaque mot ou phrase, ou chaque caractère en majuscules. Correction et vérification de l’orthographe avec invite l’utilisateur à saisir l’orthographe suggérée des mots au fur et à mesure de leur saisie.
 - **Clavier** : contrôle le style de clavier affiché pour l’entrée et, par conséquent, les touches disponibles sur le clavier. Cela comprend le pavé numérique, le pavé téléphonique, l’adresse de messagerie et l’URL, ainsi que d’autres options.

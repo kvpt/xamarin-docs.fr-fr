@@ -4,15 +4,15 @@ description: Ces articles expliquent comment déboguer une application Xamarin. 
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: f085aaffbedb2965222b98a22cf6a4bb2393642b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca0a6884c05686bded25a2e515456ab192002a24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764041"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028683"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Déboguer l’usure Android sur un émulateur
 
@@ -28,13 +28,13 @@ Pour exécuter votre application d’usure sur un émulateur, vous devez install
 
 Lorsque vous créez un appareil virtuel d’usure, sélectionnez un profil d’appareil Android d’usure (par exemple, un **carré d’usure Android**). Pour améliorer les performances, utilisez l’UC **x86** /Abi comme indiqué dans cet exemple :
 
-[![Exemple d’usure de la configuration des appareils virtuels](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
+[![exemple d’usure de la configuration des appareils virtuels](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 ## <a name="launch-the-wear-virtual-device"></a>Lancer l’appareil virtuel usure 
 
-Une fois que vous avez créé un appareil virtuel Android usure, vous pouvez le choisir dans le menu déroulant de l’appareil dans l’IDE avant de commencer le débogage. Si votre appareil virtuel n’est pas disponible dans la liste déroulante des appareils, vérifiez que votre projet est un projet d’application Android d' *usure* (pas un projet d’application Android) et que son niveau d’API cible est défini sur le même niveau d’API que l’appareil virtuel. Par exemple :
+Une fois que vous avez créé un appareil virtuel Android usure, vous pouvez le choisir dans le menu déroulant de l’appareil dans l’IDE avant de commencer le débogage. Si votre appareil virtuel n’est pas disponible dans la liste déroulante des appareils, vérifiez que votre projet est un projet d’application Android d' *usure* (pas un projet d’application Android) et que son niveau d’API cible est défini sur le même niveau d’API que l’appareil virtuel. Exemple :
 
-[![Choix d’une usure dans le menu de périphérique Visual Studio](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
+[![choix d’un système d’usure dans le menu de périphérique Visual Studio](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Après le démarrage de l’émulateur Android, Xamarin. Android déploie l’application usure sur l’émulateur. L’émulateur exécute l’application avec l’image d’appareil virtuel configurée.
 

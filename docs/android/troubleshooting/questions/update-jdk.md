@@ -5,21 +5,21 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4b3ac51d-18dd-4034-87b4-4365194e4ece
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/07/2018
-ms.openlocfilehash: d3f4c602f7e581cab74b61072e248a22eede9a22
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0f7499551db7d86d7978b9c3e1f562a2f054c202
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762017"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019531"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Comment mettre à jour la version du kit JDK Java ?
 
 _Cet article explique comment mettre à jour la version du kit de développement Java (JDK) sur Windows et Mac._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Xamarin. Android utilise le kit de développement Java (JDK) pour s’intégrer au Android SDK pour la création d’applications Android et l’exécution du concepteur Android. Les versions les plus récentes des Android SDK (API 24 et ultérieures) requièrent JDK 8 (1,8). Vous pouvez également installer la version [préliminaire de Microsoft Mobile openjdk](~/android/get-started/installation/openjdk.md). Le OpenJDK Microsoft Mobile va finalement remplacer JDK 8 pour le développement Xamarin. Android.
 
@@ -41,7 +41,7 @@ Pour effectuer une mise à jour vers Microsoft Mobile OpenJDK, consultez la vers
 
 4. Ouvrez Visual Studio et mettez à jour l' **emplacement du kit de développement Java** pour pointer vers le nouveau JDK sous **outils > Options > Xamarin > paramètres Android > emplacement du kit de développement Java**:
 
-    [![Paramètre Path du JDK dans la page des paramètres Android](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
+    [paramètre ![chemin d’accès du JDK dans la page des paramètres Android](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 Veillez à redémarrer Visual Studio après la mise à jour de l’emplacement.
 
@@ -57,6 +57,6 @@ Veillez à redémarrer Visual Studio après la mise à jour de l’emplacement.
 
 Mac OS définira automatiquement la nouvelle version de JDK comme version par défaut en mettant à jour **/System/Library/Frameworks/JavaVM.Framework/versions/Current**. Vous pouvez ensuite double-vérifier que l’emplacement du **Kit de développement logiciel (SDK) Java** est défini sur la valeur par défaut de **/usr** dans **Visual Studio pour Mac > préférences > projets > emplacements du SDK > emplacements des > Android > emplacement du kit de développement logiciel Java (JDK)** :
 
-[![Définition de l’emplacement du JDK sous l’onglet emplacements Android](update-jdk-images/image6-sml.png)](update-jdk-images/image6.png#lightbox)
+[![de la définition de l’emplacement du JDK sous l’onglet emplacements Android](update-jdk-images/image6-sml.png)](update-jdk-images/image6.png#lightbox)
 
 -----

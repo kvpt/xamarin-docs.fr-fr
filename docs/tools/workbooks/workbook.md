@@ -3,15 +3,15 @@ title: Workbooks interactifs
 description: Ce document explique comment utiliser Xamarin Workbooks pour créer des documents dynamiques contenant C# du code pour l’expérimentation, l’enseignement, la formation ou l’exploration.
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 7b3c356460d9427821843dc084b3f306c026ffa0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a6ca347c231d001cab521d7280a66b714b6a5aef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293087"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029561"
 ---
 # <a name="interactive-workbooks"></a>Workbooks interactifs
 
@@ -27,25 +27,25 @@ Les classeurs peuvent être enregistrés et rouverts plus tard au sein de l’ap
 
 La fenêtre d’édition de code fournit la saisie semi-automatique du code, la coloration de la syntaxe, les diagnostics en direct inline et la prise en charge des instructions sur plusieurs lignes.
 
-[![](workbook-images/inspector-0.6.0-repl-small.png "La fenêtre d’édition de code fournit la saisie semi-automatique du code, la coloration syntaxique, les diagnostics en direct inline et la prise en charge des instructions sur plusieurs lignes")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![](workbook-images/inspector-0.6.0-repl-small.png "The code editing window provides code completion, syntax coloring, inline live-diagnostics, and multi-line statement support")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin Workbooks sont enregistrés dans un `.workbook` fichier, qui est un fichier CommonMark avec des métadonnées en haut (pour plus d’informations sur la façon dont les classeurs peuvent être enregistrés, consultez [types de fichiers de classeurs](#workbooks-files-types) ).
+Xamarin Workbooks sont enregistrés dans un fichier `.workbook`, qui est un fichier CommonMark avec certaines métadonnées en haut (pour plus d’informations sur la façon dont les classeurs peuvent être enregistrés, consultez [types de fichiers de classeurs](#workbooks-files-types) ).
 
 ### <a name="nuget-package-support"></a>Prise en charge des packages NuGet
 
-De nombreux packages NuGet populaires sont pris en charge directement dans Xamarin Workbooks. Vous pouvez rechercher des packages en accédant à **fichier > ajouter un package**. L’ajout d’un package entraîne l' `#r` insertion automatique des instructions référençant les assemblys de package, ce qui vous permet de les utiliser immédiatement.
+De nombreux packages NuGet populaires sont pris en charge directement dans Xamarin Workbooks. Vous pouvez rechercher des packages en accédant à **fichier > ajouter un package**. L’ajout d’un package entraîne l’insertion automatique des instructions `#r` faisant référence à des assemblys de package, ce qui vous permet de les utiliser immédiatement.
 
 Lorsque vous enregistrez un classeur avec des références de package, ces références sont également enregistrées. Si vous partagez le classeur avec une autre personne, il télécharge automatiquement les packages référencés.
 
 Il existe des limitations connues avec la prise en charge des packages NuGet dans les classeurs :
 
 - Les bibliothèques natives sont prises en charge uniquement sur iOS et uniquement lorsqu’elles sont liées à la bibliothèque managée.
-- Les packages qui dépendent `.targets` de fichiers ou de scripts PowerShell ne fonctionneront probablement pas comme prévu.
+- Les packages qui dépendent de `.targets` fichiers ou de scripts PowerShell ne fonctionneront probablement pas comme prévu.
 - Pour supprimer ou modifier une dépendance de package, modifiez le manifeste du classeur à l’aide d’un éditeur de texte. La gestion appropriée des packages est en route.
 
 ### <a name="xamarinforms-support"></a>Prise en charge de Xamarin. Forms
 
-Si vous référencez le package NuGet Xamarin. Forms dans votre classeur, l’application de classeur change sa vue principale en base Xamarin. Forms. Vous pouvez y accéder via `Xamarin.Forms.Application.Current.MainPage`.
+Si vous référencez le package NuGet Xamarin. Forms dans votre classeur, l’application de classeur change sa vue principale en base Xamarin. Forms. Vous pouvez y accéder par le biais de `Xamarin.Forms.Application.Current.MainPage`.
 
 L’onglet inspecteur d’affichage offre également une prise en charge spéciale de l’affichage de la hiérarchie Xamarin. Forms pour vous aider à comprendre vos dispositions.
 
@@ -53,7 +53,7 @@ L’onglet inspecteur d’affichage offre également une prise en charge spécia
 
 Vous pouvez modifier le texte autour de votre code à l’aide de l’éditeur de texte enrichi inclus, comme illustré ci-dessous :
 
-![](workbook-images/inspector-0.6.2-editing.gif "Modifier le texte autour du code à l’aide de l’éditeur de texte enrichi intégré")
+![](workbook-images/inspector-0.6.2-editing.gif "Edit the text around the code using the built-in rich text editor")
 
 ### <a name="markdown-authoring"></a>Création de la démarque
 
@@ -61,7 +61,7 @@ Les auteurs de classeurs peuvent parfois trouver plus facile de modifier directe
 
 Sachez que si vous modifiez et enregistrez votre classeur dans le client classeurs, votre texte CommonMark peut être reformaté.
 
-Notez qu’en raison de l’extension CommonMark que nous utilisons pour activer les métadonnées YAML dans `---` les fichiers de classeur, est réservé à cet effet. Si vous souhaitez créer des [sauts thématiques](http://spec.commonmark.org/0.27/#thematic-break) dans votre texte, vous devez `***` utiliser `___` ou à la place. Ces interruptions doivent être évitées dans les classeurs 1,2 et antérieurs en raison d’un bogue pendant l’enregistrement.
+Notez qu’en raison de l’extension CommonMark que nous utilisons pour activer les métadonnées YAML dans les fichiers de classeur, `---` est réservé à cet effet. Si vous souhaitez créer des [sauts thématiques](https://spec.commonmark.org/0.27/#thematic-break) dans votre texte, vous devez utiliser `***` ou `___` à la place. Ces interruptions doivent être évitées dans les classeurs 1,2 et antérieurs en raison d’un bogue pendant l’enregistrement.
 
 ### <a name="improvements-in-workbooks-13"></a>Améliorations des classeurs 1,3
 
@@ -80,7 +80,7 @@ Vous pouvez également créer un lien vers les en-têtes dans le document du cla
 1. Tous les caractères à l’exception des caractères alphanumériques et des tirets sont supprimés.
 1. Tous les espaces sont remplacés par des tirets.
 
-Cela signifie qu’un en-tête comme « en-tête important » `important-header` obtient un ID de et peut être lié à en `#important-header` insérant un lien vers dans le classeur.
+Cela signifie qu’un en-tête comme « en-tête important » obtient un ID de `important-header` et peut être lié à en insérant un lien vers `#important-header` dans le classeur.
 
 ## <a name="document-structure"></a>Structure du document
 
@@ -89,7 +89,7 @@ Cela signifie qu’un en-tête comme « en-tête important » `important-heade
 Unité discrète de contenu, qui représente le code exécutable ou la démarque. Une cellule de code est composée de quatre sous-composants au maximum :
 
 - Éditeur
-  - Buffer
+  - Mémoire tampon
 - Diagnostics du compilateur
 - Sortie de la console
 - Résultats de l’exécution
@@ -98,7 +98,7 @@ Unité discrète de contenu, qui représente le code exécutable ou la démarque
 
 Composant de texte interactif d’une cellule. Pour les cellules de code, il s’agit de l’éditeur de code réel avec mise en surbrillance de la syntaxe, etc. Pour les cellules de démarque, il s’agit d’un éditeur de contenu de texte enrichi avec une barre d’outils de mise en forme et de création sensible au contexte.
 
-### <a name="buffer"></a>Buffer
+### <a name="buffer"></a>Mémoire tampon
 
 Contenu de texte réel d’un éditeur.
 
@@ -118,29 +118,29 @@ Les représentations riches et potentiellement interactives des résultats d’u
 
 ### <a name="plain-files"></a>Fichiers bruts
 
-Par défaut, un classeur enregistre dans un fichier `.workbook` texte brut contenant du texte mis en forme CommonMark.
+Par défaut, un classeur enregistre sous forme de texte brut `.workbook` fichier contenant du texte au format CommonMark.
 
 ### <a name="packages"></a>Packages
 
-Un package de classeur est un répertoire nommé avec l' `.workbook` extension.
+Un package de classeur est un répertoire nommé avec l’extension `.workbook`.
 Sur le Finder de Mac et dans le menu Xamarin Workbooks ouvrir boîte de dialogue et fichiers récents, ce répertoire est reconnu comme s’il s’agissait d’un fichier.
 
-Le répertoire doit contenir un `index.workbook` fichier, qui est le classeur de texte brut réel qui sera chargé dans Xamarin Workbooks. Le répertoire peut également contenir des ressources requises `index.workbook`par, y compris des images ou d’autres fichiers.
+Le répertoire doit contenir un fichier `index.workbook`, qui est le classeur de texte brut réel qui sera chargé dans Xamarin Workbooks. Le répertoire peut également contenir des ressources requises par `index.workbook`, y compris des images ou d’autres fichiers.
 
-Si un fichier texte `.workbook` brut qui référence des ressources à partir de son répertoire est ouvert dans des classeurs 0.99.3 ou version ultérieure, lorsqu’il est enregistré, il sera `.workbook` converti en package. Cela est vrai sur Mac et Windows.
+Si un fichier de `.workbook` de texte brut qui référence des ressources à partir de son répertoire est ouvert dans des classeurs 0.99.3 ou ultérieur, lorsqu’il est enregistré, il est converti en package `.workbook`. Cela est vrai sur Mac et Windows.
 
 > [!NOTE]
-> Les utilisateurs Windows ouvrent `package.workbook\index.workbook` le fichier directement, mais dans le cas contraire, le package se comporte de la même façon que sur Mac.
+> Les utilisateurs Windows ouvrent le fichier `package.workbook\index.workbook` directement, mais dans le cas contraire, le package se comporte de la même façon que sur Mac.
 
 ### <a name="archives"></a>Archives
 
-Les packages de classeurs, les répertoires, peuvent être difficiles à distribuer facilement sur Internet. La solution est l’archivage des classeurs. Une archive de classeur est un package de classeur compressé, nommé `.workbook` avec l’extension.
+Les packages de classeurs, les répertoires, peuvent être difficiles à distribuer facilement sur Internet. La solution est l’archivage des classeurs. Une archive de classeur est un package de classeur compressé, nommé avec l’extension `.workbook`.
 
 À compter des classeurs 1,1, lors de l’enregistrement d’un package de classeur, la boîte de dialogue Enregistrer vous permet de choisir d’enregistrer à la place en tant qu’archive. Les classeurs 1,0 ne disposaient pas d’un moyen intégré de créer ou d’enregistrer des archives.
 
 Dans les classeurs 1,0, quand une archive de classeur a été ouverte, elle a été convertie de manière transparente en package de classeur, et le fichier zip a été perdu. Dans les classeurs 1,1, le fichier zip reste. Lorsque l’utilisateur enregistre l’archive, il est remplacé par un nouveau fichier zip.
 
-Vous pouvez créer une archive de classeurs manuellement en cliquant avec le bouton droit sur un package de classeurs et en sélectionnant **compresser** sur Mac, ou **Envoyer à > dossier compressé (zippé)** sur Windows. Ensuite, renommez le fichier zip pour `.workbook` obtenir une extension de fichier. Cela fonctionne uniquement avec les packages de classeurs, pas avec les fichiers de classeur ordinaires.
+Vous pouvez créer une archive de classeurs manuellement en cliquant avec le bouton droit sur un package de classeurs et en sélectionnant **compresser** sur Mac, ou **Envoyer à > dossier compressé (zippé)** sur Windows. Ensuite, renommez le fichier zip pour obtenir une extension de fichier `.workbook`. Cela fonctionne uniquement avec les packages de classeurs, pas avec les fichiers de classeur ordinaires.
 
 ## <a name="related-links"></a>Liens associés
 

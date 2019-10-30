@@ -3,15 +3,15 @@ title: Cycle de vie du développement de logiciel mobile
 description: Ce document décrit le cycle de vie de développement des logiciels mobiles. Il aborde la conception d’expérience utilisateur, la conception d’interface utilisateur, le développement, la stabilisation, la distribution et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 4e2af0d1746ef1321db39d97a86af2b4bd769c69
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526696"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016395"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Cycle de vie du développement de logiciel mobile
 
@@ -19,7 +19,7 @@ La création d’applications mobiles peut être aussi simple qu’ouvrir Visual
 
 Dans ce document, nous allons examiner de façon approfondie la création d’applications mobiles, notamment :
 
-1. **Processus** : le processus de développement de logiciels est appelé « cycle de vie de développement de logiciels ». Nous allons examiner toutes les phases du cycle de vie de développement de logiciels pour le développement d’applications mobiles, notamment : Lancement, conception, développement, stabilisation, déploiement et maintenance.
+1. **Processus** : le processus de développement de logiciels est appelé « cycle de vie de développement de logiciels ». Nous examinerons toutes les phases du SDLC en ce qui concerne le développement d’applications mobiles, y compris l’intégration, la conception, le développement, la stabilisation, le déploiement et la maintenance.
 1. **Considérations** : plusieurs aspects doivent être considérés pour la création d’applications mobiles, en particulier pour ce qui diffère des applications web ou pour poste de travail traditionnelles. Nous allons examiner ces considérations et comment elles affectent le développement d’applications mobiles.
 
 Ce document est destiné à répondre à des questions essentielles sur le développement d’applications mobiles, à la fois pour les développeurs d’application débutants et expérimentés. Il adopte une approche assez complète pour présenter la plupart des concepts que vous allez rencontrer au cours de l’ensemble du cycle de vie de développement de logiciels. Ce document peut cependant ne pas être pour tout le monde : si vous avez hâte de commencer à créer des applications, nous vous recommandons de passer directement au guide [Introduction au développement mobile](~/cross-platform/get-started/introduction-to-mobile-development.md), puis de revenir à ce document plus tard.
@@ -60,7 +60,7 @@ En outre, les applications doivent être évaluées dans le contexte du facteur 
 
 Pour faciliter la conception des fonctionnalités d’une application, il peut être utile de définir des acteurs et des [cas d’usage](https://en.wikipedia.org/wiki/Use_case). Les acteurs sont des rôles au sein d’une application ; il s’agit souvent d’utilisateurs. Les cas d’usage sont généralement des actions ou des objectifs.
 
-Par exemple, une application de suivi des tâches peut avoir deux acteurs : *Utilisateur* et *Ami*. Un utilisateur peut *créer une tâche* et peut aussi *partager une tâche* avec un ami. Dans ce cas, la création d’une tâche et le partage d’une tâche sont deux cas d’usage distincts qui, conjointement avec les acteurs, vont déterminer les écrans que vous devez créer, ainsi que les entités et la logique métier à développer.
+Par exemple, une application de suivi des tâches peut avoir deux acteurs : *utilisateur* et *ami*. Un utilisateur peut *créer une tâche* et peut aussi *partager une tâche* avec un ami. Dans ce cas, la création d’une tâche et le partage d’une tâche sont deux cas d’usage distincts qui, conjointement avec les acteurs, vont déterminer les écrans que vous devez créer, ainsi que les entités et la logique métier à développer.
 
 Une fois qu’un nombre approprié de cas d’usage et d’acteurs ont été spécifiés, il est beaucoup plus facile de commencer à concevoir une application. Le développement peut alors se concentrer sur la création de l’application, et non pas sur ce qu’est l’application ou sur ce qu’elle devrait faire.
 
@@ -72,7 +72,7 @@ Une fois que les caractéristiques et les fonctionnalités de l’application on
 
 L’expérience utilisateur est généralement modélisée via des maquettes en utilisant l’un des nombreux [toolkits de conception](https://docs.microsoft.com/windows/uwp/design/downloads/). Les maquettes permettent de concevoir l’expérience utilisateur sans devoir se soucier de la conception de l’interface utilisateur réelle :
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "L’expérience utilisateur est généralement modélisée via des maquettes avec des outils comme Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 Lors de la création des maquettes de l’expérience utilisateur, il est important de prendre en compte les recommandations sur l’interface des différentes plateformes ciblées par l’application. L’application doit s’intégrer parfaitement sur chaque plateforme. Les recommandations de conception officielles pour chaque plateforme sont :
 
@@ -84,11 +84,11 @@ Par exemple, chaque application a une métaphore pour passer d’une section à 
 
 En outre, le matériel lui-même détermine également les décisions relatives à l’expérience utilisateur. Par exemple, les appareils iOS n’ont pas de bouton *Précédent* physique et ils introduisent donc la métaphore du contrôleur de navigation :
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "Les appareils iOS n’ont pas de bouton Précédent physique et ils introduisent donc la métaphore du contrôleur de navigation")
+ ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
 
 En outre, le facteur de forme influence également les décisions relatives à l’expérience utilisateur. Une tablette a une surface beaucoup plus importante et peut donc afficher plus d’informations. Ce qui nécessite souvent plusieurs écrans sur un téléphone peut être ramassé en seul écran pour une tablette :
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Ce qui nécessite souvent plusieurs écrans sur un téléphone peut être ramassé en seul écran pour une tablette")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 Et en raison de l’existence d’une multitude de facteurs de forme, il existe souvent des facteurs de forme de taille moyenne (quelque part entre un téléphone et une tablette) que vous pouvez également cibler.
 
@@ -98,7 +98,7 @@ Une fois que l’expérience utilisateur est déterminée, l’étape suivante c
 
 Comme avec l’expérience utilisateur, il est important de comprendre que chaque plateforme a son propre langage de conception : ainsi, une application bien conçue peut avoir une apparence différente sur chaque plateforme :
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "Une application bien conçue peut avoir une apparence différente sur chaque plateforme")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>Développement
 
@@ -108,7 +108,7 @@ Dans le reste des didacticiels, nous allons nous concentrer principalement sur l
 
 ### <a name="stabilization"></a>Stabilisation
 
-La stabilisation est le processus qui consiste à corriger les bogues de votre application. Il ne s’agit pas seulement du point de vue fonctionnel, par exemple : « Elle plante quand je clique sur ce bouton », mais également de la facilité d’utilisation et des performances. Il est préférable de commencer la stabilisation très tôt dans le processus de développement, afin que les corrections courantes puissent être faites avant de devenir des sources de coûts. En règle générale, les applications passent par les étapes suivantes : *Prototype*, *Alpha*, *Bêta*, et *Version Release Candidate*. Les définitions de ces étapes varient selon les personnes, mais elles suivent généralement le modèle suivant :
+La stabilisation est le processus qui consiste à corriger les bogues de votre application. Il ne s’agit pas seulement du point de vue fonctionnel, par exemple « Elle se bloque quand je clique sur ce bouton », mais également de la facilité d’utilisation et des performances. Il est préférable de commencer la stabilisation très tôt dans le processus de développement, afin que les corrections courantes puissent être faites avant de devenir des sources de coûts. En règle générale, les applications passent par les étapes suivantes : *Prototype*, *Alpha*, *Bêta*, et *Version Release Candidate*. Les définitions de ces étapes varient selon les personnes, mais elles suivent généralement le modèle suivant :
 
 1. **Prototype** : l’application est toujours en phase de preuve de concept, et seules les fonctionnalités principales ou des parties spécifiques de l’application fonctionnent. Des bogues majeurs y sont présents.
 1. **Alpha** : les fonctionnalités principales sont généralement entièrement présentes dans le code (qui est généré, mais pas entièrement testé). Des bogues majeurs sont encore présents, des fonctionnalités périphériques peuvent ne pas encore être présentes.
@@ -117,7 +117,7 @@ La stabilisation est le processus qui consiste à corriger les bogues de votre a
 
 Il n’est jamais trop tôt pour commencer à tester une application. Par exemple, si un problème majeur est trouvé à l’étape du prototypage, l’expérience utilisateur de l’application peut toujours être modifiée pour le résoudre. Si un problème de performances est trouvé à l’étape Alpha, il est suffisamment tôt pour modifier l’architecture avant qu’une grande quantité de code soit générée à partir d’hypothèses qui se révèlent fausses.
 
-En règle générale, au fil de l’évolution d’une application à travers le cycle de vie, elle est ouverte à de plus en plus de personnes, qui peuvent l’essayer, la tester, fournir des commentaires, etc. Par exemple, les applications à l’état de prototype ne peuvent être montrées ou mises à disposition qu’aux principales parties prenantes, tandis que les applications en version Release Candidate peuvent être distribuées à des clients qui s’inscrivent pour pouvoir y accéder de façon anticipée.
+En règle générale, au cours du cycle de vie d’une application, celle-ci est ouverte à d’autres personnes pour l’essayer, la tester, fournir des commentaires, etc. Par exemple, les applications prototypes ne peuvent être affichées ou mises à disposition que pour les parties prenantes, alors que les applications release candidate peuvent être distribuées aux clients qui s’inscrivent pour un accès anticipé.
 
 Pour des premiers tests et un premier déploiement sur un nombre relativement restreint d’appareils, un déploiement direct à partir d’une machine de développement est généralement suffisant. Cependant, au fil de l’extension du public concerné, ceci peut rapidement devenir fastidieux. En l’état, il existe plusieurs options de déploiement de test qui facilitent ce processus, en vous permettant d’inviter des personnes à rejoindre un pool de test, de publier des builds sur le web et de fournir des outils qui permettent aux utilisateurs de faire des commentaires.
 
@@ -146,10 +146,10 @@ Au lieu de cela, tout le monde est libre de créer un App Store, et la plupart d
 
 Ceci permet aux développeurs de disposer d’un canal de distribution potentiellement plus large mais plus complexe pour leurs applications. [Google Play](https://play.google.com/store?hl=en) est l’App Store officiel de Google, mais il en existe beaucoup d’autres. En voici quelques-uns parmi les plus répandus :
 
-1. [AppBrain](http://www.appbrain.com/)
-1. [Amazon App Store pour Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
-1. [Handango](http://www.handango.com/)
-1. [GetJar](http://www.getjar.com/)
+1. [AppBrain](https://www.appbrain.com/)
+1. [Amazon App Store pour Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
+1. [Handango](https://www.handango.com/)
+1. [GetJar](https://www.getjar.com/)
 
 #### <a name="uwp"></a>UWP
 
@@ -159,7 +159,7 @@ Les applications UWP sont distribuées aux utilisateurs via le Microsoft Store. 
 
 Si le développement d’applications mobiles n’est pas fondamentalement différent du développement classique web/pour poste de travail en termes de processus ou d’architecture, certaines considérations spécifiques sont néanmoins indispensables.
 
-### <a name="common-considerations"></a>Considérations générales
+### <a name="common-considerations"></a>Éléments courants à prendre à compte
 
 #### <a name="multitasking"></a>Multitâche
 

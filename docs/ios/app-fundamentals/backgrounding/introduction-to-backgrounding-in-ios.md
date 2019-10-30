@@ -4,15 +4,15 @@ description: 'Ce document décrit l’arrière-plan dans iOS : les États d’a
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/24/2018
-ms.openlocfilehash: 9ae1860d127ea87e4db830d8a9d299a66fdd0f67
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 78751f53808ffa62589fdc57fe4cf59912849e00
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766594"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010840"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Introduction au backgrounding dans iOS
 
@@ -28,7 +28,7 @@ Avant de plonger dans le code pour le traitement en arrière-plan dans iOS, nous
 
 Le cycle de vie des applications iOS est une collection d’États et de méthodes d’application pour se déplacer entre eux. Une application passe d’un État à l’autre, en fonction du comportement de l’utilisateur et des exigences en matière d’arrière-plan de l’application. Le déplacement est illustré par le diagramme suivant :
 
- [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Diagramme des États de l’application et des méthodes de délégué d’application")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Application States and Application Delegate Methods diagram")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 - **Pas en cours d’exécution** -l’application n’a pas encore été lancée sur l’appareil.
 - **Running/active** -l’application est à l’écran et exécute du code au premier plan.
@@ -41,17 +41,17 @@ Depuis l’introduction de la prise en charge de la multitâche, iOS met raremen
 
 ## <a name="application-lifecycle-methods"></a>Méthodes de cycle de vie des applications
 
-Quand une application change d’État, iOS notifie l’application via les méthodes d' `AppDelegate` événement de la classe :
+Quand une application change d’État, iOS notifie l’application via les méthodes d’événement de la classe `AppDelegate` :
 
-- `OnActivated`: Cette méthode est appelée la première fois que l’application est lancée, et chaque fois que l’application revient au premier plan. Il s’agit de l’endroit où placer le code qui doit s’exécuter chaque fois que l’application est ouverte.
-- `OnResignActivation`-Si l’utilisateur reçoit une interruption comme un SMS ou un appel téléphonique, cette méthode est appelée et l’application est temporairement désactivée. Si l’utilisateur accepte l’appel téléphonique, l’application est envoyée en arrière-plan.
-- `DidEnterBackground`-Appelé lorsque l’application passe à l’État en arrière-plan, cette méthode donne à une application environ cinq secondes pour se préparer à un arrêt possible. Utilisez cette fois pour enregistrer les données et les tâches utilisateur et supprimer les informations sensibles de l’écran.
-- `WillEnterForeground`-Lorsqu’un utilisateur retourne à une application en arrière-plan ou suspendue, et le lance au `WillEnterForeground` premier plan, est appelée. Il s’agit du temps nécessaire pour préparer l’application à prendre le premier plan en réhydratation tout `DidEnterBackground` état enregistré pendant la.  `OnActivated`est appelé immédiatement après la fin de cette méthode.
-- `WillTerminate`-L’application est arrêtée et son processus est détruit. Cette méthode est appelée uniquement si le multitâche n’est pas disponible sur l’appareil ou la version du système d’exploitation, si la mémoire est insuffisante ou si l’utilisateur termine manuellement une application en arrière-plan. Notez que les applications suspendues qui sont terminées n' `WillTerminate` appellent pas.
+- `OnActivated` : cette méthode est appelée la première fois que l’application est lancée, et chaque fois que l’application revient au premier plan. Il s’agit de l’endroit où placer le code qui doit s’exécuter chaque fois que l’application est ouverte.
+- `OnResignActivation`-si l’utilisateur reçoit une interruption telle qu’un appel de texte ou de téléphone, cette méthode est appelée et l’application est temporairement désactivée. Si l’utilisateur accepte l’appel téléphonique, l’application est envoyée en arrière-plan.
+- `DidEnterBackground`-appelée lorsque l’application passe à l’État en arrière-plan, cette méthode donne à une application environ cinq secondes pour se préparer à un arrêt possible. Utilisez cette fois pour enregistrer les données et les tâches utilisateur et supprimer les informations sensibles de l’écran.
+- `WillEnterForeground` : lorsqu’un utilisateur retourne à une application en arrière-plan ou suspendue, puis le lance au premier plan, `WillEnterForeground` est appelé. Il s’agit du temps nécessaire pour préparer l’application à prendre le premier plan en réhydratation tout état enregistré pendant la `DidEnterBackground`.  `OnActivated` est appelée immédiatement après la fin de cette méthode.
+- `WillTerminate`-l’application est arrêtée et son processus est détruit. Cette méthode est appelée uniquement si le multitâche n’est pas disponible sur l’appareil ou la version du système d’exploitation, si la mémoire est insuffisante ou si l’utilisateur termine manuellement une application en arrière-plan. Notez que les applications suspendues qui sont terminées n’appellent pas `WillTerminate`.
 
 Le diagramme suivant illustre la façon dont les États d’application et les méthodes de cycle de vie s’imbriquent :
 
- [![](introduction-to-backgrounding-in-ios-images/image2.png "Ce diagramme illustre comment les États de l’application et les méthodes de cycle de vie s’imbriquent")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "This diagram illustrates how the application states and lifecycle methods fit together")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>Contrôles utilisateur pour l’arrière-plan dans iOS
 
@@ -61,7 +61,7 @@ iOS 7 a introduit plusieurs fonctionnalités qui permettent aux utilisateurs de 
 
 Le sélecteur d’application est une fonctionnalité de contrôle importante introduite dans iOS 7. Elle est lancée en double-appuyant sur le bouton d' **hébergement** et montre les applications dont les processus sont actifs :
 
- [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Passage d’une application à l’autre à l’aide du sélecteur d’application")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Moving between apps using the App Switcher")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 À l’aide du sélecteur d’application, les utilisateurs peuvent faire défiler des instantanés de toutes les applications en arrière-plan et suspendues. Si vous appuyez sur une application, celle-ci est lancée au premier plan. Le balayage vers le haut supprime l’application de l’arrière-plan, terminant son processus. Nous examinerons de plus près le sélecteur d’application dans la [démonstration du cycle de vie des applications iOS](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) dans la section suivante.
 
@@ -74,8 +74,8 @@ iOS 7 augmente le contrôle utilisateur sur le cycle de vie de l’application e
 
 Les utilisateurs peuvent modifier ce paramètre en accédant à **paramètres > général > l’actualisation de l’application en arrière-plan** et en modifiant les privilèges d’arrière-plan d’une application sélectionnée. Si l’option actualisation de l’application en arrière-plan est désactivée, l’application est suspendue immédiatement après avoir entré l’arrière-plan et n’a pas pu effectuer de traitement en arrière-plan :
 
- [![](introduction-to-backgrounding-in-ios-images/settings-.png "Paramètres d’actualisation des applications en arrière-plan")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Background App Refresh Settings")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
-Les développeurs peuvent vérifier l’état de l’application d' `BackgroundRefreshStatus` actualisation en arrière-plan avec l’API. Pour obtenir un exemple, reportez-vous à la [recette vérifier le paramètre d’actualisation en arrière-plan](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting).
+Les développeurs peuvent vérifier l’état de l’application d’actualisation en arrière-plan avec l’API `BackgroundRefreshStatus`. Pour obtenir un exemple, reportez-vous à la [recette vérifier le paramètre d’actualisation en arrière-plan](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting).
 
 Nous avons abordé les principes de base du cycle de vie des applications iOS et les fonctionnalités de contrôle du cycle de vie des applications. Nous allons maintenant voir le cycle de vie de l’application iOS en action.

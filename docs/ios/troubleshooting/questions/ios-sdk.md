@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9D2AA00F-1EBD-40AA-87BF-0D7418E4B9EA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: 7ef5a693adac7e81474a473d4dadd14b939378fc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c0d7bc92edd575adb5c6bce53f987926738670aa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769292"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031060"
 ---
 # <a name="where-can-i-set-my-ios-sdk-locations"></a>Où puis-je définir mes emplacements du kit de développement logiciel iOS ?
 
@@ -28,5 +28,5 @@ ms.locfileid: "70769292"
 
 Xamarin. iOS & le kit de développement logiciel (SDK) Apple (Xcode) aura l’emplacement par défaut lorsque la zone emplacement est laissée vide. Ces valeurs par défaut sont les suivantes :
 
-- Xcode`/Applications/Xcode.app`
-- Xamarin. iOS (Visual Studio pour Mac) :`/Library/Frameworks/Xamarin.iOS.framework/Versions/Current`
+- Xcode : `/Applications/Xcode.app`
+- Xamarin. iOS (Visual Studio pour Mac) : `/Library/Frameworks/Xamarin.iOS.framework/Versions/Current`

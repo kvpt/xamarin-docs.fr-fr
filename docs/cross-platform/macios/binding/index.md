@@ -3,15 +3,15 @@ title: Liaison Objective-C
 description: Ce document fournit des liens vers divers guides qui décrivent comment C# créer des liaisons au code Objective-C, ce qui permet aux développeurs d’utiliser des bibliothèques prêtes à l’emploi dans les applications Xamarin.
 ms.prod: xamarin
 ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: d48245ac6939a7b1a1528a7b42ec4a701f062a95
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765756"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016282"
 ---
 # <a name="binding-objective-c"></a>Liaison Objective-C
 
@@ -38,7 +38,7 @@ La finesse d’objectif est un outil en ligne de commande qui permet de démarre
 
 La [page liaison iOS](~/ios/platform/binding-objective-c/index.md) renvoie à ces ressources de liaison communes, en plus des exemples ci-dessous.
 
-### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[Procédure pas à pas : Liaison d’une bibliothèque objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
+### <a name="walkthrough-binding-an-objective-c-libraryiosplatformbinding-objective-cwalkthroughmd"></a>[Procédure pas à pas : liaison d’une bibliothèque objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
 
 Cet article fournit une procédure pas à pas de création d’un projet de liaison à l’aide du projet open source [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) objective-C, en guise d’exemple. La bibliothèque InfColorPicker fournit un contrôleur d’affichage réutilisable qui permet à l’utilisateur de sélectionner une couleur en fonction de sa représentation TSL, ce qui rend la sélection des couleurs plus conviviale. La finesse d’objectif est utilisée pour faciliter le processus de liaison.
 

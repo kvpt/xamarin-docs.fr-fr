@@ -3,15 +3,15 @@ title: Résolution des problèmes Xamarin Live Player
 description: Ce document décrit les problèmes connus avec les Xamarin Live Player et les correctifs potentiels. Il aborde les problèmes de connexion, les problèmes de configuration et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 04a377bad42ff680247759036327035d61757b42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d51241bee5f4ddc06032006071fa8296be37f2fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290175"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005942"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Résolution des problèmes Xamarin Live Player
 
@@ -74,7 +74,7 @@ Se produit lorsque l’appareil mobile en cours d’exécution Xamarin Live Play
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>« Erreur lors de la tentative de déploiement » d’un message dans l’IDE
 
-**«IOException : impossible de lire les données à partir de la connexion de transport : L’opération sur un socket non bloquant bloquerait «**
+**« IOException : impossible de lire les données à partir de la connexion de transport : l’opération sur un socket non bloquant est bloquée »**
 
 Cette erreur se produit souvent lorsque l’appareil mobile exécutant Xamarin Live Player ne se trouve pas sur le même réseau que l’ordinateur exécutant Visual Studio. Cela se produit souvent lors de la connexion à un appareil qui a été précédemment couplé avec succès.
 
@@ -87,7 +87,7 @@ Cette erreur se produit souvent lorsque l’appareil mobile exécutant Xamarin L
 
 Si vous ne pouvez pas vous connecter à votre appareil via Wi-Fi, vous pouvez essayer de configurer manuellement votre appareil à l’aide du fichier de configuration, en procédant comme suit :
 
-**Étape 1 : Ouvrir le fichier de configuration**
+**Étape 1 : ouvrir le fichier de configuration**
 
 Accédez à votre dossier de données d’application :
 
@@ -96,21 +96,21 @@ Accédez à votre dossier de données d’application :
 
 Dans ce dossier, vous trouverez **PlayerDeviceList. xml** , s’il n’existe pas, vous devez en créer un.
 
-**Étape 2 : Récupérer l’adresse IP**
+**Étape 2 : obtenir l’adresse IP**
 
 Dans l’application Xamarin Live Player, accédez à **About > connection test > Start connection test**.
 
 Prenez note de l’adresse IP, vous aurez besoin de l’adresse IP indiquée lors de la configuration de votre appareil.
 
-**Étape 3 : Recevoir le code de jumelage**
+**Étape 3 : obtenir le code de jumelage**
 
 À l’intérieur de la **paire ou de Xamarin Live Player la paire** appuyer **à nouveau**, appuyez de nouveau sur **entrée manuellement**. Un code numérique s’affiche, dont vous aurez besoin pour mettre à jour le fichier de configuration.
 
-**Étape 4 : Générer le GUID**
+**Étape 4 : générer le GUID**
 
 Accédez à : https://www.guidgenerator.com/online-guid-generator.aspx et générez un nouveau GUID et vérifiez que la casse est activée.
 
-**Étape 5 : Configurer l’appareil**
+**Étape 5 : configurer l’appareil**
 
 Ouvrez le **fichier PlayerDeviceList. xml** dans un éditeur tel que Visual Studio ou Visual Studio code. Vous devez configurer votre appareil manuellement dans ce fichier. Par défaut, le fichier doit contenir l’élément XML `Devices` vide suivant :
 
@@ -154,7 +154,7 @@ Certaines classes système ne peuvent pas être substituées, par exemple :
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>«MainActivity.cs : 'Resource. layout’ne contient pas de définition pour’main'
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>« MainActivity.cs : 'Resource. layout’ne contient pas de définition pour’main' »
 
 Cette erreur se produit pour les projets Android avec des interfaces utilisateur définies dans les fichiers AXML.
 Les fichiers AXML ne sont actuellement pas pris en charge dans Xamarin Live Player.

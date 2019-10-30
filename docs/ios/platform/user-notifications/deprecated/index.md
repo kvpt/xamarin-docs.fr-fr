@@ -4,15 +4,15 @@ description: Ce document décrit les technologies de notification iOS qui ont é
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: 899d3e33e4722194a53b75eace1f5b03ee07eb40
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de9a46587a5d1de6f12dd54122b27e53694cdeb8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282367"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031393"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Technologies de notification déconseillées dans Xamarin. iOS
 

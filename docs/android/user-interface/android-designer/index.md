@@ -4,21 +4,21 @@ description: Cet article décrit les fonctionnalités de Xamarin. Android Design
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 176037db501c2577775bdfb817fea01f16a02242
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8793dafe5bc44999cb884621d0c41956674b05e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761639"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029391"
 ---
 # <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
 _Cet article décrit les fonctionnalités de Xamarin. Android Designer. Elle explique les principes fondamentaux du concepteur, en expliquant comment utiliser le concepteur pour disposer les widgets visuellement et modifier les propriétés. Il montre également comment utiliser le concepteur pour travailler avec des interfaces utilisateur et des ressources dans différentes configurations, telles que des thèmes, des langages et des configurations d’appareil, ainsi que pour concevoir des vues alternatives, telles que le mode paysage et le mode portrait._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Xamarin. Android prend en charge à la fois un style déclaratif de conception d’interface utilisateur basé sur des fichiers XML, ainsi que la création d’une interface utilisateur par programmation dans le code.
 Lors de l’utilisation de l’approche déclarative, les fichiers XML peuvent être modifiés manuellement ou modifiés visuellement à l’aide de Xamarin. Android Designer. L’utilisation d’un concepteur permet de fournir des commentaires immédiats pendant la création de l’interface utilisateur, accélère le développement et rend le processus de création de l’interface utilisateur moins laborieux.

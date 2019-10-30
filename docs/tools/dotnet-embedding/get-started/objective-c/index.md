@@ -3,21 +3,21 @@ title: Bien démarrer avec Objective-C
 description: Ce document décrit la prise en main de l’intégration de .NET avec Objective-C. Il aborde les conditions requises, l’installation de l’incorporation .NET à partir de NuGet et les plateformes prises en charge.
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: b9c97e871791b633c65e9d374edfe446874567e9
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: bf2f832056c164e199cfb779766f298b2b3817de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007090"
 ---
 # <a name="getting-started-with-objective-c"></a>Bien démarrer avec Objective-C
 
 Il s’agit de la page de prise en main pour objective-C, qui couvre les notions de base de toutes les plateformes prises en charge.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser l’incorporation .NET avec Objective-C, vous avez besoin d’un Mac exécutant :
 
@@ -55,7 +55,7 @@ La prise en charge de tvOS est analogue à la façon dont iOS fonctionne, en uti
 > [!NOTE]
 > La prise en charge de Watchos sera disponible dans une version ultérieure et sera très similaire à iOS/tvOS.
 
-## <a name="further-reading"></a>Informations supplémentaires
+## <a name="further-reading"></a>Compléments de lecture
 
 - [Fonctionnalités d’incorporation .NET spécifiques à Objective-C](~/tools/dotnet-embedding/objective-c/index.md)
 - [Meilleures pratiques pour objective-C](~/tools/dotnet-embedding/objective-c/best-practices.md)

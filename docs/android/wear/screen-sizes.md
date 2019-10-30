@@ -3,15 +3,15 @@ title: Utilisation des tailles d’écran dans Xamarin. Android et système d’
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 86e05dc0e9cd5df325126cc5a339b36dd27c1e45
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758315"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030357"
 ---
 # <a name="working-with-screen-sizes"></a>Utilisation des tailles d’écran
 
@@ -21,15 +21,15 @@ Les appareils d’usure Android peuvent avoir un affichage rectangulaire ou arro
 
 ## <a name="identifying-screen-type"></a>Type d’écran d’identification
 
-La bibliothèque de prise en charge de l’usure fournit des contrôles qui vous aident à détecter et à s' `WatchViewStub` adapter `BoxInsetLayout`à différentes formes d’écran, telles que et.
+La bibliothèque de prise en charge de l’usure fournit des contrôles qui vous aident à détecter et à s’adapter à différentes formes d’écran, telles que `WatchViewStub` et `BoxInsetLayout`.
 
-N’oubliez pas que certains des autres contrôles de bibliothèque de prise en `GridViewPager`charge (tels que) détectent *automatiquement* la forme d’écran eux-mêmes et ne doivent pas être ajoutés en tant qu’enfants des contrôles décrits ci-dessous.
+N’oubliez pas que certains des autres contrôles de bibliothèque de prise en charge (tels que `GridViewPager`) détectent *automatiquement* la forme d’écran eux-mêmes et ne doivent pas être ajoutés en tant qu’enfants des contrôles décrits ci-dessous.
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
 Consultez l’exemple [WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub) pour voir comment détecter le type d’écran et afficher une disposition différente pour chaque type.
 
-Le fichier de disposition principal contient `android.support.wearable.view.WatchViewStub` un qui référence différentes dispositions pour les écrans rectangulaires et arrondis `app:roundLayout` `app:rectLayout` à l’aide des attributs et :
+Le fichier de disposition principal contient une `android.support.wearable.view.WatchViewStub` qui référence des dispositions différentes pour les écrans rectangulaires et arrondis à l’aide des attributs `app:rectLayout` et `app:roundLayout` :
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -49,7 +49,7 @@ La solution contient différentes dispositions pour chaque style qui sera sélec
 
 Au lieu de créer des dispositions différentes pour chaque type d’écran, vous pouvez également créer une vue unique qui s’adapte aux écrans rectangulaires ou ronds.
 
-Cet [exemple Google](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) montre comment utiliser `BoxInsetLayout` pour utiliser la même disposition sur des écrans rectangulaires et ronds.
+Cet [exemple Google](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) montre comment utiliser la `BoxInsetLayout` pour utiliser la même disposition sur des écrans rectangulaires et ronds.
 
 ## <a name="wear-ui-designer"></a>Générateur d’interface utilisateur d’usure
 

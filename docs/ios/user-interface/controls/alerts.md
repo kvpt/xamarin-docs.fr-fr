@@ -4,15 +4,15 @@ description: Ce document explique comment afficher des alertes dans Xamarin. iOS
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ec2a35a33682ec7bda2840cfb4bc6b4908fc65b0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1264b28b2ee56ec5de610350a199668c67d5c33c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292380"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022101"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Affichage des alertes dans Xamarin. iOS
 
@@ -30,7 +30,7 @@ Utilisez `UIAlertControllerStyle` pour indiquer le type d’alerte à afficher. 
 Il existe trois étapes nécessaires à suivre lors de la création d’un contrôleur d’alerte :
 
 - Créez et configurez l’alerte avec :
-  - title
+  - titre
   - message
   - preferredStyle
 
@@ -81,7 +81,7 @@ Les alertes peuvent également afficher une feuille d’action, similaire à la 
 
  ![Alerte de la feuille d’action](alerts-images/alert3.png)
 
-Les boutons sont ajoutés à l’alerte avec `AddAction` la méthode :
+Les boutons sont ajoutés à l’alerte avec la méthode `AddAction` :
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {

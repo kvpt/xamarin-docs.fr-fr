@@ -4,21 +4,21 @@ description: Ce guide explore Xamarin. Mac et sa relation à Objective-C à un n
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51900adb1dd15675e584671f3b06ad6d7572f47d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287783"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017556"
 ---
 # <a name="xamarinmac-architecture"></a>Architecture Xamarin. Mac
 
 _Ce guide explore Xamarin. Mac et sa relation à Objective-C à un niveau bas. Il explique les concepts tels que la compilation, les sélecteurs, les bureaux d’enregistrement, le lancement d’applications et le générateur._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Les applications Xamarin. Mac s’exécutent dans l’environnement d’exécution mono et utilisent le compilateur de Xamarin pour compiler en langage intermédiaire (IL), qui est ensuite compilé juste-à-temps (JIT) en code natif au moment de l’exécution. S’exécute côte à côte avec le runtime objective-C. Les deux environnements d’exécution s’exécutent sur un noyau de type UNIX, en particulier XNU, et exposent diverses API au code utilisateur, ce qui permet aux développeurs d’accéder au système managé ou natif sous-jacent.
 
@@ -32,7 +32,7 @@ Lors du développement pour Xamarin, les termes *natif* et code *managé* sont s
 
 Le code natif est du code qui s’exécute en mode natif sur la plateforme spécifique (par exemple, Objective-C ou code compilé de l’AOA, sur un processeur ARM). Ce guide explore la manière dont votre code managé est compilé en code natif et explique le fonctionnement d’une application Xamarin. Mac, en utilisant pleinement les API Mac d’Apple à l’aide de liaisons, tout en ayant également accès à. La BCL du NET et un langage sophistiqué tel C#que.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Les éléments suivants sont requis pour développer une application macOS avec Xamarin.Mac :
 
@@ -62,7 +62,7 @@ Tout d’abord, il doit exister un moyen d’exposer objective- C#C à, ce qui e
 
 Comme indiqué ci-dessus, le Bureau d’enregistrement est du code qui expose du code managé à Objective-C. Pour ce faire, il crée une liste de toutes les classes managées qui dérivent de NSObject :
 
-- Pour toutes les classes qui n’encapsulent pas une classe objective-c existante, elle crée une nouvelle classe objective-c avec des membres objective-c qui reflètent `[Export]` tous les membres managés ayant un attribut.
+- Pour toutes les classes qui n’encapsulent pas une classe objective-C existante, elle crée une nouvelle classe objective-C avec des membres objective-c qui reflètent tous les membres managés ayant un attribut `[Export]`.
 - Dans les implémentations pour chaque membre objective – C, le code est ajouté automatiquement pour appeler le membre managé mis en miroir.
 
 Le pseudo-code ci-dessous montre un exemple de cette opération :
@@ -136,7 +136,7 @@ public interface NSBox {
 }
 ```
 
-Le générateur, appelé `bmac` dans Xamarin. Mac, prend ces fichiers de définition et utilise les outils .net pour les compiler dans un assembly temporaire. Toutefois, cet assembly temporaire n’est pas utilisable pour appeler du code Objective-C. Le générateur lit ensuite l’assembly temporaire et C# génère du code qui peut être utilisé au moment de l’exécution. C’est pourquoi, par exemple, si vous ajoutez un attribut aléatoire à votre fichier Definition. cs, il n’apparaît pas dans le code généré. Le générateur ne le sait pas et, par `bmac` conséquent, ne le recherche pas dans l’assembly temporaire pour le générer.
+Le générateur, appelé `bmac` dans Xamarin. Mac, prend ces fichiers de définition et utilise les outils .NET pour les compiler dans un assembly temporaire. Toutefois, cet assembly temporaire n’est pas utilisable pour appeler du code Objective-C. Le générateur lit ensuite l’assembly temporaire et C# génère du code qui peut être utilisé au moment de l’exécution. C’est pourquoi, par exemple, si vous ajoutez un attribut aléatoire à votre fichier Definition. cs, il n’apparaît pas dans le code généré. Le générateur ne le sait pas, et par conséquent `bmac` ne sait pas qu’il le fait dans l’assembly temporaire pour le générer.
 
 Une fois le fichier Xamarin. Mac. dll créé, le gestionnaire de package `mmp`regroupe tous les composants ensemble.
 
@@ -147,7 +147,7 @@ Une fois le fichier Xamarin. Mac. dll créé, le gestionnaire de package `mmp`re
 - Si la liaison est activée, exécutez l’éditeur de liens managé pour optimiser vos assemblys en supprimant les parties inutilisées.
 - Créer une application de lancement, la liaison dans le code de lancement est discutée avec le code d’inscription en mode statique.
 
-Elle est ensuite exécutée dans le cadre du processus de génération de l’utilisateur qui compile le code utilisateur dans un assembly qui fait référence à Xamarin. `mmp` Mac. dll et qui s’exécute pour en faire un package
+Elle est ensuite exécutée dans le cadre du processus de génération de l’utilisateur qui compile le code utilisateur dans un assembly qui fait référence à Xamarin. Mac. dll et qui s’exécute `mmp` pour en faire un package
 
 Pour plus d’informations sur l’éditeur de liens et son utilisation, reportez-vous au Guide de l' [éditeur de liens](~/ios/deploy-test/linker.md) iOS.
 

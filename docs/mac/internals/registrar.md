@@ -4,21 +4,21 @@ description: Ce document décrit l’objectif de l’registraire Xamarin. Mac et
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 991d9b2d911b5aa4ac07225fd1df34877451df49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290094"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017320"
 ---
 # <a name="xamarinmac-registrar"></a>Bureau d’enregistrement Xamarin. Mac
 
 _Ce document décrit l’objectif du Bureau d’enregistrement Xamarin. Mac et ses différentes configurations d’utilisation._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Xamarin. Mac permet de combler l’écart entre le runtime du monde géré (.NET) et le runtime de cacao, ce qui permet aux classes managées d’appeler des classes objective-C non managées et d’être rappelées lorsque des événements se produisent. Le travail requis pour préformer ce « Magic » est géré par le Bureau d’enregistrement et est, en général, masqué de l’affichage.
 
@@ -44,4 +44,4 @@ Voici quelques scénarios :
 - Plug-ins chargés après le lancement avec des classes dérivant de NSObject
 - Instances de classes créées dynamiquement dérivant de NSObject
 
-Lorsque le Bureau d’enregistrement n’est pas en mesure de savoir qu’il doit inscrire un type au démarrage. La `ObjCRuntime.Runtime.RegisterAssembly` méthode est fournie pour informer le Bureau d’enregistrement qu’il a des types supplémentaires à prendre en compte.
+Lorsque le Bureau d’enregistrement n’est pas en mesure de savoir qu’il doit inscrire un type au démarrage. La méthode `ObjCRuntime.Runtime.RegisterAssembly` est fournie pour informer le Bureau d’enregistrement qu’il a des types supplémentaires à prendre en compte.

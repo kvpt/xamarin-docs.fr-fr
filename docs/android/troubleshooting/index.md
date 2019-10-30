@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 54583AB3-FE6D-4357-B4FC-CBC48B7EDEE4
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 317d45f2fb9b405337e0b41d626057dca752440a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f6d255e9af64d316ac76eab92a73cc1c90b82956
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757310"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019553"
 ---
 # <a name="troubleshooting"></a>Résolution des problèmes
 
@@ -31,7 +31,7 @@ Questions fréquemment posées sur la résolution des problèmes de Xamarin. And
 
 Ce guide fournit des solutions de contournement pour certaines erreurs courantes qui peuvent se produire lors du référencement et du téléchargement automatique des bibliothèques de prise en charge Android ou des services de Google Play.
 
-## <a name="changes-to-the-android-sdk-toolingandroidtroubleshootingsdk-cli-tooling-changesmd"></a>[Modifications des outils Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+## <a name="changes-to-the-android-sdk-toolingandroidtroubleshootingsdk-cli-tooling-changesmd"></a>[Modifications des outils du kit Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 
 À partir de 26.0.1 de l’Android SDK Tools, Google a supprimé les gestionnaires AVD et SDK existants en faveur de nouveaux outils en ligne de commande.
 

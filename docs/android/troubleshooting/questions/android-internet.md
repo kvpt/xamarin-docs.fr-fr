@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A6FE770B-A19A-4BF8-95E9-2CF880D4AFC5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 162378c00f3e20574d04dc373fcc492a9407b88d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5996cfa3c0a18fc186ea862a2b3d7910594e1281
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761027"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027007"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Pourquoi la build de ma version Android ne peut pas se connecter à Internet ?
 
@@ -24,9 +24,9 @@ La cause la plus courante de ce problème est que l’autorisation **Internet** 
 
 Pour résoudre le problème, vous pouvez avoir besoin de l’autorisation Internet dans le manifeste Android. Pour ce faire, vous pouvez utiliser l’éditeur de manifeste ou le Sourcecode du manifeste :
 
-- Corriger dans l’éditeur : Dans votre projet Android, accédez à **Propriétés-> fichier AndroidManifest. xml-> autorisations requises** et cochez **Internet**
+- Correction dans l’éditeur : dans votre projet Android, accédez à **Propriétés-> fichier AndroidManifest. xml-> autorisations requises** et cochez **Internet**
 
-- Correction dans Sourcecode : Ouvrez le fichier AndroidManifest dans un éditeur de code source et ajoutez la balise `<Manifest>` d’autorisation à l’intérieur des balises :
+- Correction dans Sourcecode : Ouvrez le fichier AndroidManifest dans un éditeur de code source et ajoutez la balise d’autorisation à l’intérieur des balises `<Manifest>` :
 
     ```xml
     <Manifest>

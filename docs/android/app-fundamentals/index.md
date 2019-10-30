@@ -4,15 +4,15 @@ description: Concepts de l’application principale
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af7ba83b9026a91028f4ffa9894d564d5ff13eb8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: eb581d68f3b7e57975b6979fe1005b1fac411ec8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755298"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019222"
 ---
 # <a name="xamarinandroid-application-fundamentals"></a>Notions de base de l’application Xamarin. Android
 
@@ -46,7 +46,7 @@ Cet article traite des services Android, qui sont des composants Android qui per
 
 Ce guide explique comment créer et utiliser des récepteurs de diffusion, un composant Android qui répond aux diffusions à l’ensemble du système, dans Xamarin. Android.
 
-## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[autorisations](~/android/app-fundamentals/permissions.md)
+## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[Autorisations](~/android/app-fundamentals/permissions.md)
 
 Vous pouvez utiliser la prise en charge des outils intégrée à Visual Studio pour Mac ou Visual Studio pour créer et ajouter des autorisations au manifeste Android. Ce document décrit comment ajouter des autorisations dans Visual Studio et Xamarin Studio.
 
@@ -54,7 +54,7 @@ Vous pouvez utiliser la prise en charge des outils intégrée à Visual Studio p
 
 Android fournit une infrastructure très riche et diversifiée pour la prise en charge des graphiques 2D et des animations. Ce document présente ces frameworks et explique comment créer des graphiques et des animations personnalisés et les utiliser dans une application Xamarin. Android.
 
-## <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[Architectures de processeur](~/android/app-fundamentals/cpu-architectures.md)
+## <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[Architectures d’UC](~/android/app-fundamentals/cpu-architectures.md)
 
 Xamarin. Android prend en charge plusieurs architectures d’UC, y compris les appareils 32 bits et 64 bits. Cet article explique comment cibler une application vers une ou plusieurs architectures de processeur compatibles Android.
 
@@ -70,7 +70,7 @@ Le système d’exploitation Android offre une prise en charge complète du mult
 
 Cette section explique comment implémenter des notifications locales et distantes dans Xamarin. Android. Il décrit les différents éléments d’interface utilisateur d’une notification Android et présente les API impliquées dans la création et l’affichage d’une notification. Pour les notifications distantes, Google Cloud Messaging et Firebase Cloud Messaging sont expliqués. Des procédures pas à pas et des exemples de code sont inclus.
 
-## <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Entrées tactiles](~/android/app-fundamentals/touch/index.md)
+## <a name="touchandroidapp-fundamentalstouchindexmd"></a>[Touch](~/android/app-fundamentals/touch/index.md)
 
 Cette section explique les concepts et les détails de l’implémentation des gestes tactiles sur Android. Les API tactiles sont introduites et expliquées, suivies par une exploration des détecteurs de mouvement.
 

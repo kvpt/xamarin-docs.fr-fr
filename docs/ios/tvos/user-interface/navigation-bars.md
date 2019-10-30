@@ -4,21 +4,21 @@ description: Ce document explique comment utiliser les barres de navigation dans
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 73474aaeb138d52536dd8ad5a7dca9be566475af
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa376385b000b83a41fdcdc7a4d3c8bf1553f0a7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769090"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030478"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Utilisation des barres de navigation tvOS dans Xamarin
 
 Les barres de navigation peuvent être ajoutées en haut des affichages pour afficher un titre et des boutons de barre de navigation facultatifs. En règle générale, elles sont utilisées lorsque l’utilisateur a navigué à partir d’une page principale, comme une vue de table, une collection ou un menu vers un sous-affichage présentant les détails de l’élément sélectionné.
 
-[![](navigation-bars-images/navbar01.png "Exemple de barre de navigation")](navigation-bars-images/navbar01.png#lightbox)
+[![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
 
 En plus du titre (affiché au centre), les barres de navigation peuvent contenir un ou plusieurs boutons de barre de navigation (`UIBarButtonItem`) sur les côtés gauche et droit de la barre.
 
@@ -33,44 +33,44 @@ Le moyen le plus simple d’utiliser les barres de navigation dans une applicati
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-1. Dans la **panneau solutions**, double-cliquez `Main.storyboard` sur fichier et ouvrez-le pour le modifier.
+1. Dans la **panneau solutions**, double-cliquez sur `Main.storyboard` un fichier et ouvrez-le pour le modifier.
 1. Faites glisser une **barre de navigation** à partir de la **boîte à outils** et déposez-la sur la vue en haut de l’écran :
 
-    [![](navigation-bars-images/navbar02.png "Barre de navigation")](navigation-bars-images/navbar02.png#lightbox)
+    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
 1. Double-cliquez sur la **barre de navigation** pour sélectionner l' **élément de navigation**. Dans l’onglet **widget** du **panneau Propriétés**, vous pouvez définir le **titre**:
 
-    [![](navigation-bars-images/navbar03.png "Définir le titre")](navigation-bars-images/navbar03.png#lightbox)
+    [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
 1. Ensuite, vous pouvez ajouter un ou plusieurs **éléments de bouton de barre** à l’une ou l’autre des extrémités de la barre :
 
-    [![](navigation-bars-images/navbar04.png "Élément de bouton de barre")](navigation-bars-images/navbar04.png#lightbox)
+    [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
 1. Enfin, associez les **éléments du bouton de barre** aux actions de l’onglet **événements** de l' **Explorateur de propriétés**:
 
-    [![](navigation-bars-images/navbar05.png "Action d’élément de bouton de barre")](navigation-bars-images/navbar05.png#lightbox)
+    [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
 1. Enregistrez les modifications apportées.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Dans la **Explorateur de solutions**, double-cliquez `Main.storyboard` sur fichier et ouvrez-le pour le modifier.
+1. Dans la **Explorateur de solutions**, double-cliquez sur `Main.storyboard` un fichier et ouvrez-le pour le modifier.
 1. Faites glisser une **barre de navigation** à partir de la **boîte à outils** et déposez-la sur la vue en haut de l’écran :
 
-    [![](navigation-bars-images/navbar02-vs.png "Barre de navigation")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Double-cliquez sur la **barre de navigation** pour sélectionner l' **élément de navigation**. Dans l’onglet **widget** de l' **Explorateur de propriétés**, vous pouvez définir le **titre**:
 
-    [![](navigation-bars-images/navbar03-vs.png "Définir le titre")](navigation-bars-images/navbar03-vs.png#lightbox)
+    [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. Ensuite, vous pouvez ajouter un ou plusieurs **éléments de bouton de barre** à l’une ou l’autre des extrémités de la barre :
 
-    [![](navigation-bars-images/navbar04-vs.png "Éléments de bouton de barre")](navigation-bars-images/navbar04-vs.png#lightbox)
+    [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. Enfin, associez les **éléments du bouton de barre** aux actions de l’onglet **événements** de l' **Explorateur de propriétés**:
 
-    [![](navigation-bars-images/navbar05-vs.png "Actions d’élément de bouton de barre")](navigation-bars-images/navbar05-vs.png#lightbox)
+    [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Enregistrez les modifications apportées.
 
 -----
 
 > [!IMPORTANT]
-> Bien qu’il soit possible d’assigner `TouchUpInside` des événements tels que à un élément d’interface utilisateur (par exemple, un UIButton) dans le concepteur iOS, il ne sera jamais appelé, car Apple TV n’a pas d’écran tactile ou de prise en charge des événements tactiles. Vous devez toujours utiliser l' `Primary Action` événement lors de la création de gestionnaires d’événements pour les éléments d’interface utilisateur tvOS.
+> Bien qu’il soit possible d’assigner des événements tels que des `TouchUpInside` à un élément d’interface utilisateur (tel qu’un UIButton) dans le concepteur iOS, il ne sera jamais appelé, car Apple TV n’a pas d’écran tactile ou ne prend pas en charge les événements tactiles. Vous devez toujours utiliser l’événement `Primary Action` lors de la création de gestionnaires d’événements pour les éléments d’interface utilisateur tvOS.
 
-Le code suivant fournit un exemple de gestionnaires d’événements sur trois BarButtonItems différents : `ShowFirstHotel`, `ShowSecondHotel`et `ShowThirdHotel`. Lorsque l’utilisateur clique sur chaque élément, l' `HotelImage` image d’arrière-plan est modifiée. Cela est modifié dans le fichier de contrôleur d' `ViewController.cs`affichage (exemple) :
+Le code suivant fournit un exemple de gestionnaires d’événements sur trois BarButtonItems différents : `ShowFirstHotel`, `ShowSecondHotel`et `ShowThirdHotel`. Lorsque l’utilisateur clique sur chaque élément, l’image d’arrière-plan `HotelImage` est modifiée. Cela est modifié dans le fichier de contrôleur d’affichage (exemple `ViewController.cs`) :
 
 ```csharp
 using System;
@@ -121,7 +121,7 @@ namespace MySingleView
 }
 ```
 
-Tant que la propriété d' `Enabled` un bouton a `true` la valeur et qu’elle n’est pas couverte par un autre contrôle ou vue, elle peut être rendue en élément actif à l’aide de la Siri distante.
+Tant que la propriété `Enabled` d’un bouton est `true` et qu’elle n’est pas couverte par un autre contrôle ou vue, elle peut être rendue en élément actif à l’aide de la Siri distante.
 
 Pour plus d’informations sur l’utilisation des storyboards, consultez notre [Guide de démarrage rapide Hello, tvOS](~/ios/tvos/get-started/hello-tvos.md).
 

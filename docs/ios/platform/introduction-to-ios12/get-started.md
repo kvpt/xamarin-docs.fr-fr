@@ -4,15 +4,15 @@ description: Ce document décrit comment configurer pour créer des applications
 ms.prod: xamarin
 ms.assetid: 6C0F0133-1A5F-408B-8BCA-BDCA313A55C2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/19/2018
-ms.openlocfilehash: 480e7c1d5ff0aa7335b3f45d8e05f276bc5be208
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1db249a9e07f178461bcb052508d08f54ecea121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032020"
 ---
 # <a name="get-started-with-ios-12-tvos-12-and-watchos-5"></a>Prise en main d’iOS 12, tvOS 12 et Watchos 5
 
@@ -26,7 +26,7 @@ Ce document explique comment créer des applications Xamarin qui appellent des A
 
 3. **Mettre à jour Visual Studio pour Mac et Visual Studio 2017** : Assurez-vous de disposer de la dernière version stable de Xamarin.
 
-4. _(facultatif)_ **Installer IOS 12 sur vos appareils iOS** –
+4. _(facultatif)_ **Installez IOS 12 sur vos appareils iOS** :
 
    Pour les tests d’appareils d’applications qui utilisent des API introduites avec Xcode 10, les développeurs Apple inscrits peuvent [Télécharger](https://developer.apple.com/download) et installer le système d’exploitation sur leurs appareils.
 

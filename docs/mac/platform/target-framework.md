@@ -4,15 +4,15 @@ description: Cet article traite des frameworks cibles (bibliothèques de classes
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: a612c2c23ceff13ea1d602465573514547628e55
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e07ec4fd4436d951ea4033dbceab2cef47e96218
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769808"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025931"
 ---
 # <a name="target-framework-for-xamarinmac"></a>Framework cible pour Xamarin. Mac
 
@@ -30,11 +30,11 @@ L’une des répercussions les plus importantes de ces différents frameworks ci
 
 Trois options de Framework cible sont disponibles pour Xamarin. Mac, chacune présentant des avantages et des inconvénients différents :
 
-- **Moderne** (appelée mobile dans une documentation plus ancienne) : un sous-ensemble similaire à ce qui alimente Xamarin. iOS, hautement optimisé pour les performances et la taille. Ce Framework cible étant sécurisé pour l’éditeur de liens, l’encombrement final de ces projets peut être considérablement réduit en supprimant le code inutilisé.
+- **Moderne** (appelé mobile dans une documentation plus ancienne) : un sous-ensemble similaire à ce qui alimente Xamarin. iOS, hautement optimisé pour les performances et la taille. Ce Framework cible étant sécurisé pour l’éditeur de liens, l’encombrement final de ces projets peut être considérablement réduit en supprimant le code inutilisé.
 
-- **Plein** (appelé XM 4,5 dans une documentation plus ancienne) : sous-ensemble similaire à la BCL « Desktop », avec quelques suppressions minimes. Étant donné que la version cible de .NET Framework est presque identique à Net45 (et versions ultérieures), elle peut facilement consommer de nombreux packages NuGet qui ne fournissent pas de versions netstandard2 ou Xamarin spécifiques. Toutefois, en raison de l’utilisation de System. Configuration, il est incompatible avec la liaison.
+- **Full** (appelé XM 4,5 dans une documentation plus ancienne) : un sous-ensemble similaire à la BCL « Desktop », avec quelques suppressions minimes. Étant donné que la version cible de .NET Framework est presque identique à Net45 (et versions ultérieures), elle peut facilement consommer de nombreux packages NuGet qui ne fournissent pas de versions netstandard2 ou Xamarin spécifiques. Toutefois, en raison de l’utilisation de System. Configuration, il est incompatible avec la liaison.
 
-- **Non pris en charge** (appelé système dans une documentation plus ancienne) : au lieu de lier à une BCL fournie par Xamarin. Mac, utilisez le système actuel installé mono. Cela fournit le jeu d’assemblys le plus complet, y compris certains problèmes connus (System. Drawing, par exemple). Cette option existe uniquement en dernier recours et il est fortement recommandé d’épuiser d’autres options avant de l’utiliser. Comme son nom l’indique, l’utilisation n’est pas prise en charge par les canaux de support officiels.
+- Non **pris en charge** (appelé système dans une documentation plus ancienne) : au lieu de lier à une bibliothèque de classes de bibliothèque fournie par Xamarin. Mac, utilisez le système actuel installé mono. Cela fournit le jeu d’assemblys le plus complet, y compris certains problèmes connus (System. Drawing, par exemple). Cette option existe uniquement en dernier recours et il est fortement recommandé d’épuiser d’autres options avant de l’utiliser. Comme son nom l’indique, l’utilisation n’est pas prise en charge par les canaux de support officiels.
 
 ## <a name="setting-the-target-framework"></a>Définition de la version cible du .NET Framework
 

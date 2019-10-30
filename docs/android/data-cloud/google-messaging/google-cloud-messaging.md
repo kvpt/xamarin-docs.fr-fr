@@ -4,15 +4,15 @@ description: Google Cloud Messaging (GCM) est un service qui facilite la message
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: fef12ab6dc2c42f97e5a2725f58ba4392c21762f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754497"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023704"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -23,11 +23,11 @@ ms.locfileid: "70754497"
 
 _Google Cloud Messaging (GCM) est un service qui facilite la messagerie entre les applications mobiles et les applications serveur. Cet article fournit une vue d’ensemble du fonctionnement de GCM et explique comment configurer Google services afin que votre application puisse utiliser GCM._
 
-[![Logo Google Cloud Messaging](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png#lightbox)
+[logo de Google Cloud Messaging ![](google-cloud-messaging-images/preview-sml.png)](google-cloud-messaging-images/preview.png#lightbox)
 
 Cette rubrique fournit une vue d’ensemble de haut niveau de la façon dont Google Cloud Messaging achemine les messages entre votre application et un serveur d’applications, et fournit une procédure pas-à-pas pour acquérir des informations d’identification afin que votre application puisse utiliser les services GCM.
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Google Cloud Messaging (GCM) est un service qui gère l’envoi, le routage et la mise en file d’attente des messages entre les applications serveur et les applications clientes mobiles. Une *application cliente* est une application GCM qui s’exécute sur un appareil. Le *serveur d’applications* (fourni par vous ou votre société) est le serveur GCM avec lequel votre application cliente communique via GCM :
 
@@ -43,17 +43,17 @@ Lorsque des messages en aval sont envoyés à partir d’un serveur d’applicat
 
 GCM utilise les informations d’identification suivantes pour identifier le serveur d’applications et votre application cliente, et il utilise ces informations d’identification pour autoriser les transactions de message via GCM :
 
-- **Clé API** La *clé API* permet à votre serveur d’applications d’accéder à Google services. &ndash; GCM utilise cette clé pour authentifier votre serveur d’applications.
+- **Clé api** &ndash; la *clé API* permet à votre serveur d’applications d’accéder à Google services. GCM utilise cette clé pour authentifier votre serveur d’applications.
     Avant de pouvoir utiliser le service GCM, vous devez d’abord obtenir une clé API à partir de la [console de développement Google](https://console.developers.google.com/) en créant un *projet*. La clé de l’API doit rester sécurisée ; Pour plus d’informations sur la protection de votre clé API, consultez [meilleures pratiques pour l’utilisation sécurisée de clés API](https://support.google.com/cloud/answer/6310037?hl=en).
 
-- **ID** de l’expéditeur L’ID de l’expéditeur autorise le serveur d’applications à votre application &ndash; cliente. il s’agit d’un numéro unique qui identifie le serveur d’applications autorisé à envoyer des messages à votre application cliente. &ndash;
+- **Sender id** &ndash; l’ID de l' *expéditeur* autorise le serveur d’applications à votre application cliente &ndash; il s’agit d’un numéro unique qui identifie le serveur d’applications autorisé à envoyer des messages à votre application cliente.
     L’ID de l’expéditeur est également votre numéro de projet. vous obtenez l’ID de l’expéditeur à partir de la console des développeurs Google quand vous inscrivez votre projet.
 
-- **Jeton d’inscription** Le *jeton d’inscription* est l’identité GCM de votre application cliente sur un appareil donné. &ndash; Le jeton d’inscription est généré au moment &ndash; de l’exécution, votre application reçoit un jeton d’inscription quand elle s’inscrit pour la première fois auprès de GCM lors de son exécution sur un appareil. Le jeton d’inscription autorise une instance de votre application cliente (s’exécutant sur cet appareil particulier) à recevoir des messages de GCM.
+- **Jeton d’inscription** &ndash; le *jeton d’inscription* est l’identité GCM de votre application cliente sur un appareil donné. Le jeton d’inscription est généré au moment de l’exécution &ndash; votre application reçoit un jeton d’inscription lorsqu’il s’inscrit pour la première fois auprès du GCM lors de son exécution sur un appareil. Le jeton d’inscription autorise une instance de votre application cliente (s’exécutant sur cet appareil particulier) à recevoir des messages de GCM.
 
-- **ID** de l’application &ndash; Identité de votre application cliente (indépendante d’un appareil donné) qui s’inscrit pour recevoir des messages de GCM. Sur Android, l’ID de l’application est le nom du package enregistré dans **fichier AndroidManifest. xml**, par exemple `com.xamarin.gcmexample`.
+- L' **ID d’Application** &ndash; l’identité de votre application cliente (indépendamment d’un appareil donné) qui s’inscrit pour recevoir des messages de GCM. Sur Android, l’ID de l’application est le nom du package enregistré dans **fichier AndroidManifest. xml**, par exemple `com.xamarin.gcmexample`.
 
-[Configuration de Google Cloud Messaging](#settingup) (plus loin dans ce guide) fournit des instructions détaillées pour la création d’un projet et la génération de ces informations d’identification.
+La [configuration Google Cloud Messaging](#settingup) (plus loin dans ce guide) fournit des instructions détaillées pour la création d’un projet et la génération de ces informations d’identification.
 
 Les sections suivantes expliquent comment ces informations d’identification sont utilisées lorsque les applications clientes communiquent avec les serveurs d’applications par le biais de GCM.
 
@@ -61,7 +61,7 @@ Les sections suivantes expliquent comment ces informations d’identification so
 
 Une application cliente installée sur un appareil doit d’abord s’inscrire auprès de GCM pour que la messagerie puisse avoir lieu. L’application cliente doit effectuer les étapes d’inscription présentées dans le diagramme suivant :
 
-[![Étapes d’inscription de l’application](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png#lightbox)
+[étapes d’inscription de l’application ![](google-cloud-messaging-images/02-app-registration-sml.png)](google-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1. L’application cliente contacte GCM pour obtenir un jeton d’inscription, en transmettant l’ID de l’expéditeur à GCM.
 
@@ -80,7 +80,7 @@ L' [inscription des applications clientes](https://developers.google.com/cloud-m
 
 Lorsque le serveur d’applications envoie un message en aval à l’application cliente, il suit les étapes illustrées dans le diagramme suivant :
 
-[![Diagramme de stockage et de redirection de messagerie en aval](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
+[diagramme de stockage et de redirection de messagerie ![en aval](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
 
 1. Le serveur d’applications envoie le message à GCM.
 
@@ -106,7 +106,7 @@ La *messagerie de groupe* est un type de messagerie en aval dans lequel le serve
 
 Si votre application cliente se connecte à un serveur qui prend en charge [XMPP](https://developers.google.com/cloud-messaging/ccs), elle peut renvoyer des messages au serveur d’applications, comme illustré dans le diagramme suivant :
 
-[![Diagramme de messagerie en amont](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
+[![diagramme de messagerie en amont](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
 1. L’application cliente envoie un message au serveur de connexion GCM XMPP.
 
@@ -130,17 +130,17 @@ Avant de pouvoir utiliser les services GCM dans votre application, vous devez d�
 
 1. Connectez-vous à la [console des développeurs Google](https://developers.google.com/mobile/add?platform=android) avec votre compte Google (par exemple, votre adresse Gmail) et créez un nouveau projet. Si vous disposez d’un projet existant, choisissez le projet que vous souhaitez rendre compatible GCM. Dans l’exemple suivant, un nouveau projet appelé **XamarinGCM** est créé :
 
-    [![Création du projet XamarinGCM](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
+    [![de la création du projet XamarinGCM](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
 
 2. Ensuite, entrez le nom du package pour votre application (dans cet exemple, le nom du package est **com. xamarin. gcmexample**), puis cliquez sur **continuer pour choisir et configurer les services**:
 
-    [![Saisie du nom du package](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
+    [![la saisie du nom du package](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     Notez que ce nom de package est également l’ID d’application de votre application.
 
 3. La section **choisir et configurer des services** répertorie les services Google que vous pouvez ajouter à votre application. Cliquez sur **messagerie Cloud**:
 
-    [![Choisir la messagerie Cloud](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png#lightbox)
+    [![choisir la messagerie Cloud](google-cloud-messaging-images/07-choose-gcm-service-sml.png)](google-cloud-messaging-images/07-choose-gcm-service.png#lightbox)
 
 4. Ensuite, cliquez sur **Activer Google Cloud Messaging**:
 
@@ -148,20 +148,20 @@ Avant de pouvoir utiliser les services GCM dans votre application, vous devez d�
 
 5. Une **clé d’API serveur** et un **ID d’expéditeur** sont générés pour votre application. Enregistrez ces valeurs et cliquez sur **Fermer**:
 
-    [![Clé de l’API serveur et ID de l’expéditeur affichés](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
+    [Clé de l’API du serveur ![et ID de l’expéditeur affichés](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
-    Protéger la clé &ndash; API elle n’est pas destinée à une utilisation publique. Si la clé d’API est compromise, les serveurs non autorisés peuvent publier des messages dans les applications clientes.
+    Protéger la clé API &ndash; elle n’est pas destinée à une utilisation publique. Si la clé d’API est compromise, les serveurs non autorisés peuvent publier des messages dans les applications clientes.
     [Meilleures pratiques pour l’utilisation sécurisée de clés d’API](https://support.google.com/cloud/answer/6310037?hl=en) fournit des instructions utiles pour la protection de votre clé API.
 
 ### <a name="view-your-project-settings"></a>Afficher les paramètres de votre projet
 
 Vous pouvez afficher les paramètres de votre projet à tout moment en vous connectant à la [console Google Cloud](https://console.cloud.google.com/) et en sélectionnant votre projet. Par exemple, vous pouvez afficher l' **ID** de l’expéditeur en sélectionnant votre projet dans le menu déroulant en haut de la page (dans cet exemple, le projet est appelé **XamarinGCM**). L’ID de l’expéditeur est le numéro du projet, comme indiqué dans cette capture d’écran (l’ID de l’expéditeur ici est **9349932736**) :
 
-[![Affichage de l’ID de l’expéditeur](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
+[![l’affichage de l’ID de l’expéditeur](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 Pour afficher la **clé API**, cliquez sur **Gestionnaire d’API** , puis sur **informations d’identification**:
 
-[![Affichage de la clé API](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
+[![l’affichage de la clé API](google-cloud-messaging-images/11-view-credentials-sml.png)](google-cloud-messaging-images/11-view-credentials.png#lightbox)
 
 ## <a name="for-further-reading"></a>Pour obtenir des informations supplémentaires
 

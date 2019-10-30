@@ -3,15 +3,15 @@ title: Empaqueter des applications d’usure
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa4a4f1ab3ae3024de2d969f9325c2efa4db48af
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763967"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028644"
 ---
 # <a name="packaging-wear-apps"></a>Empaqueter des applications d’usure
 
@@ -47,7 +47,7 @@ Les applications d’usure Android sont empaquetées avec une application Androi
 
 -----
 
-Notez que vous obtiendrez une erreur **XA5211** si le nom du package de l’application d’usure ne correspond pas au nom du package de l’application de poche. Par exemple :
+Notez que vous obtiendrez une erreur **XA5211** si le nom du package de l’application d’usure ne correspond pas au nom du package de l’application de poche. Exemple :
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 
@@ -62,7 +62,7 @@ L’assembly généré par le projet d’application d’usure n’est pas utili
 
 - Vérifie que les noms de packages correspondent. 
 
-- Génère du code XML et l’ajoute au projet Handheld pour l’associer à l’application usure. Par exemple : 
+- Génère du code XML et l’ajoute au projet Handheld pour l’associer à l’application usure. Exemple : 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->
@@ -95,7 +95,7 @@ Vous pouvez écrire des applications d’usure Android dans Xamarin. Android ava
     </wearableApp>
     ```
 
-5. Ajoutez manuellement un `<meta-data />` élément à l’élément **fichier AndroidManifest. xml** `<application>` du projet mobile qui fait référence à la nouvelle ressource XML :
+5. Ajoutez manuellement un élément `<meta-data />` à l’élément **fichier AndroidManifest. xml** `<application>` du projet mobile qui fait référence à la nouvelle ressource XML :
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"

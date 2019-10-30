@@ -4,15 +4,15 @@ description: Ce document fournit une description de haut niveau de certaines API
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/08/2018
-ms.openlocfilehash: b3f3db32e87d83ea4e076d439df3342e5ca2ed50
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 39d954626bc9e789446e7f1deac67e2e0fca51c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284637"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032007"
 ---
 # <a name="introduction-to-ios-12"></a>Introduction à iOS 12
 
@@ -56,7 +56,7 @@ iOS 12 permet aux utilisateurs et aux développeurs de travailler plus facilemen
 
 - Le remplissage automatique de mot de passe et les mots de passe forts automatiques permettent de générer, de stocker et d’utiliser automatiquement des mots de passe forts dans les applications iOS lors de l’inscription et de la connexion à une application.
 - Grâce à la fonction de remplissage automatique du code de sécurité, il est possible d’utiliser des codes d’authentification SMS sans couper-coller ni Mémorisation manuelle.
-- La `ASWebAuthenticationSession` classe simplifie le processus d’utilisation des services d’authentification fédérée.
+- La classe `ASWebAuthenticationSession` simplifie le processus d’utilisation des services d’authentification fédérée.
 - Les extensions de fournisseur d’informations d’identification de remplissage automatique permettent aux applications de mots de passe tierces de fournir un nom d’utilisateur et des mots de passe aux champs de connexion.
 
 ## <a name="healthkit-updates"></a>Mises à jour HealthKit
@@ -69,7 +69,7 @@ Dans iOS 12, les applications iMessage prennent en charge les contextes de prés
 
 ## <a name="network-framework"></a>Infrastructure réseau
 
-Network Framework, la pile réseau sous- `URLSession` jacente aux API couramment utilisées dans les applications iOS, est désormais disponible en tant qu’infrastructure autonome, ce qui facilite l’utilisation de TCP, UDP, TLS, IPv4/IPv6 et bien plus encore.
+Network Framework, la pile réseau sous-jacente des API `URLSession` couramment utilisées dans les applications iOS, est désormais disponible en tant qu’infrastructure autonome, ce qui facilite l’utilisation de TCP, UDP, TLS, IPv4/IPv6 et bien plus encore.
 
 ## <a name="carplay"></a>CarPlay
 
@@ -80,4 +80,4 @@ Dans iOS 12, les applications tierces peuvent fournir des cartes et activer les 
 Avec iOS 12, Apple est dépréciée :
 
 - OpenGL ES, [encourageant les développeurs](https://developer.apple.com/ios/whats-new/) à adopter des métaux.
-- [`UIWebView`](xref:UIKit.UIWebView), [en faveur de `WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).
+- [`UIWebView`](xref:UIKit.UIWebView), [en faveur des `WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc).

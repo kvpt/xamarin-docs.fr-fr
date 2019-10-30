@@ -4,15 +4,15 @@ description: Cet article aborde l’utilisation des nouvelles API de recherche d
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769486"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031562"
 ---
 # <a name="search-apis-in-xamarinios"></a>Rechercher des API dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ La recherche a été développée dans iOS 9 pour offrir de nouvelles façons d�
 
 En outre, les nouvelles API de recherche facilitent l’intégration de la recherche dans votre application sans une expérience d’implémentation de recherche antérieure. Pour cette raison, Apple prétend qu’il faut généralement quelques heures pour que le contenu d’une application iOS 9 fasse l’objet d’une recherche universelle à l’aide de la recherche d’applications.
 
-[![](images/intro01.png "Exemple de contenu d’application iOS 9 pouvant faire l’objet d’une recherche universelle à l’aide de la recherche d’application")](images/intro01.png#lightbox)
+[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
 
 La recherche d’application est composée de trois API distinctes :
 
@@ -64,7 +64,7 @@ Apple fournit les suggestions suivantes quant au contenu et aux actions à fourn
 Core Spotlight dans iOS 10 offre plusieurs améliorations à la recherche d’applications, telles que :
 
 - **Participatives popularité des liens approfondis (avec confidentialité différentielle)** : permet de promouvoir le contenu d’application lié de manière détaillée dans les résultats de recherche.
-- **Recherche dans l’application** : utilisez la nouvelle `CSSearchQuery` classe pour fournir une fonctionnalité de recherche en vedette dans l’application similaire à la façon dont les applications de messagerie, de messages et notes fonctionnent.
+- **Recherche dans l’application** : utilisez la nouvelle classe `CSSearchQuery` pour fournir une fonctionnalité de recherche dans la Galerie d’applications similaire à la façon dont les applications mail, messages et notes fonctionnent.
 - **Continuation** de la recherche : permet à un utilisateur de lancer une recherche dans Spotlight ou Safari, puis d’ouvrir une application et de poursuivre cette recherche.
 - **Visualisation des résultats de la validation** : l’outil de validation de l' [API de recherche d’applications](https://search.developer.apple.com/appsearch-validation-tool) d’Apple affiche désormais une représentation visuelle du balisage d’un site Web et des liens détaillés lors de la préformation des tests.
 - **Partage d’images d’application de message** : permet d’afficher les images courantes dans l’application fournies pour le partage des messages (via une extension de l’application de message) dans les recherches Spotlight.
@@ -78,7 +78,7 @@ iOS 10 présente de nouvelles façons de conduire des engagements à une applica
 - Le sélecteur d’application
 - L’écran de verrouillage
 - CarPlay
-- Cartes
+- Maps
 - Interactions Siri
 - Suggestions QuickType 
 
@@ -94,5 +94,5 @@ Cet article a abordé les nouvelles fonctionnalités de l’API de recherche fou
 
 - [Exemples iOS 9](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 pour les développeurs](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9,0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Guide de programmation de recherche d’applications](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

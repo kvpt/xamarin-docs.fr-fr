@@ -4,15 +4,15 @@ description: Avec l’introduction de l’usure de Google, vous n’êtes plus l
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 3b1d27b1489cb71d4bd1922c2de993567ddf36bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758499"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028618"
 ---
 # <a name="introduction-to-android-wear"></a>Introduction à Android Wear
 
@@ -152,17 +152,17 @@ Il existe de nombreuses fonctionnalités 2,0, telles que les actions en ligne, l
 Voici quelques exemples des appareils qui peuvent exécuter Android :
 
 - [Motorola 360](https://moto360.motorola.com/)
-- [LG G Watch](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-- [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
-- [Samsung Gear en direct](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-- [Sony SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-- [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+- [LG G Watch](https://www.lg.com/us/smart-watches/lg-W100-g-watch)
+- [LG G Watch R](https://www.lg.com/us/smartwatch/g-watch-r)
+- [Samsung Gear en direct](https://www.samsung.com/global/microsite/gear/gearlive_design.html)
+- [Sony SmartWatch 3](https://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+- [ASUS ZenWatch](https://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 ## <a name="further-reading"></a>informations supplémentaires
 
 Consultez la documentation relative à l’usure d’Android de Google :
 
-- [À propos de l’usure Android](http://www.android.com/wear/)
+- [À propos de l’usure Android](https://www.android.com/wear/)
 - [Conception d’applications Android usure](https://developer.android.com/design/wear/index.html)
 - [Android. support. Bibliothèque portable](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
 - [Android usure 2,0](https://developer.android.com/wear/preview/index.html)

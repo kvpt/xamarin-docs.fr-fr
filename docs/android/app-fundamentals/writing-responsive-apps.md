@@ -3,19 +3,19 @@ title: Écriture d’applications réactives
 ms.prod: xamarin
 ms.assetid: 452DF940-6331-55F0-D130-002822BBED55
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: e3f7d788e71718f4ca1336b7906cf3d63bf07f32
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1900a4fc42778db07e78c41bbc0acfafbd594cdf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509200"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024196"
 ---
 # <a name="writing-responsive-applications"></a>Écriture d’applications réactives
 
-L’une des clés de la gestion d’une interface graphique réactive consiste à effectuer des tâches de longue durée sur un thread d’arrière-plan pour que l’interface utilisateur ne soit pas bloquée. Supposons que nous voulons calculer une valeur à afficher à l’utilisateur, mais cette valeur prend 5 secondes pour calculer:
+L’une des clés de la gestion d’une interface graphique réactive consiste à effectuer des tâches de longue durée sur un thread d’arrière-plan pour que l’interface utilisateur ne soit pas bloquée. Supposons que nous voulons calculer une valeur à afficher à l’utilisateur, mais cette valeur prend 5 secondes pour calculer :
 
 ```csharp
 public class ThreadDemo : Activity
@@ -43,7 +43,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-Cela fonctionne, mais l’application se bloque pendant 5 secondes, tandis que la valeur est calculée. Pendant ce temps, l’application ne répond à aucune intervention de l’utilisateur. Pour contourner ce processus, nous voulons effectuer nos calculs sur un thread d’arrière-plan:
+Cela fonctionne, mais l’application se bloque pendant 5 secondes, tandis que la valeur est calculée. Pendant ce temps, l’application ne répond à aucune intervention de l’utilisateur. Pour contourner ce processus, nous voulons effectuer nos calculs sur un thread d’arrière-plan :
 
 ```csharp
 public class ThreadDemo : Activity
@@ -71,7 +71,7 @@ public class ThreadDemo : Activity
 }
 ```
 
-Nous calculons à présent la valeur sur un thread d’arrière-plan afin que notre interface utilisateur reste réactive pendant le calcul. Toutefois, lorsque le calcul est effectué, notre application se bloque, laissant cela dans le journal:
+Nous calculons à présent la valeur sur un thread d’arrière-plan afin que notre interface utilisateur reste réactive pendant le calcul. Toutefois, lorsque le calcul est effectué, notre application se bloque, laissant cela dans le journal :
 
 ```shell
 E/mono    (11207): EXCEPTION handling: Android.Util.AndroidRuntimeException: Exception of type 'Android.Util.AndroidRuntimeException' was thrown.

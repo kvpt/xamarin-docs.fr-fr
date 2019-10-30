@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: a5b6466b1d2489cced4b1e3205ef672b8f6a4da7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770657"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005451"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Ajout de AppCompat et de la conception de matériau
 
@@ -21,23 +21,23 @@ _Suivez les étapes ci-dessous pour convertir des applications Android Xamarin. 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Ces instructions expliquent comment mettre à jour vos applications Android Xamarin. Forms existantes pour utiliser la bibliothèque AppCompat et activer la conception de matériaux dans la version Android de vos applications Xamarin. Forms.
 
-### <a name="1-update-xamarinforms"></a>1. Mettre à jour Xamarin. Forms
+### <a name="1-update-xamarinforms"></a>1. mettre à jour Xamarin. Forms
 
 Vérifiez que la solution utilise Xamarin. Forms 2,0 ou une version ultérieure. Mettez à jour le package NuGet Xamarin. Forms sur 2,0 si nécessaire.
 
-### <a name="2-check-android-version"></a>2. Vérifier la version d’Android
+### <a name="2-check-android-version"></a>2. Vérifiez la version d’Android
 
 Vérifiez que le Framework cible du projet Android est Android 6,0 (Marshmallow). Vérifiez les **Options > du projet Android > générer > paramètres généraux** pour vous assurer que l’infrastructure Corrent est sélectionnée :
 
- ![](appcompat-images/target-android-6-sml.png "Configuration de build générale Android")
+ ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
 
-### <a name="3-add-new-themes-to-support-material-design"></a>3. Ajouter de nouveaux thèmes pour prendre en charge la conception de matériau
+### <a name="3-add-new-themes-to-support-material-design"></a>3. ajouter de nouveaux thèmes pour prendre en charge la conception de matériel
 
-Créez les trois fichiers suivants dans votre projet Android et collez le contenu ci-dessous. Google fournit un [Guide de style](http://www.google.com/design/spec/style/color.html#color-color-palette) et un [Générateur de palettes de couleurs](http://www.materialpalette.com/) pour vous aider à choisir un autre jeu de couleurs pour celui spécifié.
+Créez les trois fichiers suivants dans votre projet Android et collez le contenu ci-dessous. Google fournit un [Guide de style](https://www.google.com/design/spec/style/color.html#color-color-palette) et un [Générateur de palettes de couleurs](https://www.materialpalette.com/) pour vous aider à choisir un autre jeu de couleurs pour celui spécifié.
 
 **Ressources/valeurs/couleurs. Xml**
 
@@ -50,7 +50,7 @@ Créez les trois fichiers suivants dans votre projet Android et collez le conten
 </resources>
 ```
 
-**Resources/values/style.xml**
+**Ressources/valeurs/style. Xml**
 
 ```xml
 <resources>
@@ -68,7 +68,7 @@ Créez les trois fichiers suivants dans votre projet Android et collez le conten
 
 Un style supplémentaire doit être inclus dans le dossier **values-v21** pour appliquer des propriétés spécifiques lors de l’exécution sur Android Lollipop et versions ultérieures.
 
-**Resources/values-v21/style.xml**
+**Ressources/values-v21/style. Xml**
 
 ```xml
 <resources>
@@ -80,11 +80,11 @@ Un style supplémentaire doit être inclus dans le dossier **values-v21** pour a
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Mettre à jour fichier AndroidManifest. Xml
+### <a name="4-update-androidmanifestxml"></a>4. mettre à jour fichier AndroidManifest. Xml
 
-Pour vous assurer que ces informations sur les nouveaux thèmes sont utilisées, définissez le thème dans `android:theme="@style/MyTheme"` le fichier fichier AndroidManifest en ajoutant (laissez le reste du code XML tel qu’il était).
+Pour vous assurer que ces informations sur les nouveaux thèmes sont utilisées, définissez le thème dans le fichier **fichier AndroidManifest** en ajoutant `android:theme="@style/MyTheme"` (laissez le reste du code XML tel qu’il était).
 
-**Properties/AndroidManifest.xml**
+**Propriétés/fichier AndroidManifest. Xml**
 
 ```xml
 ...
@@ -93,7 +93,7 @@ Pour vous assurer que ces informations sur les nouveaux thèmes sont utilisées,
 ...
 ```
 
-### <a name="5-provide-toolbar-and-tab-layouts"></a>5. Fournir une barre d’outils et des dispositions d’onglet
+### <a name="5-provide-toolbar-and-tab-layouts"></a>5. fournir une barre d’outils et des dispositions d’onglet
 
 Créez les fichiers **TabBar. AXML** et **ToolBar. AXML** dans le répertoire **Resources/layout** , puis collez-les dans le contenu ci-dessous :
 
@@ -113,7 +113,7 @@ Créez les fichiers **TabBar. AXML** et **ToolBar. AXML** dans le répertoire **
     app:tabMode="fixed" />
 ```
 
-Certaines propriétés des onglets ont été définies, y compris la gravité `fill` et le `fixed`mode de l’onglet.
+Quelques propriétés ont été définies pour les onglets, notamment la gravité de l’onglet pour `fill` et le mode à `fixed`.
 Si vous avez un grand nombre d’onglets, vous souhaiterez peut-être faire défiler la [documentation Android TabLayout](https://developer.android.com/reference/android/support/design/widget/TabLayout.html) pour en savoir plus.
 
 **Ressources/mise en page/barre d’outils. AXML**
@@ -135,9 +135,9 @@ Si vous avez un grand nombre d’onglets, vous souhaiterez peut-être faire déf
 Dans ces fichiers, nous créons un thème spécifique pour la barre d’outils qui peut varier pour votre application.
 Pour en savoir plus, consultez le billet de blog de la [barre d’outils Hello](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/) .
 
-### <a name="6-update-the-mainactivity"></a>6. Mettez à jour le`MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. mettre à jour les `MainActivity`
 
-Dans les applications Xamarin. Forms existantes, la classe MainActivity.cs `FormsApplicationActivity`héritera de. Ce doit être remplacé par `FormsAppCompatActivity` pour activer les nouvelles fonctionnalités.
+Dans les applications Xamarin. Forms existantes, la classe **MainActivity.cs** héritera de `FormsApplicationActivity`. Celui-ci doit être remplacé par `FormsAppCompatActivity` pour activer les nouvelles fonctionnalités.
 
 **MainActivity.cs**
 
@@ -145,7 +145,7 @@ Dans les applications Xamarin. Forms existantes, la classe MainActivity.cs `Form
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-Enfin, « connectez-vous » aux nouvelles dispositions de l’étape 5 de `OnCreate` la méthode, comme illustré ici :
+Enfin, « connectez-vous » aux nouvelles dispositions de l’étape 5 de la méthode `OnCreate`, comme illustré ici :
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

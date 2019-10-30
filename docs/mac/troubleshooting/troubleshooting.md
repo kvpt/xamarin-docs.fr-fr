@@ -5,19 +5,19 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5CBC6822-BCD7-4DAD-8468-6511250D41C4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 6fd6484e547f22f1dc7f27578834b5292d6d2d2a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770006"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001606"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Conseils de dépannage de Xamarin. Mac
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Parfois, nous sommes tous bloqués lors de l’utilisation d’un projet, soit sur l’impossibilité d’obtenir une API pour travailler comme je le souhaite, soit pour tenter de contourner un bogue. Notre objectif de Xamarin est de vous permettre de réussir à écrire vos applications mobiles et de bureau, et nous avons fourni des ressources pour vous aider.
 
@@ -47,10 +47,10 @@ Dans la plupart des cas, le débogueur de Visual Studio pour Mac intercepte les 
 Le débogage de ces programmes peut être frustrant, car la recherche des informations nécessaires peut être difficile. Voici quelques approches qui peuvent vous aider :
 
 - Assurez-vous que la version macOS indiquée dans le fichier **info. plist** est la même que la version de MacOS actuellement installée sur l’ordinateur.
-- Vérifiez la sortie de l’application Visual Studio pour Mac (**Afficher** -> les résultats de l'**application** **Pad** -> ) pour les traces de la pile ou la sortie en rouge à partir du cacao qui peut décrire la sortie.
+- Vérifiez la sortie de l’application Visual Studio pour Mac (**voir** les **Pad** ->  -> sortie de l' **application**) pour les traces de la pile ou la sortie en rouge du cacao qui peut décrire la sortie.
 - Exécutez votre application à partir de la ligne de commande et examinez la sortie (dans l’application **Terminal** ) à l’aide de :
 
-  `MyApp.app/Contents/MacOS/MyApp`(où `MyApp` est le nom de votre application)
+  `MyApp.app/Contents/MacOS/MyApp` (où `MyApp` est le nom de votre application)
 - Vous pouvez augmenter la sortie en ajoutant « MONO_LOG_LEVEL » à votre commande sur la ligne de commande, par exemple :
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
@@ -60,7 +60,7 @@ Le débogage de ces programmes peut être frustrant, car la recherche des inform
   2. Entrez `run` dans le terminal.
   3. Entrez `c` dans le terminal.
   4. Quittez lorsque vous avez terminé le débogage.
-- En dernier recours, avant d’appeler `NSApplication.Init` dans votre `Main` méthode (ou dans d’autres emplacements, le cas échéant), vous pouvez écrire du texte dans un fichier à un emplacement connu pour effectuer le suivi de l’étape de lancement que vous rencontrez.
+- En dernier recours, avant d’appeler `NSApplication.Init` dans votre méthode `Main` (ou dans d’autres emplacements, si nécessaire), vous pouvez écrire du texte dans un fichier à un emplacement connu pour effectuer le suivi de l’étape de lancement que vous rencontrez.
 
 ## <a name="known-issues"></a>Problèmes connus
 
@@ -72,13 +72,13 @@ Le débogueur se connecte aux applications Xamarin. Mac via TCP, ce qui signifie
 
 [![Modification des droits](troubleshooting-images/debug01.png "Modification des droits")](troubleshooting-images/debug01-large.png#lightbox)
 
-L’autorisation **autoriser les connexions réseau sortantes (client)** est celle qui est requise pour le débogueur, l’activation de celle-ci permet le débogage normal. Étant donné que vous ne pouvez pas effectuer de débogage `CompileEntitlements` sans cela `msbuild` , nous avons mis à jour la cible pour pour ajouter automatiquement cette autorisation aux droits pour toute application qui est bac à sable (sandbox) pour les versions de débogage uniquement. Les versions release doivent utiliser les droits spécifiés dans le fichier de droits, non modifié.
+L’autorisation **autoriser les connexions réseau sortantes (client)** est celle qui est requise pour le débogueur, l’activation de celle-ci permet le débogage normal. Étant donné que vous ne pouvez pas effectuer de débogage sans cela, nous avons mis à jour la cible de `CompileEntitlements` pour `msbuild` pour ajouter automatiquement cette autorisation aux droits pour toute application qui est bac à sable (sandbox) pour les versions de débogage uniquement. Les versions release doivent utiliser les droits spécifiés dans le fichier de droits, non modifié.
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437
 
-Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. Mac, vous pouvez recevoir une erreur au format «System. NotSupportedException : Aucune donnée n’est disponible pour l’encodage 437» lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles `Ionic.Zip.ZipFile`que, peuvent lever cette exception pendant l’opération.
+Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. Mac, vous pouvez obtenir une erreur au format « System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437 » lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles que `Ionic.Zip.ZipFile`, peuvent lever cette exception pendant l’opération.
 
-Cela peut être résolu en ouvrant les options pour le projet Xamarin. Mac, en accédant à l'**internationalisation** de la **Build** > Mac et en vérifiant l’internationalisation de l' **Ouest** :
+Cela peut être résolu en ouvrant les options pour le projet Xamarin. Mac, en accédant à la **Build Mac** > **internationalisation** et en vérifiant l’internationalisation de l' **Ouest** :
 
 [![Modification des options de build](troubleshooting-images/issue01.png "Modification des options de build")](troubleshooting-images/issue01-large.png#lightbox)
 
@@ -102,7 +102,7 @@ Si vous double-cliquez sur le fichier **habilitations. plist** , l’éditeur de
 
 [![Modification des droits](troubleshooting-images/entitlements02.png "Modification des droits")](troubleshooting-images/entitlements02-large.png#lightbox)
 
-Pour les projets Xamarin. Mac existants, vous devez créer manuellement le fichier **Entitlements. plist** en cliquant avec le bouton droit sur le projet dans le **panneau solutions** puis en sélectionnant **Ajouter** > **un nouveau fichier...** . Ensuite, sélectionnez **Xamarin. Mac** > ,**liste de propriétés vide**:
+Pour les projets Xamarin. Mac existants, vous devez créer manuellement le fichier **Entitlements. plist** en cliquant avec le bouton droit sur le projet dans le **panneau solutions** puis en sélectionnant **Ajouter** > **nouveau fichier...** . Ensuite, sélectionnez **Xamarin. Mac** > **liste de propriétés vide**:
 
 ![Ajout d’une nouvelle liste de propriétés](troubleshooting-images/entitlements03.png "Ajout d’une nouvelle liste de propriétés")
 
@@ -112,7 +112,7 @@ Entrez `Entitlements` pour le nom et cliquez sur le bouton **nouveau** . Si votr
 
 ## <a name="community-support-on-the-forums"></a>Support de la communauté sur les forums
 
-La communauté de développeurs utilisant des produits Xamarin est incroyable et de nombreux visitent nos [Forums Xamarin. Mac](http://forums.xamarin.com/categories/mac) pour partager des expériences et leur expertise. En outre, les ingénieurs Xamarin consultent régulièrement le Forum pour vous aider.
+La communauté de développeurs utilisant des produits Xamarin est incroyable et de nombreux visitent nos [Forums Xamarin. Mac](https://forums.xamarin.com/categories/mac) pour partager des expériences et leur expertise. En outre, les ingénieurs Xamarin consultent régulièrement le Forum pour vous aider.
 
 <a name="filing-a-bug"/>
 

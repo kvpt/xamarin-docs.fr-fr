@@ -3,19 +3,19 @@ title: Bien démarrer avec C
 description: Ce document explique comment utiliser l’incorporation .NET pour incorporer du code .NET dans une application C. Il explique comment utiliser l’incorporation .NET dans Visual Studio 2019 et Visual Studio pour Mac.
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/19/2018
-ms.openlocfilehash: 1dc68a709f8e1f864961bbe87af112b648b0dd2a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9660eccd3e14a6c4ecad901064650fe1e25458f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278739"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029781"
 ---
 # <a name="getting-started-with-c"></a>Bien démarrer avec C
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser l’incorporation .NET avec C, vous avez besoin d’un ordinateur Mac ou Windows exécutant :
 
@@ -71,7 +71,7 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Étant donné `--compile` que l’indicateur a été transmis à l’outil, l’incorporation .net doit également avoir compilé les fichiers de sortie dans une bibliothèque partagée, que vous pouvez trouver à côté des fichiers générés, un fichier **libmanaged. dylib** sur MacOS et **Managed. dll** sur Windows.
+Étant donné que l’indicateur de `--compile` a été transmis à l’outil, l’incorporation .NET doit également avoir compilé les fichiers de sortie dans une bibliothèque partagée, que vous pouvez trouver en regard des fichiers générés, d’un fichier **libmanaged. dylib** sur MacOS et de **Managed. dll** sur Windows.
 
 Pour utiliser la bibliothèque partagée, vous pouvez inclure le fichier d’en-tête c **Managed. h** , qui fournit les déclarations C correspondant aux API de bibliothèque managée respectives et le lien avec la bibliothèque partagée compilée mentionnée précédemment.
 

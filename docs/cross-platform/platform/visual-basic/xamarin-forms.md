@@ -3,15 +3,15 @@ title: Xamarin. Forms à l’aide de Visual Basic.NET
 description: Le modèle de projet Xamarin. Forms peut être modifié pour utiliser Visual Basic pour l’assembly principal, ce qui vous permet de créer des applications mobiles interplateformes à l’aide de VB.NET.
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: ed7e1d65ed361a94ce72a724d797309b40ef8b6c
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.openlocfilehash: e1a540eef2a4d54ead68ae4a9427b0622b668182
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959144"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014550"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Xamarin. Forms à l’aide de Visual Basic.NET
 
@@ -32,7 +32,7 @@ Procédez comme suit pour créer un projet Xamarin. Forms simple qui utilise Vis
 
 2. Dans la fenêtre **créer un nouveau projet** , tapez **Xamarin. Forms** pour filtrer la liste et sélectionnez **application mobile (Xamarin. Forms)** , puis appuyez sur **suivant**.
 
-    [Filtre![pour les applications Xamarin. Forms](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
+    [Filtre ![pour les applications Xamarin. Forms](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
 
 3. Dans l’écran suivant, tapez un nom pour le projet et appuyez sur **créer**.
 
@@ -46,7 +46,7 @@ Procédez comme suit pour créer un projet Xamarin. Forms simple qui utilise Vis
 
 6. Tapez **Visual Basic bibliothèque** pour filtrer les options du projet et choisissez l’option **bibliothèque de classes (.NET standard)** avec l’icône Visual Basic :
 
-    [Filtre de![pour la bibliothèque de Visual Basic](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
+    [Filtre de ![pour la bibliothèque de Visual Basic](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
 7. Dans l’écran suivant, tapez un nom pour le projet et appuyez sur **créer**.
 

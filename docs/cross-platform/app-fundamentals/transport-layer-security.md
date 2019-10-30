@@ -3,15 +3,15 @@ title: TLS (Transport Layer Security) 1,2
 description: Ce document explique comment activer TLS 1,2 pour les projets Xamarin. iOS, Xamarin. Android et Xamarin. Mac. Il montre comment procéder dans Visual Studio 2019 et Visual Studio pour Mac.
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: 6175725ae3eea805680b4da81aa0458aa3f8a68c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8999efc3e954f4917e6c91a1e325d16e41c48b19
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280351"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016686"
 ---
 # <a name="transport-layer-security-tls-12"></a>TLS (Transport Layer Security) 1,2
 
@@ -35,13 +35,13 @@ Mettez à jour l' **implémentation httpclient** et les options d' **implémenta
 
 Ces paramètres se trouvent dans **Propriétés du projet > options Android** , puis cliquez sur le bouton **avancé** :
 
-[![Configurer HttpClient et TLS dans Visual Studio](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![configurer HttpClient et TLS dans Visual Studio](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 Ces paramètres se trouvent dans **Options du projet > générer > onglet Build Android** :
 
-[![Configurer HttpClient et TLS dans Visual Studio pour Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
+[![configurer HttpClient et TLS dans Visual Studio pour Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
@@ -53,13 +53,13 @@ Mettez à jour l’option d' **implémentation httpclient** pour activer la séc
 
 Ce paramètre se trouve dans **Propriétés du projet > Build iOS**:
 
-[![Configurer HttpClient et TLS dans Visual Studio](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![configurer HttpClient et TLS dans Visual Studio](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
 Ce paramètre se trouve dans **Options du projet > générer > onglet Build iOS** :
 
-[![Configurer HttpClient dans Visual Studio pour Mac](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![configurer HttpClient dans Visual Studio pour Mac](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -67,7 +67,7 @@ Ce paramètre se trouve dans **Options du projet > générer > onglet Build iOS*
 
 Dans Visual Studio pour Mac, pour activer TLS 1,2 dans une application Xamarin. Mac, mettez à jour l’option d' **implémentation httpclient** dans **Options du projet > Build > Build Mac**:
 
-[![Configurer HttpClient dans Visual Studio pour Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
+[![configurer HttpClient dans Visual Studio pour Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
 
 > [!WARNING]
 > La prochaine version de Xamarin.Mac (4.8) prendra uniquement en charge macOS 10.9 ou ultérieur.
@@ -80,7 +80,7 @@ Les développeurs d’applications doivent uniquement prendre en compte ces alte
 
 ### <a name="httpclient-implementation"></a>Implémentation de HttpClient
 
-Les développeurs Xamarin ont toujours pu utiliser les classes de mise en réseau natives dans leur code, mais il existe également une option qui détermine la pile de mise `HttpClient` en réseau utilisée par les classes. Cela fournit une API .NET familière qui offre les avantages de la plateforme Native en termes de vitesse et de sécurité.
+Les développeurs Xamarin ont toujours pu utiliser les classes de mise en réseau natives dans leur code, mais il existe également une option qui détermine la pile de mise en réseau utilisée par les classes `HttpClient`. Cela fournit une API .NET familière qui offre les avantages de la plateforme Native en termes de vitesse et de sécurité.
 
 Les options sont les suivantes :
 
@@ -89,7 +89,7 @@ Les options sont les suivantes :
 
 La pile managée fournit le plus haut niveau de compatibilité avec le code .NET existant. Toutefois, elle peut être plus lente et entraîner une plus grande taille d’exécutable.
 
-Les options natives peuvent être plus rapides et offrent une meilleure sécurité (y compris TLS 1,2), mais elles ne fournissent pas toutes les `HttpClient` fonctionnalités et options de la classe.
+Les options natives peuvent être plus rapides et offrent une meilleure sécurité (y compris TLS 1,2), mais elles ne fournissent pas toutes les fonctionnalités et options de la classe `HttpClient`.
 
 ### <a name="ssltls-implementation-android"></a>Implémentation SSL/TLS (Android)
 
@@ -109,7 +109,7 @@ Les nouveaux projets Xamarin ont par défaut l’implémentation native qui pren
 
 Le résumé ci-dessus explique les paramètres au niveau du projet pour l’implémentation de HttpClient et SSL/TLS dans les projets Xamarin. L’implémentation HttpClient peut également être définie dynamiquement dans le code. Pour plus d’informations, reportez-vous à ces guides spécifiques à la plateforme :
 
-- [**Android**](~/android/app-fundamentals/http-stack.md)
+- [**Tablette**](~/android/app-fundamentals/http-stack.md)
 - [**iOS et Mac**](~/cross-platform/macios/http-stack.md)
 
 ## <a name="summary"></a>Récapitulatif
@@ -126,14 +126,14 @@ Vous devez mettre à jour les paramètres dans les applications existantes en su
 - [Notes de publication mono 4,8-prise en charge de TLS 1,2](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
 - [BoringSSL](https://boringssl.googlesource.com/boringssl/)
 - [L’explication sur HttpClient, HttpClientHandler et WebRequestHandler](https://blogs.msdn.microsoft.com/henrikn/2012/08/07/httpclient-httpclienthandler-and-webrequesthandler-explained/)
-- [System.Net.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
-- [System.Net.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(v=vs.118).aspx)
-- [System.Net.HttpMessageHandler](https://msdn.microsoft.com/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
-- [System.Net.HttpWebRequest](https://msdn.microsoft.com/library/system.net.httpwebrequest(v=vs.110).aspx)
-- [System.Net.WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
-- [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
-- [java.net.URLConnection](https://developer.android.com/reference/java/net/URLConnection.html)
-- [Foundation.CFNetwork](xref:CoreFoundation.CFNetwork)
-- [Foundation.NSUrlConnection](xref:Foundation.NSUrlConnection)
-- [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
+- [System .net. HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
+- [System .net. HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(v=vs.118).aspx)
+- [System .net. HttpMessageHandler](https://msdn.microsoft.com/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
+- [System .net. HttpWebRequest](https://msdn.microsoft.com/library/system.net.httpwebrequest(v=vs.110).aspx)
+- [System .net. WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
+- [System .net. WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
+- [Java. net. URLConnection](https://developer.android.com/reference/java/net/URLConnection.html)
+- [Foundation. CFNetwork](xref:CoreFoundation.CFNetwork)
+- [Foundation. NSUrlConnection](xref:Foundation.NSUrlConnection)
+- [System .net. WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [Client HTTP (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/httpclient/)

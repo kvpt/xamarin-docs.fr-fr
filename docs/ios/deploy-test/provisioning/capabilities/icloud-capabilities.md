@@ -4,21 +4,21 @@ description: L’ajout de fonctionnalités à une application nécessite souvent
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 3fd3ec0207ac3ae1e5fcaa7d11d91247cd73666d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8c1a5d284e5faaffae33a724c461b6fd74cf39b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762904"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028575"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Fonctionnalités iCloud dans Xamarin.iOS
 
-_L’ajout de fonctionnalités à une application nécessite souvent une configuration plus poussée de l’approvisionnement. Ce guide explique la configuration requise pour les fonctionnalités iCloud._
+_L’ajout de fonctionnalités à une application nécessite souvent une configuration d’approvisionnement supplémentaire. Ce guide explique la configuration requise pour les fonctionnalités de iCloud._
 
-iCloud offre aux utilisateurs d’appareil iOS un moyen simple et pratique de stocker leur contenu et de le partager entre plusieurs appareils. Les développeurs peuvent utiliser iCloud de quatre façons différentes pour fournir un moyen de stockage à leurs utilisateurs : stockage clé-valeur, stockage UIDocument, CoreData et l’utilisation de CloudKit directement pour assurer le stockage de fichiers et répertoires individuels. Pour plus d’informations, consultez le guide [Présentation d’iCloud](~/ios/data-cloud/introduction-to-icloud.md).
+iCloud offre aux utilisateurs d’appareil iOS un moyen simple et pratique de stocker leur contenu et de le partager entre plusieurs appareils. Avec iCloud, les développeurs peuvent fournir quatre types de stockage différents aux utilisateurs : le stockage Key-value iCloud, le stockage UIDocument, CoreData et l’utilisation directe de CloudKit pour le stockage des fichiers et répertoires. Pour plus d’informations, consultez le guide [Présentation d’iCloud](~/ios/data-cloud/introduction-to-icloud.md).
 
 L’ajout d’iCloud à une application est un peu plus difficile que d’autres services d’applications à cause des _conteneurs_. Les conteneurs utilisés dans iCloud servent à stocker les informations d’une application et permettent la séparation de toutes les informations contenues dans un compte iCloud unique, à l’image du sandboxing sur l’appareil iOS d’un utilisateur. Pour plus d’informations sur les conteneurs, consultez le guide [Présentation de CloudKit](~/ios/data-cloud/intro-to-cloudkit.md).
 
@@ -107,6 +107,6 @@ S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
 * Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
-* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Il ne s’agit  _pas_ du paramètre par défaut pour les builds Debug et iOS Simulator.
+* Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds de débogage et de simulateur iOS.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

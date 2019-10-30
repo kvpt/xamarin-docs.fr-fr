@@ -4,23 +4,23 @@ description: Ce document explique comment lire du son avec AVAudioPlayer dans un
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: b4a5ead3e3c02fbdd2ae5486a6ac637defeb5abd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18043a88a129d48a1cad3b9ee15b6989d50ad126
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283301"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030041"
 ---
 # <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Émettre du son avec AVAudioPlayer dans Xamarin. Mac
 
 ## <a name="about-the-avaudioplayer"></a>À propos de AVAudioPlayer
 
-La `AVAudioPlayer` classe permet de lire des données audio à partir de la mémoire ou d’un fichier. Apple recommande d’utiliser cette classe pour lire de l’audio dans votre application, sauf si vous effectuez une diffusion réseau ou si vous avez besoin d’e/s audio à faible latence.
+La classe `AVAudioPlayer` est utilisée pour lire des données audio à partir de la mémoire ou d’un fichier. Apple recommande d’utiliser cette classe pour lire de l’audio dans votre application, sauf si vous effectuez une diffusion réseau ou si vous avez besoin d’e/s audio à faible latence.
 
-Vous pouvez utiliser la `AVAudioPlayer` classe pour effectuer les opérations suivantes :
+Vous pouvez utiliser la classe `AVAudioPlayer` pour effectuer les opérations suivantes :
 
 - Lire des sons de n’importe quelle durée avec boucle facultative.
 - Lisez plusieurs sons en même temps avec la synchronisation facultative.
@@ -28,7 +28,7 @@ Vous pouvez utiliser la `AVAudioPlayer` classe pour effectuer les opérations su
 - Prise en charge des fonctionnalités telles que l’avance rapide ou le rembobinage.
 - Obtenir des données de contrôle du niveau de lecture.
 
-`AVAudioPlayer`prend en charge les sons dans tout format audio fourni par iOS, tvOS et macOS, tels que. AIF,. wav ou. mp3.
+`AVAudioPlayer` prend en charge les sons dans tout format audio fourni par iOS, tvOS et macOS, tels que. AIF,. wav ou. mp3.
 
 ## <a name="playing-sounds-in-macos"></a>Émettre des sons dans macOS
 

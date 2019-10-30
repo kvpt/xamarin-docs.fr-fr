@@ -1,22 +1,22 @@
 ---
-title: 'Hello, Android : Démarrage rapide'
+title: Hello, Android - Démarrage rapide
 description: Dans ce guide en deux parties, vous allez créer votre première application Xamarin.Android (à l’aide de Visual Studio ou de Visual Studio pour Mac), et approfondir votre compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. Vous y découvrirez les différents outils, concepts et étapes qui sont nécessaires à la création et au déploiement d’une application Xamarin.Android.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c9f9fb7eecd41c3aeffb7a28042f944c9d6a320b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ab401c24fc486ba69fe01aff76e1a9b7d53122d0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644070"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028031"
 ---
-# <a name="hello-android-quickstart"></a>Hello, Android : Démarrage rapide
+# <a name="hello-android-quickstart"></a>Hello, Android - Démarrage rapide
 
 _Dans ce guide en deux parties, vous allez générer votre première application Xamarin.Android avec Visual Studio, et acquérir les fondements du développement d’applications Android avec Xamarin._
 
@@ -34,7 +34,7 @@ Pour effectuer cette procédure pas à pas, vous avez besoin des éléments suiv
 
 - Windows 10.
 
-- Visual Studio 2019 ou Visual Studio 2017 (version 15.8 ou ultérieure) : Community, Professional ou Enterprise.
+- Visual Studio 2019 ou Visual Studio 2017 (version 15,8 ou ultérieure) : Community, Professional ou Enterprise.
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -284,7 +284,7 @@ Lancez Visual Studio pour Mac à partir du dossier **Applications** ou à partir
 
 Cliquez sur **Nouveau projet** pour créer un projet.
 
-Dans la boîte de dialogue **Choisir un modèle pour votre nouveau projet**, cliquez sur **Android > Application**, puis sélectionnez le modèle **Application Android**. Cliquez sur **Suivant**.
+Dans la boîte de dialogue **Choisir un modèle pour votre nouveau projet**, cliquez sur **Android > Application**, puis sélectionnez le modèle **Application Android**. Cliquez sur **Next**.
 
 [![Sélection du modèle Application Android](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 

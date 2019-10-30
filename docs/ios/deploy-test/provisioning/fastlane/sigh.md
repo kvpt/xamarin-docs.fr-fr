@@ -4,22 +4,22 @@ description: Ce document décrit la commande sigh de fastlane, qui sert à crée
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9506d80ab10ce70938f95371a52bf28bda33d42d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762631"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028494"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane pour iOS - sigh
 
 > [!IMPORTANT]
 > fastlane recommande l’utilisation de [`match`](~/ios/deploy-test/provisioning/fastlane/match.md) pour la génération et la gestion de vos profils d’approvisionnement. Utilisez sigh directement seulement si vous voulez avoir un contrôle total de la signature de code et si vous maîtrisez suffisamment ce sujet.
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 En règle générale, le provisionnement des appareils est effectué par chaque membre d’une équipe de développement, à l’aide de l’outil Xcode ou à partir du portail des développeurs d’Apple. Ce processus comprend les étapes suivantes :
 
@@ -50,7 +50,7 @@ Pour plus d’informations sur l’installation de fastlane, consultez le guide 
 
 ## <a name="what-is-sigh"></a>Présentation de sigh
 
-sigh fournit une interface de terminal qui vous permet de créer et de renouveler des profils de provisionnement pour toutes les configurations : Développement, distribution App Store, distribution ad hoc et distribution entreprise. Il offre également un moyen simple de télécharger et réparer les profils de provisionnement.
+sigh fournit une interface de terminal qui permet de créer et renouveler des profils de provisionnement pour toutes les configurations : développement, distribution sur l’App Store, distribution ad hoc et distribution en entreprise. Il offre également un moyen simple de télécharger et réparer les profils de provisionnement.
 
 <a name="appid" />
 
@@ -64,7 +64,7 @@ fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
 
 `com.company.appname` correspond à l’ID de bundle de l’application, qui est indiqué dans le fichier Info.plist de votre application Xamarin.iOS, comme illustré ci-dessous :
 
-[![](sigh-images/fastlane-image5.png "Fichier Info.plist de l’application Xamarin.iOS")](sigh-images/fastlane-image5.png#lightbox)
+[![](sigh-images/fastlane-image5.png "The Info.plist file of the Xamarin.iOS application")](sigh-images/fastlane-image5.png#lightbox)
 
 L’ID d’application unique doit être une chaîne de style DNS inversé. Conservez bien ce nouvel ID, car vous en aurez besoin un plus tard pour utiliser sigh.
 
@@ -111,7 +111,7 @@ Entrez votre nom d’utilisateur (Apple ID username) quand vous y êtes invité 
 
 Si votre ID Apple est associé à plusieurs équipes, les équipes en question sont répertoriées ici. Sélectionnez le numéro correspondant à l’équipe appropriée :
 
-[![](sigh-images/fastlane-image2.png "Sélectionner l’équipe que vous voulez utiliser")](sigh-images/fastlane-image2.png#lightbox)
+[![](sigh-images/fastlane-image2.png "Select the team that you wish to use")](sigh-images/fastlane-image2.png#lightbox)
 
 Vous pouvez également passer l’ID de l’équipe à l’interface CLI de la manière suivante :
 
@@ -127,7 +127,7 @@ fastlane crée, télécharge et installe votre profil de provisionnement à votr
 
 Vous pouvez accéder au developer center pour afficher le nouveau profil de provisionnement, comme illustré ci-dessous :
 
-[![](sigh-images/fastlane-image10.png "Afficher le nouveau profil de provisionnement")](sigh-images/fastlane-image10.png#lightbox)
+[![](sigh-images/fastlane-image10.png "View the newly created provisioning profile")](sigh-images/fastlane-image10.png#lightbox)
 
 sigh stocke les profils de provisionnement dans le dossier actif, par défaut. Pour changer de répertoire de sortie, modifiez `output_path` ou utilisez la commande suivante :
 

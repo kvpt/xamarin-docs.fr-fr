@@ -1,129 +1,129 @@
 ---
-title: watchOS Notifications dans Xamarin
-description: Ce document décrit comment utiliser des notifications de watchOS dans Xamarin. Il aborde la création de notification contrôleurs, générer des notifications et test des notifications.
+title: Notifications Watchos dans Xamarin
+description: Ce document explique comment utiliser les notifications Watchos dans Xamarin. Il aborde la création de contrôleurs de notification, la génération de notifications et le test de notifications.
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: ae6a4fb45eb53c514c888d671780a5ceaeba6624
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6be46d31ac2c16d02749519907d650588dbbcbe6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768611"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028229"
 ---
-# <a name="watchos-notifications-in-xamarin"></a>watchOS Notifications dans Xamarin
+# <a name="watchos-notifications-in-xamarin"></a>Notifications Watchos dans Xamarin
 
-Regardez les applications peuvent recevoir des notifications si l’application iOS contenant les prend en charge. Il est intégrée notification vous donc pas de gestion des *devez* pour ajouter la prise en charge de la notification supplémentaire décrite ci-dessous, cependant si vous souhaitez personnaliser le comportement de notification et d’apparence, lisez la suite.
+Les applications de visionneuse peuvent recevoir des notifications si l’application iOS qui les prend en charge. La gestion des notifications est intégrée. vous n’avez donc pas *besoin* d’ajouter la prise en charge des notifications supplémentaires décrite ci-dessous. Toutefois, si vous souhaitez personnaliser l’apparence et le comportement de la notification, lisez la suite.
 
-Reportez-vous à la [Notifications iOS](~/ios/platform/user-notifications/deprecated/index.md) doc pour plus d’informations sur l’ajout de prise en charge de la notification à l’application iOS dans votre solution.
+Reportez-vous au document sur les [notifications iOS](~/ios/platform/user-notifications/deprecated/index.md) pour plus d’informations sur l’ajout de la prise en charge des notifications à l’application iOS dans votre solution.
 
-## <a name="creating-notification-controllers"></a>Création de contrôleurs de Notification
+## <a name="creating-notification-controllers"></a>Création de contrôleurs de notification
 
-Sur le plan conceptuel contrôleurs de notifications ont un type spécial de segue leur déclenchement. Lorsque vous faites glisser un nouveau **contrôleur d’Interface de Notification** sur une table de montage séquentiel, elle aura automatiquement un segue attaché :
+Sur les notifications de Storyboard, les contrôleurs ont un type spécial de Segue les déclenchant. Lorsque vous faites glisser un nouveau **contrôleur d’interface de notification** vers un Storyboard, un segue est automatiquement attaché :
 
-![](notifications-images/notification-storyboard1.png "Un nouveau contrôleur d’Interface de Notification avec un segue attaché")
+![](notifications-images/notification-storyboard1.png "A new Notification Interface Controller with a segue attached")
 
-Lorsque la notification segue est sélectionnée. vous pouvez modifier ses propriétés :
+Lorsque l’segue de notification est sélectionné, vous pouvez modifier ses propriétés :
 
-![](notifications-images/notification-storyboard2.png "La notification segue sélectionné")
+![](notifications-images/notification-storyboard2.png "The notification segue selected")
 
-Une fois que vous avez personnalisé le contrôleur, il peut ressembler à cet exemple à partir de la WatchKitCatalog :
+Une fois que vous avez personnalisé le contrôleur, il peut ressembler à cet exemple à partir du WatchKitCatalog :
 
-![](notifications-images/notifications-segue.png "Les propriétés de Notification")
+![](notifications-images/notifications-segue.png "The Notification Properties")
 
-Il existe deux types de notification :
+Il existe deux types de notifications :
 
 - Affichage statique de type « non défilant » **concis** défini par le système.
 
-- **Présentation de long** - déroulable, vue personnalisable définie par vous ! Une version plus simple, statique et une version dynamique plus complexe peuvent être spécifiés.
+- Vue personnalisable avec défilement **long** et personnalisable, définie par vous-même ! Une version statique plus simple et une version dynamique plus complexe peuvent être spécifiées.
 
-### <a name="short-look-notification-controller"></a>Contrôleur de Notification de courte-aperçu
+### <a name="short-look-notification-controller"></a>Contrôleur de notifications de type abrégé
 
-L’interface utilisateur courte apparence se compose de l’icône d’application, nom de l’application et la chaîne de titre de notification.
+L’interface utilisateur de type abrégé se compose uniquement de l’icône de l’application, du nom de l’application et de la chaîne du titre de la notification.
 
-Si l’utilisateur n’ignore pas la notification, le système passe automatiquement à une notification de l’aspect de longue durée qui fournit plus d’informations.
+Si l’utilisateur n’ignore pas la notification, le système bascule automatiquement vers une notification de longue durée qui fournit plus d’informations.
 
-### <a name="long-look-notification-controller"></a>Contrôleur de Notification de l’aspect de longue durée
+### <a name="long-look-notification-controller"></a>Contrôleur de notifications de longue durée
 
-Le système d’exploitation décide s’il faut afficher la vue statique ou dynamique selon un certain nombre de facteurs. Vous devez fournir une interface statique et peut éventuellement inclure également une interface dynamique pour les notifications.
+Le système d’exploitation décide s’il faut afficher l’affichage statique ou dynamique en fonction d’un certain nombre de facteurs. Vous devez fournir une interface statique et éventuellement inclure également une interface dynamique pour les notifications.
 
-#### <a name="static"></a>Statique
+#### <a name="static"></a>Static
 
 La vue statique doit être simple et rapide à afficher.
 
-![](notifications-images/notification-static.png "La vue statique")
+![](notifications-images/notification-static.png "The static view")
 
 #### <a name="dynamic"></a>dynamique
 
-La vue dynamique peut afficher plus de données et fournir plus d’interactivité.
+L’affichage dynamique peut afficher plus de données et fournir plus d’interactivité.
 
-![](notifications-images/notification-dynamic.png "L’affichage dynamique")
+![](notifications-images/notification-dynamic.png "The dynamic view")
 
-## <a name="generating-notifications"></a>Génération des Notifications
+## <a name="generating-notifications"></a>Génération de notifications
 
-Notifications peuvent provenir d’un serveur distant ([Service de Notifications Push Apple](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), ou APNS) ou peut être généré localement dans l’application iOS.
+Les notifications peuvent provenir d’un serveur distant ([Apple Push Notification Service](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)ou APNs) ou peuvent être générées localement dans l’application iOS.
 
-Reportez-vous à la [iOS procédure pas à pas de Notifications](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) pour obtenir un exemple montrant comment générer des notifications locales et le [WatchNotifications exemple](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications) pour obtenir un exemple.
+Reportez-vous à la [procédure pas à pas sur les notifications iOS](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) pour obtenir un exemple de génération de notifications locales et l’exemple [WatchNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications) pour un exemple fonctionnel.
 
-Notifications locales doivent avoir le `AlertTitle` définie pour être affichée sur l’Apple Watch - le `AlertTitle` chaîne est affichée dans l’interface courte-coup de œil. À la fois le `AlertTitle` et `AlertBody` sont affichés dans la liste de notifications ; et le `AlertBody` est affichée dans l’interface de l’aspect de longue durée.
+Les notifications locales doivent avoir la `AlertTitle` définie pour être affichées sur la Apple Watch-la chaîne de `AlertTitle` s’affiche dans l’interface abrégée. Les `AlertTitle` et `AlertBody` sont affichés dans la liste notifications. et le `AlertBody` s’affiche dans l’interface longue.
 
-Cette capture d’écran montre le `AlertTitle` affiché dans la liste de notifications et le `AlertBody` affichée dans l’interface de l’aspect de longue durée (à l’aide de la [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)) :
+Cette capture d’écran montre les `AlertTitle` affichées dans la liste des notifications et les `AlertBody` affichées dans l’interface longue (à l’aide de l' [exemple de code](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)) :
 
-![](notifications-images/watch-notificationslist-sml.png "Cette capture d’écran montre le AlertTitle affiché dans la liste de notifications") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody l’affichée dans l’interface de l’aspect de longue durée")
+![](notifications-images/watch-notificationslist-sml.png "Cette capture d’écran montre les AlertTitle affichés dans la liste des notifications") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody affiché dans l’interface à long terme")
 
-## <a name="testing-notifications"></a>Test des Notifications
+## <a name="testing-notifications"></a>Test des notifications
 
-Notifications (locales et distantes) peuvent uniquement être correctement testées sur un appareil, mais ils peuvent être simulés à l’aide un **.json** fichier dans le simulateur iOS.
+Les notifications (locales et distantes) peuvent uniquement être testées correctement sur un appareil, mais elles peuvent être simulées à l’aide d’un fichier **. JSON** dans le simulateur iOS.
 
-### <a name="testing-on-apple-watch"></a>Tests sur Apple Watch
+### <a name="testing-on-apple-watch"></a>Test sur Apple Watch
 
-Lorsque vous testez les notifications sur une Apple Watch, n’oubliez pas que [documentation d’Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html) indique ce qui suit :
+Lorsque vous testez des notifications sur un Apple Watch, n’oubliez pas que la [documentation d’Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html) indique les éléments suivants :
 
-> Lorsqu’une des notifications de local ou distant de votre application arrive sur iPhone de l’utilisateur, iOS décide s’il faut afficher cette notification sur l’iPhone ou sur l’Apple Watch.
+> Quand l’une des notifications locales ou distantes de votre application arrive sur l’iPhone de l’utilisateur, iOS décide s’il faut afficher cette notification sur l’iPhone ou sur la Apple Watch.
 
-Cela est alluding au fait que l’option iOS décide si une notification s’affichera sur l’iPhone ou sur la surveillance. Si l’iPhone apparié est actif lorsqu’une notification est reçue, la notification est susceptible d’être affiché sur l’iPhone et *pas* acheminé vers la montre.
+Cela fait allusion au fait qu’iOS décide si une notification s’affichera sur l’iPhone ou sur la montre. Si l’iPhone couplé est actif lors de la réception d’une notification, la notification est susceptible d’être affichée sur l’iPhone et *n’est pas* acheminée vers la montre.
 
-Pour garantir que la notification s’affiche sur la surveillance, désactivez l’écran de l’iPhone (appuyant une seule fois sur le bouton d’alimentation) ou laissez-le se mettre en veille. Si le Watch jumelée est dans la plage, dispose d’une puissance et est portée sur votre poignet, la notification sera routé il et apparaissent sur l’observation (accompagnée d’un subtiles).
+Pour vous assurer que la notification s’affiche sur la montre, désactivez l’écran iPhone (en appuyant sur le bouton d’alimentation une fois) ou laissez-le s’afficher en veille. Si la montre jumelée est à portée, qu’elle est alimentée et qu’elle est en cours d’usure sur votre poignet, la notification est acheminée à cet endroit et apparaît sur la montre (accompagnée d’un subtil).
 
 ### <a name="testing-on-the-ios-simulator"></a>Test sur le simulateur iOS
 
-Vous *doit* fournir une charge utile JSON de test lorsque vous testez le mode de notification dans le simulateur iOS. Définir le chemin d’accès dans le **Arguments d’exécution personnalisé** fenêtre dans Visual Studio pour Mac.
+Vous *devez* fournir une charge utile JSON de test lors du test du mode de notification dans le simulateur iOS. Définissez le chemin d’accès dans la fenêtre **arguments d’exécution personnalisée** dans Visual Studio pour Mac.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-Visual Studio pour Mac affiche des options supplémentaires quand une extension watch est définie comme le **projet de démarrage**.
-Avec le bouton droit sur le projet d’extension watch et choisissez **exécuter avec > les paramètres personnalisés...** :
+Visual Studio pour Mac affiche des options supplémentaires quand une extension Watch est définie comme **projet de démarrage**.
+Cliquez avec le bouton droit sur le projet d’extension Watch et choisissez **exécuter avec > paramètres personnalisés...** :
 
-[![](notifications-images/runwith-customparams-sml.png "En cours d’exécution avec des propriétés personnalisées")](notifications-images/runwith-customparams.png#lightbox)
+[![](notifications-images/runwith-customparams-sml.png "Running with Custom Properties")](notifications-images/runwith-customparams.png#lightbox)
 
-Cette opération ouvre le **Arguments d’exécution** fenêtre qui contient un **WatchKit** onglet. Sélectionnez **Notification** et fournir une charge utile JSON, puis appuyez sur **Execute** pour démarrer l’application de surveillance dans le simulateur :
+Cela ouvre la fenêtre **arguments d’exécution** qui contient un onglet **WatchKit** . Sélectionnez **notification** et fournissez une charge utile JSON, puis appuyez sur **exécuter** pour démarrer l’application espion dans le simulateur :
 
-[![](notifications-images/runwith-execargs-sml.png "Sélectionnez la valeur par défaut de charge utile de Notification")](notifications-images/runwith-execargs.png#lightbox)
+[![](notifications-images/runwith-execargs-sml.png "Select Notification Payload Default")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Pour définir la charge utile de notification test dans avec le bouton droit de Visual Studio sur l’extension watch pour modifier le **propriétés de projet**. Accédez à la **déboguer** section et sélectionnez un fichier JSON de notifications à partir de la liste (elle sera automatiquement tous les fichiers JSON inclus dans le projet).
+Pour définir la charge utile de notification de test dans Visual Studio, cliquez avec le bouton droit sur l’extension Watch pour modifier les **Propriétés du projet**. Accédez à la section **Déboguer** et sélectionnez un fichier de notifications JSON dans la liste (il répertorie automatiquement tous les fichiers JSON inclus dans le projet).
 
-[![](notifications-images/runwith-execargs-sml-vs.png "Sélectionnez un fichier JSON de notifications")](notifications-images/runwith-execargs-vs.png#lightbox)
+[![](notifications-images/runwith-execargs-sml-vs.png "Select a notifications JSON file")](notifications-images/runwith-execargs-vs.png#lightbox)
 
-Lorsque l’extension watch est la **projet de démarrage**, Visual Studio affichera des options supplémentaires, comme indiqué ci-dessous. Choisissez une de la **Notification** options pour démarrer l’application watch dans **Notification** mode (en utilisant le fichier JSON sélectionné dans la fenêtre Propriétés) :
+Lorsque l’extension Watch est le **projet de démarrage**, Visual Studio affiche des options supplémentaires, comme indiqué ci-dessous. Choisissez l’une des options de **notification** pour démarrer l’application espion en mode **notification** (à l’aide du fichier JSON sélectionné dans la fenêtre Propriétés) :
 
-![](notifications-images/runwith-vs.png "Le menu de l’appareil")
+![](notifications-images/runwith-vs.png "The Device menu")
 
 -----
 
-Lorsque vous testez sur le simulateur avec le fichier JSON de charge utile par défaut, le contrôleur de notification par défaut se présente comme suit :
+Le contrôleur de notification par défaut ressemble à ce qui suit lors du test sur le simulateur avec le fichier JSON de charge utile par défaut :
 
-![](notifications-images/notification-debug-sml.png "Un exemple de notification")
+![](notifications-images/notification-debug-sml.png "An example notification")
 
-Il est également possible d’utiliser le [ligne de commande](~/ios/watchos/troubleshooting.md#command_line) pour démarrer le simulateur iOS.
+Il est également possible d’utiliser la [ligne de commande](~/ios/watchos/troubleshooting.md#command_line) pour démarrer le simulateur iOS.
 
-### <a name="example-notification-payload"></a>Exemple charge utile de Notification
+### <a name="example-notification-payload"></a>Exemple de charge utile de notification
 
-Dans le [espion Kit catalogue](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) exemple il est un exemple de fichier charge utile JSON **NotificationPayload.json** (répertoriés ci-dessous).
+Dans l’exemple de [catalogue du kit de surveillance](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) , il y a un exemple de fichier JSON de charge utile **NotificationPayload. JSON** (listé ci-dessous).
 
 ```json
 {
@@ -148,4 +148,4 @@ Dans le [espion Kit catalogue](https://docs.microsoft.com/samples/xamarin/ios-sa
 
 - [WatchNotifications (notifications locales) (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)
 - [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Documentation de Notifications de Kit d’espion d’Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)
+- [Documentation sur les notifications du kit de surveillance Apple](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

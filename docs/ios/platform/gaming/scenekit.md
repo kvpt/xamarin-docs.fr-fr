@@ -4,15 +4,15 @@ description: Ce document décrit SceneKit, une API graphique de scène 3D qui si
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: d6e6ff02fef3d2919e9716dc8a456aabd9533820
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5279effa83a8784f6d475188e67a535f7b5e1262
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292798"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032502"
 ---
 # <a name="scenekit-in-xamarinios"></a>SceneKit dans Xamarin. iOS
 
@@ -20,13 +20,13 @@ SceneKit est une API graphique de scène 3D qui simplifie l’utilisation de gra
 
 SceneKit est très facile à utiliser. Il s’agit d’une API déclarative qui prend en charge le rendu. Vous configurez simplement une scène, y ajoutez des propriétés, et SceneKit gère le rendu de la scène.
 
-Pour utiliser SceneKit, vous créez un graphique de scène à `SCNScene` l’aide de la classe. Une scène contient une hiérarchie de nœuds, représentés par des `SCNNode`instances de, qui définissent des emplacements dans l’espace 3D. Chaque nœud possède des propriétés telles que la géométrie, l’éclairage et les matériaux qui affectent son apparence, comme illustré dans la figure suivante :
+Pour utiliser SceneKit, vous créez un graphique de scène à l’aide de la classe `SCNScene`. Une scène contient une hiérarchie de nœuds, représentés par des instances de `SCNNode`, qui définissent des emplacements dans l’espace 3D. Chaque nœud possède des propriétés telles que la géométrie, l’éclairage et les matériaux qui affectent son apparence, comme illustré dans la figure suivante :
 
-![](scenekit-images/image7.png "Hiérarchie SceneKit")
+![](scenekit-images/image7.png "The SceneKit hierarchy")
 
 ## <a name="create-a-scene"></a>Créer une scène
 
-Pour faire apparaître une scène à l’écran, vous pouvez l’ajouter `SCNView` à un en l’affectant à la propriété de scène de la vue. En outre, si vous apportez des modifications à la scène, `SCNView` se met à jour pour afficher les modifications.
+Pour qu’une scène apparaisse sur l’écran, vous l’ajoutez à une `SCNView` en l’affectant à la propriété de scène de la vue. En outre, si vous apportez des modifications à la scène, `SCNView` se met à jour pour afficher les modifications.
 
 ```csharp
 scene = SCNScene.Create ();
@@ -45,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>Ajouter de la lumière
 
-À ce stade, la sphère n’affiche rien, car il n’y a pas de lumière dans la scène. L’attachement d’instances à des nœuds crée des lumières dans SceneKit. `SCNLight` Il existe plusieurs types de lumières, allant des différentes formes d’éclairage directionnel à l’éclairage ambiant. Par exemple, le code suivant crée une lumière omnidirectionnelle sur le côté de la sphère :
+À ce stade, la sphère n’affiche rien, car il n’y a pas de lumière dans la scène. L’attachement de `SCNLight` instances à des nœuds crée des lumières dans SceneKit. Il existe plusieurs types de lumières, allant des différentes formes d’éclairage directionnel à l’éclairage ambiant. Par exemple, le code suivant crée une lumière omnidirectionnelle sur le côté de la sphère :
 
 ```csharp
 // omnidirectional light
@@ -72,7 +72,7 @@ scene.RootNode.AddChildNode (ambientLightNode);
 
 Une fois les lumières en place, la sphère est maintenant visible dans la scène.
 
-![](scenekit-images/image8.png "La sphère est visible dans la scène quand elle est allumée.")
+![](scenekit-images/image8.png "The sphere is visible in the scene when lit")
 
 ## <a name="adding-a-camera"></a>Ajout d’une caméra
 
@@ -95,11 +95,11 @@ Comme vous pouvez le voir dans le code ci-dessus, vous pouvez créer des objets 
 
 Une fois l’appareil photo en place, la totalité de la sphère est visible par l’utilisateur :
 
-![](scenekit-images/image9.png "La sphère entière est visible par l’utilisateur")
+![](scenekit-images/image9.png "The entire sphere is visible to the user")
 
 Vous pouvez également ajouter des lumières supplémentaires à la scène. Voici à quoi elle ressemble avec quelques lumières plus omnidirectionnelle :
 
-![](scenekit-images/image10.png "La sphère avec quelques lumières plus omnidirectionnelle")
+![](scenekit-images/image10.png "The sphere with a few more omnidirectional lights")
 
 En outre, en définissant `sceneView.AllowsCameraControl = true`, l’utilisateur peut modifier le point de vue avec un mouvement tactile.
 
@@ -115,11 +115,11 @@ sphere.Materials = new SCNMaterial[] { material };
 
 Cela couche l’image sur le nœud comme indiqué ci-dessous :
 
-![](scenekit-images/image11.png "Superposition de l’image sur la sphère")
+![](scenekit-images/image11.png "Layering the image onto the sphere")
 
 Un matériau peut également être configuré pour répondre à d’autres types d’éclairage. Par exemple, l’objet peut être rendu brillant et son contenu spéculaire est défini pour afficher la réflexion spéculaire, ce qui se traduit par un spot lumineux sur la surface, comme indiqué ci-dessous :
 
-![](scenekit-images/image12.png "L’objet a été rendu brillant avec une réflexion spéculaire, ce qui se traduit par un spot lumineux sur la surface")
+![](scenekit-images/image12.png "The object made shiny with specular reflection, resulting in a bright spot on the surface")
 
 Les matériaux sont très flexibles, ce qui vous permet d’obtenir beaucoup de code très peu volumineux. Par exemple, au lieu de définir l’image sur le contenu diffus, définissez-la sur le contenu réfléchissant à la place.
 
@@ -131,7 +131,7 @@ Le singe semble maintenant asseoir visuellement au sein de la sphère, indépend
 
 ### <a name="animation"></a>Animation
 
-SceneKit est conçu pour fonctionner correctement avec l’animation. Vous pouvez créer des animations implicites ou explicites, et même afficher une scène à partir d’une arborescence de couche d’animation principale. Lors de la création d’une animation implicite, SceneKit fournit sa `SCNTransaction`propre classe de transition,.
+SceneKit est conçu pour fonctionner correctement avec l’animation. Vous pouvez créer des animations implicites ou explicites, et même afficher une scène à partir d’une arborescence de couche d’animation principale. Lors de la création d’une animation implicite, SceneKit fournit sa propre classe de transition, `SCNTransaction`.
 
 Voici un exemple qui fait pivoter la sphère :
 
@@ -142,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-Vous pouvez cependant animer bien plus que la rotation. De nombreuses propriétés de SceneKit peuvent être animées. Par exemple, le code suivant anime les éléments du `Shininess` matériel pour augmenter la réflexion spéculaire.
+Vous pouvez cependant animer bien plus que la rotation. De nombreuses propriétés de SceneKit peuvent être animées. Par exemple, le code suivant anime la `Shininess` du matériau pour augmenter la réflexion spéculaire.
 
 ```csharp
 SCNTransaction.Begin ();

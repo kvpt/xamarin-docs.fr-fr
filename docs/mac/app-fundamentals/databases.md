@@ -4,15 +4,15 @@ description: Cet article aborde l’utilisation du codage clé-valeur et de l’
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a22eca56dcec46e11a67633a8403b57580ed0546
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769914"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032612"
 ---
 # <a name="databases-in-xamarinmac"></a>Bases de données dans Xamarin. Mac
 
@@ -25,7 +25,7 @@ Lorsque vous travaillez C# avec et .net dans une application Xamarin. Mac, vous 
 Dans cet article, nous allons aborder deux façons d’accéder aux données SQLite :
 
 1. **Accès direct** : en accédant directement à une base de données SQLite, nous pouvons utiliser les données de la base de données pour le codage et la liaison de données clé-valeur avec les éléments d’interface utilisateur créés dans le Interface Builder de Xcode. En utilisant le codage clé-valeur et les techniques de liaison de données dans votre application Xamarin. Mac, vous pouvez réduire la quantité de code que vous devez écrire et maintenir pour remplir et utiliser des éléments d’interface utilisateur. Vous avez également l’avantage de dissocier vos données de stockage (modèle de_données_) de votre interface utilisateur frontale (_Model-View-Controller_), ce qui vous permet de gérer plus facilement la conception d’applications plus souple.
-2. **SQLite.net ORM** : en utilisant le gestionnaire de relations d’objets open source [SQLite.net](http://www.sqlite.org) , nous pouvons réduire la quantité de code nécessaire pour lire et écrire des données à partir d’une base de données SQLite. Ces données peuvent ensuite être utilisées pour remplir un élément d’interface utilisateur tel qu’une vue de table.
+2. **SQLite.net ORM** : en utilisant le gestionnaire de relations d’objets open source [SQLite.net](https://www.sqlite.org) , nous pouvons réduire la quantité de code nécessaire pour lire et écrire des données à partir d’une base de données SQLite. Ces données peuvent ensuite être utilisées pour remplir un élément d’interface utilisateur tel qu’une vue de table.
 
 [![Exemple d’application en cours d’exécution](databases-images/intro01.png "Exemple d’application en cours d’exécution")](databases-images/intro01-large.png#lightbox)
 
@@ -1910,7 +1910,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 ## <a name="sqlitenet-orm"></a>SQLite.NET ORM
 
-Comme indiqué ci-dessus, en utilisant le gestionnaire de relations d’objets [SQLite.net](http://www.sqlite.org) Open source, nous pouvons réduire la quantité de code nécessaire pour lire et écrire des données à partir d’une base de données SQLite. Cela peut ne pas être le meilleur itinéraire à suivre lors de la liaison de données en raison de plusieurs exigences liées au codage de la valeur clé et à la liaison de données sur un objet.
+Comme indiqué ci-dessus, en utilisant le gestionnaire de relations d’objets [SQLite.net](https://www.sqlite.org) Open source, nous pouvons réduire la quantité de code nécessaire pour lire et écrire des données à partir d’une base de données SQLite. Cela peut ne pas être le meilleur itinéraire à suivre lors de la liaison de données en raison de plusieurs exigences liées au codage de la valeur clé et à la liaison de données sur un objet.
 
 D’après le site Web SQLite.Net, _«SQLite est une bibliothèque de logiciels qui implémente un moteur de base de données SQL transactionnel autonome, sans serveur, sans serveur de configuration. SQLite est le moteur de base de données le plus largement déployé dans le monde. Le code source de SQLite se trouve dans le domaine public.»_
 

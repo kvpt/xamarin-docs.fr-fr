@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: d20e27fdbb1f62c2aebb7122d7f0c042b3ac9085
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: cbc3bceffacd9669c1e2e667faadc2939fd4aa1f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71997189"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005927"
 ---
 # <a name="gtk-platform-setup"></a>Configuration de la plateforme GTK #
 
@@ -26,7 +26,7 @@ Xamarin. Forms prend désormais en charge l’Aperçu pour les applications GTK 
 Avant de commencer, créez une solution Xamarin. Forms ou utilisez une solution Xamarin. Forms existante, par exemple, [**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife).
 
 > [!NOTE]
-> Bien que cet article se concentre sur l’ajout d’une application GTK # à une solution Xamarin. Forms dans VS2017 et Visual Studio pour Mac, elle peut également être effectuée dans [MonoDevelop](http://www.monodevelop.com/) pour Linux.
+> Bien que cet article se concentre sur l’ajout d’une application GTK # à une solution Xamarin. Forms dans VS2017 et Visual Studio pour Mac, elle peut également être effectuée dans [MonoDevelop](https://www.monodevelop.com/) pour Linux.
 
 ## <a name="adding-a-gtk-app"></a>Ajout d’une application GTK #
 

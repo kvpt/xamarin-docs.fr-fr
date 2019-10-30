@@ -4,15 +4,15 @@ description: Ce guide explore la configuration de l’environnement Xamarin. iOS
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 1d9a65ab34cb0c02368f53679d38f1d07ec1f257
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 87f81f96e51b6744e37a80819c3c88d1abb644f1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198558"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022236"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Apple Pay dans Xamarin. iOS
 
@@ -20,7 +20,7 @@ _Ce guide explore la configuration de l’environnement Xamarin. iOS pour une ut
 
 Apple Pay a été introduite avec iOS 8, permettant aux utilisateurs de payer des biens physiques tels que des aliments, du divertissement et des appartenances via leurs appareils iOS. Elle est disponible sur iPhone 6 et iPhone 6 plus, et peut également être associée aux Apple Watch pour les achats en magasin. Lorsqu’il est utilisé sur un iPhone, il utilise Touch ID pour confirmer et autoriser les transactions sur la carte de crédit ou de débit d’un utilisateur.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Apple Pay n’est disponible que dans iOS 8 et versions ultérieures, et nécessite donc au minimum Xcode 6.
 
@@ -79,7 +79,7 @@ Nouveauté d’iOS 10, le développeur peut incorporer des Apple Pay directement
 
 ### <a name="passkit-framework-enhancements"></a>Améliorations apportées à PassKit Framework
 
-Dans iOS 10, PassKit Framework a été étendu pour prendre en charge les Apple Pay `UIKit` en dehors de et pour permettre aux émetteurs de cartes de présenter leurs propres cartes depuis leurs applications.
+Dans iOS 10, PassKit Framework a été étendu pour prendre en charge les Apple Pay en dehors de `UIKit` et pour permettre aux émetteurs de cartes de présenter leurs propres cartes à partir de leurs applications.
 
 #### <a name="supporting-apple-pay-outside-of-uikit"></a>Prise en charge des Apple Pay en dehors de UIKit
 
@@ -87,15 +87,15 @@ En utilisant [PKPaymentAuthorizationController](https://developer.apple.com/refe
 
 #### <a name="presenting-issuer-cards-from-within-apps"></a>Présentation de cartes d’émetteur à partir d’applications
 
-Avec iOS 10, de nouvelles fonctionnalités ont été ajoutées à l’infrastructure PassKit, qui permettent aux émetteurs de cartes de présenter leurs cartes à partir de leurs propres applications. Le développeur peut ajouter un `PKPaymentButtonTypeInStore` UIButton à l’interface utilisateur de l’application qui affichera un bouton Apple Pay pour une carte.
+Avec iOS 10, de nouvelles fonctionnalités ont été ajoutées à l’infrastructure PassKit, qui permettent aux émetteurs de cartes de présenter leurs cartes à partir de leurs propres applications. Le développeur peut ajouter une `PKPaymentButtonTypeInStore` UIButton à l’interface utilisateur de l’application qui affichera un bouton Apple Pay pour une carte.
 
-La `PresentPaymentPass` méthode de la classe [PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary) peut également être utilisée pour afficher la carte par programme.
+La méthode `PresentPaymentPass` de la classe [PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary) peut également être utilisée pour afficher la carte par programme.
 
 ### <a name="new-payment-network-support"></a>Nouvelle prise en charge du réseau de paiement
 
 Nouveauté d’iOS 10, une application peut prendre automatiquement en charge un nouveau réseau de paiement quand elle est disponible sans que le développeur n’ait à modifier, recompiler l’application et la renvoyer à l’App Store.
 
-La nouvelle méthode [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) de la `PKPaymentNetwork` classe permet à une application de détecter les réseaux disponibles sur l’appareil de l’utilisateur au moment de l’exécution. En outre, la propriété [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) a été développée pour prendre le nom du fournisseur de paiement comme argument. À l’aide de ces méthodes, une application peut prendre en charge automatiquement n’importe quel réseau pris en charge par le fournisseur de paiement.
+La nouvelle méthode [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) de la classe `PKPaymentNetwork` permet à une application de détecter les réseaux disponibles sur l’appareil de l’utilisateur au moment de l’exécution. En outre, la propriété [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) a été développée pour prendre le nom du fournisseur de paiement comme argument. À l’aide de ces méthodes, une application peut prendre en charge automatiquement n’importe quel réseau pris en charge par le fournisseur de paiement.
 
 Pour plus d’informations, reportez-vous à la [configuration de Apple Pay](~/ios/platform/apple-pay.md) et au [Guide d’Apple Pay](https://developer.apple.com/apple-pay/)d’Apple.
 

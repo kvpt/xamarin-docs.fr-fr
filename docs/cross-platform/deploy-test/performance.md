@@ -3,21 +3,21 @@ title: Performances et sécurité
 description: Ce document fournit des liens vers des guides qui décrivent les techniques d’amélioration des performances dans les applications Xamarin.iOS, Xamarin.Android et Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 3E0886A7-B0ED-44CC-8DE3-5B274FBBE2E5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2017
-ms.openlocfilehash: 6c226095c43a389f491dd2af9a158ceb4420b637
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: HT
+ms.openlocfilehash: c07032d63032eb59cc67712bc2419f74319ea107
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780582"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016513"
 ---
 # <a name="performance-and-security"></a>Performances et sécurité
 
 ## <a name="cross-platform-performancememory-perf-best-practicesmd"></a>[Performances entre plateformes](memory-perf-best-practices.md)
 
-De nombreuses techniques permettent d’accroître les performances des applications créées sur la plateforme Xamarin. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+De nombreuses techniques permettent d’accroître les performances des applications créées sur la plateforme Xamarin. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 
 - [Performances Android](~/android/deploy-test/performance.md?context=xamarin/cross-platform)
 - [Performances iOS](~/ios/deploy-test/performance.md?context=xamarin/cross-platform)

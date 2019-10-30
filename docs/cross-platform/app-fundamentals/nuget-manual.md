@@ -3,15 +3,15 @@ title: Création manuelle de packages NuGet pour Xamarin
 description: Ce document contient des conseils pour vous aider à générer des packages NuGet qui ciblent la plateforme Xamarin. Il décrit les profils Xamarin de package NuGet, les packages NuGet PCL avec les dépendances de plateforme et les liens vers divers exemples Open source.
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 88feea4c0a638da99a0316d802f04f08f0fea689
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289201"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016778"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Création manuelle de packages NuGet pour Xamarin
 
@@ -51,7 +51,7 @@ La plupart des fichiers **. NuSpec** spécifient le numéro de version de la ver
 
 Vous pouvez spécifier la version avec un ensemble de nombres sans virgule décimale, ou vous pouvez la spécifier à l’aide de points décimaux. Sans la virgule décimale, NuGet prend chaque nombre et le transforme en une version en insérant un « . » entre chaque chiffre.
 
-Dans le « MonoAndroid10 » ci-dessus, « Android 1,0 ». Cela signifie simplement que le [Framework cible](~/android/app-fundamentals/android-api-levels.md) du projet doit être monoandroid version 1,0 ou supérieure. La version est spécifiée dans l' `<TargetFrameworkVersion>` élément dans le fichier projet.
+Dans le « MonoAndroid10 » ci-dessus, « Android 1,0 ». Cela signifie simplement que le [Framework cible](~/android/app-fundamentals/android-api-levels.md) du projet doit être monoandroid version 1,0 ou supérieure. La version est spécifiée dans l’élément `<TargetFrameworkVersion>` du fichier projet.
 
 Pour clarifier :
 
@@ -63,11 +63,11 @@ Pour clarifier :
 
 Les profils PCL sont limités dans les API .NET Framework auxquelles ils peuvent accéder, et ils ne peuvent certainement pas accéder au code spécifique à la plateforme. Ces liens tiers décrivent les différentes approches de création de packages NuGet qui utilisent des API PCL et natives pour assurer la compatibilité avec Xamarin et d’autres plateformes :
 
-- [Comment faire fonctionner les bibliothèques de classes portables pour vous](http://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
-- [L’appât et le commutateur de la astuce PCL](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
-- [Création d’un PCL NuGet qui fonctionne avec Xamarin. iOS](http://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
+- [Comment faire fonctionner les bibliothèques de classes portables pour vous](https://blogs.msdn.com/b/dsplaisted/archive/2012/08/27/how-to-make-portable-class-libraries-work-for-you.aspx)
+- [L’appât et le commutateur de la astuce PCL](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/)
+- [Création d’un PCL NuGet qui fonctionne avec Xamarin. iOS](https://www.jimbobbennett.io/creating-a-nuget-pcl-that-works-with-xamarin-ios/)
 
-Cette [liste externe de profils PCL avec leur nom de cible NuGet](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY) est également une référence utile.
+Cette [liste externe de profils PCL avec leur nom de cible NuGet](https://portablelibraryprofiles.stephencleary.com) est également une référence utile.
 
 ## <a name="examples"></a>Exemples
 

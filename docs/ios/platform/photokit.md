@@ -4,15 +4,15 @@ description: Ce document décrit PhotoKit, discute de ses objets Model, comment 
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 433e50632ce7334f7a815fb8952dda2dfc110578
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 82cff753e7569c2642c467db692c2d2d84347df0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290523"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031614"
 ---
 # <a name="photokit-in-xamarinios"></a>PhotoKit dans Xamarin. iOS
 
@@ -20,18 +20,18 @@ PhotoKit est une nouvelle infrastructure qui permet aux applications d’interro
 
 ## <a name="model-objects"></a>Objets de modèle
 
-PhotoKit représente ces ressources dans ce qu’elle appelle des objets de modèle. Les objets de modèle qui représentent les photos et les vidéos elles- `PHAsset`mêmes sont de type. Un `PHAsset` contient des métadonnées telles que le type de média de la ressource et sa date de création.
-De même, les `PHAssetCollection` classes `PHCollectionList` et contiennent respectivement des métadonnées sur les collections de ressources et les listes de collections. Les regroupements de ressources sont des groupes de ressources, tels que toutes les photos et vidéos pour une année donnée. De même, les listes de collections sont des groupes de regroupements de ressources, tels que des photos et des vidéos regroupées par année.
+PhotoKit représente ces ressources dans ce qu’elle appelle des objets de modèle. Les objets de modèle qui représentent les photos et les vidéos elles-mêmes sont de type `PHAsset`. Une `PHAsset` contient des métadonnées telles que le type de média de la ressource et sa date de création.
+De même, les classes `PHAssetCollection` et `PHCollectionList` contiennent respectivement des métadonnées sur les collections de ressources et les listes de collections. Les regroupements de ressources sont des groupes de ressources, tels que toutes les photos et vidéos pour une année donnée. De même, les listes de collections sont des groupes de regroupements de ressources, tels que des photos et des vidéos regroupées par année.
 
 ## <a name="querying-model-data"></a>Interrogation des données de modèle
 
-PhotoKit facilite l’interrogation des données de modèle par le biais de diverses méthodes d’extraction. Par exemple, pour récupérer toutes les images, vous devez `PHAsset.Fetch`appeler, en `PHAssetMediaType.Image` passant le type de média.
+PhotoKit facilite l’interrogation des données de modèle par le biais de diverses méthodes d’extraction. Par exemple, pour récupérer toutes les images, appelez `PHAsset.Fetch`, en passant le type de média `PHAssetMediaType.Image`.
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-L' `PHFetchResult` instance contient alors toutes les `PHAsset` instances représentant les images. Pour obtenir les images elles-mêmes, vous `PHImageManager` utilisez (ou la `PHCachingImageManager`version de mise en cache) pour effectuer une demande pour l' `RequestImageForAsset`image en appelant. Par exemple, le code suivant récupère une image pour chaque élément multimédia d’un `PHFetchResult` à afficher dans une cellule d’affichage de collection :
+L’instance `PHFetchResult` contient alors toutes les instances de `PHAsset` représentant les images. Pour obtenir les images elles-mêmes, vous utilisez le `PHImageManager` (ou la version de mise en cache, `PHCachingImageManager`) pour effectuer une demande pour l’image en appelant `RequestImageForAsset`. Par exemple, le code suivant récupère une image pour chaque élément multimédia d’un `PHFetchResult` à afficher dans une cellule d’affichage de collection :
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -51,7 +51,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 Cela génère une grille d’images comme indiqué ci-dessous :
 
-![](photokit-images/image4.png "L’application en cours d’exécution affichant une grille d’images")
+![](photokit-images/image4.png "The running app displaying a grid of images")
 
 ## <a name="saving-changes-to-the-photo-library"></a>Enregistrement des modifications apportées à la bibliothèque de photos
 
@@ -123,8 +123,8 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 Lorsque l’utilisateur sélectionne le bouton, le filtre est appliqué :
 
-![](photokit-images/image5.png "Exemple de filtre appliqué")
+![](photokit-images/image5.png "An example of the filter being applied")
 
 Et grâce à PHPhotoLibraryChangeObserver, la modification est reflétée dans la vue de collection lorsque l’utilisateur navigue vers l’arrière :
 
-![](photokit-images/image6.png "La modification est reflétée dans la vue de collection lorsque l’utilisateur navigue vers l’arrière")
+![](photokit-images/image6.png "The change is reflected in the collection view when the user navigates back")

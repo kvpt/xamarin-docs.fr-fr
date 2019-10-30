@@ -5,19 +5,19 @@ zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: d5de743cdbef1358450a2f358acb86dce2d373c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 675e6cebab95d2a997bf48a6c9231b5e8c661342
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758012"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020843"
 ---
 # <a name="android-emulator-troubleshooting"></a>Résolution des problèmes de l’émulateur Android
 
-_Cet article décrit les problèmes et les messages d’avertissement les plus courants qui se produisent durant la configuration et l’exécution de l’émulateur Android. De plus, il décrit les solutions permettant de résoudre ces erreurs, et fournit divers conseils pour vous aider à diagnostiquer les problèmes d’émulateur._
+_Cet article décrit les messages d’avertissement et les problèmes les plus courants qui se produisent lors de la configuration et de l’exécution du Émulateur Android. En outre, il décrit les solutions permettant de résoudre ces erreurs, ainsi que divers conseils de dépannage pour vous aider à diagnostiquer les problèmes de l’émulateur._
 
 ::: zone pivot="windows"
 
@@ -33,13 +33,13 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
 
 2. Ouvrez une invite de commandes et accédez au dossier d’installation d’**adb**. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
 
-3. Tapez la commande suivante :
+3. Tapez la commande suivante :
 
    ```shell
    adb devices
    ```
 
-4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Par exemple :
+4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Exemple :
 
    ```shell
    List of devices attached
@@ -369,13 +369,13 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
 
 2. Ouvrez une invite de commandes et accédez au dossier d’installation d’**adb**. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
 
-3. Tapez la commande suivante :
+3. Tapez la commande suivante :
 
    ```shell
    adb devices
    ```
 
-4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Par exemple :
+4. Si l’émulateur est accessible à partir du kit Android SDK, l’émulateur doit apparaître dans la liste des appareils connectés. Exemple :
 
    ```shell
    List of devices attached

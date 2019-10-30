@@ -4,15 +4,15 @@ description: Ce document décrit comment Xamarin. iOS génère du code pour mapp
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768489"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022253"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>Génération de code. XIB dans Xamarin. iOS
 
@@ -33,7 +33,7 @@ Les classes personnalisées peuvent être définies dans un fichier **. XIB** à
 
 ## <a name="generating-code"></a>Génération du code
 
-Pour tout  **{0}fichier. XIB** avec une action de génération de *page*, si un  **{0}fichier. XIB.Designer.cs** existe également dans le projet, Visual Studio pour Mac génère des classes partielles dans le fichier de concepteur pour toutes les classes d’utilisateur qu’il peut être trouvé dans le fichier **. XIB** , avec les propriétés des prises et des méthodes partielles pour toutes les actions. La génération de code est activée simplement par la présence de ce fichier.
+Pour tout fichier **{0}. XIB** avec une action de génération de *page*, si un fichier **{0}. XIB.Designer.cs** existe également dans le projet, Visual Studio pour Mac générera des classes partielles dans le fichier de concepteur pour toutes les classes d’utilisateur qu’il peut trouver dans le fichier **. XIB** , avec les propriétés des prises et des méthodes partielles pour toutes les actions. La génération de code est activée simplement par la présence de ce fichier.
 
 Le fichier du concepteur est automatiquement mis à jour lorsque le fichier **. XIB** est modifié et que Visual Studio pour Mac réobtient le focus. Le fichier de concepteur ne doit pas être modifié manuellement, car les modifications seront remplacées la prochaine fois que Visual Studio pour Mac met à jour le fichier.
 
@@ -41,7 +41,7 @@ Le fichier du concepteur est automatiquement mis à jour lorsque le fichier **. 
 
 Visual Studio pour Mac génère les classes de concepteur à l’aide de l’espace de noms par défaut du projet pour l’emplacement du fichier de concepteur, afin de le rendre cohérent avec le projet .NET normal Namespacing. L’espace de noms des fichiers de concepteur est piloté par l’espace de noms par défaut du projet et ses paramètres « stratégies de nommage .NET ». ATTENTION : si l’espace de noms par défaut de votre projet change, MD régénère les classes dans le nouvel espace de noms. vous pouvez donc constater que vos classes partielles ne correspondent plus.
 
-Pour rendre la classe détectable par le runtime objective-C, Visual Studio pour Mac applique un `[Register (name)]` attribut à la classe. Bien que Xamarin. iOS inscrive `NSObject`automatiquement les classes dérivées de, il utilise les noms .net complets. L’attribut appliqué par Visual Studio pour Mac Substitue cela pour garantir que chaque classe est inscrite avec le nom utilisé dans le fichier **. XIB** . Si vous utilisez des classes personnalisées en IB sans utiliser Visual Studio pour Mac pour générer des fichiers de concepteur, vous devrez peut-être les appliquer manuellement pour que vos classes managées correspondent aux noms de classe objective-C attendus.
+Pour rendre la classe détectable par le runtime objective-C, Visual Studio pour Mac applique un attribut `[Register (name)]` à la classe. Bien que Xamarin. iOS inscrive automatiquement les classes dérivées de `NSObject`, il utilise les noms .NET qualifiés complets. L’attribut appliqué par Visual Studio pour Mac Substitue cela pour garantir que chaque classe est inscrite avec le nom utilisé dans le fichier **. XIB** . Si vous utilisez des classes personnalisées en IB sans utiliser Visual Studio pour Mac pour générer des fichiers de concepteur, vous devrez peut-être les appliquer manuellement pour que vos classes managées correspondent aux noms de classe objective-C attendus.
 
 Les classes ne peuvent pas être définies dans plus d’un **. XIB**, ou elles sont en conflit.
 
@@ -51,7 +51,7 @@ Les classes partielles du concepteur ne sont pas destinées à être utilisées 
 
 Cela est dû à la flexibilité. Par exemple, plusieurs classes CodeBehind peuvent sous-classe une classe abstraite managée commune, qui sous-classe la classe à sous-classée par IB.
 
-Il est conventionnel de les placer dans un  **{0}fichier. XIB.cs** à côté du  **{0}fichier. XIB.Designer.cs** designer.
+Il est conventionnel de les placer dans un fichier **{0}. XIB.cs** à côté du fichier **{0}. XIB.Designer.cs** designer.
 
 <a name="generated" />
 
@@ -63,19 +63,19 @@ Dans les classes de concepteur partiel, Visual Studio pour Mac génère des prop
 
 Les classes de concepteur contiennent des propriétés correspondant à toutes les prises définies sur la classe personnalisée. Le fait qu’il s’agit de propriétés est un détail d’implémentation du pont Xamarin. iOS vers objective C, pour permettre la liaison tardive. Vous devez les considérer comme équivalents à des champs privés, destinés à être utilisés uniquement à partir de la classe CodeBehind. Si vous souhaitez les rendre publics, ajoutez des propriétés d’accesseur à la partie non de classe de concepteur, comme vous le feriez pour tout autre champ privé.
 
-Si les propriétés de la sortie sont définies de façon `id` à avoir un `NSObject`type (équivalent à), le générateur de code du concepteur détermine actuellement le type le plus fort possible en fonction des objets connectés à cette sortie, pour des raisons pratiques.
+Si les propriétés de la prise sont définies pour avoir un type de `id` (équivalent à `NSObject`), le générateur de code du concepteur détermine actuellement le type le plus fort possible en fonction des objets connectés à cette sortie, pour des raisons pratiques.
 Toutefois, cela n’est peut-être pas pris en charge dans les versions ultérieures. il est donc recommandé de taper explicitement les prises lors de la définition de la classe personnalisée.
 
 ### <a name="action-properties"></a>Propriétés de l’action
 
 Les classes de concepteur contiennent des méthodes partielles correspondant à toutes les actions définies sur la classe personnalisée. Il s’agit de méthodes sans implémentation. L’objectif des méthodes partielles est double :
 
-1. Si vous tapez `partial` dans le corps de classe de la partie non de la classe de concepteur, Visual Studio pour Mac offrira la saisie semi-automatique des signatures de toutes les méthodes partielles non implémentées.
+1. Si vous tapez `partial` dans le corps de classe de la partie de classe non concepteur, Visual Studio pour Mac offrira la saisie semi-automatique des signatures de toutes les méthodes partielles non implémentées.
 2. Les signatures de méthode partielles ont un attribut appliqué qui les expose au monde objective-C, afin qu’ils puissent être gérés en tant qu’action correspondante.
 
 Si vous le souhaitez, vous pouvez ignorer la méthode partielle et implémenter l’action en appliquant l’attribut à une autre méthode, ou le laisser passer à une classe de base.
 
-Si les actions sont définies pour avoir un type d’expéditeur `id` (équivalant `NSObject`à), le générateur de code du concepteur détermine actuellement le type le plus fort possible en fonction des objets connectés à cette action. Toutefois, cela n’est peut-être pas pris en charge dans les versions ultérieures. il est donc recommandé de taper explicitement les actions lors de la définition de la classe personnalisée.
+Si les actions sont définies pour avoir un type d’expéditeur `id` (équivalent à `NSObject`), le générateur de code du concepteur détermine actuellement le type le plus fort possible en fonction des objets connectés à cette action. Toutefois, cela n’est peut-être pas pris en charge dans les versions ultérieures. il est donc recommandé de taper explicitement les actions lors de la définition de la classe personnalisée.
 
 Notez que ces méthodes partielles sont créées uniquement C#pour, car CodeDom ne prend pas en charge les méthodes partielles, donc elles ne sont pas générées pour d’autres langages.
 

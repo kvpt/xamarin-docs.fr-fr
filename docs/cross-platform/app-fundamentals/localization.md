@@ -3,15 +3,15 @@ title: Localisation de l’interface utilisateur de l’application
 description: Ce document décrit les concepts interplateformes d’internationalisation et de localisation et examine leur impact sur la conception de l’application.
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9e0a6569710ca3ad10f57d7145a97af92574427c
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198443"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016794"
 ---
 # <a name="localization"></a>Localisation
 
@@ -59,7 +59,7 @@ Les chaînes allemandes (par exemple) peuvent être très longues ; parfois, un
 
 Comparez les longueurs de chaîne de quelques éléments sur l’écran d’accueil iOS en anglais, allemand et japonais :
 
-[![](localization-images/language-compare-sml.png "Longueur de chaîne en allemand et japonais")](localization-images/language-compare.png#lightbox)
+[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
 
 Notez que les **paramètres** en anglais (8 caractères) requièrent 13 caractères pour la traduction en allemand, mais seulement 2 caractères en japonais.
 
@@ -218,7 +218,7 @@ et les jetons sont classés comme étant le traducteur prévu. Veillez à inclur
 
 ### <a name="use-multiple-strings-for-cardinality"></a>Utiliser plusieurs chaînes pour la cardinalité
 
-Évitez les chaînes `"You have {0} message/s."` comme utiliser des chaînes spécifiques pour chaque État afin de fournir une meilleure expérience utilisateur :
+Évitez les chaînes comme les `"You have {0} message/s."` utiliser des chaînes spécifiques pour chaque État afin de fournir une meilleure expérience utilisateur :
 
 **Bonne**:
 
@@ -235,7 +235,7 @@ Vous devrez écrire du code dans votre application pour évaluer le nombre affic
 
 Les langues latines utilisent parfois des mots différents selon le sexe de l’objet. Si votre application connaît le sexe, vous devez autoriser les chaînes traduites à refléter ceci.
 
-Il y a également le cas le plus évident, même en anglais, où les chaînes font référence à une personne ou un utilisateur spécifique de votre application. Par exemple, certains sites affichent des `"Bob commented on his post"` messages comme. vous avez donc besoin de chaînes pour un sexe mâle, femelle et non binaire ou inconnu :
+Il y a également le cas le plus évident, même en anglais, où les chaînes font référence à une personne ou un utilisateur spécifique de votre application. Par exemple, certains sites affichent des messages comme `"Bob commented on his post"`. vous avez donc besoin de chaînes pour un sexe mâle, femelle et non binaire ou inconnu :
 
 **Bonne**:
 
@@ -271,7 +271,7 @@ Pour créer des fonctionnalités de traduction dans votre application, envisagez
 À des fins de test, vous pouvez utiliser l’un des nombreux outils de traduction en ligne pour inclure du texte localisé dans votre application pendant le développement :
 
 - [Traducteur Bing](https://www.bing.com/translator/)
-- [Google translate](http://translate.google.com/)
+- [Google translate](https://translate.google.com/)
 
 De nombreuses autres sont disponibles. La qualité de la traduction automatique n’est généralement pas considérée comme suffisante pour libérer une application sans avoir été vérifiée et testée par des traducteurs professionnels ou des orateurs natifs.
 
@@ -279,7 +279,7 @@ De nombreuses autres sont disponibles. La qualité de la traduction automatique 
 
 Il existe également des services de traduction professionnels qui prennent vos chaînes et les distribuent à leurs propres traducteurs, ce qui vous offre des traductions terminées.
 
-L’un des meilleurs services connus est [Lionbridge](http://www.lionbridge.com/). La plupart des services professionnels prennent en charge tous les types de fichiers courants, y compris les chaînes, XML, RESX et POT/PO.
+L’un des meilleurs services connus est [Lionbridge](https://www.lionbridge.com/). La plupart des services professionnels prennent en charge tous les types de fichiers courants, y compris les chaînes, XML, RESX et POT/PO.
 
 ## <a name="summary"></a>Récapitulatif
 

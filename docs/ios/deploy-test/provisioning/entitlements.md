@@ -4,15 +4,15 @@ description: Les droits sont des fonctionnalités et des autorisations de sécur
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/13/2018
-ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43bde3a31a79728548e72ea1d34977f1a131f282
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284802"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028543"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Utilisation des droits dans Xamarin.iOS
 
@@ -44,12 +44,12 @@ Pour configurer les droits dans Visual Studio pour Mac, effectuez les étapes su
 1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Info.plist** pour l’ouvrir et le modifier.
 2. Dans la section **Cible d’application iOS**, entrez le nom de l’application, puis entrez l’**identificateur de bundle** créé quand vous avez défini l’ID d’application :
 
-    ![](entitlements-images/servicexs01.png "Entrer un identificateur de bundle")
+    ![](entitlements-images/servicexs01.png "Enter a Bundle Identifier")
 
 3. Enregistrez les modifications apportées au fichier **Info.plist**.
 4. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Entitlements.plist** pour l’ouvrir et le modifier :
 
-    ![](entitlements-images/servicexs02.png "Modification des droits")
+    ![](entitlements-images/servicexs02.png "Editing the Entitlements")
 
 5. Sélectionnez et configurez les droits requis pour l’application Xamarin.iOS afin qu’ils correspondent à la configuration définie au moment de la création de l’ID d’application.
 6. Enregistrez les modifications apportées au fichier **Entitlements.plist**.
@@ -61,12 +61,12 @@ Pour configurer les droits dans Visual Studio, effectuez les étapes suivantes 
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Info.plist**, puis sélectionnez **Ouvrir avec…** et **Éditeur de liste de propriétés** pour ouvrir le fichier à modifier.
 2. Dans la section **Cible d’application iOS**, entrez le nom de l’application, puis entrez l’**identificateur de bundle** créé quand vous avez défini l’ID d’application :
 
-    ![](entitlements-images/servicevs01.png "Définition de l’identificateur de bundle")
+    ![](entitlements-images/servicevs01.png "Setting the Bundle Identifier")
 
 3. Enregistrez les modifications apportées au fichier **Info.plist**.
 4. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Entitlements.plist**, puis sélectionnez **Ouvrir avec…** et **Éditeur de liste de propriétés** pour ouvrir le fichier à modifier :
 
-    ![](entitlements-images/servicevs02.png "Modification des droits")
+    ![](entitlements-images/servicevs02.png "Editing the Entitlements")
 
     Vous pouvez également double-cliquer sur le fichier **Entitlements.plist** pour l’ouvrir dans l’éditeur de source XML, puis définir les valeurs de propriété et de clé des droits, comme expliqué dans la section [Informations de référence sur les clés de droits](#entitlement-key-reference) ci-dessous.
 
@@ -109,7 +109,7 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 ### <a name="icloud"></a>iCloud
 
-- **Description** : iCloud offre aux utilisateurs d’appareil iOS un moyen simple et pratique de stocker leur contenu et de le partager entre plusieurs appareils. Les développeurs peuvent utiliser iCloud de quatre façons différentes pour fournir un moyen de stockage à leurs utilisateurs : stockage clé-valeur, stockage UIDocument, CoreData et l’utilisation de CloudKit directement pour assurer le stockage de fichiers et répertoires individuels. Pour plus d’informations, consultez le guide Présentation d’iCloud.
+- **Description** : iCloud offre aux utilisateurs d’appareil iOS un moyen simple et pratique de stocker leur contenu et de le partager entre plusieurs appareils. Avec iCloud, les développeurs peuvent fournir quatre types de stockage différents aux utilisateurs : le stockage Key-value iCloud, le stockage UIDocument, CoreData et l’utilisation directe de CloudKit pour le stockage des fichiers et répertoires. Pour plus d’informations, consultez le guide Présentation d’iCloud.
 
   - **Documents iCloud et CloudKit**
     - **Clés** : com.apple.developer.ubiquity-container-identifiers
@@ -148,7 +148,7 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 ### <a name="siri"></a>Siri
 
-- **Description** : SiriKit permet à une application iOS de fournir des services accessibles à Siri et à l’application Plans sur un appareil iOS à l’aide des extensions d’application, ainsi que des nouveaux frameworks Intents et Intents UI. Pour plus d’informations, consultez le guide Présentation de SiriKit.
+- **Description** : SiriKit permet à une application iOS de fournir des services accessibles à Siri et à l’application Maps sur un appareil iOS à l’aide des extensions d’application, ainsi que des nouveaux frameworks Intents et Intents UI. Pour plus d’informations, consultez le guide Présentation de SiriKit.
   - **Clé** : com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>VPN personnel
@@ -164,9 +164,9 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 ### <a name="inter-app-audio"></a>Inter-App Audio
 
-- **Description** : Inter-App Audio permet aux développeurs de diffuser des flux audio en streaming entre les applications.
+- **Description** : Inter-App Audio permet aux développeurs de diffuser des flux audio en continu entre les applications.
   - **Clé** : inter-app-audio
-  - **Booléen** : OUI
+  - **Valeur booléenne** : YES
 
 ### <a name="associated-domains"></a>Associated Domains
 
@@ -184,23 +184,23 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 
 - **Description** : Le framework HomeKit offre une plateforme pour installer, configurer et gérer les appareils domotiques compatibles à partir d’un appareil iOS. Pour plus d’informations sur l’utilisation d’HomeKit, consultez le guide Présentation d’HomeKit.
   - **Clé** : com.apple.developer.homekit
-  - **Booléen** : OUI
+  - **Valeur booléenne** : YES
 
 ### <a name="healthkit"></a>HealthKit
 
-- **Description** : Le framework HealthKit introduit dans iOS 8 fournit un stockage centralisé, coordonné et sécurisé pour les données médicales. Pour plus d’informations sur l’utilisation d’HealthKit, consultez le guide Présentation d’HealthKit.
+- **Description** : Le framework HealthKit introduit dans iOS 8 fournit un stockage centralisé, coordonné et sécurisé pour les données de santé. Pour plus d’informations sur l’utilisation d’HealthKit, consultez le guide Présentation d’HealthKit.
   - **Clé** : com.apple.developer.healthkit
-  - **Booléen** : OUI
+  - **Valeur booléenne** : YES
 
 ### <a name="wireless-accessory-configuration"></a>Configuration d’accessoires sans fil
 
 - **Description** : Wireless Accessory Configuration permet à votre application de configurer des accessoires WiFi MFI
   - **Clé** : com.apple.external-accessory.wireless-configuration
-  - **Booléen** : OUI
+  - **Valeur booléenne** : YES
 
 ### <a name="classkit"></a>ClassKit
 
-- **Description** : ClassKit permet aux enseignants de voir la progression des étudiants sur les activités qui leur ont été affectées dans votre application.
+- **Description** : ClassKit permet aux enseignants d’afficher la progression de l’étudiant sur les activités qui lui ont été affectées dans votre application.
   - **Clé** : com.apple.developer.ClassKit-environment
   - **Chaîne** : `development` ou `production`
 

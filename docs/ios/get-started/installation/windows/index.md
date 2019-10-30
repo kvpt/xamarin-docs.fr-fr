@@ -5,15 +5,15 @@ zone_pivot_groups: platform-win
 ms.prod: xamarin
 ms.assetid: abf85d3e-a365-44a2-b1a4-6c572c7f76dd
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: 53f244521e4b916078bdcbaa02f1a79a919be0c4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d638bf17d2a4ea23134a2d4ed335637f67e46ff7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291309"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022450"
 ---
 # <a name="installing-xamarinios-on-windows"></a>Installation de Xamarin.iOS sur un système Windows
 
@@ -21,7 +21,7 @@ _Cet article décrit comment configurer un ordinateur Windows et un hôte de bui
 
 ::: zone pivot="windows"
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Pour générer des applications Xamarin.iOS avec Visual Studio 2019 sur Windows, vous avez besoin des éléments suivants :
 
@@ -68,7 +68,7 @@ Afin de préparer la configuration pour le développement Xamarin.iOS dans Visua
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Pour générer des applications Xamarin.iOS avec Visual Studio 2017 sur Windows, vous avez besoin des éléments suivants :
 

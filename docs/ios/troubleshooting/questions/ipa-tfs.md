@@ -4,19 +4,19 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9c7b7e598f66d930b5e16ef19b8bc108d8b6701a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4493b1a0d06e2f44ee9a11a250395f058baa0548
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291053"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031023"
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Comment puis-je copier les fichiers de sortie de la liste de réutilisation dans le dossier de dépôt TFS ?
 
-Ouvrez le `.csproj` fichier pour le projet d’application iOS dans un éditeur de texte, puis ajoutez les lignes suivantes à la fin (juste avant `</Project>` la balise de fermeture) :
+Ouvrez le fichier `.csproj` pour le projet d’application iOS dans un éditeur de texte, puis ajoutez les lignes suivantes à la fin (juste avant la balise de `</Project>` de fermeture) :
 
 ```xml
 <PropertyGroup>
@@ -40,15 +40,15 @@ Ouvrez le `.csproj` fichier pour le projet d’application iOS dans un éditeur 
 
 ## <a name="notes"></a>Notes
 
-- Il s’agit de la même technique générale que celle abordée dans la [possibilité de modifier le chemin de sortie du fichier de la loi](~/ios/troubleshooting/questions/ipa-output-path.md). Les deux points importants doivent être définis `$(TF_BUILD_BINARIESDIRECTORY)` en tant que dossier de destination et ajouter une `CopyIpa` condition supplémentaire pour que ne s’exécute que pour les builds TFS.
+- Il s’agit de la même technique générale que celle abordée dans la [possibilité de modifier le chemin de sortie du fichier de la loi](~/ios/troubleshooting/questions/ipa-output-path.md). Les deux points importants sont la définition de `$(TF_BUILD_BINARIESDIRECTORY)` comme dossier de destination et l’ajout d’une condition supplémentaire afin que `CopyIpa` s’exécute uniquement pour les builds TFS.
 
-- Pour obtenir une description `TF_BUILD_BINARIESDIRECTORY` de, consultez [variables de build prédéfinies](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
+- Pour obtenir une description des `TF_BUILD_BINARIESDIRECTORY` consultez [variables de build prédéfinies](https://docs.microsoft.com/azure/devops/pipelines/build/variables).
 
 ## <a name="additional-references"></a>Références supplémentaires
 
 - [Documentation sur l’installation de TFS pour une utilisation avec Xamarin](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)
-- [Tâche de build Azure DevOps : Xamarin.Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
-- [Tâche de build Azure DevOps : Xamarin.iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
+- [Tâche de génération Azure DevOps : Xamarin. Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
+- [Tâche de génération Azure DevOps : Xamarin. iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>Étapes suivantes
 

@@ -4,21 +4,21 @@ description: Si vous êtes un développeur Java, vous allez pouvoir tirer parti 
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: f4c8c8b19d7738478cdc2c8f83c6fc8d1f361466
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: 1d9b41af68576a67c901f8f19a57fb4738430306
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985658"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027939"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin pour les développeurs Java
 
-_Si vous êtes un développeur Java, vous allez pouvoir tirer parti de vos compétences et de votre code existant sur la plateforme Xamarin tout en bénéficiant des avantages de réutilisation de code de C#. Vous constaterez que la syntaxe C# est très similaire à la syntaxe de Java, et que les deux langages fournissent des fonctionnalités similaires. Vous constaterez que la syntaxe C# est très similaire à la syntaxe de Java, et que les deux langages fournissent des fonctionnalités similaires._
+_Si vous êtes un développeur Java, vous avez la possibilité de tirer parti de vos compétences et de votre code existant sur la plateforme Xamarin tout en bénéficiant des avantages de C#la réutilisation de code de. Vous constaterez que C# la syntaxe est très similaire à la syntaxe Java, et que les deux langages fournissent des fonctionnalités très similaires. En outre, vous découvrirez des fonctionnalités propres C# à qui faciliteront votre développement._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Cet article constitue une introduction à la programmation C# pour les développeurs Java, qui met principalement l’accent sur les fonctionnalités du langage C# que vous rencontrerez en développant des applications Xamarin.Android. En outre, cet article explique en quoi ces fonctionnalités diffèrent de leurs équivalents Java et C#, et présente des fonctionnalités importantes (pertinentes pour Xamarin.Android) qui ne sont pas disponibles dans Java. Des liens vers des références supplémentaires sont inclus. Vous pouvez donc utiliser cet article comme point de départ pour approfondir vos connaissances sur C# et .NET.
 
@@ -42,7 +42,7 @@ Java et C# sont compilés dans un langage intermédiaire qui est exécuté dans 
 Les deux langages utilisent une hiérarchie de classes à racine unique. Comme Java, C# prend uniquement en charge l’héritage unique et n’autorise pas les méthodes globales.
 Dans les deux langages, les objets sont créés sur le tas en utilisant le mot-clé `new` et les objets sont récupérés par le garbage collector lorsqu’ils ne sont plus utilisés. Les deux langages fournissent la prise en charge des exceptions formelles avec une sémantique `try`/`catch`. Les deux prennent en charge la gestion et la synchronisation des threads.
 
-Toutefois, il existe de nombreuses différences entre les Java et C#. Par exemple :
+Toutefois, il existe de nombreuses différences entre les Java et C#. Exemple :
 
 - Java ne prend pas en charge les variables locales implicitement typées (C# prend en charge le mot clé `var`).
 
@@ -87,13 +87,13 @@ Enfin, Xamarin vous permet de [tirer parti des ressources Java existantes](#inte
 
 Les sections suivantes décrivent les principales différences de prise en main entre les langages C# et Java ; une section ultérieure décrit les différences de programmation orientée objet entre ces langages.
 
-### <a name="libraries-vs-assemblies"></a>Bibliothèques vs. Assemblys
+### <a name="libraries-vs-assemblies"></a>Bibliothèques et assemblys
 
 Java empaquète généralement les classes connexes dans des fichiers **.jar**. En C# et en .NET, toutefois, les parties réutilisables de code précompilé sont empaquetées dans des *assemblys*, qui sont généralement fournis sous forme de fichiers *.dll*. Un assembly est une unité de déploiement pour le code C#/.NET, et chaque assembly est généralement associé à un projet C#. Les assemblys contiennent le code intermédiaire (IL) qui est compilé juste-à-temps lors de l’exécution.
 
 Pour plus d’informations sur les assemblys, consultez la rubrique [Assemblys et le Global Assembly Cache](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/).
 
-### <a name="packages-vs-namespaces"></a>Packages vs. Espaces de noms
+### <a name="packages-vs-namespaces"></a>Packages et espaces de noms
 
 C# utilise le mot-clé `namespace` pour grouper les types associés ensemble ; Cela s’apparente au mot-clé `package` de Java. En règle générale, une application Xamarin.Android réside dans un espace de noms créé pour cette application. Par exemple, le code C# suivant déclare le wrapper d’espace de noms `WeatherApp` pour une application météorologique :
 
@@ -139,7 +139,7 @@ Ces instructions importent les fonctionnalités des espaces de noms `System`, `A
 
 Java et C# prennent en charge les *génériques*, qui sont des espaces réservés qui vous permettent de connecter différents types au moment de la compilation. Toutefois, les génériques fonctionnent différemment en C#. En Java, [l’effacement de type](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) rend les informations de type disponibles uniquement au moment de la compilation, mais pas au moment de l’exécution. En revanche, le common language runtime (CLR) .NET fournit une prise en charge explicite des types génériques, ce qui signifie que C# a accès aux informations de type lors de l’exécution. Pour le développement Xamarin.Android au quotidien, l’importance de cette distinction n’est pas souvent évidente, mais si vous utilisez la [réflexion](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection), cette fonctionnalité est cruciale pour accéder aux informations de type au moment de l’exécution.
 
-Dans Xamarin.Android, vous verrez souvent la méthode générique `FindViewById` utilisée pour obtenir une référence à un contrôle de disposition. Cette méthode accepte un paramètre de type générique qui spécifie le type de contrôle à rechercher. Par exemple :
+Dans Xamarin.Android, vous verrez souvent la méthode générique `FindViewById` utilisée pour obtenir une référence à un contrôle de disposition. Cette méthode accepte un paramètre de type générique qui spécifie le type de contrôle à rechercher. Exemple :
 
 ```csharp
 TextView label = FindViewById<TextView> (Resource.Id.Label);
@@ -210,12 +210,12 @@ Pour plus d’informations sur les définitions de classe C#, consultez les rubr
 
 <a name="properties" />
 
-### <a name="properties"></a>Properties
+### <a name="properties"></a>Propriétés
 
 En Java, les méthodes de mutateurs (setters) et d’inspecteurs (getters) sont souvent utilisées pour contrôler la façon dont les modifications sont apportées aux membres de classe tout en masquant et protégeant ces membres à partir de l’extérieur du code. Par exemple, la classe `TextView` d’Android fournit les méthodes `getText` et `setText`. C# fournit un mécanisme similaire, mais plus direct appelé *propriétés*.
 Les utilisateurs d’une classe C# peuvent accéder à une propriété de la même façon qu’ils accèdent à un champ, mais chaque accès entraîne en fait un appel de méthode qui est transparent pour l’appelant. Cette méthode « en coulisses » peut implémenter des effets secondaires, tels que la définition d’autres valeurs, la réalisation de conversions ou la modification d’état des objets.
 
-Les propriétés sont souvent utilisées pour l’accès et modification des membres de l’objet d’interface utilisateur. Par exemple :
+Les propriétés sont souvent utilisées pour l’accès et modification des membres de l’objet d’interface utilisateur. Exemple :
 
 ```csharp
 int width = rulerView.MeasuredWidth;
@@ -307,7 +307,7 @@ En C#, les expressions lambda sont créées avec l’opérateur `=>`, comme indi
 };
 ```
 
-Dans Xamarin.Android, les expressions lambda sont souvent utilisées pour définir des gestionnaires d’événements. Par exemple :
+Dans Xamarin.Android, les expressions lambda sont souvent utilisées pour définir des gestionnaires d’événements. Exemple :
 
 ```csharp
 button.Click += (sender, args) => {
@@ -316,7 +316,7 @@ button.Click += (sender, args) => {
 };
 ```
 
-Dans cet exemple, le code d’expression lambda (le code entre les accolades) incrémente un nombre de clics et met à jour le texte `button` pour afficher le nombre de clics. Cette expression lambda est inscrite avec l’objet `button` comme un gestionnaire d’événements à appeler lorsque l’utilisateur clique sur le bouton. (Ces fichiers sont expliqués de façon plus détaillée ci-dessous.) Dans cet exemple simple, les paramètres `sender` et `args` ne sont pas utilisés par le code d’expression lambda, mais ils sont requis dans l’expression lambda pour satisfaire les exigences de signature de méthode d’inscription d’événement. Dans la pratique, le compilateur C# convertit l’expression lambda en une méthode anonyme qui est appelée chaque fois que des événements de clic de bouton se produisent.
+Dans cet exemple, le code d’expression lambda (le code entre les accolades) incrémente un nombre de clics et met à jour le texte `button` pour afficher le nombre de clics. Cette expression lambda est inscrite avec l’objet `button` comme un gestionnaire d’événements à appeler lorsque l’utilisateur clique sur le bouton. (Les gestionnaires d’événements sont expliqués plus en détail ci-dessous.) Dans cet exemple simple, les paramètres `sender` et `args` ne sont pas utilisés par le code d’expression lambda, mais ils sont requis dans l’expression lambda pour respecter les exigences de signature de méthode pour l’inscription des événements. Dans la pratique, le compilateur C# convertit l’expression lambda en une méthode anonyme qui est appelée chaque fois que des événements de clic de bouton se produisent.
 
 Pour plus d’informations sur C# et les expressions lambda, consultez la rubrique [Expressions lambda](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions).
 
@@ -351,7 +351,7 @@ startActivityButton.Click += delegate {
 
 ```
 
-Toutefois, vous pouvez également utiliser une expression lambda pour enregistrer les événements, et ignorer le mot-clé `delegate` entièrement. Par exemple :
+Toutefois, vous pouvez également utiliser une expression lambda pour enregistrer les événements, et ignorer le mot-clé `delegate` entièrement. Exemple :
 
 ```csharp
 startActivityButton.Click += (sender, e) => {
@@ -448,7 +448,7 @@ Il existe également plusieurs mots-clés qui sont propres à C# et n’ont aucu
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|Un type valeur qui encapsule un groupe de variables liées.|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|Obtient le type d’un objet.|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|Définit une variable locale implicitement typée.|
-|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Fait référence à la valeur que le code client souhaite affecter à une propriété.|
+|[valeur](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|Fait référence à la valeur que le code client souhaite affecter à une propriété.|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|Autorise la substitution d'une méthode dans une classe dérivée.|
 
 <a name="interop" />
@@ -479,5 +479,5 @@ Cet article propose une introduction à l’environnement de programmation C# Xa
 
 - [Présentation de l’intégration Java](~/android/platform/java-integration/index.md)
 - [Guide de programmation C#](https://docs.microsoft.com/dotnet/csharp/programming-guide/)
-- [Référence C#](https://docs.microsoft.com/dotnet/csharp/language-reference/index)
+- [Informations de référence sur C#](https://docs.microsoft.com/dotnet/csharp/language-reference/index)
 - [Passage à C# et .NET Framework pour les développeurs Java](https://www.microsoft.com/download/details.aspx?id=6073)

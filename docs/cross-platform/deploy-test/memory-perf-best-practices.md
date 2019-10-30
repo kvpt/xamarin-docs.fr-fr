@@ -1,21 +1,21 @@
 ---
-title: Niveau de performance multiplateforme
+title: Performances multiplateformes
 description: Ce document décrit différentes techniques que vous pouvez utiliser pour améliorer les performances d’une application mobile. Il traite du profileur, de la ressource IDisposable, des références faibles, du récupérateur de mémoire SGen, des techniques de réduction de taille et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765942"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016528"
 ---
-# <a name="cross-platform-performance"></a>Niveau de performance multiplateforme
+# <a name="cross-platform-performance"></a>Performances multiplateformes
 
-Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
+Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
 
 <a name="profiler" />
 
@@ -331,7 +331,7 @@ Les étapes suivantes peuvent être effectuées pour réduire encore davantage l
 - Réduisez la taille du code managé de l’application. Pour cela, activez l’éditeur de liens pour chaque assembly (*Lier tout* pour les projets iOS et *Lier tous les assemblys* pour les projets Android).
 
 Les applications Android peuvent également être placées dans un APK distinct pour chaque ABI (« architecture »).
-Pour en savoir plus, consultez ce billet de blog : [How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
+Pour en savoir plus, lisez ce billet de blog : [How To Keep Your Android App Size Down](https://montemagno.com/how-to-keep-your-android-app-size-down/).
 
 <a name="optimizeimages" />
 
@@ -367,7 +367,7 @@ Les données récupérées à partir du service web doivent être mises en cache
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a abordé les techniques qui permettent d’accroître les performances des applications conçues sur la plateforme Xamarin. Ensemble, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+Cet article a abordé les techniques qui permettent d’accroître les performances des applications conçues sur la plateforme Xamarin. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
 
 ## <a name="related-links"></a>Liens associés
 

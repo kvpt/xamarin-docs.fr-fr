@@ -3,19 +3,19 @@ title: Profil utilisateur
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2018
-ms.openlocfilehash: ef8f6aeb3c6577825210c0bce594ea0eb4af4e2f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 252a104118b0419f33abdf7f522ad8fc358e3f76
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648261"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028710"
 ---
 # <a name="user-profile"></a>Profil utilisateur
 
-Android prend en charge l’énumération des contacts avec le fournisseur [ContactsContract](xref:Android.Provider.ContactsContract) depuis l’API niveau 5. Par exemple, le fait de répertorier les contacts est aussi simple que l’utilisation de la classe [ContactContracts. contacts](xref:Android.Provider.ContactsContract.Contacts) , comme indiqué dans l’exemple de code suivant:
+Android prend en charge l’énumération des contacts avec le fournisseur [ContactsContract](xref:Android.Provider.ContactsContract) depuis l’API niveau 5. Par exemple, le fait de répertorier les contacts est aussi simple que l’utilisation de la classe [ContactContracts. contacts](xref:Android.Provider.ContactsContract.Contacts) , comme indiqué dans l’exemple de code suivant :
 
 ```csharp
 // Get the URI for the user's contacts:
@@ -45,16 +45,16 @@ if (cursor != null)
 }
 ```
 
-À compter d’Android 4 (niveau d’API 14), la classe [ContactsContact. Profile](xref:Android.Provider.ContactsContract.Profile) est `ContactsContract` disponible via le fournisseur. Le `ContactsContact.Profile` fournit l’accès au profil personnel pour le propriétaire d’un appareil, y compris les données de contact, telles que le nom et le numéro de téléphone du propriétaire de l’appareil.
+À compter d’Android 4 (niveau d’API 14), la classe [ContactsContact. Profile](xref:Android.Provider.ContactsContract.Profile) est disponible via le fournisseur `ContactsContract`. L' `ContactsContact.Profile` fournit l’accès au profil personnel pour le propriétaire d’un appareil, y compris les données de contact, telles que le nom et le numéro de téléphone du propriétaire de l’appareil.
 
 ## <a name="required-permissions"></a>Autorisations requises
 
-Pour lire et écrire des données de contact, les applications `READ_CONTACTS` doivent `WRITE_CONTACTS` demander les autorisations et, respectivement.
-En outre, pour lire et modifier le profil utilisateur, les applications doivent demander `READ_PROFILE` les `WRITE_PROFILE` autorisations et.
+Pour lire et écrire des données de contact, les applications doivent demander les autorisations `READ_CONTACTS` et `WRITE_CONTACTS`, respectivement.
+En outre, pour lire et modifier le profil utilisateur, les applications doivent demander les autorisations `READ_PROFILE` et `WRITE_PROFILE`.
 
 ## <a name="updating-profile-data"></a>Mise à jour des données de profil
 
-Une fois ces autorisations définies, une application peut utiliser des techniques Android normales pour interagir avec les données du profil utilisateur. Par exemple, pour mettre à jour le nom d’affichage du profil, appelez [ContentResolver. Update](xref:Android.Content.ContentResolver.Update*) avec un `Uri` récupéré via la propriété [ContactsContract. Profile. ContentRawContactsUri](xref:Android.Provider.ContactsContract.Profile.ContentRawContactsUri) , comme indiqué ci-dessous:
+Une fois ces autorisations définies, une application peut utiliser des techniques Android normales pour interagir avec les données du profil utilisateur. Par exemple, pour mettre à jour le nom d’affichage du profil, appelez [ContentResolver. Update](xref:Android.Content.ContentResolver.Update*) avec un `Uri` récupéré via la propriété [ContactsContract. Profile. ContentRawContactsUri](xref:Android.Provider.ContactsContract.Profile.ContentRawContactsUri) , comme indiqué ci-dessous :
 
 ```csharp
 var values = new ContentValues ();
@@ -66,7 +66,7 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri, values, 
 
 ## <a name="reading-profile-data"></a>Lecture des données du profil
 
-L’émission d’une requête vers [ContactsContact. Profile. ContentUri](xref:Android.Provider.ContactsContract.Profile.ContentUri) lit les données de profil. Par exemple, le code suivant lit le nom complet du profil utilisateur:
+L’émission d’une requête vers [ContactsContact. Profile. ContentUri](xref:Android.Provider.ContactsContract.Profile.ContentUri) lit les données de profil. Par exemple, le code suivant lit le nom complet du profil utilisateur :
 
 ```csharp
 // Read the profile
@@ -90,7 +90,7 @@ if (cursor != null)
 
 ## <a name="navigating-to-the-user-profile"></a>Navigation vers le profil utilisateur
 
-Enfin, pour accéder au profil utilisateur, créez une intention avec une `ActionView` action et un `ContactsContract.Profile.ContentUri` , puis passez-la à `StartActivity` la méthode comme suit:
+Enfin, pour accéder au profil utilisateur, créez une intention avec une action `ActionView` et un `ContactsContract.Profile.ContentUri` puis passez-la à la méthode `StartActivity` comme suit :
 
 ```csharp
 var intent = new Intent (Intent.ActionView,
@@ -98,14 +98,14 @@ var intent = new Intent (Intent.ActionView,
 StartActivity (intent);
 ```
 
-Quand vous exécutez le code ci-dessus, le profil utilisateur s’affiche comme illustré dans la capture d’écran suivante:
+Quand vous exécutez le code ci-dessus, le profil utilisateur s’affiche comme illustré dans la capture d’écran suivante :
 
-[![Capture d’écran du profil affichant le profil utilisateur John Doe](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
+[Capture d’écran ![du profil affichant le profil utilisateur John Doe](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
 L’utilisation du profil utilisateur est similaire à l’interaction avec d’autres données dans Android, et offre un niveau supplémentaire de personnalisation de l’appareil.
 
 ## <a name="related-links"></a>Liens associés
 
-- [ContactsProviderDemo (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
-- [Présentation du sandwich glacé](http://www.android.com/about/ice-cream-sandwich/)
+- [ContactsProviderDemo (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
+- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
 - [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

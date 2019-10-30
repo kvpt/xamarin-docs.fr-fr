@@ -4,15 +4,15 @@ description: Cet article présente toutes les API et fonctionnalités nouvelles 
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769118"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030544"
 ---
 # <a name="introduction-to-tvos-9"></a>Introduction à tvOS 9
 
@@ -49,9 +49,9 @@ Les fonctionnalités et les fonctionnalités suivantes ne sont pas prises en cha
 - HealthKit
 - HomeKit
 - Inter-App Audio
-- Cartes
+- Maps
 - VPN personnel
-- Notifications Push
+- Push Notifications
 - Wallet
 - Configuration d’accessoires sans fil
 
@@ -69,13 +69,13 @@ La nouvelle TV Apple présente les spécifications matérielles suivantes :
 - Ethernet 10/100 Mbits/s
 - WiFi 802.11 a/b/g/n/AC
 - résolution de 1080p
-- HDMI
+- NORME
 - Port USB C (pour les développeurs et les diagnostics uniquement)
 - Nouvelle télécommande Siri ou Apple TV à distance (basée sur la région)
 
 ### <a name="siri-remote"></a>Siri à distance
 
-En fonction de la région, la télécommande Apple TV fournie se présente dans une configuration : Siri à distance ou Apple TV à distance.
+En fonction de la région, la télécommande Apple TV fournie se trouve dans l’une des configurations suivantes : Siri Remote ou Apple TV Remote.
 
 La télécommande Siri est actuellement disponible dans les pays suivants :
 
@@ -90,7 +90,7 @@ La télécommande Siri est actuellement disponible dans les pays suivants :
 
 Tous les autres pays recevront la télécommande Apple TV qui remplace le bouton Siri par un bouton de recherche qui affiche l’écran de recherche par défaut avec entrée de texte pour la recherche :
 
-[![](tvos9-images/remote02.png "Siri à distance")](tvos9-images/remote02.png#lightbox)
+[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
 
 Pour plus d’informations, consultez notre documentation sur [les contrôleurs distants et Bluetooth Siri](~/ios/tvos/platform/remote-bluetooth.md) .
 
@@ -154,7 +154,7 @@ Pour plus d’informations, consultez notre page [utilisation de la navigation e
 
 L’écran d’accueil Apple TV affiche toutes les applications installées et fournit un moyen d’accéder aux préférences de l’utilisateur :
 
-[![](tvos9-images/home01.png "Écran d’accueil")](tvos9-images/home01.png#lightbox)
+[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
 
 L’utilisateur parcourt une grille d’icônes d’application à l’aide de gestes tactiles sur le Siri distant à l’aide du focus pour sélectionner une application et la lancer. L’icône de l’application est la première opportunité de vous donner une grande impression à votre utilisateur potentiel et doit communiquer d’un coup d’œil à l’objectif de votre application.
 
@@ -168,9 +168,9 @@ Pour plus d’informations, consultez notre documentation [sur l’utilisation d
 
 Si l’utilisateur a placé votre application Xamarin. tvOS sur la ligne supérieure de l’écran d’accueil Apple TV, une grande image de haut rayon s’affiche lorsque votre application est sélectionnée par l’utilisateur. Cette image doit mettre en surbrillance les fonctionnalités de votre application ou fournir des liens directs vers son contenu.
 
-[![](tvos9-images/topshelf01.png "L’étagère supérieur")](tvos9-images/topshelf01.png#lightbox)
+[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-L’image de l’étagère supérieure peut être fournie sous la forme `.png` d' `.lsr` un fichier statique ou d’un fichier unique, ou elle peut être créée dynamiquement au moment de l’exécution sous la forme d’une ligne unique d’éléments pouvant être mis sur le focus.
+L’image de l’étagère supérieure peut être fournie en tant que fichier `.png` ou `.lsr` statique unique, ou elle peut être créée dynamiquement au moment de l’exécution sous la forme d’une ligne unique d’éléments pouvant être mis sur le focus.
 
 Au lieu d’afficher une image de rayon supérieure statique, elle peut contenir une ligne dynamique ou des éléments pouvant être activés ou un ensemble dynamique de bannières de défilement. Ces deux styles dynamiques vous permettent de mettre en surbrillance le contenu fourni par votre application ou d’accéder à ses fonctionnalités les plus utilisées.
 

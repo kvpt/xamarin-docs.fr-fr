@@ -5,15 +5,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 72e421e088a582e4d2de1cf830a0978cca9f45c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762639"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023405"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS multiécran - Immersion
 
@@ -26,7 +26,7 @@ Ensuite, nous nous intéressons au contrôleur de navigation pour apprendre à l
 
 Dans le tutoriel [Hello, iOS](~/ios/get-started/hello-ios/index.md), nous avons appris que les applications iOS ont une seule *fenêtre* et que les contrôleurs de vues sont responsables du chargement de leurs *hiérarchies de vues de contenu* dans cette fenêtre. Dans la deuxième procédure pas à pas Phoneword, nous avons ajouté un deuxième écran à notre application et passé certaines données (une liste de numéros de téléphone) entre les deux écrans, comme l’illustre le diagramme ci-dessous :
 
- [![](hello-ios-multiscreen-deepdive-images/08.png "Ce diagramme illustre le passage de données entre deux écrans")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/08.png "This diagram illustrates passing data between two screens")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 Dans notre exemple, les données étaient collectées dans le premier écran, passées du premier contrôleur de vue au second, puis affichées par le second écran. Cette séparation des écrans, contrôleurs de vues et données suit le modèle *MVC (modèle-vue-contrôleur)* . Dans les sections suivantes, nous présentons les avantages de ce modèle, ses composants et la manière dont nous l’utilisons dans notre application Phoneword.
 
@@ -34,7 +34,7 @@ Dans notre exemple, les données étaient collectées dans le premier écran, pa
 
 Le modèle MVC (Model-View-Controller) est un *modèle de conception*, autrement dit une solution d’architecture réutilisable à un problème courant ou cas d’usage dans le code. Le modèle MVC est une architecture destinée aux applications dotées d’une *interface graphique utilisateur (GUI)* . Il attribue aux objets dans l’application un des trois rôles suivants : *modèle* (Model) (données ou logique d’application), *affichage* (View) (interface utilisateur) et *contrôleur* (Controller) (code-behind). Le diagramme ci-dessous illustre les relations entre les trois éléments du modèle MVC et l’utilisateur :
 
- [![](hello-ios-multiscreen-deepdive-images/00.png "Ce diagramme illustre les relations entre les trois éléments du modèle MVC et l’utilisateur")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/00.png "This diagram illustrates the relationships between the three pieces of the MVC pattern and the user")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 Le modèle MVC s’avère utile car il fournit une séparation logique entre les différents composants d’une application GUI et facilite la réutilisation de code et d’affichages. Intéressons-nous maintenant de plus près à chacun des trois rôles.
 
@@ -56,7 +56,7 @@ Dans certains cas, la partie Model du modèle MVC peut être vide. Par exemple, 
 
 Un affichage (View) est un composant chargé du rendu de l’interface utilisateur. Dans presque toutes les plateformes qui utilisent le modèle MVC, l’interface utilisateur se compose d’une hiérarchie d’affichages. Un affichage dans le modèle MVC peut être perçu comme une hiérarchie d’affichage avec un affichage unique (appelé affichage racine) en haut de la hiérarchie et autant d’affichages enfants (appelés sous-affichages) en dessous. Dans iOS, la hiérarchie de vues de contenu d’un écran correspond au composant Vue du modèle MVC.
 
-### <a name="controller"></a>Controller
+### <a name="controller"></a>Contrôleur
 
 L’objet Controller est le composant qui relie tous les éléments ensemble et qui est représenté dans iOS par `UIViewController`. Nous pouvons le considérer comme le code de stockage d’un écran ou d’un ensemble d’affichages. L’objet Controller (ou contrôleur) est chargé d’écouter les demandes émises par l’utilisateur et de retourner la hiérarchie d’affichage appropriée. Il écoute les demandes émises à partir de l’affichage (clics de bouton, entrée de texte, etc.) et effectue le traitement, la modification de l’affichage et le rechargement de l’affichage appropriés. Le contrôleur est également responsable de la création ou de la récupération de l’objet Model à partir du magasin de données existant dans l’application et du remplissage de l’affichage avec ses données.
 
@@ -68,32 +68,32 @@ Dans l’application Phoneword, nous avons utilisé un contrôleur de navigation
 
 Le contrôleur de navigation est courant dans les applications iOS. Il permet de naviguer dans les applications iOS de base telles que l’application **Settings**, comme l’illustre la capture d’écran ci-dessous :
 
- [![](hello-ios-multiscreen-deepdive-images/01.png "Le contrôleur de navigation permet de naviguer dans les applications iOS telles que l’application Settings illustrée ici")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "The navigation controller provides navigation for iOS applications like the Settings app shown here")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Le contrôleur de navigation remplit trois fonctions principales :
 
 - **Il fournit des crochets pour la navigation vers l’avant** : le contrôleur de navigation utilise une métaphore de navigation hiérarchique où les hiérarchies de vues de contenu sont *envoyées (push)* dans une *pile de navigation*. Vous pouvez considérer qu’une pile de navigation est comme une pile de cartes à jouer, dans laquelle seule la carte du dessus est visible, comme l’illustre le diagramme ci-dessous :  
 
-    [![](hello-ios-multiscreen-deepdive-images/02.png "Ce diagramme illustre la navigation sous forme de pile de cartes")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
+    [![](hello-ios-multiscreen-deepdive-images/02.png "This diagram illustrates navigation as a stack of cards")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 - **Il fournit éventuellement un bouton Précédent** : Quand nous envoyons un nouvel élément dans la pile de navigation, la barre de titre peut afficher automatiquement un *bouton Précédent* qui permet à l’utilisateur de revenir en arrière. En appuyant sur le bouton Précédent, le contrôleur de vue actif est *retiré* de la pile de navigation, et la précédente hiérarchie de vues de contenu se charge dans la fenêtre :  
 
-    [![](hello-ios-multiscreen-deepdive-images/03.png "Ce diagramme illustre le retrait d’une carte de la pile")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
+    [![](hello-ios-multiscreen-deepdive-images/03.png "This diagram illustrates 'popping' a card off the stack")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 - **Il fournit une barre de titre** : la partie supérieure du contrôleur de navigation est appelée *barre de titre*. Elle est chargée d’afficher le titre du contrôleur de vue, comme l’illustre le diagramme ci-dessous :  
 
-    [![](hello-ios-multiscreen-deepdive-images/04.png "La barre de titre est chargée d’afficher le titre du contrôleur de vue")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
+    [![](hello-ios-multiscreen-deepdive-images/04.png "The Title Bar is responsible for displaying the view controller title")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 ### <a name="root-view-controller"></a>Contrôleur de vue racine
 
 Un contrôleur de navigation ne gère pas une hiérarchie de vues de contenu, il n’a donc rien à afficher de lui-même.
 Un contrôleur de navigation est plutôt couplé à un *contrôleur de vue racine* :
 
- [![](hello-ios-multiscreen-deepdive-images/05.png "Un contrôleur de navigation est couplé à un contrôleur de vue racine")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "A navigation controller is paired with a Root view controller")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 Le contrôleur de vue racine représente le premier contrôleur de vue dans la pile du contrôleur de navigation. La hiérarchie de vues de contenu du contrôleur de vue racine est la première hiérarchie de vues de contenu à être chargée dans la fenêtre. Si nous souhaitons mettre toute notre application dans la pile du contrôleur de navigation, nous pouvons déplacer le Segue sans source dans le contrôleur de navigation, et définir le contrôleur de vue de notre premier écran en tant que contrôleur de vue racine, comme nous l’avons fait dans l’application Phoneword :
 
- [![](hello-ios-multiscreen-deepdive-images/06.png "Le Segue sans source définit le contrôleur de vue des premiers écrans en tant que contrôleur de vue racine")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/06.png "The Sourceless Segue sets the first screens view controller as the Root view controller")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Options de navigation supplémentaires
 
@@ -107,7 +107,7 @@ Dans la procédure pas à pas Phoneword, nous avons traité la transition entre 
 
 Quand nous ajoutons un Segue avec une action **Afficher** au Storyboard, nous demandons à iOS d’envoyer (push) le deuxième contrôleur de vue dans la pile du contrôleur de navigation :
 
- [![](hello-ios-multiscreen-deepdive-images/09.png "Définition du type de segue à partir d’une liste déroulante")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/09.png "Setting the segue type from a dropdown list")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 L’ajout d’un Segue au Storyboard suffit à créer une transition simple entre les écrans. Si nous souhaitons passer des données entre les contrôleurs de vues, nous devons remplacer la méthode `PrepareForSegue` et gérer les données nous-mêmes :
 
@@ -203,6 +203,6 @@ Maintenant, apprenons à générer des applications multiplateforme avec Xamarin
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [Portail de provisionnement iOS](https://developer.apple.com/ios/manage/overview/index.action)

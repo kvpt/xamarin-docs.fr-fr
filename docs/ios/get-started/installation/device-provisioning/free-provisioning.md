@@ -4,15 +4,15 @@ description: Ce document décrit comment les développeurs Xamarin.iOS peuvent t
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/16/2018
-ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291438"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022758"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Provisionnement gratuit pour les applications Xamarin.iOS
 
@@ -27,7 +27,7 @@ Pour utiliser le provisionnement gratuit et déployer une application sur un app
 > [!IMPORTANT]
 > Le [provisionnement automatique](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) permet à Visual Studio pour Mac ou Visual Studio 2019 de configurer automatiquement un appareil pour permettre aux développeurs d’effectuer des tests. Toutefois, le provisionnement automatique n’est pas compatible avec le provisionnement gratuit. Pour pouvoir utiliser le provisionnement automatique, vous devez avoir un compte payant du programme Developer d’Apple.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour déployer vos applications Xamarin.iOS sur un appareil à l’aide du provisionnement gratuit :
 
@@ -49,7 +49,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 2. Ouvrez Xcode et accédez à **Xcode > Préférences**.
 3. Sous **comptes**, utilisez le bouton **+** pour ajouter votre ID Apple existant. Celui-ci doit ressembler à la capture d’écran suivante :
 
-    ![Préférences Xcode - Comptes](free-provisioning-images/launchapp1.png "Préférences Xcode - Comptes")
+    ![Préférences de Xcode-comptes](free-provisioning-images/launchapp1.png "Préférences de Xcode-comptes")
 
 4. Fermez les préférences Xcode.
 5. Branchez l’appareil iOS sur lequel vous souhaitez déployer votre application.
@@ -60,12 +60,12 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 
 8. Une fois le projet créé, choisissez un schéma de build Xcode qui cible votre appareil iOS (plutôt qu’un simulateur).
 
-    ![Sélectionner un schéma de build Xcode](free-provisioning-images/xcodescheme.png "Sélectionner un schéma de build Xcode")
+    ![Sélectionner un schéma de génération Xcode](free-provisioning-images/xcodescheme.png "Sélectionner un schéma de génération Xcode")
 
 9. Ouvrez les paramètres de projet de votre application en sélectionnant son nœud de niveau supérieur dans **Navigation dans le projet** au sein de Xcode.
 10. Sous **Général > Identité**, vérifiez que l’**identificateur de bundle** _correspond exactement_ à l’identificateur de bundle de votre application Xamarin.iOS.
 
-    ![Définir un identificateur de bundle](free-provisioning-images/launchapp5.png "Définir un identificateur de bundle")
+    ![Définir un identificateur de Bundle](free-provisioning-images/launchapp5.png "Définir un identificateur de Bundle")
 
     > [!IMPORTANT]
     > Xcode va créer uniquement un profil de provisionnement pour un ID d’application explicite. Celui-ci doit être identique à l’ID d’application de votre application Xamarin.iOS.
@@ -128,7 +128,7 @@ Suivez les étapes ci-dessous pour tester votre application Xamarin.iOS à l’a
 
 -----
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
 Apple a imposé un certain nombre de limitations qui définissent quand et comment utiliser le provisionnement gratuit pour exécuter votre application sur un appareil iOS. Ainsi, vous pouvez uniquement effectuer un déploiement sur *votre* appareil :
 

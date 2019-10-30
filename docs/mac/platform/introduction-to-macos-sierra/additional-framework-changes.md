@@ -4,15 +4,15 @@ description: Ce document décrit les modifications mineures et les amélioration
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 1de3a0a67fb6abbd4423435b38d7712f583ab74d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3db7e456d4321aa7eba415813f8c374b030da4ca
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284436"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029862"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Autres modifications du framework macOS Sierra
 
@@ -32,18 +32,18 @@ Les améliorations suivantes ont été apportées à l’infrastructure Accelera
 
 Les améliorations suivantes ont été apportées à l’infrastructure AppKit pour macOS Sierra :
 
-- Plusieurs améliorations apportées à `NSCollectionView` :
+- Plusieurs améliorations apportées à `NSCollectionView` telles que :
   - **Sections réductibles** : permet à l’utilisateur de réduire une section de vue de collection en une seule ligne horizontale.
   - **En-têtes flottants** -les en-têtes et les pieds de page peuvent désormais être flottants (dans une mise en page fluide) à l’aide de la même API que [UICollectionView](https://developer.apple.com/reference/uikit/uicollectionview) dans iOS.
   - **Vues d’arrière-plan avec défilement** : un arrière-plan de vues de collection peut désormais être défini pour faire défiler le contenu.
 - La passe de disposition de la vue différée a été optimisée et étendue.
-- L’API glisser-déplacer comprend désormais les nouvelles `NSFilePromiseProvider` classes et `NSFilePromiseReceiver` pour prendre en charge le troupeau de glissement.
+- L’API glisser-déplacer comprend désormais les nouvelles classes de `NSFilePromiseProvider` et de `NSFilePromiseReceiver` pour prendre en charge le troupeau de glissement.
 - Plusieurs constructeurs pratiques ont été ajoutés aux contrôles existants :
-  - `NSButton`comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
-  - `NSTextField`comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
-  - `NSSegmentedControl`comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
-  - `NSSlider`comprend de nouveaux constructeurs pour créer des curseurs linéaires horizontaux.
-  - `NSImageView`comprend de nouveaux constructeurs permettant de créer des vues d’images non modifiables `NSImage`à partir d’un donné.
+  - `NSButton` comprend de nouveaux constructeurs pour créer des boutons de commande, des cases à cocher et des cases d’option.
+  - `NSTextField` comprend de nouveaux constructeurs permettant de créer des étiquettes d’habillage et sans habillage, des étiquettes avec attributs et des champs de texte modifiables.
+  - `NSSegmentedControl` comprend de nouveaux constructeurs pour la création de contrôles segmentés à partir d’un groupe d’étiquettes ou d’images.
+  - `NSSlider` comprend de nouveaux constructeurs pour créer des curseurs linéaires horizontaux.
+  - `NSImageView` comprend de nouveaux constructeurs permettant de créer des vues d’images non modifiables à partir d’une `NSImage`donnée.
 - Le nouveau `NSGridView` a été ajouté pour mettre automatiquement en forme une collection de sous-vues dans une grille avec des lignes et des colonnes de taille variable qui peuvent être masquées ou affichées dynamiquement.
 
 <a name="AVFoundation-Framework-Enhancements" />
@@ -52,9 +52,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure AppKit p
 
 Les améliorations suivantes ont été apportées à l’infrastructure AVFoundation pour macOS Sierra :
 
-- Dans macOS, l’application n’a plus à implémenter des comportements [AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem) différents en fonction du type de contenu. Il vous suffit `Rate` de définir la propriété et AVFoundation déterminera quand un contenu suffisant sera disponible pour la lecture sans blocage.
-- La nouvelle `AVPlayerLooper` classe facilite la boucle d’un élément multimédia donné pendant la lecture.
-- La `AVAssetDownloadURLSession` classe permet le téléchargement et la lecture ultérieure des flux TLS chiffrés fairplay.
+- Dans macOS, l’application n’a plus à implémenter des comportements [AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem) différents en fonction du type de contenu. Définissez simplement la propriété `Rate` et AVFoundation déterminera quand un contenu suffisant sera disponible pour la lecture sans blocage.
+- La nouvelle classe `AVPlayerLooper` facilite la boucle d’un élément multimédia donné pendant la lecture.
+- La classe `AVAssetDownloadURLSession` permet le téléchargement et la lecture ultérieure de flux TLS chiffrés FairPlay.
 
 <a name="Core-Data-Framework-Enhancements" />
 
@@ -65,8 +65,8 @@ Les améliorations suivantes ont été apportées à l’infrastructure de donn�
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) racines prennent en charge l’erreur et l’extraction simultanés sans sérialisation.
 - La classe [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator) gère un pool de banques de données SQLite.
 - Les objets [NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext) avec les banques de données sqlite dans le mode journal de Wal prennent en charge la nouvelle fonctionnalité de génération de requêtes dans laquelle les contextes d’objets managés (MOC) peuvent être épinglés à des versions de base de données spécifiques pour des transactions de récupération et de défaillance futures.
-- Utilisation du niveau `NSPersistenceContainer` élevé pour référencer les `NSPersistentStoreCoordinator`ressources de configuration de données principales, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) et autres.
-- Plusieurs nouvelles méthodes pratiques ont été ajoutées pour `NSManagedObject` faciliter l’exécution des extractions et la création de sous-classes.
+- Utilisation du `NSPersistenceContainer` de haut niveau pour référencer les ressources de configuration de `NSPersistentStoreCoordinator`, [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) et autres données de base.
+- Plusieurs nouvelles méthodes pratiques ont été ajoutées à `NSManagedObject` ce qui facilite l’exécution d’extractions et la création de sous-classes.
 
 Pour plus d’informations, consultez Référence de l' [infrastructure de données de base](https://developer.apple.com/reference/coredata)d’Apple.
 
@@ -76,10 +76,10 @@ Pour plus d’informations, consultez Référence de l' [infrastructure de donn�
 
 Les améliorations suivantes ont été apportées à l’infrastructure d’images principales pour macOS Sierra :
 
-- La `ImageWithExtent` méthode de la classe [CIFilter](https://developer.apple.com/reference/coreimage/cifilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
+- La méthode `ImageWithExtent` de la classe [CIFilter](https://developer.apple.com/reference/coreimage/cifilter) peut être utilisée pour insérer un traitement personnalisé dans l’opération de filtrage. L’image principale appellera le rappel donné entre les filtres lors du traitement d’une image pour la sortie ou l’affichage.
 - L’application peut maintenant traiter les images dans un espace de couleurs en dehors de l’espace de couleurs de travail du contexte d’image principal en convertissant dans et en dehors de l’espace de couleurs avant et après le traitement.
 - Le noyau de l’image principale peut désormais demander un format de sortie de pixel spécifique.
-- Les nouveaux filtres d’image suivants ont été ajoutés `CINinePartTitled`: `CINinePartStretched`, `CIHueSaturationValueGradient`, `CIEdgePreserveUpsampleFilter` et `CIClamp`.
+- Les nouveaux filtres d’image suivants ont été ajoutés : `CINinePartTitled`, `CINinePartStretched`, `CIHueSaturationValueGradient`, `CIEdgePreserveUpsampleFilter` et `CIClamp`.
 
 <a name="Foundation-Framework-Enhancements" />
 
@@ -103,7 +103,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure GameKit 
 
 - L' **application Game Center** a été dépréciée et supprimée de MacOS. Si l’application utilise GameKit, elle _doit_ présenter sa propre interface pour afficher les fonctionnalités GameKit telles que Leaderboards, etc. 
 - Un nouveau type de compte iCloud est implémenté par la classe [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer) .
-- La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession`gère une liste de joueurs et l’application est responsable de l’implémentation de la manière dont la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
+- La nouvelle classe [GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession) fournit une solution généralisée pour la gestion du stockage de données persistant sur Game Center. `GKGameSession` gère une liste de joueurs et l’application est responsable de la mise en œuvre de la manière et du moment où la date du participant est stockée, récupérée ou échangée entre les joueurs. Dans de nombreux cas, les sessions de jeu peuvent remplacer les correspondances basées sur les activations existantes, les correspondances en temps réel ou les méthodes d’enregistrement de jeu persistantes.
 
 <a name="GamePlayKit-Framework-Enhancements" />
 
@@ -138,9 +138,9 @@ Pour plus d’informations, consultez le [Guide de programmation métallique](ht
 Les améliorations suivantes ont été apportées à l’infrastructure d’e/s de modèle pour macOS Sierra :
 
 - Le format de fichier USD est désormais pris en charge.
-- Utilisez la nouvelle `MDLMaterialPropertyGraph` classe pour prendre en charge facilement les modifications du runtime pour les modèles.
+- Utilisez la nouvelle classe `MDLMaterialPropertyGraph` pour prendre en charge facilement les modifications du runtime pour les modèles.
 - La prise en charge des champs à distance signée a été ajoutée à la classe [MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray) .
-- Utilisez la nouvelle `MDLLightProbeIrradianceDataSource` classe pour faciliter le positionnement de la sonde légère.
+- Utilisez la nouvelle classe `MDLLightProbeIrradianceDataSource` pour faciliter le positionnement de la sonde légère.
 
 <a name="Photos-Framework-Enhancements" />
 
@@ -160,15 +160,15 @@ Les améliorations suivantes ont été apportées à l’infrastructure des phot
 Les améliorations suivantes ont été apportées à l’infrastructure SceneKit pour macOS Sierra :
 
 - Comprend maintenant un nouveau système de rendu physique (PBR) pour des résultats plus réalistes grâce à la création de ressources plus simples.
-- Utilisez le nouveau modèle [SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) Shading pour produit un large éventail d’effets d’ombrage réalistes tout en exigeant uniquement trois propriétés fondamentales`Diffuse`( `Metalness` , `Roughness`et).
-- Étant donné que l’ombrage PBR fonctionne mieux avec l’éclairage basé sur l' `LightingEnvironment` environnement, utilisez la propriété pour affecter l’éclairage basé sur une image à la scène de la brune entière.
-- Utilisez la `IESProfileURL` propriété pour importer des luminaires réalistes qui définissent la base d’éclairage sur des valeurs réelles telles que l’intensité (en lumières) et la température de couleur (en degrés Kelvin).
+- Utilisez le nouveau modèle [SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased) Shading pour produit un large éventail d’effets d’ombrage réalistes tout en exigeant uniquement trois propriétés fondamentales (`Diffuse`, `Metalness` et `Roughness`).
+- Étant donné que l’ombrage PBR fonctionne mieux avec l’éclairage basé sur l’environnement, utilisez la propriété `LightingEnvironment` pour affecter un éclairage basé sur une image à la scène dans son ensemble.
+- Utilisez la propriété `IESProfileURL` pour importer des luminaires légers qui définissent la base d’éclairage sur des valeurs réelles telles que l’intensité (en lumières) et la température de couleur (en degrés Kelvin).
 - La classe [SCNCamera](https://developer.apple.com/reference/scenekit/scncamera) peut fournir un réalisme plus réaliste en utilisant les fonctionnalités HDR et les effets. Utilisez l’exposition adaptative pour créer des effets automatiques ou utiliser l’vignette, la frange des couleurs et le classement des couleurs pour ajouter des effets FILMATIC au jeu.
 - Les fonctionnalités des caméras PBR et HDR offrent de meilleurs résultats que les techniques de rendu traditionnelles et, par conséquent, SceneKit effectue désormais tous les calculs de couleur dans un espace colorimétrique linéaire (à l’aide de la palette de couleurs P3 sur les écrans d’appareils larges couleurs).
 - La couleur SceneKit Now correspond à toutes les couleurs en lisant les informations du profil de couleurs.
 - SceneKit interprète les valeurs de composant de couleur dans un espace de couleurs RVB linéaire pour tous les types de nuanceur.
 - Étant donné que SceneKit lit et ajuste les informations de profil colorimétrique dans les images de texture, utilisez des catalogues de ressources pour toutes les images pour vous assurer que ces informations sont fournies.
-- Le rendu de l’espace de couleurs linéaire et la grande couleur peuvent être désactivés en spécifiant `SCNDisableLinearSpaceRendering` les `Info.plist`clés et `SCNDisableWideGamut` dans l’application.
+- Le rendu de l’espace de couleurs linéaire et la grande couleur peuvent être désactivés en spécifiant les clés `SCNDisableLinearSpaceRendering` et `SCNDisableWideGamut` dans le `Info.plist`de l’application.
 - Générez des primates de polygones arbitraires (chargés à partir de fichiers ou générés par programme) pour spécifier Geometry avec la nouvelle classe [SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon) .
 
 <a name="Security-Framework-Enhancements" />
@@ -177,7 +177,7 @@ Les améliorations suivantes ont été apportées à l’infrastructure SceneKit
 
 Les améliorations suivantes ont été apportées à l’infrastructure de sécurité pour macOS Sierra :
 
-- L' `SecKey` interface a été moderne et unifiée sur toutes les plateformes (iOS, tvOS, Watchos et MacOS).
+- L’interface `SecKey` a été moderne et unifiée sur toutes les plateformes (iOS, tvOS, Watchos et macOS).
 
 <a name="SpriteKit-Framework-Enhancements" />
 
@@ -185,9 +185,9 @@ Les améliorations suivantes ont été apportées à l’infrastructure de sécu
 
 Les améliorations suivantes ont été apportées à l’infrastructure SpriteKit pour macOS Sierra :
 
-- Tilemaps prennent désormais `SKTileMapMode`en charge les formes de mosaïque carrée, hexagonale et isométrique pour les jeux 2D, 2.5 d et de défilement latéral à l’aide des classes `SKTileGroupRule` , `SKTileGroup`et `SKTileSet` .
-- Utilisez la nouvelle `SKWarpGeometry` classe pour étirer ou déformer le rendu [SKSpriteNode](https://developer.apple.com/reference/spritekit/skspritenode) ou [SKEffectNode](https://developer.apple.com/reference/spritekit/skeffectnode) . La nouvelle classe [SKAction](https://developer.apple.com/reference/spritekit/skaction) peut être utilisée pour animer des transitions entre des effets de déformation.
-- Les nuanceurs personnalisés peuvent fournir des`SKAttribute`attributs () qui peuvent être configurés séparément par chaque nœud qui utilise le nuanceur en fournissant une`SKAttributeValue`valeur d’attribut ().
+- Tilemaps prennent désormais en charge les formes de mosaïque carrée, hexagonale et isométrique pour les jeux 2D, 2,5 D et défilement latéral à l’aide des classes `SKTileMapMode`, `SKTileGroup`, `SKTileGroupRule` et `SKTileSet`.
+- Utilisez la nouvelle classe `SKWarpGeometry` pour étirer ou déformer le rendu [SKSpriteNode](https://developer.apple.com/reference/spritekit/skspritenode) ou [SKEffectNode](https://developer.apple.com/reference/spritekit/skeffectnode) . La nouvelle classe [SKAction](https://developer.apple.com/reference/spritekit/skaction) peut être utilisée pour animer des transitions entre des effets de déformation.
+- Les nuanceurs personnalisés peuvent fournir des attributs (`SKAttribute`) qui peuvent être configurés séparément par chaque nœud qui utilise le nuanceur en fournissant une valeur d’attribut (`SKAttributeValue`).
 - La classe [SKView](https://developer.apple.com/reference/spritekit/skview) fournit plusieurs nouvelles méthodes pour fournir un contrôle précis sur le moment et le mode de rendu d’une scène.
 
 <a name="New-Frameworks" />

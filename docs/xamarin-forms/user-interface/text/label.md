@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
-ms.openlocfilehash: d51ecc728ef6d22391f1cbc682aa204a3ce44b8a
-ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
+ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/28/2019
-ms.locfileid: "72971230"
+ms.locfileid: "72980871"
 ---
 # <a name="xamarinforms-label"></a>Étiquette Xamarin. Forms
 
@@ -158,7 +158,6 @@ var label =
 Les captures d’écran suivantes montrent le résultat de la définition de la propriété `MaxLines` sur la valeur 2, lorsque le texte est suffisamment long pour occuper plus de 2 lignes :
 
 ![Exemple d’étiquette MaxLines](label-images/label-maxlines.png)
-
 
 ## <a name="display-html"></a>Afficher le code HTML
 

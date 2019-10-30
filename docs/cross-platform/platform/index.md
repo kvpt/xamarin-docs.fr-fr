@@ -3,15 +3,15 @@ title: Prise en charge des langages de programmation dans Xamarin
 description: Ce document décrit les différents langages de programmation pris en charge par Xamarin. Il traite C#des modèles F#,, des Basic.net visuels portables et des modèles Razor.
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/18/2018
-ms.openlocfilehash: 95c63d446f961738ad71242671d632620316b879
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db963a38322e809d1aa82c02fbb9ae5cc4a650fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290898"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014629"
 ---
 # <a name="programming-language-support-in-xamarin"></a>Prise en charge des langages de programmation dans Xamarin
 
@@ -23,7 +23,7 @@ La version 5 C# introduit deux nouveaux mots clés pour exprimer des opérations
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[Fonctionnalités du langage C# 6](~/cross-platform/platform/csharp-six.md)
 
-La version la plus récente C# du langage (version 6) continue à évoluer le langage de façon à ce qu’il soit moins réutilisable, plus clair et plus cohérent. La syntaxe d’initialisation du nettoyeur, la `await` possibilité `catch/finally` d’utiliser des blocs et l’opérateur `?` conditionnel NULL sont particulièrement utiles.
+La version la plus récente C# du langage (version 6) continue à évoluer le langage de façon à ce qu’il soit moins réutilisable, plus clair et plus cohérent. La syntaxe d’initialisation du nettoyeur, la possibilité d’utiliser des `await` dans des blocs `catch/finally` et l’opérateur de `?` conditionnelle NULL sont particulièrement utiles.
 
 ## <a name="ffsharpindexmd"></a>[F#](fsharp/index.md)
 

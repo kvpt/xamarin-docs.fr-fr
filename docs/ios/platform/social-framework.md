@@ -4,15 +4,15 @@ description: L’infrastructure sociale fournit une API unifiée pour l’intera
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9c5714d5819831047d10d83b4de01fc826b9cc01
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769443"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031467"
 ---
 # <a name="social-framework-in-xamarinios"></a>Infrastructure sociale dans Xamarin. iOS
 
@@ -20,16 +20,13 @@ _L’infrastructure sociale fournit une API unifiée pour l’interaction avec l
 
 L’utilisation de l’infrastructure sociale permet aux applications d’interagir avec les réseaux sociaux à partir d’une seule API sans avoir à gérer l’authentification. Il comprend un contrôleur d’affichage fourni par le système pour la composition des publications, ainsi qu’une abstraction qui permet de consommer l’API de chaque réseau social sur HTTP.
 
-> [!IMPORTANT]
-> Pour qu’une API multiplateforme se connecte à différents réseaux sociaux, consultez le composant [Xamarin. social](http://components.xamarin.com/view/xamarin.social/) dans le magasin de composants Xamarin.
-
 ## <a name="connecting-to-twitter"></a>Connexion à Twitter
 
 ### <a name="twitter-account-settings"></a>Paramètres du compte Twitter
 
 Pour vous connecter à Twitter à l’aide de l’infrastructure sociale, vous devez configurer un compte dans les paramètres de l’appareil, comme indiqué ci-dessous :
 
- [![](social-framework-images/twitter01.png "Paramètres du compte Twitter")](social-framework-images/twitter01.png#lightbox)
+ [![](social-framework-images/twitter01.png "Twitter Account Settings")](social-framework-images/twitter01.png#lightbox)
 
 Une fois qu’un compte a été entré et vérifié avec Twitter, toute application sur l’appareil qui utilise les classes d’infrastructure sociale pour accéder à Twitter utilise ce compte.
 
@@ -37,15 +34,15 @@ Une fois qu’un compte a été entré et vérifié avec Twitter, toute applicat
 
 L’infrastructure sociale comprend un contrôleur appelé `SLComposeViewController` qui présente une vue fournie par le système pour la modification et l’envoi d’un tweet. La capture d’écran suivante montre un exemple de cette vue :
 
- [![](social-framework-images/twitter02.png "Cette capture d’écran montre un exemple de SLComposeViewController")](social-framework-images/twitter02.png#lightbox)
+ [![](social-framework-images/twitter02.png "This screenshot shows an example of the SLComposeViewController")](social-framework-images/twitter02.png#lightbox)
 
-Pour utiliser un `SLComposeViewController` avec Twitter, vous devez créer une instance du contrôleur en appelant la `FromService` méthode avec `SLServiceType.Twitter` , comme indiqué ci-dessous :
+Pour utiliser un `SLComposeViewController` avec Twitter, vous devez créer une instance du contrôleur en appelant la méthode `FromService` avec `SLServiceType.Twitter` comme indiqué ci-dessous :
 
 ```csharp
 var slComposer = SLComposeViewController.FromService (SLServiceType.Twitter);
 ```
 
-Une fois `SLComposeViewController` l’instance retournée, elle peut être utilisée pour présenter une interface utilisateur pour la publication sur Twitter. Toutefois, la première chose à faire est de vérifier la disponibilité du réseau social, Twitter dans ce cas, en appelant `IsAvailable`:
+Une fois que l’instance de `SLComposeViewController` est retournée, elle peut être utilisée pour présenter une interface utilisateur pour la publication sur Twitter. Toutefois, la première chose à faire est de vérifier la disponibilité du réseau social, Twitter dans ce cas, en appelant `IsAvailable`:
 
 ```csharp
 if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
@@ -53,13 +50,13 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController`n’envoie jamais de Tweet directement sans intervention de l’utilisateur. Toutefois, il peut être initialisé à l’aide des méthodes suivantes :
+ `SLComposeViewController` n’envoie jamais de Tweet directement sans intervention de l’utilisateur. Toutefois, il peut être initialisé à l’aide des méthodes suivantes :
 
-- `SetInitialText`: Ajoute le texte initial à afficher dans le tweet.
-- `AddUrl`: Ajoute une URL au tweet.
-- `AddImage`: Ajoute une image au tweet.
+- `SetInitialText` : ajoute le texte initial à afficher dans le tweet.
+- `AddUrl` : ajoute une URL au tweet.
+- `AddImage` : ajoute une image au tweet.
 
-Une fois initialisé, l' `PresentVIewController` appel de affiche la vue créée `SLComposeViewController`par le. L’utilisateur peut ensuite éventuellement modifier et envoyer le tweet, ou annuler son envoi. Dans les deux cas, le contrôleur doit être rejeté dans `CompletionHandler`le, où le résultat peut également être vérifié pour voir si le tweet a été envoyé ou annulé, comme indiqué ci-dessous :
+Une fois initialisé, l’appel de `PresentVIewController` affiche la vue créée par l' `SLComposeViewController`. L’utilisateur peut ensuite éventuellement modifier et envoyer le tweet, ou annuler son envoi. Dans les deux cas, le contrôleur doit être rejeté dans le `CompletionHandler`, où le résultat peut également être vérifié pour voir si le tweet a été envoyé ou annulé, comme indiqué ci-dessous :
 
 ```csharp
 slComposer.CompletionHandler += (result) => {
@@ -72,7 +69,7 @@ slComposer.CompletionHandler += (result) => {
 
 #### <a name="tweet-example"></a>Exemple de Tweet
 
-Le code suivant illustre l’utilisation `SLComposeViewController` du pour présenter une vue utilisée pour envoyer un tweet :
+Le code suivant illustre l’utilisation de l' `SLComposeViewController` pour présenter une vue utilisée pour envoyer un tweet :
 
 ```csharp
 using System;
@@ -137,7 +134,7 @@ namespace SocialFrameworkDemo
 
 ### <a name="calling-twitter-api"></a>Appel de l’API Twitter
 
-L’infrastructure sociale prend également en charge la création de requêtes HTTP sur des réseaux sociaux. Elle encapsule la requête dans une `SLRequest` classe qui est utilisée pour cibler l’API du réseau social particulier.
+L’infrastructure sociale prend également en charge la création de requêtes HTTP sur des réseaux sociaux. Elle encapsule la requête dans une classe `SLRequest` qui est utilisée pour cibler l’API du réseau social particulier.
 
 Par exemple, le code suivant effectue une demande à Twitter pour obtenir la chronologie publique (en développant le code indiqué ci-dessus) :
 
@@ -283,7 +280,7 @@ request.PerformRequest ((data, response, error) => {
 
 Si les données ont été chargées avec succès, les données JSON brutes sont affichées (comme dans l’exemple de sortie ci-dessous) :
 
-[![](social-framework-images/twitter03.png "Exemple d’affichage de données JSON brutes")](social-framework-images/twitter03.png#lightbox)
+[![](social-framework-images/twitter03.png "An example of the raw JSON data display")](social-framework-images/twitter03.png#lightbox)
 
 Dans une application réelle, les résultats JSON pouvaient ensuite être analysés normalement et les résultats présentés à l’utilisateur. Pour plus d’informations sur l’analyse de JSON, consultez [Introduction aux services Web](~/cross-platform/data-cloud/web-services/index.md) .
 
@@ -293,7 +290,7 @@ Dans une application réelle, les résultats JSON pouvaient ensuite être analys
 
 La connexion à Facebook à l’aide de l’infrastructure sociale est quasiment identique au processus utilisé pour Twitter présenté ci-dessus. Un compte d’utilisateur Facebook doit être configuré dans les paramètres de l’appareil, comme indiqué ci-dessous :
 
-[![](social-framework-images/facebook01.png "Paramètres de compte Facebook")](social-framework-images/facebook01.png#lightbox)
+[![](social-framework-images/facebook01.png "Facebook Account Settings")](social-framework-images/facebook01.png#lightbox)
 
 Une fois configurée, toute application sur l’appareil qui utilise l’infrastructure sociale utilise ce compte pour se connecter à Facebook.
 
@@ -301,7 +298,7 @@ Une fois configurée, toute application sur l’appareil qui utilise l’infrast
 
 Étant donné que l’infrastructure sociale est une API unifiée conçue pour accéder à plusieurs réseaux sociaux, le code reste quasiment identique quel que soit le réseau social utilisé.
 
-Par exemple, le `SLComposeViewController` peut être utilisé exactement comme dans l’exemple Twitter présenté précédemment, la seule différence est le passage aux paramètres et options spécifiques à Facebook. Par exemple :
+Par exemple, l' `SLComposeViewController` peut être utilisé exactement comme dans l’exemple Twitter présenté précédemment, la seule différence est le passage aux paramètres et options spécifiques à Facebook. Exemple :
 
 ```csharp
 using System;
@@ -365,13 +362,13 @@ namespace SocialFrameworkDemo
 }
 ```
 
-Lorsqu’il est utilisé avec Facebook `SLComposeViewController` , le affiche une vue qui ressemble presque exactement à l’exemple Twitter, en affichant **Facebook** comme titre dans ce cas :
+Lorsqu’il est utilisé avec Facebook, le `SLComposeViewController` affiche une vue qui ressemble presque exactement à l’exemple Twitter, en affichant **Facebook** comme titre dans ce cas :
 
-[![](social-framework-images/facebook02.png "Affichage SLComposeViewController")](social-framework-images/facebook02.png#lightbox)
+[![](social-framework-images/facebook02.png "The SLComposeViewController display")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Appel de API Graph Facebook
 
-Semblable à l’exemple Twitter, l’objet de `SLRequest` l’infrastructure sociale peut être utilisé avec l’API Graph de Facebook. Par exemple, le code suivant retourne des informations à partir de l’API Graph sur le compte Xamarin (en développant le code indiqué ci-dessus) :
+Semblable à l’exemple Twitter, l’objet `SLRequest` de l’infrastructure sociale peut être utilisé avec l’API Graph de Facebook. Par exemple, le code suivant retourne des informations à partir de l’API Graph sur le compte Xamarin (en développant le code indiqué ci-dessus) :
 
 ```csharp
 using Accounts;
@@ -471,7 +468,7 @@ Si vous ne définissez pas cette option (ou si vous utilisez une clé non valide
 
 ## <a name="summary"></a>Récapitulatif
 
-Cet article a montré comment utiliser l’infrastructure sociale pour interagir avec Twitter et Facebook. Il a montré comment configurer des comptes pour chaque réseau social dans les paramètres de l’appareil. Elle a également expliqué comment utiliser le `SLComposeViewController` pour présenter une vue unifiée pour la publication sur des réseaux sociaux. En outre, il a examiné `SLRequest` la classe utilisée pour appeler l’API de chaque réseau social.
+Cet article a montré comment utiliser l’infrastructure sociale pour interagir avec Twitter et Facebook. Il a montré comment configurer des comptes pour chaque réseau social dans les paramètres de l’appareil. Elle a également expliqué comment utiliser l' `SLComposeViewController` pour présenter une vue unifiée pour la publication sur des réseaux sociaux. En outre, il a examiné la classe `SLRequest` utilisée pour appeler l’API de chaque réseau social.
 
 ## <a name="related-links"></a>Liens associés
 

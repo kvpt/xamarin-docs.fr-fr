@@ -4,15 +4,15 @@ description: Ce document fournit une description de Xamarin.iOS pour les dévelo
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 2970253ec15ca207b9f69e2b764e0a69f8037938
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2c5451b379968230d75599601052e3a33f5b5951
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753512"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022440"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin pour les développeurs Objective-C
 
@@ -20,7 +20,7 @@ Xamarin offre aux développeurs s’intéressant à iOS un moyen de transformer 
 
 Par ailleurs, Xamarin permet de tirer parti des ressources Objective-C existantes au moyen d’une technologie appelée liaison. Il vous suffit de créer une bibliothèque statique dans Objective-C et de l’exposer à C# grâce à une liaison, comme dans le diagramme suivant :
 
- [![](images/01-bindings.png "Bibliothèque statique dans Objective-C exposée à C# via une liaison")](images/01-bindings.png#lightbox)
+ [![](images/01-bindings.png "A static library in Objective-C exposed to C# via a binding")](images/01-bindings.png#lightbox)
 
 Cela ne se limite pas forcément au code sans interface utilisateur. Des liaisons peuvent également exposer du code d’interface utilisateur développé en Objective-C.
 
@@ -29,7 +29,7 @@ Cela ne se limite pas forcément au code sans interface utilisateur. Des liaison
 Pour faciliter la transition à Xamarin, vous trouverez une multitude d’informations sur notre site de documentation, qui vous montrera comment intégrer du code C# avec ce que vous connaissez déjà. Voici quelques liens importants pour bien démarrer :
 
 - [Premier manuel C# pour les développeurs Objective-C](primer.md) : un court manuel de démarrage pour les développeurs Objective-C qui souhaitent passer à Xamarin et au langage C#. 
-- [Procédure pas à pas : Lier une bibliothèque Objective-C](~/ios/platform/binding-objective-c/walkthrough.md) : les étapes à suivre pour réutiliser du code Objective-C existant dans une application Xamarin.iOS. 
+- [Procédure pas à pas : lier une bibliothèque Objective-C](~/ios/platform/binding-objective-c/walkthrough.md) : les étapes à suivre pour réutiliser du code Objective-C existant dans une application Xamarin.iOS. 
 
 ## <a name="binding-objective-c"></a>Liaison Objective-C
 

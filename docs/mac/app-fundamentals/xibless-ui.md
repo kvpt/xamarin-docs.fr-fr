@@ -4,15 +4,15 @@ description: Cet article explique comment créer une interface utilisateur de l�
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b189f80e2875e1e025128fee372e732f3ef28f22
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770154"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021722"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. Storyboard/. XIB-conception de l’interface utilisateur moins dans Xamarin. Mac
 

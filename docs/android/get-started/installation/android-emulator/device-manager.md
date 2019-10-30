@@ -5,20 +5,20 @@ zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 682fc5c2241ab3177b12f46dd31d264a4f58b951
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250089"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021151"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Gestion des appareils virtuels avec Android Device Manager
 
-_Cet article décrit comment utiliser Android Device Manager pour créer et configurer des appareils virtuels Android (AVD) qui émulent des appareils physiques Android. Vous pouvez utiliser ces appareils virtuels pour exécuter et tester votre application sans avoir à dépendre d’un appareil physique._
+_Cet article explique comment utiliser l’Android Device Manager pour créer et configurer des appareils virtuels Android (AVD) qui émulent des appareils Android physiques. Vous pouvez utiliser ces appareils virtuels pour exécuter et tester votre application sans avoir à vous fier à un appareil physique._
 
 Après avoir vérifié que l’accélération matérielle était activée (comme décrit dans [Accélération matérielle de l’émulateur Android](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), l’étape suivante consiste à utiliser _Android Device Manager_ (également appelé _Xamarin Android Device Manager_) afin de créer des appareils virtuels que vous pouvez utiliser pour tester et déboguer votre application.
 
@@ -33,7 +33,7 @@ Cet article explique comment utiliser Android Device Manager pour créer, dupliq
 Vous utilisez Android Device Manager pour créer et configurer des _appareils virtuels Android_ (AVD) que vous exécutez dans l’[émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 Chaque AVD est une configuration d’émulateur qui simule un appareil Android physique. Vous pouvez ainsi exécuter et tester votre application dans diverses configurations qui simulent différents appareils Android physiques.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser Android Device Manager, vous devez disposer des éléments suivants :
 
@@ -70,7 +70,7 @@ Si la boîte de dialogue d’erreur suivante est présentée au lancement, consu
 
 Lorsque vous lancez pour la première fois le Gestionnaire d’appareils Android, un écran affichant tous les appareils virtuels actuellement configurés s’affiche. Pour chaque appareil virtuel, le **Nom**, l’**OS** (version d’Android), le **Processeur**, la quantité de **Mémoire**, ainsi que la **Résolution** d’écran sont affichés :
 
-[![Liste des appareils installés avec leurs paramètres](device-manager-images/win/05-installed-list-sml.png)](device-manager-images/win/05-installed-list.png#lightbox)
+[![Liste des appareils installés et leurs paramètres](device-manager-images/win/05-installed-list-sml.png)](device-manager-images/win/05-installed-list.png#lightbox)
 
 Quand vous sélectionnez un appareil dans la liste, le bouton **Démarrer** apparaît à droite. Vous pouvez cliquer sur le bouton **Démarrer** pour lancer l’émulateur avec cet appareil virtuel :
 
@@ -203,7 +203,7 @@ Xamarin Studio n’est pas compatible avec Android Device Manager.
 Vous utilisez Android Device Manager pour créer et configurer des *appareils virtuels Android* (AVD) que vous exécutez dans l’[émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 Chaque AVD est une configuration d’émulateur qui simule un appareil Android physique. Vous pouvez ainsi exécuter et tester votre application dans diverses configurations qui simulent différents appareils Android physiques.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour utiliser Android Device Manager, vous devez disposer des éléments suivants :
 
@@ -234,7 +234,7 @@ Si la boîte de dialogue d’erreur suivante est présentée au lancement, consu
 
 Lorsque vous lancez pour la première fois le Gestionnaire d’appareils Android, un écran affichant tous les appareils virtuels actuellement configurés s’affiche. Pour chaque appareil virtuel, le **Nom**, l’**OS** (version d’Android), le **Processeur**, la quantité de **Mémoire**, ainsi que la **Résolution** d’écran sont affichés :
 
-[![Liste des appareils installés avec leurs paramètres](device-manager-images/mac/05-devices-list-sml.png)](device-manager-images/mac/05-devices-list.png#lightbox)
+[![Liste des appareils installés et leurs paramètres](device-manager-images/mac/05-devices-list-sml.png)](device-manager-images/mac/05-devices-list.png#lightbox)
 
 Quand vous sélectionnez un appareil dans la liste, le bouton **Lecture** apparaît à droite. Vous pouvez cliquer sur le bouton **Lecture** pour lancer l’émulateur avec cet appareil virtuel :
 
@@ -383,7 +383,7 @@ Pour contourner ce problème, effectuez les étapes suivantes :
 
    ![Emplacement du fichier journal d’Android Device Manager](device-manager-images/win/30-log-files.png)
 
-2. Double-cliquez pour ouvrir l’un des fichiers journaux et recherchez le **chemin du fichier config**. Par exemple :
+2. Double-cliquez pour ouvrir l’un des fichiers journaux et recherchez le **chemin du fichier config**. Exemple :
 
    [![Chemin du fichier config dans le fichier journal](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -487,7 +487,7 @@ Ce guide vous a présenté Android Device Manager, disponible dans Visual Studio
 
 ## <a name="related-links"></a>Liens associés
 
-- [Modifications des outils Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+- [Modifications des outils du kit Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [Débogage sur l’émulateur Android](~/android/deploy-test/debugging/debug-on-emulator.md)
 - [Notes de publication de SDK Tools (Google)](https://developer.android.com/studio/releases/sdk-tools)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

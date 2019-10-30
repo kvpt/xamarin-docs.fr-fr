@@ -3,15 +3,15 @@ title: Pourquoi Visual Studio ne contient pas mon projet de bibliothèque réfé
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: b9009db8-e716-43aa-b40e-6f28a8eb1b82
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 37fa93ef7377456d61d1a5f5de56d5de6b0f3c7f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: aba2e9dacd930c6302a96a8daf929eadab485922
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282909"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73012755"
 ---
 # <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>Pourquoi Visual Studio ne contient pas mon projet de bibliothèque référencée dans ma build ?
 
@@ -28,4 +28,4 @@ Certains modèles qui sont générés avec un projet de bibliothèque référenc
 > [!NOTE]
 > Les zones grisées sont gérées automatiquement et ne doivent pas être modifiées.
 
-Capture vidéo de ces étapes :[http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)
+Capture vidéo de ces étapes : [https://screencast.com/t/zLoQOpEn](https://screencast.com/t/zLoQOpEn)

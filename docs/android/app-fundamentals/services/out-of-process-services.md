@@ -4,15 +4,15 @@ description: En règle générale, tous les composants d’une application Andro
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 5429f260399602b7ef15e8263bc74cb8ae940f4f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: fda5ed3b2a26166e23d4a796219758853d0aace7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754885"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024550"
 ---
 # <a name="running-android-services-in-remote-processes"></a>Exécution des services Android dans des processus distants
 
@@ -469,7 +469,7 @@ Ensuite, **fichier AndroidManifest. xml** du client apk doit demander explicitem
 
 Pour afficher les autorisations accordées à une application, ouvrez l’application paramètres Android, puis sélectionnez **applications**. Recherchez et sélectionnez l’application dans la liste. Dans l’écran informations sur l' **application** , appuyez sur **autorisations** pour afficher une vue qui affiche toutes les autorisations accordées à l’application :
 
-[![Screenshots à partir d’un appareil Android qui montre comment trouver les autorisations accordées à une application](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[![captures d’écran d’un appareil Android montrant comment trouver les autorisations accordées à une application](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>Récapitulatif
 

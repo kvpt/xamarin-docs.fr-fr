@@ -5,26 +5,26 @@ ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61d1adfc997b34302f1f89f56653af906ca90135
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291803"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022225"
 ---
 # <a name="binding-ios-libraries"></a>Liaison de bibliothèques iOS
 
 Suivez ces liens pour en savoir plus sur la liaison de bibliothèques objective-C et CocoaPods pour Xamarin. iOS et Xamarin. Mac :
 
 - [**Vue d’ensemble**](~/cross-platform/macios/binding/overview.md) -
-  Décrit le fonctionnement de la liaison.
-- [**Liaison des bibliothèques objective-C**](~/cross-platform/macios/binding/objective-c-libraries.md) -
-  Instructions sur la façon de lier des bibliothèques objective-C pour une utilisation dans des projets Xamarin.
-- [**Guide de référence des définitions de types**](~/cross-platform/macios/binding/binding-types-reference.md) -
-  Décrit tous les attributs disponibles pour lier des auteurs afin de piloter le processus de génération de liaison.
+  décrit le fonctionnement de la liaison.
+- [**Liaison des bibliothèques objective-c**](~/cross-platform/macios/binding/objective-c-libraries.md) -
+  des instructions sur la façon de lier des bibliothèques objective-c pour une utilisation dans des projets Xamarin.
+- [**Guide de référence de définition de Type**](~/cross-platform/macios/binding/binding-types-reference.md) -
+  décrit tous les attributs disponibles pour lier les auteurs afin de piloter le processus de génération de liaison.
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

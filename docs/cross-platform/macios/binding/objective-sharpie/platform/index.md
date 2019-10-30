@@ -3,15 +3,15 @@ title: Caractéristiques de la finesse d’objectif
 description: Ce document contient des liens vers divers guides qui vous aident à décrire la finesse d’objectif, comment l’utiliser et la sortie qu’il génère.
 ms.prod: xamarin
 ms.assetid: 9A17A2C6-AFFD-41E2-BE9B-9BC1AA57E1E1
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: dfbfd443b06518bccbf3b71fcc27acac0bca7481
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40f73a3f069c762266704d710080c324aa731ecf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279098"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016173"
 ---
 # <a name="objective-sharpie-features"></a>Caractéristiques de la finesse d’objectif
 
@@ -24,8 +24,8 @@ Ces deux fichiers sont émis par objective Sharp, à inclure dans votre projet d
 ## <a name="native-frameworksnative-frameworksmd"></a>[**Infrastructures natives**](native-frameworks.md)
 
 Certaines bibliothèques sont distribuées en tant que structures et non en tant que source.
-La précision objective vous permet d’utiliser ces bibliothèques `-framework` avec l’option.
+La précision objective vous permet d’utiliser ces bibliothèques avec l’option `-framework`.
 
 ## <a name="verifyverifymd"></a>[**Confirmation**](verify.md)
 
-Objectivité précise ajoutez `Verify` des attributs pour signaler que vous devez inspecter et mettre à jour manuellement la liaison générée. 
+Force Sharpive ajoutez `Verify` attributs pour signaler que vous devez inspecter et mettre à jour manuellement la liaison générée. 

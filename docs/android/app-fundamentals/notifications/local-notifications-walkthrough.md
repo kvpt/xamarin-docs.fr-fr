@@ -4,27 +4,27 @@ description: Cette procédure pas à pas montre comment utiliser des notificatio
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/16/2018
-ms.openlocfilehash: caef124228ab4ec4356b10c0559d2abe33d1531f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6d48d650b0900e71b7d3d4d5e1ff1ac919dcb948
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755277"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025547"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Procédure pas à pas : utilisation de notifications locales dans Xamarin. Android
 
 _Cette procédure pas à pas montre comment utiliser des notifications locales dans des applications Xamarin. Android. Il montre les principes fondamentaux de la création et de la publication d’une notification locale. Quand l’utilisateur clique sur la notification dans la zone de notification, il démarre une deuxième activité._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Dans cette procédure pas à pas, nous allons créer une application Android qui déclenche une notification lorsque l’utilisateur clique sur un bouton dans une activité. Quand l’utilisateur clique sur la notification, il lance une deuxième activité qui affiche le nombre de fois où l’utilisateur a cliqué sur le bouton dans la première activité.
 
 Les captures d’écran suivantes illustrent quelques exemples de cette application :
 
-[![Exemples de captures d’écran avec notification](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
+[![des exemples de captures d’écran avec notification](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 > [!NOTE]
 > Ce guide se concentre sur les [API NotificationCompat](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html) à partir de la [bibliothèque de prise en charge Android](https://www.nuget.org/packages/Xamarin.Android.Support.v4/). Ces API garantissent une compatibilité descendante maximale avec Android 4,0 (niveau d’API 14).
@@ -49,15 +49,15 @@ Modifiez le fichier de ressources **values/Strings. xml** de sorte qu’il conti
 
 ### <a name="add-the-androidsupportv4-nuget-package"></a>Ajouter le package NuGet Android. support. v4
 
-Dans cette procédure pas à pas, `NotificationCompat.Builder` nous utilisons pour créer notre notification locale. Comme expliqué dans [notifications locales](~/android/app-fundamentals/notifications/local-notifications.md), nous devons inclure la [bibliothèque de prise en charge Android v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet dans `NotificationCompat.Builder`notre projet à utiliser.
+Dans cette procédure pas à pas, nous utilisons `NotificationCompat.Builder` pour créer notre notification locale. Comme expliqué dans [notifications locales](~/android/app-fundamentals/notifications/local-notifications.md), nous devons inclure la [bibliothèque de prise en charge Android v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet dans notre projet pour utiliser `NotificationCompat.Builder`.
 
-Ensuite, nous allons modifier **MainActivity.cs** et ajouter l’instruction `using` suivante afin que les types de `Android.Support.V4.App` soient disponibles pour notre code :
+Ensuite, modifiez **MainActivity.cs** et ajoutez l’instruction `using` suivante afin que les types de `Android.Support.V4.App` soient disponibles pour notre code :
 
 ```csharp
 using Android.Support.V4.App;
 ```
 
-En outre, nous devons préciser au compilateur que nous utilisons la `Android.Support.V4.App` version de `TaskStackBuilder` plutôt que la `Android.App` version. Ajoutez l’instruction `using` suivante pour résoudre toute ambiguïté :
+En outre, nous devons préciser au compilateur que nous utilisons la version `Android.Support.V4.App` de `TaskStackBuilder` plutôt que la version `Android.App`. Ajoutez l’instruction `using` suivante pour résoudre toute ambiguïté :
 
 ```csharp
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
@@ -65,7 +65,7 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 
 ### <a name="create-the-notification-channel"></a>Créer le canal de notification
 
-Ensuite, ajoutez une méthode à `MainActivity` qui créera un canal de notification (si nécessaire) :
+Ensuite, ajoutez une méthode pour `MainActivity` qui créera un canal de notification (si nécessaire) :
 
 ```csharp
 void CreateNotificationChannel()
@@ -90,7 +90,7 @@ void CreateNotificationChannel()
 }
 ```
 
-Mettez à `OnCreate` jour la méthode pour appeler cette nouvelle méthode :
+Mettez à jour la méthode `OnCreate` pour appeler cette nouvelle méthode :
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -104,7 +104,7 @@ protected override void OnCreate(Bundle bundle)
 
 ### <a name="define-the-notification-id"></a>Définir l’ID de notification
 
-Nous aurons besoin d’un ID unique pour notre canal de notification et de notification. Nous allons modifier **MainActivity.cs** et ajouter la variable d’instance statique suivante à `MainActivity` la classe :
+Nous aurons besoin d’un ID unique pour notre canal de notification et de notification. Nous allons modifier **MainActivity.cs** et ajouter la variable d’instance statique suivante à la classe `MainActivity` :
 
 ```csharp
 static readonly int NOTIFICATION_ID = 1000;
@@ -114,7 +114,7 @@ internal static readonly string COUNT_KEY = "count";
 
 ### <a name="add-code-to-generate-the-notification"></a>Ajouter du code pour générer la notification
 
-Ensuite, nous devons créer un nouveau gestionnaire d’événements pour l’événement `Click` de bouton. Ajoutez la méthode suivante à `MainActivity` :
+Ensuite, nous devons créer un nouveau gestionnaire d’événements pour le bouton `Click` événement. Ajoutez la méthode suivante à `MainActivity` :
 
 ```csharp
 void ButtonOnClick(object sender, EventArgs eventArgs)
@@ -155,7 +155,7 @@ void ButtonOnClick(object sender, EventArgs eventArgs)
 }
 ```
 
-La `OnCreate` méthode de MainActivity doit effectuer l’appel pour créer le canal de notification et assigner la `Click` `ButtonOnClick` méthode à l’événement du bouton (remplacez le gestionnaire d’événements délégué fourni par le modèle) :
+La méthode `OnCreate` de MainActivity doit effectuer l’appel pour créer le canal de notification et assigner la méthode `ButtonOnClick` à l’événement `Click` du bouton (remplacez le gestionnaire d’événements délégué fourni par le modèle) :
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -229,31 +229,31 @@ Nous devons également créer une disposition des ressources pour **SecondActivi
 
 ### <a name="add-a-notification-icon"></a>Icône Ajouter une notification
 
-Enfin, ajoutez une petite icône qui s’affiche dans la zone de notification lorsque la notification est lancée. Vous pouvez copier [cette icône](local-notifications-walkthrough-images/ic-stat-button-click.png) dans votre projet ou créer votre propre icône personnalisée. Nommez le **\_bouton\_fichier\_icône de stats IC Click. png** et copiez-le dans le dossier **ressources/dessinable** . N’oubliez pas d’utiliser **ajouter > élément existant...** pour inclure ce fichier d’icône dans votre projet.
+Enfin, ajoutez une petite icône qui s’affiche dans la zone de notification lorsque la notification est lancée. Vous pouvez copier [cette icône](local-notifications-walkthrough-images/ic-stat-button-click.png) dans votre projet ou créer votre propre icône personnalisée. Nommez le bouton fichier icône **ic\_stat\_\_cliquez sur. png** et copiez-le dans le dossier **ressources/dessinable** . N’oubliez pas d’utiliser **ajouter > élément existant...** pour inclure ce fichier d’icône dans votre projet.
 
-### <a name="run-the-application"></a>Exécution de l'application
+### <a name="run-the-application"></a>Exécuter l'application
 
 Générez et exécutez l’application. La première activité doit être présentée, comme dans la capture d’écran suivante :
 
-[![Capture d’écran première activité](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
+[capture d’écran![première activité](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 Lorsque vous cliquez sur le bouton, vous remarquerez que la petite icône de la notification s’affiche dans la zone de notification :
 
-[![Icône de notification s’affiche](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
+[![icône de notification s’affiche](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 Si vous faites défiler vers le dessous et exposez le tiroir de notification, la notification suivante doit s’afficher :
 
-[![Message de notification](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
+[![message de notification](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
-Lorsque vous cliquez sur la notification, celle-ci doit disparaître, et l’autre activité &ndash; doit être lancée en regardant un peu comme la capture d’écran suivante :
+Lorsque vous cliquez sur la notification, elle doit disparaître, et l’autre activité doit être lancée &ndash; ressembler à la capture d’écran suivante :
 
-[![Capture d’écran de la deuxième activité](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
+[capture d’écran![deuxième activité](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 Félicitations ! À ce stade, vous avez terminé la procédure pas à pas de notification locale Android et vous disposez d’un exemple fonctionnel auquel vous pouvez vous référer. Il y a beaucoup plus de notifications que nous n’avons indiquées ici. par conséquent, si vous souhaitez plus d’informations, consultez [la documentation de Google sur les notifications](https://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
 ## <a name="summary"></a>Récapitulatif
 
-Cette procédure pas `NotificationCompat.Builder` à pas permet de créer et d’afficher des notifications. Il a montré un exemple simple montrant comment démarrer une deuxième activité pour répondre à l’interaction de l’utilisateur avec la notification, et elle a démontré le transfert de données de la première activité à la deuxième.
+Cette procédure pas à pas a utilisé `NotificationCompat.Builder` pour créer et afficher des notifications. Il a montré un exemple simple montrant comment démarrer une deuxième activité pour répondre à l’interaction de l’utilisateur avec la notification, et elle a démontré le transfert de données de la première activité à la deuxième.
 
 ## <a name="related-links"></a>Liens associés
 
@@ -261,5 +261,5 @@ Cette procédure pas `NotificationCompat.Builder` à pas permet de créer et d�
 - [Canaux de notification Android Oreo](https://blog.xamarin.com/android-oreo-notification-channels/)
 - [Notification](xref:Android.App.Notification)
 - [NotificationManager](xref:Android.App.NotificationManager)
-- [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
+- [NotificationCompat. Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
 - [PendingIntent](xref:Android.App.PendingIntent)

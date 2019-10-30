@@ -4,15 +4,15 @@ description: Ce document traite des diapositives, des commutateurs et des contr�
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: e95a514286c68879eac4ee80f2c95882b4e2b5b6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 763165f1e09f847745b820987f8dbbae8f834fd7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768469"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021951"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Curseurs, commutateurs et contrôles segmentés dans Xamarin. iOS
 
@@ -22,13 +22,13 @@ ms.locfileid: "70768469"
 
 Le contrôle Slider permet une sélection simple d’une valeur numérique dans une plage. La valeur par défaut du contrôle est comprise entre 0 et 1, mais ces limites peuvent être personnalisées.
 
- [![](slider-switch-segmented-controls-images/image25a.png "Curseur")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image25a.png "Slider")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 La capture d’écran suivante montre les propriétés qui sont modifiables dans le concepteur :
 
- [![](slider-switch-segmented-controls-images/image26a.png "Propriétés du curseur")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image26a.png "Slider Properties")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-Vous pouvez définir ces valeurs dans le code comme indiqué ci-dessous, y compris l’installation d’un gestionnaire pour afficher la `UILabel` valeur actuellement sélectionnée dans un contrôle :
+Vous pouvez définir ces valeurs dans le code comme indiqué ci-dessous, y compris l’installation d’un gestionnaire pour afficher la valeur actuellement sélectionnée dans un contrôle `UILabel` :
 
 ```csharp
 slider1.MinValue = -1;
@@ -47,10 +47,10 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 Le curseur personnalisé ressemble à ceci :
 
- [![](slider-switch-segmented-controls-images/image27a.png "Curseur personnalisé")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image27a.png "Custom Slider")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> Il existe actuellement un [bogue](https://stackoverflow.com/a/19496179) qui `ThumbTint` provoque l’imprécision du rendu au moment de l’exécution comme prévu. Vous pouvez ajouter la ligne de code suivante **avant** le code ci-dessus comme solution de contournement. [[Source](https://stackoverflow.com/a/21396794)] :
+> Il existe actuellement un [bogue](https://stackoverflow.com/a/19496179) qui empêche le rendu de l' `ThumbTint` au moment de l’exécution comme prévu. Vous pouvez ajouter la ligne de code suivante **avant** le code ci-dessus comme solution de contournement. [[Source](https://stackoverflow.com/a/21396794)] :
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
@@ -60,15 +60,15 @@ Le curseur personnalisé ressemble à ceci :
 
 ## <a name="switch"></a>Basculer
 
-iOS utilise `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. L’utilisateur peut manipuler le contrôle en déplaçant le *curseur* entre les positions **on/off** .
+iOS utilise le `UISwitch` comme entrée booléenne qui peut être représentée par un bouton radio sur d’autres plateformes. L’utilisateur peut manipuler le contrôle en déplaçant le *curseur* entre les positions **on/off** .
 
- [![](slider-switch-segmented-controls-images/image28a.png "Utilisez")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 L’apparence du commutateur peut être personnalisée dans le **panneau Propriétés** du concepteur, ce qui vous permet de contrôler l’État par défaut, les couleurs **de teinte d’activation/de désactivation** et une **image d’activation/de désactivation**. Cela est illustré dans l’image ci-dessous :
 
- [![](slider-switch-segmented-controls-images/image29a.png "Propriétés du commutateur")](slider-switch-segmented-controls-images/image29a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image29a.png "Switch Properties")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
-Les propriétés du commutateur peuvent également être définies dans le code `On`. par exemple, le code ci-dessous affiche un commutateur avec la valeur par défaut :
+Les propriétés du commutateur peuvent également être définies dans le code. par exemple, le code ci-dessous affiche un commutateur avec la valeur par défaut `On`:
 
 ```csharp
 switch1.On = true;
@@ -80,15 +80,15 @@ switch1.On = true;
 
 Un contrôle segmenté est un moyen organisé pour permettre aux utilisateurs d’interagir avec un petit nombre d’options. Il est disposé horizontalement et chaque segment fonctionne comme un bouton distinct. Lorsque vous utilisez le concepteur, le contrôle segmenté se trouve sous la **boîte à outils > les contrôles**et doit ressembler à l’image suivante :
 
- [![](slider-switch-segmented-controls-images/segmentedcontrol.png "Contrôle segmenté")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrol.png "Segmented Control")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
 Une fonctionnalité unique du concepteur permet de sélectionner individuellement chaque segment sur l’aire de conception, comme illustré ci-dessous :
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Contrôle segmenté")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Segmented Control")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
 Cela permet à l’Panneau Propriétés d’être utilisé pour contrôler plus précisément les propriétés de chaque segment. Vous pouvez voir les propriétés modifiables dans la capture d’écran ci-dessous :
 
- [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Contrôle segmenté")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Segmented Control")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
 Il convient de noter que le style de contrôle segmenté est déconseillé dans iOS7 et, par conséquent, l’ajustement des options pour cela dans une application iOS7 n’aura aucun effet.
 

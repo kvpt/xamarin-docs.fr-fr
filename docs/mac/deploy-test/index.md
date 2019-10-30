@@ -4,15 +4,15 @@ description: Ce document fournit des liens vers des guides qui décrivent commen
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/17/2018
-ms.openlocfilehash: 13a6d46a1c9193a91030f2d90c167fb14d7cae7c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9623e91589c6ba094dda5a7fcd081219f5d25fd2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291497"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030034"
 ---
 # <a name="deploying-and-testing-xamarinmac-apps"></a>Déploiement et test des applications Xamarin.Mac
 
@@ -20,7 +20,7 @@ ms.locfileid: "70291497"
 
 Cet article traite de la création des images nécessaires à l’icône d’une application Xamarin.Mac, de leur regroupement dans un fichier .icns et de l’ajout de l’icône dans le projet Xamarin.Mac.
 
-## <a name="performanceperformancemd"></a>[Performances](performance.md)
+## <a name="performanceperformancemd"></a>[Performancess](performance.md)
 
 Conseil pour améliorer les performances de votre application Xamarin.Mac.
 

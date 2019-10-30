@@ -4,15 +4,15 @@ description: Ce document décrit Xamarin. iOS à un niveau bas, en expliquant co
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e5dbc04e52aea4307716c343df5757d0fe012b74
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768536"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022388"
 ---
 # <a name="ios-app-architecture"></a>Architecture des applications iOS
 
@@ -20,9 +20,9 @@ Les applications Xamarin. iOS s’exécutent dans l’environnement d’exécuti
 
 Le diagramme ci-dessous illustre une vue d’ensemble de cette architecture :
 
-[![](architecture-images/ios-arch-small.png "Ce diagramme illustre une vue d’ensemble de base de l’architecture de compilation de l’heure d’été")](architecture-images/ios-arch.png#lightbox)
+[![](architecture-images/ios-arch-small.png "This diagram shows a basic overview of the Ahead of Time (AOT) compilation architecture")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>Code natif et managé : Explication
+## <a name="native-and-managed-code-an-explanation"></a>Code natif et managé : explication
 
 Lors du développement pour Xamarin, les termes *natif et code managé* sont souvent utilisés. Le code [managé](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) est du code dont l’exécution est gérée par le [common Language Runtime .NET Framework](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), ou dans le cas de Xamarin : le runtime mono. C’est ce que nous appelons un langage intermédiaire.
 
@@ -35,7 +35,7 @@ Quand vous compilez une application de plateforme Xamarin C# , le F#compilateur 
 Toutefois, il existe une restriction de sécurité sur iOS, définie par Apple, qui interdit l’exécution de code généré dynamiquement sur un appareil.
 Pour garantir que nous respectons ces protocoles de sécurité, Xamarin. iOS utilise à la place un compilateur d’anticipation du temps (AOA) pour compiler le code managé. Cela génère un fichier binaire iOS natif, éventuellement optimisé avec LLVM pour les appareils, qui peut être déployé sur le processeur ARM d’Apple. Un diagramme approximatif de la façon dont cela s’ajuste à l’ensemble est illustré ci-dessous :
 
-[![](architecture-images/aot.png "Diagramme approximatif de la façon dont cela s’ajuste")](architecture-images/aot-large.png#lightbox)
+[![](architecture-images/aot.png "A rough diagram of how this fits together")](architecture-images/aot-large.png#lightbox)
 
 L’utilisation de l’AOA présente un certain nombre de limitations, qui sont détaillées dans le guide des [limitations](~/ios/internals/limitations.md) . Il fournit également un certain nombre d’améliorations par rapport à JIT grâce à une réduction du temps de démarrage et à diverses optimisations de performances.
 
@@ -52,7 +52,7 @@ Pour plus d’informations sur l’utilisation des sélecteurs, reportez-vous au
 
 Comme indiqué ci-dessus, le Bureau d’enregistrement est du code qui expose du code managé à Objective-C. Pour ce faire, il crée une liste de toutes les classes managées qui dérivent de NSObject :
 
-- Pour toutes les classes qui n’encapsulent pas une classe objective-c existante, elle crée une nouvelle classe objective-c avec des membres objective-c qui reflètent tous`Export`les membres managés ayant un attribut [].
+- Pour toutes les classes qui n’encapsulent pas une classe objective-C existante, elle crée une nouvelle classe objective-C avec des membres objective-c qui reflètent tous les membres managés ayant un attribut [`Export`].
 
 - Dans les implémentations pour chaque membre objective – C, le code est ajouté automatiquement pour appeler le membre managé mis en miroir.
 
@@ -88,27 +88,27 @@ Le pseudo-code ci-dessous montre un exemple de cette opération :
 ```
 
 Le code managé peut contenir les attributs, `[Register]` et `[Export]`, que le Bureau d’enregistrement utilise pour savoir que l’objet doit être exposé à Objective-C.
-L' `[Register]` attribut est utilisé pour spécifier le nom de la classe objective-C générée si le nom généré par défaut n’est pas approprié. Toutes les classes dérivées de NSObject sont automatiquement inscrites avec Objective-C.
-L’attribut `[Export]` required contient une chaîne, qui est le sélecteur utilisé dans la classe objective-C générée.
+L’attribut `[Register]` est utilisé pour spécifier le nom de la classe objective-C générée si le nom généré par défaut n’est pas approprié. Toutes les classes dérivées de NSObject sont automatiquement inscrites avec Objective-C.
+L’attribut `[Export]` requis contient une chaîne, qui est le sélecteur utilisé dans la classe objective-C générée.
 
 Il existe deux types d’bureaux d’enregistrement utilisés dans Xamarin. iOS : dynamique et statique :
 
 - Registraires **dynamiques** : le Bureau d’enregistrement dynamique procède à l’inscription de tous les types de votre assembly au moment de l’exécution. Pour ce faire, il utilise les fonctions fournies par l' [API Runtime objective-C](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/). Le Bureau d’enregistrement dynamique a donc un démarrage plus lent, mais une génération plus rapide. Il s’agit de la valeur par défaut pour le simulateur iOS. Les fonctions natives (généralement en C), appelées trampolines, sont utilisées en tant qu’implémentations de méthode lors de l’utilisation des registres dynamiques. Ils varient en fonction des différentes architectures.
 
-- **Bureaux d’enregistrement statiques** : le Bureau d’enregistrement statique génère du code Objective-C pendant la génération, qui est ensuite compilé dans une bibliothèque statique et lié à l’exécutable. Cela permet un démarrage plus rapide, mais prend plus de temps pendant la génération. Cela est utilisé par défaut pour les builds d’appareils. Le Bureau d’enregistrement statique peut également être utilisé avec le simulateur `--registrar:static` IOS en `mtouch` passant en tant qu’attribut dans les options de génération de votre projet, comme indiqué ci-dessous :
+- **Bureaux d’enregistrement statiques** : le Bureau d’enregistrement statique génère du code Objective-C pendant la génération, qui est ensuite compilé dans une bibliothèque statique et lié à l’exécutable. Cela permet un démarrage plus rapide, mais prend plus de temps pendant la génération. Cela est utilisé par défaut pour les builds d’appareils. Le Bureau d’enregistrement statique peut également être utilisé avec le simulateur iOS en passant `--registrar:static` en tant qu’attribut `mtouch` dans les options de génération de votre projet, comme indiqué ci-dessous :
 
-    [![](architecture-images/image1.png "Définition d’arguments mTouch supplémentaires")](architecture-images/image1.png#lightbox)
+    [![](architecture-images/image1.png "Setting Additional mtouch arguments")](architecture-images/image1.png#lightbox)
 
 Pour plus d’informations sur les caractéristiques du système d’inscription de type iOS utilisé par Xamarin. iOS, reportez-vous au Guide du [registraire de type](~/ios/internals/registrar.md) .
 
 ## <a name="application-launch"></a>Lancement de l’application
 
-Le point d’entrée de tous les exécutables Xamarin. IOS est fourni par `xamarin_main`une fonction appelée, qui initialise mono.
+Le point d’entrée de tous les exécutables Xamarin. iOS est fourni par une fonction appelée `xamarin_main`, qui initialise mono.
 
 En fonction du type de projet, les opérations suivantes sont effectuées :
 
-- Pour les applications iOS et tvOS normales, la méthode main managée, fournie par l’application Xamarin, est appelée. Cette méthode main managée appelle `UIApplication.Main`alors, qui est le point d’entrée pour objective-C. UIApplication. main est la liaison de la `UIApplicationMain` méthode objective-C.
-- Pour les extensions, la fonction native `NSExtensionMain` – ou`NSExtensionmain` (pour les extensions espionneos), fournie par les bibliothèques Apple, est appelée. Étant donné que ces projets sont des bibliothèques de classes et non des projets exécutables, il n’existe aucune méthode main managée à exécuter.
+- Pour les applications iOS et tvOS normales, la méthode main managée, fournie par l’application Xamarin, est appelée. Cette méthode main managée appelle ensuite `UIApplication.Main`, qui est le point d’entrée pour objective-C. UIApplication. main est la liaison de la méthode `UIApplicationMain` objective-C.
+- Pour les extensions, la fonction native – `NSExtensionMain` ou (`NSExtensionmain` pour les extensions Watchos), fournie par Apple Libraries, est appelée. Étant donné que ces projets sont des bibliothèques de classes et non des projets exécutables, il n’existe aucune méthode main managée à exécuter.
 
 Toute cette séquence de lancement est compilée dans une bibliothèque statique, qui est ensuite liée à votre exécutable final pour que votre application sache comment sortir du sol.
 
@@ -152,7 +152,7 @@ public interface UIToolbar : UIBarPositioning {
 ```
 
 Le générateur, appelé [`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs) dans Xamarin. iOS, prend ces fichiers de définition et utilise les outils .net pour [les compiler dans un assembly temporaire](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318). Toutefois, cet assembly temporaire n’est pas utilisable pour appeler du code Objective-C. Le générateur lit ensuite l’assembly temporaire et C# génère du code qui peut être utilisé au moment de l’exécution.
-C’est pourquoi, par exemple, si vous ajoutez un attribut aléatoire à votre fichier Definition. cs, il n’apparaît pas dans le code généré. Le générateur ne le sait pas et, `btouch` par conséquent, ne le recherche pas dans l’assembly temporaire pour le générer.
+C’est pourquoi, par exemple, si vous ajoutez un attribut aléatoire à votre fichier Definition. cs, il n’apparaît pas dans le code généré. Le générateur ne le sait pas et par conséquent `btouch` ne sait pas le Rechercher dans l’assembly temporaire pour le générer.
 
 Une fois le fichier Xamarin. iOS. dll créé, mTouch regroupe tous les composants.
 
@@ -176,4 +176,4 @@ Ce guide a examiné la compilation AOA des applications Xamarin. iOS et explorai
 - [Liaison Objective-C](~/cross-platform/macios/binding/overview.md)
 - [Sélecteurs objective-C](~/ios/internals/objective-c-selectors.md)
 - [Inscription du type](~/ios/internals/registrar.md)
-- [Éditeur de liens](~/ios/deploy-test/linker.md)
+- [Linker](~/ios/deploy-test/linker.md)

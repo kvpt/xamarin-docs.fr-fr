@@ -4,15 +4,15 @@ description: Avec iOS 8, Apple a fourni une multitude de nouvelles infrastructur
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752014"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031803"
 ---
 # <a name="introduction-to-ios-8"></a>Introduction à iOS 8
 
@@ -26,7 +26,7 @@ Ce guide présente les nouvelles API pour les développeurs Xamarin. iOS.
 
 Il existe également quelques API qui ont été dépréciées dans iOS 8, qui sont détaillées à la fin de ce document.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Les éléments suivants sont requis pour créer des applications iOS 8 dans Visual Studio pour Mac :
 
@@ -48,9 +48,9 @@ Avec HomeKit, les applications tierces et Siri peuvent découvrir des accessoire
 
 Le diagramme ci-dessous montre la hiérarchie de base de la configuration des accessoires HomeKit :
 
-![](introduction-to-ios8-images/image1.png "Ce diagramme illustre la hiérarchie de base de la configuration des accessoires HomeKit")
+![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-Pour commencer à utiliser HomeKit, les développeurs doivent s’assurer que le service HomeKit est sélectionné pour le profil de configuration. Apple a également fourni aux développeurs un complément HomeKit Simulator pour Xcode. Vous pouvez le trouver dans le [Centre de développement Apple](https://developer.apple.com/downloads/index.action), `Hardware IO Tools for Xcode`sous. 
+Pour commencer à utiliser HomeKit, les développeurs doivent s’assurer que le service HomeKit est sélectionné pour le profil de configuration. Apple a également fourni aux développeurs un complément HomeKit Simulator pour Xcode. Vous pouvez le trouver dans le [Centre de développement Apple](https://developer.apple.com/downloads/index.action), sous `Hardware IO Tools for Xcode`. 
 
 Pour plus d’informations, consultez notre guide [HomeKit](~/ios/platform/homekit.md) .
 
@@ -68,9 +68,9 @@ Les extensions d’application, pour simplifier, sont un moyen pour les applicat
 
 La première étape de la création d’une extension d’application consiste à définir le point d’extension correct, ce qui est important pour garantir le comportement et la disponibilité des API appropriées. Pour créer une extension d’application dans Visual Studio pour Mac, ajoutez-la à une application existante en ajoutant un nouveau projet à votre solution.
 
-Dans la boîte de dialogue **nouveau projet** , accédez **C#**  > à **iOS** > **API unifiée** > **Extensions**, comme illustré dans la capture d’écran ci-dessous :
+Dans la boîte de dialogue **nouveau projet** , accédez à **C#**  > **iOS** > **API unifiée** **Extensions**de > , comme illustré dans la capture d’écran ci-dessous :
 
-![](introduction-to-ios8-images/image2.png "Création d’une nouvelle extension")
+![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
 La boîte de dialogue Nouveau projet fournit sept nouveaux modèles de projet pour la création d’extensions d’application et sont décrits ci-dessous. Notez que la plupart des extensions sont liées à d’autres nouvelles API dans iOS, telles que le sélecteur de documents :
 
@@ -91,7 +91,7 @@ Il existe deux façons d’utiliser Touch ID comme mécanisme d’authentificati
 
 Tout d’abord, il aide les services de trousseau existants grâce à l’utilisation de nouvelles listes de Access Control de trousseau (ACL). Les données de trousseau peuvent être déverrouillées avec l’authentification réussie de l’empreinte digitale d’un utilisateur.
 
-Deuxièmement, LocalAuthentication fournit deux méthodes pour authentifier votre application localement. Les développeurs doivent `CanEvaluatePolicy` utiliser pour déterminer si l’appareil peut accepter l’id tactile, `EvaluatePolicy` puis démarrer l’opération d’authentification.
+Deuxièmement, LocalAuthentication fournit deux méthodes pour authentifier votre application localement. Les développeurs doivent utiliser `CanEvaluatePolicy` pour déterminer si l’appareil est en capacité d’accepter Touch ID, puis `EvaluatePolicy` pour démarrer l’opération d’authentification.
 
 Pour plus d’informations sur Touch ID et pour savoir comment l’intégrer dans une application Xamarin. iOS, reportez-vous à la présentation des guides [TouchID](~/ios/platform/touchid.md) .
 
@@ -121,7 +121,7 @@ Chaque appareil est défini par une classe de taille, à la fois dans l’axe ve
 
 Si les deux concepts sont utilisés ensemble, le résultat est une grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes, comme illustré dans le diagramme suivant :
 
-![](introduction-to-ios8-images/image3.png "Diagramme représentant la grille 2 x 2 qui définit les différentes tailles possibles qui peuvent être utilisées dans les deux orientations différentes")
+![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
 
 Pour plus d’informations sur les classes de taille, reportez-vous à la [Présentation des storyboards unifiés](~/ios/user-interface/storyboards/unified-storyboards.md).
 

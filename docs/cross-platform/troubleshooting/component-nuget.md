@@ -4,15 +4,15 @@ description: Ce document explique comment remplacer les références de votre co
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e9bd54523fa46625e9a9e6e46247b92987f3d427
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106073"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014341"
 ---
 # <a name="updating-component-references-to-nuget"></a>Mise à jour des références de composants à NuGet
 
@@ -41,7 +41,7 @@ Pour supprimer un composant de votre projet :
 
 2. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis sélectionnez **modifier {Your-Project-Name}. csproj**.
 
-3. Recherchez dans le fichier toutes les références `XamarinComponentReference`à. Elle doit ressembler à l’exemple suivant :
+3. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit ressembler à l’exemple suivant :
 
     ```xml
     <ItemGroup>
@@ -60,7 +60,7 @@ Pour supprimer un composant de votre projet :
     </ItemGroup>
     ```
 
-4. Supprimez les références `XamarinComponentReference` à et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer `ItemGroup`la totalité de l’ensemble.
+4. Supprimez les références à `XamarinComponentReference` et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer l’intégralité du `ItemGroup`.
 
 5. Une fois le fichier enregistré, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **recharger le projet**.
 
@@ -76,7 +76,7 @@ Pour supprimer un composant de votre projet :
 
 1. Ouvrez le fichier. csproj. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **outils > modifier le fichier**.
 
-2. Recherchez dans le fichier toutes les références `XamarinComponentReference`à. Elle doit ressembler à l’exemple suivant :
+2. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit ressembler à l’exemple suivant :
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ Pour supprimer un composant de votre projet :
     </ItemGroup>
     ```
 
-3. Supprimez les références `XamarinComponentReference` à et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer entièrement la`ItemGroup`
+3. Supprimez les références à `XamarinComponentReference` et enregistrez le fichier. Dans l’exemple ci-dessus, il est possible de supprimer tout le `ItemGroup`
 
 4. Répétez les étapes ci-dessus pour chaque projet de votre solution.
 
@@ -159,8 +159,8 @@ Pour confirmer l’existence d’un package NuGet de remplacement, recherchez [N
 
 Par exemple, vous pouvez trouver le package **SQLite-net-PCL** populaire en recherchant :
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl): nom du produit.
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum): profil de l’auteur.
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) : nom du produit.
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) : profil de l’auteur.
 
 ### <a name="updating-the-solution"></a>Mise à jour de la solution
 

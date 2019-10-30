@@ -2,15 +2,15 @@
 ms.assetid: 77F12838-DBB1-48AC-ACF8-B934998B6EC8
 title: Exemples de postes de travail multiplateforme
 description: Ce document renvoie à divers exemples d’applications qui ont été portées pour s’exécuter en tant qu’applications multiplateformes avec Xamarin.
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 3363fe8c1835db18dae47559f0c07ddaa4cc7594
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2797237fed9dab1b7e101b63b17e04281bc5de1d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290354"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016405"
 ---
 # <a name="cross-platform-desktop-samples"></a>Exemples de postes de travail multiplateforme
 

@@ -4,15 +4,15 @@ description: Définition de la structure visuelle de votre application Xamarin. 
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/18/2017
-ms.openlocfilehash: 60752760415bd416d339cc2a3729075b4fca0d32
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f15aeff8590cf6d82168fd3e39ba6f78d649d2ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764475"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028966"
 ---
 # <a name="xamarinandroid-layouts"></a>Dispositions Xamarin. Android
 
@@ -34,7 +34,7 @@ Les dispositions permettent d’organiser les éléments qui composent l’inter
 
     ![Exemple de vue de recyclage](images/recycler-view.png)
 
-- [ListView](~/android/user-interface/layouts/list-view/index.md) est un groupe d’affichage qui crée une liste d’éléments déroulants. Les éléments de liste sont automatiquement insérés dans la liste à l’aide d’un adaptateur de liste. Le `ListView` est un composant d’interface utilisateur important des applications Android, car il est utilisé partout dans des listes courtes d’options de menu jusqu’à des listes longues de contacts ou de favoris Internet. Il fournit un moyen simple de présenter une liste déroulante de lignes qui peuvent être mises en forme avec un style intégré ou personnalisées de manière intensive. Une instance ListView requiert qu’un adaptateur l’alimente avec les données contenues dans les affichages de lignes.
+- [ListView](~/android/user-interface/layouts/list-view/index.md) est un groupe d’affichage qui crée une liste d’éléments déroulants. Les éléments de liste sont automatiquement insérés dans la liste à l’aide d’un adaptateur de liste. Le `ListView` est un composant d’interface utilisateur important des applications Android, car il est utilisé partout dans des listes courtes d’options de menu jusqu’à de longues listes de contacts ou de favoris Internet. Il fournit un moyen simple de présenter une liste déroulante de lignes qui peuvent être mises en forme avec un style intégré ou personnalisées de manière intensive. Une instance ListView requiert qu’un adaptateur l’alimente avec les données contenues dans les affichages de lignes.
 
     ![Exemple d’affichage de liste](images/list-view.png)
 

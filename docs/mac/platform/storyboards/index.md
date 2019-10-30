@@ -4,15 +4,15 @@ description: Cet article fournit une introduction à l’utilisation des storybo
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770046"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026146"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Présentation des storyboards dans Xamarin. Mac
 
@@ -20,7 +20,7 @@ _Cet article fournit une introduction à l’utilisation des storyboards dans un
 
 Les storyboards vous permettent de développer une interface utilisateur pour votre application Xamarin. Mac qui inclut non seulement les définitions et les contrôles de fenêtres, mais également les liens entre les différentes fenêtres (via SEGUES) et les États d’affichage.
 
-[![](images/intro01.png "Exemple d’interface utilisateur dans Xcode")](images/intro01.png#lightbox)
+[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
 
 Cet article fournit une introduction à l’utilisation des storyboards pour définir une interface utilisateur de l’application Xamarin. Mac.
 
@@ -36,11 +36,11 @@ En utilisant des storyboards, toute l’interface utilisateur d’une applicatio
 
 Comme indiqué ci-dessus, un Storyboard définit la totalité de l’interface utilisateur pour une application donnée, décomposée en une vue d’ensemble fonctionnelle de ses _contrôleurs d’affichage_. Dans Interface Builder de Xcode, chacun de ces contrôleurs vit dans sa propre _scène_.
 
-[![](images/intro02.png "Exemple de contrôleur d’affichage")](images/intro02.png#lightbox)
+[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
 
 Chaque scène représente une vue donnée et une paire de contrôleurs d’affichage avec un ensemble de lignes (appelé SEGUES) qui connectent chaque scène de l’interface utilisateur, ce qui affiche leurs relations. Certains SEGUES définissent la façon dont un contrôleur d’affichage contient un ou plusieurs affichages enfants ou contrôleurs d’affichage. D’autres SEGUES, définissent des transitions entre le contrôleur d’affichage (comme l’affichage d’une boîte de dialogue Menu segue ou). 
 
-[![](images/intro03.png "Exemple de Segue")](images/intro03.png#lightbox)
+[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
 
 La chose la plus importante à noter est que chaque segue représente le workflow d’une forme de données entre l’élément donné de l’interface utilisateur de l’application.
 
@@ -50,11 +50,11 @@ La chose la plus importante à noter est que chaque segue représente le workflo
 
 Les contrôleurs d’affichage définissent les relations entre une vue donnée des informations au sein d’une application Mac et le modèle de données qui fournit ces informations. Chaque scène de niveau supérieur dans le Storyboard représente un contrôleur d’affichage dans le code de l’application Xamarin. Mac.
 
-[![](images/intro04.png "Exemple de contrôleur d’affichage de feuillets")](images/intro04.png#lightbox)
+[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
 
 De cette façon, chaque contrôleur d’affichage est un jumelage autonome et réutilisable de la représentation visuelle des informations (vue) et de la logique de présentation et de contrôle de ces informations.
 
-Dans une scène donnée, vous pouvez effectuer toutes les opérations qui auraient normalement été traitées par des fichiers individuels `.xib` : 
+Dans une scène donnée, vous pouvez effectuer toutes les opérations qui seraient normalement gérées par des fichiers de `.xib` individuel : 
 
 - Placez des sous-vues et des contrôles (tels que des boutons et des zones de texte).
 - Définissez les positions des éléments et les contraintes de disposition automatique.
@@ -70,7 +70,7 @@ Dans macOS, la plupart des applications ont tendance à regrouper leurs vues dan
 
 En raison de l’banlieusards de Mac pour la relation contenant-contenu, il existe des situations où les _SEGUES de présentation_ sont utilisés, tels que les fenêtres modales, les vues de feuille et les popovers.
 
-Lorsque vous utilisez la SEGUES de présentation, vous pouvez `PrepareForSegue` remplacer la méthode du contrôleur d’affichage parent pour la présentation pour initialiser et les variables et fournir toutes les données au contrôleur d’affichage en cours de présentation.
+Lorsque vous utilisez la SEGUES de présentation, vous pouvez remplacer la méthode `PrepareForSegue` du contrôleur d’affichage parent pour la présentation pour initialiser et les variables et fournir toutes les données au contrôleur d’affichage présenté.
 
 <a name="Design-and-Run-Times" />
 

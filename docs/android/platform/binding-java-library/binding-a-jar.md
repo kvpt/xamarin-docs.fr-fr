@@ -4,21 +4,21 @@ description: Cette procédure pas à pas fournit des instructions détaillées s
 ms.prod: xamarin
 ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 9a9e7e9c5d189527d4fbdcc2001d6f003fa63dd7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 59969abae739db1d9035ec31738c39a3912f47ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757876"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027777"
 ---
 # <a name="binding-a-jar"></a>Liaison d’un fichier .JAR
 
 _Cette procédure pas à pas fournit des instructions détaillées sur la création d’une bibliothèque de liaisons Java Xamarin. Android à partir d’un Android. Fichier JAR._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 La communauté Android propose de nombreuses bibliothèques Java que vous pouvez utiliser dans votre application. Ces bibliothèques Java sont souvent empaquetées dans. Format JAR (Java Archive), mais vous pouvez empaqueter un. Collez-la dans une *bibliothèque de liaisons Java* afin que ses fonctionnalités soient disponibles pour les applications Xamarin. Android. L’objectif de la bibliothèque de liaisons Java est de rendre les API dans le. Fichier JAR disponible pour C# coder les wrappers de code générés automatiquement.
 
@@ -30,12 +30,12 @@ Les outils Xamarin peuvent générer une bibliothèque de liaisons à partir d�
 
 Le code MCW généré utilise JNI (Java Native Interface) pour transférer vos appels d’API vers le sous-jacent. Fichier JAR. Vous pouvez créer des bibliothèques de liaisons pour tout. Fichier JAR ciblé à l’origine pour être utilisé avec Android (Notez que les outils Xamarin ne prennent pas actuellement en charge la liaison de bibliothèques Java non Android). Vous pouvez également choisir de générer la bibliothèque de liaisons sans inclure le contenu du. Fichier JAR afin que la DLL ait une dépendance sur le. JAR au moment de l’exécution.
 
-Dans ce guide, nous allons parcourir les bases de la création d’une bibliothèque de liaisons pour une seule. Fichier JAR. Nous illustrerons ici un exemple où tout se passe &ndash; bien, où aucune personnalisation ou débogage de liaisons n’est nécessaire. 
+Dans ce guide, nous allons parcourir les bases de la création d’une bibliothèque de liaisons pour une seule. Fichier JAR. Nous illustrerons un exemple dans lequel tout se déplace juste &ndash; autrement dit, où aucune personnalisation ou débogage de liaisons n’est nécessaire. 
 La [création de liaisons à l’aide de métadonnées](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md) offre un exemple de scénario plus avancé dans lequel le processus de liaison n’est pas entièrement automatique et un certain nombre d’interventions manuelles sont nécessaires. Pour obtenir une vue d’ensemble de la liaison de bibliothèque Java en général (à l’aide d’un exemple de code de base), consultez [liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md). 
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
-Dans la procédure pas à pas suivante, nous allons créer une bibliothèque de liaisons pour [Picasso](http://square.github.io/picasso/), un Android populaire. JAR qui fournit des fonctionnalités de chargement et de mise en cache d’image. Nous allons utiliser les étapes suivantes pour lier **Picasso-2. x. x. jar** afin de créer un nouvel assembly .net que nous pouvons utiliser dans un projet Xamarin. Android : 
+Dans la procédure pas à pas suivante, nous allons créer une bibliothèque de liaisons pour [Picasso](https://square.github.io/picasso/), un Android populaire. JAR qui fournit des fonctionnalités de chargement et de mise en cache d’image. Nous allons utiliser les étapes suivantes pour lier **Picasso-2. x. x. jar** afin de créer un nouvel assembly .net que nous pouvons utiliser dans un projet Xamarin. Android : 
 
 1. Créez un projet de bibliothèque de liaisons Java.
 
@@ -62,7 +62,7 @@ public class Picasso
 }
 ```
 
-Une fois que nous avons généré une bibliothèque de liaisons pour **Picasso-2. x. x. jar**, nous pouvons appeler C#ces méthodes à partir de. Par exemple :
+Une fois que nous avons généré une bibliothèque de liaisons pour **Picasso-2. x. x. jar**, nous pouvons appeler C#ces méthodes à partir de. Exemple :
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -79,39 +79,39 @@ Avant de commencer à suivre les étapes ci-dessous, veuillez télécharger [Pic
 
 Tout d’abord, créez un projet de bibliothèque de liaisons. Dans Visual Studio pour Mac ou Visual Studio, créez une nouvelle solution et sélectionnez le modèle *bibliothèque de liaisons Android* . (Les captures d’écran de cette procédure pas à pas utilisent Visual Studio, mais Visual Studio pour Mac est très similaire.) Nommez la solution **JarBinding**: 
 
-[![Créer un projet de bibliothèque JarBinding](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
+[![créer un projet de bibliothèque JarBinding](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 Le modèle comprend un dossier **jar** dans lequel vous ajoutez votre. Fichier (s) JAR dans le projet de bibliothèque de liaisons. Cliquez avec le bouton droit sur le dossier **jar** et sélectionnez **Ajouter > élément existant**: 
 
-[![Ajouter un élément existant](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
+[![ajouter un élément existant](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
 Accédez au fichier **Picasso-2. x. x. jar** téléchargé précédemment, sélectionnez-le, puis cliquez sur **Ajouter**: 
 
-[![Sélectionnez fichier jar, puis cliquez sur Ajouter.](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
+[![sélectionnez fichier jar, puis cliquez sur Ajouter.](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
 Vérifiez que le fichier **Picasso-2. x. x. jar** a été correctement ajouté au projet : 
 
-[![Jar ajouté au projet](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
+[![jar ajouté au projet](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
 Lorsque vous créez un projet de bibliothèque de liaisons Java, vous devez spécifier si le. JAR doit être incorporé dans la bibliothèque de liaisons ou empaqueté séparément. Pour ce faire, vous spécifiez l’une des *actions de génération*suivantes : 
 
-- **EmbeddedJar** &ndash; . JAR sera incorporé dans la bibliothèque de liaisons.
+- **EmbeddedJar** &ndash;. JAR sera incorporé dans la bibliothèque de liaisons.
 
-- **InputJar** &ndash; . JAR sera conservé séparément de la bibliothèque de liaisons.
+- **InputJar** &ndash;. JAR sera conservé séparément de la bibliothèque de liaisons.
 
-En général, vous utilisez l’action de génération **EmbeddedJar** pour que le. JAR est automatiquement empaqueté dans la bibliothèque de liaisons. Il s’agit de l’option &ndash; la plus simple pour le bytecode Java dans le. JAR est converti en bytecode DEX et est incorporé (avec les wrappers pouvant être appelés) à votre APK. Si vous souhaitez conserver le. JAR distinct de la bibliothèque de liaisons, vous pouvez utiliser l’option **InputJar** ; Toutefois, vous devez vous assurer que le. Le fichier JAR est disponible sur l’appareil qui exécute votre application. 
+En général, vous utilisez l’action de génération **EmbeddedJar** pour que le. JAR est automatiquement empaqueté dans la bibliothèque de liaisons. Il s’agit de l’option la plus simple &ndash; bytecode Java dans le. JAR est converti en bytecode DEX et est incorporé (avec les wrappers pouvant être appelés) à votre APK. Si vous souhaitez conserver le. JAR distinct de la bibliothèque de liaisons, vous pouvez utiliser l’option **InputJar** ; Toutefois, vous devez vous assurer que le. Le fichier JAR est disponible sur l’appareil qui exécute votre application. 
 
 Définissez l’action de génération sur **EmbeddedJar**: 
 
-[![Sélectionner l’action de génération EmbeddedJar](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
+[![sélectionner l’action de génération EmbeddedJar](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
 Ensuite, ouvrez les propriétés du projet pour configurer la version *cible de .NET Framework*. Si. JAR utilise des API Android, définit le Framework cible au niveau de l’API que le. JAR attend. En général, le développeur du. Fichier JAR indique le ou les niveaux d’API que le. JAR est compatible avec. (Pour plus d’informations sur le paramètre Framework cible et les niveaux d’API Android en général, consultez [Présentation des niveaux d’API Android](~/android/app-fundamentals/android-api-levels.md).)
 
 Définissez le niveau d’API cible pour votre bibliothèque de liaisons (dans cet exemple, nous utilisons l’API de niveau 19) : 
 
-[![Niveau d’API cible défini sur API 19](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
+[niveau d’API cible de ![défini sur API 19](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
-Enfin, générez la bibliothèque de liaisons. Bien qu’il soit possible d’afficher certains messages d’avertissement, le projet de bibliothèque de liaisons doit se générer correctement et produire une sortie. DLL à l’emplacement suivant : **JarBinding/bin/Debug/JarBinding.dll**
+Enfin, générez la bibliothèque de liaisons. Bien qu’il soit possible d’afficher certains messages d’avertissement, le projet de bibliothèque de liaisons doit se générer correctement et produire une sortie. DLL à l’emplacement suivant : **JarBinding/bin/debug/JarBinding. dll**
 
 ### <a name="using-the-bindings-library"></a>Utilisation de la bibliothèque de liaisons
 
@@ -125,21 +125,21 @@ Dans les étapes suivantes, nous allons créer une application minimale qui util
 
 Tout d’abord, créez une nouvelle application Xamarin. Android qui utilise la bibliothèque de liaisons. Cliquez avec le bouton droit sur la solution et sélectionnez **Ajouter nouveau projet**. Nommez le nouveau projet **BindingTest**. Nous créons cette application dans la même solution que la bibliothèque de liaisons afin de simplifier cette procédure pas à pas. Toutefois, l’application qui utilise la bibliothèque de liaisons peut, à la place, résider dans une autre solution : 
 
-[![Ajouter un nouveau projet BindingTest](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
+[![ajouter un nouveau projet BindingTest](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 Cliquez avec le bouton droit sur le nœud **références** du projet **BindingTest** et sélectionnez **Ajouter une référence...** :
 
-[![Ajouter une référence à droite](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
+[![droit Ajouter une référence](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
 Vérifiez le projet **JarBinding** créé précédemment et cliquez sur **OK**:
 
-[![Sélectionner un projet JarBinding](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
+[![sélectionner le projet JarBinding](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
 Ouvrez le nœud **références** du projet **BindingTest** et vérifiez que la référence **JarBinding** est présente : 
 
 [![JarBinding s’affiche sous Références](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
-Modifiez la disposition de **BindingTest** (**main. AXML**) pour qu’elle dispose d' `ImageView`un seul :
+Modifiez la disposition de **BindingTest** (**main. AXML**) pour qu’elle ait une seule `ImageView`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -156,13 +156,13 @@ Modifiez la disposition de **BindingTest** (**main. AXML**) pour qu’elle dispo
 </LinearLayout>
 ```
 
-Ajoutez l’instruction `using` suivante à **MainActivity.cs** &ndash; , ce qui permet d’accéder facilement aux méthodes de la classe basée `Picasso` sur Java qui réside dans la bibliothèque de liaisons :
+Ajoutez l’instruction `using` suivante à **MainActivity.cs** &ndash; cela permet d’accéder facilement aux méthodes de la classe `Picasso` basée sur Java qui réside dans la bibliothèque de liaisons :
 
 ```csharp
 using Com.Squareup.Picasso;
 ```
 
-Modifiez la `OnCreate` méthode afin qu’elle utilise la `Picasso` classe pour charger une image à partir d’une URL et l’afficher `ImageView`dans le : 
+Modifiez la méthode `OnCreate` de manière à ce qu’elle utilise la classe `Picasso` pour charger une image à partir d’une URL et l’afficher dans la `ImageView`: 
 
 ```csharp
 public class MainActivity : Activity
@@ -183,7 +183,7 @@ public class MainActivity : Activity
 
 Compilez et exécutez le projet **BindingTest** . L’application démarre et, après un bref délai (en fonction des conditions du réseau), elle doit télécharger et afficher une image similaire à la capture d’écran suivante :
 
-[![Capture d’écran de BindingTest en cours d’exécution](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
+[Capture d’écran ![de l’exécution de BindingTest](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
 Félicitations ! Vous avez correctement lié une bibliothèque Java. JAR et l’ai utilisé dans votre application Xamarin. Android.
 

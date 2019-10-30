@@ -4,15 +4,15 @@ description: Ce document explique comment déployer une application Watchos gén
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768698"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028351"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Test sur des appareils Apple Watch
 
@@ -26,21 +26,21 @@ Une fois que vous avez suivi les [étapes de déploiement](~/ios/watchos/deploy-
 
 ## <a name="devices"></a>Appareils
 
-Tester des applications iOS sur un iPhone ou iPad réel a toujours requis l’inscription de l’appareil dans le centre de développement. La liste des appareils ressemble à ceci (cliquez sur le **+** signe plus pour ajouter un nouvel appareil) :
+Tester des applications iOS sur un iPhone ou iPad réel a toujours requis l’inscription de l’appareil dans le centre de développement. La liste des appareils ressemble à ce qui suit (cliquez sur le signe plus **+** pour ajouter un nouvel appareil) :
 
-![](device-images/devices-sml.png "La liste des appareils ressemble à ce qui suit.")
+![](device-images/devices-sml.png "The device list looks like this")
 
 Les espions ne sont pas différents : vous devez maintenant ajouter votre appareil Apple Watch avant de déployer des applications sur celui-ci. Recherchez le UDID du espion à l’aide de **Xcode** (**Windows > Devices** List). Lorsque le téléphone couplé est connecté, les informations du espion s’affichent également :
 
-[![](device-images/xcode-devices-sml.png "Informations de surveillance jumelée")](device-images/xcode-devices.png#lightbox)
+[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
 
 Lorsque vous connaissez le UDID du espion, ajoutez-le à la liste des appareils dans le centre de développement :
 
-![](device-images/devices-watch-sml.png "UDID de l’espion dans la liste des appareils")
+![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
 
 Une fois l’appareil espion ajouté, assurez-vous qu’il est sélectionné dans tous les profils de développement nouveaux ou existants ou les profils de configuration ad hoc que vous créez :
 
-![](device-images/devices-provisioning.png "Liste des appareils disponibles")
+![](device-images/devices-provisioning.png "Available device list")
 
 N’oubliez pas que si vous modifiez un profil de provisionnement existant pour le téléchargement et la réinstallation !
 
@@ -52,17 +52,17 @@ Pour générer des tests sur votre appareil, vous devez créer un **profil de pr
 
 Si vous avez un ID d’application générique, *un seul profil de provisionnement sera requis*; Toutefois, si vous disposez d’un ID d’application distinct pour chaque projet, vous aurez besoin d’un profil de configuration pour chaque ID d’application :
 
-![](device-images/provisioningprofile-development.png "Le profil de provisionnement de développement")
+![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
 
 Une fois que vous avez créé les trois profils, ceux-ci s’affichent dans la liste. N’oubliez pas de télécharger et d’installer chacun d’eux :
 
-![](device-images/provisioningprofiles.png "Les profils de provisionnement de développement disponibles")
+![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
 Vous pouvez vérifier le profil de provisionnement dans **les options du projet** en sélectionnant l’écran de signature de l' **offre groupée > iOS** , puis en sélectionnant la configuration de la **version** ou de l' **iPhone de débogage** .
 
 La liste **profil de provisionnement** affiche tous les profils correspondants. vous devez voir les profils correspondants que vous avez créés dans cette liste déroulante :
 
-![](device-images/options-selectprofile.png "Liste des profils d’approvisionnement")
+![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
 <a name="testing" />
 
@@ -91,13 +91,13 @@ Une fois que vous avez configuré votre appareil, les ID d’application et les 
 
 Si une erreur se produit pendant le déploiement, utilisez la **vue > pad > journal** de l’appareil pour afficher plus d’informations sur l’erreur. Certaines erreurs et leurs causes sont répertoriées ci-dessous :
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>Erreur MT3001 : Impossible d’AOA l’assembly
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>Erreur MT3001 : impossible d’AOA l’assembly
 
 Cela peut se produire lors de la génération en mode débogage pour le déploiement sur un appareil Apple Watch.
 
 Pour contourner ce problème *temporairement* , désactivez les **Builds incrémentielles** dans les options de projet de l’Extension Watch **> générer > fenêtre de génération Watchos** :
 
-[![](device-images/disable-incremental-sml.png "Case à cocher builds incrémentielles")](device-images/disable-incremental.png#lightbox)
+[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
 
 Ce problème sera résolu dans une version ultérieure, après quoi les builds incrémentielles pourront être réactivées pour tirer parti des temps de génération plus rapides.
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Alerte de l’exécutable de l’application non valide")
+![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
 
 Si ces messages s’affichent *sur l’écran Watch* après une tentative d’installation de l’application, il peut y avoir quelques problèmes :
 
@@ -120,7 +120,7 @@ Si ces messages s’affichent *sur l’écran Watch* après une tentative d’in
 
 - Les profils de provisionnement de développement utilisés pour les tests n’ont pas inclus l’appareil espion ; ou après l’ajout de la montre aux profils de provisionnement, ils n’ont pas été téléchargés et réinstallés. Suivez les instructions pour [configurer correctement les profils de provisionnement](#profiles).
 
-- Si le **Journal** de l’appareil `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` iOS contient, le fichier **info. plist** de l’application espion a une valeur **MinimumOSVersion** incorrecte.
+- Si le **Journal de l’appareil iOS** contient des `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3`, la valeur **MinimumOSVersion** du fichier **info. plist** de l’application espion est incorrecte.
   Il doit s’agir de **8,2** -si vous avez installé Xcode 6,3, vous devrez peut-être modifier manuellement la source pour qu’elle soit définie sur 8,2.
 
 - Les droits de l’application Watch **. plist** de manière incorrecte sont activés (par exemple, les groupes d’applications).

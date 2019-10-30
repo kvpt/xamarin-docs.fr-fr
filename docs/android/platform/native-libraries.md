@@ -3,15 +3,15 @@ title: Utilisation de bibliothèques natives
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: fad17bdda9566eeabcbe173c19c4d951bed630a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ef9e0415d7d1e5fe75be70e0ccf6e06a5eaf332
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761277"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027061"
 ---
 # <a name="using-native-libraries"></a>Utilisation de bibliothèques natives
 
@@ -25,9 +25,9 @@ Notez que dans la mesure où Android prend en charge plusieurs interfaces binair
 Vous pouvez faire cela de deux façons :
 
 1. Chemin d’accès « détection »
-1. En utilisant un `AndroidNativeLibrary/Abi` élément dans le fichier projet
+1. En utilisant un élément `AndroidNativeLibrary/Abi` dans le fichier projet
 
-Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Ainsi, si vous ajoutez `lib/armeabi/libfoo.so` au projet, l’Abi sera « reniflée » comme. `armeabi`
+Avec la détection de chemin, le nom du répertoire parent de la bibliothèque native est utilisé pour spécifier l’ABI ciblée par la bibliothèque. Par conséquent, si vous ajoutez `lib/armeabi/libfoo.so` au projet, l’ABI sera « reniflée » comme `armeabi`.
 
 Vous pouvez également modifier votre fichier projet pour spécifier explicitement l’ABI à utiliser :
 

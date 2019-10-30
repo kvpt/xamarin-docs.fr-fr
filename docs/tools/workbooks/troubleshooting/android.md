@@ -3,15 +3,15 @@ title: Résolution des problèmes Xamarin Workbooks sur Android
 description: Ce document fournit des conseils de dépannage pour l’utilisation de Xamarin Workbooks sur Android. Il aborde la prise en charge de l’émulateur, les classeurs qui ne sont pas chargés et d’autres rubriques.
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 04f02e6136d9d489a36e994575519e579770ac3d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: be19005ab1125c060ab0111e9f37568d5f4abe45
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291155"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029595"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>Résolution des problèmes Xamarin Workbooks sur Android
 
@@ -22,7 +22,7 @@ Pour exécuter un classeur Android, un émulateur Android doit être disponible.
 Nous vous recommandons d’utiliser l’émulateur de Google avec HAXM si votre ordinateur le prend en charge.
 Si Hyper-V doit être activé sur votre système, utilisez plutôt le Émulateur Android Visual Studio.
 
-Vous devez disposer d’un émulateur qui exécute Android 5,0 ou une version ultérieure. Les émulateurs ARM ne sont pas pris en charge. Utiliser `x86` des `x86_64` appareils ou uniquement.
+Vous devez disposer d’un émulateur qui exécute Android 5,0 ou une version ultérieure. Les émulateurs ARM ne sont pas pris en charge. Utilisez uniquement des appareils `x86` ou `x86_64`.
 
 Veuillez lire [notre documentation sur la configuration des émulateurs Android][android-emu] si vous n’êtes pas familiarisé avec le processus.
 

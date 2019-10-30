@@ -4,21 +4,21 @@ description: Ce document explique comment générer un fichier APK qui ciblera u
 ms.prod: xamarin
 ms.assetid: D21B195B-4530-4EB2-8704-5C4349A2CDD8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0c3bb547a21457a1666db5fe84560e10e3bb8eb1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754276"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028132"
 ---
 # <a name="building-abi-specific-apks"></a>Création de fichiers APK propres à une interface ABI
 
 _Ce document explique comment générer un fichier APK qui ciblera une interface ABI unique à l’aide de Xamarin.Android._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Dans certaines situations, il peut être avantageux pour une application d’avoir plusieurs fichiers APK. Chaque fichier APK est signé avec le même magasin de clés et porte le même nom de package, mais est compilé pour une configuration d’appareil ou Android spécifique. Ce n’est pas l’approche recommandée. Il est beaucoup plus simple d’avoir un fichier APK pouvant prendre en charge plusieurs appareils et configurations. Dans certaines situations, la création de plusieurs fichiers APK peut être utile, par exemple :
 
@@ -35,7 +35,7 @@ Ce guide explique comment générer un script pour générer plusieurs fichiers 
 1. Générer l’application à l’aide d’**AndroidManifest.XML** à partir de l’étape précédente.
 1. Préparer le fichier APK à la mise en production en le signant en effectuant un alignement zip.
 
-À la fin de ce guide, vous trouverez une procédure pas à pas qui illustre comment générer un script pour ces étapes à l’aide de [Rake](http://martinfowler.com/articles/rake.html).
+À la fin de ce guide, vous trouverez une procédure pas à pas qui illustre comment générer un script pour ces étapes à l’aide de [Rake](https://martinfowler.com/articles/rake.html).
 
 ### <a name="creating-the-version-code-for-the-apk"></a>Création du code de version pour le fichier APK
 
@@ -157,7 +157,7 @@ une fois la tâche Rake terminée, il y aura trois dossiers `bin` avec le fichie
 [![Emplacements des dossiers spécifiques à une plateforme contenant xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas d’exemple prédéfini, ceci devrait également être possible avec [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [fictif](http://fsharp.github.io/FAKE/).
+> Le processus de génération décrit dans ce guide peut être implémenté dans un des nombreux systèmes de build différents. Bien que nous n’ayons pas d’exemple prédéfini, ceci devrait également être possible avec [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) ou [fictif](https://fsharp.github.io/FAKE/).
 
 ## <a name="summary"></a>Récapitulatif
 

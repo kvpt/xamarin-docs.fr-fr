@@ -4,15 +4,15 @@ description: Cet article explique comment utiliser une classe d’assistance pou
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 57892689eeb5eef9747e19fa167b8598569f3cd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4dddde8d4408df6a9b9d73c0a3efff62f563591a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769209"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030776"
 ---
 # <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Émettre du son dans tvOS avec AVAudioPlayer dans Xamarin
 
@@ -20,7 +20,7 @@ ms.locfileid: "70769209"
 
 Le `AVAudioPlayer` est utilisé pour lire les données audio à partir de la mémoire ou d’un fichier. Apple recommande d’utiliser cette classe pour lire de l’audio dans votre application, sauf si vous effectuez une diffusion réseau ou si vous avez besoin d’e/s audio à faible latence.
 
-Vous pouvez utiliser le `AVAudioPlayer` pour effectuer les opérations suivantes :
+Vous pouvez utiliser la `AVAudioPlayer` pour effectuer les opérations suivantes :
 
 - Lire des sons de n’importe quelle durée avec boucle facultative.
 - Lisez plusieurs sons en même temps avec la synchronisation facultative.
@@ -28,7 +28,7 @@ Vous pouvez utiliser le `AVAudioPlayer` pour effectuer les opérations suivantes
 - Prise en charge des fonctionnalités telles que l’avance rapide ou le rembobinage.
 - Obtenir des données de contrôle du niveau de lecture.
 
-`AVAudioPlayer`prend en charge les sons dans n’importe quel format audio fourni par iOS, tvOS `.aif`et `.wav` OS `.mp3`X, tels que, ou.
+`AVAudioPlayer` prend en charge les sons au format audio fourni par iOS, tvOS et OS X, comme `.aif`, `.wav` ou `.mp3`.
 
 ## <a name="playing-sounds-in-tvos"></a>Émettre des sons dans tvOS
 

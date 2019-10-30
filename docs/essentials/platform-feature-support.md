@@ -5,18 +5,18 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 86aa439d306bb861a1d24d93629056f9d3936363
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: ec3474880660a2455c758b2660d5c43e23284c9d
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033056"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980916"
 ---
 # <a name="platform-support"></a>Prise en charge de plateforme
 
 Xamarin.Essentials prend en charge les plateformes et les systèmes d’exploitation suivants :
 
-| Plateforme | Version |
+| Plate-forme | Version |
 | --- | --- |
 | Android | 4.4 (API 19) ou version ultérieure |
 | iOS |10.0 ou version ultérieure |
@@ -38,9 +38,9 @@ Guide des icônes :
 
 * ✔ - Prise en charge complète
 * ⚠ - Prise en charge limitée
-* ❌ - Non pris en charge
+* ❌-non pris en charge
 
-| Fonctionnalité | Android | iOS | UWP | watchOS | tvOS | Tizen |
+| Fonction | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Accéléromètre](accelerometer.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [Informations sur l’application](app-information.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
@@ -49,11 +49,11 @@ Guide des icônes :
 | [Presse-papiers](clipboard.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 | [Convertisseurs de couleurs](color-converters.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Boussole](compass.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
-| [Connectivité](connectivity.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Connectivité](connectivity.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ✔ | ✔ |
 | [Détecter les secousses](detect-shake.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Informations d’affichage de l’appareil](device-display.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 | [Informations sur l’appareil](device-information.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [E-mail](email.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
+| [Courrier électronique](email.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
 | [Assistances de système de fichiers](file-system-helpers.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Lampe torche](flashlight.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
 | [Géocodage](geocoding.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
@@ -62,7 +62,7 @@ Guide des icônes :
 | [Lanceur](launcher.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
 | [Magnétomètre](magnetometer.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [MainThread](main-thread.md?content=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Cartes](maps.md?content=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [Plans](maps.md?content=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [Ouvrir le navigateur](open-browser.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
 | [Capteur d’orientation](orientation-sensor.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [Numéroteur téléphonique](phone-dialer.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |

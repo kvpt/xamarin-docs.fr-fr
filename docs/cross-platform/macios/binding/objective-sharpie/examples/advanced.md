@@ -3,21 +3,21 @@ title: Exemple réel avancé (manuel)
 description: Ce document explique comment utiliser la sortie de xcodebuild comme entrée pour objective Sharp, qui donne un aperçu de ce que fait l’objectif de la finesse.
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 6dbaf904c31d1a778a25e591ee94c4d354f5698a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765737"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016251"
 ---
 # <a name="advanced-manual-real-world-example"></a>Exemple réel avancé (manuel)
 
 **Cet exemple utilise la [bibliothèque pop de Facebook](https://github.com/facebook/pop).**
 
-Cette section décrit une approche plus avancée de la liaison, où nous allons utiliser l' `xcodebuild` outil d’Apple pour commencer par créer le projet pop, puis déduire manuellement l’entrée pour objective Sharp. Cela couvre essentiellement ce qui est le plus clair dans la section précédente.
+Cette section décrit une approche plus avancée de la liaison, où nous allons utiliser l’outil de `xcodebuild` d’Apple pour commencer par créer le projet POP, puis déduire manuellement l’entrée pour objective Sharp. Cela couvre essentiellement ce qui est le plus clair dans la section précédente.
 
 ```
  $ git clone https://github.com/facebook/pop.git
@@ -27,7 +27,7 @@ Cloning into 'pop'...
 $ cd pop
 ```
 
-Étant donné que la bibliothèque pop a un projet`pop.xcodeproj`Xcode (), nous pouvons `xcodebuild` simplement utiliser pour générer un pop. Ce processus peut, à son tour, générer des fichiers d’en-tête qui doivent être analysés par l’objectif de la finesse. C’est la raison pour laquelle la génération avant la liaison est importante. Lors de la `xcodebuild` création via, vous devez transmettre l’identificateur et l’architecture du kit de développement logiciel 3,0 (SDK) que vous envisagez de passer à la finesse objective.
+Étant donné que la bibliothèque POP a un projet XCode (`pop.xcodeproj`), nous pouvons simplement utiliser `xcodebuild` pour générer un POP. Ce processus peut, à son tour, générer des fichiers d’en-tête qui doivent être analysés par l’objectif de la finesse. C’est la raison pour laquelle la génération avant la liaison est importante. Lors de la génération via `xcodebuild` vous devez transmettre l’identificateur et l’architecture du kit de développement logiciel 3,0 (SDK) que vous envisagez de passer à la finesse objective
 
 ```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
@@ -50,9 +50,9 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 ** BUILD SUCCEEDED **
 ```
 
-Un grand nombre d’informations de génération sont générées dans la console dans le `xcodebuild`cadre de. Comme indiqué ci-dessus, nous voyons qu’une cible « CpHeader » a été exécutée et que les fichiers d’en-tête ont été copiés dans un répertoire de sortie de génération. C’est souvent le cas et simplifie la liaison : dans le cadre de la génération de la bibliothèque native, les fichiers d’en-tête sont souvent copiés dans un emplacement « public » qui peut faciliter l’analyse pour la liaison. Dans ce cas, nous savons que les fichiers d’en-tête du `build/Headers` pop se trouvent dans le répertoire.
+Un grand nombre d’informations de génération sont générées dans la console dans le cadre de `xcodebuild`. Comme indiqué ci-dessus, nous voyons qu’une cible « CpHeader » a été exécutée et que les fichiers d’en-tête ont été copiés dans un répertoire de sortie de génération. C’est souvent le cas et simplifie la liaison : dans le cadre de la génération de la bibliothèque native, les fichiers d’en-tête sont souvent copiés dans un emplacement « public » qui peut faciliter l’analyse pour la liaison. Dans ce cas, nous savons que les fichiers d’en-tête du POP se trouvent dans le répertoire `build/Headers`.
 
-Nous sommes maintenant prêts à lier POP. Nous savons que nous souhaitons créer un kit de `iphoneos8.1` développement logiciel `arm64` (SDK) avec l’architecture, et que les fichiers d' `build/Headers` en-tête qui nous intéressent se trouvent dans le cadre de l’extraction de git pop. Si nous examinons le `build/Headers` répertoire, nous verrons un certain nombre de fichiers d’en-tête :
+Nous sommes maintenant prêts à lier POP. Nous savons que nous souhaitons créer un kit de développement logiciel (SDK) `iphoneos8.1` avec l’architecture `arm64`, et que les fichiers d’en-tête qui nous intéressent se trouvent dans `build/Headers` sous l’extraction git POP. Si nous examinons le répertoire `build/Headers`, nous verrons un certain nombre de fichiers d’en-tête :
 
 ```
 $ ls build/Headers/POP/
@@ -64,7 +64,7 @@ POPAnimationExtras.h     POPCustomAnimation.h     POPSpringAnimation.h
 POPAnimationPrivate.h    POPDecayAnimation.h
 ```
 
-Si nous examinons `POP.h`, nous pouvons voir que c’est le fichier d’en-tête principal de la `#import`bibliothèque qui contient d’autres fichiers. Pour cette raison, nous devons simplement passer `POP.h` à objective Sharp, et Clang fera le reste en coulisses :
+Si nous examinons `POP.h`, nous pouvons voir qu’il s’agit du fichier d’en-tête principal de niveau supérieur de la bibliothèque qui `#import`d’autres fichiers. Pour cette raison, nous n’avons besoin que de passer `POP.h` à la finesse objective, et Clang fera le reste en coulisses :
 
 ```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
@@ -122,18 +122,18 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-Vous remarquerez que nous avons `-scope build/Headers` passé un argument à la finesse objective. Étant donné que les bibliothèques c et objective `#include` -c doivent `#import` ou d’autres fichiers d’en-tête qui sont des détails d’implémentation de la `-scope` Bibliothèque et non des API que vous souhaitez lier, l’argument indique à objective d’avoir la possibilité d’ignorer toute API qui n’est pas définie dans un fichier situé dans le `-scope` répertoire.
+Vous remarquerez que nous avons passé un argument `-scope build/Headers` pour objective Sharp. Étant donné que les bibliothèques C et objective-C doivent `#import` ou `#include` d’autres fichiers d’en-tête qui sont des détails d’implémentation de la bibliothèque et non de l’API que vous souhaitez lier, l’argument `-scope` indique à objective d’ignorer l’API qui n’est pas définie dans un fichier quelque part dans le répertoire `-scope`.
 
-Vous trouverez que l' `-scope` argument est souvent facultatif pour les bibliothèques implémentées correctement, mais il n’y a pas de préjudice dans sa fourniture explicite.
+Vous trouverez que l’argument `-scope` est souvent facultatif pour les bibliothèques implémentées correctement, mais il n’y a pas de préjudice en le fournissant explicitement.
 
-En outre, nous avons `-c -Ibuild/headers`spécifié. Tout d’abord `-c` , l’argument indique à objective Sharp d’arrêter l’interprétation des arguments de ligne de commande et de passer tous les arguments suivants _directement au compilateur Clang_. Par conséquent `-Ibuild/Headers` , est un argument du compilateur Clang qui indique à Clang de rechercher les `build/Headers`fichiers include sous, où se trouvent les en-têtes pop. Sans cet argument, Clang ne sait pas où trouver les fichiers `POP.h` `#import`en place. _Presque tous les « problèmes » avec l’utilisation de la précision objective font l’objet_d’un passage à Clang.
+En outre, nous avons spécifié `-c -Ibuild/headers`. Tout d’abord, l’argument `-c` indique à objective Sharp d’arrêter l’interprétation des arguments de ligne de commande et de passer tous les arguments suivants _directement au compilateur Clang_. Par conséquent, `-Ibuild/Headers` est un argument du compilateur Clang qui indique à Clang de rechercher les fichiers include sous `build/Headers`, où se trouvent les en-têtes POP. Sans cet argument, Clang ne sait pas où trouver les fichiers que `POP.h` est `#import`. _Presque tous les « problèmes » avec l’utilisation de la précision objective font l’objet_d’un passage à Clang.
 
 ### <a name="completing-the-binding"></a>Achèvement de la liaison
 
-La finesse d’objectif a à `Binding/ApiDefinitions.cs` présent `Binding/StructsAndEnums.cs` généré des fichiers et.
+La finesse d’objectif a à présent généré des fichiers `Binding/ApiDefinitions.cs` et `Binding/StructsAndEnums.cs`.
 
 Il s’agit de la première étape de base de la liaison. dans certains cas, il peut s’agir de tout ce dont vous avez besoin. Comme indiqué plus haut, toutefois, le développeur doit généralement modifier manuellement les fichiers générés une fois que l’outil a terminé son achèvement pour [résoudre les problèmes](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) qui n’ont pas pu être gérés automatiquement par l’outil.
 
-Une fois les mises à jour terminées, ces deux fichiers peuvent maintenant être ajoutés à un projet de liaison dans Visual Studio pour Mac ou être passés directement `btouch` aux `bmac` outils ou pour produire la liaison finale.
+Une fois les mises à jour terminées, ces deux fichiers peuvent maintenant être ajoutés à un projet de liaison dans Visual Studio pour Mac ou être transmis directement aux outils de `btouch` ou de `bmac` pour produire la liaison finale.
 
 Pour obtenir une description complète du processus de liaison, consultez nos [instructions de procédure pas à pas](~/ios/platform/binding-objective-c/walkthrough.md).

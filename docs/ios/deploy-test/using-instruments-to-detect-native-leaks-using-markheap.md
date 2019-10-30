@@ -4,22 +4,22 @@ description: Ce document décrit comment utiliser l’application Instruments d�
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 866ebd2a66557cda5372c5bc3d7a909e18c762d7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 66d832f624bdd942f53c5f6d890457958969b1b7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756091"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028420"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profilage d’applications Xamarin.iOS avec Instruments
 
 L’outil **Instruments** dans Xcode permet de profiler des applications Xamarin.iOS sur un appareil ou dans le simulateur. Mono utilise son modèle de juste-à-temps pour compiler le code, mais comme Instruments n’interprète pas toujours correctement ce type de données, il peut être difficile d’exploiter les sorties générées par des applications de simulateur qui utilisent Instruments.
 Pour vous aider, ce guide explique comment utiliser l’application développeur pour interpréter les sorties Instruments dans ce document.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 L’outil Instruments dans Xcode s’exécute uniquement sur un Mac.
 
@@ -35,13 +35,13 @@ Sélectionnez l’appareil et exécutez l’application Instruments :
 
 Instruments s’ouvre et affiche la boîte de dialogue suivante :
 
- [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Choix d’un modèle de profilage")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Choosing a profiling template")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 Cliquez pour sélectionner le modèle **Allocations**. Les autres modèles sont valides, mais cet article traite uniquement du modèle de profil **Allocations**.
 
 Ensuite, sélectionnez l’appareil et l’application dans le menu en haut de la fenêtre :
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Sélectionner l’appareil et l’application")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Select the device and application")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 Sélectionnez l’appareil iOS dans le menu en haut de la fenêtre et sélectionnez l’application à profiler dans le sous-menu (**MemoryDemo** dans la capture d’écran ci-dessus).
 
@@ -49,13 +49,13 @@ Si l’appareil n’est pas listé sous le menu, vérifiez si la **Console** dan
 
 Cliquez sur le bouton **Choose**. L’écran suivant s’affiche :
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Interface de profilage")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "The profiling interface")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 Cliquez sur le bouton d’enregistrement (bouton rouge en haut à gauche) pour démarrer le profilage.
 
 La capture d’écran suivante montre un exemple de profilage dans **Instruments** :
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Exemple de profilage avec Instruments")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "An example of profiling using Instruments")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>Récapitulatif
 
@@ -64,4 +64,4 @@ Ce guide vous a montré comment démarrer Instruments dans Xcode pour surveiller
 ## <a name="related-links"></a>Liens associés
 
 - [Procédure pas à pas pour utiliser Instruments](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Garbage collection Xamarin.iOS (billet de blog)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)
+- [Garbage collection Xamarin.iOS (billet de blog)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

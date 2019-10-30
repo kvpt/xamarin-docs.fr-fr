@@ -3,15 +3,15 @@ title: Publication sur Google Play
 ms.prod: xamarin
 ms.assetid: FB1CC234-3554-8566-48BD-2B9B3A28CC7F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 656b74bce10d30ddd463486c5103d65c6ba5eb97
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 77fc4cbb15c47b87b0fa33e81b0b3749115af076
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250021"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021280"
 ---
 # <a name="publishing-to-google-play"></a>Publication sur Google Play
 
@@ -19,7 +19,7 @@ Même s’il existe de nombreux marchés pour la distribution d’une applicatio
 
 Cette section aborde des rubriques spécifiques à Google Play, comme l’inscription en vue de devenir un éditeur, la collecte des ressources pour aider Google Play à promouvoir et publier votre application, des recommandations pour évaluer votre application sur Google Play et l’utilisation de filtres pour limiter le déploiement d’une application à certains appareils.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>spécifications
 
 Pour distribuer une application via Google Play, vous devez créer un compte de développeur. La création de ce compte implique des frais uniques de 25 USD.
 
@@ -124,7 +124,7 @@ Dans [Création d’un nouveau certificat](~/android/deploy-test/signing/index.m
 5. Signez l’application avec votre certificat.
 6. Publiez votre application signée sur Google Play.
 
-Dans [Archiver pour publication](~/android/deploy-test/release-prep/index.md#archive), la boîte de dialogue **Canal de distribution** proposait deux options de distribution : **Ad Hoc** et **Google Play**. Si la boîte de dialogue **Identité de signature** s’affiche à la place, cliquez sur **Précédent** pour revenir à la boîte de dialogue **Canal de Distribution**. Sélectionnez **Google Play** et cliquez sur **Suivant** :
+Dans [Archiver pour publication](~/android/deploy-test/release-prep/index.md#archive), la boîte de dialogue **Canal de distribution** proposait deux options pour la distribution : **Ad Hoc** et **Google Play**. Si la boîte de dialogue **Identité de signature** s’affiche à la place, cliquez sur **Précédent** pour revenir à la boîte de dialogue **Canal de Distribution**. Sélectionnez **Google Play** et cliquez sur **Suivant** :
 
 [![Boîte de dialogue Canal de distribution](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -219,7 +219,7 @@ Cliquez sur **Autoriser** pour autoriser l’application :
 
 #### <a name="publish"></a>Publier
 
-Après avoir cliqué sur **Autoriser**, le navigateur indique _Code de vérification reçu. Fermeture en cours..._  et l’application est ajoutée à la liste des comptes Google Play dans Visual Studio. Dans la boîte de dialogue **Comptes Google Play**, cliquez sur **Continuer** :
+Après avoir cliqué sur **autoriser**, le navigateur signale le _Code de vérification reçu. Fermeture_ en... et l’application est ajoutée à la liste des comptes de Google Play dans Visual Studio. Dans la boîte de dialogue **Comptes Google Play**, cliquez sur **Continuer** :
 
 [![Compte ajouté aux comptes Google Play](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
@@ -251,7 +251,7 @@ Lorsque le chargement est terminé, l’état d’achèvement est indiqué dans 
 
 ### <a name="troubleshooting"></a>Résolution des problèmes
 
-Notez qu’un APK doit déjà avoir été soumis à Google Play Store pour que **Publier sur Google Play** fonctionne. Si un fichier APK n’est pas déjà été chargé, l’Assistant Publication affiche l’erreur suivante dans le volet **Erreurs** :
+Notez qu’un APK doit déjà avoir été soumis au Google Play Store pour que **Publier sur Google Play** fonctionne. Si un fichier APK n’est pas déjà été chargé, l’Assistant Publication affiche l’erreur suivante dans le volet **Erreurs** :
 
 [![Vous devez charger manuellement votre premier APK pour cette application](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png#lightbox)
 
@@ -267,7 +267,7 @@ Utilisez l’ID client et la Clé secrète client pour remplir la boîte de dial
 
 [![Boîte de dialogue Autoriser l’accès](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
 
-Si l’ID client et la Clé secrète client sont acceptés, un message **Inscription réussie** s’affiche. Cliquez sur**Suivant** :
+Si l’ID client et la Clé secrète client sont acceptés, un message **Inscription réussie** s’affiche. Cliquez sur **Suivant** :
 
 [![Message Inscription réussie](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png#lightbox)
 
@@ -296,11 +296,11 @@ Sélectionnez **Utiliser une clé existante** pour utiliser une identité de sig
 
 [![Boîte de dialogue Publier sur Google Play](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
 
-Notez qu’un APK doit déjà avoir été soumis à Google Play Store pour que **Publier sur Google Play** fonctionne. Si un APK n’est pas chargé, l’erreur suivante peut se produire :
+Notez qu’un APK doit déjà avoir été soumis au Google Play Store pour que **Publier sur Google Play** fonctionne. Si un APK n’est pas chargé, l’erreur suivante peut se produire :
 
-> _Google Play exige que vous chargiez manuellement votre premier fichier APK pour cette application. À cette fin, vous pouvez utiliser un APK spécifique._
+> _Google Play vous oblige à charger manuellement votre premier APK pour cette application. Vous pouvez utiliser un APK ad hoc pour ce._
 
-ou
+or
 
 > _Aucune application n’a été trouvée pour le nom de package donné. [404]_
 

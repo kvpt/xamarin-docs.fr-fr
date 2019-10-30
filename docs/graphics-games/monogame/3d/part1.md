@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 909594fe86c9718d9922470d7fca36155e33aed3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766829"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005241"
 ---
 # <a name="using-the-model-class"></a>Utilisation de la classe de modèle
 
@@ -41,7 +41,7 @@ Avant de poursuivre, vérifiez que le projet s’ouvre et se déploie correcteme
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>Inclusion de XNBs dans le projet de jeu
 
-Le format de fichier. xnb est une extension standard pour le contenu généré (contenu créé par l' [outil de pipeline monojeu](http://www.monogame.net/documentation/?page=Pipeline)). Tout le contenu généré a un fichier source (qui est un fichier. FBX dans le cas de notre modèle) et un fichier de destination (un fichier. xnb). Le format. FBX est un format de modèle 3D courant qui peut être créé par des applications telles que [Maya](http://www.autodesk.com/products/maya/overview) et [Blender](http://www.blender.org/). 
+Le format de fichier. xnb est une extension standard pour le contenu généré (contenu créé par l' [outil de pipeline monojeu](http://www.monogame.net/documentation/?page=Pipeline)). Tout le contenu généré a un fichier source (qui est un fichier. FBX dans le cas de notre modèle) et un fichier de destination (un fichier. xnb). Le format. FBX est un format de modèle 3D courant qui peut être créé par des applications telles que [Maya](https://www.autodesk.com/products/maya/overview) et [Blender](https://www.blender.org/). 
 
 La classe `Model` peut être construite en chargeant un fichier. xnb à partir d’un disque qui contient des données geometry 3D.   Ce fichier. xnb est créé via un projet de contenu. Les modèles monojeu incluent automatiquement un projet de contenu (avec l’extension. MGCP) dans notre dossier de contenu. Pour une présentation détaillée de l’outil de pipeline monojeu, consultez le [Guide de pipeline de contenu](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md).
 

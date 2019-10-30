@@ -3,15 +3,15 @@ title: Outils & de la finesse d’objectif
 description: Ce document fournit une vue d’ensemble des outils inclus avec la finesse objective et les arguments de ligne de commande à utiliser avec eux.
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2015
-ms.openlocfilehash: 13f3000315e91cec7ff2422cff3b520997ba26fd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2179154aa6dc78a8b0b6b418d780e7996f8e557d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280908"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015925"
 ---
 # <a name="objective-sharpie-tools--commands"></a>Outils & de la finesse d’objectif
 
@@ -51,16 +51,16 @@ Available Tools:
 
 La finesse d’objectif offre les outils suivants :
 
-|Tool|Description|
+|Outil|Description|
 |--- |--- |
-|**xcode**|Fournit des informations sur l’installation de Xcode actuelle et les versions des kits de développement logiciel (SDK) iOS et Mac disponibles. Nous utiliserons ces informations ultérieurement lors de la génération de nos liaisons.|
-|**pod**|Recherche, configure, installe (dans un répertoire local) et lie les bibliothèques [CocoaPod](https://cocoapods.org/) objective-C disponibles dans le référentiel de spécifications maître. Cet outil évalue le CocoaPod installé pour déduire automatiquement l’entrée correcte à passer à `bind` l’outil ci-dessous. Nouveauté dans 3,0 !|
-|**bind**|Analyse les fichiers d’en-`*.h`tête () de la bibliothèque objective-C dans les fichiers [ApiDefinition.cs et StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) initiaux.|
+|**Xcode**|Fournit des informations sur l’installation de Xcode actuelle et les versions des kits de développement logiciel (SDK) iOS et Mac disponibles. Nous utiliserons ces informations ultérieurement lors de la génération de nos liaisons.|
+|**Power**|Recherche, configure, installe (dans un répertoire local) et lie les bibliothèques [CocoaPod](https://cocoapods.org/) objective-C disponibles dans le référentiel de spécifications maître. Cet outil évalue le CocoaPod installé pour déduire automatiquement l’entrée correcte à passer à l’outil `bind` ci-dessous. Nouveauté dans 3,0 !|
+|**bind**|Analyse les fichiers d’en-tête (`*.h`) de la bibliothèque objective-C dans les fichiers [ApiDefinition.cs et StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) initiaux.|
 |**update**|Vérifie si des versions plus récentes de la netteté objective sont téléchargées et lance le programme d’installation, le cas échéant.|
-|**Verify-docs**|Affiche des informations détaillées `[Verify]` sur les attributs.|
+|**Verify-docs**|Affiche des informations détaillées sur les attributs de `[Verify]`.|
 |**docs**|Accède à ce document dans votre navigateur Web par défaut.|
 
-Pour obtenir de l’aide sur un outil précis, entrez le nom de l’outil et l' `-help` option. Par exemple, `sharpie xcode -help` retourne la sortie suivante :
+Pour obtenir de l’aide sur un outil précis, entrez le nom de l’outil et l’option `-help`. Par exemple, `sharpie xcode -help` retourne la sortie suivante :
 
 ```
 $ sharpie xcode -help
@@ -74,7 +74,7 @@ Xcode Options:
   -sdks            List all available Xcode SDKs. Pass -verbose for more details.
 ```
 
-Avant de pouvoir démarrer le processus de liaison, nous devons obtenir des informations sur nos kits de développement logiciel (SDK) actuellement installés en `sharpie xcode -sdks`entrant la commande suivante dans le terminal. Votre sortie peut varier selon la ou les versions de Xcode que vous avez installées. `Xcode*.app` La`/Applications` finesse d’objectif recherche les kits de développement logiciel installés dans les sous-répertoires :
+Avant de pouvoir démarrer le processus de liaison, nous devons obtenir des informations sur nos kits de développement logiciel (SDK) actuellement installés en entrant la commande suivante dans le `sharpie xcode -sdks`terminal. Votre sortie peut varier selon la ou les versions de Xcode que vous avez installées. La précision objective recherche les kits de développement logiciel installés dans n’importe quel `Xcode*.app` dans le répertoire `/Applications` :
 
 ```
 $ sharpie xcode -sdks
@@ -87,4 +87,4 @@ sdk: macosx10.10     arch: x86_64  i386
 sdk: watchos2.0      arch: armv7
 ```
 
-À partir de ce qui précède, nous pouvons voir `iphoneos9.1` que le kit de développement logiciel (SDK `arm64` ) est installé sur notre ordinateur et qu’il prend en charge l’architecture. Nous utiliserons cette valeur pour tous les exemples de cette section. Une fois ces informations en place, nous sommes prêts à analyser les fichiers d’en-tête de bibliothèque objective `StructsAndEnums.cs` -C dans le premier `ApiDefinition.cs` et pour le projet de liaison.
+À partir de ce qui précède, nous pouvons voir que le kit de développement logiciel (SDK) `iphoneos9.1` est installé sur notre ordinateur et qu’il a `arm64` prise en charge de l’architecture. Nous utiliserons cette valeur pour tous les exemples de cette section. Une fois ces informations en place, nous sommes prêts à analyser les fichiers d’en-tête de bibliothèque objective-C dans le `ApiDefinition.cs` initial et `StructsAndEnums.cs` pour le projet de liaison.

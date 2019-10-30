@@ -3,64 +3,64 @@ title: Contrôle de la Galerie Android
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 04fac4084328c0af962282dea7a31e3c00457bef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 93eb7f98da6f3fe06f288eae5823f7173e58585f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523007"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029245"
 ---
 # <a name="xamarinandroid-gallery-control"></a>Contrôle de la Galerie Xamarin. Android
 
-[`Gallery`](xref:Android.Widget.Gallery)est un widget de disposition utilisé pour afficher des éléments dans une liste de défilement horizontalement et positionne la sélection actuelle au centre de la vue.
+[`Gallery`](xref:Android.Widget.Gallery) est un widget de disposition utilisé pour afficher des éléments dans une liste de défilement horizontalement et positionne la sélection actuelle au centre de la vue.
 
 > [!IMPORTANT]
 > Ce widget a été déconseillé dans Android 4,1 (niveau d’API 16). 
 
 Dans ce didacticiel, vous allez créer une galerie de photos, puis afficher un message Toast chaque fois qu’un élément de la Galerie est sélectionné.
 
-Une fois `Main.axml` que la disposition est définie pour l’affichage du `Gallery` contenu, le est capturé à [`FindViewById`](xref:Android.App.Activity.FindViewById*)partir de la disposition avec.
-La[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
-la propriété est ensuite utilisée pour définir un adaptateur personnalisé `ImageAdapter`() comme source de tous les éléments à afficher dans le Dallery. Le `ImageAdapter` est créé à l’étape suivante.
+Une fois la disposition de `Main.axml` définie pour l’affichage de contenu, le `Gallery` est capturé à partir de la disposition avec [`FindViewById`](xref:Android.App.Activity.FindViewById*).
+[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+la propriété est ensuite utilisée pour définir un adaptateur personnalisé (`ImageAdapter`) comme source de tous les éléments à afficher dans le Dallery. La `ImageAdapter` est créée à l’étape suivante.
 
-Pour effectuer une opération quand l’utilisateur clique sur un élément de la Galerie, un délégué anonyme est abonné au[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
-. Elle montre un[`Toast`](xref:Android.Widget.Toast)
+Pour effectuer une opération quand l’utilisateur clique sur un élément de la Galerie, un délégué anonyme est abonné au [`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+. Il affiche un [`Toast`](xref:Android.Widget.Toast)
 qui affiche la position d’index (de base zéro) de l’élément theselected (dans un scénario réel, la position peut être utilisée pour obtenir l’image de taille complète d’une autre tâche).
 
 Tout d’abord, il y a quelques variables membres, y compris un tableau d’ID qui référencent les images enregistrées dans le répertoire des ressources pouvant être dessinées (**ressources/dessinables**).
 
-Ensuite, il s’agit du constructeur de classe, où[`Context`](xref:Android.Content.Context)
+Le constructeur de classe est ensuite le [`Context`](xref:Android.Content.Context)
 pour une `ImageAdapter` instance est définie et enregistrée dans un champ local.
 Ensuite, cette méthode implémente certaines méthodes requises héritées de [`BaseAdapter`](xref:Android.Widget.BaseAdapter).
-Le constructeur et le[`Count`](xref:Android.Widget.BaseAdapter.Count)
-les propriétés sont explicites. Règle[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
-doit retourner l’objet réel à la position spécifiée dans l’adaptateur, mais il est ignoré pour cet exemple. Egale[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+Le constructeur et le [`Count`](xref:Android.Widget.BaseAdapter.Count)
+les propriétés sont explicites. Normalement, [`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+doit retourner l’objet réel à la position spécifiée dans l’adaptateur, mais il est ignoré pour cet exemple. De même, [`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
 doit retourner l’ID de ligne de l’élément, mais il n’est pas nécessaire ici.
 
-La méthode effectue le travail pour appliquer une image à un[`ImageView`](xref:Android.Widget.ImageView)
-qui sera incorporé dans le[`Gallery`](xref:Android.Widget.Gallery)
-Dans cette méthode, le membre[`Context`](xref:Android.Content.Context)
-est utilisé pour créer un nouveau [`ImageView`](xref:Android.Widget.ImageView).
-La[`ImageView`](xref:Android.Widget.ImageView)
-est préparé en appliquant une image à partir du tableau local de ressources dessinables, en définissant l’option[`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
-hauteur et largeur de l’image, définition de l’échelle de façon à ce qu’elle corresponde à[`ImageView`](xref:Android.Widget.ImageView)
+La méthode effectue le travail pour appliquer une image à un [`ImageView`](xref:Android.Widget.ImageView)
+qui sera incorporé dans le [`Gallery`](xref:Android.Widget.Gallery)
+Dans cette méthode, le membre [`Context`](xref:Android.Content.Context)
+est utilisé pour créer un [`ImageView`](xref:Android.Widget.ImageView).
+[`ImageView`](xref:Android.Widget.ImageView)
+est préparé en appliquant une image à partir du tableau local de ressources dessinables, en définissant la [`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
+hauteur et largeur de l’image, définition de l’échelle de façon à ce qu’elle corresponde à la [`ImageView`](xref:Android.Widget.ImageView)
 Dimensions, puis en définissant l’arrière-plan pour utiliser l’attribut styleable acquis dans le constructeur.
 
-Pour [`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType) obtenir d’autres options de mise à l’échelle des images, consultez.
+Consultez [`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType) pour d’autres options de mise à l’échelle des images.
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 
 Démarrez un nouveau projet nommé *HelloGallery*.
 
-[![Capture d’écran du nouveau projet Android dans la boîte de dialogue nouvelle solution](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
+[Capture d’écran ![du nouveau projet Android dans la boîte de dialogue nouvelle solution](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
 Recherchez des photos que vous souhaitez utiliser ou [Téléchargez ces exemples d’images](https://developer.android.com/shareables/sample_images.zip).
-Ajoutez les fichiers image au répertoire Resources **/drawn** du projet. Dans la fenêtre **Propriétés** , définissez l’action de génération pour chaque sur **AndroidResource**.
+Ajoutez les fichiers image au répertoire **Resources/drawn** du projet. Dans la fenêtre **Propriétés** , définissez l’action de génération pour chaque sur **AndroidResource**.
 
-Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit:
+Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,7 +71,7 @@ Ouvrez **ressources/mise en page/main. AXML** et insérez ce qui suit:
 />
 ```
 
-Ouvrez `MainActivity.cs` et insérez le code suivant pour le[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+Ouvrez `MainActivity.cs` et insérez le code suivant pour le [`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 méthode
 
 ```csharp
@@ -92,7 +92,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-Créez une nouvelle classe appelée `ImageAdapter` sous- [`BaseAdapter`](xref:Android.Widget.BaseAdapter)classes:
+Créez une nouvelle classe appelée `ImageAdapter` qui sous-classe [`BaseAdapter`](xref:Android.Widget.BaseAdapter):
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -142,7 +142,7 @@ public class ImageAdapter : BaseAdapter
 
 ```
 
-Exécutez l'application. Elle doit ressembler à la capture d’écran ci-dessous:
+Exécutez l'application. Elle doit ressembler à la capture d’écran ci-dessous :
 
 ![Capture d’écran de HelloGallery affichant des exemples d’images](gallery-images/hellogallery3.png)
 
@@ -152,4 +152,4 @@ Exécutez l'application. Elle doit ressembler à la capture d’écran ci-dessou
 - [`Gallery`](xref:Android.Widget.Gallery)
 - [`ImageView`](xref:Android.Widget.ImageView)
 
-_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](http://creativecommons.org/licenses/by/2.5/)._
+_Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la [licence d’attribution de Creative-2,5](https://creativecommons.org/licenses/by/2.5/)._

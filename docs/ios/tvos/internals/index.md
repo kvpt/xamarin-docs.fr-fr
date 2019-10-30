@@ -4,15 +4,15 @@ description: Documents décrivant le fonctionnement interne de tvOS sur Xamarin,
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ffcf4d3a491cb6ad865da35d387782b7bd1fca01
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4712b7b75e735da047d7f44f7c6c47f42b9ad7a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283574"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030660"
 ---
 # <a name="tvos-in-xamarin-internals"></a>tvOS dans Xamarin – Internals 
 
@@ -40,7 +40,7 @@ Explique les principes de conception sous-jacents à la liaison d’API.
 
 Cette section présente les pièges et les limitations à prendre en compte en ce qui concerne Xamarin. iOS, dont la plupart sont applicables à Xamarin. tvOS.
 
-### <a name="linkeriosdeploy-testlinkermd"></a>[Éditeur de liens](~/ios/deploy-test/linker.md)
+### <a name="linkeriosdeploy-testlinkermd"></a>[Linker](~/ios/deploy-test/linker.md)
 
 Explique comment fonctionne l’éditeur de liens pour garantir le plus petit package d’application possible, ainsi que la manière de modifier ses paramètres et son utilisation.
 
@@ -54,7 +54,7 @@ Notes et informations sur mtouch.exe, l’outil de ligne de commande qui génèr
 
 ### <a name="linking-native-librariesiosplatformnative-interopmd"></a>[Liaison de bibliothèques natives](~/ios/platform/native-interop.md)
 
-Xamarin. iOS prend en charge la liaison avec les bibliothèques C natives et les bibliothèques objective-C. Ce document explique comment lier vos bibliothèques C natives à votre projet Xamarin. iOS. Pour plus d’informations sur la façon de procéder de la même façon pour&nbsp; les bibliothèques objective-c, consultez le document [objective-c types](~/ios/platform/binding-objective-c/index.md)&nbsp;.
+Xamarin. iOS prend en charge la liaison avec les bibliothèques C natives et les bibliothèques objective-C. Ce document explique comment lier vos bibliothèques C natives à votre projet Xamarin. iOS. Pour plus d’informations sur la façon de procéder de la même façon pour les bibliothèques objective-C, consultez la&nbsp; [types objective-c de liaison](~/ios/platform/binding-objective-c/index.md)&nbsp;document.
 
 ## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Sélecteurs objective-C](~/ios/internals/objective-c-selectors.md)
 

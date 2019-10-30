@@ -4,15 +4,15 @@ description: Blocs de construction pour la création d’interfaces utilisateur 
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: e3f6524f03612ee39c537f482b1db916ecf08a23
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8c0a2dffbe312cb25258cd2738b661ded2df8d7d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029264"
 ---
 # <a name="xamarinandroid-controls-widgets"></a>Contrôles Xamarin. Android (widgets)
 
@@ -20,13 +20,13 @@ Xamarin. Android expose tous les contrôles d’interface utilisateur natif (wid
 
 ## <a name="action-barandroiduser-interfacecontrolsaction-barmd"></a>[Barre d'action](~/android/user-interface/controls/action-bar.md) 
 
-`ActionBar`est une barre d’outils qui affiche le titre de l’activité, les interfaces de navigation et d’autres éléments interactifs. En règle générale, la barre d’action apparaît en haut de la fenêtre d’une activité.
+`ActionBar` est une barre d’outils qui affiche le titre de l’activité, les interfaces de navigation et d’autres éléments interactifs. En règle générale, la barre d’action apparaît en haut de la fenêtre d’une activité.
 
 ![Exemple de barre](images/action-bar.png)
 
 ## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Saisie semi-automatique](~/android/user-interface/controls/auto-complete.md)
 
-`AutoCompleteTextView`est un élément d’affichage de texte modifiable qui affiche automatiquement les suggestions de saisie semi-automatique pendant que l’utilisateur tape. La liste de suggestions s’affiche dans un menu déroulant dans lequel l’utilisateur peut choisir un élément pour remplacer le contenu de la zone d’édition par.
+`AutoCompleteTextView` est un élément d’affichage de texte modifiable qui affiche automatiquement les suggestions de saisie semi-automatique pendant que l’utilisateur tape. La liste de suggestions s’affiche dans un menu déroulant dans lequel l’utilisateur peut choisir un élément pour remplacer le contenu de la zone d’édition par.
 
 ![Exemple de saisie semi-automatique](images/auto-complete.png)
 
@@ -38,26 +38,26 @@ Les boutons sont des éléments d’interface utilisateur que l’utilisateur cl
 
 ## <a name="calendarandroiduser-interfacecontrolscalendarmd"></a>[Calendar](~/android/user-interface/controls/calendar.md)
 
-La `Calendar` classe est utilisée pour convertir une instance spécifique dans le temps (une valeur de milliseconde qui est décalée de l’époque) en valeurs telles que l’année, le mois, l’heure, le jour du mois et la date de la semaine suivante.
-`Calendar`prend en charge une multitude d’options d’interaction avec les données de calendrier, notamment la possibilité de lire et d’écrire des événements, des participants et des rappels. En utilisant le fournisseur de calendrier dans votre application, les données que vous ajoutez à l’aide de l’API s’affichent dans l’application de calendrier intégrée qui est fournie avec Android.
+La classe `Calendar` est utilisée pour convertir une instance spécifique dans le temps (une valeur de milliseconde qui est décalée de l’époque) en valeurs telles que l’année, le mois, l’heure, le jour du mois et la date de la semaine suivante.
+`Calendar` prend en charge de nombreuses options d’interaction avec les données de calendrier, notamment la possibilité de lire et d’écrire des événements, des participants et des rappels. En utilisant le fournisseur de calendrier dans votre application, les données que vous ajoutez à l’aide de l’API s’affichent dans l’application de calendrier intégrée qui est fournie avec Android.
 
 ![Exemple de calendrier](images/calendar.png)
 
 ## <a name="cardviewandroiduser-interfacecontrolscard-viewmd"></a>[CardView](~/android/user-interface/controls/card-view.md)
 
-`CardView`est un composant d’interface utilisateur qui présente le contenu du texte et de l’image dans les affichages qui ressemblent aux cartes. `CardView`est implémenté sous la `FrameLayout` forme d’un widget avec des angles arrondis et une ombre. En règle générale `CardView` , un est utilisé pour présenter un élément de ligne `ListView` unique `GridView` dans un groupe d’affichage ou.
+`CardView` est un composant d’interface utilisateur qui présente le contenu du texte et de l’image dans les affichages qui ressemblent aux cartes. `CardView` est implémenté en tant que widget `FrameLayout` avec des angles arrondis et une ombre. En règle générale, un `CardView` est utilisé pour présenter un élément de ligne unique dans un groupe d’affichage `ListView` ou `GridView`.
 
 ![Exemple de vue carte](images/cardview.png)
 
 ## <a name="edit-textandroiduser-interfacecontrolsedit-textmd"></a>[Modifier le texte](~/android/user-interface/controls/edit-text.md)
 
-`EditText`est un élément d’interface utilisateur qui permet d’entrer et de modifier du texte.
+`EditText` est un élément d’interface utilisateur qui permet d’entrer et de modifier du texte.
 
 ![Exemple de modification de texte](images/edit-text.png)
 
 ## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Galerie](~/android/user-interface/controls/gallery.md)
 
-`Gallery`est un widget de disposition qui est utilisé pour afficher des éléments dans une liste de défilement horizontale ; Il positionne la sélection actuelle au centre de la vue.
+`Gallery` est un widget de disposition qui est utilisé pour afficher des éléments dans une liste de défilement horizontale ; Il positionne la sélection actuelle au centre de la vue.
 
 ![Galerie d’exemples](images/gallery.png)
 
@@ -75,7 +75,7 @@ Les *sélecteurs* sont des éléments d’interface utilisateur qui permettent �
 
 ## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Menu contextuel](~/android/user-interface/controls/popup-menu.md)
 
-`PopupMenu`est utilisé pour afficher les menus contextuels attachés à une vue particulière.
+`PopupMenu` est utilisé pour afficher les menus contextuels attachés à une vue particulière.
 
 ![Exemple de menu contextuel](images/popup-menu.png)
 
@@ -87,36 +87,36 @@ Un `RatingBar` est un élément d’interface utilisateur qui affiche une évalu
 
 ## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Spinner](~/android/user-interface/controls/spinner.md)
 
-`Spinner`est un élément d’interface utilisateur qui fournit un moyen rapide de sélectionner une valeur dans un ensemble. Elle est simmilar dans une liste déroulante. 
+`Spinner` est un élément d’interface utilisateur qui fournit un moyen rapide de sélectionner une valeur dans un ensemble. Elle est simmilar dans une liste déroulante. 
 
 ![Exemple de compteur](images/spinner.png)
 
 ## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Commutateur](~/android/user-interface/controls/switch.md)
 
-`Switch`est un élément d’interface utilisateur qui permet à un utilisateur de basculer entre deux États, comme ON ou OFF. La `Switch` valeur par défaut est OFF.
+`Switch` est un élément d’interface utilisateur qui permet à un utilisateur de basculer entre deux États, comme ON ou OFF. La valeur par défaut de `Switch` est OFF.
 
 ![Exemple de commutateur](images/switch.png)
 
 ## <a name="textureviewandroiduser-interfacecontrolstexture-viewmd"></a>[TextureView](~/android/user-interface/controls/texture-view.md)
 
-`TextureView`est une vue qui utilise le rendu 2D accéléré par le matériel pour permettre l’affichage d’un flux de contenu vidéo ou OpenGL.
+`TextureView` est une vue qui utilise le rendu 2D avec accélération matérielle pour permettre l’affichage d’un flux de contenu vidéo ou OpenGL.
 
 ![Exemple d’affichage de texture](images/texture-view.png)
 
 ## <a name="toolbarandroiduser-interfacecontrolstool-barindexmd"></a>[ToolBar](~/android/user-interface/controls/tool-bar/index.md)
 
-Le `Toolbar` widget (introduit dans Android 5,0 Lollipop) peut être considéré comme une généralisation de l’interface &ndash; de la barre d’action. il est destiné à remplacer la barre d’action. Le `Toolbar` peut être utilisé n’importe où dans une disposition d’application et il est bien plus personnalisable qu’une barre d’action.
+Le widget `Toolbar` (introduit dans Android 5,0 Lollipop) peut être considéré comme une généralisation de l’interface de la barre d’action &ndash; il est destiné à remplacer la barre d’action. La `Toolbar` peut être utilisée n’importe où dans une disposition d’application et est plus personnalisable qu’une barre d’action.
 
 ![Exemple de barre d’outils](images/toolbar.png)
 
 ## <a name="viewpagerandroiduser-interfacecontrolsview-pagerindexmd"></a>[ViewPager](~/android/user-interface/controls/view-pager/index.md) 
 
-`ViewPager` Est un gestionnaire de disposition qui permet à l’utilisateur de retourner des pages de données à gauche et à droite.
+Le `ViewPager` est un gestionnaire de disposition qui permet à l’utilisateur de retourner des pages de données à gauche et à droite.
 
 ![Exemple de ViewPager](images/viewpager.png)
 
 ## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[WebView](~/android/user-interface/controls/web-view.md)
 
-`WebView`est un élément d’interface utilisateur qui vous permet de créer votre propre fenêtre pour afficher des pages Web (ou même développer un navigateur complet).
+`WebView` est un élément d’interface utilisateur qui vous permet de créer votre propre fenêtre pour afficher des pages Web (ou même développer un navigateur complet).
 
 ![Exemple d’affichage Web](images/web-view.png)

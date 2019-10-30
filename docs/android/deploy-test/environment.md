@@ -3,15 +3,15 @@ title: Environnement de Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 67BFD4E1-276C-4B9F-9BD8-A5218D2BD529
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021179"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028074"
 ---
 # <a name="xamarinandroid-environment"></a>Environnement de Xamarin.Android
 
@@ -89,16 +89,16 @@ Ceci équivaut à ce que la propriété système `debug.mono.log` contienne `gc`
 Contrôle les informations supplémentaires que Xamarin.Android enregistrera dans `adb logcat`.
 Il s’agit d’une chaîne séparée par des virgules (`,`), qui contient l’une des valeurs suivantes :
 
-- `all`: imprimer *tous* les messages. C’est rarement une bonne idée, car cela inclut les messages `lref`.
-- `assembly`: imprimer les fichiers `.apk` et les messages analyse d’assembly.
-- `gc`: imprimer les messages associés au GC.
-- `gref`: imprimer les messages de référence globale JNI.
-- `lref`: imprimer les messages de référence locale JNI.
+- `all` : imprimer *tous les* messages. C’est rarement une bonne idée, car cela inclut les messages `lref`.
+- `assembly` : imprimer `.apk` et les messages analyse d’assembly.
+- `gc` : imprimer les messages associés au GC.
+- `gref` : imprimer les messages de référence globale de JNI.
+- `lref` : imprimer les messages de référence locale de JNI.
   > [!NOTE]
-  > ceci spammera `adb logcat`vraiment* .
+  > C’est *vraiment* le spam `adb logcat`.
   > Dans Xamarin.Android 5.1, ceci créera également un fichier `.__override__/lrefs.txt`, qui peut être *énorme*.
   > Éviter.
-- `timing`: imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
+- `timing` : imprimer des informations de minutage de méthode. Cette opération créera également les fichiers `.__override__/methods.txt` et `.__override__/counters.txt`.
 
 ### `debug.mono.max_grefc`
 
@@ -106,7 +106,7 @@ La valeur de la propriété système `debug.mono.max_grefc` est un entier.
 Elle *remplace* le nombre GREF maximal par défaut détecté pour l’appareil cible.
 
 *Remarque :* c’est utilisable uniquement avec `adb shell setprop
-debug.mono.max_grefc`, étant donné que la valeur n’est pas disponible à temps avec un fichier **environment.txt**.
+debug.mono.max_grefc`, étant donné que la valeur ne sera pas disponible à temps avec un fichier **environment.txt**.
 
 ### `debug.mono.profile`
 
@@ -130,8 +130,8 @@ Cependant, elle permet *parfois* d’effectuer des recherches supplémentaires..
 
 La propriété système `debug.mono.wref` permet de remplacer le mécanisme à faible référence JNI par défaut détecté. Deux valeurs sont prises en charge :
 
-- `jni`: utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
-- `java`: Utilisez des références globales JNI `java.lang.WeakReference` qui référencent des instances.
+- `jni` : utilisez les références faibles JNI créées par `JNIEnv::NewWeakGlobalRef()` et détruites par `JNIEnv::DeleteWeakGlobalREf()`.
+- `java`: utilisez les références globales JNI qui référencent des instances de `java.lang.WeakReference`.
 
 `java` est utilisé, par défaut, jusqu'à l’API-7 et sur l’API-19 (Kit Kat) où ART est activé. (API-8 a ajouté des références `jni` et ART a *rompu* des références `jni`.)
 

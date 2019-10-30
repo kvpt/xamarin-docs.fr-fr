@@ -1,84 +1,84 @@
 ---
-title: Utilisation de watchOS disposition dans Xamarin
-description: Ce document décrit comment créer une disposition de watchOS avec Xamarin. Il aborde les contrôleurs d’interface, les groupes, les séparateurs et les contrôles de contenu.
+title: Utilisation de la disposition Watchos dans Xamarin
+description: Ce document décrit comment créer une disposition Watchos à l’aide de Xamarin. Il aborde les contrôleurs d’interface, les groupes, les séparateurs et les contrôles de contenu.
 ms.prod: xamarin
 ms.assetid: BEDB62A1-2249-4459-986F-413A41E63DF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 568d1e354d0ee840aeed980d6e8cc6b83068a1c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768749"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001545"
 ---
-# <a name="working-with-watchos-layout-in-xamarin"></a>Utilisation de watchOS disposition dans Xamarin
+# <a name="working-with-watchos-layout-in-xamarin"></a>Utilisation de la disposition Watchos dans Xamarin
 
-La mise en page pour l’Apple Watch [tailles d’écran](~/ios/watchos/app-fundamentals/screen-sizes.md) propose des défis uniques.
+La conception de dispositions pour les [tailles d’écran](~/ios/watchos/app-fundamentals/screen-sizes.md) Apple Watch présente des défis uniques.
 
 ## <a name="design-tips"></a>Conseils de conception
 
-Le point essentiel est : rendre votre interface utilisateur lisible et utilisable sur un écran espion petit, avec un doigt volumineux. N’appartiennent à l’interruption de la conception de la **iOS Simulator** (qui apparaît très volumineux) et un **pointeur de la souris** (qui fonctionne avec des cibles de touch minuscule) !
+Le point clé est : rendre votre interface utilisateur lisible et utilisable sur un petit écran de montre, avec un doigt de grande taille. Ne rentrez pas dans l’interruption de la conception pour le **simulateur iOS** (qui paraît très grand) et un **pointeur de souris** (qui fonctionne avec les petites cibles tactiles) !
 
-- Utiliser un arrière-plan noir, il crée l’illusion d’un écran plus grand avec panneau noir de la montre.
+- Utilisez un arrière-plan noir : il crée l’illusion d’un écran plus grand avec le cadre noir de la montre.
 
-- Ne pas remplir autour de la disposition de votre écran - cadre constitue un remplissage visual naturels.
+- Ne pas entourer la disposition de l’écran : le cadre forme un remplissage visuel naturel.
 
-- Se concentrer sur la lisibilité. Utiliser judicieusement les tailles de police et couleurs pour garantir le texte est lisible. Utiliser les styles de texte intégré pour obtenir la prise en charge automatique de Type dynamique.
+- Concentrez-vous sur la lisibilité. Utilisez les couleurs et les tailles de police judicieusement pour vous assurer que le texte est lisible. Utilisez les styles de texte intégrés pour bénéficier d’une prise en charge automatique des types dynamiques.
 
-![](layout-images/type.png "Exemple de prise en charge de Type dynamique")
+![](layout-images/type.png "Example of Dynamic Type support")
 
-- Concentrez-vous sur les tailles de cibles tactile. Boutons/tappable lignes de la table avec les étiquettes de texte doivent s’étendre à l’écran entier. Apple indique « ne placez jamais plus de trois éléments côte à côte », et si vous n’utilisez pas les étiquettes de texte et les icônes.
+- Concentrez-vous sur les tailles de cibles tactiles. Les lignes de table Buttons/tappable avec des étiquettes de texte doivent s’étendre sur la totalité de l’écran. Apple indique « ne jamais placer plus de trois éléments côte à côte » et si vous utilisez des icônes et non des étiquettes de texte.
 
-- Utilisez le [ `Menu` contrôle](~/ios/watchos/user-interface/menu.md) aux fonctionnalités exposent moins fréquemment utilisé pour conserver votre conception d’applications claire et concise.
+- Utilisez le [contrôle`Menu`](~/ios/watchos/user-interface/menu.md) pour exposer des fonctionnalités moins fréquemment utilisées pour que la conception de votre application reste claire et concise.
 
 ## <a name="implementation"></a>Implémentation
 
-Regardez le que kit inclut les contrôles suivants pour vous aider à créer des dispositions d’application attrayante espion :
+Le kit Watch comprend les contrôles suivants pour vous aider à créer des dispositions attrayantes pour les applications Watch :
 
 ### <a name="interface-controller"></a>Contrôleur d’interface
 
-Le `WKInterfaceController` est la classe de base toutes vos séquences.
+La `WKInterfaceController` est la classe de base de toutes vos scènes.
 
-L’aire de conception pour le contrôleur d’interface se comporte comme un vertical **groupe**: vous pouvez faire glisser des autres contrôles sur le contrôleur d’interface et elles sera disposé automatiquement au-dessus de l’autre :
+L’aire de conception du contrôleur d’interface se comporte comme un **groupe**vertical : vous pouvez faire glisser d’autres contrôles sur le contrôleur d’interface et ils seront automatiquement disposés l’un au-dessus de l’autre :
 
-![](layout-images/controller-scene.png "Les contrôles sont un disposé automatiquement au-dessus de l’autre")
+![](layout-images/controller-scene.png "Controls are automatically laid-out one above the other")
 
-Vous pouvez définir le **Position** et **taille** propriétés sur chaque contrôle afin de contrôler leur apparence :
+Vous pouvez définir les propriétés de **position** et de **taille** sur chaque contrôle pour contrôler leur apparence :
 
-![](layout-images/positionsize-attributes.png "Définir les propriétés Position et la taille sur chaque contrôle")
+![](layout-images/positionsize-attributes.png "Set the Position and Size properties on each control")
 
-Quand la taille est définie sur **relatif au conteneur** vous pouvez fournir une valeur proportionnelle et un réglage du décalage. Cette capture d’écran affiche un bouton qui a été défini pour utiliser 80 % de la largeur de l’écran de surveillance (**0.8**) :
+Lorsque la taille est définie sur **relative au conteneur** , vous pouvez fournir une valeur proportionnelle et un ajustement de décalage. Cette capture d’écran montre un bouton qui a été défini pour utiliser 80% de la largeur de l’écran de surveillance (**0,8**) :
 
-![](layout-images/button-attributes.png "Fournir une valeur proportionnelle et un ajustement de décalage")
+![](layout-images/button-attributes.png "Provide a proportional value and an offset adjustment")
 
 ### <a name="group"></a>Regrouper
 
-`WKInterfaceGroup` est un conteneur de disposition simple qui peut être configuré pour la pile contrôle verticalement ou horizontalement. Il inclut l’espacement entre chaque contrôle par défaut, mais vous pouvez modifier l’espacement (et encarts) dans le **attributs** inspecteur.
+`WKInterfaceGroup` est un conteneur de disposition simple qui peut être configuré pour empiler des contrôles verticalement ou horizontalement. Il comprend l’espacement entre chaque contrôle par défaut, mais vous pouvez modifier l’espacement (et les indéfinis) dans l’inspecteur d' **attributs** .
 
-![](layout-images/group-attributes.png "Modifier l’espacement et les marges dans l’inspecteur d’attributs")
+![](layout-images/group-attributes.png "Modify the spacing and insets in the Attributes inspector")
 
-Groupes peuvent eux-mêmes être dimensionnés et positionnés par rapport à des contrôles autour d’elles, et les groupes peuvent être imbriqués pour créer des dispositions complexes.
+Les groupes peuvent eux-mêmes être dimensionnés et positionnés par rapport aux contrôles qui les entourent, et les groupes peuvent être imbriqués pour créer des dispositions complexes.
 
-![](layout-images/group-scene.png "Les groupes peuvent être imbriqués pour créer des dispositions complexes")
+![](layout-images/group-scene.png "Groups can be nested to create complex layouts")
 
 ### <a name="separator"></a>Séparateur
 
-Le contrôle de séparateur vise à aider à fournir une aide visuelle dans votre disposition. Utiliser des séparateurs (ou les couleurs d’arrière-plan ou des images) pour aider l’utilisateur à comprendre le contenu qui est lié à l’écran.
+Le contrôle separator est destiné à fournir une aide visuelle à votre disposition. Utilisez des séparateurs (ou des couleurs ou des images d’arrière-plan) pour aider l’utilisateur à comprendre quel contenu est lié à votre écran.
 
-![](layout-images/separator-scene.png "Exemple d’utilisation de séparateur")
+![](layout-images/separator-scene.png "Example of Separator usage")
 
-Notez les séparateurs bleues et vertes qui n’utilisent pas la largeur totale de l’écran ont été configurées avec soit **fixe** ou **relatif au conteneur** tailles.
+Notez que les séparateurs bleus et verts qui n’utilisent pas la largeur complète de l’écran ont été configurés avec des tailles **fixes** ou **relatives aux** tailles de conteneur.
 
 ### <a name="content-controls"></a>Contrôles de contenu
 
-Aucune disposition ne serait complète sans le `Label`, `Image`, `Button`, `Switch`, `Slider`, `Map`, et [autres contrôles](~/ios/watchos/user-interface/index.md).
-Il peuvent être positionnés dans vos dispositions à l’aide de **groupes** ou les paramètres de position et la taille de chaque contrôle.
+Aucune disposition n’est complète sans le `Label`, `Image`, `Button`, `Switch`, `Slider`, `Map`et d' [autres contrôles](~/ios/watchos/user-interface/index.md).
+Celles-ci peuvent être positionnées dans vos dispositions à l’aide de **groupes** ou de paramètres de position et de taille sur chaque contrôle.
 
 ## <a name="related-links"></a>Liens associés
 
 - [WatchKitCatalog (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Référence de mise en page d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
-- [Apple couleur & Typographie de référence](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)
+- [Informations de référence sur la disposition d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
+- [Informations de référence sur la typographie de Color & d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)

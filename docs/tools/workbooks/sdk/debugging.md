@@ -3,30 +3,30 @@ title: Débogage d’intégrations
 description: Ce document décrit comment déboguer les intégrations de Xamarin Workbooks, côté agent et côté client sur Windows et Mac.
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: fbb5673a70328ad6edde78af1b35d2801fe65ca8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3030bf907d1ddbb02884f997f178b55950b442d4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283930"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018820"
 ---
 # <a name="debugging-integrations"></a>Débogage d’intégrations
 
 ## <a name="debugging-agent-side-integrations"></a>Débogage des intégrations côté agent
 
-Le débogage des intégrations côté agent s’effectue mieux en utilisant les méthodes de journalisation fournies `Log` par la `Xamarin.Interactive.Logging`classe dans.
+Le débogage des intégrations côté agent est préférable en utilisant les méthodes de journalisation fournies par la classe `Log` dans `Xamarin.Interactive.Logging`.
 
 Sur macOS, les messages de journal s’affichent dans le menu de la visionneuse du journal (**fenêtre > Log Viewer**) et dans le journal du client. Sur Windows, les messages apparaissent uniquement dans le journal du client, car il n’y a aucune visionneuse du journal.
 
 Le journal client se trouve aux emplacements suivants sur macOS et Windows :
 
-- Macintosh`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac : `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows : `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-Une chose à savoir, c’est que lors du chargement des intégrations via `#r` le mécanisme habituel pendant le développement, l’assembly d’intégration est récupéré en tant que _dépendance_ du classeur et empaqueté avec lui si aucun chemin d’accès absolu n’est utilisé. Cela peut entraîner des modifications qui ne se propagent pas, comme si la reconstruction de l’intégration ne faisait rien.
+Une chose à savoir, c’est que lors du chargement des intégrations via le mécanisme de `#r` habituel pendant le développement, l’assembly d’intégration est récupéré en tant que _dépendance_ du classeur et empaqueté avec lui si aucun chemin d’accès absolu n’est utilisé. Cela peut entraîner des modifications qui ne se propagent pas, comme si la reconstruction de l’intégration ne faisait rien.
 
 ## <a name="debugging-client-side-integrations"></a>Débogage des intégrations côté client
 
@@ -44,11 +44,11 @@ defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 
 puis redémarrez Xamarin Workbooks. Une fois cette opération effectuée, l' **élément inspecter** doit s’afficher dans le menu contextuel du clic droit, et un nouveau volet **développeur** sera disponible dans les préférences des classeurs. Cette option vous permet de choisir si vous souhaitez que les outils de développement soient ouverts au démarrage :
 
-[![Volet du développeur](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
+[![le volet développeur](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 Cette préférence est également Restart (redémarrer uniquement). vous devrez redémarrer le client des classeurs afin qu’il prenne effet sur les nouveaux classeurs. L’activation des outils de développement via le menu contextuel ou les préférences affiche l’interface utilisateur de Safari familière :
 
-[![Outils de développement Safari](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
+[![les outils de développement Safari](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Pour plus d’informations sur l’utilisation des outils de développement Safari, consultez la [documentation de WebKit Inspector][webkit-docs].
 
@@ -62,6 +62,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 Exécutez le sélecteur F12. vous devriez voir l’instance incorporée qui alimente la surface cliente des classeurs dans la liste. Choisissez-le et les outils de débogage F12 familiers d’Internet Explorer s’affichent, attachés au client :
 
-[![Outils F12](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
+[![les outils F12](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

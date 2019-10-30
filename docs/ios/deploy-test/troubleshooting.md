@@ -4,15 +4,15 @@ description: Ce document fournit des conseils de dépannage liés à la signatur
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: b6fbe8ca975100310922240e532b9922e76e4724
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1c8eddcf16c8513852c21babf34d81c9a3290406
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290672"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028435"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Test et déploiement de Xamarin.iOS - Résolution des problèmes
 
@@ -22,13 +22,13 @@ La signature de code et le provisionnement avec iOS sont des processus assez dé
 
 - Les grandes équipes doivent éviter d’utiliser le bouton « Fix issue » dans Xcode, illustré ici :
 
-    [![](troubleshooting-images/fixissue.png "Boîte de dialogue Fix issue")](troubleshooting-images/fixissue.png#lightbox)
+    [![](troubleshooting-images/fixissue.png "The Fix Issues dialog")](troubleshooting-images/fixissue.png#lightbox)
 
     Cette action entraîne la création de certificats et profils de provisionnement supplémentaires. Dans le meilleur des cas, elle crée un profil de provisionnement chaque fois qu’un membre de l’équipe clique sur le bouton, ce qui nuit à la bonne organisation des profils. Dans le pire des cas, cette action révoque les certificats des autres utilisateurs dans l’entreprise, lesquels ne peuvent alors plus utiliser leurs applications.
 
 - Gérez bien l’accès au trousseau, et supprimez les certificats et profils qui ont expiré. Les certificats d’entreprise ont une durée de validité de trois ans, alors que les autres restent valides pendant un an uniquement. Les certificats ne pouvant pas être renouvelés, il faut créer d’autres certificats juste avant l’expiration des anciens. Assurez-vous de révoquer et de supprimer les anciens certificats, puis de resigner les applications avec les nouveaux certificats.
 
-- Supprimez les anciens profils de provisionnement quand les nouveaux profils sont installés. Ainsi, Visual Studio pour Mac n’a pas à choisir quel profil utiliser. Pour cela, supprimez d’abord le profil dans le centre pour développeurs d’Apple, puis accédez à *Préférences > Votre compte > Afficher les détails...* . Sélectionnez le profil de provisionnement, puis cliquez sur **Afficher dans le Finder**. L’emplacement du profil dans le système de fichiers Mac s’affiche. Vous pouvez ensuite supprimer le profil à l’aide du Finder.
+- Supprimez les anciens profils de provisionnement quand les nouveaux profils sont installés. Ainsi, Visual Studio pour Mac n’a pas à choisir quel profil utiliser. Pour ce faire, vous devez d’abord supprimer le profil dans le centre de développement Apple, puis accéder aux *préférences > votre compte > afficher les détails...* . Sélectionnez le profil de provisionnement, puis cliquez sur **afficher dans le Finder**. L’emplacement du profil dans le système de fichiers Mac s’affiche. Vous pouvez ensuite supprimer le profil à l’aide du Finder.
 
 - Assurez-vous que tous les certificats requis et les clés privées correspondantes sont disponibles. Chaque membre de l’équipe doit avoir un certificat de développeur (pour installer des applications sur son propre appareil) et un certificat de distribution (pour installer des applications sur les autres appareils)
 

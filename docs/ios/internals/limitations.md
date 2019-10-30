@@ -4,15 +4,15 @@ description: Ce document décrit les limitations de Xamarin. iOS, la discussion 
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/09/2018
-ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753334"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022306"
 ---
 # <a name="limitations-of-xamarinios"></a>Limitations de Xamarin. iOS
 
@@ -49,7 +49,7 @@ class Foo<T> : UIView {
 
 ## <a name="no-dynamic-code-generation"></a>Aucune génération de code dynamique
 
-Étant donné que le noyau iOS empêche une application de générer du code dynamiquement, Xamarin. iOS ne prend en charge aucune forme de génération de code dynamique. Elles incluent notamment :
+Étant donné que le noyau iOS empêche une application de générer du code dynamiquement, Xamarin. iOS ne prend en charge aucune forme de génération de code dynamique. Elles incluent notamment les suivantes :
 
 - System. Reflection. Emit n’est pas disponible.
 - Aucune prise en charge de System. Runtime. Remoting.
@@ -75,7 +75,7 @@ Mais la totalité de l’API de réflexion, y compris type. GetType (« someCla
 
 Pour appeler une fonction native par le C# biais d’un délégué, la déclaration du délégué doit être décorée avec l’un des attributs suivants :
 
-- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (par défaut, car il est multiplateforme et compatible avec .NET Standard 1.1 +)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (par défaut, car il est multiplateforme et compatible avec .NET standard 1.1 +)
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 L’échec de la fourniture de l’un de ces attributs entraînera une erreur d’exécution, par exemple :

@@ -4,27 +4,27 @@ description: Ce guide explique l’accès aux fichiers dans Xamarin. Android
 ms.prod: xamarin
 ms.assetid: FC1CFC58-B799-4DD6-8ED1-DE36B0E56856
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: bf4b0f4ed6ade69808314ac7e7a51270aa3a847e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758895"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020427"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>Stockage de fichiers et accès avec Xamarin. Android
 
-Une exigence courante pour les applications Android consiste à manipuler &ndash; des fichiers pour enregistrer des images, télécharger des documents ou exporter des données à partager avec d’autres programmes. Android (basé sur Linux) le prend en charge en fournissant de l’espace pour le stockage des fichiers. Android regroupe le système de fichiers en deux types de stockage différents :
+Une exigence courante pour les applications Android consiste à manipuler des fichiers &ndash; à enregistrer des images, télécharger des documents ou exporter des données pour les partager avec d’autres programmes. Android (basé sur Linux) le prend en charge en fournissant de l’espace pour le stockage des fichiers. Android regroupe le système de fichiers en deux types de stockage différents :
 
 * **Stockage interne** &ndash; il s’agit d’une partie du système de fichiers accessible uniquement par l’application ou le système d’exploitation.
-* **Stockage externe** &ndash; il s’agit d’une partition pour le stockage des fichiers accessibles par toutes les applications, l’utilisateur et éventuellement d’autres appareils. Sur certains appareils, le stockage externe peut être amovible (par exemple, une carte SD).
+* **Stockage externe** &ndash; il s’agit d’une partition pour le stockage des fichiers accessibles par toutes les applications, l’utilisateur et éventuellement d’autres périphériques. Sur certains appareils, le stockage externe peut être amovible (par exemple, une carte SD).
 
 Ces regroupements sont conceptuels uniquement et ne font pas nécessairement référence à une partition ou un répertoire unique sur l’appareil. Un appareil Android fournira toujours une partition pour le stockage interne et le stockage externe. Il est possible que certains appareils puissent avoir plusieurs partitions qui sont considérées comme du stockage externe. Quelle que soit la partition, les API pour la lecture, l’écriture ou la création de fichiers sont les mêmes. Il existe deux ensembles d’API qui peuvent être utilisés par une application Xamarin. Android pour accéder aux fichiers :
 
-1. **API .net (fournies par mono et encapsulées par Xamarin. Android)** Celles-ci incluent les [applications auxiliaires de système de fichiers](~/essentials/file-system-helpers.md?context=xamarin/android) fournies par [Xamarin. Essentials.](~/essentials/index.md?context=xamarin/android) &ndash; Les API .NET offrent la meilleure compatibilité multiplateforme et, par conséquent, ce guide se concentre sur ces API.
-1. **Les API d’accès au fichier Java natif (fournies par Java et encapsulées par Xamarin. Android)** &ndash; Java fournit ses propres API pour la lecture et l’écriture de fichiers. Il s’agit d’une alternative entièrement acceptable pour les API .NET, mais qui sont spécifiques à Android et ne conviennent pas aux applications qui sont destinées à être multiplateformes.
+1. **Les API .net (fournies par mono et encapsulées par Xamarin. Android)** &ndash; elles incluent les [applications d’assistance du système de fichiers](~/essentials/file-system-helpers.md?context=xamarin/android) fournies par [Xamarin. Essentials](~/essentials/index.md?context=xamarin/android). Les API .NET offrent la meilleure compatibilité multiplateforme et, par conséquent, ce guide se concentre sur ces API.
+1. **Les API d’accès aux fichiers Java natives (fournies par Java et encapsulées par Xamarin. Android)** &ndash; Java fournit ses propres API pour la lecture et l’écriture de fichiers. Il s’agit d’une alternative entièrement acceptable pour les API .NET, mais qui sont spécifiques à Android et ne conviennent pas aux applications qui sont destinées à être multiplateformes.
 
 La lecture et l’écriture dans des fichiers sont presque identiques dans Xamarin. Android, comme c’est le cas pour toute autre application .NET. L’application Xamarin. Android détermine le chemin d’accès au fichier qui sera manipulé, puis utilise les idiomes .NET standard pour l’accès aux fichiers. Étant donné que les chemins d’accès réels au stockage interne et externe peuvent varier d’un appareil à l’appareil ou d’une version Android à une version Android, il n’est pas recommandé de coder en dur le chemin d’accès aux fichiers. Utilisez plutôt les API Xamarin. Android pour déterminer le chemin d’accès aux fichiers. Ainsi, les API .NET pour la lecture et l’écriture de fichiers exposent les API Android natives qui vous aideront à déterminer le chemin d’accès aux fichiers sur le stockage interne et externe.
 
@@ -32,7 +32,7 @@ Avant de discuter des API impliquées dans l’accès aux fichiers, il est impor
 
 ## <a name="internal-vs-external-storage"></a>Stockage interne et externe
 
-Conceptuellement, le stockage interne et le stockage externe sont &ndash; très similaires à ceux où une application Xamarin. Android peut enregistrer des fichiers. Cette similarité peut prêter à confusion pour les développeurs qui ne sont pas familiarisés avec Android, car il n’est pas évident qu’une application doit utiliser le stockage interne et le stockage externe.
+Conceptuellement, le stockage interne et le stockage externe sont très similaires &ndash; ils sont tous les deux des endroits où une application Xamarin. Android peut enregistrer des fichiers. Cette similarité peut prêter à confusion pour les développeurs qui ne sont pas familiarisés avec Android, car il n’est pas évident qu’une application doit utiliser le stockage interne et le stockage externe.
 
 Le stockage interne fait référence à la mémoire non volatile que Android alloue au système d’exploitation, fichiers APK et pour les applications individuelles. Cet espace n’est pas accessible, sauf par le système d’exploitation ou les applications. Android allouera un répertoire dans la partition de stockage interne pour chaque application. Lorsque l’application est désinstallée, tous les fichiers qui sont conservés sur le stockage interne dans ce répertoire sont également supprimés. Le stockage interne est mieux adapté aux fichiers qui ne sont accessibles qu’à l’application et qui ne sont pas partagés avec d’autres applications ou qui n’ont pas une valeur minimale une fois l’application désinstallée. Sur Android 6,0 ou version ultérieure, les fichiers sur le stockage interne peuvent être sauvegardés automatiquement par Google à l’aide [de la fonctionnalité de sauvegarde automatique dans Android 6,0](https://developer.android.com/guide/topics/data/autobackup). Le stockage interne présente les inconvénients suivants :
 
@@ -51,29 +51,29 @@ Ce guide se concentre sur le stockage interne. Pour plus d’informations sur l�
 
 ## <a name="working-with-internal-storage"></a>Utilisation du stockage interne
 
-Le répertoire de stockage interne pour une application est déterminé par le système d’exploitation et est exposé aux applications Android par `Android.Content.Context.FilesDir` la propriété. Cela renverra un `Java.IO.File` objet représentant le répertoire qu’Android a exclusivement dédié à l’application.  Par exemple, une application avec le nom de package **com. CompanyName** le répertoire de stockage interne peut être :
+Le répertoire de stockage interne pour une application est déterminé par le système d’exploitation et est exposé aux applications Android par la propriété `Android.Content.Context.FilesDir`. Cela retourne un objet `Java.IO.File` représentant le répertoire qu’Android a exclusivement dédié à l’application.  Par exemple, une application avec le nom de package **com. CompanyName** le répertoire de stockage interne peut être :
 
 ```bash
 /data/user/0/com.companyname/files
 ```
 
-Ce document fait référence au répertoire de stockage interne en tant que _stockage interne\__ .
+Ce document fait référence au répertoire de stockage interne en tant que _stockage\_interne_.
 
 > [!IMPORTANT]
-> Le chemin d’accès exact au répertoire de stockage interne peut varier d’un appareil à l’autre et entre les versions d’Android. Pour cette raison, les applications ne doivent pas coder en dur le chemin d’accès au répertoire de stockage des fichiers internes et utiliser à la place les `System.Environment.GetFolderPath()`API Xamarin. Android, telles que.
+> Le chemin d’accès exact au répertoire de stockage interne peut varier d’un appareil à l’autre et entre les versions d’Android. Pour cette raison, les applications ne doivent pas coder en dur le chemin d’accès au répertoire de stockage des fichiers internes et utiliser à la place les API Xamarin. Android, telles que `System.Environment.GetFolderPath()`.
 
-Pour optimiser le partage de code, les applications Xamarin. Android (ou les applications Xamarin. Forms ciblant Xamarin [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*) . Android) doivent utiliser la méthode. Dans Xamarin. Android, cette méthode retourne une chaîne pour un répertoire qui est le même emplacement que `Android.Content.Context.FilesDir`. Cette méthode prend une énumération `System.Environment.SpecialFolder`,, qui est utilisée pour identifier un jeu de constantes énumérées qui représentent les chemins d’accès des dossiers spéciaux utilisés par le système d’exploitation. Toutes les `System.Environment.SpecialFolder` valeurs ne sont pas mappées à un répertoire valide sur Xamarin. Android. Le tableau suivant décrit le chemin d’accès qui peut être attendu pour une `System.Environment.SpecialFolder`valeur donnée :
+Pour optimiser le partage de code, les applications Xamarin. Android (ou les applications Xamarin. Forms ciblant Xamarin. Android) doivent utiliser la méthode [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*) . Dans Xamarin. Android, cette méthode retourne une chaîne pour un répertoire qui est le même emplacement que `Android.Content.Context.FilesDir`. Cette méthode prend une énumération, `System.Environment.SpecialFolder`, qui est utilisée pour identifier un jeu de constantes énumérées qui représentent les chemins d’accès des dossiers spéciaux utilisés par le système d’exploitation. Toutes les valeurs de `System.Environment.SpecialFolder` ne sont pas mappées à un répertoire valide sur Xamarin. Android. Le tableau suivant décrit le chemin d’accès qui peut être attendu pour une valeur donnée de `System.Environment.SpecialFolder`:
 
-| System.Environment.SpecialFolder | path  |
+| System. Environment. SpecialFolder | Chemin d’accès  |
 |----------------------|---|
-| `ApplicationData` | **_INTERNAL\_STORAGE_/.config** |
+| `ApplicationData` | **_Stockage\_interne_/.config** |
 | `Desktop` | **_Stockage\_interne_/Desktop** |
 | `LocalApplicationData` | **_Stockage\_interne_/.local/share** |
-| `MyDocuments` | **_STOCKAGE\_INTERNE_** |
+| `MyDocuments` | **_STOCKAGE\_interne_** |
 | `MyMusic` | **_Stockage\_interne_/Music** |
 | `MyPictures` | **_Stockage\_interne_/Pictures** |
 | `MyVideos` | **_Stockage\_interne_/Videos** |
-| `Personal` | **_STOCKAGE\_INTERNE_** |
+| `Personal` | **_STOCKAGE\_interne_** |
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>Lecture ou écriture dans des fichiers sur le stockage interne
 
@@ -121,7 +121,7 @@ public async Task<int> ReadCountAsync()
 }
 ```
 
-## <a name="using--xamarinessentials-ndash-file-system-helpers"></a>Utilisation des applications auxiliaires &ndash; du système de fichiers Xamarin. Essentials
+## <a name="using--xamarinessentials-ndash-file-system-helpers"></a>Utilisation de Xamarin. Essentials &ndash; les applications auxiliaires du système de fichiers
 
 [Xamarin. Essentials](~/essentials/file-system-helpers.md?context=xamarin/android) est un ensemble d’API permettant d’écrire du code compatible multiplateforme. Les applications [auxiliaires du système de fichiers](~/essentials/file-system-helpers.md?context=xamarin/android) sont une classe qui contient une série d’applications auxiliaires permettant de simplifier la localisation des répertoires de cache et de données de l’application. Cet extrait de code fournit un exemple de la façon de rechercher le répertoire de stockage interne et le répertoire de cache pour une application :
 
@@ -133,7 +133,7 @@ var backingFile = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "
 var cacheFile = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, "count.txt");
 ```
 
-## <a name="hiding-files-from-the-mediastore"></a>Masquage des fichiers du`MediaStore`
+## <a name="hiding-files-from-the-mediastore"></a>Masquage des fichiers du `MediaStore`
 
 Le `MediaStore` est un composant Android qui collecte des métadonnées sur les fichiers multimédias (vidéos, musique, images) sur un appareil Android. Son objectif est de simplifier le partage de ces fichiers sur toutes les applications Android sur l’appareil.
 

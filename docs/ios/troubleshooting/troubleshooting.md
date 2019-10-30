@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769702"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030880"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Conseils de dépannage pour Xamarin. iOS 
 
@@ -21,9 +21,9 @@ ms.locfileid: "70769702"
 
 Cette erreur se produit en raison d’une incompatibilité avec Visual Studio.
 
-- **Mise à jour 1 de Visual Studio 2017** (version 15,1 ou antérieure) est compatible uniquement avec **System. ValueTuple NuGet 4.3.0** (ou antérieur).
+- **Visual Studio 2017 Update 1** (version 15,1 ou antérieure) est compatible uniquement avec **System. ValueTuple NuGet 4.3.0** (ou antérieur).
 
-- **Mise à jour 2 de Visual Studio 2017** (version 15,2 ou ultérieure) est compatible uniquement avec le **System. ValueTuple NuGet 4.3.1** ou ultérieur.
+- **Visual Studio 2017 Update 2** (version 15,2 ou ultérieure) est compatible uniquement avec le **System. ValueTuple NuGet 4.3.1** ou ultérieur.
 
 Veuillez choisir le système. ValueTuple NuGet approprié qui correspond à votre installation de Visual Studio 2017.
 
@@ -45,7 +45,7 @@ Vous utilisez peut-être un encodage qui n’est pas ajouté par défaut. Consul
 
 Le membre a probablement été supprimé par l’éditeur de liens et, par conséquent, il n’existe pas dans l’assembly au moment de l’exécution.  Il existe plusieurs solutions à ce qui suit :
 
-- Ajoutez l' [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) attribut au membre.  Cela empêchera l’éditeur de liens de le supprimer.
+- Ajoutez l’attribut [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) au membre.  Cela empêchera l’éditeur de liens de le supprimer.
 - Quand vous appelez [**mTouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29), utilisez les options **-nolink** ou **-linksdkonly** :
   - **-nolink** désactive toutes les liaisons.
   - **-linksdkonly** lie uniquement les assemblys fournis par Xamarin. iOS, tels que **Xamarin. iOS. dll**, tout en conservant tous les types dans les assemblys créés par l’utilisateur (IE. vos projets d’application).
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-La définition ci-dessus est générée automatiquement par Visual Studio pour Mac pour tous les fichiers XIB que vous ajoutez à `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` Visual Studio pour Mac dans le fichier.
+La définition ci-dessus est générée automatiquement par Visual Studio pour Mac pour tous les fichiers XIB que vous ajoutez à Visual Studio pour Mac dans le fichier `NAME_OF_YOUR_XIB_FILE.designer.xib.cs`.
 
 En outre, les types contenant le code ci-dessus doivent être une sous-classe de [NSObject](xref:Foundation.NSObject).  Si le type conteneur se trouve dans un espace de noms, il doit également avoir un attribut [[register]](xref:Foundation.RegisterAttribute) qui fournit un nom de type sans espace de noms (comme interface Builder ne prend pas en charge les espaces de noms dans les types) :
 
@@ -98,7 +98,7 @@ public partial class MyImageView : UIView {
 }
 ```
 
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System. MissingMethodException : Aucun constructeur n’a été trouvé pour foo. bar :: ctor (System. IntPtr)
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>System. MissingMethodException : aucun constructeur trouvé pour foo. bar :: ctor (System. IntPtr)
 
 Cette erreur se produit au moment de l’exécution lorsque le code essaie d’instancier une instance des classes que vous avez référencées à partir de votre fichier Interface Builder. Cela signifie que vous avez oublié d’ajouter un constructeur qui accepte un IntPtr unique comme paramètre.
 
@@ -110,13 +110,13 @@ Pour résoudre ce problème, ajoutez la ligne de code suivante à la classe foo.
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Le type {foo} ne contient pas de définition `GetNativeField` pour et aucune méthode `GetNativeField` d’extension de type {foo} n’a été trouvée
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>Le type {foo} ne contient pas de définition pour `GetNativeField` et aucune méthode d’extension `GetNativeField` de type {foo} n’a été trouvée
 
 Si vous recevez cette erreur dans les fichiers générés par le concepteur (*. xib.designer.cs), cela signifie l’un des deux éléments suivants :
 
  **1) la classe partielle ou la classe de base est manquante**
 
-Les classes partielles générées par le concepteur doivent avoir des classes partielles correspondantes dans le code utilisateur `NSObject`qui héritent de certaines sous-classes de, souvent. `UIViewController` Vérifiez que vous disposez d’une telle classe pour le type qui donne l’erreur.
+Les classes partielles générées par le concepteur doivent avoir des classes partielles correspondantes dans le code utilisateur qui héritent d’une sous-classe de `NSObject`, souvent `UIViewController`. Vérifiez que vous disposez d’une telle classe pour le type qui donne l’erreur.
 
  **2) les espaces de noms par défaut ont été modifiés**
 
@@ -124,13 +124,13 @@ Les fichiers de concepteur sont générés à l’aide des paramètres d’espac
 
 Les paramètres d’espace de noms se trouvent dans la boîte de dialogue Options du projet. L’espace de noms par défaut se trouve dans la section **général-> paramètres principaux** . Si elle est vide, le nom de votre projet est utilisé comme valeur par défaut. Vous trouverez des paramètres d’espace de noms plus avancés dans la section **code source-> les stratégies de nommage .net** .
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Avertissement pour les actions : La méthode privée’foo’n’est jamais utilisée. (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>Avertissement pour les actions : la méthode privée’foo’n’est jamais utilisée. CS0169
 
 Les actions des fichiers d’interface Builder sont connectées aux widgets par réflexion au moment de l’exécution, ce qui signifie que cet avertissement est attendu.
 
 Vous pouvez utiliser « #pragma warning Disable 0169 » #pragma warning Enable 0169» autour de vos actions si vous souhaitez supprimer cet avertissement uniquement pour ces méthodes, ou ajouter 0169 au champ « ignorer les avertissements » dans les options du compilateur si vous souhaitez le désactiver pour l’ensemble de votre projet (et non pas recommandé).
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mTouch a échoué avec le message suivant : Impossible d’ouvrir l’assembly'/path/to/yourproject.exe'
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>échec de mTouch avec le message suivant : impossible d’ouvrir l’assembly'/path/to/yourproject.exe'
 
 Si vous voyez ce message d’erreur, le problème est généralement que le chemin d’accès absolu à votre projet contient un espace. Cela sera résolu dans une future version de Xamarin. iOS, mais vous pouvez contourner le problème en déplaçant le projet vers un dossier sans espaces.
 
@@ -142,7 +142,7 @@ Cela se produit lorsque vous effectuez toutes les opérations suivantes :
 1. Utiliser Mac OS X Leopard (10,5)
 1. Exécutez votre application dans le simulateur.
 
-Le problème est que mono sélectionne le système d’exploitation X `libsqlite3.dylib`, et non le fichier `libsqlite3.dylib` de iphonesimulator dans. Votre application fonctionnera sur l’appareil, mais ce n' *est* pas votre simulateur.
+Le problème est que mono sélectionne le système d’exploitation OS X `libsqlite3.dylib`, et non le fichier de `libsqlite3.dylib` du Iphonesimulator dans. Votre application fonctionnera sur l’appareil, mais ce n' *est* pas votre simulateur.
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>Le déploiement sur l’appareil échoue avec System. exception : AMDeviceInstallApplication a retourné 3892346901
 
@@ -152,7 +152,7 @@ Cette erreur signifie que la configuration de la signature de code de votre cert
 
 Vérifiez que vous utilisez la dernière version de Visual Studio pour Mac et Xamarin. iOS
 
-Si le problème est encore présent, veuillez signaler [un bogue](http://monodevelop.com/Developers#Reporting_Bugs), en joignant les fichiers journaux **~/Library/logs/XamarinStudio-{version}/IDE-{timestamp}.log**, **AndroidTools-{timestamp}. log**et **Components-{timestamp}. log** .
+Si le problème est encore présent, veuillez signaler [un bogue](https://monodevelop.com/Developers#Reporting_Bugs), en joignant les fichiers journaux **~/Library/logs/XamarinStudio-{version}/IDE-{timestamp}.log**, **AndroidTools-{timestamp}. log**et **Components-{timestamp}. log** .
 
 Si tout le reste échoue, vous pouvez essayer de supprimer le cache de saisie semi-automatique du code afin qu’il soit régénéré :
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 Cela signifie que vous liez une bibliothèque statique compilée avec du code Thumb dans votre projet. Depuis la version 3,1 du kit de développement logiciel (SDK) iPhone (ou une version ultérieure au moment de la rédaction de cet article), Apple a introduit un bogue dans son éditeur de liens lors de la liaison de code non-Thumb (Xamarin. iOS) avec du code Thumb (votre bibliothèque statique). Vous devrez établir un lien avec une version non-Thumb de votre bibliothèque statique pour atténuer ce problème.
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException : Tentative de compilation JIT de la méthode (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection'1. get_Count ()
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System. ExecutionEngineException : tentative d’une méthode de compilation JIT (wrapper managé à managé) foo [] : System. Collections. Generic. ICollection'1. get_Count ()
 
 Le suffixe [] indique que vous ou la bibliothèque de classes appelez une méthode sur un tableau par le biais d’une collection générique, telle que IEnumerable < >, ICollection < > ou IList < >. En guise de solution de contournement, vous pouvez forcer explicitement le compilateur AOA à inclure une telle méthode en appelant la méthode vous-même et en vous assurant que ce code est exécuté avant l’appel qui a déclenché l’exception. Dans ce cas, vous pouvez écrire :
 
@@ -280,9 +280,9 @@ le problème doit être résolu.
 
 Visual Studio pour Mac 2,2 a un bogue qui empêche la détection de certificats de distribution contenant une virgule. Veuillez mettre à jour vers Visual Studio pour Mac 2.2.1.
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>Erreur «AFCFileRefWrite retournée : 1» lors du téléchargement
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>Erreur « AFCFileRefWrite retournée : 1 » pendant le téléchargement
 
-Lors du chargement d’une application sur votre appareil, vous pouvez recevoir une erreur «AFCFileRefWrite retournée : 1". Cela peut se produire si vous avez un fichier de longueur nulle.
+Lors du chargement d’une application sur votre appareil, vous pouvez recevoir une erreur « AFCFileRefWrite retournée : 1 ». Cela peut se produire si vous avez un fichier de longueur nulle.
 
 ## <a name="error-mtouch-failed-with-no-output"></a>Erreur « Échec de mTouch sans sortie »
 
@@ -315,7 +315,7 @@ Procédez comme suit :
 - Créez un fichier info. plist personnalisé pour le projet et définissez explicitement MinimumOSVersion sur 3,0.   Cette opération remplace la valeur MinimumOSVersion 3,2 définie par Xamarin. iOS.   Si vous ne le faites pas, l’application ne sera pas en mesure de s’exécuter sur un iPhone.
 - Reconstruisez, compressez et chargez-les dans iTunes Connect.
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Exception non prise en charge : System.Exception : Impossible de trouver le sélecteur someSelector : sur {type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>Exception non gérée : System. exception : impossible de trouver le sélecteur someSelector : on {type}
 
 Cette exception est due à l’un des trois éléments suivants :
 
@@ -368,7 +368,7 @@ Notez également que le menu > **cible du simulateur > iPhone du projet**peut ê
 
 Cela signifie que XCode 4 est installé.   Dans XCode 4, l’outil ibtool a été supprimé, il n’est plus possible de modifier vos fichiers XIB avec un outil autonome.
 
-Si vous souhaitez utiliser Interface Builder, installez la [série Xcode 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792), disponible sur le site Web d’Apple.
+Si vous souhaitez utiliser Interface Builder, installez la [série Xcode 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792), disponible sur le site Web d’Apple.
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>« Impossible de créer une liaison d’affichage pour le type MIME : application/vnd. Apple-Interface-Builder »
 
@@ -394,13 +394,13 @@ Si vous obtenez un blocage au moment de l’exécution (SIGSEGV) dans le simulat
 Cela peut se produire lorsque les noms d’application incluent un « . » (point) dans leur nom.
 Cela est interdit en tant que nom d’exécutable dans CFBundleExecutable, même s’il peut fonctionner dans de nombreux autres cas (tels que les appareils).
 
- \* « La valeur ne doit pas inclure d’extension sur le nom ». -[https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* « La valeur ne doit pas inclure d’extension sur le nom ». - [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Erreur : « Le type d’attribut personnalisé 0x43 n’est pas pris en charge » lorsque vous double-cliquez sur des fichiers. XIB
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>Erreur : « le type d’attribut personnalisé 0x43 n’est pas pris en charge » lorsque vous double-cliquez sur des fichiers. XIB
 
 Cela est dû à la tentative d’ouverture des fichiers. XIB lorsque les variables d’environnement ne sont pas définies correctement. Cela ne doit pas se produire avec l’utilisation normale de Visual Studio pour Mac/Xamarin. iOS, et la réouverture Visual Studio pour Mac à partir de/applications doit résoudre le problème.
 
-Lorsque vous tentez de mettre à jour le logiciel et que ce message d’erreur s’affiche, envoyez-nous un e-mail *support@xamarin.com*
+Lorsque vous tentez de mettre à jour le logiciel et que ce message d’erreur s’affiche, envoyez un courrier électronique *support@xamarin.com*
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>L’application s’exécute sur le simulateur mais échoue sur l’appareil
 
@@ -408,8 +408,8 @@ Ce problème peut se manifester sous plusieurs formes et ne produit pas toujours
 
 Pour vérifier l’action de génération, cliquez avec le bouton droit sur le fichier. XIB et choisissez **action de génération**.
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: Aucune donnée n’est disponible pour l’encodage 437
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437
 
-Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. iOS, vous pouvez recevoir une erreur au format «System. NotSupportedException : Aucune donnée n’est disponible pour l’encodage 437» lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles `Ionic.Zip.ZipFile`que, peuvent lever cette exception pendant l’opération.
+Lorsque vous incluez des bibliothèques tierces dans votre application Xamarin. iOS, vous pouvez obtenir une erreur au format « System. NotSupportedException : aucune donnée n’est disponible pour l’encodage 437 » lors de la tentative de compilation et d’exécution de l’application. Par exemple, les bibliothèques, telles que `Ionic.Zip.ZipFile`, peuvent lever cette exception pendant l’opération.
 
 Cela peut être résolu en ouvrant les options du projet Xamarin. iOS, en accédant à **iOS Build** > **internationalisation** et en vérifiant l’internationalisation de l' **Ouest** .

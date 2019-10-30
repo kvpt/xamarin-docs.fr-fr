@@ -4,19 +4,19 @@ description: Ce document décrit comment déployer une application Xamarin.Mac a
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 84a35389276fed031f6bea116c1e4f37a63469a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60f51be5ffad67d839edd42b7826b0c57c46eb8a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769867"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029999"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Publication d’applications Xamarin.Mac dans le Mac App Store
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Les applications Xamarin.Mac peuvent être distribuées de deux manières différentes :
 
@@ -29,7 +29,7 @@ Ce document explique comment utiliser Visual Studio pour Mac et Xcode pour défi
 
 Quand le développeur rejoint le [programme pour les développeurs Mac](https://developer.apple.com/devcenter/mac/), il a le choix entre le rejoindre comme individu ou comme société, comme indiqué dans la capture d’écran ci-dessous :
 
-[![Le portail des développeurs Apple](images/image1.png "Le portail des développeurs Apple")](images/image1-large.png#lightbox)
+[![Portail des développeurs Apple](images/image1.png "Portail des développeurs Apple")](images/image1-large.png#lightbox)
 
 Choisissez le type d’inscription adapté à votre situation.
 
@@ -63,5 +63,5 @@ Ce guide présente en détail le chargement d’une application Xamarin.Mac en v
 ## <a name="related-links"></a>Liens associés
 
 - [Installation](/visualstudio/mac/installation/)
-- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 187befd88c115133a92aa90a711438e7754518d5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 75249966c6506bc33ea06c7cfa9c398bd7eb8045
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68648803"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029485"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin. Forms FlexLayout
 
@@ -21,7 +21,7 @@ ms.locfileid: "68648803"
 
 _Utilisez FlexLayout pour empiler ou encapsuler une collection de vues enfants._
 
-Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) est une nouveauté de la version 3,0 de Xamarin. Forms. Il est basé sur le [module de disposition de zone flexible](http://www.w3.org/TR/css-flexbox-1/)CSS, communément appelé _disposition flexible_ ou _zone flexible_, donc appelé, car il comprend de nombreuses options flexibles pour organiser les enfants dans la disposition.
+Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) est une nouveauté de la version 3,0 de Xamarin. Forms. Il est basé sur le [module de disposition de zone flexible](https://www.w3.org/TR/css-flexbox-1/)CSS, communément appelé _disposition flexible_ ou _zone flexible_, donc appelé, car il comprend de nombreuses options flexibles pour organiser les enfants dans la disposition.
 
 `FlexLayout` est semblable au [`StackLayout`](~/xamarin-forms/user-interface/layouts/stack-layout.md) Xamarin. Forms dans la mesure où il peut réorganiser ses enfants horizontalement et verticalement dans une pile. Toutefois, le `FlexLayout` peut également encapsuler ses enfants s’il y a trop d’un grand nombre pour tenir sur une seule ligne ou colonne, et possède également de nombreuses options pour l’orientation, l’alignement et l’adaptation à différentes tailles d’écran.
 
@@ -190,7 +190,7 @@ Voici le programme en cours d’exécution, défilant progressivement de haut en
 
 ### <a name="page-layout-with-flexlayout"></a>Mise en page avec FlexLayout
 
-Il existe une disposition standard dans la conception Web appelée le [_Saint Grail_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) , car il s’agit d’un format de disposition qui est très souhaitable, mais souvent difficile à réaliser avec la perfection. La disposition se compose d’un en-tête en haut de la page et d’un pied de page en bas, qui s’étend à la largeur totale de la page. L’occupant du centre de la page est le contenu principal, mais souvent avec un menu en colonnes à gauche du contenu et des informations supplémentaires (parfois appelées « zone de _réserve_ ») à droite. [La section 5.4.1 de la spécification de disposition de zone flexible CSS](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) décrit comment la disposition Saint Grail peut être obtenue avec une zone flexible.
+Il existe une disposition standard dans la conception Web appelée le [_Saint Grail_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) , car il s’agit d’un format de disposition qui est très souhaitable, mais souvent difficile à réaliser avec la perfection. La disposition se compose d’un en-tête en haut de la page et d’un pied de page en bas, qui s’étend à la largeur totale de la page. L’occupant du centre de la page est le contenu principal, mais souvent avec un menu en colonnes à gauche du contenu et des informations supplémentaires (parfois appelées « zone de _réserve_ ») à droite. [La section 5.4.1 de la spécification de disposition de zone flexible CSS](https://www.w3.org/TR/css-flexbox-1/#order-accessibility) décrit comment la disposition Saint Grail peut être obtenue avec une zone flexible.
 
 La page de **disposition Saint Grail** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** illustre une implémentation simple de cette disposition à l’aide d’une `FlexLayout` imbriquée dans une autre. Étant donné que cette page est conçue pour un téléphone en mode portrait, les zones situées à gauche et à droite de la zone de contenu sont uniquement de 50 pixels de largeur :
 
@@ -261,7 +261,7 @@ Trois propriétés pouvant être liées sont démontrées dans ce programme :
 
 ### <a name="catalog-items-with-flexlayout"></a>Éléments de catalogue avec FlexLayout
 
-La page **éléments du catalogue** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** est similaire à l' [exemple 1 de la section 1,1 de la spécification de la zone de disposition CSS Flex](http://www.w3.org/TR/css-flexbox-1/#overview) , sauf qu’elle affiche une série d’images avec défilement horizontal et une description de trois singes. :
+La page **éléments du catalogue** de l’exemple **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** est similaire à l' [exemple 1 de la section 1,1 de la spécification de la zone de disposition CSS Flex](https://www.w3.org//TR/css-flexbox-1/#overview) , sauf qu’elle affiche une série d’images avec défilement horizontal et une description de trois singes. :
 
 [![Page éléments du catalogue](flex-layout-images/CatalogItems.png "Page éléments du catalogue")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
@@ -575,7 +575,7 @@ La page **expérience de base** de l’exemple **[FlexLayoutDemos](https://docs.
 
 [![Page expérience de base](flex-layout-images/BasisExperiment.png "Page expérience de base")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-La capture d’écran iOS sur la gauche montre les deux éléments `Label` en fonction des unités indépendantes des appareils. L’écran Android affiche des hauteurs qui représentent une fraction de la hauteur totale du `FlexLayout`. Si la `Basis` est définie à 100%, l’enfant est la hauteur de la `FlexLayout` et est renvoyé à la colonne suivante et occupe toute la hauteur de cette colonne, comme le montre la capture d’écran UWP : il apparaît comme si les cinq enfants étaient disposés sur une ligne. , mais ils sont en fait organisés en cinq colonnes.
+La capture d’écran iOS sur la gauche montre les deux éléments `Label` en fonction des unités indépendantes des appareils. L’écran Android affiche des hauteurs qui représentent une fraction de la hauteur totale du `FlexLayout`. Si la `Basis` est définie à 100%, l’enfant est la hauteur de la `FlexLayout`et est renvoyé à la colonne suivante et occupe toute la hauteur de cette colonne, comme le montre la capture d’écran UWP : il apparaît comme si les cinq enfants étaient disposés sur une ligne. , mais ils sont en fait organisés en cinq colonnes.
 
 ### <a name="the-grow-property"></a>La propriété Grow
 

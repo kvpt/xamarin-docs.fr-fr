@@ -4,15 +4,15 @@ description: Les documents de cette section traitent des fonctionnalités spéci
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
-ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
+ms.openlocfilehash: a0b8b80499854d485b8420adb580c22a74933443
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119232"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020164"
 ---
 # <a name="platform-features"></a>Fonctionnalités de la plateforme
 

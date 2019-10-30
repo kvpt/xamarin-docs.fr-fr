@@ -4,27 +4,27 @@ description: Cet article traite de la création des images nécessaires à l’i
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770136"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021701"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Icône d’application pour les applications Xamarin.Mac
 
 _Cet article traite de la création des images nécessaires à l’icône d’une application Xamarin.Mac, de leur regroupement dans un fichier .icns et de l’ajout de l’icône dans le projet Xamarin.Mac._
 
-## <a name="overview"></a>Présentation
+## <a name="overview"></a>Vue d'ensemble
 
 Quand un développeur utilise C# et .NET dans une application Xamarin.Mac, il a accès aux mêmes outils d’image et d’icône qu’un développeur travaillant en *Objective-C* et en *Xcode*.
 
 Une icône de qualité doit véhiculer l’objectif principal d’une application Xamarin.Mac et suggérer l’expérience que l’utilisateur doit attendre lors de cette dernière. Cet article couvre toutes les étapes nécessaires pour créer les ressources d’image nécessaires pour une icône, en empaquetant ces ressources dans un fichier `AppIcon.appiconset` et en utilisant ce fichier dans une application Xamarin.Mac.
 
-![Éditeur AppIcon.appiconset](app-icon-images/intro01.png "Éditeur AppIcon.appiconset")
+![L’éditeur AppIcon. appiconset](app-icon-images/intro01.png "L’éditeur AppIcon. appiconset")
 
 ## <a name="application-icon"></a>Icône d'application
 
@@ -80,7 +80,7 @@ Effectuez ce qui suit :
 
 1. Dans le **Panneau Solutions**, ouvrez **Assets.xcassets** > **AppIcons.appiconset** : 
 
-    ![Modification de AppIcon.appiconset](app-icon-images/intro01.png "Modification de AppIcon.appiconset")
+    ![Modification de AppIcon. appiconset](app-icon-images/intro01.png "Modification de AppIcon. appiconset")
 2. Pour chaque taille d’icône exigée, cliquez sur l’icône, puis sélectionnez le fichier image correspondant créé ci-dessus : 
 
     [![Sélection d’une image d’icône](app-icon-images/intro02.png "Sélection d’une image d’icône")](app-icon-images/intro02-large.png#lightbox)

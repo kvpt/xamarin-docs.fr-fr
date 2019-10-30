@@ -4,15 +4,15 @@ description: Ce document décrit les différents éléments d’un UITableView d
 ms.prod: xamarin
 ms.assetid: B4139C8B-28F2-4C0F-297F-BF5432C5A915
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0e8014263d417cef39147b440ed3b38155f226bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768352"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021851"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Parties et fonctionnalités de table dans Xamarin. iOS
 
@@ -22,11 +22,11 @@ Un UITableView peut avoir un style « groupé » ou « clair », et se compo
 - [Cellules](#Cells) (ou lignes, si vous préférez)
 - [Pied de page de la section](#Section_Footer)
 - [Index](#Index)
-- [Mode édition](#Edit_Features) (comprend « balayer pour supprimer » et faire glisser les poignées pour modifier l’ordre des lignes) 
+- [Mode édition](#Edit_Features) (comprend’balayer pour supprimer’et faire glisser les poignées pour modifier l’ordre des lignes) 
 
 Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de page, les contrôles d’édition et l’index sont affichés.
 
- [![](table-parts-and-functionality-images/image1a.png "Ces captures d’écran montrent comment les lignes, les en-têtes, les pieds de page, les contrôles d’édition et l’index sont affichés.")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
 
 Ces éléments sont décrits plus en détail ci-dessous :
 
@@ -72,7 +72,7 @@ Le reste de ce document montre comment implémenter toutes ces fonctionnalités 
 
 Les classes principales utilisées pour afficher les vues de table sont indiquées ici :
 
-[![](table-parts-and-functionality-images/classdiagram.png "Les classes principales utilisées pour afficher les vues de table sont présentées ici")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 L’objectif de chaque classe est décrit ci-dessous :
 

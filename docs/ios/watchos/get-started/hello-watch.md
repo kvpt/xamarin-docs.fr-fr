@@ -4,15 +4,15 @@ description: Ce document fournit une procédure pas à pas de création d’une 
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768687"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032776"
 ---
 # <a name="hello-watchos--walkthrough"></a>Bonjour, Watchos – procédure pas à pas
 
@@ -24,17 +24,17 @@ Après avoir créé une solution en suivant les étapes de la procédure [d’in
 
 Vérifiez que vos [références sont correctes](~/ios/watchos/get-started/project-references.md): que l’application parente a une référence à l’extension et que l’extension a une référence à l’application Watch.
 
-Vérifiez que les identificateurs de Bundle suivent \*la convention \*. watchkitextension. watchkitapp et que le fichier info. plist de votre extension a la valeur **ID de Bundle WKApp** définie sur l’identificateur de Bundle de votre application Watch.
+Vérifiez que les identificateurs de Bundle suivent la Convention \*. watchkitextension \*. watchkitapp et que le fichier info. plist de votre extension a la valeur **ID de Bundle WKApp** définie sur l’identificateur de Bundle de votre application Watch.
 
 Vous devriez pouvoir exécuter votre application Watch maintenant, mais étant donné que le fichier de la table de montage séquentiel dans votre application Watch est vide, vous ne devriez pas être en mesure de le dire.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![](hello-watch-images/projectstructure.png "Explorateur de solutions")
+![](hello-watch-images/projectstructure.png "The Solution Explorer")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](hello-watch-images/vs-projectstructure.png "Explorateur de solutions")
+![](hello-watch-images/vs-projectstructure.png "The Solution Explorer")
 
 -----
 
@@ -47,7 +47,7 @@ Double-cliquez sur interface. Storyboard dans votre application Watch pour déma
 1. Définissez l’identificateur et le titre du contrôleur d’interface sur **interfaceController** et **AIM Watch**.
 1. Vérifiez que la **classe** est définie sur **InterfaceController**
 
-    ![](hello-watch-images/interfacecontrollerattributes.png "Définir l’identificateur et le titre du contrôleur d’interface sur interfaceController et AIM Watch")
+    ![](hello-watch-images/interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -58,7 +58,7 @@ Double-cliquez sur interface. Storyboard dans votre application Watch pour effec
 1. Cliquez sur le contrôleur d’interface. les
 1. Définissez l’identificateur et le titre du contrôleur d’interface sur **interfaceController** et **AIM Watch**.
 
-    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Définir l’identificateur et le titre du contrôleur d’interface sur interfaceController et AIM Watch")
+    ![](hello-watch-images/vs-interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
 -----
 
@@ -70,24 +70,24 @@ Créez votre interface utilisateur :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
-![](hello-watch-images/draganddrop.png "Définir le texte et les attributs des contrôles comme indiqué")
+![](hello-watch-images/draganddrop.png "Set the text and attributes of the controls as shown")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](hello-watch-images/vs-draganddrop.png "Définir le texte et les attributs des contrôles comme indiqué")
+![](hello-watch-images/vs-draganddrop.png "Set the text and attributes of the controls as shown")
 
 -----
 
-1. Définissez le **nom** dans le panneau **Propriétés** pour chaque contrôle. Dans cet exemple, nous avons `myButton` utilisé `myLabel`et.
+1. Définissez le **nom** dans le panneau **Propriétés** pour chaque contrôle. Dans cet exemple, nous avons utilisé `myButton` et `myLabel`.
 
 1. Sélectionnez le bouton sur le Storyboard et accédez à la liste des **événements** du panneau **Propriétés** , puis
 
 1. Créez une nouvelle **action** en tapant `OnButtonPress` et en appuyant sur **entrée**.
   L’action s’affiche dans la liste et une méthode partielle est créée automatiquement dans C#.
 
-![](hello-watch-images/buttonaction.png "Action OnButtonPress ajoutée à un bouton")
+![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-Une fois que vous avez enregistré la table de montage séquentiel, le **InterfaceController.Designer.cs** est mis à jour avec les noms et les actions des contrôles. Si vous ouvrez ce fichier après qu’il a été mis à jour, vous `RegisterAttribute` pouvez voir comment le correspond au contrôleur et comment les C# contrôles d’interface utilisateur correspondent `OutletAttribute` aux variables d’instance marquées avec le et comment les actions sont mappées aux méthodes partielles marquées avec l' `ActionAttribute`option:
+Une fois que vous avez enregistré la table de montage séquentiel, le **InterfaceController.Designer.cs** est mis à jour avec les noms et les actions des contrôles. Si vous ouvrez ce fichier après qu’il a été mis à jour, vous pouvez voir comment le `RegisterAttribute` correspond au contrôleur et comment les C# contrôles d’interface utilisateur correspondent aux variables d’instance marquées avec le `OutletAttribute` et comment les actions sont mappées aux méthodes partielles marquées avec le `ActionAttribute`:
 
 ```csharp
 // WARNING
@@ -136,7 +136,7 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 }
 ```
 
-Ce code doit être assez transparent : la variable `clickCount` d’instance est incrémentée chaque fois que la fonction `OnButtonPress` est appelée. Le texte de `myLabel` est modifié pour refléter ce nombre ; `myLabel`, bien sûr, est le nom de l’une des prises que vous avez créées dans Xcode. La `partial` fonction est l’implémentation de la fonction associée au nom de l’action que vous avez spécifiée.
+Ce code doit être assez transparent : la variable d’instance `clickCount` est incrémentée chaque fois que la fonction `OnButtonPress` est appelée. Le texte de `myLabel` est modifié pour refléter ce nombre ; `myLabel`, bien sûr, est le nom de l’une des prises que vous avez créées dans XCode. La fonction `partial` est l’implémentation de la fonction associée au nom de l’action que vous avez spécifiée.
 
 S’il ne s’agit pas déjà du projet de démarrage,
 
@@ -146,15 +146,15 @@ S’il ne s’agit pas déjà du projet de démarrage,
 
 1. Appuyez sur le bouton **Déboguer** pour déclencher un lancement de build et de simulateur.
 
-    [![](hello-watch-images/readytodebug-sml.png "Éléments de l’interface Visual Studio")](hello-watch-images/readytodebug.png#lightbox)
+    [![](hello-watch-images/readytodebug-sml.png "The Visual Studio interface elements")](hello-watch-images/readytodebug.png#lightbox)
 
 Au lancement du simulateur, appuyez sur le bouton pour incrémenter l’étiquette.
 Félicitations, vous disposez d’une application de surveillance !
 
-![](hello-watch-images/running.png "Application en cours d’exécution dans le simulateur")
+![](hello-watch-images/running.png "The app running in the Simulator")
 
 ## <a name="related-links"></a>Liens associés
 
 - [Prise en main (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
 - [Configuration et installation](~/ios/watchos/get-started/installation.md)
-- [Première vidéo de l’application Apple Watch](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [Vidéo de la première application Watch](https://blog.xamarin.com/your-first-watch-kit-app/)

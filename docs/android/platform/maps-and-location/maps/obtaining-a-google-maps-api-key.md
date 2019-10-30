@@ -4,15 +4,15 @@ description: Comment obtenir une clé API Google Maps pour l’ajout de la fonct
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: bf0a099546b2d5610a639cbf9af4c7676d10bef9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250053"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020048"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Obtention d’une clé API Google Maps
 
@@ -35,11 +35,11 @@ En général, cela signifie que vous devrez déterminer l’empreinte de l’alg
 
 Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug d’une application Xamarin. Android se trouve à l’emplacement suivant :
 
-**C :\\Users\\[nom\\d’utilisateur]\\AppData\\local\\Xamarin\\mono pour Android Debug. keystore**
+**C :\\utilisateurs\\[USERNAME]\\AppData\\local\\Xamarin\\mono pour Android\\Debug. keystore**
 
 Vous pouvez obtenir des informations sur un magasin de clés en exécutant la commande `keytool` du JDK. Cet outil se trouve généralement dans le répertoire bin Java :
 
-**C :\\Program Files (x86)\\Java\\JDK [version]\\bin\\keytool. exe**
+**C :\\Program Files (x86)\\Java\\JDK [VERSION]\\bin\\keytool. exe**
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -49,7 +49,7 @@ Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug
 
 Vous pouvez obtenir des informations sur un magasin de clés en exécutant la commande `keytool` du JDK. Cet outil se trouve généralement dans le répertoire bin Java :
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
+**/System/Library/Java/JavaVirtualMachines/[VERSION]. JDK/contents/orig/bin/keytool**
 
 -----
 
@@ -80,7 +80,7 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 ### <a name="production-keys"></a>Clés de production
 
 Lors du déploiement d’une application sur Google Play, elle doit être [signée avec une clé privée](~/android/deploy-test/signing/index.md).
-`keytool` Doit être exécuté avec les détails de la clé privée, ainsi que l’empreinte de l’algorithme SHA-1 obtenue pour créer une clé API Google Maps de production. N’oubliez pas de mettre à jour le fichier **fichier AndroidManifest. xml** avec la clé d’API Google Maps correcte avant le déploiement.
+Le `keytool` doit être exécuté avec les détails de la clé privée et l’empreinte de l’algorithme SHA-1 obtenue pour créer une clé API Google Maps de production. N’oubliez pas de mettre à jour le fichier **fichier AndroidManifest. xml** avec la clé d’API Google Maps correcte avant le déploiement.
 
 ### <a name="keytool-output"></a>Sortie du keytool
 
@@ -111,21 +111,21 @@ Une fois que vous avez récupéré l’empreinte numérique SHA-1 du magasin de 
 
 1. Dans un navigateur, accédez au [tableau de bord & services de l’API de la console de Google Developers](https://console.developers.google.com/apis/dashboard/) , puis cliquez sur **Sélectionner un projet**. Cliquez sur un nom de projet ou créez-en un en cliquant sur **nouveau projet**:
 
-   [![Bouton de création d’un projet Google Developer console](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
+   [![bouton créer un projet de la console de développement Google](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
 2. Si vous avez créé un nouveau projet, entrez le nom du projet dans la boîte de dialogue **nouveau projet** qui s’affiche. Cette boîte de dialogue génère un ID de projet unique basé sur le nom de votre projet. Ensuite, cliquez sur le bouton **créer** comme indiqué dans cet exemple :
 
-   [![Le nouveau projet est nommé XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
+   [![nouveau projet est nommé XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
 3. Après une minute, le projet est créé et vous êtes dirigé vers la page du **tableau de bord** du projet. À partir de là, cliquez sur **activer les API et les services**:
 
-   [![Clic sur l’API de Google Maps Android dans la section Bibliothèque](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
+   [![cliquant sur l’API de Google Maps Android dans la section Bibliothèque](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
 4. Dans la page **bibliothèque d’API** , cliquez sur **mappages Kit de développement logiciel (SDK) pour Android**. Sur la page suivante, cliquez sur **activer** pour activer le service pour ce projet :
 
-   [![Cliquer sur le bouton Activer dans la section tableau de bord](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
+   [![cliquant sur le bouton Activer dans la section tableau de bord](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-À ce stade, le projet d’API a été créé et l’API Android de Google Maps v2 lui a été ajoutée. Toutefois, vous ne pouvez pas utiliser cette API dans votre projet tant que vous n’avez pas créé d’informations d’identification pour celle-ci. La section suivante explique comment créer une clé d’API et de la liste verte une application Xamarin.Android afin qu’il est autorisé à utiliser cette clé.
+À ce stade, le projet d’API a été créé et l’API Android de Google Maps v2 lui a été ajoutée. Toutefois, vous ne pouvez pas utiliser cette API dans votre projet tant que vous n’avez pas créé d’informations d’identification pour celle-ci. La section suivante explique comment créer une clé API et une application Xamarin. Android pour qu’elle soit autorisée à utiliser cette clé.
 
 ## <a name="obtaining-the-api-key"></a>Obtention de la clé API
 
@@ -133,31 +133,31 @@ Une fois le projet d’API de la **console de développement Google** créé, il
 
 1. Dans la page **Maps SDK pour Android** qui s’affiche (après avoir cliqué sur **activer** à l’étape précédente), accédez à l’onglet **informations d’identification** , puis cliquez sur le bouton **créer des informations d’identification** :
 
-   [![Message du kit de développement logiciel Maps pour les informations d’identification Android](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [message d’informations d’identification du kit de développement logiciel (SDK) ![Maps pour Android](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. Cliquez sur **clé API**:
 
-   [![Boîte de dialogue Ajouter des informations d’identification à votre projet](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
+   [![boîte de dialogue Ajouter des informations d’identification à votre projet](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
 3. Une fois que vous avez cliqué sur ce bouton, la clé API est générée. Ensuite, il est nécessaire de restreindre cette clé afin que seule votre application puisse appeler des API avec cette clé. Cliquez sur **restreindre la clé**:
 
-   [![Cliquer sur restreindre la clé dans la page informations d’identification](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
+   [![cliquant sur restreindre la clé dans la page informations d’identification](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
 4. Remplacez le champ **nom** de la **clé d’API 1** par un nom qui vous aidera à vous souvenir de l’utilisation de la clé (**XamarinMapsDemoKey** est utilisé dans cet exemple). Ensuite, cliquez sur la case d’option **applications Android** :
 
-   [![Sélection des applications Android dans la page informations d’identification](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
+   [![sélectionnant applications Android dans la page informations d’identification](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
 5. Pour ajouter l’empreinte de l’algorithme SHA-1, cliquez sur **+ Ajouter un nom de package et une empreinte digitale**:
 
-   [![Clic sur Ajouter un nom de package et une empreinte digitale](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
+   [![cliquant sur Ajouter un nom de package et une empreinte digitale](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
-6. Entrez le nom du package de votre application et entrez l’empreinte de certificat SHA-1 `keytool` (obtenue via, comme expliqué plus haut dans ce guide). Dans l’exemple suivant, le nom du package `XamarinMapsDemo` pour est entré, suivi de l’empreinte digitale de certificat SHA-1 obtenue à partir de **Debug. keystore**:
+6. Entrez le nom du package de votre application et entrez l’empreinte de certificat SHA-1 (obtenue via `keytool` comme expliqué précédemment dans ce guide). Dans l’exemple suivant, le nom du package pour `XamarinMapsDemo` est entré, suivi de l’empreinte digitale de certificat SHA-1 obtenue à partir de **Debug. keystore**:
 
-   [![Le nom de package entré est com. xamarin. docs. Android. map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
+   [![nom de package entré est com. xamarin. docs. Android. map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. Notez que, afin que votre APK accéder à Google Maps, vous devez inclure les empreintes digitales de SHA-1 et empaqueter des noms pour chaque magasin de clés (debug et release) que vous utilisez pour signer votre APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre ordinateur pour générer le fichier APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 à partir du magasin de clés de version de le deuxième ordinateur. Cliquez sur **+ Ajouter un nom de package et une empreinte digitale** pour ajouter une autre empreinte digitale et un nom de package, comme indiqué dans cet exemple :
+7. Notez que, pour que vos APK accèdent à Google Maps, vous devez inclure les empreintes de l’algorithme SHA-1 et les noms des packages pour chaque magasin de clés (Debug et Release) que vous utilisez pour signer vos APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre pour générer le APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 du magasin de clés de version de deuxième ordinateur. Cliquez sur **+ Ajouter un nom de package et une empreinte digitale** pour ajouter une autre empreinte digitale et un nom de package, comme indiqué dans cet exemple :
 
-   [![L’ajout d’une autre empreinte digitale crée un autre certificat SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
+   [![l’ajout d’une autre empreinte digitale crée un autre certificat SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. Cliquez sur le bouton **Save (Enregistrer)** pour enregistrer vos changements. Ensuite, vous revenez à la liste de vos clés API. Si vous avez d’autres clés API que vous avez créées précédemment, elles sont également répertoriées ici. Dans cet exemple, une seule clé API (créée dans les étapes précédentes) est listée :
 
@@ -169,11 +169,11 @@ Une fois le projet d’API de la **console de développement Google** créé, il
 
 1. Cliquez sur le bouton de menu hamburger et sélectionnez la page **facturation** :
 
-   [![Sélection de la section facturation du menu hamburger](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
+   [![sélectionnant la section facturation du menu hamburger](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
 
 2. Liez le projet à un compte de facturation en cliquant sur **lier un compte de facturation** , puis sur **créer un compte de facturation** dans la fenêtre contextuelle qui s’affiche (si vous n’avez pas de compte, vous serez guidé pour en créer un nouveau) :
 
-   [![Lier le projet au compte de facturation](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
+   [![lier un projet à un compte de facturation](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
 ## <a name="adding-the-key-to-your-project"></a>Ajout de la clé à votre projet
 
@@ -196,4 +196,4 @@ Enfin, ajoutez cette clé API au fichier **fichier AndroidManifest. xml** de vot
 
 - [Console des API Google](https://code.google.com/apis/console/)
 - [Clé de l’API Google Maps](https://developers.google.com/maps/documentation/android/start#the_google_maps_api_key)
-- [keytool](http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)
+- [keytool](https://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)

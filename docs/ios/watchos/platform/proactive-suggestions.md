@@ -4,15 +4,15 @@ description: Cet article explique comment utiliser des suggestions proactives da
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8dc2150dbd07d05d037aa0e0917f49d467f6f1ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767774"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028201"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Suggestions proactives Watchos dans Xamarin
 
@@ -22,17 +22,17 @@ Nouveauté de Watchos 3, les suggestions proactives présentent de nouvelles mé
 
 ## <a name="about-proactive-suggestions"></a>À propos des suggestions proactives
 
-Nouveauté de Watchos 3, `NSUserActivity` comprend une `MapItem` propriété qui permet à l’application de fournir des informations d’emplacement qui peuvent être utilisées dans d’autres contextes. Par exemple, si l’application a affiché des revues d’hôtel `MapItem` et fournit un emplacement, si l’utilisateur a basculé vers l’application Maps, l’emplacement de l’hôtel qu’elle affichait est disponible.
+Nouveauté de Watchos 3, `NSUserActivity` comprend une propriété `MapItem` qui permet à l’application de fournir des informations d’emplacement qui peuvent être utilisées dans d’autres contextes. Par exemple, si l’application affichait des revues d’hôtel et fournit un emplacement de `MapItem`, si l’utilisateur a basculé vers l’application Maps, l’emplacement de l’hôtel qu’elle affichait est disponible.
 
-L’application expose cette fonctionnalité au système à l’aide d’une collection de technologies `NSUserActivity`telles que, MapKit, Media Player et uikit. En outre, en fournissant une prise en charge proactive des suggestions pour l’application, l’intégration Siri est plus poussée gratuitement.
+L’application expose cette fonctionnalité au système à l’aide d’une collection de technologies telles que `NSUserActivity`, MapKit, Media Player et UIKit. En outre, en fournissant une prise en charge proactive des suggestions pour l’application, l’intégration Siri est plus poussée gratuitement.
 
 ## <a name="location-based-suggestions"></a>Suggestions basées sur l’emplacement
 
-Nouveauté de Watchos 3, la `NSUserActivity` classe comprend une `MapItem` propriété qui permet au développeur de fournir des informations d’emplacement qui peuvent être utilisées dans d’autres contextes. Par exemple, si l’application affiche des revues de restaurant, le développeur peut `MapItem` définir la propriété sur l’emplacement du restaurant que l’utilisateur visualise dans l’application. Si l’utilisateur bascule vers l’application Maps, l’emplacement du restaurant est automatiquement disponible.
+Nouveauté de Watchos 3, la classe `NSUserActivity` comprend une propriété `MapItem` qui permet au développeur de fournir des informations d’emplacement qui peuvent être utilisées dans d’autres contextes. Par exemple, si l’application affiche des revues de restaurant, le développeur peut définir la propriété `MapItem` sur l’emplacement du restaurant que l’utilisateur visualise dans l’application. Si l’utilisateur bascule vers l’application Maps, l’emplacement du restaurant est automatiquement disponible.
 
-Si l’application prend en charge la recherche d’application, elle peut utiliser les nouveaux `CSSearchableItemAttributesSet` composants d’adresse de la classe pour spécifier les emplacements que l’utilisateur peut vouloir visiter. En définissant `MapItem` la propriété, les autres propriétés sont renseignées automatiquement.
+Si l’application prend en charge la recherche d’application, elle peut utiliser les nouveaux composants d’adresse de la classe `CSSearchableItemAttributesSet` pour spécifier les emplacements que l’utilisateur peut vouloir visiter. En définissant la propriété `MapItem`, les autres propriétés sont renseignées automatiquement.
 
-En plus de définir les `Latitude` propriétés `Longitude` du composant Address et de l’adresse, il est recommandé que l’application `NamedLocation` fournisse également les propriétés et `PhoneNumbers` , de sorte que Siri puisse lancer un appel à l’emplacement.
+En plus de définir les `Latitude` et `Longitude` des propriétés du composant Address, il est recommandé que l’application fournisse également les propriétés `NamedLocation` et `PhoneNumbers`, donc Siri peut lancer un appel à l’emplacement.
 
 ## <a name="contextual-siri-reminders"></a>Rappels Siri contextuels
 
@@ -44,22 +44,22 @@ L’ajout de la prise en charge de suggestions proactives à l’application Xam
 
 Les suggestions proactives fonctionnent avec les applications de trois manières principales :
 
-- **`NSUserActivity`** -Aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran.
+- **`NSUserActivity`** : aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran.
 - **Suggestions d’emplacement** : si l’application offre ou consomme des informations sur l’emplacement, ces extensions d’API offrent de nouvelles façons de partager ces informations entre les applications.
 
 Et est pris en charge dans l’application en implémentant les éléments suivants :
 
-- Les **rappels Siri contextuels** -dans iOS `NSUserActivity` 10, ont été développés pour permettre à Siri de créer rapidement un rappel pour afficher le contenu qu’ils visualisent actuellement dans l’application à une date ultérieure.
-- **Suggestions d’emplacement** : iOS 10 `NSUserActivity` s’améliore pour capturer les emplacements affichés dans l’application et les promouvoir à de nombreux endroits dans le système.
-- **Les requêtes**  -  Siricontextuellesfournissentuncontexteauxinformationsprésentéesàl’intérieurdel’applicationàSiriafinquel’utilisateurpuisseobtenirdesinstructionsoupasserunappelenappelantSiriàpartirdel’application.`NSUserActivity`
+- **Rappels Siri contextuels** : dans iOS 10, `NSUserActivity` a été développé pour permettre à Siri de créer rapidement un rappel pour afficher le contenu qu’ils visualisent actuellement dans l’application à une date ultérieure.
+- **Suggestions d’emplacement** : iOS 10 améliore `NSUserActivity` pour capturer les emplacements affichés dans l’application et les promouvoir à de nombreux endroits dans le système.
+- Les **requêtes Siri Contextuelles** - `NSUserActivity` fournissent le contexte aux informations présentées à l’intérieur de l’application à Siri afin que l’utilisateur puisse obtenir des instructions ou passer un appel en appelant Siri à partir de l’application.
 
-Toutes ces fonctionnalités ont une chose en commun, elles sont toutes utilisées `NSUserActivity` dans un formulaire ou une autre pour fournir leurs fonctionnalités. 
+Toutes ces fonctionnalités ont une chose en commun, elles utilisent toutes `NSUserActivity` dans un formulaire ou une autre pour fournir leurs fonctionnalités. 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-Comme indiqué ci- `NSUserActivity` dessus, le système aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity`est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant l’application restaurant :
+Comme indiqué ci-dessus, `NSUserActivity` aide le système à comprendre quelles informations l’utilisateur travaille actuellement sur l’écran. `NSUserActivity` est un mécanisme de mise en cache d’État léger qui permet de capturer l’activité de l’utilisateur au fur et à mesure qu’il navigue dans l’application. Par exemple, en examinant l’application restaurant :
 
-[![](proactive-suggestions-images/activity02.png "L’application restaurant")](proactive-suggestions-images/activity02.png#lightbox)
+[![](proactive-suggestions-images/activity02.png "The restaurant app")](proactive-suggestions-images/activity02.png#lightbox)
 
 Avec les interactions suivantes :
 
@@ -69,9 +69,9 @@ Avec les interactions suivantes :
 
 Examinez de plus près le dernier écran :
 
-[![](proactive-suggestions-images/activity03.png "Charge utile NSUserActivity")](proactive-suggestions-images/activity03.png#lightbox)
+[![](proactive-suggestions-images/activity03.png "The NSUserActivity payload")](proactive-suggestions-images/activity03.png#lightbox)
 
-Ici, l’application crée un `NSUserActivity` et contient des informations pour recréer l’État ultérieurement. L’application a également inclus des métadonnées telles que le nom et l’adresse de l’emplacement. Une fois cette activité créée, l’application permet à iOS de savoir qu’elle représente l’état actuel de l’utilisateur.
+Ici, l’application crée une `NSUserActivity` et elle a été remplie avec des informations pour recréer l’État ultérieurement. L’application a également inclus des métadonnées telles que le nom et l’adresse de l’emplacement. Une fois cette activité créée, l’application permet à iOS de savoir qu’elle représente l’état actuel de l’utilisateur.
 
 L’application décide ensuite si l’activité sera publiée par voie hertzienne pour le transfert, enregistrée comme valeur temporaire pour les suggestions d’emplacement ou ajoutée à l’index Spotlight sur l’appareil pour l’affichage dans les résultats de la recherche.
 
@@ -79,7 +79,7 @@ Pour plus d’informations sur le transfert et la recherche Spotlight, consultez
 
 ### <a name="creating-an-activity"></a>Création d’une activité
 
-Avant de créer une activité, vous devez créer un identificateur de type d’activité pour l’identifier. L’identificateur de type d’activité est une chaîne abrégée ajoutée `NSUserActivityTypes` au tableau du `Info.plist` fichier de l’application utilisée pour identifier de manière unique un type d’activité utilisateur donné. Il y aura une entrée dans le tableau pour chaque activité que l’application prend en charge et expose à la recherche d’applications. Pour plus d’informations, consultez notre référence sur la [création d’identificateurs de type d’activité](~/ios/platform/search/nsuseractivity.md) .
+Avant de créer une activité, vous devez créer un identificateur de type d’activité pour l’identifier. L’identificateur de type d’activité est une chaîne abrégée ajoutée au tableau `NSUserActivityTypes` du fichier `Info.plist` de l’application utilisé pour identifier de manière unique un type d’activité utilisateur donné. Il y aura une entrée dans le tableau pour chaque activité que l’application prend en charge et expose à la recherche d’applications. Pour plus d’informations, consultez notre référence sur la [création d’identificateurs de type d’activité](~/ios/platform/search/nsuseractivity.md) .
 
 Examinez un exemple d’activité :
 
@@ -130,7 +130,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>Restauration d’une activité
 
-Pour répondre à l’utilisateur en appuyant sur un résultat`NSUserActivity`de recherche () pour l’application, modifiez le fichier **AppDelegate.cs** et `ContinueUserActivity` remplacez la méthode. Par exemple :
+Pour répondre à l’utilisateur en appuyant sur un résultat de recherche (`NSUserActivity`) pour l’application, modifiez le fichier **AppDelegate.cs** et remplacez la méthode `ContinueUserActivity`. Exemple :
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -147,7 +147,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-Vérifiez qu’il s’agit du même identificateur de type`com.xamarin.platform`d’activité () que l’activité créée ci-dessus. L’application utilise les informations stockées dans le `NSUserActivity` pour restaurer l’État à l’emplacement où l’utilisateur s’est arrêté.
+Vérifiez qu’il s’agit du même identificateur de type d’activité (`com.xamarin.platform`) que l’activité créée ci-dessus. L’application utilise les informations stockées dans le `NSUserActivity` pour restaurer l’État à l’emplacement où l’utilisateur s’est arrêté.
 
 ### <a name="benefits-of-creating-an-activity"></a>Avantages de la création d’une activité
 
@@ -164,18 +164,18 @@ La section suivante présente l’activation de deux autres nouvelles fonctionna
 
 ### <a name="location-based-suggestions"></a>Suggestions basées sur l’emplacement 
 
-Prenons l’exemple de l’application restaurant Search ci-dessus. S’il a implémenté `NSUserActivity` et correctement rempli tous les métadonnées et attributs, l’utilisateur peut effectuer les opérations suivantes :
+Prenons l’exemple de l’application restaurant Search ci-dessus. S’il a implémenté `NSUserActivity` et rempli correctement tous les métadonnées et attributs, l’utilisateur peut effectuer les opérations suivantes :
 
 1. Trouvez un restaurant dans l’application à laquelle il souhaite atteindre un ami.
 2. Si l’utilisateur bascule vers l’application Maps, l’adresse du restaurant est automatiquement suggérée comme destination.
-3. Cela fonctionne même pour les applications tierces (qui `NSUserActivity`prennent en charge). l’utilisateur peut donc basculer vers une application de partage d’emplacement et l’adresse du restaurant est également suggérée ici comme destination.
+3. Cela fonctionne même pour les applications tierces (qui prennent en charge `NSUserActivity`), afin que l’utilisateur puisse basculer vers une application de partage d’emplacement et que l’adresse du restaurant soit automatiquement suggérée comme destination.
 4. Il fournit également le contexte à Siri, de sorte que l’utilisateur peut appeler Siri au sein de l’application restaurant et demander *« obtenir des directions... »* et Siri fournit des instructions au restaurant que l’utilisateur visualise.
 
 Toutes les fonctionnalités ci-dessus ont une chose en commun, elles indiquent toutes l’emplacement d’origine de la suggestion. Dans le cas de l’exemple ci-dessus, il s’agit de l’application fictive de revue de restaurant.
 
 Watchos 3 a été amélioré pour activer cette fonctionnalité pour une application via plusieurs petites modifications et ajouts aux Frameworks existants :
 
-- `NSUserActivity`contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
+- `NSUserActivity` contient des champs supplémentaires pour la capture des informations d’emplacement affichées à l’intérieur de l’application.
 - Plusieurs ajouts ont été apportés à MapKit et CoreSpotlight pour capturer l’emplacement.
 - La fonctionnalité de prise en charge de l’emplacement a été ajoutée à Siri, Maps, multitâche et à d’autres applications dans le système.
 
@@ -211,7 +211,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 activity.BecomeCurrent();
 ```
 
-Si l’application utilise MapKit, il est aussi simple d’ajouter la carte `MKMapItem` actuelle à l’activité :
+Si l’application utilise MapKit, il est aussi simple d’ajouter la carte actuelle `MKMapItem` à l’activité :
 
 ```csharp
 // Save MKMapItem location
@@ -289,14 +289,14 @@ La section suivante aborde la consommation de suggestions d’emplacement proven
 
 ## <a name="routing-apps-and-locations-suggestions"></a>Suggestions relatives aux applications et aux emplacements de routage
 
-Cette section examine l’utilisation des suggestions d’emplacement directement dans une application de routage. Pour que l’application de routage ajoute cette fonctionnalité, le développeur doit tirer parti de `MKDirectionsRequest` l’infrastructure existante comme suit :
+Cette section examine l’utilisation des suggestions d’emplacement directement dans une application de routage. Pour que l’application de routage ajoute cette fonctionnalité, le développeur doit tirer parti de l’infrastructure de `MKDirectionsRequest` existante comme suit :
 
 - Pour promouvoir l’application dans le multitâche.
 - Pour inscrire l’application en tant qu’application de routage.
-- Pour gérer le lancement de l’application avec `MKDirectionsRequest` un objet MapKit.
+- Pour gérer le lancement de l’application avec un objet `MKDirectionsRequest` MapKit.
 - Donnez à Watchos la possibilité d’apprendre à suggérer l’application en fonction de l’engagement de l’utilisateur.
 
-Lorsque l’application est démarrée avec un `MKDirectionsRequest` objet MapKit, elle doit automatiquement commencer à donner à l’utilisateur le sens de l’emplacement demandé ou présenter une interface utilisateur qui permet à l’utilisateur de commencer à obtenir des instructions plus facilement. Par exemple :
+Lorsque l’application est démarrée avec un objet MapKit `MKDirectionsRequest`, elle doit automatiquement commencer à donner à l’utilisateur le sens de l’emplacement demandé ou présenter une interface utilisateur qui permet à l’utilisateur de commencer à obtenir des instructions plus facilement. Exemple :
 
 ```csharp
 using System;
@@ -339,7 +339,7 @@ Jetez un coup d’œil sur ce code en détail. Il effectue un test pour détermi
 if (MKDirectionsRequest.IsDirectionsRequestUrl(url)) {
 ```
 
-Si c’est le cas, il crée `MKDirectionsRequest` un à partir de l’URL :
+Si c’est le cas, il crée un `MKDirectionsRequest` à partir de l’URL :
 
 ```csharp
 var request = new MKDirectionsRequest(url);

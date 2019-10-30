@@ -3,15 +3,15 @@ title: Vue d’ensemble de la création d’applications multiplateformes
 description: Ce document fournit une vue d’ensemble de la création d’applications multiplateformes. Elle traite de la valeur de C#, des modèles de conception tels que MVC/MVVM et des interfaces utilisateur natives.
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758106"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016911"
 ---
 # <a name="building-cross-platform-applications-overview"></a>Vue d’ensemble de la création d’applications multiplateformes
 
@@ -26,7 +26,7 @@ Xamarin n’est pas simplement une plateforme « écriture unique, exécution p
 Voici un résumé des points clés pour la création d’applications multiplateformes Xamarin :
 
 - **Utilisez C#**  -écrivez vos applications dans C#. Le code existant écrit C# dans peut être porté à iOS et Android à l’aide de Xamarin très facilement, et évidemment utilisé dans les applications Windows.
-- **Utiliser les modèles de conception MVC ou MVVM** -développez l’interface utilisateur de votre application à l’aide du modèle modèle/vue/contrôleur. Concevez votre application à l’aide d’une approche de modèle/vue/contrôleur ou d’une approche de modèle/vue/ViewModel dans laquelle il existe une séparation claire entre le « modèle » et le reste. Identifiez les parties de votre application qui utiliseront des éléments d’interface utilisateur natifs de chaque plateforme (iOS, Android, Windows, Mac) et utilisez-la comme indication pour fractionner votre application en deux composants : « Core » et « user-interface ».
+- **Utiliser les modèles de conception MVC ou MVVM** -développez l’interface utilisateur de votre application à l’aide du modèle modèle/vue/contrôleur. Concevez votre application à l’aide d’une approche de modèle/vue/contrôleur ou d’une approche de modèle/vue/ViewModel dans laquelle il existe une séparation claire entre le « modèle » et le reste. Identifiez les parties de votre application qui utiliseront des éléments d’interface utilisateur natifs de chaque plateforme (iOS, Android, Windows, Mac) et utilisez-la comme indication pour fractionner votre application en deux composants : « Core » et « interface utilisateur ».
 - **Créer des interfaces utilisateur natives** : chaque application spécifique au système d’exploitation fournit une couche d’interface C# utilisateur différente (implémentée dans avec l’assistance des outils de conception d’interface utilisateur natifs) :
 
 1. Sur iOS, utilisez les API UIKit pour créer des applications à l’aspect natif, en utilisant éventuellement le concepteur iOS de Xamarin pour créer votre interface utilisateur visuellement.
@@ -53,7 +53,7 @@ Certains de ces composants sont implémentés dans l’étude de cas *Tasky* .
 
 En suivant le principe de séparation de responsabilité en baparant l’architecture de votre application, puis en déplaçant les fonctionnalités principales indépendantes des plateformes dans une bibliothèque principale réutilisable, vous pouvez maximiser le partage du code entre les plateformes, comme illustré ci-dessous illustre
 
- ![](overview-images/layers2.png "En suivant le principe de séparation de responsabilité en baparant l’architecture de votre application, puis en déplaçant les fonctionnalités principales indépendantes des plateformes dans une bibliothèque principale réutilisable, vous pouvez maximiser le partage du code entre les plateformes")
+ ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
  <a name="Case_Studies" />
 

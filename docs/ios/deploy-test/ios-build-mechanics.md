@@ -4,15 +4,15 @@ description: Ce guide explique comment planifier des applications et comment uti
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 58bf8325a0fab17411dd7a4f857fdad8bdc6b016
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756256"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026370"
 ---
 # <a name="ios-build-mechanics"></a>Mécanismes de génération d’iOS
 
@@ -32,7 +32,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio pour Mac :
 
 1. Cliquez sur **Visual Studio pour Mac > Préférences...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets > Générer**
-3. Dans le volet droit, définissez la liste déroulante Niveau de détail du journal sur **Diagnostic** :  [![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
+3. Dans le volet de droite, définissez la liste déroulante commentaires du journal sur **diagnostic**:[![](ios-build-mechanics-images/image2.png "Définition du niveau de détail du journal")](ios-build-mechanics-images/image2.png#lightbox)
 4. Cliquez sur **OK**.
 5. Redémarrer Visual Studio pour Mac
 6. Nettoyer et regénérer votre package
@@ -44,7 +44,7 @@ Pour activer la sortie MSBuild de diagnostic dans Visual Studio :
 
 1. Cliquez sur **Outils > Options...**
 2. Dans l’arborescence à gauche, sélectionnez **Projets et solutions > Générer et exécuter**
-3. Dans le volet droit, définissez la *liste déroulante Niveau de détail de la sortie de génération MSBuild* sur **Diagnostic** :  [![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. Dans le volet de droite, définissez la *liste déroulante détail de la sortie de génération MSBuild* sur **diagnostic**:[![](ios-build-mechanics-images/image2-vs.png "Définition du niveau de détail de la sortie de génération MSBuild")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Cliquez sur **OK**.
 5. Nettoyez et regénérez votre package.
 6. La sortie de diagnostic est visible dans le panneau Sortie.
@@ -67,7 +67,7 @@ Total time: 1554 ms
 
 Les outils Xamarin fonctionnent techniquement sur n’importe quel Mac pouvant exécuter OS X 10.10 Yosemite ou version ultérieure. Toutefois, les expériences de développement et les durées de génération peuvent être gênées par les performances du Mac.
 
-À l’état déconnecté, Visual Studio pour Windows exécute uniquement la phase de compilation C#. Il n’essaie pas d’effectuer de liaison ou de compilation AOT, d’empaqueter l’application dans un bundle _.app_ , ou de signer le bundle d’applications. (La phase de compilation C# constitue rarement un goulot d’étranglement.) Essayez d’identifier où dans le pipeline la génération ralentit en effectuant la génération directement sur l’hôte de build Mac dans Visual Studio pour Mac.
+À l’état déconnecté, Visual Studio pour Windows exécute uniquement la phase de compilation C#. Il n’essaie pas d’effectuer de liaison ou de compilation AOT, d’empaqueter l’application dans un bundle _.app_ , ou de signer le bundle d’applications. (La C# phase de compilation est rarement un goulot d’étranglement au niveau des performances.) Essayez d’identifier dans le pipeline où la build ralentit en générant directement sur l’hôte de build Mac dans Visual Studio pour Mac.
 
 En outre, la connexion réseau entre l’ordinateur Windows et l’hôte de build Mac constitue l’un des emplacements les plus courants à l’origine de la lenteur. Cela peut être dû à un obstacle physique sur le réseau, à l’utilisation d’une connexion sans fil ou au fait de devoir passer par un ordinateur saturé (par exemple, un service Mac dans le cloud).
 
@@ -97,7 +97,7 @@ En tenant compte des informations ci-dessus, la liste ci-dessous donne des infor
 
 La capture d’écran ci-dessous illustre comment définir ces options pour le simulateur dans vos options iOS :
 
-[![](ios-build-mechanics-images/image3.png "Définition des options")](ios-build-mechanics-images/image3.png#lightbox)
+[![](ios-build-mechanics-images/image3.png "Setting the options")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Astuces relatives à l’appareil
 
@@ -109,7 +109,7 @@ Il existe plusieurs configurations de build fournies lors du déploiement d’ap
 
 - Débogage
   - Il s’agit de la configuration principale qui doit être utilisée lorsqu’une application est en cours de développement et elle doit, par conséquent, être aussi rapide que possible.
-- Libérer
+- Édition
   - Les builds de mise en production sont celles qui sont envoyées à vos utilisateurs et il est donc essentiel de se concentrer sur les performances. Lorsque vous utilisez la configuration Mise en production, vous souhaiterez peut-être utiliser le compilateur d’optimisation LLVM et optimiser les fichiers PNG.
 
 Il est également important de comprendre la relation entre la génération et le déploiement. La durée de déploiement dépend de la taille de l’application. Une application plus volumineuse prend plus de temps à déployer. En réduisant la taille de l’application, vous pouvez réduire la durée de déploiement.
@@ -148,7 +148,7 @@ Conseils supplémentaires
 
 La capture d’écran ci-dessous illustre comment définir ces options pour le simulateur dans vos options iOS :
 
-[![](ios-build-mechanics-images/image4.png "Définition des options")](ios-build-mechanics-images/image4.png#lightbox)
+[![](ios-build-mechanics-images/image4.png "Setting the options")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Utilisation de l’éditeur de liens
 
@@ -280,4 +280,4 @@ L3 Cache: 4 MB
 
 - [Billet de blog](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)
-- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
+- [Configuration personnalisée de l’éditeur de liens](~/cross-platform/deploy-test/linker.md)

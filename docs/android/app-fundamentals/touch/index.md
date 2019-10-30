@@ -4,15 +4,15 @@ description: Les écrans tactiles sur la plupart des appareils actuels permetten
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 43637d8592631b2732e5922544f52d91947dd3bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754719"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024283"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Toucher et gestes dans Xamarin. Android
 
@@ -22,7 +22,7 @@ _Les écrans tactiles sur la plupart des appareils actuels permettent aux utilis
 
 iOS et Android sont similaires dans la manière dont ils gèrent les fonctions tactiles. Les deux peuvent prendre en charge des points de contact multipoint à plusieurs touches sur les gestes d’écran et complexes. Ce guide présente certaines des similarités des concepts, ainsi que les particularités de l’implémentation des fonctions tactiles et des gestes sur les deux plateformes.
 
-Android utilise un `MotionEvent` objet pour encapsuler les données tactiles et les méthodes sur l’objet de vue pour écouter les touches.
+Android utilise un objet `MotionEvent` pour encapsuler les données tactiles et les méthodes sur l’objet de vue pour écouter les touches.
 
 En plus de capturer les données tactiles, iOS et Android offrent à la fois des moyens d’interpréter les modèles de touches en gestes. Ces détecteurs de mouvement peuvent à leur tour être utilisés pour interpréter des commandes spécifiques à l’application, telles que la rotation d’une image ou l’activation d’une page. Android fournit une poignée de mouvements pris en charge, ainsi que des ressources pour faciliter l’ajout de gestes personnalisés complexes.
 
@@ -33,7 +33,7 @@ Ce guide suit un format similaire pour chaque système d’exploitation : tout 
 ## <a name="sections"></a>Sections
 
 - [Entrées tactiles dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
-- [Procédure pas à pas : Utilisation de Touch dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
+- [Procédure pas à pas : utilisation de Touch dans Android](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 - [Suivi tactile multipoint](touch-tracking.md)
 
 ## <a name="summary"></a>Récapitulatif
