@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cc499902058e7b20b00e65e0c6541b8d137804a7
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028720"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425501"
 ---
 # <a name="splash-screen"></a>Écran de démarrage
 
@@ -67,7 +67,7 @@ L’exemple d’application définit un dessinable appelé **splash_screen. xml*
 </layer-list>
 ```
 
-Ce `layer-list` Centre l’image de démarrage sur une couleur d’arrière-plan spécifiée par la ressource `@color/splash_background`. L’exemple d’application définit cette couleur dans le fichier **Resources/values/Color. xml** :
+Ce `layer-list` Centre l’image de démarrage sur une couleur d’arrière-plan spécifiée par la ressource `@color/splash_background`. L’exemple d’application définit cette couleur dans le fichier **Resources/values/Colors. xml** :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
