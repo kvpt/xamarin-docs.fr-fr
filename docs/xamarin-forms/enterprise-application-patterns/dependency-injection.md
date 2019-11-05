@@ -6,13 +6,13 @@ ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: 975b32610b4b496e329c5c5a29b79efd2874d8cf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/04/2019
+ms.openlocfilehash: 08fb22627ab6b40c94c17d94321ed0bac60beedd
+ms.sourcegitcommit: 9dd0b076ab4ecdbbd1b029d2e0d67d900e1c4494
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029502"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567898"
 ---
 # <a name="dependency-injection"></a>Injection de dépendances
 
@@ -57,9 +57,9 @@ L’utilisation d’un conteneur d’injection de dépendances présente plusieu
 
 Dans le contexte d’une application Xamarin. Forms qui utilise MVVM, un conteneur d’injection de dépendances est généralement utilisé pour l’inscription et la résolution des modèles de vue, ainsi que pour l’inscription des services et leur injection dans des modèles de vue.
 
-De nombreux conteneurs d’injection de dépendances sont disponibles, avec l’application mobile eShopOnContainers à l’aide de Autofac pour gérer l’instanciation du modèle de vue et des classes de service dans l’application. Autofac facilite la création d’applications faiblement couplées et fournit toutes les fonctionnalités couramment utilisées dans les conteneurs d’injection de dépendance, y compris les méthodes d’enregistrement des mappages de types et d’objets, la résolution des objets, la gestion des durées de vie des objets et l’injection objets dépendants dans des constructeurs d’objets qu’il résout. Pour plus d’informations sur Autofac, consultez [Autofac](https://autofac.readthedocs.io/en/latest/index.html) sur readthedocs.IO.
+De nombreux conteneurs d’injection de dépendances sont disponibles, avec l’application mobile eShopOnContainers à l’aide de TinyIoC pour gérer l’instanciation du modèle de vue et des classes de service dans l’application. TinyIoC a été choisi après l’évaluation de plusieurs conteneurs différents, et offre des performances supérieures sur les plateformes mobiles par rapport à la majorité des conteneurs connus. Il facilite la création d’applications faiblement couplées et fournit toutes les fonctionnalités couramment utilisées dans les conteneurs d’injection de dépendances, notamment les méthodes d’enregistrement des mappages de types, la résolution des objets, la gestion des durées de vie des objets et l’injection d’objets dépendants dans constructeurs d’objets qu’il résout. Pour plus d’informations sur TinyIoC, consultez [TinyIoC](https://github.com/grumpydev/TinyIoC/wiki) sur GitHub.com.
 
-Dans Autofac, l’interface `IContainer` fournit le conteneur d’injection de dépendances. La figure 3-1 montre les dépendances lors de l’utilisation de ce conteneur, qui instancie un objet `IOrderService` et l’injecte dans la classe `ProfileViewModel`.
+Dans TinyIoC, le type de `TinyIoCContainer` fournit le conteneur d’injection de dépendances. La figure 3-1 montre les dépendances lors de l’utilisation de ce conteneur, qui instancie un objet `IOrderService` et l’injecte dans la classe `ProfileViewModel`.
 
 ![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
 
@@ -87,60 +87,33 @@ Il existe deux façons d’inscrire des types et des objets dans le conteneur pa
 > [!TIP]
 > Les conteneurs d’injection de dépendances ne sont pas toujours appropriés. L’injection de dépendances introduit une complexité et des exigences supplémentaires qui peuvent ne pas être appropriées ou utiles pour les petites applications. Si une classe n’a pas de dépendances ou n’est pas une dépendance pour d’autres types, il peut s’avérer inutile de la placer dans le conteneur. En outre, si une classe a un seul ensemble de dépendances qui font partie intégrante du type et qui ne changera jamais, il peut s’avérer inutile de la placer dans le conteneur.
 
-L’inscription de types qui nécessitent une injection de dépendances doit être effectuée dans une méthode unique dans une application, et cette méthode doit être appelée tôt dans le cycle de vie de l’application pour s’assurer que l’application connaît les dépendances entre ses classes. Dans l’application mobile eShopOnContainers, cette opération est effectuée par la classe `ViewModelLocator`, qui génère l’objet `IContainer` et est la seule classe de l’application qui contient une référence à cet objet. L’exemple de code suivant montre comment l’application mobile eShopOnContainers déclare l’objet `IContainer` dans la classe `ViewModelLocator` :
+L’inscription de types qui nécessitent une injection de dépendances doit être effectuée dans une méthode unique dans une application, et cette méthode doit être appelée tôt dans le cycle de vie de l’application pour s’assurer que l’application connaît les dépendances entre ses classes. Dans l’application mobile eShopOnContainers, cette opération est effectuée par la classe `ViewModelLocator`, qui génère l’objet `TinyIoCContainer` et est la seule classe de l’application qui contient une référence à cet objet. L’exemple de code suivant montre comment l’application mobile eShopOnContainers déclare l’objet `TinyIoCContainer` dans la classe `ViewModelLocator` :
 
 ```csharp
-private static IContainer _container;
+private static TinyIoCContainer _container;
 ```
 
-Les types et les instances sont inscrits dans la méthode `RegisterDependencies` de la classe `ViewModelLocator`. Pour cela, vous devez d’abord créer une instance de `ContainerBuilder`, qui est illustrée dans l’exemple de code suivant :
+Les types sont inscrits dans le constructeur `ViewModelLocator`. Pour cela, vous devez d’abord créer une instance de `TinyIoCContainer`, qui est illustrée dans l’exemple de code suivant :
 
 ```csharp
-var builder = new ContainerBuilder();
+_container = new TinyIoCContainer();
 ```
 
-Les types et les instances sont ensuite inscrits avec l’objet `ContainerBuilder`, et l’exemple de code suivant montre la forme la plus courante d’inscription de type :
+Les types sont ensuite inscrits avec l’objet `TinyIoCContainer`, et l’exemple de code suivant montre la forme la plus courante d’inscription de type :
 
 ```csharp
-builder.RegisterType<RequestProvider>().As<IRequestProvider>();
+_container.Register<IRequestProvider, RequestProvider>();
 ```
 
-La méthode `RegisterType` présentée ici mappe un type d’interface à un type concret. Elle indique au conteneur d’instancier un objet `RequestProvider` lorsqu’il instancie un objet qui requiert une injection d’un `IRequestProvider` par le biais d’un constructeur.
+La méthode `Register` présentée ici mappe un type d’interface à un type concret. Par défaut, chaque inscription d’interface est configurée en tant que singleton, de sorte que chaque objet dépendant reçoit la même instance partagée. Par conséquent, une seule instance de `RequestProvider` existe dans le conteneur, qui est partagé par les objets qui requièrent une injection d’un `IRequestProvider` par le biais d’un constructeur.
 
 Les types concrets peuvent également être enregistrés directement sans mappage à partir d’un type d’interface, comme indiqué dans l’exemple de code suivant :
 
 ```csharp
-builder.RegisterType<ProfileViewModel>();
+_container.Register<ProfileViewModel>();
 ```
 
-Lorsque le type de `ProfileViewModel` est résolu, le conteneur injecte ses dépendances requises.
-
-Autofac autorise également l’inscription d’instance, où le conteneur est responsable de la gestion d’une référence à une instance singleton d’un type. Par exemple, l’exemple de code suivant montre comment l’application mobile eShopOnContainers inscrit le type concret à utiliser lorsqu’une instance de `ProfileViewModel` requiert une instance `IOrderService` :
-
-```csharp
-builder.RegisterType<OrderService>().As<IOrderService>().SingleInstance();
-```
-
-La méthode `RegisterType` présentée ici mappe un type d’interface à un type concret. La méthode `SingleInstance` configure l’inscription afin que chaque objet dépendant reçoive la même instance partagée. Par conséquent, une seule instance de `OrderService` existe dans le conteneur, qui est partagé par les objets qui requièrent une injection d’un `IOrderService` par le biais d’un constructeur.
-
-L’inscription de l’instance peut également être effectuée à l’aide de la méthode `RegisterInstance`, qui est illustrée dans l’exemple de code suivant :
-
-```csharp
-builder.RegisterInstance(new OrderMockService()).As<IOrderService>();
-```
-
-La méthode `RegisterInstance` présentée ici crée une nouvelle instance `OrderMockService` et l’enregistre avec le conteneur. Par conséquent, une seule instance de `OrderMockService` existe dans le conteneur, qui est partagé par les objets qui requièrent une injection d’un `IOrderService` par le biais d’un constructeur.
-
-Après l’inscription du type et de l’instance, l’objet `IContainer` doit être généré, ce qui est illustré dans l’exemple de code suivant :
-
-```csharp
-_container = builder.Build();
-```
-
-L’appel de la méthode `Build` sur l’instance `ContainerBuilder` génère un nouveau conteneur d’injection de dépendances qui contient les inscriptions effectuées.
-
-> [!TIP]
-> Considérez une `IContainer` comme étant immuable. Bien que Autofac fournisse une méthode `Update` pour mettre à jour les inscriptions dans un conteneur existant, l’appel de cette méthode doit être évité dans la mesure du possible. Il y a des risques de modifier un conteneur après qu’il a été généré, en particulier si le conteneur a été utilisé. Pour plus d’informations, consultez [considérer un conteneur comme immuable](https://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable) sur readthedocs.IO.
+Par défaut, chaque inscription de classe concrète est configurée en tant que multi-instance afin que chaque objet dépendant reçoive une nouvelle instance. Par conséquent, lorsque le `ProfileViewModel` est résolu, une nouvelle instance est créée et le conteneur injecte ses dépendances requises.
 
 <a name="resolution" />
 
@@ -154,21 +127,21 @@ En règle générale, lorsqu’un type est résolu, l’une des trois situations
 1. Si le type a été inscrit en tant que singleton, le conteneur retourne l’instance singleton. S’il s’agit de la première fois que le type est appelé pour, le conteneur le crée si nécessaire, et conserve une référence à celui-ci.
 1. Si le type n’a pas été inscrit en tant que singleton, le conteneur retourne une nouvelle instance et ne conserve pas de référence à celui-ci.
 
-L’exemple de code suivant montre comment le type de `RequestProvider` précédemment inscrit avec Autofac peut être résolu :
+L’exemple de code suivant montre comment le type de `RequestProvider` précédemment inscrit avec TinyIoC peut être résolu :
 
 ```csharp
-var requestProvider = _container.Resolve<IRequestProvider>();
+var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-Dans cet exemple, Autofac est invité à résoudre le type concret pour le type de `IRequestProvider`, ainsi que toutes les dépendances. En général, la méthode `Resolve` est appelée lorsqu’une instance d’un type spécifique est requise. Pour plus d’informations sur le contrôle de la durée de vie des objets résolus, consultez [gestion de la durée de vie des objets résolus](#managing_the_lifetime_of_resolved_objects).
+Dans cet exemple, TinyIoC est invité à résoudre le type concret pour le type de `IRequestProvider`, ainsi que toutes les dépendances. En général, la méthode `Resolve` est appelée lorsqu’une instance d’un type spécifique est requise. Pour plus d’informations sur le contrôle de la durée de vie des objets résolus, consultez [gestion de la durée de vie des objets résolus](#managing_the_lifetime_of_resolved_objects).
 
 L’exemple de code suivant montre comment l’application mobile eShopOnContainers instancie les types de modèle de vue et leurs dépendances :
 
 ```csharp
-var viewModel = _container.Resolve(viewModelType);
+var viewModel = _container.Resolve(viewModelType);
 ```
 
-Dans cet exemple, Autofac est invité à résoudre le type de modèle de vue pour un modèle de vue demandé, et le conteneur résout également toutes les dépendances. Lors de la résolution du type de `ProfileViewModel`, la dépendance à résoudre est un objet `IOrderService`. Par conséquent, Autofac construit tout d’abord un objet `OrderService` puis le passe au constructeur de la classe `ProfileViewModel`. Pour plus d’informations sur la façon dont l’application mobile eShopOnContainers construit les modèles de vue et les associe aux vues, consultez [création automatique d’un modèle de vue avec un localisateur de modèle de vue](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
+Dans cet exemple, TinyIoC est invité à résoudre le type de modèle de vue pour un modèle de vue demandé, et le conteneur résout également toutes les dépendances. Lors de la résolution du type de `ProfileViewModel`, les dépendances à résoudre sont un objet `ISettingsService` et un objet `IOrderService`. Étant donné que les inscriptions d’interface ont été utilisées lors de l’inscription des classes `SettingsService` et `OrderService`, TinyIoC retourne des instances singleton pour les classes `SettingsService` et `OrderService`, puis les passe au constructeur de la classe `ProfileViewModel`. Pour plus d’informations sur la façon dont l’application mobile eShopOnContainers construit les modèles de vue et les associe aux vues, consultez [création automatique d’un modèle de vue avec un localisateur de modèle de vue](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
 
 > [!NOTE]
 > L’inscription et la résolution des types avec un conteneur ont un coût en termes de performances en raison de l’utilisation par le conteneur de la réflexion pour créer chaque type, et plus particulièrement si les dépendances sont reconstruites pour chaque navigation entre les pages de l’application. S’il existe de nombreuses dépendances ou des dépendances profondes, le coût de création peut augmenter de manière significative.
@@ -177,26 +150,24 @@ Dans cet exemple, Autofac est invité à résoudre le type de modèle de vue pou
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>Gestion de la durée de vie des objets résolus
 
-Après l’inscription d’un type, le comportement par défaut de Autofac consiste à créer une nouvelle instance du type inscrit chaque fois que le type est résolu, ou lorsque le mécanisme de dépendance injecte des instances dans d’autres classes. Dans ce scénario, le conteneur ne contient pas de référence à l’objet résolu. Toutefois, lors de l’inscription d’une instance, le comportement par défaut de Autofac consiste à gérer la durée de vie de l’objet en tant que singleton. Par conséquent, l’instance reste dans la portée pendant que le conteneur est dans la portée, et est supprimée lorsque le conteneur est hors de portée et est récupéré par le garbage collector, ou lorsque le code supprime explicitement le conteneur.
+Après l’inscription d’un type à l’aide d’une inscription de classe concrète, le comportement par défaut de TinyIoC consiste à créer une nouvelle instance du type inscrit chaque fois que le type est résolu, ou lorsque le mécanisme de dépendance injecte des instances dans d’autres classes. Dans ce scénario, le conteneur ne contient pas de référence à l’objet résolu. Toutefois, lors de l’inscription d’un type à l’aide de l’inscription d’interface, le comportement par défaut de TinyIoC consiste à gérer la durée de vie de l’objet en tant que singleton. Par conséquent, l’instance reste dans la portée pendant que le conteneur est dans la portée, et est supprimée lorsque le conteneur est hors de portée et est récupéré par le garbage collector, ou lorsque le code supprime explicitement le conteneur.
 
-Une portée d’instance Autofac peut être utilisée pour spécifier le comportement Singleton d’un objet que Autofac crée à partir d’un type inscrit. Les étendues d’instance Autofac gèrent les durées de vie des objets instanciées par le conteneur. La portée d’instance par défaut pour la méthode `RegisterType` est l’étendue `InstancePerDependency`. Toutefois, la portée de `SingleInstance` peut être utilisée avec la méthode `RegisterType`, afin que le conteneur crée ou retourne une instance singleton d’un type lors de l’appel de la méthode `Resolve`. L’exemple de code suivant montre comment Autofac est chargé de créer une instance singleton de la classe `NavigationService` :
+Le comportement par défaut de l’enregistrement TinyIoC peut être substitué à l’aide des méthodes d’API Fluent `AsSingleton` et `AsMultiInstance`. Par exemple, la méthode `AsSingleton` peut être utilisée avec la méthode `Register`, afin que le conteneur crée ou retourne une instance singleton d’un type lors de l’appel de la méthode `Resolve`. L’exemple de code suivant montre comment TinyIoC est chargé de créer une instance singleton de la classe `LoginViewModel` :
 
 ```csharp
-builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
+_container.Register<LoginViewModel>().AsSingleton();
 ```
 
-La première fois que l’interface `INavigationService` est résolue, le conteneur crée un nouvel objet `NavigationService` et conserve une référence à celui-ci. Sur les résolutions suivantes de l’interface `INavigationService`, le conteneur retourne une référence à l’objet `NavigationService` qui a été créé précédemment.
+La première fois que le type de `LoginViewModel` est résolu, le conteneur crée un nouvel objet `LoginViewModel` et conserve une référence à celui-ci. Sur les résolutions suivantes du `LoginViewModel`, le conteneur retourne une référence à l’objet `LoginViewModel` qui a été créé précédemment.
 
 > [!NOTE]
-> L’étendue SingleInstance supprime les objets créés lorsque le conteneur est supprimé.
-
-Autofac comprend des étendues d’instance supplémentaires. Pour plus d’informations, consultez étendue de l' [instance](https://autofac.readthedocs.io/en/latest/lifetime/instance-scope.html) sur readthedocs.IO.
+> Les types inscrits en tant que singletons sont supprimés lorsque le conteneur est supprimé.
 
 ## <a name="summary"></a>Récapitulatif
 
 L’injection de dépendances permet de découpler des types concrets du code qui dépend de ces types. Elle utilise généralement un conteneur qui contient une liste d’inscriptions et de mappages entre les interfaces et les types abstraits, ainsi que les types concrets qui implémentent ou étendent ces types.
 
-Autofac facilite la création d’applications faiblement couplées et fournit toutes les fonctionnalités couramment utilisées dans les conteneurs d’injection de dépendance, y compris les méthodes d’enregistrement des mappages de types et d’objets, la résolution des objets, la gestion des durées de vie des objets et l’injection objets dépendants dans des constructeurs d’objets qu’il résout.
+TinyIoC est un conteneur léger qui offre des performances supérieures sur les plateformes mobiles par rapport à la majorité des conteneurs connus. Il facilite la création d’applications faiblement couplées et fournit toutes les fonctionnalités couramment utilisées dans les conteneurs d’injection de dépendances, notamment les méthodes d’enregistrement des mappages de types, la résolution des objets, la gestion des durées de vie des objets et l’injection d’objets dépendants dans constructeurs d’objets qu’il résout.
 
 ## <a name="related-links"></a>Liens associés
 
