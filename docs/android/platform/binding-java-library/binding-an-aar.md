@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 516d8ebfd8e0dabbdbba9737ae8b35627c649380
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
+ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027765"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618546"
 ---
 # <a name="binding-an-aar"></a>Liaison d’un fichier .AAR
 
@@ -31,7 +31,7 @@ Pièce. Le fichier AAR est un. Archive ZIP qui contient les éléments suivants�
 Dans ce guide, nous allons parcourir les bases de la création d’une bibliothèque de liaisons pour une seule. Fichier AAR. Pour obtenir une vue d’ensemble de la liaison de bibliothèque Java en général (à l’aide d’un exemple de code de base), consultez [liaison d’une bibliothèque Java](~/android/platform/binding-java-library/index.md).
 
 > [!IMPORTANT]
-> Un projet de liaison ne peut inclure qu’un seul. Fichier AAR. Si. AAR les dépendances sur d’autres. AAR, ces dépendances doivent être contenues dans leur propre projet de liaison, puis référencées. Consultez le [bogue 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573).
+> Un projet de liaison ne peut inclure qu’un seul. Fichier AAR. Si. AAR dépend d’autres. AAR, ces dépendances doivent être contenues dans leur propre projet de liaison, puis référencées. Consultez le [bogue 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573).
 
 ## <a name="walkthrough"></a>Procédure pas à pas
 

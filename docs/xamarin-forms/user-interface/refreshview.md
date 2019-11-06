@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: b53c58a5e859bf7752855c3954666a062261599d
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
+ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697422"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73649294"
 ---
 # <a name="xamarinforms-refreshview"></a>Xamarin. Forms RefreshView
 
-[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
 Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser le contenu défilant. Par conséquent, l’enfant d’un `RefreshView` doit être un contrôle à défilement, tel que [`ScrollView`](xref:Xamarin.Forms.ScrollView), [`CollectionView`](xref:Xamarin.Forms.CollectionView)ou [`ListView`](xref:Xamarin.Forms.ListView).
 
@@ -105,6 +105,6 @@ En guise d’alternative, lors de la définition de la propriété `Command`, le
 
 ## <a name="related-links"></a>Liens connexes
 
-- [RefreshView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+- [RefreshView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [Dispositions pouvant être liées dans Xamarin. Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [Direction d’extraction RefreshView-spécifique à la plateforme](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)
