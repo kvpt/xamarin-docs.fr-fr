@@ -3,19 +3,20 @@ title: Qu’est-ce que Xamarin ?
 description: Cet article présente Xamarin et les bibliothèques associées.
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
+ms.custom: video
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/16/2019
-ms.openlocfilehash: 8213eeb18ec23e79f0cc2a82c22b50d77b6d4931
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71256594"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842933"
 ---
 # <a name="what-is-xamarin"></a>Qu’est-ce que Xamarin ?
 
-[![Captures d’écran de l’exemple d’application Xamarin dans iOS et Android](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
+[![des captures d’écran de l’exemple d’application Xamarin dans iOS et Android](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
 
 Xamarin est une plateforme open source permettant de créer des applications modernes et performantes pour iOS, Android et Windows avec .NET. Xamarin est une couche d’abstraction qui gère la communication entre le code partagé et le code de la plateforme sous-jacente. Xamarin s’exécute dans un environnement géré qui fournit des commodités, telles que l’allocation de mémoire et les garbage collection.
 
@@ -49,14 +50,14 @@ Xamarin combine les capacités des plateformes natives et ajoute un certain nomb
 
 1. **Liaison complète pour les kits de développement logiciel (SDK) sous-jacents** – Xamarin contient des liaisons pour presque l’ensemble des kits de développement logiciel de la plateforme sous-jacente dans iOS et Android. En outre, ces liaisons sont fortement typées, ce qui signifie qu’il est facile de les parcourir et de les utiliser. En outre, elles fournissent un contrôle de type robuste au moment de la compilation et pendant le développement. Les liaisons fortement typées conduisent à moins d’erreurs d’exécution et d’applications de qualité supérieure.
 1. **Objective-C, Java, C et C++ Interop** – Xamarin fournit des fonctionnalités permettant d’appeler directement objective-c, Java, c C++ et Libraries, ce qui vous donne la possibilité d’utiliser un grand tableau de code tiers. Cette fonctionnalité vous permet d’utiliser les bibliothèques iOS et Android existantes écrites en Objective-C, Java ouC++C/. En outre, Xamarin propose des projets de liaison qui vous permettent de lier des bibliothèques objective-C et Java natives à l’aide d’une syntaxe déclarative.
-1. **Constructions de langage modernes** : les applications Xamarin sont écrites C#dans, un langage moderne qui comprend des améliorations significatives par rapport à Objective-C et Java, telles que les fonctionnalités de langage dynamique, les constructions fonctionnelles telles que les expressions lambda, LINQ, Parallel programmation, génériques et bien plus encore.
+1. **Constructions de langage modernes** : les applications Xamarin sont écrites C#dans, un langage moderne qui comprend des améliorations significatives par rapport à Objective-C et Java, telles que les fonctionnalités de langage dynamique, les constructions fonctionnelles telles que les expressions lambda, LINQ, la programmation parallèle, les génériques, et bien plus encore.
 1. **Bibliothèque de classes de base (BCL) robuste** : les applications Xamarin utilisent la BCL .net, une vaste collection de classes qui ont des fonctionnalités complètes et rationalisées, telles que des fonctionnalités puissantes de XML, de base de données, de sérialisation, d’e/s, de chaîne et de mise en réseau, et bien plus encore. Le C# code existant peut être compilé pour une utilisation dans une application, ce qui permet d’accéder à des milliers de bibliothèques qui ajoutent des fonctionnalités au-delà de la BCL.
-1. **Environnement de développement intégré (IDE) moderne** : Xamarin utilise Visual Studio, un IDE moderne qui comprend des fonctionnalités telles que la saisie semi-automatique de code, un système de gestion de projets et de solutions sophistiqué, une bibliothèque de modèles de projet complète, contrôle de code source intégré, et bien plus encore.
+1. **Environnement de développement intégré (IDE) moderne** : Xamarin utilise Visual Studio, un IDE moderne qui comprend des fonctionnalités telles que la saisie semi-automatique de code, un système sophistiqué de gestion de projets et de solutions, une bibliothèque de modèles de projet complète, un contrôle de code source intégré, et bien plus encore.
 1. **Prise en charge multiplateforme mobile** : Xamarin offre une prise en charge multiplateforme sophistiquée pour les trois principales plateformes d’iOS, Android et Windows. Les applications peuvent être écrites pour partager jusqu’à 90% de leur code, et Xamarin. Essentials offre une API unifiée pour accéder aux ressources communes sur les trois plateformes. Le code partagé peut réduire de manière significative les coûts de développement et le délai de mise sur le marché pour les développeurs mobiles.
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
-[![Diagramme d’architecture Xamarin. Android](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
+[![diagramme d’architecture Xamarin. Android](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
 
 Les applications Xamarin. Android se C# compilent en **langage intermédiaire (il)** qui est ensuite compilé **juste-à-temps (JIT)** dans un assembly natif au lancement de l’application. Les applications Xamarin. Android s’exécutent dans l’environnement d’exécution mono, côte à côte avec la machine virtuelle Android Runtime (ART). Xamarin fournit des liaisons .NET aux espaces de noms Android. * et Java. *. L’environnement d’exécution mono appelle ces espaces de noms via des **wrappers pouvant être appelés par Managed Callable (MCW)** et fournit à l’art des **wrappers pouvant être appelés par Android (ACW)** , ce qui permet aux deux environnements d’appeler du code entre eux.
 
@@ -64,7 +65,7 @@ Pour plus d’informations, consultez [architecture Xamarin. Android](~/android/
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
-[![Diagramme d’architecture Xamarin. iOS](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
+[![diagramme d’architecture Xamarin. iOS](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
 Les applications Xamarin. iOS sont **entièrement** compilées à partir du C# code assembleur ARM natif. Xamarin utilise des **sélecteurs** pour exposer objective-c C# à Managed et C# les **registraires** afin d’exposer le code managé à objective-c. Les sélecteurs et les bureaux d’enregistrement sont appelés des « liaisons » et permettent à C# objective-C et de communiquer.
 
@@ -103,3 +104,9 @@ Les guides suivants vous aideront à créer votre première application à l’a
 - [Prise en main de Xamarin. Android](~/android/index.yml)
 - [Prise en main de Xamarin. iOS](~/ios/index.yml)
 - [Prise en main de Xamarin. Mac](~/mac/index.yml)
+
+## <a name="related-video"></a>Vidéo associée
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/What-is-Xamarin-1-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

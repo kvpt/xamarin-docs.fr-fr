@@ -6,13 +6,13 @@ ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2017
-ms.openlocfilehash: 3c167b025b41bd4fc7c8c93bdb2f825c9daa540c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/07/2019
+ms.openlocfilehash: 83fbad8a9bbb9afef5ee80705fe9e86e51284e7d
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032850"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842980"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Authentifier les utilisateurs avec un fournisseur d’identité
 
@@ -259,6 +259,16 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ```
 
 La méthode `FindAccountsForService` retourne une collection `IEnumerable` d’objets `Account`, le premier élément de la collection étant défini comme étant le compte correspondant.
+
+## <a name="troubleshooting"></a>Résolution des problèmes
+
+- Sur Android, si vous recevez une notification de Toast quand vous fermez le navigateur après l’authentification et que vous souhaitez arrêter la notification Toast, ajoutez le code suivant au projet Android après l’initialisation de Xamarin. auth :
+
+```csharp
+Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
+```
+
+- Sur Android, si le navigateur ne se ferme pas automatiquement, une solution de contournement temporaire consiste à rétrograder le package Xamarin. auth à la version 1.5.0.3. Ensuite, ajoutez le port [PCL v 2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147) au projet Android.
 
 ## <a name="summary"></a>Récapitulatif
 

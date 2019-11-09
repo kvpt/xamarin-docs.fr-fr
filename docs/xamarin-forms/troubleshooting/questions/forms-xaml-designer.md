@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 43088beba6c6a86330cac164856be98d88f07fe2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ce318faab1af07b95a7769d81a506979b37a34e4
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61247794"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73843000"
 ---
 # <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>Pourquoi le concepteur Visual Studio XAML ne fonctionne-t-il pas pour les fichiers XAML de Xamarin.Forms ?
 
-Xamarin.Forms ne prend actuellement en charge les concepteurs visuels pour les fichiers XAML. Pour cette raison, lorsque vous tentez d’ouvrir un fichier XAML de formulaires dans soit Visual Studio *Concepteur d’interface utilisateur XAML* ou *Concepteur d’interface utilisateur XAML avec encodage*, le message d’erreur suivant est levé :
+Xamarin. Forms ne prend actuellement pas en charge les concepteurs visuels pour les fichiers XAML. Pour cette raison, lorsque vous tentez d’ouvrir un fichier de formulaires XAML dans le *Concepteur d’interface utilisateur XAML* de Visual Studio ou dans le *Concepteur d’interface utilisateur XAML avec encodage*, le message d’erreur suivant est généré :
 
-> « Le fichier ne peut pas être ouvert avec l’éditeur sélectionné. Veuillez choisir un autre éditeur ».
+> «Impossible d’ouvrir le fichier avec l’éditeur sélectionné. Choisissez un autre éditeur.»
 
-Cette limitation est décrite dans le [vue d’ensemble](~/xamarin-forms/xaml/xaml-basics/index.md#Overview) section de la [principes de base XAML Xamarin.Forms](~/xamarin-forms/xaml/xaml-basics/index.md) guide :
+Cette limitation est décrite dans le Guide de [base du langage XAML Xamarin. Forms](~/xamarin-forms/xaml/xaml-basics/index.md) :
 
-> « Il n’est pas encore un concepteur visuel pour la génération de XAML dans les applications Xamarin.Forms, afin que tous les XAML doit être écrit manuellement. »
+> « Il n’existe pas encore de concepteur visuel pour la génération de code XAML dans les applications Xamarin. Forms. par conséquent, tout le code XAML doit être écrit manuellement ».
 
-Toutefois, le Générateur d’aperçu du XAML de Xamarin.Forms peuvent être affichée en sélectionnant le **vue > Other Windows > Générateur d’aperçu Xamarin.Forms** option de menu.
+Toutefois, le générateur d’aperçu XAML Xamarin. Forms peut être affiché en sélectionnant l’option de menu **afficher > autres Windows > Xamarin. Forms** (aperçu).
