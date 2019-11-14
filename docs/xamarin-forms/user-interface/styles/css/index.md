@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: 6cece2c7cad401a9dc6f14b689c5c9e5ab757df5
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: fdee070021b22f82cb69571f0fa2f396831b14e6
+ms.sourcegitcommit: 6781967baeed4fe2c58f070476e7c21d01c25c30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696884"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74052809"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Application de styles à des applications Xamarin. Forms à l’aide d’feuilles de style en cascade (CSS)
 
@@ -352,7 +352,7 @@ Les propriétés CSS suivantes sont prises en charge par Xamarin. Forms (dans la
 
 |Property|S'applique à|Valeurs|Exemple|
 |---|---|---|---|
-|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| 0 1 2 3 4 5 6 7 @no__ T_18 9 0 1 2 |`align-content: space-between;`|
+|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| 0 1 2 |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| 0 1 2 3 4|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|\| de _couleur_ `initial` |`background-color: springgreen;`|
@@ -372,7 +372,7 @@ Les propriétés CSS suivantes sont prises en charge par Xamarin. Forms (dans la
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
-|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| 0 1 2 3 4 5 6 7 @no__ T_18 9 0|`justify-content: flex-end;`|
+|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|\| d' _épaisseur_ `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|\| d' _épaisseur_ `initial` |`margin-left: 3;`|
@@ -409,6 +409,8 @@ Les propriétés suivantes ne sont pas prises en charge actuellement :
 - Propriétés sténographique, telles que `font` et `border`.
 
 En outre, il n’y a aucune valeur `inherit` et l’héritage n’est donc pas pris en charge. Par conséquent, vous ne pouvez pas, par exemple, définir la propriété `font-size` sur une mise en page et vous attendre à ce que toutes les instances de [`Label`](xref:Xamarin.Forms.Label) dans la disposition héritent de la valeur. La seule exception est la propriété `direction`, qui a une valeur par défaut de `inherit`.
+
+Le ciblage des éléments de `Span` a un problème connu empêchant les étendues d’être la cible des styles CSS par élément et par nom (à l’aide du symbole `#`). L’élément `Span` dérive de `GestureElement`, qui n’a pas la propriété `StyleClass`, les étendues ne prennent pas en charge le ciblage de classe CSS. Pour plus d’informations, consultez l' [impossibilité d’appliquer un style CSS pour étendre le contrôle](https://github.com/xamarin/Xamarin.Forms/issues/5979).
 
 ### <a name="xamarinforms-specific-properties"></a>Propriétés spécifiques de Xamarin. Forms
 
