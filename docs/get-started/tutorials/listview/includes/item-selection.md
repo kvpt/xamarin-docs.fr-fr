@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
+ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004145"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062879"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -39,7 +39,7 @@ ms.locfileid: "71004145"
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une ListView qui répond à l’action d’un utilisateur qui sélectionne ou appuie sur un élément, sous iOS et Android](../images/item-selection.png "Sélection d’éléments ListView")](../images/item-selection-large.png#lightbox "Sélection d’éléments ListView")
+    [![Capture d’écran d’une ListView qui répond à l’action d’un utilisateur qui sélectionne ou appuie sur un élément, sous iOS et Android](../images/item-selection.png "Sélection d’élément ListView")](../images/item-selection-large.png#lightbox "Sélection d’élément ListView")
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements et appuyez sur les éléments dans la [`ListView`](xref:Xamarin.Forms.ListView). Notez que l’événement [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) se déclenche lorsqu’un nouvel élément est sélectionné dans la [`ListView`](xref:Xamarin.Forms.ListView), tandis que l’événement [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) se déclenche chaque fois que l’utilisateur appuie sur un élément.
 
@@ -78,8 +78,8 @@ ms.locfileid: "71004145"
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une ListView qui répond à l’action d’un utilisateur qui sélectionne ou appuie sur un élément, sous iOS et Android](../images/item-selection.png "Sélection d’éléments ListView")](../images/item-selection-large.png#lightbox "Sélection d’éléments ListView")
+    [![Capture d’écran d’une ListView qui répond à l’action d’un utilisateur qui sélectionne ou appuie sur un élément, sous iOS et Android](../images/item-selection.png "Sélection d’élément ListView")](../images/item-selection-large.png#lightbox "Sélection d’élément ListView")
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements et appuyez sur les éléments dans la [`ListView`](xref:Xamarin.Forms.ListView). Notez que l’événement [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) se déclenche lorsqu’un nouvel élément est sélectionné dans la [`ListView`](xref:Xamarin.Forms.ListView), tandis que l’événement [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) se déclenche chaque fois que l’utilisateur appuie sur un élément.
 
-    Pour plus d’informations sur la sélection d’éléments par clic ou par pression, consultez [Sélection par clic ou par pression(~/xamarin-forms/user-interface/listview/interactivity.md#selection-and
+    Pour plus d’informations sur la sélection d’éléments par un clic ou par une pression, consultez la rubrique [Sélection par clic ou par pression](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps)
