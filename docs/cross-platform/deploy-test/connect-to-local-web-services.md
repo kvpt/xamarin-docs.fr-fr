@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
-ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
+ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
+ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72526820"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74135282"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>Connexion aux services web locaux à partir de simulateurs iOS et d’émulateurs Android
 
@@ -37,13 +37,13 @@ Chacun de ces points va être abordé à tour de rôle.
 
 L’installation du kit SDK .NET Core installe le certificat de développement ASP.NET Core HTTPS dans le magasin de certificats de l’utilisateur local. Mais même s’il a été installé, le certificat n’est pas approuvé. Pour approuver le certificat, effectuez cette étape unique afin d’exécuter l’outil dotnet `dev-certs` :
 
-```console
+```dotnetcli
 dotnet dev-certs https --trust
 ```
 
 La commande suivante fournit de l’aide sur l’outil `dev-certs` :
 
-```console
+```dotnetcli
 dotnet dev-certs https --help
 ```
 
