@@ -81,15 +81,15 @@ Xamarin. Android prend en charge les propriétés système suivantes :
 
 - *Debug. mono. Debug*: si une chaîne non vide est, cela équivaut à `*mono-debug*`.
 
-- *Debug. mono. env*: une liste de variables d’environnement séparées par des barres verticales (« *|* ») à exporter au cours du démarrage de l’application, *avant* l’initialisation de mono. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
+- *Debug.mono.env*: séparées par une barre verticale ' *|* ' liste des variables d’environnement à exporter pendant le démarrage de l’application, *avant* mono a été initialisé. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
 
   > [!NOTE]
-  > Étant donné que la valeur est « *|* »-séparé, la valeur doit avoir un niveau supplémentaire de guillemets, car la commande \`*shell adb*\` supprimera un ensemble de guillemets.
+  > Dans la mesure où la valeur est *|* '-séparés, la valeur doit avoir un niveau supplémentaire de guillemets, comme le \`*interpréteur de commandes adb*\` commande supprime un jeu de guillemets.
 
   > [!NOTE]
   > Les valeurs de propriété du système Android ne peuvent pas dépasser 92 caractères.
 
-  Exemple :
+  Exemple :
 
   ```
   adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
@@ -209,7 +209,7 @@ Il y a quatre messages de conséquence :
 - Création de références globales faible : il s’agit des lignes qui commencent par *+ w +* .
 - Destruction de référence globale faible : il s’agit de lignes qui commencent par *-w-* .
 
-Dans tous les messages, la valeur *grefc* est le nombre de références globales créées par Xamarin. Android, tandis que la valeur *grefwc* est le nombre de références globales faibles que Xamarin. Android a créées. La valeur *handle* ou *obj-handle* est la valeur de handle JNI, et le caractère après' */* 'est le type de valeur de handle : */l* pour référence locale, */g* pour les références globales et */w* pour la valeur globale faible Référence.
+Dans tous les messages, la valeur *grefc* est le nombre de références globales créées par Xamarin. Android, tandis que la valeur *grefwc* est le nombre de références globales faibles que Xamarin. Android a créées. Le *gérer* ou *obj-handle* valeur est la valeur du handle JNI et le caractère situé après le */* est le type de valeur du handle :   */l* pour référence locale, */G* pour les références globales, et */W* pour les références faibles globales.
 
 Dans le cadre du processus GC, les références globales (+ g +) sont converties en références globales faibles (provoquant + w + et-g-), un GC côté Java est lancé, puis la référence mondiale faible est vérifiée pour voir s’il a été collecté. S’il est toujours actif, une nouvelle Gref est créée autour de la référence faible (+ g +,-w-), sinon la référence faible est détruite (-w).
 
@@ -306,7 +306,7 @@ Cela signifie que votre chemin d’accès ne contient pas le répertoire dans le
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid. exe ou aresgen. exe s’est arrêté avec le code 1
 
-Pour vous aider à déboguer ce problème, accédez à Visual Studio et modifiez le niveau de détail MSBuild. pour ce faire, sélectionnez **outils > Options > projet** et **solutions > générer** et **Exécuter > Détails de la sortie de génération du projet MSBuild** et définir ce valeur à **normal**.
+Pour vous aider à déboguer ce problème, accédez à Visual Studio et modifiez le niveau de détail MSBuild. pour ce faire, sélectionnez **outils > Options > projet** et **solutions > générer** et **Exécuter > Détails de la sortie de génération du projet MSBuild** et définir cette valeur sur **normal**.
 
 Régénérez et vérifiez le volet de sortie de Visual Studio, qui doit contenir l’erreur complète.
 
@@ -322,7 +322,7 @@ Veillez à utiliser le nom de simulateur correct, c.-à-d. [le nom que vous avez
 
 ## <a name="install_failed_invalid_apk-when-installing-a-package"></a>L’installation de\_a échoué\_\_de APK non valide lors de l’installation d’un package
 
-Les noms de packages Android *doivent* contenir un point (' *.* '). Modifiez le nom de votre package de sorte qu’il contienne un point.
+Les noms de package Android *doit* contiennent un point ( *.* '). Modifiez le nom de votre package de sorte qu’il contienne un point.
 
 - Dans Visual Studio :
   - Cliquez avec le bouton droit sur les propriétés de votre projet >
@@ -464,7 +464,7 @@ mAdapter = new SimpleExpandableListAdapter (
 );
 ```
 
-Le problème est que Xamarin. Android marshale incorrectement les types génériques imbriqués. Le `List<IDictionary<string, object>>` est marshalé en [java. lang. ArrrayList](xref:Java.Util.ArrayList), mais le `ArrayList` contient des instances de `mono.android.runtime.JavaObject` (qui référencent les instances `Dictionary<string, object>`) au lieu d’un objet qui implémente [java. util. map](xref:Java.Util.IMap), ce qui donne le résultat suivant : titre
+Le problème est que Xamarin. Android marshale incorrectement les types génériques imbriqués. Le `List<IDictionary<string, object>>` est marshalé en [java. lang. ArrrayList](xref:Java.Util.ArrayList), mais le `ArrayList` contient des instances `mono.android.runtime.JavaObject` (qui référencent les instances `Dictionary<string, object>`) au lieu d’un objet qui implémente [java. util. map](xref:Java.Util.IMap), provoquant l’exception suivante :
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -627,7 +627,7 @@ E/dalvikvm(  602): VM aborting
 
 Dans l’exemple ci-dessus (qui provient accidentellement du [bogue 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)) le problème est qu’un trop grand nombre d’instances Android. Graphics. point sont en cours de création ; pour obtenir la liste des correctifs pour ce bogue, consultez [\#de commentaires 2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2) .
 
-En règle générale, une solution utile consiste à rechercher le type ayant trop d’instances allouées &ndash; Android. Graphics. point dans l’image de vidage ci-dessus &ndash; puis à rechercher où elles sont créées dans votre code source et à les supprimer de manière appropriée (afin que leur objet Java la durée de vie est raccourcie). Cela n’est pas toujours approprié (\#685215 est multithread, donc la solution triviale évite l’appel de suppression), mais c’est la première chose à prendre en compte.
+En règle générale, une solution utile consiste à rechercher le type ayant trop d’instances allouées &ndash; Android. Graphics. point dans le dump ci-dessus &ndash; puis à rechercher où elles sont créées dans votre code source et à les supprimer de manière appropriée (afin que leur durée de vie d’objet Java soit raccourcie). Cela n’est pas toujours approprié (\#685215 est multithread, donc la solution triviale évite l’appel de suppression), mais c’est la première chose à prendre en compte.
 
 Vous pouvez activer la [journalisation Gref](~/android/troubleshooting/index.md) pour voir à quel moment les GREFs sont créés et combien existent.
 

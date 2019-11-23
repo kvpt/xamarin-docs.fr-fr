@@ -1,5 +1,5 @@
 ---
-title: Partie 1. Bien démarrer avec XAML
+title: Partie 1. Bien démarrer avec XAML
 description: Dans une application Xamarin.Forms, XAML est principalement utilisé pour définir le contenu visuel d’une page et le fonctionne avec un fichier code-behind.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
@@ -14,9 +14,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/30/2019
 ms.locfileid: "71679973"
 ---
-# <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
+# <a name="part-1-getting-started-with-xaml"></a>Partie 1. Bien démarrer avec XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _Dans une application Xamarin.Forms, XAML est principalement utilisé pour définir le contenu visuel d’une page et fonctionne en association avec un C# fichier code-behind._
 
@@ -106,7 +106,7 @@ Le **MainPage.xaml** fichier ressemble à ceci (bien que la mise en forme peut �
 </ContentPage>
 ```
 
-Les deux déclarations de l'`xmlns`espace de noms XML () font référence aux URI, la première apparemment sur le site Web de Xamarin et la seconde sur le site Microsoft. Nul besoin de vérifier quel point des ces URI à. Il est vide. Elles sont simplement des URI détenus par Xamarin et Microsoft, et ils fonctionnent essentiellement en tant qu’identificateurs de version.
+Les deux déclarations d’espace de noms XML (`xmlns`) font référence aux URI, la première apparemment sur le site Web de Xamarin et la seconde sur le site Microsoft. Nul besoin de vérifier quel point des ces URI à. Il est vide. Elles sont simplement des URI détenus par Xamarin et Microsoft, et ils fonctionnent essentiellement en tant qu’identificateurs de version.
 
 La première déclaration d’espace de noms XML signifie que les balises définies dans le fichier XAML sans préfixe font référence aux classes dans Xamarin.Forms, par exemple `ContentPage`. La seconde déclaration d’espace de noms définit un préfixe `x`. Il est utilisé pour plusieurs éléments et attributs qui font partie intégrante XAML lui-même et qui sont pris en charge par les autres implémentations de XAML. Toutefois, ces éléments et attributs sont légèrement différents selon l’année incorporée dans l’URI. Xamarin.Forms prend en charge la spécification de XAML 2009, mais pas entièrement.
 
@@ -145,7 +145,7 @@ Bien que normalement ne pas devoir passer trop de temps avec les fichiers de cod
 
 Lorsque vous compilez et exécutez ce programme, le `Label` élément apparaît dans le centre de la page, comme le suggère le XAML :
 
-[![Affichage Xamarin. Forms par défaut](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
+[![l’affichage Xamarin. Forms par défaut](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 Pour les éléments visuels plus intéressants, il vous suffit est plus intéressant de XAML.
 
@@ -153,7 +153,7 @@ Pour les éléments visuels plus intéressants, il vous suffit est plus intéres
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Pour ajouter d’autres classes @no__t XAML-0 à votre projet, sélectionnez le projet de bibliothèque **XamlSamples** .NET standard, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouvel élément...** . Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez  **C# éléments visuels > Xamarin. Forms > page de contenu** (et non pas la page de **contenu (C#)** , qui crée une page de code uniquement, ou un affichage de **contenu**, qui n’est pas une page). Nommez la page, par exemple, **HelloXamlPage**:
+Pour ajouter d’autres classes de `ContentPage` basées sur XAML à votre projet, sélectionnez le projet de bibliothèque **XamlSamples** .NET standard, cliquez avec le bouton droit, puis sélectionnez **Ajouter > nouvel élément...** . Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez  **C# éléments visuels > Xamarin. Forms > page de contenu** (et non pas la page de **contenu (C#)** , qui crée une page de code uniquement, ou un affichage de **contenu**, qui n’est pas une page). Nommez la page, par exemple, **HelloXamlPage**:
 
 ![Boîte de dialogue Ajouter un nouvel élément](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
@@ -207,9 +207,9 @@ Le `ContentPage.Content` balises sont appelés *élément property* balises. `Co
 
 Notez également qu’un `Title` attribut a été défini sur la balise racine.
 
-À ce stade, la relation entre les classes, les propriétés et le XML doit être évidente : Une classe Xamarin. Forms (telle `ContentPage` que `Label`ou) apparaît dans le fichier XAML sous la forme d’un élément XML. Propriétés de la classe, y compris `Title` sur `ContentPage` et sept propriétés de `Label`— apparaissent généralement sous la forme d’attributs XML.
+À ce stade, la relation entre les classes, propriétés et XML doit être évidente : Xamarin.Forms d’une classe (tel que `ContentPage` ou `Label`) apparaît dans le fichier XAML comme un élément XML. Propriétés de la classe, y compris `Title` sur `ContentPage` et sept propriétés de `Label`— apparaissent généralement sous la forme d’attributs XML.
 
-Il existe de nombreux raccourcis pour définir les valeurs de ces propriétés. Certaines propriétés sont des types de données de base : Par exemple, les `Title` propriétés `Text` et sont de type `String`, `Rotation` est de type `Double`, et `IsVisible` (qui est `true` par défaut et qui est défini ici uniquement pour l’illustration) est de type `Boolean`.
+Il existe de nombreux raccourcis pour définir les valeurs de ces propriétés. Certaines propriétés sont des types de base de données : par exemple, le `Title` et `Text` propriétés sont de type `String`, `Rotation` est de type `Double`, et `IsVisible` (qui est `true` par défaut et est définie ici uniquement pour illustration) est de type `Boolean`.
 
 Le `HorizontalTextAlignment` propriété est de type `TextAlignment`, qui est une énumération. Pour une propriété de n’importe quel type d’énumération, il vous suffit d’approvisionnement est un nom de membre.
 
@@ -282,7 +282,7 @@ public MainPage()
 
 Définition de la `Content` propriété de la page remplace le paramètre de la `Content` propriété dans le fichier XAML. Lorsque vous compilez et déployez la nouvelle version de ce programme, un bouton apparaît sur l’écran. En appuyant sur elle accède à `HelloXamlPage`. Voici la page résultante sur iPhone, Android et UWP :
 
-[![Texte de l’étiquette pivoté](get-started-with-xaml-images/helloxaml1.png)](get-started-with-xaml-images/helloxaml1-large.png#lightbox)
+[Texte de l’étiquette pivoté ![](get-started-with-xaml-images/helloxaml1.png)](get-started-with-xaml-images/helloxaml1-large.png#lightbox)
 
 Vous pouvez naviguer jusqu'à `MainPage` à l’aide de la **< retour** bouton sur iOS, à l’aide de la flèche gauche en haut de la page ou du bas du téléphone sur Android, ou à l’aide de la flèche gauche en haut de la page sur Windows 10.
 
@@ -292,7 +292,7 @@ N’hésitez pas à faire des essais avec le XAML pour les différentes façons 
 
 Voici à quoi elle ressemble :
 
-[![Texte d’étiquette pivoté avec des caractères Unicode](get-started-with-xaml-images/helloxaml2.png)](get-started-with-xaml-images/helloxaml2-large.png#lightbox)
+[![texte d’étiquette pivoté avec des caractères Unicode](get-started-with-xaml-images/helloxaml2.png)](get-started-with-xaml-images/helloxaml2-large.png#lightbox)
 
 ## <a name="xaml-and-code-interactions"></a>XAML et les Interactions du Code
 
@@ -320,11 +320,11 @@ Le **HelloXamlPage** exemple contient une seule `Label` dans la page, mais cela 
 
 Ce fichier XAML est syntaxiquement complète, et Voici à quoi elle ressemble :
 
-[![Plusieurs contrôles sur une page](get-started-with-xaml-images/xamlpluscode1.png)](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox)
+[![de plusieurs contrôles sur une page](get-started-with-xaml-images/xamlpluscode1.png)](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox)
 
 Toutefois, vous êtes susceptible de prendre en compte ce programme fonctionnellement insuffisantes. Peut-être le `Slider` est censée pour entraîner le `Label` pour afficher la valeur actuelle et le `Button` est probablement destiné à faire quelque chose dans le programme.
 
-Comme vous le verrez dans [partie 4. Notions de base de données liaison](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md), le travail d’affichage une `Slider` à l’aide de la valeur un `Label` peut être géré entièrement dans XAML avec une liaison de données. Mais il est utile de consulter tout d’abord de la solution de code. Même dans ce cas, la gestion du `Button` cliquez sans aucun doute nécessite du code. Cela signifie que le fichier code-behind pour `XamlPlusCodePage` doit contenir des gestionnaires pour le `ValueChanged` événements de la `Slider` et le `Clicked` événements de la `Button`. Nous allons ajouter les :
+Comme vous le verrez dans la [partie 4. Les principes fondamentaux](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)de la liaison de données, le travail d’affichage d’une valeur `Slider` à l’aide d’un `Label` peut être géré entièrement en XAML avec une liaison de données. Mais il est utile de consulter tout d’abord de la solution de code. Même dans ce cas, la gestion du `Button` cliquez sans aucun doute nécessite du code. Cela signifie que le fichier code-behind pour `XamlPlusCodePage` doit contenir des gestionnaires pour le `ValueChanged` événements de la `Slider` et le `Clicked` événements de la `Button`. Nous allons ajouter les :
 
 ```csharp
 namespace XamlSamples
@@ -411,7 +411,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 Lorsque vous exécutez tout d’abord le programme, le `Label` n’affiche pas le `Slider` valeur, car le `ValueChanged` événement n’a pas encore déclenché. Mais toute manipulation de la `Slider` provoque la valeur à afficher :
 
-[![Valeur de curseur affichée](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
+[Valeur de curseur ![affichée](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
 
 Passons maintenant à la `Button`. Nous allons simuler une réponse à une `Clicked` événement en affichant une alerte avec le `Text` du bouton. Le Gestionnaire d’événements peut sans risque un cast du `sender` argument à un `Button` , puis accédez à ses propriétés :
 
@@ -449,14 +449,14 @@ Après avoir `InitializeComponent` rend le contrôle au constructeur, les élém
 
 N’hésitez pas. Il s’agit votre page et XAML est uniquement un outil permettant de créer son contenu.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
-Avec cette présentation, vous avez vu comment un fichier XAML et le fichier de code contribuent à une définition de classe, et comment les fichiers XAML et code interagissent. Mais XAML possède également ses propres fonctionnalités syntaxiques uniques qui lui permettent d’être utilisé de manière très souple. Vous pouvez commencer à Explorer dans [partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md).
+Avec cette présentation, vous avez vu comment un fichier XAML et le fichier de code contribuent à une définition de classe, et comment les fichiers XAML et code interagissent. Mais XAML possède également ses propres fonctionnalités syntaxiques uniques qui lui permettent d’être utilisé de manière très souple. Vous pouvez commencer à les explorer dans la [partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Partie 2. Syntaxe XAML essentielle](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Partie 3. Extensions de balisage XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Partie 4. Notions de base sur la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Partie 5. À partir de la liaison de données à MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Partie 4. Principes fondamentaux de la liaison de données](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [Partie 5. De la liaison de données au MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

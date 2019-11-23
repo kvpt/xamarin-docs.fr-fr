@@ -73,8 +73,8 @@ Un ou plusieurs projets de plateforme peuvent être ajoutés à la solution, et 
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 Après la conversion en projet partagé, accédez à la [section](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) **Options de projet > package NuGet > assemblys de référence**
-et assurez-vous que tous les profils requis sont sélectionnés (afin que NuGet continue à être compatible avec les projets qu’il utilisait). précédemment utilisé dans).
+et assurez-vous que tous les profils requis sont sélectionnés (afin que NuGet continue à être compatible avec les projets qu’il utilisait précédemment dans).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Guide sur les métadonnées](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

@@ -16,9 +16,9 @@ ms.locfileid: "73022345"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Chaîne NSString dans Xamarin. iOS et Xamarin. Mac
 
-La conception de Xamarin. iOS et Xamarin. Mac appelle l’API d’utilisation pour exposer le type de chaîne .NET natif, `string`, pour la manipulation de chaînes C# dans et d’autres langages de programmation .net, et pour exposer une chaîne comme type de données exposé par l’API au lieu de la `NSString` type de données.
+La conception de Xamarin. iOS et Xamarin. Mac requiert l’utilisation de l’API pour exposer le type de chaîne .NET natif, `string`, pour la manipulation de C# chaînes dans et d’autres langages de programmation .net, et pour exposer une chaîne comme type de données exposé par l’API au lieu du type de données `NSString` .
 
-Cela signifie que les développeurs ne doivent pas nécessairement conserver les chaînes destinées à être appelées dans Xamarin. iOS & l’API Xamarin. Mac (Unified) dans un type spécial (`Foundation.NSString`), ils peuvent continuer à utiliser les `System.String` mono pour toutes les opérations, et chaque fois qu’une API dans Xamarin. iOS ou Xamarin. Mac requiert une chaîne, notre liaison d’API prend soin de marshaler les informations.
+Cela signifie que les développeurs ne doivent pas nécessairement conserver les chaînes destinées à être appelées dans Xamarin. iOS & l’API Xamarin. Mac (Unified) dans un type spécial (`Foundation.NSString`), ils peuvent continuer à utiliser les `System.String` de mono pour toutes les opérations, et chaque fois qu’une API dans Xamarin. iOS ou Xamarin.
 
 Par exemple, la propriété objective-C « Text » sur un `UILabel` de type `NSString`, est déclarée comme suit :
 

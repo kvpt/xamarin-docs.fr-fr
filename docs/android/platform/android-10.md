@@ -24,12 +24,12 @@ Cet article est structuré pour vous aider à commencer à développer des appli
 
 Xamarin. Android 10,0 prend en charge Android 10. Pour plus d’informations sur la prise en charge de Xamarin. Android pour Android 10, consultez les [notes de publication de Xamarin. android 10,0](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0).
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 La liste suivante est requise pour utiliser les fonctionnalités Android 10 dans les applications basées sur Xamarin :
 
 - **Visual Studio** -visual studio 2019 est recommandé. Sur Windows Update vers Visual Studio 2019 version 16,3 ou ultérieure. Sur macOS, mettez à jour vers Visual Studio 2019 pour Mac version 8,3 ou ultérieure.
-- **Xamarin. Android** -Xamarin. Android 10,0 ou version ultérieure doit être installé avec Visual Studio (Xamarin. Android est installé automatiquement dans le cadre du **développement mobile avec** la charge de travail .net sur Windows et installé dans le cadre de **Visual Studio pour Mac installer**)
+- **Xamarin. Android** -Xamarin. Android 10,0 ou version ultérieure doit être installé avec Visual Studio (Xamarin. Android est installé automatiquement dans le cadre du **développement mobile avec** la charge de travail .net sur Windows et installé dans le cadre du **programme d’installation de Visual Studio pour Mac**)
 - **Kit** de développement Java-le développement Xamarin. Android 10,0 requiert JDK 8. La distribution de Microsoft OpenJDK est automatiquement installée dans le cadre de Visual Studio.
 - **Android SDK** -Android SDK l’API 29 doit être installée via le gestionnaire de Android SDK.
 
@@ -124,7 +124,7 @@ Lorsque la version d’Android cible est définie sur le niveau d’API 29, plus
 - [Les autorisations pour les intentions fullscreen doivent demander `USE_FULL_SCREEN_INTENT`](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents).
 - [Prise en charge des pliables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables).
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a présenté Android 10 et a expliqué comment installer et configurer les outils et packages les plus récents pour le développement Xamarin. Android avec Android 10. Il a fourni une vue d’ensemble des fonctionnalités clés disponibles dans Android 10. Elle contient des liens vers des rubriques de documentation sur les API et des développeurs Android qui vous aideront à créer des applications pour Android 10. Elle a également mis en évidence les modifications de comportement Android 10 les plus importantes susceptibles d’avoir un impact sur les applications existantes.
 

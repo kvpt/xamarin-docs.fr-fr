@@ -109,7 +109,7 @@ Il existe plusieurs configurations de build fournies lors du déploiement d’ap
 
 - Débogage
   - Il s’agit de la configuration principale qui doit être utilisée lorsqu’une application est en cours de développement et elle doit, par conséquent, être aussi rapide que possible.
-- Édition
+- Version finale
   - Les builds de mise en production sont celles qui sont envoyées à vos utilisateurs et il est donc essentiel de se concentrer sur les performances. Lorsque vous utilisez la configuration Mise en production, vous souhaiterez peut-être utiliser le compilateur d’optimisation LLVM et optimiser les fichiers PNG.
 
 Il est également important de comprendre la relation entre la génération et le déploiement. La durée de déploiement dépend de la taille de l’application. Une application plus volumineuse prend plus de temps à déployer. En réduisant la taille de l’application, vous pouvez réduire la durée de déploiement.
@@ -121,7 +121,7 @@ La réduction de la taille de l’application peut aussi réduire la durée de l
 
 ### <a name="tips"></a>Conseils
 
-- Build : 
+- Génération : 
   - La génération d’une architecture unique (par exemple, ARM64) est plus rapide qu’une architecture FAT binaire (par exemple, ARMv7 + ARM64)
   - Évitez d’optimiser les fichiers PNG lors du débogage
   - Envisagez de lier tous les assemblys. Optimisez chaque assembly. 
@@ -192,7 +192,7 @@ Il est également possible de lier partiellement des applications, pour aider à
   - Cela permet à l’éditeur de liens natif d’éliminer le code natif de la bibliothèque avec laquelle vous effectuez la liaison. 
   - Notez que la recherche dynamique de symboles ne fonctionne pas avec ceci. 
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Ce guide a exploré comment minuter une application iOS et les options à prendre en compte qui sont dépendantes de la configuration et des options de la génération du projet. 
 
@@ -276,8 +276,8 @@ L3 Cache: 4 MB
 - 8 GB RAM 
 ---->
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Billet de blog](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)
-- [Configuration personnalisée de l’éditeur de liens](~/cross-platform/deploy-test/linker.md)
+- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)

@@ -44,7 +44,7 @@ La capture entre crochets est basée sur les paramètres des contrôles d’appa
 
 Simplement indiqué, la capture entre crochets est une rafale d’images fixes prises avec divers paramètres, de l’image à l’image.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 Les éléments suivants sont requis pour effectuer les étapes présentées dans cet article :
 
@@ -168,7 +168,7 @@ La session de capture AV est utilisée pour contrôler l’enregistrement de la 
 Procédez comme suit pour modifier le `AppDelegate` de l’application et ajouter le code nécessaire :
 
 1. Double-cliquez sur le fichier `AppDelegate.cs` dans le Explorateur de solutions pour l’ouvrir et le modifier.
-1. Ajoutez les instructions using suivantes au début du fichier :
+1. Ajoutez ce qui suit à l'aide d'instructions au début du fichier :
 
     ```csharp
     using System;
@@ -264,7 +264,7 @@ Procédez comme suit pour modifier le `AppDelegate` de l’application et ajoute
     }
     ```
 
-1. Enregistrez les modifications dans le fichier.
+1. Enregistrez les modifications du fichier.
 
 Avec ce code en place, vous pouvez facilement implémenter les contrôles d’appareil photo manuels pour l’expérimentation et le test.
 
@@ -330,11 +330,11 @@ Outre les fonctionnalités déjà fournies par iOS 7 et versions ultérieures, l
 
 Pour implémenter les fonctionnalités ci-dessus, la classe `AVCaptureDevice` a été modifiée pour inclure une propriété `LensPosition` en lecture seule utilisée pour obtenir la position actuelle de l’objectif de l’appareil photo.
 
-Pour prendre le contrôle manuel de la position de l’objectif, le périphérique de capture doit être en mode Focus verrouillé. Exemple :
+Pour prendre le contrôle manuel de la position de l’objectif, le périphérique de capture doit être en mode Focus verrouillé. Exemple :
 
  `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
 
-La méthode `SetFocusModeLocked` du périphérique de capture est utilisée pour ajuster la position de l’objectif de l’appareil photo. Une routine de rappel facultative peut être fournie pour recevoir une notification lorsque la modification prend effet. Exemple :
+La méthode `SetFocusModeLocked` du périphérique de capture est utilisée pour ajuster la position de l’objectif de l’appareil photo. Une routine de rappel facultative peut être fournie pour recevoir une notification lorsque la modification prend effet. Exemple :
 
 ```csharp
 ThisApp.CaptureDevice.LockForConfiguration(out Error);
@@ -1117,7 +1117,7 @@ Toutes les commandes de capture entre parenthèses sont implémentées dans la c
 Deux nouvelles classes ont été implémentées pour gérer les paramètres :
 
 - `AVCaptureAutoExposureBracketedStillImageSettings` : il possède une propriété, `ExposureTargetBias`, utilisée pour définir le biais d’un crochet d’exposition automatique.
-- `AVCaptureManual` @ no__t_1_ : il a deux propriétés, `ExposureDuration` et `ISO`, utilisées pour définir la vitesse d’obturation et ISO pour un crochet d’exposition manuel.
+- `AVCaptureManual``ExposureBracketedStillImageSettings` : il a deux propriétés, `ExposureDuration` et `ISO`, utilisées pour définir la vitesse d’obturation et ISO pour un crochet d’exposition manuel.
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>Les contrôles de capture entre crochets ne sont pas
 
@@ -1315,11 +1315,11 @@ Procédez comme suit pour connecter le contrôleur d’affichage pour la capture
 
 Le code ci-dessus a montré comment configurer et prendre une mesure d’exposition automatique entre crochets dans iOS 8.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Dans cet article, nous avons abordé une présentation des nouveaux contrôles d’appareil photo manuels fournis par iOS 8, ainsi que les concepts de base de ce qu’ils font et de leur fonctionnement. Nous avons donné des exemples de focus manuel, d’exposition manuelle et de balance des blancs manuelle. Enfin, nous avons donné un exemple de capture entre crochets à l’aide des commandes manuelles d’appareil photo décrites précédemment.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [ManualCameraControls (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
 - [Introduction à iOS 8](~/ios/platform/introduction-to-ios8.md)

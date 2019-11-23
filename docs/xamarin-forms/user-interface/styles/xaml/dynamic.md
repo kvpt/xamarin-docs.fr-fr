@@ -17,9 +17,9 @@ ms.locfileid: "70228196"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Styles dynamiques dans Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Styles de ne pas répondre aux modifications apportées aux propriétés et restent inchangées pendant la durée d’une application. Par exemple, après avoir attribué un Style à un élément visuel, si une des instances de l’accesseur Set est modifiée, supprimé, ou une nouvelle instance de méthode Setter ajouté, les modifications ne sont pas appliquées à l’élément visuel. Toutefois, les applications peuvent répondre aux modifications de style dynamiquement lors de l’exécution à l’aide de ressources dynamiques._
+_Les styles ne répondent pas aux modifications de propriété et restent inchangés pour la durée d’une application. Par exemple, après avoir assigné un style à un élément visuel, si l’une des instances d’accesseur Set est modifiée, supprimée ou qu’une nouvelle instance d’accesseur Set a été ajoutée, les modifications ne seront pas appliquées à l’élément visuel. Toutefois, les applications peuvent répondre de manière dynamique aux modifications de style au moment de l’exécution à l’aide de ressources dynamiques._
 
 Le `DynamicResource` extension de balisage est similaire à la `StaticResource` une extension de balisage dans que les deux utilisent une clé de dictionnaire pour extraire une valeur à partir d’un [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Toutefois, même si le `StaticResource` effectue une recherche dans le dictionnaire unique, le `DynamicResource` maintient un lien vers la clé de dictionnaire. Par conséquent, si l’entrée de dictionnaire associée à la clé est remplacée, la modification est appliquée à l’élément visuel. Ainsi, les modifications de style de runtime doit être faite dans une application.
 
@@ -87,7 +87,7 @@ Lorsque le `OnButtonClicked` Gestionnaire d’événements est exécuté, `searc
 [![Exemple de style dynamique bleu-](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
 [![exemple de style dynamique vert](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
-L’exemple de code suivant montre la page équivalente dans C# :
+L’exemple de code suivant montre la page équivalente dans c# :
 
 ```csharp
 public class DynamicStylesPageCS : ContentPage
@@ -123,7 +123,7 @@ public class DynamicStylesPageCS : ContentPage
 }
 ```
 
-En C#, le [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) instances utilisation le [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*) méthode à référencer `searchBarStyle`. Le `OnButtonClicked` code gestionnaire d’événements est identique à l’exemple XAML et lors de l’exécution, `searchBarStyle` bascule entre `blueSearchBarStyle` et `greenSearchBarStyle`.
+En c#, le [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) instances utilisation le [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*) méthode à référencer `searchBarStyle`. Le `OnButtonClicked` code gestionnaire d’événements est identique à l’exemple XAML et lors de l’exécution, `searchBarStyle` bascule entre `blueSearchBarStyle` et `greenSearchBarStyle`.
 
 ## <a name="dynamic-style-inheritance"></a>Héritage de style dynamique
 
@@ -166,7 +166,7 @@ Dans le fichier code-behind, le constructeur crée un [ `ResourceDictionary` ](x
 [![Exemple d’héritage](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
 [![destyledynamiquebleuexempled’héritagedestyledynamiquevert](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
-L’exemple de code suivant montre la page équivalente dans C# :
+L’exemple de code suivant montre la page équivalente dans c# :
 
 ```csharp
 public class DynamicStylesInheritancePageCS : ContentPage

@@ -29,8 +29,8 @@ Le processus d’implémentation de la mise en œuvre du runtime dans une applic
 
 Les captures d’écran suivantes illustrent les pages à thème, avec l’application iOS utilisant un thème clair et l’application Android à l’aide d’un thème sombre :
 
-[![Capture d’écran de la page principale d’une application à thème, sur iOS et android](theming-images/main-page-both-themes.png "Page principale de l’application à thème")](theming-images/main-page-both-themes-large.png#lightbox "Page principale de l’application à thème") 
-[![capture d’écran de la page de détails d’une application à thème, sur iOS et Android](theming-images/detail-page-both-themes.png "Page de détails de l’application à thème")](theming-images/detail-page-both-themes-large.png#lightbox "Page de détails de l’application à thème")
+[![Capture d’écran de la page principale d’une application à thème, sur iOS et android](theming-images/main-page-both-themes.png "Page principale de l’application à thème")](theming-images/main-page-both-themes-large.png#lightbox "Page principale de l’application à thème")
+[ ![capture d’écran de la page de détails d’une application à thème, sur iOS et Android](theming-images/detail-page-both-themes.png "Page de détails de l’application à thème")](theming-images/detail-page-both-themes-large.png#lightbox "Page de détails de l’application à thème")
 
 ## <a name="define-themes"></a>Définir des thèmes
 
@@ -183,7 +183,7 @@ Pour plus d’informations sur les styles, consultez application d’un [style a
 Quand un thème est sélectionné lors de l’exécution, l’application doit :
 
 1. Supprimer le thème actuel de l’application. Pour ce faire, vous devez effacer la propriété [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) du [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de l’application.
-2. Charge le thème sélectionné. Pour ce faire, vous devez ajouter une instance du thème sélectionné à la propriété `MergedDictionaries` du `ResourceDictionary` au niveau de l’application.
+2. Charge le thème sélectionné. Pour ce faire, vous devez ajouter une instance du thème sélectionné à la propriété `MergedDictionaries` du `ResourceDictionary`au niveau de l’application.
 
 Les objets [`VisualElement`](xref:Xamarin.Forms.VisualElement) qui définissent des propriétés avec l’extension de balisage `DynamicResource` appliquent ensuite les nouvelles valeurs de thème. Cela est dû au fait que l’extension de balisage `DynamicResource` maintient un lien vers les clés de dictionnaire. Par conséquent, lorsque les valeurs associées aux clés sont remplacées, les modifications sont appliquées aux objets `VisualElement`.
 

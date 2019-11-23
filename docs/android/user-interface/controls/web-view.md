@@ -93,7 +93,7 @@ protected override void OnCreate (Bundle bundle)
 ```
 
 Cela initialise le membre [`WebView`](xref:Android.Webkit.WebView) avec celui de la disposition [`Activity`](xref:Android.App.Activity) et active JavaScript pour le [`WebView`](xref:Android.Webkit.WebView) avec [`JavaScriptEnabled`](xref:Android.Webkit.WebSettings.JavaScriptEnabled)
-`= true` (consultez l' [appel C\# from JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) Recipe pour informations sur l’appel des fonctions C\# à partir de JavaScript). Enfin, une page Web initiale est chargée avec [`LoadUrl(String)`](xref:Android.Webkit.WebView).
+`= true` (consultez la recette [Call c\# from JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript) pour plus d’informations sur l’appel des fonctions\# c à partir de JavaScript). Enfin, une page Web initiale est chargée avec [`LoadUrl(String)`](xref:Android.Webkit.WebView).
 
 Générez et exécutez l’application. Vous devez voir une application Web page Viewer simple comme celle illustrée dans la capture d’écran suivante :
 
@@ -129,8 +129,8 @@ Exécutez de nouveau l'application. Vous devez maintenant être en mesure de sui
 *Certaines parties de cette page sont des modifications basées sur le travail créé et partagé par le projet open source Android et utilisées conformément aux termes décrits dans la*
 [*licence d’attribution de Creative-2,5*](https://creativecommons.org/licenses/by/2.5/).
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Appeler C# à partir de JavaScript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
-- [Android. WebKit. WebView](xref:Android.Webkit.WebView)
+- [Android.Webkit.WebView](xref:Android.Webkit.WebView)
 - [KeyEvent](xref:Android.Webkit.WebView)

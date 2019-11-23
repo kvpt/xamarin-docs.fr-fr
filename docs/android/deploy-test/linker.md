@@ -50,7 +50,7 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>Comportement de l'éditeur de liens
 
-Le principal mécanisme de contrôle de l’éditeur de liens est la liste déroulante **Comportement de l’éditeur de liens** (*Liaison* dans Visual Studio) dans la boîte de dialogue **Options du projet**. Vous avez trois options :
+Le principal mécanisme de contrôle de l’éditeur de liens est la liste déroulante **Comportement de l’éditeur de liens** (*Liaison* dans Visual Studio) dans la boîte de dialogue **Options du projet**. Trois options sont disponibles :
 
 1. **Ne pas lier** (*Aucune* dans Visual Studio)
 1. **Lier les assemblys du SDK** (*Uniquement les assemblys du SDK*)
@@ -180,7 +180,7 @@ Il est possible de spécifier qu’un jeu d’assemblys fourni par l’utilisate
 
 [`@(LinkDescription)`](~/android/deploy-test/building-apps/build-process.md)
 **L’action de génération de build** peut être utilisée sur les fichiers qui peuvent contenir un [Fichier de configuration d’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md).
-.edmx. Des fichiers de configuration d’éditeur de liens personnalisés peuvent être nécessaires pour conserver les membres `internal` ou `private` qui doivent l’être.
+fichier. Des fichiers de configuration d’éditeur de liens personnalisés peuvent être nécessaires pour conserver les membres `internal` ou `private` qui doivent l’être.
 
 ### <a name="custom-attributes"></a>Attributs personnalisés
 
@@ -207,7 +207,7 @@ Lorsqu’un assembly est lié, les types d’attributs personnalisés suivants s
 - System.Diagnostics.DebuggerTypeProxyAttribute
 - System.Diagnostics.DebuggerVisualizerAttribute
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [Configuration personnalisée de l’éditeur de liens](~/cross-platform/deploy-test/linker.md)
+- [Configuration de l’éditeur de liens personnalisé](~/cross-platform/deploy-test/linker.md)
 - [Liaison sur iOS](~/ios/deploy-test/linker.md)

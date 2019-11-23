@@ -45,7 +45,7 @@ Pour créer un App Group, effectuez les étapes suivantes :
 
 Une fois que vous avez créé l’App Group, configurez les ID d’application pour permettre aux applications de l’utiliser.
 
-Effectuez ce qui suit :
+procédez comme suit :
 
 1. Accédez au  [Centre des développeurs iOS](https://developer.apple.com/account/) d’Apple, puis connectez-vous à l’aide d’un compte de développeur Apple.
 2. Dans le menu **Program Resources**, sélectionnez **Certificates, Identifiers & Profiles**.
@@ -77,7 +77,7 @@ Effectuez ce qui suit :
 S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
-* Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+* Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 * Assurez-vous que, dans la section **Signature du bundle iOS** de l’application, le paramètre **Droits personnalisés** est défini sur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds de débogage et de simulateur iOS.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

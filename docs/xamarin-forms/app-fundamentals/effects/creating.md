@@ -18,7 +18,7 @@ ms.locfileid: "70771512"
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
-_Les effets simplifient la personnalisation d’un contrôle. Cet article montre comment créer un effet qui change la couleur d’arrière-plan du contrôle Entry quand le contrôle obtient le focus._
+_Les effets simplifient la personnalisation d’un contrôle. Cet article montre comment créer un effet qui modifie la couleur d’arrière-plan du contrôle d’entrée lorsque le contrôle obtient le focus._
 
 Le processus de création d’un effet dans chaque projet spécifique à une plateforme est le suivant :
 
@@ -33,7 +33,7 @@ L’effet peut ensuite être consommé en l’attachant au contrôle approprié.
 > [!NOTE]
 > Fournir un effet dans chaque projet de plateforme est facultatif. Une tentative d’utiliser un effet quand il n’est pas inscrit retourne une valeur non null qui ne fait rien.
 
-L’exemple d’application montre un `FocusEffect` qui change la couleur d’arrière-plan d’un contrôle quand il obtient le focus. Le diagramme suivant montre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
+L’exemple d’application montre un `FocusEffect` qui change la couleur d’arrière-plan d’un contrôle quand il obtient le focus. Le diagramme suivant illustre les responsabilités de chaque projet dans l’exemple d’application ainsi que les relations qu’ils entretiennent les uns avec les autres :
 
 ![](creating-images/focus-effect.png "Responsabilités des projets d’effet de focus")
 
@@ -262,11 +262,11 @@ public HomePageCS ()
 
 [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) retourne un [`Effect`](xref:Xamarin.Forms.Effect) pour le nom spécifié, qui est une concaténation du nom du groupe de résolution (spécifié avec l’attribut [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) sur la classe d’effet), et l’ID unique qui a été spécifié avec l’attribut [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) sur la classe d’effet. Si une plateforme ne fournit pas l’effet, la méthode `Effect.Resolve` retourne une valeur non `null`.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article montre comment créer un effet qui change la couleur d’arrière-plan du contrôle [`Entry`](xref:Xamarin.Forms.Entry) quand le contrôle obtient le focus.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Renderers personnalisés](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [Effect](xref:Xamarin.Forms.Effect)

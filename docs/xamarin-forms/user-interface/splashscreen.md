@@ -28,7 +28,7 @@ L’écran de démarrage doit être affiché dès que possible lorsque l’appli
 
 ## <a name="xamarinforms-android-splash-screen"></a>Écran de démarrage Android Xamarin. Forms
 
-La création d’un écran de démarrage sur Android requiert la création d’une @no__t de démarrage-0 comme `MainLauncher` avec un thème spécial. Dès que le @no__t de démarrage-0 est démarré, il lance le @no__t principal-1 avec le thème d’application normal.
+La création d’un écran de démarrage sur Android requiert la création d’une `Activity` de démarrage en tant que `MainLauncher` avec un thème spécial. Dès que le `Activity` de démarrage est démarré, il lance le `Activity` principal avec le thème d’application normal.
 
 Pour plus d’informations sur les écrans de démarrage sur Xamarin. Android, consultez l' [écran de démarrage Xamarin. Android](~/android/user-interface/splash-screen.md).
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur les écrans de lancement sur Xamarin. iOS, consul
 
 Sur UWP, **Package. appxmanifest** contient un onglet **ressources visuelles** avec un sous-menu d' **écran de démarrage** . Les graphiques de l’écran de démarrage peuvent être spécifiés dans ce menu :
 
-[écran de démarrage ![Setting sur UWP](splashscreen-images/uwp-splashscreen-cropped.png)](splashscreen-images/uwp-splashscreen.png#lightbox)
+[![de la configuration de l’écran de démarrage sur UWP](splashscreen-images/uwp-splashscreen-cropped.png)](splashscreen-images/uwp-splashscreen.png#lightbox)
 
 ## <a name="related-links"></a>Liens connexes
 

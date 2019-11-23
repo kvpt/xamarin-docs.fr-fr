@@ -132,7 +132,7 @@ public partial class Camera {
 
 La génération de la bibliothèque produira votre liaison native.
 
-Pour terminer cette liaison, vous devez ajouter la bibliothèque Native au projet.  Pour ce faire, vous pouvez ajouter la bibliothèque native à votre projet, soit en faisant glisser la bibliothèque native de Finder vers le projet dans l’Explorateur de solutions, soit en cliquant avec le bouton droit sur le projet et en sélectionnant **ajouter** > **Ajouter des fichiers** à sélectionner. Bibliothèque native.
+Pour terminer cette liaison, vous devez ajouter la bibliothèque Native au projet.  Pour ce faire, vous pouvez ajouter la bibliothèque native à votre projet, soit en faisant glisser la bibliothèque native de Finder vers le projet dans l’Explorateur de solutions, soit en cliquant avec le bouton droit sur le projet et en sélectionnant **ajouter** > **Ajouter des fichiers** pour sélectionner la bibliothèque native.
 Les bibliothèques natives par convention commencent par le mot « lib » et se terminent par l’extension « . a ». Dans ce cas, Visual Studio pour Mac ajoute deux fichiers : le fichier. a et un fichier rempli C# automatiquement qui contient des informations sur ce que contient la bibliothèque Native :
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -168,7 +168,7 @@ Mais étant donné que nous utilisons l’interface comme squelette pour génér
 ### <a name="binding-methods"></a>Méthodes de liaison
 
 La liaison la plus simple consiste à lier une méthode. Déclarez simplement une méthode dans l’interface avec C# les conventions de nommage et décorez la méthode avec la [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
-attribut. L’attribut [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) est ce qui lie C# votre nom au nom objective-C dans le runtime Xamarin. iOS. Le paramètre de l' [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
+. L’attribut [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) est ce qui lie C# votre nom au nom objective-C dans le runtime Xamarin. iOS. Le paramètre de l' [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
 attribut est le nom du sélecteur objective-C. Voici quelques exemples :
 
 ```csharp
@@ -212,7 +212,7 @@ Lors de l’exportation d’un type référence, avec le mot clé [`[Export]`](~
 Tout comme les méthodes, les propriétés objective-C sont liées à l’aide de l' [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
 attribute et mappent C# directement aux propriétés. Tout comme les méthodes, les propriétés peuvent être décorées avec le [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute)
 et le [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
-attributs.
+.
 
 Lorsque vous utilisez l’attribut [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) sur une propriété en coulisses, btouch-Native lie en fait deux méthodes : l’accesseur get et l’accesseur Set. Le nom que vous fournissez pour l’exportation est le **BaseName** et l’accesseur Set est calculé en ajoutant le mot « set » en préfixe, en mettant la première lettre du **BaseName** en majuscules et en faisant en sorte que le sélecteur prenne un argument. Cela signifie que `[Export ("label")]` appliquée sur une propriété lie en fait les méthodes objective-C « label » et « setLabel : ».
 
@@ -283,12 +283,12 @@ Les frameworks objective-C utilisent un idiome dans lequel certaines classes son
 Dans ces classes, il est courant de voir que la classe de base immuable contient des propriétés avec un accesseur Get, mais pas d’accesseur Set. Et pour la version mutable pour introduire l’accesseur Set. Dans la mesure où cela n’est C#pas vraiment possible avec, nous avons dû mapper cet idiome dans un idiome C#qui fonctionnait avec.
 
 La façon dont ce est mappé C# est l’ajout de l’accesseur get et de l’accesseur Set à la classe de base, mais le marquage de la méthode setter avec un [`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)
-attribut.
+.
 
 Ensuite, sur la sous-classe mutable, vous utilisez la [`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
 attribut sur la propriété pour garantir que la propriété substitue réellement le comportement du parent.
 
-Exemple :
+Exemple :
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -326,7 +326,7 @@ IntPtr Constructor (CGRect frame);
 ### <a name="binding-protocols"></a>Protocoles de liaison
 
 Comme décrit dans le document de conception d’API, dans la section discussion sur les [modèles et les protocoles](~/ios/internals/api-design/index.md#models), Xamarin. iOS mappe les protocoles objective-C dans des classes qui ont été marquées avec le [`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
-attribut. Cela est généralement utilisé lors de l’implémentation de classes déléguées objective-C.
+. Cela est généralement utilisé lors de l’implémentation de classes déléguées objective-C.
 
 La grande différence entre une classe liée normale et une classe déléguée est que la classe déléguée peut avoir une ou plusieurs méthodes facultatives.
 
@@ -580,7 +580,7 @@ interface LonelyClass {
 
 Vous pouvez ajouter des `enum` directement dans vos fichiers de liaison pour faciliter leur utilisation dans les définitions d’API, sans utiliser un fichier source différent (qui doit être compilé à la fois dans les liaisons et le projet final).
 
-Exemple :
+Exemple :
 
 ```csharp
 [Native] // needed for enums defined as NSInteger in ObjC
@@ -594,7 +594,7 @@ interface MyType {
 
 Il est également possible de créer vos propres énumérations pour remplacer `NSString` constantes. Dans ce cas, le Générateur créera **automatiquement** les méthodes pour convertir des valeurs enums et des constantes chaîne NSString pour vous.
 
-Exemple :
+Exemple :
 
 ```csharp
 enum NSRunLoopMode {
@@ -647,7 +647,7 @@ Sortie :
 bool? ShouldDraw (CGRect rect) { ... }
 ```
 
-En interne, nous allons effectuer les conversions de `bool?` <-> `NSNumber` et `CGRect` <-> .
+En interne, nous allons effectuer les conversions de `bool?` <-> `NSNumber` et `CGRect` <-> .`NSValue`
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) prend également en charge les tableaux de `NSNumber` `NSValue` et `NSString`(enums).
 
@@ -882,7 +882,7 @@ Le générateur de liaisons peut transformer une certaine classe de méthodes en
 Vous pouvez utiliser les [`[Async]`](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) 
 attribut sur les méthodes qui retournent void et dont le dernier argument est un rappel.  Lorsque vous appliquez ce à une méthode, le générateur de liaisons génère une version de cette méthode avec le suffixe `Async`.  Si le rappel n’accepte aucun paramètre, la valeur de retour est un `Task`, si le rappel prend un paramètre, le résultat est un `Task<T>`.  Si le rappel prend plusieurs paramètres, vous devez définir la `ResultType` ou `ResultTypeName` pour spécifier le nom souhaité du type généré qui contiendra toutes les propriétés.
 
-Exemple :
+Exemple :
 
 ```csharp
 [Export ("loadfile:completed:")]
@@ -901,11 +901,11 @@ Task<string> LoadFileAsync (string file);
 
 ### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Types forts de surface pour les paramètres NSDictionary faibles
 
-À de nombreux endroits de l’API objective-C, les paramètres sont passés comme des API `NSDictionary` faiblement typées avec des clés et des valeurs spécifiques, mais elles sont sujettes aux erreurs (vous pouvez passer des clés non valides et ne pas recevoir d’avertissements ; vous pouvez transmettre des valeurs non valides et ne pas recevoir d’avertissements) et frustrantes pour utiliser comme ils requièrent plusieurs voyages à la documentation pour rechercher les noms de clé et les valeurs possibles.
+À de nombreux endroits de l’API objective-C, les paramètres sont passés comme des API `NSDictionary` faiblement typées avec des clés et des valeurs spécifiques, mais celles-ci sont sujettes aux erreurs (vous pouvez passer des clés non valides et ne pas recevoir d’avertissements. vous pouvez transmettre des valeurs non valides et ne pas recevoir d’avertissements) et frustrantes pour les utiliser, car
 
 La solution consiste à fournir une version fortement typée qui fournit la version fortement typée de l’API et en arrière-plan met en correspondance les différentes clés et valeurs sous-jacentes.
 
-Par exemple, si l’API objective-C a accepté une `NSDictionary` et qu’elle est documentée comme prenant la clé `XyzVolumeKey` qui prend une `NSNumber` avec une valeur de volume comprise entre 0,0 et 1,0 et une `XyzCaptionKey` qui prend une chaîne , vous souhaitez que vos utilisateurs aient une API intéressante qui ressemble à ceci :
+Par exemple, si l’API objective-C accepte une `NSDictionary` et qu’elle est documentée comme prenant la clé `XyzVolumeKey` qui prend une `NSNumber` avec une valeur de volume comprise entre 0,0 et 1,0 et une `XyzCaptionKey` qui prend une chaîne, vous souhaitez que vos utilisateurs aient une API intéressante qui ressemble à ceci :
 
 ```csharp
 public class  XyzOptions {
@@ -957,7 +957,7 @@ interface XyzPanel {
 ```
 
 Si votre API n’a pas besoin d’être remplacée, vous pouvez masquer en toute sécurité l’API basée sur NSDictionary à l’aide de l' [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
-attribut.
+.
 
 Comme vous pouvez le voir, nous utilisons le [`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
 attribut pour surfacer un nouveau point d’entrée d’API, et nous l’avons vu à l’aide de notre classe de `XyzOptions` fortement typée.  La méthode wrapper autorise également la réussite de la valeur null.
@@ -1111,7 +1111,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-Pour rendre la liaison plus attrayante C# pour les développeurs, vous fournissez généralement une méthode qui prend un paramètre`NSAction`, C# qui permet d’utiliser des délégués et des expressions lambda à la place de l'`Target+Selector`. Pour ce faire, vous devez généralement masquer la méthode `SetTarget` en la marquant avec un [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
+Pour rendre la liaison plus attrayante C# pour les développeurs, vous fournissez généralement une méthode qui prend un paramètre `NSAction`, C# qui permet d’utiliser des délégués et des expressions lambda à la place de l' `Target+Selector`. Pour ce faire, vous devez généralement masquer la méthode `SetTarget` en la marquant avec un [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 puis, vous exposez une nouvelle méthode d’assistance, comme ceci :
 
 ```csharp
@@ -1159,7 +1159,7 @@ Lorsque vous liez une méthode qui prend un `NSString`, vous pouvez remplacer ce
 Le seul cas où vous souhaiterez peut-être utiliser un `NSString` directement est lorsque la chaîne est utilisée comme jeton. Pour plus d’informations sur les chaînes et les `NSString`, consultez le document [conception d’API sur chaîne NSString](~/ios/internals/api-design/nsstring.md) .
 
 Dans certains cas rares, une API peut exposer une chaîne de type C (`char *`) au lieu d’une chaîne objective-C (`NSString *`). Dans ce cas, vous pouvez annoter le paramètre avec le [`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)
-attribut.
+.
 
 <a name="outref_parameters" />
 
@@ -1197,7 +1197,7 @@ Lorsque vous utilisez l’attribut [`[Export]`](~/cross-platform/macios/binding/
 
 L’exemple ci-dessus marque la valeur comme ayant la sémantique « retain ». Les sémantiques disponibles sont les suivantes :
 
-- Assigner
+- Attribuer
 - Copier
 - Conserver
 
@@ -1328,7 +1328,7 @@ Vous pouvez également référencer des énumérations ou des types de base qui 
 
 Si vous liez des API qui ne font pas partie de votre application, vous devez vous assurer que votre exécutable est lié à ces bibliothèques.
 
-Vous devez informer Xamarin. iOS comment lier vos bibliothèques. pour ce faire, vous pouvez modifier votre configuration de build pour appeler la commande `mtouch` avec des arguments de build supplémentaires qui spécifient comment établir une liaison avec les nouvelles bibliothèques à l’aide de l’option « -gcc_flags ». , suivi d’une chaîne entre guillemets qui contient toutes les bibliothèques supplémentaires requises pour votre programme, comme suit :
+Vous devez informer Xamarin. iOS comment lier vos bibliothèques. pour ce faire, vous pouvez modifier votre configuration de build pour appeler la commande `mtouch` avec des arguments de build supplémentaires qui spécifient comment établir une liaison avec les nouvelles bibliothèques à l’aide de l’option « -gcc_flags », suivie d’une chaîne entre guillemets qui contient toutes les bibliothèques supplémentaires requises pour votre programme, comme suit :
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
@@ -1347,7 +1347,7 @@ Lorsque vous utilisez la [`[LinkWithAttribute]`](~/cross-platform/macios/binding
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-Vous vous demandez peut-être pourquoi vous avez besoin de `-force_load` commande, et la raison en est que l’indicateur-ObjC bien qu’il compile le code dans, il ne conserve pas les métadonnées requises pour prendre en charge les catégories (l’éditeur de liens/le compilateur n’élimine pas le code) dont vous avez besoin au Runtime pour Xamarin. iOS.
+Vous vous demandez peut-être pourquoi vous avez besoin de `-force_load` commande, et la raison en est que l’indicateur-ObjC bien qu’il compile le code dans, il ne conserve pas les métadonnées requises pour prendre en charge les catégories (l’élimination de l’éditeur de liens/du compilateur) dont vous avez besoin au moment de l’exécution pour Xamarin. iOS.
 
 <a name="Assisted_References" />
 

@@ -21,7 +21,7 @@ Cliquez avec le bouton droit et téléchargez les trois images ci-dessous, puis 
 
  icône [d'![vert Android pour l’état normal](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [![icône d’Android orange pour l’État ciblé](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [![icône Android jaune pour l’état appuyé](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
-Créez un fichier dans le répertoire **Resources/Drawable** nommé **android_button. xml**. Insérez le code XML suivant :
+Créez un fichier dans le répertoire **Resources/drawic** nommé **android_button. xml**. Insérez le code XML suivant :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,7 +34,7 @@ Créez un fichier dans le répertoire **Resources/Drawable** nommé **android_bu
 </selector>
 ```
 
-Cela définit une seule ressource pouvant être dessinée, qui modifie son image en fonction de l’état actuel du bouton. La première `<item>` définit **android_pressed. png** comme image lorsque le bouton est enfoncé (il est activé). la deuxième `<item>` définit **android_focused. png** comme image lorsque le bouton est actif (quand le bouton est mis en surbrillance à l’aide du trackball ou du pavé directionnel); et la troisième `<item>` définit **android_normal. png** comme image pour l’état normal (lorsque vous n’appuyez pas sur le bouton et ne le concentrent pas). Ce fichier XML représente maintenant une seule ressource dessinable et, lorsqu’il est référencé par un [`Button`](xref:Android.Widget.Button) pour son arrière-plan, l’image affichée change en fonction de ces trois États.
+Cela définit une seule ressource pouvant être dessinée, qui modifie son image en fonction de l’état actuel du bouton. La première `<item>` définit **android_pressed. png** comme image lorsque l’utilisateur appuie sur le bouton (il est activé); la deuxième `<item>` définit **android_focused. png** comme image lorsque le bouton est actif (quand le bouton est mis en surbrillance à l’aide du trackball ou du pavé directionnel); et le troisième `<item>` définit **android_normal. png** comme image pour l’état normal (lorsque vous n’appuyez pas sur le bouton ou n’est pas activé). Ce fichier XML représente maintenant une seule ressource dessinable et, lorsqu’il est référencé par un [`Button`](xref:Android.Widget.Button) pour son arrière-plan, l’image affichée change en fonction de ces trois États.
 
 > [!NOTE]
 > L’ordre des éléments de `<item>` est important. Quand ce dessinable est référencé, les `<item>`s sont parcourues dans l’ordre pour déterminer celui qui convient à l’état du bouton actuel.

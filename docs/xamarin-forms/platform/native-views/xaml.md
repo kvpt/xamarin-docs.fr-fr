@@ -16,11 +16,11 @@ ms.locfileid: "70770645"
 ---
 # <a name="native-views-in-xaml"></a>Vues natives en XAML
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
-_Vues natives à partir d’iOS, Android et la plateforme Windows universelle peuvent être référencées directement à partir de fichiers de XAML de Xamarin.Forms. Propriétés et gestionnaires d’événements peuvent être définies sur les vues natives, et ils peuvent interagir avec les vues Xamarin.Forms. Cet article montre comment utiliser les vues natives à partir de fichiers de XAML de Xamarin.Forms._
+_Les vues natives d’iOS, Android et les plateforme Windows universelle peuvent être directement référencées à partir de fichiers XAML Xamarin. Forms. Les propriétés et les gestionnaires d’événements peuvent être définis sur des vues natives et interagir avec les vues Xamarin. Forms. Cet article montre comment utiliser des vues natives à partir de fichiers XAML Xamarin. Forms._
 
-Cet article aborde les rubriques suivantes :
+Cet article traite des sujets suivants :
 
 - [Utilisation de vues natives](#consuming) – le processus pour l’utilisation d’une vue native à partir de XAML.
 - [À l’aide de liaisons natifs](#native_bindings) – vers et à partir des propriétés de vues natives de liaison de données.
@@ -30,7 +30,7 @@ Cet article aborde les rubriques suivantes :
 
 <a name="overview" />
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Pour incorporer une vue native dans un fichier XAML de Xamarin.Forms :
 
@@ -38,7 +38,7 @@ Pour incorporer une vue native dans un fichier XAML de Xamarin.Forms :
 1. Créez une instance de la vue native dans le fichier XAML.
 
 > [!IMPORTANT]
-> Le code XAML compilé doit être désactivé pour les pages XAML qui utilisent des vues natives. Pour ce faire, vous pouvez décorer la classe code-behind de votre page XAML avec `[XamlCompilation(XamlCompilationOptions.Skip)]` l’attribut. Pour plus d’informations sur la compilation XAML, consultez [compilation XAML dans Xamarin. Forms](~/xamarin-forms/xaml/xamlc.md).
+> Le code XAML compilé doit être désactivé pour les pages XAML qui utilisent des vues natives. Pour ce faire, vous pouvez décorer la classe code-behind de votre page XAML avec l’attribut `[XamlCompilation(XamlCompilationOptions.Skip)]`. Pour plus d’informations sur la compilation XAML, consultez [compilation XAML dans Xamarin. Forms](~/xamarin-forms/xaml/xamlc.md).
 
 Pour faire référence à une vue native à partir d’un fichier code-behind, vous devez utiliser un projet de ressource partagé (SAP) et encapsulez le code spécifique à la plateforme avec les directives de compilation conditionnelle. Pour plus d’informations, consultez [faisant référence aux vues natives à partir du Code](#native_view_code).
 
@@ -483,11 +483,11 @@ class MySpinner : Spinner
 
 Le `MySpinner` classe expose `ItemsSource` et `SelectedObject` propriétés et un `ItemSelected` événement. Les éléments affichés par le `MySpinner` classe sont fournies par le [ `Adapter` ](xref:Android.Widget.Adapter) associé à la vue et les éléments sont renseignées dans la `Adapter` lorsque le `ItemsSource` propriété est d’abord définie. Chaque fois que l’élément sélectionné dans le `MySpinner` classe les modifications, la `OnBindableSpinnerItemSelected` Gestionnaire d’événements met à jour le `SelectedObject` propriété.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Cet article a montré comment utiliser des vues natives à partir de fichiers de XAML de Xamarin.Forms. Propriétés et gestionnaires d’événements peuvent être définies sur les vues natives, et ils peuvent interagir avec les vues Xamarin.Forms.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [NativeSwitch (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 - [Forms2Native (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)

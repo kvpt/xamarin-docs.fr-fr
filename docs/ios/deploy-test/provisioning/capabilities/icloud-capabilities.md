@@ -93,7 +93,7 @@ Pour créer un ID d’application et lui ajouter un conteneur, effectuez les ét
 
 10. Confirmez les attributions de conteneur, puis appuyez sur **Assign**.
 
-Cet ID d’application peut maintenant être utilisé pour générer ou regénérer un nouveau profil de provisionnement, comme décrit dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md). 
+Cet ID d’application peut maintenant être utilisé pour générer ou regénérer un nouveau profil de provisionnement, comme cela est décrit dans le guide [Utilisation des fonctionnalités](~/ios/deploy-test/provisioning/capabilities/index.md). 
 
 Pour plus d’informations sur l’utilisation d’iCloud, consultez les guides suivants :
 
@@ -106,7 +106,7 @@ Pour plus d’informations sur l’utilisation d’iCloud, consultez les guides 
 S’il y a lieu, effectuez les étapes supplémentaires décrites ci-après :
 
 * Utilisez l’espace de noms de framework dans votre application.
-* Ajoutez les droits nécessaires à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
+* Ajoutez les droits requis à votre application. Pour obtenir des informations détaillées sur les droits nécessaires et leur ajout, consultez le guide [Utilisation de droits](~/ios/deploy-test/provisioning/entitlements.md).
 * Dans la section  **Signature du bundle iOS** de l’application, vérifiez que le paramètre  **Droits personnalisés** a la valeur **Entitlements.plist**. Ce n’est _pas_ le paramètre par défaut pour les builds de débogage et de simulateur iOS.
 
 Si vous rencontrez des problèmes avec les services d’application, consultez la section [Dépannage](~/ios/deploy-test/provisioning/capabilities/index.md) du guide principal.

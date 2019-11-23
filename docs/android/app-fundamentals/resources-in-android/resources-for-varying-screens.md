@@ -112,7 +112,7 @@ En règle générale, voici quelques nombres pour différents appareils :
 
 - **Un DP 10 «tablet** &ndash; 720 : comme Motorola Xoom
 
-Pour les applications qui ciblent des niveaux d’API allant jusqu’à 12 (Android 3,1), les dispositions doivent se trouver dans les répertoires qui utilisent les qualificateurs **small**/**normal**/**grand**/**XLarge** comme généralisations des différents écrans tailles disponibles dans la plupart des appareils. Par exemple, dans l’image ci-dessous, il existe d’autres ressources pour les quatre tailles d’écran différentes :
+Pour les applications qui ciblent des niveaux d’API allant jusqu’à 12 (Android 3,1), les dispositions doivent se trouver dans les répertoires qui utilisent les qualificateurs **small**/**normal**/**grand**/**XLarge** comme des généralisations des différentes tailles d’écran disponibles sur la plupart des appareils. Par exemple, dans l’image ci-dessous, il existe d’autres ressources pour les quatre tailles d’écran différentes :
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -178,9 +178,9 @@ Android s’exécute sur un nombre inventés d’appareils, et la combinaison de
 - **Évitez** les
   [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout) dans la mesure du **possible** &ndash; il est déconseillé au niveau de l’API 3 (Android 1,5) et produira des dispositions fragiles. Elle ne doit pas être utilisée. Essayez plutôt d’utiliser des widgets de mise en page plus flexibles tels que [**élément LinearLayout**](xref:Android.Widget.LinearLayout), [**RelativeLayout**](xref:Android.Widget.RelativeLayout)ou la nouvelle [**GridLayout**](xref:Android.Widget.GridLayout).
 
-- **Choisissez une orientation de disposition comme &ndash; par défaut** . par exemple, au lieu de fournir les ressources alternatives **disposition-Land** et **disposition-port**, placez les ressources pour le paysage dans la **disposition**et les ressources pour portrait dans **disposition-port**.
+- **Choisissez une orientation de disposition comme &ndash; par défaut** . par exemple, au lieu de fournir les ressources alternatives **disposition-Land** et **disposition-port**, placez les ressources pour le paysage dans la **disposition**et les ressources pour portrait dans **Layout-port**.
 
-- **Utiliser LayoutParams pour la hauteur et la largeur** : lors de la définition d’éléments d’interface utilisateur dans un fichier de disposition XML, une application Android utilisant les valeurs **wrap_content** et **fill_parent** aura plus de succès garantissant une bonne présentation des différents appareils. utilisation d’unités indépendantes du pixel ou de la densité. Ces valeurs de dimension obligent Android à mettre à l’échelle les ressources bitmap selon le cas. Pour cette même raison, il est préférable de réserver les unités indépendantes de la densité lors de la spécification des marges et du remplissage des éléments d’interface utilisateur.
+- **Utiliser LayoutParams pour la hauteur et la largeur** : lors de la définition d’éléments d’interface utilisateur dans un fichier de disposition XML, une application Android qui utilise les valeurs **wrap_content** et **fill_parent** aura plus de succès, garantissez un examen correct sur différents appareils que l’utilisation d’unités indépendantes des pixels ou des densités. Ces valeurs de dimension obligent Android à mettre à l’échelle les ressources bitmap selon le cas. Pour cette même raison, il est préférable de réserver les unités indépendantes de la densité lors de la spécification des marges et du remplissage des éléments d’interface utilisateur.
 
 ## <a name="testing-multiple-screens"></a>Test de plusieurs écrans
 

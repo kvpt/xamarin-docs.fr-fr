@@ -15,7 +15,7 @@ ms.locfileid: "73028153"
 ---
 # <a name="build-process"></a>Processus de génération
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Overview
 
 Le processus de génération de Xamarin.Android est chargé de tout rassembler : [génération de `Resource.designer.cs` ](~/android/internals/api-design.md), prise en charge de `AndroidAsset`, `AndroidResource` et d’autres [actions de génération](#Build_Actions), génération de [wrappers appelables par Android](~/android/platform/java-integration/android-callable-wrappers.md) et génération d’un fichier `.apk` pour l’exécution sur les appareils Android.
 
@@ -106,7 +106,7 @@ Les propriétés MSBuild contrôlent le comportement des cibles. Elles sont spé
 
 - **DebugSymbols** &ndash; une valeur booléenne qui détermine si le package Android est *débogable*, en combinaison avec la propriété `$(DebugType)`. Un package débogable contient des symboles de débogage, définit l’attribut `//application/@android:debuggable` sur `true` et ajoute automatiquement l’autorisation `INTERNET` de façon à ce qu’un débogueur puisse s’attacher au processus. Une application est débogable si `DebugSymbols` est `True` *, et si* `DebugType` est une chaîne vide ou `Full`.
 
-- **DebugType** &ndash; spécifie le [type de symboles de débogage](https://docs.microsoft.com/visualstudio/msbuild/csc-task) à générer dans le cadre de la build, ce qui détermine si l’application est débogable. Les valeurs possibles sont les suivantes :
+- **DebugType** &ndash; spécifie le [type de symboles de débogage](https://docs.microsoft.com/visualstudio/msbuild/csc-task) à générer dans le cadre de la build, ce qui détermine si l’application est débogable. Les valeurs possibles incluent notamment :
 
   - **Full** : des symboles complets sont générés. Si la propriété MSBuild `DebugSymbols` est également définie sur `True`, le package d’application est débogable.
 
@@ -267,7 +267,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
   <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
   ```
 
-  ou :
+  ou :
 
   ```
   /p:AndroidGenerateJniMarshalMethodsAdditionalArguments="-v -d --keeptemp"
@@ -295,15 +295,15 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
     Cela correspond à l’option **Managé** dans les pages de propriétés de Visual Studio.
 
   > [!NOTE]
-  > Si la prise en charge de TLS 1,2 est requise sur les versions d’Android antérieures à 5,0, *ou* si la prise en charge de TLS 1,2 est requise avec la `System.Net.WebClient` et les API associées, `$(AndroidTlsProvider)` doit être utilisé.
+  > Si la prise en charge de TLS 1.2 est requise sur les versions d’Android antérieures à 5.0, *ou* qu’elle est nécessaire avec `System.Net.WebClient` et les API associées, il faut utiliser `$(AndroidTlsProvider)`.
 
   > [!NOTE]
-  > La prise en charge de cette propriété fonctionne en définissant la [variable d’environnement`XA_HTTP_CLIENT_HANDLER_TYPE`](~/android/deploy-test/environment.md).
+  > La prise en charge de cette propriété passe par la définition de la [variable d’environnement `XA_HTTP_CLIENT_HANDLER_TYPE`](~/android/deploy-test/environment.md).
   > Une valeur `$XA_HTTP_CLIENT_HANDLER_TYPE` trouvée dans un fichier avec l’action de génération `@(AndroidEnvironment)` sera prioritaire.
 
   Ajouté dans Xamarin.Android 6.1.
 
-- **AndroidLinkMode** &ndash; spécifie le type de [liaison](~/android/deploy-test/linker.md) à effectuer sur les assemblys contenus dans le package Android. Utilisé seulement dans les projets d’application Android. La valeur par défaut est *SdkOnly*. Les valeurs valides sont les suivantes :
+- **AndroidLinkMode** &ndash; spécifie le type de [liaison](~/android/deploy-test/linker.md) à effectuer sur les assemblys contenus dans le package Android. Utilisé seulement dans les projets d’application Android. La valeur par défaut est *SdkOnly*. Les valeurs valides sont :
 
   - **None** : aucune liaison n’est tentée.
 
@@ -312,7 +312,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
   - **Full** : la liaison est effectuée seulement sur les bibliothèques de classes de base et sur les assemblys de l’utilisateur.
 
     > [!NOTE]
-    > L’utilisation de la valeur *Full* pour `AndroidLinkMode` aboutit généralement à des applications endommagées, en particulier quand la réflexion est utilisée. À éviter, sauf si vous savez *vraiment* ce que vous faites.
+    > L’utilisation de la valeur `AndroidLinkMode`Full*pour* aboutit généralement à des applications endommagées, en particulier quand la réflexion est utilisée. À éviter, sauf si vous savez *vraiment* ce que vous faites.
 
   ```xml
   <AndroidLinkMode>SdkOnly</AndroidLinkMode>
@@ -372,9 +372,9 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   Lorsque `$(AndroidPackageFormat)` est défini sur `aab`, d’autres propriétés MSBuild sont définies. Celles-ci sont nécessaires pour les bundles d’applications Android :
 
-  - `$(AndroidUseAapt2)` a la valeur `True`.
-  - `$(AndroidUseApkSigner)` a la valeur `False`.
-  - `$(AndroidCreatePackagePerAbi)` a la valeur `False`.
+  - `$(AndroidUseAapt2)` est `True`.
+  - `$(AndroidUseApkSigner)` est `False`.
+  - `$(AndroidCreatePackagePerAbi)` est `False`.
 
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
@@ -387,7 +387,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
 - **AndroidSupportedAbis** &ndash; propriété de type chaîne qui contient une liste d’ABI (avec un point-virgule [`;`] comme séparateur) qui doivent être inclus dans le fichier `.apk`.
 
-  Les valeurs prises en charge sont :
+  Les valeurs prises en charge sont :
 
   - `armeabi-v7a`
   - `x86`
@@ -524,11 +524,11 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
   - **MidEast** : inclure les encodages du Moyen-Orient, comme *Turc (Windows)* \[iso-8859-9, CP1254\], *Hébreu (Windows)* \[windows-1255, CP1255\], *Arabe (Windows)* \[windows-1256, CP1256\], *Arabe (ISO)* \[iso-8859-6, CP28596\], *Hébreu (ISO)* \[iso-8859-8, CP28598\], *Latin 5 (ISO)* \[iso-8859-9, CP28599\] et *Hébreu (Iso Alternative)* \[iso-8859-8, CP38598\].
 
-  - **Autre**: inclure d’autres encodages, tels que *cyrillique (Windows)* \[cp1251 correspond à\], *balte (windows)* \[ISO-8859-4, cp1257\], *vietnamien (Windows)* \[CP1258\], *cyrillique ( KOI8-R)* \[koi8-r, cp1251 correspond à\], *ukrainien (KOI8-u)* \[KOI8-u, cp1251 correspond à\], *balte (ISO)* \[iso-8859-4, cp1257\], *cyrillique (ISO)* \[ISO-8859-5, cp1251 correspond à @no__ t_21_, *ISCII Davenagari* \[x-ISCII-de, CP57002\], *ISCII bengali* \[x-ISCII-is, CP57003\], *ISCII tamoul* \[x-ISCII-ta, CP57004\], *ISCII télougou* \[x-ISCII-te, CP57005\], *ISCII Assamais* \[x-ISCII-As, CP57006\], *ISCII Oriya* \[x-ISCII-or, CP57007\], *ISCII kannada* \[x-ISCII-ka, CP57008\], *ISCII Malayalam* \[x-ISCII-ma, CP57009\], *iscii Goudjrati* \[x-ISCII-gu, CP57010\], *ISCII pendjabi* \[x-iscii-PA, CP57011\]et *thaï (Windows)* \[CP874 @no_ _t_54_ .
+  - **Other** : inclure d’autres encodages, comme *Cyrillique (Windows)* \[CP1251\], *Balte (Windows)* \[iso-8859-4, CP1257\], *Vietnamien (Windows)* \[CP1258\], *Cyrillique (KOI8-R)* \[koi8-r, CP1251\], *Ukrainien (KOI8-U)* \[koi8-u, CP1251\], *Balte (ISO)* \[iso-8859-4, CP1257\], *Cyrillique (ISO)* \[iso-8859-5, CP1251\], *ISCII Devanagari* \[x-iscii-de, CP57002\], *Bengali ISCII* \[x-iscii-be, CP57003\], *Tamoul ISCII* \[x-iscii-ta, CP57004\], *Télougou ISCII* \[x-iscii-te, CP57005\], *Assamais ISCII* \[x-iscii-as, CP57006\], *Oriya ISCII* \[x-iscii-or, CP57007\], *Kannada ISCII* \[x-iscii-ka, CP57008\], *Malayalam ISCII* \[x-iscii-ma, CP57009\], *Gujarati ISCII* \[x-iscii-gu, CP57010\], *Punjabi ISCII* \[x-iscii-pa, CP57011\] et *Thaï (Windows)* \[CP874\].
 
-  - **Rare**: Include Rare encodings such as *IBM EBCDIC (Turkish)* \[CP1026\], *IBM EBCDIC (Open Systems Latin 1)* \[CP1047\], *IBM EBCDIC (US-Canada with Euro)* \[CP1140\], *IBM EBCDIC (Germany with Euro)* \[CP1141\], *IBM EBCDIC (Denmark/Norway with Euro)* \[CP1142\], *IBM EBCDIC (Finland/Sweden with Euro)* \[CP1143\], *IBM EBCDIC (Italy with Euro)* \[CP1144\], *IBM EBCDIC (Latin America/Spain with Euro)* \[CP1145\], *IBM EBCDIC (United Kingdom with Euro)* \[CP1146\], *IBM EBCDIC (France with Euro)* \[CP1147\], *IBM EBCDIC (International with Euro)* \[CP1148\], *IBM EBCDIC (Icelandic with Euro)* \[CP1149\], *IBM EBCDIC (Germany)* \[CP20273\], *IBM EBCDIC (Denmark/Norway)* \[CP20277\], *IBM EBCDIC (Finland/Sweden)* \[CP20278\], *IBM EBCDIC (Italy)* \[CP20280\], *IBM EBCDIC (Latin America/Spain)* \[CP20284\], *IBM EBCDIC (United Kingdom)* \[CP20285\], *IBM EBCDIC (Japanese Katakana Extended)* \[CP20290\], *IBM EBCDIC (France)* \[CP20297\], *IBM EBCDIC (Arabic)* \[CP20420\], *IBM EBCDIC (Hebrew)* \[CP20424\], *IBM EBCDIC (Icelandic)* \[CP20871\], *IBM EBCDIC (Cyrillic - Serbian, Bulgarian)* \[CP21025\], *IBM EBCDIC (US-Canada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabic (ASMO 708)* \[CP708\], *Central European (DOS)* \[CP852\] *, Cyrillic (DOS)* \[CP855\], *Turkish (DOS)* \[CP857\], *Western European (DOS with Euro)* \[CP858\], *Hebrew (DOS)* \[CP862\], *Arabic (DOS)* \[CP864\], *Russian (DOS)* \[CP866\], *Greek (DOS)* \[CP869\], *IBM EBCDIC (Latin 2)* \[CP870\], and *IBM EBCDIC (Greek)* \[CP875\].
+  - **Rare** : inclure des encodages rares, comme *IBM EBCDIC (Turc)* \[CP1026\], *IBM EBCDIC (Systèmes ouverts Latin 1)* \[CP1047\], *IBM EBCDIC (É.U. - Canada avec Euro)* \[CP1140\], *IBM EBCDIC (Allemagne avec Euro)* \[CP1141\], *IBM EBCDIC (Danemark/Norvège avec Euro)* \[CP1142\], *IBM EBCDIC (Finlande/Suède avec Euro)* \[CP1143\], *IBM EBCDIC (Italie avec Euro)* \[CP1144\], *IBM EBCDIC (Amérique latine/Espagne avec Euro)* \[CP1145\], *IBM EBCDIC (Royaume-Uni avec Euro)* \[CP1146\], *IBM EBCDIC (France avec Euro)* \[CP1147\], *IBM EBCDIC (International avec Euro)* \[CP1148\], *IBM EBCDIC (Islandais avec Euro)* \[CP1149\], *IBM EBCDIC (Allemagne)* \[CP20273\], *IBM EBCDIC (Danemark/Norvège)* \[CP20277\], *IBM EBCDIC (Finlande/Suède)* \[CP20278\], *IBM EBCDIC (Italie)* \[CP20280\], *IBM EBCDIC (Amérique latine/Espagne)* \[CP20284\], *IBM EBCDIC (Royaume-Uni)* \[CP20285\], *IBM EBCDIC (Japonais Katakana étendu)* \[CP20290\], *IBM EBCDIC (France)* \[CP20297\], *IBM EBCDIC (Arabe)* \[CP20420\], *IBM EBCDIC (Hébreu)* \[CP20424\], *IBM EBCDIC (Islandais)* \[CP20871\], *IBM EBCDIC (Cyrillique - Serbe, Bulgare)* \[CP21025\], *IBM EBCDIC (É.U. - Canada)* \[CP37\], *IBM EBCDIC (International)* \[CP500\], *Arabe (ASMO 708)* \[CP708\], *Europe centrale (DOS)* \[CP852\] *, Cyrillique (DOS)* \[CP855\], *Turc (DOS)* \[CP857\], *Europe de l’Ouest (DOS avec Euro)* \[CP858\], *Hébreu (DOS)* \[CP862\], *Arabe (DOS)* \[CP864\], *Russe (DOS)* \[CP866\], *Grec (DOS)* \[CP869\], *IBM EBCDIC (Latin 2)* \[CP870\] et *IBM EBCDIC (Grec)* \[CP875\].
 
-  - **Ouest**: inclure les encodages occidentaux tels que l’Europe *occidentale (Mac)* \[Macintosh, CP10000\], *islandais (Mac)* \[x-Mac-islandais, CP10079\], *Centre européen (Windows)* \[ISO-8859-2 , CP1250\], Europe *occidentale (Windows)* \[iso-8859-1, cp1252\], *grec (Windows)* \[ISO-8859-7, CP1253\], *centre européen (iso)* \[ISO-8859-2, CP28592\], *Latin 3 (ISO)* \[iso-8859-3, CP28593\], *grec (ISO)* \[ISO-8859-7, CP28597\], *Latin 9 (iso)* \[ISO-8859-15, CP28605\], *OEM États-Unis* \[cp437\], Europe *occidentale (dos)* \[cp850\], *Portugais (dos)* \[CP860\], *islandais (dos)* \[CP861\], *français canadien (dos)* \[CP863\]et *nordique (dos)* \[CP865\].
+  - **West** : inclure les encodages occidentaux, comme *Europe de l’Ouest (Mac)* \[macintosh, CP10000\], *Islandais (Mac)* \[x-mac-icelandic, CP10079\], *Europe centrale (Windows)* \[iso-8859-2, CP1250\], *Europe centrale (Windows)* \[iso-8859-1, CP1252\], *Grec (Windows)* \[iso-8859-7, CP1253\], *Europe centrale (ISO)* \[iso-8859-2, CP28592\], *Latin 3 (ISO)* \[iso-8859-3, CP28593\], *Grec (ISO)* \[iso-8859-7, CP28597\], *Latin 9 (ISO)* \[iso-8859-15, CP28605\], *OEM États-Unis* \[CP437\], *Europe de l’Ouest (DOS)* \[CP850\], *Portugais (DOS)* \[CP860\], *Islandais (DOS)* \[CP861\], *Français (Canada) (DOS)* \[CP863\] et *Nordique (DOS)* \[CP865\].
 
   ```xml
   <MandroidI18n>West</MandroidI18n>
@@ -544,7 +544,7 @@ Les [propriétés de signature](#Signing_Properties) sont également impliquées
 
 Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison](~/android/platform/binding-java-library/index.md) :
 
-- **AndroidClassParser** &ndash; propriété de type chaîne qui contrôle comment les fichiers `.jar` sont analysés. Les valeurs possibles sont les suivantes :
+- **AndroidClassParser** &ndash; propriété de type chaîne qui contrôle comment les fichiers `.jar` sont analysés. Les valeurs possibles incluent notamment :
 
   - **class-parse** : utilise `class-parse.exe` pour analyser le bytecode Java directement, sans l’aide d’une machine virtuelle Java. Cette valeur est expérimentale.
 
@@ -562,7 +562,7 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
 
   La valeur par défaut changera dans une version ultérieure.
 
-- **AndroidCodegenTarget** &ndash; propriété de chaîne qui contrôle l’ABI cible de la génération de code. Les valeurs possibles sont les suivantes :
+- **AndroidCodegenTarget** &ndash; propriété de chaîne qui contrôle l’ABI cible de la génération de code. Les valeurs possibles incluent notamment :
 
   - **XamarinAndroid** : utilise l’API de liaison JNI présente depuis Mono pour Android 1.0. La liaison des assemblys générés avec Xamarin.Android 5.0 ou ultérieur peut s’exécuter seulement sur Xamarin.Android 5.0 ou ultérieur (ajouts d’API/ABI), mais la *source* est compatible avec les versions antérieures du produit.
 
@@ -578,7 +578,7 @@ Les propriétés MSBuild suivantes sont utilisées avec les [projets de liaison]
 
     La valeur par défaut est `XAJavaInterop1`.
 
-### <a name="resource-properties"></a>Propriétés des ressources
+### <a name="resource-properties"></a>Propriétés de la ressource
 
 Les propriétés des ressources contrôlent la génération du fichier `Resource.designer.cs`, qui permet d’accéder aux ressources Android.
 
