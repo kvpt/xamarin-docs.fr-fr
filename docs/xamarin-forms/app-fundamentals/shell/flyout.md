@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
+ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889204"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74451807"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Menu volant Shell Xamarin.Forms
 
@@ -20,7 +20,7 @@ ms.locfileid: "69889204"
 
 Le menu volant est le menu racine d’une application Shell. Il est accessible par une icône ou par balayage en partant du côté de l’écran. Il se compose d’un en-tête facultatif, d’éléments de menu volant et d’éléments de menu facultatifs :
 
-![Capture d’écran d’un menu volant Shell annoté](flyout-images/flyout-annotated.png "Menu volant annoté")
+![Screenshot of a Shell annotated flyout](flyout-images/flyout-annotated.png "Annotated flyout")
 
 Si nécessaire, il est possible de définir la couleur d’arrière-plan du menu volant sur une [`Color`](xref:Xamarin.Forms.Color) par la propriété `Shell.FlyoutBackgroundColor` pouvant être liée. Cette propriété peut également être spécifiée avec une feuille de style en cascade (CSS). Pour plus d’informations, voir [Propriétés spécifiques Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
 
@@ -40,7 +40,7 @@ Par défaut, les applications Shell comportent une icône représentant un hambu
 Le menu volant est accessible par l’icône en forme de hamburger ou par balayage en partant du côté de l’écran. Pour modifier ce comportement, définissez la propriété jointe `Shell.FlyoutBehavior` sur l’un des membres de l’énumération `FlyoutBehavior` :
 
 - `Disabled` : indique que l’utilisateur ne peut pas ouvrir le menu volant.
-- `Flyout` : indique que l’utilisateur peut ouvrir et fermer le menu volant. C’est la valeur par défaut de la propriété `FlyoutBehavior`.
+- `Flyout` : indique que l’utilisateur peut ouvrir et fermer le menu volant. Il s'agit de la valeur par défaut de la propriété `FlyoutBehavior`.
 - `Locked` : indique que l’utilisateur ne peut pas fermer le menu volant, et que celui-ci ne présente pas de chevauchement de contenu.
 
 L’exemple suivant montre comment désactiver le menu volant :
@@ -93,7 +93,7 @@ Le type `FlyoutHeader` s’affiche dans l’exemple suivant :
 
 En résulte l’en-tête de menu volant suivant :
 
-![Capture d’écran de l’en-tête de menu volant](flyout-images/flyout-header.png "En-tête de menu volant")
+![Screenshot of the flyout header](flyout-images/flyout-header.png "En-tête de menu volant")
 
 Il est également possible de définir l’apparence de l’en-tête du menu volant en spécifiant la propriété `Shell.FlyoutHeaderTemplate` sur un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) :
 
@@ -155,7 +155,7 @@ L’exemple suivant illustre la définition de ces propriétés :
 
 Cela entraîne l’affichage d’une image d’arrière-plan dans le menu volant :
 
-![Capture d’écran d’une image d’arrière-plan de menu volant](flyout-images/flyout-backgroundimage.png "Image d’arrière-plan de menu")
+![Screenshot of a flyout background image](flyout-images/flyout-backgroundimage.png "Image d'arrière-plan du menu volant")
 
 ## <a name="flyout-items"></a>Éléments de menu volant
 
@@ -193,7 +193,7 @@ L’exemple suivant crée un menu volant comportant un en-tête et deux élémen
 
 Dans cet exemple, les [`ContentPage`](xref:Xamarin.Forms.ContentPage) ne sont accessibles que par le biais des éléments de menu volant :
 
-[![Capture d’écran d’une application Shell comportant deux pages avec éléments de menu volant sur iOS et Android](flyout-images/two-page-app-flyout.png "Application Shell comportant deux pages avec éléments de menu volant")](flyout-images/two-page-app-flyout-large.png#lightbox "Application Shell comportant deux pages avec éléments de menu volant")
+[![Screenshot of a Shell two page app with flyout items, on iOS and Android](flyout-images/two-page-app-flyout.png "Shell two page app with flyout items")](flyout-images/two-page-app-flyout-large.png#lightbox "Shell two page app with flyout items")
 
 > [!NOTE]
 > En l’absence d’un en-tête de menu volant, les éléments apparaissent en haut du menu volant. Sinon, ils apparaissent sous l’en-tête de menu volant.
@@ -217,7 +217,7 @@ Shell comporte des opérateurs de conversion implicite qui permettent de simplif
 Cette conversion implicite encapsule automatiquement chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans des objets `ShellContent` encapsulés dans des objets `Tab`, eux-mêmes encapsulés dans des objets `FlyoutItem`.
 
 > [!IMPORTANT]
-> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Mais Shell est également capable de créer des pages à la demande, en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading) dans le guide [Onglets Shell Xamarin.Forms](tabs.md).
+> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading) dans le guide [Onglets Shell Xamarin.Forms](tabs.md).
 
 ### <a name="flyoutitem-class"></a>Classe FlyoutItem
 
@@ -300,7 +300,7 @@ Dans cet exemple, des éléments de menu volant sont créés pour l’objet `Tab
 
 En résultent les éléments de menu volant suivants :
 
-[![Capture d’écran du menu volant contenant des objets FlyoutItem sur iOS et Android](flyout-images/flyout-reduced.png "Menu volant Shell contenant des objets FlyoutItem")](flyout-images/flyout-reduced-large.png#lightbox "Menu volant Shell contenant des objets FlyoutItem")
+[![Screenshot of flyout containing FlyoutItem objects, on iOS and Android](flyout-images/flyout-reduced.png "Shell flyout containing FlyoutItem objects")](flyout-images/flyout-reduced-large.png#lightbox "Shell flyout containing FlyoutItem objects")
 
 ## <a name="define-flyoutitem-appearance"></a>Apparence de FlyoutItem
 
@@ -331,10 +331,73 @@ Pour personnaliser l’apparence de chaque `FlyoutItem`, définissez la proprié
 
 Cet exemple affiche le titre de chaque objet `FlyoutItem` en italique :
 
-[![Capture d’écran d’objets FlyoutItem basés sur un modèle sur iOS et Android](flyout-images/flyoutitem-templated.png "Objets FlyoutItem Shell basés sur un modèle")](flyout-images/flyoutitem-templated-large.png#lightbox "Objets FlyoutItem Shell basés sur un modèle")
+[![Screenshot of templated FlyoutItem objects, on iOS and Android](flyout-images/flyoutitem-templated.png "Shell templated FlyoutItem objects")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell templated FlyoutItem objects")
+
+
+Because `Shell.ItemTemplate` is an attached property, different templates can be attached to specific `FlyoutItem` objects.
 
 > [!NOTE]
 > Shell fournit les propriétés `Title` et `FlyoutIcon` au [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de `ItemTemplate`.
+
+
+### <a name="default-template-for-flyoutitems-and-menuitems"></a>Default Template for FlyoutItems and MenuItems
+Shell uses the following template internally for its default implementation. This is a great starting point if all you want to do is make small tweaks to the existing layouts. This also demonstrates the Visual State Manager features of the flyout items. This same template can also be used for MenuItems
+
+```xaml
+<DataTemplate x:Key="FlyoutTemplates">
+    <Grid HeightRequest="{x:OnPlatform Android=50}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                    </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding FlyoutIcon}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
+            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        </Image>
+        <Label VerticalOptions="Center"
+                Text="{Binding Title}"
+                FontSize="{x:OnPlatform Android=14, iOS=Small}"
+                FontAttributes="Bold" Grid.Column="1">
+            <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="#D2000000" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.TextColor>
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20, 0, 0, 0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.Margin>
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="sans-serif-medium" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+    </Grid>
+</DataTemplate>
+```
 
 ## <a name="flyoutitem-tab-order"></a>Ordre de tabulation FlyoutItem
 
@@ -403,7 +466,7 @@ Des objets [`MenuItem`](xref:Xamarin.Forms.MenuItem) peuvent être ajoutés au m
 
 Ce code ajoute deux objets [`MenuItem`](xref:Xamarin.Forms.MenuItem) au menu volant, en dessous de tous les éléments du menu :
 
-[![Capture d’écran du menu volant contenant des objets MenuItem sur iOS et Android](flyout-images/flyout.png "Menu volant Shell contenant des objets MenuItem")](flyout-images/flyout-large.png#lightbox "Menu volant Shell contenant des objets MenuItem")
+[![Screenshot of flyout containing MenuItem objects, on iOS and Android](flyout-images/flyout.png "Shell flyout containing MenuItem objects")](flyout-images/flyout-large.png#lightbox "Shell flyout containing MenuItem objects")
 
 La premier objet [`MenuItem`](xref:Xamarin.Forms.MenuItem) exécute une `ICommand` nommée `RandomPageCommand`, qui accède à une page aléatoire de l’application. Le second objet `MenuItem` exécute une `ICommand` nommée `HelpCommand`, qui ouvre l’URL spécifiée par la propriété `CommandParameter` dans un navigateur web.
 
@@ -446,10 +509,10 @@ Pour personnaliser l’apparence de chaque `MenuItem`, définissez la propriét�
 
 Cet exemple joint le `MenuItemTemplate` au niveau du Shell à chaque objet `MenuItem`, affichant ainsi le titre de chaque objet `MenuItem` en italique :
 
-[![Capture d’écran d’objets MenuItem basés sur des modèles sur iOS et Android](flyout-images/menuitem-templated.png "Objets MenuItem basés sur des modèles Shell")](flyout-images/menuitem-templated-large.png#lightbox "Objets MenuItem basés sur des modèles Shell")
+[![Screenshot of templated MenuItem objects, on iOS and Android](flyout-images/menuitem-templated.png "Shell templated MenuItem objects")](flyout-images/menuitem-templated-large.png#lightbox "Shell templated MenuItem objects")
 
 > [!NOTE]
-> Shell fournit les propriétés [`Text`](xref:Xamarin.Forms.MenuItem.Text) et [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) au [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) de `MenuItemTemplate`.
+> Shell provides the [`Text`](xref:Xamarin.Forms.MenuItem.Text) and [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) properties to the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the `MenuItemTemplate`. You can also use `Title` in place of `Text` and `Icon` in place of `IconImageSource` which will let you reuse the same template for Menu Items and Flyout Items
 
 `Shell.MenuItemTemplate` étant une propriété jointe, les différents modèles peuvent joints à des objets `MenuItem` spécifiques :
 
@@ -488,6 +551,10 @@ Cet exemple joint le `MenuItemTemplate` au niveau du Shell à chaque objet `Menu
     </MenuItem>
 </Shell>
 ```
+
+
+> [!NOTE]
+> The same template used for [Flyout Items](#default-template-for-flyoutitems-and-menuitems) can also be used for Menu Items.
 
 Cet exemple joint le `MenuItemTemplate` au niveau du Shell au premier objet `MenuItem` et joint le `MenuItemTemplate` inclus au second `MenuItem`.
 
