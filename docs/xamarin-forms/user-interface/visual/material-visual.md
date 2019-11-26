@@ -4,15 +4,15 @@ description: L’élément visuel Xamarin. Forms peut être utilisé pour créer
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/18/2019
-ms.openlocfilehash: b447bd255270eb87f6139ddacadb9d31348ab7d7
-ms.sourcegitcommit: db2cf1b54125499d5320636927484707810c8e27
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/25/2019
+ms.openlocfilehash: 4a960075ebea0fae4cde8d79bdc38641a0b1dc8a
+ms.sourcegitcommit: 1fdc6215f00863735bf0d2bf0afcaa45b714b453
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72850494"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465519"
 ---
 # <a name="xamarinforms-material-visual"></a>Élément visuel Xamarin. Forms
 
@@ -22,7 +22,7 @@ La [conception de matériau](https://material.io) est un système de conception 
 
 L’élément visuel Xamarin. Forms peut être utilisé pour appliquer des règles de conception de matériau aux applications Xamarin. Forms, créant ainsi des applications qui semblent quasiment identiques sur iOS et Android. Lorsque l’élément visuel matériel est activé, les vues prises en charge adoptent la même conception multiplateforme, créant ainsi une apparence unifiée.
 
-[captures d’écran de l’élément visuel![](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
+[captures d’écran de l’élément visuel ![](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
 
 Le processus d’activation de l’élément visuel Xamarin. Forms dans votre application est le suivant :
 
