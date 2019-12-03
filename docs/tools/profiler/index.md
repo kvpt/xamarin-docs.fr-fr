@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8927e7b2a1b194d1bfab334736c3d024f0542b01
+ms.sourcegitcommit: 60e955ce65194ffea987409157ccc7d5db87c2ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019406"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690212"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,8 +34,8 @@ Le Xamarin Profiler est une application autonome et est intégré à Visual Stud
 
 Téléchargez le package d’installation pour votre plateforme :
 
-- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
-- [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
+- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.10-15.pkg)
+- [**Windows**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 Une fois le téléchargement terminé, lancez le programme d’installation pour ajouter le Xamarin Profiler à votre système.
 
@@ -96,7 +96,7 @@ Cette section présente les différentes parties de la Xamarin Profiler et décr
 
 Avant de pouvoir Profiler correctement votre application, vous devez autoriser le profilage dans les options de projet de l’application.
 
-- Libéré
+- iOS :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -112,7 +112,7 @@ Avant de pouvoir Profiler correctement votre application, vous devez autoriser l
 
 -----
 
-- Tablette
+- Android :
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -190,7 +190,7 @@ La Xamarin Profiler est composée de cinq sections, comme illustré ci-dessous 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[sections du profileur![dans Visual Studio](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[sections du profileur ![dans Visual Studio](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -341,4 +341,4 @@ Dans ce guide, nous avons vu ce qu’est le profilage et comment il est avantage
 ## <a name="related-links"></a>Liens associés
 
 - [Meilleures pratiques en matière de performances et de mémoire](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [Notes de publication](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)
+- [Notes de publication](/xamarin/tools/profiler/release-notes/)
