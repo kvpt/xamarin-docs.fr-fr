@@ -6,17 +6,17 @@ ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
-ms.translationtype: HT
+ms.date: 12/03/2019
+ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978137"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74824244"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Convertisseurs personnalisés Xamarin.Forms
 
-_Les interfaces utilisateur Xamarin.Forms sont affichées à l’aide des contrôles natifs de la plateforme cible, ce qui permet aux applications Xamarin.Forms de conserver l’apparence appropriée pour chaque plateforme. Les convertisseurs personnalisés permettent aux développeurs de remplacer ce processus pour personnaliser l’apparence et le comportement des contrôles Xamarin.Forms sur chaque plateforme._
+_Les interfaces utilisateur Xamarin. Forms sont rendues à l’aide des contrôles natifs de la plateforme cible, ce qui permet aux applications Xamarin. Forms de conserver l’apparence et la convivialité appropriées pour chaque plateforme. Les convertisseurs personnalisés permettent aux développeurs de substituer ce processus afin de personnaliser l’apparence et le comportement des contrôles Xamarin. Forms sur chaque plateforme._
 
 ## <a name="introduction-to-custom-renderersintroductionmd"></a>[Présentation des convertisseurs personnalisés](introduction.md)
 
@@ -46,18 +46,14 @@ Un [`ListView`](xref:Xamarin.Forms.ListView) Xamarin.Forms est une vue qui affic
 
 Un [`ViewCell`](xref:Xamarin.Forms.ViewCell) Xamarin.Forms est une cellule qui peut être ajoutée à un [`ListView`](xref:Xamarin.Forms.ListView) ou un [`TableView`](xref:Xamarin.Forms.TableView), qui contient une vue définie par le développeur. Cet article montre comment créer un convertisseur personnalisé pour un `ViewCell` hébergé à l’intérieur d’un contrôle `ListView` Xamarin.Forms. Cela empêche les appels répétés des calculs de disposition Xamarin.Forms pendant le défilement de `ListView`.
 
+## <a name="customizing-a-webviewhybridwebviewmd"></a>[Personnalisation d’une WebView](hybridwebview.md)
+
+Xamarin. Forms [`WebView`](xref:Xamarin.Forms.WebView) est une vue qui affiche du contenu Web et HTML dans votre application. Cet article explique comment créer un convertisseur personnalisé qui étend le `WebView` pour permettre C# à du code d’être appelé à partir de JavaScript.
+
 ## <a name="implementing-a-viewviewmd"></a>[Implémentation d’un affichage](view.md)
 
 Les contrôles d’interface utilisateur personnalisés Xamarin.Forms doivent dériver de la classe [`View`](xref:Xamarin.Forms.View), qui est utilisée pour placer des dispositions et des contrôles sur l’écran. Cet article montre comment créer un convertisseur personnalisé pour un contrôle personnalisé Xamarin.Forms qui est utilisé afin d’afficher un aperçu du flux vidéo à partir de l’appareil photo de l’appareil.
 
-## <a name="implementing-a-hybridwebviewhybridwebviewmd"></a>[Implémentation d’un HybridWebView](hybridwebview.md)
-
-Cet article montre comment créer un convertisseur personnalisé pour un contrôle personnalisé `HybridWebView`, qui montre comment améliorer les contrôles web propres à la plateforme web pour permettre d’appeler du code C# à partir de JavaScript.
-
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implémentation d’un lecteur vidéo](video-player/index.md)
 
 Cet article montre comment écrire des convertisseurs pour implémenter un contrôle `VideoPlayer` qui peut lire des vidéos à partir du web, des vidéos incorporées comme des ressources d’application ou des vidéos stockées dans la vidéothèque sur l’appareil de l’utilisateur. Plusieurs techniques sont présentées, y compris l’implémentation de méthodes et de propriétés en lecture seule pouvant être liées.
-
-## <a name="related-links"></a>Liens associés
-
-- [Effets](~/xamarin-forms/app-fundamentals/effects/index.md)
