@@ -7,16 +7,14 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 020b8208dfbfd7594d152a7b6e32f7e41f974c2f
-ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
+ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
+ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72303264"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884122"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>Rechargement à chaud XAML pour Xamarin. Forms (version préliminaire)
-
-![Fonctionnalité d’évaluation](~/media/shared/preview.png)
 
 Le rechargement à chaud XAML se connecte à votre flux de travail existant pour augmenter votre productivité et vous faire gagner du temps. Sans le rechargement à chaud XAML, vous devez générer et déployer votre application chaque fois que vous souhaitez voir une modification XAML. Avec le rechargement à chaud, lorsque vous enregistrez votre fichier XAML, les modifications sont reflétées dans votre application en cours d’exécution. En outre, votre état de navigation et vos données sont conservés, ce qui vous permet d’effectuer rapidement une itération sur votre interface utilisateur sans perdre votre place dans l’application. Par conséquent, avec le rechargement à chaud XAML, vous allez consacrer moins de temps à la reconstruction et au déploiement de vos applications pour valider les modifications de l’interface utilisateur.
 
@@ -27,17 +25,17 @@ Le rechargement à chaud XAML se connecte à votre flux de travail existant pour
 
 | IDE/infrastructure | Version requise |
 |------|------------------|
-|Visual Studio 2019 | 16,3 ou version ultérieure
-Visual Studio 2019 pour Mac | 8,3 ou version ultérieure
+|Visual Studio 2019 | 16,4 ou version ultérieure
+Visual Studio 2019 pour Mac | 8,4 ou version ultérieure
 Xamarin.Forms | 4,1 ou version ultérieure
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>Utiliser le rechargement à chaud XAML pour Xamarin. Forms
 
 Aucune installation ou configuration supplémentaire n’est requise pour utiliser le rechargement à chaud XAML. Il est intégré à Visual Studio et peut être activé dans les paramètres de l’IDE. Une fois activé, vous pouvez commencer à utiliser le rechargement à chaud XAML en déboguant votre application sur un émulateur, un simulateur ou un appareil physique. Actuellement, le rechargement à chaud XAML fonctionne uniquement lors du débogage sur iOS ou Android.
 
-Sur Windows, le rechargement à chaud XAML peut être activé en activant la case à cocher **activer le rechargement à chaud Xamarin** dans **Outils** > **Options** > **Xamarin** >  à**chaud**.
+Sur Windows, le rechargement à chaud XAML peut être activé en activant la case à cocher **activer le rechargement à chaud Xamarin** dans **outils** > **options** > **Xamarin** > **rechargement chaud**.
 
-Sur un Mac, le rechargement à chaud XAML peut être activé en activant la case à cocher **activer le rechargement à chaud Xamarin** dans **Visual Studio** > **préférences** > **projets** > **Xamarin rechargement chaud**.
+Sur un Mac, le rechargement à chaud XAML peut être activé en activant la case à cocher **activer le rechargement à chaud Xamarin** dans **Visual Studio** > **Préférences** > **projets** > le **rechargement à chaud Xamarin**.
 
 ## <a name="resilient-reloading"></a>Rechargement résilient
 
@@ -47,7 +45,7 @@ Si vous apportez une modification que le rechargement à chaud XAML ne peut pas 
 
 - Vous ne pouvez pas ajouter, supprimer ou renommer des fichiers ou des packages NuGet au cours d’une session de rechargement à chaud XAML. Si vous ajoutez ou supprimez un fichier ou un package NuGet, régénérez et redéployez votre application pour continuer à utiliser le rechargement à chaud XAML.
 - Définissez l’éditeur de liens sur **ne pas lier** pour la meilleure expérience. Le paramètre du **Kit de développement logiciel (SDK) Link ne fonctionne que** la plupart du temps, mais il peut échouer dans certains cas.
-- Le débogage sur un iPhone physique requiert que l’interpréteur utilise le rechargement à chaud XAML. Ajoutez **--interpréteur** dans le champ **arguments mTouch supplémentaires** de vos paramètres de build IOS pour utiliser le rechargement à chaud XAML.
+- Le débogage sur un iPhone physique requiert que l’interpréteur utilise le rechargement à chaud XAML. Pour ce faire, ouvrez les paramètres du projet, sélectionnez l’onglet Build iOS et assurez-vous que **l’option Activer le paramètre interpréteur mono** est activée. Vous devrez peut-être modifier l’option de **plateforme** en haut de la page de propriétés en **iPhone**.
 - Toutes les références créées en affectant un contrôle à un autre champ ou propriété à l’aide de sa valeur `x:Name` ne sont pas rechargées.
 - La mise à jour de la hiérarchie visuelle de votre application de Shell dans **AppShell. Xaml** peut entraîner des problèmes de maintenance de l’état de votre application. Régénérez l’application pour continuer le rechargement.
 - Le rechargement à chaud XAML C# ne peut pas recharger le code, y compris les gestionnaires d’événements, les contrôles personnalisés, la page code-behind et les autres classes.
@@ -63,6 +61,6 @@ Si vous étiez dans le cadre de la préversion privée, votre extension de recha
   - Vérifiez que vous disposez de la dernière version de l’IDE.
   - Définissez vos paramètres de l’éditeur de liens Android ou iOS sur **ne pas lier** dans les paramètres de génération du projet.
 - Si rien ne se produit lors de l’enregistrement de votre fichier XAML, assurez-vous que le rechargement à chaud est activé dans l’IDE.
-- Si vous effectuez un débogage sur un iPhone physique et que votre application ne répond plus, vérifiez que l’interpréteur est activé. Pour l’activer, ajoutez **--interpréteur** dans le champ **arguments mTouch supplémentaires** de vos paramètres de génération iOS.
+- Si vous effectuez un débogage sur un iPhone physique et que votre application ne répond plus, vérifiez que l’interpréteur est activé. Pour l’activer, ouvrez les paramètres du projet, sélectionnez l’onglet Build iOS, puis activez le paramètre **activer l’interpréteur mono** .
 
-Pour signaler un bogue, utilisez l’outil commentaires dans le menu **d’aide** > **envoyer des commentaires** > **signaler un problème** sur Windows et le menu **aide** > **signaler un problème** sur un Mac.
+Pour signaler un bogue, utilisez l’outil commentaires dans le menu **aide** > **envoyer des commentaires** > **signaler un problème** sur Windows, et l' > **d’aide** **signaler un menu problème** sur un Mac.
