@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: cc499902058e7b20b00e65e0c6541b8d137804a7
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: c8363adf479f0880bfbdf6a047d495da4b849395
+ms.sourcegitcommit: a2ec4aef8457eab4310cde2a41485931263ce16b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425501"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902259"
 ---
 # <a name="splash-screen"></a>Écran de démarrage
 
@@ -20,7 +20,7 @@ ms.locfileid: "73425501"
 
 _Une application Android prend un certain temps pour démarrer, en particulier lorsque l’application est lancée pour la première fois sur un appareil. Un écran de démarrage peut afficher la progression du démarrage pour l’utilisateur ou pour indiquer la personnalisation._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 Une application Android prend un certain temps pour démarrer, en particulier lors de la première exécution de l’application sur un appareil (parfois, on parle de _démarrage à froid_). L’écran de démarrage peut afficher la progression du démarrage pour l’utilisateur, ou il peut afficher des informations de personnalisation pour identifier et promouvoir l’application.
 
@@ -34,7 +34,7 @@ Ce guide décrit une technique permettant d’implémenter un écran de démarra
 
 [![exemple écran de démarrage du logo Xamarin suivi d’un écran d’application](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 Ce guide part du principe que l’application cible le niveau d’API Android 21 ou ultérieur. L’application doit également disposer des packages NuGet **Xamarin. Android. support. v4** et **Xamarin. Android. support. v7. AppCompat** ajoutés au projet.
 
@@ -88,7 +88,7 @@ Pour créer un thème personnalisé pour l’activité de l’écran de démarra
   <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
   </style>
 
-    <style name="MyTheme" parent="MyTheme.Base">
+  <style name="MyTheme" parent="MyTheme.Base">
   </style>
 
   <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
