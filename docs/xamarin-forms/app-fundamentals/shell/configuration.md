@@ -6,19 +6,19 @@ ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/28/2019
-ms.openlocfilehash: 022aa9f1aeb2961d98b52747441e875bd89a584a
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.date: 12/05/2019
+ms.openlocfilehash: e207949d607219393ffeb51fce818ddfb68ae344
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739317"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489906"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Configuration de la page Shell Xamarin.Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-La classe `Shell` définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications Shell Xamarin.Forms. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’affichage des vues dans la barre de navigation.
+La classe `Shell` définit des propriétés jointes qui peuvent être utilisées pour configurer l’apparence des pages dans les applications Shell Xamarin.Forms. Cela comprend notamment la configuration des couleurs de la page, la désactivation de la barre de navigation et de la barre d’onglet ainsi que l’apparence des affichages dans la barre de navigation.
 
 ## <a name="set-page-colors"></a>Définir les couleurs de page
 
@@ -30,7 +30,7 @@ La classe `Shell` définit les propriétés jointes suivantes qui peuvent être 
 - `TitleColor`, de type `Color` : définit la couleur utilisée pour le titre de la page actuelle.
 - `UnselectedColor`, de type `Color` : définit la couleur appliquée au texte et aux icônes non sélectionnés dans le chrome Shell.
 
-Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données et des styles XAML peuvent être appliqués. En outre, les propriétés peuvent être définies à l’aide de feuilles de style en cascade (CSS). Pour plus d’informations, voir [Propriétés spécifiques Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
+Toutes ces propriétés s’appuient sur des objets [`BindableProperty`](xref:Xamarin.Forms.BindableProperty), ce qui signifie qu’elles peuvent être des cibles de liaisons de données et des styles XAML peuvent être appliqués. En outre, les propriétés peuvent être définies à l’aide de feuilles de style en cascade (CSS). Pour plus d’informations, consultez [Propriétés spécifiques de Xamarin.Forms Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
 
 > [!NOTE]
 > Certaines propriétés permettent de définir les couleurs d’onglet. Pour plus d’informations, consultez [Apparence d’onglet](tabs.md#tab-appearance).
@@ -86,6 +86,21 @@ Vous pouvez également définir les propriétés de couleur avec un style XAML :
 
 Pour plus d’informations sur les styles XAML, consultez [Styler des applications Xamarin.Forms avec des styles XAML](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
+## <a name="enable-navigation-bar-shadow"></a>Activer l’ombre de la barre de navigation
+
+La classe `Shell` définit la `NavBarHasShadow` propriété jointe, de type `bool`, qui contrôle si l’ombre de la barre de navigation est. Par défaut, la valeur de la propriété est `false`.
+
+Bien que cette propriété puisse être définie sur un objet sous-classé `Shell`, elle peut également être définie sur n’importe quelle page qui souhaite activer l’ombre de la barre de navigation. Par exemple, le code XAML suivant illustre l’activation de l’ombre de la barre de navigation à partir d’une [`ContentPage`](xref:Xamarin.Forms.ContentPage):
+
+```xaml
+<ContentPage ...
+             Shell.NavBarHasShadow="true">
+    ...
+</ContentPage>
+```
+
+Cela entraîne l’activation de l’ombre de la barre de navigation.
+
 ## <a name="disable-the-navigation-bar"></a>Désactiver la barre de navigation
 
 La classe `Shell` définit la propriété jointe `NavBarIsVisible`, de type `bool`, qui contrôle la visibilité de la barre de navigation lorsqu’une page s’affiche. Par défaut, la valeur de la propriété est `true`.
@@ -101,7 +116,7 @@ Bien que cette propriété puisse être définie sur un objet `Shell` sous-class
 
 Ainsi, la barre de navigation devient invisible lorsque la page s’affiche :
 
-![Capture d’écran de la page Shell avec une barre de navigation invisible sur iOS et Android](configuration-images/navigationbar-invisible.png "Page Shell avec une barre de navigation invisible")
+![Capture d’écran de la page de Shell avec une barre de navigation invisible, sur iOS et Android](configuration-images/navigationbar-invisible.png "Page de Shell avec barre de navigation invisible")
 
 ## <a name="disable-the-tab-bar"></a>Désactiver la barre d’onglets
 
@@ -118,7 +133,7 @@ Bien que cette propriété puisse être définie sur un objet `Shell` sous-class
 
 Ainsi, la barre d’onglets devient invisible lorsque la page s’affiche :
 
-![Capture d’écran de la page Shell avec une barre d’onglets invisible sur iOS et Android](configuration-images/tabbar-invisible.png "Page Shell avec une barre d’onglets invisible")
+![Capture d’écran de la page de Shell avec une barre d’onglet invisible, sur iOS et Android](configuration-images/tabbar-invisible.png "Page de l’interpréteur de commandes avec la barre d’onglet invisible")
 
 ## <a name="display-views-in-the-navigation-bar"></a>Affichage des vues dans la barre de navigation
 
@@ -139,7 +154,7 @@ Bien que cette propriété puisse être définie sur un objet `Shell` sous-class
 
 Ainsi, une image s’affiche dans la barre de navigation de la page :
 
-![Capture d’écran de la page Shell avec une vue de titre sur iOS et Android](configuration-images/titleview.png "Page Shell avec une vue de titre")
+![Capture d’écran de la page de Shell avec une vue de titre, sur iOS et Android](configuration-images/titleview.png "Page de Shell avec une vue de titre")
 
 > [!IMPORTANT]
 > Si la barre de navigation est invisible, avec la propriété jointe `NavBarIsVisible`, la vue de titre ne s’affichera pas.

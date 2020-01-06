@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 609ee17b6f2fd392c612277de8bbf59f8780f7d9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020384"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487774"
 ---
 # <a name="creating-a-cryptoobject"></a>Création d’un CryptoObject
 
@@ -57,7 +57,7 @@ public class CryptoObjectHelper
         Cipher cipher = Cipher.GetInstance(TRANSFORMATION);
         try
         {
-            cipher.Init(CipherMode.EncryptMode | CipherMode.DecryptMode, key);
+            cipher.Init(CipherMode.EncryptMode, key);
         } catch(KeyPermanentlyInvalidatedException e)
         {
             _keystore.DeleteEntry(KEY_NAME);
@@ -132,7 +132,7 @@ Une fois la `KeyGenParameterSpec` créée, elle est utilisée pour initialiser l
 
 ## <a name="using-the-cryptoobjecthelper"></a>Utilisation de CryptoObjectHelper
 
-Maintenant que l’exemple de code a encapsulé la plus grande partie de la logique permettant de créer un `CryptoWrapper` dans la classe `CryptoObjectHelper`, revenons au code à partir du début de ce guide et utilisons le `CryptoObjectHelper` pour créer le chiffrement et démarrer un scanneur d’empreintes digitales. : 
+Maintenant que l’exemple de code a encapsulé la plus grande partie de la logique permettant de créer un `CryptoWrapper` dans la classe `CryptoObjectHelper`, revenons au code à partir du début de ce guide et utilisons le `CryptoObjectHelper` pour créer le chiffrement et démarrer un scanneur d’empreintes digitales : 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -157,13 +157,13 @@ Maintenant que nous avons vu comment créer un `CryptoObject`, vous pouvez passe
 
 ## <a name="related-links"></a>Liens associés
 
-- [Préférée](xref:Javax.Crypto.Cipher)
+- [Cipher](xref:Javax.Crypto.Cipher)
 - [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
 - [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
-- [Générateur de régénération](xref:Javax.Crypto.KeyGenerator)
+- [KeyGenerator](xref:Javax.Crypto.KeyGenerator)
 - [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
-- [KeyGenParameterSpec. Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
+- [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
 - [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
 - [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
-- [CHIFFRE](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
+- [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 - [RFC 2315-PCKS #7](https://tools.ietf.org/html/rfc2315)

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 1f06601b2b419141b4bd44677826df4e64a831fc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020566"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487787"
 ---
 # <a name="java-bindings-metadata"></a>Métadonnées de liaisons Java
 
 _C#le code dans Xamarin. Android appelle des bibliothèques Java via des liaisons, qui sont un mécanisme qui soustrait les détails de bas niveau qui sont spécifiés dans JNI (Java Native Interface). Xamarin. Android fournit un outil qui génère ces liaisons. Cet outil permet au développeur de contrôler la façon dont une liaison est créée à l’aide de métadonnées, ce qui permet des procédures telles que la modification des espaces de noms et le changement de nom des membres. Ce document décrit le fonctionnement des métadonnées, résume les attributs pris en charge par les métadonnées et explique comment résoudre les problèmes de liaison en modifiant ces métadonnées._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 Une **bibliothèque de liaisons Java** Xamarin. Android tente d’automatiser une grande partie du travail nécessaire à la liaison d’une bibliothèque Android existante avec l’aide d’un outil parfois appelé _Générateur de liaisons_. Lors de la liaison d’une bibliothèque Java, Xamarin. Android inspecte les classes Java et génère une liste de tous les packages, types et membres à lier. Cette liste d’API est stockée dans un fichier XML qui se trouve dans **\{répertoire du projet} \obj\Release\api.xml** pour une version **Release** et dans **\{répertoire du projet} \obj\Debug\api.xml** pour une version **Debug** .
 
@@ -101,13 +101,13 @@ Voici un exemple de fichier **Metadata. xml** :
 
 La liste suivante répertorie certains des éléments XPath les plus couramment utilisés pour les API Java :
 
-- `interface` &ndash; utilisé pour localiser une interface java. par exemple, `/interface[@name='AuthListener']`.
+- `interface` &ndash; utilisé pour localiser une interface java. Exemple : `/interface[@name='AuthListener']`.
 
-- `class` &ndash; utilisé pour localiser une classe. par exemple, `/class[@name='MapView']`.
+- `class` &ndash; utilisé pour localiser une classe. Exemple : `/class[@name='MapView']`.
 
-- `method` &ndash; utilisé pour localiser une méthode sur une classe ou une interface java. par exemple, `/class[@name='MapView']/method[@name='setTitleSource']`.
+- `method` &ndash; utilisé pour localiser une méthode sur une classe ou une interface java. Exemple : `/class[@name='MapView']/method[@name='setTitleSource']`.
 
-- `parameter` &ndash; identifier un paramètre pour une méthode. par exemple, `/parameter[@name='p0']`
+- `parameter` &ndash; identifier un paramètre pour une méthode. Exemple : `/parameter[@name='p0']`
 
 ### <a name="adding-types"></a>Ajout de types
 
@@ -162,7 +162,7 @@ Pour modifier correctement le nom managé d’un type encapsulé (ou une méthod
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>Renommer des classes wrapper `EventArg`
 
-Lorsque le générateur de liaisons Xamarin. Android identifie une méthode d’accesseur Set `onXXX` pour un type C# d' _écouteur_, un événement et une sous-classe`EventArgs`sont générés pour prendre en charge une API d’arôme .net pour le modèle d’écouteur basé sur Java. À titre d’exemple, considérez la classe Java et la méthode suivantes :
+Lorsque le générateur de liaisons Xamarin. Android identifie une méthode d’accesseur Set `onXXX` pour un type C# d' _écouteur_, un événement et une sous-classe `EventArgs` sont générés pour prendre en charge une API d’arôme .net pour le modèle d’écouteur basé sur Java. À titre d’exemple, considérez la classe Java et la méthode suivantes :
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
@@ -174,7 +174,7 @@ Xamarin. Android supprime le préfixe `on` de la méthode setter et utilise à l
 NavigationManager.2DSignNextManueverEventArgs
 ```
 
-Il ne s’agit pas C# d’un nom de classe valide. Pour corriger ce problème, l’auteur de la liaison doit utiliser l’attribut `argsType` et fournir C# un nom valide pour la sous-classe`EventArgs`:
+Il ne s’agit pas C# d’un nom de classe valide. Pour corriger ce problème, l’auteur de la liaison doit utiliser l’attribut `argsType` et fournir C# un nom valide pour la sous-classe `EventArgs` :
 
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
@@ -191,7 +191,7 @@ Les sections suivantes décrivent certains des attributs de transformation des A
 
 Cet attribut est placé sur les méthodes setter pour nommer la sous-classe `EventArg` qui sera générée pour prendre en charge les écouteurs Java. Cela est décrit plus en détail ci-dessous dans la section [Renommer des classes wrapper EventArg](#Renaming_EventArg_Wrapper_Classes) plus loin dans ce guide.
 
-### <a name="eventname"></a>Protégée
+### <a name="eventname"></a>eventName
 
 Spécifie un nom pour un événement. S’il est vide, il empêche la génération d’événements.
 Cela est décrit plus en détail dans le titre de la section [Renommer des classes wrapper EventArg](#Renaming_EventArg_Wrapper_Classes).
@@ -212,11 +212,11 @@ L’exemple suivant illustre une expression XPath pour renommer la méthode `jav
     name="managedName">NewMethodName</attr>
 ```
 
-### <a name="managedtype"></a>Type ManagedType d'
+### <a name="managedtype"></a>managedType
 
 `managedType` est utilisé pour modifier le type de retour d’une méthode. Dans certaines situations, le générateur de liaisons déduirea de manière incorrecte le type de retour d’une méthode Java, ce qui entraînera une erreur au moment de la compilation. Une solution possible dans ce cas est de modifier le type de retour de la méthode.
 
-Par exemple, le générateur de liaisons pense que la méthode Java `de.neom.neoreadersdk.resolution.compareTo()` doit retourner une `int`, ce qui génère le message d’erreur **CS0535 : 'de. Neom. Neoreadersdk. Resolution’n’implémente pas le membre d’interface’Java. lang. IComparable. CompareTo (Java. lang. Object) '** . L’extrait de code suivant montre comment modifier le type de paramètre de C# la méthode générée d’un`DE.Neom.Neoreadersdk.Resolution`en `Java.Lang.Object`: 
+Par exemple, le générateur de liaisons pense que la méthode Java `de.neom.neoreadersdk.resolution.compareTo()` doit retourner une `int` et prendre `Object` comme paramètres, ce qui génère le message d’erreur **CS0535 : «de. Neom. Neoreadersdk. Resolution’n’implémente pas le membre d’interface’Java. lang. IComparable. CompareTo (Java. lang. Object) '** . L’extrait de code suivant montre comment modifier le type du premier paramètre de la C# méthode générée d’un `DE.Neom.Neoreadersdk.Resolution` à un `Java.Lang.Object`: 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -271,7 +271,7 @@ Notez que les méthodes setter et getter seront toujours créées par le génér
 
 ### <a name="sender"></a>sender
 
-Spécifie le paramètre d’une méthode qui doit être le paramètre `sender` lorsque la méthode est mappée à un événement. La valeur peut être `true` ou `false`. Exemple :
+Spécifie le paramètre d’une méthode qui doit être le paramètre `sender` lorsque la méthode est mappée à un événement. La valeur peut être `true` ou `false`. Par exemple :
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -283,7 +283,7 @@ Spécifie le paramètre d’une méthode qui doit être le paramètre `sender` l
 
 ### <a name="visibility"></a>visibilité
 
-Cet attribut est utilisé pour modifier la visibilité d’une classe, d’une méthode ou d’une propriété. Par exemple, il peut être nécessaire de promouvoir une méthode Java `protected` pour que son wrapper correspondant C# soit`public`:
+Cet attribut est utilisé pour modifier la visibilité d’une classe, d’une méthode ou d’une propriété. Par exemple, il peut être nécessaire de promouvoir une méthode Java `protected` pour que son wrapper correspondant C# soit `public`:
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -299,7 +299,7 @@ Dans certains cas, les bibliothèques Android utilisent des constantes entières
 
 ### <a name="defining-an-enum-using-enumfieldsxml"></a>Définition d’une énumération à l’aide de EnumFields. Xml
 
-Le fichier **EnumFields. xml** contient le mappage entre les constantes de `int` C# Java et les`enums`. Prenons l’exemple suivant d’une C# énumération créée pour un ensemble de constantes de`int`: 
+Le fichier **EnumFields. xml** contient le mappage entre les constantes de `int` C# Java et les `enums`. Prenons l’exemple suivant d’une C# énumération créée pour un ensemble de constantes de `int` : 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -309,11 +309,11 @@ Le fichier **EnumFields. xml** contient le mappage entre les constantes de `int`
 </mapping>
 ```
 
-Ici, nous avons pris la classe Java `SKRealReachSettings` et défini C# une énumération appelée`SKMeasurementUnit`dans le`Skobbler.Ngx.Map.RealReach`d’espace de noms. Les entrées `field` définissent le nom de la constante Java (exemple `UNIT_SECOND`), le nom de l’entrée d’énumération (exemple `Second`) et la valeur entière représentée par les deux entités (exemple `0`). 
+Ici, nous avons pris la classe Java `SKRealReachSettings` et défini C# une énumération appelée `SKMeasurementUnit` dans le `Skobbler.Ngx.Map.RealReach`d’espace de noms. Les entrées `field` définissent le nom de la constante Java (exemple `UNIT_SECOND`), le nom de l’entrée d’énumération (exemple `Second`) et la valeur entière représentée par les deux entités (exemple `0`). 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Définition des méthodes getter/Setter à l’aide de EnumMethods,. Xml
 
-Le fichier **EnumMethods,. xml** permet de modifier les paramètres de méthode et les types de retour des C# constantes Java `int` à`enums`. En d’autres termes, il mappe la lecture et l' C# écriture des énumérations (définies dans le fichier **EnumFields. xml** ) à la `int` de constantes `get` et des méthodes de `set`.
+Le fichier **EnumMethods,. xml** permet de modifier les paramètres de méthode et les types de retour des C# constantes Java `int` à `enums`. En d’autres termes, il mappe la lecture et l' C# écriture des énumérations (définies dans le fichier **EnumFields. xml** ) à la `int` de constantes `get` et des méthodes de `set`.
 
 Étant donné l’énumération `SKRealReachSettings` définie ci-dessus, le fichier **EnumMethods,. xml** suivant définit l’accesseur Get/Setter pour cette énumération :
 

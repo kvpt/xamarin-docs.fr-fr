@@ -7,25 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: ed6992f946512cd88b4b2b8cfcf4c826bdd6b837
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 924f5403f12250fcfc5f026438d08ed618fb373f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645346"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487605"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Vérification orthographique à l’aide de l’API vérification orthographique Bing
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Vérification orthographique Bing effectue une correction orthographique contextuelle pour le texte, en fournissant des suggestions inline pour les mots mal orthographiés. Cet article explique comment utiliser la vérification orthographique REST Bing pour corriger les fautes d’orthographe dans une application Xamarin.Forms._
+_Vérification orthographique Bing effectue une vérification orthographique contextuelle du texte, en fournissant des suggestions incorporées pour les mots mal orthographiés. Cet article explique comment utiliser l’API REST Vérification orthographique Bing pour corriger les fautes d’orthographe dans une application Xamarin. Forms._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 La vérification orthographique REST Bing a deux modes de fonctionnement, et un mode doit être spécifié lorsque vous élaborez une demande à l’API :
 
 - `Spell` corrige un texte court (mots jusqu'à 9) sans aucune modification de la casse.
 - `Proof` corrige le texte long, fournit des corrections de la casse et ponctuation et supprime des corrections agressives.
+
+> [!NOTE]
+> Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
 Une clé API doit être obtenue pour utiliser la vérification orthographique Bing. Cela peut être obtenue au [essayez Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 
@@ -151,12 +154,12 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 Ce code effectue une itération dans le `FlaggedTokens` collection et remplace tout mot mal orthographié ou mots grammaticalement incorrects dans le texte source avec la première suggestion. Les captures d’écran suivantes montrent l’avant et après la vérification orthographique :
 
-![](spell-check-images/before-spell-check.png "Avant la vérification orthographique")
+![](spell-check-images/before-spell-check.png "Before Spell Check")
 
-![](spell-check-images/after-spell-check.png "Après vérification orthographique")
+![](spell-check-images/after-spell-check.png "After Spell Check")
 
 > [!NOTE]
-> L’exemple ci- `Replace` dessus utilise pour des raisons de simplicité, mais dans une grande quantité de texte, il peut remplacer le mauvais jeton. L’API fournit la `offset` valeur qui doit être utilisée dans les applications de production pour identifier l’emplacement correct dans le texte source pour effectuer une mise à jour.
+> L’exemple ci-dessus utilise `Replace` pour des raisons de simplicité, mais dans une grande quantité de texte, il peut remplacer le mauvais jeton. L’API fournit la valeur `offset` qui doit être utilisée dans les applications de production pour identifier l’emplacement correct dans le texte source pour effectuer une mise à jour.
 
 ## <a name="summary"></a>Récapitulatif
 

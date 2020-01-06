@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ef0bcba7a59984c6bad7091431fe00b1f1b7eee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031795"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489087"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>Modifications supplémentaires des frameworks iOS 9
 
@@ -62,7 +62,7 @@ Pour plus d’informations, consultez les documents suivants :
 - [CloudKit démarrage rapide](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987) -présentation d’Apple à CloudKit.
 - [Référence CLOUDKIT js](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359) -documentation CloudKit JS d’Apple.
 - [Référence des services Web CloudKit](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240) -référence d’Apple qui décrit l’interface http à CloudKit.
-- Catalogue CloudKit [: Introduction à CloudKit (cacao et JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-exemple d’application d’Apple à l’aide de CloudKit et CloudKit JS.
+- [Catalogue CloudKit : introduction à CloudKit (cacao et JavaScript)](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) -exemple d’application Apple avec CloudKit et CloudKit js.
 
 > [!IMPORTANT]
 > Apple [fournit des outils](https://developer.apple.com/support/allowing-users-to-manage-data/) pour aider les développeurs à gérer correctement le Règlement général sur la protection des données (RGPD) de l’Union européenne.
@@ -131,7 +131,7 @@ Apple a inclus les modifications suivantes à l’infrastructure [d’authentifi
 - La possibilité d’utiliser le _contexte d’authentification_ dans les appels de trousseau et la prise en charge de l’évaluation des listes de contrôle d’accès au trousseau.
 - La possibilité d’annuler une invite utilisateur à partir du code.
 
-Pour plus d’informations sur l’utilisation de Touch ID dans Xamarin. iOS, consultez la documentation de notre [Introduction à Touch ID](~/ios/platform/touchid.md) .
+Pour plus d’informations, consultez [Touch ID et face ID with Xamarin. iOS](~/ios/platform/touch-id-face-id.md).
 
 ### <a name="lacontext-changes"></a>Modifications de LAContext
 

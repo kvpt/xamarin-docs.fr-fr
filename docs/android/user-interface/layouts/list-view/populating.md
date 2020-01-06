@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2017
-ms.openlocfilehash: fda021eb90feba1fed2352ef7f771f5583b00920
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7ec5537345536884e2dc3da02ab54a3ca00f760e
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028848"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607969"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Remplissage d’un ListView Xamarin. Android avec des données
 
@@ -33,7 +33,6 @@ public class HomeScreen : ListActivity {
        items = new string[] { "Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers" };
        ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
    }
-   protected override void OnListItemClick(ListView l, View v, int position, long id)
 }
 ```
 
@@ -207,8 +206,8 @@ public int GetSectionForPosition(int position)
 Vos titres d’index de section n’ont pas besoin de mapper 1:1 à vos sections réelles. C’est la raison pour laquelle la méthode `GetPositionForSection` existe.
 `GetPositionForSection` vous donne la possibilité de mapper les index de votre liste d’index vers les sections qui sont en mode liste. Par exemple, vous pouvez avoir un « z » dans votre index, mais vous ne disposez peut-être pas d’une section de table pour chaque lettre. par conséquent, au lieu de mapper « z » à 26, il peut être mappé à 25 ou 24, ou à tout index de section « z ».
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
-- [BasicTableAndroid (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
+- [BasicTableAndroid (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
 - [BasicTableAdapter (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableadapter)
 - [FastScroll (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fastscroll)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a4bf0b89a9ab336bf47ddcd104760211d912f423
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022043"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663432"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Contrôles d’interface utilisateur dans Xamarin. iOS
 
@@ -80,9 +80,9 @@ L’acceptation de l’entrée de texte de l’utilisateur est effectuée avec l
 
 les applications iOS utilisant une interface utilisateur de navigation à onglets sont créées à l’aide de la classe UITabBarController. Dans cet article, nous allons découvrir comment configurer une application avec onglets contenant plusieurs contrôleurs et vues. Nous examinerons ensuite comment charger un UITabBarController quand il ne s’agit pas du contrôleur racine, par exemple après un écran de connexion.
 
-## <a name="web-viewsuiwebviewmd"></a>[Affichages Web](uiwebview.md)
+## <a name="web-viewswebviewmd"></a>[Affichages Web](webview.md)
 
-Dans cet article, nous allons explorer chacun des trois affichages Web fournis par Apple : `UIWebView`, `WKWebview`et `SFSafariViewController`, leurs similitudes et leurs différences, et comment ils peuvent être utilisés.
+Dans cet article, nous allons explorer les vues Web fournies par Apple –`WKWebview` et `SFSafariViewController`: leurs similitudes et leurs différences, et comment elles peuvent être utilisées.
 
 ## <a name="related-links"></a>Liens associés
 

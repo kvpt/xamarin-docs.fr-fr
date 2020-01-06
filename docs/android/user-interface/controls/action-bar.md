@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f64b57e73b69b3111087ca1352f5fb9536f855e5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029389"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488957"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Barre pour Xamarin. Android
 
@@ -142,5 +142,3 @@ L’image de l’exemple de code ci-dessus est incluse en tant que ressource ave
 
 - [Hello tabs ICS (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [Démonstration ShareActionProvider (exemple)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [Présentation du sandwich glacé](https://www.android.com/about/ice-cream-sandwich/)
-- [Plateforme Android 4,0](https://developer.android.com/sdk/android-4.0.html)

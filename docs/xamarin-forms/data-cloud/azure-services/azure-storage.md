@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649711"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487319"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Stocker des données et y accéder dans stockage Azure à partir de Xamarin. Forms
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Stockage Azure est une solution de stockage cloud évolutif qui peut être utilisée pour stocker des données non structurées et structurées. Cet article montre comment utiliser Xamarin.Forms pour stocker des données texte et binaires dans le stockage Azure et comment accéder aux données._
+_Le stockage Azure est une solution de stockage cloud évolutive qui peut être utilisée pour stocker des données structurées et non structurées. Cet article explique comment utiliser Xamarin. Forms pour stocker du texte et des données binaires dans le stockage Azure, et comment accéder aux données._
 
 Stockage Azure fournit quatre services de stockage :
 
@@ -36,17 +36,20 @@ Cet article et exemple d’application, d’accompagnement illustre le télécha
 
 Pour plus d’informations sur le stockage Azure, consultez [Introduction au stockage](https://azure.microsoft.com/documentation/articles/storage-introduction/).
 
+> [!NOTE]
+> Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
+
 ## <a name="introduction-to-blob-storage"></a>Introduction au stockage d’objets Blob
 
 Stockage d’objets BLOB se compose de trois composants, qui sont présentées dans le diagramme suivant :
 
-![](azure-storage-images/blob-storage.png "Concepts du stockage BLOB")
+![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
 
 Tous les accès vers le stockage Azure se fait via un compte de stockage. Un compte de stockage peut contenir un nombre illimité de conteneurs, et un conteneur peut stocker un nombre illimité d’objets BLOB, jusqu'à la limite de capacité du compte de stockage.
 
 Un objet blob est un fichier de n’importe quel type et la taille. Stockage Azure prend en charge trois types d’objets blob différents :
 
-- Objets BLOB de blocs est optimisés pour la diffusion en continu et de stockage d’objets cloud et constitue un bon choix pour le stockage des sauvegardes, des fichiers multimédias, des documents, etc. Objets BLOB de blocs peut être de taille maximale de 195 go.
+- Les objets BLOB de blocs sont optimisés pour la diffusion et le stockage d’objets Cloud, et sont un bon choix pour stocker des sauvegardes, des fichiers multimédias, des documents, etc. La taille des objets BLOB de blocs peut atteindre 195 Go.
 - Ajouter des objets BLOB sont similaires aux objets BLOB de blocs, mais sont optimisés pour les opérations d’ajout, telles que la journalisation. Ajouter des objets BLOB peuvent être de taille maximale de 195 go.
 - Objets BLOB de pages est optimisés pour les opérations de lecture/écriture fréquentes et est généralement utilisés pour stocker des machines virtuelles et leurs disques. Objets BLOB de pages peut être jusqu'à 1 To.
 
@@ -59,7 +62,7 @@ Chaque objet qui est stocké dans le stockage Azure a une adresse URL unique. Le
 
 L’URL pour accéder à un objet dans un compte de stockage est créé en ajoutant l’emplacement de l’objet dans le compte de stockage pour le point de terminaison. Par exemple, une adresse de l’objet blob a le format `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`.
 
-## <a name="setup"></a>Installation
+## <a name="setup"></a>Programme d'installation
 
 Le processus d’intégration d’un compte de stockage Azure dans une application Xamarin.Forms est comme suit :
 
@@ -70,7 +73,7 @@ Le processus d’intégration d’un compte de stockage Azure dans une applicati
 
 <a name="connecting" />
 
-## <a name="connecting-to-azure-storage"></a>Connexion au stockage Azure
+## <a name="connecting-to-azure-storage"></a>Connexion à Azure Storage
 
 Chaque demande adressée aux ressources de compte de stockage doit être authentifiée. Bien que les objets BLOB peut être configuré pour prendre en charge l’authentification anonyme, il existe deux approches principales, qu'une application peut utiliser pour s’authentifier avec un compte de stockage :
 
@@ -122,7 +125,7 @@ Pour plus d’informations sur les Signatures d’accès partagé, consultez [à
 
 ## <a name="creating-a-container"></a>Création d’un conteneur
 
-Le `GetContainer` méthode est utilisée pour récupérer une référence à un conteneur nommé, ce qui peut ensuite être utilisé pour récupérer des objets BLOB à partir du conteneur ou pour ajouter des objets BLOB au conteneur. Le code suivant montre l’exemple le `GetContainer` méthode :
+Le `GetContainer` méthode est utilisée pour récupérer une référence à un conteneur nommé, ce qui peut ensuite être utilisé pour récupérer des objets BLOB à partir du conteneur ou pour ajouter des objets BLOB au conteneur. L’exemple de code suivant montre la méthode `GetContainer` :
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -263,5 +266,5 @@ Après avoir récupéré une référence de conteneur, la méthode récupère un
 - [Stockage Azure (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [Présentation du stockage](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [Comment utiliser le stockage d’objets Blob à partir de Xamarin](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
-- [Utilisation des signatures d’accès partagé (SAP)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
+- [À l’aide de Signatures d’accès partagé (SAP)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 - [Stockage Windows Azure (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)

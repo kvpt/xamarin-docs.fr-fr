@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: dc72dc7549a697c7231045601851ba4108f29e1b
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697583"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489750"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. Forms CarouselView défilement
 
@@ -32,7 +32,7 @@ Toutes ces propriétés sont sauvegardées par des objets [`BindableProperty`](x
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) définit également deux méthodes de [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) , qui défilent les éléments dans la vue. L’une des surcharges fait défiler l’élément à l’index spécifié dans la vue, tandis que l’autre fait défiler l’élément spécifié dans la vue. Les deux surcharges ont des arguments supplémentaires qui peuvent être spécifiés pour indiquer la position exacte de l’élément une fois le défilement terminé, et s’il faut animer le défilement.
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit un événement [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) qui est déclenché lorsque l’une des méthodes [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) est appelée. L’objet [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) qui accompagne l’événement `ScrollToRequested` possède de nombreuses propriétés, notamment `IsAnimated`, `Index`, `Item` et `ScrollToPosition`. Ces propriétés sont définies à partir des arguments spécifiés dans les appels de la méthode `ScrollTo`.
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) définit un événement [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) qui est déclenché lorsque l’une des méthodes [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) est appelée. L’objet [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) qui accompagne l’événement `ScrollToRequested` possède de nombreuses propriétés, notamment `IsAnimated`, `Index`, `Item`et `ScrollToPosition`. Ces propriétés sont définies à partir des arguments spécifiés dans les appels de la méthode `ScrollTo`.
 
 De plus, [`CarouselView`](xref:Xamarin.Forms.CarouselView) définit un événement `Scrolled` déclenché pour indiquer que le défilement s’est produit. L’objet `ItemsViewScrolledEventArgs` qui accompagne l’événement `Scrolled` possède de nombreuses propriétés. Pour plus d’informations, consultez [détecter le défilement](#detect-scrolling).
 
@@ -132,7 +132,7 @@ Cet exemple de code entraîne le défilement minimal requis pour faire défiler 
 > [!NOTE]
 > Le membre [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition) est utilisé par défaut, si l’argument `position` n’est pas spécifié lors de l’appel de la méthode `ScrollTo`.
 
-### <a name="start"></a>Start
+### <a name="start"></a>Début
 
 Le membre [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) indique que l’élément doit défiler jusqu’au début de la vue :
 
@@ -170,7 +170,7 @@ Cet exemple de code entraîne le défilement de l’élément à la fin de la vu
 - `KeepScrollOffset` maintient le décalage de défilement par rapport au début de la liste lorsque de nouveaux éléments sont ajoutés.
 - `KeepLastItemInView` ajuste le décalage de défilement pour conserver le dernier élément visible lorsque de nouveaux éléments sont ajoutés.
 
-La valeur par défaut de la propriété `ItemsUpdatingScrollMode` est `KeepItemsInView`. Par conséquent, lorsque de nouveaux éléments sont ajoutés à un [`CarouselView`](xref:Xamarin.Forms.CarouselView) le premier élément visible dans la liste reste affiché. Pour vous assurer que les éléments récemment ajoutés sont toujours visibles au bas de la liste, la propriété `ItemsUpdatingScrollMode` doit être définie sur `KeepLastItemInView` :
+La valeur par défaut de la propriété `ItemsUpdatingScrollMode` est `KeepItemsInView`. Par conséquent, lorsque de nouveaux éléments sont ajoutés à un [`CarouselView`](xref:Xamarin.Forms.CarouselView) le premier élément visible dans la liste reste affiché. Pour vous assurer que les éléments récemment ajoutés sont toujours visibles au bas de la liste, la propriété `ItemsUpdatingScrollMode` doit être définie sur `KeepLastItemInView`:
 
 ```xaml
 <CarouselView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -195,7 +195,7 @@ CarouselView carouselView = new CarouselView
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement sont visibles, même lorsque le contenu s’ajuste à la vue.
 - [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) indique que les barres de défilement ne sont pas visibles, même si le contenu ne tient pas dans la vue.
 
-## <a name="snap-points"></a>Points d’alignement
+## <a name="snap-points"></a>Points d’ancrage
 
 Lorsqu’un utilisateur effectue un balayage pour lancer un défilement, la position de fin du défilement peut être contrôlée afin que les éléments soient entièrement affichés. Cette fonctionnalité est appelée alignement, car les éléments sont alignés à la position lorsque le défilement s’arrête et sont contrôlés par les propriétés suivantes de la classe [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) :
 
@@ -219,18 +219,18 @@ Par défaut, sur un [`CarouselView`](xref:Xamarin.Forms.CarouselView), la propri
 
 ### <a name="snap-points-alignment"></a>Alignement des points d’alignement
 
-L’énumération [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) définit les membres `Start`, `Center` et `End`.
+L’énumération [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) définit les membres `Start`, `Center`et `End`.
 
 > [!IMPORTANT]
-> La valeur de la propriété [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) est respectée uniquement lorsque la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) a la valeur `Mandatory` ou `MandatorySingle`.
+> La valeur de la propriété [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) est respectée uniquement lorsque la propriété [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) a la valeur `Mandatory`ou `MandatorySingle`.
 
-#### <a name="start"></a>Start
+#### <a name="start"></a>Début
 
 Le membre de `SnapPointsAlignment.Start` indique que les points d’ancrage sont alignés sur le bord de tête des éléments. L’exemple de code XAML suivant montre comment définir ce membre de l’énumération :
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
@@ -264,7 +264,7 @@ Par défaut, sur un [`CarouselView`](xref:Xamarin.Forms.CarouselView), la propri
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
@@ -296,7 +296,7 @@ Le membre de `SnapPointsAlignment.End` indique que les points d’ancrage sont a
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"

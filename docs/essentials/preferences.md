@@ -1,19 +1,19 @@
 ---
-title: 'Xamarin.Essentials: Préférences'
+title: 'Xamarin.Essentials : préférences'
 description: Ce document décrit la classe Preferences de Xamarin.Essentials, qui enregistre les préférences de l’application dans un magasin de clés/valeurs. Il explique comment utiliser la classe et les types de données pouvant être stockés.
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: 6d57b5ce9cb61363eef24b230f6cf71894f66198
-ms.sourcegitcommit: 53f5e83f4e246be703917d7cc719c8cc959517ab
-ms.translationtype: HT
+ms.openlocfilehash: 1c6e55b69ca683b7fc1919995ba576ab77bf3c3b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54317880"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488502"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: Préférences
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials : préférences
 
 La classe **Preferences** permet de stocker les préférences d’application dans un magasin de clés/valeurs.
 
@@ -69,7 +69,7 @@ Les types de données suivants sont pris en charge dans **Preferences** :
 
 ## <a name="implementation-details"></a>Détails de l’implémentation
 
-Les valeurs de `DateTime` sont stockées dans un format binaire 64 bits (entier long) à l’aide de deux méthodes définies par la classe `DateTime` : La méthode [`ToBinary`](xref:System.DateTime.ToBinary) est utilisée pour encoder la valeur `DateTime`, tandis que la méthode [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) décode la valeur. Consultez la documentation de ces méthodes pour connaître les ajustements qui peuvent être apportés aux valeurs décodées quand un `DateTime` stocké n’est pas une valeur UTC (temps universel coordonné).
+Les valeurs de `DateTime` sont stockées dans un format binaire 64 bits (entier long) à l’aide de deux méthodes définies par la classe `DateTime` : la méthode [`ToBinary`](xref:System.DateTime.ToBinary) sert à encoder la valeur de `DateTime`, alors que la méthode [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) sert à décoder la valeur. Consultez la documentation de ces méthodes pour connaître les ajustements qui peuvent être apportés aux valeurs décodées quand un `DateTime` stocké n’est pas une valeur UTC (temps universel coordonné).
 
 ## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
@@ -83,7 +83,9 @@ Toutes les données sont stockées dans les [Préférences partagées](https://d
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié, `LocalSettings` est utilisé. Sinon, le nom sert à créer un conteneur dans `LocalSettings`.
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) permet de stocker les valeurs sur l’appareil. Si aucun `sharedName` n’est spécifié, `LocalSettings` est utilisé. Sinon, le nom sert à créer un conteneur dans `LocalSettings`. 
+
+`LocalSettings` présente également la restriction suivante : le nom de chaque paramètre peut avoir une longueur de 255 caractères au maximum. Chaque paramètre peut avoir une taille maximale de 8 Ko et chaque paramètre composite peut comporter jusqu’à 64 Ko d’octets.
 
 --------------
 

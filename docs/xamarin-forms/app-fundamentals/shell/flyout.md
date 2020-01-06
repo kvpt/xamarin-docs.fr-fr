@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2019
-ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
-ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
+ms.date: 11/05/2019
+ms.openlocfilehash: 4049b3bdfdd6077dcfa151df9553722e63def0ba
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74451807"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489958"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Menu volant Shell Xamarin.Forms
 
@@ -217,7 +217,7 @@ Shell comporte des opérateurs de conversion implicite qui permettent de simplif
 Cette conversion implicite encapsule automatiquement chaque objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans des objets `ShellContent` encapsulés dans des objets `Tab`, eux-mêmes encapsulés dans des objets `FlyoutItem`.
 
 > [!IMPORTANT]
-> Dans une application Shell, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui est un enfant d’un objet `ShellContent` est créé au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, consultez [Chargement efficace d’une page](tabs.md#efficient-page-loading) dans le guide [Onglets Shell Xamarin.Forms](tabs.md).
+> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, consultez [Chargement efficace d’une page](tabs.md#efficient-page-loading) dans le guide [Onglets Shell Xamarin.Forms](tabs.md).
 
 ### <a name="flyoutitem-class"></a>Classe FlyoutItem
 
@@ -246,6 +246,23 @@ En outre, la classe `FlyoutItem` expose les méthodes substituables suivantes :
 - `OnTabStopPropertyChanged`, qui est appelée à chaque modification de la propriété `IsTabStop`.
 - `TabIndexDefaultValueCreator`, qui retourne un `int` et est appelée pour définir la valeur par défaut de la propriété `TabIndex`.
 - `TabStopDefaultValueCreator`, qui retourne un `bool` et est appelée pour définir la valeur par défaut de la propriété `TabStop`.
+
+## <a name="flyout-vertical-scroll"></a>Défilement vertical du menu volant
+
+Par défaut, un menu volant peut faire défiler verticalement quand les éléments du menu volant ne rentrent pas dans le menu volant. Ce comportement peut être modifié en affectant à la `Shell.FlyoutVerticalScrollMode` propriété pouvant être liée la valeur l’un des membres de l’énumération `ScrollMode` :
+
+- `Disabled` : indique que le défilement vertical est désactivé.
+- `Enabled` : indique que le défilement vertical est activé.
+- `Auto` : indique que le défilement vertical est activé si les éléments du menu volant ne rentrent pas dans le menu volant. C’est la valeur par défaut de la propriété `Shell.FlyoutVerticalScrollMode`.
+
+L’exemple suivant montre comment désactiver le défilement vertical :
+
+```xaml
+<Shell ...
+       FlyoutVerticalScrollMode="Disabled"
+    ...
+</Shell>
+```
 
 ## <a name="flyout-display-options"></a>Options d’affichage du menu volant
 

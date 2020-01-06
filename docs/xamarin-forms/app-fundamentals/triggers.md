@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.openlocfilehash: 056bb16c76887661f054422b2c682a91e6bfa466
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997153"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489893"
 ---
 # <a name="xamarinforms-triggers"></a>Déclencheurs Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 Les déclencheurs vous permettent d’exprimer des actions de manière déclarative en XAML. Les actions en question modifient l’apparence des contrôles en fonction des événements ou des modifications apportées aux propriétés.
 
@@ -43,8 +43,9 @@ Cet exemple montre un déclencheur qui modifie la couleur d’arrière-plan d’
 <Entry Placeholder="enter name">
     <Entry.Triggers>
         <Trigger TargetType="Entry"
-             Property="IsFocused" Value="True">
+                 Property="IsFocused" Value="True">
             <Setter Property="BackgroundColor" Value="Yellow" />
+            <!-- multiple Setters elements are allowed -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -74,6 +75,7 @@ Les déclencheurs peuvent également être ajoutés à une déclaration `Style` 
                 <Trigger TargetType="Entry"
                          Property="IsFocused" Value="True">
                     <Setter Property="BackgroundColor" Value="Yellow" />
+                    <!-- multiple Setters elements are allowed -->
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -106,6 +108,7 @@ qui est celle utilisée pour référencer les propriétés d’un autre contrôl
                                        Path=Text.Length}"
                      Value="0">
             <Setter Property="IsEnabled" Value="False" />
+            <!-- multiple Setters elements are allowed -->
         </DataTrigger>
     </Button.Triggers>
 </Button>
@@ -168,7 +171,7 @@ Le déclencheur d’événements peut ensuite être consommé à partir de XAML�
 
 Soyez prudent lorsque vous partagez des déclencheurs dans un `ResourceDictionary`. En effet, une même instance sera partagée entre plusieurs contrôles, donc tout état configuré une fois sera appliqué à tous les autres contrôles.
 
-Notez que les déclencheurs d’événements ne prennent pas en charge `EnterActions` et `ExitActions` qui sont [décrits plus bas](#enterexit).
+Notez que les déclencheurs d’événements ne prennent pas en charge `EnterActions` et `ExitActions`[décrits ci-dessous](#enterexit).
 
 <a name="multi" />
 
@@ -188,8 +191,7 @@ Voici un exemple de déclencheur pour un bouton qui lie deux entrées différent
                                    Path=Text.Length}"
                                Value="0" />
     </MultiTrigger.Conditions>
-
-  <Setter Property="IsEnabled" Value="False" />
+    <Setter Property="IsEnabled" Value="False" />
     <!-- multiple Setter elements are allowed -->
 </MultiTrigger>
 ```
@@ -270,7 +272,7 @@ Le code XAML est fourni ci-dessous. Notez les différences suivantes par rapport
 Ces captures d’écran montrent la différence entre les deux exemples de déclencheurs multiples. Dans la partie supérieure des écrans, l’entrée de texte dans un seul `Entry` suffit à activer le bouton **Save** (Enregistrer).
 Dans la partie inférieure de l’écran, le bouton **Login** (Connexion) reste inactif jusqu’à ce que les deux champs contiennent des données.
 
-![](triggers-images/multi-requireall.png "Exemples de déclencheurs multiples")
+![](triggers-images/multi-requireall.png "MultiTrigger Examples")
 
 <a name="enterexit" />
 
@@ -278,12 +280,12 @@ Dans la partie inférieure de l’écran, le bouton **Login** (Connexion) reste 
 
 Une autre façon d’implémenter des modifications lorsqu’un déclencheur est activé est d’ajouter des collections `EnterActions` et `ExitActions`, et de spécifier des implémentations `TriggerAction<T>`.
 
-La collection [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) est utilisée pour définir un `IList` d’objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) qui seront appelés lorsque la condition de déclenchement sera remplie. La collection [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) est utilisée pour définir un `IList` d’objets `TriggerAction` qui seront appelés une fois que la condition de déclencheur n’est plus remplie.
+La collection [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) est utilisée pour définir une `IList` d' [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) objets qui seront appelés lorsque la condition de déclenchement sera remplie. La collection [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) est utilisée pour définir une `IList` d' `TriggerAction` objets qui seront appelés une fois que la condition de déclencheur n’est plus remplie.
 
 > [!NOTE]
 > Les objets [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) définis dans les collections `EnterActions` et `ExitActions` sont ignorés par la classe [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) .    
 
-Vous pouvez fournir à la *fois* `EnterActions` et `ExitActions` ainsi que `Setter`S dans un déclencheur, mais sachez que le  est appelé immédiatement (ils n’attendent pas que le `EnterAction` ou `ExitAction` se termine). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
+Vous pouvez fournir à la *fois* des `EnterActions` et des `ExitActions`, ainsi que des `Setter`s dans un déclencheur, mais sachez que les `Setter`s sont appelées immédiatement (ils n’attendent pas que l' `EnterAction` ou la `ExitAction` se termine). Vous pouvez également tout effectuer dans le code sans utiliser de `Setter`.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -316,19 +318,18 @@ Ce code `FadeTriggerAction` est fourni ci-dessous:
 ```csharp
 public class FadeTriggerAction : TriggerAction<VisualElement>
 {
-    public FadeTriggerAction() {}
-
     public int StartsFrom { set; get; }
 
-    protected override void Invoke (VisualElement visual)
+    protected override void Invoke(VisualElement sender)
     {
-            visual.Animate("", new Animation( (d)=>{
-                var val = StartsFrom==1 ? d : 1-d;
-                visual.BackgroundColor = Color.FromRgb(1, val, 1);
-
-            }),
-            length:1000, // milliseconds
-            easing: Easing.Linear);
+        sender.Animate("FadeTriggerAction", new Animation((d) =>
+        {
+            var val = StartsFrom == 1 ? d : 1 - d;
+            // so i was aiming for a different color, but then i liked the pink :)
+            sender.BackgroundColor = Color.FromRgb(1, val, 1);
+        }),
+        length: 1000, // milliseconds
+        easing: Easing.Linear);
     }
 }
 ```

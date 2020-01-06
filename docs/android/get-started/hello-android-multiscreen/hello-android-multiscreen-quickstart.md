@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 114373b6c4b194fe6e566255eb09eb82a8208312
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8f7d882306ed5c00404ae7a050da8e02a49d609
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020966"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607904"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android multi-écran - Démarrage rapide
 
@@ -26,7 +26,7 @@ Dans la partie de ce guide présentant la procédure pas à pas, vous allez ajou
 
 La seconde partie, [En profondeur](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md), examine ce que vous avez généré et décrit l’architecture, la navigation et d’autres nouveaux concepts Android que vous avez rencontrés en chemin.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 Ce guide reprenant là où [Hello, Android](~/android/get-started/hello-android/index.md) s’est arrêté, vous devez avoir terminé [Hello, Android - Démarrage rapide](~/android/get-started/hello-android/hello-android-quickstart.md).
 Si vous souhaitez accéder directement à la procédure pas à pas ci-dessous, vous pouvez télécharger la version complète de [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) (à partir de Hello, Android - Démarrage rapide) et l’utiliser pour démarrer la procédure pas à pas.
@@ -108,7 +108,7 @@ namespace Phoneword
 }
 ```
 
-Dans cette classe, vous créez un élément `ListActivity` et le remplissez par programmation. Vous n’avez donc pas besoin de créer un nouveau fichier de disposition pour cette activité. Ce sujet est abordé plus en détail dans [Hello, Android multi-écran - En profondeur](~/android/get-started/hello-android/hello-android-deepdive.md).
+Dans cette classe, vous créez un élément `ListActivity` et le remplissez par programmation. Vous n’avez donc pas besoin de créer un nouveau fichier de disposition pour cette activité. Ce sujet est abordé plus en détail dans [Hello, Android multi-écran - En profondeur](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md).
 
 ### <a name="adding-a-list"></a>Ajout d’une liste
 
@@ -156,7 +156,7 @@ string translatedNumber = string.Empty;
 translateButton.Click += (sender, e) =>
 {
     // Translate user's alphanumeric phone number to numeric
-    translatedNumber = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+    translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
     if (string.IsNullOrWhiteSpace(translatedNumber))
     {
         translatedPhoneWord.Text = "";
@@ -170,7 +170,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-Enregistrez et générez l’application pour vérifier qu’il n’y a pas d’erreurs.
+Enregistrez et générez l’application pour vérifier qu'il n'y a pas d'erreurs.
 
 ### <a name="running-the-app"></a>Exécution de l’application
 
@@ -295,7 +295,7 @@ Mettez à jour le bouton **Traduire** pour ajouter le numéro de téléphone à 
 translateButton.Click += (sender, e) =>
 {
     // Translate user's alphanumeric phone number to numeric
-    translatedNumber = PhonewordTranslator.ToNumber(phoneNumberText.Text);
+    translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
     if (string.IsNullOrWhiteSpace(translatedNumber))
     {
         translatedPhoneWord.Text = "";

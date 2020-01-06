@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: 4b3bf1fcc6be7713c87b16ef9ec083189793b324
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e9f910804f3da9d173206d51c59e1d7ddd9b90a6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008054"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663510"
 ---
 # <a name="data-and-cloud-services-in-xamarinios-apps"></a>Services de données et Cloud Computing dans les applications Xamarin. iOS
 
@@ -22,7 +22,7 @@ La plupart des applications ont besoin d’enregistrer des données sur l’appa
 
 ## <a name="icloudiosdata-cloudintroduction-to-icloudmd"></a>[iCloud](~/ios/data-cloud/introduction-to-icloud.md)
 
-L’API de stockage iCloud dans iOS 5 permet aux applications d’enregistrer des documents utilisateur et des données spécifiques à l’application dans un emplacement central et d’accéder à ces éléments à partir de tous les appareils de l’utilisateur.
+L’API de stockage iCloud permet aux applications d’enregistrer des documents utilisateur et des données spécifiques à l’application dans un emplacement central et d’accéder à ces éléments à partir de tous les appareils de l’utilisateur.
 
 ## <a name="cloudkitiosdata-cloudintro-to-cloudkitmd"></a>[CloudKit](~/ios/data-cloud/intro-to-cloudkit.md)
 

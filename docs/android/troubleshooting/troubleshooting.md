@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: ec5c6e4c4c47995e78c1819007a8fa5660873bd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026592"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488931"
 ---
 # <a name="troubleshooting-tips"></a>Conseils de dépannage
 
 ## <a name="getting-diagnostic-information"></a>Obtention d’informations de diagnostic
 
 Xamarin. Android présente quelques emplacements à examiner pour le suivi de divers bogues.
-Elles incluent notamment les suivantes :
+Elles incluent notamment :
 
 1. Sortie MSBuild de diagnostic.
 2. Journaux de déploiement de l’appareil.
@@ -84,7 +84,7 @@ Xamarin. Android prend en charge les propriétés système suivantes :
 - *Debug.mono.env*: séparées par une barre verticale ' *|* ' liste des variables d’environnement à exporter pendant le démarrage de l’application, *avant* mono a été initialisé. Cela permet de définir des variables d’environnement qui contrôlent la journalisation mono.
 
   > [!NOTE]
-  > Dans la mesure où la valeur est *|* '-séparés, la valeur doit avoir un niveau supplémentaire de guillemets, comme le \`*interpréteur de commandes adb*\` commande supprime un jeu de guillemets.
+  > Étant donné que la valeur est « *|* »-séparé, la valeur doit avoir un niveau supplémentaire de guillemets, car la commande \`*shell adb*\` supprimera un ensemble de guillemets.
 
   > [!NOTE]
   > Les valeurs de propriété du système Android ne peuvent pas dépasser 92 caractères.
@@ -526,7 +526,7 @@ E/mono(15202):   at Android.Views.View+IOnTouchListenerAdapter.n_OnTouch_Landroi
 E/mono(15202):   at (wrapper dynamic-method) object:b039cbb0-15e9-4f47-87ce-442060701362 (intptr,intptr,intptr,intptr)
 ```
 
-or
+ou
 
 ```shell
 E/mono    ( 4176): Unhandled Exception:
@@ -662,7 +662,7 @@ Lors du déploiement d’une application générée avec [AOT + LLVM](~/android/
 
 ```shell
 Assertion: should not be reached at /Users/.../external/mono/mono/mini/tramp-x86.c:124
-Fatal signal 6 (SIGABRT), code -6 in tid 4051 (amarin.bug56111)
+Fatal signal 6 (SIGABRT), code -6 in tid 4051 (Xamarin.bug56111)
 ```
 
-Il s’agit d’un problème connu signalé dans [56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111). La solution de contournement consiste à désactiver LLVM.
+Il s’agit d’un problème connu : la solution de contournement consiste à désactiver LLVM.

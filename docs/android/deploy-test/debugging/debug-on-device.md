@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e697459b20a481b1d2bada69677647ad4fbd3023
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3ca524e451a7a4eb838805c839b33c4b9dd6bddd
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021590"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556533"
 ---
-# <a name="debug-on-device"></a>Déboguer sur un appareil
+# <a name="debug-on-an-android-device"></a>Déboguer sur un appareil Android
 
 _Cet article explique comment déboguer une application Xamarin.Android sur un appareil Android physique._
-
-## <a name="debug-on-device-overview"></a>Vue d’ensemble du débogage sur un appareil
 
 Il est possible de déboguer une application Xamarin.Android sur un appareil Android à l’aide de Visual Studio pour Mac ou de Visual Studio. Avant de pouvoir déboguer une application sur un appareil, celui-ci doit être [configuré pour le développement](~/android/get-started/installation/set-up-device-for-development.md) et connecté à votre PC ou Mac.
 

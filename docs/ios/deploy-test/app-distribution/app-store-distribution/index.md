@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 78df4a7f4c90cd6459216f1f65dd09e0daae19f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026699"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607930"
 ---
 # <a name="app-store-distribution"></a>Distribution dans l’App Store
 
@@ -62,7 +62,7 @@ Vous pouvez sélectionner le même **ID d’application** et les mêmes **appare
 8. Pour finir, **téléchargez** le certificat rempli, puis double-cliquez sur le fichier pour l’installer.
 9. À ce stade, le certificat doit être installé sur la machine, mais vous devrez peut-être [actualiser vos profils](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download) pour vérifier qu’ils sont visibles dans Xcode.
 
-Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour cela, effectuez les étapes suivantes :
+Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, effectuez les étapes suivantes :
 
 1. Sélectionnez votre équipe, puis cliquez sur **gérer les certificats...** :[![](images/selectteam.png "Sélectionner l’équipe et afficher les détails")](images/selectteam.png#lightbox)
 
@@ -85,7 +85,7 @@ Comme pour tout profil de provisionnement que vous créez, un ID d’application
 3. Le préfixe d’application doit déjà être défini à l’aide de votre ID d’équipe. Il est impossible de le changer. Sélectionnez un ID d’application explicite ou avec des caractères génériques, puis entrez un ID de bundle au format DNS inversé, par exemple :
     - **Explicite** : com.[DomainName].[AppName]
     - **Avec des caractères génériques** : com.[DomainName].*
-4. Sélectionnez les [services d’application](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) nécessaires à l’application.
+4. Sélectionnez les [services d’application](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services) nécessaires à l’application.
 5. Cliquez sur le bouton **Continuer** et suivez les instructions à l’écran pour créer l’ID d’application.
 
 ### <a name="creating-a-provisioning-profile"></a>Création d’un profil de provisionnement
@@ -188,7 +188,7 @@ Pour plus d’informations sur la publication d’applications sur l’App Store
 
 <a name="windows" />
 
-## <a name="automatically-copy-app-bundles-back-to-windows"></a>Copier automatiquement les bundles .app sur Windows
+## <a name="automatically-copy-app-bundles-back-to-windows"></a>Copier automatiquement les bundles .app dans Windows
 
 [!include[](~/ios/includes/copy-app-bundle-to-windows.md)]
 

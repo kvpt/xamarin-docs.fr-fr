@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bf0a099546b2d5610a639cbf9af4c7676d10bef9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 371876d087c7027d4cfe2d2d9ada8b0dbedb5dd5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020048"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488970"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Obtention d’une clé API Google Maps
 
@@ -39,7 +39,7 @@ Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug
 
 Vous pouvez obtenir des informations sur un magasin de clés en exécutant la commande `keytool` du JDK. Cet outil se trouve généralement dans le répertoire bin Java :
 
-**C :\\Program Files (x86)\\Java\\JDK [VERSION]\\bin\\keytool. exe**
+**C :\\Program Files\\le kit de développement logiciel (Android)\\\\microsoft_dist_openjdk_ [VERSION]\\bin\\keytool. exe**
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
 
@@ -49,7 +49,7 @@ Par défaut, le magasin de clés qui est utilisé pour signer les versions Debug
 
 Vous pouvez obtenir des informations sur un magasin de clés en exécutant la commande `keytool` du JDK. Cet outil se trouve généralement dans le répertoire bin Java :
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION]. JDK/contents/orig/bin/keytool**
+**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
 
 -----
 
@@ -125,7 +125,7 @@ Une fois que vous avez récupéré l’empreinte numérique SHA-1 du magasin de 
 
    [![cliquant sur le bouton Activer dans la section tableau de bord](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-À ce stade, le projet d’API a été créé et l’API Android de Google Maps v2 lui a été ajoutée. Toutefois, vous ne pouvez pas utiliser cette API dans votre projet tant que vous n’avez pas créé d’informations d’identification pour celle-ci. La section suivante explique comment créer une clé API et une application Xamarin. Android pour qu’elle soit autorisée à utiliser cette clé.
+À ce stade, le projet d’API a été créé et l’API Android de Google Maps v2 lui a été ajoutée. Toutefois, vous ne pouvez pas utiliser cette API dans votre projet tant que vous n’avez pas créé d’informations d’identification pour celle-ci. La section suivante explique comment créer une clé d’API et de la liste verte une application Xamarin.Android afin qu’il est autorisé à utiliser cette clé.
 
 ## <a name="obtaining-the-api-key"></a>Obtention de la clé API
 
@@ -155,7 +155,7 @@ Une fois le projet d’API de la **console de développement Google** créé, il
 
    [![nom de package entré est com. xamarin. docs. Android. map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. Notez que, pour que vos APK accèdent à Google Maps, vous devez inclure les empreintes de l’algorithme SHA-1 et les noms des packages pour chaque magasin de clés (Debug et Release) que vous utilisez pour signer vos APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre pour générer le APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 du magasin de clés de version de deuxième ordinateur. Cliquez sur **+ Ajouter un nom de package et une empreinte digitale** pour ajouter une autre empreinte digitale et un nom de package, comme indiqué dans cet exemple :
+7. Notez que, afin que votre APK accéder à Google Maps, vous devez inclure les empreintes digitales de SHA-1 et empaqueter des noms pour chaque magasin de clés (debug et release) que vous utilisez pour signer votre APK. Par exemple, si vous utilisez un ordinateur pour le débogage et un autre ordinateur pour générer le fichier APK de mise en production, vous devez inclure l’empreinte de certificat SHA-1 à partir du magasin de clés de débogage du premier ordinateur et l’empreinte de certificat SHA-1 à partir du magasin de clés de version de le deuxième ordinateur. Cliquez sur **+ Ajouter un nom de package et une empreinte digitale** pour ajouter une autre empreinte digitale et un nom de package, comme indiqué dans cet exemple :
 
    [![l’ajout d’une autre empreinte digitale crée un autre certificat SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 

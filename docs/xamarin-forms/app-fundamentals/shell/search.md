@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
-ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/18/2019
+ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695934"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490062"
 ---
 # <a name="xamarinforms-shell-search"></a>Recherche dans Xamarin.Forms Shell
 
@@ -181,8 +181,11 @@ Pour plus d’informations sur les modèles de données, consultez [Modèles de 
 Lorsqu’un élément `SearchHandler` est ajouté en haut d’une page, par défaut, la zone de recherche est visible et complètement développée. Toutefois, vous pouvez changer ce comportement en définissant la propriété `SearchHandler.SearchBoxVisibility` sur un des membres d’énumération `SearchBoxVisibility` :
 
 - `Hidden` : la zone de recherche n’est pas visible ou accessible.
-- `Collapsible` : la zone de recherche est masquée jusqu’à ce que l’utilisateur effectue une action pour l’afficher.
-- `Expanded` : la zone de recherche est visible et complètement développée.
+- `Collapsible` : la zone de recherche est masquée jusqu’à ce que l’utilisateur effectue une action pour l’afficher. Sur iOS, la zone de recherche est révélée en rebondissant verticalement le contenu de la page et, sur Android, la zone de recherche est affichée en appuyant sur l’icône de point d’interrogation.
+- `Expanded` : la zone de recherche est visible et complètement développée. C’est la valeur par défaut de la propriété `SearchHandler.SearchBoxVisibility`.
+
+> [!IMPORTANT]
+> Sur iOS, une zone de recherche réductible requiert iOS 11 ou une version ultérieure.
 
 L’exemple suivant montre comment masquer la zone de recherche :
 
@@ -190,7 +193,7 @@ L’exemple suivant montre comment masquer la zone de recherche :
 <ContentPage ...
              xmlns:controls="clr-namespace:Xaminals.Controls">
     <Shell.SearchHandler>
-        <controls:MonkeySearchHandler SearchBoxVisibility="Hidden"
+        <controls:AnimalSearchHandler SearchBoxVisibility="Hidden"
                                       ... />
     </Shell.SearchHandler>
     ...

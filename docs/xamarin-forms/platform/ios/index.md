@@ -6,13 +6,13 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/22/2019
-ms.openlocfilehash: c90cfc297914b585403ae84e7dbac11fd6e02836
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.date: 12/11/2019
+ms.openlocfilehash: 5d0e289ddeb7eabef6d96c8882c772c704c54b34
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170944"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489724"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>fonctionnalités de la plateforme iOS dans Xamarin. Forms
 
@@ -33,11 +33,12 @@ Les fonctionnalités suivantes propres à la plateforme sont fournies pour les v
 - Définition de la couleur d’arrière-plan [`Cell`](xref:Xamarin.Forms.Cell) . Pour plus d’informations, consultez [couleur d’arrière-plan de la cellule sur iOS](cell-background-color.md).
 - S’assurer qu’entrée texte s’adapte à un [ `Entry` ](xref:Xamarin.Forms.Entry) en ajustant la taille de police. Pour plus d’informations, consultez [taille de police d’entrée sur iOS](entry-font-size.md).
 - Définir la couleur du curseur dans un [ `Entry` ](xref:Xamarin.Forms.Entry). Pour plus d’informations, consultez [couleur du curseur d’entrée sur iOS](entry-cursor-color.md).
-- Contrôle de la flotte des cellules d’en-tête [`ListView`](xref:Xamarin.Forms.ListView) au cours du défilement. Pour plus d’informations, consultez [style d’en-tête de groupe ListView sur iOS](listview-group-header-style.md).
-- Contrôle de la désactivation des animations de lignes lorsque la collection d’éléments [`ListView`](xref:Xamarin.Forms.ListView) est en cours de mise à jour. Pour plus d’informations, consultez [animations de lignes ListView sur iOS](listview-row-animations.md).
+- Contrôle de la [`ListView`](xref:Xamarin.Forms.ListView) des cellules d’en-tête flottantes lors du défilement. Pour plus d’informations, consultez [style d’en-tête de groupe ListView sur iOS](listview-group-header-style.md).
+- Contrôle de la désactivation des animations de lignes lors de la mise à jour de la collection d’éléments [`ListView`](xref:Xamarin.Forms.ListView) . Pour plus d’informations, consultez [animations de lignes ListView sur iOS](listview-row-animations.md).
 - Définir le style du séparateur sur un [ `ListView` ](xref:Xamarin.Forms.ListView). Pour plus d’informations, consultez [style de séparateur ListView sur iOS](listview-separator-style.md).
 - Contrôle si la sélection d’éléments se produit dans un [ `Picker` ](xref:Xamarin.Forms.Picker). Pour plus d’informations, consultez [sélection d’un élément de sélecteur sur iOS](picker-selection.md).
 - L’activation de la [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value) propriété à définir en appuyant sur une position sur le [ `Slider` ](xref:Xamarin.Forms.Slider) barre, plutôt que d’avoir à faire glisser le `Slider` thumb. Pour plus d’informations, consultez [curseur sur iOS](slider-thumb.md).
+- Contrôle de la transition utilisée lors de l’ouverture d’un `SwipeView`. Pour plus d’informations, consultez [mode de transition par balayage SwipeView](swipeview-swipetransitionmode.md).
 
 Les fonctionnalités suivantes propres à la plateforme sont fournies pour les pages Xamarin. Forms sur iOS :
 
@@ -66,7 +67,7 @@ Xamarin. Forms permet de définir des couleurs et des styles d’interface utili
 
 [En savoir plus](formatting.md) sur la mise en forme de l’interface utilisateur à l’aide d’API spécifiques à iOS, telles que la configuration d' **info. plist** et l’API `UIAppearance`.
 
-![](images/status-white-sml.png "Thèmes iOS")
+![](images/status-white-sml.png "iOS Theming")
 
 ## <a name="other-ios-features"></a>Autres fonctionnalités iOS
 

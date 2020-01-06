@@ -6,13 +6,13 @@ ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/30/2019
-ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.date: 12/04/2019
+ms.openlocfilehash: e115014728cce9252a92740b6db5beab582f61ed
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959138"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489867"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Liaisons relatives Xamarin. Forms
 
@@ -23,7 +23,7 @@ Les liaisons relatives fournissent la possibilité de définir la source de liai
 L’extension de balisage `RelativeSource` est prise en charge par la classe `RelativeSourceExtension`, qui définit les propriétés suivantes :
 
 - `Mode`, de type `RelativeBindingSourceMode`, décrit l’emplacement de la source de liaison par rapport à la position de la cible de liaison.
-- `AncestorLevel`, de type `int`, un niveau d’ancêtre facultatif à rechercher, lorsque la propriété `Mode` est `FindAncestor`.
+- `AncestorLevel`, de type `int`, un niveau d’ancêtre facultatif à rechercher, lorsque la propriété `Mode` est `FindAncestor`. Une `AncestorLevel` de `n` ignore `n-1` instances du `AncestorType`.
 - `AncestorType`, de type `Type`, le type d’ancêtre à rechercher, lorsque la propriété `Mode` est `FindAncestor`.
 
 > [!NOTE]
@@ -82,7 +82,10 @@ Les modes de liaison relative `FindAncestor` et `FindAncestorBindingContext` son
 
 Si la propriété `Mode` n’est pas définie explicitement, la définition de la propriété `AncestorType` sur un type qui dérive de [`Element`](xref:Xamarin.Forms.Element) définira implicitement la propriété `Mode` sur `FindAncestor`. De même, si vous affectez à la propriété `AncestorType` un type qui ne dérive pas de `Element`, la propriété `Mode` est implicitement définie sur `FindAncestorBindingContext`.
 
-Le code XAML suivant montre un exemple dans lequel la propriété `Mode` est implicitement définie sur `FindAncestorBindingContext` :
+> [!NOTE]
+> Les liaisons relatives qui utilisent le mode de `FindAncestorBindingContext` sont réappliquées lorsque la `BindingContext` de tous les ancêtres change.
+
+Le code XAML suivant montre un exemple dans lequel la propriété `Mode` est implicitement définie sur `FindAncestorBindingContext`:
 
 ```xaml
 <ContentPage ...

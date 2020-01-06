@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78f8c8d1340c6bb1063e59ad03485d8b9b807c58
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032274"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488996"
 ---
 # <a name="ios-platform-features-overview"></a>vue d’ensemble des fonctionnalités de la plateforme iOS
 
@@ -53,7 +53,7 @@ iOS a deux applications liées au calendrier intégrées : l’application de c
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[extensions iOS](~/ios/platform/extensions.md)
 
-Les extensions, telles qu’introduites dans iOS 8, sont des `UIViewControllers` spécialisées présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, lorsque les types de clavier personnalisés demandés par l’utilisateur exécutent une entrée spécialisée ou d’autres contextes tels que modification d’une photo dans laquelle l’extension peut fournir des filtres d’effet spéciaux.
+Les extensions, telles qu’introduites dans iOS 8, sont des `UIViewControllers` spécialisées présentées par iOS dans des contextes standard tels que dans le **Centre de notifications**, en tant que types de clavier personnalisés demandés par l’utilisateur pour effectuer des entrées spécialisées ou d’autres contextes tels que la modification d’une photo dans laquelle l’extension peut fournir des filtres d’effet spéciaux.
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[Graphiques et animation dans iOS](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -125,9 +125,9 @@ Le kit de texte est une nouvelle API qui offre de puissantes fonctionnalités de
 
 Cet article fournit une introduction à l’utilisation des nouvelles API tactiles 3D pour ajouter des gestes sensibles à la pression à vos applications Xamarin. iOS qui s’exécutent sur les nouveaux appareils iPhone 6S et iPhone 6S plus.
 
-## <a name="touch-idiosplatformtouchidmd"></a>[Touch ID](~/ios/platform/touchid.md)
+## <a name="touch-id-and-face-id-with-xamariniosiosplatformtouch-id-face-idmd"></a>[Id tactile et ID de visage avec Xamarin. iOS](~/ios/platform/touch-id-face-id.md)
 
-Touch ID a été introduit dans iOS 7 comme un moyen d’authentifier l’utilisateur, similaire à un code secret. Toutefois, il était limité au déverrouillage de l’appareil à l’aide de l’App Store, en utilisant iTunes et en authentifiant uniquement le trousseau iCloud.
+Touch ID et face ID sont des systèmes d’authentification biométriques disponibles depuis iOS 8. Cet article et cet exemple décrivent comment utiliser Touch ID et face ID avec Xamarin. iOS.
 
 ## <a name="user-notificationsiosplatformuser-notificationsindexmd"></a>[Notifications de l’utilisateur](~/ios/platform/user-notifications/index.md)
 

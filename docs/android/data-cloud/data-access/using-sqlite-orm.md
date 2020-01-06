@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 96f084dc49a5558767b162eee59eff722f247904
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ff59213a730b74b916b993c48a6f5f779149a6f9
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023671"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488073"
 ---
 # <a name="using-sqlitenet-with-android"></a>Utilisation de SQLite.NET avec Android
 
@@ -128,9 +128,9 @@ Les attributs courants que vous pouvez appliquer à vos classes pour contrôler 
 
 - **[AutoIncrement]** &ndash; cet attribut entraîne l’incrémentation automatique de la valeur d’une propriété entière pour chaque nouvel objet inséré dans la base de données.
 
-- **[Column (Name)]** &ndash; la spécification du paramètre facultatif `name` remplacera la valeur par défaut du nom de la colonne de base de données sous-jacente (qui est identique à la propriété).
+- **[Column (Name)]** &ndash; le paramètre `name` définit le nom de la colonne de base de données sous-jacente.
 
-- **[Table (Name)]** &ndash; marque la classe comme pouvant être stockée dans une table SQLite sous-jacente. La spécification du paramètre de nom facultatif remplace la valeur par défaut du nom de la table de base de données sous-jacente (qui est identique au nom de la classe).
+- **[Table (Name)]** &ndash; marque la classe comme pouvant être stockée dans une table SQLite sous-jacente avec le nom spécifié.
 
 - **[MaxLength (value)]** &ndash; limiter la longueur d’une propriété de texte, en cas de tentative d’insertion d’une base de données. La consommation de code doit valider cela avant l’insertion de l’objet, car cet attribut est uniquement « Checked » lorsqu’une opération d’insertion ou de mise à jour de base de données est tentée.
 
@@ -139,7 +139,7 @@ Les attributs courants que vous pouvez appliquer à vos classes pour contrôler 
 
 - **[Unique]** &ndash; garantit que les valeurs de la colonne de base de données sous-jacente sont uniques.
 
-La plupart de ces attributs sont facultatifs, SQLite utilise les valeurs par défaut pour les noms de table et de colonne. Vous devez toujours spécifier une clé primaire entière pour que les requêtes de sélection et de suppression puissent être effectuées efficacement sur vos données.
+La plupart de ces attributs sont facultatifs. Vous devez toujours spécifier une clé primaire entière pour que les requêtes de sélection et de suppression puissent être effectuées efficacement sur vos données.
 
 ## <a name="more-complex-queries"></a>Requêtes plus complexes
 

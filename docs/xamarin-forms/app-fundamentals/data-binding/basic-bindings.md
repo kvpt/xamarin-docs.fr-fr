@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771717"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545663"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Liaisons de base Xamarin.Forms
 
@@ -24,7 +24,7 @@ Une liaison de données Xamarin.Forms lie une paire de propriétés entre deux o
 - La *cible* est l’objet (et la propriété) sur lequel la liaison de données est définie.
 - La *source* est l’objet (et la propriété) référencé par la liaison de données.
 
-Cette distinction peut parfois porter à confusion : Dans le cas le plus simple, les données circulent de la source vers la cible, ce qui signifie que la valeur de la propriété cible est définie à partir de la valeur de la propriété source. Toutefois, dans certains cas, les données peuvent également circuler de la cible vers la source ou dans les deux sens. Pour éviter toute confusion, n’oubliez pas que la cible est toujours l’objet sur lequel la liaison de données est définie, même si elle fournit des données au lieu d’en recevoir.
+Cette distinction peut parfois porter à confusion : dans le cas le plus simple, les données circulent de la source vers la cible, ce qui signifie que la valeur de la propriété cible est définie à partir de la valeur de la propriété source. Toutefois, dans certains cas, les données peuvent également circuler de la cible vers la source ou dans les deux sens. Pour éviter toute confusion, n’oubliez pas que la cible est toujours l’objet sur lequel la liaison de données est définie, même si elle fournit des données au lieu d’en recevoir.
 
 ## <a name="bindings-with-a-binding-context"></a>Liaisons avec un contexte de liaison
 
@@ -87,7 +87,7 @@ Cette règle implique que l’objet cible doit être une instance d’une classe
 
 Il n’y a pas de règle de ce type pour la propriété source, qui est spécifiée en tant que chaîne. En interne, la réflexion est utilisée pour accéder à la propriété réelle. Dans ce cas particulier, toutefois, la propriété `Value` repose également sur une propriété pouvant être liée.
 
-Le code peut être quelque peu simplifié : La propriété pouvant être liée `RotationProperty` est définie par `VisualElement` et héritée par `Label` et `ContentPage`. Par conséquent, le nom de la classe n’est pas requis dans l’appel `SetBinding` :
+Le code peut être quelque peu simplifié : la propriété pouvant être liée `RotationProperty` est définie par `VisualElement` et héritée par `Label` et `ContentPage`. Par conséquent, le nom de la classe n’est pas requis dans l’appel `SetBinding` :
 
 ```csharp
 label.SetBinding(RotationProperty, "Value");
@@ -97,7 +97,7 @@ Toutefois, inclure le nom de classe permet de se rappeler de l’objet cible.
 
 Lorsque vous manipulez l’objet `Slider`, l’objet `Label` pivote en conséquence :
 
-[![Basic Code Binding](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
+[![Liaison de code de base](basic-bindings-images/basiccodebinding-small.png "Liaison de code de base")](basic-bindings-images/basiccodebinding-large.png#lightbox "Liaison de code de base")
 
 La page **Basic Xaml Binding** (Liaison Xaml de base) est identique à la page **Basic Code Binding**, si ce n’est qu’elle définit la liaison de données entière en XAML :
 
@@ -138,7 +138,7 @@ Mais ce n'est pas correct. Ce balisage définit la propriété `BindingContext` 
 
 Notez que la propriété source est spécifiée avec la propriété [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) de `BindingExtension`, qui correspond à la propriété [`Path`](xref:Xamarin.Forms.Binding.Path) de la classe [`Binding`](xref:Xamarin.Forms.Binding).
 
-Le balisage affiché dans la page **Basic XAML Binding** peut être simplifié : Les extensions de balisage XAML telles que `x:Reference` et `Binding` peuvent avoir des attributs de *propriété de contenu* définis, ce qui signifie pour des extensions de balisage XAML que le nom de propriété n’a pas besoin d’apparaître. La propriété `Name` est la propriété de contenu de `x:Reference` et la propriété `Path` est la propriété de contenu de `Binding`, ce qui signifie que vous pouvez les éliminer des expressions :
+Le balisage affiché dans la page **Basic XAML Binding** peut être simplifié : les extensions de balisage XAML telles que `x:Reference` et `Binding` peuvent avoir des attributs de *propriété de contenu* définis, ce qui signifie pour des extensions de balisage XAML que le nom de propriété n’a pas besoin d’apparaître. La propriété `Name` est la propriété de contenu de `x:Reference` et la propriété `Path` est la propriété de contenu de `Binding`, ce qui signifie que vous pouvez les éliminer des expressions :
 
 ```xaml
 <Label Text="TEXT"
@@ -193,11 +193,11 @@ Le constructeur `Binding` possède 6 paramètres, si bien que le paramètre `so
 
 L’exécution de ce programme peut être quelque peu surprenante :
 
-[![Alternative Code Binding](basic-bindings-images/alternativecodebinding-small.png "Alternative Code Binding")](basic-bindings-images/alternativecodebinding-large.png#lightbox "Alternative Code Binding")
+[![Autre liaison de code](basic-bindings-images/alternativecodebinding-small.png "Autre liaison de code")](basic-bindings-images/alternativecodebinding-large.png#lightbox "Autre liaison de code")
 
 L’écran iOS de gauche montre à quoi ressemble l’écran lorsque la page apparaît initialement. Où est l’objet `Label` ?
 
-Le problème est que l’élément `Slider` a une valeur initiale de 0. Par conséquent, la propriété `Scale` de l’objet `Label` est également définie sur 0, ce qui remplace sa valeur par défaut 1. Il en résulte que l’objet `Label` est initialement invisible. Comme les captures d’écran d’Android et de la plateforme Windows universelle l’illustrent, vous pouvez manipuler l’élément `Slider` pour faire réapparaître l’objet `Label`, mais sa disparition initiale est déconcertante.
+Le problème est que l’élément `Slider` a une valeur initiale de 0. Par conséquent, la propriété `Scale` de l’objet `Label` est également définie sur 0, ce qui remplace sa valeur par défaut 1. Il en résulte que l’objet `Label` est initialement invisible. Comme le montre la capture d’écran Android, vous pouvez manipuler le `Slider` pour que le `Label` réapparaisse, mais sa disparition initiale est disconcertée.
 
 Vous découvrirez dans le [prochain article](binding-mode.md) comment éviter ce problème en initialisant l’élément `Slider` à partir de la valeur par défaut de la propriété `Scale`.
 
@@ -255,7 +255,7 @@ Bien que les extensions de balisage XAML soient généralement délimitées par 
 </Label>
 ```
 
-Maintenant, les propriétés `Source` et `Path` sont des attributs XAML réguliers : Les valeurs apparaissent entre guillemets et les attributs ne sont pas séparés par une virgule. L’extension de balisage `x:Reference` peut également devenir un élément objet :
+Maintenant, les propriétés `Source` et `Path` sont des attributs XAML réguliers : les valeurs apparaissent entre guillemets et les attributs ne sont pas séparés par une virgule. L’extension de balisage `x:Reference` peut également devenir un élément objet :
 
 ```xaml
 <Label Text="TEXT"
@@ -325,7 +325,7 @@ L’exemple **Binding Context Inheritance** (Héritage du contexte de liaison) e
 
 La propriété `BindingContext` de `StackLayout` est définie sur l’élément `slider`. Ce contexte de liaison est hérité par les deux objets `Label` et `BoxView`, qui ont tous les deux leur propriété `Rotation` définie sur la propriété `Value` de l’élément `Slider` :
 
-[![Binding Context Inheritance](basic-bindings-images/bindingcontextinheritance-small.png "Binding Context Inheritance")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Binding Context Inheritance")
+[![Héritage du contexte de liaison](basic-bindings-images/bindingcontextinheritance-small.png "Héritage du contexte de liaison")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "Héritage du contexte de liaison")
 
 Dans le [prochain article](binding-mode.md), vous verrez comment le *mode de liaison* peut modifier le flux de données entre les objets cible et source.
 

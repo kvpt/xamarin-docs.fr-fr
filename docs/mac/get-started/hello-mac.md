@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: cb5eb783109f4758fcbc997c4f2bf4a93aaa262b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018126"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489737"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – Procédure pas à pas
 
@@ -33,12 +33,12 @@ Les concepts suivants sont abordés :
 - **Outlets et actions** : comment utiliser les outlets et actions pour relier des contrôles dans l’interface utilisateur.
 - **Déploiement/tests** : comment exécuter et tester une application Xamarin.Mac.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 Le développement d’applications Xamarin.Mac nécessite :
 
 - Un ordinateur Mac exécutant macOS High Sierra (10.13) ou une version ultérieure.
-- [Xcode 9 ou une version ultérieure](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xcode 10 ou version ultérieure](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
 - La dernière version de [Xamarin.Mac et Visual Studio pour Mac](https://docs.microsoft.com/visualstudio/mac/installation/).
 
 Pour exécuter une application générée avec Xamarin.Mac, vous aurez besoin des éléments suivants :
@@ -63,7 +63,7 @@ Pour commencer, effectuez les étapes suivantes :
 
     [![](hello-mac-images/setup02-sml.png "Selecting a Cocoa App")](hello-mac-images/setup02.png#lightbox)
 
-3. Entrez `Hello_Mac` pour **Nom de l’application** et gardez toutes les autres valeurs par défaut. Cliquez sur **Suivant** :
+3. Entrez `Hello_Mac` pour **Nom de l’application** et gardez toutes les autres valeurs par défaut. Cliquez sur**Suivant** :
 
     [![](hello-mac-images/setup03-sml.png "Setting the name of the app")](hello-mac-images/setup03.png#lightbox)
 
@@ -387,7 +387,7 @@ Ce fichier stub `.h` reflète le fichier `ViewController.designer.cs` ajouté au
 
 Une fois quelques notions de base acquises sur les **outlets** et **actions**, créez un **outlet** pour exposer l’étiquette créée à notre code C#.
 
-Effectuez ce qui suit :
+procédez comme suit :
 
 1. Dans Xcode, dans le coin supérieur tout à droite de l’écran, cliquez sur le bouton **Double Circle** (Cercle double) pour ouvrir l’**Assistant Editor** (Éditeur d’Assistant) :
 
@@ -425,7 +425,7 @@ Effectuez ce qui suit :
 
 Ensuite, exposez le bouton au code C#. Tout comme l’étiquette ci-dessus, le développeur peut associer le bouton à un **outlet**. Étant donné que nous voulons uniquement répondre au bouton sur lequel le clic est effectué, utilisez une **action** à la place.
 
-Effectuez ce qui suit :
+procédez comme suit :
 
 1. Vérifiez que Xcode est encore dans l’**Éditeur d’Assistant** et que le fichier **ViewController.h** est visible dans l’**Éditeur de code**.
 

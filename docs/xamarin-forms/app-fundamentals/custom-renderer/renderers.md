@@ -6,13 +6,13 @@ ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/11/2019
-ms.openlocfilehash: a11bbbc40cd209f90d03817fc81f58bd5661bd23
-ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
+ms.date: 12/13/2019
+ms.openlocfilehash: ead643357b3ef88f3099c6ee03cda694a8ea1971
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823881"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489243"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Classes de base de renderer et contrôles natifs
 
@@ -81,6 +81,7 @@ Le tableau suivant liste les classes de renderer et de contrôle natif qui impl�
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
 |[`Image`](xref:Xamarin.Forms.Image)|ImageRenderer|UIImageView|ImageView||Image|
 |[`ImageButton`](xref:Xamarin.Forms.ImageButton)|ImageButtonRenderer|UIButton||AppCompatImageButton|Button|
+|`IndicatorView`|IndicatorViewRenderer|UIPageControl||LinearLayout||
 |[`Label`](xref:Xamarin.Forms.Label)|LabelRenderer|UILabel|TextView||TextBlock|
 |[`ListView`](xref:Xamarin.Forms.ListView)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|Affichage de liste||Affichage de liste|
 |[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MKMapView||MapControl|
@@ -90,6 +91,7 @@ Le tableau suivant liste les classes de renderer et de contrôle natif qui impl�
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
 |[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||Curseur|
 |[`Stepper`](xref:Xamarin.Forms.Stepper)|StepperRenderer|UIStepper|LinearLayout||Contrôle|
+|`SwipeView`|SwipeViewRenderer|UIView||Consultez la rubrique .|SwipeControl|
 |[`Switch`](xref:Xamarin.Forms.Switch)|SwitchRenderer|UISwitch|Basculer|SwitchCompat|Bouton bascule|
 |[`TableView`](xref:Xamarin.Forms.TableView)|TableViewRenderer|UITableView|Affichage de liste||Affichage de liste|
 |[`TimePicker`](xref:Xamarin.Forms.TimePicker)|TimePickerRenderer|UITextField|EditText||Sélecteur d'heure|

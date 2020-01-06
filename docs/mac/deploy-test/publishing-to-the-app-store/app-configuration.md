@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 545c1cef26d3bbf85b490492347f4f63b42269a9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7db7edd4d8143f4e456f59b97de51e3c1d202dc0
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021699"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489399"
 ---
 # <a name="mac-app-configuration"></a>Configuration d’application Mac
 
@@ -20,7 +20,7 @@ ms.locfileid: "73021699"
 
 Cliquez avec le bouton droit sur le projet d’application Mac dans Visual Studio pour Mac, puis choisissez **Options**.
 
-### <a name="application-settings"></a>Paramètres d’application
+### <a name="application-settings"></a>Paramètres d'application
 
 Pour modifier les paramètres d’une application Xamarin.Mac, double-cliquez sur le fichier **Info.plist** dans le **Panneau Solutions** :
 
@@ -48,9 +48,9 @@ La section **Build Mac** de la boîte de dialogue **Options du projet** permet a
 
  [![Modification des paramètres de build](app-configuration-images/config03.png "Modification des paramètres de build")](app-configuration-images/config03-large.png#lightbox)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Installation](/visualstudio/mac/installation/)
-- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
+- [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

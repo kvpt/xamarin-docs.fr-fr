@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770507"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545567"
 ---
 # <a name="the-path-fill-types"></a>Types de remplissage des tracés
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrir les différents effets possibles avec les types de remplissage de chemin d’accès SkiaSharp_
 
 Deux profils dans un chemin d’accès peuvent se chevaucher, et les lignes qui composent un contour unique peuvent se chevaucher. Toute zone délimitée peut potentiellement être remplie, mais vous souhaiterez peut-être pas remplir toutes les zones fermées. Voici un exemple :
 
-![](fill-types-images/filltypeexample.png "Pointes cinq étoiles partiellement filles")
+![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
 Vous contrôlez un peu cela. L’algorithme de remplissage est régie par le [ `SKFillType` ](xref:SkiaSharp.SKPath.FillType) propriété du `SKPath`, que vous définissez à un membre de la [ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType) énumération :
 
@@ -170,9 +170,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 En règle générale, le type de remplissage de chemin d’accès doit affecter uniquement des remplissages et des traits pas, mais les deux `Inverse` modes affectent les remplissages et les traits. Pour les remplissages, les deux `Inverse` types remplir des zones afin que la zone en dehors de l’étoile est remplie. Pour les tracés, les deux `Inverse` types tout sauf le trait de couleur. À l’aide de ces types de remplissage inverse peut produire des effets impairs, comme le montre la capture d’écran iOS :
 
-[![](fill-types-images/fivepointedstar-small.png "Capture d’écran triple de la page en étoile Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Triple capture d’écran de la page en étoile Five-Pointed")
+[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
-Les captures d’écran Android et UWP montrent les effets de pair-impair et enroulement typiques, mais l’ordre de trait et de remplissage affecte également les résultats.
+La capture d’écran Android affiche les effets pair-impair et d’enroulement classiques, mais l’ordre du trait et du remplissage affecte également les résultats.
 
 L’algorithme enroulement est dépendante de la direction que les lignes sont dessinées. Généralement lorsque vous créez un chemin d’accès, vous pouvez contrôler cette direction en tant que vous spécifiez que les lignes sont dessinées à partir d’un point vers un autre. Toutefois, le `SKPath` classe définit également les méthodes, telles que `AddRect` et `AddCircle` qui dessiner les contours entières. Pour contrôler la façon dont ces objets sont dessinés, les méthodes incluent un paramètre de type [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection), qui a deux membres :
 
@@ -223,7 +223,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Il s’agit d’une image intéressante créée avec un minimum de code :
 
-[![](fill-types-images/overlappingcircles-small.png "Capture d’écran triple de la page de cercles qui se chevauchent")](fill-types-images/overlappingcircles-large.png#lightbox "Triple capture d’écran de la page de cercles qui se chevauchent")
+[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
 ## <a name="related-links"></a>Liens associés
 

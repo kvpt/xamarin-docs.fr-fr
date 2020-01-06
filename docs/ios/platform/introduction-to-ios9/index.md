@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031783"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488944"
 ---
 # <a name="introduction-to-ios-9"></a>Introduction à iOS 9
 
@@ -141,7 +141,7 @@ Dans iOS 9, Apple a amélioré le trousseau pour fournir un nouveau type de clé
 - Access Control entropie de liste (à l’aide de l’option de mot de passe d’application) pour le chiffrement d’élément de trousseau fourni par l’application.
 - Prise en charge de la génération et de l’utilisation de clés à l’intérieur de l’enclave sécurisée (via l’attribut `kSecAttrTokenIDSecureEnclave`).
 
-Pour plus d’informations, consultez notre [Introduction à la documentation Touch ID](~/ios/platform/touchid.md) .
+Pour plus d’informations, consultez [id tactile et ID facial dans Xamarin. iOS](~/ios/platform/touch-id-face-id.md).
 
 ## <a name="right-to-left-language-support"></a>Prise en charge des langues de droite à gauche
 
@@ -191,7 +191,7 @@ Nous disposons de quelques [exemples spécifiques à IOS 9](https://docs.microso
 - [CollectionView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/CollectionView)
 - [MetalPerformanceShadersHelloWorld](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-metalperformanceshadershelloworld)
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
-- [Photoprogression](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
+- [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
 - [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)

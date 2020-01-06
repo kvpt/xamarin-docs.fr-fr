@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
-ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
+ms.openlocfilehash: d94f18d00ebf6eeec5f33343b5c0f985ba2a6ea8
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884122"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655405"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>Rechargement à chaud XAML pour Xamarin. Forms (version préliminaire)
 
@@ -20,6 +20,8 @@ Le rechargement à chaud XAML se connecte à votre flux de travail existant pour
 
 > [!NOTE]
 > Si vous écrivez une application WPF ou UWP, consultez [rechargement à chaud XAML pour UWP et WPF](/visualstudio/debugger/xaml-hot-reload).
+>
+> Le rechargement à chaud XAML pour Xamarin. Forms ne fonctionne _pas_ actuellement pour les projets UWP Xamarin. Forms.
 
 ## <a name="system-requirements"></a>Configuration requise
 
@@ -49,6 +51,7 @@ Si vous apportez une modification que le rechargement à chaud XAML ne peut pas 
 - Toutes les références créées en affectant un contrôle à un autre champ ou propriété à l’aide de sa valeur `x:Name` ne sont pas rechargées.
 - La mise à jour de la hiérarchie visuelle de votre application de Shell dans **AppShell. Xaml** peut entraîner des problèmes de maintenance de l’état de votre application. Régénérez l’application pour continuer le rechargement.
 - Le rechargement à chaud XAML C# ne peut pas recharger le code, y compris les gestionnaires d’événements, les contrôles personnalisés, la page code-behind et les autres classes.
+- Ne fonctionne _pas_ sur d’autres plateformes prises en charge par Xamarin. Forms (telles que Mac OS ou UWP).
 
 ## <a name="migrate-from-the-private-preview"></a>Migrer à partir de la version préliminaire privée
 

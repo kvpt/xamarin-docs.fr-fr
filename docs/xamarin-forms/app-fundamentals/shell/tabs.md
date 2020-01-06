@@ -6,13 +6,13 @@ ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.date: 11/06/2019
+ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888984"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489832"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Onglets Shell Xamarin.Forms
 
@@ -50,7 +50,7 @@ L’application Shell la plus simple est une application monopage, créée en aj
 
 Cet exemple de code génère l’application monopage suivante :
 
-[![Capture d’écran d’une application Shell monopage sur iOS et Android](tabs-images/single-page-app.png "Application Shell monopage")](tabs-images/single-page-app-large.png#lightbox "Application Shell monopage")
+[![Capture d’écran d’une application à page unique shell, sur iOS et Android](tabs-images/single-page-app.png "Application à page unique de l’interpréteur de commandes")](tabs-images/single-page-app-large.png#lightbox "Application à page unique de l’interpréteur de commandes")
 
 > [!NOTE]
 > Pour masquer la barre de navigation, si nécessaire, définissez la propriété jointe `Shell.NavBarIsVisible` sur `false` sur l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage).
@@ -70,7 +70,7 @@ Shell comporte des opérateurs de conversion implicite qui permettent de simplif
 Cette conversion implicite encapsule automatiquement l’objet [`ContentPage`](xref:Xamarin.Forms.ContentPage) dans un objet `ShellContent`, qui est encapsulé dans un objet `Tab`, lui-même encapsulé dans un objet `FlyoutItem`. Un menu volant n’est pas nécessaire dans une application monopage ; par conséquent, la propriété `Shell.FlyoutBehavior` est définie sur `Disabled`.
 
 > [!IMPORTANT]
-> Dans une application Shell, chaque [`ContentPage`](xref:Xamarin.Forms.ContentPage) qui est un enfant d’un objet `ShellContent` est créé au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
+> Dans une application Shell, tous les [`ContentPage`](xref:Xamarin.Forms.ContentPage) enfants d’un objet `ShellContent` sont créés au démarrage de l’application. L’ajout d’autres objets `ShellContent` avec cette approche crée des pages supplémentaires au démarrage de l’application, ce qui peut nuire à l’expérience de démarrage. Toutefois, Shell est également capable de créer des pages à la demande en réponse à la navigation. Pour plus d’informations, voir [Chargement efficace des pages](tabs.md#efficient-page-loading).
 
 ## <a name="bottom-tabs"></a>Onglets du bas
 
@@ -100,7 +100,11 @@ Les objets `Tab` sont rendus sous forme d'onglets inférieurs, à condition qu'i
 
 Le titre et l’icône des onglets, définis sur chaque objet `Tab`, s’affichent dans les onglets du bas :
 
-[![Capture d’écran d’une application Shell comportant deux pages avec onglets en bas sur iOS et Android](tabs-images/two-page-app-bottom-tabs.png "Application Shell comportant deux pages avec onglets en bas")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "Application Shell comportant deux pages avec onglets en bas")
+[![Capture d’écran d’une application Shell à deux pages avec des onglets inférieurs, sur iOS et Android](tabs-images/two-page-app-bottom-tabs.png "Application Shell à deux pages avec onglets inférieurs")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "Application Shell à deux pages avec onglets inférieurs")
+
+Lorsqu’il existe plus de cinq onglets, un onglet **plus** s’affiche, qui peut être utilisé pour accéder aux onglets supplémentaires :
+
+[![Capture d’écran d’une application Shell avec un onglet plus, sur iOS et Android](tabs-images/more-tabs.png "Application Shell avec onglets supplémentaires")](tabs-images/more-tabs-large.png#lightbox "Shellapp avec plus d’onglets")
 
 Les opérateurs de conversion implicite de Shell peuvent sinon permettre de supprimer les objets `ShellContent` et `Tab` de l’exemple précédent :
 
@@ -213,7 +217,7 @@ Lorsque plusieurs objets `ShellContent` sont présents dans un objet `Tab`, une 
 
 En résulte la disposition des captures d’écran suivantes :
 
-[![Capture d’écran d’une application Shell comportant deux pages avec onglets en haut et en bas sur iOS et Android](tabs-images/two-page-app-top-tabs.png "Application Shell comportant deux pages avec onglets en haut et en bas")](tabs-images/two-page-app-top-tabs-large.png#lightbox "Application Shell comportant deux pages avec onglets en haut et en bas")
+[![Capture d’écran d’une application Shell à deux pages avec onglets supérieur et inférieur, sur iOS et Android](tabs-images/two-page-app-top-tabs.png "Application Shell à deux pages avec onglets supérieur et inférieur")](tabs-images/two-page-app-top-tabs-large.png#lightbox "Application Shell à deux pages avec onglets supérieur et inférieur")
 
 Les opérateurs de conversion implicite de Shell peuvent sinon permettre de supprimer les objets `ShellContent` et le deuxième objet `Tab` de l’exemple précédent :
 
@@ -289,7 +293,7 @@ L’exemple suivant en montre un qui définit différentes propriétés de coule
 </Style>
 ```
 
-Il est également possible de styliser les onglets avec des feuilles de style en cascade (CSS). Pour plus d’informations, voir [Propriétés spécifiques Shell Xamarin.Forms](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
+Il est également possible de styliser les onglets avec des feuilles de style en cascade (CSS). Pour plus d’informations, consultez [Propriétés spécifiques de Xamarin.Forms Shell](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties).
 
 ## <a name="related-links"></a>Liens connexes
 

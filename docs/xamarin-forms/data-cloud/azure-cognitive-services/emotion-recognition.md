@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 4dedcb0869c1e965679812239b1de09f07efa875
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869396"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487618"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Reconnaissance des émotions perçues à l’aide de l’API Visage
 
@@ -20,11 +20,16 @@ ms.locfileid: "68869396"
 
 La API Visage peut effectuer la détection d’émotion pour détecter colère, satentant, dégoût, peur, bonheur, neutral, tristesse et surprise, dans une expression faciale basée sur des annotations perçues par des codeurs humains. Il est important de noter, cependant, que les expressions faciales seules ne peuvent pas nécessairement représenter les États internes des personnes.
 
-En plus de retourner un résultat émotion pour une expression faciale, le API Visage peut également retourner un cadre englobant pour les visages détectés. Notez qu’une clé API doit être obtenue pour utiliser l’API visage. Cela peut être obtenue au [essayez Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+En plus de retourner un résultat émotion pour une expression faciale, le API Visage peut également retourner un cadre englobant pour les visages détectés.
 
 Reconnaissance des émotions peut être effectuée via une bibliothèque de client et via l’API REST. Cet article se concentre sur l’exécution de la reconnaissance des émotions via l’API REST. Pour plus d’informations sur l’API REST, consultez [API REST de visage](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
 L’API visage peut également servir à reconnaître les expressions faciales des personnes dans la vidéo et peut retourner un résumé de leurs émotions. Pour plus d’informations, consultez [comment analyser des vidéos en temps réel](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/).
+
+> [!NOTE]
+> Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
+
+Une clé d’API doit être obtenue pour utiliser le API Visage. Cela peut être obtenue au [essayez Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
 
 Pour plus d’informations sur l’API visage, consultez [API visage](/azure/cognitive-services/face/overview/).
 
@@ -170,7 +175,7 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 
 La capture d’écran suivante montre le résultat du processus de reconnaissance d’émotions dans l’exemple d’application :
 
-![](emotion-recognition-images/emotion-recognition.png "Reconnaissance des émotions")
+![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
 
 ## <a name="related-links"></a>Liens connexes
 

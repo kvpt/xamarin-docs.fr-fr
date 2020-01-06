@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 658bb65c9f9dea2c68b782736de02d95df368dd3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 97c582ada0951f530885359112c3c7adfacc3502
+ms.sourcegitcommit: bdb8ad7337931adf2ea45b10c2af81ecc4aad26a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024855"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75500239"
 ---
 # <a name="creating-a-service"></a>Création d'un service
 
@@ -75,7 +75,7 @@ L’étape suivante consiste à examiner comment démarrer un service, puis à e
 
 La méthode la plus simple pour démarrer un service dans Android est de distribuer un `Intent` qui contient des métadonnées pour aider à identifier le service qui doit être démarré. Il existe deux styles différents d’intentions qui peuvent être utilisés pour démarrer un service :
 
-- Une **intention explicite &ndash; une** _intention explicite_ identifiera exactement le service qui doit être utilisé pour effectuer une action donnée. Une intention explicite peut être considérée comme une lettre qui a une adresse spécifique ; Android acheminera l’intention vers le service explicitement identifié. Cet extrait de code est un exemple d’utilisation d’une intention explicite pour démarrer un service appelé `DownloadService` :
+- Une **intention explicite &ndash; une** _intention explicite_ identifiera exactement le service qui doit être utilisé pour effectuer une action donnée. Une intention explicite peut être considérée comme une lettre qui a une adresse spécifique ; Android acheminera l’intention vers le service explicitement identifié. Cet extrait de code est un exemple d’utilisation d’une intention explicite pour démarrer un service appelé `DownloadService`:
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ La méthode la plus simple pour démarrer un service dans Android est de distrib
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
-- L' **intention implicite** &ndash; ce type d’intention identifie faiblement l’action que l’utilisateur souhaite effectuer, mais le service exact pour terminer cette action est inconnu. Une intention implicite peut être considérée comme une lettre adressée « à qui elle peut poser problème... ».
+- L' **intention implicite** &ndash; ce type d’intention identifie faiblement le type d’action que l’utilisateur souhaite effectuer, mais le service exact pour terminer cette action est inconnu. Une intention implicite peut être considérée comme une lettre adressée « à qui elle peut poser problème... ».
     Android examine le contenu de l’intention et détermine s’il existe un service qui correspond à l’intention.
 
     Un _filtre d’intention_ est utilisé pour aider à faire correspondre l’intention implicite avec un service inscrit. Un filtre d’intention est un élément XML qui est ajouté à **fichier AndroidManifest. xml** , qui contient les métadonnées nécessaires pour aider à faire correspondre un service à un but implicite.
@@ -106,7 +106,7 @@ Le mode de distribution de l’intention dépend du type de service et sera abor
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>Création d’un filtre d’intention pour les intentions implicites
 
-Pour associer un service à une intention implicite, une application Android doit fournir des métadonnées pour identifier les fonctionnalités du service. Ces métadonnées sont fournies par des _filtres d’intention_. Les filtres d’intention contiennent des informations, telles qu’une action ou un type de données, qui doivent être présentes dans l’intention de démarrer un service. Dans Xamarin. Android, le filtre d’intention est inscrit dans **fichier AndroidManifest. xml** en décorant un service avec la [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute). Par exemple, le code suivant ajoute un filtre d’intention avec une action associée de `com.xamarin.DemoService` :
+Pour associer un service à une intention implicite, une application Android doit fournir des métadonnées pour identifier les fonctionnalités du service. Ces métadonnées sont fournies par des _filtres d’intention_. Les filtres d’intention contiennent des informations, telles qu’une action ou un type de données, qui doivent être présentes dans l’intention de démarrer un service. Dans Xamarin. Android, le filtre d’intention est inscrit dans **fichier AndroidManifest. xml** en décorant un service avec la [`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute). Par exemple, le code suivant ajoute un filtre d’intention avec une action associée de `com.xamarin.DemoService`:
 
 ```csharp
 [Service]
@@ -130,7 +130,7 @@ Avec les principes fondamentaux d’un service Xamarin. Android, examinons les d
 
 ## <a name="related-links"></a>Liens associés
 
-- [Android. app. service](xref:Android.App.Service)
-- [Android. app. ServiceAttribute](xref:Android.App.ServiceAttribute)
-- [Android. app. intention](xref:Android.Content.Intent)
-- [Android. app. IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android.App.Intent](xref:Android.Content.Intent)
+- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

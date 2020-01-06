@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: davidortinau
 ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7764d63991ec636043982509319e7097ef2091b
+ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016282"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663249"
 ---
 # <a name="binding-objective-c"></a>Liaison Objective-C
 
@@ -48,7 +48,9 @@ Collection de liaisons tierces qui peuvent être utilisées comme référence lo
 
 ## <a name="mac"></a>Mac
 
-La [liaison Mac](~/mac/platform/binding.md) historique est un processus très manuel. Il existe actuellement un [Aperçu](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview) téléchargeable de la prise en charge des projets de liaison Mac pour une version future de Visual Studio pour Mac.
+Suivez les instructions de [liaison Mac](~/mac/platform/binding.md) pour lier les bibliothèques MacOS. Vous pouvez créer une nouvelle **bibliothèque de liaisons Mac** à partir de la fenêtre **nouveau projet** :
+
+[boîte de dialogue de projet ![fichier de nouvelles liaisons Mac](images/new-bindings-library-sml.png)](images/new-bindings-library.png#lightbox)
 
 ## <a name="related-links"></a>Liens associés
 

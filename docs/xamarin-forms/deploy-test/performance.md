@@ -1,18 +1,18 @@
 ---
 title: Améliorer les performances des applications Xamarin.Forms
-description: Il existe plusieurs techniques permettant d’accroître les performances des applications Xamarin.Forms. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+description: Il existe plusieurs techniques permettant d’accroître les performances des applications Xamarin.Forms. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
-ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681338"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487163"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Améliorer les performances des applications Xamarin.Forms
 
@@ -20,9 +20,9 @@ ms.locfileid: "74681338"
 
 **Evolve 2016 : Optimisation des performances des applications avec Xamarin.Forms**
 
-Pour une application, la dégradation des performances peut se traduire de différentes façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, le fait de garantir que l’exécution de certaines opérations ne va pas empêcher l’utilisateur d’effectuer d’autres activités peut améliorer son expérience de l’application.
+Le mauvais niveau de performance d’une application se présente de plusieurs façons. L’application semble ne pas répondre, le défilement de l’affichage est ralenti et la durée de vie de la batterie de l’appareil réduite. Toutefois, l’optimisation des performances implique davantage de choses que l’implémentation d’un code efficace. L’expérience utilisateur liée au niveau de performance de l’application doit également être prise en compte. Par exemple, pour contribuer à améliorer l’expérience utilisateur, vous devez vérifier que les opérations s’exécutent sans empêcher l’utilisateur d’effectuer d’autres activités.
 
-De nombreuses techniques permettent d’accroître les performances, notamment celles qui sont visibles, d’applications Xamarin.Forms. Collectivement, ces techniques peuvent considérablement réduire la charge de travail d’un processeur, de même que la quantité de mémoire consommée par une application.
+De nombreuses techniques permettent d’accroître les performances, notamment celles qui sont visibles, d’applications Xamarin.Forms. Utilisées conjointement, ces techniques peuvent considérablement réduire la charge de travail d’une UC, ainsi que la quantité de mémoire consommée par une application.
 
 > [!NOTE]
 > Avant de lire cet article, lisez d’abord [Performances multiplateformes](~/cross-platform/deploy-test/memory-perf-best-practices.md), qui décrit les techniques indépendantes des plateformes permettant améliorer l’utilisation de la mémoire et les performances des applications générées avec la plateforme Xamarin.
@@ -172,7 +172,7 @@ La réactivité globale de votre application peut être améliorée et les goulo
 - Évitez d’essayer de créer des constructeurs asynchrones. Utilisez plutôt des événements de cycle de vie ou une logique d’initialisation distincte pour `await` correctement toute initialisation. Pour plus d’informations, consultez [constructeurs Async](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html) sur blog.stephencleary.com.
 - Utilisez le modèle de tâche paresseux pour éviter d’attendre que les opérations asynchrones se terminent au démarrage de l’application. Pour plus d’informations, consultez [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/).
 - Créez un wrapper de tâche pour les opérations asynchrones existantes, qui n’utilisent pas le TAP, en créant des objets `TaskCompletionSource<T>`. Ces objets bénéficient des avantages de la programmabilité `Task` et vous permettent de contrôler la durée de vie et l’achèvement des `Task`associés. Pour plus d’informations, consultez [la nature de TaskCompletionSource](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/).
-asynchrone-MVVM-applications-commandes).
+ 
 - Retourne un objet `Task`, au lieu de retourner un objet `Task` attendu, lorsqu’il n’est pas nécessaire de traiter le résultat d’une opération asynchrone. Cette opération est plus performante en raison de la réduction du basculement de contexte.
 - Utilisez la bibliothèque de flux de données de la bibliothèque parallèle de tâches (TPL) dans des scénarios tels que le traitement des données lorsqu’elles sont disponibles, ou lorsque vous avez plusieurs opérations qui doivent communiquer entre elles de manière asynchrone. Pour plus d’informations, consultez flux de données [(bibliothèque parallèle de tâches)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library).
 
@@ -182,7 +182,7 @@ asynchrone-MVVM-applications-commandes).
 - Met à jour les éléments d’interface utilisateur avec des données provenant d’opérations asynchrones sur le thread d’interface utilisateur, pour éviter la levée d’exceptions. Toutefois, les mises à jour de la propriété `ListView.ItemsSource` seront automatiquement marshalées vers le thread d’interface utilisateur. Pour plus d’informations sur la façon de déterminer si le code est en cours d’exécution sur le thread d’interface utilisateur, consultez [Xamarin. Essentials : MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms).
 
     > [!IMPORTANT]
-    > Toutes les propriétés de contrôle qui sont mises à jour via la liaison de données sont automatiquement marsheled au thread d’interface utilisateur.
+    > Toutes les propriétés de contrôle mises à jour via la liaison de données sont automatiquement marshalées vers le thread d’interface utilisateur.
 
 ### <a name="error-handling"></a>Gestion des erreurs
 

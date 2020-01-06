@@ -6,20 +6,20 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: c73144f797447832d795c1379f12a52494c1fbca
-ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
+ms.openlocfilehash: e388df2b4c7201cad01789de1676f79bec8d351e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74536524"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488541"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Bien démarrer avec Xamarin.Essentials
 
 Xamarin.Essentials fournit une API inter-plateformes unique qui fonctionne avec n’importe quelle application Android, iOS ou UWP qui est accessible à partir du code partagé, quel que soit le mode de création de l’interface utilisateur. Pour plus d’informations sur les systèmes d’exploitation pris en charge, consultez le [guide de prise en charge des plateformes et des fonctionnalités](platform-feature-support.md).
 
-## <a name="installation"></a>Installation
+## <a name="installation"></a>Installation de
 
-Xamarin.Essentials est disponible sous forme de package NuGet qui peut être ajouté à n’importe quel projet nouveau ou existant à l’aide de Visual Studio.
+Xamarin. Essentials est disponible sous la forme d’un package NuGet et est inclus dans chaque nouveau projet dans Visual Studio. Il peut Alo être ajouté à tout à l’aide de Visual Studio, en suivant les étapes ci-dessous.
 
 1. Téléchargez et installez [Visual Studio](https://visualstudio.microsoft.com/) avec [Visual Studio Tools pour Xamarin](~/get-started/installation/index.md).
 

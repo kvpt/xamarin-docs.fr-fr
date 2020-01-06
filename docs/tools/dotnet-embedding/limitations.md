@@ -6,12 +6,12 @@ ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a8b63638861e8d44deb4ea72959d7461190f7713
+ms.sourcegitcommit: 6266ef043ae0289f174e901f204f2a280a53c071
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029744"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545804"
 ---
 # <a name="net-embedding-limitations"></a>Limitations de l’incorporation .NET
 
@@ -39,7 +39,7 @@ En fonction de vos besoins, il peut être possible de contourner des parties de 
 
 ## <a name="objective-c-generated-code"></a>Code Objective-C généré
 
-### <a name="nullability"></a>Valeur null
+### <a name="nullability"></a>Possibilité de valeurs nulles
 
 Il n’existe aucune métadonnée dans .NET qui nous indique si une référence null est acceptable ou non pour une API. La plupart des API lèvent `ArgumentNullException` si elles ne peuvent pas faire face à un argument `null`. Cela pose problème car la gestion des exceptions objective-C est mieux évitée.
 
@@ -48,5 +48,11 @@ Il n’existe aucune métadonnée dans .NET qui nous indique si une référence 
 ### <a name="bitcode-ios"></a>Bitcode (iOS)
 
 Actuellement, l’incorporation .NET ne prend pas en charge bitcode sur iOS, qui est activé pour certains modèles de projet XCode. Cette opération doit être désactivée pour lier correctement les frameworks générés.
+
+* Pour iOS, bitcode est facultatif pour envoyer des applications à Apple AppStore. Xamarin. iOS ne le prend pas en charge pour iOS, car le bitcode généré est « assembly inline ». Cela n’offre aucun avantage sur la plateforme iOS, car elle ne peut pas être optimisée côté serveur, mais rend les fichiers binaires plus volumineux et les temps de génération plus longs.
+
+* Pour tvOS et Watchos, bitcode est requis pour envoyer des applications à Apple AppStore. Xamarin. iOS prend en charge bitcode sur tvOS (comme « assembly inline ») et Watchos (comme « LLVM/IR ») pour satisfaire cette exigence.
+
+* Pour macOS, la prise en charge de bitcode n’est pas requise actuellement, ni prise en charge par Xamarin. Mac.
 
 ![Option Bitcode](images/ios-bitcode-option.png)

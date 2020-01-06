@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027748"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487826"
 ---
 # <a name="app-linking-in-android"></a>Liaison d’applications dans Android
 
@@ -36,7 +36,7 @@ Si l’utilisateur n’a pas d’applications installées qui prennent en charge
 
 Ce guide explique comment configurer une application Android 6,0 et comment créer et publier le fichier de liens de ressources numériques pour prendre en charge la liaison d’applications dans Android 6,0.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 Ce guide requiert Xamarin. Android 6,1 et une application qui cible Android 6,0 (niveau d’API 23) ou version ultérieure.
 
@@ -177,7 +177,7 @@ Deux tests peuvent être effectués pour s’assurer que les filtres d’intenti
     - **`Domain`** &ndash; les domaines (séparés par des espaces) dont les liens Web seront gérés par l’application
     - **`Status`** &ndash; il s’agit de l’état actuel de la gestion des liens pour l’application. La valeur **Always** signifie que l’application a `android:autoVerify=true` déclarée et a réussi la vérification du système. Il est suivi d’un nombre hexadécimal représentant l’enregistrement de la préférence du système Android.
 
-    Exemple :
+    Par exemple :
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -195,7 +195,6 @@ Ce guide a abordé le fonctionnement de la liaison d’application dans Android 
 ## <a name="related-links"></a>Liens associés
 
 - [Recherche de la signature MD5 ou SHA1 de votre magasin de clés](~/android/deploy-test/signing/keystore-signature.md)
-- [Activités et intentions](https://university.xamarin.com/classes#4)
 - [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Liens de Google Digital actifs](https://developers.google.com/digital-asset-links/)
 - [Générateur de listes d’instructions et testeur](https://developers.google.com/digital-asset-links/tools/generator)

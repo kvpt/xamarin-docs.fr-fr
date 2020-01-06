@@ -7,20 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: b361cd00121d16752d5eebc971653c8ea185c641
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1bb7ffba11a7135735b7599fa7f12b47d0b347c8
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018108"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489386"
 ---
-# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Profils de provisionnement pour les applications Xamarin.Mac
+# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Profils d’approvisionnement pour les applications Xamarin. Mac
 
 Les profils de provisionnement permettent aux développeurs d’incorporer plusieurs fonctionnalités spécifiques à macOS (anciennement Mac OS X) (comme iCloud et les notifications Push) dans leurs applications Xamarin.Mac. Ils doivent créer, télécharger et installer un profil de provisionnement Mac pour chaque application qu’ils développent et qui utilise ces fonctionnalités.
 
 [![](profiles-images/certif13.png "The Apple Provisioning Portal")](profiles-images/certif13.png#lightbox)
-
-<a name="Development_Provisioning_Profile" />
 
 ## <a name="development-provisioning-profile"></a>Profil de provisionnement de développement
 
@@ -29,7 +27,7 @@ Un profil de provisionnement de développement permet à une application ciblée
 > [!NOTE]
 > Pour pouvoir créer un profil de provisionnement de développement, le développeur doit avoir préalablement créé un certificat de développement Mac. Complétez les informations comme indiqué dans cette capture d’écran pour générer un **profil de provisionnement de développement** pouvant être utilisé pour créer des builds. Un certificat de développement Mac valide doit pouvoir être sélectionné dans la zone **Certificat** et au moins un système doit être inscrit à des fins de test.
 
-Effectuez ce qui suit :
+procédez comme suit :
 
 1. Sélectionnez le type de profil de provisionnement à créer, puis cliquez sur le bouton **Continue** : 
 
@@ -61,13 +59,11 @@ Effectuez ce qui suit :
 
 Un nouveau profil de provisionnement de développement doit être créé pour chaque nouvelle application ou quand un nouvel ordinateur est ajouté en vue d’effectuer des tester dessus.
 
-<a name="Production_Provisioning_Profile" />
-
 ## <a name="production-provisioning-profile"></a>Profil de provisionnement de production
 
 Les profils de provisionnement de production sont obligatoires pour générer un paquet à envoyer au Mac App Store.
 
-Effectuez ce qui suit :
+procédez comme suit :
 
 1. Sélectionnez le type de profil à créer, puis cliquez sur le bouton **Continue** : 
 
@@ -93,10 +89,10 @@ Effectuez ce qui suit :
 
 Si le développeur change les fonctionnalités utilisées par un ID d’application (par exemple, en activant iCloud ou les notifications Push), il doit recréer les profils de provisionnement pour cet ID d’application.
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Installation](~//mac/get-started/installation.md)
-- [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
+- [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [Guide sur les outils : Signature du code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

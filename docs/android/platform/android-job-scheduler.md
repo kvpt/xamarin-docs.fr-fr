@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4d28b80b32ff0d20afbe643d9c000f301a8ea582
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
+ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027811"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75667037"
 ---
 # <a name="android-job-scheduler"></a>Planificateur de travaux Android
 
 _Ce guide explique comment planifier le travail en arrière-plan à l’aide de l’API du planificateur de travaux Android, qui est disponible sur les appareils Android exécutant Android 5,0 (niveau d’API 21) et versions ultérieures._
 
-## <a name="overview"></a>Vue d'ensemble 
+## <a name="overview"></a>Vue d'ensemble de 
 
 L’une des meilleures façons de conserver une application Android réactive à l’utilisateur consiste à s’assurer que le travail complexe ou à long terme est effectué en arrière-plan. Toutefois, il est important que le travail en arrière-plan n’ait pas d’impact négatif sur l’expérience de l’utilisateur avec l’appareil. 
 
@@ -33,7 +33,7 @@ Android fournit les API suivantes pour faciliter l’exécution des tâches en a
 Il existe deux fonctionnalités clés pour effectuer efficacement des tâches en arrière-plan (parfois appelées _travail en arrière-plan_ ou _travail_) :
 
 1. **Planifier intelligemment le travail** &ndash; il est important que lorsqu’une application travaille en arrière-plan et qu’elle le fasse comme un bon citoyen. Dans l’idéal, l’application ne doit pas demander l’exécution d’un travail. Au lieu de cela, l’application doit spécifier des conditions qui doivent être remplies pour que le travail puisse s’exécuter, puis planifier ce travail avec le système d’exploitation qui exécutera le travail lorsque les conditions sont remplies. Cela permet à Android d’exécuter le travail pour garantir une efficacité maximale sur l’appareil. Par exemple, les demandes réseau peuvent être exécutées en même temps pour s’exécuter en même temps afin de tirer le meilleur de la surcharge impliquée dans la mise en réseau.
-2. L' **encapsulation du travail** &ndash; le code pour effectuer le travail en arrière-plan doit être encapsulé dans un composant discret qui peut être exécuté indépendamment de l’interface utilisateur et qui sera relativement facile à replanifier en cas d’échec de l’exécution du travail pour certains donc.
+2. L' **encapsulation du travail** &ndash; le code pour effectuer le travail en arrière-plan doit être encapsulé dans un composant discret qui peut être exécuté indépendamment de l’interface utilisateur et sera relativement facile à replanifier si le travail échoue pour une raison quelconque.
 
 Le planificateur de travaux Android est un Framework intégré au système d’exploitation Android qui fournit une API Fluent pour simplifier la planification du travail en arrière-plan.  Le planificateur de travaux Android contient les types suivants :
 
@@ -43,7 +43,7 @@ Le planificateur de travaux Android est un Framework intégré au système d’e
 
 Pour planifier le travail avec le planificateur de travaux Android, une application Xamarin. Android doit encapsuler le code dans une classe qui étend la classe `JobService`. `JobService` a trois méthodes de cycle de vie qui peuvent être appelées pendant la durée de vie de la tâche :
 
-- **bool OnStartJob (paramètres JobParameters)** &ndash; cette méthode est appelée par le `JobScheduler` pour effectuer un travail et s’exécute sur le thread principal de l’application. Il incombe au `JobService` d’effectuer de façon asynchrone le travail et `true` s’il reste du travail, ou `false` si le travail est terminé.
+- **bool OnStartJob (paramètres JobParameters)** &ndash; cette méthode est appelée par le `JobScheduler` pour effectuer un travail et s’exécute sur le thread principal de l’application. Il incombe au `JobService` d’effectuer de façon asynchrone le travail et de retourner des `true` s’il reste du travail, ou `false` si le travail est terminé.
     
     Lorsque le `JobScheduler` appelle cette méthode, il demande et conserve un wakelock d’Android pour la durée du travail. Une fois le travail terminé, il incombe au `JobService` d’indiquer à la `JobScheduler` de ce fait en appelant la méthode `JobFinished` (décrite ci-après).
 
@@ -55,7 +55,7 @@ Il est possible de spécifier des _contraintes_ ou des _déclencheurs_ qui contr
 
 Ce guide explique en détail comment implémenter une classe `JobService` et la planifie avec la `JobScheduler`.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 Le planificateur de travaux Android nécessite le niveau d’API Android 21 (Android 5,0) ou une version ultérieure. 
 
@@ -148,7 +148,7 @@ Une fonctionnalité puissante du planificateur de travaux Android est la possibi
 
 Le `SetBackoffCriteria` fournit des conseils sur la durée pendant laquelle le `JobScheduler` doit attendre avant de réessayer d’exécuter un travail. Les critères d’interruption se composent de deux parties : un délai en millisecondes (valeur par défaut de 30 secondes) et le type d’interruption qui doit être utilisé (parfois appelé _stratégie_ d’interruption ou _stratégie de nouvelle tentative_). Les deux stratégies sont encapsulées dans l’énumération `Android.App.Job.BackoffPolicy` :
 
-- `BackoffPolicy.Exponential` &ndash; une stratégie d’interruption exponentielle augmente la valeur d’interruption initiale de façon exponentielle après chaque défaillance. La première fois qu’un travail échoue, la bibliothèque attend l’intervalle initial spécifié avant de replanifier la tâche (par exemple, 30 secondes). La deuxième fois que la tâche échoue, la bibliothèque attend au moins 60 secondes avant d’essayer d’exécuter la tâche. Après la troisième tentative qui a échoué, la bibliothèque attend 120 secondes, et ainsi de suite. Valeur par défaut.
+- `BackoffPolicy.Exponential` &ndash; une stratégie d’interruption exponentielle augmente la valeur d’interruption initiale de façon exponentielle après chaque défaillance. La première fois qu’un travail échoue, la bibliothèque attend l’intervalle initial spécifié avant de replanifier la tâche (par exemple, 30 secondes). La deuxième fois que la tâche échoue, la bibliothèque attend au moins 60 secondes avant d’essayer d’exécuter la tâche. Après la troisième tentative qui a échoué, la bibliothèque attend 120 secondes, et ainsi de suite. Il s'agit de la valeur par défaut.
 - `BackoffPolicy.Linear` &ndash; cette stratégie est une interruption linéaire que la tâche doit être replanifiée pour s’exécuter à des intervalles définis (jusqu’à ce qu’elle aboutisse). L’interruption linéaire est idéale pour le travail qui doit être effectué le plus rapidement possible ou pour les problèmes qui se résolvent rapidement. 
 
 Pour plus d’informations sur la création d’un objet `JobInfo`, consultez [la documentation de Google pour la classe `JobInfo.Builder`](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html).

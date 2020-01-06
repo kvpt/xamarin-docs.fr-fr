@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: cc62ca4656a845a261c56424aa1ea1331c994994
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759216"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545605"
 ---
 # <a name="lines-and-stroke-caps"></a>Lignes et extrémités de trait
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment utiliser SkiaSharp pour dessiner des lignes avec des embouts de trait différents_
 
 Dans SkiaSharp, le rendu d’une seule ligne est très différent de rendu d’une série de lignes droites connectées. Même lors du dessin des lignes uniques, toutefois, il est souvent nécessaire de donner les lignes d’un trait particulier. Comme ces lignes deviennent plus large, l’apparence de la fin des lignes devient aussi important. L’apparence de la fin de la ligne est appelé le *extrémité de trait*:
 
-![](lines-images/strokecapsexample.png "Les options d’embouts de trois trait")
+![](lines-images/strokecapsexample.png "The three stroke caps options")
 
 Pour dessiner des lignes uniques, `SKCanvas` définit une simple [ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) méthode dont les arguments indiquent le début et fin des coordonnées de la ligne avec un `SKPaint` objet :
 
@@ -30,7 +30,7 @@ Pour dessiner des lignes uniques, `SKCanvas` définit une simple [ `DrawLine` ](
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-Par défaut, le [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) propriété de nouvellement instancié `SKPaint` objet est 0, ce qui a le même effet en tant que valeur de 1 lors du rendu d’une ligne d’un pixel d’épaisseur. Cela semble très léger sur les appareils haute résolution tels que les téléphones, vous devez donc probablement définir le `StrokeWidth` d’une valeur supérieure. Toutefois, une fois que vous avez commencé à dessiner des lignes d’épaisseur dimensionnable, cela soulève un autre problème : Comment les début et fin de ces lignes épaisses doivent-ils être rendus ?
+Par défaut, le [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) propriété de nouvellement instancié `SKPaint` objet est 0, ce qui a le même effet en tant que valeur de 1 lors du rendu d’une ligne d’un pixel d’épaisseur. Cela semble très léger sur les appareils haute résolution tels que les téléphones, vous devez donc probablement définir le `StrokeWidth` d’une valeur supérieure. Mais une fois que vous démarrez le traçage des lignes d’une épaisseur dimensionnable, qui déclenche un autre problème : comment doivent le démarre et les extrémités de ces lignes épaisses être restituées ?
 
 L’apparence du démarre et la fin des lignes est appelé un *embout de ligne* ou Skia, un *extrémité de trait*. Le mot « limite » dans ce contexte fait référence à un type de hat &mdash; quelque chose qui se trouve sur la fin de la ligne. Vous définissez le [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) propriété de la `SKPaint` objet à un des membres suivants de la [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) énumération :
 
@@ -94,7 +94,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Pour chaque membre de la `SKStrokeCap` énumération, le gestionnaire dessine deux lignes, une avec une épaisseur de trait de 50 pixels et une autre ligne positionné en haut d’une épaisseur de trait de deux pixels. Cette deuxième ligne est destinée à illustrer géométrique début et fin de la ligne indépendante de l’épaisseur du trait et une extrémité de trait :
 
-[![](lines-images/strokecaps-small.png "Capture d’écran triple de la page embouts de trait")](lines-images/strokecaps-large.png#lightbox "Triple capture d’écran de la page embouts de trait")
+[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
 
 Comme vous pouvez le voir, le `Square` et `Round` embouts de trait développer de manière efficace la longueur de la ligne par moitié la largeur de trait au début de la ligne et à nouveau à la fin. Cette extension devient importante lorsqu’il est nécessaire déterminer les dimensions d’un objet rendu graphique.
 
@@ -228,13 +228,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Les captures d’écran d’afficher diverses `Picker` sélections :
 
-[![](lines-images/multiplelines-small.png "Capture d’écran triple de la page de plusieurs lignes")](lines-images/multiplelines-large.png#lightbox "Triple capture d’écran de la page de plusieurs lignes")
+[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
 
 L’iPhone à gauche montre comment la `SKPointMode.Points` provoque de membre d’énumération `DrawPoints` pour chacun des points de restituer le `SKPoint` tableau sous la forme d’un carré si l’embout de ligne est `Butt` ou `Square`. Cercles sont rendus si l’embout de ligne est `Round`.
 
-Lorsque vous utilisez à la place `SKPointMode.Lines`, comme indiqué dans l’écran Android dans le centre, le `DrawPoints` méthode dessine une ligne entre chaque paire de `SKPoint` valeurs, à l’aide de l’extrémité de fin de la ligne spécifiée dans ce cas `Round`.
+La capture d’écran Android affiche le résultat du `SKPointMode.Lines`. La méthode `DrawPoints` dessine une ligne entre chaque paire de valeurs `SKPoint`, à l’aide de l’extrémité de ligne spécifiée, dans ce cas `Round`.
 
-La capture d’écran UWP montre le résultat de la `SKPointMode.Polygon` valeur. Une ligne est dessinée entre les points consécutifs dans le tableau, mais si vous examinez très attentivement, vous verrez que ces lignes ne sont pas connectés. Chacune de ces lignes distinctes démarre et se termine par l’embout de ligne spécifié. Si vous sélectionnez le `Round` Cap, les lignes peuvent sembler être connecté, mais elles sont vraiment pas connectées.
+Quand vous utilisez à la place `SKPointMode.Polygon`, une ligne est dessinée entre les points successifs du tableau, mais si vous regardez très étroitement, vous verrez que ces lignes ne sont pas connectées. Chacune de ces lignes distinctes démarre et se termine par l’embout de ligne spécifié. Si vous sélectionnez le `Round` Cap, les lignes peuvent sembler être connecté, mais elles sont vraiment pas connectées.
 
 Si les lignes sont connectés ou non connectés est un aspect essentiel de l’utilisation de chemins d’accès de graphiques.
 

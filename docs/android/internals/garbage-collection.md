@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 62560d97a2e85a6045e419f0c0602a375f5a2a75
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da00eef7c08f7025239d15e60e6ec42416a36089
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027886"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487839"
 ---
 # <a name="garbage-collection"></a>Garbage Collection
 
@@ -108,13 +108,15 @@ La seule façon de déterminer quel pont GC fonctionne le mieux est d’expérim
 
 - **Activer la gestion** des ponts : la gestion des ponts affiche le coût moyen des objets pointés par chaque objet impliqué dans le processus de pont. Le tri de ces informations par taille fournira des indications sur ce qui détient le plus grand nombre d’objets supplémentaires. 
 
-Pour spécifier l’option de `GC_BRIDGE` qu’une application doit nous transmettre, transmettez `bridge-implementation=old`, `bridge-implementation=new` ou `bridge-implementation=tarjan` à la variable d’environnement `MONO_GC_PARAMS`, par exemple : 
+Le paramètre par défaut est **Tarjan**. Si vous trouvez une régression, il peut s’avérer nécessaire d’affecter la valeur **ancien**à cette option. Vous pouvez également choisir d’utiliser l' **ancienne** option la plus stable si **Tarjan** ne produit pas d’amélioration des performances.
+
+Pour spécifier l’option de `GC_BRIDGE` qu’une application doit utiliser, transmettez `bridge-implementation=old`, `bridge-implementation=new` ou `bridge-implementation=tarjan` à la variable d’environnement `MONO_GC_PARAMS`. Pour ce faire, ajoutez un nouveau fichier à votre projet avec une **action de génération** de `AndroidEnvironment`. Par exemple : 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-Le paramètre par défaut est **Tarjan**. Si vous trouvez une régression, il peut s’avérer nécessaire d’affecter la valeur **ancien**à cette option. Vous pouvez également choisir d’utiliser l' **ancienne** option la plus stable si **Tarjan** ne produit pas d’amélioration des performances. 
+Pour plus d’informations, consultez [Configuration](#configuration).
 
 <a name="Helping_the_GC" />
 
@@ -127,7 +129,7 @@ Il existe plusieurs façons d’aider le GC à réduire l’utilisation de la m�
 Le GC a une vue incomplète du processus et peut ne pas s’exécuter lorsque la mémoire est faible, car le GC ne sait pas que la mémoire est faible. 
 
 Par exemple, une instance d’un type [java. lang. Object](xref:Java.Lang.Object) ou d’un type dérivé a une taille d’au moins 20 octets (susceptible d’être modifiée sans préavis, etc.). 
-Les [wrappers pouvant être appelés](~/android/internals/architecture.md) n’ajoutent pas de membres d’instance supplémentaires. par conséquent, lorsque vous avez une instance [Android. Graphics. Bitmap](xref:Android.Graphics.Bitmap) qui fait référence à un blob de 10 Mo de mémoire, le GC Xamarin. Android ne sait pas que &ndash; le GC verra un objet de 20 octets et sera Impossible de déterminer qu’il est lié à des objets alloués par le runtime Android qui conservent 10 Mo de mémoire. 
+Les [wrappers pouvant être appelés](~/android/internals/architecture.md) n’ajoutent pas de membres d’instance supplémentaires. par conséquent, lorsque vous avez une instance [Android. Graphics. Bitmap](xref:Android.Graphics.Bitmap) qui fait référence à un blob de 10 Mo de mémoire, le GC Xamarin. Android ne sait pas que &ndash; le GC verra un objet de 20 octets et ne pourra pas déterminer s’il est lié à des objets alloués par le runtime Android qui 
 
 Il est souvent nécessaire d’aider le garbage collector. Malheureusement, *gc. AddMemoryPressure ()* et *gc. RemoveMemoryPressure ()* n’étant pas pris en charge, si vous *savez* que vous venez de libérer un grand graphique d’objets alloués par Java, vous devrez peut-être appeler manuellement [gc. Collect ()](xref:System.GC.Collect) pour inviter un GC à libérer la mémoire côté Java, ou vous pouvez supprimer explicitement des sous-classes *java. lang. Object* , en rompant le mappage entre le wrapper managé et l’instance java. Par exemple, consultez le [bogue 1084](https://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
@@ -185,7 +187,7 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-Cette situation se produit souvent lorsque la première suppression d’un objet entraîne la création d’une valeur NULL par un membre, puis une nouvelle tentative d’accès sur ce membre null entraîne la levée d’une exception. Plus précisément, l' `Handle` de l’objet (qui lie une instance gérée à son instance Java sous-jacente) est invalidée lors de la première suppression, mais le code managé tente toujours d’accéder à cette instance Java sous-jacente, même si elle n’est plus disponible (voir [ Wrappers pouvant être appelés](~/android/internals/architecture.md#Managed_Callable_Wrappers) pour plus d’informations sur le mappage entre les instances Java et les instances managées. 
+Cette situation se produit souvent lorsque la première suppression d’un objet entraîne la création d’une valeur NULL par un membre, puis une nouvelle tentative d’accès sur ce membre null entraîne la levée d’une exception. Plus précisément, la `Handle` de l’objet (qui lie une instance gérée à son instance Java sous-jacente) est invalidée lors de la première suppression, mais le code managé tente toujours d’accéder à cette instance Java sous-jacente, même si elle n’est plus disponible (voir les [wrappers pouvant être appelés](~/android/internals/architecture.md#Managed_Callable_Wrappers) par des instances managées et les instances managées). 
 
 Pour éviter cette exception, il est judicieux de vérifier explicitement dans votre méthode de `Dispose` que le mappage entre l’instance gérée et l’instance Java sous-jacente est toujours valide. autrement dit, vérifiez si la `Handle` de l’objet est null (`IntPtr.Zero`) avant d’accéder à ses membres. Par exemple, la méthode `Dispose` suivante accède à un objet `childViews` : 
 

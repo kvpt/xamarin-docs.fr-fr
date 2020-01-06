@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb0981fea906a474d39834a52f0a8bfdf496ca1e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008169"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488411"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Utilisation de SQLite.NET avec Xamarin. iOS
 
@@ -21,7 +21,7 @@ ORM correspond au mappage relationnel d’objet : une API qui vous permet d’e
 
 <a name="Usage"/>
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Contrôle
 
 Pour inclure la bibliothèque SQLite.NET dans une application Xamarin, ajoutez le package NuGet suivant à votre projet :
 
@@ -71,7 +71,7 @@ L’exemple de code *DataAccess_Basic* pour ce document ressemble à ce qui suit
 
 **iOS**
 
- [exemple de![iOS SQLite.NET](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
+ [exemple de ![iOS SQLite.NET](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
 L’exemple de code suivant montre une interaction de base de données entière à l’aide de la bibliothèque SQLite.NET pour encapsuler l’accès à la base de données sous-jacent. Elle indique :
 
@@ -130,13 +130,13 @@ Les attributs courants que vous pouvez appliquer à vos classes pour contrôler 
 
 - **[PrimaryKey]** : cet attribut peut être appliqué à une propriété de type entier pour le forcer à être la clé primaire de la table sous-jacente. Les clés primaires composites ne sont pas prises en charge.
 - **[AutoIncrement]** : cet attribut entraîne l’incrémentation automatique de la valeur d’une propriété entière pour chaque nouvel objet inséré dans la base de données.
-- **[Column (Name)]** : la spécification du paramètre facultatif `name` remplace la valeur par défaut du nom de la colonne de base de données sous-jacente (qui est identique à la propriété).
-- **[Table (Name)]** : marque la classe comme pouvant être stockée dans une table SQLite sous-jacente. La spécification du paramètre de nom facultatif remplace la valeur par défaut du nom de la table de base de données sous-jacente (qui est identique au nom de la classe).
+- **[Column (Name)]** &ndash; le paramètre `name` définit le nom de la colonne de base de données sous-jacente.
+- **[Table (Name)]** : marque la classe comme pouvant être stockée dans une table SQLite sous-jacente avec le nom spécifié.
 - **[MaxLength (valeur)]** : limite la longueur d’une propriété de texte, en cas de tentative d’insertion d’une base de données. La consommation de code doit valider cela avant l’insertion de l’objet, car cet attribut est uniquement « Checked » lorsqu’une opération d’insertion ou de mise à jour de base de données est tentée.
 - **[Ignore]** : force sqlite.net à ignorer cette propriété. Cela s’avère particulièrement utile pour les propriétés qui ont un type qui ne peut pas être stocké dans la base de données, ou les propriétés qui modélisent des collections qui ne peuvent pas être résolues automatiquement, SQLite.
 - **[Unique]** : garantit que les valeurs de la colonne de base de données sous-jacente sont uniques.
 
-La plupart de ces attributs sont facultatifs, SQLite utilise les valeurs par défaut pour les noms de table et de colonne. Vous devez toujours spécifier une clé primaire entière pour que les requêtes de sélection et de suppression puissent être effectuées efficacement sur vos données.
+La plupart de ces attributs sont facultatifs. Vous devez toujours spécifier une clé primaire entière pour que les requêtes de sélection et de suppression puissent être effectuées efficacement sur vos données.
 
 ## <a name="more-complex-queries"></a>Requêtes plus complexes
 

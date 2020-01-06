@@ -6,19 +6,19 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/12/2019
-ms.openlocfilehash: 4deeab1b2792675033372ccfe2bf343c08794955
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 11/04/2019
+ms.openlocfilehash: 8888f1615f250a908930cec9058a54bd6e7fedc2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696429"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490075"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
-Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) est un contrôle d’entrée utilisateur utilisé pour lancer une recherche. Le contrôle `SearchBar` prend en charge le texte de l’espace réservé, l’entrée de requête, l’exécution de la recherche et l’annulation. La capture d’écran suivante montre une requête `SearchBar` avec les résultats affichés dans une `ListView` :
+Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) est un contrôle d’entrée utilisateur utilisé pour lancer une recherche. Le contrôle `SearchBar` prend en charge le texte de l’espace réservé, l’entrée de requête, l’exécution de la recherche et l’annulation. La capture d’écran suivante montre une requête `SearchBar` avec les résultats affichés dans une `ListView`:
 
 [![Capture d’écran de SearchBar sur iOS et Android](searchbar-images/device-searchbars-cropped.png "SearchBar sur iOS et Android")](searchbar-images/device-searchbars.png#lightbox "SearchBar sur iOS et Android")
 
@@ -85,6 +85,9 @@ SearchBar searchBar = new SearchBar
 La capture d’écran suivante montre le contrôle de `SearchBar` qui en résulte :
 
 [![Capture d’écran des SearchBar personnalisés sur iOS et Android](searchbar-images/device-searchbars-styled-cropped.png "SearchBar personnalisé sur iOS et Android")](searchbar-images/device-searchbars-styled.png#lightbox "SearchBar personnalisé sur iOS et Android")
+
+> [!NOTE]
+> Sur iOS, la classe `SearchBarRenderer` contient une méthode de `UpdateCancelButton` substituable. Cette méthode contrôle le moment où le bouton Annuler apparaît et peut être substitué dans un convertisseur personnalisé. Pour plus d’informations sur les convertisseurs personnalisés, consultez [convertisseurs personnalisés Xamarin. Forms](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
 ## <a name="perform-a-search-with-event-handlers"></a>Effectuer une recherche avec des gestionnaires d’événements
 

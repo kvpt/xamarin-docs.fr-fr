@@ -5,14 +5,14 @@ ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 3e49e12faac1fc93816d9a51646f639046c200c5
-ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
+ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70887372"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488515"
 ---
-# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Lanceur
+# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials : Lanceur
 
 La classe **Lanceur** permet à une application d’ouvrir un URI par le système. Elle est souvent utilisée en cas de lien profond avec les schémas d’URI personnalisés d’une autre application. Si vous souhaitez ouvrir le navigateur sur un site web, reportez-vous à l’API **[Navigateur](open-browser.md)** .
 
@@ -54,7 +54,31 @@ public class LauncherTest
 }
 ```
 
-## <a name="files"></a>Fichiers
+### <a name="additional-platform-setup"></a>Configuration de plateforme supplémentaire
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Aucune configuration supplémentaire.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+Dans iOS 9 et versions ultérieures, Apple applique les schémas qu’une application peut interroger. Pour spécifier les schémas que vous souhaitez utiliser, vous devez spécifier `LSApplicationQueriesSchemes` dans votre fichier de `Info.plist`.
+
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>lyft</string>  
+    <string>fb</string>
+</array>
+```
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+Aucune configuration supplémentaire.
+
+-----
+
+## <a name="files"></a>Files
 
 Cette fonctionnalité permet à une application de demander à d’autres applications d’ouvrir et d’afficher un fichier. Xamarin.Essentials détectera automatiquement le type de fichier (MIME) et demandera que le fichier soit ouvert.
 
@@ -87,7 +111,7 @@ Plus d’informations sur l’implémentation d’iOS sont disponibles [ici](xre
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Aucune spécificité pour cette plateforme.
+Aucune différence entre les plateformes.
 
 -----
 

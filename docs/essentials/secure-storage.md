@@ -1,19 +1,19 @@
 ---
-title: 'Xamarin.Essentials: Stockage sécurisé'
+title: 'Xamarin.Essentials : SecureStorage'
 description: Ce document décrit la classe SecureStorage de Xamarin.Essentials qui permet de stocker en toute sécurité des paires clé/valeur simples. Il explique comment utiliser la classe et expose les caractéristiques de mise en œuvre de la plateforme et ses limitations.
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 1e4cb52772a60489f887116cbcfd4e6a8930fa3a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756798"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488489"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Stockage sécurisé
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials : SecureStorage
 
 La classe **SecureStorage** permet de stocker en toute sécurité des paires clé/valeur simples.
 
@@ -127,7 +127,7 @@ Pour supprimer toutes les clés, appelez :
 SecureStorage.RemoveAll();
 ```
 
-## <a name="platform-implementation-specifics"></a>Implémentations spécifiques par plateforme
+## <a name="platform-implementation-specifics"></a>Caractéristiques de mise en œuvre de la plateforme
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -155,13 +155,13 @@ Dans certains cas, les données KeyChain sont synchronisées avec iCloud, et il 
 
 Ces valeurs chiffrées sont stockées dans `ApplicationData.Current.LocalSettings`, à l’intérieur d’un conteneur, avec le nom **[VOTRE-ID-D-APPLICATION].xamarinessentials**.
 
-**SecureStorage** utilise l’API [Préférences](preferences.md) et suit la persistance des données décrite dans la documentation [Préférences](preferences.md#persistence).
+**SecureStorage** utilise l’API [Préférences](preferences.md) et suit la persistance des données décrite dans la documentation [Préférences](preferences.md#persistence). Il utilise également `LocalSettings` qui a une restriction selon laquelle le nom de chaque paramètre peut avoir une longueur de 255 caractères au maximum. Chaque paramètre peut avoir une taille maximale de 8 Ko et chaque paramètre composite peut comporter jusqu’à 64 Ko d’octets.
 
 -----
 
-## <a name="limitations"></a>Limites
+## <a name="limitations"></a>Limitations
 
-Cette API est destinée à stocker de petites quantités de texte.  Les performances risquent d’être lentes si vous essayez de l’utiliser pour stocker de grandes quantités de texte.
+Cette API est destinée à stocker de petites quantités de texte.  Les performances risquent d’être lentes si vous essayez de l’utiliser pour stocker de grandes quantités de texte. 
 
 ## <a name="api"></a>API
 

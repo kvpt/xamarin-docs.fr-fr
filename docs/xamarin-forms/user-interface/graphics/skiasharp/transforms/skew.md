@@ -7,22 +7,22 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/20/2017
-ms.openlocfilehash: bfc1bec06c773039529cd85aac604a9a9031cb54
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c3d7e6e0c0e3230c11e2e96baa9efa57ac988c83
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70773020"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545662"
 ---
 # <a name="the-skew-transform"></a>La transformation d’inclinaison
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _Découvrez comment la transformation d’inclinaison peut créer des objets graphiques inclinées dans SkiaSharp_
 
 Dans SkiaSharp, la transformation d’inclinaison montre comment faire pivoter des objets graphiques, tels que l’ombre dans cette image :
 
-![](skew-images/skewexample.png "Un exemple de l’inclinaison à partir du programme de décalage de texte de clichés instantanés")
+![](skew-images/skewexample.png "An example of skewing from the Skew Shadow Text program")
 
 Le décalage transforme un rectangle en un parallélogramme, mais une ellipse décalée est toujours une ellipse.
 
@@ -72,9 +72,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Valeurs de la `xSkew` argument shift bas du texte pour les valeurs positives droite ou gauche pour les valeurs négatives. Valeurs de `ySkew` décalage vers la droite du texte vers le bas pour les valeurs positives ou pour les valeurs négatives :
 
-[![](skew-images/skewexperiment-small.png "Capture d’écran triple de la page d’expérience d’inclinaison")](skew-images/skewexperiment-large.png#lightbox "Triple capture d’écran de la page d’expérience d’inclinaison")
+[![](skew-images/skewexperiment-small.png "Triple screenshot of the Skew Experiment page")](skew-images/skewexperiment-large.png#lightbox "Triple screenshot of the Skew Experiment page")
 
-Si le `xSkew` valeur est la valeur négative de la `ySkew` valeur, le résultat correspond à la rotation, mais également à l’échelle un peu comme l’affichage UWP indique.
+Si la valeur `xSkew` est la valeur négative de la valeur de `ySkew`, le résultat est une rotation, mais également un peu mis à l’échelle.
 
 Les formules de transformation sont les suivantes :
 
@@ -86,7 +86,7 @@ Par exemple, pour un nombre positif `xSkew` valeur transformée `x'` valeur augm
 
 Si un pixels de triangle 200 large et 100 pixels de haut est positionné à son angle supérieur gauche au niveau du point (0, 0) et est rendu avec un `xSkew` valeur de 1.5, les résultats du parallélogramme suivants :
 
-![](skew-images/skeweffect.png "L’effet de la transformation d’inclinaison sur un rectangle")
+![](skew-images/skeweffect.png "The effect of the skew transform on a rectangle")
 
 Les coordonnées du bord inférieur ont `y` valeurs de 100, donc il est décalés 150 pixels vers la droite.
 
@@ -108,7 +108,7 @@ Si `ySkew` est égal à zéro, puis le `px` valeur n’est pas utilisée. La val
 
 Vous vous sentirez plus à l’aise en spécifiant un décalage comme un angle d’inclinaison, telles que l’angle α dans ce diagramme :
 
-![](skew-images/skewangleeffect.png "L’effet de la transformation d’inclinaison sur un rectangle avec un angle d’inclinaison indiqué")
+![](skew-images/skewangleeffect.png "The effect of the skew transform on a rectangle with a skewing angle indicated")
 
 Le rapport entre le passage de 150 pixels à la verticale de 100 pixels est la tangente de cet angle, dans cet exemple et de 56,3 degrés.
 
@@ -155,7 +155,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 L’approche un angle positifs ou négatifs de 90 degrés, la tangente est l’infini proche, mais les angles jusqu'à environ 80 degrés ou ainsi sont utilisables :
 
-[![](skew-images/skewangleexperiment-small.png "Capture d’écran triple de la page de l’expérience de Angle d’inclinaison")](skew-images/skewangleexperiment-large.png#lightbox "Triple capture d’écran de la page de l’expérience de Angle d’inclinaison")
+[![](skew-images/skewangleexperiment-small.png "Triple screenshot of the Skew Angle Experiment page")](skew-images/skewangleexperiment-large.png#lightbox "Triple screenshot of the Skew Angle Experiment page")
 
 Une inclinaison horizontale négatif petite peut simuler oblique ou en italique du texte, comme le **texte Oblique** montre de page. Le [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) classe montre comment procéder :
 
@@ -191,7 +191,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Le `TextAlign` propriété du `SKPaint` est défini sur `Center`. Sans les transformations, le `DrawText` appeler avec les coordonnées de (0, 0) positionner le texte au centre horizontal de la ligne de base dans l’angle supérieur gauche. Le `SkewDegrees` incline le texte horizontalement 20 degrés par rapport à la ligne de base. Le `Translate` appel déplace au centre horizontal de la ligne de base du texte au centre de la zone de dessin :
 
-[![](skew-images/obliquetext-small.png "Capture d’écran triple de la page de texte Oblique")](skew-images/obliquetext-large.png#lightbox "Triple capture d’écran de la page de texte Oblique")
+[![](skew-images/obliquetext-small.png "Triple screenshot of the Oblique Text page")](skew-images/obliquetext-large.png#lightbox "Triple screenshot of the Oblique Text page")
 
 Le **incliner le texte ombré** page montre comment utiliser une combinaison d’une échelle de décalage et verticale de 45 degrés pour rendre une ombre du texte qui fait pivoter en dehors du texte. Voici la partie pertinente de la `PaintSurface` gestionnaire :
 
@@ -224,11 +224,11 @@ using (SKPaint textPaint = new SKPaint())
 
 L’ombre est affiché en premier, puis le texte :
 
-[![](skew-images/skewshadowtext1-small.png "Capture d’écran triple de la page de texte de clichés instantanés incliner")](skew-images/skewshadowtext1-large.png#lightbox "Triple capture d’écran de la page de texte de clichés instantanés d’inclinaison")
+[![](skew-images/skewshadowtext1-small.png "Triple screenshot of the Skew Shadow Text page")](skew-images/skewshadowtext1-large.png#lightbox "Triple screenshot of the Skew Shadow Text page")
 
 Coordonnée verticale est passé à la `DrawText` méthode indique la position du texte par rapport à la ligne de base. Qui est la coordonnée verticale même utilisée pour le centre de l’inclinaison. Cette technique ne fonctionne pas si la chaîne de texte contient hampes inférieures. Par exemple, le mot « étrange » de « Fantôme » et Voici le résultat :
 
-[![](skew-images/skewshadowtext2-small.png "Capture d’écran triple de la page de texte de clichés instantanés incliner avec un autre mot descendants")](skew-images/skewshadowtext2-large.png#lightbox "Triple capture d’écran de la page de texte de clichés instantanés incliner avec un autre mot descendants")
+[![](skew-images/skewshadowtext2-small.png "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")](skew-images/skewshadowtext2-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")
 
 Les clichés instantanés et le texte sont toujours alignées sur la ligne de base, mais l’effet est bien incorrect. Pour corriger ce problème, vous devez obtenir les limites de texte :
 
@@ -248,7 +248,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 L’ombre s’étend maintenant en bas de ces descendants :
 
-[![](skew-images/skewshadowtext3-small.png "Capture d’écran triple de la page de texte de clichés instantanés incliner avec ajustements pour hampes")](skew-images/skewshadowtext3-large.png#lightbox "Triple capture d’écran de la page de texte de clichés instantanés incliner avec ajustements pour hampes")
+[![](skew-images/skewshadowtext3-small.png "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")](skew-images/skewshadowtext3-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")
 
 ## <a name="related-links"></a>Liens associés
 

@@ -6,13 +6,13 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: 9442f7878d9290946fabb7bfc5dee77a828228c7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662326"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488169"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Données CollectionView Xamarin. Forms
 
@@ -251,9 +251,88 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 > [!IMPORTANT]
 > Lorsque vous utilisez [`CollectionView`](xref:Xamarin.Forms.CollectionView), ne définissez jamais l’élément racine de vos objets [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) sur un `ViewCell`. Cela entraîne la levée d’une exception, car `CollectionView` n’a pas de concept de cellule.
 
-## <a name="pull-to-refresh"></a>Extraire pour actualiser
+## <a name="context-menus"></a>Menus contextuels
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge la fonctionnalité d’actualisation de l’extraction par le biais du `RefreshView`, ce qui permet d’afficher les données affichées pour les actualiser en faisant défiler la liste des éléments. Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser à son enfant, à condition que l’enfant prenne en charge le contenu défilant. Par conséquent, l’extraction vers l’actualisation est implémentée pour une `CollectionView` en la définissant comme enfant d’un `RefreshView` :
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge les menus contextuels pour les éléments de données via le `SwipeView`, ce qui révèle le menu contextuel avec un mouvement de balayage. Le `SwipeView` est un contrôle conteneur qui encapsule un élément de contenu et fournit des éléments de menu contextuel pour cet élément de contenu. Par conséquent, les menus contextuels sont implémentés pour un `CollectionView` en créant un `SwipeView` qui définit le contenu que le `SwipeView` encapsule, et les éléments de menu contextuel qui sont révélés par le mouvement de balayage. Pour ce faire, définissez la `SwipeView` comme vue racine dans le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui définit l’apparence de chaque élément de données dans le `CollectionView`:
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Favorite"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.FavoriteCommand}"
+                                   CommandParameter="{Binding}" />
+                        <SwipeItem Text="Delete"
+                                   IconImageSource="delete.png"
+                                   BackgroundColor="LightPink"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"
+                                   CommandParameter="{Binding}" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid BackgroundColor="White"
+                      Padding="10">
+                    <!-- Define item appearance -->
+                </Grid>
+            </SwipeView>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+Le code C# équivalent est :
+
+```csharp
+CollectionView collectionView = new CollectionView();
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+
+collectionView.ItemTemplate = new DataTemplate(() =>
+{
+    // Define item appearance
+    Grid grid = new Grid { Padding = 10, BackgroundColor = Color.White };
+    // ...
+
+    SwipeView swipeView = new SwipeView();
+    SwipeItem favoriteSwipeItem = new SwipeItem
+    {
+        Text = "Favorite",
+        IconImageSource = "favorite.png",
+        BackgroundColor = Color.LightGreen
+    };
+    favoriteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.FavoriteCommand", source: collectionView));
+    favoriteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    SwipeItem deleteSwipeItem = new SwipeItem
+    {
+        Text = "Delete",
+        IconImageSource = "delete.png",
+        BackgroundColor = Color.LightPink
+    };
+    deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: collectionView));
+    deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    swipeView.LeftItems = new SwipeItems { favoriteSwipeItem, deleteSwipeItem };
+    swipeView.Content = grid;    
+    return swipeView;
+});
+```
+
+Dans cet exemple, le contenu `SwipeView` est un [`Grid`](xref:Xamarin.Forms.Grid) qui définit l’apparence de chaque élément dans le [`CollectionView`](xref:Xamarin.Forms.CollectionView). Les éléments de balayage sont utilisés pour effectuer des actions sur le contenu `SwipeView` et sont révélés lorsque le contrôle est extrait du côté gauche :
+
+[![Capture d’écran des éléments du menu contextuel CollectionView, sur iOS et Android](populate-data-images/swipeview.png "CollectionView avec les éléments de menu contextuel SwipeView")](populate-data-images/swipeview-large.png#lightbox "CollectionView avec les éléments de menu contextuel SwipeView")
+
+`SwipeView` prend en charge quatre directions de balayage différentes, la direction de balayage étant définie par la collection de `SwipeItems` directionnelles, les objets `SwipeItems` sont ajoutés. Par défaut, un élément balayer est exécuté lorsqu’il est appuyé par l’utilisateur. En outre, une fois qu’un élément balayer a été exécuté, les éléments de balayage sont masqués et le contenu `SwipeView` s’affiche à nouveau. Toutefois, ces comportements peuvent être modifiés.
+
+Pour plus d’informations sur le contrôle `SwipeView`, consultez [Xamarin. Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md).
+
+## <a name="pull-to-refresh"></a>Tirer pour actualiser
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge la fonctionnalité d’actualisation de l’extraction par le biais du `RefreshView`, ce qui permet d’afficher les données affichées pour les actualiser en faisant défiler la liste des éléments. Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser à son enfant, à condition que l’enfant prenne en charge le contenu défilant. Par conséquent, l’extraction vers l’actualisation est implémentée pour une `CollectionView` en la définissant comme enfant d’un `RefreshView`:
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -344,6 +423,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 
 - [CollectionView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
+- [Xamarin. Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md)
 - [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Modèles de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Créer un DataTemplateSelector Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

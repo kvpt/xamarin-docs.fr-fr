@@ -6,12 +6,12 @@ ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
-ms.openlocfilehash: a4d0f5c5ceefcfe9a36a5fcf10c6fb4937c1db90
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: e95dd72513562bba9fb513c4742e476bc7be0c94
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739210"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487410"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Service Azure Signalr avec Xamarin. Forms
 
@@ -20,6 +20,9 @@ ms.locfileid: "68739210"
 ASP.NET Core Signalr est un modèle d’application qui simplifie le processus d’ajout de communication en temps réel aux applications. Le service Azure Signalr permet de développer et de déployer rapidement des applications Signalr évolutives. Azure Functions sont des méthodes de code sans serveur à courte durée de vie qui peuvent être combinées pour former des applications pilotées par des événements et des applications évolutives.
 
 Cet article et cet exemple montrent comment combiner le service et les Azure Functions Azure Signalr avec Xamarin. Forms, afin de fournir des messages en temps réel aux clients connectés.
+
+> [!NOTE]
+> Si vous n’avez pas [d’abonnement Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), créez un [compte gratuit](https://aka.ms/azfree-docs-mobileapps) avant de commencer.
 
 ## <a name="create-an-azure-signalr-service-and-azure-functions-app"></a>Créer un service Azure Signalr et Azure Functions application
 
@@ -31,7 +34,7 @@ L’exemple d’application comprend trois composants clés : un hub de service
 1. La fonction de **communication** transmet le message entrant au concentrateur signalr.
 1. Le concentrateur Signalr diffuse le message à toutes les instances d’application mobile connectée, y compris à l’expéditeur d’origine.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Les fonctions **Negotiate** et **débats** de l’exemple d’application peuvent être exécutées localement à l’aide de Visual Studio 2019 et des outils d’exécution Azure. Toutefois, le service Azure Signalr ne peut pas être émulé localement et il est difficile d’exposer des Azure Functions hébergées localement à des appareils physiques ou virtuels à des fins de test. Il est recommandé de déployer le Azure Functions sur une instance d’application Azure Functions, car cela permet un test multiplateforme. Pour plus d’informations sur le déploiement, consultez [déployer des Azure Functions avec Visual Studio 2019](#deploy-azure-functions-with-visual-studio-2019).
 
 ### <a name="create-an-azure-signalr-service"></a>Créer un service Azure Signalr
@@ -52,7 +55,7 @@ Cette chaîne de connexion est utilisée pour [déployer des Azure Functions à 
 
 Pour tester l’exemple d’application, vous devez créer une nouvelle Azure Functions application dans le Portail Azure. Prenez note du nom de l' **application** , car cette URL est utilisée dans le fichier **constants.cs** de l’exemple d’application. La capture d’écran suivante montre la création d’une nouvelle Azure Functions application appelée « xdocsfunctions » :
 
-[![Screenshot de la création d’une application Azure Functions](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[Capture d’écran ![de la création d’applications Azure Functions](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 Azure Functions peut être déployé sur une instance d’application Azure Functions à partir de Visual Studio 2019. Les sections suivantes décrivent le déploiement de deux fonctions dans l’exemple d’application dans une instance d’application Azure Functions.
 
@@ -288,7 +291,7 @@ void AddMessage(string message)
 }
 ```
 
-## <a name="test-the-application"></a>Tester l’application
+## <a name="test-the-application"></a>Tester l'application
 
 L’application Signalr chat peut être testée sur iOS, Android et UWP, à condition que vous disposiez des éléments suivants :
 

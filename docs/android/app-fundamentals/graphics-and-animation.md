@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1781503d214b959d31223cbe8f55fd6afa0fef44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eeee9b7d694d9380c653fb87c24171bcaf79389d
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019288"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655285"
 ---
 # <a name="android-graphics-and-animation"></a>Graphiques et animations Android
 
 _Android fournit une infrastructure très riche et diversifiée pour la prise en charge des graphiques 2D et des animations. Cette rubrique présente ces infrastructures et explique comment créer des graphiques et des animations personnalisés à utiliser dans une application Xamarin. Android._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 En dépit de leur exécution sur des appareils qui sont traditionnellement de la puissance limitée, les applications mobiles les plus importantes ont souvent une expérience utilisateur sophistiquée, avec des graphiques et des animations de haute qualité qui offrent une apparence intuitive, réactive et dynamique. Étant donné que les applications mobiles sont de plus en plus sophistiquées, les utilisateurs ont commencé à s’attendre à un plus grand nombre d’applications.
 
@@ -86,7 +86,7 @@ Android définit plusieurs types de ressources Dessinables :
 
 - [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash; ce dessinable appliquera des infinies sur les côtés d’une autre ressource qui peut être dessinée. Elle est utilisée lorsqu’une vue a besoin d’un arrière-plan qui est plus petit que les limites réelles de la vue.
 
-- [BITMAPDRAWABLE](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) XML &ndash; ce fichier est un ensemble d’instructions, en XML, qui doivent être exécutées sur une image bitmap réelle. Les actions qu’Android peut effectuer sont la juxtaposition, le tramage et l’anticrénelage. L’une des utilisations les plus courantes consiste à juxtaposer une image bitmap sur l’arrière-plan d’une disposition.
+- [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) XML &ndash;ce fichier est un ensemble d’instructions, en XML, qui doivent être exécutées sur une image bitmap réelle. Les actions qu’Android peut effectuer sont la juxtaposition, le tramage et l’anticrénelage. L’une des utilisations les plus courantes consiste à juxtaposer une image bitmap sur l’arrière-plan d’une disposition.
 
 #### <a name="drawable-example"></a>Exemple de dessinable
 
@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 Pour voir à quoi cela ressemble, exécutez le projet *AnimationsDemo* et sélectionnez l’élément de forme dessinable dans le menu principal. Nous devrions voir un résultat similaire à la capture d’écran suivante :
 
-![TextView avec un arrière-plan personnalisé, dessinable avec un dégradé et des angles arrondis](graphics-and-animation-images/image1.png)
+[![TextView avec un arrière-plan personnalisé, dessinable avec un dégradé et des angles arrondis](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 Pour plus d’informations sur les éléments XML et la syntaxe des ressources Dessinables, consultez la [documentation de Google](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape).
 
@@ -162,7 +162,7 @@ Canvas canvas = new Canvas(b);
 
 L’autre façon d’obtenir un objet `Canvas` est que la méthode de rappel [OnDraw](xref:Android.Views.View.OnDraw*) qui est fournie par la classe de base [View](xref:Android.Views.View) . Android appelle cette méthode lorsqu’il décide qu’une vue doit se dessiner lui-même et passe un objet `Canvas` pour que la vue fonctionne.
 
-La classe Canvas expose des méthodes pour fournir par programme les instructions Draw. Exemple :
+La classe Canvas expose des méthodes pour fournir par programme les instructions Draw. Par exemple :
 
 - [Canvas. DrawPaint](xref:Android.Graphics.Canvas.DrawPaint*) &ndash; remplit l’image bitmap de la totalité du canevas avec la peinture spécifiée.
 
@@ -172,7 +172,7 @@ La classe Canvas expose des méthodes pour fournir par programme les instruction
 
 #### <a name="drawing-with-the-canvas-api"></a>Dessin avec l’API Canvas
 
-Voyons un exemple de l’API Canvas en action. L’extrait de code suivant montre comment dessiner une vue :
+Voici un exemple de l’API Canvas en action. L’extrait de code suivant montre comment dessiner une vue :
 
 ```csharp
 public class MyView : View
@@ -201,7 +201,7 @@ public class MyView : View
 
 Ce code ci-dessus crée d’abord un dessin rouge et un objet Paint vert. Elle remplit le contenu du canevas en rouge, puis indique au canevas de dessiner un rectangle vert de 25% de la largeur de la zone de dessin. Par exemple, dans `AnimationsDemo` projet qui est inclus dans le code source de cet article. En démarrant l’application et en sélectionnant l’élément de dessin dans le menu principal, nous devrions obtenir un écran similaire à ce qui suit :
 
-![Écran avec peinture rouge et objets de peinture verte](graphics-and-animation-images/image3.png)
+[Écran ![avec peinture rouge et objets de peinture verte](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>Animation
 

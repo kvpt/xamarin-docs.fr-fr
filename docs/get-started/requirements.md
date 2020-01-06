@@ -1,28 +1,35 @@
 ---
-title: Configuration requise pour Xamarin.Forms
-description: Configuration requise pour la plateforme et le développement pour Xamarin.Forms.
+title: Xamarin. Exigences relatives aux formulaires
+description: Configuration requise pour la plateforme et le développement pour Xamarin. Forms.
 ms.prod: xamarin
 ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 46a72534fba7a45323a82ad121e5844410472812
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+no-loc:
+- Xamarin
+- Xamarin.Forms
+- Xamarin.Android
+- Xamarin.Essentials
+- Xamarin.iOS
+- Xamarin.Mac
+ms.openlocfilehash: d12daa358917399fc5fd1febf02d4f96a647f360
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584346"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607852"
 ---
-# <a name="xamarinforms-requirements"></a>Configuration requise pour Xamarin.Forms
+# <a name="opno-locxamarinforms-requirements"></a>Xamarin. Exigences relatives aux formulaires
 
-_Configuration requise pour la plateforme et le développement pour Xamarin.Forms._
+_Configuration requise pour la plateforme et le développement pour Xamarin. Forms._
 
 Reportez-vous à l’article [Installation](installation/index.md) pour obtenir une vue d’ensemble des pratiques d’installation et de configuration qui s’appliquent sur toutes les plateformes.
 
 ## <a name="target-platforms"></a>Plateformes cibles
 
-Les applications Xamarin.Forms peuvent être écrites pour les systèmes d’exploitation suivants :
+Xamarin. Les applications de formulaires peuvent être écrites pour les systèmes d’exploitation suivants :
 
 - iOS 9 ou version ultérieure
 - Android 4.4 (API 19) ou version ultérieure ([plus d’informations](#android))
@@ -34,7 +41,7 @@ Il est supposé que les développeurs se familiarisent avec [.NET standard](~/cr
 
 ### <a name="additional-platform-support"></a>Prise en charge de plateforme supplémentaire
 
-L’état de ces plateformes est disponible sur [Xamarin.Forms GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) :
+L’état de ces plateformes est disponible sur le [Xamarin. GitHub de formulaires](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support):
 
 - Samsung Tizen
 - macOS
@@ -67,18 +74,18 @@ De plus, la version cible/de compilation pour les projets Android **doit** avoir
 
 ## <a name="development-system-requirements"></a>Configuration requise pour le développement
 
-Les applications Xamarin.Forms peuvent être développées sur macOS et Windows. Toutefois, Windows et Visual Studio sont nécessaires pour produire des versions Windows de l’application.
+Xamarin. Les applications de formulaires peuvent être développées sur macOS et Windows. Toutefois, Windows et Visual Studio sont nécessaires pour produire des versions Windows de l’application.
 
 ## <a name="mac-system-requirements"></a>Configuration requise pour Mac
 
-Vous pouvez utiliser Visual Studio pour Mac pour développer des applications Xamarin. Forms sur macOS High Sierra (10,13) ou une version ultérieure. Pour développer des applications iOS, nous vous recommandons d’utiliser la dernière version de Xcode, iOS et macOS. Pour obtenir des exigences spécifiques en matière de version, consultez les dernières [notes de publication de Xamarin. iOS](/xamarin/ios/release-notes/).
+Vous pouvez utiliser Visual Studio pour Mac pour développer des Xamarin. Applications de formulaires sur macOS High Sierra (10,13) ou version ultérieure. Pour développer des applications iOS, nous vous recommandons d’utiliser la dernière version de Xcode, iOS et macOS. Pour des exigences de version spécifiques, reportez-vous aux notes de publication les plus récentes de [Xamarin. iOS](/xamarin/ios/release-notes/).
 
 > [!NOTE]
 > Les applications Windows ne peuvent pas être développées sur macOS.
 
 ## <a name="windows-system-requirements"></a>Configuration requise pour Windows
 
-Les applications Xamarin.Forms pour iOS et Android peuvent être générées sur toute installation Windows qui prend en charge le développement Xamarin. Pour une prise en charge complète des fonctionnalités actuelles de la plateforme, utilisez la version la plus récente de Visual Studio. 
+Xamarin. Les applications de formulaires pour iOS et Android peuvent être créées sur n’importe quelle installation Windows qui prend en charge le développement de Xamarin. Pour une prise en charge complète des fonctionnalités actuelles de la plateforme, utilisez la version la plus récente de Visual Studio. 
 
 Un Mac en réseau est requis pour le développement iOS à l’aide de la dernière version de Xcode et de la version minimale de macOS spécifiée par Apple.
 
@@ -86,7 +93,7 @@ Un Mac en réseau est requis pour le développement iOS à l’aide de la derni�
 
 ### <a name="universal-windows-platform-uwp"></a>Plateforme Windows universelle (UWP)
 
-Le développement d’applications Xamarin.Forms pour UWP nécessite :
+Développement de Xamarin. Les applications de formulaires pour UWP requièrent :
 
 - Windows 10 (version la plus récente recommandée, configuration des créateurs de automne minimale)
 
@@ -94,11 +101,11 @@ Le développement d’applications Xamarin.Forms pour UWP nécessite :
 
 - [SDK Windows 10](https://dev.windows.com/downloads/windows-10-sdk)
 
-Vous pouvez [ajouter une application de plateforme Windows universelle (UWP)](~/xamarin-forms/platform/windows/installation/index.md) à une solution Xamarin.Forms existante à tout moment.
+Vous pouvez [Ajouter une application plateforme Windows universelle (UWP)](~/xamarin-forms/platform/windows/installation/index.md) à un Xamarinexistant. Forms solution à tout moment.
 
 ## <a name="deprecated-platforms"></a>Plateformes déconseillées
 
-Ces plateformes ne sont pas prises en charge lors de l’utilisation de Xamarin. Forms 3,0 ou plus récente :
+Ces plateformes ne sont pas prises en charge lors de l’utilisation de Xamarin. Formulaires 3,0 ou plus récents :
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

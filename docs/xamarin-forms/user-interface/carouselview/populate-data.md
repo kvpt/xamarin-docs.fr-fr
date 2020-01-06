@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/02/2019
-ms.openlocfilehash: 0ad31bc6f84ae633a9a18592a00670703db19df9
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/17/2019
+ms.openlocfilehash: 7d1183bf0c741b5a7ca02b43c4edb0c640ee1ac2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697611"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488220"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Données CarouselView Xamarin. Forms
 
@@ -258,9 +258,37 @@ Pour plus d’informations sur les sélecteurs de modèle de données, consultez
 > [!IMPORTANT]
 > Lorsque vous utilisez [`CarouselView`](xref:Xamarin.Forms.CarouselView), ne définissez jamais l’élément racine de vos objets [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) sur un `ViewCell`. Cela entraîne la levée d’une exception, car `CarouselView` n’a pas de concept de cellule.
 
-## <a name="pull-to-refresh"></a>Extraire pour actualiser
+## <a name="display-indicators"></a>Indicateurs d’affichage
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView) prend en charge la fonctionnalité d’actualisation par extraction via le `RefreshView`, ce qui permet aux données affichées d’être actualisées en extrayant les éléments. Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser à son enfant, à condition que l’enfant prenne en charge le contenu défilant. Par conséquent, l’extraction vers l’actualisation est implémentée pour une `CarouselView` en la définissant comme enfant d’un `RefreshView` :
+Les indicateurs, qui représentent le nombre d’éléments et la position actuelle dans un `CarouselView`, peuvent être affichés à côté du `CarouselView`. Pour ce faire, vous pouvez utiliser le contrôle `IndicatorView` :
+
+```xaml
+<StackLayout>
+    <CarouselView x:Name="carouselView"
+                  ItemsSource="{Binding Monkeys}">
+        <CarouselView.ItemTemplate>
+            <!-- DataTemplate that defines item appearance -->
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+    <IndicatorView ItemsSourceBy="carouselView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="DarkGray"
+                   HorizontalOptions="Center" />
+</StackLayout>
+```
+
+Dans cet exemple, le `IndicatorView` est rendu sous le `CarouselView`, avec un indicateur pour chaque élément dans le `CarouselView`. La `IndicatorView` est remplie avec des données en affectant à la propriété `ItemsSourceBy` la valeur de l’objet `CarouselView`. Chaque indicateur est un cercle gris clair, tandis que l’indicateur qui représente l’élément actuel dans le `CarouselView` est gris foncé :
+
+[![Capture d’écran d’un CarouselView et d’un IndicatorView, sur iOS et Android](populate-data-images/indicators.png "Cercles IndicatorView")](populate-data-images/indicators-large.png#lightbox "Cercles IndicatorView")
+
+> [!IMPORTANT]
+> La définition de la propriété `ItemsSourceBy` entraîne la liaison de la propriété `IndicatorView.Position` à la propriété `CarouselView.Position` et la propriété `IndicatorView.ItemsSource` à la propriété `CarouselView.ItemsSource`.
+
+Pour plus d’informations sur les indicateurs, consultez [Xamarin. Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md).
+
+## <a name="pull-to-refresh"></a>Tirer pour actualiser
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) prend en charge la fonctionnalité d’actualisation par extraction via le `RefreshView`, ce qui permet aux données affichées d’être actualisées en extrayant les éléments. Le `RefreshView` est un contrôle conteneur qui fournit des fonctionnalités pull pour actualiser à son enfant, à condition que l’enfant prenne en charge le contenu défilant. Par conséquent, l’extraction vers l’actualisation est implémentée pour une `CarouselView` en la définissant comme enfant d’un `RefreshView`:
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -351,6 +379,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 ## <a name="related-links"></a>Liens connexes
 
 - [CarouselView (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [Xamarin. Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Modèles de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

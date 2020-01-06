@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.openlocfilehash: 0e5fd88678becd7becfcb1c43e14b1e33aad72de
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170961"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489876"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Centre de messagerie Xamarin.Forms
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 Le modèle publier-s’abonner est un modèle de messagerie dans lequel les serveurs de publication envoient des messages sans avoir connaissance des destinataires, appelés des abonnés. De même, les abonnés écoutent des messages spécifiques, sans avoir connaissance des serveurs de publication.
 
@@ -26,7 +26,7 @@ La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) Xamarin.Forms 
 
 La classe [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) fournit la fonctionnalité publier-s’abonner de multidiffusion. Cela signifie que plusieurs serveurs de publication peuvent publient un seul message, et que plusieurs abonnés peuvent écouter le même message :
 
-![](messaging-center-images/messaging-center.png "Fonctionnalité publier-s’abonner de multidiffusion")
+![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
 
 Les serveurs de publication envoient des messages à l’aide de la méthode [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*), alors que les abonnés écoutent les messages à l’aide de la méthode [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*). En outre, les abonnés peuvent également se désabonner des abonnements aux messages, si nécessaire, avec la méthode [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*).
 
@@ -82,6 +82,9 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 ```
 
 Dans cet exemple, la méthode [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) abonne aux messages `Hi` envoyés par le type `MainPage`, dont les données de charge utile sont un `string`. Un délégué de rappel est exécuté en réponse à la réception d’un tel message, qui affiche les données de charge utile dans une alerte.
+
+> [!IMPORTANT]
+> Le délégué exécuté par la méthode `Subscribe` est exécuté sur le thread qui publie le message à l’aide de la méthode `Send`.
 
 ## <a name="unsubscribe-from-a-message"></a>Se désabonner d’un message
 

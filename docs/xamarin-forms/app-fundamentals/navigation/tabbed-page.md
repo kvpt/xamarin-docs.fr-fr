@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 22c5b5b6479ce65c2e6b69f6ad5a98fd11ae47d7
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842913"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489997"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin. Forms TabbedPage
 
@@ -27,7 +27,7 @@ Sur iOS, la liste des onglets apparaît au bas de l’écran et la zone de déta
 > [!TIP]
 > La `TabbedRenderer` pour iOS a une méthode substituable `GetIcon` qui peut être utilisée pour charger les icônes de tabulation à partir d’une source spécifiée. Cette substitution permet d’utiliser des images SVG en tant qu’icônes sur un `TabbedPage`. Vous pouvez aussi fournir des versions sélectionnées et désélectionnées d’une icône.
 
-Sur Android, la liste des onglets apparaît en haut de l’écran et la zone de détails est affichée en dessous. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Toutefois, les onglets peuvent être déplacés vers le bas de l’écran avec un spécifique à la plateforme. Pour plus d’informations sur les exigences relatives aux icônes, consultez les [onglets](https://material.io/components/tabs/#) sur Material.IO et la [prise en charge de différentes densités de pixels](https://developer.android.com/training/multiscreen/screendensities) sur Developer.Android.com. Pour plus d’informations sur le déplacement des onglets vers le bas de l’écran, consultez Définition de la couleur et de l’emplacement de la [barre d’outils TabbedPage](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
+Sur Android, la liste des onglets apparaît en haut de l’écran et la zone de détails est affichée en dessous. Chaque onglet est constitué d’un titre et d’une icône, qui doit être un fichier PNG avec un canal alpha. Toutefois, les onglets peuvent être déplacés vers le bas de l’écran avec un spécifique à la plateforme. S’il y a plus de cinq onglets et que la liste d’onglets se trouve au bas de l’écran, un onglet *plus* s’affiche et peut être utilisé pour accéder aux onglets supplémentaires. Pour plus d’informations sur les exigences relatives aux icônes, consultez les [onglets](https://material.io/components/tabs/#) sur Material.IO et la [prise en charge de différentes densités de pixels](https://developer.android.com/training/multiscreen/screendensities) sur Developer.Android.com. Pour plus d’informations sur le déplacement des onglets vers le bas de l’écran, consultez Définition de la couleur et de l’emplacement de la [barre d’outils TabbedPage](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md).
 
 > [!TIP]
 > La `TabbedPageRenderer` pour Android AppCompat a une méthode de `GetIconDrawable` substituable qui peut être utilisée pour charger des icônes de tabulation à partir d’un `Drawable`personnalisé. Cette substitution rend possible l’utilisation d’images SVG comme icônes sur un `TabbedPage`, et fonctionne à la fois avec les barres d’onglets supérieures et inférieures. En guise d’alternative, vous pouvez utiliser la méthode `SetTabIcon` substituable pour charger des icônes d’onglets à partir d’un `Drawable` personnalisé pour les barres d’onglets supérieures.
@@ -44,7 +44,7 @@ Deux approches peuvent être adoptées pour créer un [`TabbedPage`](xref:Xamari
 Avec les deux approches, le [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) affiche chaque page quand l’utilisateur sélectionne chaque onglet.
 
 > [!IMPORTANT]
-> Nous vous recommandons de remplir un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) uniquement avec des instances de [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage). Cela permet de garantir une expérience utilisateur cohérente sur toutes les plateformes.
+> Nous vous recommandons de remplir un [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) uniquement avec des instances de [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage). Cela vous aidera à garantir une expérience utilisateur cohérente sur toutes les plateformes.
 
 En outre, [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) définit les propriétés suivantes :
 
@@ -238,5 +238,5 @@ En sélectionnant un autre onglet, vous affichez l’objet [`ContentPage`](xref:
 - [TabbedPageWithNavigationPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [TabbedPage (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [Navigation hiérarchique](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
-- [Variétés de page](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [Types de pages](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [API TabbedPage](xref:Xamarin.Forms.TabbedPage)

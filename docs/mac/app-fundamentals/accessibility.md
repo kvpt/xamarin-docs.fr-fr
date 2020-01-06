@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3f3b9c84fad0bce8939187fcd0c91d18314ce8ab
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2162fba1275b66167965e90aeade721e08ea9130
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032642"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489321"
 ---
 # <a name="accessibility-on-macos"></a>Accessibilité sur macOS
 
@@ -23,7 +23,7 @@ Pour comprendre le fonctionnement des API d’accessibilité dans macOS (ancienn
 
 ## <a name="describing-ui-elements"></a>Description des éléments d’interface utilisateur
 
-AppKit utilise le protocole `NSAccessibility` pour exposer des API qui facilitent l’accès à l’interface utilisateur. Cela comprend un comportement par défaut qui tente de définir des valeurs significatives pour les propriétés d’accessibilité, telles que la définition de l' `AccessibilityLabel` d’un bouton. L’étiquette est généralement un mot unique ou une expression brève décrivant le contrôle ou la vue.
+AppKit utilise le protocole `NSAccessibility` pour exposer des API qui facilitent l’accès à l’interface utilisateur. Cela comprend un comportement par défaut qui tente de définir des valeurs significatives pour les propriétés d’accessibilité, telles que la définition de l' `AccessibilityLabel`d’un bouton. L’étiquette est généralement un mot unique ou une expression brève décrivant le contrôle ou la vue.
 
 ### <a name="storyboard-files"></a>Fichiers de Storyboard
 
@@ -37,14 +37,14 @@ Vous pouvez modifier les informations d’accessibilité dans l' **inspecteur d�
 Xamarin. Mac n’expose actuellement pas comme `AccessibilityLabel` Setter.  Ajoutez la méthode d’assistance suivante pour définir l’étiquette d’accessibilité :
 
 ```csharp
-public static class AccessibilityHelper
+public static class AccessibilityHelper
 {
-    [System.Runtime.InteropServices.DllImport (ObjCRuntime.Constants.ObjectiveCLibrary)]
-    extern static void objc_msgSend (IntPtr handle, IntPtr selector, IntPtr label);
+    [System.Runtime.InteropServices.DllImport (ObjCRuntime.Constants.ObjectiveCLibrary)]
+    extern static void objc_msgSend (IntPtr handle, IntPtr selector, IntPtr label);
 
-    static public void SetAccessibilityLabel (this NSView view, string value)
+    static public void SetAccessibilityLabel (this NSView view, string value)
     {
-        objc_msgSend (view.Handle, new ObjCRuntime.Selector ("setAccessibilityLabel:").Handle, new NSString (value).Handle);
+        objc_msgSend (view.Handle, new ObjCRuntime.Selector ("setAccessibilityLabel:").Handle, new NSString (value).Handle);
     }
 }
 ```

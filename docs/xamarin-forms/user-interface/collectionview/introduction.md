@@ -6,13 +6,13 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: c04b5250bcdc575adc5aaff73901347e1e476b07
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662313"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489334"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Introduction à Xamarin. Forms CollectionView
 
@@ -47,15 +47,15 @@ Bien que les API [`CollectionView`](xref:Xamarin.Forms.CollectionView) et [`List
 |---|---|---|
 | Données | `ItemsSource` | Une [`CollectionView`](xref:Xamarin.Forms.CollectionView) est remplie avec des données en définissant sa propriété `ItemsSource`. Pour plus d’informations, consultez [remplir un CollectionView avec des données](populate-data.md#populate-a-collectionview-with-data). |
 | Apparence de l’élément | `ItemTemplate` | L’apparence de chaque élément dans un [`CollectionView`](xref:Xamarin.Forms.CollectionView) peut être définie en affectant à la propriété `ItemTemplate` la valeur d’un [`DataTemplate`](xref:Xamarin.Forms.DataTemplate). Pour plus d’informations, consultez [définir l’apparence des éléments](populate-data.md#define-item-appearance). |
-| Cellules | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) n’a pas de concept de cellule. Au lieu de cela, un modèle de données est utilisé pour définir l’apparence de chaque élément de données de la liste. |
+| Cellules | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) n’a pas de concept de cellules et, par conséquent, aucun concept d’indicateurs de divulgation. Au lieu de cela, un modèle de données est utilisé pour définir l’apparence de chaque élément de données de la liste. |
 | Séparateurs de lignes | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) n’inclut pas de séparateurs intégrés. Elles peuvent être fournies, si vous le souhaitez, dans le modèle d’élément. |
 | Sélection | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) prend en charge la sélection unique et multiple. Pour plus d’informations, consultez [Xamarin. Forms CollectionView Selection](selection.md). |
 | Hauteur de ligne | `HasUnevenRows`, `RowHeight` | Dans un `CollectionView`, la hauteur de ligne de chaque élément est déterminée par la propriété `ItemSizingStrategy`. Pour plus d’informations, consultez [dimensionnement](layout.md#item-sizing)d’un élément.|
 | Mise en cache | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) utilise automatiquement la virtualisation fournie par les contrôles natifs sous-jacents. |
-| En-têtes et pieds de page | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) pouvez présenter un en-tête et un pied de page qui défilent avec les éléments de la liste, via les propriétés `Header`, `Footer`, `HeaderTemplate` et `FooterTemplate`. Pour plus d’informations, consultez [en-têtes et pieds de page](layout.md#headers-and-footers). |
+| En-têtes et pieds de page | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) pouvez présenter un en-tête et un pied de page qui défilent avec les éléments de la liste, via les propriétés `Header`, `Footer`, `HeaderTemplate`et `FooterTemplate`. Pour plus d’informations, consultez [en-têtes et pieds de page](layout.md#headers-and-footers). |
 | Regroupement | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) affiche les données regroupées correctement en affectant à sa propriété `IsGrouped` la valeur `true`. Les en-têtes de groupe et les pieds de page de groupe peuvent être personnalisés en définissant les propriétés `GroupHeaderTemplate` et `GroupFooterTemplate` sur [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) objets. Pour plus d’informations, consultez [Xamarin. Forms CollectionView GROUPING](grouping.md). |
-| Extraire pour actualiser | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | La fonctionnalité d’extraction vers l’actualisation est prise en charge en définissant un [`CollectionView`](xref:Xamarin.Forms.CollectionView) en tant qu’enfant d’un `RefreshView`. Pour plus d’informations, consultez [Extraire pour actualiser](populate-data.md#pull-to-refresh). |
-| Actions contextuelles | `ContextActions` | Les actions de contexte ne sont actuellement pas prises en charge dans `CollectionView`, mais seront ajoutées dans une version ultérieure. |
+| Tirer pour actualiser | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | La fonctionnalité d’extraction vers l’actualisation est prise en charge en définissant un [`CollectionView`](xref:Xamarin.Forms.CollectionView) en tant qu’enfant d’un `RefreshView`. Pour plus d’informations, consultez [Extraire pour actualiser](populate-data.md#pull-to-refresh). |
+| Éléments de menu contextuel | `ContextActions` | Les éléments de menu contextuel sont pris en charge en définissant une `SwipeView` comme vue racine dans le [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) qui définit l’apparence de chaque élément de données dans le [`CollectionView`](xref:Xamarin.Forms.CollectionView). Pour plus d’informations, consultez [menus contextuels](populate-data.md#context-menus). |
 | Défilement | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) définit `ScrollTo` méthodes, qui défilent les éléments dans la vue. Pour plus d’informations, consultez [défilement](scrolling.md). |
 
 ## <a name="related-links"></a>Liens connexes

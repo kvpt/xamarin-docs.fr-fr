@@ -1,92 +1,45 @@
 ---
-title: Utilisation de l’application parente Watchos dans Xamarin
-description: Ce document décrit comment utiliser une application parente Watchos dans Xamarin. Il aborde les extensions d’application WatchKit, les applications iOS, le stockage partagé, et bien plus encore.
+title: Utilisation de l’Application parente dans Xamarin watchOS
+description: Ce document décrit comment travailler avec une application de parent watchOS dans Xamarin. Il aborde les extensions d’application Watchos, les applications iOS, le stockage partagé, et bien plus encore.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 08637fe13b28565e7c6ab1c89b291c6db3b81025
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001478"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487761"
 ---
-# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’application parente Watchos dans Xamarin
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Utilisation de l’Application parente dans Xamarin watchOS
 
-> [!IMPORTANT]
-> L’accès à l’application parente à l’aide des exemples ci-dessous fonctionne uniquement sur les applications Watchos 1 Watch.
+Il existe différentes façons de communiquer entre l’application de surveillance et de l’application iOS qui il est fourni avec :
 
-Il existe différentes façons de communiquer entre l’application espion et l’application iOS avec laquelle elle est regroupée :
+- Les applications de visionneuse peuvent [exécuter du code](#run-code) sur l’application parente sur l’iPhone.
 
-- Les extensions Watch peuvent [appeler une méthode](#code) sur l’application parente qui s’exécute en arrière-plan sur l’iPhone.
+- Espion extensions peut [partagent un emplacement de stockage](#shared-storage) avec l’application iPhone parent.
 
-- Les extensions Watch peuvent [partager un emplacement de stockage](#storage) avec l’application iPhone parente.
+- Utilisez la remise pour transmettre des données d’une notification à l’application Watch, en envoyant l’utilisateur à un contrôleur d’interface spécifique dans l’application.
 
-- Utilisation de la remise pour transmettre des données d’un coup d’œil ou d’une notification à l’application Watch, en envoyant l’utilisateur à un contrôleur d’interface spécifique dans l’application.
+L’application parente est également parfois appelée l’application de conteneur.
 
-L’application parente est également parfois appelée « application de conteneur ».
+## <a name="run-code"></a>Exécuter du Code
 
-<a name="code" />
+Ces deux exemples montrent comment utiliser `WCSession` pour exécuter du code et envoyer des messages entre une application espion et l’iPhone couplé :
 
-## <a name="run-code"></a>Exécuter le code
-
-La communication entre une extension Watch et l’application iPhone parente est illustrée dans l' [exemple GpsWatch](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gpswatch).
-Votre extension Watch peut demander à l’application iOS parente d’effectuer un traitement en son nom à l’aide de la méthode `OpenParentApplication`.
-
-Ceci est particulièrement utile pour les tâches longues (y compris les demandes réseau) : seule l’application iOS parente peut tirer parti du traitement en arrière-plan pour effectuer ces tâches et enregistrer les données récupérées dans un emplacement accessible à l’extension Watch.
-
-### <a name="watch-kit-app-extension"></a>Extension d’application Watch Kit
-
-Appelez la `WKInterfaceController.OpenParentApplication` dans l’extension de votre application Watch. Elle retourne une `bool` qui indique si la demande de méthode a été correctement envoyée ou non. Vérifiez le paramètre `error` dans le `Action` de réponse pour déterminer s’il s’est produit pendant l’exécution de la méthode dans l’application iPhone.
-
-```csharp
-WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, error) => {
-    if(error != null) {
-        Console.WriteLine (error);
-        return;
-    }
-    Console.WriteLine ("parent app responded");
-    // do something with replyInfo[] dictionary
-});
-```
-
-### <a name="ios-app"></a>Application iOS
-
-Tous les appels à partir d’une extension d’application espion sont acheminés via la méthode `HandleWatchKitExtensionRequest` de l’application iPhone.
-Si vous effectuez des demandes différentes dans l’application Watch, cette méthode devra interroger le dictionnaire `userInfo` pour déterminer comment traiter la demande.
-
-```csharp
-[Register ("AppDelegate")]
-public partial class AppDelegate : UIApplicationDelegate
-{
-    // ... other AppDelegate methods
-    public override void HandleWatchKitExtensionRequest
-        (UIApplication application, NSDictionary userInfo, Action<NSDictionary> reply)
-    {
-        var status = 2;
-        // do something in the background, and respond
-        reply (new NSDictionary (
-            "count", NSNumber.FromInt32 ((int)status),
-            "value2", new NSString("some-info")
-            ));
-    }
-}
-```
-
-<a name="storage" />
+- [Surveiller la connectivité](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchconnectivity/)
+- [SimpleWatchConnectivity](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
 
 ## <a name="shared-storage"></a>Stockage partagé
 
-Si vous configurez un [groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) , les extensions iOS 8 (y compris les extensions espion) peuvent partager des données avec l’application parente.
+Si vous configurez un [groupe app](~/ios/watchos/app-fundamentals/app-groups.md) puis extensions iOS 8 (y compris les extensions d’espion) peuvent partager des données avec l’application parente.
 
-<a name="nsuserdefaults" />
+### <a name="nsuserdefaults"></a>Valeurs NSUserDefaults
 
-### <a name="nsuserdefaults"></a>NSUserDefaults
-
-Le code suivant peut être écrit à la fois dans l’extension de l’application espion et dans l’application iPhone parente afin qu’il puisse référencer un ensemble commun de `NSUserDefaults`:
+Le code suivant peut être écrit dans l’extension d’application watch et l’application iPhone parent afin qu’ils peuvent référencer un ensemble commun de `NSUserDefaults`:
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -104,9 +57,9 @@ var count = shared.IntForKey ("count");
 
 <a name="files" />
 
-### <a name="files"></a>Fichiers
+### <a name="files"></a>Files
 
-L’extension d’application et de visionneuse iOS peut également partager des fichiers à l’aide d’un chemin d’accès de fichier commun.
+L’extension d’application et regardez iOS peut également partager des fichiers à l’aide d’un chemin d’accès de fichier commun.
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -117,28 +70,11 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-Remarque : si le chemin d’accès est `null` Vérifiez la [configuration du groupe d’applications](~/ios/watchos/app-fundamentals/app-groups.md) pour vous assurer que les profils de configuration ont été correctement configurés et ont été téléchargés/installés sur l’ordinateur de développement.
+Remarque : si le chemin d’accès est `null` puis vérifiez le [configuration du groupe application](~/ios/watchos/app-fundamentals/app-groups.md) afin de garantir les profils de provisionnement ont été configurés correctement et ont été téléchargés/installé sur l’ordinateur de développement.
 
-Pour plus d’informations, consultez la documentation sur les [fonctionnalités du groupe d’applications](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) .
-
-## <a name="wormholesharp"></a>WormHoleSharp
-
-Un mécanisme Open source populaire pour Watchos 1 (basé sur [MMWormHole](https://github.com/mutualmobile/MMWormhole)) pour passer des données ou des commandes entre l’application parente et l’application Watch.
-
-Vous pouvez configurer le ver géant à l’aide d’un groupe d’applications comme celui-ci dans votre application iOS et l’extension Watch :
-
-```csharp
-// AppDelegate (iOS) or InterfaceController (watch extension)
-Wormhole wormHole;
-// ...
-wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
-```
-
-Téléchargez la C# version [WormHoleSharp](https://github.com/Clancey/WormHoleSharp).
+Pour plus d’informations, consultez le [application groupe fonctionnalités](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) documentation.
 
 ## <a name="related-links"></a>Liens associés
 
-- [GpsWatch (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [WormHoleSharp (exemple)](https://github.com/Clancey/WormHoleSharp)
-- [Référence WKInterfaceController d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
-- [Partager des données avec votre application conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Référence de WKInterfaceController d’Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
+- [Apple partage de données avec votre application de conteneur](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771623"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545593"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Interface de commande Xamarin.Forms
 
@@ -277,11 +277,11 @@ Avant d’examiner le constructeur de la classe `PersonCollectionViewModel`, exa
 </ContentPage>
 ```
 
-Voilà comment ça marche : L’utilisateur appuie initialement sur le bouton **New** (Nouveau). Cela active le formulaire d’entrée mais désactive le bouton **New**. L’utilisateur entre alors un nom, un âge et des compétences. À tout moment pendant la saisie, l’utilisateur peut appuyer sur le bouton **Annuler** pour repartir de zéro. Une fois seulement qu’un nom et un âge valides ont été entrés, le bouton **Submit** (Envoyer) est activé. L’appui sur le bouton **Submit** transfère la personne vers la collection affichée par le `ListView`. Après un appui sur le bouton **Cancel** (Annuler) ou **Submit** (Envoyer), le formulaire d’entrée est effacé et le bouton **New** (Nouveau) est activé de nouveau.
+Voici comment cela fonctionne : l’utilisateur appuie initialement sur le bouton **New** (Nouveau). Cela active le formulaire d’entrée mais désactive le bouton **New**. L’utilisateur entre alors un nom, un âge et des compétences. À tout moment pendant la saisie, l’utilisateur peut appuyer sur le bouton **Annuler** pour repartir de zéro. Une fois seulement qu’un nom et un âge valides ont été entrés, le bouton **Submit** (Envoyer) est activé. L’appui sur le bouton **Submit** transfère la personne vers la collection affichée par le `ListView`. Après un appui sur le bouton **Cancel** (Annuler) ou **Submit** (Envoyer), le formulaire d’entrée est effacé et le bouton **New** (Nouveau) est activé de nouveau.
 
-L’écran iOS de gauche montre la disposition avant qu’un âge valide soit entré. Les écrans Android et UWP montrent le bouton **Submit** (Envoyer) activé après la définition d’un âge :
+L’écran iOS de gauche montre la disposition avant qu’un âge valide soit entré. L’écran Android affiche le bouton **Envoyer** activé après la définition d’une ancienneté :
 
-[![Person Entry](commanding-images/personentry-small.png "Person Entry")](commanding-images/personentry-large.png#lightbox "Person Entry")
+[![Entrée de personne](commanding-images/personentry-small.png "Entrée de personne")](commanding-images/personentry-large.png#lightbox "Entrée de personne")
 
 Le programme n’a aucune fonctionnalité pour modifier des entrées existantes et n’enregistre pas les entrées lorsque vous quittez la page.
 
@@ -413,7 +413,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 La méthode `canExecute` retourne `true` lorsqu’un `PersonViewModel` est en cours de modification.
 
-Ces techniques pourraient être adaptées à des scénarios plus complexes : Une propriété dans `PersonCollectionViewModel` pourrait être liée à la propriété `SelectedItem` du `ListView` pour modifier des éléments existants et un bouton **Delete** pourrait être ajouté pour supprimer ces éléments.
+Ces techniques pourraient être adaptées à des scénarios plus complexes : une propriété dans `PersonCollectionViewModel` pourrait être liée à la propriété `SelectedItem` du `ListView` pour modifier des éléments existants et un bouton **Delete** pourrait être ajouté pour supprimer ces éléments.
 
 Il n’est pas nécessaire de définir les méthodes `execute` et `canExecute` en tant que fonctions lambda. Vous pouvez les écrire en tant que méthodes privées standard dans le ViewModel et les référencer dans les constructeurs `Command`. Toutefois, cette approche a tendance à générer un grand nombre de méthodes qui sont référencées une seule fois dans le ViewModel.
 
@@ -532,7 +532,7 @@ Les 11 boutons pour les 10 chiffres et la virgule décimale partagent une liai
 
 Voici le programme en action :
 
-[![Decimal Keyboard](commanding-images/decimalkeyboard-small.png "Decimal Keyboard")](commanding-images/decimalkeyboard-large.png#lightbox "Decimal Keyboard")
+[![Clavier décimal](commanding-images/decimalkeyboard-small.png "Clavier décimal")](commanding-images/decimalkeyboard-large.png#lightbox "Clavier décimal")
 
 Notez que le bouton de la virgule décimale dans les trois captures d’écran est désactivé, car le nombre saisi contient déjà une virgule décimale.
 
@@ -758,7 +758,7 @@ Le constructeur définit la propriété `NavigateCommand` sur une méthode `exec
 
 Le constructeur définit également le `BindingContext` de la page sur lui-même afin que les liaisons référencent la propriété `NavigateCommand` dans cette classe.
 
-L’ordre du code dans ce constructeur fait une différence : L’appel de `InitializeComponent` entraîne l’analyse du code XAML, mais à ce stade, la liaison à une propriété nommée `NavigateCommand` ne peut pas être résolue, car `BindingContext` est défini sur `null`. Si le `BindingContext` est défini dans le constructeur *avant* que la propriété `NavigateCommand` soit définie, la liaison peut être résolue lorsque `BindingContext` est défini, mais à ce stade, `NavigateCommand` a encore pour valeur `null`. La définition de `NavigateCommand` après `BindingContext` n’a aucun effet sur la liaison, car une modification de `NavigateCommand` ne déclenche pas d’événement `PropertyChanged`, et la liaison ne sait pas que `NavigateCommand` est désormais valide.
+L’ordre du code dans ce constructeur fait une différence : l’appel de `InitializeComponent` entraîne l’analyse du code XAML, mais à ce stade, la liaison à une propriété nommée `NavigateCommand` ne peut pas être résolue, car `BindingContext` est défini sur `null`. Si le `BindingContext` est défini dans le constructeur *avant que* `NavigateCommand` soit défini, la liaison peut être résolue lorsque `BindingContext` est défini, mais à ce moment-là, `NavigateCommand` est toujours `null`. La définition de `NavigateCommand` après `BindingContext` n’a aucun effet sur la liaison, car une modification de `NavigateCommand` ne déclenche pas d’événement `PropertyChanged`, et la liaison ne sait pas que `NavigateCommand` est désormais valide.
 
 La définition des deux propriétés `NavigateCommand` et `BindingContext` (dans n’importe quel ordre) avant l’appel à `InitializeComponent` fonctionne, car les deux composantes de la liaison sont définies lorsque l’analyseur XAML rencontre la définition de la liaison.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/13/2018
-ms.openlocfilehash: 43bde3a31a79728548e72ea1d34977f1a131f282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6a38aea1e46e1165bb36d83e75e24769de0a1e2
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028543"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655340"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Utilisation des droits dans Xamarin.iOS
 
@@ -41,15 +41,15 @@ En plus de sélectionner et configurer les services d’application nécessaires
 
 Pour configurer les droits dans Visual Studio pour Mac, effectuez les étapes suivantes :
 
-1. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Info.plist** pour l’ouvrir et le modifier.
-2. Dans la section **Cible d’application iOS**, entrez le nom de l’application, puis entrez l’**identificateur de bundle** créé quand vous avez défini l’ID d’application :
+1. Dans le panneau **solutions**, double-cliquez sur le fichier **info. plist** pour l’ouvrir.
+2. Dans la section **identité** , indiquez un nom pour l’application et entrez l' **identificateur de Bundle** qui a été créé lorsque l’ID d’application a été défini :
 
-    ![](entitlements-images/servicexs01.png "Enter a Bundle Identifier")
+    ![Entrer un identificateur de Bundle](entitlements-images/servicexs01-sml.png)
 
 3. Enregistrez les modifications apportées au fichier **Info.plist**.
-4. Dans l’**Explorateur de solutions**, double-cliquez sur le fichier **Entitlements.plist** pour l’ouvrir et le modifier :
+4. Dans le panneau **solutions**, double-cliquez sur le fichier **Entitlements. plist** pour l’ouvrir et le modifier :
 
-    ![](entitlements-images/servicexs02.png "Editing the Entitlements")
+    ![Modification des droits](entitlements-images/servicexs02-sml.png)
 
 5. Sélectionnez et configurez les droits requis pour l’application Xamarin.iOS afin qu’ils correspondent à la configuration définie au moment de la création de l’ID d’application.
 6. Enregistrez les modifications apportées au fichier **Entitlements.plist**.
@@ -58,17 +58,17 @@ Pour configurer les droits dans Visual Studio pour Mac, effectuez les étapes su
 
 Pour configurer les droits dans Visual Studio, effectuez les étapes suivantes :
 
-1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Info.plist**, puis sélectionnez **Ouvrir avec…** et **Éditeur de liste de propriétés** pour ouvrir le fichier à modifier.
+1. Dans la **Explorateur de solutions**, double-cliquez sur le fichier **info. plist** pour l’ouvrir et le modifier.
 2. Dans la section **Cible d’application iOS**, entrez le nom de l’application, puis entrez l’**identificateur de bundle** créé quand vous avez défini l’ID d’application :
 
-    ![](entitlements-images/servicevs01.png "Setting the Bundle Identifier")
+    ![Définition de l’identificateur de Bundle](entitlements-images/servicevs01-sml.png)
 
 3. Enregistrez les modifications apportées au fichier **Info.plist**.
-4. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le fichier **Entitlements.plist**, puis sélectionnez **Ouvrir avec…** et **Éditeur de liste de propriétés** pour ouvrir le fichier à modifier :
+4. Dans la **Explorateur de solutions**, double-cliquez sur le fichier **Entitlements. plist** pour l’ouvrir :
 
-    ![](entitlements-images/servicevs02.png "Editing the Entitlements")
+    ![Modification des droits](entitlements-images/servicevs02-sml.png)
 
-    Vous pouvez également double-cliquer sur le fichier **Entitlements.plist** pour l’ouvrir dans l’éditeur de source XML, puis définir les valeurs de propriété et de clé des droits, comme expliqué dans la section [Informations de référence sur les clés de droits](#entitlement-key-reference) ci-dessous.
+    Vous pouvez également cliquer avec le bouton droit sur le fichier **habilitations. plist** et choisir **Ouvrir avec...** l’éditeur de source XML, qui vous permet de définir la propriété et la valeur de clé du droit comme indiqué dans la section Référence de la [clé d’habilitation](#entitlement-key-reference) ci-dessous.
 
 5. Sélectionnez et configurez les droits requis pour l’application Xamarin.iOS afin qu’ils correspondent à la configuration définie au moment de la création de l’ID d’application.
 6. Enregistrez les modifications apportées au fichier **Entitlements.plist**.
@@ -83,10 +83,10 @@ Pour ajouter un fichier Entitlements.plist à votre projet Xamarin.iOS, effectue
 
 1. Cliquez avec le bouton droit sur le fichier projet et sélectionnez **Ajouter > Nouveau fichier…**  :
 
-    ![Menu contextuel d’ajout de fichiers](entitlements-images/image1.png)
+    ![Menu contextuel d’ajout de fichiers](entitlements-images/image1-sml.png)
 2. Dans la boîte de dialogue Nouveau fichier, sélectionnez **iOS > Liste de propriétés** et nommez la liste « Entitlements » :
 
-    ![Boîte de dialogue Nouveau fichier](entitlements-images/image2.png)
+    ![Boîte de dialogue Nouveau fichier](entitlements-images/image2-sml.png)
 
 ## <a name="entitlement-key-reference"></a>Informations de référence sur les clés de droits
 
@@ -104,8 +104,6 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
   - Avec cette valeur de chaîne, votre application accepte tous les types de passes. Si vous souhaitez que votre application accepte uniquement une partie des types de passes d’équipe, définissez la chaîne à cette valeur : `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
   Où pass.$(CFBundleIdentifier) est l’ID de passe qui a été créé [plus haut](~/ios/platform/passkit.md)
-
-<a name="icloud" />
 
 ### <a name="icloud"></a>iCloud
 
@@ -133,15 +131,13 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
   - **Clé** : com.apple.security.application-groups
   - **Chaîne** : group.$(CFBundleIdentifier)
 
-<a name="apple-pay" />
-
 ### <a name="apple-pay"></a>Apple Pay
 
 - **Description** : Apple Pay permet aux utilisateurs de payer des marchandises physiques à partir de leur appareil iOS.
   - **Clé** : com.apple.developer.in-app-payments
   - **Chaîne** : merchant.your.mechantid
 
-### <a name="push-notifications"></a>Push Notifications
+### <a name="push-notifications"></a>Notifications push
 
 - **Clé** : aps-environment
 - **Chaîne** : `development` ou `production`
@@ -151,12 +147,12 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
 - **Description** : SiriKit permet à une application iOS de fournir des services accessibles à Siri et à l’application Maps sur un appareil iOS à l’aide des extensions d’application, ainsi que des nouveaux frameworks Intents et Intents UI. Pour plus d’informations, consultez le guide Présentation de SiriKit.
   - **Clé** : com.apple.developer.siri
 
-### <a name="personal-vpn"></a>VPN personnel
+### <a name="personal-vpn"></a>Personal VPN
 
 - **Clé** : com.apple.developer.networking.vpn.api
 - **Chaîne** : allow-vpn
 
-### <a name="keychain-sharing"></a>Keychain Sharing
+### <a name="keychain-sharing"></a>Partage de trousseau
 
 - **Description** : Keychain Sharing permet aux développeurs d’application de partager les mots de passe qui sont stockés dans le trousseau de l’appareil avec d’autres applications développées par la même équipe. Vous pouvez limiter l’accès en passant à la chaîne un identificateur de groupe d’accès au trousseau.
   - **Clé** : keychain-access-groups
@@ -192,7 +188,7 @@ Vous pouvez ajouter les clés de droits par le biais du panneau source de l’é
   - **Clé** : com.apple.developer.healthkit
   - **Valeur booléenne** : YES
 
-### <a name="wireless-accessory-configuration"></a>Configuration d’accessoires sans fil
+### <a name="wireless-accessory-configuration"></a>Wireless Accessory Configuration
 
 - **Description** : Wireless Accessory Configuration permet à votre application de configurer des accessoires WiFi MFI
   - **Clé** : com.apple.external-accessory.wireless-configuration

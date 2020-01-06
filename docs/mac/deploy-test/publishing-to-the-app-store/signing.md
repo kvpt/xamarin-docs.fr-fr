@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: eb8df9f7088c4954ed48ce8c7c145334004207cd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: de858049ef899134d61596cabfcf81fca973e8b0
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017947"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489347"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Signature d’applications Xamarin.Mac avec un ID de développeur
 
@@ -42,10 +42,10 @@ Une fois l’application générée, le développeur peut cliquer avec le bouton
 
  [![](signing-images/image59.png "Selecting the app package in Finder")](signing-images/image59.png#lightbox)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Installation](~//mac/get-started/installation.md)
-- [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
+- [Exemple Hello, Mac](~//mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
 - [Guide sur les outils : Signature du code de votre application](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)

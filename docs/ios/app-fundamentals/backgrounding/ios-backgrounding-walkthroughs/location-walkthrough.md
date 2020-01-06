@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 625826e729a6b4153396286361730d6a2b878dca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010470"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488320"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>Procédure pas à pas-emplacement en arrière-plan dans Xamarin. iOS
 
@@ -80,7 +80,7 @@ Cette procédure pas à pas explique certains concepts fondamentaux de l’arri�
     > [!IMPORTANT]
     > iOS 8 (et versions ultérieures) nécessite également une entrée dans le fichier **info. plist** pour afficher l’utilisateur dans le cadre de la demande d’autorisation.
 
-1. Ajoutez une clé `NSLocationAlwaysUsageDescription` ou `NSLocationWhenInUseUsageDescription` avec une chaîne qui sera affichée à l’utilisateur dans l’alerte qui demande l’accès aux données d’emplacement.
+1. Ajoutez les clés **info. plist** pour les types d’autorisation requis par l’application (`NSLocationAlwaysUsageDescription`, `NSLocationWhenInUseUsageDescription`et/ou `NSLocationAlwaysAndWhenInUseUsageDescription`) avec une chaîne qui sera affichée à l’utilisateur dans l’alerte qui demande l’accès aux données d’emplacement.
 
 1. iOS 9 requiert que lors de l’utilisation de `AllowsBackgroundLocationUpdates` le fichier **info. plist** inclue la clé `UIBackgroundModes` avec la valeur `location`. Si vous avez terminé l’étape 2 de cette procédure pas à pas, vous devez déjà avoir dans votre fichier info. plist.
 
