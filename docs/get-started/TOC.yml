@@ -4,7 +4,7 @@
   items:
     - name: Qu’est-ce que Xamarin
       href: what-is-xamarin.md
-    - name: Configuration requise
+    - name: Spécifications
       href: requirements.md
     - name: Installation
       href: installation/index.md
@@ -26,7 +26,7 @@
     - name: Première application
       href: first-app/index.md
     - name: Démarrages rapides
-      href: quickstarts/index.yml
+      href: quickstarts/index.md
       expanded: true
       items:
         - name: Fichier > Nouveau
@@ -70,11 +70,7 @@
     - name: En savoir plus sur Xamarin
       expanded: true
       items:
-        - name: Applications natives
-          href: ~/cross-platform/get-started/introduction-to-mobile-development.md
         - name: Développeurs .NET
-          href: ~/cross-platform/desktop/index.md
-        - name: Développeurs ASP.NET
           href: ~/cross-platform/desktop/index.md
         - name: Développeurs Java
           href: ~/android/get-started/java-developers.md
