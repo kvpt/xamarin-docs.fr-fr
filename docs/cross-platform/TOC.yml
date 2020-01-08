@@ -2,11 +2,11 @@
   href: index.yml
   expanded: true
   items:
-    - name: Création d’applications mobiles
+    - name: Créer des applications mobiles
       href: get-started/index.md
       expanded: true
       items:
-        - name: Configuration requise
+        - name: Spécifications
           displayName: System requirements
           href: get-started/requirements.md
         - name: Cycle de vie du développement de logiciel mobile
@@ -16,17 +16,17 @@
           items:
             - name: Vue d'ensemble
               href: app-fundamentals/building-cross-platform-applications/overview.md
-            - name: 'Partie 1 : Présentation de la plateforme mobile Xamarin'
+            - name: "Partie\_1\_: Présentation de la plateforme mobile Xamarin"
               href: app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md
             - name: 'Partie 2 : Architecture'
               href: app-fundamentals/building-cross-platform-applications/architecture.md
-            - name: 'Partie 3 : Configuration d’une solution multiplateforme Xamarin'
+            - name: "Partie\_3\_: Configuration d’une solution multiplateforme Xamarin"
               href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
-            - name: 'Partie 4 : Utilisation de plusieurs plateformes'
+            - name: "Partie\_4\_: Utilisation de plusieurs plateformes"
               href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
-            - name: 'Partie 5 : Stratégies de partage de code pratiques'
+            - name: "Partie\_5\_: Stratégies de partage de code pratiques"
               href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
-            - name: 'Partie 6 : Test et approbations de l’App Store'
+            - name: "Partie\_6\_: Test et approbations de l’App Store"
               href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
             - name: "Étude de cas\_: Tasky"
               href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
@@ -41,7 +41,7 @@
           href: app-fundamentals/shared-projects.md
         - name: Bibliothèques de classes portables (PCL)
           href: app-fundamentals/pcl.md
-        - name: Projets de bibliothèques multiplateformes NuGet
+        - name: Projets de bibliothèque multiplateforme NuGet
           displayName: Nugetizer 3000
           href: app-fundamentals/nuget-multiplatform-libraries/index.md
           items:
@@ -49,29 +49,29 @@
               href: app-fundamentals/nuget-multiplatform-libraries/existing-library.md
             - name: Nouvelle bibliothèque multiplateforme
               href: app-fundamentals/nuget-multiplatform-libraries/single-codebase.md
-            - name: Nouvelles bibliothèques spécifiques de la plateforme
+            - name: Nouvelles bibliothèques propres à la plateforme
               href: app-fundamentals/nuget-multiplatform-libraries/platform-specific.md
             - name: Guide sur les métadonnées
               href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
         - name: Packages NuGet (manuels)
           href: app-fundamentals/nuget-manual.md
-        - name: Utiliser les bibliothèques C/C++ dans des applications multiplateformes
+        - name: Utiliser des bibliothèques C/C++ dans des applications multiplateformes
           href: cpp/index.md
-    - name: Prise en charge linguistique
+    - name: Langages pris en charge
       href: platform/index.md
       items:
         - name: 'C#'
           items:
-            - name: Présentation de la prise en charge asynchrone
+            - name: Vue d’ensemble de la prise en charge asynchrone
               href: platform/async.md
-            - name: 'Fonctionnalités du langage C# 6'
+            - name: "Fonctionnalités du langage C#\_6"
               href: platform/csharp-six.md
         - name: 'F#'
           href: platform/fsharp/index.md
           items:
             - name: Prise en main
               href: platform/fsharp/overview.md
-            - name: 'Exemples F#'
+            - name: 'Exemples en F#'
               href: platform/fsharp/samples.md
         - name: Visual Basic
           href: platform/visual-basic/index.md
@@ -82,17 +82,19 @@
               href: platform/visual-basic/xamarin-forms.md
         - name: Modèles HTML Razor
           href: platform/razor-html-templates/index.md
-    - name: Niveau de performance et sécurité
+    - name: Performances et sécurité
       href: deploy-test/performance.md
       items:
         - name: Performances
           href: deploy-test/memory-perf-best-practices.md
           items:
-            - name: Performances Android
+            - name: Performances de Xamarin.Forms
+              href: ~/xamarin-forms/deploy-test/performance.md?context=xamarin/cross-platform
+            - name: Performances d’Android
               href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
-            - name: Performances iOS
+            - name: Performances d’iOS
               href: ~/ios/deploy-test/performance.md?context=xamarin/cross-platform
-            - name: Performances Mac
+            - name: Performances de Mac
               href: ~/mac/deploy-test/performance.md?context=xamarin/cross-platform
         - name: TLS (Transport Layer Security)
           href: app-fundamentals/transport-layer-security.md
@@ -104,14 +106,14 @@
     - name: Déploiement et débogage
       href: deploy-test/index.md
       items:
-        - name: Connexion aux services web locaux
+        - name: Se connecter aux services web locaux
           href: deploy-test/connect-to-local-web-services.md
         - name: Configuration personnalisée de l’éditeur de liens
           href: deploy-test/linker.md
         - name: Débogage multiprocessus
           href: deploy-test/multi-process-debugging.md
     - name: Développeurs de bureau
-      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers'
+      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP developers'
       href: desktop/index.md
       items:
         - name: Comparaison du cycle de vie des applications
@@ -128,7 +130,7 @@
     - name: Résolution des problèmes
       href: troubleshooting/index.md
       items:
-        - name: Questions fréquemment posées
+        - name: FAQ
           displayName: FAQ
           href: troubleshooting/questions/index.md
           items:
@@ -171,4 +173,4 @@
         - name: Mise à jour des références de composants avec NuGet
           href: troubleshooting/component-nuget.md
     - name: Exemples
-      href: samples/index.yml
+      href: samples/index.md

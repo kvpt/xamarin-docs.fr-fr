@@ -5,6 +5,8 @@
     - name: 2019
       expanded: true
       items:
+        - name: Décembre
+          href: 2019-12.md
         - name: Octobre
           href: 2019-10.md
         - name: Août
