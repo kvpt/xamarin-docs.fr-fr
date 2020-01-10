@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a94baa66c1ca18762efccd980264170648c232fa
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030335"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728289"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>Étude de cas d’application multiplateforme : Tasky
 
@@ -25,7 +25,7 @@ Il est recommandé de créer un plan routier pour ce que vous souhaitez obtenir 
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>spécifications
+### <a name="requirements"></a>Configuration requise pour
 
 La première étape de la conception d’une application consiste à identifier les fonctionnalités souhaitées. Il peut s’agir d’objectifs de haut niveau ou de cas d’usage détaillés. Tasky a des exigences fonctionnelles simples :
 
@@ -52,7 +52,7 @@ Le fait de savoir quelles données doivent être stockées vous aidera à déter
 
 Tasky doit stocker trois propriétés pour chaque « TaskItem » :
 
-- **Nom** : chaîne
+- **Name** : chaîne
 - **Remarques** -chaîne
 - **Terminé** – booléen
 
@@ -220,8 +220,8 @@ public static string DatabaseFilePath {
 }
 ```
 
-En fonction de la plateforme, la sortie est « <app
-path>/Library/TaskDB.db3 » pour iOS, « <app
+En fonction de la plateforme, la sortie est «<app
+path>/Library/TaskDB.db3 » pour iOS, «<app
 path>/Documents/TaskDB.db3 » pour Android ou simplement « TaskDB. début » pour Windows Phone.
 
 ### <a name="business-layer-bl"></a>Couche métier (BL)
@@ -231,7 +231,7 @@ Dans Tasky, le modèle est la classe `TaskItem` et `TaskItemManager` implémente
 
  <a name="Façade" />
 
-#### <a name="faade"></a>Facade
+#### <a name="faade"></a>Façade
 
  `TaskItemManager` encapsule le `DAL.TaskItemRepository` pour fournir les méthodes d’extraction, d’enregistrement et de suppression qui seront référencées par l’application et les couches d’interface utilisateur.
 
@@ -341,7 +341,7 @@ Les deux principales méthodes relatives à l’affichage et à l’interaction 
 
 Les détails de la tâche sont un écran d’entrée qui permet de modifier ou de supprimer des tâches.
 
-Tasky utilise l’API de réflexion de `MonoTouch.Dialog` pour afficher l’écran, ce qui signifie qu’il n’y a pas d’implémentation `UIViewController`. Au lieu de cela, la classe `HomeScreen` instancie et affiche une `DialogViewController` à l’aide de la classe `TaskDialog` de la couche application.
+Tasky utilise l’API de réflexion de `MonoTouch.Dialog`pour afficher l’écran, ce qui signifie qu’il n’y a pas d’implémentation `UIViewController`. Au lieu de cela, la classe `HomeScreen` instancie et affiche une `DialogViewController` à l’aide de la classe `TaskDialog` de la couche application.
 
 Cette capture d’écran montre un écran vide qui montre l’attribut `Entry` définissant le texte de filigrane dans les champs **nom** et **Remarques** :
 
@@ -381,7 +381,7 @@ Il doit également référencer le projet PCL (par exemple, TaskyPortableLibrary
 
 À l’instar de la version d’iOS que nous avons examinée précédemment, la couche application dans la version Android contient des classes spécifiques à la plateforme requises pour « lier » les objets exposés par le noyau à l’interface utilisateur.
 
- **TaskListAdapter** : pour afficher une liste \<T > d’objets, il est nécessaire d’implémenter un adaptateur pour afficher des objets personnalisés dans un `ListView`. L’adaptateur contrôle la disposition utilisée pour chaque élément de la liste. dans ce cas, le code utilise une disposition intégrée Android `SimpleListItemChecked`.
+ **TaskListAdapter** : pour afficher une liste\<t > d’objets dont nous avons besoin pour mettre en œuvre un adaptateur afin d’afficher des objets personnalisés dans un `ListView`. L’adaptateur contrôle la disposition utilisée pour chaque élément de la liste. dans ce cas, le code utilise une disposition intégrée Android `SimpleListItemChecked`.
 
  <a name="User_Interface_(UI)" />
 

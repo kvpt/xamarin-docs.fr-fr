@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014341"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728250"
 ---
 # <a name="updating-component-references-to-nuget"></a>Mise à jour des références de composants à NuGet
 
@@ -37,11 +37,11 @@ Si vous chargez un projet dans Visual Studio, la boîte de dialogue suivante s�
 
 Pour supprimer un composant de votre projet :
 
-1. Ouvrez le fichier **. csproj** . Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **décharger le projet**. 
+1. Ouvrez le fichier  **.csproj**. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **décharger le projet**. 
 
 2. Cliquez à nouveau avec le bouton droit sur le projet déchargé, puis sélectionnez **modifier {Your-Project-Name}. csproj**.
 
-3. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit ressembler à l’exemple suivant :
+3. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit se présenter comme suit :
 
     ```xml
     <ItemGroup>
@@ -76,7 +76,7 @@ Pour supprimer un composant de votre projet :
 
 1. Ouvrez le fichier. csproj. Pour ce faire, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **outils > modifier le fichier**.
 
-2. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit ressembler à l’exemple suivant :
+2. Recherchez dans le fichier toutes les références à `XamarinComponentReference`. Elle doit se présenter comme suit :
 
     ```xml
     <ItemGroup>

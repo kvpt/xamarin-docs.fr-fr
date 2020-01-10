@@ -7,18 +7,18 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2e19fd37270d3c96cb175d30dc786a95a01c3fcf
+ms.sourcegitcommit: 2ed3d1c933fce4ce332128f125acb2f23f9e0f1a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032192"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75753019"
 ---
 # <a name="core-nfc-in-xamarinios"></a>NFC principal dans Xamarin. iOS
 
 _Lecture des étiquettes NFC (Near Field communication) à l’aide d’iOS 11_
 
-CoreNFC est une nouvelle infrastructure d’iOS 11 qui fournit l’accès à la radio NFC ( _Near Field communication_ ) pour lire des balises à partir d’applications. Il fonctionne sur iPhone 7, 7 plus, 8, 8 plus et X.
+CoreNFC est une nouvelle infrastructure d’iOS 11 qui fournit l’accès à la radio NFC ( _Near Field communication_ ) pour lire des balises à partir d’applications. CoreNFC fonctionne sur iPhone 7, iPhone 7 plus, iPhone 8, iPhone 8 plus, iPhone X, iPhone XS et iPhone 11 (tandis que les modèles iPhone 6 et iPhone 6 plus ont des fonctionnalités de paiement NFC, ils ne prennent pas en charge CoreNFC).
 
 Le lecteur de balise NFC des appareils iOS prend en charge tous les types de balise NFC 1 à 5 qui contiennent des informations sur le _format d’échange de données NFC_ (ndef).
 
@@ -161,5 +161,5 @@ CoreNFC permet à votre application de lire des données à partir de balises NF
 
 ## <a name="related-links"></a>Liens associés
 
-- [NFCTagReader (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [NFCTagReader (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
 - [Présentation de Core NFC (WWDC) (vidéo)](https://developer.apple.com/videos/play/wwdc2017/718/)

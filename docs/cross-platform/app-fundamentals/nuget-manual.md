@@ -6,12 +6,12 @@ ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 16b8f303555bc2f45516c3c060c0d2482f9c4954
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016778"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728224"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Création manuelle de packages NuGet pour Xamarin
 
@@ -53,7 +53,7 @@ Vous pouvez spécifier la version avec un ensemble de nombres sans virgule déci
 
 Dans le « MonoAndroid10 » ci-dessus, « Android 1,0 ». Cela signifie simplement que le [Framework cible](~/android/app-fundamentals/android-api-levels.md) du projet doit être monoandroid version 1,0 ou supérieure. La version est spécifiée dans l’élément `<TargetFrameworkVersion>` du fichier projet.
 
-Pour clarifier :
+Quelques précisions :
 
 - **MonoAndroid403** correspond à Android 4.0.3 et versions ultérieures (IE API de niveau 15)
 - **Xamarin. iOS10** correspond à Xamarin. iOS 1,0 et versions ultérieures

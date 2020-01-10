@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
-ms.openlocfilehash: f9a83bb2ce924265e8d493064087c4e1446ab892
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dcba15d049e5bab09142f0aeba237b2a790a5950
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489927"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728185"
 ---
 # <a name="xamarinforms-views"></a>Vues Xamarin.Forms
 
@@ -63,7 +63,7 @@ Les vues sont des objets d’interface utilisateur tels que des étiquettes, des
 
 |     |     |
 | --- | --- |
-| [`Map`](xref:Xamarin.Forms.Maps.Map) affiche une carte. Le **Xamarin.Forms.Maps** package Nuget doit être installé. Android et de la plateforme Windows universelle nécessitent une clé d’autorisation de carte.<br /><br />[Documentation de l’API](xref:Xamarin.Forms.Maps.Map) / [Guide](~/xamarin-forms/user-interface/map/index.md) / [exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![Exemple de carte](views-images/Map.png "Exemple de carte")](views-images/Map-Large.png#lightbox "Exemple de carte")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) / [page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) |
+| [`Map`](xref:Xamarin.Forms.Maps.Map) affiche une carte. Le package NuGet **Xamarin. Forms. Maps** doit être installé. Android et de la plateforme Windows universelle nécessitent une clé d’autorisation de carte.<br /><br />[Documentation de l’API](xref:Xamarin.Forms.Maps.Map) / [Guide](~/xamarin-forms/user-interface/map/index.md) / [exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![Exemple de carte](views-images/Map.png "Exemple de carte")](views-images/Map-Large.png#lightbox "Exemple de carte")<br />[Code C# pour cette page](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) / [page XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-that-initiate-commands"></a>Vues qui lancer des commandes

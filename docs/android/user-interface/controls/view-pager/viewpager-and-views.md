@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 65a613f229f04a4ab01ca73a9c53c026add49f84
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029050"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728146"
 ---
 # <a name="viewpager-with-views"></a>ViewPager avec des vues
 
 _ViewPager est un gestionnaire de disposition qui vous permet d’implémenter la navigation Gestural. La navigation Gestural permet à l’utilisateur de balayer vers la gauche et vers la droite pour parcourir les pages de données. Ce guide explique comment implémenter une interface utilisateur balayable avec ViewPager et PagerTabStrip, à l’aide de vues comme pages de données (un guide suivant explique comment utiliser des fragments pour les pages)._
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 Ce guide est une procédure pas à pas qui fournit une démonstration pas à pas de l’utilisation de `ViewPager` pour implémenter une galerie d’images d’arbres à feuilles de feuilles et de feuilles à feuilles de feuilles. Dans cette application, l’utilisateur glisse vers la gauche et vers la droite dans un « catalogue d’arborescence » pour afficher les images d’arborescence. En haut de chaque page du catalogue, le nom de l’arborescence est répertorié dans un`PagerTabStrip`, et une image de l’arborescence est affichée dans une `ImageView`. Un adaptateur est utilisé pour l’interface du `ViewPager` au modèle de données sous-jacent. Cette application implémente un adaptateur dérivé de `PagerAdapter`. 
 
@@ -91,7 +91,7 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-Ce code effectue les opérations suivantes :
+Ce code procède aux opérations suivantes :
 
 1. Définit la vue à partir de la ressource de disposition **main. AXML** .
 
@@ -207,7 +207,7 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 }
 ```
 
-Ce code effectue les opérations suivantes :
+Ce code procède aux opérations suivantes :
 
 1. Instancie un nouveau `ImageView` pour afficher l’image de l’arborescence à la position spécifiée. Le `MainActivity` de l’application est le contexte qui sera passé au constructeur `ImageView`.
 
@@ -234,7 +234,7 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 }
 ```
 
-Ce code effectue les opérations suivantes :
+Ce code procède aux opérations suivantes :
 
 1. Convertit le conteneur passé `View` en une référence `ViewPager`.
 
@@ -244,7 +244,7 @@ Ce code effectue les opérations suivantes :
 
 ### <a name="implement-isviewfromobject"></a>Implémenter IsViewFromObject
 
-À mesure que l’utilisateur fait défiler les pages de contenu vers la gauche et vers la droite, `ViewPager` appelle `IsViewFromObject` pour vérifier que les `View` enfants à la position donnée sont associés à l’objet de l’adaptateur pour cette même position (par conséquent, l’objet de l’adaptateur est appelé une *clé d’objet* ). ). Pour les applications relativement simples, l’Association est l’une des identités &ndash; la clé d’objet de l’adaptateur au niveau de cette instance est la vue qui a été précédemment retournée à la `ViewPager` via `InstantiateItem`. Toutefois, pour d’autres applications, la clé d’objet peut être une autre instance de classe spécifique à l’adaptateur qui est associée (mais pas la même que) à la vue enfant qui `ViewPager` s’affiche à cette position. Seul l’adaptateur sait si la vue et la clé d’objet passées sont associées. 
+À mesure que l’utilisateur fait défiler les pages de contenu vers la gauche et vers la droite, `ViewPager` appelle `IsViewFromObject` pour vérifier que les `View` enfants à la position donnée sont associés à l’objet de l’adaptateur pour cette même position (par conséquent, l’objet de l’adaptateur est appelé une *clé d’objet*). Pour les applications relativement simples, l’Association est l’une des identités &ndash; la clé d’objet de l’adaptateur au niveau de cette instance est la vue qui a été précédemment retournée à la `ViewPager` via `InstantiateItem`. Toutefois, pour d’autres applications, la clé d’objet peut être une autre instance de classe spécifique à l’adaptateur qui est associée (mais pas la même que) à la vue enfant qui `ViewPager` s’affiche à cette position. Seul l’adaptateur sait si la vue et la clé d’objet passées sont associées. 
 
 `IsViewFromObject` doit être implémentée pour que `PagerAdapter` fonctionne correctement. Si `IsViewFromObject` retourne `false` pour une position donnée, `ViewPager` n’affichera pas la vue à cette position. Dans l’application `TreePager`, la clé d’objet retournée par `InstantiateItem` *est* le `View` de page d’une arborescence, de sorte que le code doit uniquement vérifier l’identité (la clé d’objet et la vue en sont une et la même). Remplacez `IsViewFromObject` par le code suivant : 
 

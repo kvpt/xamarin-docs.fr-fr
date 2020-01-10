@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005451"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728328"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Ajout de AppCompat et de la conception de matériau
 
@@ -21,7 +21,7 @@ _Suivez les étapes ci-dessous pour convertir des applications Android Xamarin. 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 Ces instructions expliquent comment mettre à jour vos applications Android Xamarin. Forms existantes pour utiliser la bibliothèque AppCompat et activer la conception de matériaux dans la version Android de vos applications Xamarin. Forms.
 
@@ -50,7 +50,7 @@ Créez les trois fichiers suivants dans votre projet Android et collez le conten
 </resources>
 ```
 
-**Ressources/valeurs/style. Xml**
+**Resources/values/style.xml**
 
 ```xml
 <resources>
@@ -68,7 +68,7 @@ Créez les trois fichiers suivants dans votre projet Android et collez le conten
 
 Un style supplémentaire doit être inclus dans le dossier **values-v21** pour appliquer des propriétés spécifiques lors de l’exécution sur Android Lollipop et versions ultérieures.
 
-**Ressources/values-v21/style. Xml**
+**Resources/values-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,7 +84,7 @@ Un style supplémentaire doit être inclus dans le dossier **values-v21** pour a
 
 Pour vous assurer que ces informations sur les nouveaux thèmes sont utilisées, définissez le thème dans le fichier **fichier AndroidManifest** en ajoutant `android:theme="@style/MyTheme"` (laissez le reste du code XML tel qu’il était).
 
-**Propriétés/fichier AndroidManifest. Xml**
+**Properties/AndroidManifest.xml**
 
 ```xml
 ...
