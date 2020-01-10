@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: da477ca647de765d0173b223e2df2fe04959221b
-ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
-ms.translationtype: HT
+ms.openlocfilehash: 1ae3a2af436a4ad8860ab27df550a1d74d5084a6
+ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663540"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718764"
 ---
 # <a name="web-views-in-xamarinios"></a>Affichages Web dans Xamarin. iOS
 
@@ -22,7 +22,7 @@ iOS 11 a introduit de nouvelles modifications à la fois pour les `WKWebView` et
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` a été introduite dans iOS 8, qui permet aux développeurs d’applications d’implémenter une interface de navigation Web similaire à celle de Mobile Safari. Cela est dû, en partie, au fait que `WKWebView` utilise le moteur JavaScript NITRO, le même moteur que celui utilisé par Mobile Safari. les `WKWebView` doivent toujours être utilisés sur les UIWebView étaient possibles en raison des [performances accrues](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview), des gestes intégrés aux utilisateurs et de la facilité d’interaction entre la page Web et votre application.
+`WKWebView` a été introduite dans iOS 8, qui permet aux développeurs d’applications d’implémenter une interface de navigation Web similaire à celle de Mobile Safari. Cela est dû, en partie, au fait que `WKWebView` utilise le moteur JavaScript NITRO, le même moteur que celui utilisé par Mobile Safari. `WKWebView` doit toujours être utilisé sur UIWebView, dans la mesure du possible, en raison des [performances accrues](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview), des mouvements conviviaux et de la facilité d’interaction entre la page Web et votre application.
   
 `WKWebView` peuvent être ajoutées à votre application d’une manière presque identique à UIWebView, mais en tant que développeur, vous avez beaucoup plus de contrôle sur l’interface utilisateur/expérience utilisateur et les fonctionnalités. La création et l’affichage de l’objet de vue Web affichent la page demandée, mais vous pouvez contrôler la façon dont la vue est présentée, comment l’utilisateur peut naviguer et comment l’utilisateur quitte la vue.  
 
@@ -92,11 +92,11 @@ Pour plus d’informations sur ATS, y compris son implémentation dans votre app
 ## <a name="uiwebview-deprecated"></a>UIWebView (déconseillée)
 
 > [!IMPORTANT]
-> La [documentation `UIWebView` d’Apple](https://developer.apple.com/documentation/uikit/uiwebview) indique que le contrôle est déconseillé. Toutes les applications doivent utiliser [`WKWebKit`](#wkwebview) à la place.
+> `UIWebView` est déconseillé. Les applications qui utilisent ce contrôle ne seront [pas acceptées dans l’App Store à partir du 2020 avril, et les applications existantes doivent la supprimer avant le 2020 décembre](https://developer.apple.com/news/?id=12232019b).
+> 
+> [La documentation `UIWebView` d’Apple](https://developer.apple.com/documentation/uikit/uiwebview) suggère que les applications doivent utiliser [`WKWebView`](#wkwebview) à la place.
 
 `UIWebView` est le mode hérité d’Apple pour fournir du contenu Web dans votre application. Elle a été publiée dans iOS 2,0 et a été dépréciée à compter du 8,0.
-
-Si vous envisagez de prendre en charge les versions d’iOS antérieures à 8,0, vous devez utiliser `UIWebView`. En raison du fait que `UIWebView` est moins optimisé pour les performances que les alternatives, il est recommandé de vérifier la version iOS de l’utilisateur. Si la version 8,0 ou ultérieure, l’utilisation de l’une des options expliquées ci-dessous permet de créer une meilleure expérience utilisateur.
 
 Pour ajouter un UIWebView à votre application Xamarin. iOS, utilisez le code suivant :
 
@@ -112,6 +112,6 @@ Cela génère l’affichage Web suivant :
 
 [![l’effet de ScalesPagesToFit](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
-## <a name="related-links"></a>Liens associés
+## <a name="related-links"></a>Liens connexes
 
 - [Vues WebView (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

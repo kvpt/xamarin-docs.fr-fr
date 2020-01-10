@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1dc62066b71842e1d3b07495912fa35a549c0f1e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759680"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75727938"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin. Forms, DataPages
 
-![](~/media/shared/preview.png "Cette API est actuellement en version préliminaire")
+![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
 > DataPages requiert une référence de thème Xamarin. Forms à restituer. Cela implique d’installer le package NuGet [Xamarin. Forms. Theme. base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) dans votre projet, suivi des packages NuGet [Xamarin. Forms. Theme. Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) ou [Xamarin. Forms. Theme. Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) .
@@ -27,15 +27,15 @@ Pages de données fournissent une API pour rapidement et facilement lier une sou
 
 Pour voir comment fonctionne la démonstration faire évoluer le discours, consultez le [Guide de mise](get-started.md)en route.
 
-[![](images/demo-sml.png "Exemple de pages de données d’Application")](images/demo.png#lightbox "exemple des pages de données d’Application")
+[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 Les sources de données et les pages de données associées permettent aux développeurs de consommer rapidement et facilement une source de données prise en charge et de les restituer à l’aide de la génération de modèles automatique d’interface utilisateur intégrée qui peuvent être personnalisées avec des thèmes.
 
 Les DataPages sont ajoutées à une application Xamarin. Forms en incluant le package NuGet **Xamarin. Forms. pages** .
 
-### <a name="data-sources"></a>Data Sources
+### <a name="data-sources"></a>Sources de données
 
 La version préliminaire contient des sources de données prédéfinies pouvant être utilisées :
 
@@ -43,7 +43,7 @@ La version préliminaire contient des sources de données prédéfinies pouvant 
 * **AzureDataSource** (NuGet distinct)
 * **AzureEasyTableDataSource** (NuGet distinct)
 
-Pour obtenir un exemple d’utilisation d’un `JsonDataSource`, consultez le [Guide de mise en route](get-started.md).
+Consultez le [Guide de mise](get-started.md) en route pour obtenir un exemple d’utilisation d’un `JsonDataSource`.
 
 ### <a name="pages--controls"></a>Pages & contrôles
 
@@ -61,13 +61,13 @@ Consultez les informations de référence sur les [contrôles DataPages](control
 
 ### <a name="under-the-hood"></a>En coulisses
 
-Une source de données Xamarin. Forms adhère à `IDataSource` l’interface.
+Une source de données Xamarin. Forms adhère à l’interface `IDataSource`.
 
 L’infrastructure Xamarin. Forms interagit avec une source de données par le biais des propriétés suivantes :
 
-* `Data`: liste en lecture seule d’éléments de données qui peuvent être affichés.
-* `IsLoading`: valeur booléenne qui indique si les données sont chargées et disponibles pour le rendu.
-* `[key]`: indexeur permettant de récupérer des éléments.
+* `Data` : liste en lecture seule d’éléments de données qui peuvent être affichés.
+* `IsLoading` : valeur booléenne qui indique si les données sont chargées et disponibles pour le rendu.
+* `[key]` : indexeur permettant de récupérer des éléments.
 
-Il existe deux méthodes `MaskKey` `UnmaskKey` qui peuvent être utilisées pour masquer (ou afficher) les propriétés d’éléments de données (par ex. les empêcher d’être rendues).
+Il existe deux méthodes `MaskKey` et `UnmaskKey` qui peuvent être utilisées pour masquer (ou afficher) les propriétés d’éléments de données (par ex. les empêcher d’être rendues).
 La clé correspond à une propriété nommée sur l’objet d’élément de données.
