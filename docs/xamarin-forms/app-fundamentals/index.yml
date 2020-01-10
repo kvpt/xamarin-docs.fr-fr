@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Notions de base des applications Xamarin.Forms
+summary: Découvrez les notions de base du développement d’applications mobiles avec Xamarin.Forms.
 metadata:
   title: Notions de base des applications Xamarin.Forms
   description: Découvrez les notions de base du développement d’applications mobiles avec Xamarin.Forms.
@@ -9,115 +9,59 @@ metadata:
   ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/30/2019
-abstract:
-  description: Découvrez les notions de base du développement d’applications mobiles avec Xamarin.Forms.
-sections:
-  - title: null
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: accessibility/index.md
-            html: Découvrez comment rendre l’interface utilisateur d’une application accessible à des personnes présentant un large éventail de besoins et d’expériences.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_accessibility.svg'
-              href: accessibility/index.md
-            title: Accessibilité
-          - href: application-class.md
-            html: Découvrez les fonctionnalités exposées par une classe Application sous-classée.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
-              href: application-class.md
-            title: Classe d’application
-          - href: app-lifecycle.md
-            html: Découvrez comment gérer les événements de cycle de vie des applications.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_agile.svg'
-              href: app-lifecycle.md
-            title: Cycle de vie d’application
-          - href: deep-linking.md
-            html: Découvrez comment utiliser l’indexation d’applications et les liens ciblés pour qu’il soit possible de rechercher du contenu d’application sur iOS et Android.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_link.svg'
-              href: deep-linking.md
-            title: Indexation d’applications et liens ciblés
-          - href: behaviors/index.md
-            html: Découvrez comment ajouter des fonctionnalités aux contrôles sans avoir à les sous-classer.
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: behaviors/index.md
-            title: comportements
-          - href: custom-renderer/index.md
-            html: Découvrez comment étendre des contrôles Xamarin.Forms en créant des contrôles personnalisés et en modifiant les contrôles existants.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_extend.svg'
-              href: custom-renderer/index.md
-            title: Renderers personnalisés
-          - href: data-binding/index.md
-            html: Découvrez comment synchroniser automatiquement une interface utilisateur avec sa source de données.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_sync.svg'
-              href: data-binding/index.md
-            title: Liaison de données
-          - href: dependency-service/index.md
-            html: 'Découvrez comment appeler des fonctionnalités de plateforme natives à partir de code partagé, avec la classe DependencyService.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_architecture.svg'
-              href: dependency-service/index.md
-            title: Service de dépendance
-          - href: effects/index.md
-            html: Découvrez comment ajuster le comportement des contrôles Xamarin.Forms en accédant aux contrôles natifs sous-jacents.
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: effects/index.md
-            title: Effects (Effets)
-          - href: gestures/index.md
-            html: 'Découvrez comment utiliser les modules de reconnaissance de mouvement pour ajouter la prise en charge des mouvements de type appui, pincement, panoramique et balayage à des applications.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_form.svg'
-              href: gestures/index.md
-            title: Mouvements
-          - href: local-notifications.md
-            html: Découvrez comment envoyer et recevoir des notifications locales dans Xamarin.Forms.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
-              href: local-notifications.md
-            title: Notifications locales
-          - href: localization/index.md
-            html: Découvrez comment développer des applications multilingues avec Xamarin.Forms.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_article.svg'
-              href: localization/index.md
-            title: Localisation
-          - href: messaging-center.md
-            html: Découvrez comment utiliser la communication basée sur des messages pour réduire les dépendances entre les types.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_mail.svg'
-              href: messaging-center.md
-            title: Centre de messagerie
-          - href: navigation/index.md
-            html: Découvrez comment naviguer dans les applications Xamarin.Forms.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_class.svg'
-              href: navigation/index.md
-            title: Navigation
-          - href: shell/index.md
-            html: Découvrez comment utiliser Xamarin.Forms Shell pour réduire la complexité du développement d’applications mobiles.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-              href: shell/index.md
-            title: Shell
-          - href: templates/index.md
-            html: Découvrez comment utiliser la fonctionnalité de création de modèles fournie par Xamarin.Forms.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_template.svg'
-              href: templates/index.md
-            title: Modèles
-          - href: triggers.md
-            html: Découvrez comment exprimer des actions en XAML qui changent l’apparence des contrôles en fonction d’événements ou de modifications apportées aux propriétés.
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: triggers.md
-            title: Déclencheurs
+  ms.date: 12/30/2019
+  ms.openlocfilehash: 960e8e555b051e3a6cf3eedd0f999a78f8317d61
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75680410"
+landingContent:
+- title: Concepts principaux
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Classe d’application
+      url: application-class.md
+    - text: Cycle de vie d’application
+      url: app-lifecycle.md
+    - text: Liaison de données
+      url: data-binding/index.md
+    - text: Mouvements
+      url: gestures/index.md
+    - text: Localisation
+      url: localization/index.md
+    - text: MessagingCenter
+      url: messaging-center.md
+    - text: Navigation
+      url: navigation/index.md
+    - text: Shell
+      url: shell/index.md
+    - text: Modèles
+      url: templates/index.md
+    - text: Déclencheurs
+      url: triggers.md
+- title: Étendre Xamarin.Forms
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: comportements
+      url: behaviors/index.md
+    - text: Renderers personnalisés
+      url: custom-renderer/index.md
+    - text: DependencyService
+      url: dependency-service/index.md
+    - text: Effects (Effets)
+      url: effects/index.md
+- title: Parachever votre application
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Accessibilité
+      url: accessibility/index.md
+    - text: Indexation d’applications et lien profond
+      url: deep-linking.md
+    - text: Notifications locales
+      url: local-notifications.md
+    - text: Localisation
+      url: localization/index.md

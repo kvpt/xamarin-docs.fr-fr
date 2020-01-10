@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: eXtensible Application Markup Language (XAML)
+summary: Découvrez comment utiliser XAML pour définir des interfaces utilisateur Xamarin. Forms.
 metadata:
   title: eXtensible Application Markup Language (XAML)
   description: Découvrez comment utiliser XAML pour définir des interfaces utilisateur Xamarin. Forms.
@@ -9,127 +9,59 @@ metadata:
   ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
-abstract:
-  description: Découvrez comment utiliser XAML pour définir des interfaces utilisateur Xamarin. Forms.
-sections:
-  - title: Bien démarrer
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: xaml-basics/index.md
-            html: Découvrez les bases du développement d’interfaces utilisateur Xamarin. Forms avec XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
-              href: xaml-basics/index.md
-            title: Principes de base
-          - href: xaml-controls.md
-            html: En savoir plus sur les vues Xamarin. Forms qui peuvent être référencées à partir de fichiers XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_form.svg'
-              href: xaml-controls.md
-            title: Contrôles
-          - href: xamlc.md
-            html: Découvrez comment compiler du code XAML directement dans le langage intermédiaire à l’aide du compilateur XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_build.svg'
-              href: xamlc.md
-            title: Compilation
-          - href: markup-extensions/index.md
-            html: En savoir plus sur les extensions de balisage XAML qui permettent de définir des attributs d’éléments à partir de sources autres que des chaînes de texte littéral.
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: markup-extensions/index.md
-            title: Extensions de balisage
-  - title: Outillage
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: hot-reload.md
-            html: Découvrez comment utiliser le rechargement à chaud XAML pour valider rapidement les modifications apportées à l’interface utilisateur.
-            image:
-              src: ~/media/icons/i_quickstart-3.svg
-              href: hot-reload.md
-            title: Rechargement à chaud
-          - href: toolbox.md
-            html: Découvrez comment utiliser la boîte à outils XAML pour faire glisser des contrôles et des dispositions Xamarin. Forms dans l’éditeur XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
-              href: toolbox.md
-            title: Boîte à outils
-          - href: xaml-previewer/index.md
-            html: Apprenez à utiliser le générateur d’aperçu XAML pour afficher un aperçu instantané d’une page côte à côte avec son balisage XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_responsive.svg'
-              href: xaml-previewer/index.md
-            title: Générateur d’aperçu
-  - title: Espaces de noms
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: namespaces.md
-            html: En savoir plus sur la syntaxe de l’espace de noms XAML et sur la façon de déclarer un espace de noms XAML pour accéder à un type.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_namespace.svg'
-              href: namespaces.md
-            title: Espaces de noms
-          - href: custom-namespace-schemas.md
-            html: 'Découvrez comment créer des schémas d’espaces de noms personnalisés XAML, qui spécifient un mappage entre une URL personnalisée et un ou plusieurs espaces de noms CLR.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
-              href: custom-namespace-schemas.md
-            title: Schémas d’espaces de noms personnalisés
-          - href: custom-prefix.md
-            html: Découvrez comment spécifier un préfixe recommandé à associer à un espace de noms XAML pour l’utilisation de XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-automate.svg'
-              href: custom-prefix.md
-            title: Préfixes recommandés pour les espaces de noms
-  - title: Fonctionnalités supplémentaires
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: bindable-properties.md
-            html: Découvrez comment créer des propriétés pouvant être liées et les utiliser à partir de XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-edit.svg'
-              href: bindable-properties.md
-            title: Propriétés pouvant être liées
-          - href: attached-properties.md
-            html: Découvrez comment créer des propriétés jointes et les utiliser à partir de XAML.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-              href: attached-properties.md
-            title: Propriétés jointes
-          - href: resource-dictionaries.md
-            html: Apprenez à créer des ressources XAML et à les réutiliser dans une application Xamarin. Forms.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_reference.svg'
-              href: resource-dictionaries.md
-            title: Dictionnaires de ressources
-          - href: passing-arguments.md
-            html: 'Apprenez à utiliser XAML pour passer des arguments aux constructeurs, appeler des méthodes de fabrique et spécifier le type d’un argument générique.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_learn-about.svg'
-              href: passing-arguments.md
-            title: Passage d'arguments
-          - href: field-modifiers.md
-            html: 'En savoir plus sur les modificateurs de champ XAML, qui spécifient le niveau d’accès aux champs générés pour les éléments XAML nommés.'
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: field-modifiers.md
-            title: Modificateurs de champ
-          - href: runtime-load.md
-            html: Découvrez comment charger et analyser du code XAML au moment de l’exécution.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-              href: runtime-load.md
-            title: Charger XAML lors de l’exécution
+  ms.date: 12/27/2019
+  ms.openlocfilehash: 5f01b3ecf914d6c7c5c36378511c0fd7e30c952c
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679686"
+landingContent:
+- title: Prise en main
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Principes de base
+      url: xaml-basics/index.md
+    - text: Contrôles
+      url: xaml-controls.md
+    - text: Compilation
+      url: xamlc.md
+    - text: Extensions de balisage
+      url: markup-extensions/index.md
+- title: Outillage
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Rechargement à chaud
+      url: hot-reload.md
+    - text: Boîte à outils
+      url: toolbox.md
+    - text: Générateur d’aperçu
+      url: xaml-previewer/index.md
+- title: Espaces de noms
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Espaces de noms
+      url: namespaces.md
+    - text: Schémas d’espaces de noms personnalisés
+      url: custom-namespace-schemas.md
+    - text: Préfixes recommandés pour les espaces de noms
+      url: custom-prefix.md
+- title: Fonctionnalités supplémentaires
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Propriétés pouvant être liées
+      url: bindable-properties.md
+    - text: Propriétés jointes
+      url: attached-properties.md
+    - text: Dictionnaires de ressources
+      url: resource-dictionaries.md
+    - text: Passage d’arguments
+      url: passing-arguments.md
+    - text: Modificateurs de champ
+      url: field-modifiers.md
+    - text: Charger XAML lors de l’exécution
+      url: runtime-load.md

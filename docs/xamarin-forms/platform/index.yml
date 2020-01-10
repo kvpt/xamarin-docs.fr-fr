@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Fonctionnalités de la plateforme Xamarin.Forms
+summary: Découvrez comment tirer parti des fonctionnalités spécifiques à la plateforme dans Xamarin.Forms en recourant à diverses techniques.
 metadata:
   title: Fonctionnalités de la plateforme Xamarin.Forms
   description: Découvrez comment tirer parti des fonctionnalités spécifiques à la plateforme dans Xamarin.Forms en recourant à diverses techniques.
@@ -9,67 +9,67 @@ metadata:
   ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/23/2019
-abstract:
-  description: Découvrez comment tirer parti des fonctionnalités spécifiques à la plateforme dans Xamarin.Forms en recourant à diverses techniques.
-sections:
-  - title: Spécificités de la plateforme
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: android/index.md
-            html: Découvrez comment utiliser les spécificités de la plateforme Android fournies par Xamarin.Forms et comment mettre à jour les applications Android Xamarin.Forms existantes pour utiliser Material Design.
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
-              href: android/index.md
-            title: Android
-          - href: ios/index.md
-            html: Découvrez comment utiliser les spécificités de la plateforme iOS fournies par Xamarin.Forms et comment appliquer des styles iOS supplémentaires.
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
-              href: ios/index.md
-            title: iOS
-          - href: windows/index.md
-            html: Découvrez comment utiliser les spécificités de la plateforme UWP fournies par Xamarin.Forms et comment ajouter un projet UWP à une solution Xamarin.Forms existante.
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
-              href: windows/index.md
-            title: Windows
-          - href: platform-specifics/index.md
-            html: Découvrez les spécificités de la plateforme et celles que peuvent créer les fournisseurs avec des effets.
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: platform-specifics/index.md
-            title: Créer des spécificités de la plateforme
-  - title: Fonctionnalités de la plateforme
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: device.md
-            html: Découvrez comment utiliser la classe Device pour fournir un contrôle précis sur les fonctionnalités et les dispositions de chaque plateforme.
-            image:
-              src: ~/media/icons/i_desktop-phone.svg
-              href: device.md
-            title: Classe d’appareil
-          - href: native-forms.md
-            html: 'Découvrez comment les pages dérivées de Xamarin.Forms ContentPage peuvent être consommées par des projets Xamarin.iOS, Xamarin.Android et UWP natifs.'
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: native-forms.md
-            title: Formulaires natifs
-          - href: native-views/index.md
-            html: 'Découvrez comment référencer directement des affichages natifs d’Android, d’iOS et de la plateforme Windows universelle à partir d’applications Xamarin.Forms.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_form.svg'
-              href: native-views/index.md
-            title: Vues natives
-          - href: sign-in-with-apple/index.md
-            html: Découvrez comment utiliser Connexion avec Apple sur Android et iOS pour fournir une meilleure confidentialité aux utilisateurs.
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
-              href: sign-in-with-apple/index.md
-            title: Connexion avec Apple
+  ms.date: 12/30/2019
+  ms.openlocfilehash: c95416d35a54dfd5954318ea068a4c70622dc1a1
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679647"
+landingContent:
+- title: Android
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Défilement rapide ListView
+      url: android/listview-fast-scrolling.md
+    - text: Balayage de page TabbedPage
+      url: android/tabbedpage-page-swiping.md
+    - text: Conception matérielle
+      url: android/appcompat-material-design.md
+    - text: Élévation VisualElement
+      url: android/visualelement-elevation.md
+    - text: Afficher plus >
+      url: android/index.md
+- title: iOS
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Couleur du curseur d’entrée
+      url: ios/entry-cursor-color.md
+    - text: Grands titres de page
+      url: ios/page-large-title.md
+    - text: Visibilité de l’indicateur de la page d’accueil
+      url: ios/page-home-indicator.md
+    - text: Pression du pouce sur le curseur
+      url: ios/slider-thumb.md
+    - text: Afficher plus >
+      url: ios/index.md
+- title: Windows
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Mode de sélection ListView
+      url: windows/listview-selectionmode.md
+    - text: Direction d’extraction de RefreshView
+      url: windows/refreshview-pulldirection.md
+    - text: Vérification orthographique SearchBar
+      url: windows/searchbar-spell-check.md
+    - text: Icônes de l’onglet TabbedPage
+      url: windows/tabbedpage-icons.md
+    - text: Afficher plus >
+      url: windows/index.md
+- title: Fonctionnalités de la plateforme
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Créer des spécificités de la plateforme
+      url: platform-specifics/index.md
+    - text: Classe d’appareil
+      url: device.md
+    - text: Formulaires natifs
+      url: native-forms.md
+    - text: Vues natives
+      url: native-views/index.md
+    - text: Connexion avec Apple
+      url: sign-in-with-apple/index.md
