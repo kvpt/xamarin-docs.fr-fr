@@ -1,106 +1,55 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Didacticiels Xamarin.Forms
+### YamlMime:Landing
+title: Tutoriels Xamarin.Forms
+summary: Découvrez les principes fondamentaux de la création d’applications mobiles avec Xamarin.Forms.
 metadata:
-  title: Didacticiels Xamarin.Forms
-  description: Didacticiels sur le développement d’applications Xamarin.Forms avec Visual Studio et Visual Studio pour Mac.
+  title: Tutoriels Xamarin.Forms
+  description: Didacticiels sur les principes fondamentaux de la création d’applications Xamarin.Forms avec Visual Studio et Visual Studio pour Mac.
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 8E3D88AE-923E-4B7C-ABAC-058A25A48BBF
-  ms.technology: xamarin-forms
   author: davidbritch
   ms.author: dabritch
-  ms.date: 02/14/2018
-abstract:
-  description: 'Cette page comprend des liens vers des didacticiels qui vous permettront d’acquérir les principes fondamentaux de la création d’applications mobiles avec Xamarin.Forms. Pour accéder à la documentation complète de Xamarin.Forms, consultez <a href="/xamarin/xamarin-forms/">Documentation Xamarin.Forms</a>.'
-sections:
-  - title: Dispositions
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: stacklayout/
-            html: 'Apprenez à organiser les affichages dans une pile unidimensionnelle, à l’horizontale ou à la verticale.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: stacklayout/
-            title: StackLayout
-          - href: grid/
-            html: Découvrez comment organiser des affichages en lignes et en colonnes avec des tailles proportionnelles ou absolues.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_table.svg'
-              href: grid/
-            title: Grille
-  - title: Affichages
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: label/
-            html: Découvrez comment afficher du texte sur une ou plusieurs lignes.
-            image:
-              src: ~/media/icons/i_form-label.svg
-              href: label/
-            title: Etiquette
-          - href: button/
-            html: Découvrez comment répondre à un clic ou une pression sur un bouton pour demander à une application d’exécuter une tâche particulière.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_button.svg'
-              href: button/
-            title: Bouton
-          - href: entry/
-            html: Découvrez comment accepter une saisie de texte sur une seule ligne.
-            image:
-              src: ~/media/icons/i_form-entry.svg
-              href: entry/
-            title: Entrée
-          - href: editor/
-            html: Découvrez comment accepter une saisie de texte sur plusieurs lignes.
-            image:
-              src: ~/media/icons/i_form-editor.svg
-              href: editor/
-            title: Éditeur
-          - href: image/
-            html: Découvrez comment afficher des images sur une page.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_account-management.svg'
-              href: image/
-            title: Image
-          - href: listview/
-            html: Découvrez comment présenter des listes de données.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_sharepoint-list.svg'
-              href: listview/
-            title: Affichage de liste
-  - title: Principes de base de l’application
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: pop-ups/
-            html: 'Découvrez comment afficher des alertes et des feuilles d’actions avec Xamarin.Forms, poser des questions simples aux utilisateurs et guider les utilisateurs dans des tâches.'
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_alert.svg'
-              href: pop-ups/
-            title: Fenêtres contextuelles
-          - href: app-lifecycle/
-            html: Familiarisez-vous avec le cycle de vie des applications Xamarin.Forms et découvrez comment conserver des données au fil de l’évolution de leur état tout au long de leur cycle de vie.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_agile.svg'
-              href: app-lifecycle/
-            title: Cycle de vie d’application
-          - href: local-database/
-            html: Apprenez à utiliser le package NuGet SQLite.NET pour incorporer des opérations de base de données locales dans une application.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
-              href: local-database/
-            title: Base de données locale
-          - href: web-service/
-            html: Découvrez comment utiliser des services web basés sur REST à partir de Xamarin.Forms.
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_server.svg'
-              href: web-service/
-            title: Services web
+  ms.date: 12/23/2019
+  ms.openlocfilehash: fa5fb1d6747650520864371ceacf665a50dc0973
+  ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 01/07/2020
+  ms.locfileid: "75718738"
+landingContent:
+- title: Dispositions
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: StackLayout
+      url: stacklayout/index.yml
+    - text: Grille
+      url: grid/index.yml
+- title: Contrôles
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Etiquette
+      url: label/index.yml
+    - text: Bouton
+      url: button/index.yml
+    - text: Entrée
+      url: entry/index.yml
+    - text: Éditeur
+      url: editor/index.yml
+    - text: Image
+      url: image/index.yml
+    - text: Affichage de liste
+      url: listview/index.yml
+    - text: Fenêtres contextuelles
+      url: pop-ups/index.yml
+- title: Principes de base d’une application
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Cycle de vie d’application
+      url: app-lifecycle/index.yml
+    - text: Base de données locale
+      url: local-database/index.yml
+    - text: Services web
+      url: web-service/index.yml
