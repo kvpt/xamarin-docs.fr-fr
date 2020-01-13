@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: 8313af47882b1c8c47f1e82f62f0a43e4e9c704c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029727"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886591"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator pour Windows
 
@@ -34,7 +34,7 @@ La barre d’outils en haut de la fenêtre du simulateur contient un certain nom
 
 - **Page d’hébergement** : simule le bouton de démarrage sur un appareil iOS.
 - **Lock** : verrouille le simulateur (balayer pour déverrouiller).
-- **Capture** d’écran : enregistre une capture d’écran du simulateur (stocké dans **Pictures\Xamarin\iOS Simulator \\** ).
+- **Capture** d’écran : enregistre une capture d’écran du simulateur (stocké dans **Pictures\Xamarin\iOS Simulator\\** ).
 - [**Paramètres**](#settings) : affiche le clavier, l’emplacement et d’autres paramètres.
 - [**Autres options**](#other-options) : affiche diverses options du simulateur, telles que la rotation, les gestes de tremblement et l’id tactile.
 
@@ -72,3 +72,12 @@ Pour désactiver le simulateur iOS distant pour Windows, accédez à **outils > 
 [![case à cocher pour utiliser le simulateur](images/options-sml.png "case à cocher pour utiliser le simulateur")](images/options.png#lightbox)
 
 Si cette option est désactivée, le débogage ouvre le simulateur iOS sur l’hôte de build Mac connecté.
+
+## <a name="troubleshooting"></a>Résolution des problèmes
+
+Si vous rencontrez des problèmes avec le simulateur iOS distant, vous pouvez afficher les journaux dans les emplacements suivants :
+
+- **Mac** – `~/Library/Logs/Xamarin/Simulator.Server`
+- **Windows** : `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
+
+Si vous [Signalez un problème dans Visual Studio, l’attachement de](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)ces journaux peut être utile (il existe des options permettant de conserver les téléchargements privés).

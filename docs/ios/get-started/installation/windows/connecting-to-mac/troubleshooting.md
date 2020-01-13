@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 4abe0da2b75b6859c6547f0dc1c4cf8708491afb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 40f99fb4e7e44e0a3dc499dc603e66620b890eaa
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022463"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886565"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Résolution des problèmes de connexion pour un hôte de build Xamarin.iOS
 
@@ -20,8 +20,8 @@ _Ce guide fournit des étapes de résolution des problèmes qui peuvent être re
 
 ## <a name="log-file-location"></a>Emplacement des fichiers journaux
 
-- **Mac** : ~/Library/Logs/Xamarin-[MAJOR.MINOR]
-- **Windows** : %LOCALAPPDATA%\Xamarin\Logs
+- **Mac** – `~/Library/Logs/Xamarin-[MAJOR.MINOR]`
+- **Windows** : `%LOCALAPPDATA%\Xamarin\Logs`
 
 Les fichiers journaux peuvent être localisés en accédant à **Aide &gt; Xamarin &gt; Journaux Zip** dans Visual Studio.
 
@@ -114,7 +114,7 @@ L’hôte de build Xamarin des versions antérieures de Xamarin.iOS n’est plus
 
 <a name="knownissues" />
 
-### <a name="known-issues-and-limitations"></a>Problèmes connus et limitations
+### <a name="known-issues-and-limitations"></a>Limitations et problèmes connus
 
 > [!NOTE]
 > Cette section s’applique uniquement si vous vous êtes déjà connecté avec succès à l’hôte de build Mac avec votre nom d’utilisateur et mot de passe Mac à l’aide du client SSH OpenSSH, comme indiqué aux étapes 8 et 9 ci-dessus.

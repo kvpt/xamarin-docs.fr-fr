@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: c9a0eee2779aa392cb2049b5518b6f30b7f05abc
-ms.sourcegitcommit: 58a08133496df53a639a82a7f672724220c57fd5
+ms.openlocfilehash: 2dd0a9a98c05204606f157cd9cd1028582af375b
+ms.sourcegitcommit: 5d75830fca6f2e58452d4445806e3653a3145dc0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540396"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870907"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Récepteurs de diffusion dans Xamarin. Android
 
@@ -29,7 +29,7 @@ Android identifie deux types de diffusions :
 
 Le récepteur de diffusion est une sous-classe du type de `BroadcastReceiver` et il doit remplacer la méthode [`OnReceive`](xref:Android.Content.BroadcastReceiver.OnReceive*) . Android exécutera `OnReceive` sur le thread principal. cette méthode devrait donc être conçue pour s’exécuter rapidement. Soyez vigilant lorsque vous générez des threads dans `OnReceive`, car Android peut mettre fin au processus lorsque la méthode se termine. Si un récepteur de diffusion doit exécuter un travail de longue durée, il est recommandé de planifier un _travail_ à l’aide du `JobScheduler` ou du _répartiteur de tâches Firebase_. La planification d’un travail avec un travail sera traitée dans un guide distinct.
 
-Un _filtre d’intention_ est utilisé pour inscrire un récepteur de diffusion afin qu’Android puisse acheminer correctement les messages. Le filtre d’intention peut être spécifié au moment de l’exécution (on parle parfois de _récepteur inscrit au contexte_ ou en tant qu' _inscription dynamique_) ou il peut être défini de manière statique dans le manifeste Android (un _récepteur inscrit au manifeste_). Xamarin. Android fournit un C# attribut,`IntentFilterAttribute`, qui inscrira de manière statique le filtre d’intention (ce sujet sera abordé plus en détail plus loin dans ce guide). Depuis Android 8,0, il n’est pas possible pour une application de s’inscrire de manière statique pour une diffusion implicite.
+Un _filtre d’intention_ est utilisé pour inscrire un récepteur de diffusion afin qu’Android puisse acheminer correctement les messages. Le filtre d’intention peut être spécifié au moment de l’exécution (on parle parfois de _récepteur inscrit au contexte_ ou en tant qu' _inscription dynamique_) ou il peut être défini de manière statique dans le manifeste Android (un _récepteur inscrit au manifeste_). Xamarin. Android fournit un C# attribut, `IntentFilterAttribute`, qui inscrira de manière statique le filtre d’intention (ce sujet sera abordé plus en détail plus loin dans ce guide). Depuis Android 8,0, il n’est pas possible pour une application de s’inscrire de manière statique pour une diffusion implicite.
 
 La principale différence entre le récepteur inscrit dans le manifeste et le récepteur inscrit dans le contexte est qu’un récepteur inscrit au contexte répond uniquement aux diffusions pendant qu’une application est en cours d’exécution, tandis qu’un récepteur inscrit au manifeste peut répondre à les diffusions même si l’application n’est peut-être pas en cours d’exécution.  
 
@@ -83,7 +83,10 @@ public class MyBootReceiver : BroadcastReceiver
 }
 ```
 
-Il est également possible de créer un filtre intentionnel qui répondra aux intentions personnalisées. Prenons l'exemple suivant : 
+> [!NOTE]
+> Dans Android 8,0 (API 26 et versions ultérieures), [Google a placé des limitations](https://developer.android.com/about/versions/oreo/background) sur ce que les applications peuvent faire alors que les utilisateurs n’interagissent pas directement avec eux. Ces limitations affectent les services en arrière-plan et les récepteurs de diffusion implicite, comme `Android.Content.Intent.ActionBootCompleted`. En raison de ces limitations, vous risquez de rencontrer des difficultés lors de l’inscription d’un récepteur de diffusion `Boot Completed` sur les versions plus récentes d’Android. Si c’est le cas, Notez que ces restrictions ne s’appliquent pas aux services de premier plan, qui peuvent être appelés à partir de votre récepteur de diffusion.
+
+Il est également possible de créer un filtre intentionnel qui répondra aux intentions personnalisées. Prenons l'exemple suivant : 
 
 ```csharp
 [BroadcastReceiver(Enabled = true)]

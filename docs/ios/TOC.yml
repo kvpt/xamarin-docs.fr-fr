@@ -613,8 +613,9 @@
         - name: Vue d'ensemble
           href: deploy-test/index.md
         - name: Distribution d’applications
-          href: deploy-test/app-distribution/index.md
           items:
+            - name: Vue d'ensemble
+              href: deploy-test/app-distribution/index.md
             - name: Distribution dans l’App Store
               href: deploy-test/app-distribution/app-store-distribution/index.md
               items:
@@ -628,7 +629,7 @@
               href: deploy-test/app-distribution/ad-hoc-distribution.md
             - name: Fichier iTunesMetadata.plist
               href: deploy-test/app-distribution/itunesmetadata.md
-            - name: Prise en charge de fichier IPA
+            - name: Prise en charge IPA
               href: deploy-test/app-distribution/ipa-support.md
         - name: Signature de code et provisionnement
           href: deploy-test/provisioning/index.md
