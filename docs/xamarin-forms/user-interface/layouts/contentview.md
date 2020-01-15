@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 69f3311834fd438af97b3d2fa527572f02d2b0cb
-ms.sourcegitcommit: fa2898d95b35fcee05503f3829351ba5a7d4a44d
+ms.openlocfilehash: 712aa43fb4959b766786c8fd0969ef2c2c8f00ef
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74955077"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955732"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
@@ -204,11 +204,11 @@ Les captures d’écran suivantes montrent une instance de `CardView` standard e
 
 [capture d’écran ![CardView ControlTemplate](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-Pour plus d’informations sur les modèles de contrôle, consultez [modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
+Pour plus d’informations sur les modèles de contrôle, consultez [modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 
 ## <a name="related-links"></a>Liens connexes
 
 * [Exemple d’application ContentView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Liaison de données Xamarin. Forms](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [Propriétés pouvant être liées](~/xamarin-forms/xaml/bindable-properties.md).
-* [Modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
+* [Modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-template.md)

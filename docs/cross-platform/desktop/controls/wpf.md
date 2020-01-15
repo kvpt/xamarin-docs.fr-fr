@@ -5,12 +5,12 @@ description: Ce document compare et contraste WPF avec Xamarin. Forms. Il traite
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 798839457a418d457bac83e6e20397722423dbac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016484"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955653"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF et Xamarin. Forms : similarités & différences
 
@@ -27,13 +27,13 @@ Les utilisations courantes de ce sont des tâches telles que les boîtes de dial
 3. `ContentPresenter`
 4. `TemplateBinding`
 
-Mais il est important de savoir qu’elles _ne servent pas_ le même objectif dans Xamarin. Forms. Pour plus d’informations sur cette fonctionnalité, consultez la [page de documentation](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
+Mais il est important de savoir qu’elles _ne servent pas_ le même objectif dans Xamarin. Forms. Pour plus d’informations sur cette fonctionnalité, consultez la [page de documentation](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 
 ## <a name="xaml"></a>XAML
 
 XAML est utilisé comme langage de balisage déclaratif pour WPF et Xamarin. Forms. Pour l’essentiel, la syntaxe est identique : la principale différence est celle des objets définis/créés par les graphiques XAML.
 
-- Xamarin. Forms prend en charge la [spécification XAML 2009](/dotnet/framework/xaml-services/xaml-2009-language-features/); Il est ainsi plus facile de définir des données telles que des `string`s, des `int`s, etc., ainsi que de définir des types génériques et de passer des arguments aux constructeurs.
+- Xamarin. Forms prend en charge la [spécification XAML 2009](/dotnet/framework/xaml-services/xaml-2009-language-features/); Cela facilite la définition de données telles que `string`s, `int`, etc., ainsi que la définition de types génériques et le passage d’arguments aux constructeurs.
 
 - Il n’existe actuellement aucun moyen de charger dynamiquement XAML, comme WPF, avec `XamlReader`. Vous pouvez cependant obtenir les mêmes fonctionnalités de base avec un [package NuGet](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/) .
 
@@ -138,20 +138,20 @@ WPF comprend un `RoutedCommand` intégré qui est parfois utilisé ; Xamarin. F
 
 Les deux interfaces sont entièrement prises en charge dans les liaisons Xamarin. Forms. Contrairement à de nombreuses infrastructures basées sur XAML, les notifications de modification de propriété peuvent être déclenchées sur les threads d’arrière-plan dans Xamarin. Forms (tout comme WPF) et le moteur de liaison passera correctement au thread d’interface utilisateur.
 
-En outre, les deux environnements prennent en charge `SynchronziationContext` et `async` / `await` pour effectuer un marshaling de thread approprié. WPF inclut la classe `Dispatcher` sur tous les éléments visuels, Xamarin. Forms a une méthode statique `Device.BeginInvokeOnMainThread` qui peut également être utilisée (même si `SynchronizationContext` est préféré pour le codage multiplateforme).
+En outre, les deux environnements prennent en charge `SynchronziationContext` et `async`/`await` pour effectuer un marshaling de thread approprié. WPF inclut la classe `Dispatcher` sur tous les éléments visuels, Xamarin. Forms a une méthode statique `Device.BeginInvokeOnMainThread` qui peut également être utilisée (même si `SynchronizationContext` est préféré pour le codage multiplateforme).
 
 - Xamarin. Forms comprend une `ObservableCollection<T>` qui prend en charge les notifications de modification de collection.
 - Vous pouvez utiliser `BindingBase.EnableCollectionSynchronization` pour activer les mises à jour inter-threads pour une collection. L’API est légèrement différente de la variante WPF. [pour plus d’informations sur l’utilisation, consultez la documentation](xref:Xamarin.Forms.BindingBase.EnableCollectionSynchronization*).
 
 ## <a name="data-templates"></a>Modèles de données
 
-Les modèles de données sont pris en charge dans Xamarin. Forms pour personnaliser le rendu d’un `ListView` ligne (cellule). Contrairement à WPF qui peut utiliser `DataTemplate`s pour tout contrôle orienté contenu, Xamarin. Forms les utilise actuellement uniquement pour les `ListView`. La définition de modèle peut être définie en ligne (affectée à la propriété `ItemTemplate`) ou en tant que ressource dans une `ResourceDictionary`.
+Les modèles de données sont pris en charge dans Xamarin. Forms pour personnaliser le rendu d’un `ListView` ligne (cellule). Contrairement à WPF qui peut utiliser `DataTemplate`s pour tout contrôle orienté contenu, Xamarin. Forms les utilise actuellement pour `ListView`. La définition de modèle peut être définie en ligne (affectée à la propriété `ItemTemplate`) ou en tant que ressource dans une `ResourceDictionary`.
 
 En outre, ils ne sont pas aussi flexibles que leurs équivalents WPF.
 
 1. L’élément racine de l' `DataTemplate` doit _toujours_ être un objet `ViewCell`.
 2. Les déclencheurs de données sont entièrement pris en charge dans un modèle de données, mais doivent inclure une `DataType` propriété indiquant le type de la propriété à laquelle le déclencheur est associé.
-3. `DataTemplateSelector` est également pris en charge, mais dérive de `DataTemplate` et est donc simplement assigné directement à la propriété `ItemTemplate` (par rapport à  `ItemTemplateSelector` dans WPF).
+3. `DataTemplateSelector` est également pris en charge, mais dérive de `DataTemplate` et est donc simplement assigné directement à la propriété `ItemTemplate` (par rapport à `ItemTemplateSelector` dans WPF).
 
 ## <a name="itemscontrol"></a>ItemsControl
 
@@ -159,7 +159,7 @@ Il n’existe aucun équivalent intégré à un `ItemsControl` dans Xamarin. For
 
 ## <a name="user-controls"></a>Contrôles utilisateur
 
-Dans WPF, les `UserControl`s sont utilisées pour fournir une section de l’interface utilisateur associée au comportement. Dans Xamarin. Forms, nous utilisons le `ContentView` dans le même but. Les deux prennent en charge la liaison et l’inclusion en XAML.
+Dans WPF, `UserControl`sont utilisés pour fournir une section de l’interface utilisateur associée au comportement. Dans Xamarin. Forms, nous utilisons le `ContentView` dans le même but. Les deux prennent en charge la liaison et l’inclusion en XAML.
 
 ## <a name="navigation"></a>Navigation
 

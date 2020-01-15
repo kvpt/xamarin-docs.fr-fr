@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: e115014728cce9252a92740b6db5beab582f61ed
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 63ce27fc871da12eabb1baad568af167c860926f
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489867"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955811"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Liaisons relatives Xamarin. Forms
 
@@ -179,10 +179,10 @@ Dans cet exemple, le [`Frame`](xref:Xamarin.Forms.Frame), qui est l’élément 
 
 [![Capture d’écran d’une liaison relative en mode de TemplatedParent, sur iOS et Android](relative-bindings-images/templatedparent-relative-binding.png "Mode de liaison relatif à TemplatedParent")](relative-bindings-images/templatedparent-relative-binding-large.png#lightbox "Mode de liaison relatif à TemplatedParent")
 
-Pour plus d’informations sur les modèles de contrôle, consultez [modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md).
+Pour plus d’informations sur les modèles de contrôle, consultez [modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Démos des liaisons de données (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Extensions de balisage XAML](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
+- [Modèles de contrôle Xamarin. Forms](~/xamarin-forms/app-fundamentals/templates/control-template.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: 736627edc8628f229e6e1a1e079fca24b8ff97db
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 47fd6d34a1ef286fa8e1a307ea6033c9c6a9feea
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490114"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955756"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Consommation des extensions de balisage XAML
 
@@ -35,7 +35,7 @@ Les extensions de balisage XAML supplémentaires ont toujours été pris en char
 - `StaticResource`-référencer des objets à partir d’un dictionnaire de ressources, comme décrit dans l’article [**dictionnaires de ressources**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource`-répondez aux modifications des objets dans un dictionnaire de ressources, comme décrit dans l’article [**styles dynamiques**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` : établissez un lien entre les propriétés de deux objets, comme décrit dans l’article [**liaison de données**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` : effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [**liaison à partir d’un modèle de contrôle**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md).
+- `TemplateBinding` : effectue une liaison de données à partir d’un modèle de contrôle, comme indiqué dans l’article [**modèles de contrôle Xamarin. Forms**](~/xamarin-forms/app-fundamentals/templates/control-template.md).
 - `RelativeSource` : définit la source de liaison par rapport à la position de la cible de liaison, comme indiqué dans les [liaisons relatives](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)de l’article.
 
 Le [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) mise en page utilise l’extension de balisage personnalisée [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Cette extension de balisage est décrite dans l’article [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).

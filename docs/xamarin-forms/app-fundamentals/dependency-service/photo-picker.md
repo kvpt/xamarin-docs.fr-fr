@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 335fb03cd190752d488f047bdf22f67d72f30c2e
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: 6669dbaff3cfb5b929261352b8db046b35ec5b4f
+ms.sourcegitcommit: 2a053df1163ab0125a51138b2b1f702f657eba5d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032565"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76020701"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Sélection d’une photo dans la bibliothèque d’images
 
-[![Télécharger l’exemple](~/media/shared/download.png) télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 Cet article vous montre comment créer une application qui permet à l’utilisateur de sélectionner une photo dans la bibliothèque d’images du téléphone. Étant donné que Xamarin.Forms n’inclut pas cette fonctionnalité, vous devez utiliser [`DependencyService`](xref:Xamarin.Forms.DependencyService) pour accéder aux API natives sur chaque plateforme.
 
@@ -81,11 +81,11 @@ namespace DependencyServiceDemos.iOS
 
 ```
 
-La méthode `GetImageStreamAsync` crée un `UIImagePickerController` et l’initialise pour sélectionner des images dans la photothèque. Deux gestionnaires d’événements sont nécessaires : L’un est utilisé quand l’utilisateur sélectionne une photo et l’autre quand l’utilisateur annule l’affichage de la photothèque. `PresentModalViewController` affiche ensuite la photothèque à l’utilisateur.
+La méthode `GetImageStreamAsync` crée un `UIImagePickerController` et l’initialise pour sélectionner des images dans la photothèque. Deux gestionnaires d’événements sont nécessaires : l’un est utilisé quand l’utilisateur sélectionne une photo et l’autre quand l’utilisateur annule l’affichage de la photothèque. `PresentModalViewController` affiche ensuite la photothèque à l’utilisateur.
 
 À ce stade, la méthode `GetImageStreamAsync` doit retourner un objet `Task<Stream>` au code qui l’appelle. Cette tâche est exécutée uniquement quand l’utilisateur a fini d’interagir avec la photothèque et que l’un des gestionnaires d’événements est appelé. Dans ces situations, la classe [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) est essentielle. La classe fournit un objet `Task` du type générique approprié à retourner de la méthode `GetImageStreamAsync`, et la classe peut être signalée ultérieurement à la fin de la tâche.
 
-Le gestionnaire d’événements `FinishedPickingMedia` est appelé quand l’utilisateur a sélectionné une image. Toutefois, le gestionnaire fournit un objet `UIImage` et `Task` doit retourner un objet `Stream` .NET. Cette tâche s’exécute en deux étapes : L’objet `UIImage` est tout d’abord converti en fichier PNG ou JPEG en mémoire stocké dans un objet `NSData`, puis l’objet `NSData` est converti en objet .NET `Stream`. Un appel à la méthode `SetResult` de l’objet `TaskCompletionSource` exécute la tâche en fournissant l’objet `Stream` :
+Le gestionnaire d’événements `FinishedPickingMedia` est appelé quand l’utilisateur a sélectionné une image. Toutefois, le gestionnaire fournit un objet `UIImage` et `Task` doit retourner un objet `Stream` .NET. Cette opération s’effectue en deux étapes : l’objet `UIImage` est tout d’abord converti en fichier PNG en mémoire ou JPEG stocké dans un objet `NSData`, puis l’objet `NSData` est converti en objet .NET `Stream`. Un appel à la méthode `SetResult` de l’objet `TaskCompletionSource` exécute la tâche en fournissant l’objet `Stream` :
 
 ```csharp
 namespace DependencyServiceDemos.iOS
@@ -156,7 +156,14 @@ L’implémentation Android utilise la technique décrite dans la recette [**Sé
 ```csharp
 public class MainActivity : FormsAppCompatActivity
 {
-    ...
+    internal static MainActivity Instance { get; private set; }  
+
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        // ... 
+        Instance = this;
+    }
+    // ...
     // Field, property, and method for Picture Picker
     public static readonly int PickImageId = 1000;
 
