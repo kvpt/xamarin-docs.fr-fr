@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: c9f934ad690bffa2418a7221445a473d9a90fdb9
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490205"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031387"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -518,6 +518,50 @@ function factorial(num) {
 </body>
 </html>
 ```
+
+## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>Désapprobation UIWebView et rejet de l’App Store (ITMS-90809)
+
+À compter du 2020 avril, [Apple rejette les applications](https://developer.apple.com/news/?id=12232019b) qui utilisent toujours l’API de `UIWebView` déconseillée. Alors que Xamarin. Forms est passé à `WKWebView` comme valeur par défaut, il existe toujours une référence à l’ancien SDK dans les fichiers binaires Xamarin. Forms. Le comportement actuel de l' [éditeur de liens iOS](~/ios/deploy-test/linker.md) ne supprime pas cela et, par conséquent, l’API dépréciée `UIWebView` semblera toujours être référencée à partir de votre application lorsque vous la soumettez à l’App Store.
+
+Une version préliminaire de l’éditeur de liens est disponible pour résoudre ce problème. Pour activer la préversion, vous devrez fournir un argument supplémentaire `--optimize=experimental-xforms-product-type` à l’éditeur de liens. 
+
+Les conditions préalables à ce fonctionnement sont les suivantes :
+
+- **Xamarin. forms 4,5 ou une version ultérieure** &ndash; les versions préliminaires de Xamarin. forms 4,5 peuvent être utilisées.
+- **Xamarin. iOS 13.10.0.17 ou version ultérieure** &ndash; Vérifiez votre version de Xamarin. iOS [dans Visual Studio](~/cross-platform/troubleshooting/questions/version-logs.md#version-information). Cette version de Xamarin. iOS est incluse avec Visual Studio pour Mac 8.4.1 et Visual Studio 16.4.3.
+- **Supprimez les références à `UIWebView`** &ndash; votre code ne doit pas contenir de références à des `UIWebView` ou à des classes qui utilisent `UIWebView`.
+
+### <a name="configure-the-linker-preview"></a>Configurer la version préliminaire de l’éditeur de liens
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+Procédez comme suit pour que l’éditeur de liens supprime `UIWebView` références :
+
+1. **Ouvrez les propriétés du projet ios** &ndash; cliquez avec le bouton droit sur votre projet iOS, puis choisissez **Propriétés**.
+1. **Accédez à la section Build ios** &ndash; sélectionnez la section **Build iOS** .
+1. **Mettez à jour les arguments mTouch supplémentaires** &ndash; dans les **arguments mTouch supplémentaires** ajouter cet indicateur `--optimize=experimental-xforms-product-type` (en plus de toute valeur qui peut déjà y figurer). 
+1. **Mettez à jour toutes les configurations de build** &ndash; utilisez les listes **configuration** et **plateforme** en haut de la fenêtre pour mettre à jour toutes les configurations de Build. La configuration la plus importante à mettre à jour est la configuration de la **version ou** de l’iPhone, car elle est généralement utilisée pour créer des builds pour l’envoi de l’App Store.
+
+Vous pouvez voir la fenêtre avec le nouvel indicateur en place dans cette capture d’écran :
+
+[![de la définition de l’indicateur dans la section de génération iOS](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio pour Mac](#tab/macos)
+
+Suivez ces étapes pour que l’éditeur de liens supprime les références `UIWebView`
+
+1. **Ouvrez Options de projet ios** &ndash; cliquez avec le bouton droit sur votre projet iOS, puis choisissez **options**.
+1. **Accédez à la section Build ios** &ndash; sélectionnez la section **Build iOS** .
+1. **Mettez à jour les arguments _mTouch_ supplémentaires** &ndash; dans les **arguments _mtouch_ supplémentaires** ajouter cet indicateur `--optimize=experimental-xforms-product-type` (en plus de toute valeur qui peut déjà y figurer).
+1. **Mettez à jour toutes les configurations de build** &ndash; utilisez les listes **configuration** et **plateforme** en haut de la fenêtre pour mettre à jour toutes les configurations de Build. La configuration la plus importante à mettre à jour est la configuration de la **version ou** de l’iPhone, car elle est généralement utilisée pour créer des builds pour l’envoi de l’App Store.
+
+Vous pouvez voir la fenêtre avec le nouvel indicateur en place dans cette capture d’écran :
+
+[![de la définition de l’indicateur dans la section de génération iOS](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+
+-----
+
+Désormais, lorsque vous créez une nouvelle build (version Release) et l’envoyez à l’App Store, aucun avertissement ne doit s’poser sur l’API déconseillée.
 
 ## <a name="related-links"></a>Liens associés
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75607930"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031423"
 ---
 # <a name="app-store-distribution"></a>Distribution dans l’App Store
 
@@ -21,6 +21,9 @@ Une fois l’application Xamarin.iOS développée, la prochaine étape du cycle 
 > [!IMPORTANT]
 > Apple [a indiqué](https://developer.apple.com/ios/submit/) qu’à partir de mars 2019 toutes les applications et mises à jour envoyées à l’App Store doivent avoir été créées avec le kit SDK d’iOS 12.1 ou ultérieur, inclus dans Xcode 10.1 ou ultérieur.
 > Les applications doivent aussi prendre en charge les tailles d’écran de l’iPhone XS et de l’iPad Pro 12,9".
+
+> [!IMPORTANT]
+> Si vous recherchez des ressources en ce qui concerne `UIWebView` l’avertissement d’ITMS de désapprobation (-90809) lors de l’utilisation de Xamarin. Forms, reportez-vous à la documentation de [Xamarin. Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) .
 
 La distribution d’une application, tout comme son développement, nécessite le provisionnement d’applications à l’aide du *profil de provisionnement* approprié. Les profils de provisionnement sont des fichiers qui contiennent les informations sur le code de signature, ainsi que l’identité de l’application et le mécanisme de distribution prévu. Ils contiennent également des informations relatives aux appareils sur lesquels l’application peut être déployée pour la distribution hors App Store.
 
@@ -62,7 +65,7 @@ Vous pouvez sélectionner le même **ID d’application** et les mêmes **appare
 8. Pour finir, **téléchargez** le certificat rempli, puis double-cliquez sur le fichier pour l’installer.
 9. À ce stade, le certificat doit être installé sur la machine, mais vous devrez peut-être [actualiser vos profils](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download) pour vérifier qu’ils sont visibles dans Xcode.
 
-Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour ce faire, effectuez les étapes suivantes :
+Sinon, il est possible de demander un certificat via la boîte de dialogue Preferences de Xcode. Pour cela, effectuez les étapes suivantes :
 
 1. Sélectionnez votre équipe, puis cliquez sur **gérer les certificats...** :[![](images/selectteam.png "Sélectionner l’équipe et afficher les détails")](images/selectteam.png#lightbox)
 

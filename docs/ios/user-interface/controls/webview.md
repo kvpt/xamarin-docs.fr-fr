@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ae3a2af436a4ad8860ab27df550a1d74d5084a6
-ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+ms.openlocfilehash: 933edb1c0681f3fc9cbb8d81aa3091a65c4346e3
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718764"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031356"
 ---
 # <a name="web-views-in-xamarinios"></a>Affichages Web dans Xamarin. iOS
 
@@ -96,6 +96,9 @@ Pour plus d’informations sur ATS, y compris son implémentation dans votre app
 > 
 > [La documentation `UIWebView` d’Apple](https://developer.apple.com/documentation/uikit/uiwebview) suggère que les applications doivent utiliser [`WKWebView`](#wkwebview) à la place.
 
+> [!IMPORTANT]
+> Si vous recherchez des ressources en ce qui concerne `UIWebView` l’avertissement d’ITMS de désapprobation (-90809) lors de l’utilisation de Xamarin. Forms, reportez-vous à la documentation de [Xamarin. Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) .
+
 `UIWebView` est le mode hérité d’Apple pour fournir du contenu Web dans votre application. Elle a été publiée dans iOS 2,0 et a été dépréciée à compter du 8,0.
 
 Pour ajouter un UIWebView à votre application Xamarin. iOS, utilisez le code suivant :
@@ -112,6 +115,6 @@ Cela génère l’affichage Web suivant :
 
 [![l’effet de ScalesPagesToFit](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
-## <a name="related-links"></a>Liens connexes
+## <a name="related-links"></a>Liens associés
 
 - [Vues WebView (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)
