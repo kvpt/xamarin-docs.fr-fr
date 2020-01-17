@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: db26de8deed9945c6fff2d49f7d12de03fbe38df
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ed16c651d0b373e33d58bb73591977d3484d6e0
+ms.sourcegitcommit: be8ce3449afab22673e48b546d857431c071d66f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008235"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162942"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Utilisation de ADO.NET avec Xamarin. iOS
 
@@ -69,7 +69,7 @@ Lors de l’exécution de SQL directement sur la base de données, vous devez pr
 
 ## <a name="basic-data-access"></a>Accès aux données de base
 
-L’exemple de code *DataAccess_Basic* pour ce document ressemble à ce qui suit lors de l’exécution sur iOS :
+L’exemple de code *DataAccess_Basic* pour ce document ressemble à ceci lorsqu’il s’exécute sur iOS :
 
  ![](using-adonet-images/image9.png "iOS ADO.NET sample")
 
@@ -209,6 +209,17 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 Le type de retour de la méthode `ExecuteScalar` est `object` : vous devez effectuer un cast du résultat en fonction de la requête de base de données. Le résultat peut être un entier à partir d’une requête de nombre ou une chaîne d’une requête SELECT de colonne unique. Notez que cela est différent pour les autres méthodes d’exécution qui retournent un objet lecteur ou le nombre de lignes affectées.
+
+## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
+
+Il existe une autre bibliothèque `Microsoft.Data.Sqlite`, qui peut être [installée à partir de NuGet](https://www.nuget.org/packages/Microsoft.Data.Sqlite), qui est fonctionnellement équivalente à `Mono.Data.Sqlite` et qui autorise les mêmes types de requêtes.
+
+Il existe une [comparaison entre les deux bibliothèques](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare) et certains [Détails spécifiques à Xamarin](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin). Plus important pour les applications Xamarin. iOS, vous devez inclure un appel d’initialisation :
+
+```csharp
+// required for Xamarin.iOS
+SQLitePCL.Batteries_V2.Init();
+```
 
 ## <a name="related-links"></a>Liens associés
 
