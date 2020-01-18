@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2019
-ms.openlocfilehash: fed556dc303fecb92a1ce5b09bfaa1aeb0c61bd0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 03fb194a4c85d51a6fe477dcfdc8fa38fec5a89c
+ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869332"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265160"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin. Forms et Azure Cognitive Services
 
@@ -22,7 +22,7 @@ Microsoft Cognitive Services sont un ensemble d’API, de kits de développement
 
 ## <a name="speech-recognitionspeech-recognitionmd"></a>[Reconnaissance vocale](speech-recognition.md)
 
-L’API de reconnaissance vocale de Microsoft est une API basée sur le cloud qui fournit des algorithmes pour traiter la langue parlée. Cet article explique comment utiliser l’API Microsoft Speech Recognition REST pour convertir l’audio en texte dans une application Xamarin.Forms.
+Azure Speech service est une API basée sur le Cloud qui fournit des algorithmes pour traiter la langue parlée. Cet article explique comment utiliser le service Azure Speech pour transcrire la parole en texte dans une application Xamarin. Forms.
 
 ## <a name="spell-checkspell-checkmd"></a>[Vérification orthographique](spell-check.md)
 
