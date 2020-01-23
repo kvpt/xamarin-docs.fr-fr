@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: ae5962de05190ad914c86ceb0a9b52edb72232dc
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107232"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
-> - Créer un [`StackLayout`](xref:Xamarin.Forms.StackLayout) Xamarin.Forms en XAML.
+> - Créer un élément [`StackLayout`](xref:Xamarin.Forms.StackLayout) Xamarin.Forms en XAML.
 > - Spécifier l’orientation du `StackLayout`.
 > - Contrôler l’alignement et l’expansion de l’affichage enfant dans le `StackLayout`.
 

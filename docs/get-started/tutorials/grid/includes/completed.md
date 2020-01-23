@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: 36454d9fe2903bc5e9b05c7809bd09a1f305f46b
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059645"
 ---
 Félicitations ! Vous avez terminé ce didacticiel qui vous a expliqué comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
-> - Créer un [`Grid`](xref:Xamarin.Forms.Grid) Xamarin.Forms en XAML.
+> - Créer un élément [`Grid`](xref:Xamarin.Forms.Grid) Xamarin.Forms en XAML.
 > - Spécifier des colonnes et des lignes pour `Grid`.
 > - Étendre le contenu sur plusieurs colonnes ou plusieurs lignes dans `Grid`.
 

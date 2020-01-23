@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67841497"
 ---
 Dans cet exercice, vous ajouterez des classes d’accès aux données au projet **LocalDatabaseTutorial** qui sera utilisé pour conserver les données sur les personnes dans la base de données.

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 80688c0796a112bcb444a15cd96a6b176b8c16e0
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "72715233"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -72,7 +72,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend trois instances [`Label`](xref:Xamarin.Forms.Label) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). [`StackLayout`](xref:Xamarin.Forms.StackLayout) positionne ses affichages enfants (les instances `Label`) sur une seule ligne, laquelle est orientée verticalement par défaut. En outre, la propriété [`Margin`](xref:Xamarin.Forms.View.Margin) indique la position de rendu de `StackLayout` dans [`ContentPage`](xref:Xamarin.Forms.ContentPage).
 
     > [!NOTE]
-    > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), les propriétés [`Padding`](xref:Xamarin.Forms.Layout.Padding) et [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) peuvent également être définies sur [`StackLayout`](xref:Xamarin.Forms.StackLayout). La valeur de propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les affichages dans `StackLayout`et la valeur de propriété [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) spécifie la quantité d’espace entre chaque élément enfant dans `StackLayout`. Pour plus d’informations, consultez [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+    > Outre la propriété [`Margin`](xref:Xamarin.Forms.View.Margin), les propriétés [`Padding`](xref:Xamarin.Forms.Layout.Padding) et [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) peuvent également être définies sur [`StackLayout`](xref:Xamarin.Forms.StackLayout). La valeur de propriété [`Padding`](xref:Xamarin.Forms.Layout.Padding) spécifie la distance entre les affichages dans `StackLayout`et la valeur de propriété [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) spécifie la quantité d’espace entre chaque élément enfant dans `StackLayout`. Pour plus d’informations, consultez la page [Marge et remplissage](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
