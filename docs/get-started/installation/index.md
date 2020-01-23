@@ -9,10 +9,10 @@ ms.author: crdun
 ms.custom: video
 ms.date: 05/23/2019
 ms.openlocfilehash: cf54d4a6d8cdedc4ddde0beedeaadd361356990a
-ms.sourcegitcommit: 10b4ccbfcf182be940899c00fc0fecae1e199c5b
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "66252318"
 ---
 # <a name="installing-xamarin"></a>Installation de Xamarin
