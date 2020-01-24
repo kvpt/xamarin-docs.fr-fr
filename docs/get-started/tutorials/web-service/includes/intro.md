@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 338b03ae5e52b06c6ddc225b418ee2bc7d5e5ffc
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107234"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -24,4 +24,4 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment récupérer des données à partir du service web [OpenWeatherMap](https://openweathermap.org/). Les captures d’écran suivantes montrent l’application finale :
 
-[![Capture d’écran des données météorologiques de Seattle, sur iOS et Android](../images/consume-web-service.png "Données météorologiques de Seattle")](../images/consume-web-service-large.png#lightbox "Données météorologiques de Seattle")
+[![Capture d’écran de données météorologiques pour Seattle, sur iOS et Android](../images/consume-web-service.png "Données météorologiques pour Seattle")](../images/consume-web-service-large.png#lightbox "Données météorologiques pour Seattle")

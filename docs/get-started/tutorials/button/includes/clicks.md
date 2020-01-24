@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61372929"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -33,7 +33,7 @@ ms.locfileid: "61372929"
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix. Cliquez sur [`Button`](xref:Xamarin.Forms.Button). Vous remarquerez que le texte qui s’affiche change :
 
-    [![Capture d’écran d’un texte Button qui change après un clic, sur iOS et Android](../images/handle-button-click.png "Gérer un clic sur un bouton")](../images/handle-button-click-large.png#lightbox "Gérer un clic sur un bouton")
+    [![Capture d’écran du texte d’un bouton qui change après un clic, sur iOS et Android](../images/handle-button-click.png "Gérer un clic de bouton")](../images/handle-button-click-large.png#lightbox "Gérer un clic de bouton")
 
     Pour plus d’informations sur la gestion des clics sur un bouton, consultez la rubrique [Gestion des clics sur un bouton](~/xamarin-forms/user-interface/button.md#handling-button-clicks) dans le guide [Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md).
 
@@ -64,6 +64,6 @@ ms.locfileid: "61372929"
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix. Cliquez sur [`Button`](xref:Xamarin.Forms.Button). Vous remarquerez que le texte qui s’affiche change :
 
-    [![Capture d’écran d’un texte Button qui change après un clic, sur iOS et Android](../images/handle-button-click.png "Gérer un clic sur un bouton")](../images/handle-button-click-large.png#lightbox "Gérer un clic sur un bouton")
+    [![Capture d’écran du texte d’un bouton qui change après un clic, sur iOS et Android](../images/handle-button-click.png "Gérer un clic de bouton")](../images/handle-button-click-large.png#lightbox "Gérer un clic de bouton")
 
     Pour plus d’informations sur la gestion des clics sur un bouton, consultez la rubrique [Gestion des clics sur un bouton](~/xamarin-forms/user-interface/button.md#handling-button-clicks) dans le guide [Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md).

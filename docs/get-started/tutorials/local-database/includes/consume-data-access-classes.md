@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659798"
 ---
 Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les classes d’accès aux données créées précédemment.
@@ -74,7 +74,7 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
 
     Entrez plusieurs éléments de données, en appuyant sur [`Button`](xref:Xamarin.Forms.Button) pour chaque élément de données. Cette opération enregistrera les données dans la base de données et remplira de nouveau [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les données de la base de données :
 
-    [![Capture d’écran montrant la conservation des données dans la base de données SQLite.NET locale, sur iOS et Android](../images/consume-data-access-classes.png "Conservation des données dans la base de données locale")](../images/consume-data-access-classes-large.png#lightbox "Conservation des données dans la base de données locale")
+    [![Capture d’écran montrant la persistance des données dans une base de données SQLite.NET locale, sur iOS et Android](../images/consume-data-access-classes.png "Persistance des données dans une base de données locale")](../images/consume-data-access-classes-large.png#lightbox "Persistance des données dans une base de données locale")
 
     Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/data-cloud/data/databases.md)
 
@@ -144,6 +144,6 @@ Dans cet exercice, vous allez créer une interface utilisateur pour utiliser les
 
     Entrez plusieurs éléments de données, en appuyant sur [`Button`](xref:Xamarin.Forms.Button) pour chaque élément de données. Cette opération enregistrera les données dans la base de données et remplira de nouveau [`ListView`](xref:Xamarin.Forms.ListView) avec toutes les données de la base de données :
 
-    [![Capture d’écran montrant la conservation des données dans la base de données SQLite.NET locale, sur iOS et Android](../images/consume-data-access-classes.png "Conservation des données dans la base de données locale")](../images/consume-data-access-classes-large.png#lightbox "Conservation des données dans la base de données locale")
+    [![Capture d’écran montrant la persistance des données dans une base de données SQLite.NET locale, sur iOS et Android](../images/consume-data-access-classes.png "Persistance des données dans une base de données locale")](../images/consume-data-access-classes-large.png#lightbox "Persistance des données dans une base de données locale")
 
     Pour plus d’informations sur les bases de données locales dans Xamarin.Forms, consultez [Bases de données locales Xamarin.Forms (guide)](~/xamarin-forms/data-cloud/data/databases.md)

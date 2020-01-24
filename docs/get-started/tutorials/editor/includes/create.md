@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 7471d6bc66463091fafea855b12da06292055be6
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277221"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -35,7 +35,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un éditeur sur iOS et Android](../images/create-editor.png "Éditeur contenant un texte d’espace réservé")](../images/create-editor-large.png#lightbox "Éditeur contenant un texte d’espace réservé")
+    [![Capture d’écran d’un éditeur, sur iOS et Android](../images/create-editor.png "Éditeur contenant du texte d’espace réservé")](../images/create-editor-large.png#lightbox "Éditeur contenant du texte d’espace réservé")
 
     > [!NOTE]
     > Android indique la hauteur de l’élément [`Editor`](xref:Xamarin.Forms.Editor), mais ce n’est pas le cas d’iOS.
@@ -69,7 +69,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un éditeur sur iOS et Android](../images/create-editor.png "Éditeur contenant un texte d’espace réservé")](../images/create-editor-large.png#lightbox "Éditeur contenant un texte d’espace réservé")
+    [![Capture d’écran d’un éditeur, sur iOS et Android](../images/create-editor.png "Éditeur contenant du texte d’espace réservé")](../images/create-editor-large.png#lightbox "Éditeur contenant du texte d’espace réservé")
 
     > [!NOTE]
     > Android indique la hauteur de l’élément [`Editor`](xref:Xamarin.Forms.Editor), mais ce n’est pas le cas d’iOS.

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 85404d5aceb525a77c98bf2d86ebc4b464f5796f
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107223"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -21,4 +21,4 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment afficher une image et personnaliser son apparence. Les captures d’écran suivantes montrent l’application finale :
 
-[![Capture d’écran de l’affichage d’une image montrant une image locale, sur iOS et Android](../images/local-file.png "Affichage d’une image montrant une image locale")](../images/local-file-large.png#lightbox "Affichage d’une image montrant une image locale")
+[![Capture d’écran d’une vue d’image affichant une image locale, sur iOS et Android](../images/local-file.png "Vue d’image montrant une image locale")](../images/local-file-large.png#lightbox "Vue d’image montrant une image locale")

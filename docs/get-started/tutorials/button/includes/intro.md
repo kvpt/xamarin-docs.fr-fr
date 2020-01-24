@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 42b42e8013032b684b31e8bd974c433ef176be52
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059644"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -15,10 +15,10 @@ Dans ce didacticiel, vous apprendrez à :
 
 > [!div class="checklist"]
 >
-> - Créer un [`Button`](xref:Xamarin.Forms.Button) Xamarin.Forms en XAML.
+> - Créer un élément [`Button`](xref:Xamarin.Forms.Button) Xamarin.Forms en XAML.
 > - Répondre à une activation du `Button` par pression.
 > - Modifier l’apparence de l’élément `Button`.
 
 Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment personnaliser un [`Button`](xref:Xamarin.Forms.Button). Les captures d’écran suivantes montrent l’application finale :
 
-[![Capture d’écran d’un bouton avec une apparence visuelle modifiée, sur iOS et Android](../images/change-button-appearance.png "Bouton avec une apparence modifiée")](../images/change-button-appearance-large.png#lightbox "Bouton avec une apparence modifiée")
+[![Capture d’écran d’un bouton dont l’apparence a changé, sur iOS et Android](../images/change-button-appearance.png "Bouton dont l’apparence a changé")](../images/change-button-appearance-large.png#lightbox "Bouton dont l’apparence a changé")

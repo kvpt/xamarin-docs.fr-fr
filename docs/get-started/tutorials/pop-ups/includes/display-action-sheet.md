@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
-ms.sourcegitcommit: 6ad272c2c7b0c3c30e375ad17ce6296ac1ce72b2
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "66193830"
 ---
 
@@ -37,7 +37,7 @@ Xamarin.Forms dispose d’une fenêtre contextuelle modale (une feuille d’acti
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix. Ensuite, appuyez sur l’élément [`Button`](xref:Xamarin.Forms.Button) que vous avez ajouté à [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
 
-    [![Capture d’écran d’une feuille d’action sur iOS et Android](../images/actionsheet.png "Feuille d’action guidant les utilisateurs dans une tâche")](../images/actionsheet-large.png#lightbox "Feuille d’action guidant les utilisateurs dans une tâche")
+    [![Capture d’écran d’une feuille d’action, sur iOS et Android](../images/actionsheet.png "Feuille d’action qui guide les utilisateurs dans une tâche")](../images/actionsheet-large.png#lightbox "Feuille d’action qui guide les utilisateurs dans une tâche")
 
     Remarquez qu’après avoir sélectionné une alternative dans la boîte de dialogue de la feuille d’action, la sélection est affichée dans la fenêtre **de sortie** de Visual Studio.
 
@@ -71,7 +71,7 @@ Xamarin.Forms dispose d’une fenêtre contextuelle modale (une feuille d’acti
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix. Ensuite, appuyez sur l’élément [`Button`](xref:Xamarin.Forms.Button) que vous avez ajouté à [`ContentPage`](xref:Xamarin.Forms.ContentPage) :
 
-    [![Capture d’écran d’une feuille d’action sur iOS et Android](../images/actionsheet.png "Feuille d’action guidant les utilisateurs dans une tâche")](../images/actionsheet-large.png#lightbox "Feuille d’action guidant les utilisateurs dans une tâche")
+    [![Capture d’écran d’une feuille d’action, sur iOS et Android](../images/actionsheet.png "Feuille d’action qui guide les utilisateurs dans une tâche")](../images/actionsheet-large.png#lightbox "Feuille d’action qui guide les utilisateurs dans une tâche")
 
     Remarquez qu’après avoir sélectionné une alternative dans la boîte de dialogue de la feuille d’action, la sélection est affichée dans la fenêtre **de sortie** de Visual Studio pour Mac.
 

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cef0b8f56639e7bc8571ab01b820dfd54b074472
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277228"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -19,7 +19,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
 1. Dans **l’Explorateur de solutions**, sélectionnez le projet **WebServiceTutorial**, cliquez avec le bouton droit et sélectionnez **Gérer les packages NuGet...**  :
 
-    ![Capture d’écran de l’élément de menu Ajouter des Packages NuGet sélectionné](../images/vs/add-nuget-packages.png "Élément de menu Ajouter des Packages NuGet")
+    ![Capture d’écran de l’élément de menu « Ajouter des packages NuGet » sélectionné](../images/vs/add-nuget-packages.png "Élément de menu Ajouter des packages NuGet")
 
 1. Dans le **Gestionnaire de package NuGet**, sélectionnez l’onglet **Parcourir**, recherchez et sélectionnez le package **Newtonsoft.Json**, puis cliquez sur le bouton **Installer** pour l’ajouter au projet :
 
@@ -42,7 +42,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
 
 1. Dans **Panneau Solutions**, sélectionnez le projet **WebServiceTutorial**, cliquez avec le bouton droit et sélectionnez **Gérer les packages NuGet...**  :
 
-    ![Capture d’écran de l’élément de menu Ajouter des Packages NuGet sélectionné](../images/vsmac/add-nuget-packages.png "Élément de menu Ajouter des Packages NuGet")
+    ![Capture d’écran de l’élément de menu « Ajouter des packages NuGet » sélectionné](../images/vsmac/add-nuget-packages.png "Élément de menu Ajouter des packages NuGet")
 
 1. Dans la fenêtre **Ajouter des packages**, recherchez et sélectionnez le package NuGet **Newtonsoft.Json**, puis cliquez sur le bouton **Ajouter un package** pour l’ajouter au projet :
 

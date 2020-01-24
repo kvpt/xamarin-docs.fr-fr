@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059646"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -20,4 +20,4 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment positionner les contrôles au sein d’une [`Grid`](xref:Xamarin.Forms.Grid). Les captures d’écran suivantes montrent l’application finale :
 
-[![Capture d’écran d’une Grid dont le contenu s’étend sur plusieurs colonnes et lignes, sur iOS et Android](../images/span-columns-rows.png "Grid avec du contenu sur plusieurs colonnes et lignes")](../images/span-columns-rows-large.png#lightbox "Grid avec du contenu sur plusieurs colonnes et lignes")
+[![Capture d’écran d’une grille dont le contenu s’étend sur plusieurs colonnes et lignes, sur iOS et Android](../images/span-columns-rows.png "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")](../images/span-columns-rows-large.png#lightbox "Grille comprenant du contenu s’étendant sur plusieurs colonnes et lignes")

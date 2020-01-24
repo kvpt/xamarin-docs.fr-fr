@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119009"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "76530873"
 ---
 # <a name="metadata-and-markdown-template"></a>Métadonnées et modèle Markdown
 
@@ -65,6 +65,7 @@ Markdown utilise des caractères spéciaux tels que \*, \` et \# pour la mise en
 ## <a name="file-name"></a>Nom de fichier
 
 Les noms des fichiers utilisent les règles suivantes :
+
 - Ils contiennent uniquement des lettres minuscules, des chiffres et des traits d’union.
 - Aucun espace ni caractère de ponctuation. Utilisez les traits d’union pour séparer les mots et les nombres dans le nom de fichier.
 - Utilisez des verbes d’actions spécifiques, tels que développer, acheter, générer, dépanner. Pas de substantif.
@@ -72,11 +73,10 @@ Les noms des fichiers utilisent les règles suivantes :
 - Le nom doit être au format Markdown et utiliser l’extension de fichier .md.
 - Privilégiez des noms de fichiers courts. Ils font partie de l’URL pour vos articles.
 
-
-
 ## <a name="headings"></a>Titres
 
 Utilisez la mise en majuscules comme pour les phrases. Mettez toujours en majuscules :
+
 - Le premier mot d’un titre.
 - Le mot qui suit le signe deux-points dans un titre ou un en-tête (par exemple, « Comment : Trier un tableau »).
 
@@ -133,6 +133,7 @@ Le système de génération a certaines extensions qui permettent d’établir d
 Lors de la liaison à une API, vous pouvez utiliser son identificateur unique (UID) qui est généré automatiquement à partir du code source.
 
 Vous pouvez utiliser l’une des syntaxes suivantes :
+
 1. Lien Markdown : `[link_text](xref:UID)`
 2. Lien automatique : `<xref:UID>`
 3. Forme abrégée : `@UID`
@@ -145,6 +146,7 @@ Pour plus d’informations sur l’utilisation de cette notation, consultez [Uti
 > Pour l’instant, il n’existe aucun moyen facile de trouver les UID. La meilleure façon de trouver l’UID pour une API consiste à le rechercher dans ce dépôt : [docascode/coreapi](https://github.com/docascode/coreapi). Nous travaillons à la mise en place d’un meilleur système à l’avenir.
 
 Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID doit être encodée au format HTML (%60 et %23 respectivement), comme dans les exemples suivants :
+
 - Exemple : @System.Threading.Tasks.Task\`1 devient `@System.Threading.Tasks.Task%601`
 - Exemple : @System.Exception.\#ctor devient `@System.Exception.%23ctor`
 
@@ -158,7 +160,6 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 1. Ordered
 1. List
 
-
 #### <a name="ordered-list-with-an-embedded-list"></a>Liste triée avec une liste incorporée
 
 1. Here
@@ -170,7 +171,6 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 1. ordered
 1. list
 
-
 ### <a name="unordered-lists"></a>Listes non triées
 
 - This
@@ -179,20 +179,18 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 - bulleted
 - list
 
-
-##### <a name="unordered-list-with-an-embedded-list"></a>Liste non triée avec une liste incorporée
+#### <a name="unordered-list-with-an-embedded-list"></a>Liste non triée avec une liste incorporée
 
 - This
 - bulleted
 - list
-    - Mrs. Peacock
-    - Mr. Green
+  - Mrs. Peacock
+  - Mr. Green
 - contains
 - other
     1. Colonel Mustard
     1. Mrs. White
 - lists
-
 
 ## <a name="horizontal-rule"></a>Ligne horizontale
 
@@ -208,12 +206,11 @@ Quand l’UID contient les caractères spéciaux \` ou \#, la valeur de l’UID 
 
 Vous pouvez utiliser un [outil de génération de table Markdown](http://www.tablesgenerator.com/markdown_tables) pour les créer plus facilement.
 
-
 ### <a name="inline-code-blocks-with-language-identifier"></a>Blocs de code en ligne avec identificateur de langage
 
 Utilisez trois accents graves (\`\`\`) + un ID de langage pour appliquer un codage en couleurs spécifique au langage à un bloc de code. Voici la liste complète des [ID de langages GFM](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs).
 
-##### <a name="c9839"></a>C&#9839;
+#### <a name="c9839"></a>C&#9839;
 
 ```c#
 using System;

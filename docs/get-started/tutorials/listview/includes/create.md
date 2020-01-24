@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277217"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -42,11 +42,11 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend une [`ListView`](xref:Xamarin.Forms.Image) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) spécifie les éléments à afficher, lesquels sont définis dans un tableau de chaînes.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`ListView`](xref:Xamarin.Forms.Image) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) spécifie les éléments à afficher, lesquels sont définis dans un tableau de chaînes.
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une ListView sur iOS et Android](../images/create-listview.png "ListView affichant des données")](../images/create-listview-large.png#lightbox "ListView affichant des données")
+    [![Capture d’écran d’une vue Liste, sur iOS et Android](../images/create-listview.png "Vue Liste comprenant des données")](../images/create-listview-large.png#lightbox "Vue Liste comprenant des données")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
@@ -84,8 +84,8 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
     </ContentPage>
     ```
 
-    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend une [`ListView`](xref:Xamarin.Forms.Image) dans un [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) spécifie les éléments à afficher, lesquels sont définis dans un tableau de chaînes.
+    Ce code définit de manière déclarative l’interface utilisateur de la page, qui comprend un élément [`ListView`](xref:Xamarin.Forms.Image) dans [`StackLayout`](xref:Xamarin.Forms.StackLayout). La propriété [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) spécifie les éléments à afficher, lesquels sont définis dans un tableau de chaînes.
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une ListView sur iOS et Android](../images/create-listview.png "ListView affichant des données")](../images/create-listview-large.png#lightbox "ListView affichant des données")
+    [![Capture d’écran d’une vue Liste, sur iOS et Android](../images/create-listview.png "Vue Liste comprenant des données")](../images/create-listview-large.png#lightbox "Vue Liste comprenant des données")

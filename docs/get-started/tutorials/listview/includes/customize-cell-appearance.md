@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61037504"
 ---
 [`ListView`](xref:Xamarin.Forms.ListView) était auparavant rempli avec des données à l’aide d’un mécanisme de liaison de données. Cependant, malgré la liaison de données à une collection, où chaque objet de la collection définissait plusieurs éléments de données, un seul élément de données était affiché par objet (la propriété `Name` de l’objet `Monkey`).
@@ -58,7 +58,7 @@ Dans cet exercice, vous allez modifier le projet **ListViewTutorial** pour que [
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un ListView dont les éléments sont basés sur un modèle de données](../images/customize-cell-appearance.png "ListView affichant des données basées sur un modèle")](../images/customize-cell-appearance-large.png#lightbox "ListView affichant des données basées sur un modèle")
+    [![Capture d’écran d’une vue Liste dont les éléments sont basés sur un modèle de données](../images/customize-cell-appearance.png "Vue Liste comprenant des données basées sur un modèle")](../images/customize-cell-appearance-large.png#lightbox "Vue Liste comprenant des données basées sur un modèle")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio pour Mac](#tab/vsmac)
 
@@ -108,4 +108,4 @@ Dans cet exercice, vous allez modifier le projet **ListViewTutorial** pour que [
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un ListView dont les éléments sont basés sur un modèle de données](../images/customize-cell-appearance.png "ListView affichant des données basées sur un modèle")](../images/customize-cell-appearance-large.png#lightbox "ListView affichant des données basées sur un modèle")
+    [![Capture d’écran d’une vue Liste dont les éléments sont basés sur un modèle de données](../images/customize-cell-appearance.png "Vue Liste comprenant des données basées sur un modèle")](../images/customize-cell-appearance-large.png#lightbox "Vue Liste comprenant des données basées sur un modèle")

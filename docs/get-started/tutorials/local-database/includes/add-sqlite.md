@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8ad5ca60a074cbdc6ff91134cc9c1276ed653b91
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277223"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -19,7 +19,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
 1. Dans **l’Explorateur de solutions**, sélectionnez le projet **LocalDatabaseTutorial**, cliquez avec le bouton droit et sélectionnez **Gérer les packages NuGet...**  :
 
-    ![Capture d’écran de l’élément de menu Gérer les packages NuGet sélectionné](../images/vs/add-nuget-packages.png "Élément de menu Gérer les packages NuGet")
+    ![Capture d’écran de l’élément de menu « Gérer les packages NuGet » sélectionné](../images/vs/add-nuget-packages.png "Élément de menu Ajouter des packages NuGet")
 
 1. Dans le **Gestionnaire de package NuGet**, sélectionnez l’onglet **Parcourir**, recherchez et sélectionnez le package NuGet **sqlite-net-pcl**, puis cliquez sur le bouton **Installer** pour l’ajouter au projet :
 
@@ -50,7 +50,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
 
 1. Dans **Panneau Solutions**, sélectionnez le projet **LocalDatabaseTutorial**, cliquez avec le bouton droit et sélectionnez **Gérer les packages NuGet...**  :
 
-    ![Capture d’écran de l’élément de menu Ajouter des packages NuGet sélectionné](../images/vsmac/add-nuget-packages.png "Élément de menu Ajouter des packages NuGet")
+    ![Capture d’écran de l’élément de menu « Ajouter des packages NuGet » sélectionné](../images/vsmac/add-nuget-packages.png "Élément de menu Ajouter des packages NuGet")
 
 1. Dans la fenêtre **Ajouter des packages**, recherchez et sélectionnez le package NuGet **sqlite-net-pcl**, puis cliquez sur le bouton **Ajouter un package** pour l’ajouter au projet :
 

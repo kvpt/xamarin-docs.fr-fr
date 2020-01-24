@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059648"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -21,4 +21,4 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment conserver les données à travers les changements d’état du cycle de vie. Les captures d’écran suivantes montrent l’application finale :
 
-[![Capture d’écran d’une entrée dont la propriété de texte est conservée à travers les changements d’état du cycle de vie sur iOS et Android](../images/persist-data.png "Entrée dont la propriété de texte est conservée à travers les changements d’état du cycle de vie")](../images/persist-data-large.png#lightbox "Entrée dont la propriété de texte est conservée à travers les changements d’état du cycle de vie")
+[![Capture d’écran d’une entrée dont la propriété Text est conservée après les changements d’état du cycle de vie, sur iOS et Android](../images/persist-data.png "Entrée dont la propriété Text est conservée après les changements d’état du cycle de vie")](../images/persist-data-large.png#lightbox "Entrée dont la propriété Text est conservée après les changements d’état du cycle de vie")

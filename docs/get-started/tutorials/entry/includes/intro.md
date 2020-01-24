@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: e05a20149d33eed58918382371e8bc333d4a5f8d
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107227"
 ---
 Avant de tenter ce didacticiel, vous devez avoir suivi les guides et didacticiels suivants :
@@ -21,4 +21,4 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous allez utiliser Visual Studio 2019 ou Visual Studio pour Mac pour créer une application simple qui montre comment personnaliser le comportement d’une [`Entry`](xref:Xamarin.Forms.Entry). Les captures d’écran suivantes montrent l’application finale :
 
-[![Capture d’écran d’une Entry avec texte masqué par des caractères de mot de passe, sur iOS et Android](../images/customize-behavior.png "Entry avec caractères de mot de passe masqués")](../images/customize-behavior-large.png#lightbox "Entry avec caractères de mot de passe masqués")
+[![Capture d’écran d’une entrée constituée de texte masqué par des caractères de mot de passe, sur iOS et Android](../images/customize-behavior.png "Entrée constituée de texte masqué par des caractères de mot de passe")](../images/customize-behavior-large.png#lightbox "Entrée constituée de texte masqué par des caractères de mot de passe")

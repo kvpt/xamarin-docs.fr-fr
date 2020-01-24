@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5a464196c08220158432219d96bf82578789d8e5
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67559993"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -23,7 +23,7 @@ ms.locfileid: "67559993"
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’affichages enfants orientés horizontalement dans un StackLayout sur iOS et Android](../images/orientation.png "StackLayout contenant des instances Label orientées horizontalement")](../images/orientation-large.png#lightbox "StackLayout contenant des instances Label orientées horizontalement")
+    [![Capture d’écran de vues enfants orientées horizontalement dans une disposition de pile, sur iOS et Android](../images/orientation.png "Disposition de pile contenant des instances d’étiquettes orientées horizontalement")](../images/orientation-large.png#lightbox "Disposition de pile contenant des instances d’étiquettes orientées horizontalement")
 
     Notez que les instances [`Label`](xref:Xamarin.Forms.Label) dans le [`StackLayout`](xref:Xamarin.Forms.StackLayout) sont maintenant alignées horizontalement, au lieu de verticalement.
 
@@ -44,7 +44,7 @@ ms.locfileid: "67559993"
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’affichages enfants orientés horizontalement dans un StackLayout sur iOS et Android](../images/orientation.png "StackLayout contenant des instances Label orientées horizontalement")](../images/orientation-large.png#lightbox "StackLayout contenant des instances Label orientées horizontalement")
+    [![Capture d’écran de vues enfants orientées horizontalement dans une disposition de pile, sur iOS et Android](../images/orientation.png "Disposition de pile contenant des instances d’étiquettes orientées horizontalement")](../images/orientation-large.png#lightbox "Disposition de pile contenant des instances d’étiquettes orientées horizontalement")
 
     Notez que les instances [`Label`](xref:Xamarin.Forms.Label) dans le [`StackLayout`](xref:Xamarin.Forms.StackLayout) sont maintenant alignées horizontalement, au lieu de verticalement.
 

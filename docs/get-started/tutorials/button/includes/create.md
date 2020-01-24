@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 854212951844d2443c5d1b332d94b533673640c4
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277220"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -34,7 +34,7 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio 2019 (dernière
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un bouton sur iOS et Android](../images/create-button.png "Bouton contenant du texte")](../images/create-button-large.png#lightbox "Bouton contenant du texte")
+    [![Capture d’écran d’un bouton, sur iOS et Android](../images/create-button.png "Bouton comprenant du texte")](../images/create-button-large.png#lightbox "Bouton comprenant du texte")
 
     Notez que, par défaut, un élément [`Button`](xref:Xamarin.Forms.Button) tend à occuper tout l’espace qui lui est accordé ; dans ce cas, la largeur totale de son parent (l’élément [`StackLayout`](xref:Xamarin.Forms.StackLayout)).
 
@@ -66,6 +66,6 @@ Pour suivre ce didacticiel, vous devez disposer de Visual Studio pour Mac (derni
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un bouton sur iOS et Android](../images/create-button.png "Bouton contenant du texte")](../images/create-button-large.png#lightbox "Bouton contenant du texte")
+    [![Capture d’écran d’un bouton, sur iOS et Android](../images/create-button.png "Bouton comprenant du texte")](../images/create-button-large.png#lightbox "Bouton comprenant du texte")
 
     Notez que, par défaut, un élément [`Button`](xref:Xamarin.Forms.Button) tend à occuper tout l’espace qui lui est accordé ; dans ce cas, la largeur totale de son parent (l’élément [`StackLayout`](xref:Xamarin.Forms.StackLayout)).

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3130c20d39e0140695eed92ffa4941d6bafe796e
-ms.sourcegitcommit: b4c9c574b771ae0265171ca5e938aed1c5e35028
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67394543"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -42,7 +42,7 @@ ms.locfileid: "67394543"
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une entrée contenant du texte, sur iOS et Android](../images/text-changes.png "Entrée avec texte")](../images/text-changes-large.png#lightbox "Entrée avec texte")
+    [![Capture d’écran d’une entrée contenant du texte, sur iOS et Android](../images/text-changes.png "Entrée constituée de texte")](../images/text-changes-large.png#lightbox "Entrée constituée de texte")
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements et entrez du texte dans [`Entry`](xref:Xamarin.Forms.Entry) pour observer le déclenchement des événements [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) et [`Completed`](xref:Xamarin.Forms.Entry.Completed).
 
@@ -84,7 +84,7 @@ ms.locfileid: "67394543"
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une entrée contenant du texte, sur iOS et Android](../images/text-changes.png "Entrée avec texte")](../images/text-changes-large.png#lightbox "Entrée avec texte")
+    [![Capture d’écran d’une entrée contenant du texte, sur iOS et Android](../images/text-changes.png "Entrée constituée de texte")](../images/text-changes-large.png#lightbox "Entrée constituée de texte")
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements et entrez du texte dans [`Entry`](xref:Xamarin.Forms.Entry) pour observer le déclenchement des événements [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) et [`Completed`](xref:Xamarin.Forms.Entry.Completed).
 

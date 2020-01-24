@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61373368"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -43,7 +43,7 @@ ms.locfileid: "61373368"
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un Editor contenant du texte, sur iOS et Android](../images/text-changes.png "Editor avec texte")](../images/text-changes-large.png#lightbox "Editor avec texte")
+    [![Capture d’écran d’un éditeur contenant du texte, sur iOS et Android](../images/text-changes.png "Éditeur avec du texte")](../images/text-changes-large.png#lightbox "Éditeur avec du texte")
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements, entrez du texte dans [`Editor`](xref:Xamarin.Forms.Editor) et observez le déclenchement de l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged). Décentrez `Editor` pour observer le déclenchement de l’événement [`Completed`](xref:Xamarin.Forms.Entry.Completed).
 
@@ -86,7 +86,7 @@ ms.locfileid: "61373368"
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’un Editor contenant du texte, sur iOS et Android](../images/text-changes.png "Editor avec texte")](../images/text-changes-large.png#lightbox "Editor avec texte")
+    [![Capture d’écran d’un éditeur contenant du texte, sur iOS et Android](../images/text-changes.png "Éditeur avec du texte")](../images/text-changes-large.png#lightbox "Éditeur avec du texte")
 
     Définissez des points d’arrêt dans les deux gestionnaires d’événements, entrez du texte dans [`Editor`](xref:Xamarin.Forms.Editor) et observez le déclenchement de l’événement [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged). Décentrez `Editor` pour observer le déclenchement de l’événement [`Completed`](xref:Xamarin.Forms.Entry.Completed).
 

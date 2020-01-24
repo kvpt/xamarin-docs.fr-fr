@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "69541461"
 ---
 L’élément [`ListView`](xref:Xamarin.Forms.ListView) est renseigné avec les données à l’aide de la propriété [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource), de type `IEnumerable`. L’étape précédente a permis de remplir l’élément `ListView` dans XAML avec un tableau de chaînes. Toutefois, en général un élément `ListView` est renseigné à l’aide de données issues d’une collection, définie par code-behind, qui implémente `IEnumerable`.
@@ -187,7 +187,7 @@ Dans cet exercice, vous modifierez le projet **ListViewTutorial** pour remplir l
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une vue de liste remplie avec les données d’une collection, sur iOS et Android](../images/populate-data.png "Vue de liste affichant des données à partir d’une collection")](../images/populate-data-large.png#lightbox "Vue de liste affichant des données à partir d’une collection")
+    [![Capture d’écran d’une vue Liste comprenant les données d’une collection, sur iOS et Android](../images/populate-data.png "Vue Liste comprenant les données d’une collection")](../images/populate-data-large.png#lightbox "Vue Liste comprenant les données d’une collection")
 
     L’élément [`ListView`](xref:Xamarin.Forms.ListView) affiche la propriété `Name` pour chaque élément `Monkey` de la collection `Monkeys`. En effet, par défaut, l’élément `ListView` appelle la méthode `ToString` lors de l’affichage des objets à partir d’une collection (qui a été remplacée dans la classe `Monkey` pour retourner la valeur de propriété `Name`).
 
@@ -368,6 +368,6 @@ Dans cet exercice, vous modifierez le projet **ListViewTutorial** pour remplir l
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’une vue de liste remplie avec les données d’une collection, sur iOS et Android](../images/populate-data.png "Vue de liste affichant des données à partir d’une collection")](../images/populate-data-large.png#lightbox "Vue de liste affichant des données à partir d’une collection")
+    [![Capture d’écran d’une vue Liste comprenant les données d’une collection, sur iOS et Android](../images/populate-data.png "Vue Liste comprenant les données d’une collection")](../images/populate-data-large.png#lightbox "Vue Liste comprenant les données d’une collection")
 
     L’élément [`ListView`](xref:Xamarin.Forms.ListView) affiche la propriété `Name` pour chaque élément `Monkey` de la collection `Monkeys`. En effet, par défaut, l’élément `ListView` appelle la méthode `ToString` lors de l’affichage des objets à partir d’une collection (qui a été remplacée dans la classe `Monkey` pour retourner la valeur de propriété `Name`).

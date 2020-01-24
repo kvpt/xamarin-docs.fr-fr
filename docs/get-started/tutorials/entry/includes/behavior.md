@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61343410"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -25,7 +25,7 @@ ms.locfileid: "61343410"
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix. Entrez du texte dans [`Entry`](xref:Xamarin.Forms.Entry). Vous remarquerez que chaque caractère est remplacé par un caractère de masque de mot de passe et que 15 caractères maximum peuvent être saisis :
 
-    [![Capture d’écran d’une Entry avec texte masqué par des caractères de mot de passe, sur iOS et Android](../images/customize-behavior.png "Entry avec caractères de mot de passe masqués")](../images/customize-behavior-large.png#lightbox "Entry avec caractères de mot de passe masqués")
+    [![Capture d’écran d’une entrée constituée de texte masqué par des caractères de mot de passe, sur iOS et Android](../images/customize-behavior.png "Entrée constituée de texte masqué par des caractères de mot de passe")](../images/customize-behavior-large.png#lightbox "Entrée constituée de texte masqué par des caractères de mot de passe")
 
     Pour plus d’informations sur la personnalisation du comportement de [`Entry`](xref:Xamarin.Forms.Entry), consultez le guide [Xamarin.Forms Entry](~/xamarin-forms/user-interface/text/entry.md).
 
@@ -48,6 +48,6 @@ ms.locfileid: "61343410"
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix. Entrez du texte dans [`Entry`](xref:Xamarin.Forms.Entry). Vous remarquerez que chaque caractère est remplacé par un caractère de masque de mot de passe et que 15 caractères maximum peuvent être saisis :
 
-    [![Capture d’écran d’une Entry avec texte masqué par des caractères de mot de passe, sur iOS et Android](../images/customize-behavior.png "Entry avec caractères de mot de passe masqués")](../images/customize-behavior-large.png#lightbox "Entry avec caractères de mot de passe masqués")
+    [![Capture d’écran d’une entrée constituée de texte masqué par des caractères de mot de passe, sur iOS et Android](../images/customize-behavior.png "Entrée constituée de texte masqué par des caractères de mot de passe")](../images/customize-behavior-large.png#lightbox "Entrée constituée de texte masqué par des caractères de mot de passe")
 
     Pour plus d’informations sur la personnalisation du comportement de [`Entry`](xref:Xamarin.Forms.Entry), consultez le guide [Xamarin.Forms Entry](~/xamarin-forms/user-interface/text/entry.md).

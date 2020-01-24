@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67559994"
 ---
 La taille et la position des affichages enfants dans [`StackLayout`](xref:Xamarin.Forms.StackLayout) varient selon les valeurs des propriétés [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) et [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) des affichages enfants et selon les valeurs des propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) et [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions).
@@ -53,7 +53,7 @@ Les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions
 
 1. Dans la barre d’outils Visual Studio, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application à l’intérieur du simulateur iOS distant ou de l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’affichages enfants dans un StackLayout, avec l’option d’alignement et d’extension définie, sur iOS et Android](../images/alignment-expansion.png "StackLayout contenant des instances Label, avec option d’alignement et d’extension définie")](../images/alignment-expansion-large.png#lightbox "StackLayout contenant des instances Label, avec option d’alignement et d’extension définie")
+    [![Capture d’écran de vues enfants dans une disposition de pile, avec des options d’alignement et d’expansion définies, sur iOS et Android](../images/alignment-expansion.png "Disposition de pile comprenant des instances d’étiquettes, avec des options d’alignement et d’expansion définies")](../images/alignment-expansion-large.png#lightbox "Disposition de pile comprenant des instances d’étiquettes, avec des options d’alignement et d’expansion définies")
 
     Un [`StackLayout`](xref:Xamarin.Forms.StackLayout) respecte uniquement les préférences d’alignement sur les affichages enfants qui se trouvent dans la direction opposée à l’orientation `StackLayout`. Par conséquent, les affichages enfants [`Label`](xref:Xamarin.Forms.Label) dans `StackLayout` orienté verticalement définissent leurs propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) sur l’un des champs d’alignement :
 
@@ -109,7 +109,7 @@ Les propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions
 
 1. Dans la barre d’outils Visual Studio pour Mac, appuyez sur le bouton **Démarrer** (le bouton triangulaire qui ressemble à un bouton de lecture) pour lancer l’application dans le simulateur iOS ou dans l’émulateur Android de votre choix :
 
-    [![Capture d’écran d’affichages enfants dans un StackLayout, avec l’option d’alignement et d’extension définie, sur iOS et Android](../images/alignment-expansion.png "StackLayout contenant des instances Label, avec option d’alignement et d’extension définie")](../images/alignment-expansion-large.png#lightbox "StackLayout contenant des instances Label, avec option d’alignement et d’extension définie")
+    [![Capture d’écran de vues enfants dans une disposition de pile, avec des options d’alignement et d’expansion définies, sur iOS et Android](../images/alignment-expansion.png "Disposition de pile comprenant des instances d’étiquettes, avec des options d’alignement et d’expansion définies")](../images/alignment-expansion-large.png#lightbox "Disposition de pile comprenant des instances d’étiquettes, avec des options d’alignement et d’expansion définies")
 
     Un [`StackLayout`](xref:Xamarin.Forms.StackLayout) respecte uniquement les préférences d’alignement sur les affichages enfants qui se trouvent dans la direction opposée à l’orientation `StackLayout`. Par conséquent, les affichages enfants [`Label`](xref:Xamarin.Forms.Label) dans `StackLayout` orienté verticalement définissent leurs propriétés [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) sur l’un des champs d’alignement :
 
