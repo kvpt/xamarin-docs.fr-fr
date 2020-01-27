@@ -12,7 +12,7 @@ abstract:
   description: 'Xamarin.Android expose le kit SDK Android complet pour les développeurs .NET. Créez des applications Android entièrement natives à l’aide de C# ou F# dans Visual Studio.'
   menu:
     items:
-      - href: ~/android/samples/
+      - href: ~/android/samples/index.md
         text: Exemples Android
       - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
         text: Notes de publication

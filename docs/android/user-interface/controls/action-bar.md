@@ -89,7 +89,7 @@ Par exemple, voici une capture d’écran d’un Barre d’action avec un élém
 
 Lorsque l’utilisateur clique sur l’élément dans la Barre d’action, l’application de messagerie qui contient l’image partagée est lancée, comme indiqué ci-dessous :
 
-[Capture d’écran ![de l’application de messagerie affichant l’image du singe](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
+[![Capture d’écran de l’application de messagerie affichant l’image du singe](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
 ### <a name="specifying-the-action-provider-class"></a>Spécification de la classe de fournisseur d’action
 
