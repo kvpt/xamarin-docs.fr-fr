@@ -20,7 +20,7 @@ ms.locfileid: "75728276"
 
 Le moteur de base de données SQLite permet aux applications Xamarin. Forms de charger et d’enregistrer des objets de données dans du code partagé. L’exemple d’application utilise une table de base de données SQLite pour stocker les éléments todo. Cet article explique comment utiliser SQLite.Net dans du code partagé pour stocker et récupérer des informations dans une base de données locale.
 
-[Captures d’écran ![de l’application ToDoList sur iOS et Android](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "Application ToDoList sur iOS et Android")
+[![Captures d’écran de l’application ToDoList sur iOS et Android](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "Application ToDoList sur iOS et Android")
 
 Intégrez SQLite.NET dans Mobile Apps en procédant comme suit :
 

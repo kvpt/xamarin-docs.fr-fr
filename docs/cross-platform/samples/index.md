@@ -50,7 +50,7 @@ Application de démonstration qui permet aux vendeurs de suivre les performances
 
 :::row:::
     :::column:::
-[Connaissance ![](images/acquaint.jpg)](https://github.com/xamarinhq/app-acquaint/)
+[![Connaissance](images/acquaint.jpg)](https://github.com/xamarinhq/app-acquaint/)
 
 ### <a name="acquainthttpsgithubcomxamarinhqapp-acquaint"></a>[Habitu](https://github.com/xamarinhq/app-acquaint/)
 

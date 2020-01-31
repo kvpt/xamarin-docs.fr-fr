@@ -46,14 +46,14 @@ Framework iOS 11 Vision et CoreML utilisant un modèle formé avec le service d
 
 :::row:::
     :::column:::
-[Contacts ![](images/contacts.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
+[![Contacts](images/contacts.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
 
 ### <a name="contactshttpsdocsmicrosoftcomsamplesxamarinios-samplescontacts"></a>[Contacts](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
 
 Comment utiliser les propriétés et les contrôleurs de vue ContactsUI.
     :::column-end:::
     :::column:::
-[Catalogue WatchKit ![](images/watchos.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)
+[![Catalogue WatchKit](images/watchos.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)
 
 ### <a name="watchkit-cataloghttpsdocsmicrosoftcomsamplesxamarinios-sampleswatchos-watchkitcatalog"></a>[Catalogue WatchKit](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)
 
