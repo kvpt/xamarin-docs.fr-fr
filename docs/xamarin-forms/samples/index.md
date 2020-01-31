@@ -53,7 +53,7 @@ Une calculatrice en notation polonaise inverse (NPI) permet d’entrer des nombr
 Le programme simule un disque tournant sur lequel vous pouvez peindre par entrée tactile et en déplaçant vos doigts. SpinPaint répond aux entrées tactiles en peignant une ligne sous votre doigt et en dupliquant également celle-ci dans trois images miroir dans les trois autres quadrants du disque.
     :::column-end:::
     :::column:::
-[Exemples XAML ![](images/xaml.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
+[![Exemples XAML](images/xaml.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 
 ### <a name="xaml-sampleshttpsdocsmicrosoftcomsamplesxamarinxamarin-forms-samplesxamlsamples"></a>[Exemples XAML](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 

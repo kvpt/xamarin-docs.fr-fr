@@ -184,7 +184,7 @@ Ensuite, faites glisser dans une **vue de texte** et dimensionnez-la pour rempli
 
 Étant donné que l' **affichage de texte** doit être réduit et croître à mesure que la taille de la fenêtre change, nous allons basculer vers l' **éditeur de contrainte** et ajouter les contraintes suivantes :
 
-[contraintes de modification de ![](window-images/edit05.png)](window-images/edit05.png#lightbox)
+[![contraintes de modification de](window-images/edit05.png)](window-images/edit05.png#lightbox)
 
 En cliquant sur les quatre **poutres rouge** en haut de l’éditeur et en cliquant sur **Ajouter 4 contraintes**, nous indiquons à la vue de texte de s’ajuster aux coordonnées X, Y données et à augmenter ou à réduire horizontalement et verticalement lorsque la fenêtre est redimensionnée.
 

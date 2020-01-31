@@ -1,6 +1,6 @@
 ---
 title: Styliser une application Xamarin.Forms multiplateforme
-description: Cet article explique comment styliser une application Xamarin. Forms multiplateforme à l’aide de styles XAML.
+description: Cet article explique comment appliquer des styles dans une application Xamarin.Forms multiplateforme à l’aide de styles XAML.
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -10,36 +10,36 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: a7e1cdd59b463c38be1a49e962112cb893eed50f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "75488866"
 ---
-# <a name="style-a-cross-platform-xamarinforms-application"></a>Styliser une application Xamarin. Forms multiplateforme
+# <a name="style-a-cross-platform-xamarinforms-application"></a>Appliquer des styles dans une application Xamarin.Forms multiplateforme
 
 [![Télécharger l’exemple](~/media/shared/download.png) Télécharger l’exemple](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 Dans ce guide de démarrage rapide, vous allez apprendre à :
 
-- Styliser une application Xamarin. Forms à l’aide de styles XAML.
+- Appliquer des styles dans une application Xamarin.Forms à l’aide de styles XAML.
 
-Le Guide de démarrage rapide explique comment styliser une application Xamarin. Forms multiplateforme à l’aide de styles XAML. L’application finale est indiquée ci-dessous :
+Le guide de démarrage rapide explique comment appliquer des styles dans une application Xamarin.Forms multiplateforme à l’aide de styles XAML. L’application finale est indiquée ci-dessous :
 
 [![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
 [![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
 
-### <a name="prerequisites"></a>Configuration requise
+### <a name="prerequisites"></a>Prérequis
 
-Vous devez réussir le [démarrage rapide précédent](database.md) avant d’essayer ce guide de démarrage rapide. Vous pouvez également télécharger l' [exemple de démarrage rapide précédent](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/) et l’utiliser comme point de départ pour ce guide de démarrage rapide.
+Vous devez suivre correctement le [précédent guide de démarrage rapide](database.md) avant de tenter de suivre ce guide de démarrage rapide. Vous pouvez également télécharger l’[exemple du précédent guide de démarrage rapide](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/), et l’utiliser comme point de départ pour ce guide de démarrage rapide.
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>Mettre à jour l’application avec Visual Studio
 
-1. Lancez Visual Studio et ouvrez la solution notes.
+1. Lancez Visual Studio, puis ouvrez la solution Notes.
 
-2. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **app. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+2. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **App.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -77,11 +77,11 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
     </Application>
     ```
 
-    Ce code définit une valeur [`Thickness`](xref:Xamarin.Forms.Thickness) , une série de valeurs [`Color`](xref:Xamarin.Forms.Color) et des styles implicites pour le [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et le [`ContentPage`](xref:Xamarin.Forms.ContentPage). Notez que ces styles, qui se trouvent dans la [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de l’application, peuvent être utilisés dans l’ensemble de l’application. Pour plus d’informations sur le style XAML, consultez [stylisation](deepdive.md#styling) in the [Xamarin. Forms-présentation approfondie](deepdive.md).
+    Ce code définit une valeur [`Thickness`](xref:Xamarin.Forms.Thickness), une série de valeurs [`Color`](xref:Xamarin.Forms.Color) ainsi que des styles implicites pour [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage). Notez que ces styles, qui se trouvent dans [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de l’application, peuvent être consommés dans l’ensemble de l’application. Pour plus d’informations sur l’application de styles XAML, consultez [Styles](deepdive.md#styling) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
-    Enregistrez les modifications apportées à **app. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
+    Enregistrez les changements apportés à **App.xaml** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
-3. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+3. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **NotesPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -116,11 +116,11 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
     </ContentPage>
     ```
 
-    Ce code ajoute un style implicite pour la [`ListView`](xref:Xamarin.Forms.ListView) au [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de la page et affecte à la propriété `ListView.Margin` une valeur définie dans le `ResourceDictionary`au niveau de l’application. Notez que le style `ListView` implicite a été ajouté au `ResourceDictionary`au niveau de la page, car il n’est consommé que par le `NotesPage`. Pour plus d’informations sur le style XAML, consultez [stylisation](deepdive.md#styling) in the [Xamarin. Forms-présentation approfondie](deepdive.md).
+    Ce code ajoute un style implicite pour [`ListView`](xref:Xamarin.Forms.ListView) à [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de la page, puis affecte à la propriété `ListView.Margin` une valeur définie dans `ResourceDictionary` au niveau de l’application. Notez que le style implicite de `ListView` a été ajouté à `ResourceDictionary` au niveau de la page, car il est uniquement consommé par `NotesPage`. Pour plus d’informations sur l’application de styles XAML, consultez [Styles](deepdive.md#styling) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
-    Enregistrez les modifications apportées à **NotesPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
+    Enregistrez les changements apportés à **NotesPage.xaml** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
-4. Dans **Explorateur de solutions**, dans le projet **Notes** , double-cliquez sur **NoteEntryPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+4. Dans l’**Explorateur de solutions**, dans le projet **Notes**, double-cliquez sur **NoteEntryPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -165,22 +165,22 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
     </ContentPage>
     ```
 
-    Ce code ajoute des styles implicites pour les vues [`Editor`](xref:Xamarin.Forms.Editor) et [`Button`](xref:Xamarin.Forms.Button) à l' [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de la page, et affecte à la propriété `StackLayout.Margin` une valeur définie dans la `ResourceDictionary`au niveau de l’application. Notez que les styles implicites `Editor` et `Button` ont été ajoutés à la `ResourceDictionary`au niveau de la page, car ils sont utilisés uniquement par le `NoteEntryPage`. Pour plus d’informations sur le style XAML, consultez [stylisation](deepdive.md#styling) in the [Xamarin. Forms-présentation approfondie](deepdive.md).
+    Ce code ajoute des styles implicites pour les vues [`Editor`](xref:Xamarin.Forms.Editor) et [`Button`](xref:Xamarin.Forms.Button) à [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de la page, puis affecte à la propriété `StackLayout.Margin` une valeur définie dans `ResourceDictionary` au niveau de l’application. Notez que les styles implicites de `Editor` et `Button` ont été ajoutés à `ResourceDictionary` au niveau de la page, car ils sont consommés uniquement par `NoteEntryPage`. Pour plus d’informations sur l’application de styles XAML, consultez [Styles](deepdive.md#styling) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
-    Enregistrez les modifications apportées à **NoteEntryPage. Xaml** en appuyant sur **CTRL + S**et fermez le fichier.
+    Enregistrez les changements apportés à **NoteEntryPage.xaml** en appuyant sur **Ctrl+S**, puis fermez le fichier.
 
-5. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [génération du démarrage rapide](single-page.md#building-the-quickstart).
+5. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [Génération du guide de démarrage rapide](single-page.md#building-the-quickstart).
 
-    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder au **NoteEntryPage** et entrez une note. Sur chaque page, observez comment le style a été modifié par rapport au démarrage rapide précédent.
+    Dans **NotesPage**, appuyez sur le bouton **+** pour accéder à **NoteEntryPage**, puis entrez une note. Sur chaque page, notez la façon dont le style a changé par rapport au précédent guide de démarrage rapide.
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>Mettre à jour l’application avec Visual Studio pour Mac
 
-1. Lancez Visual Studio pour Mac et ouvrez le projet notes.
+1. Lancez Visual Studio pour Mac, puis ouvrez le projet Notes.
 
-2. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **app. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+2. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **App.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -218,11 +218,11 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
     </Application>
     ```
 
-    Ce code définit une valeur [`Thickness`](xref:Xamarin.Forms.Thickness) , une série de valeurs [`Color`](xref:Xamarin.Forms.Color) et des styles implicites pour le [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et le [`ContentPage`](xref:Xamarin.Forms.ContentPage). Notez que ces styles, qui se trouvent dans la [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de l’application, peuvent être utilisés dans l’ensemble de l’application. Pour plus d’informations sur le style XAML, consultez [stylisation](deepdive.md#styling) in the [Xamarin. Forms-présentation approfondie](deepdive.md).
+    Ce code définit une valeur [`Thickness`](xref:Xamarin.Forms.Thickness), une série de valeurs [`Color`](xref:Xamarin.Forms.Color) ainsi que des styles implicites pour [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) et [`ContentPage`](xref:Xamarin.Forms.ContentPage). Notez que ces styles, qui se trouvent dans [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de l’application, peuvent être consommés dans l’ensemble de l’application. Pour plus d’informations sur l’application de styles XAML, consultez [Styles](deepdive.md#styling) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
-    Enregistrez les modifications apportées à **app. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
+    Enregistrez les changements apportés à **App.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
-3. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NotesPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+3. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **NotesPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -257,11 +257,11 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
     </ContentPage>
     ```
 
-    Ce code ajoute un style implicite pour la [`ListView`](xref:Xamarin.Forms.ListView) au [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de la page et affecte à la propriété `ListView.Margin` une valeur définie dans le `ResourceDictionary`au niveau de l’application. Notez que le style `ListView` implicite a été ajouté au `ResourceDictionary`au niveau de la page, car il n’est consommé que par le `NotesPage`. Pour plus d’informations sur le style XAML, consultez [stylisation](deepdive.md#styling) in the [Xamarin. Forms-présentation approfondie](deepdive.md).
+    Ce code ajoute un style implicite pour [`ListView`](xref:Xamarin.Forms.ListView) à [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de la page, puis affecte à la propriété `ListView.Margin` une valeur définie dans `ResourceDictionary` au niveau de l’application. Notez que le style implicite de `ListView` a été ajouté à `ResourceDictionary` au niveau de la page, car il est uniquement consommé par `NotesPage`. Pour plus d’informations sur l’application de styles XAML, consultez [Styles](deepdive.md#styling) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
-    Enregistrez les modifications apportées à **NotesPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
+    Enregistrez les changements apportés à **NotesPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
-4. Dans le **panneau solutions**, dans le projet **Notes** , double-cliquez sur **NoteEntryPage. Xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
+4. Dans le **Panneau Solutions**, dans le projet **Notes**, double-cliquez sur **NoteEntryPage.xaml** pour l’ouvrir. Remplacez ensuite le code existant par le code suivant :
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -306,28 +306,28 @@ Vous devez réussir le [démarrage rapide précédent](database.md) avant d’es
     </ContentPage>
     ```
 
-    Ce code ajoute des styles implicites pour les vues [`Editor`](xref:Xamarin.Forms.Editor) et [`Button`](xref:Xamarin.Forms.Button) à l' [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)au niveau de la page, et affecte à la propriété `StackLayout.Margin` une valeur définie dans la `ResourceDictionary`au niveau de l’application. Notez que les styles implicites `Editor` et `Button` ont été ajoutés à la `ResourceDictionary`au niveau de la page, car ils sont utilisés uniquement par le `NoteEntryPage`. Pour plus d’informations sur le style XAML, consultez [stylisation](deepdive.md#styling) in the [Xamarin. Forms-présentation approfondie](deepdive.md).
+    Ce code ajoute des styles implicites pour les vues [`Editor`](xref:Xamarin.Forms.Editor) et [`Button`](xref:Xamarin.Forms.Button) à [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) au niveau de la page, puis affecte à la propriété `StackLayout.Margin` une valeur définie dans `ResourceDictionary` au niveau de l’application. Notez que les styles implicites de `Editor` et `Button` ont été ajoutés à `ResourceDictionary` au niveau de la page, car ils sont consommés uniquement par `NoteEntryPage`. Pour plus d’informations sur l’application de styles XAML, consultez [Styles](deepdive.md#styling) dans [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md).
 
-    Enregistrez les modifications apportées à **NoteEntryPage. Xaml** en choisissant **fichier > enregistrer** (ou en appuyant sur  **&#8984; + S**), puis fermez le fichier.
+    Enregistrez les changements apportés à **NoteEntryPage.xaml** en choisissant **Fichier > Enregistrer** (ou en appuyant sur **&#8984;+S**), puis fermez le fichier.
 
-5. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [génération du démarrage rapide](single-page.md#building-the-quickstart).
+5. Générez et exécutez le projet sur chaque plateforme. Pour plus d’informations, consultez [Génération du guide de démarrage rapide](single-page.md#building-the-quickstart).
 
-    Dans **NotesPage** , appuyez sur le bouton **+** pour accéder au **NoteEntryPage** et entrez une note. Sur chaque page, observez comment le style a été modifié par rapport au démarrage rapide précédent.
+    Dans **NotesPage**, appuyez sur le bouton **+** pour accéder à **NoteEntryPage**, puis entrez une note. Sur chaque page, notez la façon dont le style a changé par rapport au précédent guide de démarrage rapide.
 
 ::: zone-end
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce démarrage rapide, vous avez appris comment :
+Dans ce guide de démarrage rapide, vous avez appris à :
 
-- Styliser une application Xamarin. Forms à l’aide de styles XAML.
+- Appliquer des styles dans une application Xamarin.Forms à l’aide de styles XAML.
 
-Pour en savoir plus sur les notions de base du développement d’applications à l’aide de Xamarin. Forms, passez à la présentation approfondie des Démarrages rapides.
+Pour en savoir plus sur les notions de base relatives au développement d’applications à l’aide de Xamarin.Forms, passez au guide de démarrage rapide en immersion.
 
 > [!div class="nextstepaction"]
-> [Suivant](deepdive.md)
+> [Next](deepdive.md)
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Notes (exemple)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
-- [Présentation approfondie des Démarrages rapides Xamarin. Forms](deepdive.md)
+- [Xamarin.Forms - Démarrage rapide en immersion](deepdive.md)

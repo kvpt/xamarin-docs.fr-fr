@@ -28,7 +28,7 @@ Bien que les applications basées sur les `ViewPager`soient souvent implémenté
 
 Créez un nouveau projet Android appelé **TreePager** (consultez [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) pour plus d’informations sur la création de nouveaux projets Android). Ensuite, lancez le gestionnaire de package NuGet. (Pour plus d’informations sur l’installation des packages NuGet, consultez [procédure pas à pas : inclusion d’un NuGet dans votre projet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Rechercher et installer la **bibliothèque de prise en charge Android v4**: 
 
-[Capture d’écran ![de la prise en charge de la V4 NuGet sélectionnée dans le gestionnaire de package NuGet](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
+[![Capture d’écran de la prise en charge de la V4 NuGet sélectionnée dans le gestionnaire de package NuGet](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 Cette opération installe également tous les packages supplémentaires réinstallés par **Android Support Library v4**.
 
@@ -296,7 +296,7 @@ Ouvrez **ressources/mise en page/main. AXML** et ajoutez une `PagerTabStrip` à 
 
 les `ViewPager` et les `PagerTabStrip` sont conçus pour fonctionner ensemble. Lorsque vous déclarez un `PagerTabStrip` à l’intérieur d’une disposition de `ViewPager`, le `ViewPager` trouve automatiquement le `PagerTabStrip` et le connecte à l’adaptateur. Lorsque vous générez et exécutez l’application, le `PagerTabStrip` vide doit s’afficher en haut de chaque écran : 
 
-[capture d’écran ![gros plan d’un PagerTabStrip vide](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
+[![capture d’écran gros plan d’un PagerTabStrip vide](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
 
 ### <a name="display-a-title"></a>Afficher un titre
 

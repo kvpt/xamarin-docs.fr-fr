@@ -71,7 +71,7 @@ L’exemple de code *DataAccess_Basic* pour ce document ressemble à ce qui suit
 
 **iOS**
 
- [exemple de ![iOS SQLite.NET](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
+ [![exemple de iOS SQLite.NET](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
 L’exemple de code suivant montre une interaction de base de données entière à l’aide de la bibliothèque SQLite.NET pour encapsuler l’accès à la base de données sous-jacent. Elle indique :
 

@@ -22,7 +22,7 @@ Ces exemples d’applications et démonstrations de code Xamarin Android peuvent
 
 :::row:::
     :::column:::
-[Conception de matériaux ![](images/material-design.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-googleio2014master/)
+[![Conception de matériaux](images/material-design.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-googleio2014master/)
 
 ### <a name="material-designhttpsdocsmicrosoftcomsamplesxamarinmonodroid-samplesandroid50-googleio2014master"></a>[Conception de matériau](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-googleio2014master/)
 
@@ -36,7 +36,7 @@ Cet exemple présente les nouvelles API Material Design introduites dans Android
 Cette solution utilise le package NuGet des services Google Play pour Xamarin pour montrer quelques utilisations de l’API de mappages.
   :::column-end:::
     :::column:::
-[Page d' ![de la carte Flash](images/flash.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
+[![Page d' de la carte Flash](images/flash.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
 
 ### <a name="flash-card-pagerhttpsdocsmicrosoftcomsamplesxamarinmonodroid-samplesuserinterface-flashcardpager"></a>[Radiomessagerie de carte Flash](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
 
@@ -46,7 +46,7 @@ Cet exemple montre comment utiliser ensemble ViewPager et PagerTabStrip pour imp
 
 :::row:::
     :::column:::
-[Fragments de ![](images/fragments.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough/)
+[![Fragments de](images/fragments.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough/)
 
 ### <a name="fragmentshttpsdocsmicrosoftcomsamplesxamarinmonodroid-samplesfragmentswalkthrough"></a>[Fragments](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough/)
 
@@ -70,7 +70,7 @@ Utilisez cet exemple pour apprendre à utiliser les nouveaux widgets CardView et
 
 :::row:::
     :::column:::
-[Barre d’outils ![](images/toolbar.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar/)
+[![Barre d’outils](images/toolbar.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar/)
 
 ### <a name="toolbarhttpsdocsmicrosoftcomsamplesxamarinmonodroid-samplesandroid50-toolbar"></a>[Barre d’outils](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar/)
 

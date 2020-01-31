@@ -133,7 +133,7 @@ Une fois le projet d’API de la **console de développement Google** créé, il
 
 1. Dans la page **Maps SDK pour Android** qui s’affiche (après avoir cliqué sur **activer** à l’étape précédente), accédez à l’onglet **informations d’identification** , puis cliquez sur le bouton **créer des informations d’identification** :
 
-   [message d’informations d’identification du kit de développement logiciel (SDK) ![Maps pour Android](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![message d’informations d’identification du kit de développement logiciel (SDK) Maps pour Android](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. Cliquez sur **clé API**:
 

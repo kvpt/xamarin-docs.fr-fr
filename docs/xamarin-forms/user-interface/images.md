@@ -73,7 +73,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image locale sur chaque plateforme :
 
-[Exemple d’application ![affichant une image locale](images-images/local-sml.png)](images-images/local.png#lightbox)
+[![Exemple d’application affichant une image locale](images-images/local-sml.png)](images-images/local.png#lightbox)
 
 Pour plus de souplesse la `Device.RuntimePlatform` propriété peut être utilisée pour sélectionner un autre fichier image ou un chemin d’accès pour certains ou l’ensemble des plateformes, comme illustré dans cet exemple de code :
 
@@ -140,7 +140,7 @@ Ce panneau affiche les **ID de ressource** qui est utilisé pour référencer la
 L’IDE a généré ce comportement par défaut en concaténant le **par défaut Namespace** pour ce projet avec le nom de fichier, à l’aide d’un point (.) entre chaque valeur.
 Cet ID peut être modifié dans le **propriétés** remplissage, mais pour ces exemples de la valeur **WorkingWithImages.beach.jpg** sera utilisé.
 
-[panneau Propriétés des ressources incorporées ![](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
+[![panneau Propriétés des ressources incorporées](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
@@ -163,7 +163,7 @@ Actuellement, il n’existe aucune conversion implicite pour les identificateurs
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image incorporée sur chaque plateforme :
 
-[Exemple d’application ![affichant une image incorporée](images-images/resource-sml.png)](images-images/resource.png#lightbox)
+[![Exemple d’application affichant une image incorporée](images-images/resource-sml.png)](images-images/resource.png#lightbox)
 
 ### <a name="xaml"></a>XAML
 
@@ -273,7 +273,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Les captures d’écran suivantes montrent le résultat de l’affichage d’une image à distance sur chaque plateforme :
 
-[Exemple d’application ![affichant une image téléchargée](images-images/download-sml.png)](images-images/download.png#lightbox)
+[![Exemple d’application affichant une image téléchargée](images-images/download-sml.png)](images-images/download.png#lightbox)
 
 ### <a name="downloaded-image-caching"></a>Mise en cache des images téléchargées
 

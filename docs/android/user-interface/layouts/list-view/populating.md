@@ -40,7 +40,7 @@ public class HomeScreen : ListActivity {
 
 En général, une `ListView` permet également à l’utilisateur de toucher une ligne pour effectuer une action (par exemple, la diffusion d’une chanson ou l’appel d’un contact ou l’affichage d’un autre écran). Pour répondre aux touches de l’utilisateur, il faut qu’une autre méthode soit implémentée dans le `ListActivity` &ndash; `OnListItemClick` &ndash; comme suit :
 
-[Capture d’écran ![d’un SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
+[![Capture d’écran d’un SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -52,7 +52,7 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 L’utilisateur peut maintenant toucher une ligne et une `Toast` alerte s’affiche :
 
-[Capture d’écran ![du Toast qui apparaît lorsqu’une ligne est touchée](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
+[![Capture d’écran du Toast qui apparaît lorsqu’une ligne est touchée](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
 ## <a name="implementing-a-listadapter"></a>Implémentation d’un ListAdapter
 
@@ -136,7 +136,7 @@ Certaines implémentations d’adaptateurs (telles que les `CursorAdapter`) n’
 
 Le défilement rapide aide l’utilisateur à faire défiler les longues listes en fournissant un « handle » supplémentaire qui agit comme une barre de défilement pour accéder directement à une partie de la liste. Cette capture d’écran montre la poignée de défilement rapide :
 
-[Capture d’écran ![de défilement rapide avec une poignée de défilement](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
+[![Capture d’écran de défilement rapide avec une poignée de défilement](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 L’affichage de la poignée de défilement rapide est aussi simple que la définition de la propriété `FastScrollEnabled` sur `true`:
 

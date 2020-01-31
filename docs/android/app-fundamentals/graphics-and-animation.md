@@ -201,7 +201,7 @@ public class MyView : View
 
 Ce code ci-dessus crée d’abord un dessin rouge et un objet Paint vert. Elle remplit le contenu du canevas en rouge, puis indique au canevas de dessiner un rectangle vert de 25% de la largeur de la zone de dessin. Par exemple, dans `AnimationsDemo` projet qui est inclus dans le code source de cet article. En démarrant l’application et en sélectionnant l’élément de dessin dans le menu principal, nous devrions obtenir un écran similaire à ce qui suit :
 
-[Écran ![avec peinture rouge et objets de peinture verte](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
+[![Écran avec peinture rouge et objets de peinture verte](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>Animation
 

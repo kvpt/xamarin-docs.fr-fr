@@ -79,7 +79,7 @@ Utilisez les étapes suivantes pour activer ProGuard dans votre projet d’appli
    
 2. Choisissez **ProGuard** dans la liste déroulante de **code** pour les **Propriétés > fenêtre Options Android** : 
 
-    [le Décompacteur de code ![ProGuard est sélectionné](proguard-images/03-enable-proguard-shrinker-sml.png)](proguard-images/03-enable-proguard-shrinker.png#lightbox)
+    [![le Décompacteur de code ProGuard est sélectionné](proguard-images/03-enable-proguard-shrinker-sml.png)](proguard-images/03-enable-proguard-shrinker.png#lightbox)
 
 Pour la plupart des applications Xamarin.Android, le fichier de configuration ProGuard par défaut fourni par Xamarin.Android sera suffisant pour supprimer tout le code non utilisé (et seulement lui). Pour afficher la configuration ProGuard par défaut, ouvrez le fichier **obj\\Release\\proguard\\proguard_xamarin.cfg**.
 
