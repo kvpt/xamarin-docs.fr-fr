@@ -39,7 +39,7 @@ Pour comprendre comment travailler avec le `UITabBarController`, nous allons ét
 
 Pour cette procédure pas à pas, nous allons créer l’application suivante :
 
-[Exemple d’application ![avec onglets](creating-tabbed-applications-images/00-app.png)](creating-tabbed-applications-images/00-app.png#lightbox)
+[![Exemple d’application avec onglets](creating-tabbed-applications-images/00-app.png)](creating-tabbed-applications-images/00-app.png#lightbox)
 
 Bien qu’il existe déjà un modèle d’application avec onglets disponible dans Visual Studio pour Mac, pour cet exemple, ces instructions fonctionnent à partir d’un projet vide pour mieux comprendre la façon dont l’application est construite.
 
