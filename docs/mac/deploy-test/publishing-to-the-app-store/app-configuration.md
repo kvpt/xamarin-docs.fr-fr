@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 7db7edd4d8143f4e456f59b97de51e3c1d202dc0
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.openlocfilehash: f008ac42bfffeda2a47ca30aa2991d91f990732f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489399"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725036"
 ---
 # <a name="mac-app-configuration"></a>Configuration d’application Mac
 
@@ -20,15 +20,15 @@ ms.locfileid: "75489399"
 
 Cliquez avec le bouton droit sur le projet d’application Mac dans Visual Studio pour Mac, puis choisissez **Options**.
 
-### <a name="application-settings"></a>Paramètres d'application
+### <a name="application-settings"></a>Paramètres d’application
 
 Pour modifier les paramètres d’une application Xamarin.Mac, double-cliquez sur le fichier **Info.plist** dans le **Panneau Solutions** :
 
-![Sélection du fichier info. plist](app-configuration-images/config04.png "Sélection du fichier info. plist")
+![Sélection du fichier Info.plist](app-configuration-images/config04.png "Sélection du fichier Info.plist")
 
 Cette action affiche les options disponibles pour l’application :
 
- [![Modification du fichier info. plist](app-configuration-images/config01.png "Modification du fichier info. plist")](app-configuration-images/config01-large.png#lightbox)
+ [![Modification du fichier Info.plist](app-configuration-images/config01.png "Modification du fichier Info.plist")](app-configuration-images/config01-large.png#lightbox)
 
 L’exécution d’applications créées Mac avec Xamarin.Mac a la configuration requise suivante :
 
@@ -38,7 +38,7 @@ L’exécution d’applications créées Mac avec Xamarin.Mac a la configuration
 
 La section **Signature Mac** de la boîte de dialogue **Options du projet** permet au développeur de signer une application Xamarin.Mac à des fins de tests, pour une auto-publication ou pour une publication par le biais de l’Apple App Store :
 
-[![Éditeur de signature Mac](app-configuration-images/config02.png "Fenêtre signature Mac")](app-configuration-images/config02-large.png#lightbox)
+[![L’éditeur Signature Mac](app-configuration-images/config02.png "La fenêtre Signature Mac")](app-configuration-images/config02-large.png#lightbox)
 
 À partir de là, sélectionnez l’identité, le profil de provisionnement et tous les droits personnalisés utilisés pour signer l’application au moment de sa compilation. Le développeur peut éventuellement signer le programme d’installation utilisé pour installer l’application sur un autre Mac.
 
@@ -53,4 +53,4 @@ La section **Build Mac** de la boîte de dialogue **Options du projet** permet a
 - [Installation](/visualstudio/mac/installation/)
 - [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
-- [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)
+- [ID de développeur et GateKeeper](https://developer.apple.com/developer-id/)

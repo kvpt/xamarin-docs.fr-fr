@@ -6,16 +6,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: b54296da3f1253b77b63363583c34e1548cd6abc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021254"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724082"
 ---
 # <a name="manually-uploading-the-apk"></a>Chargement manuel de l’APK
 
-La première fois qu’un APK est soumis à Google Play (ou si une version préliminaire de Xamarin.Android est utilisée), l’APK doit être téléchargé manuellement via la [Console développeur de Google Play](https://play.google.com/apps/publish). Ce guide explique les étapes requises pour ce processus. 
+La première fois qu’un APK est soumis à Google Play (ou si une version préliminaire de Xamarin.Android est utilisée), l’APK doit être téléchargé manuellement via la [Console développeur de Google Play](https://play.google.com/apps/publish).
+Ce guide explique les étapes requises pour ce processus.
 
 ## <a name="google-play-developer-console"></a>Console développeur de Google Play
 
@@ -35,14 +36,14 @@ L’écran suivant permet de publier l’application pour le test alpha, le test
 
 [![Bouton Upload your first APK to Alpha](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
-La boîte de dialogue **UPLOAD NEW APK TO ALPHA** s’affiche. L’APK peut être chargé en cliquant sur le bouton **Browse files** ou par une opération de glisser-déplacer : 
+La boîte de dialogue **UPLOAD NEW APK TO ALPHA** s’affiche. L’APK peut être chargé en cliquant sur le bouton **Browse files** ou par une opération de glisser-déplacer :
 
 [![Boîte de dialogue Upload New APK to Alpha](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
 Veillez à charger l’APK prêt pour la mise en production qui doit être distribué.
 La boîte de dialogue suivante indique la progression du chargement de l’APK :
 
-[![Indication de la progression du chargement](manually-uploading-the-apk-images/05-upload-progress-sml.png)](manually-uploading-the-apk-images/05-upload-progress.png#lightbox)
+[![Indication de la progression du téléchargement](manually-uploading-the-apk-images/05-upload-progress-sml.png)](manually-uploading-the-apk-images/05-upload-progress.png#lightbox)
 
 Une fois l’APK chargé, il est possible de sélectionner une méthode de test :
 
@@ -54,7 +55,7 @@ Une fois chargé, l’APK est enregistré en tant que brouillon. Il ne peut pas 
 
 ## <a name="store-listing"></a>Description dans le Store
 
-Cliquez sur **Store Listing** dans la **Console développeur de Google Play** pour entrer les informations que Google Play affichera aux utilisateurs potentiels de l’application : 
+Cliquez sur **Store Listing** dans la **Console développeur de Google Play** pour entrer les informations que Google Play affichera aux utilisateurs potentiels de l’application :
 
 [![Boîte de dialogue Store Listing](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
@@ -90,19 +91,19 @@ Cliquez sur **Content Rating** dans la **Console développeur de Google Play**. 
 
 Toutes les applications sur Google Play doivent être évaluées selon le système de classification Google Play. Outre la classification du contenu, toutes les applications doivent respecter le [Règlement du programme Google Play (pour les développeurs)](https://www.android.com/us/developer-content-policy.html).
 
-La liste qui suit répertorie les quatre niveaux définis dans le système de classification de contenu de Google Play et donne des indications sur les fonctionnalités ou le contenu qui astreignent à chaque niveau de classification : 
+La liste qui suit répertorie les quatre niveaux définis dans le système de classification de contenu de Google Play et donne des indications sur les fonctionnalités ou le contenu qui astreignent à chaque niveau de classification :
 
-- **Tout le monde** &ndash; L’application ne peut pas accéder à des données d’emplacement, ni en publier ou en partager. Elle peut pas héberger du contenu généré par l’utilisateur. Elle ne peut activer la communication entre les utilisateurs. 
+- **Tout le monde** &ndash; L’application ne peut pas accéder à des données d’emplacement, ni en publier ou en partager. Elle peut pas héberger du contenu généré par l’utilisateur. Elle ne peut activer la communication entre les utilisateurs.
 
-- **Maturité faible** &ndash; Applications qui accèdent, mais ne partagent pas, des données d’emplacement. Représentations de violence légère ou sous forme d’animation. 
+- **Maturité faible** &ndash; Applications qui accèdent à des données d’emplacement mais n’en partagent pas. Représentations de violence légère ou sous forme d’animation.
 
-- **Maturité moyenne** &ndash; Références aux stupéfiants, à l’alcool ou au tabac. Jeux d’argent ou simulations de jeu d’argent. Contenu explosif. Blasphème, humour grossier. Références suggestives ou sexuelles. 
-    Violence fictive intense. Violence réaliste. Autorisant les utilisateurs à se trouver. Autorisant les utilisateurs à communiquer entre eux. 
-    Partage des données d’emplacement d’un utilisateur. 
+- **Maturité moyenne** &ndash; Références aux stupéfiants, à l’alcool ou au tabac. Jeux d’argent ou simulations de jeu d’argent. Contenu explosif. Blasphème, humour grossier. Références suggestives ou sexuelles.
+    Violence fictive intense. Violence réaliste. Autorisant les utilisateurs à se trouver. Autorisant les utilisateurs à communiquer entre eux.
+    Partage des données d’emplacement d’un utilisateur.
 
-- **Maturité élevée** &ndash; Accent mis sur la consommation ou la vente d’alcool, de tabac ou de stupéfiants. Accent mis sur des références suggestives ou sexuelles. Violence graphique. 
+- **Maturité élevée** &ndash; Accent mis sur la consommation ou la vente d’alcool, de tabac ou de stupéfiants. Accent mis sur des références suggestives ou sexuelles. Violence graphique.
 
-Les éléments de la liste Maturité moyenne sont subjectifs, en tant que tel, il est possible qu’une indication semblant dicter une classification en Maturité moyenne soit suffisamment intense pour mériter la classification en Maturité élevée. 
+Les éléments de la liste Maturité moyenne sont subjectifs, en tant que tel, il est possible qu’une indication semblant dicter une classification en Maturité moyenne soit suffisamment intense pour mériter la classification en Maturité élevée.
 
 ## <a name="pricing-amp-distribution"></a>Prix &amp; distribution
 
@@ -131,7 +132,7 @@ Descendez plus bas pour indiquer si l’application contient des publicités. En
 ### <a name="consent"></a>Consentement
 
 En bas de la page **Pricing &amp; Distribution** se trouve la section **CONSENT**.
-Cette section est obligatoire. Elle permet de déclarer que l’application est conforme aux [Règles de contenu Android](https://www.android.com/market/terms/developer-content-policy.html#hl=us) et de reconnaître que l’application est soumise à la réglementation américaine relative à l’exportation :
+Cette section est obligatoire. Elle permet de déclarer que l’application est conforme aux [Règles de contenu Android](https://play.google.com/about/restricted-content/) et de reconnaître que l’application est soumise à la réglementation américaine relative à l’exportation :
 
 [![Section Consent](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
@@ -149,29 +150,29 @@ Lorsque les utilisateurs recherchent des applications sur le site web Google Pla
 
 Il est possible d’ajouter des éléments au manifeste de l’application pour mieux contrôler la façon dont l’application est filtrée dans Google Play Store. La liste ci-dessous répertorie les éléments et attributs de manifeste qui peuvent être utilisés pour filtrer les applications :
 
-- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play utilise les attributs pour déterminer si une application peut être déployée sur un appareil en fonction de la taille de l’écran. 
-    Google Play suppose qu’Android peut adapter des dispositions plus petites à des écrans plus grands, mais pas l’inverse. Ainsi, une application qui déclare prendre en charge les écrans normaux apparaît dans les recherches de grands écrans, mais pas de petits écrans. Si une application Xamarin.Android ne fournit pas d’élément `<supports-screen>` dans le fichier manifeste, Google Play suppose que tous les attributs ont la valeur true et que l’application prend en charge toutes les tailles d’écran. Cet élément doit être ajouté manuellement à **AndroidManifest.xml**. 
+- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play utilise les attributs pour déterminer si une application peut être déployée sur un appareil en fonction de la taille de l’écran.
+    Google Play suppose qu’Android peut adapter des dispositions plus petites à des écrans plus grands, mais pas l’inverse. Ainsi, une application qui déclare prendre en charge les écrans normaux apparaît dans les recherches de grands écrans, mais pas de petits écrans. Si une application Xamarin.Android ne fournit pas d’élément `<supports-screen>` dans le fichier manifeste, Google Play suppose que tous les attributs ont la valeur true et que l’application prend en charge toutes les tailles d’écran. Cet élément doit être ajouté manuellement à **AndroidManifest.xml**.
 
-- [utilise-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; cet élément de manifeste est utilisé pour demander certaines fonctionnalités matérielles, telles que le type de clavier, les périphériques de navigation, un écran tactile, etc. Cet élément doit être ajouté manuellement à **fichier AndroidManifest. xml** . 
+- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; Cet élément de manifeste sert à demander certaines fonctionnalités matérielles, comme le type de clavier, les appareils de navigation, un écran tactile, etc. Cet élément doit être ajouté manuellement à **AndroidManifest.xml**.
 
-- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; Cet élément de manifeste déclare les fonctionnalités matérielles ou logicielles qui doit avoir un appareil pour que l’application fonctionne. Cet attribut est informatif uniquement. Google Play n’affiche pas l’application sur les appareils qui ne répondent pas à ce filtre. Il est toujours possible d’installer l’application par d’autres moyens (manuellement ou par téléchargement). Cet élément doit être ajouté manuellement à **AndroidManifest.xml**. 
+- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; Cet élément de manifeste déclare les fonctionnalités matérielles ou logicielles que doit avoir un appareil pour que l’application fonctionne. Cet attribut est informatif uniquement. Google Play n’affiche pas l’application sur les appareils qui ne répondent pas à ce filtre. Il est toujours possible d’installer l’application par d’autres moyens (manuellement ou par téléchargement). Cet élément doit être ajouté manuellement à **AndroidManifest.xml**.
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Cet élément spécifie que certaines bibliothèques partagées doivent être présentes sur l’appareil, par exemple Google Maps. Cet élément peut également être spécifié avec `Android.App.UsesLibraryAttribute`. Exemple : 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; Cet élément spécifie que certaines bibliothèques partagées doivent être présentes sur l’appareil, par exemple Google Maps. Cet élément peut également être spécifié avec `Android.App.UsesLibraryAttribute`. Exemple :
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; Cet élément est utilisé pour déduire certaines fonctionnalités matérielles qui sont requises pour exécuter l’application et qui peuvent ne pas avoir été correctement déclarées avec un élément `<uses-feature>`. Par exemple, si une application demande l’autorisation d’utiliser l’appareil photo, Google Play suppose que les appareils doivent disposer d’un appareil photo, même si aucun élément `<uses-feature>` ne déclare l’appareil photo. Cet élément peut être défini avec `Android.App.UsesPermissionsAttribute`. Exemple : 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; Cet élément sert à déduire certaines fonctionnalités matérielles qui sont requises pour exécuter l’application et qui peuvent ne pas avoir été correctement déclarées avec un élément `<uses-feature>`. Par exemple, si une application demande l’autorisation d’utiliser l’appareil photo, Google Play suppose que les appareils doivent disposer d’un appareil photo, même si aucun élément `<uses-feature>` ne déclare l’appareil photo. Cet élément peut être défini avec `Android.App.UsesPermissionsAttribute`. Exemple :
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
     ```
 
-- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; Cet élément est utilisé pour déclarer le niveau d’API Android minimal requis pour l’application. Cet élément peut être défini dans les options Xamarin.Android d’un projet Xamarin.Android. 
+- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; Cet élément sert à déclarer le niveau d’API Android minimal requis pour l’application. Cet élément peut être défini dans les options Xamarin.Android d’un projet Xamarin.Android.
 
-- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; Cet élément est utilisé pour filtrer les applications qui ne correspondent pas à la taille de l’écran et la densité spécifiés par cet élément. La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application. L’attribut `<support-screen>` mentionné plus haut est préféré. 
+- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; Cet élément sert à filtrer les applications qui ne correspondent pas à la taille de l’écran et la densité spécifiés par cet élément. La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application. L’attribut `<support-screen>` mentionné plus haut est préféré.
 
-- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; Cet élément est utilisé pour déclarer les formations de compression de texture GL requises par l’application. La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application. 
+- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; Cet élément sert à déclarer les formations de compression de texture GL requises par l’application. La plupart des La plupart des applications n’utilisent pas ce filtre. Il est prévu pour des jeux ou des applications hautes performances spécifiques nécessitant un contrôle strict sur la distribution de l’application.
 
 Pour plus d’informations sur la configuration du manifeste d’application, consultez la rubrique [Manifeste d’application](https://developer.android.com/guide/topics/manifest/manifest-intro.html) Android.

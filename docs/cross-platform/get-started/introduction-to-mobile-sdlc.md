@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016395"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724832"
 ---
 # <a name="mobile-software-development-lifecycle"></a>Cycle de vie du développement de logiciel mobile
 
@@ -19,7 +19,7 @@ La création d’applications mobiles peut être aussi simple qu’ouvrir Visual
 
 Dans ce document, nous allons examiner de façon approfondie la création d’applications mobiles, notamment :
 
-1. **Processus** : le processus de développement de logiciels est appelé « cycle de vie de développement de logiciels ». Nous examinerons toutes les phases du SDLC en ce qui concerne le développement d’applications mobiles, y compris l’intégration, la conception, le développement, la stabilisation, le déploiement et la maintenance.
+1. **Processus** : le processus de développement de logiciels est appelé « cycle de vie de développement de logiciels ». Nous allons examiner toutes les phases du cycle de vie de développement de logiciels pour le développement d’applications mobiles, notamment : Lancement, conception, développement, stabilisation, déploiement et maintenance.
 1. **Considérations** : plusieurs aspects doivent être considérés pour la création d’applications mobiles, en particulier pour ce qui diffère des applications web ou pour poste de travail traditionnelles. Nous allons examiner ces considérations et comment elles affectent le développement d’applications mobiles.
 
 Ce document est destiné à répondre à des questions essentielles sur le développement d’applications mobiles, à la fois pour les développeurs d’application débutants et expérimentés. Il adopte une approche assez complète pour présenter la plupart des concepts que vous allez rencontrer au cours de l’ensemble du cycle de vie de développement de logiciels. Ce document peut cependant ne pas être pour tout le monde : si vous avez hâte de commencer à créer des applications, nous vous recommandons de passer directement au guide [Introduction au développement mobile](~/cross-platform/get-started/introduction-to-mobile-development.md), puis de revenir à ce document plus tard.
@@ -60,7 +60,7 @@ En outre, les applications doivent être évaluées dans le contexte du facteur 
 
 Pour faciliter la conception des fonctionnalités d’une application, il peut être utile de définir des acteurs et des [cas d’usage](https://en.wikipedia.org/wiki/Use_case). Les acteurs sont des rôles au sein d’une application ; il s’agit souvent d’utilisateurs. Les cas d’usage sont généralement des actions ou des objectifs.
 
-Par exemple, une application de suivi des tâches peut avoir deux acteurs : *utilisateur* et *ami*. Un utilisateur peut *créer une tâche* et peut aussi *partager une tâche* avec un ami. Dans ce cas, la création d’une tâche et le partage d’une tâche sont deux cas d’usage distincts qui, conjointement avec les acteurs, vont déterminer les écrans que vous devez créer, ainsi que les entités et la logique métier à développer.
+Par exemple, une application de suivi des tâches peut avoir deux acteurs : *Utilisateur* et *Ami*. Un utilisateur peut *créer une tâche* et peut aussi *partager une tâche* avec un ami. Dans ce cas, la création d’une tâche et le partage d’une tâche sont deux cas d’usage distincts qui, conjointement avec les acteurs, vont déterminer les écrans que vous devez créer, ainsi que les entités et la logique métier à développer.
 
 Une fois qu’un nombre approprié de cas d’usage et d’acteurs ont été spécifiés, il est beaucoup plus facile de commencer à concevoir une application. Le développement peut alors se concentrer sur la création de l’application, et non pas sur ce qu’est l’application ou sur ce qu’elle devrait faire.
 
@@ -80,7 +80,7 @@ Lors de la création des maquettes de l’expérience utilisateur, il est import
 1. **Android** –  [Design Guidelines](https://developer.android.com/design/index.html)
 1. **UWP** –  [Principes de base de la conception UWP](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-Par exemple, chaque application a une métaphore pour passer d’une section à l’autre dans une application. iOS utilise une barre d’onglets en bas de l’écran, Android utilise une barre d’onglets en haut de l’écran et UWP utilise la vue [Pivot ou onglet](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot).
+Par exemple, chaque application a une métaphore pour passer d’une section à l’autre dans une application. iOS utilise une barre d’onglets en bas de l’écran, Android utilise une barre d’onglets en haut de l’écran et UWP utilise la vue [Pivot ou onglet](/windows/uwp/design/controls-and-patterns/pivot).
 
 En outre, le matériel lui-même détermine également les décisions relatives à l’expérience utilisateur. Par exemple, les appareils iOS n’ont pas de bouton *Précédent* physique et ils introduisent donc la métaphore du contrôleur de navigation :
 
@@ -108,7 +108,7 @@ Dans le reste des didacticiels, nous allons nous concentrer principalement sur l
 
 ### <a name="stabilization"></a>Stabilisation
 
-La stabilisation est le processus qui consiste à corriger les bogues de votre application. Il ne s’agit pas seulement du point de vue fonctionnel, par exemple « Elle se bloque quand je clique sur ce bouton », mais également de la facilité d’utilisation et des performances. Il est préférable de commencer la stabilisation très tôt dans le processus de développement, afin que les corrections courantes puissent être faites avant de devenir des sources de coûts. En règle générale, les applications passent par les étapes suivantes : *Prototype*, *Alpha*, *Bêta*, et *Version Release Candidate*. Les définitions de ces étapes varient selon les personnes, mais elles suivent généralement le modèle suivant :
+La stabilisation est le processus qui consiste à corriger les bogues de votre application. Il ne s’agit pas seulement du point de vue fonctionnel, par exemple : « Elle plante quand je clique sur ce bouton », mais également de la facilité d’utilisation et des performances. Il est préférable de commencer la stabilisation très tôt dans le processus de développement, afin que les corrections courantes puissent être faites avant de devenir des sources de coûts. En règle générale, les applications passent par les étapes suivantes : *Prototype*, *Alpha*, *Bêta*, et *Version Release Candidate*. Les définitions de ces étapes varient selon les personnes, mais elles suivent généralement le modèle suivant :
 
 1. **Prototype** : l’application est toujours en phase de preuve de concept, et seules les fonctionnalités principales ou des parties spécifiques de l’application fonctionnent. Des bogues majeurs y sont présents.
 1. **Alpha** : les fonctionnalités principales sont généralement entièrement présentes dans le code (qui est généré, mais pas entièrement testé). Des bogues majeurs sont encore présents, des fonctionnalités périphériques peuvent ne pas encore être présentes.
@@ -117,7 +117,7 @@ La stabilisation est le processus qui consiste à corriger les bogues de votre a
 
 Il n’est jamais trop tôt pour commencer à tester une application. Par exemple, si un problème majeur est trouvé à l’étape du prototypage, l’expérience utilisateur de l’application peut toujours être modifiée pour le résoudre. Si un problème de performances est trouvé à l’étape Alpha, il est suffisamment tôt pour modifier l’architecture avant qu’une grande quantité de code soit générée à partir d’hypothèses qui se révèlent fausses.
 
-En règle générale, au cours du cycle de vie d’une application, celle-ci est ouverte à d’autres personnes pour l’essayer, la tester, fournir des commentaires, etc. Par exemple, les applications prototypes ne peuvent être affichées ou mises à disposition que pour les parties prenantes, alors que les applications release candidate peuvent être distribuées aux clients qui s’inscrivent pour un accès anticipé.
+En règle générale, au fil de l’évolution d’une application à travers le cycle de vie, elle est ouverte à de plus en plus de personnes, qui peuvent l’essayer, la tester, fournir des commentaires, etc. Par exemple, les applications à l’état de prototype ne peuvent être montrées ou mises à disposition qu’aux principales parties prenantes, tandis que les applications en version Release Candidate peuvent être distribuées à des clients qui s’inscrivent pour pouvoir y accéder de façon anticipée.
 
 Pour des premiers tests et un premier déploiement sur un nombre relativement restreint d’appareils, un déploiement direct à partir d’une machine de développement est généralement suffisant. Cependant, au fil de l’extension du public concerné, ceci peut rapidement devenir fastidieux. En l’état, il existe plusieurs options de déploiement de test qui facilitent ce processus, en vous permettant d’inviter des personnes à rejoindre un pool de test, de publier des builds sur le web et de fournir des outils qui permettent aux utilisateurs de faire des commentaires.
 
@@ -159,7 +159,7 @@ Les applications UWP sont distribuées aux utilisateurs via le Microsoft Store. 
 
 Si le développement d’applications mobiles n’est pas fondamentalement différent du développement classique web/pour poste de travail en termes de processus ou d’architecture, certaines considérations spécifiques sont néanmoins indispensables.
 
-### <a name="common-considerations"></a>Éléments courants à prendre à compte
+### <a name="common-considerations"></a>Considérations générales
 
 #### <a name="multitasking"></a>Multitâche
 

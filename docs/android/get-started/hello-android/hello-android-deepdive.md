@@ -1,5 +1,5 @@
 ---
-title: Hello, Android - En profondeur
+title: 'Hello, Android : Immersion'
 description: Dans ce guide en deux parties, vous allez créer votre première application Xamarin.Android, et approfondir votre compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. Vous y découvrirez les différents outils, concepts et étapes qui sont nécessaires à la création et au déploiement d’une application Xamarin.Android.
 zone_pivot_groups: platform
 ms.topic: quickstart
@@ -9,16 +9,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 10a46c916654f8421dc5a9af93de3abbbae5e934
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028005"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724364"
 ---
-# <a name="hello-android-deep-dive"></a>Hello, Android - En profondeur
+# <a name="hello-android-deep-dive"></a>Hello, Android : Immersion
 
-_Dans ce guide en deux parties, vous allez créer votre première application Xamarin. Android et développer une compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. En cours de route, vous allez découvrir les outils, les concepts et les étapes nécessaires à la création et au déploiement d’une application Xamarin. Android._
+_Dans ce guide en deux parties, vous allez créer votre première application Xamarin.Android, et approfondir votre compréhension des principes fondamentaux du développement d’applications Android avec Xamarin. Vous y découvrirez les différents outils, concepts et étapes qui sont nécessaires à la création et au déploiement d’une application Xamarin.Android._
 
 Dans [Hello, Android - Démarrage rapide](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md), vous avez créé et exécuté votre première application Xamarin.Android. Maintenant, vous allez approfondir votre connaissance du fonctionnement des applications Android, en vue de créer des programmes plus complexes. Ce guide passe en revue les étapes que vous avez suivies dans la procédure pas à pas « Hello, Android », pour que vous puissiez analyser ce que vous avez fait et comprendre les bases du développement d’applications Android.
 
@@ -61,7 +61,7 @@ Ce guide a pour but de vous aider à développer les compétences et les connais
 
 ## <a name="introduction-to-visual-studio"></a>Introduction à Visual Studio
 
-Visual Studio est un puissant environnement de développement intégré (IDE) édité par Microsoft. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Dans ce guide, vous allez apprendre à utiliser certaines fonctionnalités de base de Visual Studio avec le plug-in Xamarin.
+Visual Studio est un environnement IDE puissant, développé par Microsoft. Il comprend un concepteur visuel entièrement intégré, un éditeur de texte avec outils de refactorisation, un explorateur d’assembly, l’intégration du code source, et bien plus encore. Dans ce guide, vous allez apprendre à utiliser certaines fonctionnalités de base de Visual Studio avec le plug-in Xamarin.
 
 Visual Studio organise le code en _solutions_ et en _projets_. Une solution est un conteneur qui peut comprendre un ou plusieurs projets. Un projet peut être une application (par exemple, iOS ou Android), une bibliothèque de prise en charge, une application de test, etc. Dans l’application **Phoneword**, vous avez ajouté un nouveau projet Android (à l’aide du modèle **Application Android**) à la solution **Phoneword** que vous avez créée avec le guide [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).
 
@@ -161,11 +161,11 @@ Les sections qui suivent explorent les relations entre les différents composant
 
 **activity_main.axml** est le fichier de disposition de l’interface utilisateur correspondant au premier écran de l’application. L’extension .axml indique qu’il s’agit d’un fichier Android Designer (AXML est l’acronyme d’*Android XML*). Le nom *Main* est arbitraire du point de vue d’Android. Vous pourriez attribuer n’importe quel nom au fichier de disposition. Quand vous ouvrez **activity_main.axml** dans l’IDE, l’éditeur visuel pour fichiers de disposition Android, appelé *Android Designer*, se lance :
 
-[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
+[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Concepteur Android")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 Dans l’application **Phoneword**, l’ID de **TranslateButton** a la valeur `@+id/TranslateButton` :
 
-[![Paramètre TranslateButton ID](hello-android-deepdive-images/vs/04-translatebutton-sml.png "Paramètre TranslateButton ID")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
+[![Attribution d’une valeur à l’ID de TranslateButton](hello-android-deepdive-images/vs/04-translatebutton-sml.png "Attribution d’une valeur à l’ID de TranslateButton")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -197,7 +197,7 @@ Tous les éléments définis dans l’aire de conception sont traduits en code 
 
 ::: zone-end
 
-Ce code source XML doit contenir quatre éléments de contrôle : deux **TextView**s, un élément **EDITTEXT** et un élément **Button** . Pour une présentation plus approfondie d’Android Designer, reportez-vous au guide Xamarin Android [Android Designer](~/android/user-interface/android-designer/index.md).
+Ce code source XML doit contenir quatre éléments de contrôle : deux éléments **TextView**, un élément **EditText** et un élément **Button**. Pour une présentation plus approfondie d’Android Designer, reportez-vous au guide Xamarin Android [Android Designer](~/android/user-interface/android-designer/index.md).
 
 Nous venons de voir les outils et les concepts utilisés pour la partie visuelle de l’interface utilisateur. À présent, il est temps de passer au code qui gère l’interface utilisateur.
 
@@ -235,7 +235,7 @@ Dans Android, les activités passent par différentes phases d’un cycle de vie
 
 En substituant les méthodes de cycle de vie `Activity`, vous pouvez contrôler la façon dont l’activité est chargée, la façon dont elle réagit à l’utilisateur, et même ce qui se passe quand elle disparaît de l’écran de l’appareil. Par exemple, vous pouvez substituer les méthodes de cycle de vie du diagramme ci-dessus pour effectuer certaines tâches importantes :
 
-- **OnCreate** &ndash; Crée des vues, initialise des variables et effectue un autre travail de préparation qui doit être effectué avant que l’utilisateur ne voie l’activité. Cette méthode est appelée une seule fois, lorsque l’activité est chargée en mémoire. 
+- **OnCreate** &ndash; Crée des vues, initialise des variables et effectue un autre travail de préparation qui doit être effectué avant que l’utilisateur ne voie l’activité. Cette méthode est appelée une seule fois, lorsque l’activité est chargée en mémoire.
 
 - **OnResume** &ndash; Effectue toutes les tâches qui doivent s’exécuter chaque fois que l’activité retourne à l’écran de l’appareil.
 
@@ -273,7 +273,7 @@ Quand `MainActivity` démarre, il crée une vue basée sur le contenu du fichier
 ::: zone-end
 ::: zone pivot="macos"
 
-Dans l’application **Phoneword**, la première chose à faire dans `OnCreate` est de charger l’interface utilisateur créée dans Android Designer. Pour charger l’IU, appelez `SetContentView`, puis passez-lui le *nom de la disposition de ressource* pour le fichier de disposition : **Main.axml**. La disposition est située dans `Resource.Layout.Main`:
+Dans l’application **Phoneword**, la première chose à faire dans `OnCreate` est de charger l’interface utilisateur créée dans Android Designer. Pour charger l’interface utilisateur, appelez `SetContentView`, puis passez-lui le *nom de la disposition de ressource* pour le fichier de disposition : **Main.axml**. La disposition est située dans `Resource.Layout.Main`:
 
 ```csharp
 SetContentView (Resource.Layout.Main);
@@ -296,7 +296,7 @@ Maintenant que le fichier de disposition contient des références aux contrôle
 
 ### <a name="responding-to-user-interaction"></a>Réponse aux interactions de l’utilisateur
 
-Dans Android, l’événement `Click` écoute les interactions tactiles de l’utilisateur. Dans cette application, l’événement `Click` est géré par une expression lambda. Toutefois, un délégué ou un gestionnaire d’événements nommé pourraient également être utilisés. Le code final de **TranslateButton** ressemblait à ceci : 
+Dans Android, l’événement `Click` écoute les interactions tactiles de l’utilisateur. Dans cette application, l’événement `Click` est géré par une expression lambda. Toutefois, un délégué ou un gestionnaire d’événements nommé pourraient également être utilisés. Le code final de **TranslateButton** ressemblait à ceci :
 
 ```csharp
 translateButton.Click += (sender, e) =>
@@ -332,7 +332,7 @@ Pour qu’un appareil Android puisse être utilisé pour tester des applications
 
 Une fois l’appareil configuré, vous pouvez y déployer des applications. Pour cela, connectez-le à un ordinateur, sélectionnez-le dans la boîte de dialogue **Sélectionner un appareil**, puis démarrez l’application :
 
-![Sélectionner le périphérique de débogage](hello-android-deepdive-images/vs/06-select-device.png "Sélectionner le périphérique de débogage")
+![Sélection d’un appareil pour le débogage](hello-android-deepdive-images/vs/06-select-device.png "Sélection d’un appareil pour le débogage")
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -357,7 +357,7 @@ Pour éviter cela, il est recommandé d’ajouter des icônes de différentes r�
 
 ::: zone pivot="windows"
 
-![dossiers mipmap](hello-android-deepdive-images/vs/07-mipmap-folders.png "dossiers mipmap")
+![Dossiers mipmap](hello-android-deepdive-images/vs/07-mipmap-folders.png "Dossiers mipmap")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -372,15 +372,13 @@ Android choisira l’icône ayant une densité adaptée :
 
 ### <a name="generate-custom-icons"></a>Générer des icônes personnalisées
 
-Tout le monde n’a pas de concepteur disponible pour créer les icônes personnalisées et les images de lancement qu’une application doit mettre en attente. Voici plusieurs autres approches de génération d’une illustration d’application personnalisée :
+Tout le monde ne dispose pas d’un concepteur pour créer des icônes personnalisées et lancer les images dont a besoin une application pour se démarquer des autres. Voici plusieurs méthodes que vous pouvez utiliser pour générer des graphiques d’application personnalisés :
 
 ::: zone pivot="windows"
 
 - [Android Studio Asset](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Générateur web dans le navigateur pour tous les types d’icônes Android, comprenant des liens vers d’autres outils de la communauté. Son fonctionnement est optimal dans Google Chrome.
 
 - Visual Studio &ndash; Vous pouvez l’utiliser afin de créer un ensemble d’icônes simple pour votre application, directement dans l’IDE.
-
-- [Glyphish](https://www.glyphish.com/) &ndash; Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
 
 - [Fiverr](https://www.fiverr.com/) &ndash; Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
 
@@ -389,11 +387,7 @@ Tout le monde n’a pas de concepteur disponible pour créer les icônes personn
 
 - [Android Studio Asset](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; Générateur web dans le navigateur pour tous les types d’icônes Android, comprenant des liens vers d’autres outils de la communauté. Son fonctionnement est optimal dans Google Chrome.
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch est une application Mac pour la conception d’interfaces utilisateur, d’icônes et bien plus encore. Il s’agit de l’application qui a été utilisée pour créer l’ensemble d’icônes d’application et d’images de lancement Xamarin. Sketch 3 est disponible sur l’App Store et coûte environ 80 $. Vous pouvez aussi essayer gratuitement l’outil [Sketch Tool](https://bohemiancoding.com/sketch/tool/).
-
 - [Pixelmator](https://www.pixelmator.com/) &ndash; Application polyvalente de modification d’image pour Mac. Coûte environ 30 $.
-
-- [Glyphish](https://www.glyphish.com/) &ndash; Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
 
 - [Fiverr](https://www.fiverr.com/) &ndash; Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
 

@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 675e6cebab95d2a997bf48a6c9231b5e8c661342
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
+ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020843"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794826"
 ---
 # <a name="android-emulator-troubleshooting"></a>Résolution des problèmes de l’émulateur Android
 
-_Cet article décrit les messages d’avertissement et les problèmes les plus courants qui se produisent lors de la configuration et de l’exécution du Émulateur Android. En outre, il décrit les solutions permettant de résoudre ces erreurs, ainsi que divers conseils de dépannage pour vous aider à diagnostiquer les problèmes de l’émulateur._
+_Cet article décrit les problèmes et les messages d’avertissement les plus courants qui se produisent durant la configuration et l’exécution de l’émulateur Android. De plus, il décrit les solutions permettant de résoudre ces erreurs, et fournit divers conseils pour vous aider à diagnostiquer les problèmes d’émulateur._
 
 ::: zone pivot="windows"
 
@@ -33,7 +33,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
 
 2. Ouvrez une invite de commandes et accédez au dossier d’installation d’**adb**. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
 
-3. Tapez la commande suivante :
+3. Tapez la commande suivante :
 
    ```shell
    adb devices
@@ -58,8 +58,8 @@ Si vous voyez s’afficher un message indiquant qu’**une erreur d’accès MMI
 
 Si Google Play Services ou Google Play Store n’est pas installé sur l’appareil virtuel que vous exécutez dans l’émulateur, cela signifie souvent que l’appareil virtuel a été créé sans que ces paquets soient inclus. Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner l’une des options suivantes, ou les deux :
 
-- Les **API Google**&ndash; incluent Google Play Services dans l’appareil virtuel.
-- **Google Play Store** &ndash; inclut Google Play Store dans l’appareil virtuel.
+- **API Google** : inclut Google Play Services dans l’appareil virtuel.
+- **Google Play Store** : inclut Google Play Store dans l’appareil virtuel.
 
 Par exemple, cet appareil virtuel inclut Google Play Services et Google Play Store :
 
@@ -284,7 +284,7 @@ Si Device Guard est activé, effectuez les étapes suivantes pour le désactiver
 
 1. Vérifiez qu’**Hyper-V** est désactivé (sous **Activer ou désactiver des fonctionnalités Windows**) comme décrit dans la section précédente.
 
-2. Dans la zone de recherche Windows, entrez **gpedit**, puis sélectionnez le résultat de la recherche **Modifier la stratégie de groupe**. Ces étapes permettent de lancer l’**Éditeur d’objets de stratégie de groupe**.
+2. Dans la zone de recherche Windows, entrez **gpedit.msc**, puis sélectionnez le résultat de la recherche **Modifier la stratégie de groupe**. Ces étapes permettent de lancer l’**Éditeur d’objets de stratégie de groupe**.
 
 3. Dans l’**Éditeur de stratégie de groupe locale**, accédez à **Configuration ordinateur > Modèles d’administration > Système > Device Guard** :
 
@@ -369,7 +369,7 @@ Si vous voyez s’afficher un message d’erreur indiquant l’échec de l’ins
 
 2. Ouvrez une invite de commandes et accédez au dossier d’installation d’**adb**. Si le kit Android SDK est installé à son emplacement par défaut, **adb** se trouve sur **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**. Sinon, modifiez ce chemin pour indiquer l’emplacement du kit Android SDK sur votre ordinateur.
 
-3. Tapez la commande suivante :
+3. Tapez la commande suivante :
 
    ```shell
    adb devices
@@ -394,8 +394,8 @@ Si vous voyez s’afficher le message indiquant qu’**une erreur d’accès MMI
 
 Si Google Play Services ou Google Play Store n’est pas installé sur l’appareil virtuel que vous exécutez dans l’émulateur, cela signifie généralement que l’appareil virtuel a été créé sans que ces paquets soient inclus. Quand vous créez un appareil virtuel (consultez [Gestion des appareils virtuels avec Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)), veillez à sélectionner l’une des options suivantes, ou les deux :
 
-- Les **API Google**&ndash; incluent Google Play Services dans l’appareil virtuel.
-- **Google Play Store** &ndash; inclut Google Play Store dans l’appareil virtuel.
+- **API Google** : inclut Google Play Services dans l’appareil virtuel.
+- **Google Play Store** : inclut Google Play Store dans l’appareil virtuel.
 
 Par exemple, cet appareil virtuel inclut Google Play Services et Google Play Store :
 

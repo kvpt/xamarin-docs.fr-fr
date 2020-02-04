@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 0fa6c05b3aa90f1d1875b9169350b197d882d863
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023260"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724770"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – Exploration approfondie
 
@@ -435,20 +435,17 @@ L’application se déploie sur l’appareil iOS :
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Générer des icônes et des images de lancement personnalisées
 
-Tout le monde ne dispose pas d’un concepteur pour créer les icônes personnalisées et les images de lancement dont une application a besoin. Voici plusieurs autres approches de génération d’une illustration d’application personnalisée :
+Tout le monde ne dispose pas d’un concepteur pour créer des icônes personnalisées et lancer les images dont a besoin une application pour se démarquer des autres. Voici plusieurs méthodes que vous pouvez utiliser pour générer des graphiques d’application personnalisés :
 
 ::: zone pivot="macos"
 
-- [**Sketch**](https://www.sketchapp.com") : Sketch est une application Mac pour la conception d’interfaces utilisateur, d’icônes et bien plus encore. Il s’agit de l’application qui a été utilisée pour créer l’ensemble d’icônes d’application et d’images de lancement Xamarin. Sketch 3 est disponible dans l’App Store. Vous pouvez aussi essayer gratuitement l’outil [Sketch Tool](https://bohemiancoding.com/sketch/tool/).
 - [**Pixelmator**](https://www.pixelmator.com/) : Application polyvalente de modification d’image pour systèmes Mac. Coûte environ 30 $.
-- [**Glyphish**](https://www.glyphish.com/) : Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
 - [**Fiverr**](https://www.fiverr.com/) : Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
 
 ::: zone-end
 ::: zone pivot="windows"
 
 - Visual Studio : Vous pouvez l’utiliser pour créer une icône simple pour votre application, directement dans l’IDE.
-- [**Glyphish**](https://www.glyphish.com/) : Ensemble d’icônes prédéfinies de haute qualité. Certaines peuvent être téléchargées gratuitement, d’autres sont payantes.
 - [**Fiverr**](https://www.fiverr.com/) : Faites votre choix parmi une variété de concepteurs pour créer l’icône qui vous convient. À partir de 5 $. Parfois aléatoire. Cependant, une bonne ressource si vous avez besoin d’icônes conçues à la volée.
 
 ::: zone-end
@@ -462,6 +459,6 @@ Dans le [didacticiel suivant de la série de mise en route](~/ios/get-started/he
 
 ## <a name="related-links"></a>Liens connexes
 
-- [Bonjour, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (exemple)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
 - [Lignes directrices de l’interface utilisateur iOS](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [Portail de provisionnement iOS](https://developer.apple.com/account/#/overview)

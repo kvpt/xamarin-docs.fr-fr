@@ -7,25 +7,25 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7d2cd650dd22cd64d506d5d17a5ae0c34b44fc2b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.openlocfilehash: f4d38bb66a34257c1e0a27c5fbbfe16f59743e83
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487192"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725504"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Regroupement pour le Mac App Store
 
 Cette section décrit les concepts de base de la génération d’une application pour une mise en production dans le Mac App Store à l’aide de Visual Studio pour Mac. Suivant les fonctionnalités supplémentaires (telles que les accès iCloud et les notifications Push), des étapes de configuration supplémentaires qui n’entrent pas dans le cadre de cet article peuvent s’avérer nécessaires.
 
 > [!NOTE]
-> Avant de commencer cette section, le développeur doit avoir créé un profil de provisionnement de production pour effectuer des générations pour App Store Mac. Consultez les [instructions de profil](profiles.md) pour créer les profils d’approvisionnement requis.
+> Avant de commencer cette section, le développeur doit avoir créé un profil de provisionnement de production pour effectuer des générations pour App Store Mac. Pour plus d’informations sur la création des profils de provisionnement nécessaires, consultez les [instructions sur les profils](profiles.md).
 
 ## <a name="code-signing-options"></a>Options de signature du code
 
 Définissez la **Configuration** sur **Release** avant de mettre à jour les options de signature du code et de packaging. Le développeur doit s’assurer qu’il utilise l’**identité** de sa société et le profil de provisionnement que nous avons créé ci-dessus lors de la signature de l’application en vue de sa mise en production dans l’App Store.
 
-[![modification des options de signature du code](bundling-images/sign.png)](bundling-images/sign-large.png#lightbox)
+[![Modification des options de signature du code](bundling-images/sign.png)](bundling-images/sign-large.png#lightbox)
 
 Vérifiez que l’option permettant de créer un paquet d’installation a été cochée dans les paramètres **Build Mac** :
 
@@ -33,18 +33,18 @@ Vérifiez que l’option permettant de créer un paquet d’installation a été
 
 ## <a name="build"></a>Générer
 
-Avant d’effectuer la génération, vérifiez que la configuration **Release** a été sélectionnée. Lorsque le développeur crée l’application, il est invité à _deux reprises_ (pour utiliser les certificats de l’application et du programme d’installation) :
+Avant d’effectuer la génération, vérifiez que la configuration **Release** a été sélectionnée. Quand le développeur génère l’application, il est invité _deux fois_ (à utiliser les certificats de l’application et du programme d’installation) :
 
-![Autoriser l’application à utiliser le certificat apparaît deux fois](bundling-images/perms02.png)
+![Autorisation pour l’application à utiliser le certificat, apparaîtra à deux reprises.](bundling-images/perms02.png)
 
-Une fois l’application générée, le développeur peut cliquer avec le bouton droit sur le projet et choisir **afficher dans le Finder** pour trouver le fichier de package (dans le répertoire `bin/Release/AppStore` dans l’exemple ci-dessous).  Ce fichier de paquet inclut un programme d’installation pour l’application. Il peut être envoyé à Apple pour être ajouté dans le Mac App Store.
+Une fois l’application générée, le développeur peut cliquer avec le bouton droit sur le projet, puis choisir **Afficher dans le Finder** pour rechercher le fichier de paquet (dans le répertoire `bin/Release/AppStore` dans l’exemple présenté ci-dessous).  Ce fichier de paquet inclut un programme d’installation pour l’application. Il peut être envoyé à Apple pour être ajouté dans le Mac App Store.
 
 > [!div class="mx-imgBorder"]
-> ![la sélection du package de build dans le Finder](bundling-images/path.png)
+> ![Sélection du paquet de build dans le Finder](bundling-images/path.png)
 
 ## <a name="related-links"></a>Liens connexes
 
 - [Installation](/visualstudio/mac/installation/)
 - [Exemple Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Distribuer vos applications sur le Mac App Store](https://developer.apple.com/devcenter/mac/checklist/)
-- [ID de développeur et GateKeeper](https://developer.apple.com/resources/developer-id/)
+- [ID de développeur et GateKeeper](https://developer.apple.com/developer-id/)

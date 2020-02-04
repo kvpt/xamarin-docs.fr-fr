@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f43cb3ac5ff4d976c57a9d82c2003a08954ef1a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021053"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724124"
 ---
 # <a name="manually-signing-the-apk"></a>Signature manuelle de l’APK
 
@@ -22,11 +22,11 @@ Une fois l’application générée pour sa mise en production, l’APK doit êt
 
 2. **Compresser l’APK dans un fichier zipalign** &ndash; *Zipalign* est un processus d’optimisation qui est réalisé sur une application. Il permet à Android d’interagir plus efficacement avec l’APK au moment de l’exécution. Xamarin.Android effectue une vérification au moment de l’exécution et n’autorise pas l’exécution de l’application si l’APK n’a pas été compressé dans un fichier zipalign.
 
-3. **Signer l’APK** &ndash; Cette étape implique l’utilisation de l’utilitaire **apksigner** du kit Android SDK et la signature de l’APK avec la clé privée qui a été créée à l’étape précédente. Les applications développées avec des versions des outils de génération du kit Android SDK antérieures à la version 24.0.3 utiliseront l’application **jarsigner** du JDK. Ces deux outils sont décrits plus en détail ci-dessous. 
+3. **Signer l’APK** &ndash; Cette étape implique l’utilisation de l’utilitaire **apksigner** d’Android SDK et la signature de l’APK avec la clé privée qui a été créée à l’étape précédente. Les applications développées avec des versions des outils de génération du kit Android SDK antérieures à la version 24.0.3 utiliseront l’application **jarsigner** du JDK. Ces deux outils sont décrits plus en détail ci-dessous.
 
-L’ordre des étapes est important et dépend de l’outil utilisé pour signer l’APK. Si vous utilisez **apksigner**, il est important de commencer par compresser l’application dans un fichier **zipalign**, puis de le signer avec **apksigner**.  Si **jarsigner** doit être utilisé pour signer l’APK, il est important de commencer par signer l’APK, puis d’exécuter **zipalign**. 
+L’ordre des étapes est important et dépend de l’outil utilisé pour signer l’APK. Si vous utilisez **apksigner**, il est important de commencer par compresser l’application dans un fichier **zipalign**, puis de le signer avec **apksigner**.  Si **jarsigner** doit être utilisé pour signer l’APK, il est important de commencer par signer l’APK, puis d’exécuter **zipalign**.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prérequis
 
 Ce guide met l’accent sur l’utilisation de l’utilitaire **apksigner** disponible dans les outils de génération du kit Android SDK v24.0.3 ou version supérieure. Il est supposé qu’un APK a déjà été généré.
 
@@ -127,7 +127,7 @@ Consultez la [documentation de Google](https://developer.android.com/studio/comm
 > [!WARNING]
 > Cette section s’applique uniquement s’il est nécessaire de signer l’APK avec l’utilitaire **jarsigner**. Les développeurs sont encouragés à utiliser **apksigner** pour signer l’APK.
 
-Cette technique implique la signature du fichier APK à l’aide de la commande **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** du SDK Java.  L’outil **jarsigner** est fourni par le SDK Java. 
+Cette technique implique la signature du fichier APK à l’aide de la commande **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** du SDK Java.  L’outil **jarsigner** est fourni par le SDK Java.
 
 L’extrait de code suivant montre comment signer un APK à l’aide de **jarsigner** et de la clé `publishingdoc` qui est contenue dans un fichier de magasin de clés nommé **xample.keystore** :
 
@@ -141,7 +141,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 ## <a name="related-links"></a>Liens associés
 
 - [Signature d’application](https://source.android.com/security/apksigning/)
-- [Signature de fichier JAR Java](https://docs.oracle.com/javase/8/docs/technotes~/jar/jar.html#Signed_JAR_File)
 - [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)
 - [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html)
 - [zipalign](https://developer.android.com/studio/command-line/zipalign.html)

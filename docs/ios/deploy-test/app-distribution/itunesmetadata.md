@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026506"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724618"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Fichier iTunesMetadata.plist dans les applications Xamarin.iOS
 
@@ -242,8 +242,6 @@ Pour les applications iOS, Apple définit les genres et ID de genres suivants :
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-Pour plus d’informations, consultez la documentation d’Apple sur l’[annexe des ID de genres](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html).
-
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
 Utilisez la clé `softwareSupportedDeviceIds` pour indiquer à iTunes les appareils iOS pris en charge par l’application iOS. Exemple :
@@ -366,6 +364,6 @@ Cet article a présenté le fichier `iTunesMetadata.plist`, qui permet d’infor
 - [Configuration d’une application dans iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [Publication dans l’App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [Distribution en interne](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Distribution ad hoc](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [Prise en charge IPA](~/ios/deploy-test/app-distribution/ipa-support.md)
 - [Résolution des problèmes](~/ios/deploy-test/troubleshooting.md)

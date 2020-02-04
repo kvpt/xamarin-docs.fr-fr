@@ -7,22 +7,22 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: bc5a151323414e867b919035b0c5705234faebf9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 40d849ad403f2f47c00be9d3da7b59fc27ce8002
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021667"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725491"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>Débogage d’un plantage natif dans une application Xamarin.Mac
 
 ## <a name="overview"></a>Vue d'ensemble
 
-Des erreurs de programmation peuvent parfois provoquer des plantages dans le runtime Objective-C natif. Contrairement aux exceptions de C#, celles-ci ne pointent pas sur une ligne spécifique de votre code que vous pouvez localiser pour la corriger. Elles peuvent parfois être faciles à trouver et à corriger, mais aussi parfois extrêmement difficiles à localiser. 
+Des erreurs de programmation peuvent parfois provoquer des plantages dans le runtime Objective-C natif. Contrairement aux exceptions de C#, celles-ci ne pointent pas sur une ligne spécifique de votre code que vous pouvez localiser pour la corriger. Elles peuvent parfois être faciles à trouver et à corriger, mais aussi parfois extrêmement difficiles à localiser.
 
 Passons en revue quelques exemples de plantages natifs réels.
 
-## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
+## <a name="example-1-assertion-failure"></a>Exemple 1 : Échec d’assertion
 
 Voici les quelques premières lignes d’un plantage dans une application de test simple (ces informations se trouvent dans le panneau **Sortie de l’application**) :
 
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>Exemple 2 : Un rappel aboutit au milieu de nulle part
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>Exemple 2 : Un rappel aboutit au milieu de nulle part
 
 ```csharp
 Stacktrace:
@@ -134,7 +134,7 @@ Le `NSButton` retourné par `StandardWindowButton()` était nettoyé même si un
 
 Même si ce n’était pas la cause racine de ce problème particulier, des traces de pile comme celle-ci peuvent également être provoquées par des signatures de méthode incorrectes dans les fonctions `[Export]` vers Objective-C. Par exemple, si une méthode attend qu’un paramètre soit `out string` et que vous le tapez en `string`, un plantage peut se produire de la même façon.
 
-## <a name="example-3-callbacks-and-managed-objects"></a>Exemple 3 : Rappels et objets gérés
+## <a name="example-3-callbacks-and-managed-objects"></a>Exemple 3 : Rappels et objets managés
 
 De nombreuses API Cocoa impliquent d’être « rappelées » par la bibliothèque quand un événement se produit, ce qui vous donne l’opportunité de répondre, ou quand des données sont nécessaires pour effectuer une tâche. Même si vous pensez principalement aux modèles **Delegate** et **DataSource**, il existe une multitude d’API qui fonctionnent de cette manière. Par exemple, quand vous remplacez les méthodes d’un `NSView`, puis que vous l’insérez dans l’arborescence d’éléments visuels, vous vous attendez à ce que AppKit vous rappelle quand certains événements se produisent.
 
@@ -163,40 +163,40 @@ Ce guide vous aide à détecter les bogues de cette nature s’ils se produisent
 
 ### <a name="locating"></a>Localisation
 
-Dans presque tous les cas avec des bogues de cette nature, le symptôme principal est que des plantages natifs se produisent avec quelque chose qui ressemble à `mono_sigsegv_signal_handler` ou à `_sigtrap` dans les trames du haut de la pile. Cocoa tente d’effectuer un rappel dans votre code C#, tente d’atteindre un objet qui a été nettoyé et plante. Tous les plantages avec ces symboles ne sont cependant pas provoqués par un problème de liaison comme celui-ci : vous devez donc effectuer certaines recherches supplémentaires pour vérifier qu’il s’agit bien de ce problème. 
+Dans presque tous les cas avec des bogues de cette nature, le symptôme principal est que des plantages natifs se produisent avec quelque chose qui ressemble à `mono_sigsegv_signal_handler` ou à `_sigtrap` dans les trames du haut de la pile. Cocoa tente d’effectuer un rappel dans votre code C#, tente d’atteindre un objet qui a été nettoyé et plante. Tous les plantages avec ces symboles ne sont cependant pas provoqués par un problème de liaison comme celui-ci : vous devez donc effectuer certaines recherches supplémentaires pour vérifier qu’il s’agit bien de ce problème.
 
 Ces bogues sont difficiles à repérer parce qu’ils se produisent seulement **après** qu’un garbage collection a supprimé l’objet en question. Si vous pensez avoir rencontré un de ces bogues, ajoutez le code suivant quelque part dans votre séquence de démarrage :
 
 ```csharp
-new System.Threading.Thread (() => 
+new System.Threading.Thread (() =>
 {
     while (true) {
          System.Threading.Thread.Sleep (1000);
          GC.Collect ();
     }
-}).Start (); 
+}).Start ();
 ```
 
 Ceci force votre application à exécuter le Garbage Collector toutes les secondes. Réexécutez votre application et essayez de reproduire le bogue. Si elle plante tout de suite, ou de façon cohérente et non aléatoire, vous êtes sur la bonne voie.
 
 ### <a name="reporting"></a>Rapports
 
-L’étape suivante consiste à signaler le problème à Xamarin, pour que la liaison puisse être corrigée dans les versions futures. Si vous êtes détenteur d’une licence professionnelle ou d’entreprise, ouvrez un ticket sur 
+L’étape suivante consiste à signaler le problème à Xamarin, pour que la liaison puisse être corrigée dans les versions futures. Si vous êtes détenteur d’une licence professionnelle ou d’entreprise, ouvrez un ticket sur
 
 [visualstudio.microsoft.com/vs/support/](https://visualstudio.microsoft.com/vs/support/)
 
 Sinon, recherchez un problème existant :
 
-- Consultez les [forums Xamarin.Mac](https://forums.xamarin.com/categories/mac)
+- Consultez les [forums Xamarin.Mac](https://forums.xamarin.com/categories/xamarin-mac)
 - Recherchez dans le [dépôt des problèmes](https://github.com/xamarin/xamarin-macios/issues)
 - Avant de devenir des problèmes GitHub, les problèmes Xamarin étaient suivis sur [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Recherchez-y des problèmes correspondants.
 - Si vous ne trouvez pas de problème correspondant, ouvrez un nouveau problème dans le [dépôt de problèmes GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
 
-Les problèmes GitHub sont tous publics. Il n’est pas possible de masquer des commentaires ou des pièces jointes. 
+Les problèmes GitHub sont tous publics. Il n’est pas possible de masquer des commentaires ou des pièces jointes.
 
 Dans la mesure du possible, essayez d’inclure :
 
-- Un exemple simple reproduisant le problème. Si vous pouvez en fournir un, c’est **inestimable**. 
+- Un exemple simple reproduisant le problème. Si vous pouvez en fournir un, c’est **inestimable**.
 - La trace de pile complète du plantage.
 - Le code C# se rapportant au plantage.   
 
@@ -250,4 +250,4 @@ N’autorisez jamais une exception C# à « laisser échapper » du code managé
 
 Sans trop entrer dans les raisons techniques, la configuration de l’infrastructure pour intercepter les exceptions managées à chaque limite managée/native est coûteuse en ressources, et il existe par ailleurs _beaucoup_ de transitions qui se produisent dans de nombreuses opérations courantes. De nombreuses opérations, en particulier celles qui impliquent le thread d’interface utilisateur, doivent se terminer rapidement, sans quoi votre application risque de fonctionner par à-coup et avoir des performances inacceptables. Beaucoup de ces rappels font des choses très simples qui ont rarement la possibilité de lever des exceptions : ce surcroît de charge serait à la fois coûteux et inutile dans ces cas.
 
-Ainsi, nous n’allons pas configurer ces instructions try/catch pour vous. Là où votre code fait des choses non triviales (disons, plus que retourner un booléen ou un calcul simple), vous pouvez essayer d’intercepter les exceptions vous-même. 
+Ainsi, nous n’allons pas configurer ces instructions try/catch pour vous. Là où votre code fait des choses non triviales (disons, plus que retourner un booléen ou un calcul simple), vous pouvez essayer d’intercepter les exceptions vous-même.

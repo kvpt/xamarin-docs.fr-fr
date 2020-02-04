@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 72cddde86708b5573dc578165354d137c4dc35b6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028056"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723898"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Installation de Xamarin.Android comme application système
 
-_Ce guide présente les différences entre une application système et une application utilisateur, et explique comment installer une application Xamarin. Android en tant qu’application système. Ce guide s’applique aux auteurs d’images ROM Android personnalisées. Elle n’explique pas comment créer une ROM personnalisée._
+_Ce guide traite des différences entre une application système et une application utilisateur et indique comment installer une application Xamarin.Android comme application système. Ce guide s’applique aux auteurs d’images ROM Android personnalisées. Il n’explique pas comment créer un ROM personnalisé._
 
 ## <a name="system-app"></a>Application système
 
@@ -42,7 +42,7 @@ Ce guide suppose une connaissance de [l’empaquetage d’un APK de mise en prod
 
 Les étapes suivantes décrivent comment installer une application Xamarin.Android comme application système.
 
-1. **Empaquetage d’un APK de mise en production de l’application Xamarin.Android** &ndash; Décrit plus en détail dans le guide [Publication d’une application](~/android/deploy-test/publishing/index.md).
+1. **Empaqueter un APK de mise en production de l’application Xamarin.Android** &ndash; Décrit plus en détail dans le guide [Publication d’une application](~/android/deploy-test/publishing/index.md).
 
 2. **Extraire des bibliothèques partagées de l’APK** &ndash;À l’aide de n’importe quel programme utilitaire ZIP, ouvrez le fichier APK et examinez le contenu du dossier **/lib/** . Ce dossier aura un sous-répertoire pour chaque _interface binaire d’application_ (ABI) prise en charge par l’application ; le contenu de ce dossier inclut toutes les bibliothèques partagées requises par l’application sur cette ABI en particulier :
 
@@ -50,9 +50,9 @@ Les étapes suivantes décrivent comment installer une application Xamarin.Andro
 
    Dans la capture d’écran précédente, une seule ABI est prise en charge (**armeabi-v7a**) contenant les deux fichiers **.so** requis par l’application. Notez qu’il est uniquement nécessaire d’extraire les fichiers ABI appropriés pour l’appareil ou l’architecture cible du ROM de l’appareil, autrement dit, ne copiez pas les fichiers **.so** à partir du dossier **x86** vers un appareil ou un ROM  **armeabi-v7a**.
 
-3. **Copiez les fichiers .so dans /system/lib** &ndash; Copiez les fichiers **.so** extraits de l’APK dans l’étape précédente dans le dossier **/system/lib/** sur le ROM personnalisé.
+3. **Copier les fichiers .so dans /system/lib** &ndash; Copiez les fichiers **.so** extraits de l’APK à l’étape précédente dans le dossier **/system/lib/** sur le ROM personnalisé.
 
-4. **Copiez le fichier APK sur /system/app** &ndash; L’étape finale consiste à copier le fichier APK au sein du dossier **/system/app** dans la ROM.
+4. **Copier le fichier APK sur /system/app** &ndash; L’étape finale consiste à copier le fichier APK dans le dossier **/system/app** sur le ROM.
 
 ## <a name="summary"></a>Récapitulatif
 
@@ -61,6 +61,6 @@ Ce guide traite de la différence entre une _application système_ et une _appli
 ## <a name="related-links"></a>Liens associés
 
 - [Publication d’une application](~/android/deploy-test/publishing/index.md)
-- [Architectures d’UC](~/android/app-fundamentals/cpu-architectures.md)
+- [Architectures de processeur](~/android/app-fundamentals/cpu-architectures.md)
 - [BLUETOOTH_PRIVILEGED](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED)
-- [Gestion de l’ABI](https://developer.android.com/ndk~/abis.html)
+- [Gestion de l’ABI](https://developer.android.com/ndk/guides/abis)

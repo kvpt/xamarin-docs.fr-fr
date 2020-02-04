@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae140f7ea75c1631c6c96170af738f3fac04dcdb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026518"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724694"
 ---
 # <a name="debugging-xamarinios-apps"></a>Débogage des applications Xamarin.iOS
 
@@ -198,7 +198,7 @@ Ce débogueur Soft nécessite un schéma de débogage coopératif quand il s’e
 
 Les journaux d’incidents et la sortie de la classe Console sont envoyés à la console de l’iPhone. Vous pouvez accéder à cette console avec Xcode en utilisant l’organisateur, et en sélectionnant votre appareil dans l’organisateur.
 
-Si vous ne souhaitez pas démarrer Xcode, vous pouvez utiliser le [iPhone Configuration Utility (Utilitaire de configuration iPhone)](https://www.apple.com/support/iphone/enterprise/) d’Apple pour accéder directement à la console. En prime, vous pouvez accéder aux journaux de la console à partir d’une machine Windows, si vous déboguez un problème sur le terrain.
+Si vous ne souhaitez pas démarrer Xcode, vous pouvez utiliser le iPhone Configuration Utility (Utilitaire de configuration iPhone) d’Apple pour accéder directement à la console. En prime, vous pouvez accéder aux journaux de la console à partir d’une machine Windows, si vous déboguez un problème sur le terrain.
 
 Pour les utilisateurs de Visual Studio, certains journaux sont disponibles dans la fenêtre Sortie. Toutefois, passez sur un Mac pour obtenir des journaux plus complets et plus détaillés.
 
