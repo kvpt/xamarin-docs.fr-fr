@@ -55,7 +55,7 @@ Cette chaîne de connexion est utilisée pour [déployer des Azure Functions à 
 
 Pour tester l’exemple d’application, vous devez créer une nouvelle Azure Functions application dans le Portail Azure. Prenez note du nom de l' **application** , car cette URL est utilisée dans le fichier **constants.cs** de l’exemple d’application. La capture d’écran suivante montre la création d’une nouvelle Azure Functions application appelée « xdocsfunctions » :
 
-[Capture d’écran ![de la création d’applications Azure Functions](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![Capture d’écran de la création d’applications Azure Functions](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 Azure Functions peut être déployé sur une instance d’application Azure Functions à partir de Visual Studio 2019. Les sections suivantes décrivent le déploiement de deux fonctions dans l’exemple d’application dans une instance d’application Azure Functions.
 
